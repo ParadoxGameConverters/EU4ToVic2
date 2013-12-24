@@ -1,8 +1,0 @@
-latingfx
-easterngfx
-muslimgfx
-indiangfx
-chinesegfx
-africangfx
-northamericagfx
-southamericagfx

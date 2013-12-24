@@ -1,6 +1,0 @@
-#Archipelago Frigate
-type = galley
-
-hull_size = 20
-base_cannons = 35 
-sail_speed = 8
