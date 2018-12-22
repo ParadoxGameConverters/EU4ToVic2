@@ -5,7 +5,7 @@ build_script:
 - cmd: >-
     git submodule update --init --recursive
 
-    msbuild EU4toV2.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+    msbuild EU4ToV2.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 test_script:
 - ps: vstest.console /logger:Appveyor frontend\Frontend.Core.Tests\bin\Release\Frontend.Core.Tests.dll
 artifacts:
