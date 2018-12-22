@@ -58,7 +58,7 @@
     <LinkIncremental>true</LinkIncremental>
     <IntDir>$(SolutionDir)\DebugIntermediate\</IntDir>
     <IncludePath>$(UniversalCRT_IncludePath);$(BOOST_INCLUDE);$(VCInstallDir)include;$(WindowsSdkDir)include;../common_items</IncludePath>
-    <OutDir>$(SolutionDir)$(Configuration)\EU4ToVic2</OutDir>
+    <OutDir>$(SolutionDir)$(Configuration)\EU4ToVic2\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -74,7 +74,7 @@
     <LibraryWPath>$(LibraryWPath)</LibraryWPath>
     <SourcePath>$(SourcePath)</SourcePath>
     <ExcludePath>$(ExcludePath)</ExcludePath>
-    <OutDir>$(SolutionDir)$(Configuration)\EU4ToVic2</OutDir>
+    <OutDir>$(SolutionDir)$(Configuration)\EU4ToVic2\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-NoCopies|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -104,7 +104,7 @@
       <AdditionalLibraryDirectories>D:\Libraries\boost_1_55_0_lib\lib32-msvc-12.0;$(BOOST_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>Copy_Debug_Files.bat</Command>
+      <Command>..\Copy_Files.bat</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copying Data Files</Message>
