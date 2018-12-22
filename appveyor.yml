@@ -1,0 +1,22 @@
+version: dev.{build}
+skip_tags: true
+image: Visual Studio 2019 Preview
+build_script:
+- cmd: >-
+    git submodule update --init --recursive
+
+    msbuild EU4toV2.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+test_script:
+- ps: vstest.console /logger:Appveyor frontend\Frontend.Core.Tests\bin\Release\Frontend.Core.Tests.dll
+artifacts:
+- path: Release
+  name: EU4ToVic2
+deploy:
+- provider: GitHub
+  release: windows_development_build
+  description: The most recent build of the development version
+  auth_token:
+    secure: LBJzs4y9j0N5y0ajp7gmVk3Pvnec1UU5pTCdIMbQYUddEXQnWTJ79FXsd9SCs7YQ
+  repository: paradoxGameConverters/EU4ToVic2
+  artifact: EU4ToVic2
+  prerelease: true
