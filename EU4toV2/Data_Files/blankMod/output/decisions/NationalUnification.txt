@@ -1,7 +1,9 @@
 ## This file differs in NNM by:		
 # -avoid the Roman Empire forming Italy		
-# -let SGF and Germany form even if Austria owns cores, or form by Austria (but not Austria-Hungary)
+# -let SGF and Germany form without needing Riga and Austria proper
 # -avoid cultural unions halted by new colonial cultures
+# -Pontifical Italy edits
+# -Gran Colombia decision restored without having it releasable at start
 
 political_decisions = {
 	
@@ -32,7 +34,10 @@ political_decisions = {
 					OR = {
 						OR = {
 							owned_by = THIS
-							owned_by = AUS
+							province_id = 354 #Riga
+							state_id = AUS_612 #Tirol
+							state_id = AUS_613 #Carinthia-Styria
+							state_id = AUS_619 #Austria Proper
 							owner = {
 								in_sphere = THIS
 								OR = {
@@ -141,6 +146,10 @@ political_decisions = {
 					OR = {
 						OR = {
 							owned_by = THIS
+							province_id = 354 #Riga
+							state_id = AUS_612 #Tirol
+							state_id = AUS_613 #Carinthia-Styria
+							state_id = AUS_619 #Austria Proper
 							owner = {
 								in_sphere = THIS
 								OR = {
@@ -304,8 +313,10 @@ political_decisions = {
 					OR = {
 						OR = {
 							owned_by = THIS
-							owned_by = RUS
-							owned_by = PLC
+							province_id = 354 #Riga
+							state_id = AUS_612 #Tirol
+							state_id = AUS_613 #Carinthia-Styria
+							state_id = AUS_619 #Austria Proper
 							owner = {
 								in_sphere = THIS
 								OR = {
@@ -381,6 +392,10 @@ political_decisions = {
 				capital_scope = { continent = oceania }
 				#tag = FSA
 				tag = CSA
+				tag = MGL
+				tag = HRE
+				tag = SPQ
+				tag = SLA
 			}
 		}
 		
@@ -461,10 +476,10 @@ political_decisions = {
 				all_core = {
 					OR = {
 						owned_by = THIS
-						owned_by = AUS
-						owned_by = KUK
-						owned_by = RUS
-						owned_by = PLC
+						province_id = 354 #Riga
+						state_id = AUS_612 #Tirol
+						state_id = AUS_613 #Carinthia-Styria
+						state_id = AUS_619 #Austria Proper
 						owner = {
 							in_sphere = THIS
 							OR = {
@@ -765,7 +780,9 @@ political_decisions = {
 				has_country_flag = post_colonial_country
 				exists = ITA
 			}
-			NOT = { tag = RME }
+			NOT = { tag = SPQ }
+			NOT = { tag = PAP }
+			NOT = { tag = ITP }
 		}
 		
 		allow = {
@@ -777,6 +794,7 @@ political_decisions = {
 				all_core = {
 					OR = {
 						owned_by = THIS
+						province_id = 473 #Corsica
 						AND = {
 							is_core = VEN
 							owner = {
@@ -846,6 +864,7 @@ political_decisions = {
 			NOT = {
 				has_country_flag = post_colonial_country
 				exists = HND
+				tag = HDU
 			}
 		}
 		
@@ -854,9 +873,22 @@ political_decisions = {
 			prestige = 45
 			nationalism_n_imperialism = 1
 			war = no
+			NOT = {
+				pop_majority_religion = sunni
+				pop_majority_religion = zikri
+				pop_majority_religion = yazidi
+				pop_majority_religion = sunni_heresy
+				pop_majority_religion = shiite
+				pop_majority_religion = hurufi
+				pop_majority_religion = druze
+				pop_majority_religion = shiite_heresy
+				pop_majority_religion = ibadi
+				pop_majority_religion = kharijite
+			}
 			HND = {
 				all_core = {
 					OR = {
+						owned_by = HDU
 						owned_by = THIS
 						province_id = 1303
 						province_id = 1312
@@ -910,6 +942,89 @@ political_decisions = {
 		}
 	}
 
+	
+	form_pakistan = {
+		potential = {
+			is_culture_group = south_asian
+			NOT = {
+				has_country_flag = post_colonial_country
+				exists = HDU
+				tag = HND
+			}
+		}
+		
+		allow = {
+			has_global_flag = indian_call_to_union
+			prestige = 45
+			nationalism_n_imperialism = 1
+			war = no
+			OR = {
+				pop_majority_religion = sunni
+				pop_majority_religion = zikri
+				pop_majority_religion = yazidi
+				pop_majority_religion = sunni_heresy
+				pop_majority_religion = shiite
+				pop_majority_religion = hurufi
+				pop_majority_religion = druze
+				pop_majority_religion = shiite_heresy
+				pop_majority_religion = ibadi
+				pop_majority_religion = kharijite
+			}
+			HND = {
+				all_core = {
+					OR = {
+						owned_by = HND
+						owned_by = THIS
+						province_id = 1303
+						province_id = 1312
+						province_id = 1320
+						is_core = KAL
+						is_core = MAK
+						is_core = AFG
+						is_core = KAS
+						owner = {
+							in_sphere = THIS
+							OR = {
+								is_vassal = no
+								vassal_of = THIS
+							}
+							war = no
+							is_greater_power = no
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			prestige = 20
+			all_core = { remove_core = THIS remove_core = HND add_core = HDU }
+			change_tag = HDU
+			any_country = {
+				limit = {
+					NOT = { is_greater_power = yes }
+					is_culture_group = south_asian
+					in_sphere = THIS
+					NOT = { has_country_flag = post_colonial_country }
+					OR = {
+						is_vassal = no
+						vassal_of = THIS
+					}
+				}
+				country_event = 11101
+			}
+			add_accepted_culture = avadhi
+			add_accepted_culture = marathi
+			add_accepted_culture = rajput
+			add_accepted_culture = bihari
+			add_accepted_culture = bengali
+			add_accepted_culture = kanauji
+			add_accepted_culture = panjabi		
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	concede_finland = {
 		potential = {
 			tag = SWE
@@ -1003,9 +1118,10 @@ political_decisions = {
 			clr_global_flag = germany_has_renamed_elsass
 		}
 	}
-
 	form_gran_colombia = {
+	#Edited to avoid giving Gran Colombia as formable at start
 		potential = {
+			has_global_flag = der_postcolonialism
 			OR = {
 				tag = ECU
 				tag = CLM
@@ -1018,7 +1134,29 @@ political_decisions = {
 		allow = {
 			war = no
 			is_greater_power = yes
-			GCO = {
+			ECU = {
+				all_core = {
+					owner = {
+						OR = {
+							tag = THIS
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+				}
+			}
+			CLM = {
+				all_core = {
+					owner = {
+						OR = {
+							tag = THIS
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+				}
+			}
+			VNZ = {
 				all_core = {
 					owner = {
 						OR = {
@@ -1039,6 +1177,11 @@ political_decisions = {
 				}
 				annex_to = THIS
 			}
+			
+			2242 = { add_core = GCO } # Mahdia, prev VNZ core
+			ECU = { all_core = { add_core = GCO } }
+			CLM = { all_core = { add_core = GCO } }
+			VNZ = { all_core = { add_core = GCO } }
 			any_country = {
 				limit = {
 					in_sphere = THIS
@@ -1053,8 +1196,6 @@ political_decisions = {
 
 			}
 			
-			2242 = { add_core = GCO } # Mahdia, prev VNZ core
-			
 			# some early claims we can roll with for future colombian lebensraum
 			2200 = { add_core = GCO }
 			2201 = { add_core = GCO }
@@ -1068,7 +1209,6 @@ political_decisions = {
 			factor = 1
 		}
 	}	
-
 unite_moldavia_wallachia = {
 		potential = {
 			OR = {
@@ -1209,6 +1349,7 @@ unite_moldavia_wallachia = {
 			add_accepted_culture = serb
 			add_accepted_culture = bosniak
 			add_accepted_culture = croat
+			add_accepted_culture = macedonian
 			change_tag = YUG
 			any_country = {
 				limit = {
