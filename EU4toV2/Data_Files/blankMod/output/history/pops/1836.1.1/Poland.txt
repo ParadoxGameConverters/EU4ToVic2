@@ -1957,6 +1957,12 @@
 		religion = catholic
 		size = 102925
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 2925
+	}
 
 	clergymen = {
 		culture = ukrainian
@@ -2060,6 +2066,12 @@
 		culture = polish
 		religion = catholic
 		size = 131375
+	}
+
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 1375
 	}
 
 	clergymen = {
@@ -2395,6 +2407,12 @@
 		culture = polish
 		religion = catholic
 		size = 113525
+	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 3525
 	}
 
 	clergymen = {

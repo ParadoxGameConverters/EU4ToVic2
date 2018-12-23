@@ -251,6 +251,12 @@
 		religion = catholic
 		size = 26500 
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 1500 
+	}
 
 	clergymen = {
 		culture = croat
@@ -368,6 +374,12 @@
 		culture = serb
 		religion = orthodox
 		size = 75625
+	}
+	
+	farmers = {
+		culture = gypsy
+		religion = orthodox
+		size = 4500
 	}
 }
 #Bor (220000/55000 POPS)
@@ -618,6 +630,12 @@
 		religion = orthodox
 		size = 22900
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = sunni
+		size = 300
+	}
 
 	aristocrats = {
 		culture = turkish
@@ -775,6 +793,12 @@
 		culture = greek
 		religion = orthodox
 		size = 1825
+	}
+	
+	farmers = {
+		culture = gypsy
+		religion = sunni
+		size = 600
 	}
 }
 #Novi Pazar (72000/18000 POPS)

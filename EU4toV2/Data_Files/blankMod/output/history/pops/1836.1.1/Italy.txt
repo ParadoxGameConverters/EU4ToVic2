@@ -903,6 +903,12 @@
 		religion = catholic
 		size = 30375
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 375
+	}
 }
 #Emilia Region (1120000)
 #under the rule of Parma in 1836
