@@ -9,6 +9,7 @@ political_decisions = {
 				tag = DES
 				tag = CAL
 				tag = LSK
+				tag = LOU
 			}
 			OR = {
 				is_vassal = no

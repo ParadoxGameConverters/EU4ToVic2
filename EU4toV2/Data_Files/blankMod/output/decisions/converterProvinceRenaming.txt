@@ -1,11 +1,12 @@
 political_decisions = {
 	## renaming of provinces based on culture
 	greek_830 = {
+		image = form_byzantine_empire
 		potential = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
-				tag = RME
+				tag = SPQ
 				tag = BYZ
 			}
 			NOT = { has_global_flag = 830_be_greek }
@@ -26,7 +27,7 @@ political_decisions = {
 		}
 		effect = {
 			830 = {
-				change_province_name = "Alexandropolis"
+				change_province_name = "Alexandroupolis"
 			}
 			set_global_flag = 830_be_greek
 		}
@@ -35,6 +36,7 @@ political_decisions = {
 		}
 	}
 	turk_830 = {
+		image = tanzimat_reforms
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -52,7 +54,7 @@ political_decisions = {
 		}
 		effect = {
 			830 = {
-				change_province_name = "Dedeagatch"
+				change_province_name = "Dedeag’aç"
 			}
 			clr_global_flag = 830_be_greek
 		}
@@ -61,11 +63,12 @@ political_decisions = {
 		}
 	}
 	greek_thrace = {
+		image = form_byzantine_empire
 		potential = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
-				tag = RME
+				tag = SPQ
 				tag = BYZ
 			}
 			NOT = { has_global_flag = thrace_be_greek }
@@ -85,6 +88,8 @@ political_decisions = {
 			}
 		}
 		effect = {
+			clr_global_flag = thrace_be_slav
+			clr_global_flag = thrace_be_teuton
 			858 = {
 				change_province_name = "Saranta Ekklisies"
 			}
@@ -100,13 +105,21 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	turk_thrace = {
+	slav_thrace = {
 		potential = {
 			OR = {
-				is_culture_group = turko_semitic
-				is_culture_group = arab
+				is_culture_group = east_slavic
+				is_culture_group = south_slavic
+				is_culture_group = czecho_slovak_culture_group
+				is_culture_group = polish_culture_group
 			}
-			has_global_flag = thrace_be_greek
+			NOT = { has_global_flag = thrace_be_slav }
+			TUR_1860 = { #Thrace
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
 		}
 		allow = {
 			TUR_1860 = { #Thrace
@@ -118,7 +131,82 @@ political_decisions = {
 		}
 		effect = {
 			858 = {
-				change_province_name = "Kirklareli"
+				change_province_name = "Lozengrad"
+			}
+			860 = {
+				change_province_name = "Czargrad"
+			}
+			set_global_flag = thrace_be_slav
+			clr_global_flag = thrace_be_greek
+			clr_global_flag = thrace_be_teuton
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	teuton_thrace = {
+		potential = {
+			OR = {
+				culture = greek
+				is_culture_group = italian
+				tag = SPQ
+				tag = BYZ
+			}
+			NOT = { has_global_flag = thrace_be_teuton }
+			TUR_1860 = { #Thrace
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		allow = {
+			TUR_1860 = { #Thrace
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			clr_global_flag = thrace_be_slav
+			clr_global_flag = thrace_be_greek
+			858 = {
+				change_province_name = "Vierzig Kirchen"
+			}
+			860 = {
+				change_province_name = "Mikligarðr"
+			}
+			set_global_flag = thrace_be_greek
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	turk_thrace = {
+		image = tanzimat_reforms
+		potential = {
+			OR = {
+				is_culture_group = turko_semitic
+				is_culture_group = arab
+			}
+			OR = {
+				has_global_flag = thrace_be_greek
+				has_global_flag = thrace_be_slav
+				has_global_flag = thrace_be_teuton
+			}
+		}
+		allow = {
+			TUR_1860 = { #Thrace
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			858 = {
+				change_province_name = "Kïrklareli"
 			}
 			860 = {
 				change_province_name = "Istanbul"
@@ -127,17 +215,20 @@ political_decisions = {
 				change_province_name = "Üsküdar"
 			}
 			clr_global_flag = thrace_be_greek
+			clr_global_flag = thrace_be_slav
+			clr_global_flag = thrace_be_greek
 		}
 		ai_will_do = {
 			factor = 1
 		}
 	}
 	greek_hudav = {
+		image = form_byzantine_empire
 		potential = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
-				tag = RME
+				tag = SPQ
 				tag = BYZ
 			}
 			NOT = { has_global_flag = hudav_be_greek }
@@ -179,6 +270,7 @@ political_decisions = {
 		}
 	}
 	turk_hudav = {
+		image = tanzimat_reforms
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -198,7 +290,7 @@ political_decisions = {
 			862 = {
 				change_province_name = "Izmit"
 				state_scope = {
-					change_region_name = "Hudavendigar"
+					change_region_name = "Hüdavendigâr"
 				}
 			}
 			866 = {
@@ -208,7 +300,7 @@ political_decisions = {
 				change_province_name = "Kütahya"
 			}
 			868 = {
-				change_province_name = "Eskishehir"
+				change_province_name = "Eskišehir"
 			}
 			clr_global_flag = hudav_be_greek
 		}
@@ -217,11 +309,12 @@ political_decisions = {
 		}
 	}
 	greek_aydin = {
+		image = form_byzantine_empire
 		potential = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
-				tag = RME
+				tag = SPQ
 				tag = BYZ
 			}
 			NOT = { has_global_flag = aydin_be_greek }
@@ -257,6 +350,7 @@ political_decisions = {
 		}
 	}
 	turk_aydin = {
+		image = tanzimat_reforms
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -276,7 +370,7 @@ political_decisions = {
 			865 = {
 				change_province_name = "Çanakkale"
 				state_scope = {
-					change_region_name = "Aydin"
+					change_region_name = "Aydïn"
 				}
 			}
 			869 = {
@@ -289,11 +383,12 @@ political_decisions = {
 		}
 	}
 	greek_konya = {
+		image = form_byzantine_empire
 		potential = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
-				tag = RME
+				tag = SPQ
 				tag = BYZ
 			}
 			NOT = { has_global_flag = konya_be_greek }
@@ -332,6 +427,7 @@ political_decisions = {
 		}
 	}
 	turk_konya = {
+		image = tanzimat_reforms
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -367,11 +463,12 @@ political_decisions = {
 		}
 	}
 	greek_ankara = {
+		image = form_byzantine_empire
 		potential = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
-				tag = RME
+				tag = SPQ
 				tag = BYZ
 			}
 			NOT = { has_global_flag = ankara_be_greek }
@@ -411,6 +508,7 @@ political_decisions = {
 		}
 	}
 	turk_ankara = {
+		image = tanzimat_reforms
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -448,11 +546,12 @@ political_decisions = {
 		}
 	}
 	greek_trabzon = {
+		image = form_byzantine_empire
 		potential = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
-				tag = RME
+				tag = SPQ
 				tag = BYZ
 			}
 			NOT = { has_global_flag = trabzon_be_greek }
@@ -488,6 +587,7 @@ political_decisions = {
 		}
 	}
 	turk_trabzon = {
+		image = tanzimat_reforms
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -521,7 +621,7 @@ political_decisions = {
 	}
 	### Decisions to change New York City name if ahistorical
 ##################
-# 70 ?Prince Edward Island/Epekwitk
+# 70 - Prince Edward Island/Epekwitk
 ##################
 
 	german_70 = {
@@ -765,6 +865,7 @@ political_decisions = {
 		}
 	}
 	greek_70 = {
+		image = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -841,7 +942,7 @@ political_decisions = {
 		}
 	}
 ##################
-# 139 ?New Orleans/Chitimacha
+# 139 - New Orleans/Chitimacha
 # Louisiana/Shreveport
 ##################
 
@@ -1113,6 +1214,7 @@ political_decisions = {
 		}
 	}
 	greek_139 = {
+		image = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -1469,6 +1571,7 @@ political_decisions = {
 		}
 	}
 	greek_232 = {
+		image = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -1798,6 +1901,7 @@ political_decisions = {
 		}
 	}
 	greek_244 = {
+		image = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -2118,6 +2222,7 @@ political_decisions = {
 		}
 	}
 	greek_2510 = {
+		image = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -2438,6 +2543,7 @@ political_decisions = {
 		}
 	}
 	greek_220 = {
+		image = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -2758,6 +2864,7 @@ political_decisions = {
 		}
 	}
 	greek_89 = {
+		image = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -3078,6 +3185,7 @@ political_decisions = {
 		}
 	}
 	greek_84 = {
+		image = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -3507,6 +3615,7 @@ political_decisions = {
 		}
 	}
 	greek_2447 = {
+		image = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -3863,6 +3972,7 @@ political_decisions = {
 		}
 	}
 	greek_2450 = {
+		image = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -4219,6 +4329,7 @@ political_decisions = {
 		}
 	}
 	greek_2348 = {
+		image = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }

@@ -220,3 +220,1357 @@ country_event = {
 	}
 }
 
+country_event = { 
+	id = 350003 
+	title = EVTNAME350003
+	desc = EVTDESC350003
+
+	trigger = { 
+		tag = AOT
+		is_year = 1900
+		any_core = { empty = yes }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA350003
+		any_core = {
+			limit = { empty = yes }
+			secede_province = AOT
+			remove_core = NZL
+		}
+    }
+}
+
+country_event = { 
+	id = 350004
+	title = EVTNAME350004
+	desc = EVTDESC350004
+
+	trigger = { 
+		tag = ABO
+		is_year = 1900
+		any_core = { empty = yes }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA350004
+		any_core = {
+			limit = { empty = yes }
+			secede_province = ABO
+			remove_core = AST
+		}
+    }
+}
+country_event = {
+	id = 350005
+	title = EVTNAME350004B
+	desc = EVTDESC350004B
+	picture = "Riot"
+	
+	trigger = {
+		ai = no
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = EVTOPTA350004B
+		TUR_855 = { # Cyprus
+			limit = {
+				is_core = GRE
+				NOT = { owned_by = BYZ }
+			}
+			remove_core = GRE
+			add_core = CYP
+		}
+		EGY_843 = { # Crete
+			limit = {
+				is_core = GRE
+				NOT = { owned_by = BYZ }
+			}
+			add_core = CRE
+		}
+		EGY_897 = { # Aleppo
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+			add_core = SYR
+		}
+		EGY_903 = { # Damascus
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+			add_core = SYR
+		}
+		EGY_910 = { # Transjordan
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+		}
+		EGY_910 = { add_core = JOR }
+		EGY_915 = { # Lebanon
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+		}
+		EGY_915 = { add_core = LBN }
+		EGY_921 = { # Palestine
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+		}
+		EGY_921 = { add_core = PLS }
+	}
+}
+country_event = {
+	id = 350006
+	title = EVTNAME350005
+	desc = EVTDESC350005
+	picture = "Riot"
+	
+	trigger = {
+		tag = TUR
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = EVTOPTA350005
+		any_owned = {
+			limit = {
+				continent = africa
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_897 = { # Aleppo
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_903 = { # Damascus
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_910 = { # Transjordan
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_915 = { # Lebanon
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_921 = { # Palestine
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		TUR_855 = { # Cyprus
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_843 = { # Crete
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_1842 = { # Darfur
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_1834 = { # Dongola
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_1758 = { # Egyptian Desert
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		ENG_1843 = { # Equatoria
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		ENG_1848 = { # Eritrea
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_1838 = { # Kordofan
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_1750 = { # Lower Egypt
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_1753 = { # Matruh
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_1762 = { # Middle Egypt
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_1746 = { # Sinai
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_1827 = { # Sudan
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		EGY_1771 = { # Upper Egypt
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		create_vassal = EGY
+	}
+}
+
+country_event = {
+	id = 451001
+	title = "EVTNAME451001"
+	desc = "EVTDESC451001"
+	major = yes
+	picture = "Riot"
+	
+	trigger = {
+		NOT = { civilization_progress = 0.5 }
+		civilized = no
+		is_cultural_union = no
+		NOT = { literacy = 0.5 }
+		NOT = { number_of_states = 5 } #Let's avoid big countries getting annexed
+		ai = no
+		has_global_flag = der_postcolonialism
+		OR = {
+			capital_scope = {
+				OR = {
+					continent = africa
+					continent = north_america
+					continent = south_america
+					continent = oceania
+				}
+			}
+			AND = {
+				capital_scope = { continent = asia }
+				capital_scope = { is_core = HND }
+			}
+			AND = {
+				capital_scope = { continent = asia }
+				OR = {
+					capital_scope = { is_core = IDO }
+					capital_scope = { is_core = MLY }
+					capital_scope = { is_core = PHI }
+				}
+				NOT = { tag = IDO }
+				NOT = { tag = MLY }
+				NOT = { tag = PHI }
+			}
+		}
+		sphere_owner = {
+			civilized = yes
+			neighbour = FROM
+			stronger_army_than = FROM
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+		modifier = {
+			factor = 0.75
+			year = 1850
+		}
+		modifier = {
+			factor = 0.75
+			year = 1875
+		}
+		modifier = {
+			factor = 0.75
+			year = 1900
+		}
+		modifier = {
+			factor = 0.5
+			year = 1914
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451001"
+		sphere_owner = { inherit = FROM }
+		sphere_owner = { badboy = 5 }
+	}
+}
+country_event = {
+	id = 451002
+	title = "EVTNAME451002"
+	desc = "EVTDESC451002"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = HES
+		HEK = { exists = no }
+		owns = 566
+		owns = 568
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451002"
+		566 = { add_core = HEK }
+		568 = { add_core = HEK }
+		release = HEK
+		create_vassal = HEK
+	}
+}
+country_event = {
+	id = 451003
+	title = "EVTNAME451003"
+	desc = "EVTDESC451003"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { tag = GER }
+		NOT = { tag = NGF }
+		NOT = { tag = SGF }
+		NOT = { tag = AUS }
+		NOT = { tag = KUK }
+		LIP = { exists = no }
+		owns = 585
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451003"
+		585 = { add_core = LIP }
+		release = LIP
+		create_vassal = LIP
+	}
+}
+country_event = {
+	id = 451004
+	title = "EVTNAME451004"
+	desc = "EVTDESC451004"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = SAX
+			tag = THU
+		}
+		COB = { exists = no }
+		MEI = { exists = no }
+		WEI = { exists = no }
+		owns = 562
+		owns = 563
+		owns = 561
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451004"
+		562 = { add_core = COB }
+		563 = { add_core = MEI }
+		561 = { add_core = WEI }
+		release = COB
+		create_vassal = COB
+		release = MEI
+		create_vassal = MEI
+		release = WEI
+		create_vassal = WEI
+	}
+}
+
+country_event = {
+	id = 451006
+	title = "EVTNAME451006"
+	desc = "EVTDESC451006"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		BHO = { exists = no }
+		IND = { exists = no }
+		JAI = { exists = no }
+		SHI = { exists = no }
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451006"
+		1272 = { add_core = BHO }
+		1271 = { add_core = IND }
+		1268 = { add_core = JAI }
+		1235 = { add_core = SHI }
+		1272 = { any_pop = { militancy = 5 } }
+		1271 = { any_pop = { militancy = 5 } }
+		1268 = { any_pop = { militancy = 5 } }
+		1235 = { any_pop = { militancy = 5 } }
+	}
+}
+country_event = {
+	id = 451005
+	title = "EVTNAME451005"
+	desc = "EVTDESC451005"
+	major = yes
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		ZUL = { exists = no }
+		owns = 2111
+		owns = 2112
+		owns = 2113
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451005"
+		2111 = { add_core = ZUL }
+		2112 = { add_core = ZUL }
+		2113 = { add_core = ZUL }
+		any_pop = {
+			limit = { has_pop_culture = zulu }
+			consciousness = 8
+			militancy = 8
+		}
+	}
+}
+country_event = {
+	id = 450007
+	title = EVTNAME450007
+	desc = EVTDESC450007
+	picture = "jews"
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		owns = 706 # Warsaw
+		year = 1887
+		civilized = yes
+		invention = expressionist_literature
+		literacy = 0.30 #Let's hope they know how to write before books
+	}
+	
+	mean_time_to_happen = {
+		months = 7 #26.7.1887, publication of the Unua Libro
+		modifier = {
+			factor = 0.5
+			month = 7
+		}
+	}
+	
+	option = {
+		name = EVTOPTA450007 #Adopt
+		any_pop = {
+			literacy = 0.001
+		}
+		prestige = 5
+	}
+	
+	option = {
+		name = EVTOPTB450007 #Discard
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = polish
+					has_pop_culture = ashkenazi
+				}
+			}
+			consciousness = 0.5
+		}
+		prestige = 5
+	}
+	
+}
+country_event = {
+	id = 450008
+	title = EVTNAME450008
+	desc = EVTDESC450008
+	picture = "Orthodox"
+	
+	trigger = {
+		NOT = { has_country_flag = formed_in_transcaucasia }
+		NOT = { tag = RUS }
+		NOT = { tag = PER }
+		NOT = { tag = TUR }
+		NOT = {
+			tag = TCA
+			OR = { is_possible_vassal = ARM is_possible_vassal = AZB }
+		}
+		primary_culture = georgian
+		GEO = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+					owned_by = RUS
+					owned_by = PER
+					owned_by = TUR
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_country_flag = formed_in_transcaucasia
+		prestige = 5
+	}
+	option = {
+		name = EVTOPTA450008 #Georgia
+		change_tag = GEO
+		capital = 1090 #Tbilisi
+	}
+	
+}
+country_event = {
+	id = 450009
+	title = EVTNAME450009
+	desc = EVTDESC450009
+	picture = "darwin"
+	
+	trigger = {
+		NOT = { has_country_flag = atheocracy }
+		NOT = { tag = PAP }
+		OR = {
+		religious_policy = pro_atheism
+		religious_policy = secularized
+		}
+		AND = {
+			OR = {
+				tag = KNI
+				tag = TEU
+				tag = LIV
+			}
+			NOT = { government = theocracy }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_country_flag = atheocracy
+		government = absolute_monarchy
+		election = yes
+	}
+	option = {
+		name = EVTOPTA450009 #Knights to Malta
+		limit = {
+			tag = KNI
+			NOT = { exists = MLT }
+		}
+		change_tag = MLT
+		add_accepted_culture = maltese
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { tag = KNI }
+			}
+			modifier = {
+				factor = 0
+				exists = MLT
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB450009 #Teutonic to Prussia
+		limit = {
+			tag = TEU
+			NOT = { exists = PRU }
+		}
+		change_tag = PRU
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { tag = TEU }
+			}
+			modifier = {
+				factor = 0
+				exists = PRU
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC450009 #Livonian to Latvia
+		limit = {
+			tag = LIV
+			NOT = { exists = LAT }
+		}
+		change_tag = LAT
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { tag = LIV }
+			}
+			modifier = {
+				factor = 0
+				exists = LAT
+			}
+		}
+	}
+	option = {
+		name = EVTOPTD450009 #Fallback
+		limit = {
+			OR = {
+				NOT = {
+					tag = KNI
+					tag = TEU
+					tag = LIV
+				}
+				AND = {
+					tag = KNI
+					exists = MLT
+				}
+				AND = {
+					tag = TEU
+					exists = PRU
+				}
+				AND = {
+					tag = LIV
+					exists = LAT
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}	
+	
+}
+country_event = {
+	id = 450010
+	title = EVTNAME450008
+	desc = EVTDESC450008
+	picture = "Orthodox"
+	
+	trigger = {
+		NOT = { has_country_flag = formed_in_transcaucasia }
+		NOT = {
+			tag = TCA
+			OR = { is_possible_vassal = AZB is_possible_vassal = GEO }
+		}
+		NOT = { tag = RUS }
+		NOT = { tag = PER }
+		NOT = { tag = TUR }
+		primary_culture = armenian
+		ARM = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+					owned_by = RUS
+					owned_by = PER
+					owned_by = TUR
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_country_flag = formed_in_transcaucasia
+		prestige = 5
+	}
+	option = {
+		name = EVTOPTB450008 #Armenia
+		change_tag = ARM
+		capital = 1098 #Erivan
+	}
+	
+}
+country_event = {
+	id = 450011
+	title = EVTNAME450008
+	desc = EVTDESC450008
+	picture = "Orthodox"
+	
+	trigger = {
+		NOT = { has_country_flag = formed_in_transcaucasia }
+		NOT = {
+			tag = TCA
+			OR = { is_possible_vassal = ARM is_possible_vassal = GEO }
+		}
+		NOT = { tag = RUS }
+		NOT = { tag = PER }
+		NOT = { tag = TUR }
+		primary_culture = azerbaijani
+		AZB = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+					owned_by = RUS
+					owned_by = PER
+					owned_by = TUR
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_country_flag = formed_in_transcaucasia
+		prestige = 5
+	}
+	option = {
+		name = EVTOPTC450008 #Azerbaijan
+		change_tag = AZB
+		capital = 1102 #Baku
+	}
+	
+}
+country_event = {
+	id = 451001
+	title = "EVTNAME451001"
+	desc = "EVTDESC451001"
+	major = yes
+	picture = "Riot"
+	
+	trigger = {
+		NOT = { civilization_progress = 0.5 }
+		civilized = no
+		is_cultural_union = no
+		NOT = { literacy = 0.5 }
+		NOT = { number_of_states = 5 } #Let's avoid big countries getting annexed
+		ai = no
+		has_global_flag = der_postcolonialism
+		OR = {
+			capital_scope = {
+				OR = {
+					continent = africa
+					continent = north_america
+					continent = south_america
+					continent = oceania
+				}
+			}
+			AND = {
+				capital_scope = { continent = asia }
+				capital_scope = { is_core = HND }
+			}
+			AND = {
+				capital_scope = { continent = asia }
+				OR = {
+					capital_scope = { is_core = IDO }
+					capital_scope = { is_core = MLY }
+					capital_scope = { is_core = PHI }
+				}
+				NOT = { tag = IDO }
+				NOT = { tag = MLY }
+				NOT = { tag = PHI }
+			}
+		}
+		sphere_owner = {
+			civilized = yes
+			neighbour = FROM
+			stronger_army_than = FROM
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+		modifier = {
+			factor = 0.75
+			year = 1850
+		}
+		modifier = {
+			factor = 0.75
+			year = 1875
+		}
+		modifier = {
+			factor = 0.75
+			year = 1900
+		}
+		modifier = {
+			factor = 0.5
+			year = 1914
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451001"
+		sphere_owner = { inherit = FROM }
+		sphere_owner = { badboy = 5 }
+	}
+}
+country_event = {
+	id = 451002
+	title = "EVTNAME451002"
+	desc = "EVTDESC451002"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = HES
+		HEK = { exists = no }
+		owns = 566
+		owns = 568
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451002"
+		566 = { add_core = HEK }
+		568 = { add_core = HEK }
+		release = HEK
+		create_vassal = HEK
+	}
+}
+country_event = {
+	id = 451003
+	title = "EVTNAME451003"
+	desc = "EVTDESC451003"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { tag = GER }
+		NOT = { tag = NGF }
+		NOT = { tag = SGF }
+		NOT = { tag = AUS }
+		NOT = { tag = KUK }
+		NOT = { tag = HLR }
+		LIP = { exists = no }
+		owns = 585
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451003"
+		585 = { add_core = LIP }
+		release = LIP
+		create_vassal = LIP
+	}
+}
+country_event = {
+	id = 451004
+	title = "EVTNAME451004"
+	desc = "EVTDESC451004"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = SAX
+			tag = THU
+		}
+		COB = { exists = no }
+		MEI = { exists = no }
+		WEI = { exists = no }
+		owns = 562
+		owns = 563
+		owns = 561
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451004"
+		562 = { add_core = COB }
+		563 = { add_core = MEI }
+		561 = { add_core = WEI }
+		release = COB
+		create_vassal = COB
+		release = MEI
+		create_vassal = MEI
+		release = WEI
+		create_vassal = WEI
+	}
+}
+ country_event = {
+	id = 451006
+	title = "EVTNAME451006"
+	desc = "EVTDESC451006"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		BHO = { exists = no }
+		IND = { exists = no }
+		JAI = { exists = no }
+		SHI = { exists = no }
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451006"
+		1272 = { add_core = BHO }
+		1271 = { add_core = IND }
+		1268 = { add_core = JAI }
+		1235 = { add_core = SHI }
+		1272 = { any_pop = { militancy = 5 } }
+		1271 = { any_pop = { militancy = 5 } }
+		1268 = { any_pop = { militancy = 5 } }
+		1235 = { any_pop = { militancy = 5 } }
+	}
+}
+country_event = {
+	id = 451005
+	title = "EVTNAME451005"
+	desc = "EVTDESC451005"
+	major = yes
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		ZUL = { exists = no }
+		owns = 2111
+		owns = 2112
+		owns = 2113
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451005"
+		2111 = { add_core = ZUL }
+		2112 = { add_core = ZUL }
+		2113 = { add_core = ZUL }
+		any_pop = {
+			limit = { has_pop_culture = zulu }
+			consciousness = 8
+			militancy = 8
+		}
+	}
+}
+country_event = {
+	id = 450007
+	title = EVTNAME450007
+	desc = EVTDESC450007
+	picture = "jews"
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		owns = 706 # Warsaw
+		year = 1887
+		civilized = yes
+		invention = expressionist_literature
+		literacy = 0.30 #Let's hope they know how to write before books
+	}
+	
+	mean_time_to_happen = {
+		months = 7 #26.7.1887, publication of the Unua Libro
+		modifier = {
+			factor = 0.5
+			month = 7
+		}
+	}
+	
+	option = {
+		name = EVTOPTA450007 #Adopt
+		any_pop = {
+			literacy = 0.001
+		}
+		prestige = 5
+	}
+	
+	option = {
+		name = EVTOPTB450007 #Discard
+		any_pop = {
+			limit = {
+				OR = {
+					has_pop_culture = polish
+					has_pop_culture = ashkenazi
+				}
+			}
+			consciousness = 0.5
+		}
+		prestige = 5
+	}
+	
+}
+## Indonesian colony spread
+province_event = {
+	id = 97130
+	title = "$STATENAME$ Colonial Incorporation"
+	desc = "With the arrival of the $COUNTRY_ADJ$ colonial governor into $PROVINCENAME$, an effort has begun to incorporate $COUNTRY_ADJ$ $STATENAME$ into the larger Indonesian colonial administration."
+	
+	trigger = {
+		OR = {
+			region = BAL_1438 #Sunda
+			region = NET_1398 #Sumatra
+			region = ATJ_1405 #Atjeh
+			region = NET_1423 #South Borneo
+			region = BRU_1394 #North Borneo
+			region = NET_1449 #Moluccas
+			region = NET_1451 #Western New Guinea
+			region = AST_2528 #Southern New Guina
+			region = GER_2530 #Northern New Guinea
+		}
+		owned_by = THIS
+		controlled_by = THIS
+		any_neighbor_province = {
+			is_core = INO
+		}
+		owner = {
+			civilized = yes
+			NOT = { is_culture_group = southeast_asian }
+		}
+		OR = {
+			AND = {
+				owner = { owns = 1413 }
+				INO = { exists = no }
+			}
+			INO = {
+				vassal_of = THIS
+				is_culture_group = THIS
+			}
+		}
+		NOT = {
+			is_core = INO
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = "An excellent development!"
+		state_scope = {
+			any_owned = {
+				limit = {
+					NOT = { is_core = INO }
+				}
+				add_core = INO
+				any_pop = { militancy = -3 }
+				add_province_modifier = {
+					name = colonial_exploitation
+					duration = 1095
+				}
+			}
+		}
+		INO = { add_accepted_culture = malay }
+		state_scope = {
+			any_owned = {
+				limit = { is_core = INO }
+			}
+		}
+	}
+}
+country_event = { 
+	id = 550000
+	title = EVTNAMEBYZ
+	desc = EVTDESCBYZ
+
+	trigger = { 
+		tag = BYZ
+		number_of_states = 3
+		NOT = { has_global_flag = greek_BYZ }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTABYZ
+		set_global_flag = greek_BYZ
+		GRE = {
+			all_core = {
+				add_core = BYZ
+			}
+		}
+		GRE = {
+			all_core = {
+				remove_core = GRE
+			}
+		}
+		GRE = {
+			any_owned = {
+				limit = { is_primary_culture = yes } #workaround to get Greek provinces
+				add_core = GRE
+			}
+		}
+	}
+}
+country_event = { 
+	id = 550001
+	title = EVTNAMEGRE
+	desc = EVTDESCGRE
+
+	trigger = { 
+		NOT = { exists = BYZ }
+		ai = no #So the player will cry at 1453
+		has_global_flag = greek_BYZ
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTAGRE
+		clr_global_flag = greek_BYZ
+		BYZ = {
+			all_core = {
+				limit = { is_primary_culture = yes } #workaround to get Greek provinces
+				add_core = GRE
+			}
+		}
+		BYZ = {
+			all_core = { remove_core = BYZ }
+		}
+	}
+}
+country_event = { 
+	id = 550002
+	title = EVTNAMEITP
+	desc = EVTDESCITP
+
+	trigger = { 
+		tag = ITA
+		government = theocracy
+		NOT = { has_country_flag = ITA_to_ITP }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTAITP
+		set_country_flag = ITA_to_ITP
+		clr_country_flag = ITP_to_ITA
+		all_core = {
+			add_core = ITP
+			remove_core = ITA
+		}
+		change_tag = ITP
+	}
+}
+
+country_event = { 
+	id = 550003
+	title = EVTNAMEITA
+	desc = EVTDESCITA
+
+	trigger = { 
+		tag = ITP
+		NOT = { government = theocracy }
+		NOT = { has_country_flag = ITP_to_ITA }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTAITP
+		set_country_flag = ITP_to_ITA
+		clr_country_flag = ITA_to_ITP
+		all_core = {
+			add_core = ITA
+			remove_core = ITP
+		}
+		change_tag = ITA
+	}
+}
