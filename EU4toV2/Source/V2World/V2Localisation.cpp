@@ -30,7 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 const std::array<std::string, V2Localisation::numLanguages> V2Localisation::languages = 
-	{ "english", "french", "german", "polish", "spanish", "italian", "hungarian", "czech" };
+	{ "english", "french", "german", "polish", "spanish", "italian", "swedish", "czech", "hungarian", "dutch", "portugese", "russian", "finnish" };
 
 void V2Localisation::SetTag(const std::string& newTag)
 {
@@ -141,8 +141,8 @@ std::string V2Localisation::GetLocalAdjective()
 
 std::string V2Localisation::StripAccents(const std::string& text)
 {
-	std::string accents = "àáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ";
-	std::string without = "aaaaaaaceeeeiiiidnooooo ouuuuy y";
+	std::string accents = "Ã Ã¡Ã¢Ã£Ã¤Ã¥Ã¦Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã°Ã±Ã²Ã³Ã´ÃµÃ¶Ã·Ã¸Ã¹ÃºÃ»Ã¼Ã½Ã¾Ã¿Ã€ÃÃ‚ÃƒÃ„Ã…Ã†Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã—Ã˜Ã™ÃšÃ›ÃœÃÃ";
+	std::string without = "aaaaaaaceeeeiiiidnooooooouuuuytyAAAAAAACEEEEIIIIDNOOOOOOOUUUUYT";
 	std::string out(text);
 
 	for (unsigned int i = 0; i < accents.size(); i++)
