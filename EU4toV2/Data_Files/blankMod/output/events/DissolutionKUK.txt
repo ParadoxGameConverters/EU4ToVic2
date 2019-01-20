@@ -1,0 +1,303 @@
+country_event = { #Austria-Hungary destroyed
+	id = 452006
+	title = EVTNAME452006
+	desc = EVTDESC452006
+	picture = "Demonstration"
+	
+	trigger = {
+		has_country_flag = dual_monarchy_done
+		tag = KUK
+		war = no
+		exists = HUN
+		NOT = { is_our_vassal = HUN }
+		has_recently_lost_war = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		clr_country_flag = dual_monarchy_done
+		prestige = -10
+	}
+	option = {
+		name = EVTOPTA452006
+		all_core = {
+			remove_core = KUK
+		}
+		any_pop = {
+			militancy = 2
+		}
+		remove_accepted_culture = hungarian
+		change_tag = AUS
+	}
+}
+country_event = { #Uniting of Somalia
+	id = 452007
+	title = EVTNAME452007
+	desc = EVTDESC452007
+	picture = "Slaves"
+	
+	trigger = {
+		NOT = { has_country_flag = SOM_formed }
+		primary_culture = somali
+		SOM = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+					is_empty = yes
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_country_flag = SOM_formed
+		prestige = 5
+	}
+	option = {
+		name = EVTOPTA452007
+		any_core = {
+			add_core = SOM
+			remove_core = THIS
+		}
+		change_tag = SOM
+	}
+}
+country_event = { #Question of Gypsies
+	id = 452008
+	title = EVTNAME452008
+	desc = EVTDESC452008
+	picture = "Elderly"
+	
+	trigger = {
+		NOT = { exists = GYP }
+		NOT = { has_country_flag = the_gypsy_question }
+		any_owned_province = {
+		any_pop = {
+			has_pop_culture = gypsy
+		}
+		}
+		year = 1840
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+	}
+	
+	immediate = {
+		set_country_flag = the_gypsy_question
+	}
+	option = { #Accepting Gypsies
+		name = EVTOPTA452008
+		add_accepted_culture = gypsy
+		any_pop = {
+			limit = {
+				NOT = { has_pop_culture = gypsy }
+			}
+			militancy = 2
+		}
+		treasury = -10000
+		badboy = -5
+		prestige = -5
+		ai_will_do = {
+			factor = 0.1
+			#modifier = {
+			#	factor = 5
+			#	tag = MKD
+			#}
+			#modifier = {
+			#	factor = 2
+			#	civilized = yes
+			#}
+			#modifier = {
+			#	factor = 2
+			#	OR = {
+			#		ruling_party_ideology = liberal
+			#		ruling_party_ideology = socialist
+			#	}
+			#}
+			#modifier = {
+			#	factor = 5
+			#	OR = {
+			#		NOT = { num_of_cities = 5 }
+			#		NOT = { num_of_states = 2 }
+			#	}
+			#}
+			#modifier = {
+			#	factor = 5
+			#	pop_majority_culture = gypsy
+			#}
+		}
+	}
+	option = { #Refusing Gypsies
+		name = EVTOPTB452008
+		any_pop = {
+			limit = {
+				has_pop_culture = gypsy
+			}
+			militancy = 10
+		}
+		prestige = 5
+		ai_will_do = {
+			factor = 0.9
+			#modifier = {
+			#	factor = 2
+			#	ruling_party_ideology = fascist
+			#}
+			#modifier = {
+			#	factor = 5
+			#	slavery = yes_slavery
+			#}
+			#modifier = {
+			#	factor = 1.5
+			#	NOT = { money = 20000 }
+			#}
+			#modifier = {
+			#	factor = 5
+			#	OR = {
+			#		tag = SPQ
+			#		tag = HRE
+			#		tag = BYZ
+			#		tag = ALI
+			#		tag = UND
+			#		is_cultural_union = yes
+			#	}
+			#}
+		}
+	}
+}
+country_event = { #The Slavic Union
+	id = 452009
+	title = "$COUNTRY$"
+	desc = "$COUNTRY$ managed to unify the three brothers, Lech, Cech, and Rus"
+	picture = "Godunov"
+	
+	trigger = {
+		NOT = { has_global_flag = SLA_exists }
+		tag = SLA
+		exists = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_global_flag = SLA_exists
+		prestige = 5
+	}
+	option = {
+		name = "So may it be."
+		RUS = {
+			any_core = {
+				limit = { NOT = { owned_by = RUS } }
+				add_core = SLA
+				remove_core = RUS
+			}
+		}
+		BYE = {
+			any_core = {
+				limit = { NOT = { owned_by = BYE } }
+				add_core = SLA
+				remove_core = BYE
+			}
+		}
+		UKR = {
+			any_core = {
+				limit = { NOT = { owned_by = UKR } }
+				add_core = SLA
+				remove_core = UKR
+			}
+		}
+		CZH = {
+			any_core = {
+				limit = { NOT = { owned_by = CZH } }
+				add_core = SLA
+				remove_core = CZH
+			}
+		}
+		BOH = {
+			any_core = {
+				limit = { NOT = { owned_by = BOH } }
+				add_core = SLA
+				remove_core = BOH
+			}
+		}
+		SLV = {
+			any_core = {
+				limit = { NOT = { owned_by = SLV } }
+				add_core = SLA
+				remove_core = SLV
+			}
+		}
+		POL = {
+			any_core = {
+				limit = { NOT = { owned_by = POL } }
+				add_core = SLA
+				remove_core = POL
+			}
+		}
+		PLC = {
+			any_core = {
+				limit = { NOT = { owned_by = PLC is_core = LIT } }
+				add_core = SLA
+				remove_core = PLC
+			}
+		}
+		LIT = {
+			any_core = {
+				limit = { NOT = { owned_by = PLC } }
+				remove_core = PLC
+			}
+		}
+		CPL = {
+			any_core = {
+				limit = { NOT = { owned_by = CPL } }
+				add_core = SLA
+				remove_core = CPL
+			}
+		}
+	}
+}
+country_event = { #The Turkish Question
+	id = 452010
+	title = "The Turkish Question"
+	desc = "Since the decline of the Empire of Othman, it is come clear that we are the true country of the Turks"
+	picture = "sultan"
+	
+	trigger = {
+		NOT = { has_global_flag = RUM_best_than_TUR }
+		tag = RUM
+		exists = yes
+		number_of_states = 3
+		NOT = { TUR = { number_of_states = 3 } }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_global_flag = RUM_best_than_TUR
+		prestige = 5
+	}
+	option = {
+		name = "So may it be."
+		TUR = {
+			any_core = {
+				limit = { NOT = { owned_by = TUR } }
+				add_core = RUM
+				remove_core = TUR
+			}
+		}
+	}
+}

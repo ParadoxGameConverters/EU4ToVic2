@@ -1,0 +1,133 @@
+country_event = {
+
+	id = 35300
+
+	trigger = {
+		OR = { tag = ITA tag = ITP }
+		year = 1910
+		NOT = {
+			year = 1913
+		}
+		
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1911
+		}
+
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1912
+		}
+	}
+
+	title = "EVTNAME35300"
+	desc = "EVTDESC35300"
+	picture = "theatre"
+
+	option = {
+		name = "EVTOPTA35300" 
+		prestige = 2
+	}
+}
+
+country_event = {
+
+	id = 35301
+
+	trigger = {
+		OR = { tag = ITA tag = ITP }
+		year = 1902
+		NOT = {
+			year = 1905
+			}
+		
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1903
+		}
+
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1904
+		}
+	}
+
+	title = "EVTNAME35301"
+	desc = "EVTDESC35301"
+	picture = "theatre"
+
+	option = {
+		name = "EVTOPTA35301" 
+		prestige = 3
+	}
+}
+
+country_event = {
+
+	id = 35302 #Parallel to PAP35700
+	title = "EVTNAME35700"
+	desc = "EVTDESC35700"
+	picture = "pope"
+	
+	trigger = {
+		tag = ITA
+		year = 1891
+		NOT = {
+			year = 1894
+			exists = PAP
+			exists = ITP
+			has_global_flag = RerumNovarum
+		}
+	}
+	
+	fire_only_once = yes
+ 
+	mean_time_to_happen =  {
+		months = 5
+
+		modifier = {
+			factor = 0.75 #increase likelihood to happen
+			year = 1892
+		}
+
+
+		modifier = {
+			factor = 0.95 #increase likelihood to happen
+			year = 1893
+		}
+	}
+
+	option = {
+		name = "EVTOPTA35700" 
+		prestige = 5
+		labourers = {
+			consciousness = 1
+		}
+		craftsmen = {
+			consciousness = 1
+		}
+		artisans = {
+			consciousness = 1
+		}
+		soldiers = {
+			consciousness = 1
+		}
+		set_global_flag = RerumNovarum		
+	}
+}

@@ -2,6 +2,12 @@
 #under the rule of Russia in 1836 
 #Chisinau (332000/83000 POPS)  
 676 = {
+	farmers = {
+		culture = gypsy
+		religion = orthodox
+		size = 400
+	}
+	
 	aristocrats = {
 		culture = romanian
 		religion = orthodox
@@ -94,6 +100,12 @@
 }
 #Balti (320000/80000 POPS)  
 677 = {
+	farmers = {
+		culture = gypsy
+		religion = orthodox
+		size = 400
+	}
+	
 	aristocrats = {
 		culture = romanian
 		religion = orthodox

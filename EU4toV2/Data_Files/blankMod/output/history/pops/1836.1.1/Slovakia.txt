@@ -181,6 +181,12 @@
 		religion = catholic
 		size = 13000  
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 2000
+	}
 }
 #Trencin (228000/57000 POPS)
 634 = {
@@ -388,6 +394,12 @@
 		culture = south_german
 		religion = catholic
 		size = 2750  
+	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 3000
 	}
 }
 #Banska Bystrica (224000/56000 POPS)

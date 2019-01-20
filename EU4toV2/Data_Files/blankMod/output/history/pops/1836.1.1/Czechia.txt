@@ -49,6 +49,12 @@
 		religion = catholic
 		size = 3000 
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 11000
+	}
 
 	bureaucrats = {
 		culture = south_german
@@ -357,6 +363,12 @@
 		religion = catholic
 		size = 93100 
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 2100 
+	}
 
 	aristocrats = {
 		culture = south_german
@@ -530,6 +542,12 @@
 		culture = czech
 		religion = catholic
 		size = 173550 
+	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 3550 
 	}
 
 	aristocrats = {
