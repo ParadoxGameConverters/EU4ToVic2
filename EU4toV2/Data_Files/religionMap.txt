@@ -1,4 +1,4 @@
-# Copyright (c) 2018 The Paradox Game Converters Project
+# Copyright (c) 2014 The Paradox Game Converters Project
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -31,8 +31,8 @@ link = { v2 = lollard eu4 = lollard }
 link = { v2 = catholic_heresy eu4 = catholic_heresy }
 link = { v2 = arian eu4 = arian }
 
-link = { v2 = protestant eu4 = protestant eu4 = reformed }
-link = { v2 = protestant_heresy eu4 = protestant_heresy eu4 = reformed_heresy }
+link = { v2 = protestant eu4 = protestant eu4 = reformed eu4 = anglican }
+link = { v2 = protestant_heresy eu4 = protestant_heresy eu4 = reformed_heresy eu4 = anglican_heresy }
 link = { v2 = orthodox eu4 = orthodox }
 link = { v2 = bogomilist eu4 = bogomilist }
 link = { v2 = monothelite eu4 = monothelite }
