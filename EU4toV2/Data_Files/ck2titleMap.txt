@@ -1,4 +1,4 @@
-# Copyright (c) 2018 The Paradox Game Converters Project
+# Copyright (c) 2017 The Paradox Game Converters Project
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -17,6 +17,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
+
+ck2Titles = {
 
 link = { name = "a' charraig" 	 title = "c_carrick" 	 region = "e_britannia" }
 link = { name = "abbasid" 	 title = "d_abbasid" 	 region = "e_mali" }
@@ -183,7 +185,10 @@ link = { name = "andhra" 	 title = "k_andhra" 	 region = "e_deccan" }
 link = { name = "andrinople" 	 title = "d_adrianopolis" 	 region = "e_byzantium" }
 link = { name = "angermanland" 	 title = "c_angermanland" 	 region = "e_scandinavia" }
 link = { name = "anglesey" 	 title = "c_gwynedd" 	 region = "e_britannia" }
+link = { name = "Angleland" 	 title = "k_angleland" 	 region = "e_roman_empire" }
 link = { name = "angleterre" 	 title = "k_england" 	 region = "e_britannia" }
+link = { name = "Anglia" 	 title = "k_angleland" 	 region = "e_roman_empire" }
+link = { name = "Anglie" 	 title = "k_angleland" 	 region = "e_roman_empire" }
 link = { name = "anjou" 	 title = "d_anjou" 	 region = "e_france" }
 link = { name = "ankon" 	 title = "c_ancona" 	 region = "e_italy" }
 link = { name = "antioch" 	 title = "d_antioch" 	 region = "e_arabia" }
@@ -1152,6 +1157,7 @@ link = { name = "empire romain" 	 title = "e_roman_empire" 	 region = "e_roman_e
 link = { name = "empire romain d'occident" 	 title = "e_roman_empire" 	 region = "e_roman_empire" }
 link = { name = "empire romain d'orient" 	 title = "e_byzantium" 	 region = "e_byzantium" }
 link = { name = "empire seldjouk" 	 title = "k_seljuk_turks" 	 region = "e_mali" }
+link = { name = "Empire Vandale" 	 title = "k_vandals" 	 region = "e_roman_empire" }
 link = { name = "empire wende" 	 title = "e_wendish_empire" 	 region = "e_wendish_empire" }
 link = { name = "england" 	 title = "k_england" 	 region = "e_britannia" }
 link = { name = "enkøbing" 	 title = "c_uppland" 	 region = "e_scandinavia" }
@@ -1248,6 +1254,7 @@ link = { name = "francie orientale" 	 title = "k_germany" 	 region = "e_hre" }
 link = { name = "franconia" 	 title = "d_franconia" 	 region = "e_hre" }
 link = { name = "franconie" 	 title = "d_franconia" 	 region = "e_hre" }
 link = { name = "franken" 	 title = "d_franconia" 	 region = "e_hre" }
+link = { name = "Frankish Kingdom" 	 title = "k_frankish" 	 region = "e_roman_empire" }
 link = { name = "frankreich" 	 title = "e_france" 	 region = "e_france" }
 link = { name = "frères vitaliens" 	 title = "d_victual_brothers" 	 region = "e_pirates" }
 link = { name = "fresvik" 	 title = "c_caithness" 	 region = "e_britannia" }
@@ -1267,6 +1274,7 @@ link = { name = "galeras ligurias" 	 title = "d_genoese_navy" 	 region = "e_pira
 link = { name = "galères adriatiques" 	 title = "d_venetian_navy" 	 region = "e_pirates" }
 link = { name = "galères ligures" 	 title = "d_genoese_navy" 	 region = "e_pirates" }
 link = { name = "gales" 	 title = "k_wales" 	 region = "e_britannia" }
+link = { name = "Galia" 	 title = "e_gaul" 	 region = "e_roman_empire" }
 link = { name = "galice" 	 title = "k_spanish_galicia" 	 region = "e_spain" }
 link = { name = "galich" 	 title = "d_galich" 	 region = "e_russia" }
 link = { name = "galicia" 	 title = "k_spanish_galicia" 	 region = "e_spain" }
@@ -1280,6 +1288,7 @@ link = { name = "galizien" 	 title = "k_spanish_galicia" 	 region = "e_spain" }
 link = { name = "gall-ghaidhealaibh" 	 title = "d_galloway" 	 region = "e_britannia" }
 link = { name = "galladd" 	 title = "c_lothian" 	 region = "e_britannia" }
 link = { name = "gallath" 	 title = "c_lothian" 	 region = "e_britannia" }
+link = { name = "Gallia" 	 title = "e_gaul" 	 region = "e_roman_empire" }
 link = { name = "galloway" 	 title = "d_galloway" 	 region = "e_britannia" }
 link = { name = "Gallura" 	 title = "c_gallura" 	 region = "e_italy" }
 link = { name = "gandhara" 	 title = "d_gandhara" 	 region = "e_rajastan" }
@@ -1298,6 +1307,8 @@ link = { name = "gartán" 	 title = "c_tyrconnell" 	 region = "e_britannia" }
 link = { name = "gascogne" 	 title = "d_gascogne" 	 region = "e_france" }
 link = { name = "gascuña" 	 title = "d_gascogne" 	 region = "e_france" }
 link = { name = "gauda" 	 title = "d_gauda" 	 region = "e_bengal" }
+link = { name = "Gaul" 	 title = "e_gaul" 	 region = "e_roman_empire" }
+link = { name = "Gaule" 	 title = "e_gaul" 	 region = "e_roman_empire" }
 link = { name = "gauthiod" 	 title = "d_geats" 	 region = "e_mali" }
 link = { name = "gaya" 	 title = "c_gaya" 	 region = "e_bengal" }
 link = { name = "gdansk" 	 title = "c_danzig" 	 region = "e_wendish_empire" }
@@ -1694,6 +1705,7 @@ link = { name = "kalaberd" 	 title = "c_albania" 	 region = "e_byzantium" }
 link = { name = "kalabrien" 	 title = "d_calabria" 	 region = "e_byzantium" }
 link = { name = "kaladasht" 	 title = "c_albania" 	 region = "e_byzantium" }
 link = { name = "kalanjara" 	 title = "c_kalanjara" 	 region = "e_rajastan" }
+link = { name = "kalava" 	 title = "d_kaleva" 	 region = "e_wendish_empire" }
 link = { name = "kalinga" 	 title = "d_kalinga" 	 region = "e_bengal" }
 link = { name = "kalinganagar" 	 title = "c_kalinganagar" 	 region = "e_bengal" }
 link = { name = "kallipolis" 	 title = "c_kaliopolis" 	 region = "e_byzantium" }
@@ -1931,6 +1943,7 @@ link = { name = "landreger" 	 title = "c_french_leon" 	 region = "e_france" }
 link = { name = "landun" 	 title = "c_carrick" 	 region = "e_britannia" }
 link = { name = "laner" 	 title = "c_fife" 	 region = "e_britannia" }
 link = { name = "lanerc" 	 title = "c_clydesdale" 	 region = "e_britannia" }
+link = { name = "Langobards" 	 title = "k_lombardia" 	 region = "e_roman_empire" }
 link = { name = "langoned" 	 title = "c_cornouaille" 	 region = "e_france" }
 link = { name = "lanirc" 	 title = "c_clydesdale" 	 region = "e_britannia" }
 link = { name = "lanka" 	 title = "k_lanka" 	 region = "e_deccan" }
@@ -1949,6 +1962,7 @@ link = { name = "las islas occidentales" 	 title = "d_the_isles" 	 region = "e_m
 link = { name = "las tierras del norte" 	 title = "d_norrland" 	 region = "e_scandinavia" }
 link = { name = "lata" 	 title = "d_lata" 	 region = "e_rajastan" }
 link = { name = "lateinisches kaiserreich" 	 title = "e_latin_empire" 	 region = "e_latin_empire" }
+link = { name = "latgale" 	 title = "d_latgale" 	 region = "e_wendish_empire" }
 link = { name = "latgaliens" 	 title = "d_lettigalians" 	 region = "e_mali" }
 link = { name = "lathaeron" 	 title = "c_caithness" 	 region = "e_britannia" }
 link = { name = "latharan" 	 title = "c_caithness" 	 region = "e_britannia" }
@@ -1989,7 +2003,7 @@ link = { name = "leon" 	 title = "k_leon" 	 region = "e_spain" }
 link = { name = "león" 	 title = "k_leon" 	 region = "e_spain" }
 link = { name = "les fylkirate" 	 title = "d_norse_pagan_reformed" 	 region = "e_mexikha" }
 link = { name = "les seigneurs du ciel" 	 title = "d_sky_lords" 	 region = "e_pirates" }
-link = { name = "lettgallen" 	 title = "c_west_dvina" 	 region = "e_wendish_empire" }
+link = { name = "lettgallen" 	 title = "d_latgale" 	 region = "e_wendish_empire" }
 link = { name = "lettigaller" 	 title = "d_lettigalians" 	 region = "e_mali" }
 link = { name = "lettigallians" 	 title = "d_lettigalians" 	 region = "e_mali" }
 link = { name = "leum" 	 title = "c_faereyar" 	 region = "e_scandinavia" }
@@ -2344,6 +2358,8 @@ link = { name = "nesborg" 	 title = "c_ostergotland" 	 region = "e_scandinavia" 
 link = { name = "neu sandez" 	 title = "c_sacz" 	 region = "e_wendish_empire" }
 link = { name = "neuadduchel" 	 title = "c_innse_gall" 	 region = "e_britannia" }
 link = { name = "neuburg" 	 title = "c_abauj" 	 region = "e_carpathia" }
+link = { name = "Neustria" 	 title = "k_neustria" 	 region = "e_roman_empire" }
+link = { name = "Neustrie" 	 title = "k_neustria" 	 region = "e_roman_empire" }
 link = { name = "neutra" 	 title = "c_nitra" 	 region = "e_carpathia" }
 link = { name = "nevajärvi" 	 title = "c_bezhetsky_verh" 	 region = "e_russia" }
 link = { name = "nevanlinna" 	 title = "c_vodi" 	 region = "e_scandinavia" }
@@ -2467,7 +2483,7 @@ link = { name = "Øsel" 	 title = "c_osel" 	 region = "e_wendish_empire" }
 link = { name = "osmanische türken" 	 title = "k_ottoman" 	 region = "e_mali" }
 link = { name = "osraige" 	 title = "c_ossory" 	 region = "e_britannia" }
 link = { name = "Østerås" 	 title = "c_uppland" 	 region = "e_scandinavia" }
-link = { name = "Österbotten" 	 title = "c_osterbotten" 	 region = "e_scandinavia" }
+link = { name = "Österbotten" 	 title = "d_ostrobothnia" 	 region = "e_scandinavia" }
 link = { name = "Østerbotten" 	 title = "c_osterbotten" 	 region = "e_scandinavia" }
 link = { name = "Östergötland" 	 title = "d_ostergotland" 	 region = "e_scandinavia" }
 link = { name = "Østergøtland" 	 title = "c_ostergotland" 	 region = "e_scandinavia" }
@@ -2478,7 +2494,15 @@ link = { name = "Östkarelen" 	 title = "c_karelen" 	 region = "e_scandinavia" }
 link = { name = "Østkarelen" 	 title = "c_karelen" 	 region = "e_scandinavia" }
 link = { name = "ostlandet" 	 title = "d_ostlandet" 	 region = "e_scandinavia" }
 link = { name = "ostrihom" 	 title = "c_esztergom" 	 region = "e_carpathia" }
+link = { name = "ostrobothnia" 	 title = "d_ostrobothnia" 	 region = "e_scandinavia" }
+link = { name = "ostrobotnia" 	 title = "d_ostrobothnia" 	 region = "e_scandinavia" }
+link = { name = "ostrobotnie" 	 title = "d_ostrobothnia" 	 region = "e_scandinavia" }
 link = { name = "ostrogon" 	 title = "c_esztergom" 	 region = "e_carpathia" }
+link = { name = "Ostrogothic Kingdom" 	 title = "k_ostrogoths" 	 region = "e_roman_empire" }
+link = { name = "Ostrogothica" 	 title = "k_ostrogoths" 	 region = "e_roman_empire" }
+link = { name = "Ostrogothie" 	 title = "k_ostrogoths" 	 region = "e_roman_empire" }
+link = { name = "Ostrogoths" 	 title = "k_ostrogoths" 	 region = "e_roman_empire" }
+link = { name = "Ostrogótica" 	 title = "k_ostrogoths" 	 region = "e_roman_empire" }
 link = { name = "oströmisches reich" 	 title = "e_byzantium" 	 region = "e_byzantium" }
 link = { name = "ottoman turks" 	 title = "k_ottoman" 	 region = "e_mali" }
 link = { name = "ottoman" 	 title = "k_ottoman" 	 region = "e_mali" }
@@ -2581,6 +2605,7 @@ link = { name = "pleskau" 	 title = "c_pskov" 	 region = "e_russia" }
 link = { name = "ploermael" 	 title = "c_vannes" 	 region = "e_france" }
 link = { name = "ploni" 	 title = "c_plauen" 	 region = "e_hre" }
 link = { name = "plourivoù" 	 title = "c_french_leon" 	 region = "e_france" }
+link = { name = "pohjanmaa" 	 title = "d_ostrobothnia" 	 region = "e_scandinavia" }
 link = { name = "poitou" 	 title = "d_poitou" 	 region = "e_france" }
 link = { name = "Pokhara" 	 title = "c_pokhara" 	 region = "e_tibet" }
 link = { name = "poland" 	 title = "k_poland" 	 region = "e_wendish_empire" }
@@ -2695,7 +2720,10 @@ link = { name = "rebellen" 	 title = "e_rebels" 	 region = "e_rebels" }
 link = { name = "rebelles" 	 title = "e_rebels" 	 region = "e_rebels" }
 link = { name = "rebels" 	 title = "e_rebels" 	 region = "e_rebels" }
 link = { name = "redan" 	 title = "c_atholl" 	 region = "e_britannia" }
+link = { name = "Reino Franco" 	 title = "k_frankish" 	 region = "e_roman_empire" }
+link = { name = "Reino Vándalo" 	 title = "k_vandals" 	 region = "e_roman_empire" }
 link = { name = "reni" 	 title = "c_reni" 	 region = "e_rajastan" }
+link = { name = "Res Publica" 	 title = "e_roman_empire" 	 region = "e_roman_empire" }
 link = { name = "resan" 	 title = "c_isle_of_man" 	 region = "e_britannia" }
 link = { name = "resyn" 	 title = "c_isle_of_man" 	 region = "e_britannia" }
 link = { name = "reval" 	 title = "c_reval" 	 region = "e_scandinavia" }
@@ -2730,6 +2758,7 @@ link = { name = "rosko" 	 title = "c_french_leon" 	 region = "e_france" }
 link = { name = "rostov" 	 title = "d_rostov" 	 region = "e_russia" }
 link = { name = "rostow" 	 title = "d_rostov" 	 region = "e_russia" }
 link = { name = "rothas" 	 title = "c_rothas" 	 region = "e_bengal" }
+link = { name = "Royaume des Francs" 	 title = "k_frankish" 	 region = "e_roman_empire" }
 link = { name = "rum" 	 title = "k_rum" 	 region = "e_mali" }
 link = { name = "rüm" 	 title = "k_rum" 	 region = "e_mali" }
 link = { name = "rus band" 	 title = "d_rus_band" 	 region = "d_rus_band" }
@@ -2817,6 +2846,9 @@ link = { name = "sarkel" 	 title = "d_sarkel" 	 region = "e_tartaria" }
 link = { name = "saruhan" 	 title = "k_saruhan" 	 region = "e_mali" }
 link = { name = "saryupara" 	 title = "d_saryupara" 	 region = "e_rajastan" }
 link = { name = "sasana" 	 title = "k_england" 	 region = "e_britannia" }
+link = { name = "Sassanid" 	 title = "e_sassanid" 	 region = "e_roman_empire" }
+link = { name = "Sassanid Empire" 	 title = "e_sassanid" 	 region = "e_roman_empire" }
+link = { name = "Sassanids" 	 title = "e_sassanid" 	 region = "e_roman_empire" }
 link = { name = "sasaram" 	 title = "c_sasaram" 	 region = "e_bengal" }
 link = { name = "satakunda" 	 title = "d_satakunta" 	 region = "e_mali" }
 link = { name = "satakunta" 	 title = "d_satakunta" 	 region = "e_mali" }
@@ -2825,8 +2857,11 @@ link = { name = "satakuntans" 	 title = "d_satakunta" 	 region = "e_mali" }
 link = { name = "satyapura" 	 title = "c_satyapura" 	 region = "e_rajastan" }
 link = { name = "saurashtra" 	 title = "d_saurashtra" 	 region = "e_rajastan" }
 link = { name = "sauvira" 	 title = "d_sauvira" 	 region = "e_rajastan" }
+link = { name = "savo" 	 title = "d_savonia" 	 region = "e_scandinavia" }
 link = { name = "savoie" 	 title = "d_savoie" 	 region = "e_france" }
 link = { name = "savolax" 	 title = "c_savolaks" 	 region = "e_scandinavia" }
+link = { name = "savonia" 	 title = "d_savonia" 	 region = "e_scandinavia" }
+link = { name = "savonie" 	 title = "d_savonia" 	 region = "e_scandinavia" }
 link = { name = "savoy" 	 title = "d_savoie" 	 region = "e_france" }
 link = { name = "savoyen" 	 title = "d_savoie" 	 region = "e_france" }
 link = { name = "saxe" 	 title = "k_saxony" 	 region = "k_saxony" }
@@ -2946,6 +2981,7 @@ link = { name = "søderkøping" 	 title = "c_ostergotland" 	 region = "e_scandin
 link = { name = "sødermanland" 	 title = "c_sodermanland" 	 region = "e_scandinavia" }
 link = { name = "sofia" 	 title = "c_serdica" 	 region = "e_byzantium" }
 link = { name = "söhne von kaleva" 	 title = "d_sons_kaleva" 	 region = "e_pirates" }
+link = { name = "Soissons" 	 title = "k_soissons" 	 region = "e_roman_empire" }
 link = { name = "sõlabyr" 	 title = "c_isle_of_man" 	 region = "e_britannia" }
 link = { name = "sølvesborg slott" 	 title = "c_blekinge" 	 region = "e_scandinavia" }
 link = { name = "sølvesborg" 	 title = "c_blekinge" 	 region = "e_scandinavia" }
@@ -3006,8 +3042,10 @@ link = { name = "suabia" 	 title = "d_swabia" 	 region = "e_hre" }
 link = { name = "suakin" 	 title = "c_suakin" 	 region = "e_abyssinia" }
 link = { name = "sudermanland" 	 title = "c_sodermanland" 	 region = "e_scandinavia" }
 link = { name = "suðreyjar" 	 title = "c_innse_gall" 	 region = "e_britannia" }
+link = { name = "Suebia" 	 title = "k_suebia" 	 region = "e_roman_empire" }
 link = { name = "suecia" 	 title = "k_sweden" 	 region = "e_scandinavia" }
 link = { name = "suède" 	 title = "k_sweden" 	 region = "e_scandinavia" }
+link = { name = "Suèvie" 	 title = "k_suebia" 	 region = "e_roman_empire" }
 link = { name = "suhma" 	 title = "d_suhma" 	 region = "e_bengal" }
 link = { name = "suisse" 	 title = "d_swiss" 	 region = "e_mali" }
 link = { name = "suivants d'arjuna" 	 title = "d_followers_arjuna" 	 region = "e_pirates" }
@@ -3309,6 +3347,12 @@ link = { name = "valencia" 	 title = "d_valencia" 	 region = "e_spain" }
 link = { name = "valència" 	 title = "d_valencia" 	 region = "e_spain" }
 link = { name = "valmiera" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
 link = { name = "valois" 	 title = "d_valois" 	 region = "e_france" }
+link = { name = "Vandal Empire" 	 title = "k_vandals" 	 region = "e_roman_empire" }
+link = { name = "Vandal Kingdom" 	 title = "k_vandals" 	 region = "e_roman_empire" }
+link = { name = "Vandalica" 	 title = "k_vandals" 	 region = "e_roman_empire" }
+link = { name = "Vandálica" 	 title = "k_vandals" 	 region = "e_roman_empire" }
+link = { name = "Vandalie" 	 title = "k_vandals" 	 region = "e_roman_empire" }
+link = { name = "Vandals" 	 title = "k_vandals" 	 region = "e_roman_empire" }
 link = { name = "vanga" 	 title = "d_vanga" 	 region = "e_bengal" }
 link = { name = "varaklani" 	 title = "c_west_dvina" 	 region = "e_wendish_empire" }
 link = { name = "varanasi" 	 title = "c_varanasi" 	 region = "e_bengal" }
@@ -3358,6 +3402,10 @@ link = { name = "videm" 	 title = "c_aquileia" 	 region = "e_hre" }
 link = { name = "vidharba" 	 title = "d_vidharba" 	 region = "e_deccan" }
 link = { name = "vidin" 	 title = "d_vidin" 	 region = "e_byzantium" }
 link = { name = "vidisa" 	 title = "c_vidisa" 	 region = "e_rajastan" }
+link = { name = "Visigothia" 	 title = "k_visigoths" 	 region = "e_roman_empire" }
+link = { name = "Visigothic Empire" 	 title = "k_visigoths" 	 region = "e_roman_empire" }
+link = { name = "Visigoths" 	 title = "k_visigoths" 	 region = "e_roman_empire" }
+link = { name = "Visigótica" 	 title = "k_visigoths" 	 region = "e_roman_empire" }
 link = { name = "vijayapura" 	 title = "c_vijayapura" 	 region = "e_bengal" }
 link = { name = "vijayawada" 	 title = "c_vijayawada" 	 region = "e_deccan" }
 link = { name = "vijnot" 	 title = "c_vijnot" 	 region = "e_rajastan" }
@@ -3411,6 +3459,7 @@ link = { name = "weströmisches reich" 	 title = "e_roman_empire" 	 region = "e_
 link = { name = "white company" 	 title = "d_white_company" 	 region = "d_white_company" }
 link = { name = "widin" 	 title = "d_vidin" 	 region = "e_byzantium" }
 link = { name = "wielkopolska" 	 title = "d_wielkopolska" 	 region = "e_mali" }
+link = { name = "Wisigothie" 	 title = "k_visigoths" 	 region = "e_roman_empire" }
 link = { name = "witebsk" 	 title = "d_vitebsk" 	 region = "e_russia" }
 link = { name = "wjatitschen" 	 title = "d_vyatichi" 	 region = "e_mali" }
 link = { name = "wladimir" 	 title = "d_vladimir" 	 region = "e_russia" }
@@ -3574,3 +3623,4 @@ link = { name = "macedonia" title = "MKD" region = "e_byzantium" }
 link = { name = "macédoine" title = "MKD" region = "e_byzantium" }
 link = { name = "mazedonien" title = "MKD" region = "e_byzantium" }
 link = { name = "alaska" title = "LSK" region = "e_russia" }
+}
