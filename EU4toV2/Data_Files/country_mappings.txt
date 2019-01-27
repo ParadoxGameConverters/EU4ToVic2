@@ -1161,7 +1161,7 @@ link = { EU4 = LFA Vic2 = LAN } # Lanfang
 link = { EU4 = LNO Vic2 = LNO } # Lanao
 link = { EU4 = LUW Vic2 = LUW } # Luwu
 link = { EU4 = MGD Vic2 = MGD } # Maguindanao
-link = { EU4 = TER Vic2 = TRN } # Ternate
+link = { EU4 = TER Vic2 = TTE } # Ternate
 link = { EU4 = TID Vic2 = TID } # Tidore
 link = { EU4 = MAS Vic2 = MDS } # Madya-as
 link = { EU4 = PGS Vic2 = PGS } # Pangasinan

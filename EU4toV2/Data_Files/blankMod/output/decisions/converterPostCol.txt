@@ -109,24 +109,9 @@ political_decisions = {
 			MEX_100 = { add_core = DES }
 			MEX_85 = { add_core = CAL } #California
 			SPA_2209 = { add_core = CUB } #Cuba
-			HAI_2213 = { #Haiti
-				limit = {
-					NOT = {
-						is_primary_culture = spanish
-						is_primary_culture = caribeno
-					}
-				}
-				add_core = HAI
-			}
-			HAI_2213 = { #Santo Domingo
-				limit = {
-					OR = {
-						is_primary_culture = spanish
-						is_primary_culture = caribeno
-					}
-				}
-				add_core = DOM
-			}
+			HAI_2213 = { add_core = HAI } #Haiti
+			2214 = { add_core = DOM } #Santo Domingo
+			2216 = { add_core = DOM }
 			UCA_2201 = { #Costa Rica
 				add_core = COS
 				add_core = UCA

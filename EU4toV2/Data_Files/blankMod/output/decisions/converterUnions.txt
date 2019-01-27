@@ -3361,6 +3361,25 @@ political_decisions = {
 				}
 				primary_culture = english
 			}
+			any_country = {
+				OR = {
+					tag = AUS
+					tag = GER
+					tag = KUK
+				}
+				703 = { secede_province = KRA add_core = KRA } #Krakow
+			}
+			any_country = {
+				limit = {
+					NOT = { exists = MON }
+					owns = 2583 #Cetinje
+				}
+				2583 = { secede_province = MON }
+			}
+			any_country = {
+				limit = { owns = 418 } # Caen
+				77 = { secede_province = THIS add_core = THIS } #Saint Pierre & Miquelon
+			}
 			set_global_flag = taiping_and_csa
 		}
 		ai_will_do = {
