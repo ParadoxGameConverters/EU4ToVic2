@@ -2,43 +2,43 @@
 #La Coruna (796000/199000 POPS)
 474 = {
 	aristocrats = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 2200
 	}
 
 	officers = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 450
 	}
 
 	bureaucrats = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 650
 	}
 
 	clergymen = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 2000
 	}
 
 	artisans = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 6350
 	}
 
 	soldiers = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 3000
 	}
 
 	farmers = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 154350
 	}
@@ -46,31 +46,31 @@
 #Oviedo (448000/112000 POPS)
 475 = {
 	aristocrats = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 1100
 	}
 
 	clergymen = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 1050
 	}
 
 	artisans = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 5000
 	}
 
 	soldiers = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 1100
 	}
 
 	farmers = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 10850
 	}
@@ -96,31 +96,31 @@
 #Vigo (328000/82000 POPS)
 476 = {
 	aristocrats = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 700
 	}
 
 	clergymen = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 800
 	}
 
 	artisans = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 4000
 	}
 
 	soldiers = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 1100
 	}
 
 	farmers = {
-		culture = spanish
+		culture = galician
 		religion = catholic
 		size = 75500
 	}

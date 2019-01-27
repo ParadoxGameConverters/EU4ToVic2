@@ -195,6 +195,12 @@
 		religion = protestant
 		size = 1750
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 5750
+	}
 
 	soldiers = {
 		culture = hungarian
@@ -502,6 +508,12 @@
 		culture = hungarian
 		religion = protestant
 		size =  40050    
+	}
+
+	farmers = {
+		culture = gypsy
+		religion = protestant
+		size =  3000    
 	}
 
 	clergymen = {

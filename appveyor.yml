@@ -1,11 +1,15 @@
 version: dev.{build}
 skip_tags: true
 image: Visual Studio 2019 Preview
+environment:
+  BOOST_INCLUDE: C:\Libraries\boost_1_67_0
 build_script:
 - cmd: >-
     git submodule update --init --recursive
 
     msbuild EU4ToVic2.sln -property:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+    msbuild EU4toV2/EU4ToV2.vcxproj -property:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 test_script:
 - ps: vstest.console /logger:Appveyor frontend\Frontend.Core.Tests\bin\Release\Frontend.Core.Tests.dll
 artifacts:

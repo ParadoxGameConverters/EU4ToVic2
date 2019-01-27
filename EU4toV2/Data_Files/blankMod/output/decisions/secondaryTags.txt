@@ -1,0 +1,157 @@
+political_decisions = {
+	congress_poland = {
+		picture = form_poland_lithuania
+		potential = {
+			OR = {
+				tag = RUS
+				tag = SLA
+				AND = {
+					NOT = { exists = RUS }
+					NOT = { exists = SLA }
+					is_greater_power = yes
+				}
+			}
+			NOT = { is_culture_group = german } #Germans would laugh at you
+			NOT = { tag = ALI } #Reasoning
+			NOT = { exists = POL }
+			NOT = { exists = PLC }
+			NOT = { exists = CPL }
+			NOT = { has_global_flag = congress_poland }
+			is_possible_vassal = POL
+			war = no
+			NOT = { accepted_culture = polish }
+			POL = { any_core = { NOT = { owned_by = THIS } } }
+		}	
+		allow = {
+			NOT = { accepted_culture = polish }
+			is_possible_vassal = POL
+			owns = 706 #Warsaw
+		}
+		
+		effect = {
+			set_global_flag = congress_poland
+			any_owned = { limit = { is_core = POL } remove_core = POL add_core = CPL }
+			release = CPL
+			create_vassal = CPL
+			diplomatic_influence = {
+				who = CPL
+				value = 200
+			}
+			CPL = {
+				relation = {
+					who = FROM
+					value = 100
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	de_congress_poland = {
+		picture = form_poland_lithuania
+		potential = {
+			tag = CPL
+			has_global_flag = congress_poland
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			owns = 706 #Warsaw
+		}
+		
+		effect = {
+			prestige = 10
+			clr_global_flag = congress_poland
+			any_owned = { limit = { is_core = CPL } remove_core = CPL add_core = POL }
+			change_tag = POL
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_transcaucasia = {
+		picture = protect_eastern_christians
+		potential = {
+			OR = {
+				primary_culture = georgian
+				primary_culture = armenian
+				primary_culture = azerbaijani
+			}
+			NOT = {
+				exists = TCA
+				tag = RUS
+				tag = SLA
+				tag = TUR
+				tag = PER
+			}
+		}
+		allow = {
+			war = no
+			prestige = 5
+			GEO = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+			ARM = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+			AZB = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					OR = {
+						capital_scope = { continent = europe }
+						capital_scope = { continent = asia }
+					}
+					OR = {
+						primary_culture = georgian
+						primary_culture = armenian
+						primary_culture = azerbaijani
+					}
+				}
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = TCA
+			}			
+			
+			change_tag = TCA
+			add_accepted_culture = georgian
+			add_accepted_culture = armenian
+			add_accepted_culture = azerbaijani
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

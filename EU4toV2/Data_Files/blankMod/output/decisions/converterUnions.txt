@@ -39,14 +39,29 @@ political_decisions = {
 				country_event = 250003
 				clr_country_flag = member_hre
 			}
+			GER = { all_core = { remove_core = GER add_core = HRE } }
 		}
 	}
 	form_two_sicilies = {
 		potential = {
-			primary_culture = south_italian
+			OR = {
+				AND = {
+					primary_culture = south_italian
+					NOT = { exists = SCY }
+					NOT = { exists = NAP }
+				}
+				AND = {
+					tag = NAP
+					NOT = { exists = SCY }
+				}
+				AND = {
+					tag = SCY
+					NOT = { exists = NAP }
+				}
+			}
 			NOT = { exists = SIC }
 			NOT = { exists = ITA }
-			NOT = { tag = RME }
+			NOT = { tag = SPQ }
 			NOT = { tag = BYZ }
 			NOT = { tag = PAP }
 		}
@@ -130,7 +145,7 @@ political_decisions = {
 		}
 	}
 
-	taiping_and_csa = { #creates Taiping and the CSA to prevent bugs in converted games
+	taiping_and_csa = { #creates Taiping and the CSA to prevent bugs in converted games, corrects cultures
 		potential = {
 			is_greater_power = yes
 			ai = yes
@@ -146,6 +161,75 @@ political_decisions = {
 			USA_129 = { add_core = CSA } #Dixieland for the ACW
 			
 			CHI_1476 = { add_core = TPG } #Taiping Heavenly Kingdom (for event)
+			#Former colonies
+			any_country = {
+				limit = {
+					NOT = {
+						is_culture_group = oceanic
+						is_culture_group = native_central_american
+						is_culture_group = native_south_american
+						is_culture_group = native_north_american
+						is_culture_group = native_caribbean
+						is_culture_group = non_human
+						is_culture_group = southern_african
+						is_culture_group = east_african
+						is_culture_group = central_african
+						is_culture_group = west_african
+					}
+					capital_scope = {
+						OR = {
+							continent = north_america
+							continent = south_america
+							continent = oceania
+							AND = {
+								continent = africa
+								NOT = {
+									state_id = 1704 #Tlemcen
+									state_id = 1708 #Constantine
+									state_id = 1714 #Western Sahara
+									state_id = 1718 #Sahara
+									state_id = 1746 #Sinai
+									state_id = 1750 #Lower Egypt
+									state_id = 1753 #Matruh
+									state_id = 1754 #Libya
+									state_id = 1758 #Egyptian Desert
+									state_id = 1762 #Middle Egypt
+									state_id = 1771 #Upper Egypt
+									state_id = 1700 #Algiers
+									state_id = 1683 #Taza
+									state_id = 1686 #Fez
+									state_id = 1688 #al-Rif
+									state_id = 1693 #Morocco
+									state_id = 1696 #West Morocco
+									state_id = 1739 #Fezzan
+									state_id = 1743 #Tripoli
+								}
+							}
+						}
+					}
+				}
+				set_country_flag = buro_independence
+			}
+			#Native special - avoiding Iroquois forming USA 2c.
+			any_country = {
+				limit = {
+					OR = {
+						is_culture_group = oceanic
+						is_culture_group = native_central_american
+						is_culture_group = native_south_american
+						is_culture_group = native_north_american
+						is_culture_group = native_caribbean
+						is_culture_group = non_human
+						is_culture_group = southern_african
+						is_culture_group = east_african
+						is_culture_group = central_african
+						is_culture_group = west_african
+					}
+				}
+				set_country_flag = precolonial
+			}
+			MTC = { set_country_flag = precolonial } # Métis Confederacy
+			#Countries not Vanilla in EU4 or Vic2
 			any_country = { #Trapalandia
 				limit = {
 					tag = TRL
@@ -156,6 +240,7 @@ political_decisions = {
 				government = theocracy
 				civilized = yes
 				capital = 2131
+				set_country_flag = precolonial
 			}
 			any_country = { #Alaska
 				limit = {
@@ -170,8 +255,8 @@ political_decisions = {
 			}
 			any_country = { #Macedonia
 				limit = {
-					tag = MKD
-					NOT = { exists = MKD }
+					tag = MCD
+					NOT = { exists = MCD }
 				}
 				primary_culture = macedonian
 				religion = orthodox
@@ -189,6 +274,353 @@ political_decisions = {
 				government = theocracy
 				civilized = yes
 				capital = 1077
+				set_country_flag = precolonial
+				#All techs already unlocked
+				activate_technology = ad_hoc_money_bill_printing
+				activate_technology = advanced_metallurgy
+				activate_technology = advanced_naval_design
+				activate_technology = aeronautics
+				activate_technology = alphabetic_flag_signaling
+				activate_technology = analytic_philosophy
+				activate_technology = anti__rationalism
+				activate_technology = army_command_principle
+				activate_technology = army_decision_making
+				activate_technology = army_nco_training
+				activate_technology = army_professionalism
+				activate_technology = army_risk_management
+				activate_technology = assembly_line
+				activate_technology = associationism
+				activate_technology = bank_inspection_board
+				activate_technology = basic_chemistry
+				activate_technology = battleship_column_doctrine
+				activate_technology = behaviorism
+				activate_technology = biologism
+				activate_technology = blue_and_brown_water_schools
+				activate_technology = bolt_action_rifles
+				activate_technology = breech_loaded_rifles
+				activate_technology = bronze_muzzle_loaded_artillery
+				activate_technology = business_banks
+				activate_technology = business_regulations
+				activate_technology = central_bank_money_bill_printing
+				activate_technology = cheap_iron
+				activate_technology = cheap_steel
+				activate_technology = classicism_n_early_romanticism
+				activate_technology = clean_coal
+				activate_technology = clipper_design
+				activate_technology = collectivist_theory
+				activate_technology = combustion_engine
+				activate_technology = deep_defense_system
+				activate_technology = early_classical_theory_and_critique
+				activate_technology = early_railroad
+				activate_technology = economic_responsibility
+				activate_technology = electric_furnace
+				activate_technology = electrical_power_generation
+				activate_technology = electricity
+				activate_technology = empiricism
+				activate_technology = enlightenment_thought
+				activate_technology = experimental_psychology
+				activate_technology = experimental_railroad
+				activate_technology = expressionism
+				activate_technology = fire_control_systems
+				activate_technology = flintlock_rifles
+				activate_technology = freedom_of_trade
+				activate_technology = functionalism
+				activate_technology = government_interventionism
+				activate_technology = great_war_experience
+				activate_technology = guild_based_production
+				activate_technology = heavy_armament_dunno
+				activate_technology = high_n_low_pressure_steam_engines
+				activate_technology = high_sea_battle_fleet
+				activate_technology = idealism
+				activate_technology = ideological_thought
+				activate_technology = impressionism
+				activate_technology = indirect_artillery_fire
+				activate_technology = infiltration
+				activate_technology = inorganic_chemistry
+				activate_technology = integral_rail_system
+				activate_technology = interchangeable_parts
+				activate_technology = introspectionism
+				activate_technology = investment_banks
+				activate_technology = iron_breech_loaded_artillery
+				activate_technology = iron_muzzle_loaded_artillery
+				activate_technology = iron_railroad
+				activate_technology = iron_steamers
+				activate_technology = keynesian_economics
+				activate_technology = late_classical_theory
+				activate_technology = late_enlightenment_philosophy
+				activate_technology = limited_access_roads
+				activate_technology = machine_guns
+				activate_technology = main_armament
+				activate_technology = malthusian_thought
+				activate_technology = management_strategy
+				activate_technology = market_determined_exchange_rates
+				activate_technology = market_regulations
+				activate_technology = market_structure
+				activate_technology = mass_culture_n_the_avant_garde
+				activate_technology = mass_politics
+				activate_technology = mechanical_production
+				activate_technology = mechanized_mining
+				activate_technology = medicine
+				activate_technology = military_directionism
+				activate_technology = military_logistics
+				activate_technology = military_plans
+				activate_technology = military_staff_system
+				activate_technology = military_statistics
+				activate_technology = modern_army_doctrine
+				activate_technology = modern_central_bank_system
+				activate_technology = modern_divisional_structure
+				activate_technology = modern_naval_design
+				activate_technology = modern_naval_doctrine
+				activate_technology = modern_naval_training
+				activate_technology = mutual_funds
+				activate_technology = muzzle_loaded_rifles
+				activate_technology = nationalism_n_imperialism
+				activate_technology = naval_decision_making
+				activate_technology = naval_design_bureaus
+				activate_technology = naval_directionism
+				activate_technology = naval_integration
+				activate_technology = naval_logistics
+				activate_technology = naval_nco_training
+				activate_technology = naval_plans
+				activate_technology = naval_professionalism
+				activate_technology = naval_risk_management
+				activate_technology = naval_statistics
+				activate_technology = neoclassical_theory
+				activate_technology = no_standard
+				activate_technology = oil_driven_ships
+				activate_technology = organic_chemistry
+				activate_technology = organizational_development
+				activate_technology = organized_factories
+				activate_technology = phenomenalism
+				activate_technology = phenomenology_n_hermeneutic
+				activate_technology = point_defense_system
+				activate_technology = positivism
+				activate_technology = post_napoleonic_thought
+				activate_technology = post_nelsonian_thought
+				activate_technology = practical_steam_engine
+				activate_technology = private_bank_money_bill_printing
+				activate_technology = private_banks
+				activate_technology = psychoanalysis
+				activate_technology = publishing_industry
+				activate_technology = raider_group_doctrine
+				activate_technology = realism
+				activate_technology = revolution_n_counterrevolution
+				activate_technology = romanticism
+				activate_technology = scientific_management
+				activate_technology = semi_automatization
+				activate_technology = shift_work
+				activate_technology = social_alienation
+				activate_technology = social_science
+				activate_technology = state_n_government
+				activate_technology = steam_turbine
+				activate_technology = steam_turbine_ships
+				activate_technology = steamers
+				activate_technology = steel_breech_loaded_artillery
+				activate_technology = steel_railroad
+				activate_technology = steel_steamers
+				activate_technology = stock_exchange
+				activate_technology = strategic_mobility
+				activate_technology = synthetic_polymers
+				activate_technology = the_command_principle
+				activate_technology = the_historical_theory
+				activate_technology = time_saving_measures
+				activate_technology = water_wheel_power
+				activate_technology = weapon_platforms
+				badboy = 500 #We all hate 'em
+				add_country_modifier = { #Growth to represent new aliens coming
+					name = baby_boom
+					duration = -1
+				}
+				add_country_modifier = { #No need of food
+					name = the_massacre
+					duration = -1
+				}
+				add_country_modifier = { #Assimilating easily. "Immigration" simulates raptures
+					name = the_statue_of_liberty
+					duration = -1
+				}
+				add_country_modifier = { #Less time needed to start wars
+					name = CB_gen_plus
+					duration = -1
+				}
+			}
+			any_country = { #Synthetic Dawn if...
+				limit = {
+					tag = ALI
+					exists = ALI
+				}
+				primary_culture = alien
+				government = theocracy
+				any_owned = { assimilate = yes }
+				set_country_flag = precolonial
+				#All techs already unlocked
+				activate_technology = ad_hoc_money_bill_printing
+				activate_technology = advanced_metallurgy
+				activate_technology = advanced_naval_design
+				activate_technology = aeronautics
+				activate_technology = alphabetic_flag_signaling
+				activate_technology = analytic_philosophy
+				activate_technology = anti__rationalism
+				activate_technology = army_command_principle
+				activate_technology = army_decision_making
+				activate_technology = army_nco_training
+				activate_technology = army_professionalism
+				activate_technology = army_risk_management
+				activate_technology = assembly_line
+				activate_technology = associationism
+				activate_technology = bank_inspection_board
+				activate_technology = basic_chemistry
+				activate_technology = battleship_column_doctrine
+				activate_technology = behaviorism
+				activate_technology = biologism
+				activate_technology = blue_and_brown_water_schools
+				activate_technology = bolt_action_rifles
+				activate_technology = breech_loaded_rifles
+				activate_technology = bronze_muzzle_loaded_artillery
+				activate_technology = business_banks
+				activate_technology = business_regulations
+				activate_technology = central_bank_money_bill_printing
+				activate_technology = cheap_iron
+				activate_technology = cheap_steel
+				activate_technology = classicism_n_early_romanticism
+				activate_technology = clean_coal
+				activate_technology = clipper_design
+				activate_technology = collectivist_theory
+				activate_technology = combustion_engine
+				activate_technology = deep_defense_system
+				activate_technology = early_classical_theory_and_critique
+				activate_technology = early_railroad
+				activate_technology = economic_responsibility
+				activate_technology = electric_furnace
+				activate_technology = electrical_power_generation
+				activate_technology = electricity
+				activate_technology = empiricism
+				activate_technology = enlightenment_thought
+				activate_technology = experimental_psychology
+				activate_technology = experimental_railroad
+				activate_technology = expressionism
+				activate_technology = fire_control_systems
+				activate_technology = flintlock_rifles
+				activate_technology = freedom_of_trade
+				activate_technology = functionalism
+				activate_technology = government_interventionism
+				activate_technology = great_war_experience
+				activate_technology = guild_based_production
+				activate_technology = heavy_armament_dunno
+				activate_technology = high_n_low_pressure_steam_engines
+				activate_technology = high_sea_battle_fleet
+				activate_technology = idealism
+				activate_technology = ideological_thought
+				activate_technology = impressionism
+				activate_technology = indirect_artillery_fire
+				activate_technology = infiltration
+				activate_technology = inorganic_chemistry
+				activate_technology = integral_rail_system
+				activate_technology = interchangeable_parts
+				activate_technology = introspectionism
+				activate_technology = investment_banks
+				activate_technology = iron_breech_loaded_artillery
+				activate_technology = iron_muzzle_loaded_artillery
+				activate_technology = iron_railroad
+				activate_technology = iron_steamers
+				activate_technology = keynesian_economics
+				activate_technology = late_classical_theory
+				activate_technology = late_enlightenment_philosophy
+				activate_technology = limited_access_roads
+				activate_technology = machine_guns
+				activate_technology = main_armament
+				activate_technology = malthusian_thought
+				activate_technology = management_strategy
+				activate_technology = market_determined_exchange_rates
+				activate_technology = market_regulations
+				activate_technology = market_structure
+				activate_technology = mass_culture_n_the_avant_garde
+				activate_technology = mass_politics
+				activate_technology = mechanical_production
+				activate_technology = mechanized_mining
+				activate_technology = medicine
+				activate_technology = military_directionism
+				activate_technology = military_logistics
+				activate_technology = military_plans
+				activate_technology = military_staff_system
+				activate_technology = military_statistics
+				activate_technology = modern_army_doctrine
+				activate_technology = modern_central_bank_system
+				activate_technology = modern_divisional_structure
+				activate_technology = modern_naval_design
+				activate_technology = modern_naval_doctrine
+				activate_technology = modern_naval_training
+				activate_technology = mutual_funds
+				activate_technology = muzzle_loaded_rifles
+				activate_technology = nationalism_n_imperialism
+				activate_technology = naval_decision_making
+				activate_technology = naval_design_bureaus
+				activate_technology = naval_directionism
+				activate_technology = naval_integration
+				activate_technology = naval_logistics
+				activate_technology = naval_nco_training
+				activate_technology = naval_plans
+				activate_technology = naval_professionalism
+				activate_technology = naval_risk_management
+				activate_technology = naval_statistics
+				activate_technology = neoclassical_theory
+				activate_technology = no_standard
+				activate_technology = oil_driven_ships
+				activate_technology = organic_chemistry
+				activate_technology = organizational_development
+				activate_technology = organized_factories
+				activate_technology = phenomenalism
+				activate_technology = phenomenology_n_hermeneutic
+				activate_technology = point_defense_system
+				activate_technology = positivism
+				activate_technology = post_napoleonic_thought
+				activate_technology = post_nelsonian_thought
+				activate_technology = practical_steam_engine
+				activate_technology = private_bank_money_bill_printing
+				activate_technology = private_banks
+				activate_technology = psychoanalysis
+				activate_technology = publishing_industry
+				activate_technology = raider_group_doctrine
+				activate_technology = realism
+				activate_technology = revolution_n_counterrevolution
+				activate_technology = romanticism
+				activate_technology = scientific_management
+				activate_technology = semi_automatization
+				activate_technology = shift_work
+				activate_technology = social_alienation
+				activate_technology = social_science
+				activate_technology = state_n_government
+				activate_technology = steam_turbine
+				activate_technology = steam_turbine_ships
+				activate_technology = steamers
+				activate_technology = steel_breech_loaded_artillery
+				activate_technology = steel_railroad
+				activate_technology = steel_steamers
+				activate_technology = stock_exchange
+				activate_technology = strategic_mobility
+				activate_technology = synthetic_polymers
+				activate_technology = the_command_principle
+				activate_technology = the_historical_theory
+				activate_technology = time_saving_measures
+				activate_technology = water_wheel_power
+				activate_technology = weapon_platforms
+				badboy = 500 #We all hate 'em
+				add_country_modifier = { #Growth to represent new aliens coming
+					name = baby_boom
+					duration = -1
+				}
+				add_country_modifier = { #No need of food
+					name = the_massacre
+					duration = -1
+				}
+				add_country_modifier = { #Assimilating easily. "Immigration" simulates raptures
+					name = the_statue_of_liberty
+					duration = -1
+				}
+				add_country_modifier = { #Less time needed to start wars
+					name = CB_gen_plus
+					duration = -1
+				}
 			}
 			any_country = { #Cats
 				limit = {
@@ -200,6 +632,7 @@ political_decisions = {
 				government = theocracy
 				civilized = yes
 				capital = 1767
+				set_country_flag = precolonial
 			}
 			any_country = { #Undead Horde
 				limit = {
@@ -211,11 +644,12 @@ political_decisions = {
 				government = theocracy
 				civilized = yes
 				capital = 744
+				set_country_flag = precolonial
 			}
 			any_country = { #Kurdistan
 				limit = {
-					tag = BHT
-					NOT = { exists = BHT }
+					tag = KDS
+					NOT = { exists = KDS }
 				}
 				primary_culture = kurdish
 				religion = sunni
@@ -255,6 +689,2678 @@ political_decisions = {
 				civilized = yes
 				capital = 726
 			}
+			any_country = { #Turkestan
+				limit = {
+					tag = TKS
+					NOT = { exists = TKS }
+				}
+				primary_culture = uzbek
+				add_accepted_culture = turkmen
+				add_accepted_culture = kirgiz
+				add_accepted_culture = tajik
+				religion = sunni
+				civilized = yes
+				government = democracy
+				capital = 1195
+			}
+			any_country = { #Occitania
+				limit = {
+					tag = OCC
+					NOT = { exists = OCC }
+				}
+				primary_culture = occitan
+				religion = catholic
+				civilized = yes
+				government = democracy
+				capital = 455
+			}
+			any_country = { #The Suebi
+				limit = {
+					tag = SUE
+					NOT = { exists = SUE }
+				}
+				primary_culture = suebi
+				religion = catholic
+				civilized = yes
+				capital = 518
+			}
+			any_country = { #Ostrogothia
+				limit = {
+					tag = OGO
+					NOT = { exists = OGO }
+				}
+				primary_culture = ostrogothic
+				religion = catholic
+				civilized = yes
+				capital = 640
+			}
+			any_country = { #Visigothia
+				limit = {
+					tag = VGO
+					NOT = { exists = VGO }
+				}
+				primary_culture = visigothic
+				religion = catholic
+				civilized = yes
+				capital = 455
+			}
+			any_country = { #Alania
+				limit = {
+					tag = ALN
+					NOT = { exists = ALN }
+				}
+				primary_culture = alan
+				religion = orthodox
+				civilized = yes
+				capital = 1054
+			}
+			any_country = { #Don-Kuban Union
+				limit = {
+					tag = DKU
+					NOT = { exists = DKU }
+				}
+				primary_culture = north_caucasian
+				religion = orthodox
+				civilized = yes
+				government = democracy
+				capital = 1048
+			}
+			any_country = { #Aotearoa
+				limit = {
+					tag = AOT
+					NOT = { exists = AOT }
+				}
+				primary_culture = maori
+				religion = animist
+				civilized = no
+				capital = 2512
+				set_country_flag = precolonial
+			}
+			any_country = { #Aborigines
+				limit = {
+					tag = ABO
+					NOT = { exists = ABO }
+				}
+				primary_culture = aborigine
+				religion = animist
+				civilized = no
+				capital = 2468
+				set_country_flag = precolonial
+			}
+			any_country = { #Yugra
+				limit = {
+					tag = UGR
+					NOT = { exists = UGR }
+				}
+				primary_culture = ugrian
+				religion = orthodox
+				civilized = yes
+				capital = 1063
+			}
+			any_country = { #Assyria
+				limit = {
+					tag = ASY
+					NOT = { exists = ASY }
+				}
+				primary_culture = syriac
+				religion = orthodox
+				civilized = yes
+				capital = 927
+			}
+			any_country = { #Syria
+				limit = {
+					tag = SYR
+					NOT = { exists = SYR }
+				}
+				primary_culture = mashriqi
+				religion = sunni
+				civilized = yes
+				capital = 902
+			}
+			any_country = { #Carthage
+				limit = {
+					tag = KRT
+					NOT = { exists = KRT }
+				}
+				primary_culture = maghreb_arabic
+				religion = orthodox
+				civilized = yes
+				capital = 1725
+			}
+			any_country = { #Sakha
+				limit = {
+					tag = YAK
+					NOT = { exists = YAK }
+				}
+				primary_culture = yakut
+				religion = orthodox
+				civilized = yes
+				capital = 2648
+			}
+			any_country = { #Siberia
+				limit = {
+					tag = SIB
+					NOT = { exists = SIB }
+				}
+				primary_culture = siberian
+				religion = orthodox
+				civilized = yes
+				capital = 1075
+			}
+			any_country = { #Indochina
+				limit = {
+					tag = IDO
+					NOT = { exists = IDO }
+				}
+				primary_culture = thai
+				add_accepted_culture = vietnamese
+				add_accepted_culture = khmer
+				add_accepted_culture = lao
+				add_accepted_culture = shan
+				add_accepted_culture = burmese
+				add_accepted_culture = kachin
+				add_accepted_culture = karen
+				religion = mahayana
+				civilized = yes
+				capital = 1346
+			}
+			any_country = { #Anglo-Saxony
+				limit = {
+					tag = AES
+					NOT = { exists = AES }
+				}
+				primary_culture = anglo_saxon
+				religion = norse_pagan_reformed
+				civilized = yes
+				capital = 300
+			}
+			any_country = { #Frankia
+				limit = {
+					tag = FRK
+					NOT = { exists = FRK }
+				}
+				primary_culture = frankish
+				religion = catholic
+				civilized = yes
+				capital = 425
+			}
+			any_country = { #Britannia
+				limit = {
+					tag = ENR
+					NOT = { exists = ENR }
+				}
+				primary_culture = brithenig
+				religion = catholic
+				government = presidential_dictatorship
+				civilized = yes
+				capital = 300
+			}
+			any_country = { #Gallia
+				limit = {
+					tag = FRR
+					NOT = { exists = FRR }
+				}
+				primary_culture = gaul
+				religion = catholic
+				government = presidential_dictatorship
+				civilized = yes
+				capital = 425
+			}
+			any_country = { #Läßinia
+				limit = {
+					tag = AUR
+					NOT = { exists = AUR }
+				}
+				primary_culture = laessin
+				religion = catholic
+				government = presidential_dictatorship
+				civilized = yes
+				capital = 619
+			}
+			any_country = { #Euskadi
+				limit = {
+					tag = BSQ
+					NOT = { exists = BSQ }
+				}
+				primary_culture = basque
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 492
+			}
+			any_country = { #Guyana
+				limit = {
+					tag = GUY
+					NOT = { exists = GUY }
+				}
+				primary_culture = falklander
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 2239
+			}
+			any_country = { #Tajikistan
+				limit = {
+					tag = TAJ
+					NOT = { exists = TAJ }
+				}
+				primary_culture = tajik
+				religion = shia
+				government = democracy
+				civilized = yes
+				capital = 1207
+			}
+			any_country = { #Altai
+				limit = {
+					tag = ALT
+					NOT = { exists = ALT }
+				}
+				primary_culture = tatar
+				religion = sunni
+				civilized = yes
+				capital = 1068
+			}
+			any_country = { #Banat
+				limit = {
+					tag = BAN
+					NOT = { exists = BAN }
+				}
+				primary_culture = south_german
+				religion = catholic
+				civilized = yes
+				capital = 652
+			}
+			any_country = { #Bukovina
+				limit = {
+					tag = BKV
+					NOT = { exists = BKV }
+				}
+				primary_culture = romanian
+				religion = orthodox
+				civilized = yes
+				capital = 662
+			}
+			any_country = { #Carlist Spain
+				limit = {
+					tag = SPC
+					NOT = { exists = SPC }
+				}
+				primary_culture = spanish
+				religion = catholic
+				civilized = yes
+				capital = 487
+			}
+			any_country = { #Congress Poland
+				limit = {
+					tag = CPL
+					NOT = { exists = CPL }
+				}
+				primary_culture = polish
+				religion = catholic
+				civilized = yes
+				capital = 706
+			}
+			any_country = { #Cossackia
+				limit = {
+					tag = DON
+					NOT = { exists = DON }
+				}
+				primary_culture = ukrainian
+				religion = orthodox
+				civilized = yes
+				capital = 1047
+			}
+			any_country = { #Dalmatia
+				limit = {
+					tag = DLM
+					NOT = { exists = DLM }
+				}
+				primary_culture = croat
+				religion = catholic
+				civilized = yes
+				capital = 781
+			}
+			any_country = { #Danubian Federation
+				limit = {
+					tag = DNB
+					NOT = { exists = DNB }
+				}
+				primary_culture = south_german
+				religion = catholic
+				civilized = yes
+				capital = 619
+			}
+			any_country = { #Galicia-Lodomeria
+				limit = {
+					tag = GLM
+					NOT = { exists = GLM }
+				}
+				primary_culture = polish
+				religion = catholic
+				civilized = yes
+				capital = 702
+			}
+			any_country = { #Iberia
+				limit = {
+					tag = IBR
+					NOT = { exists = IBR }
+				}
+				primary_culture = spanish
+				religion = catholic
+				civilized = yes
+				capital = 487
+			}
+			any_country = { #Kalmykia
+				limit = {
+					tag = KMK
+					NOT = { exists = KMK }
+				}
+				primary_culture = mongol
+				religion = gelugpa
+				civilized = yes
+				capital = 1041
+			}
+			any_country = { #Kamchatka
+				limit = {
+					tag = KAM
+					NOT = { exists = KAM }
+				}
+				primary_culture = siberian
+				religion = animist
+				civilized = yes
+				capital = 1074
+			}
+			any_country = { #Karelia
+				limit = {
+					tag = KRL
+					NOT = { exists = KRL }
+				}
+				primary_culture = ugrian
+				religion = protestant
+				civilized = yes
+				capital = 995
+			}
+			any_country = { #Pomerelia
+				limit = {
+					tag = PML
+					NOT = { exists = PML }
+				}
+				primary_culture = polish
+				religion = catholic
+				civilized = yes
+				capital = 694
+			}
+			any_country = { #Poznan
+				limit = {
+					tag = PZN
+					NOT = { exists = PZN }
+				}
+				primary_culture = polish
+				religion = catholic
+				civilized = yes
+				capital = 699
+			}
+			any_country = { #Rhineland
+				limit = {
+					tag = RHI
+					NOT = { exists = RHI }
+				}
+				primary_culture = north_german
+				religion = catholic
+				civilized = yes
+				capital = 576
+			}
+			any_country = { #Romagna
+				limit = {
+					tag = RMG
+					NOT = { exists = RMG }
+				}
+				primary_culture = north_italian
+				religion = catholic
+				civilized = yes
+				capital = 741
+			}
+			any_country = { #Schleswig-Holstein
+				limit = {
+					tag = SWH
+					NOT = { exists = SWH }
+				}
+				primary_culture = north_german
+				religion = protestant
+				civilized = yes
+				capital = 369
+			}
+			any_country = { #Tannu Tuva
+				limit = {
+					tag = TNT
+					NOT = { exists = TNT }
+				}
+				primary_culture = tatar
+				religion = gelugpa
+				civilized = yes
+				capital = 1469
+			}
+			any_country = { #Tatarstan
+				limit = {
+					tag = TAR
+					NOT = { exists = TAR }
+				}
+				primary_culture = tatar
+				religion = sunni
+				civilized = yes
+				capital = 1030
+			}
+			any_country = { #Ural Republic
+				limit = {
+					tag = URA
+					NOT = { exists = URA }
+				}
+				primary_culture = ugrian
+				religion = orthodox
+				civilized = yes
+				capital = 1058
+			}
+			any_country = { #Chiapas
+				limit = {
+					tag = CHP
+					NOT = { exists = CHP }
+				}
+				primary_culture = mexican
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2181
+			}
+
+			any_country = { #Equador Confederation
+				limit = {
+					tag = CEQ
+					NOT = { exists = CEQ }
+				}
+				primary_culture = brazilian
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2432
+			}
+
+			any_country = { #Entre Rios
+				limit = {
+					tag = ENT
+					NOT = { exists = ENT }
+				}
+				primary_culture = platinean
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2356
+			}
+
+			any_country = { #Los Altos
+				limit = {
+					tag = LOS
+					NOT = { exists = LOS }
+				}
+				primary_culture = central_american
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2187
+			}
+
+			any_country = { #La Plata
+				limit = {
+					tag = LPL
+					NOT = { exists = LPL }
+				}
+				primary_culture = platinean
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2348
+			}
+
+			any_country = { #Oaxaca
+				limit = {
+					tag = OAX
+					NOT = { exists = OAX }
+				}
+				primary_culture = zapotec
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2177
+			}
+
+			any_country = { #Peru-Bolivia Confederation
+				limit = {
+					tag = PBC
+					NOT = { exists = PBC }
+				}
+				primary_culture = south_andean
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2310
+			}
+
+			any_country = { #Patagonia
+				limit = {
+					tag = PTG
+					NOT = { exists = PTG }
+				}
+				primary_culture = patagonian
+				religion = animist
+				government = democracy
+				civilized = yes
+				capital = 2329
+			}
+
+			any_country = { #Rio Grande
+				limit = {
+					tag = RGR
+					NOT = { exists = RGR }
+				}
+				primary_culture = mexican
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 138
+			}
+
+			any_country = { #Rio Grande do Sul
+				limit = {
+					tag = RGS
+					NOT = { exists = RGS }
+				}
+				primary_culture = brazilian
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2463
+			}
+
+			any_country = { #Sonora
+				limit = {
+					tag = SON
+					NOT = { exists = SON }
+				}
+				primary_culture = mexican
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2137
+			}
+
+			any_country = { #South Peru
+				limit = {
+					tag = SPU
+					NOT = { exists = SPU }
+				}
+				primary_culture = south_andean
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2304
+			}
+
+			any_country = { #Yucatan
+				limit = {
+					tag = YUC
+					NOT = { exists = YUC }
+				}
+				primary_culture = mayan
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2183
+			}
+
+			any_country = { #Belize
+				limit = {
+					tag = BLZ
+					NOT = { exists = BLZ }
+				}
+				primary_culture = texan
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 2190
+			}
+
+			any_country = { #Dakota
+				limit = {
+					tag = DAK
+					NOT = { exists = DAK }
+				}
+				primary_culture = yankee
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 119
+			}
+
+			any_country = { #Free States of America
+				limit = {
+					tag = FSA
+					NOT = { exists = FSA }
+				}
+				primary_culture = yankee
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 223
+			}
+
+			any_country = { #Greenland
+				limit = {
+					tag = GRN
+					NOT = { exists = GRN }
+				}
+				primary_culture = eskaleut
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 251
+			}
+
+			any_country = { #Jamaica
+				limit = {
+					tag = JAM
+					NOT = { exists = JAM }
+				}
+				primary_culture = afro_caribbean
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 2217
+			}
+
+			any_country = { #Maritime Union
+				limit = {
+					tag = MRU
+					NOT = { exists = MRU }
+				}
+				primary_culture = anglo_canadian
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 71
+			}
+
+			any_country = { #Puerto Rico
+				limit = {
+					tag = PRI
+					NOT = { exists = PRI }
+				}
+				primary_culture = caribeno
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2222
+			}
+
+			any_country = { #Rupert's Land
+				limit = {
+					tag = RPL
+					NOT = { exists = RPL }
+				}
+				primary_culture = anglo_canadian
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 36
+			}
+
+			any_country = { #Trinidad
+				limit = {
+					tag = TTB
+					NOT = { exists = TTB }
+				}
+				primary_culture = afro_caribbean
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 2237
+			}
+
+			any_country = { #Illinois
+				limit = {
+					tag = UIL
+					NOT = { exists = UIL }
+				}
+				primary_culture = yankee
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 167
+			}
+
+			any_country = { #Nebraska
+				limit = {
+					tag = UNB
+					NOT = { exists = UNB }
+				}
+				primary_culture = yankee
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 123
+			}
+
+			any_country = { #New Mexico
+				limit = {
+					tag = UNM
+					NOT = { exists = UNM }
+				}
+				primary_culture = yankee
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 100
+			}
+
+			any_country = { #New York
+				limit = {
+					tag = UNY
+					NOT = { exists = UNY }
+				}
+				primary_culture = yankee
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 232
+			}
+
+			any_country = { #Oregon
+				limit = {
+					tag = UOR
+					NOT = { exists = UOR }
+				}
+				primary_culture = yankee
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 81
+			}
+			any_country = { #Arab Union
+				limit = {
+					tag = ARU
+					NOT = { exists = ARU }
+				}
+				primary_culture = mashriqi
+				religion = sunni
+				civilized = yes
+				capital = 926
+			}
+			any_country = { #Asir
+				limit = {
+					tag = ASR
+					NOT = { exists = ASR }
+				}
+				primary_culture = mashriqi
+				religion = sunni
+				civilized = yes
+				capital = 1155
+			}
+			any_country = { #Bahrain
+				limit = {
+					tag = BHR
+					NOT = { exists = BHR }
+				}
+				primary_culture = bedouin
+				religion = sunni
+				civilized = yes
+				capital = 1162
+			}
+			any_country = { #Cilicia
+				limit = {
+					tag = CLC
+					NOT = { exists = CLC }
+				}
+				primary_culture = armenian
+				religion = orthodox
+				civilized = yes
+				capital = 894
+			}
+			any_country = { #Dagestan
+				limit = {
+					tag = DAG
+					NOT = { exists = DAG }
+				}
+				primary_culture = north_caucasian
+				religion = sunni
+				civilized = yes
+				capital = 1053
+			}
+			any_country = { #Durrani Empire
+				limit = {
+					tag = DUR
+					NOT = { exists = DUR }
+				}
+				primary_culture = pashtun
+				religion = sunni
+				civilized = yes
+				capital = 1215
+			}
+			any_country = { #Jordan
+				limit = {
+					tag = JOR
+					NOT = { exists = JOR }
+				}
+				primary_culture = bedouin
+				religion = sunni
+				civilized = yes
+				capital = 908
+			}
+			any_country = { #Kuwait
+				limit = {
+					tag = KWT
+					NOT = { exists = KWT }
+				}
+				primary_culture = bedouin
+				religion = sunni
+				civilized = yes
+				capital = 935
+			}
+			any_country = { #Kyrgyzstan
+				limit = {
+					tag = KYR
+					NOT = { exists = KYR }
+				}
+				primary_culture = kirgiz
+				religion = sunni
+				civilized = yes
+				capital = 1189
+			}
+			any_country = { #North Yemen
+				limit = {
+					tag = NYE
+					NOT = { exists = NYE }
+				}
+				primary_culture = mashriqi
+				religion = shiite
+				civilized = yes
+				capital = 1178
+			}
+			any_country = { #Palestine
+				limit = {
+					tag = PLS
+					NOT = { exists = PLS }
+				}
+				primary_culture = mashriqi
+				religion = sunni
+				civilized = yes
+				capital = 917
+			}
+			any_country = { #Pontus
+				limit = {
+					tag = PNT
+					NOT = { exists = PNT }
+				}
+				primary_culture = greek
+				religion = orthodox
+				civilized = yes
+				capital = 882
+			}
+			any_country = { #Transcaucasia
+				limit = {
+					tag = TCA
+					NOT = { exists = TCA }
+				}
+				primary_culture = georgian
+				religion = orthodox
+				civilized = yes
+				capital = 1090
+			}
+			any_country = { #Turkmenistan
+				limit = {
+					tag = TKM
+					NOT = { exists = TKM }
+				}
+				primary_culture = turkmen
+				religion = sunni
+				civilized = yes
+				capital = 1204
+			}
+			any_country = { #Uyghurstan
+				limit = {
+					tag = UYG
+					NOT = { exists = UYG }
+				}
+				primary_culture = uighur
+				religion = sunni
+				civilized = yes
+				capital = 1594
+			}
+			any_country = { #Uzbekistan
+				limit = {
+					tag = UZB
+					NOT = { exists = UZB }
+				}
+				primary_culture = uzbek
+				religion = sunni
+				civilized = yes
+				capital = 1195
+			}
+			any_country = { #Bihar
+				limit = {
+					tag = BIH
+					NOT = { exists = BIH }
+				}
+				primary_culture = bihari
+				religion = hindu
+				civilized = yes
+				capital = 1247
+			}
+			any_country = { #Dravidistan
+				limit = {
+					tag = DRA
+					NOT = { exists = DRA }
+				}
+				primary_culture = tamil
+				religion = hindu
+				civilized = yes
+				capital = 1304
+			}
+			any_country = { #Hindustan/Pakistan
+				limit = {
+					tag = HDU
+					NOT = { exists = HDU }
+				}
+				primary_culture = avadhi
+				religion = sunni
+				civilized = yes
+				capital = 1240
+			}
+			any_country = { #Maharashtra
+				limit = {
+					tag = MAH
+					NOT = { exists = MAH }
+				}
+				primary_culture = marathi
+				religion = hindu
+				civilized = yes
+				capital = 1299
+			}
+			
+			any_country = { #Angoche
+				limit = {
+					tag = AGC
+					NOT = { exists = AGC }
+				}
+				primary_culture = swahili
+				religion = sunni
+				government = absolute_monarchy
+				civilized = no
+				capital = 2061
+			}
+
+			any_country = { #Aro
+				limit = {
+					tag = ARO
+					NOT = { exists = ARO }
+				}
+				primary_culture = ibo
+				religion = animist
+				government = absolute_monarchy
+				civilized = no
+				capital = 1935
+			}
+
+			any_country = { #Awsa
+				limit = {
+					tag = AWS
+					NOT = { exists = AWS }
+				}
+				primary_culture = afar
+				religion = sunni
+				government = absolute_monarchy
+				civilized = no
+				capital = 1858
+			}
+
+			any_country = { #Bamako
+				limit = {
+					tag = BMK
+					NOT = { exists = BMK }
+				}
+				primary_culture = songhai
+				religion = sunni
+				government = democracy
+				civilized = no
+				capital = 2609
+			}
+
+			any_country = { #Basotho
+				limit = {
+					tag = BSH
+					NOT = { exists = BSH }
+				}
+				primary_culture = sotho
+				religion = animist
+				government = absolute_monarchy
+				civilized = no
+				capital = 2104
+			}
+
+			any_country = { #Congo-Brazzaville
+				limit = {
+					tag = CGO
+					NOT = { exists = CGO }
+				}
+				primary_culture = bakongo
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 1977
+			}
+
+			any_country = { #Chad
+				limit = {
+					tag = CHD
+					NOT = { exists = CHD }
+				}
+				primary_culture = sara
+				religion = sunni
+				government = democracy
+				civilized = yes
+				capital = 1818
+			}
+
+			any_country = { #Calabar
+				limit = {
+					tag = CLA
+					NOT = { exists = CLA }
+				}
+				primary_culture = ibibio
+				religion = animist
+				government = absolute_monarchy
+				civilized = no
+				capital = 1934
+			}
+
+			any_country = { #Cyrenaica
+				limit = {
+					tag = CYR
+					NOT = { exists = CYR }
+				}
+				primary_culture = maghrebi
+				religion = sunni
+				government = absolute_monarchy
+				civilized = no
+				capital = 1735
+			}
+
+			any_country = { #Damangaram
+				limit = {
+					tag = DAM
+					NOT = { exists = DAM }
+				}
+				primary_culture = hausa
+				religion = sunni
+				government = absolute_monarchy
+				civilized = no
+				capital = 1815
+			}
+
+			any_country = { #Dendi
+				limit = {
+					tag = DND
+					NOT = { exists = DND }
+				}
+				primary_culture = songhai
+				religion = sunni
+				government = absolute_monarchy
+				civilized = no
+				capital = 1808
+			}
+
+			any_country = { #Gaza
+				limit = {
+					tag = GAZ
+					NOT = { exists = GAZ }
+				}
+				primary_culture = nguni
+				religion = animist
+				government = absolute_monarchy
+				civilized = no
+				capital = 2050
+			}
+
+			any_country = { #Gambia
+				limit = {
+					tag = GMB
+					NOT = { exists = GMB }
+				}
+				primary_culture = mande
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 1785
+			}
+
+			any_country = { #Gonder
+				limit = {
+					tag = GON
+					NOT = { exists = GON }
+				}
+				primary_culture = amhara
+				religion = coptic
+				government = absolute_monarchy
+				civilized = no
+				capital = 1852
+			}
+
+			any_country = { #Jallon
+				limit = {
+					tag = JAL
+					NOT = { exists = JAL }
+				}
+				primary_culture = fulbe
+				religion = sunni
+				government = absolute_monarchy
+				civilized = no
+				capital = 1880
+			}
+
+			any_country = { #Kenya
+				limit = {
+					tag = KNY
+					NOT = { exists = KNY }
+				}
+				primary_culture = swahili
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 2024
+			}
+
+			any_country = { #Libya
+				limit = {
+					tag = LBY
+					NOT = { exists = LBY }
+				}
+				primary_culture = maghrebi
+				religion = sunni
+				government = absolute_monarchy
+				civilized = yes
+				capital = 1741
+			}
+
+			any_country = { #Massina
+				limit = {
+					tag = MAS
+					NOT = { exists = MAS }
+				}
+				primary_culture = fulbe
+				religion = sunni
+				government = absolute_monarchy
+				civilized = no
+				capital = 1804
+			}
+
+			any_country = { #Matabele
+				limit = {
+					tag = MAT
+					NOT = { exists = MAT }
+				}
+				primary_culture = nguni
+				religion = animist
+				government = absolute_monarchy
+				civilized = no
+				capital = 2108
+			}
+
+			any_country = { #Maghreb
+				limit = {
+					tag = MGH
+					NOT = { exists = MGH }
+				}
+				primary_culture = maghrebi
+				religion = sunni
+				government = absolute_monarchy
+				civilized = yes
+				capital = 1680
+			}
+
+			any_country = { #Niger
+				limit = {
+					tag = NIG
+					NOT = { exists = NIG }
+				}
+				primary_culture = songhai
+				religion = sunni
+				government = democracy
+				civilized = yes
+				capital = 1812
+			}
+
+			any_country = { #Shona
+				limit = {
+					tag = SHO
+					NOT = { exists = SHO }
+				}
+				primary_culture = shona
+				religion = animist
+				government = absolute_monarchy
+				civilized = no
+				capital = 2070
+			}
+
+			any_country = { #Shewa
+				limit = {
+					tag = SHW
+					NOT = { exists = SHW }
+				}
+				primary_culture = amhara
+				religion = coptic
+				government = absolute_monarchy
+				civilized = no
+				capital = 1859
+			}
+
+			any_country = { #Senegal
+				limit = {
+					tag = SNG
+					NOT = { exists = SNG }
+				}
+				primary_culture = wolof
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 1783
+			}
+
+			any_country = { #Suazi
+				limit = {
+					tag = SUA
+					NOT = { exists = SUA }
+				}
+				primary_culture = nguni
+				religion = animist
+				government = absolute_monarchy
+				civilized = no
+				capital = 2114
+			}
+
+			any_country = { #Tigray
+				limit = {
+					tag = TIG
+					NOT = { exists = TIG }
+				}
+				primary_culture = tigray
+				religion = coptic
+				government = absolute_monarchy
+				civilized = no
+				capital = 1853
+			}
+
+			any_country = { #Togo
+				limit = {
+					tag = TOG
+					NOT = { exists = TOG }
+				}
+				primary_culture = ewe
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 1914
+			}
+
+			any_country = { #Tooro
+				limit = {
+					tag = TOO
+					NOT = { exists = TOO }
+				}
+				primary_culture = fulbe
+				religion = sunni
+				government = absolute_monarchy
+				civilized = no
+				capital = 1789
+			}
+
+			any_country = { #Trarza
+				limit = {
+					tag = TRZ
+					NOT = { exists = TRZ }
+				}
+				primary_culture = maures
+				religion = sunni
+				government = absolute_monarchy
+				civilized = no
+				capital = 1775
+			}
+
+			any_country = { #Warri
+				limit = {
+					tag = WRI
+					NOT = { exists = WRI }
+				}
+				primary_culture = itsekari
+				religion = animist
+				government = absolute_monarchy
+				civilized = no
+				capital = 1931
+			}
+
+			any_country = { #Xhosa
+				limit = {
+					tag = XHO
+					NOT = { exists = XHO }
+				}
+				primary_culture = xhosa
+				religion = animist
+				government = absolute_monarchy
+				civilized = no
+				capital = 2100
+			}
+
+			any_country = { #Zambia
+				limit = {
+					tag = ZAM
+					NOT = { exists = ZAM }
+				}
+				primary_culture = lunda
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 2012
+			}
+			any_country = { #Western Sahara
+				limit = {
+					tag = WSH
+					NOT = { exists = WSH }
+				}
+				primary_culture = maghrebi
+				religion = sunni
+				government = democracy
+				civilized = yes
+				capital = 1773
+			}
+			any_country = { #Cape Verde
+				limit = {
+					tag = CPV
+					NOT = { exists = CPV }
+				}
+				primary_culture = morado
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 1876
+			}
+			any_country = { #Guinea-Bissau
+				limit = {
+					tag = GBI
+					NOT = { exists = GBI }
+				}
+				primary_culture = morado
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 1877
+			}
+			any_country = { #Equatorial Guinea
+				limit = {
+					tag = EQG
+					NOT = { exists = EQG }
+				}
+				primary_culture = morado
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 1955
+			}
+			any_country = { #São Tomé
+				limit = {
+					tag = SAO
+					NOT = { exists = SAO }
+				}
+				primary_culture = morado
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 1954
+			}
+			any_country = { #Djibouti
+				limit = {
+					tag = DJI
+					NOT = { exists = DJI }
+				}
+				primary_culture = afar
+				religion = sunni
+				government = democracy
+				civilized = yes
+				capital = 1875
+			}
+			any_country = { #Eritrea
+				limit = {
+					tag = ERI
+					NOT = { exists = ERI }
+				}
+				primary_culture = tigray
+				religion = coptic
+				government = democracy
+				civilized = yes
+				capital = 1848
+			}
+			any_country = { #South Sudan
+				limit = {
+					tag = SSU
+					NOT = { exists = SSU }
+				}
+				primary_culture = sudanese
+				religion = sunni
+				government = democracy
+				civilized = yes
+				capital = 1844
+			}
+			any_country = { #Comoros
+				limit = {
+					tag = KOM
+					NOT = { exists = KOM }
+				}
+				primary_culture = african_minor
+				religion = sunni
+				government = democracy
+				civilized = yes
+				capital = 2123
+			}
+			any_country = { #Mauritius
+				limit = {
+					tag = MAU
+					NOT = { exists = MAU }
+				}
+				primary_culture = african_minor
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2125
+			}
+			any_country = { #Seychelles
+				limit = {
+					tag = SEY
+					NOT = { exists = SEY }
+				}
+				primary_culture = african_minor
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2127
+			}
+
+			any_country = { #Anguilla
+				limit = {
+					tag = AGU
+					NOT = { exists = AGU }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2236
+			}
+			any_country = { #Antigua and Barbuda
+				limit = {
+					tag = ATB
+					NOT = { exists = ATB }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2224
+			}
+			any_country = { #Barbados
+				limit = {
+					tag = BBD
+					NOT = { exists = BBD }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2229
+			}
+			any_country = { #Bahamas
+				limit = {
+					tag = BHM
+					NOT = { exists = BHM }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2219
+			}
+			any_country = { #Curaçao
+				limit = {
+					tag = CUR
+					NOT = { exists = CUR }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2234
+			}
+			any_country = { #Dominica
+				limit = {
+					tag = DMN
+					NOT = { exists = DMN }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2232
+			}
+			any_country = { #Guadeloupe
+				limit = {
+					tag = GDL
+					NOT = { exists = GDL }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2230
+			}
+			any_country = { #Grenada
+				limit = {
+					tag = GRD
+					NOT = { exists = GRD }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2233
+			}
+			any_country = { #Montserrat
+				limit = {
+					tag = MNR
+					NOT = { exists = MNR }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2225
+			}
+			any_country = { #Martinique
+				limit = {
+					tag = MTQ
+					NOT = { exists = MTQ }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2228
+			}
+			any_country = { #Saint Kitts and Nevis
+				limit = {
+					tag = SKN
+					NOT = { exists = SKN }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2227
+			}
+			any_country = { #Saint Lucia
+				limit = {
+					tag = STL
+					NOT = { exists = STL }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2231
+			}
+			any_country = { #Saint Vincent and the Grenadines
+				limit = {
+					tag = STV
+					NOT = { exists = STV }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2409
+			}
+			any_country = { #Caribbean
+				limit = {
+					tag = CRB
+					NOT = { exists = CRB }
+				}
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				capital = 2237
+			}
+			any_country = { #Bima
+				limit = {
+					tag = BIM
+					NOT = { exists = BIM }
+				}
+				capital = 1440
+				primary_culture = moluccan
+				religion = sunni
+			}
+
+			any_country = { #Jambi
+				limit = {
+					tag = DJA
+					NOT = { exists = DJA }
+				}
+				capital = 1398
+				primary_culture = malay
+				religion = sunni
+			}
+
+			any_country = { #Fujian
+				limit = {
+					tag = FJN
+					NOT = { exists = FJN }
+				}
+				capital = 1482
+				primary_culture = min
+				religion = mahayana
+			}
+
+			any_country = { #Guominjun
+				limit = {
+					tag = GMJ
+					NOT = { exists = GMJ }
+				}
+				capital = 1559
+				primary_culture = beifaren
+				religion = protestant
+			}
+
+			any_country = { #Guangdong
+				limit = {
+					tag = GNG
+					NOT = { exists = GNG }
+				}
+				capital = 1493
+				primary_culture = yue
+				religion = mahayana
+			}
+
+			any_country = { #Hunan
+				limit = {
+					tag = HNN
+					NOT = { exists = HNN }
+				}
+				capital = 1524
+				primary_culture = nanfaren
+				religion = mahayana
+			}
+
+			any_country = { #Anhui
+				limit = {
+					tag = HUI
+					NOT = { exists = HUI }
+				}
+				capital = 1474
+				primary_culture = beifaren
+				religion = mahayana
+			}
+
+			any_country = { #Indonesia
+				limit = {
+					tag = INO
+					NOT = { exists = INO }
+				}
+				capital = 1413
+				primary_culture = javan
+				government = democracy
+				civilized = yes
+				religion = sunni
+			}
+
+			any_country = { #Kachin
+				limit = {
+					tag = KCH
+					NOT = { exists = KCH }
+				}
+				capital = 1314
+				primary_culture = kachin
+				religion = animist
+			}
+
+			any_country = { #Kalimantan
+				limit = {
+					tag = KLM
+					NOT = { exists = KLM }
+				}
+				capital = 1423
+				primary_culture = malay
+				religion = sunni
+			}
+
+			any_country = { #Nationalist China
+				limit = {
+					tag = KMT
+					NOT = { exists = KMT }
+				}
+				capital = 2221
+				primary_culture = nanfaren
+				government = presidential_dictatorship
+				religion = mahayana
+			}
+
+			any_country = { #Maluku
+				limit = {
+					tag = MAL
+					NOT = { exists = MAL }
+				}
+				capital = 1449
+				primary_culture = moluccan
+				religion = sunni
+			}
+
+			any_country = { #Sulawesi
+				limit = {
+					tag = SLW
+					NOT = { exists = SLW }
+				}
+				capital = 1430
+				primary_culture = moluccan
+				religion = sunni
+			}
+
+			any_country = { #Sarawak
+				limit = {
+					tag = SWK
+					NOT = { exists = SWK }
+				}
+				capital = 1394
+				primary_culture = malay
+				civilized = yes
+				religion = sunni
+			}
+
+			any_country = { #Sichuan
+				limit = {
+					tag = SZC
+					NOT = { exists = SZC }
+				}
+				capital = 1578
+				primary_culture = nanfaren
+				religion = mahayana
+			}
+
+			any_country = { #Taiwan
+				limit = {
+					tag = TAI
+					NOT = { exists = TAI }
+				}
+				capital = 1485
+				primary_culture = nanfaren
+				civilized = yes
+				religion = mahayana
+			}
+
+			any_country = { #Choshu
+				limit = {
+					tag = CHO
+					NOT = { exists = CHO }
+				}
+				capital = 1640
+				primary_culture = japanese
+				religion = shinto
+			}
+
+			any_country = { #Ezo
+				limit = {
+					tag = EZO
+					NOT = { exists = EZO }
+				}
+				capital = 1642
+				primary_culture = japanese
+				government = presidential_dictatorship
+				religion = shinto
+			}
+
+			any_country = { #Kaga
+				limit = {
+					tag = KAG
+					NOT = { exists = KAG }
+				}
+				capital = 1646
+				primary_culture = japanese
+				religion = shinto
+			}
+
+			any_country = { #Satsuma
+				limit = {
+					tag = SAT
+					NOT = { exists = SAT }
+				}
+				capital = 1662
+				primary_culture = japanese
+				religion = shinto
+			}
+
+			any_country = { #Sendai
+				limit = {
+					tag = SEN
+					NOT = { exists = SEN }
+				}
+				capital = 1668
+				primary_culture = japanese
+				religion = shinto
+			}
+
+			any_country = { #Tosa
+				limit = {
+					tag = TOS
+					NOT = { exists = TOS }
+				}
+				capital = 1665
+				primary_culture = japanese
+				religion = shinto
+			}
+
+			any_country = { #Yonezawa
+				limit = {
+					tag = YZW
+					NOT = { exists = YZW }
+				}
+				capital = 1673
+				primary_culture = japanese
+				religion = shinto
+			}
+
+			any_country = { #Fiji
+				limit = {
+					tag = FIJ
+					NOT = { exists = FIJ }
+				}
+				capital = 2454
+				primary_culture = melanesian
+				religion = protestant
+			}
+
+			any_country = { #South Island
+				limit = {
+					tag = SNZ
+					NOT = { exists = SNZ }
+				}
+				capital = 2513
+				set_country_flag = buro_independence
+				government = democracy
+				civilized = yes
+				religion = protestant
+			}
+
+			any_country = { #Tonga
+				limit = {
+					tag = TGA
+					NOT = { exists = TGA }
+				}
+				capital = 2540
+				primary_culture = polynesian
+				religion = protestant
+			}
+			any_country = { #Alawite
+				limit = {
+					tag = ALW
+					NOT = { exists =ALW }
+				}
+				capital = 905
+				civilized = yes
+				primary_culture = mashriqi
+				religion = bedouin
+			}
+			any_country = { #Biafra
+				limit = {
+					tag = BIA
+					NOT = { exists =BIA }
+				}
+				capital = 1935
+				primary_culture = ibo
+				religion = animist
+			}
+			any_country = { #Buenos Aires
+				limit = {
+					tag = BUE
+					NOT = { exists =BUE }
+				}
+				capital = 2348
+				government = democracy
+				civilized = yes
+				primary_culture = platinean
+				religion = catholic
+			}
+			any_country = { #Cascadia
+				limit = {
+					tag = CAS
+					NOT = { exists =CAS }
+				}
+				capital = 78
+				government = democracy
+				civilized = yes
+				set_country_flag = buro_independence
+				primary_culture = anglo_canadian
+				religion = protestant
+			}
+			any_country = { #Coptic Egypt
+				limit = {
+					tag = CEG
+					NOT = { exists =CEG }
+				}
+				capital = 1751
+				civilized = yes
+				primary_culture = misri
+				religion = coptic
+			}
+			any_country = { #Druze
+				limit = {
+					tag = DRU
+					NOT = { exists =DRU }
+				}
+				capital = 906
+				civilized = yes
+				primary_culture = mashriqi
+				religion = druze
+			}
+			any_country = { #Fiume
+				limit = {
+					tag = FIU
+					NOT = { exists =FIU }
+				}
+				capital = 778
+				government = democracy
+				civilized = yes
+				primary_culture = north_italian
+				religion = catholic
+			}
+			any_country = { #Hansa
+				limit = {
+					tag = HNS
+					NOT = { exists =HNS }
+				}
+				capital = 530
+				government = democracy
+				civilized = yes
+				primary_culture = north_german
+				religion = protestant
+			}
+			any_country = { #Hohenzollern
+				limit = {
+					tag = HOH
+					NOT = { exists =HOH }
+				}
+				capital = 594
+				civilized = yes
+				primary_culture = south_german
+				religion = catholic
+			}
+			any_country = { #Papal Italy
+				limit = {
+					tag = ITP
+					NOT = { exists =ITP }
+				}
+				capital = 749
+				government = theocracy
+				civilized = yes
+				primary_culture = south_italian
+				religion = catholic
+			}
+			any_country = { #Karen
+				limit = {
+					tag = KAR
+					NOT = { exists =KAR }
+				}
+				capital = 1343
+				civilized = yes
+				primary_culture = karen
+				religion = theravada
+			}
+			any_country = { #Limburg
+				limit = {
+					tag = LIM
+					NOT = { exists =LIM }
+				}
+				capital = 381
+				civilized = yes
+				primary_culture = north_german
+				religion = protestant
+			}
+			any_country = { #Lombardy-Venice
+				limit = {
+					tag = LVN
+					NOT = { exists =LVN }
+				}
+				capital = 729
+				civilized = yes
+				primary_culture = north_italian
+				religion = catholic
+			}
+			any_country = { #Pindus
+				limit = {
+					tag = PIN
+					NOT = { exists =PIN }
+				}
+				capital = 824
+				civilized = yes
+				primary_culture = aromanian
+				religion = orthodox
+			}
+			any_country = { #Qatar
+				limit = {
+					tag = QAT
+					NOT = { exists =QAT }
+				}
+				capital = 1165
+				civilized = yes
+				primary_culture = bedouin
+				religion = sunni
+			}
+			any_country = { #Syriac
+				limit = {
+					tag = SYC
+					NOT = { exists =SYC }
+				}
+				capital = 902
+				civilized = yes
+				primary_culture = assyrian
+				religion = orthodox
+			}
+			any_country = { #Tahiti
+				limit = {
+					tag = TAH
+					NOT = { exists =TAH }
+				}
+				capital = 801
+				primary_culture = polynesian
+				religion = catholic
+			}
+			any_country = { #Esperantujo
+				limit = {
+					tag = XEO
+					NOT = { exists = XEO }
+				}
+				primary_culture = ashkenazi
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 706
+			}
+			any_country = { #Gypsyland
+				limit = {
+					tag = GYP
+					NOT = { exists = GYP }
+				}
+				primary_culture = gypsy
+				religion = orthodox
+				government = democracy
+				civilized = yes
+				capital = 806
+			}
+			any_country = { #(Eastern) Rumelia
+				limit = {
+					tag = RML
+					NOT = { exists = RML }
+				}
+				primary_culture = bulgarian
+				add_accepted_culture = turkish
+				religion = orthodox
+				government = hms_government
+				civilized = yes
+				capital = 815
+			}
+			any_country = { #Hundland
+				limit = {
+					tag = DOG
+					NOT = { exists = DOG }
+				}
+				primary_culture = dog_culture
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 3
+			}
+			any_country = { #Duckburg
+				limit = {
+					tag = DUK
+					NOT = { exists = DUK }
+				}
+				primary_culture = duck_culture
+				religion = protestant
+				government = bourgeois_dictatorship
+				civilized = yes
+				capital = 84
+			}
+			any_country = { #Akavir
+				limit = {
+					tag = DRK
+					NOT = { exists = DRK }
+				}
+				primary_culture = dragon_culture
+				religion = animist
+				government = absolute_monarchy
+				civilized = yes
+				capital = 1612
+			}
+			any_country = { #Eleph
+				limit = {
+					tag = ELE
+					NOT = { exists = ELE }
+				}
+				primary_culture = elephant_culture
+				religion = hindu
+				government = absolute_monarchy
+				civilized = yes
+				capital = 1236
+			}
+			any_country = { #Mobian
+				limit = {
+					tag = HEG
+					NOT = { exists = HEG }
+				}
+				primary_culture = hedgehog_culture
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 232
+			}
+			any_country = { #Rum
+				limit = {
+					tag = RUM
+					NOT = { exists = RUM }
+				}
+				primary_culture = turkish
+				religion = sunni
+				government = absolute_monarchy
+				civilized = yes
+				capital = 873
+			}
+			any_country = { #Slavic Union
+				limit = {
+					tag = SLA
+					NOT = { exists = SLA }
+				}
+				primary_culture = russian
+				add_accepted_culture = byelorussian
+				add_accepted_culture = ukrainian
+				add_accepted_culture = czech
+				add_accepted_culture = slovak
+				add_accepted_culture = polish
+				religion = orthodox
+				government = prussian_constitutionalism
+				civilized = yes
+				capital = 958
+			}
+			any_country = { #Roman Empire
+				limit = {
+					tag = SPQ
+					NOT = { exists = SPQ }
+				}
+				primary_culture = north_italian culture = south_italian culture = brithenig culture = gaul
+				religion = catholic
+				government = absolute_monarchy
+				civilized = yes
+				capital = 749
+			}
+			any_country = { #Holy Roman Empire
+				limit = {
+					tag = HRE
+					NOT = { exists = HRE }
+				}
+				primary_culture = south_german culture = north_german culture = north_italian culture = czech culture = frankish
+				religion = catholic
+				government = prussian_constitutionalism
+				civilized = yes
+				capital = 576
+			}
+			any_country = { #Ulm
+				limit = {
+					tag = ULM
+					NOT = { exists = ULM }
+				}
+				primary_culture = south_german
+				religion = catholic
+				government = absolute_monarchy
+				civilized = yes
+				capital = 593
+			}
+			any_country = { #Dithmarschen
+				limit = {
+					tag = DTT
+					NOT = { exists = DTT }
+				}
+				primary_culture = north_german
+				religion = protestant
+				government = proletarian_dictatorship
+				civilized = yes
+				capital = 533
+			}
+			any_country = { #Nuremberg
+				limit = {
+					tag = NUM
+					NOT = { exists = NUM }
+				}
+				primary_culture = south_german
+				religion = catholic
+				government = absolute_monarchy
+				civilized = yes
+				capital = 595
+			}
+			any_country = { #Lorraine
+				limit = {
+					tag = LOR
+					NOT = { exists = LOR }
+				}
+				primary_culture = french culture = north_german
+				religion = catholic
+				government = absolute_monarchy
+				civilized = yes
+				capital = 412
+			}
+			any_country = { #Alsace
+				limit = {
+					tag = ALS
+					NOT = { exists = ALS }
+				}
+				primary_culture = french culture = north_german
+				religion = catholic
+				government = absolute_monarchy
+				civilized = yes
+				capital = 409
+			}
+			any_country = { #Genoa
+				limit = {
+					tag = GEN
+					NOT = { exists = GEN }
+				}
+				primary_culture = north_italian
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 724
+			}
+			any_country = { #Naples
+				limit = {
+					tag = NAP
+					NOT = { exists = NAP }
+				}
+				primary_culture = south_italian
+				religion = catholic
+				government = absolute_monarchy
+				civilized = yes
+				capital = 754
+			}
+			any_country = { #Sardinia
+				limit = {
+					tag = SRD
+					NOT = { exists = SRD }
+				}
+				primary_culture = north_italian
+				religion = catholic
+				government = presidential_dictatorship
+				civilized = yes
+				capital = 765
+			}
+			any_country = { #Sicily
+				limit = {
+					tag = SCY
+					NOT = { exists = SCY }
+				}
+				primary_culture = south_italian
+				religion = catholic
+				government = absolute_monarchy
+				civilized = yes
+				capital = 762
+			}
+			any_country = { #Siena
+				limit = {
+					tag = SNA
+					NOT = { exists = SNA }
+				}
+				primary_culture = north_italian
+				religion = catholic
+				government = presidential_dictatorship
+				civilized = yes
+				capital = 747
+			}
+			any_country = { #Riga
+				limit = {
+					tag = RIG
+					NOT = { exists = RIG }
+				}
+				primary_culture = north_german culture = latvian
+				religion = catholic
+				government = theocracy
+				civilized = yes
+				capital = 354
+			}
+			any_country = { #Athens
+				limit = {
+					tag = ATH
+					NOT = { exists = ATH }
+				}
+				primary_culture = greek
+				religion = orthodox
+				government = absolute_monarchy
+				civilized = yes
+				capital = 834
+			}
+			any_country = { #Brittany
+				limit = {
+					tag = BRT
+					NOT = { exists = BRT }
+				}
+				primary_culture = breton
+				religion = catholic
+				government = presidential_dictatorship
+				civilized = yes
+				capital = 424
+			}
+			any_country = { #Corsica
+				limit = {
+					tag = CRS
+					NOT = { exists = CRS }
+				}
+				primary_culture = north_italian
+				religion = catholic
+				government = presidential_dictatorship
+				civilized = yes
+				capital = 473
+			}
+			any_country = { #Normandy
+				limit = {
+					tag = NRM
+					NOT = { exists = NRM }
+				}
+				primary_culture = french
+				religion = catholic
+				government = absolute_monarchy
+				civilized = yes
+				capital = 415
+			}
+			#Cores for regional countries
+			TUR_806 = { add_core = MCD } #FYR Macedonia
+			TUR_788 = { add_core = BOS } #Bosnia
+			1068 = { add_core = ALT } #Altai Republic
+			652 = { add_core = BAN } #Banat
+			653 = { add_core = BAN } #Banat
+			792 = { add_core = BAN } #Banat
+			662 = { add_core = BKV } #Bukovina
+			AUS_780 = { add_core = DLM } #Dalmatia
+			AUS_662 = { add_core = GLM } #Galicia-Lodomeria
+			AUS_702 = { add_core = GLM } #Galicia-Lodomeria
+			1041 = { add_core = KMK } #Kalmykia
+			RUS_1074 = { add_core = KAM } #Kamchatka
+			RUS_339 = { add_core = KRL } #Karelia
+			694 = { add_core = PML } #Pomerelia
+			693 = { add_core = PML }
+			691 = { add_core = PML }
+			690 = { add_core = PML }
+			PRU_701 = { add_core = PZN } #Poznan
+			PRU_572 = { add_core = RHI } #Rhineland
+			PRU_575 = { add_core = RHI }
+			PAP_741 = { add_core = RMG } #Romagna
+			1469 = { add_core = TNT } #Tannu Tuva
+			1030 = { add_core = TAR } #Tatarstan
+			1059 = { add_core = URA } #Ural Republic
+			1058 = { add_core = URA }
+			2685 = { add_core = URA }
+			2684 = { add_core = URA }
+			2614 = { add_core = URA }
+			1155 = { add_core = ASR } #Asir
+			1179 = { add_core = ASR }
+			1162 = { add_core = BHR } #Bahrain
+			1095 = { add_core = CIR } #Circassia
+			1048 = { add_core = CIR }
+			1049 = { add_core = CIR }
+			1050 = { add_core = CIR }
+			1051 = { add_core = CIR }
+			1056 = { add_core = CIR }
+			894 = { add_core = CLC } #Cilicia
+			896 = { add_core = CLC }
+			898 = { add_core = CLC }
+			1052 = { add_core = DAG } #Dagestan
+			1053 = { add_core = DAG }
+			1054 = { add_core = DAG }
+			1055 = { add_core = DAG }
+			1057 = { add_core = DAG }
+			1091 = { add_core = DAG }
+			1103 = { add_core = DAG }
+			1104 = { add_core = DAG }
+			935 = { add_core = KWT } #Kuwait
+			882 = { add_core = PNT } #Pontus
+			884 = { add_core = PNT }
+			1735 = { add_core = CYR } #Cyrenaica
+			1736 = { add_core = CYR }
+			1737 = { add_core = CYR }
+			1738 = { add_core = CYR }
+			1739 = { add_core = CYR }
+			2052 = { add_core = SHO } #Shona
+			2054 = { add_core = SHO }
+			2055 = { add_core = SHO }
+			2058 = { add_core = SHO }
+			2068 = { add_core = SHO }
+			2069 = { add_core = SHO }
+			2070 = { add_core = SHO }
+			2071 = { add_core = SHO }
+			2072 = { add_core = SHO }
+			2073 = { add_core = SHO }
+			2635 = { add_core = SHO }
+			2057 = { add_core = SHO }
+			2059 = { add_core = SHO }
+			2065 = { add_core = SHO }
+			2053 = { add_core = SHO }
+			2056 = { add_core = SHO }
+			#Bima
+			1439 = { add_core = BIM }
+			1440 = { add_core = BIM }
+			1441 = { add_core = BIM }
+			1443 = { add_core = BIM }
+			1444 = { add_core = BIM }
+			1445 = { add_core = BIM }
+			1446 = { add_core = BIM }
+			#Fiji
+			2454 = { add_core = FIJ secede_province = FIJ change_controller = FIJ }
+			2520 = { add_core = FIJ secede_province = FIJ change_controller = FIJ }
+			#Jambi
+			1398 = { add_core = DJA }
+			1399 = { add_core = DJA }
+			1400 = { add_core = DJA }
+			1403 = { add_core = DJA }
+			1404 = { add_core = DJA }
+			1410 = { add_core = DJA }
+			#Kalimantan
+			1423 = { add_core = KLM }
+			1424 = { add_core = KLM }
+			1426 = { add_core = KLM }
+			1427 = { add_core = KLM }
+			#Maluku
+			1447 = { add_core = MAL }
+			1448 = { add_core = MAL }
+			1449 = { add_core = MAL }
+			1450 = { add_core = MAL }
+			1451 = { add_core = MAL }
+			#Taiwan
+			1485 = { add_core = TAI }
+			2562 = { add_core = TAI }
+			#Tonga
+			2540 = { add_core = TGA secede_province = TGA change_controller = TGA }
+			#Hawaii
+			658 = { secede_province = HAW change_controller = HAW }
+			CHI_1487 = { add_core = FJN } #Fujian
+			CHI_1499 = { add_core = GNG } #Guangdong
+			CHI_1529 = { add_core = HNN } #Hunan
+			CHI_1472 = { add_core = HUI } #Anhui
+			CHI_1473 = { add_core = HUI }
+			1430 = { add_core = SLW } #Sulawesi
+			1431 = { add_core = SLW }
+			1432 = { add_core = SLW }
+			1433 = { add_core = SLW }
+			1434 = { add_core = SLW }
+			1435 = { add_core = SLW }
+			1436 = { add_core = SLW }
+			1437 = { add_core = SLW }
+			1394 = { add_core = SWK } #Sarawak
+			1395 = { add_core = SWK }
+			CHI_1578 = { add_core = SZC } #Sichuan
+			CHI_1579 = { add_core = SZC }
+			JAP_1088 = { add_core = EZO } #Ezo Republic
+			ENG_2513 = { add_core = SNZ } #South Island
+			778 = { add_core = FIU } #Fiume
+			736 = { add_core = TRE } #Trieste
+			381 = { add_core = LIM } #Limburg
+			1165 = { add_core = QAT } #Qatar
+			801 = { add_core = TAH } #Tahiti
+			#Name-sakes cores
+			RUS_964 = { add_core = CRI } #Crimea
+			BEL_387 = { add_core = FLA } #Flanders
+			BEL_394 = { add_core = WLL } #Wallonia
+			539 = { add_core = BRE } #Bremen
+			690 = { add_core = DZG } #Danzig
+			564 = { add_core = FRM } #Frankfurt am Main
+			528 = { add_core = HAM } #Hamburg
+			593 = { add_core = ULM } #Ulm the Allmighty
+			529 = { add_core = HOL } #Holstein
+			585 = { add_core = LIP } #Lippe-Detmold
+			530 = { add_core = LUB } #Lübeck
+			397 = { add_core = LUX } #Luxembourg
+			565 = { add_core = NAS } #Nassau
+			SAX_558 = { add_core = SAX } #Saxony
+			533 = { add_core = DTT } #SSR Dithmarschen
+			595 = { add_core = NUM } #Nüremberg
+			AUS_726 = { add_core = LOM } #Lombardia
+			746 = { add_core = LUC } #Lucca
+			739 = { add_core = MOD } #Modena
+			738 = { add_core = PAR } #Parma
+			TUS_744 = { add_core = TUS } #Tuscany
+			729 = { add_core = VEN } #Venice
+			703 = { add_core = KRA } #Krakow
+			2048 = { add_core = ZAN } #Zanzibar
+			1167 = { add_core = ABU } #Abu Dhabi
+			HDJ_1151 = { add_core = HDJ } #Hedjaz
+			NEJ_1156 = { add_core = HAL } #Ha'il Shammar
+			NEJ_1157 = { add_core = NEJ } #Nejd
+			OMA_1166 = { add_core = OMA } #Oman
+			YEM_1173 = { add_core = YEM } #Yemen
+			252 = { add_core = ICL } #Iceland
+			412 = { add_core = LOR } #Lorraine
+			409 = { add_core = ALS } #Alsace
+			410 = { add_core = ALS } #Alsace
+			724 = { add_core = GEN } #Genoa
+			754 = { add_core = NAP } #Naples
+			SAR_765 = { add_core = SRD } #Sardinia
+			SIC_763 = { add_core = SCY } #Sicily
+			747 = { add_core = SNA } #Siena
+			854 = { add_core = MLT remove_core = SCY } #Malta
+			354 = { add_core = RIG } #Riga
+			834 = { add_core = ATH } #Athens
+			FRA_420 = { add_core = BRT } #Brittany
+			473 = { add_core = CRS } #Corsica
+			FRA_418 = { add_core = NRM } #Normandy
+			#Exaggerated cultural Heimaten fix
+			PER = {
+				any_owned_province = {
+					limit = {
+						NOT = {
+							region = RUS_1090 #Georgia
+							region = RUS_1098 #Armenia
+							region = RUS_1102 #Azerbaijan
+						}
+					}
+					remove_core = GEO
+					remove_core = ARM
+					remove_core = AZB
+				}
+			}
+			TUR = {
+				any_owned_province = {
+					limit = {
+						NOT = {
+							region = RUS_1090 #Georgia
+							region = RUS_1098 #Armenia
+							region = RUS_1102 #Azerbaijan
+						}
+					}
+					remove_core = GEO
+					remove_core = ARM
+					remove_core = AZB
+				}
+			}
+			RUS = {
+				any_owned_province = {
+					limit = {
+						NOT = {
+							region = RUS_1090 #Georgia
+							region = RUS_1098 #Armenia
+							region = RUS_1102 #Azerbaijan
+						}
+					}
+					remove_core = GEO
+					remove_core = ARM
+					remove_core = AZB
+				}
+			}
+			SLA = {
+				any_owned_province = {
+					limit = {
+						NOT = {
+							region = RUS_1090 #Georgia
+							region = RUS_1098 #Armenia
+							region = RUS_1102 #Azerbaijan
+						}
+					}
+					remove_core = GEO
+					remove_core = ARM
+					remove_core = AZB
+				}
+			}
+			FRA_399 = { remove_core = BEL }
+			#British culture no more existing
+			any_country = { #Australia
+				limit = {
+					tag = AST
+					NOT = { exists = AST }
+				}
+				primary_culture = australian
+			}
+			any_country = { #New Zealand
+				limit = {
+					tag = NZL
+					NOT = { exists = NZL }
+				}
+				primary_culture = australian
+			}
+			any_country = { #Scotland
+				limit = {
+					tag = SCO
+					NOT = { exists = SCO }
+				}
+				primary_culture = scottish
+			}
+			any_country = { #South Africa
+				limit = {
+					tag = SAF
+					NOT = { exists = SAF }
+				}
+				primary_culture = anglo_african
+			}
+			any_country = { #Rhodesia
+				limit = {
+					tag = RHO
+					NOT = { exists = RHO }
+				}
+				primary_culture = anglo_african
+			}
+			any_country = { #UK
+				limit = {
+					tag = ENG
+					NOT = { exists = ENG }
+				}
+				primary_culture = english
+				culture = scottish
+			}
+			any_country = { #England proper
+				limit = {
+					tag = ENL
+					NOT = { exists = ENL }
+				}
+				primary_culture = english
+			}
 			set_global_flag = taiping_and_csa
 		}
 		ai_will_do = {
@@ -265,6 +3371,7 @@ political_decisions = {
 
 	
 	form_china = {
+		image = clear_out_the_manchu_elite
 		news = yes
 		news_desc_long = "form_china_NEWS_LONG"
 		news_desc_medium = "form_china_NEWS_MEDIUM"
@@ -498,7 +3605,7 @@ political_decisions = {
 			NOT = {
 				exists = NET
 				tag = FRA
-				tag = RME
+				tag = SPQ
 			}
 		}	
 		allow = {
@@ -553,7 +3660,7 @@ political_decisions = {
 				exists = FLA
 				exists = WLL
 				tag = LUX
-				tag = RME
+				tag = SPQ
 			}
 		}	
 		allow = {
@@ -606,19 +3713,32 @@ political_decisions = {
 			}
 			NOT = {
 				exists = SPA
+				exists = SPC
 				tag = CAT
-				tag = RME
+				tag = SPQ
 			}
 		}	
 		allow = {
 			war = no
 			prestige = 5
-			SPA = {
-				all_core = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
+			OR = {
+				SPC = { #Carlist Spain
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
+						}
+					}
+				}
+				SPA = { #Default Spain
+					all_core = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+							}
 						}
 					}
 				}
@@ -645,6 +3765,7 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = SPA
+				remove_core = SPC #Carlist Spain
 			}			
 			
 			change_tag = SPA
@@ -660,8 +3781,9 @@ political_decisions = {
 				exists = RUT
 				exists = UKR
 				tag = RUS
+				tag = SLA
 				tag = CRI
-				tag = RME
+				tag = SPQ
 			}
 		}	
 		allow = {
@@ -767,14 +3889,14 @@ political_decisions = {
 		potential = {
 			primary_culture = malay
 			NOT = {
-				exists = MSA
+				exists = MLY
 			}
 		}
 		
 		allow = {
 			war = no
 			prestige = 5
-			MSA = {
+			MLY = {
 				all_core = {
 					OR = {
 						owned_by = THIS
@@ -798,10 +3920,10 @@ political_decisions = {
 				annex_to = THIS
 			}
 			any_owned = {
-				add_core = MSA
+				add_core = MLY
 			}			
 			
-			change_tag = MSA
+			change_tag = MLY
 		}
 		ai_will_do = {
 			factor = 1
@@ -861,6 +3983,7 @@ political_decisions = {
 		}
 	}
 	form_usa = {
+		image = apply_for_USA_statehood
 		potential = {
 			OR = {
 				primary_culture = yankee
@@ -1131,7 +4254,7 @@ political_decisions = {
 	become_slovenia = {
 		potential = {
 			tag = AQU
-			tag = CAR
+			tag = CRT
 			is_culture_group = south_slavic
 			NOT = { exists = SLO }
 		}	
@@ -1170,7 +4293,7 @@ political_decisions = {
 				add_core = RME
 			}			
 			
-			change_tag = RME
+			change_tag = SPQ
 		}
 		ai_will_do = {
 			factor = 1
@@ -1471,6 +4594,8 @@ political_decisions = {
 				all_core = {
 					OR = {
 						owned_by = THIS
+						is_empty = yes
+						#owned_by = RYU
 						owner = {
 							in_sphere = THIS
 							primary_culture = japanese
@@ -1539,6 +4664,11 @@ political_decisions = {
 				culture = cat
 				culture = undead
 				culture = alien
+				culture = dog_culture
+				culture = duck_culture
+				culture = dragon_culture
+				culture = elephant_culture
+				culture = hedgehog_culture
 			}
 			any_pop = {
 				OR = {
@@ -1547,8 +4677,14 @@ political_decisions = {
 					culture = cat
 					culture = undead
 					culture = alien
+					culture = dog_culture
+					culture = duck_culture
+					culture = dragon_culture
+					culture = elephant_culture
+					culture = hedgehog_culture
 				}
 			}
+			NOT = { has_country_flag = we_purged_them }
 		}	
 		allow = {
 			always = yes
@@ -1563,10 +4699,16 @@ political_decisions = {
 						culture = cat
 						culture = undead
 						culture = alien
+						culture = dog_culture
+						culture = duck_culture
+						culture = dragon_culture
+						culture = elephant_culture
+						culture = hedgehog_culture
 					}
 				}
 				reduce_pop = 0
 			}
+			set_country_flag = we_purged_them
 		}
 		ai_will_do = {
 			factor = 1
@@ -1580,10 +4722,16 @@ political_decisions = {
 				culture = cat
 				culture = undead
 				culture = alien
+				culture = dog_culture
+				culture = duck_culture
+				culture = dragon_culture
+				culture = elephant_culture
+				culture = hedgehog_culture
 			}
 			any_pop = {
 				is_primary_culture = no
 			}
+			NOT = { has_country_flag = we_purged_them }
 		}	
 		allow = {
 			always = yes
@@ -1596,6 +4744,7 @@ political_decisions = {
 				}
 				reduce_pop = 0
 			}
+			set_country_flag = we_purged_them
 		}
 		ai_will_do = {
 			factor = 1
@@ -1614,8 +4763,17 @@ political_decisions = {
 		allow = {
 			war = no
 			prestige = 5
+			263 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
 			IRE = {
 				all_core = {
+					NOT = { province_id = 263 }
 					OR = {
 						owned_by = THIS
 						owner = {
@@ -1661,21 +4819,30 @@ political_decisions = {
 				exists = GRE
 				tag = TUR
 				tag = ITA
-				tag = MKD
+				tag = MCD
 			}
 		}	
 		allow = {
 			war = no
 			prestige = 5
+			834 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
 			GRE = {
 				all_core = {
+					NOT = { province_id = 834 }
 					OR = {
 						owned_by = THIS
 						owner = {
 							in_sphere = THIS
 						}
 						owned_by = TUR
-						owned_by = MKD
+						owned_by = MCD
 					}
 				}
 			}
@@ -1699,6 +4866,1400 @@ political_decisions = {
 			}			
 			
 			change_tag = GRE
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_turkestan = {
+		potential = {
+			civilized = yes
+			OR = {
+				primary_culture = turkmen
+				primary_culture = uzbek
+				primary_culture = kirgiz
+				primary_culture = tajik
+			}
+			NOT = {
+				exists = TKS
+				tag = KAZ
+				tag = XIN
+				tag = PER
+				tag = RUS
+				tag = SLA
+				tag = CHI
+				tag = YUA
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			TKS = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = KAZ
+						owned_by = XIN
+						owned_by = PER
+						owned_by = RUS
+						owned_by = SLA
+						owned_by = CHI
+						owned_by = YUA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					capital_scope = { continent = asia }
+					OR = {
+						primary_culture = turkmen
+						primary_culture = uzbek
+						primary_culture = kirgiz
+						primary_culture = tajik
+					}
+				}
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = TKS
+			}			
+			
+			change_tag = TKS
+			add_accepted_culture = turkmen
+			add_accepted_culture = uzbek
+			add_accepted_culture = kirgiz
+			add_accepted_culture = tajik
+			capital = 1195
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_occitania = {
+		potential = {
+			primary_culture = occitan
+			NOT = {
+				exists = OCC
+				tag = FRA
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			455 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
+			OCC = {
+				all_core = {
+					NOT = { province_id = 455 }
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = FRA
+						owned_by = SPA
+						owned_by = CAT
+						owned_by = NAV
+						owned_by = PAP
+						owned_by = ITA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					capital_scope = { continent = europe }
+					primary_culture = occitan
+				}
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = OCC
+				remove_core = FRA
+			}			
+			
+			change_tag = OCC
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_the_suebi = {
+		potential = {
+			primary_culture = suebi
+			NOT = {
+				exists = SUE
+				tag = GLC
+				tag = POR
+				tag = SPA
+				tag = SPC
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			SUE = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					capital_scope = { continent = europe }
+					primary_culture = suebi
+				}
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = SUE
+				remove_core = SPA
+				remove_core = POR
+				remove_core = GLC
+				remove_core = SPC
+			}			
+			
+			change_tag = SUE
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_visigothia = {
+		potential = {
+			primary_culture = visigothic
+			NOT = {
+				exists = VGO
+				tag = POR
+				tag = SPA
+				tag = SPC
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			VGO = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					capital_scope = { continent = europe }
+					primary_culture = visigothic
+				}
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = VGO
+				remove_core = SPA
+				remove_core = POR
+				remove_core = SPC
+			}			
+			
+			change_tag = VGO
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_siberia = {
+		potential = {
+			primary_culture = siberian
+			NOT = {
+				exists = SIB
+				tag = RUS
+				tag = SLA
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			SIB = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					capital_scope = { continent = asia }
+					primary_culture = siberian
+				}
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = SIB
+				remove_core = RUS
+				remove_core = SLA
+			}			
+			
+			change_tag = SIB
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_indochina = {
+		potential = {
+			capital_scope = { is_core = IDO }
+			NOT = { exists = IDO }
+		}
+		allow = {
+			war = no
+			prestige = 5
+			IDO = {
+				all_core = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+					owner = { capital_scope = { NOT = { is_core = IDO } } }
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					capital_scope = { continent = asia }
+					capital_scope = { is_core = IDO }
+				}
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = IDO
+			}			
+			
+			change_tag = IDO
+			add_accepted_culture = thai
+			add_accepted_culture = vietnamese
+			add_accepted_culture = khmer
+			add_accepted_culture = lao
+			add_accepted_culture = shan
+			add_accepted_culture = burmese
+			add_accepted_culture = kachin
+			add_accepted_culture = karen
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_anglo_saxony = {
+		potential = {
+			primary_culture = anglo_saxon
+			NOT = {
+				exists = AES
+				tag = ENG
+				tag = ENL
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			AES = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			civilized = no
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					capital_scope = { continent = europe }
+					primary_culture = anglo_saxon
+				}
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = AES
+				remove_core = ENG
+				remove_core = ENL
+			}			
+			
+			change_tag = AES
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_frankia = {
+		potential = {
+			primary_culture = frankish
+			NOT = {
+				exists = FRK
+				tag = FRA
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			FRK = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					capital_scope = { continent = europe }
+					primary_culture = frankish
+				}
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = FRK
+				remove_core = FRA
+			}			
+			
+			change_tag = FRK
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_britannia = {
+		potential = {
+			primary_culture = brithenig
+			NOT = {
+				exists = ENR
+			}
+		}
+		
+		allow = {
+			war = no
+			prestige = 5
+			ENR = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = { tag = THIS }
+					primary_culture = brithenig
+				}
+				capital_scope = { continent = europe }
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = ENR
+			}			
+			
+			change_tag = ENR
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_gallia = {
+		potential = {
+			primary_culture = gaul
+			NOT = {
+				exists = FRR
+			}
+		}
+		
+		allow = {
+			war = no
+			prestige = 5
+			FRR = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = { tag = THIS }
+					primary_culture = gaul
+				}
+				capital_scope = { continent = europe }
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = FRR
+			}			
+			
+			change_tag = FRR
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_laessinia = {
+		potential = {
+			primary_culture = laessin
+			NOT = {
+				exists = AUR
+			}
+		}
+		
+		allow = {
+			war = no
+			prestige = 5
+			AUR = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = { tag = THIS }
+					primary_culture = laessin
+				}
+				capital_scope = { continent = europe }
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = AUR
+			}			
+			
+			change_tag = AUR
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_euskadi = {
+		potential = {
+			OR = {
+				AND = {
+					tag = NAV
+					government = democracy
+				}
+				AND = { #Gascony, if Navarre doesn't exist
+					tag = GYN
+					NOT = { exists = NAV }
+				}
+			}
+			NOT = {
+				exists = BSQ
+			}
+		}
+		allow = {
+			war = no
+			prestige = 5
+			492 = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
+			BSQ = {
+				all_core = {
+					NOT = { province_id = 492 }
+					OR = {
+						owned_by = GYN
+						owned_by = NAV
+						owned_by = SPA
+						owned_by = FRA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = BSQ
+				remove_core = SPA
+			}
+			change_tag = BSQ
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_nepal = {
+		potential = {
+			is_greater_power = no
+			primary_culture = nepali
+			OR = { 
+				capital = 1326
+				capital = 1327
+			}
+			NOT = { exists = NEP }
+		}	
+		allow = {
+			war = no
+			prestige = 1
+			1326 = { owned_by = THIS }
+			1327 = { owned_by = THIS }
+		}
+		
+		effect = {
+			prestige = 2
+			any_owned = {
+				add_core = NEP
+			}		
+			change_tag = NEP
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_persia = {
+		potential = {
+			OR = {
+				primary_culture = persian
+				primary_culture = tajik
+				primary_culture = gypsy
+				primary_culture = kurdish
+			}
+			NOT = {
+				exists = PER
+				tag = ARA
+				tag = MUG
+				tag = TIM
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			PER = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			change_tag = PER
+			capital = 1121 #Tehran
+			any_country = {
+				limit = {
+					in_sphere = PER
+					NOT = {
+						tag = PER
+						tag = TAJ #Tajikistan would be nonsense
+					}
+					OR = {
+						primary_culture = persian
+						primary_culture = tajik
+						primary_culture = gypsy
+					}
+				}
+				annex_to = PER
+			}
+			any_owned = { add_core = PER }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_kurdistan = {
+		potential = {
+			primary_culture = kurdish
+			NOT = {
+				exists = KDS
+				tag = PER
+				tag = ARA
+				tag = TUR
+				tag = IRQ
+				tag = SYR
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			KDS = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					primary_culture = kurdish
+				}
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = KDS
+			}			
+			
+			change_tag = KDS
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	provincia_britannia = {
+		potential = {
+			OR = { tag = ENR tag = SPQ }
+			NOT = { has_global_flag = provincia_britannia }
+		}
+		allow = {
+			300 = { #London
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			300 = {
+				change_province_name = "Londinium"
+			}
+			set_global_flag = provincia_britannia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	provincia_gallia = {
+		potential = {
+			OR = { tag = FRR tag = SPQ }
+			NOT = { has_global_flag = provincia_gallia }
+		}
+		allow = {
+			425 = { #Paris
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			425 = {
+				change_province_name = "Lutetia"
+			}
+			set_global_flag = provincia_gallia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	provincia_noricum = {
+		potential = {
+			OR = { tag = AUR tag = SPQ }
+			NOT = { has_global_flag = provincia_noricum }
+		}
+		allow = {
+			619 = { #Vienna
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			619 = {
+				change_province_name = "Vindobona"
+			}
+			set_global_flag = provincia_noricum
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_LVN = {
+		potential = {
+			NOT = {
+				exists = LVN
+				tag = ITA
+				tag = ITP
+				tag = SPQ
+				tag = BYZ
+				tag = LGB
+				tag = PAP
+			}
+			OR = {
+				AND = {
+					NOT = { exists = VEN }
+					tag = LOM
+				}
+				AND = {
+					NOT = { exists = LOM }
+					tag = VEN
+				}
+				AND = {
+					NOT = { exists = VEN }
+					NOT = { exists = LOM }
+					OR = {
+						capital_scope = { state_id = 726 }
+						capital_scope = { state_id = 729 }
+						capital_scope = { state_id = 734 }
+					}
+				}
+			}
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			AUS_726 = { owned_by = THIS }
+			AUS_729 = { owned_by = THIS }
+			LOM = {
+				all_core = { owned_by = THIS }
+			}
+			VEN = {
+				all_core = { owned_by = THIS }
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			AUS_726 = { add_core = LVN }
+			AUS_729 = { add_core = LVN }
+			LOM = {
+				all_core = { add_core = LVN }
+			}
+			VEN = {
+				all_core = { add_core = LVN }
+			}
+			change_tag = LVN
+			LVN = {
+				add_accepted_culture = lombard
+				add_accepted_culture = north_italian
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	vassal_LVN = {
+		potential = {
+			NOT = {
+				exists = LVN
+				tag = ITA
+				tag = ITP
+				tag = SPQ
+				tag = BYZ
+				tag = LGB
+				tag = PAP
+				tag = ALI #Yeah...
+				exists = VEN
+				exists = LOM
+			}
+			NOT = {
+				capital_scope = { state_id = 726 }
+				capital_scope = { state_id = 729 }
+				capital_scope = { state_id = 734 }
+			}
+			NOT = {
+				primary_culture = north_italian
+				primary_culture = lombard
+				primary_culture = south_italian
+			}
+			OR = {
+				AUS_726 = { owned_by = THIS }
+				AUS_729 = { owned_by = THIS }
+				LOM = {
+					any_core = { owned_by = THIS }
+				}
+				VEN = {
+					any_core = { owned_by = THIS }
+				}
+			}
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			AUS_726 = { owned_by = THIS }
+			AUS_729 = { owned_by = THIS }
+			LOM = {
+				all_core = { owned_by = THIS }
+			}
+			VEN = {
+				all_core = { owned_by = THIS }
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			AUS_726 = { add_core = LVN secede_province = LVN }
+			AUS_729 = { add_core = LVN secede_province = LVN }
+			LOM = {
+				all_core = { add_core = LVN secede_province = LVN }
+			}
+			VEN = {
+				all_core = { add_core = LVN secede_province = LVN }
+			}
+			LVN = {
+				add_accepted_culture = lombard
+				add_accepted_culture = north_italian
+				civilized = yes
+				religion = FROM
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	EGY_copt = {
+		potential = {
+			tag = EGY
+			pop_majority_religion = coptic
+		}	
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			all_core = { remove_core = EGY add_core = CEG }
+			change_tag = CEG
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	EGY_not_copt = {
+		potential = {
+			tag = CEG
+			NOT = { pop_majority_religion = coptic }
+		}	
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			all_core = { remove_core = CEG add_core = EGY }
+			change_tag = EGY
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_ITP = {
+		news = yes
+		news_desc_long = "form_italy_NEWS_LONG"
+		news_desc_medium = "form_italy_NEWS_MEDIUM"
+		news_desc_short = "form_italy_NEWS_SHORT"
+		potential = {
+			tag = PAP
+			NOT = {
+				has_country_flag = post_colonial_country
+				exists = ITA
+			}
+			NOT = { tag = SPQ }
+		}
+		
+		allow = {
+			prestige = 45
+			nationalism_n_imperialism = 1
+			is_greater_power = yes
+			war = no
+			ITA = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						AND = {
+							is_core = VEN
+							owner = {
+								NOT = { is_culture_group = italian }
+							}
+						}
+						AND = {
+							is_core = LOM
+							owner = {
+								NOT = { is_culture_group = italian }
+							}
+						}
+						owner = {
+							in_sphere = THIS
+							OR = {
+								is_vassal = no
+								vassal_of = THIS
+							}
+							war = no
+							is_greater_power = no
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 20
+			all_core = { remove_core = THIS }
+			ITA = {
+				all_core = {
+					remove_core = ITA
+					add_core = ITP
+				}
+			}
+			change_tag = ITP
+			capital = 749
+			add_accepted_culture = north_italian
+			add_accepted_culture = south_italian
+			any_country = {
+				limit = {
+					is_culture_group = italian
+					in_sphere = THIS
+					NOT = { has_country_flag = post_colonial_country }
+				}
+				country_event = 11101
+			}
+			any_country = {
+				limit = {
+					NOT = { is_culture_group = italian }
+					OR = {
+						has_country_flag = objects_to_italy
+						tag = FRA
+						tag = AUS
+						tag = KUK
+						AND = {
+							neighbour = ITP
+							is_greater_power = yes
+						}
+					}
+				}
+				country_event = 96165
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_SPQR = {
+		news = yes
+		news_desc_long = "form_italy_NEWS_LONG"
+		news_desc_medium = "form_italy_NEWS_MEDIUM"
+		news_desc_short = "form_italy_NEWS_SHORT"
+		potential = {
+			OR = {
+				AND = {
+					tag = BYZ
+					NOT = { exists = LTN }
+					NOT = { exists = HRE }
+					NOT = { exists = ENR }
+					NOT = { exists = FRR }
+					NOT = { exists = AUR }
+				}
+				AND = {
+					tag = LTN
+					NOT = { exists = BYZ }
+					NOT = { exists = HRE }
+					NOT = { exists = ENR }
+					NOT = { exists = FRR }
+					NOT = { exists = AUR }
+				}
+				AND = {
+					tag = HRE
+					NOT = { exists = LTN }
+					NOT = { exists = BYZ }
+					NOT = { exists = ENR }
+					NOT = { exists = FRR }
+					NOT = { exists = AUR }
+				}
+				AND = {
+					tag = ENR
+					NOT = { exists = LTN }
+					NOT = { exists = HRE }
+					NOT = { exists = BYZ }
+					NOT = { exists = FRR }
+					NOT = { exists = AUR }
+				}
+				AND = {
+					tag = FRR
+					NOT = { exists = LTN }
+					NOT = { exists = HRE }
+					NOT = { exists = ENR }
+					NOT = { exists = BYZ }
+					NOT = { exists = AUR }
+				}
+				AND = {
+					tag = AUR
+					NOT = { exists = LTN }
+					NOT = { exists = HRE }
+					NOT = { exists = ENR }
+					NOT = { exists = FRR }
+					NOT = { exists = BYZ }
+				}
+			}
+			NOT = { exists = SPQ }
+		}
+		
+		allow = {
+			prestige = 45
+			is_greater_power = yes
+			war = no
+			#Duchy of Genoa
+			724 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			725 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Romagna
+			PAP_741 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Venice
+			729 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Lazio
+			749 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			750 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Campania
+			2567 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			754 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Apulia
+			756 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			758 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Tunis
+			TUN_1726 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Sicily
+			SIC_763 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Dalmatia
+			AUS_780 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			781 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			774 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			773 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Thrace
+			TUR_860 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Hellas
+			834 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			835 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Alexandria
+			EGY_1753 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			1751 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			1747 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Jerusalem
+			916 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			917 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			918 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			#Duchy of Antioch
+			900 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			897 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+		}
+		
+		effect = {
+			prestige = 50
+			all_core = { remove_core = THIS add_core = SPQ }
+			any_owned = {
+				add_core = SPQ
+				remove_core = BYZ
+				remove_core = LTN
+				remove_core = HRE
+				remove_core = ENR
+				remove_core = FRR
+				remove_core = AUR
+				remove_core = ITA
+				remove_core = ITP
+				remove_core = JER
+			}
+			change_tag = SPQ
+			capital = 749
+			add_accepted_culture = north_italian #Romans
+			add_accepted_culture = south_italian
+			add_accepted_culture = greek #Byzantines
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = { has_country_flag = post_colonial_country }
+				}
+				country_event = 11101
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_yemen = {
+		potential = {
+			is_greater_power = no
+			primary_culture = bedouin
+			capital_scope = {
+				state_id = 1173 #Yemen
+			}
+			NOT = {
+				exists = YEM
+				tag = ARA
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 3
+			YEM_1173 = { owned_by = THIS }
+		}
+		
+		effect = {
+			prestige = 5
+			any_owned = { add_core = YEM }
+			change_tag = YEM
+			capital = 1412 #Aden
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Kept last intentionally
+	form_burma = {
+		potential = {
+			OR = {
+				primary_culture = burmese
+				primary_culture = shan
+				primary_culture = kachin
+				primary_culture = karen
+			}
+			NOT = {
+				exists = BUR
+				tag = SHA
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			BUR = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+						owner = SHA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			#any_country = {
+			#	limit = {
+			#		in_sphere = THIS
+			#		NOT = { tag = THIS }
+			#		primary_culture = burmese
+			#	}
+			#	annex_to = THIS
+			#}
+			any_owned = {
+				add_core = BUR
+			}			
+			
+			change_tag = BUR
+			BUR = { add_accepted_culture = burmese }
+		}
+	}
+	form_shan = {
+		potential = {
+			primary_culture = shan
+			NOT = {
+				tag = BUR
+				exists = SHA
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			SHA = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						owner = { in_sphere = THIS }
+						owner = BUR
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					primary_culture = shan
+				}
+				annex_to = THIS
+			}
+			any_owned = {
+				add_core = SHA
+			}			
+			
+			change_tag = SHA
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	form_libya = {
+		potential = {
+			OR = {
+				tag = TRI
+				tag = CYR
+			}
+			NOT = { exists = LBY }
+			civilized = yes
+			any_owned = { is_core = LBY } #Just to avoid weirdness
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			LBY = {
+				all_core = {
+					owned_by = THIS
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = LBY
+			}			
+			
+			change_tag = LBY
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	form_kenya = {
+		potential = {
+			NOT = { exists = KNY }
+			civilized = yes
+			tag = SWA
+		}	
+		allow = {
+			war = no
+			prestige = 5
+		}
+		
+		effect = {
+			prestige = 10
+			any_core = {
+				add_core = KNY
+				remove_core = SWA
+			}
+			change_tag = KNY
 		}
 		ai_will_do = {
 			factor = 1

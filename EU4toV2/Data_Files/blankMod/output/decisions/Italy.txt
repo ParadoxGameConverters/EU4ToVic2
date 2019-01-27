@@ -1,0 +1,309 @@
+#Pontifical Italy edits
+political_decisions = {
+	cavours_diplomacy = {
+		potential = {
+			OR = {
+				AND = { 
+					tag = ITA
+					NOT = { exists = SAR }
+					NOT = { exists = SVY }
+				}
+				AND = { 
+					tag = SAR
+					NOT = { exists = ITA }
+					NOT = { exists = SVY }
+				}
+				AND = {
+					tag = SVY
+					NOT = { exists = ITA }
+					NOT = { exists = SAR }
+				}
+			}
+			NOT = {
+				has_country_flag = cavour_has_done_his
+			}
+			owns = 465
+			owns = 466
+			owns = 472
+			FRA = {
+				exists = yes
+				is_greater_power = yes
+			}
+		}
+		allow = {
+			relation = {
+				who = FRA
+				value = 150
+			}
+			owns = 726
+			owns = 727
+			owns = 728
+		}
+		
+		effect = {
+			prestige = 20
+			badboy = -10
+			relation = {
+				who = FRA
+				value = 50
+			}
+			726 = {
+				add_core = SAR
+			}
+			727 = {
+				add_core = SAR
+			}
+			728 = {
+				add_core = SAR
+			}
+			465 = {
+				remove_core = ITA
+				remove_core = SAR
+				add_core = FRA
+				secede_province = FRA
+			}
+			466 = {
+				remove_core = ITA
+				remove_core = SAR
+				add_core = FRA
+				secede_province = FRA
+			}
+			472 = {
+				remove_core = ITA
+				remove_core = SAR
+				add_core = FRA
+				secede_province = FRA
+			}
+			set_country_flag = cavour_has_done_his
+		}
+	}
+	
+	award_order_of_st_francis = {
+		potential = {
+			OR = {
+				tag = SIC
+				AND = {
+					tag = NAP
+					NOT = { exists = SIC }
+				}
+			}
+			government = absolute_monarchy
+			NOT = {
+				has_country_flag = order_awarded
+			}
+		}
+		
+		allow = {
+			prestige = 25
+		}
+		
+		effect = {
+			years_of_research = 0.02
+			prestige = 2
+			set_country_flag = order_awarded
+		}
+	}
+	
+	statuto_albertino = {
+		potential = {
+			OR = { tag = SAR AND = { tag = SVY NOT = { exists = SAR } } }
+			government = absolute_monarchy
+			NOT = {
+				has_country_flag = get_your_statuto_albertino_here
+			}
+		}
+		
+		allow = {
+			average_militancy = 3
+		}
+		
+		effect = {
+			any_pop = {
+				militancy = -2
+			}
+			prestige = 5
+			set_country_flag = get_your_statuto_albertino_here
+		}
+	}
+	build_vittoriano = {
+		potential = {
+			OR = {
+				tag = ITA
+				tag = PAP
+				tag = ITP
+			}
+			OR = {
+				government = absolute_monarchy
+				government = theocracy
+			}
+			NOT = {
+				has_country_flag = vittoriano_built
+			}
+		}
+		
+		allow = {
+			realism = 1
+		}
+		
+		effect = {
+			prestige = 5
+			any_pop = {
+				militancy = -1
+			}
+			set_country_flag = vittoriano_built
+		}
+	}
+	the_case_of_edgardo_mortara = {
+		potential = {
+			OR = {
+				tag = PAP
+				tag = ITP
+			}
+			government = theocracy
+			NOT = {
+				has_country_flag = edgardo_mortara
+			}
+			year = 1858
+			owns = 741
+		}
+		allow = {
+			idealism = 1
+		}
+		effect = {
+			prestige = 15
+			badboy = 1
+			any_greater_power = {
+				relation = {
+					value = -20
+					who = THIS
+				}
+			}
+			set_country_flag = edgardo_mortara
+		}
+	}
+	
+	the_first_vatican_council = {
+		potential = {
+			OR = {
+				tag = PAP
+				tag = ITP
+			}
+			government = theocracy
+			NOT = {
+				has_country_flag = first_vatican_council_held
+			}
+		}
+		
+		allow = {
+			empiricism = 1
+		}
+		
+		effect = {
+			prestige = 10
+			badboy = 1
+			any_country = {
+				limit = {
+					religion = catholic
+				}
+				relation = {
+					who = THIS
+					value = 10
+				}
+			}
+			set_country_flag = first_vatican_council_held
+		}
+	}
+	
+	law_of_guarantees = {
+		potential = {
+			OR = {
+				tag = ITA
+				tag = ITP
+			}
+			NOT = {
+				capital = 749
+			}
+		}
+		
+		allow = {
+			owns = 749
+		}
+		
+		effect = {
+			capital = 749
+			prestige = 5
+			badboy = -2
+		}
+	}
+		
+	italia_irredenta = {
+		potential = {
+			OR = {
+				tag = ITA
+				tag = ITP
+			}
+			NOT = {
+				has_country_flag = italia_ulterior
+			}
+		}
+		
+		allow = {
+			OR = {
+				invention = national_fraternity
+				is_greater_power = yes
+			}
+		}
+		
+		effect = {
+			set_country_flag = italia_ulterior
+			729 = {
+				add_core = THIS
+			}
+			730 = {
+				add_core = THIS
+			}
+			731 = {
+				add_core = THIS
+			}
+			732 = {
+				add_core = THIS
+			}
+			733 = {
+				add_core = THIS
+			}
+			734 = {
+				add_core = THIS
+			}
+			735 = {
+				add_core = THIS
+			}
+			736 = {
+				add_core = THIS
+			}
+			737 = {
+				add_core = THIS
+			}
+			769 = {
+				add_core = THIS
+			}
+			770 = {
+				add_core = THIS
+			}
+			778 = {
+				add_core = THIS
+			}
+			780 = {
+				add_core = THIS
+			}
+			781 = {
+				add_core = THIS
+			}
+			782 = {
+				add_core = THIS
+			}
+			2582 = {
+				add_core = THIS
+			}
+		}
+	}
+}

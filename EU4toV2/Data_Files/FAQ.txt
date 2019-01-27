@@ -35,3 +35,11 @@ A: This is an issue with the localisation.  See above if you may have changed th
 Q: The country crashes upon selecting a country and pressing play (at 
 A: Your converted game does not have enough civilised nations (there should be at least 8).  Either increase the tech level of enough nations in EU4 or modify the defines.lua file in the converter mod (change the number on the line GREAT_NATIONS_COUNT=8).
 
+Q: The game forbids me to select nations
+A: It may be tied to the 1821 experimental bookmark. Try inverting the order of the bookmarks in common/bookmarks.txt
+
+Q: My game has funny characters (I didn't play in English)
+A: Vic2 supports only some languages normally, but there are edits online that make it support more languages. Download and add it into the mod generated.
+-For Polish: https://github.com/Idhrendur/paradoxGameConverters/files/1808170/gfx.zip
+-For any Cyrillic language: https://github.com/Idhrendur/paradoxGameConverters/files/1808145/gfx.zip
+-For Turkish: https://github.com/Idhrendur/paradoxGameConverters/files/1865395/Turkish.fonts.zip

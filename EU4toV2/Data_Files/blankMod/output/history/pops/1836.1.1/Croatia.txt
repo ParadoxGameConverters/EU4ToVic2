@@ -55,6 +55,12 @@
 		religion = catholic
 		size = 23625
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 300
+	}
 }
 #Croatia Region (870000)
 #under the rule of Austria in 1836
@@ -106,6 +112,18 @@
 		culture = croat
 		religion = catholic
 		size = 39250
+	}
+	
+	farmers = {
+		culture = croat
+		religion = sunni
+		size = 300
+	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 1000
 	}
 
 	aristocrats = {
@@ -593,6 +611,12 @@
 		religion = catholic
 		size = 24175   
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 400   
+	}
 
 	clergymen = {
 		culture = serb
@@ -710,6 +734,18 @@
 		culture = croat
 		religion = catholic
 		size = 34350
+	}
+	
+	farmers = {
+		culture = croat
+		religion = sunni
+		size = 100
+	}
+	
+	farmers = {
+		culture = gypsy
+		religion = catholic
+		size = 1000
 	}
 
 	clergymen = {

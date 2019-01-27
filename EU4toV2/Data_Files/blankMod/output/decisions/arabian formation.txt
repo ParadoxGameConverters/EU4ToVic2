@@ -1,0 +1,76 @@
+#Difference from Vanilla: let's just keep in case Nejd and Hedjaz may not have been converter at the state time
+
+political_decisions = {
+
+	form_arabia = {
+
+		potential = {
+			ARA = { exists = no }
+			is_culture_group = arab
+		}
+		
+		allow = {
+			OR = { 
+				AND = { 
+					is_greater_power = yes
+					any_neighbor_country = {
+						in_sphere = this
+						is_culture_group = arab
+						relation = { who = THIS value = 100 }
+					}
+				}
+				AND = {
+					OR = {
+						tag = NEJ
+						tag = HDJ
+						tag = HAL
+					}
+					NEJ = { #Nejd
+						all_core = { owned_by = THIS }
+					}
+					HDJ = { #Hejaz
+						all_core = { owned_by = THIS }
+					}
+					HAL = { #Hail Shammar
+						all_core = { owned_by = THIS }
+					}
+				}
+			}
+		}
+		effect = {
+			prestige = 20
+			all_core = {
+				limit = {
+					owned_by = THIS
+				}
+				remove_core = THIS 
+				add_core = ARA
+			}
+			change_tag = ARA
+			random_country = {
+				limit = {
+					is_culture_group = THIS
+					in_sphere = THIS
+					OR = {
+						is_vassal = no
+						vassal_of = THIS
+					}
+				}
+				country_event = 111011928
+			}
+			add_accepted_culture = union
+			any_country = {
+				limit = {
+					is_culture_group = THIS
+				}
+				all_core = {
+					add_core = ARA
+				}
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+}
