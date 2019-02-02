@@ -384,7 +384,7 @@ style =
 			trigger = { 
 				or = {
 					and = {
-						tag = RME
+						OR = { tag = SPQ tag = LTN }
 						ruling_party_ideology = reactionary
 					}
 					and = {
@@ -392,7 +392,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = RME
+							OR = { tag = SPQ tag = LTN }
 							ruling_party_ideology = reactionary
 						}
 					}
@@ -401,7 +401,7 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							tag = RME
+							OR = { tag = SPQ tag = LTN }
 							ruling_party_ideology = reactionary
 						}
 					}					
@@ -414,7 +414,7 @@ style =
 			trigger = { 
 				or = {
 					and = {
-						tag = RME
+						OR = { tag = SPQ tag = LTN }
 						ruling_party_ideology = communist
 					}
 					and = {
@@ -422,7 +422,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = RME
+							OR = { tag = SPQ tag = LTN }
 							ruling_party_ideology = communist
 						}
 					}
@@ -431,7 +431,7 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							tag = RME
+							OR = { tag = SPQ tag = LTN }
 							ruling_party_ideology = communist
 						}
 					}					
@@ -444,7 +444,7 @@ style =
 			trigger = { 
 				or = {
 					and = {
-						tag = RME
+						OR = { tag = SPQ tag = LTN }
 						ruling_party_ideology = fascist
 					}
 					and = {
@@ -452,7 +452,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = RME
+							OR = { tag = SPQ tag = LTN }
 							ruling_party_ideology = fascist
 						}
 					}
@@ -461,7 +461,7 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							tag = RME
+							OR = { tag = SPQ tag = LTN }
 							ruling_party_ideology = fascist
 						}
 					}
@@ -474,7 +474,7 @@ style =
 			trigger = { 
 				or = {
 					and = {
-						tag = RME
+						OR = { tag = SPQ tag = LTN }
 						ruling_party_ideology = anarcho_liberal
 					}
 					and = {
@@ -482,7 +482,7 @@ style =
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = RME
+							OR = { tag = SPQ tag = LTN }
 							ruling_party_ideology = anarcho_liberal
 						}
 					}
@@ -491,7 +491,7 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							tag = RME
+							OR = { tag = SPQ tag = LTN }
 							ruling_party_ideology = anarcho_liberal
 						}
 					}
@@ -504,14 +504,14 @@ style =
 			trigger = { 
 				or = {
 					and = {
-						tag = RME
+						OR = { tag = SPQ tag = LTN }
 					}
 					and = {
 						civilized = no
 						part_of_sphere = yes
 
 						sphere_owner = {
-							tag = RME
+							OR = { tag = SPQ tag = LTN }
 						}
 					}
 					and = {
@@ -519,7 +519,7 @@ style =
 						is_vassal = yes
 
 						overlord = {
-							tag = RME
+							OR = { tag = SPQ tag = LTN }
 						}
 					}					
 				}

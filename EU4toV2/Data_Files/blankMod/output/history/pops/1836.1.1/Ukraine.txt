@@ -156,6 +156,11 @@
 #under the rule of Russia in 1836 
 #Ismail (332000/83000 POPS)  
 678 = {
+	farmers = {
+		culture = gypsy
+		religion = orthodox
+		size = 100
+	}
 	aristocrats = {
 		culture = romanian
 		religion = orthodox
@@ -487,6 +492,12 @@
 		religion = orthodox
 		size = 78050
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = orthodox
+		size = 1000
+	}
 
 	aristocrats = {
 		culture = polish
@@ -707,6 +718,12 @@
 		religion = orthodox
 		size = 184200
 	}
+	
+	farmers = {
+		culture = gypsy
+		religion = orthodox
+		size = 4200
+	}
 
 	aristocrats = {
 		culture = polish
@@ -810,6 +827,12 @@
 		culture = ukrainian
 		religion = orthodox
 		size = 49325
+	}
+	
+	farmers = {
+		culture = gypsy
+		religion = orthodox
+		size = 1000
 	}
 
 	aristocrats = {
@@ -1884,6 +1907,11 @@
 #under the rule of Russia in 1836
 #Simferopol (126000/29000 POPS)
 964 = {
+	farmers = {
+		culture = gypsy
+		religion = orthodox
+		size = 150
+	}
 	aristocrats = {
 		culture = tatar
 		religion = sunni
@@ -2682,6 +2710,11 @@
 }
 #Pervomaisk (496000/124000 POPS)
 969 = {
+	farmers = {
+		culture = gypsy
+		religion = orthodox
+		size = 175
+	}
 	aristocrats = {
 		culture = ukrainian
 		religion = orthodox
@@ -3042,6 +3075,11 @@
 }
 #Ekaterinoslav (252000/63000 POPS)
 972 = {
+	farmers = {
+		culture = gypsy
+		religion = orthodox
+		size = 135
+	}
 	aristocrats = {
 		culture = ukrainian
 		religion = orthodox

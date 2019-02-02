@@ -61,6 +61,12 @@
 		religion = orthodox
 		size = 9425
 	}
+
+	farmers = {
+		culture = aromanian
+		religion = sunni
+		size = 1025
+	}
 }
 #Shkoder (408000/102000 POPS)
 850 = {
@@ -211,6 +217,18 @@
 		religion = orthodox
 		size = 5450
 	}
+
+	farmers = {
+		culture = aromanian
+		religion = sunni
+		size = 3125
+	}
+
+	farmers = {
+		culture = aromanian
+		religion = orthodox
+		size = 3125
+	}
 }
 #Epirus Region (168000) #see Greece.txt for balance of region 
 #under the rule of Ottoman Empire in 1836
@@ -280,6 +298,18 @@
 		culture = greek
 		religion = orthodox
 		size = 8775
+	}
+
+	farmers = {
+		culture = aromanian
+		religion = orthodox
+		size = 3875
+	}
+
+	farmers = {
+		culture = aromanian
+		religion = sunni
+		size = 875
 	}
 
 }

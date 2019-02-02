@@ -4696,6 +4696,30 @@
 		religion = totemism
 		size = 23350
 	}
+
+	clergymen = {
+		culture = yankee
+		religion = mormon
+		size = 100
+	}
+
+	artisans = {
+		culture = yankee
+		religion = mormon
+		size = 350
+	}
+
+	farmers = {
+		culture = yankee
+		religion = mormon
+		size = 4000
+	}
+
+	soldiers = {
+		culture = yankee
+		religion = mormon
+		size = 250
+	}
 }
 #Springfield (36000/9000 POPS)
 167 = {

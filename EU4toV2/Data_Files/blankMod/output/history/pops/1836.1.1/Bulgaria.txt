@@ -49,6 +49,12 @@
 		religion = orthodox
 		size = 28075
 	}
+
+	farmers = {
+		culture = aromanian
+		religion = orthodox
+		size = 1500
+	}
 }
 #Bulgaria Region (1132000)
 #under the rule of Ottoman Empire in 1836

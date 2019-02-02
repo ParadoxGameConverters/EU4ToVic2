@@ -1,0 +1,101 @@
+political_decisions = {
+	declare_republic_of_neuchatel = {
+		potential = {
+			tag = SWI
+			owns = 608
+			608 = {
+				is_core = PRU
+			}
+		}
+		allow = {
+			prestige = 1
+			romanticism = 1
+		}
+		effect = {
+			prestige = 5
+			608 = {
+				remove_core = PRU
+				remove_core = NGF
+				remove_core = GER
+			}
+			relation = {
+				who = PRU
+				value = 20
+			}
+		}
+	}
+	call_geneva_convention = {
+		potential = {
+			OR = {
+				tag = SWI
+				NOT = { exists = SWI }
+			}
+			owns = 607
+			NOT = {
+				has_global_flag = geneva_convention_held
+			}
+		}
+		
+		allow = {
+			any_greater_power = {
+				war_exhaustion = 5
+			}
+			empiricism = 1
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = signed_the_geneva_convention
+				duration = -1
+			}
+			set_global_flag = geneva_convention_held
+			prestige = 10
+		}
+	}
+	
+	sign_the_geneva_convention = {
+		potential = {
+			civilized = yes
+			has_global_flag = geneva_convention_held
+			NOT = {
+				has_country_modifier = signed_the_geneva_convention
+			}
+		}
+		
+		allow = {
+			NOT = {
+				badboy = 1
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = signed_the_geneva_convention
+				duration = -1
+			}
+			badboy = -1
+		}
+	}
+	
+	build_gotthard_tunnel = {
+		potential = {
+			tag = SWI
+			owns = 606
+			NOT = {
+				has_country_flag = gotthard_tunnel_built
+			}
+		}
+		
+		allow = {
+			invention = machine_tools
+		}
+		
+		effect = {
+			606 = {
+				infrastructure = 4
+			}
+			prestige = 5
+			set_country_flag = gotthard_tunnel_built
+		}
+	}
+}

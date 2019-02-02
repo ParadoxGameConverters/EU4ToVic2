@@ -33,19 +33,19 @@
 	}
 
 	clergymen = {
-		culture = bulgarian
+		culture = macedonian
 		religion = orthodox
 		size = 425
 	}
 
 	artisans = {
-		culture = bulgarian
+		culture = macedonian
 		religion = orthodox
 		size = 2100
 	}
 
 	farmers = {
-		culture = bulgarian
+		culture = macedonian
 		religion = orthodox
 		size = 56475
 	}
@@ -85,25 +85,37 @@
 		religion = jewish
 		size = 275
 	}
+
+	farmers = {
+		culture = aromanian
+		religion = sunni
+		size = 2225
+	}
+
+	farmers = {
+		culture = aromanian
+		religion = orthodox
+		size = 1475
+	}
 }
 #Monastir Region (268000) #see Greece.txt for balance of region 
 #under the rule of Ottoman Empire in 1836  
 #Bitola (268000/67000 POPS) 
 807 = {
 	clergymen = {
-		culture = bulgarian
+		culture = macedonian
 		religion = orthodox
 		size = 300
 	}
 
 	artisans = {
-		culture = bulgarian
+		culture = macedonian
 		religion = orthodox
 		size = 425
 	}
 
 	farmers = {
-		culture = bulgarian
+		culture = macedonian
 		religion = orthodox
 		size = 36275
 	}
@@ -202,6 +214,12 @@
 		culture = sephardic
 		religion = jewish
 		size = 975
+	}
+
+	farmers = {
+		culture = aromanian
+		religion = orthodox
+		size = 1775
 	}
 
 }
