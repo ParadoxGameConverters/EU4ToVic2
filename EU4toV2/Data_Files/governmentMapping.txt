@@ -1,4 +1,4 @@
-# Copyright (c) 2017 The Paradox Game Converters Project
+# Copyright (c) 2019 The Paradox Game Converters Project
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,6 @@
 # Tribal Governments - steppe_horde, tribal_despotism, tribal_kingdom, tribal_federation, tribal_democracy, native_council, siberian_native_council, tribal_council
 # Unique Governments - elective_monarchy, ambrosian_republic, dutch_republic, archduchy, celestial_empire, iqta, daimyo, shogunate, imperial_government, colonial_government, american_republic, federal_republic, english_monarchy
 
-mapping = {
 #Since Dharma
 link = { v2 = absolute_monarchy eu4 = albanian_monarchy eu4 = antemoro_monarchy eu4 = arabic_tribal eu4 = arakanese_monarchy eu4 = austrian_monarchy eu4 = avar_nutsals eu4 = barangay_polity eu4 = betsimisaraka_monarchy eu4 = bharat_monarchy eu4 = buddhist_monarchy eu4 = bunyoro_monarchy eu4 = burman_monarchy eu4 = byzantine_monarchy eu4 = chinese_monarchy eu4 = christopher_of_bavaria_monarchy eu4 = croatian_monarchy eu4 = dais_of_najran eu4 = default_monarchy eu4 = default_tribal eu4 = egyptian_monarchy eu4 = ethiopian_monarchies eu4 = filipino_rajanate eu4 = finnish_monarchy eu4 = french_kingdom eu4 = ganda_monarchy eu4 = georgian_monarchy eu4 = gov_daimyo eu4 = gov_indep_daimyo eu4 = gov_native_council eu4 = gov_shogunate eu4 = gov_steppe_horde eu4 = gov_tribal eu4 = gov_tribal_kingdom eu4 = grand_duchy_of_baden  eu4 = grand_duchy_of_luxembourg eu4 = grand_duchy_of_tuscany eu4 = greek_monarchy eu4 = hebridean_monachy eu4 = hindu_maratha_monarchy eu4 = hindu_monarchy eu4 = hindu_rajput_monarchy eu4 = hyderabad_state_monarchy eu4 = ilkhanate_march eu4 = inti_monarchy eu4 = irish_clan_monarchy eu4 = irish_peerage_monarchy eu4 = islamic_syncretism_kingdoms eu4 = japanese_shogunate eu4 = jurchen_monarchy eu4 = kaffa_monarchy eu4 = kathiawar_tribal_monarchy eu4 = lunda_monarchy eu4 = malian_monarchy eu4 = maratha_peshwas eu4 = march_christian_monarchy eu4 = march_eastern_christian_monarchy eu4 = mayan_monarchy eu4 = muscovite_monarchy eu4 = muslim_indian_monarchy eu4 = muslim_monarchy eu4 = muslim_tribal eu4 = mutapa_monarchy eu4 = nahuatl_monarchy eu4 = nkore_monarchy eu4 = ottoman_marches eu4 = ottoman_vassals eu4 = pagan_egyptian_monarchy eu4 = pagan_greek_monarchy eu4 = pagan_roman_monarchy eu4 = pangasinan_monarchy eu4 = persian_monarchy eu4 = pirate_kingdom eu4 = qing_monarchy eu4 = romanian_monarchy eu4 = russian_feudal_monarchy eu4 = rwanda_burundi_monarchy eu4 = serbian_feudal_monarchy eu4 = shan_monarchy eu4 = sharifs_of_mecca eu4 = sistan_monarchy eu4 = somali_monarchy eu4 = south_slavic_monarchy eu4 = theodoro_monarchy eu4 = torwa_monarchy eu4 = turkish_monarchy eu4 = yuan_empire }
 link = { v2 = hms_government eu4 = buddhist_noble_republic eu4 = noble_republic }
@@ -54,5 +53,3 @@ link = { v2 = theocracy eu4 = theocratic_government eu4 = papal_government eu4 =
 link = { v2 = absolute_monarchy eu4 = medieval_monarchy eu4 = japanese_monarchy eu4 = eastern_monarchy_1 eu4 = eastern_monarchy_2 eu4 = eastern_monarchy_3 eu4 = indian_monarchy_1 eu4 = indian_monarchy_2 eu4 = indian_monarchy_3 eu4 = chinese_monarchy eu4 = chinese_monarchy_1a eu4 = chinese_monarchy_2a eu4 = chinese_monarchy_2 eu4 = chinese_monarchy_2b eu4 = chinese_monarchy_2c eu4 = tribal_monarchy eu4 = altaic_monarchy eu4 = rajput_monarchy eu4 = eastern_monarchy eu4 = indian_monarchy eu4 = maratha_confederacy eu4 = amalgamation_government eu4 = chinese_monarchy_3 eu4 = portuguese_monarchy eu4 = tibetan_theocracy }
 link = { v2 = democracy eu4 = tribal_republic eu4 = native_council_settled eu4 = altaic_republic eu4 = venetian_republic }
 link = { v2 = presidential_dictatorship eu4 = crowned_republic eu4 = republican_dictatorship eu4 = oligarchic_republic eu4 = signoria_monarchy eu4 = siena_republic eu4 = merchant_imperial_city }
-
-}
