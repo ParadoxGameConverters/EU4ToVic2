@@ -210,6 +210,9 @@
     <ClCompile Include="Source\EU4World\World.cpp">
       <Filter>EU4 World</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Vic2TechSchool.cpp">
+      <Filter>Vic2 World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -414,6 +417,9 @@
     <ClInclude Include="Source\EU4World\CountryHistory.h" />
     <ClInclude Include="Source\EU4World\World.h">
       <Filter>EU4 World</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Vic2TechSchool.h">
+      <Filter>Vic2 World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

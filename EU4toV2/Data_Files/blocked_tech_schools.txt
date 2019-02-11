@@ -1,4 +1,4 @@
-# Copyright (c) 2014 The Paradox Game Converters Project
+# Copyright (c) 2019 The Paradox Game Converters Project
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -19,6 +19,6 @@
 # THE SOFTWARE.
 
 
-blocked = {
-	block = prussian_tech_school
-}
+# A list of tech schools that are not valid to start with
+
+prussian_tech_school

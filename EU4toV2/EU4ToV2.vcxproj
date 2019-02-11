@@ -238,6 +238,7 @@
     <ClCompile Include="Source\V2World\V2State.cpp" />
     <ClCompile Include="Source\V2World\V2TechSchools.cpp" />
     <ClCompile Include="Source\V2World\V2World.cpp" />
+    <ClCompile Include="Source\V2World\Vic2TechSchool.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\common_items\CardinalToOrdinal.h" />
@@ -310,6 +311,7 @@
     <ClInclude Include="Source\V2World\V2TechSchools.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
     <ClInclude Include="Source\V2World\Vic2Regions.h" />
+    <ClInclude Include="Source\V2World\Vic2TechSchool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

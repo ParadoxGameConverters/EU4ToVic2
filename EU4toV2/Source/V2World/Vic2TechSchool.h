@@ -21,13 +21,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef V2_TECH_SCHOOLS
-#define V2_TECH_SCHOOLS
+#ifndef V2_TECH_SCHOOL
+#define V2_TECH_SCHOOL
 
 
 
-#include "Vic2TechSchool.h"
-#include "V2TechSchools.h"
 #include "newParser.h"
 #include <string>
 #include <vector>
@@ -37,21 +35,27 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 namespace Vic2
 {
 
-class Vic2TechSchools: commonItems::parser
+class Vic2TechSchool: commonItems::parser
 {
 	public:
-		Vic2TechSchools();
+		Vic2TechSchool(const std::string& name, std::istream& theStream);
 
-		std::vector<Vic2TechSchool> getTechSchools() const { return techSchools; }
+		double calculateComparisonScore(double armyInvestment, double commerceInvestment, double cultureInvestment, double industryInvestment, double navyInvestment) const;
+
+		std::string getName() const { return name; }
 
 	private:
-		std::vector<std::string> initBlockedTechSchools();
+		std::string name;
 
-		std::vector<Vic2TechSchool> techSchools;
+		double armyBonus;
+		double commerceBonus;
+		double cultureBonus;
+		double industryBonus;
+		double navyBonus;
 };
 
 }
 
 
 
-#endif // V2_TECH_SCHOOLS
+#endif // V2_TECH_SCHOOL

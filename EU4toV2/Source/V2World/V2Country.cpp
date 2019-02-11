@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -516,7 +516,7 @@ void V2Country::outputOOB() const
 }
 
 
-void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const vector<V2TechSchool>& techSchools, const map<int, int>& leaderMap)
+void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const vector<Vic2::Vic2TechSchool>& techSchools, const map<int, int>& leaderMap)
 {
 	srcCountry = _srcCountry;
 
@@ -828,14 +828,10 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 
 	for (unsigned int j = 0; j < techSchools.size(); j++)
 	{
-		double newScore = abs(armyInvestment		- techSchools[j].armyInvestment - 0.2) +
-								abs(navyInvestment		- techSchools[j].navyInvestment - 0.2) +
-								abs(commerceInvestment	- techSchools[j].commerceInvestment - 0.2) +
-								abs(industryInvestment	- techSchools[j].industryInvestment - 0.2) +
-								abs(cultureInvestment	- techSchools[j].cultureInvestment - 0.2);
+		double newScore = techSchools[j].calculateComparisonScore(armyInvestment, commerceInvestment, cultureInvestment, industryInvestment, navyInvestment);
 		if (newScore < lowestScore)
 		{
-			bestSchool	= techSchools[j].name;
+			bestSchool = techSchools[j].getName();
 			lowestScore	= newScore;
 		}
 	}
