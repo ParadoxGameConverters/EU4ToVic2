@@ -55,6 +55,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Creditor.h"
 #include "V2Leader.h"
 #include "V2Pop.h"
+#include "V2TechSchools.h"
 
 
 
@@ -516,7 +517,7 @@ void V2Country::outputOOB() const
 }
 
 
-void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const vector<Vic2::Vic2TechSchool>& techSchools, const map<int, int>& leaderMap)
+void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const Vic2::Vic2TechSchools& techSchools, const map<int, int>& leaderMap)
 {
 	srcCountry = _srcCountry;
 
@@ -815,28 +816,9 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	double commerceInvestment		= srcCountry->getCommerceInvestment();
 	double industryInvestment		= srcCountry->getIndustryInvestment();
 	double cultureInvestment		= srcCountry->getCultureInvestment();
-	
-	double totalInvestment	 = armyInvestment + navyInvestment + commerceInvestment + industryInvestment + cultureInvestment;
-	armyInvestment				/= totalInvestment;
-	navyInvestment				/= totalInvestment;
-	commerceInvestment		/= totalInvestment;
-	industryInvestment		/= totalInvestment;
-	cultureInvestment			/= totalInvestment;
 
-	double lowestScore = 1.0;
-	string bestSchool = "traditional_academic";
-
-	for (unsigned int j = 0; j < techSchools.size(); j++)
-	{
-		double newScore = techSchools[j].calculateComparisonScore(armyInvestment, commerceInvestment, cultureInvestment, industryInvestment, navyInvestment);
-		if (newScore < lowestScore)
-		{
-			bestSchool = techSchools[j].getName();
-			lowestScore	= newScore;
-		}
-	}
-	LOG(LogLevel::Debug) << tag << " has tech school " << bestSchool;
-	techSchool = bestSchool;
+	techSchool = techSchools.findBestTechSchool(armyInvestment, commerceInvestment, cultureInvestment, industryInvestment, navyInvestment);
+	LOG(LogLevel::Debug) << tag << " has tech school " << techSchool;
 
 	//// Leaders
 	//vector<EU4Leader*> oldLeaders = srcCountry->getLeaders();

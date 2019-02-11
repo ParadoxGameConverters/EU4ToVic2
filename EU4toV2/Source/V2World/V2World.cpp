@@ -62,7 +62,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Reforms.h"
 #include "V2Flags.h"
 #include "V2LeaderTraits.h"
-#include "V2TechSchools.h"
 
 
 
@@ -74,7 +73,6 @@ V2World::V2World(const EU4::world& sourceWorld)
 	//logPopsByCountry();
 	findCoastalProvinces();
 	importPotentialCountries();
-	importTechSchools();
 	isRandomWorld = sourceWorld.isRandomWorld();
 
 	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries);
@@ -418,15 +416,6 @@ void V2World::importPotentialCountry(const string& line, bool dynamicCountry)
 	{
 		dynamicCountries.insert(make_pair(tag, newCountry));
 	}
-}
-
-
-void V2World::importTechSchools()
-{
-	LOG(LogLevel::Info) << "Importing tech schools.";
-
-	Vic2::Vic2TechSchools techSchoolsClass;
-	techSchools = techSchoolsClass.getTechSchools();
 }
 
 
