@@ -213,6 +213,7 @@
     <ClCompile Include="Source\V2World\Vic2TechSchool.cpp">
       <Filter>Vic2 World</Filter>
     </ClCompile>
+    <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -421,6 +422,7 @@
     <ClInclude Include="Source\V2World\Vic2TechSchool.h">
       <Filter>Vic2 World</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4ToVic2Converter.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4 World">

@@ -21,7 +21,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include <stdexcept>
 #include "Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -30,48 +29,12 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-string getSaveFileName(const int argc, const char * argv[]);
-void ConvertEU4ToV2(const string& EU4SaveFileName);
-int main(const int argc, const char * argv[])
-{
-	try
-	{
-		LOG(LogLevel::Info) << "Converter version 1.0I";
-		LOG(LogLevel::Info) << "Built " << __TIMESTAMP__;
-		LOG(LogLevel::Debug) << "Current directory is " << Utils::getCurrentDirectory();
 
-		string EU4SaveFileName = getSaveFileName(argc, argv);
-		ConvertEU4ToV2(EU4SaveFileName);
-
-		return 0;
-	}
-
-	catch (const std::exception& e)
-	{
-		LOG(LogLevel::Error) << e.what();
-		return -1;
-	}
-}
-
-
-string getSaveFileName(const int argc, const char * argv[])
-{
-	if (argc >= 2)
-	{
-		LOG(LogLevel::Info) << "Using input file " << argv[1];
-		return argv[1];
-	}
-	else
-	{
-		LOG(LogLevel::Info) << "No input file given, defaulting to input.eu4";
-		return "input.eu4";
-	}
-}
 
 
 void setOutputName(const string& EU4SaveFileName);
 void deleteExistingOutputFolder();
-void ConvertEU4ToV2(const string& EU4SaveFileName)
+void ConvertEU4ToVic2(const string& EU4SaveFileName)
 {
 	Configuration::getInstance();
 	setOutputName(EU4SaveFileName);
