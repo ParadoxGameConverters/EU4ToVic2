@@ -76,8 +76,6 @@ class V2World
 		void importPotentialCountries();
 		void importPotentialCountry(const string& line, bool dynamicCountry);
 
-		void importTechSchools();
-
 		void convertCountries(const EU4::world& sourceWorld);
 		void initializeCountries(const EU4::world& sourceWorld);
 		V2Country* createOrLocateCountry(const string& V2Tag, const shared_ptr<EU4::Country> sourceCountry);
@@ -111,7 +109,7 @@ class V2World
 		V2Diplomacy diplomacy;
 		map<int, set<string>> colonies;
 		map<string, list<int>>	popRegions;
-		std::vector<Vic2::Vic2TechSchool> techSchools;
+		Vic2::Vic2TechSchools techSchools;
 		map<int, int> leaderIDMap; // <EU4, V2>
 		long totalWorldPopulation;
 		bool isRandomWorld;

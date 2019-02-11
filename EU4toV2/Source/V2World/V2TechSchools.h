@@ -42,7 +42,7 @@ class Vic2TechSchools: commonItems::parser
 	public:
 		Vic2TechSchools();
 
-		std::vector<Vic2TechSchool> getTechSchools() const { return techSchools; }
+		std::string findBestTechSchool(double armyInvestment, double commerceInvestment, double cultureInvestment, double industryInvestment, double navyInvestment) const;
 
 	private:
 		std::vector<std::string> initBlockedTechSchools();

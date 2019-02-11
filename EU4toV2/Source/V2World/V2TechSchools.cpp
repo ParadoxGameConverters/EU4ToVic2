@@ -103,3 +103,29 @@ Vic2::Vic2TechSchools::Vic2TechSchools()
 
 	parseFile(Configuration::getV2Path() + "/common/technology.txt");
 }
+
+
+std::string Vic2::Vic2TechSchools::findBestTechSchool(double armyInvestment, double commerceInvestment, double cultureInvestment, double industryInvestment, double navyInvestment) const
+{
+	double totalInvestment = armyInvestment + navyInvestment + commerceInvestment + industryInvestment + cultureInvestment;
+	armyInvestment /= totalInvestment;
+	navyInvestment /= totalInvestment;
+	commerceInvestment /= totalInvestment;
+	industryInvestment /= totalInvestment;
+	cultureInvestment /= totalInvestment;
+
+	double lowestScore = 1.0;
+	std::string bestSchool = "traditional_academic";
+
+	for (unsigned int j = 0; j < techSchools.size(); j++)
+	{
+		double newScore = techSchools[j].calculateComparisonScore(armyInvestment, commerceInvestment, cultureInvestment, industryInvestment, navyInvestment);
+		if (newScore < lowestScore)
+		{
+			bestSchool = techSchools[j].getName();
+			lowestScore = newScore;
+		}
+	}
+
+	return bestSchool;
+}
