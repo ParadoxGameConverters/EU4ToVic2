@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -23,84 +23,83 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "V2TechSchools.h"
 #include "Log.h"
-#include "Object.h"
-#include "ParadoxParserUTF8.h"
-#include "ParadoxParser8859_15.h"
 #include "../Configuration.h"
+#include "ParserHelpers.h"
+#include "ParadoxParserUTF8.h"
+#include <algorithm>
 #include <memory>
 
 
 
-vector<techSchool> initTechSchools()
+namespace Vic2
 {
-	vector<techSchool> techSchools;
 
-	vector<string> blockedTechSchools = initBlockedTechSchools();
+class blockedTechSchools: commonItems::parser
+{
+	public:
+		blockedTechSchools();
 
-	shared_ptr<Object> technologyObj = parser_8859_15::doParseFile((Configuration::getV2Path() + "/common/technology.txt").c_str());
-	if (technologyObj == NULL)
-	{
-		LOG(LogLevel::Error) << "Could not parse file " << Configuration::getV2Path() << "/common/technology.txt";
-		exit(-1);
-	}
+		bool isTechSchoolBlocked(const std::string& techSchool) const;
 
-	vector<shared_ptr<Object>> schoolObj = technologyObj->getValue("schools");
-	if (schoolObj.size() < 1)
-	{
-		LOG(LogLevel::Warning) << "Could not load tech schools";
-	}
-	
-	vector<shared_ptr<Object>> schoolsObj = schoolObj[0]->getLeaves();
-	for (unsigned int i = 0; i < schoolsObj.size(); i++)
-	{
-		bool isBlocked = false;
-		for (unsigned int j = 0; j < blockedTechSchools.size(); j++)
-		{
-			if(schoolsObj[i]->getKey() == blockedTechSchools[j])
-			{
-				isBlocked = true;
-			}
-		}
+	private:
+		std::vector<std::string> theBlockedTechSchools;
+};
 
-		if (!isBlocked)
-		{
-			techSchool newSchool;
-			newSchool.name						= schoolsObj[i]->getKey();
-			newSchool.armyInvestment		= atof( schoolsObj[i]->getValue("army_tech_research_bonus")[0]->getLeaf().c_str() );
-			newSchool.commerceInvestment	= atof( schoolsObj[i]->getValue("commerce_tech_research_bonus")[0]->getLeaf().c_str() );
-			newSchool.cultureInvestment	= atof( schoolsObj[i]->getValue("culture_tech_research_bonus")[0]->getLeaf().c_str() );
-			newSchool.industryInvestment	= atof( schoolsObj[i]->getValue("industry_tech_research_bonus")[0]->getLeaf().c_str() );
-			newSchool.navyInvestment		= atof( schoolsObj[i]->getValue("navy_tech_research_bonus")[0]->getLeaf().c_str() );
-			techSchools.push_back(newSchool);
-		}
-	}
 
-	return techSchools;
+class Vic2TechSchoolsSchools: commonItems::parser
+{
+	public:
+		Vic2TechSchoolsSchools(const blockedTechSchools& blockedTechSchools, std::istream& theStream);
+
+		std::vector<Vic2TechSchool> getTechSchools() const { return techSchools; }
+
+	private:
+		std::vector<Vic2TechSchool> techSchools;
+};
+
 }
 
 
-vector<string> initBlockedTechSchools()
+Vic2::blockedTechSchools::blockedTechSchools()
 {
-	vector<string> blockedTechSchools;
+	registerKeyword(std::regex("[a-zA-Z0-9\\_]+"), [this](const std::string& techSchool, std::istream& theStream){
+		theBlockedTechSchools.push_back(techSchool);
+	});
 
-	shared_ptr<Object> techSchoolObj = parser_UTF8::doParseFile("blocked_tech_schools.txt");
-	if (techSchoolObj == NULL)
-	{
-		LOG(LogLevel::Error) << "Could not parse file blocked_tech_schools.txt";
-		exit(-1);
-	}
+	parseFile("blocked_tech_schools.txt");
+}
 
-	vector<shared_ptr<Object>> blockedObj = techSchoolObj->getLeaves();
-	if (blockedObj.size() <= 0)
-	{
-		return blockedTechSchools;
-	}
 
-	vector<shared_ptr<Object>> leaves = blockedObj[0]->getLeaves();
-	for (unsigned int i = 0; i < leaves.size(); i++)
-	{
-		blockedTechSchools.push_back(leaves[i]->getLeaf());
-	}
+bool Vic2::blockedTechSchools::isTechSchoolBlocked(const std::string& techSchool) const
+{
+	return std::any_of(theBlockedTechSchools.begin(), theBlockedTechSchools.end(),
+							 [techSchool](std::string blockedTechSchool){ return techSchool == blockedTechSchool; });
+}
 
-	return blockedTechSchools;
+
+Vic2::Vic2TechSchoolsSchools::Vic2TechSchoolsSchools(const blockedTechSchools& theBlockedTechSchools, std::istream& theStream)
+{
+	registerKeyword(std::regex("[a-zA-Z0-9\\_]+"), [this, theBlockedTechSchools](const std::string& name, std::istream& theStream){
+		Vic2TechSchool newTechSchool(name, theStream);
+		if (!theBlockedTechSchools.isTechSchoolBlocked(name))
+		{
+			techSchools.push_back(newTechSchool);
+		}
+	});
+
+	parseStream(theStream);
+}
+
+
+Vic2::Vic2TechSchools::Vic2TechSchools()
+{
+	blockedTechSchools theBlockedTechSchools;
+
+	registerKeyword(std::regex("schools"), [this, theBlockedTechSchools](const std::string& unused, std::istream& theStream){
+		Vic2TechSchoolsSchools theSchoolsSection(theBlockedTechSchools, theStream);
+		techSchools = theSchoolsSection.getTechSchools();
+	});
+	registerKeyword(std::regex("folders"), commonItems::ignoreItem);
+
+	parseFile(Configuration::getV2Path() + "/common/technology.txt");
 }

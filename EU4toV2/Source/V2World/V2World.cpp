@@ -62,6 +62,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Reforms.h"
 #include "V2Flags.h"
 #include "V2LeaderTraits.h"
+#include "V2TechSchools.h"
 
 
 
@@ -423,7 +424,9 @@ void V2World::importPotentialCountry(const string& line, bool dynamicCountry)
 void V2World::importTechSchools()
 {
 	LOG(LogLevel::Info) << "Importing tech schools.";
-	techSchools = initTechSchools();
+
+	Vic2::Vic2TechSchools techSchoolsClass;
+	techSchools = techSchoolsClass.getTechSchools();
 }
 
 
