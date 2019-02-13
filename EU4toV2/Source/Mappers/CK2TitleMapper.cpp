@@ -118,7 +118,7 @@ mappers::CK2TitleMapper::CK2TitleMapper():
 		}
 	);
 
-	parseFile("ck2titlemap.txt");
+	parseFile("ck2titleMap.txt");
 }
 
 
