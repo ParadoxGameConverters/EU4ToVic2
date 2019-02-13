@@ -1,25 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
+    <ClCompile Include="Vic2WorldTests\Vic2TechSchoolsTests.cpp">
+      <Filter>Vic2WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="Vic2WorldTests\Vic2TechSchoolTests.cpp">
+      <Filter>Vic2WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\Vic2TechSchool.cpp">
+      <Filter>EU4ToVic2Files\Vic2World</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common_items\newParser.cpp">
+      <Filter>EU4ToVic2Files\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common_items\ParserHelpers.cpp">
+      <Filter>EU4ToVic2Files\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common_items\Log.cpp">
+      <Filter>EU4ToVic2Files\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common_items\WinUtils.cpp">
+      <Filter>EU4ToVic2Files\commonItems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\googletest\googletest\src\gtest_main.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\googletest\googletest\src\gtest-all.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <Filter Include="EU4ToVic2Files">
+      <UniqueIdentifier>{32029889-ded1-480c-a071-3ea318d7dc48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2WorldTests">
+      <UniqueIdentifier>{11ba559f-3d23-4840-9ad7-ee2fd0589af1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4ToVic2Files\Vic2World">
+      <UniqueIdentifier>{a25f577f-d3d4-43e2-a6f0-e119fd0cb873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4ToVic2Files\commonItems">
+      <UniqueIdentifier>{2fedf08a-ee83-4800-b110-94443948d57a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
