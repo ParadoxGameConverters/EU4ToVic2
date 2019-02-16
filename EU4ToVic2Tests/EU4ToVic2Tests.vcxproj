@@ -163,10 +163,12 @@
     <ClCompile Include="..\common_items\newParser.cpp" />
     <ClCompile Include="..\common_items\ParserHelpers.cpp" />
     <ClCompile Include="..\common_items\WinUtils.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Configuration.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Vic2TechSchool.cpp" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="ConfigurationTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp" />
     <ClCompile Include="Vic2WorldTests\Vic2TechSchoolsTests.cpp" />
     <ClCompile Include="Vic2WorldTests\Vic2TechSchoolTests.cpp" />

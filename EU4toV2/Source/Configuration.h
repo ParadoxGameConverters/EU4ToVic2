@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -25,190 +25,88 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #define CONFIGURATION_H_
 
 
-
-#include <vector>
-#include <string>
-#include "Date.h"
 #include "EU4World/EU4Version.h"
-using namespace std;
+#include "Date.h"
+#include "newParser.h"
+#include <string>
+#include <vector>
 
 
 
-class Configuration
+class Configuration: commonItems::parser
 {
 	public:
-		static string getEU4Path()
-		{
-			return getInstance()->EU4Path;
-		}
+		Configuration() = default;
+		void instantiate(std::istream& theStream, bool (*doesFolderExist)(const std::string& path), bool (*doesFileExist)(const std::string& path));
 
-		static string getEU4DocumentsPath()
-		{
-			return getInstance()->EU4DocumentsPath;
-		}
+		std::string getEU4Path() { return EU4Path; }
+		std::string getEU4DocumentsPath() { return EU4DocumentsPath; }
+		std::string getCK2ExportPath() { return CK2ExportPath; }
+		std::string getVic2Path() { return Vic2Path; }
+		std::string getVic2DocumentsPath() { return Vic2DocumentsPath; }
+		std::string getVic2Gametype() { return Vic2Gametype; }
+		std::string getResetProvinces() { return resetProvinces; }
+		double getMaxLiteracy() { return MaxLiteracy; }
+		std::string getRemovetype() { return Removetype; }
+		double getLibertyThreshold() { return libertyThreshold; }
+		bool getConvertPopTotals() { return convertPopTotals; }
+		bool getDebug() { return debug; }
 
-		static string getCK2ExportPath()
-		{
-			return getInstance()->CK2ExportPath;
-		}
+		date getFirstEU4Date() { return firstEU4Date; }
+		date getLastEU4Date() { return lastEU4Date; }
+		std::string getOutputName() { return outputName; }
+		std::vector<std::string> getEU4Mods() { return EU4Mods; }
 
-		static string getV2Path()
-		{
-			return getInstance()->V2Path;
-		}
+		void setFirstEU4Date(date _firstDate) { firstEU4Date = _firstDate; }
+		void setLastEU4Date(date _lastDate) { lastEU4Date = _lastDate; }
+		void setOutputName(std::string name) { outputName = name; }
+		void addEU4Mod(std::string mod) { EU4Mods.push_back(mod); }
+		void setEU4Version(EU4::Version version) { version = version; }
+		void setActiveDLCs(std::vector<std::string> _activeDLCs) { activeDLCs = _activeDLCs; }
 
-		static string getV2DocumentsPath()
-		{
-			return getInstance()->V2DocumentsPath;
-		}
-
-		static string getV2Gametype()
-		{
-			return getInstance()->V2Gametype;
-		}
-
-		static EU4Version getEU4Version()
-		{
-			return getInstance()->version;
-		}
-
-		static void setEU4Version(EU4Version version)
-		{
-			getInstance()->version = version;
-		}
-
-		static bool versionLessThan(string versionString)
-		{
-			EU4Version inputVersion(versionString);
-			auto saveVersion = getEU4Version();
-			if (inputVersion >= saveVersion) {
-				return true;
-			}
-			return false;
-		}
-
-		static date	getFirstEU4Date()
-		{
-			return getInstance()->firstEU4Date;
-		}
-
-		static void setFirstEU4Date(date _firstDate)
-		{
-			getInstance()->firstEU4Date = _firstDate;
-		}
-
-		static date	getLastEU4Date()
-		{
-			return getInstance()->lastEU4Date;
-		}
-
-		static void setLastEU4Date(date _lastDate)
-		{
-			getInstance()->lastEU4Date = _lastDate;
-		}
-
-		static string getResetProvinces()
-		{
-			return getInstance()->resetProvinces;
-		}
-
-		static double getMaxLiteracy()
-		{
-			return getInstance()->MaxLiteracy;
-		}
-
-		static string getRemovetype()
-		{
-			return getInstance()->Removetype;
-		}
-
-		static double getLibertyThreshold()
-		{
-			return getInstance()->libertyThreshold;
-		}
-
-		static bool getConvertPopTotals()
-		{
-			return getInstance()->convertPopTotals;
-		}
-
-		static bool getDebug()
-		{
-			return getInstance()->debug;
-		}
-
-		static void setOutputName(string name)
-		{
-			getInstance()->outputName = name;
-		}
-
-		static string getOutputName()
-		{
-			return getInstance()->outputName;
-		}
-
-		static void setActiveDLCs(vector<string> _activeDLCs)
-		{
-			getInstance()->activeDLCs = _activeDLCs;
-		}
-
-		static bool wasDLCActive(string DLC)
-		{
-			for (auto activeDLC: getInstance()->activeDLCs)
-			{
-				if (DLC == activeDLC)
-				{
-					return true;
-				}
-			}
-			return false;
-		}
-
-		static vector<string> getEU4Mods()
-		{
-			return getInstance()->EU4Mods;
-		}
-
-		static void addEU4Mod(string mod)
-		{
-			getInstance()->EU4Mods.push_back(mod);
-		}
-
-		static Configuration* getInstance()
-		{
-			if (instance == nullptr)
-			{
-				instance = new Configuration();
-			}
-			return instance;
-		}
+		bool versionLessThan(const std::string& versionString);
+		bool wasDLCActive(const std::string& DLC);
 
 	private:
-		static Configuration* instance;
-
-		Configuration();
+		void verifyEU4Path(const std::string& path, bool (*doesFolderExist)(const std::string& path), bool (*doesFileExist)(const std::string& path));
+		void verifyVic2Path(const std::string& path, bool (*doesFolderExist)(const std::string& path), bool (*doesFileExist)(const std::string& path));
+		void verifyVic2DocumentsPath(const std::string& path, bool (*doesFolderExist)(const std::string& path));
 
 		// options from configuration.txt
-		string EU4Path;	
-		string EU4DocumentsPath;
-		string CK2ExportPath;
-		string V2Path;
-		string V2DocumentsPath;
-		string V2Gametype;
-		string resetProvinces;
-		double MaxLiteracy;
-		string Removetype;
-		double libertyThreshold;
-		bool convertPopTotals;
-		bool debug;
+		std::string EU4Path;
+		std::string EU4DocumentsPath;
+		std::string CK2ExportPath;
+		std::string Vic2Path;
+		std::string Vic2DocumentsPath;
+		std::string Vic2Gametype = "HOD";
+		std::string resetProvinces = "no";
+		double MaxLiteracy = 1.0;
+		std::string Removetype = "none";
+		double libertyThreshold = 100.0;
+		bool convertPopTotals = false;
+		bool debug = false;
 	
 		// items set during conversion
-		EU4Version version;
+		EU4::Version version;
 		date firstEU4Date;
 		date lastEU4Date;
-		string outputName;
-		vector<string> activeDLCs;
-		vector<string> EU4Mods;
+		std::string outputName;
+		std::vector<std::string> activeDLCs;
+		std::vector<std::string> EU4Mods;
+};
+
+
+extern Configuration theConfiguration;
+
+
+class ConfigurationFile: commonItems::parser
+{
+	public:
+		explicit ConfigurationFile(const std::string& filename);
+
+	private:
+		ConfigurationFile(const ConfigurationFile&) = delete;
+		ConfigurationFile& operator=(const ConfigurationFile&) = delete;
 };
 
 

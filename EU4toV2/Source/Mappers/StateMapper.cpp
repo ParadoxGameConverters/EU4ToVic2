@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -45,7 +45,7 @@ stateMapper::stateMapper()
 	}
 	else
 	{
-		filename = Configuration::getV2Path() + "/map/region.txt";
+		filename = theConfiguration.getVic2Path() + "/map/region.txt";
 	}
 
 	shared_ptr<Object> Vic2RegionsObj = parser_8859_15::doParseFile(filename);

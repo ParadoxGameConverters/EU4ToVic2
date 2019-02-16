@@ -50,7 +50,7 @@ mappers::adjacencyMapper::adjacencyMapper()
 	inputAdjacencies(adjacenciesFile);
 	adjacenciesFile.close();
 
-	if (Configuration::getDebug())
+	if (theConfiguration.getDebug())
 	{
 		outputAdjacenciesMapData();
 	}
@@ -59,11 +59,11 @@ mappers::adjacencyMapper::adjacencyMapper()
 
 std::string mappers::adjacencyMapper::getAdjacencyFilename()
 {
-	string filename = Configuration::getV2DocumentsPath() + "/map/cache/adjacencies.bin";
+	string filename = theConfiguration.getVic2DocumentsPath() + "/map/cache/adjacencies.bin";
 	if (!Utils::DoesFileExist(filename))
 	{
 		LOG(LogLevel::Warning) << "Could not find " << filename << " - looking in install folder";
-		filename = Configuration::getV2Path() + "/map/cache/adjacencies.bin";
+		filename = theConfiguration.getVic2Path() + "/map/cache/adjacencies.bin";
 		if (!Utils::DoesFileExist(filename))
 		{
 			LOG(LogLevel::Error) << "Could not find " << filename << ". Try running Vic2 and converting again.";
@@ -168,19 +168,19 @@ std::vector<int> mappers::adjacencyMapper::readAnAdjacenciesSet(std::istream& ad
 	vector<int> adjacencies;
 	for (unsigned int i = 0; i < numAdjacencies; i++)
 	{
-		if (Configuration::getV2Gametype() == "vanilla")
+		if (theConfiguration.getVic2Gametype() == "vanilla")
 		{
 			VanillaAdjacency readAdjacency;
 			adjacenciesFile >> readAdjacency;
 			adjacencies.push_back(readAdjacency.to);
 		}
-		else if (Configuration::getV2Gametype() == "AHD")
+		else if (theConfiguration.getVic2Gametype() == "AHD")
 		{
 			AHDAdjacency readAdjacency;
 			adjacenciesFile >> readAdjacency;
 			adjacencies.push_back(readAdjacency.to);
 		}
-		if ((Configuration::getV2Gametype() == "HOD") || (Configuration::getV2Gametype() == "HoD-NNM"))
+		if ((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM"))
 		{
 			HODAdjacency readAdjacency;
 			adjacenciesFile >> readAdjacency;

@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -127,9 +127,9 @@ EU4::cultureGroups::cultureGroups():
 	groupToCulturesMap(),
 	cultureToGroupMap()
 {
-	addCulturesFromFile(Configuration::getEU4Path() + "/common/cultures/00_cultures.txt");
+	addCulturesFromFile(theConfiguration.getEU4Path() + "/common/cultures/00_cultures.txt");
 
-	for (auto itr: Configuration::getEU4Mods())
+	for (auto itr: theConfiguration.getEU4Mods())
 	{
 		std::set<std::string> cultureFiles;
 		Utils::GetAllFilesInFolder(itr + "/common/cultures/", cultureFiles);

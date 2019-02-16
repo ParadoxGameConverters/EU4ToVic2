@@ -24,6 +24,8 @@ copy "Data_Files\port_whitelist.txt" "..\Release\EU4toVic2\port_whitelist.txt"
 copy "Data_Files\minorityPops.txt" "..\Release\EU4toVic2\minorityPops.txt"
 copy "Data_Files\FAQ.txt" "..\Release\EU4toVic2\FAQ.txt"
 copy "Data_Files\after_converting.txt" "..\Release\EU4toVic2\after_converting.txt"
+copy "Data_Files\Eu4ToVic2DefaultConfiguration.xml" "..\Release\Configuration\Eu4ToVic2DefaultConfiguration.xml"
+copy "Data_Files\SupportedConvertersDefault.xml" "..\Release\Configuration\SupportedConvertersDefault.xml"
 
 rem Create Blank Mod
 del "..\Release\EU4toVic2\blankMod" /Q

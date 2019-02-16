@@ -24,12 +24,16 @@
     <ClCompile Include="..\common_items\WinUtils.cpp">
       <Filter>EU4ToVic2Files\commonItems</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Configuration.cpp">
+      <Filter>EU4ToVic2Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp">
       <Filter>EU4ToVic2Files\EU4World</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
+    <ClCompile Include="ConfigurationTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4ToVic2Files">

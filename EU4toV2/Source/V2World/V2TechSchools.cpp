@@ -101,7 +101,7 @@ Vic2::Vic2TechSchools::Vic2TechSchools()
 	});
 	registerKeyword(std::regex("folders"), commonItems::ignoreItem);
 
-	parseFile(Configuration::getV2Path() + "/common/technology.txt");
+	parseFile(theConfiguration.getVic2Path() + "/common/technology.txt");
 }
 
 

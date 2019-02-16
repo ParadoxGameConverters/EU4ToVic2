@@ -9,9 +9,9 @@
         <friendlyName>Configuration</friendlyName>
         <preferences>
           <preference>
-            <name>V2gametype</name>
-            <friendlyName>V2 Game Version</friendlyName>
-            <description>V2 Game Version: what version of V2 to convert to</description>
+            <name>Vic2gametype</name>
+            <friendlyName>Vic2 Game Version</friendlyName>
+            <description>Vic2 Game Version: what version of Vic2 to convert to</description>
             <entryOptions>
               <entryOption>
                 <name>HOD</name>

@@ -44,15 +44,13 @@ EU4::Regions::Regions():
 {
 	LOG(LogLevel::Info) << "Parsing EU4 regions";
 
-	auto version = theConfiguration.getEU4Version();
-	EU4::Version onePointFourteen("1.14");
-	if (version >= onePointFourteen)
+	if (theConfiguration.versionLessThan("1.14"))
 	{
-		initEU4RegionsNewVersion();
+		initEU4RegionsOldVersion();
 	}
 	else
 	{
-		initEU4RegionsOldVersion();
+		initEU4RegionsNewVersion();
 	}
 }
 
@@ -61,7 +59,7 @@ void EU4::Regions::initEU4RegionsOldVersion()
 {
 	regions.clear();
 
-	EU4::areas installedAreas(Configuration::getEU4Path() + "/map/region.txt");
+	EU4::areas installedAreas(theConfiguration.getEU4Path() + "/map/region.txt");
 
 	auto theAreas = installedAreas.getAreas();
 	std::for_each(theAreas.begin(), theAreas.end(), [this](const std::pair<std::string, EU4::area>& theArea)
@@ -70,7 +68,7 @@ void EU4::Regions::initEU4RegionsOldVersion()
 		}
 	);
 
-	for (auto itr: Configuration::getEU4Mods())
+	for (auto itr: theConfiguration.getEU4Mods())
 	{
 		if (!Utils::DoesFileExist(itr + "/map/region.txt"))
 		{
@@ -93,10 +91,10 @@ void EU4::Regions::initEU4RegionsOldVersion()
 
 void EU4::Regions::initEU4RegionsNewVersion()
 {
-	EU4::areas installedAreas(Configuration::getEU4Path() + "/map/area.txt");
-	initEU4RegionsFile(installedAreas, (Configuration::getEU4Path() + "/map/region.txt"));
+	EU4::areas installedAreas(theConfiguration.getEU4Path() + "/map/area.txt");
+	initEU4RegionsFile(installedAreas, (theConfiguration.getEU4Path() + "/map/region.txt"));
 
-	for (auto itr: Configuration::getEU4Mods())
+	for (auto itr: theConfiguration.getEU4Mods())
 	{
 		if (!Utils::DoesFileExist(itr + "/map/area.txt") || !Utils::DoesFileExist(itr + "/map/region.txt"))
 		{

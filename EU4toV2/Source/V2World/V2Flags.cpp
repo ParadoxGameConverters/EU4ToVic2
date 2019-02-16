@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -270,7 +270,7 @@ set<string> V2Flags::determineAvailableFlags()
 {
 	set<string> availableFlags;
 
-	const vector<string> availableFlagFolders = { "flags", Configuration::getV2Path() + "/gfx/flags" };
+	const vector<string> availableFlagFolders = { "flags", theConfiguration.getVic2Path() + "/gfx/flags" };
 	for (auto availableFlagFolder: availableFlagFolders)
 	{
 		Utils::GetAllFilesInFolder(availableFlagFolder, availableFlags);
@@ -324,14 +324,14 @@ void V2Flags::output() const
 
 void V2Flags::createOutputFolders() const
 {
-	if (!Utils::TryCreateFolder("Output/" + Configuration::getOutputName() + "/gfx"))
+	if (!Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/gfx"))
 	{
-		LOG(LogLevel::Error) << "Could not create Output/" << Configuration::getOutputName() << "/gfx";
+		LOG(LogLevel::Error) << "Could not create Output/" << theConfiguration.getOutputName() << "/gfx";
 		exit(-1);
 	}
-	if (!Utils::TryCreateFolder("Output/" + Configuration::getOutputName() + "/gfx/flags"))
+	if (!Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/gfx/flags"))
 	{
-		LOG(LogLevel::Error) << "Could not create Output/" << Configuration::getOutputName() << "/gfx/flags";
+		LOG(LogLevel::Error) << "Could not create Output/" << theConfiguration.getOutputName() << "/gfx/flags";
 		exit(-1);
 	}
 }
@@ -339,7 +339,7 @@ void V2Flags::createOutputFolders() const
 
 void V2Flags::copyFlags() const
 {
-	const vector<string> availableFlagFolders = { "flags", Configuration::getV2Path() + "/gfx/flags" };
+	const vector<string> availableFlagFolders = { "flags", theConfiguration.getVic2Path() + "/gfx/flags" };
 	for (auto tagMapping: tagMap)
 	{
 		const string& V2Tag = tagMapping.first;
@@ -355,7 +355,7 @@ void V2Flags::copyFlags() const
 				flagFileFound = Utils::DoesFileExist(sourceFlagPath);
 				if (flagFileFound)
 				{
-					string destFlagPath = "Output/" + Configuration::getOutputName() + "/gfx/flags/" + V2Tag + suffix;
+					string destFlagPath = "Output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
 					Utils::TryCopyFile(sourceFlagPath, destFlagPath);
 				}
 			}
@@ -401,7 +401,7 @@ void V2Flags::createCustomFlags() const
 			flagFileFound = (Utils::DoesFileExist(sourceFlagPath) && Utils::DoesFileExist(sourceEmblemPath));
 			if (flagFileFound)
 			{
-				string destFlagPath = "Output/" + Configuration::getOutputName() + "/gfx/flags/" + V2Tag + suffix;
+				string destFlagPath = "Output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
 
 				CreateCustomFlag( 
 					FlagColorMapper::getFlagColor(get<0>(cflag.second.colours)),
@@ -463,7 +463,7 @@ void V2Flags::createColonialFlags() const
 				flagFileFound = (Utils::DoesFileExist(sourceFlagPath) && Utils::DoesFileExist(overlordFlagPath));
 				if (flagFileFound)
 				{
-					string destFlagPath = "Output/" + Configuration::getOutputName() + "/gfx/flags/" + V2Tag + suffix;
+					string destFlagPath = "Output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
 					CreateColonialFlag(overlordFlagPath, sourceFlagPath, destFlagPath);
 				}
 				else
@@ -486,7 +486,7 @@ void V2Flags::createColonialFlags() const
 				flagFileFound = Utils::DoesFileExist(sourceFlagPath);
 				if (flagFileFound)
 				{
-					string destFlagPath = "Output/" + Configuration::getOutputName() + "/gfx/flags/" + V2Tag + suffix;
+					string destFlagPath = "Output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
 					Utils::TryCopyFile(sourceFlagPath, destFlagPath);
 				}
 				else

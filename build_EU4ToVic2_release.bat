@@ -7,8 +7,6 @@ SET toolsLocation="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community
 SET SEVENZIP_LOC=""C:\Program Files (x86)\7-Zip""
 "%msBuildLocation%\msbuild.exe" "Frontend\ParadoxConverters.Frontend\ParadoxConverters.Frontend.sln" /p:Configuration=Release /m 
 xcopy "Frontend\ParadoxConverters.Frontend\ParadoxConverters.Frontend\bin\Release" "EU4ToVic2-%version%"  /Y /E /I
-copy "EU4toV2\Data_Files\Eu4ToVic2DefaultConfiguration.xml" "EU4ToVic2-%version%\Configuration\"
-copy "EU4toV2\Data_Files\SupportedConvertersDefault.xml" "EU4ToVic2-%version%\Configuration\"
 cd "EU4ToVic2-%version%\"
 del *.pdb
 cd ..
