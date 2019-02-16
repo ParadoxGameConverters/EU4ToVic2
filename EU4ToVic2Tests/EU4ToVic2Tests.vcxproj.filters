@@ -24,6 +24,12 @@
     <ClCompile Include="..\common_items\WinUtils.cpp">
       <Filter>EU4ToVic2Files\commonItems</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp">
+      <Filter>EU4ToVic2Files\EU4World</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4ToVic2Files">
@@ -37,6 +43,12 @@
     </Filter>
     <Filter Include="EU4ToVic2Files\commonItems">
       <UniqueIdentifier>{2fedf08a-ee83-4800-b110-94443948d57a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4ToVic2Files\EU4World">
+      <UniqueIdentifier>{3dff7ba7-4751-4488-9fdb-99b7271cc12a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests">
+      <UniqueIdentifier>{983179b3-715e-4852-b331-44400fd4423b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
