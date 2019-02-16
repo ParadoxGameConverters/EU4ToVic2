@@ -1,4 +1,4 @@
-/*Copyright(c) 2018 The Paradox Game Converters Project
+/*Copyright(c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files(the "Software"), to deal
@@ -167,7 +167,7 @@ EU4Province::EU4Province(shared_ptr<Object> obj)
 
 	if (num == 1)
 	{
-		Configuration::setFirstEU4Date(ownershipHistory[0].first);
+		theConfiguration.setFirstEU4Date(ownershipHistory[0].first);
 	}
 
 	if (cultureHistory.size() == 0)
@@ -328,7 +328,7 @@ bool EU4Province::wasColonised() const
 	// but acquired it later through colonization, and if the current culture does not match the original culture
 	if (ownershipHistory.size() > 0)
 	{
-		if ((ownershipHistory[0].first != date()) && (ownershipHistory[0].first != Configuration::getFirstEU4Date()))
+		if ((ownershipHistory[0].first != date()) && (ownershipHistory[0].first != theConfiguration.getFirstEU4Date()))
 		{
 			if	((cultureHistory.size() > 1) && (cultureHistory[0].second != cultureHistory[cultureHistory.size() - 1].second))
 			{
@@ -428,7 +428,7 @@ void EU4Province::checkBuilding(const shared_ptr<Object> provinceObj, string bui
 
 void EU4Province::buildPopRatios()
 {
-	date endDate = Configuration::getLastEU4Date();
+	date endDate = theConfiguration.getLastEU4Date();
 	if (endDate < date("1821.1.1"))
 	{
 		endDate = date("1821.1.1");

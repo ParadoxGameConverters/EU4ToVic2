@@ -38,7 +38,7 @@ EU4::continents* EU4::continents::instance = nullptr;
 EU4::continents::continents()
 {
 	LOG(LogLevel::Info) << "Finding Continents";
-	for (auto mod: Configuration::getEU4Mods())
+	for (auto mod: theConfiguration.getEU4Mods())
 	{
 		string continentFile = mod + "/map/continent.txt";
 		if (Utils::DoesFileExist(continentFile))
@@ -49,7 +49,7 @@ EU4::continents::continents()
 
 	if (continentMap.empty())
 	{
-		initContinentMap(Configuration::getEU4Path() + "/map/continent.txt");
+		initContinentMap(theConfiguration.getEU4Path() + "/map/continent.txt");
 	}
 
 	if (continentMap.empty())

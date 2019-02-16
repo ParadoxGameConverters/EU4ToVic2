@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -36,7 +36,7 @@ FlagColorMapper::FlagColorMapper()
 {
 	LOG(LogLevel::Info) << "Parsing EU4 flag colours";
 
-	string colorFile = Configuration::getEU4Path() + "/common/custom_country_colors/00_custom_country_colors.txt";
+	string colorFile = theConfiguration.getEU4Path() + "/common/custom_country_colors/00_custom_country_colors.txt";
 	shared_ptr<Object> colorsObj = parser_UTF8::doParseFile(colorFile);
 	if (colorsObj == NULL)
 	{

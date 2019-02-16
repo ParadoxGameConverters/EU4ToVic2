@@ -98,9 +98,9 @@ namespace EU4
 			}
 		);
 		
-		parseFile(Configuration::getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt");
+		parseFile(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt");
 
-		for (auto mod: Configuration::getEU4Mods())
+		for (auto mod: theConfiguration.getEU4Mods())
 		{
 			set<string> filenames;
 			Utils::GetAllFilesInFolder(mod + "/common/colonial_regions/", filenames);

@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -97,7 +97,7 @@ void mappers::CountryMappings::readRules()
 
 void mappers::CountryMappings::getAvailableFlags()
 {
-	const vector<string> availableFlagFolders = { "blankMod/output/gfx/flags", Configuration::getV2Path() + "/gfx/flags" };
+	const vector<string> availableFlagFolders = { "blankMod/output/gfx/flags", theConfiguration.getVic2Path() + "/gfx/flags" };
 
 	set<string> availableFlagFiles;
 	for (auto availableFlagFolder: availableFlagFolders)

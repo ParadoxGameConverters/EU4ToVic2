@@ -55,7 +55,7 @@ EU4::world::world(const string& EU4SaveFileName):
 		{
 			commonItems::singleString dateString(theStream);
 			date endDate(dateString.getString());
-			Configuration::setLastEU4Date(endDate);
+			theConfiguration.setLastEU4Date(endDate);
 		}
 	);
 	registerKeyword(std::regex("savegame_version"), [this](const std::string& versionText, std::istream& theStream)
@@ -136,11 +136,11 @@ EU4::world::world(const string& EU4SaveFileName):
 	checkAllEU4ReligionsMapped();
 
 	removeEmptyNations();
-	if (Configuration::getRemovetype() == "dead")
+	if (theConfiguration.getRemovetype() == "dead")
 	{
 		removeDeadLandlessNations();
 	}
-	else if (Configuration::getRemovetype() == "all")
+	else if (theConfiguration.getRemovetype() == "all")
 	{
 		removeLandlessNations();
 	}
@@ -220,7 +220,7 @@ void EU4::world::loadUsedMods(const shared_ptr<Object> EU4SaveObj)
 					else
 					{
 						LOG(LogLevel::Debug) << "EU4 Mod is at " << newModPath;
-						Configuration::addEU4Mod(newModPath);
+						theConfiguration.addEU4Mod(newModPath);
 					}
 				}
 				else
@@ -247,7 +247,7 @@ map<string, string> EU4::world::loadPossibleMods()
 void EU4::world::loadEU4ModDirectory(map<string, string>& possibleMods)
 {
 	LOG(LogLevel::Debug) << "Get EU4 Mod Directory";
-	string EU4DocumentsLoc = Configuration::getEU4DocumentsPath();	// the EU4 My Documents location as stated in the configuration file
+	string EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();	// the EU4 My Documents location as stated in the configuration file
 	if (Utils::DoesFileExist(EU4DocumentsLoc))
 	{
 		LOG(LogLevel::Error) << "No Europa Universalis 4 documents directory was specified in configuration.txt, or the path was invalid";
@@ -305,7 +305,7 @@ void EU4::world::loadEU4ModDirectory(map<string, string>& possibleMods)
 void EU4::world::loadCK2ExportDirectory(map<string, string>& possibleMods)
 {
 	LOG(LogLevel::Debug) << "Get CK2 Export Directory";
-	string CK2ExportLoc = Configuration::getCK2ExportPath();		// the CK2 converted mods location as stated in the configuration file
+	string CK2ExportLoc = theConfiguration.getCK2ExportPath();		// the CK2 converted mods location as stated in the configuration file
 	if (Utils::DoesFileExist(CK2ExportLoc))
 	{
 		LOG(LogLevel::Warning) << "No Crusader Kings 2 mod directory was specified in configuration.txt, or the path was invalid - this will cause problems with CK2 converted saves";
@@ -373,7 +373,7 @@ void EU4::world::loadActiveDLC(const shared_ptr<Object> EU4SaveObj)
 			activeDLCs.push_back(DLCsItr);
 		}
 
-		Configuration::setActiveDLCs(activeDLCs);
+		theConfiguration.setActiveDLCs(activeDLCs);
 	}
 }
 
@@ -447,7 +447,7 @@ map<int, int> EU4::world::determineValidProvinces()
 {
 	// Use map/definition.csv to determine valid provinces
 	map<int, int> validProvinces;
-	ifstream definitionFile((Configuration::getEU4Path() + "/map/definition.csv").c_str());
+	ifstream definitionFile((theConfiguration.getEU4Path() + "/map/definition.csv").c_str());
 	if (!definitionFile.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not open map/definition.csv";
@@ -685,9 +685,9 @@ void EU4::world::checkAllEU4CulturesMapped() const
 void EU4::world::readCommonCountries()
 {
 	LOG(LogLevel::Info) << "Reading EU4 common/countries";
-	ifstream commonCountries(Configuration::getEU4Path() + "/common/country_tags/00_countries.txt");	// the data in the countries file
-	readCommonCountriesFile(commonCountries, Configuration::getEU4Path());
-	for (auto itr: Configuration::getEU4Mods())
+	ifstream commonCountries(theConfiguration.getEU4Path() + "/common/country_tags/00_countries.txt");	// the data in the countries file
+	readCommonCountriesFile(commonCountries, theConfiguration.getEU4Path());
+	for (auto itr: theConfiguration.getEU4Mods())
 	{
 		set<string> fileNames;
 		Utils::GetAllFilesInFolder(itr + "/common/country_tags/", fileNames);
@@ -756,8 +756,8 @@ void EU4::world::setLocalisations()
 {
 	LOG(LogLevel::Info) << "Reading localisation";
 	EU4Localisation localisation;
-	localisation.ReadFromAllFilesInFolder(Configuration::getEU4Path() + "/localisation");
-	for (auto itr: Configuration::getEU4Mods())
+	localisation.ReadFromAllFilesInFolder(theConfiguration.getEU4Path() + "/localisation");
+	for (auto itr: theConfiguration.getEU4Mods())
 	{
 		LOG(LogLevel::Debug) << "Reading mod localisation";
 		localisation.ReadFromAllFilesInFolder(itr + "/localisation");
@@ -810,10 +810,10 @@ void EU4::world::resolveRegimentTypes()
 		LOG(LogLevel::Info) << "\tReading unit strengths from EU4 installation folder";
 
 		set<string> filenames;
-		Utils::GetAllFilesInFolder(Configuration::getEU4Path() + "/common/units/", filenames);
+		Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/units/", filenames);
 		for (auto filename: filenames)
 		{
-			AddUnitFileToRegimentTypeMap((Configuration::getEU4Path() + "/common/units"), filename, rtm);
+			AddUnitFileToRegimentTypeMap((theConfiguration.getEU4Path() + "/common/units"), filename, rtm);
 		}
 	}
 	read.close();
@@ -895,7 +895,7 @@ void EU4::world::uniteJapan()
 {
 	shared_ptr<EU4::Country> japan;
 
-	auto version20 = EU4Version("1.20.0.0");
+	auto version20 = EU4::Version("1.20.0.0");
 	if (*version >= version20)
 	{
 		for (auto country : theCountries)

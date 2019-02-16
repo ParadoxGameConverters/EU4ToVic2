@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -25,6 +25,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Log.h"
 #include "../Configuration.h"
 #include "OSCompatibilityLayer.h"
+using namespace std;
 
 
 
@@ -33,28 +34,28 @@ void V2Diplomacy::output() const
 	LOG(LogLevel::Debug) << "Writing diplomacy";
 
 	FILE* alliances;
-	if (fopen_s(&alliances, ("Output/" + Configuration::getOutputName() + "/history/diplomacy/Alliances.txt").c_str(), "w") != 0)
+	if (fopen_s(&alliances, ("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/Alliances.txt").c_str(), "w") != 0)
 	{
 		LOG(LogLevel::Error) << "Could not create alliances history file";
 		exit(-1);
 	}
 
 	FILE* guarantees;
-	if (fopen_s(&guarantees, ("Output/" + Configuration::getOutputName() + "/history/diplomacy/Guarantees.txt").c_str(), "w") != 0)
+	if (fopen_s(&guarantees, ("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/Guarantees.txt").c_str(), "w") != 0)
 	{
 		LOG(LogLevel::Error) << "Could not create guarantees history file";
 		exit(-1);
 	}
 
 	FILE* puppetStates;
-	if (fopen_s(&puppetStates, ("Output/" + Configuration::getOutputName() + "/history/diplomacy/PuppetStates.txt").c_str(), "w") != 0)
+	if (fopen_s(&puppetStates, ("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/PuppetStates.txt").c_str(), "w") != 0)
 	{
 		LOG(LogLevel::Error) << "Could not create puppet states history file";
 		exit(-1);
 	}
 
 	FILE* unions;
-	if (fopen_s(&unions, ("Output/" + Configuration::getOutputName() + "/history/diplomacy/Unions.txt").c_str(), "w") != 0)
+	if (fopen_s(&unions, ("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/Unions.txt").c_str(), "w") != 0)
 	{
 		LOG(LogLevel::Error) << "Could not create unions history file";
 		exit(-1);
