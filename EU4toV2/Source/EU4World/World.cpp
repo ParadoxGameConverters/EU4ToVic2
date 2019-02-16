@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -356,8 +356,8 @@ void EU4::world::loadCK2ExportDirectory(map<string, string>& possibleMods)
 void EU4::world::loadEU4Version(const shared_ptr<Object> EU4SaveObj)
 {
 	vector<shared_ptr<Object>> versionObj = EU4SaveObj->getValue("savegame_version");
-	(versionObj.size() > 0) ? version = new EU4Version(versionObj[0]) : version = new EU4Version();
-	Configuration::setEU4Version(*version);
+	(versionObj.size() > 0) ? version = new EU4::Version(versionObj[0]->getLeaf()) : version = new EU4::Version();
+	theConfiguration.setEU4Version(*version);
 }
 
 

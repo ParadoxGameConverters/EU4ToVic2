@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -33,8 +33,12 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+namespace EU4
+{
+class Version;
+}
+
 class EU4Province;
-class EU4Version;
 
 
 
@@ -50,7 +54,7 @@ namespace EU4
 
 			EU4Province* getProvince(int provNum) const;
 
-			EU4Version* getVersion() const { return version; };
+			EU4::Version* getVersion() const { return version; };
 			std::map<std::string, std::shared_ptr<EU4::Country>> getCountries() const { return theCountries; };
 			vector<EU4Agreement> getDiplomaticAgreements() const { return diplomacy->getAgreements(); };
 			double getWorldWeightSum() const { return worldWeightSum; };
@@ -110,7 +114,7 @@ namespace EU4
 			map<int, EU4Province*> provinces;
 			std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
 			EU4Diplomacy* diplomacy;
-			EU4Version* version;
+			EU4::Version* version;
 			double worldWeightSum;
 
 			std::string revolutionTargetString;

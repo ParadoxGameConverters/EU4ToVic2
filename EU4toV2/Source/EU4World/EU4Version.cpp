@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -26,79 +26,44 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-EU4Version::EU4Version()
-{
-	first		= 0;
-	second	= 0;
-	third		= 0;
-	fourth	= 0;
-}
-
-
-EU4Version::EU4Version(shared_ptr<Object> obj)
-{
-	vector<shared_ptr<Object>> numObj;	// the number in this part of the version
-	numObj = obj->getValue("first");
-	if (numObj.size() > 0)
-	{
-		first = atoi(numObj[0]->getLeaf().c_str());
-	}
-	numObj = obj->getValue("second");
-	if (numObj.size() > 0)
-	{
-		second = atoi(numObj[0]->getLeaf().c_str());
-	}
-	numObj = obj->getValue("third");
-	if (numObj.size() > 0)
-	{
-		third = atoi(numObj[0]->getLeaf().c_str());
-	}
-	numObj = obj->getValue("forth");
-	if (numObj.size() > 0)
-	{
-		fourth = atoi(numObj[0]->getLeaf().c_str());
-	}
-}
-
-
-EU4Version::EU4Version(string version)
+EU4::Version::Version(std::string version)
 {
 	int dot = version.find_first_of('.');	// the dots separating the version parts
-	first = atoi(version.substr(0, dot).c_str());
+	firstPart = std::stoi(version.substr(0, dot));
 
 	version = version.substr(dot + 1, version.size());
 	dot = version.find_first_of('.');
-	second = atoi(version.substr(0, dot).c_str());
+	secondPart = std::stoi(version.substr(0, dot));
 
 	version = version.substr(dot + 1, version.size());
 	dot = version.find_first_of('.');
-	third = atoi(version.substr(0, dot).c_str());
+	thirdPart = std::stoi(version.substr(0, dot));
 
 	version = version.substr(dot + 1, version.size());
 	dot = version.find_first_of('.');
-	fourth = atoi(version.substr(0, dot).c_str());
+	fourthPart = std::stoi(version.substr(0, dot));
 }
 
 
-bool EU4Version::operator >= (EU4Version& rhs) const
+bool EU4::Version::operator >= (const EU4::Version& rhs) const
 {
-	if (first > rhs.first)
+	if (firstPart > rhs.firstPart)
 	{
 		return true;
 	}
-	else if ((first == rhs.first) && (second > rhs.second))
+	else if ((firstPart == rhs.firstPart) && (secondPart > rhs.secondPart))
 	{
 		return true;
 	}
-	else if ((first == rhs.first) && (second == rhs.second) && (third > rhs.third))
+	else if ((firstPart == rhs.firstPart) && (secondPart == rhs.secondPart) && (thirdPart > rhs.thirdPart))
 	{
 		return true;
 	}
-	else if ((first == rhs.first) && (second == rhs.second) && (third == rhs.third) && (fourth > rhs.fourth))
+	else if ((firstPart == rhs.firstPart) && (secondPart == rhs.secondPart) && (thirdPart == rhs.thirdPart) && (fourthPart > rhs.fourthPart))
 	{
 		return true;
 	}
-	else if ((first == rhs.first) && (second == rhs.second) && (third == rhs.third) && (fourth == rhs.fourth))
+	else if ((firstPart == rhs.firstPart) && (secondPart == rhs.secondPart) && (thirdPart == rhs.thirdPart) && (fourthPart == rhs.fourthPart))
 	{
 		return true;
 	}

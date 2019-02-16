@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -1143,7 +1143,7 @@ void V2World::convertUncivReforms(const EU4::world& sourceWorld)
 	civConversion techGroupAlgoritm = newer;
 	double topTech = 96;
 	int topInstitutions = 7;
-	auto version18 = EU4Version("1.18.0");
+	auto version18 = EU4::Version("1.18.0");
 	if (*(sourceWorld.getVersion()) >= version18)
 	{
 		LOG(LogLevel::Info) << "New tech group conversion method";
@@ -1458,7 +1458,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 	//ofstream output_file("Data.csv");
 
 	int popAlgorithm = 0;
-	auto version12 = EU4Version("1.12.0");
+	auto version12 = EU4::Version("1.12.0");
 	if (*(sourceWorld.getVersion()) >= version12)
 	{
 		LOG(LogLevel::Info) << "Using pop conversion algorithm for EU4 versions after 1.12.";
