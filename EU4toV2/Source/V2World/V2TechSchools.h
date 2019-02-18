@@ -64,7 +64,7 @@ class TechSchoolsFile: commonItems::parser
 		TechSchoolsFile(std::unique_ptr<blockedTechSchools> suppliedBlockedTechSchools);
 		~TechSchoolsFile() = default;
 
-		std::unique_ptr<TechSchools> getTechSchools() { return std::move(theTechSchools); }
+		std::unique_ptr<TechSchools> takeTechSchools() { return std::move(theTechSchools); }
 
 	private:
 		TechSchoolsFile() = delete;
