@@ -34,6 +34,9 @@
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
     <ClCompile Include="ConfigurationTests.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\V2World\V2TechSchools.cpp">
+      <Filter>EU4ToVic2Files\Vic2World</Filter>
+    </ClCompile>
     <ClCompile Include="Vic2WorldTests\BlockedTechSchoolsTests.cpp">
       <Filter>Vic2WorldTests</Filter>
     </ClCompile>
