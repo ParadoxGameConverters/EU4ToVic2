@@ -95,16 +95,19 @@ void Configuration::verifyEU4Path(const std::string& path, bool (*doesFolderExis
 {
 	if (!doesFolderExist(path))
 	{
-		throw("No Europa Universalis 4 path was specified in configuration.txt, or the path was invalid");
+		LOG(LogLevel::Error) << path << " does not exist";
+		exit(-1);
 	}
 	else if (!doesFileExist(path + "/eu4.exe"))
 	{
-		throw(path + " does not contain Europa Universalis 4");
+		LOG(LogLevel::Error) << path << " does not contain Europa Universalis 4";
+		exit(-1);
 	}
 
 	else if (!doesFileExist(path + "/map/positions.txt"))
 	{
-		throw(path + " does not appear to be a valid EU4 install");
+		LOG(LogLevel::Error) << path << " does not appear to be a valid EU4 install";
+		exit(-1);
 	}
 	else
 	{
@@ -117,11 +120,13 @@ void Configuration::verifyVic2Path(const std::string& path, bool (*doesFolderExi
 {
 	if (!doesFolderExist(path))
 	{
-		throw("No Victoria 2 path was specified in configuration.txt, or the path was invalid");
+		LOG(LogLevel::Error) << path << " does not exist";
+		exit(-1);
 	}
 	else if (!doesFileExist(path + "/v2game.exe"))
 	{
-		throw(path + " does not contain Victoria 2");
+		LOG(LogLevel::Error) << path << " does not contain Victoria 2";
+		exit(-1);
 	}
 	else
 	{
@@ -134,7 +139,8 @@ void Configuration::verifyVic2DocumentsPath(const std::string& path, bool (*does
 {
 	if (!doesFolderExist(path))
 	{
-		throw("No Victoria 2 documents directory was specified in configuration.txt, or the path was invalid");
+		LOG(LogLevel::Error) << path << " does not exist";
+		exit(-1);
 	}
 	else
 	{
