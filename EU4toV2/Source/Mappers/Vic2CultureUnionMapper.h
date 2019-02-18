@@ -26,6 +26,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "newParser.h"
 #include <map>
 #include <memory>
 #include <string>
@@ -38,16 +39,34 @@ class Object;
 
 
 
-class vic2CultureUnionMapper
+class Vic2CultureUnionMapper
 {
 	public:
-		vic2CultureUnionMapper();
+		Vic2CultureUnionMapper();
 		vector<string> getCoreForCulture(const string& culture);
 
 	private:
 		void initUnionMap(shared_ptr<Object> obj);
 
 		map<string, vector<string>> unionMap;
+};
+
+
+class Vic2CultureUnionMapperFile: commonItems::parser
+{
+	public:
+		Vic2CultureUnionMapperFile();
+		~Vic2CultureUnionMapperFile() = default;
+
+		std::unique_ptr<Vic2CultureUnionMapper> takeCultureUnionMapper() { return std::move(theCultureUnionMapper); }
+
+	private:
+		Vic2CultureUnionMapperFile(const Vic2CultureUnionMapperFile&) = delete;
+		Vic2CultureUnionMapperFile(Vic2CultureUnionMapperFile&&) = delete;
+		Vic2CultureUnionMapperFile& operator=(const Vic2CultureUnionMapperFile&) = delete;
+		Vic2CultureUnionMapperFile& operator=(Vic2CultureUnionMapperFile&&) = delete;
+
+		std::unique_ptr<Vic2CultureUnionMapper> theCultureUnionMapper;
 };
 
 

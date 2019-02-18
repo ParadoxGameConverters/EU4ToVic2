@@ -23,15 +23,14 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "Vic2CultureUnionMapper.h"
 #include "Log.h"
+#include "ParserHelpers.h"
 #include "Object.h"
 #include "ParadoxParserUTF8.h"
 
 
 
-vic2CultureUnionMapper::vic2CultureUnionMapper()
+Vic2CultureUnionMapper::Vic2CultureUnionMapper()
 {
-	LOG(LogLevel::Info) << "Parsing union mappings";
-
 	shared_ptr<Object> unionsMapObj = parser_UTF8::doParseFile("unions.txt");
 	if (unionsMapObj == NULL)
 	{
@@ -48,7 +47,7 @@ vic2CultureUnionMapper::vic2CultureUnionMapper()
 }
 
 
-void vic2CultureUnionMapper::initUnionMap(shared_ptr<Object> obj)
+void Vic2CultureUnionMapper::initUnionMap(shared_ptr<Object> obj)
 {
 	for (auto rule: obj->getLeaves())
 	{
@@ -71,7 +70,7 @@ void vic2CultureUnionMapper::initUnionMap(shared_ptr<Object> obj)
 }
 
 
-vector<string> vic2CultureUnionMapper::getCoreForCulture(const string& culture)
+vector<string> Vic2CultureUnionMapper::getCoreForCulture(const string& culture)
 {
 	vector<string> empty;
 
@@ -84,4 +83,16 @@ vector<string> vic2CultureUnionMapper::getCoreForCulture(const string& culture)
 	{
 		return mapping->second;
 	}
+}
+
+
+Vic2CultureUnionMapperFile::Vic2CultureUnionMapperFile()
+{
+	registerKeyword(std::regex("unions"), [this](const std::string& unused, std::istream& theStream){
+		theCultureUnionMapper = std::make_unique<Vic2CultureUnionMapper>();
+		commonItems::ignoreItem(unused, theStream);
+	});
+
+	LOG(LogLevel::Info) << "Parsing union mappings";
+	parseFile("unions.txt");
 }
