@@ -1,4 +1,4 @@
-/*Copyright(c) 2018 The Paradox Game Converters Project
+/*Copyright(c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files(the "Software"), to deal
@@ -148,7 +148,7 @@ bool EU4::leader::isLand() const
 
 bool EU4::leader::isAlive() const
 {
-	if (deathDate < Configuration::getLastEU4Date())
+	if (deathDate < theConfiguration.getLastEU4Date())
 	{
 		return false;
 	}

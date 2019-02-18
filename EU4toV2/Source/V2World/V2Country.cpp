@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -55,6 +55,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Creditor.h"
 #include "V2Leader.h"
 #include "V2Pop.h"
+#include "V2TechSchools.h"
 
 
 
@@ -179,9 +180,9 @@ shared_ptr<Object> V2Country::parseCountryFile(const string& filename)
 	{
 		fileToParse = "./blankMod/output/common/countries/" + filename;
 	}
-	else if (Utils::DoesFileExist(Configuration::getV2Path() + "/common/countries/" + filename))
+	else if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
 	{
-		fileToParse = Configuration::getV2Path() + "/common/countries/" + filename;
+		fileToParse = theConfiguration.getVic2Path() + "/common/countries/" + filename;
 	}
 	else
 	{
@@ -301,7 +302,7 @@ void V2Country::output() const
 	if(!dynamicCountry)
 	{
 		FILE* output;
-		if (fopen_s(&output, ("Output/" + Configuration::getOutputName() + "/history/countries/" + filename).c_str(), "w") != 0)
+		if (fopen_s(&output, ("Output/" + theConfiguration.getOutputName() + "/history/countries/" + filename).c_str(), "w") != 0)
 		{
 			LOG(LogLevel::Error) << "Could not create country history file " << filename;
 			exit(-1);
@@ -422,10 +423,10 @@ void V2Country::output() const
 	if (newCountry)
 	{
 		// Output common country file. 
-		std::ofstream commonCountryOutput("Output/" + Configuration::getOutputName() + "/common/countries/" + commonCountryFile);
+		std::ofstream commonCountryOutput("Output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile);
 		if (!commonCountryOutput.is_open())
 		{
-			LOG(LogLevel::Error) << "Could not open Output/" + Configuration::getOutputName() + "/common/countries/" + commonCountryFile;
+			LOG(LogLevel::Error) << "Could not open Output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile;
 			exit(-1);
 		}
 		commonCountryOutput << "graphical_culture = UsGC\n";	// default to US graphics
@@ -485,7 +486,7 @@ void V2Country::outputElection(FILE* output) const
 void V2Country::outputOOB() const
 {
 	FILE* output;
-	if (fopen_s(&output, ("Output/" + Configuration::getOutputName() + "/history/units/" + tag + "_OOB.txt").c_str(), "w") != 0)
+	if (fopen_s(&output, ("Output/" + theConfiguration.getOutputName() + "/history/units/" + tag + "_OOB.txt").c_str(), "w") != 0)
 	{
 		LOG(LogLevel::Error) << "Could not create OOB file " << (tag + "_OOB.txt");
 		exit(-1);
@@ -516,7 +517,7 @@ void V2Country::outputOOB() const
 }
 
 
-void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const vector<V2TechSchool>& techSchools, const map<int, int>& leaderMap)
+void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const std::unique_ptr<Vic2::TechSchools>& techSchools, const map<int, int>& leaderMap)
 {
 	srcCountry = _srcCountry;
 
@@ -528,7 +529,7 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	auto possibleFilename = Utils::GetFileFromTag("./blankMod/output/history/countries/", tag);
 	if (!possibleFilename)
 	{
-		possibleFilename = Utils::GetFileFromTag(Configuration::getV2Path() + "/history/countries/", tag);
+		possibleFilename = Utils::GetFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
 	}
 
 	if (!possibleFilename)
@@ -772,9 +773,9 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	{
 		literacy *= 0.1;
 	}
-	if (literacy > Configuration::getMaxLiteracy())
+	if (literacy > theConfiguration.getMaxLiteracy())
 	{
-		literacy = Configuration::getMaxLiteracy();
+		literacy = theConfiguration.getMaxLiteracy();
 	}
 	LOG(LogLevel::Debug) << "Setting literacy for " << tag << " to " << literacy;
 
@@ -815,32 +816,9 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	double commerceInvestment		= srcCountry->getCommerceInvestment();
 	double industryInvestment		= srcCountry->getIndustryInvestment();
 	double cultureInvestment		= srcCountry->getCultureInvestment();
-	
-	double totalInvestment	 = armyInvestment + navyInvestment + commerceInvestment + industryInvestment + cultureInvestment;
-	armyInvestment				/= totalInvestment;
-	navyInvestment				/= totalInvestment;
-	commerceInvestment		/= totalInvestment;
-	industryInvestment		/= totalInvestment;
-	cultureInvestment			/= totalInvestment;
 
-	double lowestScore = 1.0;
-	string bestSchool = "traditional_academic";
-
-	for (unsigned int j = 0; j < techSchools.size(); j++)
-	{
-		double newScore = abs(armyInvestment		- techSchools[j].armyInvestment - 0.2) +
-								abs(navyInvestment		- techSchools[j].navyInvestment - 0.2) +
-								abs(commerceInvestment	- techSchools[j].commerceInvestment - 0.2) +
-								abs(industryInvestment	- techSchools[j].industryInvestment - 0.2) +
-								abs(cultureInvestment	- techSchools[j].cultureInvestment - 0.2);
-		if (newScore < lowestScore)
-		{
-			bestSchool	= techSchools[j].name;
-			lowestScore	= newScore;
-		}
-	}
-	LOG(LogLevel::Debug) << tag << " has tech school " << bestSchool;
-	techSchool = bestSchool;
+	techSchool = techSchools->findBestTechSchool(armyInvestment, commerceInvestment, cultureInvestment, industryInvestment, navyInvestment);
+	LOG(LogLevel::Debug) << tag << " has tech school " << techSchool;
 
 	//// Leaders
 	//vector<EU4Leader*> oldLeaders = srcCountry->getLeaders();
@@ -883,11 +861,11 @@ void V2Country::initFromHistory()
 	}
 	else
 	{
-		possibleFilename = Utils::GetFileFromTag(Configuration::getV2Path() + "/history/countries/", tag);
+		possibleFilename = Utils::GetFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
 		if (possibleFilename)
 		{
 			filename = *possibleFilename;
-			fullFilename = Configuration::getV2Path() + "/history/countries/" + filename;
+			fullFilename = theConfiguration.getVic2Path() + "/history/countries/" + filename;
 		}
 	}
 	if (!possibleFilename)
@@ -1048,7 +1026,7 @@ void V2Country::addState(V2State* newState)
 		}
 
 		// find the province with the highest naval base level
-		if ((Configuration::getV2Gametype() == "HOD") || (Configuration::getV2Gametype() == "HoD-NNM"))
+		if ((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM"))
 		{
 			int navalLevel = 0;
 			const EU4Province* srcProvince = newProvinces[i]->getSrcProvince();
@@ -1080,7 +1058,7 @@ void V2Country::addState(V2State* newState)
 			newProvinces[i]->setNavalBaseLevel(0);
 		}
 	}
-	if (((Configuration::getV2Gametype() == "HOD") || (Configuration::getV2Gametype() == "HoD-NNM")) && (highestNavalLevel > 0))
+	if (((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")) && (highestNavalLevel > 0))
 	{
 		newProvinces[hasHighestLevel]->setNavalBaseLevel(1);
 	}
@@ -1356,7 +1334,7 @@ bool V2Country::addFactory(V2Factory* factory)
 	}
 	
 	// check factory inventions
-	if ((Configuration::getV2Gametype() == "vanilla") || (Configuration::getV2Gametype() == "AHD"))
+	if ((theConfiguration.getVic2Gametype() == "vanilla") || (theConfiguration.getVic2Gametype() == "AHD"))
 	{
 		if (inventions.count(factory->getRequiredInvention()) != 0)
 		{
@@ -1441,7 +1419,7 @@ void V2Country::convertUncivReforms(int techGroupAlgorithm, double topTech, int 
 
 void V2Country::oldCivConversionMethod() // civilisation level conversion method for games up to 1.18
 {
-	if ((srcCountry != nullptr) && ((Configuration::getV2Gametype() == "AHD") || (Configuration::getV2Gametype() == "HOD") || (Configuration::getV2Gametype() == "HoD-NNM")))
+	if ((srcCountry != nullptr) && ((theConfiguration.getVic2Gametype() == "AHD") || (theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")))
 	{
 		if ((srcCountry->getTechGroup() == "western") || (srcCountry->getTechGroup() == "high_american") || (srcCountry->getTechGroup() == "eastern") || (srcCountry->getTechGroup() == "ottoman") || (srcCountry->numEmbracedInstitutions() >= 7))//civilised, do nothing
 		{
@@ -1558,7 +1536,7 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions) // ci
 			}
 
 
-			if (((Configuration::getV2Gametype() == "AHD") || (Configuration::getV2Gametype() == "HOD") || (Configuration::getV2Gametype() == "HoD-NNM")) && (civilized == false))
+			if (((theConfiguration.getVic2Gametype() == "AHD") || (theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")) && (civilized == false))
 			{
 				totalTechs = totalTechs - srcCountry->getDipTech();
 				double militaryDev = srcCountry->getMilTech() / totalTechs;
@@ -1639,7 +1617,7 @@ void V2Country::setArmyTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has army tech of " << normalizedScore;
 
-	if ((Configuration::getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
 	if (normalizedScore >= -1.0)
@@ -1681,7 +1659,7 @@ void V2Country::setNavyTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has navy tech of " << normalizedScore;
 
-	if ((Configuration::getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
 	if (normalizedScore >= 0)
@@ -1726,7 +1704,7 @@ void V2Country::setCommerceTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has commerce tech of " << normalizedScore;
 
-	if ((Configuration::getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
 	techs.push_back("no_standard");
@@ -1781,7 +1759,7 @@ void V2Country::setIndustryTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has industry tech of " << normalizedScore;
 
-	if ((Configuration::getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
 	if (normalizedScore >= -1.0)
@@ -1837,7 +1815,7 @@ void V2Country::setCultureTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has culture tech of " << normalizedScore;
 
-	if ((Configuration::getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
 	techs.push_back("classicism_n_early_romanticism");

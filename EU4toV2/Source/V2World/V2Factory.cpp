@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -86,24 +86,24 @@ V2FactoryFactory::V2FactoryFactory()
 {
 	// load required techs/inventions
 	factoryTechReqs.clear();
-	loadRequiredTechs(Configuration::getV2Path() + "/technologies/army_tech.txt");
-	loadRequiredTechs(Configuration::getV2Path() + "/technologies/commerce_tech.txt");
-	loadRequiredTechs(Configuration::getV2Path() + "/technologies/culture_tech.txt");
-	loadRequiredTechs(Configuration::getV2Path() + "/technologies/industry_tech.txt");
-	loadRequiredTechs(Configuration::getV2Path() + "/technologies/navy_tech.txt");
+	loadRequiredTechs(theConfiguration.getVic2Path() + "/technologies/army_tech.txt");
+	loadRequiredTechs(theConfiguration.getVic2Path() + "/technologies/commerce_tech.txt");
+	loadRequiredTechs(theConfiguration.getVic2Path() + "/technologies/culture_tech.txt");
+	loadRequiredTechs(theConfiguration.getVic2Path() + "/technologies/industry_tech.txt");
+	loadRequiredTechs(theConfiguration.getVic2Path() + "/technologies/navy_tech.txt");
 	factoryInventionReqs.clear();
-	loadRequiredInventions(Configuration::getV2Path() + "/inventions/army_inventions.txt");
-	loadRequiredInventions(Configuration::getV2Path() + "/inventions/commerce_inventions.txt");
-	loadRequiredInventions(Configuration::getV2Path() + "/inventions/culture_inventions.txt");
-	loadRequiredInventions(Configuration::getV2Path() + "/inventions/industry_inventions.txt");
-	loadRequiredInventions(Configuration::getV2Path() + "/inventions/navy_inventions.txt");
+	loadRequiredInventions(theConfiguration.getVic2Path() + "/inventions/army_inventions.txt");
+	loadRequiredInventions(theConfiguration.getVic2Path() + "/inventions/commerce_inventions.txt");
+	loadRequiredInventions(theConfiguration.getVic2Path() + "/inventions/culture_inventions.txt");
+	loadRequiredInventions(theConfiguration.getVic2Path() + "/inventions/industry_inventions.txt");
+	loadRequiredInventions(theConfiguration.getVic2Path() + "/inventions/navy_inventions.txt");
 
 	// load factory types
 	factoryTypes.clear();
-	shared_ptr<Object> obj = parser_8859_15::doParseFile((Configuration::getV2Path() + "/common/production_types.txt").c_str());
+	shared_ptr<Object> obj = parser_8859_15::doParseFile((theConfiguration.getVic2Path() + "/common/production_types.txt").c_str());
 	if (obj == NULL)
 	{
-		LOG(LogLevel::Error) << "Could not parse file " << Configuration::getV2Path() << "/common/production_types.txt";
+		LOG(LogLevel::Error) << "Could not parse file " << theConfiguration.getVic2Path() << "/common/production_types.txt";
 		exit(-1);
 	}
 	vector<shared_ptr<Object>> factoryObjs = obj->getLeaves();

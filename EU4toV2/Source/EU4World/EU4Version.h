@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,32 +21,49 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef EU4VERSION_H_
-#define EU4VERSION_H_
+#ifndef EU4_VERSION_H_
+#define EU4_VERSION_H_
 
 
 
-#include "Object.h"
+#include "newParser.h"
 #include <string>
 #include <memory>
-using namespace std;
 
 
 
-class EU4Version
+namespace EU4
+{
+
+class Version: commonItems::parser
 {
 	public:
-		EU4Version();
-		EU4Version(shared_ptr<Object> obj);
-		EU4Version(string version);
-		bool operator >= (EU4Version& rhs) const;
+		Version() = default;
+		Version(const Version&) = default;
+		Version(Version&&) = default;
+		Version& operator=(const Version&) = default;
+		Version& operator=(Version&&) = default;
+		~Version() = default;
+
+		Version(std::string version);
+		Version(std::istream& theStream);
+
+		bool operator >= (const Version& rhs) const;
+		bool operator > (const Version& rhs) const;
+		bool operator < (const Version& rhs) const;
+		bool operator <= (const Version& rhs) const;
+		bool operator == (const Version& rhs) const;
+		bool operator != (const Version& rhs) const;
+
 	private:
-		int	first;		// the first part of the version number
-		int	second;		// the second part of the version number
-		int	third;		// the third part of the version number
-		int	fourth;		// the fourth part of the version number
+		int firstPart = 0;
+		int secondPart = 0;
+		int thirdPart = 0;
+		int fourthPart = 0;
 };
 
+}
 
 
-#endif // EU4VERSION_H_
+
+#endif // EU4_VERSION_H_

@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -73,7 +73,6 @@ V2World::V2World(const EU4::world& sourceWorld)
 	//logPopsByCountry();
 	findCoastalProvinces();
 	importPotentialCountries();
-	importTechSchools();
 	isRandomWorld = sourceWorld.isRandomWorld();
 
 	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries);
@@ -113,7 +112,7 @@ void V2World::importProvinces()
 	}
 	else
 	{
-		importProvinceLocalizations((Configuration::getV2Path() + "/localisation/text.csv"));
+		importProvinceLocalizations((theConfiguration.getVic2Path() + "/localisation/text.csv"));
 	}
 }
 
@@ -124,7 +123,7 @@ set<string> V2World::discoverProvinceFilenames()
 	Utils::GetAllFilesInFolderRecursive("./blankMod/output/history/provinces", provinceFilenames);
 	if (provinceFilenames.empty())
 	{
-		Utils::GetAllFilesInFolderRecursive(Configuration::getV2Path() + "/history/provinces", provinceFilenames);
+		Utils::GetAllFilesInFolderRecursive(theConfiguration.getVic2Path() + "/history/provinces", provinceFilenames);
 	}
 
 	return provinceFilenames;
@@ -336,10 +335,10 @@ void V2World::outputLog(const map<string, map<string, long int>>& popsByCountry)
 void V2World::findCoastalProvinces()
 {
 	LOG(LogLevel::Info) << "Finding coastal provinces.";
-	shared_ptr<Object> positionsObj = parser_8859_15::doParseFile((Configuration::getV2Path() + "/map/positions.txt"));
+	shared_ptr<Object> positionsObj = parser_8859_15::doParseFile((theConfiguration.getVic2Path() + "/map/positions.txt"));
 	if (positionsObj == nullptr)
 	{
-		LOG(LogLevel::Error) << "Could not parse file " << Configuration::getV2Path() << "/map/positions.txt";
+		LOG(LogLevel::Error) << "Could not parse file " << theConfiguration.getVic2Path() << "/map/positions.txt";
 		exit(-1);
 	}
 
@@ -417,13 +416,6 @@ void V2World::importPotentialCountry(const string& line, bool dynamicCountry)
 	{
 		dynamicCountries.insert(make_pair(tag, newCountry));
 	}
-}
-
-
-void V2World::importTechSchools()
-{
-	LOG(LogLevel::Info) << "Importing tech schools.";
-	techSchools = initTechSchools();
 }
 
 
@@ -670,7 +662,7 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 		{
 			continue;
 		}
-		else if ((Configuration::getResetProvinces() == "yes") && provinceMapper::isProvinceResettable(Vic2Province.first))
+		else if ((theConfiguration.getResetProvinces() == "yes") && provinceMapper::isProvinceResettable(Vic2Province.first))
 		{
 			Vic2Province.second->setResettable(true);
 			continue;
@@ -705,7 +697,7 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 			{
 				provinceBins[tag] = MTo1ProvinceComp();
 			}
-			if (((Configuration::getV2Gametype() == "HOD") || (Configuration::getV2Gametype() == "HoD-NNM")) && false && (owner != nullptr))
+			if (((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")) && false && (owner != nullptr))
 			{
 				auto stateIndex = stateMapper::getStateIndex(Vic2Province.first);
 				if (stateIndex == -1)
@@ -913,7 +905,7 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 		{
 			country2->second->setColonyOverlord(country1->second);
 
-			if (country2->second->getSourceCountry()->getLibertyDesire() < Configuration::getLibertyThreshold())
+			if (country2->second->getSourceCountry()->getLibertyDesire() < theConfiguration.getLibertyThreshold())
 			{
 				country1->second->absorbVassal(country2->second);
 				for (vector<EU4Agreement>::iterator itr2 = agreements.begin(); itr2 != agreements.end(); ++itr2)
@@ -1151,7 +1143,7 @@ void V2World::convertUncivReforms(const EU4::world& sourceWorld)
 	civConversion techGroupAlgoritm = newer;
 	double topTech = 96;
 	int topInstitutions = 7;
-	auto version18 = EU4Version("1.18.0");
+	auto version18 = EU4::Version("1.18.0");
 	if (*(sourceWorld.getVersion()) >= version18)
 	{
 		LOG(LogLevel::Info) << "New tech group conversion method";
@@ -1311,7 +1303,7 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); itr++)
 	{
 		V2Country* country = itr->second;
-		if ((Configuration::getV2Gametype() != "vanilla") && !country->isCivilized())
+		if ((theConfiguration.getVic2Gametype() != "vanilla") && !country->isCivilized())
 			continue;
 
 		auto srcCountry = country->getSourceCountry();
@@ -1466,7 +1458,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 	//ofstream output_file("Data.csv");
 
 	int popAlgorithm = 0;
-	auto version12 = EU4Version("1.12.0");
+	auto version12 = EU4::Version("1.12.0");
 	if (*(sourceWorld.getVersion()) >= version12)
 	{
 		LOG(LogLevel::Info) << "Using pop conversion algorithm for EU4 versions after 1.12.";
@@ -1483,7 +1475,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 		itr->second->setupPops(popWeightRatio, popAlgorithm);
 	}
 
-	if (Configuration::getConvertPopTotals())
+	if (theConfiguration.getConvertPopTotals())
 	{
 		LOG(LogLevel::Info) << "Total world population: " << my_totalWorldPopulation;
 	}
@@ -1713,11 +1705,11 @@ void V2World::output() const
 {
 	LOG(LogLevel::Info) << "Outputting mod";
 	Utils::copyFolder("blankMod/output", "output/output");
-	Utils::renameFolder("output/output", "output/" + Configuration::getOutputName());
+	Utils::renameFolder("output/output", "output/" + theConfiguration.getOutputName());
 	createModFile();
 
 	// Create common\countries path.
-	string countriesPath = "Output/" + Configuration::getOutputName() + "/common/countries";
+	string countriesPath = "Output/" + theConfiguration.getOutputName() + "/common/countries";
 	if (!Utils::TryCreateFolder(countriesPath))
 	{
 		return;
@@ -1726,7 +1718,7 @@ void V2World::output() const
 	// Output common\countries.txt
 	LOG(LogLevel::Debug) << "Writing countries file";
 	FILE* allCountriesFile;
-	if (fopen_s(&allCountriesFile, ("Output/" + Configuration::getOutputName() + "/common/countries.txt").c_str(), "w") != 0)
+	if (fopen_s(&allCountriesFile, ("Output/" + theConfiguration.getOutputName() + "/common/countries.txt").c_str(), "w") != 0)
 	{
 		LOG(LogLevel::Error) << "Could not create countries file";
 		exit(-1);
@@ -1741,7 +1733,7 @@ void V2World::output() const
 		}
 	}
 	fprintf(allCountriesFile, "\n");
-	if ((Configuration::getV2Gametype() == "HOD") || (Configuration::getV2Gametype() == "HoD_NNM"))
+	if ((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD_NNM"))
 	{
 		fprintf(allCountriesFile, "##HoD Dominions\n");
 		fprintf(allCountriesFile, "dynamic_tags = yes # any tags after this is considered dynamic dominions\n");
@@ -1759,12 +1751,12 @@ void V2World::output() const
 
 	// Create localisations for all new countries. We don't actually know the names yet so we just use the tags as the names.
 	LOG(LogLevel::Debug) << "Writing localisation text";
-	string localisationPath = "Output/" + Configuration::getOutputName() + "/localisation";
+	string localisationPath = "Output/" + theConfiguration.getOutputName() + "/localisation";
 	if (!Utils::TryCreateFolder(localisationPath))
 	{
 		return;
 	}
-	string source = Configuration::getV2Path() + "/localisation/text.csv";
+	string source = theConfiguration.getVic2Path() + "/localisation/text.csv";
 	string dest = localisationPath + "/text.csv";
 
 	if (isRandomWorld)
@@ -1835,7 +1827,7 @@ void V2World::output() const
 
 	// verify countries got written
 	ifstream V2CountriesInput;
-	V2CountriesInput.open(("Output/" + Configuration::getOutputName() + "/common/countries.txt").c_str());
+	V2CountriesInput.open(("Output/" + theConfiguration.getOutputName() + "/common/countries.txt").c_str());
 	if (!V2CountriesInput.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not open countries.txt";
@@ -1862,10 +1854,10 @@ void V2World::output() const
 		int size = line.find_last_of('\"') - start - 1;
 		countryFileName = line.substr(start + 1, size);
 
-		if (Utils::DoesFileExist("Output/" + Configuration::getOutputName() + "/common/countries/" + countryFileName))
+		if (Utils::DoesFileExist("Output/" + theConfiguration.getOutputName() + "/common/countries/" + countryFileName))
 		{
 		}
-		else if (Utils::DoesFileExist(Configuration::getV2Path() + "/common/countries/" + countryFileName))
+		else if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + countryFileName))
 		{
 		}
 		else
@@ -1879,16 +1871,16 @@ void V2World::output() const
 
 void V2World::createModFile() const
 {
-	ofstream modFile("Output/" + Configuration::getOutputName() + ".mod");
+	ofstream modFile("Output/" + theConfiguration.getOutputName() + ".mod");
 	if (!modFile.is_open())
 	{
-		LOG(LogLevel::Error) << "Could not create " << Configuration::getOutputName() << ".mod";
+		LOG(LogLevel::Error) << "Could not create " << theConfiguration.getOutputName() << ".mod";
 		exit(-1);
 	}
 
-	modFile << "name = \"Converted - " << Configuration::getOutputName() << "\"\n";
-	modFile << "path = \"mod/" << Configuration::getOutputName() << "\"\n";
-	modFile << "user_dir = \"" << Configuration::getOutputName() << "\"\n";
+	modFile << "name = \"Converted - " << theConfiguration.getOutputName() << "\"\n";
+	modFile << "path = \"mod/" << theConfiguration.getOutputName() << "\"\n";
+	modFile << "user_dir = \"" << theConfiguration.getOutputName() << "\"\n";
 	modFile << "replace = \"history/provinces\"\n";
 	modFile << "replace = \"history/countries\"\n";
 	modFile << "replace = \"history/diplomacy\"\n";
@@ -1913,9 +1905,9 @@ void V2World::outputPops() const
 	for (auto popRegion : popRegions)
 	{
 		FILE* popsFile;
-		if (fopen_s(&popsFile, ("Output/" + Configuration::getOutputName() + "/history/pops/1836.1.1/" + popRegion.first).c_str(), "w") != 0)
+		if (fopen_s(&popsFile, ("Output/" + theConfiguration.getOutputName() + "/history/pops/1836.1.1/" + popRegion.first).c_str(), "w") != 0)
 		{
-			LOG(LogLevel::Error) << "Could not create pops file Output/" << Configuration::getOutputName() << "/history/pops/1836.1.1/" << popRegion.first;
+			LOG(LogLevel::Error) << "Could not create pops file Output/" << theConfiguration.getOutputName() << "/history/pops/1836.1.1/" << popRegion.first;
 			exit(-1);
 		}
 

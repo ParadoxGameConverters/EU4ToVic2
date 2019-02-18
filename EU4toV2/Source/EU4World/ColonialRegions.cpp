@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -28,6 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include <algorithm>
+using namespace std;
 
 
 
@@ -97,9 +98,9 @@ namespace EU4
 			}
 		);
 		
-		parseFile(Configuration::getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt");
+		parseFile(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt");
 
-		for (auto mod: Configuration::getEU4Mods())
+		for (auto mod: theConfiguration.getEU4Mods())
 		{
 			set<string> filenames;
 			Utils::GetAllFilesInFolder(mod + "/common/colonial_regions/", filenames);

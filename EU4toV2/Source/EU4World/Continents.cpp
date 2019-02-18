@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -27,6 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include <algorithm>
+using namespace std;
 
 
 
@@ -37,7 +38,7 @@ EU4::continents* EU4::continents::instance = nullptr;
 EU4::continents::continents()
 {
 	LOG(LogLevel::Info) << "Finding Continents";
-	for (auto mod: Configuration::getEU4Mods())
+	for (auto mod: theConfiguration.getEU4Mods())
 	{
 		string continentFile = mod + "/map/continent.txt";
 		if (Utils::DoesFileExist(continentFile))
@@ -48,7 +49,7 @@ EU4::continents::continents()
 
 	if (continentMap.empty())
 	{
-		initContinentMap(Configuration::getEU4Path() + "/map/continent.txt");
+		initContinentMap(theConfiguration.getEU4Path() + "/map/continent.txt");
 	}
 
 	if (continentMap.empty())
