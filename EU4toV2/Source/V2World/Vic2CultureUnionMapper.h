@@ -41,9 +41,17 @@ class CultureUnionMapper: commonItems::parser
 {
 	public:
 		CultureUnionMapper(std::istream& theStream);
+		CultureUnionMapper(const CultureUnionMapper&) = default;
+		CultureUnionMapper(CultureUnionMapper&&) = default;
+		CultureUnionMapper& operator=(const CultureUnionMapper&) = default;
+		CultureUnionMapper& operator=(CultureUnionMapper&&) = default;
+		~CultureUnionMapper() = default;
+
 		std::vector<std::string> getCoreForCulture(const std::string& culture);
 
 	private:
+		CultureUnionMapper() = delete;
+
 		std::map<std::string, std::vector<std::string>> unionMap;
 };
 
