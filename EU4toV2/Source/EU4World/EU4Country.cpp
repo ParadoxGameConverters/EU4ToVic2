@@ -237,7 +237,7 @@ EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
 	);
 	registerKeyword(std::regex("culture_group_union"), [this](const std::string& unused, std::istream& theStream)
 		{
-			if (theConfiguration.versionLessThan("1.7.0.0"))
+			if (theConfiguration.getEU4Version() < EU4::Version("1.7.0.0"))
 			{
 				commonItems::singleString cultureGroup(theStream);
 				culturalUnion = EU4::cultureGroups::getCulturalGroup(cultureGroup.getString());
@@ -319,7 +319,7 @@ EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
 		}
 	);
 	registerKeyword(std::regex("government"), [this](const std::string& unused, std::istream& theStream){
-		if (theConfiguration.versionLessThan("1.7.0.0"))
+		if (theConfiguration.getEU4Version() < EU4::Version("1.7.0.0"))
 		{
 			government = governmentSection::readGovernment(theStream);
 		}

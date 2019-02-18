@@ -26,58 +26,187 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(EU4World_EU4VersionTests, FourthPartCanDistinguish)
+TEST(EU4World_EU4VersionTests, GreaterThanOrEqualsFindsGreaterThanFromFourthPart)
 {
-	EU4::Version lower("0.0.0.1");
-	EU4::Version upper("0.0.0.2");
-	ASSERT_GE(upper, lower);
+	EU4::Version versionOne("1.2.3.5");
+	EU4::Version versionTwo("1.2.3.4");
+	ASSERT_GE(versionOne, versionTwo);
 }
 
 
-TEST(EU4World_EU4VersionTests, ThirdPartCanDistinguish)
+TEST(EU4World_EU4VersionTests, GreaterThanOrEqualsFindsGreaterThanFromThirdPart)
 {
-	EU4::Version lower("0.0.1.0");
-	EU4::Version upper("0.0.2.0");
-	ASSERT_GE(upper, lower);
-}
-
-TEST(EU4World_EU4VersionTests, ThirdPartHasPriorityOverFourthPart)
-{
-	EU4::Version lower("0.0.1.2");
-	EU4::Version upper("0.0.2.1");
-	ASSERT_GE(upper, lower);
+	EU4::Version versionOne("1.2.4.3");
+	EU4::Version versionTwo("1.2.3.4");
+	ASSERT_GE(versionOne, versionTwo);
 }
 
 
-TEST(EU4World_EU4VersionTests, SecondPartCanDistinguish)
+TEST(EU4World_EU4VersionTests, GreaterThanOrEqualsFindsGreaterThanFromSecondPart)
 {
-	EU4::Version lower("0.1.0.0");
-	EU4::Version upper("0.2.0.0");
-	ASSERT_GE(upper, lower);
+	EU4::Version versionOne("1.3.2.3");
+	EU4::Version versionTwo("1.2.3.4");
+	ASSERT_GE(versionOne, versionTwo);
 }
 
 
-TEST(EU4World_EU4VersionTests, SecondPartHasPriorityOverThirdPart)
+TEST(EU4World_EU4VersionTests, GreaterThanOrEqualsFindsGreaterThanFromFirstPart)
 {
-	EU4::Version lower("0.1.2.0");
-	EU4::Version upper("0.2.1.0");
-	ASSERT_GE(upper, lower);
+	EU4::Version versionOne("2.1.2.3");
+	EU4::Version versionTwo("1.2.3.4");
+	ASSERT_GE(versionOne, versionTwo);
 }
 
 
-TEST(EU4World_EU4VersionTests, FirstPartCanDistinguish)
+TEST(EU4World_EU4VersionTests, GreaterThanOrEqualsFindsEquality)
 {
-	EU4::Version lower("1.0.0.0");
-	EU4::Version upper("2.0.0.0");
-	ASSERT_GE(upper, lower);
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.2.3.4");
+	ASSERT_GE(versionOne, versionTwo);
 }
 
 
-TEST(EU4World_EU4VersionTests, FirstPartHasPriorityOverSecondPart)
+TEST(EU4World_EU4VersionTests, GreaterThanFindsGreaterThanFromFourthPart)
 {
-	EU4::Version lower("1.2.0.0");
-	EU4::Version upper("2.1.0.0");
-	ASSERT_GE(upper, lower);
+	EU4::Version versionOne("1.2.3.5");
+	EU4::Version versionTwo("1.2.3.4");
+	ASSERT_GT(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, GreaterThanFindsGreaterThanFromThirdPart)
+{
+	EU4::Version versionOne("1.2.4.3");
+	EU4::Version versionTwo("1.2.3.4");
+	ASSERT_GT(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, GreaterThanFindsGreaterThanFromSecondPart)
+{
+	EU4::Version versionOne("1.3.2.3");
+	EU4::Version versionTwo("1.2.3.4");
+	ASSERT_GT(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, GreaterThanFindsGreaterThanFromFirstPart)
+{
+	EU4::Version versionOne("2.1.2.3");
+	EU4::Version versionTwo("1.2.3.4");
+	ASSERT_GT(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, LessThanFindsGreaterThanFromFourthPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.2.3.5");
+	ASSERT_LT(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, LessThanFindsGreaterThanFromThirdPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.2.4.3");
+	ASSERT_LT(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, LessThanFindsGreaterThanFromSecondPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.3.2.3");
+	ASSERT_LT(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, LessThanFindsGreaterThanFromFirstPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("2.1.2.3");
+	ASSERT_LT(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, LessThanOrEqualsFindsGreaterThanFromFourthPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.2.3.5");
+	ASSERT_LE(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, LessThanOrEqualsFindsGreaterThanFromThirdPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.2.4.3");
+	ASSERT_LE(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, LessThanOrEqualsFindsGreaterThanFromSecondPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.3.2.3");
+	ASSERT_LE(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, LessThanOrEqualsFindsGreaterThanFromFirstPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("2.1.2.3");
+	ASSERT_LE(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, LessThanOrEqualsFindsEquality)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.2.3.4");
+	ASSERT_LE(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, EqualityFindEquality)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.2.3.4");
+	ASSERT_EQ(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, InequalityFindInequalityFromFourthPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.2.3.5");
+	ASSERT_NE(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, InequalityFindInequalityFromThirdPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.2.4.4");
+	ASSERT_NE(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, InequalityFindInequalityFromSecondPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("1.3.3.4");
+	ASSERT_NE(versionOne, versionTwo);
+}
+
+
+TEST(EU4World_EU4VersionTests, InequalityFindInequalityFromFirstPart)
+{
+	EU4::Version versionOne("1.2.3.4");
+	EU4::Version versionTwo("2.2.3.4");
+	ASSERT_NE(versionOne, versionTwo);
 }
 
 

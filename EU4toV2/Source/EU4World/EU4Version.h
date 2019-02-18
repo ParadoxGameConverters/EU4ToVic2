@@ -53,6 +53,7 @@ class Version: commonItems::parser
 		bool operator < (const Version& rhs) const;
 		bool operator <= (const Version& rhs) const;
 		bool operator == (const Version& rhs) const;
+		bool operator != (const Version& rhs) const;
 
 	private:
 		int firstPart = 0;

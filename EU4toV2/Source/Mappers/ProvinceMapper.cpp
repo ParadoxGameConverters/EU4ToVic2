@@ -70,9 +70,10 @@ int provinceMapper::getMappingsIndex(vector<shared_ptr<Object>> versions)
 {
 	unsigned int mappingsIdx;
 
+	EU4::Version saveVersion = theConfiguration.getEU4Version();
 	for (mappingsIdx = 0; mappingsIdx < versions.size(); mappingsIdx++)
 	{
-		if (theConfiguration.versionLessThan(versions[mappingsIdx]->getKey()))
+		if (saveVersion >= EU4::Version(versions[mappingsIdx]->getKey()))
 		{
 			break;
 		}

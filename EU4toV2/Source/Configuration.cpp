@@ -149,13 +149,6 @@ void Configuration::verifyVic2DocumentsPath(const std::string& path, bool (*does
 }
 
 
-bool Configuration::versionLessThan(const std::string& versionString)
-{
-	EU4::Version inputVersion(versionString);
-	return (inputVersion >= version);
-}
-
-
 bool Configuration::wasDLCActive(const std::string& DLC)
 {
 	for (auto activeDLC: activeDLCs)

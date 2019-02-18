@@ -44,13 +44,13 @@ EU4::Regions::Regions():
 {
 	LOG(LogLevel::Info) << "Parsing EU4 regions";
 
-	if (theConfiguration.versionLessThan("1.14"))
+	if (theConfiguration.getEU4Version() >= EU4::Version("1.14"))
 	{
-		initEU4RegionsOldVersion();
+		initEU4RegionsNewVersion();
 	}
 	else
 	{
-		initEU4RegionsNewVersion();
+		initEU4RegionsOldVersion();
 	}
 }
 

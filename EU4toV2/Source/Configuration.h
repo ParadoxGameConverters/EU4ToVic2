@@ -58,6 +58,7 @@ class Configuration: commonItems::parser
 		bool getConvertPopTotals() { return convertPopTotals; }
 		bool getDebug() { return debug; }
 
+		const EU4::Version& getEU4Version() const { return version; }
 		date getFirstEU4Date() { return firstEU4Date; }
 		date getLastEU4Date() { return lastEU4Date; }
 		std::string getOutputName() { return outputName; }
@@ -70,7 +71,6 @@ class Configuration: commonItems::parser
 		void setEU4Version(EU4::Version version) { version = version; }
 		void setActiveDLCs(std::vector<std::string> _activeDLCs) { activeDLCs = _activeDLCs; }
 
-		bool versionLessThan(const std::string& versionString);
 		bool wasDLCActive(const std::string& DLC);
 
 	private:
