@@ -26,6 +26,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "newParser.h"
 #include <string>
 #include <memory>
 
@@ -34,13 +35,24 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 namespace EU4
 {
 
-class Version
+class Version: commonItems::parser
 {
 	public:
 		Version() = default;
+		Version(const Version&) = default;
+		Version(Version&&) = default;
+		Version& operator=(const Version&) = default;
+		Version& operator=(Version&&) = default;
+		~Version() = default;
+
 		Version(std::string version);
+		Version(std::istream& theStream);
 
 		bool operator >= (const Version& rhs) const;
+		bool operator > (const Version& rhs) const;
+		bool operator < (const Version& rhs) const;
+		bool operator <= (const Version& rhs) const;
+		bool operator == (const Version& rhs) const;
 
 	private:
 		int firstPart = 0;
