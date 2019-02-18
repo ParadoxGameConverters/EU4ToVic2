@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "Vic2CultureUnionMapper.h"
-#include "../V2World/Vic2CultureUnion.h"
+#include "Vic2CultureUnion.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 

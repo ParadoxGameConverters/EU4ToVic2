@@ -52,8 +52,8 @@
     <ClCompile Include="Vic2WorldTests\Vic2CultureUnionMapperTests.cpp">
       <Filter>Vic2WorldTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\Vic2CultureUnionMapper.cpp">
-      <Filter>EU4ToVic2Files\Mappers</Filter>
+    <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnionMapper.cpp">
+      <Filter>EU4ToVic2Files\Vic2World</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -74,9 +74,6 @@
     </Filter>
     <Filter Include="EU4WorldTests">
       <UniqueIdentifier>{983179b3-715e-4852-b331-44400fd4423b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EU4ToVic2Files\Mappers">
-      <UniqueIdentifier>{d5657f4a-be49-4be6-b240-fb34b83cc3cb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

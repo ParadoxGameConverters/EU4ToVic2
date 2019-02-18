@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/Mappers/Vic2CultureUnionMapper.h"
+#include "../EU4toV2/Source/V2World/Vic2CultureUnionMapper.h"
 
 
 
