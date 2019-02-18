@@ -60,8 +60,8 @@ EU4::world::world(const string& EU4SaveFileName):
 	);
 	registerKeyword(std::regex("savegame_version"), [this](const std::string& versionText, std::istream& theStream)
 		{
-			auto versionObject = commonItems::convert8859Object(versionText, theStream);
-			loadEU4Version(versionObject);
+			version = new EU4::Version(theStream);
+			theConfiguration.setEU4Version(*version);
 		}
 	);
 	registerKeyword(std::regex("dlc_enabled"), [this](const std::string& DLCText, std::istream& theStream)
@@ -350,14 +350,6 @@ void EU4::world::loadCK2ExportDirectory(map<string, string>& possibleMods)
 			}
 		}
 	}
-}
-
-
-void EU4::world::loadEU4Version(const shared_ptr<Object> EU4SaveObj)
-{
-	vector<shared_ptr<Object>> versionObj = EU4SaveObj->getValue("savegame_version");
-	(versionObj.size() > 0) ? version = new EU4::Version(versionObj[0]->getLeaf()) : version = new EU4::Version();
-	theConfiguration.setEU4Version(*version);
 }
 
 

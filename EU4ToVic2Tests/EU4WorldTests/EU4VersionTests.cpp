@@ -85,5 +85,19 @@ TEST(EU4World_EU4VersionTests, DefaultIsAllZeros)
 {
 	EU4::Version allZeros("0.0.0.0");
 	EU4::Version defaultVersion;
-	ASSERT_GE(allZeros, defaultVersion);
+	ASSERT_EQ(allZeros, defaultVersion);
+}
+
+
+TEST(EU4World_EU4VersionTests, CanParseVersion)
+{
+	std::stringstream input("={\
+		first=1\
+		second=2\
+		third=3\
+		forth=4\
+		name=\"Persia\"\
+	}");
+	EU4::Version streamVersion(input);
+	ASSERT_EQ(EU4::Version("1.2.3.4"), streamVersion);
 }
