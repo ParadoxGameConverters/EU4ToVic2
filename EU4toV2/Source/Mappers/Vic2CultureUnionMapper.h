@@ -31,7 +31,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <memory>
 #include <string>
 #include <vector>
-using namespace std;
 
 
 
@@ -39,10 +38,10 @@ class Vic2CultureUnionMapper: commonItems::parser
 {
 	public:
 		Vic2CultureUnionMapper(std::istream& theStream);
-		vector<string> getCoreForCulture(const string& culture);
+		std::vector<std::string> getCoreForCulture(const std::string& culture);
 
 	private:
-		map<string, vector<string>> unionMap;
+		std::map<std::string, std::vector<std::string>> unionMap;
 };
 
 

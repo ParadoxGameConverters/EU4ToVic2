@@ -39,9 +39,9 @@ Vic2CultureUnionMapper::Vic2CultureUnionMapper(std::istream& theStream)
 }
 
 
-vector<string> Vic2CultureUnionMapper::getCoreForCulture(const string& culture)
+std::vector<std::string> Vic2CultureUnionMapper::getCoreForCulture(const std::string& culture)
 {
-	vector<string> empty;
+	std::vector<std::string> empty;
 
 	auto mapping = unionMap.find(culture);
 	if (mapping == unionMap.end())
