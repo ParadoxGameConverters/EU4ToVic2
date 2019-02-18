@@ -22,51 +22,20 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "Vic2CultureUnionMapper.h"
+#include "../V2World/Vic2CultureUnion.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "Object.h"
-#include "ParadoxParserUTF8.h"
 
 
 
-Vic2CultureUnionMapper::Vic2CultureUnionMapper()
+Vic2CultureUnionMapper::Vic2CultureUnionMapper(std::istream& theStream)
 {
-	shared_ptr<Object> unionsMapObj = parser_UTF8::doParseFile("unions.txt");
-	if (unionsMapObj == NULL)
-	{
-		LOG(LogLevel::Error) << "Could not parse file unions.txt";
-		exit(-1);
-	}
-	if (unionsMapObj->getLeaves().size() < 1)
-	{
-		LOG(LogLevel::Error) << "Failed to parse unions.txt";
-		exit(-1);
-	}
+	registerKeyword(std::regex("link"), [this](const std::string& unused, std::istream& theStream){
+		Vic2::CultureUnion newUnion(theStream);
+		unionMap.insert(newUnion.takeTheUnion());
+	});
 
-	initUnionMap(unionsMapObj->getLeaves()[0]);
-}
-
-
-void Vic2CultureUnionMapper::initUnionMap(shared_ptr<Object> obj)
-{
-	for (auto rule: obj->getLeaves())
-	{
-		vector<string> tags;
-		string culture;
-		for (auto ruleItems: rule->getLeaves())
-		{
-			if (ruleItems->getKey() == "tag")
-			{
-				tags.push_back(ruleItems->getLeaf());
-			}
-			if (ruleItems->getKey() == "culture")
-			{
-				culture = ruleItems->getLeaf();
-			}
-		}
-
-		unionMap.insert(make_pair(culture, tags));
-	}
+	parseStream(theStream);
 }
 
 
@@ -89,8 +58,7 @@ vector<string> Vic2CultureUnionMapper::getCoreForCulture(const string& culture)
 Vic2CultureUnionMapperFile::Vic2CultureUnionMapperFile()
 {
 	registerKeyword(std::regex("unions"), [this](const std::string& unused, std::istream& theStream){
-		theCultureUnionMapper = std::make_unique<Vic2CultureUnionMapper>();
-		commonItems::ignoreItem(unused, theStream);
+		theCultureUnionMapper = std::make_unique<Vic2CultureUnionMapper>(theStream);
 	});
 
 	LOG(LogLevel::Info) << "Parsing union mappings";

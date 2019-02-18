@@ -21,48 +21,24 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef VIC2_CULTURE_UNION_MAPPER_H
-#define VIC2_CULTURE_UNION_MAPPER_H
+#include "gtest/gtest.h"
+#include "../EU4toV2/Source/Mappers/Vic2CultureUnionMapper.h"
 
 
 
-#include "newParser.h"
-#include <map>
-#include <memory>
-#include <string>
-#include <vector>
-using namespace std;
-
-
-
-class Vic2CultureUnionMapper: commonItems::parser
+TEST(Vic2World_CultureUnionMapperTests, nonMatchGivesNoTags)
 {
-	public:
-		Vic2CultureUnionMapper(std::istream& theStream);
-		vector<string> getCoreForCulture(const string& culture);
+	std::stringstream input("");
+	Vic2CultureUnionMapper theCultureUnionMapper(input);
 
-	private:
-		map<string, vector<string>> unionMap;
-};
+	ASSERT_EQ(theCultureUnionMapper.getCoreForCulture("a_culture").size(), 0);
+}
 
 
-class Vic2CultureUnionMapperFile: commonItems::parser
+TEST(Vic2World_CultureUnionMapperTests, matchGivesTag)
 {
-	public:
-		Vic2CultureUnionMapperFile();
-		~Vic2CultureUnionMapperFile() = default;
+	std::stringstream input("link = { tag = TAG culture = a_culture }");
+	Vic2CultureUnionMapper theCultureUnionMapper(input);
 
-		std::unique_ptr<Vic2CultureUnionMapper> takeCultureUnionMapper() { return std::move(theCultureUnionMapper); }
-
-	private:
-		Vic2CultureUnionMapperFile(const Vic2CultureUnionMapperFile&) = delete;
-		Vic2CultureUnionMapperFile(Vic2CultureUnionMapperFile&&) = delete;
-		Vic2CultureUnionMapperFile& operator=(const Vic2CultureUnionMapperFile&) = delete;
-		Vic2CultureUnionMapperFile& operator=(Vic2CultureUnionMapperFile&&) = delete;
-
-		std::unique_ptr<Vic2CultureUnionMapper> theCultureUnionMapper;
-};
-
-
-
-#endif //VIC2_CULTURE_UNION_MAPPER_H
+	ASSERT_EQ(theCultureUnionMapper.getCoreForCulture("a_culture")[0], "TAG");
+}
