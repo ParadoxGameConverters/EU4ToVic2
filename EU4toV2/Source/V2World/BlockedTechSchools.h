@@ -40,6 +40,13 @@ class blockedTechSchools: commonItems::parser
 	public:
 		blockedTechSchools(std::istream& theStream);
 
+		blockedTechSchools() = default;
+		blockedTechSchools(const blockedTechSchools&) = default;
+		blockedTechSchools(blockedTechSchools&&) = default;
+		blockedTechSchools& operator=(const blockedTechSchools&) = default;
+		blockedTechSchools& operator=(blockedTechSchools&&) = default;
+		~blockedTechSchools() = default;
+
 		bool isTechSchoolBlocked(const std::string& techSchool) const;
 
 	private:
@@ -51,12 +58,15 @@ class blockedTechSchoolsFile: commonItems::parser
 {
 	public:
 		blockedTechSchoolsFile();
+		~blockedTechSchoolsFile() = default;
 
 		std::unique_ptr<blockedTechSchools> getBlockedTechSchools() { return std::move(theBlockedTechSchools); }
 
 	private:
 		blockedTechSchoolsFile(const blockedTechSchoolsFile&) = delete;
+		blockedTechSchoolsFile(blockedTechSchoolsFile&&) = delete;
 		blockedTechSchoolsFile& operator=(const blockedTechSchoolsFile&) = delete;
+		blockedTechSchoolsFile& operator=(blockedTechSchoolsFile&&) = delete;
 
 		std::unique_ptr<blockedTechSchools> theBlockedTechSchools;
 };

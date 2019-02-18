@@ -40,6 +40,13 @@ class Vic2TechSchool: commonItems::parser
 	public:
 		Vic2TechSchool(const std::string& name, std::istream& theStream);
 
+		Vic2TechSchool() = default;
+		Vic2TechSchool(const Vic2TechSchool&) = default;
+		Vic2TechSchool(Vic2TechSchool&&) = default;
+		Vic2TechSchool& operator=(const Vic2TechSchool&) = default;
+		Vic2TechSchool& operator=(Vic2TechSchool&&) = default;
+		~Vic2TechSchool() = default;
+
 		double calculateComparisonScore(double armyInvestment, double commerceInvestment, double cultureInvestment, double industryInvestment, double navyInvestment) const;
 
 		std::string getName() const { return name; }
