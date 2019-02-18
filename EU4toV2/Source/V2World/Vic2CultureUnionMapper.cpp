@@ -28,7 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-Vic2CultureUnionMapper::Vic2CultureUnionMapper(std::istream& theStream)
+Vic2::CultureUnionMapper::CultureUnionMapper(std::istream& theStream)
 {
 	registerKeyword(std::regex("link"), [this](const std::string& unused, std::istream& theStream){
 		Vic2::CultureUnion newUnion(theStream);
@@ -39,7 +39,7 @@ Vic2CultureUnionMapper::Vic2CultureUnionMapper(std::istream& theStream)
 }
 
 
-std::vector<std::string> Vic2CultureUnionMapper::getCoreForCulture(const std::string& culture)
+std::vector<std::string> Vic2::CultureUnionMapper::getCoreForCulture(const std::string& culture)
 {
 	std::vector<std::string> empty;
 
@@ -55,10 +55,10 @@ std::vector<std::string> Vic2CultureUnionMapper::getCoreForCulture(const std::st
 }
 
 
-Vic2CultureUnionMapperFile::Vic2CultureUnionMapperFile()
+Vic2::CultureUnionMapperFile::CultureUnionMapperFile()
 {
 	registerKeyword(std::regex("unions"), [this](const std::string& unused, std::istream& theStream){
-		theCultureUnionMapper = std::make_unique<Vic2CultureUnionMapper>(theStream);
+		theCultureUnionMapper = std::make_unique<Vic2::CultureUnionMapper>(theStream);
 	});
 
 	LOG(LogLevel::Info) << "Parsing union mappings";

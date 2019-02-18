@@ -29,7 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 TEST(Vic2World_CultureUnionMapperTests, nonMatchGivesNoTags)
 {
 	std::stringstream input("");
-	Vic2CultureUnionMapper theCultureUnionMapper(input);
+	Vic2::CultureUnionMapper theCultureUnionMapper(input);
 
 	ASSERT_EQ(theCultureUnionMapper.getCoreForCulture("a_culture").size(), 0);
 }
@@ -38,7 +38,7 @@ TEST(Vic2World_CultureUnionMapperTests, nonMatchGivesNoTags)
 TEST(Vic2World_CultureUnionMapperTests, matchGivesTag)
 {
 	std::stringstream input("link = { tag = TAG culture = a_culture }");
-	Vic2CultureUnionMapper theCultureUnionMapper(input);
+	Vic2::CultureUnionMapper theCultureUnionMapper(input);
 
 	ASSERT_EQ(theCultureUnionMapper.getCoreForCulture("a_culture")[0], "TAG");
 }

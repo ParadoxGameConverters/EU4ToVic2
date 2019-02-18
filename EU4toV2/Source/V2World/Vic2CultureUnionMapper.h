@@ -34,10 +34,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-class Vic2CultureUnionMapper: commonItems::parser
+namespace Vic2
+{
+
+class CultureUnionMapper: commonItems::parser
 {
 	public:
-		Vic2CultureUnionMapper(std::istream& theStream);
+		CultureUnionMapper(std::istream& theStream);
 		std::vector<std::string> getCoreForCulture(const std::string& culture);
 
 	private:
@@ -45,22 +48,24 @@ class Vic2CultureUnionMapper: commonItems::parser
 };
 
 
-class Vic2CultureUnionMapperFile: commonItems::parser
+class CultureUnionMapperFile: commonItems::parser
 {
 	public:
-		Vic2CultureUnionMapperFile();
-		~Vic2CultureUnionMapperFile() = default;
+		CultureUnionMapperFile();
+		~CultureUnionMapperFile() = default;
 
-		std::unique_ptr<Vic2CultureUnionMapper> takeCultureUnionMapper() { return std::move(theCultureUnionMapper); }
+		std::unique_ptr<CultureUnionMapper> takeCultureUnionMapper() { return std::move(theCultureUnionMapper); }
 
 	private:
-		Vic2CultureUnionMapperFile(const Vic2CultureUnionMapperFile&) = delete;
-		Vic2CultureUnionMapperFile(Vic2CultureUnionMapperFile&&) = delete;
-		Vic2CultureUnionMapperFile& operator=(const Vic2CultureUnionMapperFile&) = delete;
-		Vic2CultureUnionMapperFile& operator=(Vic2CultureUnionMapperFile&&) = delete;
+		CultureUnionMapperFile(const CultureUnionMapperFile&) = delete;
+		CultureUnionMapperFile(CultureUnionMapperFile&&) = delete;
+		CultureUnionMapperFile& operator=(const CultureUnionMapperFile&) = delete;
+		CultureUnionMapperFile& operator=(CultureUnionMapperFile&&) = delete;
 
-		std::unique_ptr<Vic2CultureUnionMapper> theCultureUnionMapper;
+		std::unique_ptr<CultureUnionMapper> theCultureUnionMapper;
 };
+
+}
 
 
 
