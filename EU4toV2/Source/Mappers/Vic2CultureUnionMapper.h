@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -41,26 +41,11 @@ class Object;
 class vic2CultureUnionMapper
 {
 	public:
-		static vector<string> getCoreForCulture(const string& culture)
-		{
-			return getInstance()->GetCoreForCulture(culture);
-		}
+		vic2CultureUnionMapper();
+		vector<string> getCoreForCulture(const string& culture);
 
 	private:
-		static vic2CultureUnionMapper* instance;
-		static vic2CultureUnionMapper* getInstance()
-		{
-			if (instance == nullptr)
-			{
-				instance = new vic2CultureUnionMapper;
-			}
-			return instance;
-		}
-
-		vic2CultureUnionMapper();		
 		void initUnionMap(shared_ptr<Object> obj);
-
-		vector<string> GetCoreForCulture(const string& culture);
 
 		map<string, vector<string>> unionMap;
 };

@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -26,9 +26,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Object.h"
 #include "ParadoxParserUTF8.h"
 
-
-
-vic2CultureUnionMapper* vic2CultureUnionMapper::instance = nullptr;
 
 
 vic2CultureUnionMapper::vic2CultureUnionMapper()
@@ -74,7 +71,7 @@ void vic2CultureUnionMapper::initUnionMap(shared_ptr<Object> obj)
 }
 
 
-vector<string> vic2CultureUnionMapper::GetCoreForCulture(const string& culture)
+vector<string> vic2CultureUnionMapper::getCoreForCulture(const string& culture)
 {
 	vector<string> empty;
 

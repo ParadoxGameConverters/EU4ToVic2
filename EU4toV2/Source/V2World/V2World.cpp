@@ -1634,6 +1634,8 @@ void V2World::addUnions()
 {
 	LOG(LogLevel::Info) << "Adding unions";
 
+	vic2CultureUnionMapper theVic2CultureUnionMapper;
+
 	for (map<int, V2Province*>::iterator provItr = provinces.begin(); provItr != provinces.end(); provItr++)
 	{
 		if (!provItr->second->wasInfidelConquest() && !provItr->second->wasColony())
@@ -1641,7 +1643,7 @@ void V2World::addUnions()
 			auto cultures = provItr->second->getCulturesOverThreshold(0.5);
 			for (auto culture : cultures)
 			{
-				vector<string> cores = vic2CultureUnionMapper::getCoreForCulture(culture);
+				vector<string> cores = theVic2CultureUnionMapper.getCoreForCulture(culture);
 				for (auto core: cores)
 				{
 					provItr->second->addCore(core);
