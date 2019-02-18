@@ -97,7 +97,7 @@ TEST(EU4ToVic2_ConfigurationTests, EU4PathThatDoesntExistFails)
 	Configuration testConfiguration;
 	std::stringstream input("EU4directory = \"C:\\FakeDirectory\"");
 
-	ASSERT_ANY_THROW(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist));
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\FakeDirectory does not exist");
 }
 
 
@@ -106,7 +106,7 @@ TEST(EU4ToVic2_ConfigurationTests, EU4PathWithoutExecutableFails)
 	Configuration testConfiguration;
 	std::stringstream input("EU4directory = \"C:\\EU4PathWithoutExecutable\"");
 
-	ASSERT_ANY_THROW(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist));
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\EU4PathWithoutExecutable does not contain Europa Universalis 4");
 }
 
 
@@ -115,7 +115,7 @@ TEST(EU4ToVic2_ConfigurationTests, EU4PathWithoutDataFileFails)
 	Configuration testConfiguration;
 	std::stringstream input("EU4directory = \"C:\\EU4PathWithoutDataFile\"");
 
-	ASSERT_ANY_THROW(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist));
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\EU4PathWithoutDataFile does not appear to be a valid EU4 install");
 }
 
 
@@ -184,7 +184,7 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2PathThatDoesntExistFails)
 	Configuration testConfiguration;
 	std::stringstream input("Vic2directory = \"C:\\FakeDirectory\"");
 
-	ASSERT_ANY_THROW(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist));
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\FakeDirectory does not exist");
 }
 
 
@@ -193,7 +193,7 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2PathWithoutExecutableFails)
 	Configuration testConfiguration;
 	std::stringstream input("Vic2directory = \"C:\\Vic2PathWithoutExecutable\"");
 
-	ASSERT_ANY_THROW(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist));
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\Vic2PathWithoutExecutable does not contain Victoria 2");
 }
 
 
@@ -222,7 +222,7 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2DocumentsPathThatDoesntExistFails)
 	Configuration testConfiguration;
 	std::stringstream input("Vic2Documentsdirectory = \"C:\\FakeDirectory\"");
 
-	ASSERT_ANY_THROW(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist));
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\FakeDirectory does not exist");
 }
 
 
