@@ -166,6 +166,7 @@
     <ClCompile Include="..\EU4toV2\Source\Configuration.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\BlockedTechSchools.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\V2World\V2TechSchools.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Vic2TechSchool.cpp" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
