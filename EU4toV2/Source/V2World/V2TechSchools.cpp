@@ -22,66 +22,20 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "V2TechSchools.h"
-#include "Log.h"
+#include "BlockedTechSchools.h"
 #include "../Configuration.h"
+#include "Log.h"
 #include "ParserHelpers.h"
-#include "ParadoxParserUTF8.h"
 #include <algorithm>
 #include <memory>
 
 
 
-namespace Vic2
+Vic2::TechSchools::TechSchools(std::istream& theStream, std::unique_ptr<blockedTechSchools>& theBlockedTechSchools)
 {
-
-class blockedTechSchools: commonItems::parser
-{
-	public:
-		blockedTechSchools();
-
-		bool isTechSchoolBlocked(const std::string& techSchool) const;
-
-	private:
-		std::vector<std::string> theBlockedTechSchools;
-};
-
-
-class Vic2TechSchoolsSchools: commonItems::parser
-{
-	public:
-		Vic2TechSchoolsSchools(const blockedTechSchools& blockedTechSchools, std::istream& theStream);
-
-		std::vector<Vic2TechSchool> getTechSchools() const { return techSchools; }
-
-	private:
-		std::vector<Vic2TechSchool> techSchools;
-};
-
-}
-
-
-Vic2::blockedTechSchools::blockedTechSchools()
-{
-	registerKeyword(std::regex("[a-zA-Z0-9\\_]+"), [this](const std::string& techSchool, std::istream& theStream){
-		theBlockedTechSchools.push_back(techSchool);
-	});
-
-	parseFile("blocked_tech_schools.txt");
-}
-
-
-bool Vic2::blockedTechSchools::isTechSchoolBlocked(const std::string& techSchool) const
-{
-	return std::any_of(theBlockedTechSchools.begin(), theBlockedTechSchools.end(),
-							 [techSchool](std::string blockedTechSchool){ return techSchool == blockedTechSchool; });
-}
-
-
-Vic2::Vic2TechSchoolsSchools::Vic2TechSchoolsSchools(const blockedTechSchools& theBlockedTechSchools, std::istream& theStream)
-{
-	registerKeyword(std::regex("[a-zA-Z0-9\\_]+"), [this, theBlockedTechSchools](const std::string& name, std::istream& theStream){
+	registerKeyword(std::regex("[a-zA-Z0-9\\_]+"), [this, &theBlockedTechSchools](const std::string& name, std::istream& theStream){
 		Vic2TechSchool newTechSchool(name, theStream);
-		if (!theBlockedTechSchools.isTechSchoolBlocked(name))
+		if (!theBlockedTechSchools->isTechSchoolBlocked(name))
 		{
 			techSchools.push_back(newTechSchool);
 		}
@@ -91,21 +45,7 @@ Vic2::Vic2TechSchoolsSchools::Vic2TechSchoolsSchools(const blockedTechSchools& t
 }
 
 
-Vic2::Vic2TechSchools::Vic2TechSchools()
-{
-	blockedTechSchools theBlockedTechSchools;
-
-	registerKeyword(std::regex("schools"), [this, theBlockedTechSchools](const std::string& unused, std::istream& theStream){
-		Vic2TechSchoolsSchools theSchoolsSection(theBlockedTechSchools, theStream);
-		techSchools = theSchoolsSection.getTechSchools();
-	});
-	registerKeyword(std::regex("folders"), commonItems::ignoreItem);
-
-	parseFile(theConfiguration.getVic2Path() + "/common/technology.txt");
-}
-
-
-std::string Vic2::Vic2TechSchools::findBestTechSchool(double armyInvestment, double commerceInvestment, double cultureInvestment, double industryInvestment, double navyInvestment) const
+std::string Vic2::TechSchools::findBestTechSchool(double armyInvestment, double commerceInvestment, double cultureInvestment, double industryInvestment, double navyInvestment) const
 {
 	double totalInvestment = armyInvestment + navyInvestment + commerceInvestment + industryInvestment + cultureInvestment;
 	armyInvestment /= totalInvestment;
@@ -128,4 +68,15 @@ std::string Vic2::Vic2TechSchools::findBestTechSchool(double armyInvestment, dou
 	}
 
 	return bestSchool;
+}
+
+
+Vic2::TechSchoolsFile::TechSchoolsFile(std::unique_ptr<blockedTechSchools> suppliedBlockedTechSchools)
+{
+	registerKeyword(std::regex("schools"), [this, &suppliedBlockedTechSchools](const std::string& unused, std::istream& theStream){
+		theTechSchools = std::make_unique<TechSchools>(theStream, suppliedBlockedTechSchools);
+	});
+	registerKeyword(std::regex("folders"), commonItems::ignoreItem);
+
+	parseFile(theConfiguration.getVic2Path() + "/common/technology.txt");
 }

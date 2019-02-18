@@ -109,7 +109,7 @@ class V2World
 		V2Diplomacy diplomacy;
 		map<int, set<string>> colonies;
 		map<string, list<int>>	popRegions;
-		Vic2::Vic2TechSchools techSchools;
+		std::unique_ptr<Vic2::TechSchools> techSchools;
 		map<int, int> leaderIDMap; // <EU4, V2>
 		long totalWorldPopulation;
 		bool isRandomWorld;

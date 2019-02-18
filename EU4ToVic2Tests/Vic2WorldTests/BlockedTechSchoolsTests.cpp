@@ -21,52 +21,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef V2_TECH_SCHOOLS
-#define V2_TECH_SCHOOLS
+#include "gtest/gtest.h"
+#include "../EU4toV2/Source/V2World/BlockedTechSchools.h"
 
 
 
-#include "V2TechSchools.h"
-#include "BlockedTechSchools.h"
-#include "Vic2TechSchool.h"
-#include "newParser.h"
-#include <memory>
-#include <string>
-#include <vector>
-
-
-
-namespace Vic2
+TEST(Vic2World_BlockedSchoolsTests, techSchoolCanBeBlocked)
 {
+	std::stringstream input("a_blocked_tech_school");
+	Vic2::blockedTechSchools theBlockedTechSchools(input);
 
-class TechSchools: commonItems::parser
-{
-	public:
-		TechSchools(std::istream& theStream, std::unique_ptr<blockedTechSchools>& suppliedBlockedTechSchools);
-
-		std::string findBestTechSchool(double armyInvestment, double commerceInvestment, double cultureInvestment, double industryInvestment, double navyInvestment) const;
-
-	private:
-		std::vector<Vic2TechSchool> techSchools;
-};
-
-
-class TechSchoolsFile: commonItems::parser
-{
-	public:
-		TechSchoolsFile(std::unique_ptr<blockedTechSchools> suppliedBlockedTechSchools);
-
-		std::unique_ptr<TechSchools> getTechSchools() { return std::move(theTechSchools); }
-
-	private:
-		TechSchoolsFile(const TechSchoolsFile&) = delete;
-		TechSchoolsFile& operator=(const TechSchoolsFile&) = delete;
-
-		std::unique_ptr<TechSchools> theTechSchools;
-};
-
+	ASSERT_TRUE(theBlockedTechSchools.isTechSchoolBlocked("a_blocked_tech_school"));
 }
-
-
-
-#endif // V2_TECH_SCHOOLS
