@@ -27,9 +27,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-Vic2::Vic2TechSchool::Vic2TechSchool(const std::string& _name, std::istream& theStream)
+Vic2::Vic2TechSchool::Vic2TechSchool(const std::string& _name, std::istream& theStream): name(_name)
 {
-	name = _name;
 	registerKeyword(std::regex("army_tech_research_bonus"), [this](const std::string& unused, std::istream& theStream){
 		armyBonus = commonItems::singleDouble(theStream).getDouble();
 	});
