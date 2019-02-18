@@ -177,3 +177,12 @@ bool EU4::Version::operator == (const EU4::Version& rhs) const
 			(thirdPart == rhs.thirdPart) &&
 			(fourthPart == rhs.fourthPart));
 }
+
+
+bool EU4::Version::operator != (const EU4::Version& rhs) const
+{
+	return ((firstPart != rhs.firstPart) ||
+			(secondPart != rhs.secondPart) ||
+			(thirdPart != rhs.thirdPart) ||
+			(fourthPart != rhs.fourthPart));
+}
