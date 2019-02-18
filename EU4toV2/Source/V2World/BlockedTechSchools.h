@@ -20,15 +20,11 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
-
-#ifndef V2_TECH_SCHOOLS
-#define V2_TECH_SCHOOLS
-
+#ifndef BLOCKED_TECH_SCHOOLS_H
+#define BLOCKED_TECH_SCHOOLS_H
 
 
-#include "V2TechSchools.h"
-#include "BlockedTechSchools.h"
-#include "Vic2TechSchool.h"
+
 #include "newParser.h"
 #include <memory>
 #include <string>
@@ -39,34 +35,34 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 namespace Vic2
 {
 
-class TechSchools: commonItems::parser
+class blockedTechSchools: commonItems::parser
 {
 	public:
-		TechSchools(std::istream& theStream, std::unique_ptr<blockedTechSchools>& suppliedBlockedTechSchools);
+		blockedTechSchools(std::istream& theStream);
 
-		std::string findBestTechSchool(double armyInvestment, double commerceInvestment, double cultureInvestment, double industryInvestment, double navyInvestment) const;
+		bool isTechSchoolBlocked(const std::string& techSchool) const;
 
 	private:
-		std::vector<Vic2TechSchool> techSchools;
+		std::vector<std::string> theBlockedTechSchools;
 };
 
 
-class TechSchoolsFile: commonItems::parser
+class blockedTechSchoolsFile: commonItems::parser
 {
 	public:
-		TechSchoolsFile(std::unique_ptr<blockedTechSchools> suppliedBlockedTechSchools);
+		blockedTechSchoolsFile();
 
-		std::unique_ptr<TechSchools> getTechSchools() { return std::move(theTechSchools); }
+		std::unique_ptr<blockedTechSchools> getBlockedTechSchools() { return std::move(theBlockedTechSchools); }
 
 	private:
-		TechSchoolsFile(const TechSchoolsFile&) = delete;
-		TechSchoolsFile& operator=(const TechSchoolsFile&) = delete;
+		blockedTechSchoolsFile(const blockedTechSchoolsFile&) = delete;
+		blockedTechSchoolsFile& operator=(const blockedTechSchoolsFile&) = delete;
 
-		std::unique_ptr<TechSchools> theTechSchools;
+		std::unique_ptr<blockedTechSchools> theBlockedTechSchools;
 };
+
 
 }
 
 
-
-#endif // V2_TECH_SCHOOLS
+#endif // BLOCKED_TECH_SCHOOLS_H

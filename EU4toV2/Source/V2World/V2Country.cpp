@@ -517,7 +517,7 @@ void V2Country::outputOOB() const
 }
 
 
-void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const Vic2::Vic2TechSchools& techSchools, const map<int, int>& leaderMap)
+void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const std::unique_ptr<Vic2::TechSchools>& techSchools, const map<int, int>& leaderMap)
 {
 	srcCountry = _srcCountry;
 
@@ -817,7 +817,7 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	double industryInvestment		= srcCountry->getIndustryInvestment();
 	double cultureInvestment		= srcCountry->getCultureInvestment();
 
-	techSchool = techSchools.findBestTechSchool(armyInvestment, commerceInvestment, cultureInvestment, industryInvestment, navyInvestment);
+	techSchool = techSchools->findBestTechSchool(armyInvestment, commerceInvestment, cultureInvestment, industryInvestment, navyInvestment);
 	LOG(LogLevel::Debug) << tag << " has tech school " << techSchool;
 
 	//// Leaders
