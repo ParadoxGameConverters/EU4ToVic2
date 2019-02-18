@@ -222,6 +222,7 @@
     <ClCompile Include="Source\Mappers\Vic2CultureUnionMapper.cpp" />
     <ClCompile Include="Source\targa.cpp" />
     <ClCompile Include="Source\V2World\BlockedTechSchools.cpp" />
+    <ClCompile Include="Source\V2World\Vic2CultureUnion.cpp" />
     <ClCompile Include="Source\V2World\Vic2Regions.cpp" />
     <ClCompile Include="Source\V2World\V2Army.cpp" />
     <ClCompile Include="Source\V2World\V2Country.cpp" />
@@ -314,6 +315,7 @@
     <ClInclude Include="Source\V2World\V2State.h" />
     <ClInclude Include="Source\V2World\V2TechSchools.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
+    <ClInclude Include="Source\V2World\Vic2CultureUnion.h" />
     <ClInclude Include="Source\V2World\Vic2Regions.h" />
     <ClInclude Include="Source\V2World\Vic2TechSchool.h" />
   </ItemGroup>

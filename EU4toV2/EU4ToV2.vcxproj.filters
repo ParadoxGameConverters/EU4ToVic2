@@ -217,6 +217,9 @@
     <ClCompile Include="Source\V2World\BlockedTechSchools.cpp">
       <Filter>Vic2 World</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Vic2CultureUnion.cpp">
+      <Filter>Vic2 World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -427,6 +430,9 @@
     </ClInclude>
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\V2World\BlockedTechSchools.h">
+      <Filter>Vic2 World</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Vic2CultureUnion.h">
       <Filter>Vic2 World</Filter>
     </ClInclude>
   </ItemGroup>
