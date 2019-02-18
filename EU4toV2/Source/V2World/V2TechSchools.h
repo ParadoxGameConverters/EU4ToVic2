@@ -44,6 +44,13 @@ class TechSchools: commonItems::parser
 	public:
 		TechSchools(std::istream& theStream, std::unique_ptr<blockedTechSchools>& suppliedBlockedTechSchools);
 
+		TechSchools() = default;
+		TechSchools(const TechSchools&) = default;
+		TechSchools(TechSchools&&) = default;
+		TechSchools& operator=(const TechSchools&) = default;
+		TechSchools& operator=(TechSchools&&) = default;
+		~TechSchools() = default;
+
 		std::string findBestTechSchool(double armyInvestment, double commerceInvestment, double cultureInvestment, double industryInvestment, double navyInvestment) const;
 
 	private:
@@ -55,12 +62,16 @@ class TechSchoolsFile: commonItems::parser
 {
 	public:
 		TechSchoolsFile(std::unique_ptr<blockedTechSchools> suppliedBlockedTechSchools);
+		~TechSchoolsFile() = default;
 
 		std::unique_ptr<TechSchools> getTechSchools() { return std::move(theTechSchools); }
 
 	private:
+		TechSchoolsFile() = delete;
 		TechSchoolsFile(const TechSchoolsFile&) = delete;
+		TechSchoolsFile(TechSchoolsFile&&) = delete;
 		TechSchoolsFile& operator=(const TechSchoolsFile&) = delete;
+		TechSchoolsFile& operator=(TechSchoolsFile&&) = delete;
 
 		std::unique_ptr<TechSchools> theTechSchools;
 };

@@ -37,6 +37,12 @@ class Configuration: commonItems::parser
 {
 	public:
 		Configuration() = default;
+		Configuration(const Configuration&) = default;
+		Configuration(Configuration&&) = default;
+		Configuration& operator=(const Configuration&) = default;
+		Configuration& operator=(Configuration&&) = default;
+		~Configuration() = default;
+
 		void instantiate(std::istream& theStream, bool (*doesFolderExist)(const std::string& path), bool (*doesFileExist)(const std::string& path));
 
 		std::string getEU4Path() { return EU4Path; }
@@ -103,10 +109,14 @@ class ConfigurationFile: commonItems::parser
 {
 	public:
 		explicit ConfigurationFile(const std::string& filename);
+		~ConfigurationFile() = default;
 
 	private:
+		ConfigurationFile() = delete;
 		ConfigurationFile(const ConfigurationFile&) = delete;
+		ConfigurationFile(ConfigurationFile&&) = delete;
 		ConfigurationFile& operator=(const ConfigurationFile&) = delete;
+		ConfigurationFile& operator=(ConfigurationFile&&) = delete;
 };
 
 
