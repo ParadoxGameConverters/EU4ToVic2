@@ -52,9 +52,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/EU4Leader.h"
 #include "../EU4World/EU4Province.h"
 #include "../EU4World/EU4Diplomacy.h"
+#include "BlockedTechSchools.h"
 #include "V2Province.h"
 #include "V2State.h"
 #include "V2Relations.h"
+#include "V2TechSchools.h"
 #include "V2Army.h"
 #include "V2Leader.h"
 #include "V2Pop.h"
@@ -431,6 +433,10 @@ void V2World::convertCountries(const EU4::world& sourceWorld)
 
 void V2World::initializeCountries(const EU4::world& sourceWorld)
 {
+	Vic2::blockedTechSchoolsFile theBlockedTechSchoolsFile;
+	Vic2::TechSchoolsFile theTechSchoolsFile(theBlockedTechSchoolsFile.takeBlockedTechSchools());
+	auto theTechSchools = theTechSchoolsFile.takeTechSchools();
+
 	for (auto sourceCountry: sourceWorld.getCountries())
 	{
 		const string& V2Tag = mappers::CountryMappings::getVic2Tag(sourceCountry.first);
@@ -441,7 +447,7 @@ void V2World::initializeCountries(const EU4::world& sourceWorld)
 		}
 
 		V2Country* destCountry = createOrLocateCountry(V2Tag, sourceCountry.second);
-		destCountry->initFromEU4Country(sourceCountry.second, techSchools, leaderIDMap);
+		destCountry->initFromEU4Country(sourceCountry.second, theTechSchools, leaderIDMap);
 		countries.insert(make_pair(V2Tag, destCountry));
 	}
 }
