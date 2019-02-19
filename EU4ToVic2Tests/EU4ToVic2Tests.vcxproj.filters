@@ -43,6 +43,18 @@
     <ClCompile Include="..\EU4toV2\Source\V2World\BlockedTechSchools.cpp">
       <Filter>EU4ToVic2Files\Vic2World</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnion.cpp">
+      <Filter>EU4ToVic2Files\Vic2World</Filter>
+    </ClCompile>
+    <ClCompile Include="Vic2WorldTests\Vic2CultureUnionTests.cpp">
+      <Filter>Vic2WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="Vic2WorldTests\Vic2CultureUnionMapperTests.cpp">
+      <Filter>Vic2WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnionMapper.cpp">
+      <Filter>EU4ToVic2Files\Vic2World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4ToVic2Files">

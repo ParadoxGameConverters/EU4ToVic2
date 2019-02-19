@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -22,61 +22,26 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "Vic2CultureUnionMapper.h"
+#include "Vic2CultureUnion.h"
 #include "Log.h"
-#include "Object.h"
-#include "ParadoxParserUTF8.h"
+#include "ParserHelpers.h"
 
 
 
-vic2CultureUnionMapper* vic2CultureUnionMapper::instance = nullptr;
-
-
-vic2CultureUnionMapper::vic2CultureUnionMapper()
+Vic2::CultureUnionMapper::CultureUnionMapper(std::istream& theStream)
 {
-	LOG(LogLevel::Info) << "Parsing union mappings";
+	registerKeyword(std::regex("link"), [this](const std::string& unused, std::istream& theStream){
+		Vic2::CultureUnion newUnion(theStream);
+		unionMap.insert(newUnion.takeTheUnion());
+	});
 
-	shared_ptr<Object> unionsMapObj = parser_UTF8::doParseFile("unions.txt");
-	if (unionsMapObj == NULL)
-	{
-		LOG(LogLevel::Error) << "Could not parse file unions.txt";
-		exit(-1);
-	}
-	if (unionsMapObj->getLeaves().size() < 1)
-	{
-		LOG(LogLevel::Error) << "Failed to parse unions.txt";
-		exit(-1);
-	}
-
-	initUnionMap(unionsMapObj->getLeaves()[0]);
+	parseStream(theStream);
 }
 
 
-void vic2CultureUnionMapper::initUnionMap(shared_ptr<Object> obj)
+std::vector<std::string> Vic2::CultureUnionMapper::getCoreForCulture(const std::string& culture)
 {
-	for (auto rule: obj->getLeaves())
-	{
-		vector<string> tags;
-		string culture;
-		for (auto ruleItems: rule->getLeaves())
-		{
-			if (ruleItems->getKey() == "tag")
-			{
-				tags.push_back(ruleItems->getLeaf());
-			}
-			if (ruleItems->getKey() == "culture")
-			{
-				culture = ruleItems->getLeaf();
-			}
-		}
-
-		unionMap.insert(make_pair(culture, tags));
-	}
-}
-
-
-vector<string> vic2CultureUnionMapper::GetCoreForCulture(const string& culture)
-{
-	vector<string> empty;
+	std::vector<std::string> empty;
 
 	auto mapping = unionMap.find(culture);
 	if (mapping == unionMap.end())
@@ -87,4 +52,15 @@ vector<string> vic2CultureUnionMapper::GetCoreForCulture(const string& culture)
 	{
 		return mapping->second;
 	}
+}
+
+
+Vic2::CultureUnionMapperFile::CultureUnionMapperFile()
+{
+	registerKeyword(std::regex("unions"), [this](const std::string& unused, std::istream& theStream){
+		theCultureUnionMapper = std::make_unique<Vic2::CultureUnionMapper>(theStream);
+	});
+
+	LOG(LogLevel::Info) << "Parsing union mappings";
+	parseFile("unions.txt");
 }

@@ -131,9 +131,6 @@
     <ClCompile Include="Source\Mappers\GovermentMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\Vic2CultureUnionMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\IdeaEffectMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
@@ -215,6 +212,12 @@
     </ClCompile>
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\V2World\BlockedTechSchools.cpp">
+      <Filter>Vic2 World</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Vic2CultureUnion.cpp">
+      <Filter>Vic2 World</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Vic2CultureUnionMapper.cpp">
       <Filter>Vic2 World</Filter>
     </ClCompile>
   </ItemGroup>
@@ -342,9 +345,6 @@
     <ClInclude Include="Source\Mappers\MinorityPopMapper.h">
       <Filter>Mappers</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\Vic2CultureUnionMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\GovernmentMapper.h">
       <Filter>Mappers</Filter>
     </ClInclude>
@@ -427,6 +427,12 @@
     </ClInclude>
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\V2World\BlockedTechSchools.h">
+      <Filter>Vic2 World</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Vic2CultureUnion.h">
+      <Filter>Vic2 World</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Vic2CultureUnionMapper.h">
       <Filter>Vic2 World</Filter>
     </ClInclude>
   </ItemGroup>

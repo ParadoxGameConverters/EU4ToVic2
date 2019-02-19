@@ -44,7 +44,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/SlaveCultureMapper.h"
 #include "../Mappers/StateMapper.h"
-#include "../Mappers/Vic2CultureUnionMapper.h"
 #include "../Configuration.h"
 #include "../EU4World/Continents.h"
 #include "../EU4World/World.h"
@@ -64,6 +63,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Reforms.h"
 #include "V2Flags.h"
 #include "V2LeaderTraits.h"
+#include "Vic2CultureUnionMapper.h"
 
 
 
@@ -1640,6 +1640,9 @@ void V2World::addUnions()
 {
 	LOG(LogLevel::Info) << "Adding unions";
 
+	Vic2::CultureUnionMapperFile theVic2CultureUnionMapperFile;
+	auto theVic2CultureUnionMapper = theVic2CultureUnionMapperFile.takeCultureUnionMapper();
+
 	for (map<int, V2Province*>::iterator provItr = provinces.begin(); provItr != provinces.end(); provItr++)
 	{
 		if (!provItr->second->wasInfidelConquest() && !provItr->second->wasColony())
@@ -1647,7 +1650,7 @@ void V2World::addUnions()
 			auto cultures = provItr->second->getCulturesOverThreshold(0.5);
 			for (auto culture : cultures)
 			{
-				vector<string> cores = vic2CultureUnionMapper::getCoreForCulture(culture);
+				vector<string> cores = theVic2CultureUnionMapper->getCoreForCulture(culture);
 				for (auto core: cores)
 				{
 					provItr->second->addCore(core);

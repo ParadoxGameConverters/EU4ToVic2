@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -26,44 +26,54 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "newParser.h"
 #include <map>
 #include <memory>
 #include <string>
 #include <vector>
-using namespace std;
 
 
 
-class Object;
+namespace Vic2
+{
 
-
-
-class vic2CultureUnionMapper
+class CultureUnionMapper: commonItems::parser
 {
 	public:
-		static vector<string> getCoreForCulture(const string& culture)
-		{
-			return getInstance()->GetCoreForCulture(culture);
-		}
+		CultureUnionMapper(std::istream& theStream);
+		CultureUnionMapper(const CultureUnionMapper&) = default;
+		CultureUnionMapper(CultureUnionMapper&&) = default;
+		CultureUnionMapper& operator=(const CultureUnionMapper&) = default;
+		CultureUnionMapper& operator=(CultureUnionMapper&&) = default;
+		~CultureUnionMapper() = default;
+
+		std::vector<std::string> getCoreForCulture(const std::string& culture);
 
 	private:
-		static vic2CultureUnionMapper* instance;
-		static vic2CultureUnionMapper* getInstance()
-		{
-			if (instance == nullptr)
-			{
-				instance = new vic2CultureUnionMapper;
-			}
-			return instance;
-		}
+		CultureUnionMapper() = delete;
 
-		vic2CultureUnionMapper();		
-		void initUnionMap(shared_ptr<Object> obj);
-
-		vector<string> GetCoreForCulture(const string& culture);
-
-		map<string, vector<string>> unionMap;
+		std::map<std::string, std::vector<std::string>> unionMap;
 };
+
+
+class CultureUnionMapperFile: commonItems::parser
+{
+	public:
+		CultureUnionMapperFile();
+		~CultureUnionMapperFile() = default;
+
+		std::unique_ptr<CultureUnionMapper> takeCultureUnionMapper() { return std::move(theCultureUnionMapper); }
+
+	private:
+		CultureUnionMapperFile(const CultureUnionMapperFile&) = delete;
+		CultureUnionMapperFile(CultureUnionMapperFile&&) = delete;
+		CultureUnionMapperFile& operator=(const CultureUnionMapperFile&) = delete;
+		CultureUnionMapperFile& operator=(CultureUnionMapperFile&&) = delete;
+
+		std::unique_ptr<CultureUnionMapper> theCultureUnionMapper;
+};
+
+}
 
 
 
