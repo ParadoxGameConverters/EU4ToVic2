@@ -1,4 +1,4 @@
-/*Copyright(c) 2018 The Paradox Game Converters Project
+/*Copyright(c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files(the "Software"), to deal
@@ -220,7 +220,7 @@ EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
 	registerKeyword(std::regex("government_rank"), [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt theGovernmentRank(theStream);
-			if ((theGovernmentRank.getInt() > 2) && (Configuration::wasDLCActive("The Cossacks")))
+			if ((theGovernmentRank.getInt() > 2) && (theConfiguration.wasDLCActive("The Cossacks")))
 			{
 				culturalUnion = EU4::cultureGroups::getCulturalGroup(primaryCulture);
 			}
@@ -229,7 +229,7 @@ EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
 	registerKeyword(std::regex("realm_development"), [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt theDevelopment(theStream);
-			if ((theDevelopment.getInt() >= 1000) && (!Configuration::wasDLCActive("The Cossacks")))
+			if ((theDevelopment.getInt() >= 1000) && (!theConfiguration.wasDLCActive("The Cossacks")))
 			{
 				culturalUnion = EU4::cultureGroups::getCulturalGroup(primaryCulture);
 			}
@@ -237,7 +237,7 @@ EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
 	);
 	registerKeyword(std::regex("culture_group_union"), [this](const std::string& unused, std::istream& theStream)
 		{
-			if (Configuration::versionLessThan("1.7.0.0"))
+			if (theConfiguration.getEU4Version() < EU4::Version("1.7.0.0"))
 			{
 				commonItems::singleString cultureGroup(theStream);
 				culturalUnion = EU4::cultureGroups::getCulturalGroup(cultureGroup.getString());
@@ -319,7 +319,7 @@ EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
 		}
 	);
 	registerKeyword(std::regex("government"), [this](const std::string& unused, std::istream& theStream){
-		if (Configuration::versionLessThan("1.7.0.0"))
+		if (theConfiguration.getEU4Version() < EU4::Version("1.7.0.0"))
 		{
 			government = governmentSection::readGovernment(theStream);
 		}

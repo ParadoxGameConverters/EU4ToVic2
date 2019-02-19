@@ -202,6 +202,7 @@
     <ClCompile Include="Source\EU4World\Regions.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
     <ClCompile Include="Source\FlagUtils.cpp" />
+    <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\AdjacencyMapper.cpp" />
     <ClCompile Include="Source\Mappers\CK2TitleMapper.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTagsMapper.cpp" />
@@ -220,6 +221,7 @@
     <ClCompile Include="Source\Mappers\StateMapper.cpp" />
     <ClCompile Include="Source\Mappers\Vic2CultureUnionMapper.cpp" />
     <ClCompile Include="Source\targa.cpp" />
+    <ClCompile Include="Source\V2World\BlockedTechSchools.cpp" />
     <ClCompile Include="Source\V2World\Vic2Regions.cpp" />
     <ClCompile Include="Source\V2World\V2Army.cpp" />
     <ClCompile Include="Source\V2World\V2Country.cpp" />
@@ -238,6 +240,7 @@
     <ClCompile Include="Source\V2World\V2State.cpp" />
     <ClCompile Include="Source\V2World\V2TechSchools.cpp" />
     <ClCompile Include="Source\V2World\V2World.cpp" />
+    <ClCompile Include="Source\V2World\Vic2TechSchool.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\common_items\CardinalToOrdinal.h" />
@@ -253,6 +256,7 @@
     <ClInclude Include="..\common_items\ParserHelpers.h" />
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\CustomFlagMapper.h" />
+    <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\EU4World\Areas.h" />
     <ClInclude Include="Source\EU4World\ColonialRegions.h" />
     <ClInclude Include="Source\EU4World\Continents.h" />
@@ -292,6 +296,7 @@
     <ClInclude Include="Source\Mappers\StateMapper.h" />
     <ClInclude Include="Source\Mappers\Vic2CultureUnionMapper.h" />
     <ClInclude Include="Source\targa.h" />
+    <ClInclude Include="Source\V2World\BlockedTechSchools.h" />
     <ClInclude Include="Source\V2World\V2Army.h" />
     <ClInclude Include="Source\V2World\V2Country.h" />
     <ClInclude Include="Source\V2World\V2Creditor.h" />
@@ -310,6 +315,7 @@
     <ClInclude Include="Source\V2World\V2TechSchools.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
     <ClInclude Include="Source\V2World\Vic2Regions.h" />
+    <ClInclude Include="Source\V2World\Vic2TechSchool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

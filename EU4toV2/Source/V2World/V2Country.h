@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -43,6 +43,7 @@ namespace EU4
 	class Country;
 	class world;
 }
+
 class V2World;
 class V2State;
 class V2Province;
@@ -68,7 +69,7 @@ class V2Country
 		void								outputToCommonCountriesFile(FILE*) const;
 		void								outputLocalisation(FILE*) const;
 		void								outputOOB() const;
-		void initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const vector<V2TechSchool>& techSchools, const map<int, int>& leaderMap);
+		void initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const std::unique_ptr<Vic2::TechSchools>& techSchools, const map<int, int>& leaderMap);
 		void								initFromHistory();
 		void								addProvince(V2Province* _province);
 		void								addState(V2State* newState);

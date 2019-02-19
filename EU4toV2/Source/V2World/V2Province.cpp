@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -96,10 +96,10 @@ V2Province::V2Province(string _filename)
 	}
 	else
 	{
-		obj = parser_8859_15::doParseFile((Configuration::getV2Path() + "/history/provinces" + _filename).c_str());
+		obj = parser_8859_15::doParseFile((theConfiguration.getVic2Path() + "/history/provinces" + _filename).c_str());
 		if (obj == NULL)
 		{
-			LOG(LogLevel::Error) << "Could not parse " << Configuration::getV2Path() << "/history/provinces" << _filename;
+			LOG(LogLevel::Error) << "Could not parse " << theConfiguration.getVic2Path() << "/history/provinces" << _filename;
 			exit(-1);
 		}
 	}
@@ -174,9 +174,9 @@ V2Province::V2Province(string _filename)
 void V2Province::output() const
 {
 	FILE* output;
-	if (fopen_s(&output, ("Output/" + Configuration::getOutputName() + "/history/provinces" + filename).c_str(), "w") != 0)
+	if (fopen_s(&output, ("Output/" + theConfiguration.getOutputName() + "/history/provinces" + filename).c_str(), "w") != 0)
 	{
-		LOG(LogLevel::Error) << "Could not create province history file Output/" << Configuration::getOutputName() << "/history/provinces/" << filename << " - " << Utils::GetLastErrorString();
+		LOG(LogLevel::Error) << "Could not create province history file Output/" << theConfiguration.getOutputName() << "/history/provinces/" << filename << " - " << Utils::GetLastErrorString();
 		exit(-1);
 	}
 	if (owner != "")
@@ -237,7 +237,7 @@ void V2Province::output() const
 
 void V2Province::outputPops(FILE* output) const
 {
-	if (resettable && (Configuration::getResetProvinces() == "yes"))
+	if (resettable && (theConfiguration.getResetProvinces() == "yes"))
 	{
 		fprintf(output, "%d = {\n", num);
 		if (oldPops.size() > 0)
@@ -795,7 +795,7 @@ void V2Province::createPops(const V2Demographic& demographic, double popWeightRa
 	auto oldCountry = demographic.oldCountry;
 
 	long newPopulation = 0;
-	if (Configuration::getConvertPopTotals())
+	if (theConfiguration.getConvertPopTotals())
 	{
 		newPopulation = static_cast<long>((static_cast<double>(this->lifeRating) / 10) * popWeightRatio * oldProvince->getTotalWeight());
 

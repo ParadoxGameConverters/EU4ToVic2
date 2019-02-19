@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -70,11 +70,10 @@ int provinceMapper::getMappingsIndex(vector<shared_ptr<Object>> versions)
 {
 	unsigned int mappingsIdx;
 
-	auto saveVersion = Configuration::getEU4Version();
+	EU4::Version saveVersion = theConfiguration.getEU4Version();
 	for (mappingsIdx = 0; mappingsIdx < versions.size(); mappingsIdx++)
 	{
-		auto mappingVersion = EU4Version(versions[mappingsIdx]->getKey());
-		if (saveVersion >= mappingVersion)
+		if (saveVersion >= EU4::Version(versions[mappingsIdx]->getKey()))
 		{
 			break;
 		}

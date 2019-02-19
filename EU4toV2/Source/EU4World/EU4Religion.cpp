@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
  
  Permission is hereby granted, free of charge, to any person obtaining
  a copy of this software and associated documentation files (the
@@ -39,10 +39,10 @@ map<string, EU4Religion*> EU4Religion::all_religions;	// the set of all religion
 void EU4Religion::createSelf()
 {
 	LOG(LogLevel::Info) << "Parsing EU4 religions";
-	shared_ptr<Object> religionsObj = parser_UTF8::doParseFile((Configuration::getEU4Path() + "/common/religions/00_religion.txt").c_str());
+	shared_ptr<Object> religionsObj = parser_UTF8::doParseFile((theConfiguration.getEU4Path() + "/common/religions/00_religion.txt").c_str());
 	if (religionsObj == NULL)
 	{
-		LOG(LogLevel::Error) << "Could not parse file " << Configuration::getEU4Path() << "/common/religions/00_religion.txt";
+		LOG(LogLevel::Error) << "Could not parse file " << theConfiguration.getEU4Path() << "/common/religions/00_religion.txt";
 		exit(-1);
 	}
 	if (religionsObj->getLeaves().size() < 1)
@@ -51,7 +51,7 @@ void EU4Religion::createSelf()
 		exit(-1);
 	}
 	EU4Religion::parseReligions(religionsObj);
-	for (auto itr: Configuration::getEU4Mods())
+	for (auto itr: theConfiguration.getEU4Mods())
 	{
 		set<string> filenames;
 		Utils::GetAllFilesInFolder(itr + "/common/religions/", filenames);

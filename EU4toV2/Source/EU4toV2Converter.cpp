@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,7 +21,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include <stdexcept>
 #include "Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -53,27 +52,11 @@ int main(const int argc, const char * argv[])
 	}
 }
 
-
-string getSaveFileName(const int argc, const char * argv[])
-{
-	if (argc >= 2)
-	{
-		LOG(LogLevel::Info) << "Using input file " << argv[1];
-		return argv[1];
-	}
-	else
-	{
-		LOG(LogLevel::Info) << "No input file given, defaulting to input.eu4";
-		return "input.eu4";
-	}
-}
-
-
 void setOutputName(const string& EU4SaveFileName);
 void deleteExistingOutputFolder();
-void ConvertEU4ToV2(const string& EU4SaveFileName)
+void ConvertEU4ToVic2(const string& EU4SaveFileName)
 {
-	Configuration::getInstance();
+	ConfigurationFile configurationFile("configuration.txt");
 	setOutputName(EU4SaveFileName);
 	deleteExistingOutputFolder();
 
@@ -94,7 +77,7 @@ void setOutputName(const string& EU4SaveFileName)
 	outputName = replaceCharacter(outputName, '-');
 	outputName = replaceCharacter(outputName, ' ');
 
-	Configuration::setOutputName(outputName);
+	theConfiguration.setOutputName(outputName);
 	LOG(LogLevel::Info) << "Using output name " << outputName;
 }
 
@@ -128,12 +111,12 @@ string replaceCharacter(string fileName, char character)
 
 void deleteExistingOutputFolder()
 {
-	string outputFolder = Utils::getCurrentDirectory() + "/output/" + Configuration::getOutputName();
+	string outputFolder = Utils::getCurrentDirectory() + "/output/" + theConfiguration.getOutputName();
 	if (Utils::doesFolderExist(outputFolder.c_str()))
 	{
 		if (!Utils::deleteFolder(outputFolder))
 		{
-			LOG(LogLevel::Error) << "Could not delete pre-existing output folder " << Utils::getCurrentDirectory() << "/output/" << Configuration::getOutputName();
+			LOG(LogLevel::Error) << "Could not delete pre-existing output folder " << Utils::getCurrentDirectory() << "/output/" << theConfiguration.getOutputName();
 			exit(-1);
 		}
 	}

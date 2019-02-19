@@ -1,4 +1,4 @@
-/*Copyright (c) 2014 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -26,27 +26,57 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "V2TechSchools.h"
+#include "BlockedTechSchools.h"
+#include "Vic2TechSchool.h"
+#include "newParser.h"
+#include <memory>
 #include <string>
 #include <vector>
-using namespace std;
-
-class Object;
 
 
 
-typedef struct V2TechSchool
+namespace Vic2
 {
-	string name;
-	double armyInvestment;
-	double commerceInvestment;
-	double cultureInvestment;
-	double industryInvestment;
-	double navyInvestment;
-} techSchool;
+
+class TechSchools: commonItems::parser
+{
+	public:
+		TechSchools(std::istream& theStream, std::unique_ptr<blockedTechSchools>& suppliedBlockedTechSchools);
+
+		TechSchools() = default;
+		TechSchools(const TechSchools&) = default;
+		TechSchools(TechSchools&&) = default;
+		TechSchools& operator=(const TechSchools&) = default;
+		TechSchools& operator=(TechSchools&&) = default;
+		~TechSchools() = default;
+
+		std::string findBestTechSchool(double armyInvestment, double commerceInvestment, double cultureInvestment, double industryInvestment, double navyInvestment) const;
+
+	private:
+		std::vector<Vic2TechSchool> techSchools;
+};
 
 
-vector<V2TechSchool>	initTechSchools();
-vector<string> initBlockedTechSchools();
+class TechSchoolsFile: commonItems::parser
+{
+	public:
+		TechSchoolsFile(std::unique_ptr<blockedTechSchools> suppliedBlockedTechSchools);
+		~TechSchoolsFile() = default;
+
+		std::unique_ptr<TechSchools> takeTechSchools() { return std::move(theTechSchools); }
+
+	private:
+		TechSchoolsFile() = delete;
+		TechSchoolsFile(const TechSchoolsFile&) = delete;
+		TechSchoolsFile(TechSchoolsFile&&) = delete;
+		TechSchoolsFile& operator=(const TechSchoolsFile&) = delete;
+		TechSchoolsFile& operator=(TechSchoolsFile&&) = delete;
+
+		std::unique_ptr<TechSchools> theTechSchools;
+};
+
+}
 
 
 
