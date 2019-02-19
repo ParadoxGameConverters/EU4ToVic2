@@ -30,6 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Date.h"
 #include "../EU4World/EU4Army.h"
 #include "V2Localisation.h"
+#include "V2TechSchools.h"
 #include <memory>
 #include <set>
 #include <vector>
@@ -41,13 +42,6 @@ namespace EU4
 {
 	class Country;
 	class world;
-}
-
-namespace Vic2
-{
-
-class TechSchools;
-
 }
 
 class V2World;
