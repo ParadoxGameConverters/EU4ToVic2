@@ -78,6 +78,7 @@ V2World::V2World(const EU4::world& sourceWorld)
 	isRandomWorld = sourceWorld.isRandomWorld();
 
 	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries);
+	theStateMapper = std::make_unique<stateMapper>();
 
 	LOG(LogLevel::Info) << "Converting world";
 	convertCountries(sourceWorld);
@@ -705,7 +706,7 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 			}
 			if (((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")) && false && (owner != nullptr))
 			{
-				auto stateIndex = stateMapper::getStateIndex(Vic2Province.first);
+				auto stateIndex = theStateMapper->getStateIndex(Vic2Province.first);
 				if (stateIndex == -1)
 				{
 					LOG(LogLevel::Warning) << "Could not find state index for province " << Vic2Province.first;
@@ -1104,7 +1105,7 @@ void V2World::setupStates()
 
 		V2State* newState = new V2State(stateId, *iter);
 		stateId++;
-		vector<int> neighbors = stateMapper::getOtherProvincesInState(provId);
+		vector<int> neighbors = theStateMapper->getOtherProvincesInState(provId);
 
 		LOG(LogLevel::Debug) << "Neighbors size" << neighbors.size();
 

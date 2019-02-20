@@ -30,10 +30,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-stateMapper* stateMapper::instance = NULL;
-
-
-
 stateMapper::stateMapper()
 {
 	LOG(LogLevel::Info) << "Parsing region structure";
@@ -84,7 +80,7 @@ void stateMapper::initStateMap(shared_ptr<Object> obj)
 	}
 }
 
-vector<int> stateMapper::GetOtherProvincesInState(int province)
+vector<int> stateMapper::getOtherProvincesInState(int province)
 {
 	auto mapping = stateProvincesMap.find(province);
 	if (mapping != stateProvincesMap.end())
@@ -98,7 +94,7 @@ vector<int> stateMapper::GetOtherProvincesInState(int province)
 	}
 }
 
-int stateMapper::GetStateIndex(int province)
+int stateMapper::getStateIndex(int province)
 {
 	auto mapping = stateIndexMap.find(province);
 	if (mapping != stateIndexMap.end())

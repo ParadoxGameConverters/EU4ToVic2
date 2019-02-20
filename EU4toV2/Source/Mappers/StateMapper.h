@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -40,32 +40,12 @@ class Object;
 class stateMapper
 {
 	public:
-		static vector<int> getOtherProvincesInState(int province)
-		{
-			return getInstance()->GetOtherProvincesInState(province);
-		}
-
-		static int getStateIndex(int province)
-		{
-			return getInstance()->GetStateIndex(province);
-		}
+		stateMapper();
+		vector<int> getOtherProvincesInState(int province);
+		int getStateIndex(int province);
 
 	private:
-		static stateMapper* instance;
-		static stateMapper* getInstance()
-		{
-			if (instance == NULL)
-			{
-				instance = new stateMapper();
-			}
-			return instance;
-		}
-
-		stateMapper();
 		void initStateMap(shared_ptr<Object> obj);
-
-		vector<int> GetOtherProvincesInState(int province);
-		int GetStateIndex(int province);
 
 		map<int, vector<int>> stateProvincesMap;
 		map<int, int> stateIndexMap;
