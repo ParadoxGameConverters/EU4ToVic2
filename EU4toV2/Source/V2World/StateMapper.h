@@ -26,23 +26,23 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "newParser.h"
 #include <map>
 #include <memory>
 #include <vector>
 
 
 
-class Object;
-
 
 
 namespace Vic2
 {
 
-class stateMapper
+class stateMapper: commonItems::parser
 {
 	public:
-		stateMapper(std::shared_ptr<Object> obj);
+		stateMapper(std::istream& theStream);
+
 		std::vector<int> getOtherProvincesInState(int province);
 		int getStateIndex(int province);
 

@@ -24,32 +24,34 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "StateMapper.h"
 #include "../Configuration.h"
 #include "Log.h"
-#include "Object.h"
 #include "OSCompatibilityLayer.h"
-#include "ParadoxParser8859_15.h"
+#include "ParserHelpers.h"
+#include <fstream>
 
 
 
-Vic2::stateMapper::stateMapper(std::shared_ptr<Object> obj)
+Vic2::stateMapper::stateMapper(std::istream& theStream)
 {
-	std::vector<std::shared_ptr<Object>> states = obj->getLeaves();
+	int stateIndex = 0;
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this, &stateIndex](const std::string& unused, std::istream& theStream){
+		commonItems::intList provinces(theStream);
 
-	for (unsigned int stateIndex = 0; stateIndex < states.size(); stateIndex++)
-	{
-		std::vector<std::string> provinces = states[stateIndex]->getTokens();
 		std::vector<int> neighbors;
-
-		for (auto province : provinces)
+		for (auto province: provinces.getInts())
 		{
-			neighbors.push_back(std::stoi(province));
-			stateIndexMap.insert(std::make_pair(std::stoi(province), stateIndex));
+			neighbors.push_back(province);
+			stateIndexMap.insert(std::make_pair(province, stateIndex));
 		}
 
-		for (auto neighbor : neighbors)
+		for (auto neighbor: neighbors)
 		{
 			stateProvincesMap.insert(std::make_pair(neighbor, neighbors));
 		}
-	}
+
+		stateIndex++;
+	});
+
+	parseStream(theStream);
 }
 
 std::vector<int> Vic2::stateMapper::getOtherProvincesInState(int province)
@@ -94,17 +96,21 @@ Vic2::stateMapperFile::stateMapperFile()
 		filename = theConfiguration.getVic2Path() + "/map/region.txt";
 	}
 
-	std::shared_ptr<Object> Vic2RegionsObj = parser_8859_15::doParseFile(filename);
-	if (Vic2RegionsObj == NULL)
+	std::ifstream theFile(filename);
+	if (!theFile.is_open())
 	{
-		LOG(LogLevel::Error) << "Could not parse file " << filename;
-		exit(-1);
-	}
-	if (Vic2RegionsObj->getLeaves().size() < 1)
-	{
-		LOG(LogLevel::Error) << "Could not parse region.txt";
-		exit(-1);
+		LOG(LogLevel::Error) << "Could not open " << filename << " for parsing.";
+		return;
 	}
 
-	theStateMapper = std::make_unique<stateMapper>(Vic2RegionsObj);
+	const char firstChar = theFile.peek();
+	if (firstChar == '\xEF')
+	{
+		char bitBucket[3];
+		theFile.read(bitBucket, sizeof(bitBucket));
+	}
+
+	theStateMapper = std::make_unique<stateMapper>(theFile);
+
+	theFile.close();
 }
