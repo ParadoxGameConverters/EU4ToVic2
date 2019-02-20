@@ -29,29 +29,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-string getSaveFileName(const int argc, const char * argv[]);
-void ConvertEU4ToV2(const string& EU4SaveFileName);
-int main(const int argc, const char * argv[])
-{
-	try
-	{
-		LOG(LogLevel::Info) << "Converter version 1.0Jprerelease";
-		LOG(LogLevel::Info) << "Built " << __TIMESTAMP__;
-		LOG(LogLevel::Debug) << "Current directory is " << Utils::getCurrentDirectory();
-
-		string EU4SaveFileName = getSaveFileName(argc, argv);
-		ConvertEU4ToV2(EU4SaveFileName);
-
-		return 0;
-	}
-
-	catch (const std::exception& e)
-	{
-		LOG(LogLevel::Error) << e.what();
-		return -1;
-	}
-}
-
 void setOutputName(const string& EU4SaveFileName);
 void deleteExistingOutputFolder();
 void ConvertEU4ToVic2(const string& EU4SaveFileName)
