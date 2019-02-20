@@ -42,15 +42,31 @@ namespace Vic2
 class stateMapper
 {
 	public:
-		stateMapper();
+		stateMapper(std::shared_ptr<Object> obj);
 		std::vector<int> getOtherProvincesInState(int province);
 		int getStateIndex(int province);
 
 	private:
-		void initStateMap(std::shared_ptr<Object> obj);
-
 		std::map<int, std::vector<int>> stateProvincesMap;
 		std::map<int, int> stateIndexMap;
+};
+
+
+class stateMapperFile
+{
+	public:
+		stateMapperFile();
+		~stateMapperFile() = default;
+
+		std::unique_ptr<stateMapper> takeStateMapper() { return std::move(theStateMapper); }
+
+	private:
+		stateMapperFile(const stateMapperFile&) = delete;
+		stateMapperFile(stateMapperFile&&) = delete;
+		stateMapperFile& operator=(const stateMapperFile&) = delete;
+		stateMapperFile& operator=(stateMapperFile&&) = delete;
+
+		std::unique_ptr<stateMapper> theStateMapper;
 };
 
 }

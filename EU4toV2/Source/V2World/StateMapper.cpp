@@ -30,35 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-Vic2::stateMapper::stateMapper()
-{
-	LOG(LogLevel::Info) << "Parsing region structure";
-
-	std::string filename;
-	if (Utils::DoesFileExist("./blankMod/output/map/region.txt"))
-	{
-		filename = "./blankMod/output/map/region.txt";
-	}
-	else
-	{
-		filename = theConfiguration.getVic2Path() + "/map/region.txt";
-	}
-
-	std::shared_ptr<Object> Vic2RegionsObj = parser_8859_15::doParseFile(filename);
-	if (Vic2RegionsObj == NULL)
-	{
-		LOG(LogLevel::Error) << "Could not parse file " << filename;
-		exit(-1);
-	}
-	if (Vic2RegionsObj->getLeaves().size() < 1)
-	{
-		LOG(LogLevel::Error) << "Could not parse region.txt";
-		exit(-1);
-	}
-	initStateMap(Vic2RegionsObj);
-}
-
-void Vic2::stateMapper::initStateMap(std::shared_ptr<Object> obj)
+Vic2::stateMapper::stateMapper(std::shared_ptr<Object> obj)
 {
 	std::vector<std::shared_ptr<Object>> states = obj->getLeaves();
 
@@ -105,4 +77,34 @@ int Vic2::stateMapper::getStateIndex(int province)
 	{
 		return -1;
 	}
+}
+
+
+Vic2::stateMapperFile::stateMapperFile()
+{
+	LOG(LogLevel::Info) << "Parsing region structure";
+
+	std::string filename;
+	if (Utils::DoesFileExist("./blankMod/output/map/region.txt"))
+	{
+		filename = "./blankMod/output/map/region.txt";
+	}
+	else
+	{
+		filename = theConfiguration.getVic2Path() + "/map/region.txt";
+	}
+
+	std::shared_ptr<Object> Vic2RegionsObj = parser_8859_15::doParseFile(filename);
+	if (Vic2RegionsObj == NULL)
+	{
+		LOG(LogLevel::Error) << "Could not parse file " << filename;
+		exit(-1);
+	}
+	if (Vic2RegionsObj->getLeaves().size() < 1)
+	{
+		LOG(LogLevel::Error) << "Could not parse region.txt";
+		exit(-1);
+	}
+
+	theStateMapper = std::make_unique<stateMapper>(Vic2RegionsObj);
 }

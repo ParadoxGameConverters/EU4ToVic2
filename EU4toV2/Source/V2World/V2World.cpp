@@ -77,7 +77,8 @@ V2World::V2World(const EU4::world& sourceWorld)
 	isRandomWorld = sourceWorld.isRandomWorld();
 
 	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries);
-	theStateMapper = std::make_unique<Vic2::stateMapper>();
+	Vic2::stateMapperFile theStateMapperFile;
+	theStateMapper = theStateMapperFile.takeStateMapper();
 
 	LOG(LogLevel::Info) << "Converting world";
 	convertCountries(sourceWorld);
