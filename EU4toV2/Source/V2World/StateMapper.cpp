@@ -32,27 +32,24 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 Vic2::stateMapper::stateMapper(std::istream& theStream)
 {
-	int stateIndex = 0;
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this, &stateIndex](const std::string& unused, std::istream& theStream){
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::intList provinces(theStream);
 
 		std::vector<int> neighbors;
 		for (auto province: provinces.getInts())
 		{
 			neighbors.push_back(province);
-			stateIndexMap.insert(std::make_pair(province, stateIndex));
 		}
 
 		for (auto neighbor: neighbors)
 		{
 			stateProvincesMap.insert(std::make_pair(neighbor, neighbors));
 		}
-
-		stateIndex++;
 	});
 
 	parseStream(theStream);
 }
+
 
 std::vector<int> Vic2::stateMapper::getAllProvincesInState(int province)
 {
@@ -65,19 +62,6 @@ std::vector<int> Vic2::stateMapper::getAllProvincesInState(int province)
 	{
 		std::vector<int> empty;
 		return empty;
-	}
-}
-
-int Vic2::stateMapper::getStateIndex(int province)
-{
-	auto mapping = stateIndexMap.find(province);
-	if (mapping != stateIndexMap.end())
-	{
-		return mapping->second;
-	}
-	else
-	{
-		return -1;
 	}
 }
 

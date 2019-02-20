@@ -44,11 +44,9 @@ class stateMapper: commonItems::parser
 		stateMapper(std::istream& theStream);
 
 		std::vector<int> getAllProvincesInState(int province);
-		int getStateIndex(int province);
 
 	private:
 		std::map<int, std::vector<int>> stateProvincesMap;
-		std::map<int, int> stateIndexMap;
 };
 
 

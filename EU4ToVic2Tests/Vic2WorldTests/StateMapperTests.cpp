@@ -51,21 +51,3 @@ TEST(Vic2World_StateMapperTests, getAllProvincesForMultiProvinceState)
 
 	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 3);
 }
-
-
-TEST(Vic2World_StateMapperTests, getInvalidStateIndexForNonExistentState)
-{
-	std::stringstream input("");
-	Vic2::stateMapper theStateMapper(input);
-
-	ASSERT_EQ(theStateMapper.getStateIndex(1), -1);
-}
-
-
-TEST(Vic2World_StateMapperTests, getStateIndexForState)
-{
-	std::stringstream input("STATE_1 = { 1 }\nSTATE_2 = { 2 }");
-	Vic2::stateMapper theStateMapper(input);
-
-	ASSERT_EQ(theStateMapper.getStateIndex(2), 1);
-}

@@ -704,44 +704,18 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 			{
 				provinceBins[tag] = MTo1ProvinceComp();
 			}
-			if (((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")) && false && (owner != nullptr))
+			provinceBins[tag].provinces.push_back(province);
+			newProvinceTotalBaseTax += province->getBaseTax();
+			// I am the new owner if there is no current owner, or I have more provinces than the current owner,
+			// or I have the same number of provinces, but more population, than the current owner
+			if (
+				(oldOwner == nullptr) ||
+				(provinceBins[tag].provinces.size() > provinceBins[oldOwner->getTag()].provinces.size()) ||
+				(provinceBins[tag].provinces.size() == provinceBins[oldOwner->getTag()].provinces.size())
+				)
 			{
-				auto stateIndex = theStateMapper->getStateIndex(Vic2Province.first);
-				if (stateIndex == -1)
-				{
-					LOG(LogLevel::Warning) << "Could not find state index for province " << Vic2Province.first;
-					continue;
-				}
-				else
-				{
-					map<int, set<string>>::iterator colony = colonies.find(stateIndex);
-					if (colony == colonies.end())
-					{
-						set<string> countries;
-						countries.insert(owner->getTag());
-						colonies.insert(make_pair(stateIndex, countries));
-					}
-					else
-					{
-						colony->second.insert(owner->getTag());
-					}
-				}
-			}
-			else
-			{
-				provinceBins[tag].provinces.push_back(province);
-				newProvinceTotalBaseTax += province->getBaseTax();
-				// I am the new owner if there is no current owner, or I have more provinces than the current owner,
-				// or I have the same number of provinces, but more population, than the current owner
-				if (
-					(oldOwner == nullptr) ||
-					(provinceBins[tag].provinces.size() > provinceBins[oldOwner->getTag()].provinces.size()) ||
-					(provinceBins[tag].provinces.size() == provinceBins[oldOwner->getTag()].provinces.size())
-					)
-				{
-					oldOwner = owner;
-					oldProvince = province;
-				}
+				oldOwner = owner;
+				oldProvince = province;
 			}
 		}
 		if (oldOwner == nullptr)
