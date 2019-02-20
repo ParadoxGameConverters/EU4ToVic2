@@ -43,7 +43,7 @@ class stateMapper: commonItems::parser
 	public:
 		stateMapper(std::istream& theStream);
 
-		std::vector<int> getOtherProvincesInState(int province);
+		std::vector<int> getAllProvincesInState(int province);
 		int getStateIndex(int province);
 
 	private:

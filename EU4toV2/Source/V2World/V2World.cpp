@@ -1105,7 +1105,7 @@ void V2World::setupStates()
 
 		V2State* newState = new V2State(stateId, *iter);
 		stateId++;
-		vector<int> neighbors = theStateMapper->getOtherProvincesInState(provId);
+		vector<int> neighbors = theStateMapper->getAllProvincesInState(provId);
 
 		LOG(LogLevel::Debug) << "Neighbors size" << neighbors.size();
 

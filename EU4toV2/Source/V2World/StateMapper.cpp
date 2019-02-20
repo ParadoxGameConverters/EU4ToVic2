@@ -54,7 +54,7 @@ Vic2::stateMapper::stateMapper(std::istream& theStream)
 	parseStream(theStream);
 }
 
-std::vector<int> Vic2::stateMapper::getOtherProvincesInState(int province)
+std::vector<int> Vic2::stateMapper::getAllProvincesInState(int province)
 {
 	auto mapping = stateProvincesMap.find(province);
 	if (mapping != stateProvincesMap.end())

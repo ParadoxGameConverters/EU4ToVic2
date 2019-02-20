@@ -26,30 +26,30 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(Vic2World_StateMapperTests, getNoOtherProvincesForNonexistentState)
+TEST(Vic2World_StateMapperTests, getNoProvincesForNonexistentState)
 {
 	std::stringstream input("");
 	Vic2::stateMapper theStateMapper(input);
 
-	ASSERT_EQ(theStateMapper.getOtherProvincesInState(1).size(), 0);
+	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 0);
 }
 
 
-TEST(Vic2World_StateMapperTests, getNoOtherProvincesForOneProvinceState)
+TEST(Vic2World_StateMapperTests, getOnlySelfForOneProvinceState)
 {
 	std::stringstream input("STATE_1 = { 1 }");
 	Vic2::stateMapper theStateMapper(input);
 
-	ASSERT_EQ(theStateMapper.getOtherProvincesInState(1).size(), 1);
+	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 1);
 }
 
 
-TEST(Vic2World_StateMapperTests, getOtherProvincesForMultiProvinceState)
+TEST(Vic2World_StateMapperTests, getAllProvincesForMultiProvinceState)
 {
 	std::stringstream input("STATE_1 = { 1 2 3 }");
 	Vic2::stateMapper theStateMapper(input);
 
-	ASSERT_EQ(theStateMapper.getOtherProvincesInState(1).size(), 3);
+	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 3);
 }
 
 
