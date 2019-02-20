@@ -51,6 +51,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/EU4Province.h"
 #include "../EU4World/EU4Diplomacy.h"
 #include "BlockedTechSchools.h"
+#include "StateMapper.h"
 #include "V2Province.h"
 #include "V2State.h"
 #include "V2Relations.h"
@@ -77,9 +78,6 @@ V2World::V2World(const EU4::world& sourceWorld)
 	isRandomWorld = sourceWorld.isRandomWorld();
 
 	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries);
-	Vic2::stateMapperFile theStateMapperFile;
-	theStateMapper = theStateMapperFile.takeStateMapper();
-
 	LOG(LogLevel::Info) << "Converting world";
 	convertCountries(sourceWorld);
 	convertProvinces(sourceWorld);
@@ -1063,6 +1061,9 @@ void V2World::setupStates()
 		unassignedProvs.push_back(itr->second);
 	}
 	LOG(LogLevel::Debug) << "Unassigned Provs:\t" << unassignedProvs.size();
+
+	Vic2::stateMapperFile theStateMapperFile;
+	std::unique_ptr<Vic2::stateMapper> theStateMapper = theStateMapperFile.takeStateMapper();
 
 	list<V2Province*>::iterator iter;
 	while (unassignedProvs.size() > 0)

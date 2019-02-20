@@ -27,7 +27,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "V2Country.h"
-#include "StateMapper.h"
 #include "V2Diplomacy.h"
 #include "V2Factory.h"
 #include "V2Party.h"
@@ -114,9 +113,6 @@ class V2World
 		long totalWorldPopulation;
 		bool isRandomWorld;
 		int	techGroupAlgorithm;
-
-		std::unique_ptr<Vic2::stateMapper> theStateMapper;
-
 };
 
 
