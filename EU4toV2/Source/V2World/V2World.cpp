@@ -1079,7 +1079,7 @@ void V2World::setupStates()
 
 		V2State* newState = new V2State(stateId, *iter);
 		stateId++;
-		vector<int> neighbors = theStateMapper->getAllProvincesInState(provId);
+		auto neighbors = theStateMapper->getAllProvincesInState(provId);
 
 		LOG(LogLevel::Debug) << "Neighbors size" << neighbors.size();
 
@@ -1087,7 +1087,7 @@ void V2World::setupStates()
 		newState->setColonial(colonial);
 		iter = unassignedProvs.erase(iter);
 
-		for (vector<int>::iterator i = neighbors.begin(); i != neighbors.end(); i++)
+		for (auto i = neighbors.begin(); i != neighbors.end(); i++)
 		{
 			for (iter = unassignedProvs.begin(); iter != unassignedProvs.end(); iter++)
 			{

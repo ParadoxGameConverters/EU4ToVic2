@@ -33,17 +33,17 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 Vic2::stateMapper::stateMapper(std::istream& theStream)
 {
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& unused, std::istream& theStream){
-		commonItems::intList provinces(theStream);
+		commonItems::intList provinceList(theStream);
 
-		std::vector<int> neighbors;
-		for (auto province: provinces.getInts())
+		std::set<int> provinces;
+		for (auto province: provinceList.getInts())
 		{
-			neighbors.push_back(province);
+			provinces.insert(province);
 		}
 
-		for (auto neighbor: neighbors)
+		for (auto province: provinces)
 		{
-			stateProvincesMap.insert(std::make_pair(neighbor, neighbors));
+			stateProvincesMap.insert(std::make_pair(province, provinces));
 		}
 	});
 
@@ -51,7 +51,7 @@ Vic2::stateMapper::stateMapper(std::istream& theStream)
 }
 
 
-std::vector<int> Vic2::stateMapper::getAllProvincesInState(int province)
+std::set<int> Vic2::stateMapper::getAllProvincesInState(int province)
 {
 	auto mapping = stateProvincesMap.find(province);
 	if (mapping != stateProvincesMap.end())
@@ -60,7 +60,7 @@ std::vector<int> Vic2::stateMapper::getAllProvincesInState(int province)
 	}
 	else
 	{
-		std::vector<int> empty;
+		std::set<int> empty;
 		return empty;
 	}
 }

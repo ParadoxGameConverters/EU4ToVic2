@@ -29,7 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "newParser.h"
 #include <map>
 #include <memory>
-#include <vector>
+#include <set>
 
 
 
@@ -43,10 +43,10 @@ class stateMapper: commonItems::parser
 	public:
 		stateMapper(std::istream& theStream);
 
-		std::vector<int> getAllProvincesInState(int province);
+		std::set<int> getAllProvincesInState(int province);
 
 	private:
-		std::map<int, std::vector<int>> stateProvincesMap;
+		std::map<int, std::set<int>> stateProvincesMap;
 };
 
 
