@@ -43,7 +43,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/SlaveCultureMapper.h"
-#include "../Mappers/StateMapper.h"
 #include "../Configuration.h"
 #include "../EU4World/Continents.h"
 #include "../EU4World/World.h"
@@ -78,7 +77,7 @@ V2World::V2World(const EU4::world& sourceWorld)
 	isRandomWorld = sourceWorld.isRandomWorld();
 
 	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries);
-	theStateMapper = std::make_unique<stateMapper>();
+	theStateMapper = std::make_unique<Vic2::stateMapper>();
 
 	LOG(LogLevel::Info) << "Converting world";
 	convertCountries(sourceWorld);

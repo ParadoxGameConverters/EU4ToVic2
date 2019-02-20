@@ -37,6 +37,9 @@ class Object;
 
 
 
+namespace Vic2
+{
+
 class stateMapper
 {
 	public:
@@ -50,6 +53,8 @@ class stateMapper
 		map<int, vector<int>> stateProvincesMap;
 		map<int, int> stateIndexMap;
 };
+
+}
 
 
 

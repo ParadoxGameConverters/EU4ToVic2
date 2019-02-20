@@ -116,9 +116,6 @@
     <ClCompile Include="Source\Mappers\AdjacencyMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\StateMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\ReligionMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
@@ -218,6 +215,9 @@
       <Filter>Vic2 World</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\Vic2CultureUnionMapper.cpp">
+      <Filter>Vic2 World</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\StateMapper.cpp">
       <Filter>Vic2 World</Filter>
     </ClCompile>
   </ItemGroup>
@@ -333,9 +333,6 @@
     <ClInclude Include="Source\Mappers\AdjacencyMapper.h">
       <Filter>Mappers</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\StateMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\ReligionMapper.h">
       <Filter>Mappers</Filter>
     </ClInclude>
@@ -433,6 +430,9 @@
       <Filter>Vic2 World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\Vic2CultureUnionMapper.h">
+      <Filter>Vic2 World</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\StateMapper.h">
       <Filter>Vic2 World</Filter>
     </ClInclude>
   </ItemGroup>

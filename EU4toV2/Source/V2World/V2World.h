@@ -27,13 +27,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "V2Country.h"
+#include "StateMapper.h"
 #include "V2Diplomacy.h"
 #include "V2Factory.h"
 #include "V2Party.h"
 #include "V2Province.h"
 #include "../EU4World/EU4Army.h"
 #include "../EU4World/EU4Province.h"
-#include "../Mappers/StateMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -115,7 +115,7 @@ class V2World
 		bool isRandomWorld;
 		int	techGroupAlgorithm;
 
-		std::unique_ptr<stateMapper> theStateMapper;
+		std::unique_ptr<Vic2::stateMapper> theStateMapper;
 
 };
 

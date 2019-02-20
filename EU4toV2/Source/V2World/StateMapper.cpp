@@ -30,7 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-stateMapper::stateMapper()
+Vic2::stateMapper::stateMapper()
 {
 	LOG(LogLevel::Info) << "Parsing region structure";
 
@@ -58,7 +58,7 @@ stateMapper::stateMapper()
 	initStateMap(Vic2RegionsObj);
 }
 
-void stateMapper::initStateMap(shared_ptr<Object> obj)
+void Vic2::stateMapper::initStateMap(shared_ptr<Object> obj)
 {
 	vector<shared_ptr<Object>> states = obj->getLeaves();
 
@@ -80,7 +80,7 @@ void stateMapper::initStateMap(shared_ptr<Object> obj)
 	}
 }
 
-vector<int> stateMapper::getOtherProvincesInState(int province)
+vector<int> Vic2::stateMapper::getOtherProvincesInState(int province)
 {
 	auto mapping = stateProvincesMap.find(province);
 	if (mapping != stateProvincesMap.end())
@@ -94,7 +94,7 @@ vector<int> stateMapper::getOtherProvincesInState(int province)
 	}
 }
 
-int stateMapper::getStateIndex(int province)
+int Vic2::stateMapper::getStateIndex(int province)
 {
 	auto mapping = stateIndexMap.find(province);
 	if (mapping != stateIndexMap.end())
