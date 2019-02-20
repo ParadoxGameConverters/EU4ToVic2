@@ -42,10 +42,17 @@ class stateMapper: commonItems::parser
 {
 	public:
 		stateMapper(std::istream& theStream);
+		~stateMapper() = default;
+		stateMapper(const stateMapper&) = default;
+		stateMapper(stateMapper&&) = default;
+		stateMapper& operator=(const stateMapper&) = default;
+		stateMapper& operator=(stateMapper&&) = default;
 
 		std::set<int> getAllProvincesInState(int province);
 
 	private:
+		stateMapper() = delete;
+
 		std::map<int, std::set<int>> stateProvincesMap;
 };
 
