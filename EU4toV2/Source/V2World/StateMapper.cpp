@@ -34,7 +34,7 @@ Vic2::stateMapper::stateMapper()
 {
 	LOG(LogLevel::Info) << "Parsing region structure";
 
-	string filename;
+	std::string filename;
 	if (Utils::DoesFileExist("./blankMod/output/map/region.txt"))
 	{
 		filename = "./blankMod/output/map/region.txt";
@@ -44,7 +44,7 @@ Vic2::stateMapper::stateMapper()
 		filename = theConfiguration.getVic2Path() + "/map/region.txt";
 	}
 
-	shared_ptr<Object> Vic2RegionsObj = parser_8859_15::doParseFile(filename);
+	std::shared_ptr<Object> Vic2RegionsObj = parser_8859_15::doParseFile(filename);
 	if (Vic2RegionsObj == NULL)
 	{
 		LOG(LogLevel::Error) << "Could not parse file " << filename;
@@ -58,29 +58,29 @@ Vic2::stateMapper::stateMapper()
 	initStateMap(Vic2RegionsObj);
 }
 
-void Vic2::stateMapper::initStateMap(shared_ptr<Object> obj)
+void Vic2::stateMapper::initStateMap(std::shared_ptr<Object> obj)
 {
-	vector<shared_ptr<Object>> states = obj->getLeaves();
+	std::vector<std::shared_ptr<Object>> states = obj->getLeaves();
 
 	for (unsigned int stateIndex = 0; stateIndex < states.size(); stateIndex++)
 	{
-		vector<string> provinces = states[stateIndex]->getTokens();
-		vector<int> neighbors;
+		std::vector<std::string> provinces = states[stateIndex]->getTokens();
+		std::vector<int> neighbors;
 
 		for (auto province : provinces)
 		{
-			neighbors.push_back(stoi(province));
-			stateIndexMap.insert(make_pair(stoi(province), stateIndex));
+			neighbors.push_back(std::stoi(province));
+			stateIndexMap.insert(std::make_pair(std::stoi(province), stateIndex));
 		}
 
 		for (auto neighbor : neighbors)
 		{
-			stateProvincesMap.insert(make_pair(neighbor, neighbors));
+			stateProvincesMap.insert(std::make_pair(neighbor, neighbors));
 		}
 	}
 }
 
-vector<int> Vic2::stateMapper::getOtherProvincesInState(int province)
+std::vector<int> Vic2::stateMapper::getOtherProvincesInState(int province)
 {
 	auto mapping = stateProvincesMap.find(province);
 	if (mapping != stateProvincesMap.end())
@@ -89,7 +89,7 @@ vector<int> Vic2::stateMapper::getOtherProvincesInState(int province)
 	}
 	else
 	{
-		vector<int> empty;
+		std::vector<int> empty;
 		return empty;
 	}
 }

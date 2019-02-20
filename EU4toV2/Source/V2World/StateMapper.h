@@ -29,7 +29,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <map>
 #include <memory>
 #include <vector>
-using namespace std;
 
 
 
@@ -44,14 +43,14 @@ class stateMapper
 {
 	public:
 		stateMapper();
-		vector<int> getOtherProvincesInState(int province);
+		std::vector<int> getOtherProvincesInState(int province);
 		int getStateIndex(int province);
 
 	private:
-		void initStateMap(shared_ptr<Object> obj);
+		void initStateMap(std::shared_ptr<Object> obj);
 
-		map<int, vector<int>> stateProvincesMap;
-		map<int, int> stateIndexMap;
+		std::map<int, std::vector<int>> stateProvincesMap;
+		std::map<int, int> stateIndexMap;
 };
 
 }
