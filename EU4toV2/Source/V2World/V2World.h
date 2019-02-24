@@ -113,7 +113,6 @@ class V2World
 		long totalWorldPopulation;
 		bool isRandomWorld;
 		int	techGroupAlgorithm;
-
 };
 
 
