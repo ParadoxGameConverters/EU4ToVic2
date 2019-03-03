@@ -43,7 +43,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/SlaveCultureMapper.h"
-#include "../Mappers/StateMapper.h"
 #include "../Configuration.h"
 #include "../EU4World/Continents.h"
 #include "../EU4World/World.h"
@@ -52,6 +51,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/EU4Province.h"
 #include "../EU4World/EU4Diplomacy.h"
 #include "BlockedTechSchools.h"
+#include "StateMapper.h"
 #include "V2Province.h"
 #include "V2State.h"
 #include "V2Relations.h"
@@ -78,7 +78,6 @@ V2World::V2World(const EU4::world& sourceWorld)
 	isRandomWorld = sourceWorld.isRandomWorld();
 
 	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries);
-
 	LOG(LogLevel::Info) << "Converting world";
 	convertCountries(sourceWorld);
 	convertProvinces(sourceWorld);
@@ -703,44 +702,18 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 			{
 				provinceBins[tag] = MTo1ProvinceComp();
 			}
-			if (((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")) && false && (owner != nullptr))
+			provinceBins[tag].provinces.push_back(province);
+			newProvinceTotalBaseTax += province->getBaseTax();
+			// I am the new owner if there is no current owner, or I have more provinces than the current owner,
+			// or I have the same number of provinces, but more population, than the current owner
+			if (
+				(oldOwner == nullptr) ||
+				(provinceBins[tag].provinces.size() > provinceBins[oldOwner->getTag()].provinces.size()) ||
+				(provinceBins[tag].provinces.size() == provinceBins[oldOwner->getTag()].provinces.size())
+				)
 			{
-				auto stateIndex = stateMapper::getStateIndex(Vic2Province.first);
-				if (stateIndex == -1)
-				{
-					LOG(LogLevel::Warning) << "Could not find state index for province " << Vic2Province.first;
-					continue;
-				}
-				else
-				{
-					map<int, set<string>>::iterator colony = colonies.find(stateIndex);
-					if (colony == colonies.end())
-					{
-						set<string> countries;
-						countries.insert(owner->getTag());
-						colonies.insert(make_pair(stateIndex, countries));
-					}
-					else
-					{
-						colony->second.insert(owner->getTag());
-					}
-				}
-			}
-			else
-			{
-				provinceBins[tag].provinces.push_back(province);
-				newProvinceTotalBaseTax += province->getBaseTax();
-				// I am the new owner if there is no current owner, or I have more provinces than the current owner,
-				// or I have the same number of provinces, but more population, than the current owner
-				if (
-					(oldOwner == nullptr) ||
-					(provinceBins[tag].provinces.size() > provinceBins[oldOwner->getTag()].provinces.size()) ||
-					(provinceBins[tag].provinces.size() == provinceBins[oldOwner->getTag()].provinces.size())
-					)
-				{
-					oldOwner = owner;
-					oldProvince = province;
-				}
+				oldOwner = owner;
+				oldProvince = province;
 			}
 		}
 		if (oldOwner == nullptr)
@@ -1089,6 +1062,9 @@ void V2World::setupStates()
 	}
 	LOG(LogLevel::Debug) << "Unassigned Provs:\t" << unassignedProvs.size();
 
+	Vic2::stateMapperFile theStateMapperFile;
+	std::unique_ptr<Vic2::stateMapper> theStateMapper = theStateMapperFile.takeStateMapper();
+
 	list<V2Province*>::iterator iter;
 	while (unassignedProvs.size() > 0)
 	{
@@ -1104,7 +1080,7 @@ void V2World::setupStates()
 
 		V2State* newState = new V2State(stateId, *iter);
 		stateId++;
-		vector<int> neighbors = stateMapper::getOtherProvincesInState(provId);
+		auto neighbors = theStateMapper->getAllProvincesInState(provId);
 
 		LOG(LogLevel::Debug) << "Neighbors size" << neighbors.size();
 
@@ -1112,7 +1088,7 @@ void V2World::setupStates()
 		newState->setColonial(colonial);
 		iter = unassignedProvs.erase(iter);
 
-		for (vector<int>::iterator i = neighbors.begin(); i != neighbors.end(); i++)
+		for (auto i = neighbors.begin(); i != neighbors.end(); i++)
 		{
 			for (iter = unassignedProvs.begin(); iter != unassignedProvs.end(); iter++)
 			{

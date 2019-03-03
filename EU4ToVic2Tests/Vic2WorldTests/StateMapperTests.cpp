@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,56 +21,33 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef STATE_MAPPER_H
-#define STATE_MAPPER_H
+#include "gtest/gtest.h"
+#include "../EU4toV2/Source/V2World/StateMapper.h"
 
 
 
-#include <map>
-#include <memory>
-#include <vector>
-using namespace std;
-
-
-
-class Object;
-
-
-
-class stateMapper
+TEST(Vic2World_StateMapperTests, getNoProvincesForNonexistentState)
 {
-	public:
-		static vector<int> getOtherProvincesInState(int province)
-		{
-			return getInstance()->GetOtherProvincesInState(province);
-		}
+	std::stringstream input("");
+	Vic2::stateMapper theStateMapper(input);
 
-		static int getStateIndex(int province)
-		{
-			return getInstance()->GetStateIndex(province);
-		}
-
-	private:
-		static stateMapper* instance;
-		static stateMapper* getInstance()
-		{
-			if (instance == NULL)
-			{
-				instance = new stateMapper();
-			}
-			return instance;
-		}
-
-		stateMapper();
-		void initStateMap(shared_ptr<Object> obj);
-
-		vector<int> GetOtherProvincesInState(int province);
-		int GetStateIndex(int province);
-
-		map<int, vector<int>> stateProvincesMap;
-		map<int, int> stateIndexMap;
-};
+	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 0);
+}
 
 
+TEST(Vic2World_StateMapperTests, getOnlySelfForOneProvinceState)
+{
+	std::stringstream input("STATE_1 = { 1 }");
+	Vic2::stateMapper theStateMapper(input);
 
-#endif // STATE_MAPPER_H
+	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 1);
+}
+
+
+TEST(Vic2World_StateMapperTests, getAllProvincesForMultiProvinceState)
+{
+	std::stringstream input("STATE_1 = { 1 2 3 }");
+	Vic2::stateMapper theStateMapper(input);
+
+	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 3);
+}

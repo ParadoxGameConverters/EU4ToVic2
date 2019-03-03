@@ -166,6 +166,7 @@
     <ClCompile Include="..\EU4toV2\Source\Configuration.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\BlockedTechSchools.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\V2World\StateMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\V2TechSchools.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnionMapper.cpp" />
@@ -175,6 +176,7 @@
     <ClCompile Include="ConfigurationTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp" />
     <ClCompile Include="Vic2WorldTests\BlockedTechSchoolsTests.cpp" />
+    <ClCompile Include="Vic2WorldTests\StateMapperTests.cpp" />
     <ClCompile Include="Vic2WorldTests\Vic2CultureUnionMapperTests.cpp" />
     <ClCompile Include="Vic2WorldTests\Vic2CultureUnionTests.cpp" />
     <ClCompile Include="Vic2WorldTests\Vic2TechSchoolsTests.cpp" />
