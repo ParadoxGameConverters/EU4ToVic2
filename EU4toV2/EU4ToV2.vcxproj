@@ -74,7 +74,7 @@
     <LibraryWPath>$(LibraryWPath)</LibraryWPath>
     <SourcePath>$(SourcePath)</SourcePath>
     <ExcludePath>$(ExcludePath)</ExcludePath>
-    <OutDir>$(SolutionDir)$(Configuration)\EU4ToVic2\</OutDir>
+    <OutDir>$(ProjectDir)\..\$(Configuration)\EU4ToVic2\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-NoCopies|Win32'">
     <LinkIncremental>false</LinkIncremental>
