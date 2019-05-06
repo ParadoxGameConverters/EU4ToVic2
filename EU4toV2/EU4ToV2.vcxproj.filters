@@ -220,6 +220,9 @@
     <ClCompile Include="Source\V2World\Vic2CultureUnionMapper.cpp">
       <Filter>Vic2 World</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Regions\Area.cpp">
+      <Filter>EU4 World\Regions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -435,6 +438,9 @@
     <ClInclude Include="Source\V2World\Vic2CultureUnionMapper.h">
       <Filter>Vic2 World</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\Regions\Area.h">
+      <Filter>EU4 World\Regions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4 World">
@@ -448,6 +454,9 @@
     </Filter>
     <Filter Include="Mappers">
       <UniqueIdentifier>{795cd4fd-5702-44e4-a851-9860b3b70989}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4 World\Regions">
+      <UniqueIdentifier>{cb7506c6-506b-4306-84c6-1ff4c49b12e8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

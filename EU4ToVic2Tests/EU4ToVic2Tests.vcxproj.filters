@@ -55,6 +55,18 @@
     <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnionMapper.cpp">
       <Filter>EU4ToVic2Files\Vic2World</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Area.cpp">
+      <Filter>EU4ToVic2Files\EU4World\Regions</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common_items\Color.cpp">
+      <Filter>EU4ToVic2Files\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common_items\Object.cpp">
+      <Filter>EU4ToVic2Files\commonItems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4ToVic2Files">
@@ -74,6 +86,9 @@
     </Filter>
     <Filter Include="EU4WorldTests">
       <UniqueIdentifier>{983179b3-715e-4852-b331-44400fd4423b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4ToVic2Files\EU4World\Regions">
+      <UniqueIdentifier>{e7ec9e4a-6464-4916-a581-a50483fe4374}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

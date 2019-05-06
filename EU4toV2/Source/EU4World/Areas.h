@@ -26,6 +26,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "Regions/Area.h"
 #include "Color.h"
 #include "newParser.h"
 #include <istream>
@@ -37,18 +38,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 namespace EU4
 {
-	class area: commonItems::parser
-	{
-		public:
-			area(std::istream& theStream);
-
-			const std::set<int> getProvinces() const { return provinces; }
-
-		private:
-			std::set<int> provinces;
-			commonItems::Color color;
-	};
-
 	class areas: commonItems::parser
 	{
 		public:

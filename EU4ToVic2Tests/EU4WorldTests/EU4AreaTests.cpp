@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,36 +21,40 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include "Areas.h"
-#include "Log.h"
-#include <fstream>
-#include <functional>
+#include "gtest/gtest.h"
+#include "../EU4toV2/Source/EU4World/Regions/Area.h"
+#include <sstream>
 
 
 
-EU4::areas::areas(const std::string& filename):
-	theAreas()
+TEST(EU4World_EU4AreaTests, emptyAreaHasNoProvinces)
 {
-	registerKeyword(std::regex("[\\w_]+"), [this](const std::string& areaName, std::istream& areasFile)
-		{
-			area newArea(areasFile);
-			theAreas.insert(make_pair(areaName, newArea));
-		}
-	);
+	std::stringstream input;
+	input << "empty_area = {}";
 
-	parseFile(filename);
+	EU4::area theArea(input);
+	ASSERT_EQ(theArea.getProvinces().size(), 0);
 }
 
 
-const std::set<int> EU4::areas::getProvincesInArea(const std::string& area) const
+TEST(EU4World_EU4AreaTests, provinceCanBeRead)
 {
-	auto areaItr(theAreas.find(area));
-	if (areaItr != theAreas.end())
-	{
-		return areaItr->second.getProvinces();
-	}
-	else
-	{
-		return {};
-	}
+	std::stringstream input;
+	input << "non_empty_area = { 56 }";
+
+	EU4::area theArea(input);
+	ASSERT_EQ(theArea.getProvinces().count(56), 1);
+}
+
+
+TEST(EU4World_EU4AreaTests, colorAreaWorks)
+{
+	std::stringstream input;
+	input << "empty_area = {\n";
+	input << "\tcolor = { 1 2 3 }\n";
+	input << "\t56\n";
+	input << "}";
+
+	EU4::area theArea(input);
+	ASSERT_EQ(theArea.getProvinces().count(3), 0);
 }

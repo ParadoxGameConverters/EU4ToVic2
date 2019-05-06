@@ -200,6 +200,7 @@
     <ClCompile Include="Source\EU4World\ID.cpp" />
     <ClCompile Include="Source\EU4World\Region.cpp" />
     <ClCompile Include="Source\EU4World\Regions.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\Area.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
     <ClCompile Include="Source\FlagUtils.cpp" />
     <ClCompile Include="Source\main.cpp" />
@@ -277,6 +278,7 @@
     <ClInclude Include="Source\EU4World\ID.h" />
     <ClInclude Include="Source\EU4World\Region.h" />
     <ClInclude Include="Source\EU4World\Regions.h" />
+    <ClInclude Include="Source\EU4World\Regions\Area.h" />
     <ClInclude Include="Source\EU4World\World.h" />
     <ClInclude Include="Source\FlagUtils.h" />
     <ClInclude Include="Source\Mappers\AdjacencyMapper.h" />
