@@ -918,7 +918,7 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 				{
 					if (itr2->country2 == country2->second->getSourceCountry()->getTag())
 					{
-						itr2->country2 == country1->second->getSourceCountry()->getTag();
+						itr2->country2 = country1->second->getSourceCountry()->getTag();
 					}
 				}
 			}
