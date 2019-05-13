@@ -376,7 +376,7 @@ BEN 		="countries/Benin.txt"
 KON 		="countries/Kongo.txt"
 MLI 		="countries/Mali.txt"
 NUB 		="countries/Funj.txt"
-SNG 		="countries/Songhai.txt"
+SGH 		="countries/Songhai.txt"
 SWA		="countries/Swahili.txt"
 ZIM 		="countries/Mutapa.txt"
 ADA 		="countries/Adal.txt"
@@ -441,7 +441,7 @@ DAH		= "countries/Dahomey.txt"
 DAR		= "countries/Darfur.txt"
 HAR		= "countries/Harar.txt"
 KNG		= "countries/Kong.txt"
-WRS		= "countries/Warsangali.txt"
+WRL		= "countries/Warsangali.txt"
 
 # France
 ALE		="countries/Alencon.txt"##
@@ -481,7 +481,7 @@ FRI		="countries/Friesland.txt"##
 GLR		="countries/Gelre.txt"##
 HAT		="countries/Hainaut.txt"##
 HLL		="countries/Holland.txt"##
-LIE		="countries/Liege.txt"##
+LIG		="countries/Liege.txt"##
 UTR		="countries/Utrecht.txt"##
 
 # Scandinavia
@@ -530,7 +530,7 @@ YAR		="countries/Yaroslavl.txt"##
 ZAZ		="countries/Zaporozhie.txt"##
 NOG		="countries/Nogai.txt"##
 SIH		="countries/Sibir.txt"##
-SMO		="countries/Smolensk.txt"##
+SMK		="countries/Smolensk.txt"##
 PLT		="countries/Polotsk.txt"##
 MUR		="countries/Murom.txt"##
 NZH		="countries/NizhnyNovgorod.txt"
@@ -848,6 +848,35 @@ DUK		= "countries/Duckburg.txt"
 DRK		= "countries/Akavir.txt"
 ELE		= "countries/Eleph.txt"
 HEG		= "countries/Mobian.txt"
+
+#Others - 1.28bis additions
+ABK		= "countries/Abkhazia.txt"
+ACA		= "countries/Acadia.txt"
+ADO		= "countries/Andorra.txt"
+ATR		= "countries/Asturias.txt"
+BKF		= "countries/Burkina Faso.txt"
+CHY		= "countries/Chechnya.txt"
+FRO		= "countries/Faroe.txt"
+IMG		= "countries/Inner Mongolia.txt"
+IZH		= "countries/Ingria.txt"
+LIE		= "countries/Liechtenstein.txt"
+MDV		= "countries/Moldova.txt"
+MML		= "countries/Memelland.txt"
+MNC		= "countries/Monaco.txt"
+MSK		= "countries/Mosquito Coast.txt"
+NCT		= "countries/Neuchatel.txt"
+PPG		= "countries/Papua New Guinea.txt"
+SAA		= "countries/Saar.txt"
+SAM		= "countries/Samos.txt"
+SGP		= "countries/Singapore.txt"
+SMO		= "countries/Samoa.txt"
+SMR		= "countries/San Marino.txt"
+SDT		= "countries/Sudetenland.txt"
+TMR		= "countries/Timor.txt"
+TST		= "countries/South Tirol.txt"
+VTU		= "countries/Vanuatu.txt"
+WSF		= "countries/Zapadoslavia.txt"
+ZBW		= "countries/Zimbabwe.txt"
 
 ##HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions

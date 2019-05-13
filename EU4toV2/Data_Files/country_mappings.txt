@@ -374,7 +374,7 @@ link = { EU4 = k_spanish_galicia Vic2 = GLC } # Galicia
 link = { EU4 = ADU Vic2 = ADU } # Andalusia
 link = { EU4 = k_andalusia Vic2 = ADU } # Andalusia
 #link = { EU4 = VAL Vic2 = XXX } # Valencia => d_valencia
-#link = { EU4 = ASU Vic2 = XXX } # Asturias => k_asturias
+link = { EU4 = ASU Vic2 = ATR } # Asturias
 #link = { EU4 = MJO Vic2 = XXX } # Majorca => c_mallorca
 
 #Italy
@@ -442,8 +442,8 @@ link = { EU4 = HAI Vic2 = HAT } # Hainaut
 link = { EU4 = c_hainaut Vic2 = HAT } # Hainaut
 link = { EU4 = HOL Vic2 = HLL } # Holland
 link = { EU4 = d_holland Vic2 = HLL } # Holland
-link = { EU4 = LIE Vic2 = LIE } # Liege
-link = { EU4 = c_liege Vic2 = LIE } # Liege
+link = { EU4 = LIE Vic2 = LIG } # Liege
+link = { EU4 = c_liege Vic2 = LIG } # Liege
 link = { EU4 = LUX Vic2 = LUX } # Luxembourg
 link = { EU4 = d_luxembourg Vic2 = LUX } # Luxembourg
 link = { EU4 = NED Vic2 = NET } # Netherlands
@@ -704,7 +704,7 @@ link = { EU4 = MED Vic2 = MED } # Medri Bahri
 link = { EU4 = MJE Vic2 = MAJ } # Majeerteen
 link = { EU4 = MRE Vic2 = MRE } # Marehan
 link = { EU4 = PTE Vic2 = PTE } # Pate
-link = { EU4 = WAR Vic2 = WRS } # Warsangali
+link = { EU4 = WAR Vic2 = WRL } # Warsangali
 #link = { EU4 = BTI Vic2 = XXX } # Semien => d_semien
 #link = { EU4 = BEJ Vic2 = XXX } # Beja => d_beja
 link = { EU4 = JIM Vic2 = JIM } # Jima
@@ -1040,8 +1040,8 @@ link = { EU4 = BAR Vic2 = BAR } # Bar
 link = { EU4 = HSA Vic2 = LUB } # Lubeck
 link = { EU4 = c_lubeck Vic2 = LUB } # Lubeck
 link = { EU4 = k_hansa Vic2 = LUB } # Hansa => Lubeck
-link = { EU4 = SMO Vic2 = SMO } # Smolensk
-link = { EU4 = d_smolensk Vic2 = SMO } # Smolensk
+link = { EU4 = SMO Vic2 = SMK } # Smolensk
+link = { EU4 = d_smolensk Vic2 = SMK } # Smolensk
 link = { EU4 = NZH Vic2 = NZH } # Nizhny Novgorod
 link = { EU4 = c_nizhny_novgorod Vic2 = NZH } # Nizhny Novgorod
 link = { EU4 = KOJ Vic2 = JER } # Jerusalem
@@ -1056,7 +1056,7 @@ link = { EU4 = BLA Vic2 = BLA } # Blackfoot
 link = { EU4 = CAD Vic2 = CAD } # Caddo
 link = { EU4 = CHI Vic2 = CHN } # Chickasaw
 link = { EU4 = CHO Vic2 = CCW } # Choctaw
-link = { EU4 = CHY Vic2 = CHY } # Cheyenne
+link = { EU4 = CHY Vic2 = CHE } # Cheyenne
 link = { EU4 = COM Vic2 = COM } # Comanche
 link = { EU4 = FOX Vic2 = FOX } # Fox
 link = { EU4 = ILL Vic2 = ILL } # Illinewek
@@ -1377,7 +1377,7 @@ link = { EU4 = HKW Vic2 = HSK } #Hosokawa
 link = { EU4 = RHU Vic2 = HUN } #RoyalHungary
 link = { EU4 = HYD Vic2 = HYD } #Hyderabad
 link = { EU4 = ILN Vic2 = ILL } #Illinewek
-link = { EU4 = IGW Vic2 = IMG } #Imagawa
+link = { EU4 = IGW Vic2 = IGW } #Imagawa
 link = { EU4 = CEL Vic2 = IRE } #CelticEmpire
 link = { EU4 = JAU Vic2 = JAI } #Jaipur
 link = { EU4 = JAF Vic2 = JFN } #Jaffna

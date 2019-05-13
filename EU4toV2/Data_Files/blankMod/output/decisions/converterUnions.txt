@@ -1,4 +1,31 @@
 political_decisions = {
+	nogovernment = { #Fallback for "no gov converted, whoopsie"
+		potential = {
+			NOT = {
+				government = proletarian_dictatorship
+				government = presidential_dictatorship
+				government = bourgeois_dictatorship
+				government = fascist_dictatorship
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+				government = democracy
+				government = theocracy
+			}
+		}	
+		allow = {
+			always = yes
+		}
+		
+		effect = {
+			government = presidential_dictatorship
+			election = yes
+			ruling_party_ideology = reactionary
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	centralize_hre = {
 		news = yes
 		news_desc_long = "hre_NEWS_LONG"
@@ -228,7 +255,7 @@ political_decisions = {
 				}
 				set_country_flag = precolonial
 			}
-			MTC = { set_country_flag = precolonial } # Métis Confederacy
+			MTC = { set_country_flag = precolonial } # MÃ©tis Confederacy
 			#Countries not Vanilla in EU4 or Vic2
 			any_country = { #Trapalandia
 				limit = {
@@ -906,7 +933,7 @@ political_decisions = {
 				civilized = yes
 				capital = 425
 			}
-			any_country = { #Läßinia
+			any_country = { #LÃ¤ÃŸinia
 				limit = {
 					tag = AUR
 					NOT = { exists = AUR }
@@ -2111,7 +2138,7 @@ political_decisions = {
 				civilized = yes
 				capital = 1955
 			}
-			any_country = { #São Tomé
+			any_country = { #SÃ£o TomÃ©
 				limit = {
 					tag = SAO
 					NOT = { exists = SAO }
@@ -2229,7 +2256,7 @@ political_decisions = {
 				civilized = yes
 				capital = 2219
 			}
-			any_country = { #Curaçao
+			any_country = { #CuraÃ§ao
 				limit = {
 					tag = CUR
 					NOT = { exists = CUR }
@@ -3073,6 +3100,329 @@ political_decisions = {
 				civilized = yes
 				capital = 415
 			}
+		any_country = { # Abkhazia 
+				limit = {
+					tag = ABK 
+					NOT = { exists = ABK   }
+				}
+				primary_culture = georgian 
+				religion = orthodox 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 1095 
+			}
+
+		any_country = { # Acadia 
+				limit = {
+					tag = ACA 
+					NOT = { exists = ACA   }
+				}
+				primary_culture = french_canadian 
+				religion = catholic 
+				government = democracy 
+				civilized = yes
+				capital = 71 
+			}
+
+		any_country = { # Andorra 
+				limit = {
+					tag = ADO 
+					NOT = { exists = ADO   }
+				}
+				primary_culture = catalan 
+				religion = catholic 
+				government = theocracy 
+				civilized = yes
+				capital = 1 
+			}
+
+		any_country = { # Asturias 
+				limit = {
+					tag = ATR 
+					NOT = { exists = ATR   }
+				}
+				primary_culture = spanish 
+				religion = catholic 
+				government = hms_government 
+				civilized = yes
+				capital = 475 
+			}
+
+		any_country = { # Burkina Faso 
+				limit = {
+					tag = BKF 
+					NOT = { exists = BKF   }
+				}
+				primary_culture = mossi 
+				religion = catholic 
+				government = democracy 
+				civilized = yes
+				capital = 1901 
+			}
+
+		any_country = { # Chechnya 
+				limit = {
+					tag = CHY 
+					NOT = { exists = CHY   }
+				}
+				primary_culture = north_caucasian 
+				religion = orthodox 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 1055 
+			}
+
+		any_country = { # Faroe 
+				limit = {
+					tag = FRO 
+					NOT = { exists = FRO   }
+				}
+				primary_culture = danish 
+				religion = protestant 
+				government = democracy 
+				civilized = yes
+				capital = 253 
+			}
+
+		any_country = { # Inner Mongolia 
+				limit = {
+					tag = IMG 
+					NOT = { exists = IMG   }
+				}
+				primary_culture = mongol 
+				religion = gelugpa 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 1532 
+			}
+
+		any_country = { # Ingria 
+				limit = {
+					tag = IZH 
+					NOT = { exists = IZH   }
+				}
+				primary_culture = estonian 
+				religion = orthodox 
+				government = democracy 
+				civilized = yes
+				capital = 994 
+			}
+
+		any_country = { # Liechtenstein 
+				limit = {
+					tag = LIE 
+					NOT = { exists = LIE   }
+				}
+				primary_culture = swiss 
+				religion = catholic 
+				government = hms_government 
+				civilized = yes
+				capital = 1 
+			}
+
+		any_country = { # Moldova 
+				limit = {
+					tag = MDV 
+					NOT = { exists = MDV   }
+				}
+				primary_culture = romanian 
+				religion = orthodox 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 676 
+			}
+
+		any_country = { # Memelland 
+				limit = {
+					tag = MML 
+					NOT = { exists = MML   }
+				}
+				primary_culture = north_german 
+				religion = protestant 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 698 
+			}
+
+		any_country = { # Monaco 
+				limit = {
+					tag = MNC 
+					NOT = { exists = MNC   }
+				}
+				primary_culture = french 
+				religion = catholic 
+				government = hms_government 
+				civilized = yes
+				capital = 1 
+			}
+
+		any_country = { # Mosquito Coast 
+				limit = {
+					tag = MSK 
+					NOT = { exists = MSK   }
+				}
+				primary_culture = texan 
+				religion = catholic 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 2200 
+			}
+
+		any_country = { # NeuchÃ¢tel 
+				limit = {
+					tag = NCT 
+					NOT = { exists = NCT   }
+				}
+				primary_culture = swiss 
+				religion = catholic 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 608 
+			}
+
+		any_country = { # Papua New Guinea 
+				limit = {
+					tag = PPG 
+					NOT = { exists = PPG   }
+				}
+				primary_culture = melanesian 
+				religion = protestant 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 2528 
+			}
+
+		any_country = { # Saar 
+				limit = {
+					tag = SAA 
+					NOT = { exists = SAA   }
+				}
+				primary_culture = north_german 
+				religion = protestant 
+				government = democracy 
+				civilized = yes
+				capital = 573 
+			}
+
+		any_country = { # Samos 
+				limit = {
+					tag = SAM 
+					NOT = { exists = SAM   }
+				}
+				primary_culture = greek 
+				religion = orthodox 
+				government = hms_government 
+				civilized = yes
+				capital = 843 
+			}
+
+		any_country = { # Singapore 
+				limit = {
+					tag = SGP 
+					NOT = { exists = SGP   }
+				}
+				primary_culture = malay 
+				religion = gelugpa 
+				government = democracy 
+				civilized = yes
+				capital = 1384 
+			}
+
+		any_country = { # Samoa 
+				limit = {
+					tag = SMO 
+					NOT = { exists = SMO   }
+				}
+				primary_culture = melanesian 
+				religion = protestant 
+				government = democracy 
+				civilized = yes
+				capital = 2543 
+			}
+
+		any_country = { # San Marino 
+				limit = {
+					tag = SMR 
+					NOT = { exists = SMR   }
+				}
+				primary_culture = north_italian 
+				religion = catholic 
+				government = democracy 
+				civilized = yes
+				capital = 1 
+			}
+
+		any_country = { # Sudetenland 
+				limit = {
+					tag = SDT 
+					NOT = { exists = SDT   }
+				}
+				primary_culture = north_german 
+				religion = catholic 
+				government = fascist_dictatorship 
+				civilized = yes
+				capital = 629 
+			}
+
+		any_country = { # Timor 
+				limit = {
+					tag = TMR 
+					NOT = { exists = TMR   }
+				}
+				primary_culture = javan 
+				religion = catholic 
+				government = democracy 
+				civilized = yes
+				capital = 1446 
+			}
+
+		any_country = { # South Tirol 
+				limit = {
+					tag = TST 
+					NOT = { exists = TST   }
+				}
+				primary_culture = south_german 
+				religion = catholic 
+				government = democracy 
+				civilized = yes
+				capital = 735 
+			}
+
+		any_country = { # Vanuatu 
+				limit = {
+					tag = VTU 
+					NOT = { exists = VTU   }
+				}
+				primary_culture = melanesian 
+				religion = protestant 
+				government = democracy 
+				civilized = yes
+				capital = 2535 
+			}
+
+		any_country = { # Zapadoslavia 
+				limit = {
+					tag = WSF 
+					NOT = { exists = WSF   }
+				}
+				primary_culture = polish 
+				religion = catholic 
+				government = absolute_monarchy 
+				civilized = yes
+				capital = 706 
+			}
+
+		any_country = { # Zimbabwe 
+				limit = {
+					tag = ZBW 
+					NOT = { exists = ZBW   }
+				}
+				primary_culture = chewa 
+				religion = protestant 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 2068 
+			}
 			#Cores for regional countries
 			TUR_806 = { add_core = MCD } #FYR Macedonia
 			TUR_788 = { add_core = BOS } #Bosnia
@@ -3217,12 +3567,12 @@ political_decisions = {
 			593 = { add_core = ULM } #Ulm the Allmighty
 			529 = { add_core = HOL } #Holstein
 			585 = { add_core = LIP } #Lippe-Detmold
-			530 = { add_core = LUB } #Lübeck
+			530 = { add_core = LUB } #LÃ¼beck
 			397 = { add_core = LUX } #Luxembourg
 			565 = { add_core = NAS } #Nassau
 			SAX_558 = { add_core = SAX } #Saxony
 			533 = { add_core = DTT } #SSR Dithmarschen
-			595 = { add_core = NUM } #Nüremberg
+			595 = { add_core = NUM } #NÃ¼remberg
 			AUS_726 = { add_core = LOM } #Lombardia
 			746 = { add_core = LUC } #Lucca
 			739 = { add_core = MOD } #Modena
@@ -3252,6 +3602,41 @@ political_decisions = {
 			FRA_420 = { add_core = BRT } #Brittany
 			473 = { add_core = CRS } #Corsica
 			FRA_418 = { add_core = NRM } #Normandy
+			1095 = { add_core = ABK } # Abkhazia
+			71 = { add_core = ACA } # Acadia
+			72 = { add_core = ACA }
+			73 = { add_core = ACA }
+			475 = { add_core = ATR } # Asturias
+			478 = { add_core = ATR }
+			1055 = { add_core = CHY } # Chechnya
+			253 = { add_core = FRO } # Faroe
+			997 = { add_core = IZH } # Ingria
+			996 = { add_core = IZH }
+			994 = { add_core = IZH }
+			339 = { add_core = IZH }
+			340 = { add_core = IZH }
+			698 = { add_core = MML } # Memelland
+			2200 = { add_core = MSK } # Miskito
+			608 = { add_core = NCT } # Neuchâtel
+			2531 = { add_core = PPG } # Papua New Guinea
+			2529 = { add_core = PPG }
+			2530 = { add_core = PPG }
+			1531 = { add_core = PPG }
+			2537 = { add_core = PPG }
+			2528 = { add_core = PPG }
+			573 = { add_core = SAA } # Saarland
+			843 = { add_core = SAM } # Samos
+			1384 = { add_core = SGP } # Singapore
+			2543 = { add_core = SMO } # Samoa
+			628 = { add_core = SDT } # Sudetenland
+			627 = { add_core = SDT }
+			629 = { add_core = SDT }
+			630 = { add_core = SDT }
+			1443 = { add_core = TMR } # Timor
+			1445 = { add_core = TMR }
+			1446 = { add_core = TMR }
+			735 = { add_core = TST } # Bozen
+			2535 = { add_core = VTU } #Vanuatu
 			#Exaggerated cultural Heimaten fix
 			PER = {
 				any_owned_province = {
@@ -3309,6 +3694,19 @@ political_decisions = {
 					remove_core = AZB
 				}
 			}
+			CHI = {
+				any_owned_province = {
+					limit = {
+						NOT = {
+							is_core = MGL
+							region = CHI_2608 #Mongolia proper
+						}
+					}
+				}
+				remove_core = KHA
+				remove_core = MGL
+				add_core = IMG
+			}
 			FRA_399 = { remove_core = BEL }
 			#British culture no more existing
 			any_country = { #Australia
@@ -3360,25 +3758,6 @@ political_decisions = {
 					NOT = { exists = ENL }
 				}
 				primary_culture = english
-			}
-			any_country = {
-				OR = {
-					tag = AUS
-					tag = GER
-					tag = KUK
-				}
-				703 = { secede_province = KRA add_core = KRA } #Krakow
-			}
-			any_country = {
-				limit = {
-					NOT = { exists = MON }
-					owns = 2583 #Cetinje
-				}
-				2583 = { secede_province = MON }
-			}
-			any_country = {
-				limit = { owns = 418 } # Caen
-				77 = { secede_province = THIS add_core = THIS } #Saint Pierre & Miquelon
 			}
 			set_global_flag = taiping_and_csa
 		}
@@ -3922,6 +4301,7 @@ political_decisions = {
 						owner = {
 							in_sphere = THIS
 						}
+						province_id = 1384
 					}
 				}
 			}
@@ -6236,7 +6616,6 @@ political_decisions = {
 			}
 			NOT = { exists = LBY }
 			civilized = yes
-			any_owned = { is_core = LBY } #Just to avoid weirdness
 		}	
 		allow = {
 			war = no
@@ -6279,6 +6658,129 @@ political_decisions = {
 				remove_core = SWA
 			}
 			change_tag = KNY
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	moldavia_moldova = {
+		potential = {
+			exists = ROM
+			tag = MOL
+			OR = {
+				exists = MOL
+				NOT = { exists = MOL }
+			}
+			NOT = { has_global_flag = moldova }
+		}	
+		allow = {
+			exists = ROM
+		}
+		
+		effect = {
+			any_core = {
+				limit = {
+					NOT = {
+						owned_by = ROM
+					}
+				}
+				add_core = MDV
+				remove_core = MOL
+			}
+			change_tag = MDV
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	zapadoslavia = {
+		potential = {
+			is_greater_power = yes
+			OR = {
+				tag = PLC
+				tag = POL
+				tag = CZH
+			}
+			NOT = {
+				exists = WSF
+			}
+		}	
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			PLC = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								OR = {
+									is_vassal = no
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			CZH = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								OR = {
+									is_vassal = no
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			clr_country_flag = crown_from_the_gutter
+			prestige = 25
+			all_core = { add_core = WSF }
+			any_owned = {
+				limit = {
+					NOT = { is_core = THIS }
+					any_core = {
+						exists = no
+						has_country_flag = wants_to_unify
+						NOT = { has_country_flag = post_colonial_country }
+					}
+				}
+				add_core = WSF
+			}
+			change_tag = WSF
+			any_country = {
+				limit = {
+					OR = {
+						primary_culture = polish
+						primary_culture = czech
+						primary_culture = slovak
+					}
+					in_sphere = THIS
+					NOT = {
+						has_country_flag = post_colonial_country
+						tag = THIS
+					}
+					OR = {
+						is_vassal = no
+						vassal_of = THIS
+					}
+				}
+				country_event = 11106
+			}
 		}
 		ai_will_do = {
 			factor = 1
