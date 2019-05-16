@@ -24,7 +24,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Regions.h"
 #include "../Configuration.h"
 #include "Regions/Areas.h"
-#include "Region.h"
+#include "Regions/Region.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include <algorithm>

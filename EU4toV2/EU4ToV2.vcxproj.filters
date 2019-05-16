@@ -149,9 +149,6 @@
     <ClCompile Include="..\common_items\Color.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Region.cpp">
-      <Filter>EU4 World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Regions.cpp">
       <Filter>EU4 World</Filter>
     </ClCompile>
@@ -221,6 +218,12 @@
       <Filter>EU4 World\Regions</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Regions\Areas.cpp">
+      <Filter>EU4 World\Regions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Regions\Region.cpp">
+      <Filter>EU4 World\Regions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Regions\AreaNames.cpp">
       <Filter>EU4 World\Regions</Filter>
     </ClCompile>
   </ItemGroup>
@@ -369,9 +372,6 @@
     <ClInclude Include="..\common_items\Color.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\Region.h">
-      <Filter>EU4 World</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\Regions.h">
       <Filter>EU4 World</Filter>
     </ClInclude>
@@ -439,6 +439,12 @@
       <Filter>EU4 World\Regions</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Areas.h">
+      <Filter>EU4 World\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Regions\Region.h">
+      <Filter>EU4 World\Regions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Regions\AreaNames.h">
       <Filter>EU4 World\Regions</Filter>
     </ClInclude>
   </ItemGroup>

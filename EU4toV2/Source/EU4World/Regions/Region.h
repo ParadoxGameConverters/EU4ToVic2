@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,58 +21,38 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef EU4_REGIONS_H
-#define EU4_REGIONS_H
+#ifndef EU4_REGION_H_
+#define EU4_REGION_H_
 
 
 
 #include "newParser.h"
-#include "Regions/Region.h"
-#include <map>
-#include <memory>
 #include <set>
-#include <string>
 
 
 
-class Object;
 namespace EU4
 {
-	class areas;
 
-	class Regions: commonItems::parser
-	{
-		public:
-			static bool provinceInRegion(int province, const std::string& regionName)
-			{
-				return getInstance()->ProvinceInRegion(province, regionName);
-			}
+class areas;
 
-		private:
-			static Regions* instance;
-			static Regions* getInstance()
-			{
-				if (instance == nullptr)
-				{
-					instance = new Regions;
-				}
-				return instance;
-			}
+class region: commonItems::parser
+{
+	public:
+		region(std::istream& theStream);
+		region(std::set<int> _provinces);
 
-			Regions();
+		bool containsProvince(unsigned int province) const;
 
-			void initEU4RegionsOldVersion();
+		void addProvinces(const EU4::areas& areas);
 
-			void initEU4RegionsNewVersion();
-			void initEU4RegionsFile(const EU4::areas& areas, const std::string& regionsFilename);
+	private:
+		std::set<std::string> areaNames;
+		std::set<int> provinces;
+};
 
-			bool ProvinceInRegion(int province, const std::string& regionName);
-
-			std::map<int, std::set<std::string>> EU4RegionsMap;
-			std::map<std::string, EU4::region> regions;
-	};
 }
 
 
 
-#endif //EU4_REGIONS_H
+#endif // EU4_REGION_H_

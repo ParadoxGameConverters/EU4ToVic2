@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -22,7 +22,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "Region.h"
-#include "Regions/Areas.h"
+#include "AreaNames.h"
+#include "Areas.h"
 #include "ParserHelpers.h"
 #include <algorithm>
 
@@ -30,28 +31,19 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 EU4::region::region(std::istream& theStream)
 {
-	commonItems::parsingFunction areasFunction = std::bind(&EU4::region::importAreas, this, std::placeholders::_1, std::placeholders::_2);
-	registerKeyword(std::regex("areas"), areasFunction);
+	registerKeyword(std::regex("areas"), [this](const std::string& unused, std::istream& theStream) {
+		AreaNames names(theStream);
+		areaNames.merge(names.getNames());
+	});
 	registerKeyword(std::regex("discover_if"), commonItems::ignoreObject);
+
 	parseStream(theStream);
 }
 
 
 EU4::region::region(std::set<int> _provinces):
 	provinces(_provinces)
-{
-}
-
-
-void EU4::region::importAreas(const std::string& unused, std::istream& theStream)
-{
-	registerKeyword(std::regex("\\w+"), [this](const std::string& areaName, std::istream& areasFile)
-		{
-			areaNames.insert(areaName);
-		}
-	);
-	parseStream(theStream);
-}
+{}
 
 
 bool EU4::region::containsProvince(unsigned int province) const

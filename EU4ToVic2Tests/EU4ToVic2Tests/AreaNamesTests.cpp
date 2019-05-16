@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,58 +21,27 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef EU4_REGIONS_H
-#define EU4_REGIONS_H
+#include "gtest/gtest.h"
+#include "../EU4toV2/Source/EU4World/Regions/AreaNames.h"
+#include <sstream>
 
 
 
-#include "newParser.h"
-#include "Regions/Region.h"
-#include <map>
-#include <memory>
-#include <set>
-#include <string>
-
-
-
-class Object;
-namespace EU4
+TEST(EU4World_EU4AreaNamesTests, emptyAreaNamesGivesNoNames)
 {
-	class areas;
+	std::stringstream input;
+	input << "= {}";
 
-	class Regions: commonItems::parser
-	{
-		public:
-			static bool provinceInRegion(int province, const std::string& regionName)
-			{
-				return getInstance()->ProvinceInRegion(province, regionName);
-			}
-
-		private:
-			static Regions* instance;
-			static Regions* getInstance()
-			{
-				if (instance == nullptr)
-				{
-					instance = new Regions;
-				}
-				return instance;
-			}
-
-			Regions();
-
-			void initEU4RegionsOldVersion();
-
-			void initEU4RegionsNewVersion();
-			void initEU4RegionsFile(const EU4::areas& areas, const std::string& regionsFilename);
-
-			bool ProvinceInRegion(int province, const std::string& regionName);
-
-			std::map<int, std::set<std::string>> EU4RegionsMap;
-			std::map<std::string, EU4::region> regions;
-	};
+	EU4::AreaNames theAreaNames(input);
+	ASSERT_EQ(theAreaNames.getNames().size(), 0);
 }
 
 
+TEST(EU4World_EU4AreaNamesTests, nameCanBeAdded)
+{
+	std::stringstream input;
+	input << "= { areName }";
 
-#endif //EU4_REGIONS_H
+	EU4::AreaNames theAreaNames(input);
+	ASSERT_EQ(theAreaNames.getNames().count("areName"), 1);
+}
