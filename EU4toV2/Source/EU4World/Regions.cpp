@@ -23,7 +23,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "Regions.h"
 #include "../Configuration.h"
-#include "Areas.h"
+#include "Regions/Areas.h"
 #include "Region.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -59,14 +59,15 @@ void EU4::Regions::initEU4RegionsOldVersion()
 {
 	regions.clear();
 
-	EU4::areas installedAreas(theConfiguration.getEU4Path() + "/map/region.txt");
+	std::ifstream theStream(theConfiguration.getEU4Path() + "/map/region.txt");
+	EU4::areas installedAreas(theStream);
+	theStream.close();
 
 	auto theAreas = installedAreas.getAreas();
-	std::for_each(theAreas.begin(), theAreas.end(), [this](const std::pair<std::string, EU4::area>& theArea)
-		{
-			regions.insert(make_pair(theArea.first, EU4::region(theArea.second.getProvinces())));
-		}
-	);
+	std::for_each(theAreas.begin(), theAreas.end(), [this](const std::pair<std::string, std::set<int>>& theArea)
+	{
+		regions.insert(make_pair(theArea.first, EU4::region(theArea.second)));
+	});
 
 	for (auto itr: theConfiguration.getEU4Mods())
 	{
@@ -77,21 +78,25 @@ void EU4::Regions::initEU4RegionsOldVersion()
 
 		regions.clear();
 
-		EU4::areas modAreas(itr + "/map/region.txt");
+		std::ifstream modStream(itr + "/map/region.txt");
+		EU4::areas modAreas(modStream);
+		modStream.close();
 
 		auto theAreas = modAreas.getAreas();
-		std::for_each(theAreas.begin(), theAreas.end(), [this](const std::pair<std::string, EU4::area>& theArea)
-			{
-				regions.insert(make_pair(theArea.first, EU4::region(theArea.second.getProvinces())));
-			}
-		);
+		std::for_each(theAreas.begin(), theAreas.end(), [this](const std::pair<std::string, std::set<int>>& theArea)
+		{
+			regions.insert(make_pair(theArea.first, EU4::region(theArea.second)));
+		});
 	}
 }
 
 
 void EU4::Regions::initEU4RegionsNewVersion()
 {
-	EU4::areas installedAreas(theConfiguration.getEU4Path() + "/map/area.txt");
+	std::ifstream theStream(theConfiguration.getEU4Path() + "/map/area.txt");
+	EU4::areas installedAreas(theStream);
+	theStream.close();
+
 	initEU4RegionsFile(installedAreas, (theConfiguration.getEU4Path() + "/map/region.txt"));
 
 	for (auto itr: theConfiguration.getEU4Mods())
@@ -101,7 +106,10 @@ void EU4::Regions::initEU4RegionsNewVersion()
 			continue;
 		}
 
-		EU4::areas modAreas(itr + "/map/area.txt");
+		std::ifstream modStream(itr + "/map/area.txt");
+		EU4::areas modAreas(modStream);
+		modStream.close();
+
 		initEU4RegionsFile(modAreas, (itr + "/map/region.txt"));
 	}
 }
@@ -112,21 +120,19 @@ void EU4::Regions::initEU4RegionsFile(const EU4::areas& areas, const std::string
 	regions.clear();
 
 	registerKeyword(std::regex("\\w+_region"), [this, areas](const std::string& areaName, std::istream& areasFile)
-		{
-			EU4::region newRegion(areasFile);
-			newRegion.addProvinces(areas);
-			regions.insert(make_pair(areaName, newRegion));
-		}
-	);
+	{
+		EU4::region newRegion(areasFile);
+		newRegion.addProvinces(areas);
+		regions.insert(make_pair(areaName, newRegion));
+	});
 
 	parseFile(regionsFilename);
 
 	auto theAreas = areas.getAreas();
-	std::for_each(theAreas.begin(), theAreas.end(), [this](const std::pair<std::string, EU4::area>& theArea)
-		{
-			regions.insert(make_pair(theArea.first, EU4::region(theArea.second.getProvinces())));
-		}
-	);
+	std::for_each(theAreas.begin(), theAreas.end(), [this](const std::pair<std::string, std::set<int>>& theArea)
+	{
+		regions.insert(make_pair(theArea.first, EU4::region(theArea.second)));
+	});
 }
 
 

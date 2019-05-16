@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,37 +21,32 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef EU4_AREAS_H_
-#define EU4_AREAS_H_
+#include "Areas.h"
+#include "Log.h"
 
 
 
-#include "Regions/Area.h"
-#include "Color.h"
-#include "newParser.h"
-#include <istream>
-#include <map>
-#include <set>
-#include <string>
-
-
-
-namespace EU4
+EU4::areas::areas(std::istream& theStream)
 {
-	class areas: commonItems::parser
+	registerKeyword(std::regex("[\\w_]+"), [this](const std::string& areaName, std::istream& areasFile)
 	{
-		public:
-			areas(const std::string& filename);
+		area newArea(areasFile);
+		theAreas.insert(std::make_pair(areaName, newArea.getProvinces()));
+	});
 
-			const std::set<int> getProvincesInArea(const std::string& area) const;
-
-			const std::map<std::string, area> getAreas() const { return theAreas; }
-
-		private:
-			std::map<std::string, area> theAreas;
-	};
+	parseStream(theStream);
 }
 
 
-
-#endif // EU4_AREAS_H_
+const std::set<int> EU4::areas::getProvincesInArea(const std::string& area) const
+{
+	auto areaItr(theAreas.find(area));
+	if (areaItr != theAreas.end())
+	{
+		return areaItr->second;
+	}
+	else
+	{
+		return {};
+	}
+}

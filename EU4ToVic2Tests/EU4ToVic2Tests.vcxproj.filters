@@ -67,6 +67,12 @@
     <ClCompile Include="..\common_items\Object.cpp">
       <Filter>EU4ToVic2Files\commonItems</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Areas.cpp">
+      <Filter>EU4ToVic2Files\EU4World\Regions</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\AreasTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4ToVic2Files">

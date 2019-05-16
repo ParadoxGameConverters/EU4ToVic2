@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,36 +21,27 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include "Areas.h"
-#include "Log.h"
-#include <fstream>
-#include <functional>
+#include "gtest/gtest.h"
+#include "../EU4toV2/Source/EU4World/Regions/Areas.h"
+#include <sstream>
 
 
 
-EU4::areas::areas(const std::string& filename):
-	theAreas()
+TEST(EU4World_EU4AreasTests, nonMatchingAreaGivesNoProvinces)
 {
-	registerKeyword(std::regex("[\\w_]+"), [this](const std::string& areaName, std::istream& areasFile)
-		{
-			area newArea(areasFile);
-			theAreas.insert(make_pair(areaName, newArea));
-		}
-	);
+	std::stringstream input;
+	input << "an_area = {}";
 
-	parseFile(filename);
+	EU4::areas theAreas(input);
+	ASSERT_EQ(theAreas.getProvincesInArea("non_matching_area").size(), 0);
 }
 
 
-const std::set<int> EU4::areas::getProvincesInArea(const std::string& area) const
+TEST(EU4World_EU4AreasTests, matchingAreaGivesProvinces)
 {
-	auto areaItr(theAreas.find(area));
-	if (areaItr != theAreas.end())
-	{
-		return areaItr->second.getProvinces();
-	}
-	else
-	{
-		return {};
-	}
+	std::stringstream input;
+	input << "matching_area = { 56 }";
+
+	EU4::areas theAreas(input);
+	ASSERT_EQ(theAreas.getProvincesInArea("matching_area").count(56), 1);
 }

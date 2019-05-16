@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "Region.h"
-#include "Areas.h"
+#include "Regions/Areas.h"
 #include "ParserHelpers.h"
 #include <algorithm>
 
