@@ -35,42 +35,25 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-class Object;
 namespace EU4
 {
-	class areas;
+class areas;
 
-	class Regions: commonItems::parser
-	{
-		public:
-			static bool provinceInRegion(int province, const std::string& regionName)
-			{
-				return getInstance()->ProvinceInRegion(province, regionName);
-			}
+class Regions: commonItems::parser
+{
+	public:
+		Regions();
+		bool provinceInRegion(int province, const std::string& regionName) const;
 
-		private:
-			static Regions* instance;
-			static Regions* getInstance()
-			{
-				if (instance == nullptr)
-				{
-					instance = new Regions;
-				}
-				return instance;
-			}
+	private:
+		void initEU4RegionsOldVersion();
+		void initEU4RegionsNewVersion();
+		void initEU4RegionsFile(const EU4::areas& areas, const std::string& regionsFilename);
 
-			Regions();
+		std::map<int, std::set<std::string>> EU4RegionsMap;
+		std::map<std::string, EU4::region> regions;
+};
 
-			void initEU4RegionsOldVersion();
-
-			void initEU4RegionsNewVersion();
-			void initEU4RegionsFile(const EU4::areas& areas, const std::string& regionsFilename);
-
-			bool ProvinceInRegion(int province, const std::string& regionName);
-
-			std::map<int, std::set<std::string>> EU4RegionsMap;
-			std::map<std::string, EU4::region> regions;
-	};
 }
 
 

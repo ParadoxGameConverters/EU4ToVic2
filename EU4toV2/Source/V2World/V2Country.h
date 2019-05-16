@@ -29,6 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Color.h"
 #include "Date.h"
 #include "../EU4World/EU4Army.h"
+#include "../EU4World/Regions.h"
 #include "V2Localisation.h"
 #include "V2TechSchools.h"
 #include <memory>
@@ -69,7 +70,12 @@ class V2Country
 		void								outputToCommonCountriesFile(FILE*) const;
 		void								outputLocalisation(FILE*) const;
 		void								outputOOB() const;
-		void initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const std::unique_ptr<Vic2::TechSchools>& techSchools, const map<int, int>& leaderMap);
+		void initFromEU4Country(
+			const EU4::Regions& eu4Regions,
+			std::shared_ptr<EU4::Country> _srcCountry,
+			const std::unique_ptr<Vic2::TechSchools>& techSchools,
+			const map<int, int>& leaderMap
+		);
 		void								initFromHistory();
 		void								addProvince(V2Province* _province);
 		void								addState(V2State* newState);

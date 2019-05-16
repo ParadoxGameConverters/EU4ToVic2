@@ -29,12 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "OSCompatibilityLayer.h"
 #include <algorithm>
 #include <fstream>
-using namespace std;
 
-
-
-
-EU4::Regions* EU4::Regions::instance = nullptr;
 
 
 
@@ -136,7 +131,7 @@ void EU4::Regions::initEU4RegionsFile(const EU4::areas& areas, const std::string
 }
 
 
-bool EU4::Regions::ProvinceInRegion(int province, const string& regionName)
+bool EU4::Regions::provinceInRegion(int province, const std::string& regionName) const
 {
 	auto region = regions.find(regionName);
 	if (region != regions.end())

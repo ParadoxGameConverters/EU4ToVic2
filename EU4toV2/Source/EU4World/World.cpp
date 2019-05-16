@@ -663,9 +663,9 @@ void EU4::world::checkAllEU4CulturesMapped() const
 	for (auto cultureItr: EU4::cultureGroups::getCultureToGroupMap())
 	{
 		string Vi2Culture;
+		string EU4Culture = cultureItr.first;
 
-		string	EU4Culture	= cultureItr.first;
-		bool		matched		= mappers::cultureMapper::cultureMatch(EU4Culture, Vi2Culture);
+		bool matched = mappers::cultureMapper::cultureMatch(regions, EU4Culture, Vi2Culture);
 		if (!matched)
 		{
 			LOG(LogLevel::Warning) << "No culture mapping for EU4 culture " << EU4Culture;
