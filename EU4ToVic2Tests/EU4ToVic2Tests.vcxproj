@@ -180,12 +180,12 @@
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="ConfigurationTests.cpp" />
-    <ClCompile Include="EU4ToVic2Tests\AreaNamesTests.cpp" />
-    <ClCompile Include="EU4ToVic2Tests\RegionTests.cpp" />
+    <ClCompile Include="EU4WorldTests\AreaNamesTests.cpp" />
     <ClCompile Include="EU4WorldTests\AreasTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp" />
     <ClCompile Include="EU4WorldTests\RegionsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RegionTests.cpp" />
     <ClCompile Include="Vic2WorldTests\BlockedTechSchoolsTests.cpp" />
     <ClCompile Include="Vic2WorldTests\Vic2CultureUnionMapperTests.cpp" />
     <ClCompile Include="Vic2WorldTests\Vic2CultureUnionTests.cpp" />

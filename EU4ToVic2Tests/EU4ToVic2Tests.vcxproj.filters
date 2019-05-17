@@ -73,23 +73,23 @@
     <ClCompile Include="EU4WorldTests\AreasTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
-    <ClCompile Include="EU4ToVic2Tests\AreaNamesTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\AreaNames.cpp">
       <Filter>EU4ToVic2Files\EU4World\Regions</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Region.cpp">
       <Filter>EU4ToVic2Files\EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="EU4ToVic2Tests\RegionTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="EU4WorldTests\RegionsTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Regions.cpp">
       <Filter>EU4ToVic2Files\EU4World\Regions</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\AreaNamesTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionTests.cpp">
+      <Filter>EU4WorldTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
