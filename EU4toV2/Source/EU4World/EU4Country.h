@@ -51,7 +51,7 @@ namespace EU4
 	class Country: public commonItems::parser
 	{
 		public:
-			Country(const std::string& countryTag, std::istream& theStream);
+			Country(const std::string& countryTag, const EU4::Version& theVersion, std::istream& theStream);
 
 			// Add any additional information available from the specified country file.
 			void readFromCommonCountry(const std::string& fileName, const std::string& fullFilename);

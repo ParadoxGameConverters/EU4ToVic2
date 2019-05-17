@@ -68,7 +68,7 @@ class Configuration: commonItems::parser
 		void setLastEU4Date(date _lastDate) { lastEU4Date = _lastDate; }
 		void setOutputName(std::string name) { outputName = name; }
 		void addEU4Mod(std::string mod) { EU4Mods.push_back(mod); }
-		void setEU4Version(EU4::Version version) { version = version; }
+		void setEU4Version(EU4::Version _version) { version = _version; }
 		void setActiveDLCs(std::vector<std::string> _activeDLCs) { activeDLCs = _activeDLCs; }
 
 		bool wasDLCActive(const std::string& DLC);

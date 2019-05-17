@@ -61,7 +61,7 @@ EU4::world::world(const string& EU4SaveFileName):
 	);
 	registerKeyword(std::regex("savegame_version"), [this](const std::string& versionText, std::istream& theStream)
 		{
-			version = new EU4::Version(theStream);
+			version = std::make_unique<EU4::Version>(theStream);
 			theConfiguration.setEU4Version(*version);
 		}
 	);
@@ -471,7 +471,7 @@ map<int, int> EU4::world::determineValidProvinces()
 
 void EU4::world::loadCountries(istream& theStream)
 {
-	countries processedCountries(theStream);
+	countries processedCountries(*version, theStream);
 	auto theProcessedCountries = processedCountries.getTheCountries();
 	theCountries.swap(theProcessedCountries);
 }
@@ -664,7 +664,7 @@ void EU4::world::loadRegions()
 {
 	LOG(LogLevel::Info) << "Parsing EU4 regions";
 
-	if (theConfiguration.getEU4Version() >= EU4::Version("1.14"))
+	if (*version >= EU4::Version("1.14"))
 	{
 		loadEU4RegionsNewVersion();
 	}

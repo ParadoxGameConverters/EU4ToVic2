@@ -27,6 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "newParser.h"
+#include "EU4Version.h"
 #include <map>
 #include <memory>
 #include <string>
@@ -42,7 +43,7 @@ namespace EU4
 	class countries: public commonItems::parser
 	{
 		public:
-			countries(std::istream& theStream);
+			countries(const EU4::Version& theVersion, std::istream& theStream);
 
 			std::map<std::string, std::shared_ptr<EU4::Country>> getTheCountries() const { return theCountries; }
 

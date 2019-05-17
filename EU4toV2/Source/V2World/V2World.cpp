@@ -1150,7 +1150,7 @@ void V2World::convertUncivReforms(const EU4::world& sourceWorld)
 	double topTech = 96;
 	int topInstitutions = 7;
 	auto version18 = EU4::Version("1.18.0");
-	if (*(sourceWorld.getVersion()) >= version18)
+	if (sourceWorld.getVersion() >= version18)
 	{
 		LOG(LogLevel::Info) << "New tech group conversion method";
 		techGroupAlgorithm  = newer;
@@ -1465,7 +1465,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 
 	int popAlgorithm = 0;
 	auto version12 = EU4::Version("1.12.0");
-	if (*(sourceWorld.getVersion()) >= version12)
+	if (sourceWorld.getVersion() >= version12)
 	{
 		LOG(LogLevel::Info) << "Using pop conversion algorithm for EU4 versions after 1.12.";
 		popAlgorithm = 2;
