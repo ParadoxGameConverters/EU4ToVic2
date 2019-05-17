@@ -90,6 +90,11 @@
     </ClCompile>
     <ClCompile Include="EU4WorldTests\RegionTests.cpp">
       <Filter>EU4WorldTests</Filter>
+    <ClCompile Include="..\EU4toV2\Source\V2World\StateMapper.cpp">
+      <Filter>EU4ToVic2Files\Vic2World</Filter>
+    </ClCompile>
+    <ClCompile Include="Vic2WorldTests\StateMapperTests.cpp">
+      <Filter>Vic2WorldTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

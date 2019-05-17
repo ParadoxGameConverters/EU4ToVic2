@@ -116,9 +116,6 @@
     <ClCompile Include="Source\Mappers\AdjacencyMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\StateMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\ReligionMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
@@ -225,6 +222,8 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Regions\Regions.cpp">
       <Filter>EU4 World\Regions</Filter>
+    <ClCompile Include="Source\V2World\StateMapper.cpp">
+      <Filter>Vic2 World</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -339,9 +338,6 @@
     <ClInclude Include="Source\Mappers\AdjacencyMapper.h">
       <Filter>Mappers</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\StateMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\ReligionMapper.h">
       <Filter>Mappers</Filter>
     </ClInclude>
@@ -446,6 +442,8 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Regions.h">
       <Filter>EU4 World\Regions</Filter>
+    <ClInclude Include="Source\V2World\StateMapper.h">
+      <Filter>Vic2 World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
