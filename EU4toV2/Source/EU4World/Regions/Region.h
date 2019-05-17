@@ -21,52 +21,38 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef CULTURE_MAPPING_H_
-#define CULTURE_MAPPING_H_
+#ifndef EU4_REGION_H_
+#define EU4_REGION_H_
 
 
 
-#include "../EU4World/Regions/Regions.h"
-#include <map>
-#include <string>
+#include "newParser.h"
+#include <set>
 
 
 
-namespace mappers
+namespace EU4
 {
 
-class cultureMapping
+class areas;
+
+class region: commonItems::parser
 {
 	public:
-		cultureMapping(
-			const std::string& sourceCulture,
-			const std::string& destinationCulture,
-			const std::map<std::string, std::string>& distinguishers
-		);
-		bool cultureMatch(
-			const EU4::Regions& EU4Regions,
-			const std::string& sourceCulture,
-			std::string& destinationCulture,
-			const std::string& religion,
-			int EU4Province,
-			const std::string& ownerTag
-		);
+		region(std::istream& theStream);
+		region(std::set<int> _provinces);
+
+		bool containsProvince(unsigned int province) const;
+
+		void addProvinces(const EU4::areas& areas);
 
 	private:
-		bool distinguishersMatch(
-			const EU4::Regions& EU4Regions,
-			const std::map<std::string, std::string>& distinguishers,
-			const std::string& religion, int EU4Province,
-			const std::string& ownerTag
-		);
-
-		std::string sourceCulture;
-		std::string destinationCulture;
-		std::map<std::string, std::string> distinguishers;	// type, details
+		std::set<std::string> areaNames;
+		std::set<int> provinces;
 };
 
 }
 
 
 
-#endif // CULTURE_MAPPING_H_
+#endif // EU4_REGION_H_

@@ -21,52 +21,27 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef CULTURE_MAPPING_H_
-#define CULTURE_MAPPING_H_
+#include "gtest/gtest.h"
+#include "../EU4toV2/Source/EU4World/Regions/Areas.h"
+#include <sstream>
 
 
 
-#include "../EU4World/Regions/Regions.h"
-#include <map>
-#include <string>
-
-
-
-namespace mappers
+TEST(EU4World_EU4AreasTests, nonMatchingAreaGivesNoProvinces)
 {
+	std::stringstream input;
+	input << "an_area = {}";
 
-class cultureMapping
-{
-	public:
-		cultureMapping(
-			const std::string& sourceCulture,
-			const std::string& destinationCulture,
-			const std::map<std::string, std::string>& distinguishers
-		);
-		bool cultureMatch(
-			const EU4::Regions& EU4Regions,
-			const std::string& sourceCulture,
-			std::string& destinationCulture,
-			const std::string& religion,
-			int EU4Province,
-			const std::string& ownerTag
-		);
-
-	private:
-		bool distinguishersMatch(
-			const EU4::Regions& EU4Regions,
-			const std::map<std::string, std::string>& distinguishers,
-			const std::string& religion, int EU4Province,
-			const std::string& ownerTag
-		);
-
-		std::string sourceCulture;
-		std::string destinationCulture;
-		std::map<std::string, std::string> distinguishers;	// type, details
-};
-
+	EU4::areas theAreas(input);
+	ASSERT_EQ(theAreas.getProvincesInArea("non_matching_area").size(), 0);
 }
 
 
+TEST(EU4World_EU4AreasTests, matchingAreaGivesProvinces)
+{
+	std::stringstream input;
+	input << "matching_area = { 56 }";
 
-#endif // CULTURE_MAPPING_H_
+	EU4::areas theAreas(input);
+	ASSERT_EQ(theAreas.getProvincesInArea("matching_area").count(56), 1);
+}

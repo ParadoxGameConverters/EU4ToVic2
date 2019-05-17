@@ -27,22 +27,22 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-EU4::countries::countries(istream& theStream):
+EU4::countries::countries(const EU4::Version& theVersion, istream& theStream):
 	theCountries()
 {
 	registerKeyword(std::regex("---"), commonItems::ignoreObject);
 	registerKeyword(std::regex("REB"), commonItems::ignoreObject);
 	registerKeyword(std::regex("PIR"), commonItems::ignoreObject);
 	registerKeyword(std::regex("NAT"), commonItems::ignoreObject);
-	registerKeyword(std::regex("[A-Z]{3}"), [this](const std::string& tag, std::istream& theStream)
+	registerKeyword(std::regex("[A-Z]{3}"), [this, theVersion](const std::string& tag, std::istream& theStream)
 		{
-			auto country = make_shared<EU4::Country>(tag, theStream);
+			auto country = make_shared<EU4::Country>(tag, theVersion, theStream);
 			theCountries.insert(make_pair(country->getTag(), country));
 		}
 	);
-	registerKeyword(std::regex("[A-Z][0-9]{2}"), [this](const std::string& tag, std::istream& theStream)
+	registerKeyword(std::regex("[A-Z][0-9]{2}"), [this, theVersion](const std::string& tag, std::istream& theStream)
 		{
-			auto country = make_shared<EU4::Country>(tag, theStream);
+			auto country = make_shared<EU4::Country>(tag, theVersion, theStream);
 			theCountries.insert(make_pair(country->getTag(), country));
 		}
 	);

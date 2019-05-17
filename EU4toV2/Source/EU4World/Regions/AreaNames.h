@@ -21,52 +21,32 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef CULTURE_MAPPING_H_
-#define CULTURE_MAPPING_H_
+#ifndef AREA_NAMES_H
+#define AREA_NAMES_H
 
 
 
-#include "../EU4World/Regions/Regions.h"
-#include <map>
+#include "newParser.h"
+#include <set>
 #include <string>
 
 
 
-namespace mappers
+namespace EU4
 {
 
-class cultureMapping
+class AreaNames: commonItems::parser
 {
 	public:
-		cultureMapping(
-			const std::string& sourceCulture,
-			const std::string& destinationCulture,
-			const std::map<std::string, std::string>& distinguishers
-		);
-		bool cultureMatch(
-			const EU4::Regions& EU4Regions,
-			const std::string& sourceCulture,
-			std::string& destinationCulture,
-			const std::string& religion,
-			int EU4Province,
-			const std::string& ownerTag
-		);
+		AreaNames(std::istream& theStream);
+
+		auto getNames() const { return names; }
 
 	private:
-		bool distinguishersMatch(
-			const EU4::Regions& EU4Regions,
-			const std::map<std::string, std::string>& distinguishers,
-			const std::string& religion, int EU4Province,
-			const std::string& ownerTag
-		);
-
-		std::string sourceCulture;
-		std::string destinationCulture;
-		std::map<std::string, std::string> distinguishers;	// type, details
+		std::set<std::string> names;
 };
 
 }
 
 
-
-#endif // CULTURE_MAPPING_H_
+#endif // AREA_NAMES_H

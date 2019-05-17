@@ -26,17 +26,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include <istream>
 #include "EU4Army.h"
 #include "EU4Diplomacy.h"
+#include "EU4Version.h"
+#include "Regions/Regions.h"
 #include "newParser.h"
+#include <istream>
+#include <memory>
 
 
-
-namespace EU4
-{
-class Version;
-}
 
 class EU4Province;
 
@@ -44,81 +42,89 @@ class EU4Province;
 
 namespace EU4
 {
-	class Country;
+
+class Country;
 
 
-	class world: private commonItems::parser
-	{
-		public:
-			world(const string& EU4SaveFileName);
+class world: private commonItems::parser
+{
+	public:
+		world(const std::string& EU4SaveFileName);
 
-			EU4Province* getProvince(int provNum) const;
+		EU4Province* getProvince(int provNum) const;
 
-			EU4::Version* getVersion() const { return version; };
-			std::map<std::string, std::shared_ptr<EU4::Country>> getCountries() const { return theCountries; };
-			vector<EU4Agreement> getDiplomaticAgreements() const { return diplomacy->getAgreements(); };
-			double getWorldWeightSum() const { return worldWeightSum; };
+		const EU4::Version& getVersion() const { return *version; };
+		std::map<std::string, std::shared_ptr<EU4::Country>> getCountries() const { return theCountries; };
+		vector<EU4Agreement> getDiplomaticAgreements() const { return diplomacy->getAgreements(); };
+		double getWorldWeightSum() const { return worldWeightSum; };
+		const Regions& getRegions() const { return *regions; }
 
-			bool isRandomWorld() const;
+		bool isRandomWorld() const;
 
-		private:
-			void verifySave(const string& EU4SaveFileName);
+	private:
+		void verifySave(const string& EU4SaveFileName);
 
-			void loadUsedMods(const shared_ptr<Object> EU4SaveObj);
-			map<string, string> loadPossibleMods();
-			void loadEU4ModDirectory(map<string, string>& possibleMods);
-			void loadCK2ExportDirectory(map<string, string>& possibleMods);
+		void loadUsedMods(const shared_ptr<Object> EU4SaveObj);
+		map<string, string> loadPossibleMods();
+		void loadEU4ModDirectory(map<string, string>& possibleMods);
+		void loadCK2ExportDirectory(map<string, string>& possibleMods);
 
-			void loadEU4Version(const shared_ptr<Object> EU4SaveObj);
-			void loadActiveDLC(const shared_ptr<Object> EU4SaveObj);
-			void loadEmpires(const shared_ptr<Object> EU4SaveObj);
-			void loadHolyRomanEmperor(vector<shared_ptr<Object>> empireObj);
-			void loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpireObj);
+		void loadEU4Version(const shared_ptr<Object> EU4SaveObj);
+		void loadActiveDLC(const shared_ptr<Object> EU4SaveObj);
+		void loadEmpires(const shared_ptr<Object> EU4SaveObj);
+		void loadHolyRomanEmperor(vector<shared_ptr<Object>> empireObj);
+		void loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpireObj);
 
 
-			void loadProvinces(const shared_ptr<Object> EU4SaveObj);
-			map<int, int> determineValidProvinces();
+		void loadProvinces(const shared_ptr<Object> EU4SaveObj);
+		map<int, int> determineValidProvinces();
 
-			void loadCountries(istream& theStream);
-			void loadRevolutionTargetString(const shared_ptr<Object> EU4SaveObj);
-			void loadRevolutionTarget();
-			void addProvinceInfoToCountries();
-			void loadDiplomacy(const shared_ptr<Object> EU4SaveObj);
-			void determineProvinceWeights();
+		void loadCountries(istream& theStream);
+		void loadRevolutionTargetString(const shared_ptr<Object> EU4SaveObj);
+		void loadRevolutionTarget();
+		void addProvinceInfoToCountries();
+		void loadDiplomacy(const shared_ptr<Object> EU4SaveObj);
+		void determineProvinceWeights();
 
-			void checkAllEU4CulturesMapped() const;
+		void loadRegions();
+		void loadEU4RegionsNewVersion();
+		void loadEU4RegionsOldVersion();
 
-			void readCommonCountries();
-			void readCommonCountriesFile(istream&, const std::string& rootPath);
+		void checkAllEU4CulturesMapped() const;
 
-			void setLocalisations();
-			void resolveRegimentTypes();
+		void readCommonCountries();
+		void readCommonCountriesFile(istream&, const std::string& rootPath);
 
-			void mergeNations();
-			void uniteJapan();
+		void setLocalisations();
+		void resolveRegimentTypes();
 
-			void checkAllProvincesMapped() const;
-			void setNumbersOfDestinationProvinces();
-			void checkAllEU4ReligionsMapped() const;
+		void mergeNations();
+		void uniteJapan();
 
-			void removeEmptyNations();
-			void removeDeadLandlessNations();
-			void removeLandlessNations();
+		void checkAllProvincesMapped() const;
+		void setNumbersOfDestinationProvinces();
+		void checkAllEU4ReligionsMapped() const;
 
-			void setEmpires();
+		void removeEmptyNations();
+		void removeDeadLandlessNations();
+		void removeLandlessNations();
 
-			std::shared_ptr<EU4::Country> getCountry(string tag) const;
+		void setEmpires();
 
-			string holyRomanEmperor;
-			string celestialEmperor;
-			map<int, EU4Province*> provinces;
-			std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
-			EU4Diplomacy* diplomacy;
-			EU4::Version* version;
-			double worldWeightSum;
+		std::shared_ptr<EU4::Country> getCountry(string tag) const;
 
-			std::string revolutionTargetString;
-	};
+		string holyRomanEmperor;
+		string celestialEmperor;
+		std::unique_ptr<Regions> regions;
+		map<int, EU4Province*> provinces;
+		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
+		EU4Diplomacy* diplomacy;
+		std::unique_ptr<EU4::Version> version;
+		double worldWeightSum;
+
+		std::string revolutionTargetString;
+};
+
 }
 
 

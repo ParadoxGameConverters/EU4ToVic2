@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,58 +21,23 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef EU4_REGIONS_H
-#define EU4_REGIONS_H
+#include "Area.h"
+#include "Log.h"
+#include <fstream>
+#include <functional>
 
 
 
-#include "newParser.h"
-#include "Region.h"
-#include <map>
-#include <memory>
-#include <set>
-#include <string>
-
-
-
-class Object;
-namespace EU4
+EU4::area::area(std::istream& theStream)
 {
-	class areas;
-
-	class Regions: commonItems::parser
+	registerKeyword(std::regex("color"), [this](const std::string & colorToken, std::istream & areaFile)
 	{
-		public:
-			static bool provinceInRegion(int province, const std::string& regionName)
-			{
-				return getInstance()->ProvinceInRegion(province, regionName);
-			}
+		commonItems::Color newColor(areaFile);
+	}
+	);
+	registerKeyword(std::regex("[0-9]+"), [this](const std::string & number, std::istream & theStream) {
+		provinces.insert(std::stoi(number));
+	});
 
-		private:
-			static Regions* instance;
-			static Regions* getInstance()
-			{
-				if (instance == nullptr)
-				{
-					instance = new Regions;
-				}
-				return instance;
-			}
-
-			Regions();
-
-			void initEU4RegionsOldVersion();
-
-			void initEU4RegionsNewVersion();
-			void initEU4RegionsFile(const EU4::areas& areas, const std::string& regionsFilename);
-
-			bool ProvinceInRegion(int province, const std::string& regionName);
-
-			std::map<int, std::set<std::string>> EU4RegionsMap;
-			std::map<std::string, EU4::region> regions;
-	};
+	parseStream(theStream);
 }
-
-
-
-#endif //EU4_REGIONS_H

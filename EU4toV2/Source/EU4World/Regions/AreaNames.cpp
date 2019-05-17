@@ -21,52 +21,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef CULTURE_MAPPING_H_
-#define CULTURE_MAPPING_H_
+#include "AreaNames.h"
 
 
 
-#include "../EU4World/Regions/Regions.h"
-#include <map>
-#include <string>
-
-
-
-namespace mappers
+EU4::AreaNames::AreaNames(std::istream& theStream)
 {
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string & areaName, std::istream & theStream) {
+		names.insert(areaName);
+	});
 
-class cultureMapping
-{
-	public:
-		cultureMapping(
-			const std::string& sourceCulture,
-			const std::string& destinationCulture,
-			const std::map<std::string, std::string>& distinguishers
-		);
-		bool cultureMatch(
-			const EU4::Regions& EU4Regions,
-			const std::string& sourceCulture,
-			std::string& destinationCulture,
-			const std::string& religion,
-			int EU4Province,
-			const std::string& ownerTag
-		);
-
-	private:
-		bool distinguishersMatch(
-			const EU4::Regions& EU4Regions,
-			const std::map<std::string, std::string>& distinguishers,
-			const std::string& religion, int EU4Province,
-			const std::string& ownerTag
-		);
-
-		std::string sourceCulture;
-		std::string destinationCulture;
-		std::map<std::string, std::string> distinguishers;	// type, details
-};
-
+	parseStream(theStream);
 }
-
-
-
-#endif // CULTURE_MAPPING_H_

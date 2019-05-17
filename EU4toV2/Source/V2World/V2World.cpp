@@ -446,7 +446,7 @@ void V2World::initializeCountries(const EU4::world& sourceWorld)
 		}
 
 		V2Country* destCountry = createOrLocateCountry(V2Tag, sourceCountry.second);
-		destCountry->initFromEU4Country(sourceCountry.second, theTechSchools, leaderIDMap);
+		destCountry->initFromEU4Country(sourceWorld.getRegions(), sourceCountry.second, theTechSchools, leaderIDMap);
 		countries.insert(make_pair(V2Tag, destCountry));
 	}
 }
@@ -765,7 +765,7 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 					double provPopRatio = (*vitr)->getBaseTax() / newProvinceTotalBaseTax;
 
 					auto popRatios = (*vitr)->getPopRatios();
-					vector<V2Demographic> demographics = determineDemographics(popRatios, *vitr, Vic2Province.second, oldOwner, Vic2Province.first, provPopRatio);
+					vector<V2Demographic> demographics = determineDemographics(sourceWorld.getRegions(), popRatios, *vitr, Vic2Province.second, oldOwner, Vic2Province.first, provPopRatio);
 					for (auto demographic : demographics)
 					{
 						Vic2Province.second->addPopDemographic(demographic);
@@ -783,13 +783,13 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 }
 
 
-vector<V2Demographic> V2World::determineDemographics(vector<EU4PopRatio>& popRatios, EU4Province* eProv, V2Province* vProv, shared_ptr<EU4::Country> oldOwner, int destNum, double provPopRatio)
+vector<V2Demographic> V2World::determineDemographics(const EU4::Regions& eu4Regions, vector<EU4PopRatio>& popRatios, EU4Province* eProv, V2Province* vProv, shared_ptr<EU4::Country> oldOwner, int destNum, double provPopRatio)
 {
 	vector<V2Demographic> demographics;
 	for (auto prItr : popRatios)
 	{
 		string dstCulture = "no_culture";
-		bool matched = mappers::cultureMapper::cultureMatch(prItr.culture, dstCulture, prItr.religion, eProv->getNum(), oldOwner->getTag());
+		bool matched = mappers::cultureMapper::cultureMatch(eu4Regions, prItr.culture, dstCulture, prItr.religion, eProv->getNum(), oldOwner->getTag());
 		if (!matched)
 		{
 			LOG(LogLevel::Warning) << "Could not set culture for pops in Vic2 province " << destNum;
@@ -802,7 +802,7 @@ vector<V2Demographic> V2World::determineDemographics(vector<EU4PopRatio>& popRat
 		}
 
 		string slaveCulture = "";
-		matched = mappers::slaveCultureMapper::cultureMatch(prItr.culture, slaveCulture, prItr.religion, eProv->getNum(), oldOwner->getTag());;
+		matched = mappers::slaveCultureMapper::cultureMatch(eu4Regions, prItr.culture, slaveCulture, prItr.religion, eProv->getNum(), oldOwner->getTag());;
 		if (!matched)
 		{
 			auto thisContinent = EU4::continents::getEU4Continent(eProv->getNum());
@@ -891,7 +891,7 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 				{
 					if (itr2->country2 == country2->second->getSourceCountry()->getTag())
 					{
-						itr2->country2 == country1->second->getSourceCountry()->getTag();
+						itr2->country2 = country1->second->getSourceCountry()->getTag();
 					}
 				}
 			}
@@ -1126,7 +1126,7 @@ void V2World::convertUncivReforms(const EU4::world& sourceWorld)
 	double topTech = 96;
 	int topInstitutions = 7;
 	auto version18 = EU4::Version("1.18.0");
-	if (*(sourceWorld.getVersion()) >= version18)
+	if (sourceWorld.getVersion() >= version18)
 	{
 		LOG(LogLevel::Info) << "New tech group conversion method";
 		techGroupAlgorithm  = newer;
@@ -1441,7 +1441,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 
 	int popAlgorithm = 0;
 	auto version12 = EU4::Version("1.12.0");
-	if (*(sourceWorld.getVersion()) >= version12)
+	if (sourceWorld.getVersion() >= version12)
 	{
 		LOG(LogLevel::Info) << "Using pop conversion algorithm for EU4 versions after 1.12.";
 		popAlgorithm = 2;

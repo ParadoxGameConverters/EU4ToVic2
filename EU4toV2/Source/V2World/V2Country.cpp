@@ -517,7 +517,12 @@ void V2Country::outputOOB() const
 }
 
 
-void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const std::unique_ptr<Vic2::TechSchools>& techSchools, const map<int, int>& leaderMap)
+void V2Country::initFromEU4Country(
+	const EU4::Regions& eu4Regions,
+	std::shared_ptr<EU4::Country> _srcCountry,
+	const std::unique_ptr<Vic2::TechSchools>& techSchools,
+	const map<int, int>& leaderMap
+)
 {
 	srcCountry = _srcCountry;
 
@@ -573,7 +578,8 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 		religion = religionMapper::getVic2Religion(srcReligion);
 		if (religion == "")
 		{
-			LOG(LogLevel::Warning) << "No religion mapping defined for " << srcReligion << " (" << _srcCountry->getTag() << " -> " << tag << ')';
+			LOG(LogLevel::Warning) << "No religion mapping defined for " << srcReligion
+				<< " (" << _srcCountry->getTag() << " -> " << tag << ')';
 		}
 	}
 
@@ -582,10 +588,18 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 
 	if (srcCulture.size() > 0)
 	{
-		bool matched = mappers::cultureMapper::cultureMatch(srcCulture, primaryCulture, religion, oldCapital, srcCountry->getTag());
+		bool matched = mappers::cultureMapper::cultureMatch(
+			eu4Regions,
+			srcCulture,
+			primaryCulture,
+			religion,
+			oldCapital,
+			srcCountry->getTag()
+		);
 		if (!matched)
 		{
-			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture << " (" << srcCountry->getTag() << " -> " << tag << ')';
+			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture
+				<< " (" << srcCountry->getTag() << " -> " << tag << ')';
 		}
 	}
 
@@ -602,7 +616,14 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	for (auto srcCulture: srcAceptedCultures)
 	{
 		string dstCulture;
-		bool matched = mappers::cultureMapper::cultureMatch(srcCulture, dstCulture, religion, oldCapital, srcCountry->getTag());
+		bool matched = mappers::cultureMapper::cultureMatch(
+			eu4Regions,
+			srcCulture,
+			dstCulture,
+			religion,
+			oldCapital,
+			srcCountry->getTag()
+		);
 		if (matched)
 		{
 			if (primaryCulture != dstCulture)
@@ -612,7 +633,8 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 		}
 		if (!matched)
 		{
-			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture << " (" << srcCountry->getTag() << " -> " << tag << ')';
+			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture
+				<< " (" << srcCountry->getTag() << " -> " << tag << ')';
 		}
 	}
 
@@ -632,8 +654,8 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	upperHouseLiberal				=  static_cast<int>(10 + (100 * liberalEffect));
 	upperHouseConservative		= 100 - (upperHouseReactionary + upperHouseLiberal);
 	LOG(LogLevel::Debug) << tag << " has an Upper House of " << upperHouseReactionary << " reactionary, "
-																				<< upperHouseConservative << " conservative, and "
-																				<< upperHouseLiberal << " liberal";
+		<< upperHouseConservative << " conservative, and "
+		<< upperHouseLiberal << " liberal";
 	
 	string idealogy;
 	if (liberalEffect >= 2 * reactionaryEffect)
@@ -712,28 +734,32 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	{
 		literacy += ideaEffectMapper::getLiteracyFromIdea(idea.first, idea.second);
 	}
-	if ( (srcCountry->getReligion() == "Protestant") || (srcCountry->getReligion() == "Confucianism") || (srcCountry->getReligion() == "Reformed") )
+	if (
+		(srcCountry->getReligion() == "Protestant") ||
+		(srcCountry->getReligion() == "Confucianism") ||
+		(srcCountry->getReligion() == "Reformed")
+	)
 	{
 		literacy += 0.05;
 	}
 
-	if ( srcCountry->hasModifier("the_school_establishment_act") )
+	if (srcCountry->hasModifier("the_school_establishment_act"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("sunday_schools") )
+	if (srcCountry->hasModifier("sunday_schools"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("the_education_act") )
+	if (srcCountry->hasModifier("the_education_act"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("monastic_education_system") )
+	if (srcCountry->hasModifier("monastic_education_system"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("western_embassy_mission") )
+	if (srcCountry->hasModifier("western_embassy_mission"))
 	{
 		literacy += 0.04;
 	}
@@ -769,7 +795,12 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	}
 	literacy += collegeBonus;
 	string techGroup = srcCountry->getTechGroup();
-	if ( (techGroup != "western") && (techGroup != "high_american") && (techGroup != "eastern") && (techGroup != "ottoman"))
+	if (
+		(techGroup != "western") &&
+		(techGroup != "high_american") &&
+		(techGroup != "eastern") &&
+		(techGroup != "ottoman")
+	)
 	{
 		literacy *= 0.1;
 	}
@@ -817,7 +848,13 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	double industryInvestment		= srcCountry->getIndustryInvestment();
 	double cultureInvestment		= srcCountry->getCultureInvestment();
 
-	techSchool = techSchools->findBestTechSchool(armyInvestment, commerceInvestment, cultureInvestment, industryInvestment, navyInvestment);
+	techSchool = techSchools->findBestTechSchool(
+		armyInvestment,
+		commerceInvestment,
+		cultureInvestment,
+		industryInvestment,
+		navyInvestment
+	);
 	LOG(LogLevel::Debug) << tag << " has tech school " << techSchool;
 
 	//// Leaders

@@ -181,7 +181,6 @@
     <ClCompile Include="..\common_items\WinUtils.cpp" />
     <ClCompile Include="Source\Configuration.cpp" />
     <ClCompile Include="Source\EU4toV2Converter.cpp" />
-    <ClCompile Include="Source\EU4World\Areas.cpp" />
     <ClCompile Include="Source\EU4World\ColonialRegions.cpp" />
     <ClCompile Include="Source\EU4World\Continents.cpp" />
     <ClCompile Include="Source\EU4World\Countries.cpp" />
@@ -198,8 +197,11 @@
     <ClCompile Include="Source\EU4World\EU4Version.cpp" />
     <ClCompile Include="Source\EU4World\History.cpp" />
     <ClCompile Include="Source\EU4World\ID.cpp" />
-    <ClCompile Include="Source\EU4World\Region.cpp" />
-    <ClCompile Include="Source\EU4World\Regions.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\Area.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\AreaNames.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\Areas.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\Region.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\Regions.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
     <ClCompile Include="Source\FlagUtils.cpp" />
     <ClCompile Include="Source\main.cpp" />
@@ -258,7 +260,6 @@
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\CustomFlagMapper.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
-    <ClInclude Include="Source\EU4World\Areas.h" />
     <ClInclude Include="Source\EU4World\ColonialRegions.h" />
     <ClInclude Include="Source\EU4World\Continents.h" />
     <ClInclude Include="Source\EU4World\Countries.h" />
@@ -275,8 +276,11 @@
     <ClInclude Include="Source\EU4World\EU4Version.h" />
     <ClInclude Include="Source\EU4World\History.h" />
     <ClInclude Include="Source\EU4World\ID.h" />
-    <ClInclude Include="Source\EU4World\Region.h" />
-    <ClInclude Include="Source\EU4World\Regions.h" />
+    <ClInclude Include="Source\EU4World\Regions\Area.h" />
+    <ClInclude Include="Source\EU4World\Regions\AreaNames.h" />
+    <ClInclude Include="Source\EU4World\Regions\Areas.h" />
+    <ClInclude Include="Source\EU4World\Regions\Region.h" />
+    <ClInclude Include="Source\EU4World\Regions\Regions.h" />
     <ClInclude Include="Source\EU4World\World.h" />
     <ClInclude Include="Source\FlagUtils.h" />
     <ClInclude Include="Source\Mappers\AdjacencyMapper.h" />

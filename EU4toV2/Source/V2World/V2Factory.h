@@ -30,6 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <vector>
 #include <map>
 #include <memory>
+#include <string>
 using namespace std;
 
 

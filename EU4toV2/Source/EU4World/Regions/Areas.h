@@ -21,52 +21,39 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef CULTURE_MAPPING_H_
-#define CULTURE_MAPPING_H_
+#ifndef EU4_AREAS_H_
+#define EU4_AREAS_H_
 
 
 
-#include "../EU4World/Regions/Regions.h"
+#include "Area.h"
+#include "Color.h"
+#include "newParser.h"
+#include <istream>
 #include <map>
+#include <set>
 #include <string>
 
 
 
-namespace mappers
+namespace EU4
 {
 
-class cultureMapping
+class areas: commonItems::parser
 {
 	public:
-		cultureMapping(
-			const std::string& sourceCulture,
-			const std::string& destinationCulture,
-			const std::map<std::string, std::string>& distinguishers
-		);
-		bool cultureMatch(
-			const EU4::Regions& EU4Regions,
-			const std::string& sourceCulture,
-			std::string& destinationCulture,
-			const std::string& religion,
-			int EU4Province,
-			const std::string& ownerTag
-		);
+		areas(std::istream& filename);
+
+		const std::set<int> getProvincesInArea(const std::string& area) const;
+
+		const std::map<std::string, std::set<int>> getAreas() const { return theAreas; }
 
 	private:
-		bool distinguishersMatch(
-			const EU4::Regions& EU4Regions,
-			const std::map<std::string, std::string>& distinguishers,
-			const std::string& religion, int EU4Province,
-			const std::string& ownerTag
-		);
-
-		std::string sourceCulture;
-		std::string destinationCulture;
-		std::map<std::string, std::string> distinguishers;	// type, details
+		std::map<std::string, std::set<int>> theAreas;
 };
 
 }
 
 
 
-#endif // CULTURE_MAPPING_H_
+#endif // EU4_AREAS_H_
