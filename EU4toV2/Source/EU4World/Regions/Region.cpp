@@ -32,7 +32,8 @@ EU4::region::region(std::istream& theStream)
 {
 	registerKeyword(std::regex("areas"), [this](const std::string& unused, std::istream& theStream) {
 		AreaNames names(theStream);
-		areaNames.merge(names.getNames());
+		auto newNames = names.getNames();
+		areaNames.merge(newNames);
 	});
 	registerKeyword(std::regex("discover_if"), commonItems::ignoreObject);
 
