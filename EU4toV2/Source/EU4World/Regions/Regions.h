@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -27,30 +27,24 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "newParser.h"
-#include "Regions/Region.h"
+#include "Region.h"
 #include <map>
-#include <memory>
-#include <set>
 #include <string>
 
 
 
 namespace EU4
 {
-class areas;
 
 class Regions: commonItems::parser
 {
 	public:
-		Regions();
+		Regions(const EU4::areas& areas, std::istream& regionsFile);
+		Regions(const EU4::areas& areas);
+
 		bool provinceInRegion(int province, const std::string& regionName) const;
 
 	private:
-		void initEU4RegionsOldVersion();
-		void initEU4RegionsNewVersion();
-		void initEU4RegionsFile(const EU4::areas& areas, const std::string& regionsFilename);
-
-		std::map<int, std::set<std::string>> EU4RegionsMap;
 		std::map<std::string, EU4::region> regions;
 };
 

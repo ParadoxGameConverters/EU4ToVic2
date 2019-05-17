@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "CultureMapping.h"
-#include "../EU4World/Regions.h"
+#include "../EU4World/Regions/Regions.h"
 #include "Log.h"
 
 

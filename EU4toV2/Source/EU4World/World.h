@@ -26,11 +26,12 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include <istream>
 #include "EU4Army.h"
 #include "EU4Diplomacy.h"
-#include "Regions.h"
+#include "Regions/Regions.h"
 #include "newParser.h"
+#include <istream>
+#include <memory>
 
 
 
@@ -59,7 +60,7 @@ namespace EU4
 			std::map<std::string, std::shared_ptr<EU4::Country>> getCountries() const { return theCountries; };
 			vector<EU4Agreement> getDiplomaticAgreements() const { return diplomacy->getAgreements(); };
 			double getWorldWeightSum() const { return worldWeightSum; };
-			Regions getRegions() const { return regions; }
+			const Regions& getRegions() const { return *regions; }
 
 			bool isRandomWorld() const;
 
@@ -88,6 +89,10 @@ namespace EU4
 			void loadDiplomacy(const shared_ptr<Object> EU4SaveObj);
 			void determineProvinceWeights();
 
+			void loadRegions();
+			void loadEU4RegionsNewVersion();
+			void loadEU4RegionsOldVersion();
+
 			void checkAllEU4CulturesMapped() const;
 
 			void readCommonCountries();
@@ -113,7 +118,7 @@ namespace EU4
 
 			string holyRomanEmperor;
 			string celestialEmperor;
-			Regions regions;
+			std::unique_ptr<Regions> regions;
 			map<int, EU4Province*> provinces;
 			std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
 			EU4Diplomacy* diplomacy;

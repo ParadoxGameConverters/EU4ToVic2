@@ -28,7 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "newParser.h"
 #include "CultureMapping.h"
-#include "../EU4World/Regions.h"
+#include "../EU4World/Regions/Regions.h"
 #include <string>
 #include <vector>
 

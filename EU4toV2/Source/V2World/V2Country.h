@@ -29,7 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Color.h"
 #include "Date.h"
 #include "../EU4World/EU4Army.h"
-#include "../EU4World/Regions.h"
+#include "../EU4World/Regions/Regions.h"
 #include "V2Localisation.h"
 #include "V2TechSchools.h"
 #include <memory>

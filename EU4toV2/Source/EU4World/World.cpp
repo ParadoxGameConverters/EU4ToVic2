@@ -22,19 +22,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "World.h"
-#include <algorithm>
-#include <fstream>
-#include <string>
-#include "Log.h"
-#include "OSCompatibilityLayer.h"
-#include "NewParserToOldParserConverters.h"
-#include "ParserHelpers.h"
-#include "../Configuration.h"
-#include "../Mappers/CultureMapper.h"
-#include "../Mappers/ProvinceMapper.h"
-#include "../Mappers/ReligionMapper.h"
-#include "Object.h"
-#include "ParadoxParserUTF8.h"
 #include "Countries.h"
 #include "CultureGroups.h"
 #include "EU4Province.h"
@@ -43,7 +30,21 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "EU4Version.h"
 #include "EU4Localisation.h"
 #include "EU4Religion.h"
+#include "Regions/Areas.h"
+#include "../Configuration.h"
+#include "../Mappers/CultureMapper.h"
+#include "../Mappers/ProvinceMapper.h"
+#include "../Mappers/ReligionMapper.h"
+#include "Log.h"
+#include "NewParserToOldParserConverters.h"
+#include "Object.h"
+#include "OSCompatibilityLayer.h"
+#include "ParserHelpers.h"
+#include "ParadoxParserUTF8.h"
 #include <set>
+#include <algorithm>
+#include <fstream>
+#include <string>
 
 
 
@@ -123,6 +124,7 @@ EU4::world::world(const string& EU4SaveFileName):
 	setEmpires();
 	addProvinceInfoToCountries();
 	determineProvinceWeights();
+	loadRegions();
 	checkAllEU4CulturesMapped();
 	readCommonCountries();
 	setLocalisations();
@@ -658,6 +660,68 @@ void EU4::world::determineProvinceWeights()
 }
 
 
+void EU4::world::loadRegions()
+{
+	LOG(LogLevel::Info) << "Parsing EU4 regions";
+
+	if (theConfiguration.getEU4Version() >= EU4::Version("1.14"))
+	{
+		loadEU4RegionsNewVersion();
+	}
+	else
+	{
+		loadEU4RegionsOldVersion();
+	}
+}
+
+
+void EU4::world::loadEU4RegionsOldVersion()
+{
+	std::string regionFilename = theConfiguration.getEU4Path() + "/map/region.txt";
+
+	for (auto itr: theConfiguration.getEU4Mods())
+	{
+		if (!Utils::DoesFileExist(itr + "/map/region.txt"))
+		{
+			continue;
+		}
+
+		regionFilename = itr + "/map/region.txt";
+	}
+
+	std::ifstream theStream(regionFilename);
+	EU4::areas installedAreas(theStream);
+	theStream.close();
+
+	regions = std::make_unique<Regions>(installedAreas);
+}
+
+
+void EU4::world::loadEU4RegionsNewVersion()
+{
+	std::string areaFilename = theConfiguration.getEU4Path() + "/map/area.txt";
+	std::string regionFilename = theConfiguration.getEU4Path() + "/map/region.txt";
+	for (auto itr: theConfiguration.getEU4Mods())
+	{
+		if (!Utils::DoesFileExist(itr + "/map/area.txt") || !Utils::DoesFileExist(itr + "/map/region.txt"))
+		{
+			continue;
+		}
+
+		areaFilename = itr + "/map/area.txt";
+		regionFilename = itr + "/map/region.txt";
+	}
+
+	std::ifstream areaStream(areaFilename);
+	EU4::areas installedAreas(areaStream);
+	areaStream.close();
+
+	std::ifstream regionStream(regionFilename);
+	regions = std::make_unique<Regions>(installedAreas, regionStream);
+	regionStream.close();
+}
+
+
 void EU4::world::checkAllEU4CulturesMapped() const
 {
 	for (auto cultureItr: EU4::cultureGroups::getCultureToGroupMap())
@@ -665,7 +729,7 @@ void EU4::world::checkAllEU4CulturesMapped() const
 		string Vi2Culture;
 		string EU4Culture = cultureItr.first;
 
-		bool matched = mappers::cultureMapper::cultureMatch(regions, EU4Culture, Vi2Culture);
+		bool matched = mappers::cultureMapper::cultureMatch(*regions, EU4Culture, Vi2Culture);
 		if (!matched)
 		{
 			LOG(LogLevel::Warning) << "No culture mapping for EU4 culture " << EU4Culture;
