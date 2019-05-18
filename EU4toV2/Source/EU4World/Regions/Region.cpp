@@ -36,6 +36,7 @@ EU4::region::region(std::istream& theStream)
 		areaNames.merge(newNames);
 	});
 	registerKeyword(std::regex("discover_if"), commonItems::ignoreObject);
+	registerKeyword(std::regex("monsoon"), commonItems::ignoreObject);
 
 	parseStream(theStream);
 }
