@@ -79,6 +79,7 @@ V2World::V2World(const EU4::world& sourceWorld)
 
 	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries);
 	LOG(LogLevel::Info) << "Converting world";
+	initializeCultureMappers(sourceWorld);
 	convertCountries(sourceWorld);
 	convertProvinces(sourceWorld);
 	convertDiplomacy(sourceWorld);
@@ -420,6 +421,22 @@ void V2World::importPotentialCountry(const string& line, bool dynamicCountry)
 }
 
 
+void V2World::initializeCultureMappers(const EU4::world& sourceWorld)
+{
+	LOG(LogLevel::Info) << "Parsing culture mappings";
+
+	std::ifstream cultureMapFile("cultureMap.txt");
+	cultureMapper = std::make_unique<mappers::CultureMapper>(cultureMapFile);
+	cultureMapFile.close();
+
+	std::ifstream slaveCultureMapFile("slaveCultureMap.txt");
+	slaveCultureMapper = std::make_unique<mappers::SlaveCultureMapper>(slaveCultureMapFile);
+	slaveCultureMapFile.close();
+
+	sourceWorld.checkAllEU4CulturesMapped(*cultureMapper);
+}
+
+
 void V2World::convertCountries(const EU4::world& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting countries";
@@ -446,7 +463,14 @@ void V2World::initializeCountries(const EU4::world& sourceWorld)
 		}
 
 		V2Country* destCountry = createOrLocateCountry(V2Tag, sourceCountry.second);
-		destCountry->initFromEU4Country(sourceWorld.getRegions(), sourceCountry.second, theTechSchools, leaderIDMap);
+		destCountry->initFromEU4Country(
+			sourceWorld.getRegions(),
+			sourceCountry.second,
+			theTechSchools,
+			leaderIDMap,
+			*cultureMapper,
+			*slaveCultureMapper
+		);
 		countries.insert(make_pair(V2Tag, destCountry));
 	}
 }
@@ -789,7 +813,7 @@ vector<V2Demographic> V2World::determineDemographics(const EU4::Regions& eu4Regi
 	for (auto popRatio: popRatios)
 	{
 		std::optional<std::string> dstCulture;
-		dstCulture = mappers::cultureMapper::cultureMatch(
+		dstCulture = cultureMapper->cultureMatch(
 			eu4Regions,
 			popRatio.getCulture(),
 			popRatio.getReligion(),
@@ -809,7 +833,7 @@ vector<V2Demographic> V2World::determineDemographics(const EU4::Regions& eu4Regi
 		}
 
 		std::optional<std::string> slaveCulture;
-		slaveCulture = mappers::slaveCultureMapper::cultureMatch(
+		slaveCulture = slaveCultureMapper->cultureMatch(
 			eu4Regions,
 			popRatio.getCulture(),
 			popRatio.getReligion(),

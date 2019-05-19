@@ -30,6 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "EU4Diplomacy.h"
 #include "EU4Version.h"
 #include "Regions/Regions.h"
+#include "../Mappers/CultureMapper.h"
 #include "newParser.h"
 #include <istream>
 #include <memory>
@@ -52,6 +53,8 @@ class world: private commonItems::parser
 		world(const std::string& EU4SaveFileName);
 
 		EU4Province* getProvince(int provNum) const;
+
+		void checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const;
 
 		const EU4::Version& getVersion() const { return *version; };
 		std::map<std::string, std::shared_ptr<EU4::Country>> getCountries() const { return theCountries; };
@@ -89,8 +92,6 @@ class world: private commonItems::parser
 		void loadRegions();
 		void loadEU4RegionsNewVersion();
 		void loadEU4RegionsOldVersion();
-
-		void checkAllEU4CulturesMapped() const;
 
 		void readCommonCountries();
 		void readCommonCountriesFile(istream&, const std::string& rootPath);

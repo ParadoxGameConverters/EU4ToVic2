@@ -521,7 +521,9 @@ void V2Country::initFromEU4Country(
 	const EU4::Regions& eu4Regions,
 	std::shared_ptr<EU4::Country> _srcCountry,
 	const std::unique_ptr<Vic2::TechSchools>& techSchools,
-	const map<int, int>& leaderMap
+	const map<int, int>& leaderMap,
+	const mappers::CultureMapper& cultureMapper,
+	const mappers::SlaveCultureMapper& slaveCultureMapper
 )
 {
 	srcCountry = _srcCountry;
@@ -592,7 +594,7 @@ void V2Country::initFromEU4Country(
 
 	if (srcCulture.size() > 0)
 	{
-		std::optional<std::string> matched = mappers::cultureMapper::cultureMatch(
+		std::optional<std::string> matched = cultureMapper.cultureMatch(
 			eu4Regions,
 			srcCulture,
 			religion,
@@ -623,7 +625,7 @@ void V2Country::initFromEU4Country(
 	for (auto srcCulture: srcAceptedCultures)
 	{
 		std::optional<std::string> dstCulture;
-		dstCulture = mappers::cultureMapper::cultureMatch(
+		dstCulture = cultureMapper.cultureMatch(
 			eu4Regions,
 			srcCulture,
 			religion,

@@ -27,12 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-mappers::slaveCultureMapper* mappers::slaveCultureMapper::instance = nullptr;
-
-
-
-mappers::slaveCultureMapper::slaveCultureMapper():
-	cultureMap()
+mappers::SlaveCultureMapper::SlaveCultureMapper(std::istream& theStream)
 {
 	LOG(LogLevel::Info) << "Parsing slave culture mappings";
 
@@ -47,17 +42,17 @@ mappers::slaveCultureMapper::slaveCultureMapper():
 		}
 	);
 
-	parseFile("slaveCultureMap.txt");
+	parseStream(theStream);
 }
 
 
-std::optional<std::string> mappers::slaveCultureMapper::CultureMatch(
+std::optional<std::string> mappers::SlaveCultureMapper::cultureMatch(
 	const EU4::Regions& EU4Regions,
 	const std::string& culture,
 	const std::string& religion,
 	int EU4Province,
 	const std::string& ownerTag
-)
+) const
 {
 	for (auto cultureMapping: cultureMap)
 	{
