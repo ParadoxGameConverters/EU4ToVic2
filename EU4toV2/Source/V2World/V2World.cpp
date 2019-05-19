@@ -786,13 +786,20 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 vector<V2Demographic> V2World::determineDemographics(const EU4::Regions& eu4Regions, vector<EU4PopRatio>& popRatios, EU4Province* eProv, V2Province* vProv, shared_ptr<EU4::Country> oldOwner, int destNum, double provPopRatio)
 {
 	vector<V2Demographic> demographics;
-	for (auto prItr : popRatios)
+	for (auto popRatio: popRatios)
 	{
-		string dstCulture = "no_culture";
-		bool matched = mappers::cultureMapper::cultureMatch(eu4Regions, prItr.culture, dstCulture, prItr.religion, eProv->getNum(), oldOwner->getTag());
-		if (!matched)
+		std::optional<std::string> dstCulture;
+		dstCulture = mappers::cultureMapper::cultureMatch(
+			eu4Regions,
+			popRatio.getCulture(),
+			popRatio.getReligion(),
+			eProv->getNum(),
+			oldOwner->getTag()
+		);
+		if (!dstCulture)
 		{
 			LOG(LogLevel::Warning) << "Could not set culture for pops in Vic2 province " << destNum;
+			dstCulture = "no_culture";
 		}
 
 		string religion = religionMapper::getVic2Religion(prItr.religion);;
@@ -801,19 +808,33 @@ vector<V2Demographic> V2World::determineDemographics(const EU4::Regions& eu4Regi
 			LOG(LogLevel::Warning) << "Could not set religion for pops in Vic2 province " << destNum;
 		}
 
-		string slaveCulture = "";
-		matched = mappers::slaveCultureMapper::cultureMatch(eu4Regions, prItr.culture, slaveCulture, prItr.religion, eProv->getNum(), oldOwner->getTag());;
-		if (!matched)
+		std::optional<std::string> slaveCulture;
+		slaveCulture = mappers::slaveCultureMapper::cultureMatch(
+			eu4Regions,
+			popRatio.getCulture(),
+			popRatio.getReligion(),
+			eProv->getNum(),
+			oldOwner->getTag()
+		);
+		if (!slaveCulture)
 		{
 			auto thisContinent = EU4::continents::getEU4Continent(eProv->getNum());
 			if ((thisContinent) && ((thisContinent == "asia") || (thisContinent == "oceania")))
 			{
-				//LOG(LogLevel::Warning) << "No mapping for slave culture in province " << destNum << " - using native culture (" << prItr.culture << ").";
-				slaveCulture = prItr.culture;
+				if (theConfiguration.getDebug())
+				{
+					LOG(LogLevel::Warning) << "No mapping for slave culture in province "
+						<< destNum << " - using native culture (" << popRatio.getCulture() << ").";
+				}
+				slaveCulture = popRatio.getCulture();
 			}
 			else
 			{
-				//LOG(LogLevel::Warning) << "No mapping for slave culture for pops in Vic2 province " << destNum << " - using african_minor.";
+				if (theConfiguration.getDebug())
+				{
+					LOG(LogLevel::Warning) << "No mapping for slave culture for pops in Vic2 province "
+						<< destNum << " - using african_minor.";
+				}
 				slaveCulture = "african_minor";
 			}
 		}

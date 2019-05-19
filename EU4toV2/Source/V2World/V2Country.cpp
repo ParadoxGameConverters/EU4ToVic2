@@ -575,11 +575,15 @@ void V2Country::initFromEU4Country(
 	string srcReligion = srcCountry->getReligion();
 	if (srcReligion.size() > 0)
 	{
-		religion = religionMapper::getVic2Religion(srcReligion);
-		if (religion == "")
+		std::optional<std::string> match = religionMapper::getVic2Religion(srcReligion);
+		if (!match)
 		{
 			LOG(LogLevel::Warning) << "No religion mapping defined for " << srcReligion
 				<< " (" << _srcCountry->getTag() << " -> " << tag << ')';
+		}
+		else
+		{
+			religion = *match;
 		}
 	}
 
@@ -588,10 +592,9 @@ void V2Country::initFromEU4Country(
 
 	if (srcCulture.size() > 0)
 	{
-		bool matched = mappers::cultureMapper::cultureMatch(
+		std::optional<std::string> matched = mappers::cultureMapper::cultureMatch(
 			eu4Regions,
 			srcCulture,
-			primaryCulture,
 			religion,
 			oldCapital,
 			srcCountry->getTag()
@@ -600,6 +603,10 @@ void V2Country::initFromEU4Country(
 		{
 			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture
 				<< " (" << srcCountry->getTag() << " -> " << tag << ')';
+		}
+		else
+		{
+			primaryCulture = *matched;
 		}
 	}
 
@@ -615,23 +622,22 @@ void V2Country::initFromEU4Country(
 	}
 	for (auto srcCulture: srcAceptedCultures)
 	{
-		string dstCulture;
-		bool matched = mappers::cultureMapper::cultureMatch(
+		std::optional<std::string> dstCulture;
+		dstCulture = mappers::cultureMapper::cultureMatch(
 			eu4Regions,
 			srcCulture,
-			dstCulture,
 			religion,
 			oldCapital,
 			srcCountry->getTag()
 		);
-		if (matched)
+		if (dstCulture)
 		{
-			if (primaryCulture != dstCulture)
+			if (primaryCulture != *dstCulture)
 			{
-				acceptedCultures.insert(dstCulture);
+				acceptedCultures.insert(*dstCulture);
 			}
 		}
-		if (!matched)
+		else
 		{
 			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture
 				<< " (" << srcCountry->getTag() << " -> " << tag << ')';

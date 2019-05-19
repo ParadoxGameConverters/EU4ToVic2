@@ -51,10 +51,9 @@ mappers::slaveCultureMapper::slaveCultureMapper():
 }
 
 
-bool mappers::slaveCultureMapper::CultureMatch(
+std::optional<std::string> mappers::slaveCultureMapper::CultureMatch(
 	const EU4::Regions& EU4Regions,
-	const std::string& srcCulture,
-	std::string& dstCulture,
+	const std::string& culture,
 	const std::string& religion,
 	int EU4Province,
 	const std::string& ownerTag
@@ -65,10 +64,9 @@ bool mappers::slaveCultureMapper::CultureMatch(
 		auto possibleMatch = cultureMapping.cultureMatch(EU4Regions, culture, religion, EU4Province, ownerTag);
 		if (possibleMatch)
 		{
-			dstCultue = *possibleMatch;
-			return true;
+			return possibleMatch;
 		}
 	}
 
-	return false;
+	return {};
 }
