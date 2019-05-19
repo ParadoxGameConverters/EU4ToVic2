@@ -62,8 +62,10 @@ bool mappers::cultureMapper::CultureMatch(
 {
 	for (auto cultureMapping: cultureMap)
 	{
-		if (cultureMapping.cultureMatch(EU4Regions, srcCulture, dstCulture, religion, EU4Province, ownerTag))
+		auto possibleMatch = cultureMapping.cultureMatch(EU4Regions, culture, religion, EU4Province, ownerTag);
+		if (possibleMatch)
 		{
+			dstCulture = *possibleMatch;
 			return true;
 		}
 	}

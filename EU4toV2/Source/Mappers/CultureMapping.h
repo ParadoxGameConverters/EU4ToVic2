@@ -28,6 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "../EU4World/Regions/Regions.h"
 #include <map>
+#include <optional>
 #include <string>
 
 
@@ -35,18 +36,26 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 namespace mappers
 {
 
+enum class distinguisherTypes
+{
+	owner,
+	religion,
+	province,
+	region
+};
+
 class cultureMapping
 {
 	public:
 		cultureMapping(
 			const std::string& sourceCulture,
 			const std::string& destinationCulture,
-			const std::map<std::string, std::string>& distinguishers
+			const std::map<distinguisherTypes, std::string>& distinguishers
 		);
-		bool cultureMatch(
+
+		std::optional<std::string> cultureMatch(
 			const EU4::Regions& EU4Regions,
-			const std::string& sourceCulture,
-			std::string& destinationCulture,
+			const std::string& culture,
 			const std::string& religion,
 			int EU4Province,
 			const std::string& ownerTag
@@ -55,14 +64,15 @@ class cultureMapping
 	private:
 		bool distinguishersMatch(
 			const EU4::Regions& EU4Regions,
-			const std::map<std::string, std::string>& distinguishers,
-			const std::string& religion, int EU4Province,
+			const std::map<distinguisherTypes, std::string>& distinguishers,
+			const std::string& religion,
+			int EU4Province,
 			const std::string& ownerTag
 		);
 
 		std::string sourceCulture;
 		std::string destinationCulture;
-		std::map<std::string, std::string> distinguishers;	// type, details
+		std::map<distinguisherTypes, std::string> distinguishers;
 };
 
 }

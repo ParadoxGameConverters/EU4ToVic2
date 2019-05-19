@@ -21,54 +21,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include "SlaveCultureMapper.h"
-#include "CultureMappingRule.h"
-#include "Log.h"
+#include "gmock/gmock.h"
+#include "../../EU4toV2/Source/EU4World/Regions/Regions.h"
 
 
 
-mappers::slaveCultureMapper* mappers::slaveCultureMapper::instance = nullptr;
-
-
-
-mappers::slaveCultureMapper::slaveCultureMapper():
-	cultureMap()
+class mockRegions: public EU4::Regions
 {
-	LOG(LogLevel::Info) << "Parsing slave culture mappings";
-
-	registerKeyword(std::regex("link"), [this](const std::string& unused, std::istream& theStream)
-		{
-			CultureMappingRule rule(theStream);
-			auto newRules = rule.getMappings();
-			for (auto newRule: newRules)
-			{
-				cultureMap.push_back(newRule);
-			}
-		}
-	);
-
-	parseFile("slaveCultureMap.txt");
-}
-
-
-bool mappers::slaveCultureMapper::CultureMatch(
-	const EU4::Regions& EU4Regions,
-	const std::string& srcCulture,
-	std::string& dstCulture,
-	const std::string& religion,
-	int EU4Province,
-	const std::string& ownerTag
-)
-{
-	for (auto cultureMapping: cultureMap)
-	{
-		auto possibleMatch = cultureMapping.cultureMatch(EU4Regions, culture, religion, EU4Province, ownerTag);
-		if (possibleMatch)
-		{
-			dstCultue = *possibleMatch;
-			return true;
-		}
-	}
-
-	return false;
-}
+	public:
+		MOCK_CONST_METHOD2(provinceInRegion, bool(int province, const std::string& regionName));
+};

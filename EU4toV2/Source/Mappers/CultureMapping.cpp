@@ -30,7 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 mappers::cultureMapping::cultureMapping(
 	const std::string& _sourceCulture,
 	const std::string& _destinationCulture,
-	const std::map<std::string, std::string>& _distinguishers
+	const std::map<distinguisherTypes, std::string>& _distinguishers
 ):
 	sourceCulture(_sourceCulture),
 	destinationCulture(_destinationCulture),
@@ -38,69 +38,62 @@ mappers::cultureMapping::cultureMapping(
 {}
 
 
-bool mappers::cultureMapping::cultureMatch(
+std::optional<std::string> mappers::cultureMapping::cultureMatch(
 	const EU4::Regions& EU4Regions,
-	const std::string& _sourceCulture,
-	std::string& _destinationCulture,
+	const std::string& culture,
 	const std::string& religion,
 	int EU4Province,
 	const std::string& ownerTag
 )
 {
-	if (sourceCulture == _sourceCulture)
+	if (sourceCulture == culture)
 	{
 		if (distinguishersMatch(EU4Regions, distinguishers, religion, EU4Province, ownerTag))
 		{
-			_destinationCulture = destinationCulture;
-			return true;
+			return destinationCulture;
 		}
 	}
 
-	return false;
+	return {};
 }
 
 
 bool mappers::cultureMapping::distinguishersMatch(
 	const EU4::Regions& EU4Regions,
-	const std::map<std::string, std::string>& distinguishers,
+	const std::map<distinguisherTypes, std::string>& distinguishers,
 	const std::string& religion,
 	int EU4Province,
 	const std::string& ownerTag)
 {
 	for (auto currentDistinguisher: distinguishers)
 	{
-		if (currentDistinguisher.first == "owner")
+		if (currentDistinguisher.first == distinguisherTypes::owner)
 		{
 			if (ownerTag != currentDistinguisher.second)
 			{
 				return false;
 			}
 		}
-		else if (currentDistinguisher.first == "religion")
+		else if (currentDistinguisher.first == distinguisherTypes::religion)
 		{
 			if (religion != currentDistinguisher.second)
 			{
 				return false;
 			}
 		}
-		else if (currentDistinguisher.first == "region")
-		{
-			if (!EU4Regions.provinceInRegion(EU4Province, currentDistinguisher.second))
-			{
-				return false;
-			}
-		}
-		else if (currentDistinguisher.first == "provinceid")
+		else if (currentDistinguisher.first == distinguisherTypes::province)
 		{
 			if (stoi(currentDistinguisher.second) != EU4Province)
 			{
 				return false;
 			}
 		}
-		else
+		else if (currentDistinguisher.first == distinguisherTypes::region)
 		{
-			LOG(LogLevel::Warning) << "Unhandled distinguisher type in culture rules: " << currentDistinguisher.first;
-			return false;
+			if (!EU4Regions.provinceInRegion(EU4Province, currentDistinguisher.second))
+			{
+				return false;
+			}
 		}
 	}
 

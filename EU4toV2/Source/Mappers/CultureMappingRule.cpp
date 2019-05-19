@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -29,28 +29,41 @@ mappers::CultureMappingRule::CultureMappingRule(std::istream& theStream):
 	mappings()
 {
 	std::string destinationCulture;
-	registerKeyword(std::regex("vic2"), [this, &destinationCulture](const std::string& unused, std::istream& theStream)
-		{
-			auto equals = getNextToken(theStream);
-			destinationCulture = *getNextToken(theStream);
-		}
-	);
+	registerKeyword(std::regex("vic2"), [this, &destinationCulture](const std::string& unused, std::istream& theStream) {
+		auto equals = getNextToken(theStream);
+		destinationCulture = *getNextToken(theStream);
+	});
 
 	std::vector<std::string> sourceCultures;
-	registerKeyword(std::regex("eu4"), [this, &sourceCultures](const std::string& unused, std::istream& theStream)
-		{
-			auto equals = getNextToken(theStream);
-			sourceCultures.push_back(*getNextToken(theStream));
-		}
-	);
+	registerKeyword(std::regex("eu4"), [this, &sourceCultures](const std::string& unused, std::istream& theStream) {
+		auto equals = getNextToken(theStream);
+		sourceCultures.push_back(*getNextToken(theStream));
+	});
 
-	std::map<std::string, std::string> distinguishers;
-	registerKeyword(std::regex("(?:region)|(?:religion)|(?:owner)|(?:provinceid)"), [this, &distinguishers](const std::string& type, std::istream& theStream)
+	std::map<mappers::distinguisherTypes, std::string> distinguishers;
+	registerKeyword(std::regex("(?:region)|(?:religion)|(?:owner)|(?:provinceid)"), [this, &distinguishers](const std::string& typeString, std::istream& theStream) {
+		auto equals = getNextToken(theStream);
+
+		mappers::distinguisherTypes type;
+		if (typeString == "region")
 		{
-			auto equals = getNextToken(theStream);
-			distinguishers.insert(make_pair(type, *getNextToken(theStream)));
+			type = distinguisherTypes::region;
 		}
-	);
+		else if (typeString == "religion")
+		{
+			type = distinguisherTypes::religion;
+		}
+		else if (typeString == "owner")
+		{
+			type = distinguisherTypes::owner;
+		}
+		else if (typeString == "provinceid")
+		{
+			type = distinguisherTypes::province;
+		}
+
+		distinguishers.insert(make_pair(type, *getNextToken(theStream)));
+	});
 
 	parseStream(theStream);
 	for (auto sourceCulture: sourceCultures)
