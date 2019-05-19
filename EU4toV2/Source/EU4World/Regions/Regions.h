@@ -39,6 +39,8 @@ namespace EU4
 class Regions: commonItems::parser
 {
 	public:
+		Regions() = default;
+
 		Regions(const EU4::areas& areas, std::istream& regionsFile);
 		Regions(const EU4::areas& areas);
 

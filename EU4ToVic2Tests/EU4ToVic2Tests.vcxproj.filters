@@ -1,123 +1,145 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
+    <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="EU4WorldTests\AreaNamesTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\AreasTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionsTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="Vic2WorldTests\BlockedTechSchoolsTests.cpp">
+      <Filter>Vic2WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="Vic2WorldTests\StateMapperTests.cpp">
+      <Filter>Vic2WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="Vic2WorldTests\Vic2CultureUnionMapperTests.cpp">
+      <Filter>Vic2WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="Vic2WorldTests\Vic2CultureUnionTests.cpp">
+      <Filter>Vic2WorldTests</Filter>
+    </ClCompile>
     <ClCompile Include="Vic2WorldTests\Vic2TechSchoolsTests.cpp">
       <Filter>Vic2WorldTests</Filter>
     </ClCompile>
     <ClCompile Include="Vic2WorldTests\Vic2TechSchoolTests.cpp">
       <Filter>Vic2WorldTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\V2World\Vic2TechSchool.cpp">
-      <Filter>EU4ToVic2Files\Vic2World</Filter>
+    <ClCompile Include="..\EU4toV2\Source\Configuration.cpp">
+      <Filter>ConverterFiles</Filter>
     </ClCompile>
-    <ClCompile Include="..\common_items\newParser.cpp">
-      <Filter>EU4ToVic2Files\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\ParserHelpers.cpp">
-      <Filter>EU4ToVic2Files\commonItems</Filter>
+    <ClCompile Include="..\common_items\Color.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
     <ClCompile Include="..\common_items\Log.cpp">
-      <Filter>EU4ToVic2Files\commonItems</Filter>
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common_items\newParser.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common_items\Object.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common_items\ParserHelpers.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
     <ClCompile Include="..\common_items\WinUtils.cpp">
-      <Filter>EU4ToVic2Files\commonItems</Filter>
+      <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Configuration.cpp">
-      <Filter>EU4ToVic2Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp">
-      <Filter>EU4ToVic2Files\EU4World</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="ConfigurationTests.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\V2TechSchools.cpp">
-      <Filter>EU4ToVic2Files\Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="Vic2WorldTests\BlockedTechSchoolsTests.cpp">
-      <Filter>Vic2WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\V2World\BlockedTechSchools.cpp">
-      <Filter>EU4ToVic2Files\Vic2World</Filter>
+      <Filter>ConverterFiles\Vic2World</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnion.cpp">
-      <Filter>EU4ToVic2Files\Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="Vic2WorldTests\Vic2CultureUnionTests.cpp">
-      <Filter>Vic2WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="Vic2WorldTests\Vic2CultureUnionMapperTests.cpp">
-      <Filter>Vic2WorldTests</Filter>
+      <Filter>ConverterFiles\Vic2World</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnionMapper.cpp">
-      <Filter>EU4ToVic2Files\Vic2World</Filter>
+      <Filter>ConverterFiles\Vic2World</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\Vic2TechSchool.cpp">
+      <Filter>ConverterFiles\Vic2World</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\StateMapper.cpp">
+      <Filter>ConverterFiles\Mappers</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigurationTests.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Area.cpp">
-      <Filter>EU4ToVic2Files\EU4World\Regions</Filter>
+      <Filter>ConverterFiles\EU4World\Regions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\AreaNames.cpp">
+      <Filter>ConverterFiles\EU4World\Regions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Areas.cpp">
+      <Filter>ConverterFiles\EU4World\Regions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Region.cpp">
+      <Filter>ConverterFiles\EU4World\Regions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Regions.cpp">
+      <Filter>ConverterFiles\EU4World\Regions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\BlockedTechSchools.cpp">
+      <Filter>ConverterFiles\Vic2World</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\common_items\Color.cpp">
-      <Filter>EU4ToVic2Files\commonItems</Filter>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp">
+      <Filter>ConverterFiles\EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="..\common_items\Object.cpp">
-      <Filter>EU4ToVic2Files\commonItems</Filter>
+    <ClCompile Include="MapperTests\CultureMappingTests.cpp">
+      <Filter>MapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Areas.cpp">
-      <Filter>EU4ToVic2Files\EU4World\Regions</Filter>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapping.cpp">
+      <Filter>ConverterFiles\Mappers</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\AreasTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\AreaNames.cpp">
-      <Filter>EU4ToVic2Files\EU4World\Regions</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Region.cpp">
-      <Filter>EU4ToVic2Files\EU4World\Regions</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\RegionsTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Regions.cpp">
-      <Filter>EU4ToVic2Files\EU4World\Regions</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\AreaNamesTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\RegionTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    <ClCompile Include="..\EU4toV2\Source\V2World\StateMapper.cpp">
-      <Filter>EU4ToVic2Files\Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="Vic2WorldTests\StateMapperTests.cpp">
-      <Filter>Vic2WorldTests</Filter>
-    </ClCompile>
+    <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="EU4ToVic2Files">
-      <UniqueIdentifier>{32029889-ded1-480c-a071-3ea318d7dc48}</UniqueIdentifier>
+    <Filter Include="EU4WorldTests">
+      <UniqueIdentifier>{69d5d957-cedc-4e54-ac00-35b57710b4a9}</UniqueIdentifier>
     </Filter>
     <Filter Include="Vic2WorldTests">
-      <UniqueIdentifier>{11ba559f-3d23-4840-9ad7-ee2fd0589af1}</UniqueIdentifier>
+      <UniqueIdentifier>{fbc73b64-cbe6-4376-a79e-dc1da7f57eba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EU4ToVic2Files\Vic2World">
-      <UniqueIdentifier>{a25f577f-d3d4-43e2-a6f0-e119fd0cb873}</UniqueIdentifier>
+    <Filter Include="ConverterFiles">
+      <UniqueIdentifier>{15d90f21-825c-4b5c-8541-ce76f1fb3bf3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EU4ToVic2Files\commonItems">
-      <UniqueIdentifier>{2fedf08a-ee83-4800-b110-94443948d57a}</UniqueIdentifier>
+    <Filter Include="ConverterFiles\commonItems">
+      <UniqueIdentifier>{b062b06f-cfb6-4a7c-8d34-14615884b65b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EU4ToVic2Files\EU4World">
-      <UniqueIdentifier>{3dff7ba7-4751-4488-9fdb-99b7271cc12a}</UniqueIdentifier>
+    <Filter Include="ConverterFiles\Vic2World">
+      <UniqueIdentifier>{e38cf41f-c863-4ffd-8b4a-54af80f25231}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EU4WorldTests">
-      <UniqueIdentifier>{983179b3-715e-4852-b331-44400fd4423b}</UniqueIdentifier>
+    <Filter Include="ConverterFiles\Mappers">
+      <UniqueIdentifier>{be2418b3-5cc4-4dd1-973c-30f8d0cf97e2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EU4ToVic2Files\EU4World\Regions">
-      <UniqueIdentifier>{e7ec9e4a-6464-4916-a581-a50483fe4374}</UniqueIdentifier>
+    <Filter Include="ConverterFiles\EU4World">
+      <UniqueIdentifier>{4b1804e5-f7ad-47d2-ad23-ff9402369723}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ConverterFiles\EU4World\Regions">
+      <UniqueIdentifier>{046adea3-2e09-4d20-b295-7331c9288267}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests">
+      <UniqueIdentifier>{464b88af-654c-465b-a04b-5006c936bb45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mocks">
+      <UniqueIdentifier>{ee4bf73c-f3a3-44d9-96c7-d17c2ef2af32}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Mocks\RegionsMock.h">
+      <Filter>Mocks</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
