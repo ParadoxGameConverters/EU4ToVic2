@@ -729,7 +729,7 @@ void EU4::world::checkAllEU4CulturesMapped() const
 		string Vi2Culture;
 		string EU4Culture = cultureItr.first;
 
-		bool matched = mappers::cultureMapper::cultureMatch(*regions, EU4Culture, Vi2Culture);
+		std::optional<std::string> matched = mappers::cultureMapper::cultureMatch(*regions, EU4Culture, "");
 		if (!matched)
 		{
 			LOG(LogLevel::Warning) << "No culture mapping for EU4 culture " << EU4Culture;

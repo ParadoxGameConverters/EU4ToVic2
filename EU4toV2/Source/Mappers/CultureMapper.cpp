@@ -51,10 +51,9 @@ mappers::cultureMapper::cultureMapper():
 }
 
 
-bool mappers::cultureMapper::CultureMatch(
+std::optional<std::string> mappers::cultureMapper::CultureMatch(
 	const EU4::Regions& EU4Regions,
-	const std::string& srcCulture,
-	std::string& dstCulture,
+	const std::string& culture,
 	const std::string& religion,
 	int EU4Province,
 	const std::string& ownerTag
@@ -65,10 +64,9 @@ bool mappers::cultureMapper::CultureMatch(
 		auto possibleMatch = cultureMapping.cultureMatch(EU4Regions, culture, religion, EU4Province, ownerTag);
 		if (possibleMatch)
 		{
-			dstCulture = *possibleMatch;
-			return true;
+			return possibleMatch;
 		}
 	}
 
-	return false;
+	return {};
 }
