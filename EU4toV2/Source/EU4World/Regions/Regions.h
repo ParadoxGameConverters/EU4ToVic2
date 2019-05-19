@@ -44,7 +44,7 @@ class Regions: commonItems::parser
 		Regions(const EU4::areas& areas, std::istream& regionsFile);
 		Regions(const EU4::areas& areas);
 
-		bool provinceInRegion(int province, const std::string& regionName) const;
+		virtual bool provinceInRegion(int province, const std::string& regionName) const;
 
 	private:
 		std::map<std::string, EU4::region> regions;
