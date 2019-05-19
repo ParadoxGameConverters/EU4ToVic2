@@ -33,6 +33,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Province.h"
 #include "../EU4World/EU4Army.h"
 #include "../EU4World/EU4Province.h"
+#include "../Mappers/CultureMapper.h"
+#include "../Mappers/SlaveCultureMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -75,6 +77,8 @@ class V2World
 		void importPotentialCountries();
 		void importPotentialCountry(const string& line, bool dynamicCountry);
 
+		void initializeCultureMappers(const EU4::world& sourceWorld);
+
 		void convertCountries(const EU4::world& sourceWorld);
 		void initializeCountries(const EU4::world& sourceWorld);
 		V2Country* createOrLocateCountry(const string& V2Tag, const shared_ptr<EU4::Country> sourceCountry);
@@ -113,6 +117,9 @@ class V2World
 		long totalWorldPopulation;
 		bool isRandomWorld;
 		int	techGroupAlgorithm;
+
+		std::unique_ptr<mappers::CultureMapper> cultureMapper;
+		std::unique_ptr<mappers::SlaveCultureMapper> slaveCultureMapper;
 };
 
 

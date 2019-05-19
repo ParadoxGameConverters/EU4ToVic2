@@ -29,6 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "newParser.h"
 #include "CultureMapping.h"
 #include "../EU4World/Regions/Regions.h"
+#include <istream>
 #include <optional>
 #include <string>
 #include <vector>
@@ -37,43 +38,24 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 namespace mappers
 {
-	class slaveCultureMapper: commonItems::parser
-	{
-		public:
-			static std::optional<std::string> cultureMatch(
-				const EU4::Regions& EU4Regions,
-				const std::string& culture,
-				const std::string& religion,
-				int EU4Province = -1,
-				const std::string& ownerTag = ""
-			)
-			{
-				return getInstance()->CultureMatch(EU4Regions, culture, religion, EU4Province, ownerTag);
-			}
 
-		private:
-			static slaveCultureMapper* instance;
-			static slaveCultureMapper* getInstance()
-			{
-				if (instance == nullptr)
-				{
-					instance = new slaveCultureMapper;
-				}
-				return instance;
-			}
+class SlaveCultureMapper: commonItems::parser
+{
+	public:
+		SlaveCultureMapper(std::istream& theStream);
 
-			slaveCultureMapper();
+		std::optional<std::string> cultureMatch(
+			const EU4::Regions& EU4Regions,
+			const std::string& culture,
+			const std::string& religion,
+			int EU4Province = -1,
+			const std::string& ownerTag = ""
+		) const;
 
-			std::optional<std::string> CultureMatch(
-				const EU4::Regions& EU4Regions,
-				const std::string& culture,
-				const std::string& religion,
-				int EU4Province = -1,
-				const std::string& ownerTag = ""
-			);
+	private:
+		std::vector<cultureMapping> cultureMap;
+};
 
-			std::vector<cultureMapping> cultureMap;
-	};
 }
 
 

@@ -27,15 +27,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-mappers::cultureMapper* mappers::cultureMapper::instance = nullptr;
-
-
-
-mappers::cultureMapper::cultureMapper():
-	cultureMap()
+mappers::CultureMapper::CultureMapper(std::istream& theStream)
 {
-	LOG(LogLevel::Info) << "Parsing culture mappings";
-
 	registerKeyword(std::regex("link"), [this](const std::string& unused, std::istream& theStream)
 		{
 			CultureMappingRule rule(theStream);
@@ -47,17 +40,17 @@ mappers::cultureMapper::cultureMapper():
 		}
 	);
 
-	parseFile("cultureMap.txt");
+	parseStream(theStream);
 }
 
 
-std::optional<std::string> mappers::cultureMapper::CultureMatch(
+std::optional<std::string> mappers::CultureMapper::cultureMatch(
 	const EU4::Regions& EU4Regions,
 	const std::string& culture,
 	const std::string& religion,
 	int EU4Province,
 	const std::string& ownerTag
-)
+) const
 {
 	for (auto cultureMapping: cultureMap)
 	{

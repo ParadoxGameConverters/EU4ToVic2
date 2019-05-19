@@ -125,7 +125,6 @@ EU4::world::world(const string& EU4SaveFileName):
 	addProvinceInfoToCountries();
 	determineProvinceWeights();
 	loadRegions();
-	checkAllEU4CulturesMapped();
 	readCommonCountries();
 	setLocalisations();
 	resolveRegimentTypes();
@@ -722,14 +721,14 @@ void EU4::world::loadEU4RegionsNewVersion()
 }
 
 
-void EU4::world::checkAllEU4CulturesMapped() const
+void EU4::world::checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const
 {
 	for (auto cultureItr: EU4::cultureGroups::getCultureToGroupMap())
 	{
 		string Vi2Culture;
 		string EU4Culture = cultureItr.first;
 
-		std::optional<std::string> matched = mappers::cultureMapper::cultureMatch(*regions, EU4Culture, "");
+		std::optional<std::string> matched = cultureMapper.cultureMatch(*regions, EU4Culture, "");
 		if (!matched)
 		{
 			LOG(LogLevel::Warning) << "No culture mapping for EU4 culture " << EU4Culture;

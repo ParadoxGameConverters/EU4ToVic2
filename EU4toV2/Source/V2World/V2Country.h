@@ -26,16 +26,17 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "V2Localisation.h"
+#include "V2TechSchools.h"
 #include "Color.h"
 #include "Date.h"
 #include "../EU4World/EU4Army.h"
 #include "../EU4World/Regions/Regions.h"
-#include "V2Localisation.h"
-#include "V2TechSchools.h"
+#include "../Mappers/CultureMapper.h"
+#include "../Mappers/SlaveCultureMapper.h"
 #include <memory>
 #include <set>
 #include <vector>
-using namespace std;
 
 
 
@@ -74,7 +75,9 @@ class V2Country
 			const EU4::Regions& eu4Regions,
 			std::shared_ptr<EU4::Country> _srcCountry,
 			const std::unique_ptr<Vic2::TechSchools>& techSchools,
-			const map<int, int>& leaderMap
+			const map<int, int>& leaderMap,
+			const mappers::CultureMapper& cultureMapper,
+			const mappers::SlaveCultureMapper& slaveCultureMapper
 		);
 		void								initFromHistory();
 		void								addProvince(V2Province* _province);
