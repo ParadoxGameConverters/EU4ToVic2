@@ -32,7 +32,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "EU4Religion.h"
 #include "Regions/Areas.h"
 #include "../Configuration.h"
-#include "../Mappers/CultureMapper.h"
 #include "../Mappers/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "Log.h"
