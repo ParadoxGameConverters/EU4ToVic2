@@ -104,6 +104,15 @@
       <Filter>ConverterFiles\Mappers</Filter>
     </ClCompile>
     <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
+    <ClCompile Include="MapperTests\CultureMapperTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper.cpp">
+      <Filter>ConverterFiles\Mappers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMappingRule.cpp">
+      <Filter>ConverterFiles\Mappers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">

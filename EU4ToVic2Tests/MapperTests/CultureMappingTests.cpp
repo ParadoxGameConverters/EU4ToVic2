@@ -30,9 +30,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 TEST(Mappers_CultureMappingTests, nonMatchingSourceReturnsEmptyOptional)
 {
-	std::stringstream input;
-	input << "= {}";
-
 	std::map<mappers::distinguisherTypes, std::string> distinguishers;
 	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
@@ -44,9 +41,6 @@ TEST(Mappers_CultureMappingTests, nonMatchingSourceReturnsEmptyOptional)
 
 TEST(Mappers_CultureMappingTests, matchingSourceReturnsDestinationCulture)
 {
-	std::stringstream input;
-	input << "= {}";
-
 	std::map<mappers::distinguisherTypes, std::string> distinguishers;
 	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
@@ -59,9 +53,6 @@ TEST(Mappers_CultureMappingTests, matchingSourceReturnsDestinationCulture)
 
 TEST(Mappers_CultureMappingTests, ownerDistinguisherWrongNoMatch)
 {
-	std::stringstream input;
-	input << "= {}";
-
 	std::map<mappers::distinguisherTypes, std::string> distinguishers;
 	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::owner, "OWN"));
 
@@ -75,9 +66,6 @@ TEST(Mappers_CultureMappingTests, ownerDistinguisherWrongNoMatch)
 
 TEST(Mappers_CultureMappingTests, ownerDistinguisherRightMatch)
 {
-	std::stringstream input;
-	input << "= {}";
-
 	std::map<mappers::distinguisherTypes, std::string> distinguishers;
 	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::owner, "OWN"));
 
@@ -92,9 +80,6 @@ TEST(Mappers_CultureMappingTests, ownerDistinguisherRightMatch)
 
 TEST(Mappers_CultureMappingTests, religionDistinguisherWrongNoMatch)
 {
-	std::stringstream input;
-	input << "= {}";
-
 	std::map<mappers::distinguisherTypes, std::string> distinguishers;
 	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::religion, "religion"));
 
@@ -108,9 +93,6 @@ TEST(Mappers_CultureMappingTests, religionDistinguisherWrongNoMatch)
 
 TEST(Mappers_CultureMappingTests, religionDistinguisherRightMatch)
 {
-	std::stringstream input;
-	input << "= {}";
-
 	std::map<mappers::distinguisherTypes, std::string> distinguishers;
 	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::religion, "religion"));
 
@@ -125,9 +107,6 @@ TEST(Mappers_CultureMappingTests, religionDistinguisherRightMatch)
 
 TEST(Mappers_CultureMappingTests, provinceDistinguisherWrongNoMatch)
 {
-	std::stringstream input;
-	input << "= {}";
-
 	std::map<mappers::distinguisherTypes, std::string> distinguishers;
 	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::province, "42"));
 
@@ -141,9 +120,6 @@ TEST(Mappers_CultureMappingTests, provinceDistinguisherWrongNoMatch)
 
 TEST(Mappers_CultureMappingTests, provinceDistinguisherRightMatch)
 {
-	std::stringstream input;
-	input << "= {}";
-
 	std::map<mappers::distinguisherTypes, std::string> distinguishers;
 	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::province, "42"));
 
@@ -158,9 +134,6 @@ TEST(Mappers_CultureMappingTests, provinceDistinguisherRightMatch)
 
 TEST(Mappers_CultureMappingTests, regionDistinguisherWrongNoMatch)
 {
-	std::stringstream input;
-	input << "= {}";
-
 	std::map<mappers::distinguisherTypes, std::string> distinguishers;
 	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::region, "theRegion"));
 
@@ -176,9 +149,6 @@ TEST(Mappers_CultureMappingTests, regionDistinguisherWrongNoMatch)
 
 TEST(Mappers_CultureMappingTests, regionDistinguisherRightMatch)
 {
-	std::stringstream input;
-	input << "= {}";
-
 	std::map<mappers::distinguisherTypes, std::string> distinguishers;
 	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::region, "theRegion"));
 
