@@ -42,7 +42,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/MinorityPopMapper.h"
 #include "../Mappers/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
-#include "../Mappers/SlaveCultureMapper.h"
 #include "../Configuration.h"
 #include "../EU4World/Continents.h"
 #include "../EU4World/World.h"
@@ -430,7 +429,7 @@ void V2World::initializeCultureMappers(const EU4::world& sourceWorld)
 	cultureMapFile.close();
 
 	std::ifstream slaveCultureMapFile("slaveCultureMap.txt");
-	slaveCultureMapper = std::make_unique<mappers::SlaveCultureMapper>(slaveCultureMapFile);
+	slaveCultureMapper = std::make_unique<mappers::CultureMapper>(slaveCultureMapFile);
 	slaveCultureMapFile.close();
 
 	sourceWorld.checkAllEU4CulturesMapped(*cultureMapper);

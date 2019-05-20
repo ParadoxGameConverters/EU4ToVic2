@@ -34,7 +34,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/EU4Army.h"
 #include "../EU4World/EU4Province.h"
 #include "../Mappers/CultureMapper.h"
-#include "../Mappers/SlaveCultureMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -119,7 +118,7 @@ class V2World
 		int	techGroupAlgorithm;
 
 		std::unique_ptr<mappers::CultureMapper> cultureMapper;
-		std::unique_ptr<mappers::SlaveCultureMapper> slaveCultureMapper;
+		std::unique_ptr<mappers::CultureMapper> slaveCultureMapper;
 };
 
 
