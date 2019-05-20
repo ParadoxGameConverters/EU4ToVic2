@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -34,6 +34,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/EU4Army.h"
 #include "../EU4World/EU4Province.h"
 #include "../Mappers/CultureMapper.h"
+#include "../Mappers/ReligionMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -77,6 +78,7 @@ class V2World
 		void importPotentialCountry(const string& line, bool dynamicCountry);
 
 		void initializeCultureMappers(const EU4::world& sourceWorld);
+		void initializeReligionMapper(const EU4::world& sourceWorld);
 
 		void convertCountries(const EU4::world& sourceWorld);
 		void initializeCountries(const EU4::world& sourceWorld);
@@ -119,6 +121,7 @@ class V2World
 
 		std::unique_ptr<mappers::CultureMapper> cultureMapper;
 		std::unique_ptr<mappers::CultureMapper> slaveCultureMapper;
+		std::unique_ptr<mappers::ReligionMapper> religionMapper;
 };
 
 

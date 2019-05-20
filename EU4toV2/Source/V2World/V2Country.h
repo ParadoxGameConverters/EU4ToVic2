@@ -33,7 +33,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/EU4Army.h"
 #include "../EU4World/Regions/Regions.h"
 #include "../Mappers/CultureMapper.h"
-#include "../Mappers/SlaveCultureMapper.h"
+#include "../Mappers/ReligionMapper.h"
 #include <memory>
 #include <set>
 #include <vector>
@@ -77,7 +77,8 @@ class V2Country
 			const std::unique_ptr<Vic2::TechSchools>& techSchools,
 			const map<int, int>& leaderMap,
 			const mappers::CultureMapper& cultureMapper,
-			const mappers::SlaveCultureMapper& slaveCultureMapper
+			const mappers::CultureMapper& slaveCultureMapper,
+			const mappers::ReligionMapper& religionMapper
 		);
 		void								initFromHistory();
 		void								addProvince(V2Province* _province);
