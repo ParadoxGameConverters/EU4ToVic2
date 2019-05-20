@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -28,16 +28,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-
-religionMapper* religionMapper::instance = nullptr;
-
-
-
-religionMapper::religionMapper()
+mappers::ReligionMapper::ReligionMapper()
 {
-	LOG(LogLevel::Info) << "Parsing religion mappings";
-
-	shared_ptr<Object> religionMapObj = parser_UTF8::doParseFile("religionMap.txt");
+	std::shared_ptr<Object> religionMapObj = parser_UTF8::doParseFile("religionMap.txt");
 	if (religionMapObj == NULL)
 	{
 		LOG(LogLevel::Error) << "Could not parse file religionMap.txt";
@@ -53,14 +46,14 @@ religionMapper::religionMapper()
 }
 
 
-void religionMapper::initReligionMap(shared_ptr<Object> obj)
+void mappers::ReligionMapper::initReligionMap(std::shared_ptr<Object> obj)
 {
-	vector<shared_ptr<Object>> rules = obj->getLeaves();
+	std::vector<std::shared_ptr<Object>> rules = obj->getLeaves();
 
 	for (auto rule: rules)
 	{
-		string Vic2Religion;
-		vector<string> EU4Religions;
+		std::string Vic2Religion;
+		std::vector<std::string> EU4Religions;
 
 		for (auto ruleItem: rule->getLeaves())
 		{
@@ -82,7 +75,7 @@ void religionMapper::initReligionMap(shared_ptr<Object> obj)
 }
 
 
-string religionMapper::GetVic2Religion(const string& EU4Religion)
+std::optional<std::string> mappers::ReligionMapper::getVic2Religion(const std::string& EU4Religion) const
 {
 	auto mapping = EU4ToVic2ReligionMap.find(EU4Religion);
 	if (mapping != EU4ToVic2ReligionMap.end())
@@ -91,6 +84,6 @@ string religionMapper::GetVic2Religion(const string& EU4Religion)
 	}
 	else
 	{
-		return "";
+		return {};
 	}
 }

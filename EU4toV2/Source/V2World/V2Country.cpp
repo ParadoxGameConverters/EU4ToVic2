@@ -523,7 +523,8 @@ void V2Country::initFromEU4Country(
 	const std::unique_ptr<Vic2::TechSchools>& techSchools,
 	const map<int, int>& leaderMap,
 	const mappers::CultureMapper& cultureMapper,
-	const mappers::SlaveCultureMapper& slaveCultureMapper
+	const mappers::CultureMapper& slaveCultureMapper,
+	const mappers::ReligionMapper& religionMapper
 )
 {
 	srcCountry = _srcCountry;
@@ -577,7 +578,7 @@ void V2Country::initFromEU4Country(
 	string srcReligion = srcCountry->getReligion();
 	if (srcReligion.size() > 0)
 	{
-		std::optional<std::string> match = religionMapper::getVic2Religion(srcReligion);
+		std::optional<std::string> match = religionMapper.getVic2Religion(srcReligion);
 		if (!match)
 		{
 			LOG(LogLevel::Warning) << "No religion mapping defined for " << srcReligion

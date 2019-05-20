@@ -79,6 +79,7 @@ V2World::V2World(const EU4::world& sourceWorld)
 	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries);
 	LOG(LogLevel::Info) << "Converting world";
 	initializeCultureMappers(sourceWorld);
+	initializeReligionMapper(sourceWorld);
 	convertCountries(sourceWorld);
 	convertProvinces(sourceWorld);
 	convertDiplomacy(sourceWorld);
@@ -436,6 +437,16 @@ void V2World::initializeCultureMappers(const EU4::world& sourceWorld)
 }
 
 
+void V2World::initializeReligionMapper(const EU4::world& sourceWorld)
+{
+	LOG(LogLevel::Info) << "Parsing religion mappings";
+
+	religionMapper = std::make_unique<mappers::ReligionMapper>();
+
+	sourceWorld.checkAllEU4ReligionsMapped(*religionMapper);
+}
+
+
 void V2World::convertCountries(const EU4::world& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting countries";
@@ -468,7 +479,8 @@ void V2World::initializeCountries(const EU4::world& sourceWorld)
 			theTechSchools,
 			leaderIDMap,
 			*cultureMapper,
-			*slaveCultureMapper
+			*slaveCultureMapper,
+			*religionMapper
 		);
 		countries.insert(make_pair(V2Tag, destCountry));
 	}
@@ -825,10 +837,11 @@ vector<V2Demographic> V2World::determineDemographics(const EU4::Regions& eu4Regi
 			dstCulture = "no_culture";
 		}
 
-		string religion = religionMapper::getVic2Religion(prItr.religion);;
-		if (religion == "")
+		std::optional<std::string> religion = religionMapper->getVic2Religion(popRatio.getReligion());
+		if (!religion)
 		{
 			LOG(LogLevel::Warning) << "Could not set religion for pops in Vic2 province " << destNum;
+			religion = "";
 		}
 
 		std::optional<std::string> slaveCulture;

@@ -133,7 +133,6 @@ EU4::world::world(const string& EU4SaveFileName):
 	loadRevolutionTarget();
 
 	EU4Religion::createSelf();
-	checkAllEU4ReligionsMapped();
 
 	removeEmptyNations();
 	if (theConfiguration.getRemovetype() == "dead")
@@ -1007,11 +1006,11 @@ void EU4::world::setNumbersOfDestinationProvinces()
 }
 
 
-void EU4::world::checkAllEU4ReligionsMapped() const
+void EU4::world::checkAllEU4ReligionsMapped(const mappers::ReligionMapper& religionMapper) const
 {
 	for (auto EU4Religion: EU4Religion::getAllReligions())
 	{
-		auto Vic2Religion = religionMapper::getVic2Religion(EU4Religion.first);
+		auto Vic2Religion = religionMapper.getVic2Religion(EU4Religion.first);
 		if (Vic2Religion == "")
 		{
 			Log(LogLevel::Warning) << "No religion mapping for EU4 religion " << EU4Religion.first;
