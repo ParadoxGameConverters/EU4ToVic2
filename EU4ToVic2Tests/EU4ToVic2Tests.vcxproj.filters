@@ -125,6 +125,12 @@
     <ClCompile Include="MapperTests\ReligionMapperTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\PopRatio.cpp">
+      <Filter>ConverterFiles\EU4World</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\PopRatioTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">

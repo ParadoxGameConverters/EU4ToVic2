@@ -189,7 +189,6 @@ EU4Province::EU4Province(shared_ptr<Object> obj)
 		}
 	}
 
-	popRatios.clear();
 	buildings.clear();
 
 	vector<shared_ptr<Object>> tradegoodsObj = obj->getValue("trade_goods");
@@ -399,15 +398,15 @@ date EU4Province::getLastPossessedDate(string tag) const
 }
 
 
-double EU4Province::getCulturePercent(string culture)
+double EU4Province::getCulturePercent(const std::string& culture)
 {
 	double culturePercent = 0.0f;
 
 	for (auto pop: popRatios)
 	{
-		if (pop.culture == culture)
+		if (pop.getCulture() == culture)
 		{
-			culturePercent += pop.lowerPopRatio;
+			culturePercent += pop.getLowerRatio();
 		}
 	}
 
@@ -433,145 +432,108 @@ void EU4Province::buildPopRatios()
 	{
 		endDate = date("1821.1.1");
 	}
-	date cutoffDate = endDate;
-	cutoffDate.subtractYears(200);
 
-	// fast-forward to 200 years before the end date (200 year decay means any changes before then will be at 100%)
-	string curCulture		= "";	// the current culture
-	string curReligion	= "";	// the current religion
-	vector< pair<date, string> >::iterator cItr = cultureHistory.begin();	// the culture under consideration
-	while ((cItr != cultureHistory.end()) && (cItr->first < cutoffDate))
+	std::string startingCulture;
+	std::vector<std::pair<date, std::string>>::iterator cultureEvent = cultureHistory.begin();
+	if (cultureEvent != cultureHistory.end())
 	{
-		curCulture = cItr->second;
-		++cItr;
-	} 
-	if (cItr != cultureHistory.end() && curCulture == "")
-	{
-		// no starting culture; use first settlement culture for starting pop even if it's after 1620
-		curCulture = cItr->second;
-	}
-	vector< pair<date, string> >::iterator rItr = religionHistory.begin();	// the religion under consideration
-	while ((rItr != religionHistory.end()) && (rItr->first < cutoffDate))
-	{
-		curReligion = rItr->second;
-		++rItr;
-	}
-	if (rItr != religionHistory.end() && curReligion == "")
-	{
-		// no starting religion; use first settlement religion for starting pop even if it's after 1620
-		curReligion = rItr->second;
+		startingCulture = cultureEvent->second;
 	}
 
-	// build and scale historic culture-religion pairs
-	EU4PopRatio pr;		// a pop ratio
-	pr.culture			= curCulture;
-	pr.religion			= curReligion;
-	pr.upperPopRatio	= 1.0;
-	pr.middlePopRatio	= 1.0;
-	pr.lowerPopRatio	= 1.0;
-	date cDate, rDate, lastLoopDate;	// the dates this culture dominated, this religion dominated, and the former relevant date
-	while (cItr != cultureHistory.end() || rItr != religionHistory.end())
+	std::string startingReligion;
+	std::vector<std::pair<date, std::string>>::iterator religionEvent = religionHistory.begin();
+	if (religionEvent != religionHistory.end())
 	{
-		if (cItr == cultureHistory.end())
+		startingReligion = religionEvent->second;
+	}
+
+	EU4::PopRatio currentRatio(startingCulture, startingReligion);
+	date cultureEventDate;
+	date religionEventDate;
+	date lastLoopDate;
+	while (cultureEvent != cultureHistory.end() && religionEvent != religionHistory.end())
+	{
+		if (cultureEvent == cultureHistory.end())
 		{
-			cDate = date("2000.1.1");
+			cultureEventDate = date("2000.1.1");
 		}
 		else
 		{
-			cDate = cItr->first;
+			cultureEventDate = cultureEvent->first;
 		}
-		if (rItr == religionHistory.end())
+
+		if (religionEvent == religionHistory.end())
 		{
-			rDate = date("2000.1.1");
+			religionEventDate = date("2000.1.1");
 		}
 		else
 		{
-			rDate = rItr->first;
+			religionEventDate = religionEvent->first;
 		}
-		if (cDate < rDate)
+
+		if (cultureEventDate < religionEventDate)
 		{
-			decayPopRatios(lastLoopDate, cDate, pr);
-			popRatios.push_back(pr);
+			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
+			popRatios.push_back(currentRatio);
 			for (auto itr: popRatios)
 			{
-				itr.upperPopRatio		/= 2.0;
-				itr.middlePopRatio	/= 2.0;
+				itr.convertFrom();
 			}
-			pr.upperPopRatio	= 0.5;
-			pr.middlePopRatio	= 0.5;
-			pr.lowerPopRatio	= 0.0;
-			pr.culture			= cItr->second;
-			lastLoopDate		= cDate;
-			++cItr;
+			currentRatio.convertToCulture(cultureEvent->second);
+			lastLoopDate = cultureEventDate;
+			++cultureEvent;
 		}
-		else if (cDate == rDate)
+		else if (cultureEventDate == religionEventDate)
 		{
 			// culture and religion change on the same day;
-			decayPopRatios(lastLoopDate, cDate, pr);
-			popRatios.push_back(pr);
+			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
+			popRatios.push_back(currentRatio);
 			for (auto itr: popRatios)
 			{
-				itr.upperPopRatio		/= 2.0;
-				itr.middlePopRatio	/= 2.0;
+				itr.convertFrom();
 			}
-			pr.upperPopRatio	= 0.5;
-			pr.middlePopRatio	= 0.5;
-			pr.lowerPopRatio	= 0.0;
-			pr.culture			= cItr->second;
-			pr.religion			= rItr->second;
-			lastLoopDate		= cDate;
-			++cItr;
-			++rItr;
+			currentRatio.convertTo(cultureEvent->second, religionEvent->second);
+			lastLoopDate = cultureEventDate;
+			++cultureEvent;
+			++religionEvent;
 		}
-		else if (rDate < cDate)
+		else if (religionEventDate < cultureEventDate)
 		{
-			decayPopRatios(lastLoopDate, cDate, pr);
-			popRatios.push_back(pr);
+			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
+			popRatios.push_back(currentRatio);
 			for (auto itr: popRatios)
 			{
-				itr.upperPopRatio		/= 2.0;
-				itr.middlePopRatio	/= 2.0;
+				itr.convertFrom();
 			}
-			pr.upperPopRatio	= 0.5;
-			pr.middlePopRatio	= 0.5;
-			pr.lowerPopRatio	= 0.0;
-			pr.religion			= rItr->second;
-			lastLoopDate		= rDate;
-			++rItr;
+			currentRatio.convertToReligion(religionEvent->second);
+			lastLoopDate = religionEventDate;
+			++religionEvent;
 		}
 	}
-	decayPopRatios(lastLoopDate, endDate, pr);
+	decayPopRatios(lastLoopDate, endDate, currentRatio);
 
-	if ((pr.culture != "") || (pr.religion != ""))
+	if ((currentRatio.getCulture() != "") || (currentRatio.getReligion() != ""))
 	{
-		popRatios.push_back(pr);
+		popRatios.push_back(currentRatio);
 	}
 }
 
 
-void	EU4Province::decayPopRatios(date oldDate, date newDate, EU4PopRatio& currentPop)
+void EU4Province::decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop)
 {
-	// quick out for initial state (no decay needed)
+	// no decay needed for initial state
 	if (oldDate == date())
 	{
 		return;
 	}
 
-	// drop all non-current pops by a total of .0025 per year, divided proportionally
-	double upperNonCurrentRatio = (1.0 - currentPop.upperPopRatio);
-	double middleNonCurrentRatio = (1.0 - currentPop.middlePopRatio);
-	double lowerNonCurrentRatio = (1.0 - currentPop.lowerPopRatio);
-	for (auto itr: popRatios)
+	auto diffInYears = newDate.diffInYears(oldDate);
+	for (auto popRatio: popRatios)
 	{
-		itr.upperPopRatio -= .0025 * newDate.diffInYears(oldDate) * itr.upperPopRatio	/ upperNonCurrentRatio;
-		itr.middlePopRatio -= .0025 * newDate.diffInYears(oldDate) * itr.middlePopRatio / middleNonCurrentRatio;
-		itr.lowerPopRatio -= .0025 * newDate.diffInYears(oldDate) * itr.lowerPopRatio	/ lowerNonCurrentRatio;
+		popRatio.decay(diffInYears, currentPop);
 	}
 	
-	// increase current pop by .0025 per year
-	currentPop.upperPopRatio += .0025 * newDate.diffInYears(oldDate);
-	currentPop.middlePopRatio += .0025 * newDate.diffInYears(oldDate);
-	currentPop.lowerPopRatio += .0025 * newDate.diffInYears(oldDate);
+	currentPop.increase(diffInYears);
 }
 
 

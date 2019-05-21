@@ -820,7 +820,15 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 }
 
 
-vector<V2Demographic> V2World::determineDemographics(const EU4::Regions& eu4Regions, vector<EU4PopRatio>& popRatios, EU4Province* eProv, V2Province* vProv, shared_ptr<EU4::Country> oldOwner, int destNum, double provPopRatio)
+std::vector<V2Demographic> V2World::determineDemographics(
+	const EU4::Regions& eu4Regions,
+	std::vector<EU4::PopRatio>& popRatios,
+	EU4Province* eProv,
+	V2Province* vProv,
+	std::shared_ptr<EU4::Country> oldOwner,
+	int destNum,
+	double provPopRatio
+)
 {
 	vector<V2Demographic> demographics;
 	for (auto popRatio: popRatios)
@@ -878,16 +886,29 @@ vector<V2Demographic> V2World::determineDemographics(const EU4::Regions& eu4Regi
 		}
 
 		V2Demographic demographic;
-		demographic.culture = dstCulture;
-		demographic.slaveCulture = slaveCulture;
-		demographic.religion = religion;
-		demographic.upperRatio = prItr.upperPopRatio	* provPopRatio;
-		demographic.middleRatio = prItr.middlePopRatio	* provPopRatio;
-		demographic.lowerRatio = prItr.lowerPopRatio	* provPopRatio;
+		demographic.culture = *dstCulture;
+		demographic.slaveCulture = *slaveCulture;
+		demographic.religion = *religion;
+		demographic.upperRatio = popRatio.getUpperRatio() * provPopRatio;
+		demographic.middleRatio = popRatio.getMiddleRatio() * provPopRatio;
+		demographic.lowerRatio = popRatio.getLowerRatio() * provPopRatio;
 		demographic.oldCountry = oldOwner;
 		demographic.oldProvince = eProv;
 
-		//LOG(LogLevel::Info) << "EU4 Province " << eProv->getNum() << ", Vic2 Province " << vProv->getNum() << ", Culture: " << culture << ", Religion: " << religion << ", upperPopRatio: " << prItr.upperPopRatio << ", middlePopRatio: " << prItr.middlePopRatio << ", lowerPopRatio: " << prItr.lowerPopRatio << ", provPopRatio: " << provPopRatio << ", upperRatio: " << demographic.upperRatio << ", middleRatio: " << demographic.middleRatio << ", lowerRatio: " << demographic.lowerRatio;
+		if (theConfiguration.getDebug())
+		{
+			LOG(LogLevel::Info) << "EU4 Province " << eProv->getNum() << ", "
+				<< "Vic2 Province " << vProv->getNum() << ", "
+				<< "Culture: " << demographic.culture << ", "
+				<< "Religion: " << demographic.religion << ", "
+				<< "upperPopRatio: " << popRatio.getUpperRatio() << ", "
+				<< "middlePopRatio: " << popRatio.getMiddleRatio() << ", "
+				<< "lowerPopRatio: " << popRatio.getLowerRatio() << ", "
+				<< "provPopRatio: " << provPopRatio << ", "
+				<< "upperRatio: " << demographic.upperRatio << ", "
+				<< "middleRatio: " << demographic.middleRatio << ", "
+				<< "lowerRatio: " << demographic.lowerRatio;
+		}
 		demographics.push_back(demographic);
 	}
 

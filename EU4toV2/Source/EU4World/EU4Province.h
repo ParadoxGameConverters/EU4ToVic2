@@ -26,6 +26,7 @@ THE SOFTWARE. */
 
 
 #include "Date.h"
+#include "PopRatio.h"
 #include <string>
 #include <vector>
 #include <map>
@@ -43,16 +44,6 @@ namespace EU4
 
 
 
-struct EU4PopRatio
-{
-	string culture;			// the culture
-	string religion;			// the religion
-	double upperPopRatio;	// the percent of the total upper-class population this represents
-	double middlePopRatio;	// the percent of the total middle-class population this represents
-	double lowerPopRatio;	// the percent of the total lower-class population this represents
-};
-
-
 class EU4Province
 {
 	public:
@@ -67,7 +58,7 @@ class EU4Province
 		bool						hasBuilding(string building) const;
 		std::vector<std::shared_ptr<EU4::Country>>	getCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& countries) const;
 		date						getLastPossessedDate(string tag) const;
-		double getCulturePercent(string culture);
+		double getCulturePercent(const std::string& culture);
 
 		int						getNum()					const { return num; }
 		double					getBaseTax()			const { return baseTax; }
@@ -75,7 +66,7 @@ class EU4Province
 		std::shared_ptr<EU4::Country> getOwner() const { return owner; }
 		bool						getInHRE()				const { return inHRE; }
 		bool						isColony()				const { return colony; }
-		vector<EU4PopRatio>	getPopRatios()			const { return popRatios; }
+		std::vector<EU4::PopRatio> getPopRatios() const { return popRatios; }
 		double					getTotalWeight()		const { return totalWeight; }
 		int						getNumDestV2Provs()	const { return numV2Provs; }
 
@@ -96,8 +87,8 @@ class EU4Province
 
 	private:
 		void	checkBuilding(const shared_ptr<Object> provinceObj, string building);
-		void	buildPopRatios();
-		void	decayPopRatios(date oldDate, date newDate, EU4PopRatio& currentPop);
+		void buildPopRatios();
+		void decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop);
 
 		vector<double>	getProvBuildingWeight()	const;
 		double			getTradeGoodWeight()		const;
@@ -118,7 +109,7 @@ class EU4Province
 		map<string, date>					lastPossessedDate;	// the last date the province was owned by different tags
 		vector< pair<date, string> >	religionHistory;		// the history of the religious changes of this province
 		vector< pair<date, string> >	cultureHistory;		// the history of the cultural changes of this province
-		vector<EU4PopRatio>				popRatios;				// the population ratios of this province
+		vector<EU4::PopRatio> popRatios;
 		map<string, bool>					buildings;				// the buildings in this province
 
 		string								tradeGoods;

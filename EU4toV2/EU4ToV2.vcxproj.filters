@@ -219,6 +219,9 @@
     <ClCompile Include="Source\EU4World\World.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\PopRatio.cpp">
+      <Filter>EU4World</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Mappers\ReligionMapping.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>

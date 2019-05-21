@@ -33,6 +33,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Province.h"
 #include "../EU4World/EU4Army.h"
 #include "../EU4World/EU4Province.h"
+#include "../EU4World/PopRatio.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include <list>
@@ -90,7 +91,15 @@ class V2World
 		void editDefines(int numCivilisedNations);
 
 		void convertProvinces(const EU4::world& sourceWorld);
-		vector<V2Demographic> determineDemographics(const EU4::Regions& eu4Regions, vector<EU4PopRatio>& popRatios, EU4Province* eProv, V2Province* vProv, shared_ptr<EU4::Country> oldOwner, int destNum, double provPopRatio);
+		std::vector<V2Demographic> determineDemographics(
+			const EU4::Regions& eu4Regions,
+			std::vector<EU4::PopRatio>& popRatios,
+			EU4Province* eProv,
+			V2Province* vProv,
+			std::shared_ptr<EU4::Country> oldOwner,
+			int destNum,
+			double provPopRatio
+		);
 
 		void convertDiplomacy(const EU4::world& sourceWorld);
 		void setupColonies();
