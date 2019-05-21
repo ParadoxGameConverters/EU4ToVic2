@@ -21,34 +21,53 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef RELIGION_MAPPER_H
-#define RELIGION_MAPPER_H
+#include "gtest/gtest.h"
+#include "../EU4toV2/Source/Mappers/ReligionMapping.h"
+#include <sstream>
 
 
 
-#include "newParser.h"
-#include <map>
-#include <optional>
-#include <string>
-
-
-
-namespace mappers
+TEST(Mappers_ReligionMappingTests, vic2ReligionDefaultsToBlank)
 {
+	std::stringstream input;
+	input << "= {}";
 
-class ReligionMapper: commonItems::parser
-{
-	public:
-		ReligionMapper(std::istream& theStream);
+	mappers::ReligionMapping theMapping(input);
 
-		std::optional<std::string> getVic2Religion(const std::string& EU4Religion) const;
-
-	private:
-		std::map<std::string, std::string> EU4ToVic2ReligionMap;
-};
-
+	ASSERT_EQ(theMapping.getVic2Religion(), "");
 }
 
 
+TEST(Mappers_ReligionMappingTests, vic2ReligionCanBeSet)
+{
+	std::stringstream input;
+	input << "= { v2 = vic2Religion }";
 
-#endif // RELIGION_MAPPER_H
+	mappers::ReligionMapping theMapping(input);
+
+	ASSERT_EQ(theMapping.getVic2Religion(), "vic2Religion");
+}
+
+
+TEST(Mappers_ReligionMappingTests, eu4ReligionsDefaultToEmpty)
+{
+	std::stringstream input;
+	input << "= {}";
+
+	mappers::ReligionMapping theMapping(input);
+
+	ASSERT_EQ(theMapping.getEU4Religions().size(), 0);
+}
+
+
+TEST(Mappers_ReligionMappingTests, eu4ReligionsCanBeSet)
+{
+	std::stringstream input;
+	input << "= { eu4 = religion1 eu4 = religion2 }";
+
+	mappers::ReligionMapping theMapping(input);
+
+	ASSERT_EQ(theMapping.getEU4Religions().size(), 2);
+	ASSERT_EQ(theMapping.getEU4Religions()[0], "religion1");
+	ASSERT_EQ(theMapping.getEU4Religions()[1], "religion2");
+}

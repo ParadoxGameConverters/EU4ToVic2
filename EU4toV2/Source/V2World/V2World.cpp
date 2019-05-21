@@ -441,7 +441,9 @@ void V2World::initializeReligionMapper(const EU4::world& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Parsing religion mappings";
 
-	religionMapper = std::make_unique<mappers::ReligionMapper>();
+	std::ifstream mappingsFile("religionMap.txt");
+	religionMapper = std::make_unique<mappers::ReligionMapper>(mappingsFile);
+	mappingsFile.close();
 
 	sourceWorld.checkAllEU4ReligionsMapped(*religionMapper);
 }

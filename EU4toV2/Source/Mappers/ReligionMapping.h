@@ -21,34 +21,35 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef RELIGION_MAPPER_H
-#define RELIGION_MAPPER_H
+#ifndef RELIGION_MAPPING_H
+#define RELIGION_MAPPING_H
 
 
 
 #include "newParser.h"
-#include <map>
-#include <optional>
 #include <string>
+#include <vector>
 
 
 
 namespace mappers
 {
 
-class ReligionMapper: commonItems::parser
+class ReligionMapping: commonItems::parser
 {
 	public:
-		ReligionMapper(std::istream& theStream);
+		ReligionMapping(std::istream& theStream);
 
-		std::optional<std::string> getVic2Religion(const std::string& EU4Religion) const;
+		std::string getVic2Religion() const { return vic2Religion; }
+		std::vector<std::string> getEU4Religions() const { return eu4Religions; }
 
 	private:
-		std::map<std::string, std::string> EU4ToVic2ReligionMap;
+		std::string vic2Religion;
+		std::vector<std::string> eu4Religions;
 };
 
 }
 
 
 
-#endif // RELIGION_MAPPER_H
+#endif // RELIGION_MAPPING_H
