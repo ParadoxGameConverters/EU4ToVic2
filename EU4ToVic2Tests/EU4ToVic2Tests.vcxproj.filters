@@ -113,6 +113,18 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMappingRule.cpp">
       <Filter>ConverterFiles\Mappers</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\ReligionMappingTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapping.cpp">
+      <Filter>ConverterFiles\Mappers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper.cpp">
+      <Filter>ConverterFiles\Mappers</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ReligionMapperTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">

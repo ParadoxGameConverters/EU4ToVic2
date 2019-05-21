@@ -22,56 +22,23 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "ReligionMapper.h"
+#include "ReligionMapping.h"
 #include "Log.h"
-#include "Object.h"
-#include "ParadoxParserUTF8.h"
 
 
 
-mappers::ReligionMapper::ReligionMapper()
+mappers::ReligionMapper::ReligionMapper(std::istream& theStream)
 {
-	std::shared_ptr<Object> religionMapObj = parser_UTF8::doParseFile("religionMap.txt");
-	if (religionMapObj == NULL)
+	registerKeyword(std::regex("link"), [this](const std::string & unused, std::istream & theStream)
 	{
-		LOG(LogLevel::Error) << "Could not parse file religionMap.txt";
-		exit(-1);
-	}
-	if (religionMapObj->getLeaves().size() < 1)
-	{
-		LOG(LogLevel::Error) << "Failed to parse religionMap.txt";
-		exit(-1);
-	}
-
-	initReligionMap(religionMapObj->getLeaves()[0]);
-}
-
-
-void mappers::ReligionMapper::initReligionMap(std::shared_ptr<Object> obj)
-{
-	std::vector<std::shared_ptr<Object>> rules = obj->getLeaves();
-
-	for (auto rule: rules)
-	{
-		std::string Vic2Religion;
-		std::vector<std::string> EU4Religions;
-
-		for (auto ruleItem: rule->getLeaves())
+		ReligionMapping theMapping(theStream);
+		for (auto EU4Religion: theMapping.getEU4Religions())
 		{
-			if (ruleItem->getKey() == "v2")
-			{
-				Vic2Religion = ruleItem->getLeaf();
-			}
-			if (ruleItem->getKey() == "eu4")
-			{
-				EU4Religions.push_back(ruleItem->getLeaf());
-			}
+			EU4ToVic2ReligionMap.insert(make_pair(EU4Religion, theMapping.getVic2Religion()));
 		}
+	});
 
-		for (auto EU4Religion: EU4Religions)
-		{
-			EU4ToVic2ReligionMap.insert(make_pair(EU4Religion, Vic2Religion));
-		}
-	}
+	parseStream(theStream);
 }
 
 

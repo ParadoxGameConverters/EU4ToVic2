@@ -219,6 +219,7 @@
     <ClCompile Include="Source\Mappers\MinorityPopMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper.cpp" />
+    <ClCompile Include="Source\Mappers\ReligionMapping.cpp" />
     <ClCompile Include="Source\targa.cpp" />
     <ClCompile Include="Source\V2World\BlockedTechSchools.cpp" />
     <ClCompile Include="Source\V2World\StateMapper.cpp" />
@@ -296,6 +297,7 @@
     <ClInclude Include="Source\Mappers\MinorityPopMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper.h" />
+    <ClInclude Include="Source\Mappers\ReligionMapping.h" />
     <ClInclude Include="Source\targa.h" />
     <ClInclude Include="Source\V2World\BlockedTechSchools.h" />
     <ClInclude Include="Source\V2World\StateMapper.h" />
