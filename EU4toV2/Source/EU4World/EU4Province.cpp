@@ -28,6 +28,7 @@ THE SOFTWARE. */
 #include "../Configuration.h"
 #include <algorithm>
 #include <fstream>
+#include <optional>
 
 
 
@@ -102,90 +103,15 @@ EU4Province::EU4Province(shared_ptr<Object> obj)
 
 	colony = false;
 
-	ownershipHistory.clear();
-	lastPossessedDate.clear();
-	religionHistory.clear();
-	cultureHistory.clear();
 	vector<shared_ptr<Object>> historyObj = obj->getValue("history");				// the objects holding the history of this province
-	if (historyObj.size() > 0)
-	{
-		vector<shared_ptr<Object>> historyObjs = historyObj[0]->getLeaves();		// the object holding the current history point
-		string lastOwner;				// the last owner of the province
-		string thisCountry;			// the current owner of the province
-		for (unsigned int i = 0; i < historyObjs.size(); i++)
-		{
-			if (historyObjs[i]->getKey() == "owner")
-			{
-				thisCountry = historyObjs[i]->getLeaf();
-				lastOwner = thisCountry;
-				ownershipHistory.push_back(make_pair(date(), thisCountry));
-				continue;
-			}
-			else if (historyObjs[i]->getKey() == "culture")
-			{
-				cultureHistory.push_back(make_pair(date(), historyObjs[i]->getLeaf()));
-				continue;
-			}
-			else if (historyObjs[i]->getKey() == "religion")
-			{
-				religionHistory.push_back(make_pair(date(), historyObjs[i]->getLeaf()));
-				continue;
-			}
-
-			vector<shared_ptr<Object>> ownerObj = historyObjs[i]->getValue("owner");	// the object holding the current historical owner change
-			if (ownerObj.size() > 0)
-			{
-				const date newDate(historyObjs[i]->getKey());	// the date this happened
-				thisCountry = ownerObj[0]->getLeaf();
-
-				map<string, date>::iterator itr = lastPossessedDate.find(lastOwner);
-				if (itr != lastPossessedDate.end())
-					itr->second = newDate;
-				else
-					lastPossessedDate.insert(make_pair(lastOwner, newDate));
-				lastOwner = thisCountry;
-
-				ownershipHistory.push_back(make_pair(newDate, thisCountry));
-			}
-			vector<shared_ptr<Object>> culObj = historyObjs[i]->getValue("culture");	// the object holding the current historical culture change
-			if (culObj.size() > 0)
-			{
-				const date newDate(historyObjs[i]->getKey());	// the date this happened
-				cultureHistory.push_back(make_pair(newDate, culObj[0]->getLeaf()));
-			}
-			vector<shared_ptr<Object>> religObj = historyObjs[i]->getValue("religion");	// the object holding the current historical religion change
-			if (religObj.size() > 0)
-			{
-				const date newDate(historyObjs[i]->getKey());	// the date this happened
-				religionHistory.push_back(make_pair(newDate, religObj[0]->getLeaf()));
-			}
-		}
-	}
-	sort(ownershipHistory.begin(), ownershipHistory.end());
-	sort(cultureHistory.begin(), cultureHistory.end());
-	sort(religionHistory.begin(), religionHistory.end());
+	provinceHistory = std::make_unique<EU4::ProvinceHistory>(historyObj, obj->getValue("culture"), obj->getValue("religion"));
 
 	if (num == 1)
 	{
-		theConfiguration.setFirstEU4Date(ownershipHistory[0].first);
-	}
-
-	if (cultureHistory.size() == 0)
-	{
-		vector<shared_ptr<Object>> culObj = obj->getValue("culture");	// the object holding the current culture
-		if (culObj.size() > 0)
+		std::optional<date> possibleDate = provinceHistory->getFirstOwnedDate();
+		if (possibleDate)
 		{
-			const date newDate;	// the default date
-			cultureHistory.push_back(make_pair(newDate, culObj[0]->getLeaf()));
-		}
-	}
-	if (religionHistory.size() == 0)
-	{
-		vector<shared_ptr<Object>> religObj = obj->getValue("religion");	// the object holding the current religion
-		if (religObj.size() > 0)
-		{
-			const date newDate;	// the default date
-			religionHistory.push_back(make_pair(newDate, religObj[0]->getLeaf()));
+			theConfiguration.setFirstEU4Date(*possibleDate);
 		}
 	}
 
@@ -293,8 +219,6 @@ EU4Province::EU4Province(shared_ptr<Object> obj)
 	checkBuilding(obj, "canal");
 	checkBuilding(obj, "road_network");
 	checkBuilding(obj, "post_office");
-
-	buildPopRatios();
 }
 
 
@@ -323,44 +247,21 @@ void EU4Province::removeCore(string tag)
 
 bool EU4Province::wasColonised() const
 {
-	// returns true if the first owner did not own the province at the beginning of the game,
-	// but acquired it later through colonization, and if the current culture does not match the original culture
-	if (ownershipHistory.size() > 0)
+	std::optional<date> possibleFirstOwnedDate = provinceHistory->getFirstOwnedDate();
+	if (possibleFirstOwnedDate && (*possibleFirstOwnedDate != date()) && (*possibleFirstOwnedDate != theConfiguration.getFirstEU4Date()))
 	{
-		if ((ownershipHistory[0].first != date()) && (ownershipHistory[0].first != theConfiguration.getFirstEU4Date()))
-		{
-			if	((cultureHistory.size() > 1) && (cultureHistory[0].second != cultureHistory[cultureHistory.size() - 1].second))
-			{
-				return true;
-			}
-		}
+		return provinceHistory->ownedByOriginalOwner();
 	}
-	return false;
+	else
+	{
+		return false;
+	}
 }
 
 
 bool EU4Province::wasInfidelConquest() const
 {
-	// returns true if the province was originally pagan, the current owner is non-pagan,
-	// and the province was NOT colonized
-	if (religionHistory.size() > 0 && !wasColonised())
-	{
-		EU4Religion* firstReligion = EU4Religion::getReligion(religionHistory[0].second);	// the first religion of this province
-		EU4Religion* ownerReligion = EU4Religion::getReligion(owner->getReligion());			// the owner's religion
-		if ((firstReligion == NULL) || (ownerReligion == NULL))
-		{
-			LOG(LogLevel::Warning) << "Unhandled religion in EU4 province " << num;
-			return true;
-		}
-		else
-		{
-			if	((cultureHistory.size() > 1) && (cultureHistory[0].second != cultureHistory[cultureHistory.size() - 1].second))
-			{
-				return firstReligion->isInfidelTo(ownerReligion);
-			}
-		}
-	}
-	return false;
+	return provinceHistory->wasInfidelConquest(owner->getReligion(), wasColonised(), num);
 }
 
 
@@ -387,14 +288,9 @@ vector<std::shared_ptr<EU4::Country>> EU4Province::getCores(const map<string, st
 }
 
 
-date EU4Province::getLastPossessedDate(string tag) const
+date EU4Province::getLastPossessedDate(const std::string& tag) const
 {
-	map<string, date>::const_iterator itr = lastPossessedDate.find(tag);	// the last date the country possessed this province
-	if (itr != lastPossessedDate.end())
-	{
-		return itr->second;
-	}
-	return date();
+	return provinceHistory->getLastPossessedDate(tag);
 }
 
 
@@ -402,7 +298,7 @@ double EU4Province::getCulturePercent(const std::string& culture)
 {
 	double culturePercent = 0.0f;
 
-	for (auto pop: popRatios)
+	for (auto pop: provinceHistory->getPopRatios())
 	{
 		if (pop.getCulture() == culture)
 		{
@@ -422,118 +318,6 @@ void EU4Province::checkBuilding(const shared_ptr<Object> provinceObj, string bui
 	{
 		buildings[building] = true;
 	}
-}
-
-
-void EU4Province::buildPopRatios()
-{
-	date endDate = theConfiguration.getLastEU4Date();
-	if (endDate < date("1821.1.1"))
-	{
-		endDate = date("1821.1.1");
-	}
-
-	std::string startingCulture;
-	std::vector<std::pair<date, std::string>>::iterator cultureEvent = cultureHistory.begin();
-	if (cultureEvent != cultureHistory.end())
-	{
-		startingCulture = cultureEvent->second;
-	}
-
-	std::string startingReligion;
-	std::vector<std::pair<date, std::string>>::iterator religionEvent = religionHistory.begin();
-	if (religionEvent != religionHistory.end())
-	{
-		startingReligion = religionEvent->second;
-	}
-
-	EU4::PopRatio currentRatio(startingCulture, startingReligion);
-	date cultureEventDate;
-	date religionEventDate;
-	date lastLoopDate;
-	while (cultureEvent != cultureHistory.end() && religionEvent != religionHistory.end())
-	{
-		if (cultureEvent == cultureHistory.end())
-		{
-			cultureEventDate = date("2000.1.1");
-		}
-		else
-		{
-			cultureEventDate = cultureEvent->first;
-		}
-
-		if (religionEvent == religionHistory.end())
-		{
-			religionEventDate = date("2000.1.1");
-		}
-		else
-		{
-			religionEventDate = religionEvent->first;
-		}
-
-		if (cultureEventDate < religionEventDate)
-		{
-			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
-			popRatios.push_back(currentRatio);
-			for (auto itr: popRatios)
-			{
-				itr.convertFrom();
-			}
-			currentRatio.convertToCulture(cultureEvent->second);
-			lastLoopDate = cultureEventDate;
-			++cultureEvent;
-		}
-		else if (cultureEventDate == religionEventDate)
-		{
-			// culture and religion change on the same day;
-			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
-			popRatios.push_back(currentRatio);
-			for (auto itr: popRatios)
-			{
-				itr.convertFrom();
-			}
-			currentRatio.convertTo(cultureEvent->second, religionEvent->second);
-			lastLoopDate = cultureEventDate;
-			++cultureEvent;
-			++religionEvent;
-		}
-		else if (religionEventDate < cultureEventDate)
-		{
-			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
-			popRatios.push_back(currentRatio);
-			for (auto itr: popRatios)
-			{
-				itr.convertFrom();
-			}
-			currentRatio.convertToReligion(religionEvent->second);
-			lastLoopDate = religionEventDate;
-			++religionEvent;
-		}
-	}
-	decayPopRatios(lastLoopDate, endDate, currentRatio);
-
-	if ((currentRatio.getCulture() != "") || (currentRatio.getReligion() != ""))
-	{
-		popRatios.push_back(currentRatio);
-	}
-}
-
-
-void EU4Province::decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop)
-{
-	// no decay needed for initial state
-	if (oldDate == date())
-	{
-		return;
-	}
-
-	auto diffInYears = newDate.diffInYears(oldDate);
-	for (auto popRatio: popRatios)
-	{
-		popRatio.decay(diffInYears, currentPop);
-	}
-	
-	currentPop.increase(diffInYears);
 }
 
 

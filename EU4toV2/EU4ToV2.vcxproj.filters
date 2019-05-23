@@ -225,6 +225,9 @@
     <ClCompile Include="Source\Mappers\ReligionMapping.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\ProvinceHistory.cpp">
+      <Filter>EU4World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -447,6 +450,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\ReligionMapping.h">
       <Filter>Mappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\ProvinceHistory.h">
+      <Filter>EU4World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -27,6 +27,7 @@ THE SOFTWARE. */
 
 #include "Date.h"
 #include "PopRatio.h"
+#include "ProvinceHistory.h"
 #include <string>
 #include <vector>
 #include <map>
@@ -57,7 +58,7 @@ class EU4Province
 		bool						wasInfidelConquest() const;
 		bool						hasBuilding(string building) const;
 		std::vector<std::shared_ptr<EU4::Country>>	getCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& countries) const;
-		date						getLastPossessedDate(string tag) const;
+		date getLastPossessedDate(const std::string& tag) const;
 		double getCulturePercent(const std::string& culture);
 
 		int						getNum()					const { return num; }
@@ -66,7 +67,7 @@ class EU4Province
 		std::shared_ptr<EU4::Country> getOwner() const { return owner; }
 		bool						getInHRE()				const { return inHRE; }
 		bool						isColony()				const { return colony; }
-		std::vector<EU4::PopRatio> getPopRatios() const { return popRatios; }
+		std::vector<EU4::PopRatio> getPopRatios() const { return provinceHistory->getPopRatios(); }
 		double					getTotalWeight()		const { return totalWeight; }
 		int						getNumDestV2Provs()	const { return numV2Provs; }
 
@@ -105,11 +106,7 @@ class EU4Province
 		vector<string>						cores;					// strings of the tags of all cores
 		bool									inHRE;					// whether or not this province is in the HRE
 		bool									colony;					// whether or not this is a colony
-		vector< pair<date, string> >	ownershipHistory;		// the history of who has owned this province
-		map<string, date>					lastPossessedDate;	// the last date the province was owned by different tags
-		vector< pair<date, string> >	religionHistory;		// the history of the religious changes of this province
-		vector< pair<date, string> >	cultureHistory;		// the history of the cultural changes of this province
-		vector<EU4::PopRatio> popRatios;
+		std::unique_ptr<EU4::ProvinceHistory> provinceHistory;
 		map<string, bool>					buildings;				// the buildings in this province
 
 		string								tradeGoods;
