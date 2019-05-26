@@ -186,6 +186,8 @@
     <ClCompile Include="Source\EU4World\Countries.cpp" />
     <ClCompile Include="Source\EU4World\CountryHistory.cpp" />
     <ClCompile Include="Source\EU4World\CultureGroups.cpp" />
+    <ClCompile Include="Source\EU4World\DateItem.cpp" />
+    <ClCompile Include="Source\EU4World\DateItems.cpp" />
     <ClCompile Include="Source\EU4World\EU4Army.cpp" />
     <ClCompile Include="Source\EU4World\EU4Country.cpp" />
     <ClCompile Include="Source\EU4World\EU4Diplomacy.cpp" />
@@ -267,6 +269,8 @@
     <ClInclude Include="Source\EU4World\Countries.h" />
     <ClInclude Include="Source\EU4World\CountryHistory.h" />
     <ClInclude Include="Source\EU4World\CultureGroups.h" />
+    <ClInclude Include="Source\EU4World\DateItem.h" />
+    <ClInclude Include="Source\EU4World\DateItems.h" />
     <ClInclude Include="Source\EU4World\EU4Army.h" />
     <ClInclude Include="Source\EU4World\EU4Country.h" />
     <ClInclude Include="Source\EU4World\EU4Diplomacy.h" />

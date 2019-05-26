@@ -21,94 +21,75 @@ THE SOFTWARE. */
 
 
 #include "ProvinceHistory.h"
+#include "DateItem.h"
+#include "DateItems.h"
 #include "EU4Religion.h"
 #include "../Configuration.h"
 #include "Log.h"
+#include "ParserHelpers.h"
 
 
 
-EU4::ProvinceHistory::ProvinceHistory(
-	std::vector<std::shared_ptr<Object>> historyObj,
-	std::vector<std::shared_ptr<Object>> culObj,
-	std::vector<std::shared_ptr<Object>> religObj
-)
+EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 {
-	vector<shared_ptr<Object>> historyObjs = historyObj[0]->getLeaves();
-	string lastOwner;				// the last owner of the province
-	string thisCountry;			// the current owner of the province
-	for (unsigned int i = 0; i < historyObjs.size(); i++)
-	{
-		if (historyObjs[i]->getKey() == "owner")
-		{
-			thisCountry = historyObjs[i]->getLeaf();
-			lastOwner = thisCountry;
-			ownershipHistory.push_back(make_pair(date(), thisCountry));
-			continue;
-		}
-		else if (historyObjs[i]->getKey() == "culture")
-		{
-			cultureHistory.push_back(make_pair(date(), historyObjs[i]->getLeaf()));
-			continue;
-		}
-		else if (historyObjs[i]->getKey() == "religion")
-		{
-			religionHistory.push_back(make_pair(date(), historyObjs[i]->getLeaf()));
-			continue;
-		}
+	std::string lastOwner;
 
-		vector<shared_ptr<Object>> ownerObj = historyObjs[i]->getValue("owner");	// the object holding the current historical owner change
-		if (ownerObj.size() > 0)
+	registerKeyword(std::regex("owner"), [this, &lastOwner](const std::string& unused, std::istream & theStream) {
+		commonItems::singleString ownerString(theStream);
+		lastOwner = ownerString.getString();
+		ownershipHistory.push_back(std::make_pair(date("1444.11.11"), lastOwner));
+	});
+	registerKeyword(std::regex("culture"), [this](const std::string& unused, std::istream & theStream) {
+		commonItems::singleString cultureString(theStream);
+		cultureHistory.push_back(std::make_pair(date("1444.11.11"), cultureString.getString()));
+	});
+	registerKeyword(std::regex("religion"), [this](const std::string& unused, std::istream & theStream) {
+		commonItems::singleString religionString(theStream);
+		religionHistory.push_back(std::make_pair(date("1444.11.11"), religionString.getString()));
+	});
+	registerKeyword(std::regex("\\d+\\.\\d+\\.\\d+"), [this, &lastOwner](const std::string& dateString, std::istream& theStream) {
+		DateItems theItems(dateString, theStream);
+		for (DateItem item : theItems.getItems())
 		{
-			const date newDate(historyObjs[i]->getKey());	// the date this happened
-			thisCountry = ownerObj[0]->getLeaf();
+			if (item.getType() == DateItemType::OWNER_CHANGE)
+			{
+				date thisDate = item.getDate();
 
-			map<string, date>::iterator itr = lastPossessedDate.find(lastOwner);
-			if (itr != lastPossessedDate.end())
-				itr->second = newDate;
-			else
-				lastPossessedDate.insert(make_pair(lastOwner, newDate));
-			lastOwner = thisCountry;
+				std::map<std::string, date>::iterator itr = lastPossessedDate.find(lastOwner);
+				if (itr != lastPossessedDate.end())
+				{
+					itr->second = thisDate;
+				}
+				else
+				{
+					lastPossessedDate.insert(std::make_pair(lastOwner, thisDate));
+				}
 
-			ownershipHistory.push_back(make_pair(newDate, thisCountry));
+				ownershipHistory.push_back(std::make_pair(thisDate, item.getData()));
+
+			}
+			else if (item.getType() == DateItemType::CULTURE_CHANGE)
+			{
+				cultureHistory.push_back(std::make_pair(item.getDate(), item.getData()));
+			}
+			else if (item.getType() == DateItemType::RELIGION_CHANGE)
+			{
+				religionHistory.push_back(std::make_pair(item.getDate(), item.getData()));
+			}
 		}
-		vector<shared_ptr<Object>> culObj = historyObjs[i]->getValue("culture");	// the object holding the current historical culture change
-		if (culObj.size() > 0)
-		{
-			const date newDate(historyObjs[i]->getKey());	// the date this happened
-			cultureHistory.push_back(make_pair(newDate, culObj[0]->getLeaf()));
-		}
-		vector<shared_ptr<Object>> religObj = historyObjs[i]->getValue("religion");	// the object holding the current historical religion change
-		if (religObj.size() > 0)
-		{
-			const date newDate(historyObjs[i]->getKey());	// the date this happened
-			religionHistory.push_back(make_pair(newDate, religObj[0]->getLeaf()));
-		}
-	}
+	});
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+
+	parseStream(theStream);
+
 	sort(ownershipHistory.begin(), ownershipHistory.end());
 	sort(cultureHistory.begin(), cultureHistory.end());
 	sort(religionHistory.begin(), religionHistory.end());
 
-	if (cultureHistory.size() == 0)
-	{
-		if (culObj.size() > 0)
-		{
-			const date newDate;	// the default date
-			cultureHistory.push_back(make_pair(newDate, culObj[0]->getLeaf()));
-		}
-	}
-	if (religionHistory.size() == 0)
-	{
-		if (religObj.size() > 0)
-		{
-			const date newDate;	// the default date
-			religionHistory.push_back(make_pair(newDate, religObj[0]->getLeaf()));
-		}
-	}
-
 	buildPopRatios();
 }
 
-#pragma optimize("",off)
+
 std::optional<date> EU4::ProvinceHistory::getFirstOwnedDate() const
 {
 	if (ownershipHistory.size() > 0)
@@ -169,7 +150,7 @@ date EU4::ProvinceHistory::getLastPossessedDate(const std::string& tag) const
 	}
 	return date();
 }
-#pragma optimize("",on)
+
 
 void EU4::ProvinceHistory::buildPopRatios()
 {

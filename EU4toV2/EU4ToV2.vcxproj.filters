@@ -228,6 +228,12 @@
     <ClCompile Include="Source\EU4World\ProvinceHistory.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\DateItem.cpp">
+      <Filter>EU4World</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\DateItems.cpp">
+      <Filter>EU4World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -452,6 +458,12 @@
       <Filter>Mappers</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\ProvinceHistory.h">
+      <Filter>EU4World</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\DateItem.h">
+      <Filter>EU4World</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\DateItems.h">
       <Filter>EU4World</Filter>
     </ClInclude>
   </ItemGroup>

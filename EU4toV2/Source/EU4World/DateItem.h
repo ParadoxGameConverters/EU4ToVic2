@@ -19,18 +19,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE. */
 
 
-
-#ifndef PROVINCE_HISTORY_H_
-#define PROVINCE_HISTORY_H_
+#ifndef DATE_ITEM_H_
+#define DATE_ITEM_H_
 
 
 
 #include "Date.h"
-#include "PopRatio.h"
 #include "newParser.h"
-#include <map>
-#include <optional>
-#include <vector>
 #include <string>
 
 
@@ -38,32 +33,32 @@ THE SOFTWARE. */
 namespace EU4
 {
 
-class ProvinceHistory: commonItems::parser
+enum class DateItemType
+{
+	OWNER_CHANGE,
+	CULTURE_CHANGE,
+	RELIGION_CHANGE,
+	OTHER_CHANGE
+};
+
+
+class DateItem: commonItems::parser
 {
 	public:
-		ProvinceHistory(std::istream& theStream);
+		DateItem(const std::string& dateString, const std::string& typeString, std::istream& theStream);
 
-		std::optional<date> getFirstOwnedDate() const;
-		bool ownedByOriginalOwner() const;
-		bool wasInfidelConquest(const std::string& ownerReligionString, bool wasColonized, int num) const;
-		date getLastPossessedDate(const std::string& tag) const;
-
-		std::vector<PopRatio> getPopRatios() const { return popRatios; }
+		DateItemType getType() const { return type; }
+		date getDate() const { return theDate; }
+		std::string getData() const { return data; }
 
 	private:
-		void buildPopRatios();
-		void decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop);
-
-		std::vector<std::pair<date, std::string>> ownershipHistory;
-		std::map<std::string, date> lastPossessedDate;
-		std::vector<std::pair<date, std::string>> religionHistory;
-		std::vector<std::pair<date, std::string>> cultureHistory;
-
-		std::vector<PopRatio> popRatios;
+		DateItemType type = DateItemType::OTHER_CHANGE;
+		date theDate;
+		std::string data;
 };
 
 }
 
 
 
-#endif // PROVICNE_HISTORY_H_
+#endif // DATE_ITEM_H_

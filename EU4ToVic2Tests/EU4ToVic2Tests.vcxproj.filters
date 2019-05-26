@@ -131,6 +131,21 @@
     <ClCompile Include="EU4WorldTests\PopRatioTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\DateItemTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\DateItem.cpp">
+      <Filter>ConverterFiles\EU4World</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common_items\Date.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\DateItemsTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\DateItems.cpp">
+      <Filter>ConverterFiles\EU4World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">

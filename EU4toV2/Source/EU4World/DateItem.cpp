@@ -20,50 +20,35 @@ THE SOFTWARE. */
 
 
 
-#ifndef PROVINCE_HISTORY_H_
-#define PROVINCE_HISTORY_H_
+#include "DateItem.h"
+#include "ParserHelpers.h"
 
 
 
-#include "Date.h"
-#include "PopRatio.h"
-#include "newParser.h"
-#include <map>
-#include <optional>
-#include <vector>
-#include <string>
-
-
-
-namespace EU4
+EU4::DateItem::DateItem(const std::string& dateString, const std::string& typeString, std::istream& theStream)
 {
+	theDate = date(dateString);
 
-class ProvinceHistory: commonItems::parser
-{
-	public:
-		ProvinceHistory(std::istream& theStream);
-
-		std::optional<date> getFirstOwnedDate() const;
-		bool ownedByOriginalOwner() const;
-		bool wasInfidelConquest(const std::string& ownerReligionString, bool wasColonized, int num) const;
-		date getLastPossessedDate(const std::string& tag) const;
-
-		std::vector<PopRatio> getPopRatios() const { return popRatios; }
-
-	private:
-		void buildPopRatios();
-		void decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop);
-
-		std::vector<std::pair<date, std::string>> ownershipHistory;
-		std::map<std::string, date> lastPossessedDate;
-		std::vector<std::pair<date, std::string>> religionHistory;
-		std::vector<std::pair<date, std::string>> cultureHistory;
-
-		std::vector<PopRatio> popRatios;
-};
-
+	if (typeString == "owner")
+	{
+		type = DateItemType::OWNER_CHANGE;
+		commonItems::singleString ownerString(theStream);
+		data = ownerString.getString();
+	}
+	else if (typeString == "culture")
+	{
+		type = DateItemType::CULTURE_CHANGE;
+		commonItems::singleString cultureString(theStream);
+		data = cultureString.getString();
+	}
+	else if (typeString == "religion")
+	{
+		type = DateItemType::RELIGION_CHANGE;
+		commonItems::singleString religionString(theStream);
+		data = religionString.getString();
+	}
+	else
+	{
+		commonItems::ignoreItem(typeString, theStream);
+	}
 }
-
-
-
-#endif // PROVICNE_HISTORY_H_

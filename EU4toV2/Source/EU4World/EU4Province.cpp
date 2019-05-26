@@ -25,6 +25,7 @@ THE SOFTWARE. */
 #include "EU4Religion.h"
 #include "Log.h"
 #include "Object.h"
+#include "newParser.h"
 #include "../Configuration.h"
 #include <algorithm>
 #include <fstream>
@@ -104,7 +105,11 @@ EU4Province::EU4Province(shared_ptr<Object> obj)
 	colony = false;
 
 	vector<shared_ptr<Object>> historyObj = obj->getValue("history");				// the objects holding the history of this province
-	provinceHistory = std::make_unique<EU4::ProvinceHistory>(historyObj, obj->getValue("culture"), obj->getValue("religion"));
+	std::stringstream historyStream;
+	historyStream << *historyObj[0];
+	commonItems::parser tempParser;
+	tempParser.getNextTokenWithoutMatching(historyStream); // throw away the initial 'history'
+	provinceHistory = std::make_unique<EU4::ProvinceHistory>(historyStream);
 
 	if (num == 1)
 	{
