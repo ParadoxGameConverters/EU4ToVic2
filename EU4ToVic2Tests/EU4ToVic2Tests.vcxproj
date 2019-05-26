@@ -160,12 +160,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\common_items\Color.cpp" />
+    <ClCompile Include="..\common_items\Date.cpp" />
     <ClCompile Include="..\common_items\Log.cpp" />
     <ClCompile Include="..\common_items\newParser.cpp" />
     <ClCompile Include="..\common_items\Object.cpp" />
     <ClCompile Include="..\common_items\ParserHelpers.cpp" />
     <ClCompile Include="..\common_items\WinUtils.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Configuration.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\DateItem.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\DateItems.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\PopRatio.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Area.cpp" />
@@ -190,6 +193,8 @@
     <ClCompile Include="ConfigurationTests.cpp" />
     <ClCompile Include="EU4WorldTests\AreaNamesTests.cpp" />
     <ClCompile Include="EU4WorldTests\AreasTests.cpp" />
+    <ClCompile Include="EU4WorldTests\DateItemsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\DateItemTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp" />
     <ClCompile Include="EU4WorldTests\PopRatioTests.cpp" />

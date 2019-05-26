@@ -20,50 +20,16 @@ THE SOFTWARE. */
 
 
 
-#ifndef PROVINCE_HISTORY_H_
-#define PROVINCE_HISTORY_H_
+#include "DateItems.h"
 
 
 
-#include "Date.h"
-#include "PopRatio.h"
-#include "newParser.h"
-#include <map>
-#include <optional>
-#include <vector>
-#include <string>
-
-
-
-namespace EU4
+EU4::DateItems::DateItems(const std::string& dateString, std::istream& theStream)
 {
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this, dateString](const std::string& typeString, std::istream& theStream) {
+		DateItem newItem(dateString, typeString, theStream);
+		items.push_back(newItem);
+	});
 
-class ProvinceHistory: commonItems::parser
-{
-	public:
-		ProvinceHistory(std::istream& theStream);
-
-		std::optional<date> getFirstOwnedDate() const;
-		bool ownedByOriginalOwner() const;
-		bool wasInfidelConquest(const std::string& ownerReligionString, bool wasColonized, int num) const;
-		date getLastPossessedDate(const std::string& tag) const;
-
-		std::vector<PopRatio> getPopRatios() const { return popRatios; }
-
-	private:
-		void buildPopRatios();
-		void decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop);
-
-		std::vector<std::pair<date, std::string>> ownershipHistory;
-		std::map<std::string, date> lastPossessedDate;
-		std::vector<std::pair<date, std::string>> religionHistory;
-		std::vector<std::pair<date, std::string>> cultureHistory;
-
-		std::vector<PopRatio> popRatios;
-};
-
+	parseStream(theStream);
 }
-
-
-
-#endif // PROVICNE_HISTORY_H_
