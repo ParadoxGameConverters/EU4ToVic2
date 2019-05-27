@@ -255,7 +255,7 @@ bool EU4Province::wasColonised() const
 	std::optional<date> possibleFirstOwnedDate = provinceHistory->getFirstOwnedDate();
 	if (possibleFirstOwnedDate && (*possibleFirstOwnedDate != date()) && (*possibleFirstOwnedDate != theConfiguration.getFirstEU4Date()))
 	{
-		return provinceHistory->ownedByOriginalOwner();
+		return provinceHistory->hasOriginalCulture();
 	}
 	else
 	{
@@ -290,12 +290,6 @@ vector<std::shared_ptr<EU4::Country>> EU4Province::getCores(const map<string, st
 	}
 
 	return coreOwners;
-}
-
-
-date EU4Province::getLastPossessedDate(const std::string& tag) const
-{
-	return provinceHistory->getLastPossessedDate(tag);
 }
 
 
