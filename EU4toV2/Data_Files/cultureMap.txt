@@ -1,4 +1,4 @@
-# Copyright (c) 2018 The Paradox Game Converters Project
+﻿# Copyright (c) 2018 The Paradox Game Converters Project
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -297,10 +297,10 @@ link = { vic2 = kurdish eu4 = kurdish }
 link = { vic2 = uighur eu4 = uyghur }
 
 # Central American - zapotek, tarascan, mayan, nahua
-link = { vic2 = zapotec eu4 = zapotek eu4 = mixtec eu4 = tlapanec }
-link = { vic2 = tarascan eu4 = purepecha eu4 = tecos }
-link = { vic2 = mayan eu4 = mayan eu4 = yucatec eu4 = putun eu4 = highland_mayan }
-link = { vic2 = nahua eu4 = aztek eu4 = totonac }
+link = { vic2 = zapotec eu4 = zapotek eu4 = mixtec eu4 = tlapanec eu4 = lacandon }
+link = { vic2 = tarascan eu4 = purepecha eu4 = tecos eu4 = guamares eu4 = tepic }
+link = { vic2 = mayan eu4 = mayan eu4 = yucatec eu4 = putun eu4 = highland_mayan eu4 = chontales }
+link = { vic2 = nahua eu4 = aztek eu4 = totonac eu4 = matlatzinca eu4 = otomi eu4 = wastek }
 link = { vic2 = native_american_minor eu4 = chichimecan }
 
 # South American - chibchan, maranon, quechua, aimara, amazonian, tupi, je, guarani, araucanian, amazonian
@@ -310,7 +310,7 @@ link = { vic2 = quechua eu4 = inca eu4 = chimuan }
 link = { vic2 = aimara eu4 = aimara  eu4 = diaguita }
 link = { vic2 = amazonian eu4 = amazonian eu4 = maipurean }
 link = { vic2 = tupi eu4 = tupinamba eu4 = tupi }
-link = { vic2 = je eu4 = ge eu4 = goitaca eu4 = teremembe }
+link = { vic2 = je eu4 = ge }
 link = { vic2 = guarani eu4 = guarani eu4 = charruan }
 link = { vic2 = patagonian eu4 = patagonian eu4 = het }
 link = { vic2 = araucanian eu4 = huarpe eu4 = mapuche }
@@ -328,7 +328,7 @@ link = { vic2 = metis eu4 = dakota eu4 = nakota eu4 = chiwere eu4 = osage eu4 = 
 link = { vic2 = siouan eu4 = dakota eu4 = nakota eu4 = chiwere eu4 = osage eu4 = catawba }
 link = { vic2 = iroquoian eu4 = iroquois eu4 = iroquis eu4 = huron eu4 = susquehannock }
 link = { vic2 = cherokee eu4 = cherokee }
-link = { vic2 = sonoran eu4 = pueblo eu4 = piman eu4 = shoshone eu4 = kiowa }
+link = { vic2 = sonoran eu4 = pueblo eu4 = piman eu4 = shoshone eu4 = kiowa eu4 = lipan eu4 = mescalero eu4 = yaqui }
 link = { vic2 = eskaleut eu4 = kamchatkan eu4 = aleutian eu4 = inuit }
 link = { vic2 = central_algonquian eu4 = cree eu4 = shawnee eu4 = anishinabe eu4 = illini eu4 = mesquakie }
 link = { vic2 = na_dene eu4 = navajo eu4 = chipewyan eu4 = athabascan eu4 = apache eu4 = haida }
@@ -417,7 +417,7 @@ link = { vic2 = kashmiri eu4 = kashmiri }
 link = { vic2 = gujarati eu4 = gujarati }
 link = { vic2 = marathi eu4 = marathi }
 link = { vic2 = sindi eu4 = sindhi }
-link = { vic2 = rajput eu4 = rajput eu4 = malvi }
+link = { vic2 = rajput eu4 = rajput eu4 = malvi eu4 = vindhyan }
 
 # Dravidian - kannada, malayalam, tamil, telegu
 link = { vic2 = kannada eu4 = kannada }
@@ -426,15 +426,16 @@ link = { vic2 = tamil eu4 = tamil }
 link = { vic2 = telegu eu4 = telegu }
 
 # Central Indic - garjati, gondi, jharkhandi
-link = { vic2 = asian_minor eu4 = garjati eu4 = gondi eu4 = jharkhandi }
+link = { vic2 = asian_minor eu4 = garjati eu4 = gondi eu4 = jharkhandi eu4 = kochi}
 
 # Sahelian - wolof, fulbe, hausa, kanuri, tuareg, baguirmi
 link = { vic2 = wolof eu4 = senegambian eu4 = jolof }
 link = { vic2 = fulbe eu4 = fulani }
 link = { vic2 = hausa eu4 = hausa }
 link = { vic2 = kanuri eu4 = kanuri }
-link = { vic2 = maures eu4 = tuareg region = cap_verde_area } #Mauritanian Tuaregs
-link = { vic2 = tuareg eu4 = tuareg }
+# link = { vic2 = maures eu4 = tuareg region = cap_verde_area } #Mauritanian Tuaregs
+# link = { vic2 = tuareg eu4 = tuareg }
+link = { vic2 = berber eu4 = tuareg }
 link = { vic2 = baguirmi eu4 = bilala }
 
 # Malian - songhai, mande, bambara, dyula
@@ -529,7 +530,8 @@ link = { vic2 = anglo_saxon eu4 = anglosaxon }
 link = { vic2 = misri eu4 = old_egyptian }
 link = { vic2 = danish eu4 = scanian }
 link = { vic2 = latvian eu4 = pruthenian }
-link = { vic2 = mashriqi eu4 = phoenician eu4 = aramaic }
+link = { vic2 = berber eu4 = phoenician }
+link = { vic2 = mashriqi eu4 = aramaic }
 link = { vic2 = sephardic eu4 = hebrew }
 link = { vic2 = alan eu4 = scythian }
 link = { vic2 = persian eu4 = parthian }
