@@ -31,12 +31,9 @@ THE SOFTWARE. */
 
 EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 {
-	std::string lastOwner;
-
-	registerKeyword(std::regex("owner"), [this, &lastOwner](const std::string& unused, std::istream & theStream) {
+	registerKeyword(std::regex("owner"), [this](const std::string& unused, std::istream & theStream) {
 		commonItems::singleString ownerString(theStream);
-		lastOwner = ownerString.getString();
-		ownershipHistory.push_back(std::make_pair(date("1444.11.11"), lastOwner));
+		ownershipHistory.push_back(std::make_pair(date("1444.11.11"), ownerString.getString()));
 	});
 	registerKeyword(std::regex("culture"), [this](const std::string& unused, std::istream & theStream) {
 		commonItems::singleString cultureString(theStream);
@@ -46,14 +43,13 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 		commonItems::singleString religionString(theStream);
 		religionHistory.push_back(std::make_pair(date("1444.11.11"), religionString.getString()));
 	});
-	registerKeyword(std::regex("\\d+\\.\\d+\\.\\d+"), [this, &lastOwner](const std::string& dateString, std::istream& theStream) {
+	registerKeyword(std::regex("\\d+\\.\\d+\\.\\d+"), [this](const std::string& dateString, std::istream& theStream) {
 		DateItems theItems(dateString, theStream);
 		for (DateItem item : theItems.getItems())
 		{
 			if (item.getType() == DateItemType::OWNER_CHANGE)
 			{
 				ownershipHistory.push_back(std::make_pair(item.getDate(), item.getData()));
-
 			}
 			else if (item.getType() == DateItemType::CULTURE_CHANGE)
 			{
@@ -68,10 +64,6 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
-
-	sort(ownershipHistory.begin(), ownershipHistory.end());
-	sort(cultureHistory.begin(), cultureHistory.end());
-	sort(religionHistory.begin(), religionHistory.end());
 
 	buildPopRatios();
 }
@@ -118,7 +110,7 @@ bool EU4::ProvinceHistory::wasInfidelConquest(const Religions& allReligions, con
 		}
 		else
 		{
-			if ((cultureHistory.size() > 1) && (cultureHistory[0].second != cultureHistory[cultureHistory.size() - 1].second))
+			if (!hasOriginalCulture())
 			{
 				return originalReligion->isInfidelTo(*ownerReligion);
 			}
