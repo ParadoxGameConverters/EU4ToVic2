@@ -141,6 +141,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 	if (cultureEvent != cultureHistory.end())
 	{
 		startingCulture = cultureEvent->second;
+		cultureEvent++;
 	}
 
 	std::string startingReligion;
@@ -148,13 +149,14 @@ void EU4::ProvinceHistory::buildPopRatios()
 	if (religionEvent != religionHistory.end())
 	{
 		startingReligion = religionEvent->second;
+		religionEvent++;
 	}
 
 	EU4::PopRatio currentRatio(startingCulture, startingReligion);
 	date cultureEventDate;
 	date religionEventDate;
 	date lastLoopDate;
-	while (cultureEvent != cultureHistory.end() && religionEvent != religionHistory.end())
+	while (cultureEvent != cultureHistory.end() || religionEvent != religionHistory.end())
 	{
 		if (cultureEvent == cultureHistory.end())
 		{
@@ -178,7 +180,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 		{
 			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
 			popRatios.push_back(currentRatio);
-			for (auto itr : popRatios)
+			for (auto& itr: popRatios)
 			{
 				itr.convertFrom();
 			}
@@ -191,7 +193,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 			// culture and religion change on the same day;
 			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
 			popRatios.push_back(currentRatio);
-			for (auto itr : popRatios)
+			for (auto& itr: popRatios)
 			{
 				itr.convertFrom();
 			}
@@ -204,7 +206,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 		{
 			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
 			popRatios.push_back(currentRatio);
-			for (auto itr : popRatios)
+			for (auto& itr: popRatios)
 			{
 				itr.convertFrom();
 			}
@@ -231,7 +233,7 @@ void EU4::ProvinceHistory::decayPopRatios(const date& oldDate, const date& newDa
 	}
 
 	auto diffInYears = newDate.diffInYears(oldDate);
-	for (auto popRatio : popRatios)
+	for (auto& popRatio: popRatios)
 	{
 		popRatio.decay(diffInYears, currentPop);
 	}
