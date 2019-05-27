@@ -30,6 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "EU4Diplomacy.h"
 #include "EU4Version.h"
 #include "Regions/Regions.h"
+#include "Religions/Religions.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "newParser.h"
@@ -63,6 +64,7 @@ class world: private commonItems::parser
 		vector<EU4Agreement> getDiplomaticAgreements() const { return diplomacy->getAgreements(); };
 		double getWorldWeightSum() const { return worldWeightSum; };
 		const Regions& getRegions() const { return *regions; }
+		const Religions& getAllReligions() const { return theReligions; }
 
 		bool isRandomWorld() const;
 
@@ -107,6 +109,8 @@ class world: private commonItems::parser
 		void checkAllProvincesMapped() const;
 		void setNumbersOfDestinationProvinces();
 
+		void importReligions();
+
 		void removeEmptyNations();
 		void removeDeadLandlessNations();
 		void removeLandlessNations();
@@ -125,6 +129,8 @@ class world: private commonItems::parser
 		double worldWeightSum;
 
 		std::string revolutionTargetString;
+
+		Religions theReligions;
 };
 
 }

@@ -195,7 +195,6 @@
     <ClCompile Include="Source\EU4World\EU4Localisation.cpp" />
     <ClCompile Include="Source\EU4World\EU4Province.cpp" />
     <ClCompile Include="Source\EU4World\EU4Relations.cpp" />
-    <ClCompile Include="Source\EU4World\EU4Religion.cpp" />
     <ClCompile Include="Source\EU4World\EU4Version.cpp" />
     <ClCompile Include="Source\EU4World\History.cpp" />
     <ClCompile Include="Source\EU4World\ID.cpp" />
@@ -281,7 +280,6 @@
     <ClInclude Include="Source\EU4World\EU4Localisation.h" />
     <ClInclude Include="Source\EU4World\EU4Province.h" />
     <ClInclude Include="Source\EU4World\EU4Relations.h" />
-    <ClInclude Include="Source\EU4World\EU4Religion.h" />
     <ClInclude Include="Source\EU4World\EU4Version.h" />
     <ClInclude Include="Source\EU4World\History.h" />
     <ClInclude Include="Source\EU4World\ID.h" />

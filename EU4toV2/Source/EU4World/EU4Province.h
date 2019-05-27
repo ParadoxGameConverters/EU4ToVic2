@@ -40,7 +40,10 @@ class Object;
 
 namespace EU4
 {
-	class Country;
+
+class Country;
+class Religions;
+
 }
 
 
@@ -55,7 +58,7 @@ class EU4Province
 		void						determineProvinceWeight();
 
 		bool						wasColonised() const;
-		bool						wasInfidelConquest() const;
+		bool wasInfidelConquest(const EU4::Religions& allReligions) const;
 		bool						hasBuilding(string building) const;
 		std::vector<std::shared_ptr<EU4::Country>>	getCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& countries) const;
 		date getLastPossessedDate(const std::string& tag) const;

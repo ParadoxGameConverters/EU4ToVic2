@@ -772,7 +772,7 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 			{
 				ownerItr->second->addProvince(Vic2Province.second);
 			}
-			Vic2Province.second->convertFromOldProvince(oldProvince);
+			Vic2Province.second->convertFromOldProvince(sourceWorld.getAllReligions(), oldProvince);
 
 			for (map<string, MTo1ProvinceComp>::iterator mitr = provinceBins.begin(); mitr != provinceBins.end(); ++mitr)
 			{

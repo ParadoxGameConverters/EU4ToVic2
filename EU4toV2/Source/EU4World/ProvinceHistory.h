@@ -27,6 +27,7 @@ THE SOFTWARE. */
 
 #include "Date.h"
 #include "PopRatio.h"
+#include "Religions/Religions.h"
 #include "newParser.h"
 #include <map>
 #include <optional>
@@ -45,7 +46,7 @@ class ProvinceHistory: commonItems::parser
 
 		std::optional<date> getFirstOwnedDate() const;
 		bool ownedByOriginalOwner() const;
-		bool wasInfidelConquest(const std::string& ownerReligionString, bool wasColonized, int num) const;
+		bool wasInfidelConquest(const Religions& allReligions, const std::string& ownerReligionString, bool wasColonized, int num) const;
 		date getLastPossessedDate(const std::string& tag) const;
 
 		std::vector<PopRatio> getPopRatios() const { return popRatios; }

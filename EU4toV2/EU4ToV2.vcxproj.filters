@@ -90,9 +90,6 @@
     <ClCompile Include="Source\EU4World\EU4Relations.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\EU4Religion.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\EU4Version.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
@@ -329,9 +326,6 @@
       <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\EU4Relations.h">
-      <Filter>EU4World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\EU4Religion.h">
       <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\EU4Version.h">
