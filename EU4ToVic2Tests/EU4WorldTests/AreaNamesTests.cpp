@@ -27,7 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(EU4World_EU4AreaNamesTests, emptyAreaNamesGivesNoNames)
+TEST(EU4World_AreaNamesTests, emptyAreaNamesGivesNoNames)
 {
 	std::stringstream input;
 	input << "= {}";
@@ -37,7 +37,7 @@ TEST(EU4World_EU4AreaNamesTests, emptyAreaNamesGivesNoNames)
 }
 
 
-TEST(EU4World_EU4AreaNamesTests, nameCanBeAdded)
+TEST(EU4World_AreaNamesTests, nameCanBeAdded)
 {
 	std::stringstream input;
 	input << "= { areName }";

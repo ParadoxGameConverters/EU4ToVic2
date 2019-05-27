@@ -28,7 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(EU4World_EU4DateItemsTests, emptyItemsImported)
+TEST(EU4World_DateItemsTests, emptyItemsImported)
 {
 	std::stringstream input;
 	input << "={\n";
@@ -41,7 +41,7 @@ TEST(EU4World_EU4DateItemsTests, emptyItemsImported)
 }
 
 
-TEST(EU4World_EU4DateItemsTests, singleItemImported)
+TEST(EU4World_DateItemsTests, singleItemImported)
 {
 	std::stringstream input;
 	input << "={\n";
@@ -58,7 +58,7 @@ TEST(EU4World_EU4DateItemsTests, singleItemImported)
 }
 
 
-TEST(EU4World_EU4DateItemsTests, multipleItemsImported)
+TEST(EU4World_DateItemsTests, multipleItemsImported)
 {
 	std::stringstream input;
 	input << "={\n";
