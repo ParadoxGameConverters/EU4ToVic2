@@ -47,7 +47,6 @@ class ProvinceHistory: commonItems::parser
 		std::optional<date> getFirstOwnedDate() const;
 		bool hasOriginalCulture() const;
 		bool wasInfidelConquest(const Religions& allReligions, const std::string& ownerReligionString, bool wasColonized, int num) const;
-		date getLastPossessedDate(const std::string& tag) const;
 
 		std::vector<PopRatio> getPopRatios() const { return popRatios; }
 
@@ -56,7 +55,6 @@ class ProvinceHistory: commonItems::parser
 		void decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop);
 
 		std::vector<std::pair<date, std::string>> ownershipHistory;
-		std::map<std::string, date> lastPossessedDate;
 		std::vector<std::pair<date, std::string>> religionHistory;
 		std::vector<std::pair<date, std::string>> cultureHistory;
 

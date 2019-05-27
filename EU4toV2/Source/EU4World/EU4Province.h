@@ -61,7 +61,6 @@ class EU4Province
 		bool wasInfidelConquest(const EU4::Religions& allReligions) const;
 		bool						hasBuilding(string building) const;
 		std::vector<std::shared_ptr<EU4::Country>>	getCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& countries) const;
-		date getLastPossessedDate(const std::string& tag) const;
 		double getCulturePercent(const std::string& culture);
 
 		int						getNum()					const { return num; }

@@ -52,19 +52,7 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 		{
 			if (item.getType() == DateItemType::OWNER_CHANGE)
 			{
-				date thisDate = item.getDate();
-
-				std::map<std::string, date>::iterator itr = lastPossessedDate.find(lastOwner);
-				if (itr != lastPossessedDate.end())
-				{
-					itr->second = thisDate;
-				}
-				else
-				{
-					lastPossessedDate.insert(std::make_pair(lastOwner, thisDate));
-				}
-
-				ownershipHistory.push_back(std::make_pair(thisDate, item.getData()));
+				ownershipHistory.push_back(std::make_pair(item.getDate(), item.getData()));
 
 			}
 			else if (item.getType() == DateItemType::CULTURE_CHANGE)
@@ -137,17 +125,6 @@ bool EU4::ProvinceHistory::wasInfidelConquest(const Religions& allReligions, con
 		}
 	}
 	return false;
-}
-
-
-date EU4::ProvinceHistory::getLastPossessedDate(const std::string& tag) const
-{
-	std::map<std::string, date>::const_iterator itr = lastPossessedDate.find(tag);
-	if (itr != lastPossessedDate.end())
-	{
-		return itr->second;
-	}
-	return date();
 }
 
 
