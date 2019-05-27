@@ -23,7 +23,6 @@ THE SOFTWARE. */
 #include "ProvinceHistory.h"
 #include "DateItem.h"
 #include "DateItems.h"
-#include "EU4Religion.h"
 #include "../Configuration.h"
 #include "Log.h"
 #include "ParserHelpers.h"
@@ -116,15 +115,15 @@ bool EU4::ProvinceHistory::ownedByOriginalOwner() const
 }
 
 
-bool EU4::ProvinceHistory::wasInfidelConquest(const std::string& ownerReligionString, bool wasColonized, int num) const
+bool EU4::ProvinceHistory::wasInfidelConquest(const Religions& allReligions, const std::string& ownerReligionString, bool wasColonized, int num) const
 {
 	// returns true if the province was originally pagan, the current owner is non-pagan,
 	// and the province was NOT colonized
 	if (religionHistory.size() > 0 && !wasColonized)
 	{
-		EU4Religion* firstReligion = EU4Religion::getReligion(religionHistory[0].second);	// the first religion of this province
-		EU4Religion* ownerReligion = EU4Religion::getReligion(ownerReligionString);			// the owner's religion
-		if ((firstReligion == NULL) || (ownerReligion == NULL))
+		std::optional<Religion> originalReligion = allReligions.getReligion(religionHistory[0].second);
+		std::optional<Religion> ownerReligion = allReligions.getReligion(ownerReligionString);
+		if (!originalReligion || !ownerReligion)
 		{
 			LOG(LogLevel::Warning) << "Unhandled religion in EU4 province " << num;
 			return true;
@@ -133,7 +132,7 @@ bool EU4::ProvinceHistory::wasInfidelConquest(const std::string& ownerReligionSt
 		{
 			if ((cultureHistory.size() > 1) && (cultureHistory[0].second != cultureHistory[cultureHistory.size() - 1].second))
 			{
-				return firstReligion->isInfidelTo(ownerReligion);
+				return originalReligion->isInfidelTo(*ownerReligion);
 			}
 		}
 	}
@@ -143,7 +142,7 @@ bool EU4::ProvinceHistory::wasInfidelConquest(const std::string& ownerReligionSt
 
 date EU4::ProvinceHistory::getLastPossessedDate(const std::string& tag) const
 {
-	map<string, date>::const_iterator itr = lastPossessedDate.find(tag);
+	std::map<std::string, date>::const_iterator itr = lastPossessedDate.find(tag);
 	if (itr != lastPossessedDate.end())
 	{
 		return itr->second;

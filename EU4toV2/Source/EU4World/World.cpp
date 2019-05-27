@@ -29,7 +29,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "EU4Diplomacy.h"
 #include "EU4Version.h"
 #include "EU4Localisation.h"
-#include "EU4Religion.h"
 #include "Regions/Areas.h"
 #include "../Configuration.h"
 #include "../Mappers/ProvinceMapper.h"
@@ -132,7 +131,7 @@ EU4::world::world(const string& EU4SaveFileName):
 	setNumbersOfDestinationProvinces();
 	loadRevolutionTarget();
 
-	EU4Religion::createSelf();
+	importReligions();
 
 	removeEmptyNations();
 	if (theConfiguration.getRemovetype() == "dead")
@@ -1008,12 +1007,34 @@ void EU4::world::setNumbersOfDestinationProvinces()
 
 void EU4::world::checkAllEU4ReligionsMapped(const mappers::ReligionMapper& religionMapper) const
 {
-	for (auto EU4Religion: EU4Religion::getAllReligions())
+	for (auto EU4Religion: theReligions.getAllReligions())
 	{
 		auto Vic2Religion = religionMapper.getVic2Religion(EU4Religion.first);
 		if (Vic2Religion == "")
 		{
 			Log(LogLevel::Warning) << "No religion mapping for EU4 religion " << EU4Religion.first;
+		}
+	}
+}
+
+
+void EU4::world::importReligions()
+{
+	LOG(LogLevel::Info) << "Parsing EU4 religions";
+
+	std::ifstream religionsFile(theConfiguration.getEU4Path() + "/common/religions/00_religion.txt");
+	theReligions.addReligions(religionsFile);
+	religionsFile.close();
+
+	for (auto modName: theConfiguration.getEU4Mods())
+	{
+		std::set<std::string> filenames;
+		Utils::GetAllFilesInFolder(modName + "/common/religions/", filenames);
+		for (auto filename: filenames)
+		{
+			std::ifstream modReligionsFile(modName + "/common/religions/" + filename);
+			theReligions.addReligions(modReligionsFile);
+			modReligionsFile.close();
 		}
 	}
 }

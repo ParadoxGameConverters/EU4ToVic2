@@ -57,7 +57,7 @@ class V2Province
 		V2Province(string _filename);
 		void output() const;
 		void outputPops(FILE*) const;
-		void convertFromOldProvince(const EU4Province* oldProvince);
+		void convertFromOldProvince(const EU4::Religions& allReligions, const EU4Province* oldProvince);
 		void determineColonial();
 		void addCore(string);
 		void addOldPop(const V2Pop*);

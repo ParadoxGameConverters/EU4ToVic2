@@ -22,7 +22,7 @@ THE SOFTWARE. */
 
 #include "EU4Province.h"
 #include "EU4Country.h"
-#include "EU4Religion.h"
+#include "Religions/Religions.h"
 #include "Log.h"
 #include "Object.h"
 #include "newParser.h"
@@ -264,9 +264,9 @@ bool EU4Province::wasColonised() const
 }
 
 
-bool EU4Province::wasInfidelConquest() const
+bool EU4Province::wasInfidelConquest(const EU4::Religions& allReligions) const
 {
-	return provinceHistory->wasInfidelConquest(owner->getReligion(), wasColonised(), num);
+	return provinceHistory->wasInfidelConquest(allReligions, owner->getReligion(), wasColonised(), num);
 }
 
 

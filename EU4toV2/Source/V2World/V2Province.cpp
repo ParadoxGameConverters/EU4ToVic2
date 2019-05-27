@@ -324,7 +324,7 @@ void V2Province::outputUnits(FILE* output) const
 }
 
 
-void V2Province::convertFromOldProvince(const EU4Province* oldProvince)
+void V2Province::convertFromOldProvince(const EU4::Religions& allReligions, const EU4Province* oldProvince)
 {
 	srcProvince = oldProvince;
 	inHRE = oldProvince->getInHRE();
@@ -334,7 +334,7 @@ void V2Province::convertFromOldProvince(const EU4Province* oldProvince)
 	}
 	colonial = 0;
 	wasColonised = oldProvince->wasColonised();
-	originallyInfidel = oldProvince->wasInfidelConquest();
+	originallyInfidel = oldProvince->wasInfidelConquest(allReligions);
 }
 
 
