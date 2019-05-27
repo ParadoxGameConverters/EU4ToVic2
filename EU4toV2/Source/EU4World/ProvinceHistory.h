@@ -45,7 +45,7 @@ class ProvinceHistory: commonItems::parser
 		ProvinceHistory(std::istream& theStream);
 
 		std::optional<date> getFirstOwnedDate() const;
-		bool ownedByOriginalOwner() const;
+		bool hasOriginalCulture() const;
 		bool wasInfidelConquest(const Religions& allReligions, const std::string& ownerReligionString, bool wasColonized, int num) const;
 		date getLastPossessedDate(const std::string& tag) const;
 
