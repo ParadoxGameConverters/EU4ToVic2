@@ -158,6 +158,12 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\ReligionGroup.cpp">
       <Filter>ConverterFiles\EU4World</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\ReligionsTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Religions.cpp">
+      <Filter>ConverterFiles\EU4World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">

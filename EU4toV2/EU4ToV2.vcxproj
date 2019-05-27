@@ -208,6 +208,7 @@
     <ClCompile Include="Source\EU4World\Regions\Regions.cpp" />
     <ClCompile Include="Source\EU4World\Religion.cpp" />
     <ClCompile Include="Source\EU4World\ReligionGroup.cpp" />
+    <ClCompile Include="Source\EU4World\Religions.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
     <ClCompile Include="Source\FlagUtils.cpp" />
     <ClCompile Include="Source\main.cpp" />
