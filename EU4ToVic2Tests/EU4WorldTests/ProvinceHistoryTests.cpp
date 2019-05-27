@@ -123,6 +123,61 @@ TEST(EU4World_ProvinceHistoryTests, hasOriginalCultureIfCultureChangesBack)
 }
 
 
+TEST(EU4World_ProvinceHistoryTests, wasNotColonizedIfNoOwner)
+{
+	std::stringstream input;
+	input << "={\n";
+	input << "}";
+
+	EU4::ProvinceHistory theHistory(input);
+	ASSERT_FALSE(theHistory.wasColonized());
+}
+
+
+TEST(EU4World_ProvinceHistoryTests, wasNotColonizedIfHasOwnerAtStart)
+{
+	std::stringstream input;
+	input << "={\n";
+	input << "	owner=TAG\n";
+	input << "}";
+
+	EU4::ProvinceHistory theHistory(input);
+	ASSERT_FALSE(theHistory.wasColonized());
+}
+
+
+TEST(EU4World_ProvinceHistoryTests, wasColonizedIfFirstOwnerIsNotAtStart)
+{
+	std::stringstream input;
+	input << "={\n";
+	input << "	culture=theCulture\n";
+	input << "	1600.1.1={\n";
+	input << "		owner=TAG\n";
+	input << "		culture=newCulture\n";
+	input << "	}\n";
+	input << "}";
+
+	EU4::ProvinceHistory theHistory(input);
+	ASSERT_TRUE(theHistory.wasColonized());
+}
+
+
+TEST(EU4World_ProvinceHistoryTests, wasNotColonizedIfCultureDidntChange)
+{
+	std::stringstream input;
+	input << "={\n";
+	input << "	culture=theCulture\n";
+	input << "	1600.1.1={\n";
+	input << "		owner=TAG\n";
+	input << "		culture=theCulture\n";
+	input << "	}\n";
+	input << "}";
+
+	EU4::ProvinceHistory theHistory(input);
+	ASSERT_FALSE(theHistory.wasColonized());
+}
+
+
 TEST(EU4World_ProvinceHistoryTests, wasNotInfidelConquestIfNoReligion)
 {
 	std::stringstream input;
@@ -131,7 +186,7 @@ TEST(EU4World_ProvinceHistoryTests, wasNotInfidelConquestIfNoReligion)
 
 	EU4::Religions theReligions;
 
-	ASSERT_FALSE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", false, 1));
+	ASSERT_FALSE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", 1));
 }
 
 
@@ -152,7 +207,7 @@ TEST(EU4World_ProvinceHistoryTests, wasInfidelConquestIfProvinceReligionNotHandl
 	religionsInput << "}";
 	theReligions.addReligions(religionsInput);
 
-	ASSERT_TRUE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", false, 1));
+	ASSERT_TRUE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", 1));
 }
 
 
@@ -173,7 +228,7 @@ TEST(EU4World_ProvinceHistoryTests, wasInfidelConquestIfOwnerReligionNotHandled)
 	religionsInput << "}";
 	theReligions.addReligions(religionsInput);
 
-	ASSERT_TRUE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", false, 1));
+	ASSERT_TRUE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", 1));
 }
 
 
@@ -201,7 +256,7 @@ TEST(EU4World_ProvinceHistoryTests, wasInfidelConquestIfReligionsAreMutualInfide
 	religionsInput << "}";
 	theReligions.addReligions(religionsInput);
 
-	ASSERT_TRUE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", false, 1));
+	ASSERT_TRUE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", 1));
 }
 
 
@@ -227,7 +282,7 @@ TEST(EU4World_ProvinceHistoryTests, wasNotInfidelConquestIfReligionsAreSame)
 	religionsInput << "}";
 	theReligions.addReligions(religionsInput);
 
-	ASSERT_FALSE(theHistory.wasInfidelConquest(theReligions, "religion", false, 1));
+	ASSERT_FALSE(theHistory.wasInfidelConquest(theReligions, "religion", 1));
 }
 
 
@@ -253,7 +308,7 @@ TEST(EU4World_ProvinceHistoryTests, wasNotInfidelConquestIfReligionsAreInSameGro
 	religionsInput << "}";
 	theReligions.addReligions(religionsInput);
 
-	ASSERT_FALSE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", false, 1));
+	ASSERT_FALSE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", 1));
 }
 
 
@@ -278,7 +333,7 @@ TEST(EU4World_ProvinceHistoryTests, wasNotInfidelConquestIfCultureDidntChange)
 	religionsInput << "}";
 	theReligions.addReligions(religionsInput);
 
-	ASSERT_FALSE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", false, 1));
+	ASSERT_FALSE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", 1));
 }
 
 
@@ -290,6 +345,7 @@ TEST(EU4World_ProvinceHistoryTests, wasNotInfidelConquestIfProvinceWasColonized)
 	input << "	culture=firstCulture\n";
 	input << "	1600.1.1={\n";
 	input << "		culture=newCulture\n";
+	input << "		owner=TAG\n";
 	input << "	}\n";
 	input << "}";
 	EU4::ProvinceHistory theHistory(input);
@@ -306,7 +362,7 @@ TEST(EU4World_ProvinceHistoryTests, wasNotInfidelConquestIfProvinceWasColonized)
 	religionsInput << "}";
 	theReligions.addReligions(religionsInput);
 
-	ASSERT_FALSE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", true, 1));
+	ASSERT_FALSE(theHistory.wasInfidelConquest(theReligions, "ownerReligion", 1));
 }
 
 

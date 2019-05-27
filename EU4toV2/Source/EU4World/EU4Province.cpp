@@ -252,21 +252,13 @@ void EU4Province::removeCore(string tag)
 
 bool EU4Province::wasColonised() const
 {
-	std::optional<date> possibleFirstOwnedDate = provinceHistory->getFirstOwnedDate();
-	if (possibleFirstOwnedDate && (*possibleFirstOwnedDate != date()) && (*possibleFirstOwnedDate != theConfiguration.getFirstEU4Date()))
-	{
-		return provinceHistory->hasOriginalCulture();
-	}
-	else
-	{
-		return false;
-	}
+	return provinceHistory->wasColonized();
 }
 
 
 bool EU4Province::wasInfidelConquest(const EU4::Religions& allReligions) const
 {
-	return provinceHistory->wasInfidelConquest(allReligions, owner->getReligion(), wasColonised(), num);
+	return provinceHistory->wasInfidelConquest(allReligions, owner->getReligion(), num);
 }
 
 
