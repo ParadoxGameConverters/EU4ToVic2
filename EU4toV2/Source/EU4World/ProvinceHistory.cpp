@@ -29,19 +29,25 @@ THE SOFTWARE. */
 
 
 
+const date STARTING_DATE("1444.11.11");
+const date ENDING_DATE("1821.1.1");
+const date FUTURE_DATE("2000.1.1");
+
+
+
 EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 {
 	registerKeyword(std::regex("owner"), [this](const std::string& unused, std::istream & theStream) {
 		commonItems::singleString ownerString(theStream);
-		ownershipHistory.push_back(std::make_pair(date("1444.11.11"), ownerString.getString()));
+		ownershipHistory.push_back(std::make_pair(STARTING_DATE, ownerString.getString()));
 	});
 	registerKeyword(std::regex("culture"), [this](const std::string& unused, std::istream & theStream) {
 		commonItems::singleString cultureString(theStream);
-		cultureHistory.push_back(std::make_pair(date("1444.11.11"), cultureString.getString()));
+		cultureHistory.push_back(std::make_pair(STARTING_DATE, cultureString.getString()));
 	});
 	registerKeyword(std::regex("religion"), [this](const std::string& unused, std::istream & theStream) {
 		commonItems::singleString religionString(theStream);
-		religionHistory.push_back(std::make_pair(date("1444.11.11"), religionString.getString()));
+		religionHistory.push_back(std::make_pair(STARTING_DATE, religionString.getString()));
 	});
 	registerKeyword(std::regex("\\d+\\.\\d+\\.\\d+"), [this](const std::string& dateString, std::istream& theStream) {
 		DateItems theItems(dateString, theStream);
@@ -95,11 +101,27 @@ bool EU4::ProvinceHistory::hasOriginalCulture() const
 }
 
 
-bool EU4::ProvinceHistory::wasInfidelConquest(const Religions& allReligions, const std::string& ownerReligionString, bool wasColonized, int num) const
+bool EU4::ProvinceHistory::wasColonized() const
+{
+	if (
+		(ownershipHistory.size() > 0) &&
+		(ownershipHistory[0].first != STARTING_DATE) &&
+		(ownershipHistory[0].first != theConfiguration.getFirstEU4Date())
+	) {
+		return !hasOriginalCulture();
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+bool EU4::ProvinceHistory::wasInfidelConquest(const Religions& allReligions, const std::string& ownerReligionString, int num) const
 {
 	// returns true if the province was originally pagan, the current owner is non-pagan,
 	// and the province was NOT colonized
-	if (religionHistory.size() > 0 && !wasColonized)
+	if (religionHistory.size() > 0 && !wasColonized())
 	{
 		std::optional<Religion> originalReligion = allReligions.getReligion(religionHistory[0].second);
 		std::optional<Religion> ownerReligion = allReligions.getReligion(ownerReligionString);
@@ -123,9 +145,9 @@ bool EU4::ProvinceHistory::wasInfidelConquest(const Religions& allReligions, con
 void EU4::ProvinceHistory::buildPopRatios()
 {
 	date endDate = theConfiguration.getLastEU4Date();
-	if (endDate < date("1821.1.1"))
+	if (endDate < ENDING_DATE)
 	{
-		endDate = date("1821.1.1");
+		endDate = ENDING_DATE;
 	}
 
 	std::string startingCulture;
@@ -147,12 +169,12 @@ void EU4::ProvinceHistory::buildPopRatios()
 	EU4::PopRatio currentRatio(startingCulture, startingReligion);
 	date cultureEventDate;
 	date religionEventDate;
-	date lastLoopDate;
+	date lastLoopDate = STARTING_DATE;
 	while (cultureEvent != cultureHistory.end() || religionEvent != religionHistory.end())
 	{
 		if (cultureEvent == cultureHistory.end())
 		{
-			cultureEventDate = date("2000.1.1");
+			cultureEventDate = FUTURE_DATE;
 		}
 		else
 		{
@@ -161,7 +183,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 
 		if (religionEvent == religionHistory.end())
 		{
-			religionEventDate = date("2000.1.1");
+			religionEventDate = FUTURE_DATE;
 		}
 		else
 		{
@@ -219,7 +241,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 void EU4::ProvinceHistory::decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop)
 {
 	// no decay needed for initial state
-	if (oldDate == date())
+	if (oldDate == STARTING_DATE)
 	{
 		return;
 	}

@@ -46,7 +46,8 @@ class ProvinceHistory: commonItems::parser
 
 		std::optional<date> getFirstOwnedDate() const;
 		bool hasOriginalCulture() const;
-		bool wasInfidelConquest(const Religions& allReligions, const std::string& ownerReligionString, bool wasColonized, int num) const;
+		bool wasColonized() const;
+		bool wasInfidelConquest(const Religions& allReligions, const std::string& ownerReligionString, int num) const;
 
 		std::vector<PopRatio> getPopRatios() const { return popRatios; }
 
