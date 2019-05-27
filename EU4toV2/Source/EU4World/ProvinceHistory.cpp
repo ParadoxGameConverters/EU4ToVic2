@@ -102,15 +102,15 @@ std::optional<date> EU4::ProvinceHistory::getFirstOwnedDate() const
 }
 
 
-bool EU4::ProvinceHistory::ownedByOriginalOwner() const
+bool EU4::ProvinceHistory::hasOriginalCulture() const
 {
 	if ((cultureHistory.size() > 1) && (cultureHistory[0].second != cultureHistory[cultureHistory.size() - 1].second))
 	{
-		return true;
+		return false;
 	}
 	else
 	{
-		return false;
+		return true;
 	}
 }
 
