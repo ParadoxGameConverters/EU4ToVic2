@@ -234,14 +234,14 @@
     <ClCompile Include="Source\EU4World\DateItems.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Religion.cpp">
-      <Filter>EU4World</Filter>
+    <ClCompile Include="Source\EU4World\Religions\Religion.cpp">
+      <Filter>EU4World\Religions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\ReligionGroup.cpp">
-      <Filter>EU4World</Filter>
+    <ClCompile Include="Source\EU4World\Religions\ReligionGroup.cpp">
+      <Filter>EU4World\Religions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Religions.cpp">
-      <Filter>EU4World</Filter>
+    <ClCompile Include="Source\EU4World\Religions\Religions.cpp">
+      <Filter>EU4World\Religions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -475,14 +475,14 @@
     <ClInclude Include="Source\EU4World\DateItems.h">
       <Filter>EU4World</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\Religions.h">
-      <Filter>EU4World</Filter>
+    <ClInclude Include="Source\EU4World\Religions\Religion.h">
+      <Filter>EU4World\Religions</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\Religion.h">
-      <Filter>EU4World</Filter>
+    <ClInclude Include="Source\EU4World\Religions\ReligionGroup.h">
+      <Filter>EU4World\Religions</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\ReligionGroup.h">
-      <Filter>EU4World</Filter>
+    <ClInclude Include="Source\EU4World\Religions\Religions.h">
+      <Filter>EU4World\Religions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -503,6 +503,9 @@
     </Filter>
     <Filter Include="EU4World\Provinces">
       <UniqueIdentifier>{865578c6-52ac-4ef0-8dc1-c168b677508a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Religions">
+      <UniqueIdentifier>{b12cccd6-fb02-48ec-b222-df16d98da75e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/ReligionGroup.h"
+#include "../EU4toV2/Source/EU4World/Religions/ReligionGroup.h"
 #include <sstream>
 
 

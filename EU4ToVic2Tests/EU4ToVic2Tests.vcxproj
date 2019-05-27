@@ -176,9 +176,9 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Areas.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Region.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Regions.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Religion.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\ReligionGroup.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Religions.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religion.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\ReligionGroup.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMappingRule.cpp" />
