@@ -146,6 +146,18 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\DateItems.cpp">
       <Filter>ConverterFiles\EU4World</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Religion.cpp">
+      <Filter>ConverterFiles\EU4World</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ReligionTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ReligionGroupTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\ReligionGroup.cpp">
+      <Filter>ConverterFiles\EU4World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
