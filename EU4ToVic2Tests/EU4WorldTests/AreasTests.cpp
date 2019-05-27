@@ -27,7 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(EU4World_EU4AreasTests, nonMatchingAreaGivesNoProvinces)
+TEST(EU4World_AreasTests, nonMatchingAreaGivesNoProvinces)
 {
 	std::stringstream input;
 	input << "an_area = {}";
@@ -37,7 +37,7 @@ TEST(EU4World_EU4AreasTests, nonMatchingAreaGivesNoProvinces)
 }
 
 
-TEST(EU4World_EU4AreasTests, matchingAreaGivesProvinces)
+TEST(EU4World_AreasTests, matchingAreaGivesProvinces)
 {
 	std::stringstream input;
 	input << "matching_area = { 56 }";

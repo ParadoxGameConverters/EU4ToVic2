@@ -28,7 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(EU4World_EU4DateItemTests, datecanBeSet)
+TEST(EU4World_DateItemTests, datecanBeSet)
 {
 	std::stringstream input;
 	input << "=bar";
@@ -38,7 +38,7 @@ TEST(EU4World_EU4DateItemTests, datecanBeSet)
 }
 
 
-TEST(EU4World_EU4DateItemTests, ownerChangeImports)
+TEST(EU4World_DateItemTests, ownerChangeImports)
 {
 	std::stringstream input;
 	input << "=\"SWE\"";
@@ -49,7 +49,7 @@ TEST(EU4World_EU4DateItemTests, ownerChangeImports)
 }
 
 
-TEST(EU4World_EU4DateItemTests, cultureChangeImports)
+TEST(EU4World_DateItemTests, cultureChangeImports)
 {
 	std::stringstream input;
 	input << "=polish";
@@ -60,7 +60,7 @@ TEST(EU4World_EU4DateItemTests, cultureChangeImports)
 }
 
 
-TEST(EU4World_EU4DateItemTests, religionChangeImports)
+TEST(EU4World_DateItemTests, religionChangeImports)
 {
 	std::stringstream input;
 	input << "=protestant";
@@ -71,7 +71,7 @@ TEST(EU4World_EU4DateItemTests, religionChangeImports)
 }
 
 
-TEST(EU4World_EU4DateItemTests, otherChangesImport)
+TEST(EU4World_DateItemTests, otherChangesImport)
 {
 	std::stringstream input;
 	input << " = { \n";

@@ -27,7 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(EU4World_EU4ReligionsTests, religionCanBeImported)
+TEST(EU4World_ReligionsTests, religionCanBeImported)
 {
 	EU4::Religions theReligions;
 
@@ -42,7 +42,7 @@ TEST(EU4World_EU4ReligionsTests, religionCanBeImported)
 }
 
 
-TEST(EU4World_EU4ReligionsTests, multipleReligionCanBeImported)
+TEST(EU4World_ReligionsTests, multipleReligionCanBeImported)
 {
 	EU4::Religions theReligions;
 
@@ -59,7 +59,7 @@ TEST(EU4World_EU4ReligionsTests, multipleReligionCanBeImported)
 }
 
 
-TEST(EU4World_EU4ReligionsTests, multipleReligionGroupsCanBeImported)
+TEST(EU4World_ReligionsTests, multipleReligionGroupsCanBeImported)
 {
 	EU4::Religions theReligions;
 
@@ -78,7 +78,7 @@ TEST(EU4World_EU4ReligionsTests, multipleReligionGroupsCanBeImported)
 }
 
 
-TEST(EU4World_EU4ReligionsTests, multipleImportsWorks)
+TEST(EU4World_ReligionsTests, multipleImportsWorks)
 {
 	EU4::Religions theReligions;
 

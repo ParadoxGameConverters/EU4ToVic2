@@ -27,7 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(EU4World_EU4ReligionGroupTests, sameReligionReturnsSameReligion)
+TEST(EU4World_ReligionGroupTests, sameReligionReturnsSameReligion)
 {
 	std::stringstream input;
 	input << "= {\n";
@@ -102,7 +102,7 @@ TEST(EU4World_EU4ReligionGroupTests, sameReligionReturnsSameReligion)
 }
 
 
-TEST(EU4World_EU4ReligionGroupTests, onlyReligionsAreImported)
+TEST(EU4World_ReligionGroupTests, onlyReligionsAreImported)
 {
 	std::stringstream input;
 	input << "= {\n";

@@ -28,7 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(EU4World_EU4RegionsTests, oldStyleNoProvincesMeansNoProvinces)
+TEST(EU4World_RegionsTests, oldStyleNoProvincesMeansNoProvinces)
 {
 	std::stringstream areasInput;
 	areasInput << "test_region = {\n";
@@ -41,7 +41,7 @@ TEST(EU4World_EU4RegionsTests, oldStyleNoProvincesMeansNoProvinces)
 }
 
 
-TEST(EU4World_EU4RegionsTests, oldStyleProvincesCanBeSet)
+TEST(EU4World_RegionsTests, oldStyleProvincesCanBeSet)
 {
 	std::stringstream areasInput;
 	areasInput << "test_region = {\n";
@@ -55,7 +55,7 @@ TEST(EU4World_EU4RegionsTests, oldStyleProvincesCanBeSet)
 }
 
 
-TEST(EU4World_EU4RegionsTests, newStyleNoAreasMeansNoProvinces)
+TEST(EU4World_RegionsTests, newStyleNoAreasMeansNoProvinces)
 {
 	std::stringstream regionsInput;
 	regionsInput << "test_region = {\n";
@@ -75,7 +75,7 @@ TEST(EU4World_EU4RegionsTests, newStyleNoAreasMeansNoProvinces)
 }
 
 
-TEST(EU4World_EU4RegionsTests, newStyleNoProvincesMeansNoProvinces)
+TEST(EU4World_RegionsTests, newStyleNoProvincesMeansNoProvinces)
 {
 	std::stringstream regionsInput;
 	regionsInput << "test_region = {\n";
@@ -95,7 +95,7 @@ TEST(EU4World_EU4RegionsTests, newStyleNoProvincesMeansNoProvinces)
 }
 
 
-TEST(EU4World_EU4RegionsTests, newStyleAreasProvideProvinces)
+TEST(EU4World_RegionsTests, newStyleAreasProvideProvinces)
 {
 	std::stringstream regionsInput;
 	regionsInput << "test_region = {\n";

@@ -28,7 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(EU4World_EU4RegionTests, noProvincesMeansNoProvinces)
+TEST(EU4World_RegionTests, noProvincesMeansNoProvinces)
 {
 	std::set<int> input;
 
@@ -38,7 +38,7 @@ TEST(EU4World_EU4RegionTests, noProvincesMeansNoProvinces)
 }
 
 
-TEST(EU4World_EU4RegionTests, provincesCanBeSet)
+TEST(EU4World_RegionTests, provincesCanBeSet)
 {
 	std::set<int> input;
 	input.insert(1);
@@ -49,7 +49,7 @@ TEST(EU4World_EU4RegionTests, provincesCanBeSet)
 }
 
 
-TEST(EU4World_EU4RegionTests, noAreasMeansNoProvinces)
+TEST(EU4World_RegionTests, noAreasMeansNoProvinces)
 {
 	std::stringstream regionInput;
 	regionInput << "= {\n";
@@ -70,7 +70,7 @@ TEST(EU4World_EU4RegionTests, noAreasMeansNoProvinces)
 }
 
 
-TEST(EU4World_EU4RegionTests, AreasProvideProvinces)
+TEST(EU4World_RegionTests, AreasProvideProvinces)
 {
 	std::stringstream regionInput;
 	regionInput << "= {\n";

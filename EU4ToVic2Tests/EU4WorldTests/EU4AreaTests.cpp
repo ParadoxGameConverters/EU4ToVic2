@@ -27,7 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(EU4World_EU4AreaTests, emptyAreaHasNoProvinces)
+TEST(EU4World_AreaTests, emptyAreaHasNoProvinces)
 {
 	std::stringstream input;
 	input << "empty_area = {}";
@@ -37,7 +37,7 @@ TEST(EU4World_EU4AreaTests, emptyAreaHasNoProvinces)
 }
 
 
-TEST(EU4World_EU4AreaTests, provinceCanBeRead)
+TEST(EU4World_AreaTests, provinceCanBeRead)
 {
 	std::stringstream input;
 	input << "non_empty_area = { 56 }";
@@ -47,7 +47,7 @@ TEST(EU4World_EU4AreaTests, provinceCanBeRead)
 }
 
 
-TEST(EU4World_EU4AreaTests, colorAreaWorks)
+TEST(EU4World_AreaTests, colorAreaWorks)
 {
 	std::stringstream input;
 	input << "empty_area = {\n";

@@ -26,7 +26,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(EU4World_EU4ReligionTests, sameReligionReturnsSameReligion)
+TEST(EU4World_ReligionTests, sameReligionReturnsSameReligion)
 {
 	EU4::Religion religionOne("religion", "group");
 	EU4::Religion religionTwo("religion", "group");
@@ -35,7 +35,7 @@ TEST(EU4World_EU4ReligionTests, sameReligionReturnsSameReligion)
 }
 
 
-TEST(EU4World_EU4ReligionTests, sameReligionReturnsNotRelatedTo)
+TEST(EU4World_ReligionTests, sameReligionReturnsNotRelatedTo)
 {
 	EU4::Religion religionOne("religion", "group");
 	EU4::Religion religionTwo("religion", "group");
@@ -43,7 +43,7 @@ TEST(EU4World_EU4ReligionTests, sameReligionReturnsNotRelatedTo)
 }
 
 
-TEST(EU4World_EU4ReligionTests, sameReligionReturnsNotInfidel)
+TEST(EU4World_ReligionTests, sameReligionReturnsNotInfidel)
 {
 	EU4::Religion religionOne("religion", "group");
 	EU4::Religion religionTwo("religion", "group");
@@ -52,7 +52,7 @@ TEST(EU4World_EU4ReligionTests, sameReligionReturnsNotInfidel)
 }
 
 
-TEST(EU4World_EU4ReligionTests, differentReligionSameGroupReturnsNotSameReligion)
+TEST(EU4World_ReligionTests, differentReligionSameGroupReturnsNotSameReligion)
 {
 	EU4::Religion religionOne("religion", "group");
 	EU4::Religion religionTwo("differentReligion", "group");
@@ -61,7 +61,7 @@ TEST(EU4World_EU4ReligionTests, differentReligionSameGroupReturnsNotSameReligion
 }
 
 
-TEST(EU4World_EU4ReligionTests, differentReligionSameGroupReturnsRelatedTo)
+TEST(EU4World_ReligionTests, differentReligionSameGroupReturnsRelatedTo)
 {
 	EU4::Religion religionOne("religion", "group");
 	EU4::Religion religionTwo("differentReligion", "group");
@@ -69,7 +69,7 @@ TEST(EU4World_EU4ReligionTests, differentReligionSameGroupReturnsRelatedTo)
 }
 
 
-TEST(EU4World_EU4ReligionTests, differentReligionSameGroupReturnsNotInfidel)
+TEST(EU4World_ReligionTests, differentReligionSameGroupReturnsNotInfidel)
 {
 	EU4::Religion religionOne("religion", "group");
 	EU4::Religion religionTwo("differentReligion", "group");
@@ -78,7 +78,7 @@ TEST(EU4World_EU4ReligionTests, differentReligionSameGroupReturnsNotInfidel)
 }
 
 
-TEST(EU4World_EU4ReligionTests, differentReligionDifferentGroupReturnsNotSameReligion)
+TEST(EU4World_ReligionTests, differentReligionDifferentGroupReturnsNotSameReligion)
 {
 	EU4::Religion religionOne("religion", "group");
 	EU4::Religion religionTwo("differentReligion", "differentGroup");
@@ -87,7 +87,7 @@ TEST(EU4World_EU4ReligionTests, differentReligionDifferentGroupReturnsNotSameRel
 }
 
 
-TEST(EU4World_EU4ReligionTests, differentReligionDifferentGroupReturnsNotRelatedTo)
+TEST(EU4World_ReligionTests, differentReligionDifferentGroupReturnsNotRelatedTo)
 {
 	EU4::Religion religionOne("religion", "group");
 	EU4::Religion religionTwo("differentReligion", "differentGroup");
@@ -95,7 +95,7 @@ TEST(EU4World_EU4ReligionTests, differentReligionDifferentGroupReturnsNotRelated
 }
 
 
-TEST(EU4World_EU4ReligionTests, differentReligionDifferentGroupReturnsInfidel)
+TEST(EU4World_ReligionTests, differentReligionDifferentGroupReturnsInfidel)
 {
 	EU4::Religion religionOne("religion", "group");
 	EU4::Religion religionTwo("differentReligion", "differentGroup");
