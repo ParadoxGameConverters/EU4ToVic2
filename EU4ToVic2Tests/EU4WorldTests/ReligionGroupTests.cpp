@@ -99,6 +99,9 @@ TEST(EU4World_ReligionGroupTests, sameReligionReturnsSameReligion)
 	std::map<std::string, EU4::Religion> theReligions = religionGroup.takeReligions();
 
 	ASSERT_TRUE(theReligions.find("zoroastrian") != theReligions.end());
+
+	EU4::Religion testReligion("zoroastrian", "zoroastrian_group");
+	ASSERT_TRUE(theReligions.find("zoroastrian")->second.isSameReligion(testReligion));
 }
 
 
