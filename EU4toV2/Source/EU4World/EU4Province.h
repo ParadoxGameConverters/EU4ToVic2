@@ -1,4 +1,4 @@
-/*Copyright(c) 2018 The Paradox Game Converters Project
+/*Copyright(c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files(the "Software"), to deal
@@ -26,6 +26,7 @@ THE SOFTWARE. */
 
 
 #include "Date.h"
+#include "Buildings.h"
 #include "PopRatio.h"
 #include "ProvinceHistory.h"
 #include <string>
@@ -59,7 +60,7 @@ class EU4Province
 
 		bool						wasColonised() const;
 		bool wasInfidelConquest(const EU4::Religions& allReligions) const;
-		bool						hasBuilding(string building) const;
+		bool hasBuilding(const std::string& building) const;
 		std::vector<std::shared_ptr<EU4::Country>>	getCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& countries) const;
 		double getCulturePercent(const std::string& culture);
 
@@ -89,10 +90,6 @@ class EU4Province
 		string					getTradeGoods() const { return tradeGoods; }
 
 	private:
-		void	checkBuilding(const shared_ptr<Object> provinceObj, string building);
-		void buildPopRatios();
-		void decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop);
-
 		vector<double>	getProvBuildingWeight()	const;
 		double			getTradeGoodWeight()		const;
 		double			getTradeGoodPrice()		const;
@@ -109,7 +106,8 @@ class EU4Province
 		bool									inHRE;					// whether or not this province is in the HRE
 		bool									colony;					// whether or not this is a colony
 		std::unique_ptr<EU4::ProvinceHistory> provinceHistory;
-		map<string, bool>					buildings;				// the buildings in this province
+		std::unique_ptr<EU4::Buildings> buildings;
+		std::unique_ptr<EU4::Buildings> greatProjects;
 
 		string								tradeGoods;
 		int									numV2Provs;

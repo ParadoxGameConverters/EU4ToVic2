@@ -120,8 +120,6 @@ EU4Province::EU4Province(shared_ptr<Object> obj)
 		}
 	}
 
-	buildings.clear();
-
 	vector<shared_ptr<Object>> tradegoodsObj = obj->getValue("trade_goods");
 	if (tradegoodsObj.size() > 0) 
 	{
@@ -153,77 +151,23 @@ EU4Province::EU4Province(shared_ptr<Object> obj)
 		}
 	}
 
-	// great projects
 	vector<shared_ptr<Object>> projectsObj = obj->getValue("great_projects");
 	if (projectsObj.size() > 0)
 	{
-		for (const auto& proj : projectsObj[0]->getTokens())
-		{
-			buildings[proj] = true;
-		}
+		std::stringstream projectsStream;
+		projectsStream << *projectsObj[0];
+		tempParser.getNextTokenWithoutMatching(projectsStream); // throw away the initial 'buildings'
+		greatProjects = std::make_unique<EU4::Buildings>(projectsStream);
 	}
 
-	//LOG(LogLevel::Info) << "Check unique Buildings...";
-	// unique buildings
-	checkBuilding(obj, "march");
-	checkBuilding(obj, "glorious_monument");
-	checkBuilding(obj, "royal_palace");
-	checkBuilding(obj, "admiralty");
-	checkBuilding(obj, "war_college");
-	checkBuilding(obj, "embassy");
-	checkBuilding(obj, "tax_assessor");
-	checkBuilding(obj, "grain_depot");
-	checkBuilding(obj, "university");
-	checkBuilding(obj, "fine_arts_academy");
-
-	//LOG(LogLevel::Info) << "Check manus...";
-	// Manufacturies
-	checkBuilding(obj, "weapons");
-	checkBuilding(obj, "wharf");
-	checkBuilding(obj, "textile");
-	checkBuilding(obj, "refinery");
-	checkBuilding(obj, "plantations");
-	checkBuilding(obj, "farm_estate");
-	checkBuilding(obj, "tradecompany");
-
-	//LOG(LogLevel::Info) << "Check buildings...";
-	// base buildings 
-	checkBuilding(obj, "fort1");
-	checkBuilding(obj, "fort2");
-	checkBuilding(obj, "fort3");
-	checkBuilding(obj, "fort4");
-	checkBuilding(obj, "fort5");
-	checkBuilding(obj, "fort6");
-	checkBuilding(obj, "dock");
-	checkBuilding(obj, "drydock");
-	checkBuilding(obj, "shipyard");
-	checkBuilding(obj, "grand_shipyard");
-	checkBuilding(obj, "naval_arsenal");
-	checkBuilding(obj, "naval_base");
-	checkBuilding(obj, "temple");
-	checkBuilding(obj, "courthouse");
-	checkBuilding(obj, "spy_agency");
-	checkBuilding(obj, "town_hall");
-	checkBuilding(obj, "college");
-	checkBuilding(obj, "cathedral");
-	checkBuilding(obj, "armory");
-	checkBuilding(obj, "training_fields");
-	checkBuilding(obj, "barracks");
-	checkBuilding(obj, "regimental_camp");
-	checkBuilding(obj, "arsenal");
-	checkBuilding(obj, "conscription_center");
-	checkBuilding(obj, "constable");
-	checkBuilding(obj, "workshop");
-	checkBuilding(obj, "counting_house");
-	checkBuilding(obj, "treasury_office");
-	checkBuilding(obj, "mint");
-	checkBuilding(obj, "stock_exchange");
-	checkBuilding(obj, "customs_house");
-	checkBuilding(obj, "marketplace");
-	checkBuilding(obj, "trade_depot");
-	checkBuilding(obj, "canal");
-	checkBuilding(obj, "road_network");
-	checkBuilding(obj, "post_office");
+	vector<shared_ptr<Object>> buldingsObj = obj->getValue("buildings");
+	if (buldingsObj.size() > 0)
+	{
+		std::stringstream buildingsStream;
+		buildingsStream << *buldingsObj[0];
+		tempParser.getNextTokenWithoutMatching(buildingsStream); // throw away the initial 'buildings'
+		buildings = std::make_unique<EU4::Buildings>(buildingsStream);
+	}
 }
 
 
@@ -262,10 +206,20 @@ bool EU4Province::wasInfidelConquest(const EU4::Religions& allReligions) const
 }
 
 
-bool EU4Province::hasBuilding(string building) const
+bool EU4Province::hasBuilding(const std::string& building) const
 {
-	const int num = buildings.count(building);	// the number of this building
-	return (num > 0);
+	if (buildings && buildings->hasBuilding(building))
+	{
+		return true;
+	}
+	else if (greatProjects && greatProjects->hasBuilding(building))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 
@@ -298,17 +252,6 @@ double EU4Province::getCulturePercent(const std::string& culture)
 	}
 
 	return culturePercent;
-}
-
-
-void EU4Province::checkBuilding(const shared_ptr<Object> provinceObj, string building)
-{
-	vector<shared_ptr<Object>> buildingObj;	// the object holding the building
-	buildingObj = provinceObj->getValue(building);
-	if ((buildingObj.size() > 0) && (buildingObj[0]->getLeaf() == "yes"))
-	{
-		buildings[building] = true;
-	}
 }
 
 
