@@ -32,7 +32,7 @@ THE SOFTWARE. */
 
 
 
-EU4Province::EU4Province(const std::string& numString, std::istream& theStream)
+EU4::Province::Province(const std::string& numString, std::istream& theStream)
 {
 	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleString nameString(theStream);
@@ -112,13 +112,13 @@ EU4Province::EU4Province(const std::string& numString, std::istream& theStream)
 }
 
 
-bool EU4Province::wasInfidelConquest(const std::string& ownerReligion, const EU4::Religions& allReligions) const
+bool EU4::Province::wasInfidelConquest(const std::string& ownerReligion, const EU4::Religions& allReligions) const
 {
 	return provinceHistory->wasInfidelConquest(allReligions, ownerReligion, num);
 }
 
 
-bool EU4Province::hasBuilding(const std::string& building) const
+bool EU4::Province::hasBuilding(const std::string& building) const
 {
 	if (buildings && buildings->hasBuilding(building))
 	{
@@ -135,7 +135,7 @@ bool EU4Province::hasBuilding(const std::string& building) const
 }
 
 
-double EU4Province::getCulturePercent(const std::string& culture) const
+double EU4::Province::getCulturePercent(const std::string& culture) const
 {
 	double culturePercent = 0.0f;
 
@@ -151,7 +151,7 @@ double EU4Province::getCulturePercent(const std::string& culture) const
 }
 
 
-void EU4Province::determineProvinceWeight()
+void EU4::Province::determineProvinceWeight()
 {
 	double trade_goods_weight			= getTradeGoodWeight();
 	double manpower_weight				= manpower;
@@ -273,7 +273,7 @@ void EU4Province::determineProvinceWeight()
 }
 
 
-double EU4Province::getTradeGoodPrice() const
+double EU4::Province::getTradeGoodPrice() const
 {
 	// Trade goods
 	/*
@@ -410,7 +410,7 @@ double EU4Province::getTradeGoodPrice() const
 }
 
 
-double EU4Province::getTradeGoodWeight() const
+double EU4::Province::getTradeGoodWeight() const
 {
 	// Trade goods
 	/*
@@ -543,7 +543,7 @@ double EU4Province::getTradeGoodWeight() const
 }
 
 
-vector<double> EU4Province::getProvBuildingWeight() const
+vector<double> EU4::Province::getProvBuildingWeight() const
 {
 	double building_weight				= 0.0;
 	double manpower_modifier			= 0.0;

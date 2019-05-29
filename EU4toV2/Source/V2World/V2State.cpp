@@ -134,7 +134,7 @@ bool V2State::hasLandConnection() const
 double V2State::getManuRatio() const
 {
 	// get all source provinces
-	set<const EU4Province*> srcProvinces;
+	set<const EU4::Province*> srcProvinces;
 	for (auto itr = provinces.begin(); itr != provinces.end(); itr++)
 	{
 		srcProvinces.insert((*itr)->getSrcProvince());

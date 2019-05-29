@@ -774,9 +774,9 @@ void V2Country::initFromEU4Country(
 	}
 	int numProvinces	= 0;
 	int numColleges	= 0;
-	vector<EU4Province*> provinces = srcCountry->getProvinces();
+	vector<EU4::Province*> provinces = srcCountry->getProvinces();
 	numProvinces = provinces.size();
-	for (vector<EU4Province*>::iterator i = provinces.begin(); i != provinces.end(); i++)
+	for (vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); i++)
 	{
 		if ( (*i)->hasBuilding("college") )
 		{
@@ -826,7 +826,7 @@ void V2Country::initFromEU4Country(
 	//double productionInvestment	= srcCountry->getProductionInvestment();
 	//double governmentInvestment	= srcCountry->getGovernmentInvestment();
 
-	//vector<EU4Province*> srcProvinces = srcCountry->getProvinces();
+	//vector<EU4::Province*> srcProvinces = srcCountry->getProvinces();
 	//for(unsigned int j = 0; j < srcProvinces.size(); j++)
 	//{
 	//	if (srcProvinces[j]->hasBuilding("weapons"))
@@ -1075,7 +1075,7 @@ void V2Country::addState(V2State* newState)
 		if ((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM"))
 		{
 			int navalLevel = 0;
-			const EU4Province* srcProvince = newProvinces[i]->getSrcProvince();
+			const EU4::Province* srcProvince = newProvinces[i]->getSrcProvince();
 			if (srcProvince != nullptr)
 			{
 				if (srcProvince->hasBuilding("shipyard"))

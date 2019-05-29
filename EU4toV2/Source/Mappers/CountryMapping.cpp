@@ -337,7 +337,7 @@ bool mappers::CountryMappings::capitalInRightVic2Region(const mappers::colonyStr
 				}
 				for (auto EU4ProvinceNumber: EU4ProvinceNumbers)
 				{
-					const EU4Province* province = srcWorld.getProvince(EU4ProvinceNumber);
+					const EU4::Province* province = srcWorld.getProvince(EU4ProvinceNumber);
 					if ((province == NULL) || (province->getOwnerString() != EU4Tag))
 					{
 						return false;
