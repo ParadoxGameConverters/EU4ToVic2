@@ -39,14 +39,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-class EU4Province;
-
-
-
 namespace EU4
 {
 
 class Country;
+class Province;
 
 
 class world: private commonItems::parser
@@ -54,7 +51,7 @@ class world: private commonItems::parser
 	public:
 		world(const std::string& EU4SaveFileName);
 
-		EU4Province* getProvince(int provNum) const;
+		Province* getProvince(int provNum) const;
 
 		void checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const;
 		void checkAllEU4ReligionsMapped(const mappers::ReligionMapper& religionMapper) const;
@@ -107,7 +104,6 @@ class world: private commonItems::parser
 		void uniteJapan();
 
 		void checkAllProvincesMapped() const;
-		void setNumbersOfDestinationProvinces();
 
 		void importReligions();
 
@@ -122,7 +118,7 @@ class world: private commonItems::parser
 		string holyRomanEmperor;
 		string celestialEmperor;
 		std::unique_ptr<Regions> regions;
-		map<int, EU4Province*> provinces;
+		map<int, Province*> provinces;
 		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
 		EU4Diplomacy* diplomacy;
 		std::unique_ptr<EU4::Version> version;

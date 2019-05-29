@@ -584,13 +584,13 @@ void EU4::Country::setLocalisationAdjective(const string& language, const string
 }
 
 
-void EU4::Country::addProvince(EU4Province* province)
+void EU4::Country::addProvince(EU4::Province* province)
 {
 	provinces.push_back(province);
 }
 
 
-void EU4::Country::addCore(EU4Province* core)
+void EU4::Country::addCore(EU4::Province* core)
 {
 	cores.push_back(core);
 }
@@ -636,7 +636,7 @@ void EU4::Country::resolveRegimentTypes(const RegimentTypeMap& map)
 int EU4::Country::getManufactoryCount() const
 {
 	int retval = 0;	// the number of manus
-	for (vector<EU4Province*>::const_iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
+	for (vector<EU4::Province*>::const_iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
 		if ((*itr)->hasBuilding("weapons"))		++retval;
 		if ((*itr)->hasBuilding("wharf"))		++retval;

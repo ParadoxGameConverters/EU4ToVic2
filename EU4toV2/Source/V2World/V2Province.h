@@ -46,7 +46,7 @@ struct V2Demographic
 	double								upperRatio;
 	double								middleRatio;
 	double								lowerRatio;
-	EU4Province*						oldProvince;
+	EU4::Province*						oldProvince;
 	std::string oldCountry;
 };
 
@@ -59,7 +59,7 @@ class V2Province
 		void outputPops(FILE*) const;
 		void convertFromOldProvince(
 			const EU4::Religions& allReligions,
-			const EU4Province* oldProvince,
+			const EU4::Province* oldProvince,
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
 		);
 		void determineColonial();
@@ -95,7 +95,7 @@ class V2Province
 		void				setResettable(const bool _resettable)	{ resettable = _resettable; }
 		void				setSlaveProportion(const double _pro)	{ slaveProportion = _pro; }
 
-		const EU4Province*	getSrcProvince()		const { return srcProvince; }
+		const EU4::Province*	getSrcProvince()		const { return srcProvince; }
 		int						getOldPopulation()	const	{ return oldPopulation; }
 		bool						wasInfidelConquest()	const { return originallyInfidel; }
 		bool						wasColony()				const { return wasColonised; }
@@ -135,7 +135,7 @@ class V2Province
 		void combinePops();
 		bool growSoldierPop(V2Pop* pop);
 
-		const EU4Province*		srcProvince;
+		const EU4::Province*		srcProvince;
 
 		string						filename;
 		bool							coastal;

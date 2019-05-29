@@ -43,14 +43,11 @@ namespace EU4
 class Country;
 class Religions;
 
-}
 
-
-
-class EU4Province: commonItems::parser
+class Province: commonItems::parser
 {
 	public:
-		EU4Province(const std::string& numString, std::istream& theStream);
+		Province(const std::string& numString, std::istream& theStream);
 
 		void addCore(const std::string& tag) { cores.insert(tag); }
 		void removeCore(const std::string& tag) { cores.erase(tag); }
@@ -113,6 +110,8 @@ class EU4Province: commonItems::parser
 		double devModifier = 0;
 		std::vector<double> productionVector;
 };
+
+}
 
 
 

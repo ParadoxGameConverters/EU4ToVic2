@@ -327,7 +327,7 @@ void V2Province::outputUnits(FILE* output) const
 
 void V2Province::convertFromOldProvince(
 	const EU4::Religions& allReligions,
-	const EU4Province* oldProvince,
+	const EU4::Province* oldProvince,
 	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
 ) {
 	srcProvince = oldProvince;
@@ -492,7 +492,7 @@ V2Province::pop_points V2Province::getPopPoints_1(
 	const V2Country* _owner,
 	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
 ) {
-	const EU4Province*	oldProvince = demographic.oldProvince;
+	const EU4::Province*	oldProvince = demographic.oldProvince;
 	auto oldCountryTag = demographic.oldCountry;
 	auto countryItr = theEU4Countries.find(oldCountryTag);
 	std::shared_ptr<EU4::Country> oldCountry;
@@ -679,7 +679,7 @@ V2Province::pop_points V2Province::getPopPoints_2(
 	const V2Country* _owner,
 	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
 ) {
-	const EU4Province*	oldProvince = demographic.oldProvince;
+	const EU4::Province*	oldProvince = demographic.oldProvince;
 	auto oldCountryTag = demographic.oldCountry;
 	auto countryItr = theEU4Countries.find(oldCountryTag);
 	std::shared_ptr<EU4::Country> oldCountry;
@@ -829,7 +829,7 @@ void V2Province::createPops(
 	int popConversionAlgorithm,
 	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
 ) {
-	const EU4Province*	oldProvince = demographic.oldProvince;
+	const EU4::Province*	oldProvince = demographic.oldProvince;
 	auto oldCountry = demographic.oldCountry;
 
 	long newPopulation = 0;
