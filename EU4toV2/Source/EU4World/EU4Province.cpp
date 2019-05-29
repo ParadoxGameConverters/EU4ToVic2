@@ -24,8 +24,7 @@ THE SOFTWARE. */
 #include "EU4Country.h"
 #include "Religions/Religions.h"
 #include "Log.h"
-#include "Object.h"
-#include "newParser.h"
+#include "ParserHelpers.h"
 #include "../Configuration.h"
 #include <algorithm>
 #include <fstream>
@@ -33,83 +32,71 @@ THE SOFTWARE. */
 
 
 
-EU4Province::EU4Province(shared_ptr<Object> obj)
+EU4Province::EU4Province(const std::string& numString, std::istream& theStream)
 {
-	provTaxIncome = 0;
-	provProdIncome = 0;
-	provMPWeight = 0;
-	provBuildingWeight = 0;
-	provTradeGoodWeight = 0;
-	provDevModifier = 0;
+	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleString nameString(theStream);
+		name = nameString.getString();
+	});
+	registerKeyword(std::regex("base_tax"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble baseTaxDouble(theStream);
+		baseTax = baseTaxDouble.getDouble();
+	});
+	registerKeyword(std::regex("base_production"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble baseProductionDouble(theStream);
+		baseProduction = baseProductionDouble.getDouble();
+	});
+	registerKeyword(std::regex("base_manpower"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble manpowerDouble(theStream);
+		manpower = manpowerDouble.getDouble();
+	});
+	registerKeyword(std::regex("manpower"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble manpowerDouble(theStream);
+		manpower = manpowerDouble.getDouble();
+	});
+	registerKeyword(std::regex("owner"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleString ownerStringString(theStream);
+		ownerString = ownerStringString.getString();
+	});
+	registerKeyword(std::regex("cores"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::stringList coresStrings(theStream);
+		cores = coresStrings.getStrings();
+	});
+	registerKeyword(std::regex("core"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleString coresString(theStream);
+		cores.push_back(coresString.getString());
+	});
+	registerKeyword(std::regex("hre"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleString hreString(theStream);
+		if (hreString.getString() == "yes")
+		{
+			inHRE = true;
+		}
+	});
+	registerKeyword(std::regex("history"), [this](const std::string& unused, std::istream& theStream) {
+		provinceHistory = std::make_unique<EU4::ProvinceHistory>(theStream);
+	});
+	registerKeyword(std::regex("buildings"), [this](const std::string& unused, std::istream& theStream) {
+		buildings = std::make_unique<EU4::Buildings>(theStream);
+	});
+	registerKeyword(std::regex("great_projects"), [this](const std::string& unused, std::istream& theStream) {
+		greatProjects = std::make_unique<EU4::Buildings>(theStream);
+	});
+	registerKeyword(std::regex("trade_goods"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleString tradeGoodsString(theStream);
+		tradeGoods = tradeGoodsString.getString();
+	});
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
 
+	parseStream(theStream);
 
-	numV2Provs = 0;
-
-	num = 0 - atoi(obj->getKey().c_str());
-
-	vector<shared_ptr<Object>> baseTaxObjs;			// the object holding the base tax
-	baseTaxObjs = obj->getValue("base_tax");
-	baseTax = (baseTaxObjs.size() > 0) ? atof(baseTaxObjs[0]->getLeaf().c_str()) : 0.0f;
-
-	vector<shared_ptr<Object>> baseProdObjs;			// the object holding the base production
-	baseProdObjs = obj->getValue("base_production");
-	baseProd = (baseProdObjs.size() > 0) ? atof(baseProdObjs[0]->getLeaf().c_str()) : 0.0f;
-
-	vector<shared_ptr<Object>> baseManpowerObjs;		// the object holding the base manpower
-	baseManpowerObjs = obj->getValue("base_manpower");
-	manpower = (baseManpowerObjs.size() > 0) ? atof(baseManpowerObjs[0]->getLeaf().c_str()) : 0.0f;
+	num = 0 - stoi(numString);
 
 	// for old versions of EU4 (< 1.12), copy tax to production if necessary
-	if (baseProd == 0.0f && baseTax > 0.0f)
+	if ((baseProduction == 0.0f) && (baseTax > 0.0f))
 	{
-		baseProd = baseTax;
+		baseProduction = baseTax;
 	}
-
-	vector<shared_ptr<Object>> ownerObjs;				// the object holding the owner
-	ownerObjs = obj->getValue("owner");
-	(ownerObjs.size() == 0) ? ownerString = "" : ownerString = ownerObjs[0]->getLeaf();
-	owner = NULL;
-
-	cores.clear();
-	vector<shared_ptr<Object>> coreObjs;				// the object holding the cores
-	coreObjs = obj->getValue("cores");					
-	if (coreObjs.size() != 1)
-	{
-		coreObjs = obj->getValue("core");				// pre 1.23 cores
-		for (unsigned int i = 0; i < coreObjs.size(); i++)
-		{
-			cores.push_back(coreObjs[i]->getLeaf());
-		}
-	}
-	else
-	{
-		vector<string> coreStrs = coreObjs[0]->getTokens();// 1.23 onwards
-		for (auto coreStr : coreStrs)
-		{
-			cores.push_back(coreStr);
-		}
-	}
-
-
-
-	vector<shared_ptr<Object>> hreObj = obj->getValue("hre");
-	if ((hreObj.size() > 0) && (hreObj[0]->getLeaf() == "yes"))
-	{
-		inHRE = true;
-	}
-	else
-	{
-		inHRE = false;
-	}
-
-	colony = false;
-
-	vector<shared_ptr<Object>> historyObj = obj->getValue("history");				// the objects holding the history of this province
-	std::stringstream historyStream;
-	historyStream << *historyObj[0];
-	commonItems::parser tempParser;
-	tempParser.getNextTokenWithoutMatching(historyStream); // throw away the initial 'history'
-	provinceHistory = std::make_unique<EU4::ProvinceHistory>(historyStream);
 
 	if (num == 1)
 	{
@@ -119,65 +106,11 @@ EU4Province::EU4Province(shared_ptr<Object> obj)
 			theConfiguration.setFirstEU4Date(*possibleDate);
 		}
 	}
-
-	vector<shared_ptr<Object>> tradegoodsObj = obj->getValue("trade_goods");
-	if (tradegoodsObj.size() > 0) 
-	{
-		tradeGoods = tradegoodsObj[0]->getLeaf();
-	}
-	else
-	{
-		tradeGoods = "";
-	}
-
-	vector<shared_ptr<Object>> provNameObj = obj->getValue("name");
-	if (provNameObj.size() > 0)
-	{
-		provName = provNameObj[0]->getLeaf();
-	}
-	else
-	{
-		provName = "";
-	}
-
-	// if we didn't have base manpower (EU4 < 1.12), check for manpower instead
-	if (manpower == 0.0f)
-	{
-		vector<shared_ptr<Object>> manpowerObj = obj->getValue("manpower");
-		if (manpowerObj.size() > 0)
-		{
-			string manpowerStr = manpowerObj[0]->getLeaf();
-			manpower = stod(manpowerStr);
-		}
-	}
-
-	vector<shared_ptr<Object>> projectsObj = obj->getValue("great_projects");
-	if (projectsObj.size() > 0)
-	{
-		std::stringstream projectsStream;
-		projectsStream << *projectsObj[0];
-		tempParser.getNextTokenWithoutMatching(projectsStream); // throw away the initial 'buildings'
-		greatProjects = std::make_unique<EU4::Buildings>(projectsStream);
-	}
-
-	vector<shared_ptr<Object>> buldingsObj = obj->getValue("buildings");
-	if (buldingsObj.size() > 0)
-	{
-		std::stringstream buildingsStream;
-		buildingsStream << *buldingsObj[0];
-		tempParser.getNextTokenWithoutMatching(buildingsStream); // throw away the initial 'buildings'
-		buildings = std::make_unique<EU4::Buildings>(buildingsStream);
-	}
 }
 
 
-void EU4Province::addCore(string tag)
-{
-	cores.push_back(tag);
-}
 
-
-void EU4Province::removeCore(string tag)
+void EU4Province::removeCore(const std::string& tag)
 {
 	for (vector<string>::iterator i = cores.begin(); i != cores.end(); i++)
 	{
@@ -191,12 +124,6 @@ void EU4Province::removeCore(string tag)
 			i = cores.begin();
 		}
 	}
-}
-
-
-bool EU4Province::wasColonised() const
-{
-	return provinceHistory->wasColonized();
 }
 
 
@@ -300,12 +227,12 @@ void EU4Province::determineProvinceWeight()
 
 	// Check tag, ex. TIB has goods_produced +0.05
 	// This needs to be hard coded unless there's some other way of figuring out modded national ambitions/ideas
-	if (this->getOwnerString() == "TIB")
+	if (ownerString == "TIB")
 	{
 		goods_produced_perc_mod += 0.05;
 	}
 
-	double goods_produced = (baseProd * 0.2) + manu_gp_mod + goods_produced_perc_mod + 0.03;
+	double goods_produced = (baseProduction * 0.2) + manu_gp_mod + goods_produced_perc_mod + 0.03;
 
 	// idea effects
 	if ( (owner !=  NULL) && (owner->hasNationalIdea("bureaucracy")) )
@@ -343,15 +270,15 @@ void EU4Province::determineProvinceWeight()
 	manpower_weight *= 1;
 	production_income *= 1.5;
 
-	provBuildingWeight	= building_weight;
-	provTaxIncome			= total_tx;
-	provProdIncome			= production_income;
-	provMPWeight			= manpower_weight;
-	provTradeGoodWeight	= trade_goods_weight;
-	provDevModifier	= dev_modifier;
+	buildingWeight = building_weight;
+	taxIncome = total_tx;
+	productionIncome = production_income;
+	manpowerWeight = manpower_weight;
+	tradeGoodWeight	= trade_goods_weight;
+	devModifier	= dev_modifier;
 	
 	// dev modifier
-	dev_modifier *= ( baseTax + baseProd + manpower );
+	dev_modifier *= ( baseTax + baseProduction + manpower );
 
 	totalWeight = building_weight + dev_modifier + ( manpower_weight + production_income + total_tx );
 	//i would change dev effect to 1, but your choice
@@ -362,17 +289,17 @@ void EU4Province::determineProvinceWeight()
 
 	// 0: Goods produced; 1 trade goods price; 2: trade value efficiency; 3: production effiency; 4: trade value; 5: production income
 	// 6: base tax; 7: building tax income 8: building tax eff; 9: total tax income; 10: total_trade_value
-	provProductionVec.push_back(goods_produced);
-	provProductionVec.push_back(getTradeGoodPrice());
-	provProductionVec.push_back(1 + trade_value_eff);
-	provProductionVec.push_back(1 + production_eff);
-	provProductionVec.push_back(trade_value);
-	provProductionVec.push_back(production_income);
-	provProductionVec.push_back(baseTax);
-	provProductionVec.push_back(building_tx_income);
-	provProductionVec.push_back(1 + building_tx_eff);
-	provProductionVec.push_back(total_tx);
-	provProductionVec.push_back(total_trade_value);
+	productionVector.push_back(goods_produced);
+	productionVector.push_back(getTradeGoodPrice());
+	productionVector.push_back(1 + trade_value_eff);
+	productionVector.push_back(1 + production_eff);
+	productionVector.push_back(trade_value);
+	productionVector.push_back(production_income);
+	productionVector.push_back(baseTax);
+	productionVector.push_back(building_tx_income);
+	productionVector.push_back(1 + building_tx_eff);
+	productionVector.push_back(total_tx);
+	productionVector.push_back(total_trade_value);
 	//LOG(LogLevel::Info) << "Num: " << num << " TAG: " << ownerString << " Weight: " << totalWeight;
 }
 

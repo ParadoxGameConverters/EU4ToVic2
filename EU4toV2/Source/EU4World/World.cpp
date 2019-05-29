@@ -407,6 +407,7 @@ void EU4::world::loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpire
 	}
 }
 
+
 void EU4::world::loadProvinces(const shared_ptr<Object> EU4SaveObj)
 {
 	auto validProvinces = determineValidProvinces();
@@ -425,7 +426,11 @@ void EU4::world::loadProvinces(const shared_ptr<Object> EU4SaveObj)
 				(validProvinces.find(-1 * atoi(keyProv.c_str())) != validProvinces.end())	// check it's a valid province for this version of EU4
 				)
 			{
-				EU4Province* province = new EU4Province((provincesLeaves[j]));	// the province in our format
+				std::stringstream provinceStream;
+				provinceStream << *provincesLeaves[j];
+				commonItems::parser tempParser;
+				std::optional<std::string> provinceNumString = tempParser.getNextTokenWithoutMatching(provinceStream);
+				EU4Province* province = new EU4Province(*provinceNumString, provinceStream);
 				provinces.insert(make_pair(province->getNum(), province));
 			}
 		}
@@ -584,7 +589,7 @@ void EU4::world::determineProvinceWeights()
 		// 6: base tax; 7: building tax income 8: building tax eff; 9: total tax income; 10: total_trade_value
 
 
-		provEconVec = i->second->getProvProductionVec();
+		provEconVec = i->second->getProductionVector();
 		/*EU4_Production << i->second->getProvName() << ",";
 		EU4_Production << i->second->getOwnerString() << ",";
 		EU4_Production << i->second->getTradeGoods() << ",";
@@ -609,10 +614,10 @@ void EU4::world::determineProvinceWeights()
 		vector<double> map_values;
 		// Total Base Tax, Total Tax Income, Total Production, Total Buildings, Total Manpower, total province weight //
 		map_values.push_back((2 * i->second->getBaseTax()));
-		map_values.push_back(i->second->getProvTaxIncome());
-		map_values.push_back(i->second->getProvProdIncome());
-		map_values.push_back(i->second->getProvTotalBuildingWeight());
-		map_values.push_back(i->second->getProvMPWeight());
+		map_values.push_back(i->second->getTaxIncome());
+		map_values.push_back(i->second->getProductionIncome());
+		map_values.push_back(i->second->getTotalBuildingWeight());
+		map_values.push_back(i->second->getManpowerWeight());
 		map_values.push_back(i->second->getTotalWeight());
 
 		if (world_tag_weights.count(i->second->getOwnerString())) {
