@@ -47,7 +47,7 @@ struct V2Demographic
 	double								middleRatio;
 	double								lowerRatio;
 	EU4Province*						oldProvince;
-	std::shared_ptr<EU4::Country> oldCountry;
+	std::string oldCountry;
 };
 
 
@@ -57,12 +57,21 @@ class V2Province
 		V2Province(string _filename);
 		void output() const;
 		void outputPops(FILE*) const;
-		void convertFromOldProvince(const EU4::Religions& allReligions, const EU4Province* oldProvince);
+		void convertFromOldProvince(
+			const EU4::Religions& allReligions,
+			const EU4Province* oldProvince,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+		);
 		void determineColonial();
 		void addCore(string);
 		void addOldPop(const V2Pop*);
 		void addMinorityPop(V2Pop*);
-		void doCreatePops(double popWeightRatio, V2Country* _owner, int popConversionAlgorithm);
+		void doCreatePops(
+			double popWeightRatio,
+			V2Country* _owner,
+			int popConversionAlgorithm,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+		);
 		void addFactory(V2Factory* factory);
 		void addPopDemographic(V2Demographic d);
 
@@ -105,9 +114,24 @@ class V2Province
 		void outputUnits(FILE*) const;
 
 		struct pop_points;
-		pop_points getPopPoints_1(const V2Demographic& demographic, double newPopulation, const V2Country* _owner); // EU4 1.0-1.11
-		pop_points getPopPoints_2(const V2Demographic& demographic, double newPopulation, const V2Country* _owner); // EU4 1.12 and newer
-		void createPops(const V2Demographic& demographic, double popWeightRatio, const V2Country* _owner, int popConversionAlgorithm);
+		pop_points getPopPoints_1(
+			const V2Demographic& demographic,
+			double newPopulation,
+			const V2Country* _owner,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries); // EU4 1.0-1.11
+		pop_points getPopPoints_2(
+			const V2Demographic& demographic,
+			double newPopulation,
+			const V2Country* _owner,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+		); // EU4 1.12 and newer
+		void createPops(
+			const V2Demographic& demographic,
+			double popWeightRatio,
+			const V2Country* _owner,
+			int popConversionAlgorithm,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+		);
 		void combinePops();
 		bool growSoldierPop(V2Pop* pop);
 

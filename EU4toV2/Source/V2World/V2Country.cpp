@@ -1610,15 +1610,18 @@ void V2Country::convertLandlessReforms(V2Country* capOwner)
 }
 
 
-void V2Country::setupPops(double popWeightRatio, int popConversionAlgorithm)
-{
+void V2Country::setupPops(
+	double popWeightRatio,
+	int popConversionAlgorithm,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+) {
 	if (states.size() < 1) // skip entirely for empty nations
 		return;
 
 	// create the pops
 	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
-		itr->second->doCreatePops(popWeightRatio, this, popConversionAlgorithm);
+		itr->second->doCreatePops(popWeightRatio, this, popConversionAlgorithm, theEU4Countries);
 	}
 
 	// output statistics on pops

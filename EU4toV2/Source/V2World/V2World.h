@@ -96,7 +96,7 @@ class V2World
 			std::vector<EU4::PopRatio>& popRatios,
 			EU4Province* eProv,
 			V2Province* vProv,
-			std::shared_ptr<EU4::Country> oldOwner,
+			std::string oldOwnerTag,
 			int destNum,
 			double provPopRatio
 		);

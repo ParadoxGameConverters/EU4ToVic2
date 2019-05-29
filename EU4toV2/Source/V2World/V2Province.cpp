@@ -324,8 +324,11 @@ void V2Province::outputUnits(FILE* output) const
 }
 
 
-void V2Province::convertFromOldProvince(const EU4::Religions& allReligions, const EU4Province* oldProvince)
-{
+void V2Province::convertFromOldProvince(
+	const EU4::Religions& allReligions,
+	const EU4Province* oldProvince,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+) {
 	srcProvince = oldProvince;
 	inHRE = oldProvince->getInHRE();
 	if (oldProvince->isColony())
@@ -334,7 +337,12 @@ void V2Province::convertFromOldProvince(const EU4::Religions& allReligions, cons
 	}
 	colonial = 0;
 	wasColonised = oldProvince->wasColonised();
-	originallyInfidel = oldProvince->wasInfidelConquest(allReligions);
+
+	auto oldCountry = theEU4Countries.find(oldProvince->getOwnerString());
+	if (oldCountry != theEU4Countries.end())
+	{
+		originallyInfidel = oldProvince->wasInfidelConquest(oldCountry->second->getReligion(), allReligions);
+	}
 }
 
 
@@ -370,12 +378,16 @@ void V2Province::addMinorityPop(V2Pop* minorityPop)
 }
 
 
-void V2Province::doCreatePops(double popWeightRatio, V2Country* _owner, int popConversionAlgorithm)
-{
+void V2Province::doCreatePops(
+	double popWeightRatio,
+	V2Country* _owner,
+	int popConversionAlgorithm,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+) {
 	// convert pops
 	for (vector<V2Demographic>::const_iterator itr = demographics.begin(); itr != demographics.end(); ++itr)
 	{
-		createPops(*itr, popWeightRatio, _owner, popConversionAlgorithm);
+		createPops(*itr, popWeightRatio, _owner, popConversionAlgorithm, theEU4Countries);
 	}
 	combinePops();
 
@@ -473,10 +485,20 @@ struct V2Province::pop_points
 };
 
 
-V2Province::pop_points V2Province::getPopPoints_1(const V2Demographic& demographic, double newPopulation, const V2Country* _owner)
-{
+V2Province::pop_points V2Province::getPopPoints_1(
+	const V2Demographic& demographic,
+	double newPopulation,
+	const V2Country* _owner,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+) {
 	const EU4Province*	oldProvince = demographic.oldProvince;
-	auto oldCountry = demographic.oldCountry;
+	auto oldCountryTag = demographic.oldCountry;
+	auto countryItr = theEU4Countries.find(oldCountryTag);
+	std::shared_ptr<EU4::Country> oldCountry;
+	if (countryItr != theEU4Countries.end())
+	{
+		oldCountry = countryItr->second;
+	}
 
 	pop_points pts;
 
@@ -589,7 +611,7 @@ V2Province::pop_points V2Province::getPopPoints_1(const V2Demographic& demograph
 
 	pts.soldiers += 100;
 	pts.soldiers += armyBuilding * 45;
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("quantity_ideas") != -1))
+	if ((oldCountryTag != "") && (oldCountry->hasNationalIdea("quantity_ideas") != -1))
 	{
 		pts.soldiers *= 2;
 	}
@@ -650,10 +672,20 @@ V2Province::pop_points V2Province::getPopPoints_1(const V2Demographic& demograph
 }
 
 
-V2Province::pop_points V2Province::getPopPoints_2(const V2Demographic& demographic, double newPopulation, const V2Country* _owner)
-{
+V2Province::pop_points V2Province::getPopPoints_2(
+	const V2Demographic& demographic,
+	double newPopulation,
+	const V2Country* _owner,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+) {
 	const EU4Province*	oldProvince = demographic.oldProvince;
-	auto oldCountry = demographic.oldCountry;
+	auto oldCountryTag = demographic.oldCountry;
+	auto countryItr = theEU4Countries.find(oldCountryTag);
+	std::shared_ptr<EU4::Country> oldCountry;
+	if (countryItr != theEU4Countries.end())
+	{
+		oldCountry = countryItr->second;
+	}
 
 	pop_points pts;
 
@@ -789,8 +821,13 @@ V2Province::pop_points V2Province::getPopPoints_2(const V2Demographic& demograph
 }
 
 
-void V2Province::createPops(const V2Demographic& demographic, double popWeightRatio, const V2Country* _owner, int popConversionAlgorithm)
-{
+void V2Province::createPops(
+	const V2Demographic& demographic,
+	double popWeightRatio,
+	const V2Country* _owner,
+	int popConversionAlgorithm,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+) {
 	const EU4Province*	oldProvince = demographic.oldProvince;
 	auto oldCountry = demographic.oldCountry;
 
@@ -823,10 +860,10 @@ void V2Province::createPops(const V2Demographic& demographic, double popWeightRa
 	switch (popConversionAlgorithm)
 	{
 	case 1:
-		pts = getPopPoints_1(demographic, newPopulation, _owner);
+		pts = getPopPoints_1(demographic, newPopulation, _owner, theEU4Countries);
 		break;
 	case 2:
-		pts = getPopPoints_2(demographic, newPopulation, _owner);
+		pts = getPopPoints_2(demographic, newPopulation, _owner, theEU4Countries);
 		break;
 	default:
 		LOG(LogLevel::Error) << "Invalid pop conversion algorithm specified; not generating pops.";

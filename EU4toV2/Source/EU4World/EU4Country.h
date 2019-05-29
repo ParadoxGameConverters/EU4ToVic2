@@ -76,7 +76,7 @@ namespace EU4
 			void						clearArmies();
 			const void				viveLaRevolution(bool revolting)					{ revolutionary = revolting; }
 
-			bool cultureSurvivesInCores();
+			bool cultureSurvivesInCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& theCountries);
 
 			string							getTag()										const { return tag; }
 			vector<EU4Province*>			getProvinces()								const { return provinces; }

@@ -112,9 +112,9 @@ EU4Province::EU4Province(const std::string& numString, std::istream& theStream)
 }
 
 
-bool EU4Province::wasInfidelConquest(const EU4::Religions& allReligions) const
+bool EU4Province::wasInfidelConquest(const std::string& ownerReligion, const EU4::Religions& allReligions) const
 {
-	return provinceHistory->wasInfidelConquest(allReligions, owner->getReligion(), num);
+	return provinceHistory->wasInfidelConquest(allReligions, ownerReligion, num);
 }
 
 
@@ -135,7 +135,7 @@ bool EU4Province::hasBuilding(const std::string& building) const
 }
 
 
-double EU4Province::getCulturePercent(const std::string& culture)
+double EU4Province::getCulturePercent(const std::string& culture) const
 {
 	double culturePercent = 0.0f;
 
@@ -204,14 +204,14 @@ void EU4Province::determineProvinceWeight()
 	double goods_produced = (baseProduction * 0.2) + manu_gp_mod + goods_produced_perc_mod + 0.03;
 
 	// idea effects
-	if ( (owner !=  NULL) && (owner->hasNationalIdea("bureaucracy")) )
+	/*if ( (owner !=  NULL) && (owner->hasNationalIdea("bureaucracy")) )
 	{
 		building_tx_eff += 0.10;
 	}
 	if ( (owner !=  NULL) && (owner->hasNationalIdea("smithian_economics")) )
 	{
 		production_eff += 0.10;
-	}
+	}*/
 
 	// manpower
 	manpower_weight *= 25;
@@ -251,7 +251,7 @@ void EU4Province::determineProvinceWeight()
 
 	totalWeight = building_weight + dev_modifier + ( manpower_weight + production_income + total_tx );
 	//i would change dev effect to 1, but your choice
-	if (owner == NULL)
+	if (ownerString == "")
 	{
 		totalWeight = 0;
 	}
