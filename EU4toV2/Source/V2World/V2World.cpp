@@ -1660,9 +1660,10 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 		//	output_file << -1 << ",";
 		//}
 		////	Number of DestV2Provs
+		//auto Vic2Provinces = provinceMapper::getVic2ProvinceNumbers(itr->second->getSrcProvince()->getNum());
 		//if (itr->second->getSrcProvince() != nullptr)
 		//{
-		//	output_file << itr->second->getSrcProvince()->getNumDestV2Provs() << ",";
+		//	output_file << Vic2Provinces.size() << ",";
 		//}
 		//else
 		//{
@@ -1680,7 +1681,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 		//	output_file << itr->second->getName() << ",";
 		//}
 		////	Calculated V2 POPs
-		//output_file << ((itr->second->getSrcProvince()->getTotalWeight()*popWeightRatio)/itr->second->getSrcProvince()->getNumDestV2Provs()) << ",";
+		//output_file << ((itr->second->getSrcProvince()->getTotalWeight()*popWeightRatio)/Vic2Provinces.size()) << ",";
 		////	V2 POPs
 		//output_file << itr->second->getTotalPopulation() << endl;
 	}

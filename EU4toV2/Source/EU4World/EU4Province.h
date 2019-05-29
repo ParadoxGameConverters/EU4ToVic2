@@ -54,7 +54,6 @@ class EU4Province: commonItems::parser
 
 		void addCore(const std::string& tag) { cores.insert(tag); }
 		void removeCore(const std::string& tag) { cores.erase(tag); }
-		void setNumDestV2Provs(int _numV2Provs) { numV2Provs = _numV2Provs; }
 
 		void determineProvinceWeight();
 
@@ -70,7 +69,6 @@ class EU4Province: commonItems::parser
 		bool isColony() const { return colony; }
 		bool wasColonised() const { return provinceHistory->wasColonized(); }
 		std::vector<EU4::PopRatio> getPopRatios() const { return provinceHistory->getPopRatios(); }
-		int getNumDestV2Provs()	const { return numV2Provs; }
 
 		// getters for weight attributes
 		double getTotalWeight() const { return totalWeight; }
@@ -96,8 +94,6 @@ class EU4Province: commonItems::parser
 
 		bool inHRE = false;
 		bool colony = false;
-
-		int numV2Provs = 0;
 
 		std::unique_ptr<EU4::ProvinceHistory> provinceHistory;
 		std::unique_ptr<EU4::Buildings> buildings;
