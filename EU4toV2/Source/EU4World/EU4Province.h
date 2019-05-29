@@ -29,15 +29,13 @@ THE SOFTWARE. */
 #include "Buildings.h"
 #include "PopRatio.h"
 #include "ProvinceHistory.h"
+#include "newParser.h"
 #include <string>
 #include <vector>
 #include <map>
 #include <memory>
-using namespace std;
 
 
-
-class Object;
 
 namespace EU4
 {
@@ -49,79 +47,78 @@ class Religions;
 
 
 
-class EU4Province
+class EU4Province: commonItems::parser
 {
 	public:
-		EU4Province(shared_ptr<Object> obj);
+		EU4Province(const std::string& numString, std::istream& theStream);
 
-		void						addCore(string tag);
-		void						removeCore(string tag);
-		void						determineProvinceWeight();
+		void addCore(const std::string& tag) { cores.push_back(tag); }
 
-		bool						wasColonised() const;
+		void removeCore(const std::string& tag);
+		void determineProvinceWeight();
+
 		bool wasInfidelConquest(const EU4::Religions& allReligions) const;
 		bool hasBuilding(const std::string& building) const;
-		std::vector<std::shared_ptr<EU4::Country>>	getCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& countries) const;
+		std::vector<std::shared_ptr<EU4::Country>> getCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& countries) const;
 		double getCulturePercent(const std::string& culture);
 
-		int						getNum()					const { return num; }
-		double					getBaseTax()			const { return baseTax; }
-		string					getOwnerString()		const { return ownerString; }
+		int getNum() const { return num; }
+		std::string getProvName() const { return name; }
+		std::string getOwnerString() const { return ownerString; }
 		std::shared_ptr<EU4::Country> getOwner() const { return owner; }
-		bool						getInHRE()				const { return inHRE; }
-		bool						isColony()				const { return colony; }
+		bool getInHRE() const { return inHRE; }
+		bool isColony() const { return colony; }
+		bool wasColonised() const { return provinceHistory->wasColonized(); }
 		std::vector<EU4::PopRatio> getPopRatios() const { return provinceHistory->getPopRatios(); }
-		double					getTotalWeight()		const { return totalWeight; }
-		int						getNumDestV2Provs()	const { return numV2Provs; }
+		int getNumDestV2Provs()	const { return numV2Provs; }
 
-		void						setOwner(std::shared_ptr<EU4::Country> newOwner) { owner = newOwner; }
-		void						setNumDestV2Provs(int _numV2Provs)	{ numV2Provs = _numV2Provs; }
-		string					getProvName() const { return provName; }
+		void setOwner(std::shared_ptr<EU4::Country> newOwner) { owner = newOwner; }
+		void setNumDestV2Provs(int _numV2Provs)	{ numV2Provs = _numV2Provs; }
 
 		// getters for weight attributes
-		double					getProvTaxIncome() const { return provTaxIncome; }
-		double					getProvProdIncome() const { return provProdIncome; }
-		double					getProvMPWeight() const { return provMPWeight; }
-		double					getProvTotalBuildingWeight() const { return provBuildingWeight; }
-		double					getProvTotalDevModifier() const { return provDevModifier; }
-		double					getCurrTradeGoodWeight() const { return provTradeGoodWeight; }
-
-		std::vector<double>	getProvProductionVec() const { return provProductionVec; }
-		string					getTradeGoods() const { return tradeGoods; }
+		double getTotalWeight() const { return totalWeight; }
+		double getBaseTax() const { return baseTax; }
+		double getTaxIncome() const { return taxIncome; }
+		double getProductionIncome() const { return productionIncome; }
+		double getManpowerWeight() const { return manpowerWeight; }
+		double getTotalBuildingWeight() const { return buildingWeight; }
+		double getTotalDevModifier() const { return devModifier; }
+		double getCurrentTradeGoodWeight() const { return tradeGoodWeight; }
+		std::vector<double>	getProductionVector() const { return productionVector; }
+		std::string getTradeGoods() const { return tradeGoods; }
 
 	private:
-		vector<double>	getProvBuildingWeight()	const;
-		double			getTradeGoodWeight()		const;
-		double			getTradeGoodPrice()		const;
+		std::vector<double> getProvBuildingWeight() const;
+		double getTradeGoodWeight() const;
+		double getTradeGoodPrice() const;
 
-		int									num;						// the province number
-		double								baseTax;					// the base tax of the province
-		double								baseProd;					// the base production of the province
-		double								manpower;					// the base manpower of the province
-		double								totalWeight;
-		string								ownerString;			// a string with the owner's tag
-		string								provName;
+		int num = 0;
+		std::string ownerString;
+		std::string	name;
 		std::shared_ptr<EU4::Country> owner;
-		vector<string>						cores;					// strings of the tags of all cores
-		bool									inHRE;					// whether or not this province is in the HRE
-		bool									colony;					// whether or not this is a colony
+		std::vector<std::string> cores;
+
+		bool inHRE = false;
+		bool colony = false;
+		int numV2Provs = 0;
+
 		std::unique_ptr<EU4::ProvinceHistory> provinceHistory;
 		std::unique_ptr<EU4::Buildings> buildings;
 		std::unique_ptr<EU4::Buildings> greatProjects;
 
-		string								tradeGoods;
-		int									numV2Provs;
-
 		// province attributes for weights
-		double								provTaxIncome;
-		double								provProdIncome;
-		double								provMPWeight;
-		double								provBuildingWeight;
-		double								provTradeGoodWeight;
-		double								provDevModifier;
-
-		std::vector<double>				provProductionVec;
-
+		double baseTax = 0.0;
+		double baseProduction = 0.0;
+		double manpower = 0.0;
+		double totalWeight = 0.0;
+		std::string tradeGoods;
+		double taxIncome = 0;
+		double productionIncome = 0;
+		double manpowerWeight = 0;
+		double buildingWeight = 0;
+		double tradeGoodWeight = 0;
+		double devModifier = 0;
+		std::vector<double> productionVector;
 };
 
 
