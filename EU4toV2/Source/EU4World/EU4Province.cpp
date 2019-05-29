@@ -60,11 +60,14 @@ EU4Province::EU4Province(const std::string& numString, std::istream& theStream)
 	});
 	registerKeyword(std::regex("cores"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::stringList coresStrings(theStream);
-		cores = coresStrings.getStrings();
+		for (auto coreString : coresStrings.getStrings())
+		{
+			cores.insert(coreString);
+		}
 	});
 	registerKeyword(std::regex("core"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleString coresString(theStream);
-		cores.push_back(coresString.getString());
+		cores.insert(coresString.getString());
 	});
 	registerKeyword(std::regex("hre"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleString hreString(theStream);
@@ -109,24 +112,6 @@ EU4Province::EU4Province(const std::string& numString, std::istream& theStream)
 }
 
 
-
-void EU4Province::removeCore(const std::string& tag)
-{
-	for (vector<string>::iterator i = cores.begin(); i != cores.end(); i++)
-	{
-		if (*i == tag)
-		{
-			cores.erase(i);
-			if (cores.size() == 0)
-			{
-				break;
-			}
-			i = cores.begin();
-		}
-	}
-}
-
-
 bool EU4Province::wasInfidelConquest(const EU4::Religions& allReligions) const
 {
 	return provinceHistory->wasInfidelConquest(allReligions, owner->getReligion(), num);
@@ -147,22 +132,6 @@ bool EU4Province::hasBuilding(const std::string& building) const
 	{
 		return false;
 	}
-}
-
-
-vector<std::shared_ptr<EU4::Country>> EU4Province::getCores(const map<string, std::shared_ptr<EU4::Country>>& countries) const
-{
-	std::vector<std::shared_ptr<EU4::Country>> coreOwners;	// the core holders
-	for (vector<string>::const_iterator i = cores.begin(); i != cores.end(); i++)
-	{
-		auto j = countries.find(*i);
-		if (j != countries.end())
-		{
-			coreOwners.push_back(j->second);
-		}
-	}
-
-	return coreOwners;
 }
 
 

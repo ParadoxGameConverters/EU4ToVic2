@@ -517,10 +517,14 @@ void EU4::world::addProvinceInfoToCountries()
 	// add province core info to countries
 	for (auto province: provinces)
 	{
-		auto cores = province.second->getCores(theCountries);	// the cores held on this province
+		auto cores = province.second->getCores();
 		for (auto core: cores)
 		{
-			core->addCore(province.second);
+			auto country = theCountries.find(core);
+			if (country != theCountries.end())
+			{
+				country->second->addCore(province.second);
+			}
 		}
 	}
 }

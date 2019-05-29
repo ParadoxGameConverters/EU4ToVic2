@@ -52,14 +52,16 @@ class EU4Province: commonItems::parser
 	public:
 		EU4Province(const std::string& numString, std::istream& theStream);
 
-		void addCore(const std::string& tag) { cores.push_back(tag); }
+		void addCore(const std::string& tag) { cores.insert(tag); }
+		void removeCore(const std::string& tag) { cores.erase(tag); }
+		void setOwner(std::shared_ptr<EU4::Country> newOwner) { owner = newOwner; }
+		void setNumDestV2Provs(int _numV2Provs) { numV2Provs = _numV2Provs; }
 
-		void removeCore(const std::string& tag);
 		void determineProvinceWeight();
 
 		bool wasInfidelConquest(const EU4::Religions& allReligions) const;
 		bool hasBuilding(const std::string& building) const;
-		std::vector<std::shared_ptr<EU4::Country>> getCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& countries) const;
+		std::set<std::string> getCores() const { return cores; }
 		double getCulturePercent(const std::string& culture);
 
 		int getNum() const { return num; }
@@ -71,9 +73,6 @@ class EU4Province: commonItems::parser
 		bool wasColonised() const { return provinceHistory->wasColonized(); }
 		std::vector<EU4::PopRatio> getPopRatios() const { return provinceHistory->getPopRatios(); }
 		int getNumDestV2Provs()	const { return numV2Provs; }
-
-		void setOwner(std::shared_ptr<EU4::Country> newOwner) { owner = newOwner; }
-		void setNumDestV2Provs(int _numV2Provs)	{ numV2Provs = _numV2Provs; }
 
 		// getters for weight attributes
 		double getTotalWeight() const { return totalWeight; }
@@ -96,7 +95,7 @@ class EU4Province: commonItems::parser
 		std::string ownerString;
 		std::string	name;
 		std::shared_ptr<EU4::Country> owner;
-		std::vector<std::string> cores;
+		std::set<std::string> cores;
 
 		bool inHRE = false;
 		bool colony = false;

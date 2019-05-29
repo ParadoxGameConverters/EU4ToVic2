@@ -779,19 +779,18 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 				for (vector<EU4Province*>::iterator vitr = mitr->second.provinces.begin(); vitr != mitr->second.provinces.end(); ++vitr)
 				{
 					// assign cores
-					vector<shared_ptr<EU4::Country>> oldCores = (*vitr)->getCores(sourceWorld.getCountries());
-					for (auto j = oldCores.begin(); j != oldCores.end(); j++)
+					auto oldCores = (*vitr)->getCores();
+					for (auto oldCore: oldCores)
 					{
-						std::string coreEU4Tag = (*j)->getTag();
 						// skip this core if the country is the owner of the EU4 province but not the V2 province
 						// (i.e. "avoid boundary conflicts that didn't exist in EU4").
 						// this country may still get core via a province that DID belong to the current V2 owner
-						if ((coreEU4Tag == mitr->first) && (coreEU4Tag != oldOwner->getTag()))
+						if ((oldCore == mitr->first) && (oldCore != oldOwner->getTag()))
 						{
 							continue;
 						}
 
-						const std::string& coreV2Tag = mappers::CountryMappings::getVic2Tag(coreEU4Tag);
+						const std::string& coreV2Tag = mappers::CountryMappings::getVic2Tag(oldCore);
 						if (!coreV2Tag.empty())
 						{
 							Vic2Province.second->addCore(coreV2Tag);
