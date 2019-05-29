@@ -679,7 +679,6 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 		for (unsigned int j = 0; j < target->provinces.size(); j++)
 		{
 			addProvince(target->provinces[j]);
-			target->provinces[j]->setOwner(self);
 		}
 
 		// acquire target's armies, navies, admirals, and generals
@@ -722,20 +721,21 @@ void EU4::Country::clearArmies()
 }
 
 
-bool EU4::Country::cultureSurvivesInCores()
+bool EU4::Country::cultureSurvivesInCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& theCountries)
 {
 	for (auto core: cores)
 	{
-		if (core->getOwner() == NULL)
+		if (core->getOwnerString() == "")
 		{
 			continue;
 		}
-		if (core->getOwner()->getPrimaryCulture() == primaryCulture)
+		if (core->getCulturePercent(primaryCulture) >= 0.5)
 		{
 			continue;
 		}
 
-		if (core->getCulturePercent(primaryCulture) >= 0.5)
+		auto owner = theCountries.find(core->getOwnerString());
+		if ((owner != theCountries.end()) && (owner->second->getPrimaryCulture() != primaryCulture))
 		{
 			return true;
 		}

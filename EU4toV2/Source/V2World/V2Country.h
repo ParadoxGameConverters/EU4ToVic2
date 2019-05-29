@@ -90,7 +90,11 @@ class V2Country
 		void								oldCivConversionMethod();
 		void								newCivConversionMethod(double topTech, int topInstitutions);
 		void								convertLandlessReforms(V2Country* capOwner);
-		void								setupPops(double popWeightRatio, int popConversionAlgorithm);
+		void setupPops(
+			double popWeightRatio,
+			int popConversionAlgorithm,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+		);
 		void								setArmyTech(double normalizedScore);
 		void								setNavyTech(double normalizedScore);
 		void								setCommerceTech(double normalizedScore);

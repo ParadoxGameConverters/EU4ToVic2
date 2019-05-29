@@ -510,7 +510,6 @@ void EU4::world::addProvinceInfoToCountries()
 		if (j != theCountries.end())
 		{
 			j->second->addProvince(i->second);
-			i->second->setOwner(j->second);
 		}
 	}
 
@@ -1085,7 +1084,7 @@ void EU4::world::removeDeadLandlessNations()
 
 	for (auto country: landlessCountries)
 	{
-		if (!country.second->cultureSurvivesInCores())
+		if (!country.second->cultureSurvivesInCores(theCountries))
 		{
 			theCountries.erase(country.first);
 			LOG(LogLevel::Debug) << "Removing dead landless nation " << country.first;
