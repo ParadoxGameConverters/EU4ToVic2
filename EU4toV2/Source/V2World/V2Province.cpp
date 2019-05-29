@@ -29,6 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "ParadoxParser8859_15.h"
 #include "../EU4World/World.h"
 #include "../EU4World/EU4Province.h"
+#include "../Mappers/ProvinceMapper.h"
 #include "V2Pop.h"
 #include "V2Country.h"
 #include "V2Factory.h"
@@ -836,7 +837,8 @@ void V2Province::createPops(
 	{
 		newPopulation = static_cast<long>((static_cast<double>(this->lifeRating) / 10) * popWeightRatio * oldProvince->getTotalWeight());
 
-		int numOfV2Provs = srcProvince->getNumDestV2Provs();
+		auto Vic2Provinces = provinceMapper::getVic2ProvinceNumbers(srcProvince->getNum());
+		int numOfV2Provs = Vic2Provinces.size();
 		if (numOfV2Provs > 1)
 		{
 			if (numOfV2Provs == 2)
