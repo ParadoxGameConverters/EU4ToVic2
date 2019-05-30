@@ -19,11 +19,11 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
-#include "../EU4World/EU4Province.h"
 #include "V2State.h"
 #include "V2Pop.h"
 #include "V2Province.h"
 #include "V2Factory.h"
+#include "../EU4World/Provinces/EU4Province.h"
 #include "Log.h"
 
 V2State::V2State(int newId, V2Province* firstProvince)

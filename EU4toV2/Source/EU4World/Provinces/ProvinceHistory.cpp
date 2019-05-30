@@ -23,7 +23,7 @@ THE SOFTWARE. */
 #include "ProvinceHistory.h"
 #include "DateItem.h"
 #include "DateItems.h"
-#include "../Configuration.h"
+#include "../../Configuration.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 

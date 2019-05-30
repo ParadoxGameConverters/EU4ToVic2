@@ -26,11 +26,11 @@ THE SOFTWARE. */
 #include "Object.h"
 #include "ParserHelpers.h"
 #include "CultureGroups.h"
-#include "EU4Province.h"
 #include "EU4Relations.h"
 #include "EU4Leader.h"
 #include "EU4Version.h"
 #include "CountryHistory.h"
+#include "Provinces/EU4Province.h"
 #include "../Mappers/IdeaEffectMapper.h"
 #include "../V2World/V2Localisation.h"
 #include <algorithm>

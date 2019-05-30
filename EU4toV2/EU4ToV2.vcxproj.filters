@@ -84,9 +84,6 @@
     <ClCompile Include="Source\EU4World\EU4Localisation.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\EU4Province.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\EU4Relations.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
@@ -216,20 +213,8 @@
     <ClCompile Include="Source\EU4World\World.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\PopRatio.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\ReligionMapping.cpp">
       <Filter>Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\ProvinceHistory.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\DateItem.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\DateItems.cpp">
-      <Filter>EU4World</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Religions\Religion.cpp">
       <Filter>EU4World\Religions</Filter>
@@ -240,8 +225,23 @@
     <ClCompile Include="Source\EU4World\Religions\Religions.cpp">
       <Filter>EU4World\Religions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Buildings.cpp">
-      <Filter>EU4World</Filter>
+    <ClCompile Include="Source\EU4World\Provinces\Buildings.cpp">
+      <Filter>EU4World\Provinces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Provinces\DateItem.cpp">
+      <Filter>EU4World\Provinces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Provinces\DateItems.cpp">
+      <Filter>EU4World\Provinces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Provinces\EU4Province.cpp">
+      <Filter>EU4World\Provinces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Provinces\PopRatio.cpp">
+      <Filter>EU4World\Provinces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Provinces\ProvinceHistory.cpp">
+      <Filter>EU4World\Provinces</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -323,9 +323,6 @@
       <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\EU4Localisation.h">
-      <Filter>EU4World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\EU4Province.h">
       <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\EU4Relations.h">
@@ -457,20 +454,8 @@
     <ClInclude Include="Source\EU4World\World.h">
       <Filter>EU4World</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\PopRatio.h">
-      <Filter>EU4World</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\ReligionMapping.h">
       <Filter>Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\ProvinceHistory.h">
-      <Filter>EU4World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\DateItem.h">
-      <Filter>EU4World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\DateItems.h">
-      <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Religions\Religion.h">
       <Filter>EU4World\Religions</Filter>
@@ -481,8 +466,23 @@
     <ClInclude Include="Source\EU4World\Religions\Religions.h">
       <Filter>EU4World\Religions</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\Buildings.h">
-      <Filter>EU4World</Filter>
+    <ClInclude Include="Source\EU4World\Provinces\Buildings.h">
+      <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Provinces\DateItem.h">
+      <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Provinces\DateItems.h">
+      <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Provinces\EU4Province.h">
+      <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Provinces\PopRatio.h">
+      <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Provinces\ProvinceHistory.h">
+      <Filter>EU4World\Provinces</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

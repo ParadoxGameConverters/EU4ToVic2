@@ -32,8 +32,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Party.h"
 #include "V2Province.h"
 #include "../EU4World/EU4Army.h"
-#include "../EU4World/EU4Province.h"
-#include "../EU4World/PopRatio.h"
+#include "../EU4World/Provinces/EU4Province.h"
+#include "../EU4World/Provinces/PopRatio.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include <list>

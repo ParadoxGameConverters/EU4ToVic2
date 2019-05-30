@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/DateItem.h"
+#include "../EU4toV2/Source/EU4World/Provinces/DateItem.h"
 #include "../common_items/Date.h"
 #include <sstream>
 

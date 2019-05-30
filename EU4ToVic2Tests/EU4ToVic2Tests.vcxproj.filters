@@ -125,26 +125,17 @@
     <ClCompile Include="MapperTests\ReligionMapperTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\PopRatio.cpp">
-      <Filter>ConverterFiles\EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="EU4WorldTests\PopRatioTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\DateItemTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\DateItem.cpp">
-      <Filter>ConverterFiles\EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="..\common_items\Date.cpp">
       <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\DateItemsTests.cpp">
       <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\DateItems.cpp">
-      <Filter>ConverterFiles\EU4World</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\ProvinceHistoryTests.cpp">
       <Filter>EU4WorldTests</Filter>
@@ -167,14 +158,26 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp">
       <Filter>ConverterFiles\EU4World\Religions</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\ProvinceHistory.cpp">
-      <Filter>ConverterFiles\EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="EU4WorldTests\BuildingsTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Buildings.cpp">
-      <Filter>ConverterFiles\EU4World</Filter>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\Buildings.cpp">
+      <Filter>ConverterFiles\EU4World\Provinces</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\DateItem.cpp">
+      <Filter>ConverterFiles\EU4World\Provinces</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\DateItems.cpp">
+      <Filter>ConverterFiles\EU4World\Provinces</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\EU4Province.cpp">
+      <Filter>ConverterFiles\EU4World\Provinces</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\PopRatio.cpp">
+      <Filter>ConverterFiles\EU4World\Provinces</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceHistory.cpp">
+      <Filter>ConverterFiles\EU4World\Provinces</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -210,6 +213,9 @@
     </Filter>
     <Filter Include="ConverterFiles\EU4World\Religions">
       <UniqueIdentifier>{c094b18a-da92-48b3-868b-701fb0b47bab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Provinces">
+      <UniqueIdentifier>{097e8458-e436-48ad-bd03-bc22450ba0ca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

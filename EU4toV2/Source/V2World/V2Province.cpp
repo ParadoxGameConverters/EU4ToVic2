@@ -28,7 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "OSCompatibilityLayer.h"
 #include "ParadoxParser8859_15.h"
 #include "../EU4World/World.h"
-#include "../EU4World/EU4Province.h"
+#include "../EU4World/Provinces/EU4Province.h"
 #include "../Mappers/ProvinceMapper.h"
 #include "V2Pop.h"
 #include "V2Country.h"
