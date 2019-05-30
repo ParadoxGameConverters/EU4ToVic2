@@ -62,7 +62,7 @@ class Province: commonItems::parser
 		std::string getName() const { return name; }
 		std::string getOwnerString() const { return ownerString; }
 		std::set<std::string> getCores() const { return cores; }
-		bool getInHRE() const { return inHRE; }
+		bool inHre() const { return inHRE; }
 		bool isColony() const { return colony; }
 		bool wasColonised() const { return provinceHistory->wasColonized(); }
 		std::vector<EU4::PopRatio> getPopRatios() const { return provinceHistory->getPopRatios(); }

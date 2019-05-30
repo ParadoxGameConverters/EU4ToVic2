@@ -1117,7 +1117,7 @@ void EU4::world::setEmpires()
 	{
 		// set HRE stuff
 		auto capitalItr = provinces.find(country.second->getCapital());
-		if ((capitalItr != provinces.end()) && (capitalItr->second->getInHRE()))
+		if ((capitalItr != provinces.end()) && (capitalItr->second->inHRE()))
 		{
 			country.second->setInHRE(true);
 		}
