@@ -431,6 +431,14 @@ void EU4::world::loadProvinces(const shared_ptr<Object> EU4SaveObj)
 				std::optional<std::string> provinceNumString = tempParser.getNextTokenWithoutMatching(provinceStream);
 				EU4::Province* province = new EU4::Province(*provinceNumString, provinceStream);
 				provinces.insert(make_pair(province->getNum(), province));
+				if (keyProv == "-1")
+				{
+					std::optional<date> possibleDate = province->getFirstOwnedDate();
+					if (possibleDate)
+					{
+						theConfiguration.setFirstEU4Date(*possibleDate);
+					}
+				}
 			}
 		}
 	}
@@ -592,7 +600,7 @@ void EU4::world::determineProvinceWeights()
 
 
 		provEconVec = i->second->getProductionVector();
-		/*EU4_Production << i->second->getProvName() << ",";
+		/*EU4_Production << i->second->getName() << ",";
 		EU4_Production << i->second->getOwnerString() << ",";
 		EU4_Production << i->second->getTradeGoods() << ",";
 		EU4_Production << provEconVec.at(0) << ",";
@@ -604,7 +612,7 @@ void EU4::world::determineProvinceWeights()
 		EU4_Production << i->second->getProvProdIncome() << "," << endl;
 
 
-		EU4_Tax << i->second->getProvName() << ",";
+		EU4_Tax << i->second->getName() << ",";
 		EU4_Tax << i->second->getOwnerString() << ",";
 		EU4_Tax << provEconVec.at(6) << ",";
 		EU4_Tax << provEconVec.at(7) << ",";

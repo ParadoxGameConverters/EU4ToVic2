@@ -66,6 +66,7 @@ class Province: commonItems::parser
 		bool isColony() const { return colony; }
 		bool wasColonised() const { return provinceHistory->wasColonized(); }
 		std::vector<EU4::PopRatio> getPopRatios() const { return provinceHistory->getPopRatios(); }
+		std::optional<date> getFirstOwnedDate() const { return provinceHistory->getFirstOwnedDate(); }
 
 		// getters for weight attributes
 		double getTotalWeight() const { return totalWeight; }

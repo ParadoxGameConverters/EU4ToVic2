@@ -100,15 +100,6 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 	{
 		baseProduction = baseTax;
 	}
-
-	if (num == 1)
-	{
-		std::optional<date> possibleDate = provinceHistory->getFirstOwnedDate();
-		if (possibleDate)
-		{
-			theConfiguration.setFirstEU4Date(*possibleDate);
-		}
-	}
 }
 
 
