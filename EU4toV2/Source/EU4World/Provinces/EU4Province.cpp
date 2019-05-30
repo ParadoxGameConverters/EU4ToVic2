@@ -21,11 +21,11 @@ THE SOFTWARE. */
 
 
 #include "EU4Province.h"
-#include "EU4Country.h"
-#include "Religions/Religions.h"
+#include "../EU4Country.h"
+#include "../Religions/Religions.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "../Configuration.h"
+#include "../../Configuration.h"
 #include <algorithm>
 #include <fstream>
 #include <optional>
