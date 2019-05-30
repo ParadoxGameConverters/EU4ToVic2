@@ -1581,7 +1581,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 		////	EU4 Province Name
 		//if (itr->second->getSrcProvince() != nullptr)
 		//{
-		//	output_file << itr->second->getSrcProvince()->getProvName() << ",";
+		//	output_file << itr->second->getSrcProvince()->getName() << ",";
 		//}
 		//else
 		//{
