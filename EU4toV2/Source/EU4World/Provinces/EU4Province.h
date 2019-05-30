@@ -59,7 +59,7 @@ class Province: commonItems::parser
 		double getCulturePercent(const std::string& culture) const;
 
 		int getNum() const { return num; }
-		std::string getProvName() const { return name; }
+		std::string getName() const { return name; }
 		std::string getOwnerString() const { return ownerString; }
 		std::set<std::string> getCores() const { return cores; }
 		bool getInHRE() const { return inHRE; }
