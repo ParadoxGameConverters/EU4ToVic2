@@ -331,7 +331,7 @@ void V2Province::convertFromOldProvince(
 	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
 ) {
 	srcProvince = oldProvince;
-	inHRE = oldProvince->inHRE();
+	inHRE = oldProvince->inHre();
 	if (oldProvince->isColony())
 	{
 		colonyLevel = 2;
