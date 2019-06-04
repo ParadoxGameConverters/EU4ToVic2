@@ -119,7 +119,7 @@ bool EU4::ProvinceHistory::wasColonized() const
 
 bool EU4::ProvinceHistory::wasInfidelConquest(const Religions& allReligions, const std::string& ownerReligionString, int num) const
 {
-	// returns true if the province was originally pagan, the current owner is non-pagan,
+	// returns true if the original religion and the current owner's religion are in different groups
 	// and the province was NOT colonized
 	if (religionHistory.size() > 0 && !wasColonized())
 	{
