@@ -203,6 +203,7 @@
     <ClCompile Include="EU4WorldTests\DateItemsTests.cpp" />
     <ClCompile Include="EU4WorldTests\DateItemTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
+    <ClCompile Include="EU4WorldTests\EU4ProvinceTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp" />
     <ClCompile Include="EU4WorldTests\PopRatioTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceHistoryTests.cpp" />
