@@ -29,6 +29,7 @@ THE SOFTWARE. */
 #include <algorithm>
 #include <fstream>
 #include <optional>
+#include <sstream>
 
 
 
@@ -76,14 +77,22 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 			inHRE = true;
 		}
 	});
+	registerKeyword(std::regex("colonysize"), [this](const std::string & unused, std::istream & theStream) {
+		commonItems::ignoreItem(unused, theStream);
+		colony = true;
+	});
+	registerKeyword(std::regex("original_coloniser"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::ignoreItem(unused, theStream);
+		hadOriginalColoniser = true;
+	});
 	registerKeyword(std::regex("history"), [this](const std::string& unused, std::istream& theStream) {
-		provinceHistory = std::make_unique<EU4::ProvinceHistory>(theStream);
+		provinceHistory = std::make_unique<ProvinceHistory>(theStream);
 	});
 	registerKeyword(std::regex("buildings"), [this](const std::string& unused, std::istream& theStream) {
-		buildings = std::make_unique<EU4::Buildings>(theStream);
+		buildings = std::make_unique<Buildings>(theStream);
 	});
 	registerKeyword(std::regex("great_projects"), [this](const std::string& unused, std::istream& theStream) {
-		greatProjects = std::make_unique<EU4::Buildings>(theStream);
+		greatProjects = std::make_unique<Buildings>(theStream);
 	});
 	registerKeyword(std::regex("trade_goods"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleString tradeGoodsString(theStream);
@@ -99,6 +108,11 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 	if ((baseProduction == 0.0f) && (baseTax > 0.0f))
 	{
 		baseProduction = baseTax;
+	}
+	if (!provinceHistory)
+	{
+		std::stringstream input;
+		provinceHistory = std::make_unique<ProvinceHistory>(input);
 	}
 }
 

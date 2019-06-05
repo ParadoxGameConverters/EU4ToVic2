@@ -309,11 +309,13 @@ TEST(EU4World_ProvinceTests, getFirstOwnedDateCanDetectOwnershipAtStartDate)
 {
 	std::stringstream input;
 	input << "={\n";
-	input << "	owner=\"TAG\"\n";
+	input << "	history={\n";
+	input << "		owner=\"TAG\"\n";
+	input << "	}\n";
 	input << "}";
 
 	EU4::Province theProvince("-1", input);
-	ASSERT_EQ(theProvince.getFirstOwnedDate(), date("1444.11.11"));
+	ASSERT_EQ(*theProvince.getFirstOwnedDate(), date("1444.11.11"));
 }
 
 
@@ -431,12 +433,14 @@ TEST(EU4World_ProvinceTests, getCulturePercentCanFullyMatch)
 {
 	std::stringstream input;
 	input << "={\n";
-	input << "	culture=theCulture\n";
-	input << "	religion=theReligion\n";
+	input << "	history={\n";
+	input << "		culture = theCulture\n";
+	input << "		religion=theReligion\n";
+	input << "	}\n";
 	input << "}";
 
 	EU4::Province theProvince("-1", input);
-	ASSERT_EQ(theProvince.getCulturePercent("theCulture"), 100.0);
+	ASSERT_EQ(theProvince.getCulturePercent("theCulture"), 1.0);
 }
 
 
@@ -444,9 +448,9 @@ TEST(EU4World_ProvinceTests, getCulturePercentDeterminedByHistory)
 {
 	std::stringstream input;
 	input << "={\n";
-	input << "	culture=theCulture\n";
-	input << "	religion=theReligion\n";
 	input << "	history={\n";
+	input << "		culture=theCulture\n";
+	input << "		religion=theReligion\n";
 	input << "		1621.1.1={\n";
 	input << "			culture=newCulture\n";
 	input << "		}\n";
@@ -454,5 +458,5 @@ TEST(EU4World_ProvinceTests, getCulturePercentDeterminedByHistory)
 	input << "}";
 
 	EU4::Province theProvince("-1", input);
-	ASSERT_EQ(theProvince.getCulturePercent("theCulture"), 75.0);
+	ASSERT_EQ(theProvince.getCulturePercent("theCulture"), 0.5);
 }
