@@ -44,10 +44,13 @@ class Object;
 
 
 
-class provinceMapper
+namespace mappers
+{
+
+class ProvinceMapper
 {
 	public:
-		provinceMapper(shared_ptr<Object> obj);
+		ProvinceMapper(shared_ptr<Object> obj);
 
 		const std::vector<int> getVic2ProvinceNumbers(int EU4ProvinceNumber) const;
 		const std::vector<int> getEU4ProvinceNumbers(int Vic2ProvinceNumber) const;
@@ -61,6 +64,8 @@ class provinceMapper
 		map<int, vector<int>> EU4ToVic2ProvinceMap;
 		unordered_set<int> resettableProvinces;
 };
+
+}
 
 
 

@@ -973,9 +973,9 @@ void EU4::world::checkAllEU4ReligionsMapped(const mappers::ReligionMapper& relig
 }
 
 
-void EU4::world::checkAllProvincesMapped(const provinceMapper& theProvinceMapper) const
+void EU4::world::checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const
 {
-	//provinces->checkAllProvincesMapped(theProvinceMapper);
+	//provinces->checkAllProvincesMapped(provinceMapper);
 }
 
 

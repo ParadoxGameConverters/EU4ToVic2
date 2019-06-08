@@ -52,11 +52,11 @@ EU4::Province& EU4::Provinces::getProvince(int provinceNumber)
 }
 
 
-/*void EU4::Provinces::checkAllProvincesMapped(const provinceMapper& theProvinceMapper) const
+/*void EU4::Provinces::checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const
 {
 	for (auto& province: provinces)
 	{
-		auto Vic2Provinces = theProvinceMapper.getVic2ProvinceNumbers(province.first);
+		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(province.first);
 		if (Vic2Provinces.size() == 0)
 		{
 			LOG(LogLevel::Warning) << "No mapping for province " << province.first;

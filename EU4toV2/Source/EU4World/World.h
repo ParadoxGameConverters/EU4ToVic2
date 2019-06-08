@@ -57,7 +57,7 @@ class world: private commonItems::parser
 
 		void checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const;
 		void checkAllEU4ReligionsMapped(const mappers::ReligionMapper& religionMapper) const;
-		void checkAllProvincesMapped(const provinceMapper& theProvinceMapper) const;
+		void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
 
 		const EU4::Version& getVersion() const { return *version; };
 		std::map<std::string, std::shared_ptr<EU4::Country>> getCountries() const { return theCountries; };

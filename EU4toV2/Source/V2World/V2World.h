@@ -133,7 +133,7 @@ class V2World
 		std::unique_ptr<mappers::CultureMapper> cultureMapper;
 		std::unique_ptr<mappers::CultureMapper> slaveCultureMapper;
 		std::unique_ptr<mappers::ReligionMapper> religionMapper;
-		std::unique_ptr<provinceMapper> theProvinceMapper;
+		std::unique_ptr<mappers::ProvinceMapper> provinceMapper;
 };
 
 

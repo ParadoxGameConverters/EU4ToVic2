@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,8 +21,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef COUNTRYMAPPING_H
-#define COUNTRYMAPPING_H
+#ifndef COUNTRY_MAPPING_H
+#define COUNTRY_MAPPING_H
 
 
 
@@ -69,9 +69,9 @@ namespace mappers
 			static void createMappings(
 				const EU4::world& srcWorld,
 				const std::map<std::string, V2Country*>& Vic2Countries,
-				const provinceMapper& theProvinceMapper
+				const ProvinceMapper& provinceMapper
 			) {
-				getInstance()->CreateMappings(srcWorld, Vic2Countries, theProvinceMapper);
+				getInstance()->CreateMappings(srcWorld, Vic2Countries, provinceMapper);
 			}
 
 			static std::string getVic2Tag(const std::string& EU4Tag)
@@ -103,7 +103,7 @@ namespace mappers
 			void CreateMappings(
 				const EU4::world& srcWorld,
 				const std::map<std::string, V2Country*>& Vic2Countries,
-				const provinceMapper& theProvinceMapper
+				const ProvinceMapper& provinceMapper
 			);
 			bool isPotentialColonialReplacement(const std::pair<std::string, std::shared_ptr<EU4::Country>>& country);
 			bool tagIsAlphaDigitDigit(const std::string& tag);
@@ -117,7 +117,7 @@ namespace mappers
 				std::shared_ptr<EU4::Country> country,
 				const EU4::world& srcWorld,
 				const std::map<std::string, V2Country*>& Vic2Countries,
-				const provinceMapper& theProvinceMapper
+				const ProvinceMapper& provinceMapper
 			);
 			bool capitalInRightEU4Region(const mappers::colonyStruct& colony, int EU4Capital);
 			bool capitalInRightVic2Region(
@@ -125,7 +125,7 @@ namespace mappers
 				int Vic2Capital,
 				const EU4::world& srcWorld,
 				const std::string& EU4Tag,
-				const provinceMapper& theProvinceMapper
+				const ProvinceMapper& provinceMapper
 			);
 			bool inCorrectCultureGroup(const mappers::colonyStruct& colony, const std::string& primaryCulture);
 			bool tagIsAvailable(const mappers::colonyStruct& colony, const std::map<std::string, V2Country*>& Vic2Countries);

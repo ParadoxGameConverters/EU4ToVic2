@@ -45,7 +45,7 @@ class Provinces: commonItems::parser
 
 		auto& getAllProvinces() { return provinces; }
 
-		//void checkAllProvincesMapped(const provinceMapper& theProvinceMapper) const;
+		//void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
 
 	private:
 		std::map<int, Province> provinces;

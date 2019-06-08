@@ -119,7 +119,7 @@ void mappers::CountryMappings::getAvailableFlags()
 void mappers::CountryMappings::CreateMappings(
 	const EU4::world& srcWorld,
 	const std::map<std::string, V2Country*>& Vic2Countries,
-	const provinceMapper& theProvinceMapper
+	const ProvinceMapper& provinceMapper
 ) {
 	LOG(LogLevel::Info) << "Creating country mappings";
 
@@ -141,7 +141,7 @@ void mappers::CountryMappings::CreateMappings(
 
 	for (auto colonialCountry: colonialCountries)
 	{
-		bool success = attemptColonialReplacement(colonialCountry, srcWorld, Vic2Countries, theProvinceMapper);
+		bool success = attemptColonialReplacement(colonialCountry, srcWorld, Vic2Countries, provinceMapper);
 		if (!success)
 		{
 			makeOneMapping(colonialCountry, Vic2Countries);
@@ -269,13 +269,13 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 	std::shared_ptr<EU4::Country> country,
 	const EU4::world& srcWorld,
 	const std::map<std::string, V2Country*>& Vic2Countries,
-	const provinceMapper& theProvinceMapper
+	const ProvinceMapper& provinceMapper
 ) {
 	bool mapped = false;
 
 	int Vic2Capital;
 	int EU4Capital = country->getCapital();
-	auto potentialVic2Capitals = theProvinceMapper.getVic2ProvinceNumbers(EU4Capital);
+	auto potentialVic2Capitals = provinceMapper.getVic2ProvinceNumbers(EU4Capital);
 	if (potentialVic2Capitals.size() > 0)
 	{
 		Vic2Capital = potentialVic2Capitals[0];
@@ -289,7 +289,7 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 		}
 		country->setColonialRegion(colony.EU4Region);
 
-		if (!capitalInRightVic2Region(colony, Vic2Capital, srcWorld, country->getTag(), theProvinceMapper))
+		if (!capitalInRightVic2Region(colony, Vic2Capital, srcWorld, country->getTag(), provinceMapper))
 		{
 			continue;
 		}
@@ -330,7 +330,7 @@ bool mappers::CountryMappings::capitalInRightVic2Region(
 	int Vic2Capital,
 	const EU4::world& srcWorld,
 	const std::string& EU4Tag,
-	const provinceMapper& theProvinceMapper
+	const ProvinceMapper& provinceMapper
 ) {
 	if (colony.V2Region != "")
 	{
@@ -342,7 +342,7 @@ bool mappers::CountryMappings::capitalInRightVic2Region(
 		{
 			for (auto Vic2ProvinceNumber: Vic2::regions::getProvincesInRegion(colony.V2Region))
 			{
-				auto EU4ProvinceNumbers = theProvinceMapper.getEU4ProvinceNumbers(Vic2ProvinceNumber);
+				auto EU4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(Vic2ProvinceNumber);
 				if (EU4ProvinceNumbers.size() > 0)
 				{
 					return false;
