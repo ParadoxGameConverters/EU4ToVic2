@@ -129,7 +129,7 @@ EU4::world::world(const string& EU4SaveFileName):
 	setLocalisations();
 	resolveRegimentTypes();
 	mergeNations();
-//	provinces->checkAllProvincesMapped(*provinceMapper::getInstance());
+
 	loadRevolutionTarget();
 
 	importReligions();
@@ -970,6 +970,12 @@ void EU4::world::checkAllEU4ReligionsMapped(const mappers::ReligionMapper& relig
 			Log(LogLevel::Warning) << "No religion mapping for EU4 religion " << EU4Religion.first;
 		}
 	}
+}
+
+
+void EU4::world::checkAllProvincesMapped(const provinceMapper& theProvinceMapper) const
+{
+	//provinces->checkAllProvincesMapped(theProvinceMapper);
 }
 
 

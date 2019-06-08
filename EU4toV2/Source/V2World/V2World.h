@@ -35,6 +35,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
 #include "../Mappers/CultureMapper.h"
+#include "../Mappers/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include <list>
 #include <memory>
@@ -80,6 +81,7 @@ class V2World
 
 		void initializeCultureMappers(const EU4::world& sourceWorld);
 		void initializeReligionMapper(const EU4::world& sourceWorld);
+		void initializeProvinceMapper();
 
 		void convertCountries(const EU4::world& sourceWorld);
 		void initializeCountries(const EU4::world& sourceWorld);
@@ -131,6 +133,7 @@ class V2World
 		std::unique_ptr<mappers::CultureMapper> cultureMapper;
 		std::unique_ptr<mappers::CultureMapper> slaveCultureMapper;
 		std::unique_ptr<mappers::ReligionMapper> religionMapper;
+		std::unique_ptr<provinceMapper> theProvinceMapper;
 };
 
 

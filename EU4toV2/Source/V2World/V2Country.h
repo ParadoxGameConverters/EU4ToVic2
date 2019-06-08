@@ -33,6 +33,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/EU4Army.h"
 #include "../EU4World/Regions/Regions.h"
 #include "../Mappers/CultureMapper.h"
+#include "../Mappers/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include <memory>
 #include <set>
@@ -42,8 +43,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 namespace EU4
 {
-	class Country;
-	class world;
+
+class Country;
+class world;
+
 }
 
 class V2World;
@@ -75,15 +78,22 @@ class V2Country
 			const EU4::Regions& eu4Regions,
 			std::shared_ptr<EU4::Country> _srcCountry,
 			const std::unique_ptr<Vic2::TechSchools>& techSchools,
-			const map<int, int>& leaderMap,
+			const std::map<int, int>& leaderMap,
 			const mappers::CultureMapper& cultureMapper,
 			const mappers::CultureMapper& slaveCultureMapper,
-			const mappers::ReligionMapper& religionMapper
+			const mappers::ReligionMapper& religionMapper,
+			const provinceMapper& theProvinceMapper
 		);
 		void								initFromHistory();
 		void								addProvince(V2Province* _province);
 		void								addState(V2State* newState);
-		void								convertArmies(const map<int,int>& leaderIDMap, double cost_per_regiment[num_reg_categories], map<int, V2Province*> allProvinces, vector<int> port_whitelist);
+		void convertArmies(
+			const std::map<int,int>& leaderIDMap,
+			double cost_per_regiment[num_reg_categories],
+			std::map<int, V2Province*> allProvinces,
+			std::vector<int> port_whitelist,
+			const provinceMapper& theProvinceMapper
+		);
 		bool								addFactory(V2Factory* factory);
 		void								addRailroadtoCapitalState();
 		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions);
@@ -93,7 +103,8 @@ class V2Country
 		void setupPops(
 			double popWeightRatio,
 			int popConversionAlgorithm,
-			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+			const provinceMapper& theProvinceMapper
 		);
 		void								setArmyTech(double normalizedScore);
 		void								setNavyTech(double normalizedScore);
@@ -144,7 +155,12 @@ class V2Country
 		void			outputTech(FILE*) const ;
 		void			outputElection(FILE*) const;
 		void			addLoan(string creditor, double size, double interest);
-		int			addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2Province*> allProvinces);
+		int addRegimentToArmy(
+			V2Army* army,
+			RegimentCategory rc,
+			std::map<int, V2Province*> allProvinces,
+			const provinceMapper& theProvicneMapper
+		);
 		vector<int>	getPortProvinces(vector<int> locationCandidates, map<int, V2Province*> allProvinces);
 		V2Army*		getArmyForRemainder(RegimentCategory rc);
 		V2Province*	getProvinceForExpeditionaryArmy();

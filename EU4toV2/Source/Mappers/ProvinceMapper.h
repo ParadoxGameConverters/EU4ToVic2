@@ -32,9 +32,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <vector>
 using namespace std;
 
+
+
 namespace EU4
 {
+
 class Version;
+
 }
 class Object;
 
@@ -43,41 +47,15 @@ class Object;
 class provinceMapper
 {
 	public:
-		static const vector<int> getVic2ProvinceNumbers(int EU4ProvinceNumber)
-		{
-			return getInstance()->GetVic2ProvinceNumbers(EU4ProvinceNumber);
-		}
+		provinceMapper(shared_ptr<Object> obj);
 
-		static const vector<int> getEU4ProvinceNumbers(int Vic2ProvinceNumber)
-		{
-			return getInstance()->GetEU4ProvinceNumbers(Vic2ProvinceNumber);
-		}
-
-		static bool isProvinceResettable(int Vic2ProvinceNumber)
-		{
-			return getInstance()->IsProvinceResettable(Vic2ProvinceNumber);
-		}
+		const std::vector<int> getVic2ProvinceNumbers(int EU4ProvinceNumber) const;
+		const std::vector<int> getEU4ProvinceNumbers(int Vic2ProvinceNumber) const;
+		bool isProvinceResettable(int Vic2ProvinceNumber) const;
 
 	private:
-		static provinceMapper* instance;
-		static provinceMapper* getInstance()
-		{
-			if (instance == NULL)
-			{
-				instance = new provinceMapper;
-			}
-
-			return instance;
-		}
-
-		provinceMapper();
-		void initProvinceMap(shared_ptr<Object> obj);
 		int getMappingsIndex(vector<shared_ptr<Object>> versions);
 		void createMappings(shared_ptr<Object> mapping);
-
-		const vector<int> GetVic2ProvinceNumbers(int EU4ProvinceNumber);
-		const vector<int> GetEU4ProvinceNumbers(int Vic2ProvinceNumber);
-		bool IsProvinceResettable(int Vic2ProvinceNumber);
 
 		map<int, vector<int>> Vic2ToEU4ProvinceMap;
 		map<int, vector<int>> EU4ToVic2ProvinceMap;

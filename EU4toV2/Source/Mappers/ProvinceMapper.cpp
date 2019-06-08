@@ -30,25 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-provinceMapper* provinceMapper::instance = NULL;
-
-
-
-provinceMapper::provinceMapper()
-{
-	LOG(LogLevel::Info) << "Parsing province mappings";
-	shared_ptr<Object> provinceMappingObj = parser_UTF8::doParseFile("province_mappings.txt");
-	if (provinceMappingObj == NULL)
-	{
-		LOG(LogLevel::Error) << "Could not parse file province_mappings.txt";
-		exit(-1);
-	}
-
-	initProvinceMap(provinceMappingObj);
-}
-
-
-void provinceMapper::initProvinceMap(shared_ptr<Object> obj)
+provinceMapper::provinceMapper(shared_ptr<Object> obj)
 {
 	vector<shared_ptr<Object>> versions = obj->getLeaves();
 	if (versions.size() < 1)
@@ -140,7 +122,7 @@ void provinceMapper::createMappings(shared_ptr<Object> mapping)
 }
 
 
-const vector<int> provinceMapper::GetVic2ProvinceNumbers(const int EU4ProvinceNumber)
+const vector<int> provinceMapper::getVic2ProvinceNumbers(const int EU4ProvinceNumber) const
 {
 	auto mapping = EU4ToVic2ProvinceMap.find(EU4ProvinceNumber);
 	if (mapping != EU4ToVic2ProvinceMap.end())
@@ -155,7 +137,7 @@ const vector<int> provinceMapper::GetVic2ProvinceNumbers(const int EU4ProvinceNu
 }
 
 
-const vector<int> provinceMapper::GetEU4ProvinceNumbers(int Vic2ProvinceNumber)
+const vector<int> provinceMapper::getEU4ProvinceNumbers(int Vic2ProvinceNumber) const
 {
 	auto mapping = Vic2ToEU4ProvinceMap.find(Vic2ProvinceNumber);
 	if (mapping != Vic2ToEU4ProvinceMap.end())
@@ -170,7 +152,7 @@ const vector<int> provinceMapper::GetEU4ProvinceNumbers(int Vic2ProvinceNumber)
 }
 
 
-bool provinceMapper::IsProvinceResettable(int Vic2ProvinceNumber)
+bool provinceMapper::isProvinceResettable(int Vic2ProvinceNumber) const
 {
 	if (resettableProvinces.count(Vic2ProvinceNumber) > 0)
 	{
