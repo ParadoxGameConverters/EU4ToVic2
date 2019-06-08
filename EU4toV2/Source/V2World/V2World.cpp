@@ -40,7 +40,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/IdeaEffectMapper.h"
 #include "../Mappers/MinorityPopMapper.h"
-#include "../Mappers/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "../Configuration.h"
 #include "../EU4World/Continents.h"
@@ -76,7 +75,10 @@ V2World::V2World(const EU4::world& sourceWorld)
 	importPotentialCountries();
 	isRandomWorld = sourceWorld.isRandomWorld();
 
-	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries);
+	initializeProvinceMapper();
+	sourceWorld.checkAllProvincesMapped(*theProvinceMapper);
+	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries, *theProvinceMapper);
+
 	LOG(LogLevel::Info) << "Converting world";
 	initializeCultureMappers(sourceWorld);
 	initializeReligionMapper(sourceWorld);
@@ -449,6 +451,20 @@ void V2World::initializeReligionMapper(const EU4::world& sourceWorld)
 }
 
 
+void V2World::initializeProvinceMapper()
+{
+	LOG(LogLevel::Info) << "Parsing province mappings";
+	shared_ptr<Object> provinceMappingObj = parser_UTF8::doParseFile("province_mappings.txt");
+	if (provinceMappingObj == NULL)
+	{
+		LOG(LogLevel::Error) << "Could not parse file province_mappings.txt";
+		exit(-1);
+	}
+
+	theProvinceMapper = std::make_unique<provinceMapper>(provinceMappingObj);
+}
+
+
 void V2World::convertCountries(const EU4::world& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting countries";
@@ -482,7 +498,8 @@ void V2World::initializeCountries(const EU4::world& sourceWorld)
 			leaderIDMap,
 			*cultureMapper,
 			*slaveCultureMapper,
-			*religionMapper
+			*religionMapper,
+			*theProvinceMapper
 		);
 		countries.insert(make_pair(V2Tag, destCountry));
 	}
@@ -694,7 +711,7 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 
 	for (auto Vic2Province : provinces)
 	{
-		auto EU4ProvinceNumbers = provinceMapper::getEU4ProvinceNumbers(Vic2Province.first);
+		auto EU4ProvinceNumbers = theProvinceMapper->getEU4ProvinceNumbers(Vic2Province.first);
 		if (EU4ProvinceNumbers.size() == 0)
 		{
 			LOG(LogLevel::Warning) << "No source for " << Vic2Province.second->getName() << " (province " << Vic2Province.first << ')';
@@ -704,8 +721,10 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 		{
 			continue;
 		}
-		else if ((theConfiguration.getResetProvinces() == "yes") && provinceMapper::isProvinceResettable(Vic2Province.first))
-		{
+		else if (
+			(theConfiguration.getResetProvinces() == "yes") &&
+			theProvinceMapper->isProvinceResettable(Vic2Province.first)
+		) {
 			Vic2Province.second->setResettable(true);
 			continue;
 		}
@@ -1527,7 +1546,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
-		itr->second->setupPops(popWeightRatio, popAlgorithm, sourceWorld.getCountries());
+		itr->second->setupPops(popWeightRatio, popAlgorithm, sourceWorld.getCountries(), *theProvinceMapper);
 	}
 
 	if (theConfiguration.getConvertPopTotals())
@@ -1655,7 +1674,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 		//	output_file << -1 << ",";
 		//}
 		////	Number of DestV2Provs
-		//auto Vic2Provinces = provinceMapper::getVic2ProvinceNumbers(itr->second->getSrcProvince()->getNum());
+		//auto Vic2Provinces = theProvinceMapper->getVic2ProvinceNumbers(itr->second->getSrcProvince()->getNum());
 		//if (itr->second->getSrcProvince() != nullptr)
 		//{
 		//	output_file << Vic2Provinces.size() << ",";
@@ -1756,7 +1775,7 @@ void V2World::convertArmies(const EU4::world& sourceWorld)
 	// convert armies
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
-		itr->second->convertArmies(leaderIDMap, cost_per_regiment, provinces, port_whitelist);
+		itr->second->convertArmies(leaderIDMap, cost_per_regiment, provinces, port_whitelist, *theProvinceMapper);
 	}
 }
 

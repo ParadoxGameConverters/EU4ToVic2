@@ -32,6 +32,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <set>
 #include <string>
 #include "ColonialTagsMapper.h"
+#include "ProvinceMapper.h"
 #include "newParser.h"
 
 
@@ -65,9 +66,12 @@ namespace mappers
 	class CountryMappings: commonItems::parser
 	{
 		public:
-			static void createMappings(const EU4::world& srcWorld, const std::map<std::string, V2Country*>& Vic2Countries)
-			{
-				getInstance()->CreateMappings(srcWorld, Vic2Countries);
+			static void createMappings(
+				const EU4::world& srcWorld,
+				const std::map<std::string, V2Country*>& Vic2Countries,
+				const provinceMapper& theProvinceMapper
+			) {
+				getInstance()->CreateMappings(srcWorld, Vic2Countries, theProvinceMapper);
 			}
 
 			static std::string getVic2Tag(const std::string& EU4Tag)
@@ -96,7 +100,11 @@ namespace mappers
 			void readRules();
 			void getAvailableFlags();
 
-			void CreateMappings(const EU4::world& srcWorld, const std::map<std::string, V2Country*>& Vic2Countries);
+			void CreateMappings(
+				const EU4::world& srcWorld,
+				const std::map<std::string, V2Country*>& Vic2Countries,
+				const provinceMapper& theProvinceMapper
+			);
 			bool isPotentialColonialReplacement(const std::pair<std::string, std::shared_ptr<EU4::Country>>& country);
 			bool tagIsAlphaDigitDigit(const std::string& tag);
 			void makeOneMapping(std::shared_ptr<EU4::Country> country, const std::map<std::string, V2Country*>& Vic2Countries);
@@ -105,9 +113,20 @@ namespace mappers
 			bool mapToFirstUnusedVic2Tag(const std::string& possibleVic2Tags, const std::string& EU4Tag);
 			std::string generateNewTag();
 			void mapToNewTag(const std::string& EU4Tag, const std::string& Vic2Tag);
-			bool attemptColonialReplacement(std::shared_ptr<EU4::Country> country, const EU4::world& srcWorld, const std::map<std::string, V2Country*>& Vic2Countries);
+			bool attemptColonialReplacement(
+				std::shared_ptr<EU4::Country> country,
+				const EU4::world& srcWorld,
+				const std::map<std::string, V2Country*>& Vic2Countries,
+				const provinceMapper& theProvinceMapper
+			);
 			bool capitalInRightEU4Region(const mappers::colonyStruct& colony, int EU4Capital);
-			bool capitalInRightVic2Region(const mappers::colonyStruct& colony, int Vic2Capital, const EU4::world& srcWorld, const std::string& EU4Tag);
+			bool capitalInRightVic2Region(
+				const mappers::colonyStruct& colony,
+				int Vic2Capital,
+				const EU4::world& srcWorld,
+				const std::string& EU4Tag,
+				const provinceMapper& theProvinceMapper
+			);
 			bool inCorrectCultureGroup(const mappers::colonyStruct& colony, const std::string& primaryCulture);
 			bool tagIsAvailable(const mappers::colonyStruct& colony, const std::map<std::string, V2Country*>& Vic2Countries);
 			void logMapping(const std::string& EU4Tag, const std::string& V2Tag, const std::string& reason);

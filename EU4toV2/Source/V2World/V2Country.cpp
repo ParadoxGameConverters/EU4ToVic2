@@ -524,9 +524,9 @@ void V2Country::initFromEU4Country(
 	const map<int, int>& leaderMap,
 	const mappers::CultureMapper& cultureMapper,
 	const mappers::CultureMapper& slaveCultureMapper,
-	const mappers::ReligionMapper& religionMapper
-)
-{
+	const mappers::ReligionMapper& religionMapper,
+	const provinceMapper& theProvinceMapper
+) {
 	srcCountry = _srcCountry;
 
 	if (false == srcCountry->getRandomName().empty())
@@ -561,7 +561,7 @@ void V2Country::initFromEU4Country(
 
 	// Capital
 	int oldCapital = srcCountry->getCapital();
-	auto potentialCapitals = provinceMapper::getVic2ProvinceNumbers(oldCapital);
+	auto potentialCapitals = theProvinceMapper.getVic2ProvinceNumbers(oldCapital);
 	if (potentialCapitals.size() > 0)
 	{
 		capital = potentialCapitals[0];
@@ -1112,8 +1112,13 @@ void V2Country::addState(V2State* newState)
 
 
 //#define TEST_V2_PROVINCES
-void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_regiment[num_reg_categories], map<int, V2Province*> allProvinces, vector<int> port_whitelist)
-{
+void V2Country::convertArmies(
+	const std::map<int,int>& leaderIDMap,
+	double cost_per_regiment[num_reg_categories],
+	std::map<int, V2Province*> allProvinces,
+	std::vector<int> port_whitelist,
+	const provinceMapper& theProvinceMapper
+) {
 #ifndef TEST_V2_PROVINCES
 	if (srcCountry == nullptr)
 	{
@@ -1150,7 +1155,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 
 			for (int i = 0; i < regimentsToCreate; ++i)
 			{
-				if (addRegimentToArmy(army, (RegimentCategory)rc, allProvinces) != 0)
+				if (addRegimentToArmy(army, (RegimentCategory)rc, allProvinces, theProvinceMapper) != 0)
 				{
 					// couldn't add, dissolve into pool
 					countryRemainder[rc] += 1.0;
@@ -1159,7 +1164,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 			}
 		}
 
-		auto locationCandidates = provinceMapper::getVic2ProvinceNumbers((*aitr)->getLocation());
+		auto locationCandidates = theProvinceMapper.getVic2ProvinceNumbers((*aitr)->getLocation());
 		if (locationCandidates.size() == 0)
 		{
 			LOG(LogLevel::Warning) << "Army or Navy " << (*aitr)->getName() << " assigned to unmapped province " << (*aitr)->getLocation() << "; dissolving to pool";
@@ -1231,7 +1236,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 				LOG(LogLevel::Debug) << "No suitable army or navy found for " << tag << "'s pooled regiments of " << RegimentCategoryNames[rc];
 				break;
 			}
-			switch (addRegimentToArmy(army, (RegimentCategory)rc, allProvinces))
+			switch (addRegimentToArmy(army, (RegimentCategory)rc, allProvinces, theProvinceMapper))
 			{
 			case 0: // success
 				countryRemainder[rc] -= 1.0;
@@ -1613,7 +1618,8 @@ void V2Country::convertLandlessReforms(V2Country* capOwner)
 void V2Country::setupPops(
 	double popWeightRatio,
 	int popConversionAlgorithm,
-	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+	const provinceMapper& theProvinceMapper
 ) {
 	if (states.size() < 1) // skip entirely for empty nations
 		return;
@@ -1621,7 +1627,7 @@ void V2Country::setupPops(
 	// create the pops
 	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
-		itr->second->doCreatePops(popWeightRatio, this, popConversionAlgorithm, theEU4Countries);
+		itr->second->doCreatePops(popWeightRatio, this, popConversionAlgorithm, theEU4Countries, theProvinceMapper);
 	}
 
 	// output statistics on pops
@@ -1937,8 +1943,12 @@ void V2Country::addLoan(string creditor, double size, double interest)
 
 
 // return values: 0 = success, -1 = retry from pool, -2 = do not retry
-int V2Country::addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2Province*> allProvinces)
-{
+int V2Country::addRegimentToArmy(
+	V2Army* army,
+	RegimentCategory rc,
+	std::map<int, V2Province*> allProvinces,
+	const provinceMapper& theProvinceMapper
+) {
 	V2Regiment reg((RegimentCategory)rc);
 	int eu4Home = army->getSourceArmy()->getProbabilisticHomeProvince(rc);
 	if (eu4Home == -1)
@@ -1946,7 +1956,7 @@ int V2Country::addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2P
 		LOG(LogLevel::Debug) << "Army/navy " << army->getName() << " has no valid home provinces for " << RegimentCategoryNames[rc] << "; dissolving to pool";
 		return -2;
 	}
-	auto homeCandidates = provinceMapper::getVic2ProvinceNumbers(eu4Home);
+	auto homeCandidates = theProvinceMapper.getVic2ProvinceNumbers(eu4Home);
 	if (homeCandidates.size() == 0)
 	{
 		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army->getName() << " has unmapped home province " << eu4Home << " - dissolving to pool";

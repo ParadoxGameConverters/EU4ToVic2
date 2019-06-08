@@ -29,6 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Configuration.h"
 #include "../EU4World/World.h"
 #include "../EU4World/EU4Country.h"
+#include "../Mappers/ProvinceMapper.h"
 
 
 
@@ -70,7 +71,8 @@ class V2Province
 			double popWeightRatio,
 			V2Country* _owner,
 			int popConversionAlgorithm,
-			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+			const provinceMapper& theProvinceMapper
 		);
 		void addFactory(V2Factory* factory);
 		void addPopDemographic(V2Demographic d);
@@ -130,7 +132,8 @@ class V2Province
 			double popWeightRatio,
 			const V2Country* _owner,
 			int popConversionAlgorithm,
-			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+			const provinceMapper& theProvinceMapper
 		);
 		void combinePops();
 		bool growSoldierPop(V2Pop* pop);
