@@ -188,6 +188,18 @@
     <ClCompile Include="EU4WorldTests\ProvincesTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp">
+      <Filter>ConverterFiles\Mappers\ProvinceMappings</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceMappingTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp">
+      <Filter>ConverterFiles\Mappers\ProvinceMappings</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -225,6 +237,9 @@
     </Filter>
     <Filter Include="ConverterFiles\EU4World\Provinces">
       <UniqueIdentifier>{097e8458-e436-48ad-bd03-bc22450ba0ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\ProvinceMappings">
+      <UniqueIdentifier>{613bca75-72d8-46d3-8955-abe43068f281}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

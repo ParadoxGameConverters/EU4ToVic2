@@ -186,6 +186,8 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMappingRule.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\BlockedTechSchools.cpp" />
@@ -216,6 +218,8 @@
     <ClCompile Include="EU4WorldTests\ReligionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapperTests.cpp" />
     <ClCompile Include="MapperTests\CultureMappingTests.cpp" />
+    <ClCompile Include="MapperTests\ProvinceMappingTests.cpp" />
+    <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMapperTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMappingTests.cpp" />
     <ClCompile Include="Vic2WorldTests\BlockedTechSchoolsTests.cpp" />
