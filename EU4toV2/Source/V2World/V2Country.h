@@ -82,7 +82,7 @@ class V2Country
 			const mappers::CultureMapper& cultureMapper,
 			const mappers::CultureMapper& slaveCultureMapper,
 			const mappers::ReligionMapper& religionMapper,
-			const provinceMapper& theProvinceMapper
+			const mappers::ProvinceMapper& provinceMapper
 		);
 		void								initFromHistory();
 		void								addProvince(V2Province* _province);
@@ -92,7 +92,7 @@ class V2Country
 			double cost_per_regiment[num_reg_categories],
 			std::map<int, V2Province*> allProvinces,
 			std::vector<int> port_whitelist,
-			const provinceMapper& theProvinceMapper
+			const mappers::ProvinceMapper& provinceMapper
 		);
 		bool								addFactory(V2Factory* factory);
 		void								addRailroadtoCapitalState();
@@ -104,7 +104,7 @@ class V2Country
 			double popWeightRatio,
 			int popConversionAlgorithm,
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
-			const provinceMapper& theProvinceMapper
+			const mappers::ProvinceMapper& provinceMapper
 		);
 		void								setArmyTech(double normalizedScore);
 		void								setNavyTech(double normalizedScore);
@@ -159,7 +159,7 @@ class V2Country
 			V2Army* army,
 			RegimentCategory rc,
 			std::map<int, V2Province*> allProvinces,
-			const provinceMapper& theProvicneMapper
+			const mappers::ProvinceMapper& provinceMapper
 		);
 		vector<int>	getPortProvinces(vector<int> locationCandidates, map<int, V2Province*> allProvinces);
 		V2Army*		getArmyForRemainder(RegimentCategory rc);

@@ -30,7 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-provinceMapper::provinceMapper(shared_ptr<Object> obj)
+mappers::ProvinceMapper::ProvinceMapper(shared_ptr<Object> obj)
 {
 	vector<shared_ptr<Object>> versions = obj->getLeaves();
 	if (versions.size() < 1)
@@ -48,7 +48,7 @@ provinceMapper::provinceMapper(shared_ptr<Object> obj)
 }
 
 
-int provinceMapper::getMappingsIndex(vector<shared_ptr<Object>> versions)
+int mappers::ProvinceMapper::getMappingsIndex(vector<shared_ptr<Object>> versions)
 {
 	unsigned int mappingsIdx;
 
@@ -66,7 +66,7 @@ int provinceMapper::getMappingsIndex(vector<shared_ptr<Object>> versions)
 }
 
 
-void provinceMapper::createMappings(shared_ptr<Object> mapping)
+void mappers::ProvinceMapper::createMappings(shared_ptr<Object> mapping)
 {
 	vector<int> EU4Numbers;
 	vector<int> Vic2Numbers;
@@ -122,7 +122,7 @@ void provinceMapper::createMappings(shared_ptr<Object> mapping)
 }
 
 
-const vector<int> provinceMapper::getVic2ProvinceNumbers(const int EU4ProvinceNumber) const
+const vector<int> mappers::ProvinceMapper::getVic2ProvinceNumbers(const int EU4ProvinceNumber) const
 {
 	auto mapping = EU4ToVic2ProvinceMap.find(EU4ProvinceNumber);
 	if (mapping != EU4ToVic2ProvinceMap.end())
@@ -137,7 +137,7 @@ const vector<int> provinceMapper::getVic2ProvinceNumbers(const int EU4ProvinceNu
 }
 
 
-const vector<int> provinceMapper::getEU4ProvinceNumbers(int Vic2ProvinceNumber) const
+const vector<int> mappers::ProvinceMapper::getEU4ProvinceNumbers(int Vic2ProvinceNumber) const
 {
 	auto mapping = Vic2ToEU4ProvinceMap.find(Vic2ProvinceNumber);
 	if (mapping != Vic2ToEU4ProvinceMap.end())
@@ -152,7 +152,7 @@ const vector<int> provinceMapper::getEU4ProvinceNumbers(int Vic2ProvinceNumber) 
 }
 
 
-bool provinceMapper::isProvinceResettable(int Vic2ProvinceNumber) const
+bool mappers::ProvinceMapper::isProvinceResettable(int Vic2ProvinceNumber) const
 {
 	if (resettableProvinces.count(Vic2ProvinceNumber) > 0)
 	{

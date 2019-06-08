@@ -384,12 +384,12 @@ void V2Province::doCreatePops(
 	V2Country* _owner,
 	int popConversionAlgorithm,
 	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
-	const provinceMapper& theProvinceMapper
+	const mappers::ProvinceMapper& provinceMapper
 ) {
 	// convert pops
 	for (vector<V2Demographic>::const_iterator itr = demographics.begin(); itr != demographics.end(); ++itr)
 	{
-		createPops(*itr, popWeightRatio, _owner, popConversionAlgorithm, theEU4Countries, theProvinceMapper);
+		createPops(*itr, popWeightRatio, _owner, popConversionAlgorithm, theEU4Countries, provinceMapper);
 	}
 	combinePops();
 
@@ -829,7 +829,7 @@ void V2Province::createPops(
 	const V2Country* _owner,
 	int popConversionAlgorithm,
 	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
-	const provinceMapper& theProvinceMapper
+	const mappers::ProvinceMapper& provinceMapper
 ) {
 	const EU4::Province*	oldProvince = demographic.oldProvince;
 	auto oldCountry = demographic.oldCountry;
@@ -839,7 +839,7 @@ void V2Province::createPops(
 	{
 		newPopulation = static_cast<long>((static_cast<double>(this->lifeRating) / 10) * popWeightRatio * oldProvince->getTotalWeight());
 
-		auto Vic2Provinces = theProvinceMapper.getVic2ProvinceNumbers(srcProvince->getNum());
+		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(srcProvince->getNum());
 		int numOfV2Provs = Vic2Provinces.size();
 		if (numOfV2Provs > 1)
 		{

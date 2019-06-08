@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -72,7 +72,7 @@ class V2Province
 			V2Country* _owner,
 			int popConversionAlgorithm,
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
-			const provinceMapper& theProvinceMapper
+			const mappers::ProvinceMapper& provinceMapper
 		);
 		void addFactory(V2Factory* factory);
 		void addPopDemographic(V2Demographic d);
@@ -133,7 +133,7 @@ class V2Province
 			const V2Country* _owner,
 			int popConversionAlgorithm,
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
-			const provinceMapper& theProvinceMapper
+			const mappers::ProvinceMapper& provinceMapper
 		);
 		void combinePops();
 		bool growSoldierPop(V2Pop* pop);
