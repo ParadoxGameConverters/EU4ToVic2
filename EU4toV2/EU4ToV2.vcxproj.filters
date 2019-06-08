@@ -246,6 +246,12 @@
     <ClCompile Include="Source\EU4World\Provinces\Provinces.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp">
+      <Filter>Mappers\ProvinceMappings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp">
+      <Filter>Mappers\ProvinceMappings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -490,6 +496,12 @@
     <ClInclude Include="Source\EU4World\Provinces\Provinces.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h">
+      <Filter>Mappers\ProvinceMappings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h">
+      <Filter>Mappers\ProvinceMappings</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -512,6 +524,9 @@
     </Filter>
     <Filter Include="EU4World\Religions">
       <UniqueIdentifier>{b12cccd6-fb02-48ec-b222-df16d98da75e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ProvinceMappings">
+      <UniqueIdentifier>{5e9fdef6-9a6f-4ec5-bd98-cc22aedc71ee}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
