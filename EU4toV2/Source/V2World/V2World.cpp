@@ -684,7 +684,7 @@ void V2World::editDefines(int numCivilisedNations)
 
 struct MTo1ProvinceComp
 {
-	vector<EU4::Province*> provinces;
+	vector<const EU4::Province*> provinces;
 };
 
 
@@ -712,26 +712,21 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 
 		Vic2Province.second->clearCores();
 
-		EU4::Province*	oldProvince = nullptr;
+		const EU4::Province* oldProvince = nullptr;
 		std::string oldOwnerTag;
 		// determine ownership by province count, or total population (if province count is tied)
 		map<string, MTo1ProvinceComp> provinceBins;
 		double newProvinceTotalBaseTax = 0;
 		for (auto EU4ProvinceNumber : EU4ProvinceNumbers)
 		{
-			EU4::Province* province = sourceWorld.getProvince(EU4ProvinceNumber);
-			if (!province)
-			{
-				LOG(LogLevel::Warning) << "Old province " << EU4ProvinceNumber << " does not exist (bad mapping?)";
-				continue;
-			}
-			auto ownerTag = province->getOwnerString();
+			const EU4::Province& province = sourceWorld.getProvince(EU4ProvinceNumber);
+			auto ownerTag = province.getOwnerString();
 			if (provinceBins.find(ownerTag) == provinceBins.end())
 			{
 				provinceBins[ownerTag] = MTo1ProvinceComp();
 			}
-			provinceBins[ownerTag].provinces.push_back(province);
-			newProvinceTotalBaseTax += province->getBaseTax();
+			provinceBins[ownerTag].provinces.push_back(&province);
+			newProvinceTotalBaseTax += province.getBaseTax();
 			// I am the new owner if there is no current owner, or I have more provinces than the current owner,
 			// or I have the same number of provinces, but more population, than the current owner
 			if (
@@ -741,7 +736,7 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 				)
 			{
 				oldOwnerTag = ownerTag;
-				oldProvince = province;
+				oldProvince = &province;
 			}
 		}
 		if (oldOwnerTag == "")
@@ -767,7 +762,7 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 
 			for (map<string, MTo1ProvinceComp>::iterator mitr = provinceBins.begin(); mitr != provinceBins.end(); ++mitr)
 			{
-				for (vector<EU4::Province*>::iterator vitr = mitr->second.provinces.begin(); vitr != mitr->second.provinces.end(); ++vitr)
+				for (vector<const EU4::Province*>::iterator vitr = mitr->second.provinces.begin(); vitr != mitr->second.provinces.end(); ++vitr)
 				{
 					// assign cores
 					auto oldCores = (*vitr)->getCores();
@@ -821,7 +816,7 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 std::vector<V2Demographic> V2World::determineDemographics(
 	const EU4::Regions& eu4Regions,
 	std::vector<EU4::PopRatio>& popRatios,
-	EU4::Province* eProv,
+	const EU4::Province* eProv,
 	V2Province* vProv,
 	std::string oldOwnerTag,
 	int destNum,

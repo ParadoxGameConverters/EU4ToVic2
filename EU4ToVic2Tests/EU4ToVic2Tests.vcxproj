@@ -174,6 +174,7 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\EU4Province.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\PopRatio.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceHistory.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\Provinces.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Area.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\AreaNames.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Areas.cpp" />
@@ -207,6 +208,7 @@
     <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp" />
     <ClCompile Include="EU4WorldTests\PopRatioTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceHistoryTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ProvincesTests.cpp" />
     <ClCompile Include="EU4WorldTests\RegionsTests.cpp" />
     <ClCompile Include="EU4WorldTests\RegionTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionGroupTests.cpp" />

@@ -114,6 +114,8 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 		std::stringstream input;
 		provinceHistory = std::make_unique<ProvinceHistory>(input);
 	}
+
+	determineProvinceWeight();
 }
 
 

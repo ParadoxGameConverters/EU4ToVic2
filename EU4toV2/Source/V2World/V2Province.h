@@ -46,7 +46,7 @@ struct V2Demographic
 	double								upperRatio;
 	double								middleRatio;
 	double								lowerRatio;
-	EU4::Province*						oldProvince;
+	const EU4::Province*						oldProvince;
 	std::string oldCountry;
 };
 

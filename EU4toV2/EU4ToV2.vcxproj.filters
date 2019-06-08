@@ -243,6 +243,9 @@
     <ClCompile Include="Source\EU4World\Provinces\ProvinceHistory.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Provinces\Provinces.cpp">
+      <Filter>EU4World\Provinces</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -482,6 +485,9 @@
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\ProvinceHistory.h">
+      <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Provinces\Provinces.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
   </ItemGroup>

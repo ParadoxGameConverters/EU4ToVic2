@@ -94,7 +94,7 @@ class V2World
 		std::vector<V2Demographic> determineDemographics(
 			const EU4::Regions& eu4Regions,
 			std::vector<EU4::PopRatio>& popRatios,
-			EU4::Province* eProv,
+			const EU4::Province* eProv,
 			V2Province* vProv,
 			std::string oldOwnerTag,
 			int destNum,

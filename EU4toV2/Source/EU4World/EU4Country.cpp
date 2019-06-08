@@ -636,12 +636,12 @@ void EU4::Country::resolveRegimentTypes(const RegimentTypeMap& map)
 int EU4::Country::getManufactoryCount() const
 {
 	int retval = 0;	// the number of manus
-	for (vector<EU4::Province*>::const_iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
+	for (auto province: provinces)
 	{
-		if ((*itr)->hasBuilding("weapons"))		++retval;
-		if ((*itr)->hasBuilding("wharf"))		++retval;
-		if ((*itr)->hasBuilding("textile"))		++retval;
-		if ((*itr)->hasBuilding("refinery"))	++retval;
+		if (province->hasBuilding("weapons"))		++retval;
+		if (province->hasBuilding("wharf"))		++retval;
+		if (province->hasBuilding("textile"))		++retval;
+		if (province->hasBuilding("refinery"))	++retval;
 	}
 	return retval;
 }
@@ -665,11 +665,11 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 	const double targetWeight = (double)target->provinces.size() / (double)totalProvinces;		// the amount of influence from the target country
 
 	// acquire target's cores (always)
-	for (unsigned int j = 0; j < target->cores.size(); j++)
+	for (auto& core: target->getCores())
 	{
-		addCore(target->cores[j]);
-		target->cores[j]->addCore(tag);
-		target->cores[j]->removeCore(target->tag);
+		addCore(core);
+		core->addCore(tag);
+		core->removeCore(target->tag);
 	}
 
 	// everything else, do only if this country actually currently exists
