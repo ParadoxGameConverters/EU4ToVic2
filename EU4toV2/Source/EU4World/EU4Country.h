@@ -61,8 +61,8 @@ namespace EU4
 			void setLocalisationName(const string& language, const string& name);
 			void setLocalisationAdjective(const string& language, const string& adjective);
 
-			void						addProvince(EU4::Province*);
-			void						addCore(EU4::Province*);
+			void addProvince(Province*);
+			void addCore(Province*);
 			void						setInHRE(bool _inHRE)								{ inHRE = _inHRE; }
 			void						setEmperor(bool _emperor)							{ holyRomanEmperor = _emperor; }
 			void						setCelestialEmperor(bool _celestialEmperor)			{ celestialEmperor = _celestialEmperor; }
@@ -81,8 +81,8 @@ namespace EU4
 			bool cultureSurvivesInCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& theCountries);
 
 			string							getTag()										const { return tag; }
-			vector<EU4::Province*>			getProvinces()								const { return provinces; }
-			vector<EU4::Province*>			getCores()									const { return cores; }
+			std::vector<Province*> getProvinces() { return provinces; }
+			std::vector<Province*> getCores() { return cores; }
 			int								getCapital()								const { return capital; }
 			bool							getInHRE()									const { return inHRE; }
 			bool							getHolyRomanEmperor()					const { return holyRomanEmperor; }
@@ -133,8 +133,8 @@ namespace EU4
 			void							clearCores();
 
 			string							tag;						// the tag for the EU4 nation
-			vector<EU4::Province*>			provinces;				// the EU4 provinces this nations holds
-			vector<EU4::Province*>			cores;					// the EU4 provinces this nation has cores on
+			std::vector<Province*> provinces;
+			std::vector<Province*> cores;
 			bool							inHRE;					// if this country is an HRE member
 			bool							holyRomanEmperor;		// if this country is the emperor of the HRE
 			bool							celestialEmperor;		// if this country is the celestial emperor

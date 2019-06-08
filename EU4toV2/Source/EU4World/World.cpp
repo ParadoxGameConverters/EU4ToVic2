@@ -99,12 +99,14 @@ EU4::world::world(const string& EU4SaveFileName):
 			loadEmpires(empireObject);
 		}
 	);
-	registerKeyword(std::regex("provinces"), [this](const std::string& provincesText, std::istream& theStream)
+	registerKeyword(std::regex("provinces"), [this](const std::string& provincesText, std::istream& theStream) {
+		provinces = std::make_unique<Provinces>(theStream);
+		std::optional<date> possibleDate = provinces->getProvince(1).getFirstOwnedDate();
+		if (possibleDate)
 		{
-			auto provincesObject = commonItems::convert8859Object(provincesText, theStream);
-			loadProvinces(provincesObject);
+			theConfiguration.setFirstEU4Date(*possibleDate);
 		}
-	);
+	});
 	registerKeyword(std::regex("countries"), [this](const std::string& countriesText, std::istream& theStream) { loadCountries(theStream);	} );
 	registerKeyword(std::regex("diplomacy"), [this](const std::string& diplomacyText, std::istream& theStream)
 		{
@@ -127,7 +129,7 @@ EU4::world::world(const string& EU4SaveFileName):
 	setLocalisations();
 	resolveRegimentTypes();
 	mergeNations();
-	checkAllProvincesMapped();
+//	provinces->checkAllProvincesMapped(*provinceMapper::getInstance());
 	loadRevolutionTarget();
 
 	importReligions();
@@ -407,44 +409,6 @@ void EU4::world::loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpire
 }
 
 
-void EU4::world::loadProvinces(const shared_ptr<Object> EU4SaveObj)
-{
-	auto validProvinces = determineValidProvinces();
-
-	provinces.clear();
-	vector<shared_ptr<Object>> provincesObj = EU4SaveObj->getValue("provinces");					// the object holding the provinces
-	if (provincesObj.size() > 0)
-	{
-		vector<shared_ptr<Object>> provincesLeaves = provincesObj[0]->getLeaves();		// the objects holding the individual provinces
-		for (unsigned int j = 0; j < provincesLeaves.size(); j++)
-		{
-			string keyProv = (provincesLeaves[j])->getKey();						// the key for the province
-
-			if (
-				(atoi(keyProv.c_str()) < 0) &&													// Check if key is a negative value (EU4 style)
-				(validProvinces.find(-1 * atoi(keyProv.c_str())) != validProvinces.end())	// check it's a valid province for this version of EU4
-				)
-			{
-				std::stringstream provinceStream;
-				provinceStream << *provincesLeaves[j];
-				commonItems::parser tempParser;
-				std::optional<std::string> provinceNumString = tempParser.getNextTokenWithoutMatching(provinceStream);
-				EU4::Province* province = new EU4::Province(*provinceNumString, provinceStream);
-				provinces.insert(make_pair(province->getNum(), province));
-				if (keyProv == "-1")
-				{
-					std::optional<date> possibleDate = province->getFirstOwnedDate();
-					if (possibleDate)
-					{
-						theConfiguration.setFirstEU4Date(*possibleDate);
-					}
-				}
-			}
-		}
-	}
-}
-
-
 map<int, int> EU4::world::determineValidProvinces()
 {
 	// Use map/definition.csv to determine valid provinces
@@ -511,25 +475,25 @@ void EU4::world::loadRevolutionTarget()
 void EU4::world::addProvinceInfoToCountries()
 {
 	// add province owner info to countries
-	for (map<int, EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); i++)
+	for (auto& province: provinces->getAllProvinces())
 	{
-		auto j = theCountries.find( i->second->getOwnerString() );
-		if (j != theCountries.end())
+		auto owner = theCountries.find(province.second.getOwnerString());
+		if (owner != theCountries.end())
 		{
-			j->second->addProvince(i->second);
+			owner->second->addProvince(&province.second);
 		}
 	}
 
 	// add province core info to countries
-	for (auto province: provinces)
+	for (auto& province: provinces->getAllProvinces())
 	{
-		auto cores = province.second->getCores();
+		auto cores = province.second.getCores();
 		for (auto core: cores)
 		{
 			auto country = theCountries.find(core);
 			if (country != theCountries.end())
 			{
-				country->second->addCore(province.second);
+				country->second->addCore(&province.second);
 			}
 		}
 	}
@@ -592,14 +556,13 @@ void EU4::world::determineProvinceWeights()
 	//EU4_Tax << "BUILD INCOME" << ",";
 	//EU4_Tax << "TAX EFF" << ",";
 	//EU4_Tax << "TOTAL TAX INCOME" << endl;
-	for (map<int, EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); i++)
+	for (auto& province: provinces->getAllProvinces())
 	{
-		i->second->determineProvinceWeight();
 		// 0: Goods produced; 1 trade goods price; 2: trade value efficiency; 3: production effiency; 4: trade value; 5: production income
 		// 6: base tax; 7: building tax income 8: building tax eff; 9: total tax income; 10: total_trade_value
 
 
-		provEconVec = i->second->getProductionVector();
+		provEconVec = province.second.getProductionVector();
 		/*EU4_Production << i->second->getName() << ",";
 		EU4_Production << i->second->getOwnerString() << ",";
 		EU4_Production << i->second->getTradeGoods() << ",";
@@ -619,20 +582,20 @@ void EU4::world::determineProvinceWeights()
 		EU4_Tax << provEconVec.at(8) << ",";
 		EU4_Tax << provEconVec.at(9) << "," << endl;*/
 
-		worldWeightSum += i->second->getTotalWeight();
+		worldWeightSum += province.second.getTotalWeight();
 
 		vector<double> map_values;
 		// Total Base Tax, Total Tax Income, Total Production, Total Buildings, Total Manpower, total province weight //
-		map_values.push_back((2 * i->second->getBaseTax()));
-		map_values.push_back(i->second->getTaxIncome());
-		map_values.push_back(i->second->getProductionIncome());
-		map_values.push_back(i->second->getTotalBuildingWeight());
-		map_values.push_back(i->second->getManpowerWeight());
-		map_values.push_back(i->second->getTotalWeight());
+		map_values.push_back((2 * province.second.getBaseTax()));
+		map_values.push_back(province.second.getTaxIncome());
+		map_values.push_back(province.second.getProductionIncome());
+		map_values.push_back(province.second.getTotalBuildingWeight());
+		map_values.push_back(province.second.getManpowerWeight());
+		map_values.push_back(province.second.getTotalWeight());
 
-		if (world_tag_weights.count(i->second->getOwnerString())) {
+		if (world_tag_weights.count(province.second.getOwnerString())) {
 			vector<double> new_map_values;
-			new_map_values = world_tag_weights[i->second->getOwnerString()];
+			new_map_values = world_tag_weights[province.second.getOwnerString()];
 			new_map_values[0] += map_values[0];
 			new_map_values[1] += map_values[1];
 			new_map_values[2] += map_values[2];
@@ -640,11 +603,11 @@ void EU4::world::determineProvinceWeights()
 			new_map_values[4] += map_values[4];
 			new_map_values[5] += map_values[5];
 
-			world_tag_weights[i->second->getOwnerString()] = new_map_values;
+			world_tag_weights[province.second.getOwnerString()] = new_map_values;
 
 		}
 		else {
-			world_tag_weights.insert(std::pair<string, vector<double> >(i->second->getOwnerString(), map_values));
+			world_tag_weights.insert(std::pair<string, vector<double> >(province.second.getOwnerString(), map_values));
 		}
 
 	}
@@ -997,19 +960,6 @@ void EU4::world::uniteJapan()
 }
 
 
-void EU4::world::checkAllProvincesMapped() const
-{
-	for (auto province: provinces)
-	{
-		auto Vic2Provinces = provinceMapper::getVic2ProvinceNumbers(province.first);
-		if (Vic2Provinces.size() == 0)
-		{
-			LOG(LogLevel::Warning) << "No mapping for province " << province.first;
-		}
-	}
-}
-
-
 void EU4::world::checkAllEU4ReligionsMapped(const mappers::ReligionMapper& religionMapper) const
 {
 	for (auto EU4Religion: theReligions.getAllReligions())
@@ -1051,9 +1001,9 @@ void EU4::world::removeEmptyNations()
 
 	for (auto country: theCountries)
 	{
-		vector<EU4::Province*> provinces = country.second->getProvinces();
-		vector<EU4::Province*> cores = country.second->getCores();
-		if ((provinces.size() == 0) && (cores.size() == 0))
+		auto countryProvinces = country.second->getProvinces();
+		auto countryCores = country.second->getCores();
+		if ((countryProvinces.size() == 0) && (countryCores.size() == 0))
 		{
 			LOG(LogLevel::Debug) << "Removing empty nation " << country.first;
 		}
@@ -1072,8 +1022,8 @@ void EU4::world::removeDeadLandlessNations()
 	std::map<std::string, std::shared_ptr<EU4::Country>> landlessCountries;
 	for (auto country: theCountries)
 	{
-		vector<EU4::Province*> provinces = country.second->getProvinces();
-		if (provinces.size() == 0)
+		auto countryProvinces = country.second->getProvinces();
+		if (countryProvinces.size() == 0)
 		{
 			landlessCountries.insert(country);
 		}
@@ -1116,8 +1066,7 @@ void EU4::world::setEmpires()
 	for (auto country: theCountries)
 	{
 		// set HRE stuff
-		auto capitalItr = provinces.find(country.second->getCapital());
-		if ((capitalItr != provinces.end()) && (capitalItr->second->inHre()))
+		if ((country.second->getCapital() != 0) && (provinces->getProvince(country.second->getCapital()).inHre()))
 		{
 			country.second->setInHRE(true);
 		}
@@ -1147,10 +1096,9 @@ std::shared_ptr<EU4::Country> EU4::world::getCountry(std::string tag) const
 }
 
 
-EU4::Province* EU4::world::getProvince(const int provNum) const
+const EU4::Province& EU4::world::getProvince(int provNum) const
 {
-	map<int, EU4::Province*>::const_iterator i = provinces.find(provNum);
-	return (i != provinces.end()) ? i->second : NULL;
+	return provinces->getProvince(provNum);
 }
 
 

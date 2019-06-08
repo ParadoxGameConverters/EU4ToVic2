@@ -29,6 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "EU4Army.h"
 #include "EU4Diplomacy.h"
 #include "EU4Version.h"
+#include "Provinces/Provinces.h"
 #include "Regions/Regions.h"
 #include "Religions/Religions.h"
 #include "../Mappers/CultureMapper.h"
@@ -51,7 +52,7 @@ class world: private commonItems::parser
 	public:
 		world(const std::string& EU4SaveFileName);
 
-		Province* getProvince(int provNum) const;
+		const Province& getProvince(int provNum) const;
 
 		void checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const;
 		void checkAllEU4ReligionsMapped(const mappers::ReligionMapper& religionMapper) const;
@@ -79,8 +80,6 @@ class world: private commonItems::parser
 		void loadHolyRomanEmperor(vector<shared_ptr<Object>> empireObj);
 		void loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpireObj);
 
-
-		void loadProvinces(const shared_ptr<Object> EU4SaveObj);
 		map<int, int> determineValidProvinces();
 
 		void loadCountries(istream& theStream);
@@ -103,8 +102,6 @@ class world: private commonItems::parser
 		void mergeNations();
 		void uniteJapan();
 
-		void checkAllProvincesMapped() const;
-
 		void importReligions();
 
 		void removeEmptyNations();
@@ -118,7 +115,7 @@ class world: private commonItems::parser
 		string holyRomanEmperor;
 		string celestialEmperor;
 		std::unique_ptr<Regions> regions;
-		map<int, Province*> provinces;
+		std::unique_ptr<Provinces> provinces;
 		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
 		EU4Diplomacy* diplomacy;
 		std::unique_ptr<EU4::Version> version;

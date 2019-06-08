@@ -52,8 +52,6 @@ class Province: commonItems::parser
 		void addCore(const std::string& tag) { cores.insert(tag); }
 		void removeCore(const std::string& tag) { cores.erase(tag); }
 
-		void determineProvinceWeight();
-
 		bool wasInfidelConquest(const std::string& ownerReligion, const EU4::Religions& allReligions) const;
 		bool hasBuilding(const std::string& building) const;
 		double getCulturePercent(const std::string& culture) const;
@@ -81,6 +79,7 @@ class Province: commonItems::parser
 		std::string getTradeGoods() const { return tradeGoods; }
 
 	private:
+		void determineProvinceWeight();
 		std::vector<double> getProvBuildingWeight() const;
 		double getTradeGoodWeight() const;
 		double getTradeGoodPrice() const;
