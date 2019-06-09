@@ -155,7 +155,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 	if (cultureEvent != cultureHistory.end())
 	{
 		startingCulture = cultureEvent->second;
-		cultureEvent++;
+		++cultureEvent;
 	}
 
 	std::string startingReligion;
@@ -163,7 +163,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 	if (religionEvent != religionHistory.end())
 	{
 		startingReligion = religionEvent->second;
-		religionEvent++;
+		++religionEvent;
 	}
 
 	EU4::PopRatio currentRatio(startingCulture, startingReligion);
