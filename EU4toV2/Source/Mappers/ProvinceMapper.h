@@ -26,11 +26,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "ProvinceMappings/ProvinceMappingsVersion.h"
+#include "../Configuration.h"
+#include "newParser.h"
 #include <map>
 #include <memory>
 #include <unordered_set>
 #include <vector>
-using namespace std;
 
 
 
@@ -47,22 +49,26 @@ class Object;
 namespace mappers
 {
 
-class ProvinceMapper
+class ProvinceMapper: commonItems::parser
 {
 	public:
-		ProvinceMapper(shared_ptr<Object> obj);
+		ProvinceMapper(std::istream& theStream, const Configuration& configuration);
 
-		const std::vector<int> getVic2ProvinceNumbers(int EU4ProvinceNumber) const;
-		const std::vector<int> getEU4ProvinceNumbers(int Vic2ProvinceNumber) const;
-		bool isProvinceResettable(int Vic2ProvinceNumber) const;
+		std::vector<int> getVic2ProvinceNumbers(int EU4ProvinceNumber) const;
+		std::vector<int> getEU4ProvinceNumbers(int Vic2ProvinceNumber) const;
+		bool isProvinceResettable(int Vic2ProvinceNumber, const std::string& region) const;
 
 	private:
-		int getMappingsIndex(vector<shared_ptr<Object>> versions);
-		void createMappings(shared_ptr<Object> mapping);
+		ProvinceMappingsVersion getMappingsVersion(
+			const std::map<EU4::Version, ProvinceMappingsVersion>& mappingsVersions,
+			const Configuration& configuration
+		);
+		void createMappings(const ProvinceMappingsVersion& provinceMappingsVersion);
+		void addProvincesToResettableRegion(const std::string& regionName, const std::vector<int>& provinces);
 
-		map<int, vector<int>> Vic2ToEU4ProvinceMap;
-		map<int, vector<int>> EU4ToVic2ProvinceMap;
-		unordered_set<int> resettableProvinces;
+		std::map<int, std::vector<int>> Vic2ToEU4ProvinceMap;
+		std::map<int, std::vector<int>> EU4ToVic2ProvinceMap;
+		std::map<std::string, std::set<int>> resettableProvinces;
 };
 
 }

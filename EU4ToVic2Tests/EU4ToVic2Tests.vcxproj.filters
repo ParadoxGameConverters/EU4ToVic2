@@ -200,6 +200,12 @@
     <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceMapperTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMapper.cpp">
+      <Filter>ConverterFiles\Mappers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">

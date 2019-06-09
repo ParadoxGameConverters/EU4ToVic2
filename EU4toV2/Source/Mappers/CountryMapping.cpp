@@ -278,7 +278,7 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 	auto potentialVic2Capitals = provinceMapper.getVic2ProvinceNumbers(EU4Capital);
 	if (potentialVic2Capitals.size() > 0)
 	{
-		Vic2Capital = potentialVic2Capitals[0];
+		Vic2Capital = *potentialVic2Capitals.begin();
 	}
 
 	for (auto colony: mappers::colonialTagMapper::getColonyMap())

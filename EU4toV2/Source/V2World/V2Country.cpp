@@ -564,7 +564,7 @@ void V2Country::initFromEU4Country(
 	auto potentialCapitals = provinceMapper.getVic2ProvinceNumbers(oldCapital);
 	if (potentialCapitals.size() > 0)
 	{
-		capital = potentialCapitals[0];
+		capital = *potentialCapitals.begin();
 	}
 
 	// in HRE
@@ -1015,35 +1015,35 @@ static set<int> getPortBlacklist()
 }
 
 
-vector<int> V2Country::getPortProvinces(vector<int> locationCandidates, map<int, V2Province*> allProvinces)
-{
-	set<int> port_blacklist = getPortBlacklist();
+std::vector<int> V2Country::getPortProvinces(
+	const std::vector<int>& locationCandidates,
+	std::map<int, V2Province*> allProvinces
+) {
+	std::set<int> port_blacklist = getPortBlacklist();
 
-	vector<int> unblockedCandidates;
-	for (vector<int>::iterator litr = locationCandidates.begin(); litr != locationCandidates.end(); ++litr)
+	std::vector<int> unblockedCandidates;
+	for (auto candidate: locationCandidates)
 	{
-		auto black = port_blacklist.find(*litr);
-		if (black == port_blacklist.end())
+		if (port_blacklist.count(candidate) == 0)
 		{
-			unblockedCandidates.push_back(*litr);
+			unblockedCandidates.push_back(candidate);
 		}
 	}
-	locationCandidates.swap(unblockedCandidates);
 
-	for (vector<int>::iterator litr = locationCandidates.begin(); litr != locationCandidates.end(); ++litr)
+	std::vector<int> coastalProvinces;
+	for (auto& candidate: unblockedCandidates)
 	{
-		map<int, V2Province*>::iterator pitr = allProvinces.find(*litr);
-		if (pitr != allProvinces.end())
+		std::map<int, V2Province*>::iterator province = allProvinces.find(candidate);
+		if (province != allProvinces.end())
 		{
-			if (!pitr->second->isCoastal())
+			if (province->second->isCoastal())
 			{
-				locationCandidates.erase(litr);
-				--pitr;
-				break;
+				coastalProvinces.push_back(candidate);
 			}
 		}
 	}
-	return locationCandidates;
+
+	return coastalProvinces;
 }
 
 
@@ -1056,12 +1056,12 @@ void V2Country::addState(V2State* newState)
 	states.push_back(newState);
 	vector<V2Province*> newProvinces = newState->getProvinces();
 
-	vector<int> newProvinceNums;
-	for (const auto& province : newProvinces)
+	std::vector<int> newProvinceNums;
+	for (const auto& province: newProvinces)
 	{
 		newProvinceNums.push_back(province->getNum());
 	}
-	vector<int> portProvinces = getPortProvinces(newProvinceNums, provinces);
+	auto portProvinces = getPortProvinces(newProvinceNums, provinces);
 
 	for (unsigned int i = 0; i < newProvinces.size(); i++)
 	{
@@ -1176,7 +1176,7 @@ void V2Country::convertArmies(
 			}
 			continue;
 		}
-		else if ((locationCandidates.size() == 1) && (locationCandidates[0] == 0))
+		else if ((locationCandidates.size() == 1) && (*locationCandidates.begin() == 0))
 		{
 			LOG(LogLevel::Warning) << "Army or Navy " << (*aitr)->getName() << " assigned to dropped province " << (*aitr)->getLocation() << "; dissolving to pool";
 			int regimentCounts[num_reg_categories] = { 0 };
@@ -1191,7 +1191,7 @@ void V2Country::convertArmies(
 		// guarantee that navies are assigned to sea provinces, or land provinces with naval bases
 		if (army->getNavy())
 		{
-			map<int, V2Province*>::iterator pitr = allProvinces.find(locationCandidates[0]);
+			map<int, V2Province*>::iterator pitr = allProvinces.find(*locationCandidates.begin());
 			if (pitr != allProvinces.end())
 			{
 				usePort = true;
@@ -1212,6 +1212,7 @@ void V2Country::convertArmies(
 				}
 			}
 		}
+
 		int selectedLocation = locationCandidates[int(locationCandidates.size() * ((double)rand() / RAND_MAX))];
 		if (army->getNavy() && usePort)
 		{
@@ -1963,7 +1964,7 @@ int V2Country::addRegimentToArmy(
 		army->getSourceArmy()->blockHomeProvince(eu4Home);
 		return -1;
 	}
-	if (homeCandidates[0] == 0)
+	if (*homeCandidates.begin() == 0)
 	{
 		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army->getName() << " has dropped home province " << eu4Home << " - dissolving to pool";
 		army->getSourceArmy()->blockHomeProvince(eu4Home);
@@ -1976,7 +1977,9 @@ int V2Country::addRegimentToArmy(
 		homeCandidates = getPortProvinces(homeCandidates, allProvinces);
 		if (homeCandidates.size() != 0)
 		{
-			int homeProvinceID = homeCandidates[int(homeCandidates.size() * ((double)rand() / RAND_MAX))];
+			std::vector<int>::const_iterator it(homeCandidates.begin());
+			std::advance(it, int(homeCandidates.size() * ((double)rand() / RAND_MAX)));
+			int homeProvinceID = *it;
 			map<int, V2Province*>::iterator pitr = allProvinces.find(homeProvinceID);
 			if (pitr != allProvinces.end())
 			{
@@ -1987,10 +1990,10 @@ int V2Country::addRegimentToArmy(
 	else
 	{
 		// Armies should get a home in the candidate most capable of supporting them
-		vector<V2Province*> sortedHomeCandidates;
-		for (vector<int>::iterator nitr = homeCandidates.begin(); nitr != homeCandidates.end(); ++nitr)
+		std::vector<V2Province*> sortedHomeCandidates;
+		for (auto candidate: homeCandidates)
 		{
-			map<int, V2Province*>::iterator pitr = allProvinces.find(*nitr);
+			std::map<int, V2Province*>::iterator pitr = allProvinces.find(candidate);
 			if (pitr != allProvinces.end())
 			{
 				sortedHomeCandidates.push_back(pitr->second);
