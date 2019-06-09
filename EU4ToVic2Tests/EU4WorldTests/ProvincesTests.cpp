@@ -23,6 +23,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "gtest/gtest.h"
 #include "../EU4toV2/Source/EU4World/Provinces/Provinces.h"
+#include "../EU4toV2/Source/Mappers/ProvinceMappings/ProvinceMapper.h"
 #include <sstream>
 
 
@@ -79,4 +80,27 @@ TEST(EU4World_ProvincesTests, canGetProvince)
 }
 
 
-// check all provinces mapped has invisible side effects (logging), so is untested
+TEST(EU4World_ProvincesTests, checkAllProvincesMappedNotesMissingProvince)
+{
+	std::stringstream input;
+	input << "={\n";
+	input << "={\n";
+	input << "-1={}";
+	input << "}\n";
+	input << "}";
+	EU4::Provinces theProvinces(input);
+
+	std::stringstream provinceMapperInput;
+	provinceMapperInput << "0.0.0.0 = {\n";
+	provinceMapperInput << "}";
+	Configuration testConfig;
+	mappers::ProvinceMapper mapper(provinceMapperInput, testConfig);
+
+	std::stringstream buffer;
+	std::streambuf* sbuf = std::cout.rdbuf();
+	std::cout.rdbuf(buffer.rdbuf());
+	theProvinces.checkAllProvincesMapped(mapper);
+	std::cout.rdbuf(sbuf);
+
+	ASSERT_EQ(buffer.str(), "No mapping for province 1\n");
+}

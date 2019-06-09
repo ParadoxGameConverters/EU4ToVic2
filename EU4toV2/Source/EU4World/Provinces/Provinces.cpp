@@ -21,7 +21,7 @@ THE SOFTWARE. */
 
 
 #include "Provinces.h"
-//#include "Log.h"
+#include "Log.h"
 #include <stdexcept>
 #include <string>
 
@@ -52,7 +52,7 @@ EU4::Province& EU4::Provinces::getProvince(int provinceNumber)
 }
 
 
-/*void EU4::Provinces::checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const
+void EU4::Provinces::checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const
 {
 	for (auto& province: provinces)
 	{
@@ -62,4 +62,4 @@ EU4::Province& EU4::Provinces::getProvince(int provinceNumber)
 			LOG(LogLevel::Warning) << "No mapping for province " << province.first;
 		}
 	}
-}*/
+}

@@ -26,7 +26,7 @@ THE SOFTWARE. */
 
 
 #include "EU4Province.h"
-//#include "../../Mappers/ProvinceMapper.h"
+#include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "newParser.h"
 #include <map>
 #include <optional>
@@ -45,7 +45,7 @@ class Provinces: commonItems::parser
 
 		auto& getAllProvinces() { return provinces; }
 
-		//void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
+		void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
 
 	private:
 		std::map<int, Province> provinces;
