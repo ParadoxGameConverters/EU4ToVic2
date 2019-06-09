@@ -28,6 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "newParser.h"
 #include <set>
+#include <string>
 
 
 
@@ -39,12 +40,14 @@ class ProvinceMapping: commonItems::parser
 	public:
 		ProvinceMapping(std::istream& theStream);
 
-		std::set<int> getEU4Provinces() const { return EU4Provinces; }
-		std::set<int> getVic2Provinces() const { return Vic2Provinces; }
+		std::vector<int> getEU4Provinces() const { return EU4Provinces; }
+		std::vector<int> getVic2Provinces() const { return Vic2Provinces; }
+		std::set<std::string> getResettableRegions() const { return resettableRegions; }
 
 	private:
-		std::set<int> EU4Provinces;
-		std::set<int> Vic2Provinces;
+		std::vector<int> EU4Provinces;
+		std::vector<int> Vic2Provinces;
+		std::set<std::string> resettableRegions;
 };
 
 }
