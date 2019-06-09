@@ -776,7 +776,7 @@ void V2Country::initFromEU4Country(
 	int numColleges	= 0;
 	vector<EU4::Province*> provinces = srcCountry->getProvinces();
 	numProvinces = provinces.size();
-	for (vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); i++)
+	for (vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
 	{
 		if ( (*i)->hasBuilding("college") )
 		{
@@ -1115,7 +1115,7 @@ void V2Country::addState(V2State* newState)
 void V2Country::convertArmies(
 	const std::map<int,int>& leaderIDMap,
 	double cost_per_regiment[num_reg_categories],
-	std::map<int, V2Province*> allProvinces,
+	const std::map<int, V2Province*>& allProvinces,
 	std::vector<int> port_whitelist,
 	const mappers::ProvinceMapper& provinceMapper
 ) {
@@ -1191,7 +1191,7 @@ void V2Country::convertArmies(
 		// guarantee that navies are assigned to sea provinces, or land provinces with naval bases
 		if (army->getNavy())
 		{
-			map<int, V2Province*>::iterator pitr = allProvinces.find(*locationCandidates.begin());
+			auto pitr = allProvinces.find(*locationCandidates.begin());
 			if (pitr != allProvinces.end())
 			{
 				usePort = true;

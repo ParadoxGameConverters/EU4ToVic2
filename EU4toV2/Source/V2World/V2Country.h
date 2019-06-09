@@ -90,7 +90,7 @@ class V2Country
 		void convertArmies(
 			const std::map<int,int>& leaderIDMap,
 			double cost_per_regiment[num_reg_categories],
-			std::map<int, V2Province*> allProvinces,
+			const std::map<int, V2Province*>& allProvinces,
 			std::vector<int> port_whitelist,
 			const mappers::ProvinceMapper& provinceMapper
 		);
