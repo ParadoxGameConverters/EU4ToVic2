@@ -31,7 +31,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/EU4Country.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "CK2TitleMapper.h"
-#include "ProvinceMapper.h"
+#include "ProvinceMappings/ProvinceMapper.h"
 #include "../V2World/Vic2Regions.h"
 #include "../V2World/V2Country.h"
 #include "Log.h"

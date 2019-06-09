@@ -45,7 +45,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/IdeaEffectMapper.h"
-#include "../Mappers/ProvinceMapper.h"
+#include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2World.h"
 #include "V2State.h"
 #include "V2Province.h"

@@ -29,7 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "ParadoxParser8859_15.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
-#include "../Mappers/ProvinceMapper.h"
+#include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2Pop.h"
 #include "V2Country.h"
 #include "V2Factory.h"

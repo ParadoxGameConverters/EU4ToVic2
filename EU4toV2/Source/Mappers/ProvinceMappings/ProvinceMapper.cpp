@@ -22,9 +22,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "ProvinceMapper.h"
-#include "ProvinceMappings/ProvinceMappingsVersion.h"
-#include "../Configuration.h"
-#include "../EU4World/EU4Version.h"
+#include "ProvinceMappingsVersion.h"
+#include "../../Configuration.h"
+#include "../../EU4World/EU4Version.h"
 #include "Log.h"
 #include <stdexcept>
 

@@ -186,7 +186,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMappingRule.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper.cpp" />
