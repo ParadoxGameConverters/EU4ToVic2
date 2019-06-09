@@ -203,8 +203,8 @@
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMapper.cpp">
-      <Filter>ConverterFiles\Mappers</Filter>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp">
+      <Filter>ConverterFiles\Mappers\ProvinceMappings</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

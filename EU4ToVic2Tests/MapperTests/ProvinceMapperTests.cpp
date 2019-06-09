@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/Mappers/ProvinceMapper.h"
+#include "../EU4toV2/Source/Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../EU4toV2/Source/Configuration.h"
 #include <sstream>
 

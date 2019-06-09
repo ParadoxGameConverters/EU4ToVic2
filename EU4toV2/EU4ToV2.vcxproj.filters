@@ -129,9 +129,6 @@
     <ClCompile Include="..\common_items\ParserHelpers.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\ProvinceMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Regions\Region.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
@@ -250,6 +247,9 @@
       <Filter>Mappers\ProvinceMappings</Filter>
     </ClCompile>
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp">
+      <Filter>Mappers\ProvinceMappings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp">
       <Filter>Mappers\ProvinceMappings</Filter>
     </ClCompile>
   </ItemGroup>
@@ -382,9 +382,6 @@
     <ClInclude Include="..\common_items\ParserHelpers.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\ProvinceMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Regions.h">
       <Filter>EU4World\Regions</Filter>
     </ClInclude>
@@ -500,6 +497,9 @@
       <Filter>Mappers\ProvinceMappings</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h">
+      <Filter>Mappers\ProvinceMappings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h">
       <Filter>Mappers\ProvinceMappings</Filter>
     </ClInclude>
   </ItemGroup>

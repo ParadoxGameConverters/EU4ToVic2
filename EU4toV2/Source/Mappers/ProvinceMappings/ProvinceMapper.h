@@ -26,8 +26,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include "ProvinceMappings/ProvinceMappingsVersion.h"
-#include "../Configuration.h"
+#include "ProvinceMappingsVersion.h"
+#include "../../Configuration.h"
 #include "newParser.h"
 #include <map>
 #include <memory>

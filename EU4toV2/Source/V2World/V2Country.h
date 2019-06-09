@@ -33,7 +33,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/EU4Army.h"
 #include "../EU4World/Regions/Regions.h"
 #include "../Mappers/CultureMapper.h"
-#include "../Mappers/ProvinceMapper.h"
+#include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include <memory>
 #include <set>
