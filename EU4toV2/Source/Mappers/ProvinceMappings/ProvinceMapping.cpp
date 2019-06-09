@@ -30,11 +30,15 @@ mappers::ProvinceMapping::ProvinceMapping(std::istream& theStream)
 {
 	registerKeyword(std::regex("eu4"), [this](const std::string & unused, std::istream & theStream) {
 		commonItems::singleInt provinceInt(theStream);
-		EU4Provinces.insert(provinceInt.getInt());
+		EU4Provinces.push_back(provinceInt.getInt());
 	});
 	registerKeyword(std::regex("v2"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleInt provinceInt(theStream);
-		Vic2Provinces.insert(provinceInt.getInt());
+		Vic2Provinces.push_back(provinceInt.getInt());
+	});
+	registerKeyword(std::regex("resettable"), [this](const std::string& unused, std::istream& theStream){
+		commonItems::singleString regionString(theStream);
+		resettableRegions.insert(regionString.getString());
 	});
 
 	parseStream(theStream);
