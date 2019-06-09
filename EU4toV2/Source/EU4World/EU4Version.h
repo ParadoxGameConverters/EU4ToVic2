@@ -29,6 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "newParser.h"
 #include <string>
 #include <memory>
+#include <ostream>
 
 
 
@@ -54,6 +55,8 @@ class Version: commonItems::parser
 		bool operator <= (const Version& rhs) const;
 		bool operator == (const Version& rhs) const;
 		bool operator != (const Version& rhs) const;
+
+		friend std::ostream& operator<<(std::ostream&, const Version& version);
 
 	private:
 		int firstPart = 0;

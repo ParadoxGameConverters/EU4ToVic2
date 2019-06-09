@@ -41,12 +41,12 @@ TEST(Mappers_ProvinceMappingTests, EU4ProvincesDefaultToEmpty)
 TEST(Mappers_ProvinceMappingTests, EU4ProvinceCanBeAdded)
 {
 	std::stringstream input;
-	input << "= { eu4 = 1 eu4 = 2 }";
+	input << "= { eu4 = 2 eu4 = 1 }";
 
 	mappers::ProvinceMapping theMapper(input);
 
-	ASSERT_EQ(theMapper.getEU4Provinces().count(1), 1);
-	ASSERT_EQ(theMapper.getEU4Provinces().count(2), 1);
+	ASSERT_EQ(theMapper.getEU4Provinces()[0], 2);
+	ASSERT_EQ(theMapper.getEU4Provinces()[1], 1);
 }
 
 
@@ -64,10 +64,33 @@ TEST(Mappers_ProvinceMappingTests, Vic2ProvincesDefaultToEmpty)
 TEST(Mappers_ProvinceMappingTests, Vic2ProvinceCanBeAdded)
 {
 	std::stringstream input;
-	input << "= { v2 = 1 v2 = 2 }";
+	input << "= { v2 = 2 v2 = 1 }";
 
 	mappers::ProvinceMapping theMapper(input);
 
-	ASSERT_EQ(theMapper.getVic2Provinces().count(1), 1);
-	ASSERT_EQ(theMapper.getVic2Provinces().count(2), 1);
+	ASSERT_EQ(theMapper.getVic2Provinces()[0], 2);
+	ASSERT_EQ(theMapper.getVic2Provinces()[1], 1);
+}
+
+
+TEST(Mappers_ProvinceMappingTests, resettableRegionsDefaultsToEmpty)
+{
+	std::stringstream input;
+	input << "= {}";
+
+	mappers::ProvinceMapping theMapper(input);
+
+	ASSERT_EQ(theMapper.getResettableRegions().size(), 0);
+}
+
+
+TEST(Mappers_ProvinceMappingTests, resettableRegionsCanBeAdded)
+{
+	std::stringstream input;
+	input << "= { resettable = regionOne resettable = regionTwo }";
+
+	mappers::ProvinceMapping theMapper(input);
+
+	ASSERT_EQ(theMapper.getResettableRegions().count("regionOne"), 1);
+	ASSERT_EQ(theMapper.getResettableRegions().count("regionTwo"), 1);
 }

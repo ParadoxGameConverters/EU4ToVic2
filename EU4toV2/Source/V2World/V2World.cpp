@@ -454,14 +454,9 @@ void V2World::initializeReligionMapper(const EU4::world& sourceWorld)
 void V2World::initializeProvinceMapper()
 {
 	LOG(LogLevel::Info) << "Parsing province mappings";
-	shared_ptr<Object> provinceMappingObj = parser_UTF8::doParseFile("province_mappings.txt");
-	if (provinceMappingObj == NULL)
-	{
-		LOG(LogLevel::Error) << "Could not parse file province_mappings.txt";
-		exit(-1);
-	}
-
-	provinceMapper = std::make_unique<mappers::ProvinceMapper>(provinceMappingObj);
+	std::ifstream mappingsFile("province_mappings.txt");
+	provinceMapper = std::make_unique<mappers::ProvinceMapper>(mappingsFile, theConfiguration);
+	mappingsFile.close();
 }
 
 
@@ -717,13 +712,13 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 			LOG(LogLevel::Warning) << "No source for " << Vic2Province.second->getName() << " (province " << Vic2Province.first << ')';
 			continue;
 		}
-		else if (EU4ProvinceNumbers[0] == 0)
+		else if (*EU4ProvinceNumbers.begin() == 0)
 		{
 			continue;
 		}
 		else if (
 			(theConfiguration.getResetProvinces() == "yes") &&
-			provinceMapper->isProvinceResettable(Vic2Province.first)
+			provinceMapper->isProvinceResettable(Vic2Province.first, "resettableRegion")
 		) {
 			Vic2Province.second->setResettable(true);
 			continue;

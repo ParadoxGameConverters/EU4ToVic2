@@ -22,107 +22,99 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "ProvinceMapper.h"
-#include "Log.h"
-#include "Object.h"
-#include "ParadoxParserUTF8.h"
+#include "ProvinceMappings/ProvinceMappingsVersion.h"
 #include "../Configuration.h"
 #include "../EU4World/EU4Version.h"
+#include "Log.h"
+#include <stdexcept>
 
 
 
-mappers::ProvinceMapper::ProvinceMapper(shared_ptr<Object> obj)
+mappers::ProvinceMapper::ProvinceMapper(std::istream& theStream, const Configuration& configuration)
 {
-	vector<shared_ptr<Object>> versions = obj->getLeaves();
-	if (versions.size() < 1)
-	{
-		LOG(LogLevel::Error) << "No province mapping definitions loaded";
-		return;
-	}
+	std::map<EU4::Version, ProvinceMappingsVersion> mappingVersions;
+	registerKeyword(std::regex("[0-9\\.]+"), [&mappingVersions](const std::string& versionString, std::istream& theStream){
+		ProvinceMappingsVersion version(versionString, theStream);
+		mappingVersions.insert(std::make_pair(version.getVersion(), version));
+	});
 
-	unsigned int mappingsIdx = getMappingsIndex(versions);
-	auto mappings = versions[mappingsIdx]->getLeaves();
-	for (auto mapping: mappings)
-	{
-		createMappings(mapping);
-	}
+	parseStream(theStream);
+
+	ProvinceMappingsVersion mappings = getMappingsVersion(mappingVersions, configuration);
+	createMappings(mappings);
 }
 
 
-int mappers::ProvinceMapper::getMappingsIndex(vector<shared_ptr<Object>> versions)
-{
-	unsigned int mappingsIdx;
-
-	EU4::Version saveVersion = theConfiguration.getEU4Version();
-	for (mappingsIdx = 0; mappingsIdx < versions.size(); mappingsIdx++)
+mappers::ProvinceMappingsVersion mappers::ProvinceMapper::getMappingsVersion(
+	const std::map<EU4::Version, ProvinceMappingsVersion>& mappingsVersions,
+	const Configuration& configuration
+) {
+	EU4::Version saveVersion = configuration.getEU4Version();
+	for (auto mappingsVersion = mappingsVersions.rbegin(); mappingsVersion != mappingsVersions.rend(); mappingsVersion++)
 	{
-		if (saveVersion >= EU4::Version(versions[mappingsIdx]->getKey()))
+		if (saveVersion >= mappingsVersion->first)
 		{
-			break;
+			LOG(LogLevel::Debug) << "Using version " << mappingsVersion->first << " mappings";
+			return mappingsVersion->second;
 		}
 	}
-	LOG(LogLevel::Debug) << "Using version " << versions[mappingsIdx]->getKey() << " mappings";
 
-	return mappingsIdx;
+	std::range_error exception("Could not find matching province mappings for EU4 version");
+	throw exception;
 }
 
 
-void mappers::ProvinceMapper::createMappings(shared_ptr<Object> mapping)
+void mappers::ProvinceMapper::createMappings(const ProvinceMappingsVersion& provinceMappingsVersion)
 {
-	vector<int> EU4Numbers;
-	vector<int> Vic2Numbers;
-	bool resettable = false;
-
-	for (auto mappingItem: mapping->getLeaves())
+	for (auto mapping: provinceMappingsVersion.getMappings())
 	{
-		if (mappingItem->getKey() == "eu4")
+		for (auto Vic2Number: mapping.getVic2Provinces())
 		{
-			EU4Numbers.push_back(stoi(mappingItem->getLeaf()));
-		}
-		else if (mappingItem->getKey() == "v2")
-		{
-			Vic2Numbers.push_back(stoi(mappingItem->getLeaf()));
-		}
-		else if (mappingItem->getKey() == "resettable")
-		{
-			resettable = true;
-		}
-		else
-		{
-			LOG(LogLevel::Warning) << "Unknown data while mapping provinces";
-		}
-	}
-
-	if (EU4Numbers.size() == 0)
-	{
-		EU4Numbers.push_back(0);
-	}
-	if (Vic2Numbers.size() == 0)
-	{
-		Vic2Numbers.push_back(0);
-	}
-
-	for (auto Vic2Number: Vic2Numbers)
-	{
-		if (Vic2Number != 0)
-		{
-			Vic2ToEU4ProvinceMap.insert(make_pair(Vic2Number, EU4Numbers));
-			if (resettable)
+			if (Vic2Number != 0)
 			{
-				resettableProvinces.insert(Vic2Number);
+				Vic2ToEU4ProvinceMap.insert(std::make_pair(Vic2Number, mapping.getEU4Provinces()));
 			}
 		}
-	}
-	for (auto EU4Number: EU4Numbers)
-	{
-		if (EU4Number != 0)
+		for (auto EU4Number: mapping.getEU4Provinces())
 		{
-			EU4ToVic2ProvinceMap.insert(make_pair(EU4Number, Vic2Numbers));
+			if (EU4Number != 0)
+			{
+				EU4ToVic2ProvinceMap.insert(std::make_pair(EU4Number, mapping.getVic2Provinces()));
+			}
+		}
+		for (auto resettableRegion: mapping.getResettableRegions())
+		{
+			addProvincesToResettableRegion(resettableRegion, mapping.getVic2Provinces());
 		}
 	}
 }
 
 
-const vector<int> mappers::ProvinceMapper::getVic2ProvinceNumbers(const int EU4ProvinceNumber) const
+void mappers::ProvinceMapper::addProvincesToResettableRegion(
+	const std::string& regionName,
+	const std::vector<int>& provinces
+) {
+	auto region = resettableProvinces.find(regionName);
+	if (region == resettableProvinces.end())
+	{
+		std::set<int> provincesSet;
+		for (auto province : provinces)
+		{
+			provincesSet.insert(province);
+		}
+		resettableProvinces.insert(std::make_pair(regionName, provincesSet));
+	}
+	else
+	{
+		for (auto province: provinces)
+		{
+			region->second.insert(province);
+		}
+	}
+}
+
+
+std::vector<int> mappers::ProvinceMapper::getVic2ProvinceNumbers(const int EU4ProvinceNumber) const
 {
 	auto mapping = EU4ToVic2ProvinceMap.find(EU4ProvinceNumber);
 	if (mapping != EU4ToVic2ProvinceMap.end())
@@ -131,13 +123,13 @@ const vector<int> mappers::ProvinceMapper::getVic2ProvinceNumbers(const int EU4P
 	}
 	else
 	{
-		vector<int> empty;
+		std::vector<int> empty;
 		return empty;
 	}
 }
 
 
-const vector<int> mappers::ProvinceMapper::getEU4ProvinceNumbers(int Vic2ProvinceNumber) const
+std::vector<int> mappers::ProvinceMapper::getEU4ProvinceNumbers(int Vic2ProvinceNumber) const
 {
 	auto mapping = Vic2ToEU4ProvinceMap.find(Vic2ProvinceNumber);
 	if (mapping != Vic2ToEU4ProvinceMap.end())
@@ -146,20 +138,19 @@ const vector<int> mappers::ProvinceMapper::getEU4ProvinceNumbers(int Vic2Provinc
 	}
 	else
 	{
-		vector<int> empty;
+		std::vector<int> empty;
 		return empty;
 	}
 }
 
 
-bool mappers::ProvinceMapper::isProvinceResettable(int Vic2ProvinceNumber) const
+bool mappers::ProvinceMapper::isProvinceResettable(int Vic2ProvinceNumber, const std::string& region) const
 {
-	if (resettableProvinces.count(Vic2ProvinceNumber) > 0)
-	{
-		return true;
-	}
-	else
+	auto regionProvinces = resettableProvinces.find(region);
+	if (regionProvinces == resettableProvinces.end())
 	{
 		return false;
 	}
+
+	return (regionProvinces->second.count(Vic2ProvinceNumber) > 0);
 }

@@ -186,3 +186,13 @@ bool EU4::Version::operator != (const EU4::Version& rhs) const
 			(thirdPart != rhs.thirdPart) ||
 			(fourthPart != rhs.fourthPart));
 }
+
+
+std::ostream& EU4::operator<<(std::ostream& out, const EU4::Version& version)
+{
+	out << version.firstPart << '.';
+	out << version.secondPart << '.';
+	out << version.thirdPart << '.';
+	out << version.fourthPart;
+	return out;
+}
