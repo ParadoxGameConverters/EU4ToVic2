@@ -6,6 +6,7 @@ IMPORTANT LINKS
 
 Forum thread: http://forum.paradoxplaza.com/forum/showthread.php?707362-The-EU4-to-V2-Converter-Project
 Github project: https://github.com/Idhrendur/paradoxGameConverters
+Windows development build: https://github.com/ParadoxGameConverters/EU4toVic2/releases/tag/windows_development_build
 
 ----
 REQUIREMENTS
