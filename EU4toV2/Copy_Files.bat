@@ -2,6 +2,7 @@ echo on
 rem Copy converter data files
 copy "Data_Files\configuration.txt" "..\Release\EU4toVic2\configuration.txt"
 copy "Data_Files\readme.txt" "..\Release\EU4toVic2\readme.txt"
+copy "Data_Files\readme.txt" "..\Release\readme.txt"
 copy "Data_Files\merge_nations.txt" "..\Release\EU4toVic2\merge_nations.txt"
 copy "Data_Files\starting_factories.txt" "..\Release\EU4toVic2\starting_factories.txt
 copy "Data_Files\province_mappings.txt" "..\Release\EU4toVic2\province_mappings.txt
