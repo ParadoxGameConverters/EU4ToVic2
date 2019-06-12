@@ -121,10 +121,13 @@ void V2World::importProvinces()
 }
 
 
-set<string> V2World::discoverProvinceFilenames()
+std::set<std::string> V2World::discoverProvinceFilenames()
 {
-	set<string> provinceFilenames;
-	Utils::GetAllFilesInFolderRecursive("./blankMod/output/history/provinces", provinceFilenames);
+	std::set<std::string> provinceFilenames;
+	if (Utils::doesFolderExist("./blankMod/output/history/provinces"))
+	{
+		Utils::GetAllFilesInFolderRecursive("./blankMod/output/history/provinces", provinceFilenames);
+	}
 	if (provinceFilenames.empty())
 	{
 		Utils::GetAllFilesInFolderRecursive(theConfiguration.getVic2Path() + "/history/provinces", provinceFilenames);
@@ -1884,10 +1887,11 @@ void V2World::output() const
 	fclose(localisationFile);
 
 	LOG(LogLevel::Debug) << "Writing provinces";
-	for (map<int, V2Province*>::const_iterator i = provinces.begin(); i != provinces.end(); i++)
+	Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/history/provinces");
+	for (auto province: provinces)
 	{
-		i->second->output();
-		LOG(LogLevel::Debug) << "province " << i->second->getName() << " has " << i->second->getNavalBaseLevel() << " naval base";	//test
+		province.second->output();
+		LOG(LogLevel::Debug) << "province " << province.second->getName() << " has " << province.second->getNavalBaseLevel() << " naval base";
 	}
 	LOG(LogLevel::Debug) << "Writing countries";
 	for (map<string, V2Country*>::const_iterator itr = countries.begin(); itr != countries.end(); itr++)

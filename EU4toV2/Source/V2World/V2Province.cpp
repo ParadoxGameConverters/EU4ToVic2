@@ -34,6 +34,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Country.h"
 #include "V2Factory.h"
 #include <algorithm>
+#include <fstream>
 #include <memory>
 #include <sstream>
 #include <stdio.h>
@@ -174,65 +175,66 @@ V2Province::V2Province(string _filename)
 
 void V2Province::output() const
 {
-	FILE* output;
-	if (fopen_s(&output, ("Output/" + theConfiguration.getOutputName() + "/history/provinces" + filename).c_str(), "w") != 0)
+	int lastSlash = filename.find_last_of('/');
+	std::string path = filename.substr(0, lastSlash);
+	Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/history/provinces" + path);
+
+	std::ofstream output("Output/" + theConfiguration.getOutputName() + "/history/provinces" + filename);
+	if (!output.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not create province history file Output/" << theConfiguration.getOutputName() << "/history/provinces/" << filename << " - " << Utils::GetLastErrorString();
 		exit(-1);
 	}
 	if (owner != "")
 	{
-		fprintf_s(output, "owner=%s\n", owner.c_str());
-		fprintf_s(output, "controller=%s\n", owner.c_str());
+		output << "owner=" << owner << "\n";
+		output << "controller=" << owner << "\n";
 	}
-	for (unsigned int i = 0; i < cores.size(); i++)
+	for (auto core: cores)
 	{
-		fprintf_s(output, "add_core=%s\n", cores[i].c_str());
+		output << "add_core=" << core << "\n";
 	}
 	if (inHRE)
 	{
-		fprintf_s(output, "add_core=HRE\n");
+		output << "add_core=HRE\n";
 	}
 	if (rgoType != "")
 	{
-		fprintf_s(output, "trade_goods = %s\n", rgoType.c_str());
+		output << "trade_goods = " << rgoType << "\n";
 	}
 	if (lifeRating > 0)
 	{
-		fprintf_s(output, "life_rating = %d\n", lifeRating);
+		output << "life_rating = " << lifeRating << "\n";
 	}
 	if (terrain != "")
 	{
-		fprintf_s(output, "terrain = %s\n", terrain.c_str());
+		output << "terrain = " << terrain << "\n";
 	}
 	if (colonial > 0)
 	{
-		fprintf(output, "colonial=%d\n", colonial);
+		output << "colonial=" << colonial << "\n";
 	}
 	if (navalBaseLevel > 0)
 	{
-		fprintf_s(output, "naval_base = %d\n", navalBaseLevel);
+		output << "naval_base = " << navalBaseLevel << "\n";
 	}
 	if (fortLevel > 0)
 	{
-		fprintf_s(output, "fort = %d\n", fortLevel);
+		output << "fort = " << fortLevel << "\n";
 	}
 	if (railLevel > 0)
 	{
-		fprintf_s(output, "railroad = %d\n", railLevel);
+		output << "railroad = " << railLevel << "\n";
 	}
 	if (slaveState)
 	{
-		fprintf_s(output, "is_slave = yes\n");
+		output << "is_slave = yes\n";
 	}
-	for (auto itr = factories.begin(); itr != factories.end(); itr++)
+	for (auto factory: factories)
 	{
-		itr->second->output(output);
+		output << factory.second;
 	}
-	/*else if ((*itr)->getKey() == "party_loyalty")
-	{
-	}*/
-	fclose(output);
+	output.close();
 }
 
 
