@@ -1876,12 +1876,12 @@ void V2World::output() const
 		exit(-1);
 	}
 
-	for (map<string, V2Country*>::const_iterator i = countries.begin(); i != countries.end(); i++)
+	Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/history/units");
+	for (auto country: countries)
 	{
-		const V2Country& country = *i->second;
-		if (country.isNewCountry())
+		if (country.second->isNewCountry())
 		{
-			country.outputLocalisation(localisationFile);
+			country.second->outputLocalisation(localisationFile);
 		}
 	}
 	fclose(localisationFile);
