@@ -1,4 +1,4 @@
-/*Copyright (c) 2014 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -27,28 +27,32 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "Date.h"
+#include <ostream>
 #include <vector>
 
 
 
-struct V2Agreement
+class V2Agreement
 {
-	std::string	type;
-	std::string	country1;
-	std::string	country2;
-	date		start_date;
+	public:
+		friend std::ostream& operator<<(std::ostream& output, V2Agreement theAgreement);
+
+		std::string	type;
+		std::string	country1;
+		std::string	country2;
+		date start_date;
 };
 
 
 class V2Diplomacy
 {
 	public:
-		V2Diplomacy() { agreements.clear(); };
 		void output() const;
 
-		void addAgreement(V2Agreement agr) { agreements.push_back(agr); };
+		void addAgreement(V2Agreement agr) { agreements.push_back(agr); }
+
 	private:
-		std::vector<V2Agreement>	agreements;
+		std::vector<V2Agreement> agreements;
 };
 
 
