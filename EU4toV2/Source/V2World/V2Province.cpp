@@ -232,7 +232,7 @@ void V2Province::output() const
 	}
 	for (auto factory: factories)
 	{
-		output << factory.second;
+		output << *factory.second;
 	}
 	output.close();
 }
