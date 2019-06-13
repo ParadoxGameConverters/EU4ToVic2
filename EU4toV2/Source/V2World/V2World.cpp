@@ -1876,6 +1876,7 @@ void V2World::output() const
 		exit(-1);
 	}
 
+	Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/history/countries");
 	Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/history/units");
 	for (auto country: countries)
 	{
