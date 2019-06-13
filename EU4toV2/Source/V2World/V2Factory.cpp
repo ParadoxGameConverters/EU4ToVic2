@@ -70,9 +70,11 @@ std::ostream& operator<<(std::ostream& output, const V2Factory& factory)
 	output << "state_building=\n";
 	output << "{\n";
 	output << "\tlevel=" << factory.level << "\n";
-	output << "\tbuilding = %s\n" << factory.type->name;
+	output << "\tbuilding = "<< factory.type->name << "\n";
 	output << "\tupgrade = yes\n";
 	output << "}\n";
+
+	return output;
 }
 
 
