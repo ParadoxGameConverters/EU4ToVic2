@@ -32,36 +32,6 @@ rem Create Blank Mod
 del "..\Release\EU4toVic2\blankMod" /Q
 rmdir "..\Release\EU4toVic2\blankMod" /S /Q
 xcopy "Data_Files\blankMod" "..\Release\EU4toVic2\blankMod" /Y /E /I
-mkdir "..\Release\EU4toVic2\blankMod\output\history"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\africa"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\asia"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\australia"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\austria"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\balkan"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\canada"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\carribean"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\central asia"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\china"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\france"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\germany"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\india"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\indonesia"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\italy"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\japan"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\low countries"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\mexico"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\pacific island"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\portugal"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\scandinavia"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\south america"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\soviet"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\spain"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\united kingdom"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\provinces\usa"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\countries"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\diplomacy"
-mkdir "..\Release\EU4toVic2\blankMod\output\history\units"
 
 rem Copy Flags
 del "..\Release\EU4toVic2\flags" /Q
