@@ -34,6 +34,10 @@ link = { v2 = democracy eu4 = ambrosian_republic eu4 = celestial_parliament eu4 
 link = { v2 = presidential_dictatorship eu4 = dutch_colonial_government eu4 = gov_bureaucratic_despotism eu4 = gov_colonial_government eu4 = gov_republican_dictatorship eu4 = gov_tribal_democracy eu4 = iberian_colonial_government eu4 = pirate_government eu4 = zaporozhian_republic }
 link = { v2 = theocracy eu4 = buddhist_theocracy eu4 = confucian_theocracy eu4 = default_theocracy eu4 = germanic_monastic_order eu4 = gov_papal_government eu4 = gov_religious_order eu4 = hindu_theocracy eu4 = holy_roman_electors_bishoprics eu4 = ibadi_theocracy eu4 = inti_theocracy eu4 = jewish_theocracy eu4 = livonian_monastic_order eu4 = orthodox_theocracy eu4 = pagan_theocracy eu4 = shiite_theocracy eu4 = shinto_theocracy eu4 = sikh_theocracy eu4 = sunni_theocracy eu4 = synthetic_nation eu4 = teutonic_monastic_order eu4 = uyghur_theocracy eu4 = yemenite_theocracy eu4 = zoroastrian_theocracy }
 link = { v2 = proletarian_dictatorship eu4 = revolutionary_peasant_republic eu4 = scanian_peasant_republic }
+#mappings for new simple gov types
+link = { v2 = absolute_monarchy eu4 = monarchy eu4 = tribal eu4 = native }
+link = { v2 = democracy eu4 = republic }
+link = { v2 = theocracy eu4 = theocracy }
 
 #Pre-Dharma
 link = { v2 = absolute_monarchy eu4 = despotic_monarchy eu4 = feudal_monarchy eu4 = absolute_monarchy eu4 = enlightened_despotism eu4 = revolutionary_empire eu4 = steppe_horde eu4 = tribal_despotism eu4 = tribal_federation eu4 = archduchy eu4 = celestial_empire eu4 = iqta eu4 = daimyo eu4 = shogunate eu4 = indep_daimyo eu4 = imperial_government eu4 = oligarchic_republic eu4 = tribal_kingdom eu4 = ottoman_government eu4 = tsardom eu4 = mamluk_government eu4 = feudal_theocracy }
