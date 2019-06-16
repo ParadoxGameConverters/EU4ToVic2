@@ -4414,3 +4414,401 @@ political_decisions = {
 			factor = 1
 		}
 	}
+##################
+# 2214 - Santo Domingo
+##################
+
+	german_2214 = {
+		image = german_70
+		potential = {
+			OR = {
+				is_culture_group = germanic
+				is_culture_group = pan_swiss
+			}
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "Sankt Dominikus"
+				state_scope = {
+					change_region_name = "Germaniola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	dutch_2214 = {
+		image = dutch_70
+		potential = {
+			is_culture_group = beneluxian
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "Sint Dominicus"
+				state_scope = {
+					change_region_name = "Hollandiola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	nordic_2214 = {
+		image = nordic_70
+		potential = {
+			OR = {
+				is_culture_group = scandinavian
+				is_culture_group = baltic
+			}
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "Helige Dominicus"
+				state_scope = {
+					change_region_name = "Scandiola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	english_2214 = {
+		image = english_70
+		potential = {
+			OR = {
+				is_culture_group = british
+				is_culture_group = neo_european_cultures
+				is_culture_group = american_cultures
+			}
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "Saint Dominick"
+				state_scope = {
+					change_region_name = "Britanniola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	italian_2214 = {
+		image = italian_70
+		potential = {
+			is_culture_group = italian
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "San Domenico"
+				state_scope = {
+					change_region_name = "Italiola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	spanish_2214 = { #Vanilla, but we changed it
+		image = spanish_70
+		potential = {
+			OR = {
+				is_culture_group = iberian
+				is_culture_group = latin_american_cultures
+			}
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "Santo Domingo"
+				state_scope = {
+					change_region_name = "Hispaniola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	french_2214 = {
+		image = french_70
+		potential = {
+			is_culture_group = french
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "Saint-Domingue"
+				state_scope = {
+					change_region_name = "Franciola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	arab_2214 = {
+		image = arab_70
+		potential = {
+			OR = {
+				is_culture_group = turko_semitic
+				is_culture_group = arab
+				is_culture_group = iranian_turanian
+			}
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "al-Nasrid"
+				state_scope = {
+					change_region_name = "Arabiola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	slavic_2214 = {
+		image = slavic_70
+		potential = {
+			OR = {
+				is_culture_group = south_slavic
+				is_culture_group = pan_romanian
+				is_culture_group = hungarian_culture_group
+				is_culture_group = polish_culture_group
+				is_culture_group = czecho_slovak_culture_group
+				is_culture_group = east_slavic
+			}
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "Svyatoy Dominik"
+				state_scope = {
+					change_region_name = "Sclaveniola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	greek_2214 = {
+		image = form_byzantine_empire
+		potential = {
+			is_culture_group = levantine
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "Hágios Domínikos"
+				state_scope = {
+					change_region_name = "Achaeiola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	chinese_2214 = {
+		image = chinese_70
+		potential = {
+			OR = {
+				is_culture_group = central_asian
+				is_culture_group = southeast_asian
+				is_culture_group = east_asian
+			}
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "Dí-Qi-Tian"
+				state_scope = {
+					change_region_name = "Siniola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	indian_2214 = {
+		image = indian_70
+		potential = {
+			is_culture_group = south_asian
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "Saatavaan Din"
+				state_scope = {
+					change_region_name = "Hindiola"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	haiti_2214 = {
+		image = postcol_HAI
+		potential = {
+			tag = HAI
+			NOT = { year = 1837 }
+			NOT = { has_global_flag = 2214_changed }	
+			has_global_flag = DOM_independence
+		}
+		allow = {
+			2214 = {
+				OR = {
+					owned_by = THIS
+					owner = { in_sphere = THIS }
+				}
+			}
+		}
+		effect = {
+			2214 = {
+				change_province_name = "Sen Domeng"
+				state_scope = {
+					change_region_name = "Ahyti"
+				}
+			}
+			set_global_flag = 2214_changed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
