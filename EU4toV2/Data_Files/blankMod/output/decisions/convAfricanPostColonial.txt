@@ -239,10 +239,10 @@ political_decisions = {
 				set_country_flag = buro_independence
 			}
 			FRA_1901 = {
-				add_core = MOS
+				add_core = BKF
 				flashpoint_tension = 10
 			}
-			MOS = {
+			BKF = {
 				add_accepted_culture = dyula
 				set_country_flag = buro_independence
 			}
@@ -395,7 +395,7 @@ political_decisions = {
 				set_country_flag = buro_independence
 			}
 			ENG_2068 = {
-				add_core = RHO
+				add_core = ZBW
 				flashpoint_tension = 10
 			}
 			ENG_2014 = {
@@ -412,7 +412,7 @@ political_decisions = {
 			}
 			any_country = {
 				limit = {
-					tag = RHO
+					tag = ZBW
 					exists = no
 				}
 				primary_culture = shona
