@@ -30,7 +30,7 @@ THE SOFTWARE. */
 
 
 const date STARTING_DATE("1444.11.11");
-const date ENDING_DATE("1821.1.1");
+const date ENDING_DATE("1821.1.3");
 const date FUTURE_DATE("2000.1.1");
 
 
