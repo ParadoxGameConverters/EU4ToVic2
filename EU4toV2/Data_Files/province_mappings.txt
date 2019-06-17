@@ -1357,7 +1357,7 @@
 	link = { eu4 = 140 v2 = 786 }	# Bosnia -> Tuzla
 	link = { eu4 = 1831 v2 = 788 }	# Travunia -> Mostar
 	link = { eu4 = 3002 v2 = 783 v2 = 787 }	# Sarajevo -> Sarajevo, Foca
-	link = { eu4 = 4173 v2 = 2538 v2 = 791 v2 = 792 }	# Syrmia -> Novi Sad, Mitrovica, Pancevo
+	link = { eu4 = 4173 v2 = 791 }	# Syrmia -> Mitrovica
 	link = { eu4 = 4239 v2 = 794 }	# Belgrade -> Belgrade
 	link = { eu4 = 141 v2 = 796 v2 = 797 }	# Serbia -> Kragujevac, Uzice
 	link = { eu4 = 1827 v2 = 804 }	# Raska -> Novi Pazar
@@ -1376,7 +1376,7 @@
 	link = { eu4 = 1864 v2 = 643 v2 = 644 v2 = 640 }	# Somogy -> Szekesfehevar, Kaposvar, Pecs
 	link = { eu4 = 153 v2 = 641 }	# Pecs -> Budapest
 	link = { eu4 = 4125 v2 = 646 }	# Szolnok -> Miskolc
-	link = { eu4 = 4126 v2 = 645 v2 = 649 }	# Bacs -> Kecskemet, Szeged
+	link = { eu4 = 4126 v2 = 645 v2 = 649 v2 = 2538 }	# Bacs -> Kecskemet, Szeged, Novi Sad
 	link = { eu4 = 155 v2 = 650 }	# Szolnok -> Bekescsaba
 	link = { eu4 = 1953 v2 = 648 }	# Szabolcs -> Debrecen
 	# Czechia
@@ -1393,7 +1393,7 @@
 	link = { eu4 = 1318 v2 = 638 v2 = 636 v2 = 2584 }	# Spis -> Roznava, Banska Bystrica, Bielsko
 	link = { eu4 = 162 v2 = 637 v2 = 950 }	# Carpathia -> Kosice, Uzgorord
 	# Romania
-	link = { eu4 = 1954 v2 = 652 }	# Torontal -> Temesvar
+	link = { eu4 = 1954 v2 = 652 v2 = 792 }	# Torontal -> Temesvar, Pancevo
 	link = { eu4 = 156 v2 = 653 }	# Banat -> Resicabanya
 	link = { eu4 = 157 v2 = 651 v2 = 647 }	# Partium -> Szatmar, Oradea
 	link = { eu4 = 4127 eu4 = 1952 v2 = 654 v2 = 661 }	# MANY-TO-MANY: Turda, Maramaros -> Cluj, Beszterce
@@ -1673,10 +1673,10 @@
 	link = { eu4 = 2327 v2 = 911 }	# Maan -> Maan
 	# Iraq
 	link = { eu4 = 411 v2 = 923 }	# Mosul -> Mosul
-	link = { eu4 = 2309 v2 = 927 }	# Sinjar -> Samarra
+	link = { eu4 = 2309 eu4 = 2310 v2 = 927 }	# Sinjar, Tikrit -> Samarra
 	link = { eu4 = 406 v2 = 931 }	# Haditha -> Rutbah
-	link = { eu4 = 2310 v2 = 929 }	# Tikrit -> Karbala
-	link = { eu4 = 2311 eu4 = 409 v2 = 934 }	# Samawat, Karballa -> Najaf
+	link = { eu4 = 409 v2 = 929 }	# Karbala -> Karbala
+	link = { eu4 = 2311 v2 = 934 }	# Samawat -> Najaf
 	link = { eu4 = 4288 v2 = 933 }	# Shatt -> Nasiriyya
 	link = { eu4 = 408 v2 = 932 }	# Basra -> Basra
 	link = { eu4 = 2312 v2 = 930 }	# Wasit -> Kut
