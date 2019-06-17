@@ -854,7 +854,7 @@
 	link = { eu4 = 4616 v2 = 2267 }	# Anzoategui ->  Cumana
 	link = { eu4 = 2803 eu4 = 2805 v2 = 2276 }	# Delta, Uyapari -> Curiapo
 	link = { eu4 = 2804 eu4 = 742 v2 = 2275 }	# Guasipati, Guayana -> Angostura
-	link = { eu4 = 2811 v2 = 2278 }	# Atabapo -> El Jobal
+	link = { eu4 = 2811 v2 = 2277 }	# Atabapo -> El Jobal
 	link = { eu4 = 4617 v2 = 2278 }	# Guaju -> San Fernado de Atabapo
 	link = { eu4 = 2889 v2 = 2532 }	# Rio Branco -> Forte Sao Joaquim
 	link = { eu4 = 2931 v2 = 2242 }	# Pirara -> Mahdia
