@@ -1081,8 +1081,8 @@
 	link = { eu4 = 2755 v2 = 488 }	# Soria -> Siguenza
 	link = { eu4 = 2751 v2 = 490 }	# Cuenca -> Cuenca
 	link = { eu4 = 2754 v2 = 491 }	# La Mancha -> Ciudad Real
-	link = { eu4 = 221 v2 = 508}	# Murcia -> Cartagena
-	link = { eu4 = 4547 v2 = 506 }	# Albacete -> Murcia
+	link = { eu4 = 221 v2 = 506 }	# Murcia -> Cartagena
+	link = { eu4 = 4547 v2 = 507 v2 = 508 }	# Albacete -> Murcia, Albacete
 	link = { eu4 = 222 v2 = 515 }	# Almería -> Almeria
 	link = { eu4 = 1748 v2 = 516 }	# La Mancha -> Jaen
 	link = { eu4 = 223 v2 = 513 }	# Granada -> Granada
