@@ -145,6 +145,7 @@ class V2Province
 		int							num;
 		string						name;
 		string						owner;
+		string						controller;
 		vector<string>				cores;
 		bool							inHRE;
 		int							colonyLevel;

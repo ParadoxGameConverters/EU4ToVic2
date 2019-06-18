@@ -50,7 +50,7 @@ V2Province::V2Province(string _filename)
 	num = 0;
 	name = "";
 	owner = "";
-	//controler			= "";
+	controller = "";
 	cores.clear();
 	inHRE = false;
 	colonyLevel = 0;
@@ -114,7 +114,7 @@ V2Province::V2Province(string _filename)
 		}
 		else if ((*itr)->getKey() == "controller")
 		{
-			//controller = (*itr)->getLeaf().c_str();
+			controller = (*itr)->getLeaf().c_str();
 		}
 		else if ((*itr)->getKey() == "add_core")
 		{
@@ -188,7 +188,7 @@ void V2Province::output() const
 	if (owner != "")
 	{
 		output << "owner=" << owner << "\n";
-		output << "controller=" << owner << "\n";
+		output << "controller=" << controller << "\n";
 	}
 	for (auto core: cores)
 	{
