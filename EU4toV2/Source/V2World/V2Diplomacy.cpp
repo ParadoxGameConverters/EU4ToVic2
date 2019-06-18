@@ -33,9 +33,9 @@ std::ostream& operator<<(std::ostream& output, V2Agreement theAgreement)
 {
 	output << theAgreement.type << "=\n";
 	output << "{\n";
-	output << "\tfirst=\"" << theAgreement.country1 << "\"" << "\n";
-	output << "\tsecond=\"" << theAgreement.country2 << "\"" << "\n";
-	output << "\tstart_date=\"" << theAgreement.start_date << "\"" << "\n";
+	output << "\tfirst=\"" << theAgreement.country1 << "\"\n";
+	output << "\tsecond=\"" << theAgreement.country2 << "\"\n";
+	output << "\tstart_date=\"" << theAgreement.start_date << "\"\n";
 	output << "\tend_date=\"1936.1.1\"\n";
 	output << "}\n";
 	output << "\n";
