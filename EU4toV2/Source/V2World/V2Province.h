@@ -89,6 +89,7 @@ class V2Province
 		void				setCoastal(bool _coastal)					{ coastal = _coastal; }
 		void				setName(string _name)						{ name = _name; }
 		void				setOwner(string _owner)						{ owner = _owner; }
+		void				setController(string _controller)						{ controller = _controller; }
 		void				setLandConnection(bool _connection)		{ landConnection = _connection; }
 		void				setSameContinent(bool _same)				{ sameContinent = _same; }
 		void				setFortLevel(int level)						{ fortLevel = level; }
@@ -104,6 +105,7 @@ class V2Province
 		bool						isColonial()			const { return colonial != 0; }
 		string					getRgoType()			const { return rgoType; }
 		string					getOwner()				const { return owner; }
+		string					getController()				const { return controller; }
 		int						getNum()					const { return num; }
 		string					getName()				const { return name; }
 		bool						isCoastal()				const { return coastal; }
@@ -145,6 +147,7 @@ class V2Province
 		int							num;
 		string						name;
 		string						owner;
+		string						controller;
 		vector<string>				cores;
 		bool							inHRE;
 		int							colonyLevel;

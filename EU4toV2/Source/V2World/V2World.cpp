@@ -731,6 +731,7 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 
 		const EU4::Province* oldProvince = nullptr;
 		std::string oldOwnerTag;
+		std::string oldControllerTag;
 		// determine ownership by province count, or total population (if province count is tied)
 		map<string, MTo1ProvinceComp> provinceBins;
 		double newProvinceTotalBaseTax = 0;
@@ -738,11 +739,17 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 		{
 			const EU4::Province& province = sourceWorld.getProvince(EU4ProvinceNumber);
 			auto ownerTag = province.getOwnerString();
+			auto controllerTag = province.getControllerString();
 			if (provinceBins.find(ownerTag) == provinceBins.end())
 			{
 				provinceBins[ownerTag] = MTo1ProvinceComp();
 			}
+			if (provinceBins.find(controllerTag) == provinceBins.end())
+			{
+				provinceBins[controllerTag] = MTo1ProvinceComp();
+			}
 			provinceBins[ownerTag].provinces.push_back(&province);
+			provinceBins[controllerTag].provinces.push_back(&province);
 			newProvinceTotalBaseTax += province.getBaseTax();
 			// I am the new owner if there is no current owner, or I have more provinces than the current owner,
 			// or I have the same number of provinces, but more population, than the current owner
@@ -753,15 +760,18 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 				)
 			{
 				oldOwnerTag = ownerTag;
+				oldControllerTag = controllerTag;
 				oldProvince = &province;
 			}
 		}
 		if (oldOwnerTag == "")
 		{
 			Vic2Province.second->setOwner("");
+			Vic2Province.second->setController("");
 			continue;
 		}
 
+		const std::string& V2ControllerTag = mappers::CountryMappings::getVic2Tag(oldControllerTag);
 		const std::string& V2Tag = mappers::CountryMappings::getVic2Tag(oldOwnerTag);
 		if (V2Tag.empty())
 		{
@@ -770,11 +780,13 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 		else
 		{
 			Vic2Province.second->setOwner(V2Tag);
+			Vic2Province.second->setController(V2ControllerTag);
 			map<string, V2Country*>::iterator ownerItr = countries.find(V2Tag);
 			if (ownerItr != countries.end())
 			{
 				ownerItr->second->addProvince(Vic2Province.second);
 			}
+			map<string, V2Country*>::iterator controllerItr = countries.find(V2Tag);
 			Vic2Province.second->convertFromOldProvince(sourceWorld.getAllReligions(), oldProvince, sourceWorld.getCountries());
 
 			for (map<string, MTo1ProvinceComp>::iterator mitr = provinceBins.begin(); mitr != provinceBins.end(); ++mitr)

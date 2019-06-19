@@ -59,6 +59,7 @@ class Province: commonItems::parser
 		int getNum() const { return num; }
 		std::string getName() const { return name; }
 		std::string getOwnerString() const { return ownerString; }
+		std::string getControllerString() const { return controllerString; }
 		std::set<std::string> getCores() const { return cores; }
 		bool inHre() const { return inHRE; }
 		bool isColony() const { return colony; }
@@ -87,6 +88,7 @@ class Province: commonItems::parser
 		int num = 0;
 		std::string	name;
 		std::string ownerString;
+		std::string controllerString;
 		std::set<std::string> cores;
 
 		bool inHRE = false;

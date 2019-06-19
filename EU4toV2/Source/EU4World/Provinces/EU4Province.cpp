@@ -59,6 +59,10 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 		commonItems::singleString ownerStringString(theStream);
 		ownerString = ownerStringString.getString();
 	});
+	registerKeyword(std::regex("controller"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleString controllerStringString(theStream);
+		controllerString = controllerStringString.getString();
+	});
 	registerKeyword(std::regex("cores"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::stringList coresStrings(theStream);
 		for (auto coreString : coresStrings.getStrings())

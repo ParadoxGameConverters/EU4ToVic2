@@ -1315,6 +1315,7 @@ void V2Country::absorbVassal(V2Country* vassal)
 	for (auto provItr = vassalProvinces.begin(); provItr != vassalProvinces.end(); provItr++)
 	{
 		provItr->second->setOwner(tag);
+		provItr->second->setController(tag);
 		provItr->second->addCore(tag);
 	}
 	vassal->provinces.clear();
