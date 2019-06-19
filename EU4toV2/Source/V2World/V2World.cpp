@@ -744,12 +744,12 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 			{
 				provinceBins[ownerTag] = MTo1ProvinceComp();
 			}
-			if (provinceBins.find(controllerTag) == provinceBins.end()) // TODO: ask Idhrendur if this is needed
+			if (provinceBins.find(controllerTag) == provinceBins.end())
 			{
 				provinceBins[controllerTag] = MTo1ProvinceComp();
 			}
 			provinceBins[ownerTag].provinces.push_back(&province);
-			provinceBins[controllerTag].provinces.push_back(&province); // TODO: ask Idhrendur if this is needed
+			provinceBins[controllerTag].provinces.push_back(&province);
 			newProvinceTotalBaseTax += province.getBaseTax();
 			// I am the new owner if there is no current owner, or I have more provinces than the current owner,
 			// or I have the same number of provinces, but more population, than the current owner

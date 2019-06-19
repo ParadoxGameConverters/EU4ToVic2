@@ -50,7 +50,7 @@ V2Province::V2Province(string _filename)
 	num = 0;
 	name = "";
 	owner = "";
-	controller = "";
+	//controller = ""; // disabled because string defaults to "" anyway
 	cores.clear();
 	inHRE = false;
 	colonyLevel = 0;
