@@ -96,7 +96,7 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 		buildings = std::make_unique<Buildings>(theStream);
 	});
 	registerKeyword(std::regex("great_projects"), [this](const std::string& unused, std::istream& theStream) {
-		greatProjects = std::make_unique<Buildings>(theStream);
+		greatProjects = std::make_unique<GreatProjects>(theStream);
 	});
 	registerKeyword(std::regex("trade_goods"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleString tradeGoodsString(theStream);
@@ -135,7 +135,15 @@ bool EU4::Province::hasBuilding(const std::string& building) const
 	{
 		return true;
 	}
-	else if (greatProjects && greatProjects->hasBuilding(building))
+	else
+	{
+		return false;
+	}
+}
+
+bool EU4::Province::hasGreatProject(const std::string& greatProject) const
+{
+	if (greatProjects && greatProjects->hasGreatProject(greatProject))
 	{
 		return true;
 	}
