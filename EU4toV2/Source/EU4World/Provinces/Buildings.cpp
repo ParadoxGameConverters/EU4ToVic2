@@ -34,3 +34,13 @@ EU4::Buildings::Buildings(std::istream& theStream)
 
 	parseStream(theStream);
 }
+EU4::GreatProjects::GreatProjects(std::istream& theStream)
+{
+	registerKeyword(std::regex("\"{1}[a-zA-Z0-9_]+\"{1}"), [this](const std::string& greatProject, std::istream& theStream) {
+		///string greatProjectWithoutQuote = greatProject.substr(1, greatProject.size() - 1);
+		greatProjects.insert(greatProject);
+		commonItems::ignoreItem(greatProject, theStream);
+	});
+
+	parseStream(theStream);
+}
