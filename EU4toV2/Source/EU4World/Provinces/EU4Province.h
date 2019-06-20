@@ -54,6 +54,7 @@ class Province: commonItems::parser
 
 		bool wasInfidelConquest(const std::string& ownerReligion, const EU4::Religions& allReligions) const;
 		bool hasBuilding(const std::string& building) const;
+		bool hasGreatProject(const std::string& greatProject) const;
 		double getCulturePercent(const std::string& culture) const;
 
 		int getNum() const { return num; }
@@ -97,7 +98,7 @@ class Province: commonItems::parser
 
 		std::unique_ptr<EU4::ProvinceHistory> provinceHistory;
 		std::unique_ptr<EU4::Buildings> buildings;
-		std::unique_ptr<EU4::Buildings> greatProjects;
+		std::unique_ptr<EU4::GreatProjects> greatProjects;
 
 		// province attributes for weights
 		double baseTax = 0.0;
