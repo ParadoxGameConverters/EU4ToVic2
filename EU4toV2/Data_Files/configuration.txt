@@ -21,7 +21,7 @@
 
 configuration = {
 	# Europa Universalis 4 directory: A path on your computer where Europa Universalis 4 is installed
-	EU4directory = "C:\Program Files (x86)\Steam\SteamApps\common\Europa Universalis IV"
+	EU4directory = "C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis IV"
 
 	# EU4 Documents Directory: A path on your computer where Europa Universalis 4 keeps temporary files
 	EU4DocumentsDirectory = "C:\Users\Phillip\Documents\Paradox Interactive\Europa Universalis IV"
