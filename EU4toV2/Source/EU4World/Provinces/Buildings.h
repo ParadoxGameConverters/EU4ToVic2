@@ -47,14 +47,13 @@ class Buildings: commonItems::parser
 
 class GreatProjects : commonItems::parser
 {
-public:
-	GreatProjects(std::istream& theStream);
+	public:
+		GreatProjects(std::istream& theStream);
 
-	bool hasGreatProject(const std::string& greatProject) const { return greatProjects.count(greatProject) > 0; }
+		bool hasGreatProject(const std::string& greatProject) const { return greatProjects.count(greatProject) > 0; }
 		
 	private:
 		std::set<std::string> greatProjects;
-
 };
 
 }
