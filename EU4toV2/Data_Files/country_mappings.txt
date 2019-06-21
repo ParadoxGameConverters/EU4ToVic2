@@ -18,9 +18,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-
-mappings={
-
 #Direct Mappings
 #This is essentially one-to-one country mappings to ensure that countries are available in BOTH EU4 and Vic2 get the correct tag.
 #For example, if Spain is in EU4 it will become Spain in Vic2 after conversion.
@@ -1434,4 +1431,3 @@ link = { EU4 = UIG Vic2 = XIN } #Uighurustan
 link = { EU4 = YEM Vic2 = YEM } #Yemen
 link = { EU4 = YRK Vic2 = YRK } #Yarkand
 link = { EU4 = ZOU Vic2 = ZHO } #Zhou
-}
