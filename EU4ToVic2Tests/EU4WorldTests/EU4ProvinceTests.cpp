@@ -403,18 +403,27 @@ TEST(EU4World_ProvinceTests, hasBuildingCanBeTrue)
 	ASSERT_TRUE(theProvince.hasBuilding("theBuilding"));
 }
 
+TEST(EU4World_ProvinceTests, hasGreatProjectDefaultsToFalse)
+{
+	std::stringstream input;
+	input << "={\n";
+	input << "}";
 
-TEST(EU4World_ProvinceTests, hasBuildingFindsProjects)
+	EU4::Province theProvince("-1", input);
+	ASSERT_FALSE(theProvince.hasGreatProject("theProject"));
+}
+
+TEST(EU4World_ProvinceTests, hasGreatProjectFindsProjects)
 {
 	std::stringstream input;
 	input << "={\n";
 	input << "	great_projects={\n";
-	input << "		theProject=yes\n";
+	input << "		\"theProject\"\n";
 	input << "	}\n";
 	input << "}";
 
 	EU4::Province theProvince("-1", input);
-	ASSERT_TRUE(theProvince.hasBuilding("theProject"));
+	ASSERT_TRUE(theProvince.hasGreatProject("theProject"));
 }
 
 
