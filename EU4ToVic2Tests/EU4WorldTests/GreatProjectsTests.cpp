@@ -41,9 +41,9 @@ TEST(EU4World_GreatProjectsTests, matchingGreatProjectReturnsTrue)
 {
 	std::stringstream input;
 	input << "={\n";
-	input << "	\"theProject\"\n";
+	input << "	\"test_canal\"\n";
 	input << "}";
 
 	EU4::GreatProjects theGreatProjects(input);
-	ASSERT_TRUE(theGreatProjects.hasGreatProject("theProject"));
+	ASSERT_TRUE(theGreatProjects.hasGreatProject("test_canal"));
 }
