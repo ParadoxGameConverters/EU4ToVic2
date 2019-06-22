@@ -33,17 +33,17 @@ TEST(EU4World_GreatProjectsTests, nonMatchingGreatProjectReturnsFalse)
 	input << "={}";
 
 	EU4::GreatProjects theGreatProjects(input);
-	ASSERT_FALSE(theGreatProjects.hasGreatProject("theGreatProject"));
+	ASSERT_FALSE(theGreatProjects.hasGreatProject("theProject"));
 }
 
 
-TEST(EU4World_BuildingsTests, matchingGreatProjectReturnsTrue)
+TEST(EU4World_GreatProjectsTests, matchingGreatProjectReturnsTrue)
 {
 	std::stringstream input;
 	input << "={\n";
-	input << "	\"theGreatProject\"\n";
+	input << "	\"theProject\"\n";
 	input << "}";
 
 	EU4::GreatProjects theGreatProjects(input);
-	ASSERT_TRUE(theGreatProjects.hasGreatProject("theGreatProject"));
+	ASSERT_TRUE(theGreatProjects.hasGreatProject("theProject"));
 }
