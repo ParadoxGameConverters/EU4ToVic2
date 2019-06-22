@@ -137,10 +137,10 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 
 	if (parties.empty())
 	{	// No parties are specified. Generate some default parties for this country.
-		const std::vector<std::string> ideologies = 
+		const std::vector<std::string> ideologies =
 		{ "conservative", "liberal", "reactionary", "socialist", "communist", "anarcho_liberal", "fascist" };
 		const std::vector<std::string> partyNames =
-		{ "Conservative Party", "Liberal Party", "National Party", 
+		{ "Conservative Party", "Liberal Party", "National Party",
 			"Socialist Party", "Communist Party", "Radical Party", "Fascist Party" };
 		for (size_t i = 0; i < ideologies.size(); ++i)
 		{
@@ -262,10 +262,10 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 
 	if (parties.empty())
 	{	// No parties are specified. Generate some default parties for this country.
-		const std::vector<std::string> ideologies = 
+		const std::vector<std::string> ideologies =
 				{ "conservative", "liberal", "reactionary", "socialist", "communist", "anarcho_liberal", "fascist" };
 		const std::vector<std::string> partyNames =
-				{ "Conservative Party", "Liberal Party", "National Party", 
+				{ "Conservative Party", "Liberal Party", "National Party",
 				  "Socialist Party", "Communist Party", "Radical Party", "Fascist Party" };
 		for (size_t i = 0; i < ideologies.size(); ++i)
 		{
@@ -395,8 +395,8 @@ void V2Country::output() const
 			fprintf(output, "}\n");
 		}
 
-		
-	
+
+
 		//fprintf(output, "	schools=\"%s\"\n", techSchool.c_str());
 
 		fprintf(output, "oob = \"%s\"\n", (tag + "_OOB.txt").c_str());
@@ -422,7 +422,7 @@ void V2Country::output() const
 
 	if (newCountry)
 	{
-		// Output common country file. 
+		// Output common country file.
 		std::ofstream commonCountryOutput("Output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile);
 		if (!commonCountryOutput.is_open())
 		{
@@ -665,7 +665,7 @@ void V2Country::initFromEU4Country(
 	LOG(LogLevel::Debug) << tag << " has an Upper House of " << upperHouseReactionary << " reactionary, "
 		<< upperHouseConservative << " conservative, and "
 		<< upperHouseLiberal << " liberal";
-	
+
 	string idealogy;
 	if (liberalEffect >= 2 * reactionaryEffect)
 	{
@@ -1144,7 +1144,7 @@ void V2Country::convertArmies(
 				continue;
 
 			// if we have ships, we must be a navy
-			bool isNavy = (rc >= heavy_ship); 
+			bool isNavy = (rc >= heavy_ship);
 			army->setNavy(isNavy);
 
 			double	regimentCount		= typeStrength / cost_per_regiment[rc];
@@ -1385,7 +1385,7 @@ bool V2Country::addFactory(V2Factory* factory)
 			return false;
 		}
 	}
-	
+
 	// check factory inventions
 	if ((theConfiguration.getVic2Gametype() == "vanilla") || (theConfiguration.getVic2Gametype() == "AHD"))
 	{
