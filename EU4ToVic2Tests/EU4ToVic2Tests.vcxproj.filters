@@ -161,7 +161,13 @@
     <ClCompile Include="EU4WorldTests\BuildingsTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
+	<ClCompile Include="EU4WorldTests\GreatProjectsTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\Buildings.cpp">
+      <Filter>ConverterFiles\EU4World\Provinces</Filter>
+    </ClCompile>
+	<ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\GreatProjects.cpp">
       <Filter>ConverterFiles\EU4World\Provinces</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\DateItem.cpp">
