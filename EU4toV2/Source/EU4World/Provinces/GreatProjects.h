@@ -20,17 +20,33 @@ THE SOFTWARE. */
 
 
 
-#include "Buildings.h"
-#include "ParserHelpers.h"
+#ifndef GREATPROJECTS_H_
+#define GREATPROJECTS_H_
 
 
 
-EU4::Buildings::Buildings(std::istream& theStream)
+#include "newParser.h"
+#include <set>
+#include <string>
+
+
+
+namespace EU4
 {
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& building, std::istream& theStream) {
-		buildings.insert(building);
-		commonItems::ignoreItem(building, theStream);
-	});
 
-	parseStream(theStream);
+class GreatProjects : commonItems::parser
+{
+	public:
+		GreatProjects(std::istream& theStream);
+
+		bool hasGreatProject(const std::string& greatProject) const { return greatProjects.count(greatProject) > 0; }
+		
+	private:
+		std::set<std::string> greatProjects;
+};
+
 }
+
+
+
+#endif // GREATPROJECTS_H_
