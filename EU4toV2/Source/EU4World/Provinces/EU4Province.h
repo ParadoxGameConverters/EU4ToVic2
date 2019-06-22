@@ -27,6 +27,7 @@ THE SOFTWARE. */
 
 #include "Date.h"
 #include "Buildings.h"
+#include "GreatProjects.h"
 #include "PopRatio.h"
 #include "ProvinceHistory.h"
 #include "newParser.h"

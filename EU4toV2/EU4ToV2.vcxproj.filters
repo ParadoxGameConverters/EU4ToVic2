@@ -225,6 +225,9 @@
     <ClCompile Include="Source\EU4World\Provinces\Buildings.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
+	<ClCompile Include="Source\EU4World\Provinces\GreatProjects.cpp">
+      <Filter>EU4World\Provinces</Filter>
+    </ClCompile>
     <ClCompile Include="Source\EU4World\Provinces\DateItem.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
@@ -473,6 +476,9 @@
       <Filter>EU4World\Religions</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\Buildings.h">
+      <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
+	<ClInclude Include="Source\EU4World\Provinces\GreatProjects.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\DateItem.h">

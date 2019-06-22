@@ -196,6 +196,7 @@
     <ClCompile Include="Source\EU4World\History.cpp" />
     <ClCompile Include="Source\EU4World\ID.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\Buildings.cpp" />
+	<ClCompile Include="Source\EU4World\Provinces\GreatProjects.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\DateItem.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\DateItems.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\EU4Province.cpp" />
@@ -285,6 +286,7 @@
     <ClInclude Include="Source\EU4World\History.h" />
     <ClInclude Include="Source\EU4World\ID.h" />
     <ClInclude Include="Source\EU4World\Provinces\Buildings.h" />
+    <ClInclude Include="Source\EU4World\Provinces\GreatProjects.h" />
     <ClInclude Include="Source\EU4World\Provinces\DateItem.h" />
     <ClInclude Include="Source\EU4World\Provinces\DateItems.h" />
     <ClInclude Include="Source\EU4World\Provinces\EU4Province.h" />

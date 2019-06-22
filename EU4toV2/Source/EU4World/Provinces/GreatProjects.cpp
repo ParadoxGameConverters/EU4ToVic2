@@ -20,16 +20,14 @@ THE SOFTWARE. */
 
 
 
-#include "Buildings.h"
+#include "GreatProjects.h"
 #include "ParserHelpers.h"
 
 
-
-EU4::Buildings::Buildings(std::istream& theStream)
+EU4::GreatProjects::GreatProjects(std::istream& theStream)
 {
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& building, std::istream& theStream) {
-		buildings.insert(building);
-		commonItems::ignoreItem(building, theStream);
+	registerKeyword(std::regex("\"[a-z]+_canal\""), [this](const std::string& greatProject, std::istream& theStream) {
+		greatProjects.insert(greatProject);
 	});
 
 	parseStream(theStream);
