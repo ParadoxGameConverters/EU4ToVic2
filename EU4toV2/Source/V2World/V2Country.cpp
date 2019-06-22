@@ -878,15 +878,15 @@ void V2Country::initFromEU4Country(
 	// canals
 	for (const auto& prov : _srcCountry->getProvinces())
 	{
-		if (prov->hasGreatProject("\"suez_canal\""))
+		if (prov->hasGreatProject("suez_canal"))
 		{
 			decisions.push_back("build_suez_canal");
 		}
-		if (prov->hasGreatProject("\"kiel_canal\""))
+		if (prov->hasGreatProject("kiel_canal"))
 		{
 			decisions.push_back("build_kiel_canal");
 		}
-		if (prov->hasGreatProject("\"panama_canal\""))
+		if (prov->hasGreatProject("panama_canal"))
 		{
 			decisions.push_back("build_panama_canal");
 		}
