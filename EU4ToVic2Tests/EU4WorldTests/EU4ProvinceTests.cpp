@@ -460,7 +460,7 @@ TEST(EU4World_ProvinceTests, getCulturePercentDeterminedByHistory)
 	input << "	history={\n";
 	input << "		culture=theCulture\n";
 	input << "		religion=theReligion\n";
-	input << "		1621.1.1={\n";
+	input << "		1621.1.3={\n";
 	input << "			culture=newCulture\n";
 	input << "		}\n";
 	input << "	}\n";
