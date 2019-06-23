@@ -28,6 +28,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "EU4Diplomacy.h"
 #include "EU4Version.h"
 #include "EU4Localisation.h"
+#include "Mods/Mod.h"
+#include "Mods/Mods.h"
 #include "Provinces/EU4Province.h"
 #include "Regions/Areas.h"
 #include "../Configuration.h"
@@ -69,12 +71,9 @@ EU4::world::world(const string& EU4SaveFileName):
 			loadActiveDLC(versionsObject);
 		}
 	);
-	registerKeyword(std::regex("mod_enabled"), [this](const std::string& modText, std::istream& theStream)
-		{
-			auto modsObject = commonItems::convert8859Object(modText, theStream);
-			loadUsedMods(modsObject);
-		}
-	);
+	registerKeyword(std::regex("mod_enabled"), [this](const std::string& modText, std::istream& theStream) {
+		Mods theMods(theStream, theConfiguration);
+	});
 	registerKeyword(std::regex("revolution_target"), [this](const std::string& revolutionText, std::istream& theStream)
 		{
 			auto modsObject = commonItems::convert8859String(revolutionText, theStream);
@@ -167,186 +166,6 @@ void EU4::world::verifySave(const string& EU4SaveFileName)
 		{
 			LOG(LogLevel::Error) << "Ironman saves cannot be converted.";
 			exit(-1);
-		}
-	}
-}
-
-
-void EU4::world::loadUsedMods(const shared_ptr<Object> EU4SaveObj)
-{
-	LOG(LogLevel::Debug) << "Get EU4 Mods";
-	map<string, string> possibleMods = loadPossibleMods();
-
-	vector<shared_ptr<Object>> modObj = EU4SaveObj->getValue("mod_enabled");	// the used mods
-	if (modObj.size() > 0)
-	{
-		string modString = modObj[0]->getLeaf();	// the names of all the mods
-		while (modString != "")
-		{
-			string newMod;	// the corrected name of the mod
-			const int firstQuote = modString.find("\"");	// the location of the first quote, defining the start of a mod name
-			if (firstQuote == std::string::npos)
-			{
-				newMod.clear();
-				modString.clear();
-			}
-			else
-			{
-				const int secondQuote = modString.find("\"", firstQuote + 1);	// the location of the second quote, defining the end of a mod name
-				if (secondQuote == std::string::npos)
-				{
-					newMod.clear();
-					modString.clear();
-				}
-				else
-				{
-					newMod = modString.substr(firstQuote + 1, secondQuote - firstQuote - 1);
-					modString = modString.substr(secondQuote + 1, modString.size());
-				}
-			}
-
-			if (newMod != "")
-			{
-				map<string, string>::iterator modItr = possibleMods.find(newMod);
-				if (modItr != possibleMods.end())
-				{
-					string newModPath = modItr->second;	// the path for this mod
-					if (!Utils::doesFolderExist(newModPath) && !Utils::DoesFileExist(newModPath))
-					{
-						LOG(LogLevel::Error) << newMod << " could not be found in the specified mod directory - a valid mod directory must be specified. Tried " << newModPath;
-						exit(-1);
-					}
-					else
-					{
-						LOG(LogLevel::Debug) << "EU4 Mod is at " << newModPath;
-						theConfiguration.addEU4Mod(newModPath);
-					}
-				}
-				else
-				{
-					LOG(LogLevel::Error) << "No path could be found for " << newMod;
-					exit(-1);
-				}
-			}
-		}
-	}
-}
-
-
-map<string, string> EU4::world::loadPossibleMods()
-{
-	map<string, string> possibleMods;
-	loadEU4ModDirectory(possibleMods);
-	loadCK2ExportDirectory(possibleMods);
-
-	return possibleMods;
-}
-
-
-void EU4::world::loadEU4ModDirectory(map<string, string>& possibleMods)
-{
-	LOG(LogLevel::Debug) << "Get EU4 Mod Directory";
-	string EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();	// the EU4 My Documents location as stated in the configuration file
-	if (Utils::DoesFileExist(EU4DocumentsLoc))
-	{
-		LOG(LogLevel::Error) << "No Europa Universalis 4 documents directory was specified in configuration.txt, or the path was invalid";
-		exit(-1);
-	}
-	else
-	{
-		LOG(LogLevel::Debug) << "EU4 Documents directory is " << EU4DocumentsLoc;
-		set<string> fileNames;
-		Utils::GetAllFilesInFolder(EU4DocumentsLoc + "/mod", fileNames);
-		for (set<string>::iterator itr = fileNames.begin(); itr != fileNames.end(); itr++)
-		{
-			const int pos = itr->find_last_of('.');	// the position of the last period in the filename
-			if (itr->substr(pos, itr->length()) == ".mod")
-			{
-				shared_ptr<Object> modObj = parser_UTF8::doParseFile((EU4DocumentsLoc + "/mod/" + *itr).c_str());	// the parsed mod file
-
-				string name;	// the name of the mod
-				vector<shared_ptr<Object>> nameObj = modObj->getValue("name");
-				if (nameObj.size() > 0)
-				{
-					name = nameObj[0]->getLeaf();
-				}
-				else
-				{
-					name = "";
-				}
-
-				string path;	// the path of the mod
-				vector<shared_ptr<Object>> dirObjs = modObj->getValue("path");	// the possible paths of the mod
-				if (dirObjs.size() > 0)
-				{
-					path = dirObjs[0]->getLeaf();
-				}
-				else
-				{
-					vector<shared_ptr<Object>> dirObjs = modObj->getValue("archive");	// the other possible paths of the mod (if its zipped)
-					if (dirObjs.size() > 0)
-					{
-						path = dirObjs[0]->getLeaf();
-					}
-				}
-
-				if ((name != "") && (path != ""))
-				{
-					possibleMods.insert(make_pair(name, EU4DocumentsLoc + "/" + path));
-					Log(LogLevel::Debug) << "\t\tFound a mod named " << name << " claiming to be at " << EU4DocumentsLoc << "/" << path;
-				}
-			}
-		}
-	}
-}
-
-
-void EU4::world::loadCK2ExportDirectory(map<string, string>& possibleMods)
-{
-	LOG(LogLevel::Debug) << "Get CK2 Export Directory";
-	string CK2ExportLoc = theConfiguration.getCK2ExportPath();		// the CK2 converted mods location as stated in the configuration file
-	if (Utils::DoesFileExist(CK2ExportLoc))
-	{
-		LOG(LogLevel::Warning) << "No Crusader Kings 2 mod directory was specified in configuration.txt, or the path was invalid - this will cause problems with CK2 converted saves";
-	}
-	else
-	{
-		LOG(LogLevel::Debug) << "CK2 export directory is " << CK2ExportLoc;
-		set<string> fileNames;
-		Utils::GetAllFilesInFolder(CK2ExportLoc, fileNames);
-		for (set<string>::iterator itr = fileNames.begin(); itr != fileNames.end(); itr++)
-		{
-			const int pos = itr->find_last_of('.');	// the last period in the filename
-			if ((pos != string::npos) && (itr->substr(pos, itr->length()) == ".mod"))
-			{
-				shared_ptr<Object> modObj = parser_UTF8::doParseFile((CK2ExportLoc + "/" + *itr).c_str());	// the parsed mod file
-				vector<shared_ptr<Object>> nameObj = modObj->getValue("name");
-				string name;
-				if (nameObj.size() > 0)
-				{
-					name = nameObj[0]->getLeaf();
-				}
-
-				string path;	// the path of the mod
-				vector<shared_ptr<Object>> dirObjs = modObj->getValue("user_dir");	// the possible paths for the mod
-				if (dirObjs.size() > 0)
-				{
-					path = dirObjs[0]->getLeaf();
-				}
-				else
-				{
-					vector<shared_ptr<Object>> dirObjs = modObj->getValue("archive");	// the other possible paths for the mod (if it's zipped)
-					if (dirObjs.size() > 0)
-					{
-						path = dirObjs[0]->getLeaf();
-					}
-				}
-
-				if (path != "")
-				{
-					possibleMods.insert(make_pair(name, CK2ExportLoc + "/" + path));
-				}
-			}
 		}
 	}
 }
