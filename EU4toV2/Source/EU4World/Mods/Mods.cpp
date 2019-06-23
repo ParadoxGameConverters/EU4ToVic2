@@ -29,10 +29,48 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-EU4::Mods::Mods(const Configuration& theConfiguration)
+EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 {
+	std::set<std::string> usedMods;
+	registerKeyword(std::regex("\".+\""), [&usedMods](const std::string& modName, std::istream& theStream) {
+		if (modName.substr(0, 1) == "\"")
+		{
+			usedMods.insert(modName.substr(1, modName.size() - 2));
+		}
+		else
+		{
+			usedMods.insert(modName);
+		}
+	});
+
+	getNextTokenWithoutMatching(theStream);
+	parseStream(theStream);
+
 	possibleMods.merge(loadEU4ModDirectory(theConfiguration));
 	possibleMods.merge(loadCK2ExportDirectory(theConfiguration));
+
+	for (auto usedMod: usedMods)
+	{
+		auto possibleModPath = getModPath(usedMod);
+		if (possibleModPath)
+		{
+			if (!Utils::doesFolderExist(*possibleModPath) && !Utils::DoesFileExist(*possibleModPath))
+			{
+				LOG(LogLevel::Error) << usedMod << " could not be found in the specified mod directory - a valid mod directory must be specified. Tried " << *possibleModPath;
+				exit(-1);
+			}
+			else
+			{
+				LOG(LogLevel::Debug) << "EU4 Mod is at " << *possibleModPath;
+				theConfiguration.addEU4Mod(*possibleModPath);
+			}
+		}
+		else
+		{
+			LOG(LogLevel::Error) << "No path could be found for " << usedMod;
+			exit(-1);
+		}
+	}
 }
 
 

@@ -177,60 +177,11 @@ void EU4::world::verifySave(const string& EU4SaveFileName)
 void EU4::world::loadUsedMods(const shared_ptr<Object> EU4SaveObj)
 {
 	LOG(LogLevel::Debug) << "Get EU4 Mods";
-	Mods theMods(theConfiguration);
-
 	vector<shared_ptr<Object>> modObj = EU4SaveObj->getValue("mod_enabled");	// the used mods
-	if (modObj.size() > 0)
-	{
-		string modString = modObj[0]->getLeaf();	// the names of all the mods
-		while (modString != "")
-		{
-			string newMod;	// the corrected name of the mod
-			const int firstQuote = modString.find("\"");	// the location of the first quote, defining the start of a mod name
-			if (firstQuote == std::string::npos)
-			{
-				newMod.clear();
-				modString.clear();
-			}
-			else
-			{
-				const int secondQuote = modString.find("\"", firstQuote + 1);	// the location of the second quote, defining the end of a mod name
-				if (secondQuote == std::string::npos)
-				{
-					newMod.clear();
-					modString.clear();
-				}
-				else
-				{
-					newMod = modString.substr(firstQuote + 1, secondQuote - firstQuote - 1);
-					modString = modString.substr(secondQuote + 1, modString.size());
-				}
-			}
 
-			if (newMod != "")
-			{
-				auto possibleModPath = theMods.getModPath(newMod);
-				if (possibleModPath)
-				{
-					if (!Utils::doesFolderExist(*possibleModPath) && !Utils::DoesFileExist(*possibleModPath))
-					{
-						LOG(LogLevel::Error) << newMod << " could not be found in the specified mod directory - a valid mod directory must be specified. Tried " << *possibleModPath;
-						exit(-1);
-					}
-					else
-					{
-						LOG(LogLevel::Debug) << "EU4 Mod is at " << *possibleModPath;
-						theConfiguration.addEU4Mod(*possibleModPath);
-					}
-				}
-				else
-				{
-					LOG(LogLevel::Error) << "No path could be found for " << newMod;
-					exit(-1);
-				}
-			}
-		}
-	}
+	std::stringstream modStream;
+	modStream << *(modObj[0]);
+	Mods theMods(modStream, theConfiguration);
 }
 
 

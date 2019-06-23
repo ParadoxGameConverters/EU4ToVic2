@@ -40,7 +40,7 @@ namespace EU4
 class Mods: commonItems::parser
 {
 	public:
-		Mods(const Configuration& theConfiguration);
+		Mods(std::istream& theStream, Configuration& theConfiguration);
 
 		std::optional<std::string> getModPath(const std::string& modName) const;
 
