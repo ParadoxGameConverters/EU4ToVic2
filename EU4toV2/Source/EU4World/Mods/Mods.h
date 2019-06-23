@@ -45,8 +45,8 @@ class Mods: commonItems::parser
 		std::optional<std::string> getModPath(const std::string& modName) const;
 
 	private:
-		std::map<std::string, std::string> loadEU4ModDirectory(const Configuration& theConfiguration) const;
-		std::map<std::string, std::string> loadCK2ExportDirectory(const Configuration& theConfiguration) const;
+		void loadEU4ModDirectory(const Configuration& theConfiguration);
+		void loadCK2ExportDirectory(const Configuration& theConfiguration);
 
 		std::map<std::string, std::string> possibleMods;
 };

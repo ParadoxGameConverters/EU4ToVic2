@@ -45,8 +45,8 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 
 	parseStream(theStream);
 
-	possibleMods.merge(loadEU4ModDirectory(theConfiguration));
-	possibleMods.merge(loadCK2ExportDirectory(theConfiguration));
+	loadEU4ModDirectory(theConfiguration);
+	loadCK2ExportDirectory(theConfiguration);
 
 	for (auto usedMod: usedMods)
 	{
@@ -73,9 +73,8 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 }
 
 
-std::map<std::string, std::string> EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration) const
+void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 {
-	std::map<std::string, std::string> possibleMods;
 	LOG(LogLevel::Debug) << "Get EU4 Mod Directory";
 	std::string EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();
 	if (!Utils::doesFolderExist(EU4DocumentsLoc))
@@ -107,14 +106,11 @@ std::map<std::string, std::string> EU4::Mods::loadEU4ModDirectory(const Configur
 			}
 		}
 	}
-
-	return possibleMods;
 }
 
 
-std::map<std::string, std::string> EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration) const
+void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 {
-	std::map<std::string, std::string> possibleMods;
 	LOG(LogLevel::Debug) << "Get CK2 Export Directory";
 	std::string CK2ExportLoc = theConfiguration.getCK2ExportPath();
 	if (!Utils::doesFolderExist(CK2ExportLoc))
@@ -145,8 +141,6 @@ std::map<std::string, std::string> EU4::Mods::loadCK2ExportDirectory(const Confi
 			}
 		}
 	}
-
-	return possibleMods;
 }
 
 
