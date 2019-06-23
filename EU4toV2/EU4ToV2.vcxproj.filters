@@ -225,7 +225,7 @@
     <ClCompile Include="Source\EU4World\Provinces\Buildings.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
-	<ClCompile Include="Source\EU4World\Provinces\GreatProjects.cpp">
+    <ClCompile Include="Source\EU4World\Provinces\GreatProjects.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Provinces\DateItem.cpp">
@@ -254,6 +254,9 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp">
       <Filter>Mappers\ProvinceMappings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Mods\Mod.cpp">
+      <Filter>EU4World\Mods</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -478,7 +481,7 @@
     <ClInclude Include="Source\EU4World\Provinces\Buildings.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
-	<ClInclude Include="Source\EU4World\Provinces\GreatProjects.h">
+    <ClInclude Include="Source\EU4World\Provinces\GreatProjects.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\DateItem.h">
@@ -508,6 +511,9 @@
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h">
       <Filter>Mappers\ProvinceMappings</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\Mods\Mod.h">
+      <Filter>EU4World\Mods</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -533,6 +539,9 @@
     </Filter>
     <Filter Include="Mappers\ProvinceMappings">
       <UniqueIdentifier>{5e9fdef6-9a6f-4ec5-bd98-cc22aedc71ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Mods">
+      <UniqueIdentifier>{5cf7770c-c44d-44fd-864a-e3ae2fc9fe43}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
