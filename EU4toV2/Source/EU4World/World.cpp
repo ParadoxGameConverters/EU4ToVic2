@@ -233,21 +233,21 @@ void EU4::world::loadUsedMods(const shared_ptr<Object> EU4SaveObj)
 }
 
 
-map<string, string> EU4::world::loadPossibleMods()
+std::map<std::string, std::string> EU4::world::loadPossibleMods()
 {
-	map<string, string> possibleMods;
-	loadEU4ModDirectory(possibleMods);
-	loadCK2ExportDirectory(possibleMods);
+	std::map<std::string, std::string> possibleMods = loadEU4ModDirectory();
+	possibleMods.merge(loadCK2ExportDirectory());
 
 	return possibleMods;
 }
 
 
-void EU4::world::loadEU4ModDirectory(map<string, string>& possibleMods)
+std::map<std::string, std::string> EU4::world::loadEU4ModDirectory() const
 {
+	std::map<std::string, std::string> possibleMods;
 	LOG(LogLevel::Debug) << "Get EU4 Mod Directory";
-	string EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();	// the EU4 My Documents location as stated in the configuration file
-	if (Utils::DoesFileExist(EU4DocumentsLoc))
+	std::string EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();	// the EU4 My Documents location as stated in the configuration file
+	if (!Utils::doesFolderExist(EU4DocumentsLoc))
 	{
 		LOG(LogLevel::Error) << "No Europa Universalis 4 documents directory was specified in configuration.txt, or the path was invalid";
 		exit(-1);
@@ -255,35 +255,31 @@ void EU4::world::loadEU4ModDirectory(map<string, string>& possibleMods)
 	else
 	{
 		LOG(LogLevel::Debug) << "EU4 Documents directory is " << EU4DocumentsLoc;
-		set<string> fileNames;
-		Utils::GetAllFilesInFolder(EU4DocumentsLoc + "/mod", fileNames);
-		for (set<string>::iterator itr = fileNames.begin(); itr != fileNames.end(); itr++)
+		std::set<std::string> filenames;
+		Utils::GetAllFilesInFolder(EU4DocumentsLoc + "/mod", filenames);
+		for (auto filename: filenames)
 		{
-			const int pos = itr->find_last_of('.');	// the position of the last period in the filename
-			if (itr->substr(pos, itr->length()) == ".mod")
+			const int lastPeriod = filename.find_last_of('.');
+			if (filename.substr(lastPeriod, filename.length()) == ".mod")
 			{
-				shared_ptr<Object> modObj = parser_UTF8::doParseFile((EU4DocumentsLoc + "/mod/" + *itr).c_str());	// the parsed mod file
+				std::shared_ptr<Object> modObj = parser_UTF8::doParseFile((EU4DocumentsLoc + "/mod/" + filename));
 
-				string name;	// the name of the mod
-				vector<shared_ptr<Object>> nameObj = modObj->getValue("name");
+				std::string name;
+				auto nameObj = modObj->getValue("name");
 				if (nameObj.size() > 0)
 				{
 					name = nameObj[0]->getLeaf();
 				}
-				else
-				{
-					name = "";
-				}
 
-				string path;	// the path of the mod
-				vector<shared_ptr<Object>> dirObjs = modObj->getValue("path");	// the possible paths of the mod
+				std::string path;
+				auto dirObjs = modObj->getValue("path");
 				if (dirObjs.size() > 0)
 				{
 					path = dirObjs[0]->getLeaf();
 				}
 				else
 				{
-					vector<shared_ptr<Object>> dirObjs = modObj->getValue("archive");	// the other possible paths of the mod (if its zipped)
+					auto dirObjs = modObj->getValue("archive");
 					if (dirObjs.size() > 0)
 					{
 						path = dirObjs[0]->getLeaf();
@@ -292,50 +288,53 @@ void EU4::world::loadEU4ModDirectory(map<string, string>& possibleMods)
 
 				if ((name != "") && (path != ""))
 				{
-					possibleMods.insert(make_pair(name, EU4DocumentsLoc + "/" + path));
+					possibleMods.insert(std::make_pair(name, EU4DocumentsLoc + "/" + path));
 					Log(LogLevel::Debug) << "\t\tFound a mod named " << name << " claiming to be at " << EU4DocumentsLoc << "/" << path;
 				}
 			}
 		}
 	}
+
+	return possibleMods;
 }
 
 
-void EU4::world::loadCK2ExportDirectory(map<string, string>& possibleMods)
+std::map<std::string, std::string> EU4::world::loadCK2ExportDirectory() const
 {
+	std::map<std::string, std::string> possibleMods;
 	LOG(LogLevel::Debug) << "Get CK2 Export Directory";
-	string CK2ExportLoc = theConfiguration.getCK2ExportPath();		// the CK2 converted mods location as stated in the configuration file
-	if (Utils::DoesFileExist(CK2ExportLoc))
+	std::string CK2ExportLoc = theConfiguration.getCK2ExportPath();
+	if (!Utils::doesFolderExist(CK2ExportLoc))
 	{
 		LOG(LogLevel::Warning) << "No Crusader Kings 2 mod directory was specified in configuration.txt, or the path was invalid - this will cause problems with CK2 converted saves";
 	}
 	else
 	{
 		LOG(LogLevel::Debug) << "CK2 export directory is " << CK2ExportLoc;
-		set<string> fileNames;
-		Utils::GetAllFilesInFolder(CK2ExportLoc, fileNames);
-		for (set<string>::iterator itr = fileNames.begin(); itr != fileNames.end(); itr++)
+		std::set<std::string> filenames;
+		Utils::GetAllFilesInFolder(CK2ExportLoc, filenames);
+		for (auto filename: filenames)
 		{
-			const int pos = itr->find_last_of('.');	// the last period in the filename
-			if ((pos != string::npos) && (itr->substr(pos, itr->length()) == ".mod"))
+			const int pos = filename.find_last_of('.');
+			if ((pos != string::npos) && (filename.substr(pos, filename.length()) == ".mod"))
 			{
-				shared_ptr<Object> modObj = parser_UTF8::doParseFile((CK2ExportLoc + "/" + *itr).c_str());	// the parsed mod file
-				vector<shared_ptr<Object>> nameObj = modObj->getValue("name");
-				string name;
+				std::shared_ptr<Object> modObj = parser_UTF8::doParseFile((CK2ExportLoc + "/" + filename));
+				auto nameObj = modObj->getValue("name");
+				std::string name;
 				if (nameObj.size() > 0)
 				{
 					name = nameObj[0]->getLeaf();
 				}
 
-				string path;	// the path of the mod
-				vector<shared_ptr<Object>> dirObjs = modObj->getValue("user_dir");	// the possible paths for the mod
+				std::string path;
+				auto dirObjs = modObj->getValue("user_dir");
 				if (dirObjs.size() > 0)
 				{
 					path = dirObjs[0]->getLeaf();
 				}
 				else
 				{
-					vector<shared_ptr<Object>> dirObjs = modObj->getValue("archive");	// the other possible paths for the mod (if it's zipped)
+					auto dirObjs = modObj->getValue("archive");
 					if (dirObjs.size() > 0)
 					{
 						path = dirObjs[0]->getLeaf();
@@ -344,11 +343,13 @@ void EU4::world::loadCK2ExportDirectory(map<string, string>& possibleMods)
 
 				if (path != "")
 				{
-					possibleMods.insert(make_pair(name, CK2ExportLoc + "/" + path));
+					possibleMods.insert(std::make_pair(name, CK2ExportLoc + "/" + path));
 				}
 			}
 		}
 	}
+
+	return possibleMods;
 }
 
 
