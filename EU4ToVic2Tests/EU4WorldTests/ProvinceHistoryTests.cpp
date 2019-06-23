@@ -421,7 +421,7 @@ TEST(EU4World_ProvinceHistoryTests, pastCultureOrReligionChangeGivesDecayedRatio
 	input << "{\n";
 	input << "	culture=theCulture\n";
 	input << "	religion=theReligion\n";
-	input << "	1721.1.1={\n";
+	input << "	1721.1.3={\n";
 	input << "		culture=newCulture\n";
 	input << "		religion=newReligion\n";
 	input << "	}\n";
@@ -450,7 +450,7 @@ TEST(EU4World_ProvinceHistoryTests, multipleCultureOrReligionChangeGivesComplexR
 	input << "{\n";
 	input << "	culture=theCulture\n";
 	input << "	religion=theReligion\n";
-	input << "	1721.1.1={\n";
+	input << "	1721.1.3={\n";
 	input << "		religion=newReligion\n";
 	input << "	}\n";
 	input << "	1821.1.3={\n";
