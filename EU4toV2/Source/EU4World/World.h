@@ -71,8 +71,6 @@ class world: private commonItems::parser
 	private:
 		void verifySave(const string& EU4SaveFileName);
 
-		void loadUsedMods(const shared_ptr<Object> EU4SaveObj);
-
 		void loadEU4Version(const shared_ptr<Object> EU4SaveObj);
 		void loadActiveDLC(const shared_ptr<Object> EU4SaveObj);
 		void loadEmpires(const shared_ptr<Object> EU4SaveObj);

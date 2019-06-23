@@ -43,7 +43,6 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 		}
 	});
 
-	getNextTokenWithoutMatching(theStream);
 	parseStream(theStream);
 
 	possibleMods.merge(loadEU4ModDirectory(theConfiguration));

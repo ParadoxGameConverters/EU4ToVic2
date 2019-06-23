@@ -46,8 +46,8 @@ class Configuration: commonItems::parser
 		void instantiate(std::istream& theStream, bool (*doesFolderExist)(const std::string& path), bool (*doesFileExist)(const std::string& path));
 
 		std::string getEU4Path() { return EU4Path; }
-		std::string getEU4DocumentsPath() { return EU4DocumentsPath; }
-		std::string getCK2ExportPath() { return CK2ExportPath; }
+		std::string getEU4DocumentsPath() const { return EU4DocumentsPath; }
+		std::string getCK2ExportPath() const { return CK2ExportPath; }
 		std::string getVic2Path() { return Vic2Path; }
 		std::string getVic2DocumentsPath() { return Vic2DocumentsPath; }
 		std::string getVic2Gametype() { return Vic2Gametype; }

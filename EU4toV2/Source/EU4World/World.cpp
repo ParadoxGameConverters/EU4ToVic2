@@ -71,12 +71,9 @@ EU4::world::world(const string& EU4SaveFileName):
 			loadActiveDLC(versionsObject);
 		}
 	);
-	registerKeyword(std::regex("mod_enabled"), [this](const std::string& modText, std::istream& theStream)
-		{
-			auto modsObject = commonItems::convert8859Object(modText, theStream);
-			loadUsedMods(modsObject);
-		}
-	);
+	registerKeyword(std::regex("mod_enabled"), [this](const std::string& modText, std::istream& theStream) {
+		Mods theMods(theStream, theConfiguration);
+	});
 	registerKeyword(std::regex("revolution_target"), [this](const std::string& revolutionText, std::istream& theStream)
 		{
 			auto modsObject = commonItems::convert8859String(revolutionText, theStream);
@@ -171,17 +168,6 @@ void EU4::world::verifySave(const string& EU4SaveFileName)
 			exit(-1);
 		}
 	}
-}
-
-
-void EU4::world::loadUsedMods(const shared_ptr<Object> EU4SaveObj)
-{
-	LOG(LogLevel::Debug) << "Get EU4 Mods";
-	vector<shared_ptr<Object>> modObj = EU4SaveObj->getValue("mod_enabled");	// the used mods
-
-	std::stringstream modStream;
-	modStream << *(modObj[0]);
-	Mods theMods(modStream, theConfiguration);
 }
 
 
