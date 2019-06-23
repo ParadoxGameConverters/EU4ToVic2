@@ -258,6 +258,9 @@
     <ClCompile Include="Source\EU4World\Mods\Mod.cpp">
       <Filter>EU4World\Mods</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Mods\Mods.cpp">
+      <Filter>EU4World\Mods</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -512,6 +515,9 @@
       <Filter>Mappers\ProvinceMappings</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Mods\Mod.h">
+      <Filter>EU4World\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Mods\Mods.h">
       <Filter>EU4World\Mods</Filter>
     </ClInclude>
   </ItemGroup>

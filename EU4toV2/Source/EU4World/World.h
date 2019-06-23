@@ -72,9 +72,6 @@ class world: private commonItems::parser
 		void verifySave(const string& EU4SaveFileName);
 
 		void loadUsedMods(const shared_ptr<Object> EU4SaveObj);
-		std::map<std::string, std::string> loadPossibleMods();
-		std::map<std::string, std::string> loadEU4ModDirectory() const;
-		std::map<std::string, std::string> loadCK2ExportDirectory() const;
 
 		void loadEU4Version(const shared_ptr<Object> EU4SaveObj);
 		void loadActiveDLC(const shared_ptr<Object> EU4SaveObj);
