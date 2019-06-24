@@ -42,4 +42,13 @@ mappers::ProvinceMapping::ProvinceMapping(std::istream& theStream)
 	});
 
 	parseStream(theStream);
+
+	if (EU4Provinces.empty())
+	{
+		EU4Provinces.push_back(0);
+	}
+	if (Vic2Provinces.empty())
+	{
+		Vic2Provinces.push_back(0);
+	}
 }
