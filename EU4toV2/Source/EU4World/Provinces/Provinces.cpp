@@ -57,7 +57,7 @@ void EU4::Provinces::checkAllProvincesMapped(const mappers::ProvinceMapper& prov
 	for (auto& province: provinces)
 	{
 		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(province.first);
-		if (Vic2Provinces.size() == 0)
+		if ((Vic2Provinces.size() == 0) && (provinceMapper.isValidProvince(province.first)))
 		{
 			LOG(LogLevel::Warning) << "No mapping for province " << province.first;
 		}

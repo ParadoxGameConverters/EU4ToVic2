@@ -77,8 +77,6 @@ class world: private commonItems::parser
 		void loadHolyRomanEmperor(vector<shared_ptr<Object>> empireObj);
 		void loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpireObj);
 
-		map<int, int> determineValidProvinces();
-
 		void loadCountries(istream& theStream);
 		void loadRevolutionTargetString(const shared_ptr<Object> EU4SaveObj);
 		void loadRevolutionTarget();

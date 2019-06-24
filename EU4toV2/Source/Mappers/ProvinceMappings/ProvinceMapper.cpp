@@ -26,6 +26,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../../Configuration.h"
 #include "../../EU4World/EU4Version.h"
 #include "Log.h"
+#include <fstream>
 #include <stdexcept>
 
 
@@ -153,4 +154,31 @@ bool mappers::ProvinceMapper::isProvinceResettable(int Vic2ProvinceNumber, const
 	}
 
 	return (regionProvinces->second.count(Vic2ProvinceNumber) > 0);
+}
+
+
+void mappers::ProvinceMapper::determineValidProvinces()
+{
+	std::ifstream definitionFile((theConfiguration.getEU4Path() + "/map/definition.csv"));
+	if (!definitionFile.is_open())
+	{
+		LOG(LogLevel::Error) << "Could not open map/definition.csv";
+		exit(-1);
+	}
+	char input[256];
+	while (!definitionFile.eof())
+	{
+		definitionFile.getline(input, 255);
+		std::string inputStr(input);
+		if (
+			(inputStr.substr(0, 8) == "province") ||
+			(inputStr.substr(inputStr.find_last_of(';') + 1, 6) == "Unused") ||
+			(inputStr.substr(inputStr.find_last_of(';') + 1, 3) == "RNW")
+			)
+		{
+			continue;
+		}
+		int provNum = std::stoi(inputStr.substr(0, inputStr.find_first_of(';')));
+		validProvinces.insert(provNum);
+	}
 }
