@@ -27,14 +27,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(Mappers_ProvinceMappingTests, EU4ProvincesDefaultToEmpty)
+TEST(Mappers_ProvinceMappingTests, ZeroIsInsertedIfNoEU4Provinces)
 {
 	std::stringstream input;
 	input << "= {}";
 
 	mappers::ProvinceMapping theMapper(input);
 
-	ASSERT_EQ(theMapper.getEU4Provinces().size(), 0);
+	ASSERT_EQ(theMapper.getEU4Provinces().size(), 1);
+	ASSERT_EQ(theMapper.getEU4Provinces()[0], 0);
 }
 
 
@@ -50,14 +51,15 @@ TEST(Mappers_ProvinceMappingTests, EU4ProvinceCanBeAdded)
 }
 
 
-TEST(Mappers_ProvinceMappingTests, Vic2ProvincesDefaultToEmpty)
+TEST(Mappers_ProvinceMappingTests, ZeroIsInsertedIfNoVic2Provinces)
 {
 	std::stringstream input;
 	input << "= {}";
 
 	mappers::ProvinceMapping theMapper(input);
 
-	ASSERT_EQ(theMapper.getVic2Provinces().size(), 0);
+	ASSERT_EQ(theMapper.getVic2Provinces().size(), 1);
+	ASSERT_EQ(theMapper.getVic2Provinces()[0], 0);
 }
 
 
