@@ -228,38 +228,6 @@ void EU4::world::loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpire
 }
 
 
-map<int, int> EU4::world::determineValidProvinces()
-{
-	// Use map/definition.csv to determine valid provinces
-	map<int, int> validProvinces;
-	ifstream definitionFile((theConfiguration.getEU4Path() + "/map/definition.csv").c_str());
-	if (!definitionFile.is_open())
-	{
-		LOG(LogLevel::Error) << "Could not open map/definition.csv";
-		exit(-1);
-	}
-	char input[256];
-	while (!definitionFile.eof())
-	{
-		definitionFile.getline(input, 255);
-		string inputStr(input);
-		int dbgprovNum = atoi(inputStr.substr(0, inputStr.find_first_of(';')).c_str());
-		if (
-			(inputStr.substr(0, 8) == "province") ||
-			(inputStr.substr(inputStr.find_last_of(';') + 1, 6) == "Unused") ||
-			(inputStr.substr(inputStr.find_last_of(';') + 1, 3) == "RNW")
-			)
-		{
-			continue;
-		}
-		int provNum = atoi(inputStr.substr(0, inputStr.find_first_of(';')).c_str());
-		validProvinces.insert(make_pair(provNum, provNum));
-	}
-
-	return validProvinces;
-}
-
-
 void EU4::world::loadCountries(istream& theStream)
 {
 	countries processedCountries(*version, theStream);

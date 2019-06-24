@@ -58,6 +58,8 @@ class ProvinceMapper: commonItems::parser
 		std::vector<int> getEU4ProvinceNumbers(int Vic2ProvinceNumber) const;
 		bool isProvinceResettable(int Vic2ProvinceNumber, const std::string& region) const;
 
+		bool isValidProvince(int province) const { return validProvinces.count(province) > 0; }
+
 	private:
 		ProvinceMappingsVersion getMappingsVersion(
 			const std::map<EU4::Version, ProvinceMappingsVersion>& mappingsVersions,
@@ -65,10 +67,12 @@ class ProvinceMapper: commonItems::parser
 		);
 		void createMappings(const ProvinceMappingsVersion& provinceMappingsVersion);
 		void addProvincesToResettableRegion(const std::string& regionName, const std::vector<int>& provinces);
+		void determineValidProvinces();
 
 		std::map<int, std::vector<int>> Vic2ToEU4ProvinceMap;
 		std::map<int, std::vector<int>> EU4ToVic2ProvinceMap;
 		std::map<std::string, std::set<int>> resettableProvinces;
+		std::set<int> validProvinces;
 };
 
 }
