@@ -597,11 +597,12 @@ void V2World::convertNationalValues()
 void V2World::convertPrestige()
 {
 	LOG(LogLevel::Debug) << "Setting prestige";
+
 	double highestScore = 0.0;
-	for (map<string, V2Country*>::iterator countryItr = countries.begin(); countryItr != countries.end(); countryItr++)
+	for (auto country: countries)
 	{
 		double score = 0.0;
-		auto srcCountry = countryItr->second->getSourceCountry();
+		auto srcCountry = country.second->getSourceCountry();
 		if (srcCountry != nullptr)
 		{
 			score = srcCountry->getScore();
@@ -611,17 +612,18 @@ void V2World::convertPrestige()
 			highestScore = score;
 		}
 	}
-	for (map<string, V2Country*>::iterator countryItr = countries.begin(); countryItr != countries.end(); countryItr++)
+
+	for (auto country: countries)
 	{
 		double score = 0.0;
-		auto srcCountry = countryItr->second->getSourceCountry();
+		auto srcCountry = country.second->getSourceCountry();
 		if (srcCountry != nullptr)
 		{
 			score = srcCountry->getScore();
 		}
 		double prestige = (score * 99.0 / highestScore) + 1;
-		countryItr->second->addPrestige(prestige);
-		LOG(LogLevel::Debug) << countryItr->first << " had " << prestige << " prestige";
+		country.second->addPrestige(prestige);
+		LOG(LogLevel::Debug) << country.first << " had " << prestige << " prestige";
 	}
 }
 
