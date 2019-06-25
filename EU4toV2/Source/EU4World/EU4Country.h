@@ -94,7 +94,7 @@ namespace EU4
 			vector<string>					getAcceptedCultures()					const { return acceptedCultures; }
 			std::optional<EU4::cultureGroup> getCulturalUnion() const { return culturalUnion; }
 			string							getReligion()								const { return religion; }
-			double							getScore()									const { return score; }
+			double getScore() const { return score; }
 			double							getStability()								const { return stability; }
 			double							getAdmTech()								const { return admTech; }
 			double							getDipTech()								const { return dipTech; }
@@ -146,7 +146,7 @@ namespace EU4
 			vector<string>					acceptedCultures;		// the accepted EU4 cultures for this nation
 			std::optional<EU4::cultureGroup> culturalUnion;
 			string							religion;				// the accepted religion of this country
-			double							score;					// this country's EU4 score
+			double score = 0.0;
 			double							stability;				// the stability of this nation
 			double							admTech;					// the admin tech of this nation
 			double							dipTech;					// the diplo tech of this nation
