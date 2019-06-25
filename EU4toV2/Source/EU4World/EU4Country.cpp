@@ -254,12 +254,14 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 			religion = theReligion.getString();
 		}
 	);
-	registerKeyword(std::regex("score"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleDouble theScore(theStream);
-			score = theScore.getDouble();
-		}
-	);
+	registerKeyword(std::regex("score"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble theScore(theStream);
+		score = theScore.getDouble();
+	});
+	registerKeyword(std::regex("great_power_score"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble theScore(theStream);
+		score = theScore.getDouble();
+	});
 	registerKeyword(std::regex("stability"), [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleDouble theStability(theStream);
