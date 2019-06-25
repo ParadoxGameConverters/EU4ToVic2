@@ -621,7 +621,7 @@ void V2World::convertPrestige()
 		{
 			score = srcCountry->getScore();
 		}
-		double prestige = (score * 99.0 / highestScore) + 1;
+		double prestige = score / highestScore * 100.0;
 		country.second->addPrestige(prestige);
 		LOG(LogLevel::Debug) << country.first << " had " << prestige << " prestige";
 	}
