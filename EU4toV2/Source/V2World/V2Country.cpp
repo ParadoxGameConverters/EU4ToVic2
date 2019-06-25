@@ -99,7 +99,6 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 	capital					= 0;
 	diploPoints				= 0.0;
 	badboy					= 0.0;
-	prestige					= 0.0;
 	money						= 0.0;
 	techSchool				= "traditional_academic";
 	researchPoints			= 0.0;
@@ -224,7 +223,6 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 	capital					= 0;
 	diploPoints				= 0.0;
 	badboy					= 0.0;
-	prestige					= 0.0;
 	money						= 0.0;
 	techSchool				= "traditional_academic";
 	researchPoints			= 0.0;

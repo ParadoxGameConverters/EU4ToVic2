@@ -121,7 +121,7 @@ class V2Country
 		V2Relations*					getRelations(string withWhom) const;
 		void								getNationalValueScores(int& liberty, int& equality, int& order);
 		
-		void								addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
+		void addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
 		void								addResearchPoints(double newPoints)		{ researchPoints += newPoints; }
 		void								addTech(string newTech)						{ techs.push_back(newTech); }
 		void								setNationalValue(string NV)				{ nationalValue = NV; }
@@ -189,7 +189,7 @@ class V2Country
 		vector<V2Party*>				parties;
 		string							rulingParty;
 		string							commonCountryFile;
-		double							prestige;
+		double prestige = 0.0;
 		double							leadership;
 		double							plurality;
 		vector<string>					techs;

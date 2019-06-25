@@ -85,7 +85,6 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 	acceptedCultures(),
 	culturalUnion({}),
 	religion(),
-	score(0.0),
 	stability(-3.0),
 	admTech(0.0),
 	dipTech(0.0),
