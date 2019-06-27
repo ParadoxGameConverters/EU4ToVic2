@@ -86,25 +86,7 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 	else
 	{
 		LOG(LogLevel::Debug) << "EU4 Documents directory is " << EU4DocumentsLoc;
-		std::set<std::string> filenames;
-		Utils::GetAllFilesInFolder(EU4DocumentsLoc + "/mod", filenames);
-		for (auto filename : filenames)
-		{
-			const int lastPeriod = filename.find_last_of('.');
-			if (filename.substr(lastPeriod, filename.length()) == ".mod")
-			{
-				std::ifstream modFile(EU4DocumentsLoc + "/mod/" + filename);
-				EU4::Mod theMod(modFile);
-				modFile.close();
-
-				if (theMod.isValid())
-				{
-					possibleMods.insert(std::make_pair(theMod.getName(), EU4DocumentsLoc + "/" + theMod.getPath()));
-					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " claiming to be at " \
-						<< EU4DocumentsLoc << "/" << theMod.getPath();
-				}
-			}
-		}
+		loadModDirectory(EU4DocumentsLoc, theConfiguration);
 	}
 }
 
@@ -121,23 +103,29 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 	else
 	{
 		LOG(LogLevel::Debug) << "CK2 export directory is " << CK2ExportLoc;
-		std::set<std::string> filenames;
-		Utils::GetAllFilesInFolder(CK2ExportLoc + "/mod", filenames);
-		for (auto filename : filenames)
-		{
-			const int pos = filename.find_last_of('.');
-			if ((pos != std::string::npos) && (filename.substr(pos, filename.length()) == ".mod"))
-			{
-				std::ifstream modFile(CK2ExportLoc + "/mod/" + filename);
-				Mod theMod(modFile);
-				modFile.close();
+		loadModDirectory(CK2ExportLoc, theConfiguration);
+	}
+}
 
-				if (theMod.isValid())
-				{
-					possibleMods.insert(std::make_pair(theMod.getName(), CK2ExportLoc + "/" + theMod.getPath()));
-					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " claiming to be at " \
-						<< CK2ExportLoc << "/" << theMod.getPath();
-				}
+
+void EU4::Mods::loadModDirectory(const std::string& directory, const Configuration& theConfiguration)
+{
+	std::set<std::string> filenames;
+	Utils::GetAllFilesInFolder(directory + "/mod", filenames);
+	for (auto filename: filenames)
+	{
+		const int pos = filename.find_last_of('.');
+		if ((pos != std::string::npos) && (filename.substr(pos, filename.length()) == ".mod"))
+		{
+			std::ifstream modFile(directory + "/mod/" + filename);
+			Mod theMod(modFile);
+			modFile.close();
+
+			if (theMod.isValid())
+			{
+				possibleMods.insert(std::make_pair(theMod.getName(), directory + "/" + theMod.getPath()));
+				Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " claiming to be at " \
+					<< directory << "/" << theMod.getPath();
 			}
 		}
 	}
