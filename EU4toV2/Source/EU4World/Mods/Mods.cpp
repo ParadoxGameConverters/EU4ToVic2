@@ -122,13 +122,13 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 	{
 		LOG(LogLevel::Debug) << "CK2 export directory is " << CK2ExportLoc;
 		std::set<std::string> filenames;
-		Utils::GetAllFilesInFolder(CK2ExportLoc, filenames);
+		Utils::GetAllFilesInFolder(CK2ExportLoc + "/mod", filenames);
 		for (auto filename : filenames)
 		{
 			const int pos = filename.find_last_of('.');
 			if ((pos != std::string::npos) && (filename.substr(pos, filename.length()) == ".mod"))
 			{
-				std::ifstream modFile(CK2ExportLoc + "/" + filename);
+				std::ifstream modFile(CK2ExportLoc + "/mod/" + filename);
 				Mod theMod(modFile);
 				modFile.close();
 
