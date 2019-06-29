@@ -27,31 +27,31 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-double helpers::getCountryArmyTech(std::shared_ptr<EU4::Country> country)
+double helpers::getCountryArmyTech(const std::shared_ptr<EU4::Country>& country)
 {
 	return country->getMilTech() + country->getAdmTech() + ideaEffectMapper::getArmyTechFromIdeas(country->getNationalIdeas());
 }
 
 
-double helpers::getCountryNavyTech(std::shared_ptr<EU4::Country> country)
+double helpers::getCountryNavyTech(const std::shared_ptr<EU4::Country>& country)
 {
 	return country->getMilTech() + country->getDipTech() + ideaEffectMapper::getNavyTechFromIdeas(country->getNationalIdeas());
 }
 
 
-double helpers::getCountryCommerceTech(std::shared_ptr<EU4::Country> country)
+double helpers::getCountryCommerceTech(const std::shared_ptr<EU4::Country>& country)
 {
 	return country->getAdmTech() + country->getDipTech() + ideaEffectMapper::getCommerceTechFromIdeas(country->getNationalIdeas());
 }
 
 
-double helpers::getCountryCultureTech(std::shared_ptr<EU4::Country> country)
+double helpers::getCountryCultureTech(const std::shared_ptr<EU4::Country>& country)
 {
 	return country->getDipTech() + ideaEffectMapper::getCultureTechFromIdeas(country->getNationalIdeas());
 }
 
 
-double helpers::getCountryIndustryTech(std::shared_ptr<EU4::Country> country)
+double helpers::getCountryIndustryTech(const std::shared_ptr<EU4::Country>& country)
 {
 	return country->getAdmTech() + country->getDipTech() + country->getMilTech() + ideaEffectMapper::getIndustryTechFromIdeas(country->getNationalIdeas());
 }

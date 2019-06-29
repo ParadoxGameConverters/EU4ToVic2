@@ -42,11 +42,11 @@ class Country;
 namespace helpers
 {
 
-double getCountryArmyTech(std::shared_ptr<EU4::Country> country);
-double getCountryNavyTech(std::shared_ptr<EU4::Country> country);
-double getCountryCommerceTech(std::shared_ptr<EU4::Country> country);
-double getCountryCultureTech(std::shared_ptr<EU4::Country> country);
-double getCountryIndustryTech(std::shared_ptr<EU4::Country> country);
+double getCountryArmyTech(const std::shared_ptr<EU4::Country>& country);
+double getCountryNavyTech(const std::shared_ptr<EU4::Country>& country);
+double getCountryCommerceTech(const std::shared_ptr<EU4::Country>& country);
+double getCountryCultureTech(const std::shared_ptr<EU4::Country>& country);
+double getCountryIndustryTech(const std::shared_ptr<EU4::Country>& country);
 
 void updateMeanMax(double& max, double& mean, int num, double techLevel);
 
