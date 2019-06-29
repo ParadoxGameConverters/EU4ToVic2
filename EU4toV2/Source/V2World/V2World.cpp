@@ -48,6 +48,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/EU4Leader.h"
 #include "../EU4World/EU4Diplomacy.h"
 #include "../EU4World/Provinces/EU4Province.h"
+#include "../Helpers/TechConversionHelpers.h"
 #include "BlockedTechSchools.h"
 #include "StateMapper.h"
 #include "V2Province.h"
@@ -1306,37 +1307,12 @@ void V2World::convertUncivReforms(const EU4::world& sourceWorld)
 	}
 }
 
+
 void V2World::convertTechs(const EU4::world& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting techs";
 
 	auto sourceCountries = sourceWorld.getCountries();
-
-	// Helper functions
-	auto getCountryArmyTech = [&](shared_ptr<EU4::Country> country)
-	{
-		return country->getMilTech() + country->getAdmTech() + ideaEffectMapper::getArmyTechFromIdeas(country->getNationalIdeas());
-	};
-
-	auto getCountryNavyTech = [&](shared_ptr<EU4::Country> country)
-	{
-		return country->getMilTech() + country->getDipTech() + ideaEffectMapper::getNavyTechFromIdeas(country->getNationalIdeas());
-	};
-
-	auto getCountryCommerceTech = [&](shared_ptr<EU4::Country> country)
-	{
-		return country->getAdmTech() + country->getDipTech() + ideaEffectMapper::getCommerceTechFromIdeas(country->getNationalIdeas());
-	};
-
-	auto getCountryCultureTech = [&](shared_ptr<EU4::Country> country)
-	{
-		return country->getDipTech() + ideaEffectMapper::getCultureTechFromIdeas(country->getNationalIdeas());
-	};
-
-	auto getCountryIndustryTech = [&](shared_ptr<EU4::Country> country)
-	{
-		return country->getAdmTech() + country->getDipTech() + country->getMilTech() + ideaEffectMapper::getIndustryTechFromIdeas(country->getNationalIdeas());
-	};
 
 	double armyMax, armyMean;
 	double navyMax, navyMean;
@@ -1350,21 +1326,13 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 
 	// Take mean and max from the first country
 	auto currCountry = i->second;
-	armyMax = armyMean = getCountryArmyTech(currCountry->getSourceCountry());
-	navyMax = navyMean = getCountryNavyTech(currCountry->getSourceCountry());
-	commerceMax = commerceMean = getCountryCommerceTech(currCountry->getSourceCountry());
-	cultureMax = cultureMean = getCountryCultureTech(currCountry->getSourceCountry());
-	industryMax = industryMean = getCountryIndustryTech(currCountry->getSourceCountry());
+	armyMax = armyMean = helpers::getCountryArmyTech(currCountry->getSourceCountry());
+	navyMax = navyMean = helpers::getCountryNavyTech(currCountry->getSourceCountry());
+	commerceMax = commerceMean = helpers::getCountryCommerceTech(currCountry->getSourceCountry());
+	cultureMax = cultureMean = helpers::getCountryCultureTech(currCountry->getSourceCountry());
+	industryMax = industryMean = helpers::getCountryIndustryTech(currCountry->getSourceCountry());
 
 	int num = 2;
-
-	// Helper for updating max and mean
-	auto updateMeanMax = [&](double& max, double& mean, double techLevel)
-	{
-		if (techLevel > max)
-			max = techLevel;
-		mean = mean + (techLevel - mean) / num;
-	};
 
 	// Calculate max and mean
 	for (i++; i != countries.end(); i++)
@@ -1376,21 +1344,13 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 		if (currCountry->getProvinces().size() == 0)
 			continue;
 
-		updateMeanMax(armyMax, armyMean, getCountryArmyTech(currCountry->getSourceCountry()));
-		updateMeanMax(navyMax, navyMean, getCountryNavyTech(currCountry->getSourceCountry()));
-		updateMeanMax(commerceMax, commerceMean, getCountryCommerceTech(currCountry->getSourceCountry()));
-		updateMeanMax(cultureMax, cultureMean, getCountryCultureTech(currCountry->getSourceCountry()));
-		updateMeanMax(industryMax, industryMean, getCountryIndustryTech(currCountry->getSourceCountry()));
+		helpers::updateMeanMax(armyMax, armyMean, num, helpers::getCountryArmyTech(currCountry->getSourceCountry()));
+		helpers::updateMeanMax(navyMax, navyMean, num, helpers::getCountryNavyTech(currCountry->getSourceCountry()));
+		helpers::updateMeanMax(commerceMax, commerceMean, num, helpers::getCountryCommerceTech(currCountry->getSourceCountry()));
+		helpers::updateMeanMax(cultureMax, cultureMean, num, helpers::getCountryCultureTech(currCountry->getSourceCountry()));
+		helpers::updateMeanMax(industryMax, industryMean, num, helpers::getCountryIndustryTech(currCountry->getSourceCountry()));
 		num++;
 	}
-
-	// Helper to normalize the score
-	auto getNormalizedScore = [](double score, double max, double mean)
-	{
-		if (mean == max)
-			return max;
-		return (score - mean) / (max - mean);
-	};
 
 	// Set tech levels from normalized scores
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); itr++)
@@ -1406,13 +1366,14 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 		if (country->getProvinces().size() == 0)
 			continue;
 
-		country->setArmyTech(getNormalizedScore(getCountryArmyTech(srcCountry), armyMax, armyMean));
-		country->setNavyTech(getNormalizedScore(getCountryNavyTech(srcCountry), navyMax, navyMean));
-		country->setCommerceTech(getNormalizedScore(getCountryCommerceTech(srcCountry), commerceMax, commerceMean));
-		country->setCultureTech(getNormalizedScore(getCountryCultureTech(srcCountry), cultureMax, cultureMean));
-		country->setIndustryTech(getNormalizedScore(getCountryIndustryTech(srcCountry), industryMax, industryMean));
+		country->setArmyTech(helpers::getNormalizedScore(helpers::getCountryArmyTech(srcCountry), armyMax, armyMean));
+		country->setNavyTech(helpers::getNormalizedScore(helpers::getCountryNavyTech(srcCountry), navyMax, navyMean));
+		country->setCommerceTech(helpers::getNormalizedScore(helpers::getCountryCommerceTech(srcCountry), commerceMax, commerceMean));
+		country->setCultureTech(helpers::getNormalizedScore(helpers::getCountryCultureTech(srcCountry), cultureMax, cultureMean));
+		country->setIndustryTech(helpers::getNormalizedScore(helpers::getCountryIndustryTech(srcCountry), industryMax, industryMean));
 	}
 }
+
 
 void V2World::allocateFactories(const EU4::world& sourceWorld)
 {
