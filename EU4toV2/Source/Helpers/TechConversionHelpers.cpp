@@ -24,6 +24,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "TechConversionHelpers.h"
 #include "../EU4World/EU4Country.h"
 #include "../Mappers/IdeaEffectMapper.h"
+#include "../V2World/V2Country.h"
+#include "../Configuration.h"
 
 
 
@@ -54,6 +56,39 @@ double helpers::getCountryCultureTech(const std::shared_ptr<EU4::Country>& count
 double helpers::getCountryIndustryTech(const std::shared_ptr<EU4::Country>& country)
 {
 	return country->getAdmTech() + country->getDipTech() + country->getMilTech() + ideaEffectMapper::getIndustryTechFromIdeas(country->getNationalIdeas());
+}
+
+
+helpers::TechValues::TechValues(const std::map<std::string, V2Country*>& countries)
+{
+	int numValidCountries = 0;
+	double armyTotal = 0.0;
+	double navyTotal = 0.0;
+	double commerceTotal = 0.0;
+	double cultureTotal = 0.0;
+	double industryTotal = 0.0;
+	for (auto countryItr: countries)
+	{
+		auto country = countryItr.second;
+		if ((theConfiguration.getVic2Gametype() != "vanilla") && !country->isCivilized())
+			continue;
+
+		if (country->getProvinces().size() == 0)
+			continue;
+
+		helpers::updateMaxAndTotal(armyMax, armyTotal, helpers::getCountryArmyTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(navyMax, navyTotal, helpers::getCountryNavyTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(commerceMax, commerceTotal, helpers::getCountryCommerceTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(cultureMax, cultureTotal, helpers::getCountryCultureTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(industryMax, industryTotal, helpers::getCountryIndustryTech(country->getSourceCountry()));
+		numValidCountries++;
+	}
+
+	armyMean = armyTotal / numValidCountries;
+	navyMean = navyTotal / numValidCountries;
+	commerceMean = commerceTotal / numValidCountries;
+	cultureMean = cultureTotal / numValidCountries;
+	industryMean = industryTotal / numValidCountries;
 }
 
 

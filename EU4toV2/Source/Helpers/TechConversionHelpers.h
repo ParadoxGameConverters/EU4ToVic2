@@ -26,16 +26,17 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include <map>
 #include <memory>
 
 
 
 namespace EU4
 {
-
 class Country;
-
 }
+
+class V2Country;
 
 
 
@@ -49,20 +50,25 @@ double getCountryCultureTech(const std::shared_ptr<EU4::Country>& country);
 double getCountryIndustryTech(const std::shared_ptr<EU4::Country>& country);
 
 
-typedef struct TechValues
+class TechValues
 {
-	double armyMax = 0.0;
-	double navyMax = 0.0;
-	double commerceMax = 0.0;
-	double cultureMax = 0.0;
-	double industryMax = 0.0;
+	public:
+		TechValues(const std::map<std::string, V2Country*>& countries);
 
-	double armyTotal = 0.0;
-	double navyTotal = 0.0;
-	double commerceTotal = 0.0;
-	double cultureTotal = 0.0;
-	double industryTotal = 0.0;
-} TechValues;
+		double armyMax = 0.0;
+		double navyMax = 0.0;
+		double commerceMax = 0.0;
+		double cultureMax = 0.0;
+		double industryMax = 0.0;
+
+		double armyMean = 0.0;
+		double navyMean = 0.0;
+		double commerceMean = 0.0;
+		double cultureMean = 0.0;
+		double industryMean = 0.0;
+};
+
+
 void updateMaxAndTotal(double& max, double& total, double techLevel);
 
 double getNormalizedScore(double score, double max, double mean);
