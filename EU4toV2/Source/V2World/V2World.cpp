@@ -1312,17 +1312,7 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting techs";
 
-	double armyMax = 0.0;
-	double navyMax = 0.0;
-	double commerceMax = 0.0;
-	double cultureMax = 0.0;
-	double industryMax = 0.0;
-
-	double armyTotal = 0.0;
-	double navyTotal = 0.0;
-	double commerceTotal = 0.0;
-	double cultureTotal = 0.0;
-	double industryTotal = 0.0;
+	helpers::TechValues techValues;
 
 	int numValidCountries = 0;
 	for (auto countryItr: countries)
@@ -1334,18 +1324,18 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 		if (country->getProvinces().size() == 0)
 			continue;
 
-		helpers::updateMaxAndTotal(armyMax, armyTotal, helpers::getCountryArmyTech(country->getSourceCountry()));
-		helpers::updateMaxAndTotal(navyMax, navyTotal, helpers::getCountryNavyTech(country->getSourceCountry()));
-		helpers::updateMaxAndTotal(commerceMax, commerceTotal, helpers::getCountryCommerceTech(country->getSourceCountry()));
-		helpers::updateMaxAndTotal(cultureMax, cultureTotal, helpers::getCountryCultureTech(country->getSourceCountry()));
-		helpers::updateMaxAndTotal(industryMax, industryTotal, helpers::getCountryIndustryTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(techValues.armyMax, techValues.armyTotal, helpers::getCountryArmyTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(techValues.navyMax, techValues.navyTotal, helpers::getCountryNavyTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(techValues.commerceMax, techValues.commerceTotal, helpers::getCountryCommerceTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(techValues.cultureMax, techValues.cultureTotal, helpers::getCountryCultureTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(techValues.industryMax, techValues.industryTotal, helpers::getCountryIndustryTech(country->getSourceCountry()));
 		numValidCountries++;
 	}
-	double armyMean = armyTotal / numValidCountries;
-	double navyMean = navyTotal / numValidCountries;
-	double commerceMean = commerceTotal / numValidCountries;
-	double cultureMean = cultureTotal / numValidCountries;
-	double industryMean = industryTotal / numValidCountries;
+	double armyMean = techValues.armyTotal / numValidCountries;
+	double navyMean = techValues.navyTotal / numValidCountries;
+	double commerceMean = techValues.commerceTotal / numValidCountries;
+	double cultureMean = techValues.cultureTotal / numValidCountries;
+	double industryMean = techValues.industryTotal / numValidCountries;
 
 	// Set tech levels from normalized scores
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); itr++)
@@ -1361,11 +1351,11 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 		if (country->getProvinces().size() == 0)
 			continue;
 
-		country->setArmyTech(helpers::getNormalizedScore(helpers::getCountryArmyTech(srcCountry), armyMax, armyMean));
-		country->setNavyTech(helpers::getNormalizedScore(helpers::getCountryNavyTech(srcCountry), navyMax, navyMean));
-		country->setCommerceTech(helpers::getNormalizedScore(helpers::getCountryCommerceTech(srcCountry), commerceMax, commerceMean));
-		country->setCultureTech(helpers::getNormalizedScore(helpers::getCountryCultureTech(srcCountry), cultureMax, cultureMean));
-		country->setIndustryTech(helpers::getNormalizedScore(helpers::getCountryIndustryTech(srcCountry), industryMax, industryMean));
+		country->setArmyTech(helpers::getNormalizedScore(helpers::getCountryArmyTech(srcCountry), techValues.armyMax, armyMean));
+		country->setNavyTech(helpers::getNormalizedScore(helpers::getCountryNavyTech(srcCountry), techValues.navyMax, navyMean));
+		country->setCommerceTech(helpers::getNormalizedScore(helpers::getCountryCommerceTech(srcCountry), techValues.commerceMax, commerceMean));
+		country->setCultureTech(helpers::getNormalizedScore(helpers::getCountryCultureTech(srcCountry), techValues.cultureMax, cultureMean));
+		country->setIndustryTech(helpers::getNormalizedScore(helpers::getCountryIndustryTech(srcCountry), techValues.industryMax, industryMean));
 	}
 }
 

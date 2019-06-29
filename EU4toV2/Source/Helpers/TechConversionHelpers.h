@@ -48,6 +48,21 @@ double getCountryCommerceTech(const std::shared_ptr<EU4::Country>& country);
 double getCountryCultureTech(const std::shared_ptr<EU4::Country>& country);
 double getCountryIndustryTech(const std::shared_ptr<EU4::Country>& country);
 
+
+typedef struct TechValues
+{
+	double armyMax = 0.0;
+	double navyMax = 0.0;
+	double commerceMax = 0.0;
+	double cultureMax = 0.0;
+	double industryMax = 0.0;
+
+	double armyTotal = 0.0;
+	double navyTotal = 0.0;
+	double commerceTotal = 0.0;
+	double cultureTotal = 0.0;
+	double industryTotal = 0.0;
+} TechValues;
 void updateMaxAndTotal(double& max, double& total, double techLevel);
 
 double getNormalizedScore(double score, double max, double mean);
