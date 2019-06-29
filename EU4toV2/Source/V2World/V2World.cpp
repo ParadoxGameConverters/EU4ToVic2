@@ -1344,17 +1344,17 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 	double cultureMax, cultureMean;
 	double industryMax, industryMean;
 
-	auto i = sourceCountries.begin();
+	auto i = countries.begin();
 	while (i->second->getProvinces().size() == 0)
 		i++;
 
 	// Take mean and max from the first country
 	auto currCountry = i->second;
-	armyMax = armyMean = getCountryArmyTech(currCountry);
-	navyMax = navyMean = getCountryNavyTech(currCountry);
-	commerceMax = commerceMean = getCountryCommerceTech(currCountry);
-	cultureMax = cultureMean = getCountryCultureTech(currCountry);
-	industryMax = industryMean = getCountryIndustryTech(currCountry);
+	armyMax = armyMean = getCountryArmyTech(currCountry->getSourceCountry());
+	navyMax = navyMean = getCountryNavyTech(currCountry->getSourceCountry());
+	commerceMax = commerceMean = getCountryCommerceTech(currCountry->getSourceCountry());
+	cultureMax = cultureMean = getCountryCultureTech(currCountry->getSourceCountry());
+	industryMax = industryMean = getCountryIndustryTech(currCountry->getSourceCountry());
 
 	int num = 2;
 
@@ -1367,17 +1367,20 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 	};
 
 	// Calculate max and mean
-	for (i++; i != sourceCountries.end(); i++)
+	for (i++; i != countries.end(); i++)
 	{
 		currCountry = i->second;
+		if ((theConfiguration.getVic2Gametype() != "vanilla") && !currCountry->isCivilized())
+			continue;
+
 		if (currCountry->getProvinces().size() == 0)
 			continue;
 
-		updateMeanMax(armyMax, armyMean, getCountryArmyTech(currCountry));
-		updateMeanMax(navyMax, navyMean, getCountryNavyTech(currCountry));
-		updateMeanMax(commerceMax, commerceMean, getCountryCommerceTech(currCountry));
-		updateMeanMax(cultureMax, cultureMean, getCountryCultureTech(currCountry));
-		updateMeanMax(industryMax, industryMean, getCountryIndustryTech(currCountry));
+		updateMeanMax(armyMax, armyMean, getCountryArmyTech(currCountry->getSourceCountry()));
+		updateMeanMax(navyMax, navyMean, getCountryNavyTech(currCountry->getSourceCountry()));
+		updateMeanMax(commerceMax, commerceMean, getCountryCommerceTech(currCountry->getSourceCountry()));
+		updateMeanMax(cultureMax, cultureMean, getCountryCultureTech(currCountry->getSourceCountry()));
+		updateMeanMax(industryMax, industryMean, getCountryIndustryTech(currCountry->getSourceCountry()));
 		num++;
 	}
 
@@ -1398,6 +1401,9 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 
 		auto srcCountry = country->getSourceCountry();
 		if (!srcCountry)
+			continue;
+
+		if (country->getProvinces().size() == 0)
 			continue;
 
 		country->setArmyTech(getNormalizedScore(getCountryArmyTech(srcCountry), armyMax, armyMean));
