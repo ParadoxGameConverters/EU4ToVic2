@@ -57,11 +57,14 @@ double helpers::getCountryIndustryTech(const std::shared_ptr<EU4::Country>& coun
 }
 
 
-void helpers::updateMeanMax(double& max, double& mean, int num, double techLevel)
+void helpers::updateMaxAndTotal(double& max, double& total, double techLevel)
 {
 	if (techLevel > max)
+	{
 		max = techLevel;
-	mean = mean + (techLevel - mean) / num;
+	}
+
+	total += techLevel;
 }
 
 

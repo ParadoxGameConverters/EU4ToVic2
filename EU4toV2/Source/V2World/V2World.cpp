@@ -1312,45 +1312,40 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting techs";
 
-	auto sourceCountries = sourceWorld.getCountries();
+	double armyMax = 0.0;
+	double navyMax = 0.0;
+	double commerceMax = 0.0;
+	double cultureMax = 0.0;
+	double industryMax = 0.0;
 
-	double armyMax, armyMean;
-	double navyMax, navyMean;
-	double commerceMax, commerceMean;
-	double cultureMax, cultureMean;
-	double industryMax, industryMean;
+	double armyTotal = 0.0;
+	double navyTotal = 0.0;
+	double commerceTotal = 0.0;
+	double cultureTotal = 0.0;
+	double industryTotal = 0.0;
 
-	auto i = countries.begin();
-	while (i->second->getProvinces().size() == 0)
-		i++;
-
-	// Take mean and max from the first country
-	auto currCountry = i->second;
-	armyMax = armyMean = helpers::getCountryArmyTech(currCountry->getSourceCountry());
-	navyMax = navyMean = helpers::getCountryNavyTech(currCountry->getSourceCountry());
-	commerceMax = commerceMean = helpers::getCountryCommerceTech(currCountry->getSourceCountry());
-	cultureMax = cultureMean = helpers::getCountryCultureTech(currCountry->getSourceCountry());
-	industryMax = industryMean = helpers::getCountryIndustryTech(currCountry->getSourceCountry());
-
-	int num = 2;
-
-	// Calculate max and mean
-	for (i++; i != countries.end(); i++)
+	int numValidCountries = 0;
+	for (auto countryItr: countries)
 	{
-		currCountry = i->second;
-		if ((theConfiguration.getVic2Gametype() != "vanilla") && !currCountry->isCivilized())
+		auto country = countryItr.second;
+		if ((theConfiguration.getVic2Gametype() != "vanilla") && !country->isCivilized())
 			continue;
 
-		if (currCountry->getProvinces().size() == 0)
+		if (country->getProvinces().size() == 0)
 			continue;
 
-		helpers::updateMeanMax(armyMax, armyMean, num, helpers::getCountryArmyTech(currCountry->getSourceCountry()));
-		helpers::updateMeanMax(navyMax, navyMean, num, helpers::getCountryNavyTech(currCountry->getSourceCountry()));
-		helpers::updateMeanMax(commerceMax, commerceMean, num, helpers::getCountryCommerceTech(currCountry->getSourceCountry()));
-		helpers::updateMeanMax(cultureMax, cultureMean, num, helpers::getCountryCultureTech(currCountry->getSourceCountry()));
-		helpers::updateMeanMax(industryMax, industryMean, num, helpers::getCountryIndustryTech(currCountry->getSourceCountry()));
-		num++;
+		helpers::updateMaxAndTotal(armyMax, armyTotal, helpers::getCountryArmyTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(navyMax, navyTotal, helpers::getCountryNavyTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(commerceMax, commerceTotal, helpers::getCountryCommerceTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(cultureMax, cultureTotal, helpers::getCountryCultureTech(country->getSourceCountry()));
+		helpers::updateMaxAndTotal(industryMax, industryTotal, helpers::getCountryIndustryTech(country->getSourceCountry()));
+		numValidCountries++;
 	}
+	double armyMean = armyTotal / numValidCountries;
+	double navyMean = navyTotal / numValidCountries;
+	double commerceMean = commerceTotal / numValidCountries;
+	double cultureMean = cultureTotal / numValidCountries;
+	double industryMean = industryTotal / numValidCountries;
 
 	// Set tech levels from normalized scores
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); itr++)

@@ -48,7 +48,7 @@ double getCountryCommerceTech(const std::shared_ptr<EU4::Country>& country);
 double getCountryCultureTech(const std::shared_ptr<EU4::Country>& country);
 double getCountryIndustryTech(const std::shared_ptr<EU4::Country>& country);
 
-void updateMeanMax(double& max, double& mean, int num, double techLevel);
+void updateMaxAndTotal(double& max, double& total, double techLevel);
 
 double getNormalizedScore(double score, double max, double mean);
 
