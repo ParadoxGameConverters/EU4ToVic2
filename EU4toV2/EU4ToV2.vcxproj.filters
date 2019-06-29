@@ -261,6 +261,9 @@
     <ClCompile Include="Source\EU4World\Mods\Mods.cpp">
       <Filter>EU4World\Mods</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Helpers\TechConversionHelpers.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -520,6 +523,9 @@
     <ClInclude Include="Source\EU4World\Mods\Mods.h">
       <Filter>EU4World\Mods</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Helpers\TechConversionHelpers.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -548,6 +554,9 @@
     </Filter>
     <Filter Include="EU4World\Mods">
       <UniqueIdentifier>{5cf7770c-c44d-44fd-864a-e3ae2fc9fe43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{ef5e0061-2ce9-448e-9f80-9fa52991faf9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
