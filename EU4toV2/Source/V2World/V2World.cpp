@@ -1317,21 +1317,14 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); itr++)
 	{
 		V2Country* country = itr->second;
-		if ((theConfiguration.getVic2Gametype() != "vanilla") && !country->isCivilized())
-			continue;
-
-		auto srcCountry = country->getSourceCountry();
-		if (!srcCountry)
-			continue;
-
-		if (country->getProvinces().size() == 0)
-			continue;
-
-		country->setArmyTech(techValues.getNormalizedArmyTech(*country->getSourceCountry()));
-		country->setNavyTech(techValues.getNormalizedNavyTech(*country->getSourceCountry()));
-		country->setCommerceTech(techValues.getNormalizedCommerceTech(*country->getSourceCountry()));
-		country->setCultureTech(techValues.getNormalizedCultureTech(*country->getSourceCountry()));
-		country->setIndustryTech(techValues.getNormalizedIndustryTech(*country->getSourceCountry()));
+		if (techValues.isValidCountryForTechConversion(country))
+		{
+			country->setArmyTech(techValues.getNormalizedArmyTech(*country->getSourceCountry()));
+			country->setNavyTech(techValues.getNormalizedNavyTech(*country->getSourceCountry()));
+			country->setCommerceTech(techValues.getNormalizedCommerceTech(*country->getSourceCountry()));
+			country->setCultureTech(techValues.getNormalizedCultureTech(*country->getSourceCountry()));
+			country->setIndustryTech(techValues.getNormalizedIndustryTech(*country->getSourceCountry()));
+		}
 	}
 }
 

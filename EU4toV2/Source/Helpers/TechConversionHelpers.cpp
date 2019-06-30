@@ -40,11 +40,10 @@ helpers::TechValues::TechValues(const std::map<std::string, V2Country*>& countri
 	for (auto countryItr: countries)
 	{
 		auto country = countryItr.second;
-		if ((theConfiguration.getVic2Gametype() != "vanilla") && !country->isCivilized())
+		if (!isValidCountryForTechConversion(country))
+		{
 			continue;
-
-		if (country->getProvinces().size() == 0)
-			continue;
+		}
 
 		updateMaxAndTotal(armyMax, armyTotal, getCountryArmyTech(*country->getSourceCountry()));
 		updateMaxAndTotal(navyMax, navyTotal, getCountryNavyTech(*country->getSourceCountry()));
@@ -59,6 +58,18 @@ helpers::TechValues::TechValues(const std::map<std::string, V2Country*>& countri
 	commerceMean = commerceTotal / numValidCountries;
 	cultureMean = cultureTotal / numValidCountries;
 	industryMean = industryTotal / numValidCountries;
+}
+
+
+bool helpers::TechValues::isValidCountryForTechConversion(const V2Country* country) const
+{
+	return (
+		(
+			(theConfiguration.getVic2Gametype() == "vanilla") || country->isCivilized()
+		) &&
+		(country->getProvinces().size() > 0) &&
+		country->getSourceCountry()
+	);
 }
 
 
@@ -141,4 +152,4 @@ double helpers::TechValues::getNormalizedScore(double score, double max, double 
 	}
 
 	return (score - mean) / (max - mean);
-};
+}
