@@ -201,7 +201,7 @@ double mappers::IdeaEffectMapper::getUHLiberalFromIdea(const std::string& ideaNa
 	auto idea = UHLiberalIdeas.find(ideaName);
 	if (idea != UHLiberalIdeas.end())
 	{
-		return idea->second * (ideaLevel + 1);
+		return idea->second * (ideaLevel + 1.0);
 	}
 	else
 	{
@@ -215,7 +215,7 @@ double mappers::IdeaEffectMapper::getUHReactionaryFromIdea(const std::string& id
 	auto idea = UHReactionaryIdeas.find(ideaName);
 	if (idea != UHReactionaryIdeas.end())
 	{
-		return idea->second * (ideaLevel + 1);
+		return idea->second * (ideaLevel + 1.0);
 	}
 	else
 	{
