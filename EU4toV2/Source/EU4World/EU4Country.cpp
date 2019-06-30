@@ -70,7 +70,12 @@ governmentSection::governmentSection(std::istream& theStream)
 }
 
 
-EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVersion, std::istream& theStream):
+EU4::Country::Country(
+	const std::string& countryTag,
+	const EU4::Version& theVersion,
+	std::istream& theStream,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+):
 	tag(countryTag),
 	provinces(),
 	cores(),
@@ -436,7 +441,7 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 	parseStream(theStream);
 
 	determineJapaneseRelations();
-	determineInvestments();
+	determineInvestments(ideaEffectMapper);
 	determineLibertyDesire();
 }
 
@@ -455,15 +460,15 @@ void EU4::Country::determineJapaneseRelations()
 }
 
 
-void EU4::Country::determineInvestments()
+void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	for (auto idea: nationalIdeas)
 	{
-		armyInvestment += ideaEffectMapper::getArmyInvestmentFromIdea(idea.first, idea.second);
-		commerceInvestment += ideaEffectMapper::getCommerceInvestmentFromIdea(idea.first, idea.second);
-		cultureInvestment += ideaEffectMapper::getCultureInvestmentFromIdea(idea.first, idea.second);
-		industryInvestment += ideaEffectMapper::getIndustryInvestmentFromIdea(idea.first, idea.second);
-		navyInvestment += ideaEffectMapper::getNavyInvestmentFromIdea(idea.first, idea.second);
+		armyInvestment += ideaEffectMapper.getArmyInvestmentFromIdea(idea.first, idea.second);
+		commerceInvestment += ideaEffectMapper.getCommerceInvestmentFromIdea(idea.first, idea.second);
+		cultureInvestment += ideaEffectMapper.getCultureInvestmentFromIdea(idea.first, idea.second);
+		industryInvestment += ideaEffectMapper.getIndustryInvestmentFromIdea(idea.first, idea.second);
+		navyInvestment += ideaEffectMapper.getNavyInvestmentFromIdea(idea.first, idea.second);
 	}
 }
 

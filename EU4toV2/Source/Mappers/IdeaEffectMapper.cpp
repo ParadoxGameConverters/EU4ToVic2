@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -28,13 +28,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-ideaEffectMapper* ideaEffectMapper::instance = nullptr;
-
-
-ideaEffectMapper::ideaEffectMapper()
+mappers::IdeaEffectMapper::IdeaEffectMapper()
 {
-	LOG(LogLevel::Info) << "Getting idea effects";
-	shared_ptr<Object> ideaObj = parser_UTF8::doParseFile("idea_effects.txt");
+	LOG(LogLevel::Info) << "getting idea effects";
+	std::shared_ptr<Object> ideaObj = parser_UTF8::doParseFile("idea_effects.txt");
 	if (ideaObj == NULL)
 	{
 		LOG(LogLevel::Error) << "Could not parse file idea_effects.txt";
@@ -45,83 +42,83 @@ ideaEffectMapper::ideaEffectMapper()
 }
 
 
-void ideaEffectMapper::initIdeaEffects(shared_ptr<Object> obj)
+void mappers::IdeaEffectMapper::initIdeaEffects(std::shared_ptr<Object> obj)
 {
-	vector<shared_ptr<Object>> ideasObj = obj->getLeaves();
+	std::vector<std::shared_ptr<Object>> ideasObj = obj->getLeaves();
 	for (auto ideasItr: obj->getLeaves())
 	{
-		string idea = ideasItr->getKey();
+		std::string idea = ideasItr->getKey();
 
 		for (auto effectsItr: ideasItr->getLeaves())
 		{
-			string effectType = effectsItr->getKey();
+			std::string effectType = effectsItr->getKey();
 
 			if (effectType == "army_investment")
 			{
-				armyInvestmentIdeas[idea] = stoi(effectsItr->getLeaf());
+				armyInvestmentIdeas[idea] = std::stoi(effectsItr->getLeaf());
 			}
 			else if (effectType == "commerce_investment")
 			{
-				commerceInvestmentIdeas[idea] = stoi(effectsItr->getLeaf());
+				commerceInvestmentIdeas[idea] = std::stoi(effectsItr->getLeaf());
 			}
 			else if (effectType == "culture_investment")
 			{
-				cultureInvestmentIdeas[idea] = stoi(effectsItr->getLeaf());
+				cultureInvestmentIdeas[idea] = std::stoi(effectsItr->getLeaf());
 			}
 			else if (effectType == "industry_investment")
 			{
-				industryInvestmentIdeas[idea] = stoi(effectsItr->getLeaf());
+				industryInvestmentIdeas[idea] = std::stoi(effectsItr->getLeaf());
 			}
 			else if (effectType == "navy_investment")
 			{
-				navyInvestmentIdeas[idea] = stoi(effectsItr->getLeaf());
+				navyInvestmentIdeas[idea] = std::stoi(effectsItr->getLeaf());
 			}
 			else if (effectType == "army_tech_score")
 			{
-				armyTechIdeas[idea] = stof(effectsItr->getLeaf());
+				armyTechIdeas[idea] = std::stof(effectsItr->getLeaf());
 			}
 			else if (effectType == "commerce_tech_score")
 			{
-				commerceTechIdeas[idea] = stof(effectsItr->getLeaf());
+				commerceTechIdeas[idea] = std::stof(effectsItr->getLeaf());
 			}
 			else if (effectType == "culture_tech_score")
 			{
-				cultureTechIdeas[idea] = stof(effectsItr->getLeaf());
+				cultureTechIdeas[idea] = std::stof(effectsItr->getLeaf());
 			}
 			else if (effectType == "industry_tech_score")
 			{
-				industryTechIdeas[idea] = stof(effectsItr->getLeaf());
+				industryTechIdeas[idea] = std::stof(effectsItr->getLeaf());
 			}
 			else if (effectType == "navy_tech_score")
 			{
-				navyTechIdeas[idea] = stof(effectsItr->getLeaf());
+				navyTechIdeas[idea] = std::stof(effectsItr->getLeaf());
 			}
 			else if (effectType == "upper_house_liberal")
 			{
-				UHLiberalIdeas[idea] = stof(effectsItr->getLeaf());
+				UHLiberalIdeas[idea] = std::stof(effectsItr->getLeaf());
 			}
 			else if (effectType == "upper_house_reactionary")
 			{
-				UHReactionaryIdeas[idea] = stof(effectsItr->getLeaf());
+				UHReactionaryIdeas[idea] = std::stof(effectsItr->getLeaf());
 			}
 			else if (effectType == "NV_order")
 			{
-				orderIdeas[idea] = stoi(effectsItr->getLeaf());
+				orderIdeas[idea] = std::stoi(effectsItr->getLeaf());
 			}
 			else if (effectType == "NV_liberty")
 			{
-				libertyIdeas[idea] = stoi(effectsItr->getLeaf());
+				libertyIdeas[idea] = std::stoi(effectsItr->getLeaf());
 			}
 			else if (effectType == "NV_equality")
 			{
-				equalityIdeas[idea] = stoi(effectsItr->getLeaf());
+				equalityIdeas[idea] = std::stoi(effectsItr->getLeaf());
 			}
 			else if (effectType == "literacy")
 			{
-				vector<string> literacyStrs = effectsItr->getTokens();
+				std::vector<std::string> literacyStrs = effectsItr->getTokens();
 				for (auto literacyStr: literacyStrs)
 				{
-					literacyIdeas[idea].push_back(stoi(literacyStr));
+					literacyIdeas[idea].push_back(std::stoi(literacyStr));
 				}
 			}
 		}
@@ -129,7 +126,7 @@ void ideaEffectMapper::initIdeaEffects(shared_ptr<Object> obj)
 }
 
 
-int ideaEffectMapper::GetArmyInvestmentFromIdea(const string& ideaName, int ideaLevel)
+int mappers::IdeaEffectMapper::getArmyInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = armyInvestmentIdeas.find(ideaName);
 	if (idea != armyInvestmentIdeas.end())
@@ -143,7 +140,7 @@ int ideaEffectMapper::GetArmyInvestmentFromIdea(const string& ideaName, int idea
 }
 
 
-int ideaEffectMapper::GetCommerceInvestmentFromIdea(const string& ideaName, int ideaLevel)
+int mappers::IdeaEffectMapper::getCommerceInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = commerceInvestmentIdeas.find(ideaName);
 	if (idea != commerceInvestmentIdeas.end())
@@ -157,7 +154,7 @@ int ideaEffectMapper::GetCommerceInvestmentFromIdea(const string& ideaName, int 
 }
 
 
-int ideaEffectMapper::GetCultureInvestmentFromIdea(const string& ideaName, int ideaLevel)
+int mappers::IdeaEffectMapper::getCultureInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = cultureInvestmentIdeas.find(ideaName);
 	if (idea != cultureInvestmentIdeas.end())
@@ -171,7 +168,7 @@ int ideaEffectMapper::GetCultureInvestmentFromIdea(const string& ideaName, int i
 }
 
 
-int ideaEffectMapper::GetIndustryInvestmentFromIdea(const string& ideaName, int ideaLevel)
+int mappers::IdeaEffectMapper::getIndustryInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = industryInvestmentIdeas.find(ideaName);
 	if (idea != industryInvestmentIdeas.end())
@@ -185,7 +182,7 @@ int ideaEffectMapper::GetIndustryInvestmentFromIdea(const string& ideaName, int 
 }
 
 
-int ideaEffectMapper::GetNavyInvestmentFromIdea(const string& ideaName, int ideaLevel)
+int mappers::IdeaEffectMapper::getNavyInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = navyInvestmentIdeas.find(ideaName);
 	if (idea != navyInvestmentIdeas.end())
@@ -199,7 +196,7 @@ int ideaEffectMapper::GetNavyInvestmentFromIdea(const string& ideaName, int idea
 }
 
 
-double ideaEffectMapper::GetUHLiberalFromIdea(const string& ideaName, int ideaLevel)
+double mappers::IdeaEffectMapper::getUHLiberalFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = UHLiberalIdeas.find(ideaName);
 	if (idea != UHLiberalIdeas.end())
@@ -213,7 +210,7 @@ double ideaEffectMapper::GetUHLiberalFromIdea(const string& ideaName, int ideaLe
 }
 
 
-double ideaEffectMapper::GetUHReactionaryFromIdea(const string& ideaName, int ideaLevel)
+double mappers::IdeaEffectMapper::getUHReactionaryFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = UHReactionaryIdeas.find(ideaName);
 	if (idea != UHReactionaryIdeas.end())
@@ -227,7 +224,7 @@ double ideaEffectMapper::GetUHReactionaryFromIdea(const string& ideaName, int id
 }
 
 
-double ideaEffectMapper::GetLiteracyFromIdea(const string& ideaName, int ideaLevel)
+double mappers::IdeaEffectMapper::getLiteracyFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	double literacy = 0.0;
 
@@ -247,7 +244,7 @@ double ideaEffectMapper::GetLiteracyFromIdea(const string& ideaName, int ideaLev
 }
 
 
-int ideaEffectMapper::GetOrderInfluenceFromIdea(const string& ideaName, int ideaLevel)
+int mappers::IdeaEffectMapper::getOrderInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = orderIdeas.find(ideaName);
 	if (idea != orderIdeas.end())
@@ -265,7 +262,7 @@ int ideaEffectMapper::GetOrderInfluenceFromIdea(const string& ideaName, int idea
 }
 
 
-int ideaEffectMapper::GetLibertyInfluenceFromIdea(const string& ideaName, int ideaLevel)
+int mappers::IdeaEffectMapper::getLibertyInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = libertyIdeas.find(ideaName);
 	if (idea != libertyIdeas.end())
@@ -283,7 +280,7 @@ int ideaEffectMapper::GetLibertyInfluenceFromIdea(const string& ideaName, int id
 }
 
 
-int ideaEffectMapper::GetEqualityInfluenceFromIdea(const string& ideaName, int ideaLevel)
+int mappers::IdeaEffectMapper::getEqualityInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = equalityIdeas.find(ideaName);
 	if (idea != equalityIdeas.end())
@@ -301,7 +298,7 @@ int ideaEffectMapper::GetEqualityInfluenceFromIdea(const string& ideaName, int i
 }
 
 
-double ideaEffectMapper::GetArmyTechFromIdeas(const map<string, int>& ideas)
+double mappers::IdeaEffectMapper::getArmyTechFromIdeas(const std::map<std::string, int>& ideas) const
 {
 	double ideaEffect = 0.0;
 	for (auto idea: ideas)
@@ -317,7 +314,7 @@ double ideaEffectMapper::GetArmyTechFromIdeas(const map<string, int>& ideas)
 }
 
 
-double ideaEffectMapper::GetCommerceTechFromIdeas(const map<string, int>& ideas)
+double mappers::IdeaEffectMapper::getCommerceTechFromIdeas(const std::map<std::string, int>& ideas) const
 {
 	double ideaEffect = 0.0;
 	for (auto idea: ideas)
@@ -333,7 +330,7 @@ double ideaEffectMapper::GetCommerceTechFromIdeas(const map<string, int>& ideas)
 }
 
 
-double ideaEffectMapper::GetCultureTechFromIdeas(const map<string, int>& ideas)
+double mappers::IdeaEffectMapper::getCultureTechFromIdeas(const std::map<std::string, int>& ideas) const
 {
 	double ideaEffect = 0.0;
 	for (auto idea: ideas)
@@ -349,7 +346,7 @@ double ideaEffectMapper::GetCultureTechFromIdeas(const map<string, int>& ideas)
 }
 
 
-double ideaEffectMapper::GetIndustryTechFromIdeas(const map<string, int>& ideas)
+double mappers::IdeaEffectMapper::getIndustryTechFromIdeas(const std::map<std::string, int>& ideas) const
 {
 	double ideaEffect = 0.0;
 	for (auto idea: ideas)
@@ -365,7 +362,7 @@ double ideaEffectMapper::GetIndustryTechFromIdeas(const map<string, int>& ideas)
 }
 
 
-double ideaEffectMapper::GetNavyTechFromIdeas(const map<string, int>& ideas)
+double mappers::IdeaEffectMapper::getNavyTechFromIdeas(const std::map<std::string, int>& ideas) const
 {
 	double ideaEffect = 0.0;
 	for (auto idea: ideas)

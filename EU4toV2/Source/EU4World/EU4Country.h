@@ -46,6 +46,11 @@ class Version;
 class EU4Loan;
 class EU4Relations;
 
+namespace mappers
+{
+class IdeaEffectMapper;
+}
+
 
 
 namespace EU4
@@ -53,7 +58,12 @@ namespace EU4
 	class Country: public commonItems::parser
 	{
 		public:
-			Country(const std::string& countryTag, const EU4::Version& theVersion, std::istream& theStream);
+			Country(
+				const std::string& countryTag,
+				const EU4::Version& theVersion,
+				std::istream& theStream,
+				const mappers::IdeaEffectMapper& ideaEffectMapper
+			);
 
 			// Add any additional information available from the specified country file.
 			void readFromCommonCountry(const std::string& fileName, const std::string& fullFilename);
@@ -127,7 +137,7 @@ namespace EU4
 
 		private:
 			void determineJapaneseRelations();
-			void determineInvestments();
+			void determineInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper);
 			void determineLibertyDesire();
 			void							clearProvinces();
 			void							clearCores();

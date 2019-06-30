@@ -30,8 +30,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-helpers::TechValues::TechValues(const std::map<std::string, V2Country*>& countries)
-{
+helpers::TechValues::TechValues(
+	const std::map<std::string, V2Country*>& countries,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) {
 	int numValidCountries = 0;
 	double armyTotal = 0.0;
 	double navyTotal = 0.0;
@@ -47,16 +49,16 @@ helpers::TechValues::TechValues(const std::map<std::string, V2Country*>& countri
 			continue;
 		}
 
-		armyMax = std::max(armyMax, getCountryArmyTech(*country->getSourceCountry()));
-		armyTotal += getCountryArmyTech(*country->getSourceCountry());
-		navyMax = std::max(navyMax, getCountryNavyTech(*country->getSourceCountry()));
-		navyTotal += getCountryNavyTech(*country->getSourceCountry());
-		commerceMax = std::max(commerceMax, getCountryCommerceTech(*country->getSourceCountry()));
-		commerceTotal += getCountryCommerceTech(*country->getSourceCountry());
-		cultureMax = std::max(cultureMax, getCountryCultureTech(*country->getSourceCountry()));
-		cultureTotal += getCountryCultureTech(*country->getSourceCountry());
-		industryMax = std::max(industryMax, getCountryIndustryTech(*country->getSourceCountry()));
-		industryTotal += getCountryIndustryTech(*country->getSourceCountry());
+		armyMax = std::max(armyMax, getCountryArmyTech(*country->getSourceCountry(), ideaEffectMapper));
+		armyTotal += getCountryArmyTech(*country->getSourceCountry(), ideaEffectMapper);
+		navyMax = std::max(navyMax, getCountryNavyTech(*country->getSourceCountry(), ideaEffectMapper));
+		navyTotal += getCountryNavyTech(*country->getSourceCountry(), ideaEffectMapper);
+		commerceMax = std::max(commerceMax, getCountryCommerceTech(*country->getSourceCountry(), ideaEffectMapper));
+		commerceTotal += getCountryCommerceTech(*country->getSourceCountry(), ideaEffectMapper);
+		cultureMax = std::max(cultureMax, getCountryCultureTech(*country->getSourceCountry(), ideaEffectMapper));
+		cultureTotal += getCountryCultureTech(*country->getSourceCountry(), ideaEffectMapper);
+		industryMax = std::max(industryMax, getCountryIndustryTech(*country->getSourceCountry(), ideaEffectMapper));
+		industryTotal += getCountryIndustryTech(*country->getSourceCountry(), ideaEffectMapper);
 		numValidCountries++;
 	}
 
@@ -74,63 +76,103 @@ bool helpers::TechValues::isValidCountryForTechConversion(const V2Country* count
 }
 
 
-double helpers::TechValues::getNormalizedArmyTech(const EU4::Country& country) const
+double helpers::TechValues::getNormalizedArmyTech(
+	const EU4::Country& country,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) const
 {
-	return getNormalizedScore(getCountryArmyTech(country), armyMax, armyMean);
+	return getNormalizedScore(
+		getCountryArmyTech(country, ideaEffectMapper), armyMax, armyMean);
 }
 
 
-double helpers::TechValues::getNormalizedNavyTech(const EU4::Country& country) const
+double helpers::TechValues::getNormalizedNavyTech(
+	const EU4::Country& country,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) const
 {
-	return getNormalizedScore(getCountryNavyTech(country), navyMax, navyMean);
+	return getNormalizedScore(getCountryNavyTech(country, ideaEffectMapper), navyMax, navyMean);
 }
 
 
-double helpers::TechValues::getNormalizedCommerceTech(const EU4::Country& country) const
+double helpers::TechValues::getNormalizedCommerceTech(
+	const EU4::Country& country,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) const
 {
-	return getNormalizedScore(getCountryCommerceTech(country), commerceMax, commerceMean);
+	return getNormalizedScore(getCountryCommerceTech(country, ideaEffectMapper), commerceMax, commerceMean);
 }
 
 
-double helpers::TechValues::getNormalizedCultureTech(const EU4::Country& country) const
+double helpers::TechValues::getNormalizedCultureTech(
+	const EU4::Country& country,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) const
 {
-	return getNormalizedScore(getCountryCultureTech(country), cultureMax, cultureMean);
+	return getNormalizedScore(getCountryCultureTech(country, ideaEffectMapper), cultureMax, cultureMean);
 }
 
 
-double helpers::TechValues::getNormalizedIndustryTech(const EU4::Country& country) const
+double helpers::TechValues::getNormalizedIndustryTech(
+	const EU4::Country& country,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) const
 {
-	return getNormalizedScore(getCountryIndustryTech(country), industryMax, industryMean);
+	return getNormalizedScore(getCountryIndustryTech(country, ideaEffectMapper), industryMax, industryMean);
 }
 
 
-double helpers::TechValues::getCountryArmyTech(const EU4::Country& country) const
+double helpers::TechValues::getCountryArmyTech(
+	const EU4::Country& country,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) const
 {
-	return country.getMilTech() + country.getAdmTech() + ideaEffectMapper::getArmyTechFromIdeas(country.getNationalIdeas());
+	return country.getMilTech() +
+		country.getAdmTech() +
+		ideaEffectMapper.getArmyTechFromIdeas(country.getNationalIdeas());
 }
 
 
-double helpers::TechValues::getCountryNavyTech(const EU4::Country& country) const
+double helpers::TechValues::getCountryNavyTech(
+	const EU4::Country& country,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) const
 {
-	return country.getMilTech() + country.getDipTech() + ideaEffectMapper::getNavyTechFromIdeas(country.getNationalIdeas());
+	return country.getMilTech() +
+		country.getDipTech() +
+		ideaEffectMapper.getNavyTechFromIdeas(country.getNationalIdeas());
 }
 
 
-double helpers::TechValues::getCountryCommerceTech(const EU4::Country& country) const
+double helpers::TechValues::getCountryCommerceTech(
+	const EU4::Country& country,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) const
 {
-	return country.getAdmTech() + country.getDipTech() + ideaEffectMapper::getCommerceTechFromIdeas(country.getNationalIdeas());
+	return country.getAdmTech() +
+		country.getDipTech() +
+		ideaEffectMapper.getCommerceTechFromIdeas(country.getNationalIdeas());
 }
 
 
-double helpers::TechValues::getCountryCultureTech(const EU4::Country& country) const
+double helpers::TechValues::getCountryCultureTech(
+	const EU4::Country& country,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) const
 {
-	return country.getDipTech() + ideaEffectMapper::getCultureTechFromIdeas(country.getNationalIdeas());
+	return country.getDipTech() + ideaEffectMapper.getCultureTechFromIdeas(country.getNationalIdeas());
 }
 
 
-double helpers::TechValues::getCountryIndustryTech(const EU4::Country& country) const
+double helpers::TechValues::getCountryIndustryTech(
+	const EU4::Country& country,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) const
 {
-	return country.getAdmTech() + country.getDipTech() + country.getMilTech() + ideaEffectMapper::getIndustryTechFromIdeas(country.getNationalIdeas());
+	return country.getAdmTech() +
+		country.getDipTech() +
+		country.getMilTech() +
+		ideaEffectMapper.getIndustryTechFromIdeas(country.getNationalIdeas());
 }
 
 

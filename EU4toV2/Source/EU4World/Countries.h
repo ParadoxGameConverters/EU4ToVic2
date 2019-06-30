@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -34,22 +34,32 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+namespace mappers
+{
+class IdeaEffectMapper;
+}
+
+
 namespace EU4
 {
-	class Country;
+class Country;
 
 
+class countries: public commonItems::parser
+{
+	public:
+		countries(
+			const EU4::Version& theVersion,
+			std::istream& theStream,
+			const mappers::IdeaEffectMapper& ideaEffectMapper
+		);
 
-	class countries: public commonItems::parser
-	{
-		public:
-			countries(const EU4::Version& theVersion, std::istream& theStream);
+		std::map<std::string, std::shared_ptr<EU4::Country>> getTheCountries() const { return theCountries; }
 
-			std::map<std::string, std::shared_ptr<EU4::Country>> getTheCountries() const { return theCountries; }
+	private:
+		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
+};
 
-		private:
-			std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
-	};
 }
 
 

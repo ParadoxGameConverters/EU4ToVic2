@@ -43,12 +43,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 namespace EU4
 {
-
 class Country;
 class world;
-
 }
-
+namespace mappers
+{
+class IdeaEffectMapper;
+}
 class V2World;
 class V2State;
 class V2Province;
@@ -81,6 +82,7 @@ class V2Country
 			const std::map<int, int>& leaderMap,
 			const mappers::CultureMapper& cultureMapper,
 			const mappers::CultureMapper& slaveCultureMapper,
+			const mappers::IdeaEffectMapper& ideaEffectMapper,
 			const mappers::ReligionMapper& religionMapper,
 			const mappers::ProvinceMapper& provinceMapper
 		);
@@ -119,7 +121,7 @@ class V2Country
 
 		string							getLocalName();
 		V2Relations*					getRelations(string withWhom) const;
-		void								getNationalValueScores(int& liberty, int& equality, int& order);
+		void getNationalValueScores(int& liberty, int& equality, int& order, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		
 		void addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
 		void								addResearchPoints(double newPoints)		{ researchPoints += newPoints; }

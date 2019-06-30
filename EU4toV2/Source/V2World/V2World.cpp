@@ -66,7 +66,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-V2World::V2World(const EU4::world& sourceWorld)
+V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	LOG(LogLevel::Info) << "Parsing Vicky2 data";
 	importProvinces();
@@ -83,13 +83,14 @@ V2World::V2World(const EU4::world& sourceWorld)
 	LOG(LogLevel::Info) << "Converting world";
 	initializeCultureMappers(sourceWorld);
 	initializeReligionMapper(sourceWorld);
-	convertCountries(sourceWorld);
+	convertCountries(sourceWorld, ideaEffectMapper);
+	convertCountries(sourceWorld, ideaEffectMapper);
 	convertProvinces(sourceWorld);
 	convertDiplomacy(sourceWorld);
 	setupColonies();
 	setupStates();
 	convertUncivReforms(sourceWorld);
-	convertTechs(sourceWorld);
+	convertTechs(sourceWorld, ideaEffectMapper);
 	allocateFactories(sourceWorld);
 	setupPops(sourceWorld);
 	addUnions();
@@ -464,17 +465,17 @@ void V2World::initializeProvinceMapper()
 }
 
 
-void V2World::convertCountries(const EU4::world& sourceWorld)
+void V2World::convertCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	LOG(LogLevel::Info) << "Converting countries";
-	initializeCountries(sourceWorld);
-	convertNationalValues();
+	initializeCountries(sourceWorld, ideaEffectMapper);
+	convertNationalValues(ideaEffectMapper);
 	convertPrestige();
 	addAllPotentialCountries();
 }
 
 
-void V2World::initializeCountries(const EU4::world& sourceWorld)
+void V2World::initializeCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	Vic2::blockedTechSchoolsFile theBlockedTechSchoolsFile;
 	Vic2::TechSchoolsFile theTechSchoolsFile(theBlockedTechSchoolsFile.takeBlockedTechSchools());
@@ -497,6 +498,7 @@ void V2World::initializeCountries(const EU4::world& sourceWorld)
 			leaderIDMap,
 			*cultureMapper,
 			*slaveCultureMapper,
+			ideaEffectMapper,
 			*religionMapper,
 			*provinceMapper
 		);
@@ -530,7 +532,7 @@ bool scoresSorter(pair<V2Country*, int> first, pair<V2Country*, int> second)
 }
 
 
-void V2World::convertNationalValues()
+void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	// set national values
 	list< pair<V2Country*, int> > libertyScores;
@@ -541,7 +543,7 @@ void V2World::convertNationalValues()
 		int libertyScore = 1;
 		int equalityScore = 1;
 		int orderScore = 1;
-		countryItr->second->getNationalValueScores(libertyScore, equalityScore, orderScore);
+		countryItr->second->getNationalValueScores(libertyScore, equalityScore, orderScore, ideaEffectMapper);
 		if (libertyScore > orderScore)
 		{
 			libertyScores.push_back(make_pair(countryItr->second, libertyScore));
@@ -1308,21 +1310,21 @@ void V2World::convertUncivReforms(const EU4::world& sourceWorld)
 }
 
 
-void V2World::convertTechs(const EU4::world& sourceWorld)
+void V2World::convertTechs(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	LOG(LogLevel::Info) << "Converting techs";
-	helpers::TechValues techValues(countries);
+	helpers::TechValues techValues(countries, ideaEffectMapper);
 
 	for (auto countryItr: countries)
 	{
 		auto country = countryItr.second;
 		if (techValues.isValidCountryForTechConversion(country))
 		{
-			country->setArmyTech(techValues.getNormalizedArmyTech(*country->getSourceCountry()));
-			country->setNavyTech(techValues.getNormalizedNavyTech(*country->getSourceCountry()));
-			country->setCommerceTech(techValues.getNormalizedCommerceTech(*country->getSourceCountry()));
-			country->setCultureTech(techValues.getNormalizedCultureTech(*country->getSourceCountry()));
-			country->setIndustryTech(techValues.getNormalizedIndustryTech(*country->getSourceCountry()));
+			country->setArmyTech(techValues.getNormalizedArmyTech(*country->getSourceCountry(), ideaEffectMapper));
+			country->setNavyTech(techValues.getNormalizedNavyTech(*country->getSourceCountry(), ideaEffectMapper));
+			country->setCommerceTech(techValues.getNormalizedCommerceTech(*country->getSourceCountry(), ideaEffectMapper));
+			country->setCultureTech(techValues.getNormalizedCultureTech(*country->getSourceCountry(), ideaEffectMapper));
+			country->setIndustryTech(techValues.getNormalizedIndustryTech(*country->getSourceCountry(), ideaEffectMapper));
 		}
 	}
 }
