@@ -62,8 +62,6 @@ class TechValues
 		double getCountryCultureTech(const EU4::Country& country) const;
 		double getCountryIndustryTech(const EU4::Country& country) const;
 
-		void updateMaxAndTotal(double& max, double& total, double techLevel);
-
 		double getNormalizedScore(double score, double max, double mean) const;
 
 		double armyMax = 0.0;

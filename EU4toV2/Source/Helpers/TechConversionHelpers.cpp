@@ -26,6 +26,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/IdeaEffectMapper.h"
 #include "../V2World/V2Country.h"
 #include "../Configuration.h"
+#include <algorithm>
 
 
 
@@ -37,6 +38,7 @@ helpers::TechValues::TechValues(const std::map<std::string, V2Country*>& countri
 	double commerceTotal = 0.0;
 	double cultureTotal = 0.0;
 	double industryTotal = 0.0;
+
 	for (auto countryItr: countries)
 	{
 		auto country = countryItr.second;
@@ -45,11 +47,16 @@ helpers::TechValues::TechValues(const std::map<std::string, V2Country*>& countri
 			continue;
 		}
 
-		updateMaxAndTotal(armyMax, armyTotal, getCountryArmyTech(*country->getSourceCountry()));
-		updateMaxAndTotal(navyMax, navyTotal, getCountryNavyTech(*country->getSourceCountry()));
-		updateMaxAndTotal(commerceMax, commerceTotal, getCountryCommerceTech(*country->getSourceCountry()));
-		updateMaxAndTotal(cultureMax, cultureTotal, getCountryCultureTech(*country->getSourceCountry()));
-		updateMaxAndTotal(industryMax, industryTotal, getCountryIndustryTech(*country->getSourceCountry()));
+		armyMax = std::max(armyMax, getCountryArmyTech(*country->getSourceCountry()));
+		armyTotal += getCountryArmyTech(*country->getSourceCountry());
+		navyMax = std::max(navyMax, getCountryNavyTech(*country->getSourceCountry()));
+		navyTotal += getCountryNavyTech(*country->getSourceCountry());
+		commerceMax = std::max(commerceMax, getCountryCommerceTech(*country->getSourceCountry()));
+		commerceTotal += getCountryCommerceTech(*country->getSourceCountry());
+		cultureMax = std::max(cultureMax, getCountryCultureTech(*country->getSourceCountry()));
+		cultureTotal += getCountryCultureTech(*country->getSourceCountry());
+		industryMax = std::max(industryMax, getCountryIndustryTech(*country->getSourceCountry()));
+		industryTotal += getCountryIndustryTech(*country->getSourceCountry());
 		numValidCountries++;
 	}
 
@@ -63,13 +70,7 @@ helpers::TechValues::TechValues(const std::map<std::string, V2Country*>& countri
 
 bool helpers::TechValues::isValidCountryForTechConversion(const V2Country* country) const
 {
-	return (
-		(
-			(theConfiguration.getVic2Gametype() == "vanilla") || country->isCivilized()
-		) &&
-		(country->getProvinces().size() > 0) &&
-		country->getSourceCountry()
-	);
+	return (country->isCivilized() && (country->getProvinces().size() > 0) && country->getSourceCountry());
 }
 
 
@@ -130,17 +131,6 @@ double helpers::TechValues::getCountryCultureTech(const EU4::Country& country) c
 double helpers::TechValues::getCountryIndustryTech(const EU4::Country& country) const
 {
 	return country.getAdmTech() + country.getDipTech() + country.getMilTech() + ideaEffectMapper::getIndustryTechFromIdeas(country.getNationalIdeas());
-}
-
-
-void helpers::TechValues::updateMaxAndTotal(double& max, double& total, double techLevel)
-{
-	if (techLevel > max)
-	{
-		max = techLevel;
-	}
-
-	total += techLevel;
 }
 
 
