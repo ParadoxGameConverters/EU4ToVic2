@@ -43,11 +43,11 @@ class V2Country;
 namespace helpers
 {
 
-double getCountryArmyTech(const std::shared_ptr<EU4::Country>& country);
-double getCountryNavyTech(const std::shared_ptr<EU4::Country>& country);
-double getCountryCommerceTech(const std::shared_ptr<EU4::Country>& country);
-double getCountryCultureTech(const std::shared_ptr<EU4::Country>& country);
-double getCountryIndustryTech(const std::shared_ptr<EU4::Country>& country);
+double getCountryArmyTech(const EU4::Country& country);
+double getCountryNavyTech(const EU4::Country& country);
+double getCountryCommerceTech(const EU4::Country& country);
+double getCountryCultureTech(const EU4::Country& country);
+double getCountryIndustryTech(const EU4::Country& country);
 
 
 class TechValues
@@ -55,6 +55,13 @@ class TechValues
 	public:
 		TechValues(const std::map<std::string, V2Country*>& countries);
 
+		double getNormalizedArmyTech(const EU4::Country& country);
+		double getNormalizedNavyTech(const EU4::Country& country);
+		double getNormalizedCommerceTech(const EU4::Country& country);
+		double getNormalizedCultureTech(const EU4::Country& country);
+		double getNormalizedIndustryTech(const EU4::Country& country);
+
+	private:
 		double armyMax = 0.0;
 		double navyMax = 0.0;
 		double commerceMax = 0.0;

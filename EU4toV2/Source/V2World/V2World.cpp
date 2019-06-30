@@ -1327,11 +1327,11 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 		if (country->getProvinces().size() == 0)
 			continue;
 
-		country->setArmyTech(helpers::getNormalizedScore(helpers::getCountryArmyTech(srcCountry), techValues.armyMax, techValues.armyMean));
-		country->setNavyTech(helpers::getNormalizedScore(helpers::getCountryNavyTech(srcCountry), techValues.navyMax, techValues.navyMean));
-		country->setCommerceTech(helpers::getNormalizedScore(helpers::getCountryCommerceTech(srcCountry), techValues.commerceMax, techValues.commerceMean));
-		country->setCultureTech(helpers::getNormalizedScore(helpers::getCountryCultureTech(srcCountry), techValues.cultureMax, techValues.cultureMean));
-		country->setIndustryTech(helpers::getNormalizedScore(helpers::getCountryIndustryTech(srcCountry), techValues.industryMax, techValues.industryMean));
+		country->setArmyTech(techValues.getNormalizedArmyTech(*country->getSourceCountry()));
+		country->setNavyTech(techValues.getNormalizedNavyTech(*country->getSourceCountry()));
+		country->setCommerceTech(techValues.getNormalizedCommerceTech(*country->getSourceCountry()));
+		country->setCultureTech(techValues.getNormalizedCultureTech(*country->getSourceCountry()));
+		country->setIndustryTech(techValues.getNormalizedIndustryTech(*country->getSourceCountry()));
 	}
 }
 
