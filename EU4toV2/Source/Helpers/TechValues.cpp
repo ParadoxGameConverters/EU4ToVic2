@@ -21,7 +21,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include "TechConversionHelpers.h"
+#include "TechValues.h"
 #include "../EU4World/EU4Country.h"
 #include "../Mappers/IdeaEffectMapper.h"
 #include "../V2World/V2Country.h"
