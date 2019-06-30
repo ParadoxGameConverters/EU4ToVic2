@@ -1311,12 +1311,11 @@ void V2World::convertUncivReforms(const EU4::world& sourceWorld)
 void V2World::convertTechs(const EU4::world& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting techs";
-
 	helpers::TechValues techValues(countries);
 
-	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); itr++)
+	for (auto countryItr: countries)
 	{
-		V2Country* country = itr->second;
+		auto country = countryItr.second;
 		if (techValues.isValidCountryForTechConversion(country))
 		{
 			country->setArmyTech(techValues.getNormalizedArmyTech(*country->getSourceCountry()));
