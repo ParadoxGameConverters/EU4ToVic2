@@ -1289,11 +1289,14 @@ void V2Country::getNationalValueScores(int& libertyScore, int& equalityScore, in
 	libertyScore = 0;
 	equalityScore = 0;
 
-	for (auto idea: srcCountry->getNationalIdeas())
+	if (srcCountry)
 	{
-		orderScore += ideaEffectMapper::getOrderInfluenceFromIdea(idea.first, idea.second);
-		libertyScore += ideaEffectMapper::getLibertyInfluenceFromIdea(idea.first, idea.second);
-		equalityScore += ideaEffectMapper::getEqualityInfluenceFromIdea(idea.first, idea.second);
+		for (auto idea : srcCountry->getNationalIdeas())
+		{
+			orderScore += ideaEffectMapper::getOrderInfluenceFromIdea(idea.first, idea.second);
+			libertyScore += ideaEffectMapper::getLibertyInfluenceFromIdea(idea.first, idea.second);
+			equalityScore += ideaEffectMapper::getEqualityInfluenceFromIdea(idea.first, idea.second);
+		}
 	}
 }
 
