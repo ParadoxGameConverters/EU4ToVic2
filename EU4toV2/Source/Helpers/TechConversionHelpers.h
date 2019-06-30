@@ -43,25 +43,28 @@ class V2Country;
 namespace helpers
 {
 
-double getCountryArmyTech(const EU4::Country& country);
-double getCountryNavyTech(const EU4::Country& country);
-double getCountryCommerceTech(const EU4::Country& country);
-double getCountryCultureTech(const EU4::Country& country);
-double getCountryIndustryTech(const EU4::Country& country);
-
-
 class TechValues
 {
 	public:
 		TechValues(const std::map<std::string, V2Country*>& countries);
 
-		double getNormalizedArmyTech(const EU4::Country& country);
-		double getNormalizedNavyTech(const EU4::Country& country);
-		double getNormalizedCommerceTech(const EU4::Country& country);
-		double getNormalizedCultureTech(const EU4::Country& country);
-		double getNormalizedIndustryTech(const EU4::Country& country);
+		double getNormalizedArmyTech(const EU4::Country& country) const;
+		double getNormalizedNavyTech(const EU4::Country& country) const;
+		double getNormalizedCommerceTech(const EU4::Country& country) const;
+		double getNormalizedCultureTech(const EU4::Country& country) const;
+		double getNormalizedIndustryTech(const EU4::Country& country) const;
 
 	private:
+		double getCountryArmyTech(const EU4::Country& country) const;
+		double getCountryNavyTech(const EU4::Country& country) const;
+		double getCountryCommerceTech(const EU4::Country& country) const;
+		double getCountryCultureTech(const EU4::Country& country) const;
+		double getCountryIndustryTech(const EU4::Country& country) const;
+
+		void updateMaxAndTotal(double& max, double& total, double techLevel);
+
+		double getNormalizedScore(double score, double max, double mean) const;
+
 		double armyMax = 0.0;
 		double navyMax = 0.0;
 		double commerceMax = 0.0;
@@ -74,11 +77,6 @@ class TechValues
 		double cultureMean = 0.0;
 		double industryMean = 0.0;
 };
-
-
-void updateMaxAndTotal(double& max, double& total, double techLevel);
-
-double getNormalizedScore(double score, double max, double mean);
 
 }
 

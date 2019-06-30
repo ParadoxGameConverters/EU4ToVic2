@@ -29,36 +29,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-double helpers::getCountryArmyTech(const EU4::Country& country)
-{
-	return country.getMilTech() + country.getAdmTech() + ideaEffectMapper::getArmyTechFromIdeas(country.getNationalIdeas());
-}
-
-
-double helpers::getCountryNavyTech(const EU4::Country& country)
-{
-	return country.getMilTech() + country.getDipTech() + ideaEffectMapper::getNavyTechFromIdeas(country.getNationalIdeas());
-}
-
-
-double helpers::getCountryCommerceTech(const EU4::Country& country)
-{
-	return country.getAdmTech() + country.getDipTech() + ideaEffectMapper::getCommerceTechFromIdeas(country.getNationalIdeas());
-}
-
-
-double helpers::getCountryCultureTech(const EU4::Country& country)
-{
-	return country.getDipTech() + ideaEffectMapper::getCultureTechFromIdeas(country.getNationalIdeas());
-}
-
-
-double helpers::getCountryIndustryTech(const EU4::Country& country)
-{
-	return country.getAdmTech() + country.getDipTech() + country.getMilTech() + ideaEffectMapper::getIndustryTechFromIdeas(country.getNationalIdeas());
-}
-
-
 helpers::TechValues::TechValues(const std::map<std::string, V2Country*>& countries)
 {
 	int numValidCountries = 0;
@@ -76,11 +46,11 @@ helpers::TechValues::TechValues(const std::map<std::string, V2Country*>& countri
 		if (country->getProvinces().size() == 0)
 			continue;
 
-		helpers::updateMaxAndTotal(armyMax, armyTotal, helpers::getCountryArmyTech(*country->getSourceCountry()));
-		helpers::updateMaxAndTotal(navyMax, navyTotal, helpers::getCountryNavyTech(*country->getSourceCountry()));
-		helpers::updateMaxAndTotal(commerceMax, commerceTotal, helpers::getCountryCommerceTech(*country->getSourceCountry()));
-		helpers::updateMaxAndTotal(cultureMax, cultureTotal, helpers::getCountryCultureTech(*country->getSourceCountry()));
-		helpers::updateMaxAndTotal(industryMax, industryTotal, helpers::getCountryIndustryTech(*country->getSourceCountry()));
+		updateMaxAndTotal(armyMax, armyTotal, getCountryArmyTech(*country->getSourceCountry()));
+		updateMaxAndTotal(navyMax, navyTotal, getCountryNavyTech(*country->getSourceCountry()));
+		updateMaxAndTotal(commerceMax, commerceTotal, getCountryCommerceTech(*country->getSourceCountry()));
+		updateMaxAndTotal(cultureMax, cultureTotal, getCountryCultureTech(*country->getSourceCountry()));
+		updateMaxAndTotal(industryMax, industryTotal, getCountryIndustryTech(*country->getSourceCountry()));
 		numValidCountries++;
 	}
 
@@ -92,37 +62,67 @@ helpers::TechValues::TechValues(const std::map<std::string, V2Country*>& countri
 }
 
 
-double helpers::TechValues::getNormalizedArmyTech(const EU4::Country& country)
+double helpers::TechValues::getNormalizedArmyTech(const EU4::Country& country) const
 {
 	return getNormalizedScore(getCountryArmyTech(country), armyMax, armyMean);
 }
 
 
-double helpers::TechValues::getNormalizedNavyTech(const EU4::Country& country)
+double helpers::TechValues::getNormalizedNavyTech(const EU4::Country& country) const
 {
 	return getNormalizedScore(getCountryNavyTech(country), navyMax, navyMean);
 }
 
 
-double helpers::TechValues::getNormalizedCommerceTech(const EU4::Country& country)
+double helpers::TechValues::getNormalizedCommerceTech(const EU4::Country& country) const
 {
 	return getNormalizedScore(getCountryCommerceTech(country), commerceMax, commerceMean);
 }
 
 
-double helpers::TechValues::getNormalizedCultureTech(const EU4::Country& country)
+double helpers::TechValues::getNormalizedCultureTech(const EU4::Country& country) const
 {
 	return getNormalizedScore(getCountryCultureTech(country), cultureMax, cultureMean);
 }
 
 
-double helpers::TechValues::getNormalizedIndustryTech(const EU4::Country& country)
+double helpers::TechValues::getNormalizedIndustryTech(const EU4::Country& country) const
 {
 	return getNormalizedScore(getCountryIndustryTech(country), industryMax, industryMean);
 }
 
 
-void helpers::updateMaxAndTotal(double& max, double& total, double techLevel)
+double helpers::TechValues::getCountryArmyTech(const EU4::Country& country) const
+{
+	return country.getMilTech() + country.getAdmTech() + ideaEffectMapper::getArmyTechFromIdeas(country.getNationalIdeas());
+}
+
+
+double helpers::TechValues::getCountryNavyTech(const EU4::Country& country) const
+{
+	return country.getMilTech() + country.getDipTech() + ideaEffectMapper::getNavyTechFromIdeas(country.getNationalIdeas());
+}
+
+
+double helpers::TechValues::getCountryCommerceTech(const EU4::Country& country) const
+{
+	return country.getAdmTech() + country.getDipTech() + ideaEffectMapper::getCommerceTechFromIdeas(country.getNationalIdeas());
+}
+
+
+double helpers::TechValues::getCountryCultureTech(const EU4::Country& country) const
+{
+	return country.getDipTech() + ideaEffectMapper::getCultureTechFromIdeas(country.getNationalIdeas());
+}
+
+
+double helpers::TechValues::getCountryIndustryTech(const EU4::Country& country) const
+{
+	return country.getAdmTech() + country.getDipTech() + country.getMilTech() + ideaEffectMapper::getIndustryTechFromIdeas(country.getNationalIdeas());
+}
+
+
+void helpers::TechValues::updateMaxAndTotal(double& max, double& total, double techLevel)
 {
 	if (techLevel > max)
 	{
@@ -133,9 +133,12 @@ void helpers::updateMaxAndTotal(double& max, double& total, double techLevel)
 }
 
 
-double helpers::getNormalizedScore(double score, double max, double mean)
+double helpers::TechValues::getNormalizedScore(double score, double max, double mean) const
 {
 	if (mean == max)
+	{
 		return max;
+	}
+
 	return (score - mean) / (max - mean);
 };
