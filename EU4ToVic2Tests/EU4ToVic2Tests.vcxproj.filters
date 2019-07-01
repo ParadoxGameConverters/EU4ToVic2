@@ -218,6 +218,12 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp">
       <Filter>ConverterFiles\EU4World\Mods</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Ideas\IdeaEffects.cpp">
+      <Filter>ConverterFiles\Mappers\Ideas</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\IdeaEffectsTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -261,6 +267,9 @@
     </Filter>
     <Filter Include="ConverterFiles\EU4World\Mods">
       <UniqueIdentifier>{c6f85fcb-4f62-4c3e-bdb2-d295b24b3bd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\Ideas">
+      <UniqueIdentifier>{e0ad31b3-88c3-4865-bac7-35700d7a5f27}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

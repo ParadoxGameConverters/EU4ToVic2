@@ -188,6 +188,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMappingRule.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Ideas\IdeaEffects.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -223,6 +224,7 @@
     <ClCompile Include="EU4WorldTests\ReligionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapperTests.cpp" />
     <ClCompile Include="MapperTests\CultureMappingTests.cpp" />
+    <ClCompile Include="MapperTests\IdeaEffectsTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />

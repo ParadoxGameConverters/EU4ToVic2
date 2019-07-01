@@ -28,8 +28,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include <map>
 #include <memory>
+#include <set>
 #include <string>
-#include <vector>
 
 
 
@@ -53,6 +53,7 @@ class IdeaEffectMapper
 
 		double getUHLiberalFromIdea(const std::string& ideaName, int ideaLevel) const;
 		double getUHReactionaryFromIdea(const std::string& ideaName, int ideaLevel) const;
+
 		double getLiteracyFromIdea(const std::string& ideaName, int ideaLevel) const;
 
 		int getOrderInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const;
@@ -77,7 +78,7 @@ class IdeaEffectMapper
 		std::map<std::string, double> UHLiberalIdeas;
 		std::map<std::string, double> UHReactionaryIdeas;
 
-		std::map<std::string, std::vector<int>> literacyIdeas;
+		std::map<std::string, std::set<int>> literacyIdeas;
 
 		std::map<std::string, int> orderIdeas;
 		std::map<std::string, int> libertyIdeas;

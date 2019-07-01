@@ -22,6 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "IdeaEffectMapper.h"
+#include "Ideas/IdeaEffects.h"
 #include "Log.h"
 #include "Object.h"
 #include "ParadoxParserUTF8.h"
@@ -48,80 +49,30 @@ void mappers::IdeaEffectMapper::initIdeaEffects(std::shared_ptr<Object> obj)
 	for (auto ideasItr: obj->getLeaves())
 	{
 		std::string idea = ideasItr->getKey();
+		std::stringstream theStream;
+		theStream << *ideasItr;
+		IdeaEffects ideaEffects(theStream);
 
-		for (auto effectsItr: ideasItr->getLeaves())
-		{
-			std::string effectType = effectsItr->getKey();
+		armyInvestmentIdeas[idea] = ideaEffects.getArmyInvestmentValue();
+		navyInvestmentIdeas[idea] = ideaEffects.getNavyInvestmentValue();
+		commerceInvestmentIdeas[idea] = ideaEffects.getCommerceInvestmentValue();
+		cultureInvestmentIdeas[idea] = ideaEffects.getCultureInvestmentValue();
+		industryInvestmentIdeas[idea] = ideaEffects.getIndustryInvestmentValue();
 
-			if (effectType == "army_investment")
-			{
-				armyInvestmentIdeas[idea] = std::stoi(effectsItr->getLeaf());
-			}
-			else if (effectType == "commerce_investment")
-			{
-				commerceInvestmentIdeas[idea] = std::stoi(effectsItr->getLeaf());
-			}
-			else if (effectType == "culture_investment")
-			{
-				cultureInvestmentIdeas[idea] = std::stoi(effectsItr->getLeaf());
-			}
-			else if (effectType == "industry_investment")
-			{
-				industryInvestmentIdeas[idea] = std::stoi(effectsItr->getLeaf());
-			}
-			else if (effectType == "navy_investment")
-			{
-				navyInvestmentIdeas[idea] = std::stoi(effectsItr->getLeaf());
-			}
-			else if (effectType == "army_tech_score")
-			{
-				armyTechIdeas[idea] = std::stof(effectsItr->getLeaf());
-			}
-			else if (effectType == "commerce_tech_score")
-			{
-				commerceTechIdeas[idea] = std::stof(effectsItr->getLeaf());
-			}
-			else if (effectType == "culture_tech_score")
-			{
-				cultureTechIdeas[idea] = std::stof(effectsItr->getLeaf());
-			}
-			else if (effectType == "industry_tech_score")
-			{
-				industryTechIdeas[idea] = std::stof(effectsItr->getLeaf());
-			}
-			else if (effectType == "navy_tech_score")
-			{
-				navyTechIdeas[idea] = std::stof(effectsItr->getLeaf());
-			}
-			else if (effectType == "upper_house_liberal")
-			{
-				UHLiberalIdeas[idea] = std::stof(effectsItr->getLeaf());
-			}
-			else if (effectType == "upper_house_reactionary")
-			{
-				UHReactionaryIdeas[idea] = std::stof(effectsItr->getLeaf());
-			}
-			else if (effectType == "NV_order")
-			{
-				orderIdeas[idea] = std::stoi(effectsItr->getLeaf());
-			}
-			else if (effectType == "NV_liberty")
-			{
-				libertyIdeas[idea] = std::stoi(effectsItr->getLeaf());
-			}
-			else if (effectType == "NV_equality")
-			{
-				equalityIdeas[idea] = std::stoi(effectsItr->getLeaf());
-			}
-			else if (effectType == "literacy")
-			{
-				std::vector<std::string> literacyStrs = effectsItr->getTokens();
-				for (auto literacyStr: literacyStrs)
-				{
-					literacyIdeas[idea].push_back(std::stoi(literacyStr));
-				}
-			}
-		}
+		armyTechIdeas[idea] = ideaEffects.getArmyTechScoreValue();
+		navyTechIdeas[idea] = ideaEffects.getNavyTechScoreValue();
+		commerceTechIdeas[idea] = ideaEffects.getCommerceTechScoreValue();
+		cultureTechIdeas[idea] = ideaEffects.getCultureTechScoreValue();
+		industryTechIdeas[idea] = ideaEffects.getIndustryTechScoreValue();
+
+		UHLiberalIdeas[idea] = ideaEffects.getUpperHouseLiberalValue();
+		UHReactionaryIdeas[idea] = ideaEffects.getUpperHouseReactionaryValue();
+
+		orderIdeas[idea] = ideaEffects.getOrderInfluenceValue();
+		libertyIdeas[idea] = ideaEffects.getLibertyInfluenceValue();
+		equalityIdeas[idea] = ideaEffects.getEqualityInfluenceValue();
+
+		literacyIdeas[idea] = ideaEffects.getLiteracyLevels();
 	}
 }
 

@@ -264,6 +264,9 @@
     <ClCompile Include="Source\Helpers\TechValues.cpp">
       <Filter>Helpers</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Ideas\IdeaEffects.cpp">
+      <Filter>Mappers\Ideas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -526,6 +529,9 @@
     <ClInclude Include="Source\Helpers\TechValues.h">
       <Filter>Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\Ideas\IdeaEffects.h">
+      <Filter>Mappers\Ideas</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -557,6 +563,9 @@
     </Filter>
     <Filter Include="Helpers">
       <UniqueIdentifier>{ef5e0061-2ce9-448e-9f80-9fa52991faf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\Ideas">
+      <UniqueIdentifier>{7850fd15-b418-4718-b0f5-e2a1ea86e33a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
