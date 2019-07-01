@@ -24,33 +24,16 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "IdeaEffectMapper.h"
 #include "Ideas/IdeaEffects.h"
 #include "Log.h"
-#include "Object.h"
-#include "ParadoxParserUTF8.h"
+#include <fstream>
 
 
 
 mappers::IdeaEffectMapper::IdeaEffectMapper()
 {
 	LOG(LogLevel::Info) << "getting idea effects";
-	std::shared_ptr<Object> ideaObj = parser_UTF8::doParseFile("idea_effects.txt");
-	if (ideaObj == NULL)
-	{
-		LOG(LogLevel::Error) << "Could not parse file idea_effects.txt";
-		exit(-1);
-	}
-	
-	initIdeaEffects(ideaObj);
-}
+	std::ifstream ideaEffectsFile("idea_effects.txt");
 
-
-void mappers::IdeaEffectMapper::initIdeaEffects(std::shared_ptr<Object> obj)
-{
-	std::vector<std::shared_ptr<Object>> ideasObj = obj->getLeaves();
-	for (auto ideasItr: obj->getLeaves())
-	{
-		std::string idea = ideasItr->getKey();
-		std::stringstream theStream;
-		theStream << *ideasItr;
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& idea, std::istream& theStream) {
 		IdeaEffects ideaEffects(theStream);
 
 		armyInvestmentIdeas[idea] = ideaEffects.getArmyInvestmentValue();
@@ -73,7 +56,10 @@ void mappers::IdeaEffectMapper::initIdeaEffects(std::shared_ptr<Object> obj)
 		equalityIdeas[idea] = ideaEffects.getEqualityInfluenceValue();
 
 		literacyIdeas[idea] = ideaEffects.getLiteracyLevels();
-	}
+	});
+
+	parseStream(ideaEffectsFile);
+	ideaEffectsFile.close();
 }
 
 

@@ -100,6 +100,5 @@ mappers::IdeaEffects::IdeaEffects(std::istream& theStream)
 		}
 	});
 
-	getNextTokenWithoutMatching(theStream); // temporary to remove initial token
 	parseStream(theStream);
 }

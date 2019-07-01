@@ -26,21 +26,18 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "newParser.h"
 #include <map>
-#include <memory>
 #include <set>
 #include <string>
 
-
-
-class Object;
 
 
 
 namespace mappers
 {
 
-class IdeaEffectMapper
+class IdeaEffectMapper: commonItems::parser
 {
 	public:
 		IdeaEffectMapper();
@@ -67,8 +64,6 @@ class IdeaEffectMapper
 		double getNavyTechFromIdeas(const std::map<std::string, int>& ideas) const;
 
 	private:
-		void initIdeaEffects(std::shared_ptr<Object> obj);
-
 		std::map<std::string, int> armyInvestmentIdeas;
 		std::map<std::string, int> commerceInvestmentIdeas;
 		std::map<std::string, int> cultureInvestmentIdeas;
