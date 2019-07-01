@@ -227,7 +227,7 @@
     <ClCompile Include="Source\Mappers\CultureMappingRule.cpp" />
     <ClCompile Include="Source\Mappers\FlagColorMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovermentMapper.cpp" />
-    <ClCompile Include="Source\Mappers\IdeaEffectMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Ideas\IdeaEffectMapper.cpp" />
     <ClCompile Include="Source\Mappers\Ideas\IdeaEffects.cpp" />
     <ClCompile Include="Source\Mappers\MinorityPopMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
@@ -320,7 +320,7 @@
     <ClInclude Include="Source\Mappers\CultureMappingRule.h" />
     <ClInclude Include="Source\Mappers\FlagColorMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentMapper.h" />
-    <ClInclude Include="Source\Mappers\IdeaEffectMapper.h" />
+    <ClInclude Include="Source\Mappers\Ideas\IdeaEffectMapper.h" />
     <ClInclude Include="Source\Mappers\Ideas\IdeaEffects.h" />
     <ClInclude Include="Source\Mappers\MinorityPopMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h" />

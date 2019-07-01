@@ -31,7 +31,7 @@ THE SOFTWARE. */
 #include "EU4Version.h"
 #include "CountryHistory.h"
 #include "Provinces/EU4Province.h"
-#include "../Mappers/IdeaEffectMapper.h"
+#include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../V2World/V2Localisation.h"
 #include <algorithm>
 

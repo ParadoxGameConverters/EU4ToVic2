@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "IdeaEffectMapper.h"
-#include "Ideas/IdeaEffects.h"
+#include "IdeaEffects.h"
 #include "Log.h"
 
 

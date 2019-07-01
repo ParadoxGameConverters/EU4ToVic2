@@ -23,7 +23,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "Countries.h"
 #include "EU4Country.h"
-#include "../Mappers/IdeaEffectMapper.h"
+#include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "ParserHelpers.h"
 
 

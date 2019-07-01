@@ -23,7 +23,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "TechValues.h"
 #include "../EU4World/EU4Country.h"
-#include "../Mappers/IdeaEffectMapper.h"
+#include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../V2World/V2Country.h"
 #include "../Configuration.h"
 #include <algorithm>

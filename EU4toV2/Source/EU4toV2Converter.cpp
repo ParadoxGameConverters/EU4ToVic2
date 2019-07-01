@@ -25,7 +25,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "EU4World/World.h"
-#include "Mappers/IdeaEffectMapper.h"
+#include "Mappers/Ideas/IdeaEffectMapper.h"
 #include "V2World/V2World.h"
 #include <fstream>
 
