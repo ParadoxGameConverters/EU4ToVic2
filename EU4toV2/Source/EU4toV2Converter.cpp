@@ -27,6 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "EU4World/World.h"
 #include "Mappers/IdeaEffectMapper.h"
 #include "V2World/V2World.h"
+#include <fstream>
 
 
 
@@ -38,7 +39,9 @@ void ConvertEU4ToVic2(const string& EU4SaveFileName)
 	setOutputName(EU4SaveFileName);
 	deleteExistingOutputFolder();
 
-	mappers::IdeaEffectMapper ideaEffectMapper;
+	std::ifstream ideaEffectsFile("idea_effects.txt");
+	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectsFile);
+	ideaEffectsFile.close();
 
 	EU4::world sourceWorld(EU4SaveFileName, ideaEffectMapper);
 	V2World destWorld(sourceWorld, ideaEffectMapper);

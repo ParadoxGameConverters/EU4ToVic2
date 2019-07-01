@@ -24,15 +24,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "IdeaEffectMapper.h"
 #include "Ideas/IdeaEffects.h"
 #include "Log.h"
-#include <fstream>
 
 
 
-mappers::IdeaEffectMapper::IdeaEffectMapper()
+mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream)
 {
-	LOG(LogLevel::Info) << "getting idea effects";
-	std::ifstream ideaEffectsFile("idea_effects.txt");
-
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& idea, std::istream& theStream) {
 		IdeaEffects ideaEffects(theStream);
 
@@ -58,8 +54,8 @@ mappers::IdeaEffectMapper::IdeaEffectMapper()
 		literacyIdeas[idea] = ideaEffects.getLiteracyLevels();
 	});
 
-	parseStream(ideaEffectsFile);
-	ideaEffectsFile.close();
+	LOG(LogLevel::Info) << "getting idea effects";
+	parseStream(theStream);
 }
 
 

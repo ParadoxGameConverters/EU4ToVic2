@@ -40,7 +40,7 @@ namespace mappers
 class IdeaEffectMapper: commonItems::parser
 {
 	public:
-		IdeaEffectMapper();
+		IdeaEffectMapper(std::istream& theStream);
 
 		int getArmyInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const;
 		int getCommerceInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const;
