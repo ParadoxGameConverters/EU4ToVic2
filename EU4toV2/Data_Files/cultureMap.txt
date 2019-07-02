@@ -21,8 +21,6 @@
 
 # This culture map contains one to one and many to one culture conversions.
 
-cultureMap = {
-
 # Slovene
 link = { vic2 = slovene eu4 = slovene } #Modded
 link = { vic2 = slovene eu4 = croatian region = germany_region }
@@ -293,7 +291,7 @@ link = { vic2 = russian eu4 = russian eu4 = ilmenian eu4 = severian eu4 = volhyn
 link = { vic2 = ukrainian eu4 = antean eu4 = ruthenian }
 link = { vic2 = byelorussian eu4 = byelorussian }
 #Generic Russian (split) from CK2 converted
-link = { vic2 = byelorussian eu4 = russian_culture region = white_ruthenia_area region = smolensk_area }
+link = { vic2 = byelorussian eu4 = russian_culture region = white_ruthenia_area }
 link = { vic2 = byelorussian eu4 = russian_culture region = smolensk_area }
 link = { vic2 = ukrainian eu4 = russian_culture region = ruthenia_region }
 link = { vic2 = russian eu4 = russian_culture }
