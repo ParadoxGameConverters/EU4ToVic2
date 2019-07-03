@@ -224,6 +224,12 @@
     <ClCompile Include="MapperTests\IdeaEffectsTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\IdeaEffectsMapperTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Ideas\IdeaEffectMapper.cpp">
+      <Filter>ConverterFiles\Mappers\Ideas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
