@@ -41,6 +41,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+namespace mappers
+{
+class IdeaEffectMapper;
+}
+
 namespace EU4
 {
 
@@ -51,7 +56,7 @@ class Province;
 class world: private commonItems::parser
 {
 	public:
-		world(const std::string& EU4SaveFileName);
+		world(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper);
 
 		const Province& getProvince(int provNum) const;
 
@@ -77,7 +82,7 @@ class world: private commonItems::parser
 		void loadHolyRomanEmperor(vector<shared_ptr<Object>> empireObj);
 		void loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpireObj);
 
-		void loadCountries(istream& theStream);
+		void loadCountries(std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void loadRevolutionTargetString(const shared_ptr<Object> EU4SaveObj);
 		void loadRevolutionTarget();
 		void addProvinceInfoToCountries();

@@ -46,6 +46,11 @@ class Version;
 class EU4Loan;
 class EU4Relations;
 
+namespace mappers
+{
+class IdeaEffectMapper;
+}
+
 
 
 namespace EU4
@@ -53,7 +58,13 @@ namespace EU4
 	class Country: public commonItems::parser
 	{
 		public:
-			Country(const std::string& countryTag, const EU4::Version& theVersion, std::istream& theStream);
+			Country() = default;
+			Country(
+				const std::string& countryTag,
+				const EU4::Version& theVersion,
+				std::istream& theStream,
+				const mappers::IdeaEffectMapper& ideaEffectMapper
+			);
 
 			// Add any additional information available from the specified country file.
 			void readFromCommonCountry(const std::string& fileName, const std::string& fullFilename);
@@ -96,9 +107,9 @@ namespace EU4
 			string							getReligion()								const { return religion; }
 			double getScore() const { return score; }
 			double							getStability()								const { return stability; }
-			double							getAdmTech()								const { return admTech; }
-			double							getDipTech()								const { return dipTech; }
-			double							getMilTech()								const { return milTech; }
+			virtual double getAdmTech() const { return admTech; }
+			virtual double getDipTech() const { return dipTech; }
+			virtual double getMilTech() const { return milTech; }
 			double							getArmyInvestment()						const { return armyInvestment; }
 			double							getNavyInvestment()						const { return navyInvestment; }
 			double							getCommerceInvestment()					const { return commerceInvestment; }
@@ -117,7 +128,7 @@ namespace EU4
 			bool								isRevolutionary()							const { return revolutionary; }
 			tuple<int, int, int>			getRevolutionaryTricolour()			const { return revolutionaryTricolour; }
 			string							getRandomName()							const { return randomName; }
-			const map<string, int>& getNationalIdeas() const { return nationalIdeas; }
+			virtual const std::map<std::string, int>& getNationalIdeas() const { return nationalIdeas; }
 			std::vector<std::shared_ptr<EU4::leader>> getMilitaryLeaders() const { return militaryLeaders; }
 
 			string	getName() const { return name; }
@@ -127,7 +138,7 @@ namespace EU4
 
 		private:
 			void determineJapaneseRelations();
-			void determineInvestments();
+			void determineInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper);
 			void determineLibertyDesire();
 			void							clearProvinces();
 			void							clearCores();

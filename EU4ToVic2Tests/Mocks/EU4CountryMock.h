@@ -21,47 +21,16 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef EU4_COUNTRIES_H_
-#define EU4_COUNTRIES_H_
+#include "gmock/gmock.h"
+#include "../../EU4toV2/Source/EU4World/EU4Country.h"
 
 
 
-#include "newParser.h"
-#include "EU4Version.h"
-#include <map>
-#include <memory>
-#include <string>
-
-
-
-namespace mappers
-{
-class IdeaEffectMapper;
-}
-
-
-namespace EU4
-{
-class Country;
-
-
-class countries: public commonItems::parser
+class mockEU4Country: public EU4::Country
 {
 	public:
-		countries(
-			const EU4::Version& theVersion,
-			std::istream& theStream,
-			const mappers::IdeaEffectMapper& ideaEffectMapper
-		);
-
-		std::map<std::string, std::shared_ptr<EU4::Country>> getTheCountries() const { return theCountries; }
-
-	private:
-		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
+		MOCK_CONST_METHOD0(getAdmTech, double());
+		MOCK_CONST_METHOD0(getDipTech, double());
+		MOCK_CONST_METHOD0(getMilTech, double());
+		MOCK_CONST_METHOD0(getNationalIdeas, const map<string, int>&());
 };
-
-}
-
-
-
-#endif // EU4_COUNTRIES_H_

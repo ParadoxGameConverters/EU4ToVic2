@@ -102,9 +102,6 @@
     <ClCompile Include="Source\EU4World\ID.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\IdeaEffectMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="..\common_items\Log.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
@@ -261,6 +258,15 @@
     <ClCompile Include="Source\EU4World\Mods\Mods.cpp">
       <Filter>EU4World\Mods</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Helpers\TechValues.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Ideas\IdeaEffects.cpp">
+      <Filter>Mappers\Ideas</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Ideas\IdeaEffectMapper.cpp">
+      <Filter>Mappers\Ideas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -360,9 +366,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\History.h">
       <Filter>EU4World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\IdeaEffectMapper.h">
-      <Filter>Mappers</Filter>
     </ClInclude>
     <ClInclude Include="..\common_items\Log.h">
       <Filter>CommonItems</Filter>
@@ -520,6 +523,15 @@
     <ClInclude Include="Source\EU4World\Mods\Mods.h">
       <Filter>EU4World\Mods</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Helpers\TechValues.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Ideas\IdeaEffects.h">
+      <Filter>Mappers\Ideas</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Ideas\IdeaEffectMapper.h">
+      <Filter>Mappers\Ideas</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -548,6 +560,12 @@
     </Filter>
     <Filter Include="EU4World\Mods">
       <UniqueIdentifier>{5cf7770c-c44d-44fd-864a-e3ae2fc9fe43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{ef5e0061-2ce9-448e-9f80-9fa52991faf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\Ideas">
+      <UniqueIdentifier>{7850fd15-b418-4718-b0f5-e2a1ea86e33a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

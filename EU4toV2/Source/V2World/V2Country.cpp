@@ -44,7 +44,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/CountryMapping.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/GovernmentMapper.h"
-#include "../Mappers/IdeaEffectMapper.h"
+#include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2World.h"
 #include "V2State.h"
@@ -522,6 +522,7 @@ void V2Country::initFromEU4Country(
 	const map<int, int>& leaderMap,
 	const mappers::CultureMapper& cultureMapper,
 	const mappers::CultureMapper& slaveCultureMapper,
+	const mappers::IdeaEffectMapper& ideaEffectMapper,
 	const mappers::ReligionMapper& religionMapper,
 	const mappers::ProvinceMapper& provinceMapper
 ) {
@@ -653,8 +654,8 @@ void V2Country::initFromEU4Country(
 	double reactionaryEffect = 0.0;
 	for (auto idea: srcCountry->getNationalIdeas())
 	{
-		liberalEffect += ideaEffectMapper::getUHLiberalFromIdea(idea.first, idea.second);
-		reactionaryEffect += ideaEffectMapper::getUHReactionaryFromIdea(idea.first, idea.second);
+		liberalEffect += ideaEffectMapper.getUHLiberalFromIdea(idea.first, idea.second);
+		reactionaryEffect += ideaEffectMapper.getUHReactionaryFromIdea(idea.first, idea.second);
 	}
 
 	upperHouseReactionary		=  static_cast<int>(5  + (100 * reactionaryEffect));
@@ -739,7 +740,7 @@ void V2Country::initFromEU4Country(
 	literacy = 0.1;
 	for (auto idea: srcCountry->getNationalIdeas())
 	{
-		literacy += ideaEffectMapper::getLiteracyFromIdea(idea.first, idea.second);
+		literacy += ideaEffectMapper.getLiteracyFromIdea(idea.first, idea.second);
 	}
 	if (
 		(srcCountry->getReligion() == "Protestant") ||
@@ -1283,17 +1284,24 @@ void V2Country::convertArmies(
 }
 
 
-void V2Country::getNationalValueScores(int& libertyScore, int& equalityScore, int& orderScore)
-{
+void V2Country::getNationalValueScores(
+	int& libertyScore,
+	int& equalityScore,
+	int& orderScore,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) {
 	orderScore = 0;
 	libertyScore = 0;
 	equalityScore = 0;
 
-	for (auto idea: srcCountry->getNationalIdeas())
+	if (srcCountry)
 	{
-		orderScore += ideaEffectMapper::getOrderInfluenceFromIdea(idea.first, idea.second);
-		libertyScore += ideaEffectMapper::getLibertyInfluenceFromIdea(idea.first, idea.second);
-		equalityScore += ideaEffectMapper::getEqualityInfluenceFromIdea(idea.first, idea.second);
+		for (auto idea : srcCountry->getNationalIdeas())
+		{
+			orderScore += ideaEffectMapper.getOrderInfluenceFromIdea(idea.first, idea.second);
+			libertyScore += ideaEffectMapper.getLibertyInfluenceFromIdea(idea.first, idea.second);
+			equalityScore += ideaEffectMapper.getEqualityInfluenceFromIdea(idea.first, idea.second);
+		}
 	}
 }
 

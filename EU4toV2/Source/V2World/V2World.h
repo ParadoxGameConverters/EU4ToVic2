@@ -52,7 +52,7 @@ class V2LeaderTraits;
 class V2World
 {
 	public:
-		V2World(const EU4::world& sourceWorld);
+		V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		V2Province* getProvince(int provNum) const;
 		V2Country* getCountry(string tag) const;
 
@@ -83,10 +83,10 @@ class V2World
 		void initializeReligionMapper(const EU4::world& sourceWorld);
 		void initializeProvinceMapper();
 
-		void convertCountries(const EU4::world& sourceWorld);
-		void initializeCountries(const EU4::world& sourceWorld);
+		void convertCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void initializeCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		V2Country* createOrLocateCountry(const string& V2Tag, const shared_ptr<EU4::Country> sourceCountry);
-		void convertNationalValues();
+		void convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void convertPrestige();
 		void addAllPotentialCountries();
 		void checkForCivilizedNations();
@@ -107,7 +107,7 @@ class V2World
 		void setupColonies();
 		void setupStates();
 		void convertUncivReforms(const EU4::world& sourceWorld);
-		void convertTechs(const EU4::world& sourceWorld);
+		void convertTechs(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void allocateFactories(const EU4::world& sourceWorld);
 		void setupPops(const EU4::world& sourceWorld);
 		void addUnions();

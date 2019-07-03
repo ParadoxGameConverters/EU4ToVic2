@@ -185,9 +185,12 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMappingRule.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Ideas\IdeaEffectMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Ideas\IdeaEffects.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -221,8 +224,11 @@
     <ClCompile Include="EU4WorldTests\ReligionGroupTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionsTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionTests.cpp" />
+    <ClCompile Include="HelpersTests\TechValuesTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapperTests.cpp" />
     <ClCompile Include="MapperTests\CultureMappingTests.cpp" />
+    <ClCompile Include="MapperTests\IdeaEffectsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\IdeaEffectsTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />
@@ -236,7 +242,9 @@
     <ClCompile Include="Vic2WorldTests\Vic2TechSchoolTests.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Mocks\EU4CountryMock.h" />
     <ClInclude Include="Mocks\RegionsMock.h" />
+    <ClInclude Include="Mocks\Vic2CountryMock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

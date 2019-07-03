@@ -215,6 +215,7 @@
     <ClCompile Include="Source\EU4World\Religions\Religions.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
     <ClCompile Include="Source\FlagUtils.cpp" />
+    <ClCompile Include="Source\Helpers\TechValues.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\AdjacencyMapper.cpp" />
     <ClCompile Include="Source\Mappers\CK2TitleMapper.cpp" />
@@ -226,7 +227,8 @@
     <ClCompile Include="Source\Mappers\CultureMappingRule.cpp" />
     <ClCompile Include="Source\Mappers\FlagColorMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovermentMapper.cpp" />
-    <ClCompile Include="Source\Mappers\IdeaEffectMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Ideas\IdeaEffectMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Ideas\IdeaEffects.cpp" />
     <ClCompile Include="Source\Mappers\MinorityPopMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
@@ -307,6 +309,7 @@
     <ClInclude Include="Source\EU4World\Religions\Religions.h" />
     <ClInclude Include="Source\EU4World\World.h" />
     <ClInclude Include="Source\FlagUtils.h" />
+    <ClInclude Include="Source\Helpers\TechValues.h" />
     <ClInclude Include="Source\Mappers\AdjacencyMapper.h" />
     <ClInclude Include="Source\Mappers\CK2TitleMapper.h" />
     <ClInclude Include="Source\Mappers\ColonialTagsMapper.h" />
@@ -317,7 +320,8 @@
     <ClInclude Include="Source\Mappers\CultureMappingRule.h" />
     <ClInclude Include="Source\Mappers\FlagColorMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentMapper.h" />
-    <ClInclude Include="Source\Mappers\IdeaEffectMapper.h" />
+    <ClInclude Include="Source\Mappers\Ideas\IdeaEffectMapper.h" />
+    <ClInclude Include="Source\Mappers\Ideas\IdeaEffects.h" />
     <ClInclude Include="Source\Mappers\MinorityPopMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h" />

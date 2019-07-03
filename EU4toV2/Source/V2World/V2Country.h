@@ -43,12 +43,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 namespace EU4
 {
-
 class Country;
 class world;
-
 }
-
+namespace mappers
+{
+class IdeaEffectMapper;
+}
 class V2World;
 class V2State;
 class V2Province;
@@ -69,6 +70,7 @@ class V2Country
 	public:
 		V2Country(const string& countriesFileLine, const V2World* _theWorld, bool _dynamicCountry);
 		V2Country(const string& _tag, const string& _commonCountryFile, const V2World* _theWorld);
+		V2Country() = default;
 
 		void								output() const;
 		void								outputToCommonCountriesFile(FILE*) const;
@@ -81,6 +83,7 @@ class V2Country
 			const std::map<int, int>& leaderMap,
 			const mappers::CultureMapper& cultureMapper,
 			const mappers::CultureMapper& slaveCultureMapper,
+			const mappers::IdeaEffectMapper& ideaEffectMapper,
 			const mappers::ReligionMapper& religionMapper,
 			const mappers::ProvinceMapper& provinceMapper
 		);
@@ -119,7 +122,7 @@ class V2Country
 
 		string							getLocalName();
 		V2Relations*					getRelations(string withWhom) const;
-		void								getNationalValueScores(int& liberty, int& equality, int& order);
+		void getNationalValueScores(int& liberty, int& equality, int& order, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		
 		void addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
 		void								addResearchPoints(double newPoints)		{ researchPoints += newPoints; }
@@ -127,13 +130,13 @@ class V2Country
 		void								setNationalValue(string NV)				{ nationalValue = NV; }
 		void								isANewCountry(void)							{ newCountry = true; }
 
-		map<int, V2Province*>			getProvinces() const { return provinces; }
+		virtual std::map<int, V2Province*> getProvinces() const { return provinces; }
 		vector<V2State*>				getStates() const { return states; }
 		string							getTag() const { return tag; }
-		bool								isCivilized() const { return civilized; }
+		virtual bool isCivilized() const { return civilized; }
 		string							getPrimaryCulture() const { return primaryCulture; }
 		set<string>						getAcceptedCultures() const { return acceptedCultures; }
-		std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }
+		virtual std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }
 		double							getReactionary() const { return upperHouseReactionary; }
 		double							getConservative() const { return upperHouseConservative; }
 		double							getLiberal() const { return upperHouseLiberal; }

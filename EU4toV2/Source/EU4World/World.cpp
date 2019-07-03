@@ -33,6 +33,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Provinces/EU4Province.h"
 #include "Regions/Areas.h"
 #include "../Configuration.h"
+#include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "Log.h"
@@ -48,7 +49,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-EU4::world::world(const string& EU4SaveFileName):
+EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper):
 	theCountries()
 {
 	registerKeyword(std::regex("EU4txt"), [this](const std::string& unused, std::istream& theStream){});
@@ -106,7 +107,13 @@ EU4::world::world(const string& EU4SaveFileName):
 			theConfiguration.setFirstEU4Date(*possibleDate);
 		}
 	});
-	registerKeyword(std::regex("countries"), [this](const std::string& countriesText, std::istream& theStream) { loadCountries(theStream);	} );
+	registerKeyword(
+		std::regex("countries"),
+		[this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
+		{
+			loadCountries(theStream, ideaEffectMapper);
+		}
+	);
 	registerKeyword(std::regex("diplomacy"), [this](const std::string& diplomacyText, std::istream& theStream)
 		{
 			auto diplomacyObject = commonItems::convert8859Object(diplomacyText, theStream);
@@ -228,9 +235,9 @@ void EU4::world::loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpire
 }
 
 
-void EU4::world::loadCountries(istream& theStream)
+void EU4::world::loadCountries(istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
-	countries processedCountries(*version, theStream);
+	countries processedCountries(*version, theStream, ideaEffectMapper);
 	auto theProcessedCountries = processedCountries.getTheCountries();
 	theCountries.swap(theProcessedCountries);
 }
