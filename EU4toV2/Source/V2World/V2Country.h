@@ -70,6 +70,7 @@ class V2Country
 	public:
 		V2Country(const string& countriesFileLine, const V2World* _theWorld, bool _dynamicCountry);
 		V2Country(const string& _tag, const string& _commonCountryFile, const V2World* _theWorld);
+		V2Country() = default;
 
 		void								output() const;
 		void								outputToCommonCountriesFile(FILE*) const;
@@ -129,13 +130,13 @@ class V2Country
 		void								setNationalValue(string NV)				{ nationalValue = NV; }
 		void								isANewCountry(void)							{ newCountry = true; }
 
-		map<int, V2Province*>			getProvinces() const { return provinces; }
+		virtual std::map<int, V2Province*> getProvinces() const { return provinces; }
 		vector<V2State*>				getStates() const { return states; }
 		string							getTag() const { return tag; }
-		bool								isCivilized() const { return civilized; }
+		virtual bool isCivilized() const { return civilized; }
 		string							getPrimaryCulture() const { return primaryCulture; }
 		set<string>						getAcceptedCultures() const { return acceptedCultures; }
-		std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }
+		virtual std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }
 		double							getReactionary() const { return upperHouseReactionary; }
 		double							getConservative() const { return upperHouseConservative; }
 		double							getLiberal() const { return upperHouseLiberal; }

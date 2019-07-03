@@ -230,6 +230,12 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\Ideas\IdeaEffectMapper.cpp">
       <Filter>ConverterFiles\Mappers\Ideas</Filter>
     </ClCompile>
+    <ClCompile Include="HelpersTests\TechValuesTests.cpp">
+      <Filter>HelpersTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp">
+      <Filter>ConverterFiles\Helpers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -274,12 +280,24 @@
     <Filter Include="ConverterFiles\EU4World\Mods">
       <UniqueIdentifier>{c6f85fcb-4f62-4c3e-bdb2-d295b24b3bd1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ConverterFiles\Helpers">
+      <UniqueIdentifier>{24f4672d-5798-4943-8a21-4d71d38580e5}</UniqueIdentifier>
+    </Filter>
     <Filter Include="ConverterFiles\Mappers\Ideas">
       <UniqueIdentifier>{e0ad31b3-88c3-4865-bac7-35700d7a5f27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HelpersTests">
+      <UniqueIdentifier>{990552e6-b585-4a97-8e3c-63c6099e25e1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mocks\RegionsMock.h">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Mocks\Vic2CountryMock.h">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Mocks\EU4CountryMock.h">
       <Filter>Mocks</Filter>
     </ClInclude>
   </ItemGroup>

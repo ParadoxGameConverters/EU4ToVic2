@@ -62,11 +62,14 @@ helpers::TechValues::TechValues(
 		numValidCountries++;
 	}
 
-	armyMean = armyTotal / numValidCountries;
-	navyMean = navyTotal / numValidCountries;
-	commerceMean = commerceTotal / numValidCountries;
-	cultureMean = cultureTotal / numValidCountries;
-	industryMean = industryTotal / numValidCountries;
+	if (numValidCountries > 0)
+	{
+		armyMean = armyTotal / numValidCountries;
+		navyMean = navyTotal / numValidCountries;
+		commerceMean = commerceTotal / numValidCountries;
+		cultureMean = cultureTotal / numValidCountries;
+		industryMean = industryTotal / numValidCountries;
+	}
 }
 
 
@@ -180,7 +183,7 @@ double helpers::TechValues::getNormalizedScore(double score, double max, double 
 {
 	if (mean == max)
 	{
-		return max;
+		return 1.0;
 	}
 
 	return (score - mean) / (max - mean);
