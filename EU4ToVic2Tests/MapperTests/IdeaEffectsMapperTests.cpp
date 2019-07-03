@@ -750,7 +750,7 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyTechFromIdeaLogsMissingIdeaAndReturns
 	mappers::IdeaEffectMapper theMapper(input);
 
 	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("missing_idea", 0));
+	ideas.insert(std::make_pair("missingIdea", 0));
 
 	std::stringstream buffer;
 	std::streambuf* sbuf = std::cout.rdbuf();
@@ -847,7 +847,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCommerceTechFromIdeaLogsMissingIdeaAndRet
 	mappers::IdeaEffectMapper theMapper(input);
 
 	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("missing_idea", 0));
+	ideas.insert(std::make_pair("missingIdea", 0));
 
 	std::stringstream buffer;
 	std::streambuf* sbuf = std::cout.rdbuf();
@@ -944,7 +944,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCultureTechFromIdeaLogsMissingIdeaAndRetu
 	mappers::IdeaEffectMapper theMapper(input);
 
 	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("missing_idea", 0));
+	ideas.insert(std::make_pair("missingIdea", 0));
 
 	std::stringstream buffer;
 	std::streambuf* sbuf = std::cout.rdbuf();
@@ -1041,7 +1041,7 @@ TEST(Mappers_IdeaEffectMapperTests, getIndustryTechFromIdeaLogsMissingIdeaAndRet
 	mappers::IdeaEffectMapper theMapper(input);
 
 	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("missing_idea", 0));
+	ideas.insert(std::make_pair("missingIdea", 0));
 
 	std::stringstream buffer;
 	std::streambuf* sbuf = std::cout.rdbuf();
@@ -1138,7 +1138,7 @@ TEST(Mappers_IdeaEffectMapperTests, getNavyTechFromIdeaLogsMissingIdeaAndReturns
 	mappers::IdeaEffectMapper theMapper(input);
 
 	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("missing_idea", 0));
+	ideas.insert(std::make_pair("missingIdea", 0));
 
 	std::stringstream buffer;
 	std::streambuf* sbuf = std::cout.rdbuf();
@@ -1169,7 +1169,7 @@ TEST(Mappers_IdeaEffectMapperTests, getNavyTechFromIdeaCanBeSet)
 {
 	std::stringstream input;
 	input << "specifiedIdea ={\n";
-	input << "\tindustry_tech_score=0.25";
+	input << "\tnavy_tech_score=0.25";
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
