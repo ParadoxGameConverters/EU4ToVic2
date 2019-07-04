@@ -1373,31 +1373,31 @@
 	}
 
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 200
 	}
 
 	clergymen = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 50
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 100
 	}
 
 	officers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 50
 	}
 
 	soldiers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 100
 	}
@@ -1522,7 +1522,7 @@
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 75
 	}
@@ -2490,7 +2490,7 @@
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 50
 	}
@@ -2879,31 +2879,31 @@
 	}
 
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 550
 	}
 
 	officers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 400
 	}
 
 	clergymen = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 50
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 500
 	}
 
 	soldiers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 2000
 	}
@@ -3456,7 +3456,7 @@
 #Gauhati (1060000/265000 POPS)
 1258 = {
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 25
 	}
@@ -3803,7 +3803,7 @@
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 25
 	}
@@ -4029,7 +4029,7 @@
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 10
 	}
@@ -4892,7 +4892,7 @@
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 25
 	}
@@ -6108,7 +6108,7 @@
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 10
 	}
@@ -6659,31 +6659,31 @@
 	}
 
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 1125
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 250
 	}
 
 	officers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 500
 	}
 
 	clergymen = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 125
 	}
 
 	soldiers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 3000
 	}
@@ -7182,7 +7182,7 @@
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 75
 	}
@@ -7523,25 +7523,25 @@
 	}
 
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 1375
 	}
 
 	clergymen = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 375
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 250
 	}
 
 	soldiers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 3000
 	}
