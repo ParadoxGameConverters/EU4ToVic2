@@ -183,37 +183,37 @@
 	}
 
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 25
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 50
 	}
 
 	clergymen = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 50
 	}
 
 	artisans = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 1100
 	}
 
 	soldiers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 100
 	}
 
 	farmers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 675
 	}
