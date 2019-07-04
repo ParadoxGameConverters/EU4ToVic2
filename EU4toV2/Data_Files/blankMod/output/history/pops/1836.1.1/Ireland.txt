@@ -3,49 +3,49 @@
 #Belfast (540000/135000 POPs)
 254 = {
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 1100
 	}
 
 	officers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 250
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 1125
 	}
 
 	clergymen = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 500
 	}
 
 	soldiers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 1250
 	}
 
 	artisans = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 10000
 	}
 
 	artisans = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 2000
 	}
 
 	farmers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 87875
 	}
@@ -95,31 +95,31 @@
 	}
 
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 500
 	}
 
 	clergymen = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 250
 	}
 
 	artisans = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 5000
 	}
 
 	soldiers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 1100
 	}
 
 	farmers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 75250
 	}
@@ -127,31 +127,31 @@
 #Armagh (274000/68500 POPS)
 256 = {
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 250
 	}
 
 	clergymen = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 250
 	}
 
 	artisans = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 2500
 	}
 
 	soldiers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 1100
 	}
 
 	labourers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 43000
 	}
@@ -213,25 +213,25 @@
 	}
 
 	clergymen = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 50
 	}
 
 	artisans = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 2250
 	}
 
 	soldiers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 125
 	}
 
 	farmers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 16575
 	}
@@ -274,7 +274,7 @@
 #Sligo (768000/192000 POPs)
 259 = {
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 500
 	}
@@ -375,31 +375,31 @@
 	}
 
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 900
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 750
 	}
 
 	officers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 250
 	}
 
 	soldiers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 500
 	}
 
 	farmers = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 5250
 	}
@@ -480,13 +480,13 @@
 #Dublin (860000/215000 POPs)
 263 = {
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 700
 	}
 
 	bureaucrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 625
 	}
@@ -566,7 +566,7 @@
 #Kildare (532000/133000 POPs)
 264 = {
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 350
 	}
@@ -598,7 +598,7 @@
 #Wexford (444000/111000 POPS)
 265 = {
 	aristocrats = {
-		culture = british
+		culture = english
 		religion = protestant
 		size = 350
 	}
