@@ -408,7 +408,7 @@ scandinavian = {
 british = {
 	leader = european
 	unit = BritishGC
-	british = {
+	british = { #Deprecated - now split into "english" and "scottish"
 		color = { 220 100 220}
 
 		first_names = { Albert Alexander Alfred Archibald Arthur Augustus Benjamin Bernard Charles Colbert
