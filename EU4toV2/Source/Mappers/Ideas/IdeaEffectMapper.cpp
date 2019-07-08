@@ -68,7 +68,6 @@ int mappers::IdeaEffectMapper::getArmyInvestmentFromIdea(const std::string& idea
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "No effects specified for idea: " << ideaName;
 		return 0;
 	}
 }
@@ -83,7 +82,6 @@ int mappers::IdeaEffectMapper::getCommerceInvestmentFromIdea(const std::string& 
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "No effects specified for idea: " << ideaName;
 		return 0;
 	}
 }
@@ -98,7 +96,6 @@ int mappers::IdeaEffectMapper::getCultureInvestmentFromIdea(const std::string& i
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "No effects specified for idea: " << ideaName;
 		return 0;
 	}
 }
@@ -113,7 +110,6 @@ int mappers::IdeaEffectMapper::getIndustryInvestmentFromIdea(const std::string& 
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "No effects specified for idea: " << ideaName;
 		return 0;
 	}
 }
@@ -128,7 +124,6 @@ int mappers::IdeaEffectMapper::getNavyInvestmentFromIdea(const std::string& idea
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "No effects specified for idea: " << ideaName;
 		return 0;
 	}
 }
@@ -143,7 +138,6 @@ double mappers::IdeaEffectMapper::getUHLiberalFromIdea(const std::string& ideaNa
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "No effects specified for idea: " << ideaName;
 		return 0;
 	}
 }
@@ -158,7 +152,6 @@ double mappers::IdeaEffectMapper::getUHReactionaryFromIdea(const std::string& id
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "No effects specified for idea: " << ideaName;
 		return 0;
 	}
 }
@@ -179,10 +172,6 @@ double mappers::IdeaEffectMapper::getLiteracyFromIdea(const std::string& ideaNam
 			}
 		}
 	}
-	else
-	{
-		LOG(LogLevel::Warning) << "No effects specified for idea: " << ideaName;
-	}
 
 	return literacy;
 }
@@ -201,7 +190,6 @@ int mappers::IdeaEffectMapper::getOrderInfluenceFromIdea(const std::string& idea
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "No effects specified for idea: " << ideaName;
 		return 0;
 	}
 }
@@ -220,7 +208,6 @@ int mappers::IdeaEffectMapper::getLibertyInfluenceFromIdea(const std::string& id
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "No effects specified for idea: " << ideaName;
 		return 0;
 	}
 }
@@ -239,7 +226,6 @@ int mappers::IdeaEffectMapper::getEqualityInfluenceFromIdea(const std::string& i
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "No effects specified for idea: " << ideaName;
 		return 0;
 	}
 }
@@ -254,10 +240,6 @@ double mappers::IdeaEffectMapper::getArmyTechFromIdeas(const std::map<std::strin
 		if (techIdea != armyTechIdeas.end())
 		{
 			ideaEffect += techIdea->second * (idea.second + 1.0);
-		}
-		else
-		{
-			LOG(LogLevel::Warning) << "No effects specified for idea: " << idea.first;
 		}
 	}
 
@@ -275,10 +257,6 @@ double mappers::IdeaEffectMapper::getCommerceTechFromIdeas(const std::map<std::s
 		{
 			ideaEffect += techIdea->second * (idea.second + 1.0);
 		}
-		else
-		{
-			LOG(LogLevel::Warning) << "No effects specified for idea: " << idea.first;
-		}
 	}
 
 	return ideaEffect;
@@ -294,10 +272,6 @@ double mappers::IdeaEffectMapper::getCultureTechFromIdeas(const std::map<std::st
 		if (techIdea != cultureTechIdeas.end())
 		{
 			ideaEffect += techIdea->second * (idea.second + 1.0);
-		}
-		else
-		{
-			LOG(LogLevel::Warning) << "No effects specified for idea: " << idea.first;
 		}
 	}
 
@@ -315,10 +289,6 @@ double mappers::IdeaEffectMapper::getIndustryTechFromIdeas(const std::map<std::s
 		{
 			ideaEffect += techIdea->second * (idea.second + 1.0);
 		}
-		else
-		{
-			LOG(LogLevel::Warning) << "No effects specified for idea: " << idea.first;
-		}
 	}
 
 	return ideaEffect;
@@ -334,10 +304,6 @@ double mappers::IdeaEffectMapper::getNavyTechFromIdeas(const std::map<std::strin
 		if (techIdea != navyTechIdeas.end())
 		{
 			ideaEffect += techIdea->second * (idea.second + 1.0);
-		}
-		else
-		{
-			LOG(LogLevel::Warning) << "No effects specified for idea: " << idea.first;
 		}
 	}
 
