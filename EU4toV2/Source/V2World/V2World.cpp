@@ -740,36 +740,52 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 		const EU4::Province* oldProvince = nullptr;
 		std::string oldOwnerTag;
 		std::string oldControllerTag;
-		// determine ownership by province count, or total population (if province count is tied)
-		map<string, MTo1ProvinceComp> provinceBins;
+		// determine ownership and controllership by province count
+		std::map<std::string, MTo1ProvinceComp> provinceOwnerBins;
+		std::map<std::string, MTo1ProvinceComp> provinceControllerBins;
 		double newProvinceTotalBaseTax = 0;
 		for (auto EU4ProvinceNumber : EU4ProvinceNumbers)
 		{
 			const EU4::Province& province = sourceWorld.getProvince(EU4ProvinceNumber);
 			auto ownerTag = province.getOwnerString();
 			auto controllerTag = province.getControllerString();
-			if (provinceBins.find(ownerTag) == provinceBins.end())
+			if (provinceOwnerBins.find(ownerTag) == provinceOwnerBins.end())
 			{
-				provinceBins[ownerTag] = MTo1ProvinceComp();
+				provinceOwnerBins[ownerTag] = MTo1ProvinceComp();
 			}
-			if (provinceBins.find(controllerTag) == provinceBins.end())
+			if (provinceControllerBins.find(controllerTag) == provinceControllerBins.end())
 			{
-				provinceBins[controllerTag] = MTo1ProvinceComp();
+				provinceControllerBins[controllerTag] = MTo1ProvinceComp();
 			}
-			provinceBins[ownerTag].provinces.push_back(&province);
-			provinceBins[controllerTag].provinces.push_back(&province);
+			provinceOwnerBins[ownerTag].provinces.push_back(&province);
+			provinceControllerBins[controllerTag].provinces.push_back(&province);
 			newProvinceTotalBaseTax += province.getBaseTax();
 			// I am the new owner if there is no current owner, or I have more provinces than the current owner,
-			// or I have the same number of provinces, but more population, than the current owner
+			// or I have the same number of provinces than the current owner
 			if (
 				(oldOwnerTag == "") ||
-				(provinceBins[ownerTag].provinces.size() > provinceBins[oldOwnerTag].provinces.size()) ||
-				(provinceBins[ownerTag].provinces.size() == provinceBins[oldOwnerTag].provinces.size())
+				(provinceOwnerBins[ownerTag].provinces.size() > provinceOwnerBins[oldOwnerTag].provinces.size()) ||
+				(provinceOwnerBins[ownerTag].provinces.size() == provinceOwnerBins[oldOwnerTag].provinces.size())
 				)
 			{
 				oldOwnerTag = ownerTag;
-				oldControllerTag = controllerTag;
 				oldProvince = &province;
+			}
+			// I am the new controller if there is no current controller, or I have more provinces than the current controller,
+			// or I have the same number of provinces than the current controller
+			if	(
+					(oldControllerTag == "") ||
+					(
+						provinceControllerBins[controllerTag].provinces.size() >
+						provinceControllerBins[oldControllerTag].provinces.size()
+					) ||
+					(
+						provinceControllerBins[controllerTag].provinces.size() ==
+						provinceControllerBins[oldControllerTag].provinces.size()
+					)
+				)
+			{
+				oldControllerTag = controllerTag;
 			}
 		}
 		if (oldOwnerTag == "")
@@ -780,35 +796,42 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 		}
 
 		const std::string& V2ControllerTag = mappers::CountryMappings::getVic2Tag(oldControllerTag);
-		const std::string& V2Tag = mappers::CountryMappings::getVic2Tag(oldOwnerTag);
-		if (V2Tag.empty())
+		const std::string& V2OwnerTag = mappers::CountryMappings::getVic2Tag(oldOwnerTag);
+		if (V2OwnerTag.empty())
 		{
 			LOG(LogLevel::Warning) << "Could not map provinces owned by " << oldOwnerTag;
 		}
+		else if (V2ControllerTag.empty())
+		{
+			LOG(LogLevel::Warning) << "Could not map provinces controlled by " << V2ControllerTag;
+		}
 		else
 		{
-			Vic2Province.second->setOwner(V2Tag);
+			Vic2Province.second->setOwner(V2OwnerTag);
 			Vic2Province.second->setController(V2ControllerTag);
-			map<string, V2Country*>::iterator ownerItr = countries.find(V2Tag);
+			std::map<string, V2Country*>::iterator ownerItr = countries.find(V2OwnerTag);
 			if (ownerItr != countries.end())
 			{
 				ownerItr->second->addProvince(Vic2Province.second);
 			}
-			map<string, V2Country*>::iterator controllerItr = countries.find(V2Tag);
-			Vic2Province.second->convertFromOldProvince(sourceWorld.getAllReligions(), oldProvince, sourceWorld.getCountries());
+			Vic2Province.second->convertFromOldProvince(
+				sourceWorld.getAllReligions(),
+				oldProvince,
+				sourceWorld.getCountries()
+			);
 
-			for (map<string, MTo1ProvinceComp>::iterator mitr = provinceBins.begin(); mitr != provinceBins.end(); ++mitr)
+			for (auto provinceBin: provinceOwnerBins)
 			{
-				for (vector<const EU4::Province*>::iterator vitr = mitr->second.provinces.begin(); vitr != mitr->second.provinces.end(); ++vitr)
+				for (auto sourceProvince: provinceBin.second.provinces)
 				{
 					// assign cores
-					auto oldCores = (*vitr)->getCores();
+					auto oldCores = sourceProvince->getCores();
 					for (auto oldCore: oldCores)
 					{
 						// skip this core if the country is the owner of the EU4 province but not the V2 province
 						// (i.e. "avoid boundary conflicts that didn't exist in EU4").
 						// this country may still get core via a province that DID belong to the current V2 owner
-						if ((oldCore == mitr->first) && (oldCore != oldOwnerTag))
+						if ((oldCore == provinceBin.first) && (oldCore != oldOwnerTag))
 						{
 							continue;
 						}
@@ -821,26 +844,28 @@ void V2World::convertProvinces(const EU4::world& sourceWorld)
 					}
 
 					// determine demographics
-					double provPopRatio = (*vitr)->getBaseTax() / newProvinceTotalBaseTax;
-
-					auto popRatios = (*vitr)->getPopRatios();
-					vector<V2Demographic> demographics = determineDemographics(
+					double provPopRatio = sourceProvince->getBaseTax() / newProvinceTotalBaseTax;
+					auto popRatios = sourceProvince->getPopRatios();
+					std::vector<V2Demographic> demographics = determineDemographics(
 						sourceWorld.getRegions(),
 						popRatios,
-						*vitr,
+						sourceProvince,
 						Vic2Province.second,
 						oldOwnerTag,
 						Vic2Province.first,
 						provPopRatio
 					);
-					for (auto demographic : demographics)
+					for (auto demographic: demographics)
 					{
 						Vic2Province.second->addPopDemographic(demographic);
 					}
 
 					// set forts and naval bases
-					if ((*vitr)->hasBuilding("fort4") || (*vitr)->hasBuilding("fort5") || (*vitr)->hasBuilding("fort6"))
-					{
+					if (
+						sourceProvince->hasBuilding("fort4") ||
+						sourceProvince->hasBuilding("fort5") ||
+						sourceProvince->hasBuilding("fort6")
+					) {
 						Vic2Province.second->setFortLevel(1);
 					}
 				}
