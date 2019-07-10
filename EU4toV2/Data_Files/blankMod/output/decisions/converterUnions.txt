@@ -26,29 +26,6 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	fixing_austria = { #Converter forgets that "Austria" and "Austria" are the same thing...
-		potential = {
-			primary_culture = south_german
-			NOT = { exists = AUS }
-			NOT = { tag = HRE }
-			NOT = { tag = GER }
-			capital = 619 #Vienna
-		}
-
-		allow = {
-			capital = 619 #Vienna
-		}
-		effect = {
-			all_core = {
-				remove_core = THIS
-				add_core = AUS
-			}
-			change_tag = AUS
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	centralize_hre = {
 		news = yes
 		news_desc_long = "hre_NEWS_LONG"
