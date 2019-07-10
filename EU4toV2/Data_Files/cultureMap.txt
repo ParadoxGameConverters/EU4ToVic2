@@ -1128,4 +1128,3 @@ link = { vic2 = alien eu4 = alien } # No actual culture, but ok
 #link = { vic2 = undead eu4 = djinni eu4 = zombie_culture eu4 = vampire_culture eu4 = werewolf_culture }
 #link = { vic2 = icelandic eu4 = jotunn }
 #link = { vic2 = alien eu4 = draconic }
-}
