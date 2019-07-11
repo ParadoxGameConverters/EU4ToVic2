@@ -182,41 +182,41 @@
 		size = 1900
 	}
 
-	aristocrats = {
-		culture = english
-		religion = protestant
-		size = 25
-	}
+	#aristocrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 25
+	#}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 50
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 50
+	#}
 
-	clergymen = {
-		culture = english
-		religion = protestant
-		size = 50
-	}
+	#clergymen = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 50
+	#}
 
-	artisans = {
-		culture = english
-		religion = protestant
-		size = 1100
-	}
+	#artisans = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 1100
+	#}
 
-	soldiers = {
-		culture = english
-		religion = protestant
-		size = 100
-	}
+	#soldiers = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 100
+	#}
 
-	farmers = {
-		culture = english
-		religion = protestant
-		size = 675
-	}
+	#farmers = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 675
+	#}
 }
 #Jaffna (288000/72000 POPS)
 1322 = {
