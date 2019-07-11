@@ -1372,35 +1372,35 @@
 		size = 70750
 	}
 
-	aristocrats = {
-		culture = english
-		religion = protestant
-		size = 200
-	}
+	#aristocrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 200
+	#}
 
-	clergymen = {
-		culture = english
-		religion = protestant
-		size = 50
-	}
+	#clergymen = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 50
+	#}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 100
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 100
+	#}
 
-	officers = {
-		culture = english
-		religion = protestant
-		size = 50
-	}
+	#officers = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 50
+	#}
 
-	soldiers = {
-		culture = english
-		religion = protestant
-		size = 100
-	}
+	#soldiers = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 100
+	#}
 
 }
 #United Provinces Region - 25884000
@@ -1521,11 +1521,11 @@
 		size = 15250
 	}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 75
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 75
+	#}
 }
 #Panipat (1280000/320000 POPS)
 1237 = {
@@ -2489,11 +2489,11 @@
 		size = 103750
 	}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 50
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 50
+	#}
 }
 #Gaya (3056000/764000 POPS)
 1248 = {
@@ -2878,35 +2878,35 @@
 		size = 63250
 	}
 
-	aristocrats = {
-		culture = english
-		religion = protestant
-		size = 550
-	}
+	#aristocrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 550
+	#}
 
-	officers = {
-		culture = english
-		religion = protestant
-		size = 400
-	}
+	#officers = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 400
+	#}
 
-	clergymen = {
-		culture = english
-		religion = protestant
-		size = 50
-	}
+	#clergymen = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 50
+	#}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 500
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 500
+	#}
 
-	soldiers = {
-		culture = english
-		religion = protestant
-		size = 2000
-	}
+	#soldiers = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 2000
+	#}
 }
 #Darjeeling (3248000/812000 POPS)
 1252 = {
@@ -3455,11 +3455,11 @@
 #under rule of Britain 1836
 #Gauhati (1060000/265000 POPS)
 1258 = {
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 25
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 25
+	#}
 
 	aristocrats = {
 		culture = assamese
@@ -3802,11 +3802,11 @@
 		size = 1100
 	}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 25
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 25
+	#}
 }
 #Ruled by Native Rulers 1836 (644000)
 #Keunjahr (436000/109000 POPS)
@@ -4028,11 +4028,11 @@
 		size = 8325
 	}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 10
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 10
+	#}
 }
 #Under rule of Jaisalmer 1836  
 #Jaisalmer (440000/110000 POPS)
@@ -4891,11 +4891,11 @@
 		size = 25950
 	}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 25
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 25
+	#}
 }
 #Hoshangabad (596000/149000 POPS)
 1276 = {
@@ -6107,11 +6107,11 @@
 		size = 20775
 	}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 10
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 10
+	#}
 }
 #Surat (1072000/268000 POPS) 
 1296 = {
@@ -6658,35 +6658,35 @@
 		size = 2075
 	}
 
-	aristocrats = {
-		culture = english
-		religion = protestant
-		size = 1125
-	}
+	#aristocrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 1125
+	#}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 250
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 250
+	#}
 
-	officers = {
-		culture = english
-		religion = protestant
-		size = 500
-	}
+	#officers = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 500
+	#}
 
-	clergymen = {
-		culture = english
-		religion = protestant
-		size = 125
-	}
+	#clergymen = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 125
+	#}
 
-	soldiers = {
-		culture = english
-		religion = protestant
-		size = 3000
-	}
+	#soldiers = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 3000
+	#}
 }
 #Nasik (796000/199000 POPS)
 1298 = {
@@ -7181,11 +7181,11 @@
 		size = 1100
 	}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 75
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 75
+	#}
 }
 #Masulipatnam (1736000/434000 POPS)
 1306 = {
@@ -7522,29 +7522,29 @@
 		size = 138500
 	}
 
-	aristocrats = {
-		culture = english
-		religion = protestant
-		size = 1375
-	}
+	#aristocrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 1375
+	#}
 
-	clergymen = {
-		culture = english
-		religion = protestant
-		size = 375
-	}
+	#clergymen = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 375
+	#}
 
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 250
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 250
+	#}
 
-	soldiers = {
-		culture = english
-		religion = protestant
-		size = 3000
-	}
+	#soldiers = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 3000
+	#}
 }
 #Tanjore (1448000/362000 POPS)
 1309 = {
