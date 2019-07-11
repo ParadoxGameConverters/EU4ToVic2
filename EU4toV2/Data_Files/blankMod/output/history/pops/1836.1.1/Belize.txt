@@ -2,11 +2,11 @@
 #Ruled by Britain 1836
 #Belize (7200/1800 POPS)
 2190 = {
-	artisans = {
-		culture = texan
-		religion = protestant
-		size = 25
-	}
+	#artisans = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 25
+	#}
 
 	clergymen = {
 		culture = afro_caribbean
