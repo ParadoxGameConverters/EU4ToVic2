@@ -858,11 +858,11 @@
 #under the rule of Britain/Ionian Islands in 1836
 #Corfu (112200/28000 POPS)
 826 = {
-	bureaucrats = {
-		culture = english
-		religion = protestant
-		size = 5
-	}
+	#bureaucrats = {
+	#	culture = british
+	#	religion = protestant
+	#	size = 5
+	#}
 
 	aristocrats = {
 		culture = greek
