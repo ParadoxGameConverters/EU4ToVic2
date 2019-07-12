@@ -1722,7 +1722,7 @@ void V2Country::setNavyTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has navy tech of " << normalizedScore;
 
-	if ((theConfiguration.getVic2Path() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
 	if (normalizedScore >= 0)
@@ -1767,7 +1767,7 @@ void V2Country::setCommerceTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has commerce tech of " << normalizedScore;
 
-	if ((theConfiguration.getVic2Path() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
 	techs.push_back("no_standard");
@@ -1822,7 +1822,7 @@ void V2Country::setIndustryTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has industry tech of " << normalizedScore;
 
-	if ((theConfiguration.getVic2Path() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
 	if (normalizedScore >= -1.0)
@@ -1878,7 +1878,7 @@ void V2Country::setCultureTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has culture tech of " << normalizedScore;
 
-	if ((theConfiguration.getVic2Path() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
 	techs.push_back("classicism_n_early_romanticism");
