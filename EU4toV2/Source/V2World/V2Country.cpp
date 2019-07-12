@@ -394,6 +394,7 @@ void V2Country::output() const
 		}
 
 
+
 		//fprintf(output, "	schools=\"%s\"\n", techSchool.c_str());
 
 		fprintf(output, "oob = \"%s\"\n", (tag + "_OOB.txt").c_str());
@@ -535,7 +536,7 @@ void V2Country::initFromEU4Country(
 	auto possibleFilename = Utils::GetFileFromTag("./blankMod/output/history/countries/", tag);
 	if (!possibleFilename)
 	{
-		possibleFilename = Utils::GetFileFromTag(theConfiguration.getV2Path() + "/history/countries/", tag);
+		possibleFilename = Utils::GetFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
 	}
 
 	if (!possibleFilename)
@@ -663,7 +664,7 @@ void V2Country::initFromEU4Country(
 	LOG(LogLevel::Debug) << tag << " has an Upper House of " << upperHouseReactionary << " reactionary, "
 		<< upperHouseConservative << " conservative, and "
 		<< upperHouseLiberal << " liberal";
-	
+
 	string idealogy;
 	if (liberalEffect >= 2 * reactionaryEffect)
 	{
@@ -774,7 +775,7 @@ void V2Country::initFromEU4Country(
 	int numColleges	= 0;
 	vector<EU4::Province*> provinces = srcCountry->getProvinces();
 	numProvinces = provinces.size();
-	for (vector<EU4Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
+	for (vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
 	{
 		if ( (*i)->hasBuilding("college") )
 		{
@@ -854,7 +855,7 @@ void V2Country::initFromEU4Country(
 	double commerceInvestment		= srcCountry->getCommerceInvestment();
 	double industryInvestment		= srcCountry->getIndustryInvestment();
 	double cultureInvestment		= srcCountry->getCultureInvestment();
-	
+
 	techSchool = techSchools->findBestTechSchool(
 		armyInvestment,
 		commerceInvestment,
@@ -905,7 +906,7 @@ void V2Country::initFromHistory()
 	}
 	else
 	{
-		possibleFilename = Utils::GetFileFromTag(theConfiguration.getV2Path() + "/history/countries/", tag);
+		possibleFilename = Utils::GetFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
 		if (possibleFilename)
 		{
 			filename = *possibleFilename;
@@ -1102,7 +1103,7 @@ void V2Country::addState(V2State* newState)
 			newProvinces[i]->setNavalBaseLevel(0);
 		}
 	}
-	if (((Configuration::getV2Gametype() == "HOD") || (Configuration::getV2Gametype() == "HoD-NNM")) && (highestNavalLevel > 0))
+	if (((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")) && (highestNavalLevel > 0))
 	{
 		newProvinces[hasHighestLevel]->setNavalBaseLevel(1);
 	}
@@ -1110,7 +1111,13 @@ void V2Country::addState(V2State* newState)
 
 
 //#define TEST_V2_PROVINCES
-void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_regiment[num_reg_categories], map<int, V2Province*> allProvinces, vector<int> port_whitelist)
+void V2Country::convertArmies(
+	const std::map<int,int>& leaderIDMap,
+	double cost_per_regiment[num_reg_categories],
+	const std::map<int, V2Province*>& allProvinces,
+	std::vector<int> port_whitelist,
+	const mappers::ProvinceMapper& provinceMapper
+) {
 {
 #ifndef TEST_V2_PROVINCES
 	if (srcCountry == nullptr)
@@ -1137,7 +1144,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 				continue;
 
 			// if we have ships, we must be a navy
-			bool isNavy = (rc >= heavy_ship); 
+			bool isNavy = (rc >= heavy_ship);
 			army->setNavy(isNavy);
 
 			double	regimentCount		= typeStrength / cost_per_regiment[rc];
@@ -1148,7 +1155,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 
 			for (int i = 0; i < regimentsToCreate; ++i)
 			{
-				if (addRegimentToArmy(army, (RegimentCategory)rc, allProvinces) != 0)
+				if (addRegimentToArmy(army, (RegimentCategory)rc, allProvinces, provinceMapper) != 0)
 				{
 					// couldn't add, dissolve into pool
 					countryRemainder[rc] += 1.0;
@@ -1157,7 +1164,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 			}
 		}
 
-		auto locationCandidates = provinceMapper::getVic2ProvinceNumbers((*aitr)->getLocation());
+		auto locationCandidates = provinceMapper.getVic2ProvinceNumbers((*aitr)->getLocation());
 		if (locationCandidates.size() == 0)
 		{
 			LOG(LogLevel::Warning) << "Army or Navy " << (*aitr)->getName() << " assigned to unmapped province " << (*aitr)->getLocation() << "; dissolving to pool";
@@ -1169,7 +1176,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 			}
 			continue;
 		}
-		else if ((locationCandidates.size() == 1) && (locationCandidates[0] == 0))
+		else if ((locationCandidates.size() == 1) && (*locationCandidates.begin() == 0))
 		{
 			LOG(LogLevel::Warning) << "Army or Navy " << (*aitr)->getName() << " assigned to dropped province " << (*aitr)->getLocation() << "; dissolving to pool";
 			int regimentCounts[num_reg_categories] = { 0 };
@@ -1184,7 +1191,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 		// guarantee that navies are assigned to sea provinces, or land provinces with naval bases
 		if (army->getNavy())
 		{
-			map<int, V2Province*>::iterator pitr = allProvinces.find(locationCandidates[0]);
+			auto pitr = allProvinces.find(*locationCandidates.begin());
 			if (pitr != allProvinces.end())
 			{
 				usePort = true;
@@ -1205,6 +1212,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 				}
 			}
 		}
+
 		int selectedLocation = locationCandidates[int(locationCandidates.size() * ((double)rand() / RAND_MAX))];
 		if (army->getNavy() && usePort)
 		{
@@ -1229,7 +1237,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 				LOG(LogLevel::Debug) << "No suitable army or navy found for " << tag << "'s pooled regiments of " << RegimentCategoryNames[rc];
 				break;
 			}
-			switch (addRegimentToArmy(army, (RegimentCategory)rc, allProvinces))
+			switch (addRegimentToArmy(army, (RegimentCategory)rc, allProvinces, provinceMapper))
 			{
 			case 0: // success
 				countryRemainder[rc] -= 1.0;
@@ -1277,17 +1285,24 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 }
 
 
-void V2Country::getNationalValueScores(int& libertyScore, int& equalityScore, int& orderScore)
-{
+void V2Country::getNationalValueScores(
+	int& libertyScore,
+	int& equalityScore,
+	int& orderScore,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) {
 	orderScore = 0;
 	libertyScore = 0;
 	equalityScore = 0;
 
-	for (auto idea: srcCountry->getNationalIdeas())
+	if (srcCountry)
 	{
-		orderScore += ideaEffectMapper::getOrderInfluenceFromIdea(idea.first, idea.second);
-		libertyScore += ideaEffectMapper::getLibertyInfluenceFromIdea(idea.first, idea.second);
-		equalityScore += ideaEffectMapper::getEqualityInfluenceFromIdea(idea.first, idea.second);
+		for (auto idea : srcCountry->getNationalIdeas())
+		{
+			orderScore += ideaEffectMapper.getOrderInfluenceFromIdea(idea.first, idea.second);
+			libertyScore += ideaEffectMapper.getLibertyInfluenceFromIdea(idea.first, idea.second);
+			equalityScore += ideaEffectMapper.getEqualityInfluenceFromIdea(idea.first, idea.second);
+		}
 	}
 }
 
@@ -1307,6 +1322,7 @@ void V2Country::absorbVassal(V2Country* vassal)
 	for (auto provItr = vassalProvinces.begin(); provItr != vassalProvinces.end(); provItr++)
 	{
 		provItr->second->setOwner(tag);
+		provItr->second->setController(tag);
 		provItr->second->addCore(tag);
 	}
 	vassal->provinces.clear();
@@ -1376,9 +1392,9 @@ bool V2Country::addFactory(V2Factory* factory)
 			return false;
 		}
 	}
-	
+
 	// check factory inventions
-	if ((Configuration::getV2Gametype() == "vanilla") || (Configuration::getV2Gametype() == "AHD"))
+	if ((theConfiguration.getVic2Gametype() == "vanilla") || (theConfiguration.getVic2Gametype() == "AHD"))
 	{
 		if (inventions.count(factory->getRequiredInvention()) != 0)
 		{
@@ -1463,7 +1479,7 @@ void V2Country::convertUncivReforms(int techGroupAlgorithm, double topTech, int 
 
 void V2Country::oldCivConversionMethod() // civilisation level conversion method for games up to 1.18
 {
-	if ((srcCountry != nullptr) && ((Configuration::getV2Gametype() == "AHD") || (Configuration::getV2Gametype() == "HOD") || (Configuration::getV2Gametype() == "HoD-NNM")))
+	if ((srcCountry != nullptr) && ((theConfiguration.getVic2Gametype() == "AHD") || (theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")))
 	{
 		if ((srcCountry->getTechGroup() == "western") || (srcCountry->getTechGroup() == "high_american") || (srcCountry->getTechGroup() == "eastern") || (srcCountry->getTechGroup() == "ottoman") || (srcCountry->numEmbracedInstitutions() >= 7))//civilised, do nothing
 		{
@@ -1580,7 +1596,7 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions) // ci
 			}
 
 
-			if (((Configuration::getV2Gametype() == "AHD") || (Configuration::getV2Gametype() == "HOD") || (Configuration::getV2Gametype() == "HoD-NNM")) && (civilized == false))
+			if (((theConfiguration.getVic2Gametype() == "AHD") || (theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")) && (civilized == false))
 			{
 				totalTechs = totalTechs - srcCountry->getDipTech();
 				double militaryDev = srcCountry->getMilTech() / totalTechs;
@@ -1608,15 +1624,19 @@ void V2Country::convertLandlessReforms(V2Country* capOwner)
 }
 
 
-void V2Country::setupPops(double popWeightRatio, int popConversionAlgorithm)
-{
+void V2Country::setupPops(
+	double popWeightRatio,
+	int popConversionAlgorithm,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+	const mappers::ProvinceMapper& provinceMapper
+) {
 	if (states.size() < 1) // skip entirely for empty nations
 		return;
 
 	// create the pops
 	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
-		itr->second->doCreatePops(popWeightRatio, this, popConversionAlgorithm);
+		itr->second->doCreatePops(popWeightRatio, this, popConversionAlgorithm, theEU4Countries, provinceMapper);
 	}
 
 	// output statistics on pops
@@ -1661,7 +1681,7 @@ void V2Country::setArmyTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has army tech of " << normalizedScore;
 
-	if ((Configuration::getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
 	if (normalizedScore >= -1.0)
@@ -1703,7 +1723,7 @@ void V2Country::setNavyTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has navy tech of " << normalizedScore;
 
-	if ((Configuration::getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getV2Gametype() != "vanilla") && !civilized)
 		return;
 
 	if (normalizedScore >= 0)
@@ -1748,7 +1768,7 @@ void V2Country::setCommerceTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has commerce tech of " << normalizedScore;
 
-	if ((Configuration::getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getV2Gametype() != "vanilla") && !civilized)
 		return;
 
 	techs.push_back("no_standard");
@@ -1803,7 +1823,7 @@ void V2Country::setIndustryTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has industry tech of " << normalizedScore;
 
-	if ((Configuration::getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getV2Gametype() != "vanilla") && !civilized)
 		return;
 
 	if (normalizedScore >= -1.0)
@@ -1859,7 +1879,7 @@ void V2Country::setCultureTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has culture tech of " << normalizedScore;
 
-	if ((Configuration::getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getV2Gametype() != "vanilla") && !civilized)
 		return;
 
 	techs.push_back("classicism_n_early_romanticism");
@@ -1932,8 +1952,12 @@ void V2Country::addLoan(string creditor, double size, double interest)
 
 
 // return values: 0 = success, -1 = retry from pool, -2 = do not retry
-int V2Country::addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2Province*> allProvinces)
-{
+int V2Country::addRegimentToArmy(
+	V2Army* army,
+	RegimentCategory rc,
+	std::map<int, V2Province*> allProvinces,
+	const mappers::ProvinceMapper& provinceMapper
+) {
 	V2Regiment reg((RegimentCategory)rc);
 	int eu4Home = army->getSourceArmy()->getProbabilisticHomeProvince(rc);
 	if (eu4Home == -1)
@@ -1941,14 +1965,14 @@ int V2Country::addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2P
 		LOG(LogLevel::Debug) << "Army/navy " << army->getName() << " has no valid home provinces for " << RegimentCategoryNames[rc] << "; dissolving to pool";
 		return -2;
 	}
-	auto homeCandidates = provinceMapper::getVic2ProvinceNumbers(eu4Home);
+	auto homeCandidates = provinceMapper.getVic2ProvinceNumbers(eu4Home);
 	if (homeCandidates.size() == 0)
 	{
 		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army->getName() << " has unmapped home province " << eu4Home << " - dissolving to pool";
 		army->getSourceArmy()->blockHomeProvince(eu4Home);
 		return -1;
 	}
-	if (homeCandidates[0] == 0)
+	if (*homeCandidates.begin() == 0)
 	{
 		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army->getName() << " has dropped home province " << eu4Home << " - dissolving to pool";
 		army->getSourceArmy()->blockHomeProvince(eu4Home);
@@ -1961,7 +1985,9 @@ int V2Country::addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2P
 		homeCandidates = getPortProvinces(homeCandidates, allProvinces);
 		if (homeCandidates.size() != 0)
 		{
-			int homeProvinceID = homeCandidates[int(homeCandidates.size() * ((double)rand() / RAND_MAX))];
+			std::vector<int>::const_iterator it(homeCandidates.begin());
+			std::advance(it, int(homeCandidates.size() * ((double)rand() / RAND_MAX)));
+			int homeProvinceID = *it;
 			map<int, V2Province*>::iterator pitr = allProvinces.find(homeProvinceID);
 			if (pitr != allProvinces.end())
 			{
@@ -1972,10 +1998,10 @@ int V2Country::addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2P
 	else
 	{
 		// Armies should get a home in the candidate most capable of supporting them
-		vector<V2Province*> sortedHomeCandidates;
-		for (vector<int>::iterator nitr = homeCandidates.begin(); nitr != homeCandidates.end(); ++nitr)
+		std::vector<V2Province*> sortedHomeCandidates;
+		for (auto candidate: homeCandidates)
 		{
-			map<int, V2Province*>::iterator pitr = allProvinces.find(*nitr);
+			std::map<int, V2Province*>::iterator pitr = allProvinces.find(candidate);
 			if (pitr != allProvinces.end())
 			{
 				sortedHomeCandidates.push_back(pitr->second);
