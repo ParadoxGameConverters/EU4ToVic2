@@ -99,7 +99,6 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 	capital					= 0;
 	diploPoints				= 0.0;
 	badboy					= 0.0;
-	prestige					= 0.0;
 	money						= 0.0;
 	techSchool				= "traditional_academic";
 	researchPoints			= 0.0;
@@ -137,10 +136,10 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 
 	if (parties.empty())
 	{	// No parties are specified. Generate some default parties for this country.
-		const std::vector<std::string> ideologies = 
+		const std::vector<std::string> ideologies =
 		{ "conservative", "liberal", "reactionary", "socialist", "communist", "anarcho_liberal", "fascist" };
 		const std::vector<std::string> partyNames =
-		{ "Conservative Party", "Liberal Party", "National Party", 
+		{ "Conservative Party", "Liberal Party", "National Party",
 			"Socialist Party", "Communist Party", "Radical Party", "Fascist Party" };
 		for (size_t i = 0; i < ideologies.size(); ++i)
 		{
@@ -180,9 +179,9 @@ shared_ptr<Object> V2Country::parseCountryFile(const string& filename)
 	{
 		fileToParse = "./blankMod/output/common/countries/" + filename;
 	}
-	else if (Utils::DoesFileExist(Configuration::getV2Path() + "/common/countries/" + filename))
+	else if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
 	{
-		fileToParse = Configuration::getV2Path() + "/common/countries/" + filename;
+		fileToParse = theConfiguration.getVic2Path() + "/common/countries/" + filename;
 	}
 	else
 	{
@@ -224,7 +223,6 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 	capital					= 0;
 	diploPoints				= 0.0;
 	badboy					= 0.0;
-	prestige					= 0.0;
 	money						= 0.0;
 	techSchool				= "traditional_academic";
 	researchPoints			= 0.0;
@@ -262,10 +260,10 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 
 	if (parties.empty())
 	{	// No parties are specified. Generate some default parties for this country.
-		const std::vector<std::string> ideologies = 
+		const std::vector<std::string> ideologies =
 				{ "conservative", "liberal", "reactionary", "socialist", "communist", "anarcho_liberal", "fascist" };
 		const std::vector<std::string> partyNames =
-				{ "Conservative Party", "Liberal Party", "National Party", 
+				{ "Conservative Party", "Liberal Party", "National Party",
 				  "Socialist Party", "Communist Party", "Radical Party", "Fascist Party" };
 		for (size_t i = 0; i < ideologies.size(); ++i)
 		{
@@ -302,7 +300,7 @@ void V2Country::output() const
 	if(!dynamicCountry)
 	{
 		FILE* output;
-		if (fopen_s(&output, ("Output/" + Configuration::getOutputName() + "/history/countries/" + filename).c_str(), "w") != 0)
+		if (fopen_s(&output, ("Output/" + theConfiguration.getOutputName() + "/history/countries/" + filename).c_str(), "w") != 0)
 		{
 			LOG(LogLevel::Error) << "Could not create country history file " << filename;
 			exit(-1);
@@ -395,8 +393,7 @@ void V2Country::output() const
 			fprintf(output, "}\n");
 		}
 
-		
-	
+
 		//fprintf(output, "	schools=\"%s\"\n", techSchool.c_str());
 
 		fprintf(output, "oob = \"%s\"\n", (tag + "_OOB.txt").c_str());
@@ -422,11 +419,11 @@ void V2Country::output() const
 
 	if (newCountry)
 	{
-		// Output common country file. 
-		std::ofstream commonCountryOutput("Output/" + Configuration::getOutputName() + "/common/countries/" + commonCountryFile);
+		// Output common country file.
+		std::ofstream commonCountryOutput("Output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile);
 		if (!commonCountryOutput.is_open())
 		{
-			LOG(LogLevel::Error) << "Could not open Output/" + Configuration::getOutputName() + "/common/countries/" + commonCountryFile;
+			LOG(LogLevel::Error) << "Could not open Output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile;
 			exit(-1);
 		}
 		commonCountryOutput << "graphical_culture = UsGC\n";	// default to US graphics
@@ -486,7 +483,7 @@ void V2Country::outputElection(FILE* output) const
 void V2Country::outputOOB() const
 {
 	FILE* output;
-	if (fopen_s(&output, ("Output/" + Configuration::getOutputName() + "/history/units/" + tag + "_OOB.txt").c_str(), "w") != 0)
+	if (fopen_s(&output, ("Output/" + theConfiguration.getOutputName() + "/history/units/" + tag + "_OOB.txt").c_str(), "w") != 0)
 	{
 		LOG(LogLevel::Error) << "Could not create OOB file " << (tag + "_OOB.txt");
 		exit(-1);
@@ -517,8 +514,17 @@ void V2Country::outputOOB() const
 }
 
 
-void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const vector<V2TechSchool>& techSchools, const map<int, int>& leaderMap)
-{
+void V2Country::initFromEU4Country(
+	const EU4::Regions& eu4Regions,
+	std::shared_ptr<EU4::Country> _srcCountry,
+	const std::unique_ptr<Vic2::TechSchools>& techSchools,
+	const map<int, int>& leaderMap,
+	const mappers::CultureMapper& cultureMapper,
+	const mappers::CultureMapper& slaveCultureMapper,
+	const mappers::IdeaEffectMapper& ideaEffectMapper,
+	const mappers::ReligionMapper& religionMapper,
+	const mappers::ProvinceMapper& provinceMapper
+) {
 	srcCountry = _srcCountry;
 
 	if (false == srcCountry->getRandomName().empty())
@@ -529,7 +535,7 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	auto possibleFilename = Utils::GetFileFromTag("./blankMod/output/history/countries/", tag);
 	if (!possibleFilename)
 	{
-		possibleFilename = Utils::GetFileFromTag(Configuration::getV2Path() + "/history/countries/", tag);
+		possibleFilename = Utils::GetFileFromTag(theConfiguration.getV2Path() + "/history/countries/", tag);
 	}
 
 	if (!possibleFilename)
@@ -553,10 +559,10 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 
 	// Capital
 	int oldCapital = srcCountry->getCapital();
-	auto potentialCapitals = provinceMapper::getVic2ProvinceNumbers(oldCapital);
+	auto potentialCapitals = provinceMapper.getVic2ProvinceNumbers(oldCapital);
 	if (potentialCapitals.size() > 0)
 	{
-		capital = potentialCapitals[0];
+		capital = *potentialCapitals.begin();
 	}
 
 	// in HRE
@@ -570,10 +576,15 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	string srcReligion = srcCountry->getReligion();
 	if (srcReligion.size() > 0)
 	{
-		religion = religionMapper::getVic2Religion(srcReligion);
-		if (religion == "")
+		std::optional<std::string> match = religionMapper.getVic2Religion(srcReligion);
+		if (!match)
 		{
-			LOG(LogLevel::Warning) << "No religion mapping defined for " << srcReligion << " (" << _srcCountry->getTag() << " -> " << tag << ')';
+			LOG(LogLevel::Warning) << "No religion mapping defined for " << srcReligion
+				<< " (" << _srcCountry->getTag() << " -> " << tag << ')';
+		}
+		else
+		{
+			religion = *match;
 		}
 	}
 
@@ -582,10 +593,21 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 
 	if (srcCulture.size() > 0)
 	{
-		bool matched = mappers::cultureMapper::cultureMatch(srcCulture, primaryCulture, religion, oldCapital, srcCountry->getTag());
+		std::optional<std::string> matched = cultureMapper.cultureMatch(
+			eu4Regions,
+			srcCulture,
+			religion,
+			oldCapital,
+			srcCountry->getTag()
+		);
 		if (!matched)
 		{
-			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture << " (" << srcCountry->getTag() << " -> " << tag << ')';
+			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture
+				<< " (" << srcCountry->getTag() << " -> " << tag << ')';
+		}
+		else
+		{
+			primaryCulture = *matched;
 		}
 	}
 
@@ -601,18 +623,25 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	}
 	for (auto srcCulture: srcAceptedCultures)
 	{
-		string dstCulture;
-		bool matched = mappers::cultureMapper::cultureMatch(srcCulture, dstCulture, religion, oldCapital, srcCountry->getTag());
-		if (matched)
+		std::optional<std::string> dstCulture;
+		dstCulture = cultureMapper.cultureMatch(
+			eu4Regions,
+			srcCulture,
+			religion,
+			oldCapital,
+			srcCountry->getTag()
+		);
+		if (dstCulture)
 		{
-			if (primaryCulture != dstCulture)
+			if (primaryCulture != *dstCulture)
 			{
-				acceptedCultures.insert(dstCulture);
+				acceptedCultures.insert(*dstCulture);
 			}
 		}
-		if (!matched)
+		else
 		{
-			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture << " (" << srcCountry->getTag() << " -> " << tag << ')';
+			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture
+				<< " (" << srcCountry->getTag() << " -> " << tag << ')';
 		}
 	}
 
@@ -624,16 +653,16 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	double reactionaryEffect = 0.0;
 	for (auto idea: srcCountry->getNationalIdeas())
 	{
-		liberalEffect += ideaEffectMapper::getUHLiberalFromIdea(idea.first, idea.second);
-		reactionaryEffect += ideaEffectMapper::getUHReactionaryFromIdea(idea.first, idea.second);
+		liberalEffect += ideaEffectMapper.getUHLiberalFromIdea(idea.first, idea.second);
+		reactionaryEffect += ideaEffectMapper.getUHReactionaryFromIdea(idea.first, idea.second);
 	}
 
 	upperHouseReactionary		=  static_cast<int>(5  + (100 * reactionaryEffect));
 	upperHouseLiberal				=  static_cast<int>(10 + (100 * liberalEffect));
 	upperHouseConservative		= 100 - (upperHouseReactionary + upperHouseLiberal);
 	LOG(LogLevel::Debug) << tag << " has an Upper House of " << upperHouseReactionary << " reactionary, "
-																				<< upperHouseConservative << " conservative, and "
-																				<< upperHouseLiberal << " liberal";
+		<< upperHouseConservative << " conservative, and "
+		<< upperHouseLiberal << " liberal";
 	
 	string idealogy;
 	if (liberalEffect >= 2 * reactionaryEffect)
@@ -710,38 +739,42 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	literacy = 0.1;
 	for (auto idea: srcCountry->getNationalIdeas())
 	{
-		literacy += ideaEffectMapper::getLiteracyFromIdea(idea.first, idea.second);
+		literacy += ideaEffectMapper.getLiteracyFromIdea(idea.first, idea.second);
 	}
-	if ( (srcCountry->getReligion() == "Protestant") || (srcCountry->getReligion() == "Confucianism") || (srcCountry->getReligion() == "Reformed") )
+	if (
+		(srcCountry->getReligion() == "Protestant") ||
+		(srcCountry->getReligion() == "Confucianism") ||
+		(srcCountry->getReligion() == "Reformed")
+	)
 	{
 		literacy += 0.05;
 	}
 
-	if ( srcCountry->hasModifier("the_school_establishment_act") )
+	if (srcCountry->hasModifier("the_school_establishment_act"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("sunday_schools") )
+	if (srcCountry->hasModifier("sunday_schools"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("the_education_act") )
+	if (srcCountry->hasModifier("the_education_act"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("monastic_education_system") )
+	if (srcCountry->hasModifier("monastic_education_system"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("western_embassy_mission") )
+	if (srcCountry->hasModifier("western_embassy_mission"))
 	{
 		literacy += 0.04;
 	}
 	int numProvinces	= 0;
 	int numColleges	= 0;
-	vector<EU4Province*> provinces = srcCountry->getProvinces();
+	vector<EU4::Province*> provinces = srcCountry->getProvinces();
 	numProvinces = provinces.size();
-	for (vector<EU4Province*>::iterator i = provinces.begin(); i != provinces.end(); i++)
+	for (vector<EU4Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
 	{
 		if ( (*i)->hasBuilding("college") )
 		{
@@ -769,13 +802,18 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	}
 	literacy += collegeBonus;
 	string techGroup = srcCountry->getTechGroup();
-	if ( (techGroup != "western") && (techGroup != "high_american") && (techGroup != "eastern") && (techGroup != "ottoman"))
+	if (
+		(techGroup != "western") &&
+		(techGroup != "high_american") &&
+		(techGroup != "eastern") &&
+		(techGroup != "ottoman")
+	)
 	{
 		literacy *= 0.1;
 	}
-	if (literacy > Configuration::getMaxLiteracy())
+	if (literacy > theConfiguration.getMaxLiteracy())
 	{
-		literacy = Configuration::getMaxLiteracy();
+		literacy = theConfiguration.getMaxLiteracy();
 	}
 	LOG(LogLevel::Debug) << "Setting literacy for " << tag << " to " << literacy;
 
@@ -786,7 +824,7 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	//double productionInvestment	= srcCountry->getProductionInvestment();
 	//double governmentInvestment	= srcCountry->getGovernmentInvestment();
 
-	//vector<EU4Province*> srcProvinces = srcCountry->getProvinces();
+	//vector<EU4::Province*> srcProvinces = srcCountry->getProvinces();
 	//for(unsigned int j = 0; j < srcProvinces.size(); j++)
 	//{
 	//	if (srcProvinces[j]->hasBuilding("weapons"))
@@ -817,31 +855,14 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	double industryInvestment		= srcCountry->getIndustryInvestment();
 	double cultureInvestment		= srcCountry->getCultureInvestment();
 	
-	double totalInvestment	 = armyInvestment + navyInvestment + commerceInvestment + industryInvestment + cultureInvestment;
-	armyInvestment				/= totalInvestment;
-	navyInvestment				/= totalInvestment;
-	commerceInvestment		/= totalInvestment;
-	industryInvestment		/= totalInvestment;
-	cultureInvestment			/= totalInvestment;
-
-	double lowestScore = 1.0;
-	string bestSchool = "traditional_academic";
-
-	for (unsigned int j = 0; j < techSchools.size(); j++)
-	{
-		double newScore = abs(armyInvestment		- techSchools[j].armyInvestment - 0.2) +
-								abs(navyInvestment		- techSchools[j].navyInvestment - 0.2) +
-								abs(commerceInvestment	- techSchools[j].commerceInvestment - 0.2) +
-								abs(industryInvestment	- techSchools[j].industryInvestment - 0.2) +
-								abs(cultureInvestment	- techSchools[j].cultureInvestment - 0.2);
-		if (newScore < lowestScore)
-		{
-			bestSchool	= techSchools[j].name;
-			lowestScore	= newScore;
-		}
-	}
-	LOG(LogLevel::Debug) << tag << " has tech school " << bestSchool;
-	techSchool = bestSchool;
+	techSchool = techSchools->findBestTechSchool(
+		armyInvestment,
+		commerceInvestment,
+		cultureInvestment,
+		industryInvestment,
+		navyInvestment
+	);
+	LOG(LogLevel::Debug) << tag << " has tech school " << techSchool;
 
 	//// Leaders
 	//vector<EU4Leader*> oldLeaders = srcCountry->getLeaders();
@@ -855,15 +876,15 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	// canals
 	for (const auto& prov : _srcCountry->getProvinces())
 	{
-		if (prov->hasBuilding("suez_canal"))
+		if (prov->hasGreatProject("suez_canal"))
 		{
 			decisions.push_back("build_suez_canal");
 		}
-		if (prov->hasBuilding("kiel_canal"))
+		if (prov->hasGreatProject("kiel_canal"))
 		{
 			decisions.push_back("build_kiel_canal");
 		}
-		if (prov->hasBuilding("panama_canal"))
+		if (prov->hasGreatProject("panama_canal"))
 		{
 			decisions.push_back("build_panama_canal");
 		}
@@ -884,11 +905,11 @@ void V2Country::initFromHistory()
 	}
 	else
 	{
-		possibleFilename = Utils::GetFileFromTag(Configuration::getV2Path() + "/history/countries/", tag);
+		possibleFilename = Utils::GetFileFromTag(theConfiguration.getV2Path() + "/history/countries/", tag);
 		if (possibleFilename)
 		{
 			filename = *possibleFilename;
-			fullFilename = Configuration::getV2Path() + "/history/countries/" + filename;
+			fullFilename = theConfiguration.getV2Path() + "/history/countries/" + filename;
 		}
 	}
 	if (!possibleFilename)
@@ -992,35 +1013,35 @@ static set<int> getPortBlacklist()
 }
 
 
-vector<int> V2Country::getPortProvinces(vector<int> locationCandidates, map<int, V2Province*> allProvinces)
-{
-	set<int> port_blacklist = getPortBlacklist();
+std::vector<int> V2Country::getPortProvinces(
+	const std::vector<int>& locationCandidates,
+	std::map<int, V2Province*> allProvinces
+) {
+	std::set<int> port_blacklist = getPortBlacklist();
 
-	vector<int> unblockedCandidates;
-	for (vector<int>::iterator litr = locationCandidates.begin(); litr != locationCandidates.end(); ++litr)
+	std::vector<int> unblockedCandidates;
+	for (auto candidate: locationCandidates)
 	{
-		auto black = port_blacklist.find(*litr);
-		if (black == port_blacklist.end())
+		if (port_blacklist.count(candidate) == 0)
 		{
-			unblockedCandidates.push_back(*litr);
+			unblockedCandidates.push_back(candidate);
 		}
 	}
-	locationCandidates.swap(unblockedCandidates);
 
-	for (vector<int>::iterator litr = locationCandidates.begin(); litr != locationCandidates.end(); ++litr)
+	std::vector<int> coastalProvinces;
+	for (auto& candidate: unblockedCandidates)
 	{
-		map<int, V2Province*>::iterator pitr = allProvinces.find(*litr);
-		if (pitr != allProvinces.end())
+		std::map<int, V2Province*>::iterator province = allProvinces.find(candidate);
+		if (province != allProvinces.end())
 		{
-			if (!pitr->second->isCoastal())
+			if (province->second->isCoastal())
 			{
-				locationCandidates.erase(litr);
-				--pitr;
-				break;
+				coastalProvinces.push_back(candidate);
 			}
 		}
 	}
-	return locationCandidates;
+
+	return coastalProvinces;
 }
 
 
@@ -1033,12 +1054,12 @@ void V2Country::addState(V2State* newState)
 	states.push_back(newState);
 	vector<V2Province*> newProvinces = newState->getProvinces();
 
-	vector<int> newProvinceNums;
-	for (const auto& province : newProvinces)
+	std::vector<int> newProvinceNums;
+	for (const auto& province: newProvinces)
 	{
 		newProvinceNums.push_back(province->getNum());
 	}
-	vector<int> portProvinces = getPortProvinces(newProvinceNums, provinces);
+	auto portProvinces = getPortProvinces(newProvinceNums, provinces);
 
 	for (unsigned int i = 0; i < newProvinces.size(); i++)
 	{
@@ -1049,10 +1070,10 @@ void V2Country::addState(V2State* newState)
 		}
 
 		// find the province with the highest naval base level
-		if ((Configuration::getV2Gametype() == "HOD") || (Configuration::getV2Gametype() == "HoD-NNM"))
+		if ((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM"))
 		{
 			int navalLevel = 0;
-			const EU4Province* srcProvince = newProvinces[i]->getSrcProvince();
+			const EU4::Province* srcProvince = newProvinces[i]->getSrcProvince();
 			if (srcProvince != nullptr)
 			{
 				if (srcProvince->hasBuilding("shipyard"))
