@@ -910,7 +910,7 @@ void V2Country::initFromHistory()
 		if (possibleFilename)
 		{
 			filename = *possibleFilename;
-			fullFilename = theConfiguration.getV2Path() + "/history/countries/" + filename;
+			fullFilename = theConfiguration.getVic2Path() + "/history/countries/" + filename;
 		}
 	}
 	if (!possibleFilename)
@@ -1118,7 +1118,6 @@ void V2Country::convertArmies(
 	std::vector<int> port_whitelist,
 	const mappers::ProvinceMapper& provinceMapper
 ) {
-{
 #ifndef TEST_V2_PROVINCES
 	if (srcCountry == nullptr)
 	{
@@ -1723,7 +1722,7 @@ void V2Country::setNavyTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has navy tech of " << normalizedScore;
 
-	if ((theConfiguration.getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Path() != "vanilla") && !civilized)
 		return;
 
 	if (normalizedScore >= 0)
@@ -1768,7 +1767,7 @@ void V2Country::setCommerceTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has commerce tech of " << normalizedScore;
 
-	if ((theConfiguration.getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Path() != "vanilla") && !civilized)
 		return;
 
 	techs.push_back("no_standard");
@@ -1823,7 +1822,7 @@ void V2Country::setIndustryTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has industry tech of " << normalizedScore;
 
-	if ((theConfiguration.getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Path() != "vanilla") && !civilized)
 		return;
 
 	if (normalizedScore >= -1.0)
@@ -1879,7 +1878,7 @@ void V2Country::setCultureTech(double normalizedScore)
 {
 	LOG(LogLevel::Debug) << tag << " has culture tech of " << normalizedScore;
 
-	if ((theConfiguration.getV2Gametype() != "vanilla") && !civilized)
+	if ((theConfiguration.getVic2Path() != "vanilla") && !civilized)
 		return;
 
 	techs.push_back("classicism_n_early_romanticism");
