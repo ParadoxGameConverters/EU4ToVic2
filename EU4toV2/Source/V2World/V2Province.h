@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -29,6 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Configuration.h"
 #include "../EU4World/World.h"
 #include "../EU4World/EU4Country.h"
+#include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 
 
 
@@ -46,8 +47,8 @@ struct V2Demographic
 	double								upperRatio;
 	double								middleRatio;
 	double								lowerRatio;
-	EU4Province*						oldProvince;
-	std::shared_ptr<EU4::Country> oldCountry;
+	const EU4::Province*						oldProvince;
+	std::string oldCountry;
 };
 
 
@@ -57,12 +58,22 @@ class V2Province
 		V2Province(string _filename);
 		void output() const;
 		void outputPops(FILE*) const;
-		void convertFromOldProvince(const EU4Province* oldProvince);
+		void convertFromOldProvince(
+			const EU4::Religions& allReligions,
+			const EU4::Province* oldProvince,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+		);
 		void determineColonial();
 		void addCore(string);
 		void addOldPop(const V2Pop*);
 		void addMinorityPop(V2Pop*);
-		void doCreatePops(double popWeightRatio, V2Country* _owner, int popConversionAlgorithm);
+		void doCreatePops(
+			double popWeightRatio,
+			V2Country* _owner,
+			int popConversionAlgorithm,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+			const mappers::ProvinceMapper& provinceMapper
+		);
 		void addFactory(V2Factory* factory);
 		void addPopDemographic(V2Demographic d);
 
@@ -78,6 +89,7 @@ class V2Province
 		void				setCoastal(bool _coastal)					{ coastal = _coastal; }
 		void				setName(string _name)						{ name = _name; }
 		void				setOwner(string _owner)						{ owner = _owner; }
+		void				setController(string _controller)						{ controller = _controller; }
 		void				setLandConnection(bool _connection)		{ landConnection = _connection; }
 		void				setSameContinent(bool _same)				{ sameContinent = _same; }
 		void				setFortLevel(int level)						{ fortLevel = level; }
@@ -86,13 +98,14 @@ class V2Province
 		void				setResettable(const bool _resettable)	{ resettable = _resettable; }
 		void				setSlaveProportion(const double _pro)	{ slaveProportion = _pro; }
 
-		const EU4Province*	getSrcProvince()		const { return srcProvince; }
+		const EU4::Province*	getSrcProvince()		const { return srcProvince; }
 		int						getOldPopulation()	const	{ return oldPopulation; }
 		bool						wasInfidelConquest()	const { return originallyInfidel; }
 		bool						wasColony()				const { return wasColonised; }
 		bool						isColonial()			const { return colonial != 0; }
 		string					getRgoType()			const { return rgoType; }
 		string					getOwner()				const { return owner; }
+		string					getController()				const { return controller; }
 		int						getNum()					const { return num; }
 		string					getName()				const { return name; }
 		bool						isCoastal()				const { return coastal; }
@@ -105,19 +118,36 @@ class V2Province
 		void outputUnits(FILE*) const;
 
 		struct pop_points;
-		pop_points getPopPoints_1(const V2Demographic& demographic, double newPopulation, const V2Country* _owner); // EU4 1.0-1.11
-		pop_points getPopPoints_2(const V2Demographic& demographic, double newPopulation, const V2Country* _owner); // EU4 1.12 and newer
-		void createPops(const V2Demographic& demographic, double popWeightRatio, const V2Country* _owner, int popConversionAlgorithm);
+		pop_points getPopPoints_1(
+			const V2Demographic& demographic,
+			double newPopulation,
+			const V2Country* _owner,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries); // EU4 1.0-1.11
+		pop_points getPopPoints_2(
+			const V2Demographic& demographic,
+			double newPopulation,
+			const V2Country* _owner,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+		); // EU4 1.12 and newer
+		void createPops(
+			const V2Demographic& demographic,
+			double popWeightRatio,
+			const V2Country* _owner,
+			int popConversionAlgorithm,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+			const mappers::ProvinceMapper& provinceMapper
+		);
 		void combinePops();
 		bool growSoldierPop(V2Pop* pop);
 
-		const EU4Province*		srcProvince;
+		const EU4::Province*		srcProvince;
 
 		string						filename;
 		bool							coastal;
 		int							num;
 		string						name;
 		string						owner;
+		string						controller;
 		vector<string>				cores;
 		bool							inHRE;
 		int							colonyLevel;

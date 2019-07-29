@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -45,13 +45,13 @@ governmentMapper::governmentMapper()
 		exit(-1);
 	}
 
-	initGovernmentMap(governmentMapObj->getLeaves()[0]);
+	initGovernmentMap(governmentMapObj->getLeaves());
 }
 
 
-void governmentMapper::initGovernmentMap(shared_ptr<Object> obj)
+void governmentMapper::initGovernmentMap(std::vector<std::shared_ptr<Object>> objs)
 {
-	for (auto rule: obj->getLeaves())
+	for (auto rule: objs)
 	{
 		processRule(rule);
 	}

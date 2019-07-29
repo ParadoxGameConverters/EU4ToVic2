@@ -28,11 +28,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "OSCompatibilityLayer.h"
 #include "ParadoxParser8859_15.h"
 #include "../EU4World/World.h"
-#include "../EU4World/EU4Province.h"
+#include "../EU4World/Provinces/EU4Province.h"
+#include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2Pop.h"
 #include "V2Country.h"
 #include "V2Factory.h"
 #include <algorithm>
+#include <fstream>
 #include <memory>
 #include <sstream>
 #include <stdio.h>
@@ -48,7 +50,7 @@ V2Province::V2Province(string _filename)
 	num = 0;
 	name = "";
 	owner = "";
-	//controler			= "";
+	//controller = ""; // disabled because string defaults to "" anyway
 	cores.clear();
 	inHRE = false;
 	colonyLevel = 0;
@@ -112,7 +114,7 @@ V2Province::V2Province(string _filename)
 		}
 		else if ((*itr)->getKey() == "controller")
 		{
-			//controller = (*itr)->getLeaf().c_str();
+			controller = (*itr)->getLeaf().c_str();
 		}
 		else if ((*itr)->getKey() == "add_core")
 		{
@@ -173,65 +175,66 @@ V2Province::V2Province(string _filename)
 
 void V2Province::output() const
 {
-	FILE* output;
-	if (fopen_s(&output, ("Output/" + theConfiguration.getOutputName() + "/history/provinces" + filename).c_str(), "w") != 0)
+	int lastSlash = filename.find_last_of('/');
+	std::string path = filename.substr(0, lastSlash);
+	Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/history/provinces" + path);
+
+	std::ofstream output("Output/" + theConfiguration.getOutputName() + "/history/provinces" + filename);
+	if (!output.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not create province history file Output/" << theConfiguration.getOutputName() << "/history/provinces/" << filename << " - " << Utils::GetLastErrorString();
 		exit(-1);
 	}
 	if (owner != "")
 	{
-		fprintf_s(output, "owner=%s\n", owner.c_str());
-		fprintf_s(output, "controller=%s\n", owner.c_str());
+		output << "owner=" << owner << "\n";
+		output << "controller=" << controller << "\n";
 	}
-	for (unsigned int i = 0; i < cores.size(); i++)
+	for (auto core: cores)
 	{
-		fprintf_s(output, "add_core=%s\n", cores[i].c_str());
+		output << "add_core=" << core << "\n";
 	}
 	if (inHRE)
 	{
-		fprintf_s(output, "add_core=HRE\n");
+		output << "add_core=HRE\n";
 	}
 	if (rgoType != "")
 	{
-		fprintf_s(output, "trade_goods = %s\n", rgoType.c_str());
+		output << "trade_goods = " << rgoType << "\n";
 	}
 	if (lifeRating > 0)
 	{
-		fprintf_s(output, "life_rating = %d\n", lifeRating);
+		output << "life_rating = " << lifeRating << "\n";
 	}
 	if (terrain != "")
 	{
-		fprintf_s(output, "terrain = %s\n", terrain.c_str());
+		output << "terrain = " << terrain << "\n";
 	}
 	if (colonial > 0)
 	{
-		fprintf(output, "colonial=%d\n", colonial);
+		output << "colonial=" << colonial << "\n";
 	}
 	if (navalBaseLevel > 0)
 	{
-		fprintf_s(output, "naval_base = %d\n", navalBaseLevel);
+		output << "naval_base = " << navalBaseLevel << "\n";
 	}
 	if (fortLevel > 0)
 	{
-		fprintf_s(output, "fort = %d\n", fortLevel);
+		output << "fort = " << fortLevel << "\n";
 	}
 	if (railLevel > 0)
 	{
-		fprintf_s(output, "railroad = %d\n", railLevel);
+		output << "railroad = " << railLevel << "\n";
 	}
 	if (slaveState)
 	{
-		fprintf_s(output, "is_slave = yes\n");
+		output << "is_slave = yes\n";
 	}
-	for (auto itr = factories.begin(); itr != factories.end(); itr++)
+	for (auto factory: factories)
 	{
-		itr->second->output(output);
+		output << *factory.second;
 	}
-	/*else if ((*itr)->getKey() == "party_loyalty")
-	{
-	}*/
-	fclose(output);
+	output.close();
 }
 
 
@@ -324,17 +327,25 @@ void V2Province::outputUnits(FILE* output) const
 }
 
 
-void V2Province::convertFromOldProvince(const EU4Province* oldProvince)
-{
+void V2Province::convertFromOldProvince(
+	const EU4::Religions& allReligions,
+	const EU4::Province* oldProvince,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+) {
 	srcProvince = oldProvince;
-	inHRE = oldProvince->getInHRE();
+	inHRE = oldProvince->inHre();
 	if (oldProvince->isColony())
 	{
 		colonyLevel = 2;
 	}
 	colonial = 0;
 	wasColonised = oldProvince->wasColonised();
-	originallyInfidel = oldProvince->wasInfidelConquest();
+
+	auto oldCountry = theEU4Countries.find(oldProvince->getOwnerString());
+	if (oldCountry != theEU4Countries.end())
+	{
+		originallyInfidel = oldProvince->wasInfidelConquest(oldCountry->second->getReligion(), allReligions);
+	}
 }
 
 
@@ -370,12 +381,17 @@ void V2Province::addMinorityPop(V2Pop* minorityPop)
 }
 
 
-void V2Province::doCreatePops(double popWeightRatio, V2Country* _owner, int popConversionAlgorithm)
-{
+void V2Province::doCreatePops(
+	double popWeightRatio,
+	V2Country* _owner,
+	int popConversionAlgorithm,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+	const mappers::ProvinceMapper& provinceMapper
+) {
 	// convert pops
 	for (vector<V2Demographic>::const_iterator itr = demographics.begin(); itr != demographics.end(); ++itr)
 	{
-		createPops(*itr, popWeightRatio, _owner, popConversionAlgorithm);
+		createPops(*itr, popWeightRatio, _owner, popConversionAlgorithm, theEU4Countries, provinceMapper);
 	}
 	combinePops();
 
@@ -473,10 +489,20 @@ struct V2Province::pop_points
 };
 
 
-V2Province::pop_points V2Province::getPopPoints_1(const V2Demographic& demographic, double newPopulation, const V2Country* _owner)
-{
-	const EU4Province*	oldProvince = demographic.oldProvince;
-	auto oldCountry = demographic.oldCountry;
+V2Province::pop_points V2Province::getPopPoints_1(
+	const V2Demographic& demographic,
+	double newPopulation,
+	const V2Country* _owner,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+) {
+	const EU4::Province*	oldProvince = demographic.oldProvince;
+	auto oldCountryTag = demographic.oldCountry;
+	auto countryItr = theEU4Countries.find(oldCountryTag);
+	std::shared_ptr<EU4::Country> oldCountry;
+	if (countryItr != theEU4Countries.end())
+	{
+		oldCountry = countryItr->second;
+	}
 
 	pop_points pts;
 
@@ -589,7 +615,7 @@ V2Province::pop_points V2Province::getPopPoints_1(const V2Demographic& demograph
 
 	pts.soldiers += 100;
 	pts.soldiers += armyBuilding * 45;
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("quantity_ideas") != -1))
+	if ((oldCountryTag != "") && (oldCountry->hasNationalIdea("quantity_ideas") != -1))
 	{
 		pts.soldiers *= 2;
 	}
@@ -650,10 +676,20 @@ V2Province::pop_points V2Province::getPopPoints_1(const V2Demographic& demograph
 }
 
 
-V2Province::pop_points V2Province::getPopPoints_2(const V2Demographic& demographic, double newPopulation, const V2Country* _owner)
-{
-	const EU4Province*	oldProvince = demographic.oldProvince;
-	auto oldCountry = demographic.oldCountry;
+V2Province::pop_points V2Province::getPopPoints_2(
+	const V2Demographic& demographic,
+	double newPopulation,
+	const V2Country* _owner,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+) {
+	const EU4::Province*	oldProvince = demographic.oldProvince;
+	auto oldCountryTag = demographic.oldCountry;
+	auto countryItr = theEU4Countries.find(oldCountryTag);
+	std::shared_ptr<EU4::Country> oldCountry;
+	if (countryItr != theEU4Countries.end())
+	{
+		oldCountry = countryItr->second;
+	}
 
 	pop_points pts;
 
@@ -789,9 +825,15 @@ V2Province::pop_points V2Province::getPopPoints_2(const V2Demographic& demograph
 }
 
 
-void V2Province::createPops(const V2Demographic& demographic, double popWeightRatio, const V2Country* _owner, int popConversionAlgorithm)
-{
-	const EU4Province*	oldProvince = demographic.oldProvince;
+void V2Province::createPops(
+	const V2Demographic& demographic,
+	double popWeightRatio,
+	const V2Country* _owner,
+	int popConversionAlgorithm,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+	const mappers::ProvinceMapper& provinceMapper
+) {
+	const EU4::Province*	oldProvince = demographic.oldProvince;
 	auto oldCountry = demographic.oldCountry;
 
 	long newPopulation = 0;
@@ -799,7 +841,8 @@ void V2Province::createPops(const V2Demographic& demographic, double popWeightRa
 	{
 		newPopulation = static_cast<long>((static_cast<double>(this->lifeRating) / 10) * popWeightRatio * oldProvince->getTotalWeight());
 
-		int numOfV2Provs = srcProvince->getNumDestV2Provs();
+		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(srcProvince->getNum());
+		int numOfV2Provs = Vic2Provinces.size();
 		if (numOfV2Provs > 1)
 		{
 			if (numOfV2Provs == 2)
@@ -823,10 +866,10 @@ void V2Province::createPops(const V2Demographic& demographic, double popWeightRa
 	switch (popConversionAlgorithm)
 	{
 	case 1:
-		pts = getPopPoints_1(demographic, newPopulation, _owner);
+		pts = getPopPoints_1(demographic, newPopulation, _owner, theEU4Countries);
 		break;
 	case 2:
-		pts = getPopPoints_2(demographic, newPopulation, _owner);
+		pts = getPopPoints_2(demographic, newPopulation, _owner, theEU4Countries);
 		break;
 	default:
 		LOG(LogLevel::Error) << "Invalid pop conversion algorithm specified; not generating pops.";
@@ -917,7 +960,7 @@ void V2Province::createPops(const V2Demographic& demographic, double popWeightRa
 	V2Pop* farmersPop = new V2Pop("farmers", farmers, demographic.culture, demographic.religion);
 	pops.push_back(farmersPop);
 
-	/*LOG(LogLevel::Info) << "Name: " << this->getSrcProvince()->getProvName() << " demographics.upperRatio: " << demographic.upperRatio
+	/*LOG(LogLevel::Info) << "Name: " << this->getSrcProvince()->getName() << " demographics.upperRatio: " << demographic.upperRatio
 		<< " demographics.middleRatio: " << demographic.middleRatio << " demographics.lowerRatio: " << demographic.lowerRatio
 		<< " newPopulation: " << newPopulation << " farmer: " << farmers	<< " total: " << newPopulation;*/
 }

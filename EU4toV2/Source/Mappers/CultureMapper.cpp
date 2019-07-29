@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -27,15 +27,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-mappers::cultureMapper* mappers::cultureMapper::instance = nullptr;
-
-
-
-mappers::cultureMapper::cultureMapper():
-	cultureMap()
+mappers::CultureMapper::CultureMapper(std::istream& theStream)
 {
-	LOG(LogLevel::Info) << "Parsing culture mappings";
-
 	registerKeyword(std::regex("link"), [this](const std::string& unused, std::istream& theStream)
 		{
 			CultureMappingRule rule(theStream);
@@ -47,19 +40,26 @@ mappers::cultureMapper::cultureMapper():
 		}
 	);
 
-	parseFile("cultureMap.txt");
+	parseStream(theStream);
 }
 
 
-bool mappers::cultureMapper::CultureMatch(const std::string& srcCulture, std::string& dstCulture, const std::string& religion, int EU4Province, const std::string& ownerTag)
+std::optional<std::string> mappers::CultureMapper::cultureMatch(
+	const EU4::Regions& EU4Regions,
+	const std::string& culture,
+	const std::string& religion,
+	int EU4Province,
+	const std::string& ownerTag
+) const
 {
 	for (auto cultureMapping: cultureMap)
 	{
-		if (cultureMapping.cultureMatch(srcCulture, dstCulture, religion, EU4Province, ownerTag))
+		auto possibleMatch = cultureMapping.cultureMatch(EU4Regions, culture, religion, EU4Province, ownerTag);
+		if (possibleMatch)
 		{
-			return true;
+			return possibleMatch;
 		}
 	}
 
-	return false;
+	return {};
 }

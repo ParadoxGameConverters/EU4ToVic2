@@ -74,7 +74,7 @@
     <LibraryWPath>$(LibraryWPath)</LibraryWPath>
     <SourcePath>$(SourcePath)</SourcePath>
     <ExcludePath>$(ExcludePath)</ExcludePath>
-    <OutDir>$(SolutionDir)$(Configuration)\EU4ToVic2\</OutDir>
+    <OutDir>$(ProjectDir)\..\$(Configuration)\EU4ToVic2\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-NoCopies|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -119,7 +119,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\common_items;H:\boost_1_64_0;D:\Libraries\boost_1_55_0_lib;$(BOOST_INCLUDE);$(WindowsSDK_IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\common_items;H:\boost_1_64_0;D:\boost_1_70_0;D:\Libraries\boost_1_55_0_lib;$(BOOST_INCLUDE);$(WindowsSDK_IncludePath)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -128,7 +128,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>H:\boost_1_64_0\stage\lib;D:\Libraries\boost_1_55_0_lib\lib32-msvc-12.0;$(BOOST_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>H:\boost_1_64_0\stage\lib;D:\boost_1_70_0\lib32-msvc-12.0;D:\Libraries\boost_1_55_0_lib\lib32-msvc-12.0;$(BOOST_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>Copy_Files.bat</Command>
@@ -181,7 +181,6 @@
     <ClCompile Include="..\common_items\WinUtils.cpp" />
     <ClCompile Include="Source\Configuration.cpp" />
     <ClCompile Include="Source\EU4toV2Converter.cpp" />
-    <ClCompile Include="Source\EU4World\Areas.cpp" />
     <ClCompile Include="Source\EU4World\ColonialRegions.cpp" />
     <ClCompile Include="Source\EU4World\Continents.cpp" />
     <ClCompile Include="Source\EU4World\Countries.cpp" />
@@ -192,16 +191,31 @@
     <ClCompile Include="Source\EU4World\EU4Diplomacy.cpp" />
     <ClCompile Include="Source\EU4World\EU4Leader.cpp" />
     <ClCompile Include="Source\EU4World\EU4Localisation.cpp" />
-    <ClCompile Include="Source\EU4World\EU4Province.cpp" />
     <ClCompile Include="Source\EU4World\EU4Relations.cpp" />
-    <ClCompile Include="Source\EU4World\EU4Religion.cpp" />
     <ClCompile Include="Source\EU4World\EU4Version.cpp" />
     <ClCompile Include="Source\EU4World\History.cpp" />
     <ClCompile Include="Source\EU4World\ID.cpp" />
-    <ClCompile Include="Source\EU4World\Region.cpp" />
-    <ClCompile Include="Source\EU4World\Regions.cpp" />
+    <ClCompile Include="Source\EU4World\Mods\Mod.cpp" />
+    <ClCompile Include="Source\EU4World\Mods\Mods.cpp" />
+    <ClCompile Include="Source\EU4World\Provinces\Buildings.cpp" />
+    <ClCompile Include="Source\EU4World\Provinces\GreatProjects.cpp" />
+    <ClCompile Include="Source\EU4World\Provinces\DateItem.cpp" />
+    <ClCompile Include="Source\EU4World\Provinces\DateItems.cpp" />
+    <ClCompile Include="Source\EU4World\Provinces\EU4Province.cpp" />
+    <ClCompile Include="Source\EU4World\Provinces\PopRatio.cpp" />
+    <ClCompile Include="Source\EU4World\Provinces\ProvinceHistory.cpp" />
+    <ClCompile Include="Source\EU4World\Provinces\Provinces.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\Area.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\AreaNames.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\Areas.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\Region.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\Regions.cpp" />
+    <ClCompile Include="Source\EU4World\Religions\Religion.cpp" />
+    <ClCompile Include="Source\EU4World\Religions\ReligionGroup.cpp" />
+    <ClCompile Include="Source\EU4World\Religions\Religions.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
     <ClCompile Include="Source\FlagUtils.cpp" />
+    <ClCompile Include="Source\Helpers\TechValues.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\AdjacencyMapper.cpp" />
     <ClCompile Include="Source\Mappers\CK2TitleMapper.cpp" />
@@ -213,11 +227,14 @@
     <ClCompile Include="Source\Mappers\CultureMappingRule.cpp" />
     <ClCompile Include="Source\Mappers\FlagColorMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovermentMapper.cpp" />
-    <ClCompile Include="Source\Mappers\IdeaEffectMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Ideas\IdeaEffectMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Ideas\IdeaEffects.cpp" />
     <ClCompile Include="Source\Mappers\MinorityPopMapper.cpp" />
-    <ClCompile Include="Source\Mappers\ProvinceMapper.cpp" />
+    <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
+    <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
+    <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper.cpp" />
-    <ClCompile Include="Source\Mappers\SlaveCultureMapper.cpp" />
+    <ClCompile Include="Source\Mappers\ReligionMapping.cpp" />
     <ClCompile Include="Source\targa.cpp" />
     <ClCompile Include="Source\V2World\BlockedTechSchools.cpp" />
     <ClCompile Include="Source\V2World\StateMapper.cpp" />
@@ -258,7 +275,6 @@
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\CustomFlagMapper.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
-    <ClInclude Include="Source\EU4World\Areas.h" />
     <ClInclude Include="Source\EU4World\ColonialRegions.h" />
     <ClInclude Include="Source\EU4World\Continents.h" />
     <ClInclude Include="Source\EU4World\Countries.h" />
@@ -269,16 +285,31 @@
     <ClInclude Include="Source\EU4World\EU4Diplomacy.h" />
     <ClInclude Include="Source\EU4World\EU4Leader.h" />
     <ClInclude Include="Source\EU4World\EU4Localisation.h" />
-    <ClInclude Include="Source\EU4World\EU4Province.h" />
     <ClInclude Include="Source\EU4World\EU4Relations.h" />
-    <ClInclude Include="Source\EU4World\EU4Religion.h" />
     <ClInclude Include="Source\EU4World\EU4Version.h" />
     <ClInclude Include="Source\EU4World\History.h" />
     <ClInclude Include="Source\EU4World\ID.h" />
-    <ClInclude Include="Source\EU4World\Region.h" />
-    <ClInclude Include="Source\EU4World\Regions.h" />
+    <ClInclude Include="Source\EU4World\Mods\Mod.h" />
+    <ClInclude Include="Source\EU4World\Mods\Mods.h" />
+    <ClInclude Include="Source\EU4World\Provinces\Buildings.h" />
+    <ClInclude Include="Source\EU4World\Provinces\GreatProjects.h" />
+    <ClInclude Include="Source\EU4World\Provinces\DateItem.h" />
+    <ClInclude Include="Source\EU4World\Provinces\DateItems.h" />
+    <ClInclude Include="Source\EU4World\Provinces\EU4Province.h" />
+    <ClInclude Include="Source\EU4World\Provinces\PopRatio.h" />
+    <ClInclude Include="Source\EU4World\Provinces\ProvinceHistory.h" />
+    <ClInclude Include="Source\EU4World\Provinces\Provinces.h" />
+    <ClInclude Include="Source\EU4World\Regions\Area.h" />
+    <ClInclude Include="Source\EU4World\Regions\AreaNames.h" />
+    <ClInclude Include="Source\EU4World\Regions\Areas.h" />
+    <ClInclude Include="Source\EU4World\Regions\Region.h" />
+    <ClInclude Include="Source\EU4World\Regions\Regions.h" />
+    <ClInclude Include="Source\EU4World\Religions\Religion.h" />
+    <ClInclude Include="Source\EU4World\Religions\ReligionGroup.h" />
+    <ClInclude Include="Source\EU4World\Religions\Religions.h" />
     <ClInclude Include="Source\EU4World\World.h" />
     <ClInclude Include="Source\FlagUtils.h" />
+    <ClInclude Include="Source\Helpers\TechValues.h" />
     <ClInclude Include="Source\Mappers\AdjacencyMapper.h" />
     <ClInclude Include="Source\Mappers\CK2TitleMapper.h" />
     <ClInclude Include="Source\Mappers\ColonialTagsMapper.h" />
@@ -289,11 +320,14 @@
     <ClInclude Include="Source\Mappers\CultureMappingRule.h" />
     <ClInclude Include="Source\Mappers\FlagColorMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentMapper.h" />
-    <ClInclude Include="Source\Mappers\IdeaEffectMapper.h" />
+    <ClInclude Include="Source\Mappers\Ideas\IdeaEffectMapper.h" />
+    <ClInclude Include="Source\Mappers\Ideas\IdeaEffects.h" />
     <ClInclude Include="Source\Mappers\MinorityPopMapper.h" />
-    <ClInclude Include="Source\Mappers\ProvinceMapper.h" />
+    <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h" />
+    <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h" />
+    <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper.h" />
-    <ClInclude Include="Source\Mappers\SlaveCultureMapper.h" />
+    <ClInclude Include="Source\Mappers\ReligionMapping.h" />
     <ClInclude Include="Source\targa.h" />
     <ClInclude Include="Source\V2World\BlockedTechSchools.h" />
     <ClInclude Include="Source\V2World\StateMapper.h" />

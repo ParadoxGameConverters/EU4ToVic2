@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -32,7 +32,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Party.h"
 #include "V2Province.h"
 #include "../EU4World/EU4Army.h"
-#include "../EU4World/EU4Province.h"
+#include "../EU4World/Provinces/EU4Province.h"
+#include "../EU4World/Provinces/PopRatio.h"
+#include "../Mappers/CultureMapper.h"
+#include "../Mappers/ProvinceMappings/ProvinceMapper.h"
+#include "../Mappers/ReligionMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -48,7 +52,7 @@ class V2LeaderTraits;
 class V2World
 {
 	public:
-		V2World(const EU4::world& sourceWorld);
+		V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		V2Province* getProvince(int provNum) const;
 		V2Country* getCountry(string tag) const;
 
@@ -75,23 +79,35 @@ class V2World
 		void importPotentialCountries();
 		void importPotentialCountry(const string& line, bool dynamicCountry);
 
-		void convertCountries(const EU4::world& sourceWorld);
-		void initializeCountries(const EU4::world& sourceWorld);
+		void initializeCultureMappers(const EU4::world& sourceWorld);
+		void initializeReligionMapper(const EU4::world& sourceWorld);
+		void initializeProvinceMapper();
+
+		void convertCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void initializeCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		V2Country* createOrLocateCountry(const string& V2Tag, const shared_ptr<EU4::Country> sourceCountry);
-		void convertNationalValues();
+		void convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void convertPrestige();
 		void addAllPotentialCountries();
 		void checkForCivilizedNations();
 		void editDefines(int numCivilisedNations);
 
 		void convertProvinces(const EU4::world& sourceWorld);
-		vector<V2Demographic> determineDemographics(vector<EU4PopRatio>& popRatios, EU4Province* eProv, V2Province* vProv, shared_ptr<EU4::Country> oldOwner, int destNum, double provPopRatio);
+		std::vector<V2Demographic> determineDemographics(
+			const EU4::Regions& eu4Regions,
+			std::vector<EU4::PopRatio>& popRatios,
+			const EU4::Province* eProv,
+			V2Province* vProv,
+			std::string oldOwnerTag,
+			int destNum,
+			double provPopRatio
+		);
 
 		void convertDiplomacy(const EU4::world& sourceWorld);
 		void setupColonies();
 		void setupStates();
 		void convertUncivReforms(const EU4::world& sourceWorld);
-		void convertTechs(const EU4::world& sourceWorld);
+		void convertTechs(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void allocateFactories(const EU4::world& sourceWorld);
 		void setupPops(const EU4::world& sourceWorld);
 		void addUnions();
@@ -113,6 +129,11 @@ class V2World
 		long totalWorldPopulation;
 		bool isRandomWorld;
 		int	techGroupAlgorithm;
+
+		std::unique_ptr<mappers::CultureMapper> cultureMapper;
+		std::unique_ptr<mappers::CultureMapper> slaveCultureMapper;
+		std::unique_ptr<mappers::ReligionMapper> religionMapper;
+		std::unique_ptr<mappers::ProvinceMapper> provinceMapper;
 };
 
 

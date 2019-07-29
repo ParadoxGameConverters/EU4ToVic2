@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -22,70 +22,78 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "CultureMapping.h"
-#include "../EU4World/Regions.h"
+#include "../EU4World/Regions/Regions.h"
 #include "Log.h"
 
 
 
-mappers::cultureMapping::cultureMapping(const std::string& _sourceCulture, const std::string& _destinationCulture, const std::map<std::string, std::string>& _distinguishers):
+mappers::cultureMapping::cultureMapping(
+	const std::string& _sourceCulture,
+	const std::string& _destinationCulture,
+	const std::map<distinguisherTypes, std::string>& _distinguishers
+):
 	sourceCulture(_sourceCulture),
 	destinationCulture(_destinationCulture),
 	distinguishers(_distinguishers)
-{
-}
+{}
 
 
-bool mappers::cultureMapping::cultureMatch(const std::string& _sourceCulture, std::string& _destinationCulture, const std::string& religion, int EU4Province, const std::string& ownerTag)
+std::optional<std::string> mappers::cultureMapping::cultureMatch(
+	const EU4::Regions& EU4Regions,
+	const std::string& culture,
+	const std::string& religion,
+	int EU4Province,
+	const std::string& ownerTag
+)
 {
-	if (sourceCulture == _sourceCulture)
+	if (sourceCulture == culture)
 	{
-		if (distinguishersMatch(distinguishers, religion, EU4Province, ownerTag))
+		if (distinguishersMatch(EU4Regions, distinguishers, religion, EU4Province, ownerTag))
 		{
-			_destinationCulture = destinationCulture;
-			return true;
+			return destinationCulture;
 		}
 	}
 
-	return false;
+	return {};
 }
 
 
-bool mappers::cultureMapping::distinguishersMatch(const std::map<std::string, std::string>& distinguishers, const std::string& religion, int EU4Province, const std::string& ownerTag)
+bool mappers::cultureMapping::distinguishersMatch(
+	const EU4::Regions& EU4Regions,
+	const std::map<distinguisherTypes, std::string>& distinguishers,
+	const std::string& religion,
+	int EU4Province,
+	const std::string& ownerTag)
 {
 	for (auto currentDistinguisher: distinguishers)
 	{
-		if (currentDistinguisher.first == "owner")
+		if (currentDistinguisher.first == distinguisherTypes::owner)
 		{
 			if (ownerTag != currentDistinguisher.second)
 			{
 				return false;
 			}
 		}
-		else if (currentDistinguisher.first == "religion")
+		else if (currentDistinguisher.first == distinguisherTypes::religion)
 		{
 			if (religion != currentDistinguisher.second)
 			{
 				return false;
 			}
 		}
-		else if (currentDistinguisher.first == "region")
-		{
-			if (!EU4::Regions::provinceInRegion(EU4Province, currentDistinguisher.second))
-			{
-				return false;
-			}
-		}
-		else if (currentDistinguisher.first == "provinceid")
+		else if (currentDistinguisher.first == distinguisherTypes::province)
 		{
 			if (stoi(currentDistinguisher.second) != EU4Province)
 			{
 				return false;
 			}
 		}
-		else
+		else if (currentDistinguisher.first == distinguisherTypes::region)
 		{
-			LOG(LogLevel::Warning) << "Unhandled distinguisher type in culture rules: " << currentDistinguisher.first;
-			return false;
+			if (!EU4Regions.provinceInRegion(EU4Province, currentDistinguisher.second))
+			{
+				return false;
+			}
 		}
 	}
 

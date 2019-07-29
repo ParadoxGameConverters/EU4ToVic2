@@ -30,6 +30,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <vector>
 #include <map>
 #include <memory>
+#include <ostream>
+#include <string>
 using namespace std;
 
 
@@ -55,7 +57,6 @@ class V2Factory
 {
 	public:
 		V2Factory(const V2FactoryType* _type) : type(_type) { level = 1; };
-		void					output(FILE* output) const;
 		void					increaseLevel();
 
 		bool						requiresCoastal()					const { return type->requireCoastal; }
@@ -64,6 +65,8 @@ class V2Factory
 		string					getTypeName()						const { return type->name; }
 		map<string,float>		getInputs()							const { return type->inputs; };
 		string					getOutputGoods()					const { return type->outputGoods; };
+
+		friend std::ostream& operator<<(std::ostream& output, const V2Factory& factory);
 	private:
 		const V2FactoryType* type;
 		int						level;

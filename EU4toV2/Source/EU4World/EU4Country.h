@@ -37,12 +37,19 @@ THE SOFTWARE. */
 
 namespace EU4
 {
-	class leader;
-	class Version;
+
+class leader;
+class Province;
+class Version;
+
 }
 class EU4Loan;
-class EU4Province;
 class EU4Relations;
+
+namespace mappers
+{
+class IdeaEffectMapper;
+}
 
 
 
@@ -51,7 +58,13 @@ namespace EU4
 	class Country: public commonItems::parser
 	{
 		public:
-			Country(const std::string& countryTag, std::istream& theStream);
+			Country() = default;
+			Country(
+				const std::string& countryTag,
+				const EU4::Version& theVersion,
+				std::istream& theStream,
+				const mappers::IdeaEffectMapper& ideaEffectMapper
+			);
 
 			// Add any additional information available from the specified country file.
 			void readFromCommonCountry(const std::string& fileName, const std::string& fullFilename);
@@ -59,8 +72,8 @@ namespace EU4
 			void setLocalisationName(const string& language, const string& name);
 			void setLocalisationAdjective(const string& language, const string& adjective);
 
-			void						addProvince(EU4Province*);
-			void						addCore(EU4Province*);
+			void addProvince(Province*);
+			void addCore(Province*);
 			void						setInHRE(bool _inHRE)								{ inHRE = _inHRE; }
 			void						setEmperor(bool _emperor)							{ holyRomanEmperor = _emperor; }
 			void						setCelestialEmperor(bool _celestialEmperor)			{ celestialEmperor = _celestialEmperor; }
@@ -76,11 +89,11 @@ namespace EU4
 			void						clearArmies();
 			const void				viveLaRevolution(bool revolting)					{ revolutionary = revolting; }
 
-			bool cultureSurvivesInCores();
+			bool cultureSurvivesInCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& theCountries);
 
 			string							getTag()										const { return tag; }
-			vector<EU4Province*>			getProvinces()								const { return provinces; }
-			vector<EU4Province*>			getCores()									const { return cores; }
+			std::vector<Province*> getProvinces() { return provinces; }
+			std::vector<Province*> getCores() { return cores; }
 			int								getCapital()								const { return capital; }
 			bool							getInHRE()									const { return inHRE; }
 			bool							getHolyRomanEmperor()					const { return holyRomanEmperor; }
@@ -92,11 +105,11 @@ namespace EU4
 			vector<string>					getAcceptedCultures()					const { return acceptedCultures; }
 			std::optional<EU4::cultureGroup> getCulturalUnion() const { return culturalUnion; }
 			string							getReligion()								const { return religion; }
-			double							getScore()									const { return score; }
+			double getScore() const { return score; }
 			double							getStability()								const { return stability; }
-			double							getAdmTech()								const { return admTech; }
-			double							getDipTech()								const { return dipTech; }
-			double							getMilTech()								const { return milTech; }
+			virtual double getAdmTech() const { return admTech; }
+			virtual double getDipTech() const { return dipTech; }
+			virtual double getMilTech() const { return milTech; }
 			double							getArmyInvestment()						const { return armyInvestment; }
 			double							getNavyInvestment()						const { return navyInvestment; }
 			double							getCommerceInvestment()					const { return commerceInvestment; }
@@ -115,7 +128,7 @@ namespace EU4
 			bool								isRevolutionary()							const { return revolutionary; }
 			tuple<int, int, int>			getRevolutionaryTricolour()			const { return revolutionaryTricolour; }
 			string							getRandomName()							const { return randomName; }
-			const map<string, int>& getNationalIdeas() const { return nationalIdeas; }
+			virtual const std::map<std::string, int>& getNationalIdeas() const { return nationalIdeas; }
 			std::vector<std::shared_ptr<EU4::leader>> getMilitaryLeaders() const { return militaryLeaders; }
 
 			string	getName() const { return name; }
@@ -125,14 +138,14 @@ namespace EU4
 
 		private:
 			void determineJapaneseRelations();
-			void determineInvestments();
+			void determineInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper);
 			void determineLibertyDesire();
 			void							clearProvinces();
 			void							clearCores();
 
 			string							tag;						// the tag for the EU4 nation
-			vector<EU4Province*>			provinces;				// the EU4 provinces this nations holds
-			vector<EU4Province*>			cores;					// the EU4 provinces this nation has cores on
+			std::vector<Province*> provinces;
+			std::vector<Province*> cores;
 			bool							inHRE;					// if this country is an HRE member
 			bool							holyRomanEmperor;		// if this country is the emperor of the HRE
 			bool							celestialEmperor;		// if this country is the celestial emperor
@@ -144,7 +157,7 @@ namespace EU4
 			vector<string>					acceptedCultures;		// the accepted EU4 cultures for this nation
 			std::optional<EU4::cultureGroup> culturalUnion;
 			string							religion;				// the accepted religion of this country
-			double							score;					// this country's EU4 score
+			double score = 0.0;
 			double							stability;				// the stability of this nation
 			double							admTech;					// the admin tech of this nation
 			double							dipTech;					// the diplo tech of this nation
