@@ -213,7 +213,7 @@ tag vs internalTag:
           <alternatives>
             <alternative>
               <defaultLocationType>WindowsUsersFolder</defaultLocationType>
-              <subFolderLocation>Paradox Interactive\Crusader Kings II\eu4_export\mod</subFolderLocation>
+              <subFolderLocation>Paradox Interactive\Crusader Kings II\eu4_export</subFolderLocation>
             </alternative>
           </alternatives>
         </requiredFolder>
