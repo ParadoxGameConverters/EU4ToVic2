@@ -123,6 +123,12 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 	);
 	registerKeyword(std::regex("[A-Za-z0-9\\_]+"), commonItems::ignoreItem);
 
+	if (diplomacy == nullptr)
+	{
+		auto nullDiploObject = std::make_shared<Object>("");
+		diplomacy = new EU4Diplomacy(nullDiploObject);
+	}
+
 	LOG(LogLevel::Info) << "* Importing EU4 save *";
 	verifySave(EU4SaveFileName);
 	parseFile(EU4SaveFileName);
