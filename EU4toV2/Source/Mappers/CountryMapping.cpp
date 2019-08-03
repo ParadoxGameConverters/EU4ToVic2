@@ -273,7 +273,7 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 ) {
 	bool mapped = false;
 
-	int Vic2Capital;
+	std::optional<int> Vic2Capital;
 	int EU4Capital = country->getCapital();
 	auto potentialVic2Capitals = provinceMapper.getVic2ProvinceNumbers(EU4Capital);
 	if (potentialVic2Capitals.size() > 0)
@@ -327,14 +327,14 @@ bool mappers::CountryMappings::capitalInRightEU4Region(const mappers::colonyStru
 
 bool mappers::CountryMappings::capitalInRightVic2Region(
 	const mappers::colonyStruct& colony,
-	int Vic2Capital,
+	std::optional<int> Vic2Capital,
 	const EU4::world& srcWorld,
 	const std::string& EU4Tag,
 	const ProvinceMapper& provinceMapper
 ) {
 	if (colony.V2Region != "")
 	{
-		if (Vic2::regions::provinceIsInRegion(Vic2Capital, colony.V2Region))
+		if (Vic2Capital && Vic2::regions::provinceIsInRegion(*Vic2Capital, colony.V2Region))
 		{
 			return true;
 		}
