@@ -119,7 +119,7 @@ class world: private commonItems::parser
 		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
 		EU4Diplomacy* diplomacy;
 		std::unique_ptr<EU4::Version> version;
-		double worldWeightSum;
+		double worldWeightSum = 0.0;
 
 		std::string revolutionTargetString;
 
