@@ -326,9 +326,6 @@ void EU4::world::loadDiplomacy(const shared_ptr<Object> EU4SaveObj)
 
 void EU4::world::determineProvinceWeights()
 {
-	// calculate total province weights
-	worldWeightSum = 0;
-
 	/*ofstream EU4_Production("EU4_Production.csv");
 	ofstream EU4_Tax("EU4_TaxIncome.csv");
 	ofstream EU4_World("EU4_World.csv");*/
