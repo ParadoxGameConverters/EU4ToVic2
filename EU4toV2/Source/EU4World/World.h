@@ -117,7 +117,7 @@ class world: private commonItems::parser
 		std::unique_ptr<Regions> regions;
 		std::unique_ptr<Provinces> provinces;
 		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
-		EU4Diplomacy* diplomacy;
+		EU4Diplomacy* diplomacy = nullptr;
 		std::unique_ptr<EU4::Version> version;
 		double worldWeightSum = 0.0;
 
