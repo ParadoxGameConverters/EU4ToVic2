@@ -44,6 +44,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "ParadoxParserUTF8.h"
 #include <set>
 #include <algorithm>
+#include <exception>
 #include <fstream>
 #include <string>
 
@@ -152,13 +153,13 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 }
 
 
-void EU4::world::verifySave(const string& EU4SaveFileName)
+void EU4::world::verifySave(const std::string& EU4SaveFileName)
 {
-	ifstream saveFile(EU4SaveFileName);
+	std::ifstream saveFile(EU4SaveFileName);
 	if (!saveFile.is_open())
 	{
-		LOG(LogLevel::Error) << "Could not open save! Exiting!";
-		exit(-1);
+		std::runtime_error exception("Could not open save! Exiting!");
+		throw exception;
 	}
 	else
 	{
@@ -166,15 +167,24 @@ void EU4::world::verifySave(const string& EU4SaveFileName)
 		saveFile.get(buffer, 7);
 		if ((buffer[0] == 'P') && (buffer[1] == 'K'))
 		{
-			LOG(LogLevel::Error) << "Saves must be uncompressed to be converted.";
-			exit(-1);
+			std::runtime_error exception("Saves must be uncompressed to be converted.");
+			throw exception;
 		}
-		else if ((buffer[0] = 'E') && (buffer[1] == 'U') && (buffer[2] == '4') && (buffer[3] = 'b') && (buffer[4] == 'i') && (buffer[5] == 'n') && (buffer[6] == 'M'))
-		{
-			LOG(LogLevel::Error) << "Ironman saves cannot be converted.";
-			exit(-1);
+		else if (
+			(buffer[0] == 'E') &&
+			(buffer[1] == 'U') &&
+			(buffer[2] == '4') &&
+			(buffer[3] == 'b') &&
+			(buffer[4] == 'i') &&
+			(buffer[5] == 'n') &&
+			(buffer[6] == 'M')
+		) {
+			std::runtime_error exception("Ironman saves cannot be converted.");
+			throw exception;
 		}
 	}
+
+	saveFile.close();
 }
 
 
