@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -27,6 +27,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "Date.h"
+#include <ostream>
+
+
 
 class EU4Relations;
 
@@ -37,15 +40,17 @@ class V2Relations
 	public:
 		V2Relations(std::string newTag);
 		V2Relations(std::string newTag, EU4Relations* oldRelations);
-		void output(FILE* out) const;
 
 		void		setLevel(int level);
 
 		std::string	getTag()			const { return tag; };
 		int		getRelations()	const { return value; };
 		int		getLevel()		const { return level; };
+
+		friend std::ostream& operator<<(std::ostream& output, const V2Relations& relations);
+
 	private:
-	std::string	tag;
+		std::string	tag;
 		int		value;
 		bool		militaryAccess;
 		date		lastSendDiplomat;
@@ -54,5 +59,8 @@ class V2Relations
 };
 
 
+std::ostream& operator<<(std::ostream&, const V2Relations& relations);
 
-#endif
+
+
+#endif // V2RELATIONS_H_

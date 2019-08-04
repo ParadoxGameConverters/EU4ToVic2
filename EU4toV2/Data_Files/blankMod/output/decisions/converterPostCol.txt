@@ -278,7 +278,7 @@ political_decisions = {
 			2231 = { add_core = STL } #Saint Lucia
 			2229 = { add_core = BBD } #Barbados
 			2233 = { add_core = GRD } #Grenada
-			2234 = { add_core = CUR remove_core = VNZ } #CuraÁao
+			2234 = { add_core = CUR remove_core = VNZ } #Cura√ßao
 			2235 = { add_core = CUR remove_core = VNZ }
 			2409 = { add_core = STV } #Saint Vincent and the Grenadines
 			#Further addictions
@@ -376,6 +376,8 @@ political_decisions = {
 			}
 			capital_scope = { is_core = LSK }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -398,6 +400,7 @@ political_decisions = {
 			}
 			change_tag = LSK
 			capital = 3
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -417,6 +420,8 @@ political_decisions = {
 			}
 			capital_scope = { is_core = QUE }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -442,6 +447,7 @@ political_decisions = {
 			}
 			change_tag = QUE
 			capital = 65
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -462,6 +468,8 @@ political_decisions = {
 			}
 			capital_scope = { is_core = COL }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -487,6 +495,7 @@ political_decisions = {
 			}
 			change_tag = COL
 			capital = 14
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -507,6 +516,8 @@ political_decisions = {
 			}
 			capital_scope = { is_core = NEW }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -532,6 +543,7 @@ political_decisions = {
 			}
 			change_tag = NEW
 			capital = 74
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -542,6 +554,7 @@ political_decisions = {
 			NOT = { exists = CAN }
 			capital_scope = { is_core = CAN }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -566,6 +579,7 @@ political_decisions = {
 			}
 			change_tag = CAN
 			capital = 57
+			set_country_flag = postcol_2
 		}
 		ai_will_do = {
 			factor = 1
@@ -588,6 +602,8 @@ political_decisions = {
 			}
 			capital_scope = { is_core = NEN }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -614,6 +630,7 @@ political_decisions = {
 			}
 			change_tag = NEN
 			capital = 243
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -632,6 +649,8 @@ political_decisions = {
 			}
 			capital_scope = { is_core = MAN }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -659,6 +678,7 @@ political_decisions = {
 			}
 			change_tag = MAN
 			capital = 232
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -674,6 +694,8 @@ political_decisions = {
 			}
 			capital_scope = { is_core = LOU }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -702,6 +724,7 @@ political_decisions = {
 			}
 			change_tag = LOU
 			capital = 139 #New Orleans
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -716,6 +739,8 @@ political_decisions = {
 				tag = MEX
 			}
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -740,6 +765,7 @@ political_decisions = {
 			}
 			change_tag = TEX
 			capital = 133
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -753,6 +779,7 @@ political_decisions = {
 			NOT = { tag = CAN }
 			NOT = { tag = CSA }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -777,6 +804,7 @@ political_decisions = {
 			}
 			change_tag = USA
 			capital = 220
+			set_country_flag = postcol_2
 		}
 		ai_will_do = {
 			factor = 1
@@ -793,6 +821,8 @@ political_decisions = {
 				tag = MEX
 				tag = TEX
 			}
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -817,6 +847,7 @@ political_decisions = {
 			}
 			change_tag = CAL
 			capital = 84
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -827,6 +858,8 @@ political_decisions = {
 			NOT = { exists = CUB }
 			capital_scope = { is_core = CUB }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -851,6 +884,7 @@ political_decisions = {
 			}
 			change_tag = CUB
 			capital = 2209
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -867,6 +901,8 @@ political_decisions = {
 				primary_culture = afro_caribbean
 			}
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -886,12 +922,14 @@ political_decisions = {
 		
 		effect = {
 			prestige = 10
+			2213 = { remove_core = DOM } # To avoid Haiti disappearing
 			any_owned = {
 				add_core = HAI
 			}
 			change_tag = HAI
 			capital = 2213
 			release_vassal = DOM
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -908,6 +946,8 @@ political_decisions = {
 				primary_culture = afro_caribbean
 			}
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -927,12 +967,14 @@ political_decisions = {
 		
 		effect = {
 			prestige = 10
+			2214 = { remove_core = HAI } #Same as for Haiti
 			any_owned = {
 				add_core = DOM
 			}
 			change_tag = DOM
 			capital = 2214
 			release_vassal = HAI
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -954,6 +996,8 @@ political_decisions = {
 			NOT = { tag = MEX }
 			capital_scope = { is_core = COS }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -980,6 +1024,7 @@ political_decisions = {
 			}
 			change_tag = COS
 			capital = 2201
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1001,6 +1046,8 @@ political_decisions = {
 			NOT = { tag = MEX }
 			capital_scope = { is_core = HON }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1027,6 +1074,7 @@ political_decisions = {
 			}
 			change_tag = HON
 			capital = 2193
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1049,6 +1097,8 @@ political_decisions = {
 			NOT = { tag = MEX }
 			capital_scope = { is_core = NIC }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1075,6 +1125,7 @@ political_decisions = {
 			}
 			change_tag = NIC
 			capital = 2199
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1097,6 +1148,8 @@ political_decisions = {
 			NOT = { tag = MEX }
 			capital_scope = { is_core = ELS }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1124,6 +1177,7 @@ political_decisions = {
 			}
 			change_tag = ELS
 			capital = 2191
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1136,6 +1190,8 @@ political_decisions = {
 			NOT = { tag = MEX }
 			capital_scope = { is_core = PNM }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1163,6 +1219,7 @@ political_decisions = {
 			}
 			change_tag = PNM
 			capital = 2204
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1184,6 +1241,8 @@ political_decisions = {
 			NOT = { tag = MEX }
 			capital_scope = { is_core = GUA }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1210,6 +1269,7 @@ political_decisions = {
 			}
 			change_tag = GUA
 			capital = 2186
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1223,6 +1283,7 @@ political_decisions = {
 			}
 			capital_scope = { is_core = UCA }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1247,6 +1308,7 @@ political_decisions = {
 				add_core = UCA
 			}
 			change_tag = UCA
+			set_country_flag = postcol_2
 		}
 		ai_will_do = {
 			factor = 1
@@ -1269,6 +1331,8 @@ political_decisions = {
 			NOT = { tag = ECU }
 			capital_scope = { is_core = ECU }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1296,6 +1360,7 @@ political_decisions = {
 			}
 			change_tag = ECU
 			capital = 2279
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1309,6 +1374,7 @@ political_decisions = {
 			NOT = { tag = UCA }
 			capital_scope = { is_core = MEX }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1336,6 +1402,7 @@ political_decisions = {
 			}
 			change_tag = MEX
 			capital = 2172
+			set_country_flag = postcol_2
 		}
 		ai_will_do = {
 			factor = 1
@@ -1347,6 +1414,7 @@ political_decisions = {
 			NOT = { tag = URU }
 			capital_scope = { is_core = BRZ }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1371,6 +1439,7 @@ political_decisions = {
 			}
 			change_tag = BRZ
 			capital = 2447
+			set_country_flag = postcol_2
 		}
 		ai_will_do = {
 			factor = 1
@@ -1391,6 +1460,8 @@ political_decisions = {
 			NOT = { tag = PBC }
 			capital_scope = { is_core = PEU }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1417,6 +1488,7 @@ political_decisions = {
 			}
 			change_tag = PEU
 			capital = 2295
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1429,6 +1501,8 @@ political_decisions = {
 			NOT = { tag = CHL }
 			capital_scope = { is_core = ARG }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1456,6 +1530,7 @@ political_decisions = {
 			}
 			change_tag = ARG
 			capital = 2348
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1470,6 +1545,8 @@ political_decisions = {
 			NOT = { tag = CHL }
 			capital_scope = { is_core = PRG }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1497,6 +1574,7 @@ political_decisions = {
 			}
 			change_tag = PRG
 			capital = 2339
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1511,6 +1589,8 @@ political_decisions = {
 			NOT = { tag = CHL }
 			capital_scope = { is_core = URU }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1538,6 +1618,7 @@ political_decisions = {
 			}
 			change_tag = URU
 			capital = 2344
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1551,6 +1632,8 @@ political_decisions = {
 			NOT = { tag = BOL }
 			capital_scope = { is_core = CHL }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1600,6 +1683,7 @@ political_decisions = {
 			}
 			change_tag = CHL
 			capital = 2324
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1621,6 +1705,8 @@ political_decisions = {
 			}
 			capital_scope = { is_core = BOL }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1646,6 +1732,7 @@ political_decisions = {
 			}
 			change_tag = BOL
 			capital = 2313
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1666,6 +1753,8 @@ political_decisions = {
 			NOT = { tag = ECU }
 			capital_scope = { is_core = CLM }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1692,6 +1781,7 @@ political_decisions = {
 			}
 			change_tag = CLM
 			capital = 2247
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1713,6 +1803,8 @@ political_decisions = {
 			NOT = { tag = BRZ }
 			capital_scope = { is_core = VNZ }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1739,6 +1831,7 @@ political_decisions = {
 			}
 			change_tag = VNZ
 			capital = 2264
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1749,6 +1842,8 @@ political_decisions = {
 			NOT = { exists = AST }
 			capital_scope = { is_core = AST }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
+			NOT = { tag = FIJ }
 		}	
 		allow = {
 			war = no
@@ -1768,6 +1863,7 @@ political_decisions = {
 				add_core = AST
 			}
 			change_tag = AST
+			set_country_flag = postcol_2
 		}
 		ai_will_do = {
 			factor = 1
@@ -1779,6 +1875,8 @@ political_decisions = {
 			NOT = { exists = NZL }
 			capital_scope = { is_core = NZL }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1796,6 +1894,7 @@ political_decisions = {
 				add_core = NZL
 			}
 			change_tag = NZL
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1811,6 +1910,8 @@ political_decisions = {
 			}
 			capital_scope = { is_core = GUY }
 			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -1833,6 +1934,7 @@ political_decisions = {
 			}
 			change_tag = GUY
 			capital = 2239
+			set_country_flag = postcol_1
 		}
 		ai_will_do = {
 			factor = 1
@@ -1943,8 +2045,8 @@ political_decisions = {
 			}
 			KOK = { primary_culture = kirgiz civilized = yes capital = 1189 government = presidential_dictatorship }
 			1181 = { change_province_name = "Akmolinsk" }
-			1185 = { state_scope = { change_region_name = "éetysu" } }
-			1207 = { change_province_name = "Duöanbe" }
+			1185 = { state_scope = { change_region_name = "≈Ωetysu" } }
+			1207 = { change_province_name = "Du≈°anbe" }
 		}
 	}
 	postcol_CRB = {
@@ -1980,6 +2082,7 @@ political_decisions = {
 				capital = 2238
 				capital = 2226
 			}
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -2031,6 +2134,7 @@ political_decisions = {
 			2237 = { add_core = CRB }
 			2238 = { add_core = CRB }
 			change_tag = CRB
+			set_country_flag = postcol_2
 		}
 		ai_will_do = {
 			factor = 1
@@ -2154,6 +2258,7 @@ political_decisions = {
 			2238 = { add_core = CRB secede_province = CRB }
 			create_vassal = CRB
 			CRB = { set_country_flag = buro_independence }
+			CRB = { set_country_flag = postcol_2 }
 		}
 		ai_will_do = {
 			factor = 1
@@ -2170,6 +2275,7 @@ political_decisions = {
 			NOT = {
 				exists = PBC
 			}
+			NOT = { has_country_flag = postcol_2 }
 		}	
 		allow = {
 			war = no
@@ -2224,6 +2330,7 @@ political_decisions = {
 			}
 
 			change_tag = PBC
+			set_country_flag = postcol_2
 		}
 		
 		ai_will_do = {

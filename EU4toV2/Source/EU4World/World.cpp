@@ -44,6 +44,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "ParadoxParserUTF8.h"
 #include <set>
 #include <algorithm>
+#include <exception>
 #include <fstream>
 #include <string>
 
@@ -114,13 +115,17 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 			loadCountries(theStream, ideaEffectMapper);
 		}
 	);
-	registerKeyword(std::regex("diplomacy"), [this](const std::string& diplomacyText, std::istream& theStream)
-		{
-			auto diplomacyObject = commonItems::convert8859Object(diplomacyText, theStream);
-			loadDiplomacy(diplomacyObject);
-		}
-	);
+	registerKeyword(std::regex("diplomacy"), [this](const std::string& diplomacyText, std::istream& theStream) {
+		auto diplomacyObject = commonItems::convert8859Object(diplomacyText, theStream);
+		loadDiplomacy(diplomacyObject);
+	});
 	registerKeyword(std::regex("[A-Za-z0-9\\_]+"), commonItems::ignoreItem);
+
+	if (!diplomacy)
+	{
+		auto nullDiploObject = std::make_shared<Object>("");
+		diplomacy = std::make_unique<EU4Diplomacy>(nullDiploObject);
+	}
 
 	LOG(LogLevel::Info) << "* Importing EU4 save *";
 	verifySave(EU4SaveFileName);
@@ -152,13 +157,13 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 }
 
 
-void EU4::world::verifySave(const string& EU4SaveFileName)
+void EU4::world::verifySave(const std::string& EU4SaveFileName)
 {
-	ifstream saveFile(EU4SaveFileName);
+	std::ifstream saveFile(EU4SaveFileName);
 	if (!saveFile.is_open())
 	{
-		LOG(LogLevel::Error) << "Could not open save! Exiting!";
-		exit(-1);
+		std::runtime_error exception("Could not open save! Exiting!");
+		throw exception;
 	}
 	else
 	{
@@ -166,15 +171,24 @@ void EU4::world::verifySave(const string& EU4SaveFileName)
 		saveFile.get(buffer, 7);
 		if ((buffer[0] == 'P') && (buffer[1] == 'K'))
 		{
-			LOG(LogLevel::Error) << "Saves must be uncompressed to be converted.";
-			exit(-1);
+			std::runtime_error exception("Saves must be uncompressed to be converted.");
+			throw exception;
 		}
-		else if ((buffer[0] = 'E') && (buffer[1] == 'U') && (buffer[2] == '4') && (buffer[3] = 'b') && (buffer[4] == 'i') && (buffer[5] == 'n') && (buffer[6] == 'M'))
-		{
-			LOG(LogLevel::Error) << "Ironman saves cannot be converted.";
-			exit(-1);
+		else if (
+			(buffer[0] == 'E') &&
+			(buffer[1] == 'U') &&
+			(buffer[2] == '4') &&
+			(buffer[3] == 'b') &&
+			(buffer[4] == 'i') &&
+			(buffer[5] == 'n') &&
+			(buffer[6] == 'M')
+		) {
+			std::runtime_error exception("Ironman saves cannot be converted.");
+			throw exception;
 		}
 	}
+
+	saveFile.close();
 }
 
 
@@ -299,20 +313,17 @@ void EU4::world::loadDiplomacy(const shared_ptr<Object> EU4SaveObj)
 	vector<shared_ptr<Object>> diploObj = EU4SaveObj->getValue("diplomacy");	// the object holding the world's diplomacy
 	if (diploObj.size() > 0)
 	{
-		diplomacy = new EU4Diplomacy(diploObj[0]);
+		diplomacy = std::make_unique<EU4Diplomacy>(diploObj[0]);
 	}
 	else
 	{
-		diplomacy = new EU4Diplomacy;
+		diplomacy = std::make_unique<EU4Diplomacy>();
 	}
 }
 
 
 void EU4::world::determineProvinceWeights()
 {
-	// calculate total province weights
-	worldWeightSum = 0;
-
 	/*ofstream EU4_Production("EU4_Production.csv");
 	ofstream EU4_Tax("EU4_TaxIncome.csv");
 	ofstream EU4_World("EU4_World.csv");*/

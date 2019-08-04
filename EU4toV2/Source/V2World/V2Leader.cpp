@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -38,21 +38,23 @@ V2Leader::V2Leader(const EU4::leader* oldLeader, const V2LeaderTraits& traits)
 }
 
 
-void V2Leader::output(FILE *output) const
+std::ostream& operator<<(std::ostream& output, const V2Leader& leader)
 {
-	fprintf(output, "leader = {\n");
-	fprintf(output, "\tname=\"%s\"\n", name.c_str());
-	fprintf(output, "\tdate=\"%s\"\n", activationDate.toString().c_str());
-	if (isLand)
+	output << "leader = {\n";
+	output << "\tname=\"" << leader.name << "\"\n";
+	output << "\tdate=\"" << leader.activationDate << "\"\n";
+	if (leader.isLand)
 	{
-		fprintf(output, "\ttype=land\n");
+		output << "\ttype=land\n";
 	}
 	else
 	{
-		fprintf(output, "\ttype=sea\n");
+		output << "\ttype=sea\n";
 	}
-	fprintf(output, "\tpersonality=\"%s\"\n", personality.c_str());
-	fprintf(output, "\tbackground=\"%s\"\n", background.c_str());
-	fprintf(output, "}\n");
-	fprintf(output, "\n");
+	output << "\tpersonality=\"" << leader.personality << "\"\n";
+	output << "\tbackground=\"" << leader.background << "\"\n";
+	output << "}\n";
+	output << "\n";
+
+	return output;
 }
