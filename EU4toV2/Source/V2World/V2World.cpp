@@ -1002,17 +1002,17 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 			LOG(LogLevel::Warning) << "Vic2 country " << V2Tag2 << " used in diplomatic agreement doesn't exist";
 			continue;
 		}
-		V2Relations* r1 = country1->second->getRelations(V2Tag2);
+		std::optional<V2Relations> r1 = country1->second->getRelations(V2Tag2);
 		if (!r1)
 		{
-			r1 = new V2Relations(V2Tag2);
-			country1->second->addRelation(r1);
+			r1 = V2Relations(V2Tag2);
+			country1->second->addRelation(*r1);
 		}
-		V2Relations* r2 = country2->second->getRelations(V2Tag1);
+		std::optional<V2Relations> r2 = country2->second->getRelations(V2Tag1);
 		if (!r2)
 		{
-			r2 = new V2Relations(V2Tag1);
-			country2->second->addRelation(r2);
+			r2 = V2Relations(V2Tag1);
+			country2->second->addRelation(*r2);
 		}
 
 		if (itr->type == "is_colonial"|| itr->type == "colony")
