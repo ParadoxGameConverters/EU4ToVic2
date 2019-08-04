@@ -115,18 +115,16 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 			loadCountries(theStream, ideaEffectMapper);
 		}
 	);
-	registerKeyword(std::regex("diplomacy"), [this](const std::string& diplomacyText, std::istream& theStream)
-		{
-			auto diplomacyObject = commonItems::convert8859Object(diplomacyText, theStream);
-			loadDiplomacy(diplomacyObject);
-		}
-	);
+	registerKeyword(std::regex("diplomacy"), [this](const std::string& diplomacyText, std::istream& theStream) {
+		auto diplomacyObject = commonItems::convert8859Object(diplomacyText, theStream);
+		loadDiplomacy(diplomacyObject);
+	});
 	registerKeyword(std::regex("[A-Za-z0-9\\_]+"), commonItems::ignoreItem);
 
-	if (diplomacy == nullptr)
+	if (!diplomacy)
 	{
 		auto nullDiploObject = std::make_shared<Object>("");
-		diplomacy = new EU4Diplomacy(nullDiploObject);
+		diplomacy = std::make_unique<EU4Diplomacy>(nullDiploObject);
 	}
 
 	LOG(LogLevel::Info) << "* Importing EU4 save *";
@@ -315,11 +313,11 @@ void EU4::world::loadDiplomacy(const shared_ptr<Object> EU4SaveObj)
 	vector<shared_ptr<Object>> diploObj = EU4SaveObj->getValue("diplomacy");	// the object holding the world's diplomacy
 	if (diploObj.size() > 0)
 	{
-		diplomacy = new EU4Diplomacy(diploObj[0]);
+		diplomacy = std::make_unique<EU4Diplomacy>(diploObj[0]);
 	}
 	else
 	{
-		diplomacy = new EU4Diplomacy;
+		diplomacy = std::make_unique<EU4Diplomacy>();
 	}
 }
 
