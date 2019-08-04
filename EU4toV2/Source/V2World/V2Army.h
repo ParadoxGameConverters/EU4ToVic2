@@ -1,4 +1,4 @@
-/*Copyright (c) 2014 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -27,6 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "../EU4World/EU4Army.h"
+#include <ostream>
 
 
 
@@ -45,13 +46,14 @@ class V2Regiment // also Ship
 {
 	public:
 		V2Regiment(RegimentCategory rc);
-		void output(FILE* out) const;
 
 		void setName(string _name)		{ name = _name; };
 		void setHome(int newHome)		{ home = newHome; };
 
 		bool					getShip()		const { return isShip; };
 		RegimentCategory	getCategory()	const { return category; };
+
+		friend std::ostream& operator<<(std::ostream& output, const V2Regiment& regiment);
 	private:
 		V2ArmyID				id;
 		string				name;
@@ -62,11 +64,13 @@ class V2Regiment // also Ship
 };
 
 
+std::ostream& operator<<(std::ostream& output, const V2Regiment& regiment);
+
+
 class V2Army // also Navy
 {
 	public:
 		V2Army(EU4Army* oldArmy, map<int, int> leaderIDMap);
-		void					output(FILE* out) const;
 		void					addRegiment(V2Regiment reg);
 
 		void					setLocation(int provinceID)												{ location = provinceID; };
@@ -81,16 +85,21 @@ class V2Army // also Navy
 
 		static V2Army*			makeTestNavy(int location);
 
+		friend std::ostream& operator<<(std::ostream& output, const V2Army& army);
+
 	private:
 		V2Army() {}; // used by makeTestNavy
 		V2ArmyID					id;
 		string					name;
 		int						location;
-		vector<V2Regiment>	regiments;
+		std::vector<V2Regiment>	regiments;
 		double					armyRemainders[num_reg_categories];
 		EU4Army*					sourceArmy; // only valid during conversion
 		bool						isNavy;
 };
+
+
+std::ostream& operator<<(std::ostream& output, const V2Army& army);
 
 
 

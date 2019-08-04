@@ -26,7 +26,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "V2Army.h"
+#include "V2Leader.h"
 #include "V2Localisation.h"
+#include "V2Relations.h"
 #include "V2TechSchools.h"
 #include "Color.h"
 #include "Date.h"
@@ -53,13 +56,10 @@ class IdeaEffectMapper;
 class V2World;
 class V2State;
 class V2Province;
-class V2Relations;
-class V2Army;
 class V2Reforms;
 class V2UncivReforms;
 class V2Factory;
 class V2Creditor;
-class V2Leader;
 class V2LeaderTraits;
 struct V2Party;
 
@@ -114,14 +114,14 @@ class V2Country
 		void								setCommerceTech(double normalizedScore);
 		void								setIndustryTech(double normalizedScore);
 		void								setCultureTech(double normalizedScore);
-		void								addRelation(V2Relations* newRelation);
+		void addRelation(V2Relations& newRelation);
 		void								absorbVassal(V2Country* vassal);
 		void								setColonyOverlord(V2Country* colony);
 		V2Country*						getColonyOverlord();
 		string							getColonialRegion();
 
 		string							getLocalName();
-		V2Relations*					getRelations(string withWhom) const;
+		std::optional<V2Relations> getRelations(std::string withWhom) const;
 		void getNationalValueScores(int& liberty, int& equality, int& order, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		
 		void addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
@@ -159,13 +159,13 @@ class V2Country
 		void			outputElection(FILE*) const;
 		void			addLoan(string creditor, double size, double interest);
 		int addRegimentToArmy(
-			V2Army* army,
+			V2Army& army,
 			RegimentCategory rc,
 			std::map<int, V2Province*> allProvinces,
 			const mappers::ProvinceMapper& provinceMapper
 		);
 		std::vector<int> getPortProvinces(const std::vector<int>& locationCandidates, std::map<int, V2Province*> allProvinces);
-		V2Army*		getArmyForRemainder(RegimentCategory rc);
+		std::optional<V2Army> getArmyForRemainder(RegimentCategory rc);
 		V2Province*	getProvinceForExpeditionaryArmy();
 		string		getRegimentName(RegimentCategory rc);
 
@@ -207,8 +207,8 @@ class V2Country
 		vector< pair<int, int> >	reactionaryIssues;
 		vector< pair<int, int> >	conservativeIssues;
 		vector< pair<int, int> >	liberalIssues;
-		map<string,V2Relations*>	relations;
-		vector<V2Army*>				armies;
+		std::map<std::string, V2Relations>	relations;
+		std::vector<V2Army> armies;
 		V2Reforms*						reforms;
 		string							nationalValue;
 		double							money;
@@ -217,7 +217,7 @@ class V2Country
 		double							bankReserves;
 		double							diploPoints;
 		double							badboy;
-		vector<V2Leader*>				leaders;
+		std::vector<V2Leader> leaders;
 		double							literacy;
 		V2Localisation					localisation;
 		commonItems::Color			color;
