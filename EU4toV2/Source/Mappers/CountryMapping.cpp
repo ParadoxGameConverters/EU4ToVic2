@@ -123,9 +123,6 @@ void mappers::CountryMappings::CreateMappings(
 ) {
 	LOG(LogLevel::Info) << "Creating country mappings";
 
-	generatedV2TagPrefix = 'X';
-	generatedV2TagSuffix = 0;
-
 	set<std::shared_ptr<EU4::Country>> colonialCountries;
 	for (auto EU4Country: srcWorld.getCountries())
 	{
