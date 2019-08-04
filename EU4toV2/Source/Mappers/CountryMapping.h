@@ -140,8 +140,8 @@ namespace mappers
 			std::map<std::string, std::string> EU4TagToV2TagMap;
 			std::map<std::string, std::string> V2TagToEU4TagMap;
 
-			char generatedV2TagPrefix;
-			int generatedV2TagSuffix;
+			char generatedV2TagPrefix = 'X';
+			int generatedV2TagSuffix = 0;
 
 			std::set<std::string> availableFlags;
 	};
