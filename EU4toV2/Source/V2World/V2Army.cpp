@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -86,23 +86,25 @@ V2Regiment::V2Regiment(RegimentCategory rc) : category(rc)
 }
 
 
-void V2Regiment::output(FILE* out) const
+std::ostream& operator<<(std::ostream& output, const V2Regiment& regiment)
 {
-	if (isShip)
+	if (regiment.isShip)
 	{
-		fprintf(out, "\tship = {\n");
+		output << "\tship = {\n";
 	}
 	else
 	{
-		fprintf(out, "\tregiment = {\n");
+		output << "\tregiment = {\n";
 	}
-	fprintf(out, "\t\tname=\"%s\"\n", name.c_str());
-	fprintf(out, "\t\ttype=%s\n", type.c_str());
-	if (!isShip)
+	output << "\t\tname=\"" << regiment.name << "\"\n";
+	output << "\t\ttype=" << regiment.type << "\n";
+	if (!regiment.isShip)
 	{
-		fprintf(out, "\t\thome=%d\n", home);
+		output << "\t\thome=" << regiment.home << "\n";
 	}
-	fprintf(out, "\t}\n");
+	output << "\t}\n";
+
+	return output;
 }
 
 
@@ -117,29 +119,31 @@ V2Army::V2Army(EU4Army* oldArmy, map<int, int> leaderIDMap)
 }
 
 
-void V2Army::output(FILE* out) const
+std::ostream& operator<<(std::ostream& output, const V2Army& army)
 {
-	if (regiments.size() == 0)
+	if (army.regiments.size() == 0)
 	{
-		LOG(LogLevel::Debug) << "Army " << name << " has no regiments after conversion; skipping";
-		return;
+		LOG(LogLevel::Debug) << "Army " << army.name << " has no regiments after conversion; skipping";
+		return output;
 	}
-	if (isNavy)
+	if (army.isNavy)
 	{
-		fprintf(out, "navy = {\n");
+		output << "navy = {\n";
 	}
 	else
 	{
-		fprintf(out, "army = {\n");
+		output << "army = {\n";
 	}
-	fprintf(out, "\tname=\"%s\"\n", name.c_str());
-	fprintf(out, "\tlocation=%d\n", location);
-	for (vector<V2Regiment>::const_iterator itr = regiments.begin(); itr != regiments.end(); ++itr)
+	output << "\tname=\"" << army.name << "\"\n";
+	output << "\tlocation=" << army.location << "\n";
+	for (auto regiment: army.regiments)
 	{
-		itr->output(out);
+		output << regiment;
 	}
-	fprintf(out, "}\n");
-	fprintf(out, "\n");
+	output << "}\n";
+	output << "\n";
+
+	return output;
 }
 
 
