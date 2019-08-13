@@ -47,30 +47,30 @@ std::ostream& operator<<(std::ostream& output, V2Agreement theAgreement)
 void V2Diplomacy::output() const
 {
 	LOG(LogLevel::Debug) << "Writing diplomacy";
-	Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/history/diplomacy");
+	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/diplomacy");
 
-	std::ofstream alliances("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/Alliances.txt");
+	std::ofstream alliances("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Alliances.txt");
 	if (!alliances.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not create alliances history file";
 		exit(-1);
 	}
 
-	std::ofstream guarantees("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/Guarantees.txt");
+	std::ofstream guarantees("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Guarantees.txt");
 	if (!guarantees.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not create guarantees history file";
 		exit(-1);
 	}
 
-	std::ofstream puppetStates("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/PuppetStates.txt");
+	std::ofstream puppetStates("output/" + theConfiguration.getOutputName() + "/history/diplomacy/PuppetStates.txt");
 	if (!puppetStates.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not create puppet states history file";
 		exit(-1);
 	}
 
-	std::ofstream unions("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/Unions.txt");
+	std::ofstream unions("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Unions.txt");
 	if (!unions.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not create unions history file";

@@ -177,12 +177,12 @@ void V2Province::output() const
 {
 	int lastSlash = filename.find_last_of('/');
 	std::string path = filename.substr(0, lastSlash);
-	Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/history/provinces" + path);
+	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces" + path);
 
-	std::ofstream output("Output/" + theConfiguration.getOutputName() + "/history/provinces" + filename);
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/provinces" + filename);
 	if (!output.is_open())
 	{
-		LOG(LogLevel::Error) << "Could not create province history file Output/" << theConfiguration.getOutputName() << "/history/provinces/" << filename << " - " << Utils::GetLastErrorString();
+		LOG(LogLevel::Error) << "Could not create province history file output/" << theConfiguration.getOutputName() << "/history/provinces/" << filename << " - " << Utils::GetLastErrorString();
 		exit(-1);
 	}
 	if (owner != "")
