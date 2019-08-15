@@ -596,6 +596,7 @@ void EU4::world::setLocalisations()
 	{
 		LOG(LogLevel::Debug) << "Reading mod localisation";
 		localisation.ReadFromAllFilesInFolder(itr + "/localisation");
+		localisation.ReadFromAllFilesInFolder(itr + "/localisation/replace");
 	}
 
 	for (auto theCountry: theCountries)
