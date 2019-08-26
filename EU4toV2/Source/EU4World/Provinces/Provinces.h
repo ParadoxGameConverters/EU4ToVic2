@@ -50,6 +50,8 @@ class Provinces: commonItems::parser
 		void determineTotalProvinceWeights(const Configuration& configuration);
 
 	private:
+		void logTotalProvinceWeights() const;
+
 		std::map<int, Province> provinces;
 		double totalProvinceWeights = 0.0;
 };
