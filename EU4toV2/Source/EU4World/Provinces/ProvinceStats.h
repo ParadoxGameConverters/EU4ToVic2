@@ -19,6 +19,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE. */
 
 
+#ifndef PROVINCE_STATS_H
+#define PROVINCE_STATS_H
+
+
 
 namespace EU4
 {
@@ -65,3 +69,7 @@ class ProvinceStats
 };
 
 }
+
+
+
+#endif // PROVINCE_STATS_H
