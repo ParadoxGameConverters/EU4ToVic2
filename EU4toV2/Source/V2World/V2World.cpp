@@ -176,6 +176,8 @@ void V2World::importDefaultPops()
 
 	totalWorldPopulation = 0;
 
+	minorityPopMapper theminorityPopMapper;
+
 	set<string> filenames;
 	Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/", filenames);
 	for (auto filename : filenames)
@@ -1489,7 +1491,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 	LOG(LogLevel::Info) << "Creating pops";
 
 	long		my_totalWorldPopulation = static_cast<long>(0.55 * totalWorldPopulation);
-	double	popWeightRatio = my_totalWorldPopulation / sourceWorld.getWorldWeightSum();
+	double	popWeightRatio = my_totalWorldPopulation / sourceWorld.getTotalProvinceWeights();
 
 	//ofstream output_file("Data.csv");
 
@@ -1519,8 +1521,8 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 	{
 		LOG(LogLevel::Info) << "Total world population: " << totalWorldPopulation;
 	}
-	LOG(LogLevel::Info) << "Total world weight sum: " << sourceWorld.getWorldWeightSum();
-	LOG(LogLevel::Info) << my_totalWorldPopulation << " / " << sourceWorld.getWorldWeightSum();
+	LOG(LogLevel::Info) << "Total world weight sum: " << sourceWorld.getTotalProvinceWeights();
+	LOG(LogLevel::Info) << my_totalWorldPopulation << " / " << sourceWorld.getTotalProvinceWeights();
 	LOG(LogLevel::Info) << "Population per weight point is: " << popWeightRatio;
 
 	long newTotalPopulation = 0;
