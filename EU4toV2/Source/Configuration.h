@@ -56,7 +56,7 @@ class Configuration: commonItems::parser
 		std::string getRemovetype() { return Removetype; }
 		double getLibertyThreshold() { return libertyThreshold; }
 		bool getConvertPopTotals() { return convertPopTotals; }
-		bool getDebug() { return debug; }
+		bool getDebug() const { return debug; }
 
 		const EU4::Version& getEU4Version() const { return version; }
 		date getFirstEU4Date() { return firstEU4Date; }
