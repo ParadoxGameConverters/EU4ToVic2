@@ -299,6 +299,7 @@
     <ClInclude Include="Source\EU4World\Provinces\PopRatio.h" />
     <ClInclude Include="Source\EU4World\Provinces\ProvinceHistory.h" />
     <ClInclude Include="Source\EU4World\Provinces\Provinces.h" />
+    <ClInclude Include="Source\EU4World\Provinces\ProvinceStats.h" />
     <ClInclude Include="Source\EU4World\Regions\Area.h" />
     <ClInclude Include="Source\EU4World\Regions\AreaNames.h" />
     <ClInclude Include="Source\EU4World\Regions\Areas.h" />

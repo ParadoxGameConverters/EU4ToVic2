@@ -532,6 +532,9 @@
     <ClInclude Include="Source\Mappers\Ideas\IdeaEffectMapper.h">
       <Filter>Mappers\Ideas</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\Provinces\ProvinceStats.h">
+      <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">

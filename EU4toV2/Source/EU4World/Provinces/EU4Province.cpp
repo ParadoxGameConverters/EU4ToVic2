@@ -275,19 +275,17 @@ void EU4::Province::determineProvinceWeight()
 		totalWeight = 0;
 	}
 
-	// 0: Goods produced; 1 trade goods price; 2: trade value efficiency; 3: production effiency; 4: trade value; 5: production income
-	// 6: base tax; 7: building tax income 8: building tax eff; 9: total tax income; 10: total_trade_value
-	productionVector.push_back(goods_produced);
-	productionVector.push_back(getTradeGoodPrice());
-	productionVector.push_back(1 + trade_value_eff);
-	productionVector.push_back(1 + production_eff);
-	productionVector.push_back(trade_value);
-	productionVector.push_back(production_income);
-	productionVector.push_back(baseTax);
-	productionVector.push_back(building_tx_income);
-	productionVector.push_back(1 + building_tx_eff);
-	productionVector.push_back(total_tx);
-	productionVector.push_back(total_trade_value);
+	provinceStats.setGoodsProduced(goods_produced);
+	provinceStats.setPrice(getTradeGoodPrice());
+	provinceStats.setTradeEfficiency(1 + trade_value_eff);
+	provinceStats.setProductionEfficiency(1 + production_eff);
+	provinceStats.setTradeValue(trade_value);
+	provinceStats.setTradeValue(production_income);
+	provinceStats.setBaseTax(baseTax);
+	provinceStats.setBuildingsIncome(building_tx_income);
+	provinceStats.setTaxEfficiency(1 + building_tx_eff);
+	provinceStats.setTotalTaxIncome(total_tx);
+	provinceStats.setTotalTradeValue(total_trade_value);
 	//LOG(LogLevel::Info) << "Num: " << num << " TAG: " << ownerString << " Weight: " << totalWeight;
 }
 

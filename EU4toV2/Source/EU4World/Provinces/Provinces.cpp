@@ -87,8 +87,6 @@ void EU4::Provinces::logTotalProvinceWeights() const
 	std::ofstream EU4_Tax("EU4_TaxIncome.csv");
 	std::ofstream EU4_World("EU4_World.csv");
 
-	std::vector<double> provEconVec;
-
 	std::map<std::string, std::vector<double> > world_tag_weights;
 
 	// Heading
@@ -120,31 +118,27 @@ void EU4::Provinces::logTotalProvinceWeights() const
 	EU4_Tax << "BUILD INCOME" << ",";
 	EU4_Tax << "TAX EFF" << ",";
 	EU4_Tax << "TOTAL TAX INCOME\n";
+
 	for (auto& province: provinces)
 	{
-		// 0: Goods produced; 1 trade goods price; 2: trade value efficiency; 3: production effiency; 4: trade value; 5: production income
-		// 6: base tax; 7: building tax income 8: building tax eff; 9: total tax income; 10: total_trade_value
-
-
-		provEconVec = province.second.getProductionVector();
+		ProvinceStats provinceStats = province.second.getProvinceStats();
 		EU4_Production << province.second.getName() << ",";
 		EU4_Production << province.second.getOwnerString() << ",";
 		EU4_Production << province.second.getTradeGoods() << ",";
-		EU4_Production << provEconVec.at(0) << ",";
-		EU4_Production << provEconVec.at(1) << ",";
-		EU4_Production << provEconVec.at(2) << ",";
-		EU4_Production << provEconVec.at(3) << ",";
-		EU4_Production << provEconVec.at(4) << ",";
-		EU4_Production << provEconVec.at(10) << ",";
+		EU4_Production << provinceStats.getGoodsProduced() << ",";
+		EU4_Production << provinceStats.getPrice() << ",";
+		EU4_Production << provinceStats.getTradeEfficiency() << ",";
+		EU4_Production << provinceStats.getProductionEfficiency() << ",";
+		EU4_Production << provinceStats.getTradeValue() << ",";
+		EU4_Production << provinceStats.getTotalTradeValue() << ",";
 		EU4_Production << province.second.getProductionIncome() << ",\n";
-
 
 		EU4_Tax << province.second.getName() << ",";
 		EU4_Tax << province.second.getOwnerString() << ",";
-		EU4_Tax << provEconVec.at(6) << ",";
-		EU4_Tax << provEconVec.at(7) << ",";
-		EU4_Tax << provEconVec.at(8) << ",";
-		EU4_Tax << provEconVec.at(9) << ",\n";
+		EU4_Tax << provinceStats.getBaseTax() << ",";
+		EU4_Tax << provinceStats.getBuildingsIncome() << ",";
+		EU4_Tax << provinceStats.getTaxEfficiency() << ",";
+		EU4_Tax << provinceStats.getTotalTaxIncome() << ",\n";
 
 		std::vector<double> map_values;
 		// Total Base Tax, Total Tax Income, Total Production, Total Buildings, Total Manpower, total province weight //
