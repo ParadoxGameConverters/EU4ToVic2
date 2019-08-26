@@ -30,6 +30,7 @@ THE SOFTWARE. */
 #include "GreatProjects.h"
 #include "PopRatio.h"
 #include "ProvinceHistory.h"
+#include "ProvinceStats.h"
 #include "newParser.h"
 #include <string>
 #include <vector>
@@ -78,7 +79,7 @@ class Province: commonItems::parser
 		double getTotalBuildingWeight() const { return buildingWeight; }
 		double getTotalDevModifier() const { return devModifier; }
 		double getCurrentTradeGoodWeight() const { return tradeGoodWeight; }
-		std::vector<double>	getProductionVector() const { return productionVector; }
+		ProvinceStats getProvinceStats() const { return provinceStats; }
 		std::string getTradeGoods() const { return tradeGoods; }
 
 	private:
@@ -113,7 +114,7 @@ class Province: commonItems::parser
 		double buildingWeight = 0;
 		double tradeGoodWeight = 0;
 		double devModifier = 0;
-		std::vector<double> productionVector;
+		ProvinceStats provinceStats;
 };
 
 }
