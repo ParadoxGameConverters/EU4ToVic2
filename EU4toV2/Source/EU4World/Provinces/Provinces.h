@@ -44,12 +44,14 @@ class Provinces: commonItems::parser
 		Province& getProvince(int provinceNumber);
 
 		auto& getAllProvinces() { return provinces; }
+		double geTotalProvinceWeights() const { return totalProvinceWeights; };
 
 		void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
+		void determineTotalProvinceWeights(const Configuration& configuration);
 
 	private:
 		std::map<int, Province> provinces;
-
+		double totalProvinceWeights = 0.0;
 };
 
 }

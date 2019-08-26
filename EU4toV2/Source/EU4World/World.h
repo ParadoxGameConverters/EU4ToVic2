@@ -67,7 +67,7 @@ class world: private commonItems::parser
 		const EU4::Version& getVersion() const { return *version; };
 		std::map<std::string, std::shared_ptr<EU4::Country>> getCountries() const { return theCountries; };
 		vector<EU4Agreement> getDiplomaticAgreements() const { return diplomacy->getAgreements(); };
-		double getWorldWeightSum() const { return worldWeightSum; };
+		double getTotalProvinceWeights() const { return provinces->geTotalProvinceWeights(); };
 		const Regions& getRegions() const { return *regions; }
 		const Religions& getAllReligions() const { return theReligions; }
 
@@ -87,7 +87,6 @@ class world: private commonItems::parser
 		void loadRevolutionTarget();
 		void addProvinceInfoToCountries();
 		void loadDiplomacy(const shared_ptr<Object> EU4SaveObj);
-		void determineProvinceWeights();
 
 		void loadRegions();
 		void loadEU4RegionsNewVersion();
@@ -119,7 +118,6 @@ class world: private commonItems::parser
 		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
 		std::unique_ptr<EU4Diplomacy> diplomacy;
 		std::unique_ptr<EU4::Version> version;
-		double worldWeightSum = 0.0;
 
 		std::string revolutionTargetString;
 
