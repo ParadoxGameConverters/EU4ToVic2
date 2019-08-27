@@ -264,6 +264,9 @@
     <ClCompile Include="Source\Mappers\Ideas\IdeaEffectMapper.cpp">
       <Filter>Mappers\Ideas</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Buildings\BuildingModifiers.cpp">
+      <Filter>EU4World\Buildings</Filter>
+    </ClCompile>
     <ClCompile Include="Source\EU4World\Provinces\ProvinceBuildings.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
@@ -535,6 +538,9 @@
     <ClInclude Include="Source\EU4World\Buildings\BuildingModifiers.h">
       <Filter>EU4World\Buildings</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\Provinces\ProvinceBuildings.h">
+      <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -569,6 +575,9 @@
     </Filter>
     <Filter Include="Mappers\Ideas">
       <UniqueIdentifier>{7850fd15-b418-4718-b0f5-e2a1ea86e33a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Buildings">
+      <UniqueIdentifier>{fde1ad41-feef-4ca6-b1f2-d36c2a0849d9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

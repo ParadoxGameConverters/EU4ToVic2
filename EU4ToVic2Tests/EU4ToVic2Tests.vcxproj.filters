@@ -230,6 +230,12 @@
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp">
       <Filter>ConverterFiles\Helpers</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Buildings\BuildingModifiers.cpp">
+      <Filter>ConverterFiles\EU4World\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\BuildingModifiersTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceBuildings.cpp">
       <Filter>ConverterFiles\EU4World\Provinces</Filter>
     </ClCompile>
@@ -288,6 +294,9 @@
     </Filter>
     <Filter Include="HelpersTests">
       <UniqueIdentifier>{990552e6-b585-4a97-8e3c-63c6099e25e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Buildings">
+      <UniqueIdentifier>{ac60ec08-692d-4210-9da2-d92743e58cf2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
