@@ -219,9 +219,6 @@
     <ClCompile Include="Source\EU4World\Religions\Religions.cpp">
       <Filter>EU4World\Religions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Provinces\Buildings.cpp">
-      <Filter>EU4World\Provinces</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Provinces\GreatProjects.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
@@ -266,6 +263,9 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\Ideas\IdeaEffectMapper.cpp">
       <Filter>Mappers\Ideas</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Provinces\ProvinceBuildings.cpp">
+      <Filter>EU4World\Provinces</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -484,9 +484,6 @@
     <ClInclude Include="Source\EU4World\Religions\Religions.h">
       <Filter>EU4World\Religions</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\Provinces\Buildings.h">
-      <Filter>EU4World\Provinces</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\GreatProjects.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
@@ -534,6 +531,9 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\ProvinceStats.h">
       <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Buildings\BuildingModifiers.h">
+      <Filter>EU4World\Buildings</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

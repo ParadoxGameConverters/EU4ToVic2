@@ -20,8 +20,8 @@ THE SOFTWARE. */
 
 
 
-#ifndef BUILDINGS_H_
-#define BUILDINGS_H_
+#ifndef PROVINCE_BUILDINGS_H_
+#define PROVINCE_BUILDINGS_H_
 
 
 
@@ -34,10 +34,10 @@ THE SOFTWARE. */
 namespace EU4
 {
 
-class Buildings: commonItems::parser
+class ProvinceBuildings: commonItems::parser
 {
 	public:
-		Buildings(std::istream& theStream);
+		ProvinceBuildings(std::istream& theStream);
 
 		bool hasBuilding(const std::string& building) const { return buildings.count(building) > 0; }
 
@@ -49,4 +49,4 @@ class Buildings: commonItems::parser
 
 
 
-#endif // BUILDINGS_H_
+#endif // PROVINCE_BUILDINGS_H_

@@ -26,9 +26,9 @@ THE SOFTWARE. */
 
 
 #include "Date.h"
-#include "Buildings.h"
 #include "GreatProjects.h"
 #include "PopRatio.h"
+#include "ProvinceBuildings.h"
 #include "ProvinceHistory.h"
 #include "ProvinceStats.h"
 #include "newParser.h"
@@ -99,7 +99,7 @@ class Province: commonItems::parser
 		bool hadOriginalColoniser = false;
 
 		std::unique_ptr<EU4::ProvinceHistory> provinceHistory;
-		std::unique_ptr<EU4::Buildings> buildings;
+		std::unique_ptr<EU4::ProvinceBuildings> buildings;
 		std::unique_ptr<EU4::GreatProjects> greatProjects;
 
 		// province attributes for weights
