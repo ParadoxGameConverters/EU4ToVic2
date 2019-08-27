@@ -158,14 +158,8 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp">
       <Filter>ConverterFiles\EU4World\Religions</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\BuildingsTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="EU4WorldTests\GreatProjectsTests.cpp">
       <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\Buildings.cpp">
-      <Filter>ConverterFiles\EU4World\Provinces</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\GreatProjects.cpp">
       <Filter>ConverterFiles\EU4World\Provinces</Filter>
@@ -235,6 +229,12 @@
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp">
       <Filter>ConverterFiles\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceBuildings.cpp">
+      <Filter>ConverterFiles\EU4World\Provinces</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ProvinceBuildingsTests.cpp">
+      <Filter>EU4WorldTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

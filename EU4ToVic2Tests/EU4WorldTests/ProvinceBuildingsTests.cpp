@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/Provinces/Buildings.h"
+#include "../EU4toV2/Source/EU4World/Provinces/ProvinceBuildings.h"
 #include <sstream>
 
 
@@ -32,7 +32,7 @@ TEST(EU4World_BuildingsTests, nonMatchingBuildingReturnsFalse)
 	std::stringstream input;
 	input << "={}";
 
-	EU4::Buildings theBuildings(input);
+	EU4::ProvinceBuildings theBuildings(input);
 	ASSERT_FALSE(theBuildings.hasBuilding("theBuilding"));
 }
 
@@ -44,6 +44,6 @@ TEST(EU4World_BuildingsTests, matchingBuildingReturnsTrue)
 	input << "	theBuilding=yes\n";
 	input << "}";
 
-	EU4::Buildings theBuildings(input);
+	EU4::ProvinceBuildings theBuildings(input);
 	ASSERT_TRUE(theBuildings.hasBuilding("theBuilding"));
 }

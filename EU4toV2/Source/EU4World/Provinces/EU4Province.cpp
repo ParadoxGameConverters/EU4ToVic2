@@ -93,7 +93,7 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 		provinceHistory = std::make_unique<ProvinceHistory>(theStream);
 	});
 	registerKeyword(std::regex("buildings"), [this](const std::string& unused, std::istream& theStream) {
-		buildings = std::make_unique<Buildings>(theStream);
+		buildings = std::make_unique<ProvinceBuildings>(theStream);
 	});
 	registerKeyword(std::regex("great_projects"), [this](const std::string& unused, std::istream& theStream) {
 		greatProjects = std::make_unique<GreatProjects>(theStream);
