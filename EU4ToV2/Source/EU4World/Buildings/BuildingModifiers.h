@@ -39,7 +39,9 @@ class BuildingModifiers: commonItems::parser
 	public:
 		BuildingModifiers(std::istream& theStream);
 
-		double getModifierAmount(const std::string& modifier);
+		double getModifierAmount(const std::string& modifier) const;
+
+		const std::map<std::string, double>& getAllModifiers() const { return modifiers; }
 
 	private:
 		std::map<std::string, double> modifiers;
