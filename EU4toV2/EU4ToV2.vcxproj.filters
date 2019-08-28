@@ -270,6 +270,9 @@
     <ClCompile Include="Source\EU4World\Provinces\ProvinceBuildings.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Buildings\Building.cpp">
+      <Filter>EU4World\Buildings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -540,6 +543,9 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\ProvinceBuildings.h">
       <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Buildings\Building.h">
+      <Filter>EU4World\Buildings</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
