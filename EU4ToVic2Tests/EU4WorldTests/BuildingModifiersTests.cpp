@@ -27,12 +27,35 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+TEST(EU4World_BuildingModifiersTests, modifiersDefaultToEmpty)
+{
+	std::stringstream input;
+	EU4::BuildingModifiers theModifiers(input);
+
+	ASSERT_EQ(theModifiers.getAllModifiers().size(), 0);
+}
+
+
 TEST(EU4World_BuildingModifiersTests, nonExistentModifierHasAmountOfZero)
 {
 	std::stringstream input;
 
 	EU4::BuildingModifiers theModifiers(input);
 	ASSERT_EQ(theModifiers.getModifierAmount("non_existent_modifier"), 0);
+}
+
+
+TEST(EU4World_BuildingModifiersTests, modifiercanBeAdded)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "\tmodifier = 0.5\n";
+	input << "}";
+
+	EU4::BuildingModifiers theModifiers(input);
+
+	ASSERT_EQ(theModifiers.getAllModifiers().size(), 1);
+	ASSERT_EQ(theModifiers.getAllModifiers().at("modifier"), 0.5);
 }
 
 

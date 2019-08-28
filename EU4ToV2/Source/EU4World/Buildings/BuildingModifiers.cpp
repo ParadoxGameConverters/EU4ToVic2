@@ -45,7 +45,7 @@ EU4::BuildingModifiers::BuildingModifiers(std::istream& theStream)
 }
 
 
-double EU4::BuildingModifiers::getModifierAmount(const std::string& theModifier)
+double EU4::BuildingModifiers::getModifierAmount(const std::string& theModifier) const
 {
 	if (modifiers.count(theModifier) > 0)
 	{
