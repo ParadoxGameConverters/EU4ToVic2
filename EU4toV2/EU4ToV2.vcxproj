@@ -181,6 +181,7 @@
     <ClCompile Include="..\common_items\WinUtils.cpp" />
     <ClCompile Include="Source\Configuration.cpp" />
     <ClCompile Include="Source\EU4toV2Converter.cpp" />
+    <ClCompile Include="Source\EU4World\Buildings\Building.cpp" />
     <ClCompile Include="Source\EU4World\Buildings\BuildingModifiers.cpp" />
     <ClCompile Include="Source\EU4World\ColonialRegions.cpp" />
     <ClCompile Include="Source\EU4World\Continents.cpp" />
@@ -276,6 +277,7 @@
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\CustomFlagMapper.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
+    <ClInclude Include="Source\EU4World\Buildings\Building.h" />
     <ClInclude Include="Source\EU4World\Buildings\BuildingModifiers.h" />
     <ClInclude Include="Source\EU4World\ColonialRegions.h" />
     <ClInclude Include="Source\EU4World\Continents.h" />
