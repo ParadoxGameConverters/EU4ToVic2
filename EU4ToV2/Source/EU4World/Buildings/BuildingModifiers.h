@@ -37,6 +37,13 @@ namespace EU4
 class BuildingModifiers: commonItems::parser
 {
 	public:
+		BuildingModifiers() = default;
+		~BuildingModifiers() = default;
+		BuildingModifiers(const BuildingModifiers&) = default;
+		BuildingModifiers(BuildingModifiers&&) = default;
+		BuildingModifiers& operator=(const BuildingModifiers&) = default;
+		BuildingModifiers& operator=(BuildingModifiers&&) = default;
+
 		BuildingModifiers(std::istream& theStream);
 
 		double getModifierAmount(const std::string& modifier) const;

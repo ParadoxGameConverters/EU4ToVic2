@@ -248,6 +248,12 @@
     <ClCompile Include="EU4WorldTests\BuildingTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Buildings\Buildings.cpp">
+      <Filter>ConverterFiles\EU4World\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\BuildingsTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">

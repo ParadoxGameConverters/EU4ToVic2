@@ -183,6 +183,7 @@
     <ClCompile Include="Source\EU4toV2Converter.cpp" />
     <ClCompile Include="Source\EU4World\Buildings\Building.cpp" />
     <ClCompile Include="Source\EU4World\Buildings\BuildingModifiers.cpp" />
+    <ClCompile Include="Source\EU4World\Buildings\Buildings.cpp" />
     <ClCompile Include="Source\EU4World\ColonialRegions.cpp" />
     <ClCompile Include="Source\EU4World\Continents.cpp" />
     <ClCompile Include="Source\EU4World\Countries.cpp" />
@@ -279,6 +280,7 @@
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\EU4World\Buildings\Building.h" />
     <ClInclude Include="Source\EU4World\Buildings\BuildingModifiers.h" />
+    <ClInclude Include="Source\EU4World\Buildings\Buildings.h" />
     <ClInclude Include="Source\EU4World\ColonialRegions.h" />
     <ClInclude Include="Source\EU4World\Continents.h" />
     <ClInclude Include="Source\EU4World\Countries.h" />

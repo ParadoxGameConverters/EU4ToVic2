@@ -28,7 +28,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "newParser.h"
 #include "BuildingModifiers.h"
-#include <memory>
 
 
 
@@ -41,11 +40,11 @@ class Building: commonItems::parser
 		Building(std::istream& theStream);
 
 		double getCost() const { return cost; }
-		const BuildingModifiers& getBuildingModifiers() const { return *modifiers; }
+		const BuildingModifiers& getBuildingModifiers() const { return modifiers; }
 
 	private:
 		double cost = 0.0;
-		std::unique_ptr<BuildingModifiers> modifiers;
+		BuildingModifiers modifiers;
 
 };
 

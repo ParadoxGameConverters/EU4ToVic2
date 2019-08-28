@@ -21,22 +21,34 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#ifndef BUILDINGS_H
+#define BUILDINGS_H
+
+
+
+#include "newParser.h"
 #include "Building.h"
-#include "ParserHelpers.h"
-#include <sstream>
+#include <map>
+#include <optional>
 
 
 
-EU4::Building::Building(std::istream& theStream)
+namespace EU4
 {
-	registerKeyword(std::regex("cost"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble costDouble(theStream);
-		cost = costDouble.getDouble();
-	});
-	registerKeyword(std::regex("modifier"), [this](const std::string& unused, std::istream& theStream) {
-		modifiers = BuildingModifiers(theStream);
-	});
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
 
-	parseStream(theStream);
+class Buildings: commonItems::parser
+{
+	public:
+		Buildings(std::istream& theStream);
+
+		std::optional<Building> getBuilding(const std::string& buildingName) const;
+
+	private:
+		std::map<std::string, Building> buildings;
+};
+
 }
+
+
+
+#endif // BUILDINGS_H
