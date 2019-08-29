@@ -53,7 +53,7 @@ TEST(EU4World_BuildingTests, modifiersDefaultToEmpty)
 	std::stringstream input;
 	EU4::Building theBuilding(input);
 
-	ASSERT_EQ(theBuilding.getBuildingModifiers().getAllModifiers().size(), 0);
+	ASSERT_EQ(theBuilding.getModifier().getAllEffects().size(), 0);
 }
 
 
@@ -68,9 +68,9 @@ TEST(EU4World_BuildingTests, modifiersCanBeAdded)
 	input << "}";
 	EU4::Building theBuilding(input);
 
-	ASSERT_EQ(theBuilding.getBuildingModifiers().getAllModifiers().size(), 2);
-	ASSERT_EQ(theBuilding.getBuildingModifiers().getAllModifiers().at("aModifier"), 0.5);
-	ASSERT_EQ(theBuilding.getBuildingModifiers().getAllModifiers().at("anotherModifier"), 0.75);
+	ASSERT_EQ(theBuilding.getModifier().getAllEffects().size(), 2);
+	ASSERT_EQ(theBuilding.getModifier().getAllEffects().at("aModifier"), 0.5);
+	ASSERT_EQ(theBuilding.getModifier().getAllEffects().at("anotherModifier"), 0.75);
 }
 
 

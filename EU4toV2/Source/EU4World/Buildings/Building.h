@@ -26,8 +26,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "../Modifiers/Modifier.h"
 #include "newParser.h"
-#include "BuildingModifiers.h"
 
 
 
@@ -40,13 +40,13 @@ class Building: commonItems::parser
 		Building(std::istream& theStream);
 
 		double getCost() const { return cost; }
-		const BuildingModifiers& getBuildingModifiers() const { return modifiers; }
+		const Modifier& getModifier() const { return modifier; }
 		bool isManufactory() { return manufactory; }
 
 	private:
 		double cost = 0.0;
 		bool manufactory = false;
-		BuildingModifiers modifiers;
+		Modifier modifier;
 
 };
 

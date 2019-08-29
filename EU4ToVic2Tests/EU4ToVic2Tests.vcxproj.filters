@@ -230,12 +230,6 @@
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp">
       <Filter>ConverterFiles\Helpers</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Buildings\BuildingModifiers.cpp">
-      <Filter>ConverterFiles\EU4World\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\BuildingModifiersTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceBuildings.cpp">
       <Filter>ConverterFiles\EU4World\Provinces</Filter>
     </ClCompile>
@@ -252,6 +246,12 @@
       <Filter>ConverterFiles\EU4World\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\BuildingsTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp">
+      <Filter>ConverterFiles\EU4World\Modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ModifierTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
   </ItemGroup>
@@ -309,6 +309,9 @@
     </Filter>
     <Filter Include="ConverterFiles\EU4World\Buildings">
       <UniqueIdentifier>{ac60ec08-692d-4210-9da2-d92743e58cf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Modifiers">
+      <UniqueIdentifier>{b50f49fb-ec18-4d14-aac1-f0ff92d9acbf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
