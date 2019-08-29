@@ -39,7 +39,7 @@ namespace EU4
 class Provinces: commonItems::parser
 {
 	public:
-		Provinces(std::istream& theStream);
+		Provinces(std::istream& theStream, const Buildings& buildingTypes);
 
 		Province& getProvince(int provinceNumber);
 

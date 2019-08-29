@@ -21,6 +21,7 @@ THE SOFTWARE. */
 
 
 #include "Provinces.h"
+#include "../Buildings/Buildings.h"
 #include "Log.h"
 #include <fstream>
 #include <stdexcept>
@@ -29,10 +30,13 @@ THE SOFTWARE. */
 
 
 
-EU4::Provinces::Provinces(std::istream& theStream)
+EU4::Provinces::Provinces(std::istream& theStream, const Buildings& buildingTypes)
 {
-	registerKeyword(std::regex("-[0-9]+"), [this](const std::string& numberString, std::istream& theStream) {
-		Province newProvince(numberString, theStream);
+	registerKeyword(
+		std::regex("-[0-9]+"),
+		[this, buildingTypes](const std::string& numberString, std::istream& theStream)
+	{
+		Province newProvince(numberString, theStream, buildingTypes);
 		provinces.insert(std::make_pair(newProvince.getNum(), std::move(newProvince)));
 	});
 	parseStream(theStream);
