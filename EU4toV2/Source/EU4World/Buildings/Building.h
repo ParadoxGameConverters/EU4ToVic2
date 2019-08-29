@@ -41,9 +41,11 @@ class Building: commonItems::parser
 
 		double getCost() const { return cost; }
 		const BuildingModifiers& getBuildingModifiers() const { return modifiers; }
+		bool isManufactory() { return manufactory; }
 
 	private:
 		double cost = 0.0;
+		bool manufactory = false;
 		BuildingModifiers modifiers;
 
 };

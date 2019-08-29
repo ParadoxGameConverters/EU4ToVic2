@@ -72,3 +72,28 @@ TEST(EU4World_BuildingTests, modifiersCanBeAdded)
 	ASSERT_EQ(theBuilding.getBuildingModifiers().getAllModifiers().at("aModifier"), 0.5);
 	ASSERT_EQ(theBuilding.getBuildingModifiers().getAllModifiers().at("anotherModifier"), 0.75);
 }
+
+
+TEST(EU4World_BuildingTests, manufacturyDefaultsToFalse)
+{
+	std::stringstream input;
+	EU4::Building theBuilding(input);
+
+	ASSERT_FALSE(theBuilding.isManufactory());
+}
+
+
+TEST(EU4World_BuildingTests, manufacturyCanBeSet)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "\tmanufactory = {\n";
+	input << "\t\tnaval_supplies\n";
+	input << "\t\tfish\n";
+	input << "\t\tsalt\n";
+	input << "\t}\n";
+	input << "}";
+	EU4::Building theBuilding(input);
+
+	ASSERT_TRUE(theBuilding.isManufactory());
+}
