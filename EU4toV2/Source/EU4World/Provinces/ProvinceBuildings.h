@@ -41,6 +41,8 @@ class ProvinceBuildings: commonItems::parser
 
 		bool hasBuilding(const std::string& building) const { return buildings.count(building) > 0; }
 
+		std::set<std::string> getBuildings() const { return buildings; }
+
 	private:
 		std::set<std::string> buildings;
 };

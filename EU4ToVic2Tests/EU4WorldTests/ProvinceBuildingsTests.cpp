@@ -27,6 +27,28 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+TEST(EU4World_BuildingsTests, buildingsDefaultsToEmpty)
+{
+	std::stringstream input;
+	input << "={}";
+
+	EU4::ProvinceBuildings theBuildings(input);
+	ASSERT_EQ(theBuildings.getBuildings().size(), 0);
+}
+
+
+TEST(EU4World_BuildingsTests, buildingsCanBeAdded)
+{
+	std::stringstream input;
+	input << "={\n";
+	input << "	theBuilding=yes\n";
+	input << "}";
+
+	EU4::ProvinceBuildings theBuildings(input);
+	ASSERT_EQ(theBuildings.getBuildings().count("theBuilding"), 1);
+}
+
+
 TEST(EU4World_BuildingsTests, nonMatchingBuildingReturnsFalse)
 {
 	std::stringstream input;
