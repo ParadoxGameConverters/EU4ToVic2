@@ -521,6 +521,36 @@ TEST(EU4World_ProvinceTests, hasGreatProjectFindsProjects)
 }
 
 
+TEST(EU4World_ProvinceTests, hasModifierDefaultsToFalse)
+{
+	std::stringstream input;
+	input << "={\n";
+	input << "}";
+
+	std::stringstream buildingsInput;
+	EU4::Buildings buildings(buildingsInput);
+
+	EU4::Province theProvince("-1", input, buildings);
+	ASSERT_FALSE(theProvince.hasModifier("center_of_trade_modifier"));
+}
+
+TEST(EU4World_ProvinceTests, hasModifierFindsModifiers)
+{
+	std::stringstream input;
+	input << "={\n";
+	input << "\tmodifier={\n";
+	input << "\t\tmodifier=\"center_of_trade_modifier\"\n";
+	input << "\t}\n";
+	input << "}";
+
+	std::stringstream buildingsInput;
+	EU4::Buildings buildings(buildingsInput);
+
+	EU4::Province theProvince("-1", input, buildings);
+	ASSERT_TRUE(theProvince.hasModifier("center_of_trade_modifier"));
+}
+
+
 TEST(EU4World_ProvinceTests, getCulturePercentDefaultsToZero)
 {
 	std::stringstream input;

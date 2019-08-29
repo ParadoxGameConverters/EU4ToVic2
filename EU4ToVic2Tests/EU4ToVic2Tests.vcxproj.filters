@@ -257,8 +257,14 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp">
       <Filter>ConverterFiles\EU4World\Modifiers</Filter>
     </ClCompile>
-    <ClCompile Include="ModifiersTests.cpp">
+    <ClCompile Include="EU4WorldTests\ModifiersTests.cpp">
       <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ProvinceModifierTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceModifier.cpp">
+      <Filter>ConverterFiles\EU4World\Provinces</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

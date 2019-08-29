@@ -279,6 +279,9 @@
     <ClCompile Include="Source\EU4World\Modifiers\Modifiers.cpp">
       <Filter>EU4World\Modifiers</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Provinces\ProvinceModifier.cpp">
+      <Filter>EU4World\Provinces</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -558,6 +561,9 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Modifiers\Modifiers.h">
       <Filter>EU4World\Modifiers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Provinces\ProvinceModifier.h">
+      <Filter>EU4World\Provinces</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
