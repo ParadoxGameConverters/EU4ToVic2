@@ -34,7 +34,7 @@ EU4::Building::Building(std::istream& theStream)
 		cost = costDouble.getDouble();
 	});
 	registerKeyword(std::regex("modifier"), [this](const std::string& unused, std::istream& theStream) {
-		modifiers = BuildingModifiers(theStream);
+		modifier = Modifier(theStream);
 	});
 	registerKeyword(std::regex("manufactory"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::ignoreItem(unused, theStream);

@@ -22,71 +22,71 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/Buildings/BuildingModifiers.h"
+#include "../EU4toV2/Source/EU4World/Modifiers/Modifier.h"
 #include <sstream>
 
 
 
-TEST(EU4World_BuildingModifiersTests, modifiersDefaultToEmpty)
+TEST(EU4World_ModifierTests, effectDefaultToEmpty)
 {
 	std::stringstream input;
-	EU4::BuildingModifiers theModifiers(input);
+	EU4::Modifier theModifier(input);
 
-	ASSERT_EQ(theModifiers.getAllModifiers().size(), 0);
+	ASSERT_EQ(theModifier.getAllEffects().size(), 0);
 }
 
 
-TEST(EU4World_BuildingModifiersTests, nonExistentModifierHasAmountOfZero)
+TEST(EU4World_ModifierTests, nonExistentEffectHasAmountOfZero)
 {
 	std::stringstream input;
 
-	EU4::BuildingModifiers theModifiers(input);
-	ASSERT_EQ(theModifiers.getModifierAmount("non_existent_modifier"), 0);
+	EU4::Modifier theModifier(input);
+	ASSERT_EQ(theModifier.getEffectAmount("non_existent_modifier"), 0);
 }
 
 
-TEST(EU4World_BuildingModifiersTests, modifiercanBeAdded)
+TEST(EU4World_ModifierTests, effectcanBeAdded)
 {
 	std::stringstream input;
 	input << "= {\n";
-	input << "\tmodifier = 0.5\n";
+	input << "\teffect = 0.5\n";
 	input << "}";
 
-	EU4::BuildingModifiers theModifiers(input);
+	EU4::Modifier theModifier(input);
 
-	ASSERT_EQ(theModifiers.getAllModifiers().size(), 1);
-	ASSERT_EQ(theModifiers.getAllModifiers().at("modifier"), 0.5);
+	ASSERT_EQ(theModifier.getAllEffects().size(), 1);
+	ASSERT_EQ(theModifier.getAllEffects().at("effect"), 0.5);
 }
 
 
-TEST(EU4World_BuildingModifiersTests, modifierAmountsAreReturned)
+TEST(EU4World_ModifierTests, effectAmountsAreReturned)
 {
 	std::stringstream input;
 	input << "= {\n";
-	input << "\tmodifier = 0.5\n";
+	input << "\teffect = 0.5\n";
 	input << "}";
 
-	EU4::BuildingModifiers theModifiers(input);
-	ASSERT_EQ(theModifiers.getModifierAmount("modifier"), 0.5);
+	EU4::Modifier theModifier(input);
+	ASSERT_EQ(theModifier.getEffectAmount("effect"), 0.5);
 }
 
 
-TEST(EU4World_BuildingModifiersTests, multipleOfSameModifierIsLogged)
+TEST(EU4World_ModifierTests, multipleOfSameEffectIsLogged)
 {
 	std::stringstream input;
 	input << "= {\n";
-	input << "\tmodifier = 0.5\n";
-	input << "\tmodifier = 0.75\n";
+	input << "\ttheEffect = 0.5\n";
+	input << "\ttheEffect = 0.75\n";
 	input << "}";
 
 	std::stringstream buffer;
 	std::streambuf* sbuf = std::cout.rdbuf();
 	std::cout.rdbuf(buffer.rdbuf());
-	EU4::BuildingModifiers theModifiers(input);
+	EU4::Modifier theModifier(input);
 	std::cout.rdbuf(sbuf);
 	
 	std::stringstream expectedLog;
-	expectedLog << "Multiple instances of modifier modifier in building.\n";
+	expectedLog << "Multiple instances of effect theEffect in modifier.\n";
 
 	ASSERT_EQ(expectedLog.str(), buffer.str());
 }

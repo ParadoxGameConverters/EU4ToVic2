@@ -20,39 +20,42 @@ THE SOFTWARE. */
 
 
 
-#include "BuildingModifiers.h"
-#include "ParserHelpers.h"
-#include "Log.h"
+#ifndef MODIFIER_H
+#define MODIFIER_H
 
 
 
-EU4::BuildingModifiers::BuildingModifiers(std::istream& theStream)
+#include "newParser.h"
+#include <map>
+#include <string>
+
+
+
+namespace EU4
 {
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& modifier, std::istream& theStream) {
-		commonItems::singleDouble amount(theStream);
 
-		if (modifiers.count(modifier) == 0)
-		{
-			modifiers.insert(std::make_pair(modifier, amount.getDouble()));
-		}
-		else
-		{
-			LOG(LogLevel::Warning) << "Multiple instances of modifier " << modifier << " in building.";
-		}
-	});
+class Modifier: commonItems::parser
+{
+	public:
+		Modifier() = default;
+		~Modifier() = default;
+		Modifier(const Modifier&) = default;
+		Modifier(Modifier&&) = default;
+		Modifier& operator=(const Modifier&) = default;
+		Modifier& operator=(Modifier&&) = default;
 
-	parseStream(theStream);
+		Modifier(std::istream& theStream);
+
+		double getEffectAmount(const std::string& modifier) const;
+
+		const std::map<std::string, double>& getAllEffects() const { return effects; }
+
+	private:
+		std::map<std::string, double> effects;
+};
+
 }
 
 
-double EU4::BuildingModifiers::getModifierAmount(const std::string& theModifier) const
-{
-	if (modifiers.count(theModifier) > 0)
-	{
-		return modifiers.at(theModifier);
-	}
-	else
-	{
-		return 0;
-	}
-}
+
+#endif // MODIFIER_H

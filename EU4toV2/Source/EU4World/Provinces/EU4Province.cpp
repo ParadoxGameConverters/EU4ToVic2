@@ -586,23 +586,23 @@ std::vector<double> EU4::Province::getProvBuildingWeight(const Buildings& buildi
 				{
 					manufactoriesValue += 1.0;
 				}
-				for (auto modifier : theBuilding->getBuildingModifiers().getAllModifiers())
+				for (auto effect: theBuilding->getModifier().getAllEffects())
 				{
-					if (modifier.first == "local_manpower_modifier")
+					if (effect.first == "local_manpower_modifier")
 					{
-						manpowerModifier += modifier.second;
+						manpowerModifier += effect.second;
 					}
-					else if (modifier.first == "local_tax_modifier")
+					else if (effect.first == "local_tax_modifier")
 					{
-						taxModifier += modifier.second;
+						taxModifier += effect.second;
 					}
-					else if (modifier.first == "local_production_efficiency")
+					else if (effect.first == "local_production_efficiency")
 					{
-						productionEfficiency += modifier.second;
+						productionEfficiency += effect.second;
 					}
-					else if (modifier.first == "province_trade_power_modifier")
+					else if (effect.first == "province_trade_power_modifier")
 					{
-						tradePower += modifier.second;
+						tradePower += effect.second;
 					}
 				}
 			}
