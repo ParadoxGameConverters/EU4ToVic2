@@ -22,6 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "World.h"
+#include "Buildings/Buildings.h"
 #include "Countries.h"
 #include "CultureGroups.h"
 #include "EU4Country.h"
@@ -101,7 +102,11 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 		}
 	);
 	registerKeyword(std::regex("provinces"), [this](const std::string& provincesText, std::istream& theStream) {
-		provinces = std::make_unique<Provinces>(theStream);
+		std::ifstream buildingsFile(theConfiguration.getEU4Path() + "/common/buildings/00_buildings.txt");
+		Buildings buildingTypes(buildingsFile);
+		buildingsFile.close();
+
+		provinces = std::make_unique<Provinces>(theStream, buildingTypes);
 		std::optional<date> possibleDate = provinces->getProvince(1).getFirstOwnedDate();
 		if (possibleDate)
 		{
