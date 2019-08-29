@@ -208,6 +208,7 @@
     <ClCompile Include="Source\EU4World\Provinces\PopRatio.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\ProvinceBuildings.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\ProvinceHistory.cpp" />
+    <ClCompile Include="Source\EU4World\Provinces\ProvinceModifier.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\Provinces.cpp" />
     <ClCompile Include="Source\EU4World\Regions\Area.cpp" />
     <ClCompile Include="Source\EU4World\Regions\AreaNames.cpp" />
@@ -306,6 +307,7 @@
     <ClInclude Include="Source\EU4World\Provinces\PopRatio.h" />
     <ClInclude Include="Source\EU4World\Provinces\ProvinceBuildings.h" />
     <ClInclude Include="Source\EU4World\Provinces\ProvinceHistory.h" />
+    <ClInclude Include="Source\EU4World\Provinces\ProvinceModifier.h" />
     <ClInclude Include="Source\EU4World\Provinces\Provinces.h" />
     <ClInclude Include="Source\EU4World\Provinces\ProvinceStats.h" />
     <ClInclude Include="Source\EU4World\Regions\Area.h" />

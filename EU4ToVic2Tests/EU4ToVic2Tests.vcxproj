@@ -180,6 +180,7 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\PopRatio.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceBuildings.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceHistory.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceModifier.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\Provinces.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Area.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\AreaNames.cpp" />
@@ -220,11 +221,13 @@
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4ProvinceTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ModifiersTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModifierTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModTests.cpp" />
     <ClCompile Include="EU4WorldTests\PopRatioTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceBuildingsTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceHistoryTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ProvinceModifierTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvincesTests.cpp" />
     <ClCompile Include="EU4WorldTests\RegionsTests.cpp" />
     <ClCompile Include="EU4WorldTests\RegionTests.cpp" />
@@ -241,7 +244,6 @@
     <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMapperTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMappingTests.cpp" />
-    <ClCompile Include="ModifiersTests.cpp" />
     <ClCompile Include="Vic2WorldTests\BlockedTechSchoolsTests.cpp" />
     <ClCompile Include="Vic2WorldTests\StateMapperTests.cpp" />
     <ClCompile Include="Vic2WorldTests\Vic2CultureUnionMapperTests.cpp" />

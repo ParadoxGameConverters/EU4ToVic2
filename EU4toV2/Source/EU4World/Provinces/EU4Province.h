@@ -68,6 +68,7 @@ class Province: commonItems::parser
 		bool inHre() const { return inHRE; }
 		bool isColony() const { return colony; }
 		bool wasColonised() const { return hadOriginalColoniser || provinceHistory->wasColonized(); }
+		bool hasModifier(const std::string& modifierName) const { return modifiers.count(modifierName) > 0; }
 		std::vector<EU4::PopRatio> getPopRatios() const { return provinceHistory->getPopRatios(); }
 		std::optional<date> getFirstOwnedDate() const { return provinceHistory->getFirstOwnedDate(); }
 
@@ -102,6 +103,7 @@ class Province: commonItems::parser
 		std::unique_ptr<EU4::ProvinceHistory> provinceHistory;
 		std::unique_ptr<EU4::ProvinceBuildings> buildings;
 		std::unique_ptr<EU4::GreatProjects> greatProjects;
+		std::set<std::string> modifiers;
 
 		// province attributes for weights
 		double baseTax = 0.0;
