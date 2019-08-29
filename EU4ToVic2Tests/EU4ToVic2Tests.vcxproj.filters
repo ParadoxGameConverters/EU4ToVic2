@@ -254,6 +254,12 @@
     <ClCompile Include="EU4WorldTests\ModifierTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp">
+      <Filter>ConverterFiles\EU4World\Modifiers</Filter>
+    </ClCompile>
+    <ClCompile Include="ModifiersTests.cpp">
+      <Filter>EU4WorldTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
