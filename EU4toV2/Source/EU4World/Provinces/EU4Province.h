@@ -26,6 +26,7 @@ THE SOFTWARE. */
 
 
 #include "Date.h"
+#include "BuildingWeightEffects.h"
 #include "GreatProjects.h"
 #include "PopRatio.h"
 #include "ProvinceBuildings.h"
@@ -92,7 +93,7 @@ class Province: commonItems::parser
 
 	private:
 		void determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes);
-		std::vector<double> getProvBuildingWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes) const;
+		BuildingWeightEffects getProvBuildingWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes) const;
 		double getTradeGoodWeight() const;
 		double getTradeGoodPrice() const;
 

@@ -185,78 +185,53 @@ double EU4::Province::getCulturePercent(const std::string& culture) const
 
 void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes)
 {
-	double trade_goods_weight			= getTradeGoodWeight();
-	double manpower_weight				= manpower;
-	double building_weight				= 0.0;
-	double manpower_modifier			= 0.0;
-	double manu_gp_mod					= 0.0;
-	double building_tx_eff				= 0.0;
-	double production_eff				= 0.0;
-	double building_tx_income			= 0.0;
-	double manpower_eff					= 0.0;
-	double goods_produced_perc_mod	= 0.0;
-	double trade_power					= 0.0;
-	double trade_value					= 0.0;
-	double trade_value_eff				= 0.0;
-	double trade_power_eff				= 0.0;
-	double dev_modifier				= 0.0;
-	
-	std::vector<double> provBuildingWeightVec = getProvBuildingWeight(buildingTypes, modifierTypes);
+	double trade_goods_weight = getTradeGoodWeight();
+	double manpower_weight = manpower;
+	double taxEfficiency = 1.0;
 
-	// 0 building_weight, 1 manpower_modifier, 2 manu_gp_mod, 3 building_tx_eff, 4 production_eff
-	// 5 building_tx_income, 6 manpower_eff, 7 goods_produced_perc_mod, 8 trade_power 9 trade_value
-	// 10 trade_value_eff, 11 trade_power_eff;
-	try {
-		building_weight			= provBuildingWeightVec.at(0);
-		manpower_modifier			= provBuildingWeightVec.at(1);
-		manu_gp_mod					= provBuildingWeightVec.at(2);
-		building_tx_eff			= provBuildingWeightVec.at(3);
-		production_eff				= provBuildingWeightVec.at(4);
-		building_tx_income		= provBuildingWeightVec.at(5);
-		manpower_eff				= provBuildingWeightVec.at(6);
-		goods_produced_perc_mod	= provBuildingWeightVec.at(7);
-		trade_power					= provBuildingWeightVec.at(8);
-		trade_value					= provBuildingWeightVec.at(9);
-		trade_value_eff			= provBuildingWeightVec.at(10);
-		trade_power_eff			= provBuildingWeightVec.at(11);
-		dev_modifier			= provBuildingWeightVec.at(12);
-	}
-	catch (exception &e)
-	{
-		LOG(LogLevel::Error) << "Error in building weight vector: " << e.what();
-	}
+	BuildingWeightEffects buildingWeightEffects = getProvBuildingWeight(buildingTypes, modifierTypes);
+	double buildingWeight = buildingWeightEffects.buildingWeight;
+	double manpowerModifier = buildingWeightEffects.manpowerModifier;
+	double manufactoriesValue = buildingWeightEffects.manufactoriesValue;
+	double productionEfficiency = buildingWeightEffects.productionEfficiency;
+	double taxModifier = buildingWeightEffects.taxModifier;
+	double tradeGoodsSizeModifier = buildingWeightEffects.tradeGoodsSizeModifier;
+	double tradePower = buildingWeightEffects.tradePower;
+	double tradeValue = buildingWeightEffects.tradeValue;
+	double tradeEfficiency = buildingWeightEffects.tradeEfficiency;
+	double tradeSteering = buildingWeightEffects.tradeSteering;
 
 	// Check tag, ex. TIB has goods_produced +0.05
 	// This needs to be hard coded unless there's some other way of figuring out modded national ambitions/ideas
 	if (ownerString == "TIB")
 	{
-		goods_produced_perc_mod += 0.05;
+		tradeGoodsSizeModifier += 0.05;
 	}
 
-	double goods_produced = (baseProduction * 0.2) + manu_gp_mod + goods_produced_perc_mod + 0.03;
+	double goodsProduced = (baseProduction * 0.2) + manufactoriesValue + tradeGoodsSizeModifier + 0.03;
 
 	// idea effects
 	/*if ( (owner !=  NULL) && (owner->hasNationalIdea("bureaucracy")) )
 	{
-		building_tx_eff += 0.10;
+		taxEfficiency += 0.10;
 	}
 	if ( (owner !=  NULL) && (owner->hasNationalIdea("smithian_economics")) )
 	{
-		production_eff += 0.10;
+		productionEfficiency += 0.10;
 	}*/
 
 	// manpower
-	manpower_weight *= 25;
-	manpower_weight += manpower_modifier;
-	manpower_weight *= ((1 + manpower_modifier) / 25); // should work now as intended
+	manpowerWeight *= 25;
+	manpower_weight += manpowerModifier;
+	manpower_weight *= ((1 + manpowerModifier) / 25); // should work now as intended
 
 	//LOG(LogLevel::Info) << "Manpower Weight: " << manpower_weight;
 
-	double total_tx = (baseTax + building_tx_income) * (1.0 + building_tx_eff + 0.15);
+	double total_tx = (baseTax + taxModifier) * (1.0 + taxEfficiency + 0.15);
 	double production_eff_tech = 0.5; // used to be 1.0
 
-	double total_trade_value = ((getTradeGoodPrice() * goods_produced) + trade_value) * (1 + trade_value_eff);
-	double production_income = total_trade_value * (1 + production_eff_tech + production_eff);
+	double total_trade_value = ((getTradeGoodPrice() * goodsProduced) + tradeValue) * (1 + tradeEfficiency);
+	double production_income = total_trade_value * (1 + production_eff_tech + productionEfficiency);
 	//LOG(LogLevel::Info) << "province name: " << this->getProvName() 
 	//	<< " trade good: " << tradeGoods 
 	//	<< " Price: " << getTradeGoodPrice() 
@@ -271,32 +246,30 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	manpower_weight *= 1;
 	production_income *= 1.5;
 
-	buildingWeight = building_weight;
 	taxIncome = total_tx;
 	productionIncome = production_income;
 	manpowerWeight = manpower_weight;
 	tradeGoodWeight	= trade_goods_weight;
-	devModifier	= dev_modifier;
 	
 	// dev modifier
-	dev_modifier *= ( baseTax + baseProduction + manpower );
+	devModifier = ( baseTax + baseProduction + manpower );
 
-	totalWeight = building_weight + dev_modifier + ( manpower_weight + production_income + total_tx );
+	totalWeight = buildingWeight + devModifier + ( manpower_weight + production_income + total_tx );
 	//i would change dev effect to 1, but your choice
 	if (ownerString == "")
 	{
 		totalWeight = 0;
 	}
 
-	provinceStats.setGoodsProduced(goods_produced);
+	provinceStats.setGoodsProduced(goodsProduced);
 	provinceStats.setPrice(getTradeGoodPrice());
-	provinceStats.setTradeEfficiency(1 + trade_value_eff);
-	provinceStats.setProductionEfficiency(1 + production_eff);
-	provinceStats.setTradeValue(trade_value);
+	provinceStats.setTradeEfficiency(1 + tradeEfficiency);
+	provinceStats.setProductionEfficiency(1 + productionEfficiency);
+	provinceStats.setTradeValue(tradeValue);
 	provinceStats.setTradeValue(production_income);
 	provinceStats.setBaseTax(baseTax);
-	provinceStats.setBuildingsIncome(building_tx_income);
-	provinceStats.setTaxEfficiency(1 + building_tx_eff);
+	provinceStats.setBuildingsIncome(taxModifier);
+	provinceStats.setTaxEfficiency(1 + taxEfficiency);
 	provinceStats.setTotalTaxIncome(total_tx);
 	provinceStats.setTotalTradeValue(total_trade_value);
 	//LOG(LogLevel::Info) << "Num: " << num << " TAG: " << ownerString << " Weight: " << totalWeight;
@@ -573,18 +546,12 @@ double EU4::Province::getTradeGoodWeight() const
 }
 
 
-std::vector<double> EU4::Province::getProvBuildingWeight(
+EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
 	const Buildings& buildingTypes,
 	const Modifiers& modifierTypes
 ) const
 {
-	double buildingWeight = 0.0;
-	double manufactoriesValue = 0.0;
-	double manpowerModifier = 0.0;
-	double taxModifier = 0.0;
-	double productionEfficiency = 0.0;
-	double tradePower = 0.0;
-	double devModifier = 0.0;
+	BuildingWeightEffects effects;
 
 	if (buildings)
 	{
@@ -593,28 +560,48 @@ std::vector<double> EU4::Province::getProvBuildingWeight(
 			auto theBuilding = buildingTypes.getBuilding(buildingName);
 			if (theBuilding)
 			{
-				buildingWeight += theBuilding->getCost() * BUILDING_COST_TO_WEIGHT_RATIO;
+				effects.buildingWeight += theBuilding->getCost() * BUILDING_COST_TO_WEIGHT_RATIO;
 				if (theBuilding->isManufactory())
 				{
-					manufactoriesValue += 1.0;
+					effects.manufactoriesValue += 1.0;
 				}
 				for (auto effect: theBuilding->getModifier().getAllEffects())
 				{
 					if (effect.first == "local_manpower_modifier")
 					{
-						manpowerModifier += effect.second;
+						effects.manpowerModifier += effect.second;
 					}
 					else if (effect.first == "local_tax_modifier")
 					{
-						taxModifier += effect.second;
+						effects.taxModifier += effect.second;
 					}
 					else if (effect.first == "local_production_efficiency")
 					{
-						productionEfficiency += effect.second;
+						effects.productionEfficiency += effect.second;
 					}
 					else if (effect.first == "province_trade_power_modifier")
 					{
-						tradePower += effect.second;
+						effects.tradePower += effect.second;
+					}
+					else if (effect.first == "trade_efficiency")
+					{
+						effects.tradeEfficiency += effect.second;
+					}
+					else if (effect.first == "trade_goods_size")
+					{
+						effects.tradeGoodsSizeModifier += effect.second;
+					}
+					else if (effect.first == "trade_goods_size_modifier")
+					{
+						effects.tradeGoodsSizeModifier += effect.second;
+					}
+					else if (effect.first == "trade_value_modifier")
+					{
+						effects.tradeValue += effect.second;
+					}
+					else if (effect.first == "trade_steering")
+					{
+						effects.tradeSteering += effect.second;
 					}
 				}
 			}
@@ -634,19 +621,39 @@ std::vector<double> EU4::Province::getProvBuildingWeight(
 			{
 				if (effect.first == "local_manpower_modifier")
 				{
-					manpowerModifier += effect.second;
+					effects.manpowerModifier += effect.second;
 				}
 				else if (effect.first == "local_tax_modifier")
 				{
-					taxModifier += effect.second;
+					effects.taxModifier += effect.second;
 				}
 				else if (effect.first == "local_production_efficiency")
 				{
-					productionEfficiency += effect.second;
+					effects.productionEfficiency += effect.second;
 				}
 				else if (effect.first == "province_trade_power_modifier")
 				{
-					tradePower += effect.second;
+					effects.tradePower += effect.second;
+				}
+				else if (effect.first == "trade_efficiency")
+				{
+					effects.tradeEfficiency += effect.second;
+				}
+				else if (effect.first == "trade_goods_size")
+				{
+					effects.tradeGoodsSizeModifier += effect.second;
+				}
+				else if (effect.first == "trade_goods_size_modifier")
+				{
+					effects.tradeGoodsSizeModifier += effect.second;
+				}
+				else if (effect.first == "trade_value_modifier")
+				{
+					effects.tradeValue += effect.second;
+				}
+				else if (effect.first == "trade_steering")
+				{
+					effects.tradeSteering += effect.second;
 				}
 			}
 		}
@@ -665,22 +672,5 @@ std::vector<double> EU4::Province::getProvBuildingWeight(
 		buildingWeight += 12;
 	}*/
 
-	std::vector<double> provBuildingWeightVec;
-	provBuildingWeightVec.push_back(buildingWeight);
-	provBuildingWeightVec.push_back(manpowerModifier);
-	provBuildingWeightVec.push_back(manufactoriesValue);
-	provBuildingWeightVec.push_back(0.0);
-	provBuildingWeightVec.push_back(productionEfficiency);
-	provBuildingWeightVec.push_back(taxIncome);
-	provBuildingWeightVec.push_back(0.0);
-	provBuildingWeightVec.push_back(0.0);
-	provBuildingWeightVec.push_back(tradePower);
-	provBuildingWeightVec.push_back(0.0);
-	provBuildingWeightVec.push_back(0.0);
-	provBuildingWeightVec.push_back(0.0);
-	provBuildingWeightVec.push_back(0.0);
-	// 0 building_weight, 1 manpower_modifier, 2 manu_gp_mod, 3 building_tx_eff, 4 production_eff
-	// 5 building_tx_income, 6 manpower_eff, 7 goods_produced_perc_mod, 8 trade_power 9 trade_value
-	// 10 trade_value_eff, 11 trade_power_eff;
-	return provBuildingWeightVec;
+	return effects;
 }
