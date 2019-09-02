@@ -189,7 +189,6 @@ double EU4::Province::getCulturePercent(const std::string& culture) const
 
 void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes)
 {
-	double trade_goods_weight = getTradeGoodWeight();
 	double manpower_weight = manpower;
 	double taxEfficiency = 1.0;
 
@@ -254,7 +253,6 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	taxIncome = total_tx;
 	productionIncome = production_income;
 	manpowerWeight = manpower_weight;
-	tradeGoodWeight	= trade_goods_weight;
 	
 	// dev modifier
 	devModifier = ( baseTax + baseProduction + manpower );
@@ -418,139 +416,6 @@ double EU4::Province::getTradeGoodPrice() const
 }
 
 
-double EU4::Province::getTradeGoodWeight() const
-{
-	// Trade goods
-	/*
-	chinaware
-	grain
-	fish
-	tabacco
-	iron
-	copper
-	cloth
-	ivory
-	slaves
-	salt
-	wool
-	fur
-	gold
-	sugar
-	naval_supplies
-	tea
-	coffee
-	spices
-	wine
-	cocoa
-	*/
-
-	double trade_goods_weight = 0;
-	if (tradeGoods == "chinaware")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "grain")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "fish")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "tabacco")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "iron")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "copper")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "cloth")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "slaves")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "salt")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "gold")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "fur")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "sugar")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "naval_supplies")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "tea")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "coffee")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "spices")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "wine")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "cocoa")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "ivory")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "wool")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "cotton")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "silk")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "tropical_wood")
-	{
-		trade_goods_weight = 2;
-	}
-	else if (tradeGoods == "dyes")
-	{
-		trade_goods_weight = 2;
-	}
-	else
-	{
-		// anything ive missed
-		trade_goods_weight = 0;
-	}
-
-	return trade_goods_weight;
-}
-
-
 EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
 	const Buildings& buildingTypes,
 	const Modifiers& modifierTypes
@@ -667,6 +532,7 @@ EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
 			LOG(LogLevel::Warning) << "Could not look up information for modifier type " << modifierName;
 		}
 	}
+
 	if (centerOfTradeLevel == 1)
 	{
 		effects.tradePower += 5;
