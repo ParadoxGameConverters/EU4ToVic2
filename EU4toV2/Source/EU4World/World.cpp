@@ -29,6 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "EU4Diplomacy.h"
 #include "EU4Version.h"
 #include "EU4Localisation.h"
+#include "Modifiers/Modifiers.h"
 #include "Mods/Mod.h"
 #include "Mods/Mods.h"
 #include "Provinces/EU4Province.h"
@@ -106,7 +107,17 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 		Buildings buildingTypes(buildingsFile);
 		buildingsFile.close();
 
-		provinces = std::make_unique<Provinces>(theStream, buildingTypes);
+		std::ifstream modifiersFile(theConfiguration.getEU4Path() + "/common/event_modifiers/00_event_modifiers.txt");
+		Modifiers modifierTypes(modifiersFile);
+		modifiersFile.close();
+		modifiersFile.open(theConfiguration.getEU4Path() + "/common/triggered_modifiers/00_triggered_modifiers.txt");
+		modifierTypes.addModifiers(modifiersFile);
+		modifiersFile.close();
+		modifiersFile.open(theConfiguration.getEU4Path() + "/common/static_modifiers/00_static_modifiers.txt");
+		modifierTypes.addModifiers(modifiersFile);
+		modifiersFile.close();
+
+		provinces = std::make_unique<Provinces>(theStream, buildingTypes, modifierTypes);
 		std::optional<date> possibleDate = provinces->getProvince(1).getFirstOwnedDate();
 		if (possibleDate)
 		{

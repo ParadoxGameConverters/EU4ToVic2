@@ -32,6 +32,7 @@ THE SOFTWARE. */
 #include "ProvinceHistory.h"
 #include "ProvinceStats.h"
 #include "../Buildings/Buildings.h"
+#include "../Modifiers/Modifiers.h"
 #include "newParser.h"
 #include <string>
 #include <vector>
@@ -50,7 +51,12 @@ class Religions;
 class Province: commonItems::parser
 {
 	public:
-		Province(const std::string& numString, std::istream& theStream, const Buildings& buildingTypes);
+		Province(
+			const std::string& numString,
+			std::istream& theStream,
+			const Buildings& buildingTypes,
+			const Modifiers& modifierTypes
+		);
 
 		void addCore(const std::string& tag) { cores.insert(tag); }
 		void removeCore(const std::string& tag) { cores.erase(tag); }
@@ -85,8 +91,8 @@ class Province: commonItems::parser
 		std::string getTradeGoods() const { return tradeGoods; }
 
 	private:
-		void determineProvinceWeight(const Buildings& buildingTypes);
-		std::vector<double> getProvBuildingWeight(const Buildings& buildingTypes) const;
+		void determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes);
+		std::vector<double> getProvBuildingWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes) const;
 		double getTradeGoodWeight() const;
 		double getTradeGoodPrice() const;
 
