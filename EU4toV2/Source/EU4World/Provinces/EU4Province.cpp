@@ -190,7 +190,7 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	double taxEfficiency = 1.0;
 
 	BuildingWeightEffects buildingWeightEffects = getProvBuildingWeight(buildingTypes, modifierTypes);
-	double buildingWeight = buildingWeightEffects.buildingWeight;
+	buildingWeight = buildingWeightEffects.buildingWeight;
 	double manpowerModifier = buildingWeightEffects.manpowerModifier;
 	double manufactoriesValue = buildingWeightEffects.manufactoriesValue;
 	double productionEfficiency = buildingWeightEffects.productionEfficiency;
