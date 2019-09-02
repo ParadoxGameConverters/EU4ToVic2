@@ -227,7 +227,7 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 
 	//LOG(LogLevel::Info) << "Manpower Weight: " << manpower_weight;
 
-	double total_tx = (baseTax + taxModifier) * (1.0 + taxEfficiency + 0.15);
+	double total_tx = (baseTax + taxModifier) * (taxEfficiency + 0.15);
 	double production_eff_tech = 0.5; // used to be 1.0
 
 	double total_trade_value = ((getTradeGoodPrice() * goodsProduced) + tradeValue) * (1 + tradeEfficiency);
@@ -269,7 +269,7 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	provinceStats.setTradeValue(production_income);
 	provinceStats.setBaseTax(baseTax);
 	provinceStats.setBuildingsIncome(taxModifier);
-	provinceStats.setTaxEfficiency(1 + taxEfficiency);
+	provinceStats.setTaxEfficiency(taxEfficiency);
 	provinceStats.setTotalTaxIncome(total_tx);
 	provinceStats.setTotalTradeValue(total_trade_value);
 	//LOG(LogLevel::Info) << "Num: " << num << " TAG: " << ownerString << " Weight: " << totalWeight;
