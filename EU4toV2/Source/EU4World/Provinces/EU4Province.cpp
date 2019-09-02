@@ -221,7 +221,7 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	}*/
 
 	// manpower
-	manpowerWeight *= 25;
+	manpower_weight *= 25;
 	manpower_weight += manpowerModifier;
 	manpower_weight *= ((1 + manpowerModifier) / 25); // should work now as intended
 
