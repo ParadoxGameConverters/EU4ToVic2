@@ -20,14 +20,12 @@ THE SOFTWARE. */
 
 
 
-#ifndef MODIFIERS_H
-#define MODIFIERS_H
+#ifndef PROVINCE_MODIFIER_H
+#define PROVINCE_MODIFIER_H
 
 
 
-#include "Modifier.h"
 #include "newParser.h"
-#include <map>
 #include <string>
 
 
@@ -35,21 +33,19 @@ THE SOFTWARE. */
 namespace EU4
 {
 
-class Modifiers: commonItems::parser
+class ProvinceModifier: commonItems::parser
 {
 	public:
-		Modifiers(std::istream& theStream);
+		ProvinceModifier(std::istream& theStream);
 
-		void addModifiers(std::istream& theStream);
-
-		std::optional<Modifier> getModifier(const std::string& modifierName) const;
+		std::string getModifier() const { return modifier; }
 
 	private:
-		std::map<std::string, Modifier> modifiers;
+		std::string modifier;
 };
 
 }
 
 
 
-#endif // MODIFIERS_H
+#endif // PROVINCE_MODIFIER_H

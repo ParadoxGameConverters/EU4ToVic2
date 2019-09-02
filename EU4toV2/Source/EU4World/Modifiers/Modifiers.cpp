@@ -28,7 +28,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 EU4::Modifiers::Modifiers(std::istream& theStream)
 {
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& modifierName, std::istream& theStream) {
+	addModifiers(theStream);
+}
+
+
+void EU4::Modifiers::addModifiers(std::istream& theStream)
+{
+	registerKeyword(std::regex("[a-zA-Z0-9\\_]+"), [this](const std::string& modifierName, std::istream& theStream) {
 		Modifier modifier(theStream);
 		modifiers.insert(std::make_pair(modifierName, modifier));
 	});

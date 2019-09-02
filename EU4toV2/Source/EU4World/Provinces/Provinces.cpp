@@ -30,13 +30,16 @@ THE SOFTWARE. */
 
 
 
-EU4::Provinces::Provinces(std::istream& theStream, const Buildings& buildingTypes)
-{
+EU4::Provinces::Provinces(
+	std::istream& theStream,
+	const Buildings& buildingTypes,
+	const Modifiers& modifierTypes
+) {
 	registerKeyword(
 		std::regex("-[0-9]+"),
-		[this, buildingTypes](const std::string& numberString, std::istream& theStream)
+		[this, buildingTypes, modifierTypes](const std::string& numberString, std::istream& theStream)
 	{
-		Province newProvince(numberString, theStream, buildingTypes);
+		Province newProvince(numberString, theStream, buildingTypes, modifierTypes);
 		provinces.insert(std::make_pair(newProvince.getNum(), std::move(newProvince)));
 	});
 	parseStream(theStream);

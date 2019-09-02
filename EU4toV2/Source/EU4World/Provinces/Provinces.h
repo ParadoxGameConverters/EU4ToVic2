@@ -26,6 +26,7 @@ THE SOFTWARE. */
 
 
 #include "EU4Province.h"
+#include "../Modifiers/Modifiers.h"
 #include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "newParser.h"
 #include <map>
@@ -39,7 +40,7 @@ namespace EU4
 class Provinces: commonItems::parser
 {
 	public:
-		Provinces(std::istream& theStream, const Buildings& buildingTypes);
+		Provinces(std::istream& theStream, const Buildings& buildingTypes, const Modifiers& modifierTypes);
 
 		Province& getProvince(int provinceNumber);
 

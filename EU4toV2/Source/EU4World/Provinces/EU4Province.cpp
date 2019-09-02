@@ -38,8 +38,12 @@ const double BUILDING_COST_TO_WEIGHT_RATIO = 0.02;
 
 
 
-EU4::Province::Province(const std::string& numString, std::istream& theStream, const Buildings& buildingTypes)
-{
+EU4::Province::Province(
+	const std::string& numString,
+	std::istream& theStream,
+	const Buildings& buildingTypes,
+	const Modifiers& modifierTypes
+) {
 	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleString nameString(theStream);
 		name = nameString.getString();
@@ -128,7 +132,7 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream, c
 		provinceHistory = std::make_unique<ProvinceHistory>(input);
 	}
 
-	determineProvinceWeight(buildingTypes);
+	determineProvinceWeight(buildingTypes, modifierTypes);
 }
 
 
@@ -179,7 +183,7 @@ double EU4::Province::getCulturePercent(const std::string& culture) const
 }
 
 
-void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes)
+void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes)
 {
 	double trade_goods_weight			= getTradeGoodWeight();
 	double manpower_weight				= manpower;
@@ -197,7 +201,7 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes)
 	double trade_power_eff				= 0.0;
 	double dev_modifier				= 0.0;
 	
-	std::vector<double> provBuildingWeightVec = getProvBuildingWeight(buildingTypes);
+	std::vector<double> provBuildingWeightVec = getProvBuildingWeight(buildingTypes, modifierTypes);
 
 	// 0 building_weight, 1 manpower_modifier, 2 manu_gp_mod, 3 building_tx_eff, 4 production_eff
 	// 5 building_tx_income, 6 manpower_eff, 7 goods_produced_perc_mod, 8 trade_power 9 trade_value
@@ -569,7 +573,10 @@ double EU4::Province::getTradeGoodWeight() const
 }
 
 
-std::vector<double> EU4::Province::getProvBuildingWeight(const Buildings& buildingTypes) const
+std::vector<double> EU4::Province::getProvBuildingWeight(
+	const Buildings& buildingTypes,
+	const Modifiers& modifierTypes
+) const
 {
 	double buildingWeight = 0.0;
 	double manufactoriesValue = 0.0;
@@ -616,37 +623,47 @@ std::vector<double> EU4::Province::getProvBuildingWeight(const Buildings& buildi
 				LOG(LogLevel::Warning) << "Could not look up information for building type " << buildingName;
 			}
 		}
+	}
 
-		if (hasBuilding("center_of_trade"))
+	for (auto modifierName: modifiers)
+	{
+		auto theModifier = modifierTypes.getModifier(modifierName);
+		if (theModifier)
 		{
-			buildingWeight += 24;
+			for (auto effect : theModifier->getAllEffects())
+			{
+				if (effect.first == "local_manpower_modifier")
+				{
+					manpowerModifier += effect.second;
+				}
+				else if (effect.first == "local_tax_modifier")
+				{
+					taxModifier += effect.second;
+				}
+				else if (effect.first == "local_production_efficiency")
+				{
+					productionEfficiency += effect.second;
+				}
+				else if (effect.first == "province_trade_power_modifier")
+				{
+					tradePower += effect.second;
+				}
+			}
 		}
-
-		if (hasBuilding("inland_center_of_trade"))
+		else
 		{
-			buildingWeight += 12;
-		}
-
-		if (hasBuilding("natural_harbor"))
-		{
-			buildingWeight += 15;
-		}
-
-		if (hasBuilding("stora_kopparberget_modifier"))
-		{
-			manufactoriesValue = 5.0;
-		}
-
-		if (hasBuilding("cerro_rico_modifier"))
-		{
-			manufactoriesValue = 3.0;
-		}
-
-		if (hasBuilding("spice_islands_modifier"))
-		{
-			manufactoriesValue = 3.0;
+			LOG(LogLevel::Warning) << "Could not look up information for modifier type " << modifierName;
 		}
 	}
+
+	/*if (effect.first == "center_of_trade_modifier")
+	{
+		buildingWeight += 24;
+	}
+	else if (effect.first == "inland_center_of_trade_modifier")
+	{
+		buildingWeight += 12;
+	}*/
 
 	std::vector<double> provBuildingWeightVec;
 	provBuildingWeightVec.push_back(buildingWeight);

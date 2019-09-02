@@ -24,6 +24,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "gtest/gtest.h"
 #include "../EU4toV2/Source/EU4World/Provinces/EU4Province.h"
 #include "../EU4toV2/Source/EU4World/Buildings/Buildings.h"
+#include "../EU4toV2/Source/EU4World/Modifiers/Modifiers.h"
 #include <sstream>
 
 
@@ -36,7 +37,10 @@ TEST(EU4World_ProvinceTests, numberProperlyInterpreted)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-42", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-42", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getNum(), 42);
 }
 
@@ -49,7 +53,10 @@ TEST(EU4World_ProvinceTests, nameDefaultsToEmpty)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getName(), "");
 }
 
@@ -64,7 +71,10 @@ TEST(EU4World_ProvinceTests, nameCanBeSet)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getName(), "theName");
 }
 
@@ -77,7 +87,10 @@ TEST(EU4World_ProvinceTests, ownerStringDefaultsToEmpty)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getOwnerString(), "");
 }
 
@@ -92,7 +105,10 @@ TEST(EU4World_ProvinceTests, ownerStringCanBeSet)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getOwnerString(), "TAG");
 }
 
@@ -105,7 +121,10 @@ TEST(EU4World_ProvinceTests, coresDefaultToEmpty)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getCores().size(), 0);
 }
 
@@ -122,7 +141,10 @@ TEST(EU4World_ProvinceTests, coresCanBeSetWithNewStyle)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getCores().count("TAG"), 1);
 }
 
@@ -137,7 +159,10 @@ TEST(EU4World_ProvinceTests, coresCanBeSetWithOldStyle)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getCores().count("TAG"), 1);
 }
 
@@ -150,7 +175,10 @@ TEST(EU4World_ProvinceTests, coresCanBeAdded)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	theProvince.addCore("TAG");
 
 	ASSERT_EQ(theProvince.getCores().count("TAG"), 1);
@@ -167,7 +195,10 @@ TEST(EU4World_ProvinceTests, coresCanBeRemoved)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	theProvince.removeCore("TAG");
 
 	ASSERT_EQ(theProvince.getCores().count("TAG"), 0);
@@ -182,7 +213,10 @@ TEST(EU4World_ProvinceTests, inHreDefaultsToFalse)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.inHre());
 }
 
@@ -197,7 +231,10 @@ TEST(EU4World_ProvinceTests, inHreCanRemainNegative)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.inHre());
 }
 
@@ -212,7 +249,10 @@ TEST(EU4World_ProvinceTests, inHreCanBeTrue)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_TRUE(theProvince.inHre());
 }
 
@@ -225,7 +265,10 @@ TEST(EU4World_ProvinceTests, isColonyDefaultsToFalse)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.isColony());
 }
 
@@ -240,7 +283,10 @@ TEST(EU4World_ProvinceTests, isColonyCanBeSet)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_TRUE(theProvince.isColony());
 }
 
@@ -253,7 +299,10 @@ TEST(EU4World_ProvinceTests, wasColonizedDefaultsToFalse)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.wasColonised());
 }
 
@@ -268,7 +317,10 @@ TEST(EU4World_ProvinceTests, wasColonizedTrueIfHasOriginalColoniser)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_TRUE(theProvince.wasColonised());
 }
 
@@ -283,7 +335,10 @@ TEST(EU4World_ProvinceTests, wasColonizedFalseIfOwnedAtStart)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.wasColonised());
 }
 
@@ -303,7 +358,10 @@ TEST(EU4World_ProvinceTests, wasColonizedFalseIfHasOriginalCulture)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.wasColonised());
 }
 
@@ -324,7 +382,10 @@ TEST(EU4World_ProvinceTests, wasColonizedTrueIfCultureChanged)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.wasColonised());
 }
 
@@ -338,7 +399,10 @@ TEST(EU4World_ProvinceTests, popRatiosDefaultToEmpty)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getPopRatios().size(), 0);
 }
 
@@ -356,7 +420,10 @@ TEST(EU4World_ProvinceTests, popRatiosCanBeAdded)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getPopRatios().size(), 1);
 }
 
@@ -370,7 +437,10 @@ TEST(EU4World_ProvinceTests, getFirstOwnedDateDefaultsToEmpty)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.getFirstOwnedDate());
 }
 
@@ -387,7 +457,10 @@ TEST(EU4World_ProvinceTests, getFirstOwnedDateCanDetectOwnershipAtStartDate)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(*theProvince.getFirstOwnedDate(), date("1444.11.11"));
 }
 
@@ -406,7 +479,10 @@ TEST(EU4World_ProvinceTests, getFirstOwnedDateCanDetectLaterOwnership)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getFirstOwnedDate(), date("1600.1.1"));
 }
 
@@ -420,9 +496,12 @@ TEST(EU4World_ProvinceTests, wasInfidelConquestDefaultsToFalse)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
 	EU4::Religions religions;
 
-	EU4::Province theProvince("-1", input, buildings);
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.wasInfidelConquest("ownerReligion", religions));
 }
 
@@ -456,7 +535,10 @@ TEST(EU4World_ProvinceTests, wasInfidelConquestCanBeTrue)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_TRUE(theProvince.wasInfidelConquest("ownerReligion", theReligions));
 }
 
@@ -470,7 +552,10 @@ TEST(EU4World_ProvinceTests, hasBuildingDefaultsToFalse)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.hasBuilding("theBuilding"));
 }
 
@@ -487,7 +572,10 @@ TEST(EU4World_ProvinceTests, hasBuildingCanBeTrue)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_TRUE(theProvince.hasBuilding("theBuilding"));
 }
 
@@ -500,7 +588,10 @@ TEST(EU4World_ProvinceTests, hasGreatProjectDefaultsToFalse)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.hasGreatProject("test_canal"));
 }
 
@@ -516,7 +607,10 @@ TEST(EU4World_ProvinceTests, hasGreatProjectFindsProjects)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_TRUE(theProvince.hasGreatProject("test_canal"));
 }
 
@@ -530,7 +624,10 @@ TEST(EU4World_ProvinceTests, hasModifierDefaultsToFalse)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_FALSE(theProvince.hasModifier("center_of_trade_modifier"));
 }
 
@@ -546,7 +643,10 @@ TEST(EU4World_ProvinceTests, hasModifierFindsModifiers)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_TRUE(theProvince.hasModifier("center_of_trade_modifier"));
 }
 
@@ -560,7 +660,10 @@ TEST(EU4World_ProvinceTests, getCulturePercentDefaultsToZero)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getCulturePercent("theCulture"), 0.0);
 }
 
@@ -578,7 +681,10 @@ TEST(EU4World_ProvinceTests, getCulturePercentCanFullyMatch)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getCulturePercent("theCulture"), 1.0);
 }
 
@@ -599,6 +705,9 @@ TEST(EU4World_ProvinceTests, getCulturePercentDeterminedByHistory)
 	std::stringstream buildingsInput;
 	EU4::Buildings buildings(buildingsInput);
 
-	EU4::Province theProvince("-1", input, buildings);
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Province theProvince("-1", input, buildings, modifiers);
 	ASSERT_EQ(theProvince.getCulturePercent("theCulture"), 0.5);
 }

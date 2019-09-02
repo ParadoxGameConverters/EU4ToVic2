@@ -23,21 +23,23 @@ THE SOFTWARE. */
 #include "Modifier.h"
 #include "ParserHelpers.h"
 #include "Log.h"
+#include <cctype>
 
 
 
 EU4::Modifier::Modifier(std::istream& theStream)
 {
+	registerKeyword(std::regex("potential"), commonItems::ignoreItem);
+	registerKeyword(std::regex("trigger"), commonItems::ignoreItem);
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& effect, std::istream& theStream) {
-		commonItems::singleDouble amount(theStream);
+		commonItems::singleString amountSingleString(theStream);
+		auto amountString = amountSingleString.getString();
 
-		if (effects.count(effect) == 0)
+		std::smatch match;
+		if (std::regex_match(amountString, match, std::regex("-?[0-9]+([.][0-9]+)?")))
 		{
-			effects.insert(std::make_pair(effect, amount.getDouble()));
-		}
-		else
-		{
-			LOG(LogLevel::Warning) << "Multiple instances of effect " << effect << " in modifier.";
+			double amount = stof(amountString);
+			effects.insert(std::make_pair(effect, amount));
 		}
 	});
 
