@@ -115,6 +115,10 @@ EU4::Province::Province(
 		commonItems::singleString tradeGoodsString(theStream);
 		tradeGoods = tradeGoodsString.getString();
 	});
+	registerKeyword(std::regex("center_of_trade"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt cotLevelInt(theStream);
+		centerOfTradeLevel = cotLevelInt.getInt();
+	});
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
@@ -663,15 +667,18 @@ EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
 			LOG(LogLevel::Warning) << "Could not look up information for modifier type " << modifierName;
 		}
 	}
-
-	/*if (effect.first == "center_of_trade_modifier")
+	if (centerOfTradeLevel == 1)
 	{
-		buildingWeight += 24;
+		effects.tradePower += 5;
 	}
-	else if (effect.first == "inland_center_of_trade_modifier")
+	else if (centerOfTradeLevel == 2)
 	{
-		buildingWeight += 12;
-	}*/
+		effects.tradePower += 10;
+	}
+	else if (centerOfTradeLevel == 3)
+	{
+		effects.tradePower += 25;
+	}
 
 	return effects;
 }
