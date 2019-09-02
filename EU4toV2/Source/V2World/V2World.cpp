@@ -176,8 +176,6 @@ void V2World::importDefaultPops()
 
 	totalWorldPopulation = 0;
 
-	minorityPopMapper theminorityPopMapper;
-
 	set<string> filenames;
 	Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/", filenames);
 	for (auto filename : filenames)
