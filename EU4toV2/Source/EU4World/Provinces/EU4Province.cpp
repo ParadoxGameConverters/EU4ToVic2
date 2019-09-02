@@ -209,6 +209,7 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	}
 
 	double goodsProduced = (baseProduction * 0.2) + manufactoriesValue + tradeGoodsSizeModifier + 0.03;
+	goodsProduced = std::max(0.0, goodsProduced);
 
 	// idea effects
 	/*if ( (owner !=  NULL) && (owner->hasNationalIdea("bureaucracy")) )
