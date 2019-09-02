@@ -565,6 +565,9 @@
     <ClInclude Include="Source\EU4World\Provinces\ProvinceModifier.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\Provinces\BuildingWeightEffects.h">
+      <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">

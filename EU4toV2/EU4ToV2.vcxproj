@@ -300,6 +300,7 @@
     <ClInclude Include="Source\EU4World\Modifiers\Modifiers.h" />
     <ClInclude Include="Source\EU4World\Mods\Mod.h" />
     <ClInclude Include="Source\EU4World\Mods\Mods.h" />
+    <ClInclude Include="Source\EU4World\Provinces\BuildingWeightEffects.h" />
     <ClInclude Include="Source\EU4World\Provinces\GreatProjects.h" />
     <ClInclude Include="Source\EU4World\Provinces\DateItem.h" />
     <ClInclude Include="Source\EU4World\Provinces\DateItems.h" />
