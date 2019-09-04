@@ -28,6 +28,7 @@ THE SOFTWARE. */
 #include <string>
 #include <map>
 #include <memory>
+#include <optional>
 #include <vector>
 using namespace std;
 
@@ -98,7 +99,7 @@ class EU4Army // also Navy
 		void					resolveRegimentTypes(const RegimentTypeMap& regimentTypeMap);
 		double					getAverageStrength(RegimentCategory category) const;
 		int						getTotalTypeStrength(RegimentCategory category) const;
-		int						getProbabilisticHomeProvince(RegimentCategory category) const;
+		std::optional<int> getProbabilisticHomeProvince(RegimentCategory category) const;
 		void					blockHomeProvince(int home);
 
 		string					getName() const { return name; }
