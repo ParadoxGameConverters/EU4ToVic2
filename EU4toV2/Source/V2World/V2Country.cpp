@@ -2097,7 +2097,7 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 // find the army most in need of a regiment of this category
 V2Army* V2Country::getArmyForRemainder(RegimentCategory rc)
 {
-	V2Army* retval;
+	V2Army* retval = nullptr;
 	double retvalRemainder = -1000.0;
 	for (auto& army: armies)
 	{
