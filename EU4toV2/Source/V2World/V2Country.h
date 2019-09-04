@@ -172,7 +172,7 @@ class V2Country
 			const mappers::ProvinceMapper& provinceMapper
 		);
 		std::vector<int> getPortProvinces(const std::vector<int>& locationCandidates, std::map<int, V2Province*> allProvinces);
-		std::optional<V2Army> getArmyForRemainder(RegimentCategory rc);
+		V2Army* getArmyForRemainder(RegimentCategory rc);
 		V2Province*	getProvinceForExpeditionaryArmy();
 		string		getRegimentName(RegimentCategory rc);
 
