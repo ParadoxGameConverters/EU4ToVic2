@@ -1225,8 +1225,8 @@ void V2Country::convertArmies(
 	{
 		while (countryRemainder[rc] > 0.0)
 		{
-			std::optional<V2Army> army = getArmyForRemainder((RegimentCategory)rc);
-			if (!army)
+			V2Army* army = getArmyForRemainder((RegimentCategory)rc);
+			if (army == nullptr)
 			{
 				LOG(LogLevel::Debug) << "No suitable army or navy found for " << tag << "'s pooled regiments of " << RegimentCategoryNames[rc];
 				break;
@@ -2095,11 +2095,11 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 
 
 // find the army most in need of a regiment of this category
-std::optional<V2Army> V2Country::getArmyForRemainder(RegimentCategory rc)
+V2Army* V2Country::getArmyForRemainder(RegimentCategory rc)
 {
-	std::optional<V2Army> retval;
+	V2Army* retval;
 	double retvalRemainder = -1000.0;
-	for (auto army: armies)
+	for (auto& army: armies)
 	{
 		// only add units to armies that originally had units of the same category
 		if (army.getSourceArmy()->getTotalTypeStrength(rc) > 0)
@@ -2107,7 +2107,7 @@ std::optional<V2Army> V2Country::getArmyForRemainder(RegimentCategory rc)
 			if (army.getArmyRemainder(rc) > retvalRemainder)
 			{
 				retvalRemainder = army.getArmyRemainder(rc);
-				retval = army;
+				retval = &army;
 			}
 		}
 	}
