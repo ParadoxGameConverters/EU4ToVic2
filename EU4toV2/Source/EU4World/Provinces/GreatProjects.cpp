@@ -26,9 +26,15 @@ THE SOFTWARE. */
 
 EU4::GreatProjects::GreatProjects(std::istream& theStream)
 {
-	registerKeyword(std::regex("\"[a-z]+_canal\""), [this](const std::string& greatProjectStringWithQuotes, std::istream& theStream) {
-		std::string greatProject = greatProjectStringWithQuotes.substr(1,greatProjectStringWithQuotes.size()-2);
+	registerKeyword(
+		std::regex("\"[a-z]+_canal\""),
+		[this](const std::string& greatProjectStringWithQuotes, std::istream& theStream)
+	{
+		std::string greatProject = greatProjectStringWithQuotes.substr(1, greatProjectStringWithQuotes.size() - 2);
 		greatProjects.insert(greatProject);
+	});
+	registerKeyword(std::regex("[a-z]+_canal"), [this](const std::string& greatProjectString, std::istream& theStream) {
+		greatProjects.insert(greatProjectString);
 	});
 
 	parseStream(theStream);
