@@ -37,17 +37,20 @@ const date FUTURE_DATE("2000.1.1");
 
 EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 {
+	std::string startingCulture;
+	std::string startingReligion;
+
 	registerKeyword(std::regex("owner"), [this](const std::string& unused, std::istream & theStream) {
 		commonItems::singleString ownerString(theStream);
 		ownershipHistory.push_back(std::make_pair(STARTING_DATE, ownerString.getString()));
 	});
-	registerKeyword(std::regex("culture"), [this](const std::string& unused, std::istream & theStream) {
+	registerKeyword(std::regex("culture"), [&startingCulture](const std::string& unused, std::istream & theStream) {
 		commonItems::singleString cultureString(theStream);
-		cultureHistory.push_back(std::make_pair(STARTING_DATE, cultureString.getString()));
+		startingCulture = cultureString.getString();
 	});
-	registerKeyword(std::regex("religion"), [this](const std::string& unused, std::istream & theStream) {
+	registerKeyword(std::regex("religion"), [&startingReligion](const std::string& unused, std::istream & theStream) {
 		commonItems::singleString religionString(theStream);
-		religionHistory.push_back(std::make_pair(STARTING_DATE, religionString.getString()));
+		startingReligion = religionString.getString();
 	});
 	registerKeyword(std::regex("\\d+\\.\\d+\\.\\d+"), [this](const std::string& dateString, std::istream& theStream) {
 		DateItems theItems(dateString, theStream);
@@ -70,6 +73,15 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+
+	if (startingCulture != "")
+	{
+		cultureHistory.insert(cultureHistory.begin(), std::make_pair(STARTING_DATE, startingCulture));
+	}
+	if (startingReligion != "")
+	{
+		religionHistory.insert(religionHistory.begin(), std::make_pair(STARTING_DATE, startingReligion));
+	}
 
 	buildPopRatios();
 }
