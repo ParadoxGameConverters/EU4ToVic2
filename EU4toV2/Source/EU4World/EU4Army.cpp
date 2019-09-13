@@ -156,7 +156,7 @@ int EU4Army::getTotalTypeStrength(RegimentCategory category) const
 }
 
 
-int EU4Army::getProbabilisticHomeProvince(RegimentCategory category) const
+std::optional<int> EU4Army::getProbabilisticHomeProvince(RegimentCategory category) const
 {
 	vector<int> homeProvinces;	// the possible home provinces
 	for (vector<EU4Regiment*>::const_iterator itr = regiments.begin(); itr != regiments.end(); ++itr)
@@ -181,7 +181,7 @@ int EU4Army::getProbabilisticHomeProvince(RegimentCategory category) const
 	}
 	if (homeProvinces.size() == 0)
 	{
-		return -1;
+		return std::nullopt;
 	}
 
 	return homeProvinces[int(homeProvinces.size() * ((double)rand() / RAND_MAX))];

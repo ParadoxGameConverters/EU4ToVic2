@@ -63,6 +63,13 @@ class V2Creditor;
 class V2LeaderTraits;
 struct V2Party;
 
+enum class addRegimentToArmyResult
+{
+	success,
+	retry,
+	doNotRetry
+};
+
 
 
 class V2Country
@@ -158,14 +165,14 @@ class V2Country
 		void			outputTech(FILE*) const ;
 		void			outputElection(FILE*) const;
 		void			addLoan(string creditor, double size, double interest);
-		int addRegimentToArmy(
+		addRegimentToArmyResult addRegimentToArmy(
 			V2Army& army,
 			RegimentCategory rc,
 			std::map<int, V2Province*> allProvinces,
 			const mappers::ProvinceMapper& provinceMapper
 		);
 		std::vector<int> getPortProvinces(const std::vector<int>& locationCandidates, std::map<int, V2Province*> allProvinces);
-		std::optional<V2Army> getArmyForRemainder(RegimentCategory rc);
+		V2Army* getArmyForRemainder(RegimentCategory rc);
 		V2Province*	getProvinceForExpeditionaryArmy();
 		string		getRegimentName(RegimentCategory rc);
 

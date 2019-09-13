@@ -1146,7 +1146,10 @@ void V2Country::convertArmies(
 
 			for (int i = 0; i < regimentsToCreate; ++i)
 			{
-				if (addRegimentToArmy(army, (RegimentCategory)rc, allProvinces, provinceMapper) != 0)
+				if (
+					addRegimentToArmy(army, (RegimentCategory)rc, allProvinces, provinceMapper) !=
+					addRegimentToArmyResult::success
+					)
 				{
 					// couldn't add, dissolve into pool
 					countryRemainder[rc] += 1.0;
@@ -1222,21 +1225,21 @@ void V2Country::convertArmies(
 	{
 		while (countryRemainder[rc] > 0.0)
 		{
-			std::optional<V2Army> army = getArmyForRemainder((RegimentCategory)rc);
-			if (!army)
+			V2Army* army = getArmyForRemainder((RegimentCategory)rc);
+			if (army == nullptr)
 			{
 				LOG(LogLevel::Debug) << "No suitable army or navy found for " << tag << "'s pooled regiments of " << RegimentCategoryNames[rc];
 				break;
 			}
 			switch (addRegimentToArmy(*army, (RegimentCategory)rc, allProvinces, provinceMapper))
 			{
-				case 0: // success
+				case addRegimentToArmyResult::success:
 					countryRemainder[rc] -= 1.0;
 					army->setArmyRemainders((RegimentCategory)rc, army->getArmyRemainder((RegimentCategory)rc) - 1.0);
 					break;
-				case -1: // retry
+				case addRegimentToArmyResult::retry:
 					break;
-				case -2: // do not retry
+				case addRegimentToArmyResult::doNotRetry:
 					LOG(LogLevel::Debug) << "Disqualifying army/navy " << army->getName() << " from receiving more " << RegimentCategoryNames[rc] << " from the pool";
 					army->setArmyRemainders((RegimentCategory)rc, -2000.0);
 					break;
@@ -1943,31 +1946,31 @@ void V2Country::addLoan(string creditor, double size, double interest)
 
 
 // return values: 0 = success, -1 = retry from pool, -2 = do not retry
-int V2Country::addRegimentToArmy(
+addRegimentToArmyResult V2Country::addRegimentToArmy(
 	V2Army& army,
 	RegimentCategory rc,
 	std::map<int, V2Province*> allProvinces,
 	const mappers::ProvinceMapper& provinceMapper
 ) {
 	V2Regiment reg((RegimentCategory)rc);
-	int eu4Home = army.getSourceArmy()->getProbabilisticHomeProvince(rc);
-	if (eu4Home == -1)
+	std::optional<int> eu4Home = army.getSourceArmy()->getProbabilisticHomeProvince(rc);
+	if (!eu4Home)
 	{
 		LOG(LogLevel::Debug) << "Army/navy " << army.getName() << " has no valid home provinces for " << RegimentCategoryNames[rc] << "; dissolving to pool";
-		return -2;
+		return addRegimentToArmyResult::doNotRetry;
 	}
-	auto homeCandidates = provinceMapper.getVic2ProvinceNumbers(eu4Home);
+	auto homeCandidates = provinceMapper.getVic2ProvinceNumbers(*eu4Home);
 	if (homeCandidates.size() == 0)
 	{
-		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army.getName() << " has unmapped home province " << eu4Home << " - dissolving to pool";
-		army.getSourceArmy()->blockHomeProvince(eu4Home);
-		return -1;
+		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army.getName() << " has unmapped home province " << *eu4Home << " - dissolving to pool";
+		army.getSourceArmy()->blockHomeProvince(*eu4Home);
+		return addRegimentToArmyResult::retry;
 	}
 	if (*homeCandidates.begin() == 0)
 	{
-		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army.getName() << " has dropped home province " << eu4Home << " - dissolving to pool";
-		army.getSourceArmy()->blockHomeProvince(eu4Home);
-		return -1;
+		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army.getName() << " has dropped home province " << *eu4Home << " - dissolving to pool";
+		army.getSourceArmy()->blockHomeProvince(*eu4Home);
+		return addRegimentToArmyResult::retry;
 	}
 	V2Province* homeProvince = nullptr;
 	if (army.getNavy())
@@ -2003,8 +2006,8 @@ int V2Country::addRegimentToArmy(
 		{
 			LOG(LogLevel::Warning) << "No valid home for a " << tag << " " << RegimentCategoryNames[rc] << " regiment - dissolving regiment to pool";
 			// all provinces in a given province map have the same owner, so the source home was bad
-			army.getSourceArmy()->blockHomeProvince(eu4Home);
-			return -1;
+			army.getSourceArmy()->blockHomeProvince(*eu4Home);
+			return addRegimentToArmyResult::retry;
 		}
 		homeProvince = sortedHomeCandidates[0];
 		if (homeProvince->getOwner() != tag) // TODO: find a way of associating these units with a province owned by the proper country
@@ -2047,10 +2050,10 @@ int V2Country::addRegimentToArmy(
 			{
 				LOG(LogLevel::Warning) << "V2 province " << sortedHomeCandidates[0]->getNum() << " is home for a " << tag << " " << RegimentCategoryNames[rc] << " regiment, but belongs to " << sortedHomeCandidates[0]->getOwner() << " - dissolving regiment to pool";
 				// all provinces in a given province map have the same owner, so the source home was bad
-				army.getSourceArmy()->blockHomeProvince(eu4Home);
-				return -1;
+				army.getSourceArmy()->blockHomeProvince(*eu4Home);
+				return addRegimentToArmyResult::retry;
 			}
-			return 0;
+			return addRegimentToArmyResult::success;
 		}
 
 		// Armies need to be associated with pops
@@ -2087,16 +2090,16 @@ int V2Country::addRegimentToArmy(
 		reg.setName(getRegimentName(rc));
 	}
 	army.addRegiment(reg);
-	return 0;
+	return addRegimentToArmyResult::success;
 }
 
 
 // find the army most in need of a regiment of this category
-std::optional<V2Army> V2Country::getArmyForRemainder(RegimentCategory rc)
+V2Army* V2Country::getArmyForRemainder(RegimentCategory rc)
 {
-	std::optional<V2Army> retval;
+	V2Army* retval = nullptr;
 	double retvalRemainder = -1000.0;
-	for (auto army: armies)
+	for (auto& army: armies)
 	{
 		// only add units to armies that originally had units of the same category
 		if (army.getSourceArmy()->getTotalTypeStrength(rc) > 0)
@@ -2104,7 +2107,7 @@ std::optional<V2Army> V2Country::getArmyForRemainder(RegimentCategory rc)
 			if (army.getArmyRemainder(rc) > retvalRemainder)
 			{
 				retvalRemainder = army.getArmyRemainder(rc);
-				retval = army;
+				retval = &army;
 			}
 		}
 	}
