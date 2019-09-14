@@ -842,7 +842,7 @@
 	link = { eu4 = 825 v2 = 2247 }	# Bogota -> Bogota
 	link = { eu4 = 822 eu4 = 2816 eu4 = 2814 v2 = 2260 v2 = 2261 }	# MANY-TO-MANY: Caqueta, Guavire, Meta -> San Jose del Gauaviare, Obando
 	link = { eu4 = 2815 eu4 = 2812 eu4 = 4608 v2 = 2262 }	# Puerto Carreno, Pore, Achaguas -> Casanare
-	link = { eu4 = 2810 eu4 = 834 eu4 = 4616 v2 = 2274 }	# Apure, Barinas, Tuneo -> Barinas
+	link = { eu4 = 2810 eu4 = 834 v2 = 2274 }	# Apure, Barinas, Tuneo -> Barinas
 	link = { eu4 = 2813 eu4 = 4611 v2 = 2271 }	# Merida, Wayuu -> Valera
 	link = { eu4 = 4613 v2 = 2265 }	# Guanaguanare-> Guanare
 	link = { eu4 = 2939 eu4 = 2809 eu4 = 4615 eu4 = 4614 v2 = 2266 }	# Zaraza, Llanos, Guanipa  -> Calabozo
@@ -1763,8 +1763,8 @@
 	link = { eu4 = 2450 v2 = 1744 }	# Ghadames -> Ghadamis
 	link = { eu4 = 354 eu4 = 2452 v2 = 1731 }	# Tripolitania, Zuwarah -> Tripoli
 	link = { eu4 = 2449 v2 = 1732 }	# Jufra -> Ghayran
-	link = { eu4 = 4567 v2 = 1732 v2 = 1744 }	# Sabha -> Ghayran, Ghadamis
-	link = { eu4 = 2448 v2 = 1743 v2 = 1742 }	# Fezzan -> Ghat, Sabha
+	link = { eu4 = 4567 v2 = 1743 }	# Sabha -> Ghayran, Ghadamis
+	link = { eu4 = 2448 v2 = 1742 }	# Fezzan -> Ghat, Sabha
 	link = { eu4 = 2474 v2 = 1741 }	# Tajarhi -> Murzuk
 	link = { eu4 = 2451 v2 = 1733 }	# Thubaqt -> Misratah
 	link = { eu4 = 355 v2 = 1734 }	# Sirt -> Sirt
