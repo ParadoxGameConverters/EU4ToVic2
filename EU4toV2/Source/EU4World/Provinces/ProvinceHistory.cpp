@@ -74,11 +74,11 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 
 	parseStream(theStream);
 
-	if ((startingCulture != "") && (cultureHistory.size() > 0) && (cultureHistory.begin()->first == STARTING_DATE))
+	if ((startingCulture != "") && ((cultureHistory.size() == 0) || (cultureHistory.begin()->first != STARTING_DATE)))
 	{
 		cultureHistory.insert(cultureHistory.begin(), std::make_pair(STARTING_DATE, startingCulture));
 	}
-	if ((startingReligion != "") && (religionHistory.size() > 0) && (religionHistory.begin()->first == STARTING_DATE))
+	if ((startingReligion != "") && ((religionHistory.size() == 0) || (religionHistory.begin()->first != STARTING_DATE)))
 	{
 		religionHistory.insert(religionHistory.begin(), std::make_pair(STARTING_DATE, startingReligion));
 	}
