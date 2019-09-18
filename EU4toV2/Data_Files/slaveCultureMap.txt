@@ -26,10 +26,6 @@
 #		region: this rule applies if the province or nation is in the specified EU4 region
 #		provinceid: this rule applies for the specified province, or a nation with a capital in that province
 
-slaveCultureMap = {
-
-# Iberian and French
-
 # Germanic
 link = { vic2 = afro_norse eu4 = alamanni eu4 = lugii eu4 = quadi eu4 = marcoman eu4 = bastarnae eu4 = gepid eu4 = greuthungi eu4 = thuringian eu4 = varinian eu4 = rugii eu4 = vandalic eu4 = pommeranian eu4 = prussian eu4 = hannoverian eu4 = saxon eu4 = hessian eu4 = old_saxon eu4 = german eu4 = thuringian eu4 = colognian eu4 = old_gothic eu4 = baltendeutsche eu4 = eastphalian eu4 = high_saxon eu4 = low_saxon eu4 = moselfranconian eu4 = westphalian eu4 = feldern eu4 = franconian eu4 = swabian eu4 = rheinlaender eu4 = bavarian eu4 = austrian eu4 = eastfranconian eu4 = high_alemanisch eu4 = rhine_alemanisch eu4 = ripuarianfranconian eu4 = schlesischdeutsch eu4 = schwabisch eu4 = alemanisch_colonial eu4 = amerikaner eu4 = prussian_colonial eu4 = berber_germanic eu4 = ashkenazi eu4 = jewish_colonial eu4 = old_frankish eu4 = frankish eu4 = ostrogothic eu4 = gepid eu4 = swiss eu4 = romansh eu4 = suisse }
 link = { vic2 = afro_norse eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian }
@@ -108,7 +104,7 @@ link = { vic2 = native_american_minor eu4 = chichimecan }
 link = { vic2 = chibchan eu4 = muisca eu4 = cara eu4 = miskito }
 link = { vic2 = maranon eu4 = jivaro eu4 = chachapoyan }
 link = { vic2 = quechua eu4 = inca eu4 = chimuan }
-link = { vic2 = aimara eu4 = aimara  eu4 = diaguita }
+link = { vic2 = aimara eu4 = aimara eu4 = diaguita }
 link = { vic2 = amazonian eu4 = amazonian eu4 = maipurean }
 link = { vic2 = tupi eu4 = tupinamba eu4 = tupi }
 link = { vic2 = je eu4 = ge }
@@ -313,4 +309,3 @@ link = { vic2 = noculture eu4 = noculture }
 #link = { vic2 = cat ck2 = cat } # CK2 doesn't export cats yet
 link = { vic2 = undead eu4 = zombiec eu4 = zombie }
 link = { vic2 = alien eu4 = alien } # No actual culture, but ok
-}
