@@ -31,14 +31,6 @@ mappings={
 # CK2 titles are put right under the EU4 tag
 # (country) => (ck2title) means that the CK2 mapping already gives correct flag, no need of further mapping work
 
-link = { EU4 = Z30 Vic2 = KUK }
-link = { EU4 = K07 Vic2 = HOL }
-link = { EU4 = K01 Vic2 = SPC }
-link = { EU4 = K06 Vic2 = RUS }
-link = { EU4 = Y55 Vic2 = TKS }
-link = { EU4 = HUN Vic2 = WAL }
-link = { EU4 = HAB Vic2 = ALD }
-
 # Special countries..
 link = { EU4 = REB Vic2 = REB } # Rebels
 link = { EU4 = e_rebels Vic2 = REB } # Rebels
