@@ -20,6 +20,11 @@
 
 
 # This culture map contains one to one and many to one culture conversions for slaves.
+# In addition to the vic2 and eu4 culture, distinguishers can be defined:
+#		owner: this rule applies if the (EU4) province is owned by the specified tag or the nation was that tag
+#		religion: this rule applies if the province or nation is the specified religion
+#		region: this rule applies if the province or nation is in the specified EU4 region
+#		provinceid: this rule applies for the specified province, or a nation with a capital in that province
 
 slaveCultureMap = {
 
