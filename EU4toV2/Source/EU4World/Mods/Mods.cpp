@@ -66,7 +66,7 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 		}
 		else
 		{
-			LOG(LogLevel::Error) << "No path could be found for " << usedMod;
+			LOG(LogLevel::Error) << "No path could be found for " << usedMod << ". Check that the mod is present and that the .mod file specifies the path for the mod";
 			exit(-1);
 		}
 	}
