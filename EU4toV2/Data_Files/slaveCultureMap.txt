@@ -135,7 +135,7 @@ link = { vic2 = native_american_minor eu4 = tlingit eu4 = miwok }
 
 # East Asian
 link = { vic2 = japanese eu4 = japanese eu4 = kyushuan eu4 = togoku }
-link = { vic2 = manchu eu4 = manchu }
+link = { vic2 = manchu eu4 = manchu_new eu4 = manchu eu4 = evenk }
 link = { vic2 = beifaren eu4 = chihan  eu4 = jin  eu4 = xibei eu4 = zhongyuan eu4 = shandong_culture }
 link = { vic2 = nanfaren eu4 = tangut eu4 = gan eu4 = xiang eu4 = sichuanese eu4 = hubei eu4 = wu eu4 = jianghuai }
 link = { vic2 = korean eu4 = korean }
