@@ -22,31 +22,31 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/Buildings/Buildings.h"
+#include "../EU4toV2/Source/EU4World/Modifiers/Modifiers.h"
 #include <sstream>
 
 
 
-TEST(EU4World_BuildingsTests, nonExistentBuildingReturnsNullopt)
+TEST(EU4World_ModifiersTests, nonExistentModifierReturnsNullopt)
 {
 	std::stringstream input;
-	EU4::Buildings theBuildings(input);
+	EU4::Modifiers theModifiers(input);
 
-	ASSERT_FALSE(theBuildings.getBuilding("nonBuilding"));
+	ASSERT_FALSE(theModifiers.getModifier("nonModifier"));
 }
 
 
-TEST(EU4World_BuildingsTests, buildingIsReturned)
+TEST(EU4World_ModifiersTests, modifierIsReturned)
 {
 	std::stringstream input;
-	input << "testBuilding = {\n";
-	input << "\tcost = 100\n";
+	input << "testModifier = {\n";
+	input << "\teffect = 100\n";
 	input << "}";
-	input << "testBuilding2 = {\n";
-	input << "\tcost = 200\n";
+	input << "testModifier2 = {\n";
+	input << "\teffect = 200\n";
 	input << "}";
-	EU4::Buildings theBuildings(input);
+	EU4::Modifiers theModifiers(input);
 
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding")->getCost(), 100);
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding2")->getCost(), 200);
+	ASSERT_EQ(theModifiers.getModifier("testModifier")->getEffectAmount("effect"), 100);
+	ASSERT_EQ(theModifiers.getModifier("testModifier2")->getEffectAmount("effect"), 200);
 }

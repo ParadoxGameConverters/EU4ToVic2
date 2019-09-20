@@ -21,32 +21,37 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/Buildings/Buildings.h"
-#include <sstream>
+#ifndef BUILDING_H
+#define BUILDING_H
 
 
 
-TEST(EU4World_BuildingsTests, nonExistentBuildingReturnsNullopt)
+#include "../Modifiers/Modifier.h"
+#include "newParser.h"
+
+
+
+namespace EU4
 {
-	std::stringstream input;
-	EU4::Buildings theBuildings(input);
 
-	ASSERT_FALSE(theBuildings.getBuilding("nonBuilding"));
+class Building: commonItems::parser
+{
+	public:
+		Building(std::istream& theStream);
+
+		double getCost() const { return cost; }
+		const Modifier& getModifier() const { return modifier; }
+		bool isManufactory() { return manufactory; }
+
+	private:
+		double cost = 0.0;
+		bool manufactory = false;
+		Modifier modifier;
+
+};
+
 }
 
 
-TEST(EU4World_BuildingsTests, buildingIsReturned)
-{
-	std::stringstream input;
-	input << "testBuilding = {\n";
-	input << "\tcost = 100\n";
-	input << "}";
-	input << "testBuilding2 = {\n";
-	input << "\tcost = 200\n";
-	input << "}";
-	EU4::Buildings theBuildings(input);
 
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding")->getCost(), 100);
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding2")->getCost(), 200);
-}
+#endif // BUILDING_H

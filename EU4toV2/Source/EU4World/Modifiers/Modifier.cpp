@@ -20,45 +20,41 @@ THE SOFTWARE. */
 
 
 
-#ifndef PROVINCES_H_
-#define PROVINCES_H_
+#include "Modifier.h"
+#include "ParserHelpers.h"
+#include "Log.h"
+#include <cctype>
 
 
 
-#include "EU4Province.h"
-#include "../Modifiers/Modifiers.h"
-#include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "newParser.h"
-#include <map>
-#include <optional>
-
-
-
-namespace EU4
+EU4::Modifier::Modifier(std::istream& theStream)
 {
+	registerKeyword(std::regex("potential"), commonItems::ignoreItem);
+	registerKeyword(std::regex("trigger"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& effect, std::istream& theStream) {
+		commonItems::singleString amountSingleString(theStream);
+		auto amountString = amountSingleString.getString();
 
-class Provinces: commonItems::parser
-{
-	public:
-		Provinces(std::istream& theStream, const Buildings& buildingTypes, const Modifiers& modifierTypes);
+		std::smatch match;
+		if (std::regex_match(amountString, match, std::regex("-?[0-9]+([.][0-9]+)?")))
+		{
+			double amount = stof(amountString);
+			effects.insert(std::make_pair(effect, amount));
+		}
+	});
 
-		Province& getProvince(int provinceNumber);
-
-		auto& getAllProvinces() { return provinces; }
-		double geTotalProvinceWeights() const { return totalProvinceWeights; };
-
-		void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
-		void determineTotalProvinceWeights(const Configuration& configuration);
-
-	private:
-		void logTotalProvinceWeights() const;
-
-		std::map<int, Province> provinces;
-		double totalProvinceWeights = 0.0;
-};
-
+	parseStream(theStream);
 }
 
 
-
-#endif // PROVINCES_H_
+double EU4::Modifier::getEffectAmount(const std::string& theEffect) const
+{
+	if (effects.count(theEffect) > 0)
+	{
+		return effects.at(theEffect);
+	}
+	else
+	{
+		return 0;
+	}
+}

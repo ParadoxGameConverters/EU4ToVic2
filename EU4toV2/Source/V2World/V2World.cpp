@@ -1489,7 +1489,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 	LOG(LogLevel::Info) << "Creating pops";
 
 	long		my_totalWorldPopulation = static_cast<long>(0.55 * totalWorldPopulation);
-	double	popWeightRatio = my_totalWorldPopulation / sourceWorld.getWorldWeightSum();
+	double	popWeightRatio = my_totalWorldPopulation / sourceWorld.getTotalProvinceWeights();
 
 	//ofstream output_file("Data.csv");
 
@@ -1519,8 +1519,8 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 	{
 		LOG(LogLevel::Info) << "Total world population: " << totalWorldPopulation;
 	}
-	LOG(LogLevel::Info) << "Total world weight sum: " << sourceWorld.getWorldWeightSum();
-	LOG(LogLevel::Info) << my_totalWorldPopulation << " / " << sourceWorld.getWorldWeightSum();
+	LOG(LogLevel::Info) << "Total world weight sum: " << sourceWorld.getTotalProvinceWeights();
+	LOG(LogLevel::Info) << my_totalWorldPopulation << " / " << sourceWorld.getTotalProvinceWeights();
 	LOG(LogLevel::Info) << "Population per weight point is: " << popWeightRatio;
 
 	long newTotalPopulation = 0;
@@ -1749,7 +1749,7 @@ void V2World::output() const
 	createModFile();
 
 	// Create common\countries path.
-	string countriesPath = "Output/" + theConfiguration.getOutputName() + "/common/countries";
+	string countriesPath = "output/" + theConfiguration.getOutputName() + "/common/countries";
 	if (!Utils::TryCreateFolder(countriesPath))
 	{
 		return;
@@ -1758,7 +1758,7 @@ void V2World::output() const
 	// Output common\countries.txt
 	LOG(LogLevel::Debug) << "Writing countries file";
 	FILE* allCountriesFile;
-	if (fopen_s(&allCountriesFile, ("Output/" + theConfiguration.getOutputName() + "/common/countries.txt").c_str(), "w") != 0)
+	if (fopen_s(&allCountriesFile, ("output/" + theConfiguration.getOutputName() + "/common/countries.txt").c_str(), "w") != 0)
 	{
 		LOG(LogLevel::Error) << "Could not create countries file";
 		exit(-1);
@@ -1791,7 +1791,7 @@ void V2World::output() const
 
 	// Create localisations for all new countries. We don't actually know the names yet so we just use the tags as the names.
 	LOG(LogLevel::Debug) << "Writing localisation text";
-	string localisationPath = "Output/" + theConfiguration.getOutputName() + "/localisation";
+	string localisationPath = "output/" + theConfiguration.getOutputName() + "/localisation";
 	if (!Utils::TryCreateFolder(localisationPath))
 	{
 		return;
@@ -1840,8 +1840,8 @@ void V2World::output() const
 		exit(-1);
 	}
 
-	Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/history/countries");
-	Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/history/units");
+	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
+	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
 	for (auto country: countries)
 	{
 		if (country.second->isNewCountry())
@@ -1852,7 +1852,7 @@ void V2World::output() const
 	fclose(localisationFile);
 
 	LOG(LogLevel::Debug) << "Writing provinces";
-	Utils::TryCreateFolder("Output/" + theConfiguration.getOutputName() + "/history/provinces");
+	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces");
 	for (auto province: provinces)
 	{
 		province.second->output();
@@ -1869,7 +1869,7 @@ void V2World::output() const
 
 	// verify countries got written
 	ifstream V2CountriesInput;
-	V2CountriesInput.open(("Output/" + theConfiguration.getOutputName() + "/common/countries.txt").c_str());
+	V2CountriesInput.open(("output/" + theConfiguration.getOutputName() + "/common/countries.txt").c_str());
 	if (!V2CountriesInput.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not open countries.txt";
@@ -1896,7 +1896,7 @@ void V2World::output() const
 		int size = line.find_last_of('\"') - start - 1;
 		countryFileName = line.substr(start + 1, size);
 
-		if (Utils::DoesFileExist("Output/" + theConfiguration.getOutputName() + "/common/countries/" + countryFileName))
+		if (Utils::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/countries/" + countryFileName))
 		{
 		}
 		else if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + countryFileName))
@@ -1913,7 +1913,7 @@ void V2World::output() const
 
 void V2World::createModFile() const
 {
-	ofstream modFile("Output/" + theConfiguration.getOutputName() + ".mod");
+	ofstream modFile("output/" + theConfiguration.getOutputName() + ".mod");
 	if (!modFile.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not create " << theConfiguration.getOutputName() << ".mod";
@@ -1947,9 +1947,9 @@ void V2World::outputPops() const
 	for (auto popRegion : popRegions)
 	{
 		FILE* popsFile;
-		if (fopen_s(&popsFile, ("Output/" + theConfiguration.getOutputName() + "/history/pops/1836.1.1/" + popRegion.first).c_str(), "w") != 0)
+		if (fopen_s(&popsFile, ("output/" + theConfiguration.getOutputName() + "/history/pops/1836.1.1/" + popRegion.first).c_str(), "w") != 0)
 		{
-			LOG(LogLevel::Error) << "Could not create pops file Output/" << theConfiguration.getOutputName() << "/history/pops/1836.1.1/" << popRegion.first;
+			LOG(LogLevel::Error) << "Could not create pops file output/" << theConfiguration.getOutputName() << "/history/pops/1836.1.1/" << popRegion.first;
 			exit(-1);
 		}
 

@@ -20,45 +20,20 @@ THE SOFTWARE. */
 
 
 
-#ifndef PROVINCES_H_
-#define PROVINCES_H_
+#include "ProvinceModifier.h"
+#include "ParserHelpers.h"
 
 
 
-#include "EU4Province.h"
-#include "../Modifiers/Modifiers.h"
-#include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "newParser.h"
-#include <map>
-#include <optional>
-
-
-
-namespace EU4
+EU4::ProvinceModifier::ProvinceModifier(std::istream& theStream)
 {
+	registerKeyword(std::regex("modifier"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleString modifierString(theStream);
+		modifier = modifierString.getString();
+	});
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::ignoreItem(unused, theStream);
+	});
 
-class Provinces: commonItems::parser
-{
-	public:
-		Provinces(std::istream& theStream, const Buildings& buildingTypes, const Modifiers& modifierTypes);
-
-		Province& getProvince(int provinceNumber);
-
-		auto& getAllProvinces() { return provinces; }
-		double geTotalProvinceWeights() const { return totalProvinceWeights; };
-
-		void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
-		void determineTotalProvinceWeights(const Configuration& configuration);
-
-	private:
-		void logTotalProvinceWeights() const;
-
-		std::map<int, Province> provinces;
-		double totalProvinceWeights = 0.0;
-};
-
+	parseStream(theStream);
 }
-
-
-
-#endif // PROVINCES_H_

@@ -20,45 +20,30 @@ THE SOFTWARE. */
 
 
 
-#ifndef PROVINCES_H_
-#define PROVINCES_H_
-
-
-
-#include "EU4Province.h"
-#include "../Modifiers/Modifiers.h"
-#include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "newParser.h"
-#include <map>
-#include <optional>
+#ifndef BUILDING_WEIGHT_EFFECTS_H
+#define BUILDING_WEIGHT_EFFECTS_H
 
 
 
 namespace EU4
 {
 
-class Provinces: commonItems::parser
+struct BuildingWeightEffects
 {
-	public:
-		Provinces(std::istream& theStream, const Buildings& buildingTypes, const Modifiers& modifierTypes);
-
-		Province& getProvince(int provinceNumber);
-
-		auto& getAllProvinces() { return provinces; }
-		double geTotalProvinceWeights() const { return totalProvinceWeights; };
-
-		void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
-		void determineTotalProvinceWeights(const Configuration& configuration);
-
-	private:
-		void logTotalProvinceWeights() const;
-
-		std::map<int, Province> provinces;
-		double totalProvinceWeights = 0.0;
+	double buildingWeight = 0.0;
+	double manufactoriesValue = 0.0;
+	double manpowerModifier = 0.0;
+	double taxModifier = 0.0;
+	double productionEfficiency = 0.0;
+	double tradePower = 0.0;
+	double tradeEfficiency = 0.0;
+	double tradeGoodsSizeModifier = 0.0;
+	double tradeValue = 0.0;
+	double tradeSteering = 0.0;
 };
 
 }
 
 
 
-#endif // PROVINCES_H_
+#endif // BUILDING_WEIGHT_EFFECTS_H

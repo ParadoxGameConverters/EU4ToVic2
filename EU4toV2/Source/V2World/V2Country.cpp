@@ -295,7 +295,7 @@ void V2Country::output() const
 	if(!dynamicCountry)
 	{
 		FILE* output;
-		if (fopen_s(&output, ("Output/" + theConfiguration.getOutputName() + "/history/countries/" + filename).c_str(), "w") != 0)
+		if (fopen_s(&output, ("output/" + theConfiguration.getOutputName() + "/history/countries/" + filename).c_str(), "w") != 0)
 		{
 			LOG(LogLevel::Error) << "Could not create country history file " << filename;
 			exit(-1);
@@ -416,10 +416,10 @@ void V2Country::output() const
 	if (newCountry)
 	{
 		// Output common country file.
-		std::ofstream commonCountryOutput("Output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile);
+		std::ofstream commonCountryOutput("output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile);
 		if (!commonCountryOutput.is_open())
 		{
-			LOG(LogLevel::Error) << "Could not open Output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile;
+			LOG(LogLevel::Error) << "Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile;
 			exit(-1);
 		}
 		commonCountryOutput << "graphical_culture = UsGC\n";	// default to US graphics
@@ -478,7 +478,7 @@ void V2Country::outputElection(FILE* output) const
 
 void V2Country::outputOOB() const
 {
-	std::ofstream output("Output/" + theConfiguration.getOutputName() + "/history/units/" + tag + "_OOB.txt");
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + tag + "_OOB.txt");
 	if (!output.is_open())
 	{
 		std::runtime_error exception("Could not create OOB file " + tag + "_OOB.txt");

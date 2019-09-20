@@ -21,32 +21,35 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/Buildings/Buildings.h"
-#include <sstream>
+#include "Modifiers.h"
+#include "ParserHelpers.h"
 
 
 
-TEST(EU4World_BuildingsTests, nonExistentBuildingReturnsNullopt)
+EU4::Modifiers::Modifiers(std::istream& theStream)
 {
-	std::stringstream input;
-	EU4::Buildings theBuildings(input);
-
-	ASSERT_FALSE(theBuildings.getBuilding("nonBuilding"));
+	addModifiers(theStream);
 }
 
 
-TEST(EU4World_BuildingsTests, buildingIsReturned)
+void EU4::Modifiers::addModifiers(std::istream& theStream)
 {
-	std::stringstream input;
-	input << "testBuilding = {\n";
-	input << "\tcost = 100\n";
-	input << "}";
-	input << "testBuilding2 = {\n";
-	input << "\tcost = 200\n";
-	input << "}";
-	EU4::Buildings theBuildings(input);
+	registerKeyword(std::regex("[a-zA-Z0-9\\_]+"), [this](const std::string& modifierName, std::istream& theStream) {
+		Modifier modifier(theStream);
+		modifiers.insert(std::make_pair(modifierName, modifier));
+	});
+	parseStream(theStream);
+}
 
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding")->getCost(), 100);
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding2")->getCost(), 200);
+
+std::optional<EU4::Modifier> EU4::Modifiers::getModifier(const std::string& modifierName) const
+{
+	if (modifiers.count(modifierName) > 0)
+	{
+		return std::make_optional(modifiers.at(modifierName));
+	}
+	else
+	{
+		return std::nullopt;
+	}
 }

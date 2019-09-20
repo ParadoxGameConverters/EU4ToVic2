@@ -27,19 +27,12 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto investment = theMapper.getArmyInvestmentFromIdea("missingIdea", 1);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(investment, 0);
 }
 
@@ -91,19 +84,12 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaScalesByIdeaLevel)
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getCommerceInvestmentFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getCommerceInvestmentFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto investment = theMapper.getCommerceInvestmentFromIdea("missingIdea", 1);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(investment, 0);
 }
 
@@ -155,19 +141,12 @@ TEST(Mappers_IdeaEffectMapperTests, getCommerceInvestmentFromIdeaScalesByIdeaLev
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getCultureInvestmentFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getCultureInvestmentFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto investment = theMapper.getCultureInvestmentFromIdea("missingIdea", 1);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(investment, 0);
 }
 
@@ -219,19 +198,12 @@ TEST(Mappers_IdeaEffectMapperTests, getCultureInvestmentFromIdeaScalesByIdeaLeve
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getIndustryInvestmentFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getIndustryInvestmentFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto investment = theMapper.getIndustryInvestmentFromIdea("missingIdea", 1);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(investment, 0);
 }
 
@@ -283,19 +255,12 @@ TEST(Mappers_IdeaEffectMapperTests, getIndustryInvestmentFromIdeaScalesByIdeaLev
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getNavyInvestmentFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getNavyInvestmentFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto investment = theMapper.getNavyInvestmentFromIdea("missingIdea", 1);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(investment, 0);
 }
 
@@ -347,19 +312,12 @@ TEST(Mappers_IdeaEffectMapperTests, getNavyInvestmentFromIdeaScalesByIdeaLevel)
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getUHLiberalFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getUHLiberalFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto UHLiberal = theMapper.getUHLiberalFromIdea("missingIdea", 0);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_NEAR(UHLiberal, 0.0, 0.0000001);
 }
 
@@ -399,19 +357,12 @@ TEST(Mappers_IdeaEffectMapperTests, getUHLiberalFromIdeaScalesByIdeaLevel)
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getUHReactionaryFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getUHReactionaryFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto UHRadical = theMapper.getUHReactionaryFromIdea("missingIdea", 0);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_NEAR(UHRadical, 0.0, 0.0000001);
 }
 
@@ -451,24 +402,17 @@ TEST(Mappers_IdeaEffectMapperTests, getUHReactionaryFromIdeaScalesByIdeaLevel)
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto literacy = theMapper.getLiteracyFromIdea("missingIdea", 0);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_NEAR(literacy, 0.0, 0.0000001);
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaLogsDefaultsToZero)
+TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaDefaultsToZero)
 {
 	std::stringstream input;
 	input << "specifiedIdea ={\n";
@@ -479,7 +423,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaLogsDefaultsToZero)
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaLogsCanBeSet)
+TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaCanBeSet)
 {
 	std::stringstream input;
 	input << "specifiedIdea ={\n";
@@ -491,7 +435,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaLogsCanBeSet)
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaLogsCanBeSetByMultipleLevels)
+TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaCanBeSetByMultipleLevels)
 {
 	std::stringstream input;
 	input << "specifiedIdea ={\n";
@@ -503,7 +447,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaLogsCanBeSetByMultipleLev
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaLogsCanBeSetByOutOfOrderLevels)
+TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaCanBeSetByOutOfOrderLevels)
 {
 	std::stringstream input;
 	input << "specifiedIdea ={\n";
@@ -515,19 +459,12 @@ TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaLogsCanBeSetByOutOfOrderL
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getOrderInfluenceFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getOrderInfluenceFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto investment = theMapper.getOrderInfluenceFromIdea("missingIdea", 1);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(investment, 0);
 }
 
@@ -591,19 +528,12 @@ TEST(Mappers_IdeaEffectMapperTests, getOrderInfluenceFromIdeaGivesBonusForComple
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getLibertyInfluenceFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getLibertyInfluenceFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto investment = theMapper.getLibertyInfluenceFromIdea("missingIdea", 1);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(investment, 0);
 }
 
@@ -667,19 +597,12 @@ TEST(Mappers_IdeaEffectMapperTests, getLibertyInfluenceFromIdeaGivesBonusForComp
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getEqualityInfluenceFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getEqualityInfluenceFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto investment = theMapper.getEqualityInfluenceFromIdea("missingIdea", 1);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(investment, 0);
 }
 
@@ -743,22 +666,15 @@ TEST(Mappers_IdeaEffectMapperTests, getEqualityInfluenceFromIdeaGivesBonusForCom
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getArmyTechFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getArmyTechFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
 	std::map<std::string, int> ideas;
 	ideas.insert(std::make_pair("missingIdea", 0));
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto tech = theMapper.getArmyTechFromIdeas(ideas);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(tech, 0);
 }
 
@@ -840,22 +756,15 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyTechFromIdeaInfluencedByMultipleIdeas
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getCommerceTechFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getCommerceTechFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
 	std::map<std::string, int> ideas;
 	ideas.insert(std::make_pair("missingIdea", 0));
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto tech = theMapper.getCommerceTechFromIdeas(ideas);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(tech, 0);
 }
 
@@ -937,22 +846,15 @@ TEST(Mappers_IdeaEffectMapperTests, getCommerceTechFromIdeaInfluencedByMultipleI
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getCultureTechFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getCultureTechFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
 	std::map<std::string, int> ideas;
 	ideas.insert(std::make_pair("missingIdea", 0));
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto tech = theMapper.getCultureTechFromIdeas(ideas);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(tech, 0);
 }
 
@@ -1034,22 +936,15 @@ TEST(Mappers_IdeaEffectMapperTests, getCultureTechFromIdeaInfluencedByMultipleId
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getIndustryTechFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getIndustryTechFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
 	std::map<std::string, int> ideas;
 	ideas.insert(std::make_pair("missingIdea", 0));
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto tech = theMapper.getIndustryTechFromIdeas(ideas);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(tech, 0);
 }
 
@@ -1131,22 +1026,15 @@ TEST(Mappers_IdeaEffectMapperTests, getIndustryTechFromIdeaInfluencedByMultipleI
 }
 
 
-TEST(Mappers_IdeaEffectMapperTests, getNavyTechFromIdeaLogsMissingIdeaAndReturnsZero)
+TEST(Mappers_IdeaEffectMapperTests, getNavyTechFromIdeaReturnsZeroForMissingIdea)
 {
 	std::stringstream input;
-
 	mappers::IdeaEffectMapper theMapper(input);
 
 	std::map<std::string, int> ideas;
 	ideas.insert(std::make_pair("missingIdea", 0));
 
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
 	auto tech = theMapper.getNavyTechFromIdeas(ideas);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No effects specified for idea: missingIdea\n");
 	ASSERT_EQ(tech, 0);
 }
 

@@ -21,32 +21,26 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/Buildings/Buildings.h"
+#include "Building.h"
+#include "ParserHelpers.h"
 #include <sstream>
 
 
 
-TEST(EU4World_BuildingsTests, nonExistentBuildingReturnsNullopt)
+EU4::Building::Building(std::istream& theStream)
 {
-	std::stringstream input;
-	EU4::Buildings theBuildings(input);
+	registerKeyword(std::regex("cost"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble costDouble(theStream);
+		cost = costDouble.getDouble();
+	});
+	registerKeyword(std::regex("modifier"), [this](const std::string& unused, std::istream& theStream) {
+		modifier = Modifier(theStream);
+	});
+	registerKeyword(std::regex("manufactory"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::ignoreItem(unused, theStream);
+		manufactory = true;
+	});
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
 
-	ASSERT_FALSE(theBuildings.getBuilding("nonBuilding"));
-}
-
-
-TEST(EU4World_BuildingsTests, buildingIsReturned)
-{
-	std::stringstream input;
-	input << "testBuilding = {\n";
-	input << "\tcost = 100\n";
-	input << "}";
-	input << "testBuilding2 = {\n";
-	input << "\tcost = 200\n";
-	input << "}";
-	EU4::Buildings theBuildings(input);
-
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding")->getCost(), 100);
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding2")->getCost(), 200);
+	parseStream(theStream);
 }

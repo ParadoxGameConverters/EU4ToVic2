@@ -26,10 +26,14 @@ THE SOFTWARE. */
 
 
 #include "Date.h"
-#include "Buildings.h"
+#include "BuildingWeightEffects.h"
 #include "GreatProjects.h"
 #include "PopRatio.h"
+#include "ProvinceBuildings.h"
 #include "ProvinceHistory.h"
+#include "ProvinceStats.h"
+#include "../Buildings/Buildings.h"
+#include "../Modifiers/Modifiers.h"
 #include "newParser.h"
 #include <string>
 #include <vector>
@@ -48,7 +52,12 @@ class Religions;
 class Province: commonItems::parser
 {
 	public:
-		Province(const std::string& numString, std::istream& theStream);
+		Province(
+			const std::string& numString,
+			std::istream& theStream,
+			const Buildings& buildingTypes,
+			const Modifiers& modifierTypes
+		);
 
 		void addCore(const std::string& tag) { cores.insert(tag); }
 		void removeCore(const std::string& tag) { cores.erase(tag); }
@@ -66,6 +75,7 @@ class Province: commonItems::parser
 		bool inHre() const { return inHRE; }
 		bool isColony() const { return colony; }
 		bool wasColonised() const { return hadOriginalColoniser || provinceHistory->wasColonized(); }
+		bool hasModifier(const std::string& modifierName) const { return modifiers.count(modifierName) > 0; }
 		std::vector<EU4::PopRatio> getPopRatios() const { return provinceHistory->getPopRatios(); }
 		std::optional<date> getFirstOwnedDate() const { return provinceHistory->getFirstOwnedDate(); }
 
@@ -77,14 +87,12 @@ class Province: commonItems::parser
 		double getManpowerWeight() const { return manpowerWeight; }
 		double getTotalBuildingWeight() const { return buildingWeight; }
 		double getTotalDevModifier() const { return devModifier; }
-		double getCurrentTradeGoodWeight() const { return tradeGoodWeight; }
-		std::vector<double>	getProductionVector() const { return productionVector; }
+		ProvinceStats getProvinceStats() const { return provinceStats; }
 		std::string getTradeGoods() const { return tradeGoods; }
 
 	private:
-		void determineProvinceWeight();
-		std::vector<double> getProvBuildingWeight() const;
-		double getTradeGoodWeight() const;
+		void determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes);
+		BuildingWeightEffects getProvBuildingWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes) const;
 		double getTradeGoodPrice() const;
 
 		int num = 0;
@@ -98,8 +106,9 @@ class Province: commonItems::parser
 		bool hadOriginalColoniser = false;
 
 		std::unique_ptr<EU4::ProvinceHistory> provinceHistory;
-		std::unique_ptr<EU4::Buildings> buildings;
+		std::unique_ptr<EU4::ProvinceBuildings> buildings;
 		std::unique_ptr<EU4::GreatProjects> greatProjects;
+		std::set<std::string> modifiers;
 
 		// province attributes for weights
 		double baseTax = 0.0;
@@ -111,9 +120,9 @@ class Province: commonItems::parser
 		double productionIncome = 0;
 		double manpowerWeight = 0;
 		double buildingWeight = 0;
-		double tradeGoodWeight = 0;
 		double devModifier = 0;
-		std::vector<double> productionVector;
+		int centerOfTradeLevel = 0;
+		ProvinceStats provinceStats;
 };
 
 }

@@ -22,31 +22,50 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/Buildings/Buildings.h"
+#include "../EU4toV2/Source/EU4World/Provinces/ProvinceBuildings.h"
 #include <sstream>
 
 
 
-TEST(EU4World_BuildingsTests, nonExistentBuildingReturnsNullopt)
+TEST(EU4World_BuildingsTests, buildingsDefaultsToEmpty)
 {
 	std::stringstream input;
-	EU4::Buildings theBuildings(input);
+	input << "={}";
 
-	ASSERT_FALSE(theBuildings.getBuilding("nonBuilding"));
+	EU4::ProvinceBuildings theBuildings(input);
+	ASSERT_EQ(theBuildings.getBuildings().size(), 0);
 }
 
 
-TEST(EU4World_BuildingsTests, buildingIsReturned)
+TEST(EU4World_BuildingsTests, buildingsCanBeAdded)
 {
 	std::stringstream input;
-	input << "testBuilding = {\n";
-	input << "\tcost = 100\n";
+	input << "={\n";
+	input << "	theBuilding=yes\n";
 	input << "}";
-	input << "testBuilding2 = {\n";
-	input << "\tcost = 200\n";
-	input << "}";
-	EU4::Buildings theBuildings(input);
 
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding")->getCost(), 100);
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding2")->getCost(), 200);
+	EU4::ProvinceBuildings theBuildings(input);
+	ASSERT_EQ(theBuildings.getBuildings().count("theBuilding"), 1);
+}
+
+
+TEST(EU4World_BuildingsTests, nonMatchingBuildingReturnsFalse)
+{
+	std::stringstream input;
+	input << "={}";
+
+	EU4::ProvinceBuildings theBuildings(input);
+	ASSERT_FALSE(theBuildings.hasBuilding("theBuilding"));
+}
+
+
+TEST(EU4World_BuildingsTests, matchingBuildingReturnsTrue)
+{
+	std::stringstream input;
+	input << "={\n";
+	input << "	theBuilding=yes\n";
+	input << "}";
+
+	EU4::ProvinceBuildings theBuildings(input);
+	ASSERT_TRUE(theBuildings.hasBuilding("theBuilding"));
 }

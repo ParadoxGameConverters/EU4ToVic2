@@ -21,32 +21,29 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/Buildings/Buildings.h"
-#include <sstream>
+#include "Buildings.h"
+#include "ParserHelpers.h"
 
 
 
-TEST(EU4World_BuildingsTests, nonExistentBuildingReturnsNullopt)
+EU4::Buildings::Buildings(std::istream& theStream)
 {
-	std::stringstream input;
-	EU4::Buildings theBuildings(input);
-
-	ASSERT_FALSE(theBuildings.getBuilding("nonBuilding"));
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& buildingName, std::istream& theStream) {
+		Building building(theStream);
+		buildings.insert(std::make_pair(buildingName, building));
+	});
+	parseStream(theStream);
 }
 
 
-TEST(EU4World_BuildingsTests, buildingIsReturned)
+std::optional<EU4::Building> EU4::Buildings::getBuilding(const std::string& buildingName) const
 {
-	std::stringstream input;
-	input << "testBuilding = {\n";
-	input << "\tcost = 100\n";
-	input << "}";
-	input << "testBuilding2 = {\n";
-	input << "\tcost = 200\n";
-	input << "}";
-	EU4::Buildings theBuildings(input);
-
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding")->getCost(), 100);
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding2")->getCost(), 200);
+	if (buildings.count(buildingName) > 0)
+	{
+		return std::make_optional(buildings.at(buildingName));
+	}
+	else
+	{
+		return std::nullopt;
+	}
 }

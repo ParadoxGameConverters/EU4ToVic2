@@ -20,45 +20,35 @@ THE SOFTWARE. */
 
 
 
-#ifndef PROVINCES_H_
-#define PROVINCES_H_
+#ifndef PROVINCE_BUILDINGS_H_
+#define PROVINCE_BUILDINGS_H_
 
 
 
-#include "EU4Province.h"
-#include "../Modifiers/Modifiers.h"
-#include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "newParser.h"
-#include <map>
-#include <optional>
+#include <set>
+#include <string>
 
 
 
 namespace EU4
 {
 
-class Provinces: commonItems::parser
+class ProvinceBuildings: commonItems::parser
 {
 	public:
-		Provinces(std::istream& theStream, const Buildings& buildingTypes, const Modifiers& modifierTypes);
+		ProvinceBuildings(std::istream& theStream);
 
-		Province& getProvince(int provinceNumber);
+		bool hasBuilding(const std::string& building) const { return buildings.count(building) > 0; }
 
-		auto& getAllProvinces() { return provinces; }
-		double geTotalProvinceWeights() const { return totalProvinceWeights; };
-
-		void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
-		void determineTotalProvinceWeights(const Configuration& configuration);
+		std::set<std::string> getBuildings() const { return buildings; }
 
 	private:
-		void logTotalProvinceWeights() const;
-
-		std::map<int, Province> provinces;
-		double totalProvinceWeights = 0.0;
+		std::set<std::string> buildings;
 };
 
 }
 
 
 
-#endif // PROVINCES_H_
+#endif // PROVINCE_BUILDINGS_H_

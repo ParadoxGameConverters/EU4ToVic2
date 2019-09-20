@@ -20,13 +20,14 @@ THE SOFTWARE. */
 
 
 
-#ifndef BUILDINGS_H_
-#define BUILDINGS_H_
+#ifndef MODIFIERS_H
+#define MODIFIERS_H
 
 
 
+#include "Modifier.h"
 #include "newParser.h"
-#include <set>
+#include <map>
 #include <string>
 
 
@@ -34,19 +35,21 @@ THE SOFTWARE. */
 namespace EU4
 {
 
-class Buildings: commonItems::parser
+class Modifiers: commonItems::parser
 {
 	public:
-		Buildings(std::istream& theStream);
+		Modifiers(std::istream& theStream);
 
-		bool hasBuilding(const std::string& building) const { return buildings.count(building) > 0; }
+		void addModifiers(std::istream& theStream);
+
+		std::optional<Modifier> getModifier(const std::string& modifierName) const;
 
 	private:
-		std::set<std::string> buildings;
+		std::map<std::string, Modifier> modifiers;
 };
 
 }
 
 
 
-#endif // BUILDINGS_H_
+#endif // MODIFIERS_H

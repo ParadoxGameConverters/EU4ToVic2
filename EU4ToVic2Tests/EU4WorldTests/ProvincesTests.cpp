@@ -33,7 +33,13 @@ TEST(EU4World_ProvincesTests, defaultProvincesIsEmpty)
 	std::stringstream input;
 	input << "={}";
 
-	EU4::Provinces theProvinces(input);
+	std::stringstream buildingsInput;
+	EU4::Buildings buildings(buildingsInput);
+
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Provinces theProvinces(input, buildings, modifiers);
 	ASSERT_EQ(theProvinces.getAllProvinces().size(), 0);
 }
 
@@ -47,7 +53,13 @@ TEST(EU4World_ProvincesTests, provincesCanBeInput)
 	input << "}\n";
 	input << "}";
 
-	EU4::Provinces theProvinces(input);
+	std::stringstream buildingsInput;
+	EU4::Buildings buildings(buildingsInput);
+
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Provinces theProvinces(input, buildings, modifiers);
 	ASSERT_EQ(theProvinces.getAllProvinces().size(), 1);
 }
 
@@ -61,7 +73,13 @@ TEST(EU4World_ProvincesTests, gettingNonExsistentProvinceThrowsException)
 	input << "}\n";
 	input << "}";
 
-	EU4::Provinces theProvinces(input);
+	std::stringstream buildingsInput;
+	EU4::Buildings buildings(buildingsInput);
+
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Provinces theProvinces(input, buildings, modifiers);
 	ASSERT_THROW(theProvinces.getProvince(42), std::range_error);
 }
 
@@ -75,7 +93,13 @@ TEST(EU4World_ProvincesTests, canGetProvince)
 	input << "}\n";
 	input << "}";
 
-	EU4::Provinces theProvinces(input);
+	std::stringstream buildingsInput;
+	EU4::Buildings buildings(buildingsInput);
+
+	std::stringstream modifiersInput;
+	EU4::Modifiers modifiers(modifiersInput);
+
+	EU4::Provinces theProvinces(input, buildings, modifiers);
 	ASSERT_EQ(theProvinces.getProvince(1).getNum(), 1);
 }
 

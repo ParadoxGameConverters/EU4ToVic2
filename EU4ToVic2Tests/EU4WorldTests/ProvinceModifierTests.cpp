@@ -22,31 +22,28 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/Buildings/Buildings.h"
+#include "../EU4toV2/Source/EU4World/Provinces/ProvinceModifier.h"
 #include <sstream>
 
 
 
-TEST(EU4World_BuildingsTests, nonExistentBuildingReturnsNullopt)
+TEST(EU4World_ProvinceModiferTests, modifierDefaultsToEmpty)
 {
 	std::stringstream input;
-	EU4::Buildings theBuildings(input);
+	input << "={}";
 
-	ASSERT_FALSE(theBuildings.getBuilding("nonBuilding"));
+	EU4::ProvinceModifier theModifier(input);
+	ASSERT_EQ(theModifier.getModifier(), "");
 }
 
 
-TEST(EU4World_BuildingsTests, buildingIsReturned)
+TEST(EU4World_ProvinceModiferTests, modifierCanBeSet)
 {
 	std::stringstream input;
-	input << "testBuilding = {\n";
-	input << "\tcost = 100\n";
+	input << "={\n";
+	input << "\tmodifier=theModifier\n";
 	input << "}";
-	input << "testBuilding2 = {\n";
-	input << "\tcost = 200\n";
-	input << "}";
-	EU4::Buildings theBuildings(input);
 
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding")->getCost(), 100);
-	ASSERT_EQ(theBuildings.getBuilding("testBuilding2")->getCost(), 200);
+	EU4::ProvinceModifier theModifier(input);
+	ASSERT_EQ(theModifier.getModifier(), "theModifier");
 }

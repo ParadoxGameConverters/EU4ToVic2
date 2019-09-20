@@ -22,12 +22,14 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "World.h"
+#include "Buildings/Buildings.h"
 #include "Countries.h"
 #include "CultureGroups.h"
 #include "EU4Country.h"
 #include "EU4Diplomacy.h"
 #include "EU4Version.h"
 #include "EU4Localisation.h"
+#include "Modifiers/Modifiers.h"
 #include "Mods/Mod.h"
 #include "Mods/Mods.h"
 #include "Provinces/EU4Province.h"
@@ -101,7 +103,21 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 		}
 	);
 	registerKeyword(std::regex("provinces"), [this](const std::string& provincesText, std::istream& theStream) {
-		provinces = std::make_unique<Provinces>(theStream);
+		std::ifstream buildingsFile(theConfiguration.getEU4Path() + "/common/buildings/00_buildings.txt");
+		Buildings buildingTypes(buildingsFile);
+		buildingsFile.close();
+
+		std::ifstream modifiersFile(theConfiguration.getEU4Path() + "/common/event_modifiers/00_event_modifiers.txt");
+		Modifiers modifierTypes(modifiersFile);
+		modifiersFile.close();
+		modifiersFile.open(theConfiguration.getEU4Path() + "/common/triggered_modifiers/00_triggered_modifiers.txt");
+		modifierTypes.addModifiers(modifiersFile);
+		modifiersFile.close();
+		modifiersFile.open(theConfiguration.getEU4Path() + "/common/static_modifiers/00_static_modifiers.txt");
+		modifierTypes.addModifiers(modifiersFile);
+		modifiersFile.close();
+
+		provinces = std::make_unique<Provinces>(theStream, buildingTypes, modifierTypes);
 		std::optional<date> possibleDate = provinces->getProvince(1).getFirstOwnedDate();
 		if (possibleDate)
 		{
@@ -134,7 +150,7 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 	LOG(LogLevel::Info) << "Building world";
 	setEmpires();
 	addProvinceInfoToCountries();
-	determineProvinceWeights();
+	provinces->determineTotalProvinceWeights(theConfiguration);
 	loadRegions();
 	readCommonCountries();
 	setLocalisations();
@@ -322,123 +338,6 @@ void EU4::world::loadDiplomacy(const shared_ptr<Object> EU4SaveObj)
 }
 
 
-void EU4::world::determineProvinceWeights()
-{
-	/*ofstream EU4_Production("EU4_Production.csv");
-	ofstream EU4_Tax("EU4_TaxIncome.csv");
-	ofstream EU4_World("EU4_World.csv");*/
-
-	std::vector<double> provEconVec;
-
-	std::map<string, vector<double> > world_tag_weights;
-
-	//// Heading
-	//EU4_Production << "PROV NAME" << ",";
-	//EU4_Production << "OWNER" << ",";
-	//EU4_Production << "TRADE GOOD" << ",";
-	//EU4_Production << "GOODS PROD" << ",";
-	//EU4_Production << "PRICE" << ",";
-	//EU4_Production << "TRADE EFF" << ",";
-	//EU4_Production << "PROD EFF" << ",";
-	//EU4_Production << "PROV TRADE VAL" << ",";
-	//EU4_Production << "TOTAL TRADE VAL" << ",";
-	//EU4_Production << "TOTAL PRODUCTION" << endl;
-
-	//// Heading
-	//EU4_World << "COUNTRY" << ",";
-	//EU4_World << "BASE TAX (2x)" << ",";
-	//EU4_World << "TAX INCOME" << ",";
-	//EU4_World << "PRODUCTION" << ",";
-	//EU4_World << "BUILDINGS" << ",";
-	//EU4_World << "MANPOWER" << ",";
-	//EU4_World << "SUBTOTAL SAN BUILD" << ",";
-	//EU4_World << "TOTAL WEIGHT" << endl;
-
-	//// Heading
-	//EU4_Tax << "PROV NAME" << ",";
-	//EU4_Tax << "OWNER" << ",";
-	//EU4_Tax << "BASE TAX" << ",";
-	//EU4_Tax << "BUILD INCOME" << ",";
-	//EU4_Tax << "TAX EFF" << ",";
-	//EU4_Tax << "TOTAL TAX INCOME" << endl;
-	for (auto& province: provinces->getAllProvinces())
-	{
-		// 0: Goods produced; 1 trade goods price; 2: trade value efficiency; 3: production effiency; 4: trade value; 5: production income
-		// 6: base tax; 7: building tax income 8: building tax eff; 9: total tax income; 10: total_trade_value
-
-
-		provEconVec = province.second.getProductionVector();
-		/*EU4_Production << i->second->getName() << ",";
-		EU4_Production << i->second->getOwnerString() << ",";
-		EU4_Production << i->second->getTradeGoods() << ",";
-		EU4_Production << provEconVec.at(0) << ",";
-		EU4_Production << provEconVec.at(1) << ",";
-		EU4_Production << provEconVec.at(2) << ",";
-		EU4_Production << provEconVec.at(3) << ",";
-		EU4_Production << provEconVec.at(4) << ",";
-		EU4_Production << provEconVec.at(10) << ",";
-		EU4_Production << i->second->getProvProdIncome() << "," << endl;
-
-
-		EU4_Tax << i->second->getName() << ",";
-		EU4_Tax << i->second->getOwnerString() << ",";
-		EU4_Tax << provEconVec.at(6) << ",";
-		EU4_Tax << provEconVec.at(7) << ",";
-		EU4_Tax << provEconVec.at(8) << ",";
-		EU4_Tax << provEconVec.at(9) << "," << endl;*/
-
-		worldWeightSum += province.second.getTotalWeight();
-
-		vector<double> map_values;
-		// Total Base Tax, Total Tax Income, Total Production, Total Buildings, Total Manpower, total province weight //
-		map_values.push_back((2 * province.second.getBaseTax()));
-		map_values.push_back(province.second.getTaxIncome());
-		map_values.push_back(province.second.getProductionIncome());
-		map_values.push_back(province.second.getTotalBuildingWeight());
-		map_values.push_back(province.second.getManpowerWeight());
-		map_values.push_back(province.second.getTotalWeight());
-
-		if (world_tag_weights.count(province.second.getOwnerString())) {
-			vector<double> new_map_values;
-			new_map_values = world_tag_weights[province.second.getOwnerString()];
-			new_map_values[0] += map_values[0];
-			new_map_values[1] += map_values[1];
-			new_map_values[2] += map_values[2];
-			new_map_values[3] += map_values[3];
-			new_map_values[4] += map_values[4];
-			new_map_values[5] += map_values[5];
-
-			world_tag_weights[province.second.getOwnerString()] = new_map_values;
-
-		}
-		else {
-			world_tag_weights.insert(std::pair<string, vector<double> >(province.second.getOwnerString(), map_values));
-		}
-
-	}
-	LOG(LogLevel::Info) << "Sum of all Province Weights: " << worldWeightSum;
-
-	// Total Base Tax, Total Tax Income, Total Production, Total Buildings, Total Manpower, total province weight //
-	LOG(LogLevel::Info) << "World Tag Map Size: " << world_tag_weights.size();
-
-	/*for (map<string, vector<double> >::iterator i = world_tag_weights.begin(); i != world_tag_weights.end(); i++)
-	{
-	EU4_World << i->first << ",";
-	EU4_World << i->second[0] << ",";
-	EU4_World << i->second[1] << ",";
-	EU4_World << i->second[2] << ",";
-	EU4_World << i->second[3] << ",";
-	EU4_World << i->second[4] << ",";
-	EU4_World << (i->second[5] - i->second[3]) << ",";
-	EU4_World << i->second[5] << endl;
-	}
-
-	EU4_Production.close();
-	EU4_Tax.close();
-	EU4_World.close();*/
-}
-
-
 void EU4::world::loadRegions()
 {
 	LOG(LogLevel::Info) << "Parsing EU4 regions";
@@ -596,6 +495,7 @@ void EU4::world::setLocalisations()
 	{
 		LOG(LogLevel::Debug) << "Reading mod localisation";
 		localisation.ReadFromAllFilesInFolder(itr + "/localisation");
+		localisation.ReadFromAllFilesInFolder(itr + "/localisation/replace");
 	}
 
 	for (auto theCountry: theCountries)
