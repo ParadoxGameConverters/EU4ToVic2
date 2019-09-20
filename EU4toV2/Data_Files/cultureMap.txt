@@ -291,7 +291,7 @@ link = { vic2 = russian eu4 = russian eu4 = ilmenian eu4 = severian eu4 = volhyn
 link = { vic2 = ukrainian eu4 = antean eu4 = ruthenian }
 link = { vic2 = byelorussian eu4 = byelorussian }
 #Generic Russian (split) from CK2 converted
-link = { vic2 = byelorussian eu4 = russian_culture region = white_ruthenia_area region = smolensk_area }
+link = { vic2 = byelorussian eu4 = russian_culture region = white_ruthenia_area }
 link = { vic2 = byelorussian eu4 = russian_culture region = smolensk_area }
 link = { vic2 = ukrainian eu4 = russian_culture region = ruthenia_region }
 link = { vic2 = russian eu4 = russian_culture }
@@ -542,7 +542,7 @@ link = { vic2 = dyula eu4 = dyola }
 link = { vic2 = akan eu4 = aka eu4 = ashanti }
 link = { vic2 = ewe eu4 = fon provinceid = 1141 } # Togo
 link = { vic2 = fon eu4 = fon }
-link = { vic2 = edo eu4 = region = benin_area eu4 = yorumba } # Nigeria
+link = { vic2 = edo eu4 = yorumba region = benin_area } # Nigeria
 link = { vic2 = yoruba eu4 = yorumba }
 link = { vic2 = ibo eu4 = nupe }
 link = { vic2 = mossi eu4 = mossi eu4 = dagomba }
@@ -630,7 +630,7 @@ link = { vic2 = alan eu4 = scythian }
 link = { vic2 = persian eu4 = parthian }
 
 # Animals
-link = { vic2 = polar_bears eu4 = jan_mayenese eu4 = bear }
+link = { vic2 = polar_bears eu4 = jan_mayenese eu4 = bear eu4 = red_panda_culture }
 link = { vic2 = horse eu4 = equine eu4 = horse }
 link = { vic2 = dog_culture eu4 = dog_culture }
 link = { vic2 = duck_culture eu4 = duck_culture }
@@ -1120,7 +1120,7 @@ link = { vic2 = pashtun eu4 = kushan }
 link = { vic2 = persian eu4 = scythian eu4 = sarmatian eu4 = iazyges eu4 = budinian eu4 = iazyx eu4 = roxolanian } #No damn idea
 
 # Non-humans
-link = { vic2 = cat ck2 = cat } 
+link = { vic2 = cat eu4 = cat }
 link = { vic2 = undead eu4 = zombiec eu4 = zombie }
 link = { vic2 = alien eu4 = alien } # No actual culture, but ok
 
