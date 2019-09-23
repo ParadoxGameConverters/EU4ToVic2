@@ -42,4 +42,4 @@ Q: My game has funny characters (I didn't play in English)
 A: Vic2 supports only some languages normally, but there are edits online that make it support more languages. Download and add it into the mod generated.
 -For Polish: https://github.com/Idhrendur/paradoxGameConverters/files/1808170/gfx.zip
 -For any Cyrillic language: https://github.com/Idhrendur/paradoxGameConverters/files/1808145/gfx.zip
--For Turkish: https://github.com/Idhrendur/paradoxGameConverters/files/1865395/Turkish.fonts.zip
+-For Turkish: https://github.com/Idhrendur/paradoxGameConverters/files/1865395/Turkish.fonts.zip 
