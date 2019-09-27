@@ -17,6 +17,726 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
+1.29.0.0 = {
+	#Commit so Idhrendur can check the mappings
+	#Here you have Canada and USA
+	#Water bodies are left unchanged
+
+	# ## WATER BODIES
+	# North America
+	link = { eu4 = 1914 v2 = 3227 }	# Great Slave Lake -> Great Slave Lake
+	link = { eu4 = 1916 eu4 = 1917 eu4 = 1918 eu4 = 1919 eu4 = 1920 eu4 = 1913 eu4 = 1921 eu4 = 1911 }	# Dubawni Lake, Yathkyed Lake, Kasba Lake, Nueltin Lake, Wholdaia Lake, Wollaston Lake, Peter Pond Lake, Lake Island -> DROPPED
+	link = { eu4 = 1915 v2 = 3228 }	# Lake Athabasca -> Lake Athabasca
+	link = { eu4 = 1912 v2 = 3229 }	# Lake Reindeer -> Reindeer Lake
+	link = { eu4 = 1665 v2 = 3118 }	# Lake Winnipeg -> Lake Winnipeg
+	link = { eu4 = 1907 eu4 = 1909 eu4 = 1908 eu4 = 1910 eu4 = 1906 eu4 = 1905 eu4 = 1904 eu4 = 1658 }	# Lake Bienville, Lake Minto, Clearwater Lakes, La Grande River, Lake Michikamau, Lake Manicouagan, Lake Saint-Jean, Lake Okeechobee -> DROPPED
+	link = { eu4 = 1664 v2 = 3117 }	# Lake Nipigon -> Lake Nipigon
+	link = { eu4 = 1663 v2 = 3116 }	# Lake Superior -> Lake Superior
+	link = { eu4 = 1661 v2 = 3114 }	# Lake Huron -> Lake Huron
+	link = { eu4 = 1662 v2 = 3115 }	# Lake Michigan -> Lake Michigan
+	link = { eu4 = 1659 v2 = 3112 }	# Lake Ontario -> Lake Ontario
+	link = { eu4 = 1660 v2 = 3113 }	# Lake Erie -> Lake Erie
+	link = { eu4 = 1922 v2 = 3225 }	# Great Salt Lake -> Great Salt Lake
+	link = { eu4 = 1903 v2 = 3239 }	# Lake Champlain -> Lake Champlain
+	link = { eu4 = 1657 v2 = 3110 }	# Lake Nicaragua -> Lake Nicaragua
+	link = { eu4 = 1923 }	# Williston Lake -> DROPPED
+	# South America
+	link = { eu4 = 1656 v2 = 3109 }	# Lake Titicaca -> Lake Titicaca
+	link = { eu4 = 1902 v2 = 3240 }	# Lake Poopo -> Lake Poopo
+	# Africa
+	link = { eu4 = 2471 }	# Chott el-Jerid -> DROPPED
+	link = { eu4 = 1648 v2 = 3101 }	# Lake Tchad -> Lake Tchad
+	link = { eu4 = 1649 v2 = 3102 }	# Lake Victoria -> Lake Victoria
+	link = { eu4 = 1900 v2 = 3236 }	# Lake Turkana -> Lake Rudolf
+	link = { eu4 = 1650 eu4 = 4132 eu4 = 4133 eu4 = 4134 eu4 = 4135 v2 = 3103 v2 = 3238 }	# MANY-TO-MANY: Lake Tanganyika, Mweru, Kivu, Rutanzige, Lake Albert -> Lake Tanganyika, Lake Mweru
+	link = { eu4 = 1651 v2 = 3104 }	# Lake Malawi -> Lake Malawi
+	link = { eu4 = 1899 v2 = 3224 }	# Tana Lake -> Lake Tana
+	# Asia
+	link = { eu4 = 1891 eu4 = 1894 eu4 = 2001 eu4 = 1896 eu4 = 1895 }	# Lake Tuz, Sevan Lake, Siling Lake, Lake Hongze, Lake Taihu -> DROPPED
+	link = { eu4 = 1892 v2 = 3231 }	# Lake Van -> Lake Van
+	link = { eu4 = 1893 v2 = 3232 }	# Lake Urmia -> Lake Urmia
+	link = { eu4 = 1653 eu4 = 4138 eu4 = 4137 eu4 = 4136 v2 = 3106 v2 = 3233 }	# MANY-TO-MANY: Lake Balchasj, Issyk-Kul, Alakol, Zaysan -> Lake Balchasj, Issyk Kul
+	link = { eu4 = 1327 v2 = 2780 }	# Aral Sea -> Aral Sea
+	link = { eu4 = 1326 v2 = 2779 }	# Caspian Sea -> Caspian Sea
+	link = { eu4 = 2000 v2 = 3234 }	# Qinghai Lake -> Qinghai Lake
+	link = { eu4 = 1897 v2 = 3108 }	# Dongting -> Lake Dongting
+	link = { eu4 = 1655 v2 = 3235 }	# Poyang Lake -> Lake Poyang
+	link = { eu4 = 1898 }	# Tonlé Sap Lake -> DROPPED
+	link = { eu4 = 1976 }	# Dead Sea -> DROPPED
+	# Europe
+	link = { eu4 = 1325 v2 = 2778 }	# Lake Balaton -> Lake Balaton
+	link = { eu4 = 1250 v2 = 2703 }	# Vänern -> Vänern
+	link = { eu4 = 1251 v2 = 2704 }	# Vättern -> Vättern
+	link = { eu4 = 2953 eu4 = 1977 eu4 = 1887 eu4 = 1886 eu4 = 1884 eu4 = 1883 eu4 = 1885 eu4 = 4139 eu4 = 4140 }	# Hjälmaren, Mälaren, Storsjön, Storavan, East Finnish Lakes, Western Finnish Lakes, Central Finnish Lakes, Oulujärvi, Saimaa -> DROPPED
+	link = { eu4 = 1260 v2 = 2713 }	# Lake Peipus -> Peipsi Järv
+	link = { eu4 = 1261 v2 = 2714 }	# Ladoga -> Ladoga
+	link = { eu4 = 1262 v2 = 2715 }	# Onega -> Onega
+	link = { eu4 = 1888 v2 = 3230 }	# Kara Sea -> Gulf of Ob
+	link = { eu4 = 1654 v2 = 3107 }	# Lake Bajkal -> Lake Bajkal
+	link = { eu4 = 1889 eu4 = 1890 }	# Lake Geneva, Lake Constance -> DROPPED
+	# # The Seas
+	# Baltic
+	link = { eu4 = 1252 v2 = 2705 }	# Gulf of Bothnia -> Gulf of Bothnia
+	link = { eu4 = 1253 eu4 = 1928 v2 = 2706 }	# Eastern Sea of Åland, Western Sea of Åland -> Ålands Hav
+	link = { eu4 = 1254 v2 = 2707 }	# Gulf of Finland -> Gulf of Finland
+	link = { eu4 = 1926 eu4 = 1255 eu4 = 1256 v2 = 2708 v2 = 2709 }	# MANY-TO-MANY: Northern Baltic Sea, Western Baltic Sea, Gulf of Riga -> Western Baltic Sea, Gulf of Riga
+	link = { eu4 = 1927 eu4 = 1257 v2 = 2710 }	# Eastern Baltic Sea, Southern Baltic Sea -> Southern Baltic Sea
+	link = { eu4 = 1259 eu4 = 1258 v2 = 2711 }	# Kattegat, Öresund -> Öresund
+	link = { eu4 = 4235 }	# Vistula Lagoon -> DROPPED
+	# Mediterranean
+	link = { eu4 = 1293 v2 = 2746 }	# Straits of Gibraltar -> Straits of Gibraltar
+	link = { eu4 = 1294 v2 = 2747 }	# Gulf of Almeria -> Gulf of Almería
+	link = { eu4 = 1295 v2 = 2748 }	# Gulf of Valencia -> Gulf of Valencia
+	link = { eu4 = 1299 v2 = 2752 }	# Coast of the Faeroes -> Gulf of Mallorca
+	link = { eu4 = 1300 v2 = 2753 }	# Western Mediterranean -> Western Mediterranean
+	link = { eu4 = 1296 v2 = 2749 }	# Gulf of Lion -> Gulf of Lion
+	link = { eu4 = 1297 v2 = 2750 }	# Cote D'Azur -> Cote D'Azur
+	link = { eu4 = 1298 v2 = 2751 }	# Ligurian Sea -> Ligurian Sea
+	link = { eu4 = 1301 v2 = 2754 }	# Barbary Coast -> Barbary Coast
+	link = { eu4 = 1302 v2 = 2755 }	# Cape Bon -> Cape Bon
+	link = { eu4 = 1303 v2 = 2756 }	# Tyrrenean Sea -> Tyrrhenian Sea
+	link = { eu4 = 1304 v2 = 2757 }	# Bay of Napoli -> Bay of Naples
+	link = { eu4 = 1308 v2 = 2761 }	# Gulf of Venice -> Gulf of Venice
+	link = { eu4 = 1309 v2 = 2762 }	# Adriatic Sea -> Adriatic Sea
+	link = { eu4 = 1310 v2 = 2763 }	# Straits of Otranto -> Straits of Otranto
+	link = { eu4 = 1307 v2 = 2760 }	# Straits of Messina -> Straits of Messina
+	link = { eu4 = 1311 v2 = 2764 }	# Gulf of Taranto -> Gulf of Taranto
+	link = { eu4 = 1313 v2 = 2766 }	# Gulf of Sirte -> Gulf of Sirte
+	link = { eu4 = 1312 v2 = 2765 }	# Ionian Sea -> Ionian Sea
+	link = { eu4 = 1314 v2 = 2767 }	# Gulf of Bomba -> Gulf of Tobruk
+	link = { eu4 = 1315 v2 = 2768 }	# Bay of Alexandria -> Bay of Alexandria
+	link = { eu4 = 1316 v2 = 2769 }	# Palestinian Coast -> Palestinian Coast
+	link = { eu4 = 1317 v2 = 2770 }	# Gulf of Cyprus -> Gulf of Cyprus
+	link = { eu4 = 1932 v2 = 2771 }	# Gulf of Satalia -> Sea of Crete
+	link = { eu4 = 1319 v2 = 2772 }	# Aegean Sea -> Aegean Sea
+	link = { eu4 = 1320 v2 = 2773 }	# Sea of Marmara -> Sea of Marmara
+	link = { eu4 = 1321 v2 = 2774 }	# Gulf of Varna -> Gulf of Varna
+	link = { eu4 = 1322 v2 = 2775 }	# Gulf of Odessa -> Gulf of Odessa
+	link = { eu4 = 1324 v2 = 2777 }	# Eastern Black Sea -> Eastern Black Sea
+	link = { eu4 = 1323 v2 = 2776 }	# Sea of Azov -> Sea of Azov
+	# Caribbean
+	link = { eu4 = 1510 v2 = 2963 }	# Bay of Campeche -> Yucatan Sea
+	link = { eu4 = 1509 v2 = 2962 }	# Tampico Bay -> Tampico Bay
+	link = { eu4 = 1508 v2 = 2961 }	# Galveston Bay -> Galveston Bay
+	link = { eu4 = 1507 v2 = 2960 }	# Mobile Bay -> Mobile Bay
+	link = { eu4 = 1506 v2 = 2959 }	# Apalachee Bay -> Apalachee Bay
+	link = { eu4 = 1511 v2 = 2964 }	# Gulf of Mexico -> Gulf of Mexico
+	link = { eu4 = 1513 eu4 = 1512 v2 = 2966 v2 = 2965 }	# MANY-TO-MANY: Gulf of Honduras, Yucatan Channel -> Belize Bay, Yucatan Channel
+	link = { eu4 = 1522 v2 = 2975 }	# Windward Islands -> Windward Islands
+	link = { eu4 = 1523 v2 = 2976 }	# Lesser Antilles -> Lesser Antilles
+	link = { eu4 = 1526 v2 = 2979 }	# Mona Passage -> Coast of Hispaniola
+	link = { eu4 = 1524 v2 = 2977 }	# Turks & Caicos Sea -> Turks & Caicos Sea
+	link = { eu4 = 1504 v2 = 2957 }	# Western Sargasso Sea -> Coast of the Bahamas
+	link = { eu4 = 1503 v2 = 2956 }	# Bahama Banks -> Coast of Florida
+	link = { eu4 = 1505 v2 = 2958 }	# Florida Straits -> Florida Straits
+	link = { eu4 = 1525 v2 = 2978 }	# Bahama Channel -> Coast of Cuba
+	link = { eu4 = 1515 v2 = 2968 }	# Gulf of Darien -> Gulf of Darien
+	link = { eu4 = 1514 v2 = 2967 }	# Mosquito Coast -> Mosquito Coast
+	link = { eu4 = 1518 v2 = 2971 }	# Northwestern Caribbean -> Northwestern Caribbean
+	link = { eu4 = 1517 v2 = 2970 }	# Central Caribbean -> Central Caribbean
+	link = { eu4 = 1519 v2 = 2972 }	# Venezuelan Gulf -> Venezuelan Gulf
+	link = { eu4 = 1520 v2 = 2973 }	# Venezuelan Sea -> Venezuelan Sea
+	link = { eu4 = 1516 v2 = 2969 }	# Jamaica Channel -> Jamaica Channel
+	link = { eu4 = 1521 v2 = 2974 }	# Eastern Caribbean -> Eastern Caribbean
+	# North Sea
+	link = { eu4 = 1282 eu4 = 1281 v2 = 2735 }	# Moray Firth, Coast of Shetland -> Moray Firth
+	link = { eu4 = 1266 eu4 = 1929 v2 = 2719 v2 = 2720 }	# MANY-TO-MANY: Southern Norwegian Sea, Western Norwegian Sea -> Southern Norwegian Sea, Skagerrack
+	link = { eu4 = 1267 v2 = 2712 }	# Skagerrak -> Kattegat
+	link = { eu4 = 1270 eu4 = 1269 eu4 = 1279 v2 = 2723 v2 = 2732 v2 = 2722 }	# MANY-TO-MANY: Dogger Bank, Coast of Holland, Tyne -> Dogger Bank, Tyne, Coast of Holland
+	link = { eu4 = 1280 v2 = 2733 }	# Firth of Forth -> Firth of Forth
+	link = { eu4 = 1975 v2 = 2734 }	# North Sea -> The North Sea
+	link = { eu4 = 1268 v2 = 2721 }	# Helgoland Bight -> Helgoland Bight
+	# Atlantic
+	link = { eu4 = 1263 eu4 = 1652 v2 = 2716 }	# Barents Sea, White Sea -> White Sea
+	link = { eu4 = 1264 v2 = 2717 }	# Lofoten Sea -> Lofoten Sea
+	link = { eu4 = 1265 v2 = 2718 }	# Northern Norwegian Sea -> Northern Norwegian Sea
+	link = { eu4 = 1474 v2 = 2927 }	# Spitzberg Sea -> Spitzberg Sea
+	link = { eu4 = 1475 v2 = 2928 }	# Icelandic Sea -> Icelandic Sea
+	link = { eu4 = 1473 v2 = 2926 }	# Jan Mayen Sea -> Jan Mayen Sea
+	link = { eu4 = 1476 v2 = 2929 }	# Eastern Coast of Iceland -> Shetland Straits
+	link = { eu4 = 1477 v2 = 2930 }	# Western Coast of Iceland -> Coast of Iceland
+	link = { eu4 = 1480 v2 = 2933 }	# Denmark Strait -> Denmark Strait
+	link = { eu4 = 1481 eu4 = 1924 v2 = 2934 }	# Eastern Coast of Greenland, Greenland Tip -> Eastern Coast of Greenland
+	link = { eu4 = 1482 v2 = 2935 }	# Western Coast of Greenland -> Western Coast of Greenland
+	link = { eu4 = 1496 v2 = 2949 }	# Labrador Sea -> Labrador Sea
+	link = { eu4 = 1484 v2 = 2937 }	# Baffin Bay -> Baffin Bay
+	link = { eu4 = 1483 v2 = 2936 }	# Labrador Strait -> Labrador Strait
+	link = { eu4 = 1485 eu4 = 1489 v2 = 2938 }	# Hudson Straits, Foxe Basin -> Hudson Straits
+	link = { eu4 = 1488 v2 = 2942 v2 = 2941 }	# Eastern Hudson Bay -> Foxe Basin, Eastern Hudson Bay
+	link = { eu4 = 1487 v2 = 2940 }	# Western Hudson Bay -> Western Hudson Bay
+	link = { eu4 = 1486 v2 = 2939 }	# James Bay -> James Bay
+	link = { eu4 = 1493 v2 = 2946 }	# Strait of Belle Isle -> Strait of Belle Isle
+	link = { eu4 = 1490 v2 = 2943 }	# Gulf of St. Lawrence -> Gulf of St. Lawrence
+	link = { eu4 = 1491 v2 = 2944 }	# Cabot Strait -> Cabot Strait
+	link = { eu4 = 1497 v2 = 2950 }	# Greenland Sea -> Greenland Sea
+	link = { eu4 = 1495 v2 = 2948 }	# Notre Dame Bay -> Notre Dame Bay
+	link = { eu4 = 1498 v2 = 3242 v2 = 2951 }	# Northern Atlantic -> Maury Sea Channel, Hecala Seamount
+	link = { eu4 = 1478 v2 = 2931 }	# Northeastern Atlantic -> Northeastern Atlantic
+	link = { eu4 = 1283 v2 = 2736 }	# North Channel -> North Channel
+	link = { eu4 = 1286 v2 = 2739 }	# Donegal Bay -> Donegal Bay
+	link = { eu4 = 1284 v2 = 2737 }	# Irish Sea -> Irish Sea
+	link = { eu4 = 1271 v2 = 2724 }	# Straits of Dover -> Straits of Dover
+	link = { eu4 = 1272 v2 = 2725 }	# The Channel -> The Channel
+	link = { eu4 = 1285 eu4 = 1274 v2 = 2726 v2 = 2738 v2 = 2727 }	# MANY-TO-MANY: St. George's Channel, Coast of Brittany -> Lands End, St. George's Channel, Coast of Britanny
+	link = { eu4 = 1288 v2 = 2741 }	# Celtic Sea -> Celtic Sea
+	link = { eu4 = 1287 v2 = 2740 }	# Dingle Bay -> Dingle Bay
+	link = { eu4 = 1479 v2 = 2932 }	# Rockall -> Rockall
+	link = { eu4 = 1275 v2 = 2728 }	# Quiberon Bay -> Quiberon Bay
+	link = { eu4 = 1276 v2 = 2729 }	# Cote D'Argent -> Cote D'Argent
+	link = { eu4 = 1277 v2 = 2730 }	# Bay of Biscay -> Bay of Biscay
+	link = { eu4 = 1289 v2 = 2742 }	# Western Approaches -> Western Approaches
+	link = { eu4 = 1290 v2 = 2743 }	# Finisterre Bay -> Finisterre Bay
+	link = { eu4 = 1278 v2 = 2731 }	# Cantabrian Sea -> Cantabrian Sea
+	link = { eu4 = 1563 v2 = 3019 }	# Hatton Bank -> Iberian Shelf
+	link = { eu4 = 1291 v2 = 2744 }	# Lusitanian Sea -> Lusitanian Sea
+	link = { eu4 = 1292 v2 = 2745 }	# Gulf of Cadiz -> Gulf of Cadiz
+	link = { eu4 = 1566 v2 = 3031 }	# Iberian Shelf -> Canary Approach
+	link = { eu4 = 1472 v2 = 2925 }	# Coast of Morocco -> Coast of Morocco
+	link = { eu4 = 1471 v2 = 2924 }	# Cape Bojador -> Canarian Sea
+	link = { eu4 = 1470 v2 = 2923 }	# Mauretanian Coast -> Mauritanian Coast
+	link = { eu4 = 1469 v2 = 2922 }	# Bay of Arguin -> Coast of Senegambia
+	link = { eu4 = 1468 v2 = 2921 }	# Coast of Gambia -> Coast of Guinea
+	link = { eu4 = 1467 v2 = 2920 }	# Grain Coast -> Ivory Coast
+	link = { eu4 = 1466 v2 = 2919 }	# Ivory Coast -> Gold Coast
+	link = { eu4 = 1465 v2 = 2918 }	# Gulf of Guinea -> Bight of Benin
+	link = { eu4 = 1464 v2 = 2917 }	# Coast of Cameroon -> Coast of Cameroon
+	link = { eu4 = 1463 v2 = 2916 }	# Gulf of Kongo -> Gulf of Kongo
+	link = { eu4 = 1462 v2 = 2915 }	# Coast of Angola -> Coast of Angola
+	link = { eu4 = 1461 v2 = 2914 }	# Coast of Namibia -> Coast of Namibia
+	link = { eu4 = 1460 v2 = 2913 }	# Cape of Good Hope -> Cape of Good Hope
+	link = { eu4 = 1610 v2 = 3063 }	# Denmark Sea -> Cape of Storms
+	link = { eu4 = 1603 v2 = 3056 }	# Bouvet Island -> Cape Plain
+	link = { eu4 = 1609 v2 = 3062 }	# South Atlantic Roaring Forties -> Bouvet Island
+	link = { eu4 = 1608 v2 = 3061 v2 = 3060 }	# South Atlantic -> Inaccessible Island, South Sandwich Islands
+	link = { eu4 = 1607 v2 = 3200 }	# South Sandwich Islands -> Coast of South Georgia
+	link = { eu4 = 1594 v2 = 3047 }	# South Orkney Islands -> Falkland Plateau
+	link = { eu4 = 1587 eu4 = 1595 v2 = 3048 }	# Coast of Falklands, East of Magellans -> Coast of Falklands
+	link = { eu4 = 1539 v2 = 2992 }	# Magellan Strait -> Magellan Strait
+	link = { eu4 = 1538 v2 = 2991 }	# Southern Coast of Patagonia -> Coast of Patagonia
+	link = { eu4 = 1537 v2 = 2990 }	# Northern Coast of Patagonia -> Bahia Blanca
+	link = { eu4 = 1536 v2 = 2989 }	# La Plata River -> Rio De La Plata
+	link = { eu4 = 1535 v2 = 2988 }	# Patos Lagoon -> Baia Paranaguá
+	link = { eu4 = 1534 eu4 = 1533 eu4 = 1532 v2 = 2987 v2 = 2986 }	# MANY-TO-MANY: Coast of Santa Catarina, Costa Verde, Coast of Porto Seguro -> Rio De Janeiro, Todos os Santos Bay
+	link = { eu4 = 1531 eu4 = 1530 v2 = 2983 v2 = 2984 v2 = 2985 }	# MANY-TO-MANY: Coast of Pernambuco, Coast of Brazil -> Coast of Brazil, Coast of Recife, Coast of Pernambuco
+	link = { eu4 = 1529 v2 = 2982 }	# Amazonas Gulf -> Amazonas Gulf
+	link = { eu4 = 1528 v2 = 2981 }	# Cape Orange -> Coast of Amapá
+	link = { eu4 = 1527 v2 = 2980 }	# Guyana Coast -> Guyana Coast
+	link = { eu4 = 1494 v2 = 2947 }	# Fortune Bay -> Fortune Bay
+	link = { eu4 = 1492 v2 = 2945 }	# Bay of Fundy -> Bay of Fundy
+	link = { eu4 = 1573 v2 = 3026 v2 = 3022 }	# East Bermuda Sea -> East Bermuda Sea, New England Seamounts
+	link = { eu4 = 1499 v2 = 2952 }	# Massachusetts Bay -> Massachusetts Bay
+	link = { eu4 = 1500 v2 = 2953 }	# Delaware Bay -> Chesapeake Bay
+	link = { eu4 = 1501 v2 = 2954 }	# Cape Hatteras -> Cape Hatteras
+	link = { eu4 = 1502 v2 = 2955 }	# Sea Islands -> Coast of Carolina
+	link = { eu4 = 1570 v2 = 3023 }	# New England Seamounts -> Sable Island Bank
+	link = { eu4 = 1571 v2 = 3024 }	# Blake Plateau -> Blake Plateau
+	link = { eu4 = 1572 v2 = 3025 v2 = 3210 }	# West Bermuda Sea -> West Bermuda Sea, Western Sargasso Sea
+	link = { eu4 = 1574 v2 = 3027 v2 = 3209 }	# Antilles Current -> Canary Current, Bahamas Basin
+	link = { eu4 = 1565 eu4 = 1569 v2 = 3018 }	# Western Gibbs Fracture, Sable Island Bank -> Western Gibbs Fracture
+	link = { eu4 = 1564 v2 = 3017 v2 = 3016 }	# Eastern Gibbs Fracture -> Eastern Gibbs Fracture, Hatton Bank
+	link = { eu4 = 1582 v2 = 3211 }	# Northeast Sargasso Sea -> Bermuda Approaches
+	link = { eu4 = 1568 v2 = 3237 }	# Corner Seamounts -> Sohm Plain
+	link = { eu4 = 1567 eu4 = 1578 v2 = 3033 v2 = 3020 v2 = 3021 v2 = 3032 v2 = 3207 }	# MANY-TO-MANY: Sea of Azores, Canary Approach -> Cruiser Tablemount, Sea of Azores, Corner Seamounts, Cape Verde Approach, Cape Verde Basin
+	link = { eu4 = 1583 v2 = 3036 v2 = 3208 }	# Southeast Sargasso Sea -> Central Sargasso Sea, Nares Plain
+	link = { eu4 = 1575 v2 = 3028 }	# Northern Guiana Basin -> Northern Guiana Basin
+	link = { eu4 = 1580 v2 = 3035 }	# Central North Atlantic -> Eastern Sargasso Sea
+	link = { eu4 = 1576 v2 = 3205 v2 = 3029 }	# Guiana Basin -> West Demerara Plain, Guiana Basin
+	link = { eu4 = 1581 v2 = 3034 }	# North Equatorial Current -> Barracuda Fracture Zone
+	link = { eu4 = 1577 v2 = 3206 }	# Southern Guiana Basin -> East Demerara Plain
+	link = { eu4 = 1579 v2 = 3030 }	# Cape Verde Approach -> Southern Guiana Basin
+	link = { eu4 = 1584 v2 = 3037 v2 = 3049 }	# Romanche Gap -> Romanche Gap, Fernando de Noronha Islands
+	link = { eu4 = 1588 v2 = 3040 }	# Scotia Basin -> Argentine Sea
+	link = { eu4 = 1593 v2 = 3201 }	# Argentine Basin -> Argentine Plain
+	link = { eu4 = 1589 v2 = 3041 }	# Brazil-Malvinas Confluence Zone -> Argentine Rise
+	link = { eu4 = 1606 v2 = 3046 }	# South Atlantic Current -> Argentine Basin
+	link = { eu4 = 1605 v2 = 3059 v2 = 3058 }	# Southern Mid-Atlantic Ridget -> San Marin Gap, Coast of Tristan da Cunha
+	link = { eu4 = 1604 v2 = 3057 }	# Tristan da Cunha Islands -> Gough Island
+	link = { eu4 = 1602 v2 = 3055 }	# Walvis Ridge -> Walvis Ridge
+	link = { eu4 = 1590 v2 = 3042 }	# South Brazil Current -> Cornet Bank
+	link = { eu4 = 1592 v2 = 3045 }	# Rio Grande Rise -> Zapiola Plain
+	link = { eu4 = 1601 v2 = 3038 }	# Benguela Current -> East Guinea Basin
+	link = { eu4 = 1585 v2 = 3039 v2 = 3054 }	# East Guinea Basin -> West Guinea Basin, East Coast of Ascension
+	link = { eu4 = 1600 v2 = 3203 v2 = 3204 }	# Saint Helena Island -> West Coast of Saint Helena, Moore Fracture Zone
+	link = { eu4 = 1599 v2 = 3202 }	# Brazil Basin -> Zapiola Seamount
+	link = { eu4 = 1591 v2 = 3043 }	# Brazil Current -> Vema Channel
+	link = { eu4 = 1598 v2 = 3052 }	# Central South Atlantic -> Martin Vaz Ridge
+	link = { eu4 = 1596 v2 = 3044 v2 = 3050 }	# North Brazil Current -> South Brazil Basin, North Brazil Basin
+	link = { eu4 = 1597 v2 = 3051 }	# South Equatorial Current -> Sierra Leone Basin
+	link = { eu4 = 1586 v2 = 3053 }	# West Guinea Basin -> West Coast of Ascension
+	# Indian Ocean
+	link = { eu4 = 1415 v2 = 2868 }	# Kangaroo Island -> Kangaroo Island
+	link = { eu4 = 1422 v2 = 2875 }	# Macquarie Harbour -> Toogee Ridge
+	link = { eu4 = 1408 v2 = 2861 }	# Timor Sea -> Arafuam Sea
+	link = { eu4 = 1356 v2 = 2809 }	# Sawu Sea -> Timor Sea
+	link = { eu4 = 1420 v2 = 2873 }	# Roebuck Bay -> King Sound
+	link = { eu4 = 1355 v2 = 2808 }	# Straits of Lombok -> Straits of Lombok
+	link = { eu4 = 1354 v2 = 2807 }	# Coast of Blambangan -> Coast of Surabaya
+	link = { eu4 = 1353 eu4 = 1642 v2 = 2806 v2 = 3095 }	# MANY-TO-MANY: Coast of Java, Zenith Plateau -> Coast of Java, Vening-Meinesz Seamounts
+	link = { eu4 = 1641 v2 = 3094 }	# East Indian Ocean -> Roa Rise
+	link = { eu4 = 1644 v2 = 3076 v2 = 3077 }	# West Australian Basin -> Coast of the Keelings, Java Trench
+	link = { eu4 = 1624 v2 = 3075 }	# Northeast Indian Ocean -> Southern Sumatra Trench
+	link = { eu4 = 1352 v2 = 2805 }	# Sunda Strait -> Sunda Strait
+	link = { eu4 = 1351 v2 = 2804 v2 = 2803 }	# Coast of Sumatra -> Coast of Sumatra, Coast of Atjeh
+	link = { eu4 = 1350 v2 = 2802 v2 = 3213 }	# Coast of Aceh -> Nicobar Isles, Sunda Trench
+	link = { eu4 = 1348 v2 = 2801 }	# Straits of Malacca -> Straits of Malacca
+	link = { eu4 = 1347 v2 = 2800 }	# Andaman Sea -> Mergui Archipelago
+	link = { eu4 = 1345 v2 = 2798 }	# Irrawady Delta -> Irrawady Delta
+	link = { eu4 = 1614 v2 = 3067 }	# Ceylon Sea -> Ceylon Sea
+	link = { eu4 = 1340 v2 = 2793 }	# Comorin Cape -> Comorin Cape
+	link = { eu4 = 1341 v2 = 2794 }	# Coast of Coromandel -> Coast of Caramandel
+	link = { eu4 = 1342 v2 = 2795 }	# Coast of Orissa -> Coast of Orissa
+	link = { eu4 = 1343 v2 = 2796 }	# Ganges Delta -> Ganges Delta
+	link = { eu4 = 1344 v2 = 2797 }	# Arakan Coast -> Akyab Bay
+	link = { eu4 = 1346 eu4 = 1349 v2 = 2799 }	# Eastern Bay of Bengal, Nicobar Islands -> Andaman Sea
+	link = { eu4 = 1611 v2 = 3064 }	# Northern Bay of Bengal -> Gulf of Bengal
+	link = { eu4 = 1612 v2 = 3065 }	# Western Bay of Bengal -> Northern Bay of Bengal
+	link = { eu4 = 1613 v2 = 3066 }	# Southern Bay of Bengal -> Southern Bay of Bengal
+	link = { eu4 = 1622 v2 = 3214 v2 = 3212 }	# Eastern Equatorial Counter Current -> Northern Sumatra Trench, Ceylon Plain
+	link = { eu4 = 1339 v2 = 2792 }	# Malabar Coast -> Coast of Malabar
+	link = { eu4 = 1615 v2 = 3069 }	# Southeastern Arabian Sea -> Eight Degree Channel
+	link = { eu4 = 1619 v2 = 3068 }	# Coast of Maldives -> Coast of Maldives
+	link = { eu4 = 1338 v2 = 2791 }	# Konkan Coast -> Laquedive Islands
+	link = { eu4 = 1337 v2 = 2790 }	# Coast of Gujarat -> Gulf of Gujarat
+	link = { eu4 = 1335 eu4 = 4347 v2 = 2788 }	# Persian Gulf, Pirate Coast -> Persian Gulf
+	link = { eu4 = 1334 v2 = 2787 }	# Straits of Hormuz -> Straits of Hormuz
+	link = { eu4 = 1336 eu4 = 1332 v2 = 2789 }	# Coast of Makran, Gulf of Oman -> Gulf of Indus
+	link = { eu4 = 1333 v2 = 2786 }	# Gulf of Masirah -> Mascate Coast
+	link = { eu4 = 1452 v2 = 2905 }	# Northern Arabian Sea -> Eastern Arabian Sea
+	link = { eu4 = 4346 v2 = 2785 }	# Qamr Bay -> Coast of Mascate
+	link = { eu4 = 1331 v2 = 2784 v2 = 2783 }	# Gulf of Aden -> Bal el Mandeb, Straits of Obokk
+	link = { eu4 = 1329 eu4 = 4333 eu4 = 1330 v2 = 2782 }	# Red Sea, Dahlak Archipelago, Bab el Mandeb -> Red Sea
+	link = { eu4 = 1328 v2 = 2781 }	# Gulf of Suez -> Gulf of Suez
+	link = { eu4 = 1451 v2 = 2904 }	# Southwestern Arabian Sea -> Western Arabian Sea
+	link = { eu4 = 1446 v2 = 2899 }	# Horn of Africa -> Horn of Africa
+	link = { eu4 = 1447 v2 = 2900 }	# Coast of Pepper -> Coast of Pepper
+	link = { eu4 = 1448 v2 = 2901 }	# Zanzibar Strait -> Zanzibar Strait
+	link = { eu4 = 1449 v2 = 2902 }	# Mozambique Channel -> Mozambique Channel
+	link = { eu4 = 1456 v2 = 2909 }	# Coast of Menabe -> Gulf of Zambeze
+	link = { eu4 = 1457 v2 = 2910 }	# Coast of Sofala -> Coast of Natal
+	link = { eu4 = 1458 v2 = 2911 }	# Coast of Natal -> Coast of Transkei
+	link = { eu4 = 1459 v2 = 2912 }	# Coast of Ciskei -> Coast of Ciskei
+	link = { eu4 = 1625 eu4 = 1626 v2 = 3078 v2 = 3079 }	# MANY-TO-MANY: Marion Island, Natal Basin -> Prince Edward Islands, Del Cano Rise
+	link = { eu4 = 1627 v2 = 3080 }	# Taolagnaro Bay -> Cape Sainte Marie
+	link = { eu4 = 1621 v2 = 3072 v2 = 3073 }	# Chagos Archipelago -> One and a Half Degree Channel, Chagos Archipelago
+	link = { eu4 = 1623 v2 = 3215 }	# Ninetyeast Ridge -> Central Indian Basin
+	link = { eu4 = 1645 v2 = 3074 v2 = 3097 v2 = 3093 }	# Eastern Indian Ocean South Equatorial Current -> Cocos Basin, Northern Cocos Plateau, Ninety East Ridge
+	link = { eu4 = 1416 v2 = 2869 }	# Great Australian Bight -> Great Australian Bight
+	link = { eu4 = 1635 v2 = 3226 v2 = 3088 }	# South Australian Basin -> South Australian Plain, South Australian Basin
+	link = { eu4 = 1413 eu4 = 1417 v2 = 2870 }	# Flinders Bay, Cape Leeuwin -> Cape Leeuwin
+	link = { eu4 = 1634 eu4 = 1639 v2 = 3087 }	# Indian Ocean Raging Fifties, Naturaliste Plateau -> Broken Ridge
+	link = { eu4 = 1419 v2 = 2872 }	# Northwest Cape -> Northwest Cape
+	link = { eu4 = 1418 v2 = 2871 }	# Houtman Abrolhos -> Shark Bay
+	link = { eu4 = 1643 v2 = 3091 v2 = 3096 }	# Wallaby Plateau -> Cuvier Basin, Wharton Basin
+	link = { eu4 = 1640 v2 = 3092 }	# Broken Ridge -> Wallaby Plateau
+	link = { eu4 = 1638 v2 = 3098 v2 = 3105 v2 = 3099 }	# Southeastern Indian Ridge -> Southern Cocos Plateau, Gulden-Draak Seamount, Amsterdam Island
+	link = { eu4 = 1633 v2 = 3086 }	# South Indian Ocean -> St Paul Island
+	link = { eu4 = 1628 v2 = 3081 }	# Crozet Islands -> Crozet Island
+	link = { eu4 = 1631 v2 = 3084 }	# Kerguelen Islands -> Southwest Indian Basin
+	link = { eu4 = 1632 v2 = 3085 }	# Heard and McDonald Islands -> Kerguelen Islands
+	link = { eu4 = 1629 eu4 = 1630 v2 = 3082 }	# Crozet Basin, Madagascar Basin -> Mascarene Plain
+	link = { eu4 = 1636 v2 = 3083 }	# Southwestern Indian Ridge -> Rodrigues Island
+	link = { eu4 = 1637 v2 = 3089 }	# St Paul and Amsterdam Islands -> Egeria Fracture Zone
+	link = { eu4 = 1454 v2 = 2907 }	# Coast of Tamatave -> Coast of Tamatave
+	link = { eu4 = 1455 v2 = 2908 }	# The Mascareignes -> The Mascareignes
+	link = { eu4 = 1646 eu4 = 1647 v2 = 3090 v2 = 3100 }	# MANY-TO-MANY: Indian Ocean South Equatorial Current, Western Indian Ocean South Equatorial Current -> Argo Zone, Marie-Celeste Fracture Zone
+	link = { eu4 = 1453 v2 = 2906 }	# The Seychelles -> The Seychelles
+	link = { eu4 = 1450 v2 = 2903 }	# Diego Suarez Bay -> Diego Suarez Bay
+	link = { eu4 = 1620 eu4 = 1617 v2 = 3070 }	# Central Indian Ocean, Mascarene Plateau -> Madingley Rise
+	link = { eu4 = 1618 eu4 = 1616 v2 = 3071 }	# Western Equatorial Counter Current, North Indian Ocean -> Arabian Basin
+	# Pacific West
+	link = { eu4 = 1444 eu4 = 1679 v2 = 2897 }	# Bay of Anadyr, Shirshov Ridge -> Bay of Anadyr
+	link = { eu4 = 1443 eu4 = 1666 v2 = 2896 }	# Ulakhan Fault, Commander Basin -> Bay of Oljut
+	link = { eu4 = 1382 v2 = 2835 }	# Bay of Komenskoie -> Bay of Komenskoie
+	link = { eu4 = 1381 eu4 = 1383 v2 = 2837 v2 = 2836 v2 = 2834 }	# MANY-TO-MANY: Tauisk Bay, Coast of Kamchatka -> Okhotsk Sea, Coast of Kamchatska, Bay of Ayan
+	link = { eu4 = 1384 eu4 = 1380 v2 = 2833 }	# Okhotsk Sea, Shantar Islands -> Amur Delta
+	link = { eu4 = 1379 v2 = 2832 }	# Tatar Straits -> Tatar Straits
+	link = { eu4 = 1375 eu4 = 4233 v2 = 2828 }	# Korea Bay, Bohai Sea -> Korea Bay
+	link = { eu4 = 1374 eu4 = 4234 v2 = 2827 }	# Eastern Yellow Sea, Western Yellow Sea -> Yellow Sea
+	link = { eu4 = 1376 eu4 = 1389 v2 = 2829 }	# South Korean Sea, Amakusa Sea -> South Korean Sea
+	link = { eu4 = 1387 eu4 = 1980 eu4 = 1386 eu4 = 4226 v2 = 2841 v2 = 2831 }	# MANY-TO-MANY: Tsugaru Strait, Hokuriku Coast, Soya Strait, Japan Basin -> Sea of Japan, Coast of Olga
+	link = { eu4 = 1378 eu4 = 1377 eu4 = 1388 v2 = 2830 v2 = 2842 }	# MANY-TO-MANY: Olga Bay, North Korean Sea, Yamato Basin -> North Korean Sea, Amakusa Sea
+	link = { eu4 = 1373 v2 = 2826 }	# Yang Tse Delta -> Yang Tse Delta
+	link = { eu4 = 1372 v2 = 2825 }	# Taiwan Strait -> Taiwan Strait
+	link = { eu4 = 1371 v2 = 2824 }	# Guangzhou Bay -> Guangzhou Bay
+	link = { eu4 = 1370 v2 = 2823 }	# Gulf of Tonkin -> Gulf of Tonkin
+	link = { eu4 = 1428 v2 = 2881 }	# Canterbury Bight -> Canterbury Bight
+	link = { eu4 = 1414 eu4 = 1421 v2 = 2867 v2 = 2874 }	# MANY-TO-MANY: Bass Strait, Western Tasman Sea -> Bass Strait, Tasman Plateau
+	link = { eu4 = 1427 v2 = 2880 }	# Southern Tasman Sea -> Southern Tasman Sea
+	link = { eu4 = 1423 v2 = 2876 v2 = 2878 }	# Cook Strait -> Cook Strait, Cape Farewell
+	link = { eu4 = 1426 v2 = 2879 }	# Coast of New Zealand -> Coast of New Zealand
+	link = { eu4 = 1424 v2 = 2866 }	# Lord Howe Island -> Cape Howe
+	link = { eu4 = 1411 v2 = 2865 }	# Great Barrier Reef -> Capricorn Bay
+	link = { eu4 = 1425 v2 = 2877 v2 = 3220 }	# Northern Tasman Sea -> Northern Tasman Sea, Coast of Norfolk Island
+	link = { eu4 = 1407 v2 = 2864 v2 = 2860 }	# Torres Strait -> Great Barrier Reef, Torres Strait
+	link = { eu4 = 1410 v2 = 2863 }	# Gulf of Carpentaria -> Gulf of Carpentaria
+	link = { eu4 = 1429 v2 = 2882 }	# New Caledonian Sea -> New Caledonian Sea
+	link = { eu4 = 1431 v2 = 3219 v2 = 3192 v2 = 3216 }	# Fiji Basin -> Coast of Fiji, New Caledonia Basin, Fiji Basin
+	link = { eu4 = 1430 v2 = 2884 }	# Vanuatu Islands -> Gilbert Sea
+	link = { eu4 = 1412 v2 = 2883 }	# Coral Sea -> Coral Sea
+	link = { eu4 = 1406 v2 = 2859 }	# Trobrian Islands -> Trobrian Islands
+	link = { eu4 = 1409 v2 = 2862 }	# Arafura Sea -> Kolepom Bay
+	link = { eu4 = 1401 v2 = 2854 }	# Banda Sea -> Sea of Banda
+	link = { eu4 = 1357 v2 = 2810 }	# Flores Sea -> The Moluccas
+	link = { eu4 = 1358 v2 = 2811 }	# Java Sea -> Java Sea
+	link = { eu4 = 1360 v2 = 2813 }	# Karimata Strait -> Karimata Strait
+	link = { eu4 = 1361 v2 = 2814 }	# Straits of Johor -> Straits of Johore
+	link = { eu4 = 1365 v2 = 2818 }	# Gulf of Siam -> Gulf of Siam
+	link = { eu4 = 1364 v2 = 2817 }	# Cape Cà Mau -> Mekong Delta
+	link = { eu4 = 1362 v2 = 2815 }	# Malayan Sea -> Malayan Sea
+	link = { eu4 = 1366 v2 = 2819 }	# Cam Ranh Bay -> Cam Ranh Bay
+	link = { eu4 = 1369 v2 = 2822 }	# Coast of Annam -> Coast of Annam
+	link = { eu4 = 1363 v2 = 2816 }	# Coast of Sarawak -> Coast of Sarawak
+	link = { eu4 = 1367 v2 = 2820 }	# South China Sea -> South China Sea
+	link = { eu4 = 1368 v2 = 2821 }	# Palawan Passage -> Coast of Brunei
+	link = { eu4 = 1394 eu4 = 1395 v2 = 2848 v2 = 2847 }	# MANY-TO-MANY: Paracel Islands, Manila Bay -> Manila Bay, Paracel Islands
+	link = { eu4 = 1359 v2 = 2812 }	# Straits of Makassar -> Straits of Makassar
+	link = { eu4 = 1398 v2 = 2851 }	# Sulu Sea -> Sulu Sea
+	link = { eu4 = 1399 v2 = 2852 }	# Sea of Celebes -> Sea of Celebes
+	link = { eu4 = 1397 eu4 = 4357 v2 = 2850 }	# Visayan Sea, Cuyo Archipelago -> Gulf of Leyte
+	link = { eu4 = 1393 v2 = 2846 }	# Luzon Strait -> Luzon Strait
+	link = { eu4 = 1392 v2 = 2845 }	# Ryukyu Islands -> Ryukyu Islands
+	link = { eu4 = 4358 v2 = 2849 }	# Philippine Trench -> Coast of Luzon
+	link = { eu4 = 1396 v2 = 2890 }	# Coast of Luzon -> Philippine Basin
+	link = { eu4 = 1390 v2 = 2843 }	# Seto Inland Sea -> Setto Inland Sea
+	link = { eu4 = 1442 eu4 = 1667 v2 = 2895 }	# Kamchatka Trench, Emperor Ridge -> Bay of Uka
+	link = { eu4 = 1668 v2 = 3121 v2 = 2898 v2 = 3119 }	# Northwestern Pacific -> Novarsk Plain, Yekaterina Plains, Korskiyev Gulch
+	link = { eu4 = 1441 eu4 = 1385 eu4 = 4225 v2 = 2838 v2 = 2839 }	# MANY-TO-MANY: Kuril Islands, Coast of Sakhalin, Hokkaido Coast -> Coast of Sakhalin, Soya Strait
+	link = { eu4 = 1440 v2 = 2840 }	# Sanriku Coast -> Tsugaru Strait
+	link = { eu4 = 1391 eu4 = 4224 v2 = 2844 }	# Kii Channel, Tokai Sea -> Tokai Sea
+	link = { eu4 = 1669 v2 = 3120 v2 = 2894 v2 = 3123 }	# Oyashio Current -> Orsova Bank, The Kuriles, Yamara Gulch
+	link = { eu4 = 1670 v2 = 3122 }	# Northern Kuroshio Current -> Sorvskiya Plains
+	link = { eu4 = 1433 v2 = 3191 v2 = 2886 }	# Tuvalu Islands -> Coast of the Ellice Islands, Nauru Island
+	link = { eu4 = 1432 v2 = 2885 }	# Solomon Sea -> Solomon Sea
+	link = { eu4 = 1405 v2 = 2858 }	# Vitiaz Strait -> Vilian Strait
+	link = { eu4 = 1400 v2 = 2853 }	# Halmaheran Sea -> Sea of Ternate
+	link = { eu4 = 1403 eu4 = 1404 v2 = 2856 v2 = 2857 }	# MANY-TO-MANY: Palau Islands, Cenderawasih Bay -> Palau Islands, Biak Bay
+	link = { eu4 = 1402 v2 = 2855 }	# Mindanao Coast -> Philippine Sea
+	link = { eu4 = 1734 v2 = 3221 }	# Gilbert Islands -> Coast of the Gilbert Islands
+	link = { eu4 = 1434 v2 = 2887 }	# Melanesia Sea -> Melanesia Sea
+	link = { eu4 = 1673 v2 = 3218 v2 = 2888 }	# Micronesia Sea -> Pisaros Pass, Micronesia Sea
+	link = { eu4 = 1676 eu4 = 1698 v2 = 3244 v2 = 3223 }	# MANY-TO-MANY: Melanesian Basin, Marshall Islands -> Jaluit Passage, Tusei Bank
+	link = { eu4 = 1691 v2 = 3197 }	# Wake Island -> Syrus Reef
+	link = { eu4 = 1435 eu4 = 1436 v2 = 3127 v2 = 2889 }	# MANY-TO-MANY: Mariana Islands, Philippine Sea -> Coast of the Mariana Islands, Philippine Trench
+	link = { eu4 = 1437 eu4 = 1438 v2 = 2892 v2 = 2891 }	# MANY-TO-MANY: Northern Philippine Sea, Volcano Islands -> Iwo Jima Sea, Tinian Sea
+	link = { eu4 = 1674 v2 = 3217 }	# Mariana Trench -> Solace Flats
+	link = { eu4 = 1439 v2 = 3126 v2 = 2893 }	# Izu Islands -> Coast of Marcus Island, Taihei Ocean
+	link = { eu4 = 1671 v2 = 3124 v2 = 3129 }	# Kuroshio Current -> Northwest Pacific Basin, Izamo Drop
+	link = { eu4 = 1675 v2 = 3222 }	# North Pacific Equatorial Current -> Mainu Reef
+	link = { eu4 = 1672 v2 = 3125 v2 = 3128 }	# Western Pacific -> Sevrance Shoals, Maysdale Flats
+	# East Pacific
+	link = { eu4 = 1706 v2 = 3248 v2 = 3198 }	# West of Magellans -> West Magellan Strait, Humboldt Plains
+	link = { eu4 = 1540 v2 = 2993 }	# Gulf of Penas -> South Chilean Coast
+	link = { eu4 = 1541 v2 = 2994 }	# Coast of Chile -> Coast of Chile
+	link = { eu4 = 1542 v2 = 2995 }	# Atacama Coast -> Atacama Coast
+	link = { eu4 = 1543 v2 = 2996 }	# Coast of Antofagasta -> Antofagasta Coast
+	link = { eu4 = 1544 v2 = 2997 }	# Arica Bend -> Arequipa Bay
+	link = { eu4 = 1545 v2 = 2998 }	# Coast of Peru -> Coast of Peru
+	link = { eu4 = 1546 v2 = 2999 }	# Gulf of Guayaquil -> Guayaquil Bay
+	link = { eu4 = 1547 v2 = 3000 }	# Coast of Ecuador -> Coast of Ecuador
+	link = { eu4 = 1548 v2 = 3001 }	# Gulf of Panama -> Gulf of Panama
+	link = { eu4 = 1549 v2 = 3002 }	# Costa Rica -> Bay of Costa Rica
+	link = { eu4 = 1550 v2 = 3003 }	# Gulf of Tehuantepec -> Acapulco Bay
+	link = { eu4 = 1551 v2 = 3004 }	# Manzanillo Bay -> Manzanilla Bay
+	link = { eu4 = 1552 v2 = 3005 }	# Mazatlan Bay -> Mazatlan Bay
+	link = { eu4 = 1553 v2 = 3006 }	# Gulf of California -> Gulf of California
+	link = { eu4 = 1554 v2 = 3007 }	# Cape San Lucas -> Coast of Baja
+	link = { eu4 = 1555 v2 = 3008 }	# Gulf of Catalina -> Coast of California
+	link = { eu4 = 1556 v2 = 3009 }	# San Francisco Bay -> Santa Catalina Islands
+	link = { eu4 = 1557 v2 = 3010 }	# Cape Blanco -> Coast of Oregon
+	link = { eu4 = 1558 v2 = 3011 }	# Salish Sea -> Coast of Columbia
+	link = { eu4 = 1559 eu4 = 1560 eu4 = 1682 v2 = 3012 }	# Hecate Strait, Glacier Bay, Gulf of Alaska -> Hecate Strait
+	link = { eu4 = 1561 v2 = 3013 }	# Cook Inlet -> Gulf of Alaska
+	link = { eu4 = 1681 v2 = 3135 }	# Shumagin Islands -> Uminak Pass
+	link = { eu4 = 1677 v2 = 3014 }	# Kuskokwim Bay -> Coast of Alaska
+	link = { eu4 = 1562 v2 = 3015 }	# Norton Sound -> Kuskowim Bay
+	link = { eu4 = 1678 v2 = 3130 }	# Bering Strait -> North Bering Sea
+	link = { eu4 = 1445 eu4 = 1680 v2 = 3134 v2 = 3132 v2 = 3131 v2 = 3133 }	# MANY-TO-MANY: Bering Sea, Aleutian Islands -> Eastern Aleutian Islands, Western Aleutian Islands, South Bering Sea, Pribilof Islands
+	link = { eu4 = 1686 v2 = 3138 }	# Eastern North Pacific Drift -> Alaska Plain
+	link = { eu4 = 1685 v2 = 3139 }	# Eastern Aleutian Trench -> Eastern Aleutian Sea
+	link = { eu4 = 1683 v2 = 3136 }	# Western Aleutian Trench -> Western Aleutian Sea
+	link = { eu4 = 1684 v2 = 3137 }	# Northern California Current -> Baker Seamount
+	link = { eu4 = 1690 v2 = 3143 v2 = 3144 }	# Western North Pacific Drift -> Ulchi Basin, Jingu Basin
+	link = { eu4 = 1689 v2 = 3142 v2 = 3145 }	# North Pacific Drift -> Chinook Basin, Chinook Trough
+	link = { eu4 = 1688 v2 = 3111 v2 = 3146 }	# Murray Fracture Zone -> Sedna Basin, Stanley Seamount
+	link = { eu4 = 1687 v2 = 3140 v2 = 3147 }	# California Current -> Explorer Trench, Mendocino Escarpment
+	link = { eu4 = 1714 v2 = 3152 }	# North Pacific Converge Zone -> Musicians Seamount
+	link = { eu4 = 1699 v2 = 3149 v2 = 3167 }	# Central Pacific Basin -> Murray Fracture Zone, Hawaiian Arch
+	link = { eu4 = 1693 v2 = 3151 }	# Molokai Fracture Zone -> Argo Seamount
+	link = { eu4 = 1694 v2 = 3141 v2 = 3148 }	# Southern California Current -> Moonless Seamounts, California Seamount
+	link = { eu4 = 1697 v2 = 3150 }	# Coast of Hawaii -> Coast of Hawaii
+	link = { eu4 = 1692 v2 = 3247 v2 = 3153 }	# Midway Island -> West Hawaii, Coast of Midway Island
+	link = { eu4 = 1702 eu4 = 1700 v2 = 3157 v2 = 3158 }	# MANY-TO-MANY: Galapagos Islands, Cocos Ridge -> Coast of the Galapagos Islands, Lapira Plains
+	link = { eu4 = 1701 v2 = 3156 }	# Guatemala Basin -> O'Gorman Rise
+	link = { eu4 = 1695 v2 = 3154 v2 = 3155 }	# Revilla Gigedo Islands -> Kepler Plain, Galois Plain
+	link = { eu4 = 1715 v2 = 3164 }	# Eastern Equatorial Pacific Current -> Northeast Pacific Basin
+	link = { eu4 = 1696 v2 = 3161 v2 = 3160 }	# Clarion Fracture Zone -> Henderson Seamount, Clipperton Island
+	link = { eu4 = 1716 v2 = 3165 }	# Clipperton Fracture Zone -> Discoverer Seamount
+	link = { eu4 = 1707 v2 = 3162 }	# Clipperton Island -> Madijera Ridge
+	link = { eu4 = 1708 eu4 = 1712 v2 = 3163 v2 = 3172 }	# MANY-TO-MANY: Galapagos Rise, South Equatorial Pacific Current -> Bauer Basin, Yupanqui Basin
+	link = { eu4 = 1709 v2 = 3166 }	# Peru Current -> Tasavulu Flats
+	link = { eu4 = 1703 v2 = 3171 }	# Nazca Ridge -> Peru Basin
+	link = { eu4 = 1713 eu4 = 1710 v2 = 3190 }	# Easter Island, Humboldt Current -> Coast of Easter Island
+	link = { eu4 = 1704 v2 = 3196 }	# Juan Fernandez Islands -> Timkin Plain
+	link = { eu4 = 1705 eu4 = 1717 v2 = 3193 v2 = 3199 }	# MANY-TO-MANY: Chile Rise, Southern Humboldt Current -> Juan Fernandez Islands, Valdivia Flats
+	link = { eu4 = 1718 v2 = 3195 }	# Mornington Abyssal Plain -> Karasev Plains
+	link = { eu4 = 1730 v2 = 3194 v2 = 3245 }	# East Pacific Ridge -> Selkirk Rise, Markov Plains
+	link = { eu4 = 1719 v2 = 3189 v2 = 3243 }	# South Pacific Raging Fifties -> Menard Fracture Zone, Southeast Pacific Basin
+	link = { eu4 = 1731 v2 = 3188 }	# Eltanin Fracture Zone -> Rogeveen Basin
+	link = { eu4 = 1729 v2 = 3187 }	# South Pacific -> Coast of Pitcairn Island
+	link = { eu4 = 1720 v2 = 3186 }	# Tharp Fault -> Ludovico Gulch
+	link = { eu4 = 1721 v2 = 3183 }	# South Pacific Roaring Forties -> Titus Ridge
+	link = { eu4 = 1722 eu4 = 1723 v2 = 3185 v2 = 3184 }	# MANY-TO-MANY: Louisville Seamount Chain, Chatham Islands -> Southwest Pacific Basin, Chatham Islands
+	link = { eu4 = 1727 eu4 = 1724 v2 = 3159 }	# Bass Islands, Southeast Pacific -> Coast of the Cook Islands
+	link = { eu4 = 1726 v2 = 3179 }	# Samoa Islands -> Coast of Tonga
+	link = { eu4 = 1732 v2 = 3177 }	# Kiribati Islands -> Coast of Samoa
+	link = { eu4 = 1728 v2 = 3170 }	# Society Islands -> Coast of the Society Islands
+	link = { eu4 = 1725 v2 = 3182 }	# Tuamotu Islands -> Coast of the Tuamotus
+	link = { eu4 = 1739 v2 = 3181 }	# Pitcairn Islands -> Resolution Flats
+	link = { eu4 = 1735 v2 = 3178 }	# Line Islands -> Johnston Atoll
+	link = { eu4 = 1733 v2 = 3176 }	# Phoenix Islands -> Central Pacific Basin
+	link = { eu4 = 1736 v2 = 3169 }	# Western Equatorial Pacific Counter Current -> Northern Line Islands
+	link = { eu4 = 1740 v2 = 3168 v2 = 3173 }	# Equatorial Pacific Counter Current -> Radford Basin, Severance Plains
+	link = { eu4 = 1711 v2 = 3174 }	# East Pacific Rise -> Altamira Plains
+	link = { eu4 = 1741 eu4 = 1737 eu4 = 1738 v2 = 3180 v2 = 3175 }	# MANY-TO-MANY: Tiki Basin, Marquesas Islands, Flint Island -> Coast of the Marquesas, Southern Line Islands
+	link = { eu4 = 1305 v2 = 2758 v2 = 2759 }	# Gulf of Gabes -> Gulf of Gabes, Malta Channel
+	link = { eu4 = 4131 v2 = 1670 v2 = 1672 }	# Mutsu -> Morioka, Aomori
+	link = { eu4 = 4153 eu4 = 4146 eu4 = 4155 eu4 = 4159 eu4 = 4160 eu4 = 4161 eu4 = 4157 eu4 = 4162 eu4 = 4154 eu4 = 4156 eu4 = 4167 eu4 = 4168 eu4 = 4169 eu4 = 4172 eu4 = 4179 eu4 = 4170 eu4 = 4177 eu4 = 4178 }	# The Scandes, Langfjella, The Carpathians, The Alps, The Alps, The Alps, The Alps, The Alps, The Pyrenees, The Caucasus, High Atlas, High Atlas, Aures, Zagros, Hakkari Mountains, Zagros, Alborz, Pontic Mountains -> DROPPED
+	# ## LANDS
+	# ## North America
+	# Alaska
+	link = { eu4 = 2611 eu4 = 979 v2 = 4 v2 = 5 }	# MANY-TO-MANY: Kodiak, Aleut -> Dutch Harbor, Bethel
+	link = { eu4 = 978 v2 = 3 }	# Kenai -> Kenai
+	link = { eu4 = 2612 v2 = 2630 }	# Eyak -> Cordova
+	link = { eu4 = 1810 v2 = 2599 v2 = 2631 }	# Alaska -> Fairbanks, Unalakeet
+	link = { eu4 = 2613 eu4 = 976 v2 = 1 }	# Sitka, Tlingit -> Sitka
+	link = { eu4 = 977 v2 = 2 }	# Yakutat -> Yakutat
+	link = { eu4 = 2609 eu4 = 975 eu4 = 2022 v2 = 15 }	# Nisga'a, Tsimshian, Haida -> Prince Rupert
+	link = { eu4 = 973 eu4 = 2610 eu4 = 974 v2 = 13 }	# Squamish, Heiltsuk, Kwakiutl -> Vancouver
+	link = { eu4 = 972 v2 = 14 }	# Nootka -> Vancouver Island
+	link = { eu4 = 2607 v2 = 20 }	# Okanagan -> Kelowna
+	link = { eu4 = 2003 v2 = 21 }	# Ktunaxa -> Vernon
+	link = { eu4 = 2004 v2 = 29 v2 = 28 }	# Niitsitapi -> Medicine Hat, Fort MacLeod
+	link = { eu4 = 2602 v2 = 26 }	# Siksikawa -> Calgary
+	link = { eu4 = 2018 v2 = 22 v2 = 25 v2 = 24 }	# Tsuu Tina -> Edmonton, Banff, Jasper
+	link = { eu4 = 2017 v2 = 27 }	# Matiyininiwak -> Denwood
+	link = { eu4 = 2601 eu4 = 2600 v2 = 2597 }	# Danezaa, Nihithawak -> Fort Vermilion
+	link = { eu4 = 2599 v2 = 23 }	# Athabasca -> Athabaska Landing
+	link = { eu4 = 2605 eu4 = 2606 eu4 = 2604 v2 = 19 }	# Secwepemc, Tsilhoqotin, Dakelh -> Prince George
+	link = { eu4 = 1814 v2 = 16 v2 = 17 v2 = 2629 }	# Columbia -> Glenora, Atlin, Beatton River
+	link = { eu4 = 1812 v2 = 8 v2 = 6 v2 = 7 v2 = 2598 v2 = 10 v2 = 9 v2 = 11 }	# Northwest Territories -> Ross River, Whitehorse, Dawson, Fort Liard, Inuvik, Fort Simpson, Echo Bay
+	link = { eu4 = 2603 v2 = 18 }	# Sekani -> Fort Saint John
+	# Canada
+	link = { eu4 = 2598 v2 = 35 }	# Hebina -> Maple Creek
+	link = { eu4 = 2005 v2 = 30 }	# Asinaan -> Regina
+	link = { eu4 = 2597 eu4 = 2595 v2 = 33 }	# Sipiwininiwak, Kesyehotinne -> Asquith
+	link = { eu4 = 1813 v2 = 34 }	# Saskatchewan -> Saskatoon
+	link = { eu4 = 2596 v2 = 32 }	# Mahmikiwiniyak -> Prince Albert
+	link = { eu4 = 1811 v2 = 31 v2 = 43 v2 = 2595 v2 = 12 v2 = 2596 }	# Nunavut -> Stanley, Arviat, Nunavut, Reliance, Fort Resolution
+	link = { eu4 = 1010 v2 = 41 }	# Manitoba -> Brandon
+	link = { eu4 = 1008 v2 = 36 v2 = 42 }	# Winnipeg -> Winnipeg, Pembina
+	link = { eu4 = 1011 v2 = 40 }	# Kinougeoulini -> Dauphin
+	link = { eu4 = 1009 v2 = 39 }	# Atikaki -> Norway House
+	link = { eu4 = 2594 v2 = 38 }	# Quennebigon -> Indian Lakes
+	link = { eu4 = 1005 eu4 = 1006 v2 = 37 }	# Muskegon, Chipewyan -> Churchill
+	link = { eu4 = 2593 v2 = 49 }	# Wappus -> Dryden
+	link = { eu4 = 1007 eu4 = 2015 v2 = 50 }	# Ojibwa, Nipigon -> Thunder Bay
+	link = { eu4 = 1001 eu4 = 2588 v2 = 51 }	# Soto, Piscatang -> Sault Ste Marie
+	link = { eu4 = 1003 eu4 = 2589 eu4 = 2590 v2 = 48 }	# Mosoni, Kesagami, Shaggami -> Fort Albany
+	link = { eu4 = 1004 v2 = 2628 }	# Attawapiskat -> Attawapiskat
+	link = { eu4 = 2591 v2 = 2594 }	# Outoulibi -> Pickle
+	link = { eu4 = 2592 v2 = 47 }	# Omushkego -> Fort Severn
+	# Quebec
+	link = { eu4 = 2671 eu4 = 988 v2 = 52 }	# Missisage, Huron -> Sudbury
+	link = { eu4 = 991 eu4 = 2585 v2 = 57 }	# Nipissing, Kichesipi -> Ottawa
+	link = { eu4 = 989 v2 = 56 }	# Ontario -> Kingston
+	link = { eu4 = 2670 v2 = 46 }	# Tkaronto -> Toronto
+	link = { eu4 = 2586 eu4 = 2587 v2 = 53 }	# Tionontate, Odawa -> Barrie
+	link = { eu4 = 987 v2 = 54 v2 = 55 }	# Niagara -> Windsor, Hamilton
+	link = { eu4 = 2581 eu4 = 2580 eu4 = 992 eu4 = 1002 v2 = 63 }	# Timiskaming, Atikamekw, Algonquin, Abitibi -> Temiscaming
+	link = { eu4 = 1000 v2 = 60 }	# Cree -> Fort Rupert
+	link = { eu4 = 999 v2 = 2593 }	# Cisasipi -> Fort George
+	link = { eu4 = 998 v2 = 2592 v2 = 2626 }	# Qikirmiut -> Ungava, Port Harrison
+	link = { eu4 = 1807 v2 = 45 v2 = 44 }	# Baffin -> Baffin Island, Coral Harbour
+	link = { eu4 = 2574 v2 = 76 v2 = 2627 }	# Sikumiut -> Hopedale, Fort Chimo
+	link = { eu4 = 2575 eu4 = 997 v2 = 2625 }	# Naskapi, Chisedec -> Port Hope Simpson
+	link = { eu4 = 2576 eu4 = 2578 eu4 = 996 v2 = 62 }	# Mingan, Anticosti, Innu -> Sept-Îles
+	link = { eu4 = 981 eu4 = 980 v2 = 75 }	# Taqamkuk, Beothuk -> Millertown
+	link = { eu4 = 2573 v2 = 74 v2 = 77 }	# Placentia -> Saint Johns, St Pierre & Miquelon
+	link = { eu4 = 995 eu4 = 2577 eu4 = 2579 v2 = 61 v2 = 59 }	# MANY-TO-MANY: Tadoussac, Manicouagan, Piekouagami -> Chicoutimi, Nitchequon
+	link = { eu4 = 1805 }	# Ungava -> DROPPED
+	link = { eu4 = 1806 }	# Weagamow -> DROPPED
+	link = { eu4 = 994 v2 = 65 }	# Stadacona -> Quebec City
+	link = { eu4 = 990 v2 = 64 }	# Maisouna -> Trois-Rivières
+	link = { eu4 = 993 eu4 = 2584 v2 = 58 }	# Hochelaga, Loup -> Montreal
+	link = { eu4 = 2012 eu4 = 2583 v2 = 66 }	# Arsigantegok, Etchemins -> Sherbrooke
+	link = { eu4 = 2582 eu4 = 986 v2 = 67 }	# Maliseet, Kespek -> Rimouski
+	link = { eu4 = 2572 eu4 = 2571 v2 = 69 }	# Siknikt, Madawaska -> Bathurst
+	link = { eu4 = 2570 eu4 = 985 v2 = 68 }	# Wolystoq, Mikmaq -> Fredericton
+	link = { eu4 = 983 v2 = 70 }	# Epekwitk -> Prince Edward Island
+	link = { eu4 = 982 v2 = 73 }	# Unamakik -> Cape Breton Island
+	link = { eu4 = 2569 eu4 = 984 v2 = 72 }	# Eskikewakik, Sipeknekatik -> Truro
+	link = { eu4 = 2568 v2 = 71 }	# Kespukwitk -> Halifax
+	# Thirteen Colonies
+	link = { eu4 = 2567 v2 = 250 }	# Aroostook -> Caribou
+	link = { eu4 = 971 eu4 = 2566 v2 = 249 }	# Penobscott, Passamaquoddy -> Bangor
+	link = { eu4 = 2565 eu4 = 2013 v2 = 248 }	# Kennebec, Androscoggin -> Lewiston
+	link = { eu4 = 970 eu4 = 2562 eu4 = 2564 v2 = 247 }	# Merrimack, Pennacook, Sokoki -> Concord
+	link = { eu4 = 969 eu4 = 2563 v2 = 246 }	# Pocumtuk, Missisquoi -> Burlington
+	link = { eu4 = 968 v2 = 243 }	# Massachusetts -> Boston
+	link = { eu4 = 966 eu4 = 2010 v2 = 245 }	# Nipmuc, Connecticut -> Pittsfield
+	link = { eu4 = 2560 v2 = 241 }	# Quinnipiac -> Hartford
+	link = { eu4 = 967 v2 = 242 }	# Narraganset -> Providence
+	link = { eu4 = 2561 v2 = 244 }	# Wampanoag -> New Bedford
+	link = { eu4 = 965 v2 = 232 v2 = 233 }	# Manhattan -> New York, Long Island
+	link = { eu4 = 963 v2 = 234 }	# Mahican -> Albany
+	link = { eu4 = 2558 v2 = 235 }	# Espachomy -> Binghamton
+	link = { eu4 = 2559 v2 = 240 }	# Adirondack -> Plattsburgh
+	link = { eu4 = 964 v2 = 239 }	# Mohawk -> Watertown
+	link = { eu4 = 961 eu4 = 960 v2 = 238 }	# Oneida, Onondaga -> Syracuse
+	link = { eu4 = 959 v2 = 237 }	# Cayuga -> Rochester
+	link = { eu4 = 958 v2 = 236 }	# Seneca -> Buffalo
+	link = { eu4 = 2639 v2 = 229 }	# Raritan -> Newark
+	link = { eu4 = 962 v2 = 230 v2 = 231 }	# Unami -> Trenton, Atlantic City
+	link = { eu4 = 956 v2 = 223 }	# Lenape -> Philadelphia
+	link = { eu4 = 2023 v2 = 224 }	# Munsee -> Scranton
+	link = { eu4 = 954 v2 = 228 }	# Allegheny -> Erie
+	link = { eu4 = 2557 v2 = 225 }	# Atrakwaye -> Williamsport
+	link = { eu4 = 2555 v2 = 227 }	# Honniasont -> Pittsburgh
+	link = { eu4 = 2556 eu4 = 955 v2 = 226 }	# Juniata, Susquehanna -> Harrisburg
+	link = { eu4 = 957 v2 = 222 }	# Delaware -> Dover
+	link = { eu4 = 2554 v2 = 219 }	# Nanticoke -> Baltimore
+	link = { eu4 = 953 v2 = 220 }	# Conoy -> Washington
+	link = { eu4 = 2553 v2 = 221 v2 = 212 }	# Potomac -> Hagerstown, Manassas
+	link = { eu4 = 2550 v2 = 213 }	# Doeg -> Fredericksburg
+	link = { eu4 = 950 v2 = 214 }	# Chesapeake -> Norfolk
+	link = { eu4 = 952 eu4 = 2549 v2 = 211 }	# Powhatan, Moratok -> Richmond
+	link = { eu4 = 2011 v2 = 215 }	# Shenandoah -> Staunton
+	link = { eu4 = 949 eu4 = 2548 v2 = 216 }	# Monacan, Tutelo -> Roanoke
+	link = { eu4 = 2551 eu4 = 2552 v2 = 217 }	# Monongahela, Manahoac -> Wheeling
+	link = { eu4 = 951 v2 = 218 }	# Kanawha -> Huntington
+	link = { eu4 = 2547 v2 = 207 }	# Roanoke -> Greenville
+	link = { eu4 = 937 v2 = 208 }	# Tuscarora -> Raleigh
+	link = { eu4 = 938 eu4 = 2546 v2 = 210 }	# Pamlico, Chicora -> Wilmington
+	link = { eu4 = 2545 eu4 = 2544 v2 = 209 }	# Waxhaw, Yadkin -> Charlotte
+	link = { eu4 = 936 v2 = 2556 }	# Cheraw -> Asheville
+	link = { eu4 = 935 v2 = 190 }	# Cherokee -> Knoxville
+	link = { eu4 = 2527 v2 = 191 }	# Chickamauga -> Chattanooga
+	link = { eu4 = 934 v2 = 188 }	# Yuchi -> Nashville
+	link = { eu4 = 481 v2 = 203 }	# Bermuda -> Bermuda
+	link = { eu4 = 933 eu4 = 2541 v2 = 206 }	# Catawba, Saluda -> Columbia
+	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 }	# Waccamaw, Santee, Cusabo -> Charleston
+	# Florida
+	link = { eu4 = 2540 v2 = 2555 }	# Coweta -> Augusta
+	link = { eu4 = 929 eu4 = 2539 v2 = 204 }	# Guale, Mocama -> Savannah
+	link = { eu4 = 2537 eu4 = 2538 v2 = 202 }	# Hitchiti, Yamasee -> Valdosta
+	link = { eu4 = 930 eu4 = 931 v2 = 201 }	# Muskogee, Coosa -> Atlanta
+	link = { eu4 = 927 eu4 = 2534 eu4 = 4625 eu4 = 4626 v2 = 199 }	# Timucua, Yustaga, Mayaca, Potano -> St Augustine
+	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 }	# Calusa, Ais, Mayaimi -> Tampa
+	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 }	# Apalachee, Chatot, Pensacola -> Tallahassee
+	link = { eu4 = 922 v2 = 197 }	# Mobile -> Mobile
+	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 }	# Tuskegee, Alabama, Tohome -> Montgomery
+	link = { eu4 = 2531 v2 = 196 }	# Napochi -> Tuscaloosa
+	link = { eu4 = 918 v2 = 189 }	# Tennessee -> Memphis
+	link = { eu4 = 919 eu4 = 2528 v2 = 193 }	# Chickasaw, Yazoo -> Vicksburg
+	link = { eu4 = 920 eu4 = 2529 v2 = 192 }	# Choctaw, Natchez -> Jackson
+	link = { eu4 = 2530 v2 = 194 }	# Biloxi -> Biloxi
+	link = { eu4 = 921 v2 = 140 }	# Bayougoula -> Baton Rouge
+	link = { eu4 = 893 v2 = 139 }	# Chitimacha -> New Orleans
+	link = { eu4 = 2516 v2 = 141 }	# Adai -> Lake Charles
+	link = { eu4 = 2014 v2 = 142 }	# Natchitoches -> Shreveport
+	link = { eu4 = 895 eu4 = 897 v2 = 143 }	# Arkansas, Quapaw -> Little Rock
+	link = { eu4 = 2515 v2 = 145 }	# Satuskhdin -> Fayetteville
+	link = { eu4 = 894 v2 = 144 }	# Caddo -> Hot Springs
+	link = { eu4 = 892 v2 = 131 }	# Wichita -> Okmulgee
+	link = { eu4 = 891 v2 = 129 }	# Naisha -> Oklahoma City
+	link = { eu4 = 896 v2 = 130 }	# Yscani -> Tahlequah
+	# Texas
+	link = { eu4 = 2669 eu4 = 2665 eu4 = 888 v2 = 132 }	# Hasinai, Eyeish, Atakapa -> Houston
+	link = { eu4 = 887 eu4 = 886 v2 = 134 }	# Tonkawa, Waco -> Dallas
+	link = { eu4 = 2500 eu4 = 4627 v2 = 133 }	# Querecho, Tanu -> Austin
+	link = { eu4 = 883 eu4 = 884 v2 = 137 }	# Lipan, Karankawa -> San Antonio
+	link = { eu4 = 2499 v2 = 138 }	# Coahuilteco -> Laredo
+	link = { eu4 = 2666 eu4 = 2498 eu4 = 2497 eu4 = 4628 eu4 = 4629 v2 = 136 }	# Tuintsundé, Jumano, Lipiyanes, Nitahendé, Tel Kondaha -> El Paso
+	link = { eu4 = 885 v2 = 135 }	# Teyas -> Lubbock
+	# Deseret and California
+	link = { eu4 = 882 eu4 = 4630 eu4 = 4631 v2 = 105 }	# Mescalero, Natahéndé, Towa -> Las Cruces
+	link = { eu4 = 2496 eu4 = 880 v2 = 103 }	# Jicarilla, Pueblo -> Santa Fe
+	link = { eu4 = 881 eu4 = 2492 eu4 = 2494 eu4 = 878 eu4 = 4632 eu4 = 2495 v2 = 104 }	# Piro, Chiricahua, Zuni, Navajo, Keres, Acoma -> Albuquerque
+	link = { eu4 = 877 eu4 = 4633 v2 = 102 }	# Pima, Sobaipuri -> Tucson
+	link = { eu4 = 879 eu4 = 876 eu4 = 4634 v2 = 100 }	# Apache, Yavapai, Tsékaadn -> Phoenix
+	link = { eu4 = 2493 eu4 = 875 eu4 = 2491 v2 = 101 }	# Hopi, Paiute, Hualapai -> Flagstaff
+	link = { eu4 = 2476 eu4 = 867 v2 = 90 }	# Kumeyaay, Cahuilla -> San Diego
+	link = { eu4 = 2478 eu4 = 870 eu4 = 4636 eu4 = 4635 v2 = 88 }	# Tachi, Yokuts, Choinumni, Taaqtam -> Mariposa
+	link = { eu4 = 868 v2 = 89 }	# Chumash -> Los Angeles
+	link = { eu4 = 869 v2 = 87 }	# Salinan -> Monterey
+	link = { eu4 = 2021 eu4 = 871 eu4 = 4637 v2 = 84 }	# Miwok, Pomo, Ohlone -> San Francisco
+	link = { eu4 = 2477 v2 = 85 }	# Yuki -> Eureka
+	link = { eu4 = 2480 eu4 = 2479 eu4 = 4638 v2 = 86 }	# Shasta, Maidu, Wintun -> Sacramento
+	link = { eu4 = 2481 eu4 = 872 eu4 = 2482 v2 = 81 }	# Klamath, Siuslaw, Kalapuya -> Portland
+	link = { eu4 = 2483 v2 = 82 v2 = 83 }	# Umatilla -> Baker City, Klamath Falls
+	link = { eu4 = 873 eu4 = 2485 eu4 = 874 eu4 = 2484 v2 = 78 }	# Chinook, Chehalis, Salish, Quileute -> Seattle
+	link = { eu4 = 2486 eu4 = 2488 v2 = 80 }	# Yakima, Palus -> Walla Walla
+	link = { eu4 = 2487 v2 = 79 }	# Spokane -> Spokane
+	# Interior of USA
+	link = { eu4 = 2019 v2 = 92 }	# Nimiipu -> Coeur D'Alene
+	link = { eu4 = 2489 v2 = 91 }	# Bohogue -> Boise
+	link = { eu4 = 2020 v2 = 93 }	# Bannock -> Pocatello
+	link = { eu4 = 2608 v2 = 113 v2 = 114 }	# Rocky Mountains -> Bozeman, Missoula
+	link = { eu4 = 2502 eu4 = 2501 eu4 = 2510 v2 = 115 }	# Haaninin, Piegan, Hidatsa -> Great Falls
+	link = { eu4 = 2006 eu4 = 2503 eu4 = 2504 v2 = 116 }	# Apsáalooke, Ashshipite, Eeelalapito -> Billings
+	link = { eu4 = 1809 eu4 = 2505 v2 = 112 }	# Só'taeo'o, Tsisistas -> Casper
+	link = { eu4 = 2507 v2 = 110 }	# Baachinena -> Cheyenne
+	link = { eu4 = 2506 eu4 = 2490 v2 = 111 }	# Kuccuntikka, Goshute -> Cody
+	link = { eu4 = 2009 v2 = 124 v2 = 122 }	# Oglala -> Alliance, Rapid City
+	link = { eu4 = 2508 eu4 = 901 v2 = 125 }	# Skiri, Pawnee -> North Platte
+	link = { eu4 = 903 v2 = 123 }	# Omaha -> Omaha
+	link = { eu4 = 2008 v2 = 121 v2 = 119 }	# Lakota -> Dupree, Dickinson
+	link = { eu4 = 906 eu4 = 907 eu4 = 2007 v2 = 120 }	# Yanktonai, Yankton, Arikara -> Sioux Falls
+	link = { eu4 = 909 v2 = 117 }	# Mandan -> Bismarck
+	link = { eu4 = 2511 v2 = 118 }	# Itscheabine -> Minot
+	link = { eu4 = 910 eu4 = 2517 v2 = 158 }	# Makoua, Mdewakanton -> Duluth
+	link = { eu4 = 2016 v2 = 157 }	# Bungi -> Moorhead
+	link = { eu4 = 2512 v2 = 156 }	# Wahpekute -> Granite Falls
+	link = { eu4 = 908 v2 = 155 }	# Sisseton -> Minneapolis
+	link = { eu4 = 2518 v2 = 160 }	# Noquet -> Eau Claire
+	link = { eu4 = 904 v2 = 153 v2 = 154 }	# Wahpeton -> Cedar Rapids, Sioux City
+	link = { eu4 = 905 v2 = 151 }	# Iowa -> Des Moines
+	link = { eu4 = 2513 v2 = 152 }	# Moingwena -> Oskaloosa
+	link = { eu4 = 2672 eu4 = 2625 v2 = 127 }	# Kitkehaki, Hinonoeino -> Goodland
+	link = { eu4 = 890 eu4 = 889 v2 = 128 }	# Kiowa, Arapaho -> Wichita
+	link = { eu4 = 2509 eu4 = 898 v2 = 126 }	# Utsetha, Kansas -> Topeka
+	link = { eu4 = 899 v2 = 149 v2 = 147 }	# Pahatsi -> Jefferson City, Joplin
+	link = { eu4 = 902 v2 = 150 }	# Missouri -> Kansas City
+	link = { eu4 = 2514 v2 = 148 }	# Michigamea -> Malden
+	link = { eu4 = 900 v2 = 146 }	# Tamaroa -> St Louis
+	link = { eu4 = 939 v2 = 187 }	# Kaskinampo -> Paducah
+	link = { eu4 = 941 v2 = 186 }	# Chisca -> Bowling Green
+	link = { eu4 = 940 v2 = 184 }	# Kentucky -> Louisville
+	link = { eu4 = 2524 v2 = 170 }	# Wabash -> Evansville
+	link = { eu4 = 2523 v2 = 169 }	# Piankeshaw -> Indianapolis
+	link = { eu4 = 943 v2 = 172 }	# Miami -> Fort Wayne
+	link = { eu4 = 942 v2 = 171 }	# Wea -> South Bend
+	link = { eu4 = 2520 v2 = 168 }	# Mengkonkia -> Carbondale
+	link = { eu4 = 916 v2 = 167 }	# Kaskaskia -> Springfield
+	link = { eu4 = 2519 v2 = 165 }	# Kilatika -> Champaign
+	link = { eu4 = 917 v2 = 166 }	# Cahokia -> Peoria
+	link = { eu4 = 915 v2 = 163 v2 = 164 }	# Illinois -> Chicago, Rockford
+	link = { eu4 = 914 v2 = 159 }	# Winnebago -> Milwaukee
+	link = { eu4 = 913 v2 = 162 }	# Mesquakie -> Madison
+	link = { eu4 = 912 v2 = 161 }	# Sauk -> Green Bay
+	link = { eu4 = 2522 v2 = 174 }	# Mascouten -> Grand Rapids
+	link = { eu4 = 945 v2 = 176 }	# Michigan -> Traverse City
+	link = { eu4 = 911 v2 = 177 }	# Menominee -> Marquette
+	link = { eu4 = 2521 v2 = 175 }	# Okouara -> Saginaw
+	link = { eu4 = 944 v2 = 173 }	# Potawatomi -> Detroit
+	link = { eu4 = 2526 v2 = 185 }	# Shatteras -> Lexington
+	link = { eu4 = 946 v2 = 180 }	# Wyandot -> Sandusky
+	link = { eu4 = 2525 v2 = 179 v2 = 181 }	# Chillicothe -> Columbus, Dayton
+	link = { eu4 = 948 v2 = 182 v2 = 183 }	# Ohio -> Cincinnati, Marietta
+	link = { eu4 = 947 v2 = 178 }	# Erie -> Cleveland
+	# American unsettled lands
+	link = { eu4 = 1808 v2 = 97 v2 = 98 v2 = 99 v2 = 108 v2 = 109 v2 = 106 v2 = 107 v2 = 96 v2 = 95 v2 = 94 }	# Great Basin -> Salt Lake City, Loa, Moab, Alamosa, Pueblo, Denver, Grand Junction, Las Vegas, Elko, Carson City
+}
 1.28.0.0 = {
 	# ## WATER BODIES
 	# North America
