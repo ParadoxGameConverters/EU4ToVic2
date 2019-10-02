@@ -651,8 +651,8 @@
 	link = { eu4 = 887 eu4 = 886 v2 = 134 }	# Tonkawa, Waco -> Dallas
 	link = { eu4 = 2500 eu4 = 4627 v2 = 133 }	# Querecho, Tanu -> Austin
 	link = { eu4 = 883 eu4 = 884 v2 = 137 }	# Lipan, Karankawa -> San Antonio
-	link = { eu4 = 2499 v2 = 138 }	# Coahuilteco -> Laredo
-	link = { eu4 = 2666 eu4 = 2498 eu4 = 2497 eu4 = 4628 eu4 = 4629 v2 = 136 }	# Tuintsundé, Jumano, Lipiyanes, Nitahendé, Tel Kondaha -> El Paso
+	link = { eu4 = 2499 eu4 = 2666 v2 = 138 }	# Coahuilteco, Tuintsundé -> Laredo
+	link = { eu4 = 2498 eu4 = 2497 eu4 = 4628 eu4 = 4629 v2 = 136 }	# Jumano, Lipiyanes, Nitahendé, Tel Kondaha -> El Paso
 	link = { eu4 = 885 v2 = 135 }	# Teyas -> Lubbock
 	# Deseret and California
 	link = { eu4 = 882 eu4 = 4630 eu4 = 4631 v2 = 105 }	# Mescalero, Natahéndé, Towa -> Las Cruces
