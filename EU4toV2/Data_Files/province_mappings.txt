@@ -496,7 +496,7 @@
 	link = { eu4 = 1741 eu4 = 1737 eu4 = 1738 v2 = 3180 v2 = 3175 }	# MANY-TO-MANY: Tiki Basin, Marquesas Islands, Flint Island -> Coast of the Marquesas, Southern Line Islands
 	link = { eu4 = 1305 v2 = 2758 v2 = 2759 }	# Gulf of Gabes -> Gulf of Gabes, Malta Channel
 	link = { eu4 = 4131 v2 = 1670 v2 = 1672 }	# Mutsu -> Morioka, Aomori
-	link = { eu4 = 4153 eu4 = 4146 eu4 = 4155 eu4 = 4159 eu4 = 4160 eu4 = 4161 eu4 = 4157 eu4 = 4162 eu4 = 4154 eu4 = 4156 eu4 = 4167 eu4 = 4168 eu4 = 4169 eu4 = 4172 eu4 = 4179 eu4 = 4170 eu4 = 4177 eu4 = 4178 eu4 = 4569 }	# The Scandes, Langfjella, The Carpathians, The Alps, The Alps, The Alps, The Alps, The Alps, The Pyrenees, The Caucasus, High Atlas, High Atlas, Aures, Zagros, Hakkari Mountains, Zagros, Alborz, Pontic Mountains, High Atlas -> DROPPED
+	link = { eu4 = 4153 eu4 = 4146 eu4 = 4155 eu4 = 4159 eu4 = 4160 eu4 = 4161 eu4 = 4157 eu4 = 4162 eu4 = 4154 eu4 = 4156 eu4 = 4167 eu4 = 4168 eu4 = 4169 eu4 = 4172 eu4 = 4179 eu4 = 4170 eu4 = 4177 eu4 = 4178 }	# The Scandes, Langfjella, The Carpathians, The Alps, The Alps, The Alps, The Alps, The Alps, The Pyrenees, The Caucasus, High Atlas, High Atlas, Aures, Zagros, Hakkari Mountains, Zagros, Alborz, Pontic Mountains -> DROPPED
 	# ## LANDS
 	# ## North America
 	# Alaska
@@ -626,8 +626,8 @@
 	link = { eu4 = 929 eu4 = 2539 v2 = 204 }	# Guale, Mocama -> Savannah
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 }	# Hitchiti, Yamasee -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 }	# Muskogee, Coosa -> Atlanta
-	link = { eu4 = 927 eu4 = 2534 v2 = 199 }	# Timucua, Yustaga -> St Augustine
-	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 eu4 = 4625 eu4 = 4626 v2 = 200 }	# Calusa, Ais, Mayaimi, Mayaca, Potano -> Tampa
+	link = { eu4 = 927 eu4 = 2534 eu4 = 4625 eu4 = 4626 v2 = 199 }	# Timucua, Yustaga, Mayaca, Potano -> St Augustine
+	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 }	# Calusa, Ais, Mayaimi -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 }	# Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 }	# Mobile -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 }	# Tuskegee, Alabama, Tohome -> Montgomery
@@ -647,27 +647,27 @@
 	link = { eu4 = 891 v2 = 129 }	# Naisha -> Oklahoma City
 	link = { eu4 = 896 v2 = 130 }	# Yscani -> Tahlequah
 	# Texas
-	link = { eu4 = 2669 eu4 = 2665 v2 = 132 }	# Hasinai, Eyeish -> Houston
+	link = { eu4 = 2669 eu4 = 2665 eu4 = 888 v2 = 132 }	# Hasinai, Eyeish, Atakapa -> Houston
 	link = { eu4 = 887 eu4 = 886 v2 = 134 }	# Tonkawa, Waco -> Dallas
-	link = { eu4 = 2500 eu4 = 888 eu4 = 4627 v2 = 133 }	# Querecho, Atakapa, Tanu -> Austin
+	link = { eu4 = 2500 eu4 = 4627 v2 = 133 }	# Querecho, Tanu -> Austin
 	link = { eu4 = 883 eu4 = 884 v2 = 137 }	# Lipan, Karankawa -> San Antonio
-	link = { eu4 = 2499 eu4 = 2666 v2 = 138 }	# Coahuilteco, Tuintsundé -> Laredo
-	link = { eu4 = 2498 eu4 = 2497 eu4 = 4628 eu4 = 4629 v2 = 136 }	# Jumano, Lipiyanes, Nitahendé, Tel Kondaha -> El Paso
+	link = { eu4 = 2499 v2 = 138 }	# Coahuilteco -> Laredo
+	link = { eu4 = 2666 eu4 = 2498 eu4 = 2497 eu4 = 4628 eu4 = 4629 v2 = 136 }	# Tuintsundé, Jumano, Lipiyanes, Nitahendé, Tel Kondaha -> El Paso
 	link = { eu4 = 885 v2 = 135 }	# Teyas -> Lubbock
 	# Deseret and California
-	link = { eu4 = 882 v2 = 105 }	# Mescalero -> Las Cruces
-	link = { eu4 = 2496 eu4 = 880 eu4 = 4631 v2 = 103 }	# Jicarilla, Pueblo, Towa -> Santa Fe
-	link = { eu4 = 881 eu4 = 2492 eu4 = 2495 eu4 = 2494 eu4 = 878 eu4 = 4632 v2 = 104 }	# Piro, Chiricahua, Acoma, Zuni, Navajo, Keres -> Albuquerque
-	link = { eu4 = 877 eu4 = 4633 eu4 = 4630 v2 = 102 }	# Pima, Sobaipuri, Natahéndé -> Tucson
+	link = { eu4 = 882 eu4 = 4630 eu4 = 4631 v2 = 105 }	# Mescalero, Natahéndé, Towa -> Las Cruces
+	link = { eu4 = 2496 eu4 = 880 v2 = 103 }	# Jicarilla, Pueblo -> Santa Fe
+	link = { eu4 = 881 eu4 = 2492 eu4 = 2494 eu4 = 878 eu4 = 4632 eu4 = 2495 v2 = 104 }	# Piro, Chiricahua, Zuni, Navajo, Keres, Acoma -> Albuquerque
+	link = { eu4 = 877 eu4 = 4633 v2 = 102 }	# Pima, Sobaipuri -> Tucson
 	link = { eu4 = 879 eu4 = 876 eu4 = 4634 v2 = 100 }	# Apache, Yavapai, Tsékaadn -> Phoenix
 	link = { eu4 = 2493 eu4 = 875 eu4 = 2491 v2 = 101 }	# Hopi, Paiute, Hualapai -> Flagstaff
-	link = { eu4 = 2476 v2 = 90 }	# Kumeyaay -> San Diego
-	link = { eu4 = 867 eu4 = 2478 eu4 = 870 eu4 = 4635 eu4 = 4636 v2 = 88 }	# Cahuilla, Tachi, Yokuts, Taaqtam, Choinumni -> Mariposa
+	link = { eu4 = 2476 eu4 = 867 v2 = 90 }	# Kumeyaay, Cahuilla -> San Diego
+	link = { eu4 = 2478 eu4 = 870 eu4 = 4636 eu4 = 4635 v2 = 88 }	# Tachi, Yokuts, Choinumni, Taaqtam -> Mariposa
 	link = { eu4 = 868 v2 = 89 }	# Chumash -> Los Angeles
 	link = { eu4 = 869 v2 = 87 }	# Salinan -> Monterey
-	link = { eu4 = 2021 eu4 = 871 eu4 = 4637 eu4 = 4638 v2 = 84 }	# Miwok, Pomo, Ohlone, Wintun -> San Francisco
+	link = { eu4 = 2021 eu4 = 871 eu4 = 4637 v2 = 84 }	# Miwok, Pomo, Ohlone -> San Francisco
 	link = { eu4 = 2477 v2 = 85 }	# Yuki -> Eureka
-	link = { eu4 = 2480 eu4 = 2479 v2 = 86 }	# Shasta, Maidu -> Sacramento
+	link = { eu4 = 2480 eu4 = 2479 eu4 = 4638 v2 = 86 }	# Shasta, Maidu, Wintun -> Sacramento
 	link = { eu4 = 2481 eu4 = 872 eu4 = 2482 v2 = 81 }	# Klamath, Siuslaw, Kalapuya -> Portland
 	link = { eu4 = 2483 v2 = 82 v2 = 83 }	# Umatilla -> Baker City, Klamath Falls
 	link = { eu4 = 873 eu4 = 2485 eu4 = 874 eu4 = 2484 v2 = 78 }	# Chinook, Chehalis, Salish, Quileute -> Seattle
