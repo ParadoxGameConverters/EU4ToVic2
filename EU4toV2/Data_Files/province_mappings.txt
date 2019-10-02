@@ -496,7 +496,7 @@
 	link = { eu4 = 1741 eu4 = 1737 eu4 = 1738 v2 = 3180 v2 = 3175 }	# MANY-TO-MANY: Tiki Basin, Marquesas Islands, Flint Island -> Coast of the Marquesas, Southern Line Islands
 	link = { eu4 = 1305 v2 = 2758 v2 = 2759 }	# Gulf of Gabes -> Gulf of Gabes, Malta Channel
 	link = { eu4 = 4131 v2 = 1670 v2 = 1672 }	# Mutsu -> Morioka, Aomori
-	link = { eu4 = 4153 eu4 = 4146 eu4 = 4155 eu4 = 4159 eu4 = 4160 eu4 = 4161 eu4 = 4157 eu4 = 4162 eu4 = 4154 eu4 = 4156 eu4 = 4167 eu4 = 4168 eu4 = 4169 eu4 = 4172 eu4 = 4179 eu4 = 4170 eu4 = 4177 eu4 = 4178 }	# The Scandes, Langfjella, The Carpathians, The Alps, The Alps, The Alps, The Alps, The Alps, The Pyrenees, The Caucasus, High Atlas, High Atlas, Aures, Zagros, Hakkari Mountains, Zagros, Alborz, Pontic Mountains -> DROPPED
+	link = { eu4 = 4153 eu4 = 4146 eu4 = 4155 eu4 = 4159 eu4 = 4160 eu4 = 4161 eu4 = 4157 eu4 = 4162 eu4 = 4154 eu4 = 4156 eu4 = 4167 eu4 = 4168 eu4 = 4169 eu4 = 4172 eu4 = 4179 eu4 = 4170 eu4 = 4177 eu4 = 4178 eu4 = 4569 }	# The Scandes, Langfjella, The Carpathians, The Alps, The Alps, The Alps, The Alps, The Alps, The Pyrenees, The Caucasus, High Atlas, High Atlas, Aures, Zagros, Hakkari Mountains, Zagros, Alborz, Pontic Mountains, High Atlas -> DROPPED
 	# ## LANDS
 	# ## North America
 	# Alaska
