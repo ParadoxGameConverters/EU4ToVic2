@@ -626,8 +626,8 @@
 	link = { eu4 = 929 eu4 = 2539 v2 = 204 }	# Guale, Mocama -> Savannah
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 }	# Hitchiti, Yamasee -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 }	# Muskogee, Coosa -> Atlanta
-	link = { eu4 = 927 eu4 = 2534 v2 = 199 }	# Timucua, Yustaga -> St Augustine
-	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 eu4 = 4625 eu4 = 4626 v2 = 200 }	# Calusa, Ais, Mayaimi, Mayaca, Potano -> Tampa
+	link = { eu4 = 927 eu4 = 2534 eu4 = 4625 eu4 = 4626 v2 = 199 }	# Timucua, Yustaga, Mayaca, Potano -> St Augustine
+	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 }	# Calusa, Ais, Mayaimi -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 }	# Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 }	# Mobile -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 }	# Tuskegee, Alabama, Tohome -> Montgomery
@@ -647,27 +647,27 @@
 	link = { eu4 = 891 v2 = 129 }	# Naisha -> Oklahoma City
 	link = { eu4 = 896 v2 = 130 }	# Yscani -> Tahlequah
 	# Texas
-	link = { eu4 = 2669 eu4 = 2665 v2 = 132 }	# Hasinai, Eyeish -> Houston
+	link = { eu4 = 2669 eu4 = 2665 eu4 = 888 v2 = 132 }	# Hasinai, Eyeish, Atakapa -> Houston
 	link = { eu4 = 887 eu4 = 886 v2 = 134 }	# Tonkawa, Waco -> Dallas
-	link = { eu4 = 2500 eu4 = 888 eu4 = 4627 v2 = 133 }	# Querecho, Atakapa, Tanu -> Austin
+	link = { eu4 = 2500 eu4 = 4627 v2 = 133 }	# Querecho, Tanu -> Austin
 	link = { eu4 = 883 eu4 = 884 v2 = 137 }	# Lipan, Karankawa -> San Antonio
 	link = { eu4 = 2499 eu4 = 2666 v2 = 138 }	# Coahuilteco, Tuintsundé -> Laredo
 	link = { eu4 = 2498 eu4 = 2497 eu4 = 4628 eu4 = 4629 v2 = 136 }	# Jumano, Lipiyanes, Nitahendé, Tel Kondaha -> El Paso
 	link = { eu4 = 885 v2 = 135 }	# Teyas -> Lubbock
 	# Deseret and California
-	link = { eu4 = 882 v2 = 105 }	# Mescalero -> Las Cruces
-	link = { eu4 = 2496 eu4 = 880 eu4 = 4631 v2 = 103 }	# Jicarilla, Pueblo, Towa -> Santa Fe
-	link = { eu4 = 881 eu4 = 2492 eu4 = 2495 eu4 = 2494 eu4 = 878 eu4 = 4632 v2 = 104 }	# Piro, Chiricahua, Acoma, Zuni, Navajo, Keres -> Albuquerque
-	link = { eu4 = 877 eu4 = 4633 eu4 = 4630 v2 = 102 }	# Pima, Sobaipuri, Natahéndé -> Tucson
+	link = { eu4 = 882 eu4 = 4630 eu4 = 4631 v2 = 105 }	# Mescalero, Natahéndé, Towa -> Las Cruces
+	link = { eu4 = 2496 eu4 = 880 v2 = 103 }	# Jicarilla, Pueblo -> Santa Fe
+	link = { eu4 = 881 eu4 = 2492 eu4 = 2494 eu4 = 878 eu4 = 4632 eu4 = 2495 v2 = 104 }	# Piro, Chiricahua, Zuni, Navajo, Keres, Acoma -> Albuquerque
+	link = { eu4 = 877 eu4 = 4633 v2 = 102 }	# Pima, Sobaipuri -> Tucson
 	link = { eu4 = 879 eu4 = 876 eu4 = 4634 v2 = 100 }	# Apache, Yavapai, Tsékaadn -> Phoenix
 	link = { eu4 = 2493 eu4 = 875 eu4 = 2491 v2 = 101 }	# Hopi, Paiute, Hualapai -> Flagstaff
-	link = { eu4 = 2476 v2 = 90 }	# Kumeyaay -> San Diego
-	link = { eu4 = 867 eu4 = 2478 eu4 = 870 eu4 = 4635 eu4 = 4636 v2 = 88 }	# Cahuilla, Tachi, Yokuts, Taaqtam, Choinumni -> Mariposa
+	link = { eu4 = 2476 eu4 = 867 v2 = 90 }	# Kumeyaay, Cahuilla -> San Diego
+	link = { eu4 = 2478 eu4 = 870 eu4 = 4636 eu4 = 4635 v2 = 88 }	# Tachi, Yokuts, Choinumni, Taaqtam -> Mariposa
 	link = { eu4 = 868 v2 = 89 }	# Chumash -> Los Angeles
 	link = { eu4 = 869 v2 = 87 }	# Salinan -> Monterey
-	link = { eu4 = 2021 eu4 = 871 eu4 = 4637 eu4 = 4638 v2 = 84 }	# Miwok, Pomo, Ohlone, Wintun -> San Francisco
+	link = { eu4 = 2021 eu4 = 871 eu4 = 4637 v2 = 84 }	# Miwok, Pomo, Ohlone -> San Francisco
 	link = { eu4 = 2477 v2 = 85 }	# Yuki -> Eureka
-	link = { eu4 = 2480 eu4 = 2479 v2 = 86 }	# Shasta, Maidu -> Sacramento
+	link = { eu4 = 2480 eu4 = 2479 eu4 = 4638 v2 = 86 }	# Shasta, Maidu, Wintun -> Sacramento
 	link = { eu4 = 2481 eu4 = 872 eu4 = 2482 v2 = 81 }	# Klamath, Siuslaw, Kalapuya -> Portland
 	link = { eu4 = 2483 v2 = 82 v2 = 83 }	# Umatilla -> Baker City, Klamath Falls
 	link = { eu4 = 873 eu4 = 2485 eu4 = 874 eu4 = 2484 v2 = 78 }	# Chinook, Chehalis, Salish, Quileute -> Seattle
@@ -2388,7 +2388,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Lower Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -5066,7 +5066,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Lower Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -7719,7 +7719,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Lower Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -10372,7 +10372,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Lower Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -13023,7 +13023,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Lower Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -15643,7 +15643,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Lower Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -18219,7 +18219,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Lower Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -20794,7 +20794,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Lower Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -22362,7 +22362,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Lower Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -24919,7 +24919,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Lower Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -27464,7 +27464,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Lower Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -29928,7 +29928,7 @@
 	link = { eu4 = 2358 v2 = 2612 }	# Altyn -> Aktash
 	link = { eu4 = 2118 v2 = 1188 }	# Urzhar -> Qaratal
 	link = { eu4 = 2355 eu4 = 2360 eu4 = 477 v2 = 1187 v2 = 2606 }	# MANY-TO-MANY: Narym, Tobykty, Nadym -> Semipalatinsk, Zhambyl
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2359 eu4 = 476 eu4 = 2369 v2 = 1181 v2 = 1184 }	# MANY-TO-MANY: Argyn, Shegendyk, Kerey, Aksary, Baganaly, Kypshak, Lower Ishim -> Qaraganda, Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2359 eu4 = 476 eu4 = 2369 v2 = 1181 v2 = 1184 }	# MANY-TO-MANY: Argyn, Shegendyk, Kerey, Aksary, Baganaly, Kypshak, Upper Ishim -> Qaraganda, Kokshetau
 	link = { eu4 = 2353 v2 = 2611 }	# Tortkara -> Turgay
 	# Asian Wasteland
 	link = { v2 = 2525 }	# NOTHING -> Marcus
@@ -32249,7 +32249,7 @@
 	link = { eu4 = 2358 v2 = 2612 }	# Altyn -> Aktash
 	link = { eu4 = 2118 v2 = 1188 }	# Urzhar -> Qaratal
 	link = { eu4 = 2355 eu4 = 2360 eu4 = 477 v2 = 1187 v2 = 2606 }	# MANY-TO-MANY: Narym, Tobykty, Nadym -> Semipalatinsk, Zhambyl
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2359 eu4 = 476 eu4 = 2369 v2 = 1181 v2 = 1184 }	# MANY-TO-MANY: Argyn, Shegendyk, Kerey, Aksary, Baganaly, Kypshak, Lower Ishim -> Qaraganda, Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2359 eu4 = 476 eu4 = 2369 v2 = 1181 v2 = 1184 }	# MANY-TO-MANY: Argyn, Shegendyk, Kerey, Aksary, Baganaly, Kypshak, Upper Ishim -> Qaraganda, Kokshetau
 	link = { eu4 = 2353 v2 = 2611 }	# Tortkara -> Turgay
 	# Asian Wasteland
 	link = { v2 = 2525 }	# NOTHING -> Marcus
