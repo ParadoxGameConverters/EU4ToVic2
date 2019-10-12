@@ -17,7 +17,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-1.29.0.0 = { # To Idhrendur: Caribbean and Mexico changed
+1.29.0.0 = {
 	# ## WATER BODIES
 	# North America
 	link = { eu4 = 1914 v2 = 3227 }	# Great Slave Lake -> Great Slave Lake
@@ -732,7 +732,7 @@
 	link = { eu4 = 947 v2 = 178 }	# Erie -> Cleveland
 	# American unsettled lands
 	link = { eu4 = 1808 v2 = 97 v2 = 98 v2 = 99 v2 = 108 v2 = 109 v2 = 106 v2 = 107 v2 = 96 v2 = 95 v2 = 94 }	# Great Basin -> Salt Lake City, Loa, Moab, Alamosa, Pueblo, Denver, Grand Junction, Las Vegas, Elko, Carson City
-# Caribbean
+	# Caribbean
 	link = { eu4 = 482 v2 = 2219 }	# Bahamas -> Bahamas
 	link = { eu4 = 483 v2 = 2220 }	# Turks Islands -> Turks And Caicos
 	link = { eu4 = 484 eu4 = 4624 v2 = 2209 }	# Havana, Guane -> Havana
@@ -759,11 +759,12 @@
 	# Mexico
 	link = { eu4 = 2620 eu4 = 865 eu4 = 4639 v2 = 2139 }	# Nakipa, Cochimi, Paipai -> Rosarito
 	link = { eu4 = 866 v2 = 2138 }	# Guaycura -> Loreto
-	link = { eu4 = 2616 eu4 = 4577 eu4 = 4650 eu4 = 4644 v2 = 2140 v2 = 2137 }	# MANY-TO-MANY: Seri, Tohono, Opata, Jocome -> Nogales, Hermosillo
-	link = { eu4 = 862 eu4 = 4649 eu4 = 4646 v2 = 2141 }	# Yaqui, Mayo, Tarahumara -> Guaymas
+	link = { eu4 = 2616 eu4 = 4577 eu4 = 4650 v2 = 2140 v2 = 2137 }	# MANY-TO-MANY: Seri, Tohono, Opata -> Nogales, Hermosillo
+	link = { eu4 = 862 eu4 = 4649 v2 = 2141 }	# Yaqui, Mayo -> Guaymas
 	link = { eu4 = 859 v2 = 2157 }	# Sinaloa -> Culiacán
 	link = { eu4 = 855 v2 = 2156 }	# Totorames -> Mazatlán
-	link = { eu4 = 854 eu4 = 4578 eu4 = 4576 eu4 = 4579 v2 = 2168 v2 = 2161 }	# MANY-TO-MANY: Sayultecas, Tzapotzingo, Amaxocotlan, Sayula -> Puerto Vallarta, Tepic
+	link = { eu4 = 854 eu4 = 4578 v2 = 2161 }	# Sayultecas, Tzapotzingo -> Tepic
+	link = { eu4 = 4576 eu4 = 4579 v2 = 2168 }	# Amaxocotlan, Sayula -> Puerto Vallarta
 	link = { eu4 = 2657 v2 = 2169 }	# Colima -> Colima
 	link = { eu4 = 2621 eu4 = 2643 eu4 = 4574 v2 = 2166 }	# Tizapan, Apatzingan, Ihuatzio -> Guadalajara
 	link = { eu4 = 2623 eu4 = 4575 eu4 = 2622 eu4 = 2624 v2 = 2170 }	# Cutzamala, Puruaran, Cuitzeo, Patzcuaro -> Morelia
@@ -778,17 +779,17 @@
 	link = { eu4 = 2635 eu4 = 4585 v2 = 2181 }	# Lacandon, Tzotzil -> Tuxtla
 	link = { eu4 = 2632 v2 = 2165 }	# Xicallanco -> Villahermosa
 	link = { eu4 = 2650 eu4 = 845 v2 = 2184 }	# Champutun, Campeche -> Campeche
-	link = { eu4 = 2633 eu4 = 2651 eu4 = 846 v2 = 2183 }	# Ceh Pech, Ah Canul, Sotuta -> Mérida
-	link = { eu4 = 2652 eu4 = 2634 eu4 = 4591 eu4 = 4590 eu4 = 4588 v2 = 2185 }	# Ecab, Uaymil, Chikinchel, Xiu, Kobox -> Bacalar
+	link = { eu4 = 2633 eu4 = 2651 eu4 = 846 eu4 = 4590 v2 = 2183 }	# Ceh Pech, Ah Canul, Sotuta, Xiu -> Mérida
+	link = { eu4 = 2652 eu4 = 2634 eu4 = 4591 eu4 = 4588 v2 = 2185 }	# Ecab, Uaymil, Chikinchel, Kobox -> Bacalar
 	link = { eu4 = 2631 eu4 = 2630 v2 = 2164 }	# Mixe, Tochtepec -> Minatitlán
 	link = { eu4 = 2647 eu4 = 848 eu4 = 4598 eu4 = 4583 v2 = 2162 }	# Cuetlaxtlan, Tohancapan, Cuauhtochco, Xocotla -> Veracruz
 	link = { eu4 = 2628 eu4 = 4571 v2 = 2176 }	# Tepeacac, Tlacopan -> Puebla
 	link = { eu4 = 2644 eu4 = 850 eu4 = 4570 v2 = 2175 }	# Cholula, Tlaxcala, Texcoco -> Tulancingo
 	link = { eu4 = 853 eu4 = 4641 v2 = 2173 }	# Tlapacoyan, Xilotepec -> Querétaro
 	link = { eu4 = 2615 eu4 = 4573 v2 = 2167 }	# Guamares, Acambaro -> Guanajuato
-	link = { eu4 = 2617 eu4 = 4640 eu4 = 4643 v2 = 2160 }	# Huichol, Tecpatitlan, Xiconaque -> Aguascalientes
+	link = { eu4 = 2617 eu4 = 4640 v2 = 2160 }	# Huichol, Tecpatitlan -> Aguascalientes
 	link = { eu4 = 860 eu4 = 4648 eu4 = 4647 v2 = 2153 v2 = 2154 }	# MANY-TO-MANY: Tepehuan, Acaxee, Xecora -> Durango, Santa María del Oro
-	link = { eu4 = 856 eu4 = 4645 v2 = 2158 }	# Zacatecas, Xochipillan -> Zacatecas
+	link = { eu4 = 856 eu4 = 4645 eu4 = 4643 v2 = 2158 }	# Zacatecas, Xochipillan, Xiconaque -> Zacatecas
 	link = { eu4 = 857 eu4 = 4642 v2 = 2159 }	# Guachichil, Pame -> San Luis Potosí
 	link = { eu4 = 2642 eu4 = 2641 v2 = 2163 }	# Metztitlan, Tziccoac -> Tampico
 	link = { eu4 = 858 v2 = 2150 }	# Tamaulipas -> Ciudad Victoria
@@ -797,9 +798,9 @@
 	link = { eu4 = 2619 v2 = 2151 v2 = 2155 }	# Laguneros -> Saltillo, Torreón
 	link = { eu4 = 2667 v2 = 2147 }	# Cacaxtes -> Morelos
 	link = { eu4 = 861 v2 = 2152 }	# Coahuila -> Monclova
-	link = { eu4 = 2618 v2 = 2145 }	# Toboso -> Parral
+	link = { eu4 = 2618 eu4 = 4646 v2 = 2145 }	# Toboso, Tarahumara -> Parral
 	link = { eu4 = 864 eu4 = 4606 v2 = 2142 v2 = 2144 }	# MANY-TO-MANY: Concho, Chichitames -> Chihuahua, Delicias
-	link = { eu4 = 863 v2 = 2143 }	# Suma -> Paso del Norte
+	link = { eu4 = 863 eu4 = 4644 v2 = 2143 }	# Suma, Jocome -> Paso del Norte
 	# Central America
 	link = { eu4 = 843 eu4 = 4589 v2 = 2190 }	# Belize, Moran -> Belize
 	link = { eu4 = 842 eu4 = 4594 v2 = 2189 }	# Petén, Tzul -> Sayaxché
