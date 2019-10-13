@@ -2651,7 +2651,7 @@
 	link = { eu4 = 2438 v2 = 2648 }	# Kharya -> Yakutsk
 	link = { eu4 = 1046 v2 = 2669 }	# Maya -> Amga
 	# Eastern Siberia
-	link = { eu4 = 2102 v2 = 2697 }	# Urkan -> Magdagachi
+	link = { eu4 = 2102 eu4 = 4662 v2 = 2697 }	# Urkan, Halacha -> Magdagachi
 	link = { eu4 = 1052 v2 = 1080 v2 = 2696 }	# Stanovoy -> Chernomin, Aldan
 	link = { eu4 = 1051 v2 = 2644 }	# Aldan -> Olyekminsk
 	link = { eu4 = 1045 v2 = 2672 v2 = 1069 }	# Yakut -> Pokrovsk, Vilyuysk
@@ -2670,8 +2670,8 @@
 	link = { eu4 = 1063 eu4 = 2443 eu4 = 1065 eu4 = 480 v2 = 1077 v2 = 1067 }	# MANY-TO-MANY: Sayan, Kan, Kuznetsk, Pegaya Orda -> Krasnoyarsk, Barnaul
 	link = { eu4 = 716 v2 = 1469 }	# Tannu Uriankhai -> Kyzyl
 	link = { eu4 = 1066 v2 = 1068 }	# Altai Uriankhai -> Ulala
-	link = { eu4 = 2434 v2 = 2698 v2 = 1064 }	# Barnaul -> Slavgorod, Omsk
-	link = { eu4 = 2433 eu4 = 2428 eu4 = 1071 v2 = 2683 }	# Vah, Yugan, Irtesh -> Bakchar
+	link = { eu4 = 2434 eu4 = 4688 eu4 = 4687 v2 = 2698 v2 = 1064 }	# MANY-TO-MANY: Barnaul, Baraba, Imakia -> Slavgorod, Omsk
+	link = { eu4 = 2433 eu4 = 2428 eu4 = 1071 eu4 = 4689 v2 = 2683 }	# Vah, Yugan, Irtesh, Om -> Bakchar
 	link = { eu4 = 1068 v2 = 2691 }	# Ket -> Vorgovo
 	link = { eu4 = 1067 v2 = 2692 }	# Turukhan -> Kostino
 	# Western Siberia
@@ -2681,8 +2681,8 @@
 	link = { eu4 = 1069 v2 = 1065 }	# Surgut -> Nizhnevartovsk
 	link = { eu4 = 2445 eu4 = 1072 v2 = 2613 v2 = 2684 }	# MANY-TO-MANY: Mangazea, Obdorsk -> Nyda, Yar Sale
 	link = { eu4 = 1073 v2 = 2682 }	# Berezov -> Aksarka
-	link = { eu4 = 1074 v2 = 2690 v2 = 1066 }	# Sibir -> Verkhniy Ufaley, Tobolsk
-	link = { eu4 = 1075 v2 = 2686 }	# Tyumen -> Ishim
+	link = { eu4 = 1074 eu4 = 4691 v2 = 2690 v2 = 1066 }	# MANY-TO-MANY: Sibir, As -> Verkhniy Ufaley, Tobolsk
+	link = { eu4 = 1075 eu4 = 4690 v2 = 2686 }	# Tyumen, Ishim -> Ishim
 	link = { eu4 = 1076 v2 = 1061 }	# Kurgan -> Tyumen
 	link = { eu4 = 1966 v2 = 1060 }	# Chelyaba -> Orsk
 	# Urals
@@ -2694,6 +2694,7 @@
 	link = { eu4 = 1782 v2 = 1071 v2 = 2667 v2 = 2652 v2 = 2649 v2 = 2670 v2 = 2671 v2 = 2673 v2 = 2651 v2 = 2653 v2 = 2675 v2 = 2674 v2 = 2655 }	# Central Siberia -> Bytantaysk, Bulun, Kular, Zhigansk, Tiksi, Zhilinda, Olenyok, Udanchniy, Saskylah, Yekonda, Essey, Tura
 	link = { eu4 = 1783 v2 = 2590 v2 = 2666 v2 = 2661 v2 = 2662 v2 = 2664 v2 = 2621 v2 = 2665 v2 = 2619 v2 = 2647 v2 = 2668 v2 = 2643 }	# Eastern Siberia -> Ugolnoye, Pevek, Nizhnekolymsk, Cherskiy, Oyotuni, Srednekolymsk, Chokurdakh, Abiy, Yansk, Verkhoyansk, Honuu
 	link = { eu4 = 4482 v2 = 1328 }	# Sikkim -> Tumlong
+	link = { eu4 = 4402 eu4 = 4496 }	# Gaoligong Mountains, Kora -> DROPPED
 }
 1.28.0.0 = {
 	# ## WATER BODIES
