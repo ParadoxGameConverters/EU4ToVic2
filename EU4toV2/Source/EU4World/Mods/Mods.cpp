@@ -89,7 +89,7 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 	else
 	{
 		LOG(LogLevel::Debug) << "EU4 Documents directory is " << EU4DocumentsLoc;
-		loadModDirectory(EU4DocumentsLoc, theConfiguration);
+		loadModDirectory(EU4DocumentsLoc);
 	}
 }
 
@@ -138,12 +138,12 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 	else
 	{
 		LOG(LogLevel::Debug) << "CK2 export directory is " << CK2ExportLoc;
-		loadModDirectory(CK2ExportLoc, theConfiguration);
+		loadModDirectory(CK2ExportLoc);
 	}
 }
 
 
-void EU4::Mods::loadModDirectory(const std::string& directory, const Configuration& theConfiguration)
+void EU4::Mods::loadModDirectory(const std::string& directory)
 {
 	std::set<std::string> filenames;
 	Utils::GetAllFilesInFolder(directory + "/mod", filenames);
