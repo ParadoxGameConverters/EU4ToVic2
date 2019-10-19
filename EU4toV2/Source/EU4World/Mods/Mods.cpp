@@ -123,9 +123,13 @@ void EU4::Mods::loadModDirectory(const std::string& directory, const Configurati
 
 			if (theMod.isValid())
 			{
+				std::string trimmedFilename = filename.substr(0, pos);
+
 				possibleMods.insert(std::make_pair(theMod.getName(), directory + "/" + theMod.getPath()));
-				Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " claiming to be at " \
-					<< directory << "/" << theMod.getPath();
+				possibleMods.insert(std::make_pair("mod/" + filename, directory + "/" + theMod.getPath()));
+				possibleMods.insert(std::make_pair(trimmedFilename, directory + "/" + theMod.getPath()));
+				Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " with a mod file at " \
+					<< "mod/" + filename << " claiming to be at " << directory << "/" << theMod.getPath();
 			}
 		}
 	}
