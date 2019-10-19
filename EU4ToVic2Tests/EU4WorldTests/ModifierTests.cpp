@@ -69,24 +69,3 @@ TEST(EU4World_ModifierTests, effectAmountsAreReturned)
 	EU4::Modifier theModifier(input);
 	ASSERT_EQ(theModifier.getEffectAmount("effect"), 0.5);
 }
-
-
-TEST(EU4World_ModifierTests, multipleOfSameEffectIsLogged)
-{
-	std::stringstream input;
-	input << "= {\n";
-	input << "\ttheEffect = 0.5\n";
-	input << "\ttheEffect = 0.75\n";
-	input << "}";
-
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
-	EU4::Modifier theModifier(input);
-	std::cout.rdbuf(sbuf);
-	
-	std::stringstream expectedLog;
-	expectedLog << "Multiple instances of effect theEffect in modifier.\n";
-
-	ASSERT_EQ(expectedLog.str(), buffer.str());
-}
