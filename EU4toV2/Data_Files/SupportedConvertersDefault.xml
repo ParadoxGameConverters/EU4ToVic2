@@ -207,6 +207,19 @@ tag vs internalTag:
         </requiredFolder>
 
         <requiredFolder>
+          <tag>SteamWorkshopDirectory</tag>
+          <friendlyName>Steam Workshop Directory</friendlyName>
+          <description>A path on your computer where Steam Workshop keeps EU4 mods</description>
+          <isMandatory>true</isMandatory>
+          <alternatives>
+            <alternative>
+              <defaultLocationType>Folder</defaultLocationType>
+              <location>C:\Program Files (x86)\Steam\SteamApps\workshop\content\236850</location>
+            </alternative>
+          </alternatives>
+        </requiredFolder>
+
+        <requiredFolder>
           <tag>CK2ExportDirectory</tag>
           <friendlyName>CK2 Export Directory</friendlyName>
           <description>A path on your computer where Crusader Kings 2 keeps exported games</description>

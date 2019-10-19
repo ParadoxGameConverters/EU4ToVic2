@@ -23,8 +23,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "Mods.h"
 #include "Mod.h"
+#include "../../Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
+#include <filesystem>
 #include <fstream>
 
 
@@ -46,6 +48,7 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 	parseStream(theStream);
 
 	loadEU4ModDirectory(theConfiguration);
+	loadSteamWorkshopDirectory(theConfiguration);
 	loadCK2ExportDirectory(theConfiguration);
 
 	for (auto usedMod: usedMods)
@@ -87,6 +90,38 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 	{
 		LOG(LogLevel::Debug) << "EU4 Documents directory is " << EU4DocumentsLoc;
 		loadModDirectory(EU4DocumentsLoc, theConfiguration);
+	}
+}
+
+
+void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration)
+{
+	std::string steamWorkshopPath = theConfiguration.getSteamWorkshopPath();
+	if (!Utils::doesFolderExist(steamWorkshopPath))
+	{
+		std::exception e("No Steam Worksop directory was specified in configuration.txt, or the path was invalid");
+		throw e;
+	}
+	else
+	{
+		LOG(LogLevel::Debug) << "Steam Workshop directory is " << steamWorkshopPath;
+		for (auto& directoryItem: std::filesystem::directory_iterator(steamWorkshopPath))
+		{
+			std::filesystem::path path = directoryItem.path();
+			auto fullPath = path.append("descriptor.mod");
+			if (directoryItem.is_directory() && std::filesystem::exists(fullPath))
+			{
+				std::ifstream modFile(fullPath);
+				Mod theMod(modFile);
+				modFile.close();
+
+				if (theMod.isValid())
+				{
+					possibleMods.insert(std::make_pair(theMod.getName(), directoryItem.path().generic_string()));
+					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " at " << directoryItem.path();
+				}
+			}
+		}
 	}
 }
 

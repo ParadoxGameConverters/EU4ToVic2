@@ -44,6 +44,10 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		commonItems::singleString path(theStream);
 		EU4DocumentsPath = path.getString();
 	});
+	registerKeyword(std::regex("SteamWorkshopDirectory"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleString path(theStream);
+		SteamWorkshopPath = path.getString();
+	});
 	registerKeyword(std::regex("CK2ExportDirectory"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleString path(theStream);
 		CK2ExportPath = path.getString();
