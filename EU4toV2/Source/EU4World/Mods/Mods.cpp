@@ -51,6 +51,7 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 	loadSteamWorkshopDirectory(theConfiguration);
 	loadCK2ExportDirectory(theConfiguration);
 
+	Log(LogLevel::Debug) << "Finding Used Mods";
 	for (auto usedMod: usedMods)
 	{
 		auto possibleModPath = getModPath(usedMod);
@@ -78,13 +79,12 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 
 void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 {
-	LOG(LogLevel::Debug) << "Get EU4 Mod Directory";
 	std::string EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();
 	if (!Utils::doesFolderExist(EU4DocumentsLoc))
 	{
-		LOG(LogLevel::Error) << "No Europa Universalis 4 documents directory was specified in configuration.txt," \
-			"or the path was invalid";
-		exit(-1);
+		std::exception e("No Europa Universalis 4 documents directory was specified in configuration.txt, " \
+			"or the path was invalid");
+		throw e;
 	}
 	else
 	{
@@ -128,7 +128,6 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 
 void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 {
-	LOG(LogLevel::Debug) << "Get CK2 Export Directory";
 	std::string CK2ExportLoc = theConfiguration.getCK2ExportPath();
 	if (!Utils::doesFolderExist(CK2ExportLoc))
 	{
