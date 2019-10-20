@@ -25,9 +25,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Mod.h"
 #include "../../Configuration.h"
 #include "Log.h"
-#include "OSCompatibilityLayer.h"
 #include <filesystem>
 #include <fstream>
+#include <set>
+#include <string>
 
 
 
@@ -57,9 +58,10 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 		auto possibleModPath = getModPath(usedMod);
 		if (possibleModPath)
 		{
-			if (!Utils::doesFolderExist(*possibleModPath) && !Utils::DoesFileExist(*possibleModPath))
+			if (!std::filesystem::exists(*possibleModPath))
 			{
-				LOG(LogLevel::Error) << usedMod << " could not be found in the specified mod directory - a valid mod directory must be specified. Tried " << *possibleModPath;
+				LOG(LogLevel::Error) << usedMod << " could not be found in the specified mod directory \ "
+					"- a valid mod directory must be specified. Tried " << *possibleModPath;
 				exit(-1);
 			}
 			else
@@ -80,7 +82,7 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 {
 	std::string EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();
-	if (!Utils::doesFolderExist(EU4DocumentsLoc))
+	if (!std::filesystem::exists(EU4DocumentsLoc) || !std::filesystem::is_directory(EU4DocumentsLoc))
 	{
 		std::exception e("No Europa Universalis 4 documents directory was specified in configuration.txt, " \
 			"or the path was invalid");
@@ -97,7 +99,7 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration)
 {
 	std::string steamWorkshopPath = theConfiguration.getSteamWorkshopPath();
-	if (!Utils::doesFolderExist(steamWorkshopPath))
+	if (!std::filesystem::exists(steamWorkshopPath) || !std::filesystem::is_directory(steamWorkshopPath))
 	{
 		std::exception e("No Steam Worksop directory was specified in configuration.txt, or the path was invalid");
 		throw e;
@@ -129,7 +131,7 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 {
 	std::string CK2ExportLoc = theConfiguration.getCK2ExportPath();
-	if (!Utils::doesFolderExist(CK2ExportLoc))
+	if (!std::filesystem::exists(CK2ExportLoc) || !std::filesystem::is_directory(CK2ExportLoc))
 	{
 		LOG(LogLevel::Warning) << "No Crusader Kings 2 mod directory was specified in configuration.txt," \
 			" or the path was invalid - this will cause problems with CK2 converted saves";
@@ -144,10 +146,9 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 
 void EU4::Mods::loadModDirectory(const std::string& directory)
 {
-	std::set<std::string> filenames;
-	Utils::GetAllFilesInFolder(directory + "/mod", filenames);
-	for (auto filename: filenames)
+	for (auto& directoryItem: std::filesystem::directory_iterator(directory))
 	{
+		std::string filename = directoryItem.path().generic_string();
 		const int pos = filename.find_last_of('.');
 		if ((pos != std::string::npos) && (filename.substr(pos, filename.length()) == ".mod"))
 		{
