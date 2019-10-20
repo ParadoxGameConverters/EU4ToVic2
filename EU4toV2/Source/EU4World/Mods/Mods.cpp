@@ -152,19 +152,27 @@ void EU4::Mods::loadModDirectory(const std::string& directory)
 		const int pos = filename.find_last_of('.');
 		if ((pos != std::string::npos) && (filename.substr(pos, filename.length()) == ".mod"))
 		{
-			std::ifstream modFile(directory + "/mod/" + filename);
-			Mod theMod(modFile);
-			modFile.close();
-
-			if (theMod.isValid())
+			try
 			{
-				std::string trimmedFilename = filename.substr(0, pos);
+				std::ifstream modFile(directory + "/mod/" + filename);
+				Mod theMod(modFile);
+				modFile.close();
 
-				possibleMods.insert(std::make_pair(theMod.getName(), directory + "/" + theMod.getPath()));
-				possibleMods.insert(std::make_pair("mod/" + filename, directory + "/" + theMod.getPath()));
-				possibleMods.insert(std::make_pair(trimmedFilename, directory + "/" + theMod.getPath()));
-				Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " with a mod file at " \
-					<< "mod/" + filename << " claiming to be at " << directory << "/" << theMod.getPath();
+				if (theMod.isValid())
+				{
+					std::string trimmedFilename = filename.substr(0, pos);
+
+					possibleMods.insert(std::make_pair(theMod.getName(), directory + "/" + theMod.getPath()));
+					possibleMods.insert(std::make_pair("mod/" + filename, directory + "/" + theMod.getPath()));
+					possibleMods.insert(std::make_pair(trimmedFilename, directory + "/" + theMod.getPath()));
+					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " with a mod file at " \
+						<< "mod/" + filename << " claiming to be at " << directory << "/" << theMod.getPath();
+				}
+			}
+			catch (std::exception e)
+			{
+				LOG(LogLevel::Warning) << "Error while reading " << directory << " / mod / " << filename << ". " \
+					"Mod will not be useable for conversions.";
 			}
 		}
 	}
