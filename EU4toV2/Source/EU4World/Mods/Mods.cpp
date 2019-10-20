@@ -91,7 +91,14 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 	else
 	{
 		LOG(LogLevel::Debug) << "EU4 Documents directory is " << EU4DocumentsLoc;
-		loadModDirectory(EU4DocumentsLoc);
+		if (theConfiguration.getEU4Version() > EU4::Version("1.29.0.0"))
+		{
+			loadModDirectory(EU4DocumentsLoc, "");
+		}
+		else
+		{
+			loadModDirectory(EU4DocumentsLoc, EU4DocumentsLoc);
+		}
 	}
 }
 
@@ -139,14 +146,21 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 	else
 	{
 		LOG(LogLevel::Debug) << "CK2 export directory is " << CK2ExportLoc;
-		loadModDirectory(CK2ExportLoc);
+		if (theConfiguration.getEU4Version() > EU4::Version("1.29.0.0"))
+		{
+			loadModDirectory(CK2ExportLoc, "");
+		}
+		else
+		{
+			loadModDirectory(CK2ExportLoc, CK2ExportLoc);
+		}
 	}
 }
 
 
-void EU4::Mods::loadModDirectory(const std::string& directory)
+void EU4::Mods::loadModDirectory(const std::string& searchDirectory, const std::string& recordDirectory)
 {
-	for (auto& directoryItem: std::filesystem::directory_iterator(directory))
+	for (auto& directoryItem: std::filesystem::directory_iterator(searchDirectory))
 	{
 		std::string filename = directoryItem.path().generic_string();
 		const int pos = filename.find_last_of('.');
@@ -154,7 +168,7 @@ void EU4::Mods::loadModDirectory(const std::string& directory)
 		{
 			try
 			{
-				std::ifstream modFile(directory + "/mod/" + filename);
+				std::ifstream modFile(searchDirectory + "/mod/" + filename);
 				Mod theMod(modFile);
 				modFile.close();
 
@@ -162,16 +176,17 @@ void EU4::Mods::loadModDirectory(const std::string& directory)
 				{
 					std::string trimmedFilename = filename.substr(0, pos);
 
-					possibleMods.insert(std::make_pair(theMod.getName(), directory + "/" + theMod.getPath()));
-					possibleMods.insert(std::make_pair("mod/" + filename, directory + "/" + theMod.getPath()));
-					possibleMods.insert(std::make_pair(trimmedFilename, directory + "/" + theMod.getPath()));
-					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " with a mod file at " \
-						<< "mod/" + filename << " claiming to be at " << directory << "/" << theMod.getPath();
+					possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory + "/" + theMod.getPath()));
+					possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory + "/" + theMod.getPath()));
+					possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory + "/" + theMod.getPath()));
+					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() <<
+						" with a mod file at " << searchDirectory << "/mod/" + filename <<
+						" claiming to be at " << recordDirectory << "/" << theMod.getPath();
 				}
 			}
 			catch (std::exception e)
 			{
-				LOG(LogLevel::Warning) << "Error while reading " << directory << " / mod / " << filename << ". " \
+				LOG(LogLevel::Warning) << "Error while reading " << searchDirectory << " / mod / " << filename << ". " \
 					"Mod will not be useable for conversions.";
 			}
 		}
