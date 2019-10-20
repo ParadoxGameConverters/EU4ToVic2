@@ -2404,7 +2404,7 @@
 	link = { eu4 = 2123 eu4 = 2192 v2 = 2607 }	# Qakilik, Korla -> Lop Nur
 	link = { eu4 = 739 eu4 = 2124 v2 = 1594 }	# Kashgar, Yarkand -> Kashgar
 	link = { eu4 = 2121 eu4 = 712 eu4 = 4209 v2 = 1597 }	# Kuqa, Aksu, Maralbexi -> Aksu
-	link = { eu4 = 711 eu4 = 710 eu4 = 4520 v2 = 1598 }	# Qarqan, Hotan, Rutog -> Khotan
+	link = { eu4 = 711 eu4 = 710 eu4 = 4520 eu4 = 4693 v2 = 1598 }	# Qarqan, Hotan, Rutog, Keriya -> Khotan
 	# Gansu
 	link = { eu4 = 708 eu4 = 707 v2 = 1488 }	# Zhangye, Yumen -> Jiayuguan
 	link = { eu4 = 2182 eu4 = 2184 v2 = 1490 }	# Liangzhou, Xining -> Lanzhou
@@ -2413,8 +2413,7 @@
 	link = { eu4 = 2181 v2 = 1492 }	# Pingliang -> Pingliang
 	# Shaanxi, Shanxi
 	link = { eu4 = 2179 v2 = 1561 }	# Yan'an -> Yenan
-	link = { eu4 = 700 v2 = 2062 }	# Xi'an -> Shangzhou
-	link = { eu4 = 2180 eu4 = 4198 v2 = 1559 }	# Tianshui, Fengxiang -> Xian
+	link = { eu4 = 700 eu4 = 4198 eu4 = 2180 v2 = 1559 v2 = 2062 }	# MANY-TO-MANY: Xi'an, Fengxiang, Tianshui -> Xian, Shangzhou
 	link = { eu4 = 689 v2 = 1562 }	# Hanzhong -> Hanzhong
 	link = { eu4 = 697 v2 = 1576 }	# Datong -> Datong
 	link = { eu4 = 2177 v2 = 1572 }	# Ningwu -> Taiyuan
@@ -2422,8 +2421,8 @@
 	link = { eu4 = 694 v2 = 1575 }	# Pingyang -> Pingyang
 	link = { eu4 = 2178 v2 = 1574 }	# Lu'an -> Luan
 	# Hebei
-	link = { eu4 = 703 eu4 = 704 eu4 = 4194 v2 = 1613 }	# Chengde, Ningyuan, Yongping -> Chengde
-	link = { eu4 = 2136 eu4 = 1816 v2 = 1616 v2 = 1612 }	# MANY-TO-MANY: Xuanhua, Beijing -> Tangshan, Beijing
+	link = { eu4 = 703 eu4 = 704 eu4 = 4194 eu4 = 4672 v2 = 1613 }	# Chengde, Ningyuan, Yongping, North Ju Ud -> Chengde
+	link = { eu4 = 2136 eu4 = 1816 eu4 = 4671 v2 = 1612 v2 = 1616 }	# MANY-TO-MANY: Xuanhua, Beijing, East Ereen -> Beijing, Tangshan
 	link = { eu4 = 695 eu4 = 4195 v2 = 1615 v2 = 1617 }	# MANY-TO-MANY: Hejian, Zhending -> Jizhou, Tianjin
 	link = { eu4 = 696 v2 = 1618 }	# Baoding -> Zhongding
 	link = { eu4 = 2137 v2 = 1614 }	# Daming -> Daming
