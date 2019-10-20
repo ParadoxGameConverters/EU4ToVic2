@@ -2341,24 +2341,24 @@
 	link = { eu4 = 737 eu4 = 4228 eu4 = 4227 v2 = 1635 }	# Jeonju, Naju, Jinju -> Kwangju
 	link = { eu4 = 2741 v2 = 1637 }	# Jeju -> Cheju
 	# Manchuria
-	link = { eu4 = 731 eu4 = 2107 eu4 = 2108 v2 = 1554 }	# Ilan Hala, Ningguta, Huncun -> Ninguta
-	link = { eu4 = 2111 eu4 = 730 eu4 = 2188 eu4 = 2110 eu4 = 4201 eu4 = 4232 v2 = 1555 }	# Hetu Ala, Girin, Alchuka, Yehe, Jianzhou, Ganggye -> Jilin
-	link = { eu4 = 2112 eu4 = 2113 v2 = 1479 v2 = 1481 }	# MANY-TO-MANY: Andong, Gaizhou -> Mukden, Port Arthur
-	link = { eu4 = 726 v2 = 1480 }	# Shenyang -> Jinzhou
-	link = { eu4 = 724 eu4 = 725 eu4 = 728 eu4 = 4218 eu4 = 4200 v2 = 1552 v2 = 1002 }	# MANY-TO-MANY: Hulunbuir, Cicigar, Tuwan, Buteha, Hulan -> Qiqihar, Manzhouli
+	link = { eu4 = 731 eu4 = 2107 eu4 = 2108 eu4 = 4654 eu4 = 4663 v2 = 1554 }	# Ilan Hala, Ningguta, Huncun, Fuerhe, Jixi -> Ninguta
+	link = { eu4 = 730 eu4 = 2188 eu4 = 4201 eu4 = 4232 eu4 = 4653 eu4 = 4661 v2 = 1555 }	# Girin, Alchuka, Jianzhou, Ganggye, Maolian, Edala -> Jilin
+	link = { eu4 = 2112 eu4 = 2113 eu4 = 2111 eu4 = 726 eu4 = 2110 v2 = 1479 v2 = 1481 }	# MANY-TO-MANY: Andong, Gaizhou, Hetu Ala, Shenyang, Yehe -> Mukden, Port Arthur
+	link = { eu4 = 4652 v2 = 1480 }	# Haicheng -> Jinzhou
+	link = { eu4 = 724 eu4 = 725 eu4 = 728 eu4 = 4218 eu4 = 4200 eu4 = 4664 eu4 = 4665 eu4 = 4660 v2 = 1552 v2 = 1002 }	# MANY-TO-MANY: Hulunbuir, Cicigar, Tuwan, Buteha, Hulan, North Buteha, South Buteha, Tunhe -> Qiqihar, Manzhouli
 	link = { eu4 = 2185 eu4 = 1053 eu4 = 727 v2 = 1553 }	# Mergen, Hinggan, Aigun -> Aigun
-	link = { eu4 = 2187 eu4 = 2109 eu4 = 722 eu4 = 4203 eu4 = 4202 v2 = 1533 }	# Sartu, Boduna, Jirem, Ju Ud, Taining -> Jirim Chuulgan
+	link = { eu4 = 2187 eu4 = 2109 eu4 = 722 eu4 = 4203 eu4 = 4202 eu4 = 4674 eu4 = 4675 v2 = 1533 }	# Sartu, Boduna, Jirem, Ju Ud, Taining, North Jirem, Central Jirem -> Jirim Chuulgan
 	# Greater Mongolia
-	link = { eu4 = 721 eu4 = 717 eu4 = 4219 v2 = 1467 }	# Setsen, Kherlen, Bayan Tumen -> Bayan Tumen
-	link = { eu4 = 2116 eu4 = 4220 v2 = 1465 }	# Ih Huree, Khiagt -> Urga
-	link = { eu4 = 2189 v2 = 2678 }	# Tsetserleg -> Bulgan
-	link = { eu4 = 723 eu4 = 2114 eu4 = 2115 v2 = 1534 }	# Xilin Gol, Ereen, Chahar -> Ulaan Chab Chuulghan
-	link = { eu4 = 719 eu4 = 718 eu4 = 4222 v2 = 2608 }	# Uliastai, Kobdo, Ulaangom -> Khatgal
-	link = { eu4 = 2190 eu4 = 2117 v2 = 1468 }	# Qaraqorum, Zasagt -> Uliastai
-	link = { eu4 = 2193 eu4 = 720 eu4 = 4221 v2 = 1466 v2 = 2207 }	# MANY-TO-MANY: Govi, Dornogovi, Dundgovi -> Dalandzadgad, Sainshand
+	link = { eu4 = 721 eu4 = 717 eu4 = 4219 eu4 = 4667 eu4 = 4666 v2 = 1467 }	# Setsen, Kherlen, Bayan Tumen, North Setsen, South Hulunbur -> Bayan Tumen
+	link = { eu4 = 2116 eu4 = 4220 eu4 = 4668 v2 = 1465 }	# Ih Huree, Khiagt, West Ih Huree -> Urga
+	link = { eu4 = 2189 eu4 = 4679 v2 = 2678 }	# Tsetserleg, North Tsetserleg -> Bulgan
+	link = { eu4 = 723 eu4 = 2114 eu4 = 2115 eu4 = 4673 v2 = 1534 }	# Xilin Gol, Ereen, Chahar, East Xilin Gol -> Ulaan Chab Chuulghan
+	link = { eu4 = 719 eu4 = 4222 v2 = 2608 }	# Uliastai, Ulaangom -> Khatgal
+	link = { eu4 = 2190 eu4 = 2117 eu4 = 4678 v2 = 1468 }	# Qaraqorum, Zasagt, East Qaraqorum -> Uliastai
+	link = { eu4 = 2193 eu4 = 720 eu4 = 4221 eu4 = 4677 eu4 = 4669 v2 = 1466 v2 = 2207 }	# MANY-TO-MANY: Govi, Dornogovi, Dundgovi, East Govi, East Dornogovi -> Dalandzadgad, Sainshand
 	link = { eu4 = 702 eu4 = 2747 eu4 = 701 eu4 = 4223 v2 = 1532 }	# Hohhot, Khara Narin Ula, Ordos, Hetao -> Guihua Tumed
-	link = { eu4 = 709 eu4 = 2191 v2 = 1535 }	# Alxa, Ejin -> Yeke Juu Chuulghan
-	link = { eu4 = 714 v2 = 2679 v2 = 1596 }	# Hoboksar -> Khovd, Tulta
+	link = { eu4 = 709 eu4 = 2191 eu4 = 4676 eu4 = 4670 v2 = 1535 }	# Alxa, Ejin, West Alxa, West Khara Narin Ula -> Yeke Juu Chuulghan
+	link = { eu4 = 714 eu4 = 4683 eu4 = 4682 eu4 = 718 eu4 = 4681 eu4 = 4680 v2 = 2679 v2 = 1596 }	# MANY-TO-MANY: Hoboksar, East Hoboskar, South Kobdo, Kobdo, North Kobdo, East Zagast -> Khovd, Tulta
 	link = { eu4 = 2122 eu4 = 4206 v2 = 1599 }	# Hami, Balikul -> Kumul
 	# Turkmenistan
 	link = { eu4 = 2349 v2 = 1205 }	# Kizil-Su -> Kyzyl Arvat
