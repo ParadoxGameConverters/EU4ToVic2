@@ -736,7 +736,7 @@
 	link = { eu4 = 482 v2 = 2219 }	# Bahamas -> Bahamas
 	link = { eu4 = 483 v2 = 2220 }	# Turks Islands -> Turks And Caicos
 	link = { eu4 = 484 eu4 = 4624 v2 = 2209 }	# Havana, Guane -> Havana
-	link = { eu4 = 485 eu4 = 4622 eu4 = 4623 v2 = 2210 v2 = 2218 }	# MANY-TO-MANY: Moron, Canimar, Escambrey -> Jagua, Cayman Islands
+	link = { eu4 = 485 eu4 = 4623 eu4 = 4622 v2 = 2210 v2 = 2218 }	# MANY-TO-MANY: Moron, Escambrey, Canimar -> Jagua, Cayman Islands
 	link = { eu4 = 2656 eu4 = 2655 v2 = 2211 }	# Camaguey, Bayamo -> Camagüey
 	link = { eu4 = 486 eu4 = 2654 v2 = 2212 }	# Guantanamo, Baracoa -> Santiago de Cuba
 	link = { eu4 = 487 v2 = 2217 }	# Jamaica -> Jamaica
@@ -757,39 +757,39 @@
 	link = { eu4 = 502 v2 = 2237 v2 = 2238 }	# Trinidad -> Trinidad, Tobago
 	link = { eu4 = 491 v2 = 2235 v2 = 2234 }	# Curacao -> Aruba, Curacao
 	# Mexico
-	link = { eu4 = 2620 eu4 = 4639 v2 = 2139 }	# Nakipa, Paipai -> Rosarito
-	link = { eu4 = 866 eu4 = 865 v2 = 2138 }	# Guaycura, Cochimi -> Loreto
+	link = { eu4 = 2620 eu4 = 865 eu4 = 4639 v2 = 2139 }	# Nakipa, Cochimi, Paipai -> Rosarito
+	link = { eu4 = 866 v2 = 2138 }	# Guaycura -> Loreto
 	link = { eu4 = 2616 eu4 = 4577 eu4 = 4650 v2 = 2140 v2 = 2137 }	# MANY-TO-MANY: Seri, Tohono, Opata -> Nogales, Hermosillo
 	link = { eu4 = 862 eu4 = 4649 v2 = 2141 }	# Yaqui, Mayo -> Guaymas
 	link = { eu4 = 859 v2 = 2157 }	# Sinaloa -> Culiacán
 	link = { eu4 = 855 v2 = 2156 }	# Totorames -> Mazatlán
 	link = { eu4 = 854 eu4 = 4578 v2 = 2161 }	# Sayultecas, Tzapotzingo -> Tepic
-	link = { eu4 = 4576 v2 = 2168 }	# Amaxocotlan -> Puerto Vallarta
+	link = { eu4 = 4576 eu4 = 4579 v2 = 2168 }	# Amaxocotlan, Sayula -> Puerto Vallarta
 	link = { eu4 = 2657 v2 = 2169 }	# Colima -> Colima
-	link = { eu4 = 2621 eu4 = 2624 eu4 = 2643 eu4 = 4574 eu4 = 4579 v2 = 2166 }	# Tizapan, Patzcuaro, Apatzingan, Ihuatzio, Sayula -> Guadalajara
-	link = { eu4 = 2623 eu4 = 4575 v2 = 2170 }	# Cutzamala, Puruaran -> Morelia
+	link = { eu4 = 2621 eu4 = 2643 eu4 = 4574 v2 = 2166 }	# Tizapan, Apatzingan, Ihuatzio -> Guadalajara
+	link = { eu4 = 2623 eu4 = 4575 eu4 = 2622 eu4 = 2624 v2 = 2170 }	# Cutzamala, Puruaran, Cuitzeo, Patzcuaro -> Morelia
 	link = { eu4 = 851 eu4 = 2627 eu4 = 4580 v2 = 2171 }	# Zacatula, Cihuatlan, Tecoman -> Los Albañiles
 	link = { eu4 = 2648 eu4 = 849 v2 = 2179 }	# Yopitzinco, Tlapanec -> Acapulco
 	link = { eu4 = 2645 eu4 = 4581 v2 = 2180 }	# Teloloapan, Yohualtepec -> Chilpancingo
 	link = { eu4 = 2626 eu4 = 4572 v2 = 2174 }	# Tullucan, Malinalco -> Toluca
-	link = { eu4 = 852 eu4 = 4570 eu4 = 4571 v2 = 2172 }	# Mexico, Texcoco, Tlacopan -> Mexico City
-	link = { eu4 = 847 v2 = 2178 }	# Mixtec -> Collataro
-	link = { eu4 = 844 eu4 = 2629 eu4 = 2646 eu4 = 4582 eu4 = 4584 v2 = 2177 }	# Zapotec, Coyolapan, Coixtlahuacan, Teotitlan, Mitla -> Oaxaca
-	link = { eu4 = 2649 eu4 = 2638 v2 = 2182 }	# Tehuantepec, Xoconochco -> Tapachula
-	link = { eu4 = 2635 eu4 = 4585 eu4 = 4586 v2 = 2181 }	# Lacandon, Tzotzil, Jakaltek -> Tuxtla
+	link = { eu4 = 852 v2 = 2172 }	# Mexico -> Mexico City
+	link = { eu4 = 847 eu4 = 844 v2 = 2178 }	# Mixtec, Zapotec -> Collataro
+	link = { eu4 = 2629 eu4 = 2646 eu4 = 4582 eu4 = 4584 v2 = 2177 }	# Coyolapan, Coixtlahuacan, Teotitlan, Mitla -> Oaxaca
+	link = { eu4 = 2649 eu4 = 2638 eu4 = 4586 v2 = 2182 }	# Tehuantepec, Xoconochco, Jakaltek -> Tapachula
+	link = { eu4 = 2635 eu4 = 4585 v2 = 2181 }	# Lacandon, Tzotzil -> Tuxtla
 	link = { eu4 = 2632 v2 = 2165 }	# Xicallanco -> Villahermosa
 	link = { eu4 = 2650 eu4 = 845 v2 = 2184 }	# Champutun, Campeche -> Campeche
-	link = { eu4 = 2633 eu4 = 2651 eu4 = 4590 eu4 = 846 v2 = 2183 }	# Ceh Pech, Ah Canul, Xiu, Sotuta -> Mérida
-	link = { eu4 = 2652 eu4 = 2634 eu4 = 4588 eu4 = 4591 v2 = 2185 }	# Ecab, Uaymil, Kobox, Chikinchel -> Bacalar
+	link = { eu4 = 2633 eu4 = 2651 eu4 = 846 eu4 = 4590 v2 = 2183 }	# Ceh Pech, Ah Canul, Sotuta, Xiu -> Mérida
+	link = { eu4 = 2652 eu4 = 2634 eu4 = 4591 eu4 = 4588 v2 = 2185 }	# Ecab, Uaymil, Chikinchel, Kobox -> Bacalar
 	link = { eu4 = 2631 eu4 = 2630 v2 = 2164 }	# Mixe, Tochtepec -> Minatitlán
-	link = { eu4 = 2647 eu4 = 848 eu4 = 4583 eu4 = 4598 v2 = 2162 }	# Cuetlaxtlan, Tohancapan, Xocotla, Cuauhtochco -> Veracruz
-	link = { eu4 = 2628 v2 = 2176 }	# Tepeacac -> Puebla
-	link = { eu4 = 2644 eu4 = 850 v2 = 2175 }	# Cholula, Tlaxcala -> Tulancingo
-	link = { eu4 = 853 eu4 = 4573 eu4 = 4641 v2 = 2173 }	# Tlapacoyan, Acambaro, Xilotepec -> Querétaro
-	link = { eu4 = 2615 eu4 = 2622 v2 = 2167 }	# Guamares, Cuitzeo -> Guanajuato
+	link = { eu4 = 2647 eu4 = 848 eu4 = 4598 eu4 = 4583 v2 = 2162 }	# Cuetlaxtlan, Tohancapan, Cuauhtochco, Xocotla -> Veracruz
+	link = { eu4 = 2628 eu4 = 4571 v2 = 2176 }	# Tepeacac, Tlacopan -> Puebla
+	link = { eu4 = 2644 eu4 = 850 eu4 = 4570 v2 = 2175 }	# Cholula, Tlaxcala, Texcoco -> Tulancingo
+	link = { eu4 = 853 eu4 = 4641 v2 = 2173 }	# Tlapacoyan, Xilotepec -> Querétaro
+	link = { eu4 = 2615 eu4 = 4573 v2 = 2167 }	# Guamares, Acambaro -> Guanajuato
 	link = { eu4 = 2617 eu4 = 4640 v2 = 2160 }	# Huichol, Tecpatitlan -> Aguascalientes
-	link = { eu4 = 860 eu4 = 4647 eu4 = 4648 v2 = 2153 v2 = 2154 }	# MANY-TO-MANY: Tepehuan, Xecora, Acaxee -> Durango, Santa María del Oro
-	link = { eu4 = 856 eu4 = 4643 eu4 = 4645 v2 = 2158 }	# Zacatecas, Xiconaque, Xochipillan -> Zacatecas
+	link = { eu4 = 860 eu4 = 4648 eu4 = 4647 v2 = 2153 v2 = 2154 }	# MANY-TO-MANY: Tepehuan, Acaxee, Xecora -> Durango, Santa María del Oro
+	link = { eu4 = 856 eu4 = 4645 eu4 = 4643 v2 = 2158 }	# Zacatecas, Xochipillan, Xiconaque -> Zacatecas
 	link = { eu4 = 857 eu4 = 4642 v2 = 2159 }	# Guachichil, Pame -> San Luis Potosí
 	link = { eu4 = 2642 eu4 = 2641 v2 = 2163 }	# Metztitlan, Tziccoac -> Tampico
 	link = { eu4 = 858 v2 = 2150 }	# Tamaulipas -> Ciudad Victoria
@@ -2388,7 +2388,7 @@
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 2353 eu4 = 2358 v2 = 2611 }	# Tortkara, Altyn -> Turgay
-	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim -> Kokshetau
+	link = { eu4 = 478 eu4 = 2354 eu4 = 479 eu4 = 2357 eu4 = 2369 eu4 = 4686 v2 = 1184 }	# Argyn, Shegendyk, Kerey, Aksary, Upper Ishim, Ekibastuz -> Kokshetau
 	link = { eu4 = 476 eu4 = 2359 v2 = 1181 }	# Kypshak, Baganaly -> Qaraganda
 	link = { eu4 = 2360 eu4 = 477 v2 = 2606 }	# Tobykty, Nadym -> Zhambyl
 	link = { eu4 = 2355 v2 = 1187 }	# Narym -> Semipalatinsk
@@ -2404,7 +2404,7 @@
 	link = { eu4 = 2123 eu4 = 2192 v2 = 2607 }	# Qakilik, Korla -> Lop Nur
 	link = { eu4 = 739 eu4 = 2124 v2 = 1594 }	# Kashgar, Yarkand -> Kashgar
 	link = { eu4 = 2121 eu4 = 712 eu4 = 4209 v2 = 1597 }	# Kuqa, Aksu, Maralbexi -> Aksu
-	link = { eu4 = 711 eu4 = 710 eu4 = 4520 v2 = 1598 }	# Qarqan, Hotan, Rutog -> Khotan
+	link = { eu4 = 711 eu4 = 710 eu4 = 4520 eu4 = 4693 v2 = 1598 }	# Qarqan, Hotan, Rutog, Keriya -> Khotan
 	# Gansu
 	link = { eu4 = 708 eu4 = 707 v2 = 1488 }	# Zhangye, Yumen -> Jiayuguan
 	link = { eu4 = 2182 eu4 = 2184 v2 = 1490 }	# Liangzhou, Xining -> Lanzhou
@@ -2413,8 +2413,7 @@
 	link = { eu4 = 2181 v2 = 1492 }	# Pingliang -> Pingliang
 	# Shaanxi, Shanxi
 	link = { eu4 = 2179 v2 = 1561 }	# Yan'an -> Yenan
-	link = { eu4 = 700 v2 = 2062 }	# Xi'an -> Shangzhou
-	link = { eu4 = 2180 eu4 = 4198 v2 = 1559 }	# Tianshui, Fengxiang -> Xian
+	link = { eu4 = 700 eu4 = 4198 eu4 = 2180 v2 = 1559 v2 = 2062 }	# MANY-TO-MANY: Xi'an, Fengxiang, Tianshui -> Xian, Shangzhou
 	link = { eu4 = 689 v2 = 1562 }	# Hanzhong -> Hanzhong
 	link = { eu4 = 697 v2 = 1576 }	# Datong -> Datong
 	link = { eu4 = 2177 v2 = 1572 }	# Ningwu -> Taiyuan
@@ -2422,8 +2421,8 @@
 	link = { eu4 = 694 v2 = 1575 }	# Pingyang -> Pingyang
 	link = { eu4 = 2178 v2 = 1574 }	# Lu'an -> Luan
 	# Hebei
-	link = { eu4 = 703 eu4 = 704 eu4 = 4194 v2 = 1613 }	# Chengde, Ningyuan, Yongping -> Chengde
-	link = { eu4 = 2136 eu4 = 1816 v2 = 1616 v2 = 1612 }	# MANY-TO-MANY: Xuanhua, Beijing -> Tangshan, Beijing
+	link = { eu4 = 703 eu4 = 704 eu4 = 4194 eu4 = 4672 v2 = 1613 }	# Chengde, Ningyuan, Yongping, North Ju Ud -> Chengde
+	link = { eu4 = 2136 eu4 = 1816 eu4 = 4671 v2 = 1612 v2 = 1616 }	# MANY-TO-MANY: Xuanhua, Beijing, East Ereen -> Beijing, Tangshan
 	link = { eu4 = 695 eu4 = 4195 v2 = 1615 v2 = 1617 }	# MANY-TO-MANY: Hejian, Zhending -> Jizhou, Tianjin
 	link = { eu4 = 696 v2 = 1618 }	# Baoding -> Zhongding
 	link = { eu4 = 2137 v2 = 1614 }	# Daming -> Daming
@@ -2651,7 +2650,7 @@
 	link = { eu4 = 2438 v2 = 2648 }	# Kharya -> Yakutsk
 	link = { eu4 = 1046 v2 = 2669 }	# Maya -> Amga
 	# Eastern Siberia
-	link = { eu4 = 2102 v2 = 2697 }	# Urkan -> Magdagachi
+	link = { eu4 = 2102 eu4 = 4662 v2 = 2697 }	# Urkan, Halacha -> Magdagachi
 	link = { eu4 = 1052 v2 = 1080 v2 = 2696 }	# Stanovoy -> Chernomin, Aldan
 	link = { eu4 = 1051 v2 = 2644 }	# Aldan -> Olyekminsk
 	link = { eu4 = 1045 v2 = 2672 v2 = 1069 }	# Yakut -> Pokrovsk, Vilyuysk
@@ -2670,7 +2669,8 @@
 	link = { eu4 = 1063 eu4 = 2443 eu4 = 1065 eu4 = 480 v2 = 1077 v2 = 1067 }	# MANY-TO-MANY: Sayan, Kan, Kuznetsk, Pegaya Orda -> Krasnoyarsk, Barnaul
 	link = { eu4 = 716 v2 = 1469 }	# Tannu Uriankhai -> Kyzyl
 	link = { eu4 = 1066 v2 = 1068 }	# Altai Uriankhai -> Ulala
-	link = { eu4 = 2434 v2 = 2698 v2 = 1064 }	# Barnaul -> Slavgorod, Omsk
+	link = { eu4 = 4687 eu4 = 2434 v2 = 2698 }	# Imakia, Barnaul -> Slavgorod
+	link = { eu4 = 4688 eu4 = 4689 v2 = 1064 }	# Baraba, Om -> Omsk
 	link = { eu4 = 2433 eu4 = 2428 eu4 = 1071 v2 = 2683 }	# Vah, Yugan, Irtesh -> Bakchar
 	link = { eu4 = 1068 v2 = 2691 }	# Ket -> Vorgovo
 	link = { eu4 = 1067 v2 = 2692 }	# Turukhan -> Kostino
@@ -2681,8 +2681,9 @@
 	link = { eu4 = 1069 v2 = 1065 }	# Surgut -> Nizhnevartovsk
 	link = { eu4 = 2445 eu4 = 1072 v2 = 2613 v2 = 2684 }	# MANY-TO-MANY: Mangazea, Obdorsk -> Nyda, Yar Sale
 	link = { eu4 = 1073 v2 = 2682 }	# Berezov -> Aksarka
-	link = { eu4 = 1074 v2 = 2690 v2 = 1066 }	# Sibir -> Verkhniy Ufaley, Tobolsk
-	link = { eu4 = 1075 v2 = 2686 }	# Tyumen -> Ishim
+	link = { eu4 = 4691 v2 = 2690 }	# As -> Verkhniy Ufaley
+	link = { eu4 = 1074 v2 = 1066 }	# Sibir -> Tobolsk
+	link = { eu4 = 1075 eu4 = 4690 v2 = 2686 }	# Tyumen, Ishim -> Ishim
 	link = { eu4 = 1076 v2 = 1061 }	# Kurgan -> Tyumen
 	link = { eu4 = 1966 v2 = 1060 }	# Chelyaba -> Orsk
 	# Urals
@@ -2694,6 +2695,7 @@
 	link = { eu4 = 1782 v2 = 1071 v2 = 2667 v2 = 2652 v2 = 2649 v2 = 2670 v2 = 2671 v2 = 2673 v2 = 2651 v2 = 2653 v2 = 2675 v2 = 2674 v2 = 2655 }	# Central Siberia -> Bytantaysk, Bulun, Kular, Zhigansk, Tiksi, Zhilinda, Olenyok, Udanchniy, Saskylah, Yekonda, Essey, Tura
 	link = { eu4 = 1783 v2 = 2590 v2 = 2666 v2 = 2661 v2 = 2662 v2 = 2664 v2 = 2621 v2 = 2665 v2 = 2619 v2 = 2647 v2 = 2668 v2 = 2643 }	# Eastern Siberia -> Ugolnoye, Pevek, Nizhnekolymsk, Cherskiy, Oyotuni, Srednekolymsk, Chokurdakh, Abiy, Yansk, Verkhoyansk, Honuu
 	link = { eu4 = 4482 v2 = 1328 }	# Sikkim -> Tumlong
+	link = { eu4 = 4402 }	# Gaoligong Mountains -> DROPPED
 }
 1.28.0.0 = {
 	# ## WATER BODIES
