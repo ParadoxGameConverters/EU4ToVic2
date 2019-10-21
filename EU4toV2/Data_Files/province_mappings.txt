@@ -2298,14 +2298,14 @@
 	link = { eu4 = 1847 eu4 = 4193 v2 = 1642 }	# Shiribeshi, Oshima -> Hakodate
 	link = { eu4 = 1031 v2 = 1643 }	# Kamikawa -> Ishikara
 	link = { eu4 = 1032 v2 = 1088 v2 = 1089 }	# The Kurils -> Shumshu, Etorofu
-	link = { eu4 = 1033 v2 = 1086 v2 = 1087 }	# Sakhalin -> Pogobi, Ootomari
+	link = { eu4 = 1033 eu4 = 4658 v2 = 1086 v2 = 1087 }	# MANY-TO-MANY: Sakhalin, Nanghaer -> Pogobi, Ootomari
 	# Honshu
 	link = { eu4 = 1026 v2 = 1668 v2 = 1669 }	# Rikuzen -> Sendai, Fukushima
 	link = { eu4 = 1025 eu4 = 4192 v2 = 1671 v2 = 1673 }	# MANY-TO-MANY: Uzen, Ugo -> Akita, Yamagata
 	link = { eu4 = 1024 v2 = 1645 }	# Echigo -> Niigata
 	link = { eu4 = 1843 eu4 = 4191 v2 = 1674 }	# Kozuke, Shimotsuke -> Utsunomiya
 	link = { eu4 = 1027 eu4 = 4190 v2 = 1653 v2 = 1650 }	# MANY-TO-MANY: Hitachi, Shimousa -> Mito, Chiba
-	link = { eu4 = 1028 v2 = 1652 v2 = 1649 v2 = 1651 }	# Musashi -> Urawa, Edo, Yokohama
+	link = { eu4 = 1028 v2 = 1649 v2 = 1651 v2 = 1652 }	# Musashi -> Edo, Yokohama, Urawa
 	link = { eu4 = 4188 eu4 = 1029 v2 = 1677 }	# Shinano, Kai -> Nagano
 	link = { eu4 = 1837 v2 = 1648 v2 = 1646 }	# Etchu -> Toyama, Kanazawa
 	link = { eu4 = 1839 eu4 = 4189 eu4 = 4360 v2 = 1676 }	# Suruga, Sagami, Mikawa -> Shizuoka
