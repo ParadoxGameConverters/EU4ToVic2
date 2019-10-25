@@ -93,14 +93,7 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 	else
 	{
 		LOG(LogLevel::Debug) << "EU4 Documents directory is " << EU4DocumentsLoc;
-		if (theConfiguration.getEU4Version() > EU4::Version("1.29.0.0"))
-		{
-			loadModDirectory(EU4DocumentsLoc, "");
-		}
-		else
-		{
-			loadModDirectory(EU4DocumentsLoc, EU4DocumentsLoc);
-		}
+		loadModDirectory(EU4DocumentsLoc, "");
 	}
 }
 
@@ -153,14 +146,7 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 	else
 	{
 		LOG(LogLevel::Debug) << "CK2 export directory is " << CK2ExportLoc;
-		if (theConfiguration.getEU4Version() > EU4::Version("1.29.0.0"))
-		{
-			loadModDirectory(CK2ExportLoc, "");
-		}
-		else
-		{
-			loadModDirectory(CK2ExportLoc, CK2ExportLoc);
-		}
+		loadModDirectory(CK2ExportLoc, "");
 	}
 }
 
@@ -184,9 +170,9 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory, const std::
 				{
 					std::string trimmedFilename = filename.substr(0, pos);
 
-					possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory + "/" + theMod.getPath()));
-					possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory + "/" + theMod.getPath()));
-					possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory + "/" + theMod.getPath()));
+					possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory + theMod.getPath()));
+					possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory + theMod.getPath()));
+					possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory + theMod.getPath()));
 					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() <<
 						" with a mod file at " << searchDirectory << "/mod/" + filename <<
 						" claiming to be at " << recordDirectory << "/" << theMod.getPath();
