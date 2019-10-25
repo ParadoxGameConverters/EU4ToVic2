@@ -25,7 +25,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Mod.h"
 #include "../../Configuration.h"
 #include "Log.h"
-#include <filesystem>
+#include "OSCompatibilityLayer.h"
 #include <fstream>
 #include <set>
 #include <string>
@@ -58,7 +58,7 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 		auto possibleModPath = getModPath(usedMod);
 		if (possibleModPath)
 		{
-			if (!std::filesystem::exists(*possibleModPath))
+			if (!Utils::doesFolderExist(*possibleModPath) && !Utils::DoesFileExist(*possibleModPath))
 			{
 				LOG(LogLevel::Error) << usedMod << " could not be found in the specified mod directory \ "
 					"- a valid mod directory must be specified. Tried " << *possibleModPath;
@@ -82,7 +82,7 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 {
 	std::string EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();
-	if (!std::filesystem::exists(EU4DocumentsLoc) || !std::filesystem::is_directory(EU4DocumentsLoc))
+	if (!Utils::doesFolderExist(EU4DocumentsLoc))
 	{
 		std::exception e("No Europa Universalis 4 documents directory was specified in configuration.txt, " \
 			"or the path was invalid");
@@ -106,7 +106,7 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration)
 {
 	std::string steamWorkshopPath = theConfiguration.getSteamWorkshopPath();
-	if (!std::filesystem::exists(steamWorkshopPath) || !std::filesystem::is_directory(steamWorkshopPath))
+	if (!Utils::doesFolderExist(steamWorkshopPath))
 	{
 		std::exception e("No Steam Worksop directory was specified in configuration.txt, or the path was invalid");
 		throw e;
@@ -114,20 +114,21 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 	else
 	{
 		LOG(LogLevel::Debug) << "Steam Workshop directory is " << steamWorkshopPath;
-		for (auto& directoryItem: std::filesystem::directory_iterator(steamWorkshopPath))
+		std::set<std::string> subfolders;
+		Utils::GetAllSubfolders(steamWorkshopPath + "/mod", subfolders);
+		for (auto subfolder: subfolders)
 		{
-			std::filesystem::path path = directoryItem.path();
-			auto fullPath = path.append("descriptor.mod");
-			if (directoryItem.is_directory() && std::filesystem::exists(fullPath))
+			std::string descriptorFilename = subfolder + "/descriptor.mod";
+			if (Utils::doesFolderExist(subfolder) && Utils::DoesFileExist(descriptorFilename))
 			{
-				std::ifstream modFile(fullPath);
+				std::ifstream modFile(subfolder);
 				Mod theMod(modFile);
 				modFile.close();
 
 				if (theMod.isValid())
 				{
-					possibleMods.insert(std::make_pair(theMod.getName(), directoryItem.path().generic_string()));
-					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " at " << directoryItem.path();
+					possibleMods.insert(std::make_pair(theMod.getName(), subfolder));
+					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " at " << subfolder;
 				}
 			}
 		}
@@ -138,7 +139,7 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 {
 	std::string CK2ExportLoc = theConfiguration.getCK2ExportPath();
-	if (!std::filesystem::exists(CK2ExportLoc) || !std::filesystem::is_directory(CK2ExportLoc))
+	if (!Utils::doesFolderExist(CK2ExportLoc))
 	{
 		LOG(LogLevel::Warning) << "No Crusader Kings 2 mod directory was specified in configuration.txt," \
 			" or the path was invalid - this will cause problems with CK2 converted saves";
@@ -160,9 +161,10 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 
 void EU4::Mods::loadModDirectory(const std::string& searchDirectory, const std::string& recordDirectory)
 {
-	for (auto& directoryItem: std::filesystem::directory_iterator(searchDirectory))
+	std::set<std::string> filenames;
+	Utils::GetAllFilesInFolder(searchDirectory + "/mod", filenames);
+	for (auto filename: filenames)
 	{
-		std::string filename = directoryItem.path().generic_string();
 		const int pos = filename.find_last_of('.');
 		if ((pos != std::string::npos) && (filename.substr(pos, filename.length()) == ".mod"))
 		{
