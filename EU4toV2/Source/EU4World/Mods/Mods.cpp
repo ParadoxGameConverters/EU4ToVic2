@@ -132,6 +132,7 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 
 				if (theMod.isValid())
 				{
+					possibleMods.insert(std::make_pair("mod/ugc_" + subfolder + ".mod", path));
 					possibleMods.insert(std::make_pair(theMod.getName(), path));
 					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " at " << path;
 				}
