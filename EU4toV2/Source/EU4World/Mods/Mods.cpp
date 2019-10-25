@@ -28,6 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "OSCompatibilityLayer.h"
 #include <fstream>
 #include <set>
+#include <stdexcept>
 #include <string>
 
 
@@ -60,7 +61,7 @@ EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
 		{
 			if (!Utils::doesFolderExist(*possibleModPath) && !Utils::DoesFileExist(*possibleModPath))
 			{
-				LOG(LogLevel::Error) << usedMod << " could not be found in the specified mod directory \ "
+				LOG(LogLevel::Error) << usedMod << " could not be found in the specified mod directory " \
 					"- a valid mod directory must be specified. Tried " << *possibleModPath;
 				exit(-1);
 			}
@@ -84,8 +85,9 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 	std::string EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();
 	if (!Utils::doesFolderExist(EU4DocumentsLoc))
 	{
-		std::exception e("No Europa Universalis 4 documents directory was specified in configuration.txt, " \
-			"or the path was invalid");
+		std::invalid_argument e(
+			"No Europa Universalis 4 documents directory was specified in configuration.txt, or the path was invalid"
+		);
 		throw e;
 	}
 	else
@@ -108,7 +110,9 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 	std::string steamWorkshopPath = theConfiguration.getSteamWorkshopPath();
 	if (!Utils::doesFolderExist(steamWorkshopPath))
 	{
-		std::exception e("No Steam Worksop directory was specified in configuration.txt, or the path was invalid");
+		std::invalid_argument e(
+			"No Steam Worksop directory was specified in configuration.txt, or the path was invalid"
+		);
 		throw e;
 	}
 	else
