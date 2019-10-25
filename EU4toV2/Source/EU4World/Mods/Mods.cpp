@@ -119,20 +119,21 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 	{
 		LOG(LogLevel::Debug) << "Steam Workshop directory is " << steamWorkshopPath;
 		std::set<std::string> subfolders;
-		Utils::GetAllSubfolders(steamWorkshopPath + "/mod", subfolders);
+		Utils::GetAllSubfolders(steamWorkshopPath, subfolders);
 		for (auto subfolder: subfolders)
 		{
-			std::string descriptorFilename = subfolder + "/descriptor.mod";
-			if (Utils::doesFolderExist(subfolder) && Utils::DoesFileExist(descriptorFilename))
+			std::string path = steamWorkshopPath + "/" + subfolder;
+			std::string descriptorFilename = path + "/descriptor.mod";
+			if (Utils::doesFolderExist(path) && Utils::DoesFileExist(descriptorFilename))
 			{
-				std::ifstream modFile(subfolder);
+				std::ifstream modFile(path + "/descriptor.mod");
 				Mod theMod(modFile);
 				modFile.close();
 
 				if (theMod.isValid())
 				{
-					possibleMods.insert(std::make_pair(theMod.getName(), subfolder));
-					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " at " << subfolder;
+					possibleMods.insert(std::make_pair(theMod.getName(), path));
+					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " at " << path;
 				}
 			}
 		}
