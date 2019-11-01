@@ -93,7 +93,7 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 	else
 	{
 		LOG(LogLevel::Debug) << "EU4 Documents directory is " << EU4DocumentsLoc;
-		loadModDirectory(EU4DocumentsLoc, "");
+		loadModDirectory(EU4DocumentsLoc);
 	}
 }
 
@@ -146,12 +146,12 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 	else
 	{
 		LOG(LogLevel::Debug) << "CK2 export directory is " << CK2ExportLoc;
-		loadModDirectory(CK2ExportLoc, "");
+		loadModDirectory(CK2ExportLoc);
 	}
 }
 
 
-void EU4::Mods::loadModDirectory(const std::string& searchDirectory, const std::string& recordDirectory)
+void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 {
 	std::set<std::string> filenames;
 	Utils::GetAllFilesInFolder(searchDirectory + "/mod", filenames);
@@ -170,12 +170,27 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory, const std::
 				{
 					std::string trimmedFilename = filename.substr(0, pos);
 
-					possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory + theMod.getPath()));
-					possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory + theMod.getPath()));
-					possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory + theMod.getPath()));
+					std::string recordDirectory;
+					if (Utils::doesFolderExist(theMod.getPath()))
+					{
+						recordDirectory = theMod.getPath();
+					}
+					else if (Utils::doesFolderExist(searchDirectory + "/" + theMod.getPath()))
+					{
+						recordDirectory = searchDirectory + "/" + theMod.getPath();
+					}
+					else
+					{
+						std::invalid_argument e("");
+						throw e;
+					}
+
+					possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory));
+					possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory));
+					possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory));
 					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() <<
 						" with a mod file at " << searchDirectory << "/mod/" + filename <<
-						" claiming to be at " << recordDirectory << "/" << theMod.getPath();
+						" and itself at " << recordDirectory;
 				}
 			}
 			catch (std::exception e)
