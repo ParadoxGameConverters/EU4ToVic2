@@ -168,29 +168,47 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 
 				if (theMod.isValid())
 				{
-					std::string trimmedFilename = filename.substr(0, pos);
+					if (!theMod.isCompressed())
+					{
+						std::string trimmedFilename = filename.substr(0, pos);
 
-					std::string recordDirectory;
-					if (Utils::doesFolderExist(theMod.getPath()))
-					{
-						recordDirectory = theMod.getPath();
-					}
-					else if (Utils::doesFolderExist(searchDirectory + "/" + theMod.getPath()))
-					{
-						recordDirectory = searchDirectory + "/" + theMod.getPath();
+						std::string recordDirectory;
+						if (Utils::doesFolderExist(theMod.getPath()))
+						{
+							recordDirectory = theMod.getPath();
+						}
+						else if (Utils::doesFolderExist(searchDirectory + "/" + theMod.getPath()))
+						{
+							recordDirectory = searchDirectory + "/" + theMod.getPath();
+						}
+						else
+						{
+							std::invalid_argument e("");
+							throw e;
+						}
+
+						possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory));
+						possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory));
+						possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory));
+						Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() <<
+							" with a mod file at " << searchDirectory << "/mod/" + filename <<
+							" and itself at " << recordDirectory;
 					}
 					else
 					{
-						std::invalid_argument e("");
-						throw e;
-					}
+						std::string fullArchiveName = theMod.getPath();
+						if (Utils::DoesFileExist(fullArchiveName))
+						{
+							std::string trimmedFilename = filename.substr(0, pos);
 
-					possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory));
-					possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory));
-					possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory));
-					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() <<
-						" with a mod file at " << searchDirectory << "/mod/" + filename <<
-						" and itself at " << recordDirectory;
+							possibleCompressedMods.insert(std::make_pair(theMod.getName(), fullArchiveName));
+							possibleCompressedMods.insert(std::make_pair("mod/" + filename, fullArchiveName));
+							possibleCompressedMods.insert(std::make_pair(trimmedFilename, fullArchiveName));
+							Log(LogLevel::Debug) << "\tFound a compessed mod named " << theMod.getName() <<
+								" with a mod file at " << searchDirectory << "/mod/" + filename <<
+								" and itself at " << fullArchiveName;
+						}
+					}
 				}
 			}
 			catch (std::exception e)
@@ -206,12 +224,38 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) const
 {
 	auto mod = possibleMods.find(modName);
-	if (mod == possibleMods.end())
-	{
-		return {};
-	}
-	else
+	if (mod != possibleMods.end())
 	{
 		return mod->second;
 	}
+
+	auto compressedMod = possibleCompressedMods.find(modName);
+	if (compressedMod != possibleCompressedMods.end())
+	{
+		std::string archivePath = compressedMod->second;
+		std::string uncompressedName = archivePath.substr(0, archivePath.find_last_of('.'));
+		int pos = uncompressedName.find_last_of('\\');
+		if (pos != std::string::npos)
+		{
+			uncompressedName = uncompressedName.substr(pos + 1, uncompressedName.size());
+		}
+		pos = uncompressedName.find_last_of('/');
+		if (pos != std::string::npos)
+		{
+			uncompressedName = uncompressedName.substr(pos + 1, uncompressedName.size());
+		}
+
+		if (Utils::doesFolderExist("mods/" + uncompressedName))
+		{
+			return "mods/" + uncompressedName;
+		}
+		else
+		{
+			LOG(LogLevel::Warning) << "For now, manually uncompress " << archivePath << \
+				" into the converter directory at EU4ToVic2/mods/" << uncompressedName;
+			LOG(LogLevel::Warning) << "Then run the converter again";
+		}
+	}
+
+	return {};
 }

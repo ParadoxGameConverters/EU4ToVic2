@@ -51,6 +51,7 @@ class Mods: commonItems::parser
 		void loadModDirectory(const std::string& searchDirectory);
 
 		std::map<std::string, std::string> possibleMods;
+		std::map<std::string, std::string> possibleCompressedMods;
 };
 
 }

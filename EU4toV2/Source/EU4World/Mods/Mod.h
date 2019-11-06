@@ -41,10 +41,12 @@ class Mod: commonItems::parser
 		std::string getName() const { return name; }
 		std::string getPath() const { return path; }
 		bool isValid() const { return (name != "") && (path != ""); }
+		bool isCompressed() const { return compressed; }
 
 	private:
 		std::string name;
 		std::string path;
+		bool compressed = false;
 };
 
 }
