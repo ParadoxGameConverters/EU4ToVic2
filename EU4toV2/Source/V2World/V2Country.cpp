@@ -22,12 +22,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "V2Country.h"
-#include <algorithm>
-#include <math.h>
-#include <float.h>
-#include <fstream>
-#include <sstream>
-#include <queue>
 #include "Log.h"
 #include "../Configuration.h"
 #include "../Mappers/ReligionMapper.h"
@@ -37,15 +31,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/CultureGroups.h"
 #include "../EU4World/World.h"
 #include "../EU4World/EU4Country.h"
-#include "../EU4World/EU4Province.h"
 #include "../EU4World/EU4Relations.h"
 #include "../EU4World/EU4Leader.h"
+#include "../EU4World/Provinces/EU4Province.h"
 #include "../Mappers/AdjacencyMapper.h"
 #include "../Mappers/CountryMapping.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/GovernmentMapper.h"
-#include "../Mappers/IdeaEffectMapper.h"
-#include "../Mappers/ProvinceMapper.h"
+#include "../Mappers/Ideas/IdeaEffectMapper.h"
+#include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2World.h"
 #include "V2State.h"
 #include "V2Province.h"
@@ -56,6 +50,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Leader.h"
 #include "V2Pop.h"
 #include "V2TechSchools.h"
+#include <algorithm>
+#include <exception>
+#include <float.h>
+#include <fstream>
+#include <math.h>
+#include <sstream>
+#include <queue>
 
 
 
@@ -99,7 +100,6 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 	capital					= 0;
 	diploPoints				= 0.0;
 	badboy					= 0.0;
-	prestige					= 0.0;
 	money						= 0.0;
 	techSchool				= "traditional_academic";
 	researchPoints			= 0.0;
@@ -108,9 +108,9 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 	inHRE						= false;
 	holyRomanEmperor		= false;
 	celestialEmperor		= false;
-	primaryCulture			= "british";
-	religion					= "protestant";
-	government				= "hms_government";
+	primaryCulture			= "dummy";
+	religion					= "shamanist";
+	government				= "absolute_monarchy";
 	nationalValue			= "nv_order";
 	lastBankrupt			= date();
 	bankReserves			= 0.0;
@@ -121,10 +121,7 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 	reactionaryIssues.clear();
 	conservativeIssues.clear();
 	liberalIssues.clear();
-	relations.clear();
-	armies.clear();
 	creditors.clear();
-	leaders.clear();
 
 	reforms		= nullptr;
 	srcCountry	= nullptr;
@@ -137,10 +134,10 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 
 	if (parties.empty())
 	{	// No parties are specified. Generate some default parties for this country.
-		const std::vector<std::string> ideologies = 
+		const std::vector<std::string> ideologies =
 		{ "conservative", "liberal", "reactionary", "socialist", "communist", "anarcho_liberal", "fascist" };
 		const std::vector<std::string> partyNames =
-		{ "Conservative Party", "Liberal Party", "National Party", 
+		{ "Conservative Party", "Liberal Party", "National Party",
 			"Socialist Party", "Communist Party", "Radical Party", "Fascist Party" };
 		for (size_t i = 0; i < ideologies.size(); ++i)
 		{
@@ -224,7 +221,6 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 	capital					= 0;
 	diploPoints				= 0.0;
 	badboy					= 0.0;
-	prestige					= 0.0;
 	money						= 0.0;
 	techSchool				= "traditional_academic";
 	researchPoints			= 0.0;
@@ -233,9 +229,9 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 	inHRE						= false;
 	holyRomanEmperor		= false;
 	celestialEmperor		= false;
-	primaryCulture			= "british";
-	religion					= "protestant";
-	government				= "hms_government";
+	primaryCulture			= "dummy";
+	religion					= "shamanist";
+	government				= "absolute_monarchy";
 	nationalValue			= "nv_order";
 	lastBankrupt			= date();
 	bankReserves			= 0.0;
@@ -246,10 +242,7 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 	reactionaryIssues.clear();
 	conservativeIssues.clear();
 	liberalIssues.clear();
-	relations.clear();
-	armies.clear();
 	creditors.clear();
-	leaders.clear();
 
 	reforms		= nullptr;
 	srcCountry	= nullptr;
@@ -262,10 +255,10 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 
 	if (parties.empty())
 	{	// No parties are specified. Generate some default parties for this country.
-		const std::vector<std::string> ideologies = 
+		const std::vector<std::string> ideologies =
 				{ "conservative", "liberal", "reactionary", "socialist", "communist", "anarcho_liberal", "fascist" };
 		const std::vector<std::string> partyNames =
-				{ "Conservative Party", "Liberal Party", "National Party", 
+				{ "Conservative Party", "Liberal Party", "National Party",
 				  "Socialist Party", "Communist Party", "Radical Party", "Fascist Party" };
 		for (size_t i = 0; i < ideologies.size(); ++i)
 		{
@@ -302,7 +295,7 @@ void V2Country::output() const
 	if(!dynamicCountry)
 	{
 		FILE* output;
-		if (fopen_s(&output, ("Output/" + theConfiguration.getOutputName() + "/history/countries/" + filename).c_str(), "w") != 0)
+		if (fopen_s(&output, ("output/" + theConfiguration.getOutputName() + "/history/countries/" + filename).c_str(), "w") != 0)
 		{
 			LOG(LogLevel::Error) << "Could not create country history file " << filename;
 			exit(-1);
@@ -395,8 +388,8 @@ void V2Country::output() const
 			fprintf(output, "}\n");
 		}
 
-		
-	
+
+
 		//fprintf(output, "	schools=\"%s\"\n", techSchool.c_str());
 
 		fprintf(output, "oob = \"%s\"\n", (tag + "_OOB.txt").c_str());
@@ -422,11 +415,11 @@ void V2Country::output() const
 
 	if (newCountry)
 	{
-		// Output common country file. 
-		std::ofstream commonCountryOutput("Output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile);
+		// Output common country file.
+		std::ofstream commonCountryOutput("output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile);
 		if (!commonCountryOutput.is_open())
 		{
-			LOG(LogLevel::Error) << "Could not open Output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile;
+			LOG(LogLevel::Error) << "Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" + commonCountryFile;
 			exit(-1);
 		}
 		commonCountryOutput << "graphical_culture = UsGC\n";	// default to US graphics
@@ -485,40 +478,49 @@ void V2Country::outputElection(FILE* output) const
 
 void V2Country::outputOOB() const
 {
-	FILE* output;
-	if (fopen_s(&output, ("Output/" + theConfiguration.getOutputName() + "/history/units/" + tag + "_OOB.txt").c_str(), "w") != 0)
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + tag + "_OOB.txt");
+	if (!output.is_open())
 	{
-		LOG(LogLevel::Error) << "Could not create OOB file " << (tag + "_OOB.txt");
-		exit(-1);
+		std::runtime_error exception("Could not create OOB file " + tag + "_OOB.txt");
+		throw exception;
 	}
 
-	fprintf(output, "#Sphere of Influence\n");
-	fprintf(output, "\n");
-	for (map<string, V2Relations*>::const_iterator relationsItr = relations.begin(); relationsItr != relations.end(); relationsItr++)
+	output << "#Sphere of Influence\n";
+	output << "\n";
+	for (auto relation: relations)
 	{
-		relationsItr->second->output(output);
+		output << relation.second;
 	}
 
-	fprintf(output, "\n");
-	fprintf(output, "#Leaders\n");
-	for (vector<V2Leader*>::const_iterator itr = leaders.begin(); itr != leaders.end(); ++itr)
+	output << "\n";
+	output << "#Leaders\n";
+	for (auto leader: leaders)
 	{
-		(*itr)->output(output);
+		output << leader;
 	}
 
-	fprintf(output, "\n");
-	fprintf(output, "#Armies\n");
-	for (vector<V2Army*>::const_iterator itr = armies.begin(); itr != armies.end(); ++itr)
+	output << "\n";
+	output << "#Armies\n";
+	for (auto army: armies)
 	{
-		(*itr)->output(output);
+		output << army;
 	}
 
-	fclose(output);
+	output.close();
 }
 
 
-void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, const std::unique_ptr<Vic2::TechSchools>& techSchools, const map<int, int>& leaderMap)
-{
+void V2Country::initFromEU4Country(
+	const EU4::Regions& eu4Regions,
+	std::shared_ptr<EU4::Country> _srcCountry,
+	const std::unique_ptr<Vic2::TechSchools>& techSchools,
+	const map<int, int>& leaderMap,
+	const mappers::CultureMapper& cultureMapper,
+	const mappers::CultureMapper& slaveCultureMapper,
+	const mappers::IdeaEffectMapper& ideaEffectMapper,
+	const mappers::ReligionMapper& religionMapper,
+	const mappers::ProvinceMapper& provinceMapper
+) {
 	srcCountry = _srcCountry;
 
 	if (false == srcCountry->getRandomName().empty())
@@ -553,10 +555,10 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 
 	// Capital
 	int oldCapital = srcCountry->getCapital();
-	auto potentialCapitals = provinceMapper::getVic2ProvinceNumbers(oldCapital);
+	auto potentialCapitals = provinceMapper.getVic2ProvinceNumbers(oldCapital);
 	if (potentialCapitals.size() > 0)
 	{
-		capital = potentialCapitals[0];
+		capital = *potentialCapitals.begin();
 	}
 
 	// in HRE
@@ -570,10 +572,15 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	string srcReligion = srcCountry->getReligion();
 	if (srcReligion.size() > 0)
 	{
-		religion = religionMapper::getVic2Religion(srcReligion);
-		if (religion == "")
+		std::optional<std::string> match = religionMapper.getVic2Religion(srcReligion);
+		if (!match)
 		{
-			LOG(LogLevel::Warning) << "No religion mapping defined for " << srcReligion << " (" << _srcCountry->getTag() << " -> " << tag << ')';
+			LOG(LogLevel::Warning) << "No religion mapping defined for " << srcReligion
+				<< " (" << _srcCountry->getTag() << " -> " << tag << ')';
+		}
+		else
+		{
+			religion = *match;
 		}
 	}
 
@@ -582,10 +589,21 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 
 	if (srcCulture.size() > 0)
 	{
-		bool matched = mappers::cultureMapper::cultureMatch(srcCulture, primaryCulture, religion, oldCapital, srcCountry->getTag());
+		std::optional<std::string> matched = cultureMapper.cultureMatch(
+			eu4Regions,
+			srcCulture,
+			religion,
+			oldCapital,
+			srcCountry->getTag()
+		);
 		if (!matched)
 		{
-			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture << " (" << srcCountry->getTag() << " -> " << tag << ')';
+			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture
+				<< " (" << srcCountry->getTag() << " -> " << tag << ')';
+		}
+		else
+		{
+			primaryCulture = *matched;
 		}
 	}
 
@@ -601,18 +619,25 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	}
 	for (auto srcCulture: srcAceptedCultures)
 	{
-		string dstCulture;
-		bool matched = mappers::cultureMapper::cultureMatch(srcCulture, dstCulture, religion, oldCapital, srcCountry->getTag());
-		if (matched)
+		std::optional<std::string> dstCulture;
+		dstCulture = cultureMapper.cultureMatch(
+			eu4Regions,
+			srcCulture,
+			religion,
+			oldCapital,
+			srcCountry->getTag()
+		);
+		if (dstCulture)
 		{
-			if (primaryCulture != dstCulture)
+			if (primaryCulture != *dstCulture)
 			{
-				acceptedCultures.insert(dstCulture);
+				acceptedCultures.insert(*dstCulture);
 			}
 		}
-		if (!matched)
+		else
 		{
-			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture << " (" << srcCountry->getTag() << " -> " << tag << ')';
+			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture
+				<< " (" << srcCountry->getTag() << " -> " << tag << ')';
 		}
 	}
 
@@ -624,17 +649,17 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	double reactionaryEffect = 0.0;
 	for (auto idea: srcCountry->getNationalIdeas())
 	{
-		liberalEffect += ideaEffectMapper::getUHLiberalFromIdea(idea.first, idea.second);
-		reactionaryEffect += ideaEffectMapper::getUHReactionaryFromIdea(idea.first, idea.second);
+		liberalEffect += ideaEffectMapper.getUHLiberalFromIdea(idea.first, idea.second);
+		reactionaryEffect += ideaEffectMapper.getUHReactionaryFromIdea(idea.first, idea.second);
 	}
 
 	upperHouseReactionary		=  static_cast<int>(5  + (100 * reactionaryEffect));
 	upperHouseLiberal				=  static_cast<int>(10 + (100 * liberalEffect));
 	upperHouseConservative		= 100 - (upperHouseReactionary + upperHouseLiberal);
 	LOG(LogLevel::Debug) << tag << " has an Upper House of " << upperHouseReactionary << " reactionary, "
-																				<< upperHouseConservative << " conservative, and "
-																				<< upperHouseLiberal << " liberal";
-	
+		<< upperHouseConservative << " conservative, and "
+		<< upperHouseLiberal << " liberal";
+
 	string idealogy;
 	if (liberalEffect >= 2 * reactionaryEffect)
 	{
@@ -662,17 +687,14 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	reforms		=  new V2Reforms(this, srcCountry);
 
 	// Relations
-	map<string, EU4Relations*> srcRelations = srcCountry->getRelations();
-	if (srcRelations.size() > 0)
+	auto srcRelations = srcCountry->getRelations();
+	for (auto srcRelation: srcRelations)
 	{
-		for (auto itr: srcRelations)
+		const std::string& V2Tag = mappers::CountryMappings::getVic2Tag(srcRelation.second->getCountry());
+		if (!V2Tag.empty())
 		{
-			const std::string& V2Tag = mappers::CountryMappings::getVic2Tag(itr.second->getCountry());
-			if (!V2Tag.empty())
-			{
-				V2Relations* v2r = new V2Relations(V2Tag, itr.second);
-				relations.insert(make_pair(V2Tag, v2r));
-			}
+			V2Relations newRelations(V2Tag, srcRelation.second);
+			relations.insert(std::make_pair(V2Tag, newRelations));
 		}
 	}
 
@@ -710,38 +732,42 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	literacy = 0.1;
 	for (auto idea: srcCountry->getNationalIdeas())
 	{
-		literacy += ideaEffectMapper::getLiteracyFromIdea(idea.first, idea.second);
+		literacy += ideaEffectMapper.getLiteracyFromIdea(idea.first, idea.second);
 	}
-	if ( (srcCountry->getReligion() == "Protestant") || (srcCountry->getReligion() == "Confucianism") || (srcCountry->getReligion() == "Reformed") )
+	if (
+		(srcCountry->getReligion() == "Protestant") ||
+		(srcCountry->getReligion() == "Confucianism") ||
+		(srcCountry->getReligion() == "Reformed")
+	)
 	{
 		literacy += 0.05;
 	}
 
-	if ( srcCountry->hasModifier("the_school_establishment_act") )
+	if (srcCountry->hasModifier("the_school_establishment_act"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("sunday_schools") )
+	if (srcCountry->hasModifier("sunday_schools"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("the_education_act") )
+	if (srcCountry->hasModifier("the_education_act"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("monastic_education_system") )
+	if (srcCountry->hasModifier("monastic_education_system"))
 	{
 		literacy += 0.04;
 	}
-	if ( srcCountry->hasModifier("western_embassy_mission") )
+	if (srcCountry->hasModifier("western_embassy_mission"))
 	{
 		literacy += 0.04;
 	}
 	int numProvinces	= 0;
 	int numColleges	= 0;
-	vector<EU4Province*> provinces = srcCountry->getProvinces();
+	vector<EU4::Province*> provinces = srcCountry->getProvinces();
 	numProvinces = provinces.size();
-	for (vector<EU4Province*>::iterator i = provinces.begin(); i != provinces.end(); i++)
+	for (vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
 	{
 		if ( (*i)->hasBuilding("college") )
 		{
@@ -769,7 +795,12 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	}
 	literacy += collegeBonus;
 	string techGroup = srcCountry->getTechGroup();
-	if ( (techGroup != "western") && (techGroup != "high_american") && (techGroup != "eastern") && (techGroup != "ottoman"))
+	if (
+		(techGroup != "western") &&
+		(techGroup != "high_american") &&
+		(techGroup != "eastern") &&
+		(techGroup != "ottoman")
+	)
 	{
 		literacy *= 0.1;
 	}
@@ -786,7 +817,7 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	//double productionInvestment	= srcCountry->getProductionInvestment();
 	//double governmentInvestment	= srcCountry->getGovernmentInvestment();
 
-	//vector<EU4Province*> srcProvinces = srcCountry->getProvinces();
+	//vector<EU4::Province*> srcProvinces = srcCountry->getProvinces();
 	//for(unsigned int j = 0; j < srcProvinces.size(); j++)
 	//{
 	//	if (srcProvinces[j]->hasBuilding("weapons"))
@@ -817,7 +848,13 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	double industryInvestment		= srcCountry->getIndustryInvestment();
 	double cultureInvestment		= srcCountry->getCultureInvestment();
 
-	techSchool = techSchools->findBestTechSchool(armyInvestment, commerceInvestment, cultureInvestment, industryInvestment, navyInvestment);
+	techSchool = techSchools->findBestTechSchool(
+		armyInvestment,
+		commerceInvestment,
+		cultureInvestment,
+		industryInvestment,
+		navyInvestment
+	);
 	LOG(LogLevel::Debug) << tag << " has tech school " << techSchool;
 
 	//// Leaders
@@ -832,15 +869,15 @@ void V2Country::initFromEU4Country(std::shared_ptr<EU4::Country> _srcCountry, co
 	// canals
 	for (const auto& prov : _srcCountry->getProvinces())
 	{
-		if (prov->hasBuilding("suez_canal"))
+		if (prov->hasGreatProject("suez_canal"))
 		{
 			decisions.push_back("build_suez_canal");
 		}
-		if (prov->hasBuilding("kiel_canal"))
+		if (prov->hasGreatProject("kiel_canal"))
 		{
 			decisions.push_back("build_kiel_canal");
 		}
-		if (prov->hasBuilding("panama_canal"))
+		if (prov->hasGreatProject("panama_canal"))
 		{
 			decisions.push_back("build_panama_canal");
 		}
@@ -969,35 +1006,35 @@ static set<int> getPortBlacklist()
 }
 
 
-vector<int> V2Country::getPortProvinces(vector<int> locationCandidates, map<int, V2Province*> allProvinces)
-{
-	set<int> port_blacklist = getPortBlacklist();
+std::vector<int> V2Country::getPortProvinces(
+	const std::vector<int>& locationCandidates,
+	std::map<int, V2Province*> allProvinces
+) {
+	std::set<int> port_blacklist = getPortBlacklist();
 
-	vector<int> unblockedCandidates;
-	for (vector<int>::iterator litr = locationCandidates.begin(); litr != locationCandidates.end(); ++litr)
+	std::vector<int> unblockedCandidates;
+	for (auto candidate: locationCandidates)
 	{
-		auto black = port_blacklist.find(*litr);
-		if (black == port_blacklist.end())
+		if (port_blacklist.count(candidate) == 0)
 		{
-			unblockedCandidates.push_back(*litr);
+			unblockedCandidates.push_back(candidate);
 		}
 	}
-	locationCandidates.swap(unblockedCandidates);
 
-	for (vector<int>::iterator litr = locationCandidates.begin(); litr != locationCandidates.end(); ++litr)
+	std::vector<int> coastalProvinces;
+	for (auto& candidate: unblockedCandidates)
 	{
-		map<int, V2Province*>::iterator pitr = allProvinces.find(*litr);
-		if (pitr != allProvinces.end())
+		std::map<int, V2Province*>::iterator province = allProvinces.find(candidate);
+		if (province != allProvinces.end())
 		{
-			if (!pitr->second->isCoastal())
+			if (province->second->isCoastal())
 			{
-				locationCandidates.erase(litr);
-				--pitr;
-				break;
+				coastalProvinces.push_back(candidate);
 			}
 		}
 	}
-	return locationCandidates;
+
+	return coastalProvinces;
 }
 
 
@@ -1010,12 +1047,12 @@ void V2Country::addState(V2State* newState)
 	states.push_back(newState);
 	vector<V2Province*> newProvinces = newState->getProvinces();
 
-	vector<int> newProvinceNums;
-	for (const auto& province : newProvinces)
+	std::vector<int> newProvinceNums;
+	for (const auto& province: newProvinces)
 	{
 		newProvinceNums.push_back(province->getNum());
 	}
-	vector<int> portProvinces = getPortProvinces(newProvinceNums, provinces);
+	auto portProvinces = getPortProvinces(newProvinceNums, provinces);
 
 	for (unsigned int i = 0; i < newProvinces.size(); i++)
 	{
@@ -1029,7 +1066,7 @@ void V2Country::addState(V2State* newState)
 		if ((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM"))
 		{
 			int navalLevel = 0;
-			const EU4Province* srcProvince = newProvinces[i]->getSrcProvince();
+			const EU4::Province* srcProvince = newProvinces[i]->getSrcProvince();
 			if (srcProvince != nullptr)
 			{
 				if (srcProvince->hasBuilding("shipyard"))
@@ -1066,8 +1103,13 @@ void V2Country::addState(V2State* newState)
 
 
 //#define TEST_V2_PROVINCES
-void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_regiment[num_reg_categories], map<int, V2Province*> allProvinces, vector<int> port_whitelist)
-{
+void V2Country::convertArmies(
+	const std::map<int,int>& leaderIDMap,
+	double cost_per_regiment[num_reg_categories],
+	const std::map<int, V2Province*>& allProvinces,
+	std::vector<int> port_whitelist,
+	const mappers::ProvinceMapper& provinceMapper
+) {
 #ifndef TEST_V2_PROVINCES
 	if (srcCountry == nullptr)
 	{
@@ -1084,7 +1126,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 	vector<EU4Army*> sourceArmies = srcCountry->getArmies();
 	for (vector<EU4Army*>::iterator aitr = sourceArmies.begin(); aitr != sourceArmies.end(); ++aitr)
 	{
-		V2Army* army = new V2Army(*aitr, leaderIDMap);
+		V2Army army(*aitr, leaderIDMap);
 
 		for (int rc = infantry; rc < num_reg_categories; ++rc)
 		{
@@ -1093,43 +1135,46 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 				continue;
 
 			// if we have ships, we must be a navy
-			bool isNavy = (rc >= heavy_ship); 
-			army->setNavy(isNavy);
+			bool isNavy = (rc >= heavy_ship);
+			army.setNavy(isNavy);
 
 			double	regimentCount		= typeStrength / cost_per_regiment[rc];
 			int		regimentsToCreate	= (int)floor(regimentCount);
 			double	regimentRemainder	= regimentCount - regimentsToCreate;
 			countryRemainder[rc] += regimentRemainder;
-			army->setArmyRemainders((RegimentCategory)rc, army->getArmyRemainder((RegimentCategory)rc) + regimentRemainder);
+			army.setArmyRemainders((RegimentCategory)rc, army.getArmyRemainder((RegimentCategory)rc) + regimentRemainder);
 
 			for (int i = 0; i < regimentsToCreate; ++i)
 			{
-				if (addRegimentToArmy(army, (RegimentCategory)rc, allProvinces) != 0)
+				if (
+					addRegimentToArmy(army, (RegimentCategory)rc, allProvinces, provinceMapper) !=
+					addRegimentToArmyResult::success
+					)
 				{
 					// couldn't add, dissolve into pool
 					countryRemainder[rc] += 1.0;
-					army->setArmyRemainders((RegimentCategory)rc, army->getArmyRemainder((RegimentCategory)rc) + 1.0);
+					army.setArmyRemainders((RegimentCategory)rc, army.getArmyRemainder((RegimentCategory)rc) + 1.0);
 				}
 			}
 		}
 
-		auto locationCandidates = provinceMapper::getVic2ProvinceNumbers((*aitr)->getLocation());
+		auto locationCandidates = provinceMapper.getVic2ProvinceNumbers((*aitr)->getLocation());
 		if (locationCandidates.size() == 0)
 		{
 			LOG(LogLevel::Warning) << "Army or Navy " << (*aitr)->getName() << " assigned to unmapped province " << (*aitr)->getLocation() << "; dissolving to pool";
 			int regimentCounts[num_reg_categories] = { 0 };
-			army->getRegimentCounts(regimentCounts);
+			army.getRegimentCounts(regimentCounts);
 			for (int rc = infantry; rc < num_reg_categories; ++rc)
 			{
 				countryRemainder[rc] += regimentCounts[rc];
 			}
 			continue;
 		}
-		else if ((locationCandidates.size() == 1) && (locationCandidates[0] == 0))
+		else if ((locationCandidates.size() == 1) && (*locationCandidates.begin() == 0))
 		{
 			LOG(LogLevel::Warning) << "Army or Navy " << (*aitr)->getName() << " assigned to dropped province " << (*aitr)->getLocation() << "; dissolving to pool";
 			int regimentCounts[num_reg_categories] = { 0 };
-			army->getRegimentCounts(regimentCounts);
+			army.getRegimentCounts(regimentCounts);
 			for (int rc = infantry; rc < num_reg_categories; ++rc)
 			{
 				countryRemainder[rc] += regimentCounts[rc];
@@ -1138,9 +1183,9 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 		}
 		bool usePort = false;
 		// guarantee that navies are assigned to sea provinces, or land provinces with naval bases
-		if (army->getNavy())
+		if (army.getNavy())
 		{
-			map<int, V2Province*>::iterator pitr = allProvinces.find(locationCandidates[0]);
+			auto pitr = allProvinces.find(*locationCandidates.begin());
 			if (pitr != allProvinces.end())
 			{
 				usePort = true;
@@ -1152,7 +1197,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 				{
 					LOG(LogLevel::Warning) << "Navy " << (*aitr)->getName() << " assigned to EU4 province " << (*aitr)->getLocation() << " which has no corresponding V2 port provinces; dissolving to pool";
 					int regimentCounts[num_reg_categories] = { 0 };
-					army->getRegimentCounts(regimentCounts);
+					army.getRegimentCounts(regimentCounts);
 					for (int rc = infantry; rc < num_reg_categories; ++rc)
 					{
 						countryRemainder[rc] += regimentCounts[rc];
@@ -1161,8 +1206,9 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 				}
 			}
 		}
+
 		int selectedLocation = locationCandidates[int(locationCandidates.size() * ((double)rand() / RAND_MAX))];
-		if (army->getNavy() && usePort)
+		if (army.getNavy() && usePort)
 		{
 			vector<int>::iterator white = std::find(port_whitelist.begin(), port_whitelist.end(), selectedLocation);
 			if (white == port_whitelist.end())
@@ -1170,7 +1216,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 				LOG(LogLevel::Warning) << "Assigning navy to non-whitelisted port province " << selectedLocation << " - if the save crashes, try blacklisting this province";
 			}
 		}
-		army->setLocation(selectedLocation);
+		army.setLocation(selectedLocation);
 		armies.push_back(army);
 	}
 
@@ -1180,23 +1226,23 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 		while (countryRemainder[rc] > 0.0)
 		{
 			V2Army* army = getArmyForRemainder((RegimentCategory)rc);
-			if (!army)
+			if (army == nullptr)
 			{
 				LOG(LogLevel::Debug) << "No suitable army or navy found for " << tag << "'s pooled regiments of " << RegimentCategoryNames[rc];
 				break;
 			}
-			switch (addRegimentToArmy(army, (RegimentCategory)rc, allProvinces))
+			switch (addRegimentToArmy(*army, (RegimentCategory)rc, allProvinces, provinceMapper))
 			{
-			case 0: // success
-				countryRemainder[rc] -= 1.0;
-				army->setArmyRemainders((RegimentCategory)rc, army->getArmyRemainder((RegimentCategory)rc) - 1.0);
-				break;
-			case -1: // retry
-				break;
-			case -2: // do not retry
-				LOG(LogLevel::Debug) << "Disqualifying army/navy " << army->getName() << " from receiving more " << RegimentCategoryNames[rc] << " from the pool";
-				army->setArmyRemainders((RegimentCategory)rc, -2000.0);
-				break;
+				case addRegimentToArmyResult::success:
+					countryRemainder[rc] -= 1.0;
+					army->setArmyRemainders((RegimentCategory)rc, army->getArmyRemainder((RegimentCategory)rc) - 1.0);
+					break;
+				case addRegimentToArmyResult::retry:
+					break;
+				case addRegimentToArmyResult::doNotRetry:
+					LOG(LogLevel::Debug) << "Disqualifying army/navy " << army->getName() << " from receiving more " << RegimentCategoryNames[rc] << " from the pool";
+					army->setArmyRemainders((RegimentCategory)rc, -2000.0);
+					break;
 			}
 		}
 	}
@@ -1215,7 +1261,7 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 			if (black != port_blacklist.end())
 				continue;
 
-			V2Army* army = V2Army::makeTestNavy(itr->first);
+			V2Army army = V2Army::makeTestNavy(itr->first);
 			armies.push_back(army);
 
 			vector<int>::iterator white = std::find(port_whitelist.begin(), port_whitelist.end(), pitr->getNum());
@@ -1233,24 +1279,31 @@ void V2Country::convertArmies(const map<int,int>& leaderIDMap, double cost_per_r
 }
 
 
-void V2Country::getNationalValueScores(int& libertyScore, int& equalityScore, int& orderScore)
-{
+void V2Country::getNationalValueScores(
+	int& libertyScore,
+	int& equalityScore,
+	int& orderScore,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+) {
 	orderScore = 0;
 	libertyScore = 0;
 	equalityScore = 0;
 
-	for (auto idea: srcCountry->getNationalIdeas())
+	if (srcCountry)
 	{
-		orderScore += ideaEffectMapper::getOrderInfluenceFromIdea(idea.first, idea.second);
-		libertyScore += ideaEffectMapper::getLibertyInfluenceFromIdea(idea.first, idea.second);
-		equalityScore += ideaEffectMapper::getEqualityInfluenceFromIdea(idea.first, idea.second);
+		for (auto idea : srcCountry->getNationalIdeas())
+		{
+			orderScore += ideaEffectMapper.getOrderInfluenceFromIdea(idea.first, idea.second);
+			libertyScore += ideaEffectMapper.getLibertyInfluenceFromIdea(idea.first, idea.second);
+			equalityScore += ideaEffectMapper.getEqualityInfluenceFromIdea(idea.first, idea.second);
+		}
 	}
 }
 
 
-void V2Country::addRelation(V2Relations* newRelation)
+void V2Country::addRelation(V2Relations& newRelation)
 {
-	relations.insert(make_pair(newRelation->getTag(), newRelation));
+	relations.insert(std::make_pair(newRelation.getTag(), newRelation));
 }
 
 
@@ -1263,6 +1316,7 @@ void V2Country::absorbVassal(V2Country* vassal)
 	for (auto provItr = vassalProvinces.begin(); provItr != vassalProvinces.end(); provItr++)
 	{
 		provItr->second->setOwner(tag);
+		provItr->second->setController(tag);
 		provItr->second->addCore(tag);
 	}
 	vassal->provinces.clear();
@@ -1332,7 +1386,7 @@ bool V2Country::addFactory(V2Factory* factory)
 			return false;
 		}
 	}
-	
+
 	// check factory inventions
 	if ((theConfiguration.getVic2Gametype() == "vanilla") || (theConfiguration.getVic2Gametype() == "AHD"))
 	{
@@ -1564,15 +1618,19 @@ void V2Country::convertLandlessReforms(V2Country* capOwner)
 }
 
 
-void V2Country::setupPops(double popWeightRatio, int popConversionAlgorithm)
-{
+void V2Country::setupPops(
+	double popWeightRatio,
+	int popConversionAlgorithm,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+	const mappers::ProvinceMapper& provinceMapper
+) {
 	if (states.size() < 1) // skip entirely for empty nations
 		return;
 
 	// create the pops
 	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
-		itr->second->doCreatePops(popWeightRatio, this, popConversionAlgorithm);
+		itr->second->doCreatePops(popWeightRatio, this, popConversionAlgorithm, theEU4Countries, provinceMapper);
 	}
 
 	// output statistics on pops
@@ -1857,16 +1915,16 @@ string V2Country::getLocalName()
 }
 
 
-V2Relations* V2Country::getRelations(string withWhom) const
+std::optional<V2Relations> V2Country::getRelations(std::string withWhom) const
 {
-	map<string, V2Relations*>::const_iterator i = relations.find(withWhom);
-	if (i != relations.end())
+	auto relation = relations.find(withWhom);
+	if (relation != relations.end())
 	{
-		return i->second;
+		return relation->second;
 	}
 	else
 	{
-		return nullptr;
+		return {};
 	}
 }
 
@@ -1888,36 +1946,42 @@ void V2Country::addLoan(string creditor, double size, double interest)
 
 
 // return values: 0 = success, -1 = retry from pool, -2 = do not retry
-int V2Country::addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2Province*> allProvinces)
-{
+addRegimentToArmyResult V2Country::addRegimentToArmy(
+	V2Army& army,
+	RegimentCategory rc,
+	std::map<int, V2Province*> allProvinces,
+	const mappers::ProvinceMapper& provinceMapper
+) {
 	V2Regiment reg((RegimentCategory)rc);
-	int eu4Home = army->getSourceArmy()->getProbabilisticHomeProvince(rc);
-	if (eu4Home == -1)
+	std::optional<int> eu4Home = army.getSourceArmy()->getProbabilisticHomeProvince(rc);
+	if (!eu4Home)
 	{
-		LOG(LogLevel::Debug) << "Army/navy " << army->getName() << " has no valid home provinces for " << RegimentCategoryNames[rc] << "; dissolving to pool";
-		return -2;
+		LOG(LogLevel::Debug) << "Army/navy " << army.getName() << " has no valid home provinces for " << RegimentCategoryNames[rc] << "; dissolving to pool";
+		return addRegimentToArmyResult::doNotRetry;
 	}
-	auto homeCandidates = provinceMapper::getVic2ProvinceNumbers(eu4Home);
+	auto homeCandidates = provinceMapper.getVic2ProvinceNumbers(*eu4Home);
 	if (homeCandidates.size() == 0)
 	{
-		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army->getName() << " has unmapped home province " << eu4Home << " - dissolving to pool";
-		army->getSourceArmy()->blockHomeProvince(eu4Home);
-		return -1;
+		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army.getName() << " has unmapped home province " << *eu4Home << " - dissolving to pool";
+		army.getSourceArmy()->blockHomeProvince(*eu4Home);
+		return addRegimentToArmyResult::retry;
 	}
-	if (homeCandidates[0] == 0)
+	if (*homeCandidates.begin() == 0)
 	{
-		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army->getName() << " has dropped home province " << eu4Home << " - dissolving to pool";
-		army->getSourceArmy()->blockHomeProvince(eu4Home);
-		return -1;
+		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army.getName() << " has dropped home province " << *eu4Home << " - dissolving to pool";
+		army.getSourceArmy()->blockHomeProvince(*eu4Home);
+		return addRegimentToArmyResult::retry;
 	}
 	V2Province* homeProvince = nullptr;
-	if (army->getNavy())
+	if (army.getNavy())
  	{
 		// Navies should only get homes in port provinces
 		homeCandidates = getPortProvinces(homeCandidates, allProvinces);
 		if (homeCandidates.size() != 0)
 		{
-			int homeProvinceID = homeCandidates[int(homeCandidates.size() * ((double)rand() / RAND_MAX))];
+			std::vector<int>::const_iterator it(homeCandidates.begin());
+			std::advance(it, int(homeCandidates.size() * ((double)rand() / RAND_MAX)));
+			int homeProvinceID = *it;
 			map<int, V2Province*>::iterator pitr = allProvinces.find(homeProvinceID);
 			if (pitr != allProvinces.end())
 			{
@@ -1928,10 +1992,10 @@ int V2Country::addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2P
 	else
 	{
 		// Armies should get a home in the candidate most capable of supporting them
-		vector<V2Province*> sortedHomeCandidates;
-		for (vector<int>::iterator nitr = homeCandidates.begin(); nitr != homeCandidates.end(); ++nitr)
+		std::vector<V2Province*> sortedHomeCandidates;
+		for (auto candidate: homeCandidates)
 		{
-			map<int, V2Province*>::iterator pitr = allProvinces.find(*nitr);
+			std::map<int, V2Province*>::iterator pitr = allProvinces.find(candidate);
 			if (pitr != allProvinces.end())
 			{
 				sortedHomeCandidates.push_back(pitr->second);
@@ -1942,8 +2006,8 @@ int V2Country::addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2P
 		{
 			LOG(LogLevel::Warning) << "No valid home for a " << tag << " " << RegimentCategoryNames[rc] << " regiment - dissolving regiment to pool";
 			// all provinces in a given province map have the same owner, so the source home was bad
-			army->getSourceArmy()->blockHomeProvince(eu4Home);
-			return -1;
+			army.getSourceArmy()->blockHomeProvince(*eu4Home);
+			return addRegimentToArmyResult::retry;
 		}
 		homeProvince = sortedHomeCandidates[0];
 		if (homeProvince->getOwner() != tag) // TODO: find a way of associating these units with a province owned by the proper country
@@ -1986,10 +2050,10 @@ int V2Country::addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2P
 			{
 				LOG(LogLevel::Warning) << "V2 province " << sortedHomeCandidates[0]->getNum() << " is home for a " << tag << " " << RegimentCategoryNames[rc] << " regiment, but belongs to " << sortedHomeCandidates[0]->getOwner() << " - dissolving regiment to pool";
 				// all provinces in a given province map have the same owner, so the source home was bad
-				army->getSourceArmy()->blockHomeProvince(eu4Home);
-				return -1;
+				army.getSourceArmy()->blockHomeProvince(*eu4Home);
+				return addRegimentToArmyResult::retry;
 			}
-			return 0;
+			return addRegimentToArmyResult::success;
 		}
 
 		// Armies need to be associated with pops
@@ -2025,28 +2089,29 @@ int V2Country::addRegimentToArmy(V2Army* army, RegimentCategory rc, map<int, V2P
 	{
 		reg.setName(getRegimentName(rc));
 	}
-	army->addRegiment(reg);
-	return 0;
+	army.addRegiment(reg);
+	return addRegimentToArmyResult::success;
 }
 
 
 // find the army most in need of a regiment of this category
-V2Army*	V2Country::getArmyForRemainder(RegimentCategory rc)
+V2Army* V2Country::getArmyForRemainder(RegimentCategory rc)
 {
 	V2Army* retval = nullptr;
 	double retvalRemainder = -1000.0;
-	for (vector<V2Army*>::iterator itr = armies.begin(); itr != armies.end(); ++itr)
+	for (auto& army: armies)
 	{
 		// only add units to armies that originally had units of the same category
-		if ( (*itr)->getSourceArmy()->getTotalTypeStrength(rc) > 0 )
+		if (army.getSourceArmy()->getTotalTypeStrength(rc) > 0)
 		{
-			if ( (*itr)->getArmyRemainder(rc) > retvalRemainder )
+			if (army.getArmyRemainder(rc) > retvalRemainder)
 			{
-				retvalRemainder = (*itr)->getArmyRemainder(rc);
-				retval = *itr;
+				retvalRemainder = army.getArmyRemainder(rc);
+				retval = &army;
 			}
 		}
 	}
+
 	return retval;
 }
 

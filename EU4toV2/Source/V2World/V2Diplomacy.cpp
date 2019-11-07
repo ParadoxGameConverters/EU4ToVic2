@@ -25,78 +25,85 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Log.h"
 #include "../Configuration.h"
 #include "OSCompatibilityLayer.h"
-using namespace std;
+#include <fstream>
 
+
+
+std::ostream& operator<<(std::ostream& output, V2Agreement theAgreement)
+{
+	output << theAgreement.type << "=\n";
+	output << "{\n";
+	output << "\tfirst=\"" << theAgreement.country1 << "\"\n";
+	output << "\tsecond=\"" << theAgreement.country2 << "\"\n";
+	output << "\tstart_date=\"" << theAgreement.start_date << "\"\n";
+	output << "\tend_date=\"1936.1.1\"\n";
+	output << "}\n";
+	output << "\n";
+
+	return output;
+}
 
 
 void V2Diplomacy::output() const
 {
 	LOG(LogLevel::Debug) << "Writing diplomacy";
+	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/diplomacy");
 
-	FILE* alliances;
-	if (fopen_s(&alliances, ("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/Alliances.txt").c_str(), "w") != 0)
+	std::ofstream alliances("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Alliances.txt");
+	if (!alliances.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not create alliances history file";
 		exit(-1);
 	}
 
-	FILE* guarantees;
-	if (fopen_s(&guarantees, ("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/Guarantees.txt").c_str(), "w") != 0)
+	std::ofstream guarantees("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Guarantees.txt");
+	if (!guarantees.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not create guarantees history file";
 		exit(-1);
 	}
 
-	FILE* puppetStates;
-	if (fopen_s(&puppetStates, ("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/PuppetStates.txt").c_str(), "w") != 0)
+	std::ofstream puppetStates("output/" + theConfiguration.getOutputName() + "/history/diplomacy/PuppetStates.txt");
+	if (!puppetStates.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not create puppet states history file";
 		exit(-1);
 	}
 
-	FILE* unions;
-	if (fopen_s(&unions, ("Output/" + theConfiguration.getOutputName() + "/history/diplomacy/Unions.txt").c_str(), "w") != 0)
+	std::ofstream unions("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Unions.txt");
+	if (!unions.is_open())
 	{
 		LOG(LogLevel::Error) << "Could not create unions history file";
 		exit(-1);
 	}
 	
-	FILE* out;
-	for (vector<V2Agreement>::const_iterator itr = agreements.begin(); itr != agreements.end(); ++itr)
+	for (auto agreement: agreements)
 	{
-		if (itr->type == "guarantee")
+		if (agreement.type == "guarantee")
 		{
-			out = guarantees;
+			guarantees << agreement;
 		}
-		else if (itr->type == "union")
+		else if (agreement.type == "union")
 		{
-			out = unions;
+			unions << agreement;
 		}
-		else if (itr->type == "vassal")
+		else if (agreement.type == "vassal")
 		{
-			out = puppetStates;
+			puppetStates << agreement;
 		}
-		else if (itr->type == "alliance")
+		else if (agreement.type == "alliance")
 		{
-			out = alliances;
+			alliances << agreement;
 		}
 		else
 		{
-			LOG(LogLevel::Warning) << "Cannot ouput diplomatic agreement type " << itr->type;
+			LOG(LogLevel::Warning) << "Cannot ouput diplomatic agreement type " << agreement.type;
 			continue;
 		}
-		fprintf(out, "%s=\n", itr->type.c_str());
-		fprintf(out, "{\n");
-		fprintf(out, "\tfirst=\"%s\"\n", itr->country1.c_str());
-		fprintf(out, "\tsecond=\"%s\"\n", itr->country2.c_str());
-		fprintf(out, "\tstart_date=\"%s\"\n", itr->start_date.toString().c_str());
-		fprintf(out, "\tend_date=\"1936.1.1\"\n");
-		fprintf(out, "}\n");
-		fprintf(out, "\n");
 	}
 	
-	fclose(alliances);
-	fclose(guarantees);
-	fclose(puppetStates);
-	fclose(unions);
+	alliances.close();
+	guarantees.close();
+	puppetStates.close();
+	unions.close();
 }

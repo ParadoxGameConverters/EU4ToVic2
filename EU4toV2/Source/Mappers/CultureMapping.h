@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -26,26 +26,55 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
+#include "../EU4World/Regions/Regions.h"
 #include <map>
+#include <optional>
 #include <string>
 
 
 
 namespace mappers
 {
-	class cultureMapping
-	{
-		public:
-			cultureMapping(const std::string& sourceCulture, const std::string& destinationCulture, const std::map<std::string, std::string>& distinguishers);
-			bool cultureMatch(const std::string& sourceCulture, std::string& destinationCulture, const std::string& religion, int EU4Province, const std::string& ownerTag);
 
-		private:
-			bool distinguishersMatch(const std::map<std::string, std::string>& distinguishers, const std::string& religion, int EU4Province, const std::string& ownerTag);
+enum class distinguisherTypes
+{
+	owner,
+	religion,
+	province,
+	region
+};
 
-			std::string sourceCulture;
-			std::string destinationCulture;
-			std::map<std::string, std::string> distinguishers;	// type, details
-	};
+class cultureMapping
+{
+	public:
+		cultureMapping(
+			const std::string& sourceCulture,
+			const std::string& destinationCulture,
+			const std::map<distinguisherTypes, std::string>& distinguishers
+		);
+
+		std::optional<std::string> cultureMatch(
+			const EU4::Regions& EU4Regions,
+			const std::string& culture,
+			const std::string& religion,
+			int EU4Province,
+			const std::string& ownerTag
+		);
+
+	private:
+		bool distinguishersMatch(
+			const EU4::Regions& EU4Regions,
+			const std::map<distinguisherTypes, std::string>& distinguishers,
+			const std::string& religion,
+			int EU4Province,
+			const std::string& ownerTag
+		);
+
+		std::string sourceCulture;
+		std::string destinationCulture;
+		std::map<distinguisherTypes, std::string> distinguishers;
+};
+
 }
 
 

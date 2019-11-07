@@ -26,99 +26,104 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include <istream>
 #include "EU4Army.h"
 #include "EU4Diplomacy.h"
+#include "EU4Version.h"
+#include "Provinces/Provinces.h"
+#include "Regions/Regions.h"
+#include "Religions/Religions.h"
+#include "../Mappers/CultureMapper.h"
+#include "../Mappers/ProvinceMappings/ProvinceMapper.h"
+#include "../Mappers/ReligionMapper.h"
 #include "newParser.h"
+#include <istream>
+#include <memory>
 
 
 
-namespace EU4
+namespace mappers
 {
-class Version;
+class IdeaEffectMapper;
 }
 
-class EU4Province;
-
-
-
 namespace EU4
 {
-	class Country;
+
+class Country;
+class Province;
 
 
-	class world: private commonItems::parser
-	{
-		public:
-			world(const string& EU4SaveFileName);
+class world: private commonItems::parser
+{
+	public:
+		world(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper);
 
-			EU4Province* getProvince(int provNum) const;
+		const Province& getProvince(int provNum) const;
 
-			EU4::Version* getVersion() const { return version; };
-			std::map<std::string, std::shared_ptr<EU4::Country>> getCountries() const { return theCountries; };
-			vector<EU4Agreement> getDiplomaticAgreements() const { return diplomacy->getAgreements(); };
-			double getWorldWeightSum() const { return worldWeightSum; };
+		void checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const;
+		void checkAllEU4ReligionsMapped(const mappers::ReligionMapper& religionMapper) const;
+		void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
 
-			bool isRandomWorld() const;
+		const EU4::Version& getVersion() const { return *version; };
+		std::map<std::string, std::shared_ptr<EU4::Country>> getCountries() const { return theCountries; };
+		vector<EU4Agreement> getDiplomaticAgreements() const { return diplomacy->getAgreements(); };
+		double getTotalProvinceWeights() const { return provinces->geTotalProvinceWeights(); };
+		const Regions& getRegions() const { return *regions; }
+		const Religions& getAllReligions() const { return theReligions; }
 
-		private:
-			void verifySave(const string& EU4SaveFileName);
+		bool isRandomWorld() const;
 
-			void loadUsedMods(const shared_ptr<Object> EU4SaveObj);
-			map<string, string> loadPossibleMods();
-			void loadEU4ModDirectory(map<string, string>& possibleMods);
-			void loadCK2ExportDirectory(map<string, string>& possibleMods);
+	private:
+		void verifySave(const string& EU4SaveFileName);
 
-			void loadEU4Version(const shared_ptr<Object> EU4SaveObj);
-			void loadActiveDLC(const shared_ptr<Object> EU4SaveObj);
-			void loadEmpires(const shared_ptr<Object> EU4SaveObj);
-			void loadHolyRomanEmperor(vector<shared_ptr<Object>> empireObj);
-			void loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpireObj);
+		void loadEU4Version(const shared_ptr<Object> EU4SaveObj);
+		void loadActiveDLC(const shared_ptr<Object> EU4SaveObj);
+		void loadEmpires(const shared_ptr<Object> EU4SaveObj);
+		void loadHolyRomanEmperor(vector<shared_ptr<Object>> empireObj);
+		void loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpireObj);
 
+		void loadCountries(std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void loadRevolutionTargetString(const shared_ptr<Object> EU4SaveObj);
+		void loadRevolutionTarget();
+		void addProvinceInfoToCountries();
+		void loadDiplomacy(const shared_ptr<Object> EU4SaveObj);
 
-			void loadProvinces(const shared_ptr<Object> EU4SaveObj);
-			map<int, int> determineValidProvinces();
+		void loadRegions();
+		void loadEU4RegionsNewVersion();
+		void loadEU4RegionsOldVersion();
 
-			void loadCountries(istream& theStream);
-			void loadRevolutionTargetString(const shared_ptr<Object> EU4SaveObj);
-			void loadRevolutionTarget();
-			void addProvinceInfoToCountries();
-			void loadDiplomacy(const shared_ptr<Object> EU4SaveObj);
-			void determineProvinceWeights();
+		void readCommonCountries();
+		void readCommonCountriesFile(istream&, const std::string& rootPath);
 
-			void checkAllEU4CulturesMapped() const;
+		void setLocalisations();
+		void resolveRegimentTypes();
 
-			void readCommonCountries();
-			void readCommonCountriesFile(istream&, const std::string& rootPath);
+		void mergeNations();
+		void uniteJapan();
 
-			void setLocalisations();
-			void resolveRegimentTypes();
+		void importReligions();
 
-			void mergeNations();
-			void uniteJapan();
+		void removeEmptyNations();
+		void removeDeadLandlessNations();
+		void removeLandlessNations();
 
-			void checkAllProvincesMapped() const;
-			void setNumbersOfDestinationProvinces();
-			void checkAllEU4ReligionsMapped() const;
+		void setEmpires();
 
-			void removeEmptyNations();
-			void removeDeadLandlessNations();
-			void removeLandlessNations();
+		std::shared_ptr<EU4::Country> getCountry(string tag) const;
 
-			void setEmpires();
+		string holyRomanEmperor;
+		string celestialEmperor;
+		std::unique_ptr<Regions> regions;
+		std::unique_ptr<Provinces> provinces;
+		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
+		std::unique_ptr<EU4Diplomacy> diplomacy;
+		std::unique_ptr<EU4::Version> version;
 
-			std::shared_ptr<EU4::Country> getCountry(string tag) const;
+		std::string revolutionTargetString;
 
-			string holyRomanEmperor;
-			string celestialEmperor;
-			map<int, EU4Province*> provinces;
-			std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
-			EU4Diplomacy* diplomacy;
-			EU4::Version* version;
-			double worldWeightSum;
+		Religions theReligions;
+};
 
-			std::string revolutionTargetString;
-	};
 }
 
 

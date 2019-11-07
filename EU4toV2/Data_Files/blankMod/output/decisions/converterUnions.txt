@@ -1,4 +1,34 @@
 political_decisions = {
+<<<<<<< HEAD
+=======
+	nogovernment = { #Fallback for "no gov converted, whoopsie"
+		potential = {
+			NOT = {
+				government = proletarian_dictatorship
+				government = presidential_dictatorship
+				government = bourgeois_dictatorship
+				government = fascist_dictatorship
+				government = absolute_monarchy
+				government = prussian_constitutionalism
+				government = hms_government
+				government = democracy
+				government = theocracy
+			}
+		}	
+		allow = {
+			always = yes
+		}
+		
+		effect = {
+			government = presidential_dictatorship
+			election = yes
+			ruling_party_ideology = reactionary
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+>>>>>>> Idhrendur-mods
 	centralize_hre = {
 		news = yes
 		news_desc_long = "hre_NEWS_LONG"
@@ -3073,6 +3103,635 @@ political_decisions = {
 				civilized = yes
 				capital = 415
 			}
+<<<<<<< HEAD
+=======
+		any_country = { # Abkhazia 
+				limit = {
+					tag = ABK 
+					NOT = { exists = ABK   }
+				}
+				primary_culture = georgian 
+				religion = orthodox 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 1095 
+			}
+
+		any_country = { # Acadia 
+				limit = {
+					tag = ACA 
+					NOT = { exists = ACA   }
+				}
+				primary_culture = french_canadian 
+				religion = catholic 
+				government = democracy 
+				civilized = yes
+				capital = 71 
+			}
+
+		any_country = { # Andorra 
+				limit = {
+					tag = ADO 
+					NOT = { exists = ADO   }
+				}
+				primary_culture = catalan 
+				religion = catholic 
+				government = theocracy 
+				civilized = yes
+				capital = 1 
+			}
+
+		any_country = { # Asturias 
+				limit = {
+					tag = ATR 
+					NOT = { exists = ATR   }
+				}
+				primary_culture = spanish 
+				religion = catholic 
+				government = hms_government 
+				civilized = yes
+				capital = 475 
+			}
+
+		any_country = { # Burkina Faso 
+				limit = {
+					tag = BKF 
+					NOT = { exists = BKF   }
+				}
+				primary_culture = mossi 
+				religion = catholic 
+				government = democracy 
+				civilized = yes
+				capital = 1901 
+			}
+
+		any_country = { # Chechnya 
+				limit = {
+					tag = CHY 
+					NOT = { exists = CHY   }
+				}
+				primary_culture = north_caucasian 
+				religion = orthodox 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 1055 
+			}
+
+		any_country = { # Faroe 
+				limit = {
+					tag = FRO 
+					NOT = { exists = FRO   }
+				}
+				primary_culture = danish 
+				religion = protestant 
+				government = democracy 
+				civilized = yes
+				capital = 253 
+			}
+
+		any_country = { # Inner Mongolia 
+				limit = {
+					tag = IMG 
+					NOT = { exists = IMG   }
+				}
+				primary_culture = mongol 
+				religion = gelugpa 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 1532 
+			}
+
+		any_country = { # Ingria 
+				limit = {
+					tag = IZH 
+					NOT = { exists = IZH   }
+				}
+				primary_culture = estonian 
+				religion = orthodox 
+				government = democracy 
+				civilized = yes
+				capital = 994 
+			}
+
+		any_country = { # Liechtenstein 
+				limit = {
+					tag = LIE 
+					NOT = { exists = LIE   }
+				}
+				primary_culture = swiss 
+				religion = catholic 
+				government = hms_government 
+				civilized = yes
+				capital = 1 
+			}
+
+		any_country = { # Moldova 
+				limit = {
+					tag = MDV 
+					NOT = { exists = MDV   }
+				}
+				primary_culture = romanian 
+				religion = orthodox 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 676 
+			}
+
+		any_country = { # Memelland 
+				limit = {
+					tag = MML 
+					NOT = { exists = MML   }
+				}
+				primary_culture = north_german 
+				religion = protestant 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 698 
+			}
+
+		any_country = { # Monaco 
+				limit = {
+					tag = MNC 
+					NOT = { exists = MNC   }
+				}
+				primary_culture = french 
+				religion = catholic 
+				government = hms_government 
+				civilized = yes
+				capital = 1 
+			}
+
+		any_country = { # Mosquito Coast 
+				limit = {
+					tag = MSK 
+					NOT = { exists = MSK   }
+				}
+				primary_culture = texan 
+				religion = catholic 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 2200 
+			}
+
+		any_country = { # Neuchâtel 
+				limit = {
+					tag = NCT 
+					NOT = { exists = NCT   }
+				}
+				primary_culture = swiss 
+				religion = catholic 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 608 
+			}
+
+		any_country = { # Papua New Guinea 
+				limit = {
+					tag = PPG 
+					NOT = { exists = PPG   }
+				}
+				primary_culture = melanesian 
+				religion = protestant 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 2528 
+			}
+
+		any_country = { # Saar 
+				limit = {
+					tag = SAA 
+					NOT = { exists = SAA   }
+				}
+				primary_culture = north_german 
+				religion = protestant 
+				government = democracy 
+				civilized = yes
+				capital = 573 
+			}
+
+		any_country = { # Samos 
+				limit = {
+					tag = SAM 
+					NOT = { exists = SAM   }
+				}
+				primary_culture = greek 
+				religion = orthodox 
+				government = hms_government 
+				civilized = yes
+				capital = 843 
+			}
+
+		any_country = { # Singapore 
+				limit = {
+					tag = SGP 
+					NOT = { exists = SGP   }
+				}
+				primary_culture = malay 
+				religion = gelugpa 
+				government = democracy 
+				civilized = yes
+				capital = 1384 
+			}
+
+		any_country = { # Samoa 
+				limit = {
+					tag = SMO 
+					NOT = { exists = SMO   }
+				}
+				primary_culture = melanesian 
+				religion = protestant 
+				government = democracy 
+				civilized = yes
+				capital = 2543 
+			}
+
+		any_country = { # San Marino 
+				limit = {
+					tag = SMR 
+					NOT = { exists = SMR   }
+				}
+				primary_culture = north_italian 
+				religion = catholic 
+				government = democracy 
+				civilized = yes
+				capital = 1 
+			}
+
+		any_country = { # Sudetenland 
+				limit = {
+					tag = SDT 
+					NOT = { exists = SDT   }
+				}
+				primary_culture = north_german 
+				religion = catholic 
+				government = fascist_dictatorship 
+				civilized = yes
+				capital = 629 
+			}
+
+		any_country = { # Timor 
+				limit = {
+					tag = TMR 
+					NOT = { exists = TMR   }
+				}
+				primary_culture = javan 
+				religion = catholic 
+				government = democracy 
+				civilized = yes
+				capital = 1446 
+			}
+
+		any_country = { # South Tirol 
+				limit = {
+					tag = TST 
+					NOT = { exists = TST   }
+				}
+				primary_culture = south_german 
+				religion = catholic 
+				government = democracy 
+				civilized = yes
+				capital = 735 
+			}
+
+		any_country = { # Vanuatu 
+				limit = {
+					tag = VTU 
+					NOT = { exists = VTU   }
+				}
+				primary_culture = melanesian 
+				religion = protestant 
+				government = democracy 
+				civilized = yes
+				capital = 2535 
+			}
+
+		any_country = { # Zapadoslavia 
+				limit = {
+					tag = WSF 
+					NOT = { exists = WSF   }
+				}
+				primary_culture = polish 
+				religion = catholic 
+				government = absolute_monarchy 
+				civilized = yes
+				capital = 706 
+			}
+
+		any_country = { # Zimbabwe 
+				limit = {
+					tag = ZBW 
+					NOT = { exists = ZBW   }
+				}
+				primary_culture = chewa 
+				religion = protestant 
+				government = presidential_dictatorship 
+				civilized = yes
+				capital = 2068 
+			}
+			any_country = { limit = { tag = AAA NOT = { exists = AAA } } primary_culture = dummy religion = pre_schism government = theocracy civilized = no capital = 322 } # AAA
+			any_country = { limit = { tag = SMI NOT = { exists = SMI } } primary_culture = sami religion = protestant government = democracy civilized = yes capital = 336 } # Sami
+			any_country = { limit = { tag = MEM NOT = { exists = MEM } } primary_culture = south_german religion = catholic government = democracy civilized = yes capital = 593 } # Memmingen
+			any_country = { limit = { tag = RVA NOT = { exists = RVA } } primary_culture = south_german religion = catholic government = democracy civilized = yes capital = 593 } # Ravensburg
+			any_country = { limit = { tag = CIR NOT = { exists = CIR } } primary_culture = north_caucasian religion = orthodox government = presidential_dictatorship civilized = yes capital = 1049 } # Circassia
+			any_country = { limit = { tag = LBN NOT = { exists = LBN } } primary_culture = mashriqi religion = sunni government = presidential_dictatorship civilized = yes capital = 913 } # Lebanon
+			any_country = { limit = { tag = HAL NOT = { exists = HAL } } primary_culture = bedouin religion = sunni government = absolute_monarchy civilized = no capital = 1160 } # Shammar
+			any_country = { limit = { tag = AND NOT = { exists = AND } } primary_culture = telegu religion = hindu government = absolute_monarchy civilized = no capital = 1283 } # Andhra
+			any_country = { limit = { tag = YUA NOT = { exists = YUA } } primary_culture = mongol religion = gelugpa government = absolute_monarchy civilized = yes capital = 1612 } # Yuan
+			any_country = { limit = { tag = KTI NOT = { exists = KTI } } primary_culture = javan religion = sunni government = absolute_monarchy civilized = no capital = 1429 } # Kutai
+			any_country = { limit = { tag = LAN NOT = { exists = LAN } } primary_culture = hakka religion = gelugpa government = democracy civilized = no capital = 1426 } # Lanfang
+			any_country = { limit = { tag = SAK NOT = { exists = SAK } } primary_culture = malay religion = sunni government = absolute_monarchy civilized = no capital = 1401 } # Siak
+			any_country = { limit = { tag = TRS NOT = { exists = TRS } } primary_culture = aztec religion = aztec_reformed government = absolute_monarchy civilized = no capital = 2170 } # Tarasco
+			any_country = { limit = { tag = LTN NOT = { exists = LTN } } primary_culture = outremer religion = catholic government = absolute_monarchy civilized = yes capital = 860 } # Latin Empire
+			any_country = { limit = { tag = AAC NOT = { exists = AAC } } primary_culture = north_german religion = protestant government = presidential_dictatorship civilized = yes capital = 576 } # Aachen
+			any_country = { limit = { tag = ANS NOT = { exists = ANS } } primary_culture = south_german religion = catholic government = absolute_monarchy civilized = yes capital = 595 } # Ansbach
+			any_country = { limit = { tag = AUG NOT = { exists = AUG } } primary_culture = south_german religion = catholic government = absolute_monarchy civilized = yes capital = 592 } # Augsburg
+			any_country = { limit = { tag = BRN NOT = { exists = BRN } } primary_culture = north_german religion = protestant government = prussian_constitutionalism civilized = yes capital = 549 } # Brandenburg
+			any_country = { limit = { tag = KLE NOT = { exists = KLE } } primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 577 } # Clèves
+			any_country = { limit = { tag = KOL NOT = { exists = KOL } } primary_culture = north_german religion = protestant government = theocracy civilized = yes capital = 575 } # Cologne
+			any_country = { limit = { tag = LAU NOT = { exists = LAU } } primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 529 } # Lauenburg
+			any_country = { limit = { tag = LUN NOT = { exists = LUN } } primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 532 } # Lüneburg
+			any_country = { limit = { tag = MAG NOT = { exists = MAG } } primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 553 } # Magdeburg
+			any_country = { limit = { tag = MAI NOT = { exists = MAI } } primary_culture = north_german religion = protestant government = theocracy civilized = yes capital = 570 } # Mainz
+			any_country = { limit = { tag = MUN NOT = { exists = MUN } } primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 581 } # Münster
+			any_country = { limit = { tag = PAL NOT = { exists = PAL } } primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 578 } # the Palatinate
+			any_country = { limit = { tag = POM NOT = { exists = POM } } primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 546 } # Pommerania
+			any_country = { limit = { tag = SLS NOT = { exists = SLS } } primary_culture = polish religion = catholic government = absolute_monarchy civilized = yes capital = 683 } # Silesia
+			any_country = { limit = { tag = SLZ NOT = { exists = SLZ } } primary_culture = south_german religion = catholic government = theocracy civilized = yes capital = 613 } # Salzburg
+			any_country = { limit = { tag = STY NOT = { exists = STY } } primary_culture = south_german religion = catholic government = absolute_monarchy civilized = yes capital = 616 } # Styria
+			any_country = { limit = { tag = THU NOT = { exists = THU } } primary_culture = south_german religion = protestant government = absolute_monarchy civilized = yes capital = 554 } # Thuringia
+			any_country = { limit = { tag = TIR NOT = { exists = TIR } } primary_culture = south_german religion = catholic government = theocracy civilized = yes capital = 612 } # Tirol
+			any_country = { limit = { tag = TER NOT = { exists = TER } } primary_culture = north_german religion = protestant government = theocracy civilized = yes capital = 572 } # Trier
+			any_country = { limit = { tag = WBG NOT = { exists = WBG } } primary_culture = south_german religion = catholic government = theocracy civilized = yes capital = 597 } # Würzburg
+			any_country = { limit = { tag = WES NOT = { exists = WES } } primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 566 } # Westfalia
+			any_country = { limit = { tag = CRT NOT = { exists = CRT } } primary_culture = south_german religion = catholic government = absolute_monarchy civilized = yes capital = 618 } # Carinthia
+			any_country = { limit = { tag = AQU NOT = { exists = AQU } } primary_culture = north_italian religion = catholic government = theocracy civilized = yes capital = 736 } # Aquileia
+			any_country = { limit = { tag = ETR NOT = { exists = ETR } } primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 744 } # Etruria
+			any_country = { limit = { tag = FER NOT = { exists = FER } } primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 742 } # Ferrara
+			any_country = { limit = { tag = MTA NOT = { exists = MTA } } primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 728 } # Mantua
+			any_country = { limit = { tag = PIS NOT = { exists = PIS } } primary_culture = north_italian religion = catholic government = presidential_dictatorship civilized = yes capital = 745 } # Pisa
+			any_country = { limit = { tag = SVY NOT = { exists = SVY } } primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 466 } # Savoy
+			any_country = { limit = { tag = URB NOT = { exists = URB } } primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 752 } # Urbino
+			any_country = { limit = { tag = MFA NOT = { exists = MFA } } primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 723 } # Montferrat
+			any_country = { limit = { tag = LIV NOT = { exists = LIV } } primary_culture = north_german religion = catholic government = theocracy civilized = yes capital = 355 } # Livonian Order
+			any_country = { limit = { tag = MAZ NOT = { exists = MAZ } } primary_culture = polish religion = catholic government = absolute_monarchy civilized = yes capital = 706 } # Mazovia
+			any_country = { limit = { tag = KUR NOT = { exists = KUR } } primary_culture = latvian religion = protestant government = absolute_monarchy civilized = yes capital = 359 } # Kurland
+			any_country = { limit = { tag = TEU NOT = { exists = TEU } } primary_culture = north_german religion = catholic government = theocracy civilized = yes capital = 695 } # Teutonic Order
+			any_country = { limit = { tag = CNN NOT = { exists = CNN } } primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 258 } # Connacht
+			any_country = { limit = { tag = CRN NOT = { exists = CRN } } primary_culture = welsh religion = protestant government = absolute_monarchy civilized = yes capital = 299 } # Cornwall
+			any_country = { limit = { tag = DMS NOT = { exists = DMS } } primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 260 } # Desmond
+			any_country = { limit = { tag = KID NOT = { exists = KID } } primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 264 } # Kildare
+			any_country = { limit = { tag = HSC NOT = { exists = HSC } } primary_culture = pictish religion = catholic government = absolute_monarchy civilized = yes capital = 266 } # Highlands
+			any_country = { limit = { tag = LAN NOT = { exists = LAN } } primary_culture = english religion = protestant government = absolute_monarchy civilized = yes capital = 278 } # Lancaster
+			any_country = { limit = { tag = LEI NOT = { exists = LEI } } primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 263 } # Leinster
+			any_country = { limit = { tag = MNS NOT = { exists = MNS } } primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 260 } # Munster
+			any_country = { limit = { tag = NOL NOT = { exists = NOL } } primary_culture = english religion = protestant government = absolute_monarchy civilized = yes capital = 280 } # Northumberland
+			any_country = { limit = { tag = SLN NOT = { exists = SLN } } primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 259 } # Sligo
+			any_country = { limit = { tag = TYR NOT = { exists = TYR } } primary_culture = irish religion = protestant government = absolute_monarchy civilized = yes capital = 255 } # Tyrone
+			any_country = { limit = { tag = ULS NOT = { exists = ULS } } primary_culture = irish religion = protestant government = absolute_monarchy civilized = yes capital = 254 } # Ulster
+			any_country = { limit = { tag = WHA NOT = { exists = WHA } } primary_culture = welsh religion = protestant government = absolute_monarchy civilized = yes capital = 273 } # Wales
+			any_country = { limit = { tag = YOR NOT = { exists = YOR } } primary_culture = english religion = protestant government = absolute_monarchy civilized = yes capital = 282 } # York
+			any_country = { limit = { tag = ACH NOT = { exists = ACH } } primary_culture = greek religion = orthodox government = absolute_monarchy civilized = yes capital = 842 } # Achaea
+			any_country = { limit = { tag = EPI NOT = { exists = EPI } } primary_culture = greek religion = orthodox government = absolute_monarchy civilized = yes capital = 826 } # Epirus
+			any_country = { limit = { tag = KNI NOT = { exists = KNI } } primary_culture = occitan religion = catholic government = theocracy civilized = yes capital = 854 } # Knights of Jerusalem
+			any_country = { limit = { tag = MOE NOT = { exists = MOE } } primary_culture = greek religion = orthodox government = absolute_monarchy civilized = yes capital = 841 } # Morea
+			any_country = { limit = { tag = NAX NOT = { exists = NAX } } primary_culture = greek religion = orthodox government = absolute_monarchy civilized = yes capital = 845 } # Naxos
+			any_country = { limit = { tag = RAG NOT = { exists = RAG } } primary_culture = north_italian religion = catholic government = presidential_dictatorship civilized = yes capital = 782 } # Ragusa
+			any_country = { limit = { tag = FEZ NOT = { exists = FEZ } } primary_culture = maghrebi religion = sunni government = absolute_monarchy civilized = yes capital = 1680 } # Fez
+			any_country = { limit = { tag = JER NOT = { exists = JER } } primary_culture = outremer religion = catholic government = theocracy civilized = yes capital = 917 } # Jerusalem
+			any_country = { limit = { tag = ASH NOT = { exists = ASH } } primary_culture = akan religion = protestant government = absolute_monarchy civilized = no capital = 1910 } # Ashanti
+			any_country = { limit = { tag = BEN NOT = { exists = BEN } } primary_culture = edo religion = shamanism government = absolute_monarchy civilized = no capital = 1928 } # Benin
+			any_country = { limit = { tag = KON NOT = { exists = KON } } primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 2001 } # Kongo
+			any_country = { limit = { tag = MLI NOT = { exists = MLI } } primary_culture = dinka religion = sunni government = absolute_monarchy civilized = no capital = 1803 } # Mali
+			any_country = { limit = { tag = NUB NOT = { exists = NUB } } primary_culture = sudanese religion = shamanism government = absolute_monarchy civilized = no capital = 1830 } # Funj
+			any_country = { limit = { tag = SGH NOT = { exists = SGH } } primary_culture = songhai religion = sunni government = absolute_monarchy civilized = no capital = 1805 } # Songhai
+			any_country = { limit = { tag = SWA NOT = { exists = SWA } } primary_culture = swahili religion = sunni government = absolute_monarchy civilized = no capital = 2024 } # Swahili
+			any_country = { limit = { tag = ZIM NOT = { exists = ZIM } } primary_culture = shona religion = shamanism government = absolute_monarchy civilized = no capital = 2068 } # Mutapa
+			any_country = { limit = { tag = ADA NOT = { exists = ADA } } primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 2068 } # Adal
+			any_country = { limit = { tag = HAU NOT = { exists = HAU } } primary_culture = hausa religion = sunni government = absolute_monarchy civilized = no capital = 1948 } # Hausa
+			any_country = { limit = { tag = KBO NOT = { exists = KBO } } primary_culture = kanuri religion = sunni government = absolute_monarchy civilized = no capital = 1821 } # Kanem-Bornu
+			any_country = { limit = { tag = LOA NOT = { exists = LOA } } primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 2624 } # Loango
+			any_country = { limit = { tag = OYO NOT = { exists = OYO } } primary_culture = yoruba religion = sunni government = absolute_monarchy civilized = no capital = 1923 } # Oyo
+			any_country = { limit = { tag = SOF NOT = { exists = SOF } } primary_culture = shona religion = sunni government = absolute_monarchy civilized = no capital = 2060 } # Sofala
+			any_country = { limit = { tag = ABB NOT = { exists = ABB } } primary_culture = sudanese religion = sunni government = absolute_monarchy civilized = no capital = 1835 } # Dongola
+			any_country = { limit = { tag = HDY NOT = { exists = HDY } } primary_culture = amhara religion = sunni government = absolute_monarchy civilized = no capital = 1852 } # Hadiya
+			any_country = { limit = { tag = JJI NOT = { exists = JJI } } primary_culture = amhara religion = sunni government = absolute_monarchy civilized = no capital = 1852 } # Janjiro
+			any_country = { limit = { tag = WLY NOT = { exists = WLY } } primary_culture = amhara religion = protestant government = absolute_monarchy civilized = no capital = 1852 } # Welayta
+			any_country = { limit = { tag = ANT NOT = { exists = ANT } } primary_culture = malagasy religion = shamanism government = absolute_monarchy civilized = no capital = 2115 } # Antemoro
+			any_country = { limit = { tag = BNY NOT = { exists = BNY } } primary_culture = baganda religion = shamanism government = absolute_monarchy civilized = no capital = 2019 } # Bunyoro
+			any_country = { limit = { tag = BSG NOT = { exists = BSG } } primary_culture = baganda religion = shamanism government = absolute_monarchy civilized = no capital = 2019 } # Basoga
+			any_country = { limit = { tag = BTS NOT = { exists = BTS } } primary_culture = malagasy religion = shamanism government = absolute_monarchy civilized = no capital = 2115 } # Betsimisaraka
+			any_country = { limit = { tag = BUG NOT = { exists = BUG } } primary_culture = baganda religion = shamanism government = absolute_monarchy civilized = no capital = 2019 } # Buganda
+			any_country = { limit = { tag = BRD NOT = { exists = BRD } } primary_culture = rundi religion = shamanism government = absolute_monarchy civilized = no capital = 2035 } # Burundi
+			any_country = { limit = { tag = CKW NOT = { exists = CKW } } primary_culture = ovimbundu religion = shamanism government = absolute_monarchy civilized = no capital = 1982 } # Chokwe
+			any_country = { limit = { tag = KIK NOT = { exists = KIK } } primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 } # Kikondja
+			any_country = { limit = { tag = KRW NOT = { exists = KRW } } primary_culture = african_minor religion = shamanism government = absolute_monarchy civilized = no capital = 2034 } # Karagwe
+			any_country = { limit = { tag = KSJ NOT = { exists = KSJ } } primary_culture = ovimbundu religion = shamanism government = absolute_monarchy civilized = no capital = 1999 } # Kasanje
+			any_country = { limit = { tag = KUB NOT = { exists = KUB } } primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 } # Kuba
+			any_country = { limit = { tag = KZB NOT = { exists = KZB } } primary_culture = shona religion = shamanism government = absolute_monarchy civilized = no capital = 2016 } # Kazembe
+			any_country = { limit = { tag = LDU NOT = { exists = LDU } } primary_culture = african_minor religion = shamanism government = absolute_monarchy civilized = no capital = 1959 } # Lundu
+			any_country = { limit = { tag = LND NOT = { exists = LND } } primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 } # Lunda
+			any_country = { limit = { tag = LBX NOT = { exists = LBX } } primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 } # Luba
+			any_country = { limit = { tag = MFY NOT = { exists = MFY } } primary_culture = malagasy religion = shamanism government = absolute_monarchy civilized = no capital = 2115 } # Mahafaly
+			any_country = { limit = { tag = MIR NOT = { exists = MIR } } primary_culture = malagasy religion = shamanism government = absolute_monarchy civilized = no capital = 2115 } # Merina
+			any_country = { limit = { tag = MKU NOT = { exists = MKU } } primary_culture = african_minor religion = shamanism government = absolute_monarchy civilized = no capital = 2060 } # Makua
+			any_country = { limit = { tag = MLW NOT = { exists = MLW } } primary_culture = chewa religion = shamanism government = absolute_monarchy civilized = no capital = 2067 } # Maravi
+			any_country = { limit = { tag = NKO NOT = { exists = NKO } } primary_culture = baganda religion = shamanism government = absolute_monarchy civilized = no capital = 2019 } # Nkore
+			any_country = { limit = { tag = RWA NOT = { exists = RWA } } primary_culture = ruanda religion = shamanism government = absolute_monarchy civilized = no capital = 2034 } # Rwanda
+			any_country = { limit = { tag = RZW NOT = { exists = RZW } } primary_culture = shona religion = shamanism government = absolute_monarchy civilized = no capital = 2068 } # Butua
+			any_country = { limit = { tag = SKA NOT = { exists = SKA } } primary_culture = malagasy religion = shamanism government = absolute_monarchy civilized = no capital = 2115 } # Sakalava
+			any_country = { limit = { tag = SYO NOT = { exists = SYO } } primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 } # Soyo
+			any_country = { limit = { tag = TBK NOT = { exists = TBK } } primary_culture = chewa religion = shamanism government = absolute_monarchy civilized = no capital = 2067 } # Tumbuka
+			any_country = { limit = { tag = UBH NOT = { exists = UBH } } primary_culture = chewa religion = shamanism government = absolute_monarchy civilized = no capital = 2067 } # Buha
+			any_country = { limit = { tag = YKA NOT = { exists = YKA } } primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 } # Yaka
+			any_country = { limit = { tag = SOM NOT = { exists = SOM } } primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 1868 } # Somalia
+			any_country = { limit = { tag = GBU NOT = { exists = GBU } } primary_culture = dinka religion = sunni government = absolute_monarchy civilized = no capital = 1878 } # Kaabu
+			any_country = { limit = { tag = GEL NOT = { exists = GEL } } primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 1870 } # Geledi
+			any_country = { limit = { tag = MAJ NOT = { exists = MAJ } } primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 1873 } # Majeerteen
+			any_country = { limit = { tag = MOS NOT = { exists = MOS } } primary_culture = mossi religion = sunni government = absolute_monarchy civilized = no capital = 1901 } # Mossi
+			any_country = { limit = { tag = SGU NOT = { exists = SGU } } primary_culture = dinka religion = sunni government = absolute_monarchy civilized = no capital = 1800 } # Segu
+			any_country = { limit = { tag = WOL NOT = { exists = WOL } } primary_culture = wolof religion = sunni government = absolute_monarchy civilized = no capital = 1783 } # Jolof
+			any_country = { limit = { tag = DAH NOT = { exists = DAH } } primary_culture = fon religion = sunni government = absolute_monarchy civilized = no capital = 1920 } # Dahomey
+			any_country = { limit = { tag = DAR NOT = { exists = DAR } } primary_culture = fur religion = sunni government = absolute_monarchy civilized = no capital = 1841 } # Darfur
+			any_country = { limit = { tag = HAR NOT = { exists = HAR } } primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 2068 } # Harar
+			any_country = { limit = { tag = KNG NOT = { exists = KNG } } primary_culture = dyula religion = sunni government = absolute_monarchy civilized = no capital = 1898 } # Kong
+			any_country = { limit = { tag = WRL NOT = { exists = WRL } } primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 1873 } # Warsangali
+			any_country = { limit = { tag = ALE NOT = { exists = ALE } } primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 417 } # Alençon
+			any_country = { limit = { tag = AMG NOT = { exists = AMG } } primary_culture = occitan religion = catholic government = absolute_monarchy civilized = yes capital = 460 } # Armagnac
+			any_country = { limit = { tag = AUV NOT = { exists = AUV } } primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 448 } # Auvergne
+			any_country = { limit = { tag = AVI NOT = { exists = AVI } } primary_culture = occitan religion = catholic government = theocracy civilized = yes capital = 468 } # Avignon
+			any_country = { limit = { tag = BAR NOT = { exists = BAR } } primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 408 } # Bar
+			any_country = { limit = { tag = BOU NOT = { exists = BOU } } primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 430 } # Bourbonnais
+			any_country = { limit = { tag = BRG NOT = { exists = BRG } } primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 428 } # Burgundy
+			any_country = { limit = { tag = CPG NOT = { exists = CPG } } primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 406 } # Champagne
+			any_country = { limit = { tag = DAU NOT = { exists = DAU } } primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 451 } # Dauphiné
+			any_country = { limit = { tag = FOI NOT = { exists = FOI } } primary_culture = occitan religion = catholic government = absolute_monarchy civilized = yes capital = 457 } # Foix
+			any_country = { limit = { tag = GYN NOT = { exists = GYN } } primary_culture = occitan religion = catholic government = absolute_monarchy civilized = yes capital = 458 } # Guyenne
+			any_country = { limit = { tag = NEV NOT = { exists = NEV } } primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 430 } # Nevers
+			any_country = { limit = { tag = ORL NOT = { exists = ORL } } primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 438 } # Orléans
+			any_country = { limit = { tag = PRO NOT = { exists = PRO } } primary_culture = occitan religion = catholic government = absolute_monarchy civilized = yes capital = 467 } # Provence
+			any_country = { limit = { tag = RFR NOT = { exists = RFR } } primary_culture = japanese religion = shinto government = absolute_monarchy civilized = no capital = 1668 } # Nanbu
+			any_country = { limit = { tag = TUL NOT = { exists = TUL } } primary_culture = occitan religion = catholic government = absolute_monarchy civilized = yes capital = 455 } # Toulouse
+			any_country = { limit = { tag = BRY NOT = { exists = BRY } } primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 439 } # Berry
+			any_country = { limit = { tag = ARN NOT = { exists = ARN } } primary_culture = catalan religion = catholic government = absolute_monarchy civilized = yes capital = 498 } # Aragon
+			any_country = { limit = { tag = CST NOT = { exists = CST } } primary_culture = spanish religion = catholic government = absolute_monarchy civilized = yes capital = 489 } # Castille
+			any_country = { limit = { tag = GRA NOT = { exists = GRA } } primary_culture = andalucian religion = sunni government = absolute_monarchy civilized = yes capital = 513 } # Granada
+			any_country = { limit = { tag = NAV NOT = { exists = NAV } } primary_culture = basque religion = catholic government = absolute_monarchy civilized = yes capital = 493 } # Navarre
+			any_country = { limit = { tag = GLC NOT = { exists = GLC } } primary_culture = galician religion = catholic government = absolute_monarchy civilized = yes capital = 475 } # Galicia
+			any_country = { limit = { tag = BRB NOT = { exists = BRB } } primary_culture = flemish religion = catholic government = absolute_monarchy civilized = yes capital = 387 } # Brabant
+			any_country = { limit = { tag = FRI NOT = { exists = FRI } } primary_culture = dutch religion = protestant government = absolute_monarchy civilized = yes capital = 385 } # Friesland
+			any_country = { limit = { tag = GLR NOT = { exists = GLR } } primary_culture = dutch religion = protestant government = absolute_monarchy civilized = yes capital = 578 } # Gelre
+			any_country = { limit = { tag = HAT NOT = { exists = HAT } } primary_culture = wallonian religion = catholic government = absolute_monarchy civilized = yes capital = 394 } # Hainaut
+			any_country = { limit = { tag = HLL NOT = { exists = HLL } } primary_culture = dutch religion = protestant government = absolute_monarchy civilized = yes capital = 375 } # Holland
+			any_country = { limit = { tag = LIG NOT = { exists = LIG } } primary_culture = wallonian religion = catholic government = theocracy civilized = yes capital = 395 } # Liège
+			any_country = { limit = { tag = UTR NOT = { exists = UTR } } primary_culture = dutch religion = protestant government = absolute_monarchy civilized = yes capital = 377 } # Utrecht
+			any_country = { limit = { tag = GOT NOT = { exists = GOT } } primary_culture = swedish religion = protestant government = absolute_monarchy civilized = yes capital = 331 } # Gotland
+			any_country = { limit = { tag = ASM NOT = { exists = ASM } } primary_culture = assamese religion = hindu government = absolute_monarchy civilized = no capital = 1259 } # Assam
+			any_country = { limit = { tag = BAH NOT = { exists = BAH } } primary_culture = avadhi religion = hindu government = absolute_monarchy civilized = no capital = 1283 } # Deccan
+			any_country = { limit = { tag = BLC NOT = { exists = BLC } } primary_culture = baluchi religion = sunni government = absolute_monarchy civilized = no capital = 1219 } # Baluchistan
+			any_country = { limit = { tag = AMD NOT = { exists = AMD } } primary_culture = avadhi religion = sunni government = absolute_monarchy civilized = no capital = 1297 } # Ahmadnagar
+			any_country = { limit = { tag = BNG NOT = { exists = BNG } } primary_culture = bengali religion = sunni government = absolute_monarchy civilized = no capital = 1254 } # Bengal
+			any_country = { limit = { tag = BRR NOT = { exists = BRR } } primary_culture = marathi religion = sunni government = absolute_monarchy civilized = no capital = 1277 } # Berar
+			any_country = { limit = { tag = BIJ NOT = { exists = BIJ } } primary_culture = kannada religion = shia government = absolute_monarchy civilized = no capital = 1300 } # Bijapur
+			any_country = { limit = { tag = DLH NOT = { exists = DLH } } primary_culture = kanauji religion = sunni government = absolute_monarchy civilized = yes capital = 1227 } # Delhi
+			any_country = { limit = { tag = GAK NOT = { exists = GAK } } primary_culture = kanauji religion = sunni government = absolute_monarchy civilized = no capital = 1227 } # Gakwar
+			any_country = { limit = { tag = GOC NOT = { exists = GOC } } primary_culture = telegu religion = shia government = absolute_monarchy civilized = yes capital = 1283 } # Golcanda
+			any_country = { limit = { tag = GDW NOT = { exists = GDW } } primary_culture = oriya religion = hindu government = absolute_monarchy civilized = no capital = 1262 } # Gondwana
+			any_country = { limit = { tag = GUJ NOT = { exists = GUJ } } primary_culture = panjabi religion = shia government = absolute_monarchy civilized = no capital = 1236 } # Gujarat
+			any_country = { limit = { tag = KRN NOT = { exists = KRN } } primary_culture = kannada religion = hindu government = absolute_monarchy civilized = no capital = 1313 } # Carnatic
+			any_country = { limit = { tag = KHD NOT = { exists = KHD } } primary_culture = panjabi religion = shia government = absolute_monarchy civilized = no capital = 1313 } # Khandesh
+			any_country = { limit = { tag = SRI NOT = { exists = SRI } } primary_culture = tamil religion = mahayana government = absolute_monarchy civilized = yes capital = 1321 } # Ceylon
+			any_country = { limit = { tag = MRI NOT = { exists = MRI } } primary_culture = persian religion = shia government = absolute_monarchy civilized = no capital = 1313 } # Madurai
+			any_country = { limit = { tag = MAR NOT = { exists = MAR } } primary_culture = garathi religion = hindu government = absolute_monarchy civilized = no capital = 1277 } # Maharasthra
+			any_country = { limit = { tag = MLB NOT = { exists = MLB } } primary_culture = assamese religion = hindu government = absolute_monarchy civilized = no capital = 1259 } # Manipur
+			any_country = { limit = { tag = MLD NOT = { exists = MLD } } primary_culture = tamil religion = sunni government = absolute_monarchy civilized = no capital = 1325 } # Maldives
+			any_country = { limit = { tag = MAW NOT = { exists = MAW } } primary_culture = marathi religion = sunni government = absolute_monarchy civilized = no capital = 1271 } # Malwa
+			any_country = { limit = { tag = NIZ NOT = { exists = NIZ } } primary_culture = bengali religion = hindu government = absolute_monarchy civilized = no capital = 1254 } # Deva Bengal
+			any_country = { limit = { tag = RAJ NOT = { exists = RAJ } } primary_culture = rajput religion = hindu government = absolute_monarchy civilized = no capital = 1288 } # Rajputana
+			any_country = { limit = { tag = VIJ NOT = { exists = VIJ } } primary_culture = kannada religion = hindu government = absolute_monarchy civilized = yes capital = 1313 } # Vijayanagara
+			any_country = { limit = { tag = MRT NOT = { exists = MRT } } primary_culture = marathi religion = hindu government = absolute_monarchy civilized = no capital = 1297 } # Marathas
+			any_country = { limit = { tag = AKH NOT = { exists = AKH } } primary_culture = tatar religion = sunni government = absolute_monarchy civilized = no capital = 1036 } # Astrakhan
+			any_country = { limit = { tag = GOL NOT = { exists = GOL } } primary_culture = mongol religion = tengri_pagan_reformed government = absolute_monarchy civilized = no capital = 1012 } # Golden Horde
+			any_country = { limit = { tag = GRH NOT = { exists = GRH } } primary_culture = mongol religion = tengri_pagan_reformed government = absolute_monarchy civilized = yes capital = 1012 } # Great Horde
+			any_country = { limit = { tag = KZN NOT = { exists = KZN } } primary_culture = tatar religion = sunni government = absolute_monarchy civilized = no capital = 1030 } # Kazan
+			any_country = { limit = { tag = MUS NOT = { exists = MUS } } primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1008 } # Muscowy
+			any_country = { limit = { tag = NOV NOT = { exists = NOV } } primary_culture = russian religion = orthodox government = presidential_dictatorship civilized = yes capital = 1003 } # Novgorod
+			any_country = { limit = { tag = PSK NOT = { exists = PSK } } primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1006 } # Pskov
+			any_country = { limit = { tag = QAS NOT = { exists = QAS } } primary_culture = tatar religion = sunni government = absolute_monarchy civilized = no capital = 1012 } # Qasim Khanate
+			any_country = { limit = { tag = RYA NOT = { exists = RYA } } primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1012 } # Ryazan
+			any_country = { limit = { tag = TVE NOT = { exists = TVE } } primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 998 } # Tver
+			any_country = { limit = { tag = YAR NOT = { exists = YAR } } primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1001 } # Yaroslavl
+			any_country = { limit = { tag = ZAZ NOT = { exists = ZAZ } } primary_culture = tatar religion = orthodox government = presidential_dictatorship civilized = no capital = 976 } # Zaporozhie
+			any_country = { limit = { tag = NOG NOT = { exists = NOG } } primary_culture = tatar religion = sunni government = absolute_monarchy civilized = no capital = 1012 } # Nogai
+			any_country = { limit = { tag = SIH NOT = { exists = SIH } } primary_culture = tatar religion = sunni government = absolute_monarchy civilized = no capital = 1061 } # Sibir
+			any_country = { limit = { tag = SMK NOT = { exists = SMK } } primary_culture = russian religion = orthodox government = presidential_dictatorship civilized = yes capital = 943 } # Smolensk
+			any_country = { limit = { tag = PLT NOT = { exists = PLT } } primary_culture = byelorussian religion = orthodox government = absolute_monarchy civilized = yes capital = 946 } # Polotsk
+			any_country = { limit = { tag = MUR NOT = { exists = MUR } } primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1013 } # Murom
+			any_country = { limit = { tag = NZH NOT = { exists = NZH } } primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1020 } # Nizhny Novgorod
+			any_country = { limit = { tag = OKA NOT = { exists = OKA } } primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1011 } # Odoyev
+			any_country = { limit = { tag = ANN NOT = { exists = ANN } } primary_culture = vietnamese religion = gelugpa government = absolute_monarchy civilized = no capital = 1375 } # Annam
+			any_country = { limit = { tag = ARK NOT = { exists = ARK } } primary_culture = burmese religion = hindu government = absolute_monarchy civilized = no capital = 1345 } # Arakan
+			any_country = { limit = { tag = BNT NOT = { exists = BNT } } primary_culture = javanese religion = sunni government = absolute_monarchy civilized = no capital = 1413 } # Banten
+			any_country = { limit = { tag = CHA NOT = { exists = CHA } } primary_culture = vietnamese religion = gelugpa government = absolute_monarchy civilized = no capital = 1380 } # Champa
+			any_country = { limit = { tag = CHG NOT = { exists = CHG } } primary_culture = mongol religion = tengri_pagan_reformed government = absolute_monarchy civilized = no capital = 1195 } # Chagatai Khanate
+			any_country = { limit = { tag = CHK NOT = { exists = CHK } } primary_culture = lao religion = gelugpa government = absolute_monarchy civilized = no capital = 1356 } # Champassak
+			any_country = { limit = { tag = KHA NOT = { exists = KHA } } primary_culture = mongol religion = gelugpa government = absolute_monarchy civilized = yes capital = 1465 } # Mongolia
+			any_country = { limit = { tag = LNA NOT = { exists = LNA } } primary_culture = thai religion = gelugpa government = absolute_monarchy civilized = no capital = 1355 } # Lan Na
+			any_country = { limit = { tag = LXA NOT = { exists = LXA } } primary_culture = lao religion = gelugpa government = absolute_monarchy civilized = no capital = 1356 } # Lan Xang
+			any_country = { limit = { tag = MJP NOT = { exists = MJP } } primary_culture = javanese religion = hindu government = absolute_monarchy civilized = no capital = 1418 } # Majapahit
+			any_country = { limit = { tag = MCH NOT = { exists = MCH } } primary_culture = manchu religion = gelugpa government = absolute_monarchy civilized = no capital = 1002 } # Manchu
+			any_country = { limit = { tag = MKS NOT = { exists = MKS } } primary_culture = javan religion = sunni government = absolute_monarchy civilized = no capital = 1430 } # Makassar
+			any_country = { limit = { tag = MNG NOT = { exists = MNG } } primary_culture = beifaren religion = gelugpa government = absolute_monarchy civilized = yes capital = 1612 } # Ming
+			any_country = { limit = { tag = MLC NOT = { exists = MLC } } primary_culture = malay religion = sunni government = absolute_monarchy civilized = no capital = 1386 } # Malacca
+			any_country = { limit = { tag = MLY NOT = { exists = MLY } } primary_culture = malay religion = sunni government = absolute_monarchy civilized = yes capital = 1386 } # Malaya
+			any_country = { limit = { tag = MTR NOT = { exists = MTR } } primary_culture = javanese religion = sunni government = absolute_monarchy civilized = no capital = 1416 } # Mataram
+			any_country = { limit = { tag = OIR NOT = { exists = OIR } } primary_culture = mongol religion = tengri_pagan_reformed government = absolute_monarchy civilized = no capital = 1465 } # Oirat Horde
+			any_country = { limit = { tag = PAT NOT = { exists = PAT } } primary_culture = malay religion = sunni government = absolute_monarchy civilized = no capital = 1392 } # Pattani
+			any_country = { limit = { tag = PEG NOT = { exists = PEG } } primary_culture = burmese religion = gelugpa government = absolute_monarchy civilized = no capital = 1332 } # Pegu
+			any_country = { limit = { tag = QIN NOT = { exists = QIN } } primary_culture = manchu religion = gelugpa government = absolute_monarchy civilized = no capital = 1612 } # Qing
+			any_country = { limit = { tag = RYU NOT = { exists = RYU } } primary_culture = japanese religion = shinto government = absolute_monarchy civilized = yes capital = 1678 } # Ryukyu
+			any_country = { limit = { tag = SHA NOT = { exists = SHA } } primary_culture = shan religion = theravada government = absolute_monarchy civilized = no capital = 1336 } # Shan
+			any_country = { limit = { tag = SUK NOT = { exists = SUK } } primary_culture = thai religion = gelugpa government = absolute_monarchy civilized = no capital = 1355 } # Sukhothai
+			any_country = { limit = { tag = SUL NOT = { exists = SUL } } primary_culture = filipino religion = sunni government = absolute_monarchy civilized = no capital = 1464 } # Sulu
+			any_country = { limit = { tag = TOK NOT = { exists = TOK } } primary_culture = vietnamese religion = gelugpa government = absolute_monarchy civilized = no capital = 1369 } # Tonkin
+			any_country = { limit = { tag = WUU NOT = { exists = WUU } } primary_culture = beifaren religion = gelugpa government = absolute_monarchy civilized = no capital = 1612 } # Wu
+			any_country = { limit = { tag = XIA NOT = { exists = XIA } } primary_culture = beifaren religion = gelugpa government = absolute_monarchy civilized = no capital = 1612 } # Xia
+			any_country = { limit = { tag = AIN NOT = { exists = AIN } } primary_culture = ainu religion = shinto government = absolute_monarchy civilized = no capital = 1642 } # Ainu
+			any_country = { limit = { tag = TKG NOT = { exists = TKG } } primary_culture = japanese religion = shinto government = absolute_monarchy civilized = no capital = 1649 } # Tokugawa
+			any_country = { limit = { tag = LOU NOT = { exists = LOU } } primary_culture = americaine religion = catholic government = democracy civilized = yes capital = 139 } # Louisiana
+			any_country = { limit = { tag = AZT NOT = { exists = AZT } } primary_culture = aztec religion = aztec_reformed government = absolute_monarchy civilized = no capital = 2172 } # Aztec
+			any_country = { limit = { tag = CHM NOT = { exists = CHM } } primary_culture = quechua religion = shamanism government = absolute_monarchy civilized = no capital = 2292 } # Chimu
+			any_country = { limit = { tag = CRK NOT = { exists = CRK } } primary_culture = muskogean religion = shamanism government = absolute_monarchy civilized = no capital = 195 } # Creek
+			any_country = { limit = { tag = HUR NOT = { exists = HUR } } primary_culture = iroquoian religion = shamanism government = absolute_monarchy civilized = no capital = 46 } # Huron
+			any_country = { limit = { tag = INC NOT = { exists = INC } } primary_culture = quechua religion = shamanism government = absolute_monarchy civilized = no capital = 2302 } # Inca
+			any_country = { limit = { tag = IRO NOT = { exists = IRO } } primary_culture = iroquoian religion = shamanism government = absolute_monarchy civilized = no capital = 57 } # Iroquois
+			any_country = { limit = { tag = MAY NOT = { exists = MAY } } primary_culture = mayan religion = shamanism government = absolute_monarchy civilized = no capital = 2183 } # Maya
+			any_country = { limit = { tag = SHX NOT = { exists = SHX } } primary_culture = central_algonquian religion = shamanism government = absolute_monarchy civilized = no capital = 223 } # Shawnee
+			any_country = { limit = { tag = ZAP NOT = { exists = ZAP } } primary_culture = zapotec religion = shamanism government = absolute_monarchy civilized = no capital = 2177 } # Zapotec
+			any_country = { limit = { tag = ALH NOT = { exists = ALH } } primary_culture = bedouin religion = sunni government = absolute_monarchy civilized = no capital = 1157 } # Haasa
+			any_country = { limit = { tag = AKK NOT = { exists = AKK } } primary_culture = azerbaijani religion = sunni government = absolute_monarchy civilized = no capital = 893 } # Aq Qoyunlu
+			any_country = { limit = { tag = AYD NOT = { exists = AYD } } primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 869 } # Aydin
+			any_country = { limit = { tag = CND NOT = { exists = CND } } primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 880 } # Candar
+			any_country = { limit = { tag = DUL NOT = { exists = DUL } } primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 878 } # Dulkadir
+			any_country = { limit = { tag = KRM NOT = { exists = KRM } } primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 873 } # Karaman
+			any_country = { limit = { tag = TBZ NOT = { exists = TBZ } } primary_culture = greek religion = orthodox government = absolute_monarchy civilized = yes capital = 882 } # Trebizond
+			any_country = { limit = { tag = SRU NOT = { exists = SRU } } primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 870 } # Saruhan
+			any_country = { limit = { tag = MEN NOT = { exists = MEN } } primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 872 } # Mentese
+			any_country = { limit = { tag = RAM NOT = { exists = RAM } } primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 894 } # Ramazan
+			any_country = { limit = { tag = KHO NOT = { exists = KHO } } primary_culture = persian religion = shia government = absolute_monarchy civilized = no capital = 1150 } # Khorasan
+			any_country = { limit = { tag = QAR NOT = { exists = QAR } } primary_culture = azerbaijani religion = sunni government = absolute_monarchy civilized = no capital = 1108 } # Kara Koyunlu
+			any_country = { limit = { tag = TIM NOT = { exists = TIM } } primary_culture = persian religion = sunni government = absolute_monarchy civilized = no capital = 1199 } # Timurid
+			any_country = { limit = { tag = KAZ NOT = { exists = KAZ } } primary_culture = kazakh religion = sunni government = absolute_monarchy civilized = no capital = 1195 } # Kazakh
+			any_country = { limit = { tag = D01 NOT = { exists = D01 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D01
+			any_country = { limit = { tag = D02 NOT = { exists = D02 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D02
+			any_country = { limit = { tag = D03 NOT = { exists = D03 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D03
+			any_country = { limit = { tag = D04 NOT = { exists = D04 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D04
+			any_country = { limit = { tag = D05 NOT = { exists = D05 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D05
+			any_country = { limit = { tag = D06 NOT = { exists = D06 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D06
+			any_country = { limit = { tag = D07 NOT = { exists = D07 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D07
+			any_country = { limit = { tag = D08 NOT = { exists = D08 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D08
+			any_country = { limit = { tag = D09 NOT = { exists = D09 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D09
+			any_country = { limit = { tag = D10 NOT = { exists = D10 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D10
+			any_country = { limit = { tag = D11 NOT = { exists = D11 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D11
+			any_country = { limit = { tag = D12 NOT = { exists = D12 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D12
+			any_country = { limit = { tag = D13 NOT = { exists = D13 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D13
+			any_country = { limit = { tag = D14 NOT = { exists = D14 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D14
+			any_country = { limit = { tag = D15 NOT = { exists = D15 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D15
+			any_country = { limit = { tag = D16 NOT = { exists = D16 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D16
+			any_country = { limit = { tag = D17 NOT = { exists = D17 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D17
+			any_country = { limit = { tag = D18 NOT = { exists = D18 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D18
+			any_country = { limit = { tag = D19 NOT = { exists = D19 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D19
+			any_country = { limit = { tag = D20 NOT = { exists = D20 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D20
+			any_country = { limit = { tag = D21 NOT = { exists = D21 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D21
+			any_country = { limit = { tag = D22 NOT = { exists = D22 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D22
+			any_country = { limit = { tag = D23 NOT = { exists = D23 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D23
+			any_country = { limit = { tag = D24 NOT = { exists = D24 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D24
+			any_country = { limit = { tag = D25 NOT = { exists = D25 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D25
+			any_country = { limit = { tag = D26 NOT = { exists = D26 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D26
+			any_country = { limit = { tag = D27 NOT = { exists = D27 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D27
+			any_country = { limit = { tag = D28 NOT = { exists = D28 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D28
+			any_country = { limit = { tag = D29 NOT = { exists = D29 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D29
+			any_country = { limit = { tag = D30 NOT = { exists = D30 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D30
+			any_country = { limit = { tag = D31 NOT = { exists = D31 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D31
+			any_country = { limit = { tag = D32 NOT = { exists = D32 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D32
+			any_country = { limit = { tag = D33 NOT = { exists = D33 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D33
+			any_country = { limit = { tag = D34 NOT = { exists = D34 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D34
+			any_country = { limit = { tag = D35 NOT = { exists = D35 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D35
+			any_country = { limit = { tag = D36 NOT = { exists = D36 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D36
+			any_country = { limit = { tag = D37 NOT = { exists = D37 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D37
+			any_country = { limit = { tag = D38 NOT = { exists = D38 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D38
+			any_country = { limit = { tag = D39 NOT = { exists = D39 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D39
+			any_country = { limit = { tag = D40 NOT = { exists = D40 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D40
+			any_country = { limit = { tag = D41 NOT = { exists = D41 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D41
+			any_country = { limit = { tag = D42 NOT = { exists = D42 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D42
+			any_country = { limit = { tag = D43 NOT = { exists = D43 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D43
+			any_country = { limit = { tag = D44 NOT = { exists = D44 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D44
+			any_country = { limit = { tag = D45 NOT = { exists = D45 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D45
+			any_country = { limit = { tag = D46 NOT = { exists = D46 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D46
+			any_country = { limit = { tag = D47 NOT = { exists = D47 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D47
+			any_country = { limit = { tag = D48 NOT = { exists = D48 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D48
+			any_country = { limit = { tag = D49 NOT = { exists = D49 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D49
+			any_country = { limit = { tag = D50 NOT = { exists = D50 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D50
+>>>>>>> Idhrendur-mods
 			#Cores for regional countries
 			TUR_806 = { add_core = MCD } #FYR Macedonia
 			TUR_788 = { add_core = BOS } #Bosnia
@@ -3252,6 +3911,44 @@ political_decisions = {
 			FRA_420 = { add_core = BRT } #Brittany
 			473 = { add_core = CRS } #Corsica
 			FRA_418 = { add_core = NRM } #Normandy
+<<<<<<< HEAD
+=======
+			1095 = { add_core = ABK } # Abkhazia
+			71 = { add_core = ACA } # Acadia
+			72 = { add_core = ACA }
+			73 = { add_core = ACA }
+			475 = { add_core = ATR } # Asturias
+			478 = { add_core = ATR }
+			1055 = { add_core = CHY } # Chechnya
+			253 = { add_core = FRO } # Faroe
+			997 = { add_core = IZH } # Ingria
+			996 = { add_core = IZH }
+			994 = { add_core = IZH }
+			339 = { add_core = IZH }
+			340 = { add_core = IZH }
+			698 = { add_core = MML } # Memelland
+			2200 = { add_core = MSK } # Miskito
+			608 = { add_core = NCT } # Neuchâtel
+			2531 = { add_core = PPG } # Papua New Guinea
+			2529 = { add_core = PPG }
+			2530 = { add_core = PPG }
+			1531 = { add_core = PPG }
+			2537 = { add_core = PPG }
+			2528 = { add_core = PPG }
+			573 = { add_core = SAA } # Saarland
+			843 = { add_core = SAM } # Samos
+			1384 = { add_core = SGP } # Singapore
+			2543 = { add_core = SMO } # Samoa
+			628 = { add_core = SDT } # Sudetenland
+			627 = { add_core = SDT }
+			629 = { add_core = SDT }
+			630 = { add_core = SDT }
+			1443 = { add_core = TMR } # Timor
+			1445 = { add_core = TMR }
+			1446 = { add_core = TMR }
+			735 = { add_core = TST } # Bozen
+			2535 = { add_core = VTU } #Vanuatu
+>>>>>>> Idhrendur-mods
 			#Exaggerated cultural Heimaten fix
 			PER = {
 				any_owned_province = {
@@ -3309,6 +4006,22 @@ political_decisions = {
 					remove_core = AZB
 				}
 			}
+<<<<<<< HEAD
+=======
+			CHI = {
+				any_owned_province = {
+					limit = {
+						NOT = {
+							is_core = MGL
+							region = CHI_2608 #Mongolia proper
+						}
+					}
+				}
+				remove_core = KHA
+				remove_core = MGL
+				add_core = IMG
+			}
+>>>>>>> Idhrendur-mods
 			FRA_399 = { remove_core = BEL }
 			#British culture no more existing
 			any_country = { #Australia
@@ -3903,6 +4616,10 @@ political_decisions = {
 						owner = {
 							in_sphere = THIS
 						}
+<<<<<<< HEAD
+=======
+						province_id = 1384
+>>>>>>> Idhrendur-mods
 					}
 				}
 			}
@@ -6217,7 +6934,10 @@ political_decisions = {
 			}
 			NOT = { exists = LBY }
 			civilized = yes
+<<<<<<< HEAD
 			any_owned = { is_core = LBY } #Just to avoid weirdness
+=======
+>>>>>>> Idhrendur-mods
 		}	
 		allow = {
 			war = no
@@ -6265,4 +6985,131 @@ political_decisions = {
 			factor = 1
 		}
 	}
+<<<<<<< HEAD
 }
+=======
+	moldavia_moldova = {
+		potential = {
+			exists = ROM
+			tag = MOL
+			OR = {
+				exists = MOL
+				NOT = { exists = MOL }
+			}
+			NOT = { has_global_flag = moldova }
+		}	
+		allow = {
+			exists = ROM
+		}
+		
+		effect = {
+			any_core = {
+				limit = {
+					NOT = {
+						owned_by = ROM
+					}
+				}
+				add_core = MDV
+				remove_core = MOL
+			}
+			change_tag = MDV
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	zapadoslavia = {
+		potential = {
+			is_greater_power = yes
+			OR = {
+				tag = PLC
+				tag = POL
+				tag = CZH
+			}
+			NOT = {
+				exists = WSF
+			}
+		}	
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+			PLC = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								OR = {
+									is_vassal = no
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+			CZH = {
+				all_core = {
+					OR = {
+						OR = {
+							owned_by = THIS
+							owner = {
+								in_sphere = THIS
+								OR = {
+									is_vassal = no
+									vassal_of = THIS
+								}
+								war = no
+								is_greater_power = no
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			clr_country_flag = crown_from_the_gutter
+			prestige = 25
+			all_core = { add_core = WSF }
+			any_owned = {
+				limit = {
+					NOT = { is_core = THIS }
+					any_core = {
+						exists = no
+						has_country_flag = wants_to_unify
+						NOT = { has_country_flag = post_colonial_country }
+					}
+				}
+				add_core = WSF
+			}
+			change_tag = WSF
+			any_country = {
+				limit = {
+					OR = {
+						primary_culture = polish
+						primary_culture = czech
+						primary_culture = slovak
+					}
+					in_sphere = THIS
+					NOT = {
+						has_country_flag = post_colonial_country
+						tag = THIS
+					}
+					OR = {
+						is_vassal = no
+						vassal_of = THIS
+					}
+				}
+				country_event = 11106
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+>>>>>>> Idhrendur-mods

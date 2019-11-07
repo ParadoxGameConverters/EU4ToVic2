@@ -1,4 +1,4 @@
-/*Copyright (c) 2014 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -48,17 +48,19 @@ V2Relations::V2Relations(string newTag, EU4Relations* oldRelations)
 }
 
 
-void V2Relations::output(FILE* out) const
+std::ostream& operator<<(std::ostream& output, const V2Relations& relations)
 {
-	fprintf(out, "\t%s=\n", tag.c_str());
-	fprintf(out, "\t{\n");
-	fprintf(out, "\t\tvalue=%d\n", value);
-	if (militaryAccess)
+	output << "\t" << relations.tag << "=\n";
+	output << "\t{\n";
+	output << "\t\tvalue=" << relations.value << "\n";
+	if (relations.militaryAccess)
 	{
-		fprintf(out, "\t\tmilitary_access=yes\n");
+		output << "\t\tmilitary_access=yes\n";
 	}
-	fprintf(out, "\t\tlevel=%d\n", level);
-	fprintf(out, "\t}\n");
+	output << "\t\tlevel=" << relations.level << "\n";
+	output << "\t}\n";
+
+	return output;
 }
 
 

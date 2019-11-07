@@ -300,4 +300,119 @@ country_event = { #The Turkish Question
 			}
 		}
 	}
+<<<<<<< HEAD
+=======
+}
+country_event = { #Not-so-United Kingdom - England flees
+	id = 452011
+	title = EVTNAME452011
+	desc = EVTDESC452011
+	picture = "Demonstration"
+	
+	trigger = {
+		tag = ENG
+		war = no
+		exists = ENL
+		NOT = { is_our_vassal = ENL }
+		has_recently_lost_war = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		prestige = -10
+	}
+	option = {
+		name = EVTOPTA452011
+		all_core = {
+			limit = {
+				NOT = {
+					is_core = SCO
+					is_core = ENL
+					is_core = WHA
+				}
+			}
+			remove_core = ENG
+			add_core = SCO
+		}
+		ENL = {
+			all_core = {
+				remove_core = SCO
+			}
+		}
+		IRE = {
+			all_core = {
+				remove_core = SCO
+			}
+		}
+		WHA = {
+			all_core = {
+				remove_core = SCO
+			}
+		}
+		any_pop = {
+			militancy = 2
+		}
+		remove_accepted_culture = english
+		change_tag = SCO
+	}
+}
+country_event = { #Not-so-United Kingdom - Scotland flees
+	id = 452012
+	title = EVTNAME452011
+	desc = EVTDESC452011
+	picture = "Demonstration"
+	
+	trigger = {
+		tag = ENG
+		war = no
+		exists = SCO
+		NOT = { is_our_vassal = SCO }
+		has_recently_lost_war = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		prestige = -10
+	}
+	option = {
+		name = EVTOPTA452012
+		all_core = {
+			limit = {
+				NOT = {
+					is_core = SCO
+					is_core = ENL
+					is_core = WHA
+				}
+			}
+			remove_core = ENG
+			add_core = ENL
+		}
+		IRE = {
+			all_core = {
+				remove_core = ENL
+			}
+		}
+		WHA = {
+			all_core = {
+				remove_core = ENL
+			}
+		}
+		SCO = {
+			all_core = {
+				remove_core = ENL
+			}
+		}
+		any_pop = {
+			militancy = 2
+		}
+		remove_accepted_culture = scottish
+		change_tag = ENL
+	}
+>>>>>>> Idhrendur-mods
 }

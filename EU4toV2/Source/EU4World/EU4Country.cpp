@@ -26,12 +26,12 @@ THE SOFTWARE. */
 #include "Object.h"
 #include "ParserHelpers.h"
 #include "CultureGroups.h"
-#include "EU4Province.h"
 #include "EU4Relations.h"
 #include "EU4Leader.h"
 #include "EU4Version.h"
 #include "CountryHistory.h"
-#include "../Mappers/IdeaEffectMapper.h"
+#include "Provinces/EU4Province.h"
+#include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../V2World/V2Localisation.h"
 #include <algorithm>
 
@@ -70,7 +70,12 @@ governmentSection::governmentSection(std::istream& theStream)
 }
 
 
-EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
+EU4::Country::Country(
+	const std::string& countryTag,
+	const EU4::Version& theVersion,
+	std::istream& theStream,
+	const mappers::IdeaEffectMapper& ideaEffectMapper
+):
 	tag(countryTag),
 	provinces(),
 	cores(),
@@ -85,7 +90,6 @@ EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
 	acceptedCultures(),
 	culturalUnion({}),
 	religion(),
-	score(0.0),
 	stability(-3.0),
 	admTech(0.0),
 	dipTech(0.0),
@@ -235,9 +239,9 @@ EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
 			}
 		}
 	);
-	registerKeyword(std::regex("culture_group_union"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword(std::regex("culture_group_union"), [this, theVersion](const std::string& unused, std::istream& theStream)
 		{
-			if (theConfiguration.getEU4Version() < EU4::Version("1.7.0.0"))
+			if (theVersion < EU4::Version("1.7.0.0"))
 			{
 				commonItems::singleString cultureGroup(theStream);
 				culturalUnion = EU4::cultureGroups::getCulturalGroup(cultureGroup.getString());
@@ -255,12 +259,14 @@ EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
 			religion = theReligion.getString();
 		}
 	);
-	registerKeyword(std::regex("score"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleDouble theScore(theStream);
-			score = theScore.getDouble();
-		}
-	);
+	registerKeyword(std::regex("score"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble theScore(theStream);
+		score = theScore.getDouble();
+	});
+	registerKeyword(std::regex("great_power_score"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble theScore(theStream);
+		score = theScore.getDouble();
+	});
 	registerKeyword(std::regex("stability"), [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleDouble theStability(theStream);
@@ -318,8 +324,8 @@ EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
 			}
 		}
 	);
-	registerKeyword(std::regex("government"), [this](const std::string& unused, std::istream& theStream){
-		if (theConfiguration.getEU4Version() < EU4::Version("1.7.0.0"))
+	registerKeyword(std::regex("government"), [this, theVersion](const std::string& unused, std::istream& theStream){
+		if (theVersion < EU4::Version("1.7.0.0"))
 		{
 			government = governmentSection::readGovernment(theStream);
 		}
@@ -435,7 +441,7 @@ EU4::Country::Country(const std::string& countryTag, std::istream& theStream):
 	parseStream(theStream);
 
 	determineJapaneseRelations();
-	determineInvestments();
+	determineInvestments(ideaEffectMapper);
 	determineLibertyDesire();
 }
 
@@ -454,15 +460,15 @@ void EU4::Country::determineJapaneseRelations()
 }
 
 
-void EU4::Country::determineInvestments()
+void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	for (auto idea: nationalIdeas)
 	{
-		armyInvestment += ideaEffectMapper::getArmyInvestmentFromIdea(idea.first, idea.second);
-		commerceInvestment += ideaEffectMapper::getCommerceInvestmentFromIdea(idea.first, idea.second);
-		cultureInvestment += ideaEffectMapper::getCultureInvestmentFromIdea(idea.first, idea.second);
-		industryInvestment += ideaEffectMapper::getIndustryInvestmentFromIdea(idea.first, idea.second);
-		navyInvestment += ideaEffectMapper::getNavyInvestmentFromIdea(idea.first, idea.second);
+		armyInvestment += ideaEffectMapper.getArmyInvestmentFromIdea(idea.first, idea.second);
+		commerceInvestment += ideaEffectMapper.getCommerceInvestmentFromIdea(idea.first, idea.second);
+		cultureInvestment += ideaEffectMapper.getCultureInvestmentFromIdea(idea.first, idea.second);
+		industryInvestment += ideaEffectMapper.getIndustryInvestmentFromIdea(idea.first, idea.second);
+		navyInvestment += ideaEffectMapper.getNavyInvestmentFromIdea(idea.first, idea.second);
 	}
 }
 
@@ -584,13 +590,13 @@ void EU4::Country::setLocalisationAdjective(const string& language, const string
 }
 
 
-void EU4::Country::addProvince(EU4Province* province)
+void EU4::Country::addProvince(EU4::Province* province)
 {
 	provinces.push_back(province);
 }
 
 
-void EU4::Country::addCore(EU4Province* core)
+void EU4::Country::addCore(EU4::Province* core)
 {
 	cores.push_back(core);
 }
@@ -636,12 +642,12 @@ void EU4::Country::resolveRegimentTypes(const RegimentTypeMap& map)
 int EU4::Country::getManufactoryCount() const
 {
 	int retval = 0;	// the number of manus
-	for (vector<EU4Province*>::const_iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
+	for (auto province: provinces)
 	{
-		if ((*itr)->hasBuilding("weapons"))		++retval;
-		if ((*itr)->hasBuilding("wharf"))		++retval;
-		if ((*itr)->hasBuilding("textile"))		++retval;
-		if ((*itr)->hasBuilding("refinery"))	++retval;
+		if (province->hasBuilding("weapons"))		++retval;
+		if (province->hasBuilding("wharf"))		++retval;
+		if (province->hasBuilding("textile"))		++retval;
+		if (province->hasBuilding("refinery"))	++retval;
 	}
 	return retval;
 }
@@ -665,11 +671,11 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 	const double targetWeight = (double)target->provinces.size() / (double)totalProvinces;		// the amount of influence from the target country
 
 	// acquire target's cores (always)
-	for (unsigned int j = 0; j < target->cores.size(); j++)
+	for (auto& core: target->getCores())
 	{
-		addCore(target->cores[j]);
-		target->cores[j]->addCore(tag);
-		target->cores[j]->removeCore(target->tag);
+		addCore(core);
+		core->addCore(tag);
+		core->removeCore(target->tag);
 	}
 
 	// everything else, do only if this country actually currently exists
@@ -679,7 +685,6 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 		for (unsigned int j = 0; j < target->provinces.size(); j++)
 		{
 			addProvince(target->provinces[j]);
-			target->provinces[j]->setOwner(self);
 		}
 
 		// acquire target's armies, navies, admirals, and generals
@@ -722,20 +727,21 @@ void EU4::Country::clearArmies()
 }
 
 
-bool EU4::Country::cultureSurvivesInCores()
+bool EU4::Country::cultureSurvivesInCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& theCountries)
 {
 	for (auto core: cores)
 	{
-		if (core->getOwner() == NULL)
+		if (core->getOwnerString() == "")
 		{
 			continue;
 		}
-		if (core->getOwner()->getPrimaryCulture() == primaryCulture)
+		if (core->getCulturePercent(primaryCulture) >= 0.5)
 		{
 			continue;
 		}
 
-		if (core->getCulturePercent(primaryCulture) >= 0.5)
+		auto owner = theCountries.find(core->getOwnerString());
+		if ((owner != theCountries.end()) && (owner->second->getPrimaryCulture() != primaryCulture))
 		{
 			return true;
 		}

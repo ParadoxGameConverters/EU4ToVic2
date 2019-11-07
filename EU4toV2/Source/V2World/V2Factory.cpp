@@ -64,15 +64,17 @@ V2FactoryType::V2FactoryType(shared_ptr<Object> factory)
 }
 
 
-void V2Factory::output(FILE* output) const
+std::ostream& operator<<(std::ostream& output, const V2Factory& factory)
 {
 	// V2 takes care of hiring employees on day 1, provided sufficient starting capital
-	fprintf(output, "state_building=\n");
-	fprintf(output, "{\n");
-	fprintf(output, "\tlevel=%d\n", level);
-	fprintf(output, "\tbuilding = %s\n", type->name.c_str());
-	fprintf(output, "\tupgrade = yes\n");
-	fprintf(output, "}\n");
+	output << "state_building=\n";
+	output << "{\n";
+	output << "\tlevel=" << factory.level << "\n";
+	output << "\tbuilding = "<< factory.type->name << "\n";
+	output << "\tupgrade = yes\n";
+	output << "}\n";
+
+	return output;
 }
 
 

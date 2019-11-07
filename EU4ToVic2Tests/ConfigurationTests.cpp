@@ -149,6 +149,26 @@ TEST(EU4ToVic2_ConfigurationTests, EU4DocumentsDirectoryCanBeSet)
 }
 
 
+TEST(EU4ToVic2_ConfigurationTests, SteamWorkshopDirectoryDefaultsBlank)
+{
+	Configuration testConfiguration;
+	std::stringstream input("");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getSteamWorkshopPath(), "");
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, SteamWorkshopDirectoryCanBeSet)
+{
+	Configuration testConfiguration;
+	std::stringstream input("SteamWorkshopDirectory = \"C:\\SteamWorksopDirectory\"");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getSteamWorkshopPath(), "C:\\SteamWorksopDirectory");
+}
+
+
 TEST(EU4ToVic2_ConfigurationTests, CK2ExportDirectoryDefaultsBlank)
 {
 	Configuration testConfiguration;

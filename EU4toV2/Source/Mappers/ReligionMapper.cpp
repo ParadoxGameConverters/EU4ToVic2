@@ -1,4 +1,4 @@
-/*Copyright (c) 2017 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -22,67 +22,27 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "ReligionMapper.h"
+#include "ReligionMapping.h"
 #include "Log.h"
-#include "Object.h"
-#include "ParadoxParserUTF8.h"
 
 
 
-
-religionMapper* religionMapper::instance = nullptr;
-
-
-
-religionMapper::religionMapper()
+mappers::ReligionMapper::ReligionMapper(std::istream& theStream)
 {
-	LOG(LogLevel::Info) << "Parsing religion mappings";
-
-	shared_ptr<Object> religionMapObj = parser_UTF8::doParseFile("religionMap.txt");
-	if (religionMapObj == NULL)
+	registerKeyword(std::regex("link"), [this](const std::string & unused, std::istream & theStream)
 	{
-		LOG(LogLevel::Error) << "Could not parse file religionMap.txt";
-		exit(-1);
-	}
-	if (religionMapObj->getLeaves().size() < 1)
-	{
-		LOG(LogLevel::Error) << "Failed to parse religionMap.txt";
-		exit(-1);
-	}
+		ReligionMapping theMapping(theStream);
+		for (auto EU4Religion: theMapping.getEU4Religions())
+		{
+			EU4ToVic2ReligionMap.insert(make_pair(EU4Religion, theMapping.getVic2Religion()));
+		}
+	});
 
-	initReligionMap(religionMapObj->getLeaves()[0]);
+	parseStream(theStream);
 }
 
 
-void religionMapper::initReligionMap(shared_ptr<Object> obj)
-{
-	vector<shared_ptr<Object>> rules = obj->getLeaves();
-
-	for (auto rule: rules)
-	{
-		string Vic2Religion;
-		vector<string> EU4Religions;
-
-		for (auto ruleItem: rule->getLeaves())
-		{
-			if (ruleItem->getKey() == "v2")
-			{
-				Vic2Religion = ruleItem->getLeaf();
-			}
-			if (ruleItem->getKey() == "eu4")
-			{
-				EU4Religions.push_back(ruleItem->getLeaf());
-			}
-		}
-
-		for (auto EU4Religion: EU4Religions)
-		{
-			EU4ToVic2ReligionMap.insert(make_pair(EU4Religion, Vic2Religion));
-		}
-	}
-}
-
-
-string religionMapper::GetVic2Religion(const string& EU4Religion)
+std::optional<std::string> mappers::ReligionMapper::getVic2Religion(const std::string& EU4Religion) const
 {
 	auto mapping = EU4ToVic2ReligionMap.find(EU4Religion);
 	if (mapping != EU4ToVic2ReligionMap.end())
@@ -91,6 +51,6 @@ string religionMapper::GetVic2Religion(const string& EU4Religion)
 	}
 	else
 	{
-		return "";
+		return {};
 	}
 }

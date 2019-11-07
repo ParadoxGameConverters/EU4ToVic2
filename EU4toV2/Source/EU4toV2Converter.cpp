@@ -25,7 +25,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "EU4World/World.h"
+#include "Mappers/Ideas/IdeaEffectMapper.h"
 #include "V2World/V2World.h"
+#include <fstream>
 
 
 
@@ -37,8 +39,12 @@ void ConvertEU4ToVic2(const string& EU4SaveFileName)
 	setOutputName(EU4SaveFileName);
 	deleteExistingOutputFolder();
 
-	EU4::world sourceWorld(EU4SaveFileName);
-	V2World destWorld(sourceWorld);
+	std::ifstream ideaEffectsFile("idea_effects.txt");
+	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectsFile);
+	ideaEffectsFile.close();
+
+	EU4::world sourceWorld(EU4SaveFileName, ideaEffectMapper);
+	V2World destWorld(sourceWorld, ideaEffectMapper);
 
 	LOG(LogLevel::Info) << "* Conversion complete *";
 }

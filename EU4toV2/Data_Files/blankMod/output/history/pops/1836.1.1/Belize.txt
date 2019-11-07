@@ -3,7 +3,7 @@
 #Belize (7200/1800 POPS)
 2190 = {
 	artisans = {
-		culture = british
+		culture = afro_caribbean
 		religion = protestant
 		size = 25
 	}
