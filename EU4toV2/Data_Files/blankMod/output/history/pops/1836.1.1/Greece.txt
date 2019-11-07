@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #Macedonia Region (564000) #see Macedonia.txt and Bulgaria.txt for balance of region 
 #under the rule of Ottoman Empire in 1836
 #Salonika (304000/76000 POPS) #now part of Greece 
@@ -2255,6 +2256,8 @@
 
 }
 =======
+=======
+>>>>>>> ef3106d626e8c45ddf8b8f0029a1e9d3bd28c245
 #Macedonia Region (564000) #see Macedonia.txt and Bulgaria.txt for balance of region 
 #under the rule of Ottoman Empire in 1836
 #Salonika (304000/76000 POPS) #now part of Greece 
@@ -4510,4 +4513,7 @@
 	}
 
 }
+<<<<<<< HEAD
 >>>>>>> Idhrendur-mods
+=======
+>>>>>>> ef3106d626e8c45ddf8b8f0029a1e9d3bd28c245
