@@ -47,6 +47,7 @@ class Configuration: commonItems::parser
 
 		std::string getEU4Path() { return EU4Path; }
 		std::string getEU4DocumentsPath() const { return EU4DocumentsPath; }
+		std::string getSteamWorkshopPath() const { return SteamWorkshopPath; }
 		std::string getCK2ExportPath() const { return CK2ExportPath; }
 		std::string getVic2Path() { return Vic2Path; }
 		std::string getVic2DocumentsPath() { return Vic2DocumentsPath; }
@@ -81,6 +82,7 @@ class Configuration: commonItems::parser
 		// options from configuration.txt
 		std::string EU4Path;
 		std::string EU4DocumentsPath;
+		std::string SteamWorkshopPath;
 		std::string CK2ExportPath;
 		std::string Vic2Path;
 		std::string Vic2DocumentsPath;

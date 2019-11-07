@@ -43,4 +43,14 @@ EU4::Mod::Mod(std::istream& theStream)
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+
+	if (path != "")
+	{
+		int lastDot = path.find_last_of('.');
+		if (lastDot != std::string::npos)
+		{
+			std::string ending = path.substr(lastDot + 1, path.size());
+			compressed = (ending == "zip") || (ending == "bin");
+		}
+	}
 }

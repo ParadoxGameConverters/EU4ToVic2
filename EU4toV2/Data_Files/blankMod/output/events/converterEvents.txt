@@ -358,55 +358,88 @@ country_event = {
 
 	option = {
 		name = EVTOPTA350005
+<<<<<<< HEAD
+		any_owned = {
+			limit = {
+				continent = africa
+=======
 		847 = { 
 			limit = {
 				owned_by = TUR
+>>>>>>> Idhrendur-mods
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_897 = { # Aleppo
+=======
 848 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_903 = { # Damascus
+=======
 894 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_910 = { # Transjordan
+=======
 896 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_915 = { # Lebanon
+=======
 898 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_921 = { # Palestine
+=======
 EGY_897 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		TUR_855 = { # Cyprus
+=======
 EGY_903 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_843 = { # Crete
+=======
 EGY_910 = { 
 			limit = {
 				owned_by = TUR
@@ -415,90 +448,139 @@ EGY_910 = {
 			remove_core = TUR
 		}
 EGY_915 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_1842 = { # Darfur
+=======
 EGY_921 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_1834 = { # Dongola
+=======
 NEJ_1156 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_1758 = { # Egyptian Desert
+=======
 EGY_1746 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		ENG_1843 = { # Equatoria
+=======
 EGY_1750 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		ENG_1848 = { # Eritrea
+=======
 EGY_1753 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_1838 = { # Kordofan
+=======
 EGY_1758 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_1750 = { # Lower Egypt
+=======
 EGY_1762 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_1753 = { # Matruh
+=======
 EGY_1771 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_1762 = { # Middle Egypt
+=======
 EGY_1827 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_1746 = { # Sinai
+=======
 EGY_1834 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_1827 = { # Sudan
+=======
 EGY_1838 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
 			secede_province = EGY
 			remove_core = TUR
 		}
+<<<<<<< HEAD
+		EGY_1771 = { # Upper Egypt
+=======
 ENG_1848 = { 
+>>>>>>> Idhrendur-mods
 			limit = {
 				owned_by = TUR
 			}
@@ -714,7 +796,10 @@ country_event = {
 		JAI = { exists = no }
 		SHI = { exists = no }
 		has_global_flag = der_postcolonialism
+<<<<<<< HEAD
+=======
 		NOT = { has_global_flag = india_angered }
+>>>>>>> Idhrendur-mods
 	}
 	
 	mean_time_to_happen = {
@@ -739,7 +824,10 @@ country_event = {
 		1271 = { any_pop = { militancy = 5 } }
 		1268 = { any_pop = { militancy = 5 } }
 		1235 = { any_pop = { militancy = 5 } }
+<<<<<<< HEAD
+=======
 		set_global_flag = india_angered
+>>>>>>> Idhrendur-mods
 	}
 }
 country_event = {
@@ -748,6 +836,10 @@ country_event = {
 	desc = "EVTDESC451005"
 	major = yes
 	picture = "Riot"
+<<<<<<< HEAD
+	fire_only_once = yes
+=======
+>>>>>>> Idhrendur-mods
 	
 	trigger = {
 		ZUL = { exists = no }
@@ -755,7 +847,10 @@ country_event = {
 		owns = 2112
 		owns = 2113
 		has_global_flag = der_postcolonialism
+<<<<<<< HEAD
+=======
 		NOT = { has_global_flag = zulu_angered }
+>>>>>>> Idhrendur-mods
 	}
 	
 	mean_time_to_happen = {
@@ -780,7 +875,10 @@ country_event = {
 			consciousness = 8
 			militancy = 8
 		}
+<<<<<<< HEAD
+=======
 		set_global_flag = zulu_angered
+>>>>>>> Idhrendur-mods
 	}
 }
 country_event = {

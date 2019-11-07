@@ -46,10 +46,12 @@ class Mods: commonItems::parser
 
 	private:
 		void loadEU4ModDirectory(const Configuration& theConfiguration);
+		void loadSteamWorkshopDirectory(const Configuration& theConfiguration);
 		void loadCK2ExportDirectory(const Configuration& theConfiguration);
-		void loadModDirectory(const std::string& directory, const Configuration& theConfiguration);
+		void loadModDirectory(const std::string& searchDirectory);
 
 		std::map<std::string, std::string> possibleMods;
+		std::map<std::string, std::string> possibleCompressedMods;
 };
 
 }
