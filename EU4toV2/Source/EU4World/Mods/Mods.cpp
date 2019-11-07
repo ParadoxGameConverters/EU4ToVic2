@@ -196,18 +196,29 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 					}
 					else
 					{
-						std::string fullArchiveName = theMod.getPath();
-						if (Utils::DoesFileExist(fullArchiveName))
+						std::string recordDirectory;
+						if (Utils::doesFolderExist(theMod.getPath()))
 						{
-							std::string trimmedFilename = filename.substr(0, pos);
-
-							possibleCompressedMods.insert(std::make_pair(theMod.getName(), fullArchiveName));
-							possibleCompressedMods.insert(std::make_pair("mod/" + filename, fullArchiveName));
-							possibleCompressedMods.insert(std::make_pair(trimmedFilename, fullArchiveName));
-							Log(LogLevel::Debug) << "\tFound a compessed mod named " << theMod.getName() <<
-								" with a mod file at " << searchDirectory << "/mod/" + filename <<
-								" and itself at " << fullArchiveName;
+							recordDirectory = theMod.getPath();
 						}
+						else if (Utils::doesFolderExist(searchDirectory + "/" + theMod.getPath()))
+						{
+							recordDirectory = searchDirectory + "/" + theMod.getPath();
+						}
+						else
+						{
+							std::invalid_argument e("");
+							throw e;
+						}
+
+						std::string trimmedFilename = filename.substr(0, pos);
+
+						possibleCompressedMods.insert(std::make_pair(theMod.getName(), recordDirectory));
+						possibleCompressedMods.insert(std::make_pair("mod/" + filename, recordDirectory));
+						possibleCompressedMods.insert(std::make_pair(trimmedFilename, recordDirectory));
+						Log(LogLevel::Debug) << "\tFound a compessed mod named " << theMod.getName() <<
+							" with a mod file at " << searchDirectory << "/mod/" + filename <<
+							" and itself at " << recordDirectory;
 					}
 				}
 			}
