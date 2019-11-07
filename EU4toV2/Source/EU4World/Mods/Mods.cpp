@@ -197,11 +197,11 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 					else
 					{
 						std::string recordDirectory;
-						if (Utils::doesFolderExist(theMod.getPath()))
+						if (Utils::DoesFileExist(theMod.getPath()))
 						{
 							recordDirectory = theMod.getPath();
 						}
-						else if (Utils::doesFolderExist(searchDirectory + "/" + theMod.getPath()))
+						else if (Utils::DoesFileExist(searchDirectory + "/" + theMod.getPath()))
 						{
 							recordDirectory = searchDirectory + "/" + theMod.getPath();
 						}
@@ -224,7 +224,7 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 			}
 			catch (std::exception e)
 			{
-				LOG(LogLevel::Warning) << "Error while reading " << searchDirectory << " / mod / " << filename << ". " \
+				LOG(LogLevel::Warning) << "Error while reading " << searchDirectory << "/mod/" << filename << ". " \
 					"Mod will not be useable for conversions.";
 			}
 		}
