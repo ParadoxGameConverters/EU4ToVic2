@@ -300,8 +300,6 @@ country_event = { #The Turkish Question
 			}
 		}
 	}
-<<<<<<< HEAD
-=======
 }
 country_event = { #Not-so-United Kingdom - England flees
 	id = 452011
@@ -414,5 +412,4 @@ country_event = { #Not-so-United Kingdom - Scotland flees
 		remove_accepted_culture = scottish
 		change_tag = ENL
 	}
->>>>>>> Idhrendur-mods
 }
