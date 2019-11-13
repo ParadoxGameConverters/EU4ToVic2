@@ -3119,7 +3119,7 @@
 #Corfu (112200/28000 POPS)
 826 = {
 	bureaucrats = {
-		culture = greek
+		culture = british
 		religion = protestant
 		size = 5
 	}
