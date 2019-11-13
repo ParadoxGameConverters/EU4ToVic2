@@ -44,4 +44,6 @@ EU4toV2/CMakeFiles/EU4ToVic2.dir/depend.make
 EU4toV2/CMakeFiles/EU4ToVic2.dir/flags.make
 EU4toV2/CMakeFiles/EU4ToVic2.dir/link.txt
 EU4toV2/CMakeFiles/EU4ToVic2.dir/progress.make
+EU4ToVic2Tests/EU4ToVic2Tests.vcxproj.user
+EU4ToVic2Tests/EU4ToVic2Tests/EU4ToVic2Tests.exe
 .gitmodules

@@ -278,7 +278,7 @@ political_decisions = {
 			2231 = { add_core = STL } #Saint Lucia
 			2229 = { add_core = BBD } #Barbados
 			2233 = { add_core = GRD } #Grenada
-			2234 = { add_core = CUR remove_core = VNZ } #Curaçao
+			2234 = { add_core = CUR remove_core = VNZ } #CuraÃ§ao
 			2235 = { add_core = CUR remove_core = VNZ }
 			2409 = { add_core = STV } #Saint Vincent and the Grenadines
 			#Further addictions
@@ -2045,8 +2045,8 @@ political_decisions = {
 			}
 			KOK = { primary_culture = kirgiz civilized = yes capital = 1189 government = presidential_dictatorship }
 			1181 = { change_province_name = "Akmolinsk" }
-			1185 = { state_scope = { change_region_name = "Žetysu" } }
-			1207 = { change_province_name = "Dušanbe" }
+			1185 = { state_scope = { change_region_name = "Å½etysu" } }
+			1207 = { change_province_name = "DuÅ¡anbe" }
 		}
 	}
 	postcol_CRB = {
