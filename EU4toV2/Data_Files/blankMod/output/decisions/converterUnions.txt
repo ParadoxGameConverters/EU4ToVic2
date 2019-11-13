@@ -1,6 +1,4 @@
 political_decisions = {
-<<<<<<< HEAD
-=======
 	nogovernment = { #Fallback for "no gov converted, whoopsie"
 		potential = {
 			NOT = {
@@ -28,7 +26,6 @@ political_decisions = {
 			factor = 1
 		}
 	}
->>>>>>> Idhrendur-mods
 	centralize_hre = {
 		news = yes
 		news_desc_long = "hre_NEWS_LONG"
@@ -3103,8 +3100,6 @@ political_decisions = {
 				civilized = yes
 				capital = 415
 			}
-<<<<<<< HEAD
-=======
 		any_country = { # Abkhazia 
 				limit = {
 					tag = ABK 
@@ -3731,7 +3726,6 @@ political_decisions = {
 			any_country = { limit = { tag = D48 NOT = { exists = D48 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D48
 			any_country = { limit = { tag = D49 NOT = { exists = D49 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D49
 			any_country = { limit = { tag = D50 NOT = { exists = D50 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D50
->>>>>>> Idhrendur-mods
 			#Cores for regional countries
 			TUR_806 = { add_core = MCD } #FYR Macedonia
 			TUR_788 = { add_core = BOS } #Bosnia
@@ -3911,8 +3905,6 @@ political_decisions = {
 			FRA_420 = { add_core = BRT } #Brittany
 			473 = { add_core = CRS } #Corsica
 			FRA_418 = { add_core = NRM } #Normandy
-<<<<<<< HEAD
-=======
 			1095 = { add_core = ABK } # Abkhazia
 			71 = { add_core = ACA } # Acadia
 			72 = { add_core = ACA }
@@ -3948,7 +3940,6 @@ political_decisions = {
 			1446 = { add_core = TMR }
 			735 = { add_core = TST } # Bozen
 			2535 = { add_core = VTU } #Vanuatu
->>>>>>> Idhrendur-mods
 			#Exaggerated cultural Heimaten fix
 			PER = {
 				any_owned_province = {
@@ -4006,8 +3997,6 @@ political_decisions = {
 					remove_core = AZB
 				}
 			}
-<<<<<<< HEAD
-=======
 			CHI = {
 				any_owned_province = {
 					limit = {
@@ -4021,7 +4010,6 @@ political_decisions = {
 				remove_core = MGL
 				add_core = IMG
 			}
->>>>>>> Idhrendur-mods
 			FRA_399 = { remove_core = BEL }
 			#British culture no more existing
 			any_country = { #Australia
@@ -4616,10 +4604,7 @@ political_decisions = {
 						owner = {
 							in_sphere = THIS
 						}
-<<<<<<< HEAD
-=======
 						province_id = 1384
->>>>>>> Idhrendur-mods
 					}
 				}
 			}
@@ -6934,10 +6919,6 @@ political_decisions = {
 			}
 			NOT = { exists = LBY }
 			civilized = yes
-<<<<<<< HEAD
-			any_owned = { is_core = LBY } #Just to avoid weirdness
-=======
->>>>>>> Idhrendur-mods
 		}	
 		allow = {
 			war = no
@@ -6985,9 +6966,6 @@ political_decisions = {
 			factor = 1
 		}
 	}
-<<<<<<< HEAD
-}
-=======
 	moldavia_moldova = {
 		potential = {
 			exists = ROM
@@ -7112,4 +7090,3 @@ political_decisions = {
 		}
 	}
 }
->>>>>>> Idhrendur-mods
