@@ -650,8 +650,8 @@ country_event = {
 	option = {
 		name = "EVTOPTA451003"
 		585 = { add_core = LIP }
-		release = LIP
-		create_vassal = LIP
+		#release = LIP
+		#create_vassal = LIP
 	}
 }
 country_event = {
@@ -1229,8 +1229,8 @@ country_event = {
 	option = {
 		name = "EVTOPTA451003"
 		585 = { add_core = LIP }
-		release = LIP
-		create_vassal = LIP
+		#release = LIP
+		#create_vassal = LIP
 	}
 }
 country_event = {
