@@ -1,6 +1,6 @@
 version: dev.{build}
 skip_tags: true
-image: Visual Studio 2019 Preview
+image: Visual Studio 2019 Test
 configuration: Release
 environment:
   BOOST_INCLUDE: C:\Libraries\boost_1_71_0
