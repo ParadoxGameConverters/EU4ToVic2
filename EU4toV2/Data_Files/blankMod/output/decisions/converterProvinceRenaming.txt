@@ -4413,9 +4413,6 @@ political_decisions = {
 		ai_will_do = {
 			factor = 1
 		}
-<<<<<<< HEAD
-	}
-=======
 	}
 ##################
 # 2214 - Santo Domingo
@@ -4815,4 +4812,3 @@ political_decisions = {
 		}
 	}
 }
->>>>>>> Idhrendur-mods

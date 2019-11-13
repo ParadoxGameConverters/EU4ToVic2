@@ -239,17 +239,10 @@ political_decisions = {
 				set_country_flag = buro_independence
 			}
 			FRA_1901 = {
-<<<<<<< HEAD
-				add_core = MOS
-				flashpoint_tension = 10
-			}
-			MOS = {
-=======
 				add_core = BKF
 				flashpoint_tension = 10
 			}
 			BKF = {
->>>>>>> Idhrendur-mods
 				add_accepted_culture = dyula
 				set_country_flag = buro_independence
 			}
@@ -402,11 +395,7 @@ political_decisions = {
 				set_country_flag = buro_independence
 			}
 			ENG_2068 = {
-<<<<<<< HEAD
-				add_core = RHO
-=======
 				add_core = ZBW
->>>>>>> Idhrendur-mods
 				flashpoint_tension = 10
 			}
 			ENG_2014 = {
@@ -423,11 +412,7 @@ political_decisions = {
 			}
 			any_country = {
 				limit = {
-<<<<<<< HEAD
-					tag = RHO
-=======
 					tag = ZBW
->>>>>>> Idhrendur-mods
 					exists = no
 				}
 				primary_culture = shona
