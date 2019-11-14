@@ -17,7 +17,7 @@ build_script:
     msbuild EU4ToVic2Tests/EU4ToVic2Tests.vcxproj /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 test_script:
 - ps: >-
-    vstest.console /logger:Appveyor frontend\Frontend.Core.Tests\bin\Release\Frontend.Core.Tests.dll
+    vstest.console.exe /logger:Appveyor frontend\Frontend.Core.Tests\bin\Release\Frontend.Core.Tests.dll
 
     EU4ToVic2Tests\Release\EU4ToVic2Tests.exe --gtest_output=xml:tests.xml
 
