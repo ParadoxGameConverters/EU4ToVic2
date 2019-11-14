@@ -8,6 +8,8 @@ build_script:
 - cmd: >-
     git submodule update --init --recursive
 
+    echo %BOOST_INCLUDE%
+
     msbuild EU4ToVic2.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
     msbuild EU4toV2/EU4ToV2.vcxproj -property:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
