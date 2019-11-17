@@ -2045,8 +2045,8 @@ political_decisions = {
 			}
 			KOK = { primary_culture = kirgiz civilized = yes capital = 1189 government = presidential_dictatorship }
 			1181 = { change_province_name = "Akmolinsk" }
-			1185 = { state_scope = { change_region_name = "Å½etysu" } }
-			1207 = { change_province_name = "DuÅ¡anbe" }
+			1185 = { state_scope = { change_region_name = "Žetysu" } }
+			1207 = { change_province_name = "Dušanbe" }
 		}
 	}
 	postcol_CRB = {
