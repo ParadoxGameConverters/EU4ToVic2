@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EU4ToV2", "EU4toV2\EU4ToV2.vcxproj", "{84ABCE0D-17FE-44A5-8684-5A8AA04E80B9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EU4ToV2", "EU4toV2/EU4ToV2.vcxproj", "{84ABCE0D-17FE-44A5-8684-5A8AA04E80B9}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0918DC8B-8D29-4B01-B83E-0896ECDF88A6} = {0918DC8B-8D29-4B01-B83E-0896ECDF88A6}
 	EndProjectSection
@@ -14,8 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend.Core", "frontend\F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend.Core.Tests", "frontend\Frontend.Core.Tests\Frontend.Core.Tests.csproj", "{01F3A84A-BB75-4A4C-A34A-BC10F09E252C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EU4ToVic2Tests", "EU4ToVic2Tests\EU4ToVic2Tests.vcxproj", "{54DB009B-3320-4565-9489-9E713AE77900}"
-EndProject
+#Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EU4ToVic2Tests", "EU4ToVic2Tests\EU4ToVic2Tests.vcxproj", "{54DB009B-3320-4565-9489-9E713AE77900}"
+#EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
