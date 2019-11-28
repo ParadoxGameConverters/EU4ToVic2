@@ -3,4 +3,5 @@ Language: Cpp
 DerivePointerAlignment: false
 PointerAlignment: Left
 UseTab: ForIndentation
+IndentWidth: 8
 BreakBeforeBraces: Allman
