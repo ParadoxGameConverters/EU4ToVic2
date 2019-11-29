@@ -74,7 +74,8 @@ namespace EU4
 
 			void addProvince(Province*);
 			void addCore(Province*);
-			void						setInHRE(bool _inHRE)								{ inHRE = _inHRE; }
+	                void addState(const std::string area, double prosperity);
+	                void						setInHRE(bool _inHRE)								{ inHRE = _inHRE; }
 			void						setEmperor(bool _emperor)							{ holyRomanEmperor = _emperor; }
 			void						setCelestialEmperor(bool _celestialEmperor)			{ celestialEmperor = _celestialEmperor; }
 			bool						hasModifier(string) const;
@@ -195,6 +196,7 @@ namespace EU4
 
 			map<string, string> namesByLanguage;		// the names of this country in different localisations
 			map<string, string> adjectivesByLanguage;	// the adjectives for this country in different localisations
+	                map<string, double> states; // Areas which have been made states by this country.
 	};
 }
 

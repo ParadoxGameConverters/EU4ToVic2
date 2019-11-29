@@ -87,6 +87,7 @@ class world: private commonItems::parser
 		void loadRevolutionTarget();
 		void addProvinceInfoToCountries();
 		void loadDiplomacy(const shared_ptr<Object> EU4SaveObj);
+		void loadMapAreaData(const shared_ptr<Object> mapAreaObject);
 
 		void loadRegions();
 		void loadEU4RegionsNewVersion();
@@ -108,8 +109,9 @@ class world: private commonItems::parser
 		void removeLandlessNations();
 
 		void setEmpires();
+	        void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas);
 
-		std::shared_ptr<EU4::Country> getCountry(string tag) const;
+	        std::shared_ptr<EU4::Country> getCountry(string tag) const;
 
 		string holyRomanEmperor;
 		string celestialEmperor;
