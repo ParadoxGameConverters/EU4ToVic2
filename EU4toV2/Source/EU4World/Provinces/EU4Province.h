@@ -67,6 +67,7 @@ class Province: commonItems::parser
 		bool hasGreatProject(const std::string& greatProject) const;
 		double getCulturePercent(const std::string& culture) const;
 
+		std::string getArea() const { return areaName; }
 		int getNum() const { return num; }
 		std::string getName() const { return name; }
 		std::string getOwnerString() const { return ownerString; }
@@ -74,7 +75,8 @@ class Province: commonItems::parser
 		std::set<std::string> getCores() const { return cores; }
 		bool inHre() const { return inHRE; }
 		bool isColony() const { return colony; }
-		bool wasColonised() const { return hadOriginalColoniser || provinceHistory->wasColonized(); }
+	        bool isState() const { return stated; }
+	        bool wasColonised() const { return hadOriginalColoniser || provinceHistory->wasColonized(); }
 		bool hasModifier(const std::string& modifierName) const { return modifiers.count(modifierName) > 0; }
 		std::vector<EU4::PopRatio> getPopRatios() const { return provinceHistory->getPopRatios(); }
 		std::optional<date> getFirstOwnedDate() const { return provinceHistory->getFirstOwnedDate(); }
@@ -89,8 +91,12 @@ class Province: commonItems::parser
 		double getTotalDevModifier() const { return devModifier; }
 		ProvinceStats getProvinceStats() const { return provinceStats; }
 		std::string getTradeGoods() const { return tradeGoods; }
+	        double getProsperity() const { return prosperity; }
 
-	private:
+	        void setArea(const std::string& a) { areaName = a; }
+	        void makeState(double p);
+
+	      private:
 		void determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes);
 		BuildingWeightEffects getProvBuildingWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes) const;
 		double getTradeGoodPrice() const;
@@ -116,6 +122,7 @@ class Province: commonItems::parser
 		double manpower = 0.0;
 		double totalWeight = 0.0;
 		std::string tradeGoods;
+		std::string areaName;
 		double taxIncome = 0;
 		double productionIncome = 0;
 		double manpowerWeight = 0;
@@ -123,6 +130,8 @@ class Province: commonItems::parser
 		double devModifier = 0;
 		int centerOfTradeLevel = 0;
 		ProvinceStats provinceStats;
+	        double prosperity = 0;
+	        bool stated = false;
 };
 
 }
