@@ -74,7 +74,7 @@ namespace EU4
 
 			void addProvince(Province*);
 			void addCore(Province*);
-	                void addState(const std::string area, double prosperity);
+	                void addState(const std::string area&, double prosperity);
 	                void						setInHRE(bool _inHRE)								{ inHRE = _inHRE; }
 			void						setEmperor(bool _emperor)							{ holyRomanEmperor = _emperor; }
 			void						setCelestialEmperor(bool _celestialEmperor)			{ celestialEmperor = _celestialEmperor; }
