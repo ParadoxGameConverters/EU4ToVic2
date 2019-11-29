@@ -186,6 +186,11 @@ double EU4::Province::getCulturePercent(const std::string& culture) const
 	return culturePercent;
 }
 
+void EU4::Province::makeState(double p)
+{
+	stated = true;
+	prosperity = p;
+}
 
 void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes)
 {

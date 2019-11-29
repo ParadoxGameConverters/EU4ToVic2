@@ -44,6 +44,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "ParadoxParserUTF8.h"
+#include "StringUtils.h"
 #include <set>
 #include <algorithm>
 #include <exception>
@@ -134,6 +135,21 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 	registerKeyword(std::regex("diplomacy"), [this](const std::string& diplomacyText, std::istream& theStream) {
 		auto diplomacyObject = commonItems::convert8859Object(diplomacyText, theStream);
 		loadDiplomacy(diplomacyObject);
+	});
+	registerKeyword(std::regex("map_area_data"), [this](const std::string& mapAreaKey, std::istream& theStream) {
+		// Add the missing equals sign to help out the object parser.
+		auto mapAreaObject = commonItems::convert8859Object(mapAreaKey + "=", theStream);
+		auto vec = mapAreaObject->getValue(mapAreaKey);
+		if (0 < vec.size())
+		{
+			loadMapAreaData(vec[0]);
+		}
+		else
+		{
+			LOG(LogLevel::Warning) << "Could not find map area "
+			                          "data, state information "
+			                          "will not be loaded.";
+		}
 	});
 	registerKeyword(std::regex("[A-Za-z0-9\\_]+"), commonItems::ignoreItem);
 
@@ -337,6 +353,31 @@ void EU4::world::loadDiplomacy(const shared_ptr<Object> EU4SaveObj)
 	}
 }
 
+void EU4::world::loadMapAreaData(const shared_ptr<Object> mapAreaObject)
+{
+	auto areas = mapAreaObject->getLeaves();
+	for (auto area : areas)
+	{
+		std::string areaName = area->getKey();
+		auto state = area->safeGetObject("state");
+		if (state == NULL)
+		{
+			continue;
+		}
+		auto countries = state->getValue("country_state");
+		for (auto country : countries)
+		{
+			auto tag = stringutils::remQuotes(country->safeGetString("country"));
+			auto eu4Country = getCountry(tag);
+			if (eu4Country == NULL)
+			{
+				continue;
+			}
+			auto prosperity = country->safeGetFloat("prosperity");
+			eu4Country->addState(areaName, prosperity);
+		}
+	}
+}
 
 void EU4::world::loadRegions()
 {
@@ -352,6 +393,18 @@ void EU4::world::loadRegions()
 	}
 }
 
+void EU4::world::assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas)
+{
+        for (const auto& area : theAreas)
+        {
+		std::string areaName = area.first;
+		for (const int provNum : area.second)
+		{
+			auto& province = provinces->getProvince(provNum);
+                        province.setArea(areaName);
+		}
+	}
+}
 
 void EU4::world::loadEU4RegionsOldVersion()
 {
@@ -370,6 +423,7 @@ void EU4::world::loadEU4RegionsOldVersion()
 	std::ifstream theStream(regionFilename);
 	EU4::areas installedAreas(theStream);
 	theStream.close();
+        assignProvincesToAreas(installedAreas.getAreas());
 
 	regions = std::make_unique<Regions>(installedAreas);
 }
@@ -393,6 +447,7 @@ void EU4::world::loadEU4RegionsNewVersion()
 	std::ifstream areaStream(areaFilename);
 	EU4::areas installedAreas(areaStream);
 	areaStream.close();
+        assignProvincesToAreas(installedAreas.getAreas());
 
 	std::ifstream regionStream(regionFilename);
 	regions = std::make_unique<Regions>(installedAreas, regionStream);

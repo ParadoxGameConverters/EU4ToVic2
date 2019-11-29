@@ -601,6 +601,17 @@ void EU4::Country::addCore(EU4::Province* core)
 	cores.push_back(core);
 }
 
+void EU4::Country::addState(const std::string area, double prosperity)
+{
+	states[area] = prosperity;
+	for (EU4::Province* p : provinces)
+	{
+		if (p->getArea() == area)
+		{
+			p->makeState(prosperity);
+		}
+	}
+}
 
 bool EU4::Country::hasModifier(string modifier) const
 {
