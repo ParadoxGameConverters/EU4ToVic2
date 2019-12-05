@@ -349,8 +349,7 @@ link = { vic2 = bedouin eu4 = bedouin_arabic eu4 = omani_culture eu4 = yemeni_cu
 link = { vic2 = berber eu4 = berber eu4 = gaetuli eu4 = garamantian eu4 = tunisian eu4 = algerian eu4 = berber eu4 = gaetuli eu4 = garamantian }
 link = { vic2 = turkish eu4 = hephthalite eu4 = turkish eu4 = pecheneg }
 
-# Iranian - persian, east_persian, baluchi
-# and colonial Iranian-Turanian
+# Iranian - persian, east_persian, baluchi - and colonial Iranian/Turanian
 link = { vic2 = dinajidad eu4 = tajik eu4 = persian eu4 = saka eu4 = luri eu4 = khorasani eu4 = mazandarani eu4 = parthian eu4 = khuzi eu4 = lurish eu4 = persian eu4 = luri_colonial eu4 = tabari eu4 = scythian eu4 = sarmatian eu4 = iazyges eu4 = sogdian eu4 = tocharian eu4 = tajihk eu4 = east_persian eu4 = afghani eu4 = afghan eu4 = pashtun eu4 = kushan eu4 = baluchi eu4 = baloch eu4 = hazara eu4 = kurdish region = south_america_superregion }
 link = { vic2 = dinajidad eu4 = tajik eu4 = persian eu4 = saka eu4 = luri eu4 = khorasani eu4 = mazandarani eu4 = parthian eu4 = khuzi eu4 = lurish eu4 = persian eu4 = luri_colonial eu4 = tabari eu4 = scythian eu4 = sarmatian eu4 = iazyges eu4 = sogdian eu4 = tocharian eu4 = tajihk eu4 = east_persian eu4 = afghani eu4 = afghan eu4 = pashtun eu4 = kushan eu4 = baluchi eu4 = baloch eu4 = hazara eu4 = kurdish region = north_america_superregion }
 link = { vic2 = dinajidad eu4 = tajik eu4 = persian eu4 = saka eu4 = luri eu4 = khorasani eu4 = mazandarani eu4 = parthian eu4 = khuzi eu4 = lurish eu4 = persian eu4 = luri_colonial eu4 = tabari eu4 = scythian eu4 = sarmatian eu4 = iazyges eu4 = sogdian eu4 = tocharian eu4 = tajihk eu4 = east_persian eu4 = afghani eu4 = afghan eu4 = pashtun eu4 = kushan eu4 = baluchi eu4 = baloch eu4 = hazara eu4 = kurdish region = central_america_superregion }
