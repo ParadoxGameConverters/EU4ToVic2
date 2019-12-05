@@ -87,6 +87,7 @@ class V2Province
 
 		void				clearCores()									{ cores.clear(); }
 		void				setCoastal(bool _coastal)					{ coastal = _coastal; }
+		void				setClimate(string _climate)					{ climate = _climate; }
 		void				setName(string _name)						{ name = _name; }
 		void				setOwner(string _owner)						{ owner = _owner; }
 		void				setController(string _controller)						{ controller = _controller; }
@@ -97,6 +98,7 @@ class V2Province
 		void				setRailLevel(int level)						{ railLevel = level; }
 		void				setResettable(const bool _resettable)	{ resettable = _resettable; }
 		void				setSlaveProportion(const double _pro)	{ slaveProportion = _pro; }
+		void				setTerrain(string _terrain)					{ terrain = _terrain; }
 
 		const EU4::Province*	getSrcProvince()		const { return srcProvince; }
 		int						getOldPopulation()	const	{ return oldPopulation; }
@@ -108,6 +110,8 @@ class V2Province
 		string					getController()				const { return controller; }
 		int						getNum()					const { return num; }
 		string					getName()				const { return name; }
+		string					getClimate()				const { return climate; }
+		string					getTerrain()				const { return terrain; }
 		bool						isCoastal()				const { return coastal; }
 		bool						hasNavalBase()			const { return (navalBaseLevel > 0); }
 		int						getNavalBaseLevel()	const { return navalBaseLevel; }
@@ -164,7 +168,8 @@ class V2Province
 		double						slaveProportion;
 		string						rgoType;
 		string						terrain;
-		int							lifeRating;
+	        string                                          climate;
+	        int							lifeRating;
 		bool							slaveState;
 		int							unitNameCount[num_reg_categories];
 		int							fortLevel;

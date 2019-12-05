@@ -59,7 +59,9 @@ class V2World
 	private:
 		void importProvinces();
 		set<string> discoverProvinceFilenames();
+		void importProvinceClimates();
 		void importProvinceLocalizations(const string& file);
+		void importProvinceTerrains();
 		bool isAProvinceLocalization(const string& line);
 
 		void importDefaultPops();
