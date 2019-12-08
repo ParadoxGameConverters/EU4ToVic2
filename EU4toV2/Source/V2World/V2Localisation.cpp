@@ -72,31 +72,33 @@ void V2Localisation::SetPartyName(size_t partyIndex, const std::string& language
 	}
 }
 
-void V2Localisation::WriteToStream(std::ostream& out) const
+std::ostream& operator<<(std::ostream& out, const V2Localisation& localisation)
 {
-	out << Convert(tag);
-	for (const auto& localisedName : name)
+	out << V2Localisation::Convert(localisation.tag);
+	for (const auto& localisedName: localisation.name)
 	{
-		out << ';' << Convert(localisedName);
+          out << ';' << V2Localisation::Convert(localisedName);
 	}
 	out << "x\n";
 
-	out << Convert(tag) << "_ADJ";
-	for (const auto& localisedAdjective : adjective)
+	out << V2Localisation::Convert(localisation.tag) << "_ADJ";
+	for (const auto& localisedAdjective: localisation.adjective)
 	{
-		out << ';' << Convert(localisedAdjective);
+          out << ';' << V2Localisation::Convert(localisedAdjective);
 	}
 	out << "x\n";
 
-	for (const auto& party : parties)
+	for (const auto& party: localisation.parties)
 	{
-		out << Convert(party.key);
+		out << V2Localisation::Convert(party.key);
 		for (const auto& localisedPartyName : party.name)
 		{
-			out << ';' << Convert(localisedPartyName);
+			out << ';' << V2Localisation::Convert(localisedPartyName);
 		}
 		out << "x\n";
 	}
+
+	return out;
 }
 
 std::string V2Localisation::convertCountryFileName(const std::string countryFileName) const

@@ -449,12 +449,9 @@ void V2Country::outputToCommonCountriesFile(FILE* output) const
 }
 
 
-void V2Country::outputLocalisation(FILE* output) const
+void V2Country::outputLocalisation(std::ostream& output) const
 {
-	std::ostringstream localisationStream;
-	localisation.WriteToStream(localisationStream);
-	std::string localisationString = localisationStream.str();
-	fwrite(localisationString.c_str(), sizeof(std::string::value_type), localisationString.size(), output);
+	 output << localisation;
 }
 
 
