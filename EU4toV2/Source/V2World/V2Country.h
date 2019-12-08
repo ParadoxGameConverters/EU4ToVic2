@@ -81,7 +81,7 @@ class V2Country
 
 		void								output() const;
 		void								outputToCommonCountriesFile(FILE*) const;
-		void								outputLocalisation(FILE*) const;
+		void outputLocalisation(std::ostream& output) const;
 		void								outputOOB() const;
 		void initFromEU4Country(
 			const EU4::Regions& eu4Regions,
