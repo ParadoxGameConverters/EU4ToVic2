@@ -1912,11 +1912,10 @@ void V2World::output() const
 		LOG(LogLevel::Debug) << "It's not a random world";
 	}
 
-	FILE* localisationFile;
-	if (fopen_s(&localisationFile, (localisationPath + "/0_Names.csv").c_str(), "a") != 0)
+	std::ofstream localisationFile(localisationPath + "/0_Names.csv", std::ofstream::app);
+	if (!localisationFile.is_open())
 	{
-		LOG(LogLevel::Error) << "Could not update localisation text file";
-		exit(-1);
+		throw(std::runtime_error("Could not update localisation text file"));
 	}
 
 	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
@@ -1928,7 +1927,7 @@ void V2World::output() const
 			country.second->outputLocalisation(localisationFile);
 		}
 	}
-	fclose(localisationFile);
+	localisationFile.close();
 
 	LOG(LogLevel::Debug) << "Writing provinces";
 	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces");

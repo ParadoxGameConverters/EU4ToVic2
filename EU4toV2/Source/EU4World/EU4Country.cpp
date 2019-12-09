@@ -580,7 +580,15 @@ void EU4::Country::readFromCommonCountry(const std::string& fileName, const std:
 
 void EU4::Country::setLocalisationName(const string& language, const string& name)
 {
-	namesByLanguage[language] = name;
+	if (name.size() == 1)
+	{
+		std::string newName = name + name;
+		namesByLanguage[language] = newName;
+	}
+	else
+	{
+		namesByLanguage[language] = name;
+	}
 }
 
 

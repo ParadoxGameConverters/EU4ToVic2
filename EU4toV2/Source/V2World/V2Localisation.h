@@ -56,7 +56,7 @@ public:
 
 	// Writes a V2-formatted localisation info for all localised elements as:
 	// key;translation0;translation1;...;;;x
-	void WriteToStream(std::ostream&) const;
+	friend std::ostream& operator<<(std::ostream& out, const V2Localisation& localisation);
 
 	// Converts the country file name
 	std::string convertCountryFileName(const std::string) const;
@@ -87,5 +87,8 @@ private:
 	};
 	std::vector<Party> parties;
 };
+
+
+std::ostream& operator<<(std::ostream& out, const V2Localisation& localisation);
 
 #endif
