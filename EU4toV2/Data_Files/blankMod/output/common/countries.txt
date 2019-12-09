@@ -878,6 +878,13 @@ VTU		= "countries/Vanuatu.txt"
 WSF		= "countries/Zapadoslavia.txt"
 ZBW		= "countries/Zimbabwe.txt"
 
+#1.29A
+COP		= "countries/Coptia.txt"
+HSP		= "countries/Hesperia.txt"
+XLI		= "countries/Xliponia.txt"
+WEN		= "countries/Venedia.txt"
+PAE		= "countries/Paertia.txt"
+
 ##HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions
 D01		= "countries/D01.txt"
