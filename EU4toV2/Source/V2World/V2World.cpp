@@ -119,6 +119,9 @@ void V2World::importProvinces()
 	{
 		importProvinceLocalizations((theConfiguration.getVic2Path() + "/localisation/text.csv"));
 	}
+
+        importProvinceClimates();
+        importProvinceTerrains();
 }
 
 
@@ -137,6 +140,46 @@ std::set<std::string> V2World::discoverProvinceFilenames()
 	return provinceFilenames;
 }
 
+void V2World::importProvinceClimates()
+{
+	string filename = theConfiguration.getVic2Path() + "/map/climate.txt";
+	if (!Utils::DoesFileExist(filename))
+	{
+		LOG(LogLevel::Warning) << "Could not find file " << filename
+		                       << ", will not load climates.";
+		return;
+	}
+
+        auto climateObj = parser_8859_15::doParseFile(filename);
+	std::vector keywords = {"mild_climate", "temperate_climate",
+	                        "harsh_climate", "inhospitable_climate"};
+	for (const auto& key : keywords)
+	{
+		auto objs = climateObj->getValue(key);
+		if (objs.size() < 2)
+		{
+			LOG(LogLevel::Warning)
+			    << "Found " << objs.size() << " objects with key "
+			    << key << ", will not assign this climate.";
+			continue;
+		}
+		auto provList = objs[1];
+		for (int i = 0; i < provList->numTokens(); ++i)
+		{
+			auto provNum = provList->tokenAsInt(i);
+			if (provNum == 0)
+			{
+				continue;
+			}
+			auto* prov = getProvince(provNum.value());
+			if (prov == NULL)
+			{
+				continue;
+			}
+			prov->setClimate(key);
+		}
+	}
+}
 
 void V2World::importProvinceLocalizations(const string& file)
 {
@@ -163,6 +206,42 @@ void V2World::importProvinceLocalizations(const string& file)
 	read.close();
 }
 
+void V2World::importProvinceTerrains()
+{
+	string filename = "terrainData.txt";
+	if (!Utils::DoesFileExist(filename))
+	{
+		LOG(LogLevel::Warning) << "Could not find " << filename
+		                       << ", will not load terrain data.";
+		return;
+	}
+
+        auto terrainObj = parser_8859_15::doParseFile(filename);
+	if (terrainObj == NULL)
+	{
+		LOG(LogLevel::Warning) << "Could not parse " << filename
+		                       << ", will not load terrain data.";
+		return;
+	}
+
+	auto leaves = terrainObj->getLeaves();
+	for (auto leaf : leaves)
+	{
+		std::string key = leaf->getKey();
+		int provNum = atoi(key.c_str());
+		auto* province = getProvince(provNum);
+		if (province == NULL)
+		{
+			continue;
+		}
+		// Do not override terrain set in province files.
+		if (!province->getTerrain().empty())
+		{
+			continue;
+		}
+		province->setTerrain(leaf->getLeaf());
+	}
+}
 
 bool V2World::isAProvinceLocalization(const string& line)
 {

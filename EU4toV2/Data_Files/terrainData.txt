@@ -1,0 +1,5 @@
+# TODO: Fill in the remaining 3000 provinces.
+1 = plains
+2 = plains
+3 = arctic
+
