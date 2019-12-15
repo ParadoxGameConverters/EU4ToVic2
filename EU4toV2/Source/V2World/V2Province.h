@@ -105,7 +105,8 @@ class V2Province
 		bool						wasInfidelConquest()	const { return originallyInfidel; }
 		bool						wasColony()				const { return wasColonised; }
 		bool						isColonial()			const { return colonial != 0; }
-		string					getRgoType()			const { return rgoType; }
+        bool				isTerritorialCore()			const { return territorialCore; }   
+		string getRgoType() const { return rgoType; }
 		string					getOwner()				const { return owner; }
 		string					getController()				const { return controller; }
 		int						getNum()					const { return num; }
@@ -160,6 +161,7 @@ class V2Province
 		bool							landConnection;
 		bool							sameContinent;
 		bool							originallyInfidel;
+        bool						territorialCore;
 		int							oldPopulation;
 		vector<V2Demographic>	demographics;
 		vector<const V2Pop*>		oldPops;
