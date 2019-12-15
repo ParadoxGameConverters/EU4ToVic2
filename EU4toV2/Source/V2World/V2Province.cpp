@@ -342,6 +342,7 @@ void V2Province::convertFromOldProvince(
 	if (oldProvince->isTerritorialCore())
 	{
 		colonial = 2;
+		territorialCore = true;
 	}
 	else
 	{
@@ -372,8 +373,8 @@ void V2Province::determineColonial()
 
 void V2Province::addCore(string newCore)
 {
-	// only add if unique
-	if (find(cores.begin(), cores.end(), newCore) == cores.end())
+	// only add if unique, and not a territorial core/colony of the current owner
+	if ((find(cores.begin(), cores.end(), newCore) == cores.end()) && !((newCore.compare(owner) == 0) && territorialCore))
 	{
 		cores.push_back(newCore);
 	}
