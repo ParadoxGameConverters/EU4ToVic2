@@ -56,6 +56,7 @@ V2Province::V2Province(string _filename)
 	colonyLevel = 0;
 	colonial = 0;
 	wasColonised = false;
+	territorialCore = false;
 	landConnection = false;
 	sameContinent = false;
 	originallyInfidel = false;
@@ -338,9 +339,15 @@ void V2Province::convertFromOldProvince(
 	{
 		colonyLevel = 2;
 	}
-	colonial = 0;
+	if (oldProvince->isTerritorialCore())
+	{
+		colonial = 2;
+	}
+	else
+	{
+		colonial = 0;
+	}
 	wasColonised = oldProvince->wasColonised();
-
 	auto oldCountry = theEU4Countries.find(oldProvince->getOwnerString());
 	if (oldCountry != theEU4Countries.end())
 	{
