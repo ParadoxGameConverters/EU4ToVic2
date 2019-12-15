@@ -351,9 +351,16 @@ void V2Province::convertFromOldProvince(
 
 void V2Province::determineColonial()
 {
-	if ((!landConnection) && (!sameContinent) && ((wasColonised) || (originallyInfidel)))
+	// if ((!landConnection) && (!sameContinent) && ((wasColonised) ||
+	// (originallyInfidel)))
+	if (territorialCore)
 	{
+		LOG(LogLevel::Debug) << "Colonial Province: " << name;
 		colonial = 2;
+	}
+	else
+	{
+		LOG(LogLevel::Debug) << "State Province: " << name;
 	}
 }
 
