@@ -1827,6 +1827,18 @@ void V2World::output() const
 	Utils::renameFolder("output/output", "output/" + theConfiguration.getOutputName());
 	createModFile();
 
+	// Record converter version
+
+	LOG(LogLevel::Debug) << "Writing version";
+	FILE* versionFile;
+	if (fopen_s(&versionFile, ("output/" + theConfiguration.getOutputName() + "/eu4tov2_version.txt").c_str(), "w") != 0)
+	{
+		LOG(LogLevel::Error) << "Could not create version file";
+		exit(-1);
+	}
+	fprintf(versionFile, "# 1.0J-prerelease \"Jan Mayen\", built on %s.\n", __TIMESTAMP__);
+	fclose(versionFile);
+
 	// Create common\countries path.
 	string countriesPath = "output/" + theConfiguration.getOutputName() + "/common/countries";
 	if (!Utils::TryCreateFolder(countriesPath))
