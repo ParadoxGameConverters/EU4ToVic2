@@ -85,6 +85,7 @@ class world: private commonItems::parser
 		void loadCountries(std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void loadRevolutionTargetString(const shared_ptr<Object> EU4SaveObj);
 		void loadRevolutionTarget();
+		void dropMinoritiesFromCountries();
 		void addProvinceInfoToCountries();
 		void loadDiplomacy(const shared_ptr<Object> EU4SaveObj);
 		void loadMapAreaData(const shared_ptr<Object> mapAreaObject);

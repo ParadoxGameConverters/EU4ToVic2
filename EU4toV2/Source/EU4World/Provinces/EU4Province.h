@@ -90,6 +90,7 @@ class Province: commonItems::parser
 		double getManpowerWeight() const { return manpowerWeight; }
 		double getTotalBuildingWeight() const { return buildingWeight; }
 		double getTotalDevModifier() const { return devModifier; }
+		double getRawDevelopment() const { return baseTax + baseProduction + manpower; }
 		ProvinceStats getProvinceStats() const { return provinceStats; }
 		std::string getTradeGoods() const { return tradeGoods; }
 	        double getProsperity() const { return prosperity; }

@@ -442,6 +442,32 @@ EU4::Country::Country(
 	determineCulturalUnion();
 }
 
+void EU4::Country::dropMinorityCultures()
+{
+	double culturalDevelopment;
+	vector<string> updatedCultures;
+	for (string acceptedCulture: acceptedCultures)
+	{
+		culturalDevelopment = 0;
+		LOG(LogLevel::Debug) << tag << ": Considering minority status for " << acceptedCulture;
+		for (EU4::Province* p : provinces)
+		{
+			// LOG(LogLevel::Debug) << tag << ": " << acceptedCulture << " in " << p->getName() << " at " << p->getCulturePercent(acceptedCulture) * 100 << " percent.";
+			culturalDevelopment += p->getCulturePercent(acceptedCulture) * p->getRawDevelopment();
+		}
+		if ((culturalDevelopment / development) > 0.15)
+		{
+			LOG(LogLevel::Debug) << tag << ": Culture " << acceptedCulture << " at " << culturalDevelopment << " / " << development << ", sufficient to adopt.";
+			updatedCultures.push_back(acceptedCulture);
+		}
+		else
+		{
+			LOG(LogLevel::Debug) << tag << ": Culture " << acceptedCulture << " at " << culturalDevelopment << " / " << development << ", dropping.";
+		}
+	}
+	acceptedCultures = updatedCultures;
+}
+
 void EU4::Country::determineCulturalUnion()
 {
 	if ((development >= 1000) || (governmentRank > 2))

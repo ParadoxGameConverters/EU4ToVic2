@@ -136,6 +136,7 @@ namespace EU4
 			string	getName(const string& language) const;
 			string	getAdjective(const string& language) const;
 			commonItems::Color getColor() const { return color; }
+			void dropMinorityCultures();
 
 		private:
 			void determineJapaneseRelations();
