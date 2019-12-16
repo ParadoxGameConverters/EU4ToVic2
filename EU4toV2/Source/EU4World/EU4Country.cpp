@@ -105,6 +105,8 @@ EU4::Country::Country(
 	possibleShogun(false),
 	militaryLeaders(),
 	government(),
+	governmentRank(),
+	development(),
 	relations(),
 	armies(),
 	nationalIdeas(),
@@ -224,19 +226,13 @@ EU4::Country::Country(
 	registerKeyword(std::regex("government_rank"), [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt theGovernmentRank(theStream);
-			if ((theGovernmentRank.getInt() > 2) && (theConfiguration.wasDLCActive("The Cossacks")))
-			{
-				culturalUnion = EU4::cultureGroups::getCulturalGroup(primaryCulture);
-			}
+			governmentRank = theGovernmentRank.getInt();
 		}
 	);
 	registerKeyword(std::regex("realm_development"), [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt theDevelopment(theStream);
-			if ((theDevelopment.getInt() >= 1000) && (!theConfiguration.wasDLCActive("The Cossacks")))
-			{
-				culturalUnion = EU4::cultureGroups::getCulturalGroup(primaryCulture);
-			}
+			development = theDevelopment.getInt();
 		}
 	);
 	registerKeyword(std::regex("culture_group_union"), [this, theVersion](const std::string& unused, std::istream& theStream)
@@ -443,8 +439,18 @@ EU4::Country::Country(
 	determineJapaneseRelations();
 	determineInvestments(ideaEffectMapper);
 	determineLibertyDesire();
+	determineCulturalUnion();
 }
 
+void EU4::Country::determineCulturalUnion()
+{
+	if ((development >= 1000) || (governmentRank > 2))
+	{
+		culturalUnion = EU4::cultureGroups::getCulturalGroup(primaryCulture);
+		LOG(LogLevel::Debug) << tag << ": Cultural union accepted for " << primaryCulture << " - Development: " << development << " government rank: " << governmentRank;
+	}
+
+}
 
 void EU4::Country::determineJapaneseRelations()
 {
