@@ -442,11 +442,10 @@ EU4::Country::Country(
 
 void EU4::Country::dropMinorityCultures()
 {
-	double culturalDevelopment;
 	vector<string> updatedCultures;
 	for (string acceptedCulture: acceptedCultures)
 	{
-		culturalDevelopment = 0;
+		double culturalDevelopment = 0;
 		LOG(LogLevel::Debug) << tag << ": Considering minority status for " << acceptedCulture;
 		for (EU4::Province* p : provinces)
 		{

@@ -1839,7 +1839,7 @@ void V2World::output() const
 		versionFile << "# 1.0J-prerelease \"Jan Mayen\", built on " << __TIMESTAMP__ << ".\n";
 		versionFile.close();
 	}
-	catch (std::exception e)
+	catch (const std::exception& e)
 	{
 		LOG(LogLevel::Error) << "Error writing version file! Is the output folder writeable?";
 	}
