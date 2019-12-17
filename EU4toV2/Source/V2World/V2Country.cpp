@@ -380,7 +380,7 @@ void V2Country::output() const
 		{
 			fprintf(output, "\n");
 			fprintf(output, "# Decisions\n");
-			fprintf(output, "1835.1.1 = {\n");
+			fprintf(output, "1820.1.1 = {\n");
 			for (const auto& decision : decisions)
 			{
 				fprintf(output, "\tdecision = %s\n", decision.c_str());
@@ -868,14 +868,17 @@ void V2Country::initFromEU4Country(
 	{
 		if (prov->hasGreatProject("suez_canal"))
 		{
+			LOG(LogLevel::Debug) << "Building Suez Canal in: " << prov->getName();
 			decisions.push_back("build_suez_canal");
 		}
 		if (prov->hasGreatProject("kiel_canal"))
 		{
+			LOG(LogLevel::Debug) << "Building Kiel Canal in: " << prov->getName();
 			decisions.push_back("build_kiel_canal");
 		}
 		if (prov->hasGreatProject("panama_canal"))
 		{
+			LOG(LogLevel::Debug) << "Building Panama Canal in: " << prov->getName();
 			decisions.push_back("build_panama_canal");
 		}
 	}
