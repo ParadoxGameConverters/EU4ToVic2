@@ -852,7 +852,9 @@ void V2Province::createPops(
 	long newPopulation = 0;
 	if (theConfiguration.getConvertPopTotals())
 	{
-		newPopulation = static_cast<long>((static_cast<double>(this->lifeRating) / 10) * popWeightRatio * oldProvince->getTotalWeight());
+		//newPopulation = static_cast<long>((static_cast<double>(this->lifeRating) / 10) * popWeightRatio * oldProvince->getTotalWeight());
+		double provinceDevModifier = 1.0 + (static_cast<double>(this->lifeRating) - 30.0) / 100.0 + oldProvince->getShapingModifier() / 100.0;
+		newPopulation = static_cast<long>(oldPopulation * provinceDevModifier);
 
 		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(srcProvince->getNum());
 		int numOfV2Provs = Vic2Provinces.size();
@@ -869,6 +871,7 @@ void V2Province::createPops(
 				newPopulation = static_cast<long>(newPopulation * 1.15);
 			}
 		}
+		LOG(LogLevel::Debug) << "Shaping province " << oldProvince->getName() << ", liferating: " << this->lifeRating << ", dev investment: " << oldProvince->getShapingModifier() << ", old propulation: " << oldPopulation << ", new population: " << newPopulation << ", modifier: " << provinceDevModifier;
 	}
 	else
 	{

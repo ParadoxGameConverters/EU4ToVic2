@@ -52,6 +52,18 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 		commonItems::singleString religionString(theStream);
 		startingReligion = religionString.getString();
 	});
+	registerKeyword(std::regex("base_tax"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble baseTaxDouble(theStream);
+		originalTax = baseTaxDouble.getDouble();
+	});
+	registerKeyword(std::regex("base_production"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble baseProductionDouble(theStream);
+		originalProduction = baseProductionDouble.getDouble();
+	});
+	registerKeyword(std::regex("base_manpower"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble manpowerDouble(theStream);
+		originalManpower = manpowerDouble.getDouble();
+	});
 	registerKeyword(std::regex("\\d+\\.\\d+\\.\\d+"), [this](const std::string& dateString, std::istream& theStream) {
 		DateItems theItems(dateString, theStream);
 		for (DateItem item : theItems.getItems())

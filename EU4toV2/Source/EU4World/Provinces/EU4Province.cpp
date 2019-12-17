@@ -265,6 +265,8 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	
 	// dev modifier
 	devModifier = ( baseTax + baseProduction + manpower );
+	shapingModifier = devModifier - provinceHistory->getOriginalDevelopment();
+
 
 	totalWeight = buildingWeight + devModifier + ( manpower_weight + production_income + total_tx );
 	//i would change dev effect to 1, but your choice
