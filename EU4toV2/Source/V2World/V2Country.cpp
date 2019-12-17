@@ -885,6 +885,21 @@ void V2Country::initFromEU4Country(
 // used only for countries which are NOT converted (i.e. unions, dead countries, etc)
 void V2Country::initFromHistory()
 {
+	// Ping unreleasable_tags for this country's TAG
+	ifstream unreleasableTags;
+	string inputBuffer;
+
+	unreleasableTags.open("./unreleasable_tags.txt");
+	while (getline(unreleasableTags, inputBuffer))
+	{
+		if (inputBuffer.find(tag) != std::string::npos)
+		{
+			LOG(LogLevel::Debug) << "Found " << tag << " in unreleasables.";
+			isReleasableVassal = false;
+		}
+	}
+	unreleasableTags.close();
+
 	string fullFilename;
 
 	auto possibleFilename = Utils::GetFileFromTag("./blankMod/output/history/countries/", tag);
@@ -947,11 +962,14 @@ void V2Country::initFromHistory()
 	{
 		civilized = (results[0]->getLeaf() == "yes");
 	}
-
-	results = obj->getValue("is_releasable_vassal");
-	if (results.size() > 0)
+	// don't bother if already false by override.
+	if (isReleasableVassal)
 	{
-		isReleasableVassal = (results[0]->getLeaf() == "yes");
+		results = obj->getValue("is_releasable_vassal");
+		if (results.size() > 0)
+		{
+			isReleasableVassal = (results[0]->getLeaf() == "yes");
+		}
 	}
 
 	results = obj->getValue("nationalvalue");
