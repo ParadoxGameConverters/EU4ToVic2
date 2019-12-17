@@ -31,6 +31,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <queue>
 #include <cmath>
 #include <cfloat>
+#include <fstream>
 #include "ParadoxParser8859_15.h"
 #include "ParadoxParserUTF8.h"
 #include "Log.h"
@@ -1830,14 +1831,18 @@ void V2World::output() const
 	// Record converter version
 
 	LOG(LogLevel::Debug) << "Writing version";
-	FILE* versionFile;
-	if (fopen_s(&versionFile, ("output/" + theConfiguration.getOutputName() + "/eu4tov2_version.txt").c_str(), "w") != 0)
+	ofstream versionFile;
+
+	try
 	{
-		LOG(LogLevel::Error) << "Could not create version file";
-		exit(-1);
+		versionFile.open("output/" + theConfiguration.getOutputName() + "/eu4tov2_version.txt");
+		versionFile << "# 1.0J-prerelease \"Jan Mayen\", built on " << __TIMESTAMP__ << ".\n";
+		versionFile.close();
 	}
-	fprintf(versionFile, "# 1.0J-prerelease \"Jan Mayen\", built on %s.\n", __TIMESTAMP__);
-	fclose(versionFile);
+	catch (std::exception e)
+	{
+		LOG(LogLevel::Error) << "Error writing version file! Is the output folder writeable?";
+	}
 
 	// Create common\countries path.
 	string countriesPath = "output/" + theConfiguration.getOutputName() + "/common/countries";

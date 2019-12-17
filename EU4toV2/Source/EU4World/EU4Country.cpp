@@ -105,8 +105,6 @@ EU4::Country::Country(
 	possibleShogun(false),
 	militaryLeaders(),
 	government(),
-	governmentRank(),
-	development(),
 	relations(),
 	armies(),
 	nationalIdeas(),
@@ -452,7 +450,6 @@ void EU4::Country::dropMinorityCultures()
 		LOG(LogLevel::Debug) << tag << ": Considering minority status for " << acceptedCulture;
 		for (EU4::Province* p : provinces)
 		{
-			// LOG(LogLevel::Debug) << tag << ": " << acceptedCulture << " in " << p->getName() << " at " << p->getCulturePercent(acceptedCulture) * 100 << " percent.";
 			culturalDevelopment += p->getCulturePercent(acceptedCulture) * p->getRawDevelopment();
 		}
 		if ((culturalDevelopment / development) > 0.15)
