@@ -337,9 +337,10 @@ void V2Province::convertFromOldProvince(
 	inHRE = oldProvince->inHre();
 	if (oldProvince->isColony())
 	{
-		colonyLevel = 2;
-	}
-	if (oldProvince->isTerritorialCore())
+		colonial = 1;
+		territorialCore = true;
+	} 
+	else if (oldProvince->isTerritorialCore())
 	{
 		colonial = 2;
 		territorialCore = true;
@@ -359,14 +360,9 @@ void V2Province::convertFromOldProvince(
 
 void V2Province::determineColonial()
 {
-	if (territorialCore)
+	if (territorialCore && (colonial == 0))
 	{
-		LOG(LogLevel::Debug) << "Colonial Province: " << name;
 		colonial = 2;
-	}
-	else
-	{
-		LOG(LogLevel::Debug) << "State Province: " << name;
 	}
 }
 
