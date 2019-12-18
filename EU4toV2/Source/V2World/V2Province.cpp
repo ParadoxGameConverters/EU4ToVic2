@@ -850,10 +850,14 @@ void V2Province::createPops(
 	auto oldCountry = demographic.oldCountry;
 
 	long newPopulation = 0;
-	if (theConfiguration.getConvertPopTotals())
+	if (theConfiguration.getPopShaping())
 	{
-		//newPopulation = static_cast<long>((static_cast<double>(this->lifeRating) / 10) * popWeightRatio * oldProvince->getTotalWeight());
-		double provinceDevModifier = 1.0 + (static_cast<double>(this->lifeRating) - 30.0) / 100.0 + oldProvince->getShapingModifier() / 100.0;
+		double lifeRatingMod = (static_cast<double>(this->lifeRating) - 30.0) / 200.0;
+		double devpushMod = oldProvince->getDevDelta() / 100.0;
+		double weightMod = oldProvince->getModifierWeight() / 100.0;
+		double shapeMod = theConfiguration.getPopShapingFactor() / 100.0;
+		double provinceDevModifier = 1 + (lifeRatingMod + devpushMod + weightMod) * shapeMod;
+
 		newPopulation = static_cast<long>(oldPopulation * provinceDevModifier);
 
 		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(srcProvince->getNum());
@@ -871,7 +875,14 @@ void V2Province::createPops(
 				newPopulation = static_cast<long>(newPopulation * 1.15);
 			}
 		}
-		LOG(LogLevel::Debug) << "Shaping province " << oldProvince->getName() << ", liferating: " << this->lifeRating << ", dev investment: " << oldProvince->getShapingModifier() << ", old propulation: " << oldPopulation << ", new population: " << newPopulation << ", modifier: " << provinceDevModifier;
+
+		LOG(LogLevel::Debug) << "Shaping province " << name << " from EU4's " << oldProvince->getName() << ", life rating / lrmod: " << this->lifeRating << "/" << lifeRatingMod
+			<< ", devpush / devpushmod: " << oldProvince->getDevDelta() << "/" << devpushMod
+			<< ", taxprodmanbuild combined weight: " << weightMod
+			<< " shape factor: " << shapeMod
+			<< ", final modifier: " << provinceDevModifier
+			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
+
 	}
 	else
 	{

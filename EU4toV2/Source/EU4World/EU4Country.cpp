@@ -449,7 +449,7 @@ void EU4::Country::dropMinorityCultures()
 		LOG(LogLevel::Debug) << tag << ": Considering minority status for " << acceptedCulture;
 		for (EU4::Province* p : provinces)
 		{
-			culturalDevelopment += p->getCulturePercent(acceptedCulture) * p->getRawDevelopment();
+			culturalDevelopment += p->getCulturePercent(acceptedCulture) * p->getTotalDevModifier();
 		}
 		if ((culturalDevelopment / development) > 0.15)
 		{

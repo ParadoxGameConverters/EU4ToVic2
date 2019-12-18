@@ -265,14 +265,21 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	
 	// dev modifier
 	devModifier = ( baseTax + baseProduction + manpower );
-	shapingModifier = devModifier - provinceHistory->getOriginalDevelopment();
+	devDelta = devModifier - provinceHistory->getOriginalDevelopment();
+	modifierWeight = buildingWeight + manpower_weight + production_income + total_tx;
 
+	totalWeight = devModifier + modifierWeight;
 
-	totalWeight = buildingWeight + devModifier + ( manpower_weight + production_income + total_tx );
-	//i would change dev effect to 1, but your choice
+	if (modifierWeight > 0)
+	{
+		// provinces with modifierweights under 10 (underdeveloped with no buildings) get a penalty for popShaping.
+		modifierWeight = (log10(modifierWeight) - 1) * 10;
+	}
+
 	if (ownerString == "")
 	{
 		totalWeight = 0;
+		modifierWeight = 0;
 	}
 
 	provinceStats.setGoodsProduced(goodsProduced);
@@ -286,7 +293,7 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	provinceStats.setTaxEfficiency(taxEfficiency);
 	provinceStats.setTotalTaxIncome(total_tx);
 	provinceStats.setTotalTradeValue(total_trade_value);
-	//LOG(LogLevel::Info) << "Num: " << num << " TAG: " << ownerString << " Weight: " << totalWeight;
+	LOG(LogLevel::Debug) << "Province: " << name << " TAG: " << ownerString << " Total Weight: " << totalWeight << " ModifierWeight: " << modifierWeight;
 }
 
 

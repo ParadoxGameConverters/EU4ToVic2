@@ -90,8 +90,8 @@ class Province: commonItems::parser
 		double getManpowerWeight() const { return manpowerWeight; }
 		double getTotalBuildingWeight() const { return buildingWeight; }
 		double getTotalDevModifier() const { return devModifier; }
-		double getRawDevelopment() const { return baseTax + baseProduction + manpower; }
-		double getShapingModifier() const { return shapingModifier; }
+		double getDevDelta() const { return devDelta; }
+		double getModifierWeight() const { return modifierWeight; }
 		ProvinceStats getProvinceStats() const { return provinceStats; }
 		std::string getTradeGoods() const { return tradeGoods; }
 	        double getProsperity() const { return prosperity; }
@@ -132,7 +132,8 @@ class Province: commonItems::parser
 		double manpowerWeight = 0;
 		double buildingWeight = 0;
 		double devModifier = 0;
-		double shapingModifier = 0;
+		double devDelta = 0;
+		double modifierWeight = 0;
 		int centerOfTradeLevel = 0;
 		ProvinceStats provinceStats;
 	        double prosperity = 0;
