@@ -31,6 +31,7 @@ THE SOFTWARE. */
 #include <fstream>
 #include <optional>
 #include <sstream>
+#include <cmath>
 
 
 
@@ -273,7 +274,7 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	if (modifierWeight > 0)
 	{
 		// provinces with modifierweights under 10 (underdeveloped with no buildings) get a penalty for popShaping.
-		modifierWeight = (log10(modifierWeight) - 1) * 10;
+		modifierWeight = (std::log10(modifierWeight) - 1) * 10;
 	}
 
 	if (ownerString == "")
