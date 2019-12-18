@@ -361,12 +361,7 @@ void V2Province::determineColonial()
 {
 	if (territorialCore)
 	{
-		LOG(LogLevel::Debug) << "Colonial Province: " << name;
 		colonial = 2;
-	}
-	else
-	{
-		LOG(LogLevel::Debug) << "State Province: " << name;
 	}
 }
 
@@ -866,14 +861,6 @@ void V2Province::createPops(
 		spentProvinceModifier += (devpushMod + weightMod) * shapeMod;
 
 		newPopulation = static_cast<long>(oldPopulation * provinceDevModifier);
-
-		LOG(LogLevel::Debug) << "Shaping province " << name << " from EU4's " << oldProvince->getName() << ", life rating / lrmod: " << this->lifeRating << "/" << lifeRatingMod
-			<< ", devpush / devpushmod: " << oldProvince->getDevDelta() << "/" << devpushMod
-			<< ", taxprodmanbuild combined weight: " << weightMod
-			<< " shape factor: " << shapeMod
-			<< ", final modifier: " << provinceDevModifier
-			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
-
 	}
 	else
 	{

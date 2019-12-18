@@ -293,7 +293,6 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	provinceStats.setTaxEfficiency(taxEfficiency);
 	provinceStats.setTotalTaxIncome(total_tx);
 	provinceStats.setTotalTradeValue(total_trade_value);
-	LOG(LogLevel::Debug) << "Province: " << name << " TAG: " << ownerString << " Total Weight: " << totalWeight << " ModifierWeight: " << modifierWeight;
 }
 
 
