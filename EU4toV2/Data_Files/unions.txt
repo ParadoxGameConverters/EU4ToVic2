@@ -67,9 +67,14 @@ link = { tag = ITA tag = SIC culture = south_italian } #Two Sicilies = South Ita
 link = { tag = MLT culture = maltese } #Malta, not Italy
 #link = { tag = ITA culture = all_italian } #All-Italian is outside Italy...
 link = { tag = LGB culture = lombard } #Longobardia
+
+#Latin descendants
 link = { tag = ENR culture = brithenig } #Brittania
 link = { tag = FRR culture = gaul } #Gallia
 link = { tag = AUR culture = laessin } #Läßinia
+#link = { tag = HSP culture = latin } #Hesperia - most of "latin" is outside Italy
+link = { tag = XLI culture = xliponian } #Xliponia
+link = { tag = WEN culture = wenedyk } #Venedia
 
 #Iberian => Spain
 link = { tag = SPA tag = BSQ culture = basque } #and Euskadi
@@ -126,6 +131,7 @@ link = { tag = ARM culture = armenian } #Armenia
 link = { tag = ALN culture = alan } #Alania
 link = { tag = ASY culture = syriac } #Assyria
 link = { tag = KRT culture = maghreb_arabic } # Carthage
+link = { tag = COP culture = coptic } # Coptia
 
 #Turkic
 link = { tag = TUR culture = turkish } #the Ottomans

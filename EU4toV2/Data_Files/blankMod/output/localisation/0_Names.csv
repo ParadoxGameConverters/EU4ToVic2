@@ -288,6 +288,8 @@ CNN;Connacht;Connacht;Connacht;Connaught;Connacht;Connacht;Connacht;Connacht;Con
 CNN_ADJ;Connachtian;Connachtian;Connachtian;Connachtian;Connachtian;Connachtian;Connachtian;Connachtian;Connachtian;Connachtian;Connachtian;Öîííà÷òèàí;Connachtian;x;
 COM;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Öîìàí÷å;Comanche;x;
 COM_ADJ;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Comanche;Öîìàí÷å;Comanche;x;
+COP;Coptia;Coptie;Koptien;Koptia;Coptia;Coptia;Koptia;Koptie;Koptia;Coptië;Cóptia;Êîïòèÿ;Koptia;x
+COP_ADJ;Coptic;Copte;Koptisch;Koptyjski;Copto;Copta;Kopt;Koptské;Kopt;Coptisch;Cóptico;Êîïòñêèé;Koptilainen;x
 CPG;Champagne;Champagne;Champagner;Szampan;champán;Champagne;Pezsgo;Šampanské;Pezsgo;Champagne;Champanhe;Øàìïàíñêîå;Samppanja;x;
 CPG_ADJ;Champagnan;Champagnan;Champagnan;Szampagnan;Champagnan;Champagnan;Champagnan;Champagnan;Champagnan;Champagnan;Champagnan;×àìïàãíàí;Champagnan;x;
 CPL;Congress Poland;Pologne du Congrès;Kongress Polen;Kongres Polska;Polonia del Congreso;Polonia del Congresso;Kongresszus Lengyelország;Kongres Polsko;Kongresszus Lengyelország;Congres Polen;Congresso da Polônia;Êîíãðåññ Ïîëüøà;Kongressi Puola;x;
@@ -515,6 +517,8 @@ HSC;Highlands;Hauts-Plateaux;Hochland;Góral;Tierras Altas;Highlands;Highlands;V
 HSC_ADJ;Highlander;Highlander;Hochlander;Góral;montañés;Highlander;Felvidéki;Horal;Felvidéki;Hooglander;Escocês;Ãîðåö;Highlander;x;
 HSK;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Õîñîêàâà;Hosokawa;x;
 HSK_ADJ;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Hosokawa;Õîñîêàâà;Hosokawa;x;
+HSP;Hesperia;Hespérie;Hesperien;Hesperia;Hesperia;Esperia;Hesperia;Hesperia;Hesperia;Hesperië;Hesperia;Ãåñïåðèÿ;Hesperia;x
+HSP_ADJ;Hesperian;Hespérien;Hesperisch;Hesperski;Hesperio;Espero;Hesper;Hesperská;Hesper;Hesperisch;Hesperio;Ãåñïåðñêèé;Hesperialainen;x
 HTK;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Õàòàêåÿìà;Hatakeyama;x;
 HTK_ADJ;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Hatakeyama;Õàòàêåÿìà;Hatakeyama;x;
 HUI;Anhui;Anhui;Anhui;Anhui;Anhui;Anhui;Anhui;Anhui;Anhui;Anhui;Anhui;Àíüõîé;Anhui;x;
@@ -919,6 +923,8 @@ OUC;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Îó÷è;O
 OUC_ADJ;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Ouchi;Îó÷è;Ouchi;x;
 OYO;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Îå;Oyo;x;
 OYO_ADJ;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Oyo;Îå;Oyo;x;
+PAE;Paertia;Paërthe;Pärthien;Pajrfja;Percia;Perzia;Paerzsa;Párfie;Paerzsa;Pijrsië;Paérça;Ïåðôèÿ;Pärtia;x
+PAE_ADJ;Paertian;Paërthan;Pärthisch;Pajrski;Perca;Perziano;Paerzsa;Párftina;Paerzsa;Pijrsisch;Paérça;Ïåðôèäñêèé;Pärtia;x
 PAL;The Palatinate;Le Palatinat;Die Pfalz;Palatynatu;El Palatinado;il Palatinato;a Pfalz;Falc;a Pfalz;de Palts;Palatinado;Ïôàëüö;Pfalzin;x;
 PAL_ADJ;Palatinate;Palatinat;Pfalz;Palatynat;Palatinado;palatino;Palotagrófi tartomány;Falcko;Palotagrófi tartomány;paltsgraafschap;Palatinado;Ïàëàòèíàò;Pfalz;x;
 PAT;Pattani;Pattani;Pattani;Pattani;Pattani;Pattani;Pattani;Pattani;Pattani;Pattani;Pattani;Ïàòòàíè;Pattani;x;
@@ -1294,6 +1300,8 @@ WBG;Würzburg;Würzburg;Würzburg;Würzburg;Würzburg;Würzburg;Würzburg;Würzb
 WBG_ADJ;Wurzburgian;Wurzburgien;Würzburgisch;Wurzburgian;Wurzburgian;Wurzburgiano;Wurzburgian;Wurzburgian;Wurzburgian;Wurzburgian;Wurzburgian;Âóðçáóðãèàí;Wurzburgian;x;
 WCR;Cree;Cris;Cree;Cree;Cree;Cree;Cree;Cree;Cree;Cree;Cree;Öðåå;Cree;x;
 WCR_ADJ;Cree;Cris;Cree;Cree;Cree;Cree;Cree;Cree;Cree;Cree;Cree;Öðåå;Cree;x;
+WEN;Wenedia;Vénédie;Wenedien;Wenedia;Venédia;Venedia;Wenedia;Wenedie;Wenedia;Wenedië;Wenedia;Âåíåäèÿ;Venedia;x
+WEN_ADJ;Venedic;Vénédais;Wenedisch;Wenedyk;Venédico;Venetico;Wenedyk;Wenedyk;Wenedyk;Wenedisch;Venédico;Âåíåäèêñêèé;Venedialainen;x
 WES;Westphalia;Westphalie;Westfalen;Westfalia;Westfalia;Westfalia;Vesztfália;Vestfálsko;Vesztfália;Westfalen;Vestfália;Âåñòôàëèÿ;Westfalen;x;
 WES_ADJ;Westphalian;Westphalien;Westfalen;Westfalii;Westfalia;Westfalia;vesztfáliai;vestfálský;vesztfáliai;Westfaalse;Westfália;Âåñòôàëüñêàÿ;Westfalenin;x;
 WHA;Wales;Pays de Galles;Wales;Walia;Gales;Galles;Wales;Wales;Wales;Wales;País de Gales;Óýëüñ;Wales;x;
@@ -1324,6 +1332,8 @@ XIA_ADJ;Xia;Xia;Xia;Xia;Xia;Xia;Xia;Xia;Xia;Xia;Xia;Õèà;xia;x;
 XIA_democracy;The Republic of Xia;La République de Xia;Die Republik von Xia;Republika Xia;La República de Xia;la Repubblica di Xia;Köztársaság Xia;Republiky Xia;Köztársaság Xia;de Republiek Xia;A República de Xia;Ðåñïóáëèêà Ñÿ;tasavallan Xia;x;
 XIA_fascist_dictatorship;The Xia Republic;La République Xia;Die Xia Republik;Republika Xia;La república de xia;Repubblica Xia;Xia Köztársaság;Xia republika;Xia Köztársaság;de Xia Republiek;A república de Xia;Ðåñïóáëèêà Ñÿ;Xia tasavalta;x;
 XIA_proletarian_dictatorship;The People's Republic of Xia;La République populaire de Xia;Der Volksrepublik Xia;Republika Ludowo-Xia;La República Popular de Xia;La Repubblica popolare di Xia;A Népköztársaság Xia;Xia lidové republiky;A Népköztársaság Xia;de People's Republic of Xia;República Popular da Xia;Íàðîäíàÿ Ðåñïóáëèêà Ñÿ;kansantasavallan Xia;x;
+XLI;Xliponia;Chliponie;Schliponien;Szliponia;Esliponia;Sliponia;Slipónia;Šliponie;Slipónia;Xliponië;Xliponia;Øëèïîíèÿ;Ksliponia;x
+XLI_ADJ;Xliponian;Chliponien;Schliponisch;Szliponijczyk;Esliponio;Sliponiano;Slipón;Šliponská;Slipón;Xliponisch;Xliponiano;Øëèïîíñêèé;Ksliponialainen;x
 YAK;Sakha;Sakha;Sakha;Sakha;Sakha;Sakha;Sakha;Sakha;Sakha;Sakha;Sakha;ßêóòñêèé;Sahan;x;
 YAK_ADJ;Yakut;yakut;Jakut;Jakut;Yakut;Yakut;jakut;Yakut;jakut;Jakoet;Yakut;ÿêóò;jakuutti;x;
 YAR;Yaroslavl;Yaroslavl;Jaroslawl;Jaroslaw;Yaroslavl;Yaroslavl;Jaroszlavl;Jaroslavl;Jaroszlavl;Yaroslavl;Yaroslavl;ßðîñëàâëü;Yaroslavl;x;
