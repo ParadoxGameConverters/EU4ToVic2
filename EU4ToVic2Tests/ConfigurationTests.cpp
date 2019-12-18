@@ -356,23 +356,23 @@ TEST(EU4ToVic2_ConfigurationTests, LibertyThresholdCanBeSet)
 }
 
 
-TEST(EU4ToVic2_ConfigurationTests, PopShapingDefaultsToFalse)
+TEST(EU4ToVic2_ConfigurationTests, PopShapingDefaultsToVanilla)
 {
 	Configuration testConfiguration;
 	std::stringstream input("");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ(testConfiguration.getPopShaping(), false);
+	ASSERT_EQ(testConfiguration.getPopShaping(), "vanilla");
 }
 
 
 TEST(EU4ToVic2_ConfigurationTests, PopShapingCanBeSet)
 {
 	Configuration testConfiguration;
-	std::stringstream input("popShaping = yes");
+	std::stringstream input("popShaping = popshaping");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ(testConfiguration.getPopShaping(), true);
+	ASSERT_EQ(testConfiguration.getPopShaping(), "popshaping");
 }
 
 TEST(EU4ToVic2_ConfigurationTests, PopShapingFactorDefaultsToFifty)

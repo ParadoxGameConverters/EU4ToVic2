@@ -56,7 +56,7 @@ class Configuration: commonItems::parser
 		double getMaxLiteracy() { return MaxLiteracy; }
 		std::string getRemovetype() { return Removetype; }
 		double getLibertyThreshold() { return libertyThreshold; }
-		bool getPopShaping() { return popShaping; }
+		std::string getPopShaping() { return popShaping; }
 		double getPopShapingFactor() { return popShapingFactor; }
 		bool getDebug() const { return debug; }
 
@@ -92,7 +92,7 @@ class Configuration: commonItems::parser
 		double MaxLiteracy = 1.0;
 		std::string Removetype = "none";
 		double libertyThreshold = 50.0;
-		bool popShaping = false;
+		std::string popShaping = "vanilla";
 		double popShapingFactor = 50.0;
 		bool debug = false;
 	

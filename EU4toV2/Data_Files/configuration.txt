@@ -58,10 +58,11 @@ configuration = {
 	libertyThreshold = "100"
 
 	# Shape population?: Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers.
-	#	Yes	 - Adjust population sizes.
-	#	No	 - Use Vanilla population sizes.
-	popShaping = "no"
+	#	1	 - Use Vanilla population sizes.
+	#	2	 - Adjust population sizes.
+	#	3	 - Extreme Redistribution.
+	popShaping = "vanilla"
 	
 	# Shaping Factor?: How much does EU4 affect population sizes? 0 - Vanilla, 100 - Fully (1 dev increase approx 1% pop increase)
-	popShapingFactor = "50"
+	popShapingFactor = "100"
 }

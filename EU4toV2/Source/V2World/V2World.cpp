@@ -1591,7 +1591,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 		itr->second->setupPops(popWeightRatio, popAlgorithm, sourceWorld.getCountries(), *provinceMapper);
 	}
 
-	if (theConfiguration.getPopShaping())
+	if (theConfiguration.getPopShaping().compare("vanilla") != 0)
 	{
 		LOG(LogLevel::Info) << "Total world population: " << my_totalWorldPopulation;
 	}

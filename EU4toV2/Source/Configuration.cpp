@@ -83,7 +83,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 	});
 	registerKeyword(std::regex("popShaping"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleString popShapingString(theStream);
-		popShaping = (popShapingString.getString() == "yes");
+		popShaping = popShapingString.getString();
 	});
 	registerKeyword(std::regex("popShapingFactor"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleDouble popShapingFactorDouble(theStream);

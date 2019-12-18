@@ -845,7 +845,7 @@ void V2Province::createPops(
 	auto oldCountry = demographic.oldCountry;
 
 	long newPopulation = 0;
-	if (theConfiguration.getPopShaping())
+	if (theConfiguration.getPopShaping().compare("popshaping") == 0)
 	{
 		double lifeRatingMod = (static_cast<double>(this->lifeRating) - 30.0) / 200.0;
 		double devpushMod = oldProvince->getDevDelta() / 100.0;
@@ -861,10 +861,49 @@ void V2Province::createPops(
 		spentProvinceModifier += (devpushMod + weightMod) * shapeMod;
 
 		newPopulation = static_cast<long>(oldPopulation * provinceDevModifier);
+
+		LOG(LogLevel::Debug) << "Shaping province " << name << " from EU4's " << oldProvince->getName() << ", life rating / lrmod: " << this->lifeRating << "/" << lifeRatingMod
+			<< ", devpush / devpushmod: " << oldProvince->getDevDelta() << "/" << devpushMod
+			<< ", taxprodmanbuild combined weight: " << weightMod
+			<< " shape factor: " << shapeMod
+			<< ", final modifier: " << provinceDevModifier
+			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
+	}
+	else if (theConfiguration.getPopShaping().compare("extreme") == 0)
+	{
+		newPopulation = static_cast<long>((static_cast<double>(this->lifeRating) / 10)* popWeightRatio* oldProvince->getTotalWeight());
+
+		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(srcProvince->getNum());
+		int numOfV2Provs = Vic2Provinces.size();
+		if (numOfV2Provs > 1)
+		{
+			if (numOfV2Provs == 2)
+			{
+				newPopulation /= numOfV2Provs;
+				newPopulation = static_cast<long>(newPopulation * 1.10);
+			}
+			else
+			{
+				newPopulation /= numOfV2Provs;
+				newPopulation = static_cast<long>(newPopulation * 1.15);
+			}
+		}
+
+		newPopulation = oldPopulation + static_cast<long>((newPopulation - oldPopulation) * (theConfiguration.getPopShapingFactor() / 100.0));
+
+		LOG(LogLevel::Debug) << "Shaping province " << name << " from EU4's " << oldProvince->getName() << ", life rating " << this->lifeRating 
+			<< ", province weight: " << oldProvince->getTotalWeight()
+			<< " shape factor: " << (theConfiguration.getPopShapingFactor() / 100.0)
+			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
+
 	}
 	else
 	{
 		newPopulation = oldPopulation;
+
+		LOG(LogLevel::Debug) << "Not shaping province " << name << " from EU4's " << oldProvince->getName()
+			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
+
 	}
 
 	pop_points pts;
