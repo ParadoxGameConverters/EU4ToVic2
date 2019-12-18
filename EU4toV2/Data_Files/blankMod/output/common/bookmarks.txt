@@ -1,8 +1,8 @@
 bookmark =
 {
 	name = "Europa Universalis IV"
-	desc = "NOTE:  Bookmark is not currently fully supported by the converter, and strange behaviour may result. This is the end-date of EU4. How did your campaign go so far? Prepare for a new century!"
-	date = 1821.1.1
+	desc = "NOTE: First political parties arrive in 1830. Otherwise, this is the end-date of EU4. How did your campaign go so far? Prepare for a new century (or few)!"
+	date = <STARTDATE>
 	cameraX = 2950 
 	cameraY = 1550
 }

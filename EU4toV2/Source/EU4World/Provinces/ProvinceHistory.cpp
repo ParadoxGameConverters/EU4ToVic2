@@ -29,8 +29,8 @@ THE SOFTWARE. */
 
 
 
-const date STARTING_DATE("1444.11.11");
-const date ENDING_DATE("1821.1.3");
+const date STARTING_DATE = theConfiguration.getStartEU4Date();
+const date HARD_ENDING_DATE("1836.1.1");
 const date FUTURE_DATE("2000.1.1");
 
 
@@ -157,9 +157,9 @@ bool EU4::ProvinceHistory::wasInfidelConquest(const Religions& allReligions, con
 void EU4::ProvinceHistory::buildPopRatios()
 {
 	date endDate = theConfiguration.getLastEU4Date();
-	if (endDate < ENDING_DATE)
+	if (endDate > HARD_ENDING_DATE)
 	{
-		endDate = ENDING_DATE;
+		endDate = HARD_ENDING_DATE;
 	}
 
 	std::string startingCulture;

@@ -895,7 +895,7 @@ void V2Country::initFromHistory()
 	unreleasableTags.open("./unreleasable_tags.txt");
 	while (getline(unreleasableTags, inputBuffer))
 	{
-		if (inputBuffer.find(tag) != std::string::npos)
+		if (inputBuffer.rfind(tag, 0) == 0)
 		{
 			LOG(LogLevel::Debug) << "Found " << tag << " in unreleasables.";
 			isReleasableVassal = false;

@@ -21,8 +21,7 @@ THE SOFTWARE. */
 
 
 #include "PopRatio.h"
-
-
+#include <algorithm>
 
 void EU4::PopRatio::decay(float diffInYears, const EU4::PopRatio& currentPop)
 {
@@ -30,18 +29,18 @@ void EU4::PopRatio::decay(float diffInYears, const EU4::PopRatio& currentPop)
 	double middleNonCurrentRatio = (1.0 - currentPop.middleRatio);
 	double lowerNonCurrentRatio = (1.0 - currentPop.lowerRatio);
 
-	upperRatio -= .0025 * diffInYears * upperRatio / upperNonCurrentRatio;
-	middleRatio -= .0025 * diffInYears * middleRatio / middleNonCurrentRatio;
-	lowerRatio -= .0025 * diffInYears * lowerRatio / lowerNonCurrentRatio;
+	upperRatio -= std::min(.0025 * diffInYears * upperRatio / upperNonCurrentRatio, upperRatio);
+	middleRatio -= std::min(.0025 * diffInYears * middleRatio / middleNonCurrentRatio, middleRatio);
+	lowerRatio -= std::min(.0025 * diffInYears * lowerRatio / lowerNonCurrentRatio, lowerRatio);
 }
 
 
 
 void EU4::PopRatio::increase(float diffInYears)
 {
-	upperRatio += .0025 * diffInYears;
-	middleRatio += .0025 * diffInYears;
-	lowerRatio += .0025 * diffInYears;
+	upperRatio += std::min(.0025 * diffInYears, 1.0 - upperRatio);
+	middleRatio += std::min(.0025 * diffInYears, 1.0 - middleRatio);
+	lowerRatio += std::min(.0025 * diffInYears, 1.0 - lowerRatio);
 }
 
 

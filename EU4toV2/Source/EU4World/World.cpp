@@ -64,6 +64,13 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 			theConfiguration.setLastEU4Date(endDate);
 		}
 	);
+	registerKeyword(std::regex("start_date"), [this](const std::string& dateText, std::istream& theStream)
+		{
+			commonItems::singleString startDateString(theStream);
+			date startDate(startDateString.getString());
+			theConfiguration.setStartEU4Date(startDate);
+		}
+	);
 	registerKeyword(std::regex("savegame_version"), [this](const std::string& versionText, std::istream& theStream)
 		{
 			version = std::make_unique<EU4::Version>(theStream);

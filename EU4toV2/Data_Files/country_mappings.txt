@@ -1343,7 +1343,7 @@ link = { EU4 = CZC Vic2 = CSU } #Cuzco
 link = { EU4 = ABK Vic2 = d_abkhazia } #Abkhazia
 link = { EU4 = ALM Vic2 = d_almohad } #Almohad
 link = { EU4 = ANC Vic2 = d_ancona } #Ancona
-link = { EU4 = ANJ Vic2 = d_anjou } #Anjou
+link = { EU4 = ANJ Vic2 = ANJ } #Anjou
 link = { EU4 = BLE Vic2 = d_balearic } #Baleares
 link = { EU4 = BOZ Vic2 = d_beloozero } #Beloozero
 link = { EU4 = DLM Vic2 = d_dalmatia } #Dalmatia
