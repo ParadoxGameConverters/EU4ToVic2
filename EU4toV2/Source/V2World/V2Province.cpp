@@ -858,23 +858,14 @@ void V2Province::createPops(
 		double shapeMod = theConfiguration.getPopShapingFactor() / 100.0;
 		double provinceDevModifier = 1 + (lifeRatingMod + devpushMod + weightMod) * shapeMod;
 
-		newPopulation = static_cast<long>(oldPopulation * provinceDevModifier);
-
-		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(srcProvince->getNum());
-		int numOfV2Provs = Vic2Provinces.size();
-		if (numOfV2Provs > 1)
+		if (spentProvinceModifier != 0)
 		{
-			if (numOfV2Provs == 2)
-			{
-				newPopulation /= numOfV2Provs;
-				newPopulation = static_cast<long>(newPopulation * 1.10);
-			}
-			else
-			{
-				newPopulation /= numOfV2Provs;
-				newPopulation = static_cast<long>(newPopulation * 1.15);
-			}
+			// We have already created pops here using another EU4 province. We need to compound the push and weight modifiers.
+			provinceDevModifier += spentProvinceModifier;
 		}
+		spentProvinceModifier += (devpushMod + weightMod) * shapeMod;
+
+		newPopulation = static_cast<long>(oldPopulation * provinceDevModifier);
 
 		LOG(LogLevel::Debug) << "Shaping province " << name << " from EU4's " << oldProvince->getName() << ", life rating / lrmod: " << this->lifeRating << "/" << lifeRatingMod
 			<< ", devpush / devpushmod: " << oldProvince->getDevDelta() << "/" << devpushMod
