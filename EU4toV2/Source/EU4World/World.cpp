@@ -170,21 +170,29 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 	verifySave(EU4SaveFileName);
 	parseFile(EU4SaveFileName);
 
-	LOG(LogLevel::Info) << "Building world";
+	LOG(LogLevel::Info) << "Building world:";
 	setEmpires();
 	addProvinceInfoToCountries();
 	dropMinoritiesFromCountries();
 	provinces->determineTotalProvinceWeights(theConfiguration);
+	LOG(LogLevel::Info) << "- Loading Regions";
 	loadRegions();
+	LOG(LogLevel::Info) << "- Reading Countries";
 	readCommonCountries();
+	LOG(LogLevel::Info) << " - Setting Localizations";
 	setLocalisations();
+	LOG(LogLevel::Info) << "- Resolving Regiments";
 	resolveRegimentTypes();
+	LOG(LogLevel::Info) << " - Merging Nations";
 	mergeNations();
 
+	LOG(LogLevel::Info) << " - Viva la revolution!";
 	loadRevolutionTarget();
 
+	LOG(LogLevel::Info) << " - Importing Religions";
 	importReligions();
 
+	LOG(LogLevel::Info) << " - Dropping Empty Nations";
 	removeEmptyNations();
 	if (theConfiguration.getRemovetype() == "dead")
 	{
@@ -416,8 +424,15 @@ void EU4::world::assignProvincesToAreas(const std::map<std::string, std::set<int
 		std::string areaName = area.first;
 		for (const int provNum : area.second)
 		{
-			auto& province = provinces->getProvince(provNum);
-                        province.setArea(areaName);
+			try
+			{
+				auto& province = provinces->getProvince(provNum);
+				province.setArea(areaName);
+			}
+			catch (std::exception& e)
+			{
+				LOG(LogLevel::Warning) << e.what();
+			}
 		}
 	}
 }
