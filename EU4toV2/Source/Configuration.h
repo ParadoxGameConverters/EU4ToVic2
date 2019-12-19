@@ -63,11 +63,13 @@ class Configuration: commonItems::parser
 		const EU4::Version& getEU4Version() const { return version; }
 		date getFirstEU4Date() { return firstEU4Date; }
 		date getLastEU4Date() { return lastEU4Date; }
+		date getStartEU4Date() { return startEU4Date; }
 		std::string getOutputName() { return outputName; }
 		std::vector<std::string> getEU4Mods() { return EU4Mods; }
 
 		void setFirstEU4Date(date _firstDate) { firstEU4Date = _firstDate; }
 		void setLastEU4Date(date _lastDate) { lastEU4Date = _lastDate; }
+		void setStartEU4Date(date _startDate) { startEU4Date = _startDate; }
 		void setOutputName(std::string name) { outputName = name; }
 		void addEU4Mod(std::string mod) { EU4Mods.push_back(mod); }
 		void setEU4Version(EU4::Version _version) { version = _version; }
@@ -100,6 +102,7 @@ class Configuration: commonItems::parser
 		EU4::Version version;
 		date firstEU4Date;
 		date lastEU4Date;
+		date startEU4Date;
 		std::string outputName;
 		std::vector<std::string> activeDLCs;
 		std::vector<std::string> EU4Mods;

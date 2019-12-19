@@ -25,6 +25,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <algorithm>
 #include <regex>
 #include <list>
@@ -1509,13 +1510,24 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 		totalIndWeight += itr->first;
 		threshold = itr->first;
 	}
-	weightedCountries.swap(restrictCountries);
 
+	if (totalIndWeight == 0)
+	{
+		LOG(LogLevel::Warning) << "The world is a backwater! No factories for anyone!";
+		return;
+	} 
+
+	weightedCountries.swap(restrictCountries);
 	// remove nations that won't have enough industiral score for even one factory
 	deque<V2Factory*> factoryList = factoryBuilder.buildFactories();
 	while (((weightedCountries.begin()->first / totalIndWeight) * factoryList.size() + 0.5 /*round*/) < 1.0)
 	{
 		weightedCountries.pop_front();
+		if (weightedCountries.size() == 0)
+		{
+			LOG(LogLevel::Warning) << "These are all primitives! No factories for anyone!";
+			return;
+		}
 	}
 
 	// determine how many factories each eligible nation gets
@@ -1843,6 +1855,30 @@ void V2World::output() const
 	{
 		LOG(LogLevel::Error) << "Error writing version file! Is the output folder writeable?";
 	}
+
+	// Update bookmark starting dates
+
+	ostringstream incomingDefines, incomingBookmarks;
+	ifstream defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
+	ifstream bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
+	incomingDefines << defines_lua.rdbuf();
+	incomingBookmarks << bookmarks_txt.rdbuf();
+	defines_lua.close();
+	bookmarks_txt.close();
+	string startDate = "<STARTDATE>";
+	string strDefines = incomingDefines.str();
+	string strBookmarks = incomingBookmarks.str();
+	size_t pos1 = strDefines.find(startDate);
+	size_t pos2 = strBookmarks.find(startDate);
+	strDefines.replace(pos1, startDate.length(), theConfiguration.getLastEU4Date().toString());
+	strBookmarks.replace(pos2, startDate.length(), theConfiguration.getLastEU4Date().toString());
+
+	ofstream out_defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
+	ofstream out_bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
+	out_defines_lua << strDefines;
+	out_bookmarks_txt << strBookmarks;
+	out_defines_lua.close();
+	out_bookmarks_txt.close();
 
 	// Create common\countries path.
 	string countriesPath = "output/" + theConfiguration.getOutputName() + "/common/countries";
