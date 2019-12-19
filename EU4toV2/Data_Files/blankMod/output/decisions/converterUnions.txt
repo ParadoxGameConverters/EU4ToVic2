@@ -2918,7 +2918,7 @@ political_decisions = {
 					tag = SPQ
 					NOT = { exists = SPQ }
 				}
-				primary_culture = north_italian culture = south_italian culture = brithenig culture = gaul
+				primary_culture = latin culture = brithenig culture = gaul culture = xliponian culture = wenedyk culture = bazramani
 				religion = catholic
 				government = absolute_monarchy
 				civilized = yes
@@ -6663,50 +6663,24 @@ political_decisions = {
 					tag = BYZ
 					NOT = { exists = LTN }
 					NOT = { exists = HRE }
-					NOT = { exists = ENR }
-					NOT = { exists = FRR }
-					NOT = { exists = AUR }
 				}
 				AND = {
 					tag = LTN
 					NOT = { exists = BYZ }
 					NOT = { exists = HRE }
-					NOT = { exists = ENR }
-					NOT = { exists = FRR }
-					NOT = { exists = AUR }
 				}
 				AND = {
 					tag = HRE
 					NOT = { exists = LTN }
 					NOT = { exists = BYZ }
-					NOT = { exists = ENR }
-					NOT = { exists = FRR }
-					NOT = { exists = AUR }
 				}
-				AND = {
-					tag = ENR
-					NOT = { exists = LTN }
-					NOT = { exists = HRE }
-					NOT = { exists = BYZ }
-					NOT = { exists = FRR }
-					NOT = { exists = AUR }
-				}
-				AND = {
-					tag = FRR
-					NOT = { exists = LTN }
-					NOT = { exists = HRE }
-					NOT = { exists = ENR }
-					NOT = { exists = BYZ }
-					NOT = { exists = AUR }
-				}
-				AND = {
-					tag = AUR
-					NOT = { exists = LTN }
-					NOT = { exists = HRE }
-					NOT = { exists = ENR }
-					NOT = { exists = FRR }
-					NOT = { exists = BYZ }
-				}
+				primary_culture = gaul
+				primary_culture = laessin
+				primary_culture = brithenig
+				primary_culture = latin
+				primary_culture = xliponian
+				primary_culture = wenedyk
+				primary_culture = bazramani
 			}
 			NOT = { exists = SPQ }
 		}
@@ -6766,17 +6740,13 @@ political_decisions = {
 				remove_core = BYZ
 				remove_core = LTN
 				remove_core = HRE
-				remove_core = ENR
-				remove_core = FRR
-				remove_core = AUR
 				remove_core = ITA
 				remove_core = ITP
 				remove_core = JER
 			}
 			change_tag = SPQ
 			capital = 749
-			add_accepted_culture = north_italian #Romans
-			add_accepted_culture = south_italian
+			add_accepted_culture = latin
 			add_accepted_culture = greek #Byzantines
 			any_country = {
 				limit = {

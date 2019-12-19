@@ -136,11 +136,13 @@ namespace EU4
 			string	getName(const string& language) const;
 			string	getAdjective(const string& language) const;
 			commonItems::Color getColor() const { return color; }
+			void dropMinorityCultures();
 
 		private:
 			void determineJapaneseRelations();
 			void determineInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper);
 			void determineLibertyDesire();
+			void determineCulturalUnion();
 			void							clearProvinces();
 			void							clearCores();
 
@@ -174,6 +176,8 @@ namespace EU4
 			bool							possibleShogun;			// if this country is the shogun
 			std::vector<std::shared_ptr<EU4::leader>> militaryLeaders;
 			string							government;				// the government type
+			int governmentRank = 0;
+			int development = 0;
 			map<string, EU4Relations*>	relations;				// the relations with other nations
 			vector<EU4Army*>				armies;					// this nation's armies and navies
 			map<string, int>				nationalIdeas;			// the national ideas for this country

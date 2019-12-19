@@ -83,6 +83,10 @@ EU4::Province::Province(
 		commonItems::singleString coresString(theStream);
 		cores.insert(coresString.getString());
 	});
+    registerKeyword(std::regex("territorial_core"),[this](const std::string& unused, std::istream& theStream) {
+        commonItems::ignoreItem(unused, theStream);
+        territorialCore = true;
+    });
 	registerKeyword(std::regex("hre"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleString hreString(theStream);
 		if (hreString.getString() == "yes")

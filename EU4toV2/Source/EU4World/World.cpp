@@ -166,6 +166,7 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 	LOG(LogLevel::Info) << "Building world";
 	setEmpires();
 	addProvinceInfoToCountries();
+	dropMinoritiesFromCountries();
 	provinces->determineTotalProvinceWeights(theConfiguration);
 	loadRegions();
 	readCommonCountries();
@@ -308,6 +309,14 @@ void EU4::world::loadRevolutionTarget()
 		{
 			country->second->viveLaRevolution(true);
 		}
+	}
+}
+
+void EU4::world::dropMinoritiesFromCountries()
+{
+	for (auto country : theCountries)
+	{
+		country.second->dropMinorityCultures();
 	}
 }
 

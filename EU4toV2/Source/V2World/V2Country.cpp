@@ -380,7 +380,7 @@ void V2Country::output() const
 		{
 			fprintf(output, "\n");
 			fprintf(output, "# Decisions\n");
-			fprintf(output, "1835.1.1 = {\n");
+			fprintf(output, "1820.1.1 = {\n");
 			for (const auto& decision : decisions)
 			{
 				fprintf(output, "\tdecision = %s\n", decision.c_str());
@@ -868,14 +868,17 @@ void V2Country::initFromEU4Country(
 	{
 		if (prov->hasGreatProject("suez_canal"))
 		{
+			LOG(LogLevel::Debug) << "Building Suez Canal in: " << prov->getName();
 			decisions.push_back("build_suez_canal");
 		}
 		if (prov->hasGreatProject("kiel_canal"))
 		{
+			LOG(LogLevel::Debug) << "Building Kiel Canal in: " << prov->getName();
 			decisions.push_back("build_kiel_canal");
 		}
 		if (prov->hasGreatProject("panama_canal"))
 		{
+			LOG(LogLevel::Debug) << "Building Panama Canal in: " << prov->getName();
 			decisions.push_back("build_panama_canal");
 		}
 	}
@@ -885,6 +888,21 @@ void V2Country::initFromEU4Country(
 // used only for countries which are NOT converted (i.e. unions, dead countries, etc)
 void V2Country::initFromHistory()
 {
+	// Ping unreleasable_tags for this country's TAG
+	ifstream unreleasableTags;
+	string inputBuffer;
+
+	unreleasableTags.open("./unreleasable_tags.txt");
+	while (getline(unreleasableTags, inputBuffer))
+	{
+		if (inputBuffer.find(tag) != std::string::npos)
+		{
+			LOG(LogLevel::Debug) << "Found " << tag << " in unreleasables.";
+			isReleasableVassal = false;
+		}
+	}
+	unreleasableTags.close();
+
 	string fullFilename;
 
 	auto possibleFilename = Utils::GetFileFromTag("./blankMod/output/history/countries/", tag);
@@ -947,11 +965,14 @@ void V2Country::initFromHistory()
 	{
 		civilized = (results[0]->getLeaf() == "yes");
 	}
-
-	results = obj->getValue("is_releasable_vassal");
-	if (results.size() > 0)
+	// don't bother if already false by override.
+	if (isReleasableVassal)
 	{
-		isReleasableVassal = (results[0]->getLeaf() == "yes");
+		results = obj->getValue("is_releasable_vassal");
+		if (results.size() > 0)
+		{
+			isReleasableVassal = (results[0]->getLeaf() == "yes");
+		}
 	}
 
 	results = obj->getValue("nationalvalue");

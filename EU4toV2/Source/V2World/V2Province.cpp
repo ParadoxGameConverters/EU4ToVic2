@@ -56,6 +56,7 @@ V2Province::V2Province(string _filename)
 	colonyLevel = 0;
 	colonial = 0;
 	wasColonised = false;
+	territorialCore = false;
 	landConnection = false;
 	sameContinent = false;
 	originallyInfidel = false;
@@ -338,9 +339,16 @@ void V2Province::convertFromOldProvince(
 	{
 		colonyLevel = 2;
 	}
-	colonial = 0;
+	if (oldProvince->isTerritorialCore())
+	{
+		colonial = 2;
+		territorialCore = true;
+	}
+	else
+	{
+		colonial = 0;
+	}
 	wasColonised = oldProvince->wasColonised();
-
 	auto oldCountry = theEU4Countries.find(oldProvince->getOwnerString());
 	if (oldCountry != theEU4Countries.end())
 	{
@@ -351,17 +359,22 @@ void V2Province::convertFromOldProvince(
 
 void V2Province::determineColonial()
 {
-	if ((!landConnection) && (!sameContinent) && ((wasColonised) || (originallyInfidel)))
+	if (territorialCore)
 	{
+		LOG(LogLevel::Debug) << "Colonial Province: " << name;
 		colonial = 2;
+	}
+	else
+	{
+		LOG(LogLevel::Debug) << "State Province: " << name;
 	}
 }
 
 
 void V2Province::addCore(string newCore)
 {
-	// only add if unique
-	if (find(cores.begin(), cores.end(), newCore) == cores.end())
+	// only add if unique, and not a territorial core/colony of the current owner
+	if ((find(cores.begin(), cores.end(), newCore) == cores.end()) && !((newCore.compare(owner) == 0) && territorialCore))
 	{
 		cores.push_back(newCore);
 	}
