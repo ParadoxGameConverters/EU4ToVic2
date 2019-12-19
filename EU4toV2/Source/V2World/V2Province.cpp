@@ -335,7 +335,7 @@ void V2Province::convertFromOldProvince(
 ) {
 	srcProvince = oldProvince;
 	inHRE = oldProvince->inHre();
-	if (oldProvince->isColony())
+	if (!oldProvince->isCity())
 	{
 		colonial = 1;
 		territorialCore = true;
