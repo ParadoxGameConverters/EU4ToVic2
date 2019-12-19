@@ -31,6 +31,7 @@ THE SOFTWARE. */
 #include <fstream>
 #include <optional>
 #include <sstream>
+#include <cmath>
 
 
 
@@ -265,12 +266,21 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	
 	// dev modifier
 	devModifier = ( baseTax + baseProduction + manpower );
+	devDelta = devModifier - provinceHistory->getOriginalDevelopment();
+	modifierWeight = buildingWeight + manpower_weight + production_income + total_tx;
 
-	totalWeight = buildingWeight + devModifier + ( manpower_weight + production_income + total_tx );
-	//i would change dev effect to 1, but your choice
+	totalWeight = devModifier + modifierWeight;
+
+	if (modifierWeight > 0)
+	{
+		// provinces with modifierweights under 10 (underdeveloped with no buildings) get a penalty for popShaping.
+		modifierWeight = (std::log10(modifierWeight) - 1) * 10;
+	}
+
 	if (ownerString == "")
 	{
 		totalWeight = 0;
+		modifierWeight = 0;
 	}
 
 	provinceStats.setGoodsProduced(goodsProduced);
@@ -284,7 +294,6 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	provinceStats.setTaxEfficiency(taxEfficiency);
 	provinceStats.setTotalTaxIncome(total_tx);
 	provinceStats.setTotalTradeValue(total_trade_value);
-	//LOG(LogLevel::Info) << "Num: " << num << " TAG: " << ownerString << " Weight: " << totalWeight;
 }
 
 

@@ -48,6 +48,7 @@ class ProvinceHistory: commonItems::parser
 		bool hasOriginalCulture() const;
 		bool wasColonized() const;
 		bool wasInfidelConquest(const Religions& allReligions, const std::string& ownerReligionString, int num) const;
+		double getOriginalDevelopment() const { return originalTax + originalProduction + originalManpower; }
 
 		std::vector<PopRatio> getPopRatios() const { return popRatios; }
 
@@ -60,6 +61,9 @@ class ProvinceHistory: commonItems::parser
 		std::vector<std::pair<date, std::string>> cultureHistory;
 
 		std::vector<PopRatio> popRatios;
+		double originalTax = 0.0;
+		double originalProduction = 0.0;
+		double originalManpower = 0.0;
 };
 
 }

@@ -81,9 +81,14 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		commonItems::singleDouble libertyThresholdDouble(theStream);
 		libertyThreshold = libertyThresholdDouble.getDouble();
 	});
-	registerKeyword(std::regex("convertPopTotals"), [this](const std::string& unused, std::istream& theStream){
-		commonItems::singleString convertPopTotalsString(theStream);
-		convertPopTotals = (convertPopTotalsString.getString() == "yes");
+	registerKeyword(std::regex("popShaping"), [this](const std::string& unused, std::istream& theStream){
+		commonItems::singleString popShapingString(theStream);
+		popShaping = popShapingString.getString();
+	});
+	registerKeyword(std::regex("popShapingFactor"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleDouble popShapingFactorDouble(theStream);
+		popShapingFactor = popShapingFactorDouble.getDouble();
+		LOG(LogLevel::Info) << "Pop Shaping Factor: " << popShapingFactor;
 	});
 	registerKeyword(std::regex("debug"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleString debugString(theStream);

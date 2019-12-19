@@ -57,8 +57,12 @@ configuration = {
 	# Liberty threshold: The threshold value for when colonies are not absorbed. Default 100% (colonies always absorbed)
 	libertyThreshold = "100"
 
-	# Convert pop totals?: Whether or not the population totals should be converted.
-	#	Yes	 - The population totals should be converted
-	#	No	 - The population totals should NOT be converted
-	convertPopTotals = "no"
+	# Shape population?: Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers.
+	# 	vanilla	 	- Use Vanilla population sizes.
+	#	popshaping	- Adjust population sizes.
+	#	extreme		- Extreme Redistribution.
+	popShaping = "vanilla"
+	
+	# Shaping Factor?: How much does EU4 affect population sizes? 0 - Vanilla, 100 - Fully (1 dev increase approx 1% pop increase)
+	popShapingFactor = "100"
 }

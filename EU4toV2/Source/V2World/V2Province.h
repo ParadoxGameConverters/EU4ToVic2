@@ -180,6 +180,7 @@ class V2Province
 		map<string, V2Factory*>	factories;
 
 		bool							resettable;
+		double spentProvinceModifier = 0;	//Store old popshaping modifier for NEU4-to-1V2 conversions;
 };
 
 

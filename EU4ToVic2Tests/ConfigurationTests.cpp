@@ -336,13 +336,13 @@ TEST(EU4ToVic2_ConfigurationTests, RemoveTypeCanBeSet)
 }
 
 
-TEST(EU4ToVic2_ConfigurationTests, LibertyThresholdDefaultsToOneHundred)
+TEST(EU4ToVic2_ConfigurationTests, LibertyThresholdDefaultsToFifty)
 {
 	Configuration testConfiguration;
 	std::stringstream input("");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ(testConfiguration.getLibertyThreshold(), 100.0);
+	ASSERT_EQ(testConfiguration.getLibertyThreshold(), 50.0);
 }
 
 
@@ -356,25 +356,43 @@ TEST(EU4ToVic2_ConfigurationTests, LibertyThresholdCanBeSet)
 }
 
 
-TEST(EU4ToVic2_ConfigurationTests, ConvertPopTotalsDefaultsToFalse)
+TEST(EU4ToVic2_ConfigurationTests, PopShapingDefaultsToVanilla)
 {
 	Configuration testConfiguration;
 	std::stringstream input("");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ(testConfiguration.getConvertPopTotals(), false);
+	ASSERT_EQ(testConfiguration.getPopShaping(), "vanilla");
 }
 
 
-TEST(EU4ToVic2_ConfigurationTests, ConvertPopTotalsCanBeSet)
+TEST(EU4ToVic2_ConfigurationTests, PopShapingCanBeSet)
 {
 	Configuration testConfiguration;
-	std::stringstream input("convertPopTotals = yes");
+	std::stringstream input("popShaping = popshaping");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ(testConfiguration.getConvertPopTotals(), true);
+	ASSERT_EQ(testConfiguration.getPopShaping(), "popshaping");
 }
 
+TEST(EU4ToVic2_ConfigurationTests, PopShapingFactorDefaultsToFifty)
+{
+	Configuration testConfiguration;
+	std::stringstream input("");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getPopShapingFactor(), 50.0);
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, PopShapingFactorCanBeSet)
+{
+	Configuration testConfiguration;
+	std::stringstream input("popShapingFactor = 50.0");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getPopShapingFactor(), 50.0);
+}
 
 TEST(EU4ToVic2_ConfigurationTests, DebugDefaultsToFalse)
 {

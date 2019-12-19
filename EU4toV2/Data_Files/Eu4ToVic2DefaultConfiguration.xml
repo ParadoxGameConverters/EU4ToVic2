@@ -83,30 +83,45 @@
           <preference>
             <name>libertyThreshold</name>
             <friendlyName>Liberty threshold</friendlyName>
-            <description>The threshold value for when colonies are not absorbed. Default 100% (colonies always absorbed)</description>
+            <description>The threshold value for when colonies are not absorbed. Default 50% (loyal colonies absorbed)</description>
             <hasDirectlyEditableValue>true</hasDirectlyEditableValue>
-            <value>100</value>
+            <value>50</value>
             <minValue>1</minValue>
             <maxValue>100</maxValue>
           </preference>
           <preference>
-            <name>convertPopTotals</name>
-            <friendlyName>Convert pop totals?</friendlyName>
-            <description>Whether or not the population totals should be converted.</description>
+            <name>popShaping</name>
+            <friendlyName>Shape population?</friendlyName>
+            <description>Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers.</description>
             <entryOptions>
               <entryOption>
-                <name>yes</name>
-                <friendlyName>Yes</friendlyName>
-                <description>The population totals should be converted</description>
+                <name>vanilla</name>
+                <friendlyName>Vanilla - no change</friendlyName>
+                <description>Use Vanilla population sizes.</description>
+                <isDefault>true</isDefault>
+              </entryOption>
+              <entryOption>
+                <name>popshaping</name>
+                <friendlyName>Population Shaping - Devpush!</friendlyName>
+                <description>Adjust population sizes.</description>
                 <isDefault>false</isDefault>
               </entryOption>
               <entryOption>
-                <name>no</name>
-                <friendlyName>No</friendlyName>
-                <description>The population totals should NOT be converted</description>
-                <isDefault>true</isDefault>
+                <name>extreme</name>
+                <friendlyName>Extreme Reshaping</friendlyName>
+                <description>Redistribute everyone according to absolute value of provinces.</description>
+                <isDefault>false</isDefault>
               </entryOption>
             </entryOptions>
+          </preference>
+		<preference>
+            <name>popShapingFactor</name>
+            <friendlyName>Shaping Factor?</friendlyName>
+            <description>How much does EU4 affect population sizes? 0 - Vanilla, 100 - Fully (1 dev increase approx 1% pop increase)</description>
+            <hasDirectlyEditableValue>true</hasDirectlyEditableValue>
+            <value>100</value>
+            <minValue>1</minValue>
+            <maxValue>100</maxValue>
           </preference>
         </preferences>
       </category>

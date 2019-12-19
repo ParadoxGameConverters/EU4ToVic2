@@ -56,7 +56,8 @@ class Configuration: commonItems::parser
 		double getMaxLiteracy() { return MaxLiteracy; }
 		std::string getRemovetype() { return Removetype; }
 		double getLibertyThreshold() { return libertyThreshold; }
-		bool getConvertPopTotals() { return convertPopTotals; }
+		std::string getPopShaping() { return popShaping; }
+		double getPopShapingFactor() { return popShapingFactor; }
 		bool getDebug() const { return debug; }
 
 		const EU4::Version& getEU4Version() const { return version; }
@@ -90,8 +91,9 @@ class Configuration: commonItems::parser
 		std::string resetProvinces = "no";
 		double MaxLiteracy = 1.0;
 		std::string Removetype = "none";
-		double libertyThreshold = 100.0;
-		bool convertPopTotals = false;
+		double libertyThreshold = 50.0;
+		std::string popShaping = "vanilla";
+		double popShapingFactor = 50.0;
 		bool debug = false;
 	
 		// items set during conversion
