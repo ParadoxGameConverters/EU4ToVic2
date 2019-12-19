@@ -63,6 +63,7 @@ class CultureUnionMapperFile: commonItems::parser
 		~CultureUnionMapperFile() = default;
 
 		std::unique_ptr<CultureUnionMapper> takeCultureUnionMapper() { return std::move(theCultureUnionMapper); }
+		std::unique_ptr<CultureUnionMapper> takeNationalsMapper() { return std::move(theNationalsMapper); }
 
 	private:
 		CultureUnionMapperFile(const CultureUnionMapperFile&) = delete;
@@ -71,10 +72,10 @@ class CultureUnionMapperFile: commonItems::parser
 		CultureUnionMapperFile& operator=(CultureUnionMapperFile&&) = delete;
 
 		std::unique_ptr<CultureUnionMapper> theCultureUnionMapper;
+		std::unique_ptr<CultureUnionMapper> theNationalsMapper;
 };
 
 }
-
 
 
 #endif //VIC2_CULTURE_UNION_MAPPER_H

@@ -186,11 +186,11 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 	importReligions();
 
 	removeEmptyNations();
-	if (theConfiguration.getRemovetype() == "dead")
+	if (theConfiguration.getRemoveType() == Configuration::DEADCORES::DeadCores)
 	{
 		removeDeadLandlessNations();
 	}
-	else if (theConfiguration.getRemovetype() == "all")
+	else if (theConfiguration.getRemoveType() == Configuration::DEADCORES::AllCores)
 	{
 		removeLandlessNations();
 	}

@@ -120,7 +120,7 @@ void EU4Army::resolveRegimentTypes(const RegimentTypeMap& regimentTypeMap)
 		}
 		else
 		{
-			LOG(LogLevel::Warning) << "Unknown unit type " << (*itr)->getType() << " for regiment \"" << (*itr)->getName() << "\"";
+			LOG(LogLevel::Debug) << "Unknown unit type " << (*itr)->getType() << " for regiment \"" << (*itr)->getName() << "\"";
 		}
 	}
 }

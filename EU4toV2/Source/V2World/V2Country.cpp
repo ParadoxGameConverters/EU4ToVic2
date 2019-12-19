@@ -1179,7 +1179,7 @@ void V2Country::convertArmies(
 		auto locationCandidates = provinceMapper.getVic2ProvinceNumbers((*aitr)->getLocation());
 		if (locationCandidates.size() == 0)
 		{
-			LOG(LogLevel::Warning) << "Army or Navy " << (*aitr)->getName() << " assigned to unmapped province " << (*aitr)->getLocation() << "; dissolving to pool";
+			LOG(LogLevel::Debug) << "Army or Navy " << (*aitr)->getName() << " assigned to unmapped province " << (*aitr)->getLocation() << "; dissolving to pool";
 			int regimentCounts[num_reg_categories] = { 0 };
 			army.getRegimentCounts(regimentCounts);
 			for (int rc = infantry; rc < num_reg_categories; ++rc)
@@ -1190,7 +1190,7 @@ void V2Country::convertArmies(
 		}
 		else if ((locationCandidates.size() == 1) && (*locationCandidates.begin() == 0))
 		{
-			LOG(LogLevel::Warning) << "Army or Navy " << (*aitr)->getName() << " assigned to dropped province " << (*aitr)->getLocation() << "; dissolving to pool";
+			LOG(LogLevel::Debug) << "Army or Navy " << (*aitr)->getName() << " assigned to dropped province " << (*aitr)->getLocation() << "; dissolving to pool";
 			int regimentCounts[num_reg_categories] = { 0 };
 			army.getRegimentCounts(regimentCounts);
 			for (int rc = infantry; rc < num_reg_categories; ++rc)
@@ -1213,7 +1213,7 @@ void V2Country::convertArmies(
 				locationCandidates = getPortProvinces(locationCandidates, allProvinces);
 				if (locationCandidates.size() == 0)
 				{
-					LOG(LogLevel::Warning) << "Navy " << (*aitr)->getName() << " assigned to EU4 province " << (*aitr)->getLocation() << " which has no corresponding V2 port provinces; dissolving to pool";
+					LOG(LogLevel::Debug) << "Navy " << (*aitr)->getName() << " assigned to EU4 province " << (*aitr)->getLocation() << " which has no corresponding V2 port provinces; dissolving to pool";
 					int regimentCounts[num_reg_categories] = { 0 };
 					army.getRegimentCounts(regimentCounts);
 					for (int rc = infantry; rc < num_reg_categories; ++rc)
@@ -1980,13 +1980,13 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 	auto homeCandidates = provinceMapper.getVic2ProvinceNumbers(*eu4Home);
 	if (homeCandidates.size() == 0)
 	{
-		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army.getName() << " has unmapped home province " << *eu4Home << " - dissolving to pool";
+		LOG(LogLevel::Debug) << RegimentCategoryNames[rc] << " unit in army/navy " << army.getName() << " has unmapped home province " << *eu4Home << " - dissolving to pool";
 		army.getSourceArmy()->blockHomeProvince(*eu4Home);
 		return addRegimentToArmyResult::retry;
 	}
 	if (*homeCandidates.begin() == 0)
 	{
-		LOG(LogLevel::Warning) << RegimentCategoryNames[rc] << " unit in army/navy " << army.getName() << " has dropped home province " << *eu4Home << " - dissolving to pool";
+		LOG(LogLevel::Debug) << RegimentCategoryNames[rc] << " unit in army/navy " << army.getName() << " has dropped home province " << *eu4Home << " - dissolving to pool";
 		army.getSourceArmy()->blockHomeProvince(*eu4Home);
 		return addRegimentToArmyResult::retry;
 	}
@@ -2022,7 +2022,7 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 		sort(sortedHomeCandidates.begin(), sortedHomeCandidates.end(), ProvinceRegimentCapacityPredicate);
 		if (sortedHomeCandidates.size() == 0)
 		{
-			LOG(LogLevel::Warning) << "No valid home for a " << tag << " " << RegimentCategoryNames[rc] << " regiment - dissolving regiment to pool";
+			LOG(LogLevel::Debug) << "No valid home for a " << tag << " " << RegimentCategoryNames[rc] << " regiment - dissolving regiment to pool";
 			// all provinces in a given province map have the same owner, so the source home was bad
 			army.getSourceArmy()->blockHomeProvince(*eu4Home);
 			return addRegimentToArmyResult::retry;
@@ -2066,7 +2066,7 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 			}
 			if (homeProvince == nullptr)
 			{
-				LOG(LogLevel::Warning) << "V2 province " << sortedHomeCandidates[0]->getNum() << " is home for a " << tag << " " << RegimentCategoryNames[rc] << " regiment, but belongs to " << sortedHomeCandidates[0]->getOwner() << " - dissolving regiment to pool";
+				LOG(LogLevel::Debug) << "V2 province " << sortedHomeCandidates[0]->getNum() << " is home for a " << tag << " " << RegimentCategoryNames[rc] << " regiment, but belongs to " << sortedHomeCandidates[0]->getOwner() << " - dissolving regiment to pool";
 				// all provinces in a given province map have the same owner, so the source home was bad
 				army.getSourceArmy()->blockHomeProvince(*eu4Home);
 				return addRegimentToArmyResult::retry;

@@ -60,7 +60,12 @@ Vic2::CultureUnionMapperFile::CultureUnionMapperFile()
 	registerKeyword(std::regex("unions"), [this](const std::string& unused, std::istream& theStream){
 		theCultureUnionMapper = std::make_unique<Vic2::CultureUnionMapper>(theStream);
 	});
+	registerKeyword(std::regex("nationals"), [this](const std::string& unused, std::istream& theStream) {
+		theNationalsMapper = std::make_unique<Vic2::CultureUnionMapper>(theStream);
+	});
 
 	LOG(LogLevel::Info) << "Parsing union mappings";
 	parseFile("unions.txt");
+	LOG(LogLevel::Info) << "Parsing national mappings";
+	parseFile("nationals.txt");
 }

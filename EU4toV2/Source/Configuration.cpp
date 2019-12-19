@@ -74,16 +74,20 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		MaxLiteracy = maxLiteracyDouble.getDouble();
 	});
 	registerKeyword(std::regex("Removetype"), [this](const std::string& unused, std::istream& theStream){
-		commonItems::singleString removeTypeString(theStream);
-		Removetype = removeTypeString.getString();
+		commonItems::singleInt removeTypeString(theStream);
+		removeType = Configuration::DEADCORES(removeTypeString.getInt());
 	});
 	registerKeyword(std::regex("libertyThreshold"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleDouble libertyThresholdDouble(theStream);
 		libertyThreshold = libertyThresholdDouble.getDouble();
 	});
 	registerKeyword(std::regex("popShaping"), [this](const std::string& unused, std::istream& theStream){
-		commonItems::singleString popShapingString(theStream);
-		popShaping = popShapingString.getString();
+		commonItems::singleInt popShapingString(theStream);
+		popShaping = Configuration::POPSHAPES(popShapingString.getInt());
+	});
+	registerKeyword(std::regex("coreHandling"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt coreHandlingString(theStream);
+		coreHandling = Configuration::COREHANDLES(coreHandlingString.getInt());
 	});
 	registerKeyword(std::regex("popShapingFactor"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleDouble popShapingFactorDouble(theStream);

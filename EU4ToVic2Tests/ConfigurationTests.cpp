@@ -316,23 +316,23 @@ TEST(EU4ToVic2_ConfigurationTests, MaxLiteracyCanBeSet)
 }
 
 
-TEST(EU4ToVic2_ConfigurationTests, RemoveTypeDefaultsToNone)
+TEST(EU4ToVic2_ConfigurationTests, RemoveTypeDefaultsToDead)
 {
 	Configuration testConfiguration;
 	std::stringstream input("");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ(testConfiguration.getRemovetype(), "none");
+	ASSERT_EQ(testConfiguration.getRemoveType(), Configuration::DEADCORES::DeadCores);
 }
 
 
 TEST(EU4ToVic2_ConfigurationTests, RemoveTypeCanBeSet)
 {
 	Configuration testConfiguration;
-	std::stringstream input("Removetype = Dead");
+	std::stringstream input("removeType = 1");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ(testConfiguration.getRemovetype(), "Dead");
+	ASSERT_EQ(testConfiguration.getRemoveType(), Configuration::DEADCORES::LeaveAll);
 }
 
 
@@ -362,17 +362,17 @@ TEST(EU4ToVic2_ConfigurationTests, PopShapingDefaultsToVanilla)
 	std::stringstream input("");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ(testConfiguration.getPopShaping(), "vanilla");
+	ASSERT_EQ(testConfiguration.getPopShaping(), Configuration::POPSHAPES::Vanilla);
 }
 
 
 TEST(EU4ToVic2_ConfigurationTests, PopShapingCanBeSet)
 {
 	Configuration testConfiguration;
-	std::stringstream input("popShaping = popshaping");
+	std::stringstream input("popShaping = 2");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ(testConfiguration.getPopShaping(), "popshaping");
+	ASSERT_EQ(testConfiguration.getPopShaping(), Configuration::POPSHAPES::PopShaping);
 }
 
 TEST(EU4ToVic2_ConfigurationTests, PopShapingFactorDefaultsToFifty)
@@ -392,6 +392,25 @@ TEST(EU4ToVic2_ConfigurationTests, PopShapingFactorCanBeSet)
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
 	ASSERT_EQ(testConfiguration.getPopShapingFactor(), 50.0);
+}
+
+TEST(EU4ToVic2_ConfigurationTests, CoreHandlingDefaultsToNone)
+{
+	Configuration testConfiguration;
+	std::stringstream input("");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getCoreHandling(), Configuration::COREHANDLES::DropNone);
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, CoreHandlingCanBeSet)
+{
+	Configuration testConfiguration;
+	std::stringstream input("coreHandling = 2");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getCoreHandling(), Configuration::COREHANDLES::DropNational);
 }
 
 TEST(EU4ToVic2_ConfigurationTests, DebugDefaultsToFalse)

@@ -49,20 +49,28 @@ configuration = {
 	max_literacy = "1"
 
 	# Types of Landless nations to remove: Which landless nations to remove
-	#	None	 - Remove none of them
-	#	Dead	 - Remove ones without cultural backing
-	#	All	 - Remove all of them
-	Removetype = "none"
+	#	1	 - Remove none of them
+	#	2	 - Remove ones without cultural backing
+	#	3	 - Remove all of them
+	removeType = "2"
 
 	# Liberty threshold: The threshold value for when colonies are not absorbed. Default 100% (colonies always absorbed)
 	libertyThreshold = "100"
 
 	# Shape population?: Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers.
-	# 	vanilla	 	- Use Vanilla population sizes.
-	#	popshaping	- Adjust population sizes.
-	#	extreme		- Extreme Redistribution.
-	popShaping = "vanilla"
+	# 	1	 	- Use Vanilla population sizes.
+	#	2		- Adjust population sizes.
+	#	3		- Extreme Redistribution.
+	popShaping = "1"
 	
 	# Shaping Factor?: How much does EU4 affect population sizes? 0 - Vanilla, 100 - Fully (1 dev increase approx 1% pop increase)
 	popShapingFactor = "100"
+
+	# Auto-assign national cores outside own borders based on dominant population and their cultural unions? (makes nationalism and forming nations possible)
+	# 	1	 	- Yes, as it should be
+	#	2		- Do not assign national cores (cannot reclaim cultural land without infamy)
+	#	3		- Do not assign cultural union cores (no scandinavia or germany!)
+	#   4		- Do not assign either
+	coreHandling = "1"
+
 }
