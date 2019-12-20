@@ -252,7 +252,6 @@ void V2Province::outputPops(FILE* output) const
 				fprintf(output, "\n");
 			}
 			fprintf(output, "}\n");
-			fprintf(output, "}\n");
 		}
 	}
 	else
