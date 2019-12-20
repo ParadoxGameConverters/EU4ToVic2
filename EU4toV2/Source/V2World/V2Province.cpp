@@ -252,6 +252,7 @@ void V2Province::outputPops(FILE* output) const
 				fprintf(output, "\n");
 			}
 			fprintf(output, "}\n");
+			fprintf(output, "}\n");
 		}
 	}
 	else
@@ -859,6 +860,7 @@ void V2Province::createPops(
 		LOG(LogLevel::Debug) << "Not shaping province " << name << " from EU4's " << oldProvince->getName()
 			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
 		break;
+
 	case Configuration::POPSHAPES::PopShaping:
 		if (spentProvinceModifier != 0)
 		{
@@ -875,6 +877,8 @@ void V2Province::createPops(
 			<< " shape factor: " << shapeMod
 			<< ", final modifier: " << provinceDevModifier
 			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
+		break;
+
 	case Configuration::POPSHAPES::Extreme:
 		newPopulation = static_cast<long>((static_cast<double>(this->lifeRating) / 10)* popWeightRatio* oldProvince->getTotalWeight());
 
