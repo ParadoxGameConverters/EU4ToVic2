@@ -36,33 +36,93 @@ THE SOFTWARE. */
 #include <algorithm>
 
 
-class governmentSection: commonItems::parser
+class reformsSection : commonItems::parser 
 {
-	public:
-		governmentSection(std::istream& theStream);
-		std::string getGovernment() const { return government; }
-		static std::string readGovernment(std::istream& theStream)
-		{
-			commonItems::singleString governmentString(theStream);
-			std::string governmentStr = governmentString.getString();
-			if (governmentStr.substr(0, 1) == "\"")
-			{
-				governmentStr = governmentStr.substr(1, governmentStr.size() - 2);
-			}
-			return governmentStr;
-		}
+public:
+	reformsSection(std::istream& theStream);
+	std::set<std::string> getReforms() const { return reforms; }
 
-	private:
-		std::string government;
+private:
+	std::set<std::string> reforms;
 };
 
+reformsSection::reformsSection(std::istream& theStream)
+{
+	registerKeyword(std::regex("\"[a-z_]+\""), [this](const std::string& incomingReform, std::istream& theStream) 
+	{
+		std::string governmentReform = incomingReform.substr(1, incomingReform.size() - 2);
+		reforms.insert(governmentReform);
+	});
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+
+	parseStream(theStream);
+};
+
+class reformStackSection : commonItems::parser
+{
+public:
+	reformStackSection(std::istream& theStream);
+	std::set<std::string> getReforms() const { return reforms; }
+
+	static std::set<std::string> readStack(std::istream& theStream)
+	{
+		reformsSection govRefs(theStream);		
+		return govRefs.getReforms();
+	}
+
+private:
+	std::set<std::string> reforms;
+};
+
+reformStackSection::reformStackSection(std::istream& theStream)
+{
+	registerKeyword(std::regex("reforms"), [this](const std::string& unused, std::istream& theStream)
+	{
+		reforms = reformStackSection::readStack(theStream);
+	});
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+
+	parseStream(theStream);
+}
+
+class governmentSection : commonItems::parser
+{
+public:
+	governmentSection(std::istream& theStream);
+	std::string getGovernment() const { return government; }
+	std::set<std::string> getGovernmentReforms() const { return reformStack; }
+
+	static std::string readGovernment(std::istream& theStream)
+	{
+		commonItems::singleString governmentString(theStream);
+		std::string governmentStr = governmentString.getString();
+		if (governmentStr.substr(0, 1) == "\"")
+		{
+			governmentStr = governmentStr.substr(1, governmentStr.size() - 2);
+		}
+		return governmentStr;
+	}
+
+	static std::set<std::string> readGovernmentReforms(std::istream& theStream)
+	{
+		reformStackSection refStack(theStream);
+		return refStack.getReforms();
+	}
+
+private:
+	std::string government;
+	std::set<std::string> reformStack;
+};
 
 governmentSection::governmentSection(std::istream& theStream)
 {
 	registerKeyword(std::regex("government"), [this](const std::string& unused, std::istream& theStream)
 	{
 		government = governmentSection::readGovernment(theStream);
-
+	});
+	registerKeyword(std::regex("reform_stack"), [this](const std::string& unused, std::istream& theStream)
+	{
+		reformStack = governmentSection::readGovernmentReforms(theStream);
 	});
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
 
@@ -227,6 +287,16 @@ EU4::Country::Country(
 			governmentRank = theGovernmentRank.getInt();
 		}
 	);
+	registerKeyword(std::regex("government_name"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString theGovernmentName(theStream);
+			governmentName = theGovernmentName.getString();
+			if (governmentName.substr(0, 1) == "\"")
+			{
+				governmentName = governmentName.substr(1, governmentName.size() - 2);
+			}
+		}
+	);
 	registerKeyword(std::regex("realm_development"), [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt theDevelopment(theStream);
@@ -327,6 +397,7 @@ EU4::Country::Country(
 		{
 			governmentSection theSection(theStream);
 			government = theSection.getGovernment();
+			governmentReforms = theSection.getGovernmentReforms();
 		}
 	});
 	registerKeyword(std::regex("active_relations"), [this](const std::string& unused, std::istream& theStream)

@@ -32,6 +32,7 @@ THE SOFTWARE. */
 #include "newParser.h"
 #include <memory>
 #include <optional>
+#include <set>
 
 
 
@@ -119,6 +120,7 @@ namespace EU4
 			bool								getPossibleDaimyo()						const { return possibleDaimyo; }
 			bool							getPossibleShogun()						const { return possibleShogun; }
 			string							getGovernment()							const { return government; }
+			string getGovernmentName()	const { return governmentName; }
 			map<string, EU4Relations*>	getRelations()								const { return relations; }
 			vector<EU4Army*>				getArmies()									const { return armies; }
 			bool								isCustom()									const { return customNation; }
@@ -175,7 +177,8 @@ namespace EU4
 			bool								possibleDaimyo;		// if this country is possibly a daimyo
 			bool							possibleShogun;			// if this country is the shogun
 			std::vector<std::shared_ptr<EU4::leader>> militaryLeaders;
-			string							government;				// the government type
+			string government = "monarchy";						// the government type, defaults to absolute monarchy
+			string governmentName = "default_monarchy";
 			int governmentRank = 0;
 			int development = 0;
 			map<string, EU4Relations*>	relations;				// the relations with other nations
@@ -191,7 +194,7 @@ namespace EU4
 			CustomFlag						customFlag;				// the custom flag
 			bool								revolutionary;			// does this country wave the glorious tricoloured banner of the revolution
 			tuple<int, int, int>			revolutionaryTricolour; // the glorious tricoloured banner of the revolution
-		
+			std::set<std::string> governmentReforms;
 
 			// Localisation attributes
 			string	name;			// the name of this country
