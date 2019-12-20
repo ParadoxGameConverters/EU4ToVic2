@@ -54,9 +54,13 @@ class Configuration: commonItems::parser
 		std::string getVic2Gametype() { return Vic2Gametype; }
 		std::string getResetProvinces() { return resetProvinces; }
 		double getMaxLiteracy() { return MaxLiteracy; }
-		std::string getRemovetype() { return Removetype; }
 		double getLibertyThreshold() { return libertyThreshold; }
-		std::string getPopShaping() { return popShaping; }
+		enum class DEADCORES { LeaveAll = 1, DeadCores = 2, AllCores = 3 };
+		enum class POPSHAPES { Vanilla = 1, PopShaping = 2, Extreme = 3};
+		enum class COREHANDLES { DropNone = 1, DropNational = 2, DropUnions = 3, DropAll = 4};
+		Configuration::POPSHAPES getPopShaping() { return popShaping; }
+		Configuration::COREHANDLES getCoreHandling() { return coreHandling; }
+		Configuration::DEADCORES getRemoveType() { return removeType; }
 		double getPopShapingFactor() { return popShapingFactor; }
 		bool getDebug() const { return debug; }
 
@@ -92,9 +96,10 @@ class Configuration: commonItems::parser
 		std::string Vic2Gametype = "HOD";
 		std::string resetProvinces = "no";
 		double MaxLiteracy = 1.0;
-		std::string Removetype = "none";
 		double libertyThreshold = 50.0;
-		std::string popShaping = "vanilla";
+		POPSHAPES popShaping = POPSHAPES::Vanilla;
+		COREHANDLES coreHandling = COREHANDLES::DropNone;
+		DEADCORES removeType = DEADCORES::DeadCores;
 		double popShapingFactor = 50.0;
 		bool debug = false;
 	

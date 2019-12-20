@@ -56,25 +56,25 @@
             <maxValue>1</maxValue>
           </preference>
           <preference>
-            <name>Removetype</name>
-            <friendlyName>Types of Landless nations to remove</friendlyName>
+            <name>removeType</name>
+            <friendlyName>Drop cores of dead nations?</friendlyName>
             <description>Which landless nations to remove</description>
             <entryOptions>
               <entryOption>
-                <name>none</name>
-                <friendlyName>None</friendlyName>
+                <name>1</name>
+                <friendlyName>None - leave all</friendlyName>
                 <description>Remove none of them</description>
-                <isDefault>true</isDefault>
-              </entryOption>
-              <entryOption>
-                <name>dead</name>
-                <friendlyName>Dead</friendlyName>
-                <description>Remove ones without cultural backing</description>
                 <isDefault>false</isDefault>
               </entryOption>
               <entryOption>
-                <name>all</name>
-                <friendlyName>All</friendlyName>
+                <name>2</name>
+                <friendlyName>Dead - no culture remains</friendlyName>
+                <description>Remove ones without cultural backing</description>
+                <isDefault>true</isDefault>
+              </entryOption>
+              <entryOption>
+                <name>3</name>
+                <friendlyName>All - dead is dead</friendlyName>
                 <description>Remove all of them</description>
                 <isDefault>false</isDefault>
               </entryOption>
@@ -95,19 +95,19 @@
             <description>Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers.</description>
             <entryOptions>
               <entryOption>
-                <name>vanilla</name>
+                <name>1</name>
                 <friendlyName>Vanilla - no change</friendlyName>
                 <description>Use Vanilla population sizes.</description>
                 <isDefault>true</isDefault>
               </entryOption>
               <entryOption>
-                <name>popshaping</name>
+                <name>2</name>
                 <friendlyName>Population Shaping - Devpush!</friendlyName>
                 <description>Adjust population sizes.</description>
                 <isDefault>false</isDefault>
               </entryOption>
               <entryOption>
-                <name>extreme</name>
+                <name>3</name>
                 <friendlyName>Extreme Reshaping</friendlyName>
                 <description>Redistribute everyone according to absolute value of provinces.</description>
                 <isDefault>false</isDefault>
@@ -122,7 +122,38 @@
             <value>100</value>
             <minValue>1</minValue>
             <maxValue>100</maxValue>
-          </preference>
+        </preference>
+		<preference>
+			<name>coreHandling</name>
+			<friendlyName>Auto-assign national cores?</friendlyName>
+			<description>Assign cores for nationalities and cultural unions (Can be an issue for CK2 and/or flat dev imports).</description>
+			<entryOptions>
+			  <entryOption>
+				<name>1</name>
+				<friendlyName>Yes - no change</friendlyName>
+				<description>Use defaults</description>
+				<isDefault>true</isDefault>
+			  </entryOption>
+			  <entryOption>
+				<name>2</name>
+				<friendlyName>No national cores</friendlyName>
+				<description>For primary nationalities</description>
+				<isDefault>false</isDefault>
+			  </entryOption>
+			  <entryOption>
+				<name>3</name>
+				<friendlyName>No cultural union cores</friendlyName>
+				<description>No Germany, apparently.</description>
+				<isDefault>false</isDefault>
+			  </entryOption>
+			  <entryOption>
+				<name>4</name>
+				<friendlyName>Drop both</friendlyName>
+				<description>Don't touch anything.</description>
+				<isDefault>false</isDefault>
+			  </entryOption>
+			</entryOptions>
+		</preference>
         </preferences>
       </category>
     </categories>

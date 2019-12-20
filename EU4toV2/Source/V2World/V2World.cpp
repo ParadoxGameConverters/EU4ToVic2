@@ -1603,7 +1603,7 @@ void V2World::setupPops(const EU4::world& sourceWorld)
 		itr->second->setupPops(popWeightRatio, popAlgorithm, sourceWorld.getCountries(), *provinceMapper);
 	}
 
-	if (theConfiguration.getPopShaping().compare("vanilla") != 0)
+	if (theConfiguration.getPopShaping() != Configuration::POPSHAPES::Vanilla)
 	{
 		LOG(LogLevel::Info) << "Total world population: " << my_totalWorldPopulation;
 	}
@@ -1765,6 +1765,7 @@ void V2World::addUnions()
 
 	Vic2::CultureUnionMapperFile theVic2CultureUnionMapperFile;
 	auto theVic2CultureUnionMapper = theVic2CultureUnionMapperFile.takeCultureUnionMapper();
+	auto theVic2NationalsMapper = theVic2CultureUnionMapperFile.takeNationalsMapper();
 
 	for (map<int, V2Province*>::iterator provItr = provinces.begin(); provItr != provinces.end(); provItr++)
 	{
@@ -1773,10 +1774,35 @@ void V2World::addUnions()
 			auto cultures = provItr->second->getCulturesOverThreshold(0.5);
 			for (auto culture : cultures)
 			{
-				vector<string> cores = theVic2CultureUnionMapper->getCoreForCulture(culture);
-				for (auto core: cores)
+				vector<string> unionCores = theVic2CultureUnionMapper->getCoreForCulture(culture);
+				vector<string> nationalCores = theVic2NationalsMapper->getCoreForCulture(culture);
+				switch (theConfiguration.getCoreHandling())
 				{
-					provItr->second->addCore(core);
+				case Configuration::COREHANDLES::DropNational:
+					LOG(LogLevel::Debug) << "Adding union cores for " << culture;
+					for (auto core : unionCores)
+					{
+						provItr->second->addCore(core);
+					}
+					break;
+				case Configuration::COREHANDLES::DropUnions:
+					LOG(LogLevel::Debug) << "Adding national cores for " << culture << "to " << provItr->second->getName() << ":";
+					for (auto core : nationalCores)
+					{
+						LOG(LogLevel::Debug) << provItr->second->getName() << ": " << core;
+						provItr->second->addCore(core);
+					}
+					break;
+				case Configuration::COREHANDLES::DropNone:
+					LOG(LogLevel::Debug) << "Adding all cores for " << culture;
+					for (auto core : unionCores)
+					{
+						provItr->second->addCore(core);
+					}
+					for (auto core : nationalCores)
+					{
+						provItr->second->addCore(core);
+					}
 				}
 			}
 		}

@@ -846,14 +846,21 @@ void V2Province::createPops(
 	auto oldCountry = demographic.oldCountry;
 
 	long newPopulation = 0;
-	if (theConfiguration.getPopShaping().compare("popshaping") == 0)
-	{
-		double lifeRatingMod = (static_cast<double>(this->lifeRating) - 30.0) / 200.0;
-		double devpushMod = oldProvince->getDevDelta() / 100.0;
-		double weightMod = oldProvince->getModifierWeight() / 100.0;
-		double shapeMod = theConfiguration.getPopShapingFactor() / 100.0;
-		double provinceDevModifier = 1 + (lifeRatingMod + devpushMod + weightMod) * shapeMod;
+	double lifeRatingMod = (static_cast<double>(this->lifeRating) - 30.0) / 200.0;
+	double devpushMod = oldProvince->getDevDelta() / 100.0;
+	double weightMod = oldProvince->getModifierWeight() / 100.0;
+	double shapeMod = theConfiguration.getPopShapingFactor() / 100.0;
+	double provinceDevModifier = 1 + (lifeRatingMod + devpushMod + weightMod) * shapeMod;
 
+	switch (theConfiguration.getPopShaping()) {
+	case Configuration::POPSHAPES::Vanilla:
+		newPopulation = oldPopulation;
+
+		LOG(LogLevel::Debug) << "Not shaping province " << name << " from EU4's " << oldProvince->getName()
+			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
+		break;
+
+	case Configuration::POPSHAPES::PopShaping:
 		if (spentProvinceModifier != 0)
 		{
 			// We have already created pops here using another EU4 province. We need to compound the push and weight modifiers.
@@ -869,9 +876,9 @@ void V2Province::createPops(
 			<< " shape factor: " << shapeMod
 			<< ", final modifier: " << provinceDevModifier
 			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
-	}
-	else if (theConfiguration.getPopShaping().compare("extreme") == 0)
-	{
+		break;
+
+	case Configuration::POPSHAPES::Extreme:
 		newPopulation = static_cast<long>((static_cast<double>(this->lifeRating) / 10)* popWeightRatio* oldProvince->getTotalWeight());
 
 		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(srcProvince->getNum());
@@ -892,19 +899,11 @@ void V2Province::createPops(
 
 		newPopulation = oldPopulation + static_cast<long>((newPopulation - oldPopulation) * (theConfiguration.getPopShapingFactor() / 100.0));
 
-		LOG(LogLevel::Debug) << "Shaping province " << name << " from EU4's " << oldProvince->getName() << ", life rating " << this->lifeRating 
+		LOG(LogLevel::Debug) << "Shaping province " << name << " from EU4's " << oldProvince->getName() << ", life rating " << this->lifeRating
 			<< ", province weight: " << oldProvince->getTotalWeight()
 			<< " shape factor: " << (theConfiguration.getPopShapingFactor() / 100.0)
 			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
-
-	}
-	else
-	{
-		newPopulation = oldPopulation;
-
-		LOG(LogLevel::Debug) << "Not shaping province " << name << " from EU4's " << oldProvince->getName()
-			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
-
+		break;
 	}
 
 	pop_points pts;
