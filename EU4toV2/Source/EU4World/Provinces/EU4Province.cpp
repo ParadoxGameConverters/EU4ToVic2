@@ -95,6 +95,13 @@ EU4::Province::Province(
 			inHRE = true;
 		}
 	});
+	registerKeyword(std::regex("is_city"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleString cityString(theStream);
+		if (cityString.getString() == "yes")
+		{
+			city = true;
+		}
+	});
 	registerKeyword(std::regex("colonysize"), [this](const std::string & unused, std::istream & theStream) {
 		commonItems::ignoreItem(unused, theStream);
 		colony = true;

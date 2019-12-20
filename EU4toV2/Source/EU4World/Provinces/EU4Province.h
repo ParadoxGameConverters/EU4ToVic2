@@ -76,6 +76,7 @@ class Province: commonItems::parser
 		bool inHre() const { return inHRE; }
 		bool isTerritorialCore() const { return territorialCore; }
 		bool isColony() const { return colony; }
+		bool isCity() const { return city; }
 		bool isState() const { return stated; }
 		bool wasColonised() const { return hadOriginalColoniser || provinceHistory->wasColonized(); }
 		bool hasModifier(const std::string& modifierName) const { return modifiers.count(modifierName) > 0; }
@@ -114,6 +115,7 @@ class Province: commonItems::parser
 		bool colony = false;
 		bool hadOriginalColoniser = false;
 		bool territorialCore = false;
+		bool city = false;
 
 		std::unique_ptr<EU4::ProvinceHistory> provinceHistory;
 		std::unique_ptr<EU4::ProvinceBuildings> buildings;
