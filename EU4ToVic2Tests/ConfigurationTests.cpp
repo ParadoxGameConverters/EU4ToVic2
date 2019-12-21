@@ -413,6 +413,25 @@ TEST(EU4ToVic2_ConfigurationTests, CoreHandlingCanBeSet)
 	ASSERT_EQ(testConfiguration.getCoreHandling(), Configuration::COREHANDLES::DropNational);
 }
 
+TEST(EU4ToVic2_ConfigurationTests, DharmaGovsDefaultsToFull)
+{
+	Configuration testConfiguration;
+	std::stringstream input("");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getDharmaGov(), Configuration::DHARMAGOVS::DharmaFull);
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, DharmaGovsCanBeSet)
+{
+	Configuration testConfiguration;
+	std::stringstream input("dharmaGovs = 1");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getDharmaGov(), Configuration::DHARMAGOVS::ReformsOnly);
+}
+
 TEST(EU4ToVic2_ConfigurationTests, DebugDefaultsToFalse)
 {
 	Configuration testConfiguration;

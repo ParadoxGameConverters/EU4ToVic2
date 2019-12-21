@@ -73,7 +73,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		commonItems::singleDouble maxLiteracyDouble(theStream);
 		MaxLiteracy = maxLiteracyDouble.getDouble();
 	});
-	registerKeyword(std::regex("Removetype"), [this](const std::string& unused, std::istream& theStream){
+	registerKeyword(std::regex("removeType"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleInt removeTypeString(theStream);
 		removeType = Configuration::DEADCORES(removeTypeString.getInt());
 	});
@@ -93,6 +93,10 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		commonItems::singleDouble popShapingFactorDouble(theStream);
 		popShapingFactor = popShapingFactorDouble.getDouble();
 		LOG(LogLevel::Info) << "Pop Shaping Factor: " << popShapingFactor;
+	});
+	registerKeyword(std::regex("dharmaGovs"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt dharmaGovsInt(theStream);
+		dharmaGov = Configuration::DHARMAGOVS(dharmaGovsInt.getInt());
 	});
 	registerKeyword(std::regex("debug"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleString debugString(theStream);

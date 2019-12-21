@@ -1,0 +1,36 @@
+# Copyright (c) 2019 The Paradox Game Converters Project
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
+# forcegov is the government type this reform forces. For conflicting cases
+# e.g. american_republic (democracy) with seize_executive_power_reform 
+# (presidential_dictatorship) the latter will always override the former.
+# Legitimate targets are:
+# proletarian_dictatorship, presidential_dictatorship, bourgeois_dictatorship,
+# fascist_dictatorship, absolute_monarchy, prussian_constitutionalism,
+# hms_government, democracy, theocracy
+# If reform does not change government, leave blank.
+
+# Order, liberty and equality, once combined across all selected reforms, define
+# socio-political reforms enabled at game start. Ranges -1 to 1.
+
+
+link = { reform = "peasants_republic" forecegov = "proletarian_dictatorship" order = "-0.5" liberty = "0.5" equality = "1" }
+link = { reform = "seize_executive_power_reform" forecegov = "presidential_dictatorship" order = "1" liberty = "-0.5" equality = "-0.5" }
+
