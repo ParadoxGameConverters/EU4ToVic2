@@ -164,7 +164,6 @@ EU4::Country::Country(
 	possibleDaimyo(false),
 	possibleShogun(false),
 	militaryLeaders(),
-	government(),
 	relations(),
 	armies(),
 	nationalIdeas(),
@@ -285,16 +284,6 @@ EU4::Country::Country(
 		{
 			commonItems::singleInt theGovernmentRank(theStream);
 			governmentRank = theGovernmentRank.getInt();
-		}
-	);
-	registerKeyword(std::regex("government_name"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleString theGovernmentName(theStream);
-			governmentName = theGovernmentName.getString();
-			if (governmentName.substr(0, 1) == "\"")
-			{
-				governmentName = governmentName.substr(1, governmentName.size() - 2);
-			}
 		}
 	);
 	registerKeyword(std::regex("realm_development"), [this](const std::string& unused, std::istream& theStream)

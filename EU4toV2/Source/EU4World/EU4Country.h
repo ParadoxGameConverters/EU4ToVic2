@@ -120,7 +120,6 @@ namespace EU4
 			bool								getPossibleDaimyo()						const { return possibleDaimyo; }
 			bool							getPossibleShogun()						const { return possibleShogun; }
 			string							getGovernment()							const { return government; }
-			string getGovernmentName()	const { return governmentName; }
 			map<string, EU4Relations*>	getRelations()								const { return relations; }
 			vector<EU4Army*>				getArmies()									const { return armies; }
 			bool								isCustom()									const { return customNation; }
@@ -178,7 +177,6 @@ namespace EU4
 			bool							possibleShogun;			// if this country is the shogun
 			std::vector<std::shared_ptr<EU4::leader>> militaryLeaders;
 			string government = "monarchy";						// the government type, defaults to absolute monarchy
-			string governmentName = "default_monarchy";
 			int governmentRank = 0;
 			int development = 0;
 			map<string, EU4Relations*>	relations;				// the relations with other nations
