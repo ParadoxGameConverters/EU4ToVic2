@@ -255,7 +255,18 @@ void V2Reforms::governmentEffects(const V2Country* dstCountry)
 		trade_unions					+= 0.14;
 		political_parties				+= 1.5;
 	}
-	else 
+	else if (government == "bourgeois_dictatorship")
+	{
+		slavery += 0;
+		vote_franchise = -1;
+		upper_house_composition += 0;
+		voting_system += -1;
+		public_meetings += 2.0;
+		press_rights *= 10000000;
+		trade_unions += 0.14;
+		political_parties += -4.0;
+	}
+	else
 	{
 		LOG(LogLevel::Warning) << "Undefined government type '" << government << "' while setting reforms for " << dstCountry->getTag();
 	}
@@ -291,6 +302,10 @@ void V2Reforms::upperHouseEffects(const V2Country* dstCountry)
 		trade_unions *= 5.0;
 	}
 	else if (government == "presidential_dictatorship")
+	{
+		trade_unions *= 1.0;
+	}
+	else if (government == "bourgeois_dictatorship")
 	{
 		trade_unions *= 1.0;
 	}

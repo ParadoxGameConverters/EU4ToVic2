@@ -80,16 +80,16 @@ mappers::IdeaEffects::IdeaEffects(std::istream& theStream)
 	});
 
 	registerKeyword(std::regex("NV_order"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt orderInfluenceInt(theStream);
-		orderInfluenceValue = orderInfluenceInt.getInt();
+		commonItems::singleDouble orderInfluenceInt(theStream);
+		orderInfluenceValue = orderInfluenceInt.getDouble();
 	});
 	registerKeyword(std::regex("NV_liberty"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt libertyInfluenceInt(theStream);
-		libertyInfluenceValue = libertyInfluenceInt.getInt();
+		commonItems::singleDouble libertyInfluenceInt(theStream);
+		libertyInfluenceValue = libertyInfluenceInt.getDouble();
 	});
 	registerKeyword(std::regex("NV_equality"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt equalityInfluenceInt(theStream);
-		equalityInfluenceValue = equalityInfluenceInt.getInt();
+		commonItems::singleDouble equalityInfluenceInt(theStream);
+		equalityInfluenceValue = equalityInfluenceInt.getDouble();
 	});
 
 	registerKeyword(std::regex("literacy"), [this](const std::string& unused, std::istream& theStream) {

@@ -646,17 +646,11 @@ void V2Country::initFromEU4Country(
 	{
 		for (auto reformStr : srcCountry->getReforms())
 		{
-			LOG(LogLevel::Debug) << "Matching " << tag << " reform " << reformStr;
 			ReformProperties reform = ReformMapper::matchReform(reformStr);
-			LOG(LogLevel::Debug) << "dumping: " << tag << " " << reform.getForceGov() << reform.getLiberty() << reform.getEquality() << reform.getOrder();
 			if (!reform.getForceGov().empty())
 			{
-				LOG(LogLevel::Debug) << "Assigning government " << reform.getForceGov();
+				LOG(LogLevel::Debug) << "Forcing government " << reform.getForceGov() << " on " << tag;
 				government = reform.getForceGov();
-			}
-			else
-			{
-				LOG(LogLevel::Debug) << "No match.";
 			}
 		}
 	}
@@ -1318,9 +1312,9 @@ void V2Country::convertArmies(
 
 
 void V2Country::getNationalValueScores(
-	int& libertyScore,
-	int& equalityScore,
-	int& orderScore,
+	double& libertyScore,
+	double& equalityScore,
+	double& orderScore,
 	const mappers::IdeaEffectMapper& ideaEffectMapper
 ) {
 	orderScore = 0;

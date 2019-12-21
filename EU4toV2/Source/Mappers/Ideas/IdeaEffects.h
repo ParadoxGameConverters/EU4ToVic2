@@ -54,9 +54,9 @@ class IdeaEffects: commonItems::parser
 		double getUpperHouseLiberalValue() const { return upperHouseLiberalValue; }
 		double getUpperHouseReactionaryValue() const { return upperHouseReactionaryValue; }
 
-		int getOrderInfluenceValue() const { return orderInfluenceValue; }
-		int getLibertyInfluenceValue() const { return libertyInfluenceValue; }
-		int getEqualityInfluenceValue() const { return equalityInfluenceValue; }
+		double getOrderInfluenceValue() const { return orderInfluenceValue; }
+		double getLibertyInfluenceValue() const { return libertyInfluenceValue; }
+		double getEqualityInfluenceValue() const { return equalityInfluenceValue; }
 
 		std::set<int> getLiteracyLevels() const { return literacyLevels; }
 
@@ -76,9 +76,9 @@ class IdeaEffects: commonItems::parser
 		double upperHouseLiberalValue = 0.0;
 		double upperHouseReactionaryValue = 0.0;
 
-		int orderInfluenceValue = 0;
-		int libertyInfluenceValue = 0;
-		int equalityInfluenceValue = 0;
+		double orderInfluenceValue = 0.0;
+		double libertyInfluenceValue = 0.0;
+		double equalityInfluenceValue = 0.0;
 
 		std::set<int> literacyLevels;
 };

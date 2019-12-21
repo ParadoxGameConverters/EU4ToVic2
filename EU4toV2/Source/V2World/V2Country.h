@@ -130,7 +130,7 @@ class V2Country
 
 		string							getLocalName();
 		std::optional<V2Relations> getRelations(std::string withWhom) const;
-		void getNationalValueScores(int& liberty, int& equality, int& order, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void getNationalValueScores(double& liberty, double& equality, double& order, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		
 		void addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
 		void								addResearchPoints(double newPoints)		{ researchPoints += newPoints; }

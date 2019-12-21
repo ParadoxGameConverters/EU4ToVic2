@@ -53,9 +53,9 @@ class IdeaEffectMapper: commonItems::parser
 
 		double getLiteracyFromIdea(const std::string& ideaName, int ideaLevel) const;
 
-		int getOrderInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getLibertyInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getEqualityInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const;
+		double getOrderInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const;
+		double getLibertyInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const;
+		double getEqualityInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const;
 
 		double getArmyTechFromIdeas(const std::map<std::string, int>& ideas) const;
 		double getCommerceTechFromIdeas(const std::map<std::string, int>& ideas) const;
@@ -75,9 +75,9 @@ class IdeaEffectMapper: commonItems::parser
 
 		std::map<std::string, std::set<int>> literacyIdeas;
 
-		std::map<std::string, int> orderIdeas;
-		std::map<std::string, int> libertyIdeas;
-		std::map<std::string, int> equalityIdeas;
+		std::map<std::string, double> orderIdeas;
+		std::map<std::string, double> libertyIdeas;
+		std::map<std::string, double> equalityIdeas;
 
 		std::map<std::string, double> armyTechIdeas;
 		std::map<std::string, double> commerceTechIdeas;

@@ -615,15 +615,27 @@ bool scoresSorter(pair<V2Country*, int> first, pair<V2Country*, int> second)
 void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	// set national values
-	list< pair<V2Country*, int> > libertyScores;
-	list< pair<V2Country*, int> > equalityScores;
+	list< pair<V2Country*, double> > libertyScores;
+	list< pair<V2Country*, double> > equalityScores;
 	set<V2Country*>					valuesUnset;
 	for (map<string, V2Country*>::iterator countryItr = countries.begin(); countryItr != countries.end(); countryItr++)
 	{
-		int libertyScore = 1;
-		int equalityScore = 1;
-		int orderScore = 1;
+		double libertyScore = 1.0;
+		double equalityScore = 1.0;
+		double orderScore = 1.0;
 		countryItr->second->getNationalValueScores(libertyScore, equalityScore, orderScore, ideaEffectMapper);
+
+		if (theConfiguration.getDharmaGov() != Configuration::DHARMAGOVS::BasicGovs)
+		{
+			for (auto reformStr : countryItr->second->getSourceCountry()->getReforms())
+			{
+				ReformProperties reform = ReformMapper::matchReform(reformStr);
+				libertyScore += reform.getLiberty();
+				equalityScore += reform.getEquality();
+				orderScore += reform.getOrder();
+			}
+		}
+
 		if (libertyScore > orderScore)
 		{
 			libertyScores.push_back(make_pair(countryItr->second, libertyScore));
@@ -637,7 +649,7 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 	}
 	equalityScores.sort(scoresSorter);
 	int equalityLeft = 5;
-	for (list< pair<V2Country*, int> >::iterator equalItr = equalityScores.begin(); equalItr != equalityScores.end(); equalItr++)
+	for (list< pair<V2Country*, double> >::iterator equalItr = equalityScores.begin(); equalItr != equalityScores.end(); equalItr++)
 	{
 		if (equalityLeft < 1)
 		{
@@ -654,7 +666,7 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 	}
 	libertyScores.sort(scoresSorter);
 	int libertyLeft = 20;
-	for (list< pair<V2Country*, int> >::iterator libItr = libertyScores.begin(); libItr != libertyScores.end(); libItr++)
+	for (list< pair<V2Country*, double> >::iterator libItr = libertyScores.begin(); libItr != libertyScores.end(); libItr++)
 	{
 		if (libertyLeft < 1)
 		{

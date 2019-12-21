@@ -177,7 +177,7 @@ double mappers::IdeaEffectMapper::getLiteracyFromIdea(const std::string& ideaNam
 }
 
 
-int mappers::IdeaEffectMapper::getOrderInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
+double mappers::IdeaEffectMapper::getOrderInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = orderIdeas.find(ideaName);
 	if (idea != orderIdeas.end())
@@ -186,7 +186,7 @@ int mappers::IdeaEffectMapper::getOrderInfluenceFromIdea(const std::string& idea
 		{
 			ideaLevel++;
 		}
-		return (ideaLevel + 1) * idea->second;
+		return ((double) ideaLevel + 1.0) * idea->second;
 	}
 	else
 	{
@@ -195,7 +195,7 @@ int mappers::IdeaEffectMapper::getOrderInfluenceFromIdea(const std::string& idea
 }
 
 
-int mappers::IdeaEffectMapper::getLibertyInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
+double mappers::IdeaEffectMapper::getLibertyInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = libertyIdeas.find(ideaName);
 	if (idea != libertyIdeas.end())
@@ -204,7 +204,7 @@ int mappers::IdeaEffectMapper::getLibertyInfluenceFromIdea(const std::string& id
 		{
 			ideaLevel++;
 		}
-		return (ideaLevel + 1) * idea->second;
+		return ((double) ideaLevel + 1.0) * idea->second;
 	}
 	else
 	{
@@ -213,7 +213,7 @@ int mappers::IdeaEffectMapper::getLibertyInfluenceFromIdea(const std::string& id
 }
 
 
-int mappers::IdeaEffectMapper::getEqualityInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
+double mappers::IdeaEffectMapper::getEqualityInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = equalityIdeas.find(ideaName);
 	if (idea != equalityIdeas.end())
@@ -222,7 +222,7 @@ int mappers::IdeaEffectMapper::getEqualityInfluenceFromIdea(const std::string& i
 		{
 			ideaLevel++;
 		}
-		return (ideaLevel + 1) * idea->second;
+		return ((double) ideaLevel + 1.0) * idea->second;
 	}
 	else
 	{
