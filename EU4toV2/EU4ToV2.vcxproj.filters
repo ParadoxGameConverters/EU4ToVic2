@@ -282,6 +282,10 @@
     <ClCompile Include="Source\EU4World\Provinces\ProvinceModifier.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
+    <ClCompile Include="..\common_items\StringUtils.cpp" />
+    <ClCompile Include="Source\Mappers\ReformMapper.cpp">
+      <Filter>Mappers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -567,6 +571,10 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\BuildingWeightEffects.h">
       <Filter>EU4World\Provinces</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common_items\StringUtils.h" />
+    <ClInclude Include="Source\Mappers\ReformMapper.h">
+      <Filter>Mappers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

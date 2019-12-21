@@ -38,6 +38,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/CountryMapping.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/GovernmentMapper.h"
+#include "../Mappers/ReformMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2World.h"
@@ -640,6 +641,25 @@ void V2Country::initFromEU4Country(
 
 	// Government
 	government = governmentMapper::matchGovernment(srcCountry->getGovernment());
+
+	if (theConfiguration.getDharmaGov() == Configuration::DHARMAGOVS::DharmaFull)
+	{
+		for (auto reformStr : srcCountry->getReforms())
+		{
+			LOG(LogLevel::Debug) << "Matching " << tag << " reform " << reformStr;
+			ReformProperties reform = ReformMapper::matchReform(reformStr);
+			LOG(LogLevel::Debug) << "dumping: " << tag << " " << reform.getForceGov() << reform.getLiberty() << reform.getEquality() << reform.getOrder();
+			if (!reform.getForceGov().empty())
+			{
+				LOG(LogLevel::Debug) << "Assigning government " << reform.getForceGov();
+				government = reform.getForceGov();
+			}
+			else
+			{
+				LOG(LogLevel::Debug) << "No match.";
+			}
+		}
+	}
 
 	//  Politics
 	double liberalEffect = 0.0;

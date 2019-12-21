@@ -120,6 +120,7 @@ namespace EU4
 			bool								getPossibleDaimyo()						const { return possibleDaimyo; }
 			bool							getPossibleShogun()						const { return possibleShogun; }
 			string							getGovernment()							const { return government; }
+			std::set<std::string> getReforms() const { return governmentReforms; }
 			map<string, EU4Relations*>	getRelations()								const { return relations; }
 			vector<EU4Army*>				getArmies()									const { return armies; }
 			bool								isCustom()									const { return customNation; }

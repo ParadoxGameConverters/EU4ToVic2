@@ -19,7 +19,7 @@
 # THE SOFTWARE.
 
 # forcegov is the government type this reform forces. For conflicting cases
-# e.g. american_republic (democracy) with seize_executive_power_reform 
+# e.g. american_republic (democracy) with strengthen_executive_powers_reform 
 # (presidential_dictatorship) the latter will always override the former.
 # Legitimate targets are:
 # proletarian_dictatorship, presidential_dictatorship, bourgeois_dictatorship,
@@ -31,6 +31,6 @@
 # socio-political reforms enabled at game start. Ranges -1 to 1.
 
 
-link = { reform = "peasants_republic" forecegov = "proletarian_dictatorship" order = "-0.5" liberty = "0.5" equality = "1" }
-link = { reform = "seize_executive_power_reform" forecegov = "presidential_dictatorship" order = "1" liberty = "-0.5" equality = "-0.5" }
+link = { reform = "peasants_republic" forcegov = "proletarian_dictatorship" order = "-0.5" liberty = "0.5" equality = "1" }
+link = { reform = "strengthen_executive_powers_reform" forcegov = "presidential_dictatorship" order = "1" liberty = "-0.5" equality = "-0.5" }
 
