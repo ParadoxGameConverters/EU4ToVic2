@@ -69,7 +69,7 @@ void ReformMapper::processRule(shared_ptr<Object> rule)
 		{
 			dstReform = item->getLeaf();
 		}
-		if (item->getKey() == "forcegov")
+		if (item->getKey() == "enforce")
 		{
 			reformProperties.setForceGov(item->getLeaf());
 		}
