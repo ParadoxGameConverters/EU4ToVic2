@@ -42,48 +42,53 @@ class IdeaEffectMapper: commonItems::parser
 	public:
 		IdeaEffectMapper(std::istream& theStream);
 
-		int getArmyInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getCommerceInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getCultureInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getIndustryInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getNavyInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getArmyFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getCommerceFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getCultureFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getIndustryFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getNavyFromIdea(const std::string& ideaName, int ideaLevel) const;
 
-		double getUHLiberalFromIdea(const std::string& ideaName, int ideaLevel) const;
-		double getUHReactionaryFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getSlaveryFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getUpper_house_compositionFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getVote_franchiseFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getVoting_systemFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getPublic_meetingsFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getPress_rightsFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getTrade_unionsFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getPolitical_partiesFromIdea(const std::string& ideaName, int ideaLevel) const;
 
-		double getLiteracyFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getLibertyFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getEqualityFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getOrderFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getLiterarcyFromIdea(const std::string& ideaName, int ideaLevel) const;
 
-		double getOrderInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const;
-		double getLibertyInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const;
-		double getEqualityInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const;
-
-		double getArmyTechFromIdeas(const std::map<std::string, int>& ideas) const;
-		double getCommerceTechFromIdeas(const std::map<std::string, int>& ideas) const;
-		double getCultureTechFromIdeas(const std::map<std::string, int>& ideas) const;
-		double getIndustryTechFromIdeas(const std::map<std::string, int>& ideas) const;
-		double getNavyTechFromIdeas(const std::map<std::string, int>& ideas) const;
+		int getReactionaryFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getLiberalFromIdea(const std::string& ideaName, int ideaLevel) const;
 
 	private:
-		std::map<std::string, int> armyInvestmentIdeas;
-		std::map<std::string, int> commerceInvestmentIdeas;
-		std::map<std::string, int> cultureInvestmentIdeas;
-		std::map<std::string, int> industryInvestmentIdeas;
-		std::map<std::string, int> navyInvestmentIdeas;
+		std::map<std::string, int> armyIdeas;
+		std::map<std::string, int> commerceIdeas;
+		std::map<std::string, int> cultureIdeas;
+		std::map<std::string, int> industryIdeas;
+		std::map<std::string, int> navyIdeas;
 
-		std::map<std::string, double> UHLiberalIdeas;
-		std::map<std::string, double> UHReactionaryIdeas;
+		std::map<std::string, int> libertyIdeas;
+		std::map<std::string, int> equalityIdeas;
+		std::map<std::string, int> orderIdeas;
+		std::map<std::string, int> literarcyIdeas;
 
-		std::map<std::string, std::set<int>> literacyIdeas;
+		std::map<std::string, int> slaveryIdeas;
+		std::map<std::string, int> upper_house_compositionIdeas;
+		std::map<std::string, int> vote_franchiseIdeas;
+		std::map<std::string, int> voting_systemIdeas;
+		std::map<std::string, int> public_meetingsIdeas;
+		std::map<std::string, int> press_rightsIdeas;
+		std::map<std::string, int> trade_unionsIdeas;
+		std::map<std::string, int> political_partiesIdeas;
 
-		std::map<std::string, double> orderIdeas;
-		std::map<std::string, double> libertyIdeas;
-		std::map<std::string, double> equalityIdeas;
+		std::map<std::string, int> reactionaryIdeas;
+		std::map<std::string, int> liberalIdeas;
 
-		std::map<std::string, double> armyTechIdeas;
-		std::map<std::string, double> commerceTechIdeas;
-		std::map<std::string, double> cultureTechIdeas;
-		std::map<std::string, double> industryTechIdeas;
-		std::map<std::string, double> navyTechIdeas;
 };
 
 }

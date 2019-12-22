@@ -647,31 +647,52 @@ void V2Country::initFromEU4Country(
 		for (auto reformStr : srcCountry->getReforms())
 		{
 			ReformProperties reform = ReformMapper::matchReform(reformStr);
-			if (!reform.getForceGov().empty())
+			if (!reform.getEnforce().empty())
 			{
-				LOG(LogLevel::Debug) << "Forcing government " << reform.getForceGov() << " on " << tag;
-				government = reform.getForceGov();
+				LOG(LogLevel::Debug) << "Forcing government " << reform.getEnforce() << " on " << tag;
+				government = reform.getEnforce();
 			}
 		}
 	}
 
-	//  Politics
-	double liberalEffect = 0.0;
-	double reactionaryEffect = 0.0;
-	for (auto idea: srcCountry->getNationalIdeas())
-	{
-		liberalEffect += ideaEffectMapper.getUHLiberalFromIdea(idea.first, idea.second);
-		reactionaryEffect += ideaEffectMapper.getUHReactionaryFromIdea(idea.first, idea.second);
-	}
+	// Collect and finalize all idea/reform/government effects. We have combined reforms + ideas incoming, but lack government component (the last 33%)
+	// Resulting scores for all of these will be between 0 and 10, with 5 being average and supposed to be ignored.
+	// Each point above or below 5 should alter absolute values by 10%.
 
-	upperHouseReactionary		=  static_cast<int>(5  + (100 * reactionaryEffect));
-	upperHouseLiberal				=  static_cast<int>(10 + (100 * liberalEffect));
+	armyInvestment = (2 * srcCountry->getArmyInvestment() + ideaEffectMapper.getArmyFromIdea(government, 8)) / 3;
+	navyInvestment = (2 * srcCountry->getNavyInvestment() + ideaEffectMapper.getNavyFromIdea(government, 8)) / 3;
+	commerceInvestment = (2 * srcCountry->getCommerceInvestment() + ideaEffectMapper.getCommerceFromIdea(government, 8)) / 3;
+	industryInvestment = (2 * srcCountry->getIndustryInvestment() + ideaEffectMapper.getIndustryFromIdea(government, 8)) / 3;
+	cultureInvestment = (2 * srcCountry->getCultureInvestment() + ideaEffectMapper.getCultureFromIdea(government, 8)) / 3;
+	slaveryInvestment = (2 * srcCountry->getSlaveryInvestment() + ideaEffectMapper.getSlaveryFromIdea(government, 8)) / 3;
+	upper_house_compositionInvestment = (2 * srcCountry->getUpper_house_compositionInvestment() + ideaEffectMapper.getUpper_house_compositionFromIdea(government, 8)) / 3;
+	vote_franchiseInvestment = (2 * srcCountry->getVote_franchiseInvestment() + ideaEffectMapper.getVote_franchiseFromIdea(government, 8)) / 3;
+	voting_systemInvestment = (2 * srcCountry->getVoting_systemInvestment() + ideaEffectMapper.getVoting_systemFromIdea(government, 8)) / 3;
+	public_meetingsInvestment = (2 * srcCountry->getPublic_meetingsInvestment() + ideaEffectMapper.getPublic_meetingsFromIdea(government, 8)) / 3;
+	press_rightsInvestment = (2 * srcCountry->getPress_rightsInvestment() + ideaEffectMapper.getPress_rightsFromIdea(government, 8)) / 3;
+	trade_unionsInvestment = (2 * srcCountry->getTrade_unionsInvestment() + ideaEffectMapper.getTrade_unionsFromIdea(government, 8)) / 3;
+	political_partiesInvestment = (2 * srcCountry->getPolitical_partiesInvestment() + ideaEffectMapper.getPolitical_partiesFromIdea(government, 8)) / 3;
+	libertyInvestment = (2 * srcCountry->getLibertyInvestment() + ideaEffectMapper.getLibertyFromIdea(government, 8)) / 3;
+	equalityInvestment = (2 * srcCountry->getEqualityInvestment() + ideaEffectMapper.getEqualityFromIdea(government, 8)) / 3;
+	orderInvestment = (2 * srcCountry->getOrderInvestment() + ideaEffectMapper.getOrderFromIdea(government, 8)) / 3;
+	literarcyInvestment = (2 * srcCountry->getLiterarcyInvestment() + ideaEffectMapper.getLiterarcyFromIdea(government, 8)) / 3;
+	reactionaryInvestment = (2 * srcCountry->getReactionaryInvestment() + ideaEffectMapper.getReactionaryFromIdea(government, 8)) / 3;
+	liberalInvestment = (2 * srcCountry->getLiberalInvestment() + ideaEffectMapper.getLiberalFromIdea(government, 8)) / 3;
+
+	//  Politics
+
+	upperHouseReactionary		=  static_cast<int>(5  * (1 + (reactionaryInvestment - 5) * 10 / 100));
+	upperHouseLiberal				=  static_cast<int>(10 * (1 + (liberalInvestment - 5) * 10 / 100));
 	upperHouseConservative		= 100 - (upperHouseReactionary + upperHouseLiberal);
 	LOG(LogLevel::Debug) << tag << " has an Upper House of " << upperHouseReactionary << " reactionary, "
 		<< upperHouseConservative << " conservative, and "
 		<< upperHouseLiberal << " liberal";
 
 	string idealogy;
+
+	double liberalEffect = liberalInvestment - 5;
+	double reactionaryEffect = reactionaryInvestment - 5;
+
 	if (liberalEffect >= 2 * reactionaryEffect)
 	{
 		idealogy = "liberal";
@@ -708,36 +729,6 @@ void V2Country::initFromEU4Country(
 			relations.insert(std::make_pair(V2Tag, newRelations));
 		}
 	}
-
-	//// Finances
-	//money				= MONEYFACTOR * srcCountry->getTreasury();
-	//lastBankrupt	= srcCountry->getLastBankrupt();
-	//vector<EU4Loan*> srcLoans = srcCountry->getLoans();
-	//for (vector<EU4Loan*>::iterator itr = srcLoans.begin(); itr != srcLoans.end(); ++itr)
-	//{
-	//	string lender = tag;
-	//	if ( (*itr)->getLender() != "---")
-	//	{
-	//		countryMapping::iterator newTag = countryMap.find( (*itr)->getLender() );
-	//		if (newTag != countryMap.end())
-	//		{
-	//			lender = newTag->second;
-	//		}
-	//		else
-	//		{
-	//			log("Error: lender %s could not be found for %s's loan!\n", (*itr)->getLender().c_str(), tag.c_str());
-	//		}
-	//	}
-	//	double size = MONEYFACTOR * srcCountry->inflationAdjust( (*itr)->getAmount() );
-	//	addLoan(lender, size, (*itr)->getInterest() / 100.0f);
-	//}
-	//// 1 month's income in reserves, or 6 months' if national bank NI is present
-	//// note that the GC's starting reserves are very low, so it's not necessary for this number to be large
-	//bankReserves = MONEYFACTOR *srcCountry->inflationAdjust(srcCountry->getEstimatedMonthlyIncome());
-	//if (srcCountry->hasNationalIdea("national_bank"))
-	//{
-	//	bankReserves *= 6.0;
-	//}
 
 	// Literacy
 	literacy = 0.1;

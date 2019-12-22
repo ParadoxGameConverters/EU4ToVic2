@@ -39,48 +39,53 @@ class IdeaEffects: commonItems::parser
 	public:
 		IdeaEffects(std::istream& theStream);
 
-		int getArmyInvestmentValue() const { return armyInvestmentValue; }
-		int getNavyInvestmentValue() const { return navyInvestmentValue; }
-		int getCommerceInvestmentValue() const { return commerceInvestmentValue; }
-		int getCultureInvestmentValue() const { return cultureInvestmentValue; }
-		int getIndustryInvestmentValue() const { return industryInvestmentValue; }
+		int getArmy() const { return army; }
+		int getNavy() const { return navy; }
+		int getCommerce() const { return commerce; }
+		int getCulture() const { return culture; }
+		int getIndustry() const { return industry; }
 
-		double getArmyTechScoreValue() const { return armyTechScoreValue; }
-		double getNavyTechScoreValue() const { return navyTechScoreValue; }
-		double getCommerceTechScoreValue() const { return commerceTechScoreValue; }
-		double getCultureTechScoreValue() const { return cultureTechScoreValue; }
-		double getIndustryTechScoreValue() const { return industryTechScoreValue; }
+		int getOrder() const { return order; }
+		int getLiberty() const { return liberty; }
+		int getEquality() const { return equality; }
+		int getLiteracy() const { return literarcy; }
 
-		double getUpperHouseLiberalValue() const { return upperHouseLiberalValue; }
-		double getUpperHouseReactionaryValue() const { return upperHouseReactionaryValue; }
+		int getReactionary() const { return reactionary; }
+		int getLiberal() const { return liberal; }
 
-		double getOrderInfluenceValue() const { return orderInfluenceValue; }
-		double getLibertyInfluenceValue() const { return libertyInfluenceValue; }
-		double getEqualityInfluenceValue() const { return equalityInfluenceValue; }
-
-		std::set<int> getLiteracyLevels() const { return literacyLevels; }
+		int getSlavery() const { return slavery; }
+		int getUpper_house_composition() const { return upper_house_composition;  }
+		int getVote_franchise() const { return vote_franchise; }
+		int getVoting_system() const { return voting_system; }
+		int getPublic_meetings() const {	return public_meetings; }
+		int getPress_rights() const {	return press_rights;	}
+		int getTrade_unions() const {	return trade_unions;	}
+		int getPolitical_parties() const { return political_parties; }
 
 	private:
-		int armyInvestmentValue = 0;
-		int navyInvestmentValue = 0;
-		int commerceInvestmentValue = 0;
-		int cultureInvestmentValue = 0;
-		int industryInvestmentValue = 0;
+		// Values range 0-10. 5 is default.
+		int slavery = 5;
+		int upper_house_composition = 5;
+		int vote_franchise = 5;
+		int voting_system = 5;
+		int public_meetings = 5;
+		int press_rights = 5;
+		int trade_unions = 5;
+		int political_parties = 5;
 
-		double armyTechScoreValue = 0.0;
-		double navyTechScoreValue = 0.0;
-		double commerceTechScoreValue = 0.0;
-		double cultureTechScoreValue = 0.0;
-		double industryTechScoreValue = 0.0;
+		int liberty = 5;
+		int equality = 5;
+		int order = 5;
+		int literarcy = 5;
 
-		double upperHouseLiberalValue = 0.0;
-		double upperHouseReactionaryValue = 0.0;
+		int reactionary = 5;
+		int liberal = 5;
 
-		double orderInfluenceValue = 0.0;
-		double libertyInfluenceValue = 0.0;
-		double equalityInfluenceValue = 0.0;
-
-		std::set<int> literacyLevels;
+		int army = 5;
+		int navy = 5;
+		int commerce = 5;
+		int culture = 5;
+		int industry = 5;
 };
 
 }

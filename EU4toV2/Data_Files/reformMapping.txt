@@ -85,7 +85,7 @@ link = { reform = permanent_marathas_council_reform }
 link = { reform = governmental_purbias_register_reform }
 
 # Monarchy 5
-link = { reform = parliamentary_reform }
+link = { reform = parliamentary_reform political_parties = 7 public_meetings = 7}
 link = { reform = royal_decree_reform }
 link = { reform = aristocratic_court_reform }
 link = { reform = general_estates_reform }
@@ -116,7 +116,7 @@ link = { reform = american_republic }
 link = { reform = federal_republic }
 link = { reform = colonial_government }
 link = { reform = dutch_republic }
-link = { reform = peasants_republic enforce = proletarian_dictatorship order = -0.5 liberty = 0.5 equality = 1 }
+link = { reform = peasants_republic enforce = proletarian_dictatorship order = 3 liberty = 7 equality = 10 }
 link = { reform = revolutionary_republic_reform }
 link = { reform = presidential_despot_reform }
 link = { reform = cossacks_reform }

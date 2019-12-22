@@ -32,6 +32,7 @@ THE SOFTWARE. */
 #include "CountryHistory.h"
 #include "Provinces/EU4Province.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
+#include "../Mappers/ReformMapper.h"
 #include "../V2World/V2Localisation.h"
 #include <algorithm>
 
@@ -154,11 +155,6 @@ EU4::Country::Country(
 	admTech(0.0),
 	dipTech(0.0),
 	milTech(0.0),
-	armyInvestment(32.0),
-	navyInvestment(32.0),
-	commerceInvestment(32.0),
-	industryInvestment(32.0),
-	cultureInvestment(32.0),
 	flags(),
 	modifiers(),
 	possibleDaimyo(false),
@@ -550,14 +546,97 @@ void EU4::Country::determineJapaneseRelations()
 
 void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
-	for (auto idea: nationalIdeas)
+	int ignoredMechanics = 0;
+	if (nationalIdeas.size() > 1) // There is always the default "TAG_ideas" inside, which we ignore for now.
 	{
-		armyInvestment += ideaEffectMapper.getArmyInvestmentFromIdea(idea.first, idea.second);
-		commerceInvestment += ideaEffectMapper.getCommerceInvestmentFromIdea(idea.first, idea.second);
-		cultureInvestment += ideaEffectMapper.getCultureInvestmentFromIdea(idea.first, idea.second);
-		industryInvestment += ideaEffectMapper.getIndustryInvestmentFromIdea(idea.first, idea.second);
-		navyInvestment += ideaEffectMapper.getNavyInvestmentFromIdea(idea.first, idea.second);
+		for (auto idea : nationalIdeas)
+		{
+			if (idea.first.compare(tag + "_ideas") != 0)
+			{
+				armyInvestment += ideaEffectMapper.getArmyFromIdea(idea.first, idea.second);
+				commerceInvestment += ideaEffectMapper.getCommerceFromIdea(idea.first, idea.second);
+				cultureInvestment += ideaEffectMapper.getCultureFromIdea(idea.first, idea.second);
+				industryInvestment += ideaEffectMapper.getIndustryFromIdea(idea.first, idea.second);
+				navyInvestment += ideaEffectMapper.getNavyFromIdea(idea.first, idea.second);
+
+				slaveryInvestment += ideaEffectMapper.getSlaveryFromIdea(idea.first, idea.second);
+				upper_house_compositionInvestment += ideaEffectMapper.getUpper_house_compositionFromIdea(idea.first, idea.second);
+				vote_franchiseInvestment += ideaEffectMapper.getVote_franchiseFromIdea(idea.first, idea.second);
+				voting_systemInvestment += ideaEffectMapper.getVoting_systemFromIdea(idea.first, idea.second);
+				public_meetingsInvestment += ideaEffectMapper.getPublic_meetingsFromIdea(idea.first, idea.second);
+				press_rightsInvestment += ideaEffectMapper.getPress_rightsFromIdea(idea.first, idea.second);
+				trade_unionsInvestment += ideaEffectMapper.getTrade_unionsFromIdea(idea.first, idea.second);
+				political_partiesInvestment += ideaEffectMapper.getPolitical_partiesFromIdea(idea.first, idea.second);
+
+				libertyInvestment += ideaEffectMapper.getLibertyFromIdea(idea.first, idea.second);
+				equalityInvestment += ideaEffectMapper.getEqualityFromIdea(idea.first, idea.second);
+				orderInvestment += ideaEffectMapper.getOrderFromIdea(idea.first, idea.second);
+				literarcyInvestment += ideaEffectMapper.getLiterarcyFromIdea(idea.first, idea.second);
+
+				reactionaryInvestment += ideaEffectMapper.getReactionaryFromIdea(idea.first, idea.second);
+				liberalInvestment += ideaEffectMapper.getLiberalFromIdea(idea.first, idea.second);
+			}
+		}
 	}
+
+	for (auto reformStr : governmentReforms)
+	{
+		if (reformStr.find("_mechanic") != string::npos) //ignore the basic legacy mechanics, focus on actual reforms
+		{
+			ReformProperties reform = ReformMapper::matchReform(reformStr);
+			armyInvestment += reform.getArmy();
+			commerceInvestment += reform.getCommerce();
+			cultureInvestment += reform.getCulture();
+			industryInvestment += reform.getIndustry();
+			navyInvestment += reform.getNavy();
+
+			slaveryInvestment += reform.getSlavery();
+			upper_house_compositionInvestment += reform.getUpper_house_composition();
+			vote_franchiseInvestment += reform.getVote_franchise();
+			voting_systemInvestment += reform.getVoting_system();
+			public_meetingsInvestment += reform.getPublic_meetings();
+			press_rightsInvestment += reform.getPress_rights();
+			trade_unionsInvestment += reform.getTrade_unions();
+			political_partiesInvestment += reform.getPolitical_parties();
+
+			libertyInvestment += reform.getLiberty();
+			equalityInvestment += reform.getEquality();
+			orderInvestment += reform.getOrder();
+			literarcyInvestment += reform.getLiterarcy();
+
+			reactionaryInvestment += reform.getReactionary();
+			liberalInvestment += reform.getLiberal();
+		}
+		else
+		{
+			ignoredMechanics += 1;
+		}
+	}
+
+	// We actually need the averages, to play against government and reforms.
+	armyInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics );
+	commerceInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	cultureInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	industryInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	navyInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+
+	slaveryInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	upper_house_compositionInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	vote_franchiseInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	voting_systemInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	public_meetingsInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	press_rightsInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	trade_unionsInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	political_partiesInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+
+	libertyInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	equalityInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	orderInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	literarcyInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+
+	reactionaryInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	liberalInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	
 }
 
 

@@ -112,11 +112,25 @@ namespace EU4
 			virtual double getAdmTech() const { return admTech; }
 			virtual double getDipTech() const { return dipTech; }
 			virtual double getMilTech() const { return milTech; }
-			double							getArmyInvestment()						const { return armyInvestment; }
-			double							getNavyInvestment()						const { return navyInvestment; }
-			double							getCommerceInvestment()					const { return commerceInvestment; }
-			double							getIndustryInvestment()					const { return industryInvestment; }
-			double							getCultureInvestment()					const { return cultureInvestment; }
+			double getArmyInvestment() const { return armyInvestment; }
+			double getNavyInvestment() const { return navyInvestment; }
+			double getCommerceInvestment() const { return commerceInvestment; }
+			double getIndustryInvestment() const { return industryInvestment; }
+			double getCultureInvestment() const { return cultureInvestment; }
+			double getSlaveryInvestment() const { return slaveryInvestment; }
+			double getUpper_house_compositionInvestment() const { return upper_house_compositionInvestment; }
+			double getVote_franchiseInvestment() const { return vote_franchiseInvestment; }
+			double getVoting_systemInvestment() const { return voting_systemInvestment; }
+			double getPublic_meetingsInvestment() const { return public_meetingsInvestment; }
+			double getPress_rightsInvestment() const { return press_rightsInvestment; }
+			double getTrade_unionsInvestment() const { return trade_unionsInvestment; }
+			double getPolitical_partiesInvestment() const { return political_partiesInvestment; }
+			double getLibertyInvestment() const { return libertyInvestment; }
+			double getEqualityInvestment() const { return equalityInvestment; }
+			double getOrderInvestment() const { return orderInvestment; }
+			double getLiterarcyInvestment() const { return literarcyInvestment; }
+			double getReactionaryInvestment() const { return reactionaryInvestment; }
+			double getLiberalInvestment() const { return liberalInvestment; }
 			bool								getPossibleDaimyo()						const { return possibleDaimyo; }
 			bool							getPossibleShogun()						const { return possibleShogun; }
 			string							getGovernment()							const { return government; }
@@ -167,11 +181,28 @@ namespace EU4
 			double							admTech;					// the admin tech of this nation
 			double							dipTech;					// the diplo tech of this nation
 			double							milTech;					// the mil tech of this nation
-			double							armyInvestment;		// the amount of 'investment' into army tech (determined by ideas)
-			double							navyInvestment;		// the amount of 'investment' into navy tech (determined by ideas)
-			double							commerceInvestment;	// the amount of 'investment' into commerce tech (determined by ideas)
-			double							industryInvestment;	// the amount of 'investment' into industry tech (determined by ideas)
-			double							cultureInvestment;	// the amount of 'investment' into culture tech (determined by ideas)
+
+			double armyInvestment = 5.0; // the amount of 'investment' into army tech (determined by ideas)
+			double navyInvestment = 5.0; // the amount of 'investment' into navy tech (determined by ideas)
+			double commerceInvestment = 5.0;	// the amount of 'investment' into commerce tech (determined by ideas)
+			double industryInvestment = 5.0;	// the amount of 'investment' into industry tech (determined by ideas)
+			double cultureInvestment = 5.0;	// the amount of 'investment' into culture tech (determined by ideas)
+			double slaveryInvestment = 5.0; // the amount of 'investment' into slavery reform (determined by ideas)
+			double upper_house_compositionInvestment = 5.0; // the amount of 'investment' into upper house reform (determined by ideas)
+			double vote_franchiseInvestment = 5.0;	// the amount of 'investment' into vote franchise reform (determined by ideas)
+			double voting_systemInvestment = 5.0;	// the amount of 'investment' into voting system reform (determined by ideas)
+			double public_meetingsInvestment = 5.0;	// the amount of 'investment' into public meetings reform (determined by ideas)
+			double press_rightsInvestment = 5.0; // the amount of 'investment' into press rights reform (determined by ideas)
+			double trade_unionsInvestment = 5.0; // the amount of 'investment' into trade unions reform (determined by ideas)
+			double political_partiesInvestment = 5.0;	// the amount of 'investment' into political parties reform (determined by ideas)
+			double libertyInvestment = 5.0;	// the amount of 'investment' into liberty national value (determined by ideas)
+			double equalityInvestment = 5.0;	// the amount of 'investment' into equality national value (determined by ideas)
+			double orderInvestment = 5.0; // the amount of 'investment' into order national value (determined by ideas)
+			double literarcyInvestment = 5.0; // the amount of 'investment' into literarcy as such (determined by ideas)
+			double reactionaryInvestment = 5.0;	// the amount of 'investment' into reactionary movement (determined by ideas)
+			double liberalInvestment = 5.0;	// the amount of 'investment' into liberal movement (determined by ideas)
+
+
 			map<string, bool>				flags;					// any flags set for this country
 			map<string, bool>				modifiers;				// any modifiers set for this country
 			bool								possibleDaimyo;		// if this country is possibly a daimyo

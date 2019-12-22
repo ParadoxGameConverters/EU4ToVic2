@@ -71,7 +71,7 @@ void ReformMapper::processRule(shared_ptr<Object> rule)
 		}
 		if (item->getKey() == "enforce")
 		{
-			reformProperties.setForceGov(item->getLeaf());
+			reformProperties.setEnforce(item->getLeaf());
 		}
 		if (item->getKey() == "liberty")
 		{
@@ -81,11 +81,70 @@ void ReformMapper::processRule(shared_ptr<Object> rule)
 		{
 			reformProperties.setEquality(stod(item->getLeaf()));
 		}
-		if (item->getKey() == "order")
+		if (item->getKey() == "slavery")
 		{
-			reformProperties.setOrder(stod(item->getLeaf()));
+			reformProperties.setSlavery(stod(item->getLeaf()));
 		}
-
+		if (item->getKey() == "upper_house_composition")
+		{
+			reformProperties.setUpper_house_composition(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "vote_franchise")
+		{
+			reformProperties.setVote_franchise(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "voting_system")
+		{
+			reformProperties.setVoting_system(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "public_meetings")
+		{
+			reformProperties.setPublic_meetings(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "press_rights")
+		{
+			reformProperties.setPress_rights(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "trade_unions")
+		{
+			reformProperties.setTrade_unions(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "political_parties")
+		{
+			reformProperties.setPolitical_parties(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "literarcy")
+		{
+			reformProperties.setLiterarcy(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "army")
+		{
+			reformProperties.setArmy(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "commerce")
+		{
+			reformProperties.setCommerce(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "culture")
+		{
+			reformProperties.setCulture(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "industry")
+		{
+			reformProperties.setIndustry(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "navy")
+		{
+			reformProperties.setNavy(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "reactionary")
+		{
+			reformProperties.setReactionary(stod(item->getLeaf()));
+		}
+		if (item->getKey() == "liberal")
+		{
+			reformProperties.setLiberal(stod(item->getLeaf()));
+		}
 	}
 
 	ReformMap.insert(make_pair(dstReform, reformProperties));

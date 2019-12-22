@@ -18,152 +18,363 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+# This file allows chosen government forms and ideas to affect socio-political reforms, 
+# national value, starting technologies as well as starting tech groups and literarcy. 
+# For ideas to have an effect, entire idea group must be completed.
+# 
+# Each government type and idea ranks various issues on a scale of 0 to 10 where:
+# 0 - Vehemently oppose or prevents (Over my dead body)
+# 5 - Couldn't care less / does not affect an issue
+# 10 - Strongly boosts / promotes
+# 
+# If an issue is not listed, it couts as being at level 5 (ignored)
+# 
+# Issues recognised: 
+# Political: slavery, upper_house_composition, vote_franchise, voting_system, public_meetings, press_rights, trade_unions, political_parties
+# National values: liberty, equality, order, literarcy
+# Technologies: army, commerce, culture, industry, navy
+# Upper house membership: reactionary, liberal
+#
+# Note: slavery is cunterintuitive - 10 means slavery abolished
 
-# This file allows EU4 ideas to have various effects in the conversion
-#	* army_investment, commerce_investment, culture_investmeny, industry_investment and navy_investment 
-#		affect which tech school a nation starts with. Each level of the idea (including simply having the idea) influences
-#		the investment by the amount specified.
-#	* upper_house_liberal and upper_house_reactionary affect the upper house a nation starts with.
-#		Each level of the idea (including simply having the idea) increases the amount of liberal or reactionary by the
-#		amount specified.
-#	* NV_order, NV_liberty and NV_equality affect the (V2) national idea a nation starts with. Each level of the (EU4) idea
-#		(including simply having the idea) increases the "score" for the (v2) idea by the specified amount, and completing
-#		the (EU4) idea gives an additional point.
-#	* literacy is a list of the idea levels that will each give a 10% increase to literacy
-#	* army_tech_score, navy_tech_score, commerce_tech_score, culture_tech_score and industry_tech_score affect the starting techs of a nation.
-#		1 point equals one EU4 tech level (I.E having MIL tech 29 and full offensive should be about equal to having MIL tech 31 and no offensive.)
-#		Each level of the idea (including simply having the idea) influences the tech score by the amount specified.
-
-aristocracy_ideas = {
-	army_investment	= 1
-	commerce_investment = -1
-	upper_house_reactionary = 0.0125
-	NV_liberty = -1
-	NV_equality = -1
+absolute_monarchy = {
+	slavery = 5
+	upper_house_composition = 3
+	vote_franchise = 0
+	voting_system = 0
+	public_meetings = 2
+	press_rights = 3
+	trade_unions = 0
+	political_parties = 2
+	# ----
+	liberty = 3
+	equality = 2
+	order = 8
+	literarcy = 3
+	# ----
+	army = 6
+	commerce = 4
+	culture = 4
+	industry = 5
+	navy = 6
+	# ------
+	reactionary = 9
+	liberal = 2
 }
 
-plutocracy_ideas = {
-	army_investment = -1
-	commerce_investment = 1
-	culture_investment = 1
-	upper_house_liberal = 0.0125
-	NV_liberty = 1
-	NV_equality = 1
+prussian_constitutionalism = {
+	upper_house_composition = 3
+	vote_franchise = 2
+	voting_system = 0
+	public_meetings = 4
+	press_rights = 4
+	trade_unions = 3
+	political_parties = 2
+	# ----
+	liberty = 4
+	equality = 4
+	order = 7
+	# ----
+	army = 6
+	commerce = 4
+	culture = 4
+	navy = 6
+	# ------
+	reactionary = 7
+	liberal = 4
 }
 
-innovativeness_ideas = {
-	commerce_investment = 1
-	culture_investment = 1
-	upper_house_liberal = 0.0125
-	NV_order = -1
-	NV_equality = 1
-	literacy = { 3 4 }
+hms_government = {
+	upper_house_composition = 3
+	vote_franchise = 4
+	voting_system = 0
+	public_meetings = 7
+	press_rights = 6
+	trade_unions = 3
+	political_parties = 6
+	# ----
+	liberty = 7
+	equality = 7
+	order = 3
+	literarcy = 6
+	# ----
+	army = 4
+	commerce = 7
+	culture = 6
+	industry = 6
+	navy = 4
+	# ------
+	reactionary = 7
+	liberal = 4
 }
 
-religious_ideas = {
-	commerce_investment = -1
-	culture_investment = -1
-	NV_order = 1
-	NV_equality = -1
-	literacy = { 2 }
+theocracy = {
+	upper_house_composition = 3
+	vote_franchise = 0
+	voting_system = 0
+	public_meetings = 4
+	press_rights = 4
+	trade_unions = 3
+	political_parties = 2
+	# ----
+	equality = 2
+	order = 6
+	literarcy = 8
+	# ----
+	army = 4
+	commerce = 6
+	culture = 6
+	navy = 4
+	# ------
+	reactionary = 9
+	liberal = 1
 }
 
-spy_ideas = {
-	commerce_investment = 1
-	culture_investment = 1
-	NV_liberty = -1
+democracy = {
+	upper_house_composition = 7
+	vote_franchise = 3
+	voting_system = 0
+	public_meetings = 7
+	press_rights = 8
+	trade_unions = 7
+	political_parties = 7
+	# ----
+	equality = 8
+	liberty = 7
+	order = 3
+	literarcy = 7
+	# ----
+	army = 3
+	commerce = 7
+	industry = 6
+	culture = 7
+	navy = 3
+	# ------
+	reactionary = 4
+	liberal = 7
 }
 
-diplomatic_ideas = {
-	army_investment  = -1
-	commerce_investment = 1
-	culture_investment = 1
+presidential_dictatorship = {
+	upper_house_composition = 7
+	vote_franchise = 0
+	voting_system = 0
+	public_meetings = 4
+	press_rights = 4
+	trade_unions = 7
+	political_parties = 6
+	# ----
+	equality = 6
+	liberty = 4
+	order = 6
+	literarcy = 4
+	# ----
+	army = 6
+	commerce = 4
+	industry = 6
+	culture = 4
+	navy = 4
+	# ------
+	reactionary = 6
+	liberal = 4
 }
 
-offensive_ideas = {
-	army_investment = 1
-	army_tech_score = 0.25
+proletarian_dictatorship = {
+	upper_house_composition = 0
+	vote_franchise = 0
+	voting_system = 0
+	public_meetings = 7
+	press_rights = 6
+	trade_unions = 10
+	political_parties = 3
+	# ----
+	equality = 7
+	liberty = 8
+	order = 2
+	literarcy = 4
+	# ----
+	army = 6
+	commerce = 3
+	industry = 3
+	culture = 4
+	navy = 4
+	# ------
+	reactionary = 3
+	liberal = 7
 }
 
-defensive_ideas = {
-	army_investment = 1
-	navy_investment = -1
-	upper_house_reactionary = 0.0125
-	army_tech_score = 0.10
+bourgeois_dictatorship = {
+	upper_house_composition = 0
+	vote_franchise = 0
+	voting_system = 0
+	public_meetings = 4
+	press_rights = 4
+	trade_unions = 6
+	political_parties = 0
+	# ----
+	equality = 4
+	liberty = 6
+	order = 4
+	literarcy = 6
+	# ----
+	army = 4
+	commerce = 6
+	industry = 4
+	culture = 6
+	navy = 4
+	# ------
+	reactionary = 4
+	liberal = 7
 }
 
-trade_ideas = {
-	commerce_investment = 1
-	industry_investment = 1
-	navy_investment = 1
-	upper_house_liberal = 0.0125
-	commerce_tech_score = 0.15
+
+# Administrative Ideas
+
+administrative_ideas = {
+	industry = 6
+	commerce = 6
+	liberty = 4
+	literacy = 6
 }
 
 economic_ideas = {
-	commerce_investment = 1
-	industry_investment = 1
-	upper_house_liberal = 0.0125
-	literacy = { 1 2 5 }
-}
-
-exploration_ideas = {
-	navy_investment = 1
-	industry_investment = -1
-}
-
-maritime_ideas = {
-	navy_investment = 1
-	commerce_investment = 1
-	navy_tech_score = 0.10
-	commerce_tech_score = 0.10
-}
-
-quality_ideas = {
-	army_investment = 1
-	navy_investment = 1
-	NV_order = 1
-	army_tech_score = 0.15
-	navy_tech_score = 0.10
-}
-
-quantity_ideas = {
-	army_investment = 1
-	navy_investment = -1
-	culture_investment = -1
-	upper_house_reactionary = 0.0125
-	NV_order = -1
-	NV_equality = 1
+	commerce = 7
+	industry = 6
+	liberal = 7
+	literacy = 7
 }
 
 expansion_ideas = {
-	industry_investment = -1
-	commerce_investment = 1
-	upper_house_reactionary = 0.0125
-}
-
-administrative_ideas = {
-	industry_investment = 1
-	NV_liberty = -1
-	literacy = { 6 }
-	industry_tech_score = 0.15
+	industry = 4
+	commerce = 6
+	reactionary = 6
 }
 
 humanist_ideas = {
-	commerce_investment = 1
-	culture_investment = 1
-	upper_house_liberal = 0.0125
-	NV_equality = 1
-	culture_tech_score = 0.20
+	commerce = 6
+	culture = 8
+	liberal = 6
+	liberty = 7
+	equality = 7
+}
+
+innovativeness_ideas = {
+	commerce = 6
+	culture = 7
+	army = 6
+	navy = 6
+	industry = 6
+	liberal = 6
+	order = 4
+	equality = 6
+	liberty = 6
+	literacy = 7
+}
+
+religious_ideas = {
+	commerce = 3
+	culture = 3
+	order = 7
+	liberty = 3
+	literacy = 7
+	reactionary = 8
+}
+
+# Diplomatic ideas
+
+diplomatic_ideas = {
+	army = 4
+	commerce = 6
+	culture = 7
+	liberty = 6
+	liberal = 6
+}
+
+spy_ideas = {
+	commerce = 6
+	culture = 6
+	navy = 7
+	liberty = 3
+	order = 8	
+}
+
+exploration_ideas = {
+	navy = 6
+	industry = 3
+	commerce = 6
+	equality = 3	
 }
 
 influence_ideas = {
-	army_investment  = -1
-	commerce_investment = 1
-	culture_investment = 1
+	army = 4
+	commerce = 4
+	culture = 6
+	reactionary = 7
+	equality = 4
+	liberty = 3
+}
+
+maritime_ideas = {
+	navy = 8
+	commerce = 7
+	equality = 6
+}
+
+trade_ideas = {
+	commerce = 7
+	navy = 6
+	liberal = 7
+	liberty = 7
+}
+
+# Military ideas
+
+aristocracy_ideas = {
+	army = 7
+	commerce = 4
+	culture = 4
+	reactionary = 9
+	liberty = 4
+	equality = 3
+	order = 7
+}
+
+plutocracy_ideas = {
+	army = 4
+	commerce = 6
+	industry = 7
+	liberal = 6
+	liberty = 6
+	equality = 6
+}
+
+defensive_ideas = {
+	army = 6
+	navy = 3
+	reactionary = 6
+	equality = 3
 }
 
 naval_ideas = {
-	navy_investment = 1
-	navy_tech_score = 0.25
+	navy = 7
+	industry = 6	
+}
+
+offensive_ideas = {
+	army = 8
+	equality = 4
+}
+
+quality_ideas = {
+	army = 6
+	navy = 6
+	order = 6
+}
+
+quantity_ideas = {
+	army = 6
+	navy = 4
+	culture = 4
+	reactionary = 6
+	order = 4
+	equality = 7
 }

@@ -232,6 +232,28 @@ class V2Country
 		int								unitNameCount[num_reg_categories];
 		int								numFactories;
 		vector<string>					decisions;
+
+		double armyInvestment = 5.0;
+		double navyInvestment = 5.0;
+		double commerceInvestment = 5.0;
+		double industryInvestment = 5.0;
+		double cultureInvestment = 5.0;
+		double slaveryInvestment = 5.0;
+		double upper_house_compositionInvestment = 5.0;
+		double vote_franchiseInvestment = 5.0;
+		double voting_systemInvestment = 5.0;
+		double public_meetingsInvestment = 5.0;
+		double press_rightsInvestment = 5.0;
+		double trade_unionsInvestment = 5.0;
+		double political_partiesInvestment = 5.0;
+		double libertyInvestment = 5.0;
+		double equalityInvestment = 5.0;
+		double orderInvestment = 5.0;
+		double literarcyInvestment = 5.0;
+		double reactionaryInvestment = 5.0;
+		double liberalInvestment = 5.0;
+
+
 };
 
 bool ProvinceRegimentCapacityPredicate(V2Province* prov1, V2Province* prov2);
