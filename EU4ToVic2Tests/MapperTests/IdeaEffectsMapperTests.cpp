@@ -33,7 +33,7 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaReturnsZeroForMissi
 	mappers::IdeaEffectMapper theMapper(input);
 
 	auto investment = theMapper.getArmyFromIdea("missingIdea", 1);
-	ASSERT_EQ(investment, 0);
+	ASSERT_EQ(investment, 5);
 }
 
 
@@ -44,7 +44,7 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaDefaultsToZero)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getArmyFromIdea("specifiedIdea", 1), 0);
+	ASSERT_EQ(theMapper.getArmyFromIdea("specifiedIdea", 1), 5);
 }
 
 
@@ -52,36 +52,13 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaCanBeSet)
 {
 	std::stringstream input;
 	input << "specifiedIdea ={\n";
-	input << "\tarmy_investment=1";
+	input << "\tarmy = 1";
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
 	ASSERT_EQ(theMapper.getArmyFromIdea("specifiedIdea", 1), 1);
 }
 
-
-TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaCanBeNegative)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tarmy_investment=-1";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	ASSERT_EQ(theMapper.getArmyFromIdea("specifiedIdea", 1), -1);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaScalesByIdeaLevel)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tarmy_investment=1";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	ASSERT_EQ(theMapper.getArmyFromIdea("specifiedIdea", 5), 5);
-}
 
 
 TEST(Mappers_IdeaEffectMapperTests, getCommerceInvestmentFromIdeaReturnsZeroForMissingIdea)

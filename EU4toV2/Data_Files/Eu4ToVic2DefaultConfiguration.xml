@@ -154,31 +154,6 @@
 			  </entryOption>
 			</entryOptions>
 		</preference>
-		<preference>
-			<name>dharmaGovs</name>
-			<friendlyName>How to import EU4 governments?</friendlyName>
-			<description>Stick with only base government forms or apply Dharma reforms?</description>
-			<entryOptions>
-			  <entryOption>
-				<name>1</name>
-				<friendlyName>Stick to basic gov. forms</friendlyName>
-				<description>Governments convert to 4 basic types</description>
-				<isDefault>false</isDefault>
-			  </entryOption>
-			  <entryOption>
-				<name>2</name>
-				<friendlyName>Apply soc/pol reforms only</friendlyName>
-				<description>Do not alter base government type</description>
-				<isDefault>false</isDefault>
-			  </entryOption>
-			  <entryOption>
-				<name>3</name>
-				<friendlyName>Reforms can alter governments</friendlyName>
-				<description>Peasent republic goes to dictatorship, parliament into prussian_constitutionalism etc.</description>
-				<isDefault>true</isDefault>
-			  </entryOption>
-			</entryOptions>
-		</preference>
         </preferences>
       </category>
     </categories>

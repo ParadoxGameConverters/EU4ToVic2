@@ -94,10 +94,6 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		popShapingFactor = popShapingFactorDouble.getDouble();
 		LOG(LogLevel::Info) << "Pop Shaping Factor: " << popShapingFactor;
 	});
-	registerKeyword(std::regex("dharmaGovs"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt dharmaGovsInt(theStream);
-		dharmaGov = Configuration::DHARMAGOVS(dharmaGovsInt.getInt());
-	});
 	registerKeyword(std::regex("debug"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleString debugString(theStream);
 		debug = (debugString.getString() == "yes");

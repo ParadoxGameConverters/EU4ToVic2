@@ -35,7 +35,7 @@ TEST(Mappers_IdeaEffectsTests, armyInvestmentValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getArmy(), 0);
+	ASSERT_EQ(ideaEffects.getArmy(), 5);
 }
 
 
@@ -60,7 +60,7 @@ TEST(Mappers_IdeaEffectsTests, navyInvestmentValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getNavy(), 0);
+	ASSERT_EQ(ideaEffects.getNavy(), 5);
 }
 
 
@@ -85,7 +85,7 @@ TEST(Mappers_IdeaEffectsTests, commerceInvestmentValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getCommerce(), 0);
+	ASSERT_EQ(ideaEffects.getCommerce(), 5);
 }
 
 
@@ -110,7 +110,7 @@ TEST(Mappers_IdeaEffectsTests, cultureInvestmentValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getCulture(), 0);
+	ASSERT_EQ(ideaEffects.getCulture(), 5);
 }
 
 
@@ -135,7 +135,7 @@ TEST(Mappers_IdeaEffectsTests, industryInvestmentValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getIndustry(), 0);
+	ASSERT_EQ(ideaEffects.getIndustry(), 5);
 }
 
 
@@ -160,7 +160,7 @@ TEST(Mappers_IdeaEffectsTests, upperHouseLiberalValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getLiberal(), 0.0);
+	ASSERT_EQ(ideaEffects.getLiberal(), 5);
 }
 
 
@@ -185,7 +185,7 @@ TEST(Mappers_IdeaEffectsTests, upperHouseReactionaryValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getReactionary(), 0.0);
+	ASSERT_EQ(ideaEffects.getReactionary(), 5);
 }
 
 
@@ -210,7 +210,7 @@ TEST(Mappers_IdeaEffectsTests, orderInfluenceValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getOrder(), 0);
+	ASSERT_EQ(ideaEffects.getOrder(), 5);
 }
 
 
@@ -235,7 +235,7 @@ TEST(Mappers_IdeaEffectsTests, libertyInfluenceValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getLiberty(), 0);
+	ASSERT_EQ(ideaEffects.getLiberty(), 5);
 }
 
 
@@ -260,7 +260,7 @@ TEST(Mappers_IdeaEffectsTests, equalityInfluenceValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getEquality(), 0);
+	ASSERT_EQ(ideaEffects.getEquality(), 5);
 }
 
 

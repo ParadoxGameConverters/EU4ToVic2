@@ -606,7 +606,7 @@ V2Country* V2World::createOrLocateCountry(const string& V2Tag, const shared_ptr<
 }
 
 
-bool scoresSorter(pair<V2Country*, int> first, pair<V2Country*, int> second)
+bool scoresSorter(pair<V2Country*, double> first, pair<V2Country*, double> second)
 {
 	return (first.second > second.second);
 }
@@ -1482,7 +1482,7 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 
 		// modified manufactory weight follows diminishing returns curve y = x^(3/4)+log((x^2)/5+1)
 		int manuCount = sourceCountry->getManufactoryCount();
-		double manuWeight = pow(manuCount, 0.75) + log((manuCount * manuCount) / 5.0 + 1.0);
+		double manuWeight = pow(manuCount, 0.75) + log(((double)(manuCount * manuCount)) / 5.0 + 1.0);
 		double industryWeight = (sourceCountry->getAdmTech() - admMean) + manuWeight;
 		// having one manufactory and average tech is not enough; you must have more than one, or above-average tech
 		if (industryWeight > 1.0)

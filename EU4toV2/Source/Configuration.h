@@ -58,11 +58,9 @@ class Configuration: commonItems::parser
 		enum class DEADCORES { LeaveAll = 1, DeadCores = 2, AllCores = 3 };
 		enum class POPSHAPES { Vanilla = 1, PopShaping = 2, Extreme = 3};
 		enum class COREHANDLES { DropNone = 1, DropNational = 2, DropUnions = 3, DropAll = 4};
-		enum class DHARMAGOVS { BasicGovs = 1, ReformsOnly = 2, DharmaFull = 3};
 		Configuration::POPSHAPES getPopShaping() { return popShaping; }
 		Configuration::COREHANDLES getCoreHandling() { return coreHandling; }
 		Configuration::DEADCORES getRemoveType() { return removeType; }
-		Configuration::DHARMAGOVS getDharmaGov() { return dharmaGov; }
 		double getPopShapingFactor() { return popShapingFactor; }
 		bool getDebug() const { return debug; }
 
@@ -102,7 +100,6 @@ class Configuration: commonItems::parser
 		POPSHAPES popShaping = POPSHAPES::Vanilla;
 		COREHANDLES coreHandling = COREHANDLES::DropNone;
 		DEADCORES removeType = DEADCORES::DeadCores;
-		DHARMAGOVS dharmaGov = DHARMAGOVS::DharmaFull;
 		double popShapingFactor = 50.0;
 		bool debug = false;
 	

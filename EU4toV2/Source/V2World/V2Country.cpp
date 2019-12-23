@@ -642,16 +642,13 @@ void V2Country::initFromEU4Country(
 	// Government
 	government = governmentMapper::matchGovernment(srcCountry->getGovernment());
 
-	if (theConfiguration.getDharmaGov() == Configuration::DHARMAGOVS::DharmaFull)
+	for (auto reformStr : srcCountry->getReforms())
 	{
-		for (auto reformStr : srcCountry->getReforms())
+		ReformProperties reform = ReformMapper::matchReform(reformStr);
+		if (!reform.getEnforce().empty())
 		{
-			ReformProperties reform = ReformMapper::matchReform(reformStr);
-			if (!reform.getEnforce().empty())
-			{
-				LOG(LogLevel::Debug) << "Forcing government " << reform.getEnforce() << " on " << tag;
-				government = reform.getEnforce();
-			}
+			LOG(LogLevel::Debug) << "Forcing government " << reform.getEnforce() << " on " << tag;
+			government = reform.getEnforce();
 		}
 	}
 
@@ -735,6 +732,7 @@ void V2Country::initFromEU4Country(
 
 	if (
 		(srcCountry->getReligion() == "Protestant") ||
+		(srcCountry->getReligion() == "Anglican") ||
 		(srcCountry->getReligion() == "Confucianism") ||
 		(srcCountry->getReligion() == "Reformed")
 	)
@@ -1274,9 +1272,9 @@ void V2Country::getNationalValueScores(
 
 	if (srcCountry)
 	{
-		orderScore += srcCountry->getOrderInvestment() - 5;
-		libertyScore += srcCountry->getLibertyInvestment() - 5;
-		equalityScore += srcCountry->getEqualityInvestment() - 5;
+		orderScore += srcCountry->getOrderInvestment() - 5.0;
+		libertyScore += srcCountry->getLibertyInvestment() - 5.0;
+		equalityScore += srcCountry->getEqualityInvestment() - 5.0;
 	}
 }
 
