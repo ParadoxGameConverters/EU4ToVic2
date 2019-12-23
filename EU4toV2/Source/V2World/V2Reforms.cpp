@@ -33,20 +33,17 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 V2Reforms::V2Reforms(const V2Country* dstCountry, const std::shared_ptr<EU4::Country> srcCountry)
 {
-	slavery							= 0;
-	vote_franchise					= 0;
-	upper_house_composition		= 0;
-	voting_system					= 0;
-	public_meetings				= 0;
-	press_rights					= 0;
-	trade_unions					= 0;
-	political_parties				= 0;
-	upperHouseEffects(dstCountry);
-	governmentEffects(dstCountry);
-
 	if ((srcCountry->hasModifier("the_abolish_slavery_act")) || (srcCountry->hasModifier("abolish_slavery_act")))
 	{
-		slavery += 1;
+		abolishSlavery = true;
+		slavery = dstCountry->getSlavery();
+		upper_house_composition = dstCountry->getUpper_house_composition();
+		vote_franchise = dstCountry->getVote_franchise();
+		voting_system = dstCountry->getVoting_system();
+		public_meetings = dstCountry->getPublic_meetings();
+		press_rights = dstCountry->getPress_rights();
+		trade_unions = dstCountry->getTrade_unions();
+		political_parties = dstCountry->getPolitical_parties();
 	}
 }
 
@@ -55,7 +52,7 @@ void V2Reforms::output(FILE* output) const
 {
 	fprintf(output, "\n");
 	fprintf(output, "# political reforms\n");
-	if (slavery >= 1)
+	if (abolishSlavery || (slavery >= 5.0))
 	{
 		fprintf(output, "slavery=no_slavery\n");
 	}
@@ -64,23 +61,23 @@ void V2Reforms::output(FILE* output) const
 		fprintf(output, "slavery=yes_slavery\n");
 	}
 
-	if (vote_franchise >= 20)
+	if (vote_franchise >= 9.0)
 	{
 		fprintf(output, "vote_franschise=universal_voting\n");
 	}
-	else if (vote_franchise >= 15)
+	else if (vote_franchise >= 7.5)
 	{
 		fprintf(output, "vote_franschise=universal_weighted_voting\n");
 	}
-	else if (vote_franchise >= 10)
+	else if (vote_franchise >= 5.5)
 	{
 		fprintf(output, "vote_franschise=wealth_voting\n");
 	}
-	else if (vote_franchise >= 5)
+	else if (vote_franchise >= 3.5)
 	{
 		fprintf(output, "vote_franschise=wealth_weighted_voting\n");
 	}
-	else if (vote_franchise >= 0)
+	else if (vote_franchise >= 2.5)
 	{
 		fprintf(output, "vote_franschise=landed_voting\n");
 	}
@@ -89,15 +86,15 @@ void V2Reforms::output(FILE* output) const
 		fprintf(output, "vote_franschise=none_voting\n");
 	}
 
-	if (upper_house_composition >= 10)
+	if (upper_house_composition >= 7.5)
 	{
 		fprintf(output, "upper_house_composition=population_equal_weight\n");
 	}
-	else if (upper_house_composition >= 5)
+	else if (upper_house_composition >= 5.0)
 	{
 		fprintf(output, "upper_house_composition=state_equal_weight\n");
 	}
-	else if (upper_house_composition >= 0)
+	else if (upper_house_composition >= 2.5)
 	{
 		fprintf(output, "upper_house_composition=appointed\n");
 	}
@@ -106,11 +103,11 @@ void V2Reforms::output(FILE* output) const
 		fprintf(output, "upper_house_composition=party_appointed\n");
 	}
 
-	if (voting_system >= 10)
+	if (voting_system >= 6.5)
 	{
 		fprintf(output, "voting_system=proportional_representation\n");
 	}
-	else if (voting_system >= 5)
+	else if (voting_system >= 3.0)
 	{
 		fprintf(output, "voting_system=jefferson_method\n");
 	}
@@ -119,7 +116,7 @@ void V2Reforms::output(FILE* output) const
 		fprintf(output, "voting_system=first_past_the_post\n");
 	}
 
-	if (public_meetings >= 10)
+	if (public_meetings >= 5.0)
 	{
 		fprintf(output, "public_meetings=yes_meeting\n");
 	}
@@ -128,11 +125,11 @@ void V2Reforms::output(FILE* output) const
 		fprintf(output, "public_meetings=no_meeting\n");
 	}
 
-	if (press_rights >= 8)
+	if (press_rights >= 6.5)
 	{
 		fprintf(output, "press_rights=free_press\n");
 	}
-	else if (press_rights >= -8)
+	else if (press_rights >= 3.5)
 	{
 		fprintf(output, "press_rights=censored_press\n");
 	}
@@ -141,185 +138,42 @@ void V2Reforms::output(FILE* output) const
 		fprintf(output, "press_rights=state_press\n");
 	}
 
-	if (trade_unions >= 1.0)
+	if (trade_unions >= 7.5)
 	{
 		fprintf(output, "trade_unions=all_trade_unions\n");
 	}
-	else if (trade_unions >= 0.01)
+	else if (trade_unions >= 5.0)
 	{
 		fprintf(output, "trade_unions=non_socialist\n");
+	}
+	else if (trade_unions >= 2.5)
+	{
+		fprintf(output, "trade_unions=state_controlled\n");
 	}
 	else
 	{
 		fprintf(output, "trade_unions=no_trade_unions\n");
 	}
 
-	if (political_parties >= 0.0)
+	if (political_parties >= 8.0)
+	{
+		fprintf(output, "political_parties=secret_ballots\n");
+	}
+	else if (political_parties >= 6.0)
 	{
 		fprintf(output, "political_parties=non_secret_ballots\n");
 	}
-	else if (political_parties >= -0.66)
+	else if (political_parties >= 4.0)
 	{
 		fprintf(output, "political_parties=gerrymandering\n");
 	}
-	else if (political_parties >= -0.75)
+	else if (political_parties >= 2.0)
 	{
 		fprintf(output, "political_parties=harassment\n");
 	}
 	else
 	{
 		fprintf(output, "political_parties=underground_parties\n");
-	}
-}
-
-
-void V2Reforms::governmentEffects(const V2Country* dstCountry)
-{
-	string government = dstCountry->getGovernment();
-	if (government == "absolute_monarchy")
-	{
-		slavery							+= 0;
-		vote_franchise					 = -1;
-		upper_house_composition		 = 0;
-		voting_system					+= 1;
-		public_meetings				+= -2.5;
-		press_rights					+= -16;
-		trade_unions					+= 0;
-		political_parties				+= -4.0;
-	}
-	else if (government == "prussian_constitutionalism")
-	{
-		slavery							+= 0;
-		vote_franchise					 = -1;
-		upper_house_composition		 = 0;
-		voting_system					+= 1;
-		public_meetings				+= -2.5;
-		press_rights					+= -16;
-		trade_unions					+= 0;
-		political_parties				+= -4.0;
-	}
-	else if (government == "theocracy")
-	{
-		slavery							+= 0;
-		vote_franchise					 = -1;
-		upper_house_composition		 = 0;
-		voting_system					+= 1;
-		public_meetings				+= -2.5;
-		press_rights					+= -16;
-		trade_unions					+= 0;
-		political_parties				+= -4.0;
-	}
-	else if (government == "democracy")
-	{
-		slavery							+= 0;
-		vote_franchise					+= 0;
-		upper_house_composition		+= -5;
-		voting_system					+= -1;
-		public_meetings				 = 20;
-		press_rights					*= 10000000;
-		trade_unions					+= -0.26;
-		political_parties				+= 1.0;
-	}
-	else if (government == "presidential_dictatorship")
-	{
-		slavery							+= 0;
-		vote_franchise					 = -1;
-		upper_house_composition		 = 0;
-		voting_system					+= -2;
-		public_meetings				+= 2.5;
-		press_rights					+= 2;
-		press_rights					*= 10000000;
-		trade_unions					+= 0.14;
-		political_parties				+= -4.0;
-	}
-	else if (government == "proletarian_dictatorship")
-	{
-		slavery							+= 0;
-		vote_franchise					 = -1;
-		upper_house_composition		 = 0;
-		voting_system					+= -2;
-		public_meetings				+= 2.5;
-		press_rights					+= 2;
-		press_rights					*= 10000000;
-		trade_unions					+= 0.14;
-		political_parties				+= -4.0;
-	}
-	else if (government == "hms_government")
-	{
-		slavery							+= 0;
-		vote_franchise					+= 0;
-		upper_house_composition		+= 0;
-		voting_system					+= 1;
-		public_meetings				 = 20;
-		press_rights					+= 8;
-		trade_unions					+= 0.14;
-		political_parties				+= 1.5;
-	}
-	else if (government == "bourgeois_dictatorship")
-	{
-		slavery += 0;
-		vote_franchise = -1;
-		upper_house_composition += 0;
-		voting_system += -1;
-		public_meetings += 2.0;
-		press_rights *= 10000000;
-		trade_unions += 0.14;
-		political_parties += -4.0;
-	}
-	else
-	{
-		LOG(LogLevel::Warning) << "Undefined government type '" << government << "' while setting reforms for " << dstCountry->getTag();
-	}
-}
-
-
-void V2Reforms::upperHouseEffects(const V2Country* dstCountry)
-{
-	double UHFactor = (dstCountry->getLiberal() - dstCountry->getReactionary()) / (dstCountry->getReactionary() + dstCountry->getLiberal());
-	vote_franchise				+= 9.5		* UHFactor + 10;
-	upper_house_composition += 4.5		* UHFactor + 5;
-	voting_system				+= 3			* UHFactor + 4;
-	public_meetings			+= 12			* UHFactor + 10.5;
-	press_rights				+= 24			* UHFactor + 0;
-	trade_unions				+= 1.0		* UHFactor + 0;
-	political_parties			+= 2.0		* UHFactor + 0;
-
-	string government = dstCountry->getGovernment();
-	if (government == "absolute_monarchy")
-	{
-		trade_unions *= 0.0;
-	}
-	else if (government == "prussian_constitutionalism")
-	{
-		trade_unions *= 0.0;
-	}
-	else if (government == "theocracy")
-	{
-		trade_unions *= 0.0;
-	}
-	else if (government == "democracy")
-	{
-		trade_unions *= 5.0;
-	}
-	else if (government == "presidential_dictatorship")
-	{
-		trade_unions *= 1.0;
-	}
-	else if (government == "bourgeois_dictatorship")
-	{
-		trade_unions *= 1.0;
-	}
-	else if (government == "proletarian_dictatorship")
-	{
-		trade_unions *= 1.0;
-	}
-	else if (government == "hms_government")
-	{
-		trade_unions *= 2.0;
-	}
-	else
-	{
-		LOG(LogLevel::Warning) << "Undefined government type '" << government << "' while setting reforms for " << dstCountry->getTag();
 	}
 }
 

@@ -160,6 +160,15 @@ class V2Country
 
 		string							getReligion() const { return religion; }
 
+		double getSlavery() const { return slaveryInvestment; }
+		double getUpper_house_composition() const { return upper_house_compositionInvestment; }
+		double getVote_franchise() const { return vote_franchiseInvestment; }
+		double getVoting_system() const { return voting_systemInvestment; }
+		double getPublic_meetings() const { return public_meetingsInvestment; }
+		double getPress_rights() const { return press_rightsInvestment; }
+		double getTrade_unions() const { return trade_unionsInvestment; }
+		double getPolitical_parties() const { return political_partiesInvestment; }
+
 	private:
 		shared_ptr<Object> parseCountryFile(const string& filename);
 
