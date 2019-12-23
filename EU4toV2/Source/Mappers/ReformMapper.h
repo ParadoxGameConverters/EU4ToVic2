@@ -51,7 +51,7 @@ public:
 	int getLiberty() const { return liberty; }
 	int getEquality() const { return equality; }
 	int getOrder() const { return order; }
-	int getLiterarcy() const { return literarcy; }
+	int getLiteracy() const { return literacy; }
 	int getReactionary() const { return reactionary; }
 	int getLiberal() const { return liberal; }
 	int getArmy() const { return army; }
@@ -73,7 +73,7 @@ public:
 	void setLiberty(int lib) { liberty = lib; }
 	void setEquality(int equ) { equality = equ; }
 	void setOrder(int ord) { order = ord; }
-	void setLiterarcy(int lit) { literarcy = lit; }
+	void setLiteracy(int lit) { literacy = lit; }
 	void setReactionary(int rea) { reactionary = rea; }
 	void setLiberal(int libb) { liberal = libb; }
 	void setArmy(int arm) { army = arm; }
@@ -97,7 +97,7 @@ private:
 	int liberty = 5;
 	int equality = 5;
 	int order = 5;
-	int literarcy = 5;
+	int literacy = 5;
 
 	int reactionary = 5;
 	int liberal = 5;

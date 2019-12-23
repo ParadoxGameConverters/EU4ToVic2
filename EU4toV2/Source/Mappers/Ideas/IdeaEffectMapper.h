@@ -60,7 +60,7 @@ class IdeaEffectMapper: commonItems::parser
 		int getLibertyFromIdea(const std::string& ideaName, int ideaLevel) const;
 		int getEqualityFromIdea(const std::string& ideaName, int ideaLevel) const;
 		int getOrderFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getLiterarcyFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getLiteracyFromIdea(const std::string& ideaName, int ideaLevel) const;
 
 		int getReactionaryFromIdea(const std::string& ideaName, int ideaLevel) const;
 		int getLiberalFromIdea(const std::string& ideaName, int ideaLevel) const;
@@ -75,7 +75,7 @@ class IdeaEffectMapper: commonItems::parser
 		std::map<std::string, int> libertyIdeas;
 		std::map<std::string, int> equalityIdeas;
 		std::map<std::string, int> orderIdeas;
-		std::map<std::string, int> literarcyIdeas;
+		std::map<std::string, int> literacyIdeas;
 
 		std::map<std::string, int> slaveryIdeas;
 		std::map<std::string, int> upper_house_compositionIdeas;

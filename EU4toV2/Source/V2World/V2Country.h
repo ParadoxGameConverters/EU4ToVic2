@@ -130,7 +130,7 @@ class V2Country
 
 		string							getLocalName();
 		std::optional<V2Relations> getRelations(std::string withWhom) const;
-		void getNationalValueScores(double& liberty, double& equality, double& order, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void getNationalValueScores(double& liberty, double& equality, double& order);
 		
 		void addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
 		void								addResearchPoints(double newPoints)		{ researchPoints += newPoints; }
@@ -249,7 +249,7 @@ class V2Country
 		double libertyInvestment = 5.0;
 		double equalityInvestment = 5.0;
 		double orderInvestment = 5.0;
-		double literarcyInvestment = 5.0;
+		double literacyInvestment = 5.0;
 		double reactionaryInvestment = 5.0;
 		double liberalInvestment = 5.0;
 

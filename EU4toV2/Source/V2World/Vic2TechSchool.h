@@ -52,13 +52,13 @@ class Vic2TechSchool: commonItems::parser
 		std::string getName() const { return name; }
 
 	private:
-		std::string name;
+		std::string name = "";
 
-		double armyBonus;
-		double commerceBonus;
-		double cultureBonus;
-		double industryBonus;
-		double navyBonus;
+		double armyBonus = 0.0;
+		double commerceBonus = 0.0;
+		double cultureBonus = 0.0;
+		double industryBonus = 0.0;
+		double navyBonus = 0.0;
 };
 
 }

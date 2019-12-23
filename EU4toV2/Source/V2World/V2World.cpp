@@ -91,7 +91,7 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 	setupColonies();
 	setupStates();
 	convertUncivReforms(sourceWorld);
-	convertTechs(sourceWorld, ideaEffectMapper);
+	convertTechs(sourceWorld);
 	allocateFactories(sourceWorld);
 	setupPops(sourceWorld);
 	addUnions();
@@ -620,21 +620,10 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 	set<V2Country*>					valuesUnset;
 	for (map<string, V2Country*>::iterator countryItr = countries.begin(); countryItr != countries.end(); countryItr++)
 	{
-		double libertyScore = 1.0;
-		double equalityScore = 1.0;
-		double orderScore = 1.0;
-		countryItr->second->getNationalValueScores(libertyScore, equalityScore, orderScore, ideaEffectMapper);
-
-		if (theConfiguration.getDharmaGov() != Configuration::DHARMAGOVS::BasicGovs)
-		{
-			for (auto reformStr : countryItr->second->getSourceCountry()->getReforms())
-			{
-				ReformProperties reform = ReformMapper::matchReform(reformStr);
-				libertyScore += reform.getLiberty();
-				equalityScore += reform.getEquality();
-				orderScore += reform.getOrder();
-			}
-		}
+		double libertyScore = 0.0;
+		double equalityScore = 0.0;
+		double orderScore = 0.0;
+		countryItr->second->getNationalValueScores(libertyScore, equalityScore, orderScore);
 
 		if (libertyScore > orderScore)
 		{
@@ -1427,21 +1416,21 @@ void V2World::convertUncivReforms(const EU4::world& sourceWorld)
 }
 
 
-void V2World::convertTechs(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
+void V2World::convertTechs(const EU4::world& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting techs";
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
 	for (auto countryItr: countries)
 	{
 		auto country = countryItr.second;
 		if (techValues.isValidCountryForTechConversion(country))
 		{
-			country->setArmyTech(techValues.getNormalizedArmyTech(*country->getSourceCountry(), ideaEffectMapper));
-			country->setNavyTech(techValues.getNormalizedNavyTech(*country->getSourceCountry(), ideaEffectMapper));
-			country->setCommerceTech(techValues.getNormalizedCommerceTech(*country->getSourceCountry(), ideaEffectMapper));
-			country->setCultureTech(techValues.getNormalizedCultureTech(*country->getSourceCountry(), ideaEffectMapper));
-			country->setIndustryTech(techValues.getNormalizedIndustryTech(*country->getSourceCountry(), ideaEffectMapper));
+			country->setArmyTech(techValues.getNormalizedArmyTech(*country->getSourceCountry()));
+			country->setNavyTech(techValues.getNormalizedNavyTech(*country->getSourceCountry()));
+			country->setCommerceTech(techValues.getNormalizedCommerceTech(*country->getSourceCountry()));
+			country->setCultureTech(techValues.getNormalizedCultureTech(*country->getSourceCountry()));
+			country->setIndustryTech(techValues.getNormalizedIndustryTech(*country->getSourceCountry()));
 		}
 	}
 }

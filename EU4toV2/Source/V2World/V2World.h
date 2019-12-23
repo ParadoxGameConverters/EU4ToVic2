@@ -109,7 +109,7 @@ class V2World
 		void setupColonies();
 		void setupStates();
 		void convertUncivReforms(const EU4::world& sourceWorld);
-		void convertTechs(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void convertTechs(const EU4::world& sourceWorld);
 		void allocateFactories(const EU4::world& sourceWorld);
 		void setupPops(const EU4::world& sourceWorld);
 		void addUnions();

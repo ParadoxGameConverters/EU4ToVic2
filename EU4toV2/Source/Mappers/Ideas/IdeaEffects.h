@@ -48,7 +48,7 @@ class IdeaEffects: commonItems::parser
 		int getOrder() const { return order; }
 		int getLiberty() const { return liberty; }
 		int getEquality() const { return equality; }
-		int getLiteracy() const { return literarcy; }
+		int getLiteracy() const { return literacy; }
 
 		int getReactionary() const { return reactionary; }
 		int getLiberal() const { return liberal; }
@@ -76,7 +76,7 @@ class IdeaEffects: commonItems::parser
 		int liberty = 5;
 		int equality = 5;
 		int order = 5;
-		int literarcy = 5;
+		int literacy = 5;
 
 		int reactionary = 5;
 		int liberal = 5;

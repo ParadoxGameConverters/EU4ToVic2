@@ -108,7 +108,7 @@ mappers::IdeaEffects::IdeaEffects(std::istream& theStream)
 	});
 	registerKeyword(std::regex("literacy"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleInt literacyInt(theStream);
-		literarcy = literacyInt.getInt();
+		literacy = literacyInt.getInt();
 	});
 
 	parseStream(theStream);

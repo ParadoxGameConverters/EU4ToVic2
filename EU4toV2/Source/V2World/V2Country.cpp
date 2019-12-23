@@ -675,7 +675,7 @@ void V2Country::initFromEU4Country(
 	libertyInvestment = (2 * srcCountry->getLibertyInvestment() + ideaEffectMapper.getLibertyFromIdea(government, 8)) / 3;
 	equalityInvestment = (2 * srcCountry->getEqualityInvestment() + ideaEffectMapper.getEqualityFromIdea(government, 8)) / 3;
 	orderInvestment = (2 * srcCountry->getOrderInvestment() + ideaEffectMapper.getOrderFromIdea(government, 8)) / 3;
-	literarcyInvestment = (2 * srcCountry->getLiterarcyInvestment() + ideaEffectMapper.getLiterarcyFromIdea(government, 8)) / 3;
+	literacyInvestment = (2 * srcCountry->getLiteracyInvestment() + ideaEffectMapper.getLiteracyFromIdea(government, 8)) / 3;
 	reactionaryInvestment = (2 * srcCountry->getReactionaryInvestment() + ideaEffectMapper.getReactionaryFromIdea(government, 8)) / 3;
 	liberalInvestment = (2 * srcCountry->getLiberalInvestment() + ideaEffectMapper.getLiberalFromIdea(government, 8)) / 3;
 
@@ -731,42 +731,44 @@ void V2Country::initFromEU4Country(
 	}
 
 	// Literacy
-	literacy = 0.1;
-	for (auto idea: srcCountry->getNationalIdeas())
-	{
-		literacy += ideaEffectMapper.getLiteracyFromIdea(idea.first, idea.second);
-	}
+	literacy = 0.2;
+
 	if (
 		(srcCountry->getReligion() == "Protestant") ||
 		(srcCountry->getReligion() == "Confucianism") ||
 		(srcCountry->getReligion() == "Reformed")
 	)
 	{
-		literacy += 0.05;
+		literacy += 0.2;
 	}
 
 	if (srcCountry->hasModifier("the_school_establishment_act"))
 	{
-		literacy += 0.04;
+		literacy += 0.05;
 	}
 	if (srcCountry->hasModifier("sunday_schools"))
 	{
-		literacy += 0.04;
+		literacy += 0.05;
 	}
 	if (srcCountry->hasModifier("the_education_act"))
 	{
-		literacy += 0.04;
+		literacy += 0.05;
 	}
 	if (srcCountry->hasModifier("monastic_education_system"))
 	{
-		literacy += 0.04;
+		literacy += 0.05;
 	}
 	if (srcCountry->hasModifier("western_embassy_mission"))
 	{
-		literacy += 0.04;
+		literacy += 0.05;
 	}
-	int numProvinces	= 0;
-	int numColleges	= 0;
+
+	// Universities grant at most 10% literacy, with either having 10 or when having them in 10% of provinces, whichever comes sooner.
+	// Colleges do half of what universities do.
+
+	int numProvinces = 0;
+	int numColleges = 0;
+	int numUniversities = 0;
 	vector<EU4::Province*> provinces = srcCountry->getProvinces();
 	numProvinces = provinces.size();
 	for (vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
@@ -777,25 +779,25 @@ void V2Country::initFromEU4Country(
 		}
 		if ((*i)->hasBuilding("university"))
 		{
-			literacy += 0.1;
+			numUniversities++;
 		}
 	}
-	double collegeBonus1;
+
+	double collegeBonus1 = 0;
+	double universityBonus1 = 0;
 	if (numProvinces > 0)
 	{
 		collegeBonus1 = numColleges / numProvinces;
+		universityBonus1 = numUniversities * 2 / numProvinces;
 	}
-	else
-	{
-		collegeBonus1 = 0;
-	}
-	double collegeBonus2	= numColleges * 0.01;
-	double collegeBonus	= max(collegeBonus1, collegeBonus2);
-	if (collegeBonus > 0.2)
-	{
-		collegeBonus = 0.2;
-	}
-	literacy += collegeBonus;
+	double collegeBonus2	= numColleges * 0.005;
+	double universityBonus2 = numUniversities * 0.01;
+
+	double collegeBonus	= min(max(collegeBonus1, collegeBonus2), 0.05);
+	double universityBonus = min(max(universityBonus1, universityBonus2), 0.1);
+
+	literacy += collegeBonus + universityBonus;
+	
 	string techGroup = srcCountry->getTechGroup();
 	if (
 		(techGroup != "western") &&
@@ -810,63 +812,22 @@ void V2Country::initFromEU4Country(
 	{
 		literacy = theConfiguration.getMaxLiteracy();
 	}
+
+	// Finally apply collective national literacy modifier.
+
+	literacy *= (1 + (literacyInvestment - 5) * 10 / 100);
+
 	LOG(LogLevel::Debug) << "Setting literacy for " << tag << " to " << literacy;
 
-	// Tech School
-	//double landInvestment			= srcCountry->getLandInvestment();
-	//double navalInvestment			= srcCountry->getNavalInvestment();
-	//double tradeInvestment			= srcCountry->getTradeInvestment();
-	//double productionInvestment	= srcCountry->getProductionInvestment();
-	//double governmentInvestment	= srcCountry->getGovernmentInvestment();
-
-	//vector<EU4::Province*> srcProvinces = srcCountry->getProvinces();
-	//for(unsigned int j = 0; j < srcProvinces.size(); j++)
-	//{
-	//	if (srcProvinces[j]->hasBuilding("weapons"))
-	//	{
-	//		landInvestment += 50;
-	//	}
-	//	if (srcProvinces[j]->hasBuilding("wharf"))
-	//	{
-	//		navalInvestment += 50;
-	//	}
-	//	if (srcProvinces[j]->hasBuilding("refinery"))
-	//	{
-	//		tradeInvestment += 50;
-	//	}
-	//	if (srcProvinces[j]->hasBuilding("textile"))
-	//	{
-	//		productionInvestment += 50;
-	//	}
-	//	if (srcProvinces[j]->hasBuilding("university"))
-	//	{
-	//		governmentInvestment += 50;
-	//	}
-	//}
-
-	double armyInvestment			= srcCountry->getArmyInvestment();
-	double navyInvestment			= srcCountry->getNavyInvestment();
-	double commerceInvestment		= srcCountry->getCommerceInvestment();
-	double industryInvestment		= srcCountry->getIndustryInvestment();
-	double cultureInvestment		= srcCountry->getCultureInvestment();
-
 	techSchool = techSchools->findBestTechSchool(
-		armyInvestment,
-		commerceInvestment,
-		cultureInvestment,
-		industryInvestment,
-		navyInvestment
+		armyInvestment - 5,
+		commerceInvestment - 5,
+		cultureInvestment - 5,
+		industryInvestment - 5,
+		navyInvestment - 5
 	);
-	LOG(LogLevel::Debug) << tag << " has tech school " << techSchool;
 
-	//// Leaders
-	//vector<EU4Leader*> oldLeaders = srcCountry->getLeaders();
-	//for (vector<EU4Leader*>::iterator itr = oldLeaders.begin(); itr != oldLeaders.end(); ++itr)
-	//{
-	//	V2Leader* leader = new V2Leader(tag, *itr, lt);
-	//	leaders.push_back(leader);
-	//	leaderMap[ (*itr)->getID() ] = leader->getID();
-	//}
+	LOG(LogLevel::Debug) << tag << " has tech school " << techSchool << " for scores arm/com/cul/ind/nav " << armyInvestment << " " << commerceInvestment << " " << cultureInvestment << " " << industryInvestment << " " << navyInvestment;
 
 	// canals
 	for (const auto& prov : _srcCountry->getProvinces())
@@ -1305,8 +1266,7 @@ void V2Country::convertArmies(
 void V2Country::getNationalValueScores(
 	double& libertyScore,
 	double& equalityScore,
-	double& orderScore,
-	const mappers::IdeaEffectMapper& ideaEffectMapper
+	double& orderScore
 ) {
 	orderScore = 0;
 	libertyScore = 0;
@@ -1314,12 +1274,9 @@ void V2Country::getNationalValueScores(
 
 	if (srcCountry)
 	{
-		for (auto idea : srcCountry->getNationalIdeas())
-		{
-			orderScore += ideaEffectMapper.getOrderInfluenceFromIdea(idea.first, idea.second);
-			libertyScore += ideaEffectMapper.getLibertyInfluenceFromIdea(idea.first, idea.second);
-			equalityScore += ideaEffectMapper.getEqualityInfluenceFromIdea(idea.first, idea.second);
-		}
+		orderScore += srcCountry->getOrderInvestment() - 5;
+		libertyScore += srcCountry->getLibertyInvestment() - 5;
+		equalityScore += srcCountry->getEqualityInvestment() - 5;
 	}
 }
 
@@ -1446,7 +1403,7 @@ bool V2Country::addFactory(V2Factory* factory)
 		}
 
 		double candidateScore	 = (*itr)->getSuppliedInputs(factory) * 100;
-		candidateScore				-= (*itr)->getFactoryCount() * 10;
+		candidateScore				-= (double)(*itr)->getFactoryCount() * 10;
 		candidateScore				+= (*itr)->getManuRatio();
 		candidates.push_back(pair<double, V2State*>(candidateScore, (*itr) ));
 	}

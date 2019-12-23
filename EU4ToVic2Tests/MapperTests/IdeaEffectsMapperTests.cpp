@@ -32,7 +32,7 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaReturnsZeroForMissi
 	std::stringstream input;
 	mappers::IdeaEffectMapper theMapper(input);
 
-	auto investment = theMapper.getArmyInvestmentFromIdea("missingIdea", 1);
+	auto investment = theMapper.getArmyFromIdea("missingIdea", 1);
 	ASSERT_EQ(investment, 0);
 }
 
@@ -44,7 +44,7 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaDefaultsToZero)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getArmyInvestmentFromIdea("specifiedIdea", 1), 0);
+	ASSERT_EQ(theMapper.getArmyFromIdea("specifiedIdea", 1), 0);
 }
 
 
@@ -56,7 +56,7 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaCanBeSet)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getArmyInvestmentFromIdea("specifiedIdea", 1), 1);
+	ASSERT_EQ(theMapper.getArmyFromIdea("specifiedIdea", 1), 1);
 }
 
 
@@ -68,7 +68,7 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaCanBeNegative)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getArmyInvestmentFromIdea("specifiedIdea", 1), -1);
+	ASSERT_EQ(theMapper.getArmyFromIdea("specifiedIdea", 1), -1);
 }
 
 
@@ -80,7 +80,7 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaScalesByIdeaLevel)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getArmyInvestmentFromIdea("specifiedIdea", 5), 5);
+	ASSERT_EQ(theMapper.getArmyFromIdea("specifiedIdea", 5), 5);
 }
 
 
@@ -89,7 +89,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCommerceInvestmentFromIdeaReturnsZeroForM
 	std::stringstream input;
 	mappers::IdeaEffectMapper theMapper(input);
 
-	auto investment = theMapper.getCommerceInvestmentFromIdea("missingIdea", 1);
+	auto investment = theMapper.getCommerceFromIdea("missingIdea", 1);
 	ASSERT_EQ(investment, 0);
 }
 
@@ -101,7 +101,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCommerceInvestmentFromIdeaDefaultsToZero)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getCommerceInvestmentFromIdea("specifiedIdea", 1), 0);
+	ASSERT_EQ(theMapper.getCommerceFromIdea("specifiedIdea", 1), 0);
 }
 
 
@@ -113,7 +113,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCommerceInvestmentFromIdeaCanBeSet)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getCommerceInvestmentFromIdea("specifiedIdea", 1), 1);
+	ASSERT_EQ(theMapper.getCommerceFromIdea("specifiedIdea", 1), 1);
 }
 
 
@@ -125,7 +125,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCommerceInvestmentFromIdeaCanBeNegative)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getCommerceInvestmentFromIdea("specifiedIdea", 1), -1);
+	ASSERT_EQ(theMapper.getCommerceFromIdea("specifiedIdea", 1), -1);
 }
 
 
@@ -137,7 +137,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCommerceInvestmentFromIdeaScalesByIdeaLev
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getCommerceInvestmentFromIdea("specifiedIdea", 5), 5);
+	ASSERT_EQ(theMapper.getCommerceFromIdea("specifiedIdea", 5), 5);
 }
 
 
@@ -146,7 +146,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCultureInvestmentFromIdeaReturnsZeroForMi
 	std::stringstream input;
 	mappers::IdeaEffectMapper theMapper(input);
 
-	auto investment = theMapper.getCultureInvestmentFromIdea("missingIdea", 1);
+	auto investment = theMapper.getCultureFromIdea("missingIdea", 1);
 	ASSERT_EQ(investment, 0);
 }
 
@@ -158,7 +158,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCultureInvestmentFromIdeaDefaultsToZero)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getCultureInvestmentFromIdea("specifiedIdea", 1), 0);
+	ASSERT_EQ(theMapper.getCultureFromIdea("specifiedIdea", 1), 0);
 }
 
 
@@ -170,7 +170,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCultureInvestmentFromIdeaCanBeSet)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getCultureInvestmentFromIdea("specifiedIdea", 1), 1);
+	ASSERT_EQ(theMapper.getCultureFromIdea("specifiedIdea", 1), 1);
 }
 
 
@@ -182,7 +182,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCultureInvestmentFromIdeaCanBeNegative)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getCultureInvestmentFromIdea("specifiedIdea", 1), -1);
+	ASSERT_EQ(theMapper.getCultureFromIdea("specifiedIdea", 1), -1);
 }
 
 
@@ -194,7 +194,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCultureInvestmentFromIdeaScalesByIdeaLeve
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getCultureInvestmentFromIdea("specifiedIdea", 5), 5);
+	ASSERT_EQ(theMapper.getCultureFromIdea("specifiedIdea", 5), 5);
 }
 
 
@@ -203,7 +203,7 @@ TEST(Mappers_IdeaEffectMapperTests, getIndustryInvestmentFromIdeaReturnsZeroForM
 	std::stringstream input;
 	mappers::IdeaEffectMapper theMapper(input);
 
-	auto investment = theMapper.getIndustryInvestmentFromIdea("missingIdea", 1);
+	auto investment = theMapper.getIndustryFromIdea("missingIdea", 1);
 	ASSERT_EQ(investment, 0);
 }
 
@@ -215,7 +215,7 @@ TEST(Mappers_IdeaEffectMapperTests, getIndustryInvestmentFromIdeaDefaultsToZero)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getIndustryInvestmentFromIdea("specifiedIdea", 1), 0);
+	ASSERT_EQ(theMapper.getIndustryFromIdea("specifiedIdea", 1), 0);
 }
 
 
@@ -227,7 +227,7 @@ TEST(Mappers_IdeaEffectMapperTests, getIndustryInvestmentFromIdeaCanBeSet)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getIndustryInvestmentFromIdea("specifiedIdea", 1), 1);
+	ASSERT_EQ(theMapper.getIndustryFromIdea("specifiedIdea", 1), 1);
 }
 
 
@@ -239,7 +239,7 @@ TEST(Mappers_IdeaEffectMapperTests, getIndustryInvestmentFromIdeaCanBeNegative)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getIndustryInvestmentFromIdea("specifiedIdea", 1), -1);
+	ASSERT_EQ(theMapper.getIndustryFromIdea("specifiedIdea", 1), -1);
 }
 
 
@@ -251,7 +251,7 @@ TEST(Mappers_IdeaEffectMapperTests, getIndustryInvestmentFromIdeaScalesByIdeaLev
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getIndustryInvestmentFromIdea("specifiedIdea", 5), 5);
+	ASSERT_EQ(theMapper.getIndustryFromIdea("specifiedIdea", 5), 5);
 }
 
 
@@ -260,7 +260,7 @@ TEST(Mappers_IdeaEffectMapperTests, getNavyInvestmentFromIdeaReturnsZeroForMissi
 	std::stringstream input;
 	mappers::IdeaEffectMapper theMapper(input);
 
-	auto investment = theMapper.getNavyInvestmentFromIdea("missingIdea", 1);
+	auto investment = theMapper.getNavyFromIdea("missingIdea", 1);
 	ASSERT_EQ(investment, 0);
 }
 
@@ -272,7 +272,7 @@ TEST(Mappers_IdeaEffectMapperTests, getNavyInvestmentFromIdeaDefaultsToZero)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getNavyInvestmentFromIdea("specifiedIdea", 1), 0);
+	ASSERT_EQ(theMapper.getNavyFromIdea("specifiedIdea", 1), 0);
 }
 
 
@@ -284,7 +284,7 @@ TEST(Mappers_IdeaEffectMapperTests, getNavyInvestmentFromIdeaCanBeSet)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getNavyInvestmentFromIdea("specifiedIdea", 1), 1);
+	ASSERT_EQ(theMapper.getNavyFromIdea("specifiedIdea", 1), 1);
 }
 
 
@@ -296,7 +296,7 @@ TEST(Mappers_IdeaEffectMapperTests, getNavyInvestmentFromIdeaCanBeNegative)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getNavyInvestmentFromIdea("specifiedIdea", 1), -1);
+	ASSERT_EQ(theMapper.getNavyFromIdea("specifiedIdea", 1), -1);
 }
 
 
@@ -308,7 +308,7 @@ TEST(Mappers_IdeaEffectMapperTests, getNavyInvestmentFromIdeaScalesByIdeaLevel)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getNavyInvestmentFromIdea("specifiedIdea", 5), 5);
+	ASSERT_EQ(theMapper.getNavyFromIdea("specifiedIdea", 5), 5);
 }
 
 
@@ -317,7 +317,7 @@ TEST(Mappers_IdeaEffectMapperTests, getUHLiberalFromIdeaReturnsZeroForMissingIde
 	std::stringstream input;
 	mappers::IdeaEffectMapper theMapper(input);
 
-	auto UHLiberal = theMapper.getUHLiberalFromIdea("missingIdea", 0);
+	auto UHLiberal = theMapper.getLiberalFromIdea("missingIdea", 0);
 	ASSERT_NEAR(UHLiberal, 0.0, 0.0000001);
 }
 
@@ -329,7 +329,7 @@ TEST(Mappers_IdeaEffectMapperTests, getUHLiberalFromIdeaDefaultsToZero)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_NEAR(theMapper.getUHLiberalFromIdea("specifiedIdea", 0), 0.0, 0.0000001);
+	ASSERT_NEAR(theMapper.getLiberalFromIdea("specifiedIdea", 0), 0.0, 0.0000001);
 }
 
 
@@ -341,7 +341,7 @@ TEST(Mappers_IdeaEffectMapperTests, getUHLiberalFromIdeaCanBeSet)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_NEAR(theMapper.getUHLiberalFromIdea("specifiedIdea", 0), 0.0125, 0.0000001);
+	ASSERT_NEAR(theMapper.getLiberalFromIdea("specifiedIdea", 0), 0.0125, 0.0000001);
 }
 
 
@@ -353,7 +353,7 @@ TEST(Mappers_IdeaEffectMapperTests, getUHLiberalFromIdeaScalesByIdeaLevel)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_NEAR(theMapper.getUHLiberalFromIdea("specifiedIdea", 3), 0.05, 0.0000001);
+	ASSERT_NEAR(theMapper.getLiberalFromIdea("specifiedIdea", 3), 0.05, 0.0000001);
 }
 
 
@@ -362,7 +362,7 @@ TEST(Mappers_IdeaEffectMapperTests, getUHReactionaryFromIdeaReturnsZeroForMissin
 	std::stringstream input;
 	mappers::IdeaEffectMapper theMapper(input);
 
-	auto UHRadical = theMapper.getUHReactionaryFromIdea("missingIdea", 0);
+	auto UHRadical = theMapper.getReactionaryFromIdea("missingIdea", 0);
 	ASSERT_NEAR(UHRadical, 0.0, 0.0000001);
 }
 
@@ -374,7 +374,7 @@ TEST(Mappers_IdeaEffectMapperTests, getUHReactionaryFromIdeaDefaultsToZero)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_NEAR(theMapper.getUHReactionaryFromIdea("specifiedIdea", 0), 0.0, 0.0000001);
+	ASSERT_NEAR(theMapper.getReactionaryFromIdea("specifiedIdea", 0), 0.0, 0.0000001);
 }
 
 
@@ -386,7 +386,7 @@ TEST(Mappers_IdeaEffectMapperTests, getUHReactionaryFromIdeaCanBeSet)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_NEAR(theMapper.getUHReactionaryFromIdea("specifiedIdea", 0), 0.0125, 0.0000001);
+	ASSERT_NEAR(theMapper.getReactionaryFromIdea("specifiedIdea", 0), 0.0125, 0.0000001);
 }
 
 
@@ -398,7 +398,7 @@ TEST(Mappers_IdeaEffectMapperTests, getUHReactionaryFromIdeaScalesByIdeaLevel)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_NEAR(theMapper.getUHReactionaryFromIdea("specifiedIdea", 3), 0.05, 0.0000001);
+	ASSERT_NEAR(theMapper.getReactionaryFromIdea("specifiedIdea", 3), 0.05, 0.0000001);
 }
 
 
@@ -464,7 +464,7 @@ TEST(Mappers_IdeaEffectMapperTests, getOrderInfluenceFromIdeaReturnsZeroForMissi
 	std::stringstream input;
 	mappers::IdeaEffectMapper theMapper(input);
 
-	auto investment = theMapper.getOrderInfluenceFromIdea("missingIdea", 1);
+	auto investment = theMapper.getOrderFromIdea("missingIdea", 1);
 	ASSERT_EQ(investment, 0);
 }
 
@@ -476,7 +476,7 @@ TEST(Mappers_IdeaEffectMapperTests, getOrderInfluenceFromIdeaDefaultsToZero)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getOrderInfluenceFromIdea("specifiedIdea", 1), 0);
+	ASSERT_EQ(theMapper.getOrderFromIdea("specifiedIdea", 1), 0);
 }
 
 
@@ -488,7 +488,7 @@ TEST(Mappers_IdeaEffectMapperTests, getOrderInfluenceFromIdeaCanBeSet)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getOrderInfluenceFromIdea("specifiedIdea", 0), 1);
+	ASSERT_EQ(theMapper.getOrderFromIdea("specifiedIdea", 0), 1);
 }
 
 
@@ -500,7 +500,7 @@ TEST(Mappers_IdeaEffectMapperTests, getOrderInfluenceFromIdeaCanBeNegative)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getOrderInfluenceFromIdea("specifiedIdea", 0), -1);
+	ASSERT_EQ(theMapper.getOrderFromIdea("specifiedIdea", 0), -1);
 }
 
 
@@ -512,7 +512,7 @@ TEST(Mappers_IdeaEffectMapperTests, getOrderInfluenceFromIdeaScalesByIdeaLevel)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getOrderInfluenceFromIdea("specifiedIdea", 5), 6);
+	ASSERT_EQ(theMapper.getOrderFromIdea("specifiedIdea", 5), 6);
 }
 
 
@@ -524,7 +524,7 @@ TEST(Mappers_IdeaEffectMapperTests, getOrderInfluenceFromIdeaGivesBonusForComple
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getOrderInfluenceFromIdea("specifiedIdea", 7), 9);
+	ASSERT_EQ(theMapper.getOrderFromIdea("specifiedIdea", 7), 9);
 }
 
 
@@ -533,7 +533,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLibertyInfluenceFromIdeaReturnsZeroForMis
 	std::stringstream input;
 	mappers::IdeaEffectMapper theMapper(input);
 
-	auto investment = theMapper.getLibertyInfluenceFromIdea("missingIdea", 1);
+	auto investment = theMapper.getLibertyFromIdea("missingIdea", 1);
 	ASSERT_EQ(investment, 0);
 }
 
@@ -545,7 +545,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLibertyInfluenceFromIdeaDefaultsToZero)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getLibertyInfluenceFromIdea("specifiedIdea", 1), 0);
+	ASSERT_EQ(theMapper.getLibertyFromIdea("specifiedIdea", 1), 0);
 }
 
 
@@ -557,7 +557,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLibertyInfluenceFromIdeaCanBeSet)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getLibertyInfluenceFromIdea("specifiedIdea", 0), 1);
+	ASSERT_EQ(theMapper.getLibertyFromIdea("specifiedIdea", 0), 1);
 }
 
 
@@ -569,7 +569,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLibertyInfluenceFromIdeaCanBeNegative)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getLibertyInfluenceFromIdea("specifiedIdea", 0), -1);
+	ASSERT_EQ(theMapper.getLibertyFromIdea("specifiedIdea", 0), -1);
 }
 
 
@@ -581,7 +581,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLibertyInfluenceFromIdeaScalesByIdeaLevel
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getLibertyInfluenceFromIdea("specifiedIdea", 5), 6);
+	ASSERT_EQ(theMapper.getLibertyFromIdea("specifiedIdea", 5), 6);
 }
 
 
@@ -593,7 +593,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLibertyInfluenceFromIdeaGivesBonusForComp
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getLibertyInfluenceFromIdea("specifiedIdea", 7), 9);
+	ASSERT_EQ(theMapper.getLibertyFromIdea("specifiedIdea", 7), 9);
 }
 
 
@@ -602,7 +602,7 @@ TEST(Mappers_IdeaEffectMapperTests, getEqualityInfluenceFromIdeaReturnsZeroForMi
 	std::stringstream input;
 	mappers::IdeaEffectMapper theMapper(input);
 
-	auto investment = theMapper.getEqualityInfluenceFromIdea("missingIdea", 1);
+	auto investment = theMapper.getEqualityFromIdea("missingIdea", 1);
 	ASSERT_EQ(investment, 0);
 }
 
@@ -614,7 +614,7 @@ TEST(Mappers_IdeaEffectMapperTests, getEqualityInfluenceFromIdeaDefaultsToZero)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getEqualityInfluenceFromIdea("specifiedIdea", 1), 0);
+	ASSERT_EQ(theMapper.getEqualityFromIdea("specifiedIdea", 1), 0);
 }
 
 
@@ -626,7 +626,7 @@ TEST(Mappers_IdeaEffectMapperTests, getEqualityInfluenceFromIdeaCanBeSet)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getEqualityInfluenceFromIdea("specifiedIdea", 0), 1);
+	ASSERT_EQ(theMapper.getEqualityFromIdea("specifiedIdea", 0), 1);
 }
 
 
@@ -638,7 +638,7 @@ TEST(Mappers_IdeaEffectMapperTests, getEqualityInfluenceFromIdeaCanBeNegative)
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getEqualityInfluenceFromIdea("specifiedIdea", 0), -1);
+	ASSERT_EQ(theMapper.getEqualityFromIdea("specifiedIdea", 0), -1);
 }
 
 
@@ -650,7 +650,7 @@ TEST(Mappers_IdeaEffectMapperTests, getEqualityInfluenceFromIdeaScalesByIdeaLeve
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getEqualityInfluenceFromIdea("specifiedIdea", 5), 6);
+	ASSERT_EQ(theMapper.getEqualityFromIdea("specifiedIdea", 5), 6);
 }
 
 
@@ -662,455 +662,6 @@ TEST(Mappers_IdeaEffectMapperTests, getEqualityInfluenceFromIdeaGivesBonusForCom
 	input << "}";
 	mappers::IdeaEffectMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getEqualityInfluenceFromIdea("specifiedIdea", 7), 9);
+	ASSERT_EQ(theMapper.getEqualityFromIdea("specifiedIdea", 7), 9);
 }
 
-
-TEST(Mappers_IdeaEffectMapperTests, getArmyTechFromIdeaReturnsZeroForMissingIdea)
-{
-	std::stringstream input;
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("missingIdea", 0));
-
-	auto tech = theMapper.getArmyTechFromIdeas(ideas);
-	ASSERT_EQ(tech, 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getArmyTechFromIdeaDefaultsToZero)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 0));
-
-	ASSERT_EQ(theMapper.getArmyTechFromIdeas(ideas), 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getArmyTechFromIdeaCanBeSet)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tarmy_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 0));
-
-	ASSERT_NEAR(theMapper.getArmyTechFromIdeas(ideas), 0.25, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getArmyTechFromIdeaScalesByIdeaLevel)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tarmy_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 7));
-
-	ASSERT_NEAR(theMapper.getArmyTechFromIdeas(ideas), 2.0, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getArmyTechFromIdeaGivesZeroWhenPassedNoIdeas)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tarmy_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-
-	ASSERT_EQ(theMapper.getArmyTechFromIdeas(ideas), 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getArmyTechFromIdeaInfluencedByMultipleIdeas)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tarmy_tech_score=0.25";
-	input << "}";
-	input << "secondIdea = {\n";
-	input << "\tarmy_tech_score=0.5\n";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 7));
-	ideas.insert(std::make_pair("secondIdea", 4));
-
-	ASSERT_NEAR(theMapper.getArmyTechFromIdeas(ideas), 4.5, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCommerceTechFromIdeaReturnsZeroForMissingIdea)
-{
-	std::stringstream input;
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("missingIdea", 0));
-
-	auto tech = theMapper.getCommerceTechFromIdeas(ideas);
-	ASSERT_EQ(tech, 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCommerceTechFromIdeaDefaultsToZero)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 0));
-
-	ASSERT_EQ(theMapper.getCommerceTechFromIdeas(ideas), 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCommerceTechFromIdeaCanBeSet)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tcommerce_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 0));
-
-	ASSERT_NEAR(theMapper.getCommerceTechFromIdeas(ideas), 0.25, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCommerceTechFromIdeaScalesByIdeaLevel)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tcommerce_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 7));
-
-	ASSERT_NEAR(theMapper.getCommerceTechFromIdeas(ideas), 2.0, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCommerceTechFromIdeaGivesZeroWhenPassedNoIdeas)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tcommerce_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-
-	ASSERT_EQ(theMapper.getCommerceTechFromIdeas(ideas), 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCommerceTechFromIdeaInfluencedByMultipleIdeas)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tcommerce_tech_score=0.25";
-	input << "}";
-	input << "secondIdea = {\n";
-	input << "\tcommerce_tech_score=0.5\n";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 7));
-	ideas.insert(std::make_pair("secondIdea", 4));
-
-	ASSERT_NEAR(theMapper.getCommerceTechFromIdeas(ideas), 4.5, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCultureTechFromIdeaReturnsZeroForMissingIdea)
-{
-	std::stringstream input;
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("missingIdea", 0));
-
-	auto tech = theMapper.getCultureTechFromIdeas(ideas);
-	ASSERT_EQ(tech, 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCultureTechFromIdeaDefaultsToZero)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 0));
-
-	ASSERT_EQ(theMapper.getCultureTechFromIdeas(ideas), 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCultureTechFromIdeaCanBeSet)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tculture_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 0));
-
-	ASSERT_NEAR(theMapper.getCultureTechFromIdeas(ideas), 0.25, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCultureTechFromIdeaScalesByIdeaLevel)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tculture_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 7));
-
-	ASSERT_NEAR(theMapper.getCultureTechFromIdeas(ideas), 2.0, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCultureTechFromIdeaGivesZeroWhenPassedNoIdeas)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tculture_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-
-	ASSERT_EQ(theMapper.getCultureTechFromIdeas(ideas), 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getCultureTechFromIdeaInfluencedByMultipleIdeas)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tculture_tech_score=0.25";
-	input << "}";
-	input << "secondIdea = {\n";
-	input << "\tculture_tech_score=0.5\n";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 7));
-	ideas.insert(std::make_pair("secondIdea", 4));
-
-	ASSERT_NEAR(theMapper.getCultureTechFromIdeas(ideas), 4.5, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getIndustryTechFromIdeaReturnsZeroForMissingIdea)
-{
-	std::stringstream input;
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("missingIdea", 0));
-
-	auto tech = theMapper.getIndustryTechFromIdeas(ideas);
-	ASSERT_EQ(tech, 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getIndustryTechFromIdeaDefaultsToZero)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 0));
-
-	ASSERT_EQ(theMapper.getIndustryTechFromIdeas(ideas), 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getIndustryTechFromIdeaCanBeSet)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tindustry_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 0));
-
-	ASSERT_NEAR(theMapper.getIndustryTechFromIdeas(ideas), 0.25, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getIndustryTechFromIdeaScalesByIdeaLevel)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tindustry_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 7));
-
-	ASSERT_NEAR(theMapper.getIndustryTechFromIdeas(ideas), 2.0, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getIndustryTechFromIdeaGivesZeroWhenPassedNoIdeas)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tindustry_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-
-	ASSERT_EQ(theMapper.getIndustryTechFromIdeas(ideas), 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getIndustryTechFromIdeaInfluencedByMultipleIdeas)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tindustry_tech_score=0.25";
-	input << "}";
-	input << "secondIdea = {\n";
-	input << "\tindustry_tech_score=0.5\n";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 7));
-	ideas.insert(std::make_pair("secondIdea", 4));
-
-	ASSERT_NEAR(theMapper.getIndustryTechFromIdeas(ideas), 4.5, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getNavyTechFromIdeaReturnsZeroForMissingIdea)
-{
-	std::stringstream input;
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("missingIdea", 0));
-
-	auto tech = theMapper.getNavyTechFromIdeas(ideas);
-	ASSERT_EQ(tech, 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getNavyTechFromIdeaDefaultsToZero)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 0));
-
-	ASSERT_EQ(theMapper.getNavyTechFromIdeas(ideas), 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getNavyTechFromIdeaCanBeSet)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tnavy_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 0));
-
-	ASSERT_NEAR(theMapper.getNavyTechFromIdeas(ideas), 0.25, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getNavyTechFromIdeaScalesByIdeaLevel)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tnavy_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 7));
-
-	ASSERT_NEAR(theMapper.getNavyTechFromIdeas(ideas), 2.0, 0.0000001);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getNavyTechFromIdeaGivesZeroWhenPassedNoIdeas)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tnavy_tech_score=0.25";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-
-	ASSERT_EQ(theMapper.getNavyTechFromIdeas(ideas), 0);
-}
-
-
-TEST(Mappers_IdeaEffectMapperTests, getNavyTechFromIdeaInfluencedByMultipleIdeas)
-{
-	std::stringstream input;
-	input << "specifiedIdea ={\n";
-	input << "\tnavy_tech_score=0.25";
-	input << "}";
-	input << "secondIdea = {\n";
-	input << "\tnavy_tech_score=0.5\n";
-	input << "}";
-	mappers::IdeaEffectMapper theMapper(input);
-
-	std::map<std::string, int> ideas;
-	ideas.insert(std::make_pair("specifiedIdea", 7));
-	ideas.insert(std::make_pair("secondIdea", 4));
-
-	ASSERT_NEAR(theMapper.getNavyTechFromIdeas(ideas), 4.5, 0.0000001);
-}

@@ -44,7 +44,7 @@ mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream)
 		orderIdeas[idea] = ideaEffects.getOrder();
 		libertyIdeas[idea] = ideaEffects.getLiberty();
 		equalityIdeas[idea] = ideaEffects.getEquality();
-		literarcyIdeas[idea] = ideaEffects.getLiteracy();
+		literacyIdeas[idea] = ideaEffects.getLiteracy();
 
 		slaveryIdeas[idea] = ideaEffects.getSlavery();
 		upper_house_compositionIdeas[idea] = ideaEffects.getUpper_house_composition();
@@ -161,10 +161,10 @@ int mappers::IdeaEffectMapper::getReactionaryFromIdea(const std::string& ideaNam
 }
 
 
-int mappers::IdeaEffectMapper::getLiterarcyFromIdea(const std::string& ideaName, int ideaLevel) const
+int mappers::IdeaEffectMapper::getLiteracyFromIdea(const std::string& ideaName, int ideaLevel) const
 {
-	auto idea = literarcyIdeas.find(ideaName);
-	if ((idea != literarcyIdeas.end()) && (ideaLevel >= 7))
+	auto idea = literacyIdeas.find(ideaName);
+	if ((idea != literacyIdeas.end()) && (ideaLevel >= 7))
 	{
 		return idea->second;
 	}

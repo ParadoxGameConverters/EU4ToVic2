@@ -19,7 +19,7 @@
 # THE SOFTWARE.
 
 # This file allows chosen government forms and ideas to affect socio-political reforms, 
-# national value, starting technologies as well as starting tech groups and literarcy. 
+# national value, starting technologies as well as starting tech groups and literacy. 
 # For ideas to have an effect, entire idea group must be completed.
 # 
 # Each government type and idea ranks various issues on a scale of 0 to 10 where:
@@ -31,7 +31,7 @@
 # 
 # Issues recognised: 
 # Political: slavery, upper_house_composition, vote_franchise, voting_system, public_meetings, press_rights, trade_unions, political_parties
-# National values: liberty, equality, order, literarcy
+# National values: liberty, equality, order, literacy
 # Technologies: army, commerce, culture, industry, navy
 # Upper house membership: reactionary, liberal
 #
@@ -50,7 +50,7 @@ absolute_monarchy = {
 	liberty = 3
 	equality = 2
 	order = 8
-	literarcy = 3
+	literacy = 3
 	# ----
 	army = 6
 	commerce = 4
@@ -96,7 +96,7 @@ hms_government = {
 	liberty = 7
 	equality = 7
 	order = 3
-	literarcy = 6
+	literacy = 6
 	# ----
 	army = 4
 	commerce = 7
@@ -119,7 +119,7 @@ theocracy = {
 	# ----
 	equality = 2
 	order = 6
-	literarcy = 8
+	literacy = 8
 	# ----
 	army = 4
 	commerce = 6
@@ -142,7 +142,7 @@ democracy = {
 	equality = 8
 	liberty = 7
 	order = 3
-	literarcy = 7
+	literacy = 7
 	# ----
 	army = 3
 	commerce = 7
@@ -166,7 +166,7 @@ presidential_dictatorship = {
 	equality = 6
 	liberty = 4
 	order = 6
-	literarcy = 4
+	literacy = 4
 	# ----
 	army = 6
 	commerce = 4
@@ -190,7 +190,7 @@ proletarian_dictatorship = {
 	equality = 7
 	liberty = 8
 	order = 2
-	literarcy = 4
+	literacy = 4
 	# ----
 	army = 6
 	commerce = 3
@@ -214,7 +214,7 @@ bourgeois_dictatorship = {
 	equality = 4
 	liberty = 6
 	order = 4
-	literarcy = 6
+	literacy = 6
 	# ----
 	army = 4
 	commerce = 6

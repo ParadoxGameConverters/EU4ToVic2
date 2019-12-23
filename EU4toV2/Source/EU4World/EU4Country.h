@@ -128,7 +128,7 @@ namespace EU4
 			double getLibertyInvestment() const { return libertyInvestment; }
 			double getEqualityInvestment() const { return equalityInvestment; }
 			double getOrderInvestment() const { return orderInvestment; }
-			double getLiterarcyInvestment() const { return literarcyInvestment; }
+			double getLiteracyInvestment() const { return literacyInvestment; }
 			double getReactionaryInvestment() const { return reactionaryInvestment; }
 			double getLiberalInvestment() const { return liberalInvestment; }
 			bool								getPossibleDaimyo()						const { return possibleDaimyo; }
@@ -198,7 +198,7 @@ namespace EU4
 			double libertyInvestment = 5.0;	// the amount of 'investment' into liberty national value (determined by ideas)
 			double equalityInvestment = 5.0;	// the amount of 'investment' into equality national value (determined by ideas)
 			double orderInvestment = 5.0; // the amount of 'investment' into order national value (determined by ideas)
-			double literarcyInvestment = 5.0; // the amount of 'investment' into literarcy as such (determined by ideas)
+			double literacyInvestment = 5.0; // the amount of 'investment' into literacy as such (determined by ideas)
 			double reactionaryInvestment = 5.0;	// the amount of 'investment' into reactionary movement (determined by ideas)
 			double liberalInvestment = 5.0;	// the amount of 'investment' into liberal movement (determined by ideas)
 

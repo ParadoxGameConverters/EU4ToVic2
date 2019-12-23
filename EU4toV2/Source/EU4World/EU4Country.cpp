@@ -374,7 +374,7 @@ EU4::Country::Country(
 		}
 	);
 	registerKeyword(std::regex("government"), [this, theVersion](const std::string& unused, std::istream& theStream){
-		if (theVersion < EU4::Version("1.7.0.0"))
+		if (theVersion < EU4::Version("1.23.0.0"))
 		{
 			government = governmentSection::readGovernment(theStream);
 		}
@@ -571,7 +571,7 @@ void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEff
 				libertyInvestment += ideaEffectMapper.getLibertyFromIdea(idea.first, idea.second);
 				equalityInvestment += ideaEffectMapper.getEqualityFromIdea(idea.first, idea.second);
 				orderInvestment += ideaEffectMapper.getOrderFromIdea(idea.first, idea.second);
-				literarcyInvestment += ideaEffectMapper.getLiterarcyFromIdea(idea.first, idea.second);
+				literacyInvestment += ideaEffectMapper.getLiteracyFromIdea(idea.first, idea.second);
 
 				reactionaryInvestment += ideaEffectMapper.getReactionaryFromIdea(idea.first, idea.second);
 				liberalInvestment += ideaEffectMapper.getLiberalFromIdea(idea.first, idea.second);
@@ -602,7 +602,7 @@ void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEff
 			libertyInvestment += reform.getLiberty();
 			equalityInvestment += reform.getEquality();
 			orderInvestment += reform.getOrder();
-			literarcyInvestment += reform.getLiterarcy();
+			literacyInvestment += reform.getLiteracy();
 
 			reactionaryInvestment += reform.getReactionary();
 			liberalInvestment += reform.getLiberal();
@@ -614,28 +614,33 @@ void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEff
 	}
 
 	// We actually need the averages, to play against government and reforms.
-	armyInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics );
-	commerceInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	cultureInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	industryInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	navyInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
 
-	slaveryInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	upper_house_compositionInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	vote_franchiseInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	voting_systemInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	public_meetingsInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	press_rightsInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	trade_unionsInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	political_partiesInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	int nideasSize = (int)nationalIdeas.size();
+	int govRefsSize = (int)governmentReforms.size();
+	int totalDivider = nideasSize - 1 + govRefsSize - ignoredMechanics;
 
-	libertyInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	equalityInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	orderInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	literarcyInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	armyInvestment /= totalDivider;
+	commerceInvestment /= totalDivider;
+	cultureInvestment /= totalDivider;
+	industryInvestment /= totalDivider;
+	navyInvestment /= totalDivider;
 
-	reactionaryInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
-	liberalInvestment /= (nationalIdeas.size() - 1 + governmentReforms.size() - ignoredMechanics);
+	slaveryInvestment /= totalDivider;
+	upper_house_compositionInvestment /= totalDivider;
+	vote_franchiseInvestment /= totalDivider;
+	voting_systemInvestment /= totalDivider;
+	public_meetingsInvestment /= totalDivider;
+	press_rightsInvestment /= totalDivider;
+	trade_unionsInvestment /= totalDivider;
+	political_partiesInvestment /= totalDivider;
+
+	libertyInvestment /= totalDivider;
+	equalityInvestment /= totalDivider;
+	orderInvestment /= totalDivider;
+	literacyInvestment /= totalDivider;
+
+	reactionaryInvestment /= totalDivider;
+	liberalInvestment /= totalDivider;
 	
 }
 

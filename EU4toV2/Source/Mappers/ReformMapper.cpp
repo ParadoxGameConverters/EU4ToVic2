@@ -113,9 +113,9 @@ void ReformMapper::processRule(shared_ptr<Object> rule)
 		{
 			reformProperties.setPolitical_parties(stod(item->getLeaf()));
 		}
-		if (item->getKey() == "literarcy")
+		if (item->getKey() == "literacy")
 		{
-			reformProperties.setLiterarcy(stod(item->getLeaf()));
+			reformProperties.setLiteracy(stod(item->getLeaf()));
 		}
 		if (item->getKey() == "army")
 		{
