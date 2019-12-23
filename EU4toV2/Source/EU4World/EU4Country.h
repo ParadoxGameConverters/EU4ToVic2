@@ -50,6 +50,7 @@ class EU4Relations;
 namespace mappers
 {
 class IdeaEffectMapper;
+class TechgroupsMapper;
 }
 
 

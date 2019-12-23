@@ -49,6 +49,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/CountryMapping.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
+#include "../Mappers/Ideas/TechGroupsMapper.h"
 #include "../Mappers/MinorityPopMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "BlockedTechSchools.h"
@@ -68,7 +69,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
+V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper)
 {
 	LOG(LogLevel::Info) << "Parsing Vicky2 data";
 	importProvinces();
@@ -90,7 +91,7 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 	convertDiplomacy(sourceWorld);
 	setupColonies();
 	setupStates();
-	convertUncivReforms(sourceWorld);
+	convertUncivReforms(sourceWorld, techGroupsMapper);
 	convertTechs(sourceWorld);
 	allocateFactories(sourceWorld);
 	setupPops(sourceWorld);
@@ -634,7 +635,6 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 			equalityScores.push_back(make_pair(countryItr->second, equalityScore));
 		}
 		valuesUnset.insert(countryItr->second);
-		LOG(LogLevel::Debug) << "Value scores for " << countryItr->first << ": order = " << orderScore << ", liberty = " << libertyScore << ", equality = " << equalityScore;
 	}
 	equalityScores.sort(scoresSorter);
 	int equalityLeft = 5;
@@ -650,7 +650,6 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 			valuesUnset.erase(unsetItr);
 			equalItr->first->setNationalValue("nv_equality");
 			equalityLeft--;
-			LOG(LogLevel::Debug) << equalItr->first->getTag() << " got national value equality";
 		}
 	}
 	libertyScores.sort(scoresSorter);
@@ -667,13 +666,11 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 			valuesUnset.erase(unsetItr);
 			libItr->first->setNationalValue("nv_liberty");
 			libertyLeft--;
-			LOG(LogLevel::Debug) << libItr->first->getTag() << " got national value liberty";
 		}
 	}
 	for (set<V2Country*>::iterator unsetItr = valuesUnset.begin(); unsetItr != valuesUnset.end(); unsetItr++)
 	{
 		(*unsetItr)->setNationalValue("nv_order");
-		LOG(LogLevel::Debug) << (*unsetItr)->getTag() << " got national value order";
 	}
 }
 
@@ -711,7 +708,6 @@ void V2World::convertPrestige()
 			prestige = score / highestScore * 100.0;
 		}
 		country.second->addPrestige(prestige);
-		LOG(LogLevel::Debug) << country.first << " had " << prestige << " prestige";
 	}
 }
 
@@ -1299,8 +1295,6 @@ void V2World::setupStates()
 		stateId++;
 		auto neighbors = theStateMapper->getAllProvincesInState(provId);
 
-		LOG(LogLevel::Debug) << "Neighbors size" << neighbors.size();
-
 		bool colonial = (*iter)->isColonial();
 		newState->setColonial(colonial);
 		iter = unassignedProvs.erase(iter);
@@ -1316,7 +1310,6 @@ void V2World::setupStates()
 						if ((*iter)->isColonial() == colonial)
 						{
 							newState->addProvince(*iter);
-							LOG(LogLevel::Debug) << (*iter)->getName() << " added to " << newState->getID();
 							iter = unassignedProvs.erase(iter);
 						}
 					}
@@ -1332,7 +1325,7 @@ void V2World::setupStates()
 	}
 }
 
-void V2World::convertUncivReforms(const EU4::world& sourceWorld)
+void V2World::convertUncivReforms(const EU4::world& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper)
 {
 	LOG(LogLevel::Info) << "Setting unciv reforms";
 
@@ -1393,7 +1386,7 @@ void V2World::convertUncivReforms(const EU4::world& sourceWorld)
 
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
-		itr->second->convertUncivReforms(techGroupAlgorithm, topTech, topInstitutions);
+		itr->second->convertUncivReforms(techGroupAlgorithm, topTech, topInstitutions, techGroupsMapper);
 	}
 
 	// inherit civilisation level for landless countries from their capital's owner
@@ -1482,7 +1475,7 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 
 		// modified manufactory weight follows diminishing returns curve y = x^(3/4)+log((x^2)/5+1)
 		int manuCount = sourceCountry->getManufactoryCount();
-		double manuWeight = pow(manuCount, 0.75) + log(((double)(manuCount * manuCount)) / 5.0 + 1.0);
+		double manuWeight = pow(manuCount, 0.75) + log(((double)manuCount * (double)manuCount) / 5.0 + 1.0);
 		double industryWeight = (sourceCountry->getAdmTech() - admMean) + manuWeight;
 		// having one manufactory and average tech is not enough; you must have more than one, or above-average tech
 		if (industryWeight > 1.0)
@@ -1780,14 +1773,12 @@ void V2World::addUnions()
 				switch (theConfiguration.getCoreHandling())
 				{
 				case Configuration::COREHANDLES::DropNational:
-					LOG(LogLevel::Debug) << "Adding union cores for " << culture;
 					for (auto core : unionCores)
 					{
 						provItr->second->addCore(core);
 					}
 					break;
 				case Configuration::COREHANDLES::DropUnions:
-					LOG(LogLevel::Debug) << "Adding national cores for " << culture << "to " << provItr->second->getName() << ":";
 					for (auto core : nationalCores)
 					{
 						LOG(LogLevel::Debug) << provItr->second->getName() << ": " << core;
@@ -1795,7 +1786,6 @@ void V2World::addUnions()
 					}
 					break;
 				case Configuration::COREHANDLES::DropNone:
-					LOG(LogLevel::Debug) << "Adding all cores for " << culture;
 					for (auto core : unionCores)
 					{
 						provItr->second->addCore(core);
@@ -1878,7 +1868,7 @@ void V2World::output() const
 		versionFile << "# 1.0J-prerelease \"Jan Mayen\", built on " << __TIMESTAMP__ << ".\n";
 		versionFile.close();
 	}
-	catch (const std::exception& e)
+	catch (const std::exception&)
 	{
 		LOG(LogLevel::Error) << "Error writing version file! Is the output folder writeable?";
 	}
@@ -2014,7 +2004,6 @@ void V2World::output() const
 	for (auto province: provinces)
 	{
 		province.second->output();
-		LOG(LogLevel::Debug) << "province " << province.second->getName() << " has " << province.second->getNavalBaseLevel() << " naval base";
 	}
 	LOG(LogLevel::Debug) << "Writing countries";
 	for (map<string, V2Country*>::const_iterator itr = countries.begin(); itr != countries.end(); itr++)

@@ -39,6 +39,7 @@ class Country;
 namespace mappers
 {
 class IdeaEffectMapper;
+class TechgroupsMapper;
 }
 
 class V2Country;

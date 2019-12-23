@@ -75,75 +75,79 @@ void ReformMapper::processRule(shared_ptr<Object> rule)
 		}
 		if (item->getKey() == "liberty")
 		{
-			reformProperties.setLiberty(stod(item->getLeaf()));
+			reformProperties.setLiberty(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "equality")
 		{
-			reformProperties.setEquality(stod(item->getLeaf()));
+			reformProperties.setEquality(stoi(item->getLeaf()));
+		}
+		if (item->getKey() == "order")
+		{
+			reformProperties.setOrder(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "slavery")
 		{
-			reformProperties.setSlavery(stod(item->getLeaf()));
+			reformProperties.setSlavery(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "upper_house_composition")
 		{
-			reformProperties.setUpper_house_composition(stod(item->getLeaf()));
+			reformProperties.setUpper_house_composition(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "vote_franchise")
 		{
-			reformProperties.setVote_franchise(stod(item->getLeaf()));
+			reformProperties.setVote_franchise(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "voting_system")
 		{
-			reformProperties.setVoting_system(stod(item->getLeaf()));
+			reformProperties.setVoting_system(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "public_meetings")
 		{
-			reformProperties.setPublic_meetings(stod(item->getLeaf()));
+			reformProperties.setPublic_meetings(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "press_rights")
 		{
-			reformProperties.setPress_rights(stod(item->getLeaf()));
+			reformProperties.setPress_rights(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "trade_unions")
 		{
-			reformProperties.setTrade_unions(stod(item->getLeaf()));
+			reformProperties.setTrade_unions(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "political_parties")
 		{
-			reformProperties.setPolitical_parties(stod(item->getLeaf()));
+			reformProperties.setPolitical_parties(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "literacy")
 		{
-			reformProperties.setLiteracy(stod(item->getLeaf()));
+			reformProperties.setLiteracy(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "army")
 		{
-			reformProperties.setArmy(stod(item->getLeaf()));
+			reformProperties.setArmy(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "commerce")
 		{
-			reformProperties.setCommerce(stod(item->getLeaf()));
+			reformProperties.setCommerce(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "culture")
 		{
-			reformProperties.setCulture(stod(item->getLeaf()));
+			reformProperties.setCulture(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "industry")
 		{
-			reformProperties.setIndustry(stod(item->getLeaf()));
+			reformProperties.setIndustry(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "navy")
 		{
-			reformProperties.setNavy(stod(item->getLeaf()));
+			reformProperties.setNavy(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "reactionary")
 		{
-			reformProperties.setReactionary(stod(item->getLeaf()));
+			reformProperties.setReactionary(stoi(item->getLeaf()));
 		}
 		if (item->getKey() == "liberal")
 		{
-			reformProperties.setLiberal(stod(item->getLeaf()));
+			reformProperties.setLiberal(stoi(item->getLeaf()));
 		}
 	}
 
@@ -157,7 +161,6 @@ ReformProperties ReformMapper::MatchReform(const string& sourceReform)
 	auto mapping = ReformMap.find(sourceReform);
 	if (mapping != ReformMap.end())
 	{
-		LOG(LogLevel::Debug) << "Located reform :" << sourceReform;
 		return mapping->second;
 	}
 	else

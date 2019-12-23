@@ -53,6 +53,7 @@ class world;
 namespace mappers
 {
 class IdeaEffectMapper;
+class TechGroupsMapper;
 }
 class V2World;
 class V2State;
@@ -107,9 +108,9 @@ class V2Country
 		);
 		bool								addFactory(V2Factory* factory);
 		void								addRailroadtoCapitalState();
-		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions);
+		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
 		void								oldCivConversionMethod();
-		void								newCivConversionMethod(double topTech, int topInstitutions);
+		void								newCivConversionMethod(double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
 		void								convertLandlessReforms(V2Country* capOwner);
 		void setupPops(
 			double popWeightRatio,

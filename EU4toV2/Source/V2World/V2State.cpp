@@ -177,11 +177,9 @@ void	V2State::colloectNavalBase()
 			prov = province;
 		}
 	}
-	LOG(LogLevel::Debug) << this->provinces.size() << " provinces in state " << this->id;
 	for (auto province : provinces)
 	{
 		province->setNavalBaseLevel(0);
-		LOG(LogLevel::Debug) << province->getName() << " naval base set to 0";	//test
 	}
 	prov->setNavalBaseLevel(level > 2 ? 2 : level);
 }

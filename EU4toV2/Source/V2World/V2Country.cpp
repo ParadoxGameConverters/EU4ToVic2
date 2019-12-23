@@ -40,6 +40,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/ReformMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
+#include "../Mappers/Ideas/TechGroupsMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2World.h"
 #include "V2State.h"
@@ -58,7 +59,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <math.h>
 #include <sstream>
 #include <queue>
-
+#include <cmath>
 
 
 const int MONEYFACTOR = 30;	// ducat to pound conversion rate
@@ -678,30 +679,45 @@ void V2Country::initFromEU4Country(
 
 	//  Politics
 
-	upperHouseReactionary		=  static_cast<int>(5  * (1 + (reactionaryInvestment - 5) * 10 / 100));
-	upperHouseLiberal				=  static_cast<int>(10 * (1 + (liberalInvestment - 5) * 10 / 100));
+	upperHouseReactionary		=  static_cast<int>(5  * (1 + (reactionaryInvestment - 5) * 20 / 100));
+	upperHouseLiberal				=  static_cast<int>(10 * (1 + (liberalInvestment - 5) * 20 / 100));
 	upperHouseConservative		= 100 - (upperHouseReactionary + upperHouseLiberal);
-	LOG(LogLevel::Debug) << tag << " has an Upper House of " << upperHouseReactionary << " reactionary, "
-		<< upperHouseConservative << " conservative, and "
-		<< upperHouseLiberal << " liberal";
+
+	if (srcCountry->isRevolutionary())
+	{
+		upperHouseReactionary = static_cast<int>(upperHouseReactionary / 3);
+		upperHouseLiberal = static_cast<int>(upperHouseLiberal * 3);
+		upperHouseConservative = 100 - (upperHouseReactionary + upperHouseLiberal);
+		LOG(LogLevel::Debug) << tag << " is revolutionary! ";
+	}
 
 	string idealogy;
 
 	double liberalEffect = liberalInvestment - 5;
 	double reactionaryEffect = reactionaryInvestment - 5;
 
+	if (srcCountry->isRevolutionary())
+	{
+		liberalEffect += 10;
+	}
+
 	if (liberalEffect >= 2 * reactionaryEffect)
 	{
 		idealogy = "liberal";
+		upperHouseLiberal = static_cast<int>(upperHouseLiberal * 1.1);
+		upperHouseConservative = 100 - (upperHouseReactionary + upperHouseLiberal);
 	}
 	else if (reactionaryEffect >= 2 * liberalEffect)
 	{
 		idealogy = "reactionary";
+		upperHouseReactionary = static_cast<int>(upperHouseReactionary * 1.1);
+		upperHouseConservative = 100 - (upperHouseReactionary + upperHouseLiberal);
 	}
 	else
 	{
 		idealogy = "conservative";
 	}
+
 	for (vector<V2Party*>::iterator i = parties.begin(); i != parties.end(); i++)
 	{
 		if ((*i)->isActiveOn(date("1836.1.1")) && ((*i)->ideology == idealogy))
@@ -710,7 +726,6 @@ void V2Country::initFromEU4Country(
 			break;
 		}
 	}
-	LOG(LogLevel::Debug) << tag << " ruling party is " << rulingParty;
 
 	// Reforms
 	reforms		=  new V2Reforms(this, srcCountry);
@@ -728,7 +743,7 @@ void V2Country::initFromEU4Country(
 	}
 
 	// Literacy
-	literacy = 0.2;
+	literacy = 0.4;
 
 	if (
 		(srcCountry->getReligion() == "Protestant") ||
@@ -737,7 +752,7 @@ void V2Country::initFromEU4Country(
 		(srcCountry->getReligion() == "Reformed")
 	)
 	{
-		literacy += 0.2;
+		literacy += 0.1;
 	}
 
 	if (srcCountry->hasModifier("the_school_establishment_act"))
@@ -796,16 +811,6 @@ void V2Country::initFromEU4Country(
 
 	literacy += collegeBonus + universityBonus;
 	
-	string techGroup = srcCountry->getTechGroup();
-	if (
-		(techGroup != "western") &&
-		(techGroup != "high_american") &&
-		(techGroup != "eastern") &&
-		(techGroup != "ottoman")
-	)
-	{
-		literacy *= 0.1;
-	}
 	if (literacy > theConfiguration.getMaxLiteracy())
 	{
 		literacy = theConfiguration.getMaxLiteracy();
@@ -815,8 +820,6 @@ void V2Country::initFromEU4Country(
 
 	literacy *= (1 + (literacyInvestment - 5) * 10 / 100);
 
-	LOG(LogLevel::Debug) << "Setting literacy for " << tag << " to " << literacy;
-
 	techSchool = techSchools->findBestTechSchool(
 		armyInvestment - 5,
 		commerceInvestment - 5,
@@ -824,8 +827,6 @@ void V2Country::initFromEU4Country(
 		industryInvestment - 5,
 		navyInvestment - 5
 	);
-
-	LOG(LogLevel::Debug) << tag << " has tech school " << techSchool << " for scores arm/com/cul/ind/nav " << armyInvestment << " " << commerceInvestment << " " << cultureInvestment << " " << industryInvestment << " " << navyInvestment;
 
 	// canals
 	for (const auto& prov : _srcCountry->getProvinces())
@@ -1434,7 +1435,7 @@ void V2Country::addRailroadtoCapitalState()
 }
 
 
-void V2Country::convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions)
+void V2Country::convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper)
 {
 	enum civConversion { older, newer };
 	switch (techGroupAlgorithm)
@@ -1444,7 +1445,7 @@ void V2Country::convertUncivReforms(int techGroupAlgorithm, double topTech, int 
 	break;
 
 	case(newer):
-		newCivConversionMethod(topTech, topInstitutions);
+		newCivConversionMethod(topTech, topInstitutions, techGroupsMapper);
 	break;
 	}
 }
@@ -1540,7 +1541,7 @@ void V2Country::oldCivConversionMethod() // civilisation level conversion method
 	}
 }
 
-void V2Country::newCivConversionMethod(double topTech, int topInsitutions) // civilisation level conversion method for games after 1.18
+void V2Country::newCivConversionMethod(double topTech, int topInsitutions, const mappers::TechGroupsMapper& techGroupsMapper) // civilisation level conversion method for games after 1.18
 {
 	{
 		if (srcCountry != nullptr) {
@@ -1552,11 +1553,20 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions) // ci
 			// at 31 techs behind completely unciv
 			// each institution behind is equivalent to 2 techs behind
 
-			int civLevel = static_cast<int>((totalTechs + 31 - topTech) * 4);
-			civLevel = civLevel + (srcCountry->numEmbracedInstitutions() - topInsitutions) * 8;
+			double civLevel = (totalTechs + 31 - topTech) * 4;
+			civLevel = civLevel + (double)(srcCountry->numEmbracedInstitutions() - topInsitutions) * 8.0;
 			if (civLevel > 100) civLevel = 100;
-
 			if (civLevel < 0) civLevel = 0;
+
+			string techGroup = srcCountry->getTechGroup();
+
+			if (theConfiguration.getEuroCentrism() == Configuration::EUROCENTRISM::EuroCentric)
+			{
+				literacy *= (1 + ((double)techGroupsMapper.getLiteracyFromTechGroup(techGroup) - 5.0) * 10.0 / 100.0);
+				civLevel = civLevel * ((double)techGroupsMapper.getWesternizationFromTechGroup(techGroup) / 10.0);
+			}
+
+			literacy = literacy * theConfiguration.getMaxLiteracy() * (pow(10, (civLevel / 100) * 0.9 + 0.1) / 10);
 
 			if (civLevel == 100)
 			{
@@ -1567,13 +1577,11 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions) // ci
 				civilized = false;
 			}
 
-
 			if (((theConfiguration.getVic2Gametype() == "AHD") || (theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")) && (civilized == false))
 			{
 				totalTechs = totalTechs - srcCountry->getDipTech();
 				double militaryDev = srcCountry->getMilTech() / totalTechs;
 				double socioEconDev = srcCountry->getAdmTech() / totalTechs;
-				LOG(LogLevel::Debug) << "Setting unciv reforms for " << tag << " who has " << totalTechs + srcCountry->getDipTech() << " technologies and " << srcCountry->numEmbracedInstitutions() << " institutions. westernization at " << civLevel << "%.";
 				uncivReforms = new V2UncivReforms(civLevel, militaryDev, socioEconDev, this);
 				government = "absolute_monarchy";
 			}
@@ -1583,7 +1591,6 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions) // ci
 
 void V2Country::convertLandlessReforms(V2Country* capOwner)
 {
-	LOG(LogLevel::Debug) << "Resetting civ level or unciv reforms for landless country: " << tag << " from the country which owns its capital, which is " << capOwner->getTag() << "." ;
 	if (capOwner->isCivilized())
 	{
 		civilized = true;
@@ -1651,8 +1658,6 @@ void V2Country::setupPops(
 
 void V2Country::setArmyTech(double normalizedScore)
 {
-	LOG(LogLevel::Debug) << tag << " has army tech of " << normalizedScore;
-
 	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
@@ -1693,8 +1698,6 @@ void V2Country::setArmyTech(double normalizedScore)
 
 void V2Country::setNavyTech(double normalizedScore)
 {
-	LOG(LogLevel::Debug) << tag << " has navy tech of " << normalizedScore;
-
 	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
@@ -1738,8 +1741,6 @@ void V2Country::setNavyTech(double normalizedScore)
 
 void V2Country::setCommerceTech(double normalizedScore)
 {
-	LOG(LogLevel::Debug) << tag << " has commerce tech of " << normalizedScore;
-
 	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
@@ -1793,8 +1794,6 @@ void V2Country::setCommerceTech(double normalizedScore)
 
 void V2Country::setIndustryTech(double normalizedScore)
 {
-	LOG(LogLevel::Debug) << tag << " has industry tech of " << normalizedScore;
-
 	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
@@ -1849,8 +1848,6 @@ void V2Country::setIndustryTech(double normalizedScore)
 
 void V2Country::setCultureTech(double normalizedScore)
 {
-	LOG(LogLevel::Debug) << tag << " has culture tech of " << normalizedScore;
-
 	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 

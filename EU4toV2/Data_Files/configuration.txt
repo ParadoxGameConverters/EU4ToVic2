@@ -73,4 +73,9 @@ configuration = {
 	#	4		- Do not assign either
 	coreHandling = "1"
 
+	# Make world Eurocentric?
+	# 	1	 	- Leave as is in EU4. Most countries will be civilized.
+	#	2		- Drop literacy and civilization progress for non-europeans.
+	euroCentrism = "1"
+
 }

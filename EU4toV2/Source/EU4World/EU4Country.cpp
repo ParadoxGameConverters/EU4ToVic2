@@ -502,19 +502,14 @@ void EU4::Country::dropMinorityCultures()
 	for (string acceptedCulture: acceptedCultures)
 	{
 		double culturalDevelopment = 0;
-		LOG(LogLevel::Debug) << tag << ": Considering minority status for " << acceptedCulture;
 		for (EU4::Province* p : provinces)
 		{
 			culturalDevelopment += p->getCulturePercent(acceptedCulture) * p->getTotalDevModifier();
 		}
 		if ((culturalDevelopment / development) > 0.15)
 		{
-			LOG(LogLevel::Debug) << tag << ": Culture " << acceptedCulture << " at " << culturalDevelopment << " / " << development << ", sufficient to adopt.";
+			LOG(LogLevel::Debug) << tag << ": Culture " << acceptedCulture << " at " << culturalDevelopment << " / " << development << " development, sufficient to adopt.";
 			updatedCultures.push_back(acceptedCulture);
-		}
-		else
-		{
-			LOG(LogLevel::Debug) << tag << ": Culture " << acceptedCulture << " at " << culturalDevelopment << " / " << development << ", dropping.";
 		}
 	}
 	acceptedCultures = updatedCultures;

@@ -52,7 +52,7 @@ class V2LeaderTraits;
 class V2World
 {
 	public:
-		V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper);
 		V2Province* getProvince(int provNum) const;
 		V2Country* getCountry(string tag) const;
 
@@ -108,7 +108,7 @@ class V2World
 		void convertDiplomacy(const EU4::world& sourceWorld);
 		void setupColonies();
 		void setupStates();
-		void convertUncivReforms(const EU4::world& sourceWorld);
+		void convertUncivReforms(const EU4::world& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper);
 		void convertTechs(const EU4::world& sourceWorld);
 		void allocateFactories(const EU4::world& sourceWorld);
 		void setupPops(const EU4::world& sourceWorld);

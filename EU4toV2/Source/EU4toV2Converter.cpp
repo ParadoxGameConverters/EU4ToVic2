@@ -26,6 +26,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "OSCompatibilityLayer.h"
 #include "EU4World/World.h"
 #include "Mappers/Ideas/IdeaEffectMapper.h"
+#include "Mappers/Ideas/TechGroupsMapper.h"
 #include "V2World/V2World.h"
 #include <fstream>
 
@@ -43,8 +44,13 @@ void ConvertEU4ToVic2(const string& EU4SaveFileName)
 	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectsFile);
 	ideaEffectsFile.close();
 
+	std::ifstream techGroupsFile("techGroups.txt");
+	mappers::TechGroupsMapper techGroupsMapper(techGroupsFile);
+	LOG(LogLevel::Info) << "Closing techgroups.";
+	techGroupsFile.close();
+
 	EU4::world sourceWorld(EU4SaveFileName, ideaEffectMapper);
-	V2World destWorld(sourceWorld, ideaEffectMapper);
+	V2World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper);
 
 	LOG(LogLevel::Info) << "* Conversion complete *";
 }

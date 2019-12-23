@@ -82,17 +82,24 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		libertyThreshold = libertyThresholdDouble.getDouble();
 	});
 	registerKeyword(std::regex("popShaping"), [this](const std::string& unused, std::istream& theStream){
-		commonItems::singleInt popShapingString(theStream);
-		popShaping = Configuration::POPSHAPES(popShapingString.getInt());
-	});
+		commonItems::singleInt popShapingInt(theStream);
+		popShaping = Configuration::POPSHAPES(popShapingInt.getInt());
+		LOG(LogLevel::Info) << "Pop Shaping: " << popShapingInt.getInt();
+		});
 	registerKeyword(std::regex("coreHandling"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt coreHandlingString(theStream);
-		coreHandling = Configuration::COREHANDLES(coreHandlingString.getInt());
-	});
+		commonItems::singleInt coreHandlingInt(theStream);
+		coreHandling = Configuration::COREHANDLES(coreHandlingInt.getInt());
+		LOG(LogLevel::Info) << "Core Handling: " << coreHandlingInt.getInt();
+		});
 	registerKeyword(std::regex("popShapingFactor"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleDouble popShapingFactorDouble(theStream);
 		popShapingFactor = popShapingFactorDouble.getDouble();
 		LOG(LogLevel::Info) << "Pop Shaping Factor: " << popShapingFactor;
+	});
+	registerKeyword(std::regex("euroCentrism"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt euroCentrismInt(theStream);
+		euroCentric = Configuration::EUROCENTRISM(euroCentrismInt.getInt());
+		LOG(LogLevel::Info) << "Eurocentrism: " << euroCentrismInt.getInt();
 	});
 	registerKeyword(std::regex("debug"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleString debugString(theStream);

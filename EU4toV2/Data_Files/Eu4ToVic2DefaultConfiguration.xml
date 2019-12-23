@@ -154,9 +154,27 @@
 			  </entryOption>
 			</entryOptions>
 		</preference>
+		<preference>
+			<name>euroCentrism</name>
+			<friendlyName>Make world Eurocentric?</friendlyName>
+			<description>Drop literacy and civilization levels for non-europeans?</description>
+			<entryOptions>
+			  <entryOption>
+				<name>1</name>
+				<friendlyName>Leave as is in EU4</friendlyName>
+				<description>Use defaults</description>
+				<isDefault>true</isDefault>
+			  </entryOption>
+			  <entryOption>
+				<name>2</name>
+				<friendlyName>Of course, old chap!</friendlyName>
+				<description>Time to rule the waves!</description>
+				<isDefault>false</isDefault>
+			  </entryOption>
+			</entryOptions>
+		</preference>
         </preferences>
       </category>
     </categories>
   </converterOptions>
-  >
 </configuration>
