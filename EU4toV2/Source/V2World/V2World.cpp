@@ -638,7 +638,7 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 	}
 	equalityScores.sort(scoresSorter);
 	int equalityLeft = 5;
-	for (list< pair<V2Country*, double> >::iterator equalItr = equalityScores.begin(); equalItr != equalityScores.end(); equalItr++)
+	for (list< pair<V2Country*, double> >::iterator equalItr = equalityScores.begin(); equalItr != equalityScores.end(); ++equalItr)
 	{
 		if (equalityLeft < 1)
 		{
@@ -650,6 +650,7 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 			valuesUnset.erase(unsetItr);
 			equalItr->first->setNationalValue("nv_equality");
 			equalityLeft--;
+			LOG(LogLevel::Debug) << "Assigning NV equality to country: " << equalItr->first->getTag() << ", equality left: " << equalityLeft;
 		}
 	}
 	libertyScores.sort(scoresSorter);
@@ -666,11 +667,13 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 			valuesUnset.erase(unsetItr);
 			libItr->first->setNationalValue("nv_liberty");
 			libertyLeft--;
+			LOG(LogLevel::Debug) << "Assigning NV liberty to country: " << libItr->first->getTag() << ", liberty left: " << libertyLeft;
 		}
 	}
 	for (set<V2Country*>::iterator unsetItr = valuesUnset.begin(); unsetItr != valuesUnset.end(); unsetItr++)
 	{
 		(*unsetItr)->setNationalValue("nv_order");
+		LOG(LogLevel::Debug) << "Assigning NV order to country: " << (*unsetItr)->getTag();
 	}
 }
 
