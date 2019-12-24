@@ -655,7 +655,7 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 	}
 	libertyScores.sort(scoresSorter);
 	int libertyLeft = 20;
-	for (list< pair<V2Country*, double> >::iterator libItr = libertyScores.begin(); libItr != libertyScores.end(); libItr++)
+	for (list< pair<V2Country*, double> >::iterator libItr = libertyScores.begin(); libItr != libertyScores.end(); ++libItr)
 	{
 		if (libertyLeft < 1)
 		{
