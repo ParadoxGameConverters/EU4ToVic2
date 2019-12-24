@@ -1478,7 +1478,7 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 
 		// modified manufactory weight follows diminishing returns curve y = x^(3/4)+log((x^2)/5+1)
 		int manuCount = sourceCountry->getManufactoryCount();
-		double manuWeight = pow(manuCount, 0.75) + log(((double)manuCount * (double)manuCount) / 5.0 + 1.0);
+		double manuWeight = pow(manuCount, 0.75) + log1p(((double)manuCount * (double)manuCount) / 5.0);
 		double industryWeight = (sourceCountry->getAdmTech() - admMean) + manuWeight;
 		// having one manufactory and average tech is not enough; you must have more than one, or above-average tech
 		if (industryWeight > 1.0)

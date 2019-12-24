@@ -40,7 +40,7 @@ THE SOFTWARE. */
 class reformsSection : commonItems::parser 
 {
 public:
-	reformsSection(std::istream& theStream);
+	explicit reformsSection(std::istream& theStream);
 	std::set<std::string> getReforms() const { return reforms; }
 
 private:
@@ -62,7 +62,7 @@ reformsSection::reformsSection(std::istream& theStream)
 class reformStackSection : commonItems::parser
 {
 public:
-	reformStackSection(std::istream& theStream);
+	explicit reformStackSection(std::istream& theStream);
 	std::set<std::string> getReforms() const { return reforms; }
 
 	static std::set<std::string> readStack(std::istream& theStream)
