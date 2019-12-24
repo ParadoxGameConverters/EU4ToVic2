@@ -201,12 +201,12 @@ link = { reform = tribe_mechanic }
 link = { reform = native_basic_reform }
 
 # Theocracy 1
-link = { reform = leading_clergy_reform }
+link = { reform = leading_clergy_reform literacy = 6}
 link = { reform = monastic_order_reform }
 link = { reform = papacy_reform }
 
 # Theocracy 2
-link = { reform = internal_mission_reform }
+link = { reform = internal_mission_reform  literacy = 7}
 link = { reform = external_mission_reform }
 
 # Theocracy 3
@@ -216,7 +216,7 @@ link = { reform = expel_heathens_reform }
 
 # Theocracy 4
 link = { reform = subservient_administrators_reform }
-link = { reform = religious_administrators_reform }
+link = { reform = religious_administrators_reform literacy = 9}
 link = { reform = permanent_marathas_council_reform }
 link = { reform = governmental_purbias_register_reform }
 

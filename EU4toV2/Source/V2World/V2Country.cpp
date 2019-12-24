@@ -746,10 +746,10 @@ void V2Country::initFromEU4Country(
 	literacy = 0.4;
 
 	if (
-		(srcCountry->getReligion() == "Protestant") ||
-		(srcCountry->getReligion() == "Anglican") ||
-		(srcCountry->getReligion() == "Confucianism") ||
-		(srcCountry->getReligion() == "Reformed")
+		((srcCountry->getReligion().compare("protestant") == 0) ||
+		(srcCountry->getReligion().compare("anglican") == 0) ||
+		(srcCountry->getReligion().compare("confucian") == 0) ||
+		(srcCountry->getReligion().compare("reformed") == 0))
 	)
 	{
 		literacy += 0.1;
@@ -810,7 +810,7 @@ void V2Country::initFromEU4Country(
 	double universityBonus = min(max(universityBonus1, universityBonus2), 0.1);
 
 	literacy += collegeBonus + universityBonus;
-	
+
 	if (literacy > theConfiguration.getMaxLiteracy())
 	{
 		literacy = theConfiguration.getMaxLiteracy();
@@ -1554,7 +1554,7 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions, const
 			// each institution behind is equivalent to 2 techs behind
 
 			double civLevel = (totalTechs + 31 - topTech) * 4;
-			civLevel = civLevel + (double)(srcCountry->numEmbracedInstitutions() - topInsitutions) * 8.0;
+			civLevel = civLevel + ((double)srcCountry->numEmbracedInstitutions() - (double)topInsitutions) * 8.0;
 			if (civLevel > 100) civLevel = 100;
 			if (civLevel < 0) civLevel = 0;
 
@@ -1582,7 +1582,7 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions, const
 				totalTechs = totalTechs - srcCountry->getDipTech();
 				double militaryDev = srcCountry->getMilTech() / totalTechs;
 				double socioEconDev = srcCountry->getAdmTech() / totalTechs;
-				uncivReforms = new V2UncivReforms(civLevel, militaryDev, socioEconDev, this);
+				uncivReforms = new V2UncivReforms((int)(civLevel + 0.5), militaryDev, socioEconDev, this);
 				government = "absolute_monarchy";
 			}
 		}

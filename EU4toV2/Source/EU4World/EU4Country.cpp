@@ -544,39 +544,60 @@ void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEff
 	int ignoredMechanics = 0;
 	if (nationalIdeas.size() > 1) // There is always the default "TAG_ideas" inside, which we ignore for now.
 	{
+		// We need to set reforms at -5 because there is a national idea inside that will give us 5 and we cannot filter it as it's unordered.
+		armyInvestment = -5.0;
+		commerceInvestment = -5.0;
+		cultureInvestment = -5.0;
+		industryInvestment = -5.0;
+		navyInvestment = -5.0;
+
+		slaveryInvestment = -5.0;
+		upper_house_compositionInvestment = -5.0;
+		vote_franchiseInvestment = -5.0;
+		voting_systemInvestment = -5.0;
+		public_meetingsInvestment = -5.0;
+		press_rightsInvestment = -5.0;
+		trade_unionsInvestment = -5.0;
+		political_partiesInvestment = -5.0;
+
+		libertyInvestment = -5.0;
+		equalityInvestment = -5.0;
+		orderInvestment = -5.0;
+		literacyInvestment = -5.0;
+
+		reactionaryInvestment = -5.0;
+		liberalInvestment = -5.0;
+
 		for (auto idea : nationalIdeas)
 		{
-			if (idea.first.compare(tag + "_ideas") != 0)
-			{
-				armyInvestment += ideaEffectMapper.getArmyFromIdea(idea.first, idea.second);
-				commerceInvestment += ideaEffectMapper.getCommerceFromIdea(idea.first, idea.second);
-				cultureInvestment += ideaEffectMapper.getCultureFromIdea(idea.first, idea.second);
-				industryInvestment += ideaEffectMapper.getIndustryFromIdea(idea.first, idea.second);
-				navyInvestment += ideaEffectMapper.getNavyFromIdea(idea.first, idea.second);
+			armyInvestment += ideaEffectMapper.getArmyFromIdea(idea.first, idea.second);
+			commerceInvestment += ideaEffectMapper.getCommerceFromIdea(idea.first, idea.second);
+			cultureInvestment += ideaEffectMapper.getCultureFromIdea(idea.first, idea.second);
+			industryInvestment += ideaEffectMapper.getIndustryFromIdea(idea.first, idea.second);
+			navyInvestment += ideaEffectMapper.getNavyFromIdea(idea.first, idea.second);
 
-				slaveryInvestment += ideaEffectMapper.getSlaveryFromIdea(idea.first, idea.second);
-				upper_house_compositionInvestment += ideaEffectMapper.getUpper_house_compositionFromIdea(idea.first, idea.second);
-				vote_franchiseInvestment += ideaEffectMapper.getVote_franchiseFromIdea(idea.first, idea.second);
-				voting_systemInvestment += ideaEffectMapper.getVoting_systemFromIdea(idea.first, idea.second);
-				public_meetingsInvestment += ideaEffectMapper.getPublic_meetingsFromIdea(idea.first, idea.second);
-				press_rightsInvestment += ideaEffectMapper.getPress_rightsFromIdea(idea.first, idea.second);
-				trade_unionsInvestment += ideaEffectMapper.getTrade_unionsFromIdea(idea.first, idea.second);
-				political_partiesInvestment += ideaEffectMapper.getPolitical_partiesFromIdea(idea.first, idea.second);
+			slaveryInvestment += ideaEffectMapper.getSlaveryFromIdea(idea.first, idea.second);
+			upper_house_compositionInvestment += ideaEffectMapper.getUpper_house_compositionFromIdea(idea.first, idea.second);
+			vote_franchiseInvestment += ideaEffectMapper.getVote_franchiseFromIdea(idea.first, idea.second);
+			voting_systemInvestment += ideaEffectMapper.getVoting_systemFromIdea(idea.first, idea.second);
+			public_meetingsInvestment += ideaEffectMapper.getPublic_meetingsFromIdea(idea.first, idea.second);
+			press_rightsInvestment += ideaEffectMapper.getPress_rightsFromIdea(idea.first, idea.second);
+			trade_unionsInvestment += ideaEffectMapper.getTrade_unionsFromIdea(idea.first, idea.second);
+			political_partiesInvestment += ideaEffectMapper.getPolitical_partiesFromIdea(idea.first, idea.second);
 
-				libertyInvestment += ideaEffectMapper.getLibertyFromIdea(idea.first, idea.second);
-				equalityInvestment += ideaEffectMapper.getEqualityFromIdea(idea.first, idea.second);
-				orderInvestment += ideaEffectMapper.getOrderFromIdea(idea.first, idea.second);
-				literacyInvestment += ideaEffectMapper.getLiteracyFromIdea(idea.first, idea.second);
-
-				reactionaryInvestment += ideaEffectMapper.getReactionaryFromIdea(idea.first, idea.second);
-				liberalInvestment += ideaEffectMapper.getLiberalFromIdea(idea.first, idea.second);
-			}
+			libertyInvestment += ideaEffectMapper.getLibertyFromIdea(idea.first, idea.second);
+			equalityInvestment += ideaEffectMapper.getEqualityFromIdea(idea.first, idea.second);
+			orderInvestment += ideaEffectMapper.getOrderFromIdea(idea.first, idea.second);
+			literacyInvestment += ideaEffectMapper.getLiteracyFromIdea(idea.first, idea.second);
+ 
+			reactionaryInvestment += ideaEffectMapper.getReactionaryFromIdea(idea.first, idea.second);
+			liberalInvestment += ideaEffectMapper.getLiberalFromIdea(idea.first, idea.second);
 		}
 	}
 
 	for (auto reformStr : governmentReforms)
 	{
-		if (reformStr.find("_mechanic") != string::npos) //ignore the basic legacy mechanics, focus on actual reforms
+		if (reformStr.find("_mechanic") == string::npos) //ignore the basic legacy mechanics, focus on actual reforms
 		{
 			ReformProperties reform = ReformMapper::matchReform(reformStr);
 			armyInvestment += reform.getArmy();
