@@ -40,6 +40,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <list>
 #include <memory>
 #include <set>
+#include <time.h>
 
 
 
@@ -55,6 +56,7 @@ class V2World
 		V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper);
 		V2Province* getProvince(int provNum) const;
 		V2Country* getCountry(string tag) const;
+		double getDuration() const { return difftime(std::time(0), begin); }
 
 	private:
 		void importProvinces();
@@ -136,6 +138,8 @@ class V2World
 		std::unique_ptr<mappers::CultureMapper> slaveCultureMapper;
 		std::unique_ptr<mappers::ReligionMapper> religionMapper;
 		std::unique_ptr<mappers::ProvinceMapper> provinceMapper;
+
+		std::time_t begin = std::time(0);
 };
 
 

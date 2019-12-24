@@ -50,8 +50,9 @@ void ConvertEU4ToVic2(const string& EU4SaveFileName)
 	techGroupsFile.close();
 
 	EU4::world sourceWorld(EU4SaveFileName, ideaEffectMapper);
-	V2World(sourceWorld, ideaEffectMapper, techGroupsMapper);
+	V2World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper);
 
+	LOG(LogLevel::Info) << "* V2 construction: " << destWorld.getDuration() << " seconds";
 	LOG(LogLevel::Info) << "* Conversion complete *";
 }
 
