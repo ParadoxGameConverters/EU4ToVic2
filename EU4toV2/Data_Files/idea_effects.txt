@@ -58,7 +58,7 @@ absolute_monarchy = {
 	industry = 5
 	navy = 6
 	# ------
-	reactionary = 9
+	reactionary = 4
 	liberal = 2
 }
 
@@ -80,7 +80,7 @@ prussian_constitutionalism = {
 	culture = 4
 	navy = 6
 	# ------
-	reactionary = 7
+	reactionary = 6
 	liberal = 4
 }
 
@@ -104,8 +104,8 @@ hms_government = {
 	industry = 6
 	navy = 4
 	# ------
-	reactionary = 7
-	liberal = 4
+	reactionary = 6
+	liberal = 6
 }
 
 theocracy = {
@@ -126,7 +126,7 @@ theocracy = {
 	culture = 6
 	navy = 4
 	# ------
-	reactionary = 9
+	reactionary = 4
 	liberal = 1
 }
 
@@ -174,8 +174,8 @@ presidential_dictatorship = {
 	culture = 4
 	navy = 4
 	# ------
-	reactionary = 6
-	liberal = 4
+	reactionary = 7
+	liberal = 6
 }
 
 proletarian_dictatorship = {
@@ -199,7 +199,7 @@ proletarian_dictatorship = {
 	navy = 4
 	# ------
 	reactionary = 3
-	liberal = 7
+	liberal = 10
 }
 
 bourgeois_dictatorship = {
@@ -222,8 +222,8 @@ bourgeois_dictatorship = {
 	culture = 6
 	navy = 4
 	# ------
-	reactionary = 4
-	liberal = 7
+	reactionary = 7
+	liberal = 8
 }
 
 
