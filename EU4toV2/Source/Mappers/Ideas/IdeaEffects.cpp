@@ -28,76 +28,92 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 mappers::IdeaEffects::IdeaEffects(std::istream& theStream)
 {
-	registerKeyword(std::regex("army_investment"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt armyInvestmentInt(theStream);
-		armyInvestmentValue = armyInvestmentInt.getInt();
-	});
-	registerKeyword(std::regex("navy_investment"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt navyInvestmentInt(theStream);
-		navyInvestmentValue = navyInvestmentInt.getInt();
-	});
-	registerKeyword(std::regex("commerce_investment"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt commerceInvestmentInt(theStream);
-		commerceInvestmentValue = commerceInvestmentInt.getInt();
-	});
-	registerKeyword(std::regex("culture_investment"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt cultureInvestmentInt(theStream);
-		cultureInvestmentValue = cultureInvestmentInt.getInt();
-	});
-	registerKeyword(std::regex("industry_investment"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt industryInvestmentInt(theStream);
-		industryInvestmentValue = industryInvestmentInt.getInt();
+	registerKeyword(std::regex("enforce"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleString enforceStr(theStream);
+		enforce = enforceStr.getString();
 	});
 
-	registerKeyword(std::regex("army_tech_score"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble armyTechScoreDouble(theStream);
-		armyTechScoreValue = armyTechScoreDouble.getDouble();
+	registerKeyword(std::regex("army"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt armyInt(theStream);
+		army = armyInt.getInt();
 	});
-	registerKeyword(std::regex("navy_tech_score"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble navyTechScoreDouble(theStream);
-		navyTechScoreValue = navyTechScoreDouble.getDouble();
+	registerKeyword(std::regex("navy"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt navyInt(theStream);
+		navy = navyInt.getInt();
 	});
-	registerKeyword(std::regex("commerce_tech_score"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble commerceTechScoreDouble(theStream);
-		commerceTechScoreValue = commerceTechScoreDouble.getDouble();
+	registerKeyword(std::regex("commerce"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt commerceInt(theStream);
+		commerce = commerceInt.getInt();
 	});
-	registerKeyword(std::regex("culture_tech_score"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble cultureTechScoreDouble(theStream);
-		cultureTechScoreValue = cultureTechScoreDouble.getDouble();
+	registerKeyword(std::regex("culture"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt cultureInt(theStream);
+		culture = cultureInt.getInt();
 	});
-	registerKeyword(std::regex("industry_tech_score"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble industryTechScoreDouble(theStream);
-		industryTechScoreValue = industryTechScoreDouble.getDouble();
-	});
-
-	registerKeyword(std::regex("upper_house_liberal"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble upperHouseLiberalDouble(theStream);
-		upperHouseLiberalValue = upperHouseLiberalDouble.getDouble();
-	});
-	registerKeyword(std::regex("upper_house_reactionary"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble upperHouseReactionaryDouble(theStream);
-		upperHouseReactionaryValue = upperHouseReactionaryDouble.getDouble();
+	registerKeyword(std::regex("industry"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt industryInt(theStream);
+		industry = industryInt.getInt();
 	});
 
-	registerKeyword(std::regex("NV_order"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt orderInfluenceInt(theStream);
-		orderInfluenceValue = orderInfluenceInt.getInt();
+	registerKeyword(std::regex("slavery"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt slaveryInt(theStream);
+		slavery = slaveryInt.getInt();
 	});
-	registerKeyword(std::regex("NV_liberty"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt libertyInfluenceInt(theStream);
-		libertyInfluenceValue = libertyInfluenceInt.getInt();
+	registerKeyword(std::regex("upper_house_composition"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt upper_house_compositionInt(theStream);
+		upper_house_composition = upper_house_compositionInt.getInt();
 	});
-	registerKeyword(std::regex("NV_equality"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt equalityInfluenceInt(theStream);
-		equalityInfluenceValue = equalityInfluenceInt.getInt();
+	registerKeyword(std::regex("vote_franchise"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt vote_franchiseInt(theStream);
+		vote_franchise = vote_franchiseInt.getInt();
 	});
+	registerKeyword(std::regex("voting_system"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt voting_systemInt(theStream);
+		voting_system = voting_systemInt.getInt();
+	});
+	registerKeyword(std::regex("public_meetings"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt public_meetingsInt(theStream);
+		public_meetings = public_meetingsInt.getInt();
+	});
+	registerKeyword(std::regex("press_rights"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt press_rightsInt(theStream);
+		press_rights = press_rightsInt.getInt();
+	});
+	registerKeyword(std::regex("trade_unions"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt trade_unionsInt(theStream);
+		trade_unions = trade_unionsInt.getInt();
+	});
+	registerKeyword(std::regex("trade_unions"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt trade_unionsInt(theStream);
+		trade_unions = trade_unionsInt.getInt();
+		});
+	registerKeyword(std::regex("political_parties"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt political_partiesInt(theStream);
+		political_parties = political_partiesInt.getInt();
+		});
+	registerKeyword(std::regex("reactionary"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt reactionaryInt(theStream);
+		reactionary = reactionaryInt.getInt();
+		});
+	registerKeyword(std::regex("liberal"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt liberalInt(theStream);
+		liberal = liberalInt.getInt();
+		});
 
+	registerKeyword(std::regex("order"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt orderInt(theStream);
+		order = orderInt.getInt();
+	});
+	registerKeyword(std::regex("liberty"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt libertyInt(theStream);
+		liberty = libertyInt.getInt();
+	});
+	registerKeyword(std::regex("equality"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleInt equalityInt(theStream);
+		equality = equalityInt.getInt();
+	});
 	registerKeyword(std::regex("literacy"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::intList literacyLevelInts(theStream);
-		for (auto level: literacyLevelInts.getInts())
-		{
-			literacyLevels.insert(level);
-		}
+		commonItems::singleInt literacyInt(theStream);
+		literacy = literacyInt.getInt();
 	});
 
 	parseStream(theStream);

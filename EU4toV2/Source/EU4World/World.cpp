@@ -800,11 +800,7 @@ void EU4::world::removeEmptyNations()
 	{
 		auto countryProvinces = country.second->getProvinces();
 		auto countryCores = country.second->getCores();
-		if ((countryProvinces.size() == 0) && (countryCores.size() == 0))
-		{
-			LOG(LogLevel::Debug) << "Removing empty nation " << country.first;
-		}
-		else
+		if (!countryProvinces.empty() || !countryCores.empty())
 		{
 			survivingCountries.insert(country);
 		}
@@ -831,7 +827,6 @@ void EU4::world::removeDeadLandlessNations()
 		if (!country.second->cultureSurvivesInCores(theCountries))
 		{
 			theCountries.erase(country.first);
-			LOG(LogLevel::Debug) << "Removing dead landless nation " << country.first;
 		}
 	}
 }

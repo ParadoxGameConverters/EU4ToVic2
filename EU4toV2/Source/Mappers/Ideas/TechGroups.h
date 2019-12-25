@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,42 +21,35 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef V2REFORMS_H_
-#define V2REFORMS_H_
+#ifndef TECH_GROUPS_H
+#define TECH_GROUPS_H
 
 
 
-#include <memory>
-#include <stdio.h>
-#include <string>
+#include "newParser.h"
+#include <set>
 
 
 
-namespace EU4
+namespace mappers
 {
-	class Country;
-}
 
-class V2Country;
-
-
-
-class V2Reforms {
+class TechGroups: commonItems::parser
+{
 	public:
-		V2Reforms(const V2Country*, const std::shared_ptr<EU4::Country>);
-		void output(FILE*) const;
-	private:
+		TechGroups(std::istream& theStream);
 
-		bool abolishSlavery = false;
-		double slavery = 5.0;
-		double vote_franchise = 5.0;
-		double upper_house_composition = 5.0;
-		double voting_system = 5.0;
-		double public_meetings = 5.0;
-		double press_rights = 5.0;
-		double trade_unions = 5.0;
-		double political_parties = 5.0;
+		int getWesternization() const { return westernization; }
+		int getLiteracyBoost() const { return literacyBoost; }
+
+	private:
+		// Values range 0-10. 5 is default.
+		int westernization = 5;
+		int literacyBoost = 5;
 };
 
+}
 
-#endif // V2REFORMS_H_
+
+
+#endif // TECH_GROUPS_H

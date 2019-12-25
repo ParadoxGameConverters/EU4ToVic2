@@ -423,7 +423,7 @@ TEST(EU4ToVic2_ConfigurationTests, DebugDefaultsToFalse)
 }
 
 
-TEST(EU4ToVic2_ConfigurationTests,DebugCanBeSet)
+TEST(EU4ToVic2_ConfigurationTests, DebugCanBeSet)
 {
 	Configuration testConfiguration;
 	std::stringstream input("debug = yes");
@@ -431,3 +431,5 @@ TEST(EU4ToVic2_ConfigurationTests,DebugCanBeSet)
 
 	ASSERT_EQ(testConfiguration.getDebug(), true);
 }
+
+

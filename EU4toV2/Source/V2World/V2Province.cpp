@@ -855,9 +855,6 @@ void V2Province::createPops(
 	switch (theConfiguration.getPopShaping()) {
 	case Configuration::POPSHAPES::Vanilla:
 		newPopulation = oldPopulation;
-
-		LOG(LogLevel::Debug) << "Not shaping province " << name << " from EU4's " << oldProvince->getName()
-			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
 		break;
 
 	case Configuration::POPSHAPES::PopShaping:
@@ -869,13 +866,6 @@ void V2Province::createPops(
 		spentProvinceModifier += (devpushMod + weightMod) * shapeMod;
 
 		newPopulation = static_cast<long>(oldPopulation * provinceDevModifier);
-
-		LOG(LogLevel::Debug) << "Shaping province " << name << " from EU4's " << oldProvince->getName() << ", life rating / lrmod: " << this->lifeRating << "/" << lifeRatingMod
-			<< ", devpush / devpushmod: " << oldProvince->getDevDelta() << "/" << devpushMod
-			<< ", taxprodmanbuild combined weight: " << weightMod
-			<< " shape factor: " << shapeMod
-			<< ", final modifier: " << provinceDevModifier
-			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
 		break;
 
 	case Configuration::POPSHAPES::Extreme:
@@ -898,11 +888,6 @@ void V2Province::createPops(
 		}
 
 		newPopulation = oldPopulation + static_cast<long>((newPopulation - oldPopulation) * (theConfiguration.getPopShapingFactor() / 100.0));
-
-		LOG(LogLevel::Debug) << "Shaping province " << name << " from EU4's " << oldProvince->getName() << ", life rating " << this->lifeRating
-			<< ", province weight: " << oldProvince->getTotalWeight()
-			<< " shape factor: " << (theConfiguration.getPopShapingFactor() / 100.0)
-			<< ", old propulation: " << oldPopulation << ", new population: " << newPopulation;
 		break;
 	}
 

@@ -20,6 +20,7 @@ THE SOFTWARE. */
 
 
 #include "EU4Country.h"
+#include "Country/EU4GovernmentSection.h"
 #include "../Configuration.h"
 #include "Log.h"
 #include "NewParserToOldParserConverters.h"
@@ -34,40 +35,6 @@ THE SOFTWARE. */
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../V2World/V2Localisation.h"
 #include <algorithm>
-
-
-class governmentSection: commonItems::parser
-{
-	public:
-		governmentSection(std::istream& theStream);
-		std::string getGovernment() const { return government; }
-		static std::string readGovernment(std::istream& theStream)
-		{
-			commonItems::singleString governmentString(theStream);
-			std::string governmentStr = governmentString.getString();
-			if (governmentStr.substr(0, 1) == "\"")
-			{
-				governmentStr = governmentStr.substr(1, governmentStr.size() - 2);
-			}
-			return governmentStr;
-		}
-
-	private:
-		std::string government;
-};
-
-
-governmentSection::governmentSection(std::istream& theStream)
-{
-	registerKeyword(std::regex("government"), [this](const std::string& unused, std::istream& theStream)
-	{
-		government = governmentSection::readGovernment(theStream);
-
-	});
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
-
-	parseStream(theStream);
-}
 
 
 EU4::Country::Country(
@@ -94,17 +61,11 @@ EU4::Country::Country(
 	admTech(0.0),
 	dipTech(0.0),
 	milTech(0.0),
-	armyInvestment(32.0),
-	navyInvestment(32.0),
-	commerceInvestment(32.0),
-	industryInvestment(32.0),
-	cultureInvestment(32.0),
 	flags(),
 	modifiers(),
 	possibleDaimyo(false),
 	possibleShogun(false),
 	militaryLeaders(),
-	government(),
 	relations(),
 	armies(),
 	nationalIdeas(),
@@ -319,14 +280,15 @@ EU4::Country::Country(
 		}
 	);
 	registerKeyword(std::regex("government"), [this, theVersion](const std::string& unused, std::istream& theStream){
-		if (theVersion < EU4::Version("1.7.0.0"))
+		if (theVersion < EU4::Version("1.23.0.0"))
 		{
-			government = governmentSection::readGovernment(theStream);
+			government = EU4::governmentSection::readGovernment(theStream);
 		}
 		else
 		{
-			governmentSection theSection(theStream);
+			EU4::governmentSection theSection(theStream);
 			government = theSection.getGovernment();
+			governmentReforms = theSection.getGovernmentReforms();
 		}
 	});
 	registerKeyword(std::regex("active_relations"), [this](const std::string& unused, std::istream& theStream)
@@ -446,19 +408,14 @@ void EU4::Country::dropMinorityCultures()
 	for (string acceptedCulture: acceptedCultures)
 	{
 		double culturalDevelopment = 0;
-		LOG(LogLevel::Debug) << tag << ": Considering minority status for " << acceptedCulture;
 		for (EU4::Province* p : provinces)
 		{
 			culturalDevelopment += p->getCulturePercent(acceptedCulture) * p->getTotalDevModifier();
 		}
 		if ((culturalDevelopment / development) > 0.15)
 		{
-			LOG(LogLevel::Debug) << tag << ": Culture " << acceptedCulture << " at " << culturalDevelopment << " / " << development << ", sufficient to adopt.";
+			LOG(LogLevel::Debug) << tag << ": Culture " << acceptedCulture << " at " << culturalDevelopment << " / " << development << " development, sufficient to adopt.";
 			updatedCultures.push_back(acceptedCulture);
-		}
-		else
-		{
-			LOG(LogLevel::Debug) << tag << ": Culture " << acceptedCulture << " at " << culturalDevelopment << " / " << development << ", dropping.";
 		}
 	}
 	acceptedCultures = updatedCultures;
@@ -490,14 +447,122 @@ void EU4::Country::determineJapaneseRelations()
 
 void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
-	for (auto idea: nationalIdeas)
+	int ignoredMechanics = 0;
+	if (nationalIdeas.size() > 1) // There is always the default "TAG_ideas" inside, which we ignore for now.
 	{
-		armyInvestment += ideaEffectMapper.getArmyInvestmentFromIdea(idea.first, idea.second);
-		commerceInvestment += ideaEffectMapper.getCommerceInvestmentFromIdea(idea.first, idea.second);
-		cultureInvestment += ideaEffectMapper.getCultureInvestmentFromIdea(idea.first, idea.second);
-		industryInvestment += ideaEffectMapper.getIndustryInvestmentFromIdea(idea.first, idea.second);
-		navyInvestment += ideaEffectMapper.getNavyInvestmentFromIdea(idea.first, idea.second);
+		// We need to set reforms at -5 because there is a national idea inside that will give us 5 and we cannot filter it as it's unordered.
+		armyInvestment = -5.0;
+		commerceInvestment = -5.0;
+		cultureInvestment = -5.0;
+		industryInvestment = -5.0;
+		navyInvestment = -5.0;
+
+		slaveryInvestment = -5.0;
+		upper_house_compositionInvestment = -5.0;
+		vote_franchiseInvestment = -5.0;
+		voting_systemInvestment = -5.0;
+		public_meetingsInvestment = -5.0;
+		press_rightsInvestment = -5.0;
+		trade_unionsInvestment = -5.0;
+		political_partiesInvestment = -5.0;
+
+		libertyInvestment = -5.0;
+		equalityInvestment = -5.0;
+		orderInvestment = -5.0;
+		literacyInvestment = -5.0;
+
+		reactionaryInvestment = -5.0;
+		liberalInvestment = -5.0;
+
+		for (auto idea : nationalIdeas)
+		{
+			armyInvestment += ideaEffectMapper.getArmyFromIdea(idea.first, idea.second);
+			commerceInvestment += ideaEffectMapper.getCommerceFromIdea(idea.first, idea.second);
+			cultureInvestment += ideaEffectMapper.getCultureFromIdea(idea.first, idea.second);
+			industryInvestment += ideaEffectMapper.getIndustryFromIdea(idea.first, idea.second);
+			navyInvestment += ideaEffectMapper.getNavyFromIdea(idea.first, idea.second);
+
+			slaveryInvestment += ideaEffectMapper.getSlaveryFromIdea(idea.first, idea.second);
+			upper_house_compositionInvestment += ideaEffectMapper.getUpper_house_compositionFromIdea(idea.first, idea.second);
+			vote_franchiseInvestment += ideaEffectMapper.getVote_franchiseFromIdea(idea.first, idea.second);
+			voting_systemInvestment += ideaEffectMapper.getVoting_systemFromIdea(idea.first, idea.second);
+			public_meetingsInvestment += ideaEffectMapper.getPublic_meetingsFromIdea(idea.first, idea.second);
+			press_rightsInvestment += ideaEffectMapper.getPress_rightsFromIdea(idea.first, idea.second);
+			trade_unionsInvestment += ideaEffectMapper.getTrade_unionsFromIdea(idea.first, idea.second);
+			political_partiesInvestment += ideaEffectMapper.getPolitical_partiesFromIdea(idea.first, idea.second);
+
+			libertyInvestment += ideaEffectMapper.getLibertyFromIdea(idea.first, idea.second);
+			equalityInvestment += ideaEffectMapper.getEqualityFromIdea(idea.first, idea.second);
+			orderInvestment += ideaEffectMapper.getOrderFromIdea(idea.first, idea.second);
+			literacyInvestment += ideaEffectMapper.getLiteracyFromIdea(idea.first, idea.second);
+ 
+			reactionaryInvestment += ideaEffectMapper.getReactionaryFromIdea(idea.first, idea.second);
+			liberalInvestment += ideaEffectMapper.getLiberalFromIdea(idea.first, idea.second);
+		}
 	}
+
+	for (auto reformStr : governmentReforms)
+	{
+		if (reformStr.find("_mechanic") == string::npos) //ignore the basic legacy mechanics, focus on actual reforms
+		{
+			armyInvestment += ideaEffectMapper.getArmyFromIdea(reformStr, 7);
+			commerceInvestment += ideaEffectMapper.getCommerceFromIdea(reformStr, 7);
+			cultureInvestment += ideaEffectMapper.getCultureFromIdea(reformStr, 7);
+			industryInvestment += ideaEffectMapper.getIndustryFromIdea(reformStr, 7);
+			navyInvestment += ideaEffectMapper.getNavyFromIdea(reformStr, 7);
+
+			slaveryInvestment += ideaEffectMapper.getSlaveryFromIdea(reformStr, 7);
+			upper_house_compositionInvestment += ideaEffectMapper.getUpper_house_compositionFromIdea(reformStr, 7);
+			vote_franchiseInvestment += ideaEffectMapper.getVote_franchiseFromIdea(reformStr, 7);
+			voting_systemInvestment += ideaEffectMapper.getVoting_systemFromIdea(reformStr, 7);
+			public_meetingsInvestment += ideaEffectMapper.getPublic_meetingsFromIdea(reformStr, 7);
+			press_rightsInvestment += ideaEffectMapper.getPress_rightsFromIdea(reformStr, 7);
+			trade_unionsInvestment += ideaEffectMapper.getTrade_unionsFromIdea(reformStr, 7);
+			political_partiesInvestment += ideaEffectMapper.getPolitical_partiesFromIdea(reformStr, 7);
+
+			libertyInvestment += ideaEffectMapper.getLibertyFromIdea(reformStr, 7);
+			equalityInvestment += ideaEffectMapper.getEqualityFromIdea(reformStr, 7);
+			orderInvestment += ideaEffectMapper.getOrderFromIdea(reformStr, 7);
+			literacyInvestment += ideaEffectMapper.getLiteracyFromIdea(reformStr, 7);
+
+			reactionaryInvestment += ideaEffectMapper.getReactionaryFromIdea(reformStr, 7);
+			liberalInvestment += ideaEffectMapper.getLiberalFromIdea(reformStr, 7);
+		}
+		else
+		{
+			ignoredMechanics += 1;
+		}
+	}
+
+	// We actually need the averages, to play against government and reforms.
+
+	int nideasSize = static_cast<int>(nationalIdeas.size());
+	int govRefsSize = static_cast<int>(governmentReforms.size());
+	int totalDivider = nideasSize - 1 + govRefsSize - ignoredMechanics;
+
+	armyInvestment /= totalDivider;
+	commerceInvestment /= totalDivider;
+	cultureInvestment /= totalDivider;
+	industryInvestment /= totalDivider;
+	navyInvestment /= totalDivider;
+
+	slaveryInvestment /= totalDivider;
+	upper_house_compositionInvestment /= totalDivider;
+	vote_franchiseInvestment /= totalDivider;
+	voting_systemInvestment /= totalDivider;
+	public_meetingsInvestment /= totalDivider;
+	press_rightsInvestment /= totalDivider;
+	trade_unionsInvestment /= totalDivider;
+	political_partiesInvestment /= totalDivider;
+
+	libertyInvestment /= totalDivider;
+	equalityInvestment /= totalDivider;
+	orderInvestment /= totalDivider;
+	literacyInvestment /= totalDivider;
+
+	reactionaryInvestment /= totalDivider;
+	liberalInvestment /= totalDivider;
+	
 }
 
 

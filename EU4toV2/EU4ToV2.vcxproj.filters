@@ -282,6 +282,27 @@
     <ClCompile Include="Source\EU4World\Provinces\ProvinceModifier.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Ideas\TechGroups.cpp">
+      <Filter>Mappers\Ideas</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Ideas\TechGroupsMapper.cpp">
+      <Filter>Mappers\Ideas</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\V2UncivReforms.cpp">
+      <Filter>Vic2World</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\EU4ReformsSection.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\EU4ReformStackSection.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\EU4GovernmentSection.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common_items\StringUtils.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -568,6 +589,27 @@
     <ClInclude Include="Source\EU4World\Provinces\BuildingWeightEffects.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\Ideas\TechGroups.h">
+      <Filter>Mappers\Ideas</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Ideas\TechGroupsMapper.h">
+      <Filter>Mappers\Ideas</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\V2UncivReforms.h">
+      <Filter>Vic2World</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\EU4ReformsSection.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\EU4ReformStackSection.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\EU4GovernmentSection.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common_items\StringUtils.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -608,6 +650,9 @@
     </Filter>
     <Filter Include="EU4World\Modifiers">
       <UniqueIdentifier>{a148c2bc-522b-45d5-9087-5f5b840c943f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Country">
+      <UniqueIdentifier>{0eaaaa58-d93f-4f51-a6fe-dce31727ca87}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

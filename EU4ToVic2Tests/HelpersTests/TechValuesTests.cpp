@@ -33,10 +33,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfUncivilized)
 {
 	std::map<std::string, V2Country*> countries;
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
 	mockVic2Country* testCountry = new mockVic2Country;
 	EXPECT_CALL(*testCountry, isCivilized).WillOnce(testing::Return(false));
@@ -48,10 +46,8 @@ TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfUncivilized)
 TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfNoProvinces)
 {
 	std::map<std::string, V2Country*> countries;
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
 	mockVic2Country* testCountry = new mockVic2Country;
 	EXPECT_CALL(*testCountry, isCivilized).WillOnce(testing::Return(true));
@@ -65,10 +61,8 @@ TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfNoProvinces)
 TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfNoSourceCountry)
 {
 	std::map<std::string, V2Country*> countries;
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
 	mockVic2Country* testCountry = new mockVic2Country;
 	EXPECT_CALL(*testCountry, isCivilized).WillOnce(testing::Return(true));
@@ -86,10 +80,8 @@ TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfNoSourceCountry)
 TEST(Helpers_TechValuesTests, validCountryForTechConversionIfAllChecksPass)
 {
 	std::map<std::string, V2Country*> countries;
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
 	mockVic2Country* testCountry = new mockVic2Country;
 	EXPECT_CALL(*testCountry, isCivilized).WillOnce(testing::Return(true));
@@ -108,10 +100,8 @@ TEST(Helpers_TechValuesTests, validCountryForTechConversionIfAllChecksPass)
 TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, V2Country*> countries;
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
 	mockEU4Country country;
 	EXPECT_CALL(country, getAdmTech).WillOnce(testing::Return(32));
@@ -119,15 +109,12 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithNo
 	std::map<std::string, int> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedArmyTech(country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedArmyTech(country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithOneCountries)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -145,17 +132,14 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithOn
 	std::map<std::string, V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedArmyTech(*country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedArmyTech(*country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneForHighestScore)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -198,17 +182,14 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneForHighestScore)
 	countries.insert(std::make_pair("MID", &testCountry3));
 	countries.insert(std::make_pair("LOW", &testCountry3));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedArmyTech(*country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedArmyTech(*country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsScaledScore)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -251,19 +232,17 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsScaledScore)
 	countries.insert(std::make_pair("MID", &testCountry2));
 	countries.insert(std::make_pair("LOW", &testCountry3));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_NEAR(techValues.getNormalizedArmyTech(*country2, ideaEffectMapper), (-2.0 / 7.0), 0.00001);
+	ASSERT_NEAR(techValues.getNormalizedArmyTech(*country2), (-2.0 / 7.0), 0.00001);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, V2Country*> countries;
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
@@ -271,15 +250,12 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithNo
 	std::map<std::string, int> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedNavyTech(country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedNavyTech(country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithOneCountries)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -297,17 +273,14 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithOn
 	std::map<std::string, V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedNavyTech(*country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedNavyTech(*country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneForHighestScore)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -350,17 +323,14 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneForHighestScore)
 	countries.insert(std::make_pair("MID", &testCountry3));
 	countries.insert(std::make_pair("LOW", &testCountry3));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedNavyTech(*country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedNavyTech(*country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsScaledScore)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -403,19 +373,16 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsScaledScore)
 	countries.insert(std::make_pair("MID", &testCountry2));
 	countries.insert(std::make_pair("LOW", &testCountry3));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_NEAR(techValues.getNormalizedNavyTech(*country2, ideaEffectMapper), (-2.0 / 7.0), 0.00001);
+	ASSERT_NEAR(techValues.getNormalizedNavyTech(*country2), (-2.0 / 7.0), 0.00001);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, V2Country*> countries;
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
@@ -423,15 +390,12 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWi
 	std::map<std::string, int> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedCommerceTech(country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedCommerceTech(country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWithOneCountries)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -449,17 +413,14 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWi
 	std::map<std::string, V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedCommerceTech(*country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedCommerceTech(*country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneForHighestScore)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -502,17 +463,14 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneForHighestScore
 	countries.insert(std::make_pair("MID", &testCountry3));
 	countries.insert(std::make_pair("LOW", &testCountry3));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedCommerceTech(*country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedCommerceTech(*country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsScaledScore)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -555,34 +513,29 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsScaledScore)
 	countries.insert(std::make_pair("MID", &testCountry2));
 	countries.insert(std::make_pair("LOW", &testCountry3));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_NEAR(techValues.getNormalizedCommerceTech(*country2, ideaEffectMapper), (-2.0 / 7.0), 0.00001);
+	ASSERT_NEAR(techValues.getNormalizedCommerceTech(*country2), (-2.0 / 7.0), 0.00001);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, V2Country*> countries;
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
 	std::map<std::string, int> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedCultureTech(country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedCultureTech(country), 0.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWithOneCountries)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -600,17 +553,14 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWit
 	std::map<std::string, V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedCultureTech(*country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedCultureTech(*country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneForHighestScore)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -653,17 +603,14 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneForHighestScore)
 	countries.insert(std::make_pair("MID", &testCountry3));
 	countries.insert(std::make_pair("LOW", &testCountry3));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedCultureTech(*country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedCultureTech(*country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsScaledScore)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -706,19 +653,17 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsScaledScore)
 	countries.insert(std::make_pair("MID", &testCountry2));
 	countries.insert(std::make_pair("LOW", &testCountry3));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_NEAR(techValues.getNormalizedCultureTech(*country2, ideaEffectMapper), (-2.0 / 7.0), 0.00001);
+	ASSERT_NEAR(techValues.getNormalizedCultureTech(*country2), (-2.0 / 7.0), 0.00001);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, V2Country*> countries;
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
 	mockEU4Country country;
 	EXPECT_CALL(country, getAdmTech).WillOnce(testing::Return(32));
@@ -727,15 +672,12 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWi
 	std::map<std::string, int> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedIndustryTech(country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedIndustryTech(country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWithOneCountries)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -753,70 +695,14 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWi
 	std::map<std::string, V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedIndustryTech(*country, ideaEffectMapper), 1.0);
+	ASSERT_EQ(techValues.getNormalizedIndustryTech(*country), 1.0);
 }
 
 
 TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneForHighestScore)
 {
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
-	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
-	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
-	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
-	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
-	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
-
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
-	std::map<int, V2Province*> provinces;
-	V2Province* province;
-	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
-
-	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
-	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
-	EXPECT_CALL(*country2, getDipTech).WillRepeatedly(testing::Return(8));
-	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
-	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
-
-	mockVic2Country testCountry2;
-	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
-
-	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
-	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
-	EXPECT_CALL(*country3, getDipTech).WillRepeatedly(testing::Return(0));
-	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
-	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
-
-	mockVic2Country testCountry3;
-	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
-
-	std::map<std::string, V2Country*> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
-	countries.insert(std::make_pair("MID", &testCountry3));
-	countries.insert(std::make_pair("LOW", &testCountry3));
-
-	helpers::TechValues techValues(countries, ideaEffectMapper);
-
-	ASSERT_EQ(techValues.getNormalizedIndustryTech(*country, ideaEffectMapper), 1.0);
-}
-
-
-TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsScaledScore)
-{
-	std::stringstream ideaEffectInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectInput);
-
 	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
@@ -859,7 +745,57 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsScaledScore)
 	countries.insert(std::make_pair("MID", &testCountry2));
 	countries.insert(std::make_pair("LOW", &testCountry3));
 
-	helpers::TechValues techValues(countries, ideaEffectMapper);
+	helpers::TechValues techValues(countries);
 
-	ASSERT_NEAR(techValues.getNormalizedIndustryTech(*country2, ideaEffectMapper), (-2.0 / 7.0), 0.00001);
+	ASSERT_EQ(techValues.getNormalizedIndustryTech(*country), 1.0);
+}
+
+
+TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsScaledScore)
+{
+	std::shared_ptr<mockEU4Country> country = std::make_shared<mockEU4Country>();
+	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
+	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
+	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
+	std::map<std::string, int> nationalIdeas;
+	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
+
+	mockVic2Country testCountry;
+	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
+	std::map<int, V2Province*> provinces;
+	V2Province* province;
+	provinces.insert(std::make_pair(1, province));
+	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
+	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+
+	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
+	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
+	EXPECT_CALL(*country2, getDipTech).WillRepeatedly(testing::Return(8));
+	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
+	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
+
+	mockVic2Country testCountry2;
+	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
+	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
+
+	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
+	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
+	EXPECT_CALL(*country3, getDipTech).WillRepeatedly(testing::Return(0));
+	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
+	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
+
+	mockVic2Country testCountry3;
+	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
+	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
+
+	std::map<std::string, V2Country*> countries;
+	countries.insert(std::make_pair("TST", &testCountry));
+	countries.insert(std::make_pair("MID", &testCountry2));
+	countries.insert(std::make_pair("LOW", &testCountry3));
+
+	helpers::TechValues techValues(countries);
+
+	ASSERT_NEAR(techValues.getNormalizedIndustryTech(*country2), (-2.0 / 7.0), 0.00001);
 }

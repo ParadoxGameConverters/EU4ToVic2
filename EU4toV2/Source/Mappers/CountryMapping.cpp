@@ -197,7 +197,6 @@ bool mappers::CountryMappings::mapToExistingVic2Country(const string& possibleVi
 	{
 		EU4TagToV2TagMap.insert(make_pair(EU4Tag, possibleVic2Tag));
 		V2TagToEU4TagMap.insert(make_pair(possibleVic2Tag, EU4Tag));
-		logMapping(EU4Tag, possibleVic2Tag, "default V2 country");
 
 		return true;
 	}
@@ -212,7 +211,6 @@ bool mappers::CountryMappings::mapToFirstUnusedVic2Tag(const string& possibleVic
 	{
 		EU4TagToV2TagMap.insert(make_pair(EU4Tag, possibleVic2Tag));
 		V2TagToEU4TagMap.insert(make_pair(possibleVic2Tag, EU4Tag));
-		logMapping(EU4Tag, possibleVic2Tag, "mapping rule, not a V2 country");
 
 		return true;
 	}

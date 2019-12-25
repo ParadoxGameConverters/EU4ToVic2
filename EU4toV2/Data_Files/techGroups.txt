@@ -1,0 +1,79 @@
+# This file allows technology groups to affect westernization of the country,
+# should this option be enabled in the converter.
+# 
+# Scale is 0 to 10 where:
+# 0 - These are stone-age people
+# 5 - Uncililized but not primitive tribes of north africa
+# 10 - A modern tea-drinking Man-o-war sailing colonial empire
+# 
+# You can also set increased or decreased literacy to a particular technological
+# group, where:
+# 0 - These people are illiterate.
+# 5 - Standard levels of literacy for this group
+# 10 - Extraordinarily literate aliens from Atlantis
+
+# Do not change tags in here without changing every other reference to them.
+# If adding new technology, make sure they are uniquely named.
+
+western = {
+	westernization = 10
+}
+
+eastern = {
+	westernization = 10
+	literacy = 4
+}
+
+ottoman = {
+	westernization = 9
+	literacy = 6
+}
+
+muslim = {
+	westernization = 6
+}
+
+indian = {
+	westernization = 5
+}
+
+east_african = {
+	westernization = 4
+}
+
+central_african = {
+	westernization = 3
+}
+
+chinese = {
+	westernization = 4
+}
+
+nomad_group = {
+	westernization = 3
+}
+
+sub_saharan = {
+	westernization = 2
+}
+
+north_american = {
+	westernization = 3
+}
+
+mesoamerican = {
+	westernization = 1
+}
+
+south_american = {
+	westernization = 1
+}
+
+andean = {
+	westernization = 1
+}	
+
+high_american = {
+	westernization = 10
+	literacy = 8
+}

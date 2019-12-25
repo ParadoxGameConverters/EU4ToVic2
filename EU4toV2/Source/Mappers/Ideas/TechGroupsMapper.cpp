@@ -1,4 +1,4 @@
-/*Copyright (c) 2018 The Paradox Game Converters Project
+/*Copyright (c) 2019 The Paradox Game Converters Project
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -21,42 +21,36 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef V2REFORMS_H_
-#define V2REFORMS_H_
+#include "TechGroupsMapper.h"
+#include "TechGroups.h"
+#include "Log.h"
 
 
 
-#include <memory>
-#include <stdio.h>
-#include <string>
-
-
-
-namespace EU4
+mappers::TechGroupsMapper::TechGroupsMapper(std::istream& theStream)
 {
-	class Country;
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& techGroup, std::istream& theStream) {
+		TechGroups techGroups(theStream);
+
+		westernizations[techGroup] = techGroups.getWesternization();
+		literacies[techGroup] = techGroups.getLiteracyBoost();
+	});
+
+	LOG(LogLevel::Info) << "getting tech groups";
+	parseStream(theStream);
 }
 
-class V2Country;
+
+int mappers::TechGroupsMapper::getWesternizationFromTechGroup(const std::string& techGroupName) const
+{
+	auto techGroup = westernizations.find(techGroupName);
+	return techGroup->second;
+}
 
 
+int mappers::TechGroupsMapper::getLiteracyFromTechGroup(const std::string& techGroupName) const
+{
+	auto techGroup = literacies.find(techGroupName);
+	return techGroup->second;
+}
 
-class V2Reforms {
-	public:
-		V2Reforms(const V2Country*, const std::shared_ptr<EU4::Country>);
-		void output(FILE*) const;
-	private:
-
-		bool abolishSlavery = false;
-		double slavery = 5.0;
-		double vote_franchise = 5.0;
-		double upper_house_composition = 5.0;
-		double voting_system = 5.0;
-		double public_meetings = 5.0;
-		double press_rights = 5.0;
-		double trade_unions = 5.0;
-		double political_parties = 5.0;
-};
-
-
-#endif // V2REFORMS_H_

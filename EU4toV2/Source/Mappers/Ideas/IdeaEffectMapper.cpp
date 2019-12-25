@@ -27,285 +27,325 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream)
+mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream, std::istream& theSecondStream)
+{
+	LOG(LogLevel::Info) << "getting idea effects";
+	registerProperties(theStream);
+	parseStream(theStream);
+
+	registerProperties(theSecondStream);
+	parseStream(theSecondStream);
+}
+
+void mappers::IdeaEffectMapper::registerProperties(std::istream& theStream)
 {
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& idea, std::istream& theStream) {
 		IdeaEffects ideaEffects(theStream);
 
-		armyInvestmentIdeas[idea] = ideaEffects.getArmyInvestmentValue();
-		navyInvestmentIdeas[idea] = ideaEffects.getNavyInvestmentValue();
-		commerceInvestmentIdeas[idea] = ideaEffects.getCommerceInvestmentValue();
-		cultureInvestmentIdeas[idea] = ideaEffects.getCultureInvestmentValue();
-		industryInvestmentIdeas[idea] = ideaEffects.getIndustryInvestmentValue();
+		enforceIdeas[idea] = ideaEffects.getEnforce();
 
-		armyTechIdeas[idea] = ideaEffects.getArmyTechScoreValue();
-		navyTechIdeas[idea] = ideaEffects.getNavyTechScoreValue();
-		commerceTechIdeas[idea] = ideaEffects.getCommerceTechScoreValue();
-		cultureTechIdeas[idea] = ideaEffects.getCultureTechScoreValue();
-		industryTechIdeas[idea] = ideaEffects.getIndustryTechScoreValue();
+		armyIdeas[idea] = ideaEffects.getArmy();
+		navyIdeas[idea] = ideaEffects.getNavy();
+		commerceIdeas[idea] = ideaEffects.getCommerce();
+		cultureIdeas[idea] = ideaEffects.getCulture();
+		industryIdeas[idea] = ideaEffects.getIndustry();
 
-		UHLiberalIdeas[idea] = ideaEffects.getUpperHouseLiberalValue();
-		UHReactionaryIdeas[idea] = ideaEffects.getUpperHouseReactionaryValue();
+		liberalIdeas[idea] = ideaEffects.getLiberal();
+		reactionaryIdeas[idea] = ideaEffects.getReactionary();
 
-		orderIdeas[idea] = ideaEffects.getOrderInfluenceValue();
-		libertyIdeas[idea] = ideaEffects.getLibertyInfluenceValue();
-		equalityIdeas[idea] = ideaEffects.getEqualityInfluenceValue();
+		orderIdeas[idea] = ideaEffects.getOrder();
+		libertyIdeas[idea] = ideaEffects.getLiberty();
+		equalityIdeas[idea] = ideaEffects.getEquality();
+		literacyIdeas[idea] = ideaEffects.getLiteracy();
 
-		literacyIdeas[idea] = ideaEffects.getLiteracyLevels();
-	});
+		slaveryIdeas[idea] = ideaEffects.getSlavery();
+		upper_house_compositionIdeas[idea] = ideaEffects.getUpper_house_composition();
+		vote_franchiseIdeas[idea] = ideaEffects.getVote_franchise();
+		voting_systemIdeas[idea] = ideaEffects.getVoting_system();
+		public_meetingsIdeas[idea] = ideaEffects.getPublic_meetings();
+		press_rightsIdeas[idea] = ideaEffects.getPress_rights();
+		trade_unionsIdeas[idea] = ideaEffects.getTrade_unions();
+		political_partiesIdeas[idea] = ideaEffects.getPolitical_parties();
 
-	LOG(LogLevel::Info) << "getting idea effects";
-	parseStream(theStream);
+
+		});
+
 }
 
-
-int mappers::IdeaEffectMapper::getArmyInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const
+std::string mappers::IdeaEffectMapper::getEnforceFromIdea(const std::string& ideaName, int ideaLevel) const
 {
-	auto idea = armyInvestmentIdeas.find(ideaName);
-	if (idea != armyInvestmentIdeas.end())
+	auto idea = enforceIdeas.find(ideaName);
+	if ((idea != enforceIdeas.end()) && (ideaLevel >= 7))
 	{
-		return idea->second * ideaLevel;
+		return idea->second;
 	}
 	else
 	{
-		return 0;
+		return "";
 	}
 }
 
 
-int mappers::IdeaEffectMapper::getCommerceInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const
+int mappers::IdeaEffectMapper::getArmyFromIdea(const std::string& ideaName, int ideaLevel) const
 {
-	auto idea = commerceInvestmentIdeas.find(ideaName);
-	if (idea != commerceInvestmentIdeas.end())
+	auto idea = armyIdeas.find(ideaName);
+	if ((idea != armyIdeas.end()) && (ideaLevel >= 7))
 	{
-		return idea->second * ideaLevel;
+		return idea->second;
 	}
 	else
 	{
-		return 0;
+		return 5;
 	}
 }
 
 
-int mappers::IdeaEffectMapper::getCultureInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const
+int mappers::IdeaEffectMapper::getCommerceFromIdea(const std::string& ideaName, int ideaLevel) const
 {
-	auto idea = cultureInvestmentIdeas.find(ideaName);
-	if (idea != cultureInvestmentIdeas.end())
+	auto idea = commerceIdeas.find(ideaName);
+	if ((idea != commerceIdeas.end()) && (ideaLevel >= 7))
 	{
-		return idea->second * ideaLevel;
+		return idea->second;
 	}
 	else
 	{
-		return 0;
+		return 5;
 	}
 }
 
 
-int mappers::IdeaEffectMapper::getIndustryInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const
+int mappers::IdeaEffectMapper::getCultureFromIdea(const std::string& ideaName, int ideaLevel) const
 {
-	auto idea = industryInvestmentIdeas.find(ideaName);
-	if (idea != industryInvestmentIdeas.end())
+	auto idea = cultureIdeas.find(ideaName);
+	if ((idea != cultureIdeas.end()) && (ideaLevel >= 7))
 	{
-		return idea->second * ideaLevel;
+		return idea->second;
 	}
 	else
 	{
-		return 0;
+		return 5;
 	}
 }
 
 
-int mappers::IdeaEffectMapper::getNavyInvestmentFromIdea(const std::string& ideaName, int ideaLevel) const
+int mappers::IdeaEffectMapper::getIndustryFromIdea(const std::string& ideaName, int ideaLevel) const
 {
-	auto idea = navyInvestmentIdeas.find(ideaName);
-	if (idea != navyInvestmentIdeas.end())
+	auto idea = industryIdeas.find(ideaName);
+	if ((idea != industryIdeas.end()) && (ideaLevel >= 7))
 	{
-		return idea->second * ideaLevel;
+		return idea->second;
 	}
 	else
 	{
-		return 0;
+		return 5;
 	}
 }
 
 
-double mappers::IdeaEffectMapper::getUHLiberalFromIdea(const std::string& ideaName, int ideaLevel) const
+int mappers::IdeaEffectMapper::getNavyFromIdea(const std::string& ideaName, int ideaLevel) const
 {
-	auto idea = UHLiberalIdeas.find(ideaName);
-	if (idea != UHLiberalIdeas.end())
+	auto idea = navyIdeas.find(ideaName);
+	if ((idea != navyIdeas.end()) && (ideaLevel >= 7))
 	{
-		return idea->second * (ideaLevel + 1.0);
+		return idea->second;
 	}
 	else
 	{
-		return 0;
+		return 5;
 	}
 }
 
 
-double mappers::IdeaEffectMapper::getUHReactionaryFromIdea(const std::string& ideaName, int ideaLevel) const
+int mappers::IdeaEffectMapper::getLiberalFromIdea(const std::string& ideaName, int ideaLevel) const
 {
-	auto idea = UHReactionaryIdeas.find(ideaName);
-	if (idea != UHReactionaryIdeas.end())
+	auto idea = liberalIdeas.find(ideaName);
+	if ((idea != liberalIdeas.end()) && (ideaLevel >= 7))
 	{
-		return idea->second * (ideaLevel + 1.0);
+		return idea->second;
 	}
 	else
 	{
-		return 0;
+		return 5;
 	}
 }
 
 
-double mappers::IdeaEffectMapper::getLiteracyFromIdea(const std::string& ideaName, int ideaLevel) const
+int mappers::IdeaEffectMapper::getReactionaryFromIdea(const std::string& ideaName, int ideaLevel) const
 {
-	double literacy = 0.0;
+	auto idea = reactionaryIdeas.find(ideaName);
+	if ((idea != reactionaryIdeas.end()) && (ideaLevel >= 7))
+	{
+		return idea->second;
+	}
+	else
+	{
+		return 5;
+	}
+}
 
+
+int mappers::IdeaEffectMapper::getLiteracyFromIdea(const std::string& ideaName, int ideaLevel) const
+{
 	auto idea = literacyIdeas.find(ideaName);
-	if (idea != literacyIdeas.end())
+	if ((idea != literacyIdeas.end()) && (ideaLevel >= 7))
 	{
-		for (auto level: idea->second)
-		{
-			if (ideaLevel >= level)
-			{
-				literacy += 0.1;
-			}
-		}
+		return idea->second;
 	}
-
-	return literacy;
+	else
+	{
+		return 5;
+	}
 }
 
 
-int mappers::IdeaEffectMapper::getOrderInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
+int mappers::IdeaEffectMapper::getSlaveryFromIdea(const std::string& ideaName, int ideaLevel) const
+{
+	auto idea = slaveryIdeas.find(ideaName);
+	if ((idea != slaveryIdeas.end()) && (ideaLevel >= 7))
+	{
+		return idea->second;
+	}
+	else
+	{
+		return 5;
+	}
+}
+
+
+int mappers::IdeaEffectMapper::getUpper_house_compositionFromIdea(const std::string& ideaName, int ideaLevel) const
+{
+	auto idea = upper_house_compositionIdeas.find(ideaName);
+	if ((idea != upper_house_compositionIdeas.end()) && (ideaLevel >= 7))
+	{
+		return idea->second;
+	}
+	else
+	{
+		return 5;
+	}
+}
+
+
+int mappers::IdeaEffectMapper::getVote_franchiseFromIdea(const std::string& ideaName, int ideaLevel) const
+{
+	auto idea = vote_franchiseIdeas.find(ideaName);
+	if ((idea != vote_franchiseIdeas.end()) && (ideaLevel >= 7))
+	{
+		return idea->second;
+	}
+	else
+	{
+		return 5;
+	}
+}
+
+int mappers::IdeaEffectMapper::getVoting_systemFromIdea(const std::string& ideaName, int ideaLevel) const
+{
+	auto idea = voting_systemIdeas.find(ideaName);
+	if ((idea != voting_systemIdeas.end()) && (ideaLevel >= 7))
+	{
+		return idea->second;
+	}
+	else
+	{
+		return 5;
+	}
+}
+
+
+int mappers::IdeaEffectMapper::getPublic_meetingsFromIdea(const std::string& ideaName, int ideaLevel) const
+{
+	auto idea = public_meetingsIdeas.find(ideaName);
+	if ((idea != public_meetingsIdeas.end()) && (ideaLevel >= 7))
+	{
+		return idea->second;
+	}
+	else
+	{
+		return 5;
+	}
+}
+
+
+int mappers::IdeaEffectMapper::getPress_rightsFromIdea(const std::string& ideaName, int ideaLevel) const
+{
+	auto idea = press_rightsIdeas.find(ideaName);
+	if ((idea != press_rightsIdeas.end()) && (ideaLevel >= 7))
+	{
+		return idea->second;
+	}
+	else
+	{
+		return 5;
+	}
+}
+
+
+int mappers::IdeaEffectMapper::getTrade_unionsFromIdea(const std::string& ideaName, int ideaLevel) const
+{
+	auto idea = trade_unionsIdeas.find(ideaName);
+	if ((idea != trade_unionsIdeas.end()) && (ideaLevel >= 7))
+	{
+		return idea->second;
+	}
+	else
+	{
+		return 5;
+	}
+}
+
+int mappers::IdeaEffectMapper::getPolitical_partiesFromIdea(const std::string& ideaName, int ideaLevel) const
+{
+	auto idea = political_partiesIdeas.find(ideaName);
+	if ((idea != political_partiesIdeas.end()) && (ideaLevel >= 7))
+	{
+		return idea->second;
+	}
+	else
+	{
+		return 5;
+	}
+}
+
+
+int mappers::IdeaEffectMapper::getOrderFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = orderIdeas.find(ideaName);
-	if (idea != orderIdeas.end())
+	if ((idea != orderIdeas.end()) && (ideaLevel >= 7))
 	{
-		if (ideaLevel == 7)
-		{
-			ideaLevel++;
-		}
-		return (ideaLevel + 1) * idea->second;
+		return idea->second;
 	}
 	else
 	{
-		return 0;
+		return 5;
 	}
 }
 
 
-int mappers::IdeaEffectMapper::getLibertyInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
+int mappers::IdeaEffectMapper::getLibertyFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = libertyIdeas.find(ideaName);
-	if (idea != libertyIdeas.end())
+	if ((idea != libertyIdeas.end()) && (ideaLevel >= 7))
 	{
-		if (ideaLevel == 7)
-		{
-			ideaLevel++;
-		}
-		return (ideaLevel + 1) * idea->second;
+		return idea->second;
 	}
 	else
 	{
-		return 0;
+		return 5;
 	}
 }
 
 
-int mappers::IdeaEffectMapper::getEqualityInfluenceFromIdea(const std::string& ideaName, int ideaLevel) const
+int mappers::IdeaEffectMapper::getEqualityFromIdea(const std::string& ideaName, int ideaLevel) const
 {
 	auto idea = equalityIdeas.find(ideaName);
-	if (idea != equalityIdeas.end())
+	if ((idea != equalityIdeas.end()) && (ideaLevel >= 7))
 	{
-		if (ideaLevel == 7)
-		{
-			ideaLevel++;
-		}
-		return (ideaLevel + 1) * idea->second;
+		return idea->second;
 	}
 	else
 	{
-		return 0;
+		return 5;
 	}
 }
 
-
-double mappers::IdeaEffectMapper::getArmyTechFromIdeas(const std::map<std::string, int>& ideas) const
-{
-	double ideaEffect = 0.0;
-	for (auto idea: ideas)
-	{
-		auto techIdea = armyTechIdeas.find(idea.first);
-		if (techIdea != armyTechIdeas.end())
-		{
-			ideaEffect += techIdea->second * (idea.second + 1.0);
-		}
-	}
-
-	return ideaEffect;
-}
-
-
-double mappers::IdeaEffectMapper::getCommerceTechFromIdeas(const std::map<std::string, int>& ideas) const
-{
-	double ideaEffect = 0.0;
-	for (auto idea: ideas)
-	{
-		auto techIdea = commerceTechIdeas.find(idea.first);
-		if (techIdea != commerceTechIdeas.end())
-		{
-			ideaEffect += techIdea->second * (idea.second + 1.0);
-		}
-	}
-
-	return ideaEffect;
-}
-
-
-double mappers::IdeaEffectMapper::getCultureTechFromIdeas(const std::map<std::string, int>& ideas) const
-{
-	double ideaEffect = 0.0;
-	for (auto idea: ideas)
-	{
-		auto techIdea = cultureTechIdeas.find(idea.first);
-		if (techIdea != cultureTechIdeas.end())
-		{
-			ideaEffect += techIdea->second * (idea.second + 1.0);
-		}
-	}
-
-	return ideaEffect;
-}
-
-
-double mappers::IdeaEffectMapper::getIndustryTechFromIdeas(const std::map<std::string, int>& ideas) const
-{
-	double ideaEffect = 0.0;
-	for (auto idea: ideas)
-	{
-		auto techIdea = industryTechIdeas.find(idea.first);
-		if (techIdea != industryTechIdeas.end())
-		{
-			ideaEffect += techIdea->second * (idea.second + 1.0);
-		}
-	}
-
-	return ideaEffect;
-}
-
-
-double mappers::IdeaEffectMapper::getNavyTechFromIdeas(const std::map<std::string, int>& ideas) const
-{
-	double ideaEffect = 0.0;
-	for (auto idea: ideas)
-	{
-		auto techIdea = navyTechIdeas.find(idea.first);
-		if (techIdea != navyTechIdeas.end())
-		{
-			ideaEffect += techIdea->second * (idea.second + 1.0);
-		}
-	}
-
-	return ideaEffect;
-}

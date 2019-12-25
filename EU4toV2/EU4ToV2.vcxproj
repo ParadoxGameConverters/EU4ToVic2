@@ -188,6 +188,9 @@
     <ClCompile Include="Source\EU4World\Continents.cpp" />
     <ClCompile Include="Source\EU4World\Countries.cpp" />
     <ClCompile Include="Source\EU4World\CountryHistory.cpp" />
+    <ClCompile Include="Source\EU4World\Country\EU4GovernmentSection.cpp" />
+    <ClCompile Include="Source\EU4World\Country\EU4ReformsSection.cpp" />
+    <ClCompile Include="Source\EU4World\Country\EU4ReformStackSection.cpp" />
     <ClCompile Include="Source\EU4World\CultureGroups.cpp" />
     <ClCompile Include="Source\EU4World\EU4Army.cpp" />
     <ClCompile Include="Source\EU4World\EU4Country.cpp" />
@@ -235,6 +238,8 @@
     <ClCompile Include="Source\Mappers\GovermentMapper.cpp" />
     <ClCompile Include="Source\Mappers\Ideas\IdeaEffectMapper.cpp" />
     <ClCompile Include="Source\Mappers\Ideas\IdeaEffects.cpp" />
+    <ClCompile Include="Source\Mappers\Ideas\TechGroups.cpp" />
+    <ClCompile Include="Source\Mappers\Ideas\TechGroupsMapper.cpp" />
     <ClCompile Include="Source\Mappers\MinorityPopMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
@@ -244,6 +249,7 @@
     <ClCompile Include="Source\targa.cpp" />
     <ClCompile Include="Source\V2World\BlockedTechSchools.cpp" />
     <ClCompile Include="Source\V2World\StateMapper.cpp" />
+    <ClCompile Include="Source\V2World\V2UncivReforms.cpp" />
     <ClCompile Include="Source\V2World\Vic2CultureUnion.cpp" />
     <ClCompile Include="Source\V2World\Vic2CultureUnionMapper.cpp" />
     <ClCompile Include="Source\V2World\Vic2Regions.cpp" />
@@ -288,6 +294,9 @@
     <ClInclude Include="Source\EU4World\Continents.h" />
     <ClInclude Include="Source\EU4World\Countries.h" />
     <ClInclude Include="Source\EU4World\CountryHistory.h" />
+    <ClInclude Include="Source\EU4World\Country\EU4GovernmentSection.h" />
+    <ClInclude Include="Source\EU4World\Country\EU4ReformsSection.h" />
+    <ClInclude Include="Source\EU4World\Country\EU4ReformStackSection.h" />
     <ClInclude Include="Source\EU4World\CultureGroups.h" />
     <ClInclude Include="Source\EU4World\EU4Army.h" />
     <ClInclude Include="Source\EU4World\EU4Country.h" />
@@ -336,6 +345,8 @@
     <ClInclude Include="Source\Mappers\GovernmentMapper.h" />
     <ClInclude Include="Source\Mappers\Ideas\IdeaEffectMapper.h" />
     <ClInclude Include="Source\Mappers\Ideas\IdeaEffects.h" />
+    <ClInclude Include="Source\Mappers\Ideas\TechGroups.h" />
+    <ClInclude Include="Source\Mappers\Ideas\TechGroupsMapper.h" />
     <ClInclude Include="Source\Mappers\MinorityPopMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h" />
@@ -361,6 +372,7 @@
     <ClInclude Include="Source\V2World\V2Relations.h" />
     <ClInclude Include="Source\V2World\V2State.h" />
     <ClInclude Include="Source\V2World\V2TechSchools.h" />
+    <ClInclude Include="Source\V2World\V2UncivReforms.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
     <ClInclude Include="Source\V2World\Vic2CultureUnion.h" />
     <ClInclude Include="Source\V2World\Vic2CultureUnionMapper.h" />

@@ -39,6 +39,7 @@ class Country;
 namespace mappers
 {
 class IdeaEffectMapper;
+class TechgroupsMapper;
 }
 
 class V2Country;
@@ -51,36 +52,21 @@ namespace helpers
 class TechValues
 {
 	public:
-		TechValues(const std::map<std::string, V2Country*>& countries, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		TechValues(const std::map<std::string, V2Country*>& countries);
 
 		bool isValidCountryForTechConversion(const V2Country* country) const;
-		double getNormalizedArmyTech(
-			const EU4::Country& country,
-			const mappers::IdeaEffectMapper& ideaEffectMapper
-		) const;
-		double getNormalizedNavyTech(
-			const EU4::Country& country,
-			const mappers::IdeaEffectMapper& ideaEffectMapper
-		) const;
-		double getNormalizedCommerceTech(
-			const EU4::Country& country,
-			const mappers::IdeaEffectMapper& ideaEffectMapper
-		) const;
-		double getNormalizedCultureTech(
-			const EU4::Country& country,
-			const mappers::IdeaEffectMapper& ideaEffectMapper
-		) const;
-		double getNormalizedIndustryTech(
-			const EU4::Country& country,
-			const mappers::IdeaEffectMapper& ideaEffectMapper
-		) const;
+		double getNormalizedArmyTech(const EU4::Country& country) const;
+		double getNormalizedNavyTech(const EU4::Country& country) const;
+		double getNormalizedCommerceTech(const EU4::Country& country) const;
+		double getNormalizedCultureTech(const EU4::Country& country) const;
+		double getNormalizedIndustryTech(const EU4::Country& country) const;
 
 	private:
-		double getCountryArmyTech(const EU4::Country& country, const mappers::IdeaEffectMapper& ideaEffectMapper) const;
-		double getCountryNavyTech(const EU4::Country& country, const mappers::IdeaEffectMapper& ideaEffectMapper) const;
-		double getCountryCommerceTech(const EU4::Country& country, const mappers::IdeaEffectMapper& ideaEffectMapper) const;
-		double getCountryCultureTech(const EU4::Country& country, const mappers::IdeaEffectMapper& ideaEffectMapper) const;
-		double getCountryIndustryTech(const EU4::Country& country, const mappers::IdeaEffectMapper& ideaEffectMapper) const;
+		double getCountryArmyTech(const EU4::Country& country) const;
+		double getCountryNavyTech(const EU4::Country& country) const;
+		double getCountryCommerceTech(const EU4::Country& country) const;
+		double getCountryCultureTech(const EU4::Country& country) const;
+		double getCountryIndustryTech(const EU4::Country& country) const;
 
 		double getNormalizedScore(double score, double max, double mean) const;
 

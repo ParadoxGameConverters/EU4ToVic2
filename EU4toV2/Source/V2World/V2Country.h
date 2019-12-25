@@ -52,6 +52,7 @@ class world;
 namespace mappers
 {
 class IdeaEffectMapper;
+class TechGroupsMapper;
 }
 class V2World;
 class V2State;
@@ -106,9 +107,9 @@ class V2Country
 		);
 		bool								addFactory(V2Factory* factory);
 		void								addRailroadtoCapitalState();
-		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions);
+		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
 		void								oldCivConversionMethod();
-		void								newCivConversionMethod(double topTech, int topInstitutions);
+		void								newCivConversionMethod(double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
 		void								convertLandlessReforms(V2Country* capOwner);
 		void setupPops(
 			double popWeightRatio,
@@ -129,7 +130,7 @@ class V2Country
 
 		string							getLocalName();
 		std::optional<V2Relations> getRelations(std::string withWhom) const;
-		void getNationalValueScores(int& liberty, int& equality, int& order, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		std::tuple<double, double, double> getNationalValueScores();
 		
 		void addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
 		void								addResearchPoints(double newPoints)		{ researchPoints += newPoints; }
@@ -158,6 +159,25 @@ class V2Country
 		int								getNumFactories() const { return numFactories; }
 
 		string							getReligion() const { return religion; }
+
+		double getSlavery() const { return slaveryInvestment; }
+		double getUpper_house_composition() const { return upper_house_compositionInvestment; }
+		double getVote_franchise() const { return vote_franchiseInvestment; }
+		double getVoting_system() const { return voting_systemInvestment; }
+		double getPublic_meetings() const { return public_meetingsInvestment; }
+		double getPress_rights() const { return press_rightsInvestment; }
+		double getTrade_unions() const { return trade_unionsInvestment; }
+		double getPolitical_parties() const { return political_partiesInvestment; }
+
+		void buildCanals(std::shared_ptr<EU4::Country> srcCountry);
+		void determineTechSchool(const std::unique_ptr<Vic2::TechSchools>& techschools);
+		void calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry);
+		void generateRelations(std::shared_ptr<EU4::Country> srcCountry);
+		void resolvePolitics();
+		void finalizeInvestments(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcCountry, const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions);
+		void setReligion(std::shared_ptr<EU4::Country> srcCountry, const mappers::ReligionMapper& religionMapper);
 
 	private:
 		shared_ptr<Object> parseCountryFile(const string& filename);
@@ -231,6 +251,28 @@ class V2Country
 		int								unitNameCount[num_reg_categories];
 		int								numFactories;
 		vector<string>					decisions;
+
+		double armyInvestment = 5.0;
+		double navyInvestment = 5.0;
+		double commerceInvestment = 5.0;
+		double industryInvestment = 5.0;
+		double cultureInvestment = 5.0;
+		double slaveryInvestment = 5.0;
+		double upper_house_compositionInvestment = 5.0;
+		double vote_franchiseInvestment = 5.0;
+		double voting_systemInvestment = 5.0;
+		double public_meetingsInvestment = 5.0;
+		double press_rightsInvestment = 5.0;
+		double trade_unionsInvestment = 5.0;
+		double political_partiesInvestment = 5.0;
+		double libertyInvestment = 5.0;
+		double equalityInvestment = 5.0;
+		double orderInvestment = 5.0;
+		double literacyInvestment = 5.0;
+		double reactionaryInvestment = 5.0;
+		double liberalInvestment = 5.0;
+
+
 };
 
 bool ProvinceRegimentCapacityPredicate(V2Province* prov1, V2Province* prov2);

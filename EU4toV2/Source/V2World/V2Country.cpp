@@ -39,6 +39,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
+#include "../Mappers/Ideas/TechGroupsMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2World.h"
 #include "V2State.h"
@@ -46,6 +47,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2Relations.h"
 #include "V2Army.h"
 #include "V2Reforms.h"
+#include "V2UncivReforms.h"
 #include "V2Creditor.h"
 #include "V2Leader.h"
 #include "V2Pop.h"
@@ -57,7 +59,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <math.h>
 #include <sstream>
 #include <queue>
-
+#include <cmath>
 
 
 const int MONEYFACTOR = 30;	// ducat to pound conversion rate
@@ -566,6 +568,36 @@ void V2Country::initFromEU4Country(
 	celestialEmperor = srcCountry->getCelestialEmperor();
 
 	// religion
+	setReligion(_srcCountry, religionMapper);
+
+	// cultures
+	setPrimaryAndAcceptedCultures(_srcCountry, cultureMapper, eu4Regions);
+
+	// Government
+	determineGovernmentType(_srcCountry, ideaEffectMapper);
+
+	// Apply government effects to reforms
+	finalizeInvestments(_srcCountry, ideaEffectMapper);
+
+	//  Politics
+	resolvePolitics();
+
+	// Generate Reforms
+	reforms		=  new V2Reforms(this, srcCountry);
+
+	// Relations
+	generateRelations(_srcCountry);
+
+	// Literacy and Tech school
+	calculateLiteracy(_srcCountry);
+	determineTechSchool(techSchools);
+
+	// Misc
+	buildCanals(_srcCountry);
+}
+
+void V2Country::setReligion(std::shared_ptr<EU4::Country> srcCountry, const mappers::ReligionMapper& religionMapper)
+{
 	string srcReligion = srcCountry->getReligion();
 	if (srcReligion.size() > 0)
 	{
@@ -573,13 +605,18 @@ void V2Country::initFromEU4Country(
 		if (!match)
 		{
 			LOG(LogLevel::Warning) << "No religion mapping defined for " << srcReligion
-				<< " (" << _srcCountry->getTag() << " -> " << tag << ')';
+				<< " (" << srcCountry->getTag() << " -> " << tag << ')';
 		}
 		else
 		{
 			religion = *match;
 		}
 	}
+}
+
+void V2Country::setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcCountry, const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions)
+{
+	int oldCapital = srcCountry->getCapital();
 
 	// primary culture
 	string srcCulture = srcCountry->getPrimaryCulture();
@@ -609,12 +646,12 @@ void V2Country::initFromEU4Country(
 	auto culturalUnion = srcCountry->getCulturalUnion();
 	if (culturalUnion)
 	{
-		for (auto unionCulture: culturalUnion->getCultures())
+		for (auto unionCulture : culturalUnion->getCultures())
 		{
 			srcAceptedCultures.push_back(unionCulture.first);
 		}
 	}
-	for (auto srcCulture: srcAceptedCultures)
+	for (auto srcCulture : srcAceptedCultures)
 	{
 		std::optional<std::string> dstCulture;
 		dstCulture = cultureMapper.cultureMatch(
@@ -638,38 +675,100 @@ void V2Country::initFromEU4Country(
 		}
 	}
 
-	// Government
+}
+
+void V2Country::determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper)
+{
 	government = governmentMapper::matchGovernment(srcCountry->getGovernment());
 
-	//  Politics
-	double liberalEffect = 0.0;
-	double reactionaryEffect = 0.0;
-	for (auto idea: srcCountry->getNationalIdeas())
+	for (auto reformStr : srcCountry->getReforms())
 	{
-		liberalEffect += ideaEffectMapper.getUHLiberalFromIdea(idea.first, idea.second);
-		reactionaryEffect += ideaEffectMapper.getUHReactionaryFromIdea(idea.first, idea.second);
+		std::string enforce = ideaEffectMapper.getEnforceFromIdea(reformStr, 7);
+		if (!enforce.empty())
+		{
+			LOG(LogLevel::Debug) << "Forcing government " << enforce << " on " << tag;
+			government = enforce;
+		}
+	}
+	
+	// almost but not quite
+
+	if (srcCountry->isRevolutionary())
+	{
+		government = "bourgeois_dictatorship";
 	}
 
-	upperHouseReactionary		=  static_cast<int>(5  + (100 * reactionaryEffect));
-	upperHouseLiberal				=  static_cast<int>(10 + (100 * liberalEffect));
-	upperHouseConservative		= 100 - (upperHouseReactionary + upperHouseLiberal);
-	LOG(LogLevel::Debug) << tag << " has an Upper House of " << upperHouseReactionary << " reactionary, "
-		<< upperHouseConservative << " conservative, and "
-		<< upperHouseLiberal << " liberal";
+}
+
+void V2Country::finalizeInvestments(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper)
+{
+	// Collect and finalize all idea/reform/government effects. We have combined reforms + ideas incoming, but lack government component (the last 33%)
+	// Resulting scores for all of these will be between 0 and 10, with 5 being average and supposed to be ignored.
+	// Each point above or below 5 should alter absolute values by 10%.
+
+	armyInvestment = (2 * srcCountry->getArmyInvestment() + ideaEffectMapper.getArmyFromIdea(government, 8)) / 3;
+	navyInvestment = (2 * srcCountry->getNavyInvestment() + ideaEffectMapper.getNavyFromIdea(government, 8)) / 3;
+	commerceInvestment = (2 * srcCountry->getCommerceInvestment() + ideaEffectMapper.getCommerceFromIdea(government, 8)) / 3;
+	industryInvestment = (2 * srcCountry->getIndustryInvestment() + ideaEffectMapper.getIndustryFromIdea(government, 8)) / 3;
+	cultureInvestment = (2 * srcCountry->getCultureInvestment() + ideaEffectMapper.getCultureFromIdea(government, 8)) / 3;
+	slaveryInvestment = (2 * srcCountry->getSlaveryInvestment() + ideaEffectMapper.getSlaveryFromIdea(government, 8)) / 3;
+	upper_house_compositionInvestment = (2 * srcCountry->getUpper_house_compositionInvestment() + ideaEffectMapper.getUpper_house_compositionFromIdea(government, 8)) / 3;
+	vote_franchiseInvestment = (2 * srcCountry->getVote_franchiseInvestment() + ideaEffectMapper.getVote_franchiseFromIdea(government, 8)) / 3;
+	voting_systemInvestment = (2 * srcCountry->getVoting_systemInvestment() + ideaEffectMapper.getVoting_systemFromIdea(government, 8)) / 3;
+	public_meetingsInvestment = (2 * srcCountry->getPublic_meetingsInvestment() + ideaEffectMapper.getPublic_meetingsFromIdea(government, 8)) / 3;
+	press_rightsInvestment = (2 * srcCountry->getPress_rightsInvestment() + ideaEffectMapper.getPress_rightsFromIdea(government, 8)) / 3;
+	trade_unionsInvestment = (2 * srcCountry->getTrade_unionsInvestment() + ideaEffectMapper.getTrade_unionsFromIdea(government, 8)) / 3;
+	political_partiesInvestment = (2 * srcCountry->getPolitical_partiesInvestment() + ideaEffectMapper.getPolitical_partiesFromIdea(government, 8)) / 3;
+	libertyInvestment = (2 * srcCountry->getLibertyInvestment() + ideaEffectMapper.getLibertyFromIdea(government, 8)) / 3;
+	equalityInvestment = (2 * srcCountry->getEqualityInvestment() + ideaEffectMapper.getEqualityFromIdea(government, 8)) / 3;
+	orderInvestment = (2 * srcCountry->getOrderInvestment() + ideaEffectMapper.getOrderFromIdea(government, 8)) / 3;
+	literacyInvestment = (2 * srcCountry->getLiteracyInvestment() + ideaEffectMapper.getLiteracyFromIdea(government, 8)) / 3;
+	reactionaryInvestment = (2 * srcCountry->getReactionaryInvestment() + ideaEffectMapper.getReactionaryFromIdea(government, 8)) / 3;
+	liberalInvestment = (2 * srcCountry->getLiberalInvestment() + ideaEffectMapper.getLiberalFromIdea(government, 8)) / 3;
+
+}
+
+void V2Country::resolvePolitics()
+{
+	upperHouseReactionary = static_cast<int>(5 * (1 + (reactionaryInvestment - 5) * 20 / 100));
+	upperHouseLiberal = static_cast<int>(10 * (1 + (liberalInvestment - 5) * 20 / 100));
+	upperHouseConservative = 100 - (upperHouseReactionary + upperHouseLiberal);
+
+	if (srcCountry->isRevolutionary())
+	{
+		upperHouseReactionary = static_cast<int>(upperHouseReactionary / 3);
+		upperHouseLiberal = static_cast<int>(upperHouseLiberal * 3);
+		upperHouseConservative = 100 - (upperHouseReactionary + upperHouseLiberal);
+		LOG(LogLevel::Debug) << tag << " is revolutionary! ";
+	}
 
 	string idealogy;
+
+	double liberalEffect = liberalInvestment - 5;
+	double reactionaryEffect = reactionaryInvestment - 5;
+
+	if (srcCountry->isRevolutionary())
+	{
+		liberalEffect += 10;
+	}
+
 	if (liberalEffect >= 2 * reactionaryEffect)
 	{
 		idealogy = "liberal";
+		upperHouseLiberal = static_cast<int>(upperHouseLiberal * 1.1);
+		upperHouseConservative = 100 - (upperHouseReactionary + upperHouseLiberal);
 	}
 	else if (reactionaryEffect >= 2 * liberalEffect)
 	{
 		idealogy = "reactionary";
+		upperHouseReactionary = static_cast<int>(upperHouseReactionary * 1.1);
+		upperHouseConservative = 100 - (upperHouseReactionary + upperHouseLiberal);
 	}
 	else
 	{
 		idealogy = "conservative";
 	}
+
 	for (vector<V2Party*>::iterator i = parties.begin(); i != parties.end(); i++)
 	{
 		if ((*i)->isActiveOn(date("1836.1.1")) && ((*i)->ideology == idealogy))
@@ -678,14 +777,12 @@ void V2Country::initFromEU4Country(
 			break;
 		}
 	}
-	LOG(LogLevel::Debug) << tag << " ruling party is " << rulingParty;
+}
 
-	// Reforms
-	reforms		=  new V2Reforms(this, srcCountry);
-
-	// Relations
+void V2Country::generateRelations(std::shared_ptr<EU4::Country> srcCountry)
+{
 	auto srcRelations = srcCountry->getRelations();
-	for (auto srcRelation: srcRelations)
+	for (auto srcRelation : srcRelations)
 	{
 		const std::string& V2Tag = mappers::CountryMappings::getVic2Tag(srcRelation.second->getCountry());
 		if (!V2Tag.empty())
@@ -694,177 +791,103 @@ void V2Country::initFromEU4Country(
 			relations.insert(std::make_pair(V2Tag, newRelations));
 		}
 	}
+}
 
-	//// Finances
-	//money				= MONEYFACTOR * srcCountry->getTreasury();
-	//lastBankrupt	= srcCountry->getLastBankrupt();
-	//vector<EU4Loan*> srcLoans = srcCountry->getLoans();
-	//for (vector<EU4Loan*>::iterator itr = srcLoans.begin(); itr != srcLoans.end(); ++itr)
-	//{
-	//	string lender = tag;
-	//	if ( (*itr)->getLender() != "---")
-	//	{
-	//		countryMapping::iterator newTag = countryMap.find( (*itr)->getLender() );
-	//		if (newTag != countryMap.end())
-	//		{
-	//			lender = newTag->second;
-	//		}
-	//		else
-	//		{
-	//			log("Error: lender %s could not be found for %s's loan!\n", (*itr)->getLender().c_str(), tag.c_str());
-	//		}
-	//	}
-	//	double size = MONEYFACTOR * srcCountry->inflationAdjust( (*itr)->getAmount() );
-	//	addLoan(lender, size, (*itr)->getInterest() / 100.0f);
-	//}
-	//// 1 month's income in reserves, or 6 months' if national bank NI is present
-	//// note that the GC's starting reserves are very low, so it's not necessary for this number to be large
-	//bankReserves = MONEYFACTOR *srcCountry->inflationAdjust(srcCountry->getEstimatedMonthlyIncome());
-	//if (srcCountry->hasNationalIdea("national_bank"))
-	//{
-	//	bankReserves *= 6.0;
-	//}
+void V2Country::calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry)
+{
+	literacy = 0.4;
 
-	// Literacy
-	literacy = 0.1;
-	for (auto idea: srcCountry->getNationalIdeas())
-	{
-		literacy += ideaEffectMapper.getLiteracyFromIdea(idea.first, idea.second);
-	}
 	if (
-		(srcCountry->getReligion() == "Protestant") ||
-		(srcCountry->getReligion() == "Confucianism") ||
-		(srcCountry->getReligion() == "Reformed")
-	)
+		((srcCountry->getReligion().compare("protestant") == 0) ||
+		(srcCountry->getReligion().compare("anglican") == 0) ||
+			(srcCountry->getReligion().compare("confucian") == 0) ||
+			(srcCountry->getReligion().compare("reformed") == 0))
+		)
 	{
-		literacy += 0.05;
+		literacy += 0.1;
 	}
 
 	if (srcCountry->hasModifier("the_school_establishment_act"))
 	{
-		literacy += 0.04;
+		literacy += 0.05;
 	}
 	if (srcCountry->hasModifier("sunday_schools"))
 	{
-		literacy += 0.04;
+		literacy += 0.05;
 	}
 	if (srcCountry->hasModifier("the_education_act"))
 	{
-		literacy += 0.04;
+		literacy += 0.05;
 	}
 	if (srcCountry->hasModifier("monastic_education_system"))
 	{
-		literacy += 0.04;
+		literacy += 0.05;
 	}
 	if (srcCountry->hasModifier("western_embassy_mission"))
 	{
-		literacy += 0.04;
+		literacy += 0.05;
 	}
-	int numProvinces	= 0;
-	int numColleges	= 0;
+
+	// Universities grant at most 10% literacy, with either having 10 or when having them in 10% of provinces, whichever comes sooner.
+	// Colleges do half of what universities do.
+
+	int numProvinces = 0;
+	int numColleges = 0;
+	int numUniversities = 0;
 	vector<EU4::Province*> provinces = srcCountry->getProvinces();
 	numProvinces = provinces.size();
 	for (vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
 	{
-		if ( (*i)->hasBuilding("college") )
+		if ((*i)->hasBuilding("college"))
 		{
 			numColleges++;
 		}
 		if ((*i)->hasBuilding("university"))
 		{
-			literacy += 0.1;
+			numUniversities++;
 		}
 	}
-	double collegeBonus1;
+
+	double collegeBonus1 = 0;
+	double universityBonus1 = 0;
 	if (numProvinces > 0)
 	{
 		collegeBonus1 = numColleges / numProvinces;
+		universityBonus1 = numUniversities * 2 / numProvinces;
 	}
-	else
-	{
-		collegeBonus1 = 0;
-	}
-	double collegeBonus2	= numColleges * 0.01;
-	double collegeBonus	= max(collegeBonus1, collegeBonus2);
-	if (collegeBonus > 0.2)
-	{
-		collegeBonus = 0.2;
-	}
-	literacy += collegeBonus;
-	string techGroup = srcCountry->getTechGroup();
-	if (
-		(techGroup != "western") &&
-		(techGroup != "high_american") &&
-		(techGroup != "eastern") &&
-		(techGroup != "ottoman")
-	)
-	{
-		literacy *= 0.1;
-	}
+	double collegeBonus2 = numColleges * 0.005;
+	double universityBonus2 = numUniversities * 0.01;
+
+	double collegeBonus = min(max(collegeBonus1, collegeBonus2), 0.05);
+	double universityBonus = min(max(universityBonus1, universityBonus2), 0.1);
+
+	literacy += collegeBonus + universityBonus;
+
 	if (literacy > theConfiguration.getMaxLiteracy())
 	{
 		literacy = theConfiguration.getMaxLiteracy();
 	}
-	LOG(LogLevel::Debug) << "Setting literacy for " << tag << " to " << literacy;
 
-	// Tech School
-	//double landInvestment			= srcCountry->getLandInvestment();
-	//double navalInvestment			= srcCountry->getNavalInvestment();
-	//double tradeInvestment			= srcCountry->getTradeInvestment();
-	//double productionInvestment	= srcCountry->getProductionInvestment();
-	//double governmentInvestment	= srcCountry->getGovernmentInvestment();
+	// Finally apply collective national literacy modifier.
 
-	//vector<EU4::Province*> srcProvinces = srcCountry->getProvinces();
-	//for(unsigned int j = 0; j < srcProvinces.size(); j++)
-	//{
-	//	if (srcProvinces[j]->hasBuilding("weapons"))
-	//	{
-	//		landInvestment += 50;
-	//	}
-	//	if (srcProvinces[j]->hasBuilding("wharf"))
-	//	{
-	//		navalInvestment += 50;
-	//	}
-	//	if (srcProvinces[j]->hasBuilding("refinery"))
-	//	{
-	//		tradeInvestment += 50;
-	//	}
-	//	if (srcProvinces[j]->hasBuilding("textile"))
-	//	{
-	//		productionInvestment += 50;
-	//	}
-	//	if (srcProvinces[j]->hasBuilding("university"))
-	//	{
-	//		governmentInvestment += 50;
-	//	}
-	//}
+	literacy *= (1 + (literacyInvestment - 5) * 10 / 100);
 
-	double armyInvestment			= srcCountry->getArmyInvestment();
-	double navyInvestment			= srcCountry->getNavyInvestment();
-	double commerceInvestment		= srcCountry->getCommerceInvestment();
-	double industryInvestment		= srcCountry->getIndustryInvestment();
-	double cultureInvestment		= srcCountry->getCultureInvestment();
+}
 
+void V2Country::determineTechSchool(const std::unique_ptr<Vic2::TechSchools>& techSchools)
+{
 	techSchool = techSchools->findBestTechSchool(
-		armyInvestment,
-		commerceInvestment,
-		cultureInvestment,
-		industryInvestment,
-		navyInvestment
+		armyInvestment - 5,
+		commerceInvestment - 5,
+		cultureInvestment - 5,
+		industryInvestment - 5,
+		navyInvestment - 5
 	);
-	LOG(LogLevel::Debug) << tag << " has tech school " << techSchool;
+}
 
-	//// Leaders
-	//vector<EU4Leader*> oldLeaders = srcCountry->getLeaders();
-	//for (vector<EU4Leader*>::iterator itr = oldLeaders.begin(); itr != oldLeaders.end(); ++itr)
-	//{
-	//	V2Leader* leader = new V2Leader(tag, *itr, lt);
-	//	leaders.push_back(leader);
-	//	leaderMap[ (*itr)->getID() ] = leader->getID();
-	//}
-
-	// canals
-	for (const auto& prov : _srcCountry->getProvinces())
+void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
+{
+	for (const auto& prov : srcCountry->getProvinces())
 	{
 		if (prov->hasGreatProject("suez_canal"))
 		{
@@ -882,6 +905,7 @@ void V2Country::initFromEU4Country(
 			decisions.push_back("build_panama_canal");
 		}
 	}
+
 }
 
 
@@ -1297,25 +1321,20 @@ void V2Country::convertArmies(
 }
 
 
-void V2Country::getNationalValueScores(
-	int& libertyScore,
-	int& equalityScore,
-	int& orderScore,
-	const mappers::IdeaEffectMapper& ideaEffectMapper
-) {
-	orderScore = 0;
-	libertyScore = 0;
-	equalityScore = 0;
+std::tuple<double, double, double> V2Country::getNationalValueScores() 
+{
+	double orderScore = 0.0;
+	double libertyScore = 0.0;
+	double equalityScore = 0.0;
 
 	if (srcCountry)
 	{
-		for (auto idea : srcCountry->getNationalIdeas())
-		{
-			orderScore += ideaEffectMapper.getOrderInfluenceFromIdea(idea.first, idea.second);
-			libertyScore += ideaEffectMapper.getLibertyInfluenceFromIdea(idea.first, idea.second);
-			equalityScore += ideaEffectMapper.getEqualityInfluenceFromIdea(idea.first, idea.second);
-		}
+		orderScore += srcCountry->getOrderInvestment() - 5.0;
+		libertyScore += srcCountry->getLibertyInvestment() - 5.0;
+		equalityScore += srcCountry->getEqualityInvestment() - 5.0;
 	}
+
+	return make_tuple(libertyScore, equalityScore, orderScore);
 }
 
 
@@ -1441,7 +1460,7 @@ bool V2Country::addFactory(V2Factory* factory)
 		}
 
 		double candidateScore	 = (*itr)->getSuppliedInputs(factory) * 100;
-		candidateScore				-= (*itr)->getFactoryCount() * 10;
+		candidateScore				-= static_cast<double>((*itr)->getFactoryCount()) * 10;
 		candidateScore				+= (*itr)->getManuRatio();
 		candidates.push_back(pair<double, V2State*>(candidateScore, (*itr) ));
 	}
@@ -1474,7 +1493,7 @@ void V2Country::addRailroadtoCapitalState()
 }
 
 
-void V2Country::convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions)
+void V2Country::convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper)
 {
 	enum civConversion { older, newer };
 	switch (techGroupAlgorithm)
@@ -1484,7 +1503,7 @@ void V2Country::convertUncivReforms(int techGroupAlgorithm, double topTech, int 
 	break;
 
 	case(newer):
-		newCivConversionMethod(topTech, topInstitutions);
+		newCivConversionMethod(topTech, topInstitutions, techGroupsMapper);
 	break;
 	}
 }
@@ -1580,7 +1599,7 @@ void V2Country::oldCivConversionMethod() // civilisation level conversion method
 	}
 }
 
-void V2Country::newCivConversionMethod(double topTech, int topInsitutions) // civilisation level conversion method for games after 1.18
+void V2Country::newCivConversionMethod(double topTech, int topInsitutions, const mappers::TechGroupsMapper& techGroupsMapper) // civilisation level conversion method for games after 1.18
 {
 	{
 		if (srcCountry != nullptr) {
@@ -1592,11 +1611,20 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions) // ci
 			// at 31 techs behind completely unciv
 			// each institution behind is equivalent to 2 techs behind
 
-			int civLevel = static_cast<int>((totalTechs + 31 - topTech) * 4);
-			civLevel = civLevel + (srcCountry->numEmbracedInstitutions() - topInsitutions) * 8;
+			double civLevel = (totalTechs + 31 - topTech) * 4;
+			civLevel = civLevel + (static_cast<double>(srcCountry->numEmbracedInstitutions()) - topInsitutions) * 8;
 			if (civLevel > 100) civLevel = 100;
-
 			if (civLevel < 0) civLevel = 0;
+
+			string techGroup = srcCountry->getTechGroup();
+
+			if (theConfiguration.getEuroCentrism() == Configuration::EUROCENTRISM::EuroCentric)
+			{
+				literacy *= (1 + (static_cast<double>(techGroupsMapper.getLiteracyFromTechGroup(techGroup)) - 5.0) * 10.0 / 100.0);
+				civLevel = civLevel * (static_cast<double>(techGroupsMapper.getWesternizationFromTechGroup(techGroup)) / 10.0);
+			}
+
+			literacy = literacy * theConfiguration.getMaxLiteracy() * (pow(10, (civLevel / 100) * 0.9 + 0.1) / 10);
 
 			if (civLevel == 100)
 			{
@@ -1607,14 +1635,12 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions) // ci
 				civilized = false;
 			}
 
-
 			if (((theConfiguration.getVic2Gametype() == "AHD") || (theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM")) && (civilized == false))
 			{
 				totalTechs = totalTechs - srcCountry->getDipTech();
 				double militaryDev = srcCountry->getMilTech() / totalTechs;
 				double socioEconDev = srcCountry->getAdmTech() / totalTechs;
-				LOG(LogLevel::Debug) << "Setting unciv reforms for " << tag << " who has " << totalTechs + srcCountry->getDipTech() << " technologies and " << srcCountry->numEmbracedInstitutions() << " institutions. westernization at " << civLevel << "%.";
-				uncivReforms = new V2UncivReforms(civLevel, militaryDev, socioEconDev, this);
+				uncivReforms = new V2UncivReforms((int)(civLevel + 0.5), militaryDev, socioEconDev, this);
 				government = "absolute_monarchy";
 			}
 		}
@@ -1623,7 +1649,6 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions) // ci
 
 void V2Country::convertLandlessReforms(V2Country* capOwner)
 {
-	LOG(LogLevel::Debug) << "Resetting civ level or unciv reforms for landless country: " << tag << " from the country which owns its capital, which is " << capOwner->getTag() << "." ;
 	if (capOwner->isCivilized())
 	{
 		civilized = true;
@@ -1691,8 +1716,6 @@ void V2Country::setupPops(
 
 void V2Country::setArmyTech(double normalizedScore)
 {
-	LOG(LogLevel::Debug) << tag << " has army tech of " << normalizedScore;
-
 	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
@@ -1733,8 +1756,6 @@ void V2Country::setArmyTech(double normalizedScore)
 
 void V2Country::setNavyTech(double normalizedScore)
 {
-	LOG(LogLevel::Debug) << tag << " has navy tech of " << normalizedScore;
-
 	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
@@ -1778,8 +1799,6 @@ void V2Country::setNavyTech(double normalizedScore)
 
 void V2Country::setCommerceTech(double normalizedScore)
 {
-	LOG(LogLevel::Debug) << tag << " has commerce tech of " << normalizedScore;
-
 	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
@@ -1833,8 +1852,6 @@ void V2Country::setCommerceTech(double normalizedScore)
 
 void V2Country::setIndustryTech(double normalizedScore)
 {
-	LOG(LogLevel::Debug) << tag << " has industry tech of " << normalizedScore;
-
 	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 
@@ -1889,8 +1906,6 @@ void V2Country::setIndustryTech(double normalizedScore)
 
 void V2Country::setCultureTech(double normalizedScore)
 {
-	LOG(LogLevel::Debug) << tag << " has culture tech of " << normalizedScore;
-
 	if ((theConfiguration.getVic2Gametype() != "vanilla") && !civilized)
 		return;
 

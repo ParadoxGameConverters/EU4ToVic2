@@ -1,0 +1,659 @@
+# Each reform can affect various issues on a scale of 0 to 10 where:
+# 0 - Vehemently oppose or prevents (Over my dead body)
+# 5 - Couldn't care less / does not affect an issue
+# 10 - Strongly boosts / promotes
+# 
+# If an issue is not listed, it counts as being at level 5 (ignored)
+# 
+# Issues recognised: 
+# Political: slavery, upper_house_composition, vote_franchise, voting_system, public_meetings, press_rights, trade_unions, political_parties
+# National values: liberty, equality, order, literacy
+# Technologies: army, commerce, culture, industry, navy
+# Upper house membership: reactionary, liberal
+# Change government: enforce
+#
+# Note: slavery is cunterintuitive - 10 means slavery abolished
+#
+# Special:
+# enforce is the government type this reform forces. For conflicting cases
+# e.g. american_republic (democracy) with strengthen_executive_powers_reform 
+# (presidential_dictatorship) the latter will always override the former.
+# Legitimate targets are:
+# proletarian_dictatorship, presidential_dictatorship, bourgeois_dictatorship,
+# fascist_dictatorship, absolute_monarchy, prussian_constitutionalism,
+# hms_government, democracy, theocracy
+
+# --------------------------- Vanilla --------------------------------------
+
+# Monarchy 1
+feudalism_reform = { }
+autocracy_reform = { }
+plutocratic_reform = { }
+indian_sultanate_reform = { }
+nayankara_reform = { }
+misl_confederacy_reform = { }
+rajput_kingdom = { }
+grand_duchy_reform = { }
+daimyo = { }
+indep_daimyo = { }
+elective_monarchy = { }
+iqta = { }
+ottoman_government = { }
+prussian_monarchy = { }
+principality = { }
+tsardom = { }
+mamluk_government = { }
+feudal_theocracy = { }
+celestial_empire = { }
+shogunate = { }
+english_monarchy = { }
+mandala_reform = { }
+revolutionary_empire_reform = { }
+
+# Monarchy 2
+enforce_privileges_reform = { }
+quash_noble_power_reform = { }
+enforce_trader_privileges_reform = { }
+bengali_reform = { }
+sufi_syncretism_reform = { }
+poligar_reform = { }
+khalsa_reform = { }
+deccani_society_reform = { }
+mughal_government = { }
+
+# Monarchy 3
+centralize_reform = { }
+decentralize_reform = { }
+sidhi_recruitment = { }
+mansabdari_reform = { }
+council_of_the_indies_reform = { }
+
+# Monarchy 4
+clergy_in_administration_reform = { }
+of_noble_bearing_reform = { }
+meritocratic_focus_reform = { }
+dakhni_culture_reform = { }
+zabt_reform = { }
+permanent_marathas_council_reform = { }
+governmental_purbias_register_reform = { }
+
+# Monarchy 5
+parliamentary_reform = { political_parties = 7 public_meetings = 7 }
+royal_decree_reform = { }
+aristocratic_court_reform = { }
+general_estates_reform = { }
+states_general_reform = { }
+
+# Monarchy 6
+letat_cest_moi_reform = { }
+regional_representation_reform = { }
+
+# Monarchy 7
+political_absolutism_reform = { }
+legislative_houses_reform = { }
+
+# Monarchy basic
+monarchy_mechanic = { }
+
+# Republic 1
+oligarchy_reform = { }
+merchants_reform = { }
+venice_merchants_reform = { }
+pirate_republic_reform = { }
+noble_elite_reform = { }
+free_city = { }
+trading_city = { }
+ambrosian_republic = { }
+veche_republic = { }
+american_republic = { }
+federal_republic = { }
+colonial_government = { }
+dutch_republic = { }
+peasants_republic = { enforce = proletarian_dictatorship order = 3 liberty = 7 equality = 10 }
+revolutionary_republic_reform = { }
+presidential_despot_reform = { }
+cossacks_reform = { }
+
+# Republic 2
+republican_authoritarianism_reform = { }
+nepotism_reform = { }
+republicanism_reform = { }
+council_of_captains_reform = { }
+articles_of_agreement_reform = { }
+smugglers_haven_reform = { }
+
+# Republic 3
+frequent_elections_reform = { }
+consolidation_of_power_reform = { }
+permanent_marathas_council_reform = { }
+governmental_purbias_register_reform = { }
+lottery_reform = { }
+council_of_the_indies_reform = { }
+
+# Republic 4
+provincial_governments_reform = { }
+administrative_divisions_reform = { }
+union_of_states_reform = { }
+
+# Republic 5
+parliamentary_reform = { }
+presidential_reform = { }
+pirate_king_reform = { }
+war_against_the_world_doctrine_reform = { }
+black_market_consortium_reform = { }
+
+# Republic 6
+broaden_executive_powers_reform = { }
+devolution_of_powers_reform = { }
+
+# Republic 7
+political_principle_reform = { }
+moral_principle_reform = { }
+
+# Republic 8
+landholders_reform = { }
+citizenry_reform = { }
+
+# Republic 9
+appointment_by_committee_reform = { }
+bureaucratic_aparatus_reform = { }
+universal_suffrage_reform = { }
+
+# Republic 10
+strengthen_executive_powers_reform = { enforce = presidential_dictatorship order = 8 liberty = 4 }
+reinforce_republican_values_reform = { }
+
+# Republic basic
+republic_mechanic = { }
+
+# Tribal 1
+steppe_horde = { }
+tribal_federation = { }
+tribal_despotism = { }
+tribal_kingdom = { }
+siberian_tribe = { }
+gond_kingdom = { }
+great_mongol_state_reform = { }
+
+# Tribal 2
+martial_society_reform = { }
+civil_society_reform = { }
+
+# Tribal 3
+religious_societies_reform = { }
+lip_service_reform = { }
+
+# Tribal 4
+centralize_tribal_power_reform = { }
+retain_tribal_hierarchy_reform = { }
+
+# Tribal 5
+tribe_mechanic = { }
+
+# Native basic
+native_basic_reform = { }
+
+# Theocracy 1
+leading_clergy_reform = { literacy = 6 }
+monastic_order_reform = { }
+papacy_reform = { }
+
+# Theocracy 2
+internal_mission_reform = { literacy = 7 }
+external_mission_reform = { }
+
+# Theocracy 3
+safeguard_holy_sites_reform = { }
+combat_heresy_reform = { }
+expel_heathens_reform = { }
+
+# Theocracy 4
+subservient_administrators_reform = { }
+religious_administrators_reform = { literacy = 9}
+permanent_marathas_council_reform = { }
+governmental_purbias_register_reform = { }
+
+# Theocracy 5
+maintain_religious_head_reform = { }
+battle_pope_reform = { }
+
+# Theocracy basic
+theocracy_mechanic = { }
+
+# ------------------------- ME / GE ----------------------------------------------------------------
+
+# Monarchy 1
+crusader_kingdom = { }
+khaganate = { }
+portuguese_reform = { }
+athenian_monarchy = { }
+german_kaiserreich = { }
+caliphate_reform_sunni = { }
+west_slavic_monarchy = { }
+french_feudalism = { }
+ancien_regime_reform = { }
+french_absolutism = { }
+lithuania_warlord_duke = { }
+theocratic_autocracy = { }
+beylik = { }
+kingdom_of_portugal = { }
+kingdom_of_portugal_and_azures = { }
+portuguese_empire_reform = { }
+crown_of_aragon = { }
+kingdom_of_castille_and_leon = { }
+crown_of_castille = { }
+hispanic_kingdom = { }
+enlightened_despotism = { }
+margrave_reform = { }
+consulate_of_the_sea = { }
+crown_of_saint_wenceslaus = { }
+crown_of_saint_wenceslaus_2 = { }
+office_of_lord_regent_reform = { }
+arch_king_reform = { }
+elective_monarchy_reform = { }
+arch_monarchy_reform = { }
+arch_duchy_reform = { }
+habsburg_monarchy_reform = { }
+austrian_empire_reform = { }
+polish_constitutionalism_reform = { }
+granadan_iqta_reform = { }
+hessian_militarized_monarchy_reform = { }
+hessian_modern_militarized_monarchy_reform = { }
+edo_empire_reform = { }
+gorkha_kingdom_reform = { }
+maharajadhiraja_reform = { }
+empire_of_japan_reform = { }
+kingdom_of_jerusalem_reform = { }
+despotate_of_caucasia_reform = { }
+sharifate_reform = { }
+rum_eagle_reform = { }
+
+# Monarchy 2
+sharia_reform = { }
+papal_embassy_reform = { }
+state_church_reform = { }
+metropolian_bishop_reform = { }
+elevated_landed_gentry_reform = { }
+diplomatic_positions_reform = { }
+lithuania_law_reform = { }
+guild_dominance_reform = { }
+growth_signoria_reform = { }
+akritai_privileges_reform = { }
+portuguese_cortes_reform = { }
+crusader_orders_reform = { }
+old_world_privileges_reform = { }
+trade_princes_reform = { }
+dhimmi_nobles_reform = { }
+council_of_sheikhs_reform = { }
+muscovite_manorialism_reform = { }
+order_of_the_swan_reform = { }
+blood_tax_reform = { }
+noblesse_d_epee_reform = { }
+noble_court_attendance_reform = { }
+house_of_knights_reform = { }
+constitutio_valdemariana_reform = { }
+riksradet_norway_reform = { }
+albertine_line_reform = { }
+magnate_law_reform = { }
+imperial_knights_reform = { }
+mamluk_privileges_reform = { }
+szlachta_authority_reform = { }
+every_man_a_noble_reform = { }
+curia_regis_reform = { }
+taha_divisions_reform = { }
+unite_the_royal_houses_reform = { }
+support_ghibbelline_reform = { }
+support_guelphs_reform = { }
+franconian_salic_law_reform = { }
+arch_marshal_reform = { }
+chhetri_clans_reform = { }
+support_samurai_reform = { }
+turkic_qasilbash_heirs_reform = { }
+sayyid_privileges_reform = { }
+timariot_domains_reform = { }
+qadi_authority_reform = { }
+
+# Monarchy 3
+regional_forts_reform = { }
+theocratic_bureacrats_reform = { }
+ulema_guidance_reform = { }
+diocletian_reforms_reform = { }
+kyoho_reforms_reform = { }
+casa_de_contraction_reform = { }
+casa_de_india_reform = { }
+oprichnina_reform = { }
+constitutio_joachimica_reform = { }
+millet_reform = { }
+kaza_system_reform = { }
+great_law_of_peace_reform = { }
+independent_vassals_reform = { }
+generalites_reform = { }
+abolish_local_parliaments_reform = { }
+the_red_book_reform = { }
+commoner_officials_reform = { }
+imperial_inquisition_reform = { }
+magnate_govenors_reform = { }
+revive_the_hisbah_reform = { }
+re_enforce_magdeburg_rights_reform = { }
+revoke_magnate_estates_reform = { }
+integrate_tatars_reform = { }
+abolish_bastard_feudalism_reform = { }
+taifa_governors_reform = { }
+union_of_italian_states_reform = { }
+imperial_circles_administration_reform = { }
+hessian_military_complex_reform = { }
+office_of_vitztum_reform = { }
+oberhofgericht_reform = { }
+newar_and_gorkhali_reform = { }
+metsuke_system_reform = { }
+imperial_examination_reform = { }
+tajik_administration_reform = { }
+dual_city_administration_reform = { }
+
+# Monarchy 4
+feudal_levies_reform = { }
+national_guard_reform = { }
+mercenary_corps_reform = { }
+professional_army_reform = { }
+empowered_royal_guard_reform = { }
+empowered_mercenary_corps_reform = { }
+empowered_heavy_knights_reform = { }
+italian_mercenaries_reform = { }
+imperial_circles_reform = { }
+expanded_devshirme_reform = { }
+tatar_mercenaries_reform = { }
+south_east_asian_elephants_reform = { }
+portugese_marines_reform = { }
+compagnies_dordonnance_reform = { }
+abolish_the_patronage_system_reform = { }
+royal_training_reform = { }
+abolish_manrent_reform = { }
+permanent_marathas_council_reform = { }
+governmental_purbias_register_reform = { }
+foreign_formation_regiments_reform = { }
+general_war_commissariat_reform = { }
+gustavan_artillery_reform = { }
+the_black_guard_reform = { }
+reorganize_the_imperial_army = { }
+arabian_horses_reform = { }
+pospolite_ruszenie_reform = { }
+polish_national_guard_reform = { }
+henry_reforms_reform = { }
+berber_cavalry_reform = { }
+mongol_ties_reform = { }
+subotai_lessons_reform = { }
+jinetes_reform = { }
+miquelet_militia_reform = { }
+royal_ordinances_reform = { }
+hessian_elite_jaegers_reform = { }
+warrior_kings_reform = { }
+snaphaner_reform = { }
+redcoats_reform = { }
+recruit_ronin_reform = { }
+ashigaru_generals_reform = { }
+wei_suo_reform = { }
+reforms_of_abbas_reform = { }
+sherifan_levies_reform = { }
+
+# Monarchy 5
+integrate_moneyloaners_reform = { }
+advanced_bookkeeping_reform = { }
+colonial_govenors_reform = { }
+sulu_administration_reform = { }
+academy_of_science_reform = { }
+koprulu_dynasty_reform = { }
+fredrickan_reforms_reform = { }
+parisian_court_reform = { }
+corps_diplomatique_reform = { }
+table_of_ranks_reform = { }
+the_judicature_ordinance_reform = { }
+christian_four_merchantile_reform = { }
+declario_ferdinandei_reform = { }
+szlachta_recruits_reform = { }
+voivode_captains_reform = { }
+boyar_scions_reform = { }
+turkicized_elite_reform = { }
+supreme_govenor_reform = { }
+cultural_investment_reform = { }
+empowered_of_noble_bearing_reform = { }
+empowered_clergy_in_administration_reform = { }
+adoption_of_christianity_reform = { }
+found_the_rothschilds_reform = { }
+ottonian_handfeste_reform = { }
+reestablish_the_kuge_reform = { }
+foreign_ghulams_reform = { }
+eunich_administration_reform = { }
+civil_servant_reform = { }
+highborn_ministers_reform = { }
+
+# Monarchy 6
+haudenosaunee_reform = { }
+parliamentary_order_reform = { }
+king_and_duke_reform = { }
+diverse_estates_reform = { }
+foreign_recruitment_reform = { }
+reform_the_sejm_reform = { }
+abolish_the_sejm_reform = { }
+weak_burghers_reform = { }
+society_of_agriculture_reform = { }
+bourgeoisie_aristocracy_reform = { }
+noble_electors_reform = { }
+royal_electors_reform = { }
+parliamental_electors_reform = { }
+papal_electors_reform = { }
+union_of_crowns_reform = { }
+declaration_of_breda_reform = { }
+royal_society_reform = { }
+legacy_of_constitutionalism_reform = { }
+freie_landtage_reform = { }
+empowered_aristocratic_court_reform = { }
+empowered_german_aristocratic_court_reform = { }
+empowered_royal_decree_reform = { }
+empowered_general_estates_reform = { }
+empowered_divine_blood_reform = { }
+empowered_monastic_militarism_reform = { }
+empowered_church_councils_reform = { }
+ghulam_governates_reform = { }
+grand_council_reform = { }
+grand_secretariat_reform = { }
+sultanate_of_women_reform = { }
+
+# Monarchy 7
+strenghten_industry_reform = { }
+mercantilism_reform = { }
+noble_taxes_reform = { }
+conseil_souverain_reform = { }
+continental_system_reform = { }
+empowered_aristocratic_estates_reform = { }
+empowered_free_trade_reform = { }
+empowered_monastic_centres_reform = { }
+empowered_enlarge_royal_estate_reform = { }
+empowered_expand_corvee_reform = { }
+empowered_royal_trading_company_reform = { }
+armenian_silk_traders_reform = { }
+caravanserai_reform = { }
+
+# Monarchy 8
+freedom_of_religion_reform = { }
+constitutional_equality_reform = { }
+nueva_planta_decrees_reform = { }
+toleration_of_all_faiths_edict_reform = { }
+abolish_the_haandfaestning_reform = { }
+revoke_reichsfreiheit_reform = { }
+constitution_third_may_reform = { }
+bill_of_rights_reform = { }
+droit_divine_reform = { }
+principle_of_fiqh_reform = { }
+absolutist_administration_reform = { }
+permanent_regency_reform = { }
+tanzimat_reforms_reform = { }
+
+# Monarchy 9
+abolish_clergy_privileges_reform = { }
+peters_council_reform = { }
+nizam_i_jedid_reform = { }
+commonwealth_of_nations_reform = { }
+
+# Republic 1
+caliphate_reform_sunni = { }
+florentine_republic = { }
+american_government = { }
+genoan_republic_reform = { }
+old_swiss_confederation_reform = { }
+russian_republic_republic = { }
+caucasian_republic = { }
+
+# Republic 2
+sharia_reform = { }
+demedici_dynasty_reform = { }
+support_borghese_reform = { }
+rule_by_consent_reform = { }
+moedernegotie_reform = { }
+mixed_republic_reform = { }
+independence_reform = { }
+sovereignity_reform = { }
+legacy_of_st_ambrose_reform = { }
+hanseatic_ties_reform = { }
+
+# Republic 3
+factional_elections_reform = { }
+vroedschappen_reform = { }
+peasant_council_reform = { }
+captain_and_defender_reform = { }
+princes_of_novogorod_reform = { }
+
+# Republic 4
+turkish_iqta_reform = { }
+tatar_mercenaries_reform = { }
+south_east_asian_elephants_reform = { }
+reforms_of_william_3_reform = { }
+reform_the_condotierri_reform = { }
+turkoman_gunners_reform = { }
+mongol_ties_reform = { }
+subotai_lessons_reform = { }
+peasant_militia_reform = { }
+russian_republic_army_reform = { }
+
+# Republic 5
+provincial_governments_reform = { }
+administrative_divisions_reform = { }
+union_of_states_reform = { }
+advanced_bookkeeping_reform = { }
+communal_territories_reform = { }
+united_indian_companies_reform = { }
+confederation_of_cantons_reform = { }
+clergical_administration_reform = { }
+volost_colonies_reform = { }
+
+# Republic 6
+stadholder_reform = { }
+andrea_doria_constitution_reform = { }
+ware_vrijheid_reform = { }
+the_consigliere_reform = { }
+council_of_petitions_reform = { }
+hansa_representatives_reform = { }
+council_of_lords_reform = { }
+
+# Republic 7
+confederation_of_states_reform = { }
+hansa_domination_reform = { }
+empowered_aristocratic_courts_reform = { }
+empowered_sovereign_trade_companies_reform = { }
+empowered_consolidation_of_power_reform = { }
+
+# Republic 8
+tolerant_principle_reform = { }
+independent_principle_reform = { }
+empowered_principle_of_heritage_reform = { }
+empowered_principle_of_profit_reform = { }
+empowered_principle_of_power_reform = { }
+
+# Republic 9
+regents_reform = { }
+peasantry_reform = { }
+
+# Republic 10
+raadspensionaris_reform = { }
+hansa_universities_reform = { }
+
+# Tribal 1
+eghaevbo_administration_reform = { }
+
+# Tribal 2
+slave_raids_reform = { }
+herders_of_the_steppe = { }
+legacy_of_pax_mongolia = { }
+three_jurchen_tribes_reform = { }
+
+# Tribal 3
+sheikhdom_reform = { }
+adoption_of_christianity_reform = { }
+great_code_of_nomads = { }
+world_under_tengri = { }
+maintain_charade_reform = { }
+tolerance_of_the_church_reform = { }
+children_of_osanobua_reform = { }
+
+# Tribal 4
+gunpowder_weapons_reform = { }
+gunpowder_weapons_african_reform = { }
+traditionalist_reform = { }
+traditionalist_african_reform = { }
+tatar_raiders_reform = { }
+african_jungle_warrior_reform = { }
+elephant_riders_reform = { }
+warrior_kings_reform = { }
+
+# Tribal 5
+iranian_bureacracy_reform = { }
+reintroduce_the_dirham = { }
+birth_of_the_manchu_reform = { }
+bashqaq_administration_reform = { }
+
+# Theocracy 1
+ajuraan_theocracy_reform = { }
+dynastic_theocracy_reform = { }
+
+# Theocracy 2
+colonial_mission_reform = { }
+
+# Theocracy 3
+the_holy_office_reform = { }
+teuton_priest = { }
+fighting_for_israel_reform = { }
+
+# Theocracy 4
+holy_orthodoxy_reform = { }
+inquisition_reform = { }
+religious_pragmatism_reform = { }
+papal_curia_reform = { }
+ulema_guidance_reform = { }
+
+# Theocracy 5
+
+# Theocracy 6
+holy_war_reform = { }
+militarized_monasteries_reform = { }
+brothers_in_arms_reform = { }
+the_bishops_army_reform = { }
+teuton_army = { }
+mamluk_soldiers_reform = { }
+tradition_of_masada_and_bar_kochba_reform = { }
+
+# Theocracy 7
+unrestricted_diplomacy_reform = { }
+holy_claims_reform = { }
+network_of_faithful_allies_reform = { }
+the_bishops_diplomacy_reform = { }
+teuton_navy = { }
+yeshiva_scholarship_reform = { }
+
+# Theocracy 8
+secular_law_reform = { }
+theocratic_law_reform = { }
+roman_law_reform = { }
+papal_law_reform = { }
+jizja_tax_reform = { }
+harmonious_law_reform = { }
+pagan_law_reform = { }
+the_bishops_law_reform = { }
