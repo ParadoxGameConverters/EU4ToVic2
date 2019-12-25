@@ -41,8 +41,10 @@ void ConvertEU4ToVic2(const string& EU4SaveFileName)
 	deleteExistingOutputFolder();
 
 	std::ifstream ideaEffectsFile("idea_effects.txt");
-	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectsFile);
+	std::ifstream reformEffectsFile("reform_effects.txt");
+	mappers::IdeaEffectMapper ideaEffectMapper(ideaEffectsFile, reformEffectsFile);
 	ideaEffectsFile.close();
+	reformEffectsFile.close();
 
 	std::ifstream techGroupsFile("techGroups.txt");
 	mappers::TechGroupsMapper techGroupsMapper(techGroupsFile);

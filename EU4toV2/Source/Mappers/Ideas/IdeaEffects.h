@@ -39,6 +39,8 @@ class IdeaEffects: commonItems::parser
 	public:
 		IdeaEffects(std::istream& theStream);
 
+		std::string getEnforce() const { return enforce; }
+
 		int getArmy() const { return army; }
 		int getNavy() const { return navy; }
 		int getCommerce() const { return commerce; }
@@ -64,6 +66,8 @@ class IdeaEffects: commonItems::parser
 
 	private:
 		// Values range 0-10. 5 is default.
+		std::string enforce;
+
 		int slavery = 5;
 		int upper_house_composition = 5;
 		int vote_franchise = 5;

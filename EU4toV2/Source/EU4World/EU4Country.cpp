@@ -506,29 +506,28 @@ void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEff
 	{
 		if (reformStr.find("_mechanic") == string::npos) //ignore the basic legacy mechanics, focus on actual reforms
 		{
-			ReformProperties reform = ReformMapper::matchReform(reformStr);
-			armyInvestment += reform.getArmy();
-			commerceInvestment += reform.getCommerce();
-			cultureInvestment += reform.getCulture();
-			industryInvestment += reform.getIndustry();
-			navyInvestment += reform.getNavy();
+			armyInvestment += ideaEffectMapper.getArmyFromIdea(reformStr, 7);
+			commerceInvestment += ideaEffectMapper.getCommerceFromIdea(reformStr, 7);
+			cultureInvestment += ideaEffectMapper.getCultureFromIdea(reformStr, 7);
+			industryInvestment += ideaEffectMapper.getIndustryFromIdea(reformStr, 7);
+			navyInvestment += ideaEffectMapper.getNavyFromIdea(reformStr, 7);
 
-			slaveryInvestment += reform.getSlavery();
-			upper_house_compositionInvestment += reform.getUpper_house_composition();
-			vote_franchiseInvestment += reform.getVote_franchise();
-			voting_systemInvestment += reform.getVoting_system();
-			public_meetingsInvestment += reform.getPublic_meetings();
-			press_rightsInvestment += reform.getPress_rights();
-			trade_unionsInvestment += reform.getTrade_unions();
-			political_partiesInvestment += reform.getPolitical_parties();
+			slaveryInvestment += ideaEffectMapper.getSlaveryFromIdea(reformStr, 7);
+			upper_house_compositionInvestment += ideaEffectMapper.getUpper_house_compositionFromIdea(reformStr, 7);
+			vote_franchiseInvestment += ideaEffectMapper.getVote_franchiseFromIdea(reformStr, 7);
+			voting_systemInvestment += ideaEffectMapper.getVoting_systemFromIdea(reformStr, 7);
+			public_meetingsInvestment += ideaEffectMapper.getPublic_meetingsFromIdea(reformStr, 7);
+			press_rightsInvestment += ideaEffectMapper.getPress_rightsFromIdea(reformStr, 7);
+			trade_unionsInvestment += ideaEffectMapper.getTrade_unionsFromIdea(reformStr, 7);
+			political_partiesInvestment += ideaEffectMapper.getPolitical_partiesFromIdea(reformStr, 7);
 
-			libertyInvestment += reform.getLiberty();
-			equalityInvestment += reform.getEquality();
-			orderInvestment += reform.getOrder();
-			literacyInvestment += reform.getLiteracy();
+			libertyInvestment += ideaEffectMapper.getLibertyFromIdea(reformStr, 7);
+			equalityInvestment += ideaEffectMapper.getEqualityFromIdea(reformStr, 7);
+			orderInvestment += ideaEffectMapper.getOrderFromIdea(reformStr, 7);
+			literacyInvestment += ideaEffectMapper.getLiteracyFromIdea(reformStr, 7);
 
-			reactionaryInvestment += reform.getReactionary();
-			liberalInvestment += reform.getLiberal();
+			reactionaryInvestment += ideaEffectMapper.getReactionaryFromIdea(reformStr, 7);
+			liberalInvestment += ideaEffectMapper.getLiberalFromIdea(reformStr, 7);
 		}
 		else
 		{

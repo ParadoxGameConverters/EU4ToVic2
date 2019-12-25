@@ -176,7 +176,7 @@ class V2Country
 		void generateRelations(std::shared_ptr<EU4::Country> srcCountry);
 		void resolvePolitics();
 		void finalizeInvestments(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper);
-		void determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry);
+		void determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcCountry, const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions);
 		void setReligion(std::shared_ptr<EU4::Country> srcCountry, const mappers::ReligionMapper& religionMapper);
 

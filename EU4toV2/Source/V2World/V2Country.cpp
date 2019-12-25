@@ -575,7 +575,7 @@ void V2Country::initFromEU4Country(
 	setPrimaryAndAcceptedCultures(_srcCountry, cultureMapper, eu4Regions);
 
 	// Government
-	determineGovernmentType(_srcCountry);
+	determineGovernmentType(_srcCountry, ideaEffectMapper);
 
 	// Apply government effects to reforms
 	finalizeInvestments(_srcCountry, ideaEffectMapper);
@@ -678,17 +678,17 @@ void V2Country::setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcC
 
 }
 
-void V2Country::determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry)
+void V2Country::determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	government = governmentMapper::matchGovernment(srcCountry->getGovernment());
 
 	for (auto reformStr : srcCountry->getReforms())
 	{
-		ReformProperties reform = ReformMapper::matchReform(reformStr);
-		if (!reform.getEnforce().empty())
+		std::string enforce = ideaEffectMapper.getEnforceFromIdea(reformStr, 7);
+		if (!enforce.empty())
 		{
-			LOG(LogLevel::Debug) << "Forcing government " << reform.getEnforce() << " on " << tag;
-			government = reform.getEnforce();
+			LOG(LogLevel::Debug) << "Forcing government " << enforce << " on " << tag;
+			government = enforce;
 		}
 	}
 	

@@ -40,7 +40,9 @@ namespace mappers
 class IdeaEffectMapper: commonItems::parser
 {
 	public:
-		IdeaEffectMapper(std::istream& theStream);
+		IdeaEffectMapper(std::istream& theStream, std::istream& theSecondStream);
+
+		std::string getEnforceFromIdea(const std::string& ideaName, int ideaLevel) const;
 
 		int getArmyFromIdea(const std::string& ideaName, int ideaLevel) const;
 		int getCommerceFromIdea(const std::string& ideaName, int ideaLevel) const;
@@ -65,7 +67,11 @@ class IdeaEffectMapper: commonItems::parser
 		int getReactionaryFromIdea(const std::string& ideaName, int ideaLevel) const;
 		int getLiberalFromIdea(const std::string& ideaName, int ideaLevel) const;
 
+		void registerProperties(std::istream& theStream);
+
 	private:
+		std::map<std::string, std::string> enforceIdeas;
+
 		std::map<std::string, int> armyIdeas;
 		std::map<std::string, int> commerceIdeas;
 		std::map<std::string, int> cultureIdeas;

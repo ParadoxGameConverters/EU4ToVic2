@@ -224,7 +224,6 @@
     <ClCompile Include="Source\EU4World\Religions\Religions.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
     <ClCompile Include="Source\FlagUtils.cpp" />
-    <ClCompile Include="Source\Helpers\ReformProperties.cpp" />
     <ClCompile Include="Source\Helpers\TechValues.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\AdjacencyMapper.cpp" />
@@ -245,7 +244,6 @@
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
-    <ClCompile Include="Source\Mappers\ReformMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapping.cpp" />
     <ClCompile Include="Source\targa.cpp" />
@@ -334,7 +332,6 @@
     <ClInclude Include="Source\EU4World\Religions\Religions.h" />
     <ClInclude Include="Source\EU4World\World.h" />
     <ClInclude Include="Source\FlagUtils.h" />
-    <ClInclude Include="Source\Helpers\ReformProperties.h" />
     <ClInclude Include="Source\Helpers\TechValues.h" />
     <ClInclude Include="Source\Mappers\AdjacencyMapper.h" />
     <ClInclude Include="Source\Mappers\CK2TitleMapper.h" />
@@ -354,7 +351,6 @@
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />
-    <ClInclude Include="Source\Mappers\ReformMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapping.h" />
     <ClInclude Include="Source\targa.h" />

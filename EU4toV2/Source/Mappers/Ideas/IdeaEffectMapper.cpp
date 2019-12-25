@@ -27,10 +27,22 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream)
+mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream, std::istream& theSecondStream)
+{
+	LOG(LogLevel::Info) << "getting idea effects";
+	registerProperties(theStream);
+	parseStream(theStream);
+
+	registerProperties(theSecondStream);
+	parseStream(theSecondStream);
+}
+
+void mappers::IdeaEffectMapper::registerProperties(std::istream& theStream)
 {
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& idea, std::istream& theStream) {
 		IdeaEffects ideaEffects(theStream);
+
+		enforceIdeas[idea] = ideaEffects.getEnforce();
 
 		armyIdeas[idea] = ideaEffects.getArmy();
 		navyIdeas[idea] = ideaEffects.getNavy();
@@ -56,10 +68,21 @@ mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream)
 		political_partiesIdeas[idea] = ideaEffects.getPolitical_parties();
 
 
-	});
+		});
 
-	LOG(LogLevel::Info) << "getting idea effects";
-	parseStream(theStream);
+}
+
+std::string mappers::IdeaEffectMapper::getEnforceFromIdea(const std::string& ideaName, int ideaLevel) const
+{
+	auto idea = enforceIdeas.find(ideaName);
+	if ((idea != enforceIdeas.end()) && (ideaLevel >= 7))
+	{
+		return idea->second;
+	}
+	else
+	{
+		return "";
+	}
 }
 
 

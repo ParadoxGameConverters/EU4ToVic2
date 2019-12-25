@@ -28,6 +28,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 mappers::IdeaEffects::IdeaEffects(std::istream& theStream)
 {
+	registerKeyword(std::regex("enforce"), [this](const std::string& unused, std::istream& theStream) {
+		commonItems::singleString enforceStr(theStream);
+		enforce = enforceStr.getString();
+	});
+
 	registerKeyword(std::regex("army"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleInt armyInt(theStream);
 		army = armyInt.getInt();
