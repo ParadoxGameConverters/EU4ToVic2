@@ -131,7 +131,7 @@ class V2Country
 
 		string							getLocalName();
 		std::optional<V2Relations> getRelations(std::string withWhom) const;
-		void getNationalValueScores(double& liberty, double& equality, double& order);
+		std::tuple<double, double, double> getNationalValueScores();
 		
 		void addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
 		void								addResearchPoints(double newPoints)		{ researchPoints += newPoints; }

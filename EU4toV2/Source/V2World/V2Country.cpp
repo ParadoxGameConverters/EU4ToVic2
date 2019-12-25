@@ -1322,14 +1322,11 @@ void V2Country::convertArmies(
 }
 
 
-void V2Country::getNationalValueScores(
-	double& libertyScore,
-	double& equalityScore,
-	double& orderScore
-) {
-	orderScore = 0;
-	libertyScore = 0;
-	equalityScore = 0;
+std::tuple<double, double, double> V2Country::getNationalValueScores() 
+{
+	double orderScore = 0.0;
+	double libertyScore = 0.0;
+	double equalityScore = 0.0;
 
 	if (srcCountry)
 	{
@@ -1337,6 +1334,8 @@ void V2Country::getNationalValueScores(
 		libertyScore += srcCountry->getLibertyInvestment() - 5.0;
 		equalityScore += srcCountry->getEqualityInvestment() - 5.0;
 	}
+
+	return make_tuple(libertyScore, equalityScore, orderScore);
 }
 
 
@@ -1614,7 +1613,7 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions, const
 			// each institution behind is equivalent to 2 techs behind
 
 			double civLevel = (totalTechs + 31 - topTech) * 4;
-			civLevel = civLevel + static_cast<double>(srcCountry->numEmbracedInstitutions() - topInsitutions) * 8;
+			civLevel = civLevel + (static_cast<double>(srcCountry->numEmbracedInstitutions()) - topInsitutions) * 8;
 			if (civLevel > 100) civLevel = 100;
 			if (civLevel < 0) civLevel = 0;
 

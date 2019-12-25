@@ -97,12 +97,11 @@ public:
 	{
 		commonItems::singleString governmentString(theStream);
 		std::string governmentStr = governmentString.getString();
-		if (governmentStr.substr(0, 1) == "\"")
-		{
-			governmentStr = governmentStr.substr(1, governmentStr.size() - 2);
-		}
+		governmentStr = governmentStr.substr(1, governmentStr.size() - 2);
 		return governmentStr;
 	}
+
+private:
 
 	static std::set<std::string> readGovernmentReforms(std::istream& theStream)
 	{
@@ -110,7 +109,6 @@ public:
 		return refStack.getReforms();
 	}
 
-private:
 	std::string government;
 	std::set<std::string> reformStack;
 };
@@ -631,8 +629,8 @@ void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEff
 
 	// We actually need the averages, to play against government and reforms.
 
-	int nideasSize = (int)nationalIdeas.size();
-	int govRefsSize = (int)governmentReforms.size();
+	int nideasSize = static_cast<int>(nationalIdeas.size());
+	int govRefsSize = static_cast<int>(governmentReforms.size());
 	int totalDivider = nideasSize - 1 + govRefsSize - ignoredMechanics;
 
 	armyInvestment /= totalDivider;
