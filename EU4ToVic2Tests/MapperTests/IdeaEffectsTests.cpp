@@ -300,3 +300,202 @@ TEST(Mappers_IdeaEffectsTests, literacyLevelsCanBeSet)
 
 	ASSERT_EQ(ideaEffects.getLiteracy(), 7);
 }
+
+TEST(Mappers_IdeaEffectsTests, slaveryLevelsDefaultsToFive)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getSlavery(), 5);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, slaveryLevelsCanBeSet)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "	slavery = 7\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getSlavery(), 7);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, upper_house_compositionLevelsDefaultsToFive)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getUpper_house_composition(), 5);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, upper_house_compositionLevelsCanBeSet)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "	upper_house_composition = 7\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getUpper_house_composition(), 7);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, vote_franchiseLevelsDefaultsToFive)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getVote_franchise(), 5);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, vote_franchiseLevelsCanBeSet)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "	vote_franchise = 7\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getVote_franchise(), 7);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, voting_systemLevelsDefaultsToFive)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getVoting_system(), 5);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, voting_systemLevelsCanBeSet)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "	voting_system = 7\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getVoting_system(), 7);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, public_meetingsLevelsDefaultsToFive)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getPublic_meetings(), 5);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, public_meetingsLevelsCanBeSet)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "	public_meetings = 7\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getPublic_meetings(), 7);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, press_rightsLevelsDefaultsToFive)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getPress_rights(), 5);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, press_rightsLevelsCanBeSet)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "	press_rights = 7\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getPress_rights(), 7);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, trade_unionsLevelsDefaultsToFive)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getTrade_unions(), 5);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, trade_unionsLevelsCanBeSet)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "	trade_unions = 7\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getTrade_unions(), 7);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, political_partiesLevelsDefaultsToFive)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getPolitical_parties(), 5);
+}
+
+
+TEST(Mappers_IdeaEffectsTests, political_partiesLevelsCanBeSet)
+{
+	std::stringstream input;
+	input << "= {\n";
+	input << "	political_parties = 7\n";
+	input << "}";
+
+	mappers::IdeaEffects ideaEffects(input);
+
+	ASSERT_EQ(ideaEffects.getPolitical_parties(), 7);
+}
