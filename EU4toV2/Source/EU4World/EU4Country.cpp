@@ -21,6 +21,7 @@ THE SOFTWARE. */
 
 #include "EU4Country.h"
 #include "Country/EU4GovernmentSection.h"
+#include "Country/EU4NationalSymbol.h"
 #include "../Configuration.h"
 #include "Log.h"
 #include "NewParserToOldParserConverters.h"
@@ -107,6 +108,7 @@ EU4::Country::Country(
 			adjective = theAdjective.getString();
 		}
 	);
+	// This is obsolete and not applicable from at least 1.19+, probably further back
 	registerKeyword(std::regex("map_color"), [this](const std::string& unused, std::istream& theStream)
 		{
 			color = commonItems::Color(theStream);
@@ -116,17 +118,26 @@ EU4::Country::Country(
 			color.RandomlyFlunctuate(30);
 		}
 	);
-	registerKeyword(std::regex("colors"), [this](const std::string& colorsString, std::istream& theStream)
+	registerKeyword(std::regex("colors"), [this, theVersion](const std::string& colorsString, std::istream& theStream)
 		{
-			auto colorObj = commonItems::convert8859Object(colorsString, theStream);
-			vector<shared_ptr<Object>> countryColorObjs = colorObj->getLeaves()[0]->getValue("country_color");
-			if (countryColorObjs.size() > 0)
+			// This is obsolete and not applicable from at least 1.19+
+			if (theVersion < EU4::Version("1.19.0.0"))
 			{
-				color = commonItems::Color(countryColorObjs[0]);
-				// Countries whose colors are included in the object here tend to be generated countries,
-				// i.e. colonial nations which take on the color of their parent. To help distinguish 
-				// these countries from their parent's other colonies we randomly adjust the color.
-				//color.RandomlyFlunctuate(30);
+				auto colorObj = commonItems::convert8859Object(colorsString, theStream);
+				vector<shared_ptr<Object>> countryColorObjs = colorObj->getLeaves()[0]->getValue("country_color");
+				if (countryColorObjs.size() > 0)
+				{
+					color = commonItems::Color(countryColorObjs[0]);
+					// Countries whose colors are included in the object here tend to be generated countries,
+					// i.e. colonial nations which take on the color of their parent. To help distinguish 
+					// these countries from their parent's other colonies we randomly adjust the color.
+					//color.RandomlyFlunctuate(30);
+				}
+			}
+			else
+			{
+				EU4::NationalSymbol theSection(theStream);
+				nationalColors = theSection;
 			}
 		}
 	);
@@ -350,6 +361,7 @@ EU4::Country::Country(
 			overlord = theOverlord.getString();
 		}
 	);
+	// This is obsolete and not applicable from at least 1.19+, probably further back
 	registerKeyword(std::regex("country_colors"), [this](const std::string& unused, std::istream& theStream)
 		{
 			auto customFlagObj = commonItems::convert8859Object(unused, theStream);
@@ -366,6 +378,7 @@ EU4::Country::Country(
 			}
 		}
 	);
+	// This is obsolete and not applicable from at least 1.19+, probably further back
 	registerKeyword(std::regex("revolutionary_colors"), [this](const std::string& unused, std::istream& theStream)
 		{
 			auto colorTokens = commonItems::intList(theStream).getInts();

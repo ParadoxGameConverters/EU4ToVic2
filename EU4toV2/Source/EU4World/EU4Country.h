@@ -33,6 +33,7 @@ THE SOFTWARE. */
 #include <memory>
 #include <optional>
 #include <set>
+#include "Country/EU4NationalSymbol.h"
 
 
 
@@ -155,6 +156,8 @@ namespace EU4
 			commonItems::Color getColor() const { return color; }
 			void dropMinorityCultures();
 
+			EU4::NationalSymbol getNationalColors() const { return nationalColors; }
+
 		private:
 			void determineJapaneseRelations();
 			void determineInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper);
@@ -222,19 +225,22 @@ namespace EU4
 			string							colonialRegion;		// the colonial region, if this country is a colony
 			double							libertyDesire;			// the amount of liberty desire
 			string							randomName;				// the new name of this nation in Random World
-			CustomFlag						customFlag;				// the custom flag
 			bool								revolutionary;			// does this country wave the glorious tricoloured banner of the revolution
-			tuple<int, int, int>			revolutionaryTricolour; // the glorious tricoloured banner of the revolution
 			std::set<std::string> governmentReforms;
 
 			// Localisation attributes
 			string	name;			// the name of this country
 			string	adjective;	// the adjective for this country
-			commonItems::Color color;
+
+			// Colors
+			commonItems::Color color; // This is EU4 map_color, for pre 1.19 saves
+			tuple<int, int, int> revolutionaryTricolour; // for pre 1.19 saves
+			CustomFlag customFlag; // the custom flag, for pre 1.19 saves
+			EU4::NationalSymbol nationalColors; // This is collective color block for 1.19+ games
 
 			map<string, string> namesByLanguage;		// the names of this country in different localisations
 			map<string, string> adjectivesByLanguage;	// the adjectives for this country in different localisations
-	                map<string, double> states; // Areas which have been made states by this country.
+			map<string, double> states; // Areas which have been made states by this country.
 	};
 }
 
