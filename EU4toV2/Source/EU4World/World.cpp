@@ -71,6 +71,12 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 			theConfiguration.setStartEU4Date(startDate);
 		}
 	);
+	registerKeyword(std::regex("(multiplayer_)?random_seed"), [this](const std::string& key, std::istream& theStream)
+		{
+			commonItems::singleInt randomSeed(theStream);
+			theConfiguration.setEU4RandomSeed(randomSeed.getInt());
+		}
+	);
 	registerKeyword(std::regex("savegame_version"), [this](const std::string& versionText, std::istream& theStream)
 		{
 			version = std::make_unique<EU4::Version>(theStream);

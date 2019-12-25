@@ -88,6 +88,7 @@ class V2World
 		void convertDiplomacy(const EU4::world& sourceWorld);
 		void setupColonies();
 		void setupStates();
+		void shuffleRgos();
 		void convertUncivReforms(const EU4::world& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper);
 		void convertTechs(const EU4::world& sourceWorld);
 		void allocateFactories(const EU4::world& sourceWorld);
