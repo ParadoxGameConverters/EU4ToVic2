@@ -38,7 +38,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/CountryMapping.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/GovernmentMapper.h"
-#include "../Mappers/ReformMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/Ideas/TechGroupsMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
