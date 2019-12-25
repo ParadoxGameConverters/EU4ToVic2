@@ -44,7 +44,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 namespace mappers
 {
 class IdeaEffectMapper;
-class TechGroupsMapper;
 }
 
 namespace EU4

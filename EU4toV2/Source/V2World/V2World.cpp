@@ -616,8 +616,8 @@ bool scoresSorter(pair<V2Country*, double> first, pair<V2Country*, double> secon
 void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	// set national values
-	list< pair<V2Country*, double> > libertyScores;
-	list< pair<V2Country*, double> > equalityScores;
+	list<pair<V2Country*, double>> libertyScores;
+	list<pair<V2Country*, double>> equalityScores;
 	set<V2Country*>					valuesUnset;
 	for (map<string, V2Country*>::iterator countryItr = countries.begin(); countryItr != countries.end(); countryItr++)
 	{
@@ -1478,7 +1478,7 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 
 		// modified manufactory weight follows diminishing returns curve y = x^(3/4)+log((x^2)/5+1)
 		int manuCount = sourceCountry->getManufactoryCount();
-		double manuWeight = pow(manuCount, 0.75) + log1p(((double)manuCount * (double)manuCount) / 5.0);
+		double manuWeight = pow(manuCount, 0.75) + log1p(static_cast<double>(manuCount * manuCount) / 5.0);
 		double industryWeight = (sourceCountry->getAdmTech() - admMean) + manuWeight;
 		// having one manufactory and average tech is not enough; you must have more than one, or above-average tech
 		if (industryWeight > 1.0)

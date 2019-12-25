@@ -292,6 +292,12 @@
     <ClCompile Include="Source\Mappers\Ideas\TechGroupsMapper.cpp">
       <Filter>Mappers\Ideas</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Helpers\ReformProperties.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\V2UncivReforms.cpp">
+      <Filter>Vic2World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -587,6 +593,12 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\Ideas\TechGroupsMapper.h">
       <Filter>Mappers\Ideas</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Helpers\ReformProperties.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\V2UncivReforms.h">
+      <Filter>Vic2World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,23 +1,20 @@
-# Copyright (c) 2019 The Paradox Game Converters Project
+# Each reform can affect various issues on a scale of 0 to 10 where:
+# 0 - Vehemently oppose or prevents (Over my dead body)
+# 5 - Couldn't care less / does not affect an issue
+# 10 - Strongly boosts / promotes
+# 
+# If an issue is not listed, it counts as being at level 5 (ignored)
+# 
+# Issues recognised: 
+# Political: slavery, upper_house_composition, vote_franchise, voting_system, public_meetings, press_rights, trade_unions, political_parties
+# National values: liberty, equality, order, literacy
+# Technologies: army, commerce, culture, industry, navy
+# Upper house membership: reactionary, liberal
+# Change government: enforce
 #
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
+# Note: slavery is cunterintuitive - 10 means slavery abolished
 #
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
-
+# Special:
 # enforce is the government type this reform forces. For conflicting cases
 # e.g. american_republic (democracy) with strengthen_executive_powers_reform 
 # (presidential_dictatorship) the latter will always override the former.
@@ -25,10 +22,6 @@
 # proletarian_dictatorship, presidential_dictatorship, bourgeois_dictatorship,
 # fascist_dictatorship, absolute_monarchy, prussian_constitutionalism,
 # hms_government, democracy, theocracy
-# If a reform does not change government, leave blank.
-
-# Order, liberty and equality, once combined across all selected reforms, define
-# socio-political reforms enabled at game start. Ranges -1 to 1.
 
 # --------------------------- Vanilla --------------------------------------
 
@@ -167,7 +160,7 @@ link = { reform = bureaucratic_aparatus_reform }
 link = { reform = universal_suffrage_reform }
 
 # Republic 10
-link = { reform = strengthen_executive_powers_reform enforce = presidential_dictatorship order = 1 liberty = -0.5 equality = -0.5 }
+link = { reform = strengthen_executive_powers_reform enforce = presidential_dictatorship order = 8 liberty = 4 }
 link = { reform = reinforce_republican_values_reform }
 
 # Republic basic

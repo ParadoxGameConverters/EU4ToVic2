@@ -413,3 +413,23 @@ TEST(EU4ToVic2_ConfigurationTests, CoreHandlingCanBeSet)
 	ASSERT_EQ(testConfiguration.getCoreHandling(), Configuration::COREHANDLES::DropNational);
 }
 
+TEST(EU4ToVic2_ConfigurationTests, DebugDefaultsToFalse)
+{
+	Configuration testConfiguration;
+	std::stringstream input("");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getDebug(), false);
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, DebugCanBeSet)
+{
+	Configuration testConfiguration;
+	std::stringstream input("debug = yes");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getDebug(), true);
+}
+
+

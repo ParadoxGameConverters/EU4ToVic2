@@ -22,11 +22,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "ReformMapper.h"
+#include "../Helpers/ReformProperties.h"
 #include "Log.h"
 #include "Object.h"
 #include "ParadoxParserUTF8.h"
 #include <vector>
-using namespace std;
 
 
 
@@ -38,7 +38,7 @@ ReformMapper::ReformMapper()
 {
 	LOG(LogLevel::Info) << "Parsing Reform mappings";
 
-	shared_ptr<Object> ReformMapObj = parser_UTF8::doParseFile("ReformMapping.txt");
+	std::shared_ptr<Object> ReformMapObj = parser_UTF8::doParseFile("ReformMapping.txt");
 	if (ReformMapObj == NULL)
 	{
 		LOG(LogLevel::Error) << "Could not parse file ReformMapping.txt";
@@ -58,9 +58,9 @@ void ReformMapper::initReformMap(std::vector<std::shared_ptr<Object>> objs)
 }
 
 
-void ReformMapper::processRule(shared_ptr<Object> rule)
+void ReformMapper::processRule(std::shared_ptr<Object> rule)
 {
-	string dstReform;
+	std::string dstReform;
 	ReformProperties reformProperties;
 
 	for (auto item: rule->getLeaves())
@@ -154,18 +154,3 @@ void ReformMapper::processRule(shared_ptr<Object> rule)
 	ReformMap.insert(make_pair(dstReform, reformProperties));
 }
 
-
-
-ReformProperties ReformMapper::MatchReform(const string& sourceReform)
-{
-	auto mapping = ReformMap.find(sourceReform);
-	if (mapping != ReformMap.end())
-	{
-		return mapping->second;
-	}
-	else
-	{
-		LOG(LogLevel::Debug) << "No Reform mapping defined for " << sourceReform;
-		return ReformProperties();
-	}
-}

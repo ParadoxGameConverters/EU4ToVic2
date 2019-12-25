@@ -800,7 +800,7 @@ void EU4::world::removeEmptyNations()
 	{
 		auto countryProvinces = country.second->getProvinces();
 		auto countryCores = country.second->getCores();
-		if ((countryProvinces.size() != 0) || (countryCores.size() != 0))
+		if (!countryProvinces.empty() || !countryCores.empty())
 		{
 			survivingCountries.insert(country);
 		}

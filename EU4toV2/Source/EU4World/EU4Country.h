@@ -183,25 +183,25 @@ namespace EU4
 			double							dipTech;					// the diplo tech of this nation
 			double							milTech;					// the mil tech of this nation
 
-			double armyInvestment = 5.0; // the amount of 'investment' into army tech (determined by ideas)
-			double navyInvestment = 5.0; // the amount of 'investment' into navy tech (determined by ideas)
-			double commerceInvestment = 5.0;	// the amount of 'investment' into commerce tech (determined by ideas)
-			double industryInvestment = 5.0;	// the amount of 'investment' into industry tech (determined by ideas)
-			double cultureInvestment = 5.0;	// the amount of 'investment' into culture tech (determined by ideas)
-			double slaveryInvestment = 5.0; // the amount of 'investment' into slavery reform (determined by ideas)
-			double upper_house_compositionInvestment = 5.0; // the amount of 'investment' into upper house reform (determined by ideas)
-			double vote_franchiseInvestment = 5.0;	// the amount of 'investment' into vote franchise reform (determined by ideas)
-			double voting_systemInvestment = 5.0;	// the amount of 'investment' into voting system reform (determined by ideas)
-			double public_meetingsInvestment = 5.0;	// the amount of 'investment' into public meetings reform (determined by ideas)
-			double press_rightsInvestment = 5.0; // the amount of 'investment' into press rights reform (determined by ideas)
-			double trade_unionsInvestment = 5.0; // the amount of 'investment' into trade unions reform (determined by ideas)
-			double political_partiesInvestment = 5.0;	// the amount of 'investment' into political parties reform (determined by ideas)
-			double libertyInvestment = 5.0;	// the amount of 'investment' into liberty national value (determined by ideas)
-			double equalityInvestment = 5.0;	// the amount of 'investment' into equality national value (determined by ideas)
-			double orderInvestment = 5.0; // the amount of 'investment' into order national value (determined by ideas)
-			double literacyInvestment = 5.0; // the amount of 'investment' into literacy as such (determined by ideas)
-			double reactionaryInvestment = 5.0;	// the amount of 'investment' into reactionary movement (determined by ideas)
-			double liberalInvestment = 5.0;	// the amount of 'investment' into liberal movement (determined by ideas)
+			double armyInvestment = 5.0;
+			double navyInvestment = 5.0;
+			double commerceInvestment = 5.0;
+			double industryInvestment = 5.0;
+			double cultureInvestment = 5.0;
+			double slaveryInvestment = 5.0;
+			double upper_house_compositionInvestment = 5.0;
+			double vote_franchiseInvestment = 5.0;
+			double voting_systemInvestment = 5.0;
+			double public_meetingsInvestment = 5.0;
+			double press_rightsInvestment = 5.0;
+			double trade_unionsInvestment = 5.0;
+			double political_partiesInvestment = 5.0;
+			double libertyInvestment = 5.0;
+			double equalityInvestment = 5.0;
+			double orderInvestment = 5.0;
+			double literacyInvestment = 5.0;
+			double reactionaryInvestment = 5.0;
+			double liberalInvestment = 5.0;
 
 
 			map<string, bool>				flags;					// any flags set for this country
@@ -209,7 +209,7 @@ namespace EU4
 			bool								possibleDaimyo;		// if this country is possibly a daimyo
 			bool							possibleShogun;			// if this country is the shogun
 			std::vector<std::shared_ptr<EU4::leader>> militaryLeaders;
-			string government = "monarchy";						// the government type, defaults to absolute monarchy
+			string government = "monarchy";
 			int governmentRank = 0;
 			int development = 0;
 			map<string, EU4Relations*>	relations;				// the relations with other nations

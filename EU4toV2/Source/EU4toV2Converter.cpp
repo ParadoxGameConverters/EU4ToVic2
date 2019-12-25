@@ -46,7 +46,6 @@ void ConvertEU4ToVic2(const string& EU4SaveFileName)
 
 	std::ifstream techGroupsFile("techGroups.txt");
 	mappers::TechGroupsMapper techGroupsMapper(techGroupsFile);
-	LOG(LogLevel::Info) << "Closing techgroups.";
 	techGroupsFile.close();
 
 	EU4::world sourceWorld(EU4SaveFileName, ideaEffectMapper);

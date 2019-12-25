@@ -170,6 +170,16 @@ class V2Country
 		double getTrade_unions() const { return trade_unionsInvestment; }
 		double getPolitical_parties() const { return political_partiesInvestment; }
 
+		void buildCanals(std::shared_ptr<EU4::Country> srcCountry);
+		void determineTechSchool(const std::unique_ptr<Vic2::TechSchools>& techschools);
+		void calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry);
+		void generateRelations(std::shared_ptr<EU4::Country> srcCountry);
+		void resolvePolitics();
+		void finalizeInvestments(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry);
+		void setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcCountry, const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions);
+		void setReligion(std::shared_ptr<EU4::Country> srcCountry, const mappers::ReligionMapper& religionMapper);
+
 	private:
 		shared_ptr<Object> parseCountryFile(const string& filename);
 

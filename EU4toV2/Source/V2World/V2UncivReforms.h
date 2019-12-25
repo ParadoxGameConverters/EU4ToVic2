@@ -21,8 +21,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#ifndef V2REFORMS_H_
-#define V2REFORMS_H_
+#ifndef V2UNCIVREFORMS_H_
+#define V2UNCIVREFORMS_H_
 
 
 
@@ -39,24 +39,13 @@ namespace EU4
 
 class V2Country;
 
-
-
-class V2Reforms {
+class V2UncivReforms {
 	public:
-		V2Reforms(const V2Country*, const std::shared_ptr<EU4::Country>);
+		V2UncivReforms(int westernizationProgress, double milFocus, double socioEcoFocus, V2Country* country);
 		void output(FILE*) const;
 	private:
-
-		bool abolishSlavery = false;
-		double slavery = 5.0;
-		double vote_franchise = 5.0;
-		double upper_house_composition = 5.0;
-		double voting_system = 5.0;
-		double public_meetings = 5.0;
-		double press_rights = 5.0;
-		double trade_unions = 5.0;
-		double political_parties = 5.0;
+		bool reforms[16] = { 0 };
 };
 
 
-#endif // V2REFORMS_H_
+#endif // V2UNCIVREFORMS_H_
