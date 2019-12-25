@@ -435,7 +435,7 @@ link = { EU4 = k_taurica Vic2 = CRI } # Taurica => Crimea
 link = { EU4 = GEO Vic2 = GEO } # Georgia
 link = { EU4 = k_georgia Vic2 = GEO } # Georgia
 link = { EU4 = d_georgia Vic2 = GEO } # Georgia
-link = { EU4 = KAZ Vic2 = KAZ } # Kazan
+link = { EU4 = KAZ Vic2 = KZN } # Kazan
 link = { EU4 = MOS Vic2 = MUS } # Muscowy
 link = { EU4 = c_moskva Vic2 = MUS } # Muscowy
 link = { EU4 = NOV Vic2 = NOV } # Novgorod
