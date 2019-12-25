@@ -283,11 +283,11 @@ EU4::Country::Country(
 	registerKeyword(std::regex("government"), [this, theVersion](const std::string& unused, std::istream& theStream){
 		if (theVersion < EU4::Version("1.23.0.0"))
 		{
-			government = governmentSection::readGovernment(theStream);
+			government = EU4::governmentSection::readGovernment(theStream);
 		}
 		else
 		{
-			governmentSection theSection(theStream);
+			EU4::governmentSection theSection(theStream);
 			government = theSection.getGovernment();
 			governmentReforms = theSection.getGovernmentReforms();
 		}

@@ -27,7 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-TEST(Mappers_IdeaEffectMapperTests, getArmyInvestmentFromIdeaReturnsZeroForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getArmyFromIdeaReturnsFiveForMissingIdea)
 {
 	std::stringstream input;
 	mappers::IdeaEffectMapper theMapper(input);
