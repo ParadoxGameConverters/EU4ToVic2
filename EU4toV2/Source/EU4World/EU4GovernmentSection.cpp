@@ -20,7 +20,6 @@ THE SOFTWARE. */
 
 
 #include "EU4Country.h"
-#include "Country/EU4GovernmentSection.h"
 #include "../Configuration.h"
 #include "Log.h"
 #include "NewParserToOldParserConverters.h"
@@ -36,6 +35,98 @@ THE SOFTWARE. */
 #include "../Mappers/ReformMapper.h"
 #include "../V2World/V2Localisation.h"
 #include <algorithm>
+
+
+class reformsSection : commonItems::parser 
+{
+public:
+	explicit reformsSection(std::istream& theStream);
+	std::set<std::string> getReforms() const { return reforms; }
+
+private:
+	std::set<std::string> reforms;
+};
+
+reformsSection::reformsSection(std::istream& theStream)
+{
+	registerKeyword(std::regex("\"[a-z_]+\""), [this](const std::string& incomingReform, std::istream& theStream) 
+	{
+		std::string governmentReform = incomingReform.substr(1, incomingReform.size() - 2);
+		reforms.insert(governmentReform);
+	});
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+
+	parseStream(theStream);
+};
+
+class reformStackSection : commonItems::parser
+{
+public:
+	explicit reformStackSection(std::istream& theStream);
+	std::set<std::string> getReforms() const { return reforms; }
+
+	static std::set<std::string> readStack(std::istream& theStream)
+	{
+		reformsSection govRefs(theStream);		
+		return govRefs.getReforms();
+	}
+
+private:
+	std::set<std::string> reforms;
+};
+
+reformStackSection::reformStackSection(std::istream& theStream)
+{
+	registerKeyword(std::regex("reforms"), [this](const std::string& unused, std::istream& theStream)
+	{
+		reforms = reformStackSection::readStack(theStream);
+	});
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+
+	parseStream(theStream);
+}
+
+class governmentSection : commonItems::parser
+{
+public:
+	governmentSection(std::istream& theStream);
+	std::string getGovernment() const { return government; }
+	std::set<std::string> getGovernmentReforms() const { return reformStack; }
+
+	static std::string readGovernment(std::istream& theStream)
+	{
+		commonItems::singleString governmentString(theStream);
+		std::string governmentStr = governmentString.getString();
+		governmentStr = governmentStr.substr(1, governmentStr.size() - 2);
+		return governmentStr;
+	}
+
+private:
+
+	static std::set<std::string> readGovernmentReforms(std::istream& theStream)
+	{
+		reformStackSection refStack(theStream);
+		return refStack.getReforms();
+	}
+
+	std::string government;
+	std::set<std::string> reformStack;
+};
+
+governmentSection::governmentSection(std::istream& theStream)
+{
+	registerKeyword(std::regex("government"), [this](const std::string& unused, std::istream& theStream)
+	{
+		government = governmentSection::readGovernment(theStream);
+	});
+	registerKeyword(std::regex("reform_stack"), [this](const std::string& unused, std::istream& theStream)
+	{
+		reformStack = governmentSection::readGovernmentReforms(theStream);
+	});
+	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+
+	parseStream(theStream);
+}
 
 
 EU4::Country::Country(
