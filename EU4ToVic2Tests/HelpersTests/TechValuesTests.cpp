@@ -109,7 +109,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithNo
 	std::map<std::string, int> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedArmyTech(country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedArmyTech(country), 1.0);
 }
 
 
@@ -134,7 +134,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithOn
 	
 	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedArmyTech(*country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedArmyTech(*country), 1.0);
 }
 
 
@@ -184,7 +184,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneForHighestScore)
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedArmyTech(*country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedArmyTech(*country), 1.0);
 }
 
 
@@ -250,7 +250,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithNo
 	std::map<std::string, int> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedNavyTech(country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedNavyTech(country), 1.0);
 }
 
 
@@ -275,7 +275,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithOn
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedNavyTech(*country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedNavyTech(*country), 1.0);
 }
 
 
@@ -325,7 +325,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneForHighestScore)
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedNavyTech(*country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedNavyTech(*country), 1.0);
 }
 
 
@@ -390,7 +390,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWi
 	std::map<std::string, int> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedCommerceTech(country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedCommerceTech(country), 1.0);
 }
 
 
@@ -415,7 +415,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWi
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedCommerceTech(*country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedCommerceTech(*country), 1.0);
 }
 
 
@@ -465,7 +465,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneForHighestScore
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedCommerceTech(*country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedCommerceTech(*country), 1.0);
 }
 
 
@@ -555,7 +555,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWit
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedCultureTech(*country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedCultureTech(*country), 1.0);
 }
 
 
@@ -605,7 +605,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneForHighestScore)
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedCultureTech(*country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedCultureTech(*country), 1.0);
 }
 
 
@@ -672,7 +672,7 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWi
 	std::map<std::string, int> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedIndustryTech(country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedIndustryTech(country), 1.0);
 }
 
 
@@ -697,7 +697,7 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWi
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedIndustryTech(*country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedIndustryTech(*country), 1.0);
 }
 
 
@@ -747,7 +747,7 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneForHighestScore
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_EQ(techValues.getNormalizedIndustryTech(*country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedIndustryTech(*country), 1.0);
 }
 
 
