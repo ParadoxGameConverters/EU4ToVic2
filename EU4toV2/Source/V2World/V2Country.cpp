@@ -425,7 +425,7 @@ void V2Country::output() const
 			exit(-1);
 		}
 		commonCountryOutput << "graphical_culture = UsGC\n";	// default to US graphics
-		commonCountryOutput << "color = { " << color << " }\n";
+		commonCountryOutput << "color = { " << nationalColors.getMapColor() << " }\n";
 		for (auto party : parties)
 		{
 			commonCountryOutput	<< '\n'
@@ -546,7 +546,7 @@ void V2Country::initFromEU4Country(
 	}
 
 	// Color
-	color = srcCountry->getColor();
+	nationalColors = srcCountry->getNationalColors();
 
 	// Localisation
 	localisation.SetTag(tag);

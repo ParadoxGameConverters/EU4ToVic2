@@ -303,10 +303,15 @@
     <ClCompile Include="..\common_items\StringUtils.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\EU4NationalSymbol.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\EU4CustomColors.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
-    <ClInclude Include="Source\CustomFlagMapper.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\FlagUtils.h" />
     <ClInclude Include="Source\targa.h" />
@@ -609,6 +614,12 @@
     </ClInclude>
     <ClInclude Include="..\common_items\StringUtils.h">
       <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\EU4NationalSymbol.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\EU4CustomColors.h">
+      <Filter>EU4World\Country</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -27,12 +27,12 @@ THE SOFTWARE. */
 #include "EU4Army.h"
 #include "Color.h"
 #include "Date.h"
-#include "../CustomFlagMapper.h"
 #include "CultureGroups.h"
 #include "newParser.h"
 #include <memory>
 #include <optional>
 #include <set>
+#include "Country/EU4NationalSymbol.h"
 
 
 
@@ -142,9 +142,7 @@ namespace EU4
 			bool								isColony()									const { return colony; }
 			string							getColonialRegion()						const { return colonialRegion; }
 			double							getLibertyDesire()						const { return libertyDesire; }
-			CustomFlag						getCustomFlag()							const { return customFlag; }
 			bool								isRevolutionary()							const { return revolutionary; }
-			tuple<int, int, int>			getRevolutionaryTricolour()			const { return revolutionaryTricolour; }
 			string							getRandomName()							const { return randomName; }
 			virtual const std::map<std::string, int>& getNationalIdeas() const { return nationalIdeas; }
 			std::vector<std::shared_ptr<EU4::leader>> getMilitaryLeaders() const { return militaryLeaders; }
@@ -152,8 +150,9 @@ namespace EU4
 			string	getName() const { return name; }
 			string	getName(const string& language) const;
 			string	getAdjective(const string& language) const;
-			commonItems::Color getColor() const { return color; }
 			void dropMinorityCultures();
+
+			EU4::NationalSymbol getNationalColors() const { return nationalColors; }
 
 		private:
 			void determineJapaneseRelations();
@@ -222,19 +221,19 @@ namespace EU4
 			string							colonialRegion;		// the colonial region, if this country is a colony
 			double							libertyDesire;			// the amount of liberty desire
 			string							randomName;				// the new name of this nation in Random World
-			CustomFlag						customFlag;				// the custom flag
 			bool								revolutionary;			// does this country wave the glorious tricoloured banner of the revolution
-			tuple<int, int, int>			revolutionaryTricolour; // the glorious tricoloured banner of the revolution
 			std::set<std::string> governmentReforms;
 
 			// Localisation attributes
 			string	name;			// the name of this country
 			string	adjective;	// the adjective for this country
-			commonItems::Color color;
+
+			// Colors
+			EU4::NationalSymbol nationalColors;
 
 			map<string, string> namesByLanguage;		// the names of this country in different localisations
 			map<string, string> adjectivesByLanguage;	// the adjectives for this country in different localisations
-	                map<string, double> states; // Areas which have been made states by this country.
+			map<string, double> states; // Areas which have been made states by this country.
 	};
 }
 

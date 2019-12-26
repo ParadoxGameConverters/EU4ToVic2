@@ -650,7 +650,6 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 			valuesUnset.erase(unsetItr);
 			equalItr->first->setNationalValue("nv_equality");
 			equalityLeft--;
-			LOG(LogLevel::Debug) << "Assigning NV equality to country: " << equalItr->first->getTag() << ", equality left: " << equalityLeft;
 		}
 	}
 	libertyScores.sort(scoresSorter);
@@ -667,13 +666,11 @@ void V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectM
 			valuesUnset.erase(unsetItr);
 			libItr->first->setNationalValue("nv_liberty");
 			libertyLeft--;
-			LOG(LogLevel::Debug) << "Assigning NV liberty to country: " << libItr->first->getTag() << ", liberty left: " << libertyLeft;
 		}
 	}
 	for (set<V2Country*>::iterator unsetItr = valuesUnset.begin(); unsetItr != valuesUnset.end(); unsetItr++)
 	{
 		(*unsetItr)->setNationalValue("nv_order");
-		LOG(LogLevel::Debug) << "Assigning NV order to country: " << (*unsetItr)->getTag();
 	}
 }
 
@@ -1532,7 +1529,6 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 	for (deque<pair<double, V2Country*>>::iterator itr = weightedCountries.begin(); itr != weightedCountries.end(); ++itr)
 	{
 		int factories = int(((itr->first / totalIndWeight) * factoryList.size()) + 0.5 /*round*/);
-		LOG(LogLevel::Debug) << itr->second->getTag() << " has industrial weight " << itr->first << " granting max " << factories << " factories";
 		factoryCounts.push_back(pair<int, V2Country*>(factories, itr->second));
 	}
 

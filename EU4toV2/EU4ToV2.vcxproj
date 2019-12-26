@@ -188,7 +188,9 @@
     <ClCompile Include="Source\EU4World\Continents.cpp" />
     <ClCompile Include="Source\EU4World\Countries.cpp" />
     <ClCompile Include="Source\EU4World\CountryHistory.cpp" />
+    <ClCompile Include="Source\EU4World\Country\EU4CustomColors.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4GovernmentSection.cpp" />
+    <ClCompile Include="Source\EU4World\Country\EU4NationalSymbol.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4ReformsSection.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4ReformStackSection.cpp" />
     <ClCompile Include="Source\EU4World\CultureGroups.cpp" />
@@ -286,7 +288,6 @@
     <ClInclude Include="..\common_items\ParserHelpers.h" />
     <ClInclude Include="..\common_items\StringUtils.h" />
     <ClInclude Include="Source\Configuration.h" />
-    <ClInclude Include="Source\CustomFlagMapper.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\EU4World\Buildings\Building.h" />
     <ClInclude Include="Source\EU4World\Buildings\Buildings.h" />
@@ -294,7 +295,9 @@
     <ClInclude Include="Source\EU4World\Continents.h" />
     <ClInclude Include="Source\EU4World\Countries.h" />
     <ClInclude Include="Source\EU4World\CountryHistory.h" />
+    <ClInclude Include="Source\EU4World\Country\EU4CustomColors.h" />
     <ClInclude Include="Source\EU4World\Country\EU4GovernmentSection.h" />
+    <ClInclude Include="Source\EU4World\Country\EU4NationalSymbol.h" />
     <ClInclude Include="Source\EU4World\Country\EU4ReformsSection.h" />
     <ClInclude Include="Source\EU4World\Country\EU4ReformStackSection.h" />
     <ClInclude Include="Source\EU4World\CultureGroups.h" />
