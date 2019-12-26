@@ -26,14 +26,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Log.h"
 
 
-
 mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream, std::istream& theSecondStream)
 {
 	LOG(LogLevel::Info) << "getting idea effects";
 	registerProperties(theStream);
 	parseStream(theStream);
-
-	registerProperties(theSecondStream);
 	parseStream(theSecondStream);
 }
 

@@ -309,6 +309,12 @@
     <ClCompile Include="Source\EU4World\Country\EU4CustomColors.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\partyName.cpp">
+      <Filter>Mappers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\partyNameMapper.cpp">
+      <Filter>Mappers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -620,6 +626,12 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Country\EU4CustomColors.h">
       <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\partyName.h">
+      <Filter>Mappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\partyNameMapper.h">
+      <Filter>Mappers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

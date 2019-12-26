@@ -25,6 +25,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Log.h"
 #include "../Configuration.h"
 #include "../Mappers/ReligionMapper.h"
+#include "../Mappers/PartyNameMapper.h"
 #include "CardinalToOrdinal.h"
 #include "ParadoxParser8859_15.h"
 #include "OSCompatibilityLayer.h"
@@ -135,19 +136,8 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 	uncivReforms = nullptr;
 
 	if (parties.empty())
-	{	// No parties are specified. Generate some default parties for this country.
-		const std::vector<std::string> ideologies =
-		{ "conservative", "liberal", "reactionary", "socialist", "communist", "anarcho_liberal", "fascist" };
-		const std::vector<std::string> partyNames =
-		{ "Conservative Party", "Liberal Party", "National Party",
-			"Socialist Party", "Communist Party", "Radical Party", "Fascist Party" };
-		for (size_t i = 0; i < ideologies.size(); ++i)
-		{
-			std::string partyKey = tag + '_' + ideologies[i];
-			parties.push_back(new V2Party(partyKey, ideologies[i]));
-			localisation.SetPartyKey(i, partyKey);
-			localisation.SetPartyName(i, "english", partyNames[i]);
-		}
+	{	// No parties are specified. Grab some.
+		loadPartiesFromBlob();
 	}
 
 	// set a default ruling party
@@ -168,6 +158,39 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 	}
 
 	numFactories	= 0;
+
+}
+
+void V2Country::loadPartiesFromBlob()
+{
+	std::ifstream partyFile("PartyNames.txt");
+	mappers::PartyNameMapper partyNameMapper(partyFile);
+	partyFile.close();
+
+	auto partyMap = partyNameMapper.getMap();
+
+	map<string, mappers::PartyName>::iterator partyItr;
+
+	for (partyItr = partyMap.begin(); partyItr != partyMap.end(); partyItr++)
+	{
+		map<string, string>::iterator languageItr;
+		auto languageMap = partyItr->second.getMap();
+		size_t i = 0;
+
+		std::string partyKey = tag + '_' + partyItr->first;
+
+		LOG(LogLevel::Debug) << "Party: " << partyKey;
+
+		parties.push_back(new V2Party(partyKey, partyItr->first));
+		localisation.SetPartyKey(i, partyKey);
+		
+		for (languageItr = languageMap.begin(); languageItr != languageMap.end(); languageItr++)
+		{
+			LOG(LogLevel::Debug) << "Party: " << partyKey << "lang: " << languageItr->first << " name: " << languageItr->second;
+			localisation.SetPartyName(i, languageItr->first, languageItr->second);
+		}
+		++i;
+	}
 
 }
 
@@ -256,19 +279,8 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 	uncivReforms = nullptr;
 
 	if (parties.empty())
-	{	// No parties are specified. Generate some default parties for this country.
-		const std::vector<std::string> ideologies =
-				{ "conservative", "liberal", "reactionary", "socialist", "communist", "anarcho_liberal", "fascist" };
-		const std::vector<std::string> partyNames =
-				{ "Conservative Party", "Liberal Party", "National Party",
-				  "Socialist Party", "Communist Party", "Radical Party", "Fascist Party" };
-		for (size_t i = 0; i < ideologies.size(); ++i)
-		{
-			std::string partyKey = tag + '_' + ideologies[i];
-			parties.push_back(new V2Party(partyKey, ideologies[i]));
-			localisation.SetPartyKey(i, partyKey);
-			localisation.SetPartyName(i, "english", partyNames[i]);
-		}
+	{	// No parties are specified. Get some.
+		loadPartiesFromBlob();
 	}
 
 	// set a default ruling party
