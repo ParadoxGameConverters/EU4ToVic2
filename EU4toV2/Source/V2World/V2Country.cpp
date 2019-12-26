@@ -171,22 +171,19 @@ void V2Country::loadPartiesFromBlob()
 
 	map<string, mappers::PartyName>::iterator partyItr;
 
+	size_t i = 0;
 	for (partyItr = partyMap.begin(); partyItr != partyMap.end(); partyItr++)
 	{
 		map<string, string>::iterator languageItr;
 		auto languageMap = partyItr->second.getMap();
-		size_t i = 0;
 
 		std::string partyKey = tag + '_' + partyItr->first;
-
-		LOG(LogLevel::Debug) << "Party: " << partyKey;
 
 		parties.push_back(new V2Party(partyKey, partyItr->first));
 		localisation.SetPartyKey(i, partyKey);
 		
 		for (languageItr = languageMap.begin(); languageItr != languageMap.end(); languageItr++)
 		{
-			LOG(LogLevel::Debug) << "Party: " << partyKey << "lang: " << languageItr->first << " name: " << languageItr->second;
 			localisation.SetPartyName(i, languageItr->first, languageItr->second);
 		}
 		++i;
