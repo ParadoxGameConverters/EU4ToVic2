@@ -97,7 +97,6 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 	setupPops(sourceWorld);
 	addUnions();
 	convertArmies(sourceWorld);
-	checkForCivilizedNations();
 
 	output();
 }
@@ -730,7 +729,7 @@ void V2World::addAllPotentialCountries()
 }
 
 
-void V2World::checkForCivilizedNations()
+unsigned int V2World::countCivilizedNations()
 {
 	unsigned int numPotentialGPs = 0;
 	for (auto country : countries)
@@ -742,47 +741,7 @@ void V2World::checkForCivilizedNations()
 		}
 	}
 
-	if (numPotentialGPs < 8)
-	{
-		LOG(LogLevel::Info) << "There were only " << numPotentialGPs << " civilized nations with more than 1 state. Attempting to editing defines.lua to reduce the number of great powers.";
-		editDefines(numPotentialGPs);
-	}
-}
-
-void V2World::editDefines(int numCivilisedNations)
-{
-	string greatNationsCount = "8";
-	LOG(LogLevel::Info) << "Parsing defines.lua";
-	shared_ptr<Object> definesObj = parser_UTF8::doParseFile("blankmod/output/common/defines.lua");
-	if (definesObj == nullptr)
-	{
-		LOG(LogLevel::Error) << "Could not parse file defines.lua";
-		exit(-1);
-	}
-	vector<shared_ptr<Object>> newDefinesObj = definesObj->getValue("defines");
-	vector<shared_ptr<Object>> countryObj = newDefinesObj[0]->getValue("country");
-	if (countryObj.size() > 0)
-	{
-		vector<shared_ptr<Object>> countryLeaves = countryObj[0]->getLeaves();
-		for (unsigned int j = 0; j < countryLeaves.size(); j++)
-		{
-			string keyCoun = countryLeaves[j]->getKey();						// the key
-
-			if (keyCoun == "GREAT_NATIONS_COUNT")
-			{
-				greatNationsCount = numCivilisedNations;
-				countryLeaves[j]->setValue(greatNationsCount);					// sets the number of GPs = number of civilised nations
-			}
-			else
-			{
-				continue;
-			}
-		}
-	}
-	else
-	{
-		LOG(LogLevel::Warning) << "Invalid file structure for defines.lua.  You should edit this file yourself in [yourmod]/common";
-	}
+	return numPotentialGPs;
 }
 
 
@@ -1853,7 +1812,7 @@ void V2World::convertArmies(const EU4::world& sourceWorld)
 	}
 }
 
-void V2World::output() const
+void V2World::output()
 {
 	LOG(LogLevel::Info) << "Outputting mod";
 	Utils::copyFolder("blankMod/output", "output/output");
@@ -1878,26 +1837,39 @@ void V2World::output() const
 
 	// Update bookmark starting dates
 
-	ostringstream incomingDefines, incomingBookmarks;
-	ifstream defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
-	ifstream bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
-	incomingDefines << defines_lua.rdbuf();
-	incomingBookmarks << bookmarks_txt.rdbuf();
-	defines_lua.close();
-	bookmarks_txt.close();
+	auto potentialGPs = countCivilizedNations();
 	string startDate = "<STARTDATE>";
+	string numGPs = "GREAT_NATIONS_COUNT = 8";
+
+	ostringstream incomingDefines, incomingBookmarks;
+
+	ifstream defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
+	incomingDefines << defines_lua.rdbuf();
+	defines_lua.close();
 	string strDefines = incomingDefines.str();
-	string strBookmarks = incomingBookmarks.str();
 	size_t pos1 = strDefines.find(startDate);
-	size_t pos2 = strBookmarks.find(startDate);
 	strDefines.replace(pos1, startDate.length(), theConfiguration.getLastEU4Date().toString());
-	strBookmarks.replace(pos2, startDate.length(), theConfiguration.getLastEU4Date().toString());
+
+	if (potentialGPs < 8)
+	{
+		size_t posGPs = strDefines.find(numGPs);
+		string replacementGPs = "GREAT_NATIONS_COUNT = " + to_string(potentialGPs);
+		strDefines.replace(posGPs, numGPs.length(), replacementGPs);
+
+	}
 
 	ofstream out_defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
-	ofstream out_bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
 	out_defines_lua << strDefines;
-	out_bookmarks_txt << strBookmarks;
 	out_defines_lua.close();
+
+	ifstream bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
+	incomingBookmarks << bookmarks_txt.rdbuf();
+	bookmarks_txt.close();
+	string strBookmarks = incomingBookmarks.str();
+	size_t pos2 = strBookmarks.find(startDate);
+	strBookmarks.replace(pos2, startDate.length(), theConfiguration.getLastEU4Date().toString());
+	ofstream out_bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
+	out_bookmarks_txt << strBookmarks;
 	out_bookmarks_txt.close();
 
 	// Create common\countries path.
