@@ -93,8 +93,7 @@ class V2World
 		void convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void convertPrestige();
 		void addAllPotentialCountries();
-		void checkForCivilizedNations();
-		void editDefines(int numCivilisedNations);
+		unsigned int countCivilizedNations();
 
 		void convertProvinces(const EU4::world& sourceWorld);
 		std::vector<V2Demographic> determineDemographics(
@@ -117,7 +116,7 @@ class V2World
 		void addUnions();
 		void convertArmies(const EU4::world& sourceWorld);
 
-		void output() const;
+		void output(unsigned int potentialGPs) const;
 		void createModFile() const;
 		void outputPops() const;
 
