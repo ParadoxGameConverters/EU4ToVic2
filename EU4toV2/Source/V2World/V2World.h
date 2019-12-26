@@ -116,7 +116,7 @@ class V2World
 		void addUnions();
 		void convertArmies(const EU4::world& sourceWorld);
 
-		void output();
+		void output(unsigned int potentialGPs) const;
 		void createModFile() const;
 		void outputPops() const;
 

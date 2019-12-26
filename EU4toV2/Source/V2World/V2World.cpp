@@ -98,7 +98,8 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 	addUnions();
 	convertArmies(sourceWorld);
 
-	output();
+	auto potentialGPs = countCivilizedNations();
+	output(potentialGPs);
 }
 
 
@@ -1812,7 +1813,7 @@ void V2World::convertArmies(const EU4::world& sourceWorld)
 	}
 }
 
-void V2World::output()
+void V2World::output(unsigned int potentialGPs) const
 {
 	LOG(LogLevel::Info) << "Outputting mod";
 	Utils::copyFolder("blankMod/output", "output/output");
@@ -1837,7 +1838,6 @@ void V2World::output()
 
 	// Update bookmark starting dates
 
-	auto potentialGPs = countCivilizedNations();
 	string startDate = "<STARTDATE>";
 	string numGPs = "GREAT_NATIONS_COUNT = 8";
 
