@@ -76,12 +76,9 @@ EU4::Country::Country(
 	colonialRegion(),
 	libertyDesire(0.0),
 	randomName(),
-	customFlag({ "-1", 0, { 0, 0, 0}}),
 	revolutionary(false),
-	revolutionaryTricolour({0,0,0}),
 	name(),
 	adjective(),
-	color(),
 	namesByLanguage(),
 	adjectivesByLanguage()
 {
@@ -111,34 +108,18 @@ EU4::Country::Country(
 	// This is obsolete and not applicable from at least 1.19+, probably further back
 	registerKeyword(std::regex("map_color"), [this](const std::string& unused, std::istream& theStream)
 		{
-			color = commonItems::Color(theStream);
+			auto colorColor = commonItems::Color(theStream);
+			colorColor.RandomlyFlunctuate(30);
 			// Countries whose colors are included in the object here tend to be generated countries,
 			// i.e. colonial nations which take on the color of their parent. To help distinguish 
 			// these countries from their parent's other colonies we randomly adjust the color.
-			color.RandomlyFlunctuate(30);
+			nationalColors.setMapColor(colorColor);
 		}
 	);
 	registerKeyword(std::regex("colors"), [this, theVersion](const std::string& colorsString, std::istream& theStream)
 		{
-			// This is obsolete and not applicable from at least 1.19+
-			if (theVersion < EU4::Version("1.19.0.0"))
-			{
-				auto colorObj = commonItems::convert8859Object(colorsString, theStream);
-				vector<shared_ptr<Object>> countryColorObjs = colorObj->getLeaves()[0]->getValue("country_color");
-				if (countryColorObjs.size() > 0)
-				{
-					color = commonItems::Color(countryColorObjs[0]);
-					// Countries whose colors are included in the object here tend to be generated countries,
-					// i.e. colonial nations which take on the color of their parent. To help distinguish 
-					// these countries from their parent's other colonies we randomly adjust the color.
-					//color.RandomlyFlunctuate(30);
-				}
-			}
-			else
-			{
-				EU4::NationalSymbol theSection(theStream);
-				nationalColors = theSection;
-			}
+			EU4::NationalSymbol theSection(theStream);
+			nationalColors = theSection;
 		}
 	);
 	registerKeyword(std::regex("capital"), [this](const std::string& unused, std::istream& theStream)
@@ -361,28 +342,21 @@ EU4::Country::Country(
 			overlord = theOverlord.getString();
 		}
 	);
-	// This is obsolete and not applicable from at least 1.19+, probably further back
+	// This is obsolete and not applicable from at least 1.19+, probably further back:
+	// In current savegame implementation, custom_colors stores a color triplet, but apparently it used to
+	// store a custom colors block with flag and symbol - which is now custom_colors block.
 	registerKeyword(std::regex("country_colors"), [this](const std::string& unused, std::istream& theStream)
 		{
-			auto customFlagObj = commonItems::convert8859Object(unused, theStream);
-			vector<shared_ptr<Object>> flag = customFlagObj->getValue("flag");
-			vector<shared_ptr<Object>> emblem = customFlagObj->getValue("subject_symbol_index");
-			vector<shared_ptr<Object>> colours = customFlagObj->getValue("flag_colors");
-
-			if (flag.size() > 0 && emblem.size() > 0 && colours.size() > 0)
-			{
-				customFlag.flag = to_string(1+stoi(flag[0]->getLeaf()));
-				customFlag.emblem = stoi(emblem[0]->getLeaf())+1;
-				vector<string> colourtokens = colours[0]->getTokens();
-				customFlag.colours = std::make_tuple(stoi(colourtokens[0]), stoi(colourtokens[1]), stoi(colourtokens[2]));
-			}
+			EU4::CustomColors colorBlock(theStream);
+			nationalColors.setCustomColors(colorBlock);
+			nationalColors.setCustomColorsInitialized();
 		}
 	);
 	// This is obsolete and not applicable from at least 1.19+, probably further back
 	registerKeyword(std::regex("revolutionary_colors"), [this](const std::string& unused, std::istream& theStream)
 		{
-			auto colorTokens = commonItems::intList(theStream).getInts();
-			revolutionaryTricolour = std::make_tuple(colorTokens[0], colorTokens[1], colorTokens[2]);
+			auto colorColor = commonItems::Color(theStream);
+			nationalColors.setRevolutionaryColor(colorColor);
 		}
 	);
 	registerKeyword(std::regex("history"), [this](const std::string& unused, std::istream& theStream)
@@ -670,11 +644,12 @@ void EU4::Country::readFromCommonCountry(const std::string& fileName, const std:
 		name = fileName.substr(0, extPos);
 	}
 
-	if (!color)
+	if (!nationalColors.getMapColor())
 	{
 		registerKeyword(std::regex("color"), [this](const std::string& unused, std::istream& theStream)
 			{
-				color = commonItems::Color(theStream);
+				auto color = commonItems::Color(theStream);
+				nationalColors.setMapColor(color);
 			}
 		);
 		registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);

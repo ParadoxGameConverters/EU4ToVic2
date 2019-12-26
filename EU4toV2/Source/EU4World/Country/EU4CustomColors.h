@@ -34,17 +34,24 @@ namespace EU4
 {
 	struct CustomColorsBlock
 	{
-		int flag = 1;
-		int color = 1;
-		int symbolIndex = 1;
-		commonItems::Color flagColours = commonItems::Color(255, 255, 255);
+		int flag = -1;
+		int color = 0;
+		int symbolIndex = 0;
+		commonItems::Color flagColors = commonItems::Color(0, 0, 0);
 	};
 
 	class CustomColors : public  commonItems::parser
 	{
 	public:
+		CustomColors() = default;
 		CustomColors(std::istream& theStream);
 		CustomColorsBlock getCustomColors() const { return customColors; }
+
+		void setFlag(int fl) { customColors.flag = fl; }
+		void setColor(int col) { customColors.color = col; }
+		void setSymbolIndex(int si) { customColors.symbolIndex = si; }
+		void setFlagColors(commonItems::Color col) { customColors.flagColors = col; }
+
 	private:
 		CustomColorsBlock customColors;
 	};

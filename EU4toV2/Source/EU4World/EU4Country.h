@@ -27,7 +27,6 @@ THE SOFTWARE. */
 #include "EU4Army.h"
 #include "Color.h"
 #include "Date.h"
-#include "../CustomFlagMapper.h"
 #include "CultureGroups.h"
 #include "newParser.h"
 #include <memory>
@@ -143,9 +142,7 @@ namespace EU4
 			bool								isColony()									const { return colony; }
 			string							getColonialRegion()						const { return colonialRegion; }
 			double							getLibertyDesire()						const { return libertyDesire; }
-			CustomFlag						getCustomFlag()							const { return customFlag; }
 			bool								isRevolutionary()							const { return revolutionary; }
-			tuple<int, int, int>			getRevolutionaryTricolour()			const { return revolutionaryTricolour; }
 			string							getRandomName()							const { return randomName; }
 			virtual const std::map<std::string, int>& getNationalIdeas() const { return nationalIdeas; }
 			std::vector<std::shared_ptr<EU4::leader>> getMilitaryLeaders() const { return militaryLeaders; }
@@ -153,7 +150,6 @@ namespace EU4
 			string	getName() const { return name; }
 			string	getName(const string& language) const;
 			string	getAdjective(const string& language) const;
-			commonItems::Color getColor() const { return color; }
 			void dropMinorityCultures();
 
 			EU4::NationalSymbol getNationalColors() const { return nationalColors; }
@@ -233,10 +229,7 @@ namespace EU4
 			string	adjective;	// the adjective for this country
 
 			// Colors
-			commonItems::Color color; // This is EU4 map_color, for pre 1.19 saves
-			tuple<int, int, int> revolutionaryTricolour; // for pre 1.19 saves
-			CustomFlag customFlag; // the custom flag, for pre 1.19 saves
-			EU4::NationalSymbol nationalColors; // This is collective color block for 1.19+ games
+			EU4::NationalSymbol nationalColors;
 
 			map<string, string> namesByLanguage;		// the names of this country in different localisations
 			map<string, string> adjectivesByLanguage;	// the adjectives for this country in different localisations

@@ -29,7 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <string>
 #include <vector>
 #include "../Mappers/ColonyFlagsetMapper.h"
-#include "../CustomFlagMapper.h"
+#include "../EU4World/Country/EU4NationalSymbol.h"
 using namespace std;
 
 
@@ -62,7 +62,7 @@ class V2Flags
 
 		typedef map<string, string> V2TagToFlagTagMap;
 		typedef map<string, shared_ptr<mappers::colonyFlag> > V2TagToColonyFlagMap; // tag, {base,overlordtag}
-		typedef map<string, CustomFlag> V2TagToCustomFlagMap;
+		typedef map<string, EU4::CustomColors> V2TagToCustomFlagMap;
 
 		V2TagToFlagTagMap tagMap;
 		V2TagToColonyFlagMap colonialFlagMapping;

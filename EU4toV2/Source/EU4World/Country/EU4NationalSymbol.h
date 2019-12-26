@@ -42,14 +42,21 @@ namespace EU4
 		commonItems::Color getMapColor() const { return mapColor; }
 		commonItems::Color getCountryColor() const { return countryColor; }
 		commonItems::Color getRevolutionaryColor() const { return revolutionaryColor; }
-		CustomColorsBlock getCustomColors() const { return customColors; }
+		CustomColors& retrieveCustomColors() { return customColors; }
+		CustomColors getCustomColors() const { return customColors; }
 		bool isCustomColorsInitialized() const { return customColorsInitialized; }
 
+		void setMapColor(commonItems::Color col) { mapColor = col; }
+		void setCountryColor(commonItems::Color col) { countryColor = col; }
+		void setRevolutionaryColor(commonItems::Color col) { revolutionaryColor = col; }
+		void setCustomColors(CustomColors col) { customColors = col; }
+		void setCustomColorsInitialized() { customColorsInitialized = true; }
+
 	private:
-		CustomColorsBlock customColors;
-		commonItems::Color mapColor = commonItems::Color(255, 255, 255);
-		commonItems::Color countryColor = commonItems::Color(255, 255, 255);
-		commonItems::Color revolutionaryColor = commonItems::Color(255, 255, 255);
+		CustomColors customColors;
+		commonItems::Color mapColor = commonItems::Color(0, 0, 0);
+		commonItems::Color countryColor = commonItems::Color(0, 0, 0);
+		commonItems::Color revolutionaryColor = commonItems::Color(0, 0, 0);
 		bool customColorsInitialized = false;
 	};
 }

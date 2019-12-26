@@ -202,17 +202,19 @@ void V2Flags::SetV2Tags(const map<string, V2Country*>& V2Countries)
 			continue;
 
 		string tag = i->second->getTag();
-		CustomFlag flag = eu4country->getCustomFlag();
-		if (eu4country->isRevolutionary())
-		{
-			flag.flag = "tricolor";
-			flag.emblem = 0;
-			flag.colours = eu4country->getRevolutionaryTricolour();
-		}
 
-		if (flag.flag != "-1")
+		EU4::NationalSymbol nationalColors = eu4country->getNationalColors();
+		
+		if (nationalColors.isCustomColorsInitialized())
 		{
-			customFlagMapping[tag] = flag;
+			LOG(LogLevel::Debug) << "Ordering a custom flag build for: " << tag;
+			customFlagMapping[tag] = nationalColors.getCustomColors();
+		}
+		else if (eu4country->isRevolutionary() && nationalColors.getRevolutionaryColor())
+		{
+			LOG(LogLevel::Debug) << "Ordering a revolutionary flag build for: " << tag;
+			nationalColors.retrieveCustomColors().setFlagColors(nationalColors.getRevolutionaryColor());
+			customFlagMapping[tag] = nationalColors.getCustomColors();
 		}
 
 	}
@@ -371,13 +373,18 @@ void V2Flags::createCustomFlags() const
 	for (auto cflag : customFlagMapping)
 	{
 		string V2Tag = cflag.first;
+		EU4::CustomColors customColors = cflag.second;
 
-		string baseFlag = cflag.second.flag;
-		string emblem = to_string(cflag.second.emblem);
+		int baseFlag = customColors.getCustomColors().flag;
+		std::string baseFlagStr = to_string(baseFlag);
+		int emblem = customColors.getCustomColors().symbolIndex;
+		commonItems::Color flagColor = customColors.getCustomColors().flagColors;
+		int r, g, b = 0;
+		flagColor.GetRGB(r, g, b);
 
 		int colourcount = FlagColorMapper::getNumColors();
 
-		if (get<0>(cflag.second.colours) > colourcount || get<1>(cflag.second.colours) > colourcount || get<2>(cflag.second.colours) > colourcount)
+		if (r > colourcount || g > colourcount || b > colourcount)
 		{
 			LOG(LogLevel::Error) << V2Tag << "'s flag has some missing colours.";
 			continue;
@@ -385,28 +392,29 @@ void V2Flags::createCustomFlags() const
 
 		for (int i = 0; i<5; i++)
 		{
-			if (baseFlag == "-1")
-				continue;
+			if (baseFlag < 0)
+				baseFlagStr = "tricolor";
 
-			if (baseFlag == "tricolor" && i != 0 && i != 4)
+			if ((baseFlag < 0) && i != 0 && i != 4)
 				continue;
 
 			const string& suffix = flagFileSuffixes[i];
 			bool flagFileFound = false;
 			string folderPath = baseFlagFolder;
+			string sourceEmblemPath = folderPath + "/CustomEmblems/" + to_string(emblem) + suffix;
 
-			string sourceFlagPath = folderPath + "/CustomBases/" + baseFlag + ".tga";
-			string sourceEmblemPath = folderPath + "/CustomEmblems/" + emblem + suffix;
+			string sourceFlagPath = folderPath + "/CustomBases/" + baseFlagStr + ".tga";
 
 			flagFileFound = (Utils::DoesFileExist(sourceFlagPath) && Utils::DoesFileExist(sourceEmblemPath));
 			if (flagFileFound)
 			{
 				string destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
 
+				LOG(LogLevel::Debug) << "Exporting flag: " << destFlagPath << " using rgb: " << r << " " << g << " " << b;
 				CreateCustomFlag( 
-					FlagColorMapper::getFlagColor(get<0>(cflag.second.colours)),
-					FlagColorMapper::getFlagColor(get<1>(cflag.second.colours)),
-					FlagColorMapper::getFlagColor(get<2>(cflag.second.colours)),
+					FlagColorMapper::getFlagColor(r),
+					FlagColorMapper::getFlagColor(g),
+					FlagColorMapper::getFlagColor(b),
 					sourceEmblemPath, sourceFlagPath, destFlagPath);
 			}
 			else
@@ -414,12 +422,16 @@ void V2Flags::createCustomFlags() const
 				if (!Utils::DoesFileExist(sourceFlagPath))
 				{
 					LOG(LogLevel::Error) << "Could not find " << sourceFlagPath;
-					exit(-1);
+					std::string err = "Could not find " + sourceFlagPath;
+					std::runtime_error exception(err);
+					throw exception;
 				}
 				else
 				{
 					LOG(LogLevel::Error) << "Could not find " << sourceEmblemPath;
-					exit(-1);
+					std::string err = "Could not find " + sourceEmblemPath;
+					std::runtime_error exception(err);
+					throw exception;
 				}
 			}
 		}

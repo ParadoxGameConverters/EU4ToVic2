@@ -35,6 +35,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Date.h"
 #include "../EU4World/EU4Army.h"
 #include "../EU4World/Regions/Regions.h"
+#include "../EU4World/Country/EU4NationalSymbol.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
@@ -247,7 +248,7 @@ class V2Country
 		std::vector<V2Leader> leaders;
 		double							literacy;
 		V2Localisation					localisation;
-		commonItems::Color			color;
+		EU4::NationalSymbol nationalColors;
 		int								unitNameCount[num_reg_categories];
 		int								numFactories;
 		vector<string>					decisions;

@@ -33,6 +33,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/EU4Country.h"
 #include "../EU4World/EU4Relations.h"
 #include "../EU4World/EU4Leader.h"
+#include "color.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../Mappers/AdjacencyMapper.h"
 #include "../Mappers/CountryMapping.h"
@@ -425,7 +426,7 @@ void V2Country::output() const
 			exit(-1);
 		}
 		commonCountryOutput << "graphical_culture = UsGC\n";	// default to US graphics
-		commonCountryOutput << "color = { " << color << " }\n";
+		commonCountryOutput << "color = { " << nationalColors.getMapColor() << " }\n";
 		for (auto party : parties)
 		{
 			commonCountryOutput	<< '\n'
@@ -546,7 +547,7 @@ void V2Country::initFromEU4Country(
 	}
 
 	// Color
-	color = srcCountry->getColor();
+	nationalColors = srcCountry->getNationalColors();
 
 	// Localisation
 	localisation.SetTag(tag);

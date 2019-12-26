@@ -312,7 +312,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
-    <ClInclude Include="Source\CustomFlagMapper.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\FlagUtils.h" />
     <ClInclude Include="Source\targa.h" />
