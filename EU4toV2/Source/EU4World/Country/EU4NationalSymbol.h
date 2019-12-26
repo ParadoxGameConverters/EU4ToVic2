@@ -22,14 +22,7 @@ THE SOFTWARE. */
 #ifndef EU4_NATIONALSYMBOL_H_
 #define EU4_NATIONALSYMBOL_H_
 
-
-
-#include "Color.h"
-#include "Date.h"
 #include "EU4CustomColors.h"
-#include <memory>
-#include <optional>
-#include <set>
 
 
 namespace EU4
