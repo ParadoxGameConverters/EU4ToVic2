@@ -836,19 +836,28 @@ string EU4::Country::getName(const string& language) const
 		return randomName;
 	}
 
-	if (namesByLanguage.empty() && language == "english")
+	if (namesByLanguage.empty())
 	{
+		// We're returning english base name as a default for all languages where we lack localization.
 		return name;
 	}
 
 	map<string, string>::const_iterator findIter = namesByLanguage.find(language);
 	if (findIter != namesByLanguage.end())
 	{
-		return findIter->second;
+		if (findIter->second.empty())
+		{
+			// Default to english base name for incomplete localization
+			return name;
+		}
+		else 
+		{
+			return findIter->second;
+		}
 	}
 	else
 	{
-		return "";
+		return name;
 	}
 }
 
@@ -860,19 +869,32 @@ string EU4::Country::getAdjective(const string& language) const
 		return randomName;
 	}
 
-	if (adjectivesByLanguage.empty() && language == "english")
+	if (adjectivesByLanguage.empty())
 	{
+		// For dynamic countries there are no localizations save for the savegame one, 
+		// so we return english for all languuages.
 		return adjective;
 	}
 
 	map<string, string>::const_iterator findIter = adjectivesByLanguage.find(language);
+	map<string, string>::const_iterator engIter = adjectivesByLanguage.find("english");
+
 	if (findIter != adjectivesByLanguage.end())
 	{
-		return findIter->second;
+		if (findIter->second.empty())
+		{
+			// Default to english for incomplete localization
+			return engIter->second;
+		}
+		else
+		{
+			return findIter->second;
+		}
 	}
 	else
 	{
-		return "";
+		// We're returning english adjective as a default for all languages where we lack localization.
+		return engIter->second;
 	}
 }
 
