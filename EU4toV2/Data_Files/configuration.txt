@@ -33,8 +33,8 @@ configuration = {
 	#	3	 - Remove all of them
 	removeType = "2"
 
-	# Liberty threshold: The threshold value for when colonies are not absorbed. Default 100% (colonies always absorbed)
-	libertyThreshold = "100"
+	# Liberty threshold: The threshold value for when colonies are not absorbed. Default 50% (loyal colonies absorbed)
+	libertyThreshold = "50"
 
 	# Shape population?: Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers.
 	# 	1	 	- Use Vanilla population sizes.

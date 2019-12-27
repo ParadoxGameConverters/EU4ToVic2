@@ -1,26 +1,3 @@
-/*Copyright (c) 2019 The Paradox Game Converters Project
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
-
-
-
 #include "V2World.h"
 #include <string>
 #include <iostream>
@@ -1077,18 +1054,7 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 				v2a.type = "vassal";
 				diplomacy.addAgreement(v2a);
 				r1->setLevel(5);
-			}
-		}
-
-		if ((itr->type == "is_march") || (itr->type == "march"))
-		{
-			country1->second->absorbVassal(country2->second);
-			for (vector<EU4Agreement>::iterator itr2 = agreements.begin(); itr2 != agreements.end(); ++itr2)
-			{
-				if (itr2->country1 == country2->second->getSourceCountry()->getTag())
-				{
-					itr2->country1 = country1->second->getSourceCountry()->getTag();
-				}
+				country2->second->addPrestige(-country2->second->getPrestige());
 			}
 		}
 
@@ -1108,20 +1074,22 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 				r2->setLevel(r2->getLevel() + 1);
 			}
 		}
-		if ((itr->type == "vassal") || (itr->type == "client_vassal") || (itr->type == "daimyo_vassal") || (itr->type == "union") || (itr->type == "personal_union") || (itr->type == "protectorate") || (itr->type == "tributary_state"))
+		if ((itr->type == "vassal") || (itr->type == "client_vassal") || (itr->type == "daimyo_vassal") || (itr->type == "protectorate") || (itr->type == "tributary_state"))
 		{
-			// influence level = 5
 			r1->setLevel(5);
-			/* FIXME: is this desirable?
-			// if relations are too poor, country2 will immediately eject country1's ambassadors at the start of the game
-			// so, for stability's sake, give their relations a boost
-			if (r1->getRelations() < 1)
-			r1->setRelations(1);
-			if (r2->getRelations() < 1)
-			r2->setRelations(1);
-			*/
+			country2->second->addPrestige(-country2->second->getPrestige());
 		}
-		if ((itr->type == "alliance") || (itr->type == "vassal") || (itr->type == "client_vassal") || (itr->type == "daimyo_vassal") || (itr->type == "union") || (itr->type == "personal_union") || (itr->type == "guarantee"))
+
+		if ((itr->type == "is_march") || (itr->type == "march") || (itr->type == "union") || (itr->type == "personal_union"))
+		{
+			// Yeah, we don't do marches or personal unions. PUs are a second relation beside existing vassal relation specifying when vassalage ends.
+			// We assume all rulers are CK2 immortals and vassalage does not end with a specific date.
+			itr->type = "vassal";
+			r1->setLevel(5);
+			country2->second->addPrestige(-country2->second->getPrestige());
+		}
+
+		if ((itr->type == "alliance") || (itr->type == "vassal") || (itr->type == "client_vassal") || (itr->type == "daimyo_vassal") || (itr->type == "guarantee"))
 		{
 			// copy agreement
 			V2Agreement v2a;
