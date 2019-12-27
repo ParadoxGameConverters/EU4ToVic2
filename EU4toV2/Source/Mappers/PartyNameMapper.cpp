@@ -12,18 +12,4 @@ mappers::PartyNameMapper::PartyNameMapper(std::istream& theStream)
 	});
 
 	parseStream(theStream);
-
-}
-
-std::optional<std::string> mappers::PartyNameMapper::getPartyToName(const std::string& party, const std::string& language) const
-{
-	auto mapping = partyToLanguageMap.find(party);
-	if (mapping != partyToLanguageMap.end())
-	{
-		return mapping->second.getLanguageToName(language);
-	}
-	else
-	{
-		return "";
-	}
 }

@@ -12,7 +12,6 @@ namespace mappers
 	{
 	public:
 		PartyName(std::istream& theStream);
-		std::optional<std::string> mappers::PartyName::getLanguageToName(const std::string& language) const;
 		std::map<std::string, std::string> getMap() const { return languageToNameMap; }
 
 	private:
