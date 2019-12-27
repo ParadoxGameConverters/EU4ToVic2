@@ -134,6 +134,7 @@ class V2Country
 		std::tuple<double, double, double> getNationalValueScores();
 		
 		void addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
+		double getPrestige() const { return prestige; }
 		void								addResearchPoints(double newPoints)		{ researchPoints += newPoints; }
 		void								addTech(string newTech)						{ techs.push_back(newTech); }
 		void								setNationalValue(string NV)				{ nationalValue = NV; }

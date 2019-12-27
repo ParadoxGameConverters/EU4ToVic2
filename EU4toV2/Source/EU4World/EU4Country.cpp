@@ -184,13 +184,18 @@ EU4::Country::Country(
 			religion = theReligion.getString();
 		}
 	);
+	// Obsolete since 1.26.0
 	registerKeyword(std::regex("score"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleDouble theScore(theStream);
 		score = theScore.getDouble();
 	});
-	registerKeyword(std::regex("great_power_score"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble theScore(theStream);
-		score = theScore.getDouble();
+	//Relevant since 1.20 but we only use it for 1.26+
+	registerKeyword(std::regex("age_score"), [this, theVersion](const std::string& unused, std::istream& theStream) {
+		if (theVersion >= EU4::Version("1.26.0.0")) 
+		{
+			commonItems::doubleList ageScores(theStream);
+			for (auto& agScore : ageScores.getDoubles()) score += agScore;
+		}
 	});
 	registerKeyword(std::regex("stability"), [this](const std::string& unused, std::istream& theStream)
 		{
