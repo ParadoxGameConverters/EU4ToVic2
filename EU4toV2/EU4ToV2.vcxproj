@@ -243,8 +243,8 @@
     <ClCompile Include="Source\Mappers\Ideas\TechGroups.cpp" />
     <ClCompile Include="Source\Mappers\Ideas\TechGroupsMapper.cpp" />
     <ClCompile Include="Source\Mappers\MinorityPopMapper.cpp" />
-    <ClCompile Include="Source\Mappers\partyName.cpp" />
-    <ClCompile Include="Source\Mappers\partyNameMapper.cpp" />
+    <ClCompile Include="Source\Mappers\PartyName.cpp" />
+    <ClCompile Include="Source\Mappers\PartyNameMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -353,8 +353,8 @@
     <ClInclude Include="Source\Mappers\Ideas\TechGroups.h" />
     <ClInclude Include="Source\Mappers\Ideas\TechGroupsMapper.h" />
     <ClInclude Include="Source\Mappers\MinorityPopMapper.h" />
-    <ClInclude Include="Source\Mappers\partyName.h" />
-    <ClInclude Include="Source\Mappers\partyNameMapper.h" />
+    <ClInclude Include="Source\Mappers\PartyName.h" />
+    <ClInclude Include="Source\Mappers\PartyNameMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />

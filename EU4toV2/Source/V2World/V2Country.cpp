@@ -172,7 +172,7 @@ void V2Country::loadPartiesFromBlob()
 	map<string, mappers::PartyName>::iterator partyItr;
 
 	size_t i = 0;
-	for (partyItr = partyMap.begin(); partyItr != partyMap.end(); partyItr++)
+	for (partyItr = partyMap.begin(); partyItr != partyMap.end(); ++partyItr)
 	{
 		map<string, string>::iterator languageItr;
 		auto languageMap = partyItr->second.getMap();
@@ -182,7 +182,7 @@ void V2Country::loadPartiesFromBlob()
 		parties.push_back(new V2Party(partyKey, partyItr->first));
 		localisation.SetPartyKey(i, partyKey);
 		
-		for (languageItr = languageMap.begin(); languageItr != languageMap.end(); languageItr++)
+		for (languageItr = languageMap.begin(); languageItr != languageMap.end(); ++languageItr)
 		{
 			localisation.SetPartyName(i, languageItr->first, languageItr->second);
 		}
