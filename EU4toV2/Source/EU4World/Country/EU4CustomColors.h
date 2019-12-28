@@ -9,7 +9,7 @@ namespace EU4
 {
 	struct CustomColorsBlock
 	{
-		int flag = -1;
+		int flag = 0;
 		int color = 0;
 		int symbolIndex = 0;
 		commonItems::Color flagColors = commonItems::Color(0, 0, 0);

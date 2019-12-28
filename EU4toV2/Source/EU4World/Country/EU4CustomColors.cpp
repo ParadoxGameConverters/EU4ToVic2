@@ -9,7 +9,15 @@ EU4::CustomColors::CustomColors(std::istream& theStream)
 	registerKeyword(std::regex("flag"), [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt flagInt(theStream);
-			customColors.flag = flagInt.getInt() + 1;
+			// Why, paradox, why?
+			if (flagInt.getInt() < 0) 
+			{
+				customColors.flag = 1;
+			}
+			else
+			{
+				customColors.flag = flagInt.getInt() + 1;
+			}
 		}
 	);
 	registerKeyword(std::regex("color"), [this](const std::string& unused, std::istream& theStream)
