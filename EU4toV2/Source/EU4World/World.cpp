@@ -215,8 +215,8 @@ void EU4::world::verifySave(const std::string& EU4SaveFileName)
 	}
 	else
 	{
-		char buffer[7];
-		saveFile.get(buffer, 7);
+		char buffer[8];
+		saveFile.get(buffer, 8);
 		if ((buffer[0] == 'P') && (buffer[1] == 'K'))
 		{
 			std::runtime_error exception("Saves must be uncompressed to be converted.");
