@@ -392,10 +392,10 @@ void V2Flags::createCustomFlags() const
 
 		for (int i = 0; i<5; i++)
 		{
-			if (baseFlag < 0)
+			if (baseFlag == 0)
 				baseFlagStr = "tricolor";
 
-			if ((baseFlag < 0) && i != 0 && i != 4)
+			if ((baseFlag == 0) && i != 0 && i != 4)
 				continue;
 
 			const string& suffix = flagFileSuffixes[i];
