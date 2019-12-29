@@ -8,4 +8,8 @@
 # Germany or Holy Roman Empire can still be released should they be annexed during 
 # Vic2 timeline.
 
-HRE
+HRE #HRE
+AAA #Dummy country
+SPQ #Roman Empire
+ALI #Aliens
+UND #Undead
