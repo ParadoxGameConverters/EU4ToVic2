@@ -25,199 +25,195 @@
 
 # --------------------------- Vanilla --------------------------------------
 
-# Monarchy 1
-feudalism_reform = { }
-autocracy_reform = { }
-plutocratic_reform = { }
-indian_sultanate_reform = { }
-nayankara_reform = { }
-misl_confederacy_reform = { }
-rajput_kingdom = { }
-grand_duchy_reform = { }
-daimyo = { }
-indep_daimyo = { }
-elective_monarchy = { }
-iqta = { }
-ottoman_government = { }
-prussian_monarchy = { }
-principality = { }
-tsardom = { }
-mamluk_government = { }
-feudal_theocracy = { }
-celestial_empire = { }
-shogunate = { }
-english_monarchy = { }
-mandala_reform = { }
-revolutionary_empire_reform = { }
+# Monarchy 1 - National Value and UH
+feudalism_reform = { order = 8 reactionary = 7 }
+autocracy_reform = { order = 10 reactionary = 6 }
+plutocratic_reform = { liberty = 7 liberal = 6 }
+indian_sultanate_reform = { equality = 6 liberal = 6 }
+nayankara_reform = { order = 6 }
+misl_confederacy_reform = { order = 6 }
+rajput_kingdom = { order = 6 army = 7 }
+grand_duchy_reform = { order = 6 }
+daimyo = { order = 7 army = 7}
+indep_daimyo = { liberty = 6 army = 7 }
+elective_monarchy = { equality = 7 liberal = 8 }
+iqta = { equality = 6 order = 7 reactionary = 7 commerce = 4 }
+ottoman_government = { order = 9 reactionary = 6 liberal = 4 }
+prussian_monarchy = { order = 10 reactionary = 6 liberal = 3 }
+principality = { order = 6 reactionary = 6 commerce = 4 }
+tsardom = { order = 8 reactionary = 6 }
+mamluk_government = { order = 9 reactionary = 6 }
+feudal_theocracy = { order = 10 reactionary = 8 commerce = 3 culture = 4 }
+celestial_empire = { order = 10 reactionary = 7 }
+shogunate = { order = 7 culture = 6}
+english_monarchy = { liberty = 7 liberal = 7 commerce = 6 navy = 6 }
+mandala_reform = { order = 6 commerce = 4 }
+revolutionary_empire_reform = { equality = 10 liberal = 9 army = 8 }
 
-# Monarchy 2
-enforce_privileges_reform = { }
-quash_noble_power_reform = { }
-enforce_trader_privileges_reform = { }
-bengali_reform = { }
-sufi_syncretism_reform = { }
-poligar_reform = { }
-khalsa_reform = { }
-deccani_society_reform = { }
-mughal_government = { }
+# Monarchy 2 - Tech
+enforce_privileges_reform = { army = 7 culture = 3 order = 6 }
+quash_noble_power_reform = { commerce = 6 industry = 6 order = 4 }
+enforce_trader_privileges_reform = { commerce = 8 navy = 6 }
+bengali_reform = { commerce = 6 culture = 6 }
+sufi_syncretism_reform = { culture = 6 commerce = 6 equality = 7 }
+poligar_reform = { army = 6 equality = 6 }
+khalsa_reform = { army = 8 navy = 7 }
+deccani_society_reform = { commerce = 7 culture = 6  equality = 6 }
+mughal_government = { army = 8 navy = 7 equality = 10 }
 
-# Monarchy 3
-centralize_reform = { }
-decentralize_reform = { }
-sidhi_recruitment = { }
-mansabdari_reform = { }
-council_of_the_indies_reform = { }
+# Monarchy 3 - Voting
+centralize_reform = { upper_house_composition = 2 vote_franchise = 2 voting_system = 2 }
+decentralize_reform = { upper_house_composition = 6 vote_franchise = 7 voting_system = 6 }
+sidhi_recruitment = { upper_house_composition = 4 vote_franchise = 2 voting_system = 4 }
+mansabdari_reform = { upper_house_composition = 2 vote_franchise = 2 voting_system = 2 }
+council_of_the_indies_reform = { upper_house_composition = 10 vote_franchise = 6 voting_system = 4 }
 
-# Monarchy 4
-clergy_in_administration_reform = { }
-of_noble_bearing_reform = { }
-meritocratic_focus_reform = { }
-dakhni_culture_reform = { }
-zabt_reform = { }
-permanent_marathas_council_reform = { }
-governmental_purbias_register_reform = { }
+# Monarchy 4 - Literacy
+clergy_in_administration_reform = { literacy = 3 }
+of_noble_bearing_reform = { literacy = 4 }
+meritocratic_focus_reform = { literacy = 7 }
+dakhni_culture_reform = { literacy = 6 }
+zabt_reform = { literacy = 4 }
+permanent_marathas_council_reform = { literacy = 2 army = 7 }
+governmental_purbias_register_reform = { literacy = 4 army = 6 }
 
-# Monarchy 5
+# Monarchy 5 - Parties and Meetings
 parliamentary_reform = { political_parties = 7 public_meetings = 7 }
-royal_decree_reform = { }
-aristocratic_court_reform = { }
-general_estates_reform = { }
-states_general_reform = { }
+royal_decree_reform = { political_parties = 1 public_meetings = 1 }
+aristocratic_court_reform = { political_parties = 4 public_meetings = 7 }
+general_estates_reform = { political_parties = 6 public_meetings = 6 industry = 7 }
+states_general_reform = { political_parties = 8 public_meetings = 10 }
 
-# Monarchy 6
-letat_cest_moi_reform = { }
-regional_representation_reform = { }
+# Monarchy 6 - Slavery, Press Rights, Trade Unions
+letat_cest_moi_reform = { slavery = 0 press_rights = 0 trade_unions = 0 political_parties = 0 }
+regional_representation_reform = { press_rights = 6 trade_unions = 8 }
 
-# Monarchy 7
-political_absolutism_reform = { }
-legislative_houses_reform = { }
+# Monarchy 7 - Press Rights, Trade Unions
+political_absolutism_reform = { press_rights = 2 trade_unions = 3 political_parties = 0 }
+legislative_houses_reform = { enforce = prussian_constitutionalism press_rights = 6 trade_unions = 6 political_parties = 6 }
 
-# Monarchy basic
+# Monarchy basic - Nothing, this is ignored
 monarchy_mechanic = { }
 
-# Republic 1
-oligarchy_reform = { }
-merchants_reform = { }
-venice_merchants_reform = { }
-pirate_republic_reform = { }
-noble_elite_reform = { }
-free_city = { }
-trading_city = { }
-ambrosian_republic = { }
-veche_republic = { }
-american_republic = { }
-federal_republic = { }
-colonial_government = { }
-dutch_republic = { }
-peasants_republic = { enforce = proletarian_dictatorship order = 3 liberty = 7 equality = 10 }
-revolutionary_republic_reform = { }
-presidential_despot_reform = { }
-cossacks_reform = { }
+# Republic 1 - National Value and UH
+oligarchy_reform = { order = 7 liberal = 4 }
+merchants_reform = { liberty = 7 liberal = 7 commerce = 7 }
+venice_merchants_reform = { equality = 8 liberal = 8 commerce = 8 }
+pirate_republic_reform = { order = 6 navy = 8 liberal = 10 }
+noble_elite_reform = { order = 7 reactionary = 7 liberal = 4 army = 6 }
+free_city = { liberty = 6 liberal = 8 commerce = 7 industry = 6 }
+trading_city = { liberty = 7 liberal = 7 trade = 7 }
+ambrosian_republic = { equality = 7 liberal = 9 army = 6 commerce = 4 }
+veche_republic = { equality = 8 liberal = 7 commerce = 6 }
+american_republic = { liberty = 10 liberal = 6 reactionary = 3 culture = 6 }
+federal_republic = { liberty = 8 liberal = 7 reactionary = 3 culture = 6 }
+colonial_government = { enforce = presidential_dictatorship order = 6 reactionary = 4 }
+dutch_republic = { liberty = 6 reactionary = 7 liberal = 7 political_parties = 9 }
+peasants_republic = { enforce = proletarian_dictatorship equality = 10 order = 4 reactionary = 2 }
+revolutionary_republic_reform = { enforce = bourgeois_dictatorship equality = 9 reactionary = 3 army = 6 }
+presidential_despot_reform = { enforce = presidential_dictatorship army = 7 }
+cossacks_reform = { order = 9 reactionary = 6 army = 7 commerce = 3 literacy = 3 }
 
-# Republic 2
-republican_authoritarianism_reform = { }
-nepotism_reform = { }
-republicanism_reform = { }
-council_of_captains_reform = { }
-articles_of_agreement_reform = { }
-smugglers_haven_reform = { }
+# Republic 2 - National Value and UH
+republican_authoritarianism_reform = { order = 7 reactionary = 6 }
+nepotism_reform = { order = 6 equality = 4 liberal = 4 }
+republicanism_reform = { equality = 7 liberal = 7 vote_franchise = 7 }
+council_of_captains_reform = { order = 7 navy = 8 industry = 4 }
+articles_of_agreement_reform = { order = 4 commerce = 6 }
+smugglers_haven_reform = { liberty = 8 commerce = 8 industry = 2 }
 
-# Republic 3
-frequent_elections_reform = { }
-consolidation_of_power_reform = { }
-permanent_marathas_council_reform = { }
-governmental_purbias_register_reform = { }
-lottery_reform = { }
-council_of_the_indies_reform = { }
+# Republic 3 - National Value and Voting
+frequent_elections_reform = { equality = 6 upper_house_composition = 7 vote_franchise = 7 voting_system = 6}
+consolidation_of_power_reform = { order = 6 upper_house_composition = 3 vote_franchise = 3 voting_system = 2 }
+permanent_marathas_council_reform = { army = 6 upper_house_composition = 1 vote_franchise = 2 voting_system = 2 }
+lottery_reform = { equality = 8 upper_house_composition = 6 vote_franchise = 2 voting_system = 2 }
 
-# Republic 4
-provincial_governments_reform = { }
-administrative_divisions_reform = { }
-union_of_states_reform = { }
+# Republic 4 - Voting system
+provincial_governments_reform = { voting_system = 10 }
+administrative_divisions_reform = { voting_system = 0 }
+union_of_states_reform = { voting_system = 8}
 
-# Republic 5
-parliamentary_reform = { }
-presidential_reform = { }
-pirate_king_reform = { }
-war_against_the_world_doctrine_reform = { }
-black_market_consortium_reform = { }
+# Republic 5 - Parties, Slavery, UHC
+parliamentary_reform = { political_parties = 7 }
+presidential_reform = { political_parties = 4 upper_house_composition = 3 literacy = 8 }
+pirate_king_reform = { slavery = 0 upper_house_composition = 0 political_parties = 0 navy = 7 }
+war_against_the_world_doctrine_reform = { slavery = 10 upper_house_composition = 10 navy = 6 }
+black_market_consortium_reform = { slavery = 0 commerce = 8 }
 
-# Republic 6
-broaden_executive_powers_reform = { }
-devolution_of_powers_reform = { }
+# Republic 6 - Trade Unions
+broaden_executive_powers_reform = { trade_unions = 2 }
+devolution_of_powers_reform = { trade_unions = 8 }
 
-# Republic 7
-political_principle_reform = { }
-moral_principle_reform = { }
+# Republic 7 - Literacy
+political_principle_reform = { literacy = 9 }
+moral_principle_reform = { literacy = 3 }
 
-# Republic 8
-landholders_reform = { }
-citizenry_reform = { }
+# Republic 8 - Vote franchise, Public meetings
+landholders_reform = { vote_franchise = 2 public_meetings = 6 }
+citizenry_reform = { vote_franchise = 9 public_meetings = 10 }
 
-# Republic 9
-appointment_by_committee_reform = { }
-bureaucratic_aparatus_reform = { }
-universal_suffrage_reform = { }
+# Republic 9 - Literacy, UHC
+appointment_by_committee_reform = { liberty = 8 literacy = 7 upper_house_composition = 2 }
+bureaucratic_aparatus_reform = { literacy = 7 order = 8 upper_house_composition = 3 }
+universal_suffrage_reform = { literacy = 7 equality = 8 upper_house_composition = 10 vote_franchise = 10 }
 
 # Republic 10
-strengthen_executive_powers_reform = { enforce = presidential_dictatorship order = 8 liberty = 4 }
-reinforce_republican_values_reform = { }
+strengthen_executive_powers_reform = { order = 9 liberty = 4 reactionary = 6 culture = 3 }
+reinforce_republican_values_reform = { liberty = 6 liberal = 7 culture = 7 }
 
-# Republic basic
+# Republic basic, ignored
 republic_mechanic = { }
 
-# Tribal 1
-steppe_horde = { }
-tribal_federation = { }
-tribal_despotism = { }
-tribal_kingdom = { }
-siberian_tribe = { }
-gond_kingdom = { }
-great_mongol_state_reform = { }
+# Tribal 1 - National Value, Literacy and UH
+steppe_horde = { order = 10 reactionary = 7 upper_house_composition = 0 army = 8 culture = 3 industry = 2 literacy = 2 }
+tribal_federation = { equality = 6 liberal = 6 upper_house_composition = 7 }
+tribal_despotism = { order = 10 reactionary = 8 upper_house_composition = 0 culture = 2 industry = 3 literacy = 0 }
+tribal_kingdom = { order = 6 reactionary = 6 upper_house_composition = 3 culture = 3 industry = 3 literacy = 3 }
+siberian_tribe = { liberty = 6 literacy = 1 upper_house_composition = 2 }
+gond_kingdom = { liberty = 6 literacy = 4 upper_house_composition = 2 }
+great_mongol_state_reform = { order = 8 reactionary = 6 upper_house_composition = 2 literacy = 3 }
 
-# Tribal 2
-martial_society_reform = { }
-civil_society_reform = { }
+# Tribal 2 - Tech, Literacy
+martial_society_reform = { army = 6 culture = 3 industry = 3 commerce = 3 literacy = 3 }
+civil_society_reform = { commerce = 6 industry = 4 literacy = 6 }
 
-# Tribal 3
-religious_societies_reform = { }
-lip_service_reform = { }
+# Tribal 3 - Literacy, Public meetings
+religious_societies_reform = { literacy = 4 public_meetings = 2 }
+lip_service_reform = { literacy = 6 public_meetings = 4 }
 
-# Tribal 4
-centralize_tribal_power_reform = { }
-retain_tribal_hierarchy_reform = { }
+# Tribal 4 - Vote franchise
+centralize_tribal_power_reform = { vote_franchise = 0 }
+retain_tribal_hierarchy_reform = { vote_franchise = 2 }
 
-# Tribal 5
+# Tribal basic, ignored
 tribe_mechanic = { }
 
 # Native basic
 native_basic_reform = { }
 
-# Theocracy 1
-leading_clergy_reform = { literacy = 6 }
-monastic_order_reform = { }
-papacy_reform = { }
+# Theocracy 1 - National values, literacy
+leading_clergy_reform = { order = 8 literacy = 6 }
+monastic_order_reform = { order = 6 literacy = 4 }
+papacy_reform = { order = 10 literacy = 10 }
 
-# Theocracy 2
-internal_mission_reform = { literacy = 7 }
-external_mission_reform = { }
+# Theocracy 2 - Literacy, Tech
+internal_mission_reform = { literacy = 7 industry = 6 culture = 6 }
+external_mission_reform = { literacy = 4 army = 6 culture = 4 }
 
-# Theocracy 3
-safeguard_holy_sites_reform = { }
-combat_heresy_reform = { }
-expel_heathens_reform = { }
+# Theocracy 3 - Tech, Slavery, Public Meetings
+safeguard_holy_sites_reform = { commerce = 6 public_meetings = 7 }
+combat_heresy_reform = { army = 6 slavery = 2 public_meetings = 2 }
+expel_heathens_reform = { equality = 2 industry = 6 slavery = 3 public_meetings = 4 }
 
-# Theocracy 4
-subservient_administrators_reform = { }
-religious_administrators_reform = { literacy = 9}
-permanent_marathas_council_reform = { }
-governmental_purbias_register_reform = { }
+# Theocracy 4 - UHC, Literacy, Trade Unions
+subservient_administrators_reform = { literacy = 6 upper_house_composition = 4 trade_unions = 4}
+religious_administrators_reform = { literacy = 7 upper_house_composition = 2 trade_unions = 0}
 
 # Theocracy 5
-maintain_religious_head_reform = { }
-battle_pope_reform = { }
+maintain_religious_head_reform = { order = 9 liberal = 2 culture = 4 }
+battle_pope_reform = { order = 10 army = 7 liberal = 2 culture = 3 }
 
-# Theocracy basic
+# Theocracy basic, ignored
 theocracy_mechanic = { }
 
 # ------------------------- ME / GE ----------------------------------------------------------------
