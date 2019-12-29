@@ -34,7 +34,7 @@ int main(const int argc, const char * argv[])
 {
 	try
 	{
-		LOG(LogLevel::Info) << "Converter version 1.0Jprerelease";
+		LOG(LogLevel::Info) << "Converter version 1.0J \"Jan Mayen\" - compatible with 1.29 and previous";
 		LOG(LogLevel::Info) << "Built " << __TIMESTAMP__;
 		LOG(LogLevel::Debug) << "Current directory is " << Utils::getCurrentDirectory();
 
