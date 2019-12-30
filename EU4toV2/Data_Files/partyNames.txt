@@ -10,7 +10,7 @@ conservative={
 	hungarian="Konzervatнv Pбrt"
 	dutch="Conservatieve Partij"
 	portugese="Partido Conservador"
-	russian="Консервативная Партия"
+	#russian="Консервативная Партия"
 	finnish="Konservatiivipuolue"
 }
 liberal={
@@ -25,7 +25,7 @@ liberal={
 	hungarian="Liberбlis Pбrt"
 	dutch="Liberale Partij"
 	portugese="Partido Liberal"
-	russian="Либеральная Партия"
+	#russian="Либеральная Партия"
 	finnish="Liberaalipuolue"
 }
 reactionary={
@@ -40,7 +40,7 @@ reactionary={
 	hungarian="Nemzeti Pбrt"
 	dutch="Nationale Partij"
 	portugese="Partido Nacional"
-	russian="Национальная Партия"
+	#russian="Национальная Партия"
 	finnish="Kansallispuolue"
 }
 socialist={
@@ -55,7 +55,7 @@ socialist={
 	hungarian="Szocialista Pбrt"
 	dutch="Socialistische Partij"
 	portugese="Partido Socialista"
-	russian="Социалистическая Партия"
+	#russian="Социалистическая Партия"
 	finnish="Sosialistinenpuolue"
 }
 communist={
@@ -70,7 +70,7 @@ communist={
 	hungarian="Kommunista Pбrt"
 	dutch="Communistische Partij"
 	portugese="Partido Comunista"
-	russian="Коммунистическая Партия"
+	#russian="Коммунистическая Партия"
 	finnish="Kommunistinenpuolue"
 }
 anarcho_liberal={
@@ -85,7 +85,7 @@ anarcho_liberal={
 	hungarian="Radikбlis Pбrt"
 	dutch="Radicale Partij"
 	portugese="Partido Radical"
-	russian="Радикальная Партия"
+	#russian="Радикальная Партия"
 	finnish="Radikaalipuolue"
 }
 fascist={
@@ -100,6 +100,6 @@ fascist={
 	hungarian="Fasiszta Pбrt"
 	dutch="Fascistische Partij"
 	portugese="Partido Fascista"
-	russian=""Фашистская Партия"
+	#russian=""Фашистская Партия"
 	finnish="Fasistinenpuolue"
 }
