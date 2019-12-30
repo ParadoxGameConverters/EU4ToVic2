@@ -36,7 +36,7 @@ void V2Flags::SetV2Tags(const map<std::string, V2Country*>& V2Countries)
 	vector<V2Country*> colonialFail;
 	
 	// Get the CK2 and colonial flags.
-	for (std::map<std::string, V2Country*>::const_iterator i = V2Countries.begin(); i != V2Countries.end(); i++)
+	for (std::map<std::string, V2Country*>::const_iterator i = V2Countries.begin(); i != V2Countries.end(); ++i)
 	{
 		V2Country* v2source = i->second;
 		std::string religion = v2source->getReligion();
