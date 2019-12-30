@@ -237,32 +237,49 @@ void V2World::importDefaultPops()
 
 	set<string> filenames;
 	Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/", filenames);
+
+	LOG(LogLevel::Info) << "Parsing minority pops mappings";
+
+	std::ifstream minPopFile("minorityPops.txt");
+	if (minPopFile.fail())
+	{
+		LOG(LogLevel::Error) << "Could not parse file minorityPops.txt";
+		std::range_error exception("Could not parse file minorityPops.txt");
+		throw exception;
+	}
+	mappers::MinorityPopMapper minorityPopMapper(minPopFile);
+	minPopFile.close();
+
+
 	for (auto filename : filenames)
 	{
-		importPopsFromFile(filename);
+		importPopsFromFile(filename, minorityPopMapper);
 	}
+
+
 }
 
 
-void V2World::importPopsFromFile(const string& filename)
+void V2World::importPopsFromFile(const string& filename, mappers::MinorityPopMapper minorityPopMapper)
 {
 	list<int> popProvinces;
 
 	shared_ptr<Object> fileObj = parser_8859_15::doParseFile(("./blankMod/output/history/pops/1836.1.1/" + filename));
 	vector<shared_ptr<Object>> provinceObjs = fileObj->getLeaves();
+
 	for (auto provinceObj : provinceObjs)
 	{
 		int provinceNum = stoi(provinceObj->getKey());
 		popProvinces.push_back(provinceNum);
 
-		importPopsFromProvince(provinceObj);
+		importPopsFromProvince(provinceObj, minorityPopMapper);
 	}
 
 	popRegions.insert(make_pair(filename, popProvinces));
 }
 
 
-void V2World::importPopsFromProvince(shared_ptr<Object> provinceObj)
+void V2World::importPopsFromProvince(shared_ptr<Object> provinceObj, mappers::MinorityPopMapper minorityPopMapper)
 {
 	int provinceNum = stoi(provinceObj->getKey());
 	auto province = provinces.find(provinceNum);
@@ -276,12 +293,13 @@ void V2World::importPopsFromProvince(shared_ptr<Object> provinceObj)
 	int provinceSlavePopulation = 0;
 
 	vector<shared_ptr<Object>> popObjs = provinceObj->getLeaves();
+
 	for (auto popObj: popObjs)
 	{
 		V2Pop* newPop = new V2Pop(popObj);
 
 		province->second->addOldPop(newPop);
-		if (minorityPopMapper::matchMinorityPop(newPop))
+		if (minorityPopMapper.matchMinorityPop(*newPop))
 		{
 			province->second->addMinorityPop(newPop);
 		}
@@ -1792,7 +1810,7 @@ void V2World::output(unsigned int potentialGPs) const
 	try
 	{
 		versionFile.open("output/" + theConfiguration.getOutputName() + "/eu4tov2_version.txt");
-		versionFile << "# 1.0J-prerelease \"Jan Mayen\", built on " << __TIMESTAMP__ << ".\n";
+		versionFile << "# 1.0K-prerelease \"Kurland\", built on " << __TIMESTAMP__ << ".\n";
 		versionFile.close();
 	}
 	catch (const std::exception&)

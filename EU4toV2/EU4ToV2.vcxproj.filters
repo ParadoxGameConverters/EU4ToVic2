@@ -315,6 +315,9 @@
     <ClCompile Include="Source\Mappers\PartyNameMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\MinorityPop.cpp">
+      <Filter>Mappers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -631,6 +634,9 @@
       <Filter>Mappers</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\PartyNameMapper.h">
+      <Filter>Mappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\MinorityPop.h">
       <Filter>Mappers</Filter>
     </ClInclude>
   </ItemGroup>
