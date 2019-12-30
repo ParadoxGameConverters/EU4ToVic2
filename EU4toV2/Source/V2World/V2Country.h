@@ -38,6 +38,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/Country/EU4NationalSymbol.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
+#include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include <memory>
 #include <set>
@@ -94,7 +95,8 @@ class V2Country
 			const mappers::CultureMapper& slaveCultureMapper,
 			const mappers::IdeaEffectMapper& ideaEffectMapper,
 			const mappers::ReligionMapper& religionMapper,
-			const mappers::ProvinceMapper& provinceMapper
+			const mappers::ProvinceMapper& provinceMapper,
+			const mappers::GovernmentMapper& governmentMapper
 		);
 		void								initFromHistory();
 		void								addProvince(V2Province* _province);
@@ -177,7 +179,7 @@ class V2Country
 		void generateRelations(std::shared_ptr<EU4::Country> srcCountry);
 		void resolvePolitics();
 		void finalizeInvestments(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper);
-		void determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::GovernmentMapper& governmentMapper);
 		void setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcCountry, const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions);
 		void setReligion(std::shared_ptr<EU4::Country> srcCountry, const mappers::ReligionMapper& religionMapper);
 		void loadPartiesFromBlob();

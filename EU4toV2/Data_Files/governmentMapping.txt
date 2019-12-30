@@ -1,17 +1,24 @@
-# Pre-Dharma (pre 1.26)
+# Syntax: v2_government = { list of eu4 governments }
 
-link = { v2 = absolute_monarchy eu4 = despotic_monarchy eu4 = feudal_monarchy eu4 = absolute_monarchy eu4 = enlightened_despotism eu4 = revolutionary_empire eu4 = steppe_horde eu4 = tribal_despotism eu4 = tribal_federation eu4 = archduchy eu4 = celestial_empire eu4 = iqta eu4 = daimyo eu4 = shogunate eu4 = indep_daimyo eu4 = imperial_government eu4 = tribal_kingdom eu4 = ottoman_government eu4 = tsardom eu4 = mamluk_government eu4 = principality }
-link = { v2 = democracy eu4 = merchant_republic eu4 = administrative_republic eu4 = constitutional_republic eu4 = tribal_democracy eu4 = ambrosian_republic eu4 = dutch_republic eu4 = american_republic eu4 = tribal_council eu4 = native_council eu4 = siberian_native_council eu4 = imperial_city eu4 = trading_city eu4 = veche_republic eu4 = federal_republic eu4 = pirate_republic}
-link = { v2 = presidential_dictatorship eu4 = republican_dictatorship eu4 = oligarchic_republic eu4 = colonial_government }
-link = { v2 = hms_government eu4 = english_monarchy eu4 = constitutional_monarchy eu4 = administrative_monarchy }
-link = { v2 = prussian_constitutionalism eu4 = prussian_monarchy eu4 = noble_republic eu4 = elective_monarchy}
-link = { v2 = proletarian_dictatorship eu4 = peasants_republic } #Dithmarschen special
-link = { v2 = theocracy eu4 = theocratic_government eu4 = papal_government eu4 = monastic_order_government eu4 = feudal_theocracy }
-link = { v2 = bourgeois_dictatorship eu4 = bureaucratic_despotism eu4 = revolutionary_republic }
+# Pre-Dharma (pre 1.26)
+absolute_monarchy = { despotic_monarchy feudal_monarchy absolute_monarchy 
+		enlightened_despotism revolutionary_empire steppe_horde tribal_despotism 
+		tribal_federation celestial_empire iqta daimyo shogunate indep_daimyo 
+		imperial_government tribal_kingdom ottoman_government tsardom 
+		mamluk_government principality }
+democracy = { merchant_republic administrative_republic constitutional_republic 
+		tribal_democracy ambrosian_republic dutch_republic american_republic 
+		tribal_council native_council siberian_native_council imperial_city 
+		trading_city veche_republic federal_republic pirate_republic }
+presidential_dictatorship = { republican_dictatorship oligarchic_republic colonial_government }
+hms_government = { english_monarchy constitutional_monarchy administrative_monarchy }
+prussian_constitutionalism = { prussian_monarchy noble_republic elective_monarchy}
+proletarian_dictatorship = { peasants_republic } #Dithmarschen special
+theocracy = { theocratic_government papal_government monastic_order_government feudal_theocracy }
+bourgeois_dictatorship = { bureaucratic_despotism revolutionary_republic }
 
 # Mappings for Dharma gov types (1.26+ with or without dharma enabled). Countries initially mapped to these can
 # branch out to other 6 government forms depending on their chosen reforms.
-
-link = { v2 = absolute_monarchy eu4 = monarchy eu4 = tribal eu4 = native }
-link = { v2 = democracy eu4 = republic }
-link = { v2 = theocracy eu4 = theocracy }
+absolute_monarchy = { monarchy tribal native }
+democracy = { republic }
+theocracy = { theocracy }

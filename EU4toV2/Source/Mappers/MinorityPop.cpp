@@ -15,6 +15,7 @@ mappers::MinorityPop::MinorityPop(std::istream& theStream)
 		commonItems::singleString cultureStr(theStream);
 		culture = cultureStr.getString();
 	});
+	registerKeyword(std::regex("[a-z0-9\\_]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 }

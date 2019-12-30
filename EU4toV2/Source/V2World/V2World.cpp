@@ -28,6 +28,7 @@
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/Ideas/TechGroupsMapper.h"
 #include "../Mappers/MinorityPopMapper.h"
+#include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "BlockedTechSchools.h"
 #include "StateMapper.h"
@@ -557,6 +558,18 @@ void V2World::initializeCountries(const EU4::world& sourceWorld, const mappers::
 	Vic2::TechSchoolsFile theTechSchoolsFile(theBlockedTechSchoolsFile.takeBlockedTechSchools());
 	auto theTechSchools = theTechSchoolsFile.takeTechSchools();
 
+	LOG(LogLevel::Info) << "Parsing governments mappings";
+
+	std::ifstream governmentMapFile("governmentMapping.txt");
+	if (governmentMapFile.fail())
+	{
+		LOG(LogLevel::Error) << "Could not parse file governmentMapping.txt";
+		std::range_error exception("Could not parse file governmentMapping.txt");
+		throw exception;
+	}
+	mappers::GovernmentMapper governmentMapper(governmentMapFile);
+	governmentMapFile.close();
+
 	for (auto sourceCountry: sourceWorld.getCountries())
 	{
 		const string& V2Tag = mappers::CountryMappings::getVic2Tag(sourceCountry.first);
@@ -576,7 +589,8 @@ void V2World::initializeCountries(const EU4::world& sourceWorld, const mappers::
 			*slaveCultureMapper,
 			ideaEffectMapper,
 			*religionMapper,
-			*provinceMapper
+			*provinceMapper,
+			governmentMapper
 		);
 		countries.insert(make_pair(V2Tag, destCountry));
 	}

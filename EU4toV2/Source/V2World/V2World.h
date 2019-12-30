@@ -14,6 +14,7 @@
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
+#include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/MinorityPopMapper.h"
 #include <list>
 #include <memory>

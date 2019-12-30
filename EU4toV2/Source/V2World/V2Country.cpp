@@ -527,7 +527,8 @@ void V2Country::initFromEU4Country(
 	const mappers::CultureMapper& slaveCultureMapper,
 	const mappers::IdeaEffectMapper& ideaEffectMapper,
 	const mappers::ReligionMapper& religionMapper,
-	const mappers::ProvinceMapper& provinceMapper
+	const mappers::ProvinceMapper& provinceMapper,
+	const mappers::GovernmentMapper& governmentMapper
 ) {
 	srcCountry = _srcCountry;
 
@@ -583,7 +584,7 @@ void V2Country::initFromEU4Country(
 	setPrimaryAndAcceptedCultures(_srcCountry, cultureMapper, eu4Regions);
 
 	// Government
-	determineGovernmentType(_srcCountry, ideaEffectMapper);
+	determineGovernmentType(_srcCountry, ideaEffectMapper, governmentMapper);
 
 	// Apply government effects to reforms
 	finalizeInvestments(_srcCountry, ideaEffectMapper);
@@ -686,9 +687,9 @@ void V2Country::setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcC
 
 }
 
-void V2Country::determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper)
+void V2Country::determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::GovernmentMapper& governmentMapper)
 {
-	government = governmentMapper::matchGovernment(srcCountry->getGovernment());
+	government = governmentMapper.matchGovernment(srcCountry->getGovernment());
 
 	for (auto reformStr : srcCountry->getReforms())
 	{

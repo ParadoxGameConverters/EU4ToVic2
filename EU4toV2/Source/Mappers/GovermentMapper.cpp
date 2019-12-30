@@ -1,89 +1,23 @@
-/*Copyright (c) 2019 The Paradox Game Converters Project
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
-
-
-
 #include "GovernmentMapper.h"
 #include "Log.h"
-#include "Object.h"
-#include "ParadoxParserUTF8.h"
-#include <vector>
-using namespace std;
+#include "ParserHelpers.h"
 
 
-
-governmentMapper* governmentMapper::instance = nullptr;
-
-
-
-governmentMapper::governmentMapper()
+mappers::GovernmentMapper::GovernmentMapper(std::istream& theStream)
 {
-	LOG(LogLevel::Info) << "Parsing governments mappings";
-
-	shared_ptr<Object> governmentMapObj = parser_UTF8::doParseFile("governmentMapping.txt");
-	if (governmentMapObj == NULL)
+	registerKeyword(std::regex("[a-z_]+"), [this](const std::string& sourceGov, std::istream& theStream)
 	{
-		LOG(LogLevel::Error) << "Could not parse file governmentMapping.txt";
-		exit(-1);
-	}
-
-	initGovernmentMap(governmentMapObj->getLeaves());
-}
-
-
-void governmentMapper::initGovernmentMap(std::vector<std::shared_ptr<Object>> objs)
-{
-	for (auto rule: objs)
-	{
-		processRule(rule);
-	}
-}
-
-
-void governmentMapper::processRule(shared_ptr<Object> rule)
-{
-	string dstGovernment;
-	vector<string> sourceGovernments;
-
-	for (auto item: rule->getLeaves())
-	{
-		if (item->getKey() == "v2")
-		{
-			dstGovernment = item->getLeaf();
+		commonItems::stringList govList(theStream);
+		for (auto destGov : govList.getStrings()) {
+			governmentMap.insert(make_pair(destGov, sourceGov));
 		}
-		if (item->getKey() == "eu4")
-		{
-			sourceGovernments.push_back(item->getLeaf());
-		}
-	}
+	});
+	registerKeyword(std::regex("[a-z0-9\\_]+"), commonItems::ignoreItem);
 
-	for (auto sourceGovernment: sourceGovernments)
-	{
-		governmentMap.insert(make_pair(sourceGovernment, dstGovernment));
-	}
+	parseStream(theStream);
 }
 
-
-
-string governmentMapper::MatchGovernment(const string& sourceGovernment)
+std::string mappers::GovernmentMapper::matchGovernment(const std::string& sourceGovernment) const
 {
 	auto mapping = governmentMap.find(sourceGovernment);
 	if (mapping != governmentMap.end())
