@@ -261,7 +261,7 @@ void V2World::importDefaultPops()
 }
 
 
-void V2World::importPopsFromFile(const string& filename, mappers::MinorityPopMapper minorityPopMapper)
+void V2World::importPopsFromFile(const string& filename, const mappers::MinorityPopMapper minorityPopMapper)
 {
 	list<int> popProvinces;
 
@@ -280,7 +280,7 @@ void V2World::importPopsFromFile(const string& filename, mappers::MinorityPopMap
 }
 
 
-void V2World::importPopsFromProvince(shared_ptr<Object> provinceObj, mappers::MinorityPopMapper minorityPopMapper)
+void V2World::importPopsFromProvince(shared_ptr<Object> provinceObj, const mappers::MinorityPopMapper minorityPopMapper)
 {
 	int provinceNum = stoi(provinceObj->getKey());
 	auto province = provinces.find(provinceNum);

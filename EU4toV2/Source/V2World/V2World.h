@@ -46,8 +46,8 @@ class V2World
 		bool isAProvinceLocalization(const string& line);
 
 		void importDefaultPops();
-		void importPopsFromFile(const string& filename, mappers::MinorityPopMapper minorityPopMapper);
-		void importPopsFromProvince(shared_ptr<Object> provinceObj, mappers::MinorityPopMapper minorityPopMapper);
+		void importPopsFromFile(const string& filename, const mappers::MinorityPopMapper minorityPopMapper);
+		void importPopsFromProvince(shared_ptr<Object> provinceObj, const mappers::MinorityPopMapper minorityPopMapper);
 
 		void logPopsByCountry() const;
 		void logPopsFromFile(string filename, map<string, map<string, long int>>& popsByCountry) const;
