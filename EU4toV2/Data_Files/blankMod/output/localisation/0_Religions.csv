@@ -16,11 +16,11 @@ bektashi;Bektashi;Bektashi;Bektaschi;Bektashi;Bektashi;Bektashi;Bektashi;Bektash
 druze;Druze;Druze;Drusen;Druzowie;Druso;Drusi;Drúz;Druze;Drúz;Druzen;Druze;Äğóçû;Druusit;x
 hurufi;Hurufi;Hurufi;Hurufi;Hurufi;Hurufi;Hurufi;Hurufi;Hurufi;Hurufi;Hurufi;Hurufi;Õóğóôèçì;Hurufi;x
 generic_pagan;Pagan;Païen;Heidnisch;Pogañski;Pagano;Pagano;Pogány;Pohanskı;Pogány;Heidens;Pagão;ßçû÷íèê;Pakanallinen;x
-norse_pagan;Norse Pagan;Pagan Norse;Nordisch Heidnisch;Norse Pagan;Pagano Nórdico;Pagano Norreno;Skandináv Pagan;Norskı Pagan;Skandináv Pagan;Norse Pagan;Pagão Nórdico;Íîğâåæñêèé ÿçû÷íèê;Norse Pagan;x
-tengri_pagan;Tengri Pagan;Tengri Pagan;Tengri Heide;Tengri Pagan;Tengri Pagan;Pagano Tengri;Tengri Pagan;Tengri Pagan;Tengri Pagan;Tengri Pagan;Tengri Pagan;Òåíãğèàíñòâî;Tengri Pagan;x
-baltic_pagan;Baltic Pagan;Pagan Baltique;Baltisch Heidnisch;Baltic Pagan;Pagano Báltico;Pagano Baltico;Balti Pagan;Baltic Pagan;Balti Pagan;Baltic Pagan;Pagão Báltico;Áàëòèéñêèé ÿçû÷íèê;Baltic Pagan;x
-finnish_pagan;Finnish Pagan;Pagan Finlandais;Finnisch Heide;Fiñski Pagan;Pagano Finlandés;Pagano Finnico;Finn Pogány;Finskı Pagan;Finn Pogány;Finse Pagan;Pagão Finlandês;Ôèíñêèé ÿçû÷íèê;Suomen Pagan;x
-totemism;Totemism;Totemisme;Totemismus;Totemizm;Totemismo;Totemista;Totemism;Totemismus;Totemism;Totemisme;Totemismo;Òîòåìèçì;Totemism;x
+norse_pagan;Norse Pagan;Païen Norse;Nordisch Heidnisch;Norse Pagan;Pagano Nórdico;Pagano Norreno;Skandináv Pagan;Norskı Pagan;Skandináv Pagan;Norse Pagan;Pagão Nórdico;Íîğâåæñêèé ÿçû÷íèê;Norse Pagan;x
+tengri_pagan;Tengri Pagan;Païen Tengri;Tengri Heidnisch;Tengri Pagan;Tengri Pagan;Pagano Tengri;Tengri Pagan;Tengri Pagan;Tengri Pagan;Tengri Pagan;Tengri Pagan;Òåíãğèàíñòâî;Tengri Pagan;x
+baltic_pagan;Baltic Pagan;Païen Baltique;Baltisch Heidnisch;Baltic Pagan;Pagano Báltico;Pagano Baltico;Balti Pagan;Baltic Pagan;Balti Pagan;Baltic Pagan;Pagão Báltico;Áàëòèéñêèé ÿçû÷íèê;Baltic Pagan;x
+finnish_pagan;Finnish Pagan;Païen Finlandais;Finnisch Heidnisch;Fiñski Pagan;Pagano Finlandés;Pagano Finnico;Finn Pogány;Finskı Pagan;Finn Pogány;Finse Pagan;Pagão Finlandês;Ôèíñêèé ÿçû÷íèê;Suomen Pagan;x
+totemism;Totemism;Totémisme;Totemismus;Totemizm;Totemismo;Totemista;Totemism;Totemismus;Totemism;Totemisme;Totemismo;Òîòåìèçì;Totemism;x
 zoroastrian_group;Zoroastrianism;Zoroastrisme;Zoroastrismus;Zoroastryzm;Zoroastrismo;Zoroastrismo;Zoroasztrizmus;Zoroastrianism;Zoroasztrizmus;Zoroastrisme;Zoroastrismo;Çîğîàñòğèçì;Zarathustralaisuus;x
 zoroastrian;Zoroastrian;Zoroastrien;Zoroastrian;Zoroastrian;Zoroastrista;Zoroastriano;Zoroaszter;Zoroastrian;Zoroaszter;Zoroastrian;Zoroastrista;Çîğîàñòğèéñêèé;Zarathustralainen;x
 zoroastrian_heresy;Zoroastrian Heresies;Hérésies Zoroastriennes;Zoroastrische Häresien;Zoroastrianin Herezje;Herejías Zoroastrianas;Eresie Zoroastriani;Zoroaszter Eretnekségek;Zoroastrijské Heresy;Zoroaszter Eretnekségek;Zoroastrian Ketterijen;Heresias De Zoroastrian;Çîğîàñòğèéñêèå Åğåñè;Zarathustralainen Harhaoppeja;x
@@ -28,33 +28,33 @@ manichean;Manichean;Manichéen;Manichean;Manichean;Maniqueo;Manichea;Manicheus;Ma
 mazdaki;Mazdaki;Mazdaki;Mazdaki;Mazdaki;Mazdaki;Mazdaki;Mazdaki;Mazdaki;Mazdaki;Mazdaki;Mazdaki;Ìàçäàêè;Mazdaki;x
 inti;Inti;Inti;Inti;Inti;Inti;Inti;Inti;Inti;Inti;Inti;Inti;Èíòè;Inti;x
 nahuatl;Nahuatl;Nahuatl;Nahuatl;Nahuatl;Nahuatl;Nahuatl;Nahuatl;Nahuatl;Nahuatl;Nahuatl;Náuatl;Íàóàòëü;Nahuatl;x
-inca_reformed;Incan;Incan;Incan;Inków;Inca;Inca;Inka;Incan;Inka;Inca;Inca;Èíêà;Inkojen;x
+inca_reformed;Incan;Inca;Inca;Inków;Inca;Inca;Inka;Incan;Inka;Inca;Inca;Èíêà;Inkojen;x
 hellenic_pagan;Hellenic;Hellénique;Hellenisch;Helleñski;Helénico;Ellenico;Hellén;Hellenic;Hellén;Helleens;Helênico;İëëèíñêèé;Hellenic;x
 zun_pagan_reformed;Zun;Zun;Zun;Zun;Zun;Zun;Zun;Zun;Zun;Zun;Zun;Çóí;Zun;x
-west_african_pagan_reformed;West African;Afrique De L'ouest;Westafrikanisch;West African;Africano Occidental;Paganesimo Africano Occidentale;Nyugat-afrikai;Západní Afrika;Nyugat-afrikai;West-afrikaanse;Africano Ocidental;Çàïàäíîé Àôğèêè;Länsi-afrikkalainen;x
+west_african_pagan_reformed;West African;Africain Occidental;Westafrikanisch;West African;Africano Occidental;Paganesimo Africano Occidentale;Nyugat-afrikai;Západní Afrika;Nyugat-afrikai;West-afrikaanse;Africano Ocidental;Çàïàäíîé Àôğèêè;Länsi-afrikkalainen;x
 slavic_pagan_reformed;Slavic;Slave;Slawisch;S³owiañska;Eslavo;Slavo;Szláv;Slovanskı;Szláv;Slavisch;Eslavo;Ñëàâÿíñêèé;Slaavilainen;x
 aztec_reformed;Aztec;Aztèque;Aztekisch;Aztek;Azteca;Azteco;Azték;Aztéckı;Azték;Aztec;Asteca;Àöòåêñêèé;Aztec;x
 finnish_pagan_reformed;Finnish;Finlandais;Finnisch;Fiñski;Finlandés;Finlandese;Finn;Finština;Finn;Fins;Finlandês;Ôèíñêèé;Suomalainen;x
 baltic_pagan_reformed;Baltic;Baltique;Baltisch;Ba³tycki;Báltico;Baltico;Balti;Baltic;Balti;Oostzee;Báltico;Áàëòèéñêèé;Itämeri;x
 tengri_pagan_reformed;Tengri;Tengri;Tengri;Tengri;Tengri;Tengri;Tengri;Tengri;Tengri;Tengri;Tengri;Òåíãğè;Tengri;x
 norse_pagan_reformed;Norse;Norrois;Nordisch;Norse;Nórdico;Norvegese;Norvégiai;Norština;Norvégiai;Noors;Nórdico;Íîğâåæöû;Norjalainen;x
-jain;Jain;Jain;Jain;Jain;Jain;Jain;Jain;Jain;Jain;Jain;Jain;Äæàéíèçì;Jain;x
+jain;Jain;Djaïniste;Jainist;Jain;Jain;Jain;Jain;Jain;Jain;Jain;Jain;Äæàéíèçì;Jain;x
 jewish_heresy;Jewish Heresy;Hérésie Juive;Jüdische Häresie;Herezja ¯ydowska;Herejía Judía;Eresia Ebraica;Zsidó Heresy;idovská Hereze;Zsidó Heresy;Joodse Heresy;Heresia Judaica;Åâğåéñêàÿ Åğåñü;Juutalainen Heresy;x
-karaite;Karaite;Karaite;Karait;Karaita;Karaite;Karaite;Karaita;Karaite;Karaita;Karaite;Caraíta;Êàğàèì;Karaite;x
+karaite;Karaite;Karaïte;Karait;Karaita;Karaite;Karaite;Karaita;Karaite;Karaita;Karaite;Caraíta;Êàğàèì;Karaite;x
 samaritan;Samaritan;Samaritain;Samariter;Samarytanin;Samaritano;Samaritano;Szamaritánus;Samaritán;Szamaritánus;Samaritaan;Samaritano;Ñàìàğèòÿíèí;Samarialainen;x
 kharijite;Kharijite;Kharijite;Kharijite;Kharijite;Jarijita;Kharijita;Kharijite;Kharijite;Kharijite;Kharijite;Kharijite;Õàğèäæèòîâ;Kharijite;x
-shiite_heresy;Shiite Heresy;Hérésie Chiite;Schiitische Ketzerei;Herezja Szyitów;Herejía Chiita;Eresia Sciita;Síita Heresy;Šíitská Kacíøství;Síita Heresy;Sjiitische Heresy;Heresia Xiita;Øèèòñêàÿ Åğåñü;Shia Heresy;x
+shiite_heresy;Shiite Heresy;Hérésie Chiite;Schiitische Häresie;Herezja Szyitów;Herejía Chiita;Eresia Sciita;Síita Heresy;Šíitská Kacíøství;Síita Heresy;Sjiitische Heresy;Heresia Xiita;Øèèòñêàÿ Åğåñü;Shia Heresy;x
 sunni_heresy;Sunni Heresy;Hérésie Sunnite;Sunni Häresie;Sunnici Herezja;Herejía Sunita;Eresia Sunnita;Szunnita Heresy;Sunni Kacíøství;Szunnita Heresy;Sunni Heresy;Heresia Sunita;Ñóííèòñêàÿ Åğåñü;Sunni Heresy;x
 messalian;Messalian;Messalien;Messalian;Messalian;Messalian;Messaliano;Messalian;Messalian;Messalian;Messalian;Messalian;Ìåññàëèàíñòâî;Messalian;x
-orthodox_heresy;Orthodox Heresy;Hérésie Orthodoxe;Orthodoxe Ketzerei;Prawos³awny Herezja;Heresia Ortodoxa;Eresia Ortodossa;Ortodox Heresy;Ortodoxní Kacíøství;Ortodox Heresy;Orthodox Heresy;Heresia Ortodoxa;Ïğàâîñëàâíàÿ Åğåñü;Ortodoksinen Heresy;x
+orthodox_heresy;Orthodox Heresy;Hérésie Orthodoxe;Orthodoxe Häresie;Prawos³awny Herezja;Heresia Ortodoxa;Eresia Ortodossa;Ortodox Heresy;Ortodoxní Kacíøství;Ortodox Heresy;Orthodox Heresy;Heresia Ortodoxa;Ïğàâîñëàâíàÿ Åğåñü;Ortodoksinen Heresy;x
 paulician;Paulician;Paulicien;Paulician;Paulician;Paulista;Pauliciano;Paulician;Paulician;Paulician;Paulicische;Paulician;Ïàâëèêèàíèí;Paulician;x
-monothelite;Monotehlite;Monotehlite;Monotehlit;Monotehlite;Monotehlita;Monotelita;Monotehlite;Monotehlite;Monotehlite;Monotehlite;Monotehlite;Ìîíîôåëèòñòâî;Monotehlite;x
+monothelite;Monothelite;Monothélite;Monothelit;Monotehlite;Monotehlita;Monotelita;Monotehlite;Monotehlite;Monotehlite;Monotehlite;Monotehlite;Ìîíîôåëèòñòâî;Monotehlite;x
 protestant_heresy;Protestant Heresy;Hérésie Protestante;Evangelische Häresie;Herezja Protestancka;Herejía Protestante;Eresia Protestante;Protestáns Heresy;Protestantská Kacíøství;Protestáns Heresy;Protestantse Heresy;Heresia Protestante;Ïğîòåñòàíòñêàÿ Åğåñü;Protestantti Heresy;x
-catholic_heresy;Catholic Heresy;Hérésie Catholique;Katholische Ketzerei;Katolicki Herezja;Herejía Católica;Eresia Cattolica;Katolikus Heresy;Katolická Kacíøství;Katolikus Heresy;Katholieke Heresy;Heresia Católica;Êàòîëè÷åñêàÿ Åğåñü;Katolinen Heresy;x
+catholic_heresy;Catholic Heresy;Hérésie Catholique;Katholische Häresie;Katolicki Herezja;Herejía Católica;Eresia Cattolica;Katolikus Heresy;Katolická Kacíøství;Katolikus Heresy;Katholieke Heresy;Heresia Católica;Êàòîëè÷åñêàÿ Åğåñü;Katolinen Heresy;x
 arian;Arianism;Arianisme;Arianismus;Arianizm;Arrianismo;Arianesimo;Ariánusok;Arianismus;Ariánusok;Arianisme;Arianismo;Àğèàíñòâî;Areiolaisuus;x
 pre_schism;Judaeo-Christianity;Judéo-Christianisme;Judäo-Christentum;Judaeo-Chrzescijañstwo;Judaeo-Cristianismo;Giudeo-Cristianesimo;Zsidó-Kereszténység;Judaeo-Køesanství;Zsidó-Kereszténység;Joods-Christendom;Judaico-Cristiaismo;Èóäåî-Õğèñòèàíñòâî;Juutalais-Kristillisyys;x
-kemetic;Kemetism;Kemetisme;Kemetismus;Kemetyzm;Kemetismo;Chemetismo;Kemetizmus;Kemetismus;Kemetizmus;Kemetism;Kemetismo;Êåìåòèçì;Kemetism;x
-arab_pagan;Bedouin Paganism;Paganisme bédouin;Beduinisches Heidentum;Pogañstwo Beduinów;Paganismo beduino;Paganesimo beduinico;Beduinos pogányság;Beduínskı Pohanství;Beduinos pogányság;Bedoeïen Heidenheid;Paganismo beduíno;Áåäóèíñêîå ÿçû÷åñòâî;Beduiinilainen pakanismi;x
+kemetic;Kemetism;Kémétisme;Kemetismus;Kemetyzm;Kemetismo;Chemetismo;Kemetizmus;Kemetismus;Kemetizmus;Kemetism;Kemetismo;Êåìåòèçì;Kemetism;x
+arab_pagan;Bedouin Paganism;Païen bédouin;Beduinisch-Heidnisch;Pogañstwo Beduinów;Paganismo beduino;Paganesimo beduinico;Beduinos pogányság;Beduínskı Pohanství;Beduinos pogányság;Bedoeïen Heidenheid;Paganismo beduíno;Áåäóèíñêîå ÿçû÷åñòâî;Beduiinilainen pakanismi;x
 druidist;Druidism;Druidisme;Druidismus;Druidyzm;Druidismo;Druidismo;Druidiség;Druidismus;Druidiség;Druidism;Druidismo;Äğóèäèçì;Druidism;x
 tibet_bon;Bön;Bön;Bön;Bön;Bön;Bön;Bön;Bön;Bön;Bön;Bön;Áîí;Bön;x
 muism;Muism;Muisme;Muismus;Muizm;Muismo;Muismo;Muiség;Muismus;Muiség;Muism;Muismo;Ìóñîê;Muism;x
