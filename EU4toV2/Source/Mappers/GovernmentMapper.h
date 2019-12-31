@@ -2,7 +2,6 @@
 #define GOVERNMENT_MAPPER_H
 
 #include <map>
-#include <memory>
 #include "newParser.h"
 
 

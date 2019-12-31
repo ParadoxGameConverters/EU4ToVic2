@@ -1,7 +1,6 @@
 #ifndef MINORITY_POP_H
 #define MINORITY_POP_H
 
-#include <memory>
 #include "newParser.h"
 
 

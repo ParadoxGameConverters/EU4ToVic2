@@ -1,5 +1,4 @@
 #include "FlagColorMapper.h"
-#include "Log.h"
 #include "ParserHelpers.h"
 
 
@@ -13,5 +12,10 @@ mappers::FlagColorMapper::FlagColorMapper(std::istream& theStream)
 	registerKeyword(std::regex("[a-z0-9\\_]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+}
 
+std::optional<commonItems::Color> mappers::FlagColorMapper::getFlagColorByIndex(int index) const 
+{ 
+	if ((flagColorMapping.empty()) || (index >= flagColorMapping.size())) return std::nullopt;
+	return flagColorMapping[index]; 
 }

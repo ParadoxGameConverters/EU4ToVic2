@@ -244,8 +244,7 @@ void V2World::importDefaultPops()
 	std::ifstream minPopFile("minorityPops.txt");
 	if (minPopFile.fail())
 	{
-		LOG(LogLevel::Error) << "Could not parse file minorityPops.txt";
-		std::range_error exception("Could not parse file minorityPops.txt");
+		std::range_error exception("Could not open file minorityPops.txt");
 		throw exception;
 	}
 	mappers::MinorityPopMapper minorityPopMapper(minPopFile);
@@ -563,8 +562,7 @@ void V2World::initializeCountries(const EU4::world& sourceWorld, const mappers::
 	std::ifstream governmentMapFile("governmentMapping.txt");
 	if (governmentMapFile.fail())
 	{
-		LOG(LogLevel::Error) << "Could not parse file governmentMapping.txt";
-		std::range_error exception("Could not parse file governmentMapping.txt");
+		std::range_error exception("Could not open file governmentMapping.txt");
 		throw exception;
 	}
 	mappers::GovernmentMapper governmentMapper(governmentMapFile);

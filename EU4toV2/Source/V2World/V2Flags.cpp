@@ -353,7 +353,6 @@ void V2Flags::createCustomFlags() const
 	std::ifstream colorFile(colorFileStr);
 	if (colorFile.fail())
 	{
-		LOG(LogLevel::Error) << "Could not open file " << colorFileStr;
 		std::range_error exception("Could not open flag colors.");
 		throw exception;
 	}
@@ -401,12 +400,15 @@ void V2Flags::createCustomFlags() const
 			{
 				std::string destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
 
+				optional<commonItems::Color> rColor = flagColorMapper.getFlagColorByIndex(r);
+				optional<commonItems::Color> gColor = flagColorMapper.getFlagColorByIndex(g);
+				optional<commonItems::Color> bColor = flagColorMapper.getFlagColorByIndex(b);
+				if (!rColor) rColor = commonItems::Color();
+				if (!gColor) gColor = commonItems::Color();
+				if (!bColor) bColor = commonItems::Color();
+
 				LOG(LogLevel::Debug) << "Exporting flag: " << destFlagPath << " using rgb: " << r << " " << g << " " << b;
-				CreateCustomFlag( 
-					flagColorMapper.getFlagColorByIndex(r),
-					flagColorMapper.getFlagColorByIndex(g),
-					flagColorMapper.getFlagColorByIndex(b),
-					sourceEmblemPath, sourceFlagPath, destFlagPath);
+				CreateCustomFlag(*rColor, *gColor, *bColor, sourceEmblemPath, sourceFlagPath, destFlagPath);
 			}
 			else
 			{

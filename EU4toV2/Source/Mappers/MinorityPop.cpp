@@ -1,5 +1,4 @@
 #include "MinorityPop.h"
-#include "Log.h"
 #include "ParserHelpers.h"
 
 

@@ -1,7 +1,6 @@
 #ifndef MINORITY_POP_MAPPER_H
 #define MINORITY_POP_MAPPER_H
 
-#include <memory>
 #include <vector>
 #include "newParser.h"
 
