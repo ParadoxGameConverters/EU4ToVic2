@@ -14,6 +14,8 @@
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
+#include "../Mappers/GovernmentMapper.h"
+#include "../Mappers/MinorityPopMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -44,8 +46,8 @@ class V2World
 		bool isAProvinceLocalization(const string& line);
 
 		void importDefaultPops();
-		void importPopsFromFile(const string& filename);
-		void importPopsFromProvince(shared_ptr<Object> provinceObj);
+		void importPopsFromFile(const string& filename, const mappers::MinorityPopMapper& minorityPopMapper);
+		void importPopsFromProvince(shared_ptr<Object> provinceObj, const mappers::MinorityPopMapper& minorityPopMapper);
 
 		void logPopsByCountry() const;
 		void logPopsFromFile(string filename, map<string, map<string, long int>>& popsByCountry) const;

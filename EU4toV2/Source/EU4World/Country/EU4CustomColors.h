@@ -28,7 +28,7 @@ namespace EU4
 		void setFlagColors(commonItems::Color col) { customColors.flagColors = col; }
 
 	private:
-		CustomColorsBlock customColors;
+		CustomColorsBlock customColors; // It walks like a color, it quacks like a color, but it's in fact a color INDEX from 00_custom_colors.txt
 	};
 }
 

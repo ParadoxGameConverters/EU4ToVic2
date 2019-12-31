@@ -68,7 +68,7 @@ bool CreateColonialFlag(std::string colonialOverlordPath, std::string colonialBa
 	return true;
 }
 
-bool CreateCustomFlag(FlagColour c1, FlagColour c2, FlagColour c3, std::string emblemPath, std::string basePath, std::string targetPath)
+bool CreateCustomFlag(commonItems::Color c1, commonItems::Color c2, commonItems::Color c3, std::string emblemPath, std::string basePath, std::string targetPath)
 {
 	tga_result res;
 
@@ -108,9 +108,9 @@ bool CreateCustomFlag(FlagColour c1, FlagColour c2, FlagColour c3, std::string e
 			uint8_t m = ~g;
 			uint8_t z = ~b;
 			
-			int tr = int(m*c1.r) + int(c*c2.r) + int(z*c3.r);
-			int tg = int(m*c1.g) + int(c*c2.g) + int(z*c3.g);
-			int tb = int(m*c1.b) + int(c*c2.b) + int(z*c3.b);
+			int tr = int(m*c1.r()) + int(c*c2.r()) + int(z*c3.r());
+			int tg = int(m*c1.g()) + int(c*c2.g()) + int(z*c3.g());
+			int tb = int(m*c1.b()) + int(c*c2.b()) + int(z*c3.b());
 
 			tr /= 255;
 			tg /= 255;

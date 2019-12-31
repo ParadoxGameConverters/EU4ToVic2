@@ -242,6 +242,7 @@
     <ClCompile Include="Source\Mappers\Ideas\IdeaEffects.cpp" />
     <ClCompile Include="Source\Mappers\Ideas\TechGroups.cpp" />
     <ClCompile Include="Source\Mappers\Ideas\TechGroupsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\MinorityPop.cpp" />
     <ClCompile Include="Source\Mappers\MinorityPopMapper.cpp" />
     <ClCompile Include="Source\Mappers\PartyName.cpp" />
     <ClCompile Include="Source\Mappers\PartyNameMapper.cpp" />
@@ -352,6 +353,7 @@
     <ClInclude Include="Source\Mappers\Ideas\IdeaEffects.h" />
     <ClInclude Include="Source\Mappers\Ideas\TechGroups.h" />
     <ClInclude Include="Source\Mappers\Ideas\TechGroupsMapper.h" />
+    <ClInclude Include="Source\Mappers\MinorityPop.h" />
     <ClInclude Include="Source\Mappers\MinorityPopMapper.h" />
     <ClInclude Include="Source\Mappers\PartyName.h" />
     <ClInclude Include="Source\Mappers\PartyNameMapper.h" />
