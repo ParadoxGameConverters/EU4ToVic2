@@ -26,13 +26,14 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 
-#include "EU4Army.h"
+#include "Army/EU4Army.h"
 #include "EU4Diplomacy.h"
 #include "EU4Version.h"
 #include "Provinces/Provinces.h"
 #include "Regions/Regions.h"
 #include "Religions/Religions.h"
 #include "../Mappers/CultureMapper.h"
+#include "../Mappers/UnitTypeMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "newParser.h"
@@ -98,6 +99,7 @@ class world: private commonItems::parser
 		void readCommonCountriesFile(istream&, const std::string& rootPath);
 
 		void setLocalisations();
+
 		void resolveRegimentTypes();
 
 		void mergeNations();
@@ -110,9 +112,9 @@ class world: private commonItems::parser
 		void removeLandlessNations();
 
 		void setEmpires();
-	        void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas);
+	   void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas);
 
-	        std::shared_ptr<EU4::Country> getCountry(string tag) const;
+	   std::shared_ptr<EU4::Country> getCountry(string tag) const;
 
 		string holyRomanEmperor;
 		string celestialEmperor;
@@ -125,6 +127,8 @@ class world: private commonItems::parser
 		std::string revolutionTargetString;
 
 		Religions theReligions;
+
+		std::map<std::string, mappers::UnitType> unitTypeMap;
 };
 
 }

@@ -81,7 +81,7 @@ class V2Province
 		vector<V2Pop*>	getPops(string type) const;
 		V2Pop*			getSoldierPopForArmy(bool force = false);
 		pair<int, int>	getAvailableSoldierCapacity() const;
-		string			getRegimentName(RegimentCategory rc);
+		string getRegimentName(EU4::REGIMENTCATEGORY rc);
 		bool				hasCulture(string culture, float percentOfPopulation) const;
 		vector<string> getCulturesOverThreshold(float percentOfPopulation) const;
 
@@ -173,7 +173,7 @@ class V2Province
 	        string                                          climate;
 	        int							lifeRating;
 		bool							slaveState;
-		int							unitNameCount[num_reg_categories];
+		int unitNameCount[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)];
 		int							fortLevel;
 		int							navalBaseLevel;
 		int							railLevel;

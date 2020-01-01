@@ -17,23 +17,20 @@
 #include "../FlagUtils.h"
 
 
+const std::vector<std::string> V2Flags::flagFileSuffixes = { ".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga" };
 
-const vector<string> V2Flags::flagFileSuffixes = { ".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga" };
-
-
-
-void V2Flags::SetV2Tags(const map<std::string, V2Country*>& V2Countries)
+void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries)
 {
 	LOG(LogLevel::Debug) << "Initializing flags";
 	tagMap.clear();
 
-	static mt19937 generator(static_cast<int>(chrono::system_clock::now().time_since_epoch().count()));
+	static std::mt19937 generator(static_cast<int>(std::chrono::system_clock::now().time_since_epoch().count()));
 
 	determineUseableFlags();
 	getRequiredTags(V2Countries);
 	mapTrivialTags();
 
-	vector<V2Country*> colonialFail;
+	std::vector<V2Country*> colonialFail;
 	
 	// Get the CK2 and colonial flags.
 	for (std::map<std::string, V2Country*>::const_iterator i = V2Countries.begin(); i != V2Countries.end(); ++i)
@@ -134,7 +131,7 @@ void V2Flags::SetV2Tags(const map<std::string, V2Country*>& V2Countries)
 				continue;
 			}
 
-			for (vector<V2Country*>::iterator v2c = colonialFail.begin(); v2c != colonialFail.end(); ++v2c)
+			for (std::vector<V2Country*>::iterator v2c = colonialFail.begin(); v2c != colonialFail.end(); ++v2c)
 			{
 				bool success = false;
 				std::string region = (*v2c)->getColonialRegion();
@@ -161,7 +158,7 @@ void V2Flags::SetV2Tags(const map<std::string, V2Country*>& V2Countries)
 	for (std::set<std::string>::const_iterator i = requiredTags.cbegin(); i != requiredTags.cend(); ++i)
 	{
 		const std::string& V2Tag = *i;
-		size_t randomTagIndex = uniform_int_distribution<size_t>(0, usableFlagTags.size() - 1)(generator);
+		size_t randomTagIndex = std::uniform_int_distribution<size_t>(0, usableFlagTags.size() - 1)(generator);
 		std::set<std::string>::const_iterator randomTagIter = usableFlagTags.cbegin();
 		advance(randomTagIter, randomTagIndex);
 		const std::string& flagTag = *randomTagIter;
@@ -260,7 +257,7 @@ std::set<std::string> V2Flags::determineAvailableFlags()
 }
 
 
-void V2Flags::getRequiredTags(const map<string, V2Country*>& V2Countries)
+void V2Flags::getRequiredTags(const std::map<std::string, V2Country*>& V2Countries)
 {
 	for (auto country: V2Countries)
 	{
@@ -271,8 +268,8 @@ void V2Flags::getRequiredTags(const map<string, V2Country*>& V2Countries)
 
 void V2Flags::mapTrivialTags()
 {
-	set<string> usableFlagTagsRemaining;
-	set<string> requiredTagsRemaining;
+	std::set<std::string> usableFlagTagsRemaining;
+	std::set<std::string> requiredTagsRemaining;
 
 	for (auto requiredTag: requiredTags)
 	{
@@ -319,23 +316,23 @@ void V2Flags::createOutputFolders() const
 
 void V2Flags::copyFlags() const
 {
-	const vector<string> availableFlagFolders = { "flags", theConfiguration.getVic2Path() + "/gfx/flags" };
+	const std::vector<std::string> availableFlagFolders = { "flags", theConfiguration.getVic2Path() + "/gfx/flags" };
 	for (auto tagMapping: tagMap)
 	{
-		const string& V2Tag = tagMapping.first;
-		const string& flagTag = tagMapping.second;
-		for (vector<string>::const_iterator i = flagFileSuffixes.begin(); i != flagFileSuffixes.end(); ++i)
+		const std::string& V2Tag = tagMapping.first;
+		const std::string& flagTag = tagMapping.second;
+		for (std::vector<std::string>::const_iterator i = flagFileSuffixes.begin(); i != flagFileSuffixes.end(); ++i)
 		{
-			const string& suffix = *i;
+			const std::string& suffix = *i;
 			bool flagFileFound = false;
-			for (vector<string>::const_iterator j = availableFlagFolders.begin(); j != availableFlagFolders.end() && !flagFileFound; ++j)
+			for (std::vector<std::string>::const_iterator j = availableFlagFolders.begin(); j != availableFlagFolders.end() && !flagFileFound; ++j)
 			{
-				const string& folderPath = *j;
-				string sourceFlagPath = folderPath + '/' + flagTag + suffix;
+				const std::string& folderPath = *j;
+				std::string sourceFlagPath = folderPath + '/' + flagTag + suffix;
 				flagFileFound = Utils::DoesFileExist(sourceFlagPath);
 				if (flagFileFound)
 				{
-					string destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
+					std::string destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
 					Utils::TryCopyFile(sourceFlagPath, destFlagPath);
 				}
 			}
@@ -366,7 +363,7 @@ void V2Flags::createCustomFlags() const
 		EU4::CustomColors customColors = cflag.second;
 
 		int baseFlag = customColors.getCustomColors().flag;
-		std::string baseFlagStr = to_string(baseFlag);
+		std::string baseFlagStr = std::to_string(baseFlag);
 		int emblem = customColors.getCustomColors().symbolIndex;
 		commonItems::Color flagColor = customColors.getCustomColors().flagColors;
 		int r, g, b = 0;
@@ -391,7 +388,7 @@ void V2Flags::createCustomFlags() const
 			const std::string& suffix = flagFileSuffixes[i];
 			bool flagFileFound = false;
 			std::string folderPath = baseFlagFolder;
-			std::string sourceEmblemPath = folderPath + "/CustomEmblems/" + to_string(emblem) + suffix;
+			std::string sourceEmblemPath = folderPath + "/CustomEmblems/" + std::to_string(emblem) + suffix;
 
 			std::string sourceFlagPath = folderPath + "/CustomBases/" + baseFlagStr + ".tga";
 
@@ -400,9 +397,9 @@ void V2Flags::createCustomFlags() const
 			{
 				std::string destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
 
-				optional<commonItems::Color> rColor = flagColorMapper.getFlagColorByIndex(r);
-				optional<commonItems::Color> gColor = flagColorMapper.getFlagColorByIndex(g);
-				optional<commonItems::Color> bColor = flagColorMapper.getFlagColorByIndex(b);
+				std::optional<commonItems::Color> rColor = flagColorMapper.getFlagColorByIndex(r);
+				std::optional<commonItems::Color> gColor = flagColorMapper.getFlagColorByIndex(g);
+				std::optional<commonItems::Color> bColor = flagColorMapper.getFlagColorByIndex(b);
 				if (!rColor) rColor = commonItems::Color();
 				if (!gColor) gColor = commonItems::Color();
 				if (!bColor) bColor = commonItems::Color();
@@ -435,7 +432,7 @@ void V2Flags::createCustomFlags() const
 void V2Flags::createColonialFlags() const
 {
 	// I really shouldn't be hardcoding this...
-	set<std::string> UniqueColonialFlags{ "alyeska", "newholland", "acadia", "kanata", "novascotia", "novahollandia", "vinland", "newspain" };
+	std::set<std::string> UniqueColonialFlags{ "alyeska", "newholland", "acadia", "kanata", "novascotia", "novahollandia", "vinland", "newspain" };
 
 	//typedef map<string, shared_ptr<colonyFlag> > V2TagToColonyFlagMap; // tag, {base,overlordtag}
 	for (auto i : colonialFlagMapping)

@@ -182,6 +182,9 @@
     <ClCompile Include="..\common_items\WinUtils.cpp" />
     <ClCompile Include="Source\Configuration.cpp" />
     <ClCompile Include="Source\EU4toV2Converter.cpp" />
+    <ClCompile Include="Source\EU4World\Army\EU4Army.cpp" />
+    <ClCompile Include="Source\EU4World\Army\EU4Regiment.cpp" />
+    <ClCompile Include="Source\EU4World\Army\EU4UnitID.cpp" />
     <ClCompile Include="Source\EU4World\Buildings\Building.cpp" />
     <ClCompile Include="Source\EU4World\Buildings\Buildings.cpp" />
     <ClCompile Include="Source\EU4World\ColonialRegions.cpp" />
@@ -194,7 +197,6 @@
     <ClCompile Include="Source\EU4World\Country\EU4ReformsSection.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4ReformStackSection.cpp" />
     <ClCompile Include="Source\EU4World\CultureGroups.cpp" />
-    <ClCompile Include="Source\EU4World\EU4Army.cpp" />
     <ClCompile Include="Source\EU4World\EU4Country.cpp" />
     <ClCompile Include="Source\EU4World\EU4Diplomacy.cpp" />
     <ClCompile Include="Source\EU4World\EU4Leader.cpp" />
@@ -251,6 +253,8 @@
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapping.cpp" />
+    <ClCompile Include="Source\Mappers\UnitType.cpp" />
+    <ClCompile Include="Source\Mappers\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\targa.cpp" />
     <ClCompile Include="Source\V2World\BlockedTechSchools.cpp" />
     <ClCompile Include="Source\V2World\StateMapper.cpp" />
@@ -292,6 +296,9 @@
     <ClInclude Include="..\common_items\StringUtils.h" />
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
+    <ClInclude Include="Source\EU4World\Army\EU4Army.h" />
+    <ClInclude Include="Source\EU4World\Army\EU4Regiment.h" />
+    <ClInclude Include="Source\EU4World\Army\EU4UnitID.h" />
     <ClInclude Include="Source\EU4World\Buildings\Building.h" />
     <ClInclude Include="Source\EU4World\Buildings\Buildings.h" />
     <ClInclude Include="Source\EU4World\ColonialRegions.h" />
@@ -304,7 +311,6 @@
     <ClInclude Include="Source\EU4World\Country\EU4ReformsSection.h" />
     <ClInclude Include="Source\EU4World\Country\EU4ReformStackSection.h" />
     <ClInclude Include="Source\EU4World\CultureGroups.h" />
-    <ClInclude Include="Source\EU4World\EU4Army.h" />
     <ClInclude Include="Source\EU4World\EU4Country.h" />
     <ClInclude Include="Source\EU4World\EU4Diplomacy.h" />
     <ClInclude Include="Source\EU4World\EU4Leader.h" />
@@ -362,6 +368,8 @@
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapping.h" />
+    <ClInclude Include="Source\Mappers\UnitType.h" />
+    <ClInclude Include="Source\Mappers\UnitTypeMapper.h" />
     <ClInclude Include="Source\targa.h" />
     <ClInclude Include="Source\V2World\BlockedTechSchools.h" />
     <ClInclude Include="Source\V2World\StateMapper.h" />

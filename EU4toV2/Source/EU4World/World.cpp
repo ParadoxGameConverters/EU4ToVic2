@@ -607,42 +607,12 @@ void EU4::world::setLocalisations()
 void EU4::world::resolveRegimentTypes()
 {
 	LOG(LogLevel::Info) << "Resolving unit types.";
-	RegimentTypeMap rtm;
-	fstream read;
-	read.open("unit_strength.txt");
-	if (read.is_open())
-	{
-		read.close();
-		read.clear();
-		LOG(LogLevel::Info) << "\tReading unit strengths from unit_strength.txt";
-		shared_ptr<Object> unitsObj = parser_UTF8::doParseFile("unit_strength.txt");
-		if (unitsObj == NULL)
-		{
-			LOG(LogLevel::Error) << "Could not parse file unit_strength.txt";
-			exit(-1);
-		}
-		for (int i = 0; i < num_reg_categories; ++i)
-		{
-			AddCategoryToRegimentTypeMap(unitsObj, (RegimentCategory)i, RegimentCategoryNames[i], rtm);
-		}
-	}
-	else
-	{
-		LOG(LogLevel::Info) << "\tReading unit strengths from EU4 installation folder";
-
-		set<string> filenames;
-		Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/units/", filenames);
-		for (auto filename: filenames)
-		{
-			AddUnitFileToRegimentTypeMap((theConfiguration.getEU4Path() + "/common/units"), filename, rtm);
-		}
-	}
-	read.close();
-	read.clear();
+	mappers::UnitTypeMapper utm;
+	unitTypeMap = utm.getUnitTypeMap();
 
 	for (auto itr = theCountries.begin(); itr != theCountries.end(); ++itr)
 	{
-		itr->second->resolveRegimentTypes(rtm);
+		itr->second->resolveRegimentTypes(unitTypeMap);
 	}
 }
 

@@ -238,7 +238,7 @@ EU4::Country::Country(
 	registerKeyword(std::regex("modifier"), [this](const std::string& unused, std::istream& theStream)
 		{
 			auto modifierObj = commonItems::convert8859Object(unused, theStream);
-			vector<shared_ptr<Object>> subModifierObj = modifierObj->getLeaves()[0]->getValue("modifier");
+			std::vector<shared_ptr<Object>> subModifierObj = modifierObj->getLeaves()[0]->getValue("modifier");
 			if (subModifierObj.size() > 0)
 			{
 				modifiers[subModifierObj[0]->getLeaf()] = true;
@@ -271,7 +271,7 @@ EU4::Country::Country(
 			auto relationLeaves = commonItems::convert8859Object(unused, theStream);
 			for (auto relationLeaf: relationLeaves->getLeaves()[0]->getLeaves())
 			{
-				string key = relationLeaf->getKey();
+				std::string key = relationLeaf->getKey();
 				EU4Relations* rel = new EU4Relations(relationLeaf);
 				relations.insert(make_pair(key, rel));
 			}
@@ -279,15 +279,13 @@ EU4::Country::Country(
 	);
 	registerKeyword(std::regex("army"), [this](const std::string& unused, std::istream& theStream)
 		{
-			auto armyObj = commonItems::convert8859Object(unused, theStream);
-			EU4Army* army = new EU4Army(armyObj->getLeaves()[0]);
+			EU4Army army(theStream);
 			armies.push_back(army);
 		}
 	);
 	registerKeyword(std::regex("navy"), [this](const std::string& unused, std::istream& theStream)
 		{
-			auto armyObj = commonItems::convert8859Object(unused, theStream);
-			EU4Army* navy = new EU4Army(armyObj->getLeaves()[0]);
+			EU4Army navy(theStream);
 			armies.push_back(navy);
 		}
 	);
@@ -354,7 +352,7 @@ EU4::Country::Country(
 					militaryLeaders.push_back(actualLeader);
 				}
 			}
-			/*vector<shared_ptr<Object>> daimyoObj = historyObj[0]->getValue("daimyo");	// the object holding the daimyo information for this country
+			/*std::vector<shared_ptr<Object>> daimyoObj = historyObj[0]->getValue("daimyo");	// the object holding the daimyo information for this country
 			if (daimyoObj.size() > 0)
 			{
 				possibleDaimyo = true;
@@ -374,8 +372,8 @@ EU4::Country::Country(
 
 void EU4::Country::dropMinorityCultures()
 {
-	vector<string> updatedCultures;
-	for (string acceptedCulture: acceptedCultures)
+	std::vector<std::string> updatedCultures;
+	for (std::string acceptedCulture: acceptedCultures)
 	{
 		double culturalDevelopment = 0;
 		for (EU4::Province* p : provinces)
@@ -473,7 +471,7 @@ void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEff
 
 	for (auto reformStr : governmentReforms)
 	{
-		if (reformStr.find("_mechanic") == string::npos) //ignore the basic legacy mechanics, focus on actual reforms
+		if (reformStr.find("_mechanic") == std::string::npos) //ignore the basic legacy mechanics, focus on actual reforms
 		{
 			armyInvestment += ideaEffectMapper.getArmyFromIdea(reformStr, 7);
 			commerceInvestment += ideaEffectMapper.getCommerceFromIdea(reformStr, 7);
@@ -543,7 +541,7 @@ void EU4::Country::determineLibertyDesire()
 		auto relationship = relations.find(overlord);
 		if (relationship != relations.end())
 		{
-			string attitude = relationship->second->getAttitude();
+			std::string attitude = relationship->second->getAttitude();
 			if (attitude == "attitude_rebellious")
 			{
 				libertyDesire = 95.0;
@@ -642,7 +640,7 @@ void EU4::Country::readFromCommonCountry(const std::string& fileName, const std:
 }
 
 
-void EU4::Country::setLocalisationName(const string& language, const string& name)
+void EU4::Country::setLocalisationName(const std::string& language, const std::string& name)
 {
 	if (name.size() == 1)
 	{
@@ -656,7 +654,7 @@ void EU4::Country::setLocalisationName(const string& language, const string& nam
 }
 
 
-void EU4::Country::setLocalisationAdjective(const string& language, const string& adjective)
+void EU4::Country::setLocalisationAdjective(const std::string& language, const std::string& adjective)
 {
 	adjectivesByLanguage[language] = adjective;
 }
@@ -685,16 +683,16 @@ void EU4::Country::addState(const std::string& area, double prosperity)
 	}
 }
 
-bool EU4::Country::hasModifier(string modifier) const
+bool EU4::Country::hasModifier(std::string modifier) const
 {
-	map<string, bool>::const_iterator itr = modifiers.find(modifier);
+	std::map<std::string, bool>::const_iterator itr = modifiers.find(modifier);
 	return (itr != modifiers.end());
 }
 
 
-int EU4::Country::hasNationalIdea(string ni) const
+int EU4::Country::hasNationalIdea(std::string ni) const
 {
-	map<string, int>::const_iterator itr = nationalIdeas.find(ni);
+	std::map<std::string, int>::const_iterator itr = nationalIdeas.find(ni);
 	if (itr != nationalIdeas.end())
 	{
 		return itr->second;
@@ -706,18 +704,18 @@ int EU4::Country::hasNationalIdea(string ni) const
 }
 
 
-bool EU4::Country::hasFlag(string flag) const
+bool EU4::Country::hasFlag(std::string flag) const
 {
-	map<string, bool>::const_iterator itr = flags.find(flag);
+	std::map<std::string, bool>::const_iterator itr = flags.find(flag);
 	return (itr != flags.end());
 }
 
 
-void EU4::Country::resolveRegimentTypes(const RegimentTypeMap& map)
+void EU4::Country::resolveRegimentTypes(mappers::RegimentTypeMap& map)
 {
-	for (vector<EU4Army*>::iterator itr = armies.begin(); itr != armies.end(); ++itr)
+	for (std::vector<EU4Army>::iterator itr = armies.begin(); itr != armies.end(); ++itr)
 	{
-		(*itr)->resolveRegimentTypes(map);
+		itr->resolveRegimentTypes(map);
 	}
 }
 
@@ -834,7 +832,7 @@ bool EU4::Country::cultureSurvivesInCores(const std::map<std::string, std::share
 }
 
 
-string EU4::Country::getName(const string& language) const
+std::string EU4::Country::getName(const std::string& language) const
 {
 	if (!randomName.empty())
 	{
@@ -847,7 +845,7 @@ string EU4::Country::getName(const string& language) const
 		return name;
 	}
 
-	map<string, string>::const_iterator findIter = namesByLanguage.find(language);
+	std::map<std::string, std::string>::const_iterator findIter = namesByLanguage.find(language);
 	if (findIter != namesByLanguage.end())
 	{
 		if (findIter->second.empty())
@@ -867,7 +865,7 @@ string EU4::Country::getName(const string& language) const
 }
 
 
-string EU4::Country::getAdjective(const string& language) const
+std::string EU4::Country::getAdjective(const std::string& language) const
 {
 	if (!randomName.empty())
 	{
@@ -881,8 +879,8 @@ string EU4::Country::getAdjective(const string& language) const
 		return adjective;
 	}
 
-	map<string, string>::const_iterator findIter = adjectivesByLanguage.find(language);
-	map<string, string>::const_iterator engIter = adjectivesByLanguage.find("english");
+	std::map<std::string, std::string>::const_iterator findIter = adjectivesByLanguage.find(language);
+	std::map<std::string, std::string>::const_iterator engIter = adjectivesByLanguage.find("english");
 
 	if (findIter != adjectivesByLanguage.end())
 	{

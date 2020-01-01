@@ -39,7 +39,7 @@ V2ArmyID::V2ArmyID()
 
 void V2ArmyID::output(FILE* out, int indentlevel) const
 {
-	string indent(indentlevel, '\t');
+	std::string indent(indentlevel, '\t');
 	fprintf(out, "%sid=\n", indent.c_str());
 	fprintf(out, "%s{\n", indent.c_str());
 	fprintf(out, "%s\tid=%d\n", indent.c_str(), id);
@@ -48,39 +48,39 @@ void V2ArmyID::output(FILE* out, int indentlevel) const
 }
 
 
-V2Regiment::V2Regiment(RegimentCategory rc) : category(rc)
+V2Regiment::V2Regiment(EU4::REGIMENTCATEGORY rc) : category(rc)
 {
 	name		= "";
 	switch (rc)
 	{
-		case infantry:
-			type = "infantry";
-			isShip = false;
-			break;
-		case cavalry:
-			type = "cavalry";
-			isShip = false;
-			break;
-		case artillery:
-			type = "artillery";
-			isShip = false;
-			break;
-		case heavy_ship:
-			type = "manowar";
-			isShip = true;
-			break;
-		case galley:
-		case light_ship:
-			type = "frigate";
-			isShip = true;
-			break;
-		case transport:
-			type = "clipper_transport";
-			isShip = true;
-			break;
-		default:
-			LOG(LogLevel::Warning) << "Unexpected regiment category " << rc;
-			break;
+	case EU4::REGIMENTCATEGORY::infantry:
+		type = "infantry";
+		isShip = false;
+		break;
+	case EU4::REGIMENTCATEGORY::cavalry:
+		type = "cavalry";
+		isShip = false;
+		break;
+	case EU4::REGIMENTCATEGORY::artillery:
+		type = "artillery";
+		isShip = false;
+		break;
+	case EU4::REGIMENTCATEGORY::heavy_ship:
+		type = "manowar";
+		isShip = true;
+		break;
+	case EU4::REGIMENTCATEGORY::galley:
+	case EU4::REGIMENTCATEGORY::light_ship:
+		type = "frigate";
+		isShip = true;
+		break;
+	case EU4::REGIMENTCATEGORY::transport:
+		type = "clipper_transport";
+		isShip = true;
+		break;
+	default:
+		LOG(LogLevel::Warning) << "Unexpected regiment category " << rc;
+		break;
 	}
 	home = 0;
 }
@@ -108,9 +108,9 @@ std::ostream& operator<<(std::ostream& output, const V2Regiment& regiment)
 }
 
 
-V2Army::V2Army(EU4Army* oldArmy, map<int, int> leaderIDMap)
+V2Army::V2Army(EU4::EU4Army oldArmy, std::map<int, int> leaderIDMap)
 {
-	name			= oldArmy->getName();
+	name			= oldArmy.getName();
 	location		= -1;
 	regiments.clear();
 	memset(armyRemainders, 0, sizeof(armyRemainders));
@@ -153,11 +153,11 @@ void V2Army::addRegiment(V2Regiment reg)
 }
 
 
-void V2Army::getRegimentCounts(int counts[num_reg_categories]) const
+void V2Army::getRegimentCounts(int counts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)]) const
 {
-	for (vector<V2Regiment>::const_iterator itr = regiments.begin(); itr != regiments.end(); ++itr)
+	for (std::vector<V2Regiment>::const_iterator itr = regiments.begin(); itr != regiments.end(); ++itr)
 	{
-		counts[itr->getCategory()]++;
+		counts[static_cast<int>(itr->getCategory())]++;
 	}
 }
 
@@ -169,7 +169,7 @@ V2Army* V2Army::makeTestNavy(int location)
 	army->name = "V2 Test Navy";
 	army->isNavy = true;
 	army->setLocation(location);
-	V2Regiment reg(heavy_ship);
+	V2Regiment reg(EU4::REGIMENTCATEGORY::heavy_ship);
 	army->addRegiment(reg);
 	return army;
 }
