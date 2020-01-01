@@ -18,7 +18,7 @@ namespace mappers
 	private:
 		RegimentTypeMap unitTypeMap;
 
-		void AddUnitFileToRegimentTypeMap(const std::string directory, const std::string filename);
+		void AddUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename);
 	};
 };
 
