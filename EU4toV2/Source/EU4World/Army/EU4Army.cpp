@@ -79,7 +79,7 @@ void EU4::EU4Army::resolveRegimentTypes(mappers::RegimentTypeMap RTmap)
 			itr->setCategory(RTmap[itr->getType()].getCategory());
 			itr->setTypeStrength(RTmap[itr->getType()].getStrength());
 		}
-		catch (std::exception e)
+		catch (std::exception& e)
 		{
 			std::runtime_error exception("Illegal unit type: " + itr->getType() + ", aborting!");
 			throw exception;

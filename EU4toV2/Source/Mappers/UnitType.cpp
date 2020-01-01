@@ -18,7 +18,7 @@ mappers::UnitType::UnitType(std::istream& theStream)
 		{
 			unitType = EU4::RegimentCategoryNames[typeStr.getString()];
 		}
-		catch (std::exception e)
+		catch (std::exception& e)
 		{
 			std::runtime_error exception("Illegal unit type: " + typeStr.getString() + ", aborting!");
 			throw exception;

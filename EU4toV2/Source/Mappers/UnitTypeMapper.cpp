@@ -31,7 +31,7 @@ mappers::UnitTypeMapper::UnitTypeMapper()
 }
 
 
-void mappers::UnitTypeMapper::AddUnitFileToRegimentTypeMap(std::string directory, std::string filename)
+void mappers::UnitTypeMapper::AddUnitFileToRegimentTypeMap(const std::string directory, const std::string filename)
 {
 	std::string filePath = directory + "/" + filename;
 	std::ifstream incFile(filePath);	// the parsed regiment costs file
