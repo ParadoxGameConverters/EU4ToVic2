@@ -32,5 +32,5 @@ class mockEU4Country: public EU4::Country
 		MOCK_CONST_METHOD0(getAdmTech, double());
 		MOCK_CONST_METHOD0(getDipTech, double());
 		MOCK_CONST_METHOD0(getMilTech, double());
-		MOCK_CONST_METHOD0(getNationalIdeas, const map<string, int>&());
+		MOCK_CONST_METHOD0(getNationalIdeas, const std::map<std::string, int>&());
 };

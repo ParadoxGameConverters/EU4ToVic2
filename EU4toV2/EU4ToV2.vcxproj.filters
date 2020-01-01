@@ -69,9 +69,6 @@
     <ClCompile Include="..\common_items\Date.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\EU4Army.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\EU4Country.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
@@ -318,6 +315,21 @@
     <ClCompile Include="Source\Mappers\MinorityPop.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Army\EU4Army.cpp">
+      <Filter>EU4World\Army</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Army\EU4Regiment.cpp">
+      <Filter>EU4World\Army</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Army\EU4UnitID.cpp">
+      <Filter>EU4World\Army</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\UnitTypeMapper.cpp">
+      <Filter>Mappers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\UnitType.cpp">
+      <Filter>Mappers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -383,9 +395,6 @@
     </ClInclude>
     <ClInclude Include="..\common_items\Date.h">
       <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\EU4Army.h">
-      <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\EU4Country.h">
       <Filter>EU4World</Filter>
@@ -639,6 +648,21 @@
     <ClInclude Include="Source\Mappers\MinorityPop.h">
       <Filter>Mappers</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\Army\EU4Army.h">
+      <Filter>EU4World\Army</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Army\EU4Regiment.h">
+      <Filter>EU4World\Army</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Army\EU4UnitID.h">
+      <Filter>EU4World\Army</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\UnitTypeMapper.h">
+      <Filter>Mappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\UnitType.h">
+      <Filter>Mappers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -682,6 +706,9 @@
     </Filter>
     <Filter Include="EU4World\Country">
       <UniqueIdentifier>{0eaaaa58-d93f-4f51-a6fe-dce31727ca87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Army">
+      <UniqueIdentifier>{f97aeea8-0988-49af-9fcb-15d4302eb844}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

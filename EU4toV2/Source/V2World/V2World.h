@@ -8,7 +8,7 @@
 #include "V2Factory.h"
 #include "V2Party.h"
 #include "V2Province.h"
-#include "../EU4World/EU4Army.h"
+#include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
 #include "../Mappers/CultureMapper.h"

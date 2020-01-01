@@ -70,7 +70,7 @@ V2Province::V2Province(string _filename)
 	lifeRating = 0;
 	slaveState = false;
 
-	for (int i = 0; i < num_reg_categories; ++i)
+	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
 	{
 		unitNameCount[i] = 0;
 	}
@@ -281,7 +281,7 @@ void V2Province::outputPops(FILE* output) const
 
 
 // determined experimentally
-static const int unitNameOffsets[num_reg_categories] =
+static const int unitNameOffsets[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] =
 {
 	16,	// infantry
 	5,	// cavalry
@@ -297,7 +297,7 @@ void V2Province::outputUnits(FILE* output) const
 {
 	// unit name counts are stored in an odd kind of variable-length sparse array.  try to emulate.
 	int outputUnitNameUntil = 0;
-	for (int i = 0; i < num_reg_categories; ++i)
+	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
 	{
 		if (unitNameCount[i] > 0 && unitNameOffsets[i] > outputUnitNameUntil)
 		{
@@ -313,7 +313,7 @@ void V2Province::outputUnits(FILE* output) const
 		for (int i = 1; i <= outputUnitNameUntil; ++i)
 		{
 			fprintf(output, "\t\t\t{\n");
-			for (int j = 0; j < num_reg_categories; ++j)
+			for (int j = 0; j < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++j)
 			{
 				if ((i == unitNameOffsets[j]) && unitNameCount[j] > 0)
 				{
@@ -1204,33 +1204,33 @@ pair<int, int> V2Province::getAvailableSoldierCapacity() const
 }
 
 
-string V2Province::getRegimentName(RegimentCategory rc)
+string V2Province::getRegimentName(EU4::REGIMENTCATEGORY rc)
 {
 	// galleys turn into light ships; count and name them identically
-	if (rc == galley)
-		rc = light_ship;
+	if (rc == EU4::REGIMENTCATEGORY::galley)
+		rc = EU4::REGIMENTCATEGORY::light_ship;
 
 	stringstream str;
-	str << ++unitNameCount[rc] << CardinalToOrdinal(unitNameCount[rc]); // 1st, 2nd, etc
+	str << ++unitNameCount[static_cast<int>(rc)] << CardinalToOrdinal(unitNameCount[static_cast<int>(rc)]); // 1st, 2nd, etc
 	str << " " << name << " "; // Hamburg, Lyon, etc
 	switch (rc)
 	{
-	case artillery:
+	case EU4::REGIMENTCATEGORY::artillery:
 		str << "Artillery";
 		break;
-	case infantry:
+	case EU4::REGIMENTCATEGORY::infantry:
 		str << "Infantry";
 		break;
-	case cavalry:
+	case EU4::REGIMENTCATEGORY::cavalry:
 		str << "Cavalry";
 		break;
-	case heavy_ship:
+	case EU4::REGIMENTCATEGORY::heavy_ship:
 		str << "Man'o'war";
 		break;
-	case light_ship:
+	case EU4::REGIMENTCATEGORY::light_ship:
 		str << "Frigate";
 		break;
-	case transport:
+	case EU4::REGIMENTCATEGORY::transport:
 		str << "Clipper Transport";
 		break;
 	}

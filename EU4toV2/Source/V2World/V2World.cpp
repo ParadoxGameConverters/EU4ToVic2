@@ -1777,8 +1777,9 @@ void V2World::convertArmies(const EU4::world& sourceWorld)
 		s.close();
 	}
 
+	LOG(LogLevel::Debug) << "Parsing regiment costs";
 	// get cost per regiment values
-	double cost_per_regiment[num_reg_categories] = { 0.0 };
+	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0.0 };
 	shared_ptr<Object>	obj2 = parser_8859_15::doParseFile("regiment_costs.txt");
 	if (obj2 == nullptr)
 	{
@@ -1791,9 +1792,9 @@ void V2World::convertArmies(const EU4::world& sourceWorld)
 		LOG(LogLevel::Error) << "regment_costs.txt failed to parse";
 		exit(1);
 	}
-	for (int i = 0; i < num_reg_categories; ++i)
+	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
 	{
-		auto possibleRegimentCost = objTop[0]->getLeaf(RegimentCategoryNames[i]);
+		auto possibleRegimentCost = objTop[0]->getLeaf(EU4::RegimentCategoryTypes[static_cast<EU4::REGIMENTCATEGORY>(i)]);
 		if (possibleRegimentCost)
 		{
 			cost_per_regiment[i] = stoi(*possibleRegimentCost);
@@ -1801,6 +1802,7 @@ void V2World::convertArmies(const EU4::world& sourceWorld)
 	}
 
 	// convert armies
+	LOG(LogLevel::Debug) << "Converting country armies";
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
 		itr->second->convertArmies(leaderIDMap, cost_per_regiment, provinces, port_whitelist, *provinceMapper);
