@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <configuration
   Comment="This file is used to build the configuration parth of the frontend. This is done at run-time, so errors here might prevent the frontend from running.">
@@ -114,7 +114,7 @@
               </entryOption>
             </entryOptions>
           </preference>
-		<preference>
+	<preference>
             <name>popShapingFactor</name>
             <friendlyName>Shaping Factor?</friendlyName>
             <description>How much does EU4 affect population sizes? 0 - Vanilla, 100 - Fully (1 dev increase approx 1% pop increase)</description>
@@ -173,6 +173,25 @@
 			  </entryOption>
 			</entryOptions>
 		</preference>
+	  <preference>
+            <name>randomiseRgos</name>
+            <friendlyName>Randomise RGOs?</friendlyName>
+            <description>If set, RGOs will be shuffled according to the configuration in shuffle_config.txt.</description>
+            <entryOptions>
+              <entryOption>
+                <name>no</name>
+                <friendlyName>No</friendlyName>
+                <description>Historical RGOs</description>
+                <isDefault>true</isDefault>
+              </entryOption>
+              <entryOption>
+                <name>yes</name>
+                <friendlyName>Yes</friendlyName>
+                <description>Shuffled RGOs</description>
+                <isDefault>false</isDefault>
+              </entryOption>
+            </entryOptions>
+          </preference>
         </preferences>
       </category>
     </categories>
