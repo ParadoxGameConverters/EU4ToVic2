@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2State.h"
 #include "V2Pop.h"
 #include "V2Province.h"
-#include "V2Factory.h"
+#include "Factory/V2Factory.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "Log.h"
 
@@ -68,29 +68,29 @@ bool V2State::hasLocalSupply(string product) const
 	return false;
 }
 
-double V2State::getSuppliedInputs(const V2Factory* factory) const
+double V2State::getSuppliedInputs(const V2Factory& factory) const
 {
 	// find out the needs
-	map<string, float>	inputs = factory->getInputs();
+	map<string, double>	inputs = factory.getInputs();
 	int						numNeeds = inputs.size();
 
 	// find out what we have from both RGOs and existing factories
-	map<string, float> supplies;
+	map<string, double> supplies;
 	for (vector<V2Province*>::const_iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
 		string rgo = (*itr)->getRgoType();
 		supplies[rgo] += 1.0;
 	}
-	for (vector<const V2Factory*>::const_iterator itr = factories.begin(); itr != factories.end(); itr++)
+	for (vector<V2Factory>::const_iterator itr = factories.begin(); itr != factories.end(); itr++)
 	{
-		supplies[(*itr)->getOutputGoods()] += 1.0;
+		supplies[itr->getOutputs()] += 1.0;
 	}
 
 	// determine how many of the inputs are supplied
 	int totalSupplied = 0;
-	for (map<string, float>::const_iterator inputItr = inputs.begin(); inputItr != inputs.end(); inputItr++)
+	for (map<string, double>::const_iterator inputItr = inputs.begin(); inputItr != inputs.end(); inputItr++)
 	{
-		map<string, float>::const_iterator supplyItr = supplies.find(inputItr->first);
+		map<string, double>::const_iterator supplyItr = supplies.find(inputItr->first);
 		if (supplyItr != supplies.end())
 		{
 			totalSupplied++;
@@ -113,7 +113,7 @@ bool V2State::provInState(int id) const
 	return false;
 }
 
-void V2State::addFactory(V2Factory* factory)
+void V2State::addFactory(const V2Factory& factory)
 {
 	provinces[0]->addFactory(factory);
 	factories.push_back(factory);

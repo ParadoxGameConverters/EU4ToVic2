@@ -2,6 +2,7 @@
 #include "Log.h"
 #include "newParser.h"
 #include <fstream>
+#include "ParserHelpers.h"
 
 
 mappers::ColonialTagMapper::ColonialTagMapper()
@@ -13,6 +14,7 @@ mappers::ColonialTagMapper::ColonialTagMapper()
 			ColonialTag colonialBlock(theStream);
 			colonyList.push_back(colonialBlock.getColonyTag());
 		});
+	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
 
 	parseFile("colonial_tags.txt");
 }

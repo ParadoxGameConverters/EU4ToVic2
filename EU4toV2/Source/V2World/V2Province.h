@@ -74,7 +74,7 @@ class V2Province
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
 			const mappers::ProvinceMapper& provinceMapper
 		);
-		void addFactory(V2Factory* factory);
+		void addFactory(const V2Factory& factory);
 		void addPopDemographic(V2Demographic d);
 
 		int				getTotalPopulation() const;
@@ -177,7 +177,7 @@ class V2Province
 		int							fortLevel;
 		int							navalBaseLevel;
 		int							railLevel;
-		map<string, V2Factory*>	factories;
+		map<string, V2Factory> factories;
 
 		bool							resettable;
 		double spentProvinceModifier = 0;	//Store old popshaping modifier for NEU4-to-1V2 conversions;

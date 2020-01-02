@@ -32,7 +32,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2Pop.h"
 #include "V2Country.h"
-#include "V2Factory.h"
+#include "Factory/V2Factory.h"
 #include <algorithm>
 #include <fstream>
 #include <memory>
@@ -233,7 +233,7 @@ void V2Province::output() const
 	}
 	for (auto factory: factories)
 	{
-		output << *factory.second;
+		output << factory.second;
 	}
 	output.close();
 }
@@ -1034,16 +1034,16 @@ void V2Province::combinePops()
 }
 
 
-void V2Province::addFactory(V2Factory* factory)
+void V2Province::addFactory(const V2Factory& factory)
 {
-	map<string, V2Factory*>::iterator itr = factories.find(factory->getTypeName());
+	map<string, V2Factory>::iterator itr = factories.find(factory.getTypeName());
 	if (itr == factories.end())
 	{
-		factories.insert(make_pair(factory->getTypeName(), factory));
+		factories.insert(std::make_pair(factory.getTypeName(), factory));
 	}
 	else
 	{
-		itr->second->increaseLevel();
+		itr->second.increaseLevel();
 	}
 }
 

@@ -147,9 +147,6 @@
     <ClCompile Include="Source\V2World\V2Diplomacy.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2Factory.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2Flags.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -333,6 +330,45 @@
     <ClCompile Include="Source\Mappers\ColonialTag.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryTechLoader.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryInventionEffect.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryInventionLoader.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryTypeInputs.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryType.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryTypeLoader.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryStartingCounts.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2Factory.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryFactory.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryTechDetails.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryTech.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryInventionDetails.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Factory\V2FactoryInvention.cpp">
+      <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -478,9 +514,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Diplomacy.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Factory.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Flags.h">
@@ -669,6 +702,45 @@
     <ClInclude Include="Source\Mappers\ColonialTag.h">
       <Filter>Mappers</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryTechLoader.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryInventionEffect.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryInventionLoader.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryTypeInputs.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryType.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryTypeLoader.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryStartingCounts.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2Factory.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryFactory.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryTechDetails.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryTech.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryInventionDetails.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Factory\V2FactoryInvention.h">
+      <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -715,6 +787,9 @@
     </Filter>
     <Filter Include="EU4World\Army">
       <UniqueIdentifier>{f97aeea8-0988-49af-9fcb-15d4302eb844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Factory">
+      <UniqueIdentifier>{88c08173-47e0-48fd-ae63-80362aae21ed}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

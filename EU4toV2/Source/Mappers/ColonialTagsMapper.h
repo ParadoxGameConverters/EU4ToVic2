@@ -1,8 +1,6 @@
 #ifndef COLONIAL_TAG_MAPPER_H
 #define COLONIAL_TAG_MAPPER_H
 
-#include <string>
-#include <vector>
 #include "ColonialTag.h"
 
 namespace mappers
