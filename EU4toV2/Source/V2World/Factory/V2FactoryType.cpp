@@ -26,22 +26,22 @@ mappers::V2FactoryType::V2FactoryType(std::istream& theStream)
 }
 
 void mappers::V2FactoryType::assignTechsAndCounts(
-	std::map<std::string, std::string>& factoryTechMap,
-	std::map<std::string, std::string>& factoryInventionMap,
-	std::map<std::string, int>& startingCounts
+	const std::map<std::string, std::string>& factoryTechMap,
+	const std::map<std::string, std::string>& factoryInventionMap,
+	const std::map<std::string, int>& startingCounts
 )
 {
-	std::map<std::string, std::string>::iterator factoryTechItr = factoryTechMap.find(factoryTypeName);
+	std::map<std::string, std::string>::const_iterator factoryTechItr = factoryTechMap.find(factoryTypeName);
 	if (factoryTechItr != factoryTechMap.end())
 	{
 		requiredTech = factoryTechItr->second;
 	}
-	std::map<std::string, std::string>::iterator factoryInventionItr = factoryInventionMap.find(factoryTypeName);
+	std::map<std::string, std::string>::const_iterator factoryInventionItr = factoryInventionMap.find(factoryTypeName);
 	if (factoryInventionItr != factoryInventionMap.end())
 	{
 		requiredInvention = factoryInventionItr->second;
 	}
-	std::map<std::string, int>::iterator startingCountItr = startingCounts.find(factoryTypeName);
+	std::map<std::string, int>::const_iterator startingCountItr = startingCounts.find(factoryTypeName);
 	if (startingCountItr != startingCounts.end())
 	{
 		startingCount = startingCountItr->second;

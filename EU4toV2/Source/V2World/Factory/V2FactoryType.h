@@ -21,7 +21,7 @@ namespace mappers
 		void setFactoryTypeName(std::string name) { factoryTypeName = name; }
 		std::string getName() const { return factoryTypeName; }
 
-		void assignTechsAndCounts(std::map<std::string, std::string>& factoryTechMap, std::map<std::string, std::string>& factoryInventionMap, std::map<std::string, int>& startingCounts);
+		void assignTechsAndCounts(const std::map<std::string, std::string>& factoryTechMap, const std::map<std::string, std::string>& factoryInventionMap, const std::map<std::string, int>& startingCounts);
 
 	private:
 		std::string factoryTypeName;
