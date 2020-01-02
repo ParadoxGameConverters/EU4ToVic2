@@ -84,7 +84,7 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 class BucketList : private commonItems::parser
 {
       public:
-	BucketList(const std::string& filename);
+	explicit BucketList(const std::string& filename);
 	void putInBucket(V2Province* prov);
 	bool empty() const { return buckets.empty(); }
         void shuffle();
@@ -115,7 +115,7 @@ BucketList::BucketList(const std::string& filename)
 	shuffler.seed(theConfiguration.getEU4RandomSeed());
 	registerKeyword(
 	    std::regex("bucket"),
-	    [this](const std::string key, std::istream& theStream) {
+	    [this](const std::string& key, std::istream& theStream) {
 		    auto top = commonItems::convert8859Object(key, theStream);
                     auto obj = top->safeGetObject("bucket");
 		    if (!obj)
