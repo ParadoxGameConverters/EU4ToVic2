@@ -330,6 +330,9 @@
     <ClCompile Include="Source\Mappers\UnitType.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\ColonialTag.cpp">
+      <Filter>Mappers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -661,6 +664,9 @@
       <Filter>Mappers</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\UnitType.h">
+      <Filter>Mappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ColonialTag.h">
       <Filter>Mappers</Filter>
     </ClInclude>
   </ItemGroup>
