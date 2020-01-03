@@ -27,6 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "../EU4World/World.h"
+#include "Factory/V2Factory.h"
 #include <stdio.h>
 #include <string>
 #include <vector>
@@ -36,7 +37,7 @@ using namespace std;
 
 
 class V2Province;
-class V2Factory;
+
 namespace EU4
 {
 	class world;
@@ -50,11 +51,11 @@ class V2State
 		V2State(int newId, V2Province* firstProvince);
 
 		void		addRailroads();
-		void		addFactory(V2Factory* factory);
+		void		addFactory(const V2Factory& factory);
 
 		bool		isCoastal() const;
 		bool		hasLocalSupply(string product) const;
-		double	getSuppliedInputs(const V2Factory* factory)	const;
+		double	getSuppliedInputs(const V2Factory& factory)	const;
 		bool		provInState(int id)	const;
 		bool		hasLandConnection()	const;
 		double	getManuRatio() const;
@@ -71,7 +72,7 @@ class V2State
 		int								id;
 		bool								colonial;
 		vector<V2Province*>			provinces;
-		vector<const V2Factory*>	factories;
+		vector<V2Factory>	factories;
 };
 
 

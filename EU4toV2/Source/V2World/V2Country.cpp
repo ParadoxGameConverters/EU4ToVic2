@@ -30,6 +30,7 @@
 #include "V2Leader.h"
 #include "V2Pop.h"
 #include "V2TechSchools.h"
+#include "Factory/V2Factory.h"
 #include <algorithm>
 #include <exception>
 #include <float.h>
@@ -1397,16 +1398,16 @@ static bool FactoryCandidateSortPredicate(const pair<double, V2State*>& lhs, con
 }
 
 
-bool V2Country::addFactory(V2Factory* factory)
+bool V2Country::addFactory(const V2Factory& factory)
 {
 	// check factory techs
-	string requiredTech = factory->getRequiredTech();
+	std::string requiredTech = factory.getRequiredTech();
 	if (requiredTech != "")
 	{
 		vector<string>::iterator itr = find(techs.begin(), techs.end(), requiredTech);
 		if (itr == techs.end())
 		{
-			LOG(LogLevel::Debug) << tag << " rejected " << factory->getTypeName() << " (missing required tech: " << requiredTech << ')';
+			LOG(LogLevel::Debug) << tag << " rejected " << factory.getTypeName() << " (missing required tech: " << requiredTech << ')';
 			return false;
 		}
 	}
@@ -1414,9 +1415,9 @@ bool V2Country::addFactory(V2Factory* factory)
 	// check factory inventions
 	if ((theConfiguration.getVic2Gametype() == "vanilla") || (theConfiguration.getVic2Gametype() == "AHD"))
 	{
-		if (inventions.count(factory->getRequiredInvention()) != 0)
+		if (inventions.count(factory.getRequiredInvention()) != 0)
 		{
-			LOG(LogLevel::Debug) << tag << " rejected " << factory->getTypeName() << " (missing required invention: " << factory->getRequiredInvention() << ')';
+			LOG(LogLevel::Debug) << tag << " rejected " << factory.getTypeName() << " (missing required invention: " << factory.getRequiredInvention() << ')';
 			return false;
 		}
 	}
@@ -1435,7 +1436,7 @@ bool V2Country::addFactory(V2Factory* factory)
 			continue;
 		}
 
-		if (factory->requiresCoastal())
+		if (factory.requiresCoastal())
 		{
 			if ( !(*itr)->isCoastal() )
 				continue;
@@ -1456,13 +1457,13 @@ bool V2Country::addFactory(V2Factory* factory)
 
 	if (candidates.size() == 0)
 	{
-		LOG(LogLevel::Debug) << tag << " rejected " << factory->getTypeName() << " (no candidate states)";
+		LOG(LogLevel::Debug) << tag << " rejected " << factory.getTypeName() << " (no candidate states)";
 		return false;
 	}
 
 	V2State* target = candidates[0].second;
 	target->addFactory(factory);
-	LOG(LogLevel::Debug) << tag << " accepted " << factory->getTypeName() << " (" << candidates.size() << " candidate states)";
+	LOG(LogLevel::Debug) << tag << " accepted " << factory.getTypeName() << " (" << candidates.size() << " candidate states)";
 	numFactories++;
 	return true;
 }

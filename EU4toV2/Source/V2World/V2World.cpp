@@ -44,6 +44,7 @@
 #include "V2Flags.h"
 #include "V2LeaderTraits.h"
 #include "Vic2CultureUnionMapper.h"
+#include "Factory/V2FactoryFactory.h"
 
 
 
@@ -1471,7 +1472,7 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 
 	weightedCountries.swap(restrictCountries);
 	// remove nations that won't have enough industiral score for even one factory
-	deque<V2Factory*> factoryList = factoryBuilder.buildFactories();
+	deque<V2Factory> factoryList = factoryBuilder.buildFactories();
 	while (((weightedCountries.begin()->first / totalIndWeight) * factoryList.size() + 0.5 /*round*/) < 1.0)
 	{
 		weightedCountries.pop_front();
@@ -1498,7 +1499,7 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 		bool accepted = false;
 		if (citr->first > 0) // can take more factories
 		{
-			for (deque<V2Factory*>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
+			for (deque<V2Factory>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
 			{
 				if (citr->second->addFactory(*qitr))
 				{
@@ -1514,9 +1515,9 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 		{
 			Log logOutput(LogLevel::Debug);
 			logOutput << "No countries will accept any of the remaining factories:\n";
-			for (deque<V2Factory*>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
+			for (deque<V2Factory>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
 			{
-				logOutput << "\t  " << (*qitr)->getTypeName() << '\n';
+				logOutput << "\t  " << (*qitr).getTypeName() << '\n';
 			}
 			break;
 		}

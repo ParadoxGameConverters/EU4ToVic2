@@ -119,16 +119,16 @@ namespace mappers
 				const std::map<std::string, V2Country*>& Vic2Countries,
 				const ProvinceMapper& provinceMapper
 			);
-			bool capitalInRightEU4Region(const mappers::colonyStruct& colony, int EU4Capital);
+			bool capitalInRightEU4Region(const mappers::ColonyStruct& colony, int EU4Capital);
 			bool capitalInRightVic2Region(
-				const mappers::colonyStruct& colony,
+				const mappers::ColonyStruct& colony,
 				std::optional<int> Vic2Capital,
 				const EU4::world& srcWorld,
 				const std::string& EU4Tag,
 				const ProvinceMapper& provinceMapper
 			);
-			bool inCorrectCultureGroup(const mappers::colonyStruct& colony, const std::string& primaryCulture);
-			bool tagIsAvailable(const mappers::colonyStruct& colony, const std::map<std::string, V2Country*>& Vic2Countries);
+			bool inCorrectCultureGroup(const mappers::ColonyStruct& colony, const std::string& primaryCulture);
+			bool tagIsAvailable(const mappers::ColonyStruct& colony, const std::map<std::string, V2Country*>& Vic2Countries);
 			void logMapping(const std::string& EU4Tag, const std::string& V2Tag, const std::string& reason);
 			bool tagIsAlreadyAssigned(const std::string& Vic2Tag);
 

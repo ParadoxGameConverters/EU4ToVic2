@@ -85,7 +85,7 @@ class V2Country
 			std::vector<int> port_whitelist,
 			const mappers::ProvinceMapper& provinceMapper
 		);
-		bool								addFactory(V2Factory* factory);
+		bool addFactory(const V2Factory& factory);
 		void								addRailroadtoCapitalState();
 		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
 		void								oldCivConversionMethod();
