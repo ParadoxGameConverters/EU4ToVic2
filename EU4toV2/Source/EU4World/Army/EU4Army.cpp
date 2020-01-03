@@ -1,19 +1,18 @@
 #include "EU4Army.h"
 #include "ParserHelpers.h"
-#include "Log.h"
 
 
 EU4::EU4Army::EU4Army(std::istream& theStream)
 {
 	registerKeyword(std::regex("id"), [this](const std::string& unused, std::istream& theStream)
 		{
-			EU4::EU4UnitID idblock(theStream);
-			armyId = idblock;
+			EU4::ID idblock(theStream);
+			armyId = idblock.getIDNum();
 		});
 	registerKeyword(std::regex("leader"), [this](const std::string& unused, std::istream& theStream)
 		{
-			EU4::EU4UnitID idblock(theStream);
-			leaderId = idblock;
+			EU4::ID idblock(theStream);
+			leaderId = idblock.getIDNum();
 		});
 	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream)
 		{

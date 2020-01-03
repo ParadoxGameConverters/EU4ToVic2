@@ -10,7 +10,7 @@
 #include "../EU4World/World.h"
 #include "../EU4World/EU4Country.h"
 #include "../EU4World/EU4Relations.h"
-#include "../EU4World/EU4Leader.h"
+#include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../Mappers/AdjacencyMapper.h"
 #include "../Mappers/CountryMapping.h"
@@ -27,7 +27,6 @@
 #include "V2Reforms.h"
 #include "V2UncivReforms.h"
 #include "V2Creditor.h"
-#include "V2Leader.h"
 #include "V2Pop.h"
 #include "V2TechSchools.h"
 #include "Factory/V2Factory.h"
@@ -500,7 +499,6 @@ void V2Country::initFromEU4Country(
 	const EU4::Regions& eu4Regions,
 	std::shared_ptr<EU4::Country> _srcCountry,
 	const std::unique_ptr<Vic2::TechSchools>& techSchools,
-	const map<int, int>& leaderMap,
 	const mappers::CultureMapper& cultureMapper,
 	const mappers::CultureMapper& slaveCultureMapper,
 	const mappers::IdeaEffectMapper& ideaEffectMapper,
@@ -1131,24 +1129,32 @@ void V2Country::addState(V2State* newState)
 	}
 }
 
+void V2Country::convertLeaders(mappers::V2LeaderTraitMapper& leaderTraits)
+{
+	if (srcCountry == nullptr) return;
+	if (provinces.size() == 0) return;
+	auto eu4Leaders = srcCountry->getMilitaryLeaders();
+	if (eu4Leaders.empty()) return;
+
+	std::vector<EU4::Leader>::iterator eu4LeaderItr;
+	for (eu4LeaderItr = eu4Leaders.begin(); eu4LeaderItr != eu4Leaders.end(); ++eu4LeaderItr)
+	{
+		V2Leader newLeader(*eu4LeaderItr, leaderTraits);
+		leaders.push_back(newLeader);
+	}
+}
+
 
 //#define TEST_V2_PROVINCES
 void V2Country::convertArmies(
-	const std::map<int,int>& leaderIDMap,
 	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)],
 	const std::map<int, V2Province*>& allProvinces,
 	std::vector<int> port_whitelist,
 	const mappers::ProvinceMapper& provinceMapper
 ) {
 #ifndef TEST_V2_PROVINCES
-	if (srcCountry == nullptr)
-	{
-		return;
-	}
-	if (provinces.size() == 0)
-	{
-		return;
-	}
+	if (srcCountry == nullptr) return;
+	if (provinces.size() == 0) return;
 
 	// set up armies with whatever regiments they deserve, rounded down
 	// and keep track of the remainders for later
@@ -1156,7 +1162,7 @@ void V2Country::convertArmies(
 	std::vector<EU4::EU4Army> sourceArmies = srcCountry->getArmies();
 	for (std::vector<EU4::EU4Army>::iterator aitr = sourceArmies.begin(); aitr != sourceArmies.end(); ++aitr)
 	{
-		V2Army army(*aitr, leaderIDMap);
+		V2Army army(*aitr);
 
 		for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
 		{

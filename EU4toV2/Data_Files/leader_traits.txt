@@ -4,7 +4,6 @@
 # The rules here set MINIMUM CONDITIONS for each (enabled) personality and background.
 # The special value "other" consists of the sum of all unnamed values
 # so if a personality specifies "fire" and "other", "other" means "shock + manuever + siege".
-# Keep in mind: fire, shock, manuever are capped at 6; siege at 2.
 # 
 # The first rule that matches is selected, so the better/more restrictive rules should be near the top of each section.
 # If some traits are not desired for conversion, simply omit them from the file.

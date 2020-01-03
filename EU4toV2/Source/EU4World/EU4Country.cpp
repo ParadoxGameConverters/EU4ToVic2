@@ -7,9 +7,8 @@
 #include "ParserHelpers.h"
 #include "CultureGroups.h"
 #include "EU4Relations.h"
-#include "EU4Leader.h"
 #include "EU4Version.h"
-#include "CountryHistory.h"
+#include "History/CountryHistory.h"
 #include "Provinces/EU4Province.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../V2World/V2Localisation.h"
@@ -44,7 +43,6 @@ EU4::Country::Country(
 	modifiers(),
 	possibleDaimyo(false),
 	possibleShogun(false),
-	militaryLeaders(),
 	relations(),
 	armies(),
 	nationalIdeas(),
@@ -342,21 +340,14 @@ EU4::Country::Country(
 	);
 	registerKeyword(std::regex("history"), [this](const std::string& unused, std::istream& theStream)
 		{
-			EU4::countryHistory theCountryHistory(theStream);
-
-			for (auto& leader: theCountryHistory.getItemsOfType("leader"))
-			{
-				auto actualLeader = std::static_pointer_cast<EU4::historyLeader>(leader)->getTheLeader();
-				if (actualLeader->isAlive())
-				{
-					militaryLeaders.push_back(actualLeader);
-				}
-			}
-			/*std::vector<shared_ptr<Object>> daimyoObj = historyObj[0]->getValue("daimyo");	// the object holding the daimyo information for this country
-			if (daimyoObj.size() > 0)
-			{
-				possibleDaimyo = true;
-			}*/
+			EU4::CountryHistory theCountryHistory(theStream);
+			historicalLeaders = theCountryHistory.getLeaders();
+		}
+	);
+	registerKeyword(std::regex("leader"), [this](const std::string& unused, std::istream& theStream)
+		{
+			EU4::ID idBlock(theStream);
+			activeLeaderIDs.insert(idBlock.getIDNum());
 		}
 	);
 
@@ -368,7 +359,22 @@ EU4::Country::Country(
 	determineInvestments(ideaEffectMapper);
 	determineLibertyDesire();
 	determineCulturalUnion();
+	filterLeaders();
 }
+
+void EU4::Country::filterLeaders()
+{
+	std::vector<EU4::Leader>::iterator leaderItr;
+	for (leaderItr = historicalLeaders.begin(); leaderItr != historicalLeaders.end(); ++leaderItr)
+	{
+		// Dropping all leaders not currently in service (regardless of asignment).
+		if (activeLeaderIDs.find(leaderItr->getID()) != activeLeaderIDs.end())
+		{
+			militaryLeaders.push_back(*leaderItr);
+		}
+	}
+}
+
 
 void EU4::Country::dropMinorityCultures()
 {

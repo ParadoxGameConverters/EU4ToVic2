@@ -4,7 +4,7 @@
 #include <vector>
 #include "EU4Regiment.h"
 #include "../../Mappers/UnitTypeMapper.h"
-#include "Log.h"
+#include "../ID.h"
 
 namespace EU4
 {
@@ -16,8 +16,8 @@ namespace EU4
 		std::string getName() const { return name; }
 		int getLocation() const { return location; }
 		int getAtSea() const { return atSea; }
-		EU4UnitID getId() const { return armyId; }
-		EU4UnitID getLeaderId() const { return leaderId; }
+		int getId() const { return armyId; }
+		int getLeaderId() const { return leaderId; }
 		std::vector<EU4Regiment> getRegiments() const { return regimentList; }
 		
 		double getAverageStrength(REGIMENTCATEGORY category) const;
@@ -30,8 +30,8 @@ namespace EU4
 		std::string name;
 		int location = -1;
 		int atSea = 0; // obsolete since 1.20
-		EU4UnitID armyId;
-		EU4UnitID leaderId;
+		int armyId = 0;
+		int leaderId = 0;
 		std::vector<EU4Regiment> regimentList;
 		std::vector<int> blocked_homes; // invalid homes for this army
 	};

@@ -48,9 +48,6 @@
     <ClCompile Include="Source\EU4World\Countries.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\CountryHistory.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\CountryMapping.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
@@ -75,9 +72,6 @@
     <ClCompile Include="Source\EU4World\EU4Diplomacy.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\EU4Leader.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\EU4Localisation.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
@@ -92,9 +86,6 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\GovermentMapper.cpp">
       <Filter>Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\History.cpp">
-      <Filter>EU4World</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\ID.cpp">
       <Filter>EU4World</Filter>
@@ -148,12 +139,6 @@
       <Filter>Vic2World</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\V2Flags.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\V2Leader.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\V2LeaderTraits.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\V2Localisation.cpp">
@@ -318,9 +303,6 @@
     <ClCompile Include="Source\EU4World\Army\EU4Regiment.cpp">
       <Filter>EU4World\Army</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Army\EU4UnitID.cpp">
-      <Filter>EU4World\Army</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\UnitTypeMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
@@ -368,6 +350,27 @@
     </ClCompile>
     <ClCompile Include="Source\V2World\Factory\V2FactoryInvention.cpp">
       <Filter>Vic2World\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Leader\V2LeaderTraitTypes.cpp">
+      <Filter>Vic2World\Leader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Leader\V2LeaderTrait.cpp">
+      <Filter>Vic2World\Leader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Leader\V2Leader.cpp">
+      <Filter>Vic2World\Leader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\History\CountryHistory.cpp">
+      <Filter>EU4World\History</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Leader\EU4Leader.cpp">
+      <Filter>EU4World\Leader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\History\CountryHistoryDate.cpp">
+      <Filter>EU4World\History</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Leader\V2LeaderTraitMapper.cpp">
+      <Filter>Vic2World\Leader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -417,9 +420,6 @@
     <ClInclude Include="Source\Mappers\CountryMapping.h">
       <Filter>Mappers</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\CountryHistory.h">
-      <Filter>EU4World</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\CultureGroups.h">
       <Filter>EU4World</Filter>
     </ClInclude>
@@ -441,9 +441,6 @@
     <ClInclude Include="Source\EU4World\EU4Diplomacy.h">
       <Filter>EU4World</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\EU4Leader.h">
-      <Filter>EU4World</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\EU4Localisation.h">
       <Filter>EU4World</Filter>
     </ClInclude>
@@ -460,9 +457,6 @@
       <Filter>Mappers</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\ID.h">
-      <Filter>EU4World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\History.h">
       <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="..\common_items\Log.h">
@@ -517,12 +511,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Flags.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Leader.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2LeaderTraits.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Localisation.h">
@@ -690,9 +678,6 @@
     <ClInclude Include="Source\EU4World\Army\EU4Regiment.h">
       <Filter>EU4World\Army</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\Army\EU4UnitID.h">
-      <Filter>EU4World\Army</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\UnitTypeMapper.h">
       <Filter>Mappers</Filter>
     </ClInclude>
@@ -740,6 +725,27 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\Factory\V2FactoryInvention.h">
       <Filter>Vic2World\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Leader\V2LeaderTraitTypes.h">
+      <Filter>Vic2World\Leader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Leader\V2LeaderTrait.h">
+      <Filter>Vic2World\Leader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Leader\V2Leader.h">
+      <Filter>Vic2World\Leader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\History\CountryHistory.h">
+      <Filter>EU4World\History</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Leader\EU4Leader.h">
+      <Filter>EU4World\Leader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\History\CountryHistoryDate.h">
+      <Filter>EU4World\History</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Leader\V2LeaderTraitMapper.h">
+      <Filter>Vic2World\Leader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -790,6 +796,15 @@
     </Filter>
     <Filter Include="Vic2World\Factory">
       <UniqueIdentifier>{88c08173-47e0-48fd-ae63-80362aae21ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Leader">
+      <UniqueIdentifier>{e833b88c-161a-440a-a101-534515a4c503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\History">
+      <UniqueIdentifier>{f1bc5627-0c41-42d9-9cb3-66924c260cea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Leader">
+      <UniqueIdentifier>{cad4ad12-a780-4d35-bce5-cfa1c1b23f89}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

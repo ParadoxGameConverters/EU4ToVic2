@@ -45,7 +45,7 @@ std::ostream& operator<<(std::ostream& output, const V2Regiment& regiment);
 class V2Army // also Navy
 {
 	public:
-		V2Army(EU4::EU4Army oldArmy, std::map<int, int> leaderIDMap);
+		V2Army(EU4::EU4Army oldArmy);
 		void addRegiment(V2Regiment reg);
 
 		void setLocation(int provinceID) { location = provinceID; };
