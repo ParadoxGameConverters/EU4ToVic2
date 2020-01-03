@@ -84,7 +84,7 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 class BucketList : private commonItems::parser
 {
       public:
-	explicit BucketList(const std::string& filename);
+	explicit BucketList(std::istream& theStream);
 	void putInBucket(V2Province* prov);
 	bool empty() const { return buckets.empty(); }
         void shuffle();
@@ -108,7 +108,7 @@ class BucketList : private commonItems::parser
 	std::default_random_engine shuffler;
 };
 
-BucketList::BucketList(const std::string& filename)
+BucketList::BucketList(std::istream& theStream)
 {
 	// Initialise with the random seed from the EU4 save so that the shuffle
 	// is deterministic for particular saves, but varies between saves.
@@ -172,7 +172,7 @@ BucketList::BucketList(const std::string& filename)
 		    }
                     buckets.push_back(bucket);
 	    });
-	parseFile(filename);
+	parseStream(theStream);
 }
 
 bool BucketList::Bucket::match(const string& provClimate,
@@ -273,7 +273,16 @@ void V2World::shuffleRgos()
                                           "skipping RGO randomisation.";
                 return;
         }
-        BucketList buckets(filename);
+        std::ifstream theFile(filename);
+	if (!theFile.is_open())
+	{
+		LOG(LogLevel::Warning) << "Could not open " << filename
+		                       << " for shuffle configuration, "
+		                          "skipping RGO randomisation.";
+		return;
+	}
+
+	BucketList buckets(theFile);
 	if (buckets.empty())
 	{
 		LOG(LogLevel::Warning)

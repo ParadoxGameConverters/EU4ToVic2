@@ -106,8 +106,8 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		debug = (debugString.getString() == "yes");
 	});
 	registerKeyword(std::regex("randomiseRgos"), [this](const std::string& unused, std::istream& theStream){
-		commonItems::singleString debugString(theStream);
-		randomiseRgos = (debugString.getString() == "yes");
+		commonItems::singleString randomiseRgosString(theStream);
+		randomiseRgos = (randomiseRgosString.getString() == "yes");
 	});
 
 	LOG(LogLevel::Info) << "Reading configuration file";
