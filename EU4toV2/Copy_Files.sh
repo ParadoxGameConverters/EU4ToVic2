@@ -29,7 +29,7 @@ cp "Data_Files/port_blacklist.txt" "Release-Linux/port_blacklist.txt"
 cp "Data_Files/port_whitelist.txt" "Release-Linux/port_whitelist.txt"
 cp "Data_Files/minorityPops.txt" "Release-Linux/minorityPops.txt"
 cp "Data_Files/terrainData.txt" "Release-Linux/terrainData.txt"
-cp "Data_Files/shuffle_config.txt" "Release-Linux/shuffle_config.txt"
+cp "Data_Files/rgo_randomization.txt" "Release-Linux/rgo_randomization.txt"
 cp "Data_Files/FAQ.txt" "Release-Linux/FAQ.txt"
 cp "Data_Files/after_converting.txt" "Release-Linux/after_converting.txt"
 

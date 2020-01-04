@@ -21,7 +21,7 @@
 #include "../EU4World/EU4Relations.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
-#include "../Helpers/RgoShuffle.h"
+#include "RGORandomization/BucketList.h"
 #include "../Helpers/TechValues.h"
 #include "../Mappers/AdjacencyMapper.h"
 #include "../Mappers/CountryMapping.h"
@@ -83,36 +83,19 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 
 void V2World::shuffleRgos()
 {
-	string filename = "shuffle_config.txt";
-        if (!Utils::DoesFileExist(filename))
-        {
-                LOG(LogLevel::Warning) << "Could not find shuffle_config.txt, "
-                                          "skipping RGO randomisation.";
-                return;
-        }
-        std::ifstream theFile(filename);
-	if (!theFile.is_open())
-	{
-		LOG(LogLevel::Warning) << "Could not open " << filename
-		                       << " for shuffle configuration, "
-		                          "skipping RGO randomisation.";
-		return;
-	}
-
-	BucketList buckets(theFile);
-        theFile.close();
+	BucketList buckets;
 	if (buckets.empty())
 	{
-		LOG(LogLevel::Warning)
-		    << "No valid buckets defined, skipping RGO randomisation.";
+		LOG(LogLevel::Warning) << "No valid buckets defined, skipping RGO randomisation.";
 		return;
 	}
 
+	LOG(LogLevel::Info) << "Shuffling RGOs in provinces.";
 	for (auto& prov : provinces)
 	{
 		buckets.putInBucket(prov.second);
 	}
-        buckets.shuffle();
+	buckets.shuffle();
 }
 
 void V2World::importProvinces()
@@ -135,12 +118,12 @@ void V2World::importProvinces()
 		importProvinceLocalizations((theConfiguration.getVic2Path() + "/localisation/text.csv"));
 	}
 
-        importProvinceClimates();
-        importProvinceTerrains();
-        if (theConfiguration.getRandomiseRgos())
-        {
-                shuffleRgos();
-        }
+	importProvinceClimates();
+	importProvinceTerrains();
+	if (theConfiguration.getRandomiseRgos())
+	{
+		shuffleRgos();
+	}
 }
 
 std::set<std::string> V2World::discoverProvinceFilenames()
