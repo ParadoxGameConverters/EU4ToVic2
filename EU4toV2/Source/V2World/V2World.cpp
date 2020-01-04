@@ -4,7 +4,6 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
-#include <random>
 #include <regex>
 #include <list>
 #include <queue>
@@ -22,6 +21,7 @@
 #include "../EU4World/EU4Relations.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
+#include "../Helpers/RgoShuffle.h"
 #include "../Helpers/TechValues.h"
 #include "../Mappers/AdjacencyMapper.h"
 #include "../Mappers/CountryMapping.h"
@@ -81,189 +81,6 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 	output(potentialGPs);
 }
 
-class BucketList : private commonItems::parser
-{
-      public:
-	explicit BucketList(std::istream& theStream);
-	void putInBucket(V2Province* prov);
-	bool empty() const { return buckets.empty(); }
-        void shuffle();
-
-      private:
-	struct Bucket
-	{
-		string name;
-		std::vector<string> climates = {};
-		std::vector<string> terrains = {};
-		double fraction = 0.0;
-		bool wildClimate = false;
-		bool wildTerrain = false;
-		std::vector<V2Province*> provinces;
-		bool match(const string& provClimate,
-		           const string& provTerrain);
-		void shuffle();
-	};
-
-	std::vector<Bucket> buckets;
-	std::default_random_engine shuffler;
-};
-
-BucketList::BucketList(std::istream& theStream)
-{
-	// Initialise with the random seed from the EU4 save so that the shuffle
-	// is deterministic for particular saves, but varies between saves.
-	shuffler.seed(theConfiguration.getEU4RandomSeed());
-	registerKeyword(
-	    std::regex("bucket"),
-	    [this](const std::string& key, std::istream& theStream) {
-		    auto top = commonItems::convert8859Object(key, theStream);
-                    auto obj = top->safeGetObject("bucket");
-		    if (!obj)
-		    {
-			    LOG(LogLevel::Warning)
-			        << "Bucket parsing went wrong";
-			    return;
-		    }
-		    auto climates = obj->getValue("climate");
-		    if (climates.empty())
-		    {
-			    LOG(LogLevel::Warning)
-			        << "Discarding bucket with no climates.";
-			    return;
-		    }
-		    auto terrains = obj->getValue("terrain");
-		    if (terrains.empty())
-		    {
-			    LOG(LogLevel::Warning)
-			        << "Discarding bucket with no terrains.";
-			    return;
-		    }
-		    Bucket bucket;
-		    bucket.fraction = obj->safeGetFloat("fraction", 0.0);
-		    for (auto& c : climates)
-		    {
-			    string climate = c->getLeaf();
-			    if (climate == "any")
-			    {
-				    bucket.wildClimate = true;
-			    }
-			    else
-			    {
-				    bucket.climates.push_back(climate);
-			    }
-		    }
-		    for (auto& t : terrains)
-		    {
-			    string terrain = t->getLeaf();
-			    if (terrain == "any")
-			    {
-				    bucket.wildTerrain = true;
-			    }
-			    else
-			    {
-				    bucket.terrains.push_back(terrain);
-			    }
-		    }
-                    bucket.name = obj->safeGetString("name");
-		    if (bucket.name.empty())
-		    {
-			    bucket.name =
-			        bucket.terrains[0] + "_" + bucket.climates[0];
-		    }
-                    buckets.push_back(bucket);
-	    });
-	parseStream(theStream);
-}
-
-bool BucketList::Bucket::match(const string& provClimate,
-                               const string& provTerrain)
-{
-	bool climateMatch = wildClimate;
-	if (!climateMatch)
-	{
-		for (const auto& climate : climates)
-		{
-			if (provClimate == climate)
-			{
-				climateMatch = true;
-				break;
-			}
-		}
-	}
-
-	if (!climateMatch)
-	{
-		return false;
-	}
-	bool terrainMatch = wildTerrain;
-	if (!terrainMatch)
-	{
-		for (const auto& terrain : terrains)
-		{
-			if (provTerrain == terrain)
-			{
-				terrainMatch = true;
-				break;
-			}
-		}
-	}
-
-	return terrainMatch;
-}
-
-void BucketList::putInBucket(V2Province* prov)
-{
-	string provClimate = prov->getClimate();
-	if (provClimate.empty())
-	{
-		return;
-	}
-	string provTerrain = prov->getTerrain();
-	if (provTerrain.empty() || provTerrain == "ocean")
-	{
-		return;
-	}
-
-	for (auto& bucket : buckets)
-	{
-		if (!bucket.match(provClimate, provTerrain))
-		{
-			continue;
-		}
-		bucket.provinces.push_back(prov);
-                break;
-	}
-}
-
-void BucketList::shuffle()
-{
-	for (auto& bucket : buckets)
-	{
-		std::shuffle(bucket.provinces.begin(), bucket.provinces.end(),
-		             shuffler);
-		int numToShuffle =
-		    (int)floor(0.5 + bucket.fraction * bucket.provinces.size());
-		if (numToShuffle < 2)
-		{
-			LOG(LogLevel::Info)
-			    << "Skipping empty bucket " << bucket.name;
-			continue;
-		}
-		std::vector<string> rgos;
-		for (int i = 0; i < numToShuffle; ++i)
-		{
-			rgos.push_back(bucket.provinces[i]->getRgoType());
-		}
-		std::shuffle(rgos.begin(), rgos.end(), shuffler);
-		for (int i = 0; i < numToShuffle; ++i)
-		{
-			bucket.provinces[i]->setRgoType(rgos[i]);
-		}
-		LOG(LogLevel::Info) << "Shuffled " << numToShuffle
-		                    << " provinces in bucket " << bucket.name;
-	}
-}
-
 void V2World::shuffleRgos()
 {
 	string filename = "shuffle_config.txt";
@@ -283,6 +100,7 @@ void V2World::shuffleRgos()
 	}
 
 	BucketList buckets(theFile);
+        theFile.close();
 	if (buckets.empty())
 	{
 		LOG(LogLevel::Warning)
