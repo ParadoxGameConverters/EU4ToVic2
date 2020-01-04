@@ -364,13 +364,12 @@ EU4::Country::Country(
 
 void EU4::Country::filterLeaders()
 {
-	std::vector<EU4::Leader>::iterator leaderItr;
-	for (leaderItr = historicalLeaders.begin(); leaderItr != historicalLeaders.end(); ++leaderItr)
+	for (const auto& leader : historicalLeaders)
 	{
 		// Dropping all leaders not currently in service (regardless of asignment).
-		if (activeLeaderIDs.find(leaderItr->getID()) != activeLeaderIDs.end())
+		if (activeLeaderIDs.find(leader.getID()) != activeLeaderIDs.end())
 		{
-			militaryLeaders.push_back(*leaderItr);
+			militaryLeaders.push_back(leader);
 		}
 	}
 }
