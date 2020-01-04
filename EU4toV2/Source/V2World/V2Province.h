@@ -92,7 +92,8 @@ class V2Province
 		void				setOwner(string _owner)						{ owner = _owner; }
 		void				setController(string _controller)						{ controller = _controller; }
 		void				setLandConnection(bool _connection)		{ landConnection = _connection; }
-		void				setSameContinent(bool _same)				{ sameContinent = _same; }
+		void				setRgoType(string _type)		{ rgoType = _type; }
+                void				setSameContinent(bool _same)				{ sameContinent = _same; }
 		void				setFortLevel(int level)						{ fortLevel = level; }
 		void				setNavalBaseLevel(int level)				{ navalBaseLevel = level; }
 		void				setRailLevel(int level)						{ railLevel = level; }
