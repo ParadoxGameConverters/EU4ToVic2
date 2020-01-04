@@ -30,6 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../EU4World/World.h"
 #include "../EU4World/EU4Country.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
+#include "newParser.h"
 
 
 
@@ -52,7 +53,7 @@ struct V2Demographic
 };
 
 
-class V2Province
+class V2Province : commonItems::parser
 {
 	public:
 		V2Province(string _filename);
@@ -146,42 +147,42 @@ class V2Province
 		void combinePops();
 		bool growSoldierPop(V2Pop* pop);
 
-		const EU4::Province*		srcProvince;
+		const EU4::Province* srcProvince = NULL;
 
-		string						filename;
-		bool							coastal;
-		int							num;
-		string						name;
-		string						owner;
-		string						controller;
-		vector<string>				cores;
-		bool							inHRE;
-		int							colonyLevel;
-		int							colonial;
-		bool							wasColonised;
-		bool							landConnection;
-		bool							sameContinent;
-		bool							originallyInfidel;
-        bool						territorialCore;
-		int							oldPopulation;
-		vector<V2Demographic>	demographics;
-		vector<const V2Pop*>		oldPops;
-		vector<V2Pop*>				minorityPops;
-		vector<V2Pop*>				pops;
-		double						slaveProportion;
-		string						rgoType;
-		string						terrain;
-	        string                                          climate;
-	        int							lifeRating;
-		bool							slaveState;
+		std::string filename;
+		bool coastal = false;
+		int num = 0;
+		string name;
+		string owner;
+		string controller;
+		vector<string> cores;
+		bool inHRE = false;
+		int colonyLevel = 0;
+		int colonial = 0;
+		bool wasColonised = false;
+		bool landConnection = false;
+		bool sameContinent = false;
+		bool originallyInfidel = false;
+		bool territorialCore = false;
+		int oldPopulation = 0;
+		vector<V2Demographic> demographics;
+		vector<const V2Pop*> oldPops;
+		vector<V2Pop*> minorityPops;
+		vector<V2Pop*> pops;
+		double slaveProportion = 0.0;
+		string rgoType;
+		string terrain;
+		string climate;
+		int lifeRating = 0;
+		bool slaveState = false;
 		int unitNameCount[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)];
-		int							fortLevel;
-		int							navalBaseLevel;
-		int							railLevel;
+		int fortLevel = 0;
+		int navalBaseLevel = 0;
+		int railLevel = 0;
 		map<string, V2Factory> factories;
 
-		bool							resettable;
-		double spentProvinceModifier = 0;	//Store old popshaping modifier for NEU4-to-1V2 conversions;
+		bool resettable = false;
+		double spentProvinceModifier = 0; //Store old popshaping modifier for NEU4-to-1V2 conversions;
 };
 
 
