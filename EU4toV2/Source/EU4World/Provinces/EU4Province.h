@@ -71,7 +71,9 @@ class Province: commonItems::parser
 		int getNum() const { return num; }
 		std::string getName() const { return name; }
 		std::string getOwnerString() const { return ownerString; }
+		void setOwnerString(std::string _owner) { ownerString = _owner; }
 		std::string getControllerString() const { return controllerString; }
+		void setControllerString(std::string _controller) { controllerString = _controller; }
 		std::set<std::string> getCores() const { return cores; }
 		bool inHre() const { return inHRE; }
 		bool isTerritorialCore() const { return territorialCore; }
@@ -95,12 +97,12 @@ class Province: commonItems::parser
 		double getModifierWeight() const { return modifierWeight; }
 		ProvinceStats getProvinceStats() const { return provinceStats; }
 		std::string getTradeGoods() const { return tradeGoods; }
-	        double getProsperity() const { return prosperity; }
+		double getProsperity() const { return prosperity; }
 
-	        void setArea(const std::string& a) { areaName = a; }
-	        void makeState(double p);
+		void setArea(const std::string& a) { areaName = a; }
+		void makeState(double p);
 
-	      private:
+	private:
 		void determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes);
 		BuildingWeightEffects getProvBuildingWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes) const;
 		double getTradeGoodPrice() const;
@@ -138,8 +140,8 @@ class Province: commonItems::parser
 		double modifierWeight = 0;
 		int centerOfTradeLevel = 0;
 		ProvinceStats provinceStats;
-	        double prosperity = 0;
-	        bool stated = false;
+		double prosperity = 0;
+		bool stated = false;
 };
 
 }

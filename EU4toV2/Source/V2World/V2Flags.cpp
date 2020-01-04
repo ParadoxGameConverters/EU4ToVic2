@@ -107,7 +107,6 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries)
 
 		colonialtitle->setOverlord(overlord->getTag());
 		colonialFlagMapping[country.first] = colonialtitle;
-		LOG(LogLevel::Info) << "Country with tag " << country.first << " is " << colonialtitle->getName() << ", ruled by " << colonialtitle->getOverlord();
 
 		usableFlagTags.erase(colonialtitle->getName());
 		requiredTags.erase(country.first);
@@ -163,7 +162,6 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries)
 		advance(randomTagIter, randomTagIndex);
 		const std::string& flagTag = *randomTagIter;
 		tagMap[V2Tag] = flagTag;
-		LOG(LogLevel::Debug) << "Country with tag " << V2Tag << " has no flag and will use the flag for " << flagTag << " instead";
 		if (usableFlagTags.size() > requiredTags.size() - tagMap.size())
 		{
 			usableFlagTags.erase(flagTag);
@@ -182,12 +180,10 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries)
 		
 		if (nationalColors.isCustomColorsInitialized())
 		{
-			LOG(LogLevel::Debug) << "Ordering a custom flag build for: " << tag;
 			customFlagMapping[tag] = nationalColors.getCustomColors();
 		}
 		else if (eu4country->isRevolutionary() && nationalColors.getRevolutionaryColor())
 		{
-			LOG(LogLevel::Debug) << "Ordering a revolutionary flag build for: " << tag;
 			nationalColors.retrieveCustomColors().setFlagColors(nationalColors.getRevolutionaryColor());
 			customFlagMapping[tag] = nationalColors.getCustomColors();
 		}
@@ -404,7 +400,6 @@ void V2Flags::createCustomFlags() const
 				if (!gColor) gColor = commonItems::Color();
 				if (!bColor) bColor = commonItems::Color();
 
-				LOG(LogLevel::Debug) << "Exporting flag: " << destFlagPath << " using rgb: " << r << " " << g << " " << b;
 				CreateCustomFlag(*rColor, *gColor, *bColor, sourceEmblemPath, sourceFlagPath, destFlagPath);
 			}
 			else

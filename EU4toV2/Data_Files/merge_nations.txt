@@ -45,19 +45,23 @@ france =
 
 ireland =
 {
-	merge = yes	# Change to yes to enable merging
+	merge = no	# Change to yes to enable merging
 
 	master = IRE
-	slave = CNN	# Connacht
-	slave = LEI	# Leinster
-	slave = IRE	# Ireland (proper)
-	slave = MNS	# Munster (Ireland, not Germany)
-	slave = TYR	# Tyrone
-	slave = MTH # Meath
 	slave = ULS # Ulster
-	slave = DMS # Desmond
-	slave = SLN # Sligo
+	slave = TYR # Tyrone
+	slave = TRY # Tyrconnel
+	slave = MTH # Meath
 	slave = KID # Kildare
+	slave = FLY # Offaly
+	slave = SLN # Sligo
+	slave = CNN # Connacht
+	slave = LEI # Leinster
+	slave = ORD # Ormond
+	slave = MNS # Thomond (Ireland, not Germany)
+	slave = DMS # Desmond
+	slave = MCM # Munster
+	slave = IRE # Ireland (proper)
 }
 
 spain =

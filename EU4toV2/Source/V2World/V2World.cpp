@@ -1534,12 +1534,6 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 		}
 		if (!accepted && citr == lastReceptiveCountry)
 		{
-			Log logOutput(LogLevel::Debug);
-			logOutput << "No countries will accept any of the remaining factories:\n";
-			for (deque<V2Factory>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
-			{
-				logOutput << "\t  " << (*qitr).getTypeName() << '\n';
-			}
 			break;
 		}
 		if (++citr == factoryCounts.end())

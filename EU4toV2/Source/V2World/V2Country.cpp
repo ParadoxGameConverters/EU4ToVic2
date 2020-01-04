@@ -675,7 +675,6 @@ void V2Country::determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry
 		std::string enforce = ideaEffectMapper.getEnforceFromIdea(reformStr, 7);
 		if (!enforce.empty())
 		{
-			LOG(LogLevel::Debug) << "Forcing government " << enforce << " on " << tag;
 			government = enforce;
 		}
 	}
@@ -728,7 +727,6 @@ void V2Country::resolvePolitics()
 		upperHouseReactionary = static_cast<int>(upperHouseReactionary / 3);
 		upperHouseLiberal = static_cast<int>(upperHouseLiberal * 3);
 		upperHouseConservative = 100 - (upperHouseReactionary + upperHouseLiberal);
-		LOG(LogLevel::Debug) << tag << " is revolutionary! ";
 	}
 
 	string idealogy;
@@ -880,17 +878,14 @@ void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
 	{
 		if (prov->hasGreatProject("suez_canal"))
 		{
-			LOG(LogLevel::Debug) << "Building Suez Canal in: " << prov->getName();
 			decisions.push_back("build_suez_canal");
 		}
 		if (prov->hasGreatProject("kiel_canal"))
 		{
-			LOG(LogLevel::Debug) << "Building Kiel Canal in: " << prov->getName();
 			decisions.push_back("build_kiel_canal");
 		}
 		if (prov->hasGreatProject("panama_canal"))
 		{
-			LOG(LogLevel::Debug) << "Building Panama Canal in: " << prov->getName();
 			decisions.push_back("build_panama_canal");
 		}
 	}
@@ -899,7 +894,7 @@ void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
 
 
 // used only for countries which are NOT converted (i.e. unions, dead countries, etc)
-void V2Country::initFromHistory(mappers::V2Unreleasables unreleasablesMapper)
+void V2Country::initFromHistory(const mappers::V2Unreleasables& unreleasablesMapper)
 {
 	// Ping unreleasable_tags for this country's TAG
 	auto unreleasables = unreleasablesMapper.getUnreleasables();
@@ -1128,7 +1123,6 @@ void V2Country::convertArmies(
 		auto locationCandidates = provinceMapper.getVic2ProvinceNumbers(aitr->getLocation());
 		if (locationCandidates.size() == 0)
 		{
-			LOG(LogLevel::Debug) << "Army or Navy " << aitr->getName() << " assigned to unmapped province " << aitr->getLocation() << "; dissolving to pool";
 			int regimentCounts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0 };
 			army.getRegimentCounts(regimentCounts);
 			for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
@@ -1139,7 +1133,6 @@ void V2Country::convertArmies(
 		}
 		else if ((locationCandidates.size() == 1) && (*locationCandidates.begin() == 0))
 		{
-			LOG(LogLevel::Debug) << "Army or Navy " << aitr->getName() << " assigned to dropped province " << aitr->getLocation() << "; dissolving to pool";
 			int regimentCounts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0 };
 			army.getRegimentCounts(regimentCounts);
 			for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
@@ -1162,7 +1155,6 @@ void V2Country::convertArmies(
 				locationCandidates = getPortProvinces(locationCandidates, allProvinces);
 				if (locationCandidates.size() == 0)
 				{
-					LOG(LogLevel::Debug) << "Navy " << aitr->getName() << " assigned to EU4 province " << aitr->getLocation() << " which has no corresponding V2 port provinces; dissolving to pool";
 					int regimentCounts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0 };
 					army.getRegimentCounts(regimentCounts);
 					for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
@@ -1180,7 +1172,6 @@ void V2Country::convertArmies(
 			vector<int>::iterator white = std::find(port_whitelist.begin(), port_whitelist.end(), selectedLocation);
 			if (white == port_whitelist.end())
 			{
-				LOG(LogLevel::Warning) << "Assigning navy to non-whitelisted port province " << selectedLocation << " - if the save crashes, try blacklisting this province";
 			}
 		}
 		army.setLocation(selectedLocation);
@@ -1195,7 +1186,6 @@ void V2Country::convertArmies(
 			V2Army* army = getArmyForRemainder(static_cast<EU4::REGIMENTCATEGORY>(rc));
 			if (army == nullptr)
 			{
-				LOG(LogLevel::Debug) << "No suitable army or navy found for " << tag << "'s pooled regiments of " << EU4::RegimentCategoryTypes[static_cast<EU4::REGIMENTCATEGORY>(rc)];
 				break;
 			}
 			switch (addRegimentToArmy(*army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper))
@@ -1207,7 +1197,6 @@ void V2Country::convertArmies(
 				case addRegimentToArmyResult::retry:
 					break;
 				case addRegimentToArmyResult::doNotRetry:
-					LOG(LogLevel::Debug) << "Disqualifying army/navy " << army->getName() << " from receiving more " << EU4::RegimentCategoryTypes[static_cast<EU4::REGIMENTCATEGORY>(rc)] << " from the pool";
 					army->setArmyRemainders(static_cast<EU4::REGIMENTCATEGORY>(rc), -2000.0);
 					break;
 			}
@@ -1344,7 +1333,6 @@ bool V2Country::addFactory(const V2Factory& factory)
 		vector<string>::iterator itr = find(techs.begin(), techs.end(), requiredTech);
 		if (itr == techs.end())
 		{
-			LOG(LogLevel::Debug) << tag << " rejected " << factory.getTypeName() << " (missing required tech: " << requiredTech << ')';
 			return false;
 		}
 	}
@@ -1354,7 +1342,6 @@ bool V2Country::addFactory(const V2Factory& factory)
 	{
 		if (inventions.count(factory.getRequiredInvention()) != 0)
 		{
-			LOG(LogLevel::Debug) << tag << " rejected " << factory.getTypeName() << " (missing required invention: " << factory.getRequiredInvention() << ')';
 			return false;
 		}
 	}
@@ -1394,13 +1381,11 @@ bool V2Country::addFactory(const V2Factory& factory)
 
 	if (candidates.size() == 0)
 	{
-		LOG(LogLevel::Debug) << tag << " rejected " << factory.getTypeName() << " (no candidate states)";
 		return false;
 	}
 
 	V2State* target = candidates[0].second;
 	target->addFactory(factory);
-	LOG(LogLevel::Debug) << tag << " accepted " << factory.getTypeName() << " (" << candidates.size() << " candidate states)";
 	numFactories++;
 	return true;
 }
@@ -1914,19 +1899,16 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 	std::optional<int> eu4Home = army.getSourceArmy().getProbabilisticHomeProvince(rc);
 	if (!eu4Home)
 	{
-		LOG(LogLevel::Debug) << "Army/navy " << army.getName() << " has no valid home provinces for " << EU4::RegimentCategoryTypes[rc] << "; dissolving to pool";
 		return addRegimentToArmyResult::doNotRetry;
 	}
 	auto homeCandidates = provinceMapper.getVic2ProvinceNumbers(*eu4Home);
 	if (homeCandidates.size() == 0)
 	{
-		LOG(LogLevel::Debug) << EU4::RegimentCategoryTypes[rc] << " unit in army/navy " << army.getName() << " has unmapped home province " << *eu4Home << " - dissolving to pool";
 		army.getSourceArmy().blockHomeProvince(*eu4Home);
 		return addRegimentToArmyResult::retry;
 	}
 	if (*homeCandidates.begin() == 0)
 	{
-		LOG(LogLevel::Debug) << EU4::RegimentCategoryTypes[rc] << " unit in army/navy " << army.getName() << " has dropped home province " << *eu4Home << " - dissolving to pool";
 		army.getSourceArmy().blockHomeProvince(*eu4Home);
 		return addRegimentToArmyResult::retry;
 	}
@@ -1962,7 +1944,6 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 		sort(sortedHomeCandidates.begin(), sortedHomeCandidates.end(), ProvinceRegimentCapacityPredicate);
 		if (sortedHomeCandidates.size() == 0)
 		{
-			LOG(LogLevel::Debug) << "No valid home for a " << tag << " " << EU4::RegimentCategoryTypes[rc] << " regiment - dissolving regiment to pool";
 			// all provinces in a given province map have the same owner, so the source home was bad
 			army.getSourceArmy().blockHomeProvince(*eu4Home);
 			return addRegimentToArmyResult::retry;
@@ -2006,7 +1987,6 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 			}
 			if (homeProvince == nullptr)
 			{
-				LOG(LogLevel::Debug) << "V2 province " << sortedHomeCandidates[0]->getNum() << " is home for a " << tag << " " << EU4::RegimentCategoryTypes[rc] << " regiment, but belongs to " << sortedHomeCandidates[0]->getOwner() << " - dissolving regiment to pool";
 				// all provinces in a given province map have the same owner, so the source home was bad
 				army.getSourceArmy().blockHomeProvince(*eu4Home);
 				return addRegimentToArmyResult::retry;

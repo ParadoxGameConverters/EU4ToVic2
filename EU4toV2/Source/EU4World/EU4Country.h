@@ -71,6 +71,7 @@ namespace EU4
 			bool cultureSurvivesInCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& theCountries);
 
 			std::string getTag() const { return tag; }
+			void setTag(std::string _tag) { tag = _tag; }
 			std::vector<Province*> getProvinces() { return provinces; }
 			std::vector<Province*> getCores() { return cores; }
 			int getCapital() const { return capital; }
@@ -183,8 +184,8 @@ namespace EU4
 
 			std::map<std::string, bool> flags; // any flags set for this country
 			std::map<std::string, bool> modifiers; // any modifiers set for this country
-			bool possibleDaimyo; // if this country is possibly a daimyo
-			bool possibleShogun; // if this country is the shogun
+			bool possibleDaimyo = false; // if this country is possibly a daimyo
+			bool possibleShogun = false; // if this country is the shogun
 			std::vector<EU4::Leader> historicalLeaders; // Historical leader information
 			std::set<int> activeLeaderIDs; // Ones currently in service, others presumed dead.
 			std::vector<EU4::Leader> militaryLeaders; // filtered active leaders

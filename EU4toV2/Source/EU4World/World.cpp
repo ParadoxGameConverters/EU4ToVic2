@@ -585,7 +585,6 @@ void EU4::world::setLocalisations()
 	localisation.ReadFromAllFilesInFolder(theConfiguration.getEU4Path() + "/localisation");
 	for (auto itr: theConfiguration.getEU4Mods())
 	{
-		LOG(LogLevel::Debug) << "Reading mod localisation";
 		localisation.ReadFromAllFilesInFolder(itr + "/localisation");
 		localisation.ReadFromAllFilesInFolder(itr + "/localisation/replace");
 	}
@@ -633,13 +632,11 @@ void EU4::world::mergeNations()
 	{
 		if (mergeBlock.getMerge() && !mergeBlock.getMaster().empty())
 		{
-			LOG(LogLevel::Debug) << "- Merging nations for: " << mergeBlock.getMaster();
+			LOG(LogLevel::Info) << "- Merging nations for: " << mergeBlock.getMaster();
 			auto master = getCountry(mergeBlock.getMaster());
-			LOG(LogLevel::Debug) << "Retrieved master: " << master->getName();
 			for (auto slaveTag : mergeBlock.getSlaves())
 			{
 				auto slave = getCountry(slaveTag);
-				LOG(LogLevel::Debug) << "Retrieved slave: " << slave->getName();
 				master->eatCountry(slave, master);
 			}
 		}
@@ -649,6 +646,8 @@ void EU4::world::mergeNations()
 
 void EU4::world::uniteJapan()
 {
+	LOG(LogLevel::Info) << "Uniting Japan";
+
 	shared_ptr<EU4::Country> japan;
 
 	auto version20 = EU4::Version("1.20.0.0");
@@ -659,6 +658,7 @@ void EU4::world::uniteJapan()
 			if (country.second->getPossibleShogun())
 			{
 				string tag = country.first;
+				LOG(LogLevel::Info) << "- " << tag << " is the shogun.";
 				japan = getCountry(tag);
 			}
 		}
@@ -680,7 +680,7 @@ void EU4::world::uniteJapan()
 	{
 		if (country.second->getPossibleDaimyo())
 		{
-			japan->eatCountry(country.second, japan);
+			japan->eatCountry(country.second, japan);			
 		}
 	}
 }

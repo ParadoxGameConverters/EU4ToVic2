@@ -76,7 +76,7 @@ class V2Country : commonItems::parser
 			const mappers::ProvinceMapper& provinceMapper,
 			const mappers::GovernmentMapper& governmentMapper
 		);
-		void initFromHistory(mappers::V2Unreleasables unreleasablesMapper);
+		void initFromHistory(const mappers::V2Unreleasables& unreleasablesMapper);
 		void								addProvince(V2Province* _province);
 		void								addState(V2State* newState);
 		void convertArmies(
