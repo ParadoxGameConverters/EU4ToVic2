@@ -56,7 +56,7 @@ struct V2Demographic
 class V2Province : commonItems::parser
 {
 	public:
-		V2Province(string _filename);
+		V2Province(const std::string& _filename);
 		void output() const;
 		void outputPops(FILE*) const;
 		void convertFromOldProvince(

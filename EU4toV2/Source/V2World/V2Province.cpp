@@ -19,7 +19,7 @@
 #include "ParserHelpers.h"
 
 
-V2Province::V2Province(std::string _filename)
+V2Province::V2Province(const std::string& _filename)
 {
 	filename = _filename;
 	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
