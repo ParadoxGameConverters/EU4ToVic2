@@ -144,9 +144,6 @@
     <ClCompile Include="Source\V2World\V2Localisation.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2Party.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2Pop.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -378,6 +375,12 @@
     <ClCompile Include="Source\V2World\RGORandomization\BucketList.cpp">
       <Filter>Vic2World\RGORandomization</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Country\V2Party.cpp">
+      <Filter>Vic2World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Country\V2Unreleasables.cpp">
+      <Filter>Vic2World\Country</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -520,9 +523,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Localisation.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Party.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Pop.h">
@@ -759,6 +759,12 @@
     <ClInclude Include="Source\V2World\RGORandomization\BucketList.h">
       <Filter>Vic2World\RGORandomization</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Country\V2Party.h">
+      <Filter>Vic2World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Country\V2Unreleasables.h">
+      <Filter>Vic2World\Country</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -820,6 +826,9 @@
     </Filter>
     <Filter Include="Vic2World\RGORandomization">
       <UniqueIdentifier>{c2a72362-f9f1-46ba-9af1-ea88983f295c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Country">
+      <UniqueIdentifier>{8b2897e0-22e8-4284-a6d6-52b237ebab64}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

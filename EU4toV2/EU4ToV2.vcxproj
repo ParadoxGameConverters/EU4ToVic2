@@ -257,6 +257,8 @@
     <ClCompile Include="Source\Mappers\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\targa.cpp" />
     <ClCompile Include="Source\V2World\BlockedTechSchools.cpp" />
+    <ClCompile Include="Source\V2World\Country\V2Party.cpp" />
+    <ClCompile Include="Source\V2World\Country\V2Unreleasables.cpp" />
     <ClCompile Include="Source\V2World\Factory\V2Factory.cpp" />
     <ClCompile Include="Source\V2World\Factory\V2FactoryFactory.cpp" />
     <ClCompile Include="Source\V2World\Factory\V2FactoryInvention.cpp" />
@@ -287,7 +289,6 @@
     <ClCompile Include="Source\V2World\V2Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\V2Flags.cpp" />
     <ClCompile Include="Source\V2World\V2Localisation.cpp" />
-    <ClCompile Include="Source\V2World\V2Party.cpp" />
     <ClCompile Include="Source\V2World\V2Pop.cpp" />
     <ClCompile Include="Source\V2World\V2Province.cpp" />
     <ClCompile Include="Source\V2World\V2Reforms.cpp" />
@@ -388,6 +389,8 @@
     <ClInclude Include="Source\Mappers\UnitTypeMapper.h" />
     <ClInclude Include="Source\targa.h" />
     <ClInclude Include="Source\V2World\BlockedTechSchools.h" />
+    <ClInclude Include="Source\V2World\Country\V2Party.h" />
+    <ClInclude Include="Source\V2World\Country\V2Unreleasables.h" />
     <ClInclude Include="Source\V2World\Factory\V2Factory.h" />
     <ClInclude Include="Source\V2World\Factory\V2FactoryFactory.h" />
     <ClInclude Include="Source\V2World\Factory\V2FactoryInvention.h" />
@@ -414,7 +417,6 @@
     <ClInclude Include="Source\V2World\V2Diplomacy.h" />
     <ClInclude Include="Source\V2World\V2Flags.h" />
     <ClInclude Include="Source\V2World\V2Localisation.h" />
-    <ClInclude Include="Source\V2World\V2Party.h" />
     <ClInclude Include="Source\V2World\V2Pop.h" />
     <ClInclude Include="Source\V2World\V2Province.h" />
     <ClInclude Include="Source\V2World\V2Reforms.h" />

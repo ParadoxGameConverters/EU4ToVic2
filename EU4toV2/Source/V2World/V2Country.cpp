@@ -30,6 +30,7 @@
 #include "V2Pop.h"
 #include "V2TechSchools.h"
 #include "Factory/V2Factory.h"
+#include "Country/V2Unreleasables.h"
 #include <algorithm>
 #include <exception>
 #include <float.h>
@@ -45,19 +46,30 @@ const int MONEYFACTOR = 30;	// ducat to pound conversion rate
 
 V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, bool _dynamicCountry)
 {
+	registerKeyword(std::regex("party"), [this](const std::string& unused, std::istream& theStream)
+		{
+			V2Party newParty(theStream);
+			parties.push_back(newParty);
+		});
+	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+
 	string filename;
 	int start = countriesFileLine.find_first_of('/');
 	start++;
 	int size = countriesFileLine.find_last_of('\"') - start;
 	filename = countriesFileLine.substr(start, size);
 
-	shared_ptr<Object> countryData = parseCountryFile(filename);
-
-	vector<shared_ptr<Object>> partyData = countryData->getValue("party");
-	for (vector<shared_ptr<Object>>::iterator itr = partyData.begin(); itr != partyData.end(); ++itr)
+	if (Utils::DoesFileExist("./blankMod/output/common/countries/" + filename))
 	{
-		V2Party* newParty = new V2Party(*itr);
-		parties.push_back(newParty);
+		parseFile("./blankMod/output/common/countries/" + filename);
+	}
+	else if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
+	{
+		parseFile(theConfiguration.getVic2Path() + "/common/countries/" + filename);
+	}
+	else
+	{
+		LOG(LogLevel::Debug) << "Could not find file common/countries/" << filename << " - skipping";
 	}
 
 	theWorld			= _theWorld;
@@ -118,11 +130,11 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 	}
 
 	// set a default ruling party
-	for (vector<V2Party*>::iterator i = parties.begin(); i != parties.end(); i++)
+	for (const auto& party : parties)
 	{
-		if ((*i)->isActiveOn(date("1836.1.1")))
+		if (party.isActiveOn(date("1836.1.1")))
 		{
-			rulingParty = (*i)->name;
+			rulingParty = party.getName();
 			break;
 		}
 	}
@@ -140,9 +152,7 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 
 void V2Country::loadPartiesFromBlob()
 {
-	std::ifstream partyFile("PartyNames.txt");
-	mappers::PartyNameMapper partyNameMapper(partyFile);
-	partyFile.close();
+	mappers::PartyNameMapper partyNameMapper;
 
 	auto partyMap = partyNameMapper.getMap();
 
@@ -156,7 +166,8 @@ void V2Country::loadPartiesFromBlob()
 
 		std::string partyKey = tag + '_' + partyItr->first;
 
-		parties.push_back(new V2Party(partyKey, partyItr->first));
+		V2Party newParty(partyKey, partyItr->first);
+		parties.push_back(newParty);
 		localisation.SetPartyKey(i, partyKey);
 		
 		for (languageItr = languageMap.begin(); languageItr != languageMap.end(); ++languageItr)
@@ -258,11 +269,11 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 	}
 
 	// set a default ruling party
-	for (vector<V2Party*>::iterator i = parties.begin(); i != parties.end(); i++)
+	for (const auto& party : parties)
 	{
-		if ((*i)->isActiveOn(date("1836.1.1")))
+		if (party.isActiveOn(date("1836.1.1")))
 		{
-			rulingParty = (*i)->name;
+			rulingParty = party.getName();
 			break;
 		}
 	}
@@ -412,21 +423,7 @@ void V2Country::output() const
 		}
 		commonCountryOutput << "graphical_culture = UsGC\n";	// default to US graphics
 		commonCountryOutput << "color = { " << nationalColors.getMapColor() << " }\n";
-		for (auto party : parties)
-		{
-			commonCountryOutput	<< '\n'
-										<< "party = {\n"
-										<< "    name = \"" << party->name << "\"\n"
-										<< "    start_date = " << party->start_date << '\n'
-										<< "    end_date = " << party->end_date << "\n\n"
-										<< "    ideology = " << party->ideology << "\n\n"
-										<< "    economic_policy = " << party->economic_policy << '\n'
-										<< "    trade_policy = " << party->trade_policy << '\n'
-										<< "    religious_policy = " << party->religious_policy << '\n'
-										<< "    citizenship_policy = " << party->citizenship_policy << '\n'
-										<< "    war_policy = " << party->war_policy << '\n'
-										<< "}\n";
-		}
+		for (const auto& party : parties) commonCountryOutput << party;
 	}
 }
 
@@ -755,11 +752,11 @@ void V2Country::resolvePolitics()
 		idealogy = "conservative";
 	}
 
-	for (vector<V2Party*>::iterator i = parties.begin(); i != parties.end(); i++)
+	for (const auto& party : parties)
 	{
-		if ((*i)->isActiveOn(date("1836.1.1")) && ((*i)->ideology == idealogy))
+		if (party.isActiveOn(date("1836.1.1")) && (party.getIdeology() == idealogy))
 		{
-			rulingParty = (*i)->name;
+			rulingParty = party.getName();
 			break;
 		}
 	}
@@ -899,19 +896,9 @@ void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
 void V2Country::initFromHistory()
 {
 	// Ping unreleasable_tags for this country's TAG
-	ifstream unreleasableTags;
-	string inputBuffer;
-
-	unreleasableTags.open("./unreleasable_tags.txt");
-	while (getline(unreleasableTags, inputBuffer))
-	{
-		if (inputBuffer.rfind(tag, 0) == 0)
-		{
-			LOG(LogLevel::Debug) << "Found " << tag << " in unreleasables.";
-			isReleasableVassal = false;
-		}
-	}
-	unreleasableTags.close();
+	mappers::V2Unreleasables unreleasablesMapper;
+	auto unreleasables = unreleasablesMapper.getUnreleasables();
+	if (unreleasables.count(tag)) isReleasableVassal = false;
 
 	string fullFilename;
 

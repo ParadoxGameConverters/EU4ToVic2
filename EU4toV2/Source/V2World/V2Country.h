@@ -4,6 +4,7 @@
 
 
 #include "V2Army.h"
+#include "Country/V2Party.h"
 #include "Leader/V2Leader.h"
 #include "Leader/V2LeaderTraitMapper.h"
 #include "V2Localisation.h"
@@ -42,7 +43,6 @@ class V2UncivReforms;
 class V2Factory;
 class V2Creditor;
 class V2LeaderTraits;
-struct V2Party;
 
 enum class addRegimentToArmyResult
 {
@@ -53,7 +53,7 @@ enum class addRegimentToArmyResult
 
 
 
-class V2Country
+class V2Country : commonItems::parser
 {
 	public:
 		V2Country(const std::string& countriesFileLine, const V2World* _theWorld, bool _dynamicCountry);
@@ -198,7 +198,7 @@ class V2Country
 		std::string							primaryCulture;
 		std::set<std::string>						acceptedCultures;
 		std::string							religion;
-		std::vector<V2Party*>				parties;
+		std::vector<V2Party> parties;
 		std::string							rulingParty;
 		std::string							commonCountryFile;
 		double prestige = 0.0;
