@@ -45,6 +45,7 @@
 #include "Vic2CultureUnionMapper.h"
 #include "Factory/V2FactoryFactory.h"
 #include "Leader/V2LeaderTraitMapper.h"
+#include "Country/V2Unreleasables.h"
 
 
 
@@ -741,12 +742,14 @@ void V2World::convertPrestige()
 void V2World::addAllPotentialCountries()
 {
 	// ALL potential countries should be output to the file, otherwise some things don't get initialized right when loading Vic2
+	mappers::V2Unreleasables unreleasablesMapper;
+
 	for (auto potentialCountry : potentialCountries)
 	{
 		map<string, V2Country*>::iterator citr = countries.find(potentialCountry.first);
 		if (citr == countries.end())
 		{
-			potentialCountry.second->initFromHistory();
+			potentialCountry.second->initFromHistory(unreleasablesMapper);
 			countries.insert(make_pair(potentialCountry.first, potentialCountry.second));
 		}
 	}

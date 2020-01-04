@@ -4,7 +4,6 @@
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/PartyNameMapper.h"
 #include "CardinalToOrdinal.h"
-#include "ParadoxParser8859_15.h"
 #include "OSCompatibilityLayer.h"
 #include "../EU4World/CultureGroups.h"
 #include "../EU4World/World.h"
@@ -30,7 +29,6 @@
 #include "V2Pop.h"
 #include "V2TechSchools.h"
 #include "Factory/V2Factory.h"
-#include "Country/V2Unreleasables.h"
 #include <algorithm>
 #include <exception>
 #include <float.h>
@@ -50,6 +48,41 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 		{
 			V2Party newParty(theStream);
 			parties.push_back(newParty);
+		});
+	registerKeyword(std::regex("primary_culture"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString primCulStr(theStream);
+			primaryCulture = primCulStr.getString();
+		});
+	registerKeyword(std::regex("religion"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString religionStr(theStream);
+			religion = religionStr.getString();
+		});
+	registerKeyword(std::regex("government"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString governmentStr(theStream);
+			government = governmentStr.getString();
+		});
+	registerKeyword(std::regex("civilized"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString ignored(theStream);
+			civilized = true;
+		});
+	registerKeyword(std::regex("is_releasable_vassal"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString releasableStr(theStream);
+			isReleasableVassal = (releasableStr.getString() == "yes");
+		});
+	registerKeyword(std::regex("nationalvalue"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString nationalvalueStr(theStream);
+			nationalValue = nationalvalueStr.getString();
+		});
+	registerKeyword(std::regex("capital"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleInt capitalInt(theStream);
+			capital = capitalInt.getInt();
 		});
 	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
 
@@ -177,33 +210,6 @@ void V2Country::loadPartiesFromBlob()
 		++i;
 	}
 
-}
-
-
-shared_ptr<Object> V2Country::parseCountryFile(const string& filename)
-{
-	string fileToParse;
-	if (Utils::DoesFileExist("./blankMod/output/common/countries/" + filename))
-	{
-		fileToParse = "./blankMod/output/common/countries/" + filename;
-	}
-	else if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
-	{
-		fileToParse = theConfiguration.getVic2Path() + "/common/countries/" + filename;
-	}
-	else
-	{
-		LOG(LogLevel::Debug) << "Could not find file common/countries/" << filename << " - skipping";
-		return nullptr;
-	}
-
-	shared_ptr<Object> countryData = parser_8859_15::doParseFile(fileToParse);
-	if (countryData == nullptr)
-	{
-		LOG(LogLevel::Warning) << "Could not parse file " << fileToParse;
-	}
-
-	return countryData;
 }
 
 
@@ -893,10 +899,9 @@ void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
 
 
 // used only for countries which are NOT converted (i.e. unions, dead countries, etc)
-void V2Country::initFromHistory()
+void V2Country::initFromHistory(mappers::V2Unreleasables unreleasablesMapper)
 {
 	// Ping unreleasable_tags for this country's TAG
-	mappers::V2Unreleasables unreleasablesMapper;
 	auto unreleasables = unreleasablesMapper.getUnreleasables();
 	if (unreleasables.count(tag)) isReleasableVassal = false;
 
@@ -925,68 +930,7 @@ void V2Country::initFromHistory()
 		filename					= tag + " - " + countryName;
 		return;
 	}
-
-	shared_ptr<Object> obj = parser_8859_15::doParseFile(fullFilename.c_str());
-	if (obj == nullptr)
-	{
-		LOG(LogLevel::Error) << "Could not parse file " << fullFilename;
-		exit(-1);
-	}
-
-	vector<shared_ptr<Object>> results = obj->getValue("primary_culture");
-	if (results.size() > 0)
-	{
-		primaryCulture = results[0]->getLeaf();
-	}
-
-	results = obj->getValue("culture");
-	for (vector<shared_ptr<Object>>::iterator itr = results.begin(); itr != results.end(); ++itr)
-	{
-		acceptedCultures.insert((*itr)->getLeaf());
-	}
-
-	results = obj->getValue("religion");
-	if (results.size() > 0)
-	{
-		religion = results[0]->getLeaf();
-	}
-
-	results = obj->getValue("government");
-	if (results.size() > 0)
-	{
-		government = results[0]->getLeaf();
-	}
-
-	results = obj->getValue("civilized");
-	if (results.size() > 0)
-	{
-		civilized = (results[0]->getLeaf() == "yes");
-	}
-	// don't bother if already false by override.
-	if (isReleasableVassal)
-	{
-		results = obj->getValue("is_releasable_vassal");
-		if (results.size() > 0)
-		{
-			isReleasableVassal = (results[0]->getLeaf() == "yes");
-		}
-	}
-
-	results = obj->getValue("nationalvalue");
-	if (results.size() > 0)
-	{
-		nationalValue = results[0]->getLeaf();
-	}
-	else
-	{
-		nationalValue = "nv_order";
-	}
-
-	results = obj->getValue("capital");
-	if (results.size() > 0)
-	{
-		capital = atoi(results[0]->getLeaf().c_str());
-	}
+	parseFile(fullFilename);
 }
 
 
