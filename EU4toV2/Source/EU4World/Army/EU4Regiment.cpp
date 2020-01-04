@@ -6,7 +6,7 @@ EU4::EU4Regiment::EU4Regiment(std::istream& theStream)
 {
 	registerKeyword(std::regex("id"), [this](const std::string& unused, std::istream& theStream)
 		{
-			EU4::EU4UnitID idblock(theStream);
+			EU4::ID idblock(theStream);
 			regimentId = idblock;
 		});
 	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream)

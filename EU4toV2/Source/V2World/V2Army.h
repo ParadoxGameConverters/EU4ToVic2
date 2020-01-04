@@ -45,7 +45,7 @@ std::ostream& operator<<(std::ostream& output, const V2Regiment& regiment);
 class V2Army // also Navy
 {
 	public:
-		V2Army(EU4::EU4Army oldArmy, std::map<int, int> leaderIDMap);
+		V2Army(const EU4::EU4Army& oldArmy);
 		void addRegiment(V2Regiment reg);
 
 		void setLocation(int provinceID) { location = provinceID; };
@@ -66,7 +66,7 @@ class V2Army // also Navy
 		V2Army() {}; // used by makeTestNavy
 		V2ArmyID id;
 		std::string name;
-		int location;
+		int location = -1;
 		std::vector<V2Regiment>	regiments;
 		double armyRemainders[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)];
 		EU4::EU4Army sourceArmy; // only valid during conversion

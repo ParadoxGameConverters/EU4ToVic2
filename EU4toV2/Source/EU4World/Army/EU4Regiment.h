@@ -1,8 +1,8 @@
 #ifndef EU4_REGIMENT_H_
 #define EU4_REGIMENT_H_
 
-#include "EU4UnitID.h"
 #include <map>
+#include "../ID.h"
 
 namespace EU4
 {
@@ -55,7 +55,7 @@ namespace EU4
 		double getMorale() const { return morale; }
 		double getStrength() const { return strength; }
 		int getTypeStrength() const { return typeStrength; }
-		EU4UnitID getId() const { return regimentId; }
+		EU4::ID getId() const { return regimentId; }
 		void setCategory(const REGIMENTCATEGORY cat) { category = cat; }
 		void setTypeStrength(const int tStrength) { typeStrength = tStrength; }
 
@@ -67,7 +67,7 @@ namespace EU4
 		REGIMENTCATEGORY category = REGIMENTCATEGORY::num_reg_categories;
 		double morale = 0.0;
 		double strength = 0.0;
-		EU4UnitID regimentId;
+		EU4::ID regimentId;
 	};
 }
 

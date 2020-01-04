@@ -4,7 +4,8 @@
 
 
 #include "V2Army.h"
-#include "V2Leader.h"
+#include "Leader/V2Leader.h"
+#include "Leader/V2LeaderTraitMapper.h"
 #include "V2Localisation.h"
 #include "V2Relations.h"
 #include "V2TechSchools.h"
@@ -67,7 +68,6 @@ class V2Country
 			const EU4::Regions& eu4Regions,
 			std::shared_ptr<EU4::Country> _srcCountry,
 			const std::unique_ptr<Vic2::TechSchools>& techSchools,
-			const std::map<int, int>& leaderMap,
 			const mappers::CultureMapper& cultureMapper,
 			const mappers::CultureMapper& slaveCultureMapper,
 			const mappers::IdeaEffectMapper& ideaEffectMapper,
@@ -79,12 +79,12 @@ class V2Country
 		void								addProvince(V2Province* _province);
 		void								addState(V2State* newState);
 		void convertArmies(
-			const std::map<int,int>& leaderIDMap,
 			double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)],
 			const std::map<int, V2Province*>& allProvinces,
 			std::vector<int> port_whitelist,
 			const mappers::ProvinceMapper& provinceMapper
 		);
+		void convertLeaders(mappers::V2LeaderTraitMapper& leaderTraits);
 		bool addFactory(const V2Factory& factory);
 		void								addRailroadtoCapitalState();
 		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);

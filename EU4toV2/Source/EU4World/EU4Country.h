@@ -11,15 +11,14 @@
 #include <optional>
 #include <set>
 #include "Country/EU4NationalSymbol.h"
+#include "ID.h"
+#include "Leader/EU4Leader.h"
 
 
 namespace EU4
 {
-
-class leader;
 class Province;
 class Version;
-
 }
 class EU4Loan;
 class EU4Relations;
@@ -122,12 +121,14 @@ namespace EU4
 			bool isRevolutionary() const { return revolutionary; }
 			std::string getRandomName() const { return randomName; }
 			virtual const std::map<std::string, int>& getNationalIdeas() const { return nationalIdeas; }
-			std::vector<std::shared_ptr<EU4::leader>> getMilitaryLeaders() const { return militaryLeaders; }
+			std::vector<EU4::Leader> getHistoricalLeaders() const { return historicalLeaders; }
+			std::vector<EU4::Leader> getMilitaryLeaders() const { return militaryLeaders; }
 
 			std::string	getName() const { return name; }
 			std::string	getName(const std::string& language) const;
 			std::string	getAdjective(const std::string& language) const;
 			void dropMinorityCultures();
+			void filterLeaders();
 
 			EU4::NationalSymbol getNationalColors() const { return nationalColors; }
 
@@ -184,7 +185,9 @@ namespace EU4
 			std::map<std::string, bool> modifiers; // any modifiers set for this country
 			bool possibleDaimyo; // if this country is possibly a daimyo
 			bool possibleShogun; // if this country is the shogun
-			std::vector<std::shared_ptr<EU4::leader>> militaryLeaders;
+			std::vector<EU4::Leader> historicalLeaders; // Historical leader information
+			std::set<int> activeLeaderIDs; // Ones currently in service, others presumed dead.
+			std::vector<EU4::Leader> militaryLeaders; // filtered active leaders
 			std::string government = "monarchy";
 			int governmentRank = 0;
 			int development = 0;

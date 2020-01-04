@@ -108,14 +108,11 @@ std::ostream& operator<<(std::ostream& output, const V2Regiment& regiment)
 }
 
 
-V2Army::V2Army(EU4::EU4Army oldArmy, std::map<int, int> leaderIDMap)
+V2Army::V2Army(const EU4::EU4Army& oldArmy): 
+	name(oldArmy.getName())
 {
-	name			= oldArmy.getName();
-	location		= -1;
-	regiments.clear();
 	memset(armyRemainders, 0, sizeof(armyRemainders));
-	sourceArmy	= oldArmy;
-	isNavy		= false;
+	sourceArmy = oldArmy;
 }
 
 

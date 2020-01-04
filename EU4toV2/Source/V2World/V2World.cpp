@@ -17,7 +17,7 @@
 #include "../Configuration.h"
 #include "../EU4World/Continents.h"
 #include "../EU4World/EU4Diplomacy.h"
-#include "../EU4World/EU4Leader.h"
+#include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/EU4Relations.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
@@ -37,14 +37,13 @@
 #include "V2Relations.h"
 #include "V2TechSchools.h"
 #include "V2Army.h"
-#include "V2Leader.h"
 #include "V2Pop.h"
 #include "V2Country.h"
 #include "V2Reforms.h"
 #include "V2Flags.h"
-#include "V2LeaderTraits.h"
 #include "Vic2CultureUnionMapper.h"
 #include "Factory/V2FactoryFactory.h"
+#include "Leader/V2LeaderTraitMapper.h"
 
 
 
@@ -583,7 +582,6 @@ void V2World::initializeCountries(const EU4::world& sourceWorld, const mappers::
 			sourceWorld.getRegions(),
 			sourceCountry.second,
 			theTechSchools,
-			leaderIDMap,
 			*cultureMapper,
 			*slaveCultureMapper,
 			ideaEffectMapper,
@@ -1802,11 +1800,16 @@ void V2World::convertArmies(const EU4::world& sourceWorld)
 		}
 	}
 
-	// convert armies
-	LOG(LogLevel::Debug) << "Converting country armies";
+	// convert leaders and armies
+	LOG(LogLevel::Info) << "Loading leader data";
+
+	mappers::V2LeaderTraitMapper leaderTraits;
+
+	LOG(LogLevel::Info) << "Converting country armies";
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
-		itr->second->convertArmies(leaderIDMap, cost_per_regiment, provinces, port_whitelist, *provinceMapper);
+		itr->second->convertLeaders(leaderTraits);
+		itr->second->convertArmies(cost_per_regiment, provinces, port_whitelist, *provinceMapper);
 	}
 }
 
