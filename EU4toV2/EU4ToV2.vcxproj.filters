@@ -381,6 +381,12 @@
     <ClCompile Include="Source\V2World\Country\V2Unreleasables.cpp">
       <Filter>Vic2World\Country</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\NationMerger\MergeBlock.cpp">
+      <Filter>EU4World\NationMerger</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\NationMerger\NationMergeParser.cpp">
+      <Filter>EU4World\NationMerger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -765,6 +771,12 @@
     <ClInclude Include="Source\V2World\Country\V2Unreleasables.h">
       <Filter>Vic2World\Country</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\NationMerger\MergeBlock.h">
+      <Filter>EU4World\NationMerger</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\NationMerger\NationMergeParser.h">
+      <Filter>EU4World\NationMerger</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -829,6 +841,9 @@
     </Filter>
     <Filter Include="Vic2World\Country">
       <UniqueIdentifier>{8b2897e0-22e8-4284-a6d6-52b237ebab64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\NationMerger">
+      <UniqueIdentifier>{001fbc47-c628-4766-a50e-876ff0ba6b44}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

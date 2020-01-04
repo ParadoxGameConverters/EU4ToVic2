@@ -43,7 +43,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Object.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
-#include "ParadoxParserUTF8.h"
+#include "NationMerger/NationMergeParser.h"
 #include "StringUtils.h"
 #include <set>
 #include <algorithm>
@@ -74,7 +74,7 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 	registerKeyword(std::regex("(multiplayer_)?random_seed"), [this](const std::string& key, std::istream& theStream)
 		{
 			commonItems::singleString randomSeed(theStream);
-			theConfiguration.setEU4RandomSeed(stol(randomSeed.getString()));
+			theConfiguration.setEU4RandomSeed(stoi(randomSeed.getString().substr(randomSeed.getString().size() - 5)));
 		}
 	);
 	registerKeyword(std::regex("savegame_version"), [this](const std::string& versionText, std::istream& theStream)
@@ -622,66 +622,25 @@ void EU4::world::resolveRegimentTypes()
 	}
 }
 
-
-// todo: move the getting of rules into its own mapper, with a merge rule structure type
-//		then break out things into subfunctions with a give rule as a parameter
 void EU4::world::mergeNations()
 {
-	LOG(LogLevel::Info) << "Merging nations";
-	shared_ptr<Object> mergeObj = parser_UTF8::doParseFile("merge_nations.txt");
-	if (mergeObj == NULL)
+	LOG(LogLevel::Info) << "Parsing merge nation rules.";
+	NationMergeParser mergeParser;
+	
+	if (mergeParser.getMergeDaimyos()) uniteJapan();
+
+	for (const auto& mergeBlock : mergeParser.getMergeBlocks())
 	{
-		LOG(LogLevel::Error) << "Could not parse file merge_nations.txt";
-		exit(-1);
-	}
-
-	vector<shared_ptr<Object>> rules = mergeObj->getValue("merge_nations");
-	if (rules.size() < 0)
-	{
-		LOG(LogLevel::Debug) << "No nations have merging requested (skipping)";
-		return;
-	}
-
-	rules = rules[0]->getLeaves();
-	for (auto rule: rules)
-	{
-		if ((rule->getKey() == "merge_daimyos") && (rule->getLeaf() == "yes"))
+		if (mergeBlock.getMerge() && !mergeBlock.getMaster().empty())
 		{
-			uniteJapan();
-			continue;
-		}
-
-		vector<shared_ptr<Object>> ruleItems = rule->getLeaves();
-
-		string masterTag;
-		vector<string> slaveTags;
-		bool enabled = false;
-		for (auto item: ruleItems)
-		{
-			if ((item->getKey() == "merge") && (item->getLeaf() == "yes"))
-			{
-				enabled = true;
-			}
-			else if (item->getKey() == "master")
-			{
-				masterTag = item->getLeaf();
-			}
-			else if (item->getKey() == "slave")
-			{
-				slaveTags.push_back(item->getLeaf());
-			}
-		}
-
-		auto master = getCountry(masterTag);
-		if (enabled && master)
-		{
-			for (auto slaveTag: slaveTags)
+			LOG(LogLevel::Debug) << "- Merging nations for: " << mergeBlock.getMaster();
+			auto master = getCountry(mergeBlock.getMaster());
+			LOG(LogLevel::Debug) << "Retrieved master: " << master->getName();
+			for (auto slaveTag : mergeBlock.getSlaves())
 			{
 				auto slave = getCountry(slaveTag);
-				if (slave)
-				{
-					master->eatCountry(slave, master);
-				}
+				LOG(LogLevel::Debug) << "Retrieved slave: " << slave->getName();
+				master->eatCountry(slave, master);
 			}
 		}
 	}

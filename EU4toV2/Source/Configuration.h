@@ -47,7 +47,7 @@ class Configuration: commonItems::parser
 
 		std::string getEU4Path() { return EU4Path; }
 		std::string getEU4DocumentsPath() const { return EU4DocumentsPath; }
-		long getEU4RandomSeed() const { return eu4Seed; }
+		int getEU4RandomSeed() const { return eu4Seed; }
 		std::string getSteamWorkshopPath() const { return SteamWorkshopPath; }
 		std::string getCK2ExportPath() const { return CK2ExportPath; }
 		std::string getVic2Path() { return Vic2Path; }
@@ -81,7 +81,7 @@ class Configuration: commonItems::parser
 		void setOutputName(std::string name) { outputName = name; }
 		void addEU4Mod(std::string mod) { EU4Mods.push_back(mod); }
 		void setEU4Version(EU4::Version _version) { version = _version; }
-		void setEU4RandomSeed(long s) { eu4Seed = s; }
+		void setEU4RandomSeed(int s) { eu4Seed = s; }
 		void setActiveDLCs(std::vector<std::string> _activeDLCs) { activeDLCs = _activeDLCs; }
 
 		bool wasDLCActive(const std::string& DLC);
@@ -115,7 +115,7 @@ class Configuration: commonItems::parser
 		date firstEU4Date;
 		date lastEU4Date;
 		date startEU4Date;
-		long eu4Seed;
+		int eu4Seed;
 		std::string outputName;
 		std::vector<std::string> activeDLCs;
 		std::vector<std::string> EU4Mods;

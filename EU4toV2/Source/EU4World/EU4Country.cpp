@@ -741,11 +741,13 @@ int EU4::Country::getManufactoryCount() const
 
 void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_ptr<Country> self)
 {
+	LOG(LogLevel::Debug) << tag << " is eating " << target->getTag();
 	// autocannibalism is forbidden
 	if (target->getTag() == tag)
 	{
 		return;
 	}
+	LOG(LogLevel::Debug) << "current provinces: " << provinces.size();
 
 	// for calculation of weighted averages
 	int totalProvinces = target->provinces.size() + provinces.size();
@@ -753,6 +755,7 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 	{
 		totalProvinces = 1;
 	}
+	LOG(LogLevel::Debug) << "after merging (totalprovinces): " << totalProvinces;
 	const double myWeight = (double)provinces.size() / (double)totalProvinces;						// the amount of influence from the main country
 	const double targetWeight = (double)target->provinces.size() / (double)totalProvinces;		// the amount of influence from the target country
 
@@ -760,8 +763,10 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 	for (auto& core: target->getCores())
 	{
 		addCore(core);
+		LOG(LogLevel::Debug) << "added core to master: " << core->getName();
 		core->addCore(tag);
 		core->removeCore(target->tag);
+		LOG(LogLevel::Debug) << "swapped core ownership";
 	}
 
 	// everything else, do only if this country actually currently exists
@@ -771,6 +776,7 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 		for (unsigned int j = 0; j < target->provinces.size(); j++)
 		{
 			addProvince(target->provinces[j]);
+			LOG(LogLevel::Debug) << "added province to master" << target->provinces[j]->getName();
 		}
 
 		// acquire target's armies, navies, admirals, and generals
@@ -792,6 +798,7 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 	// coreless, landless countries will be cleaned up automatically
 	target->clearProvinces();
 	target->clearCores();
+	LOG(LogLevel::Debug) << "cleared target provinces and cores";
 
 	LOG(LogLevel::Debug) << "Merged " << target->tag << " into " << tag;
 }
