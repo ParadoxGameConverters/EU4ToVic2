@@ -24,6 +24,7 @@ mappers::ColonialTag::ColonialTag(std::istream& theStream)
 		commonItems::singleString cgStr(theStream);
 		colonyTag.cultureGroup = cgStr.getString();
 	});
+	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 }

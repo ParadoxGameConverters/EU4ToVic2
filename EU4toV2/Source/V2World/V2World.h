@@ -7,6 +7,7 @@
 #include "V2Diplomacy.h"
 #include "Country/V2Party.h"
 #include "V2Province.h"
+#include "Pops/PopType.h"
 #include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
@@ -46,17 +47,16 @@ class V2World
 
 		void importDefaultPops();
 		void importPopsFromFile(const string& filename, const mappers::MinorityPopMapper& minorityPopMapper);
-		void importPopsFromProvince(shared_ptr<Object> provinceObj, const mappers::MinorityPopMapper& minorityPopMapper);
+		void importPopsFromProvince(const int provinceID, const mappers::PopType& popType, const mappers::MinorityPopMapper& minorityPopMapper);
 
 		void logPopsByCountry() const;
 		void logPopsFromFile(string filename, map<string, map<string, long int>>& popsByCountry) const;
-		void logPopsInProvince(shared_ptr<Object> provinceObj, map<string, map<string, long int>>& popsByCountry) const;
+		void logPopsInProvince(const int& provinceID, const mappers::PopType& popType, map<string, map<string, long int>>& popsByCountry) const;
 		map<string, map<string, long int>>::iterator getCountryForPopLogging(string country, map<string, map<string, long int>>& popsByCountry) const;
-		void logPop(shared_ptr<Object> pop, map<string, map<string, long int>>::iterator countryPopItr) const;
+		void logPop(const std::string& popType, const mappers::Pop& pop, map<string, map<string, long int>>::iterator countryPopItr) const;
 		void outputLog(const map<string, map<string, long int>>& popsByCountry) const;
 
 		void findCoastalProvinces();
-		void determineIfProvinceIsCoastal(shared_ptr<Object> provinceObj);
 
 		void importPotentialCountries();
 		void importPotentialCountry(const string& line, bool dynamicCountry);

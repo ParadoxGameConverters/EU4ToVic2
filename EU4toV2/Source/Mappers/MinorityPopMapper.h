@@ -12,7 +12,7 @@ namespace mappers
 	class MinorityPopMapper : commonItems::parser
 	{
 	public:
-		MinorityPopMapper(std::istream& theStream);
+		MinorityPopMapper();
 		bool matchMinorityPop(V2Pop& pop) const;
 
 	private:

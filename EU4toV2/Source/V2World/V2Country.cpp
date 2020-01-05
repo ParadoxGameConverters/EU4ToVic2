@@ -987,7 +987,6 @@ std::vector<int> V2Country::getPortProvinces(
 			}
 		}
 	}
-
 	return coastalProvinces;
 }
 
@@ -1172,6 +1171,7 @@ void V2Country::convertArmies(
 			vector<int>::iterator white = std::find(port_whitelist.begin(), port_whitelist.end(), selectedLocation);
 			if (white == port_whitelist.end())
 			{
+				LOG(LogLevel::Warning) << "Assigning navy to non-whitelisted port province " << selectedLocation << " - if the save crashes, try blacklisting this province";
 			}
 		}
 		army.setLocation(selectedLocation);

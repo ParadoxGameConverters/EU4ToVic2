@@ -9,8 +9,8 @@
 #include <queue>
 #include <cmath>
 #include <cfloat>
-#include "ParadoxParser8859_15.h"
-#include "ParadoxParserUTF8.h"
+#include "../Mappers/TerrainDataMapper.h"
+#include "../Mappers/ClimateMapper.h"
 #include "NewParserToOldParserConverters.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -31,6 +31,7 @@
 #include "../Mappers/MinorityPopMapper.h"
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/ReligionMapper.h"
+#include "../Mappers/RegimentCostsMapper.h"
 #include "BlockedTechSchools.h"
 #include "StateMapper.h"
 #include "V2Province.h"
@@ -46,6 +47,8 @@
 #include "Factory/V2FactoryFactory.h"
 #include "Leader/V2LeaderTraitMapper.h"
 #include "Country/V2Unreleasables.h"
+#include "Pops/PopMapper.h"
+#include "Map/MapProvince.h"
 
 
 
@@ -144,41 +147,17 @@ std::set<std::string> V2World::discoverProvinceFilenames()
 
 void V2World::importProvinceClimates()
 {
-	string filename = theConfiguration.getVic2Path() + "/map/climate.txt";
-	if (!Utils::DoesFileExist(filename))
+	mappers::ClimateMapper climateMapper;
+	std::map<std::string, std::vector<int>> climateMap = climateMapper.getClimateMap();
+	for (const auto& climate : climateMap)
 	{
-		LOG(LogLevel::Warning) << "Could not find file " << filename
-		                       << ", will not load climates.";
-		return;
-	}
+		for (const auto& provID : climate.second)
+		{
+			if (provID == 0) continue;
+			auto* prov = getProvince(provID);
+			if (prov == NULL) continue;
+			prov->setClimate(climate.first);
 
-        auto climateObj = parser_8859_15::doParseFile(filename);
-	std::vector keywords = {"mild_climate", "temperate_climate",
-	                        "harsh_climate", "inhospitable_climate"};
-	for (const auto& key : keywords)
-	{
-		auto objs = climateObj->getValue(key);
-		if (objs.size() < 2)
-		{
-			LOG(LogLevel::Warning)
-			    << "Found " << objs.size() << " objects with key "
-			    << key << ", will not assign this climate.";
-			continue;
-		}
-		auto provList = objs[1];
-		for (int i = 0; i < provList->numTokens(); ++i)
-		{
-			auto provNum = provList->tokenAsInt(i);
-			if (provNum == 0)
-			{
-				continue;
-			}
-			auto* prov = getProvince(provNum.value());
-			if (prov == NULL)
-			{
-				continue;
-			}
-			prov->setClimate(key);
 		}
 	}
 }
@@ -204,44 +183,19 @@ void V2World::importProvinceLocalizations(const string& file)
 			}
 		}
 	}
-
 	read.close();
 }
 
 void V2World::importProvinceTerrains()
 {
-	string filename = "terrainData.txt";
-	if (!Utils::DoesFileExist(filename))
+	mappers::TerrainDataMapper terrainDataMapper;
+	for (const auto& provData : terrainDataMapper.getTerrainMap())
 	{
-		LOG(LogLevel::Warning) << "Could not find " << filename
-		                       << ", will not load terrain data.";
-		return;
-	}
-
-        auto terrainObj = parser_8859_15::doParseFile(filename);
-	if (terrainObj == NULL)
-	{
-		LOG(LogLevel::Warning) << "Could not parse " << filename
-		                       << ", will not load terrain data.";
-		return;
-	}
-
-	auto leaves = terrainObj->getLeaves();
-	for (auto leaf : leaves)
-	{
-		std::string key = leaf->getKey();
-		int provNum = atoi(key.c_str());
-		auto* province = getProvince(provNum);
-		if (province == NULL)
-		{
-			continue;
-		}
+		auto* province = getProvince(provData.first);
+		if (province == NULL) continue;
 		// Do not override terrain set in province files.
-		if (!province->getTerrain().empty())
-		{
-			continue;
-		}
-		province->setTerrain(leaf->getLeaf());
+		if (!province->getTerrain().empty()) continue;
+		province->setTerrain(provData.second);
 	}
 }
 
@@ -262,15 +216,7 @@ void V2World::importDefaultPops()
 
 	LOG(LogLevel::Info) << "Parsing minority pops mappings";
 
-	std::ifstream minPopFile("minorityPops.txt");
-	if (minPopFile.fail())
-	{
-		std::range_error exception("Could not open file minorityPops.txt");
-		throw exception;
-	}
-	mappers::MinorityPopMapper minorityPopMapper(minPopFile);
-	minPopFile.close();
-
+	mappers::MinorityPopMapper minorityPopMapper;
 
 	for (auto filename : filenames)
 	{
@@ -285,39 +231,37 @@ void V2World::importPopsFromFile(const string& filename, const mappers::Minority
 {
 	list<int> popProvinces;
 
-	shared_ptr<Object> fileObj = parser_8859_15::doParseFile(("./blankMod/output/history/pops/1836.1.1/" + filename));
-	vector<shared_ptr<Object>> provinceObjs = fileObj->getLeaves();
+	std::ifstream popFile("./blankMod/output/history/pops/1836.1.1/" + filename);
+	mappers::PopMapper popMapper(popFile);
+	popFile.close();
 
-	for (auto provinceObj : provinceObjs)
+	for (const auto& provinceItr : popMapper.getPopMap())
 	{
-		int provinceNum = stoi(provinceObj->getKey());
+		int provinceNum = provinceItr.first;
 		popProvinces.push_back(provinceNum);
 
-		importPopsFromProvince(provinceObj, minorityPopMapper);
+		importPopsFromProvince(provinceNum, provinceItr.second, minorityPopMapper);
 	}
 
 	popRegions.insert(make_pair(filename, popProvinces));
 }
 
 
-void V2World::importPopsFromProvince(shared_ptr<Object> provinceObj, const mappers::MinorityPopMapper& minorityPopMapper)
+void V2World::importPopsFromProvince(const int provinceID, const mappers::PopType& popType, const mappers::MinorityPopMapper& minorityPopMapper)
 {
-	int provinceNum = stoi(provinceObj->getKey());
-	auto province = provinces.find(provinceNum);
-	if (province == provinces.end())
-	{
-		LOG(LogLevel::Warning) << "Could not find province " << provinceNum << " for original pops.";
-		return;
-	}
-
 	int provincePopulation = 0;
 	int provinceSlavePopulation = 0;
 
-	vector<shared_ptr<Object>> popObjs = provinceObj->getLeaves();
-
-	for (auto popObj: popObjs)
+	auto province = provinces.find(provinceID);
+	if (province == provinces.end())
 	{
-		V2Pop* newPop = new V2Pop(popObj);
+		LOG(LogLevel::Warning) << "Could not find province " << provinceID << " for original pops.";
+		return;
+	}
+
+	for (const auto& pop: popType.getPopTypes())
+	{
+		V2Pop* newPop = new V2Pop(pop.first, pop.second.getSize(), pop.second.getCulture(), pop.second.getReligion());
 
 		province->second->addOldPop(newPop);
 		if (minorityPopMapper.matchMinorityPop(*newPop))
@@ -354,53 +298,45 @@ void V2World::logPopsByCountry() const
 
 void V2World::logPopsFromFile(string filename, map<string, map<string, long int>>& popsByCountry) const
 {
-	shared_ptr<Object> fileObj = parser_8859_15::doParseFile(("./blankMod/output/history/pops/1836.1.1/" + filename));
+	std::ifstream popFile("./blankMod/output/history/pops/1836.1.1/" + filename);
+	mappers::PopMapper popMapper(popFile);
+	popFile.close();
 
-	vector<shared_ptr<Object>> provinceObjs = fileObj->getLeaves();
-	for (auto provinceObj : provinceObjs)
+	for (const auto& provinceItr : popMapper.getPopMap())
 	{
-		logPopsInProvince(provinceObj, popsByCountry);
+		logPopsInProvince(provinceItr.first, provinceItr.second, popsByCountry);
 	}
 }
 
 
-void V2World::logPopsInProvince(shared_ptr<Object> provinceObj, map<string, map<string, long int>>& popsByCountry) const
+void V2World::logPopsInProvince(const int& provinceID, const mappers::PopType& popType, map<string, map<string, long int>>& popsByCountry) const
 {
-	int provinceNum = stoi(provinceObj->getKey());
-	auto province = provinces.find(provinceNum);
+	auto province = provinces.find(provinceID);
 	if (province == provinces.end())
 	{
-		LOG(LogLevel::Warning) << "Could not find province " << provinceNum << " for original pops.";
+		LOG(LogLevel::Warning) << "Could not find province " << provinceID << " for original pops.";
 		return;
 	}
 
 	auto countryPopItr = getCountryForPopLogging(province->second->getOwner(), popsByCountry);
 
-	vector<shared_ptr<Object>> pops = provinceObj->getLeaves();
-	for (auto pop : pops)
+	for (const auto& popType : popType.getPopTypes())
 	{
-		logPop(pop, countryPopItr);
+		logPop(popType.first, popType.second, countryPopItr);
 	}
 }
 
 
-void V2World::logPop(shared_ptr<Object> pop, map<string, map<string, long int>>::iterator countryPopItr) const
+void V2World::logPop(const std::string& popType, const mappers::Pop& pop, map<string, map<string, long int>>::iterator countryPopItr) const
 {
-	string popType = pop->getKey();
-	auto possibleSizeStr = pop->getLeaf("size");
-	if (possibleSizeStr)
+	auto popItr = countryPopItr->second.find(popType);
+	if (popItr == countryPopItr->second.end())
 	{
-		int popSize = stoi(*possibleSizeStr);
-
-		auto popItr = countryPopItr->second.find(pop->getKey());
-		if (popItr == countryPopItr->second.end())
-		{
-			long int newPopSize = 0;
-			pair<map<string, long int>::iterator, bool> newIterator = countryPopItr->second.insert(make_pair(popType, newPopSize));
-			popItr = newIterator.first;
-		}
-		popItr->second += popSize;
+		long int newPopSize = 0;
+		pair<map<string, long int>::iterator, bool> newIterator = countryPopItr->second.insert(make_pair(popType, newPopSize));
+		popItr = newIterator.first;
 	}
+	popItr->second += pop.getSize();
 }
 
 
@@ -441,39 +377,18 @@ void V2World::outputLog(const map<string, map<string, long int>>& popsByCountry)
 void V2World::findCoastalProvinces()
 {
 	LOG(LogLevel::Info) << "Finding coastal provinces.";
-	shared_ptr<Object> positionsObj = parser_8859_15::doParseFile((theConfiguration.getVic2Path() + "/map/positions.txt"));
-	if (positionsObj == nullptr)
+	mappers::MapProvince navalProvinceMapper;
+	LOG(LogLevel::Info) << "- Located " << navalProvinceMapper.getNavalProvinces().size() << " coastal provinces";
+	std::set<int> navalProvinces = navalProvinceMapper.getNavalProvinces();
+	for (const auto& navalProvinceID : navalProvinces)
 	{
-		LOG(LogLevel::Error) << "Could not parse file " << theConfiguration.getVic2Path() << "/map/positions.txt";
-		exit(-1);
-	}
-
-	vector<shared_ptr<Object>> provinceObjs = positionsObj->getLeaves();
-	for (auto provinceObj: provinceObjs)
-	{
-		determineIfProvinceIsCoastal(provinceObj);
-	}
-}
-
-
-void V2World::determineIfProvinceIsCoastal(shared_ptr<Object> provinceObj)
-{
-	vector<shared_ptr<Object>> positionObj = provinceObj->getValue("building_position");
-	if (positionObj.size() > 0)
-	{
-		vector<shared_ptr<Object>> navalBaseObj = positionObj[0]->getValue("naval_base");
-		if (navalBaseObj.size() > 0)
+		auto province = provinces.find(navalProvinceID);
+		if (province != provinces.end())
 		{
-			int provinceNum = stoi(provinceObj->getKey());
-			auto province = provinces.find(provinceNum);
-			if (province != provinces.end())
-			{
-				province->second->setCoastal(true);
-			}
+			province->second->setCoastal(true);
 		}
 	}
 }
-
 
 void V2World::importPotentialCountries()
 {
@@ -1793,28 +1708,15 @@ void V2World::convertArmies(const EU4::world& sourceWorld)
 		s.close();
 	}
 
-	LOG(LogLevel::Debug) << "Parsing regiment costs";
+	LOG(LogLevel::Info) << "Parsing regiment costs";
 	// get cost per regiment values
+	mappers::RegimentCostsMapper regimentCostsMapper;
+	std::map<std::string, int> regimentCosts = regimentCostsMapper.getRegimentCosts();
 	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0.0 };
-	shared_ptr<Object>	obj2 = parser_8859_15::doParseFile("regiment_costs.txt");
-	if (obj2 == nullptr)
-	{
-		LOG(LogLevel::Error) << "Could not parse file regiment_costs.txt";
-		exit(-1);
-	}
-	vector<shared_ptr<Object>> objTop = obj2->getLeaves();
-	if (objTop.size() == 0 || objTop[0]->getLeaves().size() == 0)
-	{
-		LOG(LogLevel::Error) << "regment_costs.txt failed to parse";
-		exit(1);
-	}
+
 	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
 	{
-		auto possibleRegimentCost = objTop[0]->getLeaf(EU4::RegimentCategoryTypes[static_cast<EU4::REGIMENTCATEGORY>(i)]);
-		if (possibleRegimentCost)
-		{
-			cost_per_regiment[i] = stoi(*possibleRegimentCost);
-		}
+		cost_per_regiment[i] = regimentCosts[EU4::RegimentCategoryTypes[static_cast<EU4::REGIMENTCATEGORY>(i)]];
 	}
 
 	// convert leaders and armies

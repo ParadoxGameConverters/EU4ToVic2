@@ -387,6 +387,33 @@
     <ClCompile Include="Source\EU4World\NationMerger\NationMergeParser.cpp">
       <Filter>EU4World\NationMerger</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\ClimateMapper.cpp">
+      <Filter>Mappers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\TerrainDataMapper.cpp">
+      <Filter>Mappers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Pops\Pop.cpp">
+      <Filter>Vic2World\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Pops\PopType.cpp">
+      <Filter>Vic2World\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Pops\PopMapper.cpp">
+      <Filter>Vic2World\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Map\BuildingPosition.cpp">
+      <Filter>Vic2World\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Map\MapProvince.cpp">
+      <Filter>Vic2World\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RegimentCostsMapper.cpp">
+      <Filter>Mappers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Map\NavalBase.cpp">
+      <Filter>Vic2World\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -777,6 +804,33 @@
     <ClInclude Include="Source\EU4World\NationMerger\NationMergeParser.h">
       <Filter>EU4World\NationMerger</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\ClimateMapper.h">
+      <Filter>Mappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\TerrainDataMapper.h">
+      <Filter>Mappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Pops\Pop.h">
+      <Filter>Vic2World\Pops</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Pops\PopType.h">
+      <Filter>Vic2World\Pops</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Pops\PopMapper.h">
+      <Filter>Vic2World\Pops</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Map\BuildingPosition.h">
+      <Filter>Vic2World\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Map\MapProvince.h">
+      <Filter>Vic2World\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RegimentCostsMapper.h">
+      <Filter>Mappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Map\NavalBase.h">
+      <Filter>Vic2World\Map</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -844,6 +898,12 @@
     </Filter>
     <Filter Include="EU4World\NationMerger">
       <UniqueIdentifier>{001fbc47-c628-4766-a50e-876ff0ba6b44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Pops">
+      <UniqueIdentifier>{160fddbc-07d6-4366-8b3d-6a7fdc71c15f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Map">
+      <UniqueIdentifier>{03c647d5-094f-4c36-9edd-81509b68364b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
