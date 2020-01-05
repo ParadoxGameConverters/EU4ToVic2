@@ -120,7 +120,6 @@ std::ostream& operator<<(std::ostream& output, const V2Army& army)
 {
 	if (army.regiments.size() == 0)
 	{
-		LOG(LogLevel::Debug) << "Army " << army.name << " has no regiments after conversion; skipping";
 		return output;
 	}
 	if (army.isNavy)

@@ -43,7 +43,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "Object.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
-#include "ParadoxParserUTF8.h"
+#include "NationMerger/NationMergeParser.h"
 #include "StringUtils.h"
 #include <set>
 #include <algorithm>
@@ -73,8 +73,8 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 	);
 	registerKeyword(std::regex("(multiplayer_)?random_seed"), [this](const std::string& key, std::istream& theStream)
 		{
-			commonItems::singleInt randomSeed(theStream);
-			theConfiguration.setEU4RandomSeed(randomSeed.getInt());
+			commonItems::singleString randomSeed(theStream);
+			theConfiguration.setEU4RandomSeed(stoi(randomSeed.getString().substr(randomSeed.getString().size() - 5)));
 		}
 	);
 	registerKeyword(std::regex("savegame_version"), [this](const std::string& versionText, std::istream& theStream)
@@ -585,7 +585,6 @@ void EU4::world::setLocalisations()
 	localisation.ReadFromAllFilesInFolder(theConfiguration.getEU4Path() + "/localisation");
 	for (auto itr: theConfiguration.getEU4Mods())
 	{
-		LOG(LogLevel::Debug) << "Reading mod localisation";
 		localisation.ReadFromAllFilesInFolder(itr + "/localisation");
 		localisation.ReadFromAllFilesInFolder(itr + "/localisation/replace");
 	}
@@ -622,66 +621,23 @@ void EU4::world::resolveRegimentTypes()
 	}
 }
 
-
-// todo: move the getting of rules into its own mapper, with a merge rule structure type
-//		then break out things into subfunctions with a give rule as a parameter
 void EU4::world::mergeNations()
 {
-	LOG(LogLevel::Info) << "Merging nations";
-	shared_ptr<Object> mergeObj = parser_UTF8::doParseFile("merge_nations.txt");
-	if (mergeObj == NULL)
+	LOG(LogLevel::Info) << "Parsing merge nation rules.";
+	NationMergeParser mergeParser;
+	
+	if (mergeParser.getMergeDaimyos()) uniteJapan();
+
+	for (const auto& mergeBlock : mergeParser.getMergeBlocks())
 	{
-		LOG(LogLevel::Error) << "Could not parse file merge_nations.txt";
-		exit(-1);
-	}
-
-	vector<shared_ptr<Object>> rules = mergeObj->getValue("merge_nations");
-	if (rules.size() < 0)
-	{
-		LOG(LogLevel::Debug) << "No nations have merging requested (skipping)";
-		return;
-	}
-
-	rules = rules[0]->getLeaves();
-	for (auto rule: rules)
-	{
-		if ((rule->getKey() == "merge_daimyos") && (rule->getLeaf() == "yes"))
+		if (mergeBlock.getMerge() && !mergeBlock.getMaster().empty())
 		{
-			uniteJapan();
-			continue;
-		}
-
-		vector<shared_ptr<Object>> ruleItems = rule->getLeaves();
-
-		string masterTag;
-		vector<string> slaveTags;
-		bool enabled = false;
-		for (auto item: ruleItems)
-		{
-			if ((item->getKey() == "merge") && (item->getLeaf() == "yes"))
-			{
-				enabled = true;
-			}
-			else if (item->getKey() == "master")
-			{
-				masterTag = item->getLeaf();
-			}
-			else if (item->getKey() == "slave")
-			{
-				slaveTags.push_back(item->getLeaf());
-			}
-		}
-
-		auto master = getCountry(masterTag);
-		if (enabled && master)
-		{
-			for (auto slaveTag: slaveTags)
+			LOG(LogLevel::Info) << "- Merging nations for: " << mergeBlock.getMaster();
+			auto master = getCountry(mergeBlock.getMaster());
+			for (auto slaveTag : mergeBlock.getSlaves())
 			{
 				auto slave = getCountry(slaveTag);
-				if (slave)
-				{
-					master->eatCountry(slave, master);
-				}
+				master->eatCountry(slave, master);
 			}
 		}
 	}
@@ -690,6 +646,8 @@ void EU4::world::mergeNations()
 
 void EU4::world::uniteJapan()
 {
+	LOG(LogLevel::Info) << "Uniting Japan";
+
 	shared_ptr<EU4::Country> japan;
 
 	auto version20 = EU4::Version("1.20.0.0");
@@ -700,6 +658,7 @@ void EU4::world::uniteJapan()
 			if (country.second->getPossibleShogun())
 			{
 				string tag = country.first;
+				LOG(LogLevel::Info) << "- " << tag << " is the shogun.";
 				japan = getCountry(tag);
 			}
 		}
@@ -721,7 +680,7 @@ void EU4::world::uniteJapan()
 	{
 		if (country.second->getPossibleDaimyo())
 		{
-			japan->eatCountry(country.second, japan);
+			japan->eatCountry(country.second, japan);			
 		}
 	}
 }

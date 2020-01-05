@@ -5,7 +5,7 @@
 
 #include "V2Country.h"
 #include "V2Diplomacy.h"
-#include "V2Party.h"
+#include "Country/V2Party.h"
 #include "V2Province.h"
 #include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Provinces/EU4Province.h"

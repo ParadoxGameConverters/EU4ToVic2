@@ -12,7 +12,7 @@ namespace mappers
 class PartyNameMapper: commonItems::parser
 {
 	public:
-		PartyNameMapper(std::istream&);
+		PartyNameMapper();
 		std::map<std::string, mappers::PartyName> getMap() const { return partyToLanguageMap; }
 
 	private:

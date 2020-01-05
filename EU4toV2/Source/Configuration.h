@@ -115,8 +115,8 @@ class Configuration: commonItems::parser
 		date firstEU4Date;
 		date lastEU4Date;
 		date startEU4Date;
-	        int eu4Seed;
-	        std::string outputName;
+		int eu4Seed;
+		std::string outputName;
 		std::vector<std::string> activeDLCs;
 		std::vector<std::string> EU4Mods;
 };

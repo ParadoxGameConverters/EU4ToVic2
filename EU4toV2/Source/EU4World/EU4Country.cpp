@@ -387,7 +387,6 @@ void EU4::Country::dropMinorityCultures()
 		}
 		if ((culturalDevelopment / development) > 0.15)
 		{
-			LOG(LogLevel::Debug) << tag << ": Culture " << acceptedCulture << " at " << culturalDevelopment << " / " << development << " development, sufficient to adopt.";
 			updatedCultures.push_back(acceptedCulture);
 		}
 	}
@@ -399,9 +398,7 @@ void EU4::Country::determineCulturalUnion()
 	if ((development >= 1000) || (governmentRank > 2))
 	{
 		culturalUnion = EU4::cultureGroups::getCulturalGroup(primaryCulture);
-		LOG(LogLevel::Debug) << tag << ": Cultural union accepted for " << primaryCulture << " - Development: " << development << " government rank: " << governmentRank;
 	}
-
 }
 
 void EU4::Country::determineJapaneseRelations()
@@ -415,6 +412,10 @@ void EU4::Country::determineJapaneseRelations()
 	{
 		possibleShogun = true;
 	}
+
+	if (governmentReforms.count("shogunate")) possibleShogun = true;
+	if (governmentReforms.count("indep_daimyo")) possibleDaimyo = true;
+	if (governmentReforms.count("daimyo")) possibleDaimyo = true;
 }
 
 
@@ -770,6 +771,8 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 		// acquire target's provinces
 		for (unsigned int j = 0; j < target->provinces.size(); j++)
 		{
+			target->provinces[j]->setOwnerString(tag);
+			target->provinces[j]->setControllerString(tag);
 			addProvince(target->provinces[j]);
 		}
 
@@ -792,8 +795,6 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 	// coreless, landless countries will be cleaned up automatically
 	target->clearProvinces();
 	target->clearCores();
-
-	LOG(LogLevel::Debug) << "Merged " << target->tag << " into " << tag;
 }
 
 

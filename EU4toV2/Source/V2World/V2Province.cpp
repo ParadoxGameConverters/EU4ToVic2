@@ -1,33 +1,9 @@
-/*Copyright (c) 2019 The Paradox Game Converters Project
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
-
-
-
 #include "V2Province.h"
 #include "Factory/V2Factory.h"
 #include "CardinalToOrdinal.h"
 #include "Log.h"
 #include "Object.h"
 #include "OSCompatibilityLayer.h"
-#include "ParadoxParser8859_15.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
@@ -39,138 +15,91 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <memory>
 #include <sstream>
 #include <stdio.h>
-using namespace std;
+#include "ParserHelpers.h"
 
 
-
-V2Province::V2Province(string _filename)
+V2Province::V2Province(const std::string& _filename)
 {
-	srcProvince = NULL;
 	filename = _filename;
-	coastal = false;
-	num = 0;
-	name = "";
-	owner = "";
-	//controller = ""; // disabled because string defaults to "" anyway
-	cores.clear();
-	inHRE = false;
-	colonyLevel = 0;
-	colonial = 0;
-	wasColonised = false;
-	territorialCore = false;
-	landConnection = false;
-	sameContinent = false;
-	originallyInfidel = false;
-	oldPopulation = 0;
-	demographics.clear();
-	oldPops.clear();
-	pops.clear();
-	slaveProportion = 0.0;
-	rgoType = "";
-	terrain = "";
-	lifeRating = 0;
-	slaveState = false;
-
 	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
 	{
 		unitNameCount[i] = 0;
 	}
 
-	fortLevel = 0;
-	navalBaseLevel = 0;
-	railLevel = 0;
-	factories.clear();
-
-	resettable = false;
+	registerKeyword(std::regex("owner"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString ownerStr(theStream);
+			owner = ownerStr.getString();
+		});
+	registerKeyword(std::regex("controller"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString controllerStr(theStream);
+			controller = controllerStr.getString();
+		});
+	registerKeyword(std::regex("add_core"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString coreStr(theStream);
+			cores.push_back(coreStr.getString());
+		});
+	registerKeyword(std::regex("trade_goods"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString rgoTypeStr(theStream);
+			rgoType = rgoTypeStr.getString();
+		});
+	registerKeyword(std::regex("life_rating"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleInt lifeRatingInt(theStream);
+			lifeRating = lifeRatingInt.getInt();
+		});
+	registerKeyword(std::regex("terrain"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString terrainStr(theStream);
+			terrain = terrainStr.getString();
+		});
+	registerKeyword(std::regex("colonial"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleInt colonialInt(theStream);
+			colonial = colonialInt.getInt();
+		});
+	registerKeyword(std::regex("colony"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleInt colonyInt(theStream);
+			colonyLevel = colonyInt.getInt();
+		});
+	registerKeyword(std::regex("naval_base"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleInt navalBaseLevelInt(theStream);
+			navalBaseLevel = navalBaseLevelInt.getInt();
+		});
+	registerKeyword(std::regex("fort"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleInt fortLevelInt(theStream);
+			fortLevel = fortLevelInt.getInt();
+		});
+	registerKeyword(std::regex("railroad"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleInt railLevelInt(theStream);
+			railLevel = railLevelInt.getInt();
+		});
+	registerKeyword(std::regex("is_slave"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString ignoredStr(theStream);
+			slaveState = true;
+		});
+	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
 
 	int slash = filename.find_last_of("/");
 	int numDigits = filename.find_first_of("-") - slash - 2;
-	string temp = filename.substr(slash + 1, numDigits);
+	std::string temp = filename.substr(slash + 1, numDigits);
 	num = atoi(temp.c_str());
 
-	shared_ptr<Object> obj;
-	if (Utils::DoesFileExist(string("./blankMod/output/history/provinces") + _filename))
+	if (Utils::DoesFileExist("./blankMod/output/history/provinces" + filename))
 	{
-		obj = parser_8859_15::doParseFile((string("./blankMod/output/history/provinces") + _filename).c_str());
-		if (obj == NULL)
-		{
-			LOG(LogLevel::Error) << "Could not parse ./blankMod/output/history/provinces" << _filename;
-			exit(-1);
-		}
+		parseFile("./blankMod/output/history/provinces" + filename);
 	}
 	else
 	{
-		obj = parser_8859_15::doParseFile((theConfiguration.getVic2Path() + "/history/provinces" + _filename).c_str());
-		if (obj == NULL)
-		{
-			LOG(LogLevel::Error) << "Could not parse " << theConfiguration.getVic2Path() << "/history/provinces" << _filename;
-			exit(-1);
-		}
-	}
-	vector<shared_ptr<Object>> leaves = obj->getLeaves();
-	for (vector<shared_ptr<Object>>::iterator itr = leaves.begin(); itr != leaves.end(); itr++)
-	{
-		if ((*itr)->getKey() == "owner")
-		{
-			owner = (*itr)->getLeaf();
-		}
-		else if ((*itr)->getKey() == "controller")
-		{
-			controller = (*itr)->getLeaf().c_str();
-		}
-		else if ((*itr)->getKey() == "add_core")
-		{
-			cores.push_back((*itr)->getLeaf());
-		}
-		else if ((*itr)->getKey() == "trade_goods")
-		{
-			rgoType = (*itr)->getLeaf();
-		}
-		else if ((*itr)->getKey() == "life_rating")
-		{
-			lifeRating = atoi((*itr)->getLeaf().c_str());
-		}
-		else if ((*itr)->getKey() == "terrain")
-		{
-			terrain = (*itr)->getLeaf();
-		}
-		else if ((*itr)->getKey() == "colonial")
-		{
-			colonial = atoi((*itr)->getLeaf().c_str());
-		}
-		else if ((*itr)->getKey() == "colony")
-		{
-			colonyLevel = atoi((*itr)->getLeaf().c_str());
-		}
-		else if ((*itr)->getKey() == "naval_base")
-		{
-			navalBaseLevel = atoi((*itr)->getLeaf().c_str());
-		}
-		else if ((*itr)->getKey() == "fort")
-		{
-			fortLevel = atoi((*itr)->getLeaf().c_str());
-		}
-		else if ((*itr)->getKey() == "railroad")
-		{
-			railLevel = atoi((*itr)->getLeaf().c_str());
-		}
-		else if ((*itr)->getKey() == "is_slave")
-		{
-			if ((*itr)->getLeaf() == "yes")
-			{
-				slaveState = true;
-			}
-		}
-		else if ((*itr)->getKey() == "state_building")
-		{
-		}
-		else if ((*itr)->getKey() == "party_loyalty")
-		{
-		}
-		else
-		{
-			//log("Unknown key - %s\n", (*itr)->getKey().c_str());
-		}
+		parseFile(theConfiguration.getVic2Path() + "/history/provinces" + filename);
 	}
 }
 

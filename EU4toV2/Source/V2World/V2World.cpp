@@ -21,7 +21,7 @@
 #include "../EU4World/EU4Relations.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
-#include "../Helpers/RgoShuffle.h"
+#include "RGORandomization/BucketList.h"
 #include "../Helpers/TechValues.h"
 #include "../Mappers/AdjacencyMapper.h"
 #include "../Mappers/CountryMapping.h"
@@ -45,6 +45,7 @@
 #include "Vic2CultureUnionMapper.h"
 #include "Factory/V2FactoryFactory.h"
 #include "Leader/V2LeaderTraitMapper.h"
+#include "Country/V2Unreleasables.h"
 
 
 
@@ -83,36 +84,19 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 
 void V2World::shuffleRgos()
 {
-	string filename = "shuffle_config.txt";
-        if (!Utils::DoesFileExist(filename))
-        {
-                LOG(LogLevel::Warning) << "Could not find shuffle_config.txt, "
-                                          "skipping RGO randomisation.";
-                return;
-        }
-        std::ifstream theFile(filename);
-	if (!theFile.is_open())
-	{
-		LOG(LogLevel::Warning) << "Could not open " << filename
-		                       << " for shuffle configuration, "
-		                          "skipping RGO randomisation.";
-		return;
-	}
-
-	BucketList buckets(theFile);
-        theFile.close();
+	BucketList buckets;
 	if (buckets.empty())
 	{
-		LOG(LogLevel::Warning)
-		    << "No valid buckets defined, skipping RGO randomisation.";
+		LOG(LogLevel::Warning) << "No valid buckets defined, skipping RGO randomisation.";
 		return;
 	}
 
+	LOG(LogLevel::Info) << "Shuffling RGOs in provinces.";
 	for (auto& prov : provinces)
 	{
 		buckets.putInBucket(prov.second);
 	}
-        buckets.shuffle();
+	buckets.shuffle();
 }
 
 void V2World::importProvinces()
@@ -135,12 +119,12 @@ void V2World::importProvinces()
 		importProvinceLocalizations((theConfiguration.getVic2Path() + "/localisation/text.csv"));
 	}
 
-        importProvinceClimates();
-        importProvinceTerrains();
-        if (theConfiguration.getRandomiseRgos())
-        {
-                shuffleRgos();
-        }
+	importProvinceClimates();
+	importProvinceTerrains();
+	if (theConfiguration.getRandomiseRgos())
+	{
+		shuffleRgos();
+	}
 }
 
 std::set<std::string> V2World::discoverProvinceFilenames()
@@ -758,12 +742,14 @@ void V2World::convertPrestige()
 void V2World::addAllPotentialCountries()
 {
 	// ALL potential countries should be output to the file, otherwise some things don't get initialized right when loading Vic2
+	mappers::V2Unreleasables unreleasablesMapper;
+
 	for (auto potentialCountry : potentialCountries)
 	{
 		map<string, V2Country*>::iterator citr = countries.find(potentialCountry.first);
 		if (citr == countries.end())
 		{
-			potentialCountry.second->initFromHistory();
+			potentialCountry.second->initFromHistory(unreleasablesMapper);
 			countries.insert(make_pair(potentialCountry.first, potentialCountry.second));
 		}
 	}
@@ -1548,12 +1534,6 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 		}
 		if (!accepted && citr == lastReceptiveCountry)
 		{
-			Log logOutput(LogLevel::Debug);
-			logOutput << "No countries will accept any of the remaining factories:\n";
-			for (deque<V2Factory>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
-			{
-				logOutput << "\t  " << (*qitr).getTypeName() << '\n';
-			}
 			break;
 		}
 		if (++citr == factoryCounts.end())

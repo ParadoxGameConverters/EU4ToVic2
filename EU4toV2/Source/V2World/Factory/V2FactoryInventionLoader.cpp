@@ -33,5 +33,4 @@ void mappers::V2FactoryInventionLoader::ParseV2InventionFile(const std::string& 
 	V2FactoryInvention factoryInvention(incFile);
 	std::map<std::string, std::string> incInventions = factoryInvention.getFactoryInventionMap();
 	factoryInventionMap.insert(incInventions.begin(), incInventions.end());
-	LOG(LogLevel::Debug) << "Loaded inventions: " << factoryInventionMap.size();
 }

@@ -176,7 +176,7 @@
 	  <preference>
             <name>randomiseRgos</name>
             <friendlyName>Randomise RGOs?</friendlyName>
-            <description>If set, RGOs will be shuffled according to the configuration in shuffle_config.txt.</description>
+            <description>If set, RGOs will be shuffled within similar culture and terrain provinces.</description>
             <entryOptions>
               <entryOption>
                 <name>no</name>

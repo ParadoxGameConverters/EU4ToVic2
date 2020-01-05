@@ -144,9 +144,6 @@
     <ClCompile Include="Source\V2World\V2Localisation.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2Party.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2Pop.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -372,6 +369,24 @@
     <ClCompile Include="Source\V2World\Leader\V2LeaderTraitMapper.cpp">
       <Filter>Vic2World\Leader</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\RGORandomization\Bucket.cpp">
+      <Filter>Vic2World\RGORandomization</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\RGORandomization\BucketList.cpp">
+      <Filter>Vic2World\RGORandomization</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Country\V2Party.cpp">
+      <Filter>Vic2World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Country\V2Unreleasables.cpp">
+      <Filter>Vic2World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\NationMerger\MergeBlock.cpp">
+      <Filter>EU4World\NationMerger</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\NationMerger\NationMergeParser.cpp">
+      <Filter>EU4World\NationMerger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -514,9 +529,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Localisation.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Party.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Pop.h">
@@ -747,6 +759,24 @@
     <ClInclude Include="Source\V2World\Leader\V2LeaderTraitMapper.h">
       <Filter>Vic2World\Leader</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\RGORandomization\Bucket.h">
+      <Filter>Vic2World\RGORandomization</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\RGORandomization\BucketList.h">
+      <Filter>Vic2World\RGORandomization</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Country\V2Party.h">
+      <Filter>Vic2World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Country\V2Unreleasables.h">
+      <Filter>Vic2World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\NationMerger\MergeBlock.h">
+      <Filter>EU4World\NationMerger</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\NationMerger\NationMergeParser.h">
+      <Filter>EU4World\NationMerger</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -805,6 +835,15 @@
     </Filter>
     <Filter Include="EU4World\Leader">
       <UniqueIdentifier>{cad4ad12-a780-4d35-bce5-cfa1c1b23f89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\RGORandomization">
+      <UniqueIdentifier>{c2a72362-f9f1-46ba-9af1-ea88983f295c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Country">
+      <UniqueIdentifier>{8b2897e0-22e8-4284-a6d6-52b237ebab64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\NationMerger">
+      <UniqueIdentifier>{001fbc47-c628-4766-a50e-876ff0ba6b44}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

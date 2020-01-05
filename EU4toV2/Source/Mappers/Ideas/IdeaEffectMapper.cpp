@@ -1,40 +1,23 @@
-/*Copyright (c) 2019 The Paradox Game Converters Project
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
-
-
-
 #include "IdeaEffectMapper.h"
 #include "IdeaEffects.h"
 #include "Log.h"
 
 
-mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream, std::istream& theSecondStream)
+mappers::IdeaEffectMapper::IdeaEffectMapper()
 {
-	LOG(LogLevel::Info) << "getting idea effects";
-	registerProperties(theStream);
-	parseStream(theStream);
-	parseStream(theSecondStream);
+	LOG(LogLevel::Info) << "Parsing idea effects";
+	registerKeys();
+	parseFile("idea_effects.txt");
+	parseFile("reform_effects.txt");
 }
 
-void mappers::IdeaEffectMapper::registerProperties(std::istream& theStream)
+mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream)
+{
+	registerKeys();
+	parseStream(theStream);
+}
+
+void mappers::IdeaEffectMapper::registerKeys()
 {
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& idea, std::istream& theStream) {
 		IdeaEffects ideaEffects(theStream);
@@ -63,11 +46,9 @@ void mappers::IdeaEffectMapper::registerProperties(std::istream& theStream)
 		press_rightsIdeas[idea] = ideaEffects.getPress_rights();
 		trade_unionsIdeas[idea] = ideaEffects.getTrade_unions();
 		political_partiesIdeas[idea] = ideaEffects.getPolitical_parties();
-
-
-		});
-
+	});
 }
+
 
 std::string mappers::IdeaEffectMapper::getEnforceFromIdea(const std::string& ideaName, int ideaLevel) const
 {

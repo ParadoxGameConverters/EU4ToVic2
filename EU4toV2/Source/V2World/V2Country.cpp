@@ -4,7 +4,6 @@
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/PartyNameMapper.h"
 #include "CardinalToOrdinal.h"
-#include "ParadoxParser8859_15.h"
 #include "OSCompatibilityLayer.h"
 #include "../EU4World/CultureGroups.h"
 #include "../EU4World/World.h"
@@ -45,19 +44,65 @@ const int MONEYFACTOR = 30;	// ducat to pound conversion rate
 
 V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, bool _dynamicCountry)
 {
+	registerKeyword(std::regex("party"), [this](const std::string& unused, std::istream& theStream)
+		{
+			V2Party newParty(theStream);
+			parties.push_back(newParty);
+		});
+	registerKeyword(std::regex("primary_culture"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString primCulStr(theStream);
+			primaryCulture = primCulStr.getString();
+		});
+	registerKeyword(std::regex("religion"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString religionStr(theStream);
+			religion = religionStr.getString();
+		});
+	registerKeyword(std::regex("government"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString governmentStr(theStream);
+			government = governmentStr.getString();
+		});
+	registerKeyword(std::regex("civilized"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString ignored(theStream);
+			civilized = true;
+		});
+	registerKeyword(std::regex("is_releasable_vassal"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString releasableStr(theStream);
+			isReleasableVassal = (releasableStr.getString() == "yes");
+		});
+	registerKeyword(std::regex("nationalvalue"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleString nationalvalueStr(theStream);
+			nationalValue = nationalvalueStr.getString();
+		});
+	registerKeyword(std::regex("capital"), [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleInt capitalInt(theStream);
+			capital = capitalInt.getInt();
+		});
+	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+
 	string filename;
 	int start = countriesFileLine.find_first_of('/');
 	start++;
 	int size = countriesFileLine.find_last_of('\"') - start;
 	filename = countriesFileLine.substr(start, size);
 
-	shared_ptr<Object> countryData = parseCountryFile(filename);
-
-	vector<shared_ptr<Object>> partyData = countryData->getValue("party");
-	for (vector<shared_ptr<Object>>::iterator itr = partyData.begin(); itr != partyData.end(); ++itr)
+	if (Utils::DoesFileExist("./blankMod/output/common/countries/" + filename))
 	{
-		V2Party* newParty = new V2Party(*itr);
-		parties.push_back(newParty);
+		parseFile("./blankMod/output/common/countries/" + filename);
+	}
+	else if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
+	{
+		parseFile(theConfiguration.getVic2Path() + "/common/countries/" + filename);
+	}
+	else
+	{
+		LOG(LogLevel::Debug) << "Could not find file common/countries/" << filename << " - skipping";
 	}
 
 	theWorld			= _theWorld;
@@ -118,11 +163,11 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 	}
 
 	// set a default ruling party
-	for (vector<V2Party*>::iterator i = parties.begin(); i != parties.end(); i++)
+	for (const auto& party : parties)
 	{
-		if ((*i)->isActiveOn(date("1836.1.1")))
+		if (party.isActiveOn(date("1836.1.1")))
 		{
-			rulingParty = (*i)->name;
+			rulingParty = party.getName();
 			break;
 		}
 	}
@@ -140,9 +185,7 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 
 void V2Country::loadPartiesFromBlob()
 {
-	std::ifstream partyFile("PartyNames.txt");
-	mappers::PartyNameMapper partyNameMapper(partyFile);
-	partyFile.close();
+	mappers::PartyNameMapper partyNameMapper;
 
 	auto partyMap = partyNameMapper.getMap();
 
@@ -156,7 +199,8 @@ void V2Country::loadPartiesFromBlob()
 
 		std::string partyKey = tag + '_' + partyItr->first;
 
-		parties.push_back(new V2Party(partyKey, partyItr->first));
+		V2Party newParty(partyKey, partyItr->first);
+		parties.push_back(newParty);
 		localisation.SetPartyKey(i, partyKey);
 		
 		for (languageItr = languageMap.begin(); languageItr != languageMap.end(); ++languageItr)
@@ -166,33 +210,6 @@ void V2Country::loadPartiesFromBlob()
 		++i;
 	}
 
-}
-
-
-shared_ptr<Object> V2Country::parseCountryFile(const string& filename)
-{
-	string fileToParse;
-	if (Utils::DoesFileExist("./blankMod/output/common/countries/" + filename))
-	{
-		fileToParse = "./blankMod/output/common/countries/" + filename;
-	}
-	else if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
-	{
-		fileToParse = theConfiguration.getVic2Path() + "/common/countries/" + filename;
-	}
-	else
-	{
-		LOG(LogLevel::Debug) << "Could not find file common/countries/" << filename << " - skipping";
-		return nullptr;
-	}
-
-	shared_ptr<Object> countryData = parser_8859_15::doParseFile(fileToParse);
-	if (countryData == nullptr)
-	{
-		LOG(LogLevel::Warning) << "Could not parse file " << fileToParse;
-	}
-
-	return countryData;
 }
 
 
@@ -258,11 +275,11 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 	}
 
 	// set a default ruling party
-	for (vector<V2Party*>::iterator i = parties.begin(); i != parties.end(); i++)
+	for (const auto& party : parties)
 	{
-		if ((*i)->isActiveOn(date("1836.1.1")))
+		if (party.isActiveOn(date("1836.1.1")))
 		{
-			rulingParty = (*i)->name;
+			rulingParty = party.getName();
 			break;
 		}
 	}
@@ -412,21 +429,7 @@ void V2Country::output() const
 		}
 		commonCountryOutput << "graphical_culture = UsGC\n";	// default to US graphics
 		commonCountryOutput << "color = { " << nationalColors.getMapColor() << " }\n";
-		for (auto party : parties)
-		{
-			commonCountryOutput	<< '\n'
-										<< "party = {\n"
-										<< "    name = \"" << party->name << "\"\n"
-										<< "    start_date = " << party->start_date << '\n'
-										<< "    end_date = " << party->end_date << "\n\n"
-										<< "    ideology = " << party->ideology << "\n\n"
-										<< "    economic_policy = " << party->economic_policy << '\n'
-										<< "    trade_policy = " << party->trade_policy << '\n'
-										<< "    religious_policy = " << party->religious_policy << '\n'
-										<< "    citizenship_policy = " << party->citizenship_policy << '\n'
-										<< "    war_policy = " << party->war_policy << '\n'
-										<< "}\n";
-		}
+		for (const auto& party : parties) commonCountryOutput << party;
 	}
 }
 
@@ -672,7 +675,6 @@ void V2Country::determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry
 		std::string enforce = ideaEffectMapper.getEnforceFromIdea(reformStr, 7);
 		if (!enforce.empty())
 		{
-			LOG(LogLevel::Debug) << "Forcing government " << enforce << " on " << tag;
 			government = enforce;
 		}
 	}
@@ -725,7 +727,6 @@ void V2Country::resolvePolitics()
 		upperHouseReactionary = static_cast<int>(upperHouseReactionary / 3);
 		upperHouseLiberal = static_cast<int>(upperHouseLiberal * 3);
 		upperHouseConservative = 100 - (upperHouseReactionary + upperHouseLiberal);
-		LOG(LogLevel::Debug) << tag << " is revolutionary! ";
 	}
 
 	string idealogy;
@@ -755,11 +756,11 @@ void V2Country::resolvePolitics()
 		idealogy = "conservative";
 	}
 
-	for (vector<V2Party*>::iterator i = parties.begin(); i != parties.end(); i++)
+	for (const auto& party : parties)
 	{
-		if ((*i)->isActiveOn(date("1836.1.1")) && ((*i)->ideology == idealogy))
+		if (party.isActiveOn(date("1836.1.1")) && (party.getIdeology() == idealogy))
 		{
-			rulingParty = (*i)->name;
+			rulingParty = party.getName();
 			break;
 		}
 	}
@@ -877,17 +878,14 @@ void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
 	{
 		if (prov->hasGreatProject("suez_canal"))
 		{
-			LOG(LogLevel::Debug) << "Building Suez Canal in: " << prov->getName();
 			decisions.push_back("build_suez_canal");
 		}
 		if (prov->hasGreatProject("kiel_canal"))
 		{
-			LOG(LogLevel::Debug) << "Building Kiel Canal in: " << prov->getName();
 			decisions.push_back("build_kiel_canal");
 		}
 		if (prov->hasGreatProject("panama_canal"))
 		{
-			LOG(LogLevel::Debug) << "Building Panama Canal in: " << prov->getName();
 			decisions.push_back("build_panama_canal");
 		}
 	}
@@ -896,22 +894,11 @@ void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
 
 
 // used only for countries which are NOT converted (i.e. unions, dead countries, etc)
-void V2Country::initFromHistory()
+void V2Country::initFromHistory(const mappers::V2Unreleasables& unreleasablesMapper)
 {
 	// Ping unreleasable_tags for this country's TAG
-	ifstream unreleasableTags;
-	string inputBuffer;
-
-	unreleasableTags.open("./unreleasable_tags.txt");
-	while (getline(unreleasableTags, inputBuffer))
-	{
-		if (inputBuffer.rfind(tag, 0) == 0)
-		{
-			LOG(LogLevel::Debug) << "Found " << tag << " in unreleasables.";
-			isReleasableVassal = false;
-		}
-	}
-	unreleasableTags.close();
+	auto unreleasables = unreleasablesMapper.getUnreleasables();
+	if (unreleasables.count(tag)) isReleasableVassal = false;
 
 	string fullFilename;
 
@@ -938,68 +925,7 @@ void V2Country::initFromHistory()
 		filename					= tag + " - " + countryName;
 		return;
 	}
-
-	shared_ptr<Object> obj = parser_8859_15::doParseFile(fullFilename.c_str());
-	if (obj == nullptr)
-	{
-		LOG(LogLevel::Error) << "Could not parse file " << fullFilename;
-		exit(-1);
-	}
-
-	vector<shared_ptr<Object>> results = obj->getValue("primary_culture");
-	if (results.size() > 0)
-	{
-		primaryCulture = results[0]->getLeaf();
-	}
-
-	results = obj->getValue("culture");
-	for (vector<shared_ptr<Object>>::iterator itr = results.begin(); itr != results.end(); ++itr)
-	{
-		acceptedCultures.insert((*itr)->getLeaf());
-	}
-
-	results = obj->getValue("religion");
-	if (results.size() > 0)
-	{
-		religion = results[0]->getLeaf();
-	}
-
-	results = obj->getValue("government");
-	if (results.size() > 0)
-	{
-		government = results[0]->getLeaf();
-	}
-
-	results = obj->getValue("civilized");
-	if (results.size() > 0)
-	{
-		civilized = (results[0]->getLeaf() == "yes");
-	}
-	// don't bother if already false by override.
-	if (isReleasableVassal)
-	{
-		results = obj->getValue("is_releasable_vassal");
-		if (results.size() > 0)
-		{
-			isReleasableVassal = (results[0]->getLeaf() == "yes");
-		}
-	}
-
-	results = obj->getValue("nationalvalue");
-	if (results.size() > 0)
-	{
-		nationalValue = results[0]->getLeaf();
-	}
-	else
-	{
-		nationalValue = "nv_order";
-	}
-
-	results = obj->getValue("capital");
-	if (results.size() > 0)
-	{
-		capital = atoi(results[0]->getLeaf().c_str());
-	}
+	parseFile(fullFilename);
 }
 
 
@@ -1197,7 +1123,6 @@ void V2Country::convertArmies(
 		auto locationCandidates = provinceMapper.getVic2ProvinceNumbers(aitr->getLocation());
 		if (locationCandidates.size() == 0)
 		{
-			LOG(LogLevel::Debug) << "Army or Navy " << aitr->getName() << " assigned to unmapped province " << aitr->getLocation() << "; dissolving to pool";
 			int regimentCounts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0 };
 			army.getRegimentCounts(regimentCounts);
 			for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
@@ -1208,7 +1133,6 @@ void V2Country::convertArmies(
 		}
 		else if ((locationCandidates.size() == 1) && (*locationCandidates.begin() == 0))
 		{
-			LOG(LogLevel::Debug) << "Army or Navy " << aitr->getName() << " assigned to dropped province " << aitr->getLocation() << "; dissolving to pool";
 			int regimentCounts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0 };
 			army.getRegimentCounts(regimentCounts);
 			for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
@@ -1231,7 +1155,6 @@ void V2Country::convertArmies(
 				locationCandidates = getPortProvinces(locationCandidates, allProvinces);
 				if (locationCandidates.size() == 0)
 				{
-					LOG(LogLevel::Debug) << "Navy " << aitr->getName() << " assigned to EU4 province " << aitr->getLocation() << " which has no corresponding V2 port provinces; dissolving to pool";
 					int regimentCounts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0 };
 					army.getRegimentCounts(regimentCounts);
 					for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
@@ -1249,7 +1172,6 @@ void V2Country::convertArmies(
 			vector<int>::iterator white = std::find(port_whitelist.begin(), port_whitelist.end(), selectedLocation);
 			if (white == port_whitelist.end())
 			{
-				LOG(LogLevel::Warning) << "Assigning navy to non-whitelisted port province " << selectedLocation << " - if the save crashes, try blacklisting this province";
 			}
 		}
 		army.setLocation(selectedLocation);
@@ -1264,7 +1186,6 @@ void V2Country::convertArmies(
 			V2Army* army = getArmyForRemainder(static_cast<EU4::REGIMENTCATEGORY>(rc));
 			if (army == nullptr)
 			{
-				LOG(LogLevel::Debug) << "No suitable army or navy found for " << tag << "'s pooled regiments of " << EU4::RegimentCategoryTypes[static_cast<EU4::REGIMENTCATEGORY>(rc)];
 				break;
 			}
 			switch (addRegimentToArmy(*army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper))
@@ -1276,7 +1197,6 @@ void V2Country::convertArmies(
 				case addRegimentToArmyResult::retry:
 					break;
 				case addRegimentToArmyResult::doNotRetry:
-					LOG(LogLevel::Debug) << "Disqualifying army/navy " << army->getName() << " from receiving more " << EU4::RegimentCategoryTypes[static_cast<EU4::REGIMENTCATEGORY>(rc)] << " from the pool";
 					army->setArmyRemainders(static_cast<EU4::REGIMENTCATEGORY>(rc), -2000.0);
 					break;
 			}
@@ -1413,7 +1333,6 @@ bool V2Country::addFactory(const V2Factory& factory)
 		vector<string>::iterator itr = find(techs.begin(), techs.end(), requiredTech);
 		if (itr == techs.end())
 		{
-			LOG(LogLevel::Debug) << tag << " rejected " << factory.getTypeName() << " (missing required tech: " << requiredTech << ')';
 			return false;
 		}
 	}
@@ -1423,7 +1342,6 @@ bool V2Country::addFactory(const V2Factory& factory)
 	{
 		if (inventions.count(factory.getRequiredInvention()) != 0)
 		{
-			LOG(LogLevel::Debug) << tag << " rejected " << factory.getTypeName() << " (missing required invention: " << factory.getRequiredInvention() << ')';
 			return false;
 		}
 	}
@@ -1463,13 +1381,11 @@ bool V2Country::addFactory(const V2Factory& factory)
 
 	if (candidates.size() == 0)
 	{
-		LOG(LogLevel::Debug) << tag << " rejected " << factory.getTypeName() << " (no candidate states)";
 		return false;
 	}
 
 	V2State* target = candidates[0].second;
 	target->addFactory(factory);
-	LOG(LogLevel::Debug) << tag << " accepted " << factory.getTypeName() << " (" << candidates.size() << " candidate states)";
 	numFactories++;
 	return true;
 }
@@ -1983,19 +1899,16 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 	std::optional<int> eu4Home = army.getSourceArmy().getProbabilisticHomeProvince(rc);
 	if (!eu4Home)
 	{
-		LOG(LogLevel::Debug) << "Army/navy " << army.getName() << " has no valid home provinces for " << EU4::RegimentCategoryTypes[rc] << "; dissolving to pool";
 		return addRegimentToArmyResult::doNotRetry;
 	}
 	auto homeCandidates = provinceMapper.getVic2ProvinceNumbers(*eu4Home);
 	if (homeCandidates.size() == 0)
 	{
-		LOG(LogLevel::Debug) << EU4::RegimentCategoryTypes[rc] << " unit in army/navy " << army.getName() << " has unmapped home province " << *eu4Home << " - dissolving to pool";
 		army.getSourceArmy().blockHomeProvince(*eu4Home);
 		return addRegimentToArmyResult::retry;
 	}
 	if (*homeCandidates.begin() == 0)
 	{
-		LOG(LogLevel::Debug) << EU4::RegimentCategoryTypes[rc] << " unit in army/navy " << army.getName() << " has dropped home province " << *eu4Home << " - dissolving to pool";
 		army.getSourceArmy().blockHomeProvince(*eu4Home);
 		return addRegimentToArmyResult::retry;
 	}
@@ -2031,7 +1944,6 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 		sort(sortedHomeCandidates.begin(), sortedHomeCandidates.end(), ProvinceRegimentCapacityPredicate);
 		if (sortedHomeCandidates.size() == 0)
 		{
-			LOG(LogLevel::Debug) << "No valid home for a " << tag << " " << EU4::RegimentCategoryTypes[rc] << " regiment - dissolving regiment to pool";
 			// all provinces in a given province map have the same owner, so the source home was bad
 			army.getSourceArmy().blockHomeProvince(*eu4Home);
 			return addRegimentToArmyResult::retry;
@@ -2075,7 +1987,6 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 			}
 			if (homeProvince == nullptr)
 			{
-				LOG(LogLevel::Debug) << "V2 province " << sortedHomeCandidates[0]->getNum() << " is home for a " << tag << " " << EU4::RegimentCategoryTypes[rc] << " regiment, but belongs to " << sortedHomeCandidates[0]->getOwner() << " - dissolving regiment to pool";
 				// all provinces in a given province map have the same owner, so the source home was bad
 				army.getSourceArmy().blockHomeProvince(*eu4Home);
 				return addRegimentToArmyResult::retry;
