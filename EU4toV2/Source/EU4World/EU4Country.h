@@ -13,6 +13,7 @@
 #include "Country/EU4NationalSymbol.h"
 #include "ID.h"
 #include "Leader/EU4Leader.h"
+#include "Relations/EU4RelationDetails.h"
 
 
 namespace EU4
@@ -113,7 +114,7 @@ namespace EU4
 			bool getPossibleShogun() const { return possibleShogun; }
 			std::string getGovernment() const { return government; }
 			std::set<std::string> getReforms() const { return governmentReforms; }
-			std::map<std::string, EU4Relations*> getRelations() const { return relations; }
+			std::map<std::string, EU4RelationDetails> getRelations() const { return relations; }
 			std::vector<EU4Army> getArmies() const { return armies; }
 			bool isCustom() const { return customNation; }
 			bool isColony() const { return colony; }
@@ -192,7 +193,7 @@ namespace EU4
 			std::string government = "monarchy";
 			int governmentRank = 0;
 			int development = 0;
-			std::map<std::string, EU4Relations*> relations; // the relations with other nations
+			std::map<std::string, EU4RelationDetails> relations; // the relations with other nations
 			std::vector<EU4Army> armies; // both armies and navies
 			std::map<std::string, int> nationalIdeas; // the national ideas for this country
 			double legitimacy; // the legitimacy of this nation

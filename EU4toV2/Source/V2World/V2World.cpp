@@ -16,9 +16,8 @@
 #include "OSCompatibilityLayer.h"
 #include "../Configuration.h"
 #include "../EU4World/Continents.h"
-#include "../EU4World/EU4Diplomacy.h"
+#include "../EU4World/Diplomacy/EU4Diplomacy.h"
 #include "../EU4World/Leader/EU4Leader.h"
-#include "../EU4World/EU4Relations.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "RGORandomization/BucketList.h"
@@ -956,16 +955,16 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting diplomacy";
 
-	vector<EU4Agreement> agreements = sourceWorld.getDiplomaticAgreements();
-	for (vector<EU4Agreement>::iterator itr = agreements.begin(); itr != agreements.end(); ++itr)
+	std::vector<EU4::EU4Agreement> agreements = sourceWorld.getDiplomaticAgreements();
+	for (auto& agreement: agreements)
 	{
-		const std::string& EU4Tag1 = itr->country1;
+		const std::string& EU4Tag1 = agreement.getOriginTag();
 		const std::string& V2Tag1 = mappers::CountryMappings::getVic2Tag(EU4Tag1);
 		if (V2Tag1.empty())
 		{
 			continue;
 		}
-		const std::string& EU4Tag2 = itr->country2;
+		const std::string& EU4Tag2 = agreement.getTargetTag();
 		const std::string& V2Tag2 = mappers::CountryMappings::getVic2Tag(EU4Tag2);
 		if (V2Tag2.empty())
 		{
@@ -997,18 +996,18 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 			country2->second->addRelation(*r2);
 		}
 
-		if (itr->type == "is_colonial"|| itr->type == "colony")
+		if (agreement.getAgreementType() == "colonial")
 		{
 			country2->second->setColonyOverlord(country1->second);
 
 			if (country2->second->getSourceCountry()->getLibertyDesire() < theConfiguration.getLibertyThreshold())
 			{
 				country1->second->absorbVassal(country2->second);
-				for (vector<EU4Agreement>::iterator itr2 = agreements.begin(); itr2 != agreements.end(); ++itr2)
+				for (auto& agreement2: agreements)
 				{
-					if (itr2->country2 == country2->second->getSourceCountry()->getTag())
+					if (agreement2.getTargetTag() == country2->second->getSourceCountry()->getTag())
 					{
-						itr2->country2 = country1->second->getSourceCountry()->getTag();
+						agreement2.setTargetTag(country1->second->getSourceCountry()->getTag());
 					}
 				}
 			}
@@ -1017,7 +1016,7 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 				V2Agreement v2a;
 				v2a.country1 = V2Tag1;
 				v2a.country2 = V2Tag2;
-				v2a.start_date = itr->startDate;
+				v2a.start_date = agreement.getStartDate();
 				v2a.type = "vassal";
 				diplomacy.addAgreement(v2a);
 				r1->setLevel(5);
@@ -1025,7 +1024,7 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 			}
 		}
 
-		if ((itr->type == "royal_marriage") || (itr->type == "guarantee"))
+		if ((agreement.getAgreementType() == "royal_marriage") || (agreement.getAgreementType() == "guarantee"))
 		{
 			// influence level +1, but never exceed 4
 			if (r1->getLevel() < 4)
@@ -1033,7 +1032,7 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 				r1->setLevel(r1->getLevel() + 1);
 			}
 		}
-		if (itr->type == "royal_marriage")
+		if (agreement.getAgreementType() == "royal_marriage")
 		{
 			// royal marriage is bidirectional; influence level +1, but never exceed 4
 			if (r2->getLevel() < 4)
@@ -1041,29 +1040,29 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 				r2->setLevel(r2->getLevel() + 1);
 			}
 		}
-		if ((itr->type == "vassal") || (itr->type == "client_vassal") || (itr->type == "daimyo_vassal") || (itr->type == "protectorate") || (itr->type == "tributary_state"))
+		if ((agreement.getAgreementType() == "vassal") || (agreement.getAgreementType() == "client_vassal") || (agreement.getAgreementType() == "daimyo_vassal") || (agreement.getAgreementType() == "protectorate") || (agreement.getAgreementType() == "tributary_state"))
 		{
 			r1->setLevel(5);
 			country2->second->addPrestige(-country2->second->getPrestige());
 		}
 
-		if ((itr->type == "is_march") || (itr->type == "march") || (itr->type == "union") || (itr->type == "personal_union"))
+		if ((agreement.getAgreementType() == "is_march") || (agreement.getAgreementType() == "march") || (agreement.getAgreementType() == "union") || (agreement.getAgreementType() == "personal_union"))
 		{
 			// Yeah, we don't do marches or personal unions. PUs are a second relation beside existing vassal relation specifying when vassalage ends.
 			// We assume all rulers are CK2 immortals and vassalage does not end with a specific date.
-			itr->type = "vassal";
+			agreement.setAgreementType("vassal");
 			r1->setLevel(5);
 			country2->second->addPrestige(-country2->second->getPrestige());
 		}
 
-		if ((itr->type == "alliance") || (itr->type == "vassal") || (itr->type == "client_vassal") || (itr->type == "daimyo_vassal") || (itr->type == "guarantee"))
+		if ((agreement.getAgreementType() == "alliance") || (agreement.getAgreementType() == "vassal") || (agreement.getAgreementType() == "client_vassal") || (agreement.getAgreementType() == "daimyo_vassal") || (agreement.getAgreementType() == "guarantee"))
 		{
 			// copy agreement
 			V2Agreement v2a;
 			v2a.country1 = V2Tag1;
 			v2a.country2 = V2Tag2;
-			v2a.start_date = itr->startDate;
-			v2a.type = itr->type;
+			v2a.start_date = agreement.getStartDate();
+			v2a.type = agreement.getAgreementType();
 			diplomacy.addAgreement(v2a);
 		}
 	}

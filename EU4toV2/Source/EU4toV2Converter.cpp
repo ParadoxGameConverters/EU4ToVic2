@@ -8,9 +8,9 @@
 #include <fstream>
 
 
-void setOutputName(const string& EU4SaveFileName);
+void setOutputName(const std::string& EU4SaveFileName);
 void deleteExistingOutputFolder();
-void ConvertEU4ToVic2(const string& EU4SaveFileName)
+void ConvertEU4ToVic2(const std::string& EU4SaveFileName)
 {
 	ConfigurationFile configurationFile("configuration.txt");
 	setOutputName(EU4SaveFileName);
@@ -27,12 +27,12 @@ void ConvertEU4ToVic2(const string& EU4SaveFileName)
 }
 
 
-string trimPath(const string& fileName);
-string trimExtension(const string& fileName);
-string replaceCharacter(string fileName, char character);
-void setOutputName(const string& EU4SaveFileName)
+std::string trimPath(const std::string& fileName);
+std::string trimExtension(const std::string& fileName);
+std::string replaceCharacter(std::string fileName, char character);
+void setOutputName(const std::string& EU4SaveFileName)
 {
-	string outputName = trimPath(EU4SaveFileName);
+	std::string outputName = trimPath(EU4SaveFileName);
 	outputName = trimExtension(outputName);
 	outputName = replaceCharacter(outputName, '-');
 	outputName = replaceCharacter(outputName, ' ');
@@ -42,24 +42,24 @@ void setOutputName(const string& EU4SaveFileName)
 }
 
 
-string trimPath(const string& fileName)
+std::string trimPath(const std::string& fileName)
 {
 	const int lastSlash = fileName.find_last_of("\\");
 	return fileName.substr(lastSlash + 1, fileName.length());
 }
 
 
-string trimExtension(const string& fileName)
+std::string trimExtension(const std::string& fileName)
 {
 	const int length = fileName.find_last_of(".");
 	return fileName.substr(0, length);
 }
 
 
-string replaceCharacter(string fileName, char character)
+std::string replaceCharacter(std::string fileName, char character)
 {
 	int position = fileName.find_first_of(character);
-	while (position != string::npos)
+	while (position != std::string::npos)
 	{
 		fileName.replace(position, 1, "_");
 		position = fileName.find_first_of(character);
@@ -71,7 +71,7 @@ string replaceCharacter(string fileName, char character)
 
 void deleteExistingOutputFolder()
 {
-	string outputFolder = Utils::getCurrentDirectory() + "/output/" + theConfiguration.getOutputName();
+	std::string outputFolder = Utils::getCurrentDirectory() + "/output/" + theConfiguration.getOutputName();
 	if (Utils::doesFolderExist(outputFolder.c_str()))
 	{
 		if (!Utils::deleteFolder(outputFolder))

@@ -2,18 +2,19 @@
 #include "Country/EU4GovernmentSection.h"
 #include "../Configuration.h"
 #include "Log.h"
-#include "NewParserToOldParserConverters.h"
-#include "Object.h"
 #include "ParserHelpers.h"
 #include "CultureGroups.h"
-#include "EU4Relations.h"
+#include "Relations/EU4Relations.h"
 #include "EU4Version.h"
 #include "History/CountryHistory.h"
 #include "Provinces/EU4Province.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../V2World/V2Localisation.h"
 #include <algorithm>
-
+#include "Country/EU4Technology.h"
+#include "Country/EU4CountryFlags.h"
+#include "Country/EU4Modifier.h"
+#include "Country/EU4ActiveIdeas.h"
 
 EU4::Country::Country(
 	const std::string& countryTag,
@@ -203,52 +204,24 @@ EU4::Country::Country(
 	);
 	registerKeyword(std::regex("technology"), [this](const std::string& unused, std::istream& theStream)
 		{
-			auto topObj = commonItems::convert8859Object(unused, theStream);
-			auto techsObj = topObj->getLeaves();
-			auto techObj = techsObj[0]->getValue("adm_tech");
-			admTech = stof(techObj[0]->getLeaf());
-
-			techObj = techsObj[0]->getValue("dip_tech");
-			dipTech = stof(techObj[0]->getLeaf());
-
-			techObj = techsObj[0]->getValue("mil_tech");
-			milTech = stof(techObj[0]->getLeaf());
+			EU4::EU4Technology techBlock(theStream);
+			admTech = techBlock.getAdm();
+			dipTech = techBlock.getDip();
+			milTech = techBlock.getMil();
 		}
 	);
-	registerKeyword(std::regex("flags"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword(std::regex("flags|hidden_flags|variables"), [this](const std::string& unused, std::istream& theStream)
 		{
-			auto flagsObj = commonItems::convert8859Object(unused, theStream);
-			for (auto flagObject: flagsObj->getLeaves()[0]->getLeaves())
-			{
-				flags[flagObject->getKey()] = true;
-			}
-		}
-	);
-	registerKeyword(std::regex("hidden_flags"), [this](const std::string& unused, std::istream& theStream)
-		{
-			auto flagsObj = commonItems::convert8859Object(unused, theStream);
-			for (auto flagObject: flagsObj->getLeaves()[0]->getLeaves())
-			{
-				flags[flagObject->getKey()] = true;
-			}
+			EU4::EU4CountryFlags flagsBlock(theStream);
+			for (const auto& flag : flagsBlock.getFlags()) flags[flag] = true;
 		}
 	);
 	registerKeyword(std::regex("modifier"), [this](const std::string& unused, std::istream& theStream)
 		{
-			auto modifierObj = commonItems::convert8859Object(unused, theStream);
-			std::vector<shared_ptr<Object>> subModifierObj = modifierObj->getLeaves()[0]->getValue("modifier");
-			if (subModifierObj.size() > 0)
+			EU4::EU4Modifier newModifier(theStream);
+			if (newModifier.getModifier().size() > 0)
 			{
-				modifiers[subModifierObj[0]->getLeaf()] = true;
-			}
-		}
-	);
-	registerKeyword(std::regex("variables"), [this](const std::string& unused, std::istream& theStream)
-		{
-			auto variablesObj = commonItems::convert8859Object(unused, theStream);
-			for (auto variableObject: variablesObj->getLeaves()[0]->getLeaves())
-			{
-				flags[variableObject->getKey()] = true;
+				modifiers[newModifier.getModifier()] = true;
 			}
 		}
 	);
@@ -266,13 +239,8 @@ EU4::Country::Country(
 	});
 	registerKeyword(std::regex("active_relations"), [this](const std::string& unused, std::istream& theStream)
 		{
-			auto relationLeaves = commonItems::convert8859Object(unused, theStream);
-			for (auto relationLeaf: relationLeaves->getLeaves()[0]->getLeaves())
-			{
-				std::string key = relationLeaf->getKey();
-				EU4Relations* rel = new EU4Relations(relationLeaf);
-				relations.insert(make_pair(key, rel));
-			}
+			EU4::EU4Relations activeRelations(theStream);
+			relations = activeRelations.getRelations();
 		}
 	);
 	registerKeyword(std::regex("army"), [this](const std::string& unused, std::istream& theStream)
@@ -289,12 +257,8 @@ EU4::Country::Country(
 	);
 	registerKeyword(std::regex("active_idea_groups"), [this](const std::string& unused, std::istream& theStream)
 		{
-			auto topObject = commonItems::convert8859Object(unused, theStream);
-			auto activeIdeasObjs = topObject->getLeaves();
-			for (auto ideasObj: activeIdeasObjs[0]->getLeaves())
-			{
-				nationalIdeas.insert(make_pair(ideasObj->getKey(), stoi(ideasObj->getLeaf())));
-			}
+			EU4::EU4ActiveIdeas activeIdeas(theStream);
+			nationalIdeas = activeIdeas.getActiveIdeas();
 		}
 	);
 	registerKeyword(std::regex("legitimacy"), [this](const std::string& unused, std::istream& theStream)
@@ -547,7 +511,7 @@ void EU4::Country::determineLibertyDesire()
 		auto relationship = relations.find(overlord);
 		if (relationship != relations.end())
 		{
-			std::string attitude = relationship->second->getAttitude();
+			std::string attitude = relationship->second.getAttitude();
 			if (attitude == "attitude_rebellious")
 			{
 				libertyDesire = 95.0;

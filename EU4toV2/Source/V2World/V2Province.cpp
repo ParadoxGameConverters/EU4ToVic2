@@ -2,7 +2,6 @@
 #include "Factory/V2Factory.h"
 #include "CardinalToOrdinal.h"
 #include "Log.h"
-#include "Object.h"
 #include "OSCompatibilityLayer.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
@@ -550,16 +549,16 @@ V2Province::pop_points V2Province::getPopPoints_1(
 	}
 
 	pts.artisans += 400;
-	pts.artisans += productionBuilding * 125;
+	pts.artisans += static_cast<double>(productionBuilding) * 125;
 
 	pts.soldiers += 100;
-	pts.soldiers += armyBuilding * 45;
+	pts.soldiers += static_cast<double>(armyBuilding) * 45;
 	if ((oldCountryTag != "") && (oldCountry->hasNationalIdea("quantity_ideas") != -1))
 	{
 		pts.soldiers *= 2;
 	}
 
-	pts.officers += 2 * (armyBuilding + 2);
+	pts.officers += 2 * (static_cast<double>(armyBuilding) + 2);
 	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("quality_ideas") != -1))
 	{
 		pts.officers += (oldCountry->hasNationalIdea("quality_ideas") / 2);
@@ -576,7 +575,7 @@ V2Province::pop_points V2Province::getPopPoints_1(
 	}
 
 	pts.bureaucrats += 10;
-	pts.bureaucrats += govBuilding * 2;
+	pts.bureaucrats += static_cast<double>(govBuilding) * 2;
 	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("administrative_ideas") != -1))
 	{
 		pts.bureaucrats += oldCountry->hasNationalIdea("administrative_ideas");
@@ -586,7 +585,7 @@ V2Province::pop_points V2Province::getPopPoints_1(
 		pts.bureaucrats += oldCountry->hasNationalIdea("expansion_ideas");
 	}
 
-	pts.aristocrats += 7 * (tradeBuilding + 11);
+	pts.aristocrats += 7 * (static_cast<double>(tradeBuilding) + 11);
 	if (oldProvince->hasBuilding("farm_estate") ||
 		oldProvince->hasBuilding("plantations")
 		)
@@ -600,14 +599,14 @@ V2Province::pop_points V2Province::getPopPoints_1(
 
 	if (factories.size() > 0)
 	{
-		double capsPerFactory = 40 + _owner->getNumFactories() * 2;
-		double actualCapitalists = factories.size() * _owner->getNumFactories() * capsPerFactory * demographic.upperRatio;
+		double capsPerFactory = 40 + static_cast<double>(_owner->getNumFactories()) * 2;
+		double actualCapitalists = static_cast<double>(factories.size()) * static_cast<double>(_owner->getNumFactories()) * capsPerFactory * demographic.upperRatio;
 		pts.capitalists += (10000 * actualCapitalists) / (demographic.upperRatio * newPopulation);
 
-		double actualClerks = 181 * factories.size() * demographic.middleRatio;
+		double actualClerks = 181 * static_cast<double>(factories.size()) * demographic.middleRatio;
 		pts.clerks += (10000 * actualClerks) / (demographic.middleRatio * newPopulation);
 
-		double actualCraftsmen = 2639 * factories.size() * demographic.lowerRatio;
+		double actualCraftsmen = 2639 * static_cast<double>(factories.size()) * demographic.lowerRatio;
 		pts.craftsmen += (10000 * actualCraftsmen) / (demographic.lowerRatio * newPopulation);
 	}
 
@@ -697,16 +696,16 @@ V2Province::pop_points V2Province::getPopPoints_2(
 	}
 
 	pts.artisans += 400;
-	pts.artisans += productionBuilding * 500;
+	pts.artisans += static_cast<double>(productionBuilding) * 500;
 
 	pts.soldiers += 100;
-	pts.soldiers += (manpowerBuilding + armyBuilding) * 90;
+	pts.soldiers += (static_cast<double>(manpowerBuilding) + static_cast<double>(armyBuilding)) * 90;
 	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("quantity_ideas") != -1))
 	{
 		pts.soldiers *= 2;
 	}
 
-	pts.officers += 4 * (manpowerBuilding + armyBuilding + 2);
+	pts.officers += 4 * (static_cast<double>(manpowerBuilding) + static_cast<double>(armyBuilding) + 2.0);
 	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("quality_ideas") != -1))
 	{
 		pts.officers += (oldCountry->hasNationalIdea("quality_ideas") / 2);
@@ -727,7 +726,7 @@ V2Province::pop_points V2Province::getPopPoints_2(
 	}
 
 	pts.bureaucrats += 10;
-	pts.bureaucrats += (adminBuilding + taxBuilding) * 4;
+	pts.bureaucrats += (static_cast<double>(adminBuilding) + static_cast<double>(taxBuilding)) * 4;
 	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("administrative_ideas") != -1))
 	{
 		pts.bureaucrats += oldCountry->hasNationalIdea("administrative_ideas");
@@ -737,7 +736,7 @@ V2Province::pop_points V2Province::getPopPoints_2(
 		pts.bureaucrats += oldCountry->hasNationalIdea("expansion_ideas");
 	}
 
-	pts.aristocrats += 14 * (tradeBuilding + 6);
+	pts.aristocrats += 14 * (static_cast<double>(tradeBuilding) + 6.0);
 	if (oldProvince->hasBuilding("farm_estate") || oldProvince->hasBuilding("plantations"))
 	{
 		pts.aristocrats *= 2;
@@ -749,14 +748,14 @@ V2Province::pop_points V2Province::getPopPoints_2(
 
 	if (factories.size() > 0)
 	{
-		double capsPerFactory = 40 + _owner->getNumFactories() * 2;
-		double actualCapitalists = factories.size() * _owner->getNumFactories() * capsPerFactory * demographic.upperRatio;
+		double capsPerFactory = 40 + static_cast<double>(_owner->getNumFactories()) * 2;
+		double actualCapitalists = static_cast<double>(factories.size()) * static_cast<double>(_owner->getNumFactories()) * capsPerFactory * demographic.upperRatio;
 		pts.capitalists += (10000 * actualCapitalists) / (demographic.upperRatio * newPopulation);
 
-		double actualClerks = 181 * factories.size() * demographic.middleRatio;
+		double actualClerks = 181 * static_cast<double>(factories.size()) * demographic.middleRatio;
 		pts.clerks += (10000 * actualClerks) / (demographic.middleRatio * newPopulation);
 
-		double actualCraftsmen = 2639 * factories.size() * demographic.lowerRatio;
+		double actualCraftsmen = 2639 * static_cast<double>(factories.size()) * demographic.lowerRatio;
 		pts.craftsmen += (10000 * actualCraftsmen) / (demographic.lowerRatio * newPopulation);
 	}
 
@@ -1092,7 +1091,7 @@ bool V2Province::growSoldierPop(V2Pop* pop)
 				if ((*isrc)->getCulture() == pop->getCulture() && (*isrc)->getReligion() == pop->getReligion())
 				{
 					// don't let the farmer/labourer shrink beneath 10% of the province population
-					if ((*isrc)->getSize() - growBy > provincePop * 0.10)
+					if (static_cast<double>((*isrc)->getSize()) - growBy > provincePop * 0.10)
 					{
 						(*isrc)->changeSize(-growBy);
 						pop->changeSize(growBy);

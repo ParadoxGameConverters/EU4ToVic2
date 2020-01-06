@@ -1,7 +1,6 @@
 #include "FlagColorMapper.h"
 #include "ParserHelpers.h"
 
-
 mappers::FlagColorMapper::FlagColorMapper(std::istream& theStream)
 {
 	registerKeyword(std::regex("flag_color"), [this](const std::string& sourceGov, std::istream& theStream)
@@ -16,6 +15,6 @@ mappers::FlagColorMapper::FlagColorMapper(std::istream& theStream)
 
 std::optional<commonItems::Color> mappers::FlagColorMapper::getFlagColorByIndex(int index) const 
 { 
-	if ((flagColorMapping.empty()) || (index >= flagColorMapping.size())) return std::nullopt;
+	if ((flagColorMapping.empty()) || (static_cast<long>(index) >= static_cast<long>(flagColorMapping.size()))) return std::nullopt;
 	return flagColorMapping[index]; 
 }

@@ -8,7 +8,6 @@
 #include "../EU4World/CultureGroups.h"
 #include "../EU4World/World.h"
 #include "../EU4World/EU4Country.h"
-#include "../EU4World/EU4Relations.h"
 #include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../Mappers/AdjacencyMapper.h"
@@ -771,7 +770,7 @@ void V2Country::generateRelations(std::shared_ptr<EU4::Country> srcCountry)
 	auto srcRelations = srcCountry->getRelations();
 	for (auto srcRelation : srcRelations)
 	{
-		const std::string& V2Tag = mappers::CountryMappings::getVic2Tag(srcRelation.second->getCountry());
+		const std::string& V2Tag = mappers::CountryMappings::getVic2Tag(srcRelation.first);
 		if (!V2Tag.empty())
 		{
 			V2Relations newRelations(V2Tag, srcRelation.second);

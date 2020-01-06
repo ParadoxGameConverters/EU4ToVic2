@@ -1,30 +1,5 @@
-/*Copyright (c) 2019 The Paradox Game Converters Project
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
-
-
-
 #ifndef V2PROVINCE_H_
 #define V2PROVINCE_H_
-
-
 
 #include "../Configuration.h"
 #include "../EU4World/World.h"
@@ -32,23 +7,19 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "newParser.h"
 
-
-
 class V2Pop;
 class V2Factory;
 class V2Country;
 
-
-
 struct V2Demographic
 {
-	string								culture;
-	string								slaveCulture;
-	string								religion;
-	double								upperRatio;
-	double								middleRatio;
-	double								lowerRatio;
-	const EU4::Province*						oldProvince;
+	std::string culture;
+	std::string slaveCulture;
+	std::string religion;
+	double upperRatio;
+	double middleRatio;
+	double lowerRatio;
+	const EU4::Province* oldProvince;
 	std::string oldCountry;
 };
 
@@ -65,7 +36,7 @@ class V2Province : commonItems::parser
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
 		);
 		void determineColonial();
-		void addCore(string);
+		void addCore(std::string);
 		void addOldPop(const V2Pop*);
 		void addMinorityPop(V2Pop*);
 		void doCreatePops(
@@ -78,48 +49,48 @@ class V2Province : commonItems::parser
 		void addFactory(const V2Factory& factory);
 		void addPopDemographic(V2Demographic d);
 
-		int				getTotalPopulation() const;
-		vector<V2Pop*>	getPops(string type) const;
-		V2Pop*			getSoldierPopForArmy(bool force = false);
-		pair<int, int>	getAvailableSoldierCapacity() const;
-		string getRegimentName(EU4::REGIMENTCATEGORY rc);
-		bool				hasCulture(string culture, float percentOfPopulation) const;
-		vector<string> getCulturesOverThreshold(float percentOfPopulation) const;
+		int getTotalPopulation() const;
+		std::vector<V2Pop*>	getPops(std::string type) const;
+		V2Pop* getSoldierPopForArmy(bool force = false);
+		std::pair<int, int>	getAvailableSoldierCapacity() const;
+		std::string getRegimentName(EU4::REGIMENTCATEGORY rc);
+		bool hasCulture(std::string culture, float percentOfPopulation) const;
+		std::vector<std::string> getCulturesOverThreshold(float percentOfPopulation) const;
 
-		void				clearCores()									{ cores.clear(); }
-		void				setCoastal(bool _coastal)					{ coastal = _coastal; }
-		void				setClimate(string _climate)					{ climate = _climate; }
-		void				setName(string _name)						{ name = _name; }
-		void				setOwner(string _owner)						{ owner = _owner; }
-		void				setController(string _controller)						{ controller = _controller; }
-		void				setLandConnection(bool _connection)		{ landConnection = _connection; }
-		void				setRgoType(string _type)		{ rgoType = _type; }
-                void				setSameContinent(bool _same)				{ sameContinent = _same; }
-		void				setFortLevel(int level)						{ fortLevel = level; }
-		void				setNavalBaseLevel(int level)				{ navalBaseLevel = level; }
-		void				setRailLevel(int level)						{ railLevel = level; }
-		void				setResettable(const bool _resettable)	{ resettable = _resettable; }
-		void				setSlaveProportion(const double _pro)	{ slaveProportion = _pro; }
-		void				setTerrain(string _terrain)					{ terrain = _terrain; }
+		void clearCores() { cores.clear(); }
+		void setCoastal(bool _coastal) { coastal = _coastal; }
+		void setClimate(std::string _climate) { climate = _climate; }
+		void setName(std::string _name) { name = _name; }
+		void setOwner(std::string _owner) { owner = _owner; }
+		void setController(std::string _controller) { controller = _controller; }
+		void setLandConnection(bool _connection) { landConnection = _connection; }
+		void setRgoType(std::string _type) { rgoType = _type; }
+		void setSameContinent(bool _same) { sameContinent = _same; }
+		void setFortLevel(int level) { fortLevel = level; }
+		void setNavalBaseLevel(int level) { navalBaseLevel = level; }
+		void setRailLevel(int level) { railLevel = level; }
+		void setResettable(const bool _resettable) { resettable = _resettable; }
+		void setSlaveProportion(const double _pro) { slaveProportion = _pro; }
+		void setTerrain(std::string _terrain) { terrain = _terrain; }
 
-		const EU4::Province*	getSrcProvince()		const { return srcProvince; }
-		int						getOldPopulation()	const	{ return oldPopulation; }
-		bool						wasInfidelConquest()	const { return originallyInfidel; }
-		bool						wasColony()				const { return wasColonised; }
-		bool						isColonial()			const { return colonial != 0; }
-        bool				isTerritorialCore()			const { return territorialCore; }   
-		string getRgoType() const { return rgoType; }
-		string					getOwner()				const { return owner; }
-		string					getController()				const { return controller; }
-		int						getNum()					const { return num; }
-		string					getName()				const { return name; }
-		string					getClimate()				const { return climate; }
-		string					getTerrain()				const { return terrain; }
-		bool						isCoastal()				const { return coastal; }
-		bool						hasNavalBase()			const { return (navalBaseLevel > 0); }
-		int						getNavalBaseLevel()	const { return navalBaseLevel; }
-		bool						hasLandConnection()	const { return landConnection; }
-		vector<V2Pop*>			getPops()				const { return pops; }
+		const EU4::Province*	getSrcProvince() const { return srcProvince; }
+		int getOldPopulation() const	{ return oldPopulation; }
+		bool wasInfidelConquest() const { return originallyInfidel; }
+		bool wasColony() const { return wasColonised; }
+		bool isColonial() const { return colonial != 0; }
+		bool isTerritorialCore() const { return territorialCore; }   
+		std::string getRgoType() const { return rgoType; }
+		std::string getOwner() const { return owner; }
+		std::string getController() const { return controller; }
+		int getNum() const { return num; }
+		std::string getName() const { return name; }
+		std::string getClimate() const { return climate; }
+		std::string getTerrain() const { return terrain; }
+		bool isCoastal() const { return coastal; }
+		bool hasNavalBase() const { return (navalBaseLevel > 0); }
+		int getNavalBaseLevel() const { return navalBaseLevel; }
+		bool hasLandConnection() const { return landConnection; }
+		std::vector<V2Pop*> getPops() const { return pops; }
 
 	private:
 		void outputUnits(FILE*) const;
@@ -152,10 +123,10 @@ class V2Province : commonItems::parser
 		std::string filename;
 		bool coastal = false;
 		int num = 0;
-		string name;
-		string owner;
-		string controller;
-		vector<string> cores;
+		std::string name;
+		std::string owner;
+		std::string controller;
+		std::vector<std::string> cores;
 		bool inHRE = false;
 		int colonyLevel = 0;
 		int colonial = 0;
@@ -165,21 +136,21 @@ class V2Province : commonItems::parser
 		bool originallyInfidel = false;
 		bool territorialCore = false;
 		int oldPopulation = 0;
-		vector<V2Demographic> demographics;
-		vector<const V2Pop*> oldPops;
-		vector<V2Pop*> minorityPops;
-		vector<V2Pop*> pops;
+		std::vector<V2Demographic> demographics;
+		std::vector<const V2Pop*> oldPops;
+		std::vector<V2Pop*> minorityPops;
+		std::vector<V2Pop*> pops;
 		double slaveProportion = 0.0;
-		string rgoType;
-		string terrain;
-		string climate;
+		std::string rgoType;
+		std::string terrain;
+		std::string climate;
 		int lifeRating = 0;
 		bool slaveState = false;
 		int unitNameCount[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)];
 		int fortLevel = 0;
 		int navalBaseLevel = 0;
 		int railLevel = 0;
-		map<string, V2Factory> factories;
+		std::map<std::string, V2Factory> factories;
 
 		bool resettable = false;
 		double spentProvinceModifier = 0; //Store old popshaping modifier for NEU4-to-1V2 conversions;
