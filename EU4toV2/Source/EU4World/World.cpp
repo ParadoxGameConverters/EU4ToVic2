@@ -373,7 +373,7 @@ void EU4::world::readCommonCountries()
 	{
 		std::set<std::string> fileNames;
 		Utils::GetAllFilesInFolder(itr + "/common/country_tags/", fileNames);
-		for (std::set<std::string>::iterator fileItr = fileNames.begin(); fileItr != fileNames.end(); fileItr++)
+		for (std::set<std::string>::iterator fileItr = fileNames.begin(); fileItr != fileNames.end(); ++fileItr)
 		{
 			std::ifstream convertedCommonCountries(itr + "/common/country_tags/" + *fileItr);	// a stream of the data in the converted countries file
 			readCommonCountriesFile(convertedCommonCountries, itr);
