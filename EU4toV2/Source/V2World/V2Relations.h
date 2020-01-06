@@ -8,8 +8,8 @@
 class V2Relations
 {
 	public:
-		V2Relations(std::string& newTag);
-		V2Relations(std::string& newTag, EU4::EU4RelationDetails& oldRelations);
+		V2Relations(const std::string& newTag);
+		V2Relations(const std::string& newTag, EU4::EU4RelationDetails& oldRelations);
 
 		void		setLevel(int level);
 

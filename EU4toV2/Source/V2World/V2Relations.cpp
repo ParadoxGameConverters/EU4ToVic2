@@ -1,6 +1,6 @@
 #include "V2Relations.h"
 
-V2Relations::V2Relations(std::string& newTag)
+V2Relations::V2Relations(const std::string& newTag)
 {
 	tag					= newTag;
 	value					= 0;
@@ -11,7 +11,7 @@ V2Relations::V2Relations(std::string& newTag)
 }
 
 
-V2Relations::V2Relations(std::string& newTag, EU4::EU4RelationDetails& oldRelations)
+V2Relations::V2Relations(const std::string& newTag, EU4::EU4RelationDetails& oldRelations)
 {
 	tag					= newTag;
 	value					= oldRelations.getRelations();
