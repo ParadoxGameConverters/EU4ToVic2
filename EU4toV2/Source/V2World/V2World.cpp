@@ -70,9 +70,6 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 	initializeCultureMappers(sourceWorld);
 	initializeReligionMapper(sourceWorld);
 	convertCountries(sourceWorld, ideaEffectMapper);
-	
-	mappers::Continents continents;
-
 	convertProvinces(sourceWorld);
 	convertDiplomacy(sourceWorld);
 	setupColonies();
