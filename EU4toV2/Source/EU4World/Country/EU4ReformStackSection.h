@@ -2,6 +2,7 @@
 #define EU4_REFORM_STACK_SECTION_H
 
 #include <set>
+#include "newParser.h"
 
 namespace EU4
 {

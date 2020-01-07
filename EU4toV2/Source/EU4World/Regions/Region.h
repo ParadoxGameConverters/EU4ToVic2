@@ -11,7 +11,7 @@ namespace EU4
 	{
 		public:
 			Region(std::istream& theStream);
-			Region(std::set<int>& _provinces);
+			Region(const std::set<int>& _provinces);
 			bool containsProvince(unsigned int province) const;
 			void addProvinces(const EU4::Areas& areas);
 
