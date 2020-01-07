@@ -96,35 +96,35 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 		Buildings buildingTypes(buildingsFile);
 		buildingsFile.close();
 
-		Modifiers modifierTypes(theConfiguration.getEU4Path() + "/common/event_modifiers/00_event_modifiers.txt");
-		modifierTypes.addModifiersFile(theConfiguration.getEU4Path() + "/common/triggered_modifiers/00_triggered_modifiers.txt");
-		modifierTypes.addModifiersFile(theConfiguration.getEU4Path() + "/common/static_modifiers/00_static_modifiers.txt");
+		Modifiers modifierTypes(theConfiguration.getEU4Path() + std::string("/common/event_modifiers/00_event_modifiers.txt"));
+		modifierTypes.addModifiersFile(theConfiguration.getEU4Path() + std::string("/common/triggered_modifiers/00_triggered_modifiers.txt"));
+		modifierTypes.addModifiersFile(theConfiguration.getEU4Path() + std::string("/common/static_modifiers/00_static_modifiers.txt"));
 
 		for (auto modName : theConfiguration.getEU4Mods())
 		{
 			std::set<std::string> filenames;
-			if (Utils::doesFolderExist(modName + "/common/event_modifiers"))
+			if (Utils::doesFolderExist(modName + std::string("/common/event_modifiers")))
 			{
-				Utils::GetAllFilesInFolder(modName + "/common/event_modifiers/", filenames);
+				Utils::GetAllFilesInFolder(modName + std::string("/common/event_modifiers/"), filenames);
 				for (auto filename : filenames)
 				{
-					modifierTypes.addModifiersFile(modName + "/common/event_modifiers/" + filename);
+					modifierTypes.addModifiersFile(modName + std::string("/common/event_modifiers/") + filename);
 				}
 			}
-			if (Utils::doesFolderExist(modName + "/common/triggered_modifiers/"))
+			if (Utils::doesFolderExist(modName + std::string("/common/triggered_modifiers/")))
 			{
-				Utils::GetAllFilesInFolder(modName + "/common/triggered_modifiers/", filenames);
+				Utils::GetAllFilesInFolder(modName + std::string("/common/triggered_modifiers/"), filenames);
 				for (auto filename : filenames)
 				{
-					modifierTypes.addModifiersFile(modName + "/common/triggered_modifiers/" + filename);
+					modifierTypes.addModifiersFile(modName + std::string("/common/triggered_modifiers/") + filename);
 				}
 			}
-			if (Utils::doesFolderExist(modName + "/common/static_modifiers/"))
+			if (Utils::doesFolderExist(modName + std::string("/common/static_modifiers/")))
 			{
-				Utils::GetAllFilesInFolder(modName + "/common/static_modifiers/", filenames);
+				Utils::GetAllFilesInFolder(modName + std::string("/common/static_modifiers/"), filenames);
 				for (auto filename : filenames)
 				{
-					modifierTypes.addModifiersFile(modName + "/common/static_modifiers/" + filename);
+					modifierTypes.addModifiersFile(modName + std::string("/common/static_modifiers/") + filename);
 				}
 			}
 		}
