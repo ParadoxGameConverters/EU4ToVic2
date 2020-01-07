@@ -1,11 +1,10 @@
 #include "MinorityPopMapper.h"
 #include "MinorityPop.h"
-#include "Log.h"
 #include "../V2World/V2Pop.h"
 #include <fstream>
 #include "ParserHelpers.h"
 
-mappers::MinorityPopMapper::MinorityPopMapper(std::istream& theStream)
+mappers::MinorityPopMapper::MinorityPopMapper()
 {
 	registerKeyword(std::regex("minority"), [this](const std::string& unused, std::istream& theStream)
 	{
@@ -14,7 +13,7 @@ mappers::MinorityPopMapper::MinorityPopMapper(std::istream& theStream)
 	});
 	registerKeyword(std::regex("[a-z0-9\\_]+"), commonItems::ignoreItem);
 
-	parseStream(theStream);
+	parseFile("minorityPops.txt");
 }
 
 bool mappers::MinorityPopMapper::matchMinorityPop(V2Pop& pop) const

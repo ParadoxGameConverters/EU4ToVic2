@@ -2,13 +2,9 @@ version: dev.{build}
 skip_tags: true
 image: Visual Studio 2019 Preview
 configuration: Release
-environment:
-  BOOST_INCLUDE: C:\Libraries\boost_1_71_0
 build_script:
 - cmd: >-
     git submodule update --init --recursive
-
-    echo %BOOST_INCLUDE%
 
     msbuild EU4ToVic2.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 

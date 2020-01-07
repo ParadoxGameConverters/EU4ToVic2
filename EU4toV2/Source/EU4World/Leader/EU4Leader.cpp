@@ -3,7 +3,6 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-
 EU4::Leader::Leader(std::istream& theStream)
 {
 	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream)
@@ -61,19 +60,14 @@ EU4::Leader::Leader(std::istream& theStream)
 			activationDate = anActivationDate;
 		}
 	);
-	registerKeyword(std::regex("monarch_id"), [this](const std::string& idType, std::istream& theStream)
-		{
-			// Ignoring this
-			EU4::ID theID(theStream);
-		}
-	);
+	registerKeyword(std::regex("monarch_id"), commonItems::ignoreItem);
 	registerKeyword(std::regex("id"), [this](const std::string& idType, std::istream& theStream)
 		{
 			EU4::ID theID(theStream);
 			leaderID = theID.getIDNum();
 		}
 	);
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreString);
+	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 }

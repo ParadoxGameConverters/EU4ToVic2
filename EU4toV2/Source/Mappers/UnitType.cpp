@@ -2,7 +2,6 @@
 #include "ParserHelpers.h"
 #include "Log.h"
 
-
 mappers::UnitType::UnitType(std::istream& theStream)
 {
 	registerKeyword(std::regex("maneuver|offensive_morale|defensive_morale|offensive_fire|defensive_fire|offensive_shock|defensive_shock|hull_size"), 
@@ -18,7 +17,7 @@ mappers::UnitType::UnitType(std::istream& theStream)
 		{
 			unitType = EU4::RegimentCategoryNames[typeStr.getString()];
 		}
-		catch (std::exception& e)
+		catch (std::exception&)
 		{
 			std::runtime_error exception("Illegal unit type: " + typeStr.getString() + ", aborting!");
 			throw exception;

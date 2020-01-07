@@ -1,32 +1,8 @@
-/*Copyright (c) 2019 The Paradox Game Converters Project
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
-
-
-
 #include "World.h"
 #include "Buildings/Buildings.h"
 #include "Countries.h"
 #include "CultureGroups.h"
 #include "EU4Country.h"
-#include "EU4Diplomacy.h"
 #include "EU4Version.h"
 #include "EU4Localisation.h"
 #include "Modifiers/Modifiers.h"
@@ -39,8 +15,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "Log.h"
-#include "NewParserToOldParserConverters.h"
-#include "Object.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "NationMerger/NationMergeParser.h"
@@ -50,10 +24,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <exception>
 #include <fstream>
 #include <string>
+#include "Relations/EU4Empire.h"
 
 
 
-EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper):
+EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper):
 	theCountries()
 {
 	registerKeyword(std::regex("EU4txt"), [this](const std::string& unused, std::istream& theStream){});
@@ -85,38 +60,38 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 	);
 	registerKeyword(std::regex("dlc_enabled"), [this](const std::string& DLCText, std::istream& theStream)
 		{
-			auto versionsObject = commonItems::convert8859Object(DLCText, theStream);
-			loadActiveDLC(versionsObject);
-		}
-	);
+			commonItems::stringList theDLCs(theStream);
+			theConfiguration.setActiveDLCs(theDLCs.getStrings());
+		});
 	registerKeyword(std::regex("mod_enabled"), [this](const std::string& modText, std::istream& theStream) {
 		Mods theMods(theStream, theConfiguration);
 	});
 	registerKeyword(std::regex("revolution_target"), [this](const std::string& revolutionText, std::istream& theStream)
 		{
-			auto modsObject = commonItems::convert8859String(revolutionText, theStream);
-			loadRevolutionTargetString(modsObject);
-		}
-	);
-	registerKeyword(std::regex("empire"), [this](const std::string& empireText, std::istream& theStream)
-		{
-			auto empireObject = commonItems::convert8859Object(empireText, theStream);
-			loadEmpires(empireObject);
-		}
-	);
-	registerKeyword(std::regex("emperor"), [this](const std::string& emperorText, std::istream& theStream)
-		{
-			auto emperorObject = commonItems::convert8859Object(emperorText, theStream);
-			loadEmpires(emperorObject);
+			commonItems::singleString revTargetStr(theStream);
+			revolutionTargetString = revTargetStr.getString();
 		}
 	);
 	registerKeyword(std::regex("celestial_empire"), [this](const std::string& empireText, std::istream& theStream)
 		{
-			auto empireObject = commonItems::convert8859Object(empireText, theStream);
-			loadEmpires(empireObject);
+			EU4::EU4Empire empireBlock(theStream);
+			celestialEmperor = empireBlock.getEmperor();
+		}
+	);
+	registerKeyword(std::regex("empire"), [this](const std::string& empireText, std::istream& theStream)
+		{
+			EU4::EU4Empire empireBlock(theStream);
+			holyRomanEmperor = empireBlock.getEmperor();
+		}
+	);
+	registerKeyword(std::regex("emperor"), [this](const std::string& emperorText, std::istream& theStream)
+		{
+			commonItems::singleString emperorStr(theStream);
+			holyRomanEmperor = emperorStr.getString();
 		}
 	);
 	registerKeyword(std::regex("provinces"), [this](const std::string& provincesText, std::istream& theStream) {
+		LOG(LogLevel::Info) << "- Loading Provinces";
 		std::ifstream buildingsFile(theConfiguration.getEU4Path() + "/common/buildings/00_buildings.txt");
 		Buildings buildingTypes(buildingsFile);
 		buildingsFile.close();
@@ -142,38 +117,26 @@ EU4::world::world(const string& EU4SaveFileName, const mappers::IdeaEffectMapper
 		std::regex("countries"),
 		[this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
 		{
+			LOG(LogLevel::Info) << "- Loading Countries";
 			loadCountries(theStream, ideaEffectMapper);
 		}
 	);
-	registerKeyword(std::regex("diplomacy"), [this](const std::string& diplomacyText, std::istream& theStream) {
-		auto diplomacyObject = commonItems::convert8859Object(diplomacyText, theStream);
-		loadDiplomacy(diplomacyObject);
+	registerKeyword(std::regex("diplomacy"), [this](const std::string& unused, std::istream& theStream) {
+		LOG(LogLevel::Info) << "- Loading Diplomacy";
+		EU4::EU4Diplomacy theDiplomacy(theStream);
+		diplomacy = theDiplomacy.getAgreements();
+		LOG(LogLevel::Info) << "- Loaded " << diplomacy.size() << " agreements";
 	});
-	registerKeyword(std::regex("map_area_data"), [this](const std::string& mapAreaKey, std::istream& theStream) {
-		// Add the missing equals sign to help out the object parser.
-		auto mapAreaObject = commonItems::convert8859Object(mapAreaKey + "=", theStream);
-		auto vec = mapAreaObject->getValue(mapAreaKey);
-		if (0 < vec.size())
-		{
-			loadMapAreaData(vec[0]);
-		}
-		else
-		{
-			LOG(LogLevel::Warning) << "Could not find map area "
-			                          "data, state information "
-			                          "will not be loaded.";
-		}
+	registerKeyword(std::regex("map_area_data"), [this](const std::string& unused, std::istream& theStream) {
+		LOG(LogLevel::Info) << "- Loading Map Area Data";
+		commonItems::ignoreItem(unused, theStream);
+		LOG(LogLevel::Info) << " - Ignoring Map Area Data";
 	});
 	registerKeyword(std::regex("[A-Za-z0-9\\_]+"), commonItems::ignoreItem);
 
-	if (!diplomacy)
-	{
-		auto nullDiploObject = std::make_shared<Object>("");
-		diplomacy = std::make_unique<EU4Diplomacy>(nullDiploObject);
-	}
-
-	LOG(LogLevel::Info) << "* Importing EU4 save *";
+	LOG(LogLevel::Info) << "Verifying EU4 save.";
 	verifySave(EU4SaveFileName);
+	LOG(LogLevel::Info) << "* Importing EU4 save *";
 	parseFile(EU4SaveFileName);
 
 	LOG(LogLevel::Info) << "Building world:";
@@ -245,81 +208,14 @@ void EU4::world::verifySave(const std::string& EU4SaveFileName)
 	saveFile.close();
 }
 
-
-void EU4::world::loadActiveDLC(const shared_ptr<Object> EU4SaveObj)
+void EU4::world::loadCountries(std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
-	vector<shared_ptr<Object>> enabledDLCsObj = EU4SaveObj->getValue("dlc_enabled");
-	if (enabledDLCsObj.size() > 0)
-	{
-		vector<string>	activeDLCs;
-		vector<string> DLCsObj = enabledDLCsObj[0]->getTokens();
-		for (auto DLCsItr: DLCsObj)
-		{
-			activeDLCs.push_back(DLCsItr);
-		}
+	LOG(LogLevel::Info) << " - Processing Countries";
 
-		theConfiguration.setActiveDLCs(activeDLCs);
-	}
-}
-
-
-void EU4::world::loadEmpires(const shared_ptr<Object> EU4SaveObj)
-{
-	vector<shared_ptr<Object>> emperorObj = EU4SaveObj->getValue("emperor");
-	if (emperorObj.size() > 0)
-	{
-		holyRomanEmperor = emperorObj[0]->getLeaf();
-	}
-
-	vector<shared_ptr<Object>> empireObj = EU4SaveObj->getValue("empire");
-	if (empireObj.size() > 0)
-	{
-		loadHolyRomanEmperor(empireObj);
-	}
-	vector<shared_ptr<Object>> celestialEmpireObj = EU4SaveObj->getValue("celestial_empire");
-	if (celestialEmpireObj.size() > 0)
-	{
-		loadCelestialEmperor(celestialEmpireObj);
-	}
-}
-
-void EU4::world::loadHolyRomanEmperor(vector<shared_ptr<Object>> empireObj)
-{
-	vector<shared_ptr<Object>> emperorObj = empireObj[0]->getValue("emperor");
-	if (emperorObj.size() > 0)
-	{
-		holyRomanEmperor = emperorObj[0]->getLeaf();
-	}
-}
-
-
-void EU4::world::loadCelestialEmperor(vector<shared_ptr<Object>> celestialEmpireObj)
-{
-	vector<shared_ptr<Object>> emperorObj = celestialEmpireObj[0]->getValue("emperor");
-	if (emperorObj.size() > 0)
-	{
-		celestialEmperor = emperorObj[0]->getLeaf();
-	}
-}
-
-
-void EU4::world::loadCountries(istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper)
-{
 	countries processedCountries(*version, theStream, ideaEffectMapper);
 	auto theProcessedCountries = processedCountries.getTheCountries();
 	theCountries.swap(theProcessedCountries);
 }
-
-
-void EU4::world::loadRevolutionTargetString(const shared_ptr<Object> EU4SaveObj)
-{
-	vector<shared_ptr<Object>> revolutionTargetObj = EU4SaveObj->getValue("revolution_target");
-	if (revolutionTargetObj.size() > 0)
-	{
-		revolutionTargetString = revolutionTargetObj[0]->getLeaf();
-	}
-}
-
 
 void EU4::world::loadRevolutionTarget()
 {
@@ -365,46 +261,6 @@ void EU4::world::addProvinceInfoToCountries()
 			{
 				country->second->addCore(&province.second);
 			}
-		}
-	}
-}
-
-
-void EU4::world::loadDiplomacy(const shared_ptr<Object> EU4SaveObj)
-{
-	vector<shared_ptr<Object>> diploObj = EU4SaveObj->getValue("diplomacy");	// the object holding the world's diplomacy
-	if (diploObj.size() > 0)
-	{
-		diplomacy = std::make_unique<EU4Diplomacy>(diploObj[0]);
-	}
-	else
-	{
-		diplomacy = std::make_unique<EU4Diplomacy>();
-	}
-}
-
-void EU4::world::loadMapAreaData(const shared_ptr<Object> mapAreaObject)
-{
-	auto areas = mapAreaObject->getLeaves();
-	for (auto area : areas)
-	{
-		std::string areaName = area->getKey();
-		auto state = area->safeGetObject("state");
-		if (state == NULL)
-		{
-			continue;
-		}
-		auto countries = state->getValue("country_state");
-		for (auto country : countries)
-		{
-			auto tag = stringutils::remQuotes(country->safeGetString("country"));
-			auto eu4Country = getCountry(tag);
-			if (eu4Country == NULL)
-			{
-				continue;
-			}
-			auto prosperity = country->safeGetFloat("prosperity");
-			eu4Country->addState(areaName, prosperity);
 		}
 	}
 }
@@ -496,8 +352,8 @@ void EU4::world::checkAllEU4CulturesMapped(const mappers::CultureMapper& culture
 {
 	for (auto cultureItr: EU4::cultureGroups::getCultureToGroupMap())
 	{
-		string Vi2Culture;
-		string EU4Culture = cultureItr.first;
+		std::string Vi2Culture;
+		std::string EU4Culture = cultureItr.first;
 
 		std::optional<std::string> matched = cultureMapper.cultureMatch(*regions, EU4Culture, "");
 		if (!matched)
@@ -511,22 +367,22 @@ void EU4::world::checkAllEU4CulturesMapped(const mappers::CultureMapper& culture
 void EU4::world::readCommonCountries()
 {
 	LOG(LogLevel::Info) << "Reading EU4 common/countries";
-	ifstream commonCountries(theConfiguration.getEU4Path() + "/common/country_tags/00_countries.txt");	// the data in the countries file
+	std::ifstream commonCountries(theConfiguration.getEU4Path() + "/common/country_tags/00_countries.txt");	// the data in the countries file
 	readCommonCountriesFile(commonCountries, theConfiguration.getEU4Path());
 	for (auto itr: theConfiguration.getEU4Mods())
 	{
-		set<string> fileNames;
+		std::set<std::string> fileNames;
 		Utils::GetAllFilesInFolder(itr + "/common/country_tags/", fileNames);
-		for (set<string>::iterator fileItr = fileNames.begin(); fileItr != fileNames.end(); fileItr++)
+		for (std::set<std::string>::iterator fileItr = fileNames.begin(); fileItr != fileNames.end(); ++fileItr)
 		{
-			ifstream convertedCommonCountries(itr + "/common/country_tags/" + *fileItr);	// a stream of the data in the converted countries file
+			std::ifstream convertedCommonCountries(itr + "/common/country_tags/" + *fileItr);	// a stream of the data in the converted countries file
 			readCommonCountriesFile(convertedCommonCountries, itr);
 		}
 	}
 }
 
 
-void EU4::world::readCommonCountriesFile(istream& in, const std::string& rootPath)
+void EU4::world::readCommonCountriesFile(std::istream& in, const std::string& rootPath)
 {
 	// Add any info from common\countries
 	const int maxLineLength = 10000;	// the maximum line length
@@ -550,7 +406,7 @@ void EU4::world::readCommonCountriesFile(istream& in, const std::string& rootPat
 
 				// The country file name is all the text after the equals sign (possibly in quotes).
 				size_t commentPos	= countryLine.find('#', 3);
-				if (commentPos != string::npos)
+				if (commentPos != std::string::npos)
 				{
 					countryLine = countryLine.substr(0, commentPos);
 				}
@@ -567,7 +423,7 @@ void EU4::world::readCommonCountriesFile(istream& in, const std::string& rootPat
 				// Parse the country file.
 				std::string fullFilename = rootPath + "/common/" + fileName;
 				size_t lastPathSeparatorPos = fullFilename.find_last_of('/');
-				std::string localFileName = fullFilename.substr(lastPathSeparatorPos + 1, string::npos);
+				std::string localFileName = fullFilename.substr(lastPathSeparatorPos + 1, std::string::npos);
 				if (Utils::DoesFileExist(fullFilename))
 				{
 					country->readFromCommonCountry(localFileName, fullFilename);
@@ -648,7 +504,7 @@ void EU4::world::uniteJapan()
 {
 	LOG(LogLevel::Info) << "Uniting Japan";
 
-	shared_ptr<EU4::Country> japan;
+	std::shared_ptr<EU4::Country> japan;
 
 	auto version20 = EU4::Version("1.20.0.0");
 	if (*version >= version20)
@@ -657,7 +513,7 @@ void EU4::world::uniteJapan()
 		{
 			if (country.second->getPossibleShogun())
 			{
-				string tag = country.first;
+				std::string tag = country.first;
 				LOG(LogLevel::Info) << "- " << tag << " is the shogun.";
 				japan = getCountry(tag);
 			}

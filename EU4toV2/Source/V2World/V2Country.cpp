@@ -8,7 +8,6 @@
 #include "../EU4World/CultureGroups.h"
 #include "../EU4World/World.h"
 #include "../EU4World/EU4Country.h"
-#include "../EU4World/EU4Relations.h"
 #include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../Mappers/AdjacencyMapper.h"
@@ -771,7 +770,7 @@ void V2Country::generateRelations(std::shared_ptr<EU4::Country> srcCountry)
 	auto srcRelations = srcCountry->getRelations();
 	for (auto srcRelation : srcRelations)
 	{
-		const std::string& V2Tag = mappers::CountryMappings::getVic2Tag(srcRelation.second->getCountry());
+		const std::string& V2Tag = mappers::CountryMappings::getVic2Tag(srcRelation.first);
 		if (!V2Tag.empty())
 		{
 			V2Relations newRelations(V2Tag, srcRelation.second);
@@ -987,7 +986,6 @@ std::vector<int> V2Country::getPortProvinces(
 			}
 		}
 	}
-
 	return coastalProvinces;
 }
 
@@ -1172,6 +1170,7 @@ void V2Country::convertArmies(
 			vector<int>::iterator white = std::find(port_whitelist.begin(), port_whitelist.end(), selectedLocation);
 			if (white == port_whitelist.end())
 			{
+				LOG(LogLevel::Warning) << "Assigning navy to non-whitelisted port province " << selectedLocation << " - if the save crashes, try blacklisting this province";
 			}
 		}
 		army.setLocation(selectedLocation);

@@ -7,6 +7,7 @@
 #include "V2Diplomacy.h"
 #include "Country/V2Party.h"
 #include "V2Province.h"
+#include "Pops/PopTypes.h"
 #include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
@@ -33,33 +34,32 @@ class V2World
 	public:
 		V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper);
 		V2Province* getProvince(int provNum) const;
-		V2Country* getCountry(string tag) const;
+		V2Country* getCountry(std::string tag) const;
 		double getDuration() const { return difftime(std::time(0), begin); }
 
 	private:
 		void importProvinces();
-		set<string> discoverProvinceFilenames();
+		std::set<std::string> discoverProvinceFilenames();
 		void importProvinceClimates();
-		void importProvinceLocalizations(const string& file);
+		void importProvinceLocalizations(const std::string& file);
 		void importProvinceTerrains();
-		bool isAProvinceLocalization(const string& line);
+		bool isAProvinceLocalization(const std::string& line);
 
 		void importDefaultPops();
-		void importPopsFromFile(const string& filename, const mappers::MinorityPopMapper& minorityPopMapper);
-		void importPopsFromProvince(shared_ptr<Object> provinceObj, const mappers::MinorityPopMapper& minorityPopMapper);
+		void importPopsFromFile(const std::string& filename, const mappers::MinorityPopMapper& minorityPopMapper);
+		void importPopsFromProvince(const int provinceID, const mappers::PopTypes& popType, const mappers::MinorityPopMapper& minorityPopMapper);
 
 		void logPopsByCountry() const;
-		void logPopsFromFile(string filename, map<string, map<string, long int>>& popsByCountry) const;
-		void logPopsInProvince(shared_ptr<Object> provinceObj, map<string, map<string, long int>>& popsByCountry) const;
-		map<string, map<string, long int>>::iterator getCountryForPopLogging(string country, map<string, map<string, long int>>& popsByCountry) const;
-		void logPop(shared_ptr<Object> pop, map<string, map<string, long int>>::iterator countryPopItr) const;
-		void outputLog(const map<string, map<string, long int>>& popsByCountry) const;
+		void logPopsFromFile(std::string filename, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
+		void logPopsInProvince(const int& provinceID, const mappers::PopTypes& popType, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
+		std::map<std::string, std::map<std::string, long int>>::iterator getCountryForPopLogging(std::string country, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
+		void logPop(const std::string& popType, const mappers::Pop& pop, std::map<std::string, std::map<std::string, long int>>::iterator countryPopItr) const;
+		void outputLog(const std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
 
 		void findCoastalProvinces();
-		void determineIfProvinceIsCoastal(shared_ptr<Object> provinceObj);
 
 		void importPotentialCountries();
-		void importPotentialCountry(const string& line, bool dynamicCountry);
+		void importPotentialCountry(const std::string& line, bool dynamicCountry);
 
 		void initializeCultureMappers(const EU4::world& sourceWorld);
 		void initializeReligionMapper(const EU4::world& sourceWorld);
@@ -67,7 +67,7 @@ class V2World
 
 		void convertCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void initializeCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
-		V2Country* createOrLocateCountry(const string& V2Tag, const shared_ptr<EU4::Country> sourceCountry);
+		V2Country* createOrLocateCountry(const std::string& V2Tag, const std::shared_ptr<EU4::Country> sourceCountry);
 		void convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void convertPrestige();
 		void addAllPotentialCountries();
@@ -99,18 +99,18 @@ class V2World
 		void createModFile() const;
 		void outputPops() const;
 
-		map<int, V2Province*> provinces;
-		map<string, V2Country*> countries;
-		map<string, V2Country*> potentialCountries;
-		map<string, V2Country*> dynamicCountries;
+		std::map<int, V2Province*> provinces;
+		std::map<std::string, V2Country*> countries;
+		std::map<std::string, V2Country*> potentialCountries;
+		std::map<std::string, V2Country*> dynamicCountries;
 		V2Diplomacy diplomacy;
-		map<int, set<string>> colonies;
-		map<string, list<int>>	popRegions;
+		std::map<int, std::set<std::string>> colonies;
+		std::map<std::string, std::list<int>>	popRegions;
 		std::unique_ptr<Vic2::TechSchools> techSchools;
-		map<int, int> leaderIDMap; // <EU4, V2>
+		std::map<int, int> leaderIDMap; // <EU4, V2>
 		long totalWorldPopulation;
 		bool isRandomWorld;
-		int	techGroupAlgorithm;
+		int techGroupAlgorithm;
 
 		std::unique_ptr<mappers::CultureMapper> cultureMapper;
 		std::unique_ptr<mappers::CultureMapper> slaveCultureMapper;
