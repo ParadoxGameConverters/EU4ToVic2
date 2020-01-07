@@ -1,7 +1,6 @@
 #ifndef EU4_REFORM_STACK_SECTION_H
 #define EU4_REFORM_STACK_SECTION_H
 
-#include "EU4ReformsSection.h"
 #include <set>
 
 namespace EU4
