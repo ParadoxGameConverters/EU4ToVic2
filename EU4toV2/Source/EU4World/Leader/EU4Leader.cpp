@@ -60,12 +60,7 @@ EU4::Leader::Leader(std::istream& theStream)
 			activationDate = anActivationDate;
 		}
 	);
-	registerKeyword(std::regex("monarch_id"), [this](const std::string& idType, std::istream& theStream)
-		{
-			// Ignoring this
-			commonItems::ignoreItem(idType, theStream);
-		}
-	);
+	registerKeyword(std::regex("monarch_id"), commonItems::ignoreItem);
 	registerKeyword(std::regex("id"), [this](const std::string& idType, std::istream& theStream)
 		{
 			EU4::ID theID(theStream);

@@ -289,7 +289,7 @@
     <ClCompile Include="Source\V2World\Map\MapProvince.cpp" />
     <ClCompile Include="Source\V2World\Map\NavalBase.cpp" />
     <ClCompile Include="Source\V2World\Pops\Pop.cpp" />
-    <ClCompile Include="Source\V2World\Pops\PopType.cpp" />
+    <ClCompile Include="Source\V2World\Pops\PopTypes.cpp" />
     <ClCompile Include="Source\V2World\Pops\PopMapper.cpp" />
     <ClCompile Include="Source\V2World\RGORandomization\Bucket.cpp" />
     <ClCompile Include="Source\V2World\RGORandomization\BucketList.cpp" />
@@ -436,7 +436,7 @@
     <ClInclude Include="Source\V2World\Map\MapProvince.h" />
     <ClInclude Include="Source\V2World\Map\NavalBase.h" />
     <ClInclude Include="Source\V2World\Pops\Pop.h" />
-    <ClInclude Include="Source\V2World\Pops\PopType.h" />
+    <ClInclude Include="Source\V2World\Pops\PopTypes.h" />
     <ClInclude Include="Source\V2World\Pops\PopMapper.h" />
     <ClInclude Include="Source\V2World\RGORandomization\Bucket.h" />
     <ClInclude Include="Source\V2World\RGORandomization\BucketList.h" />

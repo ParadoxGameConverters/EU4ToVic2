@@ -378,9 +378,6 @@
     <ClCompile Include="Source\V2World\Pops\Pop.cpp">
       <Filter>Vic2World\Pops</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Pops\PopType.cpp">
-      <Filter>Vic2World\Pops</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Pops\PopMapper.cpp">
       <Filter>Vic2World\Pops</Filter>
     </ClCompile>
@@ -425,6 +422,9 @@
     </ClCompile>
     <ClCompile Include="..\common_items\Object.cpp">
       <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Pops\PopTypes.cpp">
+      <Filter>Vic2World\Pops</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -807,9 +807,6 @@
     <ClInclude Include="Source\V2World\Pops\Pop.h">
       <Filter>Vic2World\Pops</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\Pops\PopType.h">
-      <Filter>Vic2World\Pops</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Pops\PopMapper.h">
       <Filter>Vic2World\Pops</Filter>
     </ClInclude>
@@ -854,6 +851,9 @@
     </ClInclude>
     <ClInclude Include="..\common_items\Object.h">
       <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Pops\PopTypes.h">
+      <Filter>Vic2World\Pops</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

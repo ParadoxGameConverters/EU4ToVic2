@@ -12,7 +12,7 @@ namespace EU4
 	{
 	public:
 		EU4Relations(std::istream& theStream);
-		std::map<std::string, EU4RelationDetails> getRelations() const { return relations; }
+		const std::map<std::string, EU4RelationDetails>& getRelations() const { return relations; }
 
 	private:
 		std::map<std::string, EU4RelationDetails> relations;

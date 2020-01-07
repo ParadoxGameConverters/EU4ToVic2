@@ -2,7 +2,7 @@
 #define POP_MAPPER_H
 
 #include "newParser.h"
-#include "PopType.h"
+#include "PopTypes.h"
 #include <map>
 
 namespace mappers
@@ -12,10 +12,10 @@ namespace mappers
 	public:
 		PopMapper() = default;
 		PopMapper(std::istream& theStream);
-		std::map<int, PopType> getPopMap() const { return popMap; }
+		const std::map<int, PopTypes>& getProvincePopTypeMap() const { return provincePopTypeMap; }
 
 	private:
-		std::map<int, PopType> popMap;
+		std::map<int, PopTypes> provincePopTypeMap;
 	};
 }
 

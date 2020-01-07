@@ -7,7 +7,7 @@
 #include "V2Diplomacy.h"
 #include "Country/V2Party.h"
 #include "V2Province.h"
-#include "Pops/PopType.h"
+#include "Pops/PopTypes.h"
 #include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
@@ -47,11 +47,11 @@ class V2World
 
 		void importDefaultPops();
 		void importPopsFromFile(const std::string& filename, const mappers::MinorityPopMapper& minorityPopMapper);
-		void importPopsFromProvince(const int provinceID, const mappers::PopType& popType, const mappers::MinorityPopMapper& minorityPopMapper);
+		void importPopsFromProvince(const int provinceID, const mappers::PopTypes& popType, const mappers::MinorityPopMapper& minorityPopMapper);
 
 		void logPopsByCountry() const;
 		void logPopsFromFile(std::string filename, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
-		void logPopsInProvince(const int& provinceID, const mappers::PopType& popType, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
+		void logPopsInProvince(const int& provinceID, const mappers::PopTypes& popType, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
 		std::map<std::string, std::map<std::string, long int>>::iterator getCountryForPopLogging(std::string country, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
 		void logPop(const std::string& popType, const mappers::Pop& pop, std::map<std::string, std::map<std::string, long int>>::iterator countryPopItr) const;
 		void outputLog(const std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;

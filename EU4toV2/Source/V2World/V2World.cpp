@@ -154,7 +154,7 @@ void V2World::importProvinceClimates()
 		{
 			if (provID == 0) continue;
 			auto* prov = getProvince(provID);
-			if (prov == NULL) continue;
+			if (prov == nullptr) continue;
 			prov->setClimate(climate.first);
 
 		}
@@ -191,7 +191,7 @@ void V2World::importProvinceTerrains()
 	for (const auto& provData : terrainDataMapper.getTerrainMap())
 	{
 		auto* province = getProvince(provData.first);
-		if (province == NULL) continue;
+		if (province == nullptr) continue;
 		// Do not override terrain set in province files.
 		if (!province->getTerrain().empty()) continue;
 		province->setTerrain(provData.second);
@@ -234,7 +234,7 @@ void V2World::importPopsFromFile(const string& filename, const mappers::Minority
 	mappers::PopMapper popMapper(popFile);
 	popFile.close();
 
-	for (const auto& provinceItr : popMapper.getPopMap())
+	for (const auto& provinceItr : popMapper.getProvincePopTypeMap())
 	{
 		int provinceNum = provinceItr.first;
 		popProvinces.push_back(provinceNum);
@@ -246,7 +246,7 @@ void V2World::importPopsFromFile(const string& filename, const mappers::Minority
 }
 
 
-void V2World::importPopsFromProvince(const int provinceID, const mappers::PopType& popType, const mappers::MinorityPopMapper& minorityPopMapper)
+void V2World::importPopsFromProvince(const int provinceID, const mappers::PopTypes& popType, const mappers::MinorityPopMapper& minorityPopMapper)
 {
 	int provincePopulation = 0;
 	int provinceSlavePopulation = 0;
@@ -301,14 +301,14 @@ void V2World::logPopsFromFile(string filename, map<string, map<string, long int>
 	mappers::PopMapper popMapper(popFile);
 	popFile.close();
 
-	for (const auto& provinceItr : popMapper.getPopMap())
+	for (const auto& provinceItr : popMapper.getProvincePopTypeMap())
 	{
 		logPopsInProvince(provinceItr.first, provinceItr.second, popsByCountry);
 	}
 }
 
 
-void V2World::logPopsInProvince(const int& provinceID, const mappers::PopType& popType, map<string, map<string, long int>>& popsByCountry) const
+void V2World::logPopsInProvince(const int& provinceID, const mappers::PopTypes& popType, map<string, map<string, long int>>& popsByCountry) const
 {
 	auto province = provinces.find(provinceID);
 	if (province == provinces.end())

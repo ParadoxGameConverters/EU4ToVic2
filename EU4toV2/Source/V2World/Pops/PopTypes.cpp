@@ -1,7 +1,7 @@
-#include "PopType.h"
+#include "PopTypes.h"
 #include "ParserHelpers.h"
 
-mappers::PopType::PopType(std::istream& theStream)
+mappers::PopTypes::PopTypes(std::istream& theStream)
 {
 	registerKeyword(std::regex("[a-z]+"), [this](const std::string& popType, std::istream& theStream)
 		{
