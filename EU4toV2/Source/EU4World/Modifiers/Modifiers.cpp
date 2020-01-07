@@ -1,7 +1,7 @@
 #include "Modifiers.h"
 #include "ParserHelpers.h"
 
-EU4::Modifiers::Modifiers(std::string& filename)
+EU4::Modifiers::Modifiers(std::string filename)
 {
 	registerKeys();
 	parseFile(filename);
@@ -13,7 +13,7 @@ EU4::Modifiers::Modifiers(std::istream& theStream)
 	parseStream(theStream);
 }
 
-void EU4::Modifiers::addModifiersFile(std::string& filename)
+void EU4::Modifiers::addModifiersFile(std::string filename)
 {
 	registerKeys();
 	parseFile(filename);

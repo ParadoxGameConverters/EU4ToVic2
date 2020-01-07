@@ -17,7 +17,7 @@ EU4::Region::Region(std::istream& theStream)
 }
 
 
-EU4::Region::Region(std::set<int> _provinces):
+EU4::Region::Region(std::set<int>& _provinces):
 	provinces(_provinces)
 {}
 
