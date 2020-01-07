@@ -1,5 +1,5 @@
-#ifndef EU4EMPIRE_H_
-#define EU4EMPIRE_H_
+#ifndef EU4EMPIRE_H
+#define EU4EMPIRE_H
 
 #include "newParser.h"
 
@@ -16,4 +16,4 @@ namespace EU4
 	};
 }
 
-#endif // EU4EMPIRE_H_
+#endif // EU4EMPIRE_H

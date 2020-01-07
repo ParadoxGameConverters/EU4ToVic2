@@ -33,7 +33,7 @@ EU4::EU4Agreement::EU4Agreement(std::istream& theStream)
 			targetTag = secondStr.getString();
 		}
 	);
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 }

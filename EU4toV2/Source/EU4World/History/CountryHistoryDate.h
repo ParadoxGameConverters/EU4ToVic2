@@ -10,7 +10,7 @@ namespace EU4
 	{
 		public:
 			CountryHistoryDate(std::istream& theStream);
-			std::vector<EU4::Leader> getLeaders() const { return leaders; }
+			const std::vector<EU4::Leader>& getLeaders() const { return leaders; }
 
 		private:
 			std::vector<EU4::Leader> leaders;

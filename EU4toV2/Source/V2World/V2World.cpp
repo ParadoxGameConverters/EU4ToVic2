@@ -48,6 +48,7 @@
 #include "Country/V2Unreleasables.h"
 #include "Pops/PopMapper.h"
 #include "Map/MapProvince.h"
+#include "../EU4World/ColonialRegions/ColonialRegions.h"
 
 
 
@@ -63,6 +64,7 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 
 	initializeProvinceMapper();
 	sourceWorld.checkAllProvincesMapped(*provinceMapper);
+
 	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries, *provinceMapper);
 
 	LOG(LogLevel::Info) << "Converting world";
@@ -1650,7 +1652,7 @@ void V2World::addUnions()
 
 	for (map<int, V2Province*>::iterator provItr = provinces.begin(); provItr != provinces.end(); provItr++)
 	{
-		if (!provItr->second->wasInfidelConquest() && !provItr->second->wasColony())
+		if (!provItr->second->wasColony())
 		{
 			auto cultures = provItr->second->getCulturesOverThreshold(0.5);
 			for (auto culture : cultures)

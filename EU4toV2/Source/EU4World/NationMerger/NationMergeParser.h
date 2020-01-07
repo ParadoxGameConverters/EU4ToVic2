@@ -1,10 +1,8 @@
-#ifndef EU4_NATION_MERGE_PARSER_H_
-#define EU4_NATION_MERGE_PARSER_H_
+#ifndef EU4_NATION_MERGE_PARSER_H
+#define EU4_NATION_MERGE_PARSER_H
 
 #include "newParser.h"
 #include "MergeBlock.h"
-#include <vector>
-
 
 namespace EU4
 {
@@ -12,7 +10,7 @@ namespace EU4
 	{
 	public:
 		NationMergeParser();
-		std::vector<EU4::MergeBlock> getMergeBlocks() const { return mergeBlocks; }
+		const std::vector<EU4::MergeBlock>& getMergeBlocks() const { return mergeBlocks; }
 		bool getMergeDaimyos() const { return mergeDaimyos; }
 
 	private:
@@ -21,4 +19,4 @@ namespace EU4
 	};
 }
 
-#endif // EU4_NATION_MERGE_PARSER_H_
+#endif // EU4_NATION_MERGE_PARSER_H

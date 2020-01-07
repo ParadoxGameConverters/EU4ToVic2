@@ -13,7 +13,7 @@ EU4::NationMergeParser::NationMergeParser()
 			MergeBlock newBlock(theStream);
 			mergeBlocks.push_back(newBlock);
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9\\_:]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseFile("merge_nations.txt");
 }

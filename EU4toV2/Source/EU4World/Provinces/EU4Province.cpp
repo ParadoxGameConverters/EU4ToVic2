@@ -1,25 +1,3 @@
-/*Copyright(c) 2019 The Paradox Game Converters Project
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files(the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and / or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions :
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE. */
-
-
-
 #include "EU4Province.h"
 #include "ProvinceModifier.h"
 #include "../EU4Country.h"
@@ -33,11 +11,7 @@ THE SOFTWARE. */
 #include <sstream>
 #include <cmath>
 
-
-
 const double BUILDING_COST_TO_WEIGHT_RATIO = 0.02;
-
-
 
 EU4::Province::Province(
 	const std::string& numString,
@@ -45,93 +19,107 @@ EU4::Province::Province(
 	const Buildings& buildingTypes,
 	const Modifiers& modifierTypes
 ) {
-	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleString nameString(theStream);
-		name = nameString.getString();
-	});
-	registerKeyword(std::regex("base_tax"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble baseTaxDouble(theStream);
-		baseTax = baseTaxDouble.getDouble();
-	});
-	registerKeyword(std::regex("base_production"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble baseProductionDouble(theStream);
-		baseProduction = baseProductionDouble.getDouble();
-	});
-	registerKeyword(std::regex("base_manpower"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble manpowerDouble(theStream);
-		manpower = manpowerDouble.getDouble();
-	});
-	registerKeyword(std::regex("manpower"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble manpowerDouble(theStream);
-		manpower = manpowerDouble.getDouble();
-	});
-	registerKeyword(std::regex("owner"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleString ownerStringString(theStream);
-		ownerString = ownerStringString.getString();
-	});
-	registerKeyword(std::regex("controller"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleString controllerStringString(theStream);
-		controllerString = controllerStringString.getString();
-	});
-	registerKeyword(std::regex("cores"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::stringList coresStrings(theStream);
-		for (auto coreString : coresStrings.getStrings())
+	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream) 
 		{
-			cores.insert(coreString);
-		}
-	});
-	registerKeyword(std::regex("core"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleString coresString(theStream);
-		cores.insert(coresString.getString());
-	});
-    registerKeyword(std::regex("territorial_core"),[this](const std::string& unused, std::istream& theStream) {
-        commonItems::ignoreItem(unused, theStream);
-        territorialCore = true;
-    });
-	registerKeyword(std::regex("hre"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleString hreString(theStream);
-		if (hreString.getString() == "yes")
+			commonItems::singleString nameString(theStream);
+			name = nameString.getString();
+		});
+	registerKeyword(std::regex("base_tax"), [this](const std::string& unused, std::istream& theStream) 
 		{
+			commonItems::singleDouble baseTaxDouble(theStream);
+			baseTax = baseTaxDouble.getDouble();
+		});
+	registerKeyword(std::regex("base_production"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			commonItems::singleDouble baseProductionDouble(theStream);
+			baseProduction = baseProductionDouble.getDouble();
+		});
+	registerKeyword(std::regex("base_manpower"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			commonItems::singleDouble manpowerDouble(theStream);
+			manpower = manpowerDouble.getDouble();
+		});
+	registerKeyword(std::regex("manpower"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			commonItems::singleDouble manpowerDouble(theStream);
+			manpower = manpowerDouble.getDouble();
+		});
+	registerKeyword(std::regex("owner"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			commonItems::singleString ownerStringString(theStream);
+			ownerString = ownerStringString.getString();
+		});
+	registerKeyword(std::regex("controller"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			commonItems::singleString controllerStringString(theStream);
+			controllerString = controllerStringString.getString();
+		});
+	registerKeyword(std::regex("cores"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			commonItems::stringList coresStrings(theStream);
+			for (auto coreString : coresStrings.getStrings()) cores.insert(coreString);
+		});
+	registerKeyword(std::regex("core"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			commonItems::singleString coresString(theStream);
+			cores.insert(coresString.getString());
+		});
+    registerKeyword(std::regex("territorial_core"),[this](const std::string& unused, std::istream& theStream) 
+		 {
+			commonItems::ignoreItem(unused, theStream);
+			territorialCore = true;
+		});
+	registerKeyword(std::regex("hre"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			commonItems::ignoreItem(unused, theStream);
 			inHRE = true;
-		}
-	});
-	registerKeyword(std::regex("is_city"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleString cityString(theStream);
-		if (cityString.getString() == "yes")
+		});
+	registerKeyword(std::regex("is_city"), [this](const std::string& unused, std::istream& theStream) 
 		{
+			commonItems::ignoreItem(unused, theStream);
 			city = true;
-		}
+		});
+	registerKeyword(std::regex("colonysize"), [this](const std::string & unused, std::istream & theStream) 
+		{
+			commonItems::ignoreItem(unused, theStream);
+			colony = true;
 	});
-	registerKeyword(std::regex("colonysize"), [this](const std::string & unused, std::istream & theStream) {
-		commonItems::ignoreItem(unused, theStream);
-		colony = true;
-	});
-	registerKeyword(std::regex("original_coloniser"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::ignoreItem(unused, theStream);
-		hadOriginalColoniser = true;
-	});
-	registerKeyword(std::regex("history"), [this](const std::string& unused, std::istream& theStream) {
-		provinceHistory = std::make_unique<ProvinceHistory>(theStream);
-	});
-	registerKeyword(std::regex("buildings"), [this](const std::string& unused, std::istream& theStream) {
-		buildings = std::make_unique<ProvinceBuildings>(theStream);
-	});
-	registerKeyword(std::regex("great_projects"), [this](const std::string& unused, std::istream& theStream) {
-		greatProjects = std::make_unique<GreatProjects>(theStream);
-	});
-	registerKeyword(std::regex("modifier"), [this](const std::string& unused, std::istream& theStream) {
-		ProvinceModifier modifier(theStream);
-		modifiers.insert(modifier.getModifier());
-	});
-	registerKeyword(std::regex("trade_goods"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleString tradeGoodsString(theStream);
-		tradeGoods = tradeGoodsString.getString();
-	});
-	registerKeyword(std::regex("center_of_trade"), [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleInt cotLevelInt(theStream);
-		centerOfTradeLevel = cotLevelInt.getInt();
-	});
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("original_coloniser"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			commonItems::ignoreItem(unused, theStream);
+			hadOriginalColoniser = true;
+		});
+	registerKeyword(std::regex("history"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			ProvinceHistory theHistory(theStream);
+			provinceHistory = theHistory;
+		});
+	registerKeyword(std::regex("buildings"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			ProvinceBuildings theBuildings(theStream);
+			buildings = theBuildings;
+		});
+	registerKeyword(std::regex("great_projects"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			GreatProjects theProjects(theStream);
+			greatProjects = theProjects;
+		});
+	registerKeyword(std::regex("modifier"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			ProvinceModifier modifier(theStream);
+			modifiers.insert(modifier.getModifier());
+		});
+	registerKeyword(std::regex("trade_goods"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			commonItems::singleString tradeGoodsString(theStream);
+			tradeGoods = tradeGoodsString.getString();
+		});
+	registerKeyword(std::regex("center_of_trade"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			commonItems::singleInt cotLevelInt(theStream);
+			centerOfTradeLevel = cotLevelInt.getInt();
+		});
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 
@@ -142,66 +130,31 @@ EU4::Province::Province(
 	{
 		baseProduction = baseTax;
 	}
-	if (!provinceHistory)
-	{
-		std::stringstream input;
-		provinceHistory = std::make_unique<ProvinceHistory>(input);
-	}
 
 	determineProvinceWeight(buildingTypes, modifierTypes);
 }
 
-
-bool EU4::Province::wasInfidelConquest(const std::string& ownerReligion, const EU4::Religions& allReligions) const
-{
-	return provinceHistory->wasInfidelConquest(allReligions, ownerReligion, num);
-}
-
-
 bool EU4::Province::hasBuilding(const std::string& building) const
 {
-	if (buildings && buildings->hasBuilding(building))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	if (buildings.hasBuilding(building)) return true;
+	return false;
 }
 
 bool EU4::Province::hasGreatProject(const std::string& greatProject) const
 {
-	if (greatProjects && greatProjects->hasGreatProject(greatProject))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	if (greatProjects.hasGreatProject(greatProject)) return true;
+	return false;
 }
-
 
 double EU4::Province::getCulturePercent(const std::string& culture) const
 {
 	double culturePercent = 0.0f;
-
-	for (auto pop: provinceHistory->getPopRatios())
+	for (auto pop: provinceHistory.getPopRatios())
 	{
-		if (pop.getCulture() == culture)
-		{
-			culturePercent += pop.getLowerRatio();
-		}
+		if (pop.getCulture() == culture) culturePercent += pop.getLowerRatio();
 	}
 
 	return culturePercent;
-}
-
-void EU4::Province::makeState(double p)
-{
-	stated = true;
-	prosperity = p;
 }
 
 void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes)
@@ -220,48 +173,19 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	double tradeValue = buildingWeightEffects.tradeValue;
 	double tradeEfficiency = buildingWeightEffects.tradeEfficiency;
 	double tradeSteering = buildingWeightEffects.tradeSteering;
-
-	// Check tag, ex. TIB has goods_produced +0.05
-	// This needs to be hard coded unless there's some other way of figuring out modded national ambitions/ideas
-	if (ownerString == "TIB")
-	{
-		tradeGoodsSizeModifier += 0.05;
-	}
-
 	double goodsProduced = (baseProduction * 0.2) + manufactoriesValue + tradeGoodsSizeModifier + 0.03;
 	goodsProduced = std::max(0.0, goodsProduced);
-
-	// idea effects
-	/*if ( (owner !=  NULL) && (owner->hasNationalIdea("bureaucracy")) )
-	{
-		taxEfficiency += 0.10;
-	}
-	if ( (owner !=  NULL) && (owner->hasNationalIdea("smithian_economics")) )
-	{
-		productionEfficiency += 0.10;
-	}*/
 
 	// manpower
 	manpower_weight *= 25;
 	manpower_weight += manpowerModifier;
 	manpower_weight *= ((1 + manpowerModifier) / 25); // should work now as intended
 
-	//LOG(LogLevel::Info) << "Manpower Weight: " << manpower_weight;
-
 	double total_tx = (baseTax + taxModifier) * (taxEfficiency + 0.15);
 	double production_eff_tech = 0.5; // used to be 1.0
 
 	double total_trade_value = ((getTradeGoodPrice() * goodsProduced) + tradeValue) * (1 + tradeEfficiency);
 	double production_income = total_trade_value * (1 + production_eff_tech + productionEfficiency);
-	//LOG(LogLevel::Info) << "province name: " << this->getProvName() 
-	//	<< " trade good: " << tradeGoods 
-	//	<< " Price: " << getTradeGoodPrice() 
-	//	<< " trade value: " << trade_value 
-	//	<< " trade value eff: " 
-	//	<< (1 + trade_value_eff) 
-	//	<< " goods produced: " << goods_produced 
-	//	<< " production eff: " << production_eff 
-	//	<< " Production: " << production_income;
 
 	total_tx *= 1.5;
 	manpower_weight *= 1;
@@ -273,7 +197,7 @@ void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, cons
 	
 	// dev modifier
 	devModifier = ( baseTax + baseProduction + manpower );
-	devDelta = devModifier - provinceHistory->getOriginalDevelopment();
+	devDelta = devModifier - provinceHistory.getOriginalDevelopment();
 	modifierWeight = buildingWeight + manpower_weight + production_income + total_tx;
 
 	totalWeight = devModifier + modifierWeight;
@@ -332,7 +256,7 @@ double EU4::Province::getTradeGoodPrice() const
 	dyes
 	tropical_wood
 	*/
-	//LOG(LogLevel::Info) << "Trade Goods Price";
+
 	double tradeGoodsPrice = 0;
 
 	if (tradeGoods == "chinaware")
@@ -448,62 +372,59 @@ EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
 {
 	BuildingWeightEffects effects;
 
-	if (buildings)
+	for (auto buildingName : buildings.getBuildings())
 	{
-		for (auto buildingName : buildings->getBuildings())
+		auto theBuilding = buildingTypes.getBuilding(buildingName);
+		if (theBuilding)
 		{
-			auto theBuilding = buildingTypes.getBuilding(buildingName);
-			if (theBuilding)
+			effects.buildingWeight += theBuilding->getCost() * BUILDING_COST_TO_WEIGHT_RATIO;
+			if (theBuilding->isManufactory())
 			{
-				effects.buildingWeight += theBuilding->getCost() * BUILDING_COST_TO_WEIGHT_RATIO;
-				if (theBuilding->isManufactory())
+				effects.manufactoriesValue += 1.0;
+			}
+			for (auto effect: theBuilding->getModifier().getAllEffects())
+			{
+				if (effect.first == "local_manpower_modifier")
 				{
-					effects.manufactoriesValue += 1.0;
+					effects.manpowerModifier += effect.second;
 				}
-				for (auto effect: theBuilding->getModifier().getAllEffects())
+				else if (effect.first == "local_tax_modifier")
 				{
-					if (effect.first == "local_manpower_modifier")
-					{
-						effects.manpowerModifier += effect.second;
-					}
-					else if (effect.first == "local_tax_modifier")
-					{
-						effects.taxModifier += effect.second;
-					}
-					else if (effect.first == "local_production_efficiency")
-					{
-						effects.productionEfficiency += effect.second;
-					}
-					else if (effect.first == "province_trade_power_modifier")
-					{
-						effects.tradePower += effect.second;
-					}
-					else if (effect.first == "trade_efficiency")
-					{
-						effects.tradeEfficiency += effect.second;
-					}
-					else if (effect.first == "trade_goods_size")
-					{
-						effects.tradeGoodsSizeModifier += effect.second;
-					}
-					else if (effect.first == "trade_goods_size_modifier")
-					{
-						effects.tradeGoodsSizeModifier += effect.second;
-					}
-					else if (effect.first == "trade_value_modifier")
-					{
-						effects.tradeValue += effect.second;
-					}
-					else if (effect.first == "trade_steering")
-					{
-						effects.tradeSteering += effect.second;
-					}
+					effects.taxModifier += effect.second;
+				}
+				else if (effect.first == "local_production_efficiency")
+				{
+					effects.productionEfficiency += effect.second;
+				}
+				else if (effect.first == "province_trade_power_modifier")
+				{
+					effects.tradePower += effect.second;
+				}
+				else if (effect.first == "trade_efficiency")
+				{
+					effects.tradeEfficiency += effect.second;
+				}
+				else if (effect.first == "trade_goods_size")
+				{
+					effects.tradeGoodsSizeModifier += effect.second;
+				}
+				else if (effect.first == "trade_goods_size_modifier")
+				{
+					effects.tradeGoodsSizeModifier += effect.second;
+				}
+				else if (effect.first == "trade_value_modifier")
+				{
+					effects.tradeValue += effect.second;
+				}
+				else if (effect.first == "trade_steering")
+				{
+					effects.tradeSteering += effect.second;
 				}
 			}
-			else
-			{
-				LOG(LogLevel::Warning) << "Could not look up information for building type " << buildingName;
-			}
+		}
+		else
+		{
+			LOG(LogLevel::Warning) << "Could not look up information for building type " << buildingName;
 		}
 	}
 

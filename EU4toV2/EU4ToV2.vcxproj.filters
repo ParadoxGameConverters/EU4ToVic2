@@ -24,9 +24,6 @@
     <ClCompile Include="Source\Mappers\CK2TitleMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\ColonialRegions.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\ColonialTagsMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
@@ -180,9 +177,6 @@
     <ClCompile Include="Source\EU4World\Provinces\GreatProjects.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Provinces\DateItem.cpp">
-      <Filter>EU4World\Provinces</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Provinces\DateItems.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
@@ -248,9 +242,6 @@
     </ClCompile>
     <ClCompile Include="Source\V2World\V2UncivReforms.cpp">
       <Filter>Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Country\EU4ReformsSection.cpp">
-      <Filter>EU4World\Country</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Country\EU4ReformStackSection.cpp">
       <Filter>EU4World\Country</Filter>
@@ -426,6 +417,12 @@
     <ClCompile Include="Source\V2World\Pops\PopTypes.cpp">
       <Filter>Vic2World\Pops</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegion.cpp">
+      <Filter>EU4World\ColonialRegions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegions.cpp">
+      <Filter>EU4World\ColonialRegions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -449,9 +446,6 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\CK2TitleMapper.h">
       <Filter>Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\ColonialRegions.h">
-      <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\ColonialTagsMapper.h">
       <Filter>Mappers</Filter>
@@ -603,9 +597,6 @@
     <ClInclude Include="Source\EU4World\Provinces\GreatProjects.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\Provinces\DateItem.h">
-      <Filter>EU4World\Provinces</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\DateItems.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
@@ -677,9 +668,6 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\V2UncivReforms.h">
       <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Country\EU4ReformsSection.h">
-      <Filter>EU4World\Country</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Country\EU4ReformStackSection.h">
       <Filter>EU4World\Country</Filter>
@@ -855,6 +843,12 @@
     <ClInclude Include="Source\V2World\Pops\PopTypes.h">
       <Filter>Vic2World\Pops</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegion.h">
+      <Filter>EU4World\ColonialRegions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegions.h">
+      <Filter>EU4World\ColonialRegions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -934,6 +928,9 @@
     </Filter>
     <Filter Include="EU4World\Diplomacy">
       <UniqueIdentifier>{998abc28-2279-43ae-9a37-929aa3057045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\ColonialRegions">
+      <UniqueIdentifier>{06b263a1-60e1-43f3-bd3c-7442154bc521}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -9,7 +9,7 @@ EU4::EU4ActiveIdeas::EU4ActiveIdeas(std::istream& theStream)
 			activeIdeas.insert(std::make_pair(ideaName, ideaInt.getInt()));
 		}
 	);
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 }

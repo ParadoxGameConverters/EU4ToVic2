@@ -1,7 +1,8 @@
-#ifndef EU4_ARMY_H_
-#define EU4_ARMY_H_
+#ifndef EU4_ARMY_H
+#define EU4_ARMY_H
 
 #include <vector>
+#include <set>
 #include "EU4Regiment.h"
 #include "../../Mappers/UnitTypeMapper.h"
 #include "../ID.h"
@@ -18,10 +19,10 @@ namespace EU4
 		int getAtSea() const { return atSea; }
 		int getId() const { return armyId; }
 		int getLeaderId() const { return leaderId; }
-		std::vector<EU4Regiment> getRegiments() const { return regimentList; }
+		const std::vector<EU4Regiment>& getRegiments() const { return regimentList; }
 		
 		double getAverageStrength(REGIMENTCATEGORY category) const;
-		void resolveRegimentTypes(mappers::RegimentTypeMap RTmap);
+		void resolveRegimentTypes(const mappers::UnitTypeMapper& utm);
 		int getTotalTypeStrength(REGIMENTCATEGORY category) const;
 		std::optional<int> getProbabilisticHomeProvince(REGIMENTCATEGORY cat) const;
 		void blockHomeProvince(const int homeId);
@@ -33,7 +34,7 @@ namespace EU4
 		int armyId = 0;
 		int leaderId = 0;
 		std::vector<EU4Regiment> regimentList;
-		std::vector<int> blocked_homes; // invalid homes for this army
+		std::set<int> blocked_homes; // invalid homes for this army
 	};
 }
-#endif // EU4_ARMY_H_
+#endif // EU4_ARMY_H

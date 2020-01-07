@@ -8,6 +8,7 @@ EU4::EU4CountryFlags::EU4CountryFlags(std::istream& theStream)
 			commonItems::ignoreItem(flag, theStream);
 			flags.insert(flag);
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+
 	parseStream(theStream);
 }

@@ -1,5 +1,5 @@
-#ifndef EU4_MODIFIER_H_
-#define EU4_MODIFIER_H_
+#ifndef EU4_MODIFIER_H
+#define EU4_MODIFIER_H
 
 #include "newParser.h"
 
@@ -17,4 +17,4 @@ namespace EU4
 	};
 }
 
-#endif // EU4_MODIFIER_H_
+#endif // EU4_MODIFIER_H

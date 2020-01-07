@@ -32,7 +32,7 @@ TEST(EU4World_AreaTests, emptyAreaHasNoProvinces)
 	std::stringstream input;
 	input << "empty_area = {}";
 
-	EU4::area theArea(input);
+	EU4::Area theArea(input);
 	ASSERT_EQ(theArea.getProvinces().size(), 0);
 }
 
@@ -42,7 +42,7 @@ TEST(EU4World_AreaTests, provinceCanBeRead)
 	std::stringstream input;
 	input << "non_empty_area = { 56 }";
 
-	EU4::area theArea(input);
+	EU4::Area theArea(input);
 	ASSERT_EQ(theArea.getProvinces().count(56), 1);
 }
 
@@ -55,6 +55,6 @@ TEST(EU4World_AreaTests, colorAreaWorks)
 	input << "\t56\n";
 	input << "}";
 
-	EU4::area theArea(input);
+	EU4::Area theArea(input);
 	ASSERT_EQ(theArea.getProvinces().count(3), 0);
 }

@@ -45,6 +45,11 @@ mappers::ProvinceMapper::ProvinceMapper(std::istream& theStream, const Configura
 	createMappings(mappings);
 }
 
+bool mappers::ProvinceMapper::provinceIsInRegion(int province, const std::string& region) const
+{
+	return colonialRegionsMapper.provinceIsInRegion(province, region);
+}
+
 
 mappers::ProvinceMappingsVersion mappers::ProvinceMapper::getMappingsVersion(
 	const std::map<EU4::Version, ProvinceMappingsVersion>& mappingsVersions,

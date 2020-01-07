@@ -1,5 +1,6 @@
 #include "EU4Army.h"
 #include "ParserHelpers.h"
+#include <random>
 
 
 EU4::EU4Army::EU4Army(std::istream& theStream)
@@ -35,7 +36,7 @@ EU4::EU4Army::EU4Army(std::istream& theStream)
 			commonItems::singleInt atSeaInt(theStream);
 			atSea = atSeaInt.getInt();
 		});
-	registerKeyword(std::regex("[a-z0-9\\_]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 }
@@ -44,11 +45,11 @@ double EU4::EU4Army::getAverageStrength(REGIMENTCATEGORY category) const
 {
 	int regimentCount = regimentList.size();
 	double totalStrength = 0.0;
-	for (std::vector<EU4::EU4Regiment>::const_iterator itr = regimentList.begin(); itr != regimentList.end(); ++itr)
+	for (const auto& regiment : regimentList)
 	{
-		if (itr->getCategory() == category)
+		if (regiment.getCategory() == category)
 		{
-			totalStrength += (*itr).getStrength();
+			totalStrength += regiment.getStrength();
 		}
 	}
 	if (regimentCount > 0) return (totalStrength / regimentCount);
@@ -58,29 +59,30 @@ double EU4::EU4Army::getAverageStrength(REGIMENTCATEGORY category) const
 int EU4::EU4Army::getTotalTypeStrength(REGIMENTCATEGORY category) const
 {
 	int totalStrength = 0;
-	for (std::vector<EU4Regiment>::const_iterator itr = regimentList.begin(); itr != regimentList.end(); ++itr)
+	for (const auto& regiment : regimentList)
 	{
-		if (itr->getCategory() == category)
+		if (regiment.getCategory() == category)
 		{
-			totalStrength += itr->getTypeStrength();
+			totalStrength += regiment.getTypeStrength();
 		}
 	}
 	return totalStrength;
 }
 
 
-void EU4::EU4Army::resolveRegimentTypes(mappers::RegimentTypeMap RTmap)
+void EU4::EU4Army::resolveRegimentTypes(const mappers::UnitTypeMapper& utm)
 {
-	for (std::vector<EU4Regiment>::iterator itr = regimentList.begin(); itr != regimentList.end(); ++itr)
+	auto regimentTypeMap = utm.getUnitTypeMap();
+	for (auto& regiment : regimentList)
 	{
 		try
 		{
-			itr->setCategory(RTmap[itr->getType()].getCategory());
-			itr->setTypeStrength(RTmap[itr->getType()].getStrength());
+			regiment.setCategory(regimentTypeMap[regiment.getType()].getCategory());
+			regiment.setTypeStrength(regimentTypeMap[regiment.getType()].getStrength());
 		}
 		catch (std::exception&)
 		{
-			std::runtime_error exception("Illegal unit type: " + itr->getType() + ", aborting!");
+			std::runtime_error exception("Illegal unit type: " + regiment.getType() + ", aborting!");
 			throw exception;
 		}
 	}
@@ -88,36 +90,22 @@ void EU4::EU4Army::resolveRegimentTypes(mappers::RegimentTypeMap RTmap)
 
 std::optional<int> EU4::EU4Army::getProbabilisticHomeProvince(EU4::REGIMENTCATEGORY category) const
 {
-	std::vector<int> homeProvinces;	// the possible home provinces
-	for (std::vector<EU4Regiment>::const_iterator itr = regimentList.begin(); itr != regimentList.end(); ++itr)
+	std::set<int> homeProvinces, randomProvince; // the possible home provinces
+	for (const auto& regiment : regimentList)
 	{
-		if (itr->getCategory() == category)
+		if (regiment.getCategory() == category)
 		{
-			const int home = itr->getHome();	// the home of this regiment
-			bool blocked = false;					// whether or not this home is blocked
-			for (std::vector<int>::const_iterator bitr = blocked_homes.begin(); bitr != blocked_homes.end(); ++bitr)
-			{
-				if (home == *bitr)
-				{
-					blocked = true;
-					break;
-				}
-			}
-			if (!blocked)
-			{
-				homeProvinces.push_back(home);
-			}
+			const int home = regiment.getHome();
+			if (blocked_homes.count(home)) continue;
+			homeProvinces.insert(home);
 		}
 	}
-	if (homeProvinces.size() == 0)
-	{
-		return std::nullopt;
-	}
-
-	return homeProvinces[int(homeProvinces.size() * ((double)rand() / RAND_MAX))];
+	if (homeProvinces.size() == 0) return std::nullopt;
+	std::sample(homeProvinces.begin(), homeProvinces.end(), std::inserter(randomProvince, randomProvince.begin()), 1, std::mt19937{ std::random_device{}() });
+	return *randomProvince.begin();
 }
 
 void EU4::EU4Army::blockHomeProvince(const int home)
 {
-	blocked_homes.push_back(home);
+	blocked_homes.insert(home);
 }

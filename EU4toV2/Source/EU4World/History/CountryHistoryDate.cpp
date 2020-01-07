@@ -1,7 +1,6 @@
 #include "CountryHistoryDate.h"
 #include "ParserHelpers.h"
 
-
 EU4::CountryHistoryDate::CountryHistoryDate(std::istream& theStream)
 {
 	registerKeyword(std::regex("leader"), [this](const std::string& unused, std::istream& theStream)
@@ -17,7 +16,7 @@ EU4::CountryHistoryDate::CountryHistoryDate(std::istream& theStream)
 			leaders.insert(leaders.end(), incLeaders.begin(), incLeaders.end());
 		}
 	);
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 }

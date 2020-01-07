@@ -228,11 +228,12 @@ EU4::Country::Country(
 	registerKeyword(std::regex("government"), [this, theVersion](const std::string& unused, std::istream& theStream){
 		if (theVersion < EU4::Version("1.23.0.0"))
 		{
-			government = EU4::governmentSection::readGovernment(theStream);
+			commonItems::singleString govStr(theStream);
+			government = govStr.getString();
 		}
 		else
 		{
-			EU4::governmentSection theSection(theStream);
+			EU4::GovernmentSection theSection(theStream);
 			government = theSection.getGovernment();
 			governmentReforms = theSection.getGovernmentReforms();
 		}
@@ -345,9 +346,9 @@ void EU4::Country::dropMinorityCultures()
 	for (std::string acceptedCulture: acceptedCultures)
 	{
 		double culturalDevelopment = 0;
-		for (EU4::Province* p : provinces)
+		for (auto& p : provinces)
 		{
-			culturalDevelopment += p->getCulturePercent(acceptedCulture) * p->getTotalDevModifier();
+			culturalDevelopment += p.getCulturePercent(acceptedCulture) * p.getTotalDevModifier();
 		}
 		if ((culturalDevelopment / development) > 0.15)
 		{
@@ -630,27 +631,15 @@ void EU4::Country::setLocalisationAdjective(const std::string& language, const s
 }
 
 
-void EU4::Country::addProvince(EU4::Province* province)
+void EU4::Country::addProvince(EU4::Province& province)
 {
 	provinces.push_back(province);
 }
 
 
-void EU4::Country::addCore(EU4::Province* core)
+void EU4::Country::addCore(EU4::Province& core)
 {
 	cores.push_back(core);
-}
-
-void EU4::Country::addState(const std::string& area, double prosperity)
-{
-	states[area] = prosperity;
-	for (EU4::Province* p : provinces)
-	{
-		if (p->getArea() == area)
-		{
-			p->makeState(prosperity);
-		}
-	}
 }
 
 bool EU4::Country::hasModifier(std::string modifier) const
@@ -681,11 +670,11 @@ bool EU4::Country::hasFlag(std::string flag) const
 }
 
 
-void EU4::Country::resolveRegimentTypes(mappers::RegimentTypeMap& map)
+void EU4::Country::resolveRegimentTypes(const mappers::UnitTypeMapper& utm)
 {
 	for (std::vector<EU4Army>::iterator itr = armies.begin(); itr != armies.end(); ++itr)
 	{
-		itr->resolveRegimentTypes(map);
+		itr->resolveRegimentTypes(utm);
 	}
 }
 
@@ -695,10 +684,10 @@ int EU4::Country::getManufactoryCount() const
 	int retval = 0;	// the number of manus
 	for (auto province: provinces)
 	{
-		if (province->hasBuilding("weapons"))		++retval;
-		if (province->hasBuilding("wharf"))		++retval;
-		if (province->hasBuilding("textile"))		++retval;
-		if (province->hasBuilding("refinery"))	++retval;
+		if (province.hasBuilding("weapons"))		++retval;
+		if (province.hasBuilding("wharf"))		++retval;
+		if (province.hasBuilding("textile"))		++retval;
+		if (province.hasBuilding("refinery"))	++retval;
 	}
 	return retval;
 }
@@ -725,8 +714,8 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 	for (auto& core: target->getCores())
 	{
 		addCore(core);
-		core->addCore(tag);
-		core->removeCore(target->tag);
+		core.addCore(tag);
+		core.removeCore(target->tag);
 	}
 
 	// everything else, do only if this country actually currently exists
@@ -735,8 +724,8 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target, std::shared_
 		// acquire target's provinces
 		for (unsigned int j = 0; j < target->provinces.size(); j++)
 		{
-			target->provinces[j]->setOwnerString(tag);
-			target->provinces[j]->setControllerString(tag);
+			target->provinces[j].setOwnerString(tag);
+			target->provinces[j].setControllerString(tag);
 			addProvince(target->provinces[j]);
 		}
 
@@ -782,16 +771,16 @@ bool EU4::Country::cultureSurvivesInCores(const std::map<std::string, std::share
 {
 	for (auto core: cores)
 	{
-		if (core->getOwnerString() == "")
+		if (core.getOwnerString() == "")
 		{
 			continue;
 		}
-		if (core->getCulturePercent(primaryCulture) >= 0.5)
+		if (core.getCulturePercent(primaryCulture) >= 0.5)
 		{
 			continue;
 		}
 
-		auto owner = theCountries.find(core->getOwnerString());
+		auto owner = theCountries.find(core.getOwnerString());
 		if ((owner != theCountries.end()) && (owner->second->getPrimaryCulture() != primaryCulture))
 		{
 			return true;

@@ -1,7 +1,6 @@
 #include "EU4Technology.h"
 #include "ParserHelpers.h"
 
-
 EU4::EU4Technology::EU4Technology(std::istream& theStream)
 {
 	registerKeyword(std::regex("adm_tech"), [this](const std::string& unused, std::istream& theStream)
@@ -19,6 +18,7 @@ EU4::EU4Technology::EU4Technology(std::istream& theStream)
 			commonItems::singleInt techInt(theStream);
 			mil = techInt.getInt();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+
 	parseStream(theStream);
 }

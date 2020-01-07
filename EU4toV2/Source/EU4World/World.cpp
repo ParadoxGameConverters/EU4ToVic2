@@ -96,15 +96,39 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 		Buildings buildingTypes(buildingsFile);
 		buildingsFile.close();
 
-		std::ifstream modifiersFile(theConfiguration.getEU4Path() + "/common/event_modifiers/00_event_modifiers.txt");
-		Modifiers modifierTypes(modifiersFile);
-		modifiersFile.close();
-		modifiersFile.open(theConfiguration.getEU4Path() + "/common/triggered_modifiers/00_triggered_modifiers.txt");
-		modifierTypes.addModifiers(modifiersFile);
-		modifiersFile.close();
-		modifiersFile.open(theConfiguration.getEU4Path() + "/common/static_modifiers/00_static_modifiers.txt");
-		modifierTypes.addModifiers(modifiersFile);
-		modifiersFile.close();
+		Modifiers modifierTypes(theConfiguration.getEU4Path() + "/common/event_modifiers/00_event_modifiers.txt");
+		modifierTypes.addModifiersFile(theConfiguration.getEU4Path() + "/common/triggered_modifiers/00_triggered_modifiers.txt");
+		modifierTypes.addModifiersFile(theConfiguration.getEU4Path() + "/common/static_modifiers/00_static_modifiers.txt");
+
+		for (auto modName : theConfiguration.getEU4Mods())
+		{
+			std::set<std::string> filenames;
+			if (Utils::doesFolderExist(modName + "/common/event_modifiers"))
+			{
+				Utils::GetAllFilesInFolder(modName + "/common/event_modifiers/", filenames);
+				for (auto filename : filenames)
+				{
+					modifierTypes.addModifiersFile(modName + "/common/event_modifiers/" + filename);
+				}
+			}
+			if (Utils::doesFolderExist(modName + "/common/triggered_modifiers/"))
+			{
+				Utils::GetAllFilesInFolder(modName + "/common/triggered_modifiers/", filenames);
+				for (auto filename : filenames)
+				{
+					modifierTypes.addModifiersFile(modName + "/common/triggered_modifiers/" + filename);
+				}
+			}
+			if (Utils::doesFolderExist(modName + "/common/static_modifiers/"))
+			{
+				Utils::GetAllFilesInFolder(modName + "/common/static_modifiers/", filenames);
+				for (auto filename : filenames)
+				{
+					modifierTypes.addModifiersFile(modName + "/common/static_modifiers/" + filename);
+				}
+			}
+		}
+
 
 		provinces = std::make_unique<Provinces>(theStream, buildingTypes, modifierTypes);
 		std::optional<date> possibleDate = provinces->getProvince(1).getFirstOwnedDate();
@@ -139,9 +163,12 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	LOG(LogLevel::Info) << "* Importing EU4 save *";
 	parseFile(EU4SaveFileName);
 
-	LOG(LogLevel::Info) << "Building world:";
+	LOG(LogLevel::Info) << " * Building world *";
+	LOG(LogLevel::Info) << "- Loading Empires";
 	setEmpires();
+	LOG(LogLevel::Info) << "- Processing Province Info";
 	addProvinceInfoToCountries();
+	LOG(LogLevel::Info) << "- Eliminating Minorities";
 	dropMinoritiesFromCountries();
 	provinces->determineTotalProvinceWeights(theConfiguration);
 	LOG(LogLevel::Info) << "- Loading Regions";
@@ -246,7 +273,7 @@ void EU4::world::addProvinceInfoToCountries()
 		auto owner = theCountries.find(province.second.getOwnerString());
 		if (owner != theCountries.end())
 		{
-			owner->second->addProvince(&province.second);
+			owner->second->addProvince(province.second);
 		}
 	}
 
@@ -259,7 +286,7 @@ void EU4::world::addProvinceInfoToCountries()
 			auto country = theCountries.find(core);
 			if (country != theCountries.end())
 			{
-				country->second->addCore(&province.second);
+				country->second->addCore(province.second);
 			}
 		}
 	}
@@ -314,7 +341,7 @@ void EU4::world::loadEU4RegionsOldVersion()
 	}
 
 	std::ifstream theStream(regionFilename);
-	EU4::areas installedAreas(theStream);
+	EU4::Areas installedAreas(theStream);
 	theStream.close();
         assignProvincesToAreas(installedAreas.getAreas());
 
@@ -338,7 +365,7 @@ void EU4::world::loadEU4RegionsNewVersion()
 	}
 
 	std::ifstream areaStream(areaFilename);
-	EU4::areas installedAreas(areaStream);
+	EU4::Areas installedAreas(areaStream);
 	areaStream.close();
         assignProvincesToAreas(installedAreas.getAreas());
 
@@ -468,12 +495,11 @@ void EU4::world::setLocalisations()
 void EU4::world::resolveRegimentTypes()
 {
 	LOG(LogLevel::Info) << "Resolving unit types.";
-	mappers::UnitTypeMapper utm;
-	unitTypeMap = utm.getUnitTypeMap();
+	mappers::UnitTypeMapper utm;	
 
 	for (auto itr = theCountries.begin(); itr != theCountries.end(); ++itr)
 	{
-		itr->second->resolveRegimentTypes(unitTypeMap);
+		itr->second->resolveRegimentTypes(utm);
 	}
 }
 

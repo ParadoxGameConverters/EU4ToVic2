@@ -14,7 +14,7 @@
 #include "ID.h"
 #include "Leader/EU4Leader.h"
 #include "Relations/EU4RelationDetails.h"
-
+#include "Provinces/EU4Province.h"
 
 namespace EU4
 {
@@ -51,16 +51,15 @@ namespace EU4
 			void setLocalisationName(const std::string& language, const std::string& name);
 			void setLocalisationAdjective(const std::string& language, const std::string& adjective);
 
-			void addProvince(Province*);
-			void addCore(Province*);
-	      void addState(const std::string& area, double prosperity);
+			void addProvince(Province&);
+			void addCore(Province&);
 	      void setInHRE(bool _inHRE) { inHRE = _inHRE; }
 			void setEmperor(bool _emperor) { holyRomanEmperor = _emperor; }
 			void setCelestialEmperor(bool _celestialEmperor) { celestialEmperor = _celestialEmperor; }
 			bool hasModifier(std::string) const;
 			int hasNationalIdea(std::string) const;
 			bool hasFlag(std::string) const ;
-			void resolveRegimentTypes(mappers::RegimentTypeMap& map);
+			void resolveRegimentTypes(const mappers::UnitTypeMapper& utm);
 			int getManufactoryCount() const;
 			int numEmbracedInstitutions() const;
 			void eatCountry(std::shared_ptr<Country> target, std::shared_ptr<Country> self);
@@ -73,8 +72,8 @@ namespace EU4
 
 			std::string getTag() const { return tag; }
 			void setTag(std::string _tag) { tag = _tag; }
-			std::vector<Province*> getProvinces() { return provinces; }
-			std::vector<Province*> getCores() { return cores; }
+			std::vector<Province>& getProvinces() { return provinces; }
+			std::vector<Province>& getCores() { return cores; }
 			int getCapital() const { return capital; }
 			bool getInHRE() const { return inHRE; }
 			bool getHolyRomanEmperor() const { return holyRomanEmperor; }
@@ -143,8 +142,8 @@ namespace EU4
 			void clearCores();
 
 			std::string tag; // the tag for the EU4 nation
-			std::vector<Province*> provinces;
-			std::vector<Province*> cores;
+			std::vector<Province> provinces;
+			std::vector<Province> cores;
 			bool inHRE; // if this country is an HRE member
 			bool holyRomanEmperor; // if this country is the emperor of the HRE
 			bool celestialEmperor; // if this country is the celestial emperor

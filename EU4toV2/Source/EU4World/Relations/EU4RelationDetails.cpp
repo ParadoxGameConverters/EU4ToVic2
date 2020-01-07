@@ -29,7 +29,7 @@ EU4::EU4RelationDetails::EU4RelationDetails(std::istream& theStream)
 			commonItems::singleString attitudeStr(theStream);
 			attitude = attitudeStr.getString();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 }

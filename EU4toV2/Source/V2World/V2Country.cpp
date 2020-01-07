@@ -820,15 +820,15 @@ void V2Country::calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry)
 	int numProvinces = 0;
 	int numColleges = 0;
 	int numUniversities = 0;
-	vector<EU4::Province*> provinces = srcCountry->getProvinces();
+	vector<EU4::Province> provinces = srcCountry->getProvinces();
 	numProvinces = provinces.size();
-	for (vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
+	for (vector<EU4::Province>::iterator i = provinces.begin(); i != provinces.end(); ++i)
 	{
-		if ((*i)->hasBuilding("college"))
+		if ((*i).hasBuilding("college"))
 		{
 			numColleges++;
 		}
-		if ((*i)->hasBuilding("university"))
+		if ((*i).hasBuilding("university"))
 		{
 			numUniversities++;
 		}
@@ -875,15 +875,15 @@ void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
 {
 	for (const auto& prov : srcCountry->getProvinces())
 	{
-		if (prov->hasGreatProject("suez_canal"))
+		if (prov.hasGreatProject("suez_canal"))
 		{
 			decisions.push_back("build_suez_canal");
 		}
-		if (prov->hasGreatProject("kiel_canal"))
+		if (prov.hasGreatProject("kiel_canal"))
 		{
 			decisions.push_back("build_kiel_canal");
 		}
-		if (prov->hasGreatProject("panama_canal"))
+		if (prov.hasGreatProject("panama_canal"))
 		{
 			decisions.push_back("build_panama_canal");
 		}
@@ -2064,7 +2064,7 @@ V2Province* V2Country::getProvinceForExpeditionaryArmy()
 	vector<V2Province*> candidates;
 	for (auto pitr = provinces.begin(); pitr != provinces.end(); ++pitr)
 	{
-		if ( (pitr->second->getOwner() == tag) && !pitr->second->wasColony() && !pitr->second->wasInfidelConquest()
+		if ( (pitr->second->getOwner() == tag) && !pitr->second->wasColony()
 			&& ( pitr->second->hasCulture(primaryCulture, 0.5) ) && ( pitr->second->getPops("soldiers").size() > 0) )
 		{
 			candidates.push_back(pitr->second);

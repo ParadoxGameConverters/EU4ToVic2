@@ -25,7 +25,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <algorithm>
 #include <iomanip>
 #include "../Configuration.h"
-#include "../EU4World/ColonialRegions.h"
 #include "../EU4World/CultureGroups.h"
 #include "../EU4World/World.h"
 #include "../EU4World/EU4Country.h"
@@ -280,7 +279,7 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 
 	for (auto colony: colonialTagMapper.getColonyList())
 	{
-		if (!capitalInRightEU4Region(colony, EU4Capital))
+		if (!capitalInRightEU4Region(colony, EU4Capital, provinceMapper))
 		{
 			continue;
 		}
@@ -309,11 +308,11 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 }
 
 
-bool mappers::CountryMappings::capitalInRightEU4Region(const mappers::ColonyStruct& colony, int EU4Capital)
+bool mappers::CountryMappings::capitalInRightEU4Region(const mappers::ColonyStruct& colony, int EU4Capital, const ProvinceMapper& provinceMapper)
 {
 	if (colony.EU4Region != "")
 	{
-		return EU4::colonialRegions::provinceIsInRegion(EU4Capital, colony.EU4Region);
+		return provinceMapper.provinceIsInRegion(EU4Capital, colony.EU4Region);
 	}
 	else
 	{
