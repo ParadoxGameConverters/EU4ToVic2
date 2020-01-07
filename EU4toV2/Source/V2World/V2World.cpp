@@ -15,7 +15,6 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "../Configuration.h"
-#include "../EU4World/Continents.h"
 #include "../EU4World/Diplomacy/EU4Diplomacy.h"
 #include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/World.h"
@@ -71,6 +70,9 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 	initializeCultureMappers(sourceWorld);
 	initializeReligionMapper(sourceWorld);
 	convertCountries(sourceWorld, ideaEffectMapper);
+	
+	mappers::Continents continents;
+
 	convertProvinces(sourceWorld);
 	convertDiplomacy(sourceWorld);
 	setupColonies();
@@ -902,7 +904,7 @@ std::vector<V2Demographic> V2World::determineDemographics(
 		);
 		if (!slaveCulture)
 		{
-			auto thisContinent = EU4::continents::getEU4Continent(eProv->getNum());
+			auto thisContinent = continentsMapper.getEU4Continent(eProv->getNum());
 			if ((thisContinent) && ((thisContinent == "asia") || (thisContinent == "oceania")))
 			{
 				if (theConfiguration.getDebug())
@@ -1128,7 +1130,7 @@ void V2World::setupColonies()
 				continue;
 
 			int capitalSrc = capitalSrcProv->getNum();
-			capitalContinent = EU4::continents::getEU4Continent(capitalSrc);
+			capitalContinent = continentsMapper.getEU4Continent(capitalSrc);
 			if (!capitalContinent)
 			{
 				continue;
@@ -1146,7 +1148,7 @@ void V2World::setupColonies()
 				continue;
 
 			int provSrc = provSrcProv->getNum();
-			std::optional<std::string> continent = EU4::continents::getEU4Continent(provSrc);
+			std::optional<std::string> continent = continentsMapper.getEU4Continent(provSrc);
 			if ((continent) && (continent == capitalContinent))
 			{
 				provItr->second->setSameContinent(true);

@@ -39,9 +39,6 @@
     <ClCompile Include="..\common_items\Color.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Continents.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Countries.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
@@ -173,9 +170,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Religions\Religions.cpp">
       <Filter>EU4World\Religions</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Provinces\GreatProjects.cpp">
-      <Filter>EU4World\Provinces</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Provinces\DateItems.cpp">
       <Filter>EU4World\Provinces</Filter>
@@ -423,6 +417,9 @@
     <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegions.cpp">
       <Filter>EU4World\ColonialRegions</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Continents.cpp">
+      <Filter>Mappers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -458,9 +455,6 @@
     </ClInclude>
     <ClInclude Include="..\common_items\Color.h">
       <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Continents.h">
-      <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Countries.h">
       <Filter>EU4World</Filter>
@@ -593,9 +587,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Religions\Religions.h">
       <Filter>EU4World\Religions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Provinces\GreatProjects.h">
-      <Filter>EU4World\Provinces</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\DateItems.h">
       <Filter>EU4World\Provinces</Filter>
@@ -848,6 +839,9 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegions.h">
       <Filter>EU4World\ColonialRegions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Continents.h">
+      <Filter>Mappers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

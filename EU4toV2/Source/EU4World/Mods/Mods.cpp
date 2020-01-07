@@ -8,15 +8,8 @@
 #include <stdexcept>
 #include <string>
 
-EU4::Mods::Mods(std::istream& theStream, Configuration& theConfiguration)
+EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConfiguration)
 {
-	std::set<std::string> usedMods;
-	registerKeyword(std::regex(".+"), [&usedMods](const std::string& modName, std::istream& theStream) {
-		usedMods.insert(modName);
-	});
-
-	parseStream(theStream);
-
 	loadEU4ModDirectory(theConfiguration);
 	loadSteamWorkshopDirectory(theConfiguration);
 	loadCK2ExportDirectory(theConfiguration);

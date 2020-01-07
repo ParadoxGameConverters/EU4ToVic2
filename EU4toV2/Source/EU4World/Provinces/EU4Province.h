@@ -3,7 +3,6 @@
 
 #include "Date.h"
 #include "BuildingWeightEffects.h"
-#include "GreatProjects.h"
 #include "PopRatio.h"
 #include "ProvinceBuildings.h"
 #include "ProvinceHistory.h"
@@ -85,7 +84,7 @@ namespace EU4
 
 			EU4::ProvinceHistory provinceHistory;
 			EU4::ProvinceBuildings buildings;
-			EU4::GreatProjects greatProjects;
+			std::set<std::string> greatProjects;
 			std::set<std::string> modifiers;
 
 			// province attributes for weights

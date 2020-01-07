@@ -64,7 +64,8 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			theConfiguration.setActiveDLCs(theDLCs.getStrings());
 		});
 	registerKeyword(std::regex("mod_enabled"), [this](const std::string& modText, std::istream& theStream) {
-		Mods theMods(theStream, theConfiguration);
+		commonItems::stringList modList(theStream);
+		Mods theMods(modList.getStrings(), theConfiguration);
 	});
 	registerKeyword(std::regex("revolution_target"), [this](const std::string& revolutionText, std::istream& theStream)
 		{
@@ -102,9 +103,9 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 
 		for (auto modName : theConfiguration.getEU4Mods())
 		{
-			std::set<std::string> filenames;
 			if (Utils::doesFolderExist(modName + "/common/event_modifiers"))
 			{
+				std::set<std::string> filenames;
 				Utils::GetAllFilesInFolder(modName + "/common/event_modifiers/", filenames);
 				for (auto filename : filenames)
 				{
@@ -113,6 +114,7 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			}
 			if (Utils::doesFolderExist(modName + "/common/triggered_modifiers/"))
 			{
+				std::set<std::string> filenames;
 				Utils::GetAllFilesInFolder(modName + "/common/triggered_modifiers/", filenames);
 				for (auto filename : filenames)
 				{
@@ -121,6 +123,7 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			}
 			if (Utils::doesFolderExist(modName + "/common/static_modifiers/"))
 			{
+				std::set<std::string> filenames;
 				Utils::GetAllFilesInFolder(modName + "/common/static_modifiers/", filenames);
 				for (auto filename : filenames)
 				{

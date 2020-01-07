@@ -384,7 +384,7 @@ void V2Country::output() const
 		{
 			fprintf(output, "\n");
 			fprintf(output, "# Decisions\n");
-			fprintf(output, "1820.1.1 = {\n");
+			fprintf(output, "1.1.1 = {\n");
 			for (const auto& decision : decisions)
 			{
 				fprintf(output, "\tdecision = %s\n", decision.c_str());

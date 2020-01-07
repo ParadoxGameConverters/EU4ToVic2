@@ -1,17 +1,16 @@
 #ifndef EU4_MODS_H
 #define EU4_MODS_H
 
-#include "newParser.h"
 #include "../../Configuration.h"
 #include <map>
 #include <optional>
 
 namespace EU4
 {
-	class Mods: commonItems::parser
+	class Mods
 	{
 		public:
-			Mods(std::istream& theStream, Configuration& theConfiguration);
+			Mods(const std::vector<std::string>& usedMods, Configuration& theConfiguration);
 			std::optional<std::string> getModPath(const std::string& modName) const;
 
 		private:

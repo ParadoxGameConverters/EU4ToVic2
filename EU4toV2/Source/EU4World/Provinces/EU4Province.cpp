@@ -101,8 +101,8 @@ EU4::Province::Province(
 		});
 	registerKeyword(std::regex("great_projects"), [this](const std::string& unused, std::istream& theStream) 
 		{
-			GreatProjects theProjects(theStream);
-			greatProjects = theProjects;
+			commonItems::stringList theProjects(theStream);
+			for (const auto& project : theProjects.getStrings()) greatProjects.insert(project);
 		});
 	registerKeyword(std::regex("modifier"), [this](const std::string& unused, std::istream& theStream) 
 		{
@@ -142,7 +142,7 @@ bool EU4::Province::hasBuilding(const std::string& building) const
 
 bool EU4::Province::hasGreatProject(const std::string& greatProject) const
 {
-	if (greatProjects.hasGreatProject(greatProject)) return true;
+	if (greatProjects.count(greatProject) > 0) return true;
 	return false;
 }
 

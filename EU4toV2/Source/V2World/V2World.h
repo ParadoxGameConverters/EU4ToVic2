@@ -12,6 +12,7 @@
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
 #include "../Mappers/CultureMapper.h"
+#include "../Mappers/Continents.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/GovernmentMapper.h"
@@ -118,6 +119,8 @@ class V2World
 		std::unique_ptr<mappers::ProvinceMapper> provinceMapper;
 
 		std::time_t begin = std::time(0);
+
+		mappers::Continents continentsMapper;
 };
 
 
