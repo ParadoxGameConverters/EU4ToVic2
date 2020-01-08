@@ -7,6 +7,8 @@
 #include "Provinces/Provinces.h"
 #include "Regions/Regions.h"
 #include "Religions/Religions.h"
+#include "Buildings/Buildings.h"
+#include "Modifiers/Modifiers.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/UnitTypeMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
@@ -93,6 +95,8 @@ class world: private commonItems::parser
 		std::string revolutionTargetString;
 
 		Religions theReligions;
+		Buildings buildingTypes;
+		Modifiers modifierTypes;
 
 		std::map<std::string, mappers::UnitType> unitTypeMap;
 };

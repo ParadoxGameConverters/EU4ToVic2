@@ -5,7 +5,8 @@
 
 mappers::V2FactoryInvention::V2FactoryInvention(std::istream& theStream)
 {
-	registerKeyword(std::regex("[a-z_]+"), [this](const std::string& invention, std::istream& theStream)
+	// we need èüéö for jean_jaurès, johann_heinrich_von_thünen, léon_walras, eugen_von_böhm_bawerk :/
+	registerKeyword(std::regex("[èüéöa-z_]+"), [this](const std::string& invention, std::istream& theStream)
 		{
 			V2FactoryInventionEffect theEffect(theStream);
 			if (!theEffect.getFactoryName().empty())

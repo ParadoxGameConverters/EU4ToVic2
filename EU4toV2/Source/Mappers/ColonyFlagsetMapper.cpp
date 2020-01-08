@@ -78,8 +78,6 @@ mappers::colonyFlagsetRegion::colonyFlagsetRegion(std::istream& theStream, const
 
 mappers::colonyFlagsetMapper::colonyFlagsetMapper()
 {
-	LOG(LogLevel::Info) << "Parsing colony naming rules.";
-
 	registerKeyword(std::regex("[\\w_]+"), [this](const std::string& region, std::istream& theStream)
 		{
 			colonyFlagsetRegion newRegion(theStream, region, colonyFlagset);

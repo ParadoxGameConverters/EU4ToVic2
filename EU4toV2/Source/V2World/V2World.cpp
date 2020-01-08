@@ -997,12 +997,13 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 			country2->second->addRelation(*r2);
 		}
 
-		if (agreement.getAgreementType() == "colonial")
+		if ((agreement.getAgreementType() == "colonial") || (agreement.getAgreementType() == "colony"))
 		{
 			country2->second->setColonyOverlord(country1->second);
-
 			if (country2->second->getSourceCountry()->getLibertyDesire() < theConfiguration.getLibertyThreshold())
 			{
+				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() << 
+					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << theConfiguration.getLibertyThreshold() << " liberty desire)";
 				country1->second->absorbVassal(country2->second);
 				for (auto& agreement2: agreements)
 				{
@@ -1014,6 +1015,8 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 			}
 			else
 			{
+				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is not absorbing " << country2->second->getTag() <<
+					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << theConfiguration.getLibertyThreshold() << " liberty desire)";
 				V2Agreement v2a;
 				v2a.country1 = V2Tag1;
 				v2a.country2 = V2Tag2;

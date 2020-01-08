@@ -1259,8 +1259,6 @@ void V2Country::addRelation(V2Relations& newRelation)
 
 void V2Country::absorbVassal(V2Country* vassal)
 {
-	Log(LogLevel::Debug) << "\t" << tag << " is absorbing " << vassal->getTag();
-
 	// change province ownership and add owner cores if needed
 	map<int, V2Province*> vassalProvinces = vassal->getProvinces();
 	for (auto provItr = vassalProvinces.begin(); provItr != vassalProvinces.end(); provItr++)

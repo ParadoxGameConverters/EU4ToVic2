@@ -72,6 +72,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 	registerKeyword(std::regex("max_literacy"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleDouble maxLiteracyDouble(theStream);
 		MaxLiteracy = maxLiteracyDouble.getDouble();
+		LOG(LogLevel::Info) << "Max Literacy: " << MaxLiteracy;
 	});
 	registerKeyword(std::regex("removeType"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleInt removeTypeString(theStream);
@@ -80,6 +81,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 	registerKeyword(std::regex("libertyThreshold"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleDouble libertyThresholdDouble(theStream);
 		libertyThreshold = libertyThresholdDouble.getDouble();
+		LOG(LogLevel::Info) << "Liberty Treshold: " << libertyThreshold;
 	});
 	registerKeyword(std::regex("popShaping"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleInt popShapingInt(theStream);
@@ -108,6 +110,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 	registerKeyword(std::regex("randomiseRgos"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleString randomiseRgosString(theStream);
 		randomiseRgos = (randomiseRgosString.getString() == "yes");
+		LOG(LogLevel::Info) << "Randomise RGOs: " << randomiseRgosString.getString();
 	});
 
 	LOG(LogLevel::Info) << "Reading configuration file";

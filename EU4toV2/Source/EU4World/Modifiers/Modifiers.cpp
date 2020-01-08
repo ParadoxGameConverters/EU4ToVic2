@@ -1,10 +1,13 @@
 #include "Modifiers.h"
 #include "ParserHelpers.h"
+#include "../../Configuration.h"
+#include "OSCompatibilityLayer.h"
+#include <set>
+#include "Log.h"
 
-EU4::Modifiers::Modifiers(std::string filename)
+EU4::Modifiers::Modifiers()
 {
 	registerKeys();
-	parseFile(filename);
 }
 
 EU4::Modifiers::Modifiers(std::istream& theStream)
@@ -13,10 +16,36 @@ EU4::Modifiers::Modifiers(std::istream& theStream)
 	parseStream(theStream);
 }
 
-void EU4::Modifiers::addModifiersFile(std::string filename)
+void EU4::Modifiers::initialize()
 {
-	registerKeys();
-	parseFile(filename);
+	processFolder("event_modifiers");
+	processFolder("triggered_modifiers");
+	processFolder("static_modifiers");
+}
+
+void EU4::Modifiers::processFolder(std::string folderName)
+{
+	if (Utils::doesFolderExist(theConfiguration.getEU4Path() + "/common/" + folderName))
+	{
+		std::set<std::string> filenames;
+		Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/" + folderName + "/", filenames);
+		for (auto filename : filenames)
+		{
+			parseFile(theConfiguration.getEU4Path() + "/common/" + folderName + "/" + filename);
+		}
+	}
+	for (auto modName : theConfiguration.getEU4Mods())
+	{
+		if (Utils::doesFolderExist(modName + "/common/" + folderName))
+		{
+			std::set<std::string> filenames;
+			Utils::GetAllFilesInFolder(modName + "/common/" + folderName + "/", filenames);
+			for (auto filename : filenames)
+			{
+				parseFile(modName + "/common/" + folderName + "/" + filename);
+			}
+		}
+	}
 }
 
 void EU4::Modifiers::registerKeys()

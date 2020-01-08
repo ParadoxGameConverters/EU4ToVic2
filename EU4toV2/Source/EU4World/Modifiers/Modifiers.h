@@ -10,10 +10,11 @@ namespace EU4
 	class Modifiers: commonItems::parser
 	{
 		public:
-			Modifiers(std::string filename);
+			Modifiers();
 			Modifiers(std::istream& theStream);
 			void registerKeys();
-			void addModifiersFile(std::string filename);
+			void initialize();
+			void processFolder(std::string folderName);
 			std::optional<Modifier> getModifier(const std::string& modifierName) const;
 
 		private:

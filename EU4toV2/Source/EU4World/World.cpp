@@ -1,11 +1,9 @@
 #include "World.h"
-#include "Buildings/Buildings.h"
 #include "Countries.h"
 #include "CultureGroups.h"
 #include "EU4Country.h"
 #include "EU4Version.h"
 #include "EU4Localisation.h"
-#include "Modifiers/Modifiers.h"
 #include "Mods/Mod.h"
 #include "Mods/Mods.h"
 #include "Provinces/EU4Province.h"
@@ -93,46 +91,7 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	);
 	registerKeyword(std::regex("provinces"), [this](const std::string& provincesText, std::istream& theStream) {
 		LOG(LogLevel::Info) << "- Loading Provinces";
-		std::ifstream buildingsFile(theConfiguration.getEU4Path() + "/common/buildings/00_buildings.txt");
-		Buildings buildingTypes(buildingsFile);
-		buildingsFile.close();
-
-		Modifiers modifierTypes(theConfiguration.getEU4Path() + "/common/event_modifiers/00_event_modifiers.txt");
-		modifierTypes.addModifiersFile(theConfiguration.getEU4Path() + "/common/triggered_modifiers/00_triggered_modifiers.txt");
-		modifierTypes.addModifiersFile(theConfiguration.getEU4Path() + "/common/static_modifiers/00_static_modifiers.txt");
-
-		for (auto modName : theConfiguration.getEU4Mods())
-		{
-			if (Utils::doesFolderExist(modName + "/common/event_modifiers"))
-			{
-				std::set<std::string> filenames;
-				Utils::GetAllFilesInFolder(modName + "/common/event_modifiers/", filenames);
-				for (auto filename : filenames)
-				{
-					modifierTypes.addModifiersFile(modName + "/common/event_modifiers/" + filename);
-				}
-			}
-			if (Utils::doesFolderExist(modName + "/common/triggered_modifiers/"))
-			{
-				std::set<std::string> filenames;
-				Utils::GetAllFilesInFolder(modName + "/common/triggered_modifiers/", filenames);
-				for (auto filename : filenames)
-				{
-					modifierTypes.addModifiersFile(modName + "/common/triggered_modifiers/" + filename);
-				}
-			}
-			if (Utils::doesFolderExist(modName + "/common/static_modifiers/"))
-			{
-				std::set<std::string> filenames;
-				Utils::GetAllFilesInFolder(modName + "/common/static_modifiers/", filenames);
-				for (auto filename : filenames)
-				{
-					modifierTypes.addModifiersFile(modName + "/common/static_modifiers/" + filename);
-				}
-			}
-		}
-
-
+		modifierTypes.initialize();
 		provinces = std::make_unique<Provinces>(theStream, buildingTypes, modifierTypes);
 		std::optional<date> possibleDate = provinces->getProvince(1).getFirstOwnedDate();
 		if (possibleDate)
@@ -140,9 +99,7 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			theConfiguration.setFirstEU4Date(*possibleDate);
 		}
 	});
-	registerKeyword(
-		std::regex("countries"),
-		[this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
+	registerKeyword(std::regex("countries"), [this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
 		{
 			LOG(LogLevel::Info) << "- Loading Countries";
 			loadCountries(theStream, ideaEffectMapper);

@@ -11,8 +11,10 @@ namespace EU4
 	class Buildings: commonItems::parser
 	{
 	public:
+		Buildings();
 		Buildings(std::istream& theStream);
 		std::optional<Building> getBuilding(const std::string& buildingName) const;
+		void registerKeys();
 
 	private:
 		std::map<std::string, Building> buildings;
