@@ -14,7 +14,7 @@ namespace EU4
 			Modifiers(std::istream& theStream);
 			void registerKeys();
 			void initialize();
-			void processFolder(std::string folderName);
+			void processFolder(const std::string& folderName);
 			std::optional<Modifier> getModifier(const std::string& modifierName) const;
 
 		private:

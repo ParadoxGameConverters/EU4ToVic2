@@ -23,7 +23,7 @@ void EU4::Modifiers::initialize()
 	processFolder("static_modifiers");
 }
 
-void EU4::Modifiers::processFolder(std::string folderName)
+void EU4::Modifiers::processFolder(const std::string& folderName)
 {
 	if (Utils::doesFolderExist(theConfiguration.getEU4Path() + "/common/" + folderName))
 	{
