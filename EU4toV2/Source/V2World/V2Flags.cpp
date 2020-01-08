@@ -184,7 +184,7 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries)
 		}
 		else if (eu4country->isRevolutionary() && nationalColors.getRevolutionaryColor())
 		{
-			nationalColors.retrieveCustomColors().setFlagColors(nationalColors.getRevolutionaryColor());
+			nationalColors.getCustomColors().setFlagColors(nationalColors.getRevolutionaryColor());
 			customFlagMapping[tag] = nationalColors.getCustomColors();
 		}
 

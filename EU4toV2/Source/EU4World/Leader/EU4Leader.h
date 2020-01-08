@@ -4,7 +4,6 @@
 #include "newParser.h"
 #include "Date.h"
 
-
 namespace EU4
 {
 	class Leader: commonItems::parser
@@ -25,7 +24,7 @@ namespace EU4
 
 		private:
 			std::string name;
-			std::string type;
+			std::string leaderType;
 			bool female = false;
 			date activationDate;
 			int fire = 0;

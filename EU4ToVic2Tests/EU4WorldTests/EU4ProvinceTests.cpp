@@ -487,62 +487,6 @@ TEST(EU4World_ProvinceTests, getFirstOwnedDateCanDetectLaterOwnership)
 }
 
 
-TEST(EU4World_ProvinceTests, wasInfidelConquestDefaultsToFalse)
-{
-	std::stringstream input;
-	input << "={\n";
-	input << "}";
-
-	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
-
-	std::stringstream modifiersInput;
-	EU4::Modifiers modifiers(modifiersInput);
-
-	EU4::Religions religions;
-
-	EU4::Province theProvince("-1", input, buildings, modifiers);
-	ASSERT_FALSE(theProvince.wasInfidelConquest("ownerReligion", religions));
-}
-
-
-TEST(EU4World_ProvinceTests, wasInfidelConquestCanBeTrue)
-{
-	std::stringstream input;
-	input << "={\n";
-	input << "	history={\n";
-	input << "	{\n";
-	input << "		religion=provinceReligion\n";
-	input << "		culture=firstCulture\n";
-	input << "		1600.1.1={\n";
-	input << "			culture=newCulture\n";
-	input << "		}\n";
-	input << "	}";
-	input << "}";
-
-	EU4::Religions theReligions;
-	std::stringstream religionsInput;
-	religionsInput << "={\n";
-	religionsInput << "	religionGroup={\n";
-	religionsInput << "		provinceReligion={}\n";
-	religionsInput << "	}\n";
-	religionsInput << "	otherReligionGroup={\n";
-	religionsInput << "		ownerReligion={}\n";
-	religionsInput << "	}\n";
-	religionsInput << "}";
-	theReligions.addReligions(religionsInput);
-
-	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
-
-	std::stringstream modifiersInput;
-	EU4::Modifiers modifiers(modifiersInput);
-
-	EU4::Province theProvince("-1", input, buildings, modifiers);
-	ASSERT_TRUE(theProvince.wasInfidelConquest("ownerReligion", theReligions));
-}
-
-
 TEST(EU4World_ProvinceTests, hasBuildingDefaultsToFalse)
 {
 	std::stringstream input;

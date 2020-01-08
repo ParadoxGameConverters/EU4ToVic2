@@ -1,5 +1,5 @@
-#ifndef EU4_REGIMENT_H_
-#define EU4_REGIMENT_H_
+#ifndef EU4_REGIMENT_H
+#define EU4_REGIMENT_H
 
 #include <map>
 #include "../ID.h"
@@ -71,4 +71,4 @@ namespace EU4
 	};
 }
 
-#endif // EU4_REGIMENT_H_
+#endif // EU4_REGIMENT_H

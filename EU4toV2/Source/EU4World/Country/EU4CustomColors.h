@@ -1,9 +1,7 @@
-#ifndef EU4_CUSTOMCOLORS_H_
-#define EU4_CUSTOMCOLORS_H_
-
+#ifndef EU4_CUSTOMCOLORS_H
+#define EU4_CUSTOMCOLORS_H
 
 #include "Color.h"
-
 
 namespace EU4
 {
@@ -20,7 +18,7 @@ namespace EU4
 	public:
 		CustomColors() = default;
 		CustomColors(std::istream& theStream);
-		CustomColorsBlock getCustomColors() const { return customColors; }
+		const CustomColorsBlock& getCustomColors() const { return customColors; }
 
 		void setFlag(int fl) { customColors.flag = fl; }
 		void setColor(int col) { customColors.color = col; }
@@ -32,6 +30,4 @@ namespace EU4
 	};
 }
 
-
-
-#endif // EU4_CUSTOMCOLORS_H_
+#endif // EU4_CUSTOMCOLORS_H

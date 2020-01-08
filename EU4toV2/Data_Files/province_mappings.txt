@@ -998,7 +998,8 @@
 	link = { eu4 = 250 v2 = 268 }	# Perth -> Dundee
 	link = { eu4 = 249 v2 = 271 }	# Ayrshire -> Glasgow
 	link = { eu4 = 248 eu4 = 4361 eu4 = 4362 v2 = 269 v2 = 272 }	# MANY-TO-MANY: Lothian, East March, West March -> Edinburgh, Dumfries
-	link = { eu4 = 247 eu4 = 4365 v2 = 279 v2 = 304 }	# MANY-TO-MANY: Cumbria, Mann -> Carlisle, Isle of Man
+	link = { eu4 = 247 v2 = 279 }	# Cumbria -> Carlisle
+	link = { eu4 = 4365 v2 = 304 }	# Mann -> Isle of Man
 	link = { eu4 = 246 v2 = 280 }	# Northumberland -> Newcastle-upon-Tyne
 	link = { eu4 = 245 eu4 = 4368 eu4 = 4367 v2 = 283 v2 = 282 v2 = 281 }	# MANY-TO-MANY: York, Scarborough, Hull -> Sheffield, Leeds, Hull
 	link = { eu4 = 244 v2 = 278 v2 = 277 v2 = 285 }	# Lancashire -> Manchester, Liverpool, Chester

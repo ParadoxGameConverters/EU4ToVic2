@@ -169,12 +169,12 @@
     <ClCompile Include="..\EU4toV2\Source\Configuration.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Buildings\Building.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Buildings\Buildings.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegion.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegions.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\GreatProjects.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\DateItem.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\DateItems.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\EU4Province.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\PopRatio.cpp" />
@@ -215,9 +215,7 @@
     <ClCompile Include="EU4WorldTests\AreasTests.cpp" />
     <ClCompile Include="EU4WorldTests\BuildingsTests.cpp" />
     <ClCompile Include="EU4WorldTests\BuildingTests.cpp" />
-    <ClCompile Include="EU4WorldTests\GreatProjectsTests.cpp" />
     <ClCompile Include="EU4WorldTests\DateItemsTests.cpp" />
-    <ClCompile Include="EU4WorldTests\DateItemTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4ProvinceTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp" />

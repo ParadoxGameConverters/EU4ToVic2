@@ -10,7 +10,7 @@ namespace EU4
 	{
 	public:
 		EU4ActiveIdeas(std::istream& theStream);
-		std::map<std::string, int> getActiveIdeas() const { return activeIdeas; }
+		const std::map<std::string, int>& getActiveIdeas() const { return activeIdeas; }
 
 	private:
 		std::map<std::string, int> activeIdeas;

@@ -15,7 +15,6 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "../Configuration.h"
-#include "../EU4World/Continents.h"
 #include "../EU4World/Diplomacy/EU4Diplomacy.h"
 #include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/World.h"
@@ -48,6 +47,7 @@
 #include "Country/V2Unreleasables.h"
 #include "Pops/PopMapper.h"
 #include "Map/MapProvince.h"
+#include "../EU4World/ColonialRegions/ColonialRegions.h"
 
 
 
@@ -63,6 +63,7 @@ V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper&
 
 	initializeProvinceMapper();
 	sourceWorld.checkAllProvincesMapped(*provinceMapper);
+
 	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries, *provinceMapper);
 
 	LOG(LogLevel::Info) << "Converting world";
@@ -900,7 +901,7 @@ std::vector<V2Demographic> V2World::determineDemographics(
 		);
 		if (!slaveCulture)
 		{
-			auto thisContinent = EU4::continents::getEU4Continent(eProv->getNum());
+			auto thisContinent = continentsMapper.getEU4Continent(eProv->getNum());
 			if ((thisContinent) && ((thisContinent == "asia") || (thisContinent == "oceania")))
 			{
 				if (theConfiguration.getDebug())
@@ -996,12 +997,13 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 			country2->second->addRelation(*r2);
 		}
 
-		if (agreement.getAgreementType() == "colonial")
+		if ((agreement.getAgreementType() == "colonial") || (agreement.getAgreementType() == "colony"))
 		{
 			country2->second->setColonyOverlord(country1->second);
-
 			if (country2->second->getSourceCountry()->getLibertyDesire() < theConfiguration.getLibertyThreshold())
 			{
+				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() << 
+					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << theConfiguration.getLibertyThreshold() << " liberty desire)";
 				country1->second->absorbVassal(country2->second);
 				for (auto& agreement2: agreements)
 				{
@@ -1013,6 +1015,8 @@ void V2World::convertDiplomacy(const EU4::world& sourceWorld)
 			}
 			else
 			{
+				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is not absorbing " << country2->second->getTag() <<
+					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << theConfiguration.getLibertyThreshold() << " liberty desire)";
 				V2Agreement v2a;
 				v2a.country1 = V2Tag1;
 				v2a.country2 = V2Tag2;
@@ -1126,7 +1130,7 @@ void V2World::setupColonies()
 				continue;
 
 			int capitalSrc = capitalSrcProv->getNum();
-			capitalContinent = EU4::continents::getEU4Continent(capitalSrc);
+			capitalContinent = continentsMapper.getEU4Continent(capitalSrc);
 			if (!capitalContinent)
 			{
 				continue;
@@ -1144,7 +1148,7 @@ void V2World::setupColonies()
 				continue;
 
 			int provSrc = provSrcProv->getNum();
-			std::optional<std::string> continent = EU4::continents::getEU4Continent(provSrc);
+			std::optional<std::string> continent = continentsMapper.getEU4Continent(provSrc);
 			if ((continent) && (continent == capitalContinent))
 			{
 				provItr->second->setSameContinent(true);
@@ -1650,7 +1654,7 @@ void V2World::addUnions()
 
 	for (map<int, V2Province*>::iterator provItr = provinces.begin(); provItr != provinces.end(); provItr++)
 	{
-		if (!provItr->second->wasInfidelConquest() && !provItr->second->wasColony())
+		if (!provItr->second->wasColony())
 		{
 			auto cultures = provItr->second->getCulturesOverThreshold(0.5);
 			for (auto culture : cultures)

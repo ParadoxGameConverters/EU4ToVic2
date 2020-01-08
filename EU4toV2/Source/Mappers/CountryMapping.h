@@ -119,7 +119,7 @@ namespace mappers
 				const std::map<std::string, V2Country*>& Vic2Countries,
 				const ProvinceMapper& provinceMapper
 			);
-			bool capitalInRightEU4Region(const mappers::ColonyStruct& colony, int EU4Capital);
+			bool capitalInRightEU4Region(const mappers::ColonyStruct& colony, int EU4Capital, const ProvinceMapper& provinceMapper);
 			bool capitalInRightVic2Region(
 				const mappers::ColonyStruct& colony,
 				std::optional<int> Vic2Capital,

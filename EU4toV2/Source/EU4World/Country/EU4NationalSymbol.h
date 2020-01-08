@@ -1,8 +1,7 @@
-#ifndef EU4_NATIONALSYMBOL_H_
-#define EU4_NATIONALSYMBOL_H_
+#ifndef EU4_NATIONAL_SYMBOL_H
+#define EU4_NATIONAL_SYMBOL_H
 
 #include "EU4CustomColors.h"
-
 
 namespace EU4
 {
@@ -14,8 +13,7 @@ namespace EU4
 		commonItems::Color getMapColor() const { return mapColor; }
 		commonItems::Color getCountryColor() const { return countryColor; }
 		commonItems::Color getRevolutionaryColor() const { return revolutionaryColor; }
-		CustomColors& retrieveCustomColors() { return customColors; }
-		CustomColors getCustomColors() const { return customColors; }
+		CustomColors& getCustomColors() { return customColors; }
 		bool isCustomColorsInitialized() const { return customColorsInitialized; }
 
 		void setMapColor(commonItems::Color col) { mapColor = col; }
@@ -33,6 +31,4 @@ namespace EU4
 	};
 }
 
-
-
-#endif // EU4_NATIONALSYMBOL_H_
+#endif // EU4_NATIONALSYMBOL_H

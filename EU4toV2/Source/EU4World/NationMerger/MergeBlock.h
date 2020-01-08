@@ -1,9 +1,8 @@
-#ifndef EU4_MERGE_BLOCK_H_
-#define EU4_MERGE_BLOCK_H_
+#ifndef EU4_MERGE_BLOCK_H
+#define EU4_MERGE_BLOCK_H
 
 #include "newParser.h"
 #include <set>
-
 
 namespace EU4
 {
@@ -12,7 +11,7 @@ namespace EU4
 	public:
 		MergeBlock(std::istream& theStream);
 		std::string getMaster() const { return master; }
-		std::set<std::string> getSlaves() const { return slaves; }
+		const std::set<std::string>& getSlaves() const { return slaves; }
 		bool getMerge() const { return merge; }
 
 	private:
@@ -22,4 +21,4 @@ namespace EU4
 	};
 }
 
-#endif // EU4_MERGE_BLOCK_H_
+#endif // EU4_MERGE_BLOCK_H

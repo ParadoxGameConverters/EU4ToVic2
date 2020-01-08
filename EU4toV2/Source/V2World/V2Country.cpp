@@ -384,7 +384,7 @@ void V2Country::output() const
 		{
 			fprintf(output, "\n");
 			fprintf(output, "# Decisions\n");
-			fprintf(output, "1820.1.1 = {\n");
+			fprintf(output, "1.1.1 = {\n");
 			for (const auto& decision : decisions)
 			{
 				fprintf(output, "\tdecision = %s\n", decision.c_str());
@@ -820,15 +820,15 @@ void V2Country::calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry)
 	int numProvinces = 0;
 	int numColleges = 0;
 	int numUniversities = 0;
-	vector<EU4::Province*> provinces = srcCountry->getProvinces();
+	vector<EU4::Province> provinces = srcCountry->getProvinces();
 	numProvinces = provinces.size();
-	for (vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
+	for (vector<EU4::Province>::iterator i = provinces.begin(); i != provinces.end(); ++i)
 	{
-		if ((*i)->hasBuilding("college"))
+		if ((*i).hasBuilding("college"))
 		{
 			numColleges++;
 		}
-		if ((*i)->hasBuilding("university"))
+		if ((*i).hasBuilding("university"))
 		{
 			numUniversities++;
 		}
@@ -875,15 +875,15 @@ void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
 {
 	for (const auto& prov : srcCountry->getProvinces())
 	{
-		if (prov->hasGreatProject("suez_canal"))
+		if (prov.hasGreatProject("suez_canal"))
 		{
 			decisions.push_back("build_suez_canal");
 		}
-		if (prov->hasGreatProject("kiel_canal"))
+		if (prov.hasGreatProject("kiel_canal"))
 		{
 			decisions.push_back("build_kiel_canal");
 		}
-		if (prov->hasGreatProject("panama_canal"))
+		if (prov.hasGreatProject("panama_canal"))
 		{
 			decisions.push_back("build_panama_canal");
 		}
@@ -1259,8 +1259,6 @@ void V2Country::addRelation(V2Relations& newRelation)
 
 void V2Country::absorbVassal(V2Country* vassal)
 {
-	Log(LogLevel::Debug) << "\t" << tag << " is absorbing " << vassal->getTag();
-
 	// change province ownership and add owner cores if needed
 	map<int, V2Province*> vassalProvinces = vassal->getProvinces();
 	for (auto provItr = vassalProvinces.begin(); provItr != vassalProvinces.end(); provItr++)
@@ -2064,7 +2062,7 @@ V2Province* V2Country::getProvinceForExpeditionaryArmy()
 	vector<V2Province*> candidates;
 	for (auto pitr = provinces.begin(); pitr != provinces.end(); ++pitr)
 	{
-		if ( (pitr->second->getOwner() == tag) && !pitr->second->wasColony() && !pitr->second->wasInfidelConquest()
+		if ( (pitr->second->getOwner() == tag) && !pitr->second->wasColony()
 			&& ( pitr->second->hasCulture(primaryCulture, 0.5) ) && ( pitr->second->getPops("soldiers").size() > 0) )
 		{
 			candidates.push_back(pitr->second);

@@ -32,7 +32,7 @@ TEST(EU4World_RegionTests, noProvincesMeansNoProvinces)
 {
 	std::set<int> input;
 
-	EU4::region theRegion(input);
+	EU4::Region theRegion(input);
 
 	ASSERT_FALSE(theRegion.containsProvince(1));
 }
@@ -43,7 +43,7 @@ TEST(EU4World_RegionTests, provincesCanBeSet)
 	std::set<int> input;
 	input.insert(1);
 
-	EU4::region theRegion(input);
+	EU4::Region theRegion(input);
 
 	ASSERT_TRUE(theRegion.containsProvince(1));
 }
@@ -61,9 +61,9 @@ TEST(EU4World_RegionTests, noAreasMeansNoProvinces)
 	areasInput << "test_area = {\n";
 	areasInput << "\t1 2 3\n";
 	areasInput << "}";
-	EU4::areas theAreas(areasInput);
+	EU4::Areas theAreas(areasInput);
 
-	EU4::region theRegion(regionInput);
+	EU4::Region theRegion(regionInput);
 	theRegion.addProvinces(theAreas);
 
 	ASSERT_FALSE(theRegion.containsProvince(1));
@@ -83,9 +83,9 @@ TEST(EU4World_RegionTests, AreasProvideProvinces)
 	areasInput << "test_area = {\n";
 	areasInput << "\t1 2 3\n";
 	areasInput << "}";
-	EU4::areas theAreas(areasInput);
+	EU4::Areas theAreas(areasInput);
 
-	EU4::region theRegion(regionInput);
+	EU4::Region theRegion(regionInput);
 	theRegion.addProvinces(theAreas);
 
 	ASSERT_TRUE(theRegion.containsProvince(1));

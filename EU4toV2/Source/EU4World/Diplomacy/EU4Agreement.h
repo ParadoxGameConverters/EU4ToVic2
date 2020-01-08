@@ -1,5 +1,5 @@
-#ifndef EU4AGREEMENT_H
-#define EU4AGREEMENT_H
+#ifndef EU4_AGREEMENT_H
+#define EU4_AGREEMENT_H
 
 #include "Date.h"
 #include "newParser.h"
@@ -23,8 +23,8 @@ namespace EU4
 		std::string originTag; // origin country
 		std::string targetTag; // target country
 		date startDate; // the date this agreement began
-		date endDate = date("1.1.1"); // the date this agreement ends, releevant for PUs
+		date endDate = date("1.1.1"); // the date this agreement ends, relevant for PUs
 	};
 }
 
-#endif // EU4AGREEMENT_H
+#endif // EU4_AGREEMENT_H

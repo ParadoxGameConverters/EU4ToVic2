@@ -8,6 +8,7 @@ EU4::EU4Modifier::EU4Modifier(std::istream& theStream)
 			commonItems::singleString modifierStr(theStream);
 			modifier = modifierStr.getString();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+
 	parseStream(theStream);
 }

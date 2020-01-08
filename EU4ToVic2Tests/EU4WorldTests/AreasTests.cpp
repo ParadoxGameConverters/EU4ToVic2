@@ -32,7 +32,7 @@ TEST(EU4World_AreasTests, nonMatchingAreaGivesNoProvinces)
 	std::stringstream input;
 	input << "an_area = {}";
 
-	EU4::areas theAreas(input);
+	EU4::Areas theAreas(input);
 	ASSERT_EQ(theAreas.getProvincesInArea("non_matching_area").size(), 0);
 }
 
@@ -42,6 +42,6 @@ TEST(EU4World_AreasTests, matchingAreaGivesProvinces)
 	std::stringstream input;
 	input << "matching_area = { 56 }";
 
-	EU4::areas theAreas(input);
+	EU4::Areas theAreas(input);
 	ASSERT_EQ(theAreas.getProvincesInArea("matching_area").count(56), 1);
 }

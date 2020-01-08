@@ -13,7 +13,7 @@ namespace mappers
 	{
 	public:
 		UnitTypeMapper();
-		RegimentTypeMap getUnitTypeMap() const { return unitTypeMap; }
+		const RegimentTypeMap& getUnitTypeMap() const { return unitTypeMap; }
 
 	private:
 		RegimentTypeMap unitTypeMap;

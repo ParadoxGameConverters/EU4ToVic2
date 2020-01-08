@@ -27,6 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "ProvinceMappingsVersion.h"
+#include "../../EU4World/ColonialRegions/ColonialRegions.h"
 #include "../../Configuration.h"
 #include "newParser.h"
 #include <map>
@@ -59,6 +60,7 @@ class ProvinceMapper: commonItems::parser
 		bool isProvinceResettable(int Vic2ProvinceNumber, const std::string& region) const;
 
 		bool isValidProvince(int province) const { return validProvinces.count(province) > 0; }
+		bool provinceIsInRegion(int province, const std::string& region) const;
 
 	private:
 		ProvinceMappingsVersion getMappingsVersion(
@@ -73,6 +75,7 @@ class ProvinceMapper: commonItems::parser
 		std::map<int, std::vector<int>> EU4ToVic2ProvinceMap;
 		std::map<std::string, std::set<int>> resettableProvinces;
 		std::set<int> validProvinces;
+		EU4::ColonialRegions colonialRegionsMapper;
 };
 
 }

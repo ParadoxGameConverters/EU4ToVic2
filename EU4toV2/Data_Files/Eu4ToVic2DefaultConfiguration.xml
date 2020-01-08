@@ -82,7 +82,7 @@
           </preference>
           <preference>
             <name>libertyThreshold</name>
-            <friendlyName>Liberty threshold</friendlyName>
+            <friendlyName>Liberty threshold for Colonies</friendlyName>
             <description>The threshold value for when colonies are not absorbed. Default 50% (loyal colonies absorbed)</description>
             <hasDirectlyEditableValue>true</hasDirectlyEditableValue>
             <value>50</value>
@@ -96,19 +96,19 @@
             <entryOptions>
               <entryOption>
                 <name>1</name>
-                <friendlyName>Vanilla - no change</friendlyName>
+                <friendlyName>Stick to vanilla pop sizes.</friendlyName>
                 <description>Use Vanilla population sizes.</description>
-                <isDefault>true</isDefault>
-              </entryOption>
-              <entryOption>
-                <name>2</name>
-                <friendlyName>Population Shaping - Devpush!</friendlyName>
-                <description>Adjust population sizes.</description>
                 <isDefault>false</isDefault>
               </entryOption>
               <entryOption>
+                <name>2</name>
+                <friendlyName>Devpush means more people!</friendlyName>
+                <description>Adjust population sizes.</description>
+                <isDefault>true</isDefault>
+              </entryOption>
+              <entryOption>
                 <name>3</name>
-                <friendlyName>Extreme Reshaping</friendlyName>
+                <friendlyName>Extreme - abs. devsize</friendlyName>
                 <description>Redistribute everyone according to absolute value of provinces.</description>
                 <isDefault>false</isDefault>
               </entryOption>
@@ -130,7 +130,7 @@
 			<entryOptions>
 			  <entryOption>
 				<name>1</name>
-				<friendlyName>Yes - no change</friendlyName>
+				<friendlyName>Yes, unification is nigh.</friendlyName>
 				<description>Use defaults</description>
 				<isDefault>true</isDefault>
 			  </entryOption>
@@ -148,7 +148,7 @@
 			  </entryOption>
 			  <entryOption>
 				<name>4</name>
-				<friendlyName>Drop both</friendlyName>
+				<friendlyName>Don't assign any.</friendlyName>
 				<description>Don't touch anything.</description>
 				<isDefault>false</isDefault>
 			  </entryOption>
@@ -157,18 +157,18 @@
 		<preference>
 			<name>euroCentrism</name>
 			<friendlyName>Make world Eurocentric?</friendlyName>
-			<description>Drop literacy and civilization levels for non-europeans?</description>
+			<description>Drop literacy and civilization levels for non-europeans? (configurable!)</description>
 			<entryOptions>
 			  <entryOption>
 				<name>1</name>
-				<friendlyName>Leave as is in EU4</friendlyName>
+				<friendlyName>Use EU4 institutions and tech</friendlyName>
 				<description>Use defaults</description>
 				<isDefault>true</isDefault>
 			  </entryOption>
 			  <entryOption>
 				<name>2</name>
-				<friendlyName>Of course, old chap!</friendlyName>
-				<description>Time to rule the waves!</description>
+				<friendlyName>Time to rule the waves!</friendlyName>
+				<description>Configurable via techgroups.txt</description>
 				<isDefault>false</isDefault>
 			  </entryOption>
 			</entryOptions>

@@ -1,5 +1,5 @@
-#ifndef EU4RELATION_DETAILS_H_
-#define EU4RELATION_DETAILS_H_
+#ifndef EU4RELATION_DETAILS_H
+#define EU4RELATION_DETAILS_H
 
 #include "Date.h"
 #include "newParser.h"
@@ -25,4 +25,4 @@ namespace EU4
 	};
 }
 
-#endif // EU4RELATION_DETAILS_H_
+#endif // EU4RELATION_DETAILS_H

@@ -34,8 +34,8 @@ TEST(EU4World_DateItemsTests, emptyItemsImported)
 	input << "={\n";
 	input << "}";
 
-	EU4::DateItems theDateItems("1444.11.12", input);
-	std::vector<EU4::DateItem> theItems = theDateItems.getItems();
+	EU4::DateItems theDateItems(input);
+	std::vector<std::pair<EU4::DateItemType, std::string>> theItems = theDateItems.getDateChanges();
 
 	ASSERT_EQ(theItems.size(), 0);
 }
@@ -48,13 +48,12 @@ TEST(EU4World_DateItemsTests, singleItemImported)
 	input << "	owner = \"SWE\"\n";
 	input << "}";
 
-	EU4::DateItems theDateItems("1444.11.12", input);
-	std::vector<EU4::DateItem> theItems = theDateItems.getItems();
+	EU4::DateItems theDateItems(input);
+	std::vector<std::pair<EU4::DateItemType, std::string>> theItems = theDateItems.getDateChanges();
 
 	ASSERT_EQ(theItems.size(), 1);
-	ASSERT_EQ(theItems[0].getDate(), date("1444.11.12"));
-	ASSERT_EQ(theItems[0].getType(), EU4::DateItemType::OWNER_CHANGE);
-	ASSERT_EQ(theItems[0].getData(), "SWE");
+	ASSERT_EQ(theItems[0].first, EU4::DateItemType::OWNER_CHANGE);
+	ASSERT_EQ(theItems[0].second, "SWE");
 }
 
 
@@ -62,24 +61,27 @@ TEST(EU4World_DateItemsTests, multipleItemsImported)
 {
 	std::stringstream input;
 	input << "={\n";
+	input << "	owner = \"SWE\"\n";
 	input << "	revolt = { \n";
 	input << "		type = \"pretender_rebels\"\n";
 	input << "		leader = \"Karl Knutsson Bonde\"\n";
 	input << "		size = 1\n";
 	input << "	}\n";
+	input << "	religion = \"protestant\"\n";
 	input << "	controller = { \n";
 	input << "		tag = \"REB\"\n";
 	input << "	}\n";
+	input << "	culture = \"swedish\"\n";
 	input << "}";
 
-	EU4::DateItems theDateItems("1438.10.1", input);
-	std::vector<EU4::DateItem> theItems = theDateItems.getItems();
+	EU4::DateItems theDateItems(input);
+	std::vector<std::pair<EU4::DateItemType, std::string>> theItems = theDateItems.getDateChanges();
 
-	ASSERT_EQ(theItems.size(), 2);
-	ASSERT_EQ(theItems[0].getDate(), date("1438.10.1"));
-	ASSERT_EQ(theItems[0].getType(), EU4::DateItemType::OTHER_CHANGE);
-	ASSERT_EQ(theItems[0].getData(), "");
-	ASSERT_EQ(theItems[1].getDate(), date("1438.10.1"));
-	ASSERT_EQ(theItems[1].getType(), EU4::DateItemType::OTHER_CHANGE);
-	ASSERT_EQ(theItems[1].getData(), "");
+	ASSERT_EQ(theItems.size(), 3);
+	ASSERT_EQ(theItems[0].first, EU4::DateItemType::OWNER_CHANGE);
+	ASSERT_EQ(theItems[0].second, "SWE");
+	ASSERT_EQ(theItems[1].first, EU4::DateItemType::RELIGION_CHANGE);
+	ASSERT_EQ(theItems[1].second, "protestant");
+	ASSERT_EQ(theItems[2].first, EU4::DateItemType::CULTURE_CHANGE);
+	ASSERT_EQ(theItems[2].second, "swedish");
 }

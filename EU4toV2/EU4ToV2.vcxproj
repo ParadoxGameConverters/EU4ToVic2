@@ -183,8 +183,8 @@
     <ClCompile Include="Source\EU4World\Army\EU4Regiment.cpp" />
     <ClCompile Include="Source\EU4World\Buildings\Building.cpp" />
     <ClCompile Include="Source\EU4World\Buildings\Buildings.cpp" />
-    <ClCompile Include="Source\EU4World\ColonialRegions.cpp" />
-    <ClCompile Include="Source\EU4World\Continents.cpp" />
+    <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegion.cpp" />
+    <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegions.cpp" />
     <ClCompile Include="Source\EU4World\Countries.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4ActiveIdeas.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4CountryFlags.cpp" />
@@ -192,7 +192,6 @@
     <ClCompile Include="Source\EU4World\Country\EU4GovernmentSection.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4Modifier.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4NationalSymbol.cpp" />
-    <ClCompile Include="Source\EU4World\Country\EU4ReformsSection.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4ReformStackSection.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4Technology.cpp" />
     <ClCompile Include="Source\EU4World\CultureGroups.cpp" />
@@ -211,8 +210,6 @@
     <ClCompile Include="Source\EU4World\Mods\Mods.cpp" />
     <ClCompile Include="Source\EU4World\NationMerger\MergeBlock.cpp" />
     <ClCompile Include="Source\EU4World\NationMerger\NationMergeParser.cpp" />
-    <ClCompile Include="Source\EU4World\Provinces\GreatProjects.cpp" />
-    <ClCompile Include="Source\EU4World\Provinces\DateItem.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\DateItems.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\EU4Province.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\PopRatio.cpp" />
@@ -240,6 +237,7 @@
     <ClCompile Include="Source\Mappers\ClimateMapper.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTag.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTagsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Continents.cpp" />
     <ClCompile Include="Source\Mappers\CountryMapping.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper.cpp" />
     <ClCompile Include="Source\Mappers\ColonyFlagsetMapper.cpp" />
@@ -329,8 +327,8 @@
     <ClInclude Include="Source\EU4World\Army\EU4Regiment.h" />
     <ClInclude Include="Source\EU4World\Buildings\Building.h" />
     <ClInclude Include="Source\EU4World\Buildings\Buildings.h" />
-    <ClInclude Include="Source\EU4World\ColonialRegions.h" />
-    <ClInclude Include="Source\EU4World\Continents.h" />
+    <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegion.h" />
+    <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegions.h" />
     <ClInclude Include="Source\EU4World\Countries.h" />
     <ClInclude Include="Source\EU4World\Country\EU4ActiveIdeas.h" />
     <ClInclude Include="Source\EU4World\Country\EU4CountryFlags.h" />
@@ -338,7 +336,6 @@
     <ClInclude Include="Source\EU4World\Country\EU4GovernmentSection.h" />
     <ClInclude Include="Source\EU4World\Country\EU4Modifier.h" />
     <ClInclude Include="Source\EU4World\Country\EU4NationalSymbol.h" />
-    <ClInclude Include="Source\EU4World\Country\EU4ReformsSection.h" />
     <ClInclude Include="Source\EU4World\Country\EU4ReformStackSection.h" />
     <ClInclude Include="Source\EU4World\Country\EU4Technology.h" />
     <ClInclude Include="Source\EU4World\CultureGroups.h" />
@@ -358,8 +355,6 @@
     <ClInclude Include="Source\EU4World\NationMerger\MergeBlock.h" />
     <ClInclude Include="Source\EU4World\NationMerger\NationMergeParser.h" />
     <ClInclude Include="Source\EU4World\Provinces\BuildingWeightEffects.h" />
-    <ClInclude Include="Source\EU4World\Provinces\GreatProjects.h" />
-    <ClInclude Include="Source\EU4World\Provinces\DateItem.h" />
     <ClInclude Include="Source\EU4World\Provinces\DateItems.h" />
     <ClInclude Include="Source\EU4World\Provinces\EU4Province.h" />
     <ClInclude Include="Source\EU4World\Provinces\PopRatio.h" />
@@ -388,6 +383,7 @@
     <ClInclude Include="Source\Mappers\ColonialTag.h" />
     <ClInclude Include="Source\Mappers\ColonialTagsMapper.h" />
     <ClInclude Include="Source\Mappers\ColonyFlagsetMapper.h" />
+    <ClInclude Include="Source\Mappers\Continents.h" />
     <ClInclude Include="Source\Mappers\CountryMapping.h" />
     <ClInclude Include="Source\Mappers\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapping.h" />

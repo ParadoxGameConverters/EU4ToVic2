@@ -1,5 +1,5 @@
-#ifndef EU4_TECHNOLOGY_H_
-#define EU4_TECHNOLOGY_H_
+#ifndef EU4_TECHNOLOGY_H
+#define EU4_TECHNOLOGY_H
 
 #include "newParser.h"
 
@@ -21,4 +21,4 @@ namespace EU4
 	};
 }
 
-#endif // EU4_TECHNOLOGY_H_
+#endif // EU4_TECHNOLOGY_H

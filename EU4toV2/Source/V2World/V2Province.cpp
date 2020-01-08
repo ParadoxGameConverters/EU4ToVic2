@@ -279,11 +279,6 @@ void V2Province::convertFromOldProvince(
 		colonial = 0;
 	}
 	wasColonised = oldProvince->wasColonised();
-	auto oldCountry = theEU4Countries.find(oldProvince->getOwnerString());
-	if (oldCountry != theEU4Countries.end())
-	{
-		originallyInfidel = oldProvince->wasInfidelConquest(oldCountry->second->getReligion(), allReligions);
-	}
 }
 
 

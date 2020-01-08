@@ -128,9 +128,6 @@
     <ClCompile Include="EU4WorldTests\PopRatioTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\DateItemTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\common_items\Date.cpp">
       <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
@@ -157,15 +154,6 @@
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp">
       <Filter>ConverterFiles\EU4World\Religions</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\GreatProjectsTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\GreatProjects.cpp">
-      <Filter>ConverterFiles\EU4World\Provinces</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\DateItem.cpp">
-      <Filter>ConverterFiles\EU4World\Provinces</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\DateItems.cpp">
       <Filter>ConverterFiles\EU4World\Provinces</Filter>
@@ -266,6 +254,12 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceModifier.cpp">
       <Filter>ConverterFiles\EU4World\Provinces</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegion.cpp">
+      <Filter>ConverterFiles\EU4World\ColonialRegions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegions.cpp">
+      <Filter>ConverterFiles\EU4World\ColonialRegions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -324,6 +318,9 @@
     </Filter>
     <Filter Include="ConverterFiles\EU4World\Modifiers">
       <UniqueIdentifier>{b50f49fb-ec18-4d14-aac1-f0ff92d9acbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\ColonialRegions">
+      <UniqueIdentifier>{7fba0347-5440-48b3-8dc3-04c9100995d6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -75,7 +75,6 @@ class V2Province : commonItems::parser
 
 		const EU4::Province*	getSrcProvince() const { return srcProvince; }
 		int getOldPopulation() const	{ return oldPopulation; }
-		bool wasInfidelConquest() const { return originallyInfidel; }
 		bool wasColony() const { return wasColonised; }
 		bool isColonial() const { return colonial != 0; }
 		bool isTerritorialCore() const { return territorialCore; }   
@@ -133,7 +132,6 @@ class V2Province : commonItems::parser
 		bool wasColonised = false;
 		bool landConnection = false;
 		bool sameContinent = false;
-		bool originallyInfidel = false;
 		bool territorialCore = false;
 		int oldPopulation = 0;
 		std::vector<V2Demographic> demographics;

@@ -1,11 +1,9 @@
 #include "World.h"
-#include "Buildings/Buildings.h"
 #include "Countries.h"
 #include "CultureGroups.h"
 #include "EU4Country.h"
 #include "EU4Version.h"
 #include "EU4Localisation.h"
-#include "Modifiers/Modifiers.h"
 #include "Mods/Mod.h"
 #include "Mods/Mods.h"
 #include "Provinces/EU4Province.h"
@@ -64,7 +62,8 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			theConfiguration.setActiveDLCs(theDLCs.getStrings());
 		});
 	registerKeyword(std::regex("mod_enabled"), [this](const std::string& modText, std::istream& theStream) {
-		Mods theMods(theStream, theConfiguration);
+		commonItems::stringList modList(theStream);
+		Mods theMods(modList.getStrings(), theConfiguration);
 	});
 	registerKeyword(std::regex("revolution_target"), [this](const std::string& revolutionText, std::istream& theStream)
 		{
@@ -92,20 +91,7 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	);
 	registerKeyword(std::regex("provinces"), [this](const std::string& provincesText, std::istream& theStream) {
 		LOG(LogLevel::Info) << "- Loading Provinces";
-		std::ifstream buildingsFile(theConfiguration.getEU4Path() + "/common/buildings/00_buildings.txt");
-		Buildings buildingTypes(buildingsFile);
-		buildingsFile.close();
-
-		std::ifstream modifiersFile(theConfiguration.getEU4Path() + "/common/event_modifiers/00_event_modifiers.txt");
-		Modifiers modifierTypes(modifiersFile);
-		modifiersFile.close();
-		modifiersFile.open(theConfiguration.getEU4Path() + "/common/triggered_modifiers/00_triggered_modifiers.txt");
-		modifierTypes.addModifiers(modifiersFile);
-		modifiersFile.close();
-		modifiersFile.open(theConfiguration.getEU4Path() + "/common/static_modifiers/00_static_modifiers.txt");
-		modifierTypes.addModifiers(modifiersFile);
-		modifiersFile.close();
-
+		modifierTypes.initialize();
 		provinces = std::make_unique<Provinces>(theStream, buildingTypes, modifierTypes);
 		std::optional<date> possibleDate = provinces->getProvince(1).getFirstOwnedDate();
 		if (possibleDate)
@@ -113,9 +99,7 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			theConfiguration.setFirstEU4Date(*possibleDate);
 		}
 	});
-	registerKeyword(
-		std::regex("countries"),
-		[this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
+	registerKeyword(std::regex("countries"), [this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
 		{
 			LOG(LogLevel::Info) << "- Loading Countries";
 			loadCountries(theStream, ideaEffectMapper);
@@ -139,9 +123,12 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	LOG(LogLevel::Info) << "* Importing EU4 save *";
 	parseFile(EU4SaveFileName);
 
-	LOG(LogLevel::Info) << "Building world:";
+	LOG(LogLevel::Info) << " * Building world *";
+	LOG(LogLevel::Info) << "- Loading Empires";
 	setEmpires();
+	LOG(LogLevel::Info) << "- Processing Province Info";
 	addProvinceInfoToCountries();
+	LOG(LogLevel::Info) << "- Eliminating Minorities";
 	dropMinoritiesFromCountries();
 	provinces->determineTotalProvinceWeights(theConfiguration);
 	LOG(LogLevel::Info) << "- Loading Regions";
@@ -246,7 +233,7 @@ void EU4::world::addProvinceInfoToCountries()
 		auto owner = theCountries.find(province.second.getOwnerString());
 		if (owner != theCountries.end())
 		{
-			owner->second->addProvince(&province.second);
+			owner->second->addProvince(province.second);
 		}
 	}
 
@@ -259,7 +246,7 @@ void EU4::world::addProvinceInfoToCountries()
 			auto country = theCountries.find(core);
 			if (country != theCountries.end())
 			{
-				country->second->addCore(&province.second);
+				country->second->addCore(province.second);
 			}
 		}
 	}
@@ -314,7 +301,7 @@ void EU4::world::loadEU4RegionsOldVersion()
 	}
 
 	std::ifstream theStream(regionFilename);
-	EU4::areas installedAreas(theStream);
+	EU4::Areas installedAreas(theStream);
 	theStream.close();
         assignProvincesToAreas(installedAreas.getAreas());
 
@@ -338,7 +325,7 @@ void EU4::world::loadEU4RegionsNewVersion()
 	}
 
 	std::ifstream areaStream(areaFilename);
-	EU4::areas installedAreas(areaStream);
+	EU4::Areas installedAreas(areaStream);
 	areaStream.close();
         assignProvincesToAreas(installedAreas.getAreas());
 
@@ -468,12 +455,11 @@ void EU4::world::setLocalisations()
 void EU4::world::resolveRegimentTypes()
 {
 	LOG(LogLevel::Info) << "Resolving unit types.";
-	mappers::UnitTypeMapper utm;
-	unitTypeMap = utm.getUnitTypeMap();
+	mappers::UnitTypeMapper utm;	
 
 	for (auto itr = theCountries.begin(); itr != theCountries.end(); ++itr)
 	{
-		itr->second->resolveRegimentTypes(unitTypeMap);
+		itr->second->resolveRegimentTypes(utm);
 	}
 }
 

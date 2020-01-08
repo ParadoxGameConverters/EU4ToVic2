@@ -1,17 +1,19 @@
 #include "EU4GovernmentSection.h"
 #include "ParserHelpers.h"
 
-EU4::governmentSection::governmentSection(std::istream& theStream)
+EU4::GovernmentSection::GovernmentSection(std::istream& theStream)
 {
 	registerKeyword(std::regex("government"), [this](const std::string& unused, std::istream& theStream)
 		{
-			government = governmentSection::readGovernment(theStream);
+			commonItems::singleString governmentStr(theStream);
+			government = governmentStr.getString();
 		});
 	registerKeyword(std::regex("reform_stack"), [this](const std::string& unused, std::istream& theStream)
 		{
-			reformStack = governmentSection::readGovernmentReforms(theStream);
+			EU4::ReformStackSection refStack(theStream);
+			reformStack = refStack.getReforms();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 }

@@ -33,7 +33,7 @@ TEST(EU4World_RegionsTests, oldStyleNoProvincesMeansNoProvinces)
 	std::stringstream areasInput;
 	areasInput << "test_region = {\n";
 	areasInput << "}";
-	EU4::areas theAreas(areasInput);
+	EU4::Areas theAreas(areasInput);
 
 	EU4::Regions theRegions(theAreas);
 
@@ -47,7 +47,7 @@ TEST(EU4World_RegionsTests, oldStyleProvincesCanBeSet)
 	areasInput << "test_region = {\n";
 	areasInput << "\t1 2 3\n";
 	areasInput << "}";
-	EU4::areas theAreas(areasInput);
+	EU4::Areas theAreas(areasInput);
 
 	EU4::Regions theRegions(theAreas);
 
@@ -67,7 +67,7 @@ TEST(EU4World_RegionsTests, newStyleNoAreasMeansNoProvinces)
 	areasInput << "test_area = {\n";
 	areasInput << "\t1 2 3\n";
 	areasInput << "}";
-	EU4::areas theAreas(areasInput);
+	EU4::Areas theAreas(areasInput);
 
 	EU4::Regions theRegions(theAreas, regionsInput);
 
@@ -87,7 +87,7 @@ TEST(EU4World_RegionsTests, newStyleNoProvincesMeansNoProvinces)
 	std::stringstream areasInput;
 	areasInput << "test_area = {\n";
 	areasInput << "}";
-	EU4::areas theAreas(areasInput);
+	EU4::Areas theAreas(areasInput);
 
 	EU4::Regions theRegions(theAreas, regionsInput);
 
@@ -108,7 +108,7 @@ TEST(EU4World_RegionsTests, newStyleAreasProvideProvinces)
 	areasInput << "test_area = {\n";
 	areasInput << "\t1 2 3\n";
 	areasInput << "}";
-	EU4::areas theAreas(areasInput);
+	EU4::Areas theAreas(areasInput);
 
 	EU4::Regions theRegions(theAreas, regionsInput);
 

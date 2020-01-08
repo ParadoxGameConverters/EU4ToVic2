@@ -33,7 +33,7 @@ EU4::EU4Diplomacy::EU4Diplomacy(std::istream& theStream)
 			agreements.push_back(newAgreement);
 		}
 	);
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 }

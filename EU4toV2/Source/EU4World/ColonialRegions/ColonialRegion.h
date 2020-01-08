@@ -1,16 +1,15 @@
-#ifndef EU4_AREA_H
-#define EU4_AREA_H
+#ifndef EU4_COLONIAL_REGION_H
+#define EU4_COLONIAL_REGION_H
 
-#include "Color.h"
 #include "newParser.h"
 #include <set>
 
 namespace EU4
 {
-	class Area : commonItems::parser
+	class ColonialRegion : commonItems::parser
 	{
 	public:
-		Area(std::istream& theStream);
+		ColonialRegion(std::istream& theStream);
 		const std::set<int>& getProvinces() const { return provinces; }
 
 	private:
@@ -18,4 +17,4 @@ namespace EU4
 	};
 }
 
-#endif // EU4_AREA_H
+#endif // EU4_COLONIAL_REGION_H

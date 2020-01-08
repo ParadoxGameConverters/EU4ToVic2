@@ -7,8 +7,6 @@
 
 mappers::ColonialTagMapper::ColonialTagMapper()
 {
-	LOG(LogLevel::Info) << "Parsing colony naming rules.";
-
 	registerKeyword(std::regex("link"), [this](const std::string& unused, std::istream& theStream)
 		{
 			ColonialTag colonialBlock(theStream);

@@ -1,39 +1,12 @@
-/*Copyright(c) 2019 The Paradox Game Converters Project
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files(the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and / or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions :
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE. */
-
-
-
 #include "ProvinceHistory.h"
-#include "DateItem.h"
 #include "DateItems.h"
 #include "../../Configuration.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 
-
-
 const date STARTING_DATE = theConfiguration.getStartEU4Date();
 const date HARD_ENDING_DATE("1836.1.1");
 const date FUTURE_DATE("2000.1.1");
-
-
 
 EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 {
@@ -65,24 +38,24 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 		originalManpower = manpowerDouble.getDouble();
 	});
 	registerKeyword(std::regex("\\d+\\.\\d+\\.\\d+"), [this](const std::string& dateString, std::istream& theStream) {
-		DateItems theItems(dateString, theStream);
-		for (DateItem item : theItems.getItems())
+		date theDate = date(dateString);
+		DateItems theItems(theStream);
+		for (const auto& theItem : theItems.getDateChanges())
 		{
-			if (item.getType() == DateItemType::OWNER_CHANGE)
-			{
-				ownershipHistory.push_back(std::make_pair(item.getDate(), item.getData()));
-			}
-			else if (item.getType() == DateItemType::CULTURE_CHANGE)
-			{
-				cultureHistory.push_back(std::make_pair(item.getDate(), item.getData()));
-			}
-			else if (item.getType() == DateItemType::RELIGION_CHANGE)
-			{
-				religionHistory.push_back(std::make_pair(item.getDate(), item.getData()));
+			switch (theItem.first) {
+			case DateItemType::OWNER_CHANGE:
+				ownershipHistory.push_back(std::make_pair(theDate, theItem.second));
+				break;
+			case DateItemType::CULTURE_CHANGE:
+				cultureHistory.push_back(std::make_pair(theDate, theItem.second));
+				break;
+			case DateItemType::RELIGION_CHANGE:
+				religionHistory.push_back(std::make_pair(theDate, theItem.second));
+				break;
 			}
 		}
 	});
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
 
@@ -98,73 +71,28 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 	buildPopRatios();
 }
 
-
 std::optional<date> EU4::ProvinceHistory::getFirstOwnedDate() const
 {
-	if (ownershipHistory.size() > 0)
-	{
-		return ownershipHistory[0].first;
-	}
-	else
-	{
-		return {};
-	}
+	if (ownershipHistory.size() > 0) return ownershipHistory[0].first;
+	return {};
 }
-
 
 bool EU4::ProvinceHistory::hasOriginalCulture() const
 {
-	if ((cultureHistory.size() > 1) && (cultureHistory[0].second != cultureHistory[cultureHistory.size() - 1].second))
-	{
-		return false;
-	}
-	else
-	{
-		return true;
-	}
+	if ((cultureHistory.size() > 1) && (cultureHistory[0].second != cultureHistory[cultureHistory.size() - 1].second)) return false;
+	return true;
 }
-
 
 bool EU4::ProvinceHistory::wasColonized() const
 {
-	if (
-		(ownershipHistory.size() > 0) &&
+	if ((ownershipHistory.size() > 0) &&
 		(ownershipHistory[0].first != STARTING_DATE) &&
-		(ownershipHistory[0].first != theConfiguration.getFirstEU4Date())
-	) {
+		(ownershipHistory[0].first != theConfiguration.getFirstEU4Date())) 
+	{
 		return !hasOriginalCulture();
-	}
-	else
-	{
-		return false;
-	}
-}
-
-
-bool EU4::ProvinceHistory::wasInfidelConquest(const Religions& allReligions, const std::string& ownerReligionString, int num) const
-{
-	// returns true if the original religion and the current owner's religion are in different groups
-	// and the province was NOT colonized
-	if (religionHistory.size() > 0 && !wasColonized())
-	{
-		std::optional<Religion> originalReligion = allReligions.getReligion(religionHistory[0].second);
-		std::optional<Religion> ownerReligion = allReligions.getReligion(ownerReligionString);
-		if (!originalReligion || !ownerReligion)
-		{
-			LOG(LogLevel::Warning) << "Unhandled religion in EU4 province " << num;
-			return true;
-		}
-		else
-		{
-			if (!hasOriginalCulture())
-			{
-				return originalReligion->isInfidelTo(*ownerReligion);
-			}
-		}
 	}
 	return false;
 }
-
 
 void EU4::ProvinceHistory::buildPopRatios()
 {
@@ -261,20 +189,13 @@ void EU4::ProvinceHistory::buildPopRatios()
 	}
 }
 
-
 void EU4::ProvinceHistory::decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop)
 {
 	// no decay needed for initial state
-	if (oldDate == STARTING_DATE)
-	{
-		return;
-	}
+	if (oldDate == STARTING_DATE) return;
 
 	auto diffInYears = newDate.diffInYears(oldDate);
-	for (auto& popRatio: popRatios)
-	{
-		popRatio.decay(diffInYears, currentPop);
-	}
+	for (auto& popRatio: popRatios) popRatio.decay(diffInYears, currentPop);
 
 	currentPop.increase(diffInYears);
 }
