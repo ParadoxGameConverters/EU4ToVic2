@@ -1,7 +1,9 @@
 #include "EU4Army.h"
-#include "ParserHelpers.h"
+
+#include <algorithm>
 #include <random>
 
+#include "ParserHelpers.h"
 
 EU4::EU4Army::EU4Army(std::istream& theStream)
 {
@@ -39,6 +41,12 @@ EU4::EU4Army::EU4Army(std::istream& theStream)
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+
+	for (const auto& regiment : regimentList)
+	{
+		home_provinces[regiment.getCategory()].push_back(
+		    regiment.getHome());
+	}
 }
 
 double EU4::EU4Army::getAverageStrength(REGIMENTCATEGORY category) const
@@ -88,24 +96,29 @@ void EU4::EU4Army::resolveRegimentTypes(const mappers::UnitTypeMapper& utm)
 	}
 }
 
-std::optional<int> EU4::EU4Army::getProbabilisticHomeProvince(EU4::REGIMENTCATEGORY category) const
+std::optional<int>
+EU4::EU4Army::getProbabilisticHomeProvince(EU4::REGIMENTCATEGORY category) const
 {
-	std::set<int> homeProvinces, randomProvince; // the possible home provinces
-	for (const auto& regiment : regimentList)
+	if (home_provinces.find(category) == home_provinces.end())
 	{
-		if (regiment.getCategory() == category)
-		{
-			const int home = regiment.getHome();
-			if (blocked_homes.count(home)) continue;
-			homeProvinces.insert(home);
-		}
+		return std::nullopt;
 	}
-	if (homeProvinces.size() == 0) return std::nullopt;
-	std::sample(homeProvinces.begin(), homeProvinces.end(), std::inserter(randomProvince, randomProvince.begin()), 1, std::mt19937{ std::random_device{}() });
+	const auto& candidates = home_provinces.at(category);
+	if (candidates.size() == 0)
+	{
+		return std::nullopt;
+	}
+
+	std::set<int> randomProvince;
+	std::sample(candidates.begin(), candidates.end(), std::inserter(randomProvince, randomProvince.begin()), 1, std::mt19937{ std::random_device{}() });
 	return *randomProvince.begin();
 }
 
 void EU4::EU4Army::blockHomeProvince(const int home)
 {
-	blocked_homes.insert(home);
+	for (const auto& reg_type : EU4::RegimentCategoryTypes)
+	{
+		auto& homes = home_provinces[reg_type.first];
+		auto ignore = std::remove(homes.begin(), homes.end(), home);
+	}
 }
