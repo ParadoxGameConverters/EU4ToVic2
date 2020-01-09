@@ -1,6 +1,7 @@
 #ifndef EU4_ARMY_H
 #define EU4_ARMY_H
 
+#include <unordered_map>
 #include <vector>
 #include <set>
 #include "EU4Regiment.h"
@@ -9,7 +10,7 @@
 
 namespace EU4
 {
-	class EU4Army : public  commonItems::parser
+	class EU4Army : public commonItems::parser
 	{
 	public:
 		EU4Army() = default;
@@ -28,13 +29,17 @@ namespace EU4
 		void blockHomeProvince(const int homeId);
 
 	private:
+                void initialiseHomeProvinces();
 		std::string name;
 		int location = -1;
 		int atSea = 0; // obsolete since 1.20
 		int armyId = 0;
 		int leaderId = 0;
 		std::vector<EU4Regiment> regimentList;
-		std::set<int> blocked_homes; // invalid homes for this army
-	};
+	        // Unblocked home provinces; note that a province can be listed
+	        // multiple times.
+	        std::unordered_map<REGIMENTCATEGORY, std::vector<int>>
+	            home_provinces;
+        };
 }
-#endif // EU4_ARMY_H
+#endif // EU4_ARMY_H_

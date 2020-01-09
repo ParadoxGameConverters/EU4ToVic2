@@ -55,7 +55,7 @@ class V2Army // also Navy
 		std::string getName() const { return name; };
 		void getRegimentCounts(int counts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)]) const;
 		double getArmyRemainder(EU4::REGIMENTCATEGORY category) const { return armyRemainders[static_cast<int>(category)]; };
-		EU4::EU4Army getSourceArmy() const { return sourceArmy; };
+		EU4::EU4Army& getSourceArmy() { return sourceArmy; };
 		bool getNavy() const { return isNavy; };
 
 		static V2Army* makeTestNavy(int location);
