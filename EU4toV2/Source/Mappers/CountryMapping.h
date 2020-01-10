@@ -34,6 +34,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "ColonialTagsMapper.h"
 #include "ProvinceMappings/ProvinceMapper.h"
 #include "newParser.h"
+#include "../Mappers/CultureGroups/CultureGroups.h"
 
 
 
@@ -144,6 +145,9 @@ namespace mappers
 			int generatedV2TagSuffix = 0;
 
 			std::set<std::string> availableFlags;
+
+			mappers::CultureGroups cultureGroupsMapper;
+
 	};
 }
 

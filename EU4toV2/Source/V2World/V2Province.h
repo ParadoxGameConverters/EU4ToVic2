@@ -16,10 +16,10 @@ struct V2Demographic
 	std::string culture;
 	std::string slaveCulture;
 	std::string religion;
-	double upperRatio;
-	double middleRatio;
-	double lowerRatio;
-	const EU4::Province* oldProvince;
+	double upperRatio = 0.0;
+	double middleRatio = 0.0;
+	double lowerRatio = 0.0;
+	const EU4::Province* oldProvince = nullptr;
 	std::string oldCountry;
 };
 
