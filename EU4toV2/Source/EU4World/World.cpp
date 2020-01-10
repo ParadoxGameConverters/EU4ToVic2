@@ -1,6 +1,5 @@
 #include "World.h"
 #include "Country/Countries.h"
-#include "CultureGroups.h"
 #include "Country/EU4Country.h"
 #include "EU4Version.h"
 #include "EU4Localisation.h"
@@ -23,8 +22,6 @@
 #include <fstream>
 #include <string>
 #include "Relations/EU4Empire.h"
-
-
 
 EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper):
 	theCountries()
@@ -199,7 +196,7 @@ void EU4::world::loadCountries(std::istream& theStream, const mappers::IdeaEffec
 {
 	LOG(LogLevel::Info) << " - Processing Countries";
 
-	countries processedCountries(*version, theStream, ideaEffectMapper);
+	Countries processedCountries(*version, theStream, ideaEffectMapper, cultureGroupsMapper);
 	auto theProcessedCountries = processedCountries.getTheCountries();
 	theCountries.swap(theProcessedCountries);
 }
@@ -337,7 +334,7 @@ void EU4::world::loadEU4RegionsNewVersion()
 
 void EU4::world::checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const
 {
-	for (auto cultureItr: EU4::cultureGroups::getCultureToGroupMap())
+	for (auto cultureItr: cultureGroupsMapper.getCultureToGroupMap())
 	{
 		std::string Vi2Culture;
 		std::string EU4Culture = cultureItr.first;

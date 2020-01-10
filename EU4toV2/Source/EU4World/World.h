@@ -13,6 +13,7 @@
 #include "../Mappers/UnitTypeMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
+#include "../Mappers/CultureGroups/CultureGroups.h"
 #include "newParser.h"
 #include <istream>
 #include <memory>
@@ -97,6 +98,7 @@ class world: private commonItems::parser
 		Religions theReligions;
 		Buildings buildingTypes;
 		Modifiers modifierTypes;
+		mappers::CultureGroups cultureGroupsMapper;
 
 		std::map<std::string, mappers::UnitType> unitTypeMap;
 };

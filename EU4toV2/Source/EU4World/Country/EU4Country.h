@@ -4,9 +4,9 @@
 #include "../Army/EU4Army.h"
 #include "Color.h"
 #include "Date.h"
-#include "../CultureGroups.h"
 #include "../../Mappers/UnitTypeMapper.h"
 #include "../../Mappers/Ideas/IdeaEffectMapper.h"
+#include "../../Mappers/CultureGroups/CultureGroups.h"
 #include "newParser.h"
 #include <memory>
 #include <optional>
@@ -28,7 +28,8 @@ namespace EU4
 			const std::string& countryTag,
 			const EU4::Version& theVersion,
 			std::istream& theStream,
-			const mappers::IdeaEffectMapper& ideaEffectMapper
+			const mappers::IdeaEffectMapper& ideaEffectMapper,
+			const mappers::CultureGroups& cultureGroupsMapper
 		);
 
 		// Add any additional information available from the specified country file.
@@ -69,7 +70,7 @@ namespace EU4
 		int getIsolationism() const { return isolationism; }
 		std::string getPrimaryCulture() const { return primaryCulture; }
 		std::vector<std::string> getAcceptedCultures() const { return acceptedCultures; }
-		std::optional<EU4::cultureGroup> getCulturalUnion() const { return culturalUnion; }
+		std::optional<mappers::CultureGroup> getCulturalUnion() const { return culturalUnion; }
 		std::string getReligion() const { return religion; }
 		double getScore() const { return score; }
 		double getStability() const { return stability; }
@@ -123,7 +124,7 @@ namespace EU4
 		void determineJapaneseRelations();
 		void determineInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void determineLibertyDesire();
-		void determineCulturalUnion();
+		void determineCulturalUnion(const mappers::CultureGroups& cultureGroupsMapper);
 		void clearProvinces();
 		void clearCores();
 
@@ -139,7 +140,7 @@ namespace EU4
 		int isolationism = 1; // the isolationism of the country (for Shinto nations with Mandate of Heaven)
 		std::string primaryCulture; // the primary EU4 culture of this nation
 		std::vector<std::string> acceptedCultures; // the accepted EU4 cultures for this nation
-		std::optional<EU4::cultureGroup> culturalUnion;
+		std::optional<mappers::CultureGroup> culturalUnion;
 		std::string religion; // the accepted religion of this country
 		double score = 0.0;
 		double stability = -3.0; // the stability of this nation
