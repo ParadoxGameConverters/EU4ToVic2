@@ -33,7 +33,7 @@ class V2LeaderTraits;
 class V2World
 {
 	public:
-		V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper);
+		V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper);
 		V2Province* getProvince(int provNum) const;
 		V2Country* getCountry(std::string tag) const;
 		double getDuration() const { return difftime(std::time(0), begin); }
@@ -62,19 +62,19 @@ class V2World
 		void importPotentialCountries();
 		void importPotentialCountry(const std::string& line, bool dynamicCountry);
 
-		void initializeCultureMappers(const EU4::world& sourceWorld);
-		void initializeReligionMapper(const EU4::world& sourceWorld);
+		void initializeCultureMappers(const EU4::World& sourceWorld);
+		void initializeReligionMapper(const EU4::World& sourceWorld);
 		void initializeProvinceMapper();
 
-		void convertCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
-		void initializeCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		V2Country* createOrLocateCountry(const std::string& V2Tag, const std::shared_ptr<EU4::Country> sourceCountry);
 		void convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void convertPrestige();
 		void addAllPotentialCountries();
 		unsigned int countCivilizedNations();
 
-		void convertProvinces(const EU4::world& sourceWorld);
+		void convertProvinces(const EU4::World& sourceWorld);
 		std::vector<V2Demographic> determineDemographics(
 			const EU4::Regions& eu4Regions,
 			std::vector<EU4::PopRatio>& popRatios,
@@ -85,16 +85,16 @@ class V2World
 			double provPopRatio
 		);
 
-		void convertDiplomacy(const EU4::world& sourceWorld);
+		void convertDiplomacy(const EU4::World& sourceWorld);
 		void setupColonies();
 		void setupStates();
 		void shuffleRgos();
-		void convertUncivReforms(const EU4::world& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper);
-		void convertTechs(const EU4::world& sourceWorld);
-		void allocateFactories(const EU4::world& sourceWorld);
-		void setupPops(const EU4::world& sourceWorld);
+		void convertUncivReforms(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper);
+		void convertTechs(const EU4::World& sourceWorld);
+		void allocateFactories(const EU4::World& sourceWorld);
+		void setupPops(const EU4::World& sourceWorld);
 		void addUnions();
-		void convertArmies(const EU4::world& sourceWorld);
+		void convertArmies(const EU4::World& sourceWorld);
 
 		void output(unsigned int potentialGPs) const;
 		void createModFile() const;

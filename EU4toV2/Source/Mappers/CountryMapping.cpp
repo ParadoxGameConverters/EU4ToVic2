@@ -115,7 +115,7 @@ void mappers::CountryMappings::getAvailableFlags()
 
 
 void mappers::CountryMappings::CreateMappings(
-	const EU4::world& srcWorld,
+	const EU4::World& srcWorld,
 	const std::map<std::string, V2Country*>& Vic2Countries,
 	const ProvinceMapper& provinceMapper
 ) {
@@ -260,7 +260,7 @@ std::map<std::string, std::string>::iterator mappers::CountryMappings::ifValidGe
 
 bool mappers::CountryMappings::attemptColonialReplacement(
 	std::shared_ptr<EU4::Country> country,
-	const EU4::world& srcWorld,
+	const EU4::World& srcWorld,
 	const std::map<std::string, V2Country*>& Vic2Countries,
 	const ProvinceMapper& provinceMapper
 ) {
@@ -323,7 +323,7 @@ bool mappers::CountryMappings::capitalInRightEU4Region(const mappers::ColonyStru
 bool mappers::CountryMappings::capitalInRightVic2Region(
 	const mappers::ColonyStruct& colony,
 	std::optional<int> Vic2Capital,
-	const EU4::world& srcWorld,
+	const EU4::World& srcWorld,
 	const std::string& EU4Tag,
 	const ProvinceMapper& provinceMapper
 ) {

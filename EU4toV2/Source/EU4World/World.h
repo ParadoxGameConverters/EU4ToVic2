@@ -1,5 +1,5 @@
-#ifndef EU4_WORLD_H_
-#define EU4_WORLD_H_
+#ifndef EU4_WORLD_H
+#define EU4_WORLD_H
 
 #include "Army/EU4Army.h"
 #include "Diplomacy/EU4Diplomacy.h"
@@ -9,31 +9,23 @@
 #include "Religions/Religions.h"
 #include "Buildings/Buildings.h"
 #include "Modifiers/Modifiers.h"
+#include "Country/EU4Country.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/UnitTypeMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
+#include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
 #include "newParser.h"
 #include <istream>
 #include <memory>
 
-namespace mappers
-{
-class IdeaEffectMapper;
-}
-
 namespace EU4
 {
-
-class Country;
-class Province;
-
-
-class world: private commonItems::parser
-{
+	class World : private commonItems::parser
+	{
 	public:
-		world(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		World(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper);
 
 		const Province& getProvince(int provNum) const;
 
@@ -81,9 +73,9 @@ class world: private commonItems::parser
 		void removeLandlessNations();
 
 		void setEmpires();
-	   void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas);
+		void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas);
 
-	   std::shared_ptr<EU4::Country> getCountry(std::string tag) const;
+		std::shared_ptr<EU4::Country> getCountry(std::string tag) const;
 
 		std::string holyRomanEmperor;
 		std::string celestialEmperor;
@@ -101,10 +93,7 @@ class world: private commonItems::parser
 		mappers::CultureGroups cultureGroupsMapper;
 
 		std::map<std::string, mappers::UnitType> unitTypeMap;
-};
-
+	};
 }
 
-
-
-#endif // EU4_WORLD_H_
+#endif // EU4_WORLD_H

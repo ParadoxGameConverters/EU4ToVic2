@@ -7,7 +7,6 @@
 #include "V2World/V2World.h"
 #include <fstream>
 
-
 void setOutputName(const std::string& EU4SaveFileName);
 void deleteExistingOutputFolder();
 void ConvertEU4ToVic2(const std::string& EU4SaveFileName)
@@ -19,13 +18,12 @@ void ConvertEU4ToVic2(const std::string& EU4SaveFileName)
 	mappers::IdeaEffectMapper ideaEffectMapper;
 	mappers::TechGroupsMapper techGroupsMapper;
 
-	EU4::world sourceWorld(EU4SaveFileName, ideaEffectMapper);
+	EU4::World sourceWorld(EU4SaveFileName, ideaEffectMapper);
 	V2World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper);
 
 	LOG(LogLevel::Info) << "* V2 construction: " << destWorld.getDuration() << " seconds";
 	LOG(LogLevel::Info) << "* Conversion complete *";
 }
-
 
 std::string trimPath(const std::string& fileName);
 std::string trimExtension(const std::string& fileName);
@@ -41,20 +39,17 @@ void setOutputName(const std::string& EU4SaveFileName)
 	LOG(LogLevel::Info) << "Using output name " << outputName;
 }
 
-
 std::string trimPath(const std::string& fileName)
 {
 	const int lastSlash = fileName.find_last_of("\\");
 	return fileName.substr(lastSlash + 1, fileName.length());
 }
 
-
 std::string trimExtension(const std::string& fileName)
 {
 	const int length = fileName.find_last_of(".");
 	return fileName.substr(0, length);
 }
-
 
 std::string replaceCharacter(std::string fileName, char character)
 {
@@ -67,7 +62,6 @@ std::string replaceCharacter(std::string fileName, char character)
 
 	return fileName;
 }
-
 
 void deleteExistingOutputFolder()
 {

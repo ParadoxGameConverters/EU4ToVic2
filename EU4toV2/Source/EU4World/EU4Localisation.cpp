@@ -1,36 +1,10 @@
-/*Copyright (c) 2014 The Paradox Game Converters Project
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
-
-
-
 #include "EU4Localisation.h"
 #include <fstream>
 #include <vector>
 #include <set>
 #include "OSCompatibilityLayer.h"
-using namespace std;
 
-
-
-void EU4Localisation::ReadFromFile(const std::string& fileName)
+void EU4::EU4Localisation::ReadFromFile(const std::string& fileName)
 {
 	std::ifstream in(fileName);
 
@@ -62,10 +36,10 @@ void EU4Localisation::ReadFromFile(const std::string& fileName)
 	}
 }
 
-void EU4Localisation::ReadFromAllFilesInFolder(const std::string& folderPath)
+void EU4::EU4Localisation::ReadFromAllFilesInFolder(const std::string& folderPath)
 {
 	// Get all files in the folder.
-	set<string> fileNames;
+	std::set<std::string> fileNames;
 	Utils::GetAllFilesInFolder(folderPath, fileNames);
 
 	// Read all these files.
@@ -75,7 +49,7 @@ void EU4Localisation::ReadFromAllFilesInFolder(const std::string& folderPath)
 	}
 }
 
-const std::string& EU4Localisation::GetText(const std::string& key, const std::string& language) const
+const std::string& EU4::EU4Localisation::GetText(const std::string& key, const std::string& language) const
 {
 	static const std::string noLocalisation = "";	// used if there's no localisation
 
@@ -94,7 +68,7 @@ const std::string& EU4Localisation::GetText(const std::string& key, const std::s
 	return languageFindIter->second;
 }
 
-const std::map<std::string, std::string>& EU4Localisation::GetTextInEachLanguage(const std::string& key) const
+const std::map<std::string, std::string>& EU4::EU4Localisation::GetTextInEachLanguage(const std::string& key) const
 {
 	static const std::map<std::string, std::string> noLocalisation;	// used if there's no localisation
 
@@ -107,7 +81,7 @@ const std::map<std::string, std::string>& EU4Localisation::GetTextInEachLanguage
 	return keyFindIter->second;
 }
 
-std::string EU4Localisation::DetermineLanguageForFile(const std::string& text)
+std::string EU4::EU4Localisation::DetermineLanguageForFile(const std::string& text)
 {
 	static const std::string noLanguageIndicated = "";	// used when no language is indicated
 
@@ -125,7 +99,7 @@ std::string EU4Localisation::DetermineLanguageForFile(const std::string& text)
 	return text.substr(beginPos, endPos - beginPos);
 }
 
-std::pair<std::string, std::string> EU4Localisation::DetermineKeyLocalisationPair(const std::string& text)
+std::pair<std::string, std::string> EU4::EU4Localisation::DetermineKeyLocalisationPair(const std::string& text)
 {
 	static const std::pair<std::string, std::string> noLocalisationPair;	// used when there's no localisation pair
 
@@ -145,7 +119,7 @@ std::pair<std::string, std::string> EU4Localisation::DetermineKeyLocalisationPai
 	return std::make_pair(text.substr(keyBeginPos, keyEndPos - keyBeginPos), text.substr(localisationBeginPos, localisationEndPos - localisationBeginPos));
 }
 
-std::string EU4Localisation::RemoveUTF8BOM(const std::string& text)
+std::string EU4::EU4Localisation::RemoveUTF8BOM(const std::string& text)
 {
 	if (text.size() >= 3 && text[0] == '\xEF' && text[1] == '\xBB' && text[2] == '\xBF')
 	{

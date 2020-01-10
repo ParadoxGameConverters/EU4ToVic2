@@ -41,7 +41,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 namespace EU4
 {
 	class Country;
-	class world;
+	class World;
 }
 class V2Country;
 
@@ -68,7 +68,7 @@ namespace mappers
 	{
 		public:
 			static void createMappings(
-				const EU4::world& srcWorld,
+				const EU4::World& srcWorld,
 				const std::map<std::string, V2Country*>& Vic2Countries,
 				const ProvinceMapper& provinceMapper
 			) {
@@ -102,7 +102,7 @@ namespace mappers
 			void getAvailableFlags();
 
 			void CreateMappings(
-				const EU4::world& srcWorld,
+				const EU4::World& srcWorld,
 				const std::map<std::string, V2Country*>& Vic2Countries,
 				const ProvinceMapper& provinceMapper
 			);
@@ -116,7 +116,7 @@ namespace mappers
 			void mapToNewTag(const std::string& EU4Tag, const std::string& Vic2Tag);
 			bool attemptColonialReplacement(
 				std::shared_ptr<EU4::Country> country,
-				const EU4::world& srcWorld,
+				const EU4::World& srcWorld,
 				const std::map<std::string, V2Country*>& Vic2Countries,
 				const ProvinceMapper& provinceMapper
 			);
@@ -124,7 +124,7 @@ namespace mappers
 			bool capitalInRightVic2Region(
 				const mappers::ColonyStruct& colony,
 				std::optional<int> Vic2Capital,
-				const EU4::world& srcWorld,
+				const EU4::World& srcWorld,
 				const std::string& EU4Tag,
 				const ProvinceMapper& provinceMapper
 			);

@@ -23,8 +23,7 @@
 #include <string>
 #include "Relations/EU4Empire.h"
 
-EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper):
-	theCountries()
+EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	registerKeyword(std::regex("EU4txt"), [this](const std::string& unused, std::istream& theStream){});
 	registerKeyword(std::regex("date"), [this](const std::string& dateText, std::istream& theStream)
@@ -32,87 +31,82 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			commonItems::singleString dateString(theStream);
 			date endDate(dateString.getString());
 			theConfiguration.setLastEU4Date(endDate);
-		}
-	);
+		});
 	registerKeyword(std::regex("start_date"), [this](const std::string& dateText, std::istream& theStream)
 		{
 			commonItems::singleString startDateString(theStream);
 			date startDate(startDateString.getString());
 			theConfiguration.setStartEU4Date(startDate);
-		}
-	);
+		});
 	registerKeyword(std::regex("(multiplayer_)?random_seed"), [this](const std::string& key, std::istream& theStream)
 		{
 			commonItems::singleString randomSeed(theStream);
 			theConfiguration.setEU4RandomSeed(stoi(randomSeed.getString().substr(randomSeed.getString().size() - 5)));
-		}
-	);
+		});
 	registerKeyword(std::regex("savegame_version"), [this](const std::string& versionText, std::istream& theStream)
 		{
 			version = std::make_unique<EU4::Version>(theStream);
 			theConfiguration.setEU4Version(*version);
-		}
-	);
+		});
 	registerKeyword(std::regex("dlc_enabled"), [this](const std::string& DLCText, std::istream& theStream)
 		{
 			commonItems::stringList theDLCs(theStream);
 			theConfiguration.setActiveDLCs(theDLCs.getStrings());
 		});
-	registerKeyword(std::regex("mod_enabled"), [this](const std::string& modText, std::istream& theStream) {
-		commonItems::stringList modList(theStream);
-		Mods theMods(modList.getStrings(), theConfiguration);
-	});
+	registerKeyword(std::regex("mod_enabled"), [this](const std::string& modText, std::istream& theStream) 
+		{
+			commonItems::stringList modList(theStream);
+			Mods theMods(modList.getStrings(), theConfiguration);
+		});
 	registerKeyword(std::regex("revolution_target"), [this](const std::string& revolutionText, std::istream& theStream)
 		{
 			commonItems::singleString revTargetStr(theStream);
 			revolutionTargetString = revTargetStr.getString();
-		}
-	);
+		});
 	registerKeyword(std::regex("celestial_empire"), [this](const std::string& empireText, std::istream& theStream)
 		{
 			EU4::EU4Empire empireBlock(theStream);
 			celestialEmperor = empireBlock.getEmperor();
-		}
-	);
+		});
 	registerKeyword(std::regex("empire"), [this](const std::string& empireText, std::istream& theStream)
 		{
 			EU4::EU4Empire empireBlock(theStream);
 			holyRomanEmperor = empireBlock.getEmperor();
-		}
-	);
+		});
 	registerKeyword(std::regex("emperor"), [this](const std::string& emperorText, std::istream& theStream)
 		{
 			commonItems::singleString emperorStr(theStream);
 			holyRomanEmperor = emperorStr.getString();
-		}
-	);
-	registerKeyword(std::regex("provinces"), [this](const std::string& provincesText, std::istream& theStream) {
-		LOG(LogLevel::Info) << "- Loading Provinces";
-		modifierTypes.initialize();
-		provinces = std::make_unique<Provinces>(theStream, buildingTypes, modifierTypes);
-		std::optional<date> possibleDate = provinces->getProvince(1).getFirstOwnedDate();
-		if (possibleDate)
+		});
+	registerKeyword(std::regex("provinces"), [this](const std::string& provincesText, std::istream& theStream) 
 		{
-			theConfiguration.setFirstEU4Date(*possibleDate);
-		}
-	});
+			LOG(LogLevel::Info) << "- Loading Provinces";
+
+			modifierTypes.initialize();
+			provinces = std::make_unique<Provinces>(theStream, buildingTypes, modifierTypes);
+
+			std::optional<date> possibleDate = provinces->getProvince(1).getFirstOwnedDate();
+			if (possibleDate) theConfiguration.setFirstEU4Date(*possibleDate);
+		});
 	registerKeyword(std::regex("countries"), [this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
 		{
 			LOG(LogLevel::Info) << "- Loading Countries";
 			loadCountries(theStream, ideaEffectMapper);
 		}
 	);
-	registerKeyword(std::regex("diplomacy"), [this](const std::string& unused, std::istream& theStream) {
-		LOG(LogLevel::Info) << "- Loading Diplomacy";
-		EU4::EU4Diplomacy theDiplomacy(theStream);
-		diplomacy = theDiplomacy.getAgreements();
-		LOG(LogLevel::Info) << "- Loaded " << diplomacy.size() << " agreements";
-	});
-	registerKeyword(std::regex("map_area_data"), [this](const std::string& unused, std::istream& theStream) {
-		LOG(LogLevel::Info) << "- Loading Map Area Data";
-		commonItems::ignoreItem(unused, theStream);
-		LOG(LogLevel::Info) << " - Ignoring Map Area Data";
-	});
+	registerKeyword(std::regex("diplomacy"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			LOG(LogLevel::Info) << "- Loading Diplomacy";
+			EU4::EU4Diplomacy theDiplomacy(theStream);
+			diplomacy = theDiplomacy.getAgreements();
+			LOG(LogLevel::Info) << "- Loaded " << diplomacy.size() << " agreements";
+		});
+	registerKeyword(std::regex("map_area_data"), [this](const std::string& unused, std::istream& theStream) 
+		{
+			LOG(LogLevel::Info) << "- Loading Map Area Data";
+			commonItems::ignoreItem(unused, theStream);
+			LOG(LogLevel::Info) << "\t- Ignoring Map Area Data";
+		});
 	registerKeyword(std::regex("[A-Za-z0-9\\_]+"), commonItems::ignoreItem);
 
 	LOG(LogLevel::Info) << "Verifying EU4 save.";
@@ -157,8 +151,7 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	}
 }
 
-
-void EU4::world::verifySave(const std::string& EU4SaveFileName)
+void EU4::World::verifySave(const std::string& EU4SaveFileName)
 {
 	std::ifstream saveFile(EU4SaveFileName);
 	if (!saveFile.is_open())
@@ -192,16 +185,15 @@ void EU4::world::verifySave(const std::string& EU4SaveFileName)
 	saveFile.close();
 }
 
-void EU4::world::loadCountries(std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper)
+void EU4::World::loadCountries(std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	LOG(LogLevel::Info) << " - Processing Countries";
 
 	Countries processedCountries(*version, theStream, ideaEffectMapper, cultureGroupsMapper);
-	auto theProcessedCountries = processedCountries.getTheCountries();
-	theCountries.swap(theProcessedCountries);
+	theCountries = processedCountries.getTheCountries();
 }
 
-void EU4::world::loadRevolutionTarget()
+void EU4::World::loadRevolutionTarget()
 {
 	if (revolutionTargetString != "")
 	{
@@ -213,7 +205,7 @@ void EU4::world::loadRevolutionTarget()
 	}
 }
 
-void EU4::world::dropMinoritiesFromCountries()
+void EU4::World::dropMinoritiesFromCountries()
 {
 	for (auto country : theCountries)
 	{
@@ -221,8 +213,7 @@ void EU4::world::dropMinoritiesFromCountries()
 	}
 }
 
-
-void EU4::world::addProvinceInfoToCountries()
+void EU4::World::addProvinceInfoToCountries()
 {
 	// add province owner info to countries
 	for (auto& province: provinces->getAllProvinces())
@@ -249,7 +240,7 @@ void EU4::world::addProvinceInfoToCountries()
 	}
 }
 
-void EU4::world::loadRegions()
+void EU4::World::loadRegions()
 {
 	LOG(LogLevel::Info) << "Parsing EU4 regions";
 
@@ -263,10 +254,10 @@ void EU4::world::loadRegions()
 	}
 }
 
-void EU4::world::assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas)
+void EU4::World::assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas)
 {
-        for (const auto& area : theAreas)
-        {
+   for (const auto& area : theAreas)
+   {
 		std::string areaName = area.first;
 		for (const int provNum : area.second)
 		{
@@ -283,10 +274,9 @@ void EU4::world::assignProvincesToAreas(const std::map<std::string, std::set<int
 	}
 }
 
-void EU4::world::loadEU4RegionsOldVersion()
+void EU4::World::loadEU4RegionsOldVersion()
 {
 	std::string regionFilename = theConfiguration.getEU4Path() + "/map/region.txt";
-
 	for (auto itr: theConfiguration.getEU4Mods())
 	{
 		if (!Utils::DoesFileExist(itr + "/map/region.txt"))
@@ -300,13 +290,11 @@ void EU4::world::loadEU4RegionsOldVersion()
 	std::ifstream theStream(regionFilename);
 	EU4::Areas installedAreas(theStream);
 	theStream.close();
-        assignProvincesToAreas(installedAreas.getAreas());
-
+	assignProvincesToAreas(installedAreas.getAreas());
 	regions = std::make_unique<Regions>(installedAreas);
 }
 
-
-void EU4::world::loadEU4RegionsNewVersion()
+void EU4::World::loadEU4RegionsNewVersion()
 {
 	std::string areaFilename = theConfiguration.getEU4Path() + "/map/area.txt";
 	std::string regionFilename = theConfiguration.getEU4Path() + "/map/region.txt";
@@ -324,15 +312,14 @@ void EU4::world::loadEU4RegionsNewVersion()
 	std::ifstream areaStream(areaFilename);
 	EU4::Areas installedAreas(areaStream);
 	areaStream.close();
-        assignProvincesToAreas(installedAreas.getAreas());
+	assignProvincesToAreas(installedAreas.getAreas());
 
 	std::ifstream regionStream(regionFilename);
 	regions = std::make_unique<Regions>(installedAreas, regionStream);
 	regionStream.close();
 }
 
-
-void EU4::world::checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const
+void EU4::World::checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const
 {
 	for (auto cultureItr: cultureGroupsMapper.getCultureToGroupMap())
 	{
@@ -347,8 +334,7 @@ void EU4::world::checkAllEU4CulturesMapped(const mappers::CultureMapper& culture
 	}
 }
 
-
-void EU4::world::readCommonCountries()
+void EU4::World::readCommonCountries()
 {
 	LOG(LogLevel::Info) << "Reading EU4 common/countries";
 	std::ifstream commonCountries(theConfiguration.getEU4Path() + "/common/country_tags/00_countries.txt");	// the data in the countries file
@@ -365,8 +351,7 @@ void EU4::world::readCommonCountries()
 	}
 }
 
-
-void EU4::world::readCommonCountriesFile(std::istream& in, const std::string& rootPath)
+void EU4::World::readCommonCountriesFile(std::istream& in, const std::string& rootPath)
 {
 	// Add any info from common\countries
 	const int maxLineLength = 10000;	// the maximum line length
@@ -417,11 +402,10 @@ void EU4::world::readCommonCountriesFile(std::istream& in, const std::string& ro
 	}
 }
 
-
-void EU4::world::setLocalisations()
+void EU4::World::setLocalisations()
 {
 	LOG(LogLevel::Info) << "Reading localisation";
-	EU4Localisation localisation;
+	EU4::EU4Localisation localisation;
 	localisation.ReadFromAllFilesInFolder(theConfiguration.getEU4Path() + "/localisation");
 	for (auto itr: theConfiguration.getEU4Mods())
 	{
@@ -448,8 +432,7 @@ void EU4::world::setLocalisations()
 	}
 }
 
-
-void EU4::world::resolveRegimentTypes()
+void EU4::World::resolveRegimentTypes()
 {
 	LOG(LogLevel::Info) << "Resolving unit types.";
 	mappers::UnitTypeMapper utm;	
@@ -460,7 +443,7 @@ void EU4::world::resolveRegimentTypes()
 	}
 }
 
-void EU4::world::mergeNations()
+void EU4::World::mergeNations()
 {
 	LOG(LogLevel::Info) << "Parsing merge nation rules.";
 	NationMergeParser mergeParser;
@@ -482,8 +465,7 @@ void EU4::world::mergeNations()
 	}
 }
 
-
-void EU4::world::uniteJapan()
+void EU4::World::uniteJapan()
 {
 	LOG(LogLevel::Info) << "Uniting Japan";
 
@@ -506,14 +488,8 @@ void EU4::world::uniteJapan()
 	{
 		japan = getCountry("JAP");
 	}
-	if (japan == nullptr)
-	{
-		return;
-	}
-	if (japan->hasFlag("united_daimyos_of_japan"))
-	{
-		return;
-	}
+	if (japan == nullptr) return;
+	if (japan->hasFlag("united_daimyos_of_japan")) return;
 
 	for (auto country: theCountries)
 	{
@@ -524,8 +500,7 @@ void EU4::world::uniteJapan()
 	}
 }
 
-
-void EU4::world::checkAllEU4ReligionsMapped(const mappers::ReligionMapper& religionMapper) const
+void EU4::World::checkAllEU4ReligionsMapped(const mappers::ReligionMapper& religionMapper) const
 {
 	for (auto EU4Religion: theReligions.getAllReligions())
 	{
@@ -537,14 +512,12 @@ void EU4::world::checkAllEU4ReligionsMapped(const mappers::ReligionMapper& relig
 	}
 }
 
-
-void EU4::world::checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const
+void EU4::World::checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const
 {
 	provinces->checkAllProvincesMapped(provinceMapper);
 }
 
-
-void EU4::world::importReligions()
+void EU4::World::importReligions()
 {
 	LOG(LogLevel::Info) << "Parsing EU4 religions";
 
@@ -565,8 +538,7 @@ void EU4::world::importReligions()
 	}
 }
 
-
-void EU4::world::removeEmptyNations()
+void EU4::World::removeEmptyNations()
 {
 	std::map<std::string, std::shared_ptr<EU4::Country>> survivingCountries;
 
@@ -579,12 +551,10 @@ void EU4::world::removeEmptyNations()
 			survivingCountries.insert(country);
 		}
 	}
-
 	theCountries.swap(survivingCountries);
 }
 
-
-void EU4::world::removeDeadLandlessNations()
+void EU4::World::removeDeadLandlessNations()
 {
 	std::map<std::string, std::shared_ptr<EU4::Country>> landlessCountries;
 	for (auto country: theCountries)
@@ -605,8 +575,7 @@ void EU4::world::removeDeadLandlessNations()
 	}
 }
 
-
-void EU4::world::removeLandlessNations()
+void EU4::World::removeLandlessNations()
 {
 	std::map<std::string, std::shared_ptr<EU4::Country>> survivingCountries;
 
@@ -622,12 +591,10 @@ void EU4::world::removeLandlessNations()
 			survivingCountries.insert(country);
 		}
 	}
-
 	theCountries.swap(survivingCountries);
 }
 
-
-void EU4::world::setEmpires()
+void EU4::World::setEmpires()
 {
 	for (auto country: theCountries)
 	{
@@ -647,31 +614,21 @@ void EU4::world::setEmpires()
 	}
 }
 
-
-std::shared_ptr<EU4::Country> EU4::world::getCountry(std::string tag) const
+std::shared_ptr<EU4::Country> EU4::World::getCountry(std::string tag) const
 {
 	auto i = theCountries.find(tag);
-	if (i != theCountries.end())
-	{
-		return i->second;
-	}
-	else
-	{
-		return {};
-	}
+	if (i != theCountries.end()) return i->second;
+	return nullptr;
 }
 
-
-const EU4::Province& EU4::world::getProvince(int provNum) const
+const EU4::Province& EU4::World::getProvince(int provNum) const
 {
 	return provinces->getProvince(provNum);
 }
 
-
-bool EU4::world::isRandomWorld() const
+bool EU4::World::isRandomWorld() const
 {
 	bool isRandomWorld = true;
-
 	for (auto sourceCountry: theCountries)
 	{
 		if (sourceCountry.first[0] != 'D' && sourceCountry.second->getRandomName().empty())
@@ -679,6 +636,5 @@ bool EU4::world::isRandomWorld() const
 			isRandomWorld = false;
 		}
 	}
-
 	return isRandomWorld;
 }
