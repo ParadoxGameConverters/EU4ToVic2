@@ -1,6 +1,6 @@
 #include "EU4Province.h"
 #include "ProvinceModifier.h"
-#include "../EU4Country.h"
+#include "../Country/EU4Country.h"
 #include "../Religions/Religions.h"
 #include "Log.h"
 #include "ParserHelpers.h"

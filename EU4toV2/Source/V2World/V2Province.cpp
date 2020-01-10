@@ -548,36 +548,36 @@ V2Province::pop_points V2Province::getPopPoints_1(
 
 	pts.soldiers += 100;
 	pts.soldiers += static_cast<double>(armyBuilding) * 45;
-	if ((oldCountryTag != "") && (oldCountry->hasNationalIdea("quantity_ideas") != -1))
+	if ((oldCountryTag != "") && (oldCountry->hasNationalIdea("quantity_ideas")))
 	{
 		pts.soldiers *= 2;
 	}
 
 	pts.officers += 2 * (static_cast<double>(armyBuilding) + 2);
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("quality_ideas") != -1))
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("quality_ideas")))
 	{
-		pts.officers += (oldCountry->hasNationalIdea("quality_ideas") / 2);
+		pts.officers += 5;
 	}
 
 	pts.clergymen += 95;
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("religious_ideas") != -1))
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("religious_ideas")))
 	{
-		pts.clergymen += oldCountry->hasNationalIdea("religious_ideas");
+		pts.clergymen += 10;
 	}
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("innovative_ideas") != -1))
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("innovative_ideas")))
 	{
-		pts.clergymen += oldCountry->hasNationalIdea("innovative_ideas");
+		pts.clergymen += 10;
 	}
 
 	pts.bureaucrats += 10;
 	pts.bureaucrats += static_cast<double>(govBuilding) * 2;
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("administrative_ideas") != -1))
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("administrative_ideas")))
 	{
-		pts.bureaucrats += oldCountry->hasNationalIdea("administrative_ideas");
+		pts.bureaucrats += 10;
 	}
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("expansion_ideas") != -1) && oldProvince->wasColonised())
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("expansion_ideas")) && oldProvince->wasColonised())
 	{
-		pts.bureaucrats += oldCountry->hasNationalIdea("expansion_ideas");
+		pts.bureaucrats += 10;
 	}
 
 	pts.aristocrats += 7 * (static_cast<double>(tradeBuilding) + 11);
@@ -587,7 +587,7 @@ V2Province::pop_points V2Province::getPopPoints_1(
 	{
 		pts.aristocrats *= 2;
 	}
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("aristocracy_ideas") != -1))
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("aristocracy_ideas")))
 	{
 		pts.aristocrats *= 2;
 	}
@@ -695,25 +695,25 @@ V2Province::pop_points V2Province::getPopPoints_2(
 
 	pts.soldiers += 100;
 	pts.soldiers += (static_cast<double>(manpowerBuilding) + static_cast<double>(armyBuilding)) * 90;
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("quantity_ideas") != -1))
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("quantity_ideas")))
 	{
 		pts.soldiers *= 2;
 	}
 
 	pts.officers += 4 * (static_cast<double>(manpowerBuilding) + static_cast<double>(armyBuilding) + 2.0);
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("quality_ideas") != -1))
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("quality_ideas")))
 	{
-		pts.officers += (oldCountry->hasNationalIdea("quality_ideas") / 2);
+		pts.officers += 5;
 	}
 
 	pts.clergymen += 65;
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("religious_ideas") != -1))
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("religious_ideas")))
 	{
-		pts.clergymen += oldCountry->hasNationalIdea("religious_ideas");
+		pts.clergymen += 10;
 	}
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("innovative_ideas") != -1))
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("innovative_ideas")))
 	{
-		pts.clergymen += oldCountry->hasNationalIdea("innovative_ideas");
+		pts.clergymen += 10;
 	}
 	if (oldProvince->hasBuilding("university"))
 	{
@@ -722,13 +722,13 @@ V2Province::pop_points V2Province::getPopPoints_2(
 
 	pts.bureaucrats += 10;
 	pts.bureaucrats += (static_cast<double>(adminBuilding) + static_cast<double>(taxBuilding)) * 4;
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("administrative_ideas") != -1))
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("administrative_ideas")))
 	{
-		pts.bureaucrats += oldCountry->hasNationalIdea("administrative_ideas");
+		pts.bureaucrats += 10;
 	}
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("expansion_ideas") != -1) && oldProvince->wasColonised())
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("expansion_ideas")) && oldProvince->wasColonised())
 	{
-		pts.bureaucrats += oldCountry->hasNationalIdea("expansion_ideas");
+		pts.bureaucrats += 10;
 	}
 
 	pts.aristocrats += 14 * (static_cast<double>(tradeBuilding) + 6.0);
@@ -736,7 +736,7 @@ V2Province::pop_points V2Province::getPopPoints_2(
 	{
 		pts.aristocrats *= 2;
 	}
-	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("aristocracy_ideas") != -1))
+	if ((oldCountry != NULL) && (oldCountry->hasNationalIdea("aristocracy_ideas")))
 	{
 		pts.aristocrats *= 2;
 	}

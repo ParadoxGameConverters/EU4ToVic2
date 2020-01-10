@@ -29,17 +29,15 @@ namespace EU4
 		void blockHomeProvince(const int homeId);
 
 	private:
-                void initialiseHomeProvinces();
 		std::string name;
 		int location = -1;
 		int atSea = 0; // obsolete since 1.20
 		int armyId = 0;
 		int leaderId = 0;
 		std::vector<EU4Regiment> regimentList;
-	        // Unblocked home provinces; note that a province can be listed
-	        // multiple times.
-	        std::unordered_map<REGIMENTCATEGORY, std::vector<int>>
-	            home_provinces;
-        };
+		// Unblocked home provinces; note that a province can be listed
+		// multiple times.
+		std::unordered_map<REGIMENTCATEGORY, std::vector<int>> home_provinces;
+	};
 }
-#endif // EU4_ARMY_H_
+#endif // EU4_ARMY_H

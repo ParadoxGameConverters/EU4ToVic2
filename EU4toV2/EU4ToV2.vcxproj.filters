@@ -39,9 +39,6 @@
     <ClCompile Include="..\common_items\Color.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Countries.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\CountryMapping.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
@@ -59,9 +56,6 @@
     </ClCompile>
     <ClCompile Include="..\common_items\Date.cpp">
       <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\EU4Country.cpp">
-      <Filter>EU4World</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\EU4Localisation.cpp">
       <Filter>EU4World</Filter>
@@ -420,6 +414,12 @@
     <ClCompile Include="Source\Mappers\Continents.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\Countries.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\EU4Country.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -456,9 +456,6 @@
     <ClInclude Include="..\common_items\Color.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\Countries.h">
-      <Filter>EU4World</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\CountryMapping.h">
       <Filter>Mappers</Filter>
     </ClInclude>
@@ -476,9 +473,6 @@
     </ClInclude>
     <ClInclude Include="..\common_items\Date.h">
       <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\EU4Country.h">
-      <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\EU4Localisation.h">
       <Filter>EU4World</Filter>
@@ -842,6 +836,12 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\Continents.h">
       <Filter>Mappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\Countries.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\EU4Country.h">
+      <Filter>EU4World\Country</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

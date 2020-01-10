@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gmock/gmock.h"
-#include "../../EU4toV2/Source/EU4World/EU4Country.h"
+#include "../../EU4toV2/Source/EU4World/Country/EU4Country.h"
 
 
 
@@ -32,5 +32,5 @@ class mockEU4Country: public EU4::Country
 		MOCK_CONST_METHOD0(getAdmTech, double());
 		MOCK_CONST_METHOD0(getDipTech, double());
 		MOCK_CONST_METHOD0(getMilTech, double());
-		MOCK_CONST_METHOD0(getNationalIdeas, const std::map<std::string, int>&());
+		MOCK_CONST_METHOD0(getNationalIdeas, const std::set<std::string>&());
 };

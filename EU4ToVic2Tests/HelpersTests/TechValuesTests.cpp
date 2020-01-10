@@ -106,7 +106,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithNo
 	mockEU4Country country;
 	EXPECT_CALL(country, getAdmTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getMilTech).WillOnce(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
 	ASSERT_EQ(techValues.getNormalizedArmyTech(country), 1.0);
@@ -119,7 +119,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithOn
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -144,7 +144,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneForHighestScore)
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -194,7 +194,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsScaledScore)
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -247,7 +247,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithNo
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getMilTech).WillOnce(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
 	ASSERT_EQ(techValues.getNormalizedNavyTech(country), 1.0);
@@ -260,7 +260,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithOn
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -285,7 +285,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneForHighestScore)
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -335,7 +335,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsScaledScore)
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -387,7 +387,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWi
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getAdmTech).WillOnce(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
 	ASSERT_EQ(techValues.getNormalizedCommerceTech(country), 1.0);
@@ -400,7 +400,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWi
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -425,7 +425,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneForHighestScore
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -475,7 +475,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsScaledScore)
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -527,7 +527,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWit
 
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
 	ASSERT_EQ(techValues.getNormalizedCultureTech(country), 0.0);
@@ -540,7 +540,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWit
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -565,7 +565,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneForHighestScore)
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -615,7 +615,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsScaledScore)
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -669,7 +669,7 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWi
 	EXPECT_CALL(country, getAdmTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getMilTech).WillOnce(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
 	ASSERT_EQ(techValues.getNormalizedIndustryTech(country), 1.0);
@@ -682,7 +682,7 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWi
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -707,7 +707,7 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneForHighestScore
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
@@ -757,7 +757,7 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsScaledScore)
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
-	std::map<std::string, int> nationalIdeas;
+	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
 	mockVic2Country testCountry;
