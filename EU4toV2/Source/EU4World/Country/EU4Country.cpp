@@ -558,7 +558,7 @@ bool EU4::Country::hasModifier(std::string modifier) const
 
 bool EU4::Country::hasNationalIdea(std::string ni) const
 {
-	auto& itr = nationalIdeas.find(ni);
+	auto itr = nationalIdeas.find(ni);
 	return (itr != nationalIdeas.end());
 }
 
