@@ -7,7 +7,7 @@
 #include "OSCompatibilityLayer.h"
 #include "../EU4World/CultureGroups.h"
 #include "../EU4World/World.h"
-#include "../EU4World/EU4Country.h"
+#include "../EU4World/Country/EU4Country.h"
 #include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../Mappers/AdjacencyMapper.h"
@@ -671,7 +671,7 @@ void V2Country::determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry
 
 	for (auto reformStr : srcCountry->getReforms())
 	{
-		std::string enforce = ideaEffectMapper.getEnforceFromIdea(reformStr, 7);
+		std::string enforce = ideaEffectMapper.getEnforceFromIdea(reformStr);
 		if (!enforce.empty())
 		{
 			government = enforce;
@@ -693,25 +693,25 @@ void V2Country::finalizeInvestments(std::shared_ptr<EU4::Country> srcCountry, co
 	// Resulting scores for all of these will be between 0 and 10, with 5 being average and supposed to be ignored.
 	// Each point above or below 5 should alter absolute values by 10%.
 
-	armyInvestment = (2 * srcCountry->getArmyInvestment() + ideaEffectMapper.getArmyFromIdea(government, 8)) / 3;
-	navyInvestment = (2 * srcCountry->getNavyInvestment() + ideaEffectMapper.getNavyFromIdea(government, 8)) / 3;
-	commerceInvestment = (2 * srcCountry->getCommerceInvestment() + ideaEffectMapper.getCommerceFromIdea(government, 8)) / 3;
-	industryInvestment = (2 * srcCountry->getIndustryInvestment() + ideaEffectMapper.getIndustryFromIdea(government, 8)) / 3;
-	cultureInvestment = (2 * srcCountry->getCultureInvestment() + ideaEffectMapper.getCultureFromIdea(government, 8)) / 3;
-	slaveryInvestment = (2 * srcCountry->getSlaveryInvestment() + ideaEffectMapper.getSlaveryFromIdea(government, 8)) / 3;
-	upper_house_compositionInvestment = (2 * srcCountry->getUpper_house_compositionInvestment() + ideaEffectMapper.getUpper_house_compositionFromIdea(government, 8)) / 3;
-	vote_franchiseInvestment = (2 * srcCountry->getVote_franchiseInvestment() + ideaEffectMapper.getVote_franchiseFromIdea(government, 8)) / 3;
-	voting_systemInvestment = (2 * srcCountry->getVoting_systemInvestment() + ideaEffectMapper.getVoting_systemFromIdea(government, 8)) / 3;
-	public_meetingsInvestment = (2 * srcCountry->getPublic_meetingsInvestment() + ideaEffectMapper.getPublic_meetingsFromIdea(government, 8)) / 3;
-	press_rightsInvestment = (2 * srcCountry->getPress_rightsInvestment() + ideaEffectMapper.getPress_rightsFromIdea(government, 8)) / 3;
-	trade_unionsInvestment = (2 * srcCountry->getTrade_unionsInvestment() + ideaEffectMapper.getTrade_unionsFromIdea(government, 8)) / 3;
-	political_partiesInvestment = (2 * srcCountry->getPolitical_partiesInvestment() + ideaEffectMapper.getPolitical_partiesFromIdea(government, 8)) / 3;
-	libertyInvestment = (2 * srcCountry->getLibertyInvestment() + ideaEffectMapper.getLibertyFromIdea(government, 8)) / 3;
-	equalityInvestment = (2 * srcCountry->getEqualityInvestment() + ideaEffectMapper.getEqualityFromIdea(government, 8)) / 3;
-	orderInvestment = (2 * srcCountry->getOrderInvestment() + ideaEffectMapper.getOrderFromIdea(government, 8)) / 3;
-	literacyInvestment = (2 * srcCountry->getLiteracyInvestment() + ideaEffectMapper.getLiteracyFromIdea(government, 8)) / 3;
-	reactionaryInvestment = (2 * srcCountry->getReactionaryInvestment() + ideaEffectMapper.getReactionaryFromIdea(government, 8)) / 3;
-	liberalInvestment = (2 * srcCountry->getLiberalInvestment() + ideaEffectMapper.getLiberalFromIdea(government, 8)) / 3;
+	armyInvestment = (2 * srcCountry->getArmyInvestment() + ideaEffectMapper.getArmyFromIdea(government)) / 3;
+	navyInvestment = (2 * srcCountry->getNavyInvestment() + ideaEffectMapper.getNavyFromIdea(government)) / 3;
+	commerceInvestment = (2 * srcCountry->getCommerceInvestment() + ideaEffectMapper.getCommerceFromIdea(government)) / 3;
+	industryInvestment = (2 * srcCountry->getIndustryInvestment() + ideaEffectMapper.getIndustryFromIdea(government)) / 3;
+	cultureInvestment = (2 * srcCountry->getCultureInvestment() + ideaEffectMapper.getCultureFromIdea(government)) / 3;
+	slaveryInvestment = (2 * srcCountry->getSlaveryInvestment() + ideaEffectMapper.getSlaveryFromIdea(government)) / 3;
+	upper_house_compositionInvestment = (2 * srcCountry->getUpper_house_compositionInvestment() + ideaEffectMapper.getUpper_house_compositionFromIdea(government)) / 3;
+	vote_franchiseInvestment = (2 * srcCountry->getVote_franchiseInvestment() + ideaEffectMapper.getVote_franchiseFromIdea(government)) / 3;
+	voting_systemInvestment = (2 * srcCountry->getVoting_systemInvestment() + ideaEffectMapper.getVoting_systemFromIdea(government)) / 3;
+	public_meetingsInvestment = (2 * srcCountry->getPublic_meetingsInvestment() + ideaEffectMapper.getPublic_meetingsFromIdea(government)) / 3;
+	press_rightsInvestment = (2 * srcCountry->getPress_rightsInvestment() + ideaEffectMapper.getPress_rightsFromIdea(government)) / 3;
+	trade_unionsInvestment = (2 * srcCountry->getTrade_unionsInvestment() + ideaEffectMapper.getTrade_unionsFromIdea(government)) / 3;
+	political_partiesInvestment = (2 * srcCountry->getPolitical_partiesInvestment() + ideaEffectMapper.getPolitical_partiesFromIdea(government)) / 3;
+	libertyInvestment = (2 * srcCountry->getLibertyInvestment() + ideaEffectMapper.getLibertyFromIdea(government)) / 3;
+	equalityInvestment = (2 * srcCountry->getEqualityInvestment() + ideaEffectMapper.getEqualityFromIdea(government)) / 3;
+	orderInvestment = (2 * srcCountry->getOrderInvestment() + ideaEffectMapper.getOrderFromIdea(government)) / 3;
+	literacyInvestment = (2 * srcCountry->getLiteracyInvestment() + ideaEffectMapper.getLiteracyFromIdea(government)) / 3;
+	reactionaryInvestment = (2 * srcCountry->getReactionaryInvestment() + ideaEffectMapper.getReactionaryFromIdea(government)) / 3;
+	liberalInvestment = (2 * srcCountry->getLiberalInvestment() + ideaEffectMapper.getLiberalFromIdea(government)) / 3;
 
 }
 
@@ -820,15 +820,15 @@ void V2Country::calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry)
 	int numProvinces = 0;
 	int numColleges = 0;
 	int numUniversities = 0;
-	vector<EU4::Province> provinces = srcCountry->getProvinces();
+	vector<EU4::Province*> provinces = srcCountry->getProvinces();
 	numProvinces = provinces.size();
-	for (vector<EU4::Province>::iterator i = provinces.begin(); i != provinces.end(); ++i)
+	for (vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
 	{
-		if ((*i).hasBuilding("college"))
+		if ((*i)->hasBuilding("college"))
 		{
 			numColleges++;
 		}
-		if ((*i).hasBuilding("university"))
+		if ((*i)->hasBuilding("university"))
 		{
 			numUniversities++;
 		}
@@ -875,15 +875,15 @@ void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
 {
 	for (const auto& prov : srcCountry->getProvinces())
 	{
-		if (prov.hasGreatProject("suez_canal"))
+		if (prov->hasGreatProject("suez_canal"))
 		{
 			decisions.push_back("build_suez_canal");
 		}
-		if (prov.hasGreatProject("kiel_canal"))
+		if (prov->hasGreatProject("kiel_canal"))
 		{
 			decisions.push_back("build_kiel_canal");
 		}
-		if (prov.hasGreatProject("panama_canal"))
+		if (prov->hasGreatProject("panama_canal"))
 		{
 			decisions.push_back("build_panama_canal");
 		}

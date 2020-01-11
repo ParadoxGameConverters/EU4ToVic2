@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gmock/gmock.h"
-#include "../../EU4toV2/Source/EU4World/EU4Country.h"
+#include "../../EU4toV2/Source/EU4World/Country/EU4Country.h"
 #include "../../EU4toV2/Source/V2World/V2Country.h"
 
 

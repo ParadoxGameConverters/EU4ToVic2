@@ -1,7 +1,7 @@
 #include "World.h"
-#include "Countries.h"
+#include "Country/Countries.h"
 #include "CultureGroups.h"
-#include "EU4Country.h"
+#include "Country/EU4Country.h"
 #include "EU4Version.h"
 #include "EU4Localisation.h"
 #include "Mods/Mod.h"
@@ -233,7 +233,7 @@ void EU4::world::addProvinceInfoToCountries()
 		auto owner = theCountries.find(province.second.getOwnerString());
 		if (owner != theCountries.end())
 		{
-			owner->second->addProvince(province.second);
+			owner->second->addProvince(&province.second);
 		}
 	}
 
@@ -246,7 +246,7 @@ void EU4::world::addProvinceInfoToCountries()
 			auto country = theCountries.find(core);
 			if (country != theCountries.end())
 			{
-				country->second->addCore(province.second);
+				country->second->addCore(&province.second);
 			}
 		}
 	}
@@ -479,7 +479,7 @@ void EU4::world::mergeNations()
 			for (auto slaveTag : mergeBlock.getSlaves())
 			{
 				auto slave = getCountry(slaveTag);
-				master->eatCountry(slave, master);
+				master->eatCountry(slave);
 			}
 		}
 	}
@@ -522,7 +522,7 @@ void EU4::world::uniteJapan()
 	{
 		if (country.second->getPossibleDaimyo())
 		{
-			japan->eatCountry(country.second, japan);			
+			japan->eatCountry(country.second);			
 		}
 	}
 }

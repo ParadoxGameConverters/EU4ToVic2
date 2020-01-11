@@ -48,7 +48,7 @@
 #include "Pops/PopMapper.h"
 #include "Map/MapProvince.h"
 #include "../EU4World/ColonialRegions/ColonialRegions.h"
-
+#include "../EU4World/Country/EU4Country.h"
 
 
 V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper)

@@ -185,8 +185,9 @@
     <ClCompile Include="Source\EU4World\Buildings\Buildings.cpp" />
     <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegion.cpp" />
     <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegions.cpp" />
-    <ClCompile Include="Source\EU4World\Countries.cpp" />
+    <ClCompile Include="Source\EU4World\Country\Countries.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4ActiveIdeas.cpp" />
+    <ClCompile Include="Source\EU4World\Country\EU4Country.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4CountryFlags.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4CustomColors.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4GovernmentSection.cpp" />
@@ -197,7 +198,6 @@
     <ClCompile Include="Source\EU4World\CultureGroups.cpp" />
     <ClCompile Include="Source\EU4World\Diplomacy\EU4Agreement.cpp" />
     <ClCompile Include="Source\EU4World\Diplomacy\EU4Diplomacy.cpp" />
-    <ClCompile Include="Source\EU4World\EU4Country.cpp" />
     <ClCompile Include="Source\EU4World\EU4Localisation.cpp" />
     <ClCompile Include="Source\EU4World\EU4Version.cpp" />
     <ClCompile Include="Source\EU4World\History\CountryHistory.cpp" />
@@ -329,8 +329,9 @@
     <ClInclude Include="Source\EU4World\Buildings\Buildings.h" />
     <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegion.h" />
     <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegions.h" />
-    <ClInclude Include="Source\EU4World\Countries.h" />
+    <ClInclude Include="Source\EU4World\Country\Countries.h" />
     <ClInclude Include="Source\EU4World\Country\EU4ActiveIdeas.h" />
+    <ClInclude Include="Source\EU4World\Country\EU4Country.h" />
     <ClInclude Include="Source\EU4World\Country\EU4CountryFlags.h" />
     <ClInclude Include="Source\EU4World\Country\EU4CustomColors.h" />
     <ClInclude Include="Source\EU4World\Country\EU4GovernmentSection.h" />
@@ -341,7 +342,6 @@
     <ClInclude Include="Source\EU4World\CultureGroups.h" />
     <ClInclude Include="Source\EU4World\Diplomacy\EU4Agreement.h" />
     <ClInclude Include="Source\EU4World\Diplomacy\EU4Diplomacy.h" />
-    <ClInclude Include="Source\EU4World\EU4Country.h" />
     <ClInclude Include="Source\EU4World\EU4Localisation.h" />
     <ClInclude Include="Source\EU4World\EU4Version.h" />
     <ClInclude Include="Source\EU4World\History\CountryHistory.h" />

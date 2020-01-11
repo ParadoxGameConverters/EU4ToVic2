@@ -15,7 +15,7 @@ namespace EU4
 			Provinces(std::istream& theStream, const Buildings& buildingTypes, const Modifiers& modifierTypes);
 			Province& getProvince(int provinceNumber);
 
-			std::map<int, Province> getAllProvinces() const { return provinces; }
+			std::map<int, Province>& getAllProvinces() { return provinces; }
 			double geTotalProvinceWeights() const { return totalProvinceWeights; };
 			void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
 			void determineTotalProvinceWeights(const Configuration& configuration);

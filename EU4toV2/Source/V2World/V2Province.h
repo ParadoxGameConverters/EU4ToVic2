@@ -3,7 +3,7 @@
 
 #include "../Configuration.h"
 #include "../EU4World/World.h"
-#include "../EU4World/EU4Country.h"
+#include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "newParser.h"
 

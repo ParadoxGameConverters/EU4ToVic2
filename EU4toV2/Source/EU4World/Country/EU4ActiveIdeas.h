@@ -2,7 +2,7 @@
 #define EU4ACTIVE_IDEAS_H
 
 #include "newParser.h"
-#include <map>
+#include <set>
 
 namespace EU4
 {
@@ -10,10 +10,10 @@ namespace EU4
 	{
 	public:
 		EU4ActiveIdeas(std::istream& theStream);
-		const std::map<std::string, int>& getActiveIdeas() const { return activeIdeas; }
+		const std::set<std::string>& getActiveIdeas() const { return activeIdeas; }
 
 	private:
-		std::map<std::string, int> activeIdeas;
+		std::set<std::string> activeIdeas;
 	};
 }
 

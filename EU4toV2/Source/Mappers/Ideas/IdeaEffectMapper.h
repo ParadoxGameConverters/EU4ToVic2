@@ -8,37 +8,36 @@
 
 namespace mappers
 {
-
-class IdeaEffectMapper: commonItems::parser
-{
+	class IdeaEffectMapper: commonItems::parser
+	{
 	public:
 		IdeaEffectMapper();
 		IdeaEffectMapper(std::istream& theStream);
 
-		std::string getEnforceFromIdea(const std::string& ideaName, int ideaLevel) const;
+		std::string getEnforceFromIdea(const std::string& ideaName) const;
 
-		int getArmyFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getCommerceFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getCultureFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getIndustryFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getNavyFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getArmyFromIdea(const std::string& ideaName) const;
+		int getCommerceFromIdea(const std::string& ideaName) const;
+		int getCultureFromIdea(const std::string& ideaName) const;
+		int getIndustryFromIdea(const std::string& ideaName) const;
+		int getNavyFromIdea(const std::string& ideaName) const;
 
-		int getSlaveryFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getUpper_house_compositionFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getVote_franchiseFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getVoting_systemFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getPublic_meetingsFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getPress_rightsFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getTrade_unionsFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getPolitical_partiesFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getSlaveryFromIdea(const std::string& ideaName) const;
+		int getUpper_house_compositionFromIdea(const std::string& ideaName) const;
+		int getVote_franchiseFromIdea(const std::string& ideaName) const;
+		int getVoting_systemFromIdea(const std::string& ideaName) const;
+		int getPublic_meetingsFromIdea(const std::string& ideaName) const;
+		int getPress_rightsFromIdea(const std::string& ideaName) const;
+		int getTrade_unionsFromIdea(const std::string& ideaName) const;
+		int getPolitical_partiesFromIdea(const std::string& ideaName) const;
 
-		int getLibertyFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getEqualityFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getOrderFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getLiteracyFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getLibertyFromIdea(const std::string& ideaName) const;
+		int getEqualityFromIdea(const std::string& ideaName) const;
+		int getOrderFromIdea(const std::string& ideaName) const;
+		int getLiteracyFromIdea(const std::string& ideaName) const;
 
-		int getReactionaryFromIdea(const std::string& ideaName, int ideaLevel) const;
-		int getLiberalFromIdea(const std::string& ideaName, int ideaLevel) const;
+		int getReactionaryFromIdea(const std::string& ideaName) const;
+		int getLiberalFromIdea(const std::string& ideaName) const;
 
 		void registerKeys();
 
@@ -67,11 +66,7 @@ class IdeaEffectMapper: commonItems::parser
 
 		std::map<std::string, int> reactionaryIdeas;
 		std::map<std::string, int> liberalIdeas;
-
-};
-
+	};
 }
-
-
 
 #endif // IDEA_EFFECT_MAPPER_H

@@ -1,8 +1,6 @@
 #include "EU4Army.h"
-
 #include <algorithm>
 #include <random>
-
 #include "ParserHelpers.h"
 
 EU4::EU4Army::EU4Army(std::istream& theStream)
@@ -41,12 +39,6 @@ EU4::EU4Army::EU4Army(std::istream& theStream)
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
-
-	for (const auto& regiment : regimentList)
-	{
-		home_provinces[regiment.getCategory()].push_back(
-		    regiment.getHome());
-	}
 }
 
 double EU4::EU4Army::getAverageStrength(REGIMENTCATEGORY category) const
@@ -77,7 +69,6 @@ int EU4::EU4Army::getTotalTypeStrength(REGIMENTCATEGORY category) const
 	return totalStrength;
 }
 
-
 void EU4::EU4Army::resolveRegimentTypes(const mappers::UnitTypeMapper& utm)
 {
 	auto regimentTypeMap = utm.getUnitTypeMap();
@@ -87,6 +78,7 @@ void EU4::EU4Army::resolveRegimentTypes(const mappers::UnitTypeMapper& utm)
 		{
 			regiment.setCategory(regimentTypeMap[regiment.getType()].getCategory());
 			regiment.setTypeStrength(regimentTypeMap[regiment.getType()].getStrength());
+			home_provinces[regiment.getCategory()].push_back(regiment.getHome());
 		}
 		catch (std::exception&)
 		{
@@ -96,8 +88,7 @@ void EU4::EU4Army::resolveRegimentTypes(const mappers::UnitTypeMapper& utm)
 	}
 }
 
-std::optional<int>
-EU4::EU4Army::getProbabilisticHomeProvince(EU4::REGIMENTCATEGORY category) const
+std::optional<int> EU4::EU4Army::getProbabilisticHomeProvince(EU4::REGIMENTCATEGORY category) const
 {
 	if (home_provinces.find(category) == home_provinces.end())
 	{

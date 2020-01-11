@@ -5,7 +5,7 @@
 #include <iterator>
 #include <random>
 #include <fstream>
-#include "../EU4World/EU4Country.h"
+#include "../EU4World/Country/EU4Country.h"
 #include "V2Country.h"
 #include "../Configuration.h"
 #include "Log.h"
