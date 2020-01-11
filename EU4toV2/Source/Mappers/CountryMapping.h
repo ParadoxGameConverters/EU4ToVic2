@@ -128,7 +128,7 @@ namespace mappers
 				const std::string& EU4Tag,
 				const ProvinceMapper& provinceMapper
 			);
-			bool inCorrectCultureGroup(const mappers::ColonyStruct& colony, const std::string& primaryCulture, const mappers::CultureGroups cultureGroupsMapper);
+			bool inCorrectCultureGroup(const mappers::ColonyStruct& colony, const std::string& primaryCulture, const mappers::CultureGroups& cultureGroupsMapper);
 			bool tagIsAvailable(const mappers::ColonyStruct& colony, const std::map<std::string, V2Country*>& Vic2Countries);
 			void logMapping(const std::string& EU4Tag, const std::string& V2Tag, const std::string& reason);
 			bool tagIsAlreadyAssigned(const std::string& Vic2Tag);

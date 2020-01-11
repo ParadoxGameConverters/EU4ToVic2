@@ -358,7 +358,7 @@ bool mappers::CountryMappings::capitalInRightVic2Region(
 }
 
 
-bool mappers::CountryMappings::inCorrectCultureGroup(const mappers::ColonyStruct& colony, const std::string& primaryCulture, const mappers::CultureGroups cultureGroupsMapper)
+bool mappers::CountryMappings::inCorrectCultureGroup(const mappers::ColonyStruct& colony, const std::string& primaryCulture, const mappers::CultureGroups& cultureGroupsMapper)
 {
 	if (colony.cultureGroup != "")
 	{
