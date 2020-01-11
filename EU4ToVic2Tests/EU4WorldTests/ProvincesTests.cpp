@@ -34,7 +34,7 @@ TEST(EU4World_ProvincesTests, defaultProvincesIsEmpty)
 	input << "={}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -54,7 +54,7 @@ TEST(EU4World_ProvincesTests, provincesCanBeInput)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -74,7 +74,7 @@ TEST(EU4World_ProvincesTests, gettingNonExsistentProvinceThrowsException)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -94,7 +94,7 @@ TEST(EU4World_ProvincesTests, canGetProvince)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);

@@ -181,8 +181,6 @@
     <ClCompile Include="Source\EU4toV2Converter.cpp" />
     <ClCompile Include="Source\EU4World\Army\EU4Army.cpp" />
     <ClCompile Include="Source\EU4World\Army\EU4Regiment.cpp" />
-    <ClCompile Include="Source\EU4World\Buildings\Building.cpp" />
-    <ClCompile Include="Source\EU4World\Buildings\Buildings.cpp" />
     <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegion.cpp" />
     <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegions.cpp" />
     <ClCompile Include="Source\EU4World\Country\Countries.cpp" />
@@ -233,6 +231,8 @@
     <ClCompile Include="Source\Helpers\TechValues.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\AdjacencyMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Buildings\Building.cpp" />
+    <ClCompile Include="Source\Mappers\Buildings\Buildings.cpp" />
     <ClCompile Include="Source\Mappers\CK2TitleMapper.cpp" />
     <ClCompile Include="Source\Mappers\ClimateMapper.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTag.cpp" />
@@ -325,8 +325,6 @@
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\EU4World\Army\EU4Army.h" />
     <ClInclude Include="Source\EU4World\Army\EU4Regiment.h" />
-    <ClInclude Include="Source\EU4World\Buildings\Building.h" />
-    <ClInclude Include="Source\EU4World\Buildings\Buildings.h" />
     <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegion.h" />
     <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegions.h" />
     <ClInclude Include="Source\EU4World\Country\Countries.h" />
@@ -378,6 +376,8 @@
     <ClInclude Include="Source\FlagUtils.h" />
     <ClInclude Include="Source\Helpers\TechValues.h" />
     <ClInclude Include="Source\Mappers\AdjacencyMapper.h" />
+    <ClInclude Include="Source\Mappers\Buildings\Building.h" />
+    <ClInclude Include="Source\Mappers\Buildings\Buildings.h" />
     <ClInclude Include="Source\Mappers\CK2TitleMapper.h" />
     <ClInclude Include="Source\Mappers\ClimateMapper.h" />
     <ClInclude Include="Source\Mappers\ColonialTag.h" />

@@ -167,8 +167,6 @@
     <ClCompile Include="..\common_items\ParserHelpers.cpp" />
     <ClCompile Include="..\common_items\WinUtils.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Configuration.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Buildings\Building.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Buildings\Buildings.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegions.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp" />
@@ -191,6 +189,8 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Building.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Buildings.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMappingRule.cpp" />
@@ -213,8 +213,6 @@
     <ClCompile Include="ConfigurationTests.cpp" />
     <ClCompile Include="EU4WorldTests\AreaNamesTests.cpp" />
     <ClCompile Include="EU4WorldTests\AreasTests.cpp" />
-    <ClCompile Include="EU4WorldTests\BuildingsTests.cpp" />
-    <ClCompile Include="EU4WorldTests\BuildingTests.cpp" />
     <ClCompile Include="EU4WorldTests\DateItemsTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4ProvinceTests.cpp" />
@@ -233,6 +231,8 @@
     <ClCompile Include="EU4WorldTests\ReligionsTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionTests.cpp" />
     <ClCompile Include="HelpersTests\TechValuesTests.cpp" />
+    <ClCompile Include="MapperTests\BuildingsTests.cpp" />
+    <ClCompile Include="MapperTests\BuildingTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapperTests.cpp" />
     <ClCompile Include="MapperTests\CultureMappingTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffectsMapperTests.cpp" />

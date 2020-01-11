@@ -1,14 +1,14 @@
 #include "Building.h"
 #include "ParserHelpers.h"
 
-EU4::Building::Building(std::istream& theStream)
+mappers::Building::Building(std::istream& theStream)
 {
 	registerKeyword("cost", [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleDouble costDouble(theStream);
 		cost = costDouble.getDouble();
 	});
 	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream) {
-		modifier = Modifier(theStream);
+		modifier = EU4::Modifier(theStream);
 	});
 	registerKeyword("manufactory", [this](const std::string& unused, std::istream& theStream) {
 		commonItems::ignoreItem(unused, theStream);

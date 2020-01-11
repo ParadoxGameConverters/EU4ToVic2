@@ -7,7 +7,7 @@
 #include "ProvinceBuildings.h"
 #include "ProvinceHistory.h"
 #include "ProvinceStats.h"
-#include "../Buildings/Buildings.h"
+#include "../../Mappers/Buildings/Buildings.h"
 #include "../Modifiers/Modifiers.h"
 #include "newParser.h"
 #include <map>
@@ -20,7 +20,7 @@ namespace EU4
 		Province(
 			const std::string& numString,
 			std::istream& theStream,
-			const Buildings& buildingTypes,
+			const mappers::Buildings& buildingTypes,
 			const Modifiers& modifierTypes
 		);
 
@@ -66,8 +66,8 @@ namespace EU4
 		void setArea(const std::string& a) { areaName = a; }
 
 	private:
-		void determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes);
-		BuildingWeightEffects getProvBuildingWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes) const;
+		void determineProvinceWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes);
+		BuildingWeightEffects getProvBuildingWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes) const;
 		double getTradeGoodPrice() const;
 
 		int num = 0;

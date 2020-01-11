@@ -6,7 +6,7 @@
 #include <map>
 #include <optional>
 
-namespace EU4
+namespace mappers
 {
 	class Buildings: commonItems::parser
 	{

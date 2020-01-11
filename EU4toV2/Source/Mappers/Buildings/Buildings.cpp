@@ -3,7 +3,7 @@
 #include "../../Configuration.h"
 #include "OSCompatibilityLayer.h"
 
-EU4::Buildings::Buildings()
+mappers::Buildings::Buildings()
 {
 	registerKeys();
 
@@ -31,14 +31,14 @@ EU4::Buildings::Buildings()
 	clearRegisteredKeywords();
 }
 
-EU4::Buildings::Buildings(std::istream& theStream)
+mappers::Buildings::Buildings(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-void EU4::Buildings::registerKeys()
+void mappers::Buildings::registerKeys()
 {
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& buildingName, std::istream& theStream) {
 		Building building(theStream);
@@ -48,7 +48,7 @@ void EU4::Buildings::registerKeys()
 }
 
 
-std::optional<EU4::Building> EU4::Buildings::getBuilding(const std::string& buildingName) const
+std::optional<mappers::Building> mappers::Buildings::getBuilding(const std::string& buildingName) const
 {
 	if (buildings.count(buildingName) > 0)
 	{

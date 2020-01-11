@@ -16,7 +16,7 @@ const double BUILDING_COST_TO_WEIGHT_RATIO = 0.02;
 EU4::Province::Province(
 	const std::string& numString,
 	std::istream& theStream,
-	const Buildings& buildingTypes,
+	const mappers::Buildings& buildingTypes,
 	const Modifiers& modifierTypes
 ) {
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) 
@@ -158,7 +158,7 @@ double EU4::Province::getCulturePercent(const std::string& culture) const
 	return culturePercent;
 }
 
-void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes)
+void EU4::Province::determineProvinceWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes)
 {
 	double manpower_weight = manpower;
 	double taxEfficiency = 1.0;
@@ -367,7 +367,7 @@ double EU4::Province::getTradeGoodPrice() const
 
 
 EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
-	const Buildings& buildingTypes,
+	const mappers::Buildings& buildingTypes,
 	const Modifiers& modifierTypes
 ) const
 {

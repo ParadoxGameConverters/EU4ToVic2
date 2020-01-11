@@ -7,12 +7,12 @@
 #include "Provinces/Provinces.h"
 #include "Regions/Regions.h"
 #include "Religions/Religions.h"
-#include "Buildings/Buildings.h"
 #include "Modifiers/Modifiers.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/UnitTypeMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
+#include "../Mappers/Buildings/Buildings.h"
 #include "newParser.h"
 #include <istream>
 #include <memory>
@@ -95,7 +95,7 @@ class Province;
 		std::string revolutionTargetString;
 
 		Religions theReligions;
-		Buildings buildingTypes;
+		mappers::Buildings buildingTypes;
 		Modifiers modifierTypes;
 
 		std::map<std::string, mappers::UnitType> unitTypeMap;

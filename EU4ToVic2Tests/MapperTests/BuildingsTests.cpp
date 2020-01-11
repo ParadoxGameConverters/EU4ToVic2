@@ -22,21 +22,21 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/Buildings/Buildings.h"
+#include "../EU4toV2/Source/Mappers/Buildings/Buildings.h"
 #include <sstream>
 
 
 
-TEST(EU4World_BuildingsTests, nonExistentBuildingReturnsNullopt)
+TEST(Mappers_BuildingsTests, nonExistentBuildingReturnsNullopt)
 {
 	std::stringstream input;
-	EU4::Buildings theBuildings(input);
+	mappers::Buildings theBuildings(input);
 
 	ASSERT_FALSE(theBuildings.getBuilding("nonBuilding"));
 }
 
 
-TEST(EU4World_BuildingsTests, buildingIsReturned)
+TEST(Mappers_BuildingsTests, buildingIsReturned)
 {
 	std::stringstream input;
 	input << "testBuilding = {\n";
@@ -45,7 +45,7 @@ TEST(EU4World_BuildingsTests, buildingIsReturned)
 	input << "testBuilding2 = {\n";
 	input << "\tcost = 200\n";
 	input << "}";
-	EU4::Buildings theBuildings(input);
+	mappers::Buildings theBuildings(input);
 
 	ASSERT_EQ(theBuildings.getBuilding("testBuilding")->getCost(), 100);
 	ASSERT_EQ(theBuildings.getBuilding("testBuilding2")->getCost(), 200);
