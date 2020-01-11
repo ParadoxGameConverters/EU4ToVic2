@@ -16,24 +16,24 @@
 EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVersion, std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper):	
 	tag(countryTag)
 {
-	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString theName(theStream);
 			name = theName.getString();
 		});
-	registerKeyword(std::regex("custom_name"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("custom_name", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString theName(theStream);
 			randomName = V2Localisation::Convert(theName.getString());
 			customNation = true;
 		});
-	registerKeyword(std::regex("adjective"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("adjective", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString theAdjective(theStream);
 			adjective = theAdjective.getString();
 		});
 	// This is obsolete and not applicable from at least 1.19+, probably further back
-	registerKeyword(std::regex("map_color"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("map_color", [this](const std::string& unused, std::istream& theStream)
 		{
 			auto colorColor = commonItems::Color(theStream);
 			colorColor.RandomlyFlunctuate(30);
@@ -42,27 +42,27 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 			// these countries from their parent's other colonies we randomly adjust the color.
 			nationalColors.setMapColor(colorColor);
 		});
-	registerKeyword(std::regex("colors"), [this](const std::string& colorsString, std::istream& theStream)
+	registerKeyword("colors", [this](const std::string& colorsString, std::istream& theStream)
 		{
 			EU4::NationalSymbol theSection(theStream);
 			nationalColors = theSection;
 		});
-	registerKeyword(std::regex("capital"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("capital", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt theCapital(theStream);
 			capital = theCapital.getInt();
 		});
-	registerKeyword(std::regex("technology_group"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("technology_group", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString theTechGroup(theStream);
 			techGroup = theTechGroup.getString();
 		});
-	registerKeyword(std::regex("liberty_desire"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("liberty_desire", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleDouble theLibertyDesire(theStream);
 			libertyDesire = theLibertyDesire.getDouble();
 		});
-	registerKeyword(std::regex("institutions"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("institutions", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::intList theInstitutions(theStream);
 			for (auto institution: theInstitutions.getInts())
@@ -77,32 +77,33 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 				}
 			}
 		});
-	registerKeyword(std::regex("isolationism"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("isolationism", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt isolationismValue(theStream);
 			isolationism = isolationismValue.getInt();
 		});
-	registerKeyword(std::regex("primary_culture"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("primary_culture", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString thePrimaryCulture(theStream);
 			primaryCulture = thePrimaryCulture.getString();
 		});
-	registerKeyword(std::regex("accepted_culture"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("accepted_culture", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString theAcceptedCulture(theStream);
 			acceptedCultures.push_back(theAcceptedCulture.getString());
 		});
-	registerKeyword(std::regex("government_rank"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("government_rank", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt theGovernmentRank(theStream);
 			governmentRank = theGovernmentRank.getInt();
 		});
-	registerKeyword(std::regex("realm_development"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("realm_development", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt theDevelopment(theStream);
 			development = theDevelopment.getInt();
 		});
-	registerKeyword(std::regex("culture_group_union"), [this, theVersion](const std::string& unused, std::istream& theStream)
+	// obsolete since 1.18 at the latest
+	registerKeyword("culture_group_union", [this, theVersion](const std::string& unused, std::istream& theStream)
 		{
 			if (theVersion < EU4::Version("1.7.0.0"))
 			{
@@ -115,19 +116,19 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 				culturalUnion = newUnion;
 			}
 		});
-	registerKeyword(std::regex("religion"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString theReligion(theStream);
 			religion = theReligion.getString();
 		});
 	// Obsolete since 1.26.0
-	registerKeyword(std::regex("score"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("score", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleDouble theScore(theStream);
 			score = theScore.getDouble();
 		});
 	//Relevant since 1.20 but we only use it for 1.26+
-	registerKeyword(std::regex("age_score"), [this, theVersion](const std::string& unused, std::istream& theStream) 
+	registerKeyword("age_score", [this, theVersion](const std::string& unused, std::istream& theStream) 
 		{
 			if (theVersion >= EU4::Version("1.26.0.0")) 
 			{
@@ -135,12 +136,12 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 				for (auto& agScore : ageScores.getDoubles()) score += agScore;
 			}
 		});
-	registerKeyword(std::regex("stability"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("stability", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleDouble theStability(theStream);
 			stability = theStability.getDouble();
 		});
-	registerKeyword(std::regex("technology"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("technology", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4::EU4Technology techBlock(theStream);
 			admTech = techBlock.getAdm();
@@ -152,7 +153,7 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 			EU4::EU4CountryFlags flagsBlock(theStream);
 			for (const auto& flag : flagsBlock.getFlags()) flags[flag] = true;
 		});
-	registerKeyword(std::regex("modifier"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4::EU4Modifier newModifier(theStream);
 			if (newModifier.getModifier().size() > 0)
@@ -160,7 +161,7 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 				modifiers[newModifier.getModifier()] = true;
 			}
 		});
-	registerKeyword(std::regex("government"), [this, theVersion](const std::string& unused, std::istream& theStream)
+	registerKeyword("government", [this, theVersion](const std::string& unused, std::istream& theStream)
 		{
 			if (theVersion < EU4::Version("1.23.0.0"))
 			{
@@ -174,42 +175,42 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 				governmentReforms = theSection.getGovernmentReforms();
 			}
 		});
-	registerKeyword(std::regex("active_relations"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("active_relations", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4::EU4Relations activeRelations(theStream);
 			relations = activeRelations.getRelations();
 		});
-	registerKeyword(std::regex("army"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("army", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4Army army(theStream);
 			armies.push_back(army);
 		});
-	registerKeyword(std::regex("navy"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("navy", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4Army navy(theStream);
 			armies.push_back(navy);
 		});
-	registerKeyword(std::regex("active_idea_groups"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("active_idea_groups", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4::EU4ActiveIdeas activeIdeas(theStream);
 			nationalIdeas = activeIdeas.getActiveIdeas();
 		});
-	registerKeyword(std::regex("legitimacy"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("legitimacy", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleDouble theLegitimacy(theStream);
 			legitimacy = theLegitimacy.getDouble();
 		});
-	registerKeyword(std::regex("parent"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("parent", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString alsoUnused(theStream);
 			colony = true;
 		});
-	registerKeyword(std::regex("colonial_parent"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("colonial_parent", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString alsoUnused(theStream);
 			colony = true;
 		});
-	registerKeyword(std::regex("overlord"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("overlord", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString theOverlord(theStream);
 			overlord = theOverlord.getString();
@@ -217,30 +218,31 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 	// This is obsolete and not applicable from at least 1.19+, probably further back:
 	// In current savegame implementation, custom_colors stores a color triplet, but apparently it used to
 	// store a custom colors block with flag and symbol - which is now in colors block.
-	registerKeyword(std::regex("country_colors"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("country_colors", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4::CustomColors colorBlock(theStream);
 			nationalColors.setCustomColors(colorBlock);
 			nationalColors.setCustomColorsInitialized();
 		});
 	// This is obsolete and not applicable from at least 1.19+, probably further back
-	registerKeyword(std::regex("revolutionary_colors"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("revolutionary_colors", [this](const std::string& unused, std::istream& theStream)
 		{
 			auto colorColor = commonItems::Color(theStream);
 			nationalColors.setRevolutionaryColor(colorColor);
 		});
-	registerKeyword(std::regex("history"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("history", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4::CountryHistory theCountryHistory(theStream);
 			historicalLeaders = theCountryHistory.getLeaders();
 		});
-	registerKeyword(std::regex("leader"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4::ID idBlock(theStream);
 			activeLeaderIDs.insert(idBlock.getIDNum());
 		});
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 	parseStream(theStream);
+	clearRegisteredKeywords();
 
 	determineJapaneseRelations();
 	determineInvestments(ideaEffectMapper);

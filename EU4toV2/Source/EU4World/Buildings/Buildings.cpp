@@ -28,12 +28,14 @@ EU4::Buildings::Buildings()
 			}
 		}
 	}
+	clearRegisteredKeywords();
 }
 
 EU4::Buildings::Buildings(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 void EU4::Buildings::registerKeys()

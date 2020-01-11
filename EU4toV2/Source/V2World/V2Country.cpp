@@ -1106,10 +1106,7 @@ void V2Country::convertArmies(
 
 			for (int i = 0; i < regimentsToCreate; ++i)
 			{
-				if (
-					addRegimentToArmy(army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper) !=
-					addRegimentToArmyResult::success
-					)
+				if (addRegimentToArmy(army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper) != addRegimentToArmyResult::success)
 				{
 					// couldn't add, dissolve into pool
 					countryRemainder[rc] += 1.0;

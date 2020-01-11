@@ -7,4 +7,5 @@ EU4::AreaNames::AreaNames(std::istream& theStream)
 	});
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

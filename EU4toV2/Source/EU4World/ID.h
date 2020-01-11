@@ -8,15 +8,15 @@ namespace EU4
 {
 	class ID: commonItems::parser
 	{
-		public:
-			ID() = default;
-			ID(std::istream& theStream);
+	public:
+		ID() = default;
+		ID(std::istream& theStream);
 
-			int getIDNum() { return IDNum; }
+		int getIDNum() { return IDNum; }
 
-		private:
-			int IDNum = 0;
-			int IDType = 0;
+	private:
+		int IDNum = 0;
+		int IDType = 0;
 	};
 }
 

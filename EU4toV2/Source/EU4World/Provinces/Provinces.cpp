@@ -14,6 +14,7 @@ EU4::Provinces::Provinces(std::istream& theStream, const Buildings& buildingType
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 EU4::Province& EU4::Provinces::getProvince(int provinceNumber)

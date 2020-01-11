@@ -10,4 +10,5 @@ EU4::ProvinceBuildings::ProvinceBuildings(std::istream& theStream)
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

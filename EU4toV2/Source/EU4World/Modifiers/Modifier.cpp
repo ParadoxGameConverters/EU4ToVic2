@@ -4,8 +4,8 @@
 
 EU4::Modifier::Modifier(std::istream& theStream)
 {
-	registerKeyword(std::regex("potential"), commonItems::ignoreItem);
-	registerKeyword(std::regex("trigger"), commonItems::ignoreItem);
+	registerKeyword("potential", commonItems::ignoreItem);
+	registerKeyword("trigger", commonItems::ignoreItem);
 
 	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& effect, std::istream& theStream) {
 		commonItems::singleString amountSingleString(theStream);
@@ -20,6 +20,7 @@ EU4::Modifier::Modifier(std::istream& theStream)
 	});
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 double EU4::Modifier::getEffectAmount(const std::string& theEffect) const

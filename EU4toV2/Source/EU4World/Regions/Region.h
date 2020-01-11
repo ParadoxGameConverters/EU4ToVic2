@@ -9,15 +9,15 @@ namespace EU4
 {
 	class Region: commonItems::parser
 	{
-		public:
-			Region(std::istream& theStream);
-			Region(const std::set<int>& _provinces);
-			bool containsProvince(unsigned int province) const;
-			void addProvinces(const EU4::Areas& areas);
+	public:
+		Region(std::istream& theStream);
+		Region(const std::set<int>& _provinces);
+		bool containsProvince(unsigned int province) const;
+		void addProvinces(const EU4::Areas& areas);
 
-		private:
-			std::set<std::string> areaNames;
-			std::set<int> provinces;
+	private:
+		std::set<std::string> areaNames;
+		std::set<int> provinces;
 	};
 }
 

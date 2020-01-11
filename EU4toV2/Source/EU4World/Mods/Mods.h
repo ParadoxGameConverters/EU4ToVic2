@@ -9,18 +9,18 @@ namespace EU4
 {
 	class Mods
 	{
-		public:
-			Mods(const std::vector<std::string>& usedMods, Configuration& theConfiguration);
-			std::optional<std::string> getModPath(const std::string& modName) const;
+	public:
+		Mods(const std::vector<std::string>& usedMods, Configuration& theConfiguration);
+		std::optional<std::string> getModPath(const std::string& modName) const;
 
-		private:
-			void loadEU4ModDirectory(const Configuration& theConfiguration);
-			void loadSteamWorkshopDirectory(const Configuration& theConfiguration);
-			void loadCK2ExportDirectory(const Configuration& theConfiguration);
-			void loadModDirectory(const std::string& searchDirectory);
+	private:
+		void loadEU4ModDirectory(const Configuration& theConfiguration);
+		void loadSteamWorkshopDirectory(const Configuration& theConfiguration);
+		void loadCK2ExportDirectory(const Configuration& theConfiguration);
+		void loadModDirectory(const std::string& searchDirectory);
 
-			std::map<std::string, std::string> possibleMods;
-			std::map<std::string, std::string> possibleCompressedMods;
+		std::map<std::string, std::string> possibleMods;
+		std::map<std::string, std::string> possibleCompressedMods;
 	};
 }
 

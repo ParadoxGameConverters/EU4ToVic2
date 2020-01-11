@@ -3,21 +3,22 @@
 
 EU4::Mod::Mod(std::istream& theStream)
 {
-	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleString nameString(theStream);
 		name = nameString.getString();
 	});
-	registerKeyword(std::regex("path"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("path", [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleString pathString(theStream);
 		path = pathString.getString();
 	});
-	registerKeyword(std::regex("archive"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("archive", [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleString pathString(theStream);
 		path = pathString.getString();
 	});
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 
 	if (path != "")
 	{

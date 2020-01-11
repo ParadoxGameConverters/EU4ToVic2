@@ -5,17 +5,17 @@
 
 EU4::EU4Army::EU4Army(std::istream& theStream)
 {
-	registerKeyword(std::regex("id"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("id", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4::ID idblock(theStream);
 			armyId = idblock.getIDNum();
 		});
-	registerKeyword(std::regex("leader"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4::ID idblock(theStream);
 			leaderId = idblock.getIDNum();
 		});
-	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString nameStr(theStream);
 			name = nameStr.getString();
@@ -25,13 +25,13 @@ EU4::EU4Army::EU4Army(std::istream& theStream)
 			EU4Regiment regimentBlock(theStream);
 			regimentList.push_back(regimentBlock);
 		});
-	registerKeyword(std::regex("location"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("location", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt locationInt(theStream);
 			location = locationInt.getInt();
 		});
 	// Dropped from saves at 1.20
-	registerKeyword(std::regex("at_sea"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("at_sea", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt atSeaInt(theStream);
 			atSea = atSeaInt.getInt();
@@ -39,6 +39,7 @@ EU4::EU4Army::EU4Army(std::istream& theStream)
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 double EU4::EU4Army::getAverageStrength(REGIMENTCATEGORY category) const
@@ -105,11 +106,13 @@ std::optional<int> EU4::EU4Army::getProbabilisticHomeProvince(EU4::REGIMENTCATEG
 	return *randomProvince.begin();
 }
 
-void EU4::EU4Army::blockHomeProvince(const int home)
+void EU4::EU4Army::blockHomeProvince(const int blocked)
 {
 	for (const auto& reg_type : EU4::RegimentCategoryTypes)
 	{
-		auto& homes = home_provinces[reg_type.first];
-		auto ignore = std::remove(homes.begin(), homes.end(), home);
+		auto homes = home_provinces[reg_type.first];
+		std::vector<int> filteredhomes;
+		for (auto home : homes) if (home != blocked) filteredhomes.push_back(home);
+		home_provinces[reg_type.first] = filteredhomes;
 	}
 }

@@ -10,14 +10,14 @@ namespace EU4
 {
 	class Regions: commonItems::parser
 	{
-		public:
-			Regions() = default;
-			Regions(const EU4::Areas& areas, std::istream& regionsFile);
-			Regions(const EU4::Areas& areas);
-			virtual bool provinceInRegion(int province, const std::string& regionName) const;
+	public:
+		Regions() = default;
+		Regions(const EU4::Areas& areas, std::istream& regionsFile);
+		Regions(const EU4::Areas& areas);
+		virtual bool provinceInRegion(int province, const std::string& regionName) const;
 
-		private:
-			std::map<std::string, EU4::Region> regions;
+	private:
+		std::map<std::string, EU4::Region> regions;
 	};
 }
 

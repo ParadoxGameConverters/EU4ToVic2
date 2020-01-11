@@ -8,12 +8,12 @@ namespace EU4
 {
 	class CountryHistoryDate: commonItems::parser
 	{
-		public:
-			CountryHistoryDate(std::istream& theStream);
-			const std::vector<EU4::Leader>& getLeaders() const { return leaders; }
+	public:
+		CountryHistoryDate(std::istream& theStream);
+		const std::vector<EU4::Leader>& getLeaders() const { return leaders; }
 
-		private:
-			std::vector<EU4::Leader> leaders;
+	private:
+		std::vector<EU4::Leader> leaders;
 	};
 }
 

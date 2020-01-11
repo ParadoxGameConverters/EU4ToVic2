@@ -38,33 +38,33 @@ EU4::culture::culture(std::istream& theStream):
 	femaleNames(),
 	dynastyNames()
 {
-	registerKeyword(std::regex("country"), commonItems::ignoreObject);
-	registerKeyword(std::regex("province"), commonItems::ignoreObject);
-	registerKeyword(std::regex("primary"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("country", commonItems::ignoreObject);
+	registerKeyword("province", commonItems::ignoreObject);
+	registerKeyword("primary", [this](const std::string& unused, std::istream& theStream)
 		{
 			auto equals = getNextToken(theStream);
 			primaryTag = *getNextToken(theStream);
 		}
 	);
-	registerKeyword(std::regex("graphical_culture"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("graphical_culture", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString token(theStream);
 			graphicalCulture = token.getString();
 		}
 	);
-	registerKeyword(std::regex("male_names"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("male_names", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::stringList names(theStream);
 			maleNames = names.getStrings();
 		}
 	);
-	registerKeyword(std::regex("female_names"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("female_names", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::stringList names(theStream);
 			femaleNames = names.getStrings();
 		}
 	);
-	registerKeyword(std::regex("dynasty_names"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("dynasty_names", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::stringList names(theStream);
 			dynastyNames = names.getStrings();
@@ -83,25 +83,25 @@ EU4::cultureGroup::cultureGroup(const std::string& name_, std::istream& theStrea
 	dynastyNames(),
 	cultures()
 {
-	registerKeyword(std::regex("graphical_culture"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("graphical_culture", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString token(theStream);
 			graphicalCulture = token.getString();
 		}
 	);
-	registerKeyword(std::regex("male_names"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("male_names", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::stringList names(theStream);
 			maleNames = names.getStrings();
 		}
 	);
-	registerKeyword(std::regex("female_names"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("female_names", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::stringList names(theStream);
 			femaleNames = names.getStrings();
 		}
 	);
-	registerKeyword(std::regex("dynasty_names"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("dynasty_names", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::stringList names(theStream);
 			dynastyNames = names.getStrings();
@@ -115,6 +115,7 @@ EU4::cultureGroup::cultureGroup(const std::string& name_, std::istream& theStrea
 	);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 

@@ -8,22 +8,22 @@ namespace EU4
 {
 	class Modifier: commonItems::parser
 	{
-		public:
-			Modifier() = default;
-			~Modifier() = default;
-			Modifier(const Modifier&) = default;
-			Modifier(Modifier&&) = default;
-			Modifier& operator=(const Modifier&) = default;
-			Modifier& operator=(Modifier&&) = default;
+	public:
+		Modifier() = default;
+		~Modifier() = default;
+		Modifier(const Modifier&) = default;
+		Modifier(Modifier&&) = default;
+		Modifier& operator=(const Modifier&) = default;
+		Modifier& operator=(Modifier&&) = default;
 
-			Modifier(std::istream& theStream);
+		Modifier(std::istream& theStream);
 
-			double getEffectAmount(const std::string& modifier) const;
+		double getEffectAmount(const std::string& modifier) const;
 
-			const std::map<std::string, double>& getAllEffects() const { return effects; }
+		const std::map<std::string, double>& getAllEffects() const { return effects; }
 
-		private:
-			std::map<std::string, double> effects;
+	private:
+		std::map<std::string, double> effects;
 	};
 
 }

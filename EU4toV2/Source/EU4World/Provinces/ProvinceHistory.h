@@ -12,28 +12,28 @@ namespace EU4
 {
 	class ProvinceHistory: commonItems::parser
 	{
-		public:
-			ProvinceHistory() = default;
-			ProvinceHistory(std::istream& theStream);
+	public:
+		ProvinceHistory() = default;
+		ProvinceHistory(std::istream& theStream);
 
-			std::optional<date> getFirstOwnedDate() const;
-			bool hasOriginalCulture() const;
-			bool wasColonized() const;
-			double getOriginalDevelopment() const { return originalTax + originalProduction + originalManpower; }
-			const std::vector<PopRatio>& getPopRatios() const { return popRatios; }
+		std::optional<date> getFirstOwnedDate() const;
+		bool hasOriginalCulture() const;
+		bool wasColonized() const;
+		double getOriginalDevelopment() const { return originalTax + originalProduction + originalManpower; }
+		const std::vector<PopRatio>& getPopRatios() const { return popRatios; }
 
-		private:
-			void buildPopRatios();
-			void decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop);
+	private:
+		void buildPopRatios();
+		void decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop);
 
-			std::vector<std::pair<date, std::string>> ownershipHistory;
-			std::vector<std::pair<date, std::string>> religionHistory;
-			std::vector<std::pair<date, std::string>> cultureHistory;
+		std::vector<std::pair<date, std::string>> ownershipHistory;
+		std::vector<std::pair<date, std::string>> religionHistory;
+		std::vector<std::pair<date, std::string>> cultureHistory;
 
-			std::vector<PopRatio> popRatios;
-			double originalTax = 0.0;
-			double originalProduction = 0.0;
-			double originalManpower = 0.0;
+		std::vector<PopRatio> popRatios;
+		double originalTax = 0.0;
+		double originalProduction = 0.0;
+		double originalManpower = 0.0;
 	};
 }
 

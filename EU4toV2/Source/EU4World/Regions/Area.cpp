@@ -2,7 +2,7 @@
 
 EU4::Area::Area(std::istream& theStream)
 {
-	registerKeyword(std::regex("color"), [this](const std::string & colorToken, std::istream & areaFile)
+	registerKeyword("color", [this](const std::string & colorToken, std::istream & areaFile)
 	{
 		commonItems::Color newColor(areaFile);
 	});
@@ -11,4 +11,5 @@ EU4::Area::Area(std::istream& theStream)
 	});
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

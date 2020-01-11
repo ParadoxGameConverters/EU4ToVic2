@@ -13,27 +13,27 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 	std::string startingCulture;
 	std::string startingReligion;
 
-	registerKeyword(std::regex("owner"), [this](const std::string& unused, std::istream & theStream) {
+	registerKeyword("owner", [this](const std::string& unused, std::istream & theStream) {
 		commonItems::singleString ownerString(theStream);
 		ownershipHistory.push_back(std::make_pair(STARTING_DATE, ownerString.getString()));
 	});
-	registerKeyword(std::regex("culture"), [&startingCulture](const std::string& unused, std::istream & theStream) {
+	registerKeyword("culture", [&startingCulture](const std::string& unused, std::istream & theStream) {
 		commonItems::singleString cultureString(theStream);
 		startingCulture = cultureString.getString();
 	});
-	registerKeyword(std::regex("religion"), [&startingReligion](const std::string& unused, std::istream & theStream) {
+	registerKeyword("religion", [&startingReligion](const std::string& unused, std::istream & theStream) {
 		commonItems::singleString religionString(theStream);
 		startingReligion = religionString.getString();
 	});
-	registerKeyword(std::regex("base_tax"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("base_tax", [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleDouble baseTaxDouble(theStream);
 		originalTax = baseTaxDouble.getDouble();
 	});
-	registerKeyword(std::regex("base_production"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("base_production", [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleDouble baseProductionDouble(theStream);
 		originalProduction = baseProductionDouble.getDouble();
 	});
-	registerKeyword(std::regex("base_manpower"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("base_manpower", [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleDouble manpowerDouble(theStream);
 		originalManpower = manpowerDouble.getDouble();
 	});
@@ -58,6 +58,7 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 
 	if ((startingCulture != "") && ((cultureHistory.size() == 0) || (cultureHistory.begin()->first != STARTING_DATE)))
 	{

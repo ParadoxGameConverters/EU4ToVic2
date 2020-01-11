@@ -13,6 +13,7 @@ EU4::EU4ActiveIdeas::EU4ActiveIdeas(std::istream& theStream)
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 

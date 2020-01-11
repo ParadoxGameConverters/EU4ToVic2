@@ -1,5 +1,5 @@
-#ifndef EU4_WORLD_H_
-#define EU4_WORLD_H_
+#ifndef EU4_WORLD_H
+#define EU4_WORLD_H
 
 #include "Army/EU4Army.h"
 #include "Diplomacy/EU4Diplomacy.h"
@@ -29,8 +29,8 @@ class Country;
 class Province;
 
 
-class world: private commonItems::parser
-{
+	class world: private commonItems::parser
+	{
 	public:
 		world(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper);
 
@@ -99,10 +99,10 @@ class world: private commonItems::parser
 		Modifiers modifierTypes;
 
 		std::map<std::string, mappers::UnitType> unitTypeMap;
-};
+	};
 
 }
 
 
 
-#endif // EU4_WORLD_H_
+#endif // EU4_WORLD_H
