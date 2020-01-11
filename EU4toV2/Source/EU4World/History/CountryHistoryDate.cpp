@@ -3,7 +3,7 @@
 
 EU4::CountryHistoryDate::CountryHistoryDate(std::istream& theStream)
 {
-	registerKeyword(std::regex("leader"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4::Leader newLeader(theStream);
 			leaders.push_back(newLeader);
@@ -19,4 +19,5 @@ EU4::CountryHistoryDate::CountryHistoryDate(std::istream& theStream)
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

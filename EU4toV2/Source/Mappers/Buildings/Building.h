@@ -1,10 +1,10 @@
 #ifndef BUILDING_H
 #define BUILDING_H
 
-#include "../Modifiers/Modifier.h"
+#include "../../EU4World/Modifiers/Modifier.h"
 #include "newParser.h"
 
-namespace EU4
+namespace mappers
 {
 	class Building: commonItems::parser
 	{
@@ -12,13 +12,13 @@ namespace EU4
 		Building(std::istream& theStream);
 
 		double getCost() const { return cost; }
-		const Modifier& getModifier() const { return modifier; }
+		const EU4::Modifier& getModifier() const { return modifier; }
 		bool isManufactory() { return manufactory; }
 
 	private:
 		double cost = 0.0;
 		bool manufactory = false;
-		Modifier modifier;
+		EU4::Modifier modifier;
 	};
 }
 

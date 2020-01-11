@@ -9,12 +9,12 @@ namespace EU4
 {
 	class AreaNames: commonItems::parser
 	{
-		public:
-			AreaNames(std::istream& theStream);
-			const std::set<std::string>& getNames() const { return names; }
+	public:
+		AreaNames(std::istream& theStream);
+		const std::set<std::string>& getNames() const { return names; }
 
-		private:
-			std::set<std::string> names;
+	private:
+		std::set<std::string> names;
 	};
 }
 

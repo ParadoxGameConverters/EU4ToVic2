@@ -23,7 +23,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "gtest/gtest.h"
 #include "../EU4toV2/Source/EU4World/Provinces/EU4Province.h"
-#include "../EU4toV2/Source/EU4World/Buildings/Buildings.h"
+#include "../EU4toV2/Source/Mappers/Buildings/Buildings.h"
 #include "../EU4toV2/Source/EU4World/Modifiers/Modifiers.h"
 #include <sstream>
 
@@ -35,7 +35,7 @@ TEST(EU4World_ProvinceTests, numberProperlyInterpreted)
 	input << "={}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -51,7 +51,7 @@ TEST(EU4World_ProvinceTests, nameDefaultsToEmpty)
 	input << "={}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -69,7 +69,7 @@ TEST(EU4World_ProvinceTests, nameCanBeSet)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -85,7 +85,7 @@ TEST(EU4World_ProvinceTests, ownerStringDefaultsToEmpty)
 	input << "={}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -103,7 +103,7 @@ TEST(EU4World_ProvinceTests, ownerStringCanBeSet)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -119,7 +119,7 @@ TEST(EU4World_ProvinceTests, coresDefaultToEmpty)
 	input << "={}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -139,7 +139,7 @@ TEST(EU4World_ProvinceTests, coresCanBeSetWithNewStyle)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -157,7 +157,7 @@ TEST(EU4World_ProvinceTests, coresCanBeSetWithOldStyle)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -173,7 +173,7 @@ TEST(EU4World_ProvinceTests, coresCanBeAdded)
 	input << "={}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -193,7 +193,7 @@ TEST(EU4World_ProvinceTests, coresCanBeRemoved)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -211,7 +211,7 @@ TEST(EU4World_ProvinceTests, inHreDefaultsToFalse)
 	input << "={}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -229,7 +229,7 @@ TEST(EU4World_ProvinceTests, inHreCanRemainNegative)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -247,7 +247,7 @@ TEST(EU4World_ProvinceTests, inHreCanBeTrue)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -263,7 +263,7 @@ TEST(EU4World_ProvinceTests, isColonyDefaultsToFalse)
 	input << "={}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -281,7 +281,7 @@ TEST(EU4World_ProvinceTests, isColonyCanBeSet)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -297,7 +297,7 @@ TEST(EU4World_ProvinceTests, wasColonizedDefaultsToFalse)
 	input << "={}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -315,7 +315,7 @@ TEST(EU4World_ProvinceTests, wasColonizedTrueIfHasOriginalColoniser)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -333,7 +333,7 @@ TEST(EU4World_ProvinceTests, wasColonizedFalseIfOwnedAtStart)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -356,7 +356,7 @@ TEST(EU4World_ProvinceTests, wasColonizedFalseIfHasOriginalCulture)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -380,7 +380,7 @@ TEST(EU4World_ProvinceTests, wasColonizedTrueIfCultureChanged)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -397,7 +397,7 @@ TEST(EU4World_ProvinceTests, popRatiosDefaultToEmpty)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -418,7 +418,7 @@ TEST(EU4World_ProvinceTests, popRatiosCanBeAdded)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -435,7 +435,7 @@ TEST(EU4World_ProvinceTests, getFirstOwnedDateDefaultsToEmpty)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -455,7 +455,7 @@ TEST(EU4World_ProvinceTests, getFirstOwnedDateCanDetectOwnershipAtStartDate)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -477,7 +477,7 @@ TEST(EU4World_ProvinceTests, getFirstOwnedDateCanDetectLaterOwnership)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -494,7 +494,7 @@ TEST(EU4World_ProvinceTests, hasBuildingDefaultsToFalse)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -514,7 +514,7 @@ TEST(EU4World_ProvinceTests, hasBuildingCanBeTrue)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -530,7 +530,7 @@ TEST(EU4World_ProvinceTests, hasGreatProjectDefaultsToFalse)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -549,7 +549,7 @@ TEST(EU4World_ProvinceTests, hasGreatProjectFindsProjects)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -566,7 +566,7 @@ TEST(EU4World_ProvinceTests, hasModifierDefaultsToFalse)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -585,7 +585,7 @@ TEST(EU4World_ProvinceTests, hasModifierFindsModifiers)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -602,7 +602,7 @@ TEST(EU4World_ProvinceTests, getCulturePercentDefaultsToZero)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -623,7 +623,7 @@ TEST(EU4World_ProvinceTests, getCulturePercentCanFullyMatch)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);
@@ -647,7 +647,7 @@ TEST(EU4World_ProvinceTests, getCulturePercentDeterminedByHistory)
 	input << "}";
 
 	std::stringstream buildingsInput;
-	EU4::Buildings buildings(buildingsInput);
+	mappers::Buildings buildings(buildingsInput);
 
 	std::stringstream modifiersInput;
 	EU4::Modifiers modifiers(modifiersInput);

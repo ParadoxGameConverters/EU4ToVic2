@@ -25,7 +25,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include <algorithm>
 #include <iomanip>
 #include "../Configuration.h"
-#include "../EU4World/CultureGroups.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Country/EU4Country.h"
 #include "../EU4World/Provinces/EU4Province.h"
@@ -290,7 +289,7 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 			continue;
 		}
 
-		if (!inCorrectCultureGroup(colony, country->getPrimaryCulture()))
+		if (!inCorrectCultureGroup(colony, country->getPrimaryCulture(), srcWorld.getCultureGroupsMapper()))
 		{
 			continue;
 		}
@@ -359,11 +358,11 @@ bool mappers::CountryMappings::capitalInRightVic2Region(
 }
 
 
-bool mappers::CountryMappings::inCorrectCultureGroup(const mappers::ColonyStruct& colony, const std::string& primaryCulture)
+bool mappers::CountryMappings::inCorrectCultureGroup(const mappers::ColonyStruct& colony, const std::string& primaryCulture, const mappers::CultureGroups& cultureGroupsMapper)
 {
 	if (colony.cultureGroup != "")
 	{
-		auto culturalGroup = EU4::cultureGroups::getCulturalGroup(primaryCulture);
+		auto culturalGroup = cultureGroupsMapper.getCulturalGroup(primaryCulture);
 		if ((culturalGroup) && (culturalGroup->getName() != colony.cultureGroup))
 		{
 			return false;

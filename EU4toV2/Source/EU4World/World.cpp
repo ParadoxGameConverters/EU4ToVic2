@@ -1,6 +1,5 @@
 #include "World.h"
 #include "Country/Countries.h"
-#include "CultureGroups.h"
 #include "Country/EU4Country.h"
 #include "EU4Version.h"
 #include "EU4Localisation.h"
@@ -29,15 +28,15 @@
 EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper):
 	theCountries()
 {
-	registerKeyword(std::regex("EU4txt"), [this](const std::string& unused, std::istream& theStream){});
-	registerKeyword(std::regex("date"), [this](const std::string& dateText, std::istream& theStream)
+	registerKeyword("EU4txt", [this](const std::string& unused, std::istream& theStream){});
+	registerKeyword("date", [this](const std::string& dateText, std::istream& theStream)
 		{
 			commonItems::singleString dateString(theStream);
 			date endDate(dateString.getString());
 			theConfiguration.setLastEU4Date(endDate);
 		}
 	);
-	registerKeyword(std::regex("start_date"), [this](const std::string& dateText, std::istream& theStream)
+	registerKeyword("start_date", [this](const std::string& dateText, std::istream& theStream)
 		{
 			commonItems::singleString startDateString(theStream);
 			date startDate(startDateString.getString());
@@ -50,46 +49,47 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			theConfiguration.setEU4RandomSeed(stoi(randomSeed.getString().substr(randomSeed.getString().size() - 5)));
 		}
 	);
-	registerKeyword(std::regex("savegame_version"), [this](const std::string& versionText, std::istream& theStream)
+	registerKeyword("savegame_version", [this](const std::string& versionText, std::istream& theStream)
 		{
 			version = std::make_unique<EU4::Version>(theStream);
 			theConfiguration.setEU4Version(*version);
 		}
 	);
-	registerKeyword(std::regex("dlc_enabled"), [this](const std::string& DLCText, std::istream& theStream)
+	registerKeyword("dlc_enabled", [this](const std::string& DLCText, std::istream& theStream)
 		{
 			commonItems::stringList theDLCs(theStream);
 			theConfiguration.setActiveDLCs(theDLCs.getStrings());
 		});
-	registerKeyword(std::regex("mod_enabled"), [this](const std::string& modText, std::istream& theStream) {
-		commonItems::stringList modList(theStream);
-		Mods theMods(modList.getStrings(), theConfiguration);
-	});
-	registerKeyword(std::regex("revolution_target"), [this](const std::string& revolutionText, std::istream& theStream)
+	registerKeyword("mod_enabled", [this](const std::string& modText, std::istream& theStream) 
+		{
+			commonItems::stringList modList(theStream);
+			Mods theMods(modList.getStrings(), theConfiguration);
+		});
+	registerKeyword("revolution_target", [this](const std::string& revolutionText, std::istream& theStream)
 		{
 			commonItems::singleString revTargetStr(theStream);
 			revolutionTargetString = revTargetStr.getString();
 		}
 	);
-	registerKeyword(std::regex("celestial_empire"), [this](const std::string& empireText, std::istream& theStream)
+	registerKeyword("celestial_empire", [this](const std::string& empireText, std::istream& theStream)
 		{
 			EU4::EU4Empire empireBlock(theStream);
 			celestialEmperor = empireBlock.getEmperor();
 		}
 	);
-	registerKeyword(std::regex("empire"), [this](const std::string& empireText, std::istream& theStream)
+	registerKeyword("empire", [this](const std::string& empireText, std::istream& theStream)
 		{
 			EU4::EU4Empire empireBlock(theStream);
 			holyRomanEmperor = empireBlock.getEmperor();
 		}
 	);
-	registerKeyword(std::regex("emperor"), [this](const std::string& emperorText, std::istream& theStream)
+	registerKeyword("emperor", [this](const std::string& emperorText, std::istream& theStream)
 		{
 			commonItems::singleString emperorStr(theStream);
 			holyRomanEmperor = emperorStr.getString();
 		}
 	);
-	registerKeyword(std::regex("provinces"), [this](const std::string& provincesText, std::istream& theStream) {
+	registerKeyword("provinces", [this](const std::string& provincesText, std::istream& theStream) {
 		LOG(LogLevel::Info) << "- Loading Provinces";
 		modifierTypes.initialize();
 		provinces = std::make_unique<Provinces>(theStream, buildingTypes, modifierTypes);
@@ -99,19 +99,21 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			theConfiguration.setFirstEU4Date(*possibleDate);
 		}
 	});
-	registerKeyword(std::regex("countries"), [this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
+	registerKeyword("countries", [this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
 		{
 			LOG(LogLevel::Info) << "- Loading Countries";
-			loadCountries(theStream, ideaEffectMapper);
+			countries processedCountries(*version, theStream, ideaEffectMapper, cultureGroupsMapper);
+			auto theProcessedCountries = processedCountries.getTheCountries();
+			theCountries.swap(theProcessedCountries);
 		}
 	);
-	registerKeyword(std::regex("diplomacy"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("diplomacy", [this](const std::string& unused, std::istream& theStream) {
 		LOG(LogLevel::Info) << "- Loading Diplomacy";
 		EU4::EU4Diplomacy theDiplomacy(theStream);
 		diplomacy = theDiplomacy.getAgreements();
 		LOG(LogLevel::Info) << "- Loaded " << diplomacy.size() << " agreements";
 	});
-	registerKeyword(std::regex("map_area_data"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("map_area_data", [this](const std::string& unused, std::istream& theStream) {
 		LOG(LogLevel::Info) << "- Loading Map Area Data";
 		commonItems::ignoreItem(unused, theStream);
 		LOG(LogLevel::Info) << " - Ignoring Map Area Data";
@@ -193,15 +195,6 @@ void EU4::world::verifySave(const std::string& EU4SaveFileName)
 	}
 
 	saveFile.close();
-}
-
-void EU4::world::loadCountries(std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper)
-{
-	LOG(LogLevel::Info) << " - Processing Countries";
-
-	countries processedCountries(*version, theStream, ideaEffectMapper);
-	auto theProcessedCountries = processedCountries.getTheCountries();
-	theCountries.swap(theProcessedCountries);
 }
 
 void EU4::world::loadRevolutionTarget()
@@ -337,7 +330,7 @@ void EU4::world::loadEU4RegionsNewVersion()
 
 void EU4::world::checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const
 {
-	for (auto cultureItr: EU4::cultureGroups::getCultureToGroupMap())
+	for (auto cultureItr: cultureGroupsMapper.getCultureToGroupMap())
 	{
 		std::string Vi2Culture;
 		std::string EU4Culture = cultureItr.first;

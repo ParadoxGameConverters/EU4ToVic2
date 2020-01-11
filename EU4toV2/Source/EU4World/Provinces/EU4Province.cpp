@@ -16,105 +16,105 @@ const double BUILDING_COST_TO_WEIGHT_RATIO = 0.02;
 EU4::Province::Province(
 	const std::string& numString,
 	std::istream& theStream,
-	const Buildings& buildingTypes,
+	const mappers::Buildings& buildingTypes,
 	const Modifiers& modifierTypes
 ) {
-	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleString nameString(theStream);
 			name = nameString.getString();
 		});
-	registerKeyword(std::regex("base_tax"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("base_tax", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleDouble baseTaxDouble(theStream);
 			baseTax = baseTaxDouble.getDouble();
 		});
-	registerKeyword(std::regex("base_production"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("base_production", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleDouble baseProductionDouble(theStream);
 			baseProduction = baseProductionDouble.getDouble();
 		});
-	registerKeyword(std::regex("base_manpower"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("base_manpower", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleDouble manpowerDouble(theStream);
 			manpower = manpowerDouble.getDouble();
 		});
-	registerKeyword(std::regex("manpower"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("manpower", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleDouble manpowerDouble(theStream);
 			manpower = manpowerDouble.getDouble();
 		});
-	registerKeyword(std::regex("owner"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("owner", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleString ownerStringString(theStream);
 			ownerString = ownerStringString.getString();
 		});
-	registerKeyword(std::regex("controller"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("controller", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleString controllerStringString(theStream);
 			controllerString = controllerStringString.getString();
 		});
-	registerKeyword(std::regex("cores"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("cores", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::stringList coresStrings(theStream);
 			for (auto coreString : coresStrings.getStrings()) cores.insert(coreString);
 		});
-	registerKeyword(std::regex("core"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("core", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleString coresString(theStream);
 			cores.insert(coresString.getString());
 		});
-    registerKeyword(std::regex("territorial_core"),[this](const std::string& unused, std::istream& theStream) 
+    registerKeyword("territorial_core",[this](const std::string& unused, std::istream& theStream) 
 		 {
 			commonItems::ignoreItem(unused, theStream);
 			territorialCore = true;
 		});
-	registerKeyword(std::regex("hre"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("hre", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::ignoreItem(unused, theStream);
 			inHRE = true;
 		});
-	registerKeyword(std::regex("is_city"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("is_city", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::ignoreItem(unused, theStream);
 			city = true;
 		});
-	registerKeyword(std::regex("colonysize"), [this](const std::string & unused, std::istream & theStream) 
+	registerKeyword("colonysize", [this](const std::string & unused, std::istream & theStream) 
 		{
 			commonItems::ignoreItem(unused, theStream);
 			colony = true;
 	});
-	registerKeyword(std::regex("original_coloniser"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("original_coloniser", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::ignoreItem(unused, theStream);
 			hadOriginalColoniser = true;
 		});
-	registerKeyword(std::regex("history"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("history", [this](const std::string& unused, std::istream& theStream) 
 		{
 			ProvinceHistory theHistory(theStream);
 			provinceHistory = theHistory;
 		});
-	registerKeyword(std::regex("buildings"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("buildings", [this](const std::string& unused, std::istream& theStream) 
 		{
 			ProvinceBuildings theBuildings(theStream);
 			buildings = theBuildings;
 		});
-	registerKeyword(std::regex("great_projects"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("great_projects", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::stringList theProjects(theStream);
 			for (const auto& project : theProjects.getStrings()) greatProjects.insert(project);
 		});
-	registerKeyword(std::regex("modifier"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream) 
 		{
 			ProvinceModifier modifier(theStream);
 			modifiers.insert(modifier.getModifier());
 		});
-	registerKeyword(std::regex("trade_goods"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("trade_goods", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleString tradeGoodsString(theStream);
 			tradeGoods = tradeGoodsString.getString();
 		});
-	registerKeyword(std::regex("center_of_trade"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("center_of_trade", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleInt cotLevelInt(theStream);
 			centerOfTradeLevel = cotLevelInt.getInt();
@@ -122,6 +122,7 @@ EU4::Province::Province(
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 
 	num = 0 - stoi(numString);
 
@@ -157,7 +158,7 @@ double EU4::Province::getCulturePercent(const std::string& culture) const
 	return culturePercent;
 }
 
-void EU4::Province::determineProvinceWeight(const Buildings& buildingTypes, const Modifiers& modifierTypes)
+void EU4::Province::determineProvinceWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes)
 {
 	double manpower_weight = manpower;
 	double taxEfficiency = 1.0;
@@ -366,7 +367,7 @@ double EU4::Province::getTradeGoodPrice() const
 
 
 EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
-	const Buildings& buildingTypes,
+	const mappers::Buildings& buildingTypes,
 	const Modifiers& modifierTypes
 ) const
 {

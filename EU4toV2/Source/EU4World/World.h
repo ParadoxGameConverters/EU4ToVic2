@@ -1,5 +1,5 @@
-#ifndef EU4_WORLD_H_
-#define EU4_WORLD_H_
+#ifndef EU4_WORLD_H
+#define EU4_WORLD_H
 
 #include "Army/EU4Army.h"
 #include "Diplomacy/EU4Diplomacy.h"
@@ -7,12 +7,13 @@
 #include "Provinces/Provinces.h"
 #include "Regions/Regions.h"
 #include "Religions/Religions.h"
-#include "Buildings/Buildings.h"
 #include "Modifiers/Modifiers.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/UnitTypeMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
+#include "../Mappers/Buildings/Buildings.h"
+#include "../Mappers/CultureGroups/CultureGroups.h"
 #include "newParser.h"
 #include <istream>
 #include <memory>
@@ -29,8 +30,8 @@ class Country;
 class Province;
 
 
-class world: private commonItems::parser
-{
+	class world: private commonItems::parser
+	{
 	public:
 		world(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper);
 
@@ -48,13 +49,13 @@ class world: private commonItems::parser
 		const Religions& getAllReligions() const { return theReligions; }
 
 		bool isRandomWorld() const;
+		const mappers::CultureGroups& getCultureGroupsMapper() const { return cultureGroupsMapper; }
 
 	private:
 		void verifySave(const std::string& EU4SaveFileName);
 
 		void loadEU4Version(const std::shared_ptr<Object> EU4SaveObj);
 
-		void loadCountries(std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void loadRevolutionTarget();
 		void dropMinoritiesFromCountries();
 		void addProvinceInfoToCountries();
@@ -95,14 +96,15 @@ class world: private commonItems::parser
 		std::string revolutionTargetString;
 
 		Religions theReligions;
-		Buildings buildingTypes;
+		mappers::Buildings buildingTypes;
+		mappers::CultureGroups cultureGroupsMapper;
 		Modifiers modifierTypes;
 
 		std::map<std::string, mappers::UnitType> unitTypeMap;
-};
+	};
 
 }
 
 
 
-#endif // EU4_WORLD_H_
+#endif // EU4_WORLD_H

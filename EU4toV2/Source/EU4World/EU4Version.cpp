@@ -48,25 +48,26 @@ EU4::Version::Version(std::string version)
 
 EU4::Version::Version(std::istream& input)
 {
-	registerKeyword(std::regex("first"), [this](const std::string& unused, std::istream& theStream){
+	registerKeyword("first", [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleInt firstString(theStream);
 		firstPart = firstString.getInt();
 	});
-	registerKeyword(std::regex("second"), [this](const std::string& unused, std::istream& theStream){
+	registerKeyword("second", [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleInt firstString(theStream);
 		secondPart = firstString.getInt();
 	});
-	registerKeyword(std::regex("third"), [this](const std::string& unused, std::istream& theStream){
+	registerKeyword("third", [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleInt firstString(theStream);
 		thirdPart = firstString.getInt();
 	});
-	registerKeyword(std::regex("forth"), [this](const std::string& unused, std::istream& theStream){
+	registerKeyword("forth", [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleInt firstString(theStream);
 		fourthPart = firstString.getInt();
 	});
 	registerKeyword(std::regex("name"), commonItems::ignoreItem);
 
 	parseStream(input);
+	clearRegisteredKeywords();
 }
 
 

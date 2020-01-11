@@ -3,7 +3,7 @@
 
 EU4::NationMergeParser::NationMergeParser()
 {
-	registerKeyword(std::regex("merge_daimyos"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("merge_daimyos", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString daimyosStr(theStream);
 			mergeDaimyos = (daimyosStr.getString() == "yes");
@@ -16,5 +16,6 @@ EU4::NationMergeParser::NationMergeParser()
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseFile("merge_nations.txt");
+	clearRegisteredKeywords();
 }
 

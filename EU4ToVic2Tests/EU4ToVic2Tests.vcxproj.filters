@@ -224,18 +224,6 @@
     <ClCompile Include="EU4WorldTests\ProvinceBuildingsTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Buildings\Building.cpp">
-      <Filter>ConverterFiles\EU4World\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\BuildingTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Buildings\Buildings.cpp">
-      <Filter>ConverterFiles\EU4World\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\BuildingsTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp">
       <Filter>ConverterFiles\EU4World\Modifiers</Filter>
     </ClCompile>
@@ -259,6 +247,18 @@
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegions.cpp">
       <Filter>ConverterFiles\EU4World\ColonialRegions</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\BuildingsTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\BuildingTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Building.cpp">
+      <Filter>ConverterFiles\Mappers\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Buildings.cpp">
+      <Filter>ConverterFiles\Mappers\Buildings</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -313,14 +313,14 @@
     <Filter Include="HelpersTests">
       <UniqueIdentifier>{990552e6-b585-4a97-8e3c-63c6099e25e1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ConverterFiles\EU4World\Buildings">
-      <UniqueIdentifier>{ac60ec08-692d-4210-9da2-d92743e58cf2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ConverterFiles\EU4World\Modifiers">
       <UniqueIdentifier>{b50f49fb-ec18-4d14-aac1-f0ff92d9acbf}</UniqueIdentifier>
     </Filter>
     <Filter Include="ConverterFiles\EU4World\ColonialRegions">
       <UniqueIdentifier>{7fba0347-5440-48b3-8dc3-04c9100995d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\Buildings">
+      <UniqueIdentifier>{2d828934-05e9-4b46-b27c-045548db083e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

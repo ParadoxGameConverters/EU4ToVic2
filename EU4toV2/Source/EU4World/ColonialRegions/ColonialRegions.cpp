@@ -34,6 +34,7 @@ EU4::ColonialRegions::ColonialRegions()
 			}
 		}
 	}
+	clearRegisteredKeywords();
 }
 
 bool EU4::ColonialRegions::provinceIsInRegion(int province, const std::string& region) const

@@ -11,6 +11,7 @@ EU4::Regions::Regions(const EU4::Areas& areas, std::istream& regionsFile)
 	});
 
 	parseStream(regionsFile);
+	clearRegisteredKeywords();
 
 	for (const auto& area : areas.getAreas()) regions.insert(std::make_pair(area.first, EU4::Region(area.second)));
 }

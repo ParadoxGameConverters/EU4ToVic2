@@ -7,13 +7,13 @@ namespace EU4
 {
 	class EU4Modifier: commonItems::parser
 	{
-		public:
-			EU4Modifier() = default;
-			EU4Modifier(std::istream& theStream);
-			std::string getModifier() const { return modifier; }
+	public:
+		EU4Modifier() = default;
+		EU4Modifier(std::istream& theStream);
+		std::string getModifier() const { return modifier; }
 
-		private:
-			std::string modifier;
+	private:
+		std::string modifier;
 	};
 }
 

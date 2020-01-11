@@ -42,9 +42,6 @@
     <ClCompile Include="Source\Mappers\CountryMapping.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\CultureGroups.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\CultureMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
@@ -206,12 +203,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Provinces\ProvinceBuildings.cpp">
       <Filter>EU4World\Provinces</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Buildings\Building.cpp">
-      <Filter>EU4World\Buildings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Buildings\Buildings.cpp">
-      <Filter>EU4World\Buildings</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Modifiers\Modifier.cpp">
       <Filter>EU4World\Modifiers</Filter>
@@ -420,6 +411,21 @@
     <ClCompile Include="Source\EU4World\Country\EU4Country.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Buildings\Building.cpp">
+      <Filter>Mappers\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Buildings\Buildings.cpp">
+      <Filter>Mappers\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureGroups\Culture.cpp">
+      <Filter>Mappers\CultureGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroup.cpp">
+      <Filter>Mappers\CultureGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp">
+      <Filter>Mappers\CultureGroups</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -458,9 +464,6 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\CountryMapping.h">
       <Filter>Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\CultureGroups.h">
-      <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\CultureMapper.h">
       <Filter>Mappers</Filter>
@@ -626,12 +629,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\ProvinceBuildings.h">
       <Filter>EU4World\Provinces</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Buildings\Building.h">
-      <Filter>EU4World\Buildings</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Buildings\Buildings.h">
-      <Filter>EU4World\Buildings</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Modifiers\Modifier.h">
       <Filter>EU4World\Modifiers</Filter>
@@ -843,6 +840,21 @@
     <ClInclude Include="Source\EU4World\Country\EU4Country.h">
       <Filter>EU4World\Country</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\Buildings\Building.h">
+      <Filter>Mappers\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Buildings\Buildings.h">
+      <Filter>Mappers\Buildings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureGroups\Culture.h">
+      <Filter>Mappers\CultureGroups</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroup.h">
+      <Filter>Mappers\CultureGroups</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h">
+      <Filter>Mappers\CultureGroups</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -877,9 +889,6 @@
     </Filter>
     <Filter Include="Mappers\Ideas">
       <UniqueIdentifier>{7850fd15-b418-4718-b0f5-e2a1ea86e33a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EU4World\Buildings">
-      <UniqueIdentifier>{fde1ad41-feef-4ca6-b1f2-d36c2a0849d9}</UniqueIdentifier>
     </Filter>
     <Filter Include="EU4World\Modifiers">
       <UniqueIdentifier>{a148c2bc-522b-45d5-9087-5f5b840c943f}</UniqueIdentifier>
@@ -925,6 +934,12 @@
     </Filter>
     <Filter Include="EU4World\ColonialRegions">
       <UniqueIdentifier>{06b263a1-60e1-43f3-bd3c-7442154bc521}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\Buildings">
+      <UniqueIdentifier>{6d032e94-4d0f-4d2e-a14e-bd6bc4d6a85b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CultureGroups">
+      <UniqueIdentifier>{4b63845e-9288-4ea1-a7aa-18bccaf0ef3f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

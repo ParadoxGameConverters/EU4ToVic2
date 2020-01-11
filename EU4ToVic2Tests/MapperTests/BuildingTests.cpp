@@ -22,42 +22,42 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/EU4World/Buildings/Building.h"
+#include "../EU4toV2/Source/Mappers/Buildings/Building.h"
 #include <sstream>
 
 
 
-TEST(EU4World_BuildingTests, costDefaultsToZero)
+TEST(Mappers_BuildingTests, costDefaultsToZero)
 {
 	std::stringstream input;
-	EU4::Building theBuilding(input);
+	mappers::Building theBuilding(input);
 
 	ASSERT_EQ(theBuilding.getCost(), 0);
 }
 
 
-TEST(EU4World_BuildingTests, costCanBeSet)
+TEST(Mappers_BuildingTests, costCanBeSet)
 {
 	std::stringstream input;
 	input << "= {\n";
 	input << "\tcost = 100\n";
 	input << "}";
-	EU4::Building theBuilding(input);
+	mappers::Building theBuilding(input);
 
 	ASSERT_EQ(theBuilding.getCost(), 100);
 }
 
 
-TEST(EU4World_BuildingTests, modifiersDefaultToEmpty)
+TEST(Mappers_BuildingTests, modifiersDefaultToEmpty)
 {
 	std::stringstream input;
-	EU4::Building theBuilding(input);
+	mappers::Building theBuilding(input);
 
 	ASSERT_EQ(theBuilding.getModifier().getAllEffects().size(), 0);
 }
 
 
-TEST(EU4World_BuildingTests, modifiersCanBeAdded)
+TEST(Mappers_BuildingTests, modifiersCanBeAdded)
 {
 	std::stringstream input;
 	input << "= {\n";
@@ -66,7 +66,7 @@ TEST(EU4World_BuildingTests, modifiersCanBeAdded)
 	input << "\t\tanotherModifier = 0.75\n";
 	input << "\t}\n";
 	input << "}";
-	EU4::Building theBuilding(input);
+	mappers::Building theBuilding(input);
 
 	ASSERT_EQ(theBuilding.getModifier().getAllEffects().size(), 2);
 	ASSERT_EQ(theBuilding.getModifier().getAllEffects().at("aModifier"), 0.5);
@@ -74,16 +74,16 @@ TEST(EU4World_BuildingTests, modifiersCanBeAdded)
 }
 
 
-TEST(EU4World_BuildingTests, manufacturyDefaultsToFalse)
+TEST(Mappers_BuildingTests, manufacturyDefaultsToFalse)
 {
 	std::stringstream input;
-	EU4::Building theBuilding(input);
+	mappers::Building theBuilding(input);
 
 	ASSERT_FALSE(theBuilding.isManufactory());
 }
 
 
-TEST(EU4World_BuildingTests, manufacturyCanBeSet)
+TEST(Mappers_BuildingTests, manufacturyCanBeSet)
 {
 	std::stringstream input;
 	input << "= {\n";
@@ -93,7 +93,7 @@ TEST(EU4World_BuildingTests, manufacturyCanBeSet)
 	input << "\t\tsalt\n";
 	input << "\t}\n";
 	input << "}";
-	EU4::Building theBuilding(input);
+	mappers::Building theBuilding(input);
 
 	ASSERT_TRUE(theBuilding.isManufactory());
 }

@@ -1,10 +1,9 @@
 #include "Log.h"
 #include "Provinces.h"
-#include "../Buildings/Buildings.h"
 #include "ParserHelpers.h"
 #include <fstream>
 
-EU4::Provinces::Provinces(std::istream& theStream, const Buildings& buildingTypes, const Modifiers& modifierTypes) 
+EU4::Provinces::Provinces(std::istream& theStream, const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes) 
 {
 	registerKeyword(std::regex("-[0-9]+"), [this, buildingTypes, modifierTypes](const std::string& numberString, std::istream& theStream)
 	{
@@ -14,6 +13,7 @@ EU4::Provinces::Provinces(std::istream& theStream, const Buildings& buildingType
 	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 EU4::Province& EU4::Provinces::getProvince(int provinceNumber)
