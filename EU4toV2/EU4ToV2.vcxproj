@@ -193,7 +193,6 @@
     <ClCompile Include="Source\EU4World\Country\EU4NationalSymbol.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4ReformStackSection.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4Technology.cpp" />
-    <ClCompile Include="Source\EU4World\CultureGroups.cpp" />
     <ClCompile Include="Source\EU4World\Diplomacy\EU4Agreement.cpp" />
     <ClCompile Include="Source\EU4World\Diplomacy\EU4Diplomacy.cpp" />
     <ClCompile Include="Source\EU4World\EU4Localisation.cpp" />
@@ -239,6 +238,9 @@
     <ClCompile Include="Source\Mappers\ColonialTagsMapper.cpp" />
     <ClCompile Include="Source\Mappers\Continents.cpp" />
     <ClCompile Include="Source\Mappers\CountryMapping.cpp" />
+    <ClCompile Include="Source\Mappers\CultureGroups\Culture.cpp" />
+    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroup.cpp" />
+    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper.cpp" />
     <ClCompile Include="Source\Mappers\ColonyFlagsetMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapping.cpp" />
@@ -337,7 +339,6 @@
     <ClInclude Include="Source\EU4World\Country\EU4NationalSymbol.h" />
     <ClInclude Include="Source\EU4World\Country\EU4ReformStackSection.h" />
     <ClInclude Include="Source\EU4World\Country\EU4Technology.h" />
-    <ClInclude Include="Source\EU4World\CultureGroups.h" />
     <ClInclude Include="Source\EU4World\Diplomacy\EU4Agreement.h" />
     <ClInclude Include="Source\EU4World\Diplomacy\EU4Diplomacy.h" />
     <ClInclude Include="Source\EU4World\EU4Localisation.h" />
@@ -385,6 +386,9 @@
     <ClInclude Include="Source\Mappers\ColonyFlagsetMapper.h" />
     <ClInclude Include="Source\Mappers\Continents.h" />
     <ClInclude Include="Source\Mappers\CountryMapping.h" />
+    <ClInclude Include="Source\Mappers\CultureGroups\Culture.h" />
+    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroup.h" />
+    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h" />
     <ClInclude Include="Source\Mappers\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapping.h" />
     <ClInclude Include="Source\Mappers\CultureMappingRule.h" />

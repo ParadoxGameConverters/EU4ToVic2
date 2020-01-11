@@ -13,6 +13,7 @@
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/Buildings/Buildings.h"
+#include "../Mappers/CultureGroups/CultureGroups.h"
 #include "newParser.h"
 #include <istream>
 #include <memory>
@@ -48,13 +49,13 @@ class Province;
 		const Religions& getAllReligions() const { return theReligions; }
 
 		bool isRandomWorld() const;
+		const mappers::CultureGroups& getCultureGroupsMapper() const { return cultureGroupsMapper; }
 
 	private:
 		void verifySave(const std::string& EU4SaveFileName);
 
 		void loadEU4Version(const std::shared_ptr<Object> EU4SaveObj);
 
-		void loadCountries(std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void loadRevolutionTarget();
 		void dropMinoritiesFromCountries();
 		void addProvinceInfoToCountries();
@@ -96,6 +97,7 @@ class Province;
 
 		Religions theReligions;
 		mappers::Buildings buildingTypes;
+		mappers::CultureGroups cultureGroupsMapper;
 		Modifiers modifierTypes;
 
 		std::map<std::string, mappers::UnitType> unitTypeMap;

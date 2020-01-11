@@ -108,11 +108,9 @@ std::optional<int> EU4::EU4Army::getProbabilisticHomeProvince(EU4::REGIMENTCATEG
 
 void EU4::EU4Army::blockHomeProvince(const int blocked)
 {
-	for (const auto& reg_type : EU4::RegimentCategoryTypes)
+	for (const auto& regType : EU4::RegimentCategoryTypes)
 	{
-		auto homes = home_provinces[reg_type.first];
-		std::vector<int> filteredhomes;
-		for (auto home : homes) if (home != blocked) filteredhomes.push_back(home);
-		home_provinces[reg_type.first] = filteredhomes;
+		auto& homes = home_provinces[regType.first];
+		homes.erase(std::remove(homes.begin(), homes.end(), blocked), homes.end());
 	}
 }

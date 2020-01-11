@@ -5,7 +5,6 @@
 #include "../Mappers/PartyNameMapper.h"
 #include "CardinalToOrdinal.h"
 #include "OSCompatibilityLayer.h"
-#include "../EU4World/CultureGroups.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Country/EU4Country.h"
 #include "../EU4World/Leader/EU4Leader.h"

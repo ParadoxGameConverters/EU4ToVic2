@@ -3,7 +3,6 @@
 #include "../../Configuration.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "../CultureGroups.h"
 #include "../Relations/EU4Relations.h"
 #include "../History/CountryHistory.h"
 #include "../../V2World/V2Localisation.h"
@@ -13,8 +12,14 @@
 #include "EU4Modifier.h"
 #include "EU4ActiveIdeas.h"
 
-EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVersion, std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper):	
-	tag(countryTag)
+EU4::Country::Country(
+	const std::string& countryTag, 
+	const EU4::Version& theVersion, 
+	std::istream& theStream, 
+	const mappers::IdeaEffectMapper& 
+	ideaEffectMapper, 
+	const mappers::CultureGroups& cultureGroupsMapper
+): tag(countryTag)
 {
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
 		{
@@ -103,16 +108,16 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 			development = theDevelopment.getInt();
 		});
 	// obsolete since 1.18 at the latest
-	registerKeyword("culture_group_union", [this, theVersion](const std::string& unused, std::istream& theStream)
+	registerKeyword("culture_group_union", [this, theVersion, cultureGroupsMapper](const std::string& unused, std::istream& theStream)
 		{
 			if (theVersion < EU4::Version("1.7.0.0"))
 			{
 				commonItems::singleString cultureGroup(theStream);
-				culturalUnion = EU4::cultureGroups::getCulturalGroup(cultureGroup.getString());
+				culturalUnion = cultureGroupsMapper.getCulturalGroup(cultureGroup.getString());
 			}
 			else
 			{
-				EU4::cultureGroup newUnion(tag + "_union", theStream);
+				mappers::CultureGroup newUnion(tag + "_union", theStream);
 				culturalUnion = newUnion;
 			}
 		});
@@ -247,7 +252,7 @@ EU4::Country::Country(const std::string& countryTag, const EU4::Version& theVers
 	determineJapaneseRelations();
 	determineInvestments(ideaEffectMapper);
 	determineLibertyDesire();
-	determineCulturalUnion();
+	determineCulturalUnion(cultureGroupsMapper);
 	filterLeaders();
 }
 
@@ -281,11 +286,11 @@ void EU4::Country::dropMinorityCultures()
 	acceptedCultures = updatedCultures;
 }
 
-void EU4::Country::determineCulturalUnion()
+void EU4::Country::determineCulturalUnion(const mappers::CultureGroups& cultureGroupsMapper)
 {
 	if ((development >= 1000) || (governmentRank > 2))
 	{
-		culturalUnion = EU4::cultureGroups::getCulturalGroup(primaryCulture);
+		culturalUnion = cultureGroupsMapper.getCulturalGroup(primaryCulture);
 	}
 }
 

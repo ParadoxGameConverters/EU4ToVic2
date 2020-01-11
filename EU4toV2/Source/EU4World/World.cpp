@@ -1,6 +1,5 @@
 #include "World.h"
 #include "Country/Countries.h"
-#include "CultureGroups.h"
 #include "Country/EU4Country.h"
 #include "EU4Version.h"
 #include "EU4Localisation.h"
@@ -103,7 +102,9 @@ EU4::world::world(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	registerKeyword("countries", [this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
 		{
 			LOG(LogLevel::Info) << "- Loading Countries";
-			loadCountries(theStream, ideaEffectMapper);
+			countries processedCountries(*version, theStream, ideaEffectMapper, cultureGroupsMapper);
+			auto theProcessedCountries = processedCountries.getTheCountries();
+			theCountries.swap(theProcessedCountries);
 		}
 	);
 	registerKeyword("diplomacy", [this](const std::string& unused, std::istream& theStream) {
@@ -194,15 +195,6 @@ void EU4::world::verifySave(const std::string& EU4SaveFileName)
 	}
 
 	saveFile.close();
-}
-
-void EU4::world::loadCountries(std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper)
-{
-	LOG(LogLevel::Info) << " - Processing Countries";
-
-	countries processedCountries(*version, theStream, ideaEffectMapper);
-	auto theProcessedCountries = processedCountries.getTheCountries();
-	theCountries.swap(theProcessedCountries);
 }
 
 void EU4::world::loadRevolutionTarget()
@@ -338,7 +330,7 @@ void EU4::world::loadEU4RegionsNewVersion()
 
 void EU4::world::checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const
 {
-	for (auto cultureItr: EU4::cultureGroups::getCultureToGroupMap())
+	for (auto cultureItr: cultureGroupsMapper.getCultureToGroupMap())
 	{
 		std::string Vi2Culture;
 		std::string EU4Culture = cultureItr.first;
