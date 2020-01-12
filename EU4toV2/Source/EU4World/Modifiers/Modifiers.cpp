@@ -14,7 +14,6 @@ EU4::Modifiers::Modifiers(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
-	clearRegisteredKeywords();
 }
 
 void EU4::Modifiers::initialize()
@@ -22,7 +21,6 @@ void EU4::Modifiers::initialize()
 	processFolder("event_modifiers");
 	processFolder("triggered_modifiers");
 	processFolder("static_modifiers");
-	clearRegisteredKeywords();
 }
 
 void EU4::Modifiers::processFolder(const std::string& folderName)
@@ -52,7 +50,7 @@ void EU4::Modifiers::processFolder(const std::string& folderName)
 
 void EU4::Modifiers::registerKeys()
 {
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& modifierName, std::istream& theStream) {
+	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& modifierName, std::istream& theStream) {
 		Modifier modifier(theStream);
 		modifiers.insert(std::make_pair(modifierName, modifier));
 	});

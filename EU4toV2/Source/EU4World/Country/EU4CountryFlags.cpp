@@ -3,13 +3,12 @@
 
 EU4::EU4CountryFlags::EU4CountryFlags(std::istream& theStream)
 {
-	registerKeyword(std::regex("[a-z_]+"), [this](const std::string& flag, std::istream& theStream)
+	registerRegex("[a-z_]+", [this](const std::string& flag, std::istream& theStream)
 		{
 			commonItems::ignoreItem(flag, theStream);
 			flags.insert(flag);
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
-	clearRegisteredKeywords();
 }

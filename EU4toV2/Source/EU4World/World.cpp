@@ -38,7 +38,7 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			date startDate(startDateString.getString());
 			theConfiguration.setStartEU4Date(startDate);
 		});
-	registerKeyword(std::regex("(multiplayer_)?random_seed"), [this](const std::string& key, std::istream& theStream)
+	registerRegex("(multiplayer_)?random_seed", [this](const std::string& key, std::istream& theStream)
 		{
 			commonItems::singleString randomSeed(theStream);
 			theConfiguration.setEU4RandomSeed(stoi(randomSeed.getString().substr(randomSeed.getString().size() - 5)));
@@ -109,7 +109,7 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			commonItems::ignoreItem(unused, theStream);
 			LOG(LogLevel::Info) << " - Ignoring Map Area Data";
 		});
-	registerKeyword(std::regex("[A-Za-z0-9\\_]+"), commonItems::ignoreItem);
+	registerRegex("[A-Za-z0-9\\_]+", commonItems::ignoreItem);
 
 	LOG(LogLevel::Info) << "Verifying EU4 save.";
 	verifySave(EU4SaveFileName);

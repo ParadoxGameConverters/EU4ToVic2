@@ -3,15 +3,14 @@
 
 EU4::Regions::Regions(const EU4::Areas& areas, std::istream& regionsFile)
 {
-	registerKeyword(std::regex("\\w+_region"), [this, areas](const std::string & areaName, std::istream & areasFile)
-	{
-		EU4::Region newRegion(areasFile);
-		newRegion.addProvinces(areas);
-		regions.insert(make_pair(areaName, newRegion));
-	});
+	registerRegex("\\w+_region", [this, areas](const std::string & areaName, std::istream & areasFile)
+		{
+			EU4::Region newRegion(areasFile);
+			newRegion.addProvinces(areas);
+			regions.insert(make_pair(areaName, newRegion));
+		});
 
 	parseStream(regionsFile);
-	clearRegisteredKeywords();
 
 	for (const auto& area : areas.getAreas()) regions.insert(std::make_pair(area.first, EU4::Region(area.second)));
 }

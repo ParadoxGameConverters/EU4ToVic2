@@ -18,7 +18,7 @@ mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream)
 
 void mappers::IdeaEffectMapper::registerKeys()
 {
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& idea, std::istream& theStream) {
+	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& idea, std::istream& theStream) {
 		IdeaEffects ideaEffects(theStream);
 
 		enforceIdeas[idea] = ideaEffects.getEnforce();

@@ -8,9 +8,8 @@ EU4::ReformStackSection::ReformStackSection(std::istream& theStream)
 		commonItems::stringList reformList(theStream);
 		for (const auto& reform : reformList.getStrings()) reforms.insert(reform);
 	});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
-	clearRegisteredKeywords();
 }
 

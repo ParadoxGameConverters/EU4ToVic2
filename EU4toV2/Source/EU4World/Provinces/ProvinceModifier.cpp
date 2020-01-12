@@ -7,8 +7,7 @@ EU4::ProvinceModifier::ProvinceModifier(std::istream& theStream)
 		commonItems::singleString modifierString(theStream);
 		modifier = modifierString.getString();
 	});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
-	clearRegisteredKeywords();
 }

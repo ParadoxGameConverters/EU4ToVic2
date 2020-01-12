@@ -13,8 +13,7 @@ EU4::GovernmentSection::GovernmentSection(std::istream& theStream)
 			EU4::ReformStackSection refStack(theStream);
 			reformStack = refStack.getReforms();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
-	clearRegisteredKeywords();
 }

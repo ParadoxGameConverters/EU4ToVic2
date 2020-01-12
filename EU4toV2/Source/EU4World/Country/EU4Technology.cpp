@@ -18,8 +18,7 @@ EU4::EU4Technology::EU4Technology(std::istream& theStream)
 			commonItems::singleInt techInt(theStream);
 			mil = techInt.getInt();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
-	clearRegisteredKeywords();
 }

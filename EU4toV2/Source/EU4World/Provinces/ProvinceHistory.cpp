@@ -37,7 +37,7 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 		commonItems::singleDouble manpowerDouble(theStream);
 		originalManpower = manpowerDouble.getDouble();
 	});
-	registerKeyword(std::regex("\\d+\\.\\d+\\.\\d+"), [this](const std::string& dateString, std::istream& theStream) {
+	registerRegex("\\d+\\.\\d+\\.\\d+", [this](const std::string& dateString, std::istream& theStream) {
 		date theDate = date(dateString);
 		DateItems theItems(theStream);
 		for (const auto& theItem : theItems.getDateChanges())
@@ -55,10 +55,9 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 			}
 		}
 	});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
-	clearRegisteredKeywords();
 
 	if ((startingCulture != "") && ((cultureHistory.size() == 0) || (cultureHistory.begin()->first != STARTING_DATE)))
 	{

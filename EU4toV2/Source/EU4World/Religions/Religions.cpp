@@ -26,25 +26,22 @@ EU4::Religions::Religions()
 			parseFile(modName + "/common/religions/" + filename);
 		}
 	}
-
-	clearRegisteredKeywords();
 }
 
 EU4::Religions::Religions(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
-	clearRegisteredKeywords();
 }
 
 void EU4::Religions::registerKeys()
 {
-	registerKeyword(std::regex("[a-zA-Z_]+"), [this](const std::string& groupName, std::istream& theStream) 
+	registerRegex("[a-zA-Z_]+", [this](const std::string& groupName, std::istream& theStream) 
 		{
 			ReligionGroup newGroup(groupName, theStream);
 			for (auto religion : newGroup.takeReligions()) theReligions.insert(religion);
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 }
 
 std::optional<EU4::Religion> EU4::Religions::getReligion(std::string name) const

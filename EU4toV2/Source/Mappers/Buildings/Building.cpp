@@ -14,8 +14,7 @@ mappers::Building::Building(std::istream& theStream)
 		commonItems::ignoreItem(unused, theStream);
 		manufactory = true;
 	});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
-	clearRegisteredKeywords();
 }

@@ -119,10 +119,9 @@ EU4::Province::Province(
 			commonItems::singleInt cotLevelInt(theStream);
 			centerOfTradeLevel = cotLevelInt.getInt();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
-	clearRegisteredKeywords();
 
 	num = 0 - stoi(numString);
 

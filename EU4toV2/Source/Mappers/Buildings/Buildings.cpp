@@ -28,25 +28,22 @@ mappers::Buildings::Buildings()
 			}
 		}
 	}
-	clearRegisteredKeywords();
 }
 
 mappers::Buildings::Buildings(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
-	clearRegisteredKeywords();
 }
 
 void mappers::Buildings::registerKeys()
 {
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& buildingName, std::istream& theStream) {
+	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& buildingName, std::istream& theStream) {
 		Building building(theStream);
 		buildings.insert(std::make_pair(buildingName, building));
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 }
-
 
 std::optional<mappers::Building> mappers::Buildings::getBuilding(const std::string& buildingName) const
 {

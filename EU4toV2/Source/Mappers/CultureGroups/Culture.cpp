@@ -28,8 +28,7 @@ mappers::Culture::Culture(std::istream& theStream)
 			commonItems::stringList names(theStream);
 			dynastyNames = names.getStrings();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
-	clearRegisteredKeywords();
 }

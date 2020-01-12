@@ -24,13 +24,12 @@ mappers::CultureGroup::CultureGroup(const std::string& name_, std::istream& theS
 			commonItems::stringList names(theStream);
 			dynastyNames = names.getStrings();
 		});
-	registerKeyword(std::regex("\\w+"), [this](const std::string& cultureName, std::istream& theStream)
+	registerRegex("\\w+", [this](const std::string& cultureName, std::istream& theStream)
 		{
 			Culture newCulture(theStream);
 			cultures.insert(make_pair(cultureName, newCulture));
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
-	clearRegisteredKeywords();
 }
