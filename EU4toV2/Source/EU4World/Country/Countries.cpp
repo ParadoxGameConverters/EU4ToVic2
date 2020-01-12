@@ -16,4 +16,5 @@ EU4::countries::countries(const EU4::Version& theVersion,std::istream& theStream
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

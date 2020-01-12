@@ -10,6 +10,7 @@ EU4::Areas::Areas(std::istream& theStream)
 		});
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 const std::set<int> EU4::Areas::getProvincesInArea(const std::string& area) const

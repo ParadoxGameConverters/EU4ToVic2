@@ -36,6 +36,7 @@ EU4::EU4Agreement::EU4Agreement(std::istream& theStream)
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 

@@ -14,6 +14,7 @@ mappers::TechGroupsMapper::TechGroupsMapper()
 		});
 
 	parseFile("techGroups.txt");
+	clearRegisteredKeywords();
 }
 
 int mappers::TechGroupsMapper::getWesternizationFromTechGroup(const std::string& techGroupName) const

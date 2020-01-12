@@ -8,12 +8,14 @@ mappers::IdeaEffectMapper::IdeaEffectMapper()
 	registerKeys();
 	parseFile("idea_effects.txt");
 	parseFile("reform_effects.txt");
+	clearRegisteredKeywords();
 }
 
 mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 void mappers::IdeaEffectMapper::registerKeys()

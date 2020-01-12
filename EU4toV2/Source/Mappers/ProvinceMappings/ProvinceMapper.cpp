@@ -17,6 +17,7 @@ mappers::ProvinceMapper::ProvinceMapper(std::istream& theStream, const Configura
 		});
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 
 	ProvinceMappingsVersion mappings = getMappingsVersion(mappingVersions, configuration);
 	createMappings(mappings);

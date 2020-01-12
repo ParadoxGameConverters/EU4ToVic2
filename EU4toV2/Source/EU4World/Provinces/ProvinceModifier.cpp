@@ -10,4 +10,5 @@ EU4::ProvinceModifier::ProvinceModifier(std::istream& theStream)
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

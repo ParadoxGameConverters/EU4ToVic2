@@ -26,12 +26,14 @@ EU4::Religions::Religions()
 			parseFile(modName + "/common/religions/" + filename);
 		}
 	}
+	clearRegisteredKeywords();
 }
 
 EU4::Religions::Religions(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 void EU4::Religions::registerKeys()

@@ -15,4 +15,5 @@ mappers::TechGroups::TechGroups(std::istream& theStream)
 		});
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

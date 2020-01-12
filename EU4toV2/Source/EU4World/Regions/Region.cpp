@@ -14,6 +14,7 @@ EU4::Region::Region(std::istream& theStream)
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 EU4::Region::Region(const std::set<int>& _provinces):

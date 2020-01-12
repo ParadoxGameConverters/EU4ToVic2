@@ -20,6 +20,7 @@ mappers::ProvinceMapping::ProvinceMapping(std::istream& theStream)
 		});
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 
 	if (EU4Provinces.empty())
 	{

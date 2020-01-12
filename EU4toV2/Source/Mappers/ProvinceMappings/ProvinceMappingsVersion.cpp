@@ -8,6 +8,7 @@ mappers::ProvinceMappingsVersion::ProvinceMappingsVersion(const std::string& ver
 			mappings.push_back(newMapping);
 		});
 	parseStream(theStream);
+	clearRegisteredKeywords();
 
 	version = EU4::Version(versionString);
 }

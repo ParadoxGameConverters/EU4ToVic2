@@ -12,4 +12,5 @@ EU4::Area::Area(std::istream& theStream)
 		});
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

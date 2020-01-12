@@ -25,12 +25,14 @@ mappers::CultureGroups::CultureGroups()
 			parseFile(itr + "/common/cultures/" + cultureFile);
 		}
 	}
+	clearRegisteredKeywords();
 }
 
 mappers::CultureGroups::CultureGroups(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 void mappers::CultureGroups::registerKeys()

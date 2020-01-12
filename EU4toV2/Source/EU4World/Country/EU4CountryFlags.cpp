@@ -11,4 +11,5 @@ EU4::EU4CountryFlags::EU4CountryFlags(std::istream& theStream)
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

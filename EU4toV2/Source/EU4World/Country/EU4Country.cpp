@@ -248,6 +248,7 @@ EU4::Country::Country(
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 
 	determineJapaneseRelations();
 	determineInvestments(ideaEffectMapper);

@@ -16,5 +16,6 @@ EU4::NationMergeParser::NationMergeParser()
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseFile("merge_nations.txt");
+	clearRegisteredKeywords();
 }
 

@@ -105,4 +105,5 @@ mappers::IdeaEffects::IdeaEffects(std::istream& theStream)
 		});
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

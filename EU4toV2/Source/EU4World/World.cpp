@@ -116,6 +116,7 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 
 	LOG(LogLevel::Info) << "* Importing EU4 save *";
 	parseFile(EU4SaveFileName);
+	clearRegisteredKeywords();
 
 	LOG(LogLevel::Info) << " * Building world *";
 	LOG(LogLevel::Info) << "- Loading Empires";

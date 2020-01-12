@@ -28,12 +28,14 @@ mappers::Buildings::Buildings()
 			}
 		}
 	}
+	clearRegisteredKeywords();
 }
 
 mappers::Buildings::Buildings(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 void mappers::Buildings::registerKeys()

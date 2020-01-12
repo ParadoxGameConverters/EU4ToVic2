@@ -39,6 +39,7 @@ EU4::EU4Army::EU4Army(std::istream& theStream)
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 double EU4::EU4Army::getAverageStrength(REGIMENTCATEGORY category) const

@@ -21,6 +21,7 @@ void EU4::Modifiers::initialize()
 	processFolder("event_modifiers");
 	processFolder("triggered_modifiers");
 	processFolder("static_modifiers");
+	clearRegisteredKeywords();
 }
 
 void EU4::Modifiers::processFolder(const std::string& folderName)

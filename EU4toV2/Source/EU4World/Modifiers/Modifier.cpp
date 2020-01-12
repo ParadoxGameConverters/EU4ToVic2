@@ -20,6 +20,7 @@ EU4::Modifier::Modifier(std::istream& theStream)
 	});
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 double EU4::Modifier::getEffectAmount(const std::string& theEffect) const

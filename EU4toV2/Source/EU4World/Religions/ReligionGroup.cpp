@@ -21,4 +21,5 @@ EU4::ReligionGroup::ReligionGroup(const std::string& groupName, std::istream& th
 		});
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

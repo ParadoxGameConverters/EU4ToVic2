@@ -46,6 +46,7 @@ EU4::Version::Version(std::istream& input)
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(input);
+	clearRegisteredKeywords();
 }
 
 

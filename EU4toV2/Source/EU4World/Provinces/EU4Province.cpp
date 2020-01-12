@@ -122,6 +122,7 @@ EU4::Province::Province(
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 
 	num = 0 - stoi(numString);
 

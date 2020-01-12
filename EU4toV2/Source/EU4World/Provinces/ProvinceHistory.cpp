@@ -58,6 +58,7 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 
 	if ((startingCulture != "") && ((cultureHistory.size() == 0) || (cultureHistory.begin()->first != STARTING_DATE)))
 	{
