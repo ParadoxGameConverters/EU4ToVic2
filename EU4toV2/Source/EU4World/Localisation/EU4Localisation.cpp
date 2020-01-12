@@ -3,8 +3,19 @@
 #include <vector>
 #include <set>
 #include "OSCompatibilityLayer.h"
+#include "../../Configuration.h"
 
-void EU4Localisation::ReadFromFile(const std::string& fileName)
+EU4::EU4Localisation::EU4Localisation()
+{
+	readFromAllFilesInFolder(theConfiguration.getEU4Path() + "/localisation");
+	for (auto itr : theConfiguration.getEU4Mods())
+	{
+		readFromAllFilesInFolder(itr + "/localisation");
+		readFromAllFilesInFolder(itr + "/localisation/replace");
+	}
+}
+
+void EU4::EU4Localisation::readFromFile(const std::string& fileName)
 {
 	std::ifstream in(fileName);
 
@@ -13,7 +24,7 @@ void EU4Localisation::ReadFromFile(const std::string& fileName)
 
 	// First line is the language like "l_english:"
 	in.getline(line, maxLineLength);
-	std::string language = DetermineLanguageForFile(RemoveUTF8BOM(line));
+	std::string language = determineLanguageForFile(removeUTF8BOM(line));
 	if (language.empty())
 	{
 		return;
@@ -25,7 +36,7 @@ void EU4Localisation::ReadFromFile(const std::string& fileName)
 		in.getline(line, maxLineLength);
 		if (!in.eof())
 		{
-			const auto keyLocalisationPair = DetermineKeyLocalisationPair(RemoveUTF8BOM(line));		// the localisation pair
+			const auto keyLocalisationPair = determineKeyLocalisationPair(removeUTF8BOM(line));		// the localisation pair
 			const std::string& key = keyLocalisationPair.first;												// the key from the pair
 			const std::string& currentLocalisation = keyLocalisationPair.second;							// the localisation from the pair
 			if (!key.empty() && !currentLocalisation.empty())
@@ -36,7 +47,7 @@ void EU4Localisation::ReadFromFile(const std::string& fileName)
 	}
 }
 
-void EU4Localisation::ReadFromAllFilesInFolder(const std::string& folderPath)
+void EU4::EU4Localisation::readFromAllFilesInFolder(const std::string& folderPath)
 {
 	// Get all files in the folder.
 	std::set<std::string> fileNames;
@@ -45,11 +56,11 @@ void EU4Localisation::ReadFromAllFilesInFolder(const std::string& folderPath)
 	// Read all these files.
 	for (const auto& fileName : fileNames)
 	{
-		ReadFromFile(folderPath + '/' + fileName);
+		readFromFile(folderPath + '/' + fileName);
 	}
 }
 
-const std::string& EU4Localisation::GetText(const std::string& key, const std::string& language) const
+const std::string& EU4::EU4Localisation::getText(const std::string& key, const std::string& language) const
 {
 	static const std::string noLocalisation = "";	// used if there's no localisation
 
@@ -68,7 +79,7 @@ const std::string& EU4Localisation::GetText(const std::string& key, const std::s
 	return languageFindIter->second;
 }
 
-const std::map<std::string, std::string>& EU4Localisation::GetTextInEachLanguage(const std::string& key) const
+const std::map<std::string, std::string>& EU4::EU4Localisation::getTextInEachLanguage(const std::string& key) const
 {
 	static const std::map<std::string, std::string> noLocalisation;	// used if there's no localisation
 
@@ -81,7 +92,7 @@ const std::map<std::string, std::string>& EU4Localisation::GetTextInEachLanguage
 	return keyFindIter->second;
 }
 
-std::string EU4Localisation::DetermineLanguageForFile(const std::string& text)
+std::string EU4::EU4Localisation::determineLanguageForFile(const std::string& text)
 {
 	static const std::string noLanguageIndicated = "";	// used when no language is indicated
 
@@ -99,7 +110,7 @@ std::string EU4Localisation::DetermineLanguageForFile(const std::string& text)
 	return text.substr(beginPos, endPos - beginPos);
 }
 
-std::pair<std::string, std::string> EU4Localisation::DetermineKeyLocalisationPair(const std::string& text)
+std::pair<std::string, std::string> EU4::EU4Localisation::determineKeyLocalisationPair(const std::string& text)
 {
 	static const std::pair<std::string, std::string> noLocalisationPair;	// used when there's no localisation pair
 
@@ -119,7 +130,7 @@ std::pair<std::string, std::string> EU4Localisation::DetermineKeyLocalisationPai
 	return std::make_pair(text.substr(keyBeginPos, keyEndPos - keyBeginPos), text.substr(localisationBeginPos, localisationEndPos - localisationBeginPos));
 }
 
-std::string EU4Localisation::RemoveUTF8BOM(const std::string& text)
+std::string EU4::EU4Localisation::removeUTF8BOM(const std::string& text)
 {
 	if (text.size() >= 3 && text[0] == '\xEF' && text[1] == '\xBB' && text[2] == '\xBF')
 	{

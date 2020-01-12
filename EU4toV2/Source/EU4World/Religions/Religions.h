@@ -11,11 +11,13 @@ namespace EU4
 	class Religions: commonItems::parser
 	{
 	public:
-		void addReligions(std::istream& theStream);
+		Religions();
+		Religions(std::istream& theStream);
 		std::optional<Religion> getReligion(std::string name) const;
 		const std::map<std::string, Religion>& getAllReligions() const { return theReligions; }
 
 	private:
+		void registerKeys();
 		std::map<std::string, Religion> theReligions;
 	};
 }

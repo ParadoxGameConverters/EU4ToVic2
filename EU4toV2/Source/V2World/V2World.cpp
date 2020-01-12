@@ -51,7 +51,7 @@
 #include "../EU4World/Country/EU4Country.h"
 
 
-V2World::V2World(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper)
+V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper)
 {
 	LOG(LogLevel::Info) << "Parsing Vicky2 data";
 	importProvinces();
@@ -440,7 +440,7 @@ void V2World::importPotentialCountry(const string& line, bool dynamicCountry)
 }
 
 
-void V2World::initializeCultureMappers(const EU4::world& sourceWorld)
+void V2World::initializeCultureMappers(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Parsing culture mappings";
 
@@ -456,7 +456,7 @@ void V2World::initializeCultureMappers(const EU4::world& sourceWorld)
 }
 
 
-void V2World::initializeReligionMapper(const EU4::world& sourceWorld)
+void V2World::initializeReligionMapper(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Parsing religion mappings";
 
@@ -477,7 +477,7 @@ void V2World::initializeProvinceMapper()
 }
 
 
-void V2World::convertCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
+void V2World::convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	LOG(LogLevel::Info) << "Converting countries";
 	initializeCountries(sourceWorld, ideaEffectMapper);
@@ -487,7 +487,7 @@ void V2World::convertCountries(const EU4::world& sourceWorld, const mappers::Ide
 }
 
 
-void V2World::initializeCountries(const EU4::world& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
+void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	Vic2::blockedTechSchoolsFile theBlockedTechSchoolsFile;
 	Vic2::TechSchoolsFile theTechSchoolsFile(theBlockedTechSchoolsFile.takeBlockedTechSchools());
@@ -693,7 +693,7 @@ struct MTo1ProvinceComp
 };
 
 
-void V2World::convertProvinces(const EU4::world& sourceWorld)
+void V2World::convertProvinces(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting provinces";
 
@@ -952,7 +952,7 @@ std::vector<V2Demographic> V2World::determineDemographics(
 	return demographics;
 }
 
-void V2World::convertDiplomacy(const EU4::world& sourceWorld)
+void V2World::convertDiplomacy(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting diplomacy";
 
@@ -1223,7 +1223,7 @@ void V2World::setupStates()
 	}
 }
 
-void V2World::convertUncivReforms(const EU4::world& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper)
+void V2World::convertUncivReforms(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper)
 {
 	LOG(LogLevel::Info) << "Setting unciv reforms";
 
@@ -1307,7 +1307,7 @@ void V2World::convertUncivReforms(const EU4::world& sourceWorld, const mappers::
 }
 
 
-void V2World::convertTechs(const EU4::world& sourceWorld)
+void V2World::convertTechs(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting techs";
 	helpers::TechValues techValues(countries);
@@ -1327,7 +1327,7 @@ void V2World::convertTechs(const EU4::world& sourceWorld)
 }
 
 
-void V2World::allocateFactories(const EU4::world& sourceWorld)
+void V2World::allocateFactories(const EU4::World& sourceWorld)
 {
 	// Construct factory factory
 	LOG(LogLevel::Info) << "Determining factory allocation rules.";
@@ -1461,7 +1461,7 @@ void V2World::allocateFactories(const EU4::world& sourceWorld)
 	}
 }
 
-void V2World::setupPops(const EU4::world& sourceWorld)
+void V2World::setupPops(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Creating pops";
 
@@ -1693,7 +1693,7 @@ void V2World::addUnions()
 
 
 //#define TEST_V2_PROVINCES
-void V2World::convertArmies(const EU4::world& sourceWorld)
+void V2World::convertArmies(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting armies and navies";
 
