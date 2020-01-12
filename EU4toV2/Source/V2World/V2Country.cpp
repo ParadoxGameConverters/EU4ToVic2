@@ -10,7 +10,6 @@
 #include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../Mappers/AdjacencyMapper.h"
-#include "../Mappers/CountryMapping.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
@@ -505,7 +504,8 @@ void V2Country::initFromEU4Country(
 	const mappers::IdeaEffectMapper& ideaEffectMapper,
 	const mappers::ReligionMapper& religionMapper,
 	const mappers::ProvinceMapper& provinceMapper,
-	const mappers::GovernmentMapper& governmentMapper
+	const mappers::GovernmentMapper& governmentMapper, 
+	const mappers::CountryMappings& countryMapper
 ) {
 	srcCountry = _srcCountry;
 
@@ -573,7 +573,7 @@ void V2Country::initFromEU4Country(
 	reforms		=  new V2Reforms(this, srcCountry);
 
 	// Relations
-	generateRelations(_srcCountry);
+	generateRelations(_srcCountry, countryMapper);
 
 	// Literacy and Tech school
 	calculateLiteracy(_srcCountry);
@@ -764,12 +764,12 @@ void V2Country::resolvePolitics()
 	}
 }
 
-void V2Country::generateRelations(std::shared_ptr<EU4::Country> srcCountry)
+void V2Country::generateRelations(std::shared_ptr<EU4::Country> srcCountry, const mappers::CountryMappings& countryMapper)
 {
 	auto srcRelations = srcCountry->getRelations();
 	for (auto srcRelation : srcRelations)
 	{
-		const std::string& V2Tag = mappers::CountryMappings::getVic2Tag(srcRelation.first);
+		const std::string& V2Tag = countryMapper.getV2Tag(srcRelation.first);
 		if (!V2Tag.empty())
 		{
 			V2Relations newRelations(V2Tag, srcRelation.second);

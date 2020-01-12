@@ -10,16 +10,14 @@
 #include "../Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
-#include "../Mappers/CK2TitleMapper.h"
+#include "../Mappers/CK2Titles/CK2TitleMapper.h"
 #include "../Mappers/ColonyFlagsetMapper.h"
-#include "../Mappers/CountryMapping.h"
 #include "../Mappers/FlagColorMapper.h"
 #include "../FlagUtils.h"
 
-
 const std::vector<std::string> V2Flags::flagFileSuffixes = { ".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga" };
 
-void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries)
+void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries, const mappers::CountryMappings& countryMapper)
 {
 	LOG(LogLevel::Debug) << "Initializing flags";
 	tagMap.clear();
@@ -41,7 +39,7 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries)
 		if (i->second->getSourceCountry()
 			&& requiredTags.find(i->first) != requiredTags.end())
 		{
-			auto ck2title = mappers::CountryMappings::getCK2Title(i->first,i->second->getLocalName(),usableFlagTags);
+			auto ck2title = countryMapper.getCK2Title(i->first,i->second->getLocalName(),usableFlagTags);
 			if ((ck2title) && (usableFlagTags.find(*ck2title) != usableFlagTags.end()))
 			{
 				tagMap[i->first] = *ck2title;
@@ -59,11 +57,11 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries)
 				// Yay hardcoded paths. If I get round to it, I'll point these at religion.txt instead.
 				if (religion == "sunni" || religion == "shiite" || religion == "ibadi")
 				{
-					randomCK2title = mappers::CK2TitleMapper::getRandomIslamicFlag();
+					randomCK2title = countryMapper.getCK2TitleMapper().getRandomIslamicFlag();
 				}
 				else if (religion == "mahayana" || religion == "gelugpa" || religion == "theravada" || religion == "sikh" || religion == "hindu" || religion == "jain")
 				{
-					randomCK2title = mappers::CK2TitleMapper::getRandomIndianFlag();
+					randomCK2title = countryMapper.getCK2TitleMapper().getRandomIndianFlag();
 				}
 
 				if (randomCK2title && (usableFlagTags.find(*randomCK2title) != usableFlagTags.end()))

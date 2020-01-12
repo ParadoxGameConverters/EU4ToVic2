@@ -22,7 +22,6 @@
 #include "RGORandomization/BucketList.h"
 #include "../Helpers/TechValues.h"
 #include "../Mappers/AdjacencyMapper.h"
-#include "../Mappers/CountryMapping.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/Ideas/TechGroupsMapper.h"
@@ -64,7 +63,7 @@ V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper&
 	initializeProvinceMapper();
 	sourceWorld.checkAllProvincesMapped(*provinceMapper);
 
-	mappers::CountryMappings::createMappings(sourceWorld, potentialCountries, *provinceMapper);
+	countryMapper.createMappings(sourceWorld, potentialCountries, *provinceMapper);
 
 	LOG(LogLevel::Info) << "Converting world";
 	initializeCultureMappers(sourceWorld);
@@ -506,7 +505,7 @@ void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::
 
 	for (auto sourceCountry: sourceWorld.getCountries())
 	{
-		const string& V2Tag = mappers::CountryMappings::getVic2Tag(sourceCountry.first);
+		const string& V2Tag = countryMapper.getV2Tag(sourceCountry.first);
 		if (V2Tag == "")
 		{
 			LOG(LogLevel::Error) << "EU4 tag " << sourceCountry.first << " is unmapped and cannot be converted.";
@@ -523,7 +522,8 @@ void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::
 			ideaEffectMapper,
 			*religionMapper,
 			*provinceMapper,
-			governmentMapper
+			governmentMapper,
+			countryMapper
 		);
 		countries.insert(make_pair(V2Tag, destCountry));
 	}
@@ -777,8 +777,8 @@ void V2World::convertProvinces(const EU4::World& sourceWorld)
 			continue;
 		}
 
-		const std::string& V2ControllerTag = mappers::CountryMappings::getVic2Tag(oldControllerTag);
-		const std::string& V2OwnerTag = mappers::CountryMappings::getVic2Tag(oldOwnerTag);
+		const std::string& V2ControllerTag = countryMapper.getV2Tag(oldControllerTag);
+		const std::string& V2OwnerTag = countryMapper.getV2Tag(oldOwnerTag);
 		if (V2OwnerTag.empty())
 		{
 			LOG(LogLevel::Warning) << "Could not map provinces owned by " << oldOwnerTag;
@@ -818,7 +818,7 @@ void V2World::convertProvinces(const EU4::World& sourceWorld)
 							continue;
 						}
 
-						const std::string& coreV2Tag = mappers::CountryMappings::getVic2Tag(oldCore);
+						const std::string& coreV2Tag = countryMapper.getV2Tag(oldCore);
 						if (!coreV2Tag.empty())
 						{
 							Vic2Province.second->addCore(coreV2Tag);
@@ -960,13 +960,13 @@ void V2World::convertDiplomacy(const EU4::World& sourceWorld)
 	for (auto& agreement: agreements)
 	{
 		const std::string& EU4Tag1 = agreement.getOriginTag();
-		const std::string& V2Tag1 = mappers::CountryMappings::getVic2Tag(EU4Tag1);
+		const std::string& V2Tag1 = countryMapper.getV2Tag(EU4Tag1);
 		if (V2Tag1.empty())
 		{
 			continue;
 		}
 		const std::string& EU4Tag2 = agreement.getTargetTag();
-		const std::string& V2Tag2 = mappers::CountryMappings::getVic2Tag(EU4Tag2);
+		const std::string& V2Tag2 = countryMapper.getV2Tag(EU4Tag2);
 		if (V2Tag2.empty())
 		{
 			continue;
@@ -1832,7 +1832,7 @@ void V2World::output(unsigned int potentialGPs) const
 
 	// Create flags for all new countries.
 	V2Flags flags;
-	flags.SetV2Tags(countries);
+	flags.SetV2Tags(countries, countryMapper);
 	flags.output();
 
 	// Create localisations for all new countries. We don't actually know the names yet so we just use the tags as the names.
