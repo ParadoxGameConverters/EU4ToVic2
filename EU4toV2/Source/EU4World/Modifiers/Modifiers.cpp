@@ -14,6 +14,7 @@ EU4::Modifiers::Modifiers(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 void EU4::Modifiers::initialize()
