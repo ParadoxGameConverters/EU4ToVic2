@@ -54,9 +54,6 @@
     <ClCompile Include="..\common_items\Date.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\EU4Localisation.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\EU4Version.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
@@ -426,6 +423,9 @@
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp">
       <Filter>Mappers\CultureGroups</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Localisation\EU4Localisation.cpp">
+      <Filter>EU4World\Localisation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -476,9 +476,6 @@
     </ClInclude>
     <ClInclude Include="..\common_items\Date.h">
       <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\EU4Localisation.h">
-      <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\EU4Version.h">
       <Filter>EU4World</Filter>
@@ -855,6 +852,9 @@
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h">
       <Filter>Mappers\CultureGroups</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\Localisation\EU4Localisation.h">
+      <Filter>EU4World\Localisation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -940,6 +940,9 @@
     </Filter>
     <Filter Include="Mappers\CultureGroups">
       <UniqueIdentifier>{4b63845e-9288-4ea1-a7aa-18bccaf0ef3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Localisation">
+      <UniqueIdentifier>{378138b0-2893-41e3-8f98-70df21541f19}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

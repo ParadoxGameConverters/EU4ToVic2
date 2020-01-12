@@ -29,7 +29,7 @@
 namespace EU4
 {
 class Country;
-class world;
+class World;
 }
 namespace mappers
 {

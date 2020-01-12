@@ -3,7 +3,6 @@
 
 #include "newParser.h"
 
-
 namespace EU4
 {
 	class ID: commonItems::parser
@@ -19,7 +18,5 @@ namespace EU4
 		int IDType = 0;
 	};
 }
-
-
 
 #endif // EU4_ID_H
