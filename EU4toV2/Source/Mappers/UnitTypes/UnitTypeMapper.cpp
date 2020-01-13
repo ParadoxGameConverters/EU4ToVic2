@@ -4,12 +4,12 @@
 #include <set>
 #include <fstream>
 #include "OSCompatibilityLayer.h"
-#include "../Configuration.h"
+#include "../../Configuration.h"
 
 
 mappers::UnitTypeMapper::UnitTypeMapper()
 {
-	LOG(LogLevel::Info) << "\tReading unit strengths from EU4 installation folder";
+	LOG(LogLevel::Info) << "\tReading unit strengths from EU4 installation folder.";
 
 	std::set<std::string> filenames;
 	Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/units/", filenames);
@@ -30,24 +30,15 @@ mappers::UnitTypeMapper::UnitTypeMapper()
 
 }
 
-
 void mappers::UnitTypeMapper::AddUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename)
 {
-	std::string filePath = directory + "/" + filename;
-	std::ifstream incFile(filePath);	// the parsed regiment costs file
-	if (incFile.fail())
-	{
-		std::runtime_error exception("Could not open: " + directory + "/" + filename);
-		throw exception;
-	}
-
 	int period = filename.find_last_of('.');
 	std::string name = filename.substr(0, period);
 
-	UnitType unitType(incFile);
+	UnitType unitType(directory + "/" + filename);
 	if (unitType.getCategory() == EU4::REGIMENTCATEGORY::num_reg_categories)
 	{
-		LOG(LogLevel::Warning) << "Unit file for " << name << " at: " << filePath << " has no type!";
+		LOG(LogLevel::Warning) << "Unit file for " << name << " at: " << directory << "/" << filename << " has no type!";
 		return;
 	}
 

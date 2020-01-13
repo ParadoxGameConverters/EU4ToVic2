@@ -576,11 +576,11 @@ bool EU4::Country::hasFlag(std::string flag) const
 	return (itr != flags.end());
 }
 
-void EU4::Country::resolveRegimentTypes(const mappers::UnitTypeMapper& utm)
+void EU4::Country::resolveRegimentTypes(const mappers::UnitTypeMapper& unitTypeMapper)
 {
 	for (std::vector<EU4Army>::iterator itr = armies.begin(); itr != armies.end(); ++itr)
 	{
-		itr->resolveRegimentTypes(utm);
+		itr->resolveRegimentTypes(unitTypeMapper);
 	}
 }
 

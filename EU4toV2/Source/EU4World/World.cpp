@@ -10,7 +10,6 @@
 #include "../Configuration.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "../Mappers/ReligionMapper.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
@@ -437,11 +436,9 @@ void EU4::World::setLocalisations()
 void EU4::World::resolveRegimentTypes()
 {
 	LOG(LogLevel::Info) << "Resolving unit types.";
-	mappers::UnitTypeMapper utm;	
-
 	for (auto itr = theCountries.begin(); itr != theCountries.end(); ++itr)
 	{
-		itr->second->resolveRegimentTypes(utm);
+		itr->second->resolveRegimentTypes(unitTypeMapper);
 	}
 }
 

@@ -199,10 +199,10 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapping.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\StateMapper\StateMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\BlockedTechSchools.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\V2World\StateMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\V2TechSchools.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnionMapper.cpp" />

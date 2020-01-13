@@ -16,12 +16,14 @@
 #include "../Mappers/Geography/ClimateMapper.h"
 #include "../Mappers/Geography/TerrainDataMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "../Mappers/ReligionMapper.h"
+#include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/GovernmentMapper/GovernmentMapper.h"
 #include "../Mappers/MinorityPops/MinorityPopMapper.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../Mappers/PartyNames/PartyNameMapper.h"
+#include "../Mappers/RegimentCosts/RegimentCostsMapper.h"
+#include "../Mappers/StateMapper/StateMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -69,7 +71,6 @@ class V2World
 		void importPotentialCountry(const std::string& line, bool dynamicCountry);
 
 		void initializeCultureMappers(const EU4::World& sourceWorld);
-		void initializeReligionMapper(const EU4::World& sourceWorld);
 
 		void convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
@@ -118,8 +119,6 @@ class V2World
 		bool isRandomWorld;
 		int techGroupAlgorithm;
 
-		std::unique_ptr<mappers::ReligionMapper> religionMapper;
-
 		std::time_t begin = std::time(0);
 
 		mappers::ProvinceMapper provinceMapper;
@@ -133,6 +132,9 @@ class V2World
 		mappers::GovernmentMapper governmentMapper;
 		mappers::MinorityPopMapper minorityPopMapper;
 		mappers::PartyNameMapper partyNameMapper;
+		mappers::RegimentCostsMapper regimentCostsMapper;
+		mappers::ReligionMapper religionMapper;
+		mappers::StateMapper stateMapper;
 };
 
 

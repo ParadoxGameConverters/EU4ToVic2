@@ -5,7 +5,7 @@
 #include <vector>
 #include <set>
 #include "EU4Regiment.h"
-#include "../../Mappers/UnitTypeMapper.h"
+#include "../../Mappers/UnitTypes/UnitTypeMapper.h"
 #include "../ID.h"
 
 namespace EU4

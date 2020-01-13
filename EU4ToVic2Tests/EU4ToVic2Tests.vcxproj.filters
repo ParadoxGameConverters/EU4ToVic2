@@ -21,9 +21,6 @@
     <ClCompile Include="Vic2WorldTests\BlockedTechSchoolsTests.cpp">
       <Filter>Vic2WorldTests</Filter>
     </ClCompile>
-    <ClCompile Include="Vic2WorldTests\StateMapperTests.cpp">
-      <Filter>Vic2WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="Vic2WorldTests\Vic2CultureUnionMapperTests.cpp">
       <Filter>Vic2WorldTests</Filter>
     </ClCompile>
@@ -69,9 +66,6 @@
     <ClCompile Include="..\EU4toV2\Source\V2World\Vic2TechSchool.cpp">
       <Filter>ConverterFiles\Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\V2World\StateMapper.cpp">
-      <Filter>ConverterFiles\Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="ConfigurationTests.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Area.cpp">
       <Filter>ConverterFiles\EU4World\Regions</Filter>
@@ -106,12 +100,6 @@
     </ClCompile>
     <ClCompile Include="MapperTests\ReligionMappingTests.cpp">
       <Filter>MapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapping.cpp">
-      <Filter>ConverterFiles\Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper.cpp">
-      <Filter>ConverterFiles\Mappers</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\ReligionMapperTests.cpp">
       <Filter>MapperTests</Filter>
@@ -260,6 +248,18 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMappingRule.cpp">
       <Filter>ConverterFiles\Mappers\CultureMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper\ReligionMapper.cpp">
+      <Filter>ConverterFiles\Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper\ReligionMapping.cpp">
+      <Filter>ConverterFiles\Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Vic2WorldTests\StateMapperTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\StateMapper\StateMapper.cpp">
+      <Filter>ConverterFiles\Mappers\StateMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -324,6 +324,12 @@
     </Filter>
     <Filter Include="ConverterFiles\Mappers\CultureMapper">
       <UniqueIdentifier>{3c56d58f-9f93-456d-ae75-1335778243c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\ReligionMapper">
+      <UniqueIdentifier>{2d5da7a3-70c4-4793-8086-3dde86223c24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\StateMapper">
+      <UniqueIdentifier>{71d8f29f-8b37-4fbe-b1f2-bf458df5a5fe}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

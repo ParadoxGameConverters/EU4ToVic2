@@ -10,9 +10,11 @@ namespace mappers
 	{
 	public:
 		RegimentCostsMapper();
+		RegimentCostsMapper(std::istream& theStream);
 		std::map<std::string, int> getRegimentCosts() const { return regimentCosts; }
 
 	private:
+		void registerKeys();
 		std::map<std::string, int> regimentCosts;
 	};
 }

@@ -22,32 +22,32 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/V2World/StateMapper.h"
+#include "../EU4toV2/Source/Mappers/StateMapper/StateMapper.h"
 
 
 
-TEST(Vic2World_StateMapperTests, getNoProvincesForNonexistentState)
+TEST(Mappers_StateMapperTests, getNoProvincesForNonexistentState)
 {
 	std::stringstream input("");
-	Vic2::stateMapper theStateMapper(input);
+	mappers::StateMapper theStateMapper(input);
 
 	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 0);
 }
 
 
-TEST(Vic2World_StateMapperTests, getOnlySelfForOneProvinceState)
+TEST(Mappers_StateMapperTests, getOnlySelfForOneProvinceState)
 {
 	std::stringstream input("STATE_1 = { 1 }");
-	Vic2::stateMapper theStateMapper(input);
+	mappers::StateMapper theStateMapper(input);
 
 	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 1);
 }
 
 
-TEST(Vic2World_StateMapperTests, getAllProvincesForMultiProvinceState)
+TEST(Mappers_StateMapperTests, getAllProvincesForMultiProvinceState)
 {
 	std::stringstream input("STATE_1 = { 1 2 3 }");
-	Vic2::stateMapper theStateMapper(input);
+	mappers::StateMapper theStateMapper(input);
 
 	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 3);
 }

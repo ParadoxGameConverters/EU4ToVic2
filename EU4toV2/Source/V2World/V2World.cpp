@@ -22,10 +22,7 @@
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/Ideas/TechGroupsMapper.h"
-#include "../Mappers/ReligionMapper.h"
-#include "../Mappers/RegimentCostsMapper.h"
 #include "BlockedTechSchools.h"
-#include "StateMapper.h"
 #include "V2Province.h"
 #include "V2State.h"
 #include "V2Relations.h"
@@ -61,7 +58,10 @@ V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper&
 
 	LOG(LogLevel::Info) << "Converting world";
 	initializeCultureMappers(sourceWorld);
-	initializeReligionMapper(sourceWorld);
+	sourceWorld.checkAllEU4CulturesMapped(cultureMapper);
+
+	sourceWorld.checkAllEU4ReligionsMapped(religionMapper);
+
 	convertCountries(sourceWorld, ideaEffectMapper);
 	convertProvinces(sourceWorld);
 	convertDiplomacy(sourceWorld);
@@ -437,20 +437,6 @@ void V2World::initializeCultureMappers(const EU4::World& sourceWorld)
 	
 	LOG(LogLevel::Info) << "Parsing slave culture mappings.";
 	slaveCultureMapper.loadFile("configurables/culture_map_slaves.txt");
-
-	sourceWorld.checkAllEU4CulturesMapped(cultureMapper);
-}
-
-
-void V2World::initializeReligionMapper(const EU4::World& sourceWorld)
-{
-	LOG(LogLevel::Info) << "Parsing religion mappings";
-
-	std::ifstream mappingsFile("configurables/religion_map.txt");
-	religionMapper = std::make_unique<mappers::ReligionMapper>(mappingsFile);
-	mappingsFile.close();
-
-	sourceWorld.checkAllEU4ReligionsMapped(*religionMapper);
 }
 
 
@@ -487,7 +473,7 @@ void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::
 			cultureMapper,
 			slaveCultureMapper,
 			ideaEffectMapper,
-			*religionMapper,
+			religionMapper,
 			provinceMapper,
 			governmentMapper,
 			countryMapper
@@ -851,7 +837,7 @@ std::vector<V2Demographic> V2World::determineDemographics(
 			dstCulture = "no_culture";
 		}
 
-		std::optional<std::string> religion = religionMapper->getVic2Religion(popRatio.getReligion());
+		std::optional<std::string> religion = religionMapper.getVic2Religion(popRatio.getReligion());
 		if (!religion)
 		{
 			LOG(LogLevel::Warning) << "Could not set religion for pops in Vic2 province " << destNum;
@@ -1140,9 +1126,6 @@ void V2World::setupStates()
 	}
 	LOG(LogLevel::Debug) << "Unassigned Provs:\t" << unassignedProvs.size();
 
-	Vic2::stateMapperFile theStateMapperFile;
-	std::unique_ptr<Vic2::stateMapper> theStateMapper = theStateMapperFile.takeStateMapper();
-
 	list<V2Province*>::iterator iter;
 	while (unassignedProvs.size() > 0)
 	{
@@ -1158,7 +1141,7 @@ void V2World::setupStates()
 
 		V2State* newState = new V2State(stateId, *iter);
 		stateId++;
-		auto neighbors = theStateMapper->getAllProvincesInState(provId);
+		auto neighbors = stateMapper.getAllProvincesInState(provId);
 
 		bool colonial = (*iter)->isColonial();
 		newState->setColonial(colonial);
@@ -1678,9 +1661,7 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 		s.close();
 	}
 
-	LOG(LogLevel::Info) << "Parsing regiment costs";
 	// get cost per regiment values
-	mappers::RegimentCostsMapper regimentCostsMapper;
 	std::map<std::string, int> regimentCosts = regimentCostsMapper.getRegimentCosts();
 	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0.0 };
 

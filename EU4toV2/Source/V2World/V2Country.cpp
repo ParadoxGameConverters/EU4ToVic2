@@ -1,7 +1,6 @@
 #include "V2Country.h"
 #include "Log.h"
 #include "../Configuration.h"
-#include "../Mappers/ReligionMapper.h"
 #include "CardinalToOrdinal.h"
 #include "OSCompatibilityLayer.h"
 #include "../EU4World/World.h"

@@ -15,9 +15,6 @@
     <ClCompile Include="Source\EU4World\Regions\Areas.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\BlockedTechSchools.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="..\common_items\CommonUtils.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
@@ -50,12 +47,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Regions\Regions.cpp">
       <Filter>EU4World\Regions</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\ReligionMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\StateMapper.cpp">
-      <Filter>Mappers</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\V2Army.cpp">
       <Filter>Vic2World</Filter>
@@ -113,9 +104,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\World.cpp">
       <Filter>EU4World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\ReligionMapping.cpp">
-      <Filter>Mappers</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Religions\Religion.cpp">
       <Filter>EU4World\Religions</Filter>
@@ -207,12 +195,6 @@
     <ClCompile Include="Source\EU4World\Army\EU4Regiment.cpp">
       <Filter>EU4World\Army</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\UnitTypeMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\UnitType.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Factory\V2FactoryTechLoader.cpp">
       <Filter>Vic2World\Factory</Filter>
     </ClCompile>
@@ -302,9 +284,6 @@
     </ClCompile>
     <ClCompile Include="Source\V2World\Map\MapProvince.cpp">
       <Filter>Vic2World\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\RegimentCostsMapper.cpp">
-      <Filter>Mappers</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\Map\NavalBase.cpp">
       <Filter>Vic2World\Map</Filter>
@@ -438,6 +417,27 @@
     <ClCompile Include="Source\Mappers\PartyNames\PartyNameMapper.cpp">
       <Filter>Mappers\PartyNames</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\RegimentCosts\RegimentCostsMapper.cpp">
+      <Filter>Mappers\RegimentCosts</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapper.cpp">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\UnitTypes\UnitType.cpp">
+      <Filter>Mappers\UnitTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp">
+      <Filter>Mappers\UnitTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\StateMapper\StateMapper.cpp">
+      <Filter>Mappers\StateMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp">
+      <Filter>Mappers\BlockedTechSchools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -452,9 +452,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Areas.h">
       <Filter>EU4World\Regions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\BlockedTechSchools.h">
-      <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="..\common_items\CardinalToOrdinal.h">
       <Filter>CommonItems</Filter>
@@ -488,12 +485,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Region.h">
       <Filter>EU4World\Regions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\ReligionMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\StateMapper.h">
-      <Filter>Mappers</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Army.h">
       <Filter>Vic2World</Filter>
@@ -548,9 +539,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\World.h">
       <Filter>EU4World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\ReligionMapping.h">
-      <Filter>Mappers</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Religions\Religion.h">
       <Filter>EU4World\Religions</Filter>
@@ -648,12 +636,6 @@
     <ClInclude Include="Source\EU4World\Army\EU4Regiment.h">
       <Filter>EU4World\Army</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\UnitTypeMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\UnitType.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Factory\V2FactoryTechLoader.h">
       <Filter>Vic2World\Factory</Filter>
     </ClInclude>
@@ -743,9 +725,6 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\Map\MapProvince.h">
       <Filter>Vic2World\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\RegimentCostsMapper.h">
-      <Filter>Mappers</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\Map\NavalBase.h">
       <Filter>Vic2World\Map</Filter>
@@ -879,6 +858,27 @@
     <ClInclude Include="Source\Mappers\PartyNames\PartyNameMapper.h">
       <Filter>Mappers\PartyNames</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\RegimentCosts\RegimentCostsMapper.h">
+      <Filter>Mappers\RegimentCosts</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapper.h">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\UnitTypes\UnitType.h">
+      <Filter>Mappers\UnitTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h">
+      <Filter>Mappers\UnitTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\StateMapper\StateMapper.h">
+      <Filter>Mappers\StateMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.h">
+      <Filter>Mappers\BlockedTechSchools</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1000,6 +1000,21 @@
     </Filter>
     <Filter Include="Mappers\PartyNames">
       <UniqueIdentifier>{6700c27c-5507-4a98-9b25-6f09c1fb7bc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\RegimentCosts">
+      <UniqueIdentifier>{2f3cb1e5-398e-416f-be16-502306b12222}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\UnitTypes">
+      <UniqueIdentifier>{cc66df7d-dbee-401c-845f-3d6649c61c9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ReligionMapper">
+      <UniqueIdentifier>{44340527-2344-4cab-8325-3dd7b51e4fc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\StateMapper">
+      <UniqueIdentifier>{7bce0c6a-44e0-4f11-9ede-2392d88ae511}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\BlockedTechSchools">
+      <UniqueIdentifier>{ef6acc70-e731-4553-931d-2f45990d0ebc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
