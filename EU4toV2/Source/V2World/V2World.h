@@ -18,6 +18,7 @@
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/MinorityPopMapper.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
+#include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -123,6 +124,7 @@ class V2World
 
 		mappers::Continents continentsMapper;
 		mappers::CountryMappings countryMapper;
+		mappers::AdjacencyMapper adjacencyMapper;
 };
 
 

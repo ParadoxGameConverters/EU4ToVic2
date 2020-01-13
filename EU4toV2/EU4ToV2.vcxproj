@@ -229,7 +229,7 @@
     <ClCompile Include="Source\FlagUtils.cpp" />
     <ClCompile Include="Source\Helpers\TechValues.cpp" />
     <ClCompile Include="Source\main.cpp" />
-    <ClCompile Include="Source\Mappers\AdjacencyMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Adjacency\AdjacencyMapper.cpp" />
     <ClCompile Include="Source\Mappers\Buildings\Building.cpp" />
     <ClCompile Include="Source\Mappers\Buildings\Buildings.cpp" />
     <ClCompile Include="Source\Mappers\CK2Titles\CK2TitleMapper.cpp" />
@@ -378,7 +378,7 @@
     <ClInclude Include="Source\EU4World\World.h" />
     <ClInclude Include="Source\FlagUtils.h" />
     <ClInclude Include="Source\Helpers\TechValues.h" />
-    <ClInclude Include="Source\Mappers\AdjacencyMapper.h" />
+    <ClInclude Include="Source\Mappers\Adjacency\AdjacencyMapper.h" />
     <ClInclude Include="Source\Mappers\Buildings\Building.h" />
     <ClInclude Include="Source\Mappers\Buildings\Buildings.h" />
     <ClInclude Include="Source\Mappers\CK2Titles\CK2TitleMapper.h" />

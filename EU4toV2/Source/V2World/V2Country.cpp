@@ -9,7 +9,6 @@
 #include "../EU4World/Country/EU4Country.h"
 #include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/Provinces/EU4Province.h"
-#include "../Mappers/AdjacencyMapper.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
@@ -1073,7 +1072,8 @@ void V2Country::convertArmies(
 	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)],
 	const std::map<int, V2Province*>& allProvinces,
 	std::vector<int> port_whitelist,
-	const mappers::ProvinceMapper& provinceMapper
+	const mappers::ProvinceMapper& provinceMapper,
+	const mappers::AdjacencyMapper& adjacencyMapper
 ) {
 #ifndef TEST_V2_PROVINCES
 	if (srcCountry == nullptr) return;
@@ -1105,7 +1105,7 @@ void V2Country::convertArmies(
 
 			for (int i = 0; i < regimentsToCreate; ++i)
 			{
-				if (addRegimentToArmy(army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper) != addRegimentToArmyResult::success)
+				if (addRegimentToArmy(army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper, adjacencyMapper) != addRegimentToArmyResult::success)
 				{
 					// couldn't add, dissolve into pool
 					countryRemainder[rc] += 1.0;
@@ -1183,7 +1183,7 @@ void V2Country::convertArmies(
 			{
 				break;
 			}
-			switch (addRegimentToArmy(*army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper))
+			switch (addRegimentToArmy(*army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper, adjacencyMapper))
 			{
 				case addRegimentToArmyResult::success:
 					countryRemainder[rc] -= 1.0;
@@ -1886,7 +1886,8 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 	V2Army& army,
 	EU4::REGIMENTCATEGORY rc,
 	std::map<int, V2Province*> allProvinces,
-	const mappers::ProvinceMapper& provinceMapper
+	const mappers::ProvinceMapper& provinceMapper,
+	const mappers::AdjacencyMapper& adjacencyMapper
 ) {
 	V2Regiment reg(rc);
 	std::optional<int> eu4Home = army.getSourceArmy().getProbabilisticHomeProvince(rc);
@@ -1958,7 +1959,7 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 				{
 					int currentProvince = goodProvinces.front();
 					goodProvinces.pop();
-					auto adjacencies = mappers::adjacencyMapper::getVic2Adjacencies(currentProvince);
+					auto adjacencies = adjacencyMapper.getVic2Adjacencies(currentProvince);
 					if (adjacencies)
 					{
 						for (auto adjacency: *adjacencies)

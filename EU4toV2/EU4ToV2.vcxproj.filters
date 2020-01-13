@@ -6,9 +6,6 @@
     <ClCompile Include="Source\FlagUtils.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\targa.cpp" />
-    <ClCompile Include="Source\Mappers\AdjacencyMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Regions\Area.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
@@ -432,15 +429,15 @@
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMappings.cpp">
       <Filter>Mappers\CountryMappings</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Adjacency\AdjacencyMapper.cpp">
+      <Filter>Mappers\Adjacency</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\FlagUtils.h" />
     <ClInclude Include="Source\targa.h" />
-    <ClInclude Include="Source\Mappers\AdjacencyMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Area.h">
       <Filter>EU4World\Regions</Filter>
     </ClInclude>
@@ -867,6 +864,9 @@
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMappings.h">
       <Filter>Mappers\CountryMappings</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\Adjacency\AdjacencyMapper.h">
+      <Filter>Mappers\Adjacency</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -961,6 +961,9 @@
     </Filter>
     <Filter Include="Mappers\CountryMappings">
       <UniqueIdentifier>{555fbb7e-7576-40ca-a00c-3c0c85145fb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\Adjacency">
+      <UniqueIdentifier>{b1c912a8-37e7-40fd-a471-45254f092ca0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

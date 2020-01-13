@@ -20,6 +20,7 @@
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
+#include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "Country/V2Unreleasables.h"
 #include <memory>
 #include <set>
@@ -85,7 +86,8 @@ class V2Country : commonItems::parser
 			double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)],
 			const std::map<int, V2Province*>& allProvinces,
 			std::vector<int> port_whitelist,
-			const mappers::ProvinceMapper& provinceMapper
+			const mappers::ProvinceMapper& provinceMapper,
+			const mappers::AdjacencyMapper& adjacencyMapper
 		);
 		void convertLeaders(mappers::V2LeaderTraitMapper& leaderTraits);
 		bool addFactory(const V2Factory& factory);
@@ -172,7 +174,8 @@ class V2Country : commonItems::parser
 			V2Army& army,
 			EU4::REGIMENTCATEGORY rc,
 			std::map<int, V2Province*> allProvinces,
-			const mappers::ProvinceMapper& provinceMapper
+			const mappers::ProvinceMapper& provinceMapper,
+			const mappers::AdjacencyMapper& adjacencyMapper
 		);
 		std::vector<int> getPortProvinces(const std::vector<int>& locationCandidates, std::map<int, V2Province*> allProvinces);
 		V2Army* getArmyForRemainder(EU4::REGIMENTCATEGORY rc);

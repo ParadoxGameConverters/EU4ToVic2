@@ -21,7 +21,6 @@
 #include "../EU4World/Provinces/EU4Province.h"
 #include "RGORandomization/BucketList.h"
 #include "../Helpers/TechValues.h"
-#include "../Mappers/AdjacencyMapper.h"
 #include "../Mappers/CultureMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/Ideas/TechGroupsMapper.h"
@@ -1099,7 +1098,7 @@ void V2World::setupColonies()
 		{
 			int currentProvince = goodProvinces.front();
 			goodProvinces.pop();
-			auto adjacencies = mappers::adjacencyMapper::getVic2Adjacencies(currentProvince);
+			auto adjacencies = adjacencyMapper.getVic2Adjacencies(currentProvince);
 			if (adjacencies)
 			{
 				for (auto adjacency: *adjacencies)
@@ -1731,7 +1730,7 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
 		itr->second->convertLeaders(leaderTraits);
-		itr->second->convertArmies(cost_per_regiment, provinces, port_whitelist, *provinceMapper);
+		itr->second->convertArmies(cost_per_regiment, provinces, port_whitelist, *provinceMapper, adjacencyMapper);
 	}
 }
 
