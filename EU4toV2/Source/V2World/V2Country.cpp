@@ -2,7 +2,6 @@
 #include "Log.h"
 #include "../Configuration.h"
 #include "../Mappers/ReligionMapper.h"
-#include "../Mappers/PartyNameMapper.h"
 #include "CardinalToOrdinal.h"
 #include "OSCompatibilityLayer.h"
 #include "../EU4World/World.h"
@@ -31,7 +30,7 @@
 #include <sstream>
 #include <queue>
 #include <cmath>
-
+#include "ParserHelpers.h"
 
 const int MONEYFACTOR = 30;	// ducat to pound conversion rate
 
@@ -153,7 +152,7 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 
 	if (parties.empty())
 	{	// No parties are specified. Grab some.
-		loadPartiesFromBlob();
+		loadPartiesFromBlob(theWorld->getPartyNameMapper());
 	}
 
 	// set a default ruling party
@@ -177,9 +176,8 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 
 }
 
-void V2Country::loadPartiesFromBlob()
+void V2Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper)
 {
-	mappers::PartyNameMapper partyNameMapper;
 
 	auto partyMap = partyNameMapper.getMap();
 
@@ -265,7 +263,7 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 
 	if (parties.empty())
 	{	// No parties are specified. Get some.
-		loadPartiesFromBlob();
+		loadPartiesFromBlob(theWorld->getPartyNameMapper());
 	}
 
 	// set a default ruling party

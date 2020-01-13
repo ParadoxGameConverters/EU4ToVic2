@@ -1,11 +1,8 @@
 #ifndef MINORITY_POP_MAPPER_H
 #define MINORITY_POP_MAPPER_H
 
-#include <vector>
 #include "newParser.h"
-
-
-class V2Pop;
+#include "../../V2World/V2Pop.h"
 
 namespace mappers
 {
@@ -13,13 +10,14 @@ namespace mappers
 	{
 	public:
 		MinorityPopMapper();
+		MinorityPopMapper(std::istream& theStream);
 		bool matchMinorityPop(V2Pop& pop) const;
 
 	private:
+		void registerKeys();
 		std::vector<std::pair<std::string, std::string>> minorityPopMap;
 
 	};
-
 };
 
 #endif // MINORITY_POP_MAPPER_H

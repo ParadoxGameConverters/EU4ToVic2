@@ -2,9 +2,7 @@
 #define PARTY_NAME_H
 
 #include "newParser.h"
-#include "ParserHelpers.h"
 #include <map>
-#include <optional>
 
 namespace mappers
 {
@@ -17,7 +15,6 @@ namespace mappers
 	private:
 		std::map<std::string, std::string> languageToNameMap;
 	};
-
 }
 
 #endif // PARTY_NAME_H

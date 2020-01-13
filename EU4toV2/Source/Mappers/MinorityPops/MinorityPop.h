@@ -3,7 +3,6 @@
 
 #include "newParser.h"
 
-
 namespace mappers
 {
 	class MinorityPop : commonItems::parser

@@ -1,19 +1,29 @@
 #include "MinorityPopMapper.h"
 #include "MinorityPop.h"
-#include "../V2World/V2Pop.h"
-#include <fstream>
 #include "ParserHelpers.h"
 
 mappers::MinorityPopMapper::MinorityPopMapper()
 {
-	registerKeyword(std::regex("minority"), [this](const std::string& unused, std::istream& theStream)
-	{
-		MinorityPop minPop(theStream);
-		minorityPopMap.push_back(make_pair(minPop.getCulture(), minPop.getReligion()));
-	});
-	registerKeyword(std::regex("[a-z0-9\\_]+"), commonItems::ignoreItem);
-
+	registerKeys();
 	parseFile("configurables/minority_pops.txt");
+	clearRegisteredKeywords();
+}
+
+mappers::MinorityPopMapper::MinorityPopMapper(std::istream& theStream)
+{
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
+
+void mappers::MinorityPopMapper::registerKeys()
+{
+	registerKeyword("minority", [this](const std::string& unused, std::istream& theStream)
+		{
+			MinorityPop minPop(theStream);
+			minorityPopMap.push_back(make_pair(minPop.getCulture(), minPop.getReligion()));
+		});
+	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 }
 
 bool mappers::MinorityPopMapper::matchMinorityPop(V2Pop& pop) const

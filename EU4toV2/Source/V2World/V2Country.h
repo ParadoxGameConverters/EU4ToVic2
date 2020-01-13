@@ -1,8 +1,6 @@
 #ifndef V2COUNTRY_H_
 #define V2COUNTRY_H_
 
-
-
 #include "V2Army.h"
 #include "Country/V2Party.h"
 #include "Leader/V2Leader.h"
@@ -21,6 +19,7 @@
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
+#include "../Mappers/PartyNames/PartyNameMapper.h"
 #include "Country/V2Unreleasables.h"
 #include <memory>
 #include <set>
@@ -164,7 +163,7 @@ class V2Country : commonItems::parser
 		void determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::GovernmentMapper& governmentMapper);
 		void setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcCountry, const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions);
 		void setReligion(std::shared_ptr<EU4::Country> srcCountry, const mappers::ReligionMapper& religionMapper);
-		void loadPartiesFromBlob();
+		void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper);
 
 	private:
 		void			outputTech(FILE*) const ;

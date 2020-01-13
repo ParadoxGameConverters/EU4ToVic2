@@ -18,9 +18,10 @@
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/GovernmentMapper/GovernmentMapper.h"
-#include "../Mappers/MinorityPopMapper.h"
+#include "../Mappers/MinorityPops/MinorityPopMapper.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
+#include "../Mappers/PartyNames/PartyNameMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -41,6 +42,7 @@ class V2World
 		V2Province* getProvince(int provNum) const;
 		V2Country* getCountry(std::string tag) const;
 		double getDuration() const { return difftime(std::time(0), begin); }
+		const mappers::PartyNameMapper& getPartyNameMapper() const { return partyNameMapper; }
 
 	private:
 		void importProvinces();
@@ -129,7 +131,8 @@ class V2World
 		mappers::CultureMapper cultureMapper;
 		mappers::CultureMapper slaveCultureMapper;
 		mappers::GovernmentMapper governmentMapper;
-
+		mappers::MinorityPopMapper minorityPopMapper;
+		mappers::PartyNameMapper partyNameMapper;
 };
 
 

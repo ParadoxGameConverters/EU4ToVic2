@@ -22,7 +22,6 @@
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/Ideas/TechGroupsMapper.h"
-#include "../Mappers/MinorityPopMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/RegimentCostsMapper.h"
 #include "BlockedTechSchools.h"
@@ -208,8 +207,6 @@ void V2World::importDefaultPops()
 	Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/", filenames);
 
 	LOG(LogLevel::Info) << "Parsing minority pops mappings";
-
-	mappers::MinorityPopMapper minorityPopMapper;
 
 	for (auto filename : filenames)
 	{
