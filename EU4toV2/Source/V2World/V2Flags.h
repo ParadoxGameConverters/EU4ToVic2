@@ -7,6 +7,7 @@
 #include <vector>
 #include "../Mappers/ColonyFlagsetMapper.h"
 #include "../EU4World/Country/EU4NationalSymbol.h"
+#include "../Mappers/CountryMappings/CountryMappings.h"
 
 
 class V2Country;
@@ -14,7 +15,7 @@ class V2Country;
 class V2Flags 
 {
 	public:
-		void SetV2Tags(const std::map<std::string, V2Country*>& V2Countries);
+		void SetV2Tags(const std::map<std::string, V2Country*>& V2Countries, const mappers::CountryMappings& countryMapper);
 		void output() const;
 
 	private:

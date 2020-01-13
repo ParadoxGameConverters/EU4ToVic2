@@ -16,7 +16,7 @@ EU4::ID::ID(std::istream& theStream)
 			IDType = theNum.getInt();
 		}
 	);
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

@@ -56,7 +56,7 @@ EU4::Leader::Leader(std::istream& theStream)
 			EU4::ID theID(theStream);
 			leaderID = theID.getIDNum();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

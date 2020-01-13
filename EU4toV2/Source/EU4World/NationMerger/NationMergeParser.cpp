@@ -8,12 +8,12 @@ EU4::NationMergeParser::NationMergeParser()
 			commonItems::singleString daimyosStr(theStream);
 			mergeDaimyos = (daimyosStr.getString() == "yes");
 		});
-	registerKeyword(std::regex("[a-z_]+"), [this](const std::string& unused, std::istream& theStream)
+	registerRegex("[a-z_]+", [this](const std::string& unused, std::istream& theStream)
 		{
 			MergeBlock newBlock(theStream);
 			mergeBlocks.push_back(newBlock);
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseFile("merge_nations.txt");
 	clearRegisteredKeywords();

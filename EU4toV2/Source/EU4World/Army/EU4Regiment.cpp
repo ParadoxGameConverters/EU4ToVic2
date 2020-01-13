@@ -28,7 +28,7 @@ EU4::EU4Regiment::EU4Regiment(std::istream& theStream)
 			commonItems::singleDouble moraleDuble(theStream);
 			morale = moraleDuble.getDouble();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

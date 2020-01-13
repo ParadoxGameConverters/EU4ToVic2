@@ -5,12 +5,12 @@
 
 EU4::Provinces::Provinces(std::istream& theStream, const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes) 
 {
-	registerKeyword(std::regex("-[0-9]+"), [this, buildingTypes, modifierTypes](const std::string& numberString, std::istream& theStream)
+	registerRegex("-[0-9]+", [this, buildingTypes, modifierTypes](const std::string& numberString, std::istream& theStream)
 	{
 		Province newProvince(numberString, theStream, buildingTypes, modifierTypes);
 		provinces.insert(std::make_pair(newProvince.getNum(), std::move(newProvince)));
 	});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

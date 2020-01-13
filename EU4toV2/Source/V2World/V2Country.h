@@ -19,6 +19,7 @@
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/ReligionMapper.h"
+#include "../Mappers/CountryMappings/CountryMappings.h"
 #include "Country/V2Unreleasables.h"
 #include <memory>
 #include <set>
@@ -74,7 +75,8 @@ class V2Country : commonItems::parser
 			const mappers::IdeaEffectMapper& ideaEffectMapper,
 			const mappers::ReligionMapper& religionMapper,
 			const mappers::ProvinceMapper& provinceMapper,
-			const mappers::GovernmentMapper& governmentMapper
+			const mappers::GovernmentMapper& governmentMapper,
+			const mappers::CountryMappings& countryMapper
 		);
 		void initFromHistory(const mappers::V2Unreleasables& unreleasablesMapper);
 		void								addProvince(V2Province* _province);
@@ -154,7 +156,7 @@ class V2Country : commonItems::parser
 		void buildCanals(std::shared_ptr<EU4::Country> srcCountry);
 		void determineTechSchool(const std::unique_ptr<Vic2::TechSchools>& techschools);
 		void calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry);
-		void generateRelations(std::shared_ptr<EU4::Country> srcCountry);
+		void generateRelations(std::shared_ptr<EU4::Country> srcCountry, const mappers::CountryMappings& countryMapper);
 		void resolvePolitics();
 		void finalizeInvestments(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::GovernmentMapper& governmentMapper);
@@ -163,8 +165,6 @@ class V2Country : commonItems::parser
 		void loadPartiesFromBlob();
 
 	private:
-		std::shared_ptr<Object> parseCountryFile(const std::string& filename);
-
 		void			outputTech(FILE*) const ;
 		void			outputElection(FILE*) const;
 		void			addLoan(std::string creditor, double size, double interest);

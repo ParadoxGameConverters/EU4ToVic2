@@ -3,7 +3,7 @@
 
 EU4::EU4Diplomacy::EU4Diplomacy(std::istream& theStream)
 {
-	registerKeyword(std::regex("royal_marriage|guarantee|alliance"), [this](const std::string& agreementClass, std::istream& theStream)
+	registerRegex("royal_marriage|guarantee|alliance", [this](const std::string& agreementClass, std::istream& theStream)
 		{
 			EU4::EU4Agreement newAgreement(theStream);
 			newAgreement.setAgreementType(agreementClass);
@@ -26,14 +26,14 @@ EU4::EU4Diplomacy::EU4Diplomacy(std::istream& theStream)
 		}
 	);
 	// support for old saves, all of these drop to vassal.
-	registerKeyword(std::regex("vassal|protectorate|is_march|sphere|union"), [this](const std::string& agreementClass, std::istream& theStream)
+	registerRegex("vassal|protectorate|is_march|sphere|union", [this](const std::string& agreementClass, std::istream& theStream)
 		{
 			EU4::EU4Agreement newAgreement(theStream);
 			newAgreement.setAgreementType("vassal");
 			agreements.push_back(newAgreement);
 		}
 	);
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

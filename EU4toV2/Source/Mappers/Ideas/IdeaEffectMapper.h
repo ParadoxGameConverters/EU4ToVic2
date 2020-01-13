@@ -3,8 +3,6 @@
 
 #include "newParser.h"
 #include <map>
-#include <set>
-#include <string>
 
 namespace mappers
 {

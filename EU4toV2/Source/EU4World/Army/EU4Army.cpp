@@ -20,7 +20,7 @@ EU4::EU4Army::EU4Army(std::istream& theStream)
 			commonItems::singleString nameStr(theStream);
 			name = nameStr.getString();
 		});
-	registerKeyword(std::regex("regiment|ship"), [this](const std::string& unused, std::istream& theStream)
+	registerRegex("regiment|ship", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4Regiment regimentBlock(theStream);
 			regimentList.push_back(regimentBlock);
@@ -36,7 +36,7 @@ EU4::EU4Army::EU4Army(std::istream& theStream)
 			commonItems::singleInt atSeaInt(theStream);
 			atSea = atSeaInt.getInt();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

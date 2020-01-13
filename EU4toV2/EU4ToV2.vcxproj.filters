@@ -21,9 +21,6 @@
     <ClCompile Include="Source\V2World\BlockedTechSchools.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\CK2TitleMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\ColonialTagsMapper.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
@@ -38,9 +35,6 @@
     </ClCompile>
     <ClCompile Include="..\common_items\Color.cpp">
       <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\CountryMapping.cpp">
-      <Filter>Mappers</Filter>
     </ClCompile>
     <ClCompile Include="Source\Mappers\CultureMapper.cpp">
       <Filter>Mappers</Filter>
@@ -426,6 +420,18 @@
     <ClCompile Include="Source\EU4World\Localisation\EU4Localisation.cpp">
       <Filter>EU4World\Localisation</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\CK2Titles\CK2TitleMapper.cpp">
+      <Filter>Mappers\CK2Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CK2Titles\TitleMapping.cpp">
+      <Filter>Mappers\CK2Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CountryMappings\CountryMapping.cpp">
+      <Filter>Mappers\CountryMappings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CountryMappings\CountryMappings.cpp">
+      <Filter>Mappers\CountryMappings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -447,9 +453,6 @@
     <ClInclude Include="Source\V2World\BlockedTechSchools.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\CK2TitleMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\ColonialTagsMapper.h">
       <Filter>Mappers</Filter>
     </ClInclude>
@@ -461,9 +464,6 @@
     </ClInclude>
     <ClInclude Include="..\common_items\Color.h">
       <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\CountryMapping.h">
-      <Filter>Mappers</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\CultureMapper.h">
       <Filter>Mappers</Filter>
@@ -855,6 +855,18 @@
     <ClInclude Include="Source\EU4World\Localisation\EU4Localisation.h">
       <Filter>EU4World\Localisation</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\CK2Titles\CK2TitleMapper.h">
+      <Filter>Mappers\CK2Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CK2Titles\TitleMapping.h">
+      <Filter>Mappers\CK2Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CountryMappings\CountryMapping.h">
+      <Filter>Mappers\CountryMappings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CountryMappings\CountryMappings.h">
+      <Filter>Mappers\CountryMappings</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -943,6 +955,12 @@
     </Filter>
     <Filter Include="EU4World\Localisation">
       <UniqueIdentifier>{378138b0-2893-41e3-8f98-70df21541f19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CK2Titles">
+      <UniqueIdentifier>{5095124a-bcad-425f-aa6c-8299c482a4a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CountryMappings">
+      <UniqueIdentifier>{555fbb7e-7576-40ca-a00c-3c0c85145fb1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

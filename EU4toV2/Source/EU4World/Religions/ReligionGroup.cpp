@@ -13,12 +13,12 @@ EU4::ReligionGroup::ReligionGroup(const std::string& groupName, std::istream& th
 	registerKeyword("harmonized_modifier", commonItems::ignoreItem);
 	registerKeyword("crusade_name", commonItems::ignoreItem);
 
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this, groupName](const std::string& religionName, std::istream& theStream)
-	{
-		Religion newReligion(religionName, groupName);
-		religions.insert(std::make_pair(religionName, newReligion));
-		commonItems::ignoreItem(religionName, theStream);
-	});
+	registerRegex("[a-zA-Z0-9_]+", [this, groupName](const std::string& religionName, std::istream& theStream)
+		{
+			Religion newReligion(religionName, groupName);
+			religions.insert(std::make_pair(religionName, newReligion));
+			commonItems::ignoreItem(religionName, theStream);
+		});
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

@@ -7,7 +7,7 @@ EU4::Modifier::Modifier(std::istream& theStream)
 	registerKeyword("potential", commonItems::ignoreItem);
 	registerKeyword("trigger", commonItems::ignoreItem);
 
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& effect, std::istream& theStream) {
+	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& effect, std::istream& theStream) {
 		commonItems::singleString amountSingleString(theStream);
 		auto amountString = amountSingleString.getString();
 

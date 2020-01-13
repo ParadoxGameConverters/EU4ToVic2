@@ -11,7 +11,7 @@ EU4::Region::Region(std::istream& theStream)
 			auto newNames = names.getNames();
 			areaNames.merge(newNames);
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

@@ -18,7 +18,7 @@ EU4::MergeBlock::MergeBlock(std::istream& theStream)
 			commonItems::singleString mergeStr(theStream);
 			merge = (mergeStr.getString() == "yes");
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

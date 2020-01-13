@@ -30,7 +30,7 @@ EU4::CustomColors::CustomColors(std::istream& theStream)
 		{
 			customColors.flagColors = commonItems::Color(theStream);
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

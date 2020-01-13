@@ -3,14 +3,11 @@
 
 #include "newParser.h"
 #include <map>
-#include <set>
-#include <string>
 
 namespace mappers
 {
-
-class TechGroupsMapper: commonItems::parser
-{
+	class TechGroupsMapper: commonItems::parser
+	{
 	public:
 		TechGroupsMapper();
 
@@ -20,11 +17,7 @@ class TechGroupsMapper: commonItems::parser
 	private:
 		std::map<std::string, int> westernizations;
 		std::map<std::string, int> literacies;
-
-};
-
+	};
 }
-
-
 
 #endif // TECH_GROUPS_MAPPER_H

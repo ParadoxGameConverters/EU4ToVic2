@@ -8,17 +8,19 @@ mappers::IdeaEffectMapper::IdeaEffectMapper()
 	registerKeys();
 	parseFile("idea_effects.txt");
 	parseFile("reform_effects.txt");
+	clearRegisteredKeywords();
 }
 
 mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
 void mappers::IdeaEffectMapper::registerKeys()
 {
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& idea, std::istream& theStream) {
+	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& idea, std::istream& theStream) {
 		IdeaEffects ideaEffects(theStream);
 
 		enforceIdeas[idea] = ideaEffects.getEnforce();

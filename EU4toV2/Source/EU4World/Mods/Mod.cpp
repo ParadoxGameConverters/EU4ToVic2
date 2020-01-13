@@ -15,7 +15,7 @@ EU4::Mod::Mod(std::istream& theStream)
 		commonItems::singleString pathString(theStream);
 		path = pathString.getString();
 	});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

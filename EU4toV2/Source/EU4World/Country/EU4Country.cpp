@@ -153,7 +153,7 @@ EU4::Country::Country(
 			dipTech = techBlock.getDip();
 			milTech = techBlock.getMil();
 		});
-	registerKeyword(std::regex("flags|hidden_flags|variables"), [this](const std::string& unused, std::istream& theStream)
+	registerRegex("flags|hidden_flags|variables", [this](const std::string& unused, std::istream& theStream)
 		{
 			EU4::EU4CountryFlags flagsBlock(theStream);
 			for (const auto& flag : flagsBlock.getFlags()) flags[flag] = true;
@@ -245,7 +245,8 @@ EU4::Country::Country(
 			EU4::ID idBlock(theStream);
 			activeLeaderIDs.insert(idBlock.getIDNum());
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
+
 	parseStream(theStream);
 	clearRegisteredKeywords();
 
@@ -517,13 +518,13 @@ void EU4::Country::readFromCommonCountry(const std::string& fileName, const std:
 
 	if (!nationalColors.getMapColor())
 	{
-		registerKeyword(std::regex("color"), [this](const std::string& unused, std::istream& theStream)
+		registerKeyword("color", [this](const std::string& unused, std::istream& theStream)
 			{
 				auto color = commonItems::Color(theStream);
 				nationalColors.setMapColor(color);
 			}
 		);
-		registerKeyword(std::regex("[a-zA-Z0-9_]+"), commonItems::ignoreItem);
+		registerRegex("[a-zA-Z0-9_]+", commonItems::ignoreItem);
 
 		parseFile(fullFilename);
 	}

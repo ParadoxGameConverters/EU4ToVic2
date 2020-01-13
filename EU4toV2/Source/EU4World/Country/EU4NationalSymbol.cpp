@@ -21,7 +21,7 @@ EU4::NationalSymbol::NationalSymbol(std::istream& theStream)
 			customColors = theSection;
 			customColorsInitialized = true;
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

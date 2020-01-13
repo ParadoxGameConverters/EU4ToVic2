@@ -9,7 +9,7 @@ EU4::ColonialRegions::ColonialRegions()
 {
 	LOG(LogLevel::Info) << "Parsing EU4 colonial regions";
 
-	registerKeyword(std::regex("colonial_\\w+"), [this](const std::string& regionName, std::istream& theStream)
+	registerRegex("colonial_\\w+", [this](const std::string& regionName, std::istream& theStream)
 		{
 			ColonialRegion newRegion(theStream);
 			for (const auto& provinceID : newRegion.getProvinces())
@@ -17,7 +17,7 @@ EU4::ColonialRegions::ColonialRegions()
 				provinceToColonialRegions.insert(std::make_pair(provinceID, regionName));
 			}
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 		
 	parseFile(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt");

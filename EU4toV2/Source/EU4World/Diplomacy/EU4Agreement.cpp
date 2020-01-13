@@ -3,7 +3,7 @@
 
 EU4::EU4Agreement::EU4Agreement(std::istream& theStream)
 {
-	registerKeyword(std::regex("subject_type|type"), [this](const std::string& unused, std::istream& theStream) 
+	registerRegex("subject_type|type", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::singleString typeStr(theStream);
 			agreementType = typeStr.getString();
@@ -33,7 +33,7 @@ EU4::EU4Agreement::EU4Agreement(std::istream& theStream)
 			targetTag = secondStr.getString();
 		}
 	);
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

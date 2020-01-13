@@ -17,6 +17,7 @@
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/MinorityPopMapper.h"
+#include "../Mappers/CountryMappings/CountryMappings.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -121,6 +122,7 @@ class V2World
 		std::time_t begin = std::time(0);
 
 		mappers::Continents continentsMapper;
+		mappers::CountryMappings countryMapper;
 };
 
 

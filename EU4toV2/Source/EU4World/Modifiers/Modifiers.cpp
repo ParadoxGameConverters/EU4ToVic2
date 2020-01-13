@@ -52,7 +52,7 @@ void EU4::Modifiers::processFolder(const std::string& folderName)
 
 void EU4::Modifiers::registerKeys()
 {
-	registerKeyword(std::regex("[a-zA-Z0-9_]+"), [this](const std::string& modifierName, std::istream& theStream) {
+	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& modifierName, std::istream& theStream) {
 		Modifier modifier(theStream);
 		modifiers.insert(std::make_pair(modifierName, modifier));
 	});

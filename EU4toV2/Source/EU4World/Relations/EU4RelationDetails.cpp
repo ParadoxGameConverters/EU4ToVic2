@@ -4,7 +4,7 @@
 EU4::EU4RelationDetails::EU4RelationDetails(std::istream& theStream)
 {
 	// the object holding the relationship value in old/new saves
-	registerKeyword(std::regex("value|cached_sum"), [this](const std::string& unused, std::istream& theStream)
+	registerRegex("value|cached_sum", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleInt valueInt(theStream);
 			value = valueInt.getInt();
@@ -29,7 +29,7 @@ EU4::EU4RelationDetails::EU4RelationDetails(std::istream& theStream)
 			commonItems::singleString attitudeStr(theStream);
 			attitude = attitudeStr.getString();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9_\\.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

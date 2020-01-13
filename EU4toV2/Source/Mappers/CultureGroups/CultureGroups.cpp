@@ -25,7 +25,6 @@ mappers::CultureGroups::CultureGroups()
 			parseFile(itr + "/common/cultures/" + cultureFile);
 		}
 	}
-
 	clearRegisteredKeywords();
 }
 
@@ -38,7 +37,7 @@ mappers::CultureGroups::CultureGroups(std::istream& theStream)
 
 void mappers::CultureGroups::registerKeys()
 {
-	registerKeyword(std::regex("\\w+"), [this](const std::string& cultureGroupName, std::istream& theStream)
+	registerRegex("\\w+", [this](const std::string& cultureGroupName, std::istream& theStream)
 		{
 			std::vector<Culture> cultures;
 			CultureGroup newGroup(cultureGroupName, theStream);
