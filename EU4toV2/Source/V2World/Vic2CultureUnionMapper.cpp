@@ -65,7 +65,7 @@ Vic2::CultureUnionMapperFile::CultureUnionMapperFile()
 	});
 
 	LOG(LogLevel::Info) << "Parsing union mappings";
-	parseFile("unions.txt");
+	parseFile("configurables/unions.txt");
 	LOG(LogLevel::Info) << "Parsing national mappings";
-	parseFile("nationals.txt");
+	parseFile("configurables/nationals.txt");
 }

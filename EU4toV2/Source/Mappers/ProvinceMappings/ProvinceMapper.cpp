@@ -11,7 +11,7 @@ mappers::ProvinceMapper::ProvinceMapper()
 {
 	LOG(LogLevel::Info) << "Parsing province mappings";
 	registerKeys();
-	parseFile("province_mappings.txt");
+	parseFile("configurables/province_mappings.txt");
 	clearRegisteredKeywords();
 
 	ProvinceMappingsVersion mappings = getMappingsVersion(mappingVersions, theConfiguration);

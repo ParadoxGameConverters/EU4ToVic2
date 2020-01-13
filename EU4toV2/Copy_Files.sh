@@ -1,37 +1,15 @@
 #!/bin/bash
 
-# Copy converter data files
+# Copy converter globals
 cp "Data_Files/configuration.txt" "Release-Linux/configuration.txt"
 cp "Data_Files/ReadMe.txt" "Release-Linux/ReadMe.txt"
-cp "Data_Files/merge_nations.txt" "Release-Linux/merge_nations.txt"
-cp "Data_Files/starting_factories.txt" "Release-Linux/starting_factories.txt"
-cp "Data_Files/province_mappings.txt" "Release-Linux/province_mappings.txt"
-cp "Data_Files/country_mappings.txt" "Release-Linux/country_mappings.txt"
-cp "Data_Files/cultureMap.txt" "Release-Linux/cultureMap.txt"
-cp "Data_Files/slaveCultureMap.txt" "Release-Linux/slaveCultureMap.txt"
-cp "Data_Files/religionMap.txt" "Release-Linux/religionMap.txt"
-cp "Data_Files/unions.txt" "Release-Linux/unions.txt"
-cp "Data_Files/nationals.txt" "Release-Linux/nationals.txt"
-cp "Data_Files/unreleasable_tags.txt" "Release-Linux/unreleasable_tags.txt"
-cp "Data_Files/governmentMapping.txt" "Release-Linux/governmentMapping.txt"
-cp "Data_Files/techGroups.txt" "Release-Linux/techGroups.txt"
-cp "Data_Files/partyNames.txt" "Release-Linux/partyNames.txt"
-cp "Data_Files/reform_effects.txt" "Release-Linux/reform_effects.txt"
-cp "Data_Files/blocked_tech_schools.txt" "Release-Linux/blocked_tech_schools.txt"
-cp "Data_Files/leader_traits.txt" "Release-Linux/leader_traits.txt"
-cp "Data_Files/regiment_costs.txt" "Release-Linux/regiment_costs.txt"
-cp "Data_Files/license.txt" "Release-Linux/license.txt"
-cp "Data_Files/idea_effects.txt" "Release-Linux/idea_effects.txt"
-cp "Data_Files/colonial_flags.txt" "Release-Linux/colonial_flags.txt"
-cp "Data_Files/colonial_tags.txt" "Release-Linux/colonial_tags.txt"
-cp "Data_Files/ck2titleMap.txt" "Release-Linux/ck2titleMap.txt"
-cp "Data_Files/port_blacklist.txt" "Release-Linux/port_blacklist.txt"
-cp "Data_Files/port_whitelist.txt" "Release-Linux/port_whitelist.txt"
-cp "Data_Files/minorityPops.txt" "Release-Linux/minorityPops.txt"
-cp "Data_Files/terrainData.txt" "Release-Linux/terrainData.txt"
-cp "Data_Files/rgo_randomization.txt" "Release-Linux/rgo_randomization.txt"
 cp "Data_Files/FAQ.txt" "Release-Linux/FAQ.txt"
 cp "Data_Files/after_converting.txt" "Release-Linux/after_converting.txt"
+cp "Data_Files/license.txt" "Release-Linux/license.txt"
+
+# Copy configurables
+rm -rf "Release-Linux/configurables"
+cp -r "Data_Files/configurables" "Release-Linux/configurables"
 
 # Create Blank Mod
 rm -rf "Release-Linux/blankMod"

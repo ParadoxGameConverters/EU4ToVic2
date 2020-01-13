@@ -7,7 +7,7 @@
 mappers::ColonialTagMapper::ColonialTagMapper()
 {
 	registerKeys();
-	parseFile("colonial_tags.txt");
+	parseFile("configurables/colonial_tags.txt");
 	clearRegisteredKeywords();
 }
 

@@ -4,7 +4,7 @@
 mappers::TerrainDataMapper::TerrainDataMapper()
 {
 	registerKeys();
-	parseFile("terrainData.txt");
+	parseFile("configurables/terrain_data.txt");
 	clearRegisteredKeywords();
 }
 

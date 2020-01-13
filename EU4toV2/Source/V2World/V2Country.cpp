@@ -944,7 +944,7 @@ static set<int> getPortBlacklist()
 	if (port_blacklist.size() == 0)
 	{
 		int temp = 0;
-		ifstream s("port_blacklist.txt");
+		ifstream s("configurables/port_blacklist.txt");
 		while (s.good() && !s.eof())
 		{
 			s >> temp;

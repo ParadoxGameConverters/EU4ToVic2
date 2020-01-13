@@ -48,5 +48,5 @@ Vic2::blockedTechSchoolsFile::blockedTechSchoolsFile()
 		theBlockedTechSchools = std::make_unique<blockedTechSchools>(theStream);
 	});
 
-	parseFile("blocked_tech_schools.txt");
+	parseFile("configurables/blocked_tech_schools.txt");
 }

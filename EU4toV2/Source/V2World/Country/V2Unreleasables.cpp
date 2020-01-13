@@ -11,5 +11,5 @@ mappers::V2Unreleasables::V2Unreleasables()
 		});
 	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
 
-	parseFile("unreleasable_tags.txt");
+	parseFile("configurables/unreleasable_tags.txt");
 }

@@ -6,7 +6,7 @@
 mappers::ColonialFlagsMapper::ColonialFlagsMapper()
 {
 	registerKeys();
-	parseFile("colonial_flags.txt");
+	parseFile("configurables/colonial_flags.txt");
 	clearRegisteredKeywords();
 }
 

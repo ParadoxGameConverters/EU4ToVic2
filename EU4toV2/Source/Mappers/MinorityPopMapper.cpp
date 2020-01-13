@@ -13,7 +13,7 @@ mappers::MinorityPopMapper::MinorityPopMapper()
 	});
 	registerKeyword(std::regex("[a-z0-9\\_]+"), commonItems::ignoreItem);
 
-	parseFile("minorityPops.txt");
+	parseFile("configurables/minority_pops.txt");
 }
 
 bool mappers::MinorityPopMapper::matchMinorityPop(V2Pop& pop) const

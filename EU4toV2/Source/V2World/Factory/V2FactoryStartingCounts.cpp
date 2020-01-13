@@ -11,5 +11,5 @@ mappers::V2FactoryStartingCounts::V2FactoryStartingCounts()
 		});
 	registerKeyword(std::regex("[a-zA-Z0-9\\_]+"), commonItems::ignoreItem);
 
-	parseFile("starting_factories.txt");
+	parseFile("configurables/starting_factories.txt");
 }

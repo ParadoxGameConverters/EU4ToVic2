@@ -18,7 +18,7 @@ mappers::CountryMappings::CountryMappings()
 {
 	LOG(LogLevel::Info) << "Getting country mappings";
 	registerKeys();
-	parseFile("country_mappings.txt");
+	parseFile("configurables/country_mappings.txt");
 	clearRegisteredKeywords();
 	getAvailableFlags();
 }

@@ -9,5 +9,5 @@ mappers::PartyNameMapper::PartyNameMapper()
 		partyToLanguageMap.insert(make_pair(party, langToName));
 	});
 
-	parseFile("PartyNames.txt");
+	parseFile("configurables/party_names.txt");
 }

@@ -437,10 +437,10 @@ void V2World::importPotentialCountry(const string& line, bool dynamicCountry)
 void V2World::initializeCultureMappers(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Parsing culture mappings.";
-	cultureMapper.loadFile("cultureMap.txt");
+	cultureMapper.loadFile("configurables/culture_map.txt");
 	
 	LOG(LogLevel::Info) << "Parsing slave culture mappings.";
-	slaveCultureMapper.loadFile("slaveCultureMap.txt");
+	slaveCultureMapper.loadFile("configurables/culture_map_slaves.txt");
 
 	sourceWorld.checkAllEU4CulturesMapped(cultureMapper);
 }
@@ -450,7 +450,7 @@ void V2World::initializeReligionMapper(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Parsing religion mappings";
 
-	std::ifstream mappingsFile("religionMap.txt");
+	std::ifstream mappingsFile("configurables/religion_map.txt");
 	religionMapper = std::make_unique<mappers::ReligionMapper>(mappingsFile);
 	mappingsFile.close();
 
@@ -476,10 +476,10 @@ void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::
 
 	LOG(LogLevel::Info) << "Parsing governments mappings";
 
-	std::ifstream governmentMapFile("governmentMapping.txt");
+	std::ifstream governmentMapFile("configurables/government_mapping.txt");
 	if (governmentMapFile.fail())
 	{
-		std::range_error exception("Could not open file governmentMapping.txt");
+		std::range_error exception("Could not open file government_mapping.txt");
 		throw exception;
 	}
 	mappers::GovernmentMapper governmentMapper(governmentMapFile);
@@ -1684,7 +1684,7 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 	vector<int> port_whitelist;
 	{
 		int temp = 0;
-		ifstream s("port_whitelist.txt");
+		ifstream s("configurables/port_whitelist.txt");
 		while (s.good() && !s.eof())
 		{
 			s >> temp;

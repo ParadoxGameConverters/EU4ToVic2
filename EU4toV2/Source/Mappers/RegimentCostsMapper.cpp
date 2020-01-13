@@ -10,5 +10,5 @@ mappers::RegimentCostsMapper::RegimentCostsMapper()
 	});
 	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
 
-	parseFile("regiment_costs.txt");
+	parseFile("configurables/regiment_costs.txt");
 }
