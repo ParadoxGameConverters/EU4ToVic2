@@ -18,12 +18,6 @@
     <ClCompile Include="Source\V2World\BlockedTechSchools.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\ColonialTagsMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\ColonyFlagsetMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="..\common_items\CommonUtils.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
@@ -32,15 +26,6 @@
     </ClCompile>
     <ClCompile Include="..\common_items\Color.cpp">
       <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\CultureMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\CultureMapping.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\CultureMappingRule.cpp">
-      <Filter>Mappers</Filter>
     </ClCompile>
     <ClCompile Include="..\common_items\Date.cpp">
       <Filter>CommonItems</Filter>
@@ -246,9 +231,6 @@
     <ClCompile Include="Source\Mappers\UnitType.cpp">
       <Filter>Mappers</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\ColonialTag.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Factory\V2FactoryTechLoader.cpp">
       <Filter>Vic2World\Factory</Filter>
     </ClCompile>
@@ -327,12 +309,6 @@
     <ClCompile Include="Source\EU4World\NationMerger\NationMergeParser.cpp">
       <Filter>EU4World\NationMerger</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\ClimateMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\TerrainDataMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Pops\Pop.cpp">
       <Filter>Vic2World\Pops</Filter>
     </ClCompile>
@@ -390,9 +366,6 @@
     <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegions.cpp">
       <Filter>EU4World\ColonialRegions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\Continents.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Country\Countries.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
@@ -432,6 +405,39 @@
     <ClCompile Include="Source\Mappers\Adjacency\AdjacencyMapper.cpp">
       <Filter>Mappers\Adjacency</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Geography\ClimateMapper.cpp">
+      <Filter>Mappers\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Geography\Continents.cpp">
+      <Filter>Mappers\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Geography\TerrainDataMapper.cpp">
+      <Filter>Mappers\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ColonialTags\ColonialTag.cpp">
+      <Filter>Mappers\ColonialTags</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ColonialTags\ColonialTagsMapper.cpp">
+      <Filter>Mappers\ColonialTags</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlag.cpp">
+      <Filter>Mappers\ColonialFlags</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlagRegion.cpp">
+      <Filter>Mappers\ColonialFlags</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp">
+      <Filter>Mappers\ColonialFlags</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureMapper\CultureMapping.cpp">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -450,26 +456,11 @@
     <ClInclude Include="Source\V2World\BlockedTechSchools.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\ColonialTagsMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\ColonyFlagsetMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="..\common_items\CardinalToOrdinal.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
     <ClInclude Include="..\common_items\Color.h">
       <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\CultureMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\CultureMapping.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\CultureMappingRule.h">
-      <Filter>Mappers</Filter>
     </ClInclude>
     <ClInclude Include="..\common_items\Date.h">
       <Filter>CommonItems</Filter>
@@ -681,9 +672,6 @@
     <ClInclude Include="Source\Mappers\UnitType.h">
       <Filter>Mappers</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\ColonialTag.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Factory\V2FactoryTechLoader.h">
       <Filter>Vic2World\Factory</Filter>
     </ClInclude>
@@ -762,12 +750,6 @@
     <ClInclude Include="Source\EU4World\NationMerger\NationMergeParser.h">
       <Filter>EU4World\NationMerger</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\ClimateMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\TerrainDataMapper.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Pops\Pop.h">
       <Filter>Vic2World\Pops</Filter>
     </ClInclude>
@@ -825,9 +807,6 @@
     <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegions.h">
       <Filter>EU4World\ColonialRegions</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\Continents.h">
-      <Filter>Mappers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\Country\Countries.h">
       <Filter>EU4World\Country</Filter>
     </ClInclude>
@@ -866,6 +845,39 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\Adjacency\AdjacencyMapper.h">
       <Filter>Mappers\Adjacency</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Geography\ClimateMapper.h">
+      <Filter>Mappers\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Geography\Continents.h">
+      <Filter>Mappers\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Geography\TerrainDataMapper.h">
+      <Filter>Mappers\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ColonialTags\ColonialTag.h">
+      <Filter>Mappers\ColonialTags</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ColonialTags\ColonialTagsMapper.h">
+      <Filter>Mappers\ColonialTags</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlag.h">
+      <Filter>Mappers\ColonialFlags</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlagRegion.h">
+      <Filter>Mappers\ColonialFlags</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.h">
+      <Filter>Mappers\ColonialFlags</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureMapper\CultureMapping.h">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h">
+      <Filter>Mappers\CultureMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -964,6 +976,18 @@
     </Filter>
     <Filter Include="Mappers\Adjacency">
       <UniqueIdentifier>{b1c912a8-37e7-40fd-a471-45254f092ca0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\Geography">
+      <UniqueIdentifier>{4700b363-a004-434a-8672-55fc2a36d624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ColonialTags">
+      <UniqueIdentifier>{ebbdcab9-2975-49a0-a1f4-bb3eab47a5e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ColonialFlags">
+      <UniqueIdentifier>{8c5677aa-9760-4996-a209-6770f187ea8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CultureMapper">
+      <UniqueIdentifier>{0d5ba2f0-440e-4b34-91ef-d1bb99adcae2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -11,7 +11,6 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "../Mappers/CK2Titles/CK2TitleMapper.h"
-#include "../Mappers/ColonyFlagsetMapper.h"
 #include "../Mappers/FlagColorMapper.h"
 #include "../FlagUtils.h"
 
@@ -96,7 +95,7 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries, co
 		name = Utils::convertUTF8To8859_15(name);
 		transform(name.begin(), name.end(), name.begin(), ::tolower);
 
-		auto colonialtitle = mappers::colonyFlagsetMapper::getFlag(name);
+		auto colonialtitle = colonialFlagsMapper.getFlag(name);
 		if (!colonialtitle)
 		{
 			colonialFail.push_back(country.second);
@@ -104,16 +103,16 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries, co
 		}
 
 		colonialtitle->setOverlord(overlord->getTag());
-		colonialFlagMapping[country.first] = colonialtitle;
+		colonialFlagMapping[country.first] = *colonialtitle;
 
 		usableFlagTags.erase(colonialtitle->getName());
 		requiredTags.erase(country.first);
-		mappers::colonyFlagsetMapper::removeFlag(colonialtitle->getName());
+		colonialFlagsMapper.removeFlag(colonialtitle->getName());
 	}
 
 	if (colonialFail.size() != 0)
 	{
-		std::vector<std::string> colonyFlagsKeys = mappers::colonyFlagsetMapper::getNames();
+		std::vector<std::string> colonyFlagsKeys = colonialFlagsMapper.getNames();
 
 		std::random_device rd;
 		std::mt19937 g(rd());
@@ -121,12 +120,10 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries, co
 
 		for (std::string key : colonyFlagsKeys)
 		{
-			auto flag = mappers::colonyFlagsetMapper::getFlag(key);
+			auto flag = colonialFlagsMapper.getFlag(key);
 
-			if (false == flag->getOverlord().empty())
-			{
-				continue;
-			}
+			if (!flag) continue;
+			if (!flag->getOverlord().empty()) continue;
 
 			for (std::vector<V2Country*>::iterator v2c = colonialFail.begin(); v2c != colonialFail.end(); ++v2c)
 			{
@@ -135,7 +132,7 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries, co
 				if ((region == "") || (flag->getRegion() == region))
 				{
 					success = true;
-					colonialFlagMapping[(*v2c)->getTag()] = flag;
+					colonialFlagMapping[(*v2c)->getTag()] = *flag;
 					V2Country* overlord = (*v2c)->getColonyOverlord();
 					std::string overlordName = overlord->getTag();
 					flag->setOverlord(overlordName);
@@ -431,11 +428,11 @@ void V2Flags::createColonialFlags() const
 	for (auto i : colonialFlagMapping)
 	{
 		std::string V2Tag = i.first;
-		std::string baseFlag = i.second->getName();
+		std::string baseFlag = i.second.getName();
 		transform(baseFlag.begin(), baseFlag.end(), baseFlag.begin(), ::tolower);
 		baseFlag.erase(remove_if(baseFlag.begin(), baseFlag.end(), [](const char ch) { return !isalpha(ch); }), baseFlag.end());
 
-		std::string overlord = i.second->getOverlord();
+		std::string overlord = i.second.getOverlord();
 
 		for (int i = 0; i < 5; i++)
 		{

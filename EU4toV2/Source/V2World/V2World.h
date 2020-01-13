@@ -11,8 +11,10 @@
 #include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
-#include "../Mappers/CultureMapper.h"
-#include "../Mappers/Continents.h"
+#include "../Mappers/CultureMapper/CultureMapper.h"
+#include "../Mappers/Geography/Continents.h"
+#include "../Mappers/Geography/ClimateMapper.h"
+#include "../Mappers/Geography/TerrainDataMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/GovernmentMapper.h"
@@ -115,8 +117,6 @@ class V2World
 		bool isRandomWorld;
 		int techGroupAlgorithm;
 
-		std::unique_ptr<mappers::CultureMapper> cultureMapper;
-		std::unique_ptr<mappers::CultureMapper> slaveCultureMapper;
 		std::unique_ptr<mappers::ReligionMapper> religionMapper;
 		std::unique_ptr<mappers::ProvinceMapper> provinceMapper;
 
@@ -125,6 +125,11 @@ class V2World
 		mappers::Continents continentsMapper;
 		mappers::CountryMappings countryMapper;
 		mappers::AdjacencyMapper adjacencyMapper;
+		mappers::ClimateMapper climateMapper;
+		mappers::TerrainDataMapper terrainDataMapper;
+		mappers::CultureMapper cultureMapper;
+		mappers::CultureMapper slaveCultureMapper;
+
 };
 
 

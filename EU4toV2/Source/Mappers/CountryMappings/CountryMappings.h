@@ -5,7 +5,7 @@
 #include <map>
 #include <optional>
 #include <set>
-#include "../ColonialTagsMapper.h"
+#include "../ColonialTags/ColonialTagsMapper.h"
 #include "../ProvinceMappings/ProvinceMapper.h"
 #include "../CultureGroups/CultureGroups.h"
 #include "../CK2Titles/CK2TitleMapper.h"
@@ -71,6 +71,7 @@ namespace mappers
 			std::set<std::string> availableFlags;
 
 			mappers::CK2TitleMapper ck2titleMapper;
+			mappers::ColonialTagMapper colonialTagMapper;
 	};
 }
 

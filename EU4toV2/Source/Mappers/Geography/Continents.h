@@ -11,9 +11,11 @@ namespace mappers
 	{
 	public:
 		Continents();
-		std::optional<std::string> getEU4Continent(int EU4Province);
+		Continents(std::istream& theStream);
+		std::optional<std::string> getEU4Continent(int EU4Province) const;
 
 	private:
+		void registerKeys();
 		std::map<int, std::string> continentMap;
 	};
 }

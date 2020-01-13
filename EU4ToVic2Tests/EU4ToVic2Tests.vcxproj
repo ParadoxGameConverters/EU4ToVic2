@@ -191,9 +191,9 @@
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Building.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Buildings.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapping.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMappingRule.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapping.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Ideas\IdeaEffectMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Ideas\IdeaEffects.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />

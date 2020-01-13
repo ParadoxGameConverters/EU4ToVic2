@@ -15,7 +15,7 @@
 #include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Regions/Regions.h"
 #include "../EU4World/Country/EU4NationalSymbol.h"
-#include "../Mappers/CultureMapper.h"
+#include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/ReligionMapper.h"

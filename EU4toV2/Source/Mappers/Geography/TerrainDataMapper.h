@@ -10,9 +10,11 @@ namespace mappers
 	{
 	public:
 		TerrainDataMapper();
-		std::map<int, std::string> getTerrainMap() const { return terrainMap; }
+		TerrainDataMapper(std::istream& theStream);
+		const std::map<int, std::string>& getTerrainMap() const { return terrainMap; }
 
 	private:
+		void registerKeys();
 		std::map<int, std::string> terrainMap;
 	};
 }

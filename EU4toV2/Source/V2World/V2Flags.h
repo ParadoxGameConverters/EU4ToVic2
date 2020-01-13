@@ -5,7 +5,7 @@
 #include <set>
 #include <string>
 #include <vector>
-#include "../Mappers/ColonyFlagsetMapper.h"
+#include "../Mappers/ColonialFlags/ColonialFlagsMapper.h"
 #include "../EU4World/Country/EU4NationalSymbol.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
 
@@ -35,12 +35,14 @@ class V2Flags
 		static const std::vector<std::string> flagFileSuffixes;
 
 		typedef std::map<std::string, std::string> V2TagToFlagTagMap;
-		typedef std::map<std::string, std::shared_ptr<mappers::colonyFlag> > V2TagToColonyFlagMap; // tag, {base,overlordtag}
+		typedef std::map<std::string, mappers::ColonialFlag> V2TagToColonyFlagMap; // tag, {base,overlordtag}
 		typedef std::map<std::string, EU4::CustomColors> V2TagToCustomFlagMap;
 
 		V2TagToFlagTagMap tagMap;
 		V2TagToColonyFlagMap colonialFlagMapping;
 		V2TagToCustomFlagMap customFlagMapping;
+
+		mappers::ColonialFlagsMapper colonialFlagsMapper;
 };
 
 

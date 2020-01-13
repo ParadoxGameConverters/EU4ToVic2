@@ -9,7 +9,7 @@
 #include "Religions/Religions.h"
 #include "Modifiers/Modifiers.h"
 #include "Country/EU4Country.h"
-#include "../Mappers/CultureMapper.h"
+#include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/UnitTypeMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"

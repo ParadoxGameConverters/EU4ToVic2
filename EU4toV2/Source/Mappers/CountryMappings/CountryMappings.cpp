@@ -215,8 +215,6 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 		Vic2Capital = *potentialVic2Capitals.begin();
 	}
 
-	ColonialTagMapper colonialTagMapper;
-
 	for (auto colony: colonialTagMapper.getColonyList())
 	{
 		if (!capitalInRightEU4Region(colony, EU4Capital, provinceMapper))

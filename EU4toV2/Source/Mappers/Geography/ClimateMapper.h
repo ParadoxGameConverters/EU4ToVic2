@@ -10,9 +10,11 @@ namespace mappers
 	{
 	public:
 		ClimateMapper();
-		std::map<std::string, std::vector<int>> getClimateMap() const { return climateMap; }
+		ClimateMapper(std::istream& theStream);
+		const std::map<std::string, std::vector<int>>& getClimateMap() const { return climateMap; }
 
 	private:
+		void registerKeys();
 		std::map<std::string, std::vector<int>> climateMap;
 		bool mild_climate = false;
 		bool temperate_climate = false;
@@ -21,4 +23,4 @@ namespace mappers
 	};
 }
 
-#endif // COLONIAL_TAG_H
+#endif // CLIMATE_MAPPER_H

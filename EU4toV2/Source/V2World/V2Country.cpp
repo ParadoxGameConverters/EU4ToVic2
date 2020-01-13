@@ -9,7 +9,6 @@
 #include "../EU4World/Country/EU4Country.h"
 #include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/Provinces/EU4Province.h"
-#include "../Mappers/CultureMapper.h"
 #include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/Ideas/TechGroupsMapper.h"

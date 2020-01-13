@@ -100,18 +100,9 @@
     <ClCompile Include="MapperTests\CultureMappingTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapping.cpp">
-      <Filter>ConverterFiles\Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
     <ClCompile Include="MapperTests\CultureMapperTests.cpp">
       <Filter>MapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper.cpp">
-      <Filter>ConverterFiles\Mappers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMappingRule.cpp">
-      <Filter>ConverterFiles\Mappers</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\ReligionMappingTests.cpp">
       <Filter>MapperTests</Filter>
@@ -260,6 +251,15 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Buildings.cpp">
       <Filter>ConverterFiles\Mappers\Buildings</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapper.cpp">
+      <Filter>ConverterFiles\Mappers\CultureMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapping.cpp">
+      <Filter>ConverterFiles\Mappers\CultureMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMappingRule.cpp">
+      <Filter>ConverterFiles\Mappers\CultureMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -321,6 +321,9 @@
     </Filter>
     <Filter Include="ConverterFiles\Mappers\Buildings">
       <UniqueIdentifier>{2d828934-05e9-4b46-b27c-045548db083e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\CultureMapper">
+      <UniqueIdentifier>{3c56d58f-9f93-456d-ae75-1335778243c6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

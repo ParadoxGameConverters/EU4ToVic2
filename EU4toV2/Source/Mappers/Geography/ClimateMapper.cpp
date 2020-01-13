@@ -1,11 +1,25 @@
 #include "ClimateMapper.h"
 #include "ParserHelpers.h"
-#include "../Configuration.h"
+#include "../../Configuration.h"
 
 mappers::ClimateMapper::ClimateMapper()
 {
-	registerKeyword(std::regex("mild_climate|temperate_climate|harsh_climate|inhospitable_climate"), [this](const std::string& climate, std::istream& theStream)
-	{
+	registerKeys();
+	parseFile(theConfiguration.getVic2Path() + "/map/climate.txt");
+	clearRegisteredKeywords();
+}
+
+mappers::ClimateMapper::ClimateMapper(std::istream& theStream)
+{
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
+
+void mappers::ClimateMapper::registerKeys()
+{
+	registerRegex("mild_climate|temperate_climate|harsh_climate|inhospitable_climate", [this](const std::string& climate, std::istream& theStream)
+		{
 			if (!mild_climate && (climate == "mild_climate")) {
 				commonItems::ignoreItem(climate, theStream);
 				mild_climate = true;
@@ -27,12 +41,7 @@ mappers::ClimateMapper::ClimateMapper()
 				return;
 			}
 			commonItems::intList provList(theStream);
-			std::vector<int> provStorage;
-			for (const auto& provinceID : provList.getInts()) provStorage.push_back(provinceID);
-			climateMap.insert(std::make_pair(climate, provStorage));
-	});
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
-
-	std::string filename = theConfiguration.getVic2Path() + "/map/climate.txt";
-	parseFile(filename);
+			climateMap.insert(std::make_pair(climate, provList.getInts()));
+		});
+	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 }

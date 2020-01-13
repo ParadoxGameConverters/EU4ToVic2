@@ -3,7 +3,6 @@
 
 #include "newParser.h"
 
-
 namespace mappers
 {
 	typedef struct
@@ -13,7 +12,6 @@ namespace mappers
 		std::string V2Region;
 		std::string cultureGroup;
 	} ColonyStruct;
-
 
 	class ColonialTag: commonItems::parser
 	{

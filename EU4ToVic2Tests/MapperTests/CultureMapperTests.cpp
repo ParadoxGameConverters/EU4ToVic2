@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/Mappers/CultureMapper.h"
+#include "../EU4toV2/Source/Mappers/CultureMapper/CultureMapper.h"
 #include "../Mocks/RegionsMock.h"
 #include <sstream>
 

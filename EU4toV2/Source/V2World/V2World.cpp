@@ -9,8 +9,6 @@
 #include <queue>
 #include <cmath>
 #include <cfloat>
-#include "../Mappers/TerrainDataMapper.h"
-#include "../Mappers/ClimateMapper.h"
 #include "NewParserToOldParserConverters.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -21,7 +19,7 @@
 #include "../EU4World/Provinces/EU4Province.h"
 #include "RGORandomization/BucketList.h"
 #include "../Helpers/TechValues.h"
-#include "../Mappers/CultureMapper.h"
+#include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/Ideas/TechGroupsMapper.h"
 #include "../Mappers/MinorityPopMapper.h"
@@ -145,7 +143,7 @@ std::set<std::string> V2World::discoverProvinceFilenames()
 
 void V2World::importProvinceClimates()
 {
-	mappers::ClimateMapper climateMapper;
+	
 	std::map<std::string, std::vector<int>> climateMap = climateMapper.getClimateMap();
 	for (const auto& climate : climateMap)
 	{
@@ -186,7 +184,6 @@ void V2World::importProvinceLocalizations(const string& file)
 
 void V2World::importProvinceTerrains()
 {
-	mappers::TerrainDataMapper terrainDataMapper;
 	for (const auto& provData : terrainDataMapper.getTerrainMap())
 	{
 		auto* province = getProvince(provData.first);
@@ -440,17 +437,13 @@ void V2World::importPotentialCountry(const string& line, bool dynamicCountry)
 
 void V2World::initializeCultureMappers(const EU4::World& sourceWorld)
 {
-	LOG(LogLevel::Info) << "Parsing culture mappings";
+	LOG(LogLevel::Info) << "Parsing culture mappings.";
+	cultureMapper.loadFile("cultureMap.txt");
+	
+	LOG(LogLevel::Info) << "Parsing slave culture mappings.";
+	slaveCultureMapper.loadFile("slaveCultureMap.txt");
 
-	std::ifstream cultureMapFile("cultureMap.txt");
-	cultureMapper = std::make_unique<mappers::CultureMapper>(cultureMapFile);
-	cultureMapFile.close();
-
-	std::ifstream slaveCultureMapFile("slaveCultureMap.txt");
-	slaveCultureMapper = std::make_unique<mappers::CultureMapper>(slaveCultureMapFile);
-	slaveCultureMapFile.close();
-
-	sourceWorld.checkAllEU4CulturesMapped(*cultureMapper);
+	sourceWorld.checkAllEU4CulturesMapped(cultureMapper);
 }
 
 
@@ -516,8 +509,8 @@ void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::
 			sourceWorld.getRegions(),
 			sourceCountry.second,
 			theTechSchools,
-			*cultureMapper,
-			*slaveCultureMapper,
+			cultureMapper,
+			slaveCultureMapper,
 			ideaEffectMapper,
 			*religionMapper,
 			*provinceMapper,
@@ -870,7 +863,7 @@ std::vector<V2Demographic> V2World::determineDemographics(
 	for (auto popRatio: popRatios)
 	{
 		std::optional<std::string> dstCulture;
-		dstCulture = cultureMapper->cultureMatch(
+		dstCulture = cultureMapper.cultureMatch(
 			eu4Regions,
 			popRatio.getCulture(),
 			popRatio.getReligion(),
@@ -891,7 +884,7 @@ std::vector<V2Demographic> V2World::determineDemographics(
 		}
 
 		std::optional<std::string> slaveCulture;
-		slaveCulture = slaveCultureMapper->cultureMatch(
+		slaveCulture = slaveCultureMapper.cultureMatch(
 			eu4Regions,
 			popRatio.getCulture(),
 			popRatio.getReligion(),

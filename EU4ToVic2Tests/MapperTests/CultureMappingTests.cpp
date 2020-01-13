@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/Mappers/CultureMapping.h"
+#include "../EU4toV2/Source/Mappers/CultureMapper/CultureMapping.h"
 #include "../Mocks/RegionsMock.h"
 #include <sstream>
 
@@ -30,8 +30,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 TEST(Mappers_CultureMappingTests, nonMatchingSourceReturnsEmptyOptional)
 {
-	std::map<mappers::distinguisherTypes, std::string> distinguishers;
-	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
+	std::map<mappers::DISTINGUISHER_TYPES, std::string> distinguishers;
+	mappers::CultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
 	mockRegions regions;
 	std::optional<std::string> match = theMapping.cultureMatch(regions, "nonMatchingCulture", "", -1, "");
@@ -41,8 +41,8 @@ TEST(Mappers_CultureMappingTests, nonMatchingSourceReturnsEmptyOptional)
 
 TEST(Mappers_CultureMappingTests, matchingSourceReturnsDestinationCulture)
 {
-	std::map<mappers::distinguisherTypes, std::string> distinguishers;
-	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
+	std::map<mappers::DISTINGUISHER_TYPES, std::string> distinguishers;
+	mappers::CultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
 	mockRegions regions;
 	std::optional<std::string> match = theMapping.cultureMatch(regions, "sourceCulture", "", -1, "");
@@ -53,10 +53,10 @@ TEST(Mappers_CultureMappingTests, matchingSourceReturnsDestinationCulture)
 
 TEST(Mappers_CultureMappingTests, ownerDistinguisherWrongNoMatch)
 {
-	std::map<mappers::distinguisherTypes, std::string> distinguishers;
-	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::owner, "OWN"));
+	std::map<mappers::DISTINGUISHER_TYPES, std::string> distinguishers;
+	distinguishers.insert(std::make_pair(mappers::DISTINGUISHER_TYPES::OWNER, "OWN"));
 
-	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
+	mappers::CultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
 	mockRegions regions;
 	std::optional<std::string> match = theMapping.cultureMatch(regions, "sourceCulture", "", -1, "NOT");
@@ -66,10 +66,10 @@ TEST(Mappers_CultureMappingTests, ownerDistinguisherWrongNoMatch)
 
 TEST(Mappers_CultureMappingTests, ownerDistinguisherRightMatch)
 {
-	std::map<mappers::distinguisherTypes, std::string> distinguishers;
-	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::owner, "OWN"));
+	std::map<mappers::DISTINGUISHER_TYPES, std::string> distinguishers;
+	distinguishers.insert(std::make_pair(mappers::DISTINGUISHER_TYPES::OWNER, "OWN"));
 
-	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
+	mappers::CultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
 	mockRegions regions;
 	std::optional<std::string> match = theMapping.cultureMatch(regions, "sourceCulture", "", -1, "OWN");
@@ -80,10 +80,10 @@ TEST(Mappers_CultureMappingTests, ownerDistinguisherRightMatch)
 
 TEST(Mappers_CultureMappingTests, religionDistinguisherWrongNoMatch)
 {
-	std::map<mappers::distinguisherTypes, std::string> distinguishers;
-	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::religion, "religion"));
+	std::map<mappers::DISTINGUISHER_TYPES, std::string> distinguishers;
+	distinguishers.insert(std::make_pair(mappers::DISTINGUISHER_TYPES::RELIGION, "religion"));
 
-	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
+	mappers::CultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
 	mockRegions regions;
 	std::optional<std::string> match = theMapping.cultureMatch(regions, "sourceCulture", "wrongReligion", -1, "");
@@ -93,10 +93,10 @@ TEST(Mappers_CultureMappingTests, religionDistinguisherWrongNoMatch)
 
 TEST(Mappers_CultureMappingTests, religionDistinguisherRightMatch)
 {
-	std::map<mappers::distinguisherTypes, std::string> distinguishers;
-	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::religion, "religion"));
+	std::map<mappers::DISTINGUISHER_TYPES, std::string> distinguishers;
+	distinguishers.insert(std::make_pair(mappers::DISTINGUISHER_TYPES::RELIGION, "religion"));
 
-	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
+	mappers::CultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
 	mockRegions regions;
 	std::optional<std::string> match = theMapping.cultureMatch(regions, "sourceCulture", "religion", -1, "");
@@ -107,10 +107,10 @@ TEST(Mappers_CultureMappingTests, religionDistinguisherRightMatch)
 
 TEST(Mappers_CultureMappingTests, provinceDistinguisherWrongNoMatch)
 {
-	std::map<mappers::distinguisherTypes, std::string> distinguishers;
-	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::province, "42"));
+	std::map<mappers::DISTINGUISHER_TYPES, std::string> distinguishers;
+	distinguishers.insert(std::make_pair(mappers::DISTINGUISHER_TYPES::PROVINCE, "42"));
 
-	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
+	mappers::CultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
 	mockRegions regions;
 	std::optional<std::string> match = theMapping.cultureMatch(regions, "sourceCulture", "", 12, "");
@@ -120,10 +120,10 @@ TEST(Mappers_CultureMappingTests, provinceDistinguisherWrongNoMatch)
 
 TEST(Mappers_CultureMappingTests, provinceDistinguisherRightMatch)
 {
-	std::map<mappers::distinguisherTypes, std::string> distinguishers;
-	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::province, "42"));
+	std::map<mappers::DISTINGUISHER_TYPES, std::string> distinguishers;
+	distinguishers.insert(std::make_pair(mappers::DISTINGUISHER_TYPES::PROVINCE, "42"));
 
-	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
+	mappers::CultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
 	mockRegions regions;
 	std::optional<std::string> match = theMapping.cultureMatch(regions, "sourceCulture", "", 42, "");
@@ -134,10 +134,10 @@ TEST(Mappers_CultureMappingTests, provinceDistinguisherRightMatch)
 
 TEST(Mappers_CultureMappingTests, regionDistinguisherWrongNoMatch)
 {
-	std::map<mappers::distinguisherTypes, std::string> distinguishers;
-	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::region, "theRegion"));
+	std::map<mappers::DISTINGUISHER_TYPES, std::string> distinguishers;
+	distinguishers.insert(std::make_pair(mappers::DISTINGUISHER_TYPES::REGION, "theRegion"));
 
-	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
+	mappers::CultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
 	mockRegions regions;
 	EXPECT_CALL(regions, provinceInRegion(42, "theRegion")).WillOnce(testing::Return(false));
@@ -149,10 +149,10 @@ TEST(Mappers_CultureMappingTests, regionDistinguisherWrongNoMatch)
 
 TEST(Mappers_CultureMappingTests, regionDistinguisherRightMatch)
 {
-	std::map<mappers::distinguisherTypes, std::string> distinguishers;
-	distinguishers.insert(std::make_pair(mappers::distinguisherTypes::region, "theRegion"));
+	std::map<mappers::DISTINGUISHER_TYPES, std::string> distinguishers;
+	distinguishers.insert(std::make_pair(mappers::DISTINGUISHER_TYPES::REGION, "theRegion"));
 
-	mappers::cultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
+	mappers::CultureMapping theMapping("sourceCulture", "destCulture", distinguishers);
 
 	mockRegions regions;
 	EXPECT_CALL(regions, provinceInRegion(42, "theRegion")).WillOnce(testing::Return(true));
