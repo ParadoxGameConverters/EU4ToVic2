@@ -1,4 +1,5 @@
 #include "ProvinceMappingsVersion.h"
+#include "ParserHelpers.h"
 
 mappers::ProvinceMappingsVersion::ProvinceMappingsVersion(const std::string& versionString, std::istream& theStream)
 {
@@ -7,6 +8,8 @@ mappers::ProvinceMappingsVersion::ProvinceMappingsVersion(const std::string& ver
 			ProvinceMapping newMapping(theStream);
 			mappings.push_back(newMapping);
 		});
+	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	
 	parseStream(theStream);
 	clearRegisteredKeywords();
 

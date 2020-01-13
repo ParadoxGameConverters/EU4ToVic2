@@ -5,17 +5,22 @@
 #include "Log.h"
 #include <fstream>
 #include <stdexcept>
+#include "ParserHelpers.h"
+
+mappers::ProvinceMapper::ProvinceMapper()
+{
+	LOG(LogLevel::Info) << "Parsing province mappings";
+	registerKeys();
+	parseFile("province_mappings.txt");
+	clearRegisteredKeywords();
+
+	ProvinceMappingsVersion mappings = getMappingsVersion(mappingVersions, theConfiguration);
+	createMappings(mappings);
+}
 
 mappers::ProvinceMapper::ProvinceMapper(std::istream& theStream, const Configuration& configuration)
 {
-	std::map<EU4::Version, ProvinceMappingsVersion> mappingVersions;
-
-	registerRegex("[0-9\\.]+", [&mappingVersions](const std::string& versionString, std::istream& theStream)
-		{
-			ProvinceMappingsVersion version(versionString, theStream);
-			mappingVersions.insert(std::make_pair(version.getVersion(), version));
-		});
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 
@@ -23,15 +28,23 @@ mappers::ProvinceMapper::ProvinceMapper(std::istream& theStream, const Configura
 	createMappings(mappings);
 }
 
+void mappers::ProvinceMapper::registerKeys()
+{
+	registerRegex("[0-9\\.]+", [this](const std::string& versionString, std::istream& theStream)
+		{
+			ProvinceMappingsVersion version(versionString, theStream);
+			mappingVersions.insert(std::make_pair(version.getVersion(), version));
+		});
+	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+}
+
 bool mappers::ProvinceMapper::provinceIsInRegion(int province, const std::string& region) const
 {
 	return colonialRegionsMapper.provinceIsInRegion(province, region);
 }
 
-mappers::ProvinceMappingsVersion mappers::ProvinceMapper::getMappingsVersion(
-	const std::map<EU4::Version, ProvinceMappingsVersion>& mappingsVersions,
-	const Configuration& configuration
-) {
+mappers::ProvinceMappingsVersion mappers::ProvinceMapper::getMappingsVersion(const std::map<EU4::Version, ProvinceMappingsVersion>& mappingsVersions, const Configuration& configuration)
+{
 	EU4::Version saveVersion = configuration.getEU4Version();
 	for (auto mappingsVersion = mappingsVersions.rbegin(); mappingsVersion != mappingsVersions.rend(); mappingsVersion++)
 	{

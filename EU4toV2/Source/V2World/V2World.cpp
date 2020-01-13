@@ -57,10 +57,9 @@ V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper&
 	importPotentialCountries();
 	isRandomWorld = sourceWorld.isRandomWorld();
 
-	initializeProvinceMapper();
-	sourceWorld.checkAllProvincesMapped(*provinceMapper);
+	sourceWorld.checkAllProvincesMapped(provinceMapper);
 
-	countryMapper.createMappings(sourceWorld, potentialCountries, *provinceMapper);
+	countryMapper.createMappings(sourceWorld, potentialCountries, provinceMapper);
 
 	LOG(LogLevel::Info) << "Converting world";
 	initializeCultureMappers(sourceWorld);
@@ -459,15 +458,6 @@ void V2World::initializeReligionMapper(const EU4::World& sourceWorld)
 }
 
 
-void V2World::initializeProvinceMapper()
-{
-	LOG(LogLevel::Info) << "Parsing province mappings";
-	std::ifstream mappingsFile("province_mappings.txt");
-	provinceMapper = std::make_unique<mappers::ProvinceMapper>(mappingsFile, theConfiguration);
-	mappingsFile.close();
-}
-
-
 void V2World::convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	LOG(LogLevel::Info) << "Converting countries";
@@ -513,7 +503,7 @@ void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::
 			slaveCultureMapper,
 			ideaEffectMapper,
 			*religionMapper,
-			*provinceMapper,
+			provinceMapper,
 			governmentMapper,
 			countryMapper
 		);
@@ -691,7 +681,7 @@ void V2World::convertProvinces(const EU4::World& sourceWorld)
 
 	for (auto Vic2Province : provinces)
 	{
-		auto EU4ProvinceNumbers = provinceMapper->getEU4ProvinceNumbers(Vic2Province.first);
+		auto EU4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(Vic2Province.first);
 		if (EU4ProvinceNumbers.size() == 0)
 		{
 			LOG(LogLevel::Warning) << "No source for " << Vic2Province.second->getName() << " (province " << Vic2Province.first << ')';
@@ -703,7 +693,7 @@ void V2World::convertProvinces(const EU4::World& sourceWorld)
 		}
 		else if (
 			(theConfiguration.getResetProvinces() == "yes") &&
-			provinceMapper->isProvinceResettable(Vic2Province.first, "resettableRegion")
+			provinceMapper.isProvinceResettable(Vic2Province.first, "resettableRegion")
 		) {
 			Vic2Province.second->setResettable(true);
 			continue;
@@ -1477,7 +1467,7 @@ void V2World::setupPops(const EU4::World& sourceWorld)
 
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
-		itr->second->setupPops(popWeightRatio, popAlgorithm, sourceWorld.getCountries(), *provinceMapper);
+		itr->second->setupPops(popWeightRatio, popAlgorithm, sourceWorld.getCountries(), provinceMapper);
 	}
 
 	if (theConfiguration.getPopShaping() != Configuration::POPSHAPES::Vanilla)
@@ -1723,7 +1713,7 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
 		itr->second->convertLeaders(leaderTraits);
-		itr->second->convertArmies(cost_per_regiment, provinces, port_whitelist, *provinceMapper, adjacencyMapper);
+		itr->second->convertArmies(cost_per_regiment, provinces, port_whitelist, provinceMapper, adjacencyMapper);
 	}
 }
 

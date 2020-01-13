@@ -68,7 +68,6 @@ class V2World
 
 		void initializeCultureMappers(const EU4::World& sourceWorld);
 		void initializeReligionMapper(const EU4::World& sourceWorld);
-		void initializeProvinceMapper();
 
 		void convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
@@ -118,10 +117,10 @@ class V2World
 		int techGroupAlgorithm;
 
 		std::unique_ptr<mappers::ReligionMapper> religionMapper;
-		std::unique_ptr<mappers::ProvinceMapper> provinceMapper;
 
 		std::time_t begin = std::time(0);
 
+		mappers::ProvinceMapper provinceMapper;
 		mappers::Continents continentsMapper;
 		mappers::CountryMappings countryMapper;
 		mappers::AdjacencyMapper adjacencyMapper;
