@@ -28,6 +28,6 @@ void mappers::BlockedTechSchools::registerKeys()
 bool mappers::BlockedTechSchools::isTechSchoolBlocked(const std::string& techSchool) const
 {
 	return std::any_of(theBlockedTechSchools.begin(), theBlockedTechSchools.end(),
-							 [techSchool](std::string blockedTechSchool){ return techSchool == blockedTechSchool; });
+							 [techSchool](const std::string& blockedTechSchool){ return techSchool == blockedTechSchool; });
 }
 
