@@ -50,99 +50,50 @@ void mappers::AdjacencyMapper::inputAdjacencies(std::istream& adjacenciesFile)
 	int current_province = 0;
 	while (!adjacenciesFile.eof())
 	{
-		char bitBucket[4];
-		adjacenciesFile.read(bitBucket, sizeof(bitBucket));
-		if (!adjacenciesFile)
-		{
-			std::range_error exception("Importing adjacencies failed! Delete your /map/cache/adjacencies.bin (from documents and/or installation folder) and rerun Vic2 before retrying.");
-			throw exception;
-		}
+		uint32_t numAdjacencies;
+		adjacenciesFile.read(reinterpret_cast<char*>(&numAdjacencies), 4);
 
-		std::vector<int> adjacencies = readAnAdjacenciesSet(adjacenciesFile, char4toint(bitBucket));
+		std::vector<int> adjacencies = readAnAdjacenciesSet(adjacenciesFile, numAdjacencies);
 		adjacencyMap.insert(std::make_pair(current_province, adjacencies));
 		current_province++;
 	}
 }
 
-uint32_t char4toint(char *buffer)
-{
-	return (uint32_t)buffer[0] << 24 | (uint32_t)buffer[1] << 16 | (uint32_t)buffer[2] << 8 | (uint32_t)buffer[3];
-}
-
 std::istream& operator >> (std::istream& stream, mappers::HODAdjacency& adjacency)
 {
-	char bitBucket[4];
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.type = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.to = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.via = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.unknown1 = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.unknown2 = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.pathX = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.pathY = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.unknown3 = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.unknown4 = char4toint(bitBucket);
-	if (!stream)
-	{
-		std::range_error exception("Importing adjacencies failed! Delete your /map/cache/adjacencies.bin (from documents and/or installation folder) and rerun Vic2 before retrying.");
-		throw exception;
-	}
+	stream.read(reinterpret_cast<char*>(&adjacency.type), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.to), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.via), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.unknown1), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.unknown2), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.pathX), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.pathY), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.unknown3), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.unknown4), 4);
 
 	return stream;
 };
 
 std::istream& operator >> (std::istream& stream, mappers::AHDAdjacency& adjacency)
 {
-	char bitBucket[4];
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.type = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.to = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.via = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.unknown1 = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.unknown2 = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.pathX = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.pathY = char4toint(bitBucket);
-	if (!stream)
-	{
-		std::range_error exception("Importing adjacencies failed! Delete your /map/cache/adjacencies.bin (from documents and/or installation folder) and rerun Vic2 before retrying.");
-		throw exception;
-	}
+	stream.read(reinterpret_cast<char*>(&adjacency.type), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.to), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.via), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.unknown1), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.unknown2), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.pathX), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.pathY), 4);
 
 	return stream;
 }
 
 std::istream& operator >> (std::istream& stream, mappers::VanillaAdjacency& adjacency)
 {
-	char bitBucket[4];
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.type = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.to = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.via = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.unknown1 = char4toint(bitBucket);
-	stream.read(bitBucket, sizeof(bitBucket));
-	adjacency.unknown2 = char4toint(bitBucket);
-	if (!stream)
-	{
-		std::range_error exception("Importing adjacencies failed! Delete your /map/cache/adjacencies.bin (from documents and/or installation folder) and rerun Vic2 before retrying.");
-		throw exception;
-	}
+	stream.read(reinterpret_cast<char*>(&adjacency.type), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.to), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.via), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.unknown1), 4);
+	stream.read(reinterpret_cast<char*>(&adjacency.unknown2), 4);
 
 	return stream;
 }
