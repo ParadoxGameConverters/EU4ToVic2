@@ -52,6 +52,11 @@ void mappers::AdjacencyMapper::inputAdjacencies(std::istream& adjacenciesFile)
 	{
 		char bitBucket[4];
 		adjacenciesFile.read(bitBucket, sizeof(bitBucket));
+		if (!adjacenciesFile)
+		{
+			std::range_error exception("Importing adjacencies failed! Delete your /map/cache/adjacencies.bin (from documents and/or installation folder) and rerun Vic2 before retrying.");
+			throw exception;
+		}
 
 		std::vector<int> adjacencies = readAnAdjacenciesSet(adjacenciesFile, char4toint(bitBucket));
 		adjacencyMap.insert(std::make_pair(current_province, adjacencies));
@@ -85,6 +90,11 @@ std::istream& operator >> (std::istream& stream, mappers::HODAdjacency& adjacenc
 	adjacency.unknown3 = char4toint(bitBucket);
 	stream.read(bitBucket, sizeof(bitBucket));
 	adjacency.unknown4 = char4toint(bitBucket);
+	if (!stream)
+	{
+		std::range_error exception("Importing adjacencies failed! Delete your /map/cache/adjacencies.bin (from documents and/or installation folder) and rerun Vic2 before retrying.");
+		throw exception;
+	}
 
 	return stream;
 };
@@ -106,6 +116,11 @@ std::istream& operator >> (std::istream& stream, mappers::AHDAdjacency& adjacenc
 	adjacency.pathX = char4toint(bitBucket);
 	stream.read(bitBucket, sizeof(bitBucket));
 	adjacency.pathY = char4toint(bitBucket);
+	if (!stream)
+	{
+		std::range_error exception("Importing adjacencies failed! Delete your /map/cache/adjacencies.bin (from documents and/or installation folder) and rerun Vic2 before retrying.");
+		throw exception;
+	}
 
 	return stream;
 }
@@ -123,6 +138,11 @@ std::istream& operator >> (std::istream& stream, mappers::VanillaAdjacency& adja
 	adjacency.unknown1 = char4toint(bitBucket);
 	stream.read(bitBucket, sizeof(bitBucket));
 	adjacency.unknown2 = char4toint(bitBucket);
+	if (!stream)
+	{
+		std::range_error exception("Importing adjacencies failed! Delete your /map/cache/adjacencies.bin (from documents and/or installation folder) and rerun Vic2 before retrying.");
+		throw exception;
+	}
 
 	return stream;
 }
