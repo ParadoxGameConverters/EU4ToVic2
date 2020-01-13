@@ -7,7 +7,6 @@
 #include "Leader/V2LeaderTraitMapper.h"
 #include "V2Localisation.h"
 #include "V2Relations.h"
-#include "V2TechSchools.h"
 #include "Color.h"
 #include "Date.h"
 #include "../EU4World/Army/EU4Army.h"
@@ -20,6 +19,7 @@
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../Mappers/PartyNames/PartyNameMapper.h"
+#include "../Mappers/TechSchools/TechSchoolMapper.h"
 #include "Country/V2Unreleasables.h"
 #include <memory>
 #include <set>
@@ -69,7 +69,7 @@ class V2Country : commonItems::parser
 		void initFromEU4Country(
 			const EU4::Regions& eu4Regions,
 			std::shared_ptr<EU4::Country> _srcCountry,
-			const std::unique_ptr<Vic2::TechSchools>& techSchools,
+			const mappers::TechSchoolMapper& techSchoolMapper,
 			const mappers::CultureMapper& cultureMapper,
 			const mappers::CultureMapper& slaveCultureMapper,
 			const mappers::IdeaEffectMapper& ideaEffectMapper,
@@ -155,7 +155,7 @@ class V2Country : commonItems::parser
 		double getPolitical_parties() const { return political_partiesInvestment; }
 
 		void buildCanals(std::shared_ptr<EU4::Country> srcCountry);
-		void determineTechSchool(const std::unique_ptr<Vic2::TechSchools>& techschools);
+		void determineTechSchool(const mappers::TechSchoolMapper& techSchoolMapper);
 		void calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry);
 		void generateRelations(std::shared_ptr<EU4::Country> srcCountry, const mappers::CountryMappings& countryMapper);
 		void resolvePolitics();

@@ -242,6 +242,8 @@
     <ClCompile Include="Source\Mappers\ColonialTags\ColonialTagsMapper.cpp" />
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMapping.cpp" />
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMappings.cpp" />
+    <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnion.cpp" />
+    <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\Culture.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroup.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp" />
@@ -269,6 +271,7 @@
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
     <ClCompile Include="Source\Mappers\StateMapper\StateMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchool.cpp" />
+    <ClCompile Include="Source\Mappers\TechSchools\TechSchoolMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchools.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
@@ -301,8 +304,6 @@
     <ClCompile Include="Source\V2World\RGORandomization\Bucket.cpp" />
     <ClCompile Include="Source\V2World\RGORandomization\BucketList.cpp" />
     <ClCompile Include="Source\V2World\V2UncivReforms.cpp" />
-    <ClCompile Include="Source\V2World\Vic2CultureUnion.cpp" />
-    <ClCompile Include="Source\V2World\Vic2CultureUnionMapper.cpp" />
     <ClCompile Include="Source\V2World\Vic2Regions.cpp" />
     <ClCompile Include="Source\V2World\V2Army.cpp" />
     <ClCompile Include="Source\V2World\V2Country.cpp" />
@@ -393,6 +394,8 @@
     <ClInclude Include="Source\Mappers\ColonialTags\ColonialTagsMapper.h" />
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMapping.h" />
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMappings.h" />
+    <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnion.h" />
+    <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\Culture.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroup.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h" />
@@ -420,6 +423,7 @@
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h" />
     <ClInclude Include="Source\Mappers\StateMapper\StateMapper.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchool.h" />
+    <ClInclude Include="Source\Mappers\TechSchools\TechSchoolMapper.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchools.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitType.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
@@ -464,8 +468,6 @@
     <ClInclude Include="Source\V2World\V2State.h" />
     <ClInclude Include="Source\V2World\V2UncivReforms.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
-    <ClInclude Include="Source\V2World\Vic2CultureUnion.h" />
-    <ClInclude Include="Source\V2World\Vic2CultureUnionMapper.h" />
     <ClInclude Include="Source\V2World\Vic2Regions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

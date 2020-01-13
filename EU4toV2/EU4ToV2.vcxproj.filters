@@ -84,12 +84,6 @@
     <ClCompile Include="Source\V2World\V2World.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Vic2CultureUnion.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Vic2CultureUnionMapper.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Vic2Regions.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -438,6 +432,15 @@
     <ClCompile Include="Source\Mappers\TechSchools\TechSchool.cpp">
       <Filter>Mappers\TechSchools</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\TechSchools\TechSchoolMapper.cpp">
+      <Filter>Mappers\TechSchools</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnion.cpp">
+      <Filter>Mappers\CulturalUnions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp">
+      <Filter>Mappers\CulturalUnions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -520,12 +523,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2World.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Vic2CultureUnion.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Vic2CultureUnionMapper.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\Vic2Regions.h">
@@ -879,6 +876,15 @@
     <ClInclude Include="Source\Mappers\TechSchools\TechSchool.h">
       <Filter>Mappers\TechSchools</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\TechSchools\TechSchoolMapper.h">
+      <Filter>Mappers\TechSchools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnion.h">
+      <Filter>Mappers\CulturalUnions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.h">
+      <Filter>Mappers\CulturalUnions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1018,6 +1024,9 @@
     </Filter>
     <Filter Include="Mappers\TechSchools">
       <UniqueIdentifier>{43618607-1df7-4ebb-85d1-88c33e8f8716}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CulturalUnions">
+      <UniqueIdentifier>{488abd94-7c26-4187-96ef-cb595c5cba00}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

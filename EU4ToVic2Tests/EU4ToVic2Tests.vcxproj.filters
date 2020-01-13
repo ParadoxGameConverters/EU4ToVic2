@@ -18,21 +18,6 @@
     <ClCompile Include="EU4WorldTests\RegionTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
-    <ClCompile Include="Vic2WorldTests\BlockedTechSchoolsTests.cpp">
-      <Filter>Vic2WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="Vic2WorldTests\Vic2CultureUnionMapperTests.cpp">
-      <Filter>Vic2WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="Vic2WorldTests\Vic2CultureUnionTests.cpp">
-      <Filter>Vic2WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="Vic2WorldTests\Vic2TechSchoolsTests.cpp">
-      <Filter>Vic2WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="Vic2WorldTests\Vic2TechSchoolTests.cpp">
-      <Filter>Vic2WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Configuration.cpp">
       <Filter>ConverterFiles</Filter>
     </ClCompile>
@@ -54,18 +39,6 @@
     <ClCompile Include="..\common_items\WinUtils.cpp">
       <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\V2World\V2TechSchools.cpp">
-      <Filter>ConverterFiles\Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnion.cpp">
-      <Filter>ConverterFiles\Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\V2World\Vic2CultureUnionMapper.cpp">
-      <Filter>ConverterFiles\Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\V2World\Vic2TechSchool.cpp">
-      <Filter>ConverterFiles\Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="ConfigurationTests.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Area.cpp">
       <Filter>ConverterFiles\EU4World\Regions</Filter>
@@ -81,9 +54,6 @@
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Regions.cpp">
       <Filter>ConverterFiles\EU4World\Regions</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\V2World\BlockedTechSchools.cpp">
-      <Filter>ConverterFiles\Vic2World</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp">
       <Filter>EU4WorldTests</Filter>
@@ -254,11 +224,44 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper\ReligionMapping.cpp">
       <Filter>ConverterFiles\Mappers\ReligionMapper</Filter>
     </ClCompile>
-    <ClCompile Include="Vic2WorldTests\StateMapperTests.cpp">
-      <Filter>MapperTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\StateMapper\StateMapper.cpp">
       <Filter>ConverterFiles\Mappers\StateMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\BlockedTechSchoolsTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp">
+      <Filter>ConverterFiles\Mappers\BlockedTechSchools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchoolMapper.cpp">
+      <Filter>ConverterFiles\Mappers\TechSchools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchool.cpp">
+      <Filter>ConverterFiles\Mappers\TechSchools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchools.cpp">
+      <Filter>ConverterFiles\Mappers\TechSchools</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\TechSchoolMapperTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\TechSchoolTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CulturalUnionMapperTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CulturalUnionTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CulturalUnions\CulturalUnion.cpp">
+      <Filter>ConverterFiles\Mappers\CulturalUnions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp">
+      <Filter>ConverterFiles\Mappers\CulturalUnions</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\StateMapperTests.cpp">
+      <Filter>MapperTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -330,6 +333,15 @@
     </Filter>
     <Filter Include="ConverterFiles\Mappers\StateMapper">
       <UniqueIdentifier>{71d8f29f-8b37-4fbe-b1f2-bf458df5a5fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\BlockedTechSchools">
+      <UniqueIdentifier>{0cc358a1-c489-41af-bd24-e294771ad11a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\TechSchools">
+      <UniqueIdentifier>{aea21223-5b8f-40a6-b3e5-856bf8282abb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\CulturalUnions">
+      <UniqueIdentifier>{616b3a09-197a-4a8d-a7e8-fc649643c62f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

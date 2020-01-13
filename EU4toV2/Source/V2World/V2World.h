@@ -24,6 +24,8 @@
 #include "../Mappers/PartyNames/PartyNameMapper.h"
 #include "../Mappers/RegimentCosts/RegimentCostsMapper.h"
 #include "../Mappers/StateMapper/StateMapper.h"
+#include "../Mappers/TechSchools/TechSchoolMapper.h"
+#include "../Mappers/CulturalUnions/CulturalUnionMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -113,7 +115,6 @@ class V2World
 		V2Diplomacy diplomacy;
 		std::map<int, std::set<std::string>> colonies;
 		std::map<std::string, std::list<int>>	popRegions;
-		std::unique_ptr<Vic2::TechSchools> techSchools;
 		std::map<int, int> leaderIDMap; // <EU4, V2>
 		long totalWorldPopulation;
 		bool isRandomWorld;
@@ -135,6 +136,9 @@ class V2World
 		mappers::RegimentCostsMapper regimentCostsMapper;
 		mappers::ReligionMapper religionMapper;
 		mappers::StateMapper stateMapper;
+		mappers::TechSchoolMapper techSchoolMapper;
+		mappers::CulturalUnionMapper culturalUnionMapper;
+		mappers::CulturalUnionMapper culturalNationalitiesMapper;
 };
 
 

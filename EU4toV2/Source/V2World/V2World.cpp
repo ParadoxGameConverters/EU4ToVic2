@@ -22,17 +22,14 @@
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/Ideas/TechGroupsMapper.h"
-#include "BlockedTechSchools.h"
 #include "V2Province.h"
 #include "V2State.h"
 #include "V2Relations.h"
-#include "V2TechSchools.h"
 #include "V2Army.h"
 #include "V2Pop.h"
 #include "V2Country.h"
 #include "V2Reforms.h"
 #include "V2Flags.h"
-#include "Vic2CultureUnionMapper.h"
 #include "Factory/V2FactoryFactory.h"
 #include "Leader/V2LeaderTraitMapper.h"
 #include "Country/V2Unreleasables.h"
@@ -452,10 +449,6 @@ void V2World::convertCountries(const EU4::World& sourceWorld, const mappers::Ide
 
 void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
-	Vic2::blockedTechSchoolsFile theBlockedTechSchoolsFile;
-	Vic2::TechSchoolsFile theTechSchoolsFile(theBlockedTechSchoolsFile.takeBlockedTechSchools());
-	auto theTechSchools = theTechSchoolsFile.takeTechSchools();
-
 	for (auto sourceCountry: sourceWorld.getCountries())
 	{
 		const string& V2Tag = countryMapper.getV2Tag(sourceCountry.first);
@@ -469,7 +462,7 @@ void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::
 		destCountry->initFromEU4Country(
 			sourceWorld.getRegions(),
 			sourceCountry.second,
-			theTechSchools,
+			techSchoolMapper,
 			cultureMapper,
 			slaveCultureMapper,
 			ideaEffectMapper,
@@ -1596,11 +1589,14 @@ void V2World::setupPops(const EU4::World& sourceWorld)
 
 void V2World::addUnions()
 {
-	LOG(LogLevel::Info) << "Adding unions";
+	if (theConfiguration.getCoreHandling() == Configuration::COREHANDLES::DropAll) return;
 
-	Vic2::CultureUnionMapperFile theVic2CultureUnionMapperFile;
-	auto theVic2CultureUnionMapper = theVic2CultureUnionMapperFile.takeCultureUnionMapper();
-	auto theVic2NationalsMapper = theVic2CultureUnionMapperFile.takeNationalsMapper();
+	LOG(LogLevel::Info) << "Parsing cultural union mappings.";
+	culturalUnionMapper.loadFile("configurables/unions.txt");
+	LOG(LogLevel::Info) << "Parsing nationalities mappings.";
+	culturalNationalitiesMapper.loadFile("configurables/nationals.txt");
+
+	LOG(LogLevel::Info) << "Distributing national and cultural union cores.";
 
 	for (map<int, V2Province*>::iterator provItr = provinces.begin(); provItr != provinces.end(); provItr++)
 	{
@@ -1609,8 +1605,8 @@ void V2World::addUnions()
 			auto cultures = provItr->second->getCulturesOverThreshold(0.5);
 			for (auto culture : cultures)
 			{
-				vector<string> unionCores = theVic2CultureUnionMapper->getCoreForCulture(culture);
-				vector<string> nationalCores = theVic2NationalsMapper->getCoreForCulture(culture);
+				vector<string> unionCores = culturalUnionMapper.getCoresForCulture(culture);
+				vector<string> nationalCores = culturalNationalitiesMapper.getCoresForCulture(culture);
 				switch (theConfiguration.getCoreHandling())
 				{
 				case Configuration::COREHANDLES::DropNational:

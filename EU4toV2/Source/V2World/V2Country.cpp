@@ -19,7 +19,6 @@
 #include "V2UncivReforms.h"
 #include "V2Creditor.h"
 #include "V2Pop.h"
-#include "V2TechSchools.h"
 #include "Factory/V2Factory.h"
 #include <algorithm>
 #include <exception>
@@ -492,7 +491,7 @@ void V2Country::outputOOB() const
 void V2Country::initFromEU4Country(
 	const EU4::Regions& eu4Regions,
 	std::shared_ptr<EU4::Country> _srcCountry,
-	const std::unique_ptr<Vic2::TechSchools>& techSchools,
+	const mappers::TechSchoolMapper& techSchoolMapper,
 	const mappers::CultureMapper& cultureMapper,
 	const mappers::CultureMapper& slaveCultureMapper,
 	const mappers::IdeaEffectMapper& ideaEffectMapper,
@@ -571,7 +570,7 @@ void V2Country::initFromEU4Country(
 
 	// Literacy and Tech school
 	calculateLiteracy(_srcCountry);
-	determineTechSchool(techSchools);
+	determineTechSchool(techSchoolMapper);
 
 	// Misc
 	buildCanals(_srcCountry);
@@ -853,9 +852,9 @@ void V2Country::calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry)
 
 }
 
-void V2Country::determineTechSchool(const std::unique_ptr<Vic2::TechSchools>& techSchools)
+void V2Country::determineTechSchool(const mappers::TechSchoolMapper& techSchoolMapper)
 {
-	techSchool = techSchools->findBestTechSchool(
+	techSchool = techSchoolMapper.findBestTechSchool(
 		armyInvestment - 5,
 		commerceInvestment - 5,
 		cultureInvestment - 5,
