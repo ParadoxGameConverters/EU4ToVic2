@@ -247,7 +247,7 @@
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapping.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
-    <ClCompile Include="Source\Mappers\FlagColorMapper.cpp" />
+    <ClCompile Include="Source\Mappers\FlagColors\FlagColorMapper.cpp" />
     <ClCompile Include="Source\Mappers\Geography\ClimateMapper.cpp" />
     <ClCompile Include="Source\Mappers\Geography\Continents.cpp" />
     <ClCompile Include="Source\Mappers\Geography\TerrainDataMapper.cpp" />
@@ -398,7 +398,7 @@
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapping.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
-    <ClInclude Include="Source\Mappers\FlagColorMapper.h" />
+    <ClInclude Include="Source\Mappers\FlagColors\FlagColorMapper.h" />
     <ClInclude Include="Source\Mappers\Geography\ClimateMapper.h" />
     <ClInclude Include="Source\Mappers\Geography\Continents.h" />
     <ClInclude Include="Source\Mappers\Geography\TerrainDataMapper.h" />

@@ -11,7 +11,6 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "../Mappers/CK2Titles/CK2TitleMapper.h"
-#include "../Mappers/FlagColorMapper.h"
 #include "../FlagUtils.h"
 
 const std::vector<std::string> V2Flags::flagFileSuffixes = { ".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga" };
@@ -335,18 +334,6 @@ void V2Flags::copyFlags() const
 void V2Flags::createCustomFlags() const
 {
 	std::string baseFlagFolder = "flags";
-
-	LOG(LogLevel::Info) << "Parsing EU4 flag colours";
-	std::string colorFileStr = theConfiguration.getEU4Path() + "/common/custom_country_colors/00_custom_country_colors.txt";
-	std::ifstream colorFile(colorFileStr);
-	if (colorFile.fail())
-	{
-		std::range_error exception("Could not open flag colors.");
-		throw exception;
-	}
-
-	mappers::FlagColorMapper flagColorMapper(colorFile);
-	colorFile.close();
 
 	for (auto cflag : customFlagMapping)
 	{

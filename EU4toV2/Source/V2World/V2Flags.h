@@ -8,6 +8,7 @@
 #include "../Mappers/ColonialFlags/ColonialFlagsMapper.h"
 #include "../EU4World/Country/EU4NationalSymbol.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
+#include "../Mappers/FlagColors/FlagColorMapper.h"
 
 
 class V2Country;
@@ -43,6 +44,7 @@ class V2Flags
 		V2TagToCustomFlagMap customFlagMapping;
 
 		mappers::ColonialFlagsMapper colonialFlagsMapper;
+		mappers::FlagColorMapper flagColorMapper;
 };
 
 
