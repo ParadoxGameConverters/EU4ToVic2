@@ -57,6 +57,7 @@ namespace mappers
 	};
 }
 
+uint32_t char4toint(char* buffer);
 std::istream& operator >> (std::istream& stream, mappers::HODAdjacency& adjacency);
 std::istream& operator >> (std::istream& stream, mappers::AHDAdjacency& adjacency);
 std::istream& operator >> (std::istream& stream, mappers::VanillaAdjacency& adjacency);
