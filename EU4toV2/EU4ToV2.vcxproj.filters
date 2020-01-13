@@ -81,9 +81,6 @@
     <ClCompile Include="Source\V2World\V2State.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2TechSchools.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2World.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -94,9 +91,6 @@
       <Filter>Vic2World</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\Vic2Regions.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Vic2TechSchool.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
     <ClCompile Include="..\common_items\WinUtils.cpp">
@@ -438,6 +432,12 @@
     <ClCompile Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp">
       <Filter>Mappers\BlockedTechSchools</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\TechSchools\TechSchools.cpp">
+      <Filter>Mappers\TechSchools</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\TechSchools\TechSchool.cpp">
+      <Filter>Mappers\TechSchools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -519,9 +519,6 @@
     <ClInclude Include="Source\V2World\V2State.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\V2TechSchools.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\V2World.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
@@ -532,9 +529,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\Vic2Regions.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Vic2TechSchool.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\World.h">
@@ -879,6 +873,12 @@
     <ClInclude Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.h">
       <Filter>Mappers\BlockedTechSchools</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\TechSchools\TechSchools.h">
+      <Filter>Mappers\TechSchools</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\TechSchools\TechSchool.h">
+      <Filter>Mappers\TechSchools</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1015,6 +1015,9 @@
     </Filter>
     <Filter Include="Mappers\BlockedTechSchools">
       <UniqueIdentifier>{ef6acc70-e731-4553-931d-2f45990d0ebc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\TechSchools">
+      <UniqueIdentifier>{43618607-1df7-4ebb-85d1-88c33e8f8716}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
