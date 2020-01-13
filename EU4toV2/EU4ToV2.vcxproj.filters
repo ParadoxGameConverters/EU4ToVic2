@@ -33,9 +33,6 @@
     <ClCompile Include="Source\EU4World\EU4Version.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\GovermentMapper.cpp">
-      <Filter>Mappers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\ID.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
@@ -438,6 +435,9 @@
     <ClCompile Include="Source\Mappers\FlagColors\FlagColorMapper.cpp">
       <Filter>Mappers\FlagColors</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\GovernmentMapper\GovernmentMapper.cpp">
+      <Filter>Mappers\GovernmentMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -467,9 +467,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\EU4Version.h">
       <Filter>EU4World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\GovernmentMapper.h">
-      <Filter>Mappers</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\ID.h">
       <Filter>EU4World</Filter>
@@ -879,6 +876,9 @@
     <ClInclude Include="Source\Mappers\FlagColors\FlagColorMapper.h">
       <Filter>Mappers\FlagColors</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\GovernmentMapper\GovernmentMapper.h">
+      <Filter>Mappers\GovernmentMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -991,6 +991,9 @@
     </Filter>
     <Filter Include="Mappers\FlagColors">
       <UniqueIdentifier>{fc93dde8-f3e2-4484-9ad6-8374d24d3f5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\GovernmentMapper">
+      <UniqueIdentifier>{4f2f705d-ce8c-47b1-964e-e185667ddf74}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

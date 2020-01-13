@@ -17,7 +17,7 @@
 #include "../EU4World/Country/EU4NationalSymbol.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "../Mappers/GovernmentMapper.h"
+#include "../Mappers/GovernmentMapper/GovernmentMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"

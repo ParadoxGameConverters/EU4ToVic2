@@ -23,7 +23,6 @@
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/Ideas/TechGroupsMapper.h"
 #include "../Mappers/MinorityPopMapper.h"
-#include "../Mappers/GovernmentMapper.h"
 #include "../Mappers/ReligionMapper.h"
 #include "../Mappers/RegimentCostsMapper.h"
 #include "BlockedTechSchools.h"
@@ -473,17 +472,6 @@ void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::
 	Vic2::blockedTechSchoolsFile theBlockedTechSchoolsFile;
 	Vic2::TechSchoolsFile theTechSchoolsFile(theBlockedTechSchoolsFile.takeBlockedTechSchools());
 	auto theTechSchools = theTechSchoolsFile.takeTechSchools();
-
-	LOG(LogLevel::Info) << "Parsing governments mappings";
-
-	std::ifstream governmentMapFile("configurables/government_mapping.txt");
-	if (governmentMapFile.fail())
-	{
-		std::range_error exception("Could not open file government_mapping.txt");
-		throw exception;
-	}
-	mappers::GovernmentMapper governmentMapper(governmentMapFile);
-	governmentMapFile.close();
 
 	for (auto sourceCountry: sourceWorld.getCountries())
 	{

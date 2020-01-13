@@ -17,7 +17,7 @@
 #include "../Mappers/Geography/TerrainDataMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/ReligionMapper.h"
-#include "../Mappers/GovernmentMapper.h"
+#include "../Mappers/GovernmentMapper/GovernmentMapper.h"
 #include "../Mappers/MinorityPopMapper.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
@@ -128,6 +128,7 @@ class V2World
 		mappers::TerrainDataMapper terrainDataMapper;
 		mappers::CultureMapper cultureMapper;
 		mappers::CultureMapper slaveCultureMapper;
+		mappers::GovernmentMapper governmentMapper;
 
 };
 
