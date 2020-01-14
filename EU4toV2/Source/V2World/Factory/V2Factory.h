@@ -2,13 +2,13 @@
 #define V2FACTORY_H_
 
 #include <ostream>
-#include "V2FactoryType.h"
+#include "../../Mappers/FactoryTypes/FactoryType.h"
 
 class V2Factory
 {
 public:
 	V2Factory() = default;
-	V2Factory(mappers::V2FactoryType& fType) { factoryType = fType; }
+	V2Factory(mappers::FactoryType& fType) { factoryType = fType; }
 	void increaseLevel() { level++; }
 
 	bool requiresCoastal() const { return factoryType.getCoastal(); }
@@ -21,7 +21,7 @@ public:
 	friend std::ostream& operator<<(std::ostream& output, const V2Factory& factory);
 
 private:
-	mappers::V2FactoryType factoryType;
+	mappers::FactoryType factoryType;
 	int level = 1;
 };
 

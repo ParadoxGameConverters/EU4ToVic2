@@ -7,7 +7,6 @@
 #include "Provinces/EU4Province.h"
 #include "Regions/Areas.h"
 #include "../Configuration.h"
-#include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"

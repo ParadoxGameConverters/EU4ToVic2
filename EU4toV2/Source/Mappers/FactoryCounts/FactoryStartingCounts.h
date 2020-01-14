@@ -1,17 +1,15 @@
-#ifndef V2_FACTORY_STARTING_COUNTS_H_
-#define V2_FACTORY_STARTING_COUNTS_H_
+#ifndef FACTORY_STARTING_COUNTS_H
+#define FACTORY_STARTING_COUNTS_H
 
 #include "newParser.h"
 #include <map>
 
-
 namespace mappers
 {
-
-	class V2FactoryStartingCounts : commonItems::parser
+	class FactoryStartingCounts : commonItems::parser
 	{
 	public:
-		V2FactoryStartingCounts();
+		FactoryStartingCounts();
 		std::map<std::string, int> getFactoryStartingCounts() const { return startingCounts; }
 
 	private:
@@ -19,4 +17,4 @@ namespace mappers
 	};
 }
 
-#endif // V2_FACTORY_STARTING_COUNTS_H_
+#endif // FACTORY_STARTING_COUNTS_H

@@ -1,16 +1,16 @@
-#ifndef V2_FACTORY_TYPE_H_
-#define V2_FACTORY_TYPE_H_
+#ifndef FACTORY_TYPE_H
+#define FACTORY_TYPE_H
 
 #include "newParser.h"
 #include <map>
 
 namespace mappers
 {
-	class V2FactoryType : commonItems::parser
+	class FactoryType : commonItems::parser
 	{
 	public:
-		V2FactoryType() = default;
-		V2FactoryType(std::istream& theStream);
+		FactoryType() = default;
+		FactoryType(std::istream& theStream);
 		bool getCoastal() const { return coastal; }
 		std::string getRequiredTech() const { return requiredTech; }
 		std::string getRequiredInvention() const { return requiredInvention; }
@@ -34,4 +34,4 @@ namespace mappers
 	};
 }
 
-#endif // V2_FACTORY_TYPE_H_
+#endif // FACTORY_TYPE_H

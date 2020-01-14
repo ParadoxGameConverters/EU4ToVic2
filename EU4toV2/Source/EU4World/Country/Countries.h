@@ -5,7 +5,7 @@
 #include "../EU4Version.h"
 #include <map>
 #include <memory>
-#include "../../Mappers/Ideas/IdeaEffectMapper.h"
+#include "../../Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "../../Mappers/CultureGroups/CultureGroups.h"
 #include "EU4Country.h"
 

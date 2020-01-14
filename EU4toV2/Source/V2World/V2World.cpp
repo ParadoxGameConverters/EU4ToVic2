@@ -1,6 +1,5 @@
 #include "V2World.h"
 #include <string>
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <algorithm>
@@ -9,34 +8,28 @@
 #include <queue>
 #include <cmath>
 #include <cfloat>
-#include "NewParserToOldParserConverters.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "../Configuration.h"
 #include "../EU4World/Diplomacy/EU4Diplomacy.h"
-#include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "RGORandomization/BucketList.h"
 #include "../Helpers/TechValues.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
-#include "../Mappers/Ideas/IdeaEffectMapper.h"
-#include "../Mappers/Ideas/TechGroupsMapper.h"
 #include "V2Province.h"
 #include "V2State.h"
 #include "V2Relations.h"
-#include "V2Army.h"
 #include "V2Pop.h"
 #include "V2Country.h"
-#include "V2Reforms.h"
 #include "V2Flags.h"
-#include "Factory/V2FactoryFactory.h"
 #include "Leader/V2LeaderTraitMapper.h"
 #include "Country/V2Unreleasables.h"
 #include "Pops/PopMapper.h"
 #include "Map/MapProvince.h"
-#include "../EU4World/ColonialRegions/ColonialRegions.h"
 #include "../EU4World/Country/EU4Country.h"
+#include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
+#include "../Mappers/TechGroups/TechGroupsMapper.h"
 
 
 V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper)
@@ -296,7 +289,7 @@ void V2World::logPopsFromFile(string filename, map<string, map<string, long int>
 }
 
 
-void V2World::logPopsInProvince(const int& provinceID, const mappers::PopTypes& popType, map<string, map<string, long int>>& popsByCountry) const
+void V2World::logPopsInProvince(const int& provinceID, const mappers::PopTypes& popTypes, map<string, map<string, long int>>& popsByCountry) const
 {
 	auto province = provinces.find(provinceID);
 	if (province == provinces.end())
@@ -307,7 +300,7 @@ void V2World::logPopsInProvince(const int& provinceID, const mappers::PopTypes& 
 
 	auto countryPopItr = getCountryForPopLogging(province->second->getOwner(), popsByCountry);
 
-	for (const auto& popType : popType.getPopTypes())
+	for (const auto& popType : popTypes.getPopTypes())
 	{
 		logPop(popType.first, popType.second, countryPopItr);
 	}
@@ -1273,8 +1266,6 @@ void V2World::convertTechs(const EU4::World& sourceWorld)
 void V2World::allocateFactories(const EU4::World& sourceWorld)
 {
 	// Construct factory factory
-	LOG(LogLevel::Info) << "Determining factory allocation rules.";
-	V2FactoryFactory factoryBuilder;
 
 	LOG(LogLevel::Info) << "Allocating starting factories";
 
@@ -1354,7 +1345,7 @@ void V2World::allocateFactories(const EU4::World& sourceWorld)
 
 	weightedCountries.swap(restrictCountries);
 	// remove nations that won't have enough industiral score for even one factory
-	deque<V2Factory> factoryList = factoryBuilder.buildFactories();
+	deque<V2Factory> factoryList = factoryTypeMapper.buildFactories();
 	while (((weightedCountries.begin()->first / totalIndWeight) * factoryList.size() + 0.5 /*round*/) < 1.0)
 	{
 		weightedCountries.pop_front();

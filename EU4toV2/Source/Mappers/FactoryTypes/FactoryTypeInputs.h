@@ -1,17 +1,16 @@
-#ifndef V2_FACTORY_TYPE_INPUTS_H_
-#define V2_FACTORY_TYPE_INPUTS_H_
+#ifndef FACTORY_TYPE_INPUTS_H
+#define FACTORY_TYPE_INPUTS_H
 
 #include "newParser.h"
 #include <map>
 
-
 namespace mappers
 {
 
-	class V2FactoryTypeInputs : commonItems::parser
+	class FactoryTypeInputs : commonItems::parser
 	{
 	public:
-		V2FactoryTypeInputs(std::istream& theStream);
+		FactoryTypeInputs(std::istream& theStream);
 		std::map<std::string, double> getProductionInputValues() const { return productionInputValues; }
 
 	private:
@@ -19,4 +18,4 @@ namespace mappers
 	};
 }
 
-#endif // V2_FACTORY_TYPE_INPUTS_H_
+#endif // FACTORY_TYPE_INPUTS_H

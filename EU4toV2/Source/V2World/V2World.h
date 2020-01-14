@@ -5,10 +5,8 @@
 
 #include "V2Country.h"
 #include "V2Diplomacy.h"
-#include "Country/V2Party.h"
 #include "V2Province.h"
 #include "Pops/PopTypes.h"
-#include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
@@ -26,6 +24,7 @@
 #include "../Mappers/StateMapper/StateMapper.h"
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../Mappers/CulturalUnions/CulturalUnionMapper.h"
+#include "../Mappers/FactoryTypes/FactoryTypeMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -139,6 +138,7 @@ class V2World
 		mappers::TechSchoolMapper techSchoolMapper;
 		mappers::CulturalUnionMapper culturalUnionMapper;
 		mappers::CulturalUnionMapper culturalNationalitiesMapper;
+		mappers::FactoryTypeMapper factoryTypeMapper;
 };
 
 
