@@ -28,6 +28,8 @@
 #include "../Mappers/Unreleasables/Unreleasables.h"
 #include "../Mappers/LeaderTraits/LeaderTraitMapper.h"
 #include "../Mappers/NavalBases/NavalBaseMapper.h"
+#include "../Mappers/RGORandomization/BucketList.h"
+#include "../Mappers/PortProvinces/PortProvinces.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -145,7 +147,8 @@ class V2World
 		mappers::Unreleasables unreleasablesMapper;
 		mappers::LeaderTraitMapper leaderTraitMapper;
 		mappers::NavalBaseMapper navalBaseMapper;
-
+		mappers::BucketList bucketShuffler;
+		mappers::PortProvinces portProvincesMapper;
 };
 
 

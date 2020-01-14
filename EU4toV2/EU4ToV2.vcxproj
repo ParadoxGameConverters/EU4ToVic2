@@ -279,12 +279,16 @@
     <ClCompile Include="Source\Mappers\Pops\Pop.cpp" />
     <ClCompile Include="Source\Mappers\Pops\PopMapper.cpp" />
     <ClCompile Include="Source\Mappers\Pops\PopTypes.cpp" />
+    <ClCompile Include="Source\Mappers\PortProvinces\PortProvinces.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
     <ClCompile Include="Source\Mappers\RegimentCosts\RegimentCostsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
+    <ClCompile Include="Source\Mappers\RGORandomization\Bucket.cpp" />
+    <ClCompile Include="Source\Mappers\RGORandomization\BucketList.cpp" />
     <ClCompile Include="Source\Mappers\StateMapper\StateMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroups.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroupsMapper.cpp" />
@@ -298,10 +302,7 @@
     <ClCompile Include="Source\V2World\Country\V2Party.cpp" />
     <ClCompile Include="Source\V2World\Factory\V2Factory.cpp" />
     <ClCompile Include="Source\V2World\Leader\V2Leader.cpp" />
-    <ClCompile Include="Source\V2World\RGORandomization\Bucket.cpp" />
-    <ClCompile Include="Source\V2World\RGORandomization\BucketList.cpp" />
     <ClCompile Include="Source\V2World\V2UncivReforms.cpp" />
-    <ClCompile Include="Source\V2World\Vic2Regions.cpp" />
     <ClCompile Include="Source\V2World\V2Army.cpp" />
     <ClCompile Include="Source\V2World\V2Country.cpp" />
     <ClCompile Include="Source\V2World\V2Creditor.cpp" />
@@ -428,12 +429,16 @@
     <ClInclude Include="Source\Mappers\Pops\Pop.h" />
     <ClInclude Include="Source\Mappers\Pops\PopMapper.h" />
     <ClInclude Include="Source\Mappers\Pops\PopTypes.h" />
+    <ClInclude Include="Source\Mappers\PortProvinces\PortProvinces.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />
     <ClInclude Include="Source\Mappers\RegimentCosts\RegimentCostsMapper.h" />
+    <ClInclude Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h" />
+    <ClInclude Include="Source\Mappers\RGORandomization\Bucket.h" />
+    <ClInclude Include="Source\Mappers\RGORandomization\BucketList.h" />
     <ClInclude Include="Source\Mappers\StateMapper\StateMapper.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroups.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroupsMapper.h" />
@@ -447,8 +452,6 @@
     <ClInclude Include="Source\V2World\Country\V2Party.h" />
     <ClInclude Include="Source\V2World\Factory\V2Factory.h" />
     <ClInclude Include="Source\V2World\Leader\V2Leader.h" />
-    <ClInclude Include="Source\V2World\RGORandomization\Bucket.h" />
-    <ClInclude Include="Source\V2World\RGORandomization\BucketList.h" />
     <ClInclude Include="Source\V2World\V2Army.h" />
     <ClInclude Include="Source\V2World\V2Country.h" />
     <ClInclude Include="Source\V2World\V2Creditor.h" />
@@ -462,7 +465,6 @@
     <ClInclude Include="Source\V2World\V2State.h" />
     <ClInclude Include="Source\V2World\V2UncivReforms.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
-    <ClInclude Include="Source\V2World\Vic2Regions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

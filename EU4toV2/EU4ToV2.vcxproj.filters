@@ -84,9 +84,6 @@
     <ClCompile Include="Source\V2World\V2World.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Vic2Regions.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="..\common_items\WinUtils.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
@@ -185,12 +182,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\History\CountryHistoryDate.cpp">
       <Filter>EU4World\History</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\RGORandomization\Bucket.cpp">
-      <Filter>Vic2World\RGORandomization</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\RGORandomization\BucketList.cpp">
-      <Filter>Vic2World\RGORandomization</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\Country\V2Party.cpp">
       <Filter>Vic2World\Country</Filter>
@@ -432,6 +423,18 @@
     <ClCompile Include="Source\Mappers\NavalBases\NavalBaseMapper.cpp">
       <Filter>Mappers\NavalBaseMapper</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\RGORandomization\Bucket.cpp">
+      <Filter>Mappers\RGORandomization</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RGORandomization\BucketList.cpp">
+      <Filter>Mappers\RGORandomization</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.cpp">
+      <Filter>Mappers\RegionProvinces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\PortProvinces\PortProvinces.cpp">
+      <Filter>Mappers\PortProvinces</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -514,9 +517,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2World.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Vic2Regions.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\World.h">
@@ -620,12 +620,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\History\CountryHistoryDate.h">
       <Filter>EU4World\History</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\RGORandomization\Bucket.h">
-      <Filter>Vic2World\RGORandomization</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\RGORandomization\BucketList.h">
-      <Filter>Vic2World\RGORandomization</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\Country\V2Party.h">
       <Filter>Vic2World\Country</Filter>
@@ -867,6 +861,18 @@
     <ClInclude Include="Source\Mappers\NavalBases\NavalBaseMapper.h">
       <Filter>Mappers\NavalBaseMapper</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\RGORandomization\Bucket.h">
+      <Filter>Mappers\RGORandomization</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RGORandomization\BucketList.h">
+      <Filter>Mappers\RGORandomization</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.h">
+      <Filter>Mappers\RegionProvinces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\PortProvinces\PortProvinces.h">
+      <Filter>Mappers\PortProvinces</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -919,9 +925,6 @@
     </Filter>
     <Filter Include="EU4World\Leader">
       <UniqueIdentifier>{cad4ad12-a780-4d35-bce5-cfa1c1b23f89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Vic2World\RGORandomization">
-      <UniqueIdentifier>{c2a72362-f9f1-46ba-9af1-ea88983f295c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Vic2World\Country">
       <UniqueIdentifier>{8b2897e0-22e8-4284-a6d6-52b237ebab64}</UniqueIdentifier>
@@ -1030,6 +1033,15 @@
     </Filter>
     <Filter Include="Mappers\NavalBaseMapper">
       <UniqueIdentifier>{b38c0acf-7b11-4847-931d-d025c20b1f8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\RGORandomization">
+      <UniqueIdentifier>{63392046-e39d-4304-b1ef-bf0f118a1ed6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\RegionProvinces">
+      <UniqueIdentifier>{20e118dd-a05a-43d1-af80-c5ff91db7e1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\PortProvinces">
+      <UniqueIdentifier>{cf57a5e8-a8d7-4839-81fb-1a19da32768b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -14,7 +14,6 @@
 #include "../EU4World/Diplomacy/EU4Diplomacy.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
-#include "RGORandomization/BucketList.h"
 #include "../Helpers/TechValues.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "V2Province.h"
@@ -67,8 +66,7 @@ V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper&
 
 void V2World::shuffleRgos()
 {
-	BucketList buckets;
-	if (buckets.empty())
+	if (bucketShuffler.empty())
 	{
 		LOG(LogLevel::Warning) << "No valid buckets defined, skipping RGO randomisation.";
 		return;
@@ -77,9 +75,9 @@ void V2World::shuffleRgos()
 	LOG(LogLevel::Info) << "Shuffling RGOs in provinces.";
 	for (auto& prov : provinces)
 	{
-		buckets.putInBucket(prov.second);
+		bucketShuffler.putInBucket(prov.second);
 	}
-	buckets.shuffle();
+	bucketShuffler.shuffle();
 }
 
 void V2World::importProvinces()
@@ -1145,7 +1143,7 @@ void V2World::setupStates()
 		map<string, V2Country*>::iterator iter2 = countries.find(owner);
 		if (iter2 != countries.end())
 		{
-			iter2->second->addState(newState);
+			iter2->second->addState(newState, portProvincesMapper);
 		}
 	}
 }
@@ -1625,20 +1623,6 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting armies and navies";
 
-	// hack for naval bases.  not ALL naval bases are in port provinces, and if you spawn a navy at a naval base in
-	// a non-port province, Vicky crashes....
-	vector<int> port_whitelist;
-	{
-		int temp = 0;
-		ifstream s("configurables/port_whitelist.txt");
-		while (s.good() && !s.eof())
-		{
-			s >> temp;
-			port_whitelist.push_back(temp);
-		}
-		s.close();
-	}
-
 	// get cost per regiment values
 	std::map<std::string, int> regimentCosts = regimentCostsMapper.getRegimentCosts();
 	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0.0 };
@@ -1654,7 +1638,7 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
 		itr->second->convertLeaders(leaderTraitMapper);
-		itr->second->convertArmies(cost_per_regiment, provinces, port_whitelist, provinceMapper, adjacencyMapper);
+		itr->second->convertArmies(cost_per_regiment, provinces, portProvincesMapper, provinceMapper, adjacencyMapper);
 	}
 }
 

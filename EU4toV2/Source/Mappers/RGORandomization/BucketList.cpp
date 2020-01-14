@@ -3,31 +3,32 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-BucketList::BucketList()
+mappers::BucketList::BucketList()
 {
 	// Initialise with the random seed from the EU4 save so that the shuffle
 	// is deterministic for particular saves, but varies between saves.
 	shuffler.seed(theConfiguration.getEU4RandomSeed());
 
-	registerKeyword(std::regex("bucket"), [this](const std::string& key, std::istream& theStream) 
+	registerKeyword("bucket", [this](const std::string& key, std::istream& theStream) 
 		{
 			Bucket newBucket(theStream);
 			buckets.push_back(newBucket);
 		}
 	);
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
 	parseFile("configurables/rgo_randomization.txt");
+	clearRegisteredKeywords();
 }
 
-void BucketList::putInBucket(V2Province* prov)
+void mappers::BucketList::putInBucket(V2Province* prov)
 {
-	std::string provClimate = prov->getClimate();
+	const auto provClimate = prov->getClimate();
 	if (provClimate.empty())
 	{
 		return;
 	}
-	std::string provTerrain = prov->getTerrain();
+	const auto provTerrain = prov->getTerrain();
 	if (provTerrain.empty() || provTerrain == "ocean")
 	{
 		return;
@@ -44,7 +45,7 @@ void BucketList::putInBucket(V2Province* prov)
 	}
 }
 
-void BucketList::shuffle()
+void mappers::BucketList::shuffle()
 {
 	for (auto& bucket : buckets)
 	{

@@ -2,14 +2,14 @@
 #include "ParserHelpers.h"
 #include "Log.h"
 
-Bucket::Bucket(std::istream& theStream)
+mappers::Bucket::Bucket(std::istream& theStream)
 {
-	registerKeyword(std::regex("name"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString nameStr(theStream);
 			name = nameStr.getString();
 		});
-	registerKeyword(std::regex("climate"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("climate", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString climateStr(theStream);
 			if (climateStr.getString() == "any") 
@@ -21,7 +21,7 @@ Bucket::Bucket(std::istream& theStream)
 				climates.push_back(climateStr.getString());
 			}
 		});
-	registerKeyword(std::regex("terrain"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("terrain", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString terrainStr(theStream);
 			if (terrainStr.getString() == "any")
@@ -33,19 +33,20 @@ Bucket::Bucket(std::istream& theStream)
 				terrains.push_back(terrainStr.getString());
 			}
 		});
-	registerKeyword(std::regex("fraction"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("fraction", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleDouble fractionDbl(theStream);
 			fraction = fractionDbl.getDouble();
 		});
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }
 
-bool Bucket::match(const std::string& provClimate, const std::string& provTerrain)
+bool mappers::Bucket::match(const std::string& provClimate, const std::string& provTerrain)
 {
-	bool climateMatch = wildClimate;
+	auto climateMatch = wildClimate;
 	if (!climateMatch)
 	{
 		for (const auto& climate : climates)
@@ -62,7 +63,7 @@ bool Bucket::match(const std::string& provClimate, const std::string& provTerrai
 	{
 		return false;
 	}
-	bool terrainMatch = wildTerrain;
+	auto terrainMatch = wildTerrain;
 	if (!terrainMatch)
 	{
 		for (const auto& terrain : terrains)
@@ -78,10 +79,10 @@ bool Bucket::match(const std::string& provClimate, const std::string& provTerrai
 	return terrainMatch;
 }
 
-void Bucket::shuffle(std::default_random_engine& shuffler)
+void mappers::Bucket::shuffle(std::default_random_engine& shuffler)
 {
 	std::shuffle(provinces.begin(), provinces.end(), shuffler);
-	int numToShuffle = (int)floor(0.5 + fraction * provinces.size());
+	const auto numToShuffle = static_cast<int>(floor(0.5 + fraction * provinces.size()));
 	if (numToShuffle < 2)
 	{
 		LOG(LogLevel::Debug) << "Skipping empty bucket " << name;
@@ -93,7 +94,7 @@ void Bucket::shuffle(std::default_random_engine& shuffler)
 		rgos.push_back(provinces[i]->getRgoType());
 	}
 	std::shuffle(rgos.begin(), rgos.end(), shuffler);
-	for (int i = 0; i < numToShuffle; ++i)
+	for (auto i = 0; i < numToShuffle; ++i)
 	{
 		provinces[i]->setRgoType(rgos[i]);
 	}
