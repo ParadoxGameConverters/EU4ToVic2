@@ -1763,14 +1763,11 @@ void V2World::output(unsigned int potentialGPs) const
 		}
 	}
 	fprintf(allCountriesFile, "\n");
-	if ((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD_NNM"))
+	fprintf(allCountriesFile, "##HoD Dominions\n");
+	fprintf(allCountriesFile, "dynamic_tags = yes # any tags after this is considered dynamic dominions\n");
+	for (map<string, V2Country*>::const_iterator i = dynamicCountries.begin(); i != dynamicCountries.end(); i++)
 	{
-		fprintf(allCountriesFile, "##HoD Dominions\n");
-		fprintf(allCountriesFile, "dynamic_tags = yes # any tags after this is considered dynamic dominions\n");
-		for (map<string, V2Country*>::const_iterator i = dynamicCountries.begin(); i != dynamicCountries.end(); i++)
-		{
-			i->second->outputToCommonCountriesFile(allCountriesFile);
-		}
+		i->second->outputToCommonCountriesFile(allCountriesFile);
 	}
 	fclose(allCountriesFile);
 

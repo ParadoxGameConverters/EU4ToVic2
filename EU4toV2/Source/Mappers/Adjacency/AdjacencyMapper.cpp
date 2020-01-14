@@ -59,7 +59,7 @@ void mappers::AdjacencyMapper::inputAdjacencies(std::istream& adjacenciesFile)
 	}
 }
 
-std::istream& operator >> (std::istream& stream, mappers::HODAdjacency& adjacency)
+std::istream& operator >> (std::istream& stream, mappers::Adjacency& adjacency)
 {
 	stream.read(reinterpret_cast<char*>(&adjacency.type), 4);
 	stream.read(reinterpret_cast<char*>(&adjacency.to), 4);
@@ -74,53 +74,14 @@ std::istream& operator >> (std::istream& stream, mappers::HODAdjacency& adjacenc
 	return stream;
 };
 
-std::istream& operator >> (std::istream& stream, mappers::AHDAdjacency& adjacency)
-{
-	stream.read(reinterpret_cast<char*>(&adjacency.type), 4);
-	stream.read(reinterpret_cast<char*>(&adjacency.to), 4);
-	stream.read(reinterpret_cast<char*>(&adjacency.via), 4);
-	stream.read(reinterpret_cast<char*>(&adjacency.unknown1), 4);
-	stream.read(reinterpret_cast<char*>(&adjacency.unknown2), 4);
-	stream.read(reinterpret_cast<char*>(&adjacency.pathX), 4);
-	stream.read(reinterpret_cast<char*>(&adjacency.pathY), 4);
-
-	return stream;
-}
-
-std::istream& operator >> (std::istream& stream, mappers::VanillaAdjacency& adjacency)
-{
-	stream.read(reinterpret_cast<char*>(&adjacency.type), 4);
-	stream.read(reinterpret_cast<char*>(&adjacency.to), 4);
-	stream.read(reinterpret_cast<char*>(&adjacency.via), 4);
-	stream.read(reinterpret_cast<char*>(&adjacency.unknown1), 4);
-	stream.read(reinterpret_cast<char*>(&adjacency.unknown2), 4);
-
-	return stream;
-}
-
 std::vector<int> mappers::AdjacencyMapper::readAnAdjacenciesSet(std::istream& adjacenciesFile, unsigned int numAdjacencies)
 {
 	std::vector<int> adjacencies;
 	for (unsigned int i = 0; i < numAdjacencies; i++)
 	{
-		if (theConfiguration.getVic2Gametype() == "vanilla")
-		{
-			VanillaAdjacency readAdjacency;
-			adjacenciesFile >> readAdjacency;
-			adjacencies.push_back(readAdjacency.to);
-		}
-		else if (theConfiguration.getVic2Gametype() == "AHD")
-		{
-			AHDAdjacency readAdjacency;
-			adjacenciesFile >> readAdjacency;
-			adjacencies.push_back(readAdjacency.to);
-		}
-		if ((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD-NNM"))
-		{
-			HODAdjacency readAdjacency;
-			adjacenciesFile >> readAdjacency;
-			adjacencies.push_back(readAdjacency.to);
-		}
+		Adjacency readAdjacency;
+		adjacenciesFile >> readAdjacency;
+		adjacencies.push_back(readAdjacency.to);
 	}
 
 	return adjacencies;
