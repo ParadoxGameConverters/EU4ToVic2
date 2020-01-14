@@ -885,11 +885,10 @@ void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
 
 
 // used only for countries which are NOT converted (i.e. unions, dead countries, etc)
-void V2Country::initFromHistory(const mappers::V2Unreleasables& unreleasablesMapper)
+void V2Country::initFromHistory(const mappers::Unreleasables& unreleasablesMapper)
 {
 	// Ping unreleasable_tags for this country's TAG
-	auto unreleasables = unreleasablesMapper.getUnreleasables();
-	if (unreleasables.count(tag)) isReleasableVassal = false;
+	isReleasableVassal = unreleasablesMapper.isTagReleasable(tag);
 
 	string fullFilename;
 

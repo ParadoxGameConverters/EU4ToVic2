@@ -287,9 +287,9 @@
     <ClCompile Include="Source\Mappers\TechSchools\TechSchools.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp" />
     <ClCompile Include="Source\targa.cpp" />
     <ClCompile Include="Source\V2World\Country\V2Party.cpp" />
-    <ClCompile Include="Source\V2World\Country\V2Unreleasables.cpp" />
     <ClCompile Include="Source\V2World\Factory\V2Factory.cpp" />
     <ClCompile Include="Source\V2World\Leader\V2Leader.cpp" />
     <ClCompile Include="Source\V2World\Leader\V2LeaderTrait.cpp" />
@@ -436,9 +436,9 @@
     <ClInclude Include="Source\Mappers\TechSchools\TechSchools.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitType.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
+    <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h" />
     <ClInclude Include="Source\targa.h" />
     <ClInclude Include="Source\V2World\Country\V2Party.h" />
-    <ClInclude Include="Source\V2World\Country\V2Unreleasables.h" />
     <ClInclude Include="Source\V2World\Factory\V2Factory.h" />
     <ClInclude Include="Source\V2World\Leader\V2Leader.h" />
     <ClInclude Include="Source\V2World\Leader\V2LeaderTrait.h" />

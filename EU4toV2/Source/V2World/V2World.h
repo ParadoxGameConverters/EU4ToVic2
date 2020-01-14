@@ -25,6 +25,7 @@
 #include "../Mappers/CulturalUnions/CulturalUnionMapper.h"
 #include "../Mappers/FactoryTypes/FactoryTypeMapper.h"
 #include "../Mappers/Pops/PopTypes.h"
+#include "../Mappers/Unreleasables/Unreleasables.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -139,6 +140,7 @@ class V2World
 		mappers::CulturalUnionMapper culturalUnionMapper;
 		mappers::CulturalUnionMapper culturalNationalitiesMapper;
 		mappers::FactoryTypeMapper factoryTypeMapper;
+		mappers::Unreleasables unreleasablesMapper;
 };
 
 

@@ -24,7 +24,6 @@
 #include "V2Country.h"
 #include "V2Flags.h"
 #include "Leader/V2LeaderTraitMapper.h"
-#include "Country/V2Unreleasables.h"
 #include "../Mappers/Pops/PopMapper.h"
 #include "Map/MapProvince.h"
 #include "../EU4World/Country/EU4Country.h"
@@ -596,8 +595,6 @@ void V2World::convertPrestige()
 void V2World::addAllPotentialCountries()
 {
 	// ALL potential countries should be output to the file, otherwise some things don't get initialized right when loading Vic2
-	mappers::V2Unreleasables unreleasablesMapper;
-
 	for (auto potentialCountry : potentialCountries)
 	{
 		map<string, V2Country*>::iterator citr = countries.find(potentialCountry.first);

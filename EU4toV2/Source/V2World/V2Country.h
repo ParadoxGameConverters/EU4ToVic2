@@ -20,7 +20,7 @@
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../Mappers/PartyNames/PartyNameMapper.h"
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
-#include "Country/V2Unreleasables.h"
+#include "../Mappers/Unreleasables/Unreleasables.h"
 #include <memory>
 #include <set>
 #include <vector>
@@ -78,7 +78,7 @@ class V2Country : commonItems::parser
 			const mappers::GovernmentMapper& governmentMapper,
 			const mappers::CountryMappings& countryMapper
 		);
-		void initFromHistory(const mappers::V2Unreleasables& unreleasablesMapper);
+		void initFromHistory(const mappers::Unreleasables& unreleasablesMapper);
 		void								addProvince(V2Province* _province);
 		void								addState(V2State* newState);
 		void convertArmies(

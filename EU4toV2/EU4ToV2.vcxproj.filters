@@ -204,9 +204,6 @@
     <ClCompile Include="Source\V2World\Country\V2Party.cpp">
       <Filter>Vic2World\Country</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Country\V2Unreleasables.cpp">
-      <Filter>Vic2World\Country</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\NationMerger\MergeBlock.cpp">
       <Filter>EU4World\NationMerger</Filter>
     </ClCompile>
@@ -432,6 +429,9 @@
     <ClCompile Include="Source\Mappers\Pops\PopTypes.cpp">
       <Filter>Mappers\Pops</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp">
+      <Filter>Mappers\Unreleasables</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -637,9 +637,6 @@
       <Filter>Vic2World\RGORandomization</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\Country\V2Party.h">
-      <Filter>Vic2World\Country</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Country\V2Unreleasables.h">
       <Filter>Vic2World\Country</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\NationMerger\MergeBlock.h">
@@ -867,6 +864,9 @@
     <ClInclude Include="Source\Mappers\Pops\PopTypes.h">
       <Filter>Mappers\Pops</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h">
+      <Filter>Mappers\Unreleasables</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1024,6 +1024,9 @@
     </Filter>
     <Filter Include="Mappers\Pops">
       <UniqueIdentifier>{bc3b5abc-b404-48e5-9756-f823eece9c30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\Unreleasables">
+      <UniqueIdentifier>{1793a7fb-3cea-4ec5-a68a-95efcc995b94}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
