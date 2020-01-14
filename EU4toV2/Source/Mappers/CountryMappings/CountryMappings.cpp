@@ -18,7 +18,7 @@ mappers::CountryMappings::CountryMappings()
 {
 	LOG(LogLevel::Info) << "Getting country mappings";
 	registerKeys();
-	parseFile("country_mappings.txt");
+	parseFile("configurables/country_mappings.txt");
 	clearRegisteredKeywords();
 	getAvailableFlags();
 }
@@ -205,8 +205,6 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 	const std::map<std::string, V2Country*>& Vic2Countries,
 	const ProvinceMapper& provinceMapper
 ) {
-	bool mapped = false;
-
 	std::optional<int> Vic2Capital;
 	int EU4Capital = country->getCapital();
 	auto potentialVic2Capitals = provinceMapper.getVic2ProvinceNumbers(EU4Capital);
@@ -214,8 +212,6 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 	{
 		Vic2Capital = *potentialVic2Capitals.begin();
 	}
-
-	ColonialTagMapper colonialTagMapper;
 
 	for (auto colony: colonialTagMapper.getColonyList())
 	{

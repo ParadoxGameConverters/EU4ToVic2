@@ -70,9 +70,9 @@ int EU4::EU4Army::getTotalTypeStrength(REGIMENTCATEGORY category) const
 	return totalStrength;
 }
 
-void EU4::EU4Army::resolveRegimentTypes(const mappers::UnitTypeMapper& utm)
+void EU4::EU4Army::resolveRegimentTypes(const mappers::UnitTypeMapper& unitTypeMapper)
 {
-	auto regimentTypeMap = utm.getUnitTypeMap();
+	auto regimentTypeMap = unitTypeMapper.getUnitTypeMap();
 	for (auto& regiment : regimentList)
 	{
 		try

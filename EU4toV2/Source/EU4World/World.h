@@ -9,15 +9,14 @@
 #include "Religions/Religions.h"
 #include "Modifiers/Modifiers.h"
 #include "Country/EU4Country.h"
-#include "../Mappers/CultureMapper.h"
-#include "../Mappers/UnitTypeMapper.h"
+#include "../Mappers/CultureMapper/CultureMapper.h"
+#include "../Mappers/UnitTypes/UnitTypeMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "../Mappers/ReligionMapper.h"
+#include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/Buildings/Buildings.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "newParser.h"
-#include <istream>
 #include <memory>
 
 namespace EU4
@@ -68,11 +67,14 @@ namespace EU4
 		std::vector<EU4Agreement> diplomacy;
 		std::unique_ptr<EU4::Version> version;
 		std::string revolutionTargetString;
+		std::map<std::string, mappers::UnitType> unitTypeMap;
+
 		Religions theReligions;
+		Modifiers modifierTypes;
+		mappers::UnitTypeMapper unitTypeMapper;
 		mappers::Buildings buildingTypes;
 		mappers::CultureGroups cultureGroupsMapper;
-		Modifiers modifierTypes;
-		std::map<std::string, mappers::UnitType> unitTypeMap;
+
 	};
 }
 

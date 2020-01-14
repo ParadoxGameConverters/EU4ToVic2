@@ -6,8 +6,8 @@ mappers::IdeaEffectMapper::IdeaEffectMapper()
 {
 	LOG(LogLevel::Info) << "Parsing idea effects";
 	registerKeys();
-	parseFile("idea_effects.txt");
-	parseFile("reform_effects.txt");
+	parseFile("configurables/idea_effects.txt");
+	parseFile("configurables/reform_effects.txt");
 	clearRegisteredKeywords();
 }
 

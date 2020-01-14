@@ -1,5 +1,5 @@
 #include "Areas.h"
-#include "Log.h"
+#include "Area.h"
 
 EU4::Areas::Areas(std::istream& theStream)
 {

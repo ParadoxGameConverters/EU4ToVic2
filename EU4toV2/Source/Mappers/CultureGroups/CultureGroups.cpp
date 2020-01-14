@@ -1,7 +1,6 @@
 #include "CultureGroups.h"
 #include "../../Configuration.h"
 #include "OSCompatibilityLayer.h"
-#include "ParserHelpers.h"
 #include <set>
 #include "Log.h"
 
@@ -18,9 +17,9 @@ mappers::CultureGroups::CultureGroups()
 	}
 	for (auto itr: theConfiguration.getEU4Mods())
 	{
-		std::set<std::string> cultureFiles;
-		Utils::GetAllFilesInFolder(itr + "/common/cultures/", cultureFiles);
-		for (auto cultureFile: cultureFiles)
+		std::set<std::string> moreCultureFiles;
+		Utils::GetAllFilesInFolder(itr + "/common/cultures/", moreCultureFiles);
+		for (auto cultureFile: moreCultureFiles)
 		{
 			parseFile(itr + "/common/cultures/" + cultureFile);
 		}

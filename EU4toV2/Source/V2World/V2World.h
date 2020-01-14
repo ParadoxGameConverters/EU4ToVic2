@@ -11,13 +11,21 @@
 #include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
-#include "../Mappers/CultureMapper.h"
-#include "../Mappers/Continents.h"
+#include "../Mappers/CultureMapper/CultureMapper.h"
+#include "../Mappers/Geography/Continents.h"
+#include "../Mappers/Geography/ClimateMapper.h"
+#include "../Mappers/Geography/TerrainDataMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "../Mappers/ReligionMapper.h"
-#include "../Mappers/GovernmentMapper.h"
-#include "../Mappers/MinorityPopMapper.h"
+#include "../Mappers/ReligionMapper/ReligionMapper.h"
+#include "../Mappers/GovernmentMapper/GovernmentMapper.h"
+#include "../Mappers/MinorityPops/MinorityPopMapper.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
+#include "../Mappers/Adjacency/AdjacencyMapper.h"
+#include "../Mappers/PartyNames/PartyNameMapper.h"
+#include "../Mappers/RegimentCosts/RegimentCostsMapper.h"
+#include "../Mappers/StateMapper/StateMapper.h"
+#include "../Mappers/TechSchools/TechSchoolMapper.h"
+#include "../Mappers/CulturalUnions/CulturalUnionMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -38,6 +46,7 @@ class V2World
 		V2Province* getProvince(int provNum) const;
 		V2Country* getCountry(std::string tag) const;
 		double getDuration() const { return difftime(std::time(0), begin); }
+		const mappers::PartyNameMapper& getPartyNameMapper() const { return partyNameMapper; }
 
 	private:
 		void importProvinces();
@@ -64,8 +73,6 @@ class V2World
 		void importPotentialCountry(const std::string& line, bool dynamicCountry);
 
 		void initializeCultureMappers(const EU4::World& sourceWorld);
-		void initializeReligionMapper(const EU4::World& sourceWorld);
-		void initializeProvinceMapper();
 
 		void convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
@@ -108,21 +115,30 @@ class V2World
 		V2Diplomacy diplomacy;
 		std::map<int, std::set<std::string>> colonies;
 		std::map<std::string, std::list<int>>	popRegions;
-		std::unique_ptr<Vic2::TechSchools> techSchools;
 		std::map<int, int> leaderIDMap; // <EU4, V2>
 		long totalWorldPopulation;
 		bool isRandomWorld;
 		int techGroupAlgorithm;
 
-		std::unique_ptr<mappers::CultureMapper> cultureMapper;
-		std::unique_ptr<mappers::CultureMapper> slaveCultureMapper;
-		std::unique_ptr<mappers::ReligionMapper> religionMapper;
-		std::unique_ptr<mappers::ProvinceMapper> provinceMapper;
-
 		std::time_t begin = std::time(0);
 
+		mappers::ProvinceMapper provinceMapper;
 		mappers::Continents continentsMapper;
 		mappers::CountryMappings countryMapper;
+		mappers::AdjacencyMapper adjacencyMapper;
+		mappers::ClimateMapper climateMapper;
+		mappers::TerrainDataMapper terrainDataMapper;
+		mappers::CultureMapper cultureMapper;
+		mappers::CultureMapper slaveCultureMapper;
+		mappers::GovernmentMapper governmentMapper;
+		mappers::MinorityPopMapper minorityPopMapper;
+		mappers::PartyNameMapper partyNameMapper;
+		mappers::RegimentCostsMapper regimentCostsMapper;
+		mappers::ReligionMapper religionMapper;
+		mappers::StateMapper stateMapper;
+		mappers::TechSchoolMapper techSchoolMapper;
+		mappers::CulturalUnionMapper culturalUnionMapper;
+		mappers::CulturalUnionMapper culturalNationalitiesMapper;
 };
 
 

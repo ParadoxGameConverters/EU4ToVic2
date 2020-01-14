@@ -17,7 +17,7 @@ mappers::V2LeaderTraitMapper::V2LeaderTraitMapper()
 		});
 	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
 
-	parseFile("leader_traits.txt");
+	parseFile("configurables/leader_traits.txt");
 }
 
 std::optional<std::string> mappers::V2LeaderTraitMapper::getBackground(int fire, int shock, int manuever, int siege) const

@@ -1,25 +1,25 @@
 #ifndef V2COUNTRY_H_
 #define V2COUNTRY_H_
 
-
-
 #include "V2Army.h"
 #include "Country/V2Party.h"
 #include "Leader/V2Leader.h"
 #include "Leader/V2LeaderTraitMapper.h"
 #include "V2Localisation.h"
 #include "V2Relations.h"
-#include "V2TechSchools.h"
 #include "Color.h"
 #include "Date.h"
 #include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Regions/Regions.h"
 #include "../EU4World/Country/EU4NationalSymbol.h"
-#include "../Mappers/CultureMapper.h"
+#include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "../Mappers/GovernmentMapper.h"
-#include "../Mappers/ReligionMapper.h"
+#include "../Mappers/GovernmentMapper/GovernmentMapper.h"
+#include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
+#include "../Mappers/Adjacency/AdjacencyMapper.h"
+#include "../Mappers/PartyNames/PartyNameMapper.h"
+#include "../Mappers/TechSchools/TechSchoolMapper.h"
 #include "Country/V2Unreleasables.h"
 #include <memory>
 #include <set>
@@ -69,7 +69,7 @@ class V2Country : commonItems::parser
 		void initFromEU4Country(
 			const EU4::Regions& eu4Regions,
 			std::shared_ptr<EU4::Country> _srcCountry,
-			const std::unique_ptr<Vic2::TechSchools>& techSchools,
+			const mappers::TechSchoolMapper& techSchoolMapper,
 			const mappers::CultureMapper& cultureMapper,
 			const mappers::CultureMapper& slaveCultureMapper,
 			const mappers::IdeaEffectMapper& ideaEffectMapper,
@@ -85,7 +85,8 @@ class V2Country : commonItems::parser
 			double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)],
 			const std::map<int, V2Province*>& allProvinces,
 			std::vector<int> port_whitelist,
-			const mappers::ProvinceMapper& provinceMapper
+			const mappers::ProvinceMapper& provinceMapper,
+			const mappers::AdjacencyMapper& adjacencyMapper
 		);
 		void convertLeaders(mappers::V2LeaderTraitMapper& leaderTraits);
 		bool addFactory(const V2Factory& factory);
@@ -154,7 +155,7 @@ class V2Country : commonItems::parser
 		double getPolitical_parties() const { return political_partiesInvestment; }
 
 		void buildCanals(std::shared_ptr<EU4::Country> srcCountry);
-		void determineTechSchool(const std::unique_ptr<Vic2::TechSchools>& techschools);
+		void determineTechSchool(const mappers::TechSchoolMapper& techSchoolMapper);
 		void calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry);
 		void generateRelations(std::shared_ptr<EU4::Country> srcCountry, const mappers::CountryMappings& countryMapper);
 		void resolvePolitics();
@@ -162,7 +163,7 @@ class V2Country : commonItems::parser
 		void determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::GovernmentMapper& governmentMapper);
 		void setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcCountry, const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions);
 		void setReligion(std::shared_ptr<EU4::Country> srcCountry, const mappers::ReligionMapper& religionMapper);
-		void loadPartiesFromBlob();
+		void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper);
 
 	private:
 		void			outputTech(FILE*) const ;
@@ -172,7 +173,8 @@ class V2Country : commonItems::parser
 			V2Army& army,
 			EU4::REGIMENTCATEGORY rc,
 			std::map<int, V2Province*> allProvinces,
-			const mappers::ProvinceMapper& provinceMapper
+			const mappers::ProvinceMapper& provinceMapper,
+			const mappers::AdjacencyMapper& adjacencyMapper
 		);
 		std::vector<int> getPortProvinces(const std::vector<int>& locationCandidates, std::map<int, V2Province*> allProvinces);
 		V2Army* getArmyForRemainder(EU4::REGIMENTCATEGORY rc);

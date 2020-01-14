@@ -1,0 +1,28 @@
+#ifndef TECH_SCHOOL
+#define TECH_SCHOOL
+
+#include "newParser.h"
+
+namespace mappers
+{
+	class TechSchool: commonItems::parser
+	{
+	public:
+		TechSchool(std::istream& theStream);
+		double calculateComparisonScore(
+			double armyInvestment, 
+			double commerceInvestment, 
+			double cultureInvestment, 
+			double industryInvestment, 
+			double navyInvestment) const;
+
+	private:
+		double armyBonus = 0.0;
+		double commerceBonus = 0.0;
+		double cultureBonus = 0.0;
+		double industryBonus = 0.0;
+		double navyBonus = 0.0;
+	};
+}
+
+#endif // TECH_SCHOOL

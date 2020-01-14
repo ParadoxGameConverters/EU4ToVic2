@@ -3,12 +3,13 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
+#include <random>
 
 mappers::CK2TitleMapper::CK2TitleMapper()
 {
 	LOG(LogLevel::Info) << "Getting CK2 titles";
 	registerKeys();
-	parseFile("ck2titleMap.txt");
+	parseFile("configurables/ck2_title_map.txt");
 	clearRegisteredKeywords();
 }
 

@@ -1,9 +1,7 @@
 #include "Modifiers.h"
-#include "ParserHelpers.h"
 #include "../../Configuration.h"
 #include "OSCompatibilityLayer.h"
 #include <set>
-#include "Log.h"
 
 EU4::Modifiers::Modifiers()
 {

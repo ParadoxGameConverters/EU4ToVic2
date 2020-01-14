@@ -12,12 +12,13 @@ namespace EU4
 	public:
 		Modifiers();
 		Modifiers(std::istream& theStream);
-		void registerKeys();
 		void initialize();
-		void processFolder(const std::string& folderName);
 		std::optional<Modifier> getModifier(const std::string& modifierName) const;
 
 	private:
+		void registerKeys();
+		void processFolder(const std::string& folderName);
+
 		std::map<std::string, Modifier> modifiers;
 	};
 }

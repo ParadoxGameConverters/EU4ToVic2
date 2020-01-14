@@ -10,14 +10,7 @@ namespace EU4
 	{
 	public:
 		Modifier() = default;
-		~Modifier() = default;
-		Modifier(const Modifier&) = default;
-		Modifier(Modifier&&) = default;
-		Modifier& operator=(const Modifier&) = default;
-		Modifier& operator=(Modifier&&) = default;
-
 		Modifier(std::istream& theStream);
-
 		double getEffectAmount(const std::string& modifier) const;
 
 		const std::map<std::string, double>& getAllEffects() const { return effects; }

@@ -1,7 +1,6 @@
 #ifndef EU4_GOVERNMENTSECTION_H
 #define EU4_GOVERNMENTSECTION_H
 
-#include "EU4ReformStackSection.h"
 #include "newParser.h"
 #include <set>
 

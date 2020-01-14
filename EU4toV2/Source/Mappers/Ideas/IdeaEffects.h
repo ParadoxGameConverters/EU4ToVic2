@@ -2,7 +2,6 @@
 #define IDEA_EFFECTS_H
 
 #include "newParser.h"
-#include <set>
 
 namespace mappers
 {

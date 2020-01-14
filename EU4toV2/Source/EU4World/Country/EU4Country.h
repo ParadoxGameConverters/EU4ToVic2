@@ -2,17 +2,14 @@
 #define EU4_COUNTRY_H
 
 #include "../Army/EU4Army.h"
-#include "Color.h"
-#include "Date.h"
 #include "../../Mappers/CultureGroups/CultureGroups.h"
-#include "../../Mappers/UnitTypeMapper.h"
+#include "../../Mappers/UnitTypes/UnitTypeMapper.h"
 #include "../../Mappers/Ideas/IdeaEffectMapper.h"
 #include "newParser.h"
 #include <memory>
 #include <optional>
 #include <set>
 #include "EU4NationalSymbol.h"
-#include "../ID.h"
 #include "../EU4Version.h"
 #include "../Leader/EU4Leader.h"
 #include "../Relations/EU4RelationDetails.h"

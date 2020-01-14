@@ -9,8 +9,6 @@
 #include <queue>
 #include <cmath>
 #include <cfloat>
-#include "../Mappers/TerrainDataMapper.h"
-#include "../Mappers/ClimateMapper.h"
 #include "NewParserToOldParserConverters.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -21,26 +19,17 @@
 #include "../EU4World/Provinces/EU4Province.h"
 #include "RGORandomization/BucketList.h"
 #include "../Helpers/TechValues.h"
-#include "../Mappers/AdjacencyMapper.h"
-#include "../Mappers/CultureMapper.h"
+#include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/Ideas/TechGroupsMapper.h"
-#include "../Mappers/MinorityPopMapper.h"
-#include "../Mappers/GovernmentMapper.h"
-#include "../Mappers/ReligionMapper.h"
-#include "../Mappers/RegimentCostsMapper.h"
-#include "BlockedTechSchools.h"
-#include "StateMapper.h"
 #include "V2Province.h"
 #include "V2State.h"
 #include "V2Relations.h"
-#include "V2TechSchools.h"
 #include "V2Army.h"
 #include "V2Pop.h"
 #include "V2Country.h"
 #include "V2Reforms.h"
 #include "V2Flags.h"
-#include "Vic2CultureUnionMapper.h"
 #include "Factory/V2FactoryFactory.h"
 #include "Leader/V2LeaderTraitMapper.h"
 #include "Country/V2Unreleasables.h"
@@ -60,14 +49,16 @@ V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper&
 	importPotentialCountries();
 	isRandomWorld = sourceWorld.isRandomWorld();
 
-	initializeProvinceMapper();
-	sourceWorld.checkAllProvincesMapped(*provinceMapper);
+	sourceWorld.checkAllProvincesMapped(provinceMapper);
 
-	countryMapper.createMappings(sourceWorld, potentialCountries, *provinceMapper);
+	countryMapper.createMappings(sourceWorld, potentialCountries, provinceMapper);
 
 	LOG(LogLevel::Info) << "Converting world";
 	initializeCultureMappers(sourceWorld);
-	initializeReligionMapper(sourceWorld);
+	sourceWorld.checkAllEU4CulturesMapped(cultureMapper);
+
+	sourceWorld.checkAllEU4ReligionsMapped(religionMapper);
+
 	convertCountries(sourceWorld, ideaEffectMapper);
 	convertProvinces(sourceWorld);
 	convertDiplomacy(sourceWorld);
@@ -146,7 +137,7 @@ std::set<std::string> V2World::discoverProvinceFilenames()
 
 void V2World::importProvinceClimates()
 {
-	mappers::ClimateMapper climateMapper;
+	
 	std::map<std::string, std::vector<int>> climateMap = climateMapper.getClimateMap();
 	for (const auto& climate : climateMap)
 	{
@@ -187,7 +178,6 @@ void V2World::importProvinceLocalizations(const string& file)
 
 void V2World::importProvinceTerrains()
 {
-	mappers::TerrainDataMapper terrainDataMapper;
 	for (const auto& provData : terrainDataMapper.getTerrainMap())
 	{
 		auto* province = getProvince(provData.first);
@@ -214,8 +204,6 @@ void V2World::importDefaultPops()
 	Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/", filenames);
 
 	LOG(LogLevel::Info) << "Parsing minority pops mappings";
-
-	mappers::MinorityPopMapper minorityPopMapper;
 
 	for (auto filename : filenames)
 	{
@@ -441,38 +429,11 @@ void V2World::importPotentialCountry(const string& line, bool dynamicCountry)
 
 void V2World::initializeCultureMappers(const EU4::World& sourceWorld)
 {
-	LOG(LogLevel::Info) << "Parsing culture mappings";
-
-	std::ifstream cultureMapFile("cultureMap.txt");
-	cultureMapper = std::make_unique<mappers::CultureMapper>(cultureMapFile);
-	cultureMapFile.close();
-
-	std::ifstream slaveCultureMapFile("slaveCultureMap.txt");
-	slaveCultureMapper = std::make_unique<mappers::CultureMapper>(slaveCultureMapFile);
-	slaveCultureMapFile.close();
-
-	sourceWorld.checkAllEU4CulturesMapped(*cultureMapper);
-}
-
-
-void V2World::initializeReligionMapper(const EU4::World& sourceWorld)
-{
-	LOG(LogLevel::Info) << "Parsing religion mappings";
-
-	std::ifstream mappingsFile("religionMap.txt");
-	religionMapper = std::make_unique<mappers::ReligionMapper>(mappingsFile);
-	mappingsFile.close();
-
-	sourceWorld.checkAllEU4ReligionsMapped(*religionMapper);
-}
-
-
-void V2World::initializeProvinceMapper()
-{
-	LOG(LogLevel::Info) << "Parsing province mappings";
-	std::ifstream mappingsFile("province_mappings.txt");
-	provinceMapper = std::make_unique<mappers::ProvinceMapper>(mappingsFile, theConfiguration);
-	mappingsFile.close();
+	LOG(LogLevel::Info) << "Parsing culture mappings.";
+	cultureMapper.loadFile("configurables/culture_map.txt");
+	
+	LOG(LogLevel::Info) << "Parsing slave culture mappings.";
+	slaveCultureMapper.loadFile("configurables/culture_map_slaves.txt");
 }
 
 
@@ -488,21 +449,6 @@ void V2World::convertCountries(const EU4::World& sourceWorld, const mappers::Ide
 
 void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
-	Vic2::blockedTechSchoolsFile theBlockedTechSchoolsFile;
-	Vic2::TechSchoolsFile theTechSchoolsFile(theBlockedTechSchoolsFile.takeBlockedTechSchools());
-	auto theTechSchools = theTechSchoolsFile.takeTechSchools();
-
-	LOG(LogLevel::Info) << "Parsing governments mappings";
-
-	std::ifstream governmentMapFile("governmentMapping.txt");
-	if (governmentMapFile.fail())
-	{
-		std::range_error exception("Could not open file governmentMapping.txt");
-		throw exception;
-	}
-	mappers::GovernmentMapper governmentMapper(governmentMapFile);
-	governmentMapFile.close();
-
 	for (auto sourceCountry: sourceWorld.getCountries())
 	{
 		const string& V2Tag = countryMapper.getV2Tag(sourceCountry.first);
@@ -516,12 +462,12 @@ void V2World::initializeCountries(const EU4::World& sourceWorld, const mappers::
 		destCountry->initFromEU4Country(
 			sourceWorld.getRegions(),
 			sourceCountry.second,
-			theTechSchools,
-			*cultureMapper,
-			*slaveCultureMapper,
+			techSchoolMapper,
+			cultureMapper,
+			slaveCultureMapper,
 			ideaEffectMapper,
-			*religionMapper,
-			*provinceMapper,
+			religionMapper,
+			provinceMapper,
 			governmentMapper,
 			countryMapper
 		);
@@ -699,7 +645,7 @@ void V2World::convertProvinces(const EU4::World& sourceWorld)
 
 	for (auto Vic2Province : provinces)
 	{
-		auto EU4ProvinceNumbers = provinceMapper->getEU4ProvinceNumbers(Vic2Province.first);
+		auto EU4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(Vic2Province.first);
 		if (EU4ProvinceNumbers.size() == 0)
 		{
 			LOG(LogLevel::Warning) << "No source for " << Vic2Province.second->getName() << " (province " << Vic2Province.first << ')';
@@ -711,7 +657,7 @@ void V2World::convertProvinces(const EU4::World& sourceWorld)
 		}
 		else if (
 			(theConfiguration.getResetProvinces() == "yes") &&
-			provinceMapper->isProvinceResettable(Vic2Province.first, "resettableRegion")
+			provinceMapper.isProvinceResettable(Vic2Province.first, "resettableRegion")
 		) {
 			Vic2Province.second->setResettable(true);
 			continue;
@@ -871,7 +817,7 @@ std::vector<V2Demographic> V2World::determineDemographics(
 	for (auto popRatio: popRatios)
 	{
 		std::optional<std::string> dstCulture;
-		dstCulture = cultureMapper->cultureMatch(
+		dstCulture = cultureMapper.cultureMatch(
 			eu4Regions,
 			popRatio.getCulture(),
 			popRatio.getReligion(),
@@ -884,7 +830,7 @@ std::vector<V2Demographic> V2World::determineDemographics(
 			dstCulture = "no_culture";
 		}
 
-		std::optional<std::string> religion = religionMapper->getVic2Religion(popRatio.getReligion());
+		std::optional<std::string> religion = religionMapper.getVic2Religion(popRatio.getReligion());
 		if (!religion)
 		{
 			LOG(LogLevel::Warning) << "Could not set religion for pops in Vic2 province " << destNum;
@@ -892,7 +838,7 @@ std::vector<V2Demographic> V2World::determineDemographics(
 		}
 
 		std::optional<std::string> slaveCulture;
-		slaveCulture = slaveCultureMapper->cultureMatch(
+		slaveCulture = slaveCultureMapper.cultureMatch(
 			eu4Regions,
 			popRatio.getCulture(),
 			popRatio.getReligion(),
@@ -1099,7 +1045,7 @@ void V2World::setupColonies()
 		{
 			int currentProvince = goodProvinces.front();
 			goodProvinces.pop();
-			auto adjacencies = mappers::adjacencyMapper::getVic2Adjacencies(currentProvince);
+			auto adjacencies = adjacencyMapper.getVic2Adjacencies(currentProvince);
 			if (adjacencies)
 			{
 				for (auto adjacency: *adjacencies)
@@ -1173,9 +1119,6 @@ void V2World::setupStates()
 	}
 	LOG(LogLevel::Debug) << "Unassigned Provs:\t" << unassignedProvs.size();
 
-	Vic2::stateMapperFile theStateMapperFile;
-	std::unique_ptr<Vic2::stateMapper> theStateMapper = theStateMapperFile.takeStateMapper();
-
 	list<V2Province*>::iterator iter;
 	while (unassignedProvs.size() > 0)
 	{
@@ -1191,7 +1134,7 @@ void V2World::setupStates()
 
 		V2State* newState = new V2State(stateId, *iter);
 		stateId++;
-		auto neighbors = theStateMapper->getAllProvincesInState(provId);
+		auto neighbors = stateMapper.getAllProvincesInState(provId);
 
 		bool colonial = (*iter)->isColonial();
 		newState->setColonial(colonial);
@@ -1485,7 +1428,7 @@ void V2World::setupPops(const EU4::World& sourceWorld)
 
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
-		itr->second->setupPops(popWeightRatio, popAlgorithm, sourceWorld.getCountries(), *provinceMapper);
+		itr->second->setupPops(popWeightRatio, popAlgorithm, sourceWorld.getCountries(), provinceMapper);
 	}
 
 	if (theConfiguration.getPopShaping() != Configuration::POPSHAPES::Vanilla)
@@ -1646,11 +1589,14 @@ void V2World::setupPops(const EU4::World& sourceWorld)
 
 void V2World::addUnions()
 {
-	LOG(LogLevel::Info) << "Adding unions";
+	if (theConfiguration.getCoreHandling() == Configuration::COREHANDLES::DropAll) return;
 
-	Vic2::CultureUnionMapperFile theVic2CultureUnionMapperFile;
-	auto theVic2CultureUnionMapper = theVic2CultureUnionMapperFile.takeCultureUnionMapper();
-	auto theVic2NationalsMapper = theVic2CultureUnionMapperFile.takeNationalsMapper();
+	LOG(LogLevel::Info) << "Parsing cultural union mappings.";
+	culturalUnionMapper.loadFile("configurables/unions.txt");
+	LOG(LogLevel::Info) << "Parsing nationalities mappings.";
+	culturalNationalitiesMapper.loadFile("configurables/nationals.txt");
+
+	LOG(LogLevel::Info) << "Distributing national and cultural union cores.";
 
 	for (map<int, V2Province*>::iterator provItr = provinces.begin(); provItr != provinces.end(); provItr++)
 	{
@@ -1659,8 +1605,8 @@ void V2World::addUnions()
 			auto cultures = provItr->second->getCulturesOverThreshold(0.5);
 			for (auto culture : cultures)
 			{
-				vector<string> unionCores = theVic2CultureUnionMapper->getCoreForCulture(culture);
-				vector<string> nationalCores = theVic2NationalsMapper->getCoreForCulture(culture);
+				vector<string> unionCores = culturalUnionMapper.getCoresForCulture(culture);
+				vector<string> nationalCores = culturalNationalitiesMapper.getCoresForCulture(culture);
 				switch (theConfiguration.getCoreHandling())
 				{
 				case Configuration::COREHANDLES::DropNational:
@@ -1702,7 +1648,7 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 	vector<int> port_whitelist;
 	{
 		int temp = 0;
-		ifstream s("port_whitelist.txt");
+		ifstream s("configurables/port_whitelist.txt");
 		while (s.good() && !s.eof())
 		{
 			s >> temp;
@@ -1711,9 +1657,7 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 		s.close();
 	}
 
-	LOG(LogLevel::Info) << "Parsing regiment costs";
 	// get cost per regiment values
-	mappers::RegimentCostsMapper regimentCostsMapper;
 	std::map<std::string, int> regimentCosts = regimentCostsMapper.getRegimentCosts();
 	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0.0 };
 
@@ -1731,7 +1675,7 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
 		itr->second->convertLeaders(leaderTraits);
-		itr->second->convertArmies(cost_per_regiment, provinces, port_whitelist, *provinceMapper);
+		itr->second->convertArmies(cost_per_regiment, provinces, port_whitelist, provinceMapper, adjacencyMapper);
 	}
 }
 
@@ -1819,14 +1763,11 @@ void V2World::output(unsigned int potentialGPs) const
 		}
 	}
 	fprintf(allCountriesFile, "\n");
-	if ((theConfiguration.getVic2Gametype() == "HOD") || (theConfiguration.getVic2Gametype() == "HoD_NNM"))
+	fprintf(allCountriesFile, "##HoD Dominions\n");
+	fprintf(allCountriesFile, "dynamic_tags = yes # any tags after this is considered dynamic dominions\n");
+	for (map<string, V2Country*>::const_iterator i = dynamicCountries.begin(); i != dynamicCountries.end(); i++)
 	{
-		fprintf(allCountriesFile, "##HoD Dominions\n");
-		fprintf(allCountriesFile, "dynamic_tags = yes # any tags after this is considered dynamic dominions\n");
-		for (map<string, V2Country*>::const_iterator i = dynamicCountries.begin(); i != dynamicCountries.end(); i++)
-		{
-			i->second->outputToCommonCountriesFile(allCountriesFile);
-		}
+		i->second->outputToCommonCountriesFile(allCountriesFile);
 	}
 	fclose(allCountriesFile);
 

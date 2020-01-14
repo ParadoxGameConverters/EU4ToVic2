@@ -18,7 +18,8 @@ namespace mappers
 	class ProvinceMapper: commonItems::parser
 	{
 	public:
-		ProvinceMapper(std::istream& theStream, const Configuration& configuration);
+		ProvinceMapper();
+		ProvinceMapper(std::istream& theStream, const Configuration& theConfiguration);
 
 		std::vector<int> getVic2ProvinceNumbers(int EU4ProvinceNumber) const;
 		std::vector<int> getEU4ProvinceNumbers(int Vic2ProvinceNumber) const;
@@ -28,10 +29,8 @@ namespace mappers
 		bool provinceIsInRegion(int province, const std::string& region) const;
 
 	private:
-		ProvinceMappingsVersion getMappingsVersion(
-			const std::map<EU4::Version, ProvinceMappingsVersion>& mappingsVersions,
-			const Configuration& configuration
-		);
+		void registerKeys();
+		ProvinceMappingsVersion getMappingsVersion(const std::map<EU4::Version, ProvinceMappingsVersion>& mappingsVersions, const Configuration& theConfiguration);
 		void createMappings(const ProvinceMappingsVersion& provinceMappingsVersion);
 		void addProvincesToResettableRegion(const std::string& regionName, const std::vector<int>& provinces);
 		void determineValidProvinces();
@@ -41,6 +40,7 @@ namespace mappers
 		std::map<std::string, std::set<int>> resettableProvinces;
 		std::set<int> validProvinces;
 		EU4::ColonialRegions colonialRegionsMapper;
+		std::map<EU4::Version, ProvinceMappingsVersion> mappingVersions;
 	};
 }
 

@@ -1,7 +1,6 @@
 #include "TechValues.h"
 #include "../EU4World/Country/EU4Country.h"
 #include "../V2World/V2Country.h"
-#include "../Configuration.h"
 #include <algorithm>
 
 helpers::TechValues::TechValues( const std::map<std::string, V2Country*>& countries ) 

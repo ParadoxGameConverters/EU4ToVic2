@@ -16,7 +16,7 @@
               <entryOption>
                 <name>HOD</name>
                 <friendlyName>Heart of Darkness (3.x)</friendlyName>
-                <description>Heart of Darkness (3.x)</description>
+                <description>Both expansions required!</description>
                 <isDefault>true</isDefault>
               </entryOption>
               <!--<entryOption>
@@ -176,7 +176,7 @@
 	  <preference>
             <name>randomiseRgos</name>
             <friendlyName>Randomise RGOs?</friendlyName>
-            <description>If set, RGOs will be shuffled within similar culture and terrain provinces.</description>
+            <description>If set, RGOs will be shuffled within similar climate and terrain provinces.</description>
             <entryOptions>
               <entryOption>
                 <name>no</name>

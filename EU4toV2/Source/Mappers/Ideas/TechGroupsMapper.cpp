@@ -13,7 +13,7 @@ mappers::TechGroupsMapper::TechGroupsMapper()
 			literacies[techGroup] = techGroups.getLiteracyBoost();
 		});
 
-	parseFile("techGroups.txt");
+	parseFile("configurables/tech_groups.txt");
 	clearRegisteredKeywords();
 }
 

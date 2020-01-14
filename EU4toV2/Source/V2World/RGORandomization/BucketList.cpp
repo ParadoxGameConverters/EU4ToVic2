@@ -17,7 +17,7 @@ BucketList::BucketList()
 	);
 	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
 
-	parseFile("rgo_randomization.txt");
+	parseFile("configurables/rgo_randomization.txt");
 }
 
 void BucketList::putInBucket(V2Province* prov)

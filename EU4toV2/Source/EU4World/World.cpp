@@ -3,19 +3,16 @@
 #include "Country/EU4Country.h"
 #include "EU4Version.h"
 #include "Localisation/EU4Localisation.h"
-#include "Mods/Mod.h"
 #include "Mods/Mods.h"
 #include "Provinces/EU4Province.h"
 #include "Regions/Areas.h"
 #include "../Configuration.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "../Mappers/ReligionMapper.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "NationMerger/NationMergeParser.h"
-#include "StringUtils.h"
 #include <set>
 #include <algorithm>
 #include <exception>
@@ -25,20 +22,20 @@
 
 EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
-	registerKeyword("EU4txt", [this](const std::string& unused, std::istream& theStream) {});
-	registerKeyword("date", [this](const std::string& dateText, std::istream& theStream)
+	registerKeyword("EU4txt", [](const std::string& unused, std::istream& theStream) {});
+	registerKeyword("date", [](const std::string& dateText, std::istream& theStream)
 		{
 			commonItems::singleString dateString(theStream);
 			date endDate(dateString.getString());
 			theConfiguration.setLastEU4Date(endDate);
 		});
-	registerKeyword("start_date", [this](const std::string& dateText, std::istream& theStream)
+	registerKeyword("start_date", [](const std::string& dateText, std::istream& theStream)
 		{
 			commonItems::singleString startDateString(theStream);
 			date startDate(startDateString.getString());
 			theConfiguration.setStartEU4Date(startDate);
 		});
-	registerRegex("(multiplayer_)?random_seed", [this](const std::string& key, std::istream& theStream)
+	registerRegex("(multiplayer_)?random_seed", [](const std::string& key, std::istream& theStream)
 		{
 			commonItems::singleString randomSeed(theStream);
 			theConfiguration.setEU4RandomSeed(stoi(randomSeed.getString().substr(randomSeed.getString().size() - 5)));
@@ -48,12 +45,12 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			version = std::make_unique<EU4::Version>(theStream);
 			theConfiguration.setEU4Version(*version);
 		});
-	registerKeyword("dlc_enabled", [this](const std::string& DLCText, std::istream& theStream)
+	registerKeyword("dlc_enabled", [](const std::string& DLCText, std::istream& theStream)
 		{
 			commonItems::stringList theDLCs(theStream);
 			theConfiguration.setActiveDLCs(theDLCs.getStrings());
 		});
-	registerKeyword("mod_enabled", [this](const std::string& modText, std::istream& theStream) 
+	registerKeyword("mod_enabled", [](const std::string& modText, std::istream& theStream) 
 		{
 			commonItems::stringList modList(theStream);
 			Mods theMods(modList.getStrings(), theConfiguration);
@@ -103,7 +100,7 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			diplomacy = theDiplomacy.getAgreements();
 			LOG(LogLevel::Info) << "- Loaded " << diplomacy.size() << " agreements";
 		});
-	registerKeyword("map_area_data", [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("map_area_data", [](const std::string& unused, std::istream& theStream) 
 		{
 			LOG(LogLevel::Info) << "- Loading Map Area Data";
 			commonItems::ignoreItem(unused, theStream);
@@ -166,8 +163,7 @@ void EU4::World::verifySave(const std::string& EU4SaveFileName)
 	std::ifstream saveFile(EU4SaveFileName);
 	if (!saveFile.is_open())
 	{
-		std::runtime_error exception("Could not open save! Exiting!");
-		throw exception;
+		throw std::runtime_error("Could not open save! Exiting!");
 	}
 	else
 	{
@@ -176,7 +172,7 @@ void EU4::World::verifySave(const std::string& EU4SaveFileName)
 		if ((buffer[0] == 'P') && (buffer[1] == 'K'))
 		{
 			std::runtime_error exception("Saves must be uncompressed to be converted.");
-			throw exception;
+			throw std::runtime_error("Saves must be uncompressed to be converted.");;
 		}
 		else if (
 			(buffer[0] == 'E') &&
@@ -187,8 +183,7 @@ void EU4::World::verifySave(const std::string& EU4SaveFileName)
 			(buffer[5] == 'n') &&
 			(buffer[6] == 'M')
 		) {
-			std::runtime_error exception("Ironman saves cannot be converted.");
-			throw exception;
+			throw std::runtime_error("Ironman saves cannot be converted.");;
 		}
 	}
 
@@ -332,7 +327,7 @@ void EU4::World::checkAllEU4CulturesMapped(const mappers::CultureMapper& culture
 		std::string Vi2Culture;
 		std::string EU4Culture = cultureItr.first;
 
-		std::optional<std::string> matched = cultureMapper.cultureMatch(*regions, EU4Culture, "");
+		std::optional<std::string> matched = cultureMapper.cultureMatch(*regions, EU4Culture, "", -1, "");
 		if (!matched)
 		{
 			LOG(LogLevel::Warning) << "No culture mapping for EU4 culture " << EU4Culture;
@@ -437,11 +432,9 @@ void EU4::World::setLocalisations()
 void EU4::World::resolveRegimentTypes()
 {
 	LOG(LogLevel::Info) << "Resolving unit types.";
-	mappers::UnitTypeMapper utm;	
-
 	for (auto itr = theCountries.begin(); itr != theCountries.end(); ++itr)
 	{
-		itr->second->resolveRegimentTypes(utm);
+		itr->second->resolveRegimentTypes(unitTypeMapper);
 	}
 }
 
