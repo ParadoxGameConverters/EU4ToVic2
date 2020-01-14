@@ -25,7 +25,7 @@
 #include "V2Flags.h"
 #include "Leader/V2LeaderTraitMapper.h"
 #include "Country/V2Unreleasables.h"
-#include "Pops/PopMapper.h"
+#include "../Mappers/Pops/PopMapper.h"
 #include "Map/MapProvince.h"
 #include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
@@ -212,7 +212,7 @@ void V2World::importPopsFromFile(const string& filename, const mappers::Minority
 	list<int> popProvinces;
 
 	std::ifstream popFile("./blankMod/output/history/pops/1836.1.1/" + filename);
-	mappers::PopMapper popMapper(popFile);
+	const mappers::PopMapper popMapper(popFile);
 	popFile.close();
 
 	for (const auto& provinceItr : popMapper.getProvincePopTypeMap())

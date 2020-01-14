@@ -6,7 +6,6 @@
 #include "V2Country.h"
 #include "V2Diplomacy.h"
 #include "V2Province.h"
-#include "Pops/PopTypes.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
@@ -25,6 +24,7 @@
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../Mappers/CulturalUnions/CulturalUnionMapper.h"
 #include "../Mappers/FactoryTypes/FactoryTypeMapper.h"
+#include "../Mappers/Pops/PopTypes.h"
 #include <list>
 #include <memory>
 #include <set>

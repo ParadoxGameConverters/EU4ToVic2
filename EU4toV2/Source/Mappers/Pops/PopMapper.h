@@ -12,9 +12,11 @@ namespace mappers
 	public:
 		PopMapper() = default;
 		PopMapper(std::istream& theStream);
+		PopMapper(const std::string& filename);
 		const std::map<int, PopTypes>& getProvincePopTypeMap() const { return provincePopTypeMap; }
 
 	private:
+		void registerKeys();
 		std::map<int, PopTypes> provincePopTypeMap;
 	};
 }
