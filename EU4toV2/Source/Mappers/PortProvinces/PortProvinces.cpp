@@ -23,13 +23,13 @@ void mappers::PortProvinces::registerKeys()
 		{
 			commonItems::intList portList(theStream);
 			auto portV = portList.getInts();
-			whitelist = std::set(portV.begin(), portV.end());
+			whitelist = std::set<int>(portV.begin(), portV.end());
 		});
 	registerKeyword("blacklist", [this](const std::string& provinceID, std::istream& theStream)
 		{
 			commonItems::intList portList(theStream);
 			auto portV = portList.getInts();
-			blacklist = std::set(portV.begin(), portV.end());
+			blacklist = std::set<int>(portV.begin(), portV.end());
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 }
