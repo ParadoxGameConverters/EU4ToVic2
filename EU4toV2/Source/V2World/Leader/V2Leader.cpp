@@ -1,15 +1,13 @@
 #include "V2Leader.h"
-#include "Log.h"
 
-
-V2Leader::V2Leader(const EU4::Leader& oldLeader, const mappers::V2LeaderTraitMapper& traitTypes):
+V2Leader::V2Leader(const EU4::Leader& oldLeader, const mappers::LeaderTraitMapper& leaderTraitMapper):
 	name(oldLeader.getName()),
 	activationDate(oldLeader.getActivationDate()),
 	isLand(oldLeader.isLand()),
 	eu4ID(oldLeader.getID())
 {
-	std::optional<std::string> incPersonality = traitTypes.getPersonality(oldLeader.getFire(), oldLeader.getShock(), oldLeader.getManuever(), oldLeader.getSiege());
-	std::optional<std::string> incBackground = traitTypes.getBackground(oldLeader.getFire(), oldLeader.getShock(), oldLeader.getManuever(), oldLeader.getSiege());
+	std::optional<std::string> incPersonality = leaderTraitMapper.getPersonality(oldLeader.getFire(), oldLeader.getShock(), oldLeader.getManuever(), oldLeader.getSiege());
+	std::optional<std::string> incBackground = leaderTraitMapper.getBackground(oldLeader.getFire(), oldLeader.getShock(), oldLeader.getManuever(), oldLeader.getSiege());
 	if (incPersonality) personality = *incPersonality;
 	if (incBackground) background = *incBackground;
 }

@@ -1041,7 +1041,7 @@ void V2Country::addState(V2State* newState)
 	}
 }
 
-void V2Country::convertLeaders(mappers::V2LeaderTraitMapper& leaderTraits)
+void V2Country::convertLeaders(mappers::LeaderTraitMapper& leaderTraitMapper)
 {
 	if (srcCountry == nullptr) return;
 	if (provinces.size() == 0) return;
@@ -1051,7 +1051,7 @@ void V2Country::convertLeaders(mappers::V2LeaderTraitMapper& leaderTraits)
 	std::vector<EU4::Leader>::iterator eu4LeaderItr;
 	for (eu4LeaderItr = eu4Leaders.begin(); eu4LeaderItr != eu4Leaders.end(); ++eu4LeaderItr)
 	{
-		V2Leader newLeader(*eu4LeaderItr, leaderTraits);
+		V2Leader newLeader(*eu4LeaderItr, leaderTraitMapper);
 		leaders.push_back(newLeader);
 	}
 }

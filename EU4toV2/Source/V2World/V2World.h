@@ -26,6 +26,8 @@
 #include "../Mappers/FactoryTypes/FactoryTypeMapper.h"
 #include "../Mappers/Pops/PopTypes.h"
 #include "../Mappers/Unreleasables/Unreleasables.h"
+#include "../Mappers/LeaderTraits/LeaderTraitMapper.h"
+#include "../Mappers/NavalBases/NavalBaseMapper.h"
 #include <list>
 #include <memory>
 #include <set>
@@ -141,6 +143,9 @@ class V2World
 		mappers::CulturalUnionMapper culturalNationalitiesMapper;
 		mappers::FactoryTypeMapper factoryTypeMapper;
 		mappers::Unreleasables unreleasablesMapper;
+		mappers::LeaderTraitMapper leaderTraitMapper;
+		mappers::NavalBaseMapper navalBaseMapper;
+
 };
 
 

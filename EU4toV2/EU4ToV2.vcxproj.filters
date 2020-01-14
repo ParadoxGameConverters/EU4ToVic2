@@ -174,12 +174,6 @@
     <ClCompile Include="Source\V2World\Factory\V2Factory.cpp">
       <Filter>Vic2World\Factory</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Leader\V2LeaderTraitTypes.cpp">
-      <Filter>Vic2World\Leader</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Leader\V2LeaderTrait.cpp">
-      <Filter>Vic2World\Leader</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Leader\V2Leader.cpp">
       <Filter>Vic2World\Leader</Filter>
     </ClCompile>
@@ -191,9 +185,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\History\CountryHistoryDate.cpp">
       <Filter>EU4World\History</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Leader\V2LeaderTraitMapper.cpp">
-      <Filter>Vic2World\Leader</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\RGORandomization\Bucket.cpp">
       <Filter>Vic2World\RGORandomization</Filter>
@@ -209,15 +200,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\NationMerger\NationMergeParser.cpp">
       <Filter>EU4World\NationMerger</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Map\BuildingPosition.cpp">
-      <Filter>Vic2World\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Map\MapProvince.cpp">
-      <Filter>Vic2World\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Map\NavalBase.cpp">
-      <Filter>Vic2World\Map</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Country\EU4Technology.cpp">
       <Filter>EU4World\Country</Filter>
@@ -432,6 +414,24 @@
     <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp">
       <Filter>Mappers\Unreleasables</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTrait.cpp">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTraitMapper.cpp">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTraitTypes.cpp">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\NavalBases\NavalBase.cpp">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\NavalBases\BuildingPosition.cpp">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\NavalBases\NavalBaseMapper.cpp">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -609,12 +609,6 @@
     <ClInclude Include="Source\V2World\Factory\V2Factory.h">
       <Filter>Vic2World\Factory</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\Leader\V2LeaderTraitTypes.h">
-      <Filter>Vic2World\Leader</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Leader\V2LeaderTrait.h">
-      <Filter>Vic2World\Leader</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Leader\V2Leader.h">
       <Filter>Vic2World\Leader</Filter>
     </ClInclude>
@@ -626,9 +620,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\History\CountryHistoryDate.h">
       <Filter>EU4World\History</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Leader\V2LeaderTraitMapper.h">
-      <Filter>Vic2World\Leader</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\RGORandomization\Bucket.h">
       <Filter>Vic2World\RGORandomization</Filter>
@@ -644,15 +635,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\NationMerger\NationMergeParser.h">
       <Filter>EU4World\NationMerger</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Map\BuildingPosition.h">
-      <Filter>Vic2World\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Map\MapProvince.h">
-      <Filter>Vic2World\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Map\NavalBase.h">
-      <Filter>Vic2World\Map</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Country\EU4Technology.h">
       <Filter>EU4World\Country</Filter>
@@ -867,6 +849,24 @@
     <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h">
       <Filter>Mappers\Unreleasables</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTrait.h">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTraitMapper.h">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTraitTypes.h">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\NavalBases\NavalBase.h">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\NavalBases\BuildingPosition.h">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\NavalBases\NavalBaseMapper.h">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -928,9 +928,6 @@
     </Filter>
     <Filter Include="EU4World\NationMerger">
       <UniqueIdentifier>{001fbc47-c628-4766-a50e-876ff0ba6b44}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Vic2World\Map">
-      <UniqueIdentifier>{03c647d5-094f-4c36-9edd-81509b68364b}</UniqueIdentifier>
     </Filter>
     <Filter Include="EU4World\Relations">
       <UniqueIdentifier>{a2bfda6d-eaa2-4066-a13b-cdca36a6c851}</UniqueIdentifier>
@@ -1027,6 +1024,12 @@
     </Filter>
     <Filter Include="Mappers\Unreleasables">
       <UniqueIdentifier>{1793a7fb-3cea-4ec5-a68a-95efcc995b94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\LeaderTraits">
+      <UniqueIdentifier>{73eb9ac1-dda7-4c8d-8eea-39c26d09f559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\NavalBaseMapper">
+      <UniqueIdentifier>{b38c0acf-7b11-4847-931d-d025c20b1f8a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

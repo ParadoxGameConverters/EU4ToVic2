@@ -1,9 +1,9 @@
 # General/Admiral conversion rules
 # 
-# All four values (fire, shock, manuever, siege) are read from the EU4 file.
+# All four values (fire, shock, maneuver, siege) are read from the EU4 file.
 # The rules here set MINIMUM CONDITIONS for each (enabled) personality and background.
 # The special value "other" consists of the sum of all unnamed values
-# so if a personality specifies "fire" and "other", "other" means "shock + manuever + siege".
+# so if a personality specifies "fire" and "other", "other" means "shock + maneuver + siege".
 # 
 # The first rule that matches is selected, so the better/more restrictive rules should be near the top of each section.
 # If some traits are not desired for conversion, simply omit them from the file.
@@ -25,7 +25,7 @@ personality =
 	{
 		shock = 4
 		fire = 4
-		manuever = 2
+		maneuver = 2
 	}
 	unflinching =	# attack 3
 	{
@@ -48,7 +48,7 @@ personality =
 	}
 	hellbent =		# speed 0.40
 	{
-		manuever = 6
+		maneuver = 6
 	}
 	coolminded =	# defence 2
 	{
@@ -75,7 +75,7 @@ personality =
 	}
 	persistant =		# speed 0.15
 	{
-		manuever = 3
+		maneuver = 3
 	}
 	balanced_p =		# defence 1
 	{
@@ -92,7 +92,7 @@ personality =
 	}
 	earnest =		# speed 0.1
 	{
-		manuever = 2
+		maneuver = 2
 	}
 	gallant =		# morale 0.2
 	{
@@ -100,7 +100,7 @@ personality =
 	}
 	active_p =		# speed 0.05
 	{
-		manuever = 1
+		maneuver = 1
 	}
 	inspiring =		# morale 0.1
 	{
@@ -125,7 +125,7 @@ background =
 	school_of_the_bayonet = # attack 2, defence 1, speed 0.1
 	{
 		fire = 5
-		manuever = 4
+		maneuver = 4
 		shock = 4
 	}
 	cavalry_school = # attack 2
@@ -134,12 +134,12 @@ background =
 	}
 	cartographer =	# speed 0.4
 	{
-		manuever = 6
+		maneuver = 6
 	}
 	school_of_offense = # attack 1, morale 0.1, speed 0.1
 	{
 		fire = 3
-		manuever = 3
+		maneuver = 3
 		other = 6
 	}
 	uncommonly_young = # attack 1, defence 1
@@ -181,7 +181,7 @@ background =
 	}
 	bureaucrat_speed = # speed 0.15
 	{
-		manuever = 3
+		maneuver = 3
 	}
 	aristocrat =	# morale 0.1
 	{
@@ -189,11 +189,11 @@ background =
 	}
 	armchair_general = # speed 0.1
 	{
-		manuever = 2
+		maneuver = 2
 	}
 	engineer =		# speed 0.05
 	{
-		manuever = 1
+		maneuver = 1
 	}
 	pawn =			# reliability 0.05
 	{

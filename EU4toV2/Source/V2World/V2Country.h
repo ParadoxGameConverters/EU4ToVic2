@@ -4,7 +4,6 @@
 #include "V2Army.h"
 #include "Country/V2Party.h"
 #include "Leader/V2Leader.h"
-#include "Leader/V2LeaderTraitMapper.h"
 #include "V2Localisation.h"
 #include "V2Relations.h"
 #include "Color.h"
@@ -21,6 +20,7 @@
 #include "../Mappers/PartyNames/PartyNameMapper.h"
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../Mappers/Unreleasables/Unreleasables.h"
+#include "../Mappers/LeaderTraits/LeaderTraitMapper.h"
 #include <memory>
 #include <set>
 #include <vector>
@@ -88,7 +88,7 @@ class V2Country : commonItems::parser
 			const mappers::ProvinceMapper& provinceMapper,
 			const mappers::AdjacencyMapper& adjacencyMapper
 		);
-		void convertLeaders(mappers::V2LeaderTraitMapper& leaderTraits);
+		void convertLeaders(mappers::LeaderTraitMapper& leaderTraitMapper);
 		bool addFactory(const V2Factory& factory);
 		void								addRailroadtoCapitalState();
 		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);

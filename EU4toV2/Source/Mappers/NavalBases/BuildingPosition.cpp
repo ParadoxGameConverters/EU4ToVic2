@@ -4,12 +4,13 @@
 
 mappers::BuildingPosition::BuildingPosition(std::istream& theStream)
 {
-	registerKeyword(std::regex("building_position"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("building_position", [this](const std::string& unused, std::istream& theStream)
 	{
 			NavalBase potentialBase(theStream);
 			if (potentialBase.getFound()) found = true;
 	});
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
+	clearRegisteredKeywords();
 }

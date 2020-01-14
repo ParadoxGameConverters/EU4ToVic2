@@ -6,11 +6,11 @@
 
 namespace mappers
 {
-	class MapProvince : commonItems::parser
+	class NavalBaseMapper : commonItems::parser
 	{
 	public:
-		MapProvince();
-		std::set<int> getNavalProvinces() const { return navalProvinces; }
+		NavalBaseMapper();
+		const std::set<int>& getNavalProvinces() const { return navalProvinces; }
 
 	private:
 		std::set<int> navalProvinces;

@@ -23,9 +23,7 @@
 #include "V2Pop.h"
 #include "V2Country.h"
 #include "V2Flags.h"
-#include "Leader/V2LeaderTraitMapper.h"
 #include "../Mappers/Pops/PopMapper.h"
-#include "Map/MapProvince.h"
 #include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
@@ -355,11 +353,7 @@ void V2World::outputLog(const map<string, map<string, long int>>& popsByCountry)
 
 void V2World::findCoastalProvinces()
 {
-	LOG(LogLevel::Info) << "Finding coastal provinces.";
-	mappers::MapProvince navalProvinceMapper;
-	LOG(LogLevel::Info) << "- Located " << navalProvinceMapper.getNavalProvinces().size() << " coastal provinces";
-	std::set<int> navalProvinces = navalProvinceMapper.getNavalProvinces();
-	for (const auto& navalProvinceID : navalProvinces)
+	for (const auto& navalProvinceID : navalBaseMapper.getNavalProvinces())
 	{
 		auto province = provinces.find(navalProvinceID);
 		if (province != provinces.end())
@@ -1655,14 +1649,11 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 	}
 
 	// convert leaders and armies
-	LOG(LogLevel::Info) << "Loading leader data";
-
-	mappers::V2LeaderTraitMapper leaderTraits;
 
 	LOG(LogLevel::Info) << "Converting country armies";
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
-		itr->second->convertLeaders(leaderTraits);
+		itr->second->convertLeaders(leaderTraitMapper);
 		itr->second->convertArmies(cost_per_regiment, provinces, port_whitelist, provinceMapper, adjacencyMapper);
 	}
 }
