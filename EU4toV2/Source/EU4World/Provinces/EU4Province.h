@@ -10,7 +10,6 @@
 #include "../../Mappers/Buildings/Buildings.h"
 #include "../Modifiers/Modifiers.h"
 #include "newParser.h"
-#include <map>
 
 namespace EU4
 {

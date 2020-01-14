@@ -1,5 +1,6 @@
 #include "EU4GovernmentSection.h"
 #include "ParserHelpers.h"
+#include "EU4ReformStackSection.h"
 
 EU4::GovernmentSection::GovernmentSection(std::istream& theStream)
 {

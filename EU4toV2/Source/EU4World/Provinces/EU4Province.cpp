@@ -1,14 +1,12 @@
 #include "EU4Province.h"
 #include "ProvinceModifier.h"
 #include "../Country/EU4Country.h"
-#include "../Religions/Religions.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "../../Configuration.h"
 #include <algorithm>
 #include <fstream>
 #include <optional>
-#include <sstream>
 #include <cmath>
 
 const double BUILDING_COST_TO_WEIGHT_RATIO = 0.02;
@@ -258,7 +256,7 @@ double EU4::Province::getTradeGoodPrice() const
 	tropical_wood
 	*/
 
-	double tradeGoodsPrice = 0;
+	double tradeGoodsPrice;
 
 	if (tradeGoods == "chinaware")
 	{

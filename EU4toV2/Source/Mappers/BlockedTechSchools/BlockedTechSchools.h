@@ -2,7 +2,6 @@
 #define BLOCKED_TECH_SCHOOLS_H
 
 #include "newParser.h"
-#include <memory>
 #include <string>
 #include <vector>
 

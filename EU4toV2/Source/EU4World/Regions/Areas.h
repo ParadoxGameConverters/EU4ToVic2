@@ -1,10 +1,8 @@
 #ifndef EU4_AREAS_H
 #define EU4_AREAS_H
 
-#include "Area.h"
 #include "Color.h"
 #include "newParser.h"
-#include <istream>
 #include <map>
 #include <set>
 #include <string>

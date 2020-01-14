@@ -17,7 +17,6 @@
 #include "../Mappers/CultureGroups/CultureGroups.h"
 #include "../Mappers/Ideas/IdeaEffectMapper.h"
 #include "newParser.h"
-#include <istream>
 #include <memory>
 
 namespace EU4

@@ -2,7 +2,6 @@
 #define TECH_COVNERSION_HELPERS_H
 
 #include <map>
-#include <memory>
 #include <string>
 
 namespace EU4

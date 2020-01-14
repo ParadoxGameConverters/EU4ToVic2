@@ -14,7 +14,7 @@ namespace EU4
 		Regions() = default;
 		Regions(const EU4::Areas& areas, std::istream& regionsFile);
 		Regions(const EU4::Areas& areas);
-		virtual bool provinceInRegion(int province, const std::string& regionName) const;
+		bool provinceInRegion(int province, const std::string& regionName) const;
 
 	private:
 		std::map<std::string, EU4::Region> regions;

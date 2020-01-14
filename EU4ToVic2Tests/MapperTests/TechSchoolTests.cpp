@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/mappers/TechSchools/TechSchool.h"
+#include "../EU4toV2/Source/Mappers/TechSchools/TechSchool.h"
 
 
 TEST(Mappers_TechSchoolTests, MatchingInvestmentCausesScoreOfZero)

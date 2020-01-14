@@ -1,7 +1,6 @@
 #ifndef COUNTRY_MAPPINGS_H
 #define COUNTRY_MAPPINGS_H
 
-#include <istream>
 #include <map>
 #include <optional>
 #include <set>

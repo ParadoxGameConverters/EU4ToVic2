@@ -2,7 +2,6 @@
 #define TECH_SCHOOL_MAPPER
 
 #include "TechSchools.h"
-#include "../BlockedTechSchools/BlockedTechSchools.h"
 #include "newParser.h"
 
 namespace mappers

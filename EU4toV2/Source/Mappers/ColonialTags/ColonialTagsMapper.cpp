@@ -1,5 +1,4 @@
 #include "ColonialTagsMapper.h"
-#include "Log.h"
 #include "newParser.h"
 #include <fstream>
 #include "ParserHelpers.h"

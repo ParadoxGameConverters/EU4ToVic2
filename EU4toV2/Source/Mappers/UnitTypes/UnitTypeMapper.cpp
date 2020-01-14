@@ -2,7 +2,6 @@
 #include "ParserHelpers.h"
 #include "Log.h"
 #include <set>
-#include <fstream>
 #include "OSCompatibilityLayer.h"
 #include "../../Configuration.h"
 
@@ -20,9 +19,9 @@ mappers::UnitTypeMapper::UnitTypeMapper()
 
 	for (auto modName : theConfiguration.getEU4Mods())
 	{
-		std::set<std::string> filenames;
-		Utils::GetAllFilesInFolder(modName + "/common/units/", filenames);
-		for (auto filename : filenames)
+		std::set<std::string> moreFilenames;
+		Utils::GetAllFilesInFolder(modName + "/common/units/", moreFilenames);
+		for (auto filename : moreFilenames)
 		{
 			AddUnitFileToRegimentTypeMap((modName + "/common/units"), filename);
 		}

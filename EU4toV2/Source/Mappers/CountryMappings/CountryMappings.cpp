@@ -205,8 +205,6 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 	const std::map<std::string, V2Country*>& Vic2Countries,
 	const ProvinceMapper& provinceMapper
 ) {
-	bool mapped = false;
-
 	std::optional<int> Vic2Capital;
 	int EU4Capital = country->getCapital();
 	auto potentialVic2Capitals = provinceMapper.getVic2ProvinceNumbers(EU4Capital);

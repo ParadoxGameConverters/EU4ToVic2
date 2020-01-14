@@ -4,7 +4,6 @@
 #include "newParser.h"
 #include "ColonialFlagRegion.h"
 #include <map>
-#include <memory>
 #include <string>
 
 namespace mappers

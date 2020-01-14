@@ -3,7 +3,6 @@
 
 #include "newParser.h"
 #include <string>
-#include <memory>
 #include <ostream>
 
 namespace EU4

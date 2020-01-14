@@ -2,8 +2,6 @@
 #include "../../Configuration.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include <algorithm>
-#include <memory>
 
 mappers::TechSchoolMapper::TechSchoolMapper()
 {

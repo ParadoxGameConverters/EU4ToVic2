@@ -19,8 +19,8 @@ EU4::Religions::Religions()
 	}
 	for (auto modName : theConfiguration.getEU4Mods())
 	{
-		std::set<std::string> filenames;
-		Utils::GetAllFilesInFolder(modName + "/common/religions/", filenames);
+		std::set<std::string> moreFilenames;
+		Utils::GetAllFilesInFolder(modName + "/common/religions/", moreFilenames);
 		for (auto filename : filenames)
 		{
 			parseFile(modName + "/common/religions/" + filename);

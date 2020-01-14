@@ -3,6 +3,7 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
+#include <random>
 
 mappers::CK2TitleMapper::CK2TitleMapper()
 {

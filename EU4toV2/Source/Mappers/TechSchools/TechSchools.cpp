@@ -1,9 +1,5 @@
 #include "TechSchools.h"
-#include "../../Configuration.h"
 #include "Log.h"
-#include "ParserHelpers.h"
-#include <algorithm>
-#include <memory>
 
 mappers::TechSchools::TechSchools(std::istream& theStream)
 {

@@ -1,6 +1,7 @@
 #include "CulturalUnionMapper.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CulturalUnion.h"
 
 mappers::CulturalUnionMapper::CulturalUnionMapper(std::istream& theStream)
 {

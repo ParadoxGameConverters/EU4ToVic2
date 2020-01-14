@@ -2,7 +2,6 @@
 #define CULTURAL_UNION_MAPPER_H
 
 #include "newParser.h"
-#include "CulturalUnion.h"
 
 namespace mappers
 {

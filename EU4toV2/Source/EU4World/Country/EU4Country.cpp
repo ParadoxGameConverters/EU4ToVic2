@@ -6,7 +6,6 @@
 #include "../Relations/EU4Relations.h"
 #include "../History/CountryHistory.h"
 #include "../../V2World/V2Localisation.h"
-#include <algorithm>
 #include "EU4Technology.h"
 #include "EU4CountryFlags.h"
 #include "EU4Modifier.h"
@@ -450,7 +449,7 @@ void EU4::Country::determineLibertyDesire()
 			{
 				libertyDesire = 85.0;
 			}
-			else if (attitude == "atittude_rivalry")
+			else if (attitude == "attitude_rivalry")
 			{
 				libertyDesire = 80.0;
 			}
@@ -609,7 +608,7 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target)
 	LOG(LogLevel::Info) << " - " << tag << " is assimilating " << target->getTag();
 
 	// for calculation of weighted averages
-	int totalProvinces = target->provinces.size() + provinces.size();
+	unsigned int totalProvinces = target->provinces.size() + provinces.size();
 	if (totalProvinces == 0)
 	{
 		totalProvinces = 1;
