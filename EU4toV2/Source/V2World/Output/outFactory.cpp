@@ -1,7 +1,6 @@
-#include "V2Factory.h"
+#include "outFactory.h"
 
-
-std::ostream& operator<<(std::ostream& output, const V2Factory& factory)
+std::ostream& V2::operator<<(std::ostream& output, const Factory& factory)
 {
 	// V2 takes care of hiring employees on day 1, provided sufficient starting capital
 	output << "state_building=\n";

@@ -18,6 +18,7 @@
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../Mappers/PartyNames/PartyNameMapper.h"
+#include "../Mappers/PartyTypes/PartyTypeMapper.h"
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../Mappers/Unreleasables/Unreleasables.h"
 #include "../Mappers/LeaderTraits/LeaderTraitMapper.h"
@@ -25,6 +26,7 @@
 #include <memory>
 #include <set>
 #include <vector>
+#include "Factory/Factory.h"
 
 
 
@@ -43,7 +45,6 @@ class V2State;
 class V2Province;
 class V2Reforms;
 class V2UncivReforms;
-class V2Factory;
 class V2Creditor;
 class V2LeaderTraits;
 
@@ -90,7 +91,7 @@ class V2Country : commonItems::parser
 			const mappers::AdjacencyMapper& adjacencyMapper
 		);
 		void convertLeaders(mappers::LeaderTraitMapper& leaderTraitMapper);
-		bool addFactory(const V2Factory& factory);
+		bool addFactory(const V2::Factory& factory);
 		void								addRailroadtoCapitalState();
 		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
 		void								oldCivConversionMethod();
@@ -164,7 +165,7 @@ class V2Country : commonItems::parser
 		void determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::GovernmentMapper& governmentMapper);
 		void setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcCountry, const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions);
 		void setReligion(std::shared_ptr<EU4::Country> srcCountry, const mappers::ReligionMapper& religionMapper);
-		void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper);
+		void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper);
 
 	private:
 		void			outputTech(FILE*) const ;

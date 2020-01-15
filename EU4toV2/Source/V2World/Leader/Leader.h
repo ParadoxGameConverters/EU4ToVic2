@@ -13,7 +13,6 @@ namespace V2
 	public:
 		Leader() = default;
 		Leader(const EU4::Leader& oldLeader, const mappers::LeaderTraitMapper& leaderTraitMapper);
-		int getEU4ID() const { return eu4ID; }
 
 		friend std::ostream& operator<<(std::ostream& output, const Leader& leader);
 
@@ -23,7 +22,6 @@ namespace V2
 		bool isLand = true;
 		std::string personality;
 		std::string background;
-		int eu4ID = 0;
 	};
 }
 

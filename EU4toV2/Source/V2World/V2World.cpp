@@ -1334,7 +1334,7 @@ void V2World::allocateFactories(const EU4::World& sourceWorld)
 
 	weightedCountries.swap(restrictCountries);
 	// remove nations that won't have enough industiral score for even one factory
-	deque<V2Factory> factoryList = factoryTypeMapper.buildFactories();
+	deque<V2::Factory> factoryList = factoryTypeMapper.buildFactories();
 	while (((weightedCountries.begin()->first / totalIndWeight) * factoryList.size() + 0.5 /*round*/) < 1.0)
 	{
 		weightedCountries.pop_front();
@@ -1361,7 +1361,7 @@ void V2World::allocateFactories(const EU4::World& sourceWorld)
 		bool accepted = false;
 		if (citr->first > 0) // can take more factories
 		{
-			for (deque<V2Factory>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
+			for (deque<V2::Factory>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
 			{
 				if (citr->second->addFactory(*qitr))
 				{

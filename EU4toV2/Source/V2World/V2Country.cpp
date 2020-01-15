@@ -19,7 +19,6 @@
 #include "V2UncivReforms.h"
 #include "V2Creditor.h"
 #include "V2Pop.h"
-#include "Factory/V2Factory.h"
 #include <algorithm>
 #include <fstream>
 #include <math.h>
@@ -35,7 +34,8 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 {
 	registerKeyword(std::regex("party"), [this](const std::string& unused, std::istream& theStream)
 		{
-			V2::Party newParty(theStream);
+			mappers::PartyType newPartyType(theStream);
+			V2::Party newParty(newPartyType);
 			parties.push_back(newParty);
 		});
 	registerKeyword(std::regex("primary_culture"), [this](const std::string& unused, std::istream& theStream)
@@ -148,7 +148,7 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 
 	if (parties.empty())
 	{	// No parties are specified. Grab some.
-		loadPartiesFromBlob(theWorld->getPartyNameMapper());
+		loadPartiesFromBlob(theWorld->getPartyNameMapper(), theWorld->getPartyTypeMapper());
 	}
 
 	// set a default ruling party
@@ -172,7 +172,7 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 
 }
 
-void V2Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper)
+void V2Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper)
 {
 
 	auto partyMap = partyNameMapper.getMap();
@@ -187,7 +187,14 @@ void V2Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMap
 
 		std::string partyKey = tag + '_' + partyItr->first;
 
-		V2::Party newParty(partyKey, partyItr->first);
+		auto partyType = partyTypeMapper.getPartyTypeByIdeology(partyItr->first);
+		if (!partyType)
+		{
+			Log(LogLevel::Warning) << "Party type " << partyItr->first << " has no entry in party_blobs.txt!";
+			continue;
+		}
+		partyType->setName(partyKey);
+		V2::Party newParty(*partyType);
 		parties.push_back(newParty);
 		localisation.SetPartyKey(i, partyKey);
 		
@@ -259,7 +266,7 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 
 	if (parties.empty())
 	{	// No parties are specified. Get some.
-		loadPartiesFromBlob(theWorld->getPartyNameMapper());
+		loadPartiesFromBlob(theWorld->getPartyNameMapper(), theWorld->getPartyTypeMapper());
 	}
 
 	// set a default ruling party
@@ -1278,7 +1285,7 @@ static bool FactoryCandidateSortPredicate(const pair<double, V2State*>& lhs, con
 }
 
 
-bool V2Country::addFactory(const V2Factory& factory)
+bool V2Country::addFactory(const V2::Factory& factory)
 {
 	// check factory techs
 	std::string requiredTech = factory.getRequiredTech();

@@ -1,5 +1,4 @@
 #include "V2Province.h"
-#include "Factory/V2Factory.h"
 #include "CardinalToOrdinal.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -8,7 +7,6 @@
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2Pop.h"
 #include "V2Country.h"
-#include "Factory/V2Factory.h"
 #include <algorithm>
 #include <fstream>
 #include <memory>
@@ -958,9 +956,9 @@ void V2Province::combinePops()
 }
 
 
-void V2Province::addFactory(const V2Factory& factory)
+void V2Province::addFactory(const V2::Factory& factory)
 {
-	map<string, V2Factory>::iterator itr = factories.find(factory.getTypeName());
+	map<string, V2::Factory>::iterator itr = factories.find(factory.getTypeName());
 	if (itr == factories.end())
 	{
 		factories.insert(std::make_pair(factory.getTypeName(), factory));

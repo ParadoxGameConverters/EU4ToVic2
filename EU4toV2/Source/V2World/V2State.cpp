@@ -22,7 +22,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "V2State.h"
 #include "V2Pop.h"
 #include "V2Province.h"
-#include "Factory/V2Factory.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "Log.h"
 
@@ -68,7 +67,7 @@ bool V2State::hasLocalSupply(string product) const
 	return false;
 }
 
-double V2State::getSuppliedInputs(const V2Factory& factory) const
+double V2State::getSuppliedInputs(const V2::Factory& factory) const
 {
 	// find out the needs
 	map<string, double>	inputs = factory.getInputs();
@@ -81,7 +80,7 @@ double V2State::getSuppliedInputs(const V2Factory& factory) const
 		string rgo = (*itr)->getRgoType();
 		supplies[rgo] += 1.0;
 	}
-	for (vector<V2Factory>::const_iterator itr = factories.begin(); itr != factories.end(); itr++)
+	for (vector<V2::Factory>::const_iterator itr = factories.begin(); itr != factories.end(); itr++)
 	{
 		supplies[itr->getOutputs()] += 1.0;
 	}
@@ -113,7 +112,7 @@ bool V2State::provInState(int id) const
 	return false;
 }
 
-void V2State::addFactory(const V2Factory& factory)
+void V2State::addFactory(const V2::Factory& factory)
 {
 	provinces[0]->addFactory(factory);
 	factories.push_back(factory);

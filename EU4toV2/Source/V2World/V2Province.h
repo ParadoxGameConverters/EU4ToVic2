@@ -6,9 +6,9 @@
 #include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "newParser.h"
+#include "Factory/Factory.h"
 
 class V2Pop;
-class V2Factory;
 class V2Country;
 
 struct V2Demographic
@@ -46,7 +46,7 @@ class V2Province : commonItems::parser
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
 			const mappers::ProvinceMapper& provinceMapper
 		);
-		void addFactory(const V2Factory& factory);
+		void addFactory(const V2::Factory& factory);
 		void addPopDemographic(V2Demographic d);
 
 		int getTotalPopulation() const;
@@ -148,7 +148,7 @@ class V2Province : commonItems::parser
 		int fortLevel = 0;
 		int navalBaseLevel = 0;
 		int railLevel = 0;
-		std::map<std::string, V2Factory> factories;
+		std::map<std::string, V2::Factory> factories;
 
 		bool resettable = false;
 		double spentProvinceModifier = 0; //Store old popshaping modifier for NEU4-to-1V2 conversions;

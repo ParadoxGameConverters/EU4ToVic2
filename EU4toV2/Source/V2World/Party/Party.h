@@ -2,37 +2,23 @@
 #define PARTY_H
 
 #include "Date.h"
-#include <memory>
-
-#include "newParser.h"
+#include "../../Mappers/PartyTypes/PartyType.h"
 
 namespace V2
 {
-	class Party : commonItems::parser
+	class Party
 	{
 	public:
-		Party() = default;
-		Party(std::istream& theStream);
-		Party(const std::string& name, const std::string& ideology); // Populates all data with pregenerated values satisfying the required ideology.
-		bool isActiveOn(date query) const { return ((query > start_date) && (query < end_date)); };
+		Party(const mappers::PartyType& partyType);
+		bool isActiveOn(date query) const;
 		std::string getName() const { return name; }
-		std::string getIdeology() const { return ideology; }
+		std::string getIdeology() const { return partyDetails.getIdeology(); }
 
 		friend std::ostream& operator<<(std::ostream& output, const Party& party);
 
 	private:
+		mappers::PartyType partyDetails;
 		std::string name;
-		std::string ideology;
-
-		date start_date;
-		date end_date;
-
-		std::string economic_policy;
-		std::string trade_policy;
-		std::string religious_policy;
-		std::string citizenship_policy;
-		std::string war_policy;
-
 	};
 }
 

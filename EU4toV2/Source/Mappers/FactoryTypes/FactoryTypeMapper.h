@@ -8,7 +8,7 @@
 #include "../FactoryCounts/FactoryStartingCounts.h"
 #include <map>
 #include <deque>
-#include "../../V2World/Factory/V2Factory.h"
+#include "../../V2World/Factory/Factory.h"
 
 namespace mappers
 {
@@ -17,7 +17,7 @@ namespace mappers
 	public:
 		FactoryTypeMapper();
 		std::map<std::string, FactoryType> getFactoryTypes() const { return factoryTypes; }
-		std::deque<V2Factory> buildFactories() const;
+		std::deque<V2::Factory> buildFactories() const;
 
 	private:
 		std::map<std::string, FactoryType> factoryTypes;
