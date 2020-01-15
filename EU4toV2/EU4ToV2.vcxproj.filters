@@ -180,9 +180,6 @@
     <ClCompile Include="Source\EU4World\History\CountryHistoryDate.cpp">
       <Filter>EU4World\History</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Country\V2Party.cpp">
-      <Filter>Vic2World\Country</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\NationMerger\MergeBlock.cpp">
       <Filter>EU4World\NationMerger</Filter>
     </ClCompile>
@@ -438,6 +435,12 @@
     <ClCompile Include="Source\V2World\Output\outLeader.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outParty.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Party\Party.cpp">
+      <Filter>Vic2World\Party</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -620,9 +623,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\History\CountryHistoryDate.h">
       <Filter>EU4World\History</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Country\V2Party.h">
-      <Filter>Vic2World\Country</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\NationMerger\MergeBlock.h">
       <Filter>EU4World\NationMerger</Filter>
@@ -879,6 +879,12 @@
     <ClInclude Include="Source\V2World\Output\outLeader.h">
       <Filter>Vic2World\Output</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Output\outParty.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Party\Party.h">
+      <Filter>Vic2World\Party</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -931,9 +937,6 @@
     </Filter>
     <Filter Include="EU4World\Leader">
       <UniqueIdentifier>{cad4ad12-a780-4d35-bce5-cfa1c1b23f89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Vic2World\Country">
-      <UniqueIdentifier>{8b2897e0-22e8-4284-a6d6-52b237ebab64}</UniqueIdentifier>
     </Filter>
     <Filter Include="EU4World\NationMerger">
       <UniqueIdentifier>{001fbc47-c628-4766-a50e-876ff0ba6b44}</UniqueIdentifier>
@@ -1051,6 +1054,9 @@
     </Filter>
     <Filter Include="Vic2World\Output">
       <UniqueIdentifier>{9fb14058-9987-4188-8664-36162b13d0af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Party">
+      <UniqueIdentifier>{8b2897e0-22e8-4284-a6d6-52b237ebab64}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

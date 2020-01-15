@@ -2,7 +2,7 @@
 #define V2COUNTRY_H_
 
 #include "V2Army.h"
-#include "Country/V2Party.h"
+#include "Party/Party.h"
 #include "Leader/Leader.h"
 #include "V2Localisation.h"
 #include "V2Relations.h"
@@ -203,7 +203,7 @@ class V2Country : commonItems::parser
 		std::string							primaryCulture;
 		std::set<std::string>						acceptedCultures;
 		std::string							religion;
-		std::vector<V2Party> parties;
+		std::vector<V2::Party> parties;
 		std::string							rulingParty;
 		std::string							commonCountryFile;
 		double prestige = 0.0;

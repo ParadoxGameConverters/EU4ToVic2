@@ -21,8 +21,6 @@
 #include "V2Pop.h"
 #include "Factory/V2Factory.h"
 #include <algorithm>
-#include <exception>
-#include <float.h>
 #include <fstream>
 #include <math.h>
 #include <sstream>
@@ -37,7 +35,7 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 {
 	registerKeyword(std::regex("party"), [this](const std::string& unused, std::istream& theStream)
 		{
-			V2Party newParty(theStream);
+			V2::Party newParty(theStream);
 			parties.push_back(newParty);
 		});
 	registerKeyword(std::regex("primary_culture"), [this](const std::string& unused, std::istream& theStream)
@@ -189,7 +187,7 @@ void V2Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMap
 
 		std::string partyKey = tag + '_' + partyItr->first;
 
-		V2Party newParty(partyKey, partyItr->first);
+		V2::Party newParty(partyKey, partyItr->first);
 		parties.push_back(newParty);
 		localisation.SetPartyKey(i, partyKey);
 		
