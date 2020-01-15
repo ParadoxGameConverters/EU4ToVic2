@@ -15,8 +15,6 @@
 #include "V2Province.h"
 #include "V2Relations.h"
 #include "V2Army.h"
-#include "V2Reforms.h"
-#include "V2UncivReforms.h"
 #include "V2Creditor.h"
 #include "V2Pop.h"
 #include <algorithm>
@@ -26,6 +24,8 @@
 #include <queue>
 #include <cmath>
 #include "ParserHelpers.h"
+#include "Reforms/Reforms.h"
+#include "Reforms/UncivReforms.h"
 
 const int MONEYFACTOR = 30;	// ducat to pound conversion rate
 
@@ -290,121 +290,119 @@ void V2Country::output() const
 {
 	if(!dynamicCountry)
 	{
-		FILE* output;
-		if (fopen_s(&output, ("output/" + theConfiguration.getOutputName() + "/history/countries/" + filename).c_str(), "w") != 0)
+		ofstream output;		
+		output.open("output/" + theConfiguration.getOutputName() + "/history/countries/" + filename);
+		if (!output.is_open())
 		{
-			LOG(LogLevel::Error) << "Could not create country history file " << filename;
-			exit(-1);
+			throw std::runtime_error("Could not create country history file " + filename);
 		}
 
 		if (capital > 0)
 		{
-			fprintf(output, "capital=%d\n", capital);
+			output << "capital=" << capital << "\n";
 		}
-		fprintf(output, "primary_culture = %s\n", primaryCulture.c_str());
-		for (set<string>::iterator i = acceptedCultures.begin(); i != acceptedCultures.end(); i++)
+		output << "primary_culture = " << primaryCulture << "\n";
+		for (set<string>::iterator i = acceptedCultures.begin(); i != acceptedCultures.end(); ++i)
 		{
-			fprintf(output, "culture = %s\n", i->c_str());
+			output << "culture = " << *i << "\n";
 		}
-		fprintf(output, "religion = %s\n", religion.c_str());
-		fprintf(output, "government = %s\n", government.c_str());
-		fprintf(output, "plurality=%f\n", plurality);
-		fprintf(output, "nationalvalue=%s\n", nationalValue.c_str());
-		fprintf(output, "literacy=%f\n", literacy);
+		output << "religion = " << religion << "\n";
+		output << "government = " << government << "\n";
+		output << "plurality= " << plurality << "\n";
+		output << "nationalvalue= " << nationalValue << "\n";
+		output << "literacy= " << literacy << "\n";
 		if (civilized)
 		{
-			fprintf(output, "civilized=yes\n");
+			output << "civilized=yes\n";
 		}
 		if (!isReleasableVassal)
 		{
-			fprintf(output, "is_releasable_vassal=no\n");
+			output << "is_releasable_vassal=no\n";
 		}
-		fprintf(output, "\n");
-		fprintf(output, "# Social Reforms\n");
-		fprintf(output, "wage_reform = no_minimum_wage\n");
-		fprintf(output, "work_hours = no_work_hour_limit\n");
-		fprintf(output, "safety_regulations = no_safety\n");
-		fprintf(output, "health_care = no_health_care\n");
-		fprintf(output, "unemployment_subsidies = no_subsidies\n");
-		fprintf(output, "pensions = no_pensions\n");
-		fprintf(output, "school_reforms = no_schools\n");
+		output << "\n";
+		output << "# Social Reforms\n";
+		output << "wage_reform = no_minimum_wage\n";
+		output << "work_hours = no_work_hour_limit\n";
+		output << "safety_regulations = no_safety\n";
+		output << "health_care = no_health_care\n";
+		output << "unemployment_subsidies = no_subsidies\n";
+		output << "pensions = no_pensions\n";
+		output << "school_reforms = no_schools\n";
 
 		if (reforms != nullptr)
 		{
-			reforms->output(output);
+			output << *reforms;
 		}
 		else
 		{
-			fprintf(output, "# Political Reforms\n");
-			fprintf(output, "slavery=yes_slavery\n");
-			fprintf(output, "vote_franschise=none_voting\n");
-			fprintf(output, "upper_house_composition=appointed\n");
-			fprintf(output, "voting_system=jefferson_method\n");
-			fprintf(output, "public_meetings=yes_meeting\n");
-			fprintf(output, "press_rights=censored_press\n");
-			fprintf(output, "trade_unions=no_trade_unions\n");
-			fprintf(output, "political_parties=underground_parties\n");
+			output << "# Political Reforms\n";
+			output << "slavery=yes_slavery\n";
+			output << "vote_franschise=none_voting\n";
+			output << "upper_house_composition=appointed\n";
+			output << "voting_system=jefferson_method\n";
+			output << "public_meetings=yes_meeting\n";
+			output << "press_rights=censored_press\n";
+			output << "trade_unions=no_trade_unions\n";
+			output << "political_parties=underground_parties\n";
 		}
-		fprintf(output, "\n");
-		fprintf(output, "ruling_party=%s\n", rulingParty.c_str());
-		fprintf(output, "upper_house=\n");
-		fprintf(output, "{\n");
-		fprintf(output, "	fascist = 0\n");
-		fprintf(output, "	liberal = %d\n", upperHouseLiberal);
-		fprintf(output, "	conservative = %d\n", upperHouseConservative);
-		fprintf(output, "	reactionary = %d\n", upperHouseReactionary);
-		fprintf(output, "	anarcho_liberal = 0\n");
-		fprintf(output, "	socialist = 0\n");
-		fprintf(output, "	communist = 0\n");
-		fprintf(output, "}\n");
-		fprintf(output, "\n");
-		fprintf(output, "# Starting Consciousness\n");
-		fprintf(output, "consciousness = 0\n");
-		fprintf(output, "nonstate_consciousness = 0\n");
-		fprintf(output, "\n");
+		output << "\n";
+		output << "ruling_party= " << rulingParty << "\n";
+		output << "upper_house=\n";
+		output << "{\n";
+		output << "	fascist = 0\n";
+		output << "	liberal = " << upperHouseLiberal << "\n";
+		output << "	conservative = " << upperHouseConservative << "\n";
+		output << "	reactionary = " << upperHouseReactionary << "\n";
+		output << "	anarcho_liberal = 0\n";
+		output << "	socialist = 0\n";
+		output << "	communist = 0\n";
+		output << "}\n";
+		output << "\n";
+		output << "# Starting Consciousness\n";
+		output << "consciousness = 0\n";
+		output << "nonstate_consciousness = 0\n";
+		output << "\n";
 		outputTech(output);
 		if (!civilized)
 		{
 			if (uncivReforms != nullptr)
 			{
-				uncivReforms->output(output);
+				output << *uncivReforms;
 			}
 		}
-		fprintf(output, "prestige=%f\n", prestige);
+		output << "prestige=" << prestige << "\n";
 
 		if (!decisions.empty())
 		{
-			fprintf(output, "\n");
-			fprintf(output, "# Decisions\n");
-			fprintf(output, "1.1.1 = {\n");
+			output << "\n";
+			output << "# Decisions\n";
+			output << "1.1.1 = {\n";
 			for (const auto& decision : decisions)
 			{
-				fprintf(output, "\tdecision = %s\n", decision.c_str());
+				output << "\tdecision = " << decision << "\n";
 			}
-			fprintf(output, "}\n");
+			output << "}\n";
 		}
 
+		//output << "	schools=\"%s\"\n", techSchool.c_str());
 
-
-		//fprintf(output, "	schools=\"%s\"\n", techSchool.c_str());
-
-		fprintf(output, "oob = \"%s\"\n", (tag + "_OOB.txt").c_str());
+		output << "oob = \"" << (tag + "_OOB.txt") << "\"\n";
 
 		if (holyRomanEmperor)
 		{
-			fprintf(output, "set_country_flag = emperor_hre\n");
+			output << "set_country_flag = emperor_hre\n";
 		}
 		else if (inHRE)
 		{
-			fprintf(output, "set_country_flag = member_hre\n");
+			output << "set_country_flag = member_hre\n";
 		}
 
 		if (celestialEmperor)
 		{
-			fprintf(output, "set_country_flag = celestial_emperor\n");
+			output << "set_country_flag = celestial_emperor\n";
 		}
 
-		fclose(output);
+		output.close();
 
 		outputOOB();
 	}
@@ -437,13 +435,13 @@ void V2Country::outputLocalisation(std::ostream& output) const
 }
 
 
-void V2Country::outputTech(FILE* output) const
+void V2Country::outputTech(std::ofstream& output) const
 {
-	fprintf(output, "\n");
-	fprintf(output, "# Technologies\n");
+	output << "\n";
+	output << "# Technologies\n";
 	for (vector<string>::const_iterator itr = techs.begin(); itr != techs.end(); ++itr)
 	{
-		fprintf(output, "%s", itr->c_str()); fprintf(output, " = 1\n");
+		output << *itr << "= 1\n";
 	}
 }
 
@@ -564,7 +562,7 @@ void V2Country::initFromEU4Country(
 	resolvePolitics();
 
 	// Generate Reforms
-	reforms		=  new V2Reforms(this, srcCountry);
+	reforms = new V2::Reforms(this, srcCountry);
 
 	// Relations
 	generateRelations(_srcCountry, countryMapper);
@@ -1397,7 +1395,7 @@ void V2Country::oldCivConversionMethod() // civilisation level conversion method
 		double militaryDev = srcCountry->getMilTech() / totalTechs;
 		double socioEconDev = srcCountry->getAdmTech() / totalTechs;
 		LOG(LogLevel::Debug) << "Setting unciv reforms for " << tag << " who has tech group " << srcCountry->getTechGroup() << " and " << srcCountry->numEmbracedInstitutions() << " institutions. westernization at 0%";
-		uncivReforms = new V2UncivReforms(0, militaryDev, socioEconDev, this);
+		uncivReforms = new V2::UncivReforms(0, militaryDev, socioEconDev, this);
 		government = "absolute_monarchy";
 	}
 	else if ((srcCountry->getIsolationism() == 0) && (srcCountry->numEmbracedInstitutions() >= 6))
@@ -1406,7 +1404,7 @@ void V2Country::oldCivConversionMethod() // civilisation level conversion method
 		double militaryDev = srcCountry->getMilTech() / totalTechs;
 		double socioEconDev = srcCountry->getAdmTech() / totalTechs;
 		LOG(LogLevel::Debug) << "Setting unciv reforms for " << tag << " who has tech group " << srcCountry->getTechGroup() << ", " << srcCountry->numEmbracedInstitutions() << " institutions and an isolationism of " << srcCountry->numEmbracedInstitutions() << ". westernization at 50%";
-		uncivReforms = new V2UncivReforms(50, militaryDev, socioEconDev, this);
+		uncivReforms = new V2::UncivReforms(50, militaryDev, socioEconDev, this);
 		government = "absolute_monarchy";
 	}
 	else if ((srcCountry->getTechGroup() == "muslim") || (srcCountry->numEmbracedInstitutions() >= 6))
@@ -1415,7 +1413,7 @@ void V2Country::oldCivConversionMethod() // civilisation level conversion method
 		double militaryDev = srcCountry->getMilTech() / totalTechs;
 		double socioEconDev = srcCountry->getAdmTech() / totalTechs;
 		LOG(LogLevel::Debug) << "Setting unciv reforms for " << tag << " who has tech group " << srcCountry->getTechGroup() << " and " << srcCountry->numEmbracedInstitutions() << " institutions. westernization at 44%";
-		uncivReforms = new V2UncivReforms(44, militaryDev, socioEconDev, this);
+		uncivReforms = new V2::UncivReforms(44, militaryDev, socioEconDev, this);
 		government = "absolute_monarchy";
 	}
 	else if ((srcCountry->getTechGroup() == "indian") || (srcCountry->getIsolationism() == 0))
@@ -1424,7 +1422,7 @@ void V2Country::oldCivConversionMethod() // civilisation level conversion method
 		double militaryDev = srcCountry->getMilTech() / totalTechs;
 		double socioEconDev = srcCountry->getAdmTech() / totalTechs;
 		LOG(LogLevel::Debug) << "Setting unciv reforms for " << tag << " who has tech group " << srcCountry->getTechGroup() << ", " << srcCountry->numEmbracedInstitutions() << " institutions and an isolationism of " << srcCountry->numEmbracedInstitutions() << ".  Westernization at 40%";
-		uncivReforms = new V2UncivReforms(40, militaryDev, socioEconDev, this);
+		uncivReforms = new V2::UncivReforms(40, militaryDev, socioEconDev, this);
 		government = "absolute_monarchy";
 	}
 	else if ((srcCountry->getTechGroup() == "chinese") || (srcCountry->numEmbracedInstitutions() == 5))
@@ -1433,7 +1431,7 @@ void V2Country::oldCivConversionMethod() // civilisation level conversion method
 		double militaryDev = srcCountry->getMilTech() / totalTechs;
 		double socioEconDev = srcCountry->getAdmTech() / totalTechs;
 		LOG(LogLevel::Debug) << "Setting unciv reforms for " << tag << " who has tech group " << srcCountry->getTechGroup() << " and " << srcCountry->numEmbracedInstitutions() << " institutions. westernization at 36%";
-		uncivReforms = new V2UncivReforms(36, militaryDev, socioEconDev, this);
+		uncivReforms = new V2::UncivReforms(36, militaryDev, socioEconDev, this);
 		government = "absolute_monarchy";
 	}
 	else if (srcCountry->getTechGroup() == "nomad_group")
@@ -1442,7 +1440,7 @@ void V2Country::oldCivConversionMethod() // civilisation level conversion method
 		double militaryDev = srcCountry->getMilTech() / totalTechs;
 		double socioEconDev = srcCountry->getAdmTech() / totalTechs;
 		LOG(LogLevel::Debug) << "Setting unciv reforms for " << tag << " who has tech group " << srcCountry->getTechGroup() << " and " << srcCountry->numEmbracedInstitutions() << " institutions. westernization at 30%";
-		uncivReforms = new V2UncivReforms(30, militaryDev, socioEconDev, this);
+		uncivReforms = new V2::UncivReforms(30, militaryDev, socioEconDev, this);
 		government = "absolute_monarchy";
 	}
 	else if ((srcCountry->getTechGroup() == "sub_saharan") || (srcCountry->getTechGroup() == "central_african") || (srcCountry->getTechGroup() == "east_african") || (srcCountry->numEmbracedInstitutions() == 4))
@@ -1451,7 +1449,7 @@ void V2Country::oldCivConversionMethod() // civilisation level conversion method
 		double militaryDev = srcCountry->getMilTech() / totalTechs;
 		double socioEconDev = srcCountry->getAdmTech() / totalTechs;
 		LOG(LogLevel::Debug) << "Setting unciv reforms for " << tag << " who has tech group " << srcCountry->getTechGroup() << " and " << srcCountry->numEmbracedInstitutions() << " institutions. westernization at 20%";
-		uncivReforms = new V2UncivReforms(20, militaryDev, socioEconDev, this);
+		uncivReforms = new V2::UncivReforms(20, militaryDev, socioEconDev, this);
 		government = "absolute_monarchy";
 	}
 	else
@@ -1460,7 +1458,7 @@ void V2Country::oldCivConversionMethod() // civilisation level conversion method
 		double totalTechs = srcCountry->getMilTech() + srcCountry->getAdmTech();
 		double militaryDev = srcCountry->getMilTech() / totalTechs;
 		double socioEconDev = srcCountry->getAdmTech() / totalTechs;
-		uncivReforms = new V2UncivReforms(0, militaryDev, socioEconDev, this);
+		uncivReforms = new V2::UncivReforms(0, militaryDev, socioEconDev, this);
 		government = "absolute_monarchy";
 	}
 }
@@ -1506,7 +1504,7 @@ void V2Country::newCivConversionMethod(double topTech, int topInsitutions, const
 				totalTechs = totalTechs - srcCountry->getDipTech();
 				double militaryDev = srcCountry->getMilTech() / totalTechs;
 				double socioEconDev = srcCountry->getAdmTech() / totalTechs;
-				uncivReforms = new V2UncivReforms((int)(civLevel + 0.5), militaryDev, socioEconDev, this);
+				uncivReforms = new V2::UncivReforms((int)(civLevel + 0.5), militaryDev, socioEconDev, this);
 				government = "absolute_monarchy";
 			}
 		}
@@ -1522,7 +1520,7 @@ void V2Country::convertLandlessReforms(V2Country* capOwner)
 	else
 	{
 		civilized = false;
-		V2UncivReforms* uncivReforms = capOwner->getUncivReforms();
+		V2::UncivReforms* uncivReforms = capOwner->getUncivReforms();
 	}
 }
 

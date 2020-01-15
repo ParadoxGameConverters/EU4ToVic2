@@ -6,9 +6,7 @@
 #include "Leader/Leader.h"
 #include "Localisation/Localisation.h"
 #include "V2Relations.h"
-#include "Color.h"
 #include "Date.h"
-#include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Regions/Regions.h"
 #include "../EU4World/Country/EU4NationalSymbol.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
@@ -28,8 +26,6 @@
 #include <vector>
 #include "Factory/Factory.h"
 
-
-
 namespace EU4
 {
 class Country;
@@ -40,11 +36,15 @@ namespace mappers
 class IdeaEffectMapper;
 class TechGroupsMapper;
 }
+namespace V2
+{
+	class Reforms;
+	class UncivReforms;
+}
+
 class V2World;
 class V2State;
 class V2Province;
-class V2Reforms;
-class V2UncivReforms;
 class V2Creditor;
 class V2LeaderTraits;
 
@@ -140,7 +140,7 @@ class V2Country : commonItems::parser
 		std::vector<std::pair<int, int>>	getConservativeIssues() const { return conservativeIssues; }
 		std::vector<std::pair<int, int>>	getLiberalIssues() const { return liberalIssues; }
 		double							getLiteracy() const { return literacy; }
-		V2UncivReforms*					getUncivReforms() const { return uncivReforms; }
+		V2::UncivReforms* getUncivReforms() const { return uncivReforms; }
 		int								getCapital() const { return capital; }
 		bool								isNewCountry() const { return newCountry; }
 		int								getNumFactories() const { return numFactories; }
@@ -168,7 +168,7 @@ class V2Country : commonItems::parser
 		void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper);
 
 	private:
-		void			outputTech(FILE*) const ;
+		void			outputTech(std::ofstream& output) const ;
 		void			outputElection(FILE*) const;
 		void			addLoan(std::string creditor, double size, double interest);
 		addRegimentToArmyResult addRegimentToArmy(
@@ -212,7 +212,7 @@ class V2Country : commonItems::parser
 		double							plurality;
 		std::vector<std::string>					techs;
 		std::set<std::string>						inventions;
-		V2UncivReforms*				uncivReforms;
+		V2::UncivReforms* uncivReforms;
 		double							researchPoints;
 		std::string							techSchool;
 		std::string							government;
@@ -224,7 +224,7 @@ class V2Country : commonItems::parser
 		std::vector<std::pair<int, int>>	liberalIssues;
 		std::map<std::string, V2Relations>	relations;
 		std::vector<V2Army> armies;
-		V2Reforms*						reforms;
+		V2::Reforms* reforms;
 		std::string nationalValue = "nv_order";
 		double							money;
 		date								lastBankrupt;
