@@ -80,14 +80,14 @@ double V2State::getSuppliedInputs(const V2::Factory& factory) const
 		string rgo = (*itr)->getRgoType();
 		supplies[rgo] += 1.0;
 	}
-	for (vector<V2::Factory>::const_iterator itr = factories.begin(); itr != factories.end(); itr++)
+	for (vector<V2::Factory>::const_iterator itr = factories.begin(); itr != factories.end(); ++itr)
 	{
 		supplies[itr->getOutputs()] += 1.0;
 	}
 
 	// determine how many of the inputs are supplied
 	int totalSupplied = 0;
-	for (map<string, double>::const_iterator inputItr = inputs.begin(); inputItr != inputs.end(); inputItr++)
+	for (map<string, double>::const_iterator inputItr = inputs.begin(); inputItr != inputs.end(); ++inputItr)
 	{
 		map<string, double>::const_iterator supplyItr = supplies.find(inputItr->first);
 		if (supplyItr != supplies.end())
@@ -134,14 +134,14 @@ double V2State::getManuRatio() const
 {
 	// get all source provinces
 	set<const EU4::Province*> srcProvinces;
-	for (auto itr = provinces.begin(); itr != provinces.end(); itr++)
+	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
 		srcProvinces.insert((*itr)->getSrcProvince());
 	}
 
 	// count the manufactories in the source provinces
 	int numManus = 0;
-	for (auto itr = srcProvinces.begin(); itr != srcProvinces.end(); itr++)
+	for (auto itr = srcProvinces.begin(); itr != srcProvinces.end(); ++itr)
 	{
 		if ((*itr)->hasBuilding("refinery") ||
 			(*itr)->hasBuilding("wharf") ||

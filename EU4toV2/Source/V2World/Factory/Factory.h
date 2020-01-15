@@ -15,8 +15,8 @@ namespace V2
 
 		bool requiresCoastal() const { return factoryType.getCoastal(); }
 		std::string getRequiredTech() const { return factoryType.getRequiredTech(); }
-		std::string	getRequiredInvention() const { return factoryType.getRequiredInvention(); }
-		std::string	getTypeName() const { return factoryType.getName(); }
+		std::string getRequiredInvention() const { return factoryType.getRequiredInvention(); }
+		std::string getTypeName() const { return factoryType.getName(); }
 		std::map<std::string, double> getInputs() const { return factoryType.getInputs(); }
 		std::string getOutputs() const { return factoryType.getOutputs(); };
 
