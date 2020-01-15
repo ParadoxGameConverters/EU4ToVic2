@@ -57,9 +57,6 @@
     <ClCompile Include="Source\V2World\V2Creditor.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2Diplomacy.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2Flags.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -447,6 +444,15 @@
     <ClCompile Include="Source\V2World\Party\Party.cpp">
       <Filter>Vic2World\Party</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp">
+      <Filter>Vic2World\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp">
+      <Filter>Vic2World\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outAgreement.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -502,9 +508,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Creditor.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Diplomacy.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Flags.h">
@@ -900,6 +903,15 @@
     <ClInclude Include="Source\Mappers\PartyTypes\PartyTypeMapper.h">
       <Filter>Mappers\PartyTypes</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Diplomacy\Agreement.h">
+      <Filter>Vic2World\Diplomacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h">
+      <Filter>Vic2World\Diplomacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Output\outAgreement.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1075,6 +1087,9 @@
     </Filter>
     <Filter Include="Mappers\PartyTypes">
       <UniqueIdentifier>{6c6b3000-31ef-4f1a-8bf8-ca093ab3698a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Diplomacy">
+      <UniqueIdentifier>{60deccb8-ae6d-4439-bd87-139962fe9044}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

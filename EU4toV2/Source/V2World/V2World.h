@@ -4,7 +4,7 @@
 
 
 #include "V2Country.h"
-#include "V2Diplomacy.h"
+#include "Diplomacy/Diplomacy.h"
 #include "V2Province.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
@@ -99,7 +99,6 @@ class V2World
 			double provPopRatio
 		);
 
-		void convertDiplomacy(const EU4::World& sourceWorld);
 		void setupColonies();
 		void setupStates();
 		void shuffleRgos();
@@ -118,7 +117,7 @@ class V2World
 		std::map<std::string, V2Country*> countries;
 		std::map<std::string, V2Country*> potentialCountries;
 		std::map<std::string, V2Country*> dynamicCountries;
-		V2Diplomacy diplomacy;
+		V2::Diplomacy diplomacy;
 		std::map<int, std::set<std::string>> colonies;
 		std::map<std::string, std::list<int>>	popRegions;
 		std::map<int, int> leaderIDMap; // <EU4, V2>

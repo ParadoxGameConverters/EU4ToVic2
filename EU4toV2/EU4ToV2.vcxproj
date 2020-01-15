@@ -301,7 +301,10 @@
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp" />
     <ClCompile Include="Source\targa.cpp" />
+    <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
+    <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\Leader\Leader.cpp" />
+    <ClCompile Include="Source\V2World\Output\outAgreement.cpp" />
     <ClCompile Include="Source\V2World\Output\outFactory.cpp" />
     <ClCompile Include="Source\V2World\Output\outLeader.cpp" />
     <ClCompile Include="Source\V2World\Output\outParty.cpp" />
@@ -310,7 +313,6 @@
     <ClCompile Include="Source\V2World\V2Army.cpp" />
     <ClCompile Include="Source\V2World\V2Country.cpp" />
     <ClCompile Include="Source\V2World\V2Creditor.cpp" />
-    <ClCompile Include="Source\V2World\V2Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\V2Flags.cpp" />
     <ClCompile Include="Source\V2World\V2Localisation.cpp" />
     <ClCompile Include="Source\V2World\V2Pop.cpp" />
@@ -455,8 +457,11 @@
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
     <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h" />
     <ClInclude Include="Source\targa.h" />
+    <ClInclude Include="Source\V2World\Diplomacy\Agreement.h" />
+    <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\V2World\Factory\Factory.h" />
     <ClInclude Include="Source\V2World\Leader\Leader.h" />
+    <ClInclude Include="Source\V2World\Output\outAgreement.h" />
     <ClInclude Include="Source\V2World\Output\outFactory.h" />
     <ClInclude Include="Source\V2World\Output\outLeader.h" />
     <ClInclude Include="Source\V2World\Output\outParty.h" />
@@ -464,7 +469,6 @@
     <ClInclude Include="Source\V2World\V2Army.h" />
     <ClInclude Include="Source\V2World\V2Country.h" />
     <ClInclude Include="Source\V2World\V2Creditor.h" />
-    <ClInclude Include="Source\V2World\V2Diplomacy.h" />
     <ClInclude Include="Source\V2World\V2Flags.h" />
     <ClInclude Include="Source\V2World\V2Localisation.h" />
     <ClInclude Include="Source\V2World\V2Pop.h" />
