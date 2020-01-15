@@ -7,8 +7,8 @@
 #include "../EU4World/Country/EU4Country.h"
 #include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/Provinces/EU4Province.h"
-#include "../Mappers/Ideas/IdeaEffectMapper.h"
-#include "../Mappers/Ideas/TechGroupsMapper.h"
+#include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
+#include "../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2World.h"
 #include "V2State.h"
@@ -885,11 +885,10 @@ void V2Country::buildCanals(std::shared_ptr<EU4::Country> srcCountry)
 
 
 // used only for countries which are NOT converted (i.e. unions, dead countries, etc)
-void V2Country::initFromHistory(const mappers::V2Unreleasables& unreleasablesMapper)
+void V2Country::initFromHistory(const mappers::Unreleasables& unreleasablesMapper)
 {
 	// Ping unreleasable_tags for this country's TAG
-	auto unreleasables = unreleasablesMapper.getUnreleasables();
-	if (unreleasables.count(tag)) isReleasableVassal = false;
+	isReleasableVassal = unreleasablesMapper.isTagReleasable(tag);
 
 	string fullFilename;
 
@@ -931,39 +930,16 @@ void V2Country::addProvince(V2Province* _province)
 }
 
 
-static set<int> getPortBlacklist()
-{
-	// hack for naval bases.  not ALL naval bases are in port provinces, and if you spawn a navy at a naval base in
-	// a non-port province, Vicky crashes....
-	static set<int> port_blacklist;
-	if (port_blacklist.size() == 0)
-	{
-		int temp = 0;
-		ifstream s("configurables/port_blacklist.txt");
-		while (s.good() && !s.eof())
-		{
-			s >> temp;
-			port_blacklist.insert(temp);
-		}
-		s.close();
-	}
-	return port_blacklist;
-}
-
-
 std::vector<int> V2Country::getPortProvinces(
 	const std::vector<int>& locationCandidates,
-	std::map<int, V2Province*> allProvinces
+	std::map<int, V2Province*> allProvinces,
+	const mappers::PortProvinces& portProvincesMapper
 ) {
-	std::set<int> port_blacklist = getPortBlacklist();
 
 	std::vector<int> unblockedCandidates;
 	for (auto candidate: locationCandidates)
 	{
-		if (port_blacklist.count(candidate) == 0)
-		{
-			unblockedCandidates.push_back(candidate);
-		}
+		if (!portProvincesMapper.isProvinceIDBlacklisted(candidate)) unblockedCandidates.push_back(candidate);
 	}
 
 	std::vector<int> coastalProvinces;
@@ -982,7 +958,7 @@ std::vector<int> V2Country::getPortProvinces(
 }
 
 
-void V2Country::addState(V2State* newState)
+void V2Country::addState(V2State* newState, const mappers::PortProvinces& portProvincesMapper)
 {
 	int				highestNavalLevel	= 0;
 	unsigned int	hasHighestLevel	= -1;
@@ -996,7 +972,7 @@ void V2Country::addState(V2State* newState)
 	{
 		newProvinceNums.push_back(province->getNum());
 	}
-	auto portProvinces = getPortProvinces(newProvinceNums, provinces);
+	auto portProvinces = getPortProvinces(newProvinceNums, provinces, portProvincesMapper);
 
 	for (unsigned int i = 0; i < newProvinces.size(); i++)
 	{
@@ -1042,7 +1018,7 @@ void V2Country::addState(V2State* newState)
 	}
 }
 
-void V2Country::convertLeaders(mappers::V2LeaderTraitMapper& leaderTraits)
+void V2Country::convertLeaders(mappers::LeaderTraitMapper& leaderTraitMapper)
 {
 	if (srcCountry == nullptr) return;
 	if (provinces.size() == 0) return;
@@ -1052,7 +1028,7 @@ void V2Country::convertLeaders(mappers::V2LeaderTraitMapper& leaderTraits)
 	std::vector<EU4::Leader>::iterator eu4LeaderItr;
 	for (eu4LeaderItr = eu4Leaders.begin(); eu4LeaderItr != eu4Leaders.end(); ++eu4LeaderItr)
 	{
-		V2Leader newLeader(*eu4LeaderItr, leaderTraits);
+		V2Leader newLeader(*eu4LeaderItr, leaderTraitMapper);
 		leaders.push_back(newLeader);
 	}
 }
@@ -1062,7 +1038,7 @@ void V2Country::convertLeaders(mappers::V2LeaderTraitMapper& leaderTraits)
 void V2Country::convertArmies(
 	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)],
 	const std::map<int, V2Province*>& allProvinces,
-	std::vector<int> port_whitelist,
+	const mappers::PortProvinces& portProvincesMapper,
 	const mappers::ProvinceMapper& provinceMapper,
 	const mappers::AdjacencyMapper& adjacencyMapper
 ) {
@@ -1096,7 +1072,7 @@ void V2Country::convertArmies(
 
 			for (int i = 0; i < regimentsToCreate; ++i)
 			{
-				if (addRegimentToArmy(army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper, adjacencyMapper) != addRegimentToArmyResult::success)
+				if (addRegimentToArmy(army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper, adjacencyMapper, portProvincesMapper) != addRegimentToArmyResult::success)
 				{
 					// couldn't add, dissolve into pool
 					countryRemainder[rc] += 1.0;
@@ -1137,7 +1113,7 @@ void V2Country::convertArmies(
 			}
 			if (usePort)
 			{
-				locationCandidates = getPortProvinces(locationCandidates, allProvinces);
+				locationCandidates = getPortProvinces(locationCandidates, allProvinces, portProvincesMapper);
 				if (locationCandidates.size() == 0)
 				{
 					int regimentCounts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0 };
@@ -1152,13 +1128,9 @@ void V2Country::convertArmies(
 		}
 
 		int selectedLocation = locationCandidates[int(locationCandidates.size() * ((double)rand() / RAND_MAX))];
-		if (army.getNavy() && usePort)
+		if (army.getNavy() && usePort && !portProvincesMapper.isProvinceIDWhitelisted(selectedLocation))
 		{
-			vector<int>::iterator white = std::find(port_whitelist.begin(), port_whitelist.end(), selectedLocation);
-			if (white == port_whitelist.end())
-			{
-				LOG(LogLevel::Warning) << "Assigning navy to non-whitelisted port province " << selectedLocation << " - if the save crashes, try blacklisting this province";
-			}
+			LOG(LogLevel::Warning) << "Assigning navy to non-whitelisted port province " << selectedLocation << " - if the save crashes, try blacklisting this province";
 		}
 		army.setLocation(selectedLocation);
 		armies.push_back(army);
@@ -1174,7 +1146,7 @@ void V2Country::convertArmies(
 			{
 				break;
 			}
-			switch (addRegimentToArmy(*army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper, adjacencyMapper))
+			switch (addRegimentToArmy(*army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper, adjacencyMapper, portProvincesMapper))
 			{
 				case addRegimentToArmyResult::success:
 					countryRemainder[rc] -= 1.0;
@@ -1877,7 +1849,8 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 	EU4::REGIMENTCATEGORY rc,
 	std::map<int, V2Province*> allProvinces,
 	const mappers::ProvinceMapper& provinceMapper,
-	const mappers::AdjacencyMapper& adjacencyMapper
+	const mappers::AdjacencyMapper& adjacencyMapper,
+	const mappers::PortProvinces& portProvincesMapper
 ) {
 	V2Regiment reg(rc);
 	std::optional<int> eu4Home = army.getSourceArmy().getProbabilisticHomeProvince(rc);
@@ -1900,7 +1873,7 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 	if (army.getNavy())
  	{
 		// Navies should only get homes in port provinces
-		homeCandidates = getPortProvinces(homeCandidates, allProvinces);
+		homeCandidates = getPortProvinces(homeCandidates, allProvinces, portProvincesMapper);
 		if (homeCandidates.size() != 0)
 		{
 			std::vector<int>::const_iterator it(homeCandidates.begin());

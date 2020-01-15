@@ -4,7 +4,7 @@
 #include "../Army/EU4Army.h"
 #include "../../Mappers/CultureGroups/CultureGroups.h"
 #include "../../Mappers/UnitTypes/UnitTypeMapper.h"
-#include "../../Mappers/Ideas/IdeaEffectMapper.h"
+#include "../../Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "newParser.h"
 #include <memory>
 #include <optional>

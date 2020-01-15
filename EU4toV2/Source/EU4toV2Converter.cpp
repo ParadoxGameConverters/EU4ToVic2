@@ -2,8 +2,8 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "EU4World/World.h"
-#include "Mappers/Ideas/IdeaEffectMapper.h"
-#include "Mappers/Ideas/TechGroupsMapper.h"
+#include "Mappers/IdeaEffects/IdeaEffectMapper.h"
+#include "Mappers/TechGroups/TechGroupsMapper.h"
 #include "V2World/V2World.h"
 #include <fstream>
 

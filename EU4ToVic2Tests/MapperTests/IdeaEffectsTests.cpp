@@ -22,7 +22,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 
 #include "gtest/gtest.h"
-#include "../EU4toV2/Source/Mappers/Ideas/IdeaEffects.h"
+#include "../EU4toV2/Source/Mappers/IdeaEffects/IdeaEffects.h"
 #include <sstream>
 
 

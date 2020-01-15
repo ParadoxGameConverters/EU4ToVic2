@@ -4,7 +4,6 @@
 #include "V2Army.h"
 #include "Country/V2Party.h"
 #include "Leader/V2Leader.h"
-#include "Leader/V2LeaderTraitMapper.h"
 #include "V2Localisation.h"
 #include "V2Relations.h"
 #include "Color.h"
@@ -20,7 +19,9 @@
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../Mappers/PartyNames/PartyNameMapper.h"
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
-#include "Country/V2Unreleasables.h"
+#include "../Mappers/Unreleasables/Unreleasables.h"
+#include "../Mappers/LeaderTraits/LeaderTraitMapper.h"
+#include "../Mappers/PortProvinces/PortProvinces.h"
 #include <memory>
 #include <set>
 #include <vector>
@@ -78,17 +79,17 @@ class V2Country : commonItems::parser
 			const mappers::GovernmentMapper& governmentMapper,
 			const mappers::CountryMappings& countryMapper
 		);
-		void initFromHistory(const mappers::V2Unreleasables& unreleasablesMapper);
+		void initFromHistory(const mappers::Unreleasables& unreleasablesMapper);
 		void								addProvince(V2Province* _province);
-		void								addState(V2State* newState);
+		void								addState(V2State* newState, const mappers::PortProvinces& portProvincesMapper);
 		void convertArmies(
 			double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)],
 			const std::map<int, V2Province*>& allProvinces,
-			std::vector<int> port_whitelist,
+			const mappers::PortProvinces& portProvincesMapper,
 			const mappers::ProvinceMapper& provinceMapper,
 			const mappers::AdjacencyMapper& adjacencyMapper
 		);
-		void convertLeaders(mappers::V2LeaderTraitMapper& leaderTraits);
+		void convertLeaders(mappers::LeaderTraitMapper& leaderTraitMapper);
 		bool addFactory(const V2Factory& factory);
 		void								addRailroadtoCapitalState();
 		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
@@ -174,9 +175,10 @@ class V2Country : commonItems::parser
 			EU4::REGIMENTCATEGORY rc,
 			std::map<int, V2Province*> allProvinces,
 			const mappers::ProvinceMapper& provinceMapper,
-			const mappers::AdjacencyMapper& adjacencyMapper
+			const mappers::AdjacencyMapper& adjacencyMapper,
+			const mappers::PortProvinces& portProvincesMapper
 		);
-		std::vector<int> getPortProvinces(const std::vector<int>& locationCandidates, std::map<int, V2Province*> allProvinces);
+		std::vector<int> getPortProvinces(const std::vector<int>& locationCandidates, std::map<int, V2Province*> allProvinces, const mappers::PortProvinces& portProvincesMapper);
 		V2Army* getArmyForRemainder(EU4::REGIMENTCATEGORY rc);
 		V2Province*	getProvinceForExpeditionaryArmy();
 		std::string		getRegimentName(EU4::REGIMENTCATEGORY rc);

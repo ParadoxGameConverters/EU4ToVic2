@@ -84,9 +84,6 @@
     <ClCompile Include="Source\V2World\V2World.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Vic2Regions.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="..\common_items\WinUtils.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
@@ -135,12 +132,6 @@
     <ClCompile Include="Source\Helpers\TechValues.cpp">
       <Filter>Helpers</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\Ideas\IdeaEffects.cpp">
-      <Filter>Mappers\Ideas</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\Ideas\IdeaEffectMapper.cpp">
-      <Filter>Mappers\Ideas</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Provinces\ProvinceBuildings.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
@@ -152,12 +143,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Provinces\ProvinceModifier.cpp">
       <Filter>EU4World\Provinces</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\Ideas\TechGroups.cpp">
-      <Filter>Mappers\Ideas</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\Ideas\TechGroupsMapper.cpp">
-      <Filter>Mappers\Ideas</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\V2UncivReforms.cpp">
       <Filter>Vic2World</Filter>
@@ -183,50 +168,8 @@
     <ClCompile Include="Source\EU4World\Army\EU4Regiment.cpp">
       <Filter>EU4World\Army</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryTechLoader.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryInventionEffect.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryInventionLoader.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryTypeInputs.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryType.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryTypeLoader.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryStartingCounts.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Factory\V2Factory.cpp">
       <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryFactory.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryTechDetails.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryTech.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryInventionDetails.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Factory\V2FactoryInvention.cpp">
-      <Filter>Vic2World\Factory</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Leader\V2LeaderTraitTypes.cpp">
-      <Filter>Vic2World\Leader</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Leader\V2LeaderTrait.cpp">
-      <Filter>Vic2World\Leader</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\Leader\V2Leader.cpp">
       <Filter>Vic2World\Leader</Filter>
@@ -240,19 +183,7 @@
     <ClCompile Include="Source\EU4World\History\CountryHistoryDate.cpp">
       <Filter>EU4World\History</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Leader\V2LeaderTraitMapper.cpp">
-      <Filter>Vic2World\Leader</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\RGORandomization\Bucket.cpp">
-      <Filter>Vic2World\RGORandomization</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\RGORandomization\BucketList.cpp">
-      <Filter>Vic2World\RGORandomization</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Country\V2Party.cpp">
-      <Filter>Vic2World\Country</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Country\V2Unreleasables.cpp">
       <Filter>Vic2World\Country</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\NationMerger\MergeBlock.cpp">
@@ -260,21 +191,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\NationMerger\NationMergeParser.cpp">
       <Filter>EU4World\NationMerger</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Pops\Pop.cpp">
-      <Filter>Vic2World\Pops</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Pops\PopMapper.cpp">
-      <Filter>Vic2World\Pops</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Map\BuildingPosition.cpp">
-      <Filter>Vic2World\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Map\MapProvince.cpp">
-      <Filter>Vic2World\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Map\NavalBase.cpp">
-      <Filter>Vic2World\Map</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Country\EU4Technology.cpp">
       <Filter>EU4World\Country</Filter>
@@ -305,9 +221,6 @@
     </ClCompile>
     <ClCompile Include="..\common_items\Object.cpp">
       <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Pops\PopTypes.cpp">
-      <Filter>Vic2World\Pops</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegion.cpp">
       <Filter>EU4World\ColonialRegions</Filter>
@@ -441,6 +354,87 @@
     <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp">
       <Filter>Mappers\CulturalUnions</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp">
+      <Filter>Mappers\IdeaEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\IdeaEffects\IdeaEffects.cpp">
+      <Filter>Mappers\IdeaEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\TechGroups\TechGroups.cpp">
+      <Filter>Mappers\TechGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\TechGroups\TechGroupsMapper.cpp">
+      <Filter>Mappers\TechGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\FactoryTechs\FactoryTechDetails.cpp">
+      <Filter>Mappers\FactoryTechs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\FactoryCounts\FactoryStartingCounts.cpp">
+      <Filter>Mappers\FactoryCounts</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\FactoryInventions\FactoryInventionDetails.cpp">
+      <Filter>Mappers\FactoryInventions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\FactoryInventions\FactoryInventionEffect.cpp">
+      <Filter>Mappers\FactoryInventions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\FactoryInventions\FactoryInventionMapper.cpp">
+      <Filter>Mappers\FactoryInventions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\FactoryTechs\FactoryTechMapper.cpp">
+      <Filter>Mappers\FactoryTechs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\FactoryTypes\FactoryType.cpp">
+      <Filter>Mappers\FactoryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\FactoryTypes\FactoryTypeInputs.cpp">
+      <Filter>Mappers\FactoryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\FactoryTypes\FactoryTypeMapper.cpp">
+      <Filter>Mappers\FactoryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Pops\Pop.cpp">
+      <Filter>Mappers\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Pops\PopMapper.cpp">
+      <Filter>Mappers\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Pops\PopTypes.cpp">
+      <Filter>Mappers\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp">
+      <Filter>Mappers\Unreleasables</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTrait.cpp">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTraitMapper.cpp">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTraitTypes.cpp">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\NavalBases\NavalBase.cpp">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\NavalBases\BuildingPosition.cpp">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\NavalBases\NavalBaseMapper.cpp">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RGORandomization\Bucket.cpp">
+      <Filter>Mappers\RGORandomization</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RGORandomization\BucketList.cpp">
+      <Filter>Mappers\RGORandomization</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.cpp">
+      <Filter>Mappers\RegionProvinces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\PortProvinces\PortProvinces.cpp">
+      <Filter>Mappers\PortProvinces</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -525,9 +519,6 @@
     <ClInclude Include="Source\V2World\V2World.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\Vic2Regions.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\World.h">
       <Filter>EU4World</Filter>
     </ClInclude>
@@ -573,12 +564,6 @@
     <ClInclude Include="Source\Helpers\TechValues.h">
       <Filter>Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\Ideas\IdeaEffects.h">
-      <Filter>Mappers\Ideas</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\Ideas\IdeaEffectMapper.h">
-      <Filter>Mappers\Ideas</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\ProvinceStats.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
@@ -596,12 +581,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\BuildingWeightEffects.h">
       <Filter>EU4World\Provinces</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\Ideas\TechGroups.h">
-      <Filter>Mappers\Ideas</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\Ideas\TechGroupsMapper.h">
-      <Filter>Mappers\Ideas</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2UncivReforms.h">
       <Filter>Vic2World</Filter>
@@ -627,50 +606,8 @@
     <ClInclude Include="Source\EU4World\Army\EU4Regiment.h">
       <Filter>EU4World\Army</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryTechLoader.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryInventionEffect.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryInventionLoader.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryTypeInputs.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryType.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryTypeLoader.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryStartingCounts.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Factory\V2Factory.h">
       <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryFactory.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryTechDetails.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryTech.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryInventionDetails.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Factory\V2FactoryInvention.h">
-      <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Leader\V2LeaderTraitTypes.h">
-      <Filter>Vic2World\Leader</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Leader\V2LeaderTrait.h">
-      <Filter>Vic2World\Leader</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\Leader\V2Leader.h">
       <Filter>Vic2World\Leader</Filter>
@@ -684,19 +621,7 @@
     <ClInclude Include="Source\EU4World\History\CountryHistoryDate.h">
       <Filter>EU4World\History</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\Leader\V2LeaderTraitMapper.h">
-      <Filter>Vic2World\Leader</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\RGORandomization\Bucket.h">
-      <Filter>Vic2World\RGORandomization</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\RGORandomization\BucketList.h">
-      <Filter>Vic2World\RGORandomization</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Country\V2Party.h">
-      <Filter>Vic2World\Country</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Country\V2Unreleasables.h">
       <Filter>Vic2World\Country</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\NationMerger\MergeBlock.h">
@@ -704,21 +629,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\NationMerger\NationMergeParser.h">
       <Filter>EU4World\NationMerger</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Pops\Pop.h">
-      <Filter>Vic2World\Pops</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Pops\PopMapper.h">
-      <Filter>Vic2World\Pops</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Map\BuildingPosition.h">
-      <Filter>Vic2World\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Map\MapProvince.h">
-      <Filter>Vic2World\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Map\NavalBase.h">
-      <Filter>Vic2World\Map</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Country\EU4Technology.h">
       <Filter>EU4World\Country</Filter>
@@ -749,9 +659,6 @@
     </ClInclude>
     <ClInclude Include="..\common_items\Object.h">
       <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Pops\PopTypes.h">
-      <Filter>Vic2World\Pops</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegion.h">
       <Filter>EU4World\ColonialRegions</Filter>
@@ -885,6 +792,87 @@
     <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.h">
       <Filter>Mappers\CulturalUnions</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\IdeaEffects\IdeaEffectMapper.h">
+      <Filter>Mappers\IdeaEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\IdeaEffects\IdeaEffects.h">
+      <Filter>Mappers\IdeaEffects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\TechGroups\TechGroups.h">
+      <Filter>Mappers\TechGroups</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\TechGroups\TechGroupsMapper.h">
+      <Filter>Mappers\TechGroups</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\FactoryTechs\FactoryTechDetails.h">
+      <Filter>Mappers\FactoryTechs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\FactoryCounts\FactoryStartingCounts.h">
+      <Filter>Mappers\FactoryCounts</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\FactoryInventions\FactoryInventionDetails.h">
+      <Filter>Mappers\FactoryInventions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\FactoryInventions\FactoryInventionEffect.h">
+      <Filter>Mappers\FactoryInventions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\FactoryInventions\FactoryInventionMapper.h">
+      <Filter>Mappers\FactoryInventions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\FactoryTechs\FactoryTechMapper.h">
+      <Filter>Mappers\FactoryTechs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\FactoryTypes\FactoryType.h">
+      <Filter>Mappers\FactoryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\FactoryTypes\FactoryTypeInputs.h">
+      <Filter>Mappers\FactoryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\FactoryTypes\FactoryTypeMapper.h">
+      <Filter>Mappers\FactoryTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Pops\Pop.h">
+      <Filter>Mappers\Pops</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Pops\PopMapper.h">
+      <Filter>Mappers\Pops</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Pops\PopTypes.h">
+      <Filter>Mappers\Pops</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h">
+      <Filter>Mappers\Unreleasables</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTrait.h">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTraitMapper.h">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTraitTypes.h">
+      <Filter>Mappers\LeaderTraits</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\NavalBases\NavalBase.h">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\NavalBases\BuildingPosition.h">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\NavalBases\NavalBaseMapper.h">
+      <Filter>Mappers\NavalBaseMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RGORandomization\Bucket.h">
+      <Filter>Mappers\RGORandomization</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RGORandomization\BucketList.h">
+      <Filter>Mappers\RGORandomization</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.h">
+      <Filter>Mappers\RegionProvinces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\PortProvinces\PortProvinces.h">
+      <Filter>Mappers\PortProvinces</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -917,9 +905,6 @@
     <Filter Include="Helpers">
       <UniqueIdentifier>{ef5e0061-2ce9-448e-9f80-9fa52991faf9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Mappers\Ideas">
-      <UniqueIdentifier>{7850fd15-b418-4718-b0f5-e2a1ea86e33a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="EU4World\Modifiers">
       <UniqueIdentifier>{a148c2bc-522b-45d5-9087-5f5b840c943f}</UniqueIdentifier>
     </Filter>
@@ -941,20 +926,11 @@
     <Filter Include="EU4World\Leader">
       <UniqueIdentifier>{cad4ad12-a780-4d35-bce5-cfa1c1b23f89}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Vic2World\RGORandomization">
-      <UniqueIdentifier>{c2a72362-f9f1-46ba-9af1-ea88983f295c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Vic2World\Country">
       <UniqueIdentifier>{8b2897e0-22e8-4284-a6d6-52b237ebab64}</UniqueIdentifier>
     </Filter>
     <Filter Include="EU4World\NationMerger">
       <UniqueIdentifier>{001fbc47-c628-4766-a50e-876ff0ba6b44}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Vic2World\Pops">
-      <UniqueIdentifier>{160fddbc-07d6-4366-8b3d-6a7fdc71c15f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Vic2World\Map">
-      <UniqueIdentifier>{03c647d5-094f-4c36-9edd-81509b68364b}</UniqueIdentifier>
     </Filter>
     <Filter Include="EU4World\Relations">
       <UniqueIdentifier>{a2bfda6d-eaa2-4066-a13b-cdca36a6c851}</UniqueIdentifier>
@@ -1027,6 +1003,45 @@
     </Filter>
     <Filter Include="Mappers\CulturalUnions">
       <UniqueIdentifier>{488abd94-7c26-4187-96ef-cb595c5cba00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\IdeaEffects">
+      <UniqueIdentifier>{3a503983-9a3c-4284-ac55-300281639f66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\TechGroups">
+      <UniqueIdentifier>{ffb13d60-e322-4c06-aad2-1edd279881b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\FactoryTechs">
+      <UniqueIdentifier>{45338a4d-8512-4ee0-8030-16fc35fe2d0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\FactoryTypes">
+      <UniqueIdentifier>{f7d9310c-45d8-445a-b83f-b617b0fb889c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\FactoryInventions">
+      <UniqueIdentifier>{733967de-3ea3-4382-a686-ff66b0e77b17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\FactoryCounts">
+      <UniqueIdentifier>{c8e51887-7898-4053-821b-7939257dc409}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\Pops">
+      <UniqueIdentifier>{bc3b5abc-b404-48e5-9756-f823eece9c30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\Unreleasables">
+      <UniqueIdentifier>{1793a7fb-3cea-4ec5-a68a-95efcc995b94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\LeaderTraits">
+      <UniqueIdentifier>{73eb9ac1-dda7-4c8d-8eea-39c26d09f559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\NavalBaseMapper">
+      <UniqueIdentifier>{b38c0acf-7b11-4847-931d-d025c20b1f8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\RGORandomization">
+      <UniqueIdentifier>{63392046-e39d-4304-b1ef-bf0f118a1ed6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\RegionProvinces">
+      <UniqueIdentifier>{20e118dd-a05a-43d1-af80-c5ff91db7e1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\PortProvinces">
+      <UniqueIdentifier>{cf57a5e8-a8d7-4839-81fb-1a19da32768b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

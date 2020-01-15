@@ -8,6 +8,7 @@
 #include "../ProvinceMappings/ProvinceMapper.h"
 #include "../CultureGroups/CultureGroups.h"
 #include "../CK2Titles/CK2TitleMapper.h"
+#include "../RegionProvinces/RegionProvinceMapper.h"
 #include "newParser.h"
 
 namespace EU4
@@ -71,6 +72,7 @@ namespace mappers
 
 			mappers::CK2TitleMapper ck2titleMapper;
 			mappers::ColonialTagMapper colonialTagMapper;
+			mappers::RegionProvinceMapper regionProvinceMapper;
 	};
 }
 

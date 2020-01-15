@@ -149,17 +149,11 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp">
       <Filter>ConverterFiles\EU4World\Mods</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\Ideas\IdeaEffects.cpp">
-      <Filter>ConverterFiles\Mappers\Ideas</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\IdeaEffectsTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\IdeaEffectsMapperTests.cpp">
       <Filter>MapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\Ideas\IdeaEffectMapper.cpp">
-      <Filter>ConverterFiles\Mappers\Ideas</Filter>
     </ClCompile>
     <ClCompile Include="HelpersTests\TechValuesTests.cpp">
       <Filter>HelpersTests</Filter>
@@ -263,6 +257,12 @@
     <ClCompile Include="MapperTests\StateMapperTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp">
+      <Filter>ConverterFiles\Mappers\IdeaEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffects.cpp">
+      <Filter>ConverterFiles\Mappers\IdeaEffects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -310,9 +310,6 @@
     <Filter Include="ConverterFiles\Helpers">
       <UniqueIdentifier>{24f4672d-5798-4943-8a21-4d71d38580e5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ConverterFiles\Mappers\Ideas">
-      <UniqueIdentifier>{e0ad31b3-88c3-4865-bac7-35700d7a5f27}</UniqueIdentifier>
-    </Filter>
     <Filter Include="HelpersTests">
       <UniqueIdentifier>{990552e6-b585-4a97-8e3c-63c6099e25e1}</UniqueIdentifier>
     </Filter>
@@ -342,6 +339,9 @@
     </Filter>
     <Filter Include="ConverterFiles\Mappers\CulturalUnions">
       <UniqueIdentifier>{616b3a09-197a-4a8d-a7e8-fc649643c62f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\IdeaEffects">
+      <UniqueIdentifier>{a200438b-4f49-4a38-a440-485e64d171b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

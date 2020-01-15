@@ -2,7 +2,7 @@
 #define V2LEADER_H_
 
 #include "Date.h"
-#include "V2LeaderTraitMapper.h"
+#include "../../Mappers/LeaderTraits/LeaderTraitMapper.h"
 #include <ostream>
 #include <string>
 #include "../../EU4World/Leader/EU4Leader.h"
@@ -12,7 +12,7 @@ class V2Leader
 {
 	public:
 		V2Leader() = default;
-		V2Leader(const EU4::Leader& oldLeader, const mappers::V2LeaderTraitMapper& traitTypes);
+		V2Leader(const EU4::Leader& oldLeader, const mappers::LeaderTraitMapper& leaderTraitMapper);
 		friend std::ostream& operator<<(std::ostream& output, const V2Leader& leader);
 		int getEU4ID() const { return eu4ID; }
 

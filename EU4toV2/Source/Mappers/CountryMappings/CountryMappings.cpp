@@ -8,7 +8,6 @@
 #include "../../EU4World/Provinces/EU4Province.h"
 #include "../CK2Titles/CK2TitleMapper.h"
 #include "../ProvinceMappings/ProvinceMapper.h"
-#include "../../V2World/Vic2Regions.h"
 #include "../../V2World/V2Country.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -264,13 +263,13 @@ bool mappers::CountryMappings::capitalInRightVic2Region(
 ) {
 	if (colony.V2Region != "")
 	{
-		if (Vic2Capital && Vic2::regions::provinceIsInRegion(*Vic2Capital, colony.V2Region))
+		if (Vic2Capital && regionProvinceMapper.provinceIsInRegion(*Vic2Capital, colony.V2Region))
 		{
 			return true;
 		}
 		else
 		{
-			for (auto Vic2ProvinceNumber: Vic2::regions::getProvincesInRegion(colony.V2Region))
+			for (auto Vic2ProvinceNumber: regionProvinceMapper.getProvincesInRegion(colony.V2Region))
 			{
 				auto EU4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(Vic2ProvinceNumber);
 				if (EU4ProvinceNumbers.size() > 0)

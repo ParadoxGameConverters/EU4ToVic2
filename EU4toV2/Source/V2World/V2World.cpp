@@ -1,6 +1,5 @@
 #include "V2World.h"
 #include <string>
-#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <algorithm>
@@ -9,34 +8,24 @@
 #include <queue>
 #include <cmath>
 #include <cfloat>
-#include "NewParserToOldParserConverters.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "../Configuration.h"
 #include "../EU4World/Diplomacy/EU4Diplomacy.h"
-#include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
-#include "RGORandomization/BucketList.h"
 #include "../Helpers/TechValues.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
-#include "../Mappers/Ideas/IdeaEffectMapper.h"
-#include "../Mappers/Ideas/TechGroupsMapper.h"
 #include "V2Province.h"
 #include "V2State.h"
 #include "V2Relations.h"
-#include "V2Army.h"
 #include "V2Pop.h"
 #include "V2Country.h"
-#include "V2Reforms.h"
 #include "V2Flags.h"
-#include "Factory/V2FactoryFactory.h"
-#include "Leader/V2LeaderTraitMapper.h"
-#include "Country/V2Unreleasables.h"
-#include "Pops/PopMapper.h"
-#include "Map/MapProvince.h"
-#include "../EU4World/ColonialRegions/ColonialRegions.h"
+#include "../Mappers/Pops/PopMapper.h"
 #include "../EU4World/Country/EU4Country.h"
+#include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
+#include "../Mappers/TechGroups/TechGroupsMapper.h"
 
 
 V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper)
@@ -77,8 +66,7 @@ V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper&
 
 void V2World::shuffleRgos()
 {
-	BucketList buckets;
-	if (buckets.empty())
+	if (bucketShuffler.empty())
 	{
 		LOG(LogLevel::Warning) << "No valid buckets defined, skipping RGO randomisation.";
 		return;
@@ -87,9 +75,9 @@ void V2World::shuffleRgos()
 	LOG(LogLevel::Info) << "Shuffling RGOs in provinces.";
 	for (auto& prov : provinces)
 	{
-		buckets.putInBucket(prov.second);
+		bucketShuffler.putInBucket(prov.second);
 	}
-	buckets.shuffle();
+	bucketShuffler.shuffle();
 }
 
 void V2World::importProvinces()
@@ -219,7 +207,7 @@ void V2World::importPopsFromFile(const string& filename, const mappers::Minority
 	list<int> popProvinces;
 
 	std::ifstream popFile("./blankMod/output/history/pops/1836.1.1/" + filename);
-	mappers::PopMapper popMapper(popFile);
+	const mappers::PopMapper popMapper(popFile);
 	popFile.close();
 
 	for (const auto& provinceItr : popMapper.getProvincePopTypeMap())
@@ -296,7 +284,7 @@ void V2World::logPopsFromFile(string filename, map<string, map<string, long int>
 }
 
 
-void V2World::logPopsInProvince(const int& provinceID, const mappers::PopTypes& popType, map<string, map<string, long int>>& popsByCountry) const
+void V2World::logPopsInProvince(const int& provinceID, const mappers::PopTypes& popTypes, map<string, map<string, long int>>& popsByCountry) const
 {
 	auto province = provinces.find(provinceID);
 	if (province == provinces.end())
@@ -307,7 +295,7 @@ void V2World::logPopsInProvince(const int& provinceID, const mappers::PopTypes& 
 
 	auto countryPopItr = getCountryForPopLogging(province->second->getOwner(), popsByCountry);
 
-	for (const auto& popType : popType.getPopTypes())
+	for (const auto& popType : popTypes.getPopTypes())
 	{
 		logPop(popType.first, popType.second, countryPopItr);
 	}
@@ -363,11 +351,7 @@ void V2World::outputLog(const map<string, map<string, long int>>& popsByCountry)
 
 void V2World::findCoastalProvinces()
 {
-	LOG(LogLevel::Info) << "Finding coastal provinces.";
-	mappers::MapProvince navalProvinceMapper;
-	LOG(LogLevel::Info) << "- Located " << navalProvinceMapper.getNavalProvinces().size() << " coastal provinces";
-	std::set<int> navalProvinces = navalProvinceMapper.getNavalProvinces();
-	for (const auto& navalProvinceID : navalProvinces)
+	for (const auto& navalProvinceID : navalBaseMapper.getNavalProvinces())
 	{
 		auto province = provinces.find(navalProvinceID);
 		if (province != provinces.end())
@@ -603,8 +587,6 @@ void V2World::convertPrestige()
 void V2World::addAllPotentialCountries()
 {
 	// ALL potential countries should be output to the file, otherwise some things don't get initialized right when loading Vic2
-	mappers::V2Unreleasables unreleasablesMapper;
-
 	for (auto potentialCountry : potentialCountries)
 	{
 		map<string, V2Country*>::iterator citr = countries.find(potentialCountry.first);
@@ -1161,7 +1143,7 @@ void V2World::setupStates()
 		map<string, V2Country*>::iterator iter2 = countries.find(owner);
 		if (iter2 != countries.end())
 		{
-			iter2->second->addState(newState);
+			iter2->second->addState(newState, portProvincesMapper);
 		}
 	}
 }
@@ -1273,8 +1255,6 @@ void V2World::convertTechs(const EU4::World& sourceWorld)
 void V2World::allocateFactories(const EU4::World& sourceWorld)
 {
 	// Construct factory factory
-	LOG(LogLevel::Info) << "Determining factory allocation rules.";
-	V2FactoryFactory factoryBuilder;
 
 	LOG(LogLevel::Info) << "Allocating starting factories";
 
@@ -1354,7 +1334,7 @@ void V2World::allocateFactories(const EU4::World& sourceWorld)
 
 	weightedCountries.swap(restrictCountries);
 	// remove nations that won't have enough industiral score for even one factory
-	deque<V2Factory> factoryList = factoryBuilder.buildFactories();
+	deque<V2Factory> factoryList = factoryTypeMapper.buildFactories();
 	while (((weightedCountries.begin()->first / totalIndWeight) * factoryList.size() + 0.5 /*round*/) < 1.0)
 	{
 		weightedCountries.pop_front();
@@ -1643,20 +1623,6 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting armies and navies";
 
-	// hack for naval bases.  not ALL naval bases are in port provinces, and if you spawn a navy at a naval base in
-	// a non-port province, Vicky crashes....
-	vector<int> port_whitelist;
-	{
-		int temp = 0;
-		ifstream s("configurables/port_whitelist.txt");
-		while (s.good() && !s.eof())
-		{
-			s >> temp;
-			port_whitelist.push_back(temp);
-		}
-		s.close();
-	}
-
 	// get cost per regiment values
 	std::map<std::string, int> regimentCosts = regimentCostsMapper.getRegimentCosts();
 	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0.0 };
@@ -1667,15 +1633,12 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 	}
 
 	// convert leaders and armies
-	LOG(LogLevel::Info) << "Loading leader data";
-
-	mappers::V2LeaderTraitMapper leaderTraits;
 
 	LOG(LogLevel::Info) << "Converting country armies";
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
-		itr->second->convertLeaders(leaderTraits);
-		itr->second->convertArmies(cost_per_regiment, provinces, port_whitelist, provinceMapper, adjacencyMapper);
+		itr->second->convertLeaders(leaderTraitMapper);
+		itr->second->convertArmies(cost_per_regiment, provinces, portProvincesMapper, provinceMapper, adjacencyMapper);
 	}
 }
 

@@ -15,7 +15,7 @@
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/Buildings/Buildings.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
-#include "../Mappers/Ideas/IdeaEffectMapper.h"
+#include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "newParser.h"
 #include <memory>
 

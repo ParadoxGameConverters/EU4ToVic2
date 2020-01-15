@@ -23,10 +23,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "gtest/gtest.h"
 #include "../EU4toV2/Source/Helpers/TechValues.h"
-#include "../EU4toV2/Source/Mappers/Ideas/IdeaEffectMapper.h"
 #include "../Mocks/EU4CountryMock.h"
 #include "../Mocks/Vic2CountryMock.h"
-#include <sstream>
 
 
 
