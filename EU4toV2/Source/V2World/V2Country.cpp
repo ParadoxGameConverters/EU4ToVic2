@@ -99,11 +99,7 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 	dynamicCountry	= _dynamicCountry;
 
 	tag = countriesFileLine.substr(0, 3);
-	commonCountryFile	= localisation.convertCountryFileName(filename);
-	std::replace(filename.begin(), filename.end(), ':', ';');
-	std::replace(filename.begin(), filename.end(), '/', ' ');
-	std::replace(filename.begin(), filename.end(), '\\', ' ');
-	commonCountryFile = commonCountryFile;
+	commonCountryFile	= localisation.convert(filename);
 	rulingParty			= "";
 
 	states.clear();
@@ -196,11 +192,11 @@ void V2Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMap
 		partyType->setName(partyKey);
 		V2::Party newParty(*partyType);
 		parties.push_back(newParty);
-		localisation.SetPartyKey(i, partyKey);
+		localisation.setPartyKey(i, partyKey);
 		
 		for (languageItr = languageMap.begin(); languageItr != languageMap.end(); ++languageItr)
 		{
-			localisation.SetPartyName(i, languageItr->first, languageItr->second);
+			localisation.setPartyName(i, languageItr->first, languageItr->second);
 		}
 		++i;
 	}
@@ -215,7 +211,7 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 	dynamicCountry = false;
 
 	tag					= _tag;
-	commonCountryFile	= localisation.convertCountryFileName(_commonCountryFile);
+	commonCountryFile	= localisation.convert(_commonCountryFile);
 	std::replace(commonCountryFile.begin(), commonCountryFile.end(), ':', ';');
 	std::replace(commonCountryFile.begin(), commonCountryFile.end(), '/', ' ');
 	std::replace(commonCountryFile.begin(), commonCountryFile.end(), '\\', ' ');
@@ -534,8 +530,8 @@ void V2Country::initFromEU4Country(
 	nationalColors = srcCountry->getNationalColors();
 
 	// Localisation
-	localisation.SetTag(tag);
-	localisation.ReadFromCountry(*srcCountry);
+	localisation.setTag(tag);
+	localisation.readFromCountry(*srcCountry);
 
 	// Capital
 	int oldCapital = srcCountry->getCapital();
@@ -1814,7 +1810,7 @@ void V2Country::setCultureTech(double normalizedScore)
 
 string V2Country::getLocalName()
 {
-	return localisation.GetLocalName();
+	return localisation.getLocalName();
 }
 
 
@@ -2050,7 +2046,7 @@ string V2Country::getRegimentName(EU4::REGIMENTCATEGORY rc)
 
 	stringstream str;
 	str << ++unitNameCount[static_cast<int>(rc)] << CardinalToOrdinal(unitNameCount[static_cast<int>(rc)]); // 1st, 2nd, etc
-	string adjective = localisation.GetLocalAdjective();
+	string adjective = localisation.getLocalAdjective();
 	if (adjective == "")
 	{
 		str << " ";

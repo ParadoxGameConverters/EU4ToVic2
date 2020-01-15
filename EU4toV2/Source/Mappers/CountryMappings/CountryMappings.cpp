@@ -12,6 +12,7 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
+#include "../../V2World/Localisation/Localisation.h"
 
 mappers::CountryMappings::CountryMappings()
 {
@@ -356,13 +357,13 @@ std::optional<std::string> mappers::CountryMappings::getCK2Title(const std::stri
 		return {};
 	}
 
-	std::string name = V2Localisation::Convert(countryName);
+	std::string name = V2::Localisation::convert(countryName);
 	transform(name.begin(), name.end(), name.begin(), ::tolower);
 
 	auto ck2title = ck2titleMapper.getTitle(name);
 	if (!ck2title)
 	{
-		std::string titlename = V2Localisation::StripAccents(name);
+		std::string titlename = V2::Localisation::stripAccents(name);
 		std::string c_name = "c_" + titlename;
 		std::string d_name = "d_" + titlename;
 		std::string k_name = "k_" + titlename;

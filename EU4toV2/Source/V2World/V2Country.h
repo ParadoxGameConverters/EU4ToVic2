@@ -4,7 +4,7 @@
 #include "V2Army.h"
 #include "Party/Party.h"
 #include "Leader/Leader.h"
-#include "V2Localisation.h"
+#include "Localisation/Localisation.h"
 #include "V2Relations.h"
 #include "Color.h"
 #include "Date.h"
@@ -234,7 +234,7 @@ class V2Country : commonItems::parser
 		double							badboy;
 		std::vector<V2::Leader> leaders;
 		double							literacy;
-		V2Localisation					localisation;
+		V2::Localisation localisation;
 		EU4::NationalSymbol nationalColors;
 		int								unitNameCount[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)];
 		int								numFactories;

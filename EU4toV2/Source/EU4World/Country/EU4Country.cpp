@@ -5,7 +5,7 @@
 #include "ParserHelpers.h"
 #include "../Relations/EU4Relations.h"
 #include "../History/CountryHistory.h"
-#include "../../V2World/V2Localisation.h"
+#include "../../V2World/Localisation/Localisation.h"
 #include "EU4Technology.h"
 #include "EU4CountryFlags.h"
 #include "EU4Modifier.h"
@@ -28,7 +28,7 @@ EU4::Country::Country(
 	registerKeyword("custom_name", [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString theName(theStream);
-			randomName = V2Localisation::Convert(theName.getString());
+			randomName = V2::Localisation::convert(theName.getString());
 			customNation = true;
 		});
 	registerKeyword("adjective", [this](const std::string& unused, std::istream& theStream)

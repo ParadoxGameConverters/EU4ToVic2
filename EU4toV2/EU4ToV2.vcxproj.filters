@@ -60,9 +60,6 @@
     <ClCompile Include="Source\V2World\V2Flags.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2Localisation.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2Pop.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -453,6 +450,12 @@
     <ClCompile Include="Source\V2World\Output\outAgreement.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outLocalisation.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Localisation\Localisation.cpp">
+      <Filter>Vic2World\Localisation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -511,9 +514,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Flags.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Localisation.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Pop.h">
@@ -912,6 +912,12 @@
     <ClInclude Include="Source\V2World\Output\outAgreement.h">
       <Filter>Vic2World\Output</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Output\outLocalisation.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Localisation\Localisation.h">
+      <Filter>Vic2World\Localisation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1090,6 +1096,9 @@
     </Filter>
     <Filter Include="Vic2World\Diplomacy">
       <UniqueIdentifier>{60deccb8-ae6d-4439-bd87-139962fe9044}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Localisation">
+      <UniqueIdentifier>{d7f0559f-2f54-4878-8802-2806e752d14c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
