@@ -1520,7 +1520,7 @@ void V2Country::convertLandlessReforms(V2Country* capOwner)
 	else
 	{
 		civilized = false;
-		V2::UncivReforms* uncivReforms = capOwner->getUncivReforms();
+		uncivReforms = capOwner->getUncivReforms();
 	}
 }
 
