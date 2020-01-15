@@ -1028,7 +1028,7 @@ void V2Country::convertLeaders(mappers::LeaderTraitMapper& leaderTraitMapper)
 	std::vector<EU4::Leader>::iterator eu4LeaderItr;
 	for (eu4LeaderItr = eu4Leaders.begin(); eu4LeaderItr != eu4Leaders.end(); ++eu4LeaderItr)
 	{
-		V2Leader newLeader(*eu4LeaderItr, leaderTraitMapper);
+		V2::Leader newLeader(*eu4LeaderItr, leaderTraitMapper);
 		leaders.push_back(newLeader);
 	}
 }

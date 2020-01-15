@@ -3,7 +3,7 @@
 
 #include "V2Army.h"
 #include "Country/V2Party.h"
-#include "Leader/V2Leader.h"
+#include "Leader/Leader.h"
 #include "V2Localisation.h"
 #include "V2Relations.h"
 #include "Color.h"
@@ -231,7 +231,7 @@ class V2Country : commonItems::parser
 		double							bankReserves;
 		double							diploPoints;
 		double							badboy;
-		std::vector<V2Leader> leaders;
+		std::vector<V2::Leader> leaders;
 		double							literacy;
 		V2Localisation					localisation;
 		EU4::NationalSymbol nationalColors;

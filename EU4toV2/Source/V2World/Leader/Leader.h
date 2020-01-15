@@ -1,20 +1,21 @@
-#ifndef V2LEADER_H_
-#define V2LEADER_H_
+#ifndef LEADER_H
+#define LEADER_H
 
 #include "Date.h"
-#include "../../Mappers/LeaderTraits/LeaderTraitMapper.h"
-#include <ostream>
 #include <string>
+#include "../../Mappers/LeaderTraits/LeaderTraitMapper.h"
 #include "../../EU4World/Leader/EU4Leader.h"
 
-
-class V2Leader
+namespace V2
 {
+	class Leader
+	{
 	public:
-		V2Leader() = default;
-		V2Leader(const EU4::Leader& oldLeader, const mappers::LeaderTraitMapper& leaderTraitMapper);
-		friend std::ostream& operator<<(std::ostream& output, const V2Leader& leader);
+		Leader() = default;
+		Leader(const EU4::Leader& oldLeader, const mappers::LeaderTraitMapper& leaderTraitMapper);
 		int getEU4ID() const { return eu4ID; }
+
+		friend std::ostream& operator<<(std::ostream& output, const Leader& leader);
 
 	private:
 		std::string name;
@@ -23,6 +24,7 @@ class V2Leader
 		std::string personality;
 		std::string background;
 		int eu4ID = 0;
-};
+	};
+}
 
-#endif // V2LEADER_H_
+#endif // LEADER_H

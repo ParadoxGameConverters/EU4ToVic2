@@ -171,9 +171,6 @@
     <ClCompile Include="Source\V2World\Factory\V2Factory.cpp">
       <Filter>Vic2World\Factory</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Leader\V2Leader.cpp">
-      <Filter>Vic2World\Leader</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\History\CountryHistory.cpp">
       <Filter>EU4World\History</Filter>
     </ClCompile>
@@ -435,6 +432,12 @@
     <ClCompile Include="Source\Mappers\PortProvinces\PortProvinces.cpp">
       <Filter>Mappers\PortProvinces</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Leader\Leader.cpp">
+      <Filter>Vic2World\Leader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outLeader.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -608,9 +611,6 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\Factory\V2Factory.h">
       <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Leader\V2Leader.h">
-      <Filter>Vic2World\Leader</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\History\CountryHistory.h">
       <Filter>EU4World\History</Filter>
@@ -873,6 +873,12 @@
     <ClInclude Include="Source\Mappers\PortProvinces\PortProvinces.h">
       <Filter>Mappers\PortProvinces</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Leader\Leader.h">
+      <Filter>Vic2World\Leader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Output\outLeader.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1042,6 +1048,9 @@
     </Filter>
     <Filter Include="Mappers\PortProvinces">
       <UniqueIdentifier>{cf57a5e8-a8d7-4839-81fb-1a19da32768b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Output">
+      <UniqueIdentifier>{9fb14058-9987-4188-8664-36162b13d0af}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
