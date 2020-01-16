@@ -66,9 +66,6 @@
     <ClCompile Include="Source\V2World\V2Province.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2Relations.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2State.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -462,6 +459,12 @@
     <ClCompile Include="Source\V2World\Output\outUncivReforms.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outRelation.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp">
+      <Filter>Vic2World\Diplomacy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -526,9 +529,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Province.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Relations.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2State.h">
@@ -929,6 +929,12 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\Output\outUncivReforms.h">
       <Filter>Vic2World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Output\outRelation.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Diplomacy\Relation.h">
+      <Filter>Vic2World\Diplomacy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

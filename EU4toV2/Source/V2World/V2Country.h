@@ -5,7 +5,7 @@
 #include "Party/Party.h"
 #include "Leader/Leader.h"
 #include "Localisation/Localisation.h"
-#include "V2Relations.h"
+#include "Diplomacy/Relation.h"
 #include "Date.h"
 #include "../EU4World/Regions/Regions.h"
 #include "../EU4World/Country/EU4NationalSymbol.h"
@@ -108,14 +108,14 @@ class V2Country : commonItems::parser
 		void								setCommerceTech(double normalizedScore);
 		void								setIndustryTech(double normalizedScore);
 		void								setCultureTech(double normalizedScore);
-		void addRelation(V2Relations& newRelation);
+		void addRelation(V2::Relation& newRelation);
 		void								absorbVassal(V2Country* vassal);
 		void								setColonyOverlord(V2Country* colony);
 		V2Country*						getColonyOverlord();
 		std::string							getColonialRegion();
 
 		std::string							getLocalName();
-		std::optional<V2Relations> getRelations(std::string withWhom) const;
+		V2::Relation& getRelation(const std::string& withWhom);
 		std::tuple<double, double, double> getNationalValueScores();
 		
 		void addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
@@ -222,7 +222,7 @@ class V2Country : commonItems::parser
 		std::vector<std::pair<int, int>>	reactionaryIssues;
 		std::vector<std::pair<int, int>>	conservativeIssues;
 		std::vector<std::pair<int, int>>	liberalIssues;
-		std::map<std::string, V2Relations>	relations;
+		std::map<std::string, V2::Relation>	relations;
 		std::vector<V2Army> armies;
 		V2::Reforms* reforms;
 		std::string nationalValue = "nv_order";

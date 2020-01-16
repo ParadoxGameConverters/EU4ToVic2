@@ -13,7 +13,6 @@
 #include "V2World.h"
 #include "V2State.h"
 #include "V2Province.h"
-#include "V2Relations.h"
 #include "V2Army.h"
 #include "V2Creditor.h"
 #include "V2Pop.h"
@@ -458,8 +457,7 @@ void V2Country::outputOOB() const
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + tag + "_OOB.txt");
 	if (!output.is_open())
 	{
-		std::runtime_error exception("Could not create OOB file " + tag + "_OOB.txt");
-		throw exception;
+		throw std::runtime_error("Could not create OOB file " + tag + "_OOB.txt");
 	}
 
 	output << "#Sphere of Influence\n";
@@ -764,7 +762,7 @@ void V2Country::generateRelations(std::shared_ptr<EU4::Country> srcCountry, cons
 		const std::string& V2Tag = countryMapper.getV2Tag(srcRelation.first);
 		if (!V2Tag.empty())
 		{
-			V2Relations newRelations(V2Tag, srcRelation.second);
+			V2::Relation newRelations(V2Tag, srcRelation.second);
 			relations.insert(std::make_pair(V2Tag, newRelations));
 		}
 	}
@@ -1209,9 +1207,9 @@ std::tuple<double, double, double> V2Country::getNationalValueScores()
 }
 
 
-void V2Country::addRelation(V2Relations& newRelation)
+void V2Country::addRelation(V2::Relation& newRelation)
 {
-	relations.insert(std::make_pair(newRelation.getTag(), newRelation));
+	relations.insert(std::make_pair(newRelation.getTarget(), newRelation));
 }
 
 
@@ -1812,17 +1810,14 @@ string V2Country::getLocalName()
 }
 
 
-std::optional<V2Relations> V2Country::getRelations(std::string withWhom) const
+V2::Relation& V2Country::getRelation(const std::string& target)
 {
-	auto relation = relations.find(withWhom);
-	if (relation != relations.end())
-	{
-		return relation->second;
-	}
-	else
-	{
-		return {};
-	}
+	const auto& relation = relations.find(target);
+	if (relation != relations.end()) return relation->second;
+	V2::Relation newRelation(target);
+	relations.insert(std::make_pair(target, newRelation));
+	const auto& newRelRef = relations.find(target);
+	return newRelRef->second;
 }
 
 

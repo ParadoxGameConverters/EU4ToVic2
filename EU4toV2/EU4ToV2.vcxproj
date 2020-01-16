@@ -303,6 +303,7 @@
     <ClCompile Include="Source\targa.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
+    <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp" />
     <ClCompile Include="Source\V2World\Leader\Leader.cpp" />
     <ClCompile Include="Source\V2World\Localisation\Localisation.cpp" />
     <ClCompile Include="Source\V2World\Output\outAgreement.cpp" />
@@ -311,6 +312,7 @@
     <ClCompile Include="Source\V2World\Output\outLocalisation.cpp" />
     <ClCompile Include="Source\V2World\Output\outParty.cpp" />
     <ClCompile Include="Source\V2World\Output\outReforms.cpp" />
+    <ClCompile Include="Source\V2World\Output\outRelation.cpp" />
     <ClCompile Include="Source\V2World\Output\outUncivReforms.cpp" />
     <ClCompile Include="Source\V2World\Party\Party.cpp" />
     <ClCompile Include="Source\V2World\Reforms\Reforms.cpp" />
@@ -321,7 +323,6 @@
     <ClCompile Include="Source\V2World\V2Flags.cpp" />
     <ClCompile Include="Source\V2World\V2Pop.cpp" />
     <ClCompile Include="Source\V2World\V2Province.cpp" />
-    <ClCompile Include="Source\V2World\V2Relations.cpp" />
     <ClCompile Include="Source\V2World\V2State.cpp" />
     <ClCompile Include="Source\V2World\V2World.cpp" />
   </ItemGroup>
@@ -462,6 +463,7 @@
     <ClInclude Include="Source\targa.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h" />
+    <ClInclude Include="Source\V2World\Diplomacy\Relation.h" />
     <ClInclude Include="Source\V2World\Factory\Factory.h" />
     <ClInclude Include="Source\V2World\Leader\Leader.h" />
     <ClInclude Include="Source\V2World\Localisation\Localisation.h" />
@@ -471,6 +473,7 @@
     <ClInclude Include="Source\V2World\Output\outLocalisation.h" />
     <ClInclude Include="Source\V2World\Output\outParty.h" />
     <ClInclude Include="Source\V2World\Output\outReforms.h" />
+    <ClInclude Include="Source\V2World\Output\outRelation.h" />
     <ClInclude Include="Source\V2World\Output\outUncivReforms.h" />
     <ClInclude Include="Source\V2World\Party\Party.h" />
     <ClInclude Include="Source\V2World\Reforms\Reforms.h" />
@@ -481,7 +484,6 @@
     <ClInclude Include="Source\V2World\V2Flags.h" />
     <ClInclude Include="Source\V2World\V2Pop.h" />
     <ClInclude Include="Source\V2World\V2Province.h" />
-    <ClInclude Include="Source\V2World\V2Relations.h" />
     <ClInclude Include="Source\V2World\V2State.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
   </ItemGroup>
