@@ -2,7 +2,7 @@
 #define MINORITY_POP_MAPPER_H
 
 #include "newParser.h"
-#include "../../V2World/V2Pop.h"
+#include "../../V2World/Pop/Pop.h"
 
 namespace mappers
 {
@@ -11,7 +11,7 @@ namespace mappers
 	public:
 		MinorityPopMapper();
 		MinorityPopMapper(std::istream& theStream);
-		bool matchMinorityPop(V2Pop& pop) const;
+		bool matchMinorityPop(V2::Pop& pop) const;
 
 	private:
 		void registerKeys();

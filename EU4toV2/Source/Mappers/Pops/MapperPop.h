@@ -1,15 +1,15 @@
-#ifndef POP_H
-#define POP_H
+#ifndef MAPPER_POP_H
+#define MAPPER_POP_H
 
 #include "newParser.h"
 
 namespace mappers
 {
-	class Pop: commonItems::parser
+	class MapperPop: commonItems::parser
 	{
 	public:
-		Pop() = default;
-		Pop(std::istream& theStream);
+		MapperPop() = default;
+		MapperPop(std::istream& theStream);
 		std::string getCulture() const { return culture; }
 		std::string getReligion() const { return religion; }
 		int getSize() const { return size; }
@@ -21,4 +21,4 @@ namespace mappers
 	};
 }
 
-#endif // POP_H
+#endif // MAPPER_POP_H

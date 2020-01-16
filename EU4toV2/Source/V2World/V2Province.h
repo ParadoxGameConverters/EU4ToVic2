@@ -7,8 +7,8 @@
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "newParser.h"
 #include "Factory/Factory.h"
+#include "Pop/Pop.h"
 
-class V2Pop;
 class V2Country;
 
 struct V2Demographic
@@ -29,7 +29,7 @@ class V2Province : commonItems::parser
 	public:
 		V2Province(const std::string& _filename);
 		void output() const;
-		void outputPops(FILE*) const;
+		void outputPops(std::ofstream& output) const;
 		void convertFromOldProvince(
 			const EU4::Religions& allReligions,
 			const EU4::Province* oldProvince,
@@ -37,8 +37,8 @@ class V2Province : commonItems::parser
 		);
 		void determineColonial();
 		void addCore(std::string);
-		void addOldPop(const V2Pop*);
-		void addMinorityPop(V2Pop*);
+		void addOldPop(const V2::Pop*);
+		void addMinorityPop(V2::Pop*);
 		void doCreatePops(
 			double popWeightRatio,
 			V2Country* _owner,
@@ -50,8 +50,8 @@ class V2Province : commonItems::parser
 		void addPopDemographic(V2Demographic d);
 
 		int getTotalPopulation() const;
-		std::vector<V2Pop*>	getPops(std::string type) const;
-		V2Pop* getSoldierPopForArmy(bool force = false);
+		std::vector<V2::Pop*>	getPops(std::string type) const;
+		V2::Pop* getSoldierPopForArmy(bool force = false);
 		std::pair<int, int>	getAvailableSoldierCapacity() const;
 		std::string getRegimentName(EU4::REGIMENTCATEGORY rc);
 		bool hasCulture(std::string culture, float percentOfPopulation) const;
@@ -89,7 +89,7 @@ class V2Province : commonItems::parser
 		bool hasNavalBase() const { return (navalBaseLevel > 0); }
 		int getNavalBaseLevel() const { return navalBaseLevel; }
 		bool hasLandConnection() const { return landConnection; }
-		std::vector<V2Pop*> getPops() const { return pops; }
+		std::vector<V2::Pop*> getPops() const { return pops; }
 
 	private:
 		void outputUnits(FILE*) const;
@@ -115,7 +115,7 @@ class V2Province : commonItems::parser
 			const mappers::ProvinceMapper& provinceMapper
 		);
 		void combinePops();
-		bool growSoldierPop(V2Pop* pop);
+		bool growSoldierPop(V2::Pop* pop);
 
 		const EU4::Province* srcProvince = NULL;
 
@@ -135,9 +135,9 @@ class V2Province : commonItems::parser
 		bool territorialCore = false;
 		int oldPopulation = 0;
 		std::vector<V2Demographic> demographics;
-		std::vector<const V2Pop*> oldPops;
-		std::vector<V2Pop*> minorityPops;
-		std::vector<V2Pop*> pops;
+		std::vector<const V2::Pop*> oldPops;
+		std::vector<V2::Pop*> minorityPops;
+		std::vector<V2::Pop*> pops;
 		double slaveProportion = 0.0;
 		std::string rgoType;
 		std::string terrain;

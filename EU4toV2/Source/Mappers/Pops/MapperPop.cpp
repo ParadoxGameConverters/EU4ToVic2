@@ -1,7 +1,7 @@
-#include "Pop.h"
+#include "MapperPop.h"
 #include "ParserHelpers.h"
 
-mappers::Pop::Pop(std::istream& theStream)
+mappers::MapperPop::MapperPop(std::istream& theStream)
 {
 	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream)
 	{

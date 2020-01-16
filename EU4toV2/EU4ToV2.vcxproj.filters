@@ -60,9 +60,6 @@
     <ClCompile Include="Source\V2World\V2Flags.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2Pop.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2Province.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -369,9 +366,6 @@
     <ClCompile Include="Source\Mappers\FactoryTypes\FactoryTypeMapper.cpp">
       <Filter>Mappers\FactoryTypes</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\Pops\Pop.cpp">
-      <Filter>Mappers\Pops</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\Pops\PopMapper.cpp">
       <Filter>Mappers\Pops</Filter>
     </ClCompile>
@@ -465,6 +459,15 @@
     <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp">
       <Filter>Vic2World\Diplomacy</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Pop\Pop.cpp">
+      <Filter>Vic2World\Pop</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outPop.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Pops\MapperPop.cpp">
+      <Filter>Mappers\Pops</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -523,9 +526,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Flags.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Pop.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Province.h">
@@ -837,9 +837,6 @@
     <ClInclude Include="Source\Mappers\FactoryTypes\FactoryTypeMapper.h">
       <Filter>Mappers\FactoryTypes</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\Pops\Pop.h">
-      <Filter>Mappers\Pops</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\Pops\PopMapper.h">
       <Filter>Mappers\Pops</Filter>
     </ClInclude>
@@ -935,6 +932,15 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\Diplomacy\Relation.h">
       <Filter>Vic2World\Diplomacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Pop\Pop.h">
+      <Filter>Vic2World\Pop</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Output\outPop.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Pops\MapperPop.h">
+      <Filter>Mappers\Pops</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1120,6 +1126,9 @@
     </Filter>
     <Filter Include="Vic2World\Reforms">
       <UniqueIdentifier>{05b3ad12-7162-40a0-adf3-b6aa1debc6b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Pop">
+      <UniqueIdentifier>{3956b846-9d95-421d-b693-59ee5d90dde7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

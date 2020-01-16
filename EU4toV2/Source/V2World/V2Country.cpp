@@ -15,7 +15,7 @@
 #include "V2Province.h"
 #include "V2Army.h"
 #include "V2Creditor.h"
-#include "V2Pop.h"
+#include "Pop/Pop.h"
 #include <algorithm>
 #include <fstream>
 #include <math.h>
@@ -1946,7 +1946,7 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 		}
 
 		// Armies need to be associated with pops
-		V2Pop* soldierPop = homeProvince->getSoldierPopForArmy();
+		V2::Pop* soldierPop = homeProvince->getSoldierPopForArmy();
 		if (nullptr == soldierPop)
 		{
 			// if the old home province was colonized and can't support the unit, try turning it into an "expeditionary" army
@@ -1955,7 +1955,7 @@ addRegimentToArmyResult V2Country::addRegimentToArmy(
 				V2Province* expSender = getProvinceForExpeditionaryArmy();
 				if (expSender)
 				{
-					V2Pop* expSoldierPop = expSender->getSoldierPopForArmy();
+					V2::Pop* expSoldierPop = expSender->getSoldierPopForArmy();
 					if (nullptr != expSoldierPop)
 					{
 						homeProvince = expSender;

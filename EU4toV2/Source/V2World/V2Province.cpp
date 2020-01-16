@@ -5,7 +5,7 @@
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "V2Pop.h"
+#include "Pop/Pop.h"
 #include "V2Country.h"
 #include <algorithm>
 #include <fstream>
@@ -166,42 +166,39 @@ void V2Province::output() const
 }
 
 
-void V2Province::outputPops(FILE* output) const
+void V2Province::outputPops(std::ofstream& output) const
 {
 	if (resettable && (theConfiguration.getResetProvinces() == "yes"))
 	{
-		fprintf(output, "%d = {\n", num);
+		output << num << " = {\n";
 		if (oldPops.size() > 0)
 		{
 			for (unsigned int i = 0; i < oldPops.size(); i++)
 			{
-				oldPops[i]->output(output);
-				fprintf(output, "\n");
+				output << *oldPops[i];
 			}
-			fprintf(output, "}\n");
+			output << "}\n";
 		}
 	}
 	else
 	{
 		if (pops.size() > 0)
 		{
-			fprintf(output, "%d = {\n", num);
+			output << num << " = {\n";
 			for (auto i : pops)
 			{
-				i->output(output);
-				fprintf(output, "\n");
+				output << *i;
 			}
-			fprintf(output, "}\n");
+			output << "}\n";
 		}
 		else if (oldPops.size() > 0)
 		{
-			fprintf(output, "%d = {\n", num);
+			output << num << " = {\n";
 			for (unsigned int i = 0; i < oldPops.size(); i++)
 			{
-				oldPops[i]->output(output);
-				fprintf(output, "\n");
+				output << *oldPops[i];
 			}
-			fprintf(output, "}\n");
+			output << "}\n";
 		}
 	}
 }
@@ -289,24 +286,24 @@ void V2Province::determineColonial()
 }
 
 
-void V2Province::addCore(string newCore)
+void V2Province::addCore(std::string newCore)
 {
 	// only add if unique, and not a territorial core/colony of the current owner
-	if ((find(cores.begin(), cores.end(), newCore) == cores.end()) && !((newCore.compare(owner) == 0) && territorialCore))
+	if (find(cores.begin(), cores.end(), newCore) == cores.end() && !(newCore == owner) && territorialCore)
 	{
 		cores.push_back(newCore);
 	}
 }
 
 
-void V2Province::addOldPop(const V2Pop* oldPop)
+void V2Province::addOldPop(const V2::Pop* oldPop)
 {
 	oldPops.push_back(oldPop);
 	oldPopulation += oldPop->getSize();
 }
 
 
-void V2Province::addMinorityPop(V2Pop* minorityPop)
+void V2Province::addMinorityPop(V2::Pop* minorityPop)
 {
 	minorityPops.push_back(minorityPop);
 }
@@ -320,23 +317,23 @@ void V2Province::doCreatePops(
 	const mappers::ProvinceMapper& provinceMapper
 ) {
 	// convert pops
-	for (vector<V2Demographic>::const_iterator itr = demographics.begin(); itr != demographics.end(); ++itr)
+	for (std::vector<V2Demographic>::const_iterator itr = demographics.begin(); itr != demographics.end(); ++itr)
 	{
 		createPops(*itr, popWeightRatio, _owner, popConversionAlgorithm, theEU4Countries, provinceMapper);
 	}
 	combinePops();
 
 	// organize pops for adding minorities
-	map<string, int>					totals;
-	map<string, vector<V2Pop*>>	thePops;
+	std::map<std::string, int>					totals;
+	std::map<std::string, std::vector<V2::Pop*>>	thePops;
 	for (auto popItr : pops)
 	{
-		string type = popItr->getType();
+		std::string type = popItr->getType();
 
 		auto totalsItr = totals.find(type);
 		if (totalsItr == totals.end())
 		{
-			totals.insert(make_pair(type, popItr->getSize()));
+			totals.insert(std::make_pair(type, popItr->getSize()));
 		}
 		else
 		{
@@ -346,9 +343,9 @@ void V2Province::doCreatePops(
 		auto thePopsItr = thePops.find(type);
 		if (thePopsItr == thePops.end())
 		{
-			vector<V2Pop*> newVector;
+			std::vector<V2::Pop*> newVector;
 			newVector.push_back(popItr);
-			thePops.insert(make_pair(type, newVector));
+			thePops.insert(std::make_pair(type, newVector));
 		}
 		else
 		{
@@ -357,7 +354,7 @@ void V2Province::doCreatePops(
 	}
 
 	// decrease non-minority pops and create the minorities
-	vector<V2Pop*> actualMinorities;
+	std::vector<V2::Pop*> actualMinorities;
 	for (auto minorityItr : minorityPops)
 	{
 		int totalTypePopulation;
@@ -376,8 +373,8 @@ void V2Province::doCreatePops(
 		{
 			for (auto popsItr : thePopsItr->second)
 			{
-				string newCulture = minorityItr->getCulture();
-				string newReligion = minorityItr->getReligion();
+				std::string newCulture = minorityItr->getCulture();
+				std::string newReligion = minorityItr->getReligion();
 				if (newCulture == "")
 				{
 					newCulture = popsItr->getCulture();
@@ -387,7 +384,7 @@ void V2Province::doCreatePops(
 					newReligion = popsItr->getReligion();
 				}
 
-				V2Pop* newMinority = new V2Pop(minorityItr->getType(), static_cast<int>(1.0 * popsItr->getSize() / totalTypePopulation * minorityItr->getSize() + 0.5), newCulture, newReligion);
+				V2::Pop* newMinority = new V2::Pop(minorityItr->getType(), static_cast<int>(1.0 * popsItr->getSize() / totalTypePopulation * minorityItr->getSize() + 0.5), newCulture, newReligion);
 				actualMinorities.push_back(newMinority);
 
 				popsItr->changeSize(static_cast<int>(-1.0 * popsItr->getSize() / totalTypePopulation * minorityItr->getSize()));
@@ -841,74 +838,74 @@ void V2Province::createPops(
 	{
 		int size = static_cast<int>(demographic.lowerRatio * newPopulation * slaveProportion);
 		farmers -= size;
-		V2Pop* slavesPop = new V2Pop("slaves", size, demographic.slaveCulture, demographic.religion);
+		V2::Pop* slavesPop = new V2::Pop("slaves", size, demographic.slaveCulture, demographic.religion);
 		pops.push_back(slavesPop);
 	}
 	if (pts.soldiers > 0)
 	{
 		int size = static_cast<int>(demographic.lowerRatio * newPopulation * (pts.soldiers / 10000) + 0.5);
 		farmers -= size;
-		V2Pop* soldiersPop = new V2Pop("soldiers", size, demographic.culture, demographic.religion);
+		V2::Pop* soldiersPop = new V2::Pop("soldiers", size, demographic.culture, demographic.religion);
 		pops.push_back(soldiersPop);
 	}
 	if (pts.craftsmen > 0)
 	{
 		int size = static_cast<int>(demographic.lowerRatio * newPopulation * (pts.craftsmen / 10000) + 0.5);
 		farmers -= size;
-		V2Pop* craftsmenPop = new V2Pop("craftsmen", size, demographic.culture, demographic.religion);
+		V2::Pop* craftsmenPop = new V2::Pop("craftsmen", size, demographic.culture, demographic.religion);
 		pops.push_back(craftsmenPop);
 	}
 	if (pts.artisans > 0)
 	{
 		int size = static_cast<int>(demographic.middleRatio * newPopulation * (pts.artisans / 10000) + 0.5);
 		farmers -= size;
-		V2Pop* artisansPop = new V2Pop("artisans", size, demographic.culture, demographic.religion);
+		V2::Pop* artisansPop = new V2::Pop("artisans", size, demographic.culture, demographic.religion);
 		pops.push_back(artisansPop);
 	}
 	if (pts.clergymen > 0)
 	{
 		int size = static_cast<int>(demographic.middleRatio * newPopulation * (pts.clergymen / 10000) + 0.5);
 		farmers -= size;
-		V2Pop* clergymenPop = new V2Pop("clergymen", size, demographic.culture, demographic.religion);
+		V2::Pop* clergymenPop = new V2::Pop("clergymen", size, demographic.culture, demographic.religion);
 		pops.push_back(clergymenPop);
 	}
 	if (pts.clerks > 0)
 	{
 		int size = static_cast<int>(demographic.middleRatio * newPopulation * (pts.clerks / 10000) + 0.5);
 		farmers -= size;
-		V2Pop* clerksPop = new V2Pop("clerks", size, demographic.culture, demographic.religion);
+		V2::Pop* clerksPop = new V2::Pop("clerks", size, demographic.culture, demographic.religion);
 		pops.push_back(clerksPop);
 	}
 	if (pts.bureaucrats > 0)
 	{
 		int size = static_cast<int>(demographic.middleRatio * newPopulation * (pts.bureaucrats / 10000) + 0.5);
 		farmers -= size;
-		V2Pop* bureaucratsPop = new V2Pop("bureaucrats", size, demographic.culture, demographic.religion);
+		V2::Pop* bureaucratsPop = new V2::Pop("bureaucrats", size, demographic.culture, demographic.religion);
 		pops.push_back(bureaucratsPop);
 	}
 	if (pts.officers > 0)
 	{
 		int size = static_cast<int>(demographic.middleRatio * newPopulation * (pts.officers / 10000) + 0.5);
 		farmers -= size;
-		V2Pop* officersPop = new V2Pop("officers", size, demographic.culture, demographic.religion);
+		V2::Pop* officersPop = new V2::Pop("officers", size, demographic.culture, demographic.religion);
 		pops.push_back(officersPop);
 	}
 	if (pts.capitalists > 0)
 	{
 		int size = static_cast<int>(demographic.upperRatio * newPopulation * (pts.capitalists / 10000) + 0.5);
 		farmers -= size;
-		V2Pop* capitalistsPop = new V2Pop("capitalists", size, demographic.culture, demographic.religion);
+		V2::Pop* capitalistsPop = new V2::Pop("capitalists", size, demographic.culture, demographic.religion);
 		pops.push_back(capitalistsPop);
 	}
 	if (pts.aristocrats > 0)
 	{
 		int size = static_cast<int>(demographic.upperRatio * newPopulation * (pts.aristocrats / 10000) + 0.5);
 		farmers -= size;
-		V2Pop* aristocratsPop = new V2Pop("aristocrats", size, demographic.culture, demographic.religion);
+		V2::Pop* aristocratsPop = new V2::Pop("aristocrats", size, demographic.culture, demographic.religion);
 		pops.push_back(aristocratsPop);
 	}
 
-	V2Pop* farmersPop = new V2Pop("farmers", farmers, demographic.culture, demographic.religion);
+	V2::Pop* farmersPop = new V2::Pop("farmers", farmers, demographic.culture, demographic.religion);
 	pops.push_back(farmersPop);
 
 	/*LOG(LogLevel::Info) << "Name: " << this->getSrcProvince()->getName() << " demographics.upperRatio: " << demographic.upperRatio
@@ -919,10 +916,10 @@ void V2Province::createPops(
 
 void V2Province::combinePops()
 {
-	vector<V2Pop*> trashPops;
-	for (vector<V2Pop*>::iterator lhs = pops.begin(); lhs != pops.end(); ++lhs)
+	std::vector<V2::Pop*> trashPops;
+	for (std::vector<V2::Pop*>::iterator lhs = pops.begin(); lhs != pops.end(); ++lhs)
 	{
-		vector<V2Pop*>::iterator rhs = lhs;
+		std::vector<V2::Pop*>::iterator rhs = lhs;
 		for (++rhs; rhs != pops.end(); ++rhs)
 		{
 			if ((*lhs)->combine(**rhs))
@@ -936,11 +933,11 @@ void V2Province::combinePops()
 		}
 	}
 
-	vector<V2Pop*> consolidatedPops;
-	for (vector<V2Pop*>::iterator itr = pops.begin(); itr != pops.end(); ++itr)
+	std::vector<V2::Pop*> consolidatedPops;
+	for (std::vector<V2::Pop*>::iterator itr = pops.begin(); itr != pops.end(); ++itr)
 	{
 		bool isTrashed = false;
-		for (vector<V2Pop*>::iterator titr = trashPops.begin(); titr != trashPops.end(); ++titr)
+		for (std::vector<V2::Pop*>::iterator titr = trashPops.begin(); titr != trashPops.end(); ++titr)
 		{
 			if (*itr == *titr)
 			{
@@ -958,7 +955,7 @@ void V2Province::combinePops()
 
 void V2Province::addFactory(const V2::Factory& factory)
 {
-	map<string, V2::Factory>::iterator itr = factories.find(factory.getTypeName());
+	std::map<std::string, V2::Factory>::iterator itr = factories.find(factory.getTypeName());
 	if (itr == factories.end())
 	{
 		factories.insert(std::make_pair(factory.getTypeName(), factory));
@@ -993,7 +990,7 @@ void V2Province::addPopDemographic(V2Demographic d)
 int V2Province::getTotalPopulation() const
 {
 	int total = 0;
-	for (vector<V2Pop*>::const_iterator itr = pops.begin(); itr != pops.end(); ++itr)
+	for (std::vector<V2::Pop*>::const_iterator itr = pops.begin(); itr != pops.end(); ++itr)
 	{
 		total += (*itr)->getSize();
 	}
@@ -1001,10 +998,10 @@ int V2Province::getTotalPopulation() const
 }
 
 
-vector<V2Pop*> V2Province::getPops(string type) const
+std::vector<V2::Pop*> V2Province::getPops(std::string type) const
 {
-	vector<V2Pop*> retval;
-	for (vector<V2Pop*>::const_iterator itr = pops.begin(); itr != pops.end(); ++itr)
+	std::vector<V2::Pop*> retval;
+	for (std::vector<V2::Pop*>::const_iterator itr = pops.begin(); itr != pops.end(); ++itr)
 	{
 		if (type == "*" || (*itr)->getType() == type)
 			retval.push_back(*itr);
@@ -1013,7 +1010,7 @@ vector<V2Pop*> V2Province::getPops(string type) const
 }
 
 
-static bool PopSortBySizePredicate(const V2Pop* pop1, const V2Pop* pop2)
+static bool PopSortBySizePredicate(const V2::Pop* pop1, const V2::Pop* pop2)
 {
 	return (pop1->getSize() > pop2->getSize());
 }
@@ -1029,15 +1026,15 @@ static int getRequiredPopForRegimentCount(int count)
 
 
 // pick a soldier pop to use for an army.  prefer larger pops to smaller ones, and grow only if necessary.
-V2Pop* V2Province::getSoldierPopForArmy(bool force)
+V2::Pop* V2Province::getSoldierPopForArmy(bool force)
 {
-	vector<V2Pop*> spops = getPops("soldiers");
+	std::vector<V2::Pop*> spops = getPops("soldiers");
 	if (spops.size() == 0)
 		return NULL; // no soldier pops
 
-	sort(spops.begin(), spops.end(), PopSortBySizePredicate);
+	std::sort(spops.begin(), spops.end(), PopSortBySizePredicate);
 	// try largest to smallest, without growing
-	for (vector<V2Pop*>::iterator itr = spops.begin(); itr != spops.end(); ++itr)
+	for (std::vector<V2::Pop*>::iterator itr = spops.begin(); itr != spops.end(); ++itr)
 	{
 		int growBy = getRequiredPopForRegimentCount((*itr)->getSupportedRegimentCount() + 1) - (*itr)->getSize();
 		if (growBy <= 0)
@@ -1049,7 +1046,7 @@ V2Pop* V2Province::getSoldierPopForArmy(bool force)
 		}
 	}
 	// try largest to smallest, trying to grow
-	for (vector<V2Pop*>::iterator itr = spops.begin(); itr != spops.end(); ++itr)
+	for (std::vector<V2::Pop*>::iterator itr = spops.begin(); itr != spops.end(); ++itr)
 	{
 		if (growSoldierPop(*itr))
 		{
@@ -1069,7 +1066,7 @@ V2Pop* V2Province::getSoldierPopForArmy(bool force)
 }
 
 
-bool V2Province::growSoldierPop(V2Pop* pop)
+bool V2Province::growSoldierPop(V2::Pop* pop)
 {
 	int growBy = getRequiredPopForRegimentCount(pop->getSupportedRegimentCount() + 1) - pop->getSize();
 	if (growBy > 0)
@@ -1077,7 +1074,7 @@ bool V2Province::growSoldierPop(V2Pop* pop)
 		// gotta grow; find a same-culture same-religion farmer/laborer to pull from
 		int provincePop = getTotalPopulation();
 		bool foundSourcePop = false;
-		for (vector<V2Pop*>::iterator isrc = pops.begin(); isrc != pops.end(); ++isrc)
+		for (std::vector<V2::Pop*>::iterator isrc = pops.begin(); isrc != pops.end(); ++isrc)
 		{
 			if ((*isrc)->getType() == "farmers" || (*isrc)->getType() == "labourers")
 			{
@@ -1104,35 +1101,35 @@ bool V2Province::growSoldierPop(V2Pop* pop)
 }
 
 
-pair<int, int> V2Province::getAvailableSoldierCapacity() const
+std::pair<int, int> V2Province::getAvailableSoldierCapacity() const
 {
 	int soldierCap = 0;
 	int draftCap = 0;
 	int provincePop = getTotalPopulation();
-	for (vector<V2Pop*>::const_iterator itr = pops.begin(); itr != pops.end(); ++itr)
+	for (std::vector<V2::Pop*>::const_iterator itr = pops.begin(); itr != pops.end(); ++itr)
 	{
 		if ((*itr)->getType() == "soldiers")
 		{
 			// unused capacity is the size of the pop minus the capacity already used, or 0, if it's already overdrawn
-			soldierCap += max((*itr)->getSize() - getRequiredPopForRegimentCount((*itr)->getSupportedRegimentCount()), 0);
+			soldierCap += std::max((*itr)->getSize() - getRequiredPopForRegimentCount((*itr)->getSupportedRegimentCount()), 0);
 		}
 		else if ((*itr)->getType() == "farmers" || (*itr)->getType() == "labourers")
 		{
 			// unused capacity is the size of the pop in excess of 10% of the province pop, or 0, if it's already too small
-			draftCap += max((*itr)->getSize() - int(0.10 * provincePop), 0);
+			draftCap += std::max((*itr)->getSize() - int(0.10 * provincePop), 0);
 		}
 	}
-	return pair<int, int>(soldierCap, draftCap);
+	return std::pair<int, int>(soldierCap, draftCap);
 }
 
 
-string V2Province::getRegimentName(EU4::REGIMENTCATEGORY rc)
+std::string V2Province::getRegimentName(EU4::REGIMENTCATEGORY rc)
 {
 	// galleys turn into light ships; count and name them identically
 	if (rc == EU4::REGIMENTCATEGORY::galley)
 		rc = EU4::REGIMENTCATEGORY::light_ship;
 
-	stringstream str;
+	std::stringstream str;
 	str << ++unitNameCount[static_cast<int>(rc)] << CardinalToOrdinal(unitNameCount[static_cast<int>(rc)]); // 1st, 2nd, etc
 	str << " " << name << " "; // Hamburg, Lyon, etc
 	switch (rc)
@@ -1160,10 +1157,10 @@ string V2Province::getRegimentName(EU4::REGIMENTCATEGORY rc)
 }
 
 
-bool V2Province::hasCulture(string culture, float percentOfPopulation) const
+bool V2Province::hasCulture(std::string culture, float percentOfPopulation) const
 {
 	int culturePops = 0;
-	for (vector<V2Pop*>::const_iterator itr = pops.begin(); itr != pops.end(); ++itr)
+	for (std::vector<V2::Pop*>::const_iterator itr = pops.begin(); itr != pops.end(); ++itr)
 	{
 		if ((*itr)->getCulture() == culture)
 		{
@@ -1175,11 +1172,11 @@ bool V2Province::hasCulture(string culture, float percentOfPopulation) const
 }
 
 
-vector<string> V2Province::getCulturesOverThreshold(float percentOfPopulation) const
+std::vector<std::string> V2Province::getCulturesOverThreshold(float percentOfPopulation) const
 {
 	int totalPopulation = getTotalPopulation();
 
-	map<string, double> cultureAmounts;
+	std::map<std::string, double> cultureAmounts;
 	for (auto pop : pops)
 	{
 		auto cultureAmount = cultureAmounts.find(pop->getCulture());
@@ -1194,7 +1191,7 @@ vector<string> V2Province::getCulturesOverThreshold(float percentOfPopulation) c
 		}
 	}
 
-	vector<string> culturesOverThreshold;
+	std::vector<std::string> culturesOverThreshold;
 	for (auto cultureAmount : cultureAmounts)
 	{
 		if (cultureAmount.second >= percentOfPopulation)

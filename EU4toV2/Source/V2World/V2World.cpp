@@ -18,7 +18,7 @@
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "V2Province.h"
 #include "V2State.h"
-#include "V2Pop.h"
+#include "Pop/Pop.h"
 #include "V2Country.h"
 #include "V2Flags.h"
 #include "../Mappers/Pops/PopMapper.h"
@@ -235,7 +235,7 @@ void V2World::importPopsFromProvince(const int provinceID, const mappers::PopTyp
 
 	for (const auto& pop: popType.getPopTypes())
 	{
-		V2Pop* newPop = new V2Pop(pop.first, pop.second.getSize(), pop.second.getCulture(), pop.second.getReligion());
+		V2::Pop* newPop = new V2::Pop(pop.first, pop.second.getSize(), pop.second.getCulture(), pop.second.getReligion());
 
 		province->second->addOldPop(newPop);
 		if (minorityPopMapper.matchMinorityPop(*newPop))
@@ -296,12 +296,12 @@ void V2World::logPopsInProvince(const int& provinceID, const mappers::PopTypes& 
 
 	for (const auto& popType : popTypes.getPopTypes())
 	{
-		logPop(popType.first, popType.second, countryPopItr);
+		logPop(popType.first, V2::Pop(popType.first, popType.second), countryPopItr);
 	}
 }
 
 
-void V2World::logPop(const std::string& popType, const mappers::Pop& pop, map<string, map<string, long int>>::iterator countryPopItr) const
+void V2World::logPop(const std::string& popType, const V2::Pop& pop, map<string, map<string, long int>>::iterator countryPopItr) const
 {
 	auto popItr = countryPopItr->second.find(popType);
 	if (popItr == countryPopItr->second.end())
@@ -1773,11 +1773,11 @@ void V2World::outputPops() const
 	LOG(LogLevel::Debug) << "Writing pops";
 	for (auto popRegion : popRegions)
 	{
-		FILE* popsFile;
-		if (fopen_s(&popsFile, ("output/" + theConfiguration.getOutputName() + "/history/pops/1836.1.1/" + popRegion.first).c_str(), "w") != 0)
+		ofstream popsFile;
+		popsFile.open("output/" + theConfiguration.getOutputName() + "/history/pops/1836.1.1/" + popRegion.first);		
+		if (!popsFile.is_open())
 		{
-			LOG(LogLevel::Error) << "Could not create pops file output/" << theConfiguration.getOutputName() << "/history/pops/1836.1.1/" << popRegion.first;
-			exit(-1);
+			throw("Could not create pops file output/" + theConfiguration.getOutputName() + "/history/pops/1836.1.1/" + popRegion.first);
 		}
 
 		for (auto provinceNumber : popRegion.second)
