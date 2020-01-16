@@ -55,7 +55,7 @@ class V2State
 
 		bool		isCoastal() const;
 		bool		hasLocalSupply(string product) const;
-		double	getSuppliedInputs(const V2::Factory& factory)	const;
+		double getSuppliedInputs(const V2::Factory& factory) const;
 		bool		provInState(int id)	const;
 		bool		hasLandConnection()	const;
 		double	getManuRatio() const;
@@ -72,7 +72,7 @@ class V2State
 		int								id;
 		bool								colonial;
 		vector<V2Province*>			provinces;
-		vector<V2::Factory>	factories;
+		vector<V2::Factory> factories;
 };
 
 

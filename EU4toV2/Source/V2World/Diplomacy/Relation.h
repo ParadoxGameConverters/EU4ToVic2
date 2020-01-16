@@ -13,14 +13,14 @@ namespace V2
 		Relation(const std::string& _target, EU4::EU4RelationDetails& oldRelations);
 
 		void setLevel(int level);
-		std::string	getTarget() const { return target; }
+		std::string getTarget() const { return target; }
 		int getRelations() const { return value; }
 		int getLevel() const { return level; }
 
 		friend std::ostream& operator<<(std::ostream& output, const Relation& relations);
 
 	private:
-		std::string	target;
+		std::string target;
 		int value = 0;
 		bool militaryAccess = false;
 		date lastSendDiplomat;

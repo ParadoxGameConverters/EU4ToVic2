@@ -168,7 +168,7 @@ class V2Country : commonItems::parser
 		void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper);
 
 	private:
-		void			outputTech(std::ofstream& output) const ;
+		void outputTech(std::ofstream& output) const ;
 		void			outputElection(FILE*) const;
 		void			addLoan(std::string creditor, double size, double interest);
 		addRegimentToArmyResult addRegimentToArmy(

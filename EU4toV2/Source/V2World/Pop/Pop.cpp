@@ -3,8 +3,8 @@
 V2::Pop::Pop(const std::string& _type, int _size, const std::string& _culture, const std::string& _religion) :
 	type(_type), size(_size), culture(_culture), religion(_religion) {}
 
-V2::Pop::Pop(const std::string& _type, const mappers::MapperPop& mapperpop):
-	type(_type), size(mapperpop.getSize()), culture(mapperpop.getCulture()), religion(mapperpop.getReligion()) {}
+V2::Pop::Pop(const std::string& _type, const mappers::MapperPop& mapperPop):
+	type(_type), size(mapperPop.getSize()), culture(mapperPop.getCulture()), religion(mapperPop.getReligion()) {}
 
 bool V2::Pop::combine(const V2::Pop& rhs)
 {

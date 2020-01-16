@@ -67,18 +67,12 @@ void V2::Diplomacy::convertDiplomacy(
 		if (agreement.getAgreementType() == "royal_marriage" || agreement.getAgreementType() == "guarantee")
 		{
 			// influence level +1, but never exceed 4
-			if (r1.getLevel() < 4)
-			{
-				r1.setLevel(r1.getLevel() + 1);
-			}
+			if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
 		}
 		if (agreement.getAgreementType() == "royal_marriage")
 		{
 			// royal marriage is bidirectional; influence level +1, but never exceed 4
-			if (r2.getLevel() < 4)
-			{
-				r2.setLevel(r2.getLevel() + 1);
-			}
+			if (r2.getLevel() < 4) r2.setLevel(r2.getLevel() + 1);
 		}
 		if (agreement.getAgreementType() == "vassal" || agreement.getAgreementType() == "client_vassal" || agreement.getAgreementType() == "daimyo_vassal" || agreement.getAgreementType() == "protectorate" || agreement.getAgreementType() == "tributary_state")
 		{

@@ -26,7 +26,6 @@ namespace V2
 		// All localisations are stored internally as UTF-8. However V2 doesn't seem to handle Unicode
 		// so we convert the text to ANSI Latin-1 before writing it.
 		static std::string convert(const std::string&);
-
 		static std::string stripAccents(const std::string&);
 
 		std::string getLocalName();

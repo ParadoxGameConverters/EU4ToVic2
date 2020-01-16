@@ -14,9 +14,9 @@ namespace V2
 		friend std::ostream& operator<<(std::ostream& output, Agreement theAgreement);
 
 	private:
-		std::string	type;
-		std::string	first;
-		std::string	second;
+		std::string type;
+		std::string first;
+		std::string second;
 		date start_date;
 	};
 }

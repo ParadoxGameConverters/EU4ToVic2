@@ -10,7 +10,7 @@ namespace V2
 	{
 	public:
 		Pop(const std::string& _type, int _size, const std::string& _culture, const std::string& _religion);
-		Pop(const std::string& _type, const mappers::MapperPop& mapperpop);
+		Pop(const std::string& _type, const mappers::MapperPop& mapperPop);
 
 		bool combine(const Pop& rhs);
 		void changeSize(int delta) { size += delta; }

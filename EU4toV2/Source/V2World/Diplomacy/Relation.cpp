@@ -12,9 +12,6 @@ V2::Relation::Relation(const std::string& _target, EU4::EU4RelationDetails& oldR
 
 void V2::Relation::setLevel(int lvl)
 {
-	if (lvl < 0 || lvl > 5)
-	{
-		return;
-	}
+	if (lvl < 0 || lvl > 5) return;
 	level = lvl;
 }

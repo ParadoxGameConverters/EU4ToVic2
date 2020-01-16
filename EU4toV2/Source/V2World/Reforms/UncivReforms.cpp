@@ -45,7 +45,7 @@ V2::UncivReforms::UncivReforms(int westernizationProgress, double milFocus, doub
 		if (milProgress >= westernizationCost[i] - 0.001)
 		{
 			reforms[i] = true;
-			milProgress	-= westernizationCost[i];
+			milProgress -= westernizationCost[i];
 		}
 		else
 		{
@@ -81,7 +81,7 @@ V2::UncivReforms::UncivReforms(int westernizationProgress, double milFocus, doub
 			if (remainingProgress >= westernizationCost[i] - 0.001)
 			{
 				reforms[i] = true;
-				remainingProgress	-= westernizationCost[i];
+				remainingProgress -= westernizationCost[i];
 			}
 		}
 	}

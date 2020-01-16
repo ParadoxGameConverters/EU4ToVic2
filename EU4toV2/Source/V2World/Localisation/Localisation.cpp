@@ -46,11 +46,7 @@ void V2::Localisation::setPartyName(size_t partyIndex, const std::string& langua
 
 std::string V2::Localisation::convert(const std::string& text)
 {
-	if (text.empty())
-	{
-		return "";
-	}
-
+	if (text.empty()) return std::string();
 	return Utils::convertUTF8To8859_15(text);
 }
 
@@ -58,12 +54,9 @@ std::string V2::Localisation::getLocalName()
 {
 	for (std::string thisname : name)
 	{
-		if (!thisname.empty())
-		{
-			return thisname;
-		}
+		if (!thisname.empty()) return thisname;
 	}
-	return "";
+	return std::string();
 }
 
 
@@ -71,12 +64,9 @@ std::string V2::Localisation::getLocalAdjective()
 {
 	for (std::string thisname : adjective)
 	{
-		if (!thisname.empty())
-		{
-			return thisname;
-		}
+		if (!thisname.empty()) return thisname;
 	}
-	return "";
+	return std::string();
 }
 
 std::string V2::Localisation::stripAccents(const std::string& text)
