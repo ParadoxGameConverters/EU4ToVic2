@@ -241,7 +241,7 @@ V2::addRegimentToArmyResult V2::Army::addRegimentToArmy(
 		}
 		if (nullptr == soldierPop)
 		{
-			soldierPop = homeProvince->getSoldierPopForArmy(true);
+			homeProvince->getSoldierPopForArmy(true);
 		}
 		regiment.setHome(homeProvince->getNum());	
 	}
