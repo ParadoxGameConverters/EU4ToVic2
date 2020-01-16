@@ -1502,22 +1502,12 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting armies and navies";
 
-	// get cost per regiment values
-	std::map<std::string, int> regimentCosts = regimentCostsMapper.getRegimentCosts();
-	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0.0 };
-
-	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
-	{
-		cost_per_regiment[i] = regimentCosts[EU4::RegimentCategoryTypes[static_cast<EU4::REGIMENTCATEGORY>(i)]];
-	}
-
 	// convert leaders and armies
 
-	LOG(LogLevel::Info) << "Converting country armies";
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
 		itr->second->convertLeaders(leaderTraitMapper);
-		itr->second->convertArmies(cost_per_regiment, provinces, portProvincesMapper, provinceMapper, adjacencyMapper);
+		itr->second->convertArmies(regimentCostsMapper, provinces, portProvincesMapper, provinceMapper, adjacencyMapper);
 	}
 }
 

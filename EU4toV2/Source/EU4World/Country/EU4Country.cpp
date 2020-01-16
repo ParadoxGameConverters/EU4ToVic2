@@ -184,15 +184,10 @@ EU4::Country::Country(
 			EU4::EU4Relations activeRelations(theStream);
 			relations = activeRelations.getRelations();
 		});
-	registerKeyword("army", [this](const std::string& unused, std::istream& theStream)
+	registerRegex("army|navy", [this](const std::string& armyFloats, std::istream& theStream)
 		{
-			EU4Army army(theStream);
+			EU4Army army(theStream, armyFloats);
 			armies.push_back(army);
-		});
-	registerKeyword("navy", [this](const std::string& unused, std::istream& theStream)
-		{
-			EU4Army navy(theStream);
-			armies.push_back(navy);
 		});
 	registerKeyword("active_idea_groups", [this](const std::string& unused, std::istream& theStream)
 		{

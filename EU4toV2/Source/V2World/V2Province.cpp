@@ -18,11 +18,6 @@
 V2Province::V2Province(const std::string& _filename)
 {
 	filename = _filename;
-	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
-	{
-		unitNameCount[i] = 0;
-	}
-
 	registerKeyword(std::regex("owner"), [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString ownerStr(theStream);
@@ -218,7 +213,7 @@ static const int unitNameOffsets[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg
 
 
 void V2Province::outputUnits(FILE* output) const
-{
+{/*
 	// unit name counts are stored in an odd kind of variable-length sparse array.  try to emulate.
 	int outputUnitNameUntil = 0;
 	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
@@ -248,7 +243,7 @@ void V2Province::outputUnits(FILE* output) const
 		}
 		fprintf(output, "\t\t}\n");
 		fprintf(output, "\t}\n");
-	}
+	}*/
 }
 
 
@@ -1123,33 +1118,32 @@ std::pair<int, int> V2Province::getAvailableSoldierCapacity() const
 }
 
 
-std::string V2Province::getRegimentName(EU4::REGIMENTCATEGORY rc)
+std::string V2Province::getRegimentName(V2::REGIMENTTYPE chosenType)
 {
-	// galleys turn into light ships; count and name them identically
-	if (rc == EU4::REGIMENTCATEGORY::galley)
-		rc = EU4::REGIMENTCATEGORY::light_ship;
-
 	std::stringstream str;
-	str << ++unitNameCount[static_cast<int>(rc)] << CardinalToOrdinal(unitNameCount[static_cast<int>(rc)]); // 1st, 2nd, etc
+	str << ++unitNameCount[chosenType] << CardinalToOrdinal(unitNameCount[chosenType]); // 1st, 2nd, etc
 	str << " " << name << " "; // Hamburg, Lyon, etc
-	switch (rc)
+	switch (chosenType)
 	{
-	case EU4::REGIMENTCATEGORY::artillery:
-		str << "Artillery";
+	case V2::REGIMENTTYPE::irregular:
+		str << "Irregulars";
 		break;
-	case EU4::REGIMENTCATEGORY::infantry:
+	case V2::REGIMENTTYPE::infantry:
 		str << "Infantry";
 		break;
-	case EU4::REGIMENTCATEGORY::cavalry:
+	case V2::REGIMENTTYPE::cavalry:
 		str << "Cavalry";
 		break;
-	case EU4::REGIMENTCATEGORY::heavy_ship:
+	case V2::REGIMENTTYPE::artillery:
+		str << "Artillery";
+		break;
+	case V2::REGIMENTTYPE::manowar:
 		str << "Man'o'war";
 		break;
-	case EU4::REGIMENTCATEGORY::light_ship:
+	case V2::REGIMENTTYPE::frigate:
 		str << "Frigate";
 		break;
-	case EU4::REGIMENTCATEGORY::transport:
+	case V2::REGIMENTTYPE::clipper_transport:
 		str << "Clipper Transport";
 		break;
 	}

@@ -8,6 +8,7 @@
 #include "newParser.h"
 #include "Factory/Factory.h"
 #include "Pop/Pop.h"
+#include "Army/Regiment.h"
 
 class V2Country;
 
@@ -53,7 +54,7 @@ class V2Province : commonItems::parser
 		std::vector<V2::Pop*> getPops(const std::string& type) const;
 		V2::Pop* getSoldierPopForArmy(bool force = false);
 		std::pair<int, int>	getAvailableSoldierCapacity() const;
-		std::string getRegimentName(EU4::REGIMENTCATEGORY rc);
+		std::string getRegimentName(V2::REGIMENTTYPE rc);
 		bool hasCulture(const std::string& culture, float percentOfPopulation) const;
 		std::vector<std::string> getCulturesOverThreshold(float percentOfPopulation) const;
 
@@ -144,7 +145,7 @@ class V2Province : commonItems::parser
 		std::string climate;
 		int lifeRating = 0;
 		bool slaveState = false;
-		int unitNameCount[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)];
+		std::map<V2::REGIMENTTYPE, int> unitNameCount;
 		int fortLevel = 0;
 		int navalBaseLevel = 0;
 		int railLevel = 0;

@@ -1,7 +1,6 @@
 #ifndef V2COUNTRY_H_
 #define V2COUNTRY_H_
 
-#include "V2Army.h"
 #include "Party/Party.h"
 #include "Leader/Leader.h"
 #include "Localisation/Localisation.h"
@@ -21,10 +20,13 @@
 #include "../Mappers/Unreleasables/Unreleasables.h"
 #include "../Mappers/LeaderTraits/LeaderTraitMapper.h"
 #include "../Mappers/PortProvinces/PortProvinces.h"
+#include "../Mappers/RegimentCosts/RegimentCostsMapper.h"
 #include <memory>
 #include <set>
 #include <vector>
 #include "Factory/Factory.h"
+#include "Army/Regiment.h"
+#include "Army/Army.h"
 
 namespace EU4
 {
@@ -48,12 +50,6 @@ class V2Province;
 class V2Creditor;
 class V2LeaderTraits;
 
-enum class addRegimentToArmyResult
-{
-	success,
-	retry,
-	doNotRetry
-};
 
 
 
@@ -84,7 +80,7 @@ class V2Country : commonItems::parser
 		void								addProvince(V2Province* _province);
 		void								addState(V2State* newState, const mappers::PortProvinces& portProvincesMapper);
 		void convertArmies(
-			double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)],
+			const mappers::RegimentCostsMapper& regimentCostsMapper,
 			const std::map<int, V2Province*>& allProvinces,
 			const mappers::PortProvinces& portProvincesMapper,
 			const mappers::ProvinceMapper& provinceMapper,
@@ -171,19 +167,8 @@ class V2Country : commonItems::parser
 		void outputTech(std::ofstream& output) const ;
 		void			outputElection(FILE*) const;
 		void			addLoan(std::string creditor, double size, double interest);
-		addRegimentToArmyResult addRegimentToArmy(
-			V2Army& army,
-			EU4::REGIMENTCATEGORY rc,
-			std::map<int, V2Province*> allProvinces,
-			const mappers::ProvinceMapper& provinceMapper,
-			const mappers::AdjacencyMapper& adjacencyMapper,
-			const mappers::PortProvinces& portProvincesMapper
-		);
-		std::vector<int> getPortProvinces(const std::vector<int>& locationCandidates, std::map<int, V2Province*> allProvinces, const mappers::PortProvinces& portProvincesMapper);
-		V2Army* getArmyForRemainder(EU4::REGIMENTCATEGORY rc);
-		V2Province*	getProvinceForExpeditionaryArmy();
-		std::string		getRegimentName(EU4::REGIMENTCATEGORY rc);
-
+		V2::Army* getArmyForRemainder(V2::REGIMENTTYPE chosenType);
+	
 		const V2World* theWorld;
 		std::shared_ptr<EU4::Country> srcCountry;
 		std::string							filename;
@@ -196,7 +181,7 @@ class V2Country : commonItems::parser
 		std::vector<V2State*>				states;
 		std::map<int, V2Province*>		provinces;
 		int capital = 0;
-		bool								civilized;
+		bool civilized;
 		bool isReleasableVassal = false;
 		bool								holyRomanEmperor;
 		bool								inHRE;
@@ -223,7 +208,7 @@ class V2Country : commonItems::parser
 		std::vector<std::pair<int, int>>	conservativeIssues;
 		std::vector<std::pair<int, int>>	liberalIssues;
 		std::map<std::string, V2::Relation>	relations;
-		std::vector<V2Army> armies;
+		std::vector<V2::Army> armies;
 		V2::Reforms* reforms;
 		std::string nationalValue = "nv_order";
 		double							money;
@@ -236,9 +221,10 @@ class V2Country : commonItems::parser
 		double							literacy;
 		V2::Localisation localisation;
 		EU4::NationalSymbol nationalColors;
-		int								unitNameCount[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)];
+		std::map<V2::REGIMENTTYPE, int> unitNameCount;
 		int								numFactories;
 		std::vector<std::string>					decisions;
+		std::map<V2::REGIMENTTYPE, double> countryRemainders;
 
 		double armyInvestment = 5.0;
 		double navyInvestment = 5.0;
@@ -263,7 +249,6 @@ class V2Country : commonItems::parser
 
 };
 
-bool ProvinceRegimentCapacityPredicate(V2Province* prov1, V2Province* prov2);
 
 
 #endif	// V2COUNTRY_H_

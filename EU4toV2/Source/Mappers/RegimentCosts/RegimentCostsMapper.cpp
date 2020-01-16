@@ -26,3 +26,10 @@ void mappers::RegimentCostsMapper::registerKeys()
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 }
+
+std::optional<int> mappers::RegimentCostsMapper::getCostForRegimentType(const std::string& regimentType) const
+{
+	const auto& costs = regimentCosts.find(regimentType);
+	if (costs != regimentCosts.end()) return costs->second;
+	return std::nullopt;
+}

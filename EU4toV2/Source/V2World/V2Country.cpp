@@ -1,9 +1,7 @@
 #include "V2Country.h"
 #include "Log.h"
 #include "../Configuration.h"
-#include "CardinalToOrdinal.h"
 #include "OSCompatibilityLayer.h"
-#include "../EU4World/World.h"
 #include "../EU4World/Country/EU4Country.h"
 #include "../EU4World/Leader/EU4Leader.h"
 #include "../EU4World/Provinces/EU4Province.h"
@@ -13,13 +11,9 @@
 #include "V2World.h"
 #include "V2State.h"
 #include "V2Province.h"
-#include "V2Army.h"
 #include "V2Creditor.h"
-#include "Pop/Pop.h"
 #include <algorithm>
 #include <fstream>
-#include <math.h>
-#include <sstream>
 #include <queue>
 #include <cmath>
 #include "ParserHelpers.h"
@@ -158,11 +152,6 @@ V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, 
 
 	colonyOverlord = nullptr;
 
-	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
-	{
-		unitNameCount[i] = 0;
-	}
-
 	numFactories	= 0;
 
 }
@@ -275,11 +264,6 @@ V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const
 	}
 
 	colonyOverlord = nullptr;
-
-	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
-	{
-		unitNameCount[i] = 0;
-	}
 
 	numFactories	= 0;
 }
@@ -927,33 +911,6 @@ void V2Country::addProvince(V2Province* _province)
 }
 
 
-std::vector<int> V2Country::getPortProvinces(
-	const std::vector<int>& locationCandidates,
-	std::map<int, V2Province*> allProvinces,
-	const mappers::PortProvinces& portProvincesMapper
-) {
-
-	std::vector<int> unblockedCandidates;
-	for (auto candidate: locationCandidates)
-	{
-		if (!portProvincesMapper.isProvinceIDBlacklisted(candidate)) unblockedCandidates.push_back(candidate);
-	}
-
-	std::vector<int> coastalProvinces;
-	for (auto& candidate: unblockedCandidates)
-	{
-		std::map<int, V2Province*>::iterator province = allProvinces.find(candidate);
-		if (province != allProvinces.end())
-		{
-			if (province->second->isCoastal())
-			{
-				coastalProvinces.push_back(candidate);
-			}
-		}
-	}
-	return coastalProvinces;
-}
-
 
 void V2Country::addState(V2State* newState, const mappers::PortProvinces& portProvincesMapper)
 {
@@ -969,7 +926,7 @@ void V2Country::addState(V2State* newState, const mappers::PortProvinces& portPr
 	{
 		newProvinceNums.push_back(province->getNum());
 	}
-	auto portProvinces = getPortProvinces(newProvinceNums, provinces, portProvincesMapper);
+	auto portProvinces = V2::Army::getPortProvinces(newProvinceNums, provinces, portProvincesMapper);
 
 	for (unsigned int i = 0; i < newProvinces.size(); i++)
 	{
@@ -1033,7 +990,7 @@ void V2Country::convertLeaders(mappers::LeaderTraitMapper& leaderTraitMapper)
 
 //#define TEST_V2_PROVINCES
 void V2Country::convertArmies(
-	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)],
+	const mappers::RegimentCostsMapper& regimentCostsMapper,
 	const std::map<int, V2Province*>& allProvinces,
 	const mappers::PortProvinces& portProvincesMapper,
 	const mappers::ProvinceMapper& provinceMapper,
@@ -1041,119 +998,38 @@ void V2Country::convertArmies(
 ) {
 #ifndef TEST_V2_PROVINCES
 	if (srcCountry == nullptr) return;
-	if (provinces.size() == 0) return;
+	if (provinces.empty()) return;
 
 	// set up armies with whatever regiments they deserve, rounded down
 	// and keep track of the remainders for later
-	double countryRemainder[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0.0 };
-	std::vector<EU4::EU4Army> sourceArmies = srcCountry->getArmies();
-	for (std::vector<EU4::EU4Army>::iterator aitr = sourceArmies.begin(); aitr != sourceArmies.end(); ++aitr)
+	for (auto& eu4army: srcCountry->getArmies())
 	{
-		V2Army army(*aitr);
-
-		for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
-		{
-			int typeStrength = aitr->getTotalTypeStrength(static_cast<EU4::REGIMENTCATEGORY>(rc));
-			if (typeStrength == 0) // no regiments of this type
-				continue;
-
-			// if we have ships, we must be a navy
-			bool isNavy = (rc >= static_cast<int>(EU4::REGIMENTCATEGORY::heavy_ship));
-			army.setNavy(isNavy);
-
-			double	regimentCount		= typeStrength / cost_per_regiment[rc];
-			int		regimentsToCreate	= (int)floor(regimentCount);
-			double	regimentRemainder	= regimentCount - regimentsToCreate;
-			countryRemainder[rc] += regimentRemainder;
-			army.setArmyRemainders(static_cast<EU4::REGIMENTCATEGORY>(rc), army.getArmyRemainder(static_cast<EU4::REGIMENTCATEGORY>(rc)) + regimentRemainder);
-
-			for (int i = 0; i < regimentsToCreate; ++i)
-			{
-				if (addRegimentToArmy(army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper, adjacencyMapper, portProvincesMapper) != addRegimentToArmyResult::success)
-				{
-					// couldn't add, dissolve into pool
-					countryRemainder[rc] += 1.0;
-					army.setArmyRemainders(static_cast<EU4::REGIMENTCATEGORY>(rc), army.getArmyRemainder(static_cast<EU4::REGIMENTCATEGORY>(rc)) + 1.0);
-				}
-			}
-		}
-
-		auto locationCandidates = provinceMapper.getVic2ProvinceNumbers(aitr->getLocation());
-		if (locationCandidates.size() == 0)
-		{
-			int regimentCounts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0 };
-			army.getRegimentCounts(regimentCounts);
-			for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
-			{
-				countryRemainder[rc] += regimentCounts[rc];
-			}
-			continue;
-		}
-		else if ((locationCandidates.size() == 1) && (*locationCandidates.begin() == 0))
-		{
-			int regimentCounts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0 };
-			army.getRegimentCounts(regimentCounts);
-			for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
-			{
-				countryRemainder[rc] += regimentCounts[rc];
-			}
-			continue;
-		}
-		bool usePort = false;
-		// guarantee that navies are assigned to sea provinces, or land provinces with naval bases
-		if (army.getNavy())
-		{
-			auto pitr = allProvinces.find(*locationCandidates.begin());
-			if (pitr != allProvinces.end())
-			{
-				usePort = true;
-			}
-			if (usePort)
-			{
-				locationCandidates = getPortProvinces(locationCandidates, allProvinces, portProvincesMapper);
-				if (locationCandidates.size() == 0)
-				{
-					int regimentCounts[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0 };
-					army.getRegimentCounts(regimentCounts);
-					for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
-					{
-						countryRemainder[rc] += regimentCounts[rc];
-					}
-					continue;
-				}
-			}
-		}
-
-		int selectedLocation = locationCandidates[int(locationCandidates.size() * ((double)rand() / RAND_MAX))];
-		if (army.getNavy() && usePort && !portProvincesMapper.isProvinceIDWhitelisted(selectedLocation))
-		{
-			LOG(LogLevel::Warning) << "Assigning navy to non-whitelisted port province " << selectedLocation << " - if the save crashes, try blacklisting this province";
-		}
-		army.setLocation(selectedLocation);
-		armies.push_back(army);
+		V2::Army army(eu4army, tag, civilized, regimentCostsMapper, allProvinces, provinceMapper, portProvincesMapper, unitNameCount, localisation.getLocalAdjective());
+		if (army.success()) armies.push_back(army); // That went well.
+		// copy over remainders, if any.
+		auto armyRemainders = army.getArmyRemainders();
+		for (const auto& remainder : armyRemainders) countryRemainders[remainder.first] += remainder.second;
 	}
 
 	// allocate the remainders from the whole country to the armies according to their need, rounding up
-	for (int rc = static_cast<int>(EU4::REGIMENTCATEGORY::infantry); rc < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++rc)
+	for (auto& remainder: countryRemainders)
 	{
-		while (countryRemainder[rc] > 0.0)
+		while (remainder.second > 0.0)
 		{
-			V2Army* army = getArmyForRemainder(static_cast<EU4::REGIMENTCATEGORY>(rc));
-			if (army == nullptr)
+			V2::Army* army = getArmyForRemainder(remainder.first);
+			if (army == nullptr) break;
+
+			switch (army->addRegimentToArmy(remainder.first, allProvinces, provinceMapper, portProvincesMapper, unitNameCount, localisation.getLocalAdjective()))		
 			{
+			case V2::addRegimentToArmyResult::success:
+				remainder.second -= 1.0;
+				army->addRegimentRemainder(remainder.first, -1.0);
 				break;
-			}
-			switch (addRegimentToArmy(*army, static_cast<EU4::REGIMENTCATEGORY>(rc), allProvinces, provinceMapper, adjacencyMapper, portProvincesMapper))
-			{
-				case addRegimentToArmyResult::success:
-					countryRemainder[rc] -= 1.0;
-					army->setArmyRemainders(static_cast<EU4::REGIMENTCATEGORY>(rc), army->getArmyRemainder(static_cast<EU4::REGIMENTCATEGORY>(rc)) - 1.0);
-					break;
-				case addRegimentToArmyResult::retry:
-					break;
-				case addRegimentToArmyResult::doNotRetry:
-					army->setArmyRemainders(static_cast<EU4::REGIMENTCATEGORY>(rc), -2000.0);
-					break;
+			case V2::addRegimentToArmyResult::retry:
+				break;
+			case V2::addRegimentToArmyResult::fail:
+				army->addRegimentRemainder(remainder.first, -2000.0);
+				break;
 			}
 		}
 	}
@@ -1837,165 +1713,21 @@ void V2Country::addLoan(string creditor, double size, double interest)
 }
 
 
-// return values: 0 = success, -1 = retry from pool, -2 = do not retry
-addRegimentToArmyResult V2Country::addRegimentToArmy(
-	V2Army& army,
-	EU4::REGIMENTCATEGORY rc,
-	std::map<int, V2Province*> allProvinces,
-	const mappers::ProvinceMapper& provinceMapper,
-	const mappers::AdjacencyMapper& adjacencyMapper,
-	const mappers::PortProvinces& portProvincesMapper
-) {
-	V2Regiment reg(rc);
-	std::optional<int> eu4Home = army.getSourceArmy().getProbabilisticHomeProvince(rc);
-	if (!eu4Home)
-	{
-		return addRegimentToArmyResult::doNotRetry;
-	}
-	auto homeCandidates = provinceMapper.getVic2ProvinceNumbers(*eu4Home);
-	if (homeCandidates.size() == 0)
-	{
-		army.getSourceArmy().blockHomeProvince(*eu4Home);
-		return addRegimentToArmyResult::retry;
-	}
-	if (*homeCandidates.begin() == 0)
-	{
-		army.getSourceArmy().blockHomeProvince(*eu4Home);
-		return addRegimentToArmyResult::retry;
-	}
-	V2Province* homeProvince = nullptr;
-	if (army.getNavy())
- 	{
-		// Navies should only get homes in port provinces
-		homeCandidates = getPortProvinces(homeCandidates, allProvinces, portProvincesMapper);
-		if (homeCandidates.size() != 0)
-		{
-			std::vector<int>::const_iterator it(homeCandidates.begin());
-			std::advance(it, int(homeCandidates.size() * ((double)rand() / RAND_MAX)));
-			int homeProvinceID = *it;
-			map<int, V2Province*>::iterator pitr = allProvinces.find(homeProvinceID);
-			if (pitr != allProvinces.end())
-			{
-				homeProvince = pitr->second;
-			}
-		}
-	}
-	else
-	{
-		// Armies should get a home in the candidate most capable of supporting them
-		std::vector<V2Province*> sortedHomeCandidates;
-		for (auto candidate: homeCandidates)
-		{
-			std::map<int, V2Province*>::iterator pitr = allProvinces.find(candidate);
-			if (pitr != allProvinces.end())
-			{
-				sortedHomeCandidates.push_back(pitr->second);
-			}
-		}
-		sort(sortedHomeCandidates.begin(), sortedHomeCandidates.end(), ProvinceRegimentCapacityPredicate);
-		if (sortedHomeCandidates.size() == 0)
-		{
-			// all provinces in a given province map have the same owner, so the source home was bad
-			army.getSourceArmy().blockHomeProvince(*eu4Home);
-			return addRegimentToArmyResult::retry;
-		}
-		homeProvince = sortedHomeCandidates[0];
-		if (homeProvince->getOwner() != tag) // TODO: find a way of associating these units with a province owned by the proper country
-		{
-			map<int, V2Province*>	openProvinces = allProvinces;
-			queue<int>					goodProvinces;
-
-			map<int, V2Province*>::iterator openItr = openProvinces.find(homeProvince->getNum());
-			homeProvince = nullptr;
-			if ( (openItr != openProvinces.end()) && (provinces.size() > 0) )
-			{
-				goodProvinces.push(openItr->first);
-				openProvinces.erase(openItr);
-
-				do
-				{
-					int currentProvince = goodProvinces.front();
-					goodProvinces.pop();
-					auto adjacencies = adjacencyMapper.getVic2Adjacencies(currentProvince);
-					if (adjacencies)
-					{
-						for (auto adjacency: *adjacencies)
-						{
-							auto openItr = openProvinces.find(adjacency);
-							if (openItr == openProvinces.end())
-							{
-								continue;
-							}
-							if (openItr->second->getOwner() == tag)
-							{
-								homeProvince = openItr->second;
-							}
-							goodProvinces.push(openItr->first);
-							openProvinces.erase(openItr);
-						}
-					}
-				} while ((goodProvinces.size() > 0) && (homeProvince == nullptr));
-			}
-			if (homeProvince == nullptr)
-			{
-				// all provinces in a given province map have the same owner, so the source home was bad
-				army.getSourceArmy().blockHomeProvince(*eu4Home);
-				return addRegimentToArmyResult::retry;
-			}
-			return addRegimentToArmyResult::success;
-		}
-
-		// Armies need to be associated with pops
-		V2::Pop* soldierPop = homeProvince->getSoldierPopForArmy();
-		if (nullptr == soldierPop)
-		{
-			// if the old home province was colonized and can't support the unit, try turning it into an "expeditionary" army
-			if (homeProvince->wasColony())
-			{
-				V2Province* expSender = getProvinceForExpeditionaryArmy();
-				if (expSender)
-				{
-					V2::Pop* expSoldierPop = expSender->getSoldierPopForArmy();
-					if (nullptr != expSoldierPop)
-					{
-						homeProvince = expSender;
-						soldierPop = expSoldierPop;
-					}
-				}
-			}
-		}
-		if (nullptr == soldierPop)
-		{
-			soldierPop = homeProvince->getSoldierPopForArmy(true);
-		}
-		reg.setHome(homeProvince->getNum());
-	}
-	if (homeProvince != nullptr)
-	{
-		reg.setName(homeProvince->getRegimentName(rc));
-	}
-	else
-	{
-		reg.setName(getRegimentName(rc));
-	}
-	army.addRegiment(reg);
-	return addRegimentToArmyResult::success;
-}
 
 
 // find the army most in need of a regiment of this category
-V2Army* V2Country::getArmyForRemainder(EU4::REGIMENTCATEGORY rc)
+V2::Army* V2Country::getArmyForRemainder(V2::REGIMENTTYPE chosenType)
 {
-	V2Army* retval = nullptr;
+	V2::Army* retval = nullptr;
 	double retvalRemainder = -1000.0;
 	for (auto& army: armies)
 	{
 		// only add units to armies that originally had units of the same category
-		if (army.getSourceArmy().getTotalTypeStrength(rc) > 0)
+		if (army.hasRegimentsOfType(chosenType))
 		{
-			if (army.getArmyRemainder(rc) > retvalRemainder)
+			if (army.getRegimentRemainder(chosenType) > retvalRemainder)
 			{
-				retvalRemainder = army.getArmyRemainder(rc);
+				retvalRemainder = army.getRegimentRemainder(chosenType);
 				retval = &army;
 			}
 		}
@@ -2005,69 +1737,4 @@ V2Army* V2Country::getArmyForRemainder(EU4::REGIMENTCATEGORY rc)
 }
 
 
-bool ProvinceRegimentCapacityPredicate(V2Province* prov1, V2Province* prov2)
-{
-	return (prov1->getAvailableSoldierCapacity() > prov2->getAvailableSoldierCapacity());
-}
 
-
-V2Province* V2Country::getProvinceForExpeditionaryArmy()
-{
-	vector<V2Province*> candidates;
-	for (auto pitr = provinces.begin(); pitr != provinces.end(); ++pitr)
-	{
-		if ( (pitr->second->getOwner() == tag) && !pitr->second->wasColony()
-			&& ( pitr->second->hasCulture(primaryCulture, 0.5) ) && ( pitr->second->getPops("soldiers").size() > 0) )
-		{
-			candidates.push_back(pitr->second);
-		}
-	}
-	if (candidates.size() > 0)
-	{
-		sort(candidates.begin(), candidates.end(), ProvinceRegimentCapacityPredicate);
-		return candidates[0];
-	}
-	return nullptr;
-}
-
-
-string V2Country::getRegimentName(EU4::REGIMENTCATEGORY rc)
-{
-	// galleys turn into light ships; count and name them identically
-	if (rc == EU4::REGIMENTCATEGORY::galley)
-		rc = EU4::REGIMENTCATEGORY::light_ship;
-
-	stringstream str;
-	str << ++unitNameCount[static_cast<int>(rc)] << CardinalToOrdinal(unitNameCount[static_cast<int>(rc)]); // 1st, 2nd, etc
-	string adjective = localisation.getLocalAdjective();
-	if (adjective == "")
-	{
-		str << " ";
-	}
-	else
-	{
-		str << " " << adjective << " ";
-	}
-	switch (rc)
-	{
-	case EU4::REGIMENTCATEGORY::artillery:
-		str << "Artillery";
-		break;
-	case EU4::REGIMENTCATEGORY::infantry:
-		str << "Infantry";
-		break;
-	case EU4::REGIMENTCATEGORY::cavalry:
-		str << "Cavalry";
-		break;
-	case EU4::REGIMENTCATEGORY::heavy_ship:
-		str << "Man'o'war";
-		break;
-	case EU4::REGIMENTCATEGORY::light_ship:
-		str << "Frigate";
-		break;
-	case EU4::REGIMENTCATEGORY::transport:
-		str << "Clipper Transport";
-		break;
-	}
-	return str.str();
-}

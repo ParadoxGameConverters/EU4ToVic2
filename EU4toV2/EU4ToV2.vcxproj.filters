@@ -48,9 +48,6 @@
     <ClCompile Include="Source\EU4World\Regions\Regions.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2Army.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2Country.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -468,6 +465,18 @@
     <ClCompile Include="Source\Mappers\Pops\MapperPop.cpp">
       <Filter>Mappers\Pops</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Army\Army.cpp">
+      <Filter>Vic2World\Army</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Army\Regiment.cpp">
+      <Filter>Vic2World\Army</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outArmy.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outRegiment.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -515,9 +524,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Region.h">
       <Filter>EU4World\Regions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Army.h">
-      <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Country.h">
       <Filter>Vic2World</Filter>
@@ -942,6 +948,18 @@
     <ClInclude Include="Source\Mappers\Pops\MapperPop.h">
       <Filter>Mappers\Pops</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Army\Army.h">
+      <Filter>Vic2World\Army</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Army\Regiment.h">
+      <Filter>Vic2World\Army</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Output\outArmy.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Output\outRegiment.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1129,6 +1147,9 @@
     </Filter>
     <Filter Include="Vic2World\Pop">
       <UniqueIdentifier>{3956b846-9d95-421d-b693-59ee5d90dde7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Army">
+      <UniqueIdentifier>{abe9d586-23f5-4927-b8a8-4244ffaf1397}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
