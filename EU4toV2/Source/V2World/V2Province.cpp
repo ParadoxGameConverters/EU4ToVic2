@@ -998,7 +998,7 @@ int V2Province::getTotalPopulation() const
 }
 
 
-std::vector<V2::Pop*> V2Province::getPops(std::string type) const
+std::vector<V2::Pop*> V2Province::getPops(const std::string& type) const
 {
 	std::vector<V2::Pop*> retval;
 	for (std::vector<V2::Pop*>::const_iterator itr = pops.begin(); itr != pops.end(); ++itr)
@@ -1157,7 +1157,7 @@ std::string V2Province::getRegimentName(EU4::REGIMENTCATEGORY rc)
 }
 
 
-bool V2Province::hasCulture(std::string culture, float percentOfPopulation) const
+bool V2Province::hasCulture(const std::string& culture, float percentOfPopulation) const
 {
 	int culturePops = 0;
 	for (std::vector<V2::Pop*>::const_iterator itr = pops.begin(); itr != pops.end(); ++itr)

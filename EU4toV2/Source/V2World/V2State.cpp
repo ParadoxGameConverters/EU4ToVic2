@@ -20,7 +20,6 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "V2State.h"
-#include "V2Pop.h"
 #include "V2Province.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "Log.h"

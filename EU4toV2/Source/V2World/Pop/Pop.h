@@ -9,8 +9,8 @@ namespace V2
 	class Pop
 	{
 	public:
-		Pop(std::string _type, int _size, std::string _culture, std::string _religion);
-		Pop(std::string _type, mappers::MapperPop mapperpop);
+		Pop(const std::string& _type, int _size, const std::string& _culture, const std::string& _religion);
+		Pop(const std::string& _type, const mappers::MapperPop& mapperpop);
 
 		bool combine(const Pop& rhs);
 		void changeSize(int delta) { size += delta; }

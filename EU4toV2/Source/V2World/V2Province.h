@@ -50,11 +50,11 @@ class V2Province : commonItems::parser
 		void addPopDemographic(V2Demographic d);
 
 		int getTotalPopulation() const;
-		std::vector<V2::Pop*>	getPops(std::string type) const;
+		std::vector<V2::Pop*> getPops(const std::string& type) const;
 		V2::Pop* getSoldierPopForArmy(bool force = false);
 		std::pair<int, int>	getAvailableSoldierCapacity() const;
 		std::string getRegimentName(EU4::REGIMENTCATEGORY rc);
-		bool hasCulture(std::string culture, float percentOfPopulation) const;
+		bool hasCulture(const std::string& culture, float percentOfPopulation) const;
 		std::vector<std::string> getCulturesOverThreshold(float percentOfPopulation) const;
 
 		void clearCores() { cores.clear(); }
