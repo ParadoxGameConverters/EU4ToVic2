@@ -4,10 +4,10 @@
 #include <memory>
 #include "../../EU4World/Country/EU4Country.h"
 
-class V2Country;
 
 namespace V2
 {	
+	class V2Country;
 	class Reforms
 	{
 	public:

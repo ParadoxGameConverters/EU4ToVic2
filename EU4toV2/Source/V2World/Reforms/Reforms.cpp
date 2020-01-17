@@ -1,7 +1,7 @@
 #include "Reforms.h"
 #include "../V2Country.h"
 
-V2::Reforms::Reforms(const V2Country* dstCountry, const std::shared_ptr<EU4::Country> srcCountry):
+V2::Reforms::Reforms(const V2::V2Country* dstCountry, const std::shared_ptr<EU4::Country> srcCountry):
 	slavery(dstCountry->getSlavery()),
 	vote_franchise(dstCountry->getVote_franchise()),
 	upper_house_composition(dstCountry->getUpper_house_composition()),

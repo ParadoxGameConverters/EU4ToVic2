@@ -10,9 +10,13 @@
 #include "../../EU4World/Provinces/EU4Province.h"
 #include "../../EU4World/Country/EU4Country.h"
 #include "../Factory/Factory.h"
+#include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
 
 namespace V2
 {
+	enum class REGIMENTTYPE;
+	class V2Country;
+	
 	struct Demographic
 	{
 		std::string culture;
@@ -22,6 +26,7 @@ namespace V2
 		double middleRatio = 0.0;
 		double lowerRatio = 0.0;
 	};
+
 
 	class Province
 	{
@@ -66,6 +71,7 @@ namespace V2
 		std::vector<std::string> getCulturesOverThreshold(double percentOfPopulation) const;
 		std::string getFilename() const { return filename; }
 		std::optional<std::pair<int, std::vector<std::shared_ptr<Pop>>>> getPopsForOutput();
+		std::string getRegimentName(V2::REGIMENTTYPE rc);
 
 		void determineColonial();
 		void convertFromOldProvince(
@@ -73,7 +79,17 @@ namespace V2
 			const EU4::Province* oldProvince,
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
 		);
-
+		void doCreatePops(
+			double popWeightRatio,
+			V2::V2Country* _owner,
+			int popConversionAlgorithm,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+			const mappers::ProvinceMapper& provinceMapper
+		);
+		std::shared_ptr<Pop> getSoldierPopForArmy(bool force = false);
+		std::vector<std::shared_ptr<Pop>> getPops(const std::string& type) const;
+		std::pair<int, int>	getAvailableSoldierCapacity() const;
+		
 		friend std::ostream& operator<<(std::ostream& output, const Province& province);
 
 	private:
@@ -101,6 +117,51 @@ namespace V2
 		std::vector<Demographic> demographics;
 		int eu4ID = 0; // Source province ID, fuzzy at best.
 		bool sameContinent = false;
+		double devpushMod = 0.0;
+		double weightMod = 0.0;
+		double spentProvinceModifier = 0.0; //Store old popshaping modifier for NEU4-to-1V2 conversions;
+		double totalWeight = 0.0;
+		std::set<std::string> importedBuildings;
+		std::set<std::string> importedIdeas;
+		std::map<V2::REGIMENTTYPE, int> unitNameCount;
+
+		struct pop_points
+		{
+			double craftsmen = 0;
+			double slaves = 0;
+			double soldiers = 0;
+			double artisans = 0;
+			double clergymen = 0;
+			double clerks = 0;
+			double bureaucrats = 0;
+			double officers = 0;
+			double capitalists = 0;
+			double aristocrats = 0;
+		};
+
+		pop_points getPopPoints_1(
+			const Demographic& demographic,
+			double newPopulation,
+			const V2Country* _owner,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries) const; // EU4 1.0-1.11
+		pop_points getPopPoints_2(
+			const Demographic& demographic,
+			double newPopulation,
+			const V2Country* _owner,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries) const; // EU4 1.12 and newer
+		void createPops(
+			const Demographic& demographic,
+			double popWeightRatio,
+			const V2Country* _owner,
+			int popConversionAlgorithm,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+			const mappers::ProvinceMapper& provinceMapper
+		);
+		void combinePops();
+		static bool popSortBySizePredicate(std::shared_ptr<Pop> pop1, std::shared_ptr<Pop> pop2);
+		static int getRequiredPopForRegimentCount(int count);
+		bool growSoldierPop(std::shared_ptr<Pop> pop);
+
 	};
 	
 }
@@ -125,18 +186,7 @@ class V2Province : commonItems::parser
 		void output() const;
 		void outputPops(std::ofstream& output) const;
 		
-		void doCreatePops(
-			double popWeightRatio,
-			V2Country* _owner,
-			int popConversionAlgorithm,
-			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
-			const mappers::ProvinceMapper& provinceMapper
-		);
 
-		std::vector<V2::Pop*> getPops(const std::string& type) const;
-		V2::Pop* getSoldierPopForArmy(bool force = false);
-		std::pair<int, int>	getAvailableSoldierCapacity() const;
-		std::string getRegimentName(V2::REGIMENTTYPE rc);
 		bool hasCulture(const std::string& culture, float percentOfPopulation) const;
 
 		
@@ -150,52 +200,6 @@ class V2Province : commonItems::parser
 		
 		std::vector<V2::Pop*> getPops() const { return pops; }
 
-	private:
-		void outputUnits(FILE*) const;
-
-		struct pop_points;
-		pop_points getPopPoints_1(
-			const V2Demographic& demographic,
-			double newPopulation,
-			const V2Country* _owner,
-			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries); // EU4 1.0-1.11
-		pop_points getPopPoints_2(
-			const V2Demographic& demographic,
-			double newPopulation,
-			const V2Country* _owner,
-			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
-		); // EU4 1.12 and newer
-		void createPops(
-			const V2Demographic& demographic,
-			double popWeightRatio,
-			const V2Country* _owner,
-			int popConversionAlgorithm,
-			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
-			const mappers::ProvinceMapper& provinceMapper
-		);
-		void combinePops();
-		bool growSoldierPop(V2::Pop* pop);
-
-		const EU4::Province* srcProvince = NULL;
-
-		std::string filename;
-		bool coastal = false;
-		int num = 0;
-		std::string name;
-		std::string owner;
-		std::string controller;
-		std::vector<std::string> cores;
-		int colonyLevel = 0;
-		int oldPopulation = 0;
-		std::string rgoType;
-		std::string terrain;
-		std::string climate;
-		int lifeRating = 0;
-		bool slaveState = false;
-		std::map<V2::REGIMENTTYPE, int> unitNameCount;
-
-		bool resettable = false;
-		double spentProvinceModifier = 0; //Store old popshaping modifier for NEU4-to-1V2 conversions;
 };
 
 

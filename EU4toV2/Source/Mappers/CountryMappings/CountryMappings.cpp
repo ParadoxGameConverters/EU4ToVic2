@@ -66,7 +66,7 @@ void mappers::CountryMappings::getAvailableFlags()
 
 void mappers::CountryMappings::createMappings(
 	const EU4::World& srcWorld,
-	const std::map<std::string, V2Country*>& Vic2Countries,
+	const std::map<std::string, V2::V2Country*>& Vic2Countries,
 	const ProvinceMapper& provinceMapper
 ) {
 	LOG(LogLevel::Info) << "Creating country mappings";
@@ -111,7 +111,7 @@ bool mappers::CountryMappings::tagIsAlphaDigitDigit(const std::string& tag) cons
 	return (isalpha(tag[0]) && isdigit(tag[1]) && isdigit(tag[2]));
 }
 
-void mappers::CountryMappings::makeOneMapping(std::shared_ptr<EU4::Country> country, const std::map<std::string, V2Country*>& Vic2Countries)
+void mappers::CountryMappings::makeOneMapping(std::shared_ptr<EU4::Country> country, const std::map<std::string, V2::V2Country*>& Vic2Countries)
 {
 	std::string EU4Tag = country->getTag();
 
@@ -135,7 +135,7 @@ void mappers::CountryMappings::makeOneMapping(std::shared_ptr<EU4::Country> coun
 	}
 }
 
-bool mappers::CountryMappings::mapToExistingVic2Country(const std::string& possibleVic2Tag, const std::map<std::string, V2Country*>& Vic2Countries, const std::string& EU4Tag)
+bool mappers::CountryMappings::mapToExistingVic2Country(const std::string& possibleVic2Tag, const std::map<std::string, V2::V2Country*>& Vic2Countries, const std::string& EU4Tag)
 {
 	if ((Vic2Countries.find(possibleVic2Tag) != Vic2Countries.end()) && (!tagIsAlreadyAssigned(possibleVic2Tag)))
 	{
@@ -202,7 +202,7 @@ std::map<std::string, std::string>::iterator mappers::CountryMappings::ifValidGe
 bool mappers::CountryMappings::attemptColonialReplacement(
 	std::shared_ptr<EU4::Country> country,
 	const EU4::World& srcWorld,
-	const std::map<std::string, V2Country*>& Vic2Countries,
+	const std::map<std::string, V2::V2Country*>& Vic2Countries,
 	const ProvinceMapper& provinceMapper
 ) {
 	std::optional<int> Vic2Capital;
@@ -306,7 +306,7 @@ bool mappers::CountryMappings::inCorrectCultureGroup(const mappers::ColonyStruct
 	return true;
 }
 
-bool mappers::CountryMappings::tagIsAvailable(const mappers::ColonyStruct& colony, const std::map<std::string, V2Country*>& Vic2Countries)
+bool mappers::CountryMappings::tagIsAvailable(const mappers::ColonyStruct& colony, const std::map<std::string, V2::V2Country*>& Vic2Countries)
 {
 	if (Vic2Countries.find(colony.tag) == Vic2Countries.end())
 	{

@@ -37,12 +37,6 @@
 #include <time.h>
 
 
-
-class V2Country;
-class V2Army;
-class V2LeaderTraits;
-
-
 namespace V2{
 class V2World
 {
@@ -53,6 +47,7 @@ class V2World
 		double getDuration() const { return difftime(std::time(0), begin); }
 		const mappers::PartyNameMapper& getPartyNameMapper() const { return partyNameMapper; }
 		const mappers::PartyTypeMapper& getPartyTypeMapper() const { return partyTypeMapper; }
+
 
 	private:
 		void importProvinces();
@@ -153,6 +148,7 @@ class V2World
 		mappers::PortProvinces portProvincesMapper;
 };
 
+std::ostream& operator<<(std::ostream& output, const std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>>& pops);
 
 }
 #endif // V2WORLD_H_

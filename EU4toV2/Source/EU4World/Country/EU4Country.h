@@ -42,6 +42,7 @@ namespace EU4
 		void setCelestialEmperor(bool _celestialEmperor) { celestialEmperor = _celestialEmperor; }
 		bool hasModifier(std::string) const;
 		bool hasNationalIdea(std::string) const;
+		std::set<std::string> exportNationalIdeas() const { return nationalIdeas; }
 		bool hasFlag(std::string) const ;
 		void resolveRegimentTypes(const mappers::UnitTypeMapper& utm);
 		int getManufactoryCount() const;

@@ -223,14 +223,14 @@ V2::addRegimentToArmyResult V2::Army::addRegimentToArmy(
 		}
 		///////// We have a home! Champagne and biscuits! 		
 		// Armies need to be associated with pops
-		Pop* soldierPop = homeProvince->getSoldierPopForArmy();
+		auto soldierPop = homeProvince->getSoldierPopForArmy();
 		if (!soldierPop)
 		{
 			// Try turning it into an "expeditionary" army - ie. assign home to any reasonable owned province.
 			std::shared_ptr<V2::Province> expSender = getProvinceForExpeditionaryArmy(allProvinces, tag);
 			if (expSender)
 			{
-				Pop* expSoldierPop = expSender->getSoldierPopForArmy();
+				auto expSoldierPop = expSender->getSoldierPopForArmy();
 				if (expSoldierPop)
 				{
 					homeProvince = expSender;

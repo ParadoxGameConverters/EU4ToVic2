@@ -483,6 +483,9 @@
     <ClCompile Include="Source\Mappers\ProvinceDetails\ProvinceDetails.cpp">
       <Filter>Mappers\ProvinceDetails</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outWorld.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -971,6 +974,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetails.h">
       <Filter>Mappers\ProvinceDetails</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Output\outWorld.h">
+      <Filter>Vic2World\Output</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -43,15 +43,15 @@ namespace V2
 {
 	class Reforms;
 	class UncivReforms;
+	class V2World;
 }
 
-class V2World;
 class V2State;
 class V2Creditor;
 class V2LeaderTraits;
 
 
-
+namespace V2{
 
 class V2Country : commonItems::parser
 {
@@ -248,7 +248,7 @@ class V2Country : commonItems::parser
 
 
 };
-
+}
 
 
 #endif	// V2COUNTRY_H_
