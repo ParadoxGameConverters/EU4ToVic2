@@ -10,7 +10,6 @@
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2World.h"
 #include "V2State.h"
-#include "V2Province.h"
 #include "V2Creditor.h"
 #include <algorithm>
 #include <fstream>
@@ -900,14 +899,14 @@ void V2Country::initFromHistory(const mappers::Unreleasables& unreleasablesMappe
 }
 
 
-void V2Country::addProvince(V2Province* _province)
+void V2Country::addProvince(std::shared_ptr<V2::Province> _province)
 {
-	auto itr = provinces.find(_province->getNum());
+	auto itr = provinces.find(_province->getID());
 	if (itr != provinces.end())
 	{
-		LOG(LogLevel::Error) << "Inserting province " << _province->getNum() << " multiple times (addProvince())";
+		LOG(LogLevel::Error) << "Inserting province " << _province->getID() << " multiple times (addProvince())";
 	}
-	provinces.insert(make_pair(_province->getNum(), _province));
+	provinces.insert(make_pair(_province->getID(), _province));
 }
 
 
@@ -919,56 +918,35 @@ void V2Country::addState(V2State* newState, const mappers::PortProvinces& portPr
 	bool				hasNavalBase		= false;
 
 	states.push_back(newState);
-	vector<V2Province*> newProvinces = newState->getProvinces();
+	vector<std::shared_ptr<V2::Province>> newProvinces = newState->getProvinces();
 
 	std::vector<int> newProvinceNums;
 	for (const auto& province: newProvinces)
 	{
-		newProvinceNums.push_back(province->getNum());
+		newProvinceNums.push_back(province->getID());
 	}
 	auto portProvinces = V2::Army::getPortProvinces(newProvinceNums, provinces, portProvincesMapper);
 
 	for (unsigned int i = 0; i < newProvinces.size(); i++)
 	{
-		auto itr = provinces.find(newProvinces[i]->getNum());
+		auto itr = provinces.find(newProvinces[i]->getID());
 		if (itr == provinces.end())
 		{
-			provinces.insert(make_pair(newProvinces[i]->getNum(), newProvinces[i]));
+			provinces.insert(make_pair(newProvinces[i]->getID(), newProvinces[i]));
 		}
 
-		// find the province with the highest naval base level
-		int navalLevel = 0;
-		const EU4::Province* srcProvince = newProvinces[i]->getSrcProvince();
-		if (srcProvince != nullptr)
+		// find the province with the highest naval base level		
+		bool isPortProvince = std::find(portProvinces.begin(), portProvinces.end(), newProvinces[i]->getID()) != portProvinces.end();
+		if (newProvinces[i]->getNavalBaseLevel() > highestNavalLevel && isPortProvince)
 		{
-			if (srcProvince->hasBuilding("shipyard"))
-			{
-				navalLevel += 1;
-			}
-			if (srcProvince->hasBuilding("grand_shipyard"))
-			{
-				navalLevel += 1;
-			}
-			if (srcProvince->hasBuilding("naval_arsenal"))
-			{
-				navalLevel += 1;
-			}
-			if (srcProvince->hasBuilding("naval_base"))
-			{
-				navalLevel += 1;
-			}
-		}
-		bool isPortProvince = std::find(portProvinces.begin(), portProvinces.end(), newProvinces[i]->getNum()) != portProvinces.end();
-		if (navalLevel > highestNavalLevel && isPortProvince)
-		{
-			highestNavalLevel	= navalLevel;
-			hasHighestLevel	= i;
+			highestNavalLevel = newProvinces[i]->getNavalBaseLevel();
+			hasHighestLevel = i;
 		}
 		newProvinces[i]->setNavalBaseLevel(0);
 	}
 	if (highestNavalLevel > 0)
 	{
-		newProvinces[hasHighestLevel]->setNavalBaseLevel(1);
+		newProvinces[hasHighestLevel]->setNavalBaseLevel(highestNavalLevel);
 	}
 }
 
@@ -991,7 +969,7 @@ void V2Country::convertLeaders(mappers::LeaderTraitMapper& leaderTraitMapper)
 //#define TEST_V2_PROVINCES
 void V2Country::convertArmies(
 	const mappers::RegimentCostsMapper& regimentCostsMapper,
-	const std::map<int, V2Province*>& allProvinces,
+	const std::map<int, std::shared_ptr<V2::Province>>& allProvinces,
 	const mappers::PortProvinces& portProvincesMapper,
 	const mappers::ProvinceMapper& provinceMapper,
 	const mappers::AdjacencyMapper& adjacencyMapper
@@ -1092,7 +1070,7 @@ void V2Country::addRelation(V2::Relation& newRelation)
 void V2Country::absorbVassal(V2Country* vassal)
 {
 	// change province ownership and add owner cores if needed
-	map<int, V2Province*> vassalProvinces = vassal->getProvinces();
+	map<int, std::shared_ptr<V2::Province>> vassalProvinces = vassal->getProvinces();
 	for (auto provItr = vassalProvinces.begin(); provItr != vassalProvinces.end(); provItr++)
 	{
 		provItr->second->setOwner(tag);

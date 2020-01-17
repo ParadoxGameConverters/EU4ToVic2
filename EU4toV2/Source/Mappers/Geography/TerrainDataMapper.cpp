@@ -24,3 +24,10 @@ void mappers::TerrainDataMapper::registerKeys()
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 }
+
+std::optional<std::string> mappers::TerrainDataMapper::getTerrainForID(int provinceID) const
+{
+	const auto& terrainItr = terrainMap.find(provinceID);
+	if (terrainItr != terrainMap.end()) return terrainItr->second;
+	return std::nullopt;
+}

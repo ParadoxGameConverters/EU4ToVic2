@@ -3,6 +3,7 @@
 
 #include "newParser.h"
 #include <map>
+#include <optional>
 
 namespace mappers
 {
@@ -12,6 +13,7 @@ namespace mappers
 		TerrainDataMapper();
 		TerrainDataMapper(std::istream& theStream);
 		const std::map<int, std::string>& getTerrainMap() const { return terrainMap; }
+		std::optional<std::string> getTerrainForID(int provinceID) const;
 
 	private:
 		void registerKeys();

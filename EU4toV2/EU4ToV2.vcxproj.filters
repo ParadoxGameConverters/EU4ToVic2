@@ -57,9 +57,6 @@
     <ClCompile Include="Source\V2World\V2Flags.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2Province.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2State.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -477,6 +474,15 @@
     <ClCompile Include="Source\V2World\Output\outRegiment.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Province\Province.cpp">
+      <Filter>Vic2World\Province</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outProvince.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ProvinceDetails\ProvinceDetails.cpp">
+      <Filter>Mappers\ProvinceDetails</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -532,9 +538,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Flags.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Province.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2State.h">
@@ -960,6 +963,15 @@
     <ClInclude Include="Source\V2World\Output\outRegiment.h">
       <Filter>Vic2World\Output</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Province\Province.h">
+      <Filter>Vic2World\Province</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Output\outProvince.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetails.h">
+      <Filter>Mappers\ProvinceDetails</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1150,6 +1162,12 @@
     </Filter>
     <Filter Include="Vic2World\Army">
       <UniqueIdentifier>{abe9d586-23f5-4927-b8a8-4244ffaf1397}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Province">
+      <UniqueIdentifier>{6b41252a-f3aa-4a21-a94a-dabdeb1c5f9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ProvinceDetails">
+      <UniqueIdentifier>{5a15ff97-0365-4341-832d-fd6b34f75e1a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

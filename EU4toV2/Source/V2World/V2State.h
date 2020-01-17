@@ -28,15 +28,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "../EU4World/World.h"
 #include "Factory/Factory.h"
-#include <stdio.h>
-#include <string>
 #include <vector>
-#include <set>
-using namespace std;
 
 
-
-class V2Province;
+namespace V2
+{
+	class Province;
+}
 
 namespace EU4
 {
@@ -48,31 +46,31 @@ namespace EU4
 class V2State
 {
 	public:
-		V2State(int newId, V2Province* firstProvince);
+		V2State(int newId, std::shared_ptr<V2::Province> firstProvince);
 
 		void		addRailroads();
 		void		addFactory(const V2::Factory& factory);
 
 		bool		isCoastal() const;
-		bool		hasLocalSupply(string product) const;
+		bool		hasLocalSupply(std::string product) const;
 		double getSuppliedInputs(const V2::Factory& factory) const;
 		bool		provInState(int id)	const;
 		bool		hasLandConnection()	const;
 		double	getManuRatio() const;
 
-		void		addProvince(V2Province* newProvince) { provinces.push_back(newProvince); }
+		void		addProvince(std::shared_ptr<V2::Province> newProvince) { provinces.push_back(newProvince); }
 		void		setColonial(bool isIt) { colonial = isIt; }
 
 		bool						isColonial()		const { return colonial; };
 		int						getFactoryCount()	const { return factories.size(); };
 		int						getID()				const { return id; };
-		vector<V2Province*>	getProvinces()		const { return provinces; };
+		std::vector<std::shared_ptr<V2::Province>> getProvinces() const { return provinces; };
 		void	colloectNavalBase();
 	private:
 		int								id;
 		bool								colonial;
-		vector<V2Province*>			provinces;
-		vector<V2::Factory> factories;
+		std::vector<std::shared_ptr<V2::Province>> provinces;
+		std::vector<V2::Factory> factories;
 };
 
 

@@ -20,11 +20,9 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 #include "V2State.h"
-#include "V2Province.h"
-#include "../EU4World/Provinces/EU4Province.h"
-#include "Log.h"
+#include "Province/Province.h"
 
-V2State::V2State(int newId, V2Province* firstProvince)
+V2State::V2State(int newId, std::shared_ptr<V2::Province> firstProvince)
 {
 	id = newId;
 	colonial = false;
@@ -36,7 +34,7 @@ V2State::V2State(int newId, V2Province* firstProvince)
 
 void V2State::addRailroads()
 {
-	for (vector<V2Province*>::iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
+	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
 		(*itr)->setRailLevel(1);
 	}
@@ -44,7 +42,7 @@ void V2State::addRailroads()
 
 bool V2State::isCoastal() const
 {
-	for (vector<V2Province*>::const_iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
+	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
 		if ((*itr)->isCoastal())
 		{
@@ -54,9 +52,9 @@ bool V2State::isCoastal() const
 	return false;
 }
 
-bool V2State::hasLocalSupply(string product) const
+bool V2State::hasLocalSupply(std::string product) const
 {
-	for (vector<V2Province*>::const_iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
+	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
 		if ((*itr)->getRgoType() == product)
 		{
@@ -69,26 +67,26 @@ bool V2State::hasLocalSupply(string product) const
 double V2State::getSuppliedInputs(const V2::Factory& factory) const
 {
 	// find out the needs
-	map<string, double>	inputs = factory.getInputs();
+	std::map<std::string, double>	inputs = factory.getInputs();
 	int						numNeeds = inputs.size();
 
 	// find out what we have from both RGOs and existing factories
-	map<string, double> supplies;
-	for (vector<V2Province*>::const_iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
+	std::map<std::string, double> supplies;
+	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
-		string rgo = (*itr)->getRgoType();
+		std::string rgo = (*itr)->getRgoType();
 		supplies[rgo] += 1.0;
 	}
-	for (vector<V2::Factory>::const_iterator itr = factories.begin(); itr != factories.end(); ++itr)
+	for (std::vector<V2::Factory>::const_iterator itr = factories.begin(); itr != factories.end(); ++itr)
 	{
 		supplies[itr->getOutputs()] += 1.0;
 	}
 
 	// determine how many of the inputs are supplied
 	int totalSupplied = 0;
-	for (map<string, double>::const_iterator inputItr = inputs.begin(); inputItr != inputs.end(); ++inputItr)
+	for (std::map<std::string, double>::const_iterator inputItr = inputs.begin(); inputItr != inputs.end(); ++inputItr)
 	{
-		map<string, double>::const_iterator supplyItr = supplies.find(inputItr->first);
+		std::map<std::string, double>::const_iterator supplyItr = supplies.find(inputItr->first);
 		if (supplyItr != supplies.end())
 		{
 			totalSupplied++;
@@ -100,9 +98,9 @@ double V2State::getSuppliedInputs(const V2::Factory& factory) const
 
 bool V2State::provInState(int id) const
 {
-	for (vector<V2Province*>::const_iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
+	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
-		if ((*itr)->getNum() == id)
+		if ((*itr)->getID() == id)
 		{
 			return true;
 		}
@@ -131,37 +129,17 @@ bool V2State::hasLandConnection() const
 
 double V2State::getManuRatio() const
 {
-	// get all source provinces
-	set<const EU4::Province*> srcProvinces;
-	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
-	{
-		srcProvinces.insert((*itr)->getSrcProvince());
-	}
-
 	// count the manufactories in the source provinces
-	int numManus = 0;
-	for (auto itr = srcProvinces.begin(); itr != srcProvinces.end(); ++itr)
-	{
-		if ((*itr)->hasBuilding("refinery") ||
-			(*itr)->hasBuilding("wharf") ||
-			(*itr)->hasBuilding("weapons") ||
-			(*itr)->hasBuilding("textile") ||
-			(*itr)->hasBuilding("farm_estate") ||
-			(*itr)->hasBuilding("plantations") ||
-			(*itr)->hasBuilding("tradecompany")
-			)
-		{
-			numManus++;
-		}
-	}
+	double numManus = 0.0;
+	for (auto province: provinces) numManus += province->getMfgCount();
 
-	return (numManus / srcProvinces.size());
+	return numManus / provinces.size();
 }
 
 void	V2State::colloectNavalBase()
 {
 	//Only one naval base in a state
-	V2Province* prov = nullptr;
+	std::shared_ptr<V2::Province> prov = nullptr;
 	int level = 0;
 	for (auto province : provinces)
 	{

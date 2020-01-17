@@ -1,7 +1,10 @@
-#include "V2Province.h"
+#include "Province.h"
+#include "OSCompatibilityLayer.h"
+#include "../../Configuration.h"
+
+/*
 #include "CardinalToOrdinal.h"
 #include "Log.h"
-#include "OSCompatibilityLayer.h"
 #include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
@@ -13,158 +16,183 @@
 #include <sstream>
 #include <stdio.h>
 #include "ParserHelpers.h"
+*/
 
-
-V2Province::V2Province(const std::string& _filename)
+V2::Province::Province(const std::string& _filename, const mappers::ClimateMapper& climateMapper, const mappers::TerrainDataMapper& terrainDataMapper):
+	filename(_filename)
 {
-	filename = _filename;
-	registerKeyword(std::regex("owner"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleString ownerStr(theStream);
-			owner = ownerStr.getString();
-		});
-	registerKeyword(std::regex("controller"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleString controllerStr(theStream);
-			controller = controllerStr.getString();
-		});
-	registerKeyword(std::regex("add_core"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleString coreStr(theStream);
-			cores.push_back(coreStr.getString());
-		});
-	registerKeyword(std::regex("trade_goods"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleString rgoTypeStr(theStream);
-			rgoType = rgoTypeStr.getString();
-		});
-	registerKeyword(std::regex("life_rating"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleInt lifeRatingInt(theStream);
-			lifeRating = lifeRatingInt.getInt();
-		});
-	registerKeyword(std::regex("terrain"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleString terrainStr(theStream);
-			terrain = terrainStr.getString();
-		});
-	registerKeyword(std::regex("colonial"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleInt colonialInt(theStream);
-			colonial = colonialInt.getInt();
-		});
-	registerKeyword(std::regex("colony"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleInt colonyInt(theStream);
-			colonyLevel = colonyInt.getInt();
-		});
-	registerKeyword(std::regex("naval_base"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleInt navalBaseLevelInt(theStream);
-			navalBaseLevel = navalBaseLevelInt.getInt();
-		});
-	registerKeyword(std::regex("fort"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleInt fortLevelInt(theStream);
-			fortLevel = fortLevelInt.getInt();
-		});
-	registerKeyword(std::regex("railroad"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleInt railLevelInt(theStream);
-			railLevel = railLevelInt.getInt();
-		});
-	registerKeyword(std::regex("is_slave"), [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::singleString ignoredStr(theStream);
-			slaveState = true;
-		});
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
-
 	int slash = filename.find_last_of("/");
 	int numDigits = filename.find_first_of("-") - slash - 2;
 	std::string temp = filename.substr(slash + 1, numDigits);
-	num = atoi(temp.c_str());
+	provinceID = stoi(temp);
 
+	//In case we're overriding provinces (not true by default)
 	if (Utils::DoesFileExist("./blankMod/output/history/provinces" + filename))
 	{
-		parseFile("./blankMod/output/history/provinces" + filename);
+		details = mappers::ProvinceDetails("./blankMod/output/history/provinces" + filename);
 	}
 	else
 	{
-		parseFile(theConfiguration.getVic2Path() + "/history/provinces" + filename);
+		details = mappers::ProvinceDetails(theConfiguration.getVic2Path() + "/history/provinces" + filename);
+	}
+	for (const auto& climate : climateMapper.getClimateMap())
+	{
+		if (count(climate.second.begin(), climate.second.end(), provinceID))
+		{
+			details.climate = climate.first;
+			break;
+		}
+	}
+	if (details.terrain.empty())
+	{
+		auto terrain = terrainDataMapper.getTerrainForID(provinceID);
+		if (terrain) details.terrain = *terrain;
 	}
 }
 
-
-void V2Province::output() const
+void V2::Province::addVanillaPop(std::shared_ptr<Pop> vanillaPop)
 {
-	int lastSlash = filename.find_last_of('/');
-	std::string path = filename.substr(0, lastSlash);
-	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces" + path);
-
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/provinces" + filename);
-	if (!output.is_open())
-	{
-		LOG(LogLevel::Error) << "Could not create province history file output/" << theConfiguration.getOutputName() << "/history/provinces/" << filename << " - " << Utils::GetLastErrorString();
-		exit(-1);
-	}
-	if (owner != "")
-	{
-		output << "owner=" << owner << "\n";
-		output << "controller=" << controller << "\n";
-	}
-	for (auto core: cores)
-	{
-		output << "add_core=" << core << "\n";
-	}
-	if (inHRE)
-	{
-		output << "add_core=HRE\n";
-	}
-	if (rgoType != "")
-	{
-		output << "trade_goods = " << rgoType << "\n";
-	}
-	if (lifeRating > 0)
-	{
-		output << "life_rating = " << lifeRating << "\n";
-	}
-	if (terrain != "")
-	{
-		output << "terrain = " << terrain << "\n";
-	}
-	if (colonial > 0)
-	{
-		output << "colonial=" << colonial << "\n";
-	}
-	if (navalBaseLevel > 0)
-	{
-		output << "naval_base = " << navalBaseLevel << "\n";
-	}
-	if (fortLevel > 0)
-	{
-		output << "fort = " << fortLevel << "\n";
-	}
-	if (railLevel > 0)
-	{
-		output << "railroad = " << railLevel << "\n";
-	}
-	if (slaveState)
-	{
-		output << "is_slave = yes\n";
-	}
-	for (auto factory: factories)
-	{
-		output << factory.second;
-	}
-	output.close();
+	vanillaPops.push_back(vanillaPop);
+	vanillaPopulation += vanillaPop->getSize();
 }
 
+void V2::Province::addMinorityPop(std::shared_ptr<Pop> minorityPop)
+{
+	minorityPops.push_back(minorityPop);
+}
+
+void V2::Province::addCore(std::string newCore)
+{
+	// only add if not a territorial core/colony of the current owner
+	// TODO: seems suspicious, check the condition and use cases
+	if (!(newCore == details.owner) && territorialCore)
+	{
+		details.cores.insert(newCore);
+	}
+}
+
+void V2::Province::convertFromOldProvince(
+	const EU4::Religions& allReligions,
+	const EU4::Province* oldProvince,
+	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+) {
+	//srcProvince = oldProvince;
+	inHRE = oldProvince->inHre();
+	if (!oldProvince->isCity())
+	{
+		colonial = 1;
+		territorialCore = true;
+	}
+	else if (oldProvince->isTerritorialCore())
+	{
+		colonial = 2;
+		territorialCore = true;
+	}
+	else
+	{
+		colonial = 0;
+	}
+	wasColonised = oldProvince->wasColonised();
+	
+	if (oldProvince->hasBuilding("weapons")) ++mfgCount;
+	if (oldProvince->hasBuilding("wharf")) ++mfgCount;
+	if (oldProvince->hasBuilding("textile")) ++mfgCount;
+	if (oldProvince->hasBuilding("plantations")) ++mfgCount;
+	if (oldProvince->hasBuilding("tradecompany")) ++mfgCount;
+	if (oldProvince->hasBuilding("farm_estate")) ++mfgCount;
+	if (oldProvince->hasBuilding("mills")) ++mfgCount;
+	if (oldProvince->hasBuilding("furnace")) mfgCount += 3;
+	if (oldProvince->hasBuilding("shipyard")) ++navalBaseLevel;
+	if (oldProvince->hasBuilding("grand_shipyard")) navalBaseLevel += 2;
+	if (oldProvince->hasBuilding("naval_arsenal")) ++navalBaseLevel;
+	if (oldProvince->hasBuilding("naval_base")) navalBaseLevel += 2;
+}
+
+void V2::Province::addFactory(const Factory& factory)
+{
+	auto itr = factories.find(factory.getTypeName());
+	if (itr == factories.end())
+	{
+		factories.insert(std::make_pair(factory.getTypeName(), factory));
+	}
+	else
+	{
+		itr->second.increaseLevel();
+	}
+}
+
+void V2::Province::addPopDemographic(const Demographic& d)
+{
+	bool combined = false;
+	for (auto& demographic : demographics)
+	{
+		if ((demographic.culture == d.culture) && (demographic.religion == d.religion))
+		{
+			combined = true;
+			demographic.upperRatio += d.upperRatio;
+			demographic.middleRatio += d.middleRatio;
+			demographic.lowerRatio += d.lowerRatio;
+		}
+	}
+	if (!combined)
+	{
+		demographics.push_back(d);
+	}
+}
+
+void V2::Province::determineColonial()
+{
+	if (territorialCore && (colonial == 0))
+	{
+		colonial = 2;
+	}
+}
+
+int V2::Province::getTotalPopulation() const
+{
+	int total = 0;
+	for (const auto& pop: pops)
+	{
+		total += pop->getSize();
+	}
+	return total;
+}
+
+std::vector<std::string> V2::Province::getCulturesOverThreshold(double percentOfPopulation) const
+{
+	int totalPopulation = getTotalPopulation();
+	if (!totalPopulation) return std::vector<std::string>();
+
+	std::map<std::string, int> cultureTotals;
+	for (auto pop : pops) cultureTotals[pop->getCulture()] += pop->getSize();
+
+	std::vector<std::string> culturesOverThreshold;
+	for (auto cultureAmount : cultureTotals)
+	{
+		if (static_cast<double>(cultureAmount.second)/totalPopulation >= percentOfPopulation)
+		{
+			culturesOverThreshold.push_back(cultureAmount.first);
+		}
+	}
+
+	return culturesOverThreshold;
+}
+
+std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>> V2::Province::getPopsForOutput()
+{
+	if (resettable && theConfiguration.getResetProvinces() == "yes" && !vanillaPops.empty())
+	{
+		return std::pair(provinceID, vanillaPops);
+	}
+	if (!pops.empty()) return std::pair(provinceID, pops);
+	if (!vanillaPops.empty()) return std::pair(provinceID, vanillaPops);
+	return std::nullopt;
+}
+
+/*
 
 void V2Province::outputPops(std::ofstream& output) const
 {
-	if (resettable && (theConfiguration.getResetProvinces() == "yes"))
-	{
 		output << num << " = {\n";
 		if (oldPops.size() > 0)
 		{
@@ -213,7 +241,7 @@ static const int unitNameOffsets[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg
 
 
 void V2Province::outputUnits(FILE* output) const
-{/*
+{
 	// unit name counts are stored in an odd kind of variable-length sparse array.  try to emulate.
 	int outputUnitNameUntil = 0;
 	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
@@ -243,65 +271,18 @@ void V2Province::outputUnits(FILE* output) const
 		}
 		fprintf(output, "\t\t}\n");
 		fprintf(output, "\t}\n");
-	}*/
-}
-
-
-void V2Province::convertFromOldProvince(
-	const EU4::Religions& allReligions,
-	const EU4::Province* oldProvince,
-	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
-) {
-	srcProvince = oldProvince;
-	inHRE = oldProvince->inHre();
-	if (!oldProvince->isCity())
-	{
-		colonial = 1;
-		territorialCore = true;
-	} 
-	else if (oldProvince->isTerritorialCore())
-	{
-		colonial = 2;
-		territorialCore = true;
-	}
-	else
-	{
-		colonial = 0;
-	}
-	wasColonised = oldProvince->wasColonised();
-}
-
-
-void V2Province::determineColonial()
-{
-	if (territorialCore && (colonial == 0))
-	{
-		colonial = 2;
 	}
 }
 
 
-void V2Province::addCore(std::string newCore)
-{
-	// only add if unique, and not a territorial core/colony of the current owner
-	if (find(cores.begin(), cores.end(), newCore) == cores.end() && !(newCore == owner) && territorialCore)
-	{
-		cores.push_back(newCore);
-	}
-}
 
 
-void V2Province::addOldPop(const V2::Pop* oldPop)
-{
-	oldPops.push_back(oldPop);
-	oldPopulation += oldPop->getSize();
-}
 
 
-void V2Province::addMinorityPop(V2::Pop* minorityPop)
-{
-	minorityPops.push_back(minorityPop);
-}
+
+
+
+
 
 
 void V2Province::doCreatePops(
@@ -903,9 +884,9 @@ void V2Province::createPops(
 	V2::Pop* farmersPop = new V2::Pop("farmers", farmers, demographic.culture, demographic.religion);
 	pops.push_back(farmersPop);
 
-	/*LOG(LogLevel::Info) << "Name: " << this->getSrcProvince()->getName() << " demographics.upperRatio: " << demographic.upperRatio
+	LOG(LogLevel::Info) << "Name: " << this->getSrcProvince()->getName() << " demographics.upperRatio: " << demographic.upperRatio
 		<< " demographics.middleRatio: " << demographic.middleRatio << " demographics.lowerRatio: " << demographic.lowerRatio
-		<< " newPopulation: " << newPopulation << " farmer: " << farmers	<< " total: " << newPopulation;*/
+		<< " newPopulation: " << newPopulation << " farmer: " << farmers	<< " total: " << newPopulation;
 }
 
 
@@ -948,49 +929,10 @@ void V2Province::combinePops()
 }
 
 
-void V2Province::addFactory(const V2::Factory& factory)
-{
-	std::map<std::string, V2::Factory>::iterator itr = factories.find(factory.getTypeName());
-	if (itr == factories.end())
-	{
-		factories.insert(std::make_pair(factory.getTypeName(), factory));
-	}
-	else
-	{
-		itr->second.increaseLevel();
-	}
-}
 
 
-void V2Province::addPopDemographic(V2Demographic d)
-{
-	bool combined = false;
-	for (auto itr = demographics.begin(); itr != demographics.end(); itr++)
-	{
-		if ((itr->culture == d.culture) && (itr->religion == d.religion))
-		{
-			combined = true;
-			itr->upperRatio += d.upperRatio;
-			itr->middleRatio += d.middleRatio;
-			itr->lowerRatio += d.lowerRatio;
-		}
-	}
-	if (!combined)
-	{
-		demographics.push_back(d);
-	}
-}
 
 
-int V2Province::getTotalPopulation() const
-{
-	int total = 0;
-	for (std::vector<V2::Pop*>::const_iterator itr = pops.begin(); itr != pops.end(); ++itr)
-	{
-		total += (*itr)->getSize();
-	}
-	return total;
-}
 
 
 std::vector<V2::Pop*> V2Province::getPops(const std::string& type) const
@@ -1166,33 +1108,4 @@ bool V2Province::hasCulture(const std::string& culture, float percentOfPopulatio
 }
 
 
-std::vector<std::string> V2Province::getCulturesOverThreshold(float percentOfPopulation) const
-{
-	int totalPopulation = getTotalPopulation();
-
-	std::map<std::string, double> cultureAmounts;
-	for (auto pop : pops)
-	{
-		auto cultureAmount = cultureAmounts.find(pop->getCulture());
-		if (cultureAmount == cultureAmounts.end())
-		{
-			cultureAmounts.insert(make_pair(pop->getCulture(), 0.0f));
-			cultureAmount = cultureAmounts.find(pop->getCulture());
-		}
-		if (totalPopulation > 0)
-		{
-			cultureAmount->second += 1.0 * pop->getSize() / totalPopulation;
-		}
-	}
-
-	std::vector<std::string> culturesOverThreshold;
-	for (auto cultureAmount : cultureAmounts)
-	{
-		if (cultureAmount.second >= percentOfPopulation)
-		{
-			culturesOverThreshold.push_back(cultureAmount.first);
-		}
-	}
-
-	return culturesOverThreshold;
-}
+*/
