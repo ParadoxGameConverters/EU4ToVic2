@@ -5,19 +5,7 @@
 #include <cmath>
 #include "CardinalToOrdinal.h"
 #include <algorithm>
-
-/*
-#include "CardinalToOrdinal.h"
 #include "Log.h"
-#include "../EU4World/World.h"
-#include "../EU4World/Provinces/EU4Province.h"
-#include "Pop/Pop.h"
-#include <fstream>
-#include <memory>
-#include <sstream>
-#include <stdio.h>
-#include "ParserHelpers.h"
-*/
 
 V2::Province::Province(const std::string& _filename, const mappers::ClimateMapper& climateMapper, const mappers::TerrainDataMapper& terrainDataMapper):
 	filename(_filename)
@@ -66,7 +54,7 @@ void V2::Province::addCore(std::string newCore)
 {
 	// only add if not a territorial core/colony of the current owner
 	// TODO: seems suspicious, check the condition and use cases
-	if (!(newCore == details.owner) && territorialCore)
+	if (!(newCore == details.owner && territorialCore))
 	{
 		details.cores.insert(newCore);
 	}
@@ -109,14 +97,11 @@ void V2::Province::convertFromOldProvince(
 	if (oldProvince->hasBuilding("naval_base")) navalBaseLevel += 2;
 
 	auto countryItr = theEU4Countries.find(oldProvince->getOwnerString());
-	std::shared_ptr<EU4::Country> oldCountry;
 	if (countryItr != theEU4Countries.end())
 	{
-		oldCountry = countryItr->second;
-		importedIdeas = oldCountry->exportNationalIdeas();
+		importedIdeas = countryItr->second->exportNationalIdeas();
 	}
 	importedBuildings = oldProvince->exportBuildings();
-
 
 	devpushMod = oldProvince->getDevDelta() / 100.0;
 	weightMod = oldProvince->getModifierWeight() / 100.0;
@@ -157,7 +142,7 @@ void V2::Province::addPopDemographic(const Demographic& d)
 
 void V2::Province::determineColonial()
 {
-	if (territorialCore && (colonial == 0))
+	if (territorialCore && colonial == 0)
 	{
 		colonial = 2;
 	}
@@ -457,7 +442,7 @@ void V2::Province::createPops(
 
 	switch (theConfiguration.getPopShaping()) {
 	case Configuration::POPSHAPES::Vanilla:
-		newPopulation = oldPopulation;
+		newPopulation = vanillaPopulation;
 		break;
 
 	case Configuration::POPSHAPES::PopShaping:
@@ -468,7 +453,7 @@ void V2::Province::createPops(
 		}
 		spentProvinceModifier += (devpushMod + weightMod) * shapeMod;
 
-		newPopulation = static_cast<long>(oldPopulation * provinceDevModifier);
+		newPopulation = static_cast<long>(vanillaPopulation * provinceDevModifier);
 		break;
 
 	case Configuration::POPSHAPES::Extreme:
@@ -490,7 +475,7 @@ void V2::Province::createPops(
 			}
 		}
 
-		newPopulation = oldPopulation + static_cast<long>((newPopulation - oldPopulation) * (theConfiguration.getPopShapingFactor() / 100.0));
+		newPopulation = vanillaPopulation + static_cast<long>((newPopulation - vanillaPopulation) * (theConfiguration.getPopShapingFactor() / 100.0));
 		break;
 	}
 
@@ -775,7 +760,8 @@ std::pair<int, int> V2::Province::getAvailableSoldierCapacity() const
 
 /*
 
-
+/////// this commented code deals with exporting ship names imported from eu4 culture files. However, we don't import those
+// but generate our own names, so.
 
 // determined experimentally
 static const int unitNameOffsets[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] =
@@ -823,20 +809,6 @@ void V2Province::outputUnits(FILE* output) const
 		fprintf(output, "\t}\n");
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 bool V2Province::hasCulture(const std::string& culture, float percentOfPopulation) const
 {

@@ -52,9 +52,7 @@ class V2World
 	private:
 		void importProvinces();
 		std::set<std::string> discoverProvinceFilenames();
-		void importProvinceClimates();
 		void importProvinceLocalizations(const std::string& file);
-		void importProvinceTerrains();
 		bool isAProvinceLocalization(const std::string& line);
 
 		void importDefaultPops();
@@ -108,7 +106,7 @@ class V2World
 		void createModFile() const;
 		void outputPops() const;
 
-		std::map<int, std::shared_ptr<V2::Province>> provinces;
+		std::map<int, std::shared_ptr<Province>> provinces;
 		std::map<std::string, V2Country*> countries;
 		std::map<std::string, V2Country*> potentialCountries;
 		std::map<std::string, V2Country*> dynamicCountries;
@@ -116,9 +114,9 @@ class V2World
 		std::map<int, std::set<std::string>> colonies;
 		std::map<std::string, std::list<int>>	popRegions;
 		std::map<int, int> leaderIDMap; // <EU4, V2>
-		long totalWorldPopulation;
-		bool isRandomWorld;
-		int techGroupAlgorithm;
+		long totalWorldPopulation = 0;
+		bool isRandomWorld = false;
+		int techGroupAlgorithm = 0;
 
 		std::time_t begin = std::time(0);
 

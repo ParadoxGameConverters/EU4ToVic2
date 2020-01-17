@@ -1,9 +1,11 @@
 #include "ClimateMapper.h"
 #include "ParserHelpers.h"
 #include "../../Configuration.h"
+#include "Log.h"
 
 mappers::ClimateMapper::ClimateMapper()
 {
+	LOG(LogLevel::Info) << "Loading climates.";
 	registerKeys();
 	parseFile(theConfiguration.getVic2Path() + "/map/climate.txt");
 	clearRegisteredKeywords();

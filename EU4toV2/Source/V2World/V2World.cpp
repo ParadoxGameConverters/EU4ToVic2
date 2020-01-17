@@ -27,36 +27,55 @@
 
 V2::V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper)
 {
-	LOG(LogLevel::Info) << "Parsing Vicky2 data";
+	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
+	LOG(LogLevel::Info) << "-> Importing Provinces";
 	importProvinces();
+	LOG(LogLevel::Info) << "-> Importing Vanilla Pops";
 	importDefaultPops();
 	//logPopsByCountry();
+	LOG(LogLevel::Info) << "-> Determining Coastal Provinces";
 	findCoastalProvinces();
+	LOG(LogLevel::Info) << "-> Importing Potential Countries";
 	importPotentialCountries();
 	isRandomWorld = sourceWorld.isRandomWorld();
 
+	LOG(LogLevel::Info) << "-> Checking All Land Provinces Mapped (and may kraken take the rest)";
 	sourceWorld.checkAllProvincesMapped(provinceMapper);
 
+	LOG(LogLevel::Info) << "-> Loading Country Mapping Rules";
 	countryMapper.createMappings(sourceWorld, potentialCountries, provinceMapper);
 
-	LOG(LogLevel::Info) << "Converting world";
+	LOG(LogLevel::Info) << "-> Loading Culture Mapping Rules";
 	initializeCultureMappers(sourceWorld);
+	LOG(LogLevel::Info) << "-> Checking all Cultures Mapped";
 	sourceWorld.checkAllEU4CulturesMapped(cultureMapper);
-
+	LOG(LogLevel::Info) << "-> Checking all Religions Mapped";
 	sourceWorld.checkAllEU4ReligionsMapped(religionMapper);
 
+	LOG(LogLevel::Info) << "-> Convering Countries";
 	convertCountries(sourceWorld, ideaEffectMapper);
+	LOG(LogLevel::Info) << "-> Converting Provinces";
 	convertProvinces(sourceWorld);
+	LOG(LogLevel::Info) << "-> Converting Diplomacy";
 	diplomacy.convertDiplomacy(sourceWorld.getDiplomaticAgreements(), countryMapper, countries);
+	LOG(LogLevel::Info) << "-> Setting Up Colonies";
 	setupColonies();
+	LOG(LogLevel::Info) << "-> Setting Up States";
 	setupStates();
+	LOG(LogLevel::Info) << "-> Generating Unciv Reforms";
 	convertUncivReforms(sourceWorld, techGroupsMapper);
+	LOG(LogLevel::Info) << "-> Converting Technology Levels";
 	convertTechs(sourceWorld);
+	LOG(LogLevel::Info) << "-> Distributing Factories";
 	allocateFactories(sourceWorld);
+	LOG(LogLevel::Info) << "-> Distributing Pops";
 	setupPops(sourceWorld);
+	LOG(LogLevel::Info) << "-> Merging Nations";
 	addUnions();
+	LOG(LogLevel::Info) << "-> Converting Armies";
 	convertArmies(sourceWorld);
 
+	LOG(LogLevel::Info) << "*** Le Dump ***";
 	auto potentialGPs = countCivilizedNations();
 	output(potentialGPs);
 }
@@ -84,7 +103,7 @@ void V2::V2World::importProvinces()
 	std::set<std::string> provinceFilenames = discoverProvinceFilenames();
 	for (auto provinceFilename : provinceFilenames)
 	{
-		V2::Province* newProvince = new V2::Province(provinceFilename, climateMapper, terrainDataMapper);
+		auto newProvince = std::make_shared<Province>(provinceFilename, climateMapper, terrainDataMapper);
 		provinces.insert(std::make_pair(newProvince->getID(), newProvince));
 	}
 
@@ -96,7 +115,6 @@ void V2::V2World::importProvinces()
 	{
 		importProvinceLocalizations((theConfiguration.getVic2Path() + "/localisation/text.csv"));
 	}
-
 	if (theConfiguration.getRandomiseRgos())
 	{
 		shuffleRgos();
@@ -1632,7 +1650,7 @@ void V2::V2World::output(unsigned int potentialGPs) const
 		{
 			throw std::runtime_error("Could not create province history file output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename + " - " + Utils::GetLastErrorString());
 		}
-		output << province.second;
+		output << *province.second;
 		output.close();
 	}
 	LOG(LogLevel::Debug) << "Writing countries";

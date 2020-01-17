@@ -4,7 +4,6 @@
 
 mappers::ProvinceDetails::ProvinceDetails(const std::string& filename)
 {
-	Log(LogLevel::Info) << "Parsing black and white ports.";
 	registerKeys();
 	parseFile(filename);
 	clearRegisteredKeywords();

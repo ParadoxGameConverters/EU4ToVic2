@@ -162,46 +162,7 @@ namespace V2
 		static int getRequiredPopForRegimentCount(int count);
 		bool growSoldierPop(std::shared_ptr<Pop> pop);
 
-	};
-	
+	};	
 }
 
-/*
-#include "../EU4World/World.h"
-#include "../EU4World/Country/EU4Country.h"
-#include "../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "newParser.h"
-#include "Factory/Factory.h"
-#include "Pop/Pop.h"
-#include "Army/Regiment.h"
-
-class V2Country;
-
-
-
-class V2Province : commonItems::parser
-{
-	public:
-		V2Province(const std::string& _filename);
-		void output() const;
-		void outputPops(std::ofstream& output) const;
-		
-
-		bool hasCulture(const std::string& culture, float percentOfPopulation) const;
-
-		
-		void setClimate(std::string _climate) { climate = _climate; }
-		
-		void setTerrain(std::string _terrain) { terrain = _terrain; }
-
-		const EU4::Province*	getSrcProvince() const { return srcProvince; }
-		int getOldPopulation() const	{ return oldPopulation; }
-		
-		
-		std::vector<V2::Pop*> getPops() const { return pops; }
-
-};
-
-
-*/
 #endif // PROVINCE_H

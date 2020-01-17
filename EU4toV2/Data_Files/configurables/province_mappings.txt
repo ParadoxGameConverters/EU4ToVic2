@@ -2293,7 +2293,7 @@
 	# Shikoku, Kyushu, Okinawa
 	link = { eu4 = 1820 v2 = 1667 }	# Awa -> Tokushima
 	link = { eu4 = 1819 eu4 = 4186 v2 = 1666 v2 = 1665 }	# MANY-TO-MANY: Tosa, Iyo -> Matsuyama, Kochi
-	link = { eu4 = 1818 eu4 = 4182 v2 = 1660 v2 = 1661 }	# MANY-TO-MANY: Chikuzen, Hizen -> Fukuoka, Nagasaki
+	link = { eu4 = 1818 eu4 = 4182 eu4 = 4651 v2 = 1660 v2 = 1661 }	# MANY-TO-MANY: Chikuzen, Hizen, Tsushima -> Fukuoka, Nagasaki
 	link = { eu4 = 1014 eu4 = 4181 v2 = 1664 }	# Bungo, Higo -> Kumamoto
 	link = { eu4 = 1012 eu4 = 4180 v2 = 1663 v2 = 1662 }	# MANY-TO-MANY: Satsuma, Hyuga -> Miyazaki, Kagoshima
 	link = { eu4 = 1015 v2 = 1679 v2 = 1678 }	# Okinawa -> Amari, Okinawa

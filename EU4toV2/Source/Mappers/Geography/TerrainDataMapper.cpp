@@ -1,8 +1,10 @@
 #include "TerrainDataMapper.h"
 #include "ParserHelpers.h"
+#include "Log.h"
 
 mappers::TerrainDataMapper::TerrainDataMapper()
 {
+	LOG(LogLevel::Info) << "Loading Terrain Data.";
 	registerKeys();
 	parseFile("configurables/terrain_data.txt");
 	clearRegisteredKeywords();
