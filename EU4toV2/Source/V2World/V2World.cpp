@@ -255,7 +255,7 @@ void V2::V2World::logPopsByCountry() const
 }
 
 
-void V2::V2World::logPopsFromFile(std::string filename, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const
+void V2::V2World::logPopsFromFile(const std::string& filename, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const
 {
 	std::ifstream popFile("./blankMod/output/history/pops/1836.1.1/" + filename);
 	mappers::PopMapper popMapper(popFile);
@@ -475,7 +475,7 @@ void V2::V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEff
 	std::list<std::pair<V2Country*, double>> libertyScores;
 	std::list<std::pair<V2Country*, double>> equalityScores;
 	std::set<V2Country*>					valuesUnset;
-	for (std::map<std::string, V2Country*>::iterator countryItr = countries.begin(); countryItr != countries.end(); countryItr++)
+	for (std::map<std::string, V2Country*>::iterator countryItr = countries.begin(); countryItr != countries.end(); ++countryItr)
 	{
 		double libertyScore;
 		double equalityScore;
@@ -524,7 +524,7 @@ void V2::V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEff
 			libertyLeft--;
 		}
 	}
-	for (std::set<V2Country*>::iterator unsetItr = valuesUnset.begin(); unsetItr != valuesUnset.end(); unsetItr++)
+	for (std::set<V2Country*>::iterator unsetItr = valuesUnset.begin(); unsetItr != valuesUnset.end(); ++unsetItr)
 	{
 		(*unsetItr)->setNationalValue("nv_order");
 	}
@@ -1421,7 +1421,7 @@ void V2::V2World::addUnions()
 
 	LOG(LogLevel::Info) << "Distributing national and cultural union cores.";
 
-	for (std::map<int, std::shared_ptr<V2::Province>>::iterator provItr = provinces.begin(); provItr != provinces.end(); provItr++)
+	for (std::map<int, std::shared_ptr<V2::Province>>::iterator provItr = provinces.begin(); provItr != provinces.end(); ++provItr)
 	{
 		if (!provItr->second->wasColony())
 		{
@@ -1552,7 +1552,7 @@ void V2::V2World::output(unsigned int potentialGPs) const
 		LOG(LogLevel::Error) << "Could not create countries file";
 		exit(-1);
 	}
-	for (std::map<std::string, V2Country*>::const_iterator i = countries.begin(); i != countries.end(); i++)
+	for (std::map<std::string, V2Country*>::const_iterator i = countries.begin(); i != countries.end(); ++i)
 	{
 		const V2Country& country = *i->second;
 		std::map<std::string, V2Country*>::const_iterator j = dynamicCountries.find(country.getTag());
@@ -1564,7 +1564,7 @@ void V2::V2World::output(unsigned int potentialGPs) const
 	fprintf(allCountriesFile, "\n");
 	fprintf(allCountriesFile, "##HoD Dominions\n");
 	fprintf(allCountriesFile, "dynamic_tags = yes # any tags after this is considered dynamic dominions\n");
-	for (std::map<std::string, V2Country*>::const_iterator i = dynamicCountries.begin(); i != dynamicCountries.end(); i++)
+	for (std::map<std::string, V2Country*>::const_iterator i = dynamicCountries.begin(); i != dynamicCountries.end(); ++i)
 	{
 		i->second->outputToCommonCountriesFile(allCountriesFile);
 	}
@@ -1654,7 +1654,7 @@ void V2::V2World::output(unsigned int potentialGPs) const
 		output.close();
 	}
 	LOG(LogLevel::Debug) << "Writing countries";
-	for (std::map<std::string, V2Country*>::const_iterator itr = countries.begin(); itr != countries.end(); itr++)
+	for (std::map<std::string, V2Country*>::const_iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
 		itr->second->output();
 	}

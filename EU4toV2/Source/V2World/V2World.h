@@ -60,7 +60,7 @@ class V2World
 		void importPopsFromProvince(const int provinceID, const mappers::PopTypes& popType, const mappers::MinorityPopMapper& minorityPopMapper);
 
 		void logPopsByCountry() const;
-		void logPopsFromFile(std::string filename, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
+		void logPopsFromFile(const std::string& filename, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
 		void logPopsInProvince(const int& provinceID, const mappers::PopTypes& popType, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
 		std::map<std::string, std::map<std::string, long int>>::iterator getCountryForPopLogging(std::string country, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
 		void logPop(const std::string& popType, const V2::Pop& pop, std::map<std::string, std::map<std::string, long int>>::iterator countryPopItr) const;

@@ -52,7 +52,7 @@ class V2State
 		void		addFactory(const V2::Factory& factory);
 
 		bool		isCoastal() const;
-		bool		hasLocalSupply(std::string product) const;
+		bool		hasLocalSupply(const std::string& product) const;
 		double getSuppliedInputs(const V2::Factory& factory) const;
 		bool		provInState(int id)	const;
 		bool		hasLandConnection()	const;

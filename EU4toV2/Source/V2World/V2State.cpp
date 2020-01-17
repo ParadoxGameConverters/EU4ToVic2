@@ -52,7 +52,7 @@ bool V2State::isCoastal() const
 	return false;
 }
 
-bool V2State::hasLocalSupply(std::string product) const
+bool V2State::hasLocalSupply(const std::string& product) const
 {
 	for (auto itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
