@@ -166,7 +166,8 @@ V2::addRegimentToArmyResult V2::Army::addRegimentToArmy(
 	Regiment regiment(chosenType);
 
 	// Every regiment needs a home to draw soldiers from or to berth. Pick a home at random.
-	std::optional<int> eu4Home = getProbabilisticHomeProvince(chosenType);
+	auto eu4Home = getProbabilisticHomeProvince(chosenType);
+	// We have an issue right there. Lack of eu4homes means a very broken save game. Abort.
 	if (!eu4Home) return addRegimentToArmyResult::fail;
 
 	// Map the home to V2 province
@@ -206,15 +207,16 @@ V2::addRegimentToArmyResult V2::Army::addRegimentToArmy(
 				homeProvince = sortedCandidate;
 				// Check owner!
 				if (homeProvince->getOwner() != tag) homeProvince = nullptr;
+				if (homeProvince) break;
 			}
 		}
-		if (homeProvince == nullptr)
+		if (!homeProvince)
 		{
 			// Well now. Either all candidates belong to someone else, or we have a mapping issue.
 			// Or candidates belong to someone else because of mapping. Time for something drastic.
 			homeProvince = getProvinceForExpeditionaryArmy(allProvinces, tag);
 		}
-		if (homeProvince == nullptr)
+		if (!homeProvince)
 		{
 			// Seriously now, not a single province with any soldiers left? Then what are we doing?
 			return addRegimentToArmyResult::fail;
@@ -222,35 +224,36 @@ V2::addRegimentToArmyResult V2::Army::addRegimentToArmy(
 		///////// We have a home! Champagne and biscuits! 		
 		// Armies need to be associated with pops
 		Pop* soldierPop = homeProvince->getSoldierPopForArmy();
-		if (nullptr == soldierPop)
+		if (!soldierPop)
 		{
-			// if the old home province was colonized and can't support the unit, try turning it into an "expeditionary" army
-			if (homeProvince->wasColony())
+			// Try turning it into an "expeditionary" army - ie. assign home to any reasonable owned province.
+			V2Province* expSender = getProvinceForExpeditionaryArmy(allProvinces, tag);
+			if (expSender)
 			{
-				V2Province* expSender = getProvinceForExpeditionaryArmy(allProvinces, tag);
-				if (expSender)
+				Pop* expSoldierPop = expSender->getSoldierPopForArmy();
+				if (expSoldierPop)
 				{
-					Pop* expSoldierPop = expSender->getSoldierPopForArmy();
-					if (nullptr != expSoldierPop)
-					{
-						homeProvince = expSender;
-						soldierPop = expSoldierPop;
-					}
+					homeProvince = expSender;
+					soldierPop = expSoldierPop;
 				}
 			}
 		}
-		if (nullptr == soldierPop)
+		if (!soldierPop)
 		{
+			// We failed to get any province with soldier population that can support this regiment.
+			// Make it a depleted one then.
 			homeProvince->getSoldierPopForArmy(true);
 		}
 		regiment.setHome(homeProvince->getNum());	
 	}
-	if (homeProvince != nullptr)
+	// Everyone except for ships at sea now has a home. Name the regiment.
+	if (homeProvince)
 	{
 		regiment.setName(homeProvince->getRegimentName(chosenType));
 	}
 	else
 	{
+		// Assign a national name ("1st Bavarian Frigate")
 		regiment.setName(getRegimentName(chosenType, unitNameCount, localAdjective));
 	}
 	regiments.push_back(regiment);
