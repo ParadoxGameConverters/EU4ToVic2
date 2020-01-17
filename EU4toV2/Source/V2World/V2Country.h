@@ -1,14 +1,11 @@
 #ifndef V2COUNTRY_H_
 #define V2COUNTRY_H_
 
-#include "V2Army.h"
-#include "Country/V2Party.h"
-#include "Leader/V2Leader.h"
-#include "V2Localisation.h"
-#include "V2Relations.h"
-#include "Color.h"
+#include "Party/Party.h"
+#include "Leader/Leader.h"
+#include "Localisation/Localisation.h"
+#include "Diplomacy/Relation.h"
 #include "Date.h"
-#include "../EU4World/Army/EU4Army.h"
 #include "../EU4World/Regions/Regions.h"
 #include "../EU4World/Country/EU4NationalSymbol.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
@@ -18,15 +15,18 @@
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../Mappers/PartyNames/PartyNameMapper.h"
+#include "../Mappers/PartyTypes/PartyTypeMapper.h"
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../Mappers/Unreleasables/Unreleasables.h"
 #include "../Mappers/LeaderTraits/LeaderTraitMapper.h"
 #include "../Mappers/PortProvinces/PortProvinces.h"
+#include "../Mappers/RegimentCosts/RegimentCostsMapper.h"
 #include <memory>
 #include <set>
 #include <vector>
-
-
+#include "Factory/Factory.h"
+#include "Army/Regiment.h"
+#include "Army/Army.h"
 
 namespace EU4
 {
@@ -38,21 +38,18 @@ namespace mappers
 class IdeaEffectMapper;
 class TechGroupsMapper;
 }
+namespace V2
+{
+	class Reforms;
+	class UncivReforms;
+}
+
 class V2World;
 class V2State;
 class V2Province;
-class V2Reforms;
-class V2UncivReforms;
-class V2Factory;
 class V2Creditor;
 class V2LeaderTraits;
 
-enum class addRegimentToArmyResult
-{
-	success,
-	retry,
-	doNotRetry
-};
 
 
 
@@ -83,14 +80,14 @@ class V2Country : commonItems::parser
 		void								addProvince(V2Province* _province);
 		void								addState(V2State* newState, const mappers::PortProvinces& portProvincesMapper);
 		void convertArmies(
-			double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)],
+			const mappers::RegimentCostsMapper& regimentCostsMapper,
 			const std::map<int, V2Province*>& allProvinces,
 			const mappers::PortProvinces& portProvincesMapper,
 			const mappers::ProvinceMapper& provinceMapper,
 			const mappers::AdjacencyMapper& adjacencyMapper
 		);
 		void convertLeaders(mappers::LeaderTraitMapper& leaderTraitMapper);
-		bool addFactory(const V2Factory& factory);
+		bool addFactory(const V2::Factory& factory);
 		void								addRailroadtoCapitalState();
 		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
 		void								oldCivConversionMethod();
@@ -107,14 +104,14 @@ class V2Country : commonItems::parser
 		void								setCommerceTech(double normalizedScore);
 		void								setIndustryTech(double normalizedScore);
 		void								setCultureTech(double normalizedScore);
-		void addRelation(V2Relations& newRelation);
+		void addRelation(V2::Relation& newRelation);
 		void								absorbVassal(V2Country* vassal);
 		void								setColonyOverlord(V2Country* colony);
 		V2Country*						getColonyOverlord();
 		std::string							getColonialRegion();
 
 		std::string							getLocalName();
-		std::optional<V2Relations> getRelations(std::string withWhom) const;
+		V2::Relation& getRelation(const std::string& withWhom);
 		std::tuple<double, double, double> getNationalValueScores();
 		
 		void addPrestige(double additionalPrestige) { prestige += additionalPrestige; }
@@ -139,7 +136,7 @@ class V2Country : commonItems::parser
 		std::vector<std::pair<int, int>>	getConservativeIssues() const { return conservativeIssues; }
 		std::vector<std::pair<int, int>>	getLiberalIssues() const { return liberalIssues; }
 		double							getLiteracy() const { return literacy; }
-		V2UncivReforms*					getUncivReforms() const { return uncivReforms; }
+		V2::UncivReforms* getUncivReforms() const { return uncivReforms; }
 		int								getCapital() const { return capital; }
 		bool								isNewCountry() const { return newCountry; }
 		int								getNumFactories() const { return numFactories; }
@@ -164,25 +161,14 @@ class V2Country : commonItems::parser
 		void determineGovernmentType(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::GovernmentMapper& governmentMapper);
 		void setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcCountry, const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions);
 		void setReligion(std::shared_ptr<EU4::Country> srcCountry, const mappers::ReligionMapper& religionMapper);
-		void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper);
+		void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper);
 
 	private:
-		void			outputTech(FILE*) const ;
+		void outputTech(std::ofstream& output) const ;
 		void			outputElection(FILE*) const;
 		void			addLoan(std::string creditor, double size, double interest);
-		addRegimentToArmyResult addRegimentToArmy(
-			V2Army& army,
-			EU4::REGIMENTCATEGORY rc,
-			std::map<int, V2Province*> allProvinces,
-			const mappers::ProvinceMapper& provinceMapper,
-			const mappers::AdjacencyMapper& adjacencyMapper,
-			const mappers::PortProvinces& portProvincesMapper
-		);
-		std::vector<int> getPortProvinces(const std::vector<int>& locationCandidates, std::map<int, V2Province*> allProvinces, const mappers::PortProvinces& portProvincesMapper);
-		V2Army* getArmyForRemainder(EU4::REGIMENTCATEGORY rc);
-		V2Province*	getProvinceForExpeditionaryArmy();
-		std::string		getRegimentName(EU4::REGIMENTCATEGORY rc);
-
+		V2::Army* getArmyForRemainder(V2::REGIMENTTYPE chosenType);
+	
 		const V2World* theWorld;
 		std::shared_ptr<EU4::Country> srcCountry;
 		std::string							filename;
@@ -195,7 +181,7 @@ class V2Country : commonItems::parser
 		std::vector<V2State*>				states;
 		std::map<int, V2Province*>		provinces;
 		int capital = 0;
-		bool								civilized;
+		bool civilized;
 		bool isReleasableVassal = false;
 		bool								holyRomanEmperor;
 		bool								inHRE;
@@ -203,7 +189,7 @@ class V2Country : commonItems::parser
 		std::string							primaryCulture;
 		std::set<std::string>						acceptedCultures;
 		std::string							religion;
-		std::vector<V2Party> parties;
+		std::vector<V2::Party> parties;
 		std::string							rulingParty;
 		std::string							commonCountryFile;
 		double prestige = 0.0;
@@ -211,7 +197,7 @@ class V2Country : commonItems::parser
 		double							plurality;
 		std::vector<std::string>					techs;
 		std::set<std::string>						inventions;
-		V2UncivReforms*				uncivReforms;
+		V2::UncivReforms* uncivReforms;
 		double							researchPoints;
 		std::string							techSchool;
 		std::string							government;
@@ -221,9 +207,9 @@ class V2Country : commonItems::parser
 		std::vector<std::pair<int, int>>	reactionaryIssues;
 		std::vector<std::pair<int, int>>	conservativeIssues;
 		std::vector<std::pair<int, int>>	liberalIssues;
-		std::map<std::string, V2Relations>	relations;
-		std::vector<V2Army> armies;
-		V2Reforms*						reforms;
+		std::map<std::string, V2::Relation>	relations;
+		std::vector<V2::Army> armies;
+		V2::Reforms* reforms;
 		std::string nationalValue = "nv_order";
 		double							money;
 		date								lastBankrupt;
@@ -231,13 +217,14 @@ class V2Country : commonItems::parser
 		double							bankReserves;
 		double							diploPoints;
 		double							badboy;
-		std::vector<V2Leader> leaders;
+		std::vector<V2::Leader> leaders;
 		double							literacy;
-		V2Localisation					localisation;
+		V2::Localisation localisation;
 		EU4::NationalSymbol nationalColors;
-		int								unitNameCount[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)];
+		std::map<V2::REGIMENTTYPE, int> unitNameCount;
 		int								numFactories;
 		std::vector<std::string>					decisions;
+		std::map<V2::REGIMENTTYPE, double> countryRemainders;
 
 		double armyInvestment = 5.0;
 		double navyInvestment = 5.0;
@@ -262,7 +249,6 @@ class V2Country : commonItems::parser
 
 };
 
-bool ProvinceRegimentCapacityPredicate(V2Province* prov1, V2Province* prov2);
 
 
 #endif	// V2COUNTRY_H_

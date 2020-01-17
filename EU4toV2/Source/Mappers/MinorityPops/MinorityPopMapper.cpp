@@ -26,20 +26,20 @@ void mappers::MinorityPopMapper::registerKeys()
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 }
 
-bool mappers::MinorityPopMapper::matchMinorityPop(V2Pop& pop) const
+bool mappers::MinorityPopMapper::matchMinorityPop(V2::Pop& pop) const
 {
 	for (auto minorityItr : minorityPopMap)
 	{
-		if ((pop.getCulture() == minorityItr.first) && (pop.getReligion() == minorityItr.second))
+		if (pop.getCulture() == minorityItr.first && pop.getReligion() == minorityItr.second)
 		{
 			return true;
 		}
-		else if ((minorityItr.first == "") && (pop.getReligion() == minorityItr.second))
+		if (minorityItr.first.empty() && pop.getReligion() == minorityItr.second)
 		{
 			pop.setCulture("");
 			return true;
 		}
-		else if ((pop.getCulture() == minorityItr.first) && (minorityItr.second == ""))
+		if (pop.getCulture() == minorityItr.first && minorityItr.second.empty())
 		{
 			pop.setReligion("");
 			return true;

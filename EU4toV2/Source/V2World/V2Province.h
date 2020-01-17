@@ -6,9 +6,10 @@
 #include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "newParser.h"
+#include "Factory/Factory.h"
+#include "Pop/Pop.h"
+#include "Army/Regiment.h"
 
-class V2Pop;
-class V2Factory;
 class V2Country;
 
 struct V2Demographic
@@ -29,7 +30,7 @@ class V2Province : commonItems::parser
 	public:
 		V2Province(const std::string& _filename);
 		void output() const;
-		void outputPops(FILE*) const;
+		void outputPops(std::ofstream& output) const;
 		void convertFromOldProvince(
 			const EU4::Religions& allReligions,
 			const EU4::Province* oldProvince,
@@ -37,8 +38,8 @@ class V2Province : commonItems::parser
 		);
 		void determineColonial();
 		void addCore(std::string);
-		void addOldPop(const V2Pop*);
-		void addMinorityPop(V2Pop*);
+		void addOldPop(const V2::Pop*);
+		void addMinorityPop(V2::Pop*);
 		void doCreatePops(
 			double popWeightRatio,
 			V2Country* _owner,
@@ -46,15 +47,15 @@ class V2Province : commonItems::parser
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
 			const mappers::ProvinceMapper& provinceMapper
 		);
-		void addFactory(const V2Factory& factory);
+		void addFactory(const V2::Factory& factory);
 		void addPopDemographic(V2Demographic d);
 
 		int getTotalPopulation() const;
-		std::vector<V2Pop*>	getPops(std::string type) const;
-		V2Pop* getSoldierPopForArmy(bool force = false);
+		std::vector<V2::Pop*> getPops(const std::string& type) const;
+		V2::Pop* getSoldierPopForArmy(bool force = false);
 		std::pair<int, int>	getAvailableSoldierCapacity() const;
-		std::string getRegimentName(EU4::REGIMENTCATEGORY rc);
-		bool hasCulture(std::string culture, float percentOfPopulation) const;
+		std::string getRegimentName(V2::REGIMENTTYPE rc);
+		bool hasCulture(const std::string& culture, float percentOfPopulation) const;
 		std::vector<std::string> getCulturesOverThreshold(float percentOfPopulation) const;
 
 		void clearCores() { cores.clear(); }
@@ -89,7 +90,7 @@ class V2Province : commonItems::parser
 		bool hasNavalBase() const { return (navalBaseLevel > 0); }
 		int getNavalBaseLevel() const { return navalBaseLevel; }
 		bool hasLandConnection() const { return landConnection; }
-		std::vector<V2Pop*> getPops() const { return pops; }
+		std::vector<V2::Pop*> getPops() const { return pops; }
 
 	private:
 		void outputUnits(FILE*) const;
@@ -115,7 +116,7 @@ class V2Province : commonItems::parser
 			const mappers::ProvinceMapper& provinceMapper
 		);
 		void combinePops();
-		bool growSoldierPop(V2Pop* pop);
+		bool growSoldierPop(V2::Pop* pop);
 
 		const EU4::Province* srcProvince = NULL;
 
@@ -135,20 +136,20 @@ class V2Province : commonItems::parser
 		bool territorialCore = false;
 		int oldPopulation = 0;
 		std::vector<V2Demographic> demographics;
-		std::vector<const V2Pop*> oldPops;
-		std::vector<V2Pop*> minorityPops;
-		std::vector<V2Pop*> pops;
+		std::vector<const V2::Pop*> oldPops;
+		std::vector<V2::Pop*> minorityPops;
+		std::vector<V2::Pop*> pops;
 		double slaveProportion = 0.0;
 		std::string rgoType;
 		std::string terrain;
 		std::string climate;
 		int lifeRating = 0;
 		bool slaveState = false;
-		int unitNameCount[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)];
+		std::map<V2::REGIMENTTYPE, int> unitNameCount;
 		int fortLevel = 0;
 		int navalBaseLevel = 0;
 		int railLevel = 0;
-		std::map<std::string, V2Factory> factories;
+		std::map<std::string, V2::Factory> factories;
 
 		bool resettable = false;
 		double spentProvinceModifier = 0; //Store old popshaping modifier for NEU4-to-1V2 conversions;

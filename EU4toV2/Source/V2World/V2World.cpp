@@ -18,8 +18,7 @@
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "V2Province.h"
 #include "V2State.h"
-#include "V2Relations.h"
-#include "V2Pop.h"
+#include "Pop/Pop.h"
 #include "V2Country.h"
 #include "V2Flags.h"
 #include "../Mappers/Pops/PopMapper.h"
@@ -50,7 +49,7 @@ V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper&
 
 	convertCountries(sourceWorld, ideaEffectMapper);
 	convertProvinces(sourceWorld);
-	convertDiplomacy(sourceWorld);
+	diplomacy.convertDiplomacy(sourceWorld.getDiplomaticAgreements(), countryMapper, countries);
 	setupColonies();
 	setupStates();
 	convertUncivReforms(sourceWorld, techGroupsMapper);
@@ -236,7 +235,7 @@ void V2World::importPopsFromProvince(const int provinceID, const mappers::PopTyp
 
 	for (const auto& pop: popType.getPopTypes())
 	{
-		V2Pop* newPop = new V2Pop(pop.first, pop.second.getSize(), pop.second.getCulture(), pop.second.getReligion());
+		V2::Pop* newPop = new V2::Pop(pop.first, pop.second.getSize(), pop.second.getCulture(), pop.second.getReligion());
 
 		province->second->addOldPop(newPop);
 		if (minorityPopMapper.matchMinorityPop(*newPop))
@@ -297,12 +296,12 @@ void V2World::logPopsInProvince(const int& provinceID, const mappers::PopTypes& 
 
 	for (const auto& popType : popTypes.getPopTypes())
 	{
-		logPop(popType.first, popType.second, countryPopItr);
+		logPop(popType.first, V2::Pop(popType.first, popType.second), countryPopItr);
 	}
 }
 
 
-void V2World::logPop(const std::string& popType, const mappers::Pop& pop, map<string, map<string, long int>>::iterator countryPopItr) const
+void V2World::logPop(const std::string& popType, const V2::Pop& pop, map<string, map<string, long int>>::iterator countryPopItr) const
 {
 	auto popItr = countryPopItr->second.find(popType);
 	if (popItr == countryPopItr->second.end())
@@ -880,126 +879,6 @@ std::vector<V2Demographic> V2World::determineDemographics(
 	return demographics;
 }
 
-void V2World::convertDiplomacy(const EU4::World& sourceWorld)
-{
-	LOG(LogLevel::Info) << "Converting diplomacy";
-
-	std::vector<EU4::EU4Agreement> agreements = sourceWorld.getDiplomaticAgreements();
-	for (auto& agreement: agreements)
-	{
-		const std::string& EU4Tag1 = agreement.getOriginTag();
-		const std::string& V2Tag1 = countryMapper.getV2Tag(EU4Tag1);
-		if (V2Tag1.empty())
-		{
-			continue;
-		}
-		const std::string& EU4Tag2 = agreement.getTargetTag();
-		const std::string& V2Tag2 = countryMapper.getV2Tag(EU4Tag2);
-		if (V2Tag2.empty())
-		{
-			continue;
-		}
-
-		map<string, V2Country*>::iterator country1 = countries.find(V2Tag1);
-		map<string, V2Country*>::iterator country2 = countries.find(V2Tag2);
-		if (country1 == countries.end())
-		{
-			LOG(LogLevel::Warning) << "Vic2 country " << V2Tag1 << " used in diplomatic agreement doesn't exist";
-			continue;
-		}
-		if (country2 == countries.end())
-		{
-			LOG(LogLevel::Warning) << "Vic2 country " << V2Tag2 << " used in diplomatic agreement doesn't exist";
-			continue;
-		}
-		std::optional<V2Relations> r1 = country1->second->getRelations(V2Tag2);
-		if (!r1)
-		{
-			r1 = V2Relations(V2Tag2);
-			country1->second->addRelation(*r1);
-		}
-		std::optional<V2Relations> r2 = country2->second->getRelations(V2Tag1);
-		if (!r2)
-		{
-			r2 = V2Relations(V2Tag1);
-			country2->second->addRelation(*r2);
-		}
-
-		if ((agreement.getAgreementType() == "colonial") || (agreement.getAgreementType() == "colony"))
-		{
-			country2->second->setColonyOverlord(country1->second);
-			if (country2->second->getSourceCountry()->getLibertyDesire() < theConfiguration.getLibertyThreshold())
-			{
-				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() << 
-					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << theConfiguration.getLibertyThreshold() << " liberty desire)";
-				country1->second->absorbVassal(country2->second);
-				for (auto& agreement2: agreements)
-				{
-					if (agreement2.getTargetTag() == country2->second->getSourceCountry()->getTag())
-					{
-						agreement2.setTargetTag(country1->second->getSourceCountry()->getTag());
-					}
-				}
-			}
-			else
-			{
-				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is not absorbing " << country2->second->getTag() <<
-					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << theConfiguration.getLibertyThreshold() << " liberty desire)";
-				V2Agreement v2a;
-				v2a.country1 = V2Tag1;
-				v2a.country2 = V2Tag2;
-				v2a.start_date = agreement.getStartDate();
-				v2a.type = "vassal";
-				diplomacy.addAgreement(v2a);
-				r1->setLevel(5);
-				country2->second->addPrestige(-country2->second->getPrestige());
-			}
-		}
-
-		if ((agreement.getAgreementType() == "royal_marriage") || (agreement.getAgreementType() == "guarantee"))
-		{
-			// influence level +1, but never exceed 4
-			if (r1->getLevel() < 4)
-			{
-				r1->setLevel(r1->getLevel() + 1);
-			}
-		}
-		if (agreement.getAgreementType() == "royal_marriage")
-		{
-			// royal marriage is bidirectional; influence level +1, but never exceed 4
-			if (r2->getLevel() < 4)
-			{
-				r2->setLevel(r2->getLevel() + 1);
-			}
-		}
-		if ((agreement.getAgreementType() == "vassal") || (agreement.getAgreementType() == "client_vassal") || (agreement.getAgreementType() == "daimyo_vassal") || (agreement.getAgreementType() == "protectorate") || (agreement.getAgreementType() == "tributary_state"))
-		{
-			r1->setLevel(5);
-			country2->second->addPrestige(-country2->second->getPrestige());
-		}
-
-		if ((agreement.getAgreementType() == "is_march") || (agreement.getAgreementType() == "march") || (agreement.getAgreementType() == "union") || (agreement.getAgreementType() == "personal_union"))
-		{
-			// Yeah, we don't do marches or personal unions. PUs are a second relation beside existing vassal relation specifying when vassalage ends.
-			// We assume all rulers are CK2 immortals and vassalage does not end with a specific date.
-			agreement.setAgreementType("vassal");
-			r1->setLevel(5);
-			country2->second->addPrestige(-country2->second->getPrestige());
-		}
-
-		if ((agreement.getAgreementType() == "alliance") || (agreement.getAgreementType() == "vassal") || (agreement.getAgreementType() == "client_vassal") || (agreement.getAgreementType() == "daimyo_vassal") || (agreement.getAgreementType() == "guarantee"))
-		{
-			// copy agreement
-			V2Agreement v2a;
-			v2a.country1 = V2Tag1;
-			v2a.country2 = V2Tag2;
-			v2a.start_date = agreement.getStartDate();
-			v2a.type = agreement.getAgreementType();
-			diplomacy.addAgreement(v2a);
-		}
-	}
-}
-
 void V2World::setupColonies()
 {
 	LOG(LogLevel::Info) << "Setting colonies";
@@ -1334,7 +1213,7 @@ void V2World::allocateFactories(const EU4::World& sourceWorld)
 
 	weightedCountries.swap(restrictCountries);
 	// remove nations that won't have enough industiral score for even one factory
-	deque<V2Factory> factoryList = factoryTypeMapper.buildFactories();
+	deque<V2::Factory> factoryList = factoryTypeMapper.buildFactories();
 	while (((weightedCountries.begin()->first / totalIndWeight) * factoryList.size() + 0.5 /*round*/) < 1.0)
 	{
 		weightedCountries.pop_front();
@@ -1361,7 +1240,7 @@ void V2World::allocateFactories(const EU4::World& sourceWorld)
 		bool accepted = false;
 		if (citr->first > 0) // can take more factories
 		{
-			for (deque<V2Factory>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
+			for (deque<V2::Factory>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
 			{
 				if (citr->second->addFactory(*qitr))
 				{
@@ -1623,22 +1502,12 @@ void V2World::convertArmies(const EU4::World& sourceWorld)
 {
 	LOG(LogLevel::Info) << "Converting armies and navies";
 
-	// get cost per regiment values
-	std::map<std::string, int> regimentCosts = regimentCostsMapper.getRegimentCosts();
-	double cost_per_regiment[static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories)] = { 0.0 };
-
-	for (int i = 0; i < static_cast<int>(EU4::REGIMENTCATEGORY::num_reg_categories); ++i)
-	{
-		cost_per_regiment[i] = regimentCosts[EU4::RegimentCategoryTypes[static_cast<EU4::REGIMENTCATEGORY>(i)]];
-	}
-
 	// convert leaders and armies
 
-	LOG(LogLevel::Info) << "Converting country armies";
 	for (map<string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
 		itr->second->convertLeaders(leaderTraitMapper);
-		itr->second->convertArmies(cost_per_regiment, provinces, portProvincesMapper, provinceMapper, adjacencyMapper);
+		itr->second->convertArmies(regimentCostsMapper, provinces, portProvincesMapper, provinceMapper, adjacencyMapper);
 	}
 }
 
@@ -1894,11 +1763,11 @@ void V2World::outputPops() const
 	LOG(LogLevel::Debug) << "Writing pops";
 	for (auto popRegion : popRegions)
 	{
-		FILE* popsFile;
-		if (fopen_s(&popsFile, ("output/" + theConfiguration.getOutputName() + "/history/pops/1836.1.1/" + popRegion.first).c_str(), "w") != 0)
+		ofstream popsFile;
+		popsFile.open("output/" + theConfiguration.getOutputName() + "/history/pops/1836.1.1/" + popRegion.first);		
+		if (!popsFile.is_open())
 		{
-			LOG(LogLevel::Error) << "Could not create pops file output/" << theConfiguration.getOutputName() << "/history/pops/1836.1.1/" << popRegion.first;
-			exit(-1);
+			throw("Could not create pops file output/" + theConfiguration.getOutputName() + "/history/pops/1836.1.1/" + popRegion.first);
 		}
 
 		for (auto provinceNumber : popRegion.second)

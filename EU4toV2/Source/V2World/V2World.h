@@ -4,7 +4,7 @@
 
 
 #include "V2Country.h"
-#include "V2Diplomacy.h"
+#include "Diplomacy/Diplomacy.h"
 #include "V2Province.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../EU4World/Provinces/PopRatio.h"
@@ -19,6 +19,7 @@
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../Mappers/PartyNames/PartyNameMapper.h"
+#include "../Mappers/PartyTypes/PartyTypeMapper.h"
 #include "../Mappers/RegimentCosts/RegimentCostsMapper.h"
 #include "../Mappers/StateMapper/StateMapper.h"
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
@@ -51,6 +52,7 @@ class V2World
 		V2Country* getCountry(std::string tag) const;
 		double getDuration() const { return difftime(std::time(0), begin); }
 		const mappers::PartyNameMapper& getPartyNameMapper() const { return partyNameMapper; }
+		const mappers::PartyTypeMapper& getPartyTypeMapper() const { return partyTypeMapper; }
 
 	private:
 		void importProvinces();
@@ -68,7 +70,7 @@ class V2World
 		void logPopsFromFile(std::string filename, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
 		void logPopsInProvince(const int& provinceID, const mappers::PopTypes& popType, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
 		std::map<std::string, std::map<std::string, long int>>::iterator getCountryForPopLogging(std::string country, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
-		void logPop(const std::string& popType, const mappers::Pop& pop, std::map<std::string, std::map<std::string, long int>>::iterator countryPopItr) const;
+		void logPop(const std::string& popType, const V2::Pop& pop, std::map<std::string, std::map<std::string, long int>>::iterator countryPopItr) const;
 		void outputLog(const std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
 
 		void findCoastalProvinces();
@@ -97,7 +99,6 @@ class V2World
 			double provPopRatio
 		);
 
-		void convertDiplomacy(const EU4::World& sourceWorld);
 		void setupColonies();
 		void setupStates();
 		void shuffleRgos();
@@ -116,7 +117,7 @@ class V2World
 		std::map<std::string, V2Country*> countries;
 		std::map<std::string, V2Country*> potentialCountries;
 		std::map<std::string, V2Country*> dynamicCountries;
-		V2Diplomacy diplomacy;
+		V2::Diplomacy diplomacy;
 		std::map<int, std::set<std::string>> colonies;
 		std::map<std::string, std::list<int>>	popRegions;
 		std::map<int, int> leaderIDMap; // <EU4, V2>
@@ -137,6 +138,7 @@ class V2World
 		mappers::GovernmentMapper governmentMapper;
 		mappers::MinorityPopMapper minorityPopMapper;
 		mappers::PartyNameMapper partyNameMapper;
+		mappers::PartyTypeMapper partyTypeMapper;
 		mappers::RegimentCostsMapper regimentCostsMapper;
 		mappers::ReligionMapper religionMapper;
 		mappers::StateMapper stateMapper;
