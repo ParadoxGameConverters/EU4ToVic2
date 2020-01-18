@@ -326,10 +326,10 @@
     <ClCompile Include="Source\V2World\Province\Province.cpp" />
     <ClCompile Include="Source\V2World\Reforms\Reforms.cpp" />
     <ClCompile Include="Source\V2World\Reforms\UncivReforms.cpp" />
+    <ClCompile Include="Source\V2World\State\State.cpp" />
     <ClCompile Include="Source\V2World\V2Country.cpp" />
     <ClCompile Include="Source\V2World\V2Creditor.cpp" />
     <ClCompile Include="Source\V2World\V2Flags.cpp" />
-    <ClCompile Include="Source\V2World\V2State.cpp" />
     <ClCompile Include="Source\V2World\V2World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -493,10 +493,10 @@
     <ClInclude Include="Source\V2World\Province\Province.h" />
     <ClInclude Include="Source\V2World\Reforms\Reforms.h" />
     <ClInclude Include="Source\V2World\Reforms\UncivReforms.h" />
+    <ClInclude Include="Source\V2World\State\State.h" />
     <ClInclude Include="Source\V2World\V2Country.h" />
     <ClInclude Include="Source\V2World\V2Creditor.h" />
     <ClInclude Include="Source\V2World\V2Flags.h" />
-    <ClInclude Include="Source\V2World\V2State.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

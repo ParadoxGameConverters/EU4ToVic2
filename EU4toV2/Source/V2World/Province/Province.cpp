@@ -11,7 +11,7 @@ V2::Province::Province(const std::string& _filename, const mappers::ClimateMappe
 	filename(_filename)
 {
 	int slash = filename.find_last_of("/");
-	int numDigits = filename.find_first_of("-") - slash - 2;
+	unsigned int numDigits = filename.find_first_of("-") - slash - 2;
 	std::string temp = filename.substr(slash + 1, numDigits);
 	provinceID = stoi(temp);
 
@@ -106,17 +106,16 @@ void V2::Province::convertFromOldProvince(
 	totalWeight = oldProvince->getTotalWeight();
 }
 
-void V2::Province::addFactory(const Factory& factory)
+std::optional<std::shared_ptr<V2::Factory>> V2::Province::addFactory(std::shared_ptr<Factory> factory)
 {
-	auto itr = factories.find(factory.getTypeName());
+	auto itr = factories.find(factory->getTypeName());
 	if (itr == factories.end())
 	{
-		factories.insert(std::make_pair(factory.getTypeName(), factory));
+		factories.insert(std::make_pair(factory->getTypeName(), factory));
+		return factory;
 	}
-	else
-	{
-		itr->second.increaseLevel();
-	}
+	itr->second->increaseLevel();
+	return std::nullopt;
 }
 
 void V2::Province::addPopDemographic(const Demographic& d)
@@ -249,7 +248,7 @@ void V2::Province::doCreatePops(
 				if (newCulture.empty()) newCulture = popsItr->getCulture();
 				if (newReligion.empty()) newReligion = popsItr->getReligion();
 
-				auto newMinority = std::make_shared<Pop>(minorityItr->getType(), static_cast<int>(1.0 * popsItr->getSize() / totalTypePopulation * minorityItr->getSize() + 0.5), newCulture, newReligion);
+				auto newMinority = std::make_shared<Pop>(minorityItr->getType(), lround(popsItr->getSize() / totalTypePopulation * minorityItr->getSize()), newCulture, newReligion);
 				actualMinorities.push_back(newMinority);
 
 				popsItr->changeSize(static_cast<int>(-1.0 * popsItr->getSize() / totalTypePopulation * minorityItr->getSize()));

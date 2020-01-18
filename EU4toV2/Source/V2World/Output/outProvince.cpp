@@ -50,7 +50,7 @@ std::ostream& V2::operator<<(std::ostream& output, const Province& province)
 	}
 	for (const auto& factory: province.factories)
 	{
-		output << factory.second;
+		output << *factory.second;
 	}
 	return output;
 }

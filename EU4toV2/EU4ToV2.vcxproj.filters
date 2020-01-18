@@ -57,9 +57,6 @@
     <ClCompile Include="Source\V2World\V2Flags.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2State.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2World.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -483,6 +480,9 @@
     <ClCompile Include="Source\Mappers\ProvinceDetails\ProvinceDetails.cpp">
       <Filter>Mappers\ProvinceDetails</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\State\State.cpp">
+      <Filter>Vic2World\State</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -538,9 +538,6 @@
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Flags.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2State.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2World.h">
@@ -972,6 +969,9 @@
     <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetails.h">
       <Filter>Mappers\ProvinceDetails</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\State\State.h">
+      <Filter>Vic2World\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1168,6 +1168,9 @@
     </Filter>
     <Filter Include="Mappers\ProvinceDetails">
       <UniqueIdentifier>{5a15ff97-0365-4341-832d-fd6b34f75e1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\State">
+      <UniqueIdentifier>{530bfc41-c892-4dd1-a1dd-7fb646450f44}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

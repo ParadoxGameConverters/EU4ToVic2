@@ -44,9 +44,9 @@ namespace V2
 	class Reforms;
 	class UncivReforms;
 	class V2World;
+	class State;
 }
 
-class V2State;
 class V2Creditor;
 class V2LeaderTraits;
 
@@ -78,7 +78,7 @@ class V2Country : commonItems::parser
 		);
 		void initFromHistory(const mappers::Unreleasables& unreleasablesMapper);
 		void								addProvince(std::shared_ptr<V2::Province> _province);
-		void								addState(V2State* newState, const mappers::PortProvinces& portProvincesMapper);
+		void								addState(State* newState, const mappers::PortProvinces& portProvincesMapper);
 		void convertArmies(
 			const mappers::RegimentCostsMapper& regimentCostsMapper,
 			const std::map<int, std::shared_ptr<V2::Province>>& allProvinces,
@@ -87,7 +87,7 @@ class V2Country : commonItems::parser
 			const mappers::AdjacencyMapper& adjacencyMapper
 		);
 		void convertLeaders(mappers::LeaderTraitMapper& leaderTraitMapper);
-		bool addFactory(const V2::Factory& factory);
+		bool addFactory(std::shared_ptr<Factory> factory);
 		void								addRailroadtoCapitalState();
 		void								convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
 		void								oldCivConversionMethod();
@@ -121,7 +121,7 @@ class V2Country : commonItems::parser
 		void								isANewCountry(void)							{ newCountry = true; }
 
 		const std::map<int, std::shared_ptr<V2::Province>>& getProvinces() const { return provinces; }
-		std::vector<V2State*>				getStates() const { return states; }
+		std::vector<State*>				getStates() const { return states; }
 		std::string							getTag() const { return tag; }
 		virtual bool isCivilized() const { return civilized; }
 		std::string							getPrimaryCulture() const { return primaryCulture; }
@@ -177,7 +177,7 @@ class V2Country : commonItems::parser
 		std::string							colonialRegion;
 
 		std::string							tag;
-		std::vector<V2State*>				states;
+		std::vector<State*>				states;
 		std::map<int, std::shared_ptr<V2::Province>> provinces;
 		int capital = 0;
 		bool civilized;

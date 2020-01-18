@@ -16,7 +16,7 @@
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../Helpers/TechValues.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
-#include "V2State.h"
+#include "State/State.h"
 #include "Pop/Pop.h"
 #include "V2Country.h"
 #include "V2Flags.h"
@@ -946,7 +946,7 @@ void V2::V2World::setupStates()
 			continue;
 		}
 
-		V2State* newState = new V2State(stateId, *iter);
+		State* newState = new State(stateId, *iter);
 		stateId++;
 		auto neighbors = stateMapper.getAllProvincesInState(provId);
 
@@ -1157,7 +1157,7 @@ void V2::V2World::allocateFactories(const EU4::World& sourceWorld)
 
 	weightedCountries.swap(restrictCountries);
 	// remove nations that won't have enough industiral score for even one factory
-	std::deque<V2::Factory> factoryList = factoryTypeMapper.buildFactories();
+	std::deque<std::shared_ptr<Factory>> factoryList = factoryTypeMapper.buildFactories();
 	while (((weightedCountries.begin()->first / totalIndWeight) * factoryList.size() + 0.5 /*round*/) < 1.0)
 	{
 		weightedCountries.pop_front();
@@ -1179,12 +1179,12 @@ void V2::V2World::allocateFactories(const EU4::World& sourceWorld)
 	// allocate the factories
 	std::vector<std::pair<int, V2Country*>>::iterator lastReceptiveCountry = factoryCounts.end()--;
 	std::vector<std::pair<int, V2Country*>>::iterator citr = factoryCounts.begin();
-	while (factoryList.size() > 0)
+	while (!factoryList.empty())
 	{
 		bool accepted = false;
 		if (citr->first > 0) // can take more factories
 		{
-			for (std::deque<V2::Factory>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
+			for (std::deque<std::shared_ptr<Factory>>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
 			{
 				if (citr->second->addFactory(*qitr))
 				{

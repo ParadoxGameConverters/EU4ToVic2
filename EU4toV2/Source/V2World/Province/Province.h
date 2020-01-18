@@ -51,12 +51,12 @@ namespace V2
 		void addVanillaPop(std::shared_ptr<Pop> vanillaPop);
 		void addMinorityPop(std::shared_ptr<Pop> minorityPop);
 		void setSlaveProportion(const double _pro) { slaveProportion = _pro; }
-		void setRailLevel(int level) { railLevel = level; }
+		void increaseRailLevel(int level) { railLevel += level; }
 		void setFortLevel(int level) { fortLevel = level; }
 		void setNavalBaseLevel(int level) { navalBaseLevel = level; }
 		bool hasNavalBase() const { return (navalBaseLevel > 0); }
 		int getNavalBaseLevel() const { return navalBaseLevel; }
-		void addFactory(const Factory& factory);
+		std::optional<std::shared_ptr<Factory>> addFactory(std::shared_ptr<Factory> factory);
 		bool hasLandConnection() const { return landConnection; }
 		void setLandConnection(bool _connection) { landConnection = _connection; }
 		int getMfgCount() const { return mfgCount; }
@@ -107,7 +107,7 @@ namespace V2
 		int fortLevel = 0;
 		int navalBaseLevel = 0;
 		int railLevel = 0;
-		std::map<std::string, Factory> factories;
+		std::map<std::string, std::shared_ptr<Factory>> factories;
 		bool landConnection = false;
 		int mfgCount = 0;
 		std::vector<Demographic> demographics;

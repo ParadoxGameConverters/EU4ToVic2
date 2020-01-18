@@ -9,7 +9,7 @@
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2World.h"
-#include "V2State.h"
+#include "State/State.h"
 #include "V2Creditor.h"
 #include <algorithm>
 #include <fstream>
@@ -911,7 +911,7 @@ void V2::V2Country::addProvince(std::shared_ptr<V2::Province> _province)
 
 
 
-void V2::V2Country::addState(V2State* newState, const mappers::PortProvinces& portProvincesMapper)
+void V2::V2Country::addState(State* newState, const mappers::PortProvinces& portProvincesMapper)
 {
 	int				highestNavalLevel	= 0;
 	unsigned int	hasHighestLevel	= -1;
@@ -1123,7 +1123,7 @@ std::string	V2::V2Country::getColonialRegion()
 }
 
 
-static bool FactoryCandidateSortPredicate(const pair<double, V2State*>& lhs, const pair<double, V2State*>& rhs)
+static bool FactoryCandidateSortPredicate(const pair<double, V2::State*>& lhs, const pair<double, V2::State*>& rhs)
 {
 	if (lhs.first != rhs.first)
 		return lhs.first > rhs.first;
@@ -1131,10 +1131,10 @@ static bool FactoryCandidateSortPredicate(const pair<double, V2State*>& lhs, con
 }
 
 
-bool V2::V2Country::addFactory(const V2::Factory& factory)
+bool V2::V2Country::addFactory(std::shared_ptr<Factory> factory)
 {
 	// check factory techs
-	std::string requiredTech = factory.getRequiredTech();
+	std::string requiredTech = factory->getRequiredTech();
 	if (requiredTech != "")
 	{
 		vector<string>::iterator itr = find(techs.begin(), techs.end(), requiredTech);
@@ -1147,15 +1147,15 @@ bool V2::V2Country::addFactory(const V2::Factory& factory)
 	// check factory inventions
 	if ((theConfiguration.getVic2Gametype() == "vanilla") || (theConfiguration.getVic2Gametype() == "AHD"))
 	{
-		if (inventions.count(factory.getRequiredInvention()) != 0)
+		if (inventions.count(factory->getRequiredInvention()) != 0)
 		{
 			return false;
 		}
 	}
 
 	// find a state to add the factory to, which meets the factory's requirements
-	vector<pair<double, V2State*>> candidates;
-	for (vector<V2State*>::iterator itr = states.begin(); itr != states.end(); ++itr)
+	vector<pair<double, State*>> candidates;
+	for (vector<State*>::iterator itr = states.begin(); itr != states.end(); ++itr)
 	{
 		if ( (*itr)->isColonial() )
 		{
@@ -1167,7 +1167,7 @@ bool V2::V2Country::addFactory(const V2::Factory& factory)
 			continue;
 		}
 
-		if (factory.requiresCoastal())
+		if (factory->requiresCoastal())
 		{
 			if ( !(*itr)->isCoastal() )
 				continue;
@@ -1180,8 +1180,8 @@ bool V2::V2Country::addFactory(const V2::Factory& factory)
 
 		double candidateScore	 = (*itr)->getSuppliedInputs(factory) * 100;
 		candidateScore				-= static_cast<double>((*itr)->getFactoryCount()) * 10;
-		candidateScore				+= (*itr)->getManuRatio();
-		candidates.push_back(pair<double, V2State*>(candidateScore, (*itr) ));
+		candidateScore				+= (*itr)->getMfgRatio();
+		candidates.push_back(pair<double, State*>(candidateScore, (*itr) ));
 	}
 
 	sort(candidates.begin(), candidates.end(), FactoryCandidateSortPredicate);
@@ -1191,7 +1191,7 @@ bool V2::V2Country::addFactory(const V2::Factory& factory)
 		return false;
 	}
 
-	V2State* target = candidates[0].second;
+	State* target = candidates[0].second;
 	target->addFactory(factory);
 	numFactories++;
 	return true;
@@ -1200,7 +1200,7 @@ bool V2::V2Country::addFactory(const V2::Factory& factory)
 
 void V2::V2Country::addRailroadtoCapitalState()
 {
-	for (vector<V2State*>::iterator i = states.begin(); i != states.end(); i++)
+	for (vector<State*>::iterator i = states.begin(); i != states.end(); i++)
 	{
 		if ( (*i)->provInState(capital) )
 		{
