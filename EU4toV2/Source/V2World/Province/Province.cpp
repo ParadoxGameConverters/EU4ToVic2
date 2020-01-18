@@ -438,8 +438,6 @@ void V2::Province::createPops(
 		{
 			// We have already created pops here using another EU4 province. We need to compound the push and weight modifiers.
 			provinceDevModifier += spentProvinceModifier;
-			// And drop the current population since we're recreating it.
-			pops.clear();
 		}
 		spentProvinceModifier += (devpushMod + weightMod) * shapeMod; // This will be used if we come here again.
 		newPopulation = static_cast<long>(vanillaPopulation * provinceDevModifier);
