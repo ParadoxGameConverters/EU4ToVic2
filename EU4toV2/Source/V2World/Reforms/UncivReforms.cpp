@@ -1,6 +1,6 @@
 #include "UncivReforms.h"
 #include "../V2Country.h"
-#include "../V2Province.h"
+#include "../Province/Province.h"
 
 V2::UncivReforms::UncivReforms(int westernizationProgress, double milFocus, double socioEcoFocus, V2Country* country)
 {

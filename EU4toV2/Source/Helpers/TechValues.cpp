@@ -3,7 +3,7 @@
 #include "../V2World/V2Country.h"
 #include <algorithm>
 
-helpers::TechValues::TechValues( const std::map<std::string, V2Country*>& countries ) 
+helpers::TechValues::TechValues( const std::map<std::string, V2::V2Country*>& countries )
 {
 	int numValidCountries = 0;
 	double armyTotal = 0.0;
@@ -43,7 +43,7 @@ helpers::TechValues::TechValues( const std::map<std::string, V2Country*>& countr
 	}
 }
 
-bool helpers::TechValues::isValidCountryForTechConversion(const V2Country* country) const
+bool helpers::TechValues::isValidCountryForTechConversion(const V2::V2Country* country) const
 {
 	return (country->isCivilized() && (country->getProvinces().size() > 0) && country->getSourceCountry());
 }

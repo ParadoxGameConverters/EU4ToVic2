@@ -282,6 +282,7 @@
     <ClCompile Include="Source\Mappers\Pops\PopMapper.cpp" />
     <ClCompile Include="Source\Mappers\Pops\PopTypes.cpp" />
     <ClCompile Include="Source\Mappers\PortProvinces\PortProvinces.cpp" />
+    <ClCompile Include="Source\Mappers\ProvinceDetails\ProvinceDetails.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -315,19 +316,20 @@
     <ClCompile Include="Source\V2World\Output\outLocalisation.cpp" />
     <ClCompile Include="Source\V2World\Output\outParty.cpp" />
     <ClCompile Include="Source\V2World\Output\outPop.cpp" />
+    <ClCompile Include="Source\V2World\Output\outProvince.cpp" />
     <ClCompile Include="Source\V2World\Output\outReforms.cpp" />
     <ClCompile Include="Source\V2World\Output\outRegiment.cpp" />
     <ClCompile Include="Source\V2World\Output\outRelation.cpp" />
     <ClCompile Include="Source\V2World\Output\outUncivReforms.cpp" />
     <ClCompile Include="Source\V2World\Party\Party.cpp" />
     <ClCompile Include="Source\V2World\Pop\Pop.cpp" />
+    <ClCompile Include="Source\V2World\Province\Province.cpp" />
     <ClCompile Include="Source\V2World\Reforms\Reforms.cpp" />
     <ClCompile Include="Source\V2World\Reforms\UncivReforms.cpp" />
+    <ClCompile Include="Source\V2World\State\State.cpp" />
     <ClCompile Include="Source\V2World\V2Country.cpp" />
     <ClCompile Include="Source\V2World\V2Creditor.cpp" />
     <ClCompile Include="Source\V2World\V2Flags.cpp" />
-    <ClCompile Include="Source\V2World\V2Province.cpp" />
-    <ClCompile Include="Source\V2World\V2State.cpp" />
     <ClCompile Include="Source\V2World\V2World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -446,6 +448,7 @@
     <ClInclude Include="Source\Mappers\Pops\PopMapper.h" />
     <ClInclude Include="Source\Mappers\Pops\PopTypes.h" />
     <ClInclude Include="Source\Mappers\PortProvinces\PortProvinces.h" />
+    <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetails.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />
@@ -480,19 +483,20 @@
     <ClInclude Include="Source\V2World\Output\outLocalisation.h" />
     <ClInclude Include="Source\V2World\Output\outParty.h" />
     <ClInclude Include="Source\V2World\Output\outPop.h" />
+    <ClInclude Include="Source\V2World\Output\outProvince.h" />
     <ClInclude Include="Source\V2World\Output\outReforms.h" />
     <ClInclude Include="Source\V2World\Output\outRegiment.h" />
     <ClInclude Include="Source\V2World\Output\outRelation.h" />
     <ClInclude Include="Source\V2World\Output\outUncivReforms.h" />
     <ClInclude Include="Source\V2World\Party\Party.h" />
     <ClInclude Include="Source\V2World\Pop\Pop.h" />
+    <ClInclude Include="Source\V2World\Province\Province.h" />
     <ClInclude Include="Source\V2World\Reforms\Reforms.h" />
     <ClInclude Include="Source\V2World\Reforms\UncivReforms.h" />
+    <ClInclude Include="Source\V2World\State\State.h" />
     <ClInclude Include="Source\V2World\V2Country.h" />
     <ClInclude Include="Source\V2World\V2Creditor.h" />
     <ClInclude Include="Source\V2World\V2Flags.h" />
-    <ClInclude Include="Source\V2World\V2Province.h" />
-    <ClInclude Include="Source\V2World\V2State.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

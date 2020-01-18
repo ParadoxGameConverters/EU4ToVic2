@@ -11,7 +11,6 @@ void V2::Diplomacy::convertDiplomacy(
 	const mappers::CountryMappings& countryMapper, 
 	std::map<std::string, V2Country*>& countries)
 {
-	LOG(LogLevel::Info) << "Converting diplomacy";
 	for (auto& agreement : eu4agreements)
 	{
 		auto EU4Tag1 = agreement.getOriginTag();
@@ -101,7 +100,6 @@ void V2::Diplomacy::convertDiplomacy(
 
 void V2::Diplomacy::output() const
 {
-	LOG(LogLevel::Debug) << "Writing diplomacy";
 	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/diplomacy");
 
 	std::ofstream alliances("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Alliances.txt");

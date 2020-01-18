@@ -17,7 +17,7 @@ namespace mappers
 	public:
 		FactoryTypeMapper();
 		std::map<std::string, FactoryType> getFactoryTypes() const { return factoryTypes; }
-		std::deque<V2::Factory> buildFactories() const;
+		std::deque<std::shared_ptr<V2::Factory>> buildFactories() const;
 
 	private:
 		std::map<std::string, FactoryType> factoryTypes;

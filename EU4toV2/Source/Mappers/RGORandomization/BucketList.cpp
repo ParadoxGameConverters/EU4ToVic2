@@ -21,7 +21,7 @@ mappers::BucketList::BucketList()
 	clearRegisteredKeywords();
 }
 
-void mappers::BucketList::putInBucket(V2Province* prov)
+void mappers::BucketList::putInBucket(std::shared_ptr<V2::Province> prov)
 {
 	const auto provClimate = prov->getClimate();
 	if (provClimate.empty())

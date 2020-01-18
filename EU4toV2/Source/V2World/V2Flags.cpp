@@ -13,11 +13,10 @@
 #include "../Mappers/CK2Titles/CK2TitleMapper.h"
 #include "../FlagUtils.h"
 
-const std::vector<std::string> V2Flags::flagFileSuffixes = { ".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga" };
+const std::vector<std::string> V2::V2Flags::flagFileSuffixes = { ".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga" };
 
-void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries, const mappers::CountryMappings& countryMapper)
+void V2::V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries, const mappers::CountryMappings& countryMapper)
 {
-	LOG(LogLevel::Debug) << "Initializing flags";
 	tagMap.clear();
 
 	static std::mt19937 generator(static_cast<int>(std::chrono::system_clock::now().time_since_epoch().count()));
@@ -64,7 +63,6 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries, co
 
 				if (randomCK2title && (usableFlagTags.find(*randomCK2title) != usableFlagTags.end()))
 				{
-					LOG(LogLevel::Info) << "Country " << i->first << " (" << i->second->getLocalName() << ") has been given the CK2 flag " << *randomCK2title;
 					tagMap[i->first] =* randomCK2title;
 					usableFlagTags.erase(*randomCK2title);
 					requiredTags.erase(i->first);
@@ -135,7 +133,7 @@ void V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries, co
 					V2Country* overlord = (*v2c)->getColonyOverlord();
 					std::string overlordName = overlord->getTag();
 					flag->setOverlord(overlordName);
-					LOG(LogLevel::Info) << "Country with tag " << (*v2c)->getTag() << " is now " << key << ", ruled by " << overlordName;
+					LOG(LogLevel::Info) << "\tCountry with tag " << (*v2c)->getTag() << " is now " << key << ", ruled by " << overlordName;
 
 					usableFlagTags.erase(flag->getName());
 					requiredTags.erase((*v2c)->getTag());
@@ -193,7 +191,7 @@ inline bool ends_with(std::string const & value, std::string const & ending)
 }
 
 
-void V2Flags::determineUseableFlags()
+void V2::V2Flags::determineUseableFlags()
 {
 	std::set<std::string> availableFlags = determineAvailableFlags();
 
@@ -233,7 +231,7 @@ void V2Flags::determineUseableFlags()
 }
 
 
-std::set<std::string> V2Flags::determineAvailableFlags()
+std::set<std::string> V2::V2Flags::determineAvailableFlags()
 {
 	std::set<std::string> availableFlags;
 
@@ -247,7 +245,7 @@ std::set<std::string> V2Flags::determineAvailableFlags()
 }
 
 
-void V2Flags::getRequiredTags(const std::map<std::string, V2Country*>& V2Countries)
+void V2::V2Flags::getRequiredTags(const std::map<std::string, V2Country*>& V2Countries)
 {
 	for (auto country: V2Countries)
 	{
@@ -256,7 +254,7 @@ void V2Flags::getRequiredTags(const std::map<std::string, V2Country*>& V2Countri
 }
 
 
-void V2Flags::mapTrivialTags()
+void V2::V2Flags::mapTrivialTags()
 {
 	std::set<std::string> usableFlagTagsRemaining;
 	std::set<std::string> requiredTagsRemaining;
@@ -279,9 +277,8 @@ void V2Flags::mapTrivialTags()
 }
 
 
-void V2Flags::output() const
+void V2::V2Flags::output() const
 {
-	LOG(LogLevel::Debug) << "Creating flags";
 	createOutputFolders();
 	copyFlags();
 	createCustomFlags();
@@ -289,7 +286,7 @@ void V2Flags::output() const
 }
 
 
-void V2Flags::createOutputFolders() const
+void V2::V2Flags::createOutputFolders() const
 {
 	if (!Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/gfx"))
 	{
@@ -304,7 +301,7 @@ void V2Flags::createOutputFolders() const
 }
 
 
-void V2Flags::copyFlags() const
+void V2::V2Flags::copyFlags() const
 {
 	const std::vector<std::string> availableFlagFolders = { "flags", theConfiguration.getVic2Path() + "/gfx/flags" };
 	for (auto tagMapping: tagMap)
@@ -331,7 +328,7 @@ void V2Flags::copyFlags() const
 }
 
 
-void V2Flags::createCustomFlags() const
+void V2::V2Flags::createCustomFlags() const
 {
 	std::string baseFlagFolder = "flags";
 
@@ -406,7 +403,7 @@ void V2Flags::createCustomFlags() const
 }
 
 
-void V2Flags::createColonialFlags() const
+void V2::V2Flags::createColonialFlags() const
 {
 	// I really shouldn't be hardcoding this...
 	std::set<std::string> UniqueColonialFlags{ "alyeska", "newholland", "acadia", "kanata", "novascotia", "novahollandia", "vinland", "newspain" };

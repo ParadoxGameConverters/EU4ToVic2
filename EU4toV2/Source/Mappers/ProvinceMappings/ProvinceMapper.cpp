@@ -50,7 +50,7 @@ mappers::ProvinceMappingsVersion mappers::ProvinceMapper::getMappingsVersion(con
 	{
 		if (saveVersion >= mappingsVersion->first)
 		{
-			LOG(LogLevel::Debug) << "Using version " << mappingsVersion->first << " mappings";
+			LOG(LogLevel::Info) << "\t-> Using version " << mappingsVersion->first << " mappings";
 			return mappingsVersion->second;
 		}
 	}

@@ -16,7 +16,7 @@
 
 mappers::CountryMappings::CountryMappings()
 {
-	LOG(LogLevel::Info) << "Getting country mappings";
+	LOG(LogLevel::Info) << "Parsing country mappings";
 	registerKeys();
 	parseFile("configurables/country_mappings.txt");
 	clearRegisteredKeywords();
@@ -66,7 +66,7 @@ void mappers::CountryMappings::getAvailableFlags()
 
 void mappers::CountryMappings::createMappings(
 	const EU4::World& srcWorld,
-	const std::map<std::string, V2Country*>& Vic2Countries,
+	const std::map<std::string, V2::V2Country*>& Vic2Countries,
 	const ProvinceMapper& provinceMapper
 ) {
 	LOG(LogLevel::Info) << "Creating country mappings";
@@ -111,7 +111,7 @@ bool mappers::CountryMappings::tagIsAlphaDigitDigit(const std::string& tag) cons
 	return (isalpha(tag[0]) && isdigit(tag[1]) && isdigit(tag[2]));
 }
 
-void mappers::CountryMappings::makeOneMapping(std::shared_ptr<EU4::Country> country, const std::map<std::string, V2Country*>& Vic2Countries)
+void mappers::CountryMappings::makeOneMapping(std::shared_ptr<EU4::Country> country, const std::map<std::string, V2::V2Country*>& Vic2Countries)
 {
 	std::string EU4Tag = country->getTag();
 
@@ -135,7 +135,7 @@ void mappers::CountryMappings::makeOneMapping(std::shared_ptr<EU4::Country> coun
 	}
 }
 
-bool mappers::CountryMappings::mapToExistingVic2Country(const std::string& possibleVic2Tag, const std::map<std::string, V2Country*>& Vic2Countries, const std::string& EU4Tag)
+bool mappers::CountryMappings::mapToExistingVic2Country(const std::string& possibleVic2Tag, const std::map<std::string, V2::V2Country*>& Vic2Countries, const std::string& EU4Tag)
 {
 	if ((Vic2Countries.find(possibleVic2Tag) != Vic2Countries.end()) && (!tagIsAlreadyAssigned(possibleVic2Tag)))
 	{
@@ -202,7 +202,7 @@ std::map<std::string, std::string>::iterator mappers::CountryMappings::ifValidGe
 bool mappers::CountryMappings::attemptColonialReplacement(
 	std::shared_ptr<EU4::Country> country,
 	const EU4::World& srcWorld,
-	const std::map<std::string, V2Country*>& Vic2Countries,
+	const std::map<std::string, V2::V2Country*>& Vic2Countries,
 	const ProvinceMapper& provinceMapper
 ) {
 	std::optional<int> Vic2Capital;
@@ -306,7 +306,7 @@ bool mappers::CountryMappings::inCorrectCultureGroup(const mappers::ColonyStruct
 	return true;
 }
 
-bool mappers::CountryMappings::tagIsAvailable(const mappers::ColonyStruct& colony, const std::map<std::string, V2Country*>& Vic2Countries)
+bool mappers::CountryMappings::tagIsAvailable(const mappers::ColonyStruct& colony, const std::map<std::string, V2::V2Country*>& Vic2Countries)
 {
 	if (Vic2Countries.find(colony.tag) == Vic2Countries.end())
 	{
@@ -383,28 +383,10 @@ std::optional<std::string> mappers::CountryMappings::getCK2Title(const std::stri
 		else
 		{
 			// I've found titles that don't exist in the ck2 name mapping, but do exist in the flagset (c_znojmo).
-			if (availableFlags.find("k_" + titlename) != availableFlags.end())
-			{
-				LOG(LogLevel::Debug) << "Country " << EU4Tag << " (" << name << ") has the CK2 title k_" << titlename;
-				return k_name;
-			}
-			else if (availableFlags.find(d_name) != availableFlags.end())
-			{
-				LOG(LogLevel::Debug) << "Country " << EU4Tag << " (" << name << ") has the CK2 title " << d_name;
-				return d_name;
-			}
-			else if (availableFlags.find(c_name) != availableFlags.end())
-			{
-				LOG(LogLevel::Debug) << "Country " << EU4Tag << " (" << name << ") has the CK2 title " << c_name;
-				return c_name;
-			}
+			if (availableFlags.find("k_" + titlename) != availableFlags.end()) return k_name;
+			if (availableFlags.find(d_name) != availableFlags.end()) return d_name;
+			if (availableFlags.find(c_name) != availableFlags.end()) return c_name;
 		}
 	}
-
-	if (ck2title)
-	{
-		LOG(LogLevel::Debug) << "Country " << EU4Tag << " (" << name << ") has the CK2 title " << *ck2title;
-	}
-
 	return ck2title;
 }

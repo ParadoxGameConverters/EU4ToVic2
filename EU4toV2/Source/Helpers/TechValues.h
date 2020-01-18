@@ -13,16 +13,19 @@ namespace mappers
 	class IdeaEffectMapper;
 	class TechgroupsMapper;
 }
-class V2Country;
+namespace V2
+{
+	class V2Country;
+}
 
 namespace helpers
 {
 	class TechValues
 	{
 	public:
-		TechValues(const std::map<std::string, V2Country*>& countries);
+		TechValues(const std::map<std::string, V2::V2Country*>& countries);
 
-		bool isValidCountryForTechConversion(const V2Country* country) const;
+		bool isValidCountryForTechConversion(const V2::V2Country* country) const;
 		double getNormalizedArmyTech(const EU4::Country& country) const;
 		double getNormalizedNavyTech(const EU4::Country& country) const;
 		double getNormalizedCommerceTech(const EU4::Country& country) const;

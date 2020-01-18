@@ -21,6 +21,7 @@
 
 EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
+	LOG(LogLevel::Info) << "*** Hello EU4, loading World. ***";
 	registerKeyword("EU4txt", [](const std::string& unused, std::istream& theStream) {});
 	registerKeyword("date", [](const std::string& dateText, std::istream& theStream)
 		{
@@ -76,7 +77,7 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 		});
 	registerKeyword("provinces", [this](const std::string& provincesText, std::istream& theStream) 
 		{
-			LOG(LogLevel::Info) << "- Loading Provinces";
+			LOG(LogLevel::Info) << "-> Loading Provinces";
 			modifierTypes.initialize();
 			provinces = std::make_unique<Provinces>(theStream, buildingTypes, modifierTypes);
 			std::optional<date> possibleDate = provinces->getProvince(1).getFirstOwnedDate();
@@ -87,65 +88,65 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 		});
 	registerKeyword("countries", [this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
 		{
-			LOG(LogLevel::Info) << "- Loading Countries";
+			LOG(LogLevel::Info) << "-> Loading Countries";
 			countries processedCountries(*version, theStream, ideaEffectMapper, cultureGroupsMapper);
 			auto theProcessedCountries = processedCountries.getTheCountries();
 			theCountries.swap(theProcessedCountries);
 		});
 	registerKeyword("diplomacy", [this](const std::string& unused, std::istream& theStream) 
 		{
-			LOG(LogLevel::Info) << "- Loading Diplomacy";
+			LOG(LogLevel::Info) << "-> Loading Diplomacy";
 			EU4::EU4Diplomacy theDiplomacy(theStream);
 			diplomacy = theDiplomacy.getAgreements();
-			LOG(LogLevel::Info) << "- Loaded " << diplomacy.size() << " agreements";
+			LOG(LogLevel::Info) << "-> Loaded " << diplomacy.size() << " agreements";
 		});
 	registerKeyword("map_area_data", [](const std::string& unused, std::istream& theStream) 
 		{
-			LOG(LogLevel::Info) << "- Loading Map Area Data";
+			LOG(LogLevel::Info) << "-> Loading Map Area Data";
 			commonItems::ignoreItem(unused, theStream);
-			LOG(LogLevel::Info) << " - Ignoring Map Area Data";
+			LOG(LogLevel::Info) << "<- Ignoring Map Area Data";
 		});
 	registerRegex("[A-Za-z0-9\\_]+", commonItems::ignoreItem);
 
-	LOG(LogLevel::Info) << "Verifying EU4 save.";
+	LOG(LogLevel::Info) << "-> Verifying EU4 save.";
 	verifySave(EU4SaveFileName);
 
-	LOG(LogLevel::Info) << "* Importing EU4 save *";
+	LOG(LogLevel::Info) << "-> Importing EU4 save.";
 	parseFile(EU4SaveFileName);
 	clearRegisteredKeywords();
 
-	LOG(LogLevel::Info) << " * Building world *";
-	LOG(LogLevel::Info) << "- Loading Empires";
+	LOG(LogLevel::Info) << "*** Building world ***";
+	LOG(LogLevel::Info) << "-> Loading Empires";
 	setEmpires();
 
-	LOG(LogLevel::Info) << "- Processing Province Info";
+	LOG(LogLevel::Info) << "-> Processing Province Info";
 	addProvinceInfoToCountries();
 
-	LOG(LogLevel::Info) << "- Eliminating Minorities";
+	LOG(LogLevel::Info) << "-> Eliminating Minorities";
 	dropMinoritiesFromCountries();
 
-	LOG(LogLevel::Info) << "- Determining Province Weights";
+	LOG(LogLevel::Info) << "-> Determining Province Weights";
 	provinces->determineTotalProvinceWeights(theConfiguration);
 
-	LOG(LogLevel::Info) << "- Loading Regions";
+	LOG(LogLevel::Info) << "-> Loading Regions";
 	loadRegions();
 
-	LOG(LogLevel::Info) << "- Reading Countries";
+	LOG(LogLevel::Info) << "-> Reading Countries";
 	readCommonCountries();
 
-	LOG(LogLevel::Info) << " - Setting Localizations";
+	LOG(LogLevel::Info) << "-> Setting Localizations";
 	setLocalisations();
 
-	LOG(LogLevel::Info) << "- Resolving Regiments";
+	LOG(LogLevel::Info) << "-> Resolving Regiments";
 	resolveRegimentTypes();
 
-	LOG(LogLevel::Info) << " - Merging Nations";
+	LOG(LogLevel::Info) << "-> Merging Nations";
 	mergeNations();
 
-	LOG(LogLevel::Info) << " - Viva la revolution!";
+	LOG(LogLevel::Info) << "-> Viva la revolution!";
 	loadRevolutionTarget();
 
-	LOG(LogLevel::Info) << " - Dropping Empty Nations";
+	LOG(LogLevel::Info) << "-> Dropping Empty Nations";
 	removeEmptyNations();
 	if (theConfiguration.getRemoveType() == Configuration::DEADCORES::DeadCores)
 	{
@@ -155,6 +156,7 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	{
 		removeLandlessNations();
 	}
+	LOG(LogLevel::Info) << "*** Good-bye EU4, you served us well. ***";
 }
 
 void EU4::World::verifySave(const std::string& EU4SaveFileName)
@@ -238,8 +240,6 @@ void EU4::World::addProvinceInfoToCountries()
 
 void EU4::World::loadRegions()
 {
-	LOG(LogLevel::Info) << "Parsing EU4 regions";
-
 	if (*version >= EU4::Version("1.14"))
 	{
 		loadEU4RegionsNewVersion();
@@ -337,7 +337,6 @@ void EU4::World::checkAllEU4CulturesMapped(const mappers::CultureMapper& culture
 
 void EU4::World::readCommonCountries()
 {
-	LOG(LogLevel::Info) << "Reading EU4 common/countries";
 	std::ifstream commonCountries(theConfiguration.getEU4Path() + "/common/country_tags/00_countries.txt");	// the data in the countries file
 	readCommonCountriesFile(commonCountries, theConfiguration.getEU4Path());
 	for (auto itr: theConfiguration.getEU4Mods())
@@ -406,7 +405,6 @@ void EU4::World::readCommonCountriesFile(std::istream& in, const std::string& ro
 
 void EU4::World::setLocalisations()
 {
-	LOG(LogLevel::Info) << "Reading localisation";
 	EU4Localisation localisation;
 
 	for (auto theCountry: theCountries)
@@ -430,7 +428,6 @@ void EU4::World::setLocalisations()
 
 void EU4::World::resolveRegimentTypes()
 {
-	LOG(LogLevel::Info) << "Resolving unit types.";
 	for (auto itr = theCountries.begin(); itr != theCountries.end(); ++itr)
 	{
 		itr->second->resolveRegimentTypes(unitTypeMapper);
@@ -439,7 +436,6 @@ void EU4::World::resolveRegimentTypes()
 
 void EU4::World::mergeNations()
 {
-	LOG(LogLevel::Info) << "Parsing merge nation rules.";
 	NationMergeParser mergeParser;
 	
 	if (mergeParser.getMergeDaimyos()) uniteJapan();
@@ -461,7 +457,7 @@ void EU4::World::mergeNations()
 
 void EU4::World::uniteJapan()
 {
-	LOG(LogLevel::Info) << "Uniting Japan";
+	LOG(LogLevel::Info) << "-> Uniting Japan";
 
 	std::shared_ptr<EU4::Country> japan;
 

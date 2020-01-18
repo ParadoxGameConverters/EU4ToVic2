@@ -31,7 +31,7 @@ class V2Province;
 
 
 
-class mockVic2Country: public V2Country
+class mockVic2Country: public V2::V2Country
 {
 	public:
 		MOCK_CONST_METHOD0(isCivilized, bool());

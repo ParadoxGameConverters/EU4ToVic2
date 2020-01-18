@@ -30,7 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
 TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfUncivilized)
 {
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 
 	helpers::TechValues techValues(countries);
 
@@ -43,7 +43,7 @@ TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfUncivilized)
 
 TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfNoProvinces)
 {
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 
 	helpers::TechValues techValues(countries);
 
@@ -58,7 +58,7 @@ TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfNoProvinces)
 
 TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfNoSourceCountry)
 {
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 
 	helpers::TechValues techValues(countries);
 
@@ -77,7 +77,7 @@ TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfNoSourceCountry)
 
 TEST(Helpers_TechValuesTests, validCountryForTechConversionIfAllChecksPass)
 {
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 
 	helpers::TechValues techValues(countries);
 
@@ -97,7 +97,7 @@ TEST(Helpers_TechValuesTests, validCountryForTechConversionIfAllChecksPass)
 
 TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithNoCountries)
 {
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 
 	helpers::TechValues techValues(countries);
 
@@ -127,7 +127,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithOn
 	provinces.insert(std::make_pair(1, province));
 	EXPECT_CALL(testCountry, getProvinces).WillOnce(testing::Return(provinces));
 	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	
 	helpers::TechValues techValues(countries);
@@ -175,7 +175,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneForHighestScore)
 	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
 	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	countries.insert(std::make_pair("MID", &testCountry3));
 	countries.insert(std::make_pair("LOW", &testCountry3));
@@ -225,7 +225,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsScaledScore)
 	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
 	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	countries.insert(std::make_pair("MID", &testCountry2));
 	countries.insert(std::make_pair("LOW", &testCountry3));
@@ -238,7 +238,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsScaledScore)
 
 TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithNoCountries)
 {
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 
 	helpers::TechValues techValues(countries);
 
@@ -268,7 +268,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithOn
 	provinces.insert(std::make_pair(1, province));
 	EXPECT_CALL(testCountry, getProvinces).WillOnce(testing::Return(provinces));
 	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 
 	helpers::TechValues techValues(countries);
@@ -316,7 +316,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneForHighestScore)
 	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
 	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	countries.insert(std::make_pair("MID", &testCountry3));
 	countries.insert(std::make_pair("LOW", &testCountry3));
@@ -366,7 +366,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsScaledScore)
 	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
 	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	countries.insert(std::make_pair("MID", &testCountry2));
 	countries.insert(std::make_pair("LOW", &testCountry3));
@@ -379,7 +379,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsScaledScore)
 
 TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWithNoCountries)
 {
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	helpers::TechValues techValues(countries);
 
 	mockEU4Country country;
@@ -408,7 +408,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWi
 	provinces.insert(std::make_pair(1, province));
 	EXPECT_CALL(testCountry, getProvinces).WillOnce(testing::Return(provinces));
 	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 
 	helpers::TechValues techValues(countries);
@@ -456,7 +456,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneForHighestScore
 	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
 	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	countries.insert(std::make_pair("MID", &testCountry3));
 	countries.insert(std::make_pair("LOW", &testCountry3));
@@ -506,7 +506,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsScaledScore)
 	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
 	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	countries.insert(std::make_pair("MID", &testCountry2));
 	countries.insert(std::make_pair("LOW", &testCountry3));
@@ -519,7 +519,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsScaledScore)
 
 TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWithNoCountries)
 {
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 
 	helpers::TechValues techValues(countries);
 
@@ -548,7 +548,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWit
 	provinces.insert(std::make_pair(1, province));
 	EXPECT_CALL(testCountry, getProvinces).WillOnce(testing::Return(provinces));
 	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 
 	helpers::TechValues techValues(countries);
@@ -596,7 +596,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneForHighestScore)
 	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
 	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	countries.insert(std::make_pair("MID", &testCountry3));
 	countries.insert(std::make_pair("LOW", &testCountry3));
@@ -646,7 +646,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsScaledScore)
 	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
 	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	countries.insert(std::make_pair("MID", &testCountry2));
 	countries.insert(std::make_pair("LOW", &testCountry3));
@@ -659,7 +659,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsScaledScore)
 
 TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWithNoCountries)
 {
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 
 	helpers::TechValues techValues(countries);
 
@@ -690,7 +690,7 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWi
 	provinces.insert(std::make_pair(1, province));
 	EXPECT_CALL(testCountry, getProvinces).WillOnce(testing::Return(provinces));
 	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 
 	helpers::TechValues techValues(countries);
@@ -738,7 +738,7 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneForHighestScore
 	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
 	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	countries.insert(std::make_pair("MID", &testCountry2));
 	countries.insert(std::make_pair("LOW", &testCountry3));
@@ -788,7 +788,7 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsScaledScore)
 	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
 	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
-	std::map<std::string, V2Country*> countries;
+	std::map<std::string, V2::V2Country*> countries;
 	countries.insert(std::make_pair("TST", &testCountry));
 	countries.insert(std::make_pair("MID", &testCountry2));
 	countries.insert(std::make_pair("LOW", &testCountry3));

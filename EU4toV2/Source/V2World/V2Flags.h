@@ -10,7 +10,7 @@
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/FlagColors/FlagColorMapper.h"
 
-
+namespace V2{
 class V2Country;
 
 class V2Flags 
@@ -48,5 +48,5 @@ class V2Flags
 };
 
 
-
+}
 #endif

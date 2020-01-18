@@ -3,7 +3,7 @@
 
 #include <random>
 #include <vector>
-#include "../../V2World/V2Province.h"
+#include "../../V2World/Province/Province.h"
 #include "Bucket.h"
 #include "newParser.h"
 
@@ -14,7 +14,7 @@ namespace mappers
 	{
 	public:
 		BucketList();
-		void putInBucket(V2Province* prov);
+		void putInBucket(std::shared_ptr<V2::Province> prov);
 		bool empty() const { return buckets.empty(); }
 		void shuffle();
 

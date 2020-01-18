@@ -14,7 +14,7 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConf
 	loadSteamWorkshopDirectory(theConfiguration);
 	loadCK2ExportDirectory(theConfiguration);
 
-	Log(LogLevel::Debug) << "Finding Used Mods";
+	Log(LogLevel::Info) << "\tFinding Used Mods";
 	for (auto usedMod: usedMods)
 	{
 		auto possibleModPath = getModPath(usedMod);
@@ -28,7 +28,7 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConf
 			}
 			else
 			{
-				LOG(LogLevel::Debug) << "EU4 Mod is at " << *possibleModPath;
+				LOG(LogLevel::Info) << "\t\tUsing EU4 Mod is " << *possibleModPath;
 				theConfiguration.addEU4Mod(*possibleModPath);
 			}
 		}
@@ -53,7 +53,7 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 	}
 	else
 	{
-		LOG(LogLevel::Debug) << "EU4 Documents directory is " << EU4DocumentsLoc;
+		LOG(LogLevel::Info) << "\tEU4 Documents directory is " << EU4DocumentsLoc;
 		loadModDirectory(EU4DocumentsLoc);
 	}
 }
@@ -71,7 +71,7 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 	}
 	else
 	{
-		LOG(LogLevel::Debug) << "Steam Workshop directory is " << steamWorkshopPath;
+		LOG(LogLevel::Info) << "\tSteam Workshop directory is " << steamWorkshopPath;
 		std::set<std::string> subfolders;
 		Utils::GetAllSubfolders(steamWorkshopPath, subfolders);
 		for (auto subfolder: subfolders)
@@ -88,7 +88,7 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 				{
 					possibleMods.insert(std::make_pair("mod/ugc_" + subfolder + ".mod", path));
 					possibleMods.insert(std::make_pair(theMod.getName(), path));
-					Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() << " at " << path;
+					Log(LogLevel::Info) << "\t\tFound potential mod named " << theMod.getName() << " at " << path;
 				}
 			}
 		}
@@ -106,7 +106,7 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 	}
 	else
 	{
-		LOG(LogLevel::Debug) << "CK2 export directory is " << CK2ExportLoc;
+		LOG(LogLevel::Info) << "\tCK2 export directory is " << CK2ExportLoc;
 		loadModDirectory(CK2ExportLoc);
 	}
 }
@@ -151,7 +151,7 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory));
 						possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory));
 						possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory));
-						Log(LogLevel::Debug) << "\tFound a mod named " << theMod.getName() <<
+						Log(LogLevel::Info) << "\t\tFound potential mod named " << theMod.getName() <<
 							" with a mod file at " << searchDirectory << "/mod/" + filename <<
 							" and itself at " << recordDirectory;
 					}

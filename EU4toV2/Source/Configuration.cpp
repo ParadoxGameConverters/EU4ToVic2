@@ -138,7 +138,7 @@ void Configuration::verifyEU4Path(const std::string& path, bool (*doesFolderExis
 	}
 	else
 	{
-		LOG(LogLevel::Debug) << "EU4 install path is " << path;
+		LOG(LogLevel::Info) << "\tEU4 install path is " << path;
 	}
 }
 
@@ -157,7 +157,7 @@ void Configuration::verifyVic2Path(const std::string& path, bool (*doesFolderExi
 	}
 	else
 	{
-		LOG(LogLevel::Debug) << "Victoria 2 install path is " << path;
+		LOG(LogLevel::Info) << "\tVictoria 2 install path is " << path;
 	}
 }
 
@@ -171,7 +171,7 @@ void Configuration::verifyVic2DocumentsPath(const std::string& path, bool (*does
 	}
 	else
 	{
-		LOG(LogLevel::Debug) << "Victoria 2 documents directory is " << path;
+		LOG(LogLevel::Info) << "\tVictoria 2 documents directory is " << path;
 	}
 }
 

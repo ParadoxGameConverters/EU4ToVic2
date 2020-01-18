@@ -1,8 +1,10 @@
 #include "TerrainDataMapper.h"
 #include "ParserHelpers.h"
+#include "Log.h"
 
 mappers::TerrainDataMapper::TerrainDataMapper()
 {
+	LOG(LogLevel::Info) << "Loading Terrain Data.";
 	registerKeys();
 	parseFile("configurables/terrain_data.txt");
 	clearRegisteredKeywords();
@@ -23,4 +25,11 @@ void mappers::TerrainDataMapper::registerKeys()
 			terrainMap.insert(std::make_pair(stoi(provID), terrainStr.getString()));
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+}
+
+std::optional<std::string> mappers::TerrainDataMapper::getTerrainForID(int provinceID) const
+{
+	const auto& terrainItr = terrainMap.find(provinceID);
+	if (terrainItr != terrainMap.end()) return terrainItr->second;
+	return std::nullopt;
 }

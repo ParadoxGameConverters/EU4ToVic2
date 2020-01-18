@@ -24,6 +24,7 @@ namespace EU4
 		);
 
 		bool hasBuilding(const std::string& building) const;
+		std::set<std::string> exportBuildings() const { return buildings.getBuildings(); }
 		bool hasGreatProject(const std::string& greatProject) const;
 		double getCulturePercent(const std::string& culture) const;
 

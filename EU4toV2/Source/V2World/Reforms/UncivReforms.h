@@ -3,10 +3,9 @@
 
 #include <ostream>
 
-class V2Country;
-
 namespace V2
 {	
+	class V2Country;
 	class UncivReforms {
 	public:
 		UncivReforms(int westernizationProgress, double milFocus, double socioEcoFocus, V2Country* country);

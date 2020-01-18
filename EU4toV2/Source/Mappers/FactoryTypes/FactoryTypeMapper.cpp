@@ -28,14 +28,14 @@ mappers::FactoryTypeMapper::FactoryTypeMapper()
 	}
 }
 
-std::deque<V2::Factory> mappers::FactoryTypeMapper::buildFactories() const
+std::deque<std::shared_ptr<V2::Factory>> mappers::FactoryTypeMapper::buildFactories() const
 {
-	std::deque<V2::Factory> factoryQueue;
+	std::deque<std::shared_ptr<V2::Factory>> factoryQueue;
 	for (auto factoryTypeItr : factoryTypes)
 	{
 		for (int counter = 0; counter < factoryTypeItr.second.getStartingCount(); ++counter)
 		{
-			V2::Factory newFactory(factoryTypeItr.second);
+			auto newFactory = std::make_shared<V2::Factory>(factoryTypeItr.second);
 			factoryQueue.push_back(newFactory);
 		}
 	}

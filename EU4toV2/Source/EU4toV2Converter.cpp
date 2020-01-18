@@ -20,7 +20,7 @@ void ConvertEU4ToVic2(const std::string& EU4SaveFileName)
 	mappers::TechGroupsMapper techGroupsMapper;
 
 	EU4::World sourceWorld(EU4SaveFileName, ideaEffectMapper);
-	V2World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper);
+	V2::V2World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper);
 
 	LOG(LogLevel::Info) << "* V2 construction: " << destWorld.getDuration() << " seconds";
 	LOG(LogLevel::Info) << "* Conversion complete *";
