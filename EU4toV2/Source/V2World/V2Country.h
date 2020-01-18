@@ -96,7 +96,6 @@ class V2Country : commonItems::parser
 		void setupPops(
 			double popWeightRatio,
 			int popConversionAlgorithm,
-			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
 			const mappers::ProvinceMapper& provinceMapper
 		);
 		void								setArmyTech(double normalizedScore);

@@ -12,7 +12,7 @@ namespace V2
 		Pop(const std::string& _type, int _size, const std::string& _culture, const std::string& _religion);
 		Pop(const std::string& _type, const mappers::MapperPop& mapperPop);
 
-		bool combine(const Pop& rhs);
+		bool combine(std::shared_ptr<Pop> rhs);
 		void changeSize(int delta) { size += delta; }
 		void incrementSupportedRegimentCount() { supportedRegiments++; }
 		void setCulture(std::string _culture) { culture = _culture; }
@@ -23,7 +23,7 @@ namespace V2
 		std::string getCulture() const { return culture; }
 		std::string getReligion() const { return religion; }
 		int getSupportedRegimentCount() const { return supportedRegiments; }
-		bool isSlavePop() const { return ((type == "slaves") || (culture.substr(0, 4) == "afro")); }
+		bool isSlavePop() const { return type == "slaves" || culture.substr(0, 4) == "afro"; }
 
 		friend std::ostream& operator<<(std::ostream& output, const Pop& pop);
 

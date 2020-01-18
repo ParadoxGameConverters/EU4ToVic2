@@ -48,6 +48,7 @@ class V2World
 		const mappers::PartyNameMapper& getPartyNameMapper() const { return partyNameMapper; }
 		const mappers::PartyTypeMapper& getPartyTypeMapper() const { return partyTypeMapper; }
 
+		friend std::ostream& operator<<(std::ostream& output, const std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>>& pops);
 
 	private:
 		void importProvinces();
@@ -146,7 +147,6 @@ class V2World
 		mappers::PortProvinces portProvincesMapper;
 };
 
-std::ostream& operator<<(std::ostream& output, const std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>>& pops);
 
 }
 #endif // V2WORLD_H_

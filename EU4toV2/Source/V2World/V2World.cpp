@@ -709,7 +709,6 @@ void V2::V2World::convertProvinces(const EU4::World& sourceWorld)
 				ownerItr->second->addProvince(Vic2Province.second);
 			}
 			Vic2Province.second->convertFromOldProvince(
-				sourceWorld.getAllReligions(),
 				oldProvince,
 				sourceWorld.getCountries()
 			);
@@ -1251,7 +1250,7 @@ void V2::V2World::setupPops(const EU4::World& sourceWorld)
 
 	for (std::map<std::string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
-		itr->second->setupPops(popWeightRatio, popAlgorithm, sourceWorld.getCountries(), provinceMapper);
+		itr->second->setupPops(popWeightRatio, popAlgorithm, provinceMapper);
 	}
 
 	if (theConfiguration.getPopShaping() != Configuration::POPSHAPES::Vanilla)

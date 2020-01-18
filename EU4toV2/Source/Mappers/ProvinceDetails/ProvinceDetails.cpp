@@ -1,6 +1,5 @@
 #include "ProvinceDetails.h"
 #include "ParserHelpers.h"
-#include "Log.h"
 
 mappers::ProvinceDetails::ProvinceDetails(const std::string& filename)
 {

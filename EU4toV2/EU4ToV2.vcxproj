@@ -321,7 +321,6 @@
     <ClCompile Include="Source\V2World\Output\outRegiment.cpp" />
     <ClCompile Include="Source\V2World\Output\outRelation.cpp" />
     <ClCompile Include="Source\V2World\Output\outUncivReforms.cpp" />
-    <ClCompile Include="Source\V2World\Output\outWorld.cpp" />
     <ClCompile Include="Source\V2World\Party\Party.cpp" />
     <ClCompile Include="Source\V2World\Pop\Pop.cpp" />
     <ClCompile Include="Source\V2World\Province\Province.cpp" />
@@ -489,7 +488,6 @@
     <ClInclude Include="Source\V2World\Output\outRegiment.h" />
     <ClInclude Include="Source\V2World\Output\outRelation.h" />
     <ClInclude Include="Source\V2World\Output\outUncivReforms.h" />
-    <ClInclude Include="Source\V2World\Output\outWorld.h" />
     <ClInclude Include="Source\V2World\Party\Party.h" />
     <ClInclude Include="Source\V2World\Pop\Pop.h" />
     <ClInclude Include="Source\V2World\Province\Province.h" />

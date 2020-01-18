@@ -53,7 +53,6 @@ void V2::Province::addMinorityPop(std::shared_ptr<Pop> minorityPop)
 void V2::Province::addCore(std::string newCore)
 {
 	// only add if not a territorial core/colony of the current owner
-	// TODO: seems suspicious, check the condition and use cases
 	if (!(newCore == details.owner && territorialCore))
 	{
 		details.cores.insert(newCore);
@@ -61,7 +60,6 @@ void V2::Province::addCore(std::string newCore)
 }
 
 void V2::Province::convertFromOldProvince(
-	const EU4::Religions& allReligions,
 	const EU4::Province* oldProvince,
 	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
 ) {
@@ -142,19 +140,13 @@ void V2::Province::addPopDemographic(const Demographic& d)
 
 void V2::Province::determineColonial()
 {
-	if (territorialCore && colonial == 0)
-	{
-		colonial = 2;
-	}
+	if (territorialCore && colonial == 0) colonial = 2;
 }
 
 int V2::Province::getTotalPopulation() const
 {
 	int total = 0;
-	for (const auto& pop: pops)
-	{
-		total += pop->getSize();
-	}
+	for (const auto& pop: pops) total += pop->getSize();
 	return total;
 }
 
@@ -191,15 +183,14 @@ std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>> V2::Provinc
 
 void V2::Province::doCreatePops(
 	double popWeightRatio,
-	V2::V2Country* _owner,
+	V2Country* _owner,
 	int popConversionAlgorithm,
-	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
 	const mappers::ProvinceMapper& provinceMapper
 ) {
 	// convert pops
 	for (auto demographic: demographics)
 	{
-		createPops(demographic, popWeightRatio, _owner, popConversionAlgorithm, theEU4Countries, provinceMapper);
+		createPops(demographic, popWeightRatio, _owner, popConversionAlgorithm, provinceMapper);
 	}
 	combinePops();
 
@@ -278,8 +269,7 @@ void V2::Province::doCreatePops(
 V2::Province::pop_points V2::Province::getPopPoints_1(
 	const Demographic& demographic,
 	double newPopulation,
-	const V2Country* _owner,
-	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+	const V2Country* _owner
 ) const  {
 	pop_points pts;
 
@@ -357,8 +347,7 @@ V2::Province::pop_points V2::Province::getPopPoints_1(
 V2::Province::pop_points V2::Province::getPopPoints_2(
 	const Demographic& demographic,
 	double newPopulation,
-	const V2Country* _owner,
-	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+	const V2Country* _owner
 ) const {
 	pop_points pts;
 
@@ -428,11 +417,10 @@ V2::Province::pop_points V2::Province::getPopPoints_2(
 }
 
 void V2::Province::createPops(
-	const V2::Demographic& demographic,
+	const Demographic& demographic,
 	double popWeightRatio,
 	const V2Country* _owner,
 	int popConversionAlgorithm,
-	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
 	const mappers::ProvinceMapper& provinceMapper
 ) {
 	long newPopulation = 0;
@@ -483,10 +471,10 @@ void V2::Province::createPops(
 	switch (popConversionAlgorithm)
 	{
 	case 1:
-		pts = getPopPoints_1(demographic, newPopulation, _owner, theEU4Countries);
+		pts = getPopPoints_1(demographic, newPopulation, _owner);
 		break;
 	case 2:
-		pts = getPopPoints_2(demographic, newPopulation, _owner, theEU4Countries);
+		pts = getPopPoints_2(demographic, newPopulation, _owner);
 		break;
 	default:
 		LOG(LogLevel::Error) << "Invalid pop conversion algorithm specified; not generating pops.";
@@ -498,7 +486,6 @@ void V2::Province::createPops(
 		pts.capitalists = 0;
 		pts.clerks = 0;
 		pts.craftsmen = 0;
-
 		pts.bureaucrats -= 5;
 	}
 
@@ -586,7 +573,7 @@ void V2::Province::combinePops()
 		auto rhs = lhs;
 		for (++rhs; rhs != pops.end(); ++rhs)
 		{
-			if ((*lhs)->combine(**rhs))
+			if ((*lhs)->combine(*rhs))
 			{
 				trashPops.push_back(*rhs);
 			}
@@ -640,10 +627,7 @@ std::shared_ptr<V2::Pop> V2::Province::getSoldierPopForArmy(bool force)
 	}
 
 	// no suitable pops
-	if (force)
-	{
-		return soldierPops[0];
-	}
+	if (force) return soldierPops[0];
 	return nullptr;
 }
 
@@ -660,7 +644,7 @@ std::vector<std::shared_ptr<V2::Pop>> V2::Province::getPops(const std::string& t
 
 bool V2::Province::popSortBySizePredicate(std::shared_ptr<Pop> pop1, std::shared_ptr<Pop> pop2)
 {
-	return (pop1->getSize() > pop2->getSize());
+	return pop1->getSize() > pop2->getSize();
 }
 
 // V2 requires 1000 for the first regiment and 3000 thereafter
@@ -668,7 +652,7 @@ bool V2::Province::popSortBySizePredicate(std::shared_ptr<Pop> pop1, std::shared
 int V2::Province::getRequiredPopForRegimentCount(int count)
 {
 	if (count == 0) return 0;
-	return (1033 + (count - 1) * 3100);
+	return 1033 + (count - 1) * 3100;
 }
 
 bool V2::Province::growSoldierPop(std::shared_ptr<Pop> pop)
@@ -696,10 +680,7 @@ bool V2::Province::growSoldierPop(std::shared_ptr<Pop> pop)
 				}
 			}
 		}
-		if (!foundSourcePop)
-		{
-			return false;
-		}
+		if (!foundSourcePop) return false;
 	}
 	pop->incrementSupportedRegimentCount();
 	return true;
@@ -712,25 +693,25 @@ std::string V2::Province::getRegimentName(REGIMENTTYPE chosenType)
 	str << " " << name << " "; // Hamburg, Lyon, etc
 	switch (chosenType)
 	{
-	case V2::REGIMENTTYPE::irregular:
+	case REGIMENTTYPE::irregular:
 		str << "Irregulars";
 		break;
-	case V2::REGIMENTTYPE::infantry:
+	case REGIMENTTYPE::infantry:
 		str << "Infantry";
 		break;
-	case V2::REGIMENTTYPE::cavalry:
+	case REGIMENTTYPE::cavalry:
 		str << "Cavalry";
 		break;
-	case V2::REGIMENTTYPE::artillery:
+	case REGIMENTTYPE::artillery:
 		str << "Artillery";
 		break;
-	case V2::REGIMENTTYPE::manowar:
+	case REGIMENTTYPE::manowar:
 		str << "Man'o'war";
 		break;
-	case V2::REGIMENTTYPE::frigate:
+	case REGIMENTTYPE::frigate:
 		str << "Frigate";
 		break;
-	case V2::REGIMENTTYPE::clipper_transport:
+	case REGIMENTTYPE::clipper_transport:
 		str << "Clipper Transport";
 		break;
 	}

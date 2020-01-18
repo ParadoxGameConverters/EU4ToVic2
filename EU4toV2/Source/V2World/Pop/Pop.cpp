@@ -6,11 +6,11 @@ V2::Pop::Pop(const std::string& _type, int _size, const std::string& _culture, c
 V2::Pop::Pop(const std::string& _type, const mappers::MapperPop& mapperPop):
 	type(_type), size(mapperPop.getSize()), culture(mapperPop.getCulture()), religion(mapperPop.getReligion()) {}
 
-bool V2::Pop::combine(const V2::Pop& rhs)
+bool V2::Pop::combine(std::shared_ptr<Pop> rhs)
 {
-	if (culture == rhs.culture && religion == rhs.religion && type == rhs.type)
+	if (culture == rhs->culture && religion == rhs->religion && type == rhs->type)
 	{
-		size += rhs.size;
+		size += rhs->size;
 		return true;
 	}
 	return false;
