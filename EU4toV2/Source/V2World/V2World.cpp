@@ -73,12 +73,13 @@ V2::V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMap
 	setupPops(sourceWorld);
 	LOG(LogLevel::Info) << "-> Merging Nations";
 	addUnions();
-	LOG(LogLevel::Info) << "-> Converting Armies";
+	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
 	convertArmies(sourceWorld);
 
-	LOG(LogLevel::Info) << "*** Le Dump ***";
+	LOG(LogLevel::Info) << "---> Le Dump <---";
 	auto potentialGPs = countCivilizedNations();
 	output(potentialGPs);
+	LOG(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
 
 void V2::V2World::shuffleRgos()
@@ -99,8 +100,6 @@ void V2::V2World::shuffleRgos()
 
 void V2::V2World::importProvinces()
 {
-	LOG(LogLevel::Info) << "Importing provinces";
-
 	std::set<std::string> provinceFilenames = discoverProvinceFilenames();
 	for (auto provinceFilename : provinceFilenames)
 	{
@@ -170,8 +169,6 @@ bool V2::V2World::isAProvinceLocalization(const std::string& line)
 
 void V2::V2World::importDefaultPops()
 {
-	LOG(LogLevel::Info) << "Importing historical pops.";
-
 	totalWorldPopulation = 0;
 
 	std::set<std::string> filenames;
@@ -348,7 +345,6 @@ void V2::V2World::findCoastalProvinces()
 
 void V2::V2World::importPotentialCountries()
 {
-	LOG(LogLevel::Info) << "Getting potential countries";
 	potentialCountries.clear();
 	dynamicCountries.clear();
 
@@ -408,7 +404,6 @@ void V2::V2World::initializeCultureMappers(const EU4::World& sourceWorld)
 
 void V2::V2World::convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
-	LOG(LogLevel::Info) << "Converting countries";
 	initializeCountries(sourceWorld, ideaEffectMapper);
 	convertNationalValues(ideaEffectMapper);
 	convertPrestige();
@@ -534,7 +529,7 @@ void V2::V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEff
 
 void V2::V2World::convertPrestige()
 {
-	LOG(LogLevel::Debug) << "Setting prestige";
+	LOG(LogLevel::Info) << "-> Setting prestige";
 
 	double highestScore = 0.0;
 	for (auto country: countries)
@@ -608,8 +603,6 @@ struct MTo1ProvinceComp
 
 void V2::V2World::convertProvinces(const EU4::World& sourceWorld)
 {
-	LOG(LogLevel::Info) << "Converting provinces";
-
 	for (auto Vic2Province : provinces)
 	{
 		auto EU4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(Vic2Province.first);
@@ -864,8 +857,6 @@ std::vector<V2::Demographic> V2::V2World::determineDemographics(
 
 void V2::V2World::setupColonies()
 {
-	LOG(LogLevel::Info) << "Setting colonies";
-
 	for (auto& countryItr : countries)
 	{
 		// find all land connections to capitals
@@ -936,13 +927,11 @@ void V2::V2World::setupColonies()
 static int stateId = 0;
 void V2::V2World::setupStates()
 {
-	LOG(LogLevel::Info) << "Creating states";
 	std::list<std::shared_ptr<V2::Province>> unassignedProvs;
 	for (std::map<int, std::shared_ptr<V2::Province>>::iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
 	{
 		unassignedProvs.push_back(itr->second);
 	}
-	LOG(LogLevel::Debug) << "Unassigned Provs:\t" << unassignedProvs.size();
 
 	std::list<std::shared_ptr<V2::Province>>::iterator iter;
 	while (unassignedProvs.size() > 0)
@@ -993,8 +982,6 @@ void V2::V2World::setupStates()
 
 void V2::V2World::convertUncivReforms(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper)
 {
-	LOG(LogLevel::Info) << "Setting unciv reforms";
-
 	// tech group
 
 	enum civConversion { older, newer };
@@ -1004,7 +991,6 @@ void V2::V2World::convertUncivReforms(const EU4::World& sourceWorld, const mappe
 	auto version18 = EU4::Version("1.18.0");
 	if (sourceWorld.getVersion() >= version18)
 	{
-		LOG(LogLevel::Info) << "New tech group conversion method";
 		techGroupAlgorithm  = newer;
 
 		// Find global max tech and institutions embraced
@@ -1046,7 +1032,6 @@ void V2::V2World::convertUncivReforms(const EU4::World& sourceWorld, const mappe
 	}
 	else
 	{
-		LOG(LogLevel::Info) << "Old tech group conversion method";
 		techGroupAlgorithm = older;
 	}
 
@@ -1077,7 +1062,6 @@ void V2::V2World::convertUncivReforms(const EU4::World& sourceWorld, const mappe
 
 void V2::V2World::convertTechs(const EU4::World& sourceWorld)
 {
-	LOG(LogLevel::Info) << "Converting techs";
 	helpers::TechValues techValues(countries);
 
 	for (auto countryItr: countries)
@@ -1097,10 +1081,6 @@ void V2::V2World::convertTechs(const EU4::World& sourceWorld)
 
 void V2::V2World::allocateFactories(const EU4::World& sourceWorld)
 {
-	// Construct factory factory
-
-	LOG(LogLevel::Info) << "Allocating starting factories";
-
 	// determine average production tech
 	auto sourceCountries = sourceWorld.getCountries();
 	double admMean = 0.0f;
@@ -1229,8 +1209,6 @@ void V2::V2World::allocateFactories(const EU4::World& sourceWorld)
 
 void V2::V2World::setupPops(const EU4::World& sourceWorld)
 {
-	LOG(LogLevel::Info) << "Creating pops";
-
 	long		my_totalWorldPopulation = static_cast<long>(0.55 * totalWorldPopulation);
 	double	popWeightRatio = my_totalWorldPopulation / sourceWorld.getTotalProvinceWeights();
 
@@ -1240,12 +1218,10 @@ void V2::V2World::setupPops(const EU4::World& sourceWorld)
 	auto version12 = EU4::Version("1.12.0");
 	if (sourceWorld.getVersion() >= version12)
 	{
-		LOG(LogLevel::Info) << "Using pop conversion algorithm for EU4 versions after 1.12.";
 		popAlgorithm = 2;
 	}
 	else
 	{
-		LOG(LogLevel::Info) << "Using pop conversion algorithm for EU4 versions prior to 1.12.";
 		popAlgorithm = 1;
 	}
 
@@ -1467,8 +1443,6 @@ void V2::V2World::addUnions()
 //#define TEST_V2_PROVINCES
 void V2::V2World::convertArmies(const EU4::World& sourceWorld)
 {
-	LOG(LogLevel::Info) << "Converting armies and navies";
-
 	// convert leaders and armies
 
 	for (std::map<std::string, V2Country*>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
@@ -1480,14 +1454,16 @@ void V2::V2World::convertArmies(const EU4::World& sourceWorld)
 
 void V2::V2World::output(unsigned int potentialGPs) const
 {
-	LOG(LogLevel::Info) << "Outputting mod";
+	LOG(LogLevel::Info) << "<- Copying Mod Template";
 	Utils::copyFolder("blankMod/output", "output/output");
+	LOG(LogLevel::Info) << "<- Moving Mod Template";
 	Utils::renameFolder("output/output", "output/" + theConfiguration.getOutputName());
+	LOG(LogLevel::Info) << "<- Crafting .mod File";
 	createModFile();
 
 	// Record converter version
 
-	LOG(LogLevel::Debug) << "Writing version";
+	LOG(LogLevel::Info) << "<- Writing version";
 	std::ofstream versionFile;
 
 	try
@@ -1502,7 +1478,7 @@ void V2::V2World::output(unsigned int potentialGPs) const
 	}
 
 	// Update bookmark starting dates
-
+	LOG(LogLevel::Info) << "<- Updating bookmarks";
 	std::string startDate = "<STARTDATE>";
 	std::string numGPs = "GREAT_NATIONS_COUNT = 8";
 
@@ -1545,7 +1521,7 @@ void V2::V2World::output(unsigned int potentialGPs) const
 	}
 
 	// Output common\countries.txt
-	LOG(LogLevel::Debug) << "Writing countries file";
+	LOG(LogLevel::Info) << "<- Creating countries.txt";
 	FILE* allCountriesFile;
 	if (fopen_s(&allCountriesFile, ("output/" + theConfiguration.getOutputName() + "/common/countries.txt").c_str(), "w") != 0)
 	{
@@ -1571,12 +1547,15 @@ void V2::V2World::output(unsigned int potentialGPs) const
 	fclose(allCountriesFile);
 
 	// Create flags for all new countries.
+	LOG(LogLevel::Info) << "-> Creating Flags";
 	V2Flags flags;
+	LOG(LogLevel::Info) << "-> Setting Flags";
 	flags.SetV2Tags(countries, countryMapper);
+	LOG(LogLevel::Info) << "<- Writing Flags";
 	flags.output();
 
 	// Create localisations for all new countries. We don't actually know the names yet so we just use the tags as the names.
-	LOG(LogLevel::Debug) << "Writing localisation text";
+	LOG(LogLevel::Info) << "<- Writing Localisation Text";
 	std::string localisationPath = "output/" + theConfiguration.getOutputName() + "/localisation";
 	if (!Utils::TryCreateFolder(localisationPath))
 	{
@@ -1587,7 +1566,7 @@ void V2::V2World::output(unsigned int potentialGPs) const
 
 	if (isRandomWorld)
 	{
-		LOG(LogLevel::Debug) << "It's a random world";
+		LOG(LogLevel::Info) << "It's a random world";
 		// we need to strip out the existing country names from the localisation file
 		std::ifstream sourceFile(source);
 		std::ofstream targetFile(dest);
@@ -1614,11 +1593,8 @@ void V2::V2World::output(unsigned int potentialGPs) const
 		if (fopen_s(&zeronamesfile, zeronamesfilepath.c_str(), "w") != 0)
 			fclose(zeronamesfile);
 	}
-	else
-	{
-		LOG(LogLevel::Debug) << "It's not a random world";
-	}
 
+	LOG(LogLevel::Info) << "<- Writting Localisation Names";
 	std::ofstream localisationFile(localisationPath + "/0_Names.csv", std::ofstream::app);
 	if (!localisationFile.is_open())
 	{
@@ -1636,7 +1612,7 @@ void V2::V2World::output(unsigned int potentialGPs) const
 	}
 	localisationFile.close();
 
-	LOG(LogLevel::Debug) << "Writing provinces";
+	LOG(LogLevel::Info) << "<- Writing Provinces";
 	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces");
 	for (auto province: provinces)
 	{
@@ -1653,16 +1629,19 @@ void V2::V2World::output(unsigned int potentialGPs) const
 		output << *province.second;
 		output.close();
 	}
-	LOG(LogLevel::Debug) << "Writing countries";
+	LOG(LogLevel::Info) << "<- Writing Countries";
 	for (std::map<std::string, V2Country*>::const_iterator itr = countries.begin(); itr != countries.end(); ++itr)
 	{
 		itr->second->output();
 	}
+	LOG(LogLevel::Info) << "<- Writting Diplomacy";
 	diplomacy.output();
 
+	LOG(LogLevel::Info) << "<- Writting Pops";
 	outputPops();
 
 	// verify countries got written
+	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
 	std::ifstream V2CountriesInput;
 	V2CountriesInput.open(("output/" + theConfiguration.getOutputName() + "/common/countries.txt").c_str());
 	if (!V2CountriesInput.is_open())
@@ -1714,6 +1693,7 @@ void V2::V2World::createModFile() const
 		LOG(LogLevel::Error) << "Could not create " << theConfiguration.getOutputName() << ".mod";
 		exit(-1);
 	}
+	LOG(LogLevel::Info) << "\t-> Writing to: " << "output/" + theConfiguration.getOutputName() + ".mod";
 
 	modFile << "name = \"Converted - " << theConfiguration.getOutputName() << "\"\n";
 	modFile << "path = \"mod/" << theConfiguration.getOutputName() << "\"\n";
@@ -1740,7 +1720,6 @@ void V2::V2World::createModFile() const
 
 void V2::V2World::outputPops() const
 {
-	LOG(LogLevel::Debug) << "Writing pops";
 	for (auto popRegion : popRegions)
 	{
 		std::ofstream popsFile;

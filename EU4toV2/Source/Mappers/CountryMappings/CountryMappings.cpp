@@ -16,7 +16,7 @@
 
 mappers::CountryMappings::CountryMappings()
 {
-	LOG(LogLevel::Info) << "Getting country mappings";
+	LOG(LogLevel::Info) << "Parsing country mappings";
 	registerKeys();
 	parseFile("configurables/country_mappings.txt");
 	clearRegisteredKeywords();
@@ -383,28 +383,10 @@ std::optional<std::string> mappers::CountryMappings::getCK2Title(const std::stri
 		else
 		{
 			// I've found titles that don't exist in the ck2 name mapping, but do exist in the flagset (c_znojmo).
-			if (availableFlags.find("k_" + titlename) != availableFlags.end())
-			{
-				LOG(LogLevel::Debug) << "Country " << EU4Tag << " (" << name << ") has the CK2 title k_" << titlename;
-				return k_name;
-			}
-			else if (availableFlags.find(d_name) != availableFlags.end())
-			{
-				LOG(LogLevel::Debug) << "Country " << EU4Tag << " (" << name << ") has the CK2 title " << d_name;
-				return d_name;
-			}
-			else if (availableFlags.find(c_name) != availableFlags.end())
-			{
-				LOG(LogLevel::Debug) << "Country " << EU4Tag << " (" << name << ") has the CK2 title " << c_name;
-				return c_name;
-			}
+			if (availableFlags.find("k_" + titlename) != availableFlags.end()) return k_name;
+			if (availableFlags.find(d_name) != availableFlags.end()) return d_name;
+			if (availableFlags.find(c_name) != availableFlags.end()) return c_name;
 		}
 	}
-
-	if (ck2title)
-	{
-		LOG(LogLevel::Debug) << "Country " << EU4Tag << " (" << name << ") has the CK2 title " << *ck2title;
-	}
-
 	return ck2title;
 }

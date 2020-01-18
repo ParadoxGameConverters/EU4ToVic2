@@ -36,7 +36,7 @@ int main(const int argc, const char * argv[])
 	{
 		LOG(LogLevel::Info) << "Converter version 1.0K-prerelease \"Kurland\" - compatible with 1.29 and previous";
 		LOG(LogLevel::Info) << "Built " << __TIMESTAMP__;
-		LOG(LogLevel::Debug) << "Current directory is " << Utils::getCurrentDirectory();
+		LOG(LogLevel::Info) << "\tCurrent directory is " << Utils::getCurrentDirectory();
 
 		std::string EU4SaveFileName;
 		if (argc >= 2)

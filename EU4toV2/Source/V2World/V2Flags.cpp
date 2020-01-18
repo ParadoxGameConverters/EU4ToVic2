@@ -17,7 +17,6 @@ const std::vector<std::string> V2::V2Flags::flagFileSuffixes = { ".tga", "_commu
 
 void V2::V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries, const mappers::CountryMappings& countryMapper)
 {
-	LOG(LogLevel::Debug) << "Initializing flags";
 	tagMap.clear();
 
 	static std::mt19937 generator(static_cast<int>(std::chrono::system_clock::now().time_since_epoch().count()));
@@ -64,7 +63,6 @@ void V2::V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries
 
 				if (randomCK2title && (usableFlagTags.find(*randomCK2title) != usableFlagTags.end()))
 				{
-					LOG(LogLevel::Info) << "Country " << i->first << " (" << i->second->getLocalName() << ") has been given the CK2 flag " << *randomCK2title;
 					tagMap[i->first] =* randomCK2title;
 					usableFlagTags.erase(*randomCK2title);
 					requiredTags.erase(i->first);
@@ -135,7 +133,7 @@ void V2::V2Flags::SetV2Tags(const std::map<std::string, V2Country*>& V2Countries
 					V2Country* overlord = (*v2c)->getColonyOverlord();
 					std::string overlordName = overlord->getTag();
 					flag->setOverlord(overlordName);
-					LOG(LogLevel::Info) << "Country with tag " << (*v2c)->getTag() << " is now " << key << ", ruled by " << overlordName;
+					LOG(LogLevel::Info) << "\tCountry with tag " << (*v2c)->getTag() << " is now " << key << ", ruled by " << overlordName;
 
 					usableFlagTags.erase(flag->getName());
 					requiredTags.erase((*v2c)->getTag());
@@ -281,7 +279,6 @@ void V2::V2Flags::mapTrivialTags()
 
 void V2::V2Flags::output() const
 {
-	LOG(LogLevel::Debug) << "Creating flags";
 	createOutputFolders();
 	copyFlags();
 	createCustomFlags();

@@ -8,7 +8,7 @@
 
 mappers::FactoryInventionMapper::FactoryInventionMapper()
 {
-	LOG(LogLevel::Info) << "\tLoading V2 Factory Inventions";
+	LOG(LogLevel::Info) << "\Parsing V2 Factory Inventions";
 	registerKeys();
 	std::set<std::string> filenames;
 	Utils::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/inventions/", filenames);

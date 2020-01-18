@@ -4,7 +4,7 @@
 
 mappers::FactoryStartingCounts::FactoryStartingCounts()
 {
-	LOG(LogLevel::Info) << "\tParsing starting factories.";
+	LOG(LogLevel::Info) << "Parsing starting factories.";
 
 	registerRegex("[a-z_]+", [this](const std::string& factoryName, std::istream& theStream)
 		{
