@@ -36,7 +36,6 @@
 #include <set>
 #include <time.h>
 
-
 namespace V2{
 class V2World
 {
@@ -47,8 +46,6 @@ class V2World
 		double getDuration() const { return difftime(std::time(0), begin); }
 		const mappers::PartyNameMapper& getPartyNameMapper() const { return partyNameMapper; }
 		const mappers::PartyTypeMapper& getPartyTypeMapper() const { return partyTypeMapper; }
-
-		friend std::ostream& operator<<(std::ostream& output, const std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>>& pops);
 
 	private:
 		void importProvinces();

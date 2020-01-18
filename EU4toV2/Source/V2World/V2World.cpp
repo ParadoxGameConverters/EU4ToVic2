@@ -24,6 +24,7 @@
 #include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
+#include "Output/outProvince.h"
 
 V2::V2World::V2World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper)
 {
