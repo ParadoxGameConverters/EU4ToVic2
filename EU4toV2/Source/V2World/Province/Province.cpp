@@ -434,19 +434,13 @@ void V2::Province::createPops(
 		break;
 
 	case Configuration::POPSHAPES::PopShaping:
-		if (spentProvinceModifier != 0)
-		{
-			// We have already created pops here using another EU4 province. We need to compound the push and weight modifiers.
-			provinceDevModifier += spentProvinceModifier;
-		}
-		spentProvinceModifier += (devpushMod + weightMod) * shapeMod; // This will be used if we come here again.
 		newPopulation = static_cast<long>(vanillaPopulation * provinceDevModifier);
 		break;
 
 	case Configuration::POPSHAPES::Extreme:
 		newPopulation = static_cast<long>(static_cast<double>(details.lifeRating) / 10 * popWeightRatio * totalWeight);
 
-		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(provinceID);
+		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(eu4ID);
 		int numOfV2Provs = Vic2Provinces.size();
 		if (numOfV2Provs > 1)
 		{
@@ -803,6 +797,4 @@ bool V2Province::hasCulture(const std::string& culture, float percentOfPopulatio
 
 	return ((float)culturePops / getTotalPopulation()) >= percentOfPopulation;
 }
-
-
 */

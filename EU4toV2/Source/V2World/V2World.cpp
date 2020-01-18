@@ -1214,7 +1214,7 @@ void V2::V2World::setupPops(const EU4::World& sourceWorld)
 
 	//ofstream output_file("Data.csv");
 
-	int popAlgorithm = 0;
+	int popAlgorithm;
 	auto version12 = EU4::Version("1.12.0");
 	if (sourceWorld.getVersion() >= version12)
 	{
@@ -1230,19 +1230,18 @@ void V2::V2World::setupPops(const EU4::World& sourceWorld)
 		itr->second->setupPops(popWeightRatio, popAlgorithm, provinceMapper);
 	}
 
-	if (theConfiguration.getPopShaping() != Configuration::POPSHAPES::Vanilla)
+	LOG(LogLevel::Info) << "Vanilla world population: " << totalWorldPopulation;
+	if (theConfiguration.getPopShaping() == Configuration::POPSHAPES::Extreme)
 	{
-		LOG(LogLevel::Info) << "Total world population: " << my_totalWorldPopulation;
+		LOG(LogLevel::Info) << "\tModified world population: " << my_totalWorldPopulation;
+		LOG(LogLevel::Info) << "\tTotal world weight sum: " << sourceWorld.getTotalProvinceWeights();
+		LOG(LogLevel::Info) << "\t" << my_totalWorldPopulation << " / " << sourceWorld.getTotalProvinceWeights();
+		LOG(LogLevel::Info) << "\tPopulation per weight point is: " << popWeightRatio;
 	}
-	else
-	{
-		LOG(LogLevel::Info) << "Total world population: " << totalWorldPopulation;
-	}
-	LOG(LogLevel::Info) << "Total world weight sum: " << sourceWorld.getTotalProvinceWeights();
-	LOG(LogLevel::Info) << my_totalWorldPopulation << " / " << sourceWorld.getTotalProvinceWeights();
-	LOG(LogLevel::Info) << "Population per weight point is: " << popWeightRatio;
-
 	long newTotalPopulation = 0;
+	for (auto province: provinces) newTotalPopulation += province.second->getTotalPopulation();
+	LOG(LogLevel::Info) << "New total world population: " << newTotalPopulation;
+
 	// Heading
 	/*output_file << "EU ID"		<< ",";
 	output_file << "EU NAME"	<< ",";
@@ -1258,7 +1257,7 @@ void V2::V2World::setupPops(const EU4::World& sourceWorld)
 	output_file << "V2 ID"		<< ",";
 	output_file << "V2 NAME"	<< ",";
 	output_file << "CALC POPS"	<< ",";
-	output_file << "POPS"		<< endl;*/
+	output_file << "POPS"		<< endl;
 	for (auto itr = provinces.begin(); itr != provinces.end(); itr++)
 	{
 		// EU4ID, EU4Name, EU4TAG, BTX, TAX, PROD, MP, BUILD, TRADE, WEIGHT, DESTV2, V2Name, POPs //
@@ -1382,7 +1381,7 @@ void V2::V2World::setupPops(const EU4::World& sourceWorld)
 	}
 	LOG(LogLevel::Info) << "New total world population: " << newTotalPopulation;
 
-	//output_file.close();
+	//output_file.close();*/
 }
 
 

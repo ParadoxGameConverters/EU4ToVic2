@@ -115,7 +115,6 @@ namespace V2
 		bool sameContinent = false;
 		double devpushMod = 0.0;
 		double weightMod = 0.0;
-		double spentProvinceModifier = 0.0; //Store old popshaping modifier for NEU4-to-1V2 conversions;
 		double totalWeight = 0.0;
 		std::set<std::string> importedBuildings;
 		std::set<std::string> importedIdeas;
