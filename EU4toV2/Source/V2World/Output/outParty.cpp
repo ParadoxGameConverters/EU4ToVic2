@@ -1,4 +1,5 @@
-#include "outParty.h"
+#include <ostream>
+#include "../Party/Party.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const Party& party)
 {

@@ -115,6 +115,7 @@ class V2World
 		long totalWorldPopulation = 0;
 		bool isRandomWorld = false;
 		int techGroupAlgorithm = 0;
+		int stateId = 0; // ID counter for generated states
 
 		std::time_t begin = std::time(0);
 

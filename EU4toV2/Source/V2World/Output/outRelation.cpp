@@ -1,4 +1,5 @@
-#include "outRelation.h"
+#include <ostream>
+#include "../Diplomacy/Relation.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const Relation& relation)
 {

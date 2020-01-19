@@ -1,4 +1,5 @@
-#include "outAgreement.h"
+#include <ostream>
+#include "../Diplomacy/Agreement.h"
 
 std::ostream& V2::operator<<(std::ostream& output, Agreement agreement)
 {

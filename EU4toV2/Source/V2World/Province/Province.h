@@ -154,6 +154,8 @@ namespace V2
 		static int getRequiredPopForRegimentCount(int count);
 		bool growSoldierPop(std::shared_ptr<Pop> pop);
 	};	
+
+	std::ostream& operator<<(std::ostream& output, const std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>>& pops);
 }
 
 #endif // PROVINCE_H

@@ -1,4 +1,5 @@
-#include "outArmy.h"
+#include <ostream>
+#include "../Army/Army.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const Army& army)
 {

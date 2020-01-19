@@ -1,4 +1,5 @@
-#include "outFactory.h"
+#include <ostream>
+#include "../Factory/Factory.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const Factory& factory)
 {

@@ -1,4 +1,5 @@
-#include "outLocalisation.h"
+#include <ostream>
+#include "../Localisation/Localisation.h"
 
 std::ostream& V2::operator<<(std::ostream& out, const Localisation& localisation)
 {

@@ -878,20 +878,11 @@
     <ClInclude Include="Source\V2World\Leader\Leader.h">
       <Filter>Vic2World\Leader</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outLeader.h">
-      <Filter>Vic2World\Output</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outParty.h">
-      <Filter>Vic2World\Output</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Party\Party.h">
       <Filter>Vic2World\Party</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\Factory\Factory.h">
       <Filter>Vic2World\Factory</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outFactory.h">
-      <Filter>Vic2World\Output</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\PartyTypes\PartyType.h">
       <Filter>Mappers\PartyTypes</Filter>
@@ -905,12 +896,6 @@
     <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h">
       <Filter>Vic2World\Diplomacy</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outAgreement.h">
-      <Filter>Vic2World\Output</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outLocalisation.h">
-      <Filter>Vic2World\Output</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Localisation\Localisation.h">
       <Filter>Vic2World\Localisation</Filter>
     </ClInclude>
@@ -920,23 +905,11 @@
     <ClInclude Include="Source\V2World\Reforms\UncivReforms.h">
       <Filter>Vic2World\Reforms</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outReforms.h">
-      <Filter>Vic2World\Output</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outUncivReforms.h">
-      <Filter>Vic2World\Output</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outRelation.h">
-      <Filter>Vic2World\Output</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Diplomacy\Relation.h">
       <Filter>Vic2World\Diplomacy</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\Pop\Pop.h">
       <Filter>Vic2World\Pop</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outPop.h">
-      <Filter>Vic2World\Output</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\Pops\MapperPop.h">
       <Filter>Mappers\Pops</Filter>
@@ -947,17 +920,8 @@
     <ClInclude Include="Source\V2World\Army\Regiment.h">
       <Filter>Vic2World\Army</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outArmy.h">
-      <Filter>Vic2World\Output</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outRegiment.h">
-      <Filter>Vic2World\Output</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Province\Province.h">
       <Filter>Vic2World\Province</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Output\outProvince.h">
-      <Filter>Vic2World\Output</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetails.h">
       <Filter>Mappers\ProvinceDetails</Filter>
