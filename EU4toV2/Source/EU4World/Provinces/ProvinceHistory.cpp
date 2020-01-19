@@ -171,7 +171,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 		}
 		else if (religionEventDate < cultureEventDate)
 		{
-			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
+			decayPopRatios(lastLoopDate, religionEventDate, currentRatio);
 			popRatios.push_back(currentRatio);
 			for (auto& itr: popRatios)
 			{
