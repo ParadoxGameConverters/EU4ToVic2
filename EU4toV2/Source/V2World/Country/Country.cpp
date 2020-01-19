@@ -13,6 +13,7 @@
 #include "../../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../../Mappers/RegimentCosts/RegimentCostsMapper.h"
 #include "../Flags/Flags.h"
+#include <cmath>
 
 V2::Country::Country(
 	const std::string& countriesFileLine, 
