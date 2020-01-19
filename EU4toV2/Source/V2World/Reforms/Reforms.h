@@ -2,16 +2,24 @@
 #define REFORMS_H
 
 #include <memory>
-#include "../../EU4World/Country/EU4Country.h"
 
+namespace EU4
+{
+	class Country;
+}
+namespace mappers
+{
+	class CountryDetails;
+}
 
 namespace V2
 {	
-	class V2Country;
+	class Country;
 	class Reforms
 	{
 	public:
-		Reforms(const V2Country*, const std::shared_ptr<EU4::Country>);
+		Reforms() = default;
+		Reforms(const mappers::CountryDetails& details, std::shared_ptr<EU4::Country>);
 		
 		friend std::ostream& operator<<(std::ostream& output, const Reforms& reforms);
 
@@ -25,6 +33,7 @@ namespace V2
 		double press_rights = 5.0;
 		double trade_unions = 5.0;
 		double political_parties = 5.0;
+		bool initialized = false;
 	};
 }
 

@@ -28,8 +28,8 @@ namespace V2
 		static std::string convert(const std::string&);
 		static std::string stripAccents(const std::string&);
 
-		std::string getLocalName();
-		std::string getLocalAdjective();
+		std::string getLocalName() const;
+		std::string getLocalAdjective() const;
 
 	private:
 		static const size_t numLanguages = 14;

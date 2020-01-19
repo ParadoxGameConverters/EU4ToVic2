@@ -5,11 +5,12 @@
 #include "Relation.h"
 #include "../../EU4World/Country/EU4Country.h"
 #include <fstream>
+#include "../Country/Country.h"
 
 void V2::Diplomacy::convertDiplomacy(
 	std::vector<EU4::EU4Agreement> eu4agreements,
 	const mappers::CountryMappings& countryMapper, 
-	std::map<std::string, V2Country*>& countries)
+	std::map<std::string, std::shared_ptr<Country>>& countries)
 {
 	for (auto& agreement : eu4agreements)
 	{
@@ -34,8 +35,8 @@ void V2::Diplomacy::convertDiplomacy(
 			continue;
 		}
 		
-		auto& r1 = country1->second->getRelation(V2Tag2);
-		auto& r2 = country2->second->getRelation(V2Tag1);
+		auto r1 = country1->second->getRelation(V2Tag2);
+		auto r2 = country2->second->getRelation(V2Tag1);
 
 		if (agreement.getAgreementType() == "colonial" || agreement.getAgreementType() == "colony")
 		{

@@ -14,7 +14,7 @@
 namespace V2
 {
 	enum class REGIMENTTYPE;
-	class V2Country;
+	class Country;
 	
 	struct Demographic
 	{
@@ -78,7 +78,7 @@ namespace V2
 		);
 		void doCreatePops(
 			double popWeightRatio,
-			V2Country* _owner,
+			Country* _owner,
 			int popConversionAlgorithm,
 			const mappers::ProvinceMapper& provinceMapper
 		);
@@ -137,15 +137,15 @@ namespace V2
 		pop_points getPopPoints_1(
 			const Demographic& demographic,
 			double newPopulation,
-			const V2Country* _owner) const; // EU4 1.0-1.11
+			const Country* _owner) const; // EU4 1.0-1.11
 		pop_points getPopPoints_2(
 			const Demographic& demographic,
 			double newPopulation,
-			const V2Country* _owner) const; // EU4 1.12 and newer
+			const Country* _owner) const; // EU4 1.12 and newer
 		void createPops(
 			const Demographic& demographic,
 			double popWeightRatio,
-			const V2Country* _owner,
+			const Country* _owner,
 			int popConversionAlgorithm,
 			const mappers::ProvinceMapper& provinceMapper
 		);

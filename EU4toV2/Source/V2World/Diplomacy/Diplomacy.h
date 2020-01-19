@@ -5,10 +5,10 @@
 #include "../EU4toV2/Source/EU4World/Diplomacy/EU4Agreement.h"
 #include <vector>
 #include "../../Mappers/CountryMappings/CountryMappings.h"
-#include "../V2Country.h"
 
 namespace V2
 {
+	class Country;
 	class Diplomacy
 	{
 	public:
@@ -17,7 +17,7 @@ namespace V2
 		void convertDiplomacy(
 		std::vector<EU4::EU4Agreement> agreements,
 		const mappers::CountryMappings& countryMapper, 
-		std::map<std::string, V2Country*>& countries);
+		std::map<std::string, std::shared_ptr<Country>>& countries);
 
 	private:
 		std::vector<Agreement> agreements;

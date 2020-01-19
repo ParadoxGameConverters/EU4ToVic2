@@ -5,7 +5,7 @@
 #include <random>
 #include <fstream>
 #include "../../EU4World/Country/EU4Country.h"
-#include "../V2Country.h"
+#include "../Country/Country.h"
 #include "../../Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -14,7 +14,7 @@
 
 const std::vector<std::string> V2::Flags::flagFileSuffixes = { ".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga" };
 
-void V2::Flags::setV2Tags(const std::map<std::string, V2Country*>& V2Countries, const mappers::CountryMappings& countryMapper)
+void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>& V2Countries, const mappers::CountryMappings& countryMapper)
 {
 	tagMap.clear();
 
@@ -24,7 +24,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, V2Country*>& V2Countries, 
 	getRequiredTags(V2Countries);
 	mapTrivialTags();
 
-	std::vector<V2Country*> colonialFail;
+	std::vector<std::shared_ptr<Country>> colonialFail;
 	
 	// Get the CK2 and colonial flags.
 	for (const auto& country: V2Countries)
@@ -84,7 +84,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, V2Country*>& V2Countries, 
 
 	for (auto country : V2Countries)
 	{
-		V2Country* overlord = country.second->getColonyOverlord();
+		std::shared_ptr<Country> overlord = country.second->getColonyOverlord();
 		if (!overlord) continue;
 
 		std::string name = country.second->getLocalName();
@@ -127,7 +127,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, V2Country*>& V2Countries, 
 				if (region.empty() || flag->getRegion() == region)
 				{
 					colonialFlagMapping[(*failCountryItr)->getTag()] = *flag;
-					V2Country* overlord = (*failCountryItr)->getColonyOverlord();
+					std::shared_ptr<Country> overlord = (*failCountryItr)->getColonyOverlord();
 					flag->setOverlord(overlord->getTag());
 					LOG(LogLevel::Info) << "\tCountry with tag " << (*failCountryItr)->getTag() << " is now " << key << ", ruled by " << overlord->getTag();
 
@@ -232,7 +232,7 @@ std::set<std::string> V2::Flags::determineAvailableFlags()
 	return availableFlags;
 }
 
-void V2::Flags::getRequiredTags(const std::map<std::string, V2Country*>& V2Countries)
+void V2::Flags::getRequiredTags(const std::map<std::string, std::shared_ptr<Country>>& V2Countries)
 {
 	for (auto country: V2Countries)
 	{

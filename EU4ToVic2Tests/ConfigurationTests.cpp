@@ -256,26 +256,6 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2DocumentsPathCanBeSet)
 }
 
 
-TEST(EU4ToVic2_ConfigurationTests, Vic2GameTypeDefaultsBlank)
-{
-	Configuration testConfiguration;
-	std::stringstream input("");
-	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
-
-	ASSERT_EQ(testConfiguration.getVic2Gametype(), "HOD");
-}
-
-
-TEST(EU4ToVic2_ConfigurationTests, Vic2GameTypeCanBeSet)
-{
-	Configuration testConfiguration;
-	std::stringstream input("Vic2gametype = HoD-NNM");
-	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
-
-	ASSERT_EQ(testConfiguration.getVic2Gametype(), "HoD-NNM");
-}
-
-
 TEST(EU4ToVic2_ConfigurationTests, ResetProvincesDefaultsNo)
 {
 	Configuration testConfiguration;

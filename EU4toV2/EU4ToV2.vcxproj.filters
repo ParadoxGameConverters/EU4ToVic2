@@ -46,9 +46,6 @@
     <ClCompile Include="Source\EU4World\Regions\Regions.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2Country.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2World.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -484,6 +481,15 @@
     <ClCompile Include="Source\Helpers\targa.cpp">
       <Filter>Helpers</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Country\Country.cpp">
+      <Filter>Vic2World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CountryDetails\CountryDetails.cpp">
+      <Filter>Mappers\CountryDetails</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outCountry.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -529,9 +535,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Region.h">
       <Filter>EU4World\Regions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Country.h">
-      <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2World.h">
       <Filter>Vic2World</Filter>
@@ -938,6 +941,12 @@
     <ClInclude Include="Source\Helpers\targa.h">
       <Filter>Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Country\Country.h">
+      <Filter>Vic2World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CountryDetails\CountryDetails.h">
+      <Filter>Mappers\CountryDetails</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1140,6 +1149,12 @@
     </Filter>
     <Filter Include="Vic2World\Flags">
       <UniqueIdentifier>{70bd31d2-c2e9-4b77-a432-1f4aedcd45c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Country">
+      <UniqueIdentifier>{67358893-5f79-4f87-a13f-7a39d801f0c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CountryDetails">
+      <UniqueIdentifier>{3d12ed24-e8e0-46c8-8fba-879043624d06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

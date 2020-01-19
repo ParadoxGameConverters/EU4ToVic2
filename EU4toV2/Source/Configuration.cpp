@@ -62,10 +62,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		Vic2DocumentsPath = path.getString();
 		verifyVic2DocumentsPath(Vic2DocumentsPath, doesFolderExist);
 	});
-	registerKeyword(std::regex("Vic2gametype"), [this](const std::string& unused, std::istream& theStream){
-		commonItems::singleString gameTypeString(theStream);
-		Vic2Gametype = gameTypeString.getString();
-	});
+	registerKeyword(std::regex("Vic2gametype"), commonItems::ignoreItem);
 	registerKeyword(std::regex("resetProvinces"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleString resetProvincesString(theStream);
 	});

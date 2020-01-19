@@ -1,8 +1,8 @@
 #include "UncivReforms.h"
-#include "../V2Country.h"
+#include "../Country/Country.h"
 #include "../Province/Province.h"
 
-V2::UncivReforms::UncivReforms(int westernizationProgress, double milFocus, double socioEcoFocus, V2Country* country)
+V2::UncivReforms::UncivReforms(int westernizationProgress, double milFocus, double socioEcoFocus, Country* country)
 {
 	int westernizationCost[16];
 	westernizationCost[0] = 15;
@@ -99,9 +99,6 @@ V2::UncivReforms::UncivReforms(int westernizationProgress, double milFocus, doub
 			remainingProgress -= westernizationCost[i];
 		}
 	}
-
-	// Convert remaining progress to RP
-	country->addResearchPoints(remainingProgress * 800);
 
 	// Implement special effects from reforms
 	if (reforms[5] == true)

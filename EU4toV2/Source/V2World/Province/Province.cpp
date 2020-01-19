@@ -1,11 +1,12 @@
 #include "Province.h"
 #include "OSCompatibilityLayer.h"
 #include "../../Configuration.h"
-#include "../V2Country.h"
+#include "../Country/Country.h"
 #include <cmath>
 #include "CardinalToOrdinal.h"
 #include <algorithm>
 #include "Log.h"
+#include "../Army/Regiment.h"
 
 V2::Province::Province(const std::string& _filename, const mappers::ClimateMapper& climateMapper, const mappers::TerrainDataMapper& terrainDataMapper):
 	filename(_filename)
@@ -182,7 +183,7 @@ std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>> V2::Provinc
 
 void V2::Province::doCreatePops(
 	double popWeightRatio,
-	V2Country* _owner,
+	Country* _owner,
 	int popConversionAlgorithm,
 	const mappers::ProvinceMapper& provinceMapper
 ) {
@@ -268,7 +269,7 @@ void V2::Province::doCreatePops(
 V2::Province::pop_points V2::Province::getPopPoints_1(
 	const Demographic& demographic,
 	double newPopulation,
-	const V2Country* _owner
+	const Country* _owner
 ) const  {
 	pop_points pts;
 
@@ -346,7 +347,7 @@ V2::Province::pop_points V2::Province::getPopPoints_1(
 V2::Province::pop_points V2::Province::getPopPoints_2(
 	const Demographic& demographic,
 	double newPopulation,
-	const V2Country* _owner
+	const Country* _owner
 ) const {
 	pop_points pts;
 
@@ -418,7 +419,7 @@ V2::Province::pop_points V2::Province::getPopPoints_2(
 void V2::Province::createPops(
 	const Demographic& demographic,
 	double popWeightRatio,
-	const V2Country* _owner,
+	const Country* _owner,
 	int popConversionAlgorithm,
 	const mappers::ProvinceMapper& provinceMapper
 ) {

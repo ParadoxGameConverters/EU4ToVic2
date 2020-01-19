@@ -16,13 +16,13 @@ namespace V2
 	class Flags 
 	{
 	public:
-		void setV2Tags(const std::map<std::string, V2Country*>& V2Countries, const mappers::CountryMappings& countryMapper);
+		void setV2Tags(const std::map<std::string, std::shared_ptr<Country>>& V2Countries, const mappers::CountryMappings& countryMapper);
 		void output() const;
 
 	private:
 		void determineUseableFlags();
 		std::set<std::string> determineAvailableFlags();
-		void getRequiredTags(const std::map<std::string, V2Country*>& V2Countries);
+		void getRequiredTags(const std::map<std::string, std::shared_ptr<Country>>& V2Countries);
 		void mapTrivialTags();
 
 		static void createOutputFolders();

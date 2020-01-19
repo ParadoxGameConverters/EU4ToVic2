@@ -3,6 +3,8 @@
 
 std::ostream& V2::operator<<(std::ostream& output, const UncivReforms& uncivReforms)
 {
+	if (!uncivReforms.initialized) return output;
+
 	if (uncivReforms.reforms[0]) {
 		output << "land_reform=yes_land_reform\n";
 	}
