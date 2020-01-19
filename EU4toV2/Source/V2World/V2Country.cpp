@@ -10,7 +10,6 @@
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "V2World.h"
 #include "State/State.h"
-#include "V2Creditor.h"
 #include <algorithm>
 #include <fstream>
 #include <queue>
@@ -22,7 +21,7 @@
 const int MONEYFACTOR = 30;	// ducat to pound conversion rate
 
 
-V2::V2Country::V2Country(const string& countriesFileLine, const V2World* _theWorld, bool _dynamicCountry)
+V2::V2Country::V2Country(const std::string& countriesFileLine, const V2World* _theWorld, bool _dynamicCountry)
 {
 	registerKeyword(std::regex("party"), [this](const std::string& unused, std::istream& theStream)
 		{
@@ -67,7 +66,7 @@ V2::V2Country::V2Country(const string& countriesFileLine, const V2World* _theWor
 		});
 	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
 
-	string filename;
+	std::string filename;
 	int start = countriesFileLine.find_first_of('/');
 	start++;
 	int size = countriesFileLine.find_last_of('\"') - start;
@@ -160,12 +159,12 @@ void V2::V2Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNam
 
 	auto partyMap = partyNameMapper.getMap();
 
-	map<string, mappers::PartyName>::iterator partyItr;
+	std::map<std::string, mappers::PartyName>::iterator partyItr;
 
 	size_t i = 0;
 	for (partyItr = partyMap.begin(); partyItr != partyMap.end(); ++partyItr)
 	{
-		map<string, string>::iterator languageItr;
+		std::map<std::string, std::string>::iterator languageItr;
 		auto languageMap = partyItr->second.getMap();
 
 		std::string partyKey = tag + '_' + partyItr->first;
@@ -191,7 +190,7 @@ void V2::V2Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNam
 }
 
 
-V2::V2Country::V2Country(const string& _tag, const string& _commonCountryFile, const V2World* _theWorld)
+V2::V2Country::V2Country(const std::string& _tag, const std::string& _commonCountryFile, const V2World* _theWorld)
 {
 	theWorld = _theWorld;
 	newCountry = true;
@@ -272,7 +271,7 @@ void V2::V2Country::output() const
 {
 	if(!dynamicCountry)
 	{
-		ofstream output;		
+		std::ofstream output;
 		output.open("output/" + theConfiguration.getOutputName() + "/history/countries/" + filename);
 		if (!output.is_open())
 		{
@@ -284,7 +283,7 @@ void V2::V2Country::output() const
 			output << "capital=" << capital << "\n";
 		}
 		output << "primary_culture = " << primaryCulture << "\n";
-		for (set<string>::iterator i = acceptedCultures.begin(); i != acceptedCultures.end(); ++i)
+		for (std::set<std::string>::iterator i = acceptedCultures.begin(); i != acceptedCultures.end(); ++i)
 		{
 			output << "culture = " << *i << "\n";
 		}
@@ -421,7 +420,7 @@ void V2::V2Country::outputTech(std::ofstream& output) const
 {
 	output << "\n";
 	output << "# Technologies\n";
-	for (vector<string>::const_iterator itr = techs.begin(); itr != techs.end(); ++itr)
+	for (std::vector<std::string>::const_iterator itr = techs.begin(); itr != techs.end(); ++itr)
 	{
 		output << *itr << "= 1\n";
 	}
@@ -495,10 +494,10 @@ void V2::V2Country::initFromEU4Country(
 
 	if (!possibleFilename)
 	{
-		string countryName	= commonCountryFile;
-		int lastSlash			= countryName.find_last_of("/");
-		countryName				= countryName.substr(lastSlash + 1, countryName.size());
-		filename					= tag + " - " + countryName;
+		std::string countryName = commonCountryFile;
+		int lastSlash = countryName.find_last_of("/");
+		countryName = countryName.substr(lastSlash + 1, countryName.size());
+		filename = tag + " - " + countryName;
 	}
 	else
 	{
@@ -558,7 +557,7 @@ void V2::V2Country::initFromEU4Country(
 
 void V2::V2Country::setReligion(std::shared_ptr<EU4::Country> srcCountry, const mappers::ReligionMapper& religionMapper)
 {
-	string srcReligion = srcCountry->getReligion();
+	std::string srcReligion = srcCountry->getReligion();
 	if (srcReligion.size() > 0)
 	{
 		std::optional<std::string> match = religionMapper.getVic2Religion(srcReligion);
@@ -579,7 +578,7 @@ void V2::V2Country::setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> 
 	int oldCapital = srcCountry->getCapital();
 
 	// primary culture
-	string srcCulture = srcCountry->getPrimaryCulture();
+	std::string srcCulture = srcCountry->getPrimaryCulture();
 
 	if (srcCulture.size() > 0)
 	{
@@ -602,7 +601,7 @@ void V2::V2Country::setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> 
 	}
 
 	//accepted cultures
-	vector<string> srcAceptedCultures = srcCountry->getAcceptedCultures();
+	std::vector<std::string> srcAceptedCultures = srcCountry->getAcceptedCultures();
 	auto culturalUnion = srcCountry->getCulturalUnion();
 	if (culturalUnion)
 	{
@@ -700,7 +699,7 @@ void V2::V2Country::resolvePolitics()
 		upperHouseConservative = 100 - (upperHouseReactionary + upperHouseLiberal);
 	}
 
-	string idealogy;
+	std::string idealogy;
 
 	double liberalEffect = liberalInvestment - 5;
 	double reactionaryEffect = reactionaryInvestment - 5;
@@ -792,9 +791,9 @@ void V2::V2Country::calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry)
 	int numProvinces = 0;
 	int numColleges = 0;
 	int numUniversities = 0;
-	vector<EU4::Province*> provinces = srcCountry->getProvinces();
+	std::vector<EU4::Province*> provinces = srcCountry->getProvinces();
 	numProvinces = provinces.size();
-	for (vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
+	for (std::vector<EU4::Province*>::iterator i = provinces.begin(); i != provinces.end(); ++i)
 	{
 		if ((*i)->hasBuilding("college"))
 		{
@@ -816,8 +815,8 @@ void V2::V2Country::calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry)
 	double collegeBonus2 = numColleges * 0.005;
 	double universityBonus2 = numUniversities * 0.01;
 
-	double collegeBonus = min(max(collegeBonus1, collegeBonus2), 0.05);
-	double universityBonus = min(max(universityBonus1, universityBonus2), 0.1);
+	double collegeBonus = std::min(std::max(collegeBonus1, collegeBonus2), 0.05);
+	double universityBonus = std::min(std::max(universityBonus1, universityBonus2), 0.1);
 
 	literacy += collegeBonus + universityBonus;
 
@@ -870,7 +869,7 @@ void V2::V2Country::initFromHistory(const mappers::Unreleasables& unreleasablesM
 	// Ping unreleasable_tags for this country's TAG
 	isReleasableVassal = unreleasablesMapper.isTagReleasable(tag);
 
-	string fullFilename;
+	std::string fullFilename;
 
 	auto possibleFilename = Utils::GetFileFromTag("./blankMod/output/history/countries/", tag);
 	if (possibleFilename)
@@ -889,10 +888,10 @@ void V2::V2Country::initFromHistory(const mappers::Unreleasables& unreleasablesM
 	}
 	if (!possibleFilename)
 	{
-		string countryName	= commonCountryFile;
-		int lastSlash			= countryName.find_last_of("/");
-		countryName				= countryName.substr(lastSlash + 1, countryName.size());
-		filename					= tag + " - " + countryName;
+		std::string countryName= commonCountryFile;
+		int lastSlash = countryName.find_last_of("/");
+		countryName = countryName.substr(lastSlash + 1, countryName.size());
+		filename = tag + " - " + countryName;
 		return;
 	}
 	parseFile(fullFilename);
@@ -918,7 +917,7 @@ void V2::V2Country::addState(State* newState, const mappers::PortProvinces& port
 	bool				hasNavalBase		= false;
 
 	states.push_back(newState);
-	vector<std::shared_ptr<V2::Province>> newProvinces = newState->getProvinces();
+	std::vector<std::shared_ptr<V2::Province>> newProvinces = newState->getProvinces();
 
 	std::vector<int> newProvinceNums;
 	for (const auto& province: newProvinces)
@@ -1057,7 +1056,7 @@ std::tuple<double, double, double> V2::V2Country::getNationalValueScores()
 		equalityScore += srcCountry->getEqualityInvestment() - 5.0;
 	}
 
-	return make_tuple(libertyScore, equalityScore, orderScore);
+	return std::make_tuple(libertyScore, equalityScore, orderScore);
 }
 
 
@@ -1070,7 +1069,7 @@ void V2::V2Country::addRelation(V2::Relation& newRelation)
 void V2::V2Country::absorbVassal(V2Country* vassal)
 {
 	// change province ownership and add owner cores if needed
-	map<int, std::shared_ptr<V2::Province>> vassalProvinces = vassal->getProvinces();
+	std::map<int, std::shared_ptr<V2::Province>> vassalProvinces = vassal->getProvinces();
 	for (auto provItr = vassalProvinces.begin(); provItr != vassalProvinces.end(); provItr++)
 	{
 		provItr->second->setOwner(tag);
@@ -1084,7 +1083,7 @@ void V2::V2Country::absorbVassal(V2Country* vassal)
 	{
 		acceptedCultures.insert(vassal->getPrimaryCulture());
 	}
-	set<string> cultures = vassal->getAcceptedCultures();
+	std::set<std::string> cultures = vassal->getAcceptedCultures();
 	for (auto itr: cultures)
 	{
 		if (primaryCulture != itr)
@@ -1123,7 +1122,7 @@ std::string	V2::V2Country::getColonialRegion()
 }
 
 
-static bool FactoryCandidateSortPredicate(const pair<double, V2::State*>& lhs, const pair<double, V2::State*>& rhs)
+static bool FactoryCandidateSortPredicate(const std::pair<double, V2::State*>& lhs, const std::pair<double, V2::State*>& rhs)
 {
 	if (lhs.first != rhs.first)
 		return lhs.first > rhs.first;
@@ -1137,7 +1136,7 @@ bool V2::V2Country::addFactory(std::shared_ptr<Factory> factory)
 	std::string requiredTech = factory->getRequiredTech();
 	if (requiredTech != "")
 	{
-		vector<string>::iterator itr = find(techs.begin(), techs.end(), requiredTech);
+		std::vector<std::string>::iterator itr = find(techs.begin(), techs.end(), requiredTech);
 		if (itr == techs.end())
 		{
 			return false;
@@ -1154,8 +1153,8 @@ bool V2::V2Country::addFactory(std::shared_ptr<Factory> factory)
 	}
 
 	// find a state to add the factory to, which meets the factory's requirements
-	vector<pair<double, State*>> candidates;
-	for (vector<State*>::iterator itr = states.begin(); itr != states.end(); ++itr)
+	std::vector<std::pair<double, State*>> candidates;
+	for (std::vector<State*>::iterator itr = states.begin(); itr != states.end(); ++itr)
 	{
 		if ( (*itr)->isColonial() )
 		{
@@ -1181,7 +1180,7 @@ bool V2::V2Country::addFactory(std::shared_ptr<Factory> factory)
 		double candidateScore	 = (*itr)->getSuppliedInputs(factory) * 100;
 		candidateScore				-= static_cast<double>((*itr)->getFactoryCount()) * 10;
 		candidateScore				+= (*itr)->getMfgRatio();
-		candidates.push_back(pair<double, State*>(candidateScore, (*itr) ));
+		candidates.push_back(std::pair<double, State*>(candidateScore, (*itr) ));
 	}
 
 	sort(candidates.begin(), candidates.end(), FactoryCandidateSortPredicate);
@@ -1200,7 +1199,7 @@ bool V2::V2Country::addFactory(std::shared_ptr<Factory> factory)
 
 void V2::V2Country::addRailroadtoCapitalState()
 {
-	for (vector<State*>::iterator i = states.begin(); i != states.end(); i++)
+	for (std::vector<State*>::iterator i = states.begin(); i != states.end(); i++)
 	{
 		if ( (*i)->provInState(capital) )
 		{
@@ -1332,7 +1331,7 @@ void V2::V2Country::newCivConversionMethod(double topTech, int topInsitutions, c
 			if (civLevel > 100) civLevel = 100;
 			if (civLevel < 0) civLevel = 0;
 
-			string techGroup = srcCountry->getTechGroup();
+			std::string techGroup = srcCountry->getTechGroup();
 
 			if (theConfiguration.getEuroCentrism() == Configuration::EUROCENTRISM::EuroCentric)
 			{
@@ -1657,7 +1656,7 @@ void V2::V2Country::setCultureTech(double normalizedScore)
 	}
 }
 
-string V2::V2Country::getLocalName()
+std::string V2::V2Country::getLocalName()
 {
 	return localisation.getLocalName();
 }
@@ -1673,21 +1672,6 @@ V2::Relation& V2::V2Country::getRelation(const std::string& target)
 	return newRelRef->second;
 }
 
-
-void V2::V2Country::addLoan(string creditor, double size, double interest)
-{
-	map<string, V2Creditor*>::iterator itr = creditors.find(creditor);
-	if (itr != creditors.end())
-	{
-			itr->second->addLoan(size, interest);
-	}
-	else
-	{
-		V2Creditor* cred = new V2Creditor(creditor);
-		cred->addLoan(size, interest);
-		creditors.insert(make_pair(creditor, cred));
-	}
-}
 
 
 

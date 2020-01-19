@@ -3,9 +3,7 @@
   <ItemGroup>
     <ClCompile Include="Source\Configuration.cpp" />
     <ClCompile Include="Source\EU4toV2Converter.cpp" />
-    <ClCompile Include="Source\FlagUtils.cpp" />
     <ClCompile Include="Source\main.cpp" />
-    <ClCompile Include="Source\targa.cpp" />
     <ClCompile Include="Source\EU4World\Regions\Area.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
@@ -49,12 +47,6 @@
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\V2Country.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\V2Creditor.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\V2Flags.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\V2World.cpp">
@@ -483,12 +475,19 @@
     <ClCompile Include="Source\V2World\State\State.cpp">
       <Filter>Vic2World\State</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Flags\Flags.cpp">
+      <Filter>Vic2World\Flags</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Flags\FlagUtils.cpp">
+      <Filter>Vic2World\Flags</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Helpers\targa.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
-    <ClInclude Include="Source\FlagUtils.h" />
-    <ClInclude Include="Source\targa.h" />
     <ClInclude Include="Source\EU4World\Regions\Area.h">
       <Filter>EU4World\Regions</Filter>
     </ClInclude>
@@ -532,12 +531,6 @@
       <Filter>EU4World\Regions</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2Country.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Creditor.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2Flags.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\V2World.h">
@@ -972,6 +965,15 @@
     <ClInclude Include="Source\V2World\State\State.h">
       <Filter>Vic2World\State</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Flags\Flags.h">
+      <Filter>Vic2World\Flags</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Flags\FlagUtils.h">
+      <Filter>Vic2World\Flags</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Helpers\targa.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1171,6 +1173,9 @@
     </Filter>
     <Filter Include="Vic2World\State">
       <UniqueIdentifier>{530bfc41-c892-4dd1-a1dd-7fb646450f44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Flags">
+      <UniqueIdentifier>{70bd31d2-c2e9-4b77-a432-1f4aedcd45c2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -226,7 +226,7 @@
     <ClCompile Include="Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="Source\EU4World\Religions\Religions.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
-    <ClCompile Include="Source\FlagUtils.cpp" />
+    <ClCompile Include="Source\Helpers\targa.cpp" />
     <ClCompile Include="Source\Helpers\TechValues.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\Adjacency\AdjacencyMapper.cpp" />
@@ -301,12 +301,13 @@
     <ClCompile Include="Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp" />
-    <ClCompile Include="Source\targa.cpp" />
     <ClCompile Include="Source\V2World\Army\Army.cpp" />
     <ClCompile Include="Source\V2World\Army\Regiment.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp" />
+    <ClCompile Include="Source\V2World\Flags\Flags.cpp" />
+    <ClCompile Include="Source\V2World\Flags\FlagUtils.cpp" />
     <ClCompile Include="Source\V2World\Leader\Leader.cpp" />
     <ClCompile Include="Source\V2World\Localisation\Localisation.cpp" />
     <ClCompile Include="Source\V2World\Output\outAgreement.cpp" />
@@ -328,8 +329,6 @@
     <ClCompile Include="Source\V2World\Reforms\UncivReforms.cpp" />
     <ClCompile Include="Source\V2World\State\State.cpp" />
     <ClCompile Include="Source\V2World\V2Country.cpp" />
-    <ClCompile Include="Source\V2World\V2Creditor.cpp" />
-    <ClCompile Include="Source\V2World\V2Flags.cpp" />
     <ClCompile Include="Source\V2World\V2World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -393,7 +392,7 @@
     <ClInclude Include="Source\EU4World\Religions\ReligionGroup.h" />
     <ClInclude Include="Source\EU4World\Religions\Religions.h" />
     <ClInclude Include="Source\EU4World\World.h" />
-    <ClInclude Include="Source\FlagUtils.h" />
+    <ClInclude Include="Source\Helpers\targa.h" />
     <ClInclude Include="Source\Helpers\TechValues.h" />
     <ClInclude Include="Source\Mappers\Adjacency\AdjacencyMapper.h" />
     <ClInclude Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.h" />
@@ -467,13 +466,14 @@
     <ClInclude Include="Source\Mappers\UnitTypes\UnitType.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
     <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h" />
-    <ClInclude Include="Source\targa.h" />
     <ClInclude Include="Source\V2World\Army\Army.h" />
     <ClInclude Include="Source\V2World\Army\Regiment.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Relation.h" />
     <ClInclude Include="Source\V2World\Factory\Factory.h" />
+    <ClInclude Include="Source\V2World\Flags\Flags.h" />
+    <ClInclude Include="Source\V2World\Flags\FlagUtils.h" />
     <ClInclude Include="Source\V2World\Leader\Leader.h" />
     <ClInclude Include="Source\V2World\Localisation\Localisation.h" />
     <ClInclude Include="Source\V2World\Output\outAgreement.h" />
@@ -495,8 +495,6 @@
     <ClInclude Include="Source\V2World\Reforms\UncivReforms.h" />
     <ClInclude Include="Source\V2World\State\State.h" />
     <ClInclude Include="Source\V2World\V2Country.h" />
-    <ClInclude Include="Source\V2World\V2Creditor.h" />
-    <ClInclude Include="Source\V2World\V2Flags.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

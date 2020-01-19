@@ -40,6 +40,7 @@ void V2::Diplomacy::convertDiplomacy(
 		if (agreement.getAgreementType() == "colonial" || agreement.getAgreementType() == "colony")
 		{
 			country2->second->setColonyOverlord(country1->second);
+			// Do we annex or not?
 			if (country2->second->getSourceCountry()->getLibertyDesire() < theConfiguration.getLibertyThreshold())
 			{
 				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() <<
@@ -57,38 +58,41 @@ void V2::Diplomacy::convertDiplomacy(
 			
 			LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is not absorbing " << country2->second->getTag() <<
 				" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << theConfiguration.getLibertyThreshold() << " liberty desire)";
-			Agreement v2agreement(V2Tag1, V2Tag2, "vassal", agreement.getStartDate());
-			agreements.push_back(v2agreement);
-			r1.setLevel(5);
-			country2->second->addPrestige(-country2->second->getPrestige());
 		}
 
 		if (agreement.getAgreementType() == "royal_marriage" || agreement.getAgreementType() == "guarantee")
 		{
 			// influence level +1, but never exceed 4
 			if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
-		}
-		if (agreement.getAgreementType() == "royal_marriage")
-		{
-			// royal marriage is bidirectional; influence level +1, but never exceed 4
-			if (r2.getLevel() < 4) r2.setLevel(r2.getLevel() + 1);
-		}
-		if (agreement.getAgreementType() == "vassal" || agreement.getAgreementType() == "client_vassal" || agreement.getAgreementType() == "daimyo_vassal" || agreement.getAgreementType() == "protectorate" || agreement.getAgreementType() == "tributary_state")
-		{
-			r1.setLevel(5);
-			country2->second->addPrestige(-country2->second->getPrestige());
+			if (agreement.getAgreementType() == "royal_marriage")
+			{
+				// royal marriage is bidirectional; influence level +1, but never exceed 4
+				if (r2.getLevel() < 4) r2.setLevel(r2.getLevel() + 1);
+			}
 		}
 
-		if (agreement.getAgreementType() == "is_march" || agreement.getAgreementType() == "march" || agreement.getAgreementType() == "union" || agreement.getAgreementType() == "personal_union")
+		// Multiple names for same type is necessary due to EU4 syntax change over time.
+		if (agreement.getAgreementType() == "vassal" || 
+			agreement.getAgreementType() == "client_vassal" || 
+			agreement.getAgreementType() == "daimyo_vassal" || 
+			agreement.getAgreementType() == "protectorate" || 
+			agreement.getAgreementType() == "tributary_state" || 
+			agreement.getAgreementType() == "march" || 
+			agreement.getAgreementType() == "colonial" ||
+			agreement.getAgreementType() == "colony" ||
+			agreement.getAgreementType() == "union" ||
+			agreement.getAgreementType() == "personal_union")
 		{
-			// Yeah, we don't do marches or personal unions. PUs are a second relation beside existing vassal relation specifying when vassalage ends.
+			// Yeah, we don't do marches, clients or all that. Or personal unions. PUs are a second relation
+			// beside existing vassal relation specifying when vassalage ends.
 			// We assume all rulers are CK2 immortals and vassalage does not end with a specific date.
 			agreement.setAgreementType("vassal");
 			r1.setLevel(5);
 			country2->second->addPrestige(-country2->second->getPrestige());
 		}
 
-		if (agreement.getAgreementType() == "alliance" || agreement.getAgreementType() == "vassal" || agreement.getAgreementType() == "client_vassal" || agreement.getAgreementType() == "daimyo_vassal" || agreement.getAgreementType() == "guarantee")
+		// In essence we only have 3 diplomacy categories and these are it.
+		if (agreement.getAgreementType() == "alliance" || agreement.getAgreementType() == "vassal" || agreement.getAgreementType() == "guarantee")
 		{
 			// copy agreement
 			Agreement v2agreement(V2Tag1, V2Tag2, agreement.getAgreementType(), agreement.getStartDate());

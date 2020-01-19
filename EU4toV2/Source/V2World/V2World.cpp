@@ -19,7 +19,7 @@
 #include "State/State.h"
 #include "Pop/Pop.h"
 #include "V2Country.h"
-#include "V2Flags.h"
+#include "Flags/Flags.h"
 #include "../Mappers/Pops/PopMapper.h"
 #include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
@@ -1547,9 +1547,9 @@ void V2::V2World::output(unsigned int potentialGPs) const
 
 	// Create flags for all new countries.
 	LOG(LogLevel::Info) << "-> Creating Flags";
-	V2Flags flags;
+	Flags flags;
 	LOG(LogLevel::Info) << "-> Setting Flags";
-	flags.SetV2Tags(countries, countryMapper);
+	flags.setV2Tags(countries, countryMapper);
 	LOG(LogLevel::Info) << "<- Writing Flags";
 	flags.output();
 

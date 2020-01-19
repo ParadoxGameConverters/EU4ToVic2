@@ -1,9 +1,11 @@
 #include "FlagUtils.h"
-#include "targa.h"
-
+#include "../../Helpers/targa.h"
 #include "Log.h"
 
-bool CreateColonialFlag(std::string colonialOverlordPath, std::string colonialBasePath, std::string targetPath)
+bool V2::CreateColonialFlag(
+	const std::string& colonialOverlordPath, 
+	const std::string& colonialBasePath, 
+	const std::string& targetPath)
 {
 	tga_result res;
 
@@ -68,7 +70,13 @@ bool CreateColonialFlag(std::string colonialOverlordPath, std::string colonialBa
 	return true;
 }
 
-bool CreateCustomFlag(commonItems::Color c1, commonItems::Color c2, commonItems::Color c3, std::string emblemPath, std::string basePath, std::string targetPath)
+bool V2::CreateCustomFlag(
+	const commonItems::Color& c1, 
+	const commonItems::Color& c2, 
+	const commonItems::Color& c3, 
+	const std::string& emblemPath, 
+	const std::string& basePath, 
+	const std::string& targetPath)
 {
 	tga_result res;
 
@@ -128,13 +136,13 @@ bool CreateCustomFlag(commonItems::Color c1, commonItems::Color c2, commonItems:
 					return false;
 				}
 				
-				tr = (oRed * oAlpha / 255) + ((tr *(255 - oAlpha)) / 255);
-				tg = (oGreen * oAlpha / 255) + ((tg *(255 - oAlpha)) / 255);
-				tb = (oBlue * oAlpha / 255) + ((tb *(255 - oAlpha)) / 255);
+				tr = oRed * oAlpha / 255 + tr * (255 - oAlpha) / 255;
+				tg = oGreen * oAlpha / 255 + tg * (255 - oAlpha) / 255;
+				tb = oBlue * oAlpha / 255 + tb * (255 - oAlpha) / 255;
 			}
 			else
 			{
-				LOG(LogLevel::Info) << x << " " << y;
+				LOG(LogLevel::Warning) << "No targetOverlayAddress, error with targa handling.";
 			}
 
 			res = tga_pack_pixel(targetAddress, base.pixel_depth, tb, tg, tr, 255);
