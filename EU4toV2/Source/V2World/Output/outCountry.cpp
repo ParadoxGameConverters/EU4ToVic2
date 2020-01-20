@@ -35,7 +35,22 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 	output << "pensions = no_pensions\n";
 	output << "school_reforms = no_schools\n";
 
-	output << country.reforms;
+	if (country.reforms)
+	{
+		output << *country.reforms;
+	}
+	else
+	{
+		output << "# Political Reforms\n";
+		output << "slavery=yes_slavery\n";
+		output << "vote_franschise=none_voting\n"; // leave typo alone!
+		output << "upper_house_composition=appointed\n";
+		output << "voting_system=jefferson_method\n";
+		output << "public_meetings=yes_meeting\n";
+		output << "press_rights=censored_press\n";
+		output << "trade_unions=no_trade_unions\n";
+		output << "political_parties=underground_parties\n";
+	}
 
 	output << "\n";
 	output << "ruling_party = " << country.details.rulingParty << "\n";
@@ -59,9 +74,9 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 	{
 		output << tech << " = 1\n";
 	}
-	if (!country.details.civilized)
+	if (!country.details.civilized && country.uncivReforms)
 	{
-		output << country.uncivReforms;
+		output << *country.uncivReforms;
 	}
 	output << "prestige=" << country.details.prestige << "\n";
 

@@ -484,11 +484,11 @@
     <ClCompile Include="Source\V2World\Country\Country.cpp">
       <Filter>Vic2World\Country</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\CountryDetails\CountryDetails.cpp">
-      <Filter>Mappers\CountryDetails</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Output\outCountry.cpp">
       <Filter>Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Country\CountryDetails.cpp">
+      <Filter>Vic2World\Country</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -944,8 +944,8 @@
     <ClInclude Include="Source\V2World\Country\Country.h">
       <Filter>Vic2World\Country</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\CountryDetails\CountryDetails.h">
-      <Filter>Mappers\CountryDetails</Filter>
+    <ClInclude Include="Source\V2World\Country\CountryDetails.h">
+      <Filter>Vic2World\Country</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1152,9 +1152,6 @@
     </Filter>
     <Filter Include="Vic2World\Country">
       <UniqueIdentifier>{67358893-5f79-4f87-a13f-7a39d801f0c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Mappers\CountryDetails">
-      <UniqueIdentifier>{3d12ed24-e8e0-46c8-8fba-879043624d06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

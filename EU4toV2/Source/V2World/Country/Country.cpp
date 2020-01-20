@@ -28,7 +28,7 @@ dynamicCountry(_dynamicCountry)
 	start++;
 	unsigned int size = countriesFileLine.find_last_of('\"') - start;
 	filename = countriesFileLine.substr(start, size);
-	details = mappers::CountryDetails(filename);
+	details = CountryDetails(filename);
 	tag = countriesFileLine.substr(0, 3);	
 	commonCountryFile = localisation.convert(filename);
 	initParties(partyNameMapper, partyTypeMapper);
@@ -142,7 +142,7 @@ void V2::Country::initFromEU4Country(
 	details.celestialEmperor = srcCountry->getCelestialEmperor();
 
 	// religion
-	setReligion(_srcCountry, religionMapper);
+	setReligion(_srcCountry->getReligion(), religionMapper);
 
 	// cultures
 	setPrimaryAndAcceptedCultures(_srcCountry, cultureMapper, eu4Regions);
@@ -170,13 +170,12 @@ void V2::Country::initFromEU4Country(
 	buildCanals(_srcCountry);
 }
 
-void V2::Country::setReligion(std::shared_ptr<EU4::Country> srcCountry, const mappers::ReligionMapper& religionMapper)
+void V2::Country::setReligion(const std::string& religion, const mappers::ReligionMapper& religionMapper)
 {
-	std::string srcReligion = srcCountry->getReligion();
-	std::optional<std::string> match = religionMapper.getVic2Religion(srcReligion);
+	std::optional<std::string> match = religionMapper.getVic2Religion(religion);
 	if (!match)
 	{
-		LOG(LogLevel::Warning) << "No religion mapping defined for " << srcReligion << " (" << srcCountry->getTag() << " -> " << tag << ')';
+		LOG(LogLevel::Warning) << "No religion mapping defined for " << religion << " (" << srcCountry->getTag() << " -> " << tag << ')';
 	}
 	else
 	{
@@ -231,20 +230,14 @@ void V2::Country::setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> sr
 	}
 }
 
-std::tuple<double, double, double> V2::Country::getNationalValueScores()
+const V2::NationalValueInvestments& V2::Country::getNationalValueScores() const
 {
-	double orderScore = 0.0;
-	double libertyScore = 0.0;
-	double equalityScore = 0.0;
+	NationalValueInvestments retval;
+	retval.orderInvestment = details.nationalValueInvestments.orderInvestment - 5.0;
+	retval.libertyInvestment = details.nationalValueInvestments.libertyInvestment - 5.0;
+	retval.equalityInvestment = details.nationalValueInvestments.equalityInvestment - 5.0;
 
-	if (srcCountry)
-	{
-		orderScore += srcCountry->getOrderInvestment() - 5.0;
-		libertyScore += srcCountry->getLibertyInvestment() - 5.0;
-		equalityScore += srcCountry->getEqualityInvestment() - 5.0;
-	}
-
-	return std::make_tuple(libertyScore, equalityScore, orderScore);
+	return retval;
 }
 
 void V2::Country::addRelation(Relation& newRelation)
@@ -262,23 +255,23 @@ V2::Relation& V2::Country::getRelation(const std::string& target)
 	return newRelRef->second;
 }
 
-void V2::Country::absorbVassal(std::shared_ptr<Country> vassal)
+void V2::Country::absorbColony(Country& vassal)
 {
 	// change province ownership and add owner cores if needed
-	for (auto& province : vassal->getProvinces())
+	for (auto& province : vassal.getProvinces())
 	{
 		province.second->setOwner(tag);
 		province.second->setController(tag);
 		province.second->addCore(tag);
 	}
-	vassal->provinces.clear();
+	vassal.provinces.clear();
 
 	// take vassal's armies
-	srcCountry->takeArmies(vassal->getSourceCountry());
+	srcCountry->takeArmies(vassal.getSourceCountry());
 
 	// assume the vassal's decisions (just canals, at the moment)
-	for (const auto& decision : vassal->decisions) decisions.insert(decision);
-	vassal->decisions.clear();
+	for (const auto& decision : vassal.decisions) decisions.insert(decision);
+	vassal.decisions.clear();
 }
 
 void V2::Country::determineGovernmentType(
@@ -307,31 +300,31 @@ void V2::Country::finalizeInvestments(std::shared_ptr<EU4::Country> srcCountry, 
 	// Resulting scores for all of these will be between 0 and 10, with 5 being average and supposed to be ignored.
 	// Each point above or below 5 should alter absolute values by 10%.
 
-	details.armyInvestment = (2 * srcCountry->getArmyInvestment() + ideaEffectMapper.getArmyFromIdea(details.government)) / 3;
-	details.navyInvestment = (2 * srcCountry->getNavyInvestment() + ideaEffectMapper.getNavyFromIdea(details.government)) / 3;
-	details.commerceInvestment = (2 * srcCountry->getCommerceInvestment() + ideaEffectMapper.getCommerceFromIdea(details.government)) / 3;
-	details.industryInvestment = (2 * srcCountry->getIndustryInvestment() + ideaEffectMapper.getIndustryFromIdea(details.government)) / 3;
-	details.cultureInvestment = (2 * srcCountry->getCultureInvestment() + ideaEffectMapper.getCultureFromIdea(details.government)) / 3;
-	details.slaveryInvestment = (2 * srcCountry->getSlaveryInvestment() + ideaEffectMapper.getSlaveryFromIdea(details.government)) / 3;
-	details.upper_house_compositionInvestment = (2 * srcCountry->getUpper_house_compositionInvestment() + ideaEffectMapper.getUpper_house_compositionFromIdea(details.government)) / 3;
-	details.vote_franchiseInvestment = (2 * srcCountry->getVote_franchiseInvestment() + ideaEffectMapper.getVote_franchiseFromIdea(details.government)) / 3;
-	details.voting_systemInvestment = (2 * srcCountry->getVoting_systemInvestment() + ideaEffectMapper.getVoting_systemFromIdea(details.government)) / 3;
-	details.public_meetingsInvestment = (2 * srcCountry->getPublic_meetingsInvestment() + ideaEffectMapper.getPublic_meetingsFromIdea(details.government)) / 3;
-	details.press_rightsInvestment = (2 * srcCountry->getPress_rightsInvestment() + ideaEffectMapper.getPress_rightsFromIdea(details.government)) / 3;
-	details.trade_unionsInvestment = (2 * srcCountry->getTrade_unionsInvestment() + ideaEffectMapper.getTrade_unionsFromIdea(details.government)) / 3;
-	details.political_partiesInvestment = (2 * srcCountry->getPolitical_partiesInvestment() + ideaEffectMapper.getPolitical_partiesFromIdea(details.government)) / 3;
-	details.libertyInvestment = (2 * srcCountry->getLibertyInvestment() + ideaEffectMapper.getLibertyFromIdea(details.government)) / 3;
-	details.equalityInvestment = (2 * srcCountry->getEqualityInvestment() + ideaEffectMapper.getEqualityFromIdea(details.government)) / 3;
-	details.orderInvestment = (2 * srcCountry->getOrderInvestment() + ideaEffectMapper.getOrderFromIdea(details.government)) / 3;
+	details.technologyInvestments.armyInvestment = (2 * srcCountry->getArmyInvestment() + ideaEffectMapper.getArmyFromIdea(details.government)) / 3;
+	details.technologyInvestments.navyInvestment = (2 * srcCountry->getNavyInvestment() + ideaEffectMapper.getNavyFromIdea(details.government)) / 3;
+	details.technologyInvestments.commerceInvestment = (2 * srcCountry->getCommerceInvestment() + ideaEffectMapper.getCommerceFromIdea(details.government)) / 3;
+	details.technologyInvestments.industryInvestment = (2 * srcCountry->getIndustryInvestment() + ideaEffectMapper.getIndustryFromIdea(details.government)) / 3;
+	details.technologyInvestments.cultureInvestment = (2 * srcCountry->getCultureInvestment() + ideaEffectMapper.getCultureFromIdea(details.government)) / 3;
+	details.reformInvestments.slaveryInvestment = (2 * srcCountry->getSlaveryInvestment() + ideaEffectMapper.getSlaveryFromIdea(details.government)) / 3;
+	details.reformInvestments.upper_house_compositionInvestment = (2 * srcCountry->getUpper_house_compositionInvestment() + ideaEffectMapper.getUpper_house_compositionFromIdea(details.government)) / 3;
+	details.reformInvestments.vote_franchiseInvestment = (2 * srcCountry->getVote_franchiseInvestment() + ideaEffectMapper.getVote_franchiseFromIdea(details.government)) / 3;
+	details.reformInvestments.voting_systemInvestment = (2 * srcCountry->getVoting_systemInvestment() + ideaEffectMapper.getVoting_systemFromIdea(details.government)) / 3;
+	details.reformInvestments.public_meetingsInvestment = (2 * srcCountry->getPublic_meetingsInvestment() + ideaEffectMapper.getPublic_meetingsFromIdea(details.government)) / 3;
+	details.reformInvestments.press_rightsInvestment = (2 * srcCountry->getPress_rightsInvestment() + ideaEffectMapper.getPress_rightsFromIdea(details.government)) / 3;
+	details.reformInvestments.trade_unionsInvestment = (2 * srcCountry->getTrade_unionsInvestment() + ideaEffectMapper.getTrade_unionsFromIdea(details.government)) / 3;
+	details.reformInvestments.political_partiesInvestment = (2 * srcCountry->getPolitical_partiesInvestment() + ideaEffectMapper.getPolitical_partiesFromIdea(details.government)) / 3;
+	details.nationalValueInvestments.libertyInvestment = (2 * srcCountry->getLibertyInvestment() + ideaEffectMapper.getLibertyFromIdea(details.government)) / 3;
+	details.nationalValueInvestments.equalityInvestment = (2 * srcCountry->getEqualityInvestment() + ideaEffectMapper.getEqualityFromIdea(details.government)) / 3;
+	details.nationalValueInvestments.orderInvestment = (2 * srcCountry->getOrderInvestment() + ideaEffectMapper.getOrderFromIdea(details.government)) / 3;
 	details.literacyInvestment = (2 * srcCountry->getLiteracyInvestment() + ideaEffectMapper.getLiteracyFromIdea(details.government)) / 3;
-	details.reactionaryInvestment = (2 * srcCountry->getReactionaryInvestment() + ideaEffectMapper.getReactionaryFromIdea(details.government)) / 3;
-	details.liberalInvestment = (2 * srcCountry->getLiberalInvestment() + ideaEffectMapper.getLiberalFromIdea(details.government)) / 3;
+	details.upperHouseInvestments.reactionaryInvestment = (2 * srcCountry->getReactionaryInvestment() + ideaEffectMapper.getReactionaryFromIdea(details.government)) / 3;
+	details.upperHouseInvestments.liberalInvestment = (2 * srcCountry->getLiberalInvestment() + ideaEffectMapper.getLiberalFromIdea(details.government)) / 3;
 }
 
 void V2::Country::resolvePolitics()
 {
-	details.upperHouseReactionary = static_cast<int>(5 * (1 + (details.reactionaryInvestment - 5) * 20 / 100));
-	details.upperHouseLiberal = static_cast<int>(10 * (1 + (details.liberalInvestment - 5) * 20 / 100));
+	details.upperHouseReactionary = static_cast<int>(5 * (1 + (details.upperHouseInvestments.reactionaryInvestment - 5) * 20 / 100));
+	details.upperHouseLiberal = static_cast<int>(10 * (1 + (details.upperHouseInvestments.liberalInvestment - 5) * 20 / 100));
 	details.upperHouseConservative = 100 - (details.upperHouseReactionary + details.upperHouseLiberal);
 
 	if (srcCountry->isRevolutionary())
@@ -343,8 +336,8 @@ void V2::Country::resolvePolitics()
 
 	std::string ideology;
 
-	double liberalEffect = details.liberalInvestment - 5;
-	double reactionaryEffect = details.reactionaryInvestment - 5;
+	double liberalEffect = details.upperHouseInvestments.liberalInvestment - 5;
+	double reactionaryEffect = details.upperHouseInvestments.reactionaryInvestment - 5;
 
 	if (srcCountry->isRevolutionary())
 	{
@@ -451,11 +444,11 @@ void V2::Country::calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry)
 void V2::Country::determineTechSchool(const mappers::TechSchoolMapper& techSchoolMapper)
 {
 	details.techSchool = techSchoolMapper.findBestTechSchool(
-		details.armyInvestment - 5,
-		details.commerceInvestment - 5,
-		details.cultureInvestment - 5,
-		details.industryInvestment - 5,
-		details.navyInvestment - 5
+		details.technologyInvestments.armyInvestment - 5,
+		details.technologyInvestments.commerceInvestment - 5,
+		details.technologyInvestments.cultureInvestment - 5,
+		details.technologyInvestments.industryInvestment - 5,
+		details.technologyInvestments.navyInvestment - 5
 	);
 }
 
@@ -486,7 +479,7 @@ void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMap
 		details.filename = tag + " - " + countryName;
 		return;
 	}
-	details = mappers::CountryDetails(*possibleFilename);
+	details = CountryDetails(*possibleFilename);
 }
 
 void V2::Country::addProvince(std::shared_ptr<Province> _province)
@@ -534,7 +527,7 @@ void V2::Country::addState(std::shared_ptr<State> newState, const mappers::PortP
 	}
 }
 
-void V2::Country::convertLeaders(mappers::LeaderTraitMapper& leaderTraitMapper)
+void V2::Country::convertLeaders(const mappers::LeaderTraitMapper& leaderTraitMapper)
 {
 	if (srcCountry == nullptr) return;
 	if (provinces.empty()) return;
@@ -671,15 +664,15 @@ void V2::Country::addRailroadtoCapitalState()
 	}
 }
 
-void V2::Country::convertLandlessReforms(std::shared_ptr<Country> capOwner) // Use current capital owner to set up.
+void V2::Country::convertLandlessReforms(std::shared_ptr<Country> capitalOwner) // Use current capital owner to set up.
 {
-	if (capOwner->isCivilized())
+	if (capitalOwner->isCivilized())
 	{
 		details.civilized = true;
 	}
 	else
 	{
-		uncivReforms = capOwner->getUncivReforms();
+		uncivReforms = capitalOwner->getUncivReforms();
 	}
 }
 
@@ -934,19 +927,17 @@ bool V2::Country::addFactory(std::shared_ptr<Factory> factory)
 		candidates.emplace_back(std::pair<double, std::shared_ptr<State>>(candidateScore, candidate));
 	}
 
-	sort(candidates.begin(), candidates.end(), factoryCandidateSortPredicate);
+	sort(candidates.begin(), candidates.end(), [](const std::pair<double, std::shared_ptr<State>>& lhs, const std::pair<double, std::shared_ptr<State>>& rhs)
+	{
+		if (lhs.first != rhs.first) return lhs.first > rhs.first;
+		return lhs.second->getID() < rhs.second->getID();
+	});
 
 	if (candidates.empty()) return false;
 
 	candidates[0].second->addFactory(factory);
 	details.numFactories++;
 	return true;
-}
-
-bool V2::Country::factoryCandidateSortPredicate(const std::pair<double, std::shared_ptr<State>>& lhs, const std::pair<double, std::shared_ptr<State>>& rhs)
-{
-	if (lhs.first != rhs.first) return lhs.first > rhs.first;
-	return lhs.second->getID() < rhs.second->getID();
 }
 
 void V2::Country::setupPops(
@@ -1026,8 +1017,8 @@ V2::Army* V2::Country::getArmyForRemainder(REGIMENTTYPE chosenType)
 	return retval;
 }
 
-std::string	V2::Country::getColonialRegion()
+std::string V2::Country::getColonialRegion()
 {
-	if (!srcCountry) return "";
+	if (!srcCountry) return std::string();
 	return srcCountry->getColonialRegion();
 }

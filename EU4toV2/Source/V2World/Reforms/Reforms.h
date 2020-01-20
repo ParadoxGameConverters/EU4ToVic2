@@ -7,19 +7,16 @@ namespace EU4
 {
 	class Country;
 }
-namespace mappers
-{
-	class CountryDetails;
-}
 
 namespace V2
 {	
+	class CountryDetails;
 	class Country;
 	class Reforms
 	{
 	public:
 		Reforms() = default;
-		Reforms(const mappers::CountryDetails& details, std::shared_ptr<EU4::Country>);
+		Reforms(const CountryDetails& details, std::shared_ptr<EU4::Country>);
 		
 		friend std::ostream& operator<<(std::ostream& output, const Reforms& reforms);
 
@@ -33,7 +30,6 @@ namespace V2
 		double press_rights = 5.0;
 		double trade_unions = 5.0;
 		double political_parties = 5.0;
-		bool initialized = false;
 	};
 }
 

@@ -3,7 +3,7 @@
 #include "OSCompatibilityLayer.h"
 #include "../../Configuration.h"
 
-mappers::CountryDetails::CountryDetails(const std::string& _filename): filename(_filename)
+V2::CountryDetails::CountryDetails(const std::string& _filename): filename(_filename)
 {
 	registerKeys();
 
@@ -31,19 +31,19 @@ mappers::CountryDetails::CountryDetails(const std::string& _filename): filename(
 	clearRegisteredKeywords();
 }
 
-mappers::CountryDetails::CountryDetails(std::istream& theStream)
+V2::CountryDetails::CountryDetails(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-void mappers::CountryDetails::registerKeys()
+void V2::CountryDetails::registerKeys()
 {
 	registerKeyword(std::regex("party"), [this](const std::string& unused, std::istream& theStream)
 		{
-			PartyType newPartyType(theStream);
-			V2::Party newParty(newPartyType);
+			mappers::PartyType newPartyType(theStream);
+			Party newParty(newPartyType);
 			parties.push_back(newParty);
 		});
 	registerKeyword("primary_culture", [this](const std::string& unused, std::istream& theStream)

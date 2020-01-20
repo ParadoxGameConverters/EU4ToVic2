@@ -15,7 +15,6 @@ namespace V2
 
 	private:
 		bool reforms[16] = {};
-		bool initialized = false;
 	};
 }
 

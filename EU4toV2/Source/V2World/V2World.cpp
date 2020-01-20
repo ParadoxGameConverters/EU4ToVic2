@@ -451,18 +451,15 @@ void V2::V2World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEff
 	std::set<std::shared_ptr<Country>> valuesUnset;
 	for (const auto& country: countries)
 	{
-		double libertyScore;
-		double equalityScore;
-		double orderScore;
-		std::tie(libertyScore, equalityScore, orderScore) = country.second->getNationalValueScores();
+		auto nvScores = country.second->getNationalValueScores();
 
-		if (libertyScore > orderScore)
+		if (nvScores.libertyInvestment > nvScores.orderInvestment)
 		{
-			libertyScores.emplace_back(std::make_pair(country.second, libertyScore));
+			libertyScores.emplace_back(std::make_pair(country.second, nvScores.libertyInvestment));
 		}
-		if (equalityScore > orderScore && equalityScore > libertyScore)
+		if (nvScores.equalityInvestment > nvScores.orderInvestment&& nvScores.equalityInvestment > nvScores.libertyInvestment)
 		{
-			equalityScores.emplace_back(std::make_pair(country.second, equalityScore));
+			equalityScores.emplace_back(std::make_pair(country.second, nvScores.equalityInvestment));
 		}
 		valuesUnset.insert(country.second);
 	}

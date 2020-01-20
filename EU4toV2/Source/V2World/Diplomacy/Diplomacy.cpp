@@ -40,13 +40,13 @@ void V2::Diplomacy::convertDiplomacy(
 
 		if (agreement.getAgreementType() == "colonial" || agreement.getAgreementType() == "colony")
 		{
-			country2->second->setColonyOverlord(country1->second);
+			country2->second->setColonyOverlord(country1->second->getTag());
 			// Do we annex or not?
 			if (country2->second->getSourceCountry()->getLibertyDesire() < theConfiguration.getLibertyThreshold())
 			{
 				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() <<
 					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << theConfiguration.getLibertyThreshold() << " liberty desire)";
-				country1->second->absorbVassal(country2->second);
+				country1->second->absorbColony(*country2->second);
 				for (auto& agreement2 : eu4agreements)
 				{
 					if (agreement2.getTargetTag() == country2->second->getSourceCountry()->getTag())

@@ -72,11 +72,11 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 	for (auto flagItr = usableFlagTags.begin(); flagItr != usableFlagTags.end();)
 	{
 		const std::string& tag = *flagItr;
-		if (tag[1] != '_') 
+		if (tag[1] != '_')
 		{
 			usableFlagTags.erase(flagItr++);
 		}
-		else 
+		else
 		{
 			++flagItr;
 		}
@@ -84,8 +84,8 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 
 	for (auto country : V2Countries)
 	{
-		std::shared_ptr<Country> overlord = country.second->getColonyOverlord();
-		if (!overlord) continue;
+		auto overlord = country.second->getColonyOverlord();
+		if (overlord.empty()) continue;
 
 		std::string name = country.second->getLocalName();
 		name = Utils::convertUTF8To8859_15(name);
@@ -98,7 +98,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 			continue;
 		}
 
-		colonialtitle->setOverlord(overlord->getTag());
+		colonialtitle->setOverlord(overlord);
 		colonialFlagMapping[country.first] = *colonialtitle;
 
 		usableFlagTags.erase(colonialtitle->getName());
@@ -127,9 +127,9 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 				if (region.empty() || flag->getRegion() == region)
 				{
 					colonialFlagMapping[(*failCountryItr)->getTag()] = *flag;
-					std::shared_ptr<Country> overlord = (*failCountryItr)->getColonyOverlord();
-					flag->setOverlord(overlord->getTag());
-					LOG(LogLevel::Info) << "\tCountry with tag " << (*failCountryItr)->getTag() << " is now " << key << ", ruled by " << overlord->getTag();
+					auto overlord = (*failCountryItr)->getColonyOverlord();
+					flag->setOverlord(overlord);
+					LOG(LogLevel::Info) << "\tCountry with tag " << (*failCountryItr)->getTag() << " is now " << key << ", ruled by " << overlord;
 
 					usableFlagTags.erase(flag->getName());
 					requiredTags.erase((*failCountryItr)->getTag());
@@ -228,7 +228,7 @@ std::set<std::string> V2::Flags::determineAvailableFlags()
 	{
 		Utils::GetAllFilesInFolder(availableFlagFolder, availableFlags);
 	}
-	
+
 	return availableFlags;
 }
 

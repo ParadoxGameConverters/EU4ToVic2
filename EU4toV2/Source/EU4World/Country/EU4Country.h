@@ -102,7 +102,7 @@ namespace EU4
 		const std::vector<EU4Army>& getArmies() const { return armies; }
 		bool isCustom() const { return customNation; }
 		bool isColony() const { return colony; }
-		std::string getColonialRegion() const { return colonialRegion; }
+		const std::string& getColonialRegion() const { return colonialRegion; }
 		double getLibertyDesire() const { return libertyDesire; }
 		bool isRevolutionary() const { return revolutionary; }
 		std::string getRandomName() const { return randomName; }

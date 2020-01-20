@@ -240,7 +240,6 @@
     <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTags\ColonialTag.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTags\ColonialTagsMapper.cpp" />
-    <ClCompile Include="Source\Mappers\CountryDetails\CountryDetails.cpp" />
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMapping.cpp" />
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMappings.cpp" />
     <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnion.cpp" />
@@ -305,6 +304,7 @@
     <ClCompile Include="Source\V2World\Army\Army.cpp" />
     <ClCompile Include="Source\V2World\Army\Regiment.cpp" />
     <ClCompile Include="Source\V2World\Country\Country.cpp" />
+    <ClCompile Include="Source\V2World\Country\CountryDetails.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp" />
@@ -407,7 +407,6 @@
     <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.h" />
     <ClInclude Include="Source\Mappers\ColonialTags\ColonialTag.h" />
     <ClInclude Include="Source\Mappers\ColonialTags\ColonialTagsMapper.h" />
-    <ClInclude Include="Source\Mappers\CountryDetails\CountryDetails.h" />
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMapping.h" />
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMappings.h" />
     <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnion.h" />
@@ -472,6 +471,7 @@
     <ClInclude Include="Source\V2World\Army\Army.h" />
     <ClInclude Include="Source\V2World\Army\Regiment.h" />
     <ClInclude Include="Source\V2World\Country\Country.h" />
+    <ClInclude Include="Source\V2World\Country\CountryDetails.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Relation.h" />
