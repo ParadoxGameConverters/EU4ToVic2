@@ -3,6 +3,7 @@
 
 #include <map>
 #include <string>
+#include <memory>
 
 namespace EU4
 {
@@ -15,7 +16,7 @@ namespace mappers
 }
 namespace V2
 {
-	class V2Country;
+	class Country;
 }
 
 namespace helpers
@@ -23,9 +24,9 @@ namespace helpers
 	class TechValues
 	{
 	public:
-		TechValues(const std::map<std::string, V2::V2Country*>& countries);
+		TechValues(const std::map<std::string, std::shared_ptr<V2::Country>>& countries);
 
-		bool isValidCountryForTechConversion(const V2::V2Country* country) const;
+		bool isValidCountryForTechConversion(std::shared_ptr<V2::Country> country) const;
 		double getNormalizedArmyTech(const EU4::Country& country) const;
 		double getNormalizedNavyTech(const EU4::Country& country) const;
 		double getNormalizedCommerceTech(const EU4::Country& country) const;

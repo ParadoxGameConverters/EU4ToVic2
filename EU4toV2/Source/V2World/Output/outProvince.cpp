@@ -1,5 +1,4 @@
-#include "outProvince.h"
-#include "../V2World.h"
+#include "output.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const Province& province)
 {

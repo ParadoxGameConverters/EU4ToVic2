@@ -1,4 +1,4 @@
-#include "outPop.h"
+#include "output.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const Pop& pop)
 {

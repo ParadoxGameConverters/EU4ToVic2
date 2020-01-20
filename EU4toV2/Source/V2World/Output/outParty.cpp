@@ -1,4 +1,4 @@
-#include "outParty.h"
+#include "output.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const Party& party)
 {
@@ -10,7 +10,7 @@ std::ostream& V2::operator<<(std::ostream& output, const Party& party)
 	return output;
 }
 
-std::ostream& mappers::operator<<(std::ostream& output, const mappers::PartyType& partyDetails)
+std::ostream& mappers::operator<<(std::ostream& output, const PartyType& partyDetails)
 {
 	output << "\tstart_date = " << partyDetails.start_date << '\n';
 	output << "\tend_date = " << partyDetails.end_date << "\n\n";

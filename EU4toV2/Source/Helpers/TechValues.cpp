@@ -1,9 +1,9 @@
 #include "TechValues.h"
 #include "../EU4World/Country/EU4Country.h"
-#include "../V2World/V2Country.h"
+#include "../V2World/Country/Country.h"
 #include <algorithm>
 
-helpers::TechValues::TechValues( const std::map<std::string, V2::V2Country*>& countries )
+helpers::TechValues::TechValues( const std::map<std::string, std::shared_ptr<V2::Country>>& countries )
 {
 	int numValidCountries = 0;
 	double armyTotal = 0.0;
@@ -43,7 +43,7 @@ helpers::TechValues::TechValues( const std::map<std::string, V2::V2Country*>& co
 	}
 }
 
-bool helpers::TechValues::isValidCountryForTechConversion(const V2::V2Country* country) const
+bool helpers::TechValues::isValidCountryForTechConversion(std::shared_ptr<V2::Country> country) const
 {
 	return (country->isCivilized() && (country->getProvinces().size() > 0) && country->getSourceCountry());
 }

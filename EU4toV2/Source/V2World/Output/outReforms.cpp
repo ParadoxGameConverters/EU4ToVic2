@@ -1,4 +1,4 @@
-#include "outReforms.h"
+#include "output.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const Reforms& reforms)
 {
@@ -13,6 +13,7 @@ std::ostream& V2::operator<<(std::ostream& output, const Reforms& reforms)
 		output << "slavery=yes_slavery\n";
 	}
 
+	// Don't correct PDX typo!
 	if (reforms.vote_franchise >= 9.0)
 	{
 		output << "vote_franschise=universal_voting\n";

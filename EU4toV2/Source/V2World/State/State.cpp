@@ -1,7 +1,7 @@
 #include "State.h"
 #include "../Province/Province.h"
 
-V2::State::State(int newId, std::shared_ptr<V2::Province> firstProvince): id(newId)
+V2::State::State(int newId, std::shared_ptr<Province> firstProvince): id(newId)
 {
 	provinces.push_back(firstProvince);
 }

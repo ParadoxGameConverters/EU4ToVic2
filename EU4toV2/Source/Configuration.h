@@ -52,7 +52,6 @@ class Configuration: commonItems::parser
 		std::string getCK2ExportPath() const { return CK2ExportPath; }
 		std::string getVic2Path() { return Vic2Path; }
 		std::string getVic2DocumentsPath() { return Vic2DocumentsPath; }
-		std::string getVic2Gametype() { return Vic2Gametype; }
 		std::string getResetProvinces() { return resetProvinces; }
 		double getMaxLiteracy() { return MaxLiteracy; }
 		double getLibertyThreshold() { return libertyThreshold; }
@@ -98,7 +97,6 @@ class Configuration: commonItems::parser
 		std::string CK2ExportPath;
 		std::string Vic2Path;
 		std::string Vic2DocumentsPath;
-		std::string Vic2Gametype = "HOD";
 		std::string resetProvinces = "no";
 		double MaxLiteracy = 1.0;
 		double libertyThreshold = 50.0;

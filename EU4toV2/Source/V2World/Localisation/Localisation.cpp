@@ -50,7 +50,7 @@ std::string V2::Localisation::convert(const std::string& text)
 	return Utils::convertUTF8To8859_15(text);
 }
 
-std::string V2::Localisation::getLocalName()
+std::string V2::Localisation::getLocalName() const
 {
 	for (std::string thisname : name)
 	{
@@ -60,7 +60,7 @@ std::string V2::Localisation::getLocalName()
 }
 
 
-std::string V2::Localisation::getLocalAdjective()
+std::string V2::Localisation::getLocalAdjective() const
 {
 	for (std::string thisname : adjective)
 	{
