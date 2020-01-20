@@ -65,7 +65,7 @@ namespace V2
 		bool holyRomanEmperor = false;
 		bool celestialEmperor = false;
 		double literacy = 0.0;
-		std::string rulingParty;
+		std::string rulingParty = "conservative";
 		int upperHouseReactionary = 10;
 		int upperHouseConservative = 65;
 		int upperHouseLiberal = 25;
