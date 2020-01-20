@@ -8,8 +8,13 @@
 #include "Log.h"
 #include "../Army/Regiment.h"
 
-V2::Province::Province(const std::string& _filename, const mappers::ClimateMapper& climateMapper, const mappers::TerrainDataMapper& terrainDataMapper):
-	filename(_filename)
+V2::Province::Province(
+	const std::string& _filename, 
+	const mappers::ClimateMapper& climateMapper, 
+	const mappers::TerrainDataMapper& terrainDataMapper,
+	const ProvinceNameParser& provinceNameParser,
+	mappers::NavalBaseMapper navalBaseMapper):
+filename(_filename)
 {
 	int slash = filename.find_last_of("/");
 	unsigned int numDigits = filename.find_first_of("-") - slash - 2;
@@ -25,6 +30,7 @@ V2::Province::Province(const std::string& _filename, const mappers::ClimateMappe
 	{
 		details = mappers::ProvinceDetails(theConfiguration.getVic2Path() + "/history/provinces" + filename);
 	}
+
 	for (const auto& climate : climateMapper.getClimateMap())
 	{
 		if (count(climate.second.begin(), climate.second.end(), provinceID))
@@ -33,11 +39,17 @@ V2::Province::Province(const std::string& _filename, const mappers::ClimateMappe
 			break;
 		}
 	}
+
 	if (details.terrain.empty())
 	{
 		auto terrain = terrainDataMapper.getTerrainForID(provinceID);
 		if (terrain) details.terrain = *terrain;
 	}
+
+	auto potentialName = provinceNameParser.getProvinceName(provinceID);
+	if (potentialName) name = *potentialName;
+	
+	if (navalBaseMapper.isProvinceCoastal(provinceID)) coastal = true;
 }
 
 void V2::Province::addVanillaPop(std::shared_ptr<Pop> vanillaPop)

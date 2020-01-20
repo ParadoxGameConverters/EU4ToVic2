@@ -46,9 +46,6 @@
     <ClCompile Include="Source\EU4World\Regions\Regions.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2World.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="..\common_items\WinUtils.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
@@ -490,6 +487,12 @@
     <ClCompile Include="Source\V2World\Country\CountryDetails.cpp">
       <Filter>Vic2World\Country</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\World.cpp">
+      <Filter>Vic2World</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Province\ProvinceNameParser.cpp">
+      <Filter>Vic2World\Province</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -535,9 +538,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Region.h">
       <Filter>EU4World\Regions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2World.h">
-      <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\World.h">
       <Filter>EU4World</Filter>
@@ -949,6 +949,12 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\Output\output.h">
       <Filter>Vic2World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\World.h">
+      <Filter>Vic2World</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Province\ProvinceNameParser.h">
+      <Filter>Vic2World\Province</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

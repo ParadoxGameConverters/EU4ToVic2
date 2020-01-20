@@ -10,6 +10,8 @@
 #include "../../EU4World/Country/EU4Country.h"
 #include "../Factory/Factory.h"
 #include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
+#include "ProvinceNameParser.h"
+#include "../../Mappers/NavalBases/NavalBaseMapper.h"
 
 namespace V2
 {
@@ -29,19 +31,22 @@ namespace V2
 	class Province
 	{
 	public:
-		Province(const std::string& _filename, const mappers::ClimateMapper& climateMapper, const mappers::TerrainDataMapper& terrainDataMapper);
+		Province(
+			const std::string& _filename, 
+			const mappers::ClimateMapper& climateMapper, 
+			const mappers::TerrainDataMapper& terrainDataMapper,
+			const ProvinceNameParser& provinceNameParser,
+			mappers::NavalBaseMapper navalBaseMapper);
 		int getID() const { return provinceID; }
 		std::string getRgoType() const { return details.rgoType; }
 		std::string getClimate() const { return details.climate; }
 		std::string getTerrain() const { return details.terrain; }
 		void setRgoType(const std::string& _type) { details.rgoType = _type; }
-		void setName(std::string _name) { name = _name; }
 		void setOwner(std::string _owner) { details.owner = _owner; }
 		void setController(std::string _controller) { details.controller = _controller; }
 		std::string getName() const { return name; }
 		std::string getOwner() const { return details.owner; }
 		std::string getController() const { return details.controller; }
-		void setCoastal() { coastal = true; }
 		bool isCoastal() const { return coastal; }
 		void setResettable() { resettable = true; }
 		bool getResettable() const { return resettable; }

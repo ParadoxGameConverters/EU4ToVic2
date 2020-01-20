@@ -328,10 +328,11 @@
     <ClCompile Include="Source\V2World\Party\Party.cpp" />
     <ClCompile Include="Source\V2World\Pop\Pop.cpp" />
     <ClCompile Include="Source\V2World\Province\Province.cpp" />
+    <ClCompile Include="Source\V2World\Province\ProvinceNameParser.cpp" />
     <ClCompile Include="Source\V2World\Reforms\Reforms.cpp" />
     <ClCompile Include="Source\V2World\Reforms\UncivReforms.cpp" />
     <ClCompile Include="Source\V2World\State\State.cpp" />
-    <ClCompile Include="Source\V2World\V2World.cpp" />
+    <ClCompile Include="Source\V2World\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\common_items\CardinalToOrdinal.h" />
@@ -484,10 +485,11 @@
     <ClInclude Include="Source\V2World\Party\Party.h" />
     <ClInclude Include="Source\V2World\Pop\Pop.h" />
     <ClInclude Include="Source\V2World\Province\Province.h" />
+    <ClInclude Include="Source\V2World\Province\ProvinceNameParser.h" />
     <ClInclude Include="Source\V2World\Reforms\Reforms.h" />
     <ClInclude Include="Source\V2World\Reforms\UncivReforms.h" />
     <ClInclude Include="Source\V2World\State\State.h" />
-    <ClInclude Include="Source\V2World\V2World.h" />
+    <ClInclude Include="Source\V2World\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
