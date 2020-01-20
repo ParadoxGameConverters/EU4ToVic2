@@ -1,30 +1,30 @@
 #include "output.h"
 
-std::ostream& V2::operator<<(std::ostream& out, const Localisation& localisation)
+std::ostream& V2::operator<<(std::ostream& output, const Localisation& localisation)
 {
-	out << Localisation::convert(localisation.tag);
+	output << Localisation::convert(localisation.tag);
 	for (const auto& localisedName: localisation.name)
 	{
-          out << ';' << Localisation::convert(localisedName);
+		output << ';' << Localisation::convert(localisedName);
 	}
-	out << "x\n";
+	output << "x\n";
 
-	out << Localisation::convert(localisation.tag) << "_ADJ";
+	output << Localisation::convert(localisation.tag) << "_ADJ";
 	for (const auto& localisedAdjective: localisation.adjective)
 	{
-          out << ';' << Localisation::convert(localisedAdjective);
+		output << ';' << Localisation::convert(localisedAdjective);
 	}
-	out << "x\n";
+	output << "x\n";
 
 	for (const auto& party: localisation.parties)
 	{
-		out << Localisation::convert(party.key);
+		output << Localisation::convert(party.key);
 		for (const auto& localisedPartyName : party.name)
 		{
-			out << ';' << Localisation::convert(localisedPartyName);
+			output << ';' << Localisation::convert(localisedPartyName);
 		}
-		out << "x\n";
+		output << "x\n";
 	}
 
-	return out;
+	return output;
 }

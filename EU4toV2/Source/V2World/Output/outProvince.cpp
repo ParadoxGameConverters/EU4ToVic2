@@ -1,5 +1,4 @@
-#include <ostream>
-#include "../Province/Province.h"
+#include "output.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const Province& province)
 {
