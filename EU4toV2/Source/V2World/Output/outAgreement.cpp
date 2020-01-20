@@ -1,7 +1,6 @@
-#include <ostream>
-#include "../Diplomacy/Agreement.h"
+#include "output.h"
 
-std::ostream& V2::operator<<(std::ostream& output, Agreement agreement)
+std::ostream& V2::operator<<(std::ostream& output, const Agreement& agreement)
 {
 	output << agreement.type << "=\n";
 	output << "{\n";

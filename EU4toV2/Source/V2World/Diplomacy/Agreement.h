@@ -10,8 +10,9 @@ namespace V2
 	{
 	public:
 		Agreement(const std::string& _first, const std::string& _second, const std::string& _type, const date& _start_date);
-		std::string getType() const { return type; }
-		friend std::ostream& operator<<(std::ostream& output, Agreement theAgreement);
+		const std::string& getType() const { return type; }
+		
+		friend std::ostream& operator<<(std::ostream& output, const Agreement& theAgreement);
 
 	private:
 		std::string type;

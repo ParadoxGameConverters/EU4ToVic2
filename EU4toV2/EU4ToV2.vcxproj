@@ -480,6 +480,7 @@
     <ClInclude Include="Source\V2World\Flags\FlagUtils.h" />
     <ClInclude Include="Source\V2World\Leader\Leader.h" />
     <ClInclude Include="Source\V2World\Localisation\Localisation.h" />
+    <ClInclude Include="Source\V2World\Output\output.h" />
     <ClInclude Include="Source\V2World\Party\Party.h" />
     <ClInclude Include="Source\V2World\Pop\Pop.h" />
     <ClInclude Include="Source\V2World\Province\Province.h" />

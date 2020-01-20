@@ -230,14 +230,13 @@ void V2::Country::setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> sr
 	}
 }
 
-const V2::NationalValueInvestments& V2::Country::getNationalValueScores() const
+V2::NationalValueInvestments V2::Country::getNationalValueScores() const
 {
-	NationalValueInvestments retval;
-	retval.orderInvestment = details.nationalValueInvestments.orderInvestment - 5.0;
-	retval.libertyInvestment = details.nationalValueInvestments.libertyInvestment - 5.0;
-	retval.equalityInvestment = details.nationalValueInvestments.equalityInvestment - 5.0;
-
-	return retval;
+	NationalValueInvestments investments;
+	investments.orderInvestment = details.nationalValueInvestments.orderInvestment - 5.0;
+	investments.libertyInvestment = details.nationalValueInvestments.libertyInvestment - 5.0;
+	investments.equalityInvestment = details.nationalValueInvestments.equalityInvestment - 5.0;
+	return investments;
 }
 
 void V2::Country::addRelation(Relation& newRelation)

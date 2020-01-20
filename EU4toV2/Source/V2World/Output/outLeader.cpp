@@ -1,5 +1,4 @@
-#include <ostream>
-#include "../Leader/Leader.h"
+#include "output.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const Leader& leader)
 {

@@ -91,7 +91,7 @@ namespace V2
 		const std::map<int, std::shared_ptr<Province>>& getProvinces() const { return provinces; }
 		void addPrestige(double additionalPrestige) { details.prestige += additionalPrestige; }
 		double getPrestige() const { return details.prestige; }
-		const NationalValueInvestments& getNationalValueScores() const;
+		NationalValueInvestments getNationalValueScores() const;
 		void setNationalValue(const std::string& NV) { details.nationalValue = NV; }
 		std::vector<std::shared_ptr<State>> getStates() const { return states; }
 		bool isCivilized() const { return details.civilized; }

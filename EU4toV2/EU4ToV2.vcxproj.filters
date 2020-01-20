@@ -947,6 +947,9 @@
     <ClInclude Include="Source\V2World\Country\CountryDetails.h">
       <Filter>Vic2World\Country</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Output\output.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
