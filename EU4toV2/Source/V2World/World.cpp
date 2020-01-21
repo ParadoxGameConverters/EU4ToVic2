@@ -3,6 +3,7 @@
 #include "OSCompatibilityLayer.h"
 #include "../Mappers/Pops/PopMapper.h"
 #include <fstream>
+#include "../EU4World/World.h"
 
 /*
 #include <string>
@@ -15,7 +16,6 @@
 #include <cfloat>
 #include "../Configuration.h"
 #include "../EU4World/Diplomacy/EU4Diplomacy.h"
-#include "../EU4World/World.h"
 #include "../EU4World/Provinces/EU4Province.h"
 #include "../Helpers/TechValues.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
@@ -31,30 +31,29 @@ V2::World::World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper&
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
 	LOG(LogLevel::Info) << "-> Importing Provinces";
 	importProvinces();
+	
 	LOG(LogLevel::Info) << "-> Importing Vanilla Pops";
 	importDefaultPops();
-	//logPopsByCountry();
+
+	if (theConfiguration.getDebug()) countryPopLogger.logPopsByCountry(provinces);
+	
 	LOG(LogLevel::Info) << "-> Importing Potential Countries";
 	importPotentialCountries();
 	isRandomWorld = sourceWorld.isRandomWorld();
-
-	LOG(LogLevel::Info) << "-> Checking all Land Provinces Mapped (and may kraken take the rest)";
-	sourceWorld.checkAllProvincesMapped(provinceMapper);
 
 	LOG(LogLevel::Info) << "-> Loading Country Mapping Rules";
 	countryMapper.createMappings(sourceWorld, potentialCountries, provinceMapper);
 
 	LOG(LogLevel::Info) << "-> Loading Culture Mapping Rules";
 	initializeCultureMappers(sourceWorld);
-	LOG(LogLevel::Info) << "-> Checking all Cultures Mapped";
-	sourceWorld.checkAllEU4CulturesMapped(cultureMapper);
-	LOG(LogLevel::Info) << "-> Checking all Religions Mapped";
-	sourceWorld.checkAllEU4ReligionsMapped(religionMapper);
-
+	mappingChecker.check(sourceWorld, provinceMapper, religionMapper, cultureMapper);
+	
 	LOG(LogLevel::Info) << "-> Converting Countries";
 	convertCountries(sourceWorld, ideaEffectMapper);
+
 	LOG(LogLevel::Info) << "-> Converting Provinces";
 	convertProvinces(sourceWorld);
+
 	LOG(LogLevel::Info) << "-> Converting Diplomacy";
 	diplomacy.convertDiplomacy(sourceWorld.getDiplomaticAgreements(), countryMapper, countries);
 	LOG(LogLevel::Info) << "-> Setting Up Colonies";
@@ -85,7 +84,7 @@ void V2::World::importProvinces()
 	auto provinceFilenames = discoverProvinceFilenames();
 	for (const auto& provinceFilename : provinceFilenames)
 	{
-		auto newProvince = std::make_shared<Province>(provinceFilename, climateMapper, terrainDataMapper, provinceNameParser);
+		auto newProvince = std::make_shared<Province>(provinceFilename, climateMapper, terrainDataMapper, provinceNameParser, navalBaseMapper);
 		provinces.insert(std::make_pair(newProvince->getID(), newProvince));
 	}
 
@@ -188,93 +187,6 @@ void V2::World::importPopsFromProvince(int provinceID, const mappers::PopTypes& 
 	}
 
 	province->second->setSlaveProportion(1.0 * provinceSlavePopulation / provincePopulation);
-}
-
-void V2::World::logPopsByCountry() const
-{
-	std::map<std::string, std::map<std::string, long int>> popsByCountry; // country, poptype, num
-
-	std::set<std::string> filenames;
-	Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/", filenames);
-	for (auto filename : filenames)
-	{
-		logPopsFromFile(filename, popsByCountry);
-	}
-
-	outputLog(popsByCountry);
-}
-
-void V2::World::logPopsFromFile(const std::string& filename, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const
-{
-	std::ifstream popFile("./blankMod/output/history/pops/1836.1.1/" + filename);
-	mappers::PopMapper popMapper(popFile);
-	popFile.close();
-
-	for (const auto& provinceItr : popMapper.getProvincePopTypeMap())
-	{
-		logPopsInProvince(provinceItr.first, provinceItr.second, popsByCountry);
-	}
-}
-
-void V2::World::logPopsInProvince(const int& provinceID, const mappers::PopTypes& popTypes, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const
-{
-	auto province = provinces.find(provinceID);
-	if (province == provinces.end())
-	{
-		LOG(LogLevel::Warning) << "Could not find province " << provinceID << " for original pops.";
-		return;
-	}
-
-	auto countryPopItr = getCountryForPopLogging(province->second->getOwner(), popsByCountry);
-
-	for (const auto& popType : popTypes.getPopTypes())
-	{
-		logPop(popType.first, V2::Pop(popType.first, popType.second), countryPopItr);
-	}
-}
-
-void V2::World::logPop(const std::string& popType, const V2::Pop& pop, std::map<std::string, std::map<std::string, long int>>::iterator countryPopItr) const
-{
-	auto popItr = countryPopItr->second.find(popType);
-	if (popItr == countryPopItr->second.end())
-	{
-		long int newPopSize = 0;
-		std::pair<std::map<std::string, long int>::iterator, bool> newIterator = countryPopItr->second.insert(make_pair(popType, newPopSize));
-		popItr = newIterator.first;
-	}
-	popItr->second += pop.getSize();
-}
-
-std::map<std::string, std::map<std::string, long int>>::iterator V2::World::getCountryForPopLogging(std::string country, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const
-{
-	auto countryPopItr = popsByCountry.find(country);
-	if (countryPopItr == popsByCountry.end())
-	{
-		std::map<std::string, long int> newCountryPop;
-		auto newIterator = popsByCountry.insert(make_pair(country, newCountryPop));
-		countryPopItr = newIterator.first;
-	}
-
-	return countryPopItr;
-}
-
-void V2::World::outputLog(const std::map<std::string, std::map<std::string, long int>>& popsByCountry) const
-{
-	for (auto countryItr : popsByCountry)
-	{
-		long int total = 0;
-		for (auto popsItr : countryItr.second)
-		{
-			total += popsItr.second;
-		}
-
-		for (auto popsItr : countryItr.second)
-		{
-			LOG(LogLevel::Info) << "," << countryItr.first << "," << popsItr.first << "," << popsItr.second << "," << static_cast<double>(popsItr.second / total);
-		}
-
-		LOG(LogLevel::Info) << "," << countryItr.first << "," << "Total," << total << "," << static_cast<double>(total / total);
-	}
 }
 
 void V2::World::importPotentialCountries()
@@ -513,262 +425,119 @@ unsigned int V2::World::countCivilizedNations()
 	return numPotentialGPs;
 }
 
-struct MTo1ProvinceComp
-{
-	std::vector<const EU4::Province*> provinces;
-};
-
 void V2::World::convertProvinces(const EU4::World& sourceWorld)
 {
-	for (auto Vic2Province : provinces)
+	for (const auto& province : provinces)
 	{
-		auto EU4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(Vic2Province.first);
-		if (EU4ProvinceNumbers.size() == 0)
+		auto eu4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(province.first);
+		if (eu4ProvinceNumbers.empty())
 		{
-			LOG(LogLevel::Warning) << "No source for " << Vic2Province.second->getName() << " (province " << Vic2Province.first << ')';
+			LOG(LogLevel::Warning) << "No mappings found for V2 province " << province.first << "( " << province.second->getName() << ')';
+			// We leave it to defaults
 			continue;
 		}
-		else if (*EU4ProvinceNumbers.begin() == 0)
+		if (std::count(eu4ProvinceNumbers.begin(), eu4ProvinceNumbers.end(), 0) > 0)
 		{
+			LOG(LogLevel::Warning) << "Invalid mappings found for V2 province " << province.first << "( " << province.second->getName() << ')';
+			// We have a buggy mapping somewhere. Better drop.
 			continue;
 		}
-		else if (
-			(theConfiguration.getResetProvinces() == "yes") &&
-			provinceMapper.isProvinceResettable(Vic2Province.first, "resettableRegion")
-		) {
-			Vic2Province.second->setResettable();
-			continue;
-		}
-
-		Vic2Province.second->clearCores();
-
-		const EU4::Province* oldProvince = nullptr;
-		std::string oldOwnerTag;
-		std::string oldControllerTag;
-		// determine ownership and controllership by province count
-		std::map<std::string, MTo1ProvinceComp> provinceOwnerBins;
-		std::map<std::string, MTo1ProvinceComp> provinceControllerBins;
-		double newProvinceTotalBaseTax = 0;
-		for (auto EU4ProvinceNumber : EU4ProvinceNumbers)
+		if (theConfiguration.getResetProvinces() == "yes" && provinceMapper.isProvinceResettable(province.first, "resettableRegion")) 
 		{
-			const EU4::Province& province = sourceWorld.getProvince(EU4ProvinceNumber);
-			auto ownerTag = province.getOwnerString();
-			auto controllerTag = province.getControllerString();
-			if (provinceOwnerBins.find(ownerTag) == provinceOwnerBins.end())
-			{
-				provinceOwnerBins[ownerTag] = MTo1ProvinceComp();
-			}
-			if (provinceControllerBins.find(controllerTag) == provinceControllerBins.end())
-			{
-				provinceControllerBins[controllerTag] = MTo1ProvinceComp();
-			}
-			provinceOwnerBins[ownerTag].provinces.push_back(&province);
-			provinceControllerBins[controllerTag].provinces.push_back(&province);
-			newProvinceTotalBaseTax += province.getBaseTax();
-			// I am the new owner if there is no current owner, or I have more provinces than the current owner,
-			// or I have the same number of provinces than the current owner
-			if (
-				(oldOwnerTag == "") ||
-				(provinceOwnerBins[ownerTag].provinces.size() > provinceOwnerBins[oldOwnerTag].provinces.size()) ||
-				(provinceOwnerBins[ownerTag].provinces.size() == provinceOwnerBins[oldOwnerTag].provinces.size())
-				)
-			{
-				oldOwnerTag = ownerTag;
-				oldProvince = &province;
-			}
-			// I am the new controller if there is no current controller, or I have more provinces than the current controller,
-			// or I have the same number of provinces than the current controller
-			if	(
-					(oldControllerTag == "") ||
-					(
-						provinceControllerBins[controllerTag].provinces.size() >
-						provinceControllerBins[oldControllerTag].provinces.size()
-					) ||
-					(
-						provinceControllerBins[controllerTag].provinces.size() ==
-						provinceControllerBins[oldControllerTag].provinces.size()
-					)
-				)
-			{
-				oldControllerTag = controllerTag;
-			}
-		}
-		if (oldOwnerTag == "")
-		{
-			Vic2Province.second->setOwner("");
-			Vic2Province.second->setController("");
+			// This province is supposed to get filled by nearby provinces, later, somewhere. TODO: Check if this functionality even exists.
+			province.second->setResettable();
 			continue;
 		}
 
-		const std::string& V2ControllerTag = countryMapper.getV2Tag(oldControllerTag);
-		const std::string& V2OwnerTag = countryMapper.getV2Tag(oldOwnerTag);
-		if (V2OwnerTag.empty())
+		auto eu4owner = determineProvinceOwnership(eu4ProvinceNumbers, sourceWorld);
+		if (!eu4owner) continue; // Probably uncolonized province;
+		// Remap owner to something V2 can understand
+		auto possibleOwner = countryMapper.getV2Tag(*eu4owner);
+		if (!possibleOwner) throw std::runtime_error("Error mapping EU4 tag " + *eu4owner + " to a Vic2 tag!");
+		auto owner = *possibleOwner;
+
+		// TODO: Once we have support for importing current wars, assign control of province to actual controller.
+		province.second->setOwner(owner);
+		province.second->setController(owner);
+
+		const auto& ownerCountry = countries.find(owner);
+		if (ownerCountry != countries.end())
 		{
-			LOG(LogLevel::Warning) << "Could not map provinces owned by " << oldOwnerTag;
+			ownerCountry->second->addProvince(province.second);
 		}
-		else if (V2ControllerTag.empty())
+
+		// Before we convert a province, we need to drop those eu4 province sources belonging to another owner.
+		// ... don't want to influence development with filthy foreign manufactories and forts.
+		std::vector<std::shared_ptr<EU4::Province>> filteredSources;
+		for (const auto& eu4provID: eu4ProvinceNumbers)
 		{
-			LOG(LogLevel::Warning) << "Could not map provinces controlled by " << V2ControllerTag;
-		}
-		else
-		{
-			Vic2Province.second->setOwner(V2OwnerTag);
-			Vic2Province.second->setController(V2ControllerTag);
-			std::map<std::string, std::shared_ptr<Country>>::iterator ownerItr = countries.find(V2OwnerTag);
-			if (ownerItr != countries.end())
+			if (sourceWorld.getProvince(eu4provID)->getOwnerString() == *eu4owner)
 			{
-				ownerItr->second->addProvince(Vic2Province.second);
+				filteredSources.push_back(sourceWorld.getProvince(eu4provID));
 			}
-			Vic2Province.second->convertFromOldProvince(
-				oldProvince,
-				sourceWorld.getCountries()
-			);
+		}
+		
+		province.second->convertFromOldProvince(filteredSources, sourceWorld.getCountries(), sourceWorld.getRegions());
 
-			for (auto provinceBin: provinceOwnerBins)
-			{
-				for (auto sourceProvince: provinceBin.second.provinces)
-				{
-					// assign cores
-					auto oldCores = sourceProvince->getCores();
-					for (auto oldCore: oldCores)
-					{
-						// skip this core if the country is the owner of the EU4 province but not the V2 province
-						// (i.e. "avoid boundary conflicts that didn't exist in EU4").
-						// this country may still get core via a province that DID belong to the current V2 owner
-						if ((oldCore == provinceBin.first) && (oldCore != oldOwnerTag))
-						{
-							continue;
-						}
 
-						const std::string& coreV2Tag = countryMapper.getV2Tag(oldCore);
-						if (!coreV2Tag.empty())
-						{
-							Vic2Province.second->addCore(coreV2Tag);
-						}
-					}
-
-					// determine demographics
-					double provPopRatio = sourceProvince->getBaseTax() / newProvinceTotalBaseTax;
-					auto popRatios = sourceProvince->getPopRatios();
-					std::vector<V2::Demographic> demographics = determineDemographics(
-						sourceWorld.getRegions(),
-						popRatios,
-						sourceProvince,
-						Vic2Province.second,
-						oldOwnerTag,
-						Vic2Province.first,
-						provPopRatio
-					);
-					for (auto demographic: demographics)
-					{
-						Vic2Province.second->addPopDemographic(demographic);
-					}
-
-					// set forts and naval bases
-					if (
-						sourceProvince->hasBuilding("fort4") ||
-						sourceProvince->hasBuilding("fort5") ||
-						sourceProvince->hasBuilding("fort6")
-					) {
-						Vic2Province.second->setFortLevel(1);
-					}
+				// set forts and naval bases
+				if (
+					sourceProvince->hasBuilding("fort4") ||
+					sourceProvince->hasBuilding("fort5") ||
+					sourceProvince->hasBuilding("fort6")
+				) {
+					province.second->setFortLevel(1);
 				}
 			}
 		}
+		
 	}
 }
 
-std::vector<V2::Demographic> V2::World::determineDemographics(
-	const EU4::Regions& eu4Regions,
-	std::vector<EU4::PopRatio>& popRatios,
-	const EU4::Province* eProv,
-	std::shared_ptr<V2::Province> vProv,
-	std::string oldOwnerTag,
-	int destNum,
-	double provPopRatio
-)
+
+std::optional<std::string> V2::World::determineProvinceOwnership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const
 {
-	std::vector<V2::Demographic> demographics;
-	for (auto popRatio: popRatios)
+	// determine ownership by province development.
+	std::map<std::string, std::vector<std::shared_ptr<EU4::Province>>> theClaims; // tag, claimed provinces
+	std::map<std::string, std::pair<int, int>> theShares; // tag, development/tax
+
+	for (auto eu4ProvinceID : eu4ProvinceNumbers)
 	{
-		std::optional<std::string> dstCulture;
-		dstCulture = cultureMapper.cultureMatch(
-			eu4Regions,
-			popRatio.getCulture(),
-			popRatio.getReligion(),
-			eProv->getNum(),
-			oldOwnerTag
-		);
-		if (!dstCulture)
-		{
-			LOG(LogLevel::Warning) << "Could not set culture for pops in Vic2 province " << destNum;
-			dstCulture = "no_culture";
-		}
-
-		std::optional<std::string> religion = religionMapper.getVic2Religion(popRatio.getReligion());
-		if (!religion)
-		{
-			LOG(LogLevel::Warning) << "Could not set religion for pops in Vic2 province " << destNum;
-			religion = "";
-		}
-
-		std::optional<std::string> slaveCulture;
-		slaveCulture = slaveCultureMapper.cultureMatch(
-			eu4Regions,
-			popRatio.getCulture(),
-			popRatio.getReligion(),
-			eProv->getNum(),
-			oldOwnerTag
-		);
-		if (!slaveCulture)
-		{
-			auto thisContinent = continentsMapper.getEU4Continent(eProv->getNum());
-			if ((thisContinent) && ((thisContinent == "asia") || (thisContinent == "oceania")))
-			{
-				if (theConfiguration.getDebug())
-				{
-					LOG(LogLevel::Warning) << "No mapping for slave culture in province "
-						<< destNum << " - using native culture (" << popRatio.getCulture() << ").";
-				}
-				slaveCulture = popRatio.getCulture();
-			}
-			else
-			{
-				if (theConfiguration.getDebug())
-				{
-					LOG(LogLevel::Warning) << "No mapping for slave culture for pops in Vic2 province "
-						<< destNum << " - using african_minor.";
-				}
-				slaveCulture = "african_minor";
-			}
-		}
-
-		V2::Demographic demographic;
-		demographic.culture = *dstCulture;
-		demographic.slaveCulture = *slaveCulture;
-		demographic.religion = *religion;
-		demographic.upperRatio = popRatio.getUpperRatio() * provPopRatio;
-		demographic.middleRatio = popRatio.getMiddleRatio() * provPopRatio;
-		demographic.lowerRatio = popRatio.getLowerRatio() * provPopRatio;
-
-		if (theConfiguration.getDebug())
-		{
-			LOG(LogLevel::Info) << "EU4 Province " << eProv->getNum() << ", "
-				<< "Vic2 Province " << vProv->getID() << ", "
-				<< "Culture: " << demographic.culture << ", "
-				<< "Religion: " << demographic.religion << ", "
-				<< "upperPopRatio: " << popRatio.getUpperRatio() << ", "
-				<< "middlePopRatio: " << popRatio.getMiddleRatio() << ", "
-				<< "lowerPopRatio: " << popRatio.getLowerRatio() << ", "
-				<< "provPopRatio: " << provPopRatio << ", "
-				<< "upperRatio: " << demographic.upperRatio << ", "
-				<< "middleRatio: " << demographic.middleRatio << ", "
-				<< "lowerRatio: " << demographic.lowerRatio;
-		}
-		demographics.push_back(demographic);
+		const auto& eu4province = sourceWorld.getProvince(eu4ProvinceID);
+		auto ownerTag = eu4province->getOwnerString();
+		if (ownerTag.empty()) continue; // Don't touch uncolonized provinces.
+		theClaims[ownerTag].push_back(eu4province);
+		theShares[ownerTag] = std::make_pair(eu4province->getTotalDevModifier(), eu4province->getBaseTax());
 	}
-
-	return demographics;
+	// Let's see who the lucky winner is.
+	std::string winner; int maxDev = 0; int maxTax = 0;
+	for (const auto& share : theShares)
+	{
+		if (share.second.first > maxDev)
+		{
+			winner = share.first; maxDev = share.second.first; maxTax = share.second.second;
+		}
+		if (share.second.first == maxDev && share.first != winner)
+		{
+			// We have a tie
+			if (share.second.second > maxTax)
+			{
+				winner = share.first; maxDev = share.second.first; maxTax = share.second.second;
+			}
+			if (share.second.second == maxTax)
+			{
+				// Shit. Check for core?
+				for (const auto& claim : theClaims[share.first])
+					if (!claim->isTerritorialCore())
+					{
+						// It's a full core of someone. Might as well take it. Will not resolve further ties, thank you.
+						winner = share.first; maxDev = share.second.first; maxTax = share.second.second;
+					}
+			}
+		}
+	}
+	if (winner.empty()) return std::nullopt;
+	return winner;
 }
 
 void V2::World::setupColonies()

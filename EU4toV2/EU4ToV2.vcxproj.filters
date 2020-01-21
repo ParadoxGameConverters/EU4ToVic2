@@ -493,6 +493,12 @@
     <ClCompile Include="Source\V2World\Province\ProvinceNameParser.cpp">
       <Filter>Vic2World\Province</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Country\CountryPopLogger.cpp">
+      <Filter>Vic2World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\MappingChecker\MappingChecker.cpp">
+      <Filter>Vic2World\MappingChecker</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -956,6 +962,12 @@
     <ClInclude Include="Source\V2World\Province\ProvinceNameParser.h">
       <Filter>Vic2World\Province</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Country\CountryPopLogger.h">
+      <Filter>Vic2World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\MappingChecker\MappingChecker.h">
+      <Filter>Vic2World\MappingChecker</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1161,6 +1173,9 @@
     </Filter>
     <Filter Include="Vic2World\Country">
       <UniqueIdentifier>{67358893-5f79-4f87-a13f-7a39d801f0c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\MappingChecker">
+      <UniqueIdentifier>{c9e81627-0b25-4e61-a165-6f2f8bee6050}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

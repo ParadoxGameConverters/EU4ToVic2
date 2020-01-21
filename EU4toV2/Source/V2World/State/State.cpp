@@ -80,9 +80,12 @@ void	V2::State::colloectNavalBase()
 	for (auto province : provinces)
 	{
 		if (!prov) prov = province;
-		level += province->getNavalBaseLevel();
-		if (prov->getNavalBaseLevel() < province->getNavalBaseLevel()) prov = province;
+		if (prov->getNavalBaseLevel() < province->getNavalBaseLevel())
+		{
+			prov = province;
+			level = province->getNavalBaseLevel();
+		}
 	}
 	for (auto province : provinces) province->setNavalBaseLevel(0);
-	prov->setNavalBaseLevel(level);
+	if (prov) prov->setNavalBaseLevel(level);
 }

@@ -374,11 +374,11 @@ void V2::Country::generateRelations(std::shared_ptr<EU4::Country> srcCountry, co
 {
 	for (auto srcRelation : srcCountry->getRelations())
 	{
-		const std::string& V2Tag = countryMapper.getV2Tag(srcRelation.first);
-		if (!V2Tag.empty())
+		const auto& V2Tag = countryMapper.getV2Tag(srcRelation.first);
+		if (V2Tag)
 		{
-			Relation newRelations(V2Tag, srcRelation.second);
-			relations.insert(std::make_pair(V2Tag, newRelations));
+			Relation newRelations(*V2Tag, srcRelation.second);
+			relations.insert(std::make_pair(*V2Tag, newRelations));
 		}
 	}
 }
@@ -404,7 +404,7 @@ void V2::Country::calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry)
 	// Universities grant at most 10% literacy, with either having 10 or when having them in 10% of provinces, whichever comes sooner.
 	// Colleges do half of what universities do.
 
-	std::vector<EU4::Province*> provinces = srcCountry->getProvinces();
+	std::vector<std::shared_ptr<EU4::Province>> provinces = srcCountry->getProvinces();
 	int numProvinces = provinces.size();
 	int numColleges = 0;
 	int numUniversities = 0;

@@ -2,6 +2,7 @@
 #define WORLD_H
 
 #include "Country/Country.h"
+#include "Country/CountryPopLogger.h"
 #include "Diplomacy/Diplomacy.h"
 #include "Province/Province.h"
 #include "../EU4World/Provinces/EU4Province.h"
@@ -34,12 +35,14 @@
 #include <memory>
 #include <set>
 #include <time.h>
+#include "MappingChecker/MappingChecker.h"
 
 namespace mappers {
 	class TechGroupsMapper;
 }
 
-namespace V2{
+namespace V2
+{
 	class World
 	{
 	public:
@@ -64,6 +67,11 @@ namespace V2{
 		void importPopsFromProvince(int provinceID, const mappers::PopTypes& popType, const mappers::MinorityPopMapper& minorityPopMapper);
 		void importPotentialCountries();
 		void importPotentialCountry(const std::string& line, bool dynamicCountry);
+		void initializeCultureMappers(const EU4::World& sourceWorld);
+		void convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void convertProvinces(const EU4::World& sourceWorld);
+		std::optional<std::string> determineProvinceOwnership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
+		void initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 
 		mappers::ProvinceMapper provinceMapper;
 		mappers::Continents continentsMapper;
@@ -90,14 +98,8 @@ namespace V2{
 		mappers::BucketList bucketShuffler;
 		mappers::PortProvinces portProvincesMapper;
 		ProvinceNameParser provinceNameParser;
-
-		void logPopsByCountry() const;
-		void logPopsFromFile(const std::string& filename, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
-		void logPopsInProvince(const int& provinceID, const mappers::PopTypes& popType, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
-		std::map<std::string, std::map<std::string, long int>>::iterator getCountryForPopLogging(std::string country, std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
-		void logPop(const std::string& popType, const V2::Pop& pop, std::map<std::string, std::map<std::string, long int>>::iterator countryPopItr) const;
-		void outputLog(const std::map<std::string, std::map<std::string, long int>>& popsByCountry) const;
-
+		CountryPopLogger countryPopLogger;
+		MappingChecker mappingChecker;
 		
 		/*
 	
@@ -112,17 +114,13 @@ namespace V2{
 
 
 
-		void initializeCultureMappers(const EU4::World& sourceWorld);
 
-		void convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
-		void initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, std::shared_ptr<EU4::Country> sourceCountry);
 		void convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void convertPrestige();
 		void addAllPotentialCountries();
 		unsigned int countCivilizedNations();
 
-		void convertProvinces(const EU4::World& sourceWorld);
 		std::vector<V2::Demographic> determineDemographics(
 			const EU4::Regions& eu4Regions,
 			std::vector<EU4::PopRatio>& popRatios,

@@ -46,7 +46,7 @@ void mappers::CountryMappings::registerKeys()
 void mappers::CountryMappings::getAvailableFlags()
 {
 	LOG(LogLevel::Info) << "\tCataloguing available flags";
-	const std::vector<std::string> availableFlagFolders = { "blankMod/output/gfx/flags", theConfiguration.getVic2Path() + "/gfx/flags" };
+	const std::vector<std::string> availableFlagFolders = { "flags", theConfiguration.getVic2Path() + "/gfx/flags" };
 
 	std::set<std::string> availableFlagFiles;
 	for (auto availableFlagFolder: availableFlagFolders)
@@ -245,14 +245,8 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 
 bool mappers::CountryMappings::capitalInRightEU4Region(const mappers::ColonyStruct& colony, int EU4Capital, const ProvinceMapper& provinceMapper)
 {
-	if (colony.EU4Region != "")
-	{
-		return provinceMapper.provinceIsInRegion(EU4Capital, colony.EU4Region);
-	}
-	else
-	{
-		return true;
-	}
+	if (!colony.EU4Region.empty()) return provinceMapper.provinceIsInRegion(EU4Capital, colony.EU4Region);
+	return true;
 }
 
 bool mappers::CountryMappings::capitalInRightVic2Region(
@@ -262,30 +256,16 @@ bool mappers::CountryMappings::capitalInRightVic2Region(
 	const std::string& EU4Tag,
 	const ProvinceMapper& provinceMapper
 ) {
-	if (colony.V2Region != "")
+	if (colony.V2Region.empty()) return true;
+	if (Vic2Capital && regionProvinceMapper.provinceIsInRegion(*Vic2Capital, colony.V2Region)) return true;
+
+	for (auto Vic2ProvinceNumber: regionProvinceMapper.getProvincesInRegion(colony.V2Region))
 	{
-		if (Vic2Capital && regionProvinceMapper.provinceIsInRegion(*Vic2Capital, colony.V2Region))
+		auto EU4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(Vic2ProvinceNumber);
+		if (!EU4ProvinceNumbers.empty()) return false;
+		for (auto EU4ProvinceNumber: EU4ProvinceNumbers)
 		{
-			return true;
-		}
-		else
-		{
-			for (auto Vic2ProvinceNumber: regionProvinceMapper.getProvincesInRegion(colony.V2Region))
-			{
-				auto EU4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(Vic2ProvinceNumber);
-				if (EU4ProvinceNumbers.size() > 0)
-				{
-					return false;
-				}
-				for (auto EU4ProvinceNumber: EU4ProvinceNumbers)
-				{
-					const EU4::Province& province = srcWorld.getProvince(EU4ProvinceNumber);
-					if (province.getOwnerString() != EU4Tag)
-					{
-						return false;
-					}
-				}
-			}
+			if (srcWorld.getProvince(EU4ProvinceNumber)->getOwnerString() != EU4Tag) return false;
 		}
 	}
 
@@ -330,7 +310,7 @@ bool mappers::CountryMappings::tagIsAlreadyAssigned(const std::string& Vic2Tag)
 	return (V2TagToEU4TagMap.find(Vic2Tag) != V2TagToEU4TagMap.end());
 }
 
-std::string mappers::CountryMappings::getV2Tag(const std::string& EU4Tag) const
+std::optional<std::string> mappers::CountryMappings::getV2Tag(const std::string& EU4Tag) const
 {
 	const std::vector<std::string> EU4RebelTags = { "REB", "PIR", "NAT" };
 	static const std::string V2RebelTag = "REB";
@@ -344,7 +324,7 @@ std::string mappers::CountryMappings::getV2Tag(const std::string& EU4Tag) const
 	{
 		return findIter->second;
 	}
-	return "";
+	return std::nullopt;
 }
 
 std::optional<std::string> mappers::CountryMappings::getCK2Title(const std::string& EU4Tag, const std::string& countryName, const std::set<std::string>& availableFlags) const

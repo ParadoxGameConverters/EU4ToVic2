@@ -13,6 +13,10 @@
 #include "ProvinceNameParser.h"
 #include "../../Mappers/NavalBases/NavalBaseMapper.h"
 
+namespace EU4 {
+	class Regions;
+}
+
 namespace V2
 {
 	enum class REGIMENTTYPE;
@@ -67,7 +71,7 @@ namespace V2
 		int getMfgCount() const { return mfgCount; }
 		bool isColony() const { return colonial != 0; }
 		void addPopDemographic(const Demographic& d);
-		int getEU4ID() const { return eu4ID; }
+		const std::set<int>& getEU4IDs() const { return eu4IDs; }
 		void setSameContinent() { sameContinent = true; }
 		int getTotalPopulation() const;
 		bool wasColony() const { return wasColonised; }
@@ -78,8 +82,9 @@ namespace V2
 
 		void determineColonial();
 		void convertFromOldProvince(
-			const EU4::Province* oldProvince,
-			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+			const std::vector<std::shared_ptr<EU4::Province>>& provinceSources,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+			const EU4::Regions& eu4Regions
 		);
 		void doCreatePops(
 			double popWeightRatio,
@@ -116,7 +121,7 @@ namespace V2
 		bool landConnection = false;
 		int mfgCount = 0;
 		std::vector<Demographic> demographics;
-		int eu4ID = 0; // Source province ID, fuzzy at best.
+		std::set<int> eu4IDs; // Source province IDs, fuzzy at best since we mangled them together to craft this province.
 		bool sameContinent = false;
 		double devpushMod = 0.0;
 		double weightMod = 0.0;
@@ -139,6 +144,13 @@ namespace V2
 			double aristocrats = 0;
 		};
 
+		void determineDemographics(
+			const EU4::Regions& eu4Regions,
+			std::vector<EU4::PopRatio>& popRatios,
+			int eu4ProvID,
+			std::string oldOwnerTag,
+			int destNum,
+			double provPopRatio);
 		pop_points getPopPoints_1(
 			const Demographic& demographic,
 			double newPopulation,
@@ -152,8 +164,7 @@ namespace V2
 			double popWeightRatio,
 			const Country* _owner,
 			int popConversionAlgorithm,
-			const mappers::ProvinceMapper& provinceMapper
-		);
+			const mappers::ProvinceMapper& provinceMapper);
 		void combinePops();
 		static bool popSortBySizePredicate(std::shared_ptr<Pop> pop1, std::shared_ptr<Pop> pop2);
 		static int getRequiredPopForRegimentCount(int count);
