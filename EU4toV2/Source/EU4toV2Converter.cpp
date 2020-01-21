@@ -6,11 +6,12 @@
 #include "Mappers/TechGroups/TechGroupsMapper.h"
 #include "V2World/V2World.h"
 #include <fstream>
+#include "Mappers/VersionParser/VersionParser.h"
 
 
 void setOutputName(const std::string& EU4SaveFileName);
 void deleteExistingOutputFolder();
-void ConvertEU4ToVic2(const std::string& EU4SaveFileName)
+void ConvertEU4ToVic2(const std::string& EU4SaveFileName, const mappers::VersionParser& versionParser)
 {
 	ConfigurationFile configurationFile("configuration.txt");
 	setOutputName(EU4SaveFileName);
@@ -20,9 +21,8 @@ void ConvertEU4ToVic2(const std::string& EU4SaveFileName)
 	mappers::TechGroupsMapper techGroupsMapper;
 
 	EU4::World sourceWorld(EU4SaveFileName, ideaEffectMapper);
-	V2::V2World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper);
+	V2::World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper, versionParser);
 
-	LOG(LogLevel::Info) << "* V2 construction: " << destWorld.getDuration() << " seconds";
 	LOG(LogLevel::Info) << "* Conversion complete *";
 }
 

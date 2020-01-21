@@ -11,7 +11,7 @@ namespace mappers
 		CulturalUnionMapper() = default;
 		CulturalUnionMapper(std::istream& theStream);
 		void loadFile(const std::string& filename);
-		std::vector<std::string> getCoresForCulture(const std::string& culture) const;
+		std::optional<std::vector<std::string>> getCoresForCulture(const std::string& culture) const;
 
 	private:
 		void registerKeys();

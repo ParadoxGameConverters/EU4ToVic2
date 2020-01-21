@@ -583,6 +583,7 @@ int EU4::Country::getManufactoryCount() const
 	int mfgCount = 0;	// the number of manus
 	for (auto province: provinces)
 	{
+		//TODO: Dump buildings and values into own parser - duplication at V2::Province
 		if (province->hasBuilding("weapons")) ++mfgCount;
 		if (province->hasBuilding("wharf")) ++mfgCount;
 		if (province->hasBuilding("textile")) ++mfgCount;

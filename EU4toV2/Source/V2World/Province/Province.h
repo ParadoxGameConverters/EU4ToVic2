@@ -13,12 +13,20 @@
 #include "ProvinceNameParser.h"
 #include "../../Mappers/NavalBases/NavalBaseMapper.h"
 
+namespace mappers {
+	class CountryMappings;
+	class CultureMapper;
+	class ReligionMapper;
+	class Continents;
+}
+
 namespace EU4 {
 	class Regions;
 }
 
 namespace V2
 {
+	enum class CIV_ALGORITHM;
 	enum class REGIMENTTYPE;
 	class Country;
 	
@@ -79,17 +87,23 @@ namespace V2
 		std::string getFilename() const { return filename; }
 		std::optional<std::pair<int, std::vector<std::shared_ptr<Pop>>>> getPopsForOutput();
 		std::string getRegimentName(REGIMENTTYPE rc);
+		void sterilizeProvince();
 
 		void determineColonial();
 		void convertFromOldProvince(
 			const std::vector<std::shared_ptr<EU4::Province>>& provinceSources,
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
-			const EU4::Regions& eu4Regions
+			const EU4::Regions& eu4Regions,
+			const mappers::CultureMapper& cultureMapper,
+			const mappers::CultureMapper& slaveCultureMapper,
+			const mappers::Continents& continentsMapper,
+			const mappers::ReligionMapper& religionMapper,
+			const mappers::CountryMappings& countryMapper
 		);
 		void doCreatePops(
 			double popWeightRatio,
 			Country* _owner,
-			int popConversionAlgorithm,
+			CIV_ALGORITHM popConversionAlgorithm,
 			const mappers::ProvinceMapper& provinceMapper
 		);
 		std::shared_ptr<Pop> getSoldierPopForArmy(bool force = false);
@@ -150,7 +164,11 @@ namespace V2
 			int eu4ProvID,
 			std::string oldOwnerTag,
 			int destNum,
-			double provPopRatio);
+			double provPopRatio,
+			const mappers::CultureMapper& cultureMapper,
+			const mappers::CultureMapper& slaveCultureMapper,
+			const mappers::Continents& continentsMapper,
+			const mappers::ReligionMapper& religionMapper);
 		pop_points getPopPoints_1(
 			const Demographic& demographic,
 			double newPopulation,
@@ -163,7 +181,7 @@ namespace V2
 			const Demographic& demographic,
 			double popWeightRatio,
 			const Country* _owner,
-			int popConversionAlgorithm,
+			CIV_ALGORITHM popConversionAlgorithm,
 			const mappers::ProvinceMapper& provinceMapper);
 		void combinePops();
 		static bool popSortBySizePredicate(std::shared_ptr<Pop> pop1, std::shared_ptr<Pop> pop2);

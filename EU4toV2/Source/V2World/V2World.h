@@ -5,8 +5,6 @@
 #include "Country/CountryPopLogger.h"
 #include "Diplomacy/Diplomacy.h"
 #include "Province/Province.h"
-#include "../EU4World/Provinces/EU4Province.h"
-#include "../EU4World/Provinces/PopRatio.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/Geography/Continents.h"
 #include "../Mappers/Geography/ClimateMapper.h"
@@ -24,7 +22,6 @@
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../Mappers/CulturalUnions/CulturalUnionMapper.h"
 #include "../Mappers/FactoryTypes/FactoryTypeMapper.h"
-#include "../Mappers/Pops/PopTypes.h"
 #include "../Mappers/Unreleasables/Unreleasables.h"
 #include "../Mappers/LeaderTraits/LeaderTraitMapper.h"
 #include "../Mappers/NavalBases/NavalBaseMapper.h"
@@ -34,23 +31,28 @@
 #include <list>
 #include <memory>
 #include <set>
-#include <time.h>
 #include "MappingChecker/MappingChecker.h"
+#include "Output/ModFile.h"
 
 namespace mappers {
+	class VersionParser;
 	class TechGroupsMapper;
 }
 
 namespace V2
-{
+{	
 	class World
 	{
 	public:
-		World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper);
-
+		World(const EU4::World& sourceWorld, 
+			const mappers::IdeaEffectMapper& ideaEffectMapper, 
+			const mappers::TechGroupsMapper& techGroupsMapper, 
+			const mappers::VersionParser& versionParser);
 		
 	private:
 		long totalWorldPopulation = 0;
+		int stateId = 0; // ID counter for generated states
+		bool isRandomWorld = false;
 
 		std::map<std::string, std::list<int>> popRegions;
 		std::map<int, std::shared_ptr<Province>> provinces;
@@ -72,7 +74,33 @@ namespace V2
 		void convertProvinces(const EU4::World& sourceWorld);
 		std::optional<std::string> determineProvinceOwnership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
 		void initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
-
+		std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, std::shared_ptr<EU4::Country> sourceCountry);
+		void convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper);
+		void convertPrestige();
+		void addAllPotentialCountries();
+		void setupColonies();
+		void setupStates();
+		void convertUncivReforms(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper);
+		std::shared_ptr<Province> getProvince(int provNum) const;
+		std::shared_ptr<Country> getCountry(const std::string& tag) const;
+		void convertTechs(const EU4::World& sourceWorld);
+		void allocateFactories(const EU4::World& sourceWorld);
+		void setupPops(const EU4::World& sourceWorld);
+		void addUnions();
+		void convertArmies();
+		unsigned int countCivilizedNations() const;
+		void output(const mappers::VersionParser& versionParser) const;
+		void createModFile() const;
+		void outputPops() const;
+		void outputVersion(const mappers::VersionParser& versionParser) const;
+		void modifyDefines() const;
+		void outputCommonCountries() const;
+		void outputLocalisation() const;
+		void outputProvinces() const;
+		void outputCountries() const;
+		void verifyCountriesWritten() const;
+		
+		Diplomacy diplomacy;
 		mappers::ProvinceMapper provinceMapper;
 		mappers::Continents continentsMapper;
 		mappers::CountryMappings countryMapper;
@@ -100,58 +128,7 @@ namespace V2
 		ProvinceNameParser provinceNameParser;
 		CountryPopLogger countryPopLogger;
 		MappingChecker mappingChecker;
-		
-		/*
-	
-		std::shared_ptr<Province> getProvince(int provNum) const;
-		std::shared_ptr<Country> getCountry(std::string tag) const;
-		const mappers::PartyNameMapper& getPartyNameMapper() const { return partyNameMapper; }
-		const mappers::PartyTypeMapper& getPartyTypeMapper() const { return partyTypeMapper; }
-
-		bool isAProvinceLocalization(const std::string& line);
-
-
-
-
-
-
-		std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, std::shared_ptr<EU4::Country> sourceCountry);
-		void convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper);
-		void convertPrestige();
-		void addAllPotentialCountries();
-		unsigned int countCivilizedNations();
-
-		std::vector<V2::Demographic> determineDemographics(
-			const EU4::Regions& eu4Regions,
-			std::vector<EU4::PopRatio>& popRatios,
-			const EU4::Province* eProv,
-			std::shared_ptr<V2::Province> vProv,
-			std::string oldOwnerTag,
-			int destNum,
-			double provPopRatio
-		);
-
-		void setupColonies();
-		void setupStates();
-		void convertUncivReforms(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper);
-		void convertTechs(const EU4::World& sourceWorld);
-		void allocateFactories(const EU4::World& sourceWorld);
-		void setupPops(const EU4::World& sourceWorld);
-		void addUnions();
-		void convertArmies(const EU4::World& sourceWorld);
-
-		void output(unsigned int potentialGPs) const;
-		void createModFile() const;
-		void outputPops() const;
-
-		Diplomacy diplomacy;
-		std::map<int, std::set<std::string>> colonies;
-		std::map<int, int> leaderIDMap; // <EU4, V2>
-		bool isRandomWorld = false;
-		int techGroupAlgorithm = 0;
-		int stateId = 0; // ID counter for generated states
-
-		*/
+		ModFile modFile;		
 	};
 }
 #endif // WORLD_H

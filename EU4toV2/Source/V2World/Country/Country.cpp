@@ -540,15 +540,14 @@ void V2::Country::convertLeaders(const mappers::LeaderTraitMapper& leaderTraitMa
 	}
 }
 
-void V2::Country::convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper)
+void V2::Country::convertUncivReforms(CIV_ALGORITHM techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper)
 {
-	enum civConversion { older, newer };
 	switch (techGroupAlgorithm)
 	{
-	case(older):
+	case(CIV_ALGORITHM::older):
 		oldCivConversionMethod();
 		break;
-	case(newer):
+	case(CIV_ALGORITHM::newer):
 		newCivConversionMethod(topTech, topInstitutions, techGroupsMapper);
 		break;
 	default:
@@ -630,7 +629,7 @@ void V2::Country::newCivConversionMethod(double topTech, int topInsitutions, con
 	if (civLevel > 100) civLevel = 100;
 	if (civLevel < 0) civLevel = 0;
 
-	std::string techGroup = srcCountry->getTechGroup();
+	const auto& techGroup = srcCountry->getTechGroup();
 
 	if (theConfiguration.getEuroCentrism() == Configuration::EUROCENTRISM::EuroCentric)
 	{
@@ -941,7 +940,7 @@ bool V2::Country::addFactory(std::shared_ptr<Factory> factory)
 
 void V2::Country::setupPops(
 	double popWeightRatio,
-	int popConversionAlgorithm,
+	CIV_ALGORITHM popConversionAlgorithm,
 	const mappers::ProvinceMapper& provinceMapper
 ) {
 	// skip entirely for empty nations

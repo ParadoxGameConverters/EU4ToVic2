@@ -8,6 +8,10 @@
 #include "Log.h"
 #include "../Army/Regiment.h"
 #include "../../EU4World/Regions/Regions.h"
+#include "../../Mappers/Geography/Continents.h"
+#include "../../Mappers/CultureMapper/CultureMapper.h"
+#include "../../Mappers/ReligionMapper/ReligionMapper.h"
+#include "../../Mappers/CountryMappings/CountryMappings.h"
 
 V2::Province::Province(
 	const std::string& _filename, 
@@ -76,28 +80,35 @@ void V2::Province::addCore(std::string newCore)
 void V2::Province::convertFromOldProvince(
 	const std::vector<std::shared_ptr<EU4::Province>>& provinceSources,
 	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
-	const EU4::Regions& eu4Regions
-) {
+	const EU4::Regions& eu4Regions,
+	const mappers::CultureMapper& cultureMapper,
+	const mappers::CultureMapper& slaveCultureMapper,
+	const mappers::Continents& continentsMapper,
+	const mappers::ReligionMapper& religionMapper,
+	const mappers::CountryMappings& countryMapper)
+{
+	// Drop vanilla cores
+	details.cores.clear();
+
 	if (provinceSources.empty()) return; // Let's not do damage.
 	
 	// Single HRE province is enough
 	for (const auto& oldProvince: provinceSources) if (oldProvince->inHre()) inHRE = true;
 	
-	territorialCore = true; // A single full core will be sufficient to trip this down.
+	territorialCore = false; // A single territorial core will be sufficient to trip this.
 	for (const auto& oldProvince : provinceSources){
-		if (!oldProvince->isCity() && !territorialCore)
+		if (!oldProvince->isCity())
 		{
 			colonial = 1;
 			territorialCore = true;
 		}
-		else if (oldProvince->isTerritorialCore() && !territorialCore)
+		else if (oldProvince->isTerritorialCore())
 		{
 			colonial = 2;
 			territorialCore = true;
 		}
 		else
 		{
-			territorialCore = false;
 			colonial = 0;
 		}
 	}
@@ -107,6 +118,7 @@ void V2::Province::convertFromOldProvince(
 	// For buildings, we go with averages.
 	for (const auto& oldProvince : provinceSources)
 	{
+		//TODO: Dump buildings and values into own parser - duplication at EU4::Country
 		if (oldProvince->hasBuilding("weapons")) ++mfgCount;
 		if (oldProvince->hasBuilding("wharf")) ++mfgCount;
 		if (oldProvince->hasBuilding("textile")) ++mfgCount;
@@ -139,7 +151,10 @@ void V2::Province::convertFromOldProvince(
 
 	for (const auto& oldProvince : provinceSources)
 		for (const auto& core : oldProvince->getCores())
-			addCore(core);
+		{
+			auto potentialCore = countryMapper.getV2Tag(core);
+			if (potentialCore) addCore(*potentialCore);
+		}
 
 	determineColonial(); // Sanity check at most, we would probably be ok without it.
 	
@@ -152,13 +167,13 @@ void V2::Province::convertFromOldProvince(
 	}
 	devpushMod /= provinceSources.size();
 	weightMod /= provinceSources.size();
-	double totalSourceDevelopmentWeight = totalWeight;
+	const double totalSourceDevelopmentWeight = totalWeight;
 	totalWeight /= provinceSources.size();
 
-	// And finally, demographics
+	// And finally, demographics, using development rations of source provinces.
 	for (const auto& oldProvince : provinceSources)
 	{
-		double provincePopulationWeight = oldProvince->getTotalWeight() / totalSourceDevelopmentWeight;
+		const double provincePopulationWeight = oldProvince->getTotalWeight() / totalSourceDevelopmentWeight;
 		auto popRatios = oldProvince->getPopRatios();
 		determineDemographics(
 			eu4Regions,
@@ -166,10 +181,24 @@ void V2::Province::convertFromOldProvince(
 			oldProvince->getNum(),
 			oldProvince->getOwnerString(),
 			provinceID,
-			provincePopulationWeight
-		);
-		for (auto demographic : demographics) demographics.push_back(demographic);
+			provincePopulationWeight,
+			cultureMapper,
+			slaveCultureMapper,
+			continentsMapper,
+			religionMapper);
 	}
+}
+
+void V2::Province::sterilizeProvince()
+{
+	details.owner = "";
+	details.controller = "";
+	details.cores.clear();
+	details.colonial = 0;
+	details.colonyLevel = 0;
+	details.navalBaseLevel = 0;
+	details.fortLevel = 0;
+	details.railLevel = 0;
 }
 
 void V2::Province::determineDemographics(
@@ -178,8 +207,11 @@ void V2::Province::determineDemographics(
 	int eu4ProvID,
 	std::string oldOwnerTag,
 	int destNum,
-	double provPopRatio
-)
+	double provPopRatio,
+	const mappers::CultureMapper& cultureMapper,
+	const mappers::CultureMapper& slaveCultureMapper,
+	const mappers::Continents& continentsMapper,
+	const mappers::ReligionMapper& religionMapper)
 {
 	for (auto popRatio : popRatios)
 	{
@@ -201,7 +233,7 @@ void V2::Province::determineDemographics(
 		if (!religion)
 		{
 			LOG(LogLevel::Warning) << "Could not set religion for pops in Vic2 province " << destNum;
-			religion = "";
+			religion = "no_religion";
 		}
 
 		std::optional<std::string> slaveCulture;
@@ -215,27 +247,19 @@ void V2::Province::determineDemographics(
 		if (!slaveCulture)
 		{
 			auto thisContinent = continentsMapper.getEU4Continent(eu4ProvID);
-			if ((thisContinent) && ((thisContinent == "asia") || (thisContinent == "oceania")))
+			if (thisContinent && (thisContinent == "asia" || thisContinent == "oceania"))
 			{
-				if (theConfiguration.getDebug())
-				{
-					LOG(LogLevel::Warning) << "No mapping for slave culture in province "
-						<< destNum << " - using native culture (" << popRatio.getCulture() << ").";
-				}
+				if (theConfiguration.getDebug()) LOG(LogLevel::Warning) << "No mapping for slave culture in province " << destNum << " - using native culture (" << popRatio.getCulture() << ").";
 				slaveCulture = popRatio.getCulture();
 			}
 			else
 			{
-				if (theConfiguration.getDebug())
-				{
-					LOG(LogLevel::Warning) << "No mapping for slave culture for pops in Vic2 province "
-						<< destNum << " - using african_minor.";
-				}
+				if (theConfiguration.getDebug()) LOG(LogLevel::Warning) << "No mapping for slave culture for pops in Vic2 province " << destNum << " - using african_minor.";
 				slaveCulture = "african_minor";
 			}
 		}
 
-		V2::Demographic demographic;
+		Demographic demographic;
 		demographic.culture = *dstCulture;
 		demographic.slaveCulture = *slaveCulture;
 		demographic.religion = *religion;
@@ -313,10 +337,10 @@ std::vector<std::string> V2::Province::getCulturesOverThreshold(double percentOf
 	if (!totalPopulation) return std::vector<std::string>();
 
 	std::map<std::string, int> cultureTotals;
-	for (auto pop : pops) cultureTotals[pop->getCulture()] += pop->getSize();
+	for (const auto& pop : pops) cultureTotals[pop->getCulture()] += pop->getSize();
 
 	std::vector<std::string> culturesOverThreshold;
-	for (auto cultureAmount : cultureTotals)
+	for (const auto& cultureAmount : cultureTotals)
 	{
 		if (static_cast<double>(cultureAmount.second)/totalPopulation >= percentOfPopulation)
 		{
@@ -329,6 +353,7 @@ std::vector<std::string> V2::Province::getCulturesOverThreshold(double percentOf
 
 std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>> V2::Province::getPopsForOutput()
 {
+	// TODO: This functionality is wrong. We don't need vanilla pops but customized pops from surrounding areas.
 	if (resettable && theConfiguration.getResetProvinces() == "yes" && !vanillaPops.empty())
 	{
 		return std::pair(provinceID, vanillaPops);
@@ -341,7 +366,7 @@ std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>> V2::Provinc
 void V2::Province::doCreatePops(
 	double popWeightRatio,
 	Country* _owner,
-	int popConversionAlgorithm,
+	CIV_ALGORITHM popConversionAlgorithm,
 	const mappers::ProvinceMapper& provinceMapper
 ) {
 	// convert pops
@@ -577,7 +602,7 @@ void V2::Province::createPops(
 	const Demographic& demographic,
 	double popWeightRatio,
 	const Country* _owner,
-	int popConversionAlgorithm,
+	CIV_ALGORITHM popConversionAlgorithm,
 	const mappers::ProvinceMapper& provinceMapper
 ) {
 	long newPopulation = 0;
@@ -620,10 +645,10 @@ void V2::Province::createPops(
 	pop_points pts;
 	switch (popConversionAlgorithm)
 	{
-	case 1:
+	case CIV_ALGORITHM::older:
 		pts = getPopPoints_1(demographic, newPopulation, _owner);
 		break;
-	case 2:
+	case CIV_ALGORITHM::newer:
 		pts = getPopPoints_2(demographic, newPopulation, _owner);
 		break;
 	default:

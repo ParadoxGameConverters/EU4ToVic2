@@ -53,16 +53,18 @@ mappers::ProvinceMappingsVersion mappers::ProvinceMapper::getMappingsVersion(con
 			LOG(LogLevel::Info) << "\t-> Using version " << mappingsVersion->first << " mappings";
 			return mappingsVersion->second;
 		}
-	}
-
-	std::range_error exception("Could not find matching province mappings for EU4 version");
-	throw exception;
+	}	
+	throw std::range_error("Could not find matching province mappings for EU4 version");;
 }
 
 void mappers::ProvinceMapper::createMappings(const ProvinceMappingsVersion& provinceMappingsVersion)
 {
 	for (auto mapping: provinceMappingsVersion.getMappings())
 	{
+		// fix deliberate errors where we leave mappings without keys (asian wasteland comes to mind):
+		if (mapping.getVic2Provinces().empty()) continue;
+		if (mapping.getEU4Provinces().empty()) continue;
+		
 		for (auto Vic2Number: mapping.getVic2Provinces())
 		{
 			if (Vic2Number != 0)

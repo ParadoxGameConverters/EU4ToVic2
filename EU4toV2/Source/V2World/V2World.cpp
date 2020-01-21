@@ -1,32 +1,18 @@
-#include "World.h"
+#include "V2World.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "../Mappers/Pops/PopMapper.h"
 #include <fstream>
 #include "../EU4World/World.h"
-
-/*
-#include <string>
-#include <sstream>
-#include <algorithm>
-#include <regex>
-#include <list>
 #include <queue>
-#include <cmath>
-#include <cfloat>
-#include "../Configuration.h"
-#include "../EU4World/Diplomacy/EU4Diplomacy.h"
-#include "../EU4World/Provinces/EU4Province.h"
 #include "../Helpers/TechValues.h"
-#include "../Mappers/CultureMapper/CultureMapper.h"
-#include "State/State.h"
-#include "Pop/Pop.h"
 #include "Flags/Flags.h"
-#include "../EU4World/Country/EU4Country.h"
-#include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
-#include "../Mappers/TechGroups/TechGroupsMapper.h"
-*/
-V2::World::World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::TechGroupsMapper& techGroupsMapper)
+#include "../Mappers/VersionParser/VersionParser.h"
+
+V2::World::World(const EU4::World& sourceWorld, 
+	const mappers::IdeaEffectMapper& ideaEffectMapper, 
+	const mappers::TechGroupsMapper& techGroupsMapper, 
+	const mappers::VersionParser& versionParser)
 {
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
 	LOG(LogLevel::Info) << "-> Importing Provinces";
@@ -71,11 +57,11 @@ V2::World::World(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper&
 	LOG(LogLevel::Info) << "-> Merging Nations";
 	addUnions();
 	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
-	convertArmies(sourceWorld);
+	convertArmies();
 
 	LOG(LogLevel::Info) << "---> Le Dump <---";
-	auto potentialGPs = countCivilizedNations();
-	output(potentialGPs);
+	
+	output(versionParser);
 	LOG(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
 
@@ -257,10 +243,10 @@ void V2::World::initializeCountries(const EU4::World& sourceWorld, const mappers
 {
 	for (auto sourceCountry: sourceWorld.getCountries())
 	{
-		const std::string& V2Tag = countryMapper.getV2Tag(sourceCountry.first);
-		if (V2Tag.empty()) throw std::runtime_error("EU4 tag " + sourceCountry.first + " is unmapped and cannot be converted.");
+		const auto& V2Tag = countryMapper.getV2Tag(sourceCountry.first);
+		if (!V2Tag) throw std::runtime_error("EU4 tag " + sourceCountry.first + " is unmapped and cannot be converted.");
 
-		std::shared_ptr<Country> destCountry = createOrLocateCountry(V2Tag, sourceCountry.second);
+		std::shared_ptr<Country> destCountry = createOrLocateCountry(*V2Tag, sourceCountry.second);
 		
 		destCountry->initFromEU4Country(
 			sourceWorld.getRegions(),
@@ -274,8 +260,7 @@ void V2::World::initializeCountries(const EU4::World& sourceWorld, const mappers
 			governmentMapper,
 			countryMapper
 		);
-		
-		countries.insert(std::make_pair(V2Tag, destCountry));
+		countries.insert(std::make_pair(*V2Tag, destCountry));
 	}
 }
 
@@ -283,17 +268,16 @@ std::shared_ptr<V2::Country> V2::World::createOrLocateCountry(const std::string&
 {
 	std::shared_ptr<Country> destCountry;
 
-	auto potentialCountry = potentialCountries.find(V2Tag);
+	const auto& potentialCountry = potentialCountries.find(V2Tag);
 	if (potentialCountry == potentialCountries.end())
 	{
-		std::string countryFileName = sourceCountry->getName() + ".txt";
+		auto countryFileName = sourceCountry->getName() + ".txt";
 		destCountry = std::make_shared<Country>(V2Tag, countryFileName, partyNameMapper, partyTypeMapper);
 	}
 	else
 	{
 		destCountry = potentialCountry->second;
 	}
-
 	return destCountry;
 }
 
@@ -305,93 +289,77 @@ bool scoresSorter(std::pair<std::shared_ptr<V2::Country>, double> first, std::pa
 void V2::World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	// set national values
-	std::list<std::pair<std::shared_ptr<Country>, double>> libertyScores;
-	std::list<std::pair<std::shared_ptr<Country>, double>> equalityScores;
-	std::set<std::shared_ptr<Country>> valuesUnset;
+	std::list<std::pair<std::shared_ptr<Country>, double>> libertyCountries;
+	std::list<std::pair<std::shared_ptr<Country>, double>> equalityCountries;
+	std::set<std::shared_ptr<Country>> countriesToSet;
 	for (const auto& country: countries)
 	{
 		auto nvScores = country.second->getNationalValueScores();
 
 		if (nvScores.libertyInvestment > nvScores.orderInvestment)
 		{
-			libertyScores.emplace_back(std::make_pair(country.second, nvScores.libertyInvestment));
+			libertyCountries.emplace_back(std::make_pair(country.second, nvScores.libertyInvestment));
 		}
-		if (nvScores.equalityInvestment > nvScores.orderInvestment&& nvScores.equalityInvestment > nvScores.libertyInvestment)
+		if (nvScores.equalityInvestment > nvScores.orderInvestment && nvScores.equalityInvestment > nvScores.libertyInvestment)
 		{
-			equalityScores.emplace_back(std::make_pair(country.second, nvScores.equalityInvestment));
+			equalityCountries.emplace_back(std::make_pair(country.second, nvScores.equalityInvestment));
 		}
-		valuesUnset.insert(country.second);
+		countriesToSet.insert(country.second);
 	}
-	equalityScores.sort(scoresSorter);
+	equalityCountries.sort(scoresSorter);
+
+	// hardcoded so 5 countries will get to be equality oriented. Not really worth the trouble to put in a config file.
 	int equalityLeft = 5;
-	for (std::list<std::pair<std::shared_ptr<Country>, double> >::iterator equalItr = equalityScores.begin(); equalItr != equalityScores.end(); ++equalItr)
+	for (const auto& equalCountry: equalityCountries)
 	{
-		if (equalityLeft < 1)
+		if (equalityLeft < 1) break;
+		const auto& countryToSetItr = countriesToSet.find(equalCountry.first);
+		if (countryToSetItr != countriesToSet.end())
 		{
-			break;
-		}
-		std::set<std::shared_ptr<Country>>::iterator unsetItr = valuesUnset.find(equalItr->first);
-		if (unsetItr != valuesUnset.end())
-		{
-			valuesUnset.erase(unsetItr);
-			equalItr->first->setNationalValue("nv_equality");
+			countriesToSet.erase(countryToSetItr);
+			equalCountry.first->setNationalValue("nv_equality");
 			equalityLeft--;
 		}
 	}
-	libertyScores.sort(scoresSorter);
+
+	// also hardcoded to 20 countries.
+	libertyCountries.sort(scoresSorter);
 	int libertyLeft = 20;
-	for (std::list<std::pair<std::shared_ptr<Country>, double> >::iterator libItr = libertyScores.begin(); libItr != libertyScores.end(); ++libItr)
+	for (const auto& libertyCountry: libertyCountries)
 	{
-		if (libertyLeft < 1)
+		if (libertyLeft < 1) break;
+		const auto& countryToSetItr = countriesToSet.find(libertyCountry.first);
+		if (countryToSetItr != countriesToSet.end())
 		{
-			break;
-		}
-		std::set<std::shared_ptr<Country>>::iterator unsetItr = valuesUnset.find(libItr->first);
-		if (unsetItr != valuesUnset.end())
-		{
-			valuesUnset.erase(unsetItr);
-			libItr->first->setNationalValue("nv_liberty");
+			countriesToSet.erase(countryToSetItr);
+			libertyCountry.first->setNationalValue("nv_liberty");
 			libertyLeft--;
 		}
 	}
-	for (std::set<std::shared_ptr<Country>>::iterator unsetItr = valuesUnset.begin(); unsetItr != valuesUnset.end(); ++unsetItr)
-	{
-		(*unsetItr)->setNationalValue("nv_order");
-	}
+
+	// The rest will default anyway.
 }
 
 void V2::World::convertPrestige()
 {
 	LOG(LogLevel::Info) << "-> Setting prestige";
 
-	double highestScore = 0.0;
+	double highestScore = 0;
 	for (auto country: countries)
 	{
-		double score = 0.0;
+		double score = 0;
 		auto srcCountry = country.second->getSourceCountry();
-		if (srcCountry != nullptr)
-		{
-			score = srcCountry->getScore();
-		}
-		if (score > highestScore)
-		{
-			highestScore = score;
-		}
+		if (srcCountry) score = srcCountry->getScore();
+		if (score > highestScore) highestScore = score;
 	}
 
 	for (auto country: countries)
 	{
-		double score = 0.0;
+		double score = 0;
+		double prestige = 0;
 		auto srcCountry = country.second->getSourceCountry();
-		if (srcCountry != nullptr)
-		{
-			score = srcCountry->getScore();
-		}
-		double prestige = 0.0;
-		if (highestScore > 0)
-		{
-			prestige = score / highestScore * 100.0;
-		}
+		if (srcCountry) score = srcCountry->getScore();
+		if (highestScore > 0) prestige = score / highestScore * 100.0;
 		country.second->addPrestige(prestige);
 	}
 }
@@ -401,19 +369,20 @@ void V2::World::addAllPotentialCountries()
 	// ALL potential countries should be output to the file, otherwise some things don't get initialized right when loading Vic2
 	for (auto potentialCountry : potentialCountries)
 	{
-		std::map<std::string, std::shared_ptr<Country>>::iterator citr = countries.find(potentialCountry.first);
-		if (citr == countries.end())
+		const auto& countryItr = countries.find(potentialCountry.first);
+		if (countryItr == countries.end())
 		{
+			// Note: This is a dead country.
 			potentialCountry.second->initFromHistory(unreleasablesMapper);
 			countries.insert(make_pair(potentialCountry.first, potentialCountry.second));
 		}
 	}
 }
 
-unsigned int V2::World::countCivilizedNations()
+unsigned int V2::World::countCivilizedNations() const
 {
 	unsigned int numPotentialGPs = 0;
-	for (auto country : countries)
+	for (const auto& country : countries)
 	{
 		auto states = country.second->getStates();
 		if (country.second->isCivilized() && states.size() > 1)
@@ -432,25 +401,34 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld)
 		auto eu4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(province.first);
 		if (eu4ProvinceNumbers.empty())
 		{
-			LOG(LogLevel::Warning) << "No mappings found for V2 province " << province.first << "( " << province.second->getName() << ')';
+			LOG(LogLevel::Warning) << "No mappings found for V2 province " << province.first << " (" << province.second->getName() << ")";
 			// We leave it to defaults
+			province.second->sterilizeProvince();
 			continue;
 		}
 		if (std::count(eu4ProvinceNumbers.begin(), eu4ProvinceNumbers.end(), 0) > 0)
 		{
-			LOG(LogLevel::Warning) << "Invalid mappings found for V2 province " << province.first << "( " << province.second->getName() << ')';
+			LOG(LogLevel::Warning) << "Invalid mapping found for V2 province " << province.first << " (" << province.second->getName() << ")";
 			// We have a buggy mapping somewhere. Better drop.
+			province.second->sterilizeProvince();
 			continue;
 		}
 		if (theConfiguration.getResetProvinces() == "yes" && provinceMapper.isProvinceResettable(province.first, "resettableRegion")) 
 		{
-			// This province is supposed to get filled by nearby provinces, later, somewhere. TODO: Check if this functionality even exists.
+			// This province is supposed to get filled by nearby provinces, later, somewhere.
+			// TODO: This functionality doesn't exist. We have vanilla pop output but that's broken.
 			province.second->setResettable();
 			continue;
 		}
 
 		auto eu4owner = determineProvinceOwnership(eu4ProvinceNumbers, sourceWorld);
-		if (!eu4owner) continue; // Probably uncolonized province;
+		if (!eu4owner)
+		{
+			// Probably uncolonized province; blank it and leave it to defaults.
+			province.second->sterilizeProvince();
+			continue;
+		}
+			
 		// Remap owner to something V2 can understand
 		auto possibleOwner = countryMapper.getV2Tag(*eu4owner);
 		if (!possibleOwner) throw std::runtime_error("Error mapping EU4 tag " + *eu4owner + " to a Vic2 tag!");
@@ -466,7 +444,7 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld)
 			ownerCountry->second->addProvince(province.second);
 		}
 
-		// Before we convert a province, we need to drop those eu4 province sources belonging to another owner.
+		// Before we convert a province, we need to filter those eu4 province sources belonging to another owner.
 		// ... don't want to influence development with filthy foreign manufactories and forts.
 		std::vector<std::shared_ptr<EU4::Province>> filteredSources;
 		for (const auto& eu4provID: eu4ProvinceNumbers)
@@ -477,23 +455,17 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld)
 			}
 		}
 		
-		province.second->convertFromOldProvince(filteredSources, sourceWorld.getCountries(), sourceWorld.getRegions());
-
-
-				// set forts and naval bases
-				if (
-					sourceProvince->hasBuilding("fort4") ||
-					sourceProvince->hasBuilding("fort5") ||
-					sourceProvince->hasBuilding("fort6")
-				) {
-					province.second->setFortLevel(1);
-				}
-			}
-		}
-		
+		province.second->convertFromOldProvince(
+			filteredSources, 
+			sourceWorld.getCountries(), 
+			sourceWorld.getRegions(), 
+			cultureMapper, 
+			slaveCultureMapper, 
+			continentsMapper, 
+			religionMapper,
+			countryMapper);
 	}
 }
-
 
 std::optional<std::string> V2::World::determineProvinceOwnership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const
 {
@@ -507,7 +479,7 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::vect
 		auto ownerTag = eu4province->getOwnerString();
 		if (ownerTag.empty()) continue; // Don't touch uncolonized provinces.
 		theClaims[ownerTag].push_back(eu4province);
-		theShares[ownerTag] = std::make_pair(eu4province->getTotalDevModifier(), eu4province->getBaseTax());
+		theShares[ownerTag] = std::make_pair(lround(eu4province->getTotalDevModifier()), lround(eu4province->getBaseTax()));
 	}
 	// Let's see who the lucky winner is.
 	std::string winner; int maxDev = 0; int maxTax = 0;
@@ -563,17 +535,15 @@ void V2::World::setupColonies()
 			int currentProvince = goodProvinces.front();
 			goodProvinces.pop();
 			auto adjacencies = adjacencyMapper.getVic2Adjacencies(currentProvince);
-			if (adjacencies)
+			if (!adjacencies) continue;
+			for (auto adjacency: *adjacencies)
 			{
-				for (auto adjacency: *adjacencies)
-				{
-					auto openItr2 = openProvinces.find(adjacency);
-					if (openItr2 == openProvinces.end()) continue;
-					if (openItr2->second->getOwner() != countryItr.first) continue;
-					openItr2->second->setLandConnection(true);
-					goodProvinces.push(openItr2->first);
-					openProvinces.erase(openItr2);
-				}
+				auto openItr2 = openProvinces.find(adjacency);
+				if (openItr2 == openProvinces.end()) continue;
+				if (openItr2->second->getOwner() != countryItr.first) continue;
+				openItr2->second->setLandConnection(true);
+				goodProvinces.push(openItr2->first);
+				openProvinces.erase(openItr2);
 			}
 		} while (!goodProvinces.empty());
 
@@ -582,49 +552,39 @@ void V2::World::setupColonies()
 		auto capital = provinces.find(countryItr.second->getCapital());
 		if (capital != provinces.end())
 		{
-			if (capital->second->getEU4ID() > 0)
-			{
-				capitalContinent = continentsMapper.getEU4Continent(capital->second->getEU4ID());
-				if (!capitalContinent) continue;
-			}
+			auto capitalSources = capital->second->getEU4IDs();		
+			capitalContinent = continentsMapper.getEU4Continent(*capitalSources.begin());
+			if (!capitalContinent) continue;
 		}
 		else
 		{
 			continue;
 		}
 		auto ownedProvinces = countryItr.second->getProvinces();
-		for (auto& ownedProvince: ownedProvinces)
+		for (const auto& ownedProvince: ownedProvinces)
 		{
-			std::optional<std::string> continent = continentsMapper.getEU4Continent(ownedProvince.second->getEU4ID());			
+			auto provinceSources = ownedProvince.second->getEU4IDs();
+			auto continent = continentsMapper.getEU4Continent(*provinceSources.begin());
 			if (continent && continent == capitalContinent)
 			{
 				ownedProvince.second->setSameContinent();
 			}
 		}
 	}
-
-	for (auto& provItr : provinces)
-	{
-		provItr.second->determineColonial();
-	}
 }
 
 void V2::World::setupStates()
 {
-	std::list<std::shared_ptr<V2::Province>> unassignedProvs;
-	for (std::map<int, std::shared_ptr<V2::Province>>::iterator itr = provinces.begin(); itr != provinces.end(); ++itr)
-	{
-		unassignedProvs.push_back(itr->second);
-	}
+	std::list<std::shared_ptr<Province>> unassignedProvs;
+	for (const auto& province: provinces) unassignedProvs.push_back(province.second);
 
-	std::list<std::shared_ptr<V2::Province>>::iterator iter;
-	while (unassignedProvs.size() > 0)
+	while (!unassignedProvs.empty())
 	{
-		iter = unassignedProvs.begin();
+		auto iter = unassignedProvs.begin();
 		int provId = (*iter)->getID();
 		std::string owner = (*iter)->getOwner();
 
-		if (owner == "")
+		if (owner.empty())
 		{
 			unassignedProvs.erase(iter);
 			continue;
@@ -634,15 +594,18 @@ void V2::World::setupStates()
 		stateId++;
 		auto neighbors = stateMapper.getAllProvincesInState(provId);
 
-		bool colonial = (*iter)->isColony();
+		// We are breaking states apart according to colonial status. This is so primitives can retain 
+		// their full states next to colonizers who have colonial provinces in the same state.
+		// This ALSO means multiple naval bases within apparently single state.
+		auto colonial = (*iter)->isColony();
 		newState->setColonial(colonial);
 		iter = unassignedProvs.erase(iter);
 
-		for (auto i = neighbors.begin(); i != neighbors.end(); i++)
+		for (const auto& neighborID: neighbors)
 		{
 			for (iter = unassignedProvs.begin(); iter != unassignedProvs.end(); iter++)
 			{
-				if ((*iter)->getID() == *i)
+				if ((*iter)->getID() == neighborID)
 				{
 					if ((*iter)->getOwner() == owner)
 					{
@@ -655,8 +618,9 @@ void V2::World::setupStates()
 				}
 			}
 		}
+		
 		newState->colloectNavalBase();
-		std::map<std::string, std::shared_ptr<Country>>::iterator iter2 = countries.find(owner);
+		const auto& iter2 = countries.find(owner);
 		if (iter2 != countries.end())
 		{
 			iter2->second->addState(newState, portProvincesMapper);
@@ -666,83 +630,51 @@ void V2::World::setupStates()
 
 void V2::World::convertUncivReforms(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper)
 {
-	// tech group
-
-	enum civConversion { older, newer };
-	civConversion techGroupAlgoritm = newer;
-	double topTech = 96;
-	int topInstitutions = 7;
+	// tech group	
+	auto techGroupAlgorithm = CIV_ALGORITHM::newer;
+	double topTech = 0;
+	int topInstitutions = 0;
 	auto version18 = EU4::Version("1.18.0");
+
 	if (sourceWorld.getVersion() >= version18)
 	{
-		techGroupAlgorithm  = newer;
-
 		// Find global max tech and institutions embraced
 
-		auto sourceCountries = sourceWorld.getCountries();
-
-
-		auto i = sourceCountries.begin();
-		while (i->second->getProvinces().size() == 0)
-			i++;
-
-		// Take max from the first country
-		auto currCountry = i->second;
-
-		double totalTechs = currCountry->getMilTech() + currCountry->getAdmTech() + currCountry->getDipTech();
-		topTech = totalTechs;
-		int currInstitutions = currCountry->numEmbracedInstitutions();
-		topInstitutions = currInstitutions;
-		
-		int num = 2;
-
-		// Calculate max
-		for (i++; i != sourceCountries.end(); i++)
+		for (const auto& country: sourceWorld.getCountries())
 		{
-			currCountry = i->second;
-			if (currCountry->getProvinces().size() == 0)
-				continue;
-			
-			totalTechs = currCountry->getMilTech() + currCountry->getAdmTech() + currCountry->getDipTech();
-			if (totalTechs > topTech)
-				topTech = totalTechs;
-
-			currInstitutions = currCountry->numEmbracedInstitutions();
-			if (currInstitutions > topInstitutions)
-				topInstitutions = currInstitutions;
-
-			num++;
+			if (country.second->getProvinces().empty()) continue;
+			auto totalTechs = country.second->getMilTech() + country.second->getAdmTech() + country.second->getDipTech();
+			if (totalTechs > topTech) topTech = totalTechs;
+			auto currInstitutions = country.second->numEmbracedInstitutions();
+			if (currInstitutions > topInstitutions) topInstitutions = currInstitutions;
 		}
 	}
 	else
 	{
-		techGroupAlgorithm = older;
+		// Hardcoded for best monolithic experience.
+		topTech = 96;
+		topInstitutions = 7;
+		techGroupAlgorithm = CIV_ALGORITHM::older;
 	}
 
-	for (std::map<std::string, std::shared_ptr<Country>>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
+	for (const auto& country: countries)
 	{
-		itr->second->convertUncivReforms(techGroupAlgorithm, topTech, topInstitutions, techGroupsMapper);
+		country.second->convertUncivReforms(techGroupAlgorithm, topTech, topInstitutions, techGroupsMapper);
 	}
 
 	// inherit civilisation level for landless countries from their capital's owner
-	for (std::map<std::string, std::shared_ptr<Country>>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
+	for (const auto& country: countries)
 	{
-		if (itr->second->getProvinces().size() == 0)
-		{
-			int capitalNum = itr->second->getCapital();
-			if (capitalNum == 0)
-				continue;
-			std::shared_ptr<V2::Province> capital = getProvince(capitalNum);
-			std::string capOwnerTag = capital->getOwner();
-			std::shared_ptr<Country> capOwner = getCountry(capOwnerTag);
-			if (capOwner == nullptr)
-				continue;
-			itr->second->convertLandlessReforms(capOwner);
-		}
-
+		if (!country.second->getProvinces().empty()) continue;
+		auto capitalID = country.second->getCapital();
+		if (capitalID == 0) continue;		
+		const auto& capital = getProvince(capitalID);
+		std::string capOwnerTag = capital->getOwner();
+		std::shared_ptr<Country> capOwner = getCountry(capOwnerTag);
+		if (!capOwner) continue;
+		country.second->convertLandlessReforms(capOwner);
 	}
 }
-
 
 void V2::World::convertTechs(const EU4::World& sourceWorld)
 {
@@ -766,86 +698,77 @@ void V2::World::convertTechs(const EU4::World& sourceWorld)
 void V2::World::allocateFactories(const EU4::World& sourceWorld)
 {
 	// determine average production tech
-	auto sourceCountries = sourceWorld.getCountries();
-	double admMean = 0.0f;
+	const auto& sourceCountries = sourceWorld.getCountries();
+	double admMean = 0;
 	int num = 1;
-	for (auto itr = sourceCountries.begin(); itr != sourceCountries.end(); ++itr)
+	for (const auto& country: sourceCountries)
 	{
-		if ((itr)->second->getProvinces().size() == 0)
-		{
-			continue;
-		}
+		if (country.second->getProvinces().empty()) continue;
 
-		double admTech = (itr)->second->getAdmTech();
+		double admTech = country.second->getAdmTech();
 		admMean += ((admTech - admMean) / num);
 		++num;
 	}
 
 	// give all extant civilized nations an industrial score
 	std::deque<std::pair<double, std::shared_ptr<Country>>> weightedCountries;
-	for (std::map<std::string, std::shared_ptr<Country>>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
+	for (const auto& country : countries)
 	{
-		if (!itr->second->isCivilized())
-		{
-			continue;
-		}
+		if (!country.second->isCivilized()) continue;
 
-		auto sourceCountry = itr->second->getSourceCountry();
-		if (sourceCountry == nullptr)
-		{
-			continue;
-		}
-
-		if (itr->second->getProvinces().size() == 0)
-		{
-			continue;
-		}
+		auto sourceCountry = country.second->getSourceCountry();
+		if (!sourceCountry) continue;
+		if (country.second->getProvinces().empty()) continue;
 
 		// modified manufactory weight follows diminishing returns curve y = x^(3/4)+log((x^2)/5+1)
 		int manuCount = sourceCountry->getManufactoryCount();
 		double manuWeight = pow(manuCount, 0.75) + log1p(static_cast<double>(pow(manuCount, 2)) / 5.0);
-		double industryWeight = (sourceCountry->getAdmTech() - admMean) + manuWeight;
+		double industryWeight = sourceCountry->getAdmTech() - admMean + manuWeight;
 		// having one manufactory and average tech is not enough; you must have more than one, or above-average tech
 		if (industryWeight > 1.0)
 		{
-			weightedCountries.push_back(std::pair<double, std::shared_ptr<Country>>(industryWeight, itr->second));
+			weightedCountries.push_back(std::pair<double, std::shared_ptr<Country>>(industryWeight, country.second));
 		}
 	}
-	if (weightedCountries.size() < 1)
+
+	if (weightedCountries.empty())
 	{
-		LOG(LogLevel::Warning) << "No countries are able to accept factories";
+		LOG(LogLevel::Warning) << "No countries are able to accept factories? What's the state of tech in this world?";
 		return;
 	}
-	sort(weightedCountries.begin(), weightedCountries.end());
+	
+	sort(weightedCountries.begin(), weightedCountries.end(), [](const std::pair<double, std::shared_ptr<Country>>& country1, const std::pair<double, std::shared_ptr<Country>>& country2)
+	{
+			return country1.first > country2.first;
+	});
 
-	// allow a maximum of 10 (plus any tied at tenth place) countries to recieve factories
+	// allow a maximum of 15 (plus any tied at fifteenth place) countries to receive factories
 	std::deque<std::pair<double, std::shared_ptr<Country>>> restrictCountries;
 	double threshold = 1.0;
 	double totalIndWeight = 0.0;
-	for (std::deque<std::pair<double, std::shared_ptr<Country>>>::reverse_iterator itr = weightedCountries.rbegin(); itr != weightedCountries.rend(); ++itr)
+	for (const auto& country : weightedCountries)
 	{
-		if ((restrictCountries.size() > 10) && (itr->first < (threshold - FLT_EPSILON)))
-		{
-			break;
-		}
-		restrictCountries.push_front(*itr); // preserve sort
-		totalIndWeight += itr->first;
-		threshold = itr->first;
+		if (restrictCountries.size() > 15 && country.first < threshold - FLT_EPSILON) break;
+
+		restrictCountries.push_back(country); // preserve sort
+		totalIndWeight += country.first;
+		threshold = country.first;
 	}
 
 	if (totalIndWeight == 0)
 	{
-		LOG(LogLevel::Warning) << "The world is a backwater! No factories for anyone!";
+		LOG(LogLevel::Warning) << "No factories for anyone! Industry levels are too unified - are you converting a starting date?";
 		return;
 	} 
 
 	weightedCountries.swap(restrictCountries);
-	// remove nations that won't have enough industiral score for even one factory
+
+	// remove nations that won't have enough industrial score for even one factory
 	std::deque<std::shared_ptr<Factory>> factoryList = factoryTypeMapper.buildFactories();
-	while (((weightedCountries.begin()->first / totalIndWeight) * factoryList.size() + 0.5 /*round*/) < 1.0)
+	while (lround(weightedCountries.begin()->first / totalIndWeight * factoryList.size()) < 1.0)
 	{
 		weightedCountries.pop_front();
-		if (weightedCountries.size() == 0)
+		if (weightedCountries.empty())
 		{
 			LOG(LogLevel::Warning) << "These are all primitives! No factories for anyone!";
 			return;
@@ -854,21 +777,21 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 
 	// determine how many factories each eligible nation gets
 	std::vector<std::pair<int, std::shared_ptr<Country>>> factoryCounts;
-	for (std::deque<std::pair<double, std::shared_ptr<Country>>>::iterator itr = weightedCountries.begin(); itr != weightedCountries.end(); ++itr)
+	for (const auto& country: weightedCountries)
 	{
-		int factories = int(((itr->first / totalIndWeight) * factoryList.size()) + 0.5 /*round*/);
-		factoryCounts.push_back(std::pair<int, std::shared_ptr<Country>>(factories, itr->second));
+		int factories = lround(country.first / totalIndWeight * factoryList.size());
+		factoryCounts.emplace_back(std::pair<int, std::shared_ptr<Country>>(factories, country.second));
 	}
 
 	// allocate the factories
-	std::vector<std::pair<int, std::shared_ptr<Country>>>::iterator lastReceptiveCountry = factoryCounts.end()--;
-	std::vector<std::pair<int, std::shared_ptr<Country>>>::iterator citr = factoryCounts.begin();
+	auto lastReceptiveCountry = factoryCounts.end()--;
+	auto citr = factoryCounts.begin();
 	while (!factoryList.empty())
 	{
 		bool accepted = false;
 		if (citr->first > 0) // can take more factories
 		{
-			for (std::deque<std::shared_ptr<Factory>>::iterator qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
+			for (auto qitr = factoryList.begin(); qitr != factoryList.end(); ++qitr)
 			{
 				if (citr->second->addFactory(*qitr))
 				{
@@ -893,20 +816,18 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 
 void V2::World::setupPops(const EU4::World& sourceWorld)
 {
-	long		my_totalWorldPopulation = static_cast<long>(0.55 * totalWorldPopulation);
-	double	popWeightRatio = my_totalWorldPopulation / sourceWorld.getTotalProvinceWeights();
+	long my_totalWorldPopulation = static_cast<long>(0.55 * totalWorldPopulation); // What is this? Why 0.55? Why not redistribute vanilla world population size?
+	double popWeightRatio = my_totalWorldPopulation / sourceWorld.getTotalProvinceWeights(); // This is relevant only for extreme reshaping.
 
-	//ofstream output_file("Data.csv");
-
-	int popAlgorithm;
+	CIV_ALGORITHM popAlgorithm;
 	auto version12 = EU4::Version("1.12.0");
 	if (sourceWorld.getVersion() >= version12)
 	{
-		popAlgorithm = 2;
+		popAlgorithm = CIV_ALGORITHM::newer;
 	}
 	else
 	{
-		popAlgorithm = 1;
+		popAlgorithm = CIV_ALGORITHM::older;
 	}
 
 	for (std::map<std::string, std::shared_ptr<Country>>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
@@ -925,9 +846,7 @@ void V2::World::setupPops(const EU4::World& sourceWorld)
 	long newTotalPopulation = 0;
 	for (auto province: provinces) newTotalPopulation += province.second->getTotalPopulation();
 	LOG(LogLevel::Info) << "New total world population: " << newTotalPopulation;
-
 }
-
 
 void V2::World::addUnions()
 {
@@ -940,38 +859,41 @@ void V2::World::addUnions()
 
 	LOG(LogLevel::Info) << "Distributing national and cultural union cores.";
 
-	for (std::map<int, std::shared_ptr<V2::Province>>::iterator provItr = provinces.begin(); provItr != provinces.end(); ++provItr)
+	for (const auto& province: provinces)
 	{
-		if (!provItr->second->wasColony())
+		if (!province.second->wasColony())
 		{
-			auto cultures = provItr->second->getCulturesOverThreshold(0.5);
-			for (auto culture : cultures)
+			auto cultures = province.second->getCulturesOverThreshold(0.5);
+			for (const auto& culture : cultures)
 			{
-				std::vector<std::string> unionCores = culturalUnionMapper.getCoresForCulture(culture);
-				std::vector<std::string> nationalCores = culturalNationalitiesMapper.getCoresForCulture(culture);
+				auto unionCores = culturalUnionMapper.getCoresForCulture(culture);
+				auto nationalCores = culturalNationalitiesMapper.getCoresForCulture(culture);
 				switch (theConfiguration.getCoreHandling())
 				{
 				case Configuration::COREHANDLES::DropNational:
-					for (auto core : unionCores)
+					if (!unionCores) break;
+					for (const auto& core : *unionCores)
 					{
-						provItr->second->addCore(core);
+						province.second->addCore(core);
 					}
 					break;
 				case Configuration::COREHANDLES::DropUnions:
-					for (auto core : nationalCores)
+					if (!nationalCores) break;
+					for (const auto& core : *nationalCores)
 					{
-						LOG(LogLevel::Debug) << provItr->second->getName() << ": " << core;
-						provItr->second->addCore(core);
+						province.second->addCore(core);
 					}
 					break;
 				case Configuration::COREHANDLES::DropNone:
-					for (auto core : unionCores)
+					if (!unionCores) break;
+					for (const auto& core : *unionCores)
 					{
-						provItr->second->addCore(core);
+						province.second->addCore(core);
 					}
-					for (auto core : nationalCores)
+					if (!nationalCores) break;
+					for (const auto& core : *nationalCores)
 					{
-						provItr->second->addCore(core);
+						province.second->addCore(core);
 					}
 				case Configuration::COREHANDLES::DropAll:
 				default:
@@ -983,19 +905,17 @@ void V2::World::addUnions()
 }
 
 
-//#define TEST_V2_PROVINCES
-void V2::World::convertArmies(const EU4::World& sourceWorld)
+void V2::World::convertArmies()
 {
 	// convert leaders and armies
-
-	for (std::map<std::string, std::shared_ptr<Country>>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
+	for (const auto& country: countries)
 	{
-		itr->second->convertLeaders(leaderTraitMapper);
-		itr->second->convertArmies(regimentCostsMapper, provinces, portProvincesMapper, provinceMapper);
+		country.second->convertLeaders(leaderTraitMapper);
+		country.second->convertArmies(regimentCostsMapper, provinces, portProvincesMapper, provinceMapper);
 	}
 }
 
-void V2::World::output(unsigned int potentialGPs) const
+void V2::World::output(const mappers::VersionParser& versionParser) const
 {
 	LOG(LogLevel::Info) << "<- Copying Mod Template";
 	Utils::copyFolder("blankMod/output", "output/output");
@@ -1005,56 +925,13 @@ void V2::World::output(unsigned int potentialGPs) const
 	createModFile();
 
 	// Record converter version
-
 	LOG(LogLevel::Info) << "<- Writing version";
-	std::ofstream versionFile;
-
-	try
-	{
-		versionFile.open("output/" + theConfiguration.getOutputName() + "/eu4tov2_version.txt");
-		versionFile << "# 1.0K-prerelease \"Kurland\", built on " << __TIMESTAMP__ << ".\n";
-		versionFile.close();
-	}
-	catch (const std::exception&)
-	{
-		LOG(LogLevel::Error) << "Error writing version file! Is the output folder writeable?";
-	}
+	outputVersion(versionParser);
 
 	// Update bookmark starting dates
 	LOG(LogLevel::Info) << "<- Updating bookmarks";
-	std::string startDate = "<STARTDATE>";
-	std::string numGPs = "GREAT_NATIONS_COUNT = 8";
-
-	std::ostringstream incomingDefines, incomingBookmarks;
-
-	std::ifstream defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
-	incomingDefines << defines_lua.rdbuf();
-	defines_lua.close();
-	std::string strDefines = incomingDefines.str();
-	size_t pos1 = strDefines.find(startDate);
-	strDefines.replace(pos1, startDate.length(), theConfiguration.getLastEU4Date().toString());
-
-	if (potentialGPs < 8)
-	{
-		size_t posGPs = strDefines.find(numGPs);
-		std::string replacementGPs = "GREAT_NATIONS_COUNT = " + std::to_string(potentialGPs);
-		strDefines.replace(posGPs, numGPs.length(), replacementGPs);
-
-	}
-
-	std::ofstream out_defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
-	out_defines_lua << strDefines;
-	out_defines_lua.close();
-
-	std::ifstream bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
-	incomingBookmarks << bookmarks_txt.rdbuf();
-	bookmarks_txt.close();
-	std::string strBookmarks = incomingBookmarks.str();
-	size_t pos2 = strBookmarks.find(startDate);
-	strBookmarks.replace(pos2, startDate.length(), theConfiguration.getLastEU4Date().toString());
-	std::ofstream out_bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
-	out_bookmarks_txt << strBookmarks;
-	out_bookmarks_txt.close();
+	modifyDefines();
+	
 
 	// Create common\countries path.
 	std::string countriesPath = "output/" + theConfiguration.getOutputName() + "/common/countries";
@@ -1065,29 +942,7 @@ void V2::World::output(unsigned int potentialGPs) const
 
 	// Output common\countries.txt
 	LOG(LogLevel::Info) << "<- Creating countries.txt";
-	FILE* allCountriesFile;
-	if (fopen_s(&allCountriesFile, ("output/" + theConfiguration.getOutputName() + "/common/countries.txt").c_str(), "w") != 0)
-	{
-		LOG(LogLevel::Error) << "Could not create countries file";
-		exit(-1);
-	}
-	for (std::map<std::string, std::shared_ptr<Country>>::const_iterator i = countries.begin(); i != countries.end(); ++i)
-	{
-		const Country& country = *i->second;
-		std::map<std::string, std::shared_ptr<Country>>::const_iterator j = dynamicCountries.find(country.getTag());
-		if (j == dynamicCountries.end())
-		{
-			fprintf(allCountriesFile, "%s = \"countries/%s\"\n", country.getTag().c_str(), country.getCommonCountryFile().c_str());
-		}
-	}
-	fprintf(allCountriesFile, "\n");
-	fprintf(allCountriesFile, "##HoD Dominions\n");
-	fprintf(allCountriesFile, "dynamic_tags = yes # any tags after this is considered dynamic dominions\n");
-	for (std::map<std::string, std::shared_ptr<Country>>::const_iterator i = dynamicCountries.begin(); i != dynamicCountries.end(); ++i)
-	{
-		fprintf(allCountriesFile, "%s = \"countries/%s\"\n", i->second->getTag().c_str(), i->second->getCommonCountryFile().c_str());
-	}
-	fclose(allCountriesFile);
+	outputCommonCountries();
 
 	// Create flags for all new countries.
 	LOG(LogLevel::Info) << "-> Creating Flags";
@@ -1099,6 +954,59 @@ void V2::World::output(unsigned int potentialGPs) const
 
 	// Create localisations for all new countries. We don't actually know the names yet so we just use the tags as the names.
 	LOG(LogLevel::Info) << "<- Writing Localisation Text";
+	outputLocalisation();
+
+	LOG(LogLevel::Info) << "<- Writing Provinces";
+	outputProvinces();
+
+	LOG(LogLevel::Info) << "<- Writing Countries";
+	outputCountries();
+
+	LOG(LogLevel::Info) << "<- Writing Diplomacy";
+	diplomacy.output();
+
+	LOG(LogLevel::Info) << "<- Writing Pops";
+	outputPops();
+
+	// verify countries got written
+	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
+	verifyCountriesWritten();
+}
+
+void V2::World::outputVersion(const mappers::VersionParser& versionParser) const
+{
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/eu4tov2_version.txt");
+	if (!output.is_open()) throw std::runtime_error("Error writing version file! Is the output folder writable?");
+	output << versionParser;
+	output.close();
+}
+
+void V2::World::outputCommonCountries() const
+{
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/countries.txt");
+	if (!output.is_open()) throw std::runtime_error("Could not create countries file!");
+
+	for (const auto& country: countries)
+	{		
+		const auto& dynamic = dynamicCountries.find(country.first);
+		// First output all regular countries, order matters!
+		if (dynamic == dynamicCountries.end())
+		{
+			output << country.first << " = \"countries/" << country.second->getCommonCountryFile() << "\"\n";
+		}
+	}
+	output << "\n";
+	output << "##HoD Dominions\n";
+	output << "dynamic_tags = yes # any tags after this is considered dynamic dominions\n";	
+	for (const auto& country: dynamicCountries)
+	{
+		output << country.first << " = \"countries/" << country.second->getCommonCountryFile() << "\"\n";
+	}
+	output.close();
+}
+
+void V2::World::outputLocalisation() const
+{
 	std::string localisationPath = "output/" + theConfiguration.getOutputName() + "/localisation";
 	if (!Utils::TryCreateFolder(localisationPath))
 	{
@@ -1131,33 +1039,30 @@ void V2::World::output(unsigned int potentialGPs) const
 		targetFile.close();
 
 		// ...and also empty out 0_Names.csv
-		FILE* zeronamesfile;
-		std::string zeronamesfilepath = localisationPath + "/0_Names.csv";
-		if (fopen_s(&zeronamesfile, zeronamesfilepath.c_str(), "w") != 0)
-			fclose(zeronamesfile);
+		std::ofstream output("test.txt", std::ofstream::out | std::ofstream::trunc);
+		output.close();
 	}
 
 	LOG(LogLevel::Info) << "<- Writing Localisation Names";
-	std::ofstream localisationFile(localisationPath + "/0_Names.csv", std::ofstream::app);
-	if (!localisationFile.is_open())
-	{
-		throw(std::runtime_error("Could not update localisation text file"));
-	}
+	std::ofstream output(localisationPath + "/0_Names.csv", std::ofstream::app);
+	if (!output.is_open()) throw(std::runtime_error("Could not update localisation text file"));
 
 	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
 	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
-	for (auto country: countries)
+	for (auto country : countries)
 	{
 		if (country.second->isNewCountry())
 		{
-			localisationFile << country.second->getLocalisation();
+			output << country.second->getLocalisation();
 		}
 	}
-	localisationFile.close();
+	output.close();
+}
 
-	LOG(LogLevel::Info) << "<- Writing Provinces";
+void V2::World::outputProvinces() const
+{
 	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces");
-	for (auto province: provinces)
+	for (auto province : provinces)
 	{
 		auto filename = province.second->getFilename();
 		int lastSlash = filename.find_last_of('/');
@@ -1172,8 +1077,11 @@ void V2::World::output(unsigned int potentialGPs) const
 		output << *province.second;
 		output.close();
 	}
-	LOG(LogLevel::Info) << "<- Writing Countries";
-	for (const auto& country: countries)
+}
+
+void V2::World::outputCountries() const
+{
+	for (const auto& country : countries)
 	{
 		// Country file
 		if (!country.second->isDynamicCountry())
@@ -1181,7 +1089,7 @@ void V2::World::output(unsigned int potentialGPs) const
 			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/countries/" + country.second->getFilename());
 			if (!output.is_open()) throw std::runtime_error("Could not create country history file " + country.second->getFilename());
 			output << *country.second;
-			output.close();			
+			output.close();
 		}
 		// commons file
 		if (country.second->isDynamicCountry() || country.second->isNewCountry())
@@ -1194,93 +1102,83 @@ void V2::World::output(unsigned int potentialGPs) const
 		// OOB
 		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt");
 		if (!output.is_open()) throw std::runtime_error("Could not create OOB file " + country.first + "_OOB.txt");
-		country.second->outputOOB(output);		
+		country.second->outputOOB(output);
 	}
-	LOG(LogLevel::Info) << "<- Writing Diplomacy";
-	diplomacy.output();
+}
 
-	LOG(LogLevel::Info) << "<- Writing Pops";
-	outputPops();
+void V2::World::modifyDefines() const
+{
+	auto potentialGPs = countCivilizedNations();
+	std::string startDate = "<STARTDATE>";
+	std::string numGPs = "GREAT_NATIONS_COUNT = 8";
+	std::ostringstream incomingDefines, incomingBookmarks;
 
-	// verify countries got written
-	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
+	// Edit starting date in defines + adjust GP count if needed
+	std::ifstream defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
+	incomingDefines << defines_lua.rdbuf();
+	defines_lua.close();
+	std::string strDefines = incomingDefines.str();
+	size_t pos1 = strDefines.find(startDate);
+	strDefines.replace(pos1, startDate.length(), theConfiguration.getLastEU4Date().toString());
+
+	if (potentialGPs < 8)
+	{
+		size_t posGPs = strDefines.find(numGPs);
+		std::string replacementGPs = "GREAT_NATIONS_COUNT = " + std::to_string(potentialGPs);
+		strDefines.replace(posGPs, numGPs.length(), replacementGPs);
+
+	}
+
+	std::ofstream out_defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
+	out_defines_lua << strDefines;
+	out_defines_lua.close();
+
+	// Edit bookmark start
+	std::ifstream bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
+	incomingBookmarks << bookmarks_txt.rdbuf();
+	bookmarks_txt.close();
+	std::string strBookmarks = incomingBookmarks.str();
+	size_t pos2 = strBookmarks.find(startDate);
+	strBookmarks.replace(pos2, startDate.length(), theConfiguration.getLastEU4Date().toString());
+	std::ofstream out_bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks.txt");
+	out_bookmarks_txt << strBookmarks;
+	out_bookmarks_txt.close();
+}
+
+void V2::World::verifyCountriesWritten() const
+{
 	std::ifstream V2CountriesInput;
 	V2CountriesInput.open(("output/" + theConfiguration.getOutputName() + "/common/countries.txt").c_str());
-	if (!V2CountriesInput.is_open())
-	{
-		LOG(LogLevel::Error) << "Could not open countries.txt";
-		exit(1);
-	}
+	if (!V2CountriesInput.is_open()) throw std::runtime_error("Could not open countries.txt");
 
-	bool	staticSection = true;
 	while (!V2CountriesInput.eof())
 	{
 		std::string line;
 		getline(V2CountriesInput, line);
 
-		if ((line[0] == '#') || (line.size() < 3))
-		{
-			continue;
-		}
-		else if (line.substr(0, 12) == "dynamic_tags")
-		{
-			continue;
-		}
+		if (line[0] == '#' || line.size() < 3) continue;
+		if (line.substr(0, 12) == "dynamic_tags") continue;
 
 		std::string countryFileName;
-		int start = line.find_first_of('/');
-		int size = line.find_last_of('\"') - start - 1;
+		const unsigned int start = line.find_first_of('/');
+		const unsigned int size = line.find_last_of('\"') - start - 1;
 		countryFileName = line.substr(start + 1, size);
 
-		if (Utils::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/countries/" + countryFileName))
-		{
-		}
-		else if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + countryFileName))
-		{
-		}
-		else
-		{
-			LOG(LogLevel::Warning) << "common/countries/" << countryFileName << " does not exists. This will likely crash Victoria 2.";
-			continue;
-		}
+		if (Utils::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/countries/" + countryFileName)) { continue; }
+		if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + countryFileName)) { continue; }
+		LOG(LogLevel::Warning) << "common/countries/" << countryFileName << " does not exists. This will likely crash Victoria 2.";
 	}
 	V2CountriesInput.close();
 }
 
-
-
 void V2::World::createModFile() const
 {
-	std::ofstream modFile("output/" + theConfiguration.getOutputName() + ".mod");
-	if (!modFile.is_open())
-	{
-		LOG(LogLevel::Error) << "Could not create " << theConfiguration.getOutputName() << ".mod";
-		exit(-1);
-	}
+	std::ofstream output("output/" + theConfiguration.getOutputName() + ".mod");
+	if (!output.is_open()) throw std::runtime_error("Could not create " + theConfiguration.getOutputName() + ".mod");
 	LOG(LogLevel::Info) << "\t-> Writing to: " << "output/" + theConfiguration.getOutputName() + ".mod";
-
-	modFile << "name = \"Converted - " << theConfiguration.getOutputName() << "\"\n";
-	modFile << "path = \"mod/" << theConfiguration.getOutputName() << "\"\n";
-	modFile << "user_dir = \"" << theConfiguration.getOutputName() << "\"\n";
-	modFile << "replace = \"history/provinces\"\n";
-	modFile << "replace = \"history/countries\"\n";
-	modFile << "replace = \"history/diplomacy\"\n";
-	modFile << "replace = \"history/units\"\n";
-	modFile << "replace = \"history/pops/1836.1.1\"\n";
-	modFile << "replace = \"common/religion.txt\"\n";
-	modFile << "replace = \"common/cultures.txt\"\n";
-	modFile << "replace = \"common/countries.txt\"\n";
-	modFile << "replace = \"common/countries/\"\n";
-	modFile << "replace = \"gfx/interface/icon_religion.dds\"\n";
-	modFile << "replace = \"localisation/0_Names.csv\"\n";
-	modFile << "replace = \"localisation/0_Cultures.csv\"\n";
-	modFile << "replace = \"localisation/0_Religions.csv\"\n";
-	modFile << "replace = \"history/wars\"\n";
-
-	modFile.close();
+	output << modFile;
+	output.close();
 }
-
-
 
 void V2::World::outputPops() const
 {
@@ -1308,14 +1206,14 @@ void V2::World::outputPops() const
 	}
 }
 
-std::shared_ptr<V2::Province> V2::World::getProvince(const int provNum) const
+std::shared_ptr<V2::Province> V2::World::getProvince(const int provID) const
 {
-	std::map<int, std::shared_ptr<V2::Province>>::const_iterator i = provinces.find(provNum);
-	return (i != provinces.end()) ? i->second : nullptr;
+	const auto& provinceItr = provinces.find(provID);
+	return provinceItr != provinces.end() ? provinceItr->second : nullptr;
 }
 
-std::shared_ptr<V2::Country> V2::World::getCountry(std::string tag) const
+std::shared_ptr<V2::Country> V2::World::getCountry(const std::string& tag) const
 {
-	std::map<std::string, std::shared_ptr<Country>>::const_iterator i = countries.find(tag);
-	return (i != countries.end()) ? i->second : nullptr;
+	const auto& countryItr = countries.find(tag);
+	return (countryItr != countries.end()) ? countryItr->second : nullptr;
 }

@@ -1,4 +1,6 @@
-nationals = {
+# Only add here national tags for cultures. If a culture only
+# has a national union TAG (ashkenazi), then it belongs here.
+# Otherwise (swedish, SCA) it also belongs in unions.txt
 
 #Jews (removed since they can pop up anywhere) => Israel
 #link = { tag = ISR culture = ashkenazi }
@@ -184,4 +186,3 @@ link = { tag = DUK culture = duck_culture } # Duckburg
 link = { tag = DRK culture = dragon_culture } # Akavir
 link = { tag = ELE culture = elephant_culture } # Eleph
 link = { tag = HEG culture = hedgehog_culture } # Mobian
-}

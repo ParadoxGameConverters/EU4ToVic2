@@ -15,12 +15,14 @@ void V2::Diplomacy::convertDiplomacy(
 	for (auto& agreement : eu4agreements)
 	{
 		auto EU4Tag1 = agreement.getOriginTag();
-		auto V2Tag1 = countryMapper.getV2Tag(EU4Tag1);
-		if (V2Tag1.empty()) continue;
+		auto ifV2Tag1 = countryMapper.getV2Tag(EU4Tag1);
+		if (!ifV2Tag1) continue;
+		auto V2Tag1 = *ifV2Tag1;
 
 		auto EU4Tag2 = agreement.getTargetTag();
-		auto V2Tag2 = countryMapper.getV2Tag(EU4Tag2);
-		if (V2Tag2.empty()) continue;
+		auto ifV2Tag2 = countryMapper.getV2Tag(EU4Tag2);
+		if (!ifV2Tag2) continue;
+		auto V2Tag2 = *ifV2Tag2;
 
 		const auto& country1 = countries.find(V2Tag1);
 		const auto& country2 = countries.find(V2Tag2);

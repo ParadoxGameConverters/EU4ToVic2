@@ -487,9 +487,6 @@
     <ClCompile Include="Source\V2World\Country\CountryDetails.cpp">
       <Filter>Vic2World\Country</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\World.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Province\ProvinceNameParser.cpp">
       <Filter>Vic2World\Province</Filter>
     </ClCompile>
@@ -498,6 +495,18 @@
     </ClCompile>
     <ClCompile Include="Source\V2World\MappingChecker\MappingChecker.cpp">
       <Filter>Vic2World\MappingChecker</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outModFile.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\VersionParser\VersionParser.cpp">
+      <Filter>Mappers\VersionParser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outVersion.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\V2World.cpp">
+      <Filter>Vic2World</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -956,9 +965,6 @@
     <ClInclude Include="Source\V2World\Output\output.h">
       <Filter>Vic2World\Output</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\World.h">
-      <Filter>Vic2World</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Province\ProvinceNameParser.h">
       <Filter>Vic2World\Province</Filter>
     </ClInclude>
@@ -967,6 +973,15 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\MappingChecker\MappingChecker.h">
       <Filter>Vic2World\MappingChecker</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Output\ModFile.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\VersionParser\VersionParser.h">
+      <Filter>Mappers\VersionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\V2World.h">
+      <Filter>Vic2World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1176,6 +1191,9 @@
     </Filter>
     <Filter Include="Vic2World\MappingChecker">
       <UniqueIdentifier>{c9e81627-0b25-4e61-a165-6f2f8bee6050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\VersionParser">
+      <UniqueIdentifier>{d85a505e-83f9-43ad-8a57-da9e364829c4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
