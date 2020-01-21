@@ -1,13 +1,14 @@
+#include <fstream>
+#include <cfloat>
+#include <queue>
 #include "V2World.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "../Mappers/Pops/PopMapper.h"
-#include <fstream>
+#include "../Mappers/VersionParser/VersionParser.h"
 #include "../EU4World/World.h"
-#include <queue>
 #include "../Helpers/TechValues.h"
 #include "Flags/Flags.h"
-#include "../Mappers/VersionParser/VersionParser.h"
 
 V2::World::World(const EU4::World& sourceWorld, 
 	const mappers::IdeaEffectMapper& ideaEffectMapper, 

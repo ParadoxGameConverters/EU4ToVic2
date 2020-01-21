@@ -18,7 +18,7 @@ V2::Province::Province(
 	const mappers::ClimateMapper& climateMapper, 
 	const mappers::TerrainDataMapper& terrainDataMapper,
 	const ProvinceNameParser& provinceNameParser,
-	mappers::NavalBaseMapper navalBaseMapper):
+	const mappers::NavalBaseMapper& navalBaseMapper):
 filename(_filename)
 {
 	int slash = filename.find_last_of("/");

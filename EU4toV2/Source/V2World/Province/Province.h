@@ -48,7 +48,7 @@ namespace V2
 			const mappers::ClimateMapper& climateMapper, 
 			const mappers::TerrainDataMapper& terrainDataMapper,
 			const ProvinceNameParser& provinceNameParser,
-			mappers::NavalBaseMapper navalBaseMapper);
+			const mappers::NavalBaseMapper& navalBaseMapper);
 		int getID() const { return provinceID; }
 		std::string getRgoType() const { return details.rgoType; }
 		std::string getClimate() const { return details.climate; }
