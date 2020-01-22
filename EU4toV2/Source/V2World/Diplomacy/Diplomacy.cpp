@@ -129,12 +129,25 @@ void V2::Diplomacy::convertDiplomacy(
 			if (relation.second.getRelations() > 50)
 			{
 				auto bonus = static_cast<int>((relation.second.getRelations() - 50) / 4);
-				auto newInfluence = std::min(relation.second.getInfluence() + bonus, 100);
+				auto newInfluence = relation.second.getInfluence() + bonus;
+				// Cash in excess influence for higher relationship level
+				while (newInfluence >= 50)
+				{
+					// Just get to friendly, leave sphering to the player.
+					if (relation.second.getLevel() < 4)
+					{
+						newInfluence -= 50;
+						relation.second.setLevel(relation.second.getLevel() + 1);
+					}
+					else
+					{
+						break;
+					}
+				}
 				relation.second.setInfluence(newInfluence);
 			}
 		}
 	}
-
 }
 
 void V2::Diplomacy::output() const
