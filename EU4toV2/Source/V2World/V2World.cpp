@@ -820,7 +820,7 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 
 void V2::World::setupPops(const EU4::World& sourceWorld)
 {
-	long my_totalWorldPopulation = static_cast<long>(0.55 * totalWorldPopulation); // What is this? Why 0.55? Why not redistribute vanilla world population size?
+	long my_totalWorldPopulation = totalWorldPopulation; // Extreme will redistribute vanilla pops.
 	double popWeightRatio = my_totalWorldPopulation / sourceWorld.getTotalProvinceWeights(); // This is relevant only for extreme reshaping.
 
 	CIV_ALGORITHM popAlgorithm;

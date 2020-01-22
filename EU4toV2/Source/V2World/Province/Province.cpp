@@ -620,7 +620,7 @@ void V2::Province::createPops(
 		break;
 
 	case Configuration::POPSHAPES::Extreme:
-		newPopulation = static_cast<long>(static_cast<double>(details.lifeRating) / 10 * popWeightRatio * totalWeight);
+		newPopulation = static_cast<long>(popWeightRatio * totalWeight);
 
 		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(*eu4IDs.begin()); // the first province maps to the same places as the others.
 		int numOfV2Provs = Vic2Provinces.size();

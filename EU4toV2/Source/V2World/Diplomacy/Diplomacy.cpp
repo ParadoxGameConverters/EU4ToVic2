@@ -44,7 +44,7 @@ void V2::Diplomacy::convertDiplomacy(
 		auto& r1 = country1->second->getRelation(V2Tag2);
 		auto& r2 = country2->second->getRelation(V2Tag1);
 
-		if (agreement.getAgreementType() == "colonial" || agreement.getAgreementType() == "colony")
+		if (subjectMapper.isSubjectInColonies(agreement.getAgreementType()))
 		{
 			country2->second->setColonyOverlord(country1->second->getTag());
 			// Do we annex or not?
@@ -67,22 +67,26 @@ void V2::Diplomacy::convertDiplomacy(
 				" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << theConfiguration.getLibertyThreshold() << " liberty desire)";
 		}
 
-		if (agreement.getAgreementType() == "royal_marriage" || agreement.getAgreementType() == "guarantee")
+		if (subjectMapper.isSubjectInOnesiders(agreement.getAgreementType()))
 		{
 			// influence level +1, but never exceed 4
 			if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
 			r1.increaseRelations(100);
 			r1.setInfluence(20);
-			if (agreement.getAgreementType() == "royal_marriage")
-			{
-				// royal marriage is bidirectional; influence level +1, but never exceed 4
-				if (r2.getLevel() < 4) r2.setLevel(r2.getLevel() + 1);
-				r2.increaseRelations(100);
-				r1.setInfluence(20);
-			}
 		}
 
-		if (agreement.getAgreementType() == "tributary_state")
+		if (subjectMapper.isSubjectInDoublesiders(agreement.getAgreementType()))
+		{
+			// doublesiders are bidirectional; influence level +1, but never exceed 4
+			if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
+			r1.increaseRelations(100);
+			r1.setInfluence(20);
+			if (r2.getLevel() < 4) r2.setLevel(r2.getLevel() + 1);
+			r2.increaseRelations(100);
+			r1.setInfluence(20);
+		}
+
+		if (subjectMapper.isSubjectInTributaries(agreement.getAgreementType()))
 		{
 			// influence level 5 - sphere, but not vassal, and military access is expected.
 			r1.setLevel(5);
@@ -92,19 +96,7 @@ void V2::Diplomacy::convertDiplomacy(
 			r2.setAccess(true);
 		}
 
-		// Multiple names for same type is necessary due to EU4 syntax change over time:
-		// 1.29 uses: vassal, march, daimyo_vassal, personal_union, client_vassal, client_march, colony, tributary_state (not here!)
-		// Obsolete types: protectorate, colonial, union
-		if (agreement.getAgreementType() == "vassal" || 
-			agreement.getAgreementType() == "client_vassal" || 
-			agreement.getAgreementType() == "client_march" ||
-			agreement.getAgreementType() == "daimyo_vassal" ||
-			agreement.getAgreementType() == "protectorate" || 
-			agreement.getAgreementType() == "march" || 
-			agreement.getAgreementType() == "colonial" ||
-			agreement.getAgreementType() == "colony" ||
-			agreement.getAgreementType() == "union" ||
-			agreement.getAgreementType() == "personal_union")
+		if (subjectMapper.isSubjectInVassals(agreement.getAgreementType()))
 		{
 			// Yeah, we don't do marches, clients or all that. Or personal unions. PUs are a second relation
 			// beside existing vassal relation specifying when vassalage ends.

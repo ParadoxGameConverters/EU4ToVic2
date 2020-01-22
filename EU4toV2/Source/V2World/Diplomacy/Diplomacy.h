@@ -5,6 +5,7 @@
 #include "../EU4toV2/Source/EU4World/Diplomacy/EU4Agreement.h"
 #include <vector>
 #include "../../Mappers/CountryMappings/CountryMappings.h"
+#include "../../Mappers/SubjectMapper/SubjectMapper.h"
 
 namespace V2
 {
@@ -21,6 +22,8 @@ namespace V2
 
 	private:
 		std::vector<Agreement> agreements;
+
+		mappers::SubjectMapper subjectMapper;
 	};
 }
 

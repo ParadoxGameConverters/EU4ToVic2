@@ -3,16 +3,16 @@
 
 # These are colonies, they can be integrated or not, depending on their liberty desire and config settings.
 # They are turned into vassals if not annexed.
-colony = { colony colonial }
+colonies = { colony colonial }
 
 # Onesiders boost relations and give some extra influence over target
-onesider = { guarantee }
+onesiders = { guarantee }
 
 # Doublesiders do what onesiders do but in both directions
-doublesider = { royal_marriage }
+doublesiders = { royal_marriage }
 
 # Tributaries are sphered, set doublesided military access, and boost relations over target
-tributary = { tributary_state }
+tributaries = { tributary_state }
 
 # Vassals are sphered, boosted relations, set with high influence, doublesided military access and reduced prestige.
-vassal = { vassal client_vassal client_march daimyo_vassal protectorate march colonial colony union personal_union }
+vassals = { vassal client_vassal client_march daimyo_vassal protectorate march colonial colony union personal_union }

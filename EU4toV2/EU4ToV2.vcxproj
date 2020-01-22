@@ -293,6 +293,7 @@
     <ClCompile Include="Source\Mappers\RGORandomization\Bucket.cpp" />
     <ClCompile Include="Source\Mappers\RGORandomization\BucketList.cpp" />
     <ClCompile Include="Source\Mappers\StateMapper\StateMapper.cpp" />
+    <ClCompile Include="Source\Mappers\SubjectMapper\SubjectMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroups.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroupsMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchool.cpp" />
@@ -466,6 +467,7 @@
     <ClInclude Include="Source\Mappers\RGORandomization\Bucket.h" />
     <ClInclude Include="Source\Mappers\RGORandomization\BucketList.h" />
     <ClInclude Include="Source\Mappers\StateMapper\StateMapper.h" />
+    <ClInclude Include="Source\Mappers\SubjectMapper\SubjectMapper.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroups.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroupsMapper.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchool.h" />
