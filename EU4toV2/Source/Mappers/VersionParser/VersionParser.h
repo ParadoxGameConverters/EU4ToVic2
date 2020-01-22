@@ -10,14 +10,15 @@ namespace mappers
 	public:
 		VersionParser();
 		VersionParser(std::istream& theStream);
-		std::string name;
-		std::string version;
-		std::string descriptionLine;
 
 		friend std::ostream& operator<<(std::ostream& output, const VersionParser& versionParser);
 
 	private:
 		void registerKeys();
+
+		std::string name;
+		std::string version;
+		std::string descriptionLine;
 	};
 }
 

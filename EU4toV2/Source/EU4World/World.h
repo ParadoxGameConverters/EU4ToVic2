@@ -28,7 +28,7 @@ namespace EU4
 		const Regions& getRegions() const { return *regions; }
 		const Religions& getReligions() const { return theReligions; }
 		const Version& getVersion() const { return *version; }
-		const std::shared_ptr<Province>& getProvince(int provNum) const;
+		const std::shared_ptr<Province> getProvince(int provNum) const;
 		const mappers::CultureGroups& getCultureGroupsMapper() const { return cultureGroupsMapper; }
 		bool isRandomWorld() const;
 		const std::map<int, std::shared_ptr<Province>>& getProvinces() const { return provinces->getAllProvinces(); }

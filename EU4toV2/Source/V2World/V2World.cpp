@@ -10,6 +10,9 @@
 #include "../Helpers/TechValues.h"
 #include "Flags/Flags.h"
 
+constexpr int MAX_EQUALITY_COUNTRIES = 5;
+constexpr int MAX_LIBERTY_COUNTRIES = 20;
+
 V2::World::World(const EU4::World& sourceWorld, 
 	const mappers::IdeaEffectMapper& ideaEffectMapper, 
 	const mappers::TechGroupsMapper& techGroupsMapper, 
@@ -310,7 +313,7 @@ void V2::World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffec
 	equalityCountries.sort(scoresSorter);
 
 	// hardcoded so 5 countries will get to be equality oriented. Not really worth the trouble to put in a config file.
-	int equalityLeft = 5;
+	int equalityLeft = MAX_EQUALITY_COUNTRIES;
 	for (const auto& equalCountry: equalityCountries)
 	{
 		if (equalityLeft < 1) break;
@@ -325,7 +328,7 @@ void V2::World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffec
 
 	// also hardcoded to 20 countries.
 	libertyCountries.sort(scoresSorter);
-	int libertyLeft = 20;
+	int libertyLeft = MAX_LIBERTY_COUNTRIES;
 	for (const auto& libertyCountry: libertyCountries)
 	{
 		if (libertyLeft < 1) break;
@@ -620,7 +623,7 @@ void V2::World::setupStates()
 			}
 		}
 		
-		newState->colloectNavalBase();
+		newState->rebuildNavalBase();
 		const auto& iter2 = countries.find(owner);
 		if (iter2 != countries.end())
 		{
@@ -831,9 +834,9 @@ void V2::World::setupPops(const EU4::World& sourceWorld)
 		popAlgorithm = CIV_ALGORITHM::older;
 	}
 
-	for (std::map<std::string, std::shared_ptr<Country>>::iterator itr = countries.begin(); itr != countries.end(); ++itr)
+	for (const auto& country: countries)
 	{
-		itr->second->setupPops(popWeightRatio, popAlgorithm, provinceMapper);
+		country.second->setupPops(popWeightRatio, popAlgorithm, provinceMapper);
 	}
 
 	LOG(LogLevel::Info) << "Vanilla world population: " << totalWorldPopulation;
@@ -845,7 +848,7 @@ void V2::World::setupPops(const EU4::World& sourceWorld)
 		LOG(LogLevel::Info) << "\tPopulation per weight point is: " << popWeightRatio;
 	}
 	long newTotalPopulation = 0;
-	for (auto province: provinces) newTotalPopulation += province.second->getTotalPopulation();
+	for (const auto& province: provinces) newTotalPopulation += province.second->getTotalPopulation();
 	LOG(LogLevel::Info) << "New total world population: " << newTotalPopulation;
 }
 

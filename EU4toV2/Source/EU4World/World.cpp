@@ -558,7 +558,7 @@ std::shared_ptr<EU4::Country> EU4::World::getCountry(std::string tag) const
 	return nullptr;
 }
 
-const std::shared_ptr<EU4::Province>& EU4::World::getProvince(int provNum) const
+const std::shared_ptr<EU4::Province> EU4::World::getProvince(int provNum) const
 {
 	return provinces->getProvince(provNum);
 }

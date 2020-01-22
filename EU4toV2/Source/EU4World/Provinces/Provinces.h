@@ -13,7 +13,7 @@ namespace EU4
 	{
 	public:
 		Provinces(std::istream& theStream, const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes);
-		std::shared_ptr<Province>& getProvince(int provinceNumber);
+		std::shared_ptr<Province> getProvince(int provinceNumber);
 
 		const std::map<int, std::shared_ptr<Province>>& getAllProvinces() const { return provinces; }
 		double geTotalProvinceWeights() const { return totalProvinceWeights; };

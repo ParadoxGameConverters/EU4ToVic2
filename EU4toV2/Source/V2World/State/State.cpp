@@ -8,18 +8,18 @@ V2::State::State(int newId, std::shared_ptr<Province> firstProvince): id(newId)
 
 void V2::State::addRailroads()
 {
-	for (auto province : provinces) province->increaseRailLevel(1);
+	for (const auto& province : provinces) province->increaseRailLevel(1);
 }
 
 bool V2::State::isCoastal() const
 {
-	for (auto province: provinces) if (province->isCoastal()) return true;
+	for (const auto& province: provinces) if (province->isCoastal()) return true;
 	return false;
 }
 
 bool V2::State::hasLocalSupply(const std::string& product) const
 {
-	for (auto province: provinces) if (province->getRgoType() == product) return true;
+	for (const auto& province: provinces) if (province->getRgoType() == product) return true;
 	return false;
 }
 
@@ -67,25 +67,25 @@ bool V2::State::hasLandConnection() const
 double V2::State::getMfgRatio() const
 {
 	// count the manufactories in the source provinces
-	double numManus = 0.0;
-	for (auto province: provinces) numManus += province->getMfgCount();
+	double numManus = 0;
+	for (const auto& province: provinces) numManus += province->getMfgCount();
 	return numManus / provinces.size();
 }
 
-void	V2::State::colloectNavalBase()
+void	V2::State::rebuildNavalBase()
 {
 	//Only one naval base in a state
 	std::shared_ptr<Province> prov = nullptr;
-	int level = 0;
-	for (auto province : provinces)
+	auto level = 0;
+	for (const auto& province : provinces)
 	{
 		if (!prov) prov = province;
-		if (prov->getNavalBaseLevel() < province->getNavalBaseLevel())
+		if (level < province->getNavalBaseLevel())
 		{
 			prov = province;
 			level = province->getNavalBaseLevel();
 		}
 	}
-	for (auto province : provinces) province->setNavalBaseLevel(0);
+	for (const auto& province : provinces) province->setNavalBaseLevel(0);
 	if (prov) prov->setNavalBaseLevel(level);
 }

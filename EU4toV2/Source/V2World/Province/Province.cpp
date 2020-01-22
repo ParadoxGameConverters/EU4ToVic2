@@ -143,7 +143,7 @@ void V2::Province::convertFromOldProvince(
 	navalBaseLevel = std::min(navalBaseLevel, 2); // Don't go over 2 for naval bases.
 	fortLevel = std::min(fortLevel, 1); // Don't go over 1 for forts.
 
-	auto countryItr = theEU4Countries.find(provinceSources[0]->getOwnerString());
+	const auto& countryItr = theEU4Countries.find(provinceSources[0]->getOwnerString());
 	if (countryItr != theEU4Countries.end())
 	{
 		importedIdeas = countryItr->second->exportNationalIdeas();
