@@ -36,9 +36,13 @@ void V2::Diplomacy::convertDiplomacy(
 			LOG(LogLevel::Warning) << "Vic2 country " << V2Tag2 << " used in diplomatic agreement doesn't exist";
 			continue;
 		}
-		
-		auto r1 = country1->second->getRelation(V2Tag2);
-		auto r2 = country2->second->getRelation(V2Tag1);
+
+		// Stop creating relations for/with nations that didn't survive province conversion!
+		if (country1->second->getProvinces().empty()) continue;
+		if (country2->second->getProvinces().empty()) continue;
+
+		auto& r1 = country1->second->getRelation(V2Tag2);
+		auto& r2 = country2->second->getRelation(V2Tag1);
 
 		if (agreement.getAgreementType() == "colonial" || agreement.getAgreementType() == "colony")
 		{
@@ -67,19 +71,35 @@ void V2::Diplomacy::convertDiplomacy(
 		{
 			// influence level +1, but never exceed 4
 			if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
+			r1.increaseRelations(100);
+			r1.setInfluence(20);
 			if (agreement.getAgreementType() == "royal_marriage")
 			{
 				// royal marriage is bidirectional; influence level +1, but never exceed 4
 				if (r2.getLevel() < 4) r2.setLevel(r2.getLevel() + 1);
+				r2.increaseRelations(100);
+				r1.setInfluence(20);
 			}
 		}
 
-		// Multiple names for same type is necessary due to EU4 syntax change over time.
+		if (agreement.getAgreementType() == "tributary_state")
+		{
+			// influence level 5 - sphere, but not vassal, and military access is expected.
+			r1.setLevel(5);
+			r1.increaseRelations(50);
+			r1.setInfluence(50);
+			r1.setAccess(true);
+			r2.setAccess(true);
+		}
+
+		// Multiple names for same type is necessary due to EU4 syntax change over time:
+		// 1.29 uses: vassal, march, daimyo_vassal, personal_union, client_vassal, client_march, colony, tributary_state (not here!)
+		// Obsolete types: protectorate, colonial, union
 		if (agreement.getAgreementType() == "vassal" || 
 			agreement.getAgreementType() == "client_vassal" || 
-			agreement.getAgreementType() == "daimyo_vassal" || 
+			agreement.getAgreementType() == "client_march" ||
+			agreement.getAgreementType() == "daimyo_vassal" ||
 			agreement.getAgreementType() == "protectorate" || 
-			agreement.getAgreementType() == "tributary_state" || 
 			agreement.getAgreementType() == "march" || 
 			agreement.getAgreementType() == "colonial" ||
 			agreement.getAgreementType() == "colony" ||
@@ -88,18 +108,38 @@ void V2::Diplomacy::convertDiplomacy(
 		{
 			// Yeah, we don't do marches, clients or all that. Or personal unions. PUs are a second relation
 			// beside existing vassal relation specifying when vassalage ends.
-			// We assume all rulers are CK2 immortals and vassalage does not end with a specific date.
+			// However, vanilla Vic2 has PU end dates based on historical events, and we don't simulate those (for now).
 			agreement.setAgreementType("vassal");
 			r1.setLevel(5);
+			r1.increaseRelations(75);
+			r1.setInfluence(75);
+			// In vic2 military access through vassals is not automatic.
+			r1.setAccess(true);
+			r2.setAccess(true);
 			country2->second->addPrestige(-country2->second->getPrestige());
 		}
 
-		// In essence we only have 3 diplomacy categories and these are it.
+		// In essence we should only recognize 3 diplomacy categories and these are it.
 		if (agreement.getAgreementType() == "alliance" || agreement.getAgreementType() == "vassal" || agreement.getAgreementType() == "guarantee")
 		{
 			// copy agreement
 			Agreement v2agreement(V2Tag1, V2Tag2, agreement.getAgreementType(), agreement.getStartDate());
 			agreements.push_back(v2agreement);
+		}
+	}
+
+	// Reward good starting relations with a small amount of extra influence, which will be relevant 
+	// to stating GPs, and will look natural.
+	for (const auto& country: countries)
+	{
+		for (auto& relation: country.second->getRelations())
+		{			
+			if (relation.second.getRelations() > 50)
+			{
+				auto bonus = static_cast<int>((relation.second.getRelations() - 50) / 4);
+				auto newInfluence = std::min(relation.second.getInfluence() + bonus, 100);
+				relation.second.setInfluence(newInfluence);
+			}
 		}
 	}
 
@@ -121,7 +161,7 @@ void V2::Diplomacy::output() const
 	std::ofstream unions("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Unions.txt");
 	if (!unions.is_open()) throw std::runtime_error("Could not create unions history file!");
 	
-	for (auto agreement: agreements)
+	for (const auto& agreement: agreements)
 	{
 		if (agreement.getType() == "guarantee")
 		{

@@ -88,6 +88,7 @@ namespace V2
 		void setColonyOverlord(const std::string& colony) { colonyOverlord = colony; }
 		int getNumFactories() const { return details.numFactories; }
 		Relation& getRelation(const std::string& withWhom);
+		std::map<std::string, Relation>& getRelations() { return relations; }
 		void addRelation(Relation& newRelation);
 		void absorbColony(Country& vassal);
 		const std::map<int, std::shared_ptr<Province>>& getProvinces() const { return provinces; }

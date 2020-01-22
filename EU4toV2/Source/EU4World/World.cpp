@@ -43,6 +43,7 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 		{
 			version = std::make_unique<EU4::Version>(theStream);
 			theConfiguration.setEU4Version(*version);
+			Log(LogLevel::Info) << "Savegave version: " << *version;
 		});
 	registerKeyword("dlc_enabled", [](const std::string& DLCText, std::istream& theStream)
 		{
