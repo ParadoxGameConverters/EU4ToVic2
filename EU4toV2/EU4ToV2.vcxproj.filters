@@ -508,8 +508,8 @@
     <ClCompile Include="Source\V2World\V2World.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\SubjectMapper\SubjectMapper.cpp">
-      <Filter>Mappers\SubjectMapper</Filter>
+    <ClCompile Include="Source\Mappers\AgreementMapper\AgreementMapper.cpp">
+      <Filter>Mappers\AgreementMapper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -986,8 +986,8 @@
     <ClInclude Include="Source\V2World\V2World.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\SubjectMapper\SubjectMapper.h">
-      <Filter>Mappers\SubjectMapper</Filter>
+    <ClInclude Include="Source\Mappers\AgreementMapper\AgreementMapper.h">
+      <Filter>Mappers\AgreementMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1201,8 +1201,8 @@
     <Filter Include="Mappers\VersionParser">
       <UniqueIdentifier>{d85a505e-83f9-43ad-8a57-da9e364829c4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Mappers\SubjectMapper">
-      <UniqueIdentifier>{4a281cd9-5d2a-48ad-a615-8213f1452259}</UniqueIdentifier>
+    <Filter Include="Mappers\AgreementMapper">
+      <UniqueIdentifier>{ba134aea-55d0-4dd7-9f45-b015a2a9aa91}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

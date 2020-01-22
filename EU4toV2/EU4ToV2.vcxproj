@@ -230,6 +230,7 @@
     <ClCompile Include="Source\Helpers\TechValues.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\Adjacency\AdjacencyMapper.cpp" />
+    <ClCompile Include="Source\Mappers\AgreementMapper\AgreementMapper.cpp" />
     <ClCompile Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp" />
     <ClCompile Include="Source\Mappers\Buildings\Building.cpp" />
     <ClCompile Include="Source\Mappers\Buildings\Buildings.cpp" />
@@ -293,7 +294,6 @@
     <ClCompile Include="Source\Mappers\RGORandomization\Bucket.cpp" />
     <ClCompile Include="Source\Mappers\RGORandomization\BucketList.cpp" />
     <ClCompile Include="Source\Mappers\StateMapper\StateMapper.cpp" />
-    <ClCompile Include="Source\Mappers\SubjectMapper\SubjectMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroups.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroupsMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchool.cpp" />
@@ -404,6 +404,7 @@
     <ClInclude Include="Source\Helpers\targa.h" />
     <ClInclude Include="Source\Helpers\TechValues.h" />
     <ClInclude Include="Source\Mappers\Adjacency\AdjacencyMapper.h" />
+    <ClInclude Include="Source\Mappers\AgreementMapper\AgreementMapper.h" />
     <ClInclude Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.h" />
     <ClInclude Include="Source\Mappers\Buildings\Building.h" />
     <ClInclude Include="Source\Mappers\Buildings\Buildings.h" />
@@ -467,7 +468,6 @@
     <ClInclude Include="Source\Mappers\RGORandomization\Bucket.h" />
     <ClInclude Include="Source\Mappers\RGORandomization\BucketList.h" />
     <ClInclude Include="Source\Mappers\StateMapper\StateMapper.h" />
-    <ClInclude Include="Source\Mappers\SubjectMapper\SubjectMapper.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroups.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroupsMapper.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchool.h" />

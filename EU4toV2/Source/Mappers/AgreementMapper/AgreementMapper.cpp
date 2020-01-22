@@ -1,23 +1,23 @@
-#include "SubjectMapper.h"
+#include "AgreementMapper.h"
 #include "ParserHelpers.h"
 #include "Log.h"
 
-mappers::SubjectMapper::SubjectMapper()
+mappers::AgreementMapper::AgreementMapper()
 {
-	Log(LogLevel::Info) << "Parsing Subject Types.";
+	Log(LogLevel::Info) << "Parsing Agreement Types.";
 	registerKeys();
-	parseFile("configurables/subject_types.txt");
+	parseFile("configurables/agreement_types.txt");
 	clearRegisteredKeywords();
 }
 
-mappers::SubjectMapper::SubjectMapper(std::istream& theStream)
+mappers::AgreementMapper::AgreementMapper(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-void mappers::SubjectMapper::registerKeys()
+void mappers::AgreementMapper::registerKeys()
 {
 	registerKeyword("colonies", [this](const std::string& unused, std::istream& theStream)
 		{

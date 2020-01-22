@@ -44,9 +44,10 @@ void V2::Diplomacy::convertDiplomacy(
 		auto& r1 = country1->second->getRelation(V2Tag2);
 		auto& r2 = country2->second->getRelation(V2Tag1);
 
-		if (subjectMapper.isSubjectInColonies(agreement.getAgreementType()))
+		if (agreementMapper.isAgreementInColonies(agreement.getAgreementType()))
 		{
 			country2->second->setColonyOverlord(country1->second->getTag());
+			
 			// Do we annex or not?
 			if (country2->second->getSourceCountry()->getLibertyDesire() < theConfiguration.getLibertyThreshold())
 			{
@@ -67,36 +68,35 @@ void V2::Diplomacy::convertDiplomacy(
 				" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << theConfiguration.getLibertyThreshold() << " liberty desire)";
 		}
 
-		if (subjectMapper.isSubjectInOnesiders(agreement.getAgreementType()))
+		if (agreementMapper.isAgreementInOnesiders(agreement.getAgreementType()))
 		{
 			// influence level +1, but never exceed 4
+			// military access is not implied
 			if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
-			r1.increaseRelations(100);
-			r1.setInfluence(20);
+			r1.increaseRelations(50);
 		}
 
-		if (subjectMapper.isSubjectInDoublesiders(agreement.getAgreementType()))
+		if (agreementMapper.isAgreementInDoublesiders(agreement.getAgreementType()))
 		{
 			// doublesiders are bidirectional; influence level +1, but never exceed 4
+			// They don't set military access, as it's not implied (not even for alliances).
 			if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
-			r1.increaseRelations(100);
-			r1.setInfluence(20);
+			r1.increaseRelations(50);
 			if (r2.getLevel() < 4) r2.setLevel(r2.getLevel() + 1);
-			r2.increaseRelations(100);
-			r1.setInfluence(20);
+			r2.increaseRelations(50);
 		}
 
-		if (subjectMapper.isSubjectInTributaries(agreement.getAgreementType()))
+		if (agreementMapper.isAgreementInTributaries(agreement.getAgreementType()))
 		{
-			// influence level 5 - sphere, but not vassal, and military access is expected.
+			// influence level 5 - sphere, but not vassal, and military access is implied.
 			r1.setLevel(5);
-			r1.increaseRelations(50);
-			r1.setInfluence(50);
+			r1.increaseRelations(75);
+			r1.setInfluence(20);
 			r1.setAccess(true);
 			r2.setAccess(true);
 		}
 
-		if (subjectMapper.isSubjectInVassals(agreement.getAgreementType()))
+		if (agreementMapper.isAgreementInVassals(agreement.getAgreementType()))
 		{
 			// Yeah, we don't do marches, clients or all that. Or personal unions. PUs are a second relation
 			// beside existing vassal relation specifying when vassalage ends.
@@ -104,8 +104,8 @@ void V2::Diplomacy::convertDiplomacy(
 			agreement.setAgreementType("vassal");
 			r1.setLevel(5);
 			r1.increaseRelations(75);
-			r1.setInfluence(75);
-			// In vic2 military access through vassals is not automatic.
+			r1.setInfluence(50);
+			// In vic2 military access through vassals is not automatic but is implied.
 			r1.setAccess(true);
 			r2.setAccess(true);
 			country2->second->addPrestige(-country2->second->getPrestige());
