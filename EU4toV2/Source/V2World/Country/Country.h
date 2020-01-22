@@ -93,6 +93,7 @@ namespace V2
 		void absorbColony(Country& vassal);
 		const std::map<int, std::shared_ptr<Province>>& getProvinces() const { return provinces; }
 		void addPrestige(double additionalPrestige) { details.prestige += additionalPrestige; }
+		void setPrestige(double prestige) { details.prestige = prestige; }
 		double getPrestige() const { return details.prestige; }
 		NationalValueInvestments getNationalValueScores() const;
 		void setNationalValue(const std::string& NV) { details.nationalValue = NV; }

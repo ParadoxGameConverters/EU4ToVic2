@@ -349,7 +349,7 @@ void V2::World::convertPrestige()
 	LOG(LogLevel::Info) << "-> Setting prestige";
 
 	double highestScore = 0;
-	for (auto country: countries)
+	for (const auto& country: countries)
 	{
 		double score = 0;
 		auto srcCountry = country.second->getSourceCountry();
@@ -357,7 +357,7 @@ void V2::World::convertPrestige()
 		if (score > highestScore) highestScore = score;
 	}
 
-	for (auto country: countries)
+	for (const auto& country: countries)
 	{
 		double score = 0;
 		double prestige = 0;
@@ -371,7 +371,7 @@ void V2::World::convertPrestige()
 void V2::World::addAllPotentialCountries()
 {
 	// ALL potential countries should be output to the file, otherwise some things don't get initialized right when loading Vic2
-	for (auto potentialCountry : potentialCountries)
+	for (const auto& potentialCountry : potentialCountries)
 	{
 		const auto& countryItr = countries.find(potentialCountry.first);
 		if (countryItr == countries.end())
@@ -923,7 +923,7 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 {
 	LOG(LogLevel::Info) << "<- Copying Mod Template";
 	Utils::copyFolder("blankMod/output", "output/output");
-	LOG(LogLevel::Info) << "<- Moving Mod Template";
+	LOG(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
 	Utils::renameFolder("output/output", "output/" + theConfiguration.getOutputName());
 	LOG(LogLevel::Info) << "<- Crafting .mod File";
 	createModFile();

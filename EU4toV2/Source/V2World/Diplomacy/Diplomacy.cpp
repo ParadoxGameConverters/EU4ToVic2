@@ -108,7 +108,12 @@ void V2::Diplomacy::convertDiplomacy(
 			// In vic2 military access through vassals is not automatic but is implied.
 			r1.setAccess(true);
 			r2.setAccess(true);
-			country2->second->addPrestige(-country2->second->getPrestige());
+
+			// We need to calculate devs and conglomerate devs (vassals + overlord) so that we can alter starting prestige
+			// of individual vassals. We cannot do so yet as we don't know who's alive, dead or a vassal at all.
+			if (!vassalCache[V2Tag2]) vassalCache[V2Tag2] = country2->second->getSourceCountry()->getTotalDev();
+			if (!masterCache[V2Tag1]) masterCache[V2Tag1] = country1->second->getSourceCountry()->getTotalDev();
+			masterVassals[V2Tag1].insert(V2Tag2);
 		}
 
 		// In essence we should only recognize 3 diplomacy categories and these are it.
@@ -117,6 +122,21 @@ void V2::Diplomacy::convertDiplomacy(
 			// copy agreement
 			Agreement v2agreement(V2Tag1, V2Tag2, agreement.getAgreementType(), agreement.getStartDate());
 			agreements.push_back(v2agreement);
+		}
+	}
+	// Now, alter prestige of vassals.
+	for (const auto& conglomerate: masterVassals)
+	{
+		const auto& masterDev = masterCache[conglomerate.first];
+		auto conglomerateDev = masterDev;
+		for (const auto& vassal : conglomerate.second) conglomerateDev += vassalCache[vassal];
+		if (!conglomerateDev) continue;
+		for (const auto& vassal : conglomerate.second)
+		{
+			if (!vassalCache[vassal]) continue;
+			auto ratio = static_cast<double>(vassalCache[vassal]) / conglomerateDev;
+			auto newPrestige = ratio * countries.find(vassal)->second->getPrestige();
+			countries.find(vassal)->second->setPrestige(newPrestige);
 		}
 	}
 

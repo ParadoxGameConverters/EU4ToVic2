@@ -8,31 +8,31 @@
 
 mappers::UnitTypeMapper::UnitTypeMapper()
 {
-	LOG(LogLevel::Info) << "\tReading unit strengths from EU4 installation folder.";
+	LOG(LogLevel::Info) << "Parsing unit strengths from EU4 installation.";
 
 	std::set<std::string> filenames;
 	Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/units/", filenames);
-	for (auto filename : filenames)
+	for (const auto& filename : filenames)
 	{
-		AddUnitFileToRegimentTypeMap((theConfiguration.getEU4Path() + "/common/units"), filename);
+		addUnitFileToRegimentTypeMap(theConfiguration.getEU4Path() + "/common/units", filename);
 	}
 
-	for (auto modName : theConfiguration.getEU4Mods())
+	for (const auto& modName : theConfiguration.getEU4Mods())
 	{
 		std::set<std::string> moreFilenames;
 		Utils::GetAllFilesInFolder(modName + "/common/units/", moreFilenames);
-		for (auto filename : moreFilenames)
+		for (const auto& filename : moreFilenames)
 		{
-			AddUnitFileToRegimentTypeMap((modName + "/common/units"), filename);
+			addUnitFileToRegimentTypeMap(modName + "/common/units", filename);
 		}
 	}
 
 }
 
-void mappers::UnitTypeMapper::AddUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename)
+void mappers::UnitTypeMapper::addUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename)
 {
-	int period = filename.find_last_of('.');
-	std::string name = filename.substr(0, period);
+	const int period = filename.find_last_of('.');
+	auto name = filename.substr(0, period);
 
 	UnitType unitType(directory + "/" + filename);
 	if (unitType.getCategory() == EU4::REGIMENTCATEGORY::num_reg_categories)

@@ -6,7 +6,7 @@
 
 namespace mappers
 {
-	typedef std::map<std::string, mappers::UnitType> RegimentTypeMap;
+	typedef std::map<std::string, UnitType> RegimentTypeMap;
 
 	class UnitTypeMapper : commonItems::parser
 	{
@@ -16,7 +16,7 @@ namespace mappers
 
 	private:
 		RegimentTypeMap unitTypeMap;
-		void AddUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename);
+		void addUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename);
 	};
 };
 

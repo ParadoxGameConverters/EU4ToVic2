@@ -24,6 +24,10 @@ namespace V2
 		std::vector<Agreement> agreements;
 
 		mappers::AgreementMapper agreementMapper;
+		std::map<std::string, int> conglomerateCache;
+		std::map<std::string, int> vassalCache;
+		std::map<std::string, int> masterCache;
+		std::map<std::string, std::set<std::string>> masterVassals;
 	};
 }
 
