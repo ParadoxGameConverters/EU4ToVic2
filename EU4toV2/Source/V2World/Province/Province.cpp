@@ -596,10 +596,10 @@ V2::Province::pop_points V2::Province::getPopPoints_2(
 		double actualCapitalists = static_cast<double>(factories.size())* static_cast<double>(_owner->getNumFactories())* capsPerFactory* demographic.upperRatio;
 		pts.capitalists += (10000 * actualCapitalists) / (demographic.upperRatio * newPopulation);
 
-		double actualClerks = 181 * static_cast<double>(factories.size())* demographic.middleRatio;
+		double actualClerks = 493 * static_cast<double>(factories.size())* demographic.middleRatio;
 		pts.clerks += (10000 * actualClerks) / (demographic.middleRatio * newPopulation);
 
-		double actualCraftsmen = 2639 * static_cast<double>(factories.size())* demographic.lowerRatio;
+		double actualCraftsmen = 8170 * static_cast<double>(factories.size())* demographic.lowerRatio;
 		pts.craftsmen += (10000 * actualCraftsmen) / (demographic.lowerRatio * newPopulation);
 	}
 
