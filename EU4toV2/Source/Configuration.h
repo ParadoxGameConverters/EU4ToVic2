@@ -1,37 +1,11 @@
-/*Copyright (c) 2019 The Paradox Game Converters Project
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
-
-
-
-#ifndef CONFIGURATION_H_
-#define CONFIGURATION_H_
-
+#ifndef CONFIGURATION_H
+#define CONFIGURATION_H
 
 #include "EU4World/EU4Version.h"
 #include "Date.h"
 #include "newParser.h"
 #include <string>
 #include <vector>
-
-
 
 class Configuration: commonItems::parser
 {
@@ -59,10 +33,10 @@ class Configuration: commonItems::parser
 		enum class POPSHAPES { Vanilla = 1, PopShaping = 2, Extreme = 3};
 		enum class COREHANDLES { DropNone = 1, DropNational = 2, DropUnions = 3, DropAll = 4};
 		enum class EUROCENTRISM { VanillaImport = 1, EuroCentric = 2 };
-		Configuration::POPSHAPES getPopShaping() { return popShaping; }
-		Configuration::COREHANDLES getCoreHandling() { return coreHandling; }
-		Configuration::DEADCORES getRemoveType() { return removeType; }
-		Configuration::EUROCENTRISM getEuroCentrism() { return euroCentric; }
+		POPSHAPES getPopShaping() { return popShaping; }
+		COREHANDLES getCoreHandling() { return coreHandling; }
+		DEADCORES getRemoveType() { return removeType; }
+		EUROCENTRISM getEuroCentrism() { return euroCentric; }
 		double getPopShapingFactor() { return popShapingFactor; }
 		bool getDebug() const { return debug; }
 		bool getRandomiseRgos() const { return randomiseRgos; }
@@ -113,15 +87,13 @@ class Configuration: commonItems::parser
 		date firstEU4Date;
 		date lastEU4Date;
 		date startEU4Date;
-		int eu4Seed;
+		int eu4Seed = 0;
 		std::string outputName;
 		std::vector<std::string> activeDLCs;
 		std::vector<std::string> EU4Mods;
 };
 
-
 extern Configuration theConfiguration;
-
 
 class ConfigurationFile: commonItems::parser
 {
@@ -137,6 +109,4 @@ class ConfigurationFile: commonItems::parser
 		ConfigurationFile& operator=(ConfigurationFile&&) = delete;
 };
 
-
-
-#endif // CONFIGURATION_H_
+#endif // CONFIGURATION_H

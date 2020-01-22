@@ -11,7 +11,7 @@ namespace mappers
 	public:
 		MinorityPopMapper();
 		MinorityPopMapper(std::istream& theStream);
-		bool matchMinorityPop(std::shared_ptr<V2::Pop> pop) const;
+		bool blankMajorityFromMinority(V2::Pop& pop) const;
 
 	private:
 		void registerKeys();

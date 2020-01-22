@@ -18,7 +18,7 @@ void mappers::CultureMapper::loadFile(const std::string& fileName)
 
 void mappers::CultureMapper::registerKeys()
 {
-	registerKeyword(("link"), [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("link", [this](const std::string& unused, std::istream& theStream)
 		{
 			CultureMappingRule rule(theStream);
 			for (auto newRule : rule.getMappings())

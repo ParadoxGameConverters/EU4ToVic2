@@ -10,9 +10,23 @@
 #include "../../EU4World/Country/EU4Country.h"
 #include "../Factory/Factory.h"
 #include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
+#include "ProvinceNameParser.h"
+#include "../../Mappers/NavalBases/NavalBaseMapper.h"
+
+namespace mappers {
+	class CountryMappings;
+	class CultureMapper;
+	class ReligionMapper;
+	class Continents;
+}
+
+namespace EU4 {
+	class Regions;
+}
 
 namespace V2
 {
+	enum class CIV_ALGORITHM;
 	enum class REGIMENTTYPE;
 	class Country;
 	
@@ -29,19 +43,22 @@ namespace V2
 	class Province
 	{
 	public:
-		Province(const std::string& _filename, const mappers::ClimateMapper& climateMapper, const mappers::TerrainDataMapper& terrainDataMapper);
+		Province(
+			const std::string& _filename, 
+			const mappers::ClimateMapper& climateMapper, 
+			const mappers::TerrainDataMapper& terrainDataMapper,
+			const ProvinceNameParser& provinceNameParser,
+			const mappers::NavalBaseMapper& navalBaseMapper);
 		int getID() const { return provinceID; }
 		std::string getRgoType() const { return details.rgoType; }
 		std::string getClimate() const { return details.climate; }
 		std::string getTerrain() const { return details.terrain; }
 		void setRgoType(const std::string& _type) { details.rgoType = _type; }
-		void setName(std::string _name) { name = _name; }
 		void setOwner(std::string _owner) { details.owner = _owner; }
 		void setController(std::string _controller) { details.controller = _controller; }
 		std::string getName() const { return name; }
 		std::string getOwner() const { return details.owner; }
 		std::string getController() const { return details.controller; }
-		void setCoastal() { coastal = true; }
 		bool isCoastal() const { return coastal; }
 		void setResettable() { resettable = true; }
 		bool getResettable() const { return resettable; }
@@ -62,7 +79,7 @@ namespace V2
 		int getMfgCount() const { return mfgCount; }
 		bool isColony() const { return colonial != 0; }
 		void addPopDemographic(const Demographic& d);
-		int getEU4ID() const { return eu4ID; }
+		const std::set<int>& getEU4IDs() const { return eu4IDs; }
 		void setSameContinent() { sameContinent = true; }
 		int getTotalPopulation() const;
 		bool wasColony() const { return wasColonised; }
@@ -70,16 +87,23 @@ namespace V2
 		std::string getFilename() const { return filename; }
 		std::optional<std::pair<int, std::vector<std::shared_ptr<Pop>>>> getPopsForOutput();
 		std::string getRegimentName(REGIMENTTYPE rc);
+		void sterilizeProvince();
 
 		void determineColonial();
 		void convertFromOldProvince(
-			const EU4::Province* oldProvince,
-			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries
+			const std::vector<std::shared_ptr<EU4::Province>>& provinceSources,
+			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
+			const EU4::Regions& eu4Regions,
+			const mappers::CultureMapper& cultureMapper,
+			const mappers::CultureMapper& slaveCultureMapper,
+			const mappers::Continents& continentsMapper,
+			const mappers::ReligionMapper& religionMapper,
+			const mappers::CountryMappings& countryMapper
 		);
 		void doCreatePops(
 			double popWeightRatio,
 			Country* _owner,
-			int popConversionAlgorithm,
+			CIV_ALGORITHM popConversionAlgorithm,
 			const mappers::ProvinceMapper& provinceMapper
 		);
 		std::shared_ptr<Pop> getSoldierPopForArmy(bool force = false);
@@ -111,7 +135,7 @@ namespace V2
 		bool landConnection = false;
 		int mfgCount = 0;
 		std::vector<Demographic> demographics;
-		int eu4ID = 0; // Source province ID, fuzzy at best.
+		std::set<int> eu4IDs; // Source province IDs, fuzzy at best since we mangled them together to craft this province.
 		bool sameContinent = false;
 		double devpushMod = 0.0;
 		double weightMod = 0.0;
@@ -134,6 +158,17 @@ namespace V2
 			double aristocrats = 0;
 		};
 
+		void determineDemographics(
+			const EU4::Regions& eu4Regions,
+			std::vector<EU4::PopRatio>& popRatios,
+			int eu4ProvID,
+			std::string oldOwnerTag,
+			int destNum,
+			double provPopRatio,
+			const mappers::CultureMapper& cultureMapper,
+			const mappers::CultureMapper& slaveCultureMapper,
+			const mappers::Continents& continentsMapper,
+			const mappers::ReligionMapper& religionMapper);
 		pop_points getPopPoints_1(
 			const Demographic& demographic,
 			double newPopulation,
@@ -146,9 +181,8 @@ namespace V2
 			const Demographic& demographic,
 			double popWeightRatio,
 			const Country* _owner,
-			int popConversionAlgorithm,
-			const mappers::ProvinceMapper& provinceMapper
-		);
+			CIV_ALGORITHM popConversionAlgorithm,
+			const mappers::ProvinceMapper& provinceMapper);
 		void combinePops();
 		static bool popSortBySizePredicate(std::shared_ptr<Pop> pop1, std::shared_ptr<Pop> pop2);
 		static int getRequiredPopForRegimentCount(int count);

@@ -35,8 +35,8 @@ namespace EU4
 		void setLocalisationName(const std::string& language, const std::string& name);
 		void setLocalisationAdjective(const std::string& language, const std::string& adjective);
 
-		void addProvince(Province*);
-		void addCore(Province*);
+		void addProvince(const std::shared_ptr<Province>& province);
+		void addCore(const std::shared_ptr<Province>& core);
 	   void setInHRE(bool _inHRE) { inHRE = _inHRE; }
 		void setEmperor(bool _emperor) { holyRomanEmperor = _emperor; }
 		void setCelestialEmperor(bool _celestialEmperor) { celestialEmperor = _celestialEmperor; }
@@ -57,8 +57,8 @@ namespace EU4
 
 		std::string getTag() const { return tag; }
 		void setTag(std::string _tag) { tag = _tag; }
-		std::vector<Province*> getProvinces() { return provinces; }
-		std::vector<Province*> getCores() { return cores; }
+		std::vector<std::shared_ptr<Province>>& getProvinces() { return provinces; }
+		std::vector<std::shared_ptr<Province>>& getCores() { return cores; }
 		int getCapital() const { return capital; }
 		bool getInHRE() const { return inHRE; }
 		bool getHolyRomanEmperor() const { return holyRomanEmperor; }
@@ -107,8 +107,8 @@ namespace EU4
 		bool isRevolutionary() const { return revolutionary; }
 		std::string getRandomName() const { return randomName; }
 		const std::set<std::string>& getNationalIdeas() const { return nationalIdeas; }
-		const std::vector<EU4::Leader>& getHistoricalLeaders() const { return historicalLeaders; }
-		const std::vector<EU4::Leader>& getMilitaryLeaders() const { return militaryLeaders; }
+		const std::vector<Leader>& getHistoricalLeaders() const { return historicalLeaders; }
+		const std::vector<Leader>& getMilitaryLeaders() const { return militaryLeaders; }
 
 		std::string	getName() const { return name; }
 		std::string	getName(const std::string& language) const;
@@ -127,8 +127,8 @@ namespace EU4
 		void clearCores();
 
 		std::string tag; // the tag for the EU4 nation
-		std::vector<Province*> provinces; // we're pointing to main province repository in provinces class
-		std::vector<Province*> cores; // ditto
+		std::vector<std::shared_ptr<Province>> provinces; // we're pointing to main province repository in provinces class
+		std::vector<std::shared_ptr<Province>> cores; // ditto
 		bool inHRE = false; // if this country is an HRE member
 		bool holyRomanEmperor = false; // if this country is the emperor of the HRE
 		bool celestialEmperor = false; // if this country is the celestial emperor
@@ -171,9 +171,9 @@ namespace EU4
 		std::map<std::string, bool> modifiers; // any modifiers set for this country
 		bool possibleDaimyo = false; // if this country is possibly a daimyo
 		bool possibleShogun = false; // if this country is the shogun
-		std::vector<EU4::Leader> historicalLeaders; // Historical leader information
+		std::vector<Leader> historicalLeaders; // Historical leader information
 		std::set<int> activeLeaderIDs; // Ones currently in service, others presumed dead.
-		std::vector<EU4::Leader> militaryLeaders; // filtered active leaders
+		std::vector<Leader> militaryLeaders; // filtered active leaders
 		std::string government = "monarchy";
 		int governmentRank = 0;
 		int development = 0;
@@ -195,7 +195,7 @@ namespace EU4
 		std::string	adjective; // the adjective for this country
 
 		// Colors
-		EU4::NationalSymbol nationalColors;
+		NationalSymbol nationalColors;
 
 		std::map<std::string, std::string> namesByLanguage; // the names of this country in different localisations
 		std::map<std::string, std::string> adjectivesByLanguage;	// the adjectives for this country in different localisations

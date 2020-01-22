@@ -1,4 +1,6 @@
-unions = {
+# Only add here cultural union tags for cultures. If a culture only
+# has a cultural union TAG (north_german), then it belongs here.
+# Otherwise (basque) it also belongs in nationals.txt
 
 #Germanics
 link = { tag = GER culture = north_german } # North Germany
@@ -159,6 +161,3 @@ link = { tag = USA culture = texan } #and Texas
 #link = { tag = PEU culture = south_andean } #Peru
 #link = { tag = ARG culture = platinean } #Argentina
 #link = { tag = BRZ culture = brazilian } #Brazil
-
-
-}

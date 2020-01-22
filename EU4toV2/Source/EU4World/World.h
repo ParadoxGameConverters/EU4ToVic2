@@ -1,7 +1,6 @@
 #ifndef EU4_WORLD_H
 #define EU4_WORLD_H
 
-#include "Army/EU4Army.h"
 #include "Diplomacy/EU4Diplomacy.h"
 #include "EU4Version.h"
 #include "Provinces/Provinces.h"
@@ -11,8 +10,6 @@
 #include "Country/EU4Country.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/UnitTypes/UnitTypeMapper.h"
-#include "../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/Buildings/Buildings.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
 #include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
@@ -21,23 +18,21 @@
 
 namespace EU4
 {
-	class World: private commonItems::parser
+	class World: commonItems::parser
 	{
 	public:
 		World(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper);
-		std::map<std::string, std::shared_ptr<EU4::Country>> getCountries() const { return theCountries; };
+		std::map<std::string, std::shared_ptr<Country>> getCountries() const { return theCountries; };
 		std::vector<EU4Agreement> getDiplomaticAgreements() const { return diplomacy; };
 		double getTotalProvinceWeights() const { return provinces->geTotalProvinceWeights(); };
 		const Regions& getRegions() const { return *regions; }
-		const Religions& getAllReligions() const { return theReligions; }
-		const EU4::Version& getVersion() const { return *version; };
-		const Province& getProvince(int provNum) const;
+		const Religions& getReligions() const { return theReligions; }
+		const Version& getVersion() const { return *version; }
+		const std::shared_ptr<Province> getProvince(int provNum) const;
 		const mappers::CultureGroups& getCultureGroupsMapper() const { return cultureGroupsMapper; }
-		void checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const;
-		void checkAllEU4ReligionsMapped(const mappers::ReligionMapper& religionMapper) const;
-		void checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const;
 		bool isRandomWorld() const;
-
+		const std::map<int, std::shared_ptr<Province>>& getProvinces() const { return provinces->getAllProvinces(); }
+		
 	private:
 		void verifySave(const std::string& EU4SaveFileName);
 		void loadRevolutionTarget();

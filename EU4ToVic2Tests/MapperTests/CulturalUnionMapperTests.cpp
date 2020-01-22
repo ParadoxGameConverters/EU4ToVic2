@@ -7,7 +7,7 @@ TEST(Mappers_CulturalUnionMapperTests, nonMatchGivesNoTags)
 	std::stringstream input("");
 	mappers::CulturalUnionMapper theCulturalUnionMapper(input);
 
-	ASSERT_EQ(theCulturalUnionMapper.getCoresForCulture("a_culture").size(), 0);
+	ASSERT_EQ(theCulturalUnionMapper.getCoresForCulture("a_culture"), std::nullopt);
 }
 
 
@@ -16,5 +16,5 @@ TEST(Mappers_CulturalUnionMapperTests, matchGivesTag)
 	std::stringstream input("link = { tag = TAG culture = a_culture }");
 	mappers::CulturalUnionMapper theCulturalUnionMapper(input);
 
-	ASSERT_EQ(theCulturalUnionMapper.getCoresForCulture("a_culture")[0], "TAG");
+	ASSERT_EQ(theCulturalUnionMapper.getCoresForCulture("a_culture"), std::vector<std::string>{"TAG"});
 }

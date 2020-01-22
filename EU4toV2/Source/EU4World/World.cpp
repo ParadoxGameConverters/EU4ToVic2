@@ -7,7 +7,6 @@
 #include "Provinces/EU4Province.h"
 #include "Regions/Areas.h"
 #include "../Configuration.h"
-#include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
@@ -80,7 +79,7 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			LOG(LogLevel::Info) << "-> Loading Provinces";
 			modifierTypes.initialize();
 			provinces = std::make_unique<Provinces>(theStream, buildingTypes, modifierTypes);
-			std::optional<date> possibleDate = provinces->getProvince(1).getFirstOwnedDate();
+			std::optional<date> possibleDate = provinces->getProvince(1)->getFirstOwnedDate();
 			if (possibleDate)
 			{
 				theConfiguration.setFirstEU4Date(*possibleDate);
@@ -216,23 +215,23 @@ void EU4::World::addProvinceInfoToCountries()
 	// add province owner info to countries
 	for (auto& province: provinces->getAllProvinces())
 	{
-		auto owner = theCountries.find(province.second.getOwnerString());
+		auto owner = theCountries.find(province.second->getOwnerString());
 		if (owner != theCountries.end())
 		{
-			owner->second->addProvince(&province.second);
+			owner->second->addProvince(province.second);
 		}
 	}
 
 	// add province core info to countries
 	for (auto& province: provinces->getAllProvinces())
 	{
-		auto cores = province.second.getCores();
+		auto cores = province.second->getCores();
 		for (auto core: cores)
 		{
 			auto country = theCountries.find(core);
 			if (country != theCountries.end())
 			{
-				country->second->addCore(&province.second);
+				country->second->addCore(province.second);
 			}
 		}
 	}
@@ -254,13 +253,12 @@ void EU4::World::assignProvincesToAreas(const std::map<std::string, std::set<int
 {
 	for (const auto& area : theAreas)
 	{
-		std::string areaName = area.first;
-		for (const int provNum : area.second)
+		const auto& areaName = area.first;
+		for (auto provNum : area.second)
 		{
 			try
 			{
-				auto& province = provinces->getProvince(provNum);
-				province.setArea(areaName);
+				provinces->getProvince(provNum)->setArea(areaName);
 			}
 			catch (std::exception& e)
 			{
@@ -316,22 +314,6 @@ void EU4::World::loadEU4RegionsNewVersion()
 	std::ifstream regionStream(regionFilename);
 	regions = std::make_unique<Regions>(installedAreas, regionStream);
 	regionStream.close();
-}
-
-
-void EU4::World::checkAllEU4CulturesMapped(const mappers::CultureMapper& cultureMapper) const
-{
-	for (auto cultureItr: cultureGroupsMapper.getCultureToGroupMap())
-	{
-		std::string Vi2Culture;
-		std::string EU4Culture = cultureItr.first;
-
-		std::optional<std::string> matched = cultureMapper.cultureMatch(*regions, EU4Culture, "", -1, "");
-		if (!matched)
-		{
-			LOG(LogLevel::Warning) << "No culture mapping for EU4 culture " << EU4Culture;
-		}
-	}
 }
 
 
@@ -490,23 +472,6 @@ void EU4::World::uniteJapan()
 	}
 }
 
-void EU4::World::checkAllEU4ReligionsMapped(const mappers::ReligionMapper& religionMapper) const
-{
-	for (auto EU4Religion: theReligions.getAllReligions())
-	{
-		auto Vic2Religion = religionMapper.getVic2Religion(EU4Religion.first);
-		if (Vic2Religion == "")
-		{
-			Log(LogLevel::Warning) << "No religion mapping for EU4 religion " << EU4Religion.first;
-		}
-	}
-}
-
-void EU4::World::checkAllProvincesMapped(const mappers::ProvinceMapper& provinceMapper) const
-{
-	provinces->checkAllProvincesMapped(provinceMapper);
-}
-
 void EU4::World::removeEmptyNations()
 {
 	std::map<std::string, std::shared_ptr<EU4::Country>> survivingCountries;
@@ -570,7 +535,7 @@ void EU4::World::setEmpires()
 	for (auto country: theCountries)
 	{
 		// set HRE stuff
-		if ((country.second->getCapital() != 0) && (provinces->getProvince(country.second->getCapital()).inHre()))
+		if ((country.second->getCapital() != 0) && (provinces->getProvince(country.second->getCapital())->inHre()))
 		{
 			country.second->setInHRE(true);
 		}
@@ -592,7 +557,7 @@ std::shared_ptr<EU4::Country> EU4::World::getCountry(std::string tag) const
 	return nullptr;
 }
 
-const EU4::Province& EU4::World::getProvince(int provNum) const
+const std::shared_ptr<EU4::Province> EU4::World::getProvince(int provNum) const
 {
 	return provinces->getProvince(provNum);
 }

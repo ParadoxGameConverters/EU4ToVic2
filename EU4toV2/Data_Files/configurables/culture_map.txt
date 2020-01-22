@@ -1,4 +1,7 @@
 # This culture map contains one to one and many to one culture conversions.
+# syntax:
+# link = { vic2 = v2culture eu4 = eu4culture region = eu4region province = eu4provinceID owner = eu4tag }
+# multiples of all except vic2 are allowed.
 
 # Slovene
 link = { vic2 = slovene eu4 = slovene } #Modded

@@ -19,7 +19,7 @@ void mappers::CulturalUnionMapper::loadFile(const std::string& filename)
 
 void mappers::CulturalUnionMapper::registerKeys()
 {
-	registerKeyword(std::regex("link"), [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) 
 		{
 			CulturalUnion newUnion(theStream);
 			unionMap.insert(newUnion.getUnion());
@@ -28,16 +28,9 @@ void mappers::CulturalUnionMapper::registerKeys()
 
 }
 
-std::vector<std::string> mappers::CulturalUnionMapper::getCoresForCulture(const std::string& culture) const
+std::optional<std::vector<std::string>> mappers::CulturalUnionMapper::getCoresForCulture(const std::string& culture) const
 {
-	auto mapping = unionMap.find(culture);
-	if (mapping == unionMap.end())
-	{
-		std::vector<std::string> empty;
-		return empty;
-	}
-	else
-	{
-		return mapping->second;
-	}
+	const auto& mapping = unionMap.find(culture);
+	if (mapping == unionMap.end()) return std::nullopt;
+	return mapping->second;
 }

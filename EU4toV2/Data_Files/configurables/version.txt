@@ -1,0 +1,5 @@
+# Version info
+
+version = "1.0K-prerelease"
+name = "Kurland"
+descriptionLine = "compatible with 1.29 and previous"

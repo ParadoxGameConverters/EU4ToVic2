@@ -100,7 +100,7 @@ TEST(EU4World_ProvincesTests, canGetProvince)
 	EU4::Modifiers modifiers(modifiersInput);
 
 	EU4::Provinces theProvinces(input, buildings, modifiers);
-	ASSERT_EQ(theProvinces.getProvince(1).getNum(), 1);
+	ASSERT_EQ(theProvinces.getProvince(1)->getNum(), 1);
 }
 
 /* No longet tested, as it requires file I/O

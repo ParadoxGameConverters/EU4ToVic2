@@ -542,12 +542,12 @@ void EU4::Country::setLocalisationAdjective(const std::string& language, const s
 	adjectivesByLanguage[language] = adjective;
 }
 
-void EU4::Country::addProvince(EU4::Province* province)
+void EU4::Country::addProvince(const std::shared_ptr<Province>& province)
 {
 	provinces.push_back(province);
 }
 
-void EU4::Country::addCore(EU4::Province* core)
+void EU4::Country::addCore(const std::shared_ptr<Province>& core)
 {
 	cores.push_back(core);
 }
@@ -583,6 +583,7 @@ int EU4::Country::getManufactoryCount() const
 	int mfgCount = 0;	// the number of manus
 	for (auto province: provinces)
 	{
+		//TODO: Dump buildings and values into own parser - duplication at V2::Province
 		if (province->hasBuilding("weapons")) ++mfgCount;
 		if (province->hasBuilding("wharf")) ++mfgCount;
 		if (province->hasBuilding("textile")) ++mfgCount;

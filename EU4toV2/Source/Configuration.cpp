@@ -1,37 +1,10 @@
-/*Copyright (c) 2019 The Paradox Game Converters Project
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
-
-
-
 #include "Configuration.h"
 #include "ParserHelpers.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include <vector>
 
-
-
 Configuration theConfiguration;
-
-
 
 void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)(const std::string& path), bool (*doesFileExist)(const std::string& path))
 {
@@ -73,7 +46,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 	});
 	registerKeyword(std::regex("removeType"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleInt removeTypeString(theStream);
-		removeType = Configuration::DEADCORES(removeTypeString.getInt());
+		removeType = DEADCORES(removeTypeString.getInt());
 	});
 	registerKeyword(std::regex("libertyThreshold"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleDouble libertyThresholdDouble(theStream);
@@ -82,12 +55,12 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 	});
 	registerKeyword(std::regex("popShaping"), [this](const std::string& unused, std::istream& theStream){
 		commonItems::singleInt popShapingInt(theStream);
-		popShaping = Configuration::POPSHAPES(popShapingInt.getInt());
+		popShaping = POPSHAPES(popShapingInt.getInt());
 		LOG(LogLevel::Info) << "Pop Shaping: " << popShapingInt.getInt();
 		});
 	registerKeyword(std::regex("coreHandling"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleInt coreHandlingInt(theStream);
-		coreHandling = Configuration::COREHANDLES(coreHandlingInt.getInt());
+		coreHandling = COREHANDLES(coreHandlingInt.getInt());
 		LOG(LogLevel::Info) << "Core Handling: " << coreHandlingInt.getInt();
 		});
 	registerKeyword(std::regex("popShapingFactor"), [this](const std::string& unused, std::istream& theStream) {
@@ -97,7 +70,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 	});
 	registerKeyword(std::regex("euroCentrism"), [this](const std::string& unused, std::istream& theStream) {
 		commonItems::singleInt euroCentrismInt(theStream);
-		euroCentric = Configuration::EUROCENTRISM(euroCentrismInt.getInt());
+		euroCentric = EUROCENTRISM(euroCentrismInt.getInt());
 		LOG(LogLevel::Info) << "Eurocentrism: " << euroCentrismInt.getInt();
 	});
 	registerKeyword(std::regex("debug"), [this](const std::string& unused, std::istream& theStream){
@@ -117,59 +90,25 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 
 void Configuration::verifyEU4Path(const std::string& path, bool (*doesFolderExist)(const std::string& path), bool (*doesFileExist)(const std::string& path))
 {
-	if (!doesFolderExist(path))
-	{
-		LOG(LogLevel::Error) << path << " does not exist";
-		exit(-1);
-	}
-	else if (!doesFileExist(path + "/eu4.exe"))
-	{
-		LOG(LogLevel::Error) << path << " does not contain Europa Universalis 4";
-		exit(-1);
-	}
-
-	else if (!doesFileExist(path + "/map/positions.txt"))
-	{
-		LOG(LogLevel::Error) << path << " does not appear to be a valid EU4 install";
-		exit(-1);
-	}
-	else
-	{
-		LOG(LogLevel::Info) << "\tEU4 install path is " << path;
-	}
+	if (!doesFolderExist(path)) throw std::runtime_error(path + " does not exist!");
+	if (!doesFileExist(path + "/eu4.exe")) throw std::runtime_error(path + " does not contain Europa Universalis 4!");
+	if (!doesFileExist(path + "/map/positions.txt")) throw std::runtime_error(path + " does not appear to be a valid EU4 install!");
+	LOG(LogLevel::Info) << "\tEU4 install path is " << path;
 }
 
 
 void Configuration::verifyVic2Path(const std::string& path, bool (*doesFolderExist)(const std::string& path), bool (*doesFileExist)(const std::string& path))
 {
-	if (!doesFolderExist(path))
-	{
-		LOG(LogLevel::Error) << path << " does not exist";
-		exit(-1);
-	}
-	else if (!doesFileExist(path + "/v2game.exe"))
-	{
-		LOG(LogLevel::Error) << path << " does not contain Victoria 2";
-		exit(-1);
-	}
-	else
-	{
-		LOG(LogLevel::Info) << "\tVictoria 2 install path is " << path;
-	}
+	if (!doesFolderExist(path)) throw std::runtime_error(path + " does not exist!");
+	if (!doesFileExist(path + "/v2game.exe")) throw std::runtime_error(path + " does not contain Victoria 2!");
+	LOG(LogLevel::Info) << "\tVictoria 2 install path is " << path;
 }
 
 
 void Configuration::verifyVic2DocumentsPath(const std::string& path, bool (*doesFolderExist)(const std::string& path))
 {
-	if (!doesFolderExist(path))
-	{
-		LOG(LogLevel::Error) << path << " does not exist";
-		exit(-1);
-	}
-	else
-	{
-		LOG(LogLevel::Info) << "\tVictoria 2 documents directory is " << path;
-	}
+	if (!doesFolderExist(path)) throw std::runtime_error(path + " does not exist!");
+	LOG(LogLevel::Info) << "\tVictoria 2 documents directory is " << path;
 }
 
 

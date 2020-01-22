@@ -38,6 +38,8 @@ namespace mappers
 }
 namespace V2
 {
+	enum class CIV_ALGORITHM { older, newer };
+
 	class Relation;
 	class Country
 	{
@@ -68,7 +70,7 @@ namespace V2
 		void initFromHistory(const mappers::Unreleasables& unreleasablesMapper);
 		void setupPops(
 			double popWeightRatio,
-			int popConversionAlgorithm,
+			CIV_ALGORITHM popConversionAlgorithm,
 			const mappers::ProvinceMapper& provinceMapper
 		);
 		void convertArmies(
@@ -99,7 +101,7 @@ namespace V2
 		int getCapital() const { return details.capital; }
 		void addState(std::shared_ptr<State> newState, const mappers::PortProvinces& portProvincesMapper);
 		void convertLeaders(const mappers::LeaderTraitMapper& leaderTraitMapper);
-		void convertUncivReforms(int techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
+		void convertUncivReforms(CIV_ALGORITHM techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
 		void addRailroadtoCapitalState();
 		void addTech(const std::string& newTech) { techs.insert(newTech); }
 		void convertLandlessReforms(std::shared_ptr<Country> capitalOwner);

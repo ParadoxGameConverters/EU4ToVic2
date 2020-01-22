@@ -29,7 +29,7 @@ namespace mappers
 			CountryMappings();
 			CountryMappings(std::istream& theStream);
 			void createMappings(const EU4::World& srcWorld, const std::map<std::string, std::shared_ptr<V2::Country>>& Vic2Countries, const ProvinceMapper& provinceMapper);
-			std::string getV2Tag(const std::string& EU4Tag) const;
+			std::optional<std::string> getV2Tag(const std::string& EU4Tag) const;
 			std::optional<std::string> getCK2Title(const std::string& EU4Tag, const std::string& countryName, const std::set<std::string>& availableFlags) const;
 			const mappers::CK2TitleMapper& getCK2TitleMapper() const { return ck2titleMapper; }
 

@@ -46,9 +46,6 @@
     <ClCompile Include="Source\EU4World\Regions\Regions.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\V2World.cpp">
-      <Filter>Vic2World</Filter>
-    </ClCompile>
     <ClCompile Include="..\common_items\WinUtils.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
@@ -490,6 +487,27 @@
     <ClCompile Include="Source\V2World\Country\CountryDetails.cpp">
       <Filter>Vic2World\Country</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Province\ProvinceNameParser.cpp">
+      <Filter>Vic2World\Province</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Country\CountryPopLogger.cpp">
+      <Filter>Vic2World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\MappingChecker\MappingChecker.cpp">
+      <Filter>Vic2World\MappingChecker</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outModFile.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\VersionParser\VersionParser.cpp">
+      <Filter>Mappers\VersionParser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outVersion.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\V2World.cpp">
+      <Filter>Vic2World</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -535,9 +553,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Region.h">
       <Filter>EU4World\Regions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\V2World.h">
-      <Filter>Vic2World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\World.h">
       <Filter>EU4World</Filter>
@@ -950,6 +965,24 @@
     <ClInclude Include="Source\V2World\Output\output.h">
       <Filter>Vic2World\Output</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Province\ProvinceNameParser.h">
+      <Filter>Vic2World\Province</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Country\CountryPopLogger.h">
+      <Filter>Vic2World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\MappingChecker\MappingChecker.h">
+      <Filter>Vic2World\MappingChecker</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Output\ModFile.h">
+      <Filter>Vic2World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\VersionParser\VersionParser.h">
+      <Filter>Mappers\VersionParser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\V2World.h">
+      <Filter>Vic2World</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1155,6 +1188,12 @@
     </Filter>
     <Filter Include="Vic2World\Country">
       <UniqueIdentifier>{67358893-5f79-4f87-a13f-7a39d801f0c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\MappingChecker">
+      <UniqueIdentifier>{c9e81627-0b25-4e61-a165-6f2f8bee6050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\VersionParser">
+      <UniqueIdentifier>{d85a505e-83f9-43ad-8a57-da9e364829c4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -31,7 +31,7 @@ namespace V2
 		int getFactoryCount() const { return factories.size(); };
 		int getID() const { return id; };
 		std::vector<std::shared_ptr<Province>> getProvinces() const { return provinces; };
-		void colloectNavalBase();
+		void rebuildNavalBase();
 		
 	private:
 		int id = 0;

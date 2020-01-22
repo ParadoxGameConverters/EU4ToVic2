@@ -15,6 +15,8 @@
 #include "../Army/Regiment.h"
 #include "../Diplomacy/Relation.h"
 #include "../Reforms/UncivReforms.h"
+#include "ModFile.h"
+#include "../../Mappers/VersionParser/VersionParser.h"
 
 namespace V2
 {
@@ -30,12 +32,14 @@ namespace V2
 	std::ostream& operator<<(std::ostream& output, const Reforms& reforms);
 	std::ostream& operator<<(std::ostream& output, const Regiment& regiment);
 	std::ostream& operator<<(std::ostream& output, const Relation& relation);
-	std::ostream& operator<<(std::ostream& output, const UncivReforms& uncivReforms);	
+	std::ostream& operator<<(std::ostream& output, const UncivReforms& uncivReforms);
+	std::ostream& operator<<(std::ostream& output, const ModFile& modFile);
 }
 
 namespace mappers
 {
 	std::ostream& operator<<(std::ostream& output, const PartyType& partyDetails);
+	std::ostream& operator<<(std::ostream& output, const VersionParser& versionParser);
 }
 
 #endif // OUTPUT_H
