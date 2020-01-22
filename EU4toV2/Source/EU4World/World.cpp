@@ -253,13 +253,12 @@ void EU4::World::assignProvincesToAreas(const std::map<std::string, std::set<int
 {
 	for (const auto& area : theAreas)
 	{
-		std::string areaName = area.first;
-		for (const int provNum : area.second)
+		const auto& areaName = area.first;
+		for (auto provNum : area.second)
 		{
 			try
 			{
-				auto& province = provinces->getProvince(provNum);
-				province->setArea(areaName);
+				provinces->getProvince(provNum)->setArea(areaName);
 			}
 			catch (std::exception& e)
 			{
