@@ -53,11 +53,11 @@ std::optional<std::string> mappers::CultureMappingRule::cultureMatch(
 	if (EU4culture.empty()) return std::nullopt;
 		
 	auto match = true;
-	if (!cultures.count(EU4culture)) match = false;
-	if (!EU4ownerTag.empty() && !owners.empty()) if (!owners.count(EU4ownerTag)) match = false;
-	if (!EU4religion.empty() && !religions.empty()) if (!religions.count(EU4religion)) match = false;
+	if (!cultures.count(EU4culture)) return std::nullopt;
+	if (!EU4ownerTag.empty() && !owners.empty()) if (!owners.count(EU4ownerTag)) return std::nullopt;
+	if (!EU4religion.empty() && !religions.empty()) if (!religions.count(EU4religion)) return std::nullopt;
 	// This is a provinces check, not regions.
-	if (EU4Province && !provinces.empty()) if (!provinces.count(EU4Province)) match = false;
+	if (EU4Province && !provinces.empty()) if (!provinces.count(EU4Province)) return std::nullopt;
 	// This is a regions check, that checks if a provided province is within that region.
 	if (EU4Province && !regions.empty())
 	{
@@ -73,7 +73,7 @@ std::optional<std::string> mappers::CultureMappingRule::cultureMatch(
 			}
 			if (EU4Regions.provinceInRegion(EU4Province, region)) regionMatch = true;
 		}
-		if (!regionMatch) match = false;
+		if (!regionMatch) return std::nullopt;
 	}
 	if (match) return destinationCulture;
 	return std::nullopt;
