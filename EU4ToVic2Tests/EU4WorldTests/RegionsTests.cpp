@@ -24,6 +24,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "gtest/gtest.h"
 #include "../EU4toV2/Source/EU4World/Regions/Regions.h"
 #include "../EU4toV2/Source/EU4World/Regions/Areas.h"
+#include "../EU4toV2/Source/EU4World/Regions/SuperRegions.h"
 #include <sstream>
 
 
@@ -57,6 +58,12 @@ TEST(EU4World_RegionsTests, oldStyleProvincesCanBeSet)
 
 TEST(EU4World_RegionsTests, newStyleNoAreasMeansNoProvinces)
 {
+	std::stringstream superRegionsInput;
+	superRegionsInput << "test_superregion = {";
+	superRegionsInput << "\ttest_area";
+	superRegionsInput << "}";
+	EU4::SuperRegions superRegions(superRegionsInput);
+	
 	std::stringstream regionsInput;
 	regionsInput << "test_region = {\n";
 	regionsInput << "\tareas = {\n";
@@ -69,7 +76,7 @@ TEST(EU4World_RegionsTests, newStyleNoAreasMeansNoProvinces)
 	areasInput << "}";
 	EU4::Areas theAreas(areasInput);
 
-	EU4::Regions theRegions(theAreas, regionsInput);
+	EU4::Regions theRegions(superRegions, theAreas, regionsInput);
 
 	ASSERT_FALSE(theRegions.provinceInRegion(1, "test_region"));
 }
@@ -77,6 +84,12 @@ TEST(EU4World_RegionsTests, newStyleNoAreasMeansNoProvinces)
 
 TEST(EU4World_RegionsTests, newStyleNoProvincesMeansNoProvinces)
 {
+	std::stringstream superRegionsInput;
+	superRegionsInput << "test_superregion = {";
+	superRegionsInput << "\ttest_area";
+	superRegionsInput << "}";
+	EU4::SuperRegions superRegions(superRegionsInput);
+
 	std::stringstream regionsInput;
 	regionsInput << "test_region = {\n";
 	regionsInput << "\tareas = {\n";
@@ -89,7 +102,7 @@ TEST(EU4World_RegionsTests, newStyleNoProvincesMeansNoProvinces)
 	areasInput << "}";
 	EU4::Areas theAreas(areasInput);
 
-	EU4::Regions theRegions(theAreas, regionsInput);
+	EU4::Regions theRegions(superRegions, theAreas, regionsInput);
 
 	ASSERT_FALSE(theRegions.provinceInRegion(1, "test_region"));
 }
@@ -97,6 +110,12 @@ TEST(EU4World_RegionsTests, newStyleNoProvincesMeansNoProvinces)
 
 TEST(EU4World_RegionsTests, newStyleAreasProvideProvinces)
 {
+	std::stringstream superRegionsInput;
+	superRegionsInput << "test_superregion = {";
+	superRegionsInput << "\ttest_area";
+	superRegionsInput << "}";
+	EU4::SuperRegions superRegions(superRegionsInput);
+
 	std::stringstream regionsInput;
 	regionsInput << "test_region = {\n";
 	regionsInput << "\tareas = {\n";
@@ -110,7 +129,59 @@ TEST(EU4World_RegionsTests, newStyleAreasProvideProvinces)
 	areasInput << "}";
 	EU4::Areas theAreas(areasInput);
 
-	EU4::Regions theRegions(theAreas, regionsInput);
+	EU4::Regions theRegions(superRegions, theAreas, regionsInput);
 
 	ASSERT_TRUE(theRegions.provinceInRegion(1, "test_region"));
+}
+
+TEST(EU4World_RegionsTests, newStyleAreasProvideProvincesBySuperRegion)
+{
+	std::stringstream superRegionsInput;
+	superRegionsInput << "test_superregion = {";
+	superRegionsInput << "\ttest_area";
+	superRegionsInput << "}";
+	EU4::SuperRegions superRegions(superRegionsInput);
+
+	std::stringstream regionsInput;
+	regionsInput << "test_region = {\n";
+	regionsInput << "\tareas = {\n";
+	regionsInput << "\t\ttest_area\n";
+	regionsInput << "\t}\n";
+	regionsInput << "}";
+
+	std::stringstream areasInput;
+	areasInput << "test_area = {\n";
+	areasInput << "\t1 2 3\n";
+	areasInput << "}";
+	EU4::Areas theAreas(areasInput);
+
+	EU4::Regions theRegions(superRegions, theAreas, regionsInput);
+
+	ASSERT_TRUE(theRegions.provinceInRegion(1, "test_superregion"));
+}
+
+TEST(EU4World_RegionsTests, newStyleAreasProvideProvincesByArea)
+{
+	std::stringstream superRegionsInput;
+	superRegionsInput << "test_superregion = {";
+	superRegionsInput << "\ttest_area";
+	superRegionsInput << "}";
+	EU4::SuperRegions superRegions(superRegionsInput);
+
+	std::stringstream regionsInput;
+	regionsInput << "test_region = {\n";
+	regionsInput << "\tareas = {\n";
+	regionsInput << "\t\ttest_area\n";
+	regionsInput << "\t}\n";
+	regionsInput << "}";
+
+	std::stringstream areasInput;
+	areasInput << "test_area = {\n";
+	areasInput << "\t1 2 3\n";
+	areasInput << "}";
+	EU4::Areas theAreas(areasInput);
+
+	EU4::Regions theRegions(superRegions, theAreas, regionsInput);
+
+	ASSERT_TRUE(theRegions.provinceInRegion(1, "test_area"));
 }

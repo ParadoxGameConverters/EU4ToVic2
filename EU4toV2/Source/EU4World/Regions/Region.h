@@ -12,12 +12,17 @@ namespace EU4
 	public:
 		Region(std::istream& theStream);
 		Region(const std::set<int>& _provinces);
-		bool containsProvince(unsigned int province) const;
-		void addProvinces(const EU4::Areas& areas);
+		bool regionContainsProvince(int province) const;
+		bool areaContainsProvince(const std::string& areaName, int province) const;
+		void addProvinces(const Areas& areas);
+		const std::map<std::string, std::set<int>>& getAreaProvinces() const{ return areaProvinces; }
+		const std::set<std::string>& getAreaNames() const { return areaNames; }
+		const std::string& getName() const { return name; }
 
 	private:
+		std::map<std::string, std::set<int>> areaProvinces;
 		std::set<std::string> areaNames;
-		std::set<int> provinces;
+		std::string name;
 	};
 }
 

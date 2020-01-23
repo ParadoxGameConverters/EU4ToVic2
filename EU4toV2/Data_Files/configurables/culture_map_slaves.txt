@@ -93,7 +93,7 @@ link = { vic2 = araucanian eu4 = huarpe eu4 = mapuche }
 link = { vic2 = chacoan eu4 = chacoan eu4 = mataco }
 
 # Carribean
-link = { vic2 = guajiro eu4 = arawak region = bogota region = coquivacoa region = popayan region = venezuela }
+link = { vic2 = guajiro eu4 = arawak region = bogota_area region = coquivacoa_area region = popayan_area region = venezuela_area }
 link = { vic2 = guajiro eu4 = guajiro }
 link = { vic2 = carribean eu4 = arawak eu4 = carib }
 

@@ -1,6 +1,7 @@
 #include "CultureMappingRule.h"
 #include "ParserHelpers.h"
 #include "../../EU4World/Regions/Regions.h"
+#include "Log.h"
 
 mappers::CultureMappingRule::CultureMappingRule(std::istream& theStream)
 {
@@ -63,6 +64,13 @@ std::optional<std::string> mappers::CultureMappingRule::cultureMatch(
 		auto regionMatch = false;
 		for (const auto& region: regions)
 		{
+			if (!EU4Regions.regionIsValid(region))
+			{
+				Log(LogLevel::Warning) << "Checking for culture " << EU4culture << " inside invalid region: " << region << "! Fix the mapping rules!";
+				// We could say this was a match, and thus pretend this region entry doesn't exist, but it's better
+				// for the converter to explode across the logs and scream all invalid names. So, continue.
+				continue;
+			}
 			if (EU4Regions.provinceInRegion(EU4Province, region)) regionMatch = true;
 		}
 		if (!regionMatch) match = false;

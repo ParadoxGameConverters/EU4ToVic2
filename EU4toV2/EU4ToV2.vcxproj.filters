@@ -508,6 +508,9 @@
     <ClCompile Include="Source\Mappers\AgreementMapper\AgreementMapper.cpp">
       <Filter>Mappers\AgreementMapper</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Regions\SuperRegions.cpp">
+      <Filter>EU4World\Regions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -982,6 +985,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\AgreementMapper\AgreementMapper.h">
       <Filter>Mappers\AgreementMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Regions\SuperRegions.h">
+      <Filter>EU4World\Regions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

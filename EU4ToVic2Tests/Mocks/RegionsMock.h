@@ -29,5 +29,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 class mockRegions: public EU4::Regions
 {
 	public:
+		MOCK_CONST_METHOD1(regionIsValid, bool(const std::string& regionName));
 		MOCK_CONST_METHOD2(provinceInRegion, bool(int province, const std::string& regionName));
 };

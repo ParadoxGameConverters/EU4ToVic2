@@ -2,10 +2,13 @@
 # syntax:
 # link = { vic2 = v2culture eu4 = eu4culture region = eu4region province = eu4provinceID owner = eu4tag }
 # multiples of all except vic2 are allowed.
+# If you're listing specific provinces AND regions (redundant but ok), be sure those provinces are within those regions, otherwise match will fail.
+# Note: regions can be anything that makes sense, ie. south_america_superregion, north_german_region, laponia_area
 
 # Slovene
 link = { vic2 = slovene eu4 = slovene } #Modded
-link = { vic2 = slovene eu4 = croatian region = germany_region }
+#link = { vic2 = slovene eu4 = croatian region = germany_region } # Germany_region is obsolete
+#link = { vic2 = slovene eu4 = croatian region = germany_region } # Germany_region is obsolete
 link = { vic2 = slovene eu4 = austrian region = carinthia_area }
 
 # Germanic - North German, South German, Ashkenazi
@@ -27,7 +30,7 @@ link = { vic2 = german eu4 = german }
 
 # Benelux - Dutch, Flemish, Wallonian
 link = { vic2 = boer eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
-link = { vic2 = boer eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = south_africa }
+link = { vic2 = boer eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = south_africa_region }
 link = { vic2 = nieuwereld eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = south_america_superregion }
 link = { vic2 = nieuwereld eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = north_america_superregion }
 link = { vic2 = nieuwereld eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = central_america_superregion }
@@ -393,7 +396,7 @@ link = { vic2 = araucanian eu4 = huarpe eu4 = mapuche }
 link = { vic2 = chacoan eu4 = chacoan eu4 = mataco }
 
 # Carribean - arawak, carib
-link = { vic2 = guajiro eu4 = arawak region = bogota region = coquivacoa region = popayan region = venezuela }
+link = { vic2 = guajiro eu4 = arawak region = bogota_area region = coquivacoa_area region = popayan_area region = venezuela_area }
 link = { vic2 = guajiro eu4 = guajiro }
 link = { vic2 = carribean eu4 = arawak eu4 = carib }
 
@@ -466,7 +469,7 @@ link = { vic2 = karen eu4 = karen }
 # Pacific - papuan, aboriginal, melanesian, moluccan
 link = { vic2 = hawaiian eu4 = polynesian provinceid = 1240 }
 link = { vic2 = hawaiian eu4 = polynesian provinceid = 1997 }
-link = { vic2 = maori eu4 = polynesian region = new_zealand_region }
+link = { vic2 = maori eu4 = polynesian region = oceanea_region }
 link = { vic2 = aborigine eu4 = aboriginal }
 link = { vic2 = melanesian eu4 = melanesian eu4 = papuan }
 link = { vic2 = melanesian eu4 = polynesian region = melanesia }

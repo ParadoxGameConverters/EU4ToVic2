@@ -257,6 +257,9 @@
     <ClCompile Include="MapperTests\CultureMapperTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\SuperRegions.cpp">
+      <Filter>ConverterFiles\EU4World\Regions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
