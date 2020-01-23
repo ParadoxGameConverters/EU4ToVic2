@@ -511,6 +511,12 @@
     <ClCompile Include="Source\EU4World\Regions\SuperRegions.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Wars\EU4War.cpp">
+      <Filter>EU4World\Wars</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Wars\EU4WarDetails.cpp">
+      <Filter>EU4World\Wars</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -989,6 +995,12 @@
     <ClInclude Include="Source\EU4World\Regions\SuperRegions.h">
       <Filter>EU4World\Regions</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\Wars\EU4War.h">
+      <Filter>EU4World\Wars</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Wars\EU4WarDetails.h">
+      <Filter>EU4World\Wars</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1203,6 +1215,9 @@
     </Filter>
     <Filter Include="Mappers\AgreementMapper">
       <UniqueIdentifier>{ba134aea-55d0-4dd7-9f45-b015a2a9aa91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Wars">
+      <UniqueIdentifier>{7dbef9f3-660a-4d4e-b342-540f1eb932fa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
