@@ -27,8 +27,15 @@ mappers::CultureMappingRule::CultureMappingRule(std::istream& theStream)
 		});
 	registerKeyword("provinceid", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString provinceStr(theStream);
-			if (stoi(provinceStr.getString())) provinces.insert(stoi(provinceStr.getString()));
+			commonItems::singleString provinceStr(theStream);		
+			try
+			{
+				provinces.insert(stoi(provinceStr.getString()));
+			}
+			catch (std::exception&)
+			{
+				Log(LogLevel::Warning) << "Invalid province ID in culture mapper: " << provinceStr.getString();
+			}
 		});
 	registerKeyword("eu4", [this](const std::string& unused, std::istream& theStream)
 		{
@@ -75,6 +82,5 @@ std::optional<std::string> mappers::CultureMappingRule::cultureMatch(
 		}
 		if (!regionMatch) return std::nullopt;
 	}
-	if (match) return destinationCulture;
-	return std::nullopt;
+	return destinationCulture;
 }
