@@ -1,9 +1,8 @@
-# This culture map contains one to one and many to one culture conversions.
-# syntax:
+# Usage:
 # link = { vic2 = v2culture eu4 = eu4culture region = eu4region province = eu4provinceID owner = eu4tag }
 # multiples of all except vic2 are allowed.
-# If you're listing specific provinces AND regions (redundant but ok), be sure those provinces are within those regions, otherwise match will fail.
 # Note: regions can be anything that makes sense, ie. south_america_superregion, north_german_region, laponia_area
+# You can mix and match, ie. north_american_superregion + provinceid = 1240 will catch all of north america + hawaii.
 
 # Slovene
 link = { vic2 = slovene eu4 = slovene } #Modded

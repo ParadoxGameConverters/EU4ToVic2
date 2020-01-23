@@ -1,9 +1,8 @@
-# This culture map contains one to one and many to one culture conversions for slaves.
-# In addition to the vic2 and eu4 culture, distinguishers can be defined:
-#		owner: this rule applies if the (EU4) province is owned by the specified tag or the nation was that tag
-#		religion: this rule applies if the province or nation is the specified religion
-#		region: this rule applies if the province or nation is in the specified EU4 region
-#		provinceid: this rule applies for the specified province, or a nation with a capital in that province
+# Usage:
+# link = { vic2 = v2culture eu4 = eu4culture region = eu4region province = eu4provinceID owner = eu4tag }
+# multiples of all except vic2 are allowed.
+# Note: regions can be anything that makes sense, ie. south_america_superregion, north_german_region, laponia_area
+# You can mix and match, ie. north_american_superregion + provinceid = 1240 will catch all of north america + hawaii.
 
 # Germanic
 link = { vic2 = afro_norse eu4 = alamanni eu4 = lugii eu4 = quadi eu4 = marcoman eu4 = bastarnae eu4 = gepid eu4 = greuthungi eu4 = thuringian eu4 = varinian eu4 = rugii eu4 = vandalic eu4 = pommeranian eu4 = prussian eu4 = hannoverian eu4 = saxon eu4 = hessian eu4 = old_saxon eu4 = german eu4 = thuringian eu4 = colognian eu4 = old_gothic eu4 = baltendeutsche eu4 = eastphalian eu4 = high_saxon eu4 = low_saxon eu4 = moselfranconian eu4 = westphalian eu4 = feldern eu4 = franconian eu4 = swabian eu4 = rheinlaender eu4 = bavarian eu4 = austrian eu4 = eastfranconian eu4 = high_alemanisch eu4 = rhine_alemanisch eu4 = ripuarianfranconian eu4 = schlesischdeutsch eu4 = schwabisch eu4 = alemanisch_colonial eu4 = amerikaner eu4 = prussian_colonial eu4 = berber_germanic eu4 = ashkenazi eu4 = jewish_colonial eu4 = old_frankish eu4 = frankish eu4 = ostrogothic eu4 = gepid eu4 = swiss eu4 = romansh eu4 = suisse }
