@@ -61,13 +61,7 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp">
       <Filter>ConverterFiles\EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="MapperTests\CultureMappingTests.cpp">
-      <Filter>MapperTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
-    <ClCompile Include="MapperTests\CultureMapperTests.cpp">
-      <Filter>MapperTests</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\ReligionMappingTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
@@ -206,9 +200,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapper.cpp">
       <Filter>ConverterFiles\Mappers\CultureMapper</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapping.cpp">
-      <Filter>ConverterFiles\Mappers\CultureMapper</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMappingRule.cpp">
       <Filter>ConverterFiles\Mappers\CultureMapper</Filter>
     </ClCompile>
@@ -262,6 +253,12 @@
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffects.cpp">
       <Filter>ConverterFiles\Mappers\IdeaEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureMapperTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\SuperRegions.cpp">
+      <Filter>ConverterFiles\EU4World\Regions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -244,9 +244,6 @@
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp">
       <Filter>Mappers\CultureMapper</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\CultureMapper\CultureMapping.cpp">
-      <Filter>Mappers\CultureMapper</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp">
       <Filter>Mappers\CultureMapper</Filter>
     </ClCompile>
@@ -511,6 +508,9 @@
     <ClCompile Include="Source\Mappers\AgreementMapper\AgreementMapper.cpp">
       <Filter>Mappers\AgreementMapper</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Regions\SuperRegions.cpp">
+      <Filter>EU4World\Regions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -758,9 +758,6 @@
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h">
       <Filter>Mappers\CultureMapper</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\CultureMapper\CultureMapping.h">
-      <Filter>Mappers\CultureMapper</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h">
       <Filter>Mappers\CultureMapper</Filter>
     </ClInclude>
@@ -988,6 +985,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\AgreementMapper\AgreementMapper.h">
       <Filter>Mappers\AgreementMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Regions\SuperRegions.h">
+      <Filter>EU4World\Regions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

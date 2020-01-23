@@ -185,6 +185,7 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Areas.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Region.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Regions.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\SuperRegions.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp" />
@@ -195,7 +196,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CulturalUnions\CulturalUnion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapper.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffects.cpp" />
@@ -238,7 +238,6 @@
     <ClCompile Include="MapperTests\CulturalUnionMapperTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapperTests.cpp" />
-    <ClCompile Include="MapperTests\CultureMappingTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffectsMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffectsTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />

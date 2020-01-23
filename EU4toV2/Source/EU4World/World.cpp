@@ -6,6 +6,7 @@
 #include "Mods/Mods.h"
 #include "Provinces/EU4Province.h"
 #include "Regions/Areas.h"
+#include "Regions/SuperRegions.h"
 #include "../Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -296,24 +297,34 @@ void EU4::World::loadEU4RegionsNewVersion()
 {
 	std::string areaFilename = theConfiguration.getEU4Path() + "/map/area.txt";
 	std::string regionFilename = theConfiguration.getEU4Path() + "/map/region.txt";
+	std::string superRegionFilename = theConfiguration.getEU4Path() + "/map/superregion.txt";
 	for (auto itr: theConfiguration.getEU4Mods())
 	{
-		if (!Utils::DoesFileExist(itr + "/map/area.txt") || !Utils::DoesFileExist(itr + "/map/region.txt"))
-		{
-			continue;
-		}
-
+		if (!Utils::DoesFileExist(itr + "/map/area.txt")) continue;
 		areaFilename = itr + "/map/area.txt";
+	}
+	for (auto itr : theConfiguration.getEU4Mods())
+	{
+		if (!Utils::DoesFileExist(itr + "/map/region.txt")) continue;
 		regionFilename = itr + "/map/region.txt";
+	}
+	for (auto itr : theConfiguration.getEU4Mods())
+	{
+		if (!Utils::DoesFileExist(itr + "/map/superregion.txt")) continue;
+		superRegionFilename = itr + "/map/superregion.txt";
 	}
 
 	std::ifstream areaStream(areaFilename);
-	EU4::Areas installedAreas(areaStream);
+	Areas installedAreas(areaStream);
 	areaStream.close();
 	assignProvincesToAreas(installedAreas.getAreas());
 
+	std::ifstream superRegionFile(superRegionFilename);
+	SuperRegions sRegions(superRegionFile);
+	superRegionFile.close();
+
 	std::ifstream regionStream(regionFilename);
-	regions = std::make_unique<Regions>(installedAreas, regionStream);
+	regions = std::make_unique<Regions>(sRegions, installedAreas, regionStream);
 	regionStream.close();
 }
 

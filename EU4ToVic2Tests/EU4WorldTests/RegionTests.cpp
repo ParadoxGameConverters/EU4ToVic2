@@ -34,7 +34,7 @@ TEST(EU4World_RegionTests, noProvincesMeansNoProvinces)
 
 	EU4::Region theRegion(input);
 
-	ASSERT_FALSE(theRegion.containsProvince(1));
+	ASSERT_FALSE(theRegion.regionContainsProvince(1));
 }
 
 
@@ -45,7 +45,7 @@ TEST(EU4World_RegionTests, provincesCanBeSet)
 
 	EU4::Region theRegion(input);
 
-	ASSERT_TRUE(theRegion.containsProvince(1));
+	ASSERT_TRUE(theRegion.regionContainsProvince(1));
 }
 
 
@@ -66,7 +66,7 @@ TEST(EU4World_RegionTests, noAreasMeansNoProvinces)
 	EU4::Region theRegion(regionInput);
 	theRegion.addProvinces(theAreas);
 
-	ASSERT_FALSE(theRegion.containsProvince(1));
+	ASSERT_FALSE(theRegion.regionContainsProvince(1));
 }
 
 
@@ -88,5 +88,5 @@ TEST(EU4World_RegionTests, AreasProvideProvinces)
 	EU4::Region theRegion(regionInput);
 	theRegion.addProvinces(theAreas);
 
-	ASSERT_TRUE(theRegion.containsProvince(1));
+	ASSERT_TRUE(theRegion.regionContainsProvince(1));
 }

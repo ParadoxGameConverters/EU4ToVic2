@@ -219,6 +219,7 @@
     <ClCompile Include="Source\EU4World\Regions\Areas.cpp" />
     <ClCompile Include="Source\EU4World\Regions\Region.cpp" />
     <ClCompile Include="Source\EU4World\Regions\Regions.cpp" />
+    <ClCompile Include="Source\EU4World\Regions\SuperRegions.cpp" />
     <ClCompile Include="Source\EU4World\Relations\EU4Empire.cpp" />
     <ClCompile Include="Source\EU4World\Relations\EU4RelationDetails.cpp" />
     <ClCompile Include="Source\EU4World\Relations\EU4Relations.cpp" />
@@ -249,7 +250,6 @@
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroup.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />
-    <ClCompile Include="Source\Mappers\CultureMapper\CultureMapping.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="Source\Mappers\FactoryCounts\FactoryStartingCounts.cpp" />
     <ClCompile Include="Source\Mappers\FactoryInventions\FactoryInventionMapper.cpp" />
@@ -394,6 +394,7 @@
     <ClInclude Include="Source\EU4World\Regions\Areas.h" />
     <ClInclude Include="Source\EU4World\Regions\Region.h" />
     <ClInclude Include="Source\EU4World\Regions\Regions.h" />
+    <ClInclude Include="Source\EU4World\Regions\SuperRegions.h" />
     <ClInclude Include="Source\EU4World\Relations\EU4Empire.h" />
     <ClInclude Include="Source\EU4World\Relations\EU4RelationDetails.h" />
     <ClInclude Include="Source\EU4World\Relations\EU4Relations.h" />
@@ -423,7 +424,6 @@
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroup.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
-    <ClInclude Include="Source\Mappers\CultureMapper\CultureMapping.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
     <ClInclude Include="Source\Mappers\FactoryCounts\FactoryStartingCounts.h" />
     <ClInclude Include="Source\Mappers\FactoryInventions\FactoryInventionMapper.h" />

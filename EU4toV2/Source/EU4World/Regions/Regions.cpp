@@ -1,40 +1,74 @@
 #include "Regions.h"
 #include "Areas.h"
 
-EU4::Regions::Regions(const EU4::Areas& areas, std::istream& regionsFile)
+EU4::Regions::Regions(const SuperRegions& sRegions, const Areas& areas, std::istream& regionsFile)
 {
-	registerRegex("\\w+_region", [this, areas](const std::string & areaName, std::istream & areasFile)
+	registerRegex("\\w+_region", [this, areas](const std::string& regionName, std::istream& areasFile)
 		{
-			EU4::Region newRegion(areasFile);
+			Region newRegion(areasFile);
 			newRegion.addProvinces(areas);
-			regions.insert(make_pair(areaName, newRegion));
+			regions.insert(make_pair(regionName, newRegion));
 		});
 
 	parseStream(regionsFile);
 	clearRegisteredKeywords();
 
-	for (const auto& area : areas.getAreas()) regions.insert(std::make_pair(area.first, EU4::Region(area.second)));
+	for (const auto& area : areas.getAreas()) regions.insert(std::make_pair(area.first, Region(area.second)));
+	superRegions = sRegions.getSuperRegions();
 }
 
-EU4::Regions::Regions(const EU4::Areas& areas)
+EU4::Regions::Regions(const Areas& areas)
 {
 	auto theAreas = areas.getAreas();
 	std::for_each(theAreas.begin(), theAreas.end(), [this](const std::pair<std::string, std::set<int>> & theArea)
 	{
-		regions.insert(make_pair(theArea.first, EU4::Region(theArea.second)));
+		regions.insert(make_pair(theArea.first, Region(theArea.second)));
 	});
 }
 
 
 bool EU4::Regions::provinceInRegion(int province, const std::string& regionName) const
 {
-	auto region = regions.find(regionName);
-	if (region != regions.end())
+	const auto& regionItr = regions.find(regionName);
+	if (regionItr != regions.end()) return regionItr->second.regionContainsProvince(province);
+
+	// "Regions" are such a fluid term.
+	const auto& superRegionItr = superRegions.find(regionName);
+	if (superRegionItr != superRegions.end())
 	{
-		return region->second.containsProvince(province);
+		for (const auto& regionalName: superRegionItr->second)
+		{
+			const auto& regionalItr = regions.find(regionalName);
+			if (regionalItr->second.regionContainsProvince(province)) return true;
+		}
 	}
-	else
+
+	// And sometimes they don't mean what people think they mean at all.
+	for (const auto& region: regions)
 	{
-		return false;
+		for (const auto& areaName: region.second.getAreaNames())
+		{
+			if (areaName == regionName)
+			{
+				return region.second.areaContainsProvince(areaName, province);
+			}
+		}
 	}
+
+	return false;
+}
+
+bool EU4::Regions::regionIsValid(const std::string& regionName) const
+{
+	const auto& regionItr = regions.find(regionName);
+	if (regionItr != regions.end()) return true;
+	
+	// Who knows what the mapper needs. All kinds of stuff.
+	const auto& superRegionItr = superRegions.find(regionName);
+	if (superRegionItr != superRegions.end()) return true;
+	
+	// And more stuff, what's the worst that could happen?
+	for (const auto& region : regions) if (region.second.getAreaNames().count(regionName)) return true;
+
+	return false;
 }

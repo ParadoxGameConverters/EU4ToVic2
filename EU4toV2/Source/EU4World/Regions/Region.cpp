@@ -7,9 +7,8 @@ EU4::Region::Region(std::istream& theStream)
 {
 	registerKeyword("areas", [this](const std::string& unused, std::istream& theStream) 
 		{
-			AreaNames names(theStream);
-			auto newNames = names.getNames();
-			areaNames.merge(newNames);
+			const AreaNames names(theStream);
+			areaNames = names.getNames();
 		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
@@ -17,20 +16,38 @@ EU4::Region::Region(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
-EU4::Region::Region(const std::set<int>& _provinces):
-	provinces(_provinces)
-{}
-
-bool EU4::Region::containsProvince(unsigned int province) const
+EU4::Region::Region(const std::set<int>& _provinces)
 {
-	return (provinces.count(province) > 0);
+	areaProvinces["dummyArea"] = _provinces;
+	areaNames.insert("dummyArea");
 }
 
-void EU4::Region::addProvinces(const EU4::Areas& areas)
+bool EU4::Region::regionContainsProvince(int province) const
 {
-	for (auto areaName: areaNames)
+	for (const auto& area: areaProvinces)
 	{
-		auto newProvinces = areas.getProvincesInArea(areaName);
-		provinces.insert(newProvinces.begin(), newProvinces.end());
+		if (area.second.count(province)) return true;
+	}
+	return false;
+}
+
+bool EU4::Region::areaContainsProvince(const std::string& areaName, int province) const
+{
+	// Support for old installations without areas:
+	const auto& areaItr = areaProvinces.find("dummyArea");
+	if (areaItr != areaProvinces.end()) if (areaItr->second.count(province)) return true;
+	
+	const auto& areaItr2 = areaProvinces.find(areaName);
+	if (areaItr2 == areaProvinces.end()) return false;
+	if (areaItr2->second.count(province)) return true;
+	return false;
+}
+
+void EU4::Region::addProvinces(const Areas& areas)
+{
+	for (const auto& areaName: areaNames)
+	{
+		const auto& newProvinces = areas.getProvincesInArea(areaName);
+		areaProvinces[areaName] = newProvinces;
 	}
 }

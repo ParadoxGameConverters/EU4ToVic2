@@ -2,8 +2,11 @@
 #define CULTURE_MAPPING_RULE_H
 
 #include "newParser.h"
-#include "CultureMapping.h"
-#include <vector>
+#include <set>
+
+namespace EU4 {
+	class Regions;
+}
 
 namespace mappers
 {
@@ -11,13 +14,21 @@ namespace mappers
 	{
 	public:
 		CultureMappingRule(std::istream& theStream);
-		std::vector<CultureMapping> getMappings() const { return mappings; }
+		std::optional<std::string> cultureMatch(
+			const EU4::Regions& EU4Regions,
+			const std::string& EU4culture,
+			const std::string& EU4religion,
+			int EU4Province,
+			const std::string& EU4ownerTag
+		) const;
 
 	private:
-		std::vector<CultureMapping> mappings;
 		std::string destinationCulture;
-		std::vector<std::string> sourceCultures;
-		std::map<mappers::DISTINGUISHER_TYPES, std::string> distinguishers;
+		std::set<std::string> cultures;
+		std::set<std::string> religions;
+		std::set<std::string> regions;
+		std::set<std::string> owners;
+		std::set<int> provinces;
 	};
 }
 

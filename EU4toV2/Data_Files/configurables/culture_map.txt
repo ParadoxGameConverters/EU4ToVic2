@@ -1,11 +1,13 @@
-# This culture map contains one to one and many to one culture conversions.
-# syntax:
+# Usage:
 # link = { vic2 = v2culture eu4 = eu4culture region = eu4region province = eu4provinceID owner = eu4tag }
 # multiples of all except vic2 are allowed.
+# Note: regions can be anything that makes sense, ie. south_america_superregion, north_german_region, laponia_area
+# You can mix and match, ie. north_american_superregion + provinceid = 1240 will catch all of north america + hawaii.
 
 # Slovene
 link = { vic2 = slovene eu4 = slovene } #Modded
-link = { vic2 = slovene eu4 = croatian region = germany_region }
+#link = { vic2 = slovene eu4 = croatian region = germany_region } # Germany_region is obsolete
+#link = { vic2 = slovene eu4 = croatian region = germany_region } # Germany_region is obsolete
 link = { vic2 = slovene eu4 = austrian region = carinthia_area }
 
 # Germanic - North German, South German, Ashkenazi
@@ -27,7 +29,7 @@ link = { vic2 = german eu4 = german }
 
 # Benelux - Dutch, Flemish, Wallonian
 link = { vic2 = boer eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
-link = { vic2 = boer eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = south_africa }
+link = { vic2 = boer eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = south_africa_region }
 link = { vic2 = nieuwereld eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = south_america_superregion }
 link = { vic2 = nieuwereld eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = north_america_superregion }
 link = { vic2 = nieuwereld eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisian eu4 = wallonian region = central_america_superregion }
@@ -51,7 +53,7 @@ link = { vic2 = norwegian eu4 = norse region = eastern_norway }
 link = { vic2 = norwegian eu4 = norse region = western_norway }
 link = { vic2 = swedish eu4 = norse region = svealand_area }
 link = { vic2 = swedish eu4 = norse region = norrland_area }
-link = { vic2 = swedish eu4 = norse region = gotland_area }
+link = { vic2 = swedish eu4 = norse region = gotaland_area }
 link = { vic2 = swedish eu4 = norse region = finland_area }
 link = { vic2 = swedish eu4 = norse region = bothnia_area }
 link = { vic2 = swedish eu4 = norse region = laponia_area }
@@ -75,7 +77,7 @@ link = { vic2 = dixie eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = 
 link = { vic2 = anglo_canadian eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = hudson_bay_region }
 link = { vic2 = anglo_canadian eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = canada_region }
 link = { vic2 = anglo_canadian eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = cascadia_region }
-link = { vic2 = australian eu4 = english eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = australia }
+link = { vic2 = australian eu4 = english eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = australia_region }
 link = { vic2 = australian eu4 = english eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = oceania_superregion }
 link = { vic2 = texan eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = central_america_region }
 link = { vic2 = texan eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = mexico_region }
@@ -138,13 +140,13 @@ link = { vic2 = maltese eu4 = maltese }
 link = { vic2 = maltese eu4 = dalmatian eu4 = sicilian religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 link = { vic2 = maltese eu4 = dalmatian eu4 = sardinian religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 link = { vic2 = maltese eu4 = dalmatian eu4 = neapolitan religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = two_sicilies religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
+link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = sicily_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = corsica_sardinia_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = sicily_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = naples_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = calabria_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = apulia_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = two_sicilies religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
+link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = sicily_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = corsica_sardinia_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = sicily_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = naples_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
@@ -153,7 +155,6 @@ link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = apulia_
 
 # Italian
 link = { vic2 = north_italian eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian }
-link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = lombardia }
 link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = lombardy_area }
 link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = venetia_area }
 link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = piedmont_area }
@@ -162,7 +163,7 @@ link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = liguria_are
 link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = emilia_romagna_area }
 link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = central_italy_area }
 link = { vic2 = south_italian eu4 = neapolitan eu4 = sardinian eu4 = sicilian }
-link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = two_sicilies }
+link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = sicily_area }
 link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = corsica_sardinia_area }
 link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = sicily_area }
 link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = naples_area }
@@ -176,15 +177,12 @@ link = { vic2 = spanish eu4 = andalucian religion = catholic religion = cathar r
 link = { vic2 = andalucian eu4 = castillian eu4 = leonese religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 #Normal Spaniards
 link = { vic2 = mexican eu4 = brazilian eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = mexico_region }
-link = { vic2 = caribeno eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = the_carribean }
 link = { vic2 = caribeno eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = carribeans_region }
 link = { vic2 = platinean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = la_plata_region }
-link = { vic2 = north_andean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = colombia }
 link = { vic2 = north_andean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = colombia_region }
 link = { vic2 = south_andean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = upper_peru_region }
 link = { vic2 = south_andean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = peru_region }
 link = { vic2 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = brazil_region }
-link = { vic2 = central_american eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = central_america }
 link = { vic2 = central_american eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = central_america_region }
 link = { vic2 = americano eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = south_america_superregion }
 link = { vic2 = americano eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = north_america_superregion }
@@ -203,7 +201,7 @@ link = { vic2 = mexican eu4 = mexican }
 link = { vic2 = brazilian eu4 = brazilian }
 
 # French - cosmopolitan_french, gascon, normand, aquitaine, burgundian, occitain, wallonian
-link = { vic2 = french_canadian eu4 = outremer eu4 = cosmopolitan_french eu4 = gascon eu4 = normand eu4 = aquitaine eu4 = burgundian eu4 = occitain eu4 = breton region = northern_america }
+link = { vic2 = french_canadian eu4 = outremer eu4 = cosmopolitan_french eu4 = gascon eu4 = normand eu4 = aquitaine eu4 = burgundian eu4 = occitain eu4 = breton region = northeast_america_region }
 link = { vic2 = french_canadian eu4 = outremer eu4 = cosmopolitan_french eu4 = gascon eu4 = normand eu4 = aquitaine eu4 = burgundian eu4 = occitain eu4 = breton region = canada_region }
 link = { vic2 = french_canadian eu4 = outremer eu4 = cosmopolitan_french eu4 = gascon eu4 = normand eu4 = aquitaine eu4 = burgundian eu4 = occitain eu4 = breton region = hudson_bay_region }
 link = { vic2 = nouvellien eu4 = outremer eu4 = cosmopolitan_french eu4 = normand eu4 = burgundian eu4 = outremer eu4 = africaine eu4 = angevin eu4 = anglois eu4 = antartique eu4 = arpitan eu4 = australienne eu4 = auvergnat eu4 = bourguignon eu4 = creole eu4 = francien eu4 = french_colonial eu4 = javanaise eu4 = limousin eu4 = lorrain eu4 = pacifique eu4 = picard eu4 = poitevin eu4 = provencal eu4 = vivaroaupenc eu4 = occitain eu4 = aquitaine eu4 = gascon eu4 = occitan_colonial eu4 = breton region = south_america_superregion }
@@ -343,7 +341,6 @@ link = { vic2 = dinajidad eu4 = tajik eu4 = persian eu4 = saka eu4 = luri eu4 = 
 link = { vic2 = janub eu4 = tajik eu4 = persian eu4 = saka eu4 = luri eu4 = khorasani eu4 = mazandarani eu4 = parthian eu4 = khuzi eu4 = lurish eu4 = persian eu4 = luri_colonial eu4 = qashqai eu4 = tabari eu4 = scythian eu4 = sarmatian eu4 = iazyges eu4 = uzbek eu4 = uzbehk eu4 = karluk eu4 = khazak eu4 = kirgiz eu4 = kirghiz eu4 = old_kirgiz eu4 = sogdian eu4 = tocharian eu4 = tajihk eu4 = uyghur eu4 = old_uyghur eu4 = east_persian eu4 = afghani eu4 = afghan eu4 = pashtun eu4 = kushan eu4 = baluchi eu4 = baloch eu4 = hazara eu4 = turkmeni eu4 = kurdish eu4 = tartar eu4 = bolghar eu4 = cuman eu4 = avar eu4 = khazar eu4 = astrakhani eu4 = bashkir eu4 = crimean eu4 = kazani eu4 = mishary eu4 = nogaybak eu4 = qasim eu4 = avar eu4 = chaghatai eu4 = mishar eu4 = nogai eu4 = tartar_colonial eu4 = hunnic eu4 = sinoturk region = oceania_superregion }
 link = { vic2 = saahi eu4 = tajik eu4 = persian eu4 = saka eu4 = luri eu4 = khorasani eu4 = mazandarani eu4 = parthian eu4 = khuzi eu4 = lurish eu4 = persian eu4 = luri_colonial eu4 = qashqai eu4 = tabari eu4 = scythian eu4 = sarmatian eu4 = iazyges eu4 = uzbek eu4 = uzbehk eu4 = karluk eu4 = khazak eu4 = kirgiz eu4 = kirghiz eu4 = old_kirgiz eu4 = sogdian eu4 = tocharian eu4 = tajihk eu4 = uyghur eu4 = old_uyghur eu4 = east_persian eu4 = afghani eu4 = afghan eu4 = pashtun eu4 = kushan eu4 = baluchi eu4 = baloch eu4 = hazara eu4 = turkmeni eu4 = kurdish eu4 = tartar eu4 = bolghar eu4 = cuman eu4 = avar eu4 = khazar eu4 = astrakhani eu4 = bashkir eu4 = crimean eu4 = kazani eu4 = mishary eu4 = nogaybak eu4 = qasim eu4 = avar eu4 = chaghatai eu4 = mishar eu4 = nogai eu4 = tartar_colonial eu4 = hunnic eu4 = sinoturk region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = tajik eu4 = tajik eu4 = sogdian eu4 = tocharian }
-link = { vic2 = tajik eu4 = persian region = central_asia }
 link = { vic2 = tajik eu4 = persian region = central_asia_region }
 link = { vic2 = persian eu4 = persian eu4 = saka eu4 = luri eu4 = khorasani eu4 = mazandarani }
 link = { vic2 = pashtun eu4 = east_persian eu4 = afghani eu4 = afghan }
@@ -393,7 +390,7 @@ link = { vic2 = araucanian eu4 = huarpe eu4 = mapuche }
 link = { vic2 = chacoan eu4 = chacoan eu4 = mataco }
 
 # Carribean - arawak, carib
-link = { vic2 = guajiro eu4 = arawak region = bogota region = coquivacoa region = popayan region = venezuela }
+link = { vic2 = guajiro eu4 = arawak region = bogota_area region = coquivacoa_area region = popayan_area region = venezuela_area }
 link = { vic2 = guajiro eu4 = guajiro }
 link = { vic2 = carribean eu4 = arawak eu4 = carib }
 
@@ -466,11 +463,11 @@ link = { vic2 = karen eu4 = karen }
 # Pacific - papuan, aboriginal, melanesian, moluccan
 link = { vic2 = hawaiian eu4 = polynesian provinceid = 1240 }
 link = { vic2 = hawaiian eu4 = polynesian provinceid = 1997 }
-link = { vic2 = maori eu4 = polynesian region = new_zealand_region }
+link = { vic2 = maori eu4 = polynesian region = oceanea_region }
 link = { vic2 = aborigine eu4 = aboriginal }
 link = { vic2 = melanesian eu4 = melanesian eu4 = papuan }
-link = { vic2 = melanesian eu4 = polynesian region = melanesia }
-link = { vic2 = micronesian eu4 = polynesian region = micronesia }
+link = { vic2 = melanesian eu4 = polynesian region = melanesia_area }
+link = { vic2 = micronesian eu4 = polynesian region = micronesia_area }
 link = { vic2 = polynesian eu4 = polynesian }
 
 # Colonizer India
@@ -534,7 +531,7 @@ link = { vic2 = yoruba eu4 = yorumba }
 link = { vic2 = ibo eu4 = nupe }
 link = { vic2 = mossi eu4 = mossi eu4 = dagomba }
 link = { vic2 = tiv eu4 = jukun }
-link = { vic2 = kru eu4 = dyola region = guinea_area }
+link = { vic2 = kru eu4 = dyola region = guinea_coast_area }
 #link = { vic2 = senufo eu4 = ? } # Cote d'Ivoire
 #link = { vic2 = ibibio eu4 = ? } # Nigeria
 #link = { vic2 = itsekari eu4 = ? } # Nigeria (NNM)

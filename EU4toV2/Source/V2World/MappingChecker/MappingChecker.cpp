@@ -46,7 +46,7 @@ void V2::MappingChecker::checkAllEU4CulturesMapped(const EU4::World& sourceWorld
 {
 	for (const auto& cultureItr : sourceWorld.getCultureGroupsMapper().getCultureToGroupMap())
 	{
-		auto matched = cultureMapper.cultureMatch(sourceWorld.getRegions(), cultureItr.first, "", -1, "");
+		const auto& matched = cultureMapper.cultureMatch(sourceWorld.getRegions(), cultureItr.first, "", 0, "");
 		if (!matched)
 		{
 			LOG(LogLevel::Warning) << "No Vic2 culture mapping for EU4 culture " << cultureItr.first;
