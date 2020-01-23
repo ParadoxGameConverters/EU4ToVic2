@@ -225,15 +225,23 @@ void V2::Province::determineDemographics(
 		);
 		if (!dstCulture)
 		{
-			LOG(LogLevel::Warning) << "Could not set culture for pops in Vic2 province " << destNum;
-			dstCulture = "no_culture";
+			LOG(LogLevel::Warning) << "Could not convert eu4 culture " << popRatio.getCulture() << " for pops in Vic2 province " << destNum << "! Check mappings, substituting noculture.";
+			dstCulture = "noculture";
+		}
+		else if (*dstCulture == "noculture")
+		{
+			LOG(LogLevel::Warning) << "Incoming eu4 noculture pops for Vic2 province " << destNum << "! Your EU4 save seems borked there, troubles with CK2 import?";
 		}
 
 		std::optional<std::string> religion = religionMapper.getVic2Religion(popRatio.getReligion());
 		if (!religion)
 		{
-			LOG(LogLevel::Warning) << "Could not set religion for pops in Vic2 province " << destNum;
-			religion = "no_religion";
+			LOG(LogLevel::Warning) << "Could not convert eu4 religion " << popRatio.getReligion() << " for pops in Vic2 province " << destNum << "! Check mappings, substituting no_religion.";
+			religion = "noreligion";
+		}
+		else if (*religion == "noreligion")
+		{
+			LOG(LogLevel::Warning) << "Incoming eu4 noreligion pops for Vic2 province " << destNum << "! Your EU4 save seems borked there, troubles with CK2 import?";
 		}
 
 		std::optional<std::string> slaveCulture;
@@ -370,7 +378,7 @@ void V2::Province::doCreatePops(
 	const mappers::ProvinceMapper& provinceMapper
 ) {
 	// convert pops
-	for (auto demographic: demographics)
+	for (const auto& demographic: demographics)
 	{
 		createPops(demographic, popWeightRatio, _owner, popConversionAlgorithm, provinceMapper);
 	}
@@ -379,7 +387,7 @@ void V2::Province::doCreatePops(
 	// organize pops for adding minorities
 	std::map<std::string, int> totals;
 	std::map<std::string, std::vector<std::shared_ptr<Pop>>> thePops;
-	for (auto popItr : pops)
+	for (const auto& popItr : pops)
 	{
 		std::string type = popItr->getType();
 
@@ -408,7 +416,7 @@ void V2::Province::doCreatePops(
 
 	// decrease non-minority pops and create the minorities
 	std::vector<std::shared_ptr<Pop>> actualMinorities;
-	for (auto minorityItr : minorityPops)
+	for (const auto& minorityItr : minorityPops)
 	{
 		int totalTypePopulation;
 		auto totalsItr = totals.find(minorityItr->getType());
@@ -424,7 +432,7 @@ void V2::Province::doCreatePops(
 		auto thePopsItr = thePops.find(minorityItr->getType());
 		if (thePopsItr != thePops.end())
 		{
-			for (auto popsItr : thePopsItr->second)
+			for (const auto& popsItr : thePopsItr->second)
 			{
 				std::string newCulture = minorityItr->getCulture();
 				std::string newReligion = minorityItr->getReligion();
@@ -588,10 +596,10 @@ V2::Province::pop_points V2::Province::getPopPoints_2(
 		double actualCapitalists = static_cast<double>(factories.size())* static_cast<double>(_owner->getNumFactories())* capsPerFactory* demographic.upperRatio;
 		pts.capitalists += (10000 * actualCapitalists) / (demographic.upperRatio * newPopulation);
 
-		double actualClerks = 181 * static_cast<double>(factories.size())* demographic.middleRatio;
+		double actualClerks = 493 * static_cast<double>(factories.size())* demographic.middleRatio;
 		pts.clerks += (10000 * actualClerks) / (demographic.middleRatio * newPopulation);
 
-		double actualCraftsmen = 2639 * static_cast<double>(factories.size())* demographic.lowerRatio;
+		double actualCraftsmen = 8170 * static_cast<double>(factories.size())* demographic.lowerRatio;
 		pts.craftsmen += (10000 * actualCraftsmen) / (demographic.lowerRatio * newPopulation);
 	}
 
@@ -620,7 +628,7 @@ void V2::Province::createPops(
 		break;
 
 	case Configuration::POPSHAPES::Extreme:
-		newPopulation = static_cast<long>(static_cast<double>(details.lifeRating) / 10 * popWeightRatio * totalWeight);
+		newPopulation = static_cast<long>(popWeightRatio * totalWeight);
 
 		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(*eu4IDs.begin()); // the first province maps to the same places as the others.
 		int numOfV2Provs = Vic2Provinces.size();

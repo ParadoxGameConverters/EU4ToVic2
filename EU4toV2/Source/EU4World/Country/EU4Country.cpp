@@ -767,3 +767,10 @@ void EU4::Country::clearCores()
 {
 	cores.clear();
 }
+
+int EU4::Country::getTotalDev() const
+{
+	int totalDev = 0;
+	for (const auto& province : provinces) totalDev += static_cast<int>(province->getTotalDevModifier());
+	return totalDev;
+}

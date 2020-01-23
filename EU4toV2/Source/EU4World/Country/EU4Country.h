@@ -59,6 +59,7 @@ namespace EU4
 		void setTag(std::string _tag) { tag = _tag; }
 		std::vector<std::shared_ptr<Province>>& getProvinces() { return provinces; }
 		std::vector<std::shared_ptr<Province>>& getCores() { return cores; }
+		int getTotalDev() const;
 		int getCapital() const { return capital; }
 		bool getInHRE() const { return inHRE; }
 		bool getHolyRomanEmperor() const { return holyRomanEmperor; }

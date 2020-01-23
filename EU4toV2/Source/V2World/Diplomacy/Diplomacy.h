@@ -5,9 +5,11 @@
 #include "../EU4toV2/Source/EU4World/Diplomacy/EU4Agreement.h"
 #include <vector>
 #include "../../Mappers/CountryMappings/CountryMappings.h"
+#include "../../Mappers/AgreementMapper/AgreementMapper.h"
 
 namespace V2
 {
+	class Relation;
 	class Country;
 	class Diplomacy
 	{
@@ -21,6 +23,20 @@ namespace V2
 
 	private:
 		std::vector<Agreement> agreements;
+
+		mappers::AgreementMapper agreementMapper;
+		std::map<std::string, int> conglomerateCache;
+		std::map<std::string, int> vassalCache;
+		std::map<std::string, int> masterCache;
+		std::map<std::string, std::set<std::string>> masterVassals;
+
+		void convertRelationsToInfluence(const std::map<std::string, std::shared_ptr<Country>>& countries);
+		void reduceVassalPrestige(const std::map<std::string, std::shared_ptr<Country>>& countries);
+		void processVassal(Relation& r1, Relation& r2);
+		void processTributary(Relation& r1, Relation& r2);
+		void processOnesider(Relation& r1);
+		void processDoublesider(Relation& r1, Relation& r2);
+		void storeDevValues(const Country& country1, const Country& country2);
 	};
 }
 

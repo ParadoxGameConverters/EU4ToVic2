@@ -88,10 +88,12 @@ namespace V2
 		void setColonyOverlord(const std::string& colony) { colonyOverlord = colony; }
 		int getNumFactories() const { return details.numFactories; }
 		Relation& getRelation(const std::string& withWhom);
+		std::map<std::string, Relation>& getRelations() { return relations; }
 		void addRelation(Relation& newRelation);
 		void absorbColony(Country& vassal);
 		const std::map<int, std::shared_ptr<Province>>& getProvinces() const { return provinces; }
 		void addPrestige(double additionalPrestige) { details.prestige += additionalPrestige; }
+		void setPrestige(double prestige) { details.prestige = prestige; }
 		double getPrestige() const { return details.prestige; }
 		NationalValueInvestments getNationalValueScores() const;
 		void setNationalValue(const std::string& NV) { details.nationalValue = NV; }

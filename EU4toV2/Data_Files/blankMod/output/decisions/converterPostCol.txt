@@ -2175,53 +2175,53 @@ political_decisions = {
 				capital = 2226
 			}
 			OR = {
-				2236 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2224 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2229 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2219 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2220 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2232 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2230 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2233 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2234 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2235 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2225 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2226 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2228 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2227 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2231 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2409 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2217 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2218 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2222 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2223 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2237 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-				2238 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+				2236 = { owned_by = THIS }
+				2224 = { owned_by = THIS }
+				2229 = { owned_by = THIS }
+				2219 = { owned_by = THIS }
+				2220 = { owned_by = THIS }
+				2232 = { owned_by = THIS }
+				2230 = { owned_by = THIS }
+				2233 = { owned_by = THIS }
+				2234 = { owned_by = THIS }
+				2235 = { owned_by = THIS }
+				2225 = { owned_by = THIS }
+				2226 = { owned_by = THIS }
+				2228 = { owned_by = THIS }
+				2227 = { owned_by = THIS }
+				2231 = { owned_by = THIS }
+				2409 = { owned_by = THIS }
+				2217 = { owned_by = THIS }
+				2218 = { owned_by = THIS }
+				2222 = { owned_by = THIS }
+				2223 = { owned_by = THIS }
+				2237 = { owned_by = THIS }
+				2238 = { owned_by = THIS }
 			}
 		}	
 		allow = {
 			war = no
 			is_independant = yes
-			2236 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2224 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2229 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2219 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2220 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2232 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2230 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2233 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2225 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2226 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2228 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2227 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2231 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2409 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2217 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2218 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2222 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2223 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2237 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
-			2238 = { OR = { owned_by = THIS owner = { in_sphere = THIS } } }
+			2236 = { owned_by = THIS }
+			2224 = { owned_by = THIS }
+			2229 = { owned_by = THIS }
+			2219 = { owned_by = THIS }
+			2220 = { owned_by = THIS }
+			2232 = { owned_by = THIS }
+			2230 = { owned_by = THIS }
+			2233 = { owned_by = THIS }
+			2225 = { owned_by = THIS }
+			2226 = { owned_by = THIS }
+			2228 = { owned_by = THIS }
+			2227 = { owned_by = THIS }
+			2231 = { owned_by = THIS }
+			2409 = { owned_by = THIS }
+			2217 = { owned_by = THIS }
+			2218 = { owned_by = THIS }
+			2222 = { owned_by = THIS }
+			2223 = { owned_by = THIS }
+			2237 = { owned_by = THIS }
+			2238 = { owned_by = THIS }
 		}
 		
 		effect = {

@@ -5,7 +5,7 @@ V2::Relation::Relation(const std::string& _target):
 
 V2::Relation::Relation(const std::string& _target, EU4::EU4RelationDetails& oldRelations):
 	target(_target),
-	value(oldRelations.getRelations()),
+	relations(oldRelations.getRelations()),
 	militaryAccess(oldRelations.hasMilitaryAccess()),
 	lastSendDiplomat(oldRelations.getDiplomatLastSent()),
 	lastWar(oldRelations.getLastWar()){}

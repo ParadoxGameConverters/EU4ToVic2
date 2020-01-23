@@ -185,11 +185,17 @@ void V2::Country::setReligion(const std::string& religion, const mappers::Religi
 
 void V2::Country::setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> srcCountry, const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions)
 {
-	int oldCapital = srcCountry->getCapital();
+	auto oldCapital = srcCountry->getCapital();
 
 	// primary culture
-	std::string primCulture = srcCountry->getPrimaryCulture();
-	std::optional<std::string> matched = cultureMapper.cultureMatch(eu4Regions, primCulture, details.religion, oldCapital, srcCountry->getTag());
+	auto primCulture = srcCountry->getPrimaryCulture();
+	if (primCulture.empty()) 
+	{
+		primCulture = "noculture";
+		LOG(LogLevel::Warning) << "No primary culture for " << srcCountry->getTag() << "! Using noculture. (Is this a CK2 import? Forgot to fix CK2 converter culture/religion bugs?)";
+	}
+	
+	const auto& matched = cultureMapper.cultureMatch(eu4Regions, primCulture, details.religion, oldCapital, srcCountry->getTag());
 	if (!matched)
 	{
 		LOG(LogLevel::Warning) << "No culture mapping defined for " << primCulture << " (" << srcCountry->getTag() << " -> " << tag << ')';
@@ -200,16 +206,16 @@ void V2::Country::setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> sr
 	}
 
 	//accepted cultures
-	std::vector<std::string> srcAceptedCultures = srcCountry->getAcceptedCultures();
+	auto srcAcceptedCultures = srcCountry->getAcceptedCultures();
 	auto culturalUnion = srcCountry->getCulturalUnion();
 	if (culturalUnion)
 	{
-		for (auto unionCulture : culturalUnion->getCultures())
+		for (const auto& unionCulture : culturalUnion->getCultures())
 		{
-			srcAceptedCultures.push_back(unionCulture.first);
+			srcAcceptedCultures.push_back(unionCulture.first);
 		}
 	}
-	for (auto srcCulture : srcAceptedCultures)
+	for (const auto& srcCulture : srcAcceptedCultures)
 	{
 		std::optional<std::string> dstCulture;
 		dstCulture = cultureMapper.cultureMatch(

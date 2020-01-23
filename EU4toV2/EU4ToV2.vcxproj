@@ -230,6 +230,7 @@
     <ClCompile Include="Source\Helpers\TechValues.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\Adjacency\AdjacencyMapper.cpp" />
+    <ClCompile Include="Source\Mappers\AgreementMapper\AgreementMapper.cpp" />
     <ClCompile Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp" />
     <ClCompile Include="Source\Mappers\Buildings\Building.cpp" />
     <ClCompile Include="Source\Mappers\Buildings\Buildings.cpp" />
@@ -403,6 +404,7 @@
     <ClInclude Include="Source\Helpers\targa.h" />
     <ClInclude Include="Source\Helpers\TechValues.h" />
     <ClInclude Include="Source\Mappers\Adjacency\AdjacencyMapper.h" />
+    <ClInclude Include="Source\Mappers\AgreementMapper\AgreementMapper.h" />
     <ClInclude Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.h" />
     <ClInclude Include="Source\Mappers\Buildings\Building.h" />
     <ClInclude Include="Source\Mappers\Buildings\Buildings.h" />
