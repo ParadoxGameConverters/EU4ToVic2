@@ -249,7 +249,6 @@
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroup.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />
-    <ClCompile Include="Source\Mappers\CultureMapper\CultureMapping.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="Source\Mappers\FactoryCounts\FactoryStartingCounts.cpp" />
     <ClCompile Include="Source\Mappers\FactoryInventions\FactoryInventionMapper.cpp" />
@@ -423,7 +422,6 @@
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroup.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
-    <ClInclude Include="Source\Mappers\CultureMapper\CultureMapping.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
     <ClInclude Include="Source\Mappers\FactoryCounts\FactoryStartingCounts.h" />
     <ClInclude Include="Source\Mappers\FactoryInventions\FactoryInventionMapper.h" />

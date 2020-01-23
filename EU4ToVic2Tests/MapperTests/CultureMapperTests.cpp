@@ -176,7 +176,7 @@ TEST(Mappers_CultureMapperTests, regionDistinguisherWrongNoMatch)
 	mockRegions regions;
 	EXPECT_CALL(regions, provinceInRegion(42, "theRegion")).WillOnce(testing::Return(false));
 
-	std::optional<std::string> match = theMapper.cultureMatch(regions, "sourceCulture", "", 42, "");
+	std::optional<std::string> match = theMapper.cultureMatch(regions, "sourceCulture", "", 42, "theRegion");
 	ASSERT_FALSE(match);
 }
 

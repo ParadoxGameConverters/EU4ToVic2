@@ -21,30 +21,23 @@ void mappers::CultureMapper::registerKeys()
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream)
 		{
 			CultureMappingRule rule(theStream);
-			for (auto newRule : rule.getMappings())
-			{
-				cultureMap.push_back(newRule);
-			}
+			cultureMapRules.push_back(rule);
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 }
 
 std::optional<std::string> mappers::CultureMapper::cultureMatch(
 	const EU4::Regions& EU4Regions,
-	const std::string& culture,
-	const std::string& religion,
+	const std::string& EU4culture,
+	const std::string& EU4religion,
 	int EU4Province,
-	const std::string& ownerTag
+	const std::string& EU4ownerTag
 ) const
 {
-	for (auto cultureMapping: cultureMap)
+	for (const auto& cultureMappingRule: cultureMapRules)
 	{
-		auto possibleMatch = cultureMapping.cultureMatch(EU4Regions, culture, religion, EU4Province, ownerTag);
-		if (possibleMatch)
-		{
-			return possibleMatch;
-		}
+		const auto& possibleMatch = cultureMappingRule.cultureMatch(EU4Regions, EU4culture, EU4religion, EU4Province, EU4ownerTag);
+		if (possibleMatch) return *possibleMatch;
 	}
-
-	return {};
+	return std::nullopt;
 }

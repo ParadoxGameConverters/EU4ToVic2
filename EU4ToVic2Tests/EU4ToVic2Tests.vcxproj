@@ -195,7 +195,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CulturalUnions\CulturalUnion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapper.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffects.cpp" />
@@ -238,7 +237,6 @@
     <ClCompile Include="MapperTests\CulturalUnionMapperTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapperTests.cpp" />
-    <ClCompile Include="MapperTests\CultureMappingTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffectsMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffectsTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />

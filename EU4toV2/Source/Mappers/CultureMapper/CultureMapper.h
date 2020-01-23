@@ -2,11 +2,11 @@
 #define CULTURE_MAPPER_H
 
 #include "newParser.h"
-#include "CultureMapping.h"
 #include "../../EU4World/Regions/Regions.h"
 #include <optional>
 #include <string>
 #include <vector>
+#include "CultureMappingRule.h"
 
 namespace mappers
 {
@@ -19,15 +19,15 @@ namespace mappers
 
 		std::optional<std::string> cultureMatch(
 			const EU4::Regions& EU4Regions,
-			const std::string& culture,
-			const std::string& religion,
+			const std::string& EU4culture,
+			const std::string& EU4religion,
 			int EU4Province,
-			const std::string& ownerTag
+			const std::string& EU4ownerTag
 		) const;
 
 	private:
 		void registerKeys();
-		std::vector<CultureMapping> cultureMap;
+		std::vector<CultureMappingRule> cultureMapRules;
 	};
 }
 
