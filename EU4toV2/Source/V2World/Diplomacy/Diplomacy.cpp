@@ -70,30 +70,17 @@ void V2::Diplomacy::convertDiplomacy(
 
 		if (agreementMapper.isAgreementInOnesiders(agreement.getAgreementType()))
 		{
-			// influence level +1, but never exceed 4
-			// military access is not implied
-			if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
-			r1.increaseRelations(50);
+			processOnesider(r1);
 		}
 
 		if (agreementMapper.isAgreementInDoublesiders(agreement.getAgreementType()))
 		{
-			// doublesiders are bidirectional; influence level +1, but never exceed 4
-			// They don't set military access, as it's not implied (not even for alliances).
-			if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
-			r1.increaseRelations(50);
-			if (r2.getLevel() < 4) r2.setLevel(r2.getLevel() + 1);
-			r2.increaseRelations(50);
+			processDoublesider(r1, r2);
 		}
 
 		if (agreementMapper.isAgreementInTributaries(agreement.getAgreementType()))
 		{
-			// influence level 5 - sphere, but not vassal, and military access is implied.
-			r1.setLevel(5);
-			r1.increaseRelations(75);
-			r1.setInfluence(20);
-			r1.setAccess(true);
-			r2.setAccess(true);
+			processTributary(r1, r2);
 		}
 
 		if (agreementMapper.isAgreementInVassals(agreement.getAgreementType()))
@@ -102,18 +89,8 @@ void V2::Diplomacy::convertDiplomacy(
 			// beside existing vassal relation specifying when vassalage ends.
 			// However, vanilla Vic2 has PU end dates based on historical events, and we don't simulate those (for now).
 			agreement.setAgreementType("vassal");
-			r1.setLevel(5);
-			r1.increaseRelations(75);
-			r1.setInfluence(50);
-			// In vic2 military access through vassals is not automatic but is implied.
-			r1.setAccess(true);
-			r2.setAccess(true);
-
-			// We need to calculate devs and conglomerate devs (vassals + overlord) so that we can alter starting prestige
-			// of individual vassals. We cannot do so yet as we don't know who's alive, dead or a vassal at all.
-			if (!vassalCache[V2Tag2]) vassalCache[V2Tag2] = country2->second->getSourceCountry()->getTotalDev();
-			if (!masterCache[V2Tag1]) masterCache[V2Tag1] = country1->second->getSourceCountry()->getTotalDev();
-			masterVassals[V2Tag1].insert(V2Tag2);
+			processVassal(r1, r2);
+			storeDevValues(*country1->second, *country2->second);
 		}
 
 		// In essence we should only recognize 3 diplomacy categories and these are it.
@@ -124,8 +101,65 @@ void V2::Diplomacy::convertDiplomacy(
 			agreements.push_back(v2agreement);
 		}
 	}
-	// Now, alter prestige of vassals.
-	for (const auto& conglomerate: masterVassals)
+
+	reduceVassalPrestige(countries);
+	convertRelationsToInfluence(countries);
+}
+
+void V2::Diplomacy::storeDevValues(const Country& country1, const Country& country2)
+{
+	const auto& V2Tag1 = country1.getTag();
+	const auto& V2Tag2 = country2.getTag();
+	
+	// We need to calculate devs and conglomerate devs (vassals + overlord) so that we can alter starting prestige
+	// of individual vassals. We cannot do so yet as we don't know who's alive, dead or a vassal at all.
+	if (!vassalCache[V2Tag2]) vassalCache[V2Tag2] = country2.getSourceCountry()->getTotalDev();
+	if (!masterCache[V2Tag1]) masterCache[V2Tag1] = country1.getSourceCountry()->getTotalDev();
+	masterVassals[V2Tag1].insert(V2Tag2);
+}
+
+void V2::Diplomacy::processOnesider(Relation& r1)
+{
+	// influence level +1, but never exceed 4
+	// military access is not implied
+	if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
+	r1.increaseRelations(50);
+}
+
+void V2::Diplomacy::processDoublesider(Relation& r1, Relation& r2)
+{
+	// doublesiders are bidirectional; influence level +1, but never exceed 4
+	// They don't set military access, as it's not implied (not even for alliances).
+	if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
+	r1.increaseRelations(50);
+	if (r2.getLevel() < 4) r2.setLevel(r2.getLevel() + 1);
+	r2.increaseRelations(50);
+}
+
+void V2::Diplomacy::processTributary(Relation& r1, Relation& r2)
+{
+	// influence level 5 - sphere, but not vassal, and military access is implied.
+	r1.setLevel(5);
+	r1.increaseRelations(75);
+	r1.setInfluence(20);
+	r1.setAccess(true);
+	r2.setAccess(true);
+}
+
+void V2::Diplomacy::processVassal(Relation& r1, Relation& r2)
+{
+	r1.setLevel(5);
+	r1.increaseRelations(75);
+	r1.setInfluence(50);
+	// In vic2 military access through vassals is not automatic but is implied.
+	r1.setAccess(true);
+	r2.setAccess(true);
+}
+
+void V2::Diplomacy::reduceVassalPrestige(const std::map<std::string, std::shared_ptr<Country>>& countries)
+{
+	// Alter prestige of vassals based on conglomerate dev size.
+	for (const auto& conglomerate : masterVassals)
 	{
 		const auto& masterDev = masterCache[conglomerate.first];
 		auto conglomerateDev = masterDev;
@@ -134,21 +168,24 @@ void V2::Diplomacy::convertDiplomacy(
 		for (const auto& vassal : conglomerate.second)
 		{
 			if (!vassalCache[vassal]) continue;
-			auto ratio = static_cast<double>(vassalCache[vassal]) / conglomerateDev;
-			auto newPrestige = ratio * countries.find(vassal)->second->getPrestige();
+			const auto ratio = static_cast<double>(vassalCache[vassal]) / conglomerateDev;
+			const auto newPrestige = ratio * countries.find(vassal)->second->getPrestige();
 			countries.find(vassal)->second->setPrestige(newPrestige);
 		}
 	}
+}
 
+void V2::Diplomacy::convertRelationsToInfluence(const std::map<std::string, std::shared_ptr<Country>>& countries)
+{
 	// Reward good starting relations with a small amount of extra influence, which will be relevant 
 	// to stating GPs, and will look natural.
-	for (const auto& country: countries)
+	for (const auto& country : countries)
 	{
-		for (auto& relation: country.second->getRelations())
-		{			
+		for (auto& relation : country.second->getRelations())
+		{
 			if (relation.second.getRelations() > 50)
 			{
-				auto bonus = static_cast<int>((relation.second.getRelations() - 50) / 4);
+				const auto bonus = static_cast<int>((relation.second.getRelations() - 50) / 4);
 				auto newInfluence = relation.second.getInfluence() + bonus;
 				// Cash in excess influence for higher relationship level
 				while (newInfluence >= 50)
