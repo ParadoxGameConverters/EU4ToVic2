@@ -153,11 +153,11 @@ link = { vic2 = karen eu4 = karen }
 # Pacific
 link = { vic2 = hawaiian eu4 = polynesian provinceid = 1240 }
 link = { vic2 = hawaiian eu4 = polynesian provinceid = 1997 }
-link = { vic2 = maori eu4 = polynesian region = new_zealand_region }
+link = { vic2 = maori eu4 = polynesian region = oceanea_region }
 link = { vic2 = aborigine eu4 = aboriginal }
 link = { vic2 = melanesian eu4 = melanesian eu4 = papuan }
-link = { vic2 = melanesian eu4 = polynesian region = melanesia }
-link = { vic2 = micronesian eu4 = polynesian region = micronesia }
+link = { vic2 = melanesian eu4 = polynesian region = melanesia_area }
+link = { vic2 = micronesian eu4 = polynesian region = micronesia_area }
 link = { vic2 = polynesian eu4 = polynesian }
 
 # Eastern Aryan
