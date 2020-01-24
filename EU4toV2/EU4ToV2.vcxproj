@@ -226,6 +226,8 @@
     <ClCompile Include="Source\EU4World\Religions\Religion.cpp" />
     <ClCompile Include="Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="Source\EU4World\Religions\Religions.cpp" />
+    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGood.cpp" />
+    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGoods.cpp" />
     <ClCompile Include="Source\EU4World\Wars\EU4War.cpp" />
     <ClCompile Include="Source\EU4World\Wars\EU4WarDetails.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
@@ -407,6 +409,8 @@
     <ClInclude Include="Source\EU4World\Religions\Religion.h" />
     <ClInclude Include="Source\EU4World\Religions\ReligionGroup.h" />
     <ClInclude Include="Source\EU4World\Religions\Religions.h" />
+    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGood.h" />
+    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGoods.h" />
     <ClInclude Include="Source\EU4World\Wars\EU4War.h" />
     <ClInclude Include="Source\EU4World\Wars\EU4WarDetails.h" />
     <ClInclude Include="Source\EU4World\World.h" />

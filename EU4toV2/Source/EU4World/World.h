@@ -9,6 +9,7 @@
 #include "Modifiers/Modifiers.h"
 #include "Country/EU4Country.h"
 #include "Wars/EU4War.h"
+#include "TradeGoods/EU4TradeGoods.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/UnitTypes/UnitTypeMapper.h"
 #include "../Mappers/Buildings/Buildings.h"
@@ -56,7 +57,8 @@ namespace EU4
 		void setEmpires();
 	   void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas);
 		void fillHistoricalData();
-
+		void addTradeGoodsToCountries() const;
+		
 	   std::shared_ptr<Country> getCountry(std::string tag) const;
 		std::string holyRomanEmperor;
 		std::string celestialEmperor;
@@ -68,7 +70,8 @@ namespace EU4
 		std::string revolutionTargetString;
 		std::map<std::string, mappers::UnitType> unitTypeMap;
 		std::vector<War> wars;
-
+		
+		TradeGoods tradeGoods;		
 		Religions theReligions;
 		Modifiers modifierTypes;
 		mappers::UnitTypeMapper unitTypeMapper;

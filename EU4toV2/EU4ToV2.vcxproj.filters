@@ -529,6 +529,12 @@
     <ClCompile Include="Source\V2World\Output\outHistory.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGood.cpp">
+      <Filter>EU4World\TradeGoods</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGoods.cpp">
+      <Filter>EU4World\TradeGoods</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1019,6 +1025,12 @@
     <ClInclude Include="Source\V2World\War\War.h">
       <Filter>Vic2World\War</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGood.h">
+      <Filter>EU4World\TradeGoods</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGoods.h">
+      <Filter>EU4World\TradeGoods</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1242,6 +1254,9 @@
     </Filter>
     <Filter Include="Mappers\WarGoalMapper">
       <UniqueIdentifier>{9b194f63-f1ef-46e2-9f4a-7fad6d7b19c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\TradeGoods">
+      <UniqueIdentifier>{c3667a54-ec75-4e75-b1f0-c372e33d08b6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

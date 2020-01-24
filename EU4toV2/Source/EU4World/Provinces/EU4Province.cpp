@@ -130,7 +130,6 @@ EU4::Province::Province(
 		baseProduction = baseTax;
 	}
 
-	determineProvinceWeight(buildingTypes, modifierTypes);
 }
 
 bool EU4::Province::hasBuilding(const std::string& building) const
@@ -182,8 +181,7 @@ void EU4::Province::determineProvinceWeight(const mappers::Buildings& buildingTy
 
 	double total_tx = (baseTax + taxModifier) * (taxEfficiency + 0.15);
 	double production_eff_tech = 0.5; // used to be 1.0
-
-	double total_trade_value = ((getTradeGoodPrice() * goodsProduced) + tradeValue) * (1 + tradeEfficiency);
+	double total_trade_value = ((tradeGoodsPrice * goodsProduced) + tradeValue) * (1 + tradeEfficiency);
 	double production_income = total_trade_value * (1 + production_eff_tech + productionEfficiency);
 
 	total_tx *= 1.5;
@@ -214,7 +212,7 @@ void EU4::Province::determineProvinceWeight(const mappers::Buildings& buildingTy
 	}
 
 	provinceStats.setGoodsProduced(goodsProduced);
-	provinceStats.setPrice(getTradeGoodPrice());
+	provinceStats.setPrice(tradeGoodsPrice);
 	provinceStats.setTradeEfficiency(1 + tradeEfficiency);
 	provinceStats.setProductionEfficiency(1 + productionEfficiency);
 	provinceStats.setTradeValue(tradeValue);
@@ -225,144 +223,6 @@ void EU4::Province::determineProvinceWeight(const mappers::Buildings& buildingTy
 	provinceStats.setTotalTaxIncome(total_tx);
 	provinceStats.setTotalTradeValue(total_trade_value);
 }
-
-
-double EU4::Province::getTradeGoodPrice() const
-{
-	// Trade goods
-	/*
-	chinaware
-	grain
-	fish
-	tabacco
-	iron
-	copper
-	cloth
-	ivory
-	slaves
-	salt
-	wool
-	fur
-	gold
-	sugar
-	naval_supplies
-	tea
-	coffee
-	spices
-	wine
-	cocoa
-	silk
-	dyes
-	tropical_wood
-	*/
-
-	double tradeGoodsPrice;
-
-	if (tradeGoods == "chinaware")
-	{
-		tradeGoodsPrice = 3;
-	}
-	else if (tradeGoods == "grain")
-	{
-		tradeGoodsPrice = 2;
-	}
-	else if (tradeGoods == "fish")
-	{
-		tradeGoodsPrice = 2.5;
-	}
-	else if (tradeGoods == "tabacco")
-	{
-		tradeGoodsPrice = 3;
-	}
-	else if (tradeGoods == "iron")
-	{
-		tradeGoodsPrice = 3;
-	}
-	else if (tradeGoods == "copper")
-	{
-		tradeGoodsPrice = 3;
-	}
-	else if (tradeGoods == "cloth")
-	{
-		tradeGoodsPrice = 3;
-	}
-	else if (tradeGoods == "slaves")
-	{
-		tradeGoodsPrice = 2;
-	}
-	else if (tradeGoods == "salt")
-	{
-		tradeGoodsPrice = 3;
-	}
-	else if (tradeGoods == "gold")
-	{
-		tradeGoodsPrice = 6;
-	}
-	else if (tradeGoods == "fur")
-	{
-		tradeGoodsPrice = 2;
-	}
-	else if (tradeGoods == "sugar")
-	{
-		tradeGoodsPrice = 3;
-	}
-	else if (tradeGoods == "naval_supplies")
-	{
-		tradeGoodsPrice = 2;
-	}
-	else if (tradeGoods == "tea")
-	{
-		tradeGoodsPrice = 2;
-	}
-	else if (tradeGoods == "coffee")
-	{
-		tradeGoodsPrice = 3;
-	}
-	else if (tradeGoods == "spices")
-	{
-		tradeGoodsPrice = 3;
-	}
-	else if (tradeGoods == "wine")
-	{
-		tradeGoodsPrice = 2.5;
-	}
-	else if (tradeGoods == "cocoa")
-	{
-		tradeGoodsPrice = 4;
-	}
-	else if (tradeGoods == "ivory")
-	{
-		tradeGoodsPrice = 4;
-	}
-	else if (tradeGoods == "wool")
-	{
-		tradeGoodsPrice = 2.5;
-	}
-	else if (tradeGoods == "cotton")
-	{
-		tradeGoodsPrice = 3;
-	}
-	else if (tradeGoods == "dyes")
-	{
-		tradeGoodsPrice = 4;
-	}
-	else if (tradeGoods == "tropical_wood")
-	{
-		tradeGoodsPrice = 2;
-	}
-	else if (tradeGoods == "silk")
-	{
-		tradeGoodsPrice = 4;
-	}
-	else
-	{
-		// anything ive missed
-		tradeGoodsPrice = 1;
-	}
-
-	return tradeGoodsPrice;
-}
-
 
 EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
 	const mappers::Buildings& buildingTypes,

@@ -89,6 +89,7 @@ file(GLOB EU4_ARMY_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Army/*.cpp")
 file(GLOB EU4_RELIGIONS_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Religions/*.cpp")
 file(GLOB EU4_LOCALISATION_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Localisation/*.cpp")
 file(GLOB EU4_WARS_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Wars/*.cpp")
+file(GLOB EU4_TRADEGOODS_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/TradeGoods/*.cpp")
 set(COMMON_SOURCES "../common_items/CardinalToOrdinal.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/Color.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/CommonUtils.cpp")
@@ -176,6 +177,7 @@ add_executable(EU4ToVic2
 	${EU4_RELIGIONS_SOURCES}
 	${EU4_LOCALISATION_SOURCES}
 	${EU4_WARS_SOURCES}
+	${EU4_TRADEGOODS_SOURCES}
 	${COMMON_SOURCES}
 )
 add_custom_command(TARGET EU4ToVic2 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)

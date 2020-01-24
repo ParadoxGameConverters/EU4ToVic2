@@ -112,6 +112,11 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			War newWar(theStream);
 			wars.push_back(newWar);
 		});
+	registerKeyword("change_price", [this](const std::string& unused, std::istream& theStream)
+		{
+			TradeGoods theGoods(theStream);
+			tradeGoods = theGoods;
+		});
 
 	registerRegex("[A-Za-z0-9\\_]+", commonItems::ignoreItem);
 
@@ -125,6 +130,9 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	LOG(LogLevel::Info) << "*** Building world ***";
 	LOG(LogLevel::Info) << "-> Loading Empires";
 	setEmpires();
+
+	LOG(LogLevel::Info) << "-> Setting Province Weight";
+	addTradeGoodsToCountries();
 
 	LOG(LogLevel::Info) << "-> Processing Province Info";
 	addProvinceInfoToCountries();
@@ -232,6 +240,23 @@ void EU4::World::dropMinoritiesFromCountries()
 	for (const auto& country : theCountries)
 	{
 		country.second->dropMinorityCultures();
+	}
+}
+
+void EU4::World::addTradeGoodsToCountries() const
+{
+	for (auto& province : provinces->getAllProvinces())
+	{
+		const auto& price = tradeGoods.getPrice(province.second->getTradeGoods());
+		if (!price)
+		{
+			Log(LogLevel::Warning) << "Unknown trade good in province " << province.first << " - " << province.second->getName();
+		}
+		else
+		{
+			province.second->setTradeGoodPrice(*price);
+		}		
+		province.second->determineProvinceWeight(buildingTypes, modifierTypes);
 	}
 }
 
