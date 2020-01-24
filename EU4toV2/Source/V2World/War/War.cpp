@@ -1,4 +1,5 @@
 #include "War.h"
+#include "Log.h"
 
 bool V2::War::loadWar(const EU4::War& eu4War,
 	const mappers::WarGoalMapper& warGoalMapper,
@@ -30,13 +31,28 @@ bool V2::War::loadWar(const EU4::War& eu4War,
 	defenders.swap(translatedDefenders);
 
 	const auto& ifWarGoal = warGoalMapper.translateWarGoal(details.warGoalType);
-	ifWarGoal ?  details.warGoalType = *ifWarGoal : details.warGoalType.clear();
+	if (ifWarGoal)
+	{
+		details.warGoalType = *ifWarGoal;
+	}
+	else
+	{
+		Log(LogLevel::Warning) << "Unable to translate war CB: " << details.warGoalType << ", skipping war " << name << "!";
+		return false;
+	}
 
-	// A good, solid war needs two parties and a CB. Rest are details.
+	// A good, solid war needs two parties and a CB. Rest are details.	
 	if (attackers.empty() || defenders.empty() || details.warGoalType.empty()) return false;
 
 	const auto& ifTargetTag = translateActor(details.targetTag, countryMapper, countries);
-	ifTargetTag ? details.targetTag = *ifTargetTag : details.targetTag.clear();
+	if (ifTargetTag)
+	{
+		details.targetTag = *ifTargetTag;
+	}
+	else
+	{
+		details.targetTag.clear();
+	}
 
 	const auto& ifProvinceID = provinceMapper.getVic2ProvinceNumbers(details.targetProvinceID);
 	!ifProvinceID.empty() ? details.targetProvinceID = ifProvinceID[0] : details.targetProvinceID = 0;

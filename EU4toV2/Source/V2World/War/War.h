@@ -6,6 +6,7 @@
 #include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../../Mappers/CountryMappings/CountryMappings.h"
 #include "../Country/Country.h"
+#include "../../EU4World/Wars/EU4WarDetails.h"
 
 namespace V2
 {
@@ -27,7 +28,7 @@ namespace V2
 		std::vector<std::string> attackers; // order maters! first is primary.
 		std::vector<std::string> defenders; // order maters! first is primary.
 
-		std::optional<std::string> translateActor(
+		static std::optional<std::string> translateActor(
 			const std::string& actor,
 			const mappers::CountryMappings& countryMapper,
 			std::map<std::string, std::shared_ptr<Country>>& countries);

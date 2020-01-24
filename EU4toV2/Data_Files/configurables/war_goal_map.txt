@@ -2,7 +2,7 @@
 # vic2_cb = { list of eu4 war types }
 
 acquire_core_state = { take_core_defection take_core }
-acquire_state = { take_province_hre take_province_nationalist take_province_excommunication take_province_ban }
+acquire_state = { take_province_hre take_province_nationalist take_province_excommunication take_province_ban take_claim take_province_tribal_feud take_province_religion }
 acquire_substate_region = { superiority_chinese_unification }
 add_to_sphere = { revoke_elector  superiority_revolution take_capital_revolution take_capital_conformance take_capital_force_tributary }
 annex = {  } # Leave this empty, this is not a valid CB
@@ -10,7 +10,7 @@ annex_core_country = { annex_country_japan take_capital_imperial annex_country t
 become_independent = { defend_capital_independence }
 civil_war = { }
 colonial_competition = { } # No competitions at start date, leave empty!
-conquest = { take_capital_fabricated_claims take_capital_conquest take_capital_claim take_claim take_province_tribal_feud take_province_religion }
+conquest = { take_capital_fabricated_claims take_capital_conquest take_capital_claim } # This means "annex entire country"
 cut_down_to_size_boxer = { }
 cut_down_to_size = { superiority_crusade superiority_insult superiority_insult_mutual superiority_horde take_capital_support_rebels superiority_religious_league superiority_heretic }
 demand_concession_casus_belli = { superiority_primitives }
