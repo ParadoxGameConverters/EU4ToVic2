@@ -434,15 +434,20 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld)
 			province.second->sterilizeProvince();
 			continue;
 		}
-			
+		// For controller we're FAR less picky. Scroll through the provinces and see if anyone has majority.
+		auto eu4controller = determineProvinceControllership(eu4ProvinceNumbers, sourceWorld);
+
 		// Remap owner to something V2 can understand
 		auto possibleOwner = countryMapper.getV2Tag(*eu4owner);
 		if (!possibleOwner) throw std::runtime_error("Error mapping EU4 tag " + *eu4owner + " to a Vic2 tag!");
 		auto owner = *possibleOwner;
 
-		// TODO: Once we have support for importing current wars, assign control of province to actual controller.
+		auto possibleController = countryMapper.getV2Tag(*eu4controller);
+		if (!possibleOwner) throw std::runtime_error("Error mapping EU4 tag " + *eu4controller + " to a Vic2 tag!");
+		const auto& controller = *eu4controller;
+
 		province.second->setOwner(owner);
-		province.second->setController(owner);
+		province.second->setController(controller);
 
 		const auto& ownerCountry = countries.find(owner);
 		if (ownerCountry != countries.end())
@@ -512,6 +517,33 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::vect
 						winner = share.first; maxDev = share.second.first; maxTax = share.second.second;
 					}
 			}
+		}
+	}
+	if (winner.empty()) return std::nullopt;
+	return winner;
+}
+
+std::optional<std::string> V2::World::determineProvinceControllership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const
+{
+	// determine ownership by pure numbers. Errors due to equal numbers can be assigned to war uncertainty and fog of war. *shrug*
+	std::map<std::string, std::vector<int>> theClaims; // tag, claimed provinces
+
+	for (auto eu4ProvinceID : eu4ProvinceNumbers)
+	{
+		const auto& eu4province = sourceWorld.getProvince(eu4ProvinceID);
+		auto controllerTag = eu4province->getControllerString();
+		if (controllerTag.empty()) continue; // Don't touch uncolonized provinces.
+		theClaims[controllerTag].push_back(eu4ProvinceID);
+	}
+	// Let's see who the lucky winner is.
+	std::string winner;
+	unsigned int maxCount = 0;
+	for (const auto& tag : theClaims)
+	{
+		if (tag.second.size() > maxCount)
+		{
+			maxCount = tag.second.size();
+			winner = tag.first;
 		}
 	}
 	if (winner.empty()) return std::nullopt;
