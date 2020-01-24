@@ -1,5 +1,5 @@
-#ifndef EU4_LEADER_H_
-#define EU4_LEADER_H_
+#ifndef EU4_LEADER_H
+#define EU4_LEADER_H
 
 #include "newParser.h"
 #include "Date.h"
@@ -10,17 +10,16 @@ namespace EU4
 	{
 	public:
 		Leader() = default;
-		Leader(std::istream& theStream);
+		explicit Leader(std::istream& theStream, const std::string& leaderClass);
 
-		std::string getName() const { return name; }
-		int getFire() const { return fire; }
-		int getShock() const { return shock; }
-		int getManuever() const { return manuever; }
-		int getSiege() const { return siege; }
-		int getID() const { return leaderID; }
-		date getActivationDate() const { return activationDate; }
-
-		bool isLand() const;
+		[[nodiscard]] const std::string& getName() const { return name; }
+		[[nodiscard]] int getFire() const { return fire; }
+		[[nodiscard]] int getShock() const { return shock; }
+		[[nodiscard]] int getManeuver() const { return maneuver; }
+		[[nodiscard]] int getSiege() const { return siege; }
+		[[nodiscard]] int getID() const { return leaderID; }
+		[[nodiscard]] date getActivationDate() const { return activationDate; }
+		[[nodiscard]] bool isLand() const;
 
 	private:
 		std::string name;
@@ -29,11 +28,11 @@ namespace EU4
 		date activationDate;
 		int fire = 0;
 		int shock = 0;
-		int manuever = 0;
+		int maneuver = 0;
 		int siege = 0;
 		std::string country;
 		int leaderID = 0;
 	};
 }
 
-#endif // EU4_LEADER_H_
+#endif // EU4_LEADER_H

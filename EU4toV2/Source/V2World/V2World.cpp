@@ -16,7 +16,8 @@ constexpr int MAX_LIBERTY_COUNTRIES = 20;
 V2::World::World(const EU4::World& sourceWorld, 
 	const mappers::IdeaEffectMapper& ideaEffectMapper, 
 	const mappers::TechGroupsMapper& techGroupsMapper, 
-	const mappers::VersionParser& versionParser)
+	const mappers::VersionParser& versionParser):
+historicalData(sourceWorld.getHistoricalData())
 {
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
 	LOG(LogLevel::Info) << "-> Importing Provinces";
@@ -64,7 +65,8 @@ V2::World::World(const EU4::World& sourceWorld,
 	convertArmies();
 	LOG(LogLevel::Info) << "-> Converting Ongoing Conflicts";
 	convertWars(sourceWorld);
-
+	LOG(LogLevel::Info) << "-> Converting Botanical Definitions";
+	transcribeHistoricalData();
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	
 	output(versionParser);
@@ -1025,9 +1027,35 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	LOG(LogLevel::Info) << "<- Writing Pops";
 	outputPops();
 
+	LOG(LogLevel::Info) << "<- Sending Botanical Expedition";
+	outputHistory();
+
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
 	verifyCountriesWritten();
+}
+
+void V2::World::transcribeHistoricalData()
+{
+	std::vector<std::pair<std::string, EU4::HistoricalEntry>> transcribedData;
+	for (const auto& entry: historicalData)
+	{
+		const auto& possibleTag = countryMapper.getV2Tag(entry.first);
+		if (possibleTag) transcribedData.emplace_back(std::make_pair(*possibleTag, entry.second));
+	}
+	historicalData.swap(transcribedData);
+}
+
+void V2::World::outputHistory() const
+{
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/botanical_expedition.txt");
+	if (!output.is_open())
+	{
+		throw std::runtime_error("Could not send botanical expedition output/" + theConfiguration.getOutputName() + "/common/botanical_expedition.txt - " + Utils::GetLastErrorString());
+	}
+	output << historicalData;
+	output.close();
+
 }
 
 void V2::World::outputWars() const

@@ -152,6 +152,17 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 
 	LOG(LogLevel::Info) << "-> Viva la revolution!";
 	loadRevolutionTarget();
+	if (!revolutionTargetString.empty())
+	{
+		LOG(LogLevel::Info) << " ^^^ Revolution Lives!";
+	}
+	else
+	{
+		LOG(LogLevel::Info) << " vvv ... revolution failed. :/";
+	}
+
+	LOG(LogLevel::Info) << "-> Doing Accounting and dishes";
+	fillHistoricalData();
 
 	LOG(LogLevel::Info) << "-> Dropping Empty Nations";
 	removeEmptyNations();
@@ -165,6 +176,12 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	}
 	LOG(LogLevel::Info) << "*** Good-bye EU4, you served us well. ***";
 }
+
+void EU4::World::fillHistoricalData()
+{
+	for (const auto& country : theCountries) historicalData.emplace_back(std::make_pair(country.first, country.second->getHistoricalEntry()));
+}
+
 
 void EU4::World::verifySave(const std::string& EU4SaveFileName)
 {
@@ -200,7 +217,7 @@ void EU4::World::verifySave(const std::string& EU4SaveFileName)
 
 void EU4::World::loadRevolutionTarget()
 {
-	if (revolutionTargetString != "")
+	if (!revolutionTargetString.empty())
 	{
 		auto country = theCountries.find(revolutionTargetString);
 		if (country != theCountries.end())

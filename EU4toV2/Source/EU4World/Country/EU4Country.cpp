@@ -48,7 +48,7 @@ EU4::Country::Country(
 		});
 	registerKeyword("colors", [this](const std::string& colorsString, std::istream& theStream)
 		{
-			EU4::NationalSymbol theSection(theStream);
+			NationalSymbol theSection(theStream);
 			nationalColors = theSection;
 		});
 	registerKeyword("capital", [this](const std::string& unused, std::istream& theStream)
@@ -231,12 +231,13 @@ EU4::Country::Country(
 		});
 	registerKeyword("history", [this](const std::string& unused, std::istream& theStream)
 		{
-			EU4::CountryHistory theCountryHistory(theStream);
+			CountryHistory theCountryHistory(theStream);
 			historicalLeaders = theCountryHistory.getLeaders();
+			if (!theCountryHistory.getDynasty().empty()) historicalEntry.lastDynasty = theCountryHistory.getDynasty();
 		});
 	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream)
 		{
-			EU4::ID idBlock(theStream);
+			ID idBlock(theStream);
 			activeLeaderIDs.insert(idBlock.getIDNum());
 		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
@@ -249,6 +250,8 @@ EU4::Country::Country(
 	determineLibertyDesire();
 	determineCulturalUnion(cultureGroupsMapper);
 	filterLeaders();
+	// finalize history data.
+	if (government == "republic" || government == "theocracy") historicalEntry.monarchy = false;
 }
 
 void EU4::Country::filterLeaders()

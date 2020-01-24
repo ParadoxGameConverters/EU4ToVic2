@@ -17,13 +17,20 @@
 
 namespace EU4
 {
+	// Export data for hoi4.
+	struct HistoricalEntry
+	{
+		std::string lastDynasty;
+		bool monarchy = true;
+	};
+
 	class Country: public commonItems::parser
 	{
 	public:
 		Country() = default;
 		Country(
 			const std::string& countryTag,
-			const EU4::Version& theVersion,
+			const Version& theVersion,
 			std::istream& theStream,
 			const mappers::IdeaEffectMapper& ideaEffectMapper, 
 			const mappers::CultureGroups& cultureGroupsMapper
@@ -116,8 +123,9 @@ namespace EU4
 		std::string	getAdjective(const std::string& language) const;
 		void dropMinorityCultures();
 		void filterLeaders();
+		const HistoricalEntry& getHistoricalEntry() const { return historicalEntry; }
 
-		const EU4::NationalSymbol& getNationalColors() const { return nationalColors; }
+		const NationalSymbol& getNationalColors() const { return nationalColors; }
 
 	private:
 		void determineJapaneseRelations();
@@ -167,7 +175,6 @@ namespace EU4
 		double reactionaryInvestment = 5.0;
 		double liberalInvestment = 5.0;
 
-
 		std::map<std::string, bool> flags; // any flags set for this country
 		std::map<std::string, bool> modifiers; // any modifiers set for this country
 		bool possibleDaimyo = false; // if this country is possibly a daimyo
@@ -201,6 +208,8 @@ namespace EU4
 		std::map<std::string, std::string> namesByLanguage; // the names of this country in different localisations
 		std::map<std::string, std::string> adjectivesByLanguage;	// the adjectives for this country in different localisations
 		std::map<std::string, double> states; // Areas which have been made states by this country.
+
+		HistoricalEntry historicalEntry;
 	};
 }
 

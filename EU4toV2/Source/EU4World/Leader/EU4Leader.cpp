@@ -3,7 +3,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-EU4::Leader::Leader(std::istream& theStream)
+EU4::Leader::Leader(std::istream& theStream, const std::string& leaderClass)
 {
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
 		{
@@ -21,9 +21,9 @@ EU4::Leader::Leader(std::istream& theStream)
 			female = true;
 		});
 	registerKeyword("manuever", [this](const std::string& unused, std::istream& theStream)
-		{
+		{ // don't fix PDX typo!
 			commonItems::singleInt theValue(theStream);
-			manuever = theValue.getInt();
+			maneuver = theValue.getInt();
 		});
 	registerKeyword("fire", [this](const std::string& unused, std::istream& theStream)
 		{

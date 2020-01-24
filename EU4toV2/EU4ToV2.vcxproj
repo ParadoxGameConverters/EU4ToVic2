@@ -323,6 +323,7 @@
     <ClCompile Include="Source\V2World\Output\outArmy.cpp" />
     <ClCompile Include="Source\V2World\Output\outCountry.cpp" />
     <ClCompile Include="Source\V2World\Output\outFactory.cpp" />
+    <ClCompile Include="Source\V2World\Output\outHistory.cpp" />
     <ClCompile Include="Source\V2World\Output\outLeader.cpp" />
     <ClCompile Include="Source\V2World\Output\outLocalisation.cpp" />
     <ClCompile Include="Source\V2World\Output\outModFile.cpp" />

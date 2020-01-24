@@ -9,11 +9,13 @@ namespace EU4
 	class CountryHistory : commonItems::parser
 	{
 	public:
-		CountryHistory(std::istream& theStream);
-		const std::vector<EU4::Leader>& getLeaders() const { return leaders; }
+		explicit CountryHistory(std::istream& theStream);
+		[[nodiscard]] const std::vector<Leader>& getLeaders() const { return leaders; }
+		[[nodiscard]] const std::string& getDynasty() const { return dynasty; }
 
 	private:
-		std::vector<EU4::Leader> leaders;
+		std::vector<Leader> leaders;
+		std::string dynasty;
 	};
 }
 

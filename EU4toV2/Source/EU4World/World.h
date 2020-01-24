@@ -34,6 +34,7 @@ namespace EU4
 		const mappers::CultureGroups& getCultureGroupsMapper() const { return cultureGroupsMapper; }
 		bool isRandomWorld() const;
 		const std::map<int, std::shared_ptr<Province>>& getProvinces() const { return provinces->getAllProvinces(); }
+		const std::vector<std::pair<std::string, HistoricalEntry>>& getHistoricalData() const { return historicalData; }
 		
 	private:
 		void verifySave(const std::string& EU4SaveFileName);
@@ -54,6 +55,7 @@ namespace EU4
 		void removeLandlessNations();
 		void setEmpires();
 	   void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas);
+		void fillHistoricalData();
 
 	   std::shared_ptr<Country> getCountry(std::string tag) const;
 		std::string holyRomanEmperor;
@@ -73,6 +75,8 @@ namespace EU4
 		mappers::Buildings buildingTypes;
 		mappers::CultureGroups cultureGroupsMapper;
 
+		// export data for hoi4
+		std::vector<std::pair<std::string, HistoricalEntry>> historicalData;
 	};
 }
 

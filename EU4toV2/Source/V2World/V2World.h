@@ -2,6 +2,7 @@
 #define WORLD_H
 
 #include "Country/Country.h"
+#include "../EU4World/Country/EU4Country.h"
 #include "Country/CountryPopLogger.h"
 #include "Diplomacy/Diplomacy.h"
 #include "Province/Province.h"
@@ -50,7 +51,7 @@ namespace V2
 			const mappers::IdeaEffectMapper& ideaEffectMapper, 
 			const mappers::TechGroupsMapper& techGroupsMapper, 
 			const mappers::VersionParser& versionParser);
-		
+
 	private:
 		long totalWorldPopulation = 0;
 		int stateId = 0; // ID counter for generated states
@@ -62,6 +63,7 @@ namespace V2
 		std::map<std::string, std::shared_ptr<Country>> potentialCountries;
 		std::map<std::string, std::shared_ptr<Country>> dynamicCountries;
 		std::vector<War> wars;
+		std::vector<std::pair<std::string, EU4::HistoricalEntry>> historicalData; // HoI4 export dynasty+rulers
 		
 		void importProvinces();
 		std::set<std::string> discoverProvinceFilenames();
@@ -102,8 +104,10 @@ namespace V2
 		void outputProvinces() const;
 		void outputCountries() const;
 		void outputWars() const;
+		void outputHistory() const;
 		void verifyCountriesWritten() const;
 		void convertWars(const EU4::World& sourceWorld);
+		void transcribeHistoricalData();
 		
 		Diplomacy diplomacy;
 		mappers::ProvinceMapper provinceMapper;
@@ -136,5 +140,8 @@ namespace V2
 		MappingChecker mappingChecker;
 		ModFile modFile;		
 	};
+	std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);
+
 }
+
 #endif // WORLD_H
