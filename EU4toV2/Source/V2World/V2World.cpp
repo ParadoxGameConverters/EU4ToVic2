@@ -444,7 +444,7 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld)
 
 		auto possibleController = countryMapper.getV2Tag(*eu4controller);
 		if (!possibleOwner) throw std::runtime_error("Error mapping EU4 tag " + *eu4controller + " to a Vic2 tag!");
-		const auto& controller = *eu4controller;
+		const auto& controller = *possibleController;
 
 		province.second->setOwner(owner);
 		province.second->setController(controller);
