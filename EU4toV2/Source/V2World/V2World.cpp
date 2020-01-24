@@ -62,6 +62,8 @@ V2::World::World(const EU4::World& sourceWorld,
 	addUnions();
 	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
 	convertArmies();
+	LOG(LogLevel::Info) << "-> Converting Ongoing Conflicts";
+	convertWars(sourceWorld);
 
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	
@@ -919,6 +921,22 @@ void V2::World::convertArmies()
 	}
 }
 
+void V2::World::convertWars(const EU4::World& sourceWorld)
+{
+	for (const auto& eu4War: sourceWorld.getWars())
+	{
+		War newWar;
+		if (newWar.loadWar(eu4War, warGoalMapper, provinceMapper, countryMapper, countries))
+		{
+			wars.push_back(newWar);
+		}
+		else
+		{
+			Log(LogLevel::Warning) << "Failed to transcribe war: " << eu4War.getName();
+		}
+	}
+}
+
 void V2::World::output(const mappers::VersionParser& versionParser) const
 {
 	LOG(LogLevel::Info) << "<- Copying Mod Template";
@@ -969,12 +987,31 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	LOG(LogLevel::Info) << "<- Writing Diplomacy";
 	diplomacy.output();
 
+	LOG(LogLevel::Info) << "<- Writing Armed and Unarmed Conflicts";
+	outputWars();
+
 	LOG(LogLevel::Info) << "<- Writing Pops";
 	outputPops();
 
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
 	verifyCountriesWritten();
+}
+
+void V2::World::outputWars() const
+{
+	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/wars");
+	for (const auto& war: wars)
+	{
+		const auto& filename = war.generateFileName();
+		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/wars/" + filename);
+		if (!output.is_open())
+		{
+			throw std::runtime_error("Could not create wars file output/" + theConfiguration.getOutputName() + "/history/wars/" + filename + " - " + Utils::GetLastErrorString());
+		}
+		output << war;
+		output.close();
+	}
 }
 
 void V2::World::outputVersion(const mappers::VersionParser& versionParser) const

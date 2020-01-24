@@ -517,6 +517,15 @@
     <ClCompile Include="Source\EU4World\Wars\EU4WarDetails.cpp">
       <Filter>EU4World\Wars</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\WarGoalMapper\WarGoalMapper.cpp">
+      <Filter>Mappers\WarGoalMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\War\War.cpp">
+      <Filter>Vic2World\War</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outWar.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1001,6 +1010,12 @@
     <ClInclude Include="Source\EU4World\Wars\EU4WarDetails.h">
       <Filter>EU4World\Wars</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\WarGoalMapper\WarGoalMapper.h">
+      <Filter>Mappers\WarGoalMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\War\War.h">
+      <Filter>Vic2World\War</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1218,6 +1233,12 @@
     </Filter>
     <Filter Include="EU4World\Wars">
       <UniqueIdentifier>{7dbef9f3-660a-4d4e-b342-540f1eb932fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\War">
+      <UniqueIdentifier>{057d332d-e2a4-4a85-9aa4-2dbba11e85d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\WarGoalMapper">
+      <UniqueIdentifier>{9b194f63-f1ef-46e2-9f4a-7fad6d7b19c9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

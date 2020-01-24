@@ -3,22 +3,25 @@
 
 #include "Date.h"
 #include "newParser.h"
+#include "EU4WarDetails.h"
+
 
 namespace EU4
 {
 	class War : commonItems::parser
 	{
 	public:
-		War(std::istream& theStream);
+		explicit War(std::istream& theStream);
+		[[nodiscard]] const WarDetails& getDetails() const { return details; }
+		[[nodiscard]] const std::vector<std::string>& getAttackers() const { return attackers; }
+		[[nodiscard]] const std::vector<std::string>& getDefenders() const { return defenders; }
+		[[nodiscard]] const std::string& getName() const { return name; }
 
 	private:
+		WarDetails details;
 		std::string name;
-		date startDate;
-		std::vector<std::string> attackers;
-		std::vector<std::string> defenders;
-		std::string casusBelli;
-		int targetProvince = 0;
-		std::string warType;
+		std::vector<std::string> attackers; // order maters! first is primary.
+		std::vector<std::string> defenders; // order maters! first is primary.
 	};
 }
 

@@ -107,6 +107,12 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			commonItems::ignoreItem(unused, theStream);
 			LOG(LogLevel::Info) << "<- Ignoring Map Area Data";
 		});
+	registerKeyword("active_war", [this](const std::string& unused, std::istream& theStream)
+		{
+			War newWar(theStream);
+			wars.push_back(newWar);
+		});
+
 	registerRegex("[A-Za-z0-9\\_]+", commonItems::ignoreItem);
 
 	LOG(LogLevel::Info) << "-> Verifying EU4 save.";

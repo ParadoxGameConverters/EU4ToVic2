@@ -305,6 +305,7 @@
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp" />
     <ClCompile Include="Source\Mappers\VersionParser\VersionParser.cpp" />
+    <ClCompile Include="Source\Mappers\WarGoalMapper\WarGoalMapper.cpp" />
     <ClCompile Include="Source\V2World\Army\Army.cpp" />
     <ClCompile Include="Source\V2World\Army\Regiment.cpp" />
     <ClCompile Include="Source\V2World\Country\Country.cpp" />
@@ -333,6 +334,7 @@
     <ClCompile Include="Source\V2World\Output\outRelation.cpp" />
     <ClCompile Include="Source\V2World\Output\outUncivReforms.cpp" />
     <ClCompile Include="Source\V2World\Output\outVersion.cpp" />
+    <ClCompile Include="Source\V2World\Output\outWar.cpp" />
     <ClCompile Include="Source\V2World\Party\Party.cpp" />
     <ClCompile Include="Source\V2World\Pop\Pop.cpp" />
     <ClCompile Include="Source\V2World\Province\Province.cpp" />
@@ -341,6 +343,7 @@
     <ClCompile Include="Source\V2World\Reforms\UncivReforms.cpp" />
     <ClCompile Include="Source\V2World\State\State.cpp" />
     <ClCompile Include="Source\V2World\V2World.cpp" />
+    <ClCompile Include="Source\V2World\War\War.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\common_items\CardinalToOrdinal.h" />
@@ -481,6 +484,7 @@
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
     <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h" />
     <ClInclude Include="Source\Mappers\VersionParser\VersionParser.h" />
+    <ClInclude Include="Source\Mappers\WarGoalMapper\WarGoalMapper.h" />
     <ClInclude Include="Source\V2World\Army\Army.h" />
     <ClInclude Include="Source\V2World\Army\Regiment.h" />
     <ClInclude Include="Source\V2World\Country\Country.h" />
@@ -505,6 +509,7 @@
     <ClInclude Include="Source\V2World\Reforms\UncivReforms.h" />
     <ClInclude Include="Source\V2World\State\State.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
+    <ClInclude Include="Source\V2World\War\War.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

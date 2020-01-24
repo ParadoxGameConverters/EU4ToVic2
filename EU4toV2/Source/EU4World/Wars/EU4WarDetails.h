@@ -9,9 +9,16 @@ namespace EU4
 	class WarDetails :  commonItems::parser
 	{
 	public:
-		WarDetails(std::istream& theStream);
+		WarDetails() = default;
+		void addDetails(std::istream& theStream);
 
-	private:
+		// This is a storage container.
+		std::string warGoalType;
+		int targetProvinceID = 0;
+		std::string targetTag;
+		std::string EU4casusBelli; // unused at the moment, we're using warGoalType 
+		date startDate = date("1.1.1");
+		std::string warGoalClass;
 	};
 }
 

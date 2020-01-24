@@ -1,5 +1,4 @@
 #include "EU4War.h"
-#include "EU4WarDetails.h"
 #include "ParserHelpers.h"
 
 EU4::War::War(std::istream& theStream)
@@ -11,8 +10,7 @@ EU4::War::War(std::istream& theStream)
 		});
 	registerKeyword("history", [this](const std::string& unused, std::istream& theStream)
 		{
-			WarDetails history(theStream);
-			startDate = history.getStartDate();
+			details.addDetails(theStream);
 		});
 	registerKeyword("attackers", [this](const std::string& unused, std::istream& theStream)
 		{
@@ -24,12 +22,10 @@ EU4::War::War(std::istream& theStream)
 			commonItems::stringList defendersStr(theStream);
 			defenders = defendersStr.getStrings();
 		});
-	registerRegex("take_|defend_", [this](const std::string& unused, std::istream& theStream)
+	registerRegex("take_\\w+|defend_\\w+|\\w*superiority|blockade_\\w+", [this](const std::string& warGoalClass, std::istream& theStream)
 		{
-			WarDetails details(theStream);
-			warType = details.getWarType();
-			targetProvince = details.getTargetProvince();
-			casusBelli = details.getCassusBelli();
+			details.addDetails(theStream);
+			details.warGoalClass = warGoalClass;
 		});
 
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);

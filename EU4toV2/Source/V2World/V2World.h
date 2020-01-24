@@ -27,12 +27,14 @@
 #include "../Mappers/NavalBases/NavalBaseMapper.h"
 #include "../Mappers/RGORandomization/BucketList.h"
 #include "../Mappers/PortProvinces/PortProvinces.h"
+#include "../Mappers/WarGoalMapper/WarGoalMapper.h"
 #include "Province/ProvinceNameParser.h"
 #include <list>
 #include <memory>
 #include <set>
 #include "MappingChecker/MappingChecker.h"
 #include "Output/ModFile.h"
+#include "War/War.h"
 
 namespace mappers {
 	class VersionParser;
@@ -59,8 +61,8 @@ namespace V2
 		std::map<std::string, std::shared_ptr<Country>> countries;
 		std::map<std::string, std::shared_ptr<Country>> potentialCountries;
 		std::map<std::string, std::shared_ptr<Country>> dynamicCountries;
-
-
+		std::vector<War> wars;
+		
 		void importProvinces();
 		std::set<std::string> discoverProvinceFilenames();
 		void shuffleRgos();
@@ -98,7 +100,9 @@ namespace V2
 		void outputLocalisation() const;
 		void outputProvinces() const;
 		void outputCountries() const;
+		void outputWars() const;
 		void verifyCountriesWritten() const;
+		void convertWars(const EU4::World& sourceWorld);
 		
 		Diplomacy diplomacy;
 		mappers::ProvinceMapper provinceMapper;
@@ -125,6 +129,7 @@ namespace V2
 		mappers::NavalBaseMapper navalBaseMapper;
 		mappers::BucketList bucketShuffler;
 		mappers::PortProvinces portProvincesMapper;
+		mappers::WarGoalMapper warGoalMapper;
 		ProvinceNameParser provinceNameParser;
 		CountryPopLogger countryPopLogger;
 		MappingChecker mappingChecker;
