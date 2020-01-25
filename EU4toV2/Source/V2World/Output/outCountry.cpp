@@ -17,10 +17,6 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 	output << "nationalvalue = " << country.details.nationalValue << "\n";
 	output << "literacy = " << country.details.literacy << "\n";
 	output << "\n";
-	output << "# Consciousness\n";
-	output << "consciousness = " << country.details.consciousness << "\n";
-	output << "nonstate_consciousness= " << country.details.nonstateConsciousness << "\n";
-	output << "\n";
 	if (country.details.civilized)
 	{
 		output << "civilized = yes\n";
@@ -70,9 +66,8 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 	output << "}\n";
 	output << "\n";
 	output << "# Starting Consciousness\n";
-
-
-	
+	output << "consciousness = " << country.details.consciousness << "\n";
+	output << "nonstate_consciousness= " << country.details.nonstateConsciousness << "\n";
 	output << "\n";
 	output << "# Technologies\n";
 	for (const auto& tech : country.techs)
