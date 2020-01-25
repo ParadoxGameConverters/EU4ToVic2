@@ -9,9 +9,9 @@ namespace EU4
 	{
 	public:
 		ID() = default;
-		ID(std::istream& theStream);
+		explicit ID(std::istream& theStream);
 
-		int getIDNum() { return IDNum; }
+		[[nodiscard]] auto getIDNum() const { return IDNum; }
 
 	private:
 		int IDNum = 0;

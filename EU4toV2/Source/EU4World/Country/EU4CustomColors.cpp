@@ -5,7 +5,7 @@ EU4::CustomColors::CustomColors(std::istream& theStream)
 {
 	registerKeyword("flag", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleInt flagInt(theStream);
+			const commonItems::singleInt flagInt(theStream);
 			// Why, paradox, why?
 			if (flagInt.getInt() < 0) 
 			{
@@ -18,12 +18,12 @@ EU4::CustomColors::CustomColors(std::istream& theStream)
 		});
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleInt colorInt(theStream);
+			const commonItems::singleInt colorInt(theStream);
 			customColors.color = colorInt.getInt() + 1;
 		});
 	registerKeyword("symbol_index", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleInt siInt(theStream);
+			const commonItems::singleInt siInt(theStream);
 			customColors.symbolIndex = siInt.getInt() + 1;
 		});
 	registerKeyword("flag_colors", [this](const std::string& colorsString, std::istream& theStream)

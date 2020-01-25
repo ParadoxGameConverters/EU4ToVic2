@@ -6,13 +6,13 @@ EU4::ID::ID(std::istream& theStream)
 {
 	registerKeyword("id", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleInt theNum(theStream);
+			const commonItems::singleInt theNum(theStream);
 			IDNum = theNum.getInt();
 		}
 	);
 	registerKeyword("type", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleInt theNum(theStream);
+			const commonItems::singleInt theNum(theStream);
 			IDType = theNum.getInt();
 		}
 	);

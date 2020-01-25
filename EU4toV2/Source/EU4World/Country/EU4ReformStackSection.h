@@ -9,8 +9,8 @@ namespace EU4
 	class ReformStackSection : commonItems::parser
 	{
 	public:
-		ReformStackSection(std::istream& theStream);
-		const std::set<std::string>& getReforms() const { return reforms; }
+		explicit ReformStackSection(std::istream& theStream);
+		[[nodiscard]] const auto& getReforms() const { return reforms; }
 
 	private:
 		std::set<std::string> reforms;

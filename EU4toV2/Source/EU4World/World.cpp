@@ -90,7 +90,7 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	registerKeyword("countries", [this, ideaEffectMapper](const std::string& countriesText, std::istream& theStream)
 		{
 			LOG(LogLevel::Info) << "-> Loading Countries";
-			countries processedCountries(*version, theStream, ideaEffectMapper, cultureGroupsMapper);
+			const Countries processedCountries(*version, theStream, ideaEffectMapper, cultureGroupsMapper);
 			auto theProcessedCountries = processedCountries.getTheCountries();
 			theCountries.swap(theProcessedCountries);
 		});
