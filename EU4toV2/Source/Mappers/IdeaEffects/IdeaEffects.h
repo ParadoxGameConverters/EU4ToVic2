@@ -30,9 +30,9 @@ namespace mappers
 		[[nodiscard]] int getUpper_house_composition() const { return upper_house_composition - 5;  }
 		[[nodiscard]] int getVote_franchise() const { return vote_franchise - 5; }
 		[[nodiscard]] int getVoting_system() const { return voting_system - 5; }
-		[[nodiscard]] int getPublic_meetings() const {	return public_meetings - 5; }
-		[[nodiscard]] int getPress_rights() const {	return press_rights - 5;	}
-		[[nodiscard]] int getTrade_unions() const {	return trade_unions - 5;	}
+		[[nodiscard]] int getPublic_meetings() const { return public_meetings - 5; }
+		[[nodiscard]] int getPress_rights() const { return press_rights - 5;	}
+		[[nodiscard]] int getTrade_unions() const { return trade_unions - 5;	}
 		[[nodiscard]] int getPolitical_parties() const { return political_parties - 5; }
 
 	private:

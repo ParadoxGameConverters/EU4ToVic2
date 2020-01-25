@@ -4,7 +4,6 @@
 #include "newParser.h"
 #include "../../V2World/Party/Party.h"
 #include <set>
-#include "../Reforms/Reforms.h"
 
 namespace V2
 {
@@ -24,6 +23,7 @@ namespace V2
 	};
 	struct Reform
 	{
+		// These are default values for dead nations. Extant nations will override them.
 		double slavery = -3;
 		double upper_house_composition = -2;
 		double vote_franchise = -5;
