@@ -226,6 +226,10 @@
     <ClCompile Include="Source\EU4World\Religions\Religion.cpp" />
     <ClCompile Include="Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="Source\EU4World\Religions\Religions.cpp" />
+    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGood.cpp" />
+    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGoods.cpp" />
+    <ClCompile Include="Source\EU4World\Wars\EU4War.cpp" />
+    <ClCompile Include="Source\EU4World\Wars\EU4WarDetails.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
     <ClCompile Include="Source\Helpers\targa.cpp" />
     <ClCompile Include="Source\Helpers\TechValues.cpp" />
@@ -303,6 +307,7 @@
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp" />
     <ClCompile Include="Source\Mappers\VersionParser\VersionParser.cpp" />
+    <ClCompile Include="Source\Mappers\WarGoalMapper\WarGoalMapper.cpp" />
     <ClCompile Include="Source\V2World\Army\Army.cpp" />
     <ClCompile Include="Source\V2World\Army\Regiment.cpp" />
     <ClCompile Include="Source\V2World\Country\Country.cpp" />
@@ -320,6 +325,7 @@
     <ClCompile Include="Source\V2World\Output\outArmy.cpp" />
     <ClCompile Include="Source\V2World\Output\outCountry.cpp" />
     <ClCompile Include="Source\V2World\Output\outFactory.cpp" />
+    <ClCompile Include="Source\V2World\Output\outHistory.cpp" />
     <ClCompile Include="Source\V2World\Output\outLeader.cpp" />
     <ClCompile Include="Source\V2World\Output\outLocalisation.cpp" />
     <ClCompile Include="Source\V2World\Output\outModFile.cpp" />
@@ -331,6 +337,7 @@
     <ClCompile Include="Source\V2World\Output\outRelation.cpp" />
     <ClCompile Include="Source\V2World\Output\outUncivReforms.cpp" />
     <ClCompile Include="Source\V2World\Output\outVersion.cpp" />
+    <ClCompile Include="Source\V2World\Output\outWar.cpp" />
     <ClCompile Include="Source\V2World\Party\Party.cpp" />
     <ClCompile Include="Source\V2World\Pop\Pop.cpp" />
     <ClCompile Include="Source\V2World\Province\Province.cpp" />
@@ -339,6 +346,7 @@
     <ClCompile Include="Source\V2World\Reforms\UncivReforms.cpp" />
     <ClCompile Include="Source\V2World\State\State.cpp" />
     <ClCompile Include="Source\V2World\V2World.cpp" />
+    <ClCompile Include="Source\V2World\War\War.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\common_items\CardinalToOrdinal.h" />
@@ -401,6 +409,10 @@
     <ClInclude Include="Source\EU4World\Religions\Religion.h" />
     <ClInclude Include="Source\EU4World\Religions\ReligionGroup.h" />
     <ClInclude Include="Source\EU4World\Religions\Religions.h" />
+    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGood.h" />
+    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGoods.h" />
+    <ClInclude Include="Source\EU4World\Wars\EU4War.h" />
+    <ClInclude Include="Source\EU4World\Wars\EU4WarDetails.h" />
     <ClInclude Include="Source\EU4World\World.h" />
     <ClInclude Include="Source\Helpers\targa.h" />
     <ClInclude Include="Source\Helpers\TechValues.h" />
@@ -477,6 +489,7 @@
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
     <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h" />
     <ClInclude Include="Source\Mappers\VersionParser\VersionParser.h" />
+    <ClInclude Include="Source\Mappers\WarGoalMapper\WarGoalMapper.h" />
     <ClInclude Include="Source\V2World\Army\Army.h" />
     <ClInclude Include="Source\V2World\Army\Regiment.h" />
     <ClInclude Include="Source\V2World\Country\Country.h" />
@@ -501,6 +514,7 @@
     <ClInclude Include="Source\V2World\Reforms\UncivReforms.h" />
     <ClInclude Include="Source\V2World\State\State.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
+    <ClInclude Include="Source\V2World\War\War.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

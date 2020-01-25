@@ -107,6 +107,17 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 			commonItems::ignoreItem(unused, theStream);
 			LOG(LogLevel::Info) << "<- Ignoring Map Area Data";
 		});
+	registerKeyword("active_war", [this](const std::string& unused, std::istream& theStream)
+		{
+			War newWar(theStream);
+			wars.push_back(newWar);
+		});
+	registerKeyword("change_price", [this](const std::string& unused, std::istream& theStream)
+		{
+			TradeGoods theGoods(theStream);
+			tradeGoods = theGoods;
+		});
+
 	registerRegex("[A-Za-z0-9\\_]+", commonItems::ignoreItem);
 
 	LOG(LogLevel::Info) << "-> Verifying EU4 save.";
@@ -119,6 +130,9 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	LOG(LogLevel::Info) << "*** Building world ***";
 	LOG(LogLevel::Info) << "-> Loading Empires";
 	setEmpires();
+
+	LOG(LogLevel::Info) << "-> Setting Province Weight";
+	addTradeGoodsToProvinces();
 
 	LOG(LogLevel::Info) << "-> Processing Province Info";
 	addProvinceInfoToCountries();
@@ -146,6 +160,17 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 
 	LOG(LogLevel::Info) << "-> Viva la revolution!";
 	loadRevolutionTarget();
+	if (!revolutionTargetString.empty())
+	{
+		LOG(LogLevel::Info) << " ^^^ Revolution Lives!";
+	}
+	else
+	{
+		LOG(LogLevel::Info) << " vvv ... revolution failed. :/";
+	}
+
+	LOG(LogLevel::Info) << "-> Doing Accounting and dishes";
+	fillHistoricalData();
 
 	LOG(LogLevel::Info) << "-> Dropping Empty Nations";
 	removeEmptyNations();
@@ -159,6 +184,12 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	}
 	LOG(LogLevel::Info) << "*** Good-bye EU4, you served us well. ***";
 }
+
+void EU4::World::fillHistoricalData()
+{
+	for (const auto& country : theCountries) historicalData.emplace_back(std::make_pair(country.first, country.second->getHistoricalEntry()));
+}
+
 
 void EU4::World::verifySave(const std::string& EU4SaveFileName)
 {
@@ -194,7 +225,7 @@ void EU4::World::verifySave(const std::string& EU4SaveFileName)
 
 void EU4::World::loadRevolutionTarget()
 {
-	if (revolutionTargetString != "")
+	if (!revolutionTargetString.empty())
 	{
 		auto country = theCountries.find(revolutionTargetString);
 		if (country != theCountries.end())
@@ -209,6 +240,23 @@ void EU4::World::dropMinoritiesFromCountries()
 	for (const auto& country : theCountries)
 	{
 		country.second->dropMinorityCultures();
+	}
+}
+
+void EU4::World::addTradeGoodsToProvinces() const
+{
+	for (auto& province : provinces->getAllProvinces())
+	{
+		const auto& price = tradeGoods.getPrice(province.second->getTradeGoods());
+		if (!price)
+		{
+			Log(LogLevel::Warning) << "Unknown trade good in province " << province.first << " - " << province.second->getName();
+		}
+		else
+		{
+			province.second->setTradeGoodPrice(*price);
+		}		
+		province.second->determineProvinceWeight(buildingTypes, modifierTypes);
 	}
 }
 

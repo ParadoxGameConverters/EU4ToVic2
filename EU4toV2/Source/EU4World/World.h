@@ -8,6 +8,8 @@
 #include "Religions/Religions.h"
 #include "Modifiers/Modifiers.h"
 #include "Country/EU4Country.h"
+#include "Wars/EU4War.h"
+#include "TradeGoods/EU4TradeGoods.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/UnitTypes/UnitTypeMapper.h"
 #include "../Mappers/Buildings/Buildings.h"
@@ -28,10 +30,12 @@ namespace EU4
 		const Regions& getRegions() const { return *regions; }
 		const Religions& getReligions() const { return theReligions; }
 		const Version& getVersion() const { return *version; }
+		const std::vector<War>& getWars() const { return wars; }
 		const std::shared_ptr<Province> getProvince(int provNum) const;
 		const mappers::CultureGroups& getCultureGroupsMapper() const { return cultureGroupsMapper; }
 		bool isRandomWorld() const;
 		const std::map<int, std::shared_ptr<Province>>& getProvinces() const { return provinces->getAllProvinces(); }
+		const std::vector<std::pair<std::string, HistoricalEntry>>& getHistoricalData() const { return historicalData; }
 		
 	private:
 		void verifySave(const std::string& EU4SaveFileName);
@@ -52,24 +56,30 @@ namespace EU4
 		void removeLandlessNations();
 		void setEmpires();
 	   void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas);
-
-	   std::shared_ptr<EU4::Country> getCountry(std::string tag) const;
+		void fillHistoricalData();
+		void addTradeGoodsToProvinces() const;
+		
+	   std::shared_ptr<Country> getCountry(std::string tag) const;
 		std::string holyRomanEmperor;
 		std::string celestialEmperor;
 		std::unique_ptr<Regions> regions;
 		std::unique_ptr<Provinces> provinces;
 		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
 		std::vector<EU4Agreement> diplomacy;
-		std::unique_ptr<EU4::Version> version;
+		std::unique_ptr<Version> version;
 		std::string revolutionTargetString;
 		std::map<std::string, mappers::UnitType> unitTypeMap;
-
+		std::vector<War> wars;
+		
+		TradeGoods tradeGoods;		
 		Religions theReligions;
 		Modifiers modifierTypes;
 		mappers::UnitTypeMapper unitTypeMapper;
 		mappers::Buildings buildingTypes;
 		mappers::CultureGroups cultureGroupsMapper;
 
+		// export data for hoi4
+		std::vector<std::pair<std::string, HistoricalEntry>> historicalData;
 	};
 }
 

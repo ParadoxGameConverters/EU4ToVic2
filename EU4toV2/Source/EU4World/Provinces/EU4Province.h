@@ -62,13 +62,13 @@ namespace EU4
 		const ProvinceStats& getProvinceStats() const { return provinceStats; }
 		std::string getTradeGoods() const { return tradeGoods; }
 		double getProsperity() const { return prosperity; }
+		void setTradeGoodPrice(double price) { tradeGoodsPrice = price; }
+		void determineProvinceWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes);
 
 		void setArea(const std::string& a) { areaName = a; }
 
 	private:
-		void determineProvinceWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes);
 		BuildingWeightEffects getProvBuildingWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes) const;
-		double getTradeGoodPrice() const;
 
 		int num = 0;
 		std::string	name;
@@ -82,17 +82,18 @@ namespace EU4
 		bool territorialCore = false;
 		bool city = false;
 
-		EU4::ProvinceHistory provinceHistory;
-		EU4::ProvinceBuildings buildings;
+		ProvinceHistory provinceHistory;
+		ProvinceBuildings buildings;
 		std::set<std::string> greatProjects;
 		std::set<std::string> modifiers;
 
 		// province attributes for weights
-		double baseTax = 0.0;
-		double baseProduction = 0.0;
-		double manpower = 0.0;
-		double totalWeight = 0.0;
+		double baseTax = 0;
+		double baseProduction = 0;
+		double manpower = 0;
+		double totalWeight = 0;
 		std::string tradeGoods;
+		double tradeGoodsPrice = 0;
 		std::string areaName;
 		double taxIncome = 0;
 		double productionIncome = 0;

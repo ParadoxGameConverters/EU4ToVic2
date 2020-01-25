@@ -2,6 +2,7 @@
 #define WORLD_H
 
 #include "Country/Country.h"
+#include "../EU4World/Country/EU4Country.h"
 #include "Country/CountryPopLogger.h"
 #include "Diplomacy/Diplomacy.h"
 #include "Province/Province.h"
@@ -27,12 +28,14 @@
 #include "../Mappers/NavalBases/NavalBaseMapper.h"
 #include "../Mappers/RGORandomization/BucketList.h"
 #include "../Mappers/PortProvinces/PortProvinces.h"
+#include "../Mappers/WarGoalMapper/WarGoalMapper.h"
 #include "Province/ProvinceNameParser.h"
 #include <list>
 #include <memory>
 #include <set>
 #include "MappingChecker/MappingChecker.h"
 #include "Output/ModFile.h"
+#include "War/War.h"
 
 namespace mappers {
 	class VersionParser;
@@ -48,7 +51,7 @@ namespace V2
 			const mappers::IdeaEffectMapper& ideaEffectMapper, 
 			const mappers::TechGroupsMapper& techGroupsMapper, 
 			const mappers::VersionParser& versionParser);
-		
+
 	private:
 		long totalWorldPopulation = 0;
 		int stateId = 0; // ID counter for generated states
@@ -59,8 +62,9 @@ namespace V2
 		std::map<std::string, std::shared_ptr<Country>> countries;
 		std::map<std::string, std::shared_ptr<Country>> potentialCountries;
 		std::map<std::string, std::shared_ptr<Country>> dynamicCountries;
-
-
+		std::vector<War> wars;
+		std::vector<std::pair<std::string, EU4::HistoricalEntry>> historicalData; // HoI4 export dynasty+rulers
+		
 		void importProvinces();
 		std::set<std::string> discoverProvinceFilenames();
 		void shuffleRgos();
@@ -73,6 +77,7 @@ namespace V2
 		void convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void convertProvinces(const EU4::World& sourceWorld);
 		std::optional<std::string> determineProvinceOwnership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
+		std::optional<std::string> determineProvinceControllership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
 		void initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, std::shared_ptr<EU4::Country> sourceCountry);
 		void convertNationalValues(const mappers::IdeaEffectMapper& ideaEffectMapper);
@@ -98,7 +103,11 @@ namespace V2
 		void outputLocalisation() const;
 		void outputProvinces() const;
 		void outputCountries() const;
+		void outputWars() const;
+		void outputHistory() const;
 		void verifyCountriesWritten() const;
+		void convertWars(const EU4::World& sourceWorld);
+		void transcribeHistoricalData();
 		
 		Diplomacy diplomacy;
 		mappers::ProvinceMapper provinceMapper;
@@ -125,10 +134,14 @@ namespace V2
 		mappers::NavalBaseMapper navalBaseMapper;
 		mappers::BucketList bucketShuffler;
 		mappers::PortProvinces portProvincesMapper;
+		mappers::WarGoalMapper warGoalMapper;
 		ProvinceNameParser provinceNameParser;
 		CountryPopLogger countryPopLogger;
 		MappingChecker mappingChecker;
 		ModFile modFile;		
 	};
+	std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);
+
 }
+
 #endif // WORLD_H

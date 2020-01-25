@@ -16,7 +16,8 @@ constexpr int MAX_LIBERTY_COUNTRIES = 20;
 V2::World::World(const EU4::World& sourceWorld, 
 	const mappers::IdeaEffectMapper& ideaEffectMapper, 
 	const mappers::TechGroupsMapper& techGroupsMapper, 
-	const mappers::VersionParser& versionParser)
+	const mappers::VersionParser& versionParser):
+historicalData(sourceWorld.getHistoricalData())
 {
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
 	LOG(LogLevel::Info) << "-> Importing Provinces";
@@ -62,7 +63,10 @@ V2::World::World(const EU4::World& sourceWorld,
 	addUnions();
 	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
 	convertArmies();
-
+	LOG(LogLevel::Info) << "-> Converting Ongoing Conflicts";
+	convertWars(sourceWorld);
+	LOG(LogLevel::Info) << "-> Converting Botanical Definitions";
+	transcribeHistoricalData();
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	
 	output(versionParser);
@@ -432,15 +436,20 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld)
 			province.second->sterilizeProvince();
 			continue;
 		}
-			
+		// For controller we're FAR less picky. Scroll through the provinces and see if anyone has majority.
+		auto eu4controller = determineProvinceControllership(eu4ProvinceNumbers, sourceWorld);
+
 		// Remap owner to something V2 can understand
 		auto possibleOwner = countryMapper.getV2Tag(*eu4owner);
 		if (!possibleOwner) throw std::runtime_error("Error mapping EU4 tag " + *eu4owner + " to a Vic2 tag!");
 		auto owner = *possibleOwner;
 
-		// TODO: Once we have support for importing current wars, assign control of province to actual controller.
+		auto possibleController = countryMapper.getV2Tag(*eu4controller);
+		if (!possibleOwner) throw std::runtime_error("Error mapping EU4 tag " + *eu4controller + " to a Vic2 tag!");
+		const auto& controller = *possibleController;
+
 		province.second->setOwner(owner);
-		province.second->setController(owner);
+		province.second->setController(controller);
 
 		const auto& ownerCountry = countries.find(owner);
 		if (ownerCountry != countries.end())
@@ -510,6 +519,33 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::vect
 						winner = share.first; maxDev = share.second.first; maxTax = share.second.second;
 					}
 			}
+		}
+	}
+	if (winner.empty()) return std::nullopt;
+	return winner;
+}
+
+std::optional<std::string> V2::World::determineProvinceControllership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const
+{
+	// determine ownership by pure numbers. Errors due to equal numbers can be assigned to war uncertainty and fog of war. *shrug*
+	std::map<std::string, std::vector<int>> theClaims; // tag, claimed provinces
+
+	for (auto eu4ProvinceID : eu4ProvinceNumbers)
+	{
+		const auto& eu4province = sourceWorld.getProvince(eu4ProvinceID);
+		auto controllerTag = eu4province->getControllerString();
+		if (controllerTag.empty()) continue; // Don't touch uncolonized provinces.
+		theClaims[controllerTag].push_back(eu4ProvinceID);
+	}
+	// Let's see who the lucky winner is.
+	std::string winner;
+	unsigned int maxCount = 0;
+	for (const auto& tag : theClaims)
+	{
+		if (tag.second.size() > maxCount)
+		{
+			maxCount = tag.second.size();
+			winner = tag.first;
 		}
 	}
 	if (winner.empty()) return std::nullopt;
@@ -919,6 +955,22 @@ void V2::World::convertArmies()
 	}
 }
 
+void V2::World::convertWars(const EU4::World& sourceWorld)
+{
+	for (const auto& eu4War: sourceWorld.getWars())
+	{
+		War newWar;
+		if (newWar.loadWar(eu4War, warGoalMapper, provinceMapper, countryMapper, countries))
+		{
+			wars.push_back(newWar);
+		}
+		else
+		{
+			Log(LogLevel::Warning) << "Failed to transcribe war: " << eu4War.getName();
+		}
+	}
+}
+
 void V2::World::output(const mappers::VersionParser& versionParser) const
 {
 	LOG(LogLevel::Info) << "<- Copying Mod Template";
@@ -969,12 +1021,57 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	LOG(LogLevel::Info) << "<- Writing Diplomacy";
 	diplomacy.output();
 
+	LOG(LogLevel::Info) << "<- Writing Armed and Unarmed Conflicts";
+	outputWars();
+
 	LOG(LogLevel::Info) << "<- Writing Pops";
 	outputPops();
+
+	LOG(LogLevel::Info) << "<- Sending Botanical Expedition";
+	outputHistory();
 
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
 	verifyCountriesWritten();
+}
+
+void V2::World::transcribeHistoricalData()
+{
+	std::vector<std::pair<std::string, EU4::HistoricalEntry>> transcribedData;
+	for (const auto& entry: historicalData)
+	{
+		const auto& possibleTag = countryMapper.getV2Tag(entry.first);
+		if (possibleTag) transcribedData.emplace_back(std::make_pair(*possibleTag, entry.second));
+	}
+	historicalData.swap(transcribedData);
+}
+
+void V2::World::outputHistory() const
+{
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/botanical_expedition.txt");
+	if (!output.is_open())
+	{
+		throw std::runtime_error("Could not send botanical expedition output/" + theConfiguration.getOutputName() + "/common/botanical_expedition.txt - " + Utils::GetLastErrorString());
+	}
+	output << historicalData;
+	output.close();
+
+}
+
+void V2::World::outputWars() const
+{
+	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/wars");
+	for (const auto& war: wars)
+	{
+		const auto& filename = war.generateFileName();
+		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/wars/" + filename);
+		if (!output.is_open())
+		{
+			throw std::runtime_error("Could not create wars file output/" + theConfiguration.getOutputName() + "/history/wars/" + filename + " - " + Utils::GetLastErrorString());
+		}
+		output << war;
+		output.close();
+	}
 }
 
 void V2::World::outputVersion(const mappers::VersionParser& versionParser) const
