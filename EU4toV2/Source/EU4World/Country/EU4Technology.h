@@ -9,10 +9,10 @@ namespace EU4
 	{
 	public:
 		EU4Technology() = default;
-		EU4Technology(std::istream& theStream);
-		int getAdm() const { return adm; }
-		int getDip() const { return dip; }
-		int getMil() const { return mil; }
+		explicit EU4Technology(std::istream& theStream);
+		[[nodiscard]] int getAdm() const { return adm; }
+		[[nodiscard]] int getDip() const { return dip; }
+		[[nodiscard]] int getMil() const { return mil; }
 
 	private:
 		int adm = 0;

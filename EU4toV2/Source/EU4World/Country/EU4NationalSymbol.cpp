@@ -17,7 +17,7 @@ EU4::NationalSymbol::NationalSymbol(std::istream& theStream)
 		});
 	registerKeyword("custom_colors", [this](const std::string& colorsString, std::istream& theStream)
 		{
-			EU4::CustomColors theSection(theStream);
+			const CustomColors theSection(theStream);
 			customColors = theSection;
 			customColorsInitialized = true;
 		});

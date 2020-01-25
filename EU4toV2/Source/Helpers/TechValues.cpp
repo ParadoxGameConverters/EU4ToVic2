@@ -73,31 +73,31 @@ double helpers::TechValues::getNormalizedIndustryTech(const EU4::Country& countr
 
 double helpers::TechValues::getCountryArmyTech(const EU4::Country& country) const
 {
-	return country.getMilTech() +	country.getAdmTech() + country.getArmyInvestment() - 5;
+	return country.getMilTech() +	country.getAdmTech() + country.getArmy();
 }
 
 
 double helpers::TechValues::getCountryNavyTech(const EU4::Country& country) const
 {
-	return country.getMilTech() +	country.getDipTech() + country.getNavyInvestment() - 5;
+	return country.getMilTech() +	country.getDipTech() + country.getNavy();
 }
 
 
 double helpers::TechValues::getCountryCommerceTech(const EU4::Country& country) const
 {
-	return country.getAdmTech() +	country.getDipTech() + country.getCommerceInvestment() - 5;
+	return country.getAdmTech() +	country.getDipTech() + country.getCommerce();
 }
 
 
 double helpers::TechValues::getCountryCultureTech(const EU4::Country& country) const
 {
-	return country.getDipTech() + country.getCultureInvestment() - 5;
+	return country.getDipTech() + country.getCulture();
 }
 
 
 double helpers::TechValues::getCountryIndustryTech(const EU4::Country& country) const
 {
-	return country.getAdmTech() +	country.getDipTech() + country.getMilTech() + country.getIndustryInvestment() - 5;
+	return country.getAdmTech() +	country.getDipTech() + country.getMilTech() + country.getIndustry();
 }
 
 double helpers::TechValues::getNormalizedScore(double score, double max, double mean) const

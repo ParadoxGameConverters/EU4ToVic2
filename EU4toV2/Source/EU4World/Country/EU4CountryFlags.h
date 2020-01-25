@@ -10,8 +10,8 @@ namespace EU4
 	{
 	public:
 		EU4CountryFlags() = default;
-		EU4CountryFlags(std::istream& theStream);
-		const std::set<std::string>& getFlags() const { return flags; }
+		explicit EU4CountryFlags(std::istream& theStream);
+		[[nodiscard]] const auto& getFlags() const { return flags; }
 
 	private:
 		std::set<std::string> flags;

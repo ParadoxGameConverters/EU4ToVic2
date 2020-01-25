@@ -10,7 +10,7 @@ namespace EU4
 	{
 	public:
 		ColonialRegions();
-		bool provinceIsInRegion(int province, const std::string& region) const;
+		[[nodiscard]] bool provinceIsInRegion(int province, const std::string& region) const;
 
 	private:
 		std::map<int, std::string> provinceToColonialRegions;

@@ -304,13 +304,13 @@ void V2::World::convertNationalValues(const mappers::IdeaEffectMapper& ideaEffec
 	{
 		auto nvScores = country.second->getNationalValueScores();
 
-		if (nvScores.libertyInvestment > nvScores.orderInvestment)
+		if (nvScores.liberty > nvScores.order)
 		{
-			libertyCountries.emplace_back(std::make_pair(country.second, nvScores.libertyInvestment));
+			libertyCountries.emplace_back(std::make_pair(country.second, nvScores.liberty));
 		}
-		if (nvScores.equalityInvestment > nvScores.orderInvestment && nvScores.equalityInvestment > nvScores.libertyInvestment)
+		if (nvScores.equality > nvScores.order && nvScores.equality > nvScores.liberty)
 		{
-			equalityCountries.emplace_back(std::make_pair(country.second, nvScores.equalityInvestment));
+			equalityCountries.emplace_back(std::make_pair(country.second, nvScores.equality));
 		}
 		countriesToSet.insert(country.second);
 	}

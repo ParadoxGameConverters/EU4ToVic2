@@ -21,7 +21,7 @@ mappers::IdeaEffectMapper::IdeaEffectMapper(std::istream& theStream)
 void mappers::IdeaEffectMapper::registerKeys()
 {
 	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& idea, std::istream& theStream) {
-		IdeaEffects ideaEffects(theStream);
+		const IdeaEffects ideaEffects(theStream);
 
 		enforceIdeas[idea] = ideaEffects.getEnforce();
 
@@ -52,140 +52,140 @@ void mappers::IdeaEffectMapper::registerKeys()
 
 std::string mappers::IdeaEffectMapper::getEnforceFromIdea(const std::string& ideaName) const
 {
-	auto idea = enforceIdeas.find(ideaName);
+	const auto& idea = enforceIdeas.find(ideaName);
 	if (idea != enforceIdeas.end()) return idea->second;
 	return "";
 }
 
 int mappers::IdeaEffectMapper::getArmyFromIdea(const std::string& ideaName) const
 {
-	auto idea = armyIdeas.find(ideaName);
+	const auto& idea = armyIdeas.find(ideaName);
 	if (idea != armyIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getCommerceFromIdea(const std::string& ideaName) const
 {
-	auto idea = commerceIdeas.find(ideaName);
+	const auto& idea = commerceIdeas.find(ideaName);
 	if (idea != commerceIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getCultureFromIdea(const std::string& ideaName) const
 {
-	auto idea = cultureIdeas.find(ideaName);
+	const auto& idea = cultureIdeas.find(ideaName);
 	if (idea != cultureIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getIndustryFromIdea(const std::string& ideaName) const
 {
-	auto idea = industryIdeas.find(ideaName);
+	const auto& idea = industryIdeas.find(ideaName);
 	if (idea != industryIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getNavyFromIdea(const std::string& ideaName) const
 {
-	auto idea = navyIdeas.find(ideaName);
+	const auto& idea = navyIdeas.find(ideaName);
 	if (idea != navyIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getLiberalFromIdea(const std::string& ideaName) const
 {
-	auto idea = liberalIdeas.find(ideaName);
+	const auto& idea = liberalIdeas.find(ideaName);
 	if (idea != liberalIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getReactionaryFromIdea(const std::string& ideaName) const
 {
-	auto idea = reactionaryIdeas.find(ideaName);
+	const auto& idea = reactionaryIdeas.find(ideaName);
 	if (idea != reactionaryIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getLiteracyFromIdea(const std::string& ideaName) const
 {
-	auto idea = literacyIdeas.find(ideaName);
+	const auto& idea = literacyIdeas.find(ideaName);
 	if (idea != literacyIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getSlaveryFromIdea(const std::string& ideaName) const
 {
-	auto idea = slaveryIdeas.find(ideaName);
+	const auto& idea = slaveryIdeas.find(ideaName);
 	if (idea != slaveryIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getUpper_house_compositionFromIdea(const std::string& ideaName) const
 {
-	auto idea = upper_house_compositionIdeas.find(ideaName);
+	const auto& idea = upper_house_compositionIdeas.find(ideaName);
 	if (idea != upper_house_compositionIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getVote_franchiseFromIdea(const std::string& ideaName) const
 {
-	auto idea = vote_franchiseIdeas.find(ideaName);
+	const auto& idea = vote_franchiseIdeas.find(ideaName);
 	if (idea != vote_franchiseIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getVoting_systemFromIdea(const std::string& ideaName) const
 {
-	auto idea = voting_systemIdeas.find(ideaName);
+	const auto& idea = voting_systemIdeas.find(ideaName);
 	if (idea != voting_systemIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getPublic_meetingsFromIdea(const std::string& ideaName) const
 {
-	auto idea = public_meetingsIdeas.find(ideaName);
+	const auto& idea = public_meetingsIdeas.find(ideaName);
 	if (idea != public_meetingsIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getPress_rightsFromIdea(const std::string& ideaName) const
 {
-	auto idea = press_rightsIdeas.find(ideaName);
+	const auto& idea = press_rightsIdeas.find(ideaName);
 	if (idea != press_rightsIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getTrade_unionsFromIdea(const std::string& ideaName) const
 {
-	auto idea = trade_unionsIdeas.find(ideaName);
+	const auto& idea = trade_unionsIdeas.find(ideaName);
 	if (idea != trade_unionsIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getPolitical_partiesFromIdea(const std::string& ideaName) const
 {
-	auto idea = political_partiesIdeas.find(ideaName);
+	const auto& idea = political_partiesIdeas.find(ideaName);
 	if (idea != political_partiesIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getOrderFromIdea(const std::string& ideaName) const
 {
-	auto idea = orderIdeas.find(ideaName);
+	const auto& idea = orderIdeas.find(ideaName);
 	if (idea != orderIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getLibertyFromIdea(const std::string& ideaName) const
 {
-	auto idea = libertyIdeas.find(ideaName);
+	const auto& idea = libertyIdeas.find(ideaName);
 	if (idea != libertyIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }
 
 int mappers::IdeaEffectMapper::getEqualityFromIdea(const std::string& ideaName) const
 {
-	auto idea = equalityIdeas.find(ideaName);
+	const auto& idea = equalityIdeas.find(ideaName);
 	if (idea != equalityIdeas.end()) return idea->second;
-	return 5;
+	return 0;
 }

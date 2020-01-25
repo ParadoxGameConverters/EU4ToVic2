@@ -9,8 +9,8 @@ namespace EU4
 	class EU4ActiveIdeas : commonItems::parser
 	{
 	public:
-		EU4ActiveIdeas(std::istream& theStream);
-		const std::set<std::string>& getActiveIdeas() const { return activeIdeas; }
+		explicit EU4ActiveIdeas(std::istream& theStream);
+		[[nodiscard]] const auto& getActiveIdeas() const { return activeIdeas; }
 
 	private:
 		std::set<std::string> activeIdeas;

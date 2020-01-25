@@ -250,12 +250,12 @@ void V2::Country::setPrimaryAndAcceptedCultures(std::shared_ptr<EU4::Country> sr
 	}
 }
 
-V2::NationalValueInvestments V2::Country::getNationalValueScores() const
+V2::NationalValue V2::Country::getNationalValueScores() const
 {
-	NationalValueInvestments investments;
-	investments.orderInvestment = details.nationalValueInvestments.orderInvestment - 5.0;
-	investments.libertyInvestment = details.nationalValueInvestments.libertyInvestment - 5.0;
-	investments.equalityInvestment = details.nationalValueInvestments.equalityInvestment - 5.0;
+	NationalValue investments;
+	investments.order = details.nationalValues.order;
+	investments.liberty = details.nationalValues.liberty;
+	investments.equality = details.nationalValues.equality;
 	return investments;
 }
 
@@ -315,35 +315,82 @@ void V2::Country::determineGovernmentType(
 
 void V2::Country::finalizeInvestments(std::shared_ptr<EU4::Country> srcCountry, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
-	// Collect and finalize all idea/reform/government effects. We have combined reforms + ideas incoming, but lack government component (the last 33%)
-	// Resulting scores for all of these will be between 0 and 10, with 5 being average and supposed to be ignored.
-	// Each point above or below 5 should alter absolute values by 10%.
+	details.technologies.army = srcCountry->getArmy();
+	details.technologies.navy = srcCountry->getNavy();
+	details.technologies.commerce = srcCountry->getCommerce();
+	details.technologies.industry = srcCountry->getIndustry();
+	details.technologies.culture = srcCountry->getCulture();
+	details.reforms.slavery = srcCountry->getSlavery();
+	details.reforms.upper_house_composition = srcCountry->getUpper_house_composition();
+	details.reforms.vote_franchise = srcCountry->getVote_franchise();
+	details.reforms.voting_system = srcCountry->getVoting_system();
+	details.reforms.public_meetings = srcCountry->getPublic_meetings();
+	details.reforms.press_rights = srcCountry->getPress_rights();
+	details.reforms.trade_unions = srcCountry->getTrade_unions();
+	details.reforms.political_parties = srcCountry->getPolitical_parties();
+	details.nationalValues.liberty = srcCountry->getLiberty();
+	details.nationalValues.equality = srcCountry->getEquality();
+	details.nationalValues.order = srcCountry->getOrder();
+	details.literacy = srcCountry->getLiteracy();
+	details.upperHouses.reactionary = srcCountry->getReactionary();
+	details.upperHouses.liberal = srcCountry->getLiberal();
 
-	details.technologyInvestments.armyInvestment = (2 * srcCountry->getArmyInvestment() + ideaEffectMapper.getArmyFromIdea(details.government)) / 3;
-	details.technologyInvestments.navyInvestment = (2 * srcCountry->getNavyInvestment() + ideaEffectMapper.getNavyFromIdea(details.government)) / 3;
-	details.technologyInvestments.commerceInvestment = (2 * srcCountry->getCommerceInvestment() + ideaEffectMapper.getCommerceFromIdea(details.government)) / 3;
-	details.technologyInvestments.industryInvestment = (2 * srcCountry->getIndustryInvestment() + ideaEffectMapper.getIndustryFromIdea(details.government)) / 3;
-	details.technologyInvestments.cultureInvestment = (2 * srcCountry->getCultureInvestment() + ideaEffectMapper.getCultureFromIdea(details.government)) / 3;
-	details.reformInvestments.slaveryInvestment = (2 * srcCountry->getSlaveryInvestment() + ideaEffectMapper.getSlaveryFromIdea(details.government)) / 3;
-	details.reformInvestments.upper_house_compositionInvestment = (2 * srcCountry->getUpper_house_compositionInvestment() + ideaEffectMapper.getUpper_house_compositionFromIdea(details.government)) / 3;
-	details.reformInvestments.vote_franchiseInvestment = (2 * srcCountry->getVote_franchiseInvestment() + ideaEffectMapper.getVote_franchiseFromIdea(details.government)) / 3;
-	details.reformInvestments.voting_systemInvestment = (2 * srcCountry->getVoting_systemInvestment() + ideaEffectMapper.getVoting_systemFromIdea(details.government)) / 3;
-	details.reformInvestments.public_meetingsInvestment = (2 * srcCountry->getPublic_meetingsInvestment() + ideaEffectMapper.getPublic_meetingsFromIdea(details.government)) / 3;
-	details.reformInvestments.press_rightsInvestment = (2 * srcCountry->getPress_rightsInvestment() + ideaEffectMapper.getPress_rightsFromIdea(details.government)) / 3;
-	details.reformInvestments.trade_unionsInvestment = (2 * srcCountry->getTrade_unionsInvestment() + ideaEffectMapper.getTrade_unionsFromIdea(details.government)) / 3;
-	details.reformInvestments.political_partiesInvestment = (2 * srcCountry->getPolitical_partiesInvestment() + ideaEffectMapper.getPolitical_partiesFromIdea(details.government)) / 3;
-	details.nationalValueInvestments.libertyInvestment = (2 * srcCountry->getLibertyInvestment() + ideaEffectMapper.getLibertyFromIdea(details.government)) / 3;
-	details.nationalValueInvestments.equalityInvestment = (2 * srcCountry->getEqualityInvestment() + ideaEffectMapper.getEqualityFromIdea(details.government)) / 3;
-	details.nationalValueInvestments.orderInvestment = (2 * srcCountry->getOrderInvestment() + ideaEffectMapper.getOrderFromIdea(details.government)) / 3;
-	details.literacyInvestment = (2 * srcCountry->getLiteracyInvestment() + ideaEffectMapper.getLiteracyFromIdea(details.government)) / 3;
-	details.upperHouseInvestments.reactionaryInvestment = (2 * srcCountry->getReactionaryInvestment() + ideaEffectMapper.getReactionaryFromIdea(details.government)) / 3;
-	details.upperHouseInvestments.liberalInvestment = (2 * srcCountry->getLiberalInvestment() + ideaEffectMapper.getLiberalFromIdea(details.government)) / 3;
+	// Collect and finalize all idea/reform/government effects. We have combined reforms + ideas incoming, but lack government component (the last 33%)
+	// Resulting scores for all of these will be between -5 and 5, with 0 being average and ignored.
+	// Each point above or below 5 should alter absolute values by 10%.
+		
+	if (ideaEffectMapper.getArmyFromIdea(details.government)) 
+		details.technologies.army = (2 * details.technologies.army + ideaEffectMapper.getArmyFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getNavyFromIdea(details.government)) 
+		details.technologies.navy = (2 * details.technologies.navy + ideaEffectMapper.getNavyFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getCommerceFromIdea(details.government)) 
+		details.technologies.commerce = (2 * details.technologies.commerce + ideaEffectMapper.getCommerceFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getIndustryFromIdea(details.government)) 
+		details.technologies.industry = (2 * details.technologies.industry + ideaEffectMapper.getIndustryFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getCultureFromIdea(details.government))
+		details.technologies.culture = (2 * details.technologies.culture + ideaEffectMapper.getCultureFromIdea(details.government)) / 3;
+
+	if (ideaEffectMapper.getSlaveryFromIdea(details.government)) 
+		details.reforms.slavery = (2 * details.reforms.slavery + ideaEffectMapper.getSlaveryFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getUpper_house_compositionFromIdea(details.government)) 
+		details.reforms.upper_house_composition = (2 * details.reforms.upper_house_composition + ideaEffectMapper.getUpper_house_compositionFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getVote_franchiseFromIdea(details.government)) 
+		details.reforms.vote_franchise = (2 * details.reforms.vote_franchise + ideaEffectMapper.getVote_franchiseFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getVoting_systemFromIdea(details.government)) 
+		details.reforms.voting_system = (2 * details.reforms.voting_system + ideaEffectMapper.getVoting_systemFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getPublic_meetingsFromIdea(details.government)) 
+		details.reforms.public_meetings = (2 * details.reforms.public_meetings + ideaEffectMapper.getPublic_meetingsFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getPress_rightsFromIdea(details.government)) 
+		details.reforms.press_rights = (2 * details.reforms.press_rights + ideaEffectMapper.getPress_rightsFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getTrade_unionsFromIdea(details.government)) 
+		details.reforms.trade_unions = (2 * details.reforms.trade_unions + ideaEffectMapper.getTrade_unionsFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getPolitical_partiesFromIdea(details.government))
+		details.reforms.political_parties = (2 * details.reforms.political_parties + ideaEffectMapper.getPolitical_partiesFromIdea(details.government)) / 3;
+
+	if (ideaEffectMapper.getLibertyFromIdea(details.government))
+		details.nationalValues.liberty = (2 * details.nationalValues.liberty + ideaEffectMapper.getLibertyFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getEqualityFromIdea(details.government))
+		details.nationalValues.equality = (2 * details.nationalValues.equality + ideaEffectMapper.getEqualityFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getOrderFromIdea(details.government))
+		details.nationalValues.order = (2 * details.nationalValues.order + ideaEffectMapper.getOrderFromIdea(details.government)) / 3;
+
+	if (ideaEffectMapper.getReactionaryFromIdea(details.government))
+		details.upperHouses.reactionary = (2 * details.upperHouses.reactionary + ideaEffectMapper.getReactionaryFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getLiberalFromIdea(details.government))
+		details.upperHouses.liberal = (2 * details.upperHouses.liberal + ideaEffectMapper.getLiberalFromIdea(details.government)) / 3;
+
+	if (ideaEffectMapper.getLiteracyFromIdea(details.government))
+		details.literacyInvestment = (2 * details.literacyInvestment + ideaEffectMapper.getLiteracyFromIdea(details.government)) / 3;
+
+	// Finally a patch for those silly democracies that go too low.
+	if (details.government == "democracy" && details.reforms.vote_franchise < -2.5) details.reforms.vote_franchise = -2;
+	if (details.government == "democracy" && details.reforms.upper_house_composition < 0) details.reforms.upper_house_composition = 1;
 }
 
 void V2::Country::resolvePolitics()
 {
-	details.upperHouseReactionary = static_cast<int>(5 * (1 + (details.upperHouseInvestments.reactionaryInvestment - 5) * 20 / 100));
-	details.upperHouseLiberal = static_cast<int>(10 * (1 + (details.upperHouseInvestments.liberalInvestment - 5) * 20 / 100));
+	details.upperHouseReactionary = static_cast<int>(5 * (1 + details.upperHouses.reactionary * 20 / 100));
+	details.upperHouseLiberal = static_cast<int>(10 * (1 + details.upperHouses.liberal * 20 / 100));
 	details.upperHouseConservative = 100 - (details.upperHouseReactionary + details.upperHouseLiberal);
 
 	if (srcCountry->isRevolutionary())
@@ -355,8 +402,8 @@ void V2::Country::resolvePolitics()
 
 	std::string ideology;
 
-	double liberalEffect = details.upperHouseInvestments.liberalInvestment - 5;
-	double reactionaryEffect = details.upperHouseInvestments.reactionaryInvestment - 5;
+	double liberalEffect = details.upperHouses.liberal;
+	double reactionaryEffect = details.upperHouses.reactionary;
 
 	if (srcCountry->isRevolutionary())
 	{
@@ -457,17 +504,17 @@ void V2::Country::calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry)
 
 	// Finally apply collective national literacy modifier.
 
-	details.literacy *= 1 + (details.literacyInvestment - 5) * 10 / 100;
+	details.literacy *= 1 + details.literacyInvestment * 10 / 100;
 }
 
 void V2::Country::determineTechSchool(const mappers::TechSchoolMapper& techSchoolMapper)
 {
 	details.techSchool = techSchoolMapper.findBestTechSchool(
-		details.technologyInvestments.armyInvestment - 5,
-		details.technologyInvestments.commerceInvestment - 5,
-		details.technologyInvestments.cultureInvestment - 5,
-		details.technologyInvestments.industryInvestment - 5,
-		details.technologyInvestments.navyInvestment - 5
+		details.technologies.army,
+		details.technologies.commerce,
+		details.technologies.culture,
+		details.technologies.industry,
+		details.technologies.navy
 	);
 }
 

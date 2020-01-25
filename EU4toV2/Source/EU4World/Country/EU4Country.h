@@ -29,105 +29,101 @@ namespace EU4
 	public:
 		Country() = default;
 		Country(
-			const std::string& countryTag,
+			std::string countryTag,
 			const Version& theVersion,
 			std::istream& theStream,
 			const mappers::IdeaEffectMapper& ideaEffectMapper, 
 			const mappers::CultureGroups& cultureGroupsMapper
 		);
 
-		// Add any additional information available from the specified country file.
-		void readFromCommonCountry(const std::string& fileName, const std::string& fullFilename);
-
+		void readFromCommonCountry(const std::string& fileName, const std::string& fullFilename); // Add any additional information available from the specified country file.
 		void setLocalisationName(const std::string& language, const std::string& name);
 		void setLocalisationAdjective(const std::string& language, const std::string& adjective);
-
 		void addProvince(const std::shared_ptr<Province>& province);
 		void addCore(const std::shared_ptr<Province>& core);
-	   void setInHRE(bool _inHRE) { inHRE = _inHRE; }
-		void setEmperor(bool _emperor) { holyRomanEmperor = _emperor; }
+	   void setInHRE(const bool _inHRE) { inHRE = _inHRE; }
+		void setEmperor(const bool _emperor) { holyRomanEmperor = _emperor; }
 		void setCelestialEmperor(bool _celestialEmperor) { celestialEmperor = _celestialEmperor; }
-		bool hasModifier(std::string) const;
-		bool hasNationalIdea(std::string) const;
-		std::set<std::string> exportNationalIdeas() const { return nationalIdeas; }
-		bool hasFlag(std::string) const ;
-		void resolveRegimentTypes(const mappers::UnitTypeMapper& utm);
-		int getManufactoryCount() const;
-		int numEmbracedInstitutions() const;
 		void eatCountry(std::shared_ptr<Country> target);
 		void setColonialRegion(const std::string& region) { colonialRegion = region; }
 		void takeArmies(std::shared_ptr<Country>);
 		void clearArmies();
-		const void viveLaRevolution(bool revolting) { revolutionary = revolting; }
-
-		bool cultureSurvivesInCores(const std::map<std::string, std::shared_ptr<EU4::Country>>& theCountries);
-
-		std::string getTag() const { return tag; }
-		void setTag(std::string _tag) { tag = _tag; }
-		std::vector<std::shared_ptr<Province>>& getProvinces() { return provinces; }
-		std::vector<std::shared_ptr<Province>>& getCores() { return cores; }
-		int getTotalDev() const;
-		int getCapital() const { return capital; }
-		bool getInHRE() const { return inHRE; }
-		bool getHolyRomanEmperor() const { return holyRomanEmperor; }
-		bool getCelestialEmperor() const { return celestialEmperor; }
-		std::string getTechGroup() const { return techGroup; }
-		const std::vector<bool>& getEmbracedInstitutions() const { return embracedInstitutions; }
-		int getIsolationism() const { return isolationism; }
-		std::string getPrimaryCulture() const { return primaryCulture; }
-		std::vector<std::string> getAcceptedCultures() const { return acceptedCultures; }
-		std::optional<mappers::CultureGroup> getCulturalUnion() const { return culturalUnion; }
-		std::string getReligion() const { return religion; }
-		double getScore() const { return score; }
-		double getStability() const { return stability; }
-		double getAverageAutonomy() const { return averageAutonomy; }
-		double getLegitimacy() const;
-		double getAdmTech() const { return admTech; }
-		double getDipTech() const { return dipTech; }
-		double getMilTech() const { return milTech; }
-		double getArmyInvestment() const { return armyInvestment; }
-		double getNavyInvestment() const { return navyInvestment; }
-		double getCommerceInvestment() const { return commerceInvestment; }
-		double getIndustryInvestment() const { return industryInvestment; }
-		double getCultureInvestment() const { return cultureInvestment; }
-		double getSlaveryInvestment() const { return slaveryInvestment; }
-		double getUpper_house_compositionInvestment() const { return upper_house_compositionInvestment; }
-		double getVote_franchiseInvestment() const { return vote_franchiseInvestment; }
-		double getVoting_systemInvestment() const { return voting_systemInvestment; }
-		double getPublic_meetingsInvestment() const { return public_meetingsInvestment; }
-		double getPress_rightsInvestment() const { return press_rightsInvestment; }
-		double getTrade_unionsInvestment() const { return trade_unionsInvestment; }
-		double getPolitical_partiesInvestment() const { return political_partiesInvestment; }
-		double getLibertyInvestment() const { return libertyInvestment; }
-		double getEqualityInvestment() const { return equalityInvestment; }
-		double getOrderInvestment() const { return orderInvestment; }
-		double getLiteracyInvestment() const { return literacyInvestment; }
-		double getReactionaryInvestment() const { return reactionaryInvestment; }
-		double getLiberalInvestment() const { return liberalInvestment; }
-		bool getPossibleDaimyo() const { return possibleDaimyo; }
-		bool getPossibleShogun() const { return possibleShogun; }
-		std::string getGovernment() const { return government; }
-		const std::set<std::string>& getReforms() const { return governmentReforms; }
-		const std::map<std::string, EU4RelationDetails>& getRelations() const { return relations; }
-		const std::vector<EU4Army>& getArmies() const { return armies; }
-		bool isCustom() const { return customNation; }
-		bool isColony() const { return colony; }
-		const std::string& getColonialRegion() const { return colonialRegion; }
-		double getLibertyDesire() const { return libertyDesire; }
-		bool isRevolutionary() const { return revolutionary; }
-		std::string getRandomName() const { return randomName; }
-		const std::set<std::string>& getNationalIdeas() const { return nationalIdeas; }
-		const std::vector<Leader>& getHistoricalLeaders() const { return historicalLeaders; }
-		const std::vector<Leader>& getMilitaryLeaders() const { return militaryLeaders; }
-
-		std::string	getName() const { return name; }
-		std::string	getName(const std::string& language) const;
-		std::string	getAdjective(const std::string& language) const;
+		void viveLaRevolution(bool revolting) { revolutionary = revolting; }
+		void setTag(const std::string& _tag) { tag = _tag; }
 		void dropMinorityCultures();
 		void filterLeaders();
-		const HistoricalEntry& getHistoricalEntry() const { return historicalEntry; }
+		void resolveRegimentTypes(const mappers::UnitTypeMapper& unitTypeMapper);
 
-		const NationalSymbol& getNationalColors() const { return nationalColors; }
+		[[nodiscard]] auto getTag() const { return tag; }
+		[[nodiscard]] auto getCapital() const { return capital; }
+		[[nodiscard]] auto getInHRE() const { return inHRE; }
+		[[nodiscard]] auto getHolyRomanEmperor() const { return holyRomanEmperor; }
+		[[nodiscard]] auto getCelestialEmperor() const { return celestialEmperor; }
+		[[nodiscard]] auto getTechGroup() const { return techGroup; }
+		[[nodiscard]] auto getIsolationism() const { return isolationism; }
+		[[nodiscard]] auto getPrimaryCulture() const { return primaryCulture; }
+		[[nodiscard]] auto getReligion() const { return religion; }
+		[[nodiscard]] auto getScore() const { return score; }
+		[[nodiscard]] auto getStability() const { return stability; }
+		[[nodiscard]] auto getAverageAutonomy() const { return averageAutonomy; }
+		[[nodiscard]] auto getAdmTech() const { return admTech; }
+		[[nodiscard]] auto getDipTech() const { return dipTech; }
+		[[nodiscard]] auto getMilTech() const { return milTech; }
+		[[nodiscard]] auto getArmy() const { return army; }
+		[[nodiscard]] auto getNavy() const { return navy; }
+		[[nodiscard]] auto getCommerce() const { return commerce; }
+		[[nodiscard]] auto getIndustry() const { return industry; }
+		[[nodiscard]] auto getCulture() const { return culture; }
+		[[nodiscard]] auto getSlavery() const { return slavery; }
+		[[nodiscard]] auto getUpper_house_composition() const { return upper_house_composition; }
+		[[nodiscard]] auto getVote_franchise() const { return vote_franchise; }
+		[[nodiscard]] auto getVoting_system() const { return voting_system; }
+		[[nodiscard]] auto getPublic_meetings() const { return public_meetings; }
+		[[nodiscard]] auto getPress_rights() const { return press_rights; }
+		[[nodiscard]] auto getTrade_unions() const { return trade_unions; }
+		[[nodiscard]] auto getPolitical_parties() const { return political_parties; }
+		[[nodiscard]] auto getLiberty() const { return liberty; }
+		[[nodiscard]] auto getEquality() const { return equality; }
+		[[nodiscard]] auto getOrder() const { return order; }
+		[[nodiscard]] auto getLiteracy() const { return literacy; }
+		[[nodiscard]] auto getReactionary() const { return reactionary; }
+		[[nodiscard]] auto getLiberal() const { return liberal; }
+		[[nodiscard]] auto getPossibleDaimyo() const { return possibleDaimyo; }
+		[[nodiscard]] auto getPossibleShogun() const { return possibleShogun; }
+		[[nodiscard]] auto getGovernment() const { return government; }
+		[[nodiscard]] auto isCustom() const { return customNation; }
+		[[nodiscard]] auto isColony() const { return colony; }
+		[[nodiscard]] auto getLibertyDesire() const { return libertyDesire; }
+		[[nodiscard]] auto isRevolutionary() const { return revolutionary; }
+		[[nodiscard]] auto getRandomName() const { return randomName; }
+		[[nodiscard]] auto getName() const { return name; }
+				
+		[[nodiscard]] const auto& getReforms() const { return governmentReforms; }
+		[[nodiscard]] const auto& getRelations() const { return relations; }
+		[[nodiscard]] const auto& getArmies() const { return armies; }
+		[[nodiscard]] const auto& getColonialRegion() const { return colonialRegion; }
+		[[nodiscard]] const auto& getNationalIdeas() const { return nationalIdeas; }
+		[[nodiscard]] const auto& getHistoricalLeaders() const { return historicalLeaders; }
+		[[nodiscard]] const auto& getMilitaryLeaders() const { return militaryLeaders; }
+		[[nodiscard]] const auto& getHistoricalEntry() const { return historicalEntry; }
+		[[nodiscard]] const auto& getNationalColors() const { return nationalColors; }
+		[[nodiscard]] const auto& getEmbracedInstitutions() const { return embracedInstitutions; }
+		[[nodiscard]] const auto& getAcceptedCultures() const { return acceptedCultures; }
+		[[nodiscard]] const auto& getProvinces() const { return provinces; }
+		[[nodiscard]] const auto& getCores() const { return cores; }
+		[[nodiscard]] const auto& exportNationalIdeas() const { return nationalIdeas; }
+
+		[[nodiscard]] std::string getName(const std::string& language) const;
+		[[nodiscard]] std::string getAdjective(const std::string& language) const;
+		[[nodiscard]] double getLegitimacy() const;
+		[[nodiscard]] std::optional<mappers::CultureGroup> getCulturalUnion() const { return culturalUnion; }
+		[[nodiscard]] bool cultureSurvivesInCores(const std::map<std::string, std::shared_ptr<Country>>& theCountries);
+		[[nodiscard]] int getTotalDev() const;
+		[[nodiscard]] bool hasModifier(const std::string&) const;
+		[[nodiscard]] bool hasNationalIdea(const std::string&) const;
+		[[nodiscard]] bool hasFlag(const std::string&) const;
+		[[nodiscard]] int getManufactoryCount() const;
+		[[nodiscard]] int numEmbracedInstitutions() const;
 
 	private:
 		void determineJapaneseRelations();
@@ -156,25 +152,26 @@ namespace EU4
 		double dipTech = 0.0; // the diplo tech of this nation
 		double milTech = 0.0; // the mil tech of this nation
 
-		double armyInvestment = 5.0;
-		double navyInvestment = 5.0;
-		double commerceInvestment = 5.0;
-		double industryInvestment = 5.0;
-		double cultureInvestment = 5.0;
-		double slaveryInvestment = 5.0;
-		double upper_house_compositionInvestment = 5.0;
-		double vote_franchiseInvestment = 5.0;
-		double voting_systemInvestment = 5.0;
-		double public_meetingsInvestment = 5.0;
-		double press_rightsInvestment = 5.0;
-		double trade_unionsInvestment = 5.0;
-		double political_partiesInvestment = 5.0;
-		double libertyInvestment = 5.0;
-		double equalityInvestment = 5.0;
-		double orderInvestment = 5.0;
-		double literacyInvestment = 5.0;
-		double reactionaryInvestment = 5.0;
-		double liberalInvestment = 5.0;
+		double army = 0;
+		double navy = 0;
+		double commerce = 0;
+		double industry = 0;
+		double culture = 0;
+		double liberty = 0;
+		double equality = 0;
+		double order = 0;
+		double literacy = 0;
+		double reactionary = 0;
+		double liberal = 0;
+		
+		double slavery = 0;
+		double upper_house_composition = 0;
+		double vote_franchise = 0;
+		double voting_system = 0;
+		double public_meetings = 0;
+		double press_rights = 0;
+		double trade_unions = 0;
+		double political_parties = 0;
 
 		std::map<std::string, bool> flags; // any flags set for this country
 		std::map<std::string, bool> modifiers; // any modifiers set for this country
@@ -201,18 +198,18 @@ namespace EU4
 		std::string colonialRegion; // the colonial region, if this country is a colony
 		double libertyDesire = 0.0; // the amount of liberty desire
 		std::string randomName; // the new name of this nation in Random World
-		bool revolutionary = false; // does this country wave the glorious tricoloured banner of the revolution
+		bool revolutionary = false; // does this country wave the glorious tri-colored banner of the revolution
 		std::set<std::string> governmentReforms;
 
-		// Localisation attributes
+		// Localization attributes
 		std::string	name; // the name of this country
 		std::string	adjective; // the adjective for this country
 
 		// Colors
 		NationalSymbol nationalColors;
 
-		std::map<std::string, std::string> namesByLanguage; // the names of this country in different localisations
-		std::map<std::string, std::string> adjectivesByLanguage;	// the adjectives for this country in different localisations
+		std::map<std::string, std::string> namesByLanguage; // the names of this country in different localizations
+		std::map<std::string, std::string> adjectivesByLanguage;	// the adjectives for this country in different localizations
 		std::map<std::string, double> states; // Areas which have been made states by this country.
 
 		HistoricalEntry historicalEntry;

@@ -1,5 +1,5 @@
-#ifndef EU4_CUSTOMCOLORS_H
-#define EU4_CUSTOMCOLORS_H
+#ifndef EU4_CUSTOM_COLORS_H
+#define EU4_CUSTOM_COLORS_H
 
 #include "Color.h"
 
@@ -17,17 +17,17 @@ namespace EU4
 	{
 	public:
 		CustomColors() = default;
-		CustomColors(std::istream& theStream);
-		const CustomColorsBlock& getCustomColors() const { return customColors; }
+		explicit CustomColors(std::istream& theStream);
+		[[nodiscard]] const auto& getCustomColors() const { return customColors; }
 
-		void setFlag(int fl) { customColors.flag = fl; }
-		void setColor(int col) { customColors.color = col; }
-		void setSymbolIndex(int si) { customColors.symbolIndex = si; }
-		void setFlagColors(commonItems::Color col) { customColors.flagColors = col; }
+		void setFlag(const int fl) { customColors.flag = fl; }
+		void setColor(const int col) { customColors.color = col; }
+		void setSymbolIndex(const int si) { customColors.symbolIndex = si; }
+		void setFlagColors(const commonItems::Color& col) { customColors.flagColors = col; }
 
 	private:
 		CustomColorsBlock customColors; // It walks like a color, it quacks like a color, but it's in fact a color INDEX from 00_custom_colors.txt
 	};
 }
 
-#endif // EU4_CUSTOMCOLORS_H
+#endif // EU4_CUSTOM_COLORS_H

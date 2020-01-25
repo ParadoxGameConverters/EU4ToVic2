@@ -11,24 +11,23 @@ EU4::ColonialRegions::ColonialRegions()
 
 	registerRegex("colonial_\\w+", [this](const std::string& regionName, std::istream& theStream)
 		{
-			ColonialRegion newRegion(theStream);
+			const ColonialRegion newRegion(theStream);
 			for (const auto& provinceID : newRegion.getProvinces())
 			{
 				provinceToColonialRegions.insert(std::make_pair(provinceID, regionName));
 			}
 		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
 		
 	parseFile(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt");
 
-	for (auto mod: theConfiguration.getEU4Mods())
+	for (const auto& mod: theConfiguration.getEU4Mods())
 	{
 		std::set<std::string> filenames;
 		if (Utils::doesFolderExist(mod + "/common/colonial_regions/"))
 		{
 			Utils::GetAllFilesInFolder(mod + "/common/colonial_regions/", filenames);
-			for (auto filename : filenames)
+			for (const auto& filename : filenames)
 			{
 				parseFile(mod + "/common/colonial_regions/" + filename);
 			}
@@ -37,15 +36,9 @@ EU4::ColonialRegions::ColonialRegions()
 	clearRegisteredKeywords();
 }
 
-bool EU4::ColonialRegions::provinceIsInRegion(int province, const std::string& region) const
+bool EU4::ColonialRegions::provinceIsInRegion(const int province, const std::string& region) const
 {
-	auto mapping = provinceToColonialRegions.find(province);
-	if (mapping != provinceToColonialRegions.end())
-	{
-		return (mapping->second == region);
-	}
-	else
-	{
-		return false;
-	}
+	const auto& mapping = provinceToColonialRegions.find(province);
+	if (mapping != provinceToColonialRegions.end()) return mapping->second == region;
+	return false;
 }

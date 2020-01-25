@@ -7,35 +7,36 @@
 
 namespace V2
 {
-	struct NationalValueInvestments
+	struct NationalValue
 	{
-		double orderInvestment = 5.0;
-		double libertyInvestment = 5.0;
-		double equalityInvestment = 5.0;
+		double order = 0;
+		double liberty = 0;
+		double equality = 0;
 	};
-	struct TechnologyInvestments
+	struct Technology
 	{
-		double armyInvestment = 5.0;
-		double navyInvestment = 5.0;
-		double commerceInvestment = 5.0;
-		double industryInvestment = 5.0;
-		double cultureInvestment = 5.0;
+		double army = 0;
+		double navy = 0;
+		double commerce = 0;
+		double industry = 0;
+		double culture = 0;
 	};
-	struct ReformInvestments
+	struct Reform
 	{
-		double slaveryInvestment = 5.0;
-		double upper_house_compositionInvestment = 5.0;
-		double vote_franchiseInvestment = 5.0;
-		double voting_systemInvestment = 5.0;
-		double public_meetingsInvestment = 5.0;
-		double press_rightsInvestment = 5.0;
-		double trade_unionsInvestment = 5.0;
-		double political_partiesInvestment = 5.0;
+		// These are default values for dead nations. Extant nations will override them.
+		double slavery = -3;
+		double upper_house_composition = -2;
+		double vote_franchise = -5;
+		double voting_system = -5;
+		double public_meetings = -5;
+		double press_rights = -5;
+		double trade_unions = -5;
+		double political_parties = -5;
 	};
-	struct UpperHouseInvestments
+	struct UpperHouse
 	{
-		double reactionaryInvestment = 5.0;
-		double liberalInvestment = 5.0;
+		double reactionary = 0;
+		double liberal = 0;
 	};
 	
 	class CountryDetails : commonItems::parser
@@ -73,11 +74,11 @@ namespace V2
 		double consciousness = 0;
 		double nonstateConsciousness = 0;
 
-		NationalValueInvestments nationalValueInvestments;
-		TechnologyInvestments technologyInvestments;
-		ReformInvestments reformInvestments;
-		UpperHouseInvestments upperHouseInvestments;
-		double literacyInvestment = 5.0;
+		NationalValue nationalValues;
+		Technology technologies;
+		Reform reforms;
+		UpperHouse upperHouses;
+		double literacyInvestment = 0;
 
 	private:
 		void registerKeys();
