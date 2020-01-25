@@ -3,7 +3,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-EU4::Leader::Leader(std::istream& theStream, const std::string& leaderClass)
+EU4::Leader::Leader(std::istream& theStream)
 {
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
 		{

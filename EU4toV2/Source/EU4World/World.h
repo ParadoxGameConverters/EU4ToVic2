@@ -57,7 +57,7 @@ namespace EU4
 		void setEmpires();
 	   void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas);
 		void fillHistoricalData();
-		void addTradeGoodsToCountries() const;
+		void addTradeGoodsToProvinces() const;
 		
 	   std::shared_ptr<Country> getCountry(std::string tag) const;
 		std::string holyRomanEmperor;

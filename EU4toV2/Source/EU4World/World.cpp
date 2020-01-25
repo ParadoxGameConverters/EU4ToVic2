@@ -132,7 +132,7 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	setEmpires();
 
 	LOG(LogLevel::Info) << "-> Setting Province Weight";
-	addTradeGoodsToCountries();
+	addTradeGoodsToProvinces();
 
 	LOG(LogLevel::Info) << "-> Processing Province Info";
 	addProvinceInfoToCountries();
@@ -243,7 +243,7 @@ void EU4::World::dropMinoritiesFromCountries()
 	}
 }
 
-void EU4::World::addTradeGoodsToCountries() const
+void EU4::World::addTradeGoodsToProvinces() const
 {
 	for (auto& province : provinces->getAllProvinces())
 	{

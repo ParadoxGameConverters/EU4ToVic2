@@ -10,7 +10,7 @@ namespace EU4
 	{
 	public:
 		Leader() = default;
-		explicit Leader(std::istream& theStream, const std::string& leaderClass);
+		explicit Leader(std::istream& theStream);
 
 		[[nodiscard]] const std::string& getName() const { return name; }
 		[[nodiscard]] int getFire() const { return fire; }
