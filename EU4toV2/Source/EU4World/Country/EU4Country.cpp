@@ -194,10 +194,18 @@ EU4::Country::Country(
 			EU4::EU4ActiveIdeas activeIdeas(theStream);
 			nationalIdeas = activeIdeas.getActiveIdeas();
 		});
-	registerKeyword("legitimacy", [this](const std::string& unused, std::istream& theStream)
+	registerRegex("legitimacy|horde_unity|devotion|meritocracy|republican_tradition", [this](const std::string& legitimacyType, std::istream& theStream)
 		{
 			commonItems::singleDouble theLegitimacy(theStream);
-			legitimacy = theLegitimacy.getDouble();
+			if (legitimacyType == "legitimacy" || legitimacyType == "meritocracy") legitimacy = theLegitimacy.getDouble();
+			if (legitimacyType == "horde_unity") hordeUnity = theLegitimacy.getDouble();
+			if (legitimacyType == "devotion") devotion = theLegitimacy.getDouble();
+			if (legitimacyType == "republican_tradition") republicanTradition = theLegitimacy.getDouble();
+		});
+	registerKeyword("average_autonomy", [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleDouble autonomyDbl(theStream);
+			averageAutonomy = autonomyDbl.getDouble();
 		});
 	registerKeyword("parent", [this](const std::string& unused, std::istream& theStream)
 		{
@@ -283,6 +291,16 @@ void EU4::Country::dropMinorityCultures()
 	}
 	acceptedCultures = updatedCultures;
 }
+
+double EU4::Country::getLegitimacy() const
+{
+	if (government == "republic") return republicanTradition;
+	if (government == "theocracy") return devotion;
+	if (government == "monarchy") return legitimacy;
+	if (government == "tribe") return hordeUnity;
+	return 50;
+}
+
 
 void EU4::Country::determineCulturalUnion(const mappers::CultureGroups& cultureGroupsMapper)
 {

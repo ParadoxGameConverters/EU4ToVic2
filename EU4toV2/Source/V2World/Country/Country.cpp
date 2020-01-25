@@ -166,8 +166,22 @@ void V2::Country::initFromEU4Country(
 	calculateLiteracy(_srcCountry);
 	determineTechSchool(techSchoolMapper);
 
+	//Consciousness
+	calculateConsciousness(_srcCountry);
+
 	// Misc
 	buildCanals(_srcCountry);
+}
+
+void V2::Country::calculateConsciousness(std::shared_ptr<EU4::Country> srcCountry)
+{
+	const auto& legitimacy = srcCountry->getLegitimacy();
+	const auto& stability = srcCountry->getStability();
+	const auto& autonomy = srcCountry->getAverageAutonomy();
+
+	// Range is [1-4] for starting countries.
+	details.consciousness = 2 + (0.5 + (50 - legitimacy) / 100) - stability / 3;
+	details.nonstateConsciousness = details.consciousness * autonomy / 100;
 }
 
 void V2::Country::setReligion(const std::string& religion, const mappers::ReligionMapper& religionMapper)

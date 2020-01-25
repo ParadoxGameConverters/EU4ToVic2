@@ -80,6 +80,8 @@ namespace EU4
 		std::string getReligion() const { return religion; }
 		double getScore() const { return score; }
 		double getStability() const { return stability; }
+		double getAverageAutonomy() const { return averageAutonomy; }
+		double getLegitimacy() const;
 		double getAdmTech() const { return admTech; }
 		double getDipTech() const { return dipTech; }
 		double getMilTech() const { return milTech; }
@@ -150,7 +152,6 @@ namespace EU4
 		std::optional<mappers::CultureGroup> culturalUnion;
 		std::string religion; // the accepted religion of this country
 		double score = 0.0;
-		double stability = -3.0; // the stability of this nation
 		double admTech = 0.0; // the admin tech of this nation
 		double dipTech = 0.0; // the diplo tech of this nation
 		double milTech = 0.0; // the mil tech of this nation
@@ -188,7 +189,12 @@ namespace EU4
 		std::map<std::string, EU4RelationDetails> relations; // the relations with other nations
 		std::vector<EU4Army> armies; // both armies and navies
 		std::set<std::string> nationalIdeas; // the national ideas for this country
-		double legitimacy = 1.0; // the legitimacy of this nation
+		double legitimacy = 100; // country at 100 doesn't store the value at all for any of the legitimacy-type values
+		double republicanTradition = 100;
+		double devotion = 100;
+		double hordeUnity = 100;
+		double stability = 0;
+		double averageAutonomy = 0; // relevant for non-state consciousness in vic2
 		bool customNation = false; // whether or not this is a custom or random nation
 		bool colony = false; // whether or not this country is a colony
 		std::string overlord;

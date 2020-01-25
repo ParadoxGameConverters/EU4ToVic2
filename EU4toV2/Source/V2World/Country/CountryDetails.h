@@ -70,6 +70,8 @@ namespace V2
 		int upperHouseConservative = 65;
 		int upperHouseLiberal = 25;
 		int numFactories = 0;
+		double consciousness = 0;
+		double nonstateConsciousness = 0;
 
 		NationalValueInvestments nationalValueInvestments;
 		TechnologyInvestments technologyInvestments;
