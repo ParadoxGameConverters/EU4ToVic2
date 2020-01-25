@@ -66,6 +66,16 @@ void V2::CountryDetails::registerKeys()
 			commonItems::ignoreItem(unused, theStream);
 			civilized = true;
 		});
+	registerKeyword("consciousness", [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleDouble conscDbl(theStream);
+			consciousness = conscDbl.getDouble();
+		});
+	registerKeyword("nonstate_consciousness", [this](const std::string& unused, std::istream& theStream)
+		{
+			commonItems::singleDouble conscDbl(theStream);
+			nonstateConsciousness = conscDbl.getDouble();
+		});
 	registerKeyword(std::regex("is_releasable_vassal"), [this](const std::string& unused, std::istream& theStream)
 		{
 			commonItems::singleString releasableStr(theStream);

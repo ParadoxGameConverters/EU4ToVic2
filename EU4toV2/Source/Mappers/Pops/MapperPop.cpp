@@ -15,8 +15,8 @@ mappers::MapperPop::MapperPop(std::istream& theStream)
 		});
 	registerKeyword("size", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleInt sizeInt(theStream);
-			size = sizeInt.getInt();
+			commonItems::singleDouble sizeDbl(theStream);
+			size = lround(sizeDbl.getDouble());
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 

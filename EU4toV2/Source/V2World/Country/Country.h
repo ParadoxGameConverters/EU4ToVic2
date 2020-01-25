@@ -158,6 +158,7 @@ namespace V2
 		void resolvePolitics();
 		void generateRelations(std::shared_ptr<EU4::Country> srcCountry, const mappers::CountryMappings& countryMapper);
 		void calculateLiteracy(std::shared_ptr<EU4::Country> srcCountry);
+		void calculateConsciousness(std::shared_ptr<EU4::Country> srcCountry);
 		void determineTechSchool(const mappers::TechSchoolMapper& techSchoolMapper);
 		void buildCanals(std::shared_ptr<EU4::Country> srcCountry);
 		void oldCivConversionMethod();
