@@ -324,140 +324,159 @@ void EU4::Country::determineJapaneseRelations()
 
 void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
-	int ignoredMechanics = 0;
-	if (nationalIdeas.size() > 1) // There is always the default "TAG_ideas" inside, which we ignore for now.
+	std::map<std::string, int> appliedIdeas;
+	
+	// Let's not do this twice. Merge ideas and reforms, they are all the same anyway.
+	std::set<std::string> mergedIdeas(nationalIdeas);
+	mergedIdeas.insert(governmentReforms.begin(), governmentReforms.end());
+	
+	for (const auto& idea : mergedIdeas)
 	{
-		// We need to set reforms at -5 because there is a national idea inside that will give us 5 and we cannot filter it as it's unordered.
-		armyInvestment = -5.0;
-		commerceInvestment = -5.0;
-		cultureInvestment = -5.0;
-		industryInvestment = -5.0;
-		navyInvestment = -5.0;
-
-		slaveryInvestment = -5.0;
-		upper_house_compositionInvestment = -5.0;
-		vote_franchiseInvestment = -5.0;
-		voting_systemInvestment = -5.0;
-		public_meetingsInvestment = -5.0;
-		press_rightsInvestment = -5.0;
-		trade_unionsInvestment = -5.0;
-		political_partiesInvestment = -5.0;
-
-		libertyInvestment = -5.0;
-		equalityInvestment = -5.0;
-		orderInvestment = -5.0;
-		literacyInvestment = -5.0;
-
-		reactionaryInvestment = -5.0;
-		liberalInvestment = -5.0;
-
-		for (auto idea : nationalIdeas)
+		// Two upper house shares for the Aristocrats under the sky
+		if (ideaEffectMapper.getReactionaryFromIdea(idea))
 		{
-			armyInvestment += ideaEffectMapper.getArmyFromIdea(idea);
-			commerceInvestment += ideaEffectMapper.getCommerceFromIdea(idea);
-			cultureInvestment += ideaEffectMapper.getCultureFromIdea(idea);
-			industryInvestment += ideaEffectMapper.getIndustryFromIdea(idea);
-			navyInvestment += ideaEffectMapper.getNavyFromIdea(idea);
+			reactionary += ideaEffectMapper.getReactionaryFromIdea(idea);
+			appliedIdeas["reactionary"]++;
+		}
+		if (ideaEffectMapper.getLiberalFromIdea(idea))
+		{
+			liberal += ideaEffectMapper.getLiberalFromIdea(idea);
+			appliedIdeas["liberal"]++;
+		}
+		
+		// Three national values for bureaucrats in their halls of stone
+		if (ideaEffectMapper.getLibertyFromIdea(idea))
+		{
+			liberty += ideaEffectMapper.getLibertyFromIdea(idea);
+			appliedIdeas["liberty"]++;
+		}
+		if (ideaEffectMapper.getEqualityFromIdea(idea))
+		{
+			equality += ideaEffectMapper.getEqualityFromIdea(idea);
+			appliedIdeas["equality"]++;
+		}
+		if (ideaEffectMapper.getOrderFromIdea(idea))
+		{
+			order += ideaEffectMapper.getOrderFromIdea(idea);
+			appliedIdeas["order"]++;
+		}
 
-			slaveryInvestment += ideaEffectMapper.getSlaveryFromIdea(idea);
-			upper_house_compositionInvestment += ideaEffectMapper.getUpper_house_compositionFromIdea(idea);
-			vote_franchiseInvestment += ideaEffectMapper.getVote_franchiseFromIdea(idea);
-			voting_systemInvestment += ideaEffectMapper.getVoting_systemFromIdea(idea);
-			public_meetingsInvestment += ideaEffectMapper.getPublic_meetingsFromIdea(idea);
-			press_rightsInvestment += ideaEffectMapper.getPress_rightsFromIdea(idea);
-			trade_unionsInvestment += ideaEffectMapper.getTrade_unionsFromIdea(idea);
-			political_partiesInvestment += ideaEffectMapper.getPolitical_partiesFromIdea(idea);
+		// Five technologies for the Clergymen scribbling with bone
+		if (ideaEffectMapper.getArmyFromIdea(idea))
+		{
+			army += ideaEffectMapper.getArmyFromIdea(idea);
+			appliedIdeas["army"]++;
+		}
+		if (ideaEffectMapper.getCommerceFromIdea(idea))
+		{
+			commerce += ideaEffectMapper.getCommerceFromIdea(idea);
+			appliedIdeas["commerce"]++;
+		}
+		if (ideaEffectMapper.getCultureFromIdea(idea))
+		{
+			culture += ideaEffectMapper.getCultureFromIdea(idea);
+			appliedIdeas["culture"]++;
+		}
+		if (ideaEffectMapper.getIndustryFromIdea(idea))
+		{
+			industry += ideaEffectMapper.getIndustryFromIdea(idea);
+			appliedIdeas["industry"]++;
+		}
+		if (ideaEffectMapper.getNavyFromIdea(idea))
+		{
+			navy += ideaEffectMapper.getNavyFromIdea(idea);
+			appliedIdeas["navy"]++;
+		}
 
-			libertyInvestment += ideaEffectMapper.getLibertyFromIdea(idea);
-			equalityInvestment += ideaEffectMapper.getEqualityFromIdea(idea);
-			orderInvestment += ideaEffectMapper.getOrderFromIdea(idea);
-			literacyInvestment += ideaEffectMapper.getLiteracyFromIdea(idea);
- 
-			reactionaryInvestment += ideaEffectMapper.getReactionaryFromIdea(idea);
-			liberalInvestment += ideaEffectMapper.getLiberalFromIdea(idea);
+		// Eight political reforms for mortal Farmers doomed to die
+		if (ideaEffectMapper.getSlaveryFromIdea(idea))
+		{
+			slavery += ideaEffectMapper.getSlaveryFromIdea(idea);
+			appliedIdeas["slavery"]++;
+		}
+		if (ideaEffectMapper.getUpper_house_compositionFromIdea(idea))
+		{
+			upper_house_composition += ideaEffectMapper.getUpper_house_compositionFromIdea(idea);
+			appliedIdeas["upper_house_composition"]++;
+		}
+		if (ideaEffectMapper.getVote_franchiseFromIdea(idea))
+		{
+			vote_franchise += ideaEffectMapper.getVote_franchiseFromIdea(idea);
+			appliedIdeas["vote_franchise"]++;
+		}
+		if (ideaEffectMapper.getVoting_systemFromIdea(idea))
+		{
+			voting_system += ideaEffectMapper.getVoting_systemFromIdea(idea);
+			appliedIdeas["voting_system"]++;
+		}
+		if (ideaEffectMapper.getPublic_meetingsFromIdea(idea))
+		{
+			public_meetings += ideaEffectMapper.getPublic_meetingsFromIdea(idea);
+			appliedIdeas["public_meetings"]++;
+		}
+		if (ideaEffectMapper.getPress_rightsFromIdea(idea))
+		{
+			press_rights += ideaEffectMapper.getPress_rightsFromIdea(idea);
+			appliedIdeas["press_rights"]++;
+		}
+		if (ideaEffectMapper.getTrade_unionsFromIdea(idea))
+		{
+			trade_unions += ideaEffectMapper.getTrade_unionsFromIdea(idea);
+			appliedIdeas["trade_unions"]++;
+		}
+		if (ideaEffectMapper.getPolitical_partiesFromIdea(idea))
+		{
+			political_parties += ideaEffectMapper.getPolitical_partiesFromIdea(idea);
+			appliedIdeas["political_parties"]++;
+		}
+
+		// One for the Capitalist on his cushy throne
+		if (ideaEffectMapper.getLiteracyFromIdea(idea))
+		{
+			literacy += ideaEffectMapper.getLiteracyFromIdea(idea);
+			appliedIdeas["literacy"]++;
 		}
 	}
 
-	for (auto reformStr : governmentReforms)
-	{
-		if (reformStr.find("_mechanic") == std::string::npos) //ignore the basic legacy mechanics, focus on actual reforms
-		{
-			armyInvestment += ideaEffectMapper.getArmyFromIdea(reformStr);
-			commerceInvestment += ideaEffectMapper.getCommerceFromIdea(reformStr);
-			cultureInvestment += ideaEffectMapper.getCultureFromIdea(reformStr);
-			industryInvestment += ideaEffectMapper.getIndustryFromIdea(reformStr);
-			navyInvestment += ideaEffectMapper.getNavyFromIdea(reformStr);
+	// We actually need the averages, so.
 
-			slaveryInvestment += ideaEffectMapper.getSlaveryFromIdea(reformStr);
-			upper_house_compositionInvestment += ideaEffectMapper.getUpper_house_compositionFromIdea(reformStr);
-			vote_franchiseInvestment += ideaEffectMapper.getVote_franchiseFromIdea(reformStr);
-			voting_systemInvestment += ideaEffectMapper.getVoting_systemFromIdea(reformStr);
-			public_meetingsInvestment += ideaEffectMapper.getPublic_meetingsFromIdea(reformStr);
-			press_rightsInvestment += ideaEffectMapper.getPress_rightsFromIdea(reformStr);
-			trade_unionsInvestment += ideaEffectMapper.getTrade_unionsFromIdea(reformStr);
-			political_partiesInvestment += ideaEffectMapper.getPolitical_partiesFromIdea(reformStr);
+	if (appliedIdeas["army"]) army /= appliedIdeas["army"];
+	if (appliedIdeas["commerce"]) commerce /= appliedIdeas["commerce"];
+	if (appliedIdeas["culture"]) culture /= appliedIdeas["culture"];
+	if (appliedIdeas["industry"]) industry /= appliedIdeas["industry"];
+	if (appliedIdeas["navy"]) navy /= appliedIdeas["navy"];
 
-			libertyInvestment += ideaEffectMapper.getLibertyFromIdea(reformStr);
-			equalityInvestment += ideaEffectMapper.getEqualityFromIdea(reformStr);
-			orderInvestment += ideaEffectMapper.getOrderFromIdea(reformStr);
-			literacyInvestment += ideaEffectMapper.getLiteracyFromIdea(reformStr);
+	if (appliedIdeas["slavery"]) slavery /= appliedIdeas["slavery"];
+	if (appliedIdeas["upper_house_composition"]) upper_house_composition /= appliedIdeas["upper_house_composition"];
+	if (appliedIdeas["vote_franchise"]) vote_franchise /= appliedIdeas["vote_franchise"];
+	if (appliedIdeas["voting_system"]) voting_system /= appliedIdeas["voting_system"];
+	if (appliedIdeas["public_meetings"]) public_meetings /= appliedIdeas["public_meetings"];
+	if (appliedIdeas["press_rights"]) press_rights /= appliedIdeas["press_rights"];
+	if (appliedIdeas["trade_unions"]) trade_unions /= appliedIdeas["trade_unions"];
+	if (appliedIdeas["political_parties"]) political_parties /= appliedIdeas["political_parties"];
 
-			reactionaryInvestment += ideaEffectMapper.getReactionaryFromIdea(reformStr);
-			liberalInvestment += ideaEffectMapper.getLiberalFromIdea(reformStr);
-		}
-		else
-		{
-			ignoredMechanics += 1;
-		}
-	}
+	if (appliedIdeas["liberty"]) liberty /= appliedIdeas["liberty"];
+	if (appliedIdeas["equality"]) equality /= appliedIdeas["equality"];
+	if (appliedIdeas["order"]) order /= appliedIdeas["order"];
+	if (appliedIdeas["literacy"]) literacy /= appliedIdeas["literacy"];
 
-	// We actually need the averages, to play against government and reforms.
-
-	int nideasSize = static_cast<int>(nationalIdeas.size());
-	int govRefsSize = static_cast<int>(governmentReforms.size());
-	int totalDivider = nideasSize - 1 + govRefsSize - ignoredMechanics;
-
-	armyInvestment /= totalDivider;
-	commerceInvestment /= totalDivider;
-	cultureInvestment /= totalDivider;
-	industryInvestment /= totalDivider;
-	navyInvestment /= totalDivider;
-
-	slaveryInvestment /= totalDivider;
-	upper_house_compositionInvestment /= totalDivider;
-	vote_franchiseInvestment /= totalDivider;
-	voting_systemInvestment /= totalDivider;
-	public_meetingsInvestment /= totalDivider;
-	press_rightsInvestment /= totalDivider;
-	trade_unionsInvestment /= totalDivider;
-	political_partiesInvestment /= totalDivider;
-
-	libertyInvestment /= totalDivider;
-	equalityInvestment /= totalDivider;
-	orderInvestment /= totalDivider;
-	literacyInvestment /= totalDivider;
-
-	reactionaryInvestment /= totalDivider;
-	liberalInvestment /= totalDivider;
+	if (appliedIdeas["reactionary"]) reactionary /= appliedIdeas["reactionary"];
+	if (appliedIdeas["liberal"]) liberal /= appliedIdeas["liberal"];
 }
 
 void EU4::Country::determineLibertyDesire()
 {
-	if ((colony) && (libertyDesire != 0.0))
+	if (colony && libertyDesire > 0)
 	{
-		auto relationship = relations.find(overlord);
+		const auto& relationship = relations.find(overlord);
 		if (relationship != relations.end())
 		{
-			std::string attitude = relationship->second.getAttitude();
+			const auto& attitude = relationship->second.getAttitude();
 			if (attitude == "attitude_rebellious")
 			{
 				libertyDesire = 95.0;
 			}
-			else if (attitude == "attitude_disloyal")
-			{
-				libertyDesire = 90.0;
-			}
-			else if (attitude == "attitude_disloyal_vassal")	// for pre-1.14 games
+			else if (attitude == "attitude_disloyal" || attitude == "attitude_disloyal_vassal")	// _vassal for pre-1.14 games
 			{
 				libertyDesire = 90.0;
 			}
@@ -493,23 +512,11 @@ void EU4::Country::determineLibertyDesire()
 			{
 				libertyDesire = 15.0;
 			}
-			else if (attitude == "attitude_allied")
+			else if (attitude == "attitude_allied" || attitude == "attitude_friendly")
 			{
 				libertyDesire = 10.0;
 			}
-			else if (attitude == "attitude_friendly")
-			{
-				libertyDesire = 10.0;
-			}
-			else if (attitude == "attitude_loyal")
-			{
-				libertyDesire = 5.0;
-			}
-			else if (attitude == "attitude_overlord")
-			{
-				libertyDesire = 5.0;
-			}
-			else if (attitude == "attitude_vassal")	// for pre-1.14 games
+			else if (attitude == "attitude_loyal" || attitude == "attitude_overlord" || attitude == "attitude_vassal")	// _vassal for pre-1.14 games
 			{
 				libertyDesire = 5.0;
 			}
@@ -657,15 +664,15 @@ void EU4::Country::eatCountry(std::shared_ptr<EU4::Country> target)
 		militaryLeaders.insert(militaryLeaders.end(), target->militaryLeaders.begin(), target->militaryLeaders.end());
 
 		// rebalance prestige, badboy, inflation and techs from weighted average
-		score						= myWeight * score						+ targetWeight * target->score;
-		admTech					= myWeight * admTech						+ targetWeight * target->admTech;
-		dipTech					= myWeight * dipTech						+ targetWeight * target->dipTech;
-		milTech					= myWeight * milTech						+ targetWeight * target->milTech;
-		armyInvestment			= myWeight * armyInvestment			+ targetWeight * target->armyInvestment;
-		navyInvestment			= myWeight * navyInvestment			+ targetWeight * target->navyInvestment;
-		commerceInvestment	= myWeight * commerceInvestment		+ targetWeight * target->commerceInvestment;
-		industryInvestment	= myWeight * industryInvestment		+ targetWeight * target->industryInvestment;
-		cultureInvestment		= myWeight * cultureInvestment		+ targetWeight * target->cultureInvestment;
+		score = myWeight * score + targetWeight * target->score;
+		admTech = myWeight * admTech + targetWeight * target->admTech;
+		dipTech = myWeight * dipTech + targetWeight * target->dipTech;
+		milTech = myWeight * milTech + targetWeight * target->milTech;
+		army = myWeight * army + targetWeight * target->army;
+		navy = myWeight * navy + targetWeight * target->navy;
+		commerce = myWeight * commerce + targetWeight * target->commerce;
+		industry = myWeight * industry + targetWeight * target->industry;
+		culture = myWeight * culture + targetWeight * target->culture;
 	}
 
 	// coreless, landless countries will be cleaned up automatically

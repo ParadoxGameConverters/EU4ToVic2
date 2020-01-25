@@ -85,25 +85,25 @@ namespace EU4
 		double getAdmTech() const { return admTech; }
 		double getDipTech() const { return dipTech; }
 		double getMilTech() const { return milTech; }
-		double getArmyInvestment() const { return armyInvestment; }
-		double getNavyInvestment() const { return navyInvestment; }
-		double getCommerceInvestment() const { return commerceInvestment; }
-		double getIndustryInvestment() const { return industryInvestment; }
-		double getCultureInvestment() const { return cultureInvestment; }
-		double getSlaveryInvestment() const { return slaveryInvestment; }
-		double getUpper_house_compositionInvestment() const { return upper_house_compositionInvestment; }
-		double getVote_franchiseInvestment() const { return vote_franchiseInvestment; }
-		double getVoting_systemInvestment() const { return voting_systemInvestment; }
-		double getPublic_meetingsInvestment() const { return public_meetingsInvestment; }
-		double getPress_rightsInvestment() const { return press_rightsInvestment; }
-		double getTrade_unionsInvestment() const { return trade_unionsInvestment; }
-		double getPolitical_partiesInvestment() const { return political_partiesInvestment; }
-		double getLibertyInvestment() const { return libertyInvestment; }
-		double getEqualityInvestment() const { return equalityInvestment; }
-		double getOrderInvestment() const { return orderInvestment; }
-		double getLiteracyInvestment() const { return literacyInvestment; }
-		double getReactionaryInvestment() const { return reactionaryInvestment; }
-		double getLiberalInvestment() const { return liberalInvestment; }
+		double getArmy() const { return army; }
+		double getNavy() const { return navy; }
+		double getCommerce() const { return commerce; }
+		double getIndustry() const { return industry; }
+		double getCulture() const { return culture; }
+		double getSlavery() const { return slavery; }
+		double getUpper_house_composition() const { return upper_house_composition; }
+		double getVote_franchise() const { return vote_franchise; }
+		double getVoting_system() const { return voting_system; }
+		double getPublic_meetings() const { return public_meetings; }
+		double getPress_rights() const { return press_rights; }
+		double getTrade_unions() const { return trade_unions; }
+		double getPolitical_parties() const { return political_parties; }
+		double getLiberty() const { return liberty; }
+		double getEquality() const { return equality; }
+		double getOrder() const { return order; }
+		double getLiteracy() const { return literacy; }
+		double getReactionary() const { return reactionary; }
+		double getLiberal() const { return liberal; }
 		bool getPossibleDaimyo() const { return possibleDaimyo; }
 		bool getPossibleShogun() const { return possibleShogun; }
 		std::string getGovernment() const { return government; }
@@ -156,25 +156,26 @@ namespace EU4
 		double dipTech = 0.0; // the diplo tech of this nation
 		double milTech = 0.0; // the mil tech of this nation
 
-		double armyInvestment = 5.0;
-		double navyInvestment = 5.0;
-		double commerceInvestment = 5.0;
-		double industryInvestment = 5.0;
-		double cultureInvestment = 5.0;
-		double slaveryInvestment = 5.0;
-		double upper_house_compositionInvestment = 5.0;
-		double vote_franchiseInvestment = 5.0;
-		double voting_systemInvestment = 5.0;
-		double public_meetingsInvestment = 5.0;
-		double press_rightsInvestment = 5.0;
-		double trade_unionsInvestment = 5.0;
-		double political_partiesInvestment = 5.0;
-		double libertyInvestment = 5.0;
-		double equalityInvestment = 5.0;
-		double orderInvestment = 5.0;
-		double literacyInvestment = 5.0;
-		double reactionaryInvestment = 5.0;
-		double liberalInvestment = 5.0;
+		double army = 0;
+		double navy = 0;
+		double commerce = 0;
+		double industry = 0;
+		double culture = 0;
+		double liberty = 0;
+		double equality = 0;
+		double order = 0;
+		double literacy = 0;
+		double reactionary = 0;
+		double liberal = 0;
+		
+		double slavery = 0;
+		double upper_house_composition = 0;
+		double vote_franchise = 0;
+		double voting_system = 0;
+		double public_meetings = 0;
+		double press_rights = 0;
+		double trade_unions = 0;
+		double political_parties = 0;
 
 		std::map<std::string, bool> flags; // any flags set for this country
 		std::map<std::string, bool> modifiers; // any modifiers set for this country

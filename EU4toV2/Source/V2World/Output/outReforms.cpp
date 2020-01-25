@@ -4,7 +4,7 @@ std::ostream& V2::operator<<(std::ostream& output, const Reforms& reforms)
 {
 	output << "\n";
 	output << "# political reforms\n";
-	if (reforms.abolishSlavery || reforms.slavery >= 5.0)
+	if (reforms.abolishSlavery || reforms.slavery > 0)
 	{
 		output << "slavery=no_slavery\n";
 	}
@@ -14,23 +14,23 @@ std::ostream& V2::operator<<(std::ostream& output, const Reforms& reforms)
 	}
 
 	// Don't correct PDX typo!
-	if (reforms.vote_franchise >= 9.0)
+	if (reforms.vote_franchise > 4)
 	{
 		output << "vote_franschise=universal_voting\n";
 	}
-	else if (reforms.vote_franchise >= 7.5)
+	else if (reforms.vote_franchise > 2.5)
 	{
 		output << "vote_franschise=universal_weighted_voting\n";
 	}
-	else if (reforms.vote_franchise >= 5.5)
+	else if (reforms.vote_franchise > 0.5)
 	{
 		output << "vote_franschise=wealth_voting\n";
 	}
-	else if (reforms.vote_franchise >= 3.5)
+	else if (reforms.vote_franchise > -1.5)
 	{
 		output << "vote_franschise=wealth_weighted_voting\n";
 	}
-	else if (reforms.vote_franchise >= 2.5)
+	else if (reforms.vote_franchise > -2.5)
 	{
 		output << "vote_franschise=landed_voting\n";
 	}
@@ -39,15 +39,15 @@ std::ostream& V2::operator<<(std::ostream& output, const Reforms& reforms)
 		output << "vote_franschise=none_voting\n";
 	}
 
-	if (reforms.upper_house_composition >= 7.5)
+	if (reforms.upper_house_composition > 2.5)
 	{
 		output << "upper_house_composition=population_equal_weight\n";
 	}
-	else if (reforms.upper_house_composition >= 5.0)
+	else if (reforms.upper_house_composition > 0)
 	{
 		output << "upper_house_composition=state_equal_weight\n";
 	}
-	else if (reforms.upper_house_composition >= 2.5)
+	else if (reforms.upper_house_composition > -2.5)
 	{
 		output << "upper_house_composition=appointed\n";
 	}
@@ -56,11 +56,11 @@ std::ostream& V2::operator<<(std::ostream& output, const Reforms& reforms)
 		output << "upper_house_composition=party_appointed\n";
 	}
 
-	if (reforms.voting_system >= 6.5)
+	if (reforms.voting_system > 2.5)
 	{
 		output << "voting_system=proportional_representation\n";
 	}
-	else if (reforms.voting_system >= 3.0)
+	else if (reforms.voting_system > -2)
 	{
 		output << "voting_system=jefferson_method\n";
 	}
@@ -69,7 +69,7 @@ std::ostream& V2::operator<<(std::ostream& output, const Reforms& reforms)
 		output << "voting_system=first_past_the_post\n";
 	}
 
-	if (reforms.public_meetings >= 5.0)
+	if (reforms.public_meetings > 0)
 	{
 		output << "public_meetings=yes_meeting\n";
 	}
@@ -78,11 +78,11 @@ std::ostream& V2::operator<<(std::ostream& output, const Reforms& reforms)
 		output << "public_meetings=no_meeting\n";
 	}
 
-	if (reforms.press_rights >= 6.5)
+	if (reforms.press_rights > 2.5)
 	{
 		output << "press_rights=free_press\n";
 	}
-	else if (reforms.press_rights >= 3.5)
+	else if (reforms.press_rights > -1.5)
 	{
 		output << "press_rights=censored_press\n";
 	}
@@ -91,15 +91,15 @@ std::ostream& V2::operator<<(std::ostream& output, const Reforms& reforms)
 		output << "press_rights=state_press\n";
 	}
 
-	if (reforms.trade_unions >= 7.5)
+	if (reforms.trade_unions > 2.5)
 	{
 		output << "trade_unions=all_trade_unions\n";
 	}
-	else if (reforms.trade_unions >= 5.0)
+	else if (reforms.trade_unions > 0)
 	{
 		output << "trade_unions=non_socialist\n";
 	}
-	else if (reforms.trade_unions >= 2.5)
+	else if (reforms.trade_unions > -2.5)
 	{
 		output << "trade_unions=state_controlled\n";
 	}
@@ -108,19 +108,19 @@ std::ostream& V2::operator<<(std::ostream& output, const Reforms& reforms)
 		output << "trade_unions=no_trade_unions\n";
 	}
 
-	if (reforms.political_parties >= 8.0)
+	if (reforms.political_parties > 3)
 	{
 		output << "political_parties=secret_ballots\n";
 	}
-	else if (reforms.political_parties >= 6.0)
+	else if (reforms.political_parties > 1)
 	{
 		output << "political_parties=non_secret_ballots\n";
 	}
-	else if (reforms.political_parties >= 4.0)
+	else if (reforms.political_parties > -1)
 	{
 		output << "political_parties=gerrymandering\n";
 	}
-	else if (reforms.political_parties >= 2.0)
+	else if (reforms.political_parties > -3)
 	{
 		output << "political_parties=harassment\n";
 	}

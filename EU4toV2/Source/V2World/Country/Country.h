@@ -95,7 +95,7 @@ namespace V2
 		void addPrestige(double additionalPrestige) { details.prestige += additionalPrestige; }
 		void setPrestige(double prestige) { details.prestige = prestige; }
 		double getPrestige() const { return details.prestige; }
-		NationalValueInvestments getNationalValueScores() const;
+		NationalValue getNationalValueScores() const;
 		void setNationalValue(const std::string& NV) { details.nationalValue = NV; }
 		std::vector<std::shared_ptr<State>> getStates() const { return states; }
 		bool isCivilized() const { return details.civilized; }

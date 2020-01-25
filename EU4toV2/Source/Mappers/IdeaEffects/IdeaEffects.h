@@ -8,35 +8,35 @@ namespace mappers
 	class IdeaEffects: commonItems::parser
 	{
 	public:
-		IdeaEffects(std::istream& theStream);
+		explicit IdeaEffects(std::istream& theStream);
 
-		std::string getEnforce() const { return enforce; }
+		[[nodiscard]] std::string getEnforce() const { return enforce; }
 
-		int getArmy() const { return army; }
-		int getNavy() const { return navy; }
-		int getCommerce() const { return commerce; }
-		int getCulture() const { return culture; }
-		int getIndustry() const { return industry; }
+		[[nodiscard]] int getArmy() const { return army - 5; }
+		[[nodiscard]] int getNavy() const { return navy - 5; }
+		[[nodiscard]] int getCommerce() const { return commerce - 5; }
+		[[nodiscard]] int getCulture() const { return culture - 5; }
+		[[nodiscard]] int getIndustry() const { return industry - 5; }
 
-		int getOrder() const { return order; }
-		int getLiberty() const { return liberty; }
-		int getEquality() const { return equality; }
-		int getLiteracy() const { return literacy; }
+		[[nodiscard]] int getOrder() const { return order - 5; }
+		[[nodiscard]] int getLiberty() const { return liberty - 5; }
+		[[nodiscard]] int getEquality() const { return equality - 5; }
+		[[nodiscard]] int getLiteracy() const { return literacy - 5; }
 
-		int getReactionary() const { return reactionary; }
-		int getLiberal() const { return liberal; }
+		[[nodiscard]] int getReactionary() const { return reactionary - 5; }
+		[[nodiscard]] int getLiberal() const { return liberal - 5; }
 
-		int getSlavery() const { return slavery; }
-		int getUpper_house_composition() const { return upper_house_composition;  }
-		int getVote_franchise() const { return vote_franchise; }
-		int getVoting_system() const { return voting_system; }
-		int getPublic_meetings() const {	return public_meetings; }
-		int getPress_rights() const {	return press_rights;	}
-		int getTrade_unions() const {	return trade_unions;	}
-		int getPolitical_parties() const { return political_parties; }
+		[[nodiscard]] int getSlavery() const { return slavery - 5; }
+		[[nodiscard]] int getUpper_house_composition() const { return upper_house_composition - 5;  }
+		[[nodiscard]] int getVote_franchise() const { return vote_franchise - 5; }
+		[[nodiscard]] int getVoting_system() const { return voting_system - 5; }
+		[[nodiscard]] int getPublic_meetings() const {	return public_meetings - 5; }
+		[[nodiscard]] int getPress_rights() const {	return press_rights - 5;	}
+		[[nodiscard]] int getTrade_unions() const {	return trade_unions - 5;	}
+		[[nodiscard]] int getPolitical_parties() const { return political_parties - 5; }
 
 	private:
-		// Values range 0-10. 5 is default.
+		// Input values range 0-10. However, we return [-5 to 5] because working in [0 to 10] makes no sense internally.
 		std::string enforce;
 
 		int slavery = 5;
