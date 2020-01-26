@@ -2,7 +2,7 @@
 
 std::ostream& V2::operator<<(std::ostream& output, const Army& army)
 {
-	if (army.regiments.size() == 0)
+	if (army.regiments.empty())
 	{
 		return output;
 	}
@@ -16,7 +16,7 @@ std::ostream& V2::operator<<(std::ostream& output, const Army& army)
 	}
 	output << "\tname=\"" << army.name << "\"\n";
 	output << "\tlocation=" << army.location << "\n";
-	for (auto regiment: army.regiments)
+	for (const auto& regiment: army.regiments)
 	{
 		output << regiment;
 	}

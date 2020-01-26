@@ -25,7 +25,7 @@ void V2::CountryPopLogger::logPopsFromFile(const std::map<int, std::shared_ptr<P
 	}
 }
 
-void V2::CountryPopLogger::logPopsInProvince(const std::map<int, std::shared_ptr<Province>>& provinces, int provinceID, const mappers::PopTypes& popTypes)
+void V2::CountryPopLogger::logPopsInProvince(const std::map<int, std::shared_ptr<Province>>& provinces, const int provinceID, const mappers::PopTypes& popTypes)
 {
 	const auto& province = provinces.find(provinceID);
 	if (province == provinces.end())

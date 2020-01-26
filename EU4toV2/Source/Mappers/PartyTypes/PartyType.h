@@ -21,7 +21,7 @@ namespace mappers
 		[[nodiscard]] const auto& getStartDate() const { return start_date; }
 		[[nodiscard]] const auto& getEndDate() const { return end_date; }
 
-		friend std::ostream& operator<<(std::ostream& output, const PartyType& party);
+		friend std::ostream& operator<<(std::ostream& output, const PartyType& partyDetails);
 
 	private:
 		std::string name;

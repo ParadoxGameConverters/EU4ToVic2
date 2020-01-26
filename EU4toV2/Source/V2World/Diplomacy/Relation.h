@@ -9,20 +9,21 @@ namespace V2
 	class Relation
 	{
 	public:
-		Relation(const std::string& _target);
-		Relation(const std::string& _target, EU4::EU4RelationDetails& oldRelations);
+		Relation(std::string _target);
+		Relation(std::string _target, EU4::EU4RelationDetails& oldRelations);
 
-		void setLevel(int level);
+		void setLevel(int lvl);
 		void setRelations(int value) { relations = value; }
 		void increaseRelations(int value) { relations += value; }
 		void setInfluence(int value) { influence = value; }
 		void setAccess(bool access) { militaryAccess = access; }
-		std::string getTarget() const { return target; }
-		int getRelations() const { return relations; }
-		int getInfluence() const { return influence; }
-		int getLevel() const { return level; }
+		
+		[[nodiscard]] const auto& getTarget() const { return target; }
+		[[nodiscard]] auto getRelations() const { return relations; }
+		[[nodiscard]] auto getInfluence() const { return influence; }
+		[[nodiscard]] auto getLevel() const { return level; }
 
-		friend std::ostream& operator<<(std::ostream& output, const Relation& relations);
+		friend std::ostream& operator<<(std::ostream& output, const Relation& relation);
 
 	private:
 		std::string target;

@@ -11,32 +11,33 @@
 
 namespace V2
 {
-	enum class addRegimentToArmyResult {success, retry, fail};
+	enum class AddRegimentToArmyResult {success, retry, fail};
 
 	class Army // also Navy
 	{
 	public:
 		Army(const EU4::EU4Army& eu4Army,
-			const std::string& _tag,
+			std::string _tag,
 			bool civilized, 
 			const mappers::RegimentCostsMapper& regimentCostsMapper, 
-			std::map<int, std::shared_ptr<V2::Province>> allProvinces,
+			std::map<int, std::shared_ptr<Province>> allProvinces,
 			const mappers::ProvinceMapper& provinceMapper,
 			const mappers::PortProvinces& portProvincesMapper, 
 			std::map<REGIMENTTYPE, int>& unitNameCount,
 			const std::string& localAdjective);
 
 		std::map<REGIMENTTYPE, double>& getArmyRemainders() { return armyRemainders; }
-		bool hasRegimentsOfType(REGIMENTTYPE chosenType) const;
-		double getRegimentRemainder(REGIMENTTYPE chosenType) const;
-		void addRegimentRemainder(REGIMENTTYPE chosenType, double value) { armyRemainders[chosenType] += value; }
-		bool success() const { return created; }
+		[[nodiscard]] bool hasRegimentsOfType(REGIMENTTYPE chosenType) const;
+		[[nodiscard]] double getRegimentRemainder(REGIMENTTYPE chosenType) const;
+		[[nodiscard]] auto success() const { return created; }
 		
+		void addRegimentRemainder(const REGIMENTTYPE chosenType, const double value) { armyRemainders[chosenType] += value; }
+
 		friend std::ostream& operator<<(std::ostream& output, const Army& army);		
 
-		addRegimentToArmyResult addRegimentToArmy(
+		AddRegimentToArmyResult addRegimentToArmy(
 			REGIMENTTYPE chosenType,
-			std::map<int, std::shared_ptr<V2::Province>> allProvinces,
+			const std::map<int, std::shared_ptr<Province>>& allProvinces,
 			const mappers::ProvinceMapper& provinceMapper,
 			const mappers::PortProvinces& portProvincesMapper,
 			std::map<REGIMENTTYPE, int>& unitNameCount,
@@ -44,17 +45,18 @@ namespace V2
 
 		static std::vector<int> getPortProvinces(
 			const std::vector<int>& locationCandidates,
-			std::map<int, std::shared_ptr<V2::Province>> allProvinces,
+			std::map<int, std::shared_ptr<Province>> allProvinces,
 			const mappers::PortProvinces& portProvincesMapper);
 
 	private:
-		REGIMENTTYPE pickCategory(EU4::REGIMENTCATEGORY incCategory, bool civilized);
-		std::optional<int> getProbabilisticHomeProvince(REGIMENTTYPE chosenType) const;
+		[[nodiscard]] std::optional<int> getProbabilisticHomeProvince(REGIMENTTYPE chosenType) const;
 		void blockHomeProvince(int blocked);
-		static std::shared_ptr<V2::Province> pickRandomPortProvince(std::vector<int> homeCandidates, std::map<int, std::shared_ptr<V2::Province>> allProvinces);
-		static bool provinceRegimentCapacityPredicate(std::shared_ptr<V2::Province> prov1, std::shared_ptr<V2::Province> prov2);
-		static std::shared_ptr<V2::Province> getProvinceForExpeditionaryArmy(std::map<int, std::shared_ptr<V2::Province>> allProvinces, const std::string& tag);
-		static std::string getRegimentName(REGIMENTTYPE chosenType, std::map<REGIMENTTYPE, int>& unitNameCount, const std::string& localisation);
+
+		static REGIMENTTYPE pickCategory(EU4::REGIMENTCATEGORY incCategory, bool civilized);
+		static std::shared_ptr<Province> pickRandomPortProvince(const std::vector<int>& homeCandidates, const std::map<int, std::shared_ptr<Province>>& allProvinces);
+		static bool provinceRegimentCapacityPredicate(std::shared_ptr<Province> prov1, std::shared_ptr<Province> prov2);
+		static std::shared_ptr<Province> getProvinceForExpeditionaryArmy(const std::map<int, std::shared_ptr<Province>>& allProvinces, const std::string& tag);
+		static std::string getRegimentName(REGIMENTTYPE chosenType, std::map<REGIMENTTYPE, int>& unitNameCount, const std::string& localAdjective);
 		static int pickRandomProvinceID(std::vector<int> homeCandidates);
 				
 		std::string name;

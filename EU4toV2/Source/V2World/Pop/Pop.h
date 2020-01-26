@@ -9,10 +9,10 @@ namespace V2
 	class Pop
 	{
 	public:
-		Pop(const std::string& _type, int _size, const std::string& _culture, const std::string& _religion);
-		Pop(const std::string& _type, const mappers::MapperPop& mapperPop);
+		Pop(std::string _type, int _size, std::string _culture, std::string _religion);
+		Pop(std::string _type, const mappers::MapperPop& mapperPop);
 
-		bool combine(std::shared_ptr<Pop> rhs);
+		bool combine(const Pop& rhs);
 		void changeSize(int delta) { size += delta; }
 		void incrementSupportedRegimentCount() { supportedRegiments++; }
 		void setCulture(std::string _culture) { culture = _culture; }

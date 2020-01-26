@@ -17,9 +17,9 @@ namespace V2
 		void output() const;
 		void addAgreement(const Agreement& agreement) { agreements.push_back(agreement); }
 		void convertDiplomacy(
-		std::vector<EU4::EU4Agreement> agreements,
-		const mappers::CountryMappings& countryMapper, 
-		std::map<std::string, std::shared_ptr<Country>>& countries);
+			std::vector<EU4::EU4Agreement> agreements,
+			const mappers::CountryMappings& countryMapper, 
+			std::map<std::string, std::shared_ptr<Country>>& countries);
 
 	private:
 		std::vector<Agreement> agreements;
@@ -30,12 +30,12 @@ namespace V2
 		std::map<std::string, int> masterCache;
 		std::map<std::string, std::set<std::string>> masterVassals;
 
-		void convertRelationsToInfluence(const std::map<std::string, std::shared_ptr<Country>>& countries);
+		static void convertRelationsToInfluence(const std::map<std::string, std::shared_ptr<Country>>& countries);
 		void reduceVassalPrestige(const std::map<std::string, std::shared_ptr<Country>>& countries);
-		void processVassal(Relation& r1, Relation& r2);
-		void processTributary(Relation& r1, Relation& r2);
-		void processOnesider(Relation& r1);
-		void processDoublesider(Relation& r1, Relation& r2);
+		static void processVassal(Relation& r1, Relation& r2);
+		static void processTributary(Relation& r1, Relation& r2);
+		static void processOnesider(Relation& r1);
+		static void processDoublesider(Relation& r1, Relation& r2);
 		void storeDevValues(const Country& country1, const Country& country2);
 	};
 }

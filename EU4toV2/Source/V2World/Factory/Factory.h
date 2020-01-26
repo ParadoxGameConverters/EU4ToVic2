@@ -10,15 +10,16 @@ namespace V2
 	{
 	public:
 		Factory() = default;
-		explicit Factory(mappers::FactoryType& fType) { factoryType = fType; }
+		explicit Factory(const mappers::FactoryType& fType) { factoryType = fType; }
+		
 		void increaseLevel() { level++; }
 
-		bool requiresCoastal() const { return factoryType.getCoastal(); }
-		std::string getRequiredTech() const { return factoryType.getRequiredTech(); }
-		std::string getRequiredInvention() const { return factoryType.getRequiredInvention(); }
-		std::string getTypeName() const { return factoryType.getName(); }
-		std::map<std::string, double> getInputs() const { return factoryType.getInputs(); }
-		std::string getOutputs() const { return factoryType.getOutputs(); };
+		[[nodiscard]] auto requiresCoastal() const { return factoryType.getCoastal(); }
+		[[nodiscard]] const auto& getRequiredTech() const { return factoryType.getRequiredTech(); }
+		[[nodiscard]] const auto& getRequiredInvention() const { return factoryType.getRequiredInvention(); }
+		[[nodiscard]] const auto& getTypeName() const { return factoryType.getName(); }
+		[[nodiscard]] const auto& getInputs() const { return factoryType.getInputs(); }
+		[[nodiscard]] const auto& getOutputs() const { return factoryType.getOutputs(); };
 
 		friend std::ostream& operator<<(std::ostream& output, const Factory& factory);
 

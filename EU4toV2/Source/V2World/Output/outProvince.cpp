@@ -54,7 +54,7 @@ std::ostream& V2::operator<<(std::ostream& output, const Province& province)
 	return output;
 }
 
-std::ostream& V2::operator<<(std::ostream& output, const std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>>& pops)
+std::ostream& V2::operator<<(std::ostream& output, const std::optional<std::pair<int, std::vector<std::shared_ptr<Pop>>>>& pops)
 {
 	if (!pops) return output;
 	if (!pops->first) return output;

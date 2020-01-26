@@ -8,7 +8,7 @@
 void V2::MappingChecker::check(const EU4::World& sourceWorld,
 	const mappers::ProvinceMapper& provinceMapper,
 	const mappers::ReligionMapper& religionMapper,
-	const mappers::CultureMapper& cultureMapper)
+	const mappers::CultureMapper& cultureMapper) const
 {
 	LOG(LogLevel::Info) << "-> Checking all Land Provinces Mapped (and may kraken take the rest)";
 	checkAllEU4ProvincesMapped(sourceWorld, provinceMapper);
@@ -19,7 +19,7 @@ void V2::MappingChecker::check(const EU4::World& sourceWorld,
 }
 
 
-void V2::MappingChecker::checkAllEU4ProvincesMapped(const EU4::World& sourceWorld, const mappers::ProvinceMapper& provinceMapper) const
+void V2::MappingChecker::checkAllEU4ProvincesMapped(const EU4::World& sourceWorld, const mappers::ProvinceMapper& provinceMapper)
 {
 	for (const auto& eu4province : sourceWorld.getProvinces())
 	{
@@ -31,7 +31,7 @@ void V2::MappingChecker::checkAllEU4ProvincesMapped(const EU4::World& sourceWorl
 	}
 }
 
-void V2::MappingChecker::checkAllEU4ReligionsMapped(const EU4::World& sourceWorld, const mappers::ReligionMapper& religionMapper) const
+void V2::MappingChecker::checkAllEU4ReligionsMapped(const EU4::World& sourceWorld, const mappers::ReligionMapper& religionMapper)
 {
 	for (const auto& EU4Religion : sourceWorld.getReligions().getAllReligions())
 	{
@@ -42,7 +42,7 @@ void V2::MappingChecker::checkAllEU4ReligionsMapped(const EU4::World& sourceWorl
 	}
 }
 
-void V2::MappingChecker::checkAllEU4CulturesMapped(const EU4::World& sourceWorld, const mappers::CultureMapper& cultureMapper) const
+void V2::MappingChecker::checkAllEU4CulturesMapped(const EU4::World& sourceWorld, const mappers::CultureMapper& cultureMapper)
 {
 	for (const auto& cultureItr : sourceWorld.getCultureGroupsMapper().getCultureToGroupMap())
 	{

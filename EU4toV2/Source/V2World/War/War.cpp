@@ -54,6 +54,7 @@ bool V2::War::loadWar(const EU4::War& eu4War,
 		details.targetTag.clear();
 	}
 
+	// we should map the target province to something, or reset it to zero if we cannot.
 	const auto& ifProvinceID = provinceMapper.getVic2ProvinceNumbers(details.targetProvinceID);
 	!ifProvinceID.empty() ? details.targetProvinceID = ifProvinceID[0] : details.targetProvinceID = 0;
 	return true;
@@ -64,6 +65,7 @@ std::optional<std::string> V2::War::translateActor(
 	const mappers::CountryMappings & countryMapper,
 	std::map<std::string, std::shared_ptr<Country>> & countries)
 {
+	// We need a war party that is not dead, ie. haven't died during province remap.
 	auto ifV2Tag = countryMapper.getV2Tag(actor);
 	if (!ifV2Tag) return std::nullopt;
 	auto V2Tag = *ifV2Tag;

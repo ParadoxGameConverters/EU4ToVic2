@@ -43,8 +43,8 @@ namespace V2
 	{
 	public:
 		CountryDetails() = default;
-		CountryDetails(const std::string& _filename);
-		CountryDetails(std::istream& theStream);
+		explicit CountryDetails(std::string _filename);
+		explicit CountryDetails(std::istream& theStream);
 
 		// These values are open to ease management.
 		// This is a storage container for V2::Country.

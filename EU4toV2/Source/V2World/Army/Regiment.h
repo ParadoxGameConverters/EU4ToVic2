@@ -44,13 +44,13 @@ namespace V2
 	class Regiment // also Ship
 	{
 	public:
-		Regiment(REGIMENTTYPE regimentType);
+		explicit Regiment(REGIMENTTYPE regimentType);
 
 		void setName(const std::string& _name) { name = _name; }
-		void setHome(int newHome) { homeProvinceID = newHome; }
+		void setHome(const int newHome) { homeProvinceID = newHome; }
 
-		bool getShip() const { return isShip; }
-		REGIMENTTYPE getType()	const { return regimentType; }
+		[[nodiscard]] auto getShip() const { return isShip; }
+		[[nodiscard]] auto getType()	const { return regimentType; }
 
 		friend std::ostream& operator<<(std::ostream& output, const Regiment& regiment);
 

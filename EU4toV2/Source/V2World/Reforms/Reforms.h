@@ -16,7 +16,7 @@ namespace V2
 	{
 	public:
 		Reforms() = default;
-		Reforms(const CountryDetails& details, std::shared_ptr<EU4::Country>);
+		Reforms(const CountryDetails& details, const EU4::Country& srcCountry);
 		
 		friend std::ostream& operator<<(std::ostream& output, const Reforms& reforms);
 

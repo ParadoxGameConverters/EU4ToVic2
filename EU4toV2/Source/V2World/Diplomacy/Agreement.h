@@ -9,10 +9,11 @@ namespace V2
 	class Agreement
 	{
 	public:
-		Agreement(const std::string& _first, const std::string& _second, const std::string& _type, const date& _start_date);
-		const std::string& getType() const { return type; }
+		Agreement(std::string _first, std::string _second, std::string _type, const date& _start_date);
 		
-		friend std::ostream& operator<<(std::ostream& output, const Agreement& theAgreement);
+		[[nodiscard]] const auto& getType() const { return type; }
+		
+		friend std::ostream& operator<<(std::ostream& output, const Agreement& agreement);
 
 	private:
 		std::string type;

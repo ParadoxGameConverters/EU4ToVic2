@@ -17,52 +17,53 @@ class Configuration: commonItems::parser
 		Configuration& operator=(Configuration&&) = default;
 		~Configuration() = default;
 
-		void instantiate(std::istream& theStream, bool (*doesFolderExist)(const std::string& path), bool (*doesFileExist)(const std::string& path));
-
-		std::string getEU4Path() { return EU4Path; }
-		std::string getEU4DocumentsPath() const { return EU4DocumentsPath; }
-		int getEU4RandomSeed() const { return eu4Seed; }
-		std::string getSteamWorkshopPath() const { return SteamWorkshopPath; }
-		std::string getCK2ExportPath() const { return CK2ExportPath; }
-		std::string getVic2Path() { return Vic2Path; }
-		std::string getVic2DocumentsPath() { return Vic2DocumentsPath; }
-		std::string getResetProvinces() { return resetProvinces; }
-		double getMaxLiteracy() { return MaxLiteracy; }
-		double getLibertyThreshold() { return libertyThreshold; }
-		enum class DEADCORES { LeaveAll = 1, DeadCores = 2, AllCores = 3 };
-		enum class POPSHAPES { Vanilla = 1, PopShaping = 2, Extreme = 3};
-		enum class COREHANDLES { DropNone = 1, DropNational = 2, DropUnions = 3, DropAll = 4};
-		enum class EUROCENTRISM { VanillaImport = 1, EuroCentric = 2 };
-		POPSHAPES getPopShaping() { return popShaping; }
-		COREHANDLES getCoreHandling() { return coreHandling; }
-		DEADCORES getRemoveType() { return removeType; }
-		EUROCENTRISM getEuroCentrism() { return euroCentric; }
-		double getPopShapingFactor() { return popShapingFactor; }
-		bool getDebug() const { return debug; }
-		bool getRandomiseRgos() const { return randomiseRgos; }
-
-		const EU4::Version& getEU4Version() const { return version; }
-		date getFirstEU4Date() const { return firstEU4Date; }
-		date getLastEU4Date() const { return lastEU4Date; }
-		date getStartEU4Date() const { return startEU4Date; }
-		std::string getOutputName() { return outputName; }
-		std::vector<std::string> getEU4Mods() { return EU4Mods; }
+		void instantiate(std::istream& theStream, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
 
 		void setFirstEU4Date(date _firstDate) { firstEU4Date = _firstDate; }
 		void setLastEU4Date(date _lastDate) { lastEU4Date = _lastDate; }
 		void setStartEU4Date(date _startDate) { startEU4Date = _startDate; }
-		void setOutputName(std::string name) { outputName = name; }
-		void addEU4Mod(std::string mod) { EU4Mods.push_back(mod); }
-		void setEU4Version(EU4::Version _version) { version = _version; }
-		void setEU4RandomSeed(int s) { eu4Seed = s; }
-		void setActiveDLCs(std::vector<std::string> _activeDLCs) { activeDLCs = _activeDLCs; }
+		void setOutputName(const std::string& name) { outputName = name; }
+		void addEU4Mod(const std::string& mod) { EU4Mods.push_back(mod); }
+		void setEU4Version(const EU4::Version& _version) { version = _version; }
+		void setEU4RandomSeed(int seed) { eu4Seed = seed; }
+		void setActiveDLCs(const std::vector<std::string>& _activeDLCs) { activeDLCs = _activeDLCs; }
 
-		bool wasDLCActive(const std::string& DLC);
+		enum class DEADCORES { LeaveAll = 1, DeadCores = 2, AllCores = 3 };
+		enum class POPSHAPES { Vanilla = 1, PopShaping = 2, Extreme = 3 };
+		enum class COREHANDLES { DropNone = 1, DropNational = 2, DropUnions = 3, DropAll = 4 };
+		enum class EUROCENTRISM { VanillaImport = 1, EuroCentric = 2 };
+
+		[[nodiscard]] auto getPopShaping() const { return popShaping; }
+		[[nodiscard]] auto getCoreHandling() const { return coreHandling; }
+		[[nodiscard]] auto getRemoveType() const { return removeType; }
+		[[nodiscard]] auto getEuroCentrism() const { return euroCentric; }
+		[[nodiscard]] auto getEU4RandomSeed() const { return eu4Seed; }
+		[[nodiscard]] auto getMaxLiteracy() const { return MaxLiteracy; }
+		[[nodiscard]] auto getLibertyThreshold() const { return libertyThreshold; }
+		[[nodiscard]] auto getPopShapingFactor() const { return popShapingFactor; }
+		[[nodiscard]] auto getDebug() const { return debug; }
+		[[nodiscard]] auto getRandomiseRgos() const { return randomiseRgos; }
+
+		[[nodiscard]] const auto& getEU4Path() const { return EU4Path; }
+		[[nodiscard]] const auto& getEU4DocumentsPath() const { return EU4DocumentsPath; }
+		[[nodiscard]] const auto& getSteamWorkshopPath() const { return SteamWorkshopPath; }
+		[[nodiscard]] const auto& getCK2ExportPath() const { return CK2ExportPath; }
+		[[nodiscard]] const auto& getVic2Path() const { return Vic2Path; }
+		[[nodiscard]] const auto& getVic2DocumentsPath() const { return Vic2DocumentsPath; }
+		[[nodiscard]] const auto& getResetProvinces() const { return resetProvinces; }
+		[[nodiscard]] const auto& getEU4Version() const { return version; }
+		[[nodiscard]] const auto& getFirstEU4Date() const { return firstEU4Date; }
+		[[nodiscard]] const auto& getLastEU4Date() const { return lastEU4Date; }
+		[[nodiscard]] const auto& getStartEU4Date() const { return startEU4Date; }
+		[[nodiscard]] const auto& getOutputName() const { return outputName; }
+		[[nodiscard]] const auto& getEU4Mods() const { return EU4Mods; }
+
+		[[nodiscard]] bool wasDLCActive(const std::string& DLC) const;
 
 	private:
-		void verifyEU4Path(const std::string& path, bool (*doesFolderExist)(const std::string& path), bool (*doesFileExist)(const std::string& path));
-		void verifyVic2Path(const std::string& path, bool (*doesFolderExist)(const std::string& path), bool (*doesFileExist)(const std::string& path));
-		void verifyVic2DocumentsPath(const std::string& path, bool (*doesFolderExist)(const std::string& path));
+		static void verifyEU4Path(const std::string& path, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
+		static void verifyVic2Path(const std::string& path, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
+		static void verifyVic2DocumentsPath(const std::string& path, bool (*doesFolderExist)(const std::string& path2));
 
 		// options from configuration.txt
 		std::string EU4Path;
@@ -100,8 +101,6 @@ class ConfigurationFile: commonItems::parser
 	public:
 		explicit ConfigurationFile(const std::string& filename);
 		~ConfigurationFile() = default;
-
-	private:
 		ConfigurationFile() = delete;
 		ConfigurationFile(const ConfigurationFile&) = delete;
 		ConfigurationFile(ConfigurationFile&&) = delete;

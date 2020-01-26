@@ -1,7 +1,7 @@
 #include "State.h"
 #include "../Province/Province.h"
 
-V2::State::State(int newId, std::shared_ptr<Province> firstProvince): id(newId)
+V2::State::State(const int newId, std::shared_ptr<Province> firstProvince): id(newId)
 {
 	provinces.push_back(firstProvince);
 }
@@ -46,7 +46,7 @@ double V2::State::getSuppliedInputs(std::shared_ptr<Factory> factory) const
 	return static_cast<double>(totalSupplied) / numNeeds;
 }
 
-bool V2::State::provInState(int id) const
+bool V2::State::provInState(const int id) const
 {
 	for (const auto& province: provinces) if (province->getID() == id) return true;
 	return false;

@@ -25,9 +25,9 @@ void V2::ProvinceNameParser::importProvinceLocalizations(const std::string& file
 		getline(locFile, line);
 		if (!(line.substr(0, 4) == "PROV") || !isdigit(line[4])) continue;
 
-		int position = line.find_first_of(';');
-		int provID = stoi(line.substr(4, position - 4));
-		std::string name = line.substr(position + 1, line.find_first_of(';', position + 1) - position - 1);
+		const auto position = line.find_first_of(';');
+		const auto provID = stoi(line.substr(4, position - 4));
+		const auto name = line.substr(position + 1, line.find_first_of(';', position + 1) - position - 1);
 
 		provinceNames.insert(std::make_pair(provID, name));
 	}
@@ -36,7 +36,7 @@ void V2::ProvinceNameParser::importProvinceLocalizations(const std::string& file
 
 std::optional<std::string> V2::ProvinceNameParser::getProvinceName(int provID) const
 {
-	auto name = provinceNames.find(provID);
+	const auto& name = provinceNames.find(provID);
 	if (name != provinceNames.end()) return name->second;
 	return std::nullopt;
 }

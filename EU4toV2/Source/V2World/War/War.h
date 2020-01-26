@@ -18,12 +18,13 @@ namespace V2
 			const mappers::ProvinceMapper& provinceMapper,
 			const mappers::CountryMappings& countryMapper,
 			std::map<std::string, std::shared_ptr<Country>>& countries);
+		
 		[[nodiscard]] std::string generateFileName() const;
 
 		friend std::ostream& operator<<(std::ostream& output, const War& war);
 
 	private:
-		EU4::WarDetails details; // Reusing the class for storage.
+		EU4::WarDetails details; // Reusing the class for storage. It was only slightly used anyways.
 		std::string name;
 		std::vector<std::string> attackers; // order maters! first is primary.
 		std::vector<std::string> defenders; // order maters! first is primary.
