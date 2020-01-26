@@ -6,12 +6,12 @@ mappers::Bucket::Bucket(std::istream& theStream)
 {
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString nameStr(theStream);
+			const commonItems::singleString nameStr(theStream);
 			name = nameStr.getString();
 		});
 	registerKeyword("climate", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString climateStr(theStream);
+			const commonItems::singleString climateStr(theStream);
 			if (climateStr.getString() == "any") 
 			{
 				wildClimate = true;
@@ -23,7 +23,7 @@ mappers::Bucket::Bucket(std::istream& theStream)
 		});
 	registerKeyword("terrain", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString terrainStr(theStream);
+			const commonItems::singleString terrainStr(theStream);
 			if (terrainStr.getString() == "any")
 			{
 				wildTerrain = true;
@@ -35,7 +35,7 @@ mappers::Bucket::Bucket(std::istream& theStream)
 		});
 	registerKeyword("fraction", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleDouble fractionDbl(theStream);
+			const commonItems::singleDouble fractionDbl(theStream);
 			fraction = fractionDbl.getDouble();
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
@@ -82,14 +82,15 @@ bool mappers::Bucket::match(const std::string& provClimate, const std::string& p
 void mappers::Bucket::shuffle(std::default_random_engine& shuffler)
 {
 	std::shuffle(provinces.begin(), provinces.end(), shuffler);
-	const auto numToShuffle = static_cast<int>(floor(0.5 + fraction * provinces.size()));
+	const auto numToShuffle = lround(fraction * provinces.size());
 	if (numToShuffle < 2)
 	{
 		LOG(LogLevel::Debug) << "Skipping empty bucket " << name;
 		return;
 	}
 	std::vector<std::string> rgos;
-	for (int i = 0; i < numToShuffle; ++i)
+	rgos.reserve(numToShuffle);
+	for (auto i = 0; i < numToShuffle; ++i)
 	{
 		rgos.push_back(provinces[i]->getRgoType());
 	}

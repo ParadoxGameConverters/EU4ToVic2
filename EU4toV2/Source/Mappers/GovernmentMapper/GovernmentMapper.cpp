@@ -29,16 +29,10 @@ void mappers::GovernmentMapper::registerKeys()
 	registerRegex("[a-z0-9\\_]+", commonItems::ignoreItem);
 }
 
-std::string mappers::GovernmentMapper::matchGovernment(const std::string& sourceGovernment) const
+std::optional<std::string> mappers::GovernmentMapper::matchGovernment(const std::string& sourceGovernment) const
 {
-	auto mapping = governmentMap.find(sourceGovernment);
-	if (mapping != governmentMap.end())
-	{
-		return mapping->second;
-	}
-	else
-	{
-		LOG(LogLevel::Warning) << "No government mapping defined for " << sourceGovernment;
-		return "";
-	}
+	const auto& mapping = governmentMap.find(sourceGovernment);
+	if (mapping != governmentMap.end()) return mapping->second;
+	LOG(LogLevel::Warning) << "No government mapping defined for " << sourceGovernment;
+	return std::nullopt;
 }

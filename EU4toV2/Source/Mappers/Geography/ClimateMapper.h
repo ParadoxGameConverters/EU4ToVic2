@@ -10,11 +10,13 @@ namespace mappers
 	{
 	public:
 		ClimateMapper();
-		ClimateMapper(std::istream& theStream);
-		const std::map<std::string, std::vector<int>>& getClimateMap() const { return climateMap; }
+		explicit ClimateMapper(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getClimateMap() const { return climateMap; }
 
 	private:
 		void registerKeys();
+		
 		std::map<std::string, std::vector<int>> climateMap;
 		bool mild_climate = false;
 		bool temperate_climate = false;

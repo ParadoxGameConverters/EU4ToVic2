@@ -10,8 +10,9 @@ namespace mappers
 	class LeaderTraitTypes : commonItems::parser
 	{
 	public:
-		LeaderTraitTypes(std::istream& theStream);
-		std::vector<std::pair<std::string, LeaderTrait>> getTraits() const { return traits; }
+		explicit LeaderTraitTypes(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getTraits() const { return traits; }
 
 	private:
 		std::vector<std::pair<std::string, LeaderTrait>> traits;

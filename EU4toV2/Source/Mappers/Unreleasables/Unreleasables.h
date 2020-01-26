@@ -10,7 +10,8 @@ namespace mappers
 	{
 	public:
 		Unreleasables();
-		bool isTagReleasable(const std::string& tag) const;
+		
+		[[nodiscard]] bool isTagReleasable(const std::string& tag) const;
 
 	private:
 		std::set<std::string> unreleasables;

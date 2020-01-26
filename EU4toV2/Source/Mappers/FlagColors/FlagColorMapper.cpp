@@ -20,9 +20,9 @@ mappers::FlagColorMapper::FlagColorMapper(std::istream& theStream)
 
 void mappers::FlagColorMapper::registerKeys()
 {
-	registerKeyword("flag_color", [this](const std::string& sourceGov, std::istream& theStream)
+	registerKeyword("flag_color", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::Color theColor(theStream);
+			const commonItems::Color theColor(theStream);
 			flagColorMapping.push_back(theColor);
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
@@ -30,6 +30,6 @@ void mappers::FlagColorMapper::registerKeys()
 
 std::optional<commonItems::Color> mappers::FlagColorMapper::getFlagColorByIndex(int index) const
 {
-	if ((flagColorMapping.empty()) || (static_cast<long>(index) >= static_cast<long>(flagColorMapping.size()))) return std::nullopt;
+	if (flagColorMapping.empty() || static_cast<long>(index) >= static_cast<long>(flagColorMapping.size())) return std::nullopt;
 	return flagColorMapping[index];
 }

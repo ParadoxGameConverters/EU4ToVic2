@@ -10,13 +10,14 @@ namespace mappers
 	{
 	public:
 		FlagColorMapper();
-		FlagColorMapper(std::istream& theStream);
+		explicit FlagColorMapper(std::istream& theStream);
 
-		int getNumFlagColors() const { return flagColorMapping.size(); }
-		std::optional<commonItems::Color> getFlagColorByIndex(int index) const;
+		[[nodiscard]] auto getNumFlagColors() const { return flagColorMapping.size(); }
+		[[nodiscard]] std::optional<commonItems::Color> getFlagColorByIndex(int index) const;
 		
 	private:
 		void registerKeys();
+		
 		std::vector<commonItems::Color> flagColorMapping;
 	};
 };

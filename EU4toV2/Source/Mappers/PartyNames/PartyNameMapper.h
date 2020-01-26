@@ -12,12 +12,13 @@ namespace mappers
 	{
 	public:
 		PartyNameMapper();
-		PartyNameMapper(std::istream& theStream);
-		std::map<std::string, mappers::PartyName> getMap() const { return partyToLanguageMap; }
+		explicit PartyNameMapper(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getMap() const { return partyToLanguageMap; }
 
 	private:
 		void registerKeys();
-		std::map<std::string, mappers::PartyName> partyToLanguageMap;
+		std::map<std::string, PartyName> partyToLanguageMap;
 	};
 }
 

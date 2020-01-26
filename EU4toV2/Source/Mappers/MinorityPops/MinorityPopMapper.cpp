@@ -20,8 +20,8 @@ void mappers::MinorityPopMapper::registerKeys()
 {
 	registerKeyword("minority", [this](const std::string& unused, std::istream& theStream)
 		{
-			MinorityPop minPop(theStream);
-			minorityPopMap.push_back(make_pair(minPop.getCulture(), minPop.getReligion()));
+			const MinorityPop minPop(theStream);
+			minorityPopMap.emplace_back(make_pair(minPop.getCulture(), minPop.getReligion()));
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 }
@@ -30,7 +30,7 @@ bool mappers::MinorityPopMapper::blankMajorityFromMinority(V2::Pop& pop) const
 {
 	// We are blanking majority part from a minority pop so that we may apply any
 	// religion to gipsies or any culture to mormons.
-	for (auto minorityItr : minorityPopMap)
+	for (const auto& minorityItr : minorityPopMap)
 	{
 		if (pop.getCulture() == minorityItr.first && pop.getReligion() == minorityItr.second)
 		{

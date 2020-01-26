@@ -8,9 +8,10 @@ namespace mappers
 	class ReligionMapping: commonItems::parser
 	{
 	public:
-		ReligionMapping(std::istream& theStream);
-		std::string getVic2Religion() const { return vic2Religion; }
-		std::vector<std::string> getEU4Religions() const { return eu4Religions; }
+		explicit ReligionMapping(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getVic2Religion() const { return vic2Religion; }
+		[[nodiscard]] const auto& getEU4Religions() const { return eu4Religions; }
 
 	private:
 		std::string vic2Religion;

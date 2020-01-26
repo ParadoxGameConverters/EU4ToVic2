@@ -14,8 +14,10 @@ namespace mappers
 	{
 	public:
 		BucketList();
+
+		[[nodiscard]] auto empty() const { return buckets.empty(); }
+
 		void putInBucket(std::shared_ptr<V2::Province> prov);
-		bool empty() const { return buckets.empty(); }
 		void shuffle();
 
 	private:

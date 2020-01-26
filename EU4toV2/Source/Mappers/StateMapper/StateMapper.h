@@ -11,8 +11,9 @@ namespace mappers
 	{
 	public:
 		StateMapper();
-		StateMapper(std::istream& theStream);
-		std::set<int> getAllProvincesInState(int province) const;
+		explicit StateMapper(std::istream& theStream);
+		
+		[[nodiscard]] std::set<int> getAllProvincesInState(int province) const;
 
 	private:
 		void registerKeys();

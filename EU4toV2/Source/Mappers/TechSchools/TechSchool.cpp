@@ -6,27 +6,27 @@ mappers::TechSchool::TechSchool(std::istream& theStream)
 {
 	registerKeyword("army_tech_research_bonus", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleDouble bonusDbl(theStream);
+			const commonItems::singleDouble bonusDbl(theStream);
 			armyBonus = bonusDbl.getDouble();
 		});
 	registerKeyword("commerce_tech_research_bonus", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleDouble bonusDbl(theStream);
+			const commonItems::singleDouble bonusDbl(theStream);
 			commerceBonus = bonusDbl.getDouble();
 		});
 	registerKeyword("culture_tech_research_bonus", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleDouble bonusDbl(theStream);
+			const commonItems::singleDouble bonusDbl(theStream);
 			cultureBonus = bonusDbl.getDouble();
 		});
 	registerKeyword("industry_tech_research_bonus", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleDouble bonusDbl(theStream);
+			const commonItems::singleDouble bonusDbl(theStream);
 			industryBonus = bonusDbl.getDouble();
 		});
 	registerKeyword("navy_tech_research_bonus", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleDouble bonusDbl(theStream);
+			const commonItems::singleDouble bonusDbl(theStream);
 			navyBonus = bonusDbl.getDouble();
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
@@ -36,11 +36,11 @@ mappers::TechSchool::TechSchool(std::istream& theStream)
 }
 
 double mappers::TechSchool::calculateComparisonScore(
-	double armyInvestment, 
-	double commerceInvestment, 
-	double cultureInvestment, 
-	double industryInvestment, 
-	double navyInvestment) const
+	const double armyInvestment,
+	const double commerceInvestment,
+	const double cultureInvestment,
+	const double industryInvestment,
+	const double navyInvestment) const
 {
 	return std::abs(armyInvestment - armyBonus - 0.2) +
 		std::abs(navyInvestment - navyBonus - 0.2) +

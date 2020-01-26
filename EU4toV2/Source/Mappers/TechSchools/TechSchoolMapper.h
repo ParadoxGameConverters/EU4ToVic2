@@ -10,8 +10,9 @@ namespace mappers
 	{
 	public:
 		TechSchoolMapper();
-		TechSchoolMapper(std::istream& theStream);
-		std::string findBestTechSchool(
+		explicit TechSchoolMapper(std::istream& theStream);
+		
+		[[nodiscard]] std::string findBestTechSchool(
 			double armyInvestment, 
 			double commerceInvestment, 
 			double cultureInvestment, 
@@ -20,6 +21,7 @@ namespace mappers
 
 	private:
 		void registerKeys();
+		
 		std::map<std::string, TechSchool> techSchools;
 	};
 }

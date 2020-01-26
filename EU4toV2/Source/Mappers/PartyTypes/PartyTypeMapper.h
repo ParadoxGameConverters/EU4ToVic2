@@ -13,8 +13,9 @@ namespace mappers
 	{
 	public:
 		PartyTypeMapper();
-		PartyTypeMapper(std::istream& theStream);
-		std::optional<mappers::PartyType> getPartyTypeByIdeology(const std::string& ideology) const;
+		explicit PartyTypeMapper(std::istream& theStream);
+		
+		[[nodiscard]] std::optional<PartyType> getPartyTypeByIdeology(const std::string& ideology) const;
 
 	private:
 		void registerKeys();

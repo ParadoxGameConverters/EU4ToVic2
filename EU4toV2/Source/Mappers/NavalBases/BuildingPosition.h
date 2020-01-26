@@ -9,8 +9,9 @@ namespace mappers
 	{
 	public:
 		BuildingPosition() = default;
-		BuildingPosition(std::istream& theStream);
-		bool getFound() const { return found; }
+		explicit BuildingPosition(std::istream& theStream);
+		
+		[[nodiscard]] auto getFound() const { return found; }
 
 	private:
 		bool found = false;

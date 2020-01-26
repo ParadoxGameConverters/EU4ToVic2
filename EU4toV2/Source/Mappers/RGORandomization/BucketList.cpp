@@ -11,7 +11,7 @@ mappers::BucketList::BucketList()
 
 	registerKeyword("bucket", [this](const std::string& key, std::istream& theStream) 
 		{
-			Bucket newBucket(theStream);
+			const Bucket newBucket(theStream);
 			buckets.push_back(newBucket);
 		}
 	);

@@ -11,12 +11,14 @@ namespace mappers
 	{
 	public:
 		LeaderTraitMapper();
-		LeaderTraitMapper(std::istream& theStream);
-		std::optional<std::string> getPersonality(const int& fire, const int& shock, const int& maneuver, const int& siege) const;
-		std::optional<std::string> getBackground(const int& fire, const int& shock, const int& maneuver, const int& siege) const;
+		explicit LeaderTraitMapper(std::istream& theStream);
+		
+		[[nodiscard]] std::optional<std::string> getPersonality(int fire, int shock, int maneuver, int siege) const;
+		[[nodiscard]] std::optional<std::string> getBackground(int fire, int shock, int maneuver, int siege) const;
 
 	private:
 		void registerKeys();
+		
 		std::vector<std::pair<std::string, LeaderTrait>> personalities;
 		std::vector<std::pair<std::string, LeaderTrait>> backgrounds;
 	};

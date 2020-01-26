@@ -8,9 +8,10 @@ namespace mappers
 	class TechGroups: commonItems::parser
 	{
 	public:
-		TechGroups(std::istream& theStream);
-		int getWesternization() const { return westernization; }
-		int getLiteracyBoost() const { return literacyBoost; }
+		explicit TechGroups(std::istream& theStream);
+		
+		[[nodiscard]] auto getWesternization() const { return westernization; }
+		[[nodiscard]] auto getLiteracyBoost() const { return literacyBoost; }
 
 	private:
 		// Values range 0-10. 5 is default.

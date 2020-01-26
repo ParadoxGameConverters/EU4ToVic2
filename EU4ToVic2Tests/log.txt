@@ -1,0 +1,3 @@
+2020-01-26 18:46:04    [INFO] Parsing EU4 colonial regions
+2020-01-26 18:46:04   [ERROR] Could not open /common/colonial_regions/00_colonial_regions.txt for parsing.
+2020-01-26 18:46:04    [INFO] 	-> Using version 1.0.0.0 mappings

@@ -10,18 +10,22 @@ namespace mappers
 	{
 	public:
 		FactoryType() = default;
-		FactoryType(std::istream& theStream);
-		bool getCoastal() const { return coastal; }
-		std::string getRequiredTech() const { return requiredTech; }
-		std::string getRequiredInvention() const { return requiredInvention; }
-		std::map<std::string, double> getInputs() const { return inputs; }
-		std::string getOutputs() const { return outputs; }
-		int getStartingCount() const { return startingCount; }
+		explicit FactoryType(std::istream& theStream);
+		
 		void setStartingCount(int stcount) { startingCount = stcount; }
-		void setFactoryTypeName(std::string name) { factoryTypeName = name; }
-		std::string getName() const { return factoryTypeName; }
+		void setFactoryTypeName(const std::string& name) { factoryTypeName = name; }
 
-		void assignTechsAndCounts(const std::map<std::string, std::string>& factoryTechMap, const std::map<std::string, std::string>& factoryInventionMap, const std::map<std::string, int>& startingCounts);
+		[[nodiscard]] auto getCoastal() const { return coastal; }
+		[[nodiscard]] auto getStartingCount() const { return startingCount; }
+		[[nodiscard]] const auto& getRequiredTech() const { return requiredTech; }
+		[[nodiscard]] const auto& getRequiredInvention() const { return requiredInvention; }
+		[[nodiscard]] const auto& getInputs() const { return inputs; }
+		[[nodiscard]] const auto& getOutputs() const { return outputs; }
+		[[nodiscard]] const auto& getName() const { return factoryTypeName; }
+
+		void assignTechsAndCounts(const std::map<std::string, std::string>& factoryTechMap, 
+			const std::map<std::string, std::string>& factoryInventionMap, 
+			const std::map<std::string, int>& startingCounts);
 
 	private:
 		std::string factoryTypeName;

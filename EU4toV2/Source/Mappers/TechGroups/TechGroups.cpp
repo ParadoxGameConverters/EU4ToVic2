@@ -5,12 +5,12 @@ mappers::TechGroups::TechGroups(std::istream& theStream)
 {
 	registerKeyword("westernization", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleInt westernizationInt(theStream);
+			const commonItems::singleInt westernizationInt(theStream);
 			westernization = westernizationInt.getInt();
 		});
 	registerKeyword("literacy", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleInt literacyInt(theStream);
+			const commonItems::singleInt literacyInt(theStream);
 			literacyBoost = literacyInt.getInt();
 		});
 

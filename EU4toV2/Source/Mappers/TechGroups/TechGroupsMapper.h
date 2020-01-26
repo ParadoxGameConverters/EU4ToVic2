@@ -11,8 +11,8 @@ namespace mappers
 	public:
 		TechGroupsMapper();
 
-		int getWesternizationFromTechGroup(const std::string& techGroup) const;
-		int getLiteracyFromTechGroup(const std::string& ideaName) const;
+		[[nodiscard]] int getWesternizationFromTechGroup(const std::string& techGroupName) const;
+		[[nodiscard]] int getLiteracyFromTechGroup(const std::string& techGroupName) const;
 
 	private:
 		std::map<std::string, int> westernizations;

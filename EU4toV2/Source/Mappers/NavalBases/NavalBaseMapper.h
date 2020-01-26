@@ -10,8 +10,9 @@ namespace mappers
 	{
 	public:
 		NavalBaseMapper();
-		const std::set<int>& getNavalProvinces() const { return navalProvinces; }
-		bool isProvinceCoastal(int provID) const { return navalProvinces.count(provID) > 0; }
+		
+		[[nodiscard]] const auto& getNavalProvinces() const { return navalProvinces; }
+		[[nodiscard]] auto isProvinceCoastal(int provID) const { return navalProvinces.count(provID) > 0; }
 
 	private:
 		std::set<int> navalProvinces;

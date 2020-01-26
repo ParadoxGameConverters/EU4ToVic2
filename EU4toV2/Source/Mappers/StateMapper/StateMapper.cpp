@@ -35,7 +35,7 @@ void mappers::StateMapper::registerKeys()
 {
 	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::intList provinceList(theStream);
+			const commonItems::intList provinceList(theStream);
 
 			std::set<int> provinces;
 			for (auto province : provinceList.getInts()) provinces.insert(province);
@@ -43,9 +43,9 @@ void mappers::StateMapper::registerKeys()
 		});
 }
 
-std::set<int> mappers::StateMapper::getAllProvincesInState(int province) const
+std::set<int> mappers::StateMapper::getAllProvincesInState(const int province) const
 {
-	auto mapping = stateProvincesMap.find(province);
+	const auto& mapping = stateProvincesMap.find(province);
 	if (mapping != stateProvincesMap.end()) return mapping->second;
 	std::set<int> empty;
 	return empty;

@@ -10,7 +10,7 @@ mappers::NavalBaseMapper::NavalBaseMapper()
 
 	registerRegex("[0-9]+", [this](const std::string& provinceID, std::istream& theStream)
 		{
-			mappers::BuildingPosition possibleNaval(theStream);
+			const BuildingPosition possibleNaval(theStream);
 			if (possibleNaval.getFound()) navalProvinces.insert(stoi(provinceID));
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);

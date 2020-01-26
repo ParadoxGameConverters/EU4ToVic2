@@ -298,7 +298,8 @@ void V2::Country::determineGovernmentType(
 	const mappers::IdeaEffectMapper& ideaEffectMapper, 
 	const mappers::GovernmentMapper& governmentMapper)
 {
-	details.government = governmentMapper.matchGovernment(srcCountry->getGovernment());
+	const auto& possibleGovernment = governmentMapper.matchGovernment(srcCountry->getGovernment());
+	details.government = *possibleGovernment;
 
 	for (auto reformStr : srcCountry->getReforms())
 	{

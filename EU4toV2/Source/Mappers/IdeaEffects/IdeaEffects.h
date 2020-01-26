@@ -10,30 +10,30 @@ namespace mappers
 	public:
 		explicit IdeaEffects(std::istream& theStream);
 
-		[[nodiscard]] std::string getEnforce() const { return enforce; }
+		[[nodiscard]] const auto& getEnforce() const { return enforce; }
 
-		[[nodiscard]] int getArmy() const { return army - 5; }
-		[[nodiscard]] int getNavy() const { return navy - 5; }
-		[[nodiscard]] int getCommerce() const { return commerce - 5; }
-		[[nodiscard]] int getCulture() const { return culture - 5; }
-		[[nodiscard]] int getIndustry() const { return industry - 5; }
+		[[nodiscard]] auto getArmy() const { return army - 5; }
+		[[nodiscard]] auto getNavy() const { return navy - 5; }
+		[[nodiscard]] auto getCommerce() const { return commerce - 5; }
+		[[nodiscard]] auto getCulture() const { return culture - 5; }
+		[[nodiscard]] auto getIndustry() const { return industry - 5; }
 
-		[[nodiscard]] int getOrder() const { return order - 5; }
-		[[nodiscard]] int getLiberty() const { return liberty - 5; }
-		[[nodiscard]] int getEquality() const { return equality - 5; }
-		[[nodiscard]] int getLiteracy() const { return literacy - 5; }
+		[[nodiscard]] auto getOrder() const { return order - 5; }
+		[[nodiscard]] auto getLiberty() const { return liberty - 5; }
+		[[nodiscard]] auto getEquality() const { return equality - 5; }
+		[[nodiscard]] auto getLiteracy() const { return literacy - 5; }
 
-		[[nodiscard]] int getReactionary() const { return reactionary - 5; }
-		[[nodiscard]] int getLiberal() const { return liberal - 5; }
+		[[nodiscard]] auto getReactionary() const { return reactionary - 5; }
+		[[nodiscard]] auto getLiberal() const { return liberal - 5; }
 
-		[[nodiscard]] int getSlavery() const { return slavery - 5; }
-		[[nodiscard]] int getUpper_house_composition() const { return upper_house_composition - 5;  }
-		[[nodiscard]] int getVote_franchise() const { return vote_franchise - 5; }
-		[[nodiscard]] int getVoting_system() const { return voting_system - 5; }
-		[[nodiscard]] int getPublic_meetings() const { return public_meetings - 5; }
-		[[nodiscard]] int getPress_rights() const { return press_rights - 5;	}
-		[[nodiscard]] int getTrade_unions() const { return trade_unions - 5;	}
-		[[nodiscard]] int getPolitical_parties() const { return political_parties - 5; }
+		[[nodiscard]] auto getSlavery() const { return slavery - 5; }
+		[[nodiscard]] auto getUpper_house_composition() const { return upper_house_composition - 5;  }
+		[[nodiscard]] auto getVote_franchise() const { return vote_franchise - 5; }
+		[[nodiscard]] auto getVoting_system() const { return voting_system - 5; }
+		[[nodiscard]] auto getPublic_meetings() const { return public_meetings - 5; }
+		[[nodiscard]] auto getPress_rights() const { return press_rights - 5;	}
+		[[nodiscard]] auto getTrade_unions() const { return trade_unions - 5;	}
+		[[nodiscard]] auto getPolitical_parties() const { return political_parties - 5; }
 
 	private:
 		// Input values range 0-10. However, we return [-5 to 5] because working in [0 to 10] makes no sense internally.

@@ -21,7 +21,7 @@ void mappers::RegimentCostsMapper::registerKeys()
 {
 	registerRegex("[a-z_]+", [this](const std::string& regiment, std::istream& theStream)
 		{
-			commonItems::singleInt costStr(theStream);
+			const commonItems::singleInt costStr(theStream);
 			regimentCosts.insert(std::make_pair(regiment, costStr.getInt()));
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);

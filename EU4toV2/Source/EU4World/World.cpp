@@ -101,7 +101,7 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 		{
 			LOG(LogLevel::Info) << "-> Loading Map Area Data";
 			commonItems::ignoreItem(unused, theStream);
-			LOG(LogLevel::Info) << "<- Promptly Ignoring Map Area Data";
+			LOG(LogLevel::Info) << "XXX Promptly Ignoring Map Area Data.";
 		});
 	registerKeyword("active_war", [this](const std::string& unused, std::istream& theStream)
 		{
