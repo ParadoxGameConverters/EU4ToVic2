@@ -13,10 +13,11 @@ namespace EU4
 	{
 	public:
 		Provinces(std::istream& theStream, const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes);
+		
+		[[nodiscard]] auto geTotalProvinceWeights() const { return totalProvinceWeights; }
+		[[nodiscard]] const auto& getAllProvinces() const { return provinces; }
 		std::shared_ptr<Province> getProvince(int provinceNumber);
-
-		const std::map<int, std::shared_ptr<Province>>& getAllProvinces() const { return provinces; }
-		double geTotalProvinceWeights() const { return totalProvinceWeights; };
+		
 		void determineTotalProvinceWeights(const Configuration& configuration);
 
 	private:

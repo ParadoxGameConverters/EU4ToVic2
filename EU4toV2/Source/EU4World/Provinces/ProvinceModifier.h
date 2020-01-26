@@ -9,8 +9,8 @@ namespace EU4
 	class ProvinceModifier: commonItems::parser
 	{
 	public:
-		ProvinceModifier(std::istream& theStream);
-		const std::string& getModifier() const { return modifier; }
+		explicit ProvinceModifier(std::istream& theStream);
+		[[nodiscard]] auto getModifier() const { return modifier; }
 
 	private:
 		std::string modifier;

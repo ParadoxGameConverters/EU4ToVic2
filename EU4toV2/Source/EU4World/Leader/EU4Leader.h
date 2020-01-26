@@ -12,13 +12,14 @@ namespace EU4
 		Leader() = default;
 		explicit Leader(std::istream& theStream);
 
-		[[nodiscard]] const std::string& getName() const { return name; }
-		[[nodiscard]] int getFire() const { return fire; }
-		[[nodiscard]] int getShock() const { return shock; }
-		[[nodiscard]] int getManeuver() const { return maneuver; }
-		[[nodiscard]] int getSiege() const { return siege; }
-		[[nodiscard]] int getID() const { return leaderID; }
-		[[nodiscard]] date getActivationDate() const { return activationDate; }
+		[[nodiscard]] auto getName() const { return name; }
+		[[nodiscard]] auto getFire() const { return fire; }
+		[[nodiscard]] auto getShock() const { return shock; }
+		[[nodiscard]] auto getManeuver() const { return maneuver; }
+		[[nodiscard]] auto getSiege() const { return siege; }
+		[[nodiscard]] auto getID() const { return leaderID; }
+		[[nodiscard]] const auto& getActivationDate() const { return activationDate; }
+		
 		[[nodiscard]] bool isLand() const;
 
 	private:

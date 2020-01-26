@@ -24,21 +24,24 @@ namespace EU4
 	{
 	public:
 		World(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper);
-		std::map<std::string, std::shared_ptr<Country>> getCountries() const { return theCountries; };
-		std::vector<EU4Agreement> getDiplomaticAgreements() const { return diplomacy; };
-		double getTotalProvinceWeights() const { return provinces->geTotalProvinceWeights(); };
-		const Regions& getRegions() const { return *regions; }
-		const Religions& getReligions() const { return theReligions; }
-		const Version& getVersion() const { return *version; }
-		const std::vector<War>& getWars() const { return wars; }
-		const std::shared_ptr<Province> getProvince(int provNum) const;
-		const mappers::CultureGroups& getCultureGroupsMapper() const { return cultureGroupsMapper; }
-		bool isRandomWorld() const;
-		const std::map<int, std::shared_ptr<Province>>& getProvinces() const { return provinces->getAllProvinces(); }
-		const std::vector<std::pair<std::string, HistoricalEntry>>& getHistoricalData() const { return historicalData; }
+		
+		[[nodiscard]] bool isRandomWorld() const;
+		[[nodiscard]] auto getTotalProvinceWeights() const { return provinces->geTotalProvinceWeights(); }
+		[[nodiscard]] std::shared_ptr<Province> getProvince(int provNum) const;
+		[[nodiscard]] std::shared_ptr<Country> getCountry(const std::string& tag) const;
+		
+		[[nodiscard]] const auto& getCountries() const { return theCountries; }
+		[[nodiscard]] const auto& getDiplomaticAgreements() const { return diplomacy; }
+		[[nodiscard]] const auto& getRegions() const { return *regions; }
+		[[nodiscard]] const auto& getReligions() const { return theReligions; }
+		[[nodiscard]] const auto& getVersion() const { return *version; }
+		[[nodiscard]] const auto& getWars() const { return wars; }
+		[[nodiscard]] const auto& getCultureGroupsMapper() const { return cultureGroupsMapper; }
+		[[nodiscard]] const auto& getProvinces() const { return provinces->getAllProvinces(); }
+		[[nodiscard]] const auto& getHistoricalData() const { return historicalData; }
 		
 	private:
-		void verifySave(const std::string& EU4SaveFileName);
+		static void verifySave(const std::string& EU4SaveFileName);
 		void loadRevolutionTarget();
 		void dropMinoritiesFromCountries();
 		void addProvinceInfoToCountries();
@@ -55,11 +58,10 @@ namespace EU4
 		void removeDeadLandlessNations();
 		void removeLandlessNations();
 		void setEmpires();
-	   void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas);
+	   void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas) const;
 		void fillHistoricalData();
 		void addTradeGoodsToProvinces() const;
 		
-	   std::shared_ptr<Country> getCountry(std::string tag) const;
 		std::string holyRomanEmperor;
 		std::string celestialEmperor;
 		std::unique_ptr<Regions> regions;

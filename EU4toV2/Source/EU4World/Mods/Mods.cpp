@@ -15,81 +15,59 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConf
 	loadCK2ExportDirectory(theConfiguration);
 
 	Log(LogLevel::Info) << "\tFinding Used Mods";
-	for (auto usedMod: usedMods)
+	for (const auto& usedMod: usedMods)
 	{
 		auto possibleModPath = getModPath(usedMod);
 		if (possibleModPath)
 		{
 			if (!Utils::doesFolderExist(*possibleModPath) && !Utils::DoesFileExist(*possibleModPath))
-			{
-				LOG(LogLevel::Error) << usedMod << " could not be found in the specified mod directory " \
-					"- a valid mod directory must be specified. Tried " << *possibleModPath;
-				exit(-1);
-			}
-			else
-			{
-				LOG(LogLevel::Info) << "\t\tUsing EU4 Mod is " << *possibleModPath;
-				theConfiguration.addEU4Mod(*possibleModPath);
-			}
+				throw std::invalid_argument(usedMod + " could not be found in the specified mod directory " + \
+					"- a valid mod directory must be specified. Tried " + *possibleModPath);
+
+			LOG(LogLevel::Info) << "\t\tUsing EU4 Mod is " << *possibleModPath;
+			theConfiguration.addEU4Mod(*possibleModPath);
 		}
 		else
 		{
-			LOG(LogLevel::Error) << "No path could be found for " << usedMod << ". Check that the mod is present and that the .mod file specifies the path for the mod";
-			exit(-1);
+			throw std::invalid_argument("No path could be found for " + usedMod + ". Check that the mod is present and that the .mod file specifies the path for the mod");
 		}
 	}
 }
 
-
 void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 {
-	std::string EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();
+	const auto EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();
 	if (!Utils::doesFolderExist(EU4DocumentsLoc))
-	{
-		std::invalid_argument e(
-			"No Europa Universalis 4 documents directory was specified in configuration.txt, or the path was invalid"
-		);
-		throw e;
-	}
-	else
-	{
-		LOG(LogLevel::Info) << "\tEU4 Documents directory is " << EU4DocumentsLoc;
-		loadModDirectory(EU4DocumentsLoc);
-	}
-}
+		throw std::invalid_argument("No Europa Universalis 4 documents directory was specified in configuration.txt, or the path was invalid!");
 
+	LOG(LogLevel::Info) << "\tEU4 Documents directory is " << EU4DocumentsLoc;
+	loadModDirectory(EU4DocumentsLoc);
+}
 
 void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration)
 {
-	std::string steamWorkshopPath = theConfiguration.getSteamWorkshopPath();
+	const auto steamWorkshopPath = theConfiguration.getSteamWorkshopPath();
 	if (!Utils::doesFolderExist(steamWorkshopPath))
-	{
-		std::invalid_argument e(
-			"No Steam Worksop directory was specified in configuration.txt, or the path was invalid"
-		);
-		throw e;
-	}
-	else
-	{
-		LOG(LogLevel::Info) << "\tSteam Workshop directory is " << steamWorkshopPath;
-		std::set<std::string> subfolders;
-		Utils::GetAllSubfolders(steamWorkshopPath, subfolders);
-		for (auto subfolder: subfolders)
-		{
-			std::string path = steamWorkshopPath + "/" + subfolder;
-			std::string descriptorFilename = path + "/descriptor.mod";
-			if (Utils::doesFolderExist(path) && Utils::DoesFileExist(descriptorFilename))
-			{
-				std::ifstream modFile(path + "/descriptor.mod");
-				Mod theMod(modFile);
-				modFile.close();
+		throw std::invalid_argument("No Steam Worksop directory was specified in configuration.txt, or the path was invalid");
 
-				if (theMod.isValid())
-				{
-					possibleMods.insert(std::make_pair("mod/ugc_" + subfolder + ".mod", path));
-					possibleMods.insert(std::make_pair(theMod.getName(), path));
-					Log(LogLevel::Info) << "\t\tFound potential mod named " << theMod.getName() << " at " << path;
-				}
+	LOG(LogLevel::Info) << "\tSteam Workshop directory is " << steamWorkshopPath;
+	std::set<std::string> subfolders;
+	Utils::GetAllSubfolders(steamWorkshopPath, subfolders);
+	for (const auto& subfolder: subfolders)
+	{
+		const auto path = steamWorkshopPath + "/" + subfolder;
+		const auto descriptorFilename = path + "/descriptor.mod";
+		if (Utils::doesFolderExist(path) && Utils::DoesFileExist(descriptorFilename))
+		{
+			std::ifstream modFile(path + "/descriptor.mod");
+			Mod theMod(modFile);
+			modFile.close();
+
+			if (theMod.isValid())
+			{
+				possibleMods.insert(std::make_pair("mod/ugc_" + subfolder + ".mod", path));
+				possibleMods.insert(std::make_pair(theMod.getName(), path));
+				Log(LogLevel::Info) << "\t\tFound potential mod named " << theMod.getName() << " at " << path;
 			}
 		}
 	}
@@ -98,7 +76,7 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 
 void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 {
-	std::string CK2ExportLoc = theConfiguration.getCK2ExportPath();
+	const auto CK2ExportLoc = theConfiguration.getCK2ExportPath();
 	if (!Utils::doesFolderExist(CK2ExportLoc))
 	{
 		LOG(LogLevel::Warning) << "No Crusader Kings 2 mod directory was specified in configuration.txt," \
@@ -116,10 +94,10 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 {
 	std::set<std::string> filenames;
 	Utils::GetAllFilesInFolder(searchDirectory + "/mod", filenames);
-	for (auto filename: filenames)
+	for (const auto& filename: filenames)
 	{
-		const int pos = filename.find_last_of('.');
-		if ((pos != std::string::npos) && (filename.substr(pos, filename.length()) == ".mod"))
+		const auto pos = filename.find_last_of('.');
+		if (pos != std::string::npos && filename.substr(pos, filename.length()) == ".mod")
 		{
 			try
 			{
@@ -131,7 +109,7 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 				{
 					if (!theMod.isCompressed())
 					{
-						std::string trimmedFilename = filename.substr(0, pos);
+						const auto trimmedFilename = filename.substr(0, pos);
 
 						std::string recordDirectory;
 						if (Utils::doesFolderExist(theMod.getPath()))
@@ -144,8 +122,7 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						}
 						else
 						{
-							std::invalid_argument e("");
-							throw e;
+							throw std::invalid_argument("");
 						}
 
 						possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory));
@@ -168,11 +145,10 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						}
 						else
 						{
-							std::invalid_argument e("");
-							throw e;
+							throw std::invalid_argument("");
 						}
 
-						std::string trimmedFilename = filename.substr(0, pos);
+						const auto trimmedFilename = filename.substr(0, pos);
 
 						possibleCompressedMods.insert(std::make_pair(theMod.getName(), recordDirectory));
 						possibleCompressedMods.insert(std::make_pair("mod/" + filename, recordDirectory));
@@ -183,7 +159,7 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 					}
 				}
 			}
-			catch (std::exception e)
+			catch (std::exception&)
 			{
 				LOG(LogLevel::Warning) << "Error while reading " << searchDirectory << "/mod/" << filename << ". " \
 					"Mod will not be useable for conversions.";
@@ -195,18 +171,18 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 
 std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) const
 {
-	auto mod = possibleMods.find(modName);
+	const auto mod = possibleMods.find(modName);
 	if (mod != possibleMods.end())
 	{
 		return mod->second;
 	}
 
-	auto compressedMod = possibleCompressedMods.find(modName);
+	const auto compressedMod = possibleCompressedMods.find(modName);
 	if (compressedMod != possibleCompressedMods.end())
 	{
-		std::string archivePath = compressedMod->second;
-		std::string uncompressedName = archivePath.substr(0, archivePath.find_last_of('.'));
-		int pos = uncompressedName.find_last_of('\\');
+		const auto archivePath = compressedMod->second;
+		auto uncompressedName = archivePath.substr(0, archivePath.find_last_of('.'));
+		auto pos = uncompressedName.find_last_of('\\');
 		if (pos != std::string::npos)
 		{
 			uncompressedName = uncompressedName.substr(pos + 1, uncompressedName.size());
@@ -221,13 +197,11 @@ std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) con
 		{
 			return "mods/" + uncompressedName;
 		}
-		else
-		{
-			LOG(LogLevel::Warning) << "For now, manually uncompress " << archivePath << \
-				" into the converter directory at EU4ToVic2/mods/" << uncompressedName;
-			LOG(LogLevel::Warning) << "Then run the converter again";
-		}
+		
+		LOG(LogLevel::Warning) << "For now, manually uncompress " << archivePath << \
+			" into the converter directory at EU4ToVic2/mods/" << uncompressedName;
+		LOG(LogLevel::Warning) << "Then run the converter again";
 	}
 
-	return {};
+	return std::nullopt;
 }

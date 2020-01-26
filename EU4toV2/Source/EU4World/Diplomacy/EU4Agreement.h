@@ -9,14 +9,16 @@ namespace EU4
 	class EU4Agreement : commonItems::parser
 	{
 	public:
-		EU4Agreement(std::istream& theStream);
-		std::string getAgreementType() const { return agreementType; }
-		void setAgreementType(std::string _type) { agreementType = _type; }
-		std::string getOriginTag() const { return originTag; }
-		std::string getTargetTag() const { return targetTag; }
-		void setTargetTag(std::string tag) { targetTag = tag; }
-		date getStartDate() const { return startDate; }
-		date getEndDate() const { return endDate; }
+		explicit EU4Agreement(std::istream& theStream);
+
+		void setAgreementType(const std::string& _type) { agreementType = _type; }
+		void setTargetTag(const std::string& tag) { targetTag = tag; }
+
+		[[nodiscard]] auto getAgreementType() const { return agreementType; }
+		[[nodiscard]] auto getOriginTag() const { return originTag; }
+		[[nodiscard]] auto getTargetTag() const { return targetTag; }
+		[[nodiscard]] const auto& getStartDate() const { return startDate; }
+		[[nodiscard]] const auto& getEndDate() const { return endDate; }
 
 	private:
 		std::string	agreementType; // combined type of agreement (cb_core, guarantee, vassal)

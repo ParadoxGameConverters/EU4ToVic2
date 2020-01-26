@@ -12,12 +12,14 @@ namespace EU4
 	{
 	public:
 		Religions();
-		Religions(std::istream& theStream);
-		std::optional<Religion> getReligion(std::string name) const;
-		const std::map<std::string, Religion>& getAllReligions() const { return theReligions; }
+		explicit Religions(std::istream& theStream);
+		
+		[[nodiscard]] std::optional<Religion> getReligion(const std::string& name) const;
+		[[nodiscard]] const auto& getAllReligions() const { return theReligions; }
 
 	private:
 		void registerKeys();
+		
 		std::map<std::string, Religion> theReligions;
 	};
 }

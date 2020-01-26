@@ -24,8 +24,9 @@ namespace EU4
 	class DateItems : commonItems::parser
 	{
 	public:
-		DateItems(std::istream& theStream);
-		const std::vector<std::pair<DateItemType, std::string>>& getDateChanges() const { return dateChanges; }
+		explicit DateItems(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getDateChanges() const { return dateChanges; }
 
 	private:
 		std::vector<std::pair<DateItemType, std::string>> dateChanges;

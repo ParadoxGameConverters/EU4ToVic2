@@ -12,10 +12,11 @@ namespace EU4
 	{
 	public:
 		explicit War(std::istream& theStream);
-		[[nodiscard]] const WarDetails& getDetails() const { return details; }
-		[[nodiscard]] const std::vector<std::string>& getAttackers() const { return attackers; }
-		[[nodiscard]] const std::vector<std::string>& getDefenders() const { return defenders; }
-		[[nodiscard]] const std::string& getName() const { return name; }
+		
+		[[nodiscard]] const auto& getDetails() const { return details; }
+		[[nodiscard]] const auto& getAttackers() const { return attackers; }
+		[[nodiscard]] const auto& getDefenders() const { return defenders; }
+		[[nodiscard]] auto getName() const { return name; }
 
 	private:
 		WarDetails details;

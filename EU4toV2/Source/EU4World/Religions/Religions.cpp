@@ -13,15 +13,15 @@ EU4::Religions::Religions()
 
 	std::set<std::string> filenames;
 	Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/religions/", filenames);
-	for (auto filename : filenames)
+	for (const auto& filename : filenames)
 	{
 		parseFile(theConfiguration.getEU4Path() + "/common/religions/" + filename);
 	}
-	for (auto modName : theConfiguration.getEU4Mods())
+	for (const auto& modName : theConfiguration.getEU4Mods())
 	{
 		std::set<std::string> moreFilenames;
 		Utils::GetAllFilesInFolder(modName + "/common/religions/", moreFilenames);
-		for (auto filename : filenames)
+		for (const auto& filename : filenames)
 		{
 			parseFile(modName + "/common/religions/" + filename);
 		}
@@ -41,20 +41,14 @@ void EU4::Religions::registerKeys()
 	registerRegex("[a-zA-Z_]+", [this](const std::string& groupName, std::istream& theStream) 
 		{
 			ReligionGroup newGroup(groupName, theStream);
-			for (auto religion : newGroup.takeReligions()) theReligions.insert(religion);
+			for (const auto& religion : newGroup.takeReligions()) theReligions.insert(religion);
 		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 }
 
-std::optional<EU4::Religion> EU4::Religions::getReligion(std::string name) const
+std::optional<EU4::Religion> EU4::Religions::getReligion(const std::string& name) const
 {
-	auto religionsItr = theReligions.find(name);
-	if (religionsItr != theReligions.end())
-	{
-		return religionsItr->second;
-	}
-	else
-	{
-		return {};
-	}
+	const auto& religionsItr = theReligions.find(name);
+	if (religionsItr != theReligions.end()) return religionsItr->second;
+	return std::nullopt;
 }

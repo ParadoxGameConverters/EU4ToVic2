@@ -19,63 +19,63 @@ EU4::Province::Province(
 ) {
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleString nameString(theStream);
+			const commonItems::singleString nameString(theStream);
 			name = nameString.getString();
 		});
 	registerKeyword("base_tax", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleDouble baseTaxDouble(theStream);
+			const commonItems::singleDouble baseTaxDouble(theStream);
 			baseTax = baseTaxDouble.getDouble();
 		});
 	registerKeyword("base_production", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleDouble baseProductionDouble(theStream);
+			const commonItems::singleDouble baseProductionDouble(theStream);
 			baseProduction = baseProductionDouble.getDouble();
 		});
 	registerKeyword("base_manpower", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleDouble manpowerDouble(theStream);
+			const commonItems::singleDouble manpowerDouble(theStream);
 			manpower = manpowerDouble.getDouble();
 		});
 	registerKeyword("manpower", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleDouble manpowerDouble(theStream);
+			const commonItems::singleDouble manpowerDouble(theStream);
 			manpower = manpowerDouble.getDouble();
 		});
 	registerKeyword("owner", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleString ownerStringString(theStream);
+			const commonItems::singleString ownerStringString(theStream);
 			ownerString = ownerStringString.getString();
 		});
 	registerKeyword("controller", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleString controllerStringString(theStream);
+			const commonItems::singleString controllerStringString(theStream);
 			controllerString = controllerStringString.getString();
 		});
 	registerKeyword("cores", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::stringList coresStrings(theStream);
-			for (auto coreString : coresStrings.getStrings()) cores.insert(coreString);
+			const commonItems::stringList coresStrings(theStream);
+			for (const auto& coreString : coresStrings.getStrings()) cores.insert(coreString);
 		});
 	registerKeyword("core", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleString coresString(theStream);
+			const commonItems::singleString coresString(theStream);
 			cores.insert(coresString.getString());
 		});
-    registerKeyword("territorial_core",[this](const std::string& unused, std::istream& theStream) 
-		 {
-			commonItems::ignoreItem(unused, theStream);
-			territorialCore = true;
-		});
-	registerKeyword("hre", [this](const std::string& unused, std::istream& theStream) 
+    registerKeyword("territorial_core", [this](const std::string& unused, std::istream& theStream) 
 		{
 			commonItems::ignoreItem(unused, theStream);
-			inHRE = true;
+			territorialCore = true;
+		 });
+	registerKeyword("hre", [this](const std::string& unused, std::istream& theStream) 
+		{
+			const commonItems::singleString hreStr(theStream);
+			inHRE = hreStr.getString() == "yes";
 		});
 	registerKeyword("is_city", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::ignoreItem(unused, theStream);
-			city = true;
+			const commonItems::singleString cityStr(theStream);
+			city = cityStr.getString() == "yes";
 		});
 	registerKeyword("colonysize", [this](const std::string & unused, std::istream & theStream) 
 		{
@@ -89,32 +89,32 @@ EU4::Province::Province(
 		});
 	registerKeyword("history", [this](const std::string& unused, std::istream& theStream) 
 		{
-			ProvinceHistory theHistory(theStream);
+			const ProvinceHistory theHistory(theStream);
 			provinceHistory = theHistory;
 		});
 	registerKeyword("buildings", [this](const std::string& unused, std::istream& theStream) 
 		{
-			ProvinceBuildings theBuildings(theStream);
+			const ProvinceBuildings theBuildings(theStream);
 			buildings = theBuildings;
 		});
 	registerKeyword("great_projects", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::stringList theProjects(theStream);
+			const commonItems::stringList theProjects(theStream);
 			for (const auto& project : theProjects.getStrings()) greatProjects.insert(project);
 		});
 	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream) 
 		{
-			ProvinceModifier modifier(theStream);
+			const ProvinceModifier modifier(theStream);
 			modifiers.insert(modifier.getModifier());
 		});
 	registerKeyword("trade_goods", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleString tradeGoodsString(theStream);
+			const commonItems::singleString tradeGoodsString(theStream);
 			tradeGoods = tradeGoodsString.getString();
 		});
 	registerKeyword("center_of_trade", [this](const std::string& unused, std::istream& theStream) 
 		{
-			commonItems::singleInt cotLevelInt(theStream);
+			const commonItems::singleInt cotLevelInt(theStream);
 			centerOfTradeLevel = cotLevelInt.getInt();
 		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
@@ -147,31 +147,28 @@ bool EU4::Province::hasGreatProject(const std::string& greatProject) const
 double EU4::Province::getCulturePercent(const std::string& culture) const
 {
 	double culturePercent = 0.0f;
-	for (auto pop: provinceHistory.getPopRatios())
+	for (const auto& pop: provinceHistory.getPopRatios())
 	{
 		if (pop.getCulture() == culture) culturePercent += pop.getLowerRatio();
 	}
-
 	return culturePercent;
 }
 
 void EU4::Province::determineProvinceWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes)
 {
-	double manpower_weight = manpower;
-	double taxEfficiency = 1.0;
+	auto manpower_weight = manpower;
+	const auto taxEfficiency = 1.0;
 
-	BuildingWeightEffects buildingWeightEffects = getProvBuildingWeight(buildingTypes, modifierTypes);
+	const auto buildingWeightEffects = getProvBuildingWeight(buildingTypes, modifierTypes);
 	buildingWeight = buildingWeightEffects.buildingWeight;
-	double manpowerModifier = buildingWeightEffects.manpowerModifier;
-	double manufactoriesValue = buildingWeightEffects.manufactoriesValue;
-	double productionEfficiency = buildingWeightEffects.productionEfficiency;
-	double taxModifier = buildingWeightEffects.taxModifier;
-	double tradeGoodsSizeModifier = buildingWeightEffects.tradeGoodsSizeModifier;
-	double tradePower = buildingWeightEffects.tradePower;
-	double tradeValue = buildingWeightEffects.tradeValue;
-	double tradeEfficiency = buildingWeightEffects.tradeEfficiency;
-	double tradeSteering = buildingWeightEffects.tradeSteering;
-	double goodsProduced = (baseProduction * 0.2) + manufactoriesValue + tradeGoodsSizeModifier + 0.03;
+	const auto manpowerModifier = buildingWeightEffects.manpowerModifier;
+	const auto manufactoriesValue = buildingWeightEffects.manufactoriesValue;
+	const auto productionEfficiency = buildingWeightEffects.productionEfficiency;
+	const auto taxModifier = buildingWeightEffects.taxModifier;
+	const auto tradeGoodsSizeModifier = buildingWeightEffects.tradeGoodsSizeModifier;
+	const auto tradeValue = buildingWeightEffects.tradeValue;
+	const auto tradeEfficiency = buildingWeightEffects.tradeEfficiency;
+	auto goodsProduced = (baseProduction * 0.2) + manufactoriesValue + tradeGoodsSizeModifier + 0.03;
 	goodsProduced = std::max(0.0, goodsProduced);
 
 	// manpower
@@ -179,10 +176,10 @@ void EU4::Province::determineProvinceWeight(const mappers::Buildings& buildingTy
 	manpower_weight += manpowerModifier;
 	manpower_weight *= ((1 + manpowerModifier) / 25); // should work now as intended
 
-	double total_tx = (baseTax + taxModifier) * (taxEfficiency + 0.15);
-	double production_eff_tech = 0.5; // used to be 1.0
-	double total_trade_value = ((tradeGoodsPrice * goodsProduced) + tradeValue) * (1 + tradeEfficiency);
-	double production_income = total_trade_value * (1 + production_eff_tech + productionEfficiency);
+	auto total_tx = (baseTax + taxModifier) * (taxEfficiency + 0.15);
+	const auto production_eff_tech = 0.5; // used to be 1.0
+	const auto total_trade_value = ((tradeGoodsPrice * goodsProduced) + tradeValue) * (1 + tradeEfficiency);
+	auto production_income = total_trade_value * (1 + production_eff_tech + productionEfficiency);
 
 	total_tx *= 1.5;
 	manpower_weight *= 1;
@@ -201,11 +198,11 @@ void EU4::Province::determineProvinceWeight(const mappers::Buildings& buildingTy
 
 	if (modifierWeight > 0)
 	{
-		// provinces with modifierweights under 10 (underdeveloped with no buildings) get a penalty for popShaping.
+		// provinces with modifier weights under 10 (underdeveloped with no buildings) get a penalty for popShaping.
 		modifierWeight = (std::log10(modifierWeight) - 1) * 10;
 	}
 
-	if (ownerString == "")
+	if (ownerString.empty())
 	{
 		totalWeight = 0;
 		modifierWeight = 0;
@@ -231,7 +228,7 @@ EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
 {
 	BuildingWeightEffects effects;
 
-	for (auto buildingName : buildings.getBuildings())
+	for (const auto& buildingName : buildings.getBuildings())
 	{
 		auto theBuilding = buildingTypes.getBuilding(buildingName);
 		if (theBuilding)
@@ -241,7 +238,7 @@ EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
 			{
 				effects.manufactoriesValue += 1.0;
 			}
-			for (auto effect: theBuilding->getModifier().getAllEffects())
+			for (const auto& effect: theBuilding->getModifier().getAllEffects())
 			{
 				if (effect.first == "local_manpower_modifier")
 				{
@@ -263,11 +260,7 @@ EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
 				{
 					effects.tradeEfficiency += effect.second;
 				}
-				else if (effect.first == "trade_goods_size")
-				{
-					effects.tradeGoodsSizeModifier += effect.second;
-				}
-				else if (effect.first == "trade_goods_size_modifier")
+				else if (effect.first == "trade_goods_size" || effect.first == "trade_goods_size_modifier")
 				{
 					effects.tradeGoodsSizeModifier += effect.second;
 				}
@@ -287,12 +280,12 @@ EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
 		}
 	}
 
-	for (auto modifierName: modifiers)
+	for (const auto& modifierName: modifiers)
 	{
 		auto theModifier = modifierTypes.getModifier(modifierName);
 		if (theModifier)
 		{
-			for (auto effect : theModifier->getAllEffects())
+			for (const auto& effect : theModifier->getAllEffects())
 			{
 				if (effect.first == "local_manpower_modifier")
 				{
@@ -314,11 +307,7 @@ EU4::BuildingWeightEffects EU4::Province::getProvBuildingWeight(
 				{
 					effects.tradeEfficiency += effect.second;
 				}
-				else if (effect.first == "trade_goods_size")
-				{
-					effects.tradeGoodsSizeModifier += effect.second;
-				}
-				else if (effect.first == "trade_goods_size_modifier")
+				else if (effect.first == "trade_goods_size" || effect.first == "trade_goods_size_modifier")
 				{
 					effects.tradeGoodsSizeModifier += effect.second;
 				}

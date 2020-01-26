@@ -42,9 +42,9 @@ class Configuration: commonItems::parser
 		bool getRandomiseRgos() const { return randomiseRgos; }
 
 		const EU4::Version& getEU4Version() const { return version; }
-		date getFirstEU4Date() { return firstEU4Date; }
-		date getLastEU4Date() { return lastEU4Date; }
-		date getStartEU4Date() { return startEU4Date; }
+		date getFirstEU4Date() const { return firstEU4Date; }
+		date getLastEU4Date() const { return lastEU4Date; }
+		date getStartEU4Date() const { return startEU4Date; }
 		std::string getOutputName() { return outputName; }
 		std::vector<std::string> getEU4Mods() { return EU4Mods; }
 
@@ -86,7 +86,7 @@ class Configuration: commonItems::parser
 		EU4::Version version;
 		date firstEU4Date;
 		date lastEU4Date;
-		date startEU4Date;
+		date startEU4Date = date("1000.1.1");
 		int eu4Seed = 0;
 		std::string outputName;
 		std::vector<std::string> activeDLCs;

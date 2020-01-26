@@ -11,6 +11,7 @@ namespace EU4
 	public:
 		TradeGoods() = default;
 		explicit TradeGoods(std::istream& theStream);
+		
 		[[nodiscard]] std::optional<double> getPrice(const std::string& good) const;
 
 	private:

@@ -8,11 +8,12 @@ namespace EU4
 	class Mod: commonItems::parser
 	{
 	public:
-		Mod(std::istream& theStream);
-		std::string getName() const { return name; }
-		std::string getPath() const { return path; }
-		bool isValid() const { return (name != "") && (path != ""); }
-		bool isCompressed() const { return compressed; }
+		explicit Mod(std::istream& theStream);
+		
+		[[nodiscard]] auto getName() const { return name; }
+		[[nodiscard]] auto getPath() const { return path; }
+		[[nodiscard]] auto isValid() const { return !name.empty() && !path.empty(); }
+		[[nodiscard]] auto isCompressed() const { return compressed; }
 
 	private:
 		std::string name;

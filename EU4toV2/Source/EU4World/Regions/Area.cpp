@@ -1,13 +1,12 @@
 #include "Area.h"
+#include "ParserHelpers.h"
 
 EU4::Area::Area(std::istream& theStream)
 {
-	registerKeyword("color", [this](const std::string & colorToken, std::istream & areaFile)
-		{
-			commonItems::Color newColor(areaFile);
-		});
+	registerKeyword("color", commonItems::ignoreItem);
 	registerRegex("[0-9]+", [this](const std::string & number, std::istream & theStream) 
 		{
+			// This is a peculiar file format where we pull free-floating numbers from thin air
 			provinces.insert(std::stoi(number));
 		});
 
