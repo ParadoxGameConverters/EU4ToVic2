@@ -30,10 +30,10 @@ namespace EU4
 		void setTradeGoodPrice(double price) { tradeGoodsPrice = price; }
 		void setArea(const std::string& a) { areaName = a; }
 
-		[[nodiscard]] auto getArea() const { return areaName; }
-		[[nodiscard]] auto getName() const { return name; }
-		[[nodiscard]] auto getOwnerString() const { return ownerString; }
-		[[nodiscard]] auto getControllerString() const { return controllerString; }
+		[[nodiscard]] const auto& getArea() const { return areaName; }
+		[[nodiscard]] const auto& getName() const { return name; }
+		[[nodiscard]] const auto& getOwnerString() const { return ownerString; }
+		[[nodiscard]] const auto& getControllerString() const { return controllerString; }
 		[[nodiscard]] auto getNum() const { return num; }
 		[[nodiscard]] auto inHre() const { return inHRE; }
 		[[nodiscard]] auto isTerritorialCore() const { return territorialCore; }
@@ -51,7 +51,7 @@ namespace EU4
 		[[nodiscard]] auto getTotalDevModifier() const { return devModifier; }
 		[[nodiscard]] auto getDevDelta() const { return devDelta; }
 		[[nodiscard]] auto getModifierWeight() const { return modifierWeight; }
-		[[nodiscard]] auto getTradeGoods() const { return tradeGoods; }
+		[[nodiscard]] const auto& getTradeGoods() const { return tradeGoods; }
 		[[nodiscard]] auto getProsperity() const { return prosperity; }
 
 		[[nodiscard]] const auto& getProvinceStats() const { return provinceStats; }

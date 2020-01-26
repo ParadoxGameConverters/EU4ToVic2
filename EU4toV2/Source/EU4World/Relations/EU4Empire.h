@@ -10,7 +10,7 @@ namespace EU4
 	public:
 		explicit EU4Empire(std::istream& theStream);
 		
-		[[nodiscard]] auto getEmperor() const { return emperor; }
+		[[nodiscard]] const auto& getEmperor() const { return emperor; }
 
 	private:
 		std::string emperor;

@@ -29,9 +29,10 @@ mappers::FactoryInventionMapper::FactoryInventionMapper(std::istream& theStream)
 void mappers::FactoryInventionMapper::registerKeys()
 {
 	// we need èüéö for jean_jaurès, johann_heinrich_von_thünen, léon_walras, eugen_von_böhm_bawerk :/
+	// If intellisense or something else complains, don't alter, it works.
 	registerRegex("[èüéöa-z_]+", [this](const std::string& invention, std::istream& theStream)
 		{
-			FactoryInventionEffect theEffect(theStream);
+			const FactoryInventionEffect theEffect(theStream);
 			if (!theEffect.getFactoryName().empty())
 			{
 				factoryInventionMap.insert(std::make_pair(theEffect.getFactoryName(), invention));

@@ -15,7 +15,7 @@ namespace EU4
 		[[nodiscard]] auto hasMilitaryAccess() const { return military_access; }
 		[[nodiscard]] auto getDiplomatLastSent() const { return last_send_diplomat; }
 		[[nodiscard]] auto getLastWar() const { return last_war; }
-		[[nodiscard]] auto getAttitude() const { return attitude; }
+		[[nodiscard]] const auto& getAttitude() const { return attitude; }
 
 	private:
 		int value = 0; // the relationship value

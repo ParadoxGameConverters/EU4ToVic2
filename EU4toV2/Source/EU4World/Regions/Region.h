@@ -17,7 +17,7 @@ namespace EU4
 		[[nodiscard]] bool areaContainsProvince(const std::string& areaName, int province) const;		
 		[[nodiscard]] const auto& getAreaProvinces() const{ return areaProvinces; }
 		[[nodiscard]] const auto& getAreaNames() const { return areaNames; }
-		[[nodiscard]] auto getName() const { return name; }
+		[[nodiscard]] const auto& getName() const { return name; }
 
 		void addProvinces(const Areas& areas);
 

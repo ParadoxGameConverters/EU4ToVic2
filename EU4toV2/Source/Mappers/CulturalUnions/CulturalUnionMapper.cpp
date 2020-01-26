@@ -21,7 +21,7 @@ void mappers::CulturalUnionMapper::registerKeys()
 {
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) 
 		{
-			CulturalUnion newUnion(theStream);
+			const CulturalUnion newUnion(theStream);
 			unionMap.insert(newUnion.getUnion());
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);

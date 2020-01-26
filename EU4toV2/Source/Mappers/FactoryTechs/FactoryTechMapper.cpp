@@ -12,7 +12,7 @@ mappers::FactoryTechMapper::FactoryTechMapper()
 
 	std::set<std::string> filenames;
 	Utils::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/technologies/", filenames);
-	for (auto filename : filenames)
+	for (const auto& filename : filenames)
 	{
 		parseFile(theConfiguration.getVic2Path() + "/technologies/" + filename);
 	}
@@ -30,7 +30,7 @@ void mappers::FactoryTechMapper::registerKeys()
 {
 	registerRegex("[a-z_]+", [this](const std::string& tech, std::istream& theStream)
 		{
-			FactoryTechDetails techDetails(theStream);
+			const FactoryTechDetails techDetails(theStream);
 			// Every V2 technology activates but a single building, no worry of missing something.
 			if (!techDetails.getFactoryName().empty())
 			{

@@ -8,8 +8,9 @@ namespace mappers
 	class CulturalUnion: commonItems::parser
 	{
 	public:
-		CulturalUnion(std::istream& theStream);
-		std::pair<std::string, std::vector<std::string>> getUnion() const { return theUnion; }
+		explicit CulturalUnion(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getUnion() const { return theUnion; }
 
 	private:
 		std::string culture;

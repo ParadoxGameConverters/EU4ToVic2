@@ -14,9 +14,9 @@ namespace EU4
 		void setAgreementType(const std::string& _type) { agreementType = _type; }
 		void setTargetTag(const std::string& tag) { targetTag = tag; }
 
-		[[nodiscard]] auto getAgreementType() const { return agreementType; }
-		[[nodiscard]] auto getOriginTag() const { return originTag; }
-		[[nodiscard]] auto getTargetTag() const { return targetTag; }
+		[[nodiscard]] const auto& getAgreementType() const { return agreementType; }
+		[[nodiscard]] const auto& getOriginTag() const { return originTag; }
+		[[nodiscard]] const auto& getTargetTag() const { return targetTag; }
 		[[nodiscard]] const auto& getStartDate() const { return startDate; }
 		[[nodiscard]] const auto& getEndDate() const { return endDate; }
 

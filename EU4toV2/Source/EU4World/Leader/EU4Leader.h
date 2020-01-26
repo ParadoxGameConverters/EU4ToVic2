@@ -12,7 +12,7 @@ namespace EU4
 		Leader() = default;
 		explicit Leader(std::istream& theStream);
 
-		[[nodiscard]] auto getName() const { return name; }
+		[[nodiscard]] const auto& getName() const { return name; }
 		[[nodiscard]] auto getFire() const { return fire; }
 		[[nodiscard]] auto getShock() const { return shock; }
 		[[nodiscard]] auto getManeuver() const { return maneuver; }

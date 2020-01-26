@@ -11,7 +11,7 @@ namespace EU4
 	public:
 		explicit MergeBlock(std::istream& theStream);
 		
-		[[nodiscard]] auto getMaster() const { return master; }
+		[[nodiscard]] const auto& getMaster() const { return master; }
 		[[nodiscard]] const auto& getSlaves() const { return slaves; }
 		[[nodiscard]] auto getMerge() const { return merge; }
 

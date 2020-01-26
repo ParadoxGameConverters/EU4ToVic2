@@ -8,7 +8,8 @@ namespace mappers
 	class Culture: commonItems::parser
 	{
 	public:
-		Culture(std::istream& theStream);
+		Culture() = default;
+		explicit Culture(std::istream& theStream);
 
 	private:
 		std::string primaryTag;

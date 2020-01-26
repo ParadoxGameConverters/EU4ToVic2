@@ -10,8 +10,8 @@ namespace EU4
 	public:
 		explicit Mod(std::istream& theStream);
 		
-		[[nodiscard]] auto getName() const { return name; }
-		[[nodiscard]] auto getPath() const { return path; }
+		[[nodiscard]] const auto& getName() const { return name; }
+		[[nodiscard]] const auto& getPath() const { return path; }
 		[[nodiscard]] auto isValid() const { return !name.empty() && !path.empty(); }
 		[[nodiscard]] auto isCompressed() const { return compressed; }
 

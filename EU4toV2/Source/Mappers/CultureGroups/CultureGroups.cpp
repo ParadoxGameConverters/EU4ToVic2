@@ -11,15 +11,15 @@ mappers::CultureGroups::CultureGroups()
 
 	std::set<std::string> cultureFiles;
 	Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/cultures/", cultureFiles);
-	for (auto cultureFile : cultureFiles)
+	for (const auto& cultureFile : cultureFiles)
 	{
 		parseFile(theConfiguration.getEU4Path() + "/common/cultures/" + cultureFile);
 	}
-	for (auto itr: theConfiguration.getEU4Mods())
+	for (const auto& itr: theConfiguration.getEU4Mods())
 	{
 		std::set<std::string> moreCultureFiles;
 		Utils::GetAllFilesInFolder(itr + "/common/cultures/", moreCultureFiles);
-		for (auto cultureFile: moreCultureFiles)
+		for (const auto& cultureFile: moreCultureFiles)
 		{
 			parseFile(itr + "/common/cultures/" + cultureFile);
 		}
@@ -40,17 +40,17 @@ void mappers::CultureGroups::registerKeys()
 		{
 			std::vector<Culture> cultures;
 			CultureGroup newGroup(cultureGroupName, theStream);
-			for (auto culture: newGroup.getCultures())
+			for (const auto& culture: newGroup.getCultures())
 			{
 				cultureToGroupMap.insert(make_pair(culture.first, newGroup));
 				cultures.push_back(culture.second);
 			}
 
-			auto itr = groupToCulturesMap.find(cultureGroupName);
+			const auto& itr = groupToCulturesMap.find(cultureGroupName);
 			if (itr != groupToCulturesMap.end())
 			{
-				auto oldCultures = itr->second;
-				for (auto oldCulture: oldCultures)
+				const auto& oldCultures = itr->second;
+				for (const auto& oldCulture: oldCultures)
 				{
 					cultures.push_back(oldCulture);
 				}
@@ -61,15 +61,14 @@ void mappers::CultureGroups::registerKeys()
 
 std::optional<mappers::CultureGroup> mappers::CultureGroups::getCulturalGroup(const std::string& culture) const
 {
-	auto mapping = cultureToGroupMap.find(culture);
+	const auto& mapping = cultureToGroupMap.find(culture);
 	if (mapping != cultureToGroupMap.end()) return mapping->second;
 	return std::nullopt;
 }
 
 std::vector<mappers::Culture> mappers::CultureGroups::getCulturesInGroup(const std::string& group) const
 {
-	auto mapping = groupToCulturesMap.find(group);
+	const auto& mapping = groupToCulturesMap.find(group);
 	if (mapping != groupToCulturesMap.end()) return mapping->second;
-	std::vector<Culture> empty;
-	return empty;
+	return std::vector<Culture>();
 }

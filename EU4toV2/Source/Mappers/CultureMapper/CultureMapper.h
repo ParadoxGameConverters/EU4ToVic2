@@ -14,19 +14,20 @@ namespace mappers
 	{
 	public:
 		CultureMapper() = default;
-		CultureMapper(std::istream& theStream);
+		explicit CultureMapper(std::istream& theStream);
+		
 		void loadFile(const std::string& fileName);
 
-		std::optional<std::string> cultureMatch(
-			const EU4::Regions& EU4Regions,
-			const std::string& EU4culture,
-			const std::string& EU4religion,
-			int EU4Province,
-			const std::string& EU4ownerTag
-		) const;
+		[[nodiscard]] std::optional<std::string> cultureMatch(
+			const EU4::Regions& eu4Regions,
+			const std::string& eu4culture,
+			const std::string& eu4religion,
+			int eu4Province,
+			const std::string& eu4ownerTag) const;
 
 	private:
 		void registerKeys();
+		
 		std::vector<CultureMappingRule> cultureMapRules;
 	};
 }

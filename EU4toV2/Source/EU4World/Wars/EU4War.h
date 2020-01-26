@@ -16,7 +16,7 @@ namespace EU4
 		[[nodiscard]] const auto& getDetails() const { return details; }
 		[[nodiscard]] const auto& getAttackers() const { return attackers; }
 		[[nodiscard]] const auto& getDefenders() const { return defenders; }
-		[[nodiscard]] auto getName() const { return name; }
+		[[nodiscard]] const auto& getName() const { return name; }
 
 	private:
 		WarDetails details;

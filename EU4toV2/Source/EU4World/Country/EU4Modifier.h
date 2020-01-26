@@ -10,7 +10,7 @@ namespace EU4
 	public:
 		EU4Modifier() = default;
 		explicit EU4Modifier(std::istream& theStream);
-		[[nodiscard]] auto getModifier() const { return modifier; }
+		[[nodiscard]] const auto& getModifier() const { return modifier; }
 
 	private:
 		std::string modifier;

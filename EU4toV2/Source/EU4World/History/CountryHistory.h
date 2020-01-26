@@ -12,7 +12,7 @@ namespace EU4
 		explicit CountryHistory(std::istream& theStream);
 		
 		[[nodiscard]] const auto& getLeaders() const { return leaders; }
-		[[nodiscard]] auto getDynasty() const { return dynasty; }
+		[[nodiscard]] const auto& getDynasty() const { return dynasty; }
 
 	private:
 		std::vector<Leader> leaders;

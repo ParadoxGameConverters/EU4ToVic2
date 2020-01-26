@@ -11,11 +11,13 @@ namespace mappers
 	{
 	public:
 		FactoryInventionMapper();
-		FactoryInventionMapper(std::istream& theStream);
-		const std::map<std::string, std::string>& getFactoryInventionMap() const { return factoryInventionMap; }
+		explicit FactoryInventionMapper(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getFactoryInventionMap() const { return factoryInventionMap; }
 
 	private:
 		void registerKeys();
+		
 		std::map<std::string, std::string> factoryInventionMap;
 	};
 }

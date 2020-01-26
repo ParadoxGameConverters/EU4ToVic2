@@ -8,7 +8,7 @@ mappers::FactoryStartingCounts::FactoryStartingCounts()
 
 	registerRegex("[a-z_]+", [this](const std::string& factoryName, std::istream& theStream)
 		{
-			commonItems::singleInt countInt(theStream);
+			const commonItems::singleInt countInt(theStream);
 			startingCounts.insert(std::make_pair(factoryName, countInt.getInt()));
 		});
 	registerRegex("[a-zA-Z0-9\\_]+", commonItems::ignoreItem);

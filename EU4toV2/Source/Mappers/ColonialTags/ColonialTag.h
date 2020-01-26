@@ -16,8 +16,9 @@ namespace mappers
 	class ColonialTag: commonItems::parser
 	{
 	public:
-		ColonialTag(std::istream& theStream);
-		ColonyStruct getColonyTag() const { return colonyTag; }
+		explicit ColonialTag(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getColonyTag() const { return colonyTag; }
 
 	private:
 		ColonyStruct colonyTag;

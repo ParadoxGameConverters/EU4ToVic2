@@ -9,8 +9,9 @@ namespace mappers
 	{
 	public:
 		ColonialTagMapper();
-		ColonialTagMapper(std::istream& theStream);
-		std::vector<ColonyStruct> getColonyList() const { return colonyList; }
+		explicit ColonialTagMapper(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getColonyList() const { return colonyList; }
 
 	private:
 		void registerKeys();

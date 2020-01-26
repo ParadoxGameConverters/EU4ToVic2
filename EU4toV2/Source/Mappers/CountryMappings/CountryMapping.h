@@ -8,15 +8,15 @@ namespace mappers
 	class CountryMapping: commonItems::parser
 	{
 	public:
-		CountryMapping(std::istream& theStream);
+		explicit CountryMapping(std::istream& theStream);
 
-		std::string getEU4Tag() const { return EU4Tag; }
-		std::string getVic2Tag() const { return Vic2Tag; }
+		[[nodiscard]] const auto& getEU4Tag() const { return eu4Tag; }
+		[[nodiscard]] const auto& getVic2Tag() const { return vic2Tag; }
 
 	private:
-		std::string EU4Tag;
-		std::string Vic2Tag;
+		std::string eu4Tag;
+		std::string vic2Tag;
 	};
 }
 
-#endif // COUNTRYMAPPING_H
+#endif // COUNTRY_MAPPING_H

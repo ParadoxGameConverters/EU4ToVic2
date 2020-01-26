@@ -10,7 +10,7 @@ namespace EU4
 	{
 	public:
 		explicit ProvinceModifier(std::istream& theStream);
-		[[nodiscard]] auto getModifier() const { return modifier; }
+		[[nodiscard]] const auto& getModifier() const { return modifier; }
 
 	private:
 		std::string modifier;
