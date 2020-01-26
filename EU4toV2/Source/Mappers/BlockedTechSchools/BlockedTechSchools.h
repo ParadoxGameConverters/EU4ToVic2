@@ -11,12 +11,13 @@ namespace mappers
 	{
 	public:
 		BlockedTechSchools();
-		BlockedTechSchools(std::istream& theStream);
+		explicit BlockedTechSchools(std::istream& theStream);
 
-		bool isTechSchoolBlocked(const std::string& techSchool) const;
+		[[nodiscard]] bool isTechSchoolBlocked(const std::string& techSchool) const;
 
 	private:
 		void registerKeys();
+		
 		std::vector<std::string> theBlockedTechSchools;
 	};
 }

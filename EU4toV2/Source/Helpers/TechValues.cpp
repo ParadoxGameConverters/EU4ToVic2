@@ -3,19 +3,19 @@
 #include "../V2World/Country/Country.h"
 #include <algorithm>
 
-helpers::TechValues::TechValues( const std::map<std::string, std::shared_ptr<V2::Country>>& countries )
+helpers::TechValues::TechValues(const std::map<std::string, std::shared_ptr<V2::Country>>& countries)
 {
-	int numValidCountries = 0;
-	double armyTotal = 0.0;
-	double navyTotal = 0.0;
-	double commerceTotal = 0.0;
-	double cultureTotal = 0.0;
-	double industryTotal = 0.0;
+	auto numValidCountries = 0;
+	double armyTotal = 0;
+	double navyTotal = 0;
+	double commerceTotal = 0;
+	double cultureTotal = 0;
+	double industryTotal = 0;
 
 	for (const auto& countryItr: countries)
 	{
 		const auto& country = countryItr.second;
-		if (!isValidCountryForTechConversion(country)) continue;
+		if (!isValidCountryForTechConversion(*country)) continue;
 
 		armyMax = std::max(armyMax, getCountryArmyTech(*country->getSourceCountry()));
 		armyTotal += getCountryArmyTech(*country->getSourceCountry());
@@ -40,9 +40,9 @@ helpers::TechValues::TechValues( const std::map<std::string, std::shared_ptr<V2:
 	}
 }
 
-bool helpers::TechValues::isValidCountryForTechConversion(std::shared_ptr<V2::Country> country) const
+bool helpers::TechValues::isValidCountryForTechConversion(const V2::Country& country)
 {
-	return country->isCivilized() && !country->getProvinces().empty() && country->getSourceCountry();
+	return country.isCivilized() && !country.getProvinces().empty() && country.getSourceCountry();
 }
 
 double helpers::TechValues::getNormalizedArmyTech(const EU4::Country& country) const
@@ -71,41 +71,33 @@ double helpers::TechValues::getNormalizedIndustryTech(const EU4::Country& countr
 	return getNormalizedScore(getCountryIndustryTech(country), industryMax, industryMean);
 }
 
-double helpers::TechValues::getCountryArmyTech(const EU4::Country& country) const
+double helpers::TechValues::getCountryArmyTech(const EU4::Country& country)
 {
 	return country.getMilTech() +	country.getAdmTech() + country.getArmy();
 }
 
-
-double helpers::TechValues::getCountryNavyTech(const EU4::Country& country) const
+double helpers::TechValues::getCountryNavyTech(const EU4::Country& country)
 {
 	return country.getMilTech() +	country.getDipTech() + country.getNavy();
 }
 
-
-double helpers::TechValues::getCountryCommerceTech(const EU4::Country& country) const
+double helpers::TechValues::getCountryCommerceTech(const EU4::Country& country)
 {
 	return country.getAdmTech() +	country.getDipTech() + country.getCommerce();
 }
 
-
-double helpers::TechValues::getCountryCultureTech(const EU4::Country& country) const
+double helpers::TechValues::getCountryCultureTech(const EU4::Country& country)
 {
 	return country.getDipTech() + country.getCulture();
 }
 
-
-double helpers::TechValues::getCountryIndustryTech(const EU4::Country& country) const
+double helpers::TechValues::getCountryIndustryTech(const EU4::Country& country)
 {
 	return country.getAdmTech() +	country.getDipTech() + country.getMilTech() + country.getIndustry();
 }
 
-double helpers::TechValues::getNormalizedScore(double score, double max, double mean) const
+double helpers::TechValues::getNormalizedScore(const double score, const double max, const double mean)
 {
-	if (mean == max)
-	{
-		return 1.0;
-	}
-
+	if (mean == max) return 1;
 	return (score - mean) / (max - mean);
 }

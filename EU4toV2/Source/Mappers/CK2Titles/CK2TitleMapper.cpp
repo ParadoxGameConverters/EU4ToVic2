@@ -24,7 +24,7 @@ void mappers::CK2TitleMapper::registerKeys()
 {
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream)
 		{
-			TitleMapping newMapping(theStream);
+			const TitleMapping newMapping(theStream);
 			if (newMapping.hasIslamicRegion())
 			{
 				islamicFlags.push_back(newMapping.getID());
@@ -40,42 +40,32 @@ void mappers::CK2TitleMapper::registerKeys()
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 }
 
-std::optional<std::string> mappers::CK2TitleMapper::getTitle(std::string name) const
+std::optional<std::string> mappers::CK2TitleMapper::getTitle(const std::string& name) const
 {
-	auto mapping = titleMap.find(name);
+	const auto& mapping = titleMap.find(name);
 	if (mapping != titleMap.end()) return mapping->second;
 	return std::nullopt;
 }
 
 bool mappers::CK2TitleMapper::doesTitleExist(const std::string& title) const
 {
-	return (titles.count(title) > 0);
+	return titles.count(title);
 }
 
 std::optional<std::string> mappers::CK2TitleMapper::getRandomIslamicFlag() const
 {
-	if (islamicFlags.size() > 0)
-	{
-		std::vector<std::string> randomFlags;
-		std::sample(islamicFlags.begin(), islamicFlags.end(), std::inserter(randomFlags, randomFlags.begin()), 1, std::mt19937{ std::random_device{}() });
-		return *randomFlags.begin();
-	}
-	else
-	{
-		return std::nullopt;
-	}
+	if (islamicFlags.empty()) return std::nullopt;
+	
+	std::vector<std::string> randomFlags;
+	std::sample(islamicFlags.begin(), islamicFlags.end(), std::inserter(randomFlags, randomFlags.begin()), 1, std::mt19937{ std::random_device{}() });
+	return *randomFlags.begin();
 }
 
 std::optional<std::string> mappers::CK2TitleMapper::getRandomIndianFlag() const
 {
-	if (indianFlags.size() > 0)
-	{
-		std::vector<std::string> randomFlags;
-		std::sample(indianFlags.begin(), indianFlags.end(), std::inserter(randomFlags, randomFlags.begin()), 1, std::mt19937{ std::random_device{}() });
-		return *randomFlags.begin();
-	}
-	else
-	{
-		return std::nullopt;
-	}
+	if (indianFlags.empty()) return std::nullopt;
+
+	std::vector<std::string> randomFlags;
+	std::sample(indianFlags.begin(), indianFlags.end(), std::inserter(randomFlags, randomFlags.begin()), 1, std::mt19937{ std::random_device{}() });
+	return *randomFlags.begin();
 }

@@ -21,27 +21,27 @@ void mappers::AgreementMapper::registerKeys()
 {
 	registerKeyword("colonies", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::stringList subjectList(theStream);
+			const commonItems::stringList subjectList(theStream);
 			for (const auto& subject : subjectList.getStrings()) colonies.insert(subject);
 		});
 	registerKeyword("onesiders", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::stringList subjectList(theStream);
+			const commonItems::stringList subjectList(theStream);
 			for (const auto& subject : subjectList.getStrings()) onesiders.insert(subject);
 		});
 	registerKeyword("doublesiders", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::stringList subjectList(theStream);
+			const commonItems::stringList subjectList(theStream);
 			for (const auto& subject : subjectList.getStrings()) doublesiders.insert(subject);
 		});
 	registerKeyword("tributaries", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::stringList subjectList(theStream);
+			const commonItems::stringList subjectList(theStream);
 			for (const auto& subject : subjectList.getStrings()) tributaries.insert(subject);
 		});
 	registerKeyword("vassals", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::stringList subjectList(theStream);
+			const commonItems::stringList subjectList(theStream);
 			for (const auto& subject : subjectList.getStrings()) vassals.insert(subject);
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);

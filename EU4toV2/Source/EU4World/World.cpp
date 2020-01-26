@@ -478,7 +478,7 @@ void EU4::World::mergeNations()
 			for (const auto& slaveTag : mergeBlock.getSlaves())
 			{
 				const auto& slave = getCountry(slaveTag);
-				master->eatCountry(slave);
+				master->eatCountry(*slave);
 			}
 		}
 	}
@@ -513,7 +513,7 @@ void EU4::World::uniteJapan()
 	{
 		if (country.second->getPossibleDaimyo())
 		{
-			japan->eatCountry(country.second);			
+			japan->eatCountry(*country.second);			
 		}
 	}
 }

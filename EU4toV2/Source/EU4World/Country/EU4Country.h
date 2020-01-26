@@ -44,7 +44,7 @@ namespace EU4
 	   void setInHRE(const bool _inHRE) { inHRE = _inHRE; }
 		void setEmperor(const bool _emperor) { holyRomanEmperor = _emperor; }
 		void setCelestialEmperor(const bool _celestialEmperor) { celestialEmperor = _celestialEmperor; }
-		void eatCountry(std::shared_ptr<Country> target);
+		void eatCountry(Country& target);
 		void setColonialRegion(const std::string& region) { colonialRegion = region; }
 		void takeArmies(std::shared_ptr<Country>);
 		void clearArmies();

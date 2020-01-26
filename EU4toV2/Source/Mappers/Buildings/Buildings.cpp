@@ -11,18 +11,18 @@ mappers::Buildings::Buildings()
 	{
 		std::set<std::string> filenames;
 		Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/buildings/", filenames);
-		for (auto filename : filenames)
+		for (const auto& filename : filenames)
 		{
 			parseFile(theConfiguration.getEU4Path() + "/common/buildings/" + filename);
 		}
 	}
-	for (auto modName : theConfiguration.getEU4Mods())
+	for (const auto& modName : theConfiguration.getEU4Mods())
 	{
 		if (Utils::doesFolderExist(modName + "/common/buildings"))
 		{
 			std::set<std::string> filenames;
 			Utils::GetAllFilesInFolder(modName + "/common/buildings/", filenames);
-			for (auto filename : filenames)
+			for (const auto& filename : filenames)
 			{
 				parseFile(modName + "/common/buildings/" + filename);
 			}
@@ -49,12 +49,6 @@ void mappers::Buildings::registerKeys()
 
 std::optional<mappers::Building> mappers::Buildings::getBuilding(const std::string& buildingName) const
 {
-	if (buildings.count(buildingName) > 0)
-	{
-		return std::make_optional(buildings.at(buildingName));
-	}
-	else
-	{
-		return std::nullopt;
-	}
+	if (buildings.count(buildingName)) return std::make_optional(buildings.at(buildingName));
+	return std::nullopt;
 }

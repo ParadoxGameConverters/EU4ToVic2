@@ -723,7 +723,7 @@ void V2::World::convertTechs(const EU4::World& sourceWorld)
 	for (auto countryItr: countries)
 	{
 		auto country = countryItr.second;
-		if (techValues.isValidCountryForTechConversion(country))
+		if (techValues.isValidCountryForTechConversion(*country))
 		{
 			country->setArmyTech(techValues.getNormalizedArmyTech(*country->getSourceCountry()));
 			country->setNavyTech(techValues.getNormalizedNavyTech(*country->getSourceCountry()));

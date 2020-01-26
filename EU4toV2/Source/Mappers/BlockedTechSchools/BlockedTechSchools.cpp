@@ -19,7 +19,7 @@ void mappers::BlockedTechSchools::registerKeys()
 {
 	registerKeyword("blocked", [this](const std::string& techSchool, std::istream& theStream) 
 		{
-			commonItems::singleString blockedStr(theStream);
+			const commonItems::singleString blockedStr(theStream);
 			theBlockedTechSchools.push_back(blockedStr.getString());
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);

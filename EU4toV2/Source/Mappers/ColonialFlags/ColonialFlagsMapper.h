@@ -12,14 +12,16 @@ namespace mappers
 	{
 	public:
 		ColonialFlagsMapper();
-		ColonialFlagsMapper(std::istream& theStream);
+		explicit ColonialFlagsMapper(std::istream& theStream);
 
-		std::optional<mappers::ColonialFlag> getFlag(const std::string& name) const;
-		std::vector<std::string> getNames() const;
+		[[nodiscard]] std::optional<ColonialFlag> getFlag(const std::string& name) const;
+		[[nodiscard]] std::vector<std::string> getNames() const;
+		
 		void removeFlag(const std::string& name);
 
 	private:
 		void registerKeys();
+		
 		std::map<std::string, ColonialFlag> colonialFlags;
 	};
 }

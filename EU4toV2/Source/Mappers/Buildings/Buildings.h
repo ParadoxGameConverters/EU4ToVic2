@@ -12,11 +12,13 @@ namespace mappers
 	{
 	public:
 		Buildings();
-		Buildings(std::istream& theStream);
-		std::optional<Building> getBuilding(const std::string& buildingName) const;
+		explicit Buildings(std::istream& theStream);
+		
+		[[nodiscard]] std::optional<Building> getBuilding(const std::string& buildingName) const;
+		
+	private:
 		void registerKeys();
 
-	private:
 		std::map<std::string, Building> buildings;
 	};
 }
