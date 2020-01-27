@@ -10,8 +10,9 @@ namespace EU4
 	class Area : commonItems::parser
 	{
 	public:
-		Area(std::istream& theStream);
-		const std::set<int>& getProvinces() const { return provinces; }
+		explicit Area(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getProvinces() const { return provinces; }
 
 	private:
 		std::set<int> provinces;

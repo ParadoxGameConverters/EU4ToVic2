@@ -1,5 +1,5 @@
-#ifndef EU4PROVINCE_H_
-#define EU4PROVINCE_H_
+#ifndef EU4_PROVINCE_H
+#define EU4_PROVINCE_H
 
 #include "Date.h"
 #include "BuildingWeightEffects.h"
@@ -23,52 +23,51 @@ namespace EU4
 			const Modifiers& modifierTypes
 		);
 
-		bool hasBuilding(const std::string& building) const;
-		std::set<std::string> exportBuildings() const { return buildings.getBuildings(); }
-		bool hasGreatProject(const std::string& greatProject) const;
-		double getCulturePercent(const std::string& culture) const;
-
-		std::string getArea() const { return areaName; }
-		std::string getName() const { return name; }
-		std::string getOwnerString() const { return ownerString; }
-		std::string getControllerString() const { return controllerString; }
-		const std::set<std::string>& getCores() const { return cores; }
-		const std::vector<EU4::PopRatio>& getPopRatios() const { return provinceHistory.getPopRatios(); }
-		std::optional<date> getFirstOwnedDate() const { return provinceHistory.getFirstOwnedDate(); }
-		int getNum() const { return num; }
-		bool inHre() const { return inHRE; }
-		bool isTerritorialCore() const { return territorialCore; }
-		bool isColony() const { return colony; }
-		bool isCity() const { return city; }
-		bool isState() const { return stated; }
-		bool wasColonised() const { return hadOriginalColoniser || provinceHistory.wasColonized(); }
-		bool hasModifier(const std::string& modifierName) const { return modifiers.count(modifierName) > 0; }
-
 		void addCore(const std::string& tag) { cores.insert(tag); }
 		void removeCore(const std::string& tag) { cores.erase(tag); }
 		void setOwnerString(const std::string& _owner) { ownerString = _owner; }
 		void setControllerString(const std::string& _controller) { controllerString = _controller; }
-
-		// getters for weight attributes
-		double getTotalWeight() const { return totalWeight; }
-		double getBaseTax() const { return baseTax; }
-		double getTaxIncome() const { return taxIncome; }
-		double getProductionIncome() const { return productionIncome; }
-		double getManpowerWeight() const { return manpowerWeight; }
-		double getTotalBuildingWeight() const { return buildingWeight; }
-		double getTotalDevModifier() const { return devModifier; }
-		double getDevDelta() const { return devDelta; }
-		double getModifierWeight() const { return modifierWeight; }
-		const ProvinceStats& getProvinceStats() const { return provinceStats; }
-		std::string getTradeGoods() const { return tradeGoods; }
-		double getProsperity() const { return prosperity; }
 		void setTradeGoodPrice(double price) { tradeGoodsPrice = price; }
-		void determineProvinceWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes);
-
 		void setArea(const std::string& a) { areaName = a; }
 
+		[[nodiscard]] const auto& getArea() const { return areaName; }
+		[[nodiscard]] const auto& getName() const { return name; }
+		[[nodiscard]] const auto& getOwnerString() const { return ownerString; }
+		[[nodiscard]] const auto& getControllerString() const { return controllerString; }
+		[[nodiscard]] auto getNum() const { return num; }
+		[[nodiscard]] auto inHre() const { return inHRE; }
+		[[nodiscard]] auto isTerritorialCore() const { return territorialCore; }
+		[[nodiscard]] auto isColony() const { return colony; }
+		[[nodiscard]] auto isCity() const { return city; }
+		[[nodiscard]] auto isState() const { return stated; }
+		[[nodiscard]] auto wasColonised() const { return hadOriginalColoniser || provinceHistory.wasColonized(); }
+		[[nodiscard]] auto hasModifier(const std::string& modifierName) const { return modifiers.count(modifierName) > 0; }
+		[[nodiscard]] auto getTotalWeight() const { return totalWeight; }
+		[[nodiscard]] auto getBaseTax() const { return baseTax; }
+		[[nodiscard]] auto getTaxIncome() const { return taxIncome; }
+		[[nodiscard]] auto getProductionIncome() const { return productionIncome; }
+		[[nodiscard]] auto getManpowerWeight() const { return manpowerWeight; }
+		[[nodiscard]] auto getTotalBuildingWeight() const { return buildingWeight; }
+		[[nodiscard]] auto getTotalDevModifier() const { return devModifier; }
+		[[nodiscard]] auto getDevDelta() const { return devDelta; }
+		[[nodiscard]] auto getModifierWeight() const { return modifierWeight; }
+		[[nodiscard]] const auto& getTradeGoods() const { return tradeGoods; }
+		[[nodiscard]] auto getProsperity() const { return prosperity; }
+
+		[[nodiscard]] const auto& getProvinceStats() const { return provinceStats; }
+		[[nodiscard]] const auto& getCores() const { return cores; }
+		[[nodiscard]] const auto& getPopRatios() const { return provinceHistory.getPopRatios(); }
+		[[nodiscard]] const auto& exportBuildings() const { return buildings.getBuildings(); }
+
+		[[nodiscard]] bool hasBuilding(const std::string& building) const;
+		[[nodiscard]] bool hasGreatProject(const std::string& greatProject) const;
+		[[nodiscard]] double getCulturePercent(const std::string& culture) const;
+		[[nodiscard]] std::optional<date> getFirstOwnedDate() const { return provinceHistory.getFirstOwnedDate(); }
+
+		void determineProvinceWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes);
+
 	private:
-		BuildingWeightEffects getProvBuildingWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes) const;
+		[[nodiscard]] BuildingWeightEffects getProvBuildingWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes) const;
 
 		int num = 0;
 		std::string	name;
@@ -110,4 +109,4 @@ namespace EU4
 
 }
 
-#endif // EU4PROVINCE_H_
+#endif // EU4_PROVINCE_H

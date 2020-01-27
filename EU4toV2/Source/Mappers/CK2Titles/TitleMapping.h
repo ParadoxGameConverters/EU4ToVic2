@@ -8,18 +8,18 @@ namespace mappers
 	class TitleMapping : commonItems::parser
 	{
 	public:
-		TitleMapping(std::istream& theSteam);
+		explicit TitleMapping(std::istream& theStream);
 
-		bool hasIslamicRegion() const;
-		bool hasIndianRegion() const;
+		[[nodiscard]] bool hasIslamicRegion() const;
+		[[nodiscard]] bool hasIndianRegion() const;
 
-		std::string getName() const { return name; }
-		std::string getID() const { return ID; }
+		[[nodiscard]] const auto& getName() const { return name; }
+		[[nodiscard]] const auto& getID() const { return ID; }
 
 	private:
 		std::string name;
 		std::string ID;
-		std::string region = "";
+		std::string region;
 	};
 }
 

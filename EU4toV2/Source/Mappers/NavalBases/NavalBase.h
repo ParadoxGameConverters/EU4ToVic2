@@ -9,8 +9,9 @@ namespace mappers
 	{
 	public:
 		NavalBase() = default;
-		NavalBase(std::istream& theStream);
-		bool getFound() const { return found; }
+		explicit NavalBase(std::istream& theStream);
+		
+		[[nodiscard]] auto getFound() const { return found; }
 
 	private:
 		bool found = false;

@@ -21,34 +21,27 @@ void mappers::ColonialFlagsMapper::registerKeys()
 {
 	registerRegex("[\\w_]+", [this](const std::string& region, std::istream& theStream)
 		{
-			ColonialFlagRegion newRegion(theStream, region);
+			const ColonialFlagRegion newRegion(theStream, region);
+			auto newRegionFlags = newRegion.getRegionalFlags();
+			colonialFlags.insert(newRegionFlags.begin(), newRegionFlags.end());
 		});
 }
 
 std::optional<mappers::ColonialFlag> mappers::ColonialFlagsMapper::getFlag(const std::string& name) const
 {
-	auto possibleFlag = colonialFlags.find(name);
-	if (possibleFlag != colonialFlags.end())
+	const auto& possibleFlag = colonialFlags.find(name);
+	if (possibleFlag != colonialFlags.end()) return possibleFlag->second;
+	for (auto flag: colonialFlags)
 	{
-		return possibleFlag->second;
+		if (name.find(flag.first) != std::string::npos) return flag.second;
 	}
-	else
-	{
-		for (auto flag: colonialFlags)
-		{
-			if (name.find(flag.first) != std::string::npos)
-			{
-				return flag.second;
-			}
-		}
-		return std::nullopt;
-	}
+	return std::nullopt;
 }
 
 std::vector<std::string> mappers::ColonialFlagsMapper::getNames() const
 {
 	std::vector<std::string> names;
-	for (auto flag: colonialFlags)
+	for (const auto& flag: colonialFlags)
 	{
 		if (!flag.second.isUnique())
 		{

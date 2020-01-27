@@ -10,8 +10,9 @@ namespace mappers
 	class FactoryTypeInputs : commonItems::parser
 	{
 	public:
-		FactoryTypeInputs(std::istream& theStream);
-		std::map<std::string, double> getProductionInputValues() const { return productionInputValues; }
+		explicit FactoryTypeInputs(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getProductionInputValues() const { return productionInputValues; }
 
 	private:
 		std::map<std::string, double> productionInputValues;

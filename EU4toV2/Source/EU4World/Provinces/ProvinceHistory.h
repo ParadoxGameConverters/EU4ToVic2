@@ -13,26 +13,27 @@ namespace EU4
 	{
 	public:
 		ProvinceHistory() = default;
-		ProvinceHistory(std::istream& theStream);
+		explicit ProvinceHistory(std::istream& theStream);
 
-		std::optional<date> getFirstOwnedDate() const;
-		bool hasOriginalCulture() const;
-		bool wasColonized() const;
-		double getOriginalDevelopment() const { return originalTax + originalProduction + originalManpower; }
-		const std::vector<PopRatio>& getPopRatios() const { return popRatios; }
+		[[nodiscard]] std::optional<date> getFirstOwnedDate() const;
+		[[nodiscard]] bool hasOriginalCulture() const;
+		[[nodiscard]] bool wasColonized() const;
+		
+		[[nodiscard]] auto getOriginalDevelopment() const { return originalTax + originalProduction + originalManpower; }
+		[[nodiscard]] const auto& getPopRatios() const { return popRatios; }
 
 	private:
 		void buildPopRatios();
-		void decayPopRatios(const date& oldDate, const date& newDate, EU4::PopRatio& currentPop);
+		void decayPopRatios(const date& oldDate, const date& newDate, PopRatio& currentPop);
 
 		std::vector<std::pair<date, std::string>> ownershipHistory;
 		std::vector<std::pair<date, std::string>> religionHistory;
 		std::vector<std::pair<date, std::string>> cultureHistory;
 
 		std::vector<PopRatio> popRatios;
-		double originalTax = 0.0;
-		double originalProduction = 0.0;
-		double originalManpower = 0.0;
+		double originalTax = 0;
+		double originalProduction = 0;
+		double originalManpower = 0;
 	};
 }
 

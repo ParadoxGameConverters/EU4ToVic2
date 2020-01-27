@@ -15,9 +15,10 @@ namespace EU4
 		Regions() = default;
 		virtual ~Regions() = default;
 		Regions(const SuperRegions& sRegions, const Areas& areas, std::istream& regionsFile);
-		Regions(const Areas& areas);
-		virtual bool provinceInRegion(int province, const std::string& regionName) const;
-		virtual bool regionIsValid(const std::string& regionName) const;
+		explicit Regions(const Areas& areas);
+		
+		[[nodiscard]] virtual bool provinceInRegion(int province, const std::string& regionName) const;
+		[[nodiscard]] virtual bool regionIsValid(const std::string& regionName) const;
 
 	private:
 		std::map<std::string, Region> regions;

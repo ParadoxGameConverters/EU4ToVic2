@@ -13,14 +13,15 @@ namespace mappers
 	class CultureMappingRule: commonItems::parser
 	{
 	public:
-		CultureMappingRule(std::istream& theStream);
-		std::optional<std::string> cultureMatch(
-			const EU4::Regions& EU4Regions,
-			const std::string& EU4culture,
-			const std::string& EU4religion,
-			int EU4Province,
-			const std::string& EU4ownerTag
-		) const;
+		CultureMappingRule() = default;
+		explicit CultureMappingRule(std::istream& theStream);
+		
+		[[nodiscard]] std::optional<std::string> cultureMatch(
+			const EU4::Regions& eu4Regions,
+			const std::string& eu4culture,
+			const std::string& eu4religion,
+			int eu4Province,
+			const std::string& eu4ownerTag) const;
 
 	private:
 		std::string destinationCulture;

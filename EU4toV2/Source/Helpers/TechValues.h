@@ -1,5 +1,5 @@
-#ifndef TECH_COVNERSION_HELPERS_H
-#define TECH_COVNERSION_HELPERS_H
+#ifndef TECH_CONVERSION_HELPERS_H
+#define TECH_CONVERSION_HELPERS_H
 
 #include <map>
 #include <string>
@@ -24,36 +24,35 @@ namespace helpers
 	class TechValues
 	{
 	public:
-		TechValues(const std::map<std::string, std::shared_ptr<V2::Country>>& countries);
+		explicit TechValues(const std::map<std::string, std::shared_ptr<V2::Country>>& countries);
 
-		bool isValidCountryForTechConversion(std::shared_ptr<V2::Country> country) const;
-		double getNormalizedArmyTech(const EU4::Country& country) const;
-		double getNormalizedNavyTech(const EU4::Country& country) const;
-		double getNormalizedCommerceTech(const EU4::Country& country) const;
-		double getNormalizedCultureTech(const EU4::Country& country) const;
-		double getNormalizedIndustryTech(const EU4::Country& country) const;
+		[[nodiscard]] static bool isValidCountryForTechConversion(const V2::Country& country);
+		[[nodiscard]] double getNormalizedArmyTech(const EU4::Country& country) const;
+		[[nodiscard]] double getNormalizedNavyTech(const EU4::Country& country) const;
+		[[nodiscard]] double getNormalizedCommerceTech(const EU4::Country& country) const;
+		[[nodiscard]] double getNormalizedCultureTech(const EU4::Country& country) const;
+		[[nodiscard]] double getNormalizedIndustryTech(const EU4::Country& country) const;
 
 	private:
-		double getCountryArmyTech(const EU4::Country& country) const;
-		double getCountryNavyTech(const EU4::Country& country) const;
-		double getCountryCommerceTech(const EU4::Country& country) const;
-		double getCountryCultureTech(const EU4::Country& country) const;
-		double getCountryIndustryTech(const EU4::Country& country) const;
+		[[nodiscard]] static double getCountryArmyTech(const EU4::Country& country);
+		[[nodiscard]] static double getCountryNavyTech(const EU4::Country& country);
+		[[nodiscard]] static double getCountryCommerceTech(const EU4::Country& country);
+		[[nodiscard]] static double getCountryCultureTech(const EU4::Country& country);
+		[[nodiscard]] static double getCountryIndustryTech(const EU4::Country& country);
+		[[nodiscard]] static double getNormalizedScore(double score, double max, double mean);
 
-		double getNormalizedScore(double score, double max, double mean) const;
+		double armyMax = 0;
+		double navyMax = 0;
+		double commerceMax = 0;
+		double cultureMax = 0;
+		double industryMax = 0;
 
-		double armyMax = 0.0;
-		double navyMax = 0.0;
-		double commerceMax = 0.0;
-		double cultureMax = 0.0;
-		double industryMax = 0.0;
-
-		double armyMean = 0.0;
-		double navyMean = 0.0;
-		double commerceMean = 0.0;
-		double cultureMean = 0.0;
-		double industryMean = 0.0;
+		double armyMean = 0;
+		double navyMean = 0;
+		double commerceMean = 0;
+		double cultureMean = 0;
+		double industryMean = 0;
 	};
 }
 
-#endif // TECH_COVNERSION_HELPERS_H
+#endif // TECH_CONVERSION_HELPERS_H

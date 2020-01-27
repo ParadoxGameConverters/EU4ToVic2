@@ -11,7 +11,8 @@ namespace mappers
 	{
 	public:
 		ColonialFlagRegion(std::istream& theStream, const std::string& region);
-		std::map<std::string, ColonialFlag> getRegionalFlags() const { return regionalFlags; }
+		
+		[[nodiscard]] const auto& getRegionalFlags() const { return regionalFlags; }
 
 	private:
 		std::map<std::string, ColonialFlag> regionalFlags;

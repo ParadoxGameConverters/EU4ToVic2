@@ -14,10 +14,12 @@ namespace mappers
 	public:
 		WarGoalMapper();
 		explicit WarGoalMapper(std::istream& theStream);
+		
 		[[nodiscard]] std::optional<std::string> translateWarGoal(const std::string& eu4WarGoal) const;
 
 	private:
 		void registerKeys();
+		
 		std::map<std::string, std::set<std::string>> warGoalMap;
 	};
 }

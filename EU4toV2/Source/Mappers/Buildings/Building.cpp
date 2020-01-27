@@ -4,7 +4,7 @@
 mappers::Building::Building(std::istream& theStream)
 {
 	registerKeyword("cost", [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleDouble costDouble(theStream);
+		const commonItems::singleDouble costDouble(theStream);
 		cost = costDouble.getDouble();
 	});
 	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream) {

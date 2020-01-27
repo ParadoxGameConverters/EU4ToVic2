@@ -11,8 +11,9 @@ namespace EU4
 	class EU4Relations : commonItems::parser
 	{
 	public:
-		EU4Relations(std::istream& theStream);
-		const std::map<std::string, EU4RelationDetails>& getRelations() const { return relations; }
+		explicit EU4Relations(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getRelations() const { return relations; }
 
 	private:
 		std::map<std::string, EU4RelationDetails> relations;

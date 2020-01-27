@@ -44,52 +44,58 @@ namespace V2
 	{
 	public:
 		Province(
-			const std::string& _filename, 
+			std::string _filename, 
 			const mappers::ClimateMapper& climateMapper, 
 			const mappers::TerrainDataMapper& terrainDataMapper,
 			const ProvinceNameParser& provinceNameParser,
 			const mappers::NavalBaseMapper& navalBaseMapper);
-		int getID() const { return provinceID; }
-		std::string getRgoType() const { return details.rgoType; }
-		std::string getClimate() const { return details.climate; }
-		std::string getTerrain() const { return details.terrain; }
+
 		void setRgoType(const std::string& _type) { details.rgoType = _type; }
-		void setOwner(std::string _owner) { details.owner = _owner; }
-		void setController(std::string _controller) { details.controller = _controller; }
-		std::string getName() const { return name; }
-		std::string getOwner() const { return details.owner; }
-		std::string getController() const { return details.controller; }
-		bool isCoastal() const { return coastal; }
+		void setOwner(const std::string& _owner) { details.owner = _owner; }
+		void setController(const std::string& _controller) { details.controller = _controller; }
 		void setResettable() { resettable = true; }
-		bool getResettable() const { return resettable; }
 		void clearCores() { details.cores.clear(); }
-		void addCore(std::string);
-		bool isTerritorialCore() const { return territorialCore; }
 		void addVanillaPop(std::shared_ptr<Pop> vanillaPop);
 		void addMinorityPop(std::shared_ptr<Pop> minorityPop);
 		void setSlaveProportion(const double _pro) { slaveProportion = _pro; }
-		void increaseRailLevel(int level) { railLevel += level; }
-		void setFortLevel(int level) { fortLevel = level; }
-		void setNavalBaseLevel(int level) { navalBaseLevel = level; }
-		bool hasNavalBase() const { return (navalBaseLevel > 0); }
-		int getNavalBaseLevel() const { return navalBaseLevel; }
-		std::optional<std::shared_ptr<Factory>> addFactory(std::shared_ptr<Factory> factory);
-		bool hasLandConnection() const { return landConnection; }
-		void setLandConnection(bool _connection) { landConnection = _connection; }
-		int getMfgCount() const { return mfgCount; }
-		bool isColony() const { return colonial != 0; }
-		void addPopDemographic(const Demographic& d);
-		const std::set<int>& getEU4IDs() const { return eu4IDs; }
+		void increaseRailLevel(const int level) { railLevel += level; }
+		void setFortLevel(const int level) { fortLevel = level; }
+		void setNavalBaseLevel(const int level) { navalBaseLevel = level; }
+		void setLandConnection(const bool _connection) { landConnection = _connection; }
 		void setSameContinent() { sameContinent = true; }
-		int getTotalPopulation() const;
-		bool wasColony() const { return wasColonised; }
-		std::vector<std::string> getCulturesOverThreshold(double percentOfPopulation) const;
-		std::string getFilename() const { return filename; }
-		std::optional<std::pair<int, std::vector<std::shared_ptr<Pop>>>> getPopsForOutput();
-		std::string getRegimentName(REGIMENTTYPE rc);
-		void sterilizeProvince();
+		void addCore(const std::string& newCore);
+		void addPopDemographic(const Demographic& d);
 
-		void determineColonial();
+		[[nodiscard]] auto getID() const { return provinceID; }
+		[[nodiscard]] auto isCoastal() const { return coastal; }
+		[[nodiscard]] auto getResettable() const { return resettable; }
+		[[nodiscard]] auto isTerritorialCore() const { return territorialCore; }
+		[[nodiscard]] auto hasNavalBase() const { return navalBaseLevel > 0; }
+		[[nodiscard]] auto getNavalBaseLevel() const { return navalBaseLevel; }
+		[[nodiscard]] auto hasLandConnection() const { return landConnection; }
+		[[nodiscard]] auto getMfgCount() const { return mfgCount; }
+		[[nodiscard]] auto isColony() const { return colonial != 0; }
+		[[nodiscard]] auto wasColony() const { return wasColonised; }
+		[[nodiscard]] const auto& getEU4IDs() const { return eu4IDs; }
+		[[nodiscard]] const auto& getRgoType() const { return details.rgoType; }
+		[[nodiscard]] const auto& getClimate() const { return details.climate; }
+		[[nodiscard]] const auto& getTerrain() const { return details.terrain; }
+		[[nodiscard]] const auto& getName() const { return name; }
+		[[nodiscard]] const auto& getOwner() const { return details.owner; }
+		[[nodiscard]] const auto& getController() const { return details.controller; }
+		[[nodiscard]] const auto& getFilename() const { return filename; }
+
+		[[nodiscard]] int getTotalPopulation() const;
+		[[nodiscard]] std::vector<std::string> getCulturesOverThreshold(double percentOfPopulation) const;
+		[[nodiscard]] std::optional<std::pair<int, std::vector<std::shared_ptr<Pop>>>> getPopsForOutput() const;
+		[[nodiscard]] std::vector<std::shared_ptr<Pop>> getPops(const std::string& type) const;
+		[[nodiscard]] std::pair<int, int>	getAvailableSoldierCapacity() const;
+
+		std::string getRegimentName(REGIMENTTYPE chosenType);
+		std::optional<std::shared_ptr<Factory>> addFactory(std::shared_ptr<Factory> factory);
+		std::shared_ptr<Pop> getSoldierPopForArmy(bool force = false);
+
+		void sterilizeProvince();
 		void convertFromOldProvince(
 			const std::vector<std::shared_ptr<EU4::Province>>& provinceSources,
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
@@ -106,9 +112,6 @@ namespace V2
 			CIV_ALGORITHM popConversionAlgorithm,
 			const mappers::ProvinceMapper& provinceMapper
 		);
-		std::shared_ptr<Pop> getSoldierPopForArmy(bool force = false);
-		std::vector<std::shared_ptr<Pop>> getPops(const std::string& type) const;
-		std::pair<int, int>	getAvailableSoldierCapacity() const;
 		
 		friend std::ostream& operator<<(std::ostream& output, const Province& province);
 
@@ -116,10 +119,6 @@ namespace V2
 		int provinceID = 0;
 		std::string name;
 		std::string filename;
-		mappers::ProvinceDetails details;
-		std::vector<std::shared_ptr<Pop>> vanillaPops;
-		std::vector<std::shared_ptr<Pop>> minorityPops;
-		std::vector<std::shared_ptr<Pop>> pops;
 		int vanillaPopulation = 0;
 		double slaveProportion = 0.0;
 		bool coastal = false;
@@ -131,18 +130,22 @@ namespace V2
 		int fortLevel = 0;
 		int navalBaseLevel = 0;
 		int railLevel = 0;
-		std::map<std::string, std::shared_ptr<Factory>> factories;
 		bool landConnection = false;
 		int mfgCount = 0;
-		std::vector<Demographic> demographics;
-		std::set<int> eu4IDs; // Source province IDs, fuzzy at best since we mangled them together to craft this province.
 		bool sameContinent = false;
 		double devpushMod = 0.0;
 		double weightMod = 0.0;
 		double totalWeight = 0.0;
+		std::vector<std::shared_ptr<Pop>> vanillaPops;
+		std::vector<std::shared_ptr<Pop>> minorityPops;
+		std::vector<std::shared_ptr<Pop>> pops;
+		std::map<std::string, std::shared_ptr<Factory>> factories;
+		std::vector<Demographic> demographics;
+		std::set<int> eu4IDs; // Source province IDs, fuzzy at best, use with care (might belong to whomever or be un-colonized).
 		std::set<std::string> importedBuildings;
 		std::set<std::string> importedIdeas;
 		std::map<REGIMENTTYPE, int> unitNameCount;
+		mappers::ProvinceDetails details;
 
 		struct pop_points
 		{
@@ -162,7 +165,7 @@ namespace V2
 			const EU4::Regions& eu4Regions,
 			std::vector<EU4::PopRatio>& popRatios,
 			int eu4ProvID,
-			std::string oldOwnerTag,
+			const std::string& oldOwnerTag,
 			int destNum,
 			double provPopRatio,
 			const mappers::CultureMapper& cultureMapper,
@@ -184,12 +187,13 @@ namespace V2
 			CIV_ALGORITHM popConversionAlgorithm,
 			const mappers::ProvinceMapper& provinceMapper);
 		void combinePops();
+		void determineColonial();
 		static bool popSortBySizePredicate(std::shared_ptr<Pop> pop1, std::shared_ptr<Pop> pop2);
 		static int getRequiredPopForRegimentCount(int count);
-		bool growSoldierPop(std::shared_ptr<Pop> pop);
+		bool growSoldierPop(Pop& pop);
 	};	
 
-	std::ostream& operator<<(std::ostream& output, const std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>>& pops);
+	std::ostream& operator<<(std::ostream& output, const std::optional<std::pair<int, std::vector<std::shared_ptr<Pop>>>>& pops);
 }
 
 #endif // PROVINCE_H

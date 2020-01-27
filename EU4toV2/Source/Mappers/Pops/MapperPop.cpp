@@ -4,18 +4,18 @@
 mappers::MapperPop::MapperPop(std::istream& theStream)
 {
 	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream)
-	{
-			commonItems::singleString cultureStr(theStream);
+		{
+			const commonItems::singleString cultureStr(theStream);
 			culture = cultureStr.getString();
-	});
+		});
 	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString religionStr(theStream);
+			const commonItems::singleString religionStr(theStream);
 			religion = religionStr.getString();
 		});
 	registerKeyword("size", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleDouble sizeDbl(theStream);
+			const commonItems::singleDouble sizeDbl(theStream);
 			size = static_cast<int>(sizeDbl.getDouble());
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);

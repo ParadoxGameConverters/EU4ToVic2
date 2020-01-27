@@ -2,7 +2,7 @@
 #include "../Country/Country.h"
 #include "../Province/Province.h"
 
-V2::UncivReforms::UncivReforms(int westernizationProgress, double milFocus, double socioEcoFocus, Country* country)
+V2::UncivReforms::UncivReforms(const int westernizationProgress, const double milFocus, const double socioEcoFocus, Country* country)
 {
 	int westernizationCost[16];
 	westernizationCost[0] = 15;
@@ -24,7 +24,7 @@ V2::UncivReforms::UncivReforms(int westernizationProgress, double milFocus, doub
 	westernizationCost[15] = 10;
 
 	// Get all valid socio-economic reforms
-	double socioEconProgress = westernizationProgress * socioEcoFocus;
+	auto socioEconProgress = westernizationProgress * socioEcoFocus;
 	for (unsigned int i = 0; i < 8; i++)
 	{
 		if (socioEconProgress >= westernizationCost[i] - 0.001)
@@ -39,7 +39,7 @@ V2::UncivReforms::UncivReforms(int westernizationProgress, double milFocus, doub
 	}
 
 	// Get all valid military reforms
-	double milProgress = westernizationProgress * milFocus;
+	auto milProgress = westernizationProgress * milFocus;
 	for (unsigned int i = 8; i < 16; i++)
 	{
 		if (milProgress >= westernizationCost[i] - 0.001)
@@ -54,7 +54,7 @@ V2::UncivReforms::UncivReforms(int westernizationProgress, double milFocus, doub
 	}
 
 	// Use remaining progress to get any reforms in preferred category
-	double remainingProgress = socioEconProgress + milProgress;
+	auto remainingProgress = socioEconProgress + milProgress;
 	if (socioEconProgress >= milProgress)
 	{
 		for (unsigned int i = 0; i < 8; i++)

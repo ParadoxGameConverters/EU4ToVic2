@@ -9,10 +9,11 @@ namespace EU4
 	class MergeBlock : commonItems::parser
 	{
 	public:
-		MergeBlock(std::istream& theStream);
-		std::string getMaster() const { return master; }
-		const std::set<std::string>& getSlaves() const { return slaves; }
-		bool getMerge() const { return merge; }
+		explicit MergeBlock(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getMaster() const { return master; }
+		[[nodiscard]] const auto& getSlaves() const { return slaves; }
+		[[nodiscard]] auto getMerge() const { return merge; }
 
 	private:
 		std::string master;

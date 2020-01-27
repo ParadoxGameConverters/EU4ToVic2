@@ -10,7 +10,8 @@ namespace V2
 	{
 	public:
 		ProvinceNameParser();
-		std::optional<std::string> getProvinceName(int provID) const;
+		
+		[[nodiscard]] std::optional<std::string> getProvinceName(int provID) const;
 		
 	private:
 		std::map<int, std::string> provinceNames;

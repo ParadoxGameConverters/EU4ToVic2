@@ -10,14 +10,16 @@ namespace EU4
 	class Region: commonItems::parser
 	{
 	public:
-		Region(std::istream& theStream);
-		Region(const std::set<int>& _provinces);
-		bool regionContainsProvince(int province) const;
-		bool areaContainsProvince(const std::string& areaName, int province) const;
+		explicit Region(std::istream& theStream);
+		explicit Region(const std::set<int>& provinces);
+		
+		[[nodiscard]] bool regionContainsProvince(int province) const;
+		[[nodiscard]] bool areaContainsProvince(const std::string& areaName, int province) const;		
+		[[nodiscard]] const auto& getAreaProvinces() const{ return areaProvinces; }
+		[[nodiscard]] const auto& getAreaNames() const { return areaNames; }
+		[[nodiscard]] const auto& getName() const { return name; }
+
 		void addProvinces(const Areas& areas);
-		const std::map<std::string, std::set<int>>& getAreaProvinces() const{ return areaProvinces; }
-		const std::set<std::string>& getAreaNames() const { return areaNames; }
-		const std::string& getName() const { return name; }
 
 	private:
 		std::map<std::string, std::set<int>> areaProvinces;

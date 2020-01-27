@@ -26,12 +26,11 @@ mappers::UnitTypeMapper::UnitTypeMapper()
 			addUnitFileToRegimentTypeMap(modName + "/common/units", filename);
 		}
 	}
-
 }
 
 void mappers::UnitTypeMapper::addUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename)
 {
-	const int period = filename.find_last_of('.');
+	const auto period = filename.find_last_of('.');
 	auto name = filename.substr(0, period);
 
 	UnitType unitType(directory + "/" + filename);
@@ -41,6 +40,7 @@ void mappers::UnitTypeMapper::addUnitFileToRegimentTypeMap(const std::string& di
 		return;
 	}
 
+	// patch fr transports
 	if (unitType.getCategory() == EU4::REGIMENTCATEGORY::transport) unitType.setStrength(24);
 
 	unitTypeMap.insert(std::pair(name, unitType));

@@ -5,16 +5,16 @@ namespace EU4
 {
 	struct BuildingWeightEffects
 	{
-		double buildingWeight = 0.0;
-		double manufactoriesValue = 0.0;
-		double manpowerModifier = 0.0;
-		double taxModifier = 0.0;
-		double productionEfficiency = 0.0;
-		double tradePower = 0.0;
-		double tradeEfficiency = 0.0;
-		double tradeGoodsSizeModifier = 0.0;
-		double tradeValue = 0.0;
-		double tradeSteering = 0.0;
+		double buildingWeight = 0;
+		double manufactoriesValue = 0;
+		double manpowerModifier = 0;
+		double taxModifier = 0;
+		double productionEfficiency = 0;
+		double tradePower = 0;
+		double tradeEfficiency = 0;
+		double tradeGoodsSizeModifier = 0;
+		double tradeValue = 0;
+		double tradeSteering = 0;
 	};
 }
 

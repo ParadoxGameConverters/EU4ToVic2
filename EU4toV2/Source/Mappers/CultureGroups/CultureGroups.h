@@ -12,13 +12,15 @@ namespace mappers
 	{
 	public:
 		CultureGroups();
-		CultureGroups(std::istream& theStream);
-		std::optional<CultureGroup> getCulturalGroup(const std::string& culture) const;
-		std::map<std::string, CultureGroup> getCultureToGroupMap() const { return cultureToGroupMap; }
-		std::vector<Culture> getCulturesInGroup(const std::string& group) const;
+		explicit CultureGroups(std::istream& theStream);
+		
+		[[nodiscard]] std::optional<CultureGroup> getCulturalGroup(const std::string& culture) const;
+		[[nodiscard]] std::vector<Culture> getCulturesInGroup(const std::string& group) const;
+		[[nodiscard]] const auto& getCultureToGroupMap() const { return cultureToGroupMap; }
 
 	private:
 		void registerKeys();
+		
 		std::map<std::string, std::vector<Culture>> groupToCulturesMap;
 		std::map<std::string, CultureGroup> cultureToGroupMap;
 	};

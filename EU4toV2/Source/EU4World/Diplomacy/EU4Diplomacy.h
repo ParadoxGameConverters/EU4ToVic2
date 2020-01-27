@@ -10,13 +10,13 @@ namespace EU4
 	{
 	public:
 		EU4Diplomacy() = default;
-		EU4Diplomacy(std::istream& theStream);
-		const std::vector<EU4Agreement>& getAgreements() const { return agreements; }
+		explicit EU4Diplomacy(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getAgreements() const { return agreements; }
 
 	private:
 		std::vector<EU4Agreement> agreements;
 	};
 }
-
 
 #endif // EU4DIPLOMACY_H

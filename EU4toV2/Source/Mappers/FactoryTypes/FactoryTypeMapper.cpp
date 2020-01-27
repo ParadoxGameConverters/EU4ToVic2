@@ -33,7 +33,7 @@ std::deque<std::shared_ptr<V2::Factory>> mappers::FactoryTypeMapper::buildFactor
 	std::deque<std::shared_ptr<V2::Factory>> factoryQueue;
 	for (auto factoryTypeItr : factoryTypes)
 	{
-		for (int counter = 0; counter < factoryTypeItr.second.getStartingCount(); ++counter)
+		for (auto counter = 0; counter < factoryTypeItr.second.getStartingCount(); ++counter)
 		{
 			auto newFactory = std::make_shared<V2::Factory>(factoryTypeItr.second);
 			factoryQueue.push_back(newFactory);

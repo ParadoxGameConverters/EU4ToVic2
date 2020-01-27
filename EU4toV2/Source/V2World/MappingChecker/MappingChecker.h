@@ -19,12 +19,12 @@ namespace V2
 		void check(const EU4::World& sourceWorld, 
 			const mappers::ProvinceMapper& provinceMapper, 
 			const mappers::ReligionMapper& religionMapper, 
-			const mappers::CultureMapper& cultureMapper);
+			const mappers::CultureMapper& cultureMapper) const;
 		
 	private:
-		void checkAllEU4ProvincesMapped(const EU4::World& sourceWorld, const mappers::ProvinceMapper& provinceMapper) const;
-		void checkAllEU4ReligionsMapped(const EU4::World& sourceWorld, const mappers::ReligionMapper& religionMapper) const;
-		void checkAllEU4CulturesMapped(const EU4::World& sourceWorld, const mappers::CultureMapper& cultureMapper) const;
+		static void checkAllEU4ProvincesMapped(const EU4::World& sourceWorld, const mappers::ProvinceMapper& provinceMapper);
+		static void checkAllEU4ReligionsMapped(const EU4::World& sourceWorld, const mappers::ReligionMapper& religionMapper);
+		static void checkAllEU4CulturesMapped(const EU4::World& sourceWorld, const mappers::CultureMapper& cultureMapper);
 	};
 }
 #endif // MAPPING_CHECKER_H

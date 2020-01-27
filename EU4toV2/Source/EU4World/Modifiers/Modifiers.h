@@ -11,9 +11,11 @@ namespace EU4
 	{
 	public:
 		Modifiers();
-		Modifiers(std::istream& theStream);
+		explicit Modifiers(std::istream& theStream);
+		
 		void initialize();
-		std::optional<Modifier> getModifier(const std::string& modifierName) const;
+		
+		[[nodiscard]] std::optional<Modifier> getModifier(const std::string& modifierName) const;
 
 	private:
 		void registerKeys();

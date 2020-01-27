@@ -8,8 +8,9 @@ namespace EU4
 	class EU4Empire :  commonItems::parser
 	{
 	public:
-		EU4Empire(std::istream& theStream);
-		std::string getEmperor() const { return emperor; }
+		explicit EU4Empire(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getEmperor() const { return emperor; }
 
 	private:
 		std::string emperor;

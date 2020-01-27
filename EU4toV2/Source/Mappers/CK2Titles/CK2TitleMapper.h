@@ -12,15 +12,16 @@ namespace mappers
 	{
 	public:
 		CK2TitleMapper();
-		CK2TitleMapper(std::istream& theStream);
+		explicit CK2TitleMapper(std::istream& theStream);
 
-		std::optional<std::string> getTitle(std::string name) const;
-		bool doesTitleExist(const std::string& title) const;
-		std::optional<std::string> getRandomIslamicFlag() const;
-		std::optional<std::string> getRandomIndianFlag() const;
+		[[nodiscard]] std::optional<std::string> getTitle(const std::string& name) const;
+		[[nodiscard]] bool doesTitleExist(const std::string& title) const;
+		[[nodiscard]] std::optional<std::string> getRandomIslamicFlag() const;
+		[[nodiscard]] std::optional<std::string> getRandomIndianFlag() const;
 
 	private:
 		void registerKeys();
+		
 		std::map<std::string, std::string> titleMap; // <name, title>
 		std::set<std::string> titles;
 		std::vector<std::string> islamicFlags;

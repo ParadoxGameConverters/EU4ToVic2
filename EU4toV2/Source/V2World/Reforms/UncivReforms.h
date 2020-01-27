@@ -11,7 +11,7 @@ namespace V2
 		UncivReforms() = default;
 		UncivReforms(int westernizationProgress, double milFocus, double socioEcoFocus, Country* country);
 
-		friend std::ostream& operator<<(std::ostream& output, const UncivReforms& reforms);
+		friend std::ostream& operator<<(std::ostream& output, const UncivReforms& uncivReforms);
 
 	private:
 		bool reforms[16] = {};

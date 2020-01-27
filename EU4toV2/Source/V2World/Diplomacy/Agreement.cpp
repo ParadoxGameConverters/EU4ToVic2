@@ -1,4 +1,4 @@
 #include "Agreement.h"
 
-V2::Agreement::Agreement(const std::string& _first, const std::string& _second, const std::string& _type, const date& _start_date):
-	first(_first), second(_second),type(_type), start_date(_start_date) {}
+V2::Agreement::Agreement(std::string _first, std::string _second, std::string _type, const date& _start_date):
+	type(std::move(_type)), first(std::move(_first)), second(std::move(_second)), start_date(_start_date) {}

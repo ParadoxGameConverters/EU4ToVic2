@@ -26,7 +26,6 @@ EU4::Regions::Regions(const Areas& areas)
 	});
 }
 
-
 bool EU4::Regions::provinceInRegion(int province, const std::string& regionName) const
 {
 	const auto& regionItr = regions.find(regionName);

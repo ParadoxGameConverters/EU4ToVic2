@@ -16,10 +16,13 @@ EU4::Provinces::Provinces(std::istream& theStream, const mappers::Buildings& bui
 	clearRegisteredKeywords();
 }
 
-std::shared_ptr<EU4::Province> EU4::Provinces::getProvince(int provinceNumber)
+std::shared_ptr<EU4::Province> EU4::Provinces::getProvince(const int provinceNumber)
 {
 	const auto& province = provinces.find(provinceNumber);
-	if (province == provinces.end()) throw std::range_error(std::string("Accessing EU4 province ") + std::to_string(provinceNumber) + std::string(" that does not exist (Area mismatch? Using newer EU4 version to convert older save?)"));
+	if (province == provinces.end()) 
+		throw std::range_error(std::string("Accessing EU4 province ") + std::to_string(provinceNumber) + 
+			std::string(" that does not exist (Area mismatch? Using newer EU4 version to convert older save?)"));
+	
 	return province->second;
 }
 
@@ -130,7 +133,7 @@ void EU4::Provinces::logTotalProvinceWeights() const
 		EU4_World << i.second[2] << ",";
 		EU4_World << i.second[3] << ",";
 		EU4_World << i.second[4] << ",";
-		EU4_World << (i.second[5] - i.second[3]) << ",";
+		EU4_World << i.second[5] - i.second[3] << ",";
 		EU4_World << i.second[5] << "\n";
 	}
 

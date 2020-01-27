@@ -21,7 +21,7 @@ namespace V2
 
 	private:
 		void determineUseableFlags();
-		std::set<std::string> determineAvailableFlags();
+		static std::set<std::string> determineAvailableFlags();
 		void getRequiredTags(const std::map<std::string, std::shared_ptr<Country>>& V2Countries);
 		void mapTrivialTags();
 

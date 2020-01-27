@@ -9,14 +9,14 @@ namespace mappers
 	class Building: commonItems::parser
 	{
 	public:
-		Building(std::istream& theStream);
+		explicit Building(std::istream& theStream);
 
-		double getCost() const { return cost; }
-		const EU4::Modifier& getModifier() const { return modifier; }
-		bool isManufactory() { return manufactory; }
+		[[nodiscard]] auto getCost() const { return cost; }
+		[[nodiscard]] auto isManufactory() const { return manufactory; }
+		[[nodiscard]] const auto& getModifier() const { return modifier; }
 
 	private:
-		double cost = 0.0;
+		double cost = 0;
 		bool manufactory = false;
 		EU4::Modifier modifier;
 	};

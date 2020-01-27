@@ -5,7 +5,7 @@ mappers::Unreleasables::Unreleasables()
 {
 	registerKeyword("unreleasable", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString unreleasableStr(theStream);
+			const commonItems::singleString unreleasableStr(theStream);
 			unreleasables.insert(unreleasableStr.getString());
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
@@ -15,6 +15,5 @@ mappers::Unreleasables::Unreleasables()
 
 bool mappers::Unreleasables::isTagReleasable(const std::string& tag) const
 {
-	if (unreleasables.count(tag)) return false;
-	return true;
+	return !unreleasables.count(tag);
 }

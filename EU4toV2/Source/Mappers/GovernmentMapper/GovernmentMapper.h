@@ -10,8 +10,9 @@ namespace mappers
 	{
 	public:
 		GovernmentMapper();
-		GovernmentMapper(std::istream& theStream);
-		std::string matchGovernment(const std::string& sourceGovernment) const;
+		explicit GovernmentMapper(std::istream& theStream);
+		
+		[[nodiscard]] std::optional<std::string> matchGovernment(const std::string& sourceGovernment) const;
 
 	private:
 		void registerKeys();

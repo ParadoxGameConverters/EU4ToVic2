@@ -9,9 +9,11 @@ namespace mappers
 	{
 	public:
 		CulturalUnionMapper() = default;
-		CulturalUnionMapper(std::istream& theStream);
+		explicit CulturalUnionMapper(std::istream& theStream);
+		
 		void loadFile(const std::string& filename);
-		std::optional<std::vector<std::string>> getCoresForCulture(const std::string& culture) const;
+
+		[[nodiscard]] std::optional<std::vector<std::string>> getCoresForCulture(const std::string& culture) const;
 
 	private:
 		void registerKeys();

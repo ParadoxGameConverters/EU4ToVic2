@@ -10,10 +10,10 @@ namespace mappers
 	class CultureGroup: commonItems::parser
 	{
 	public:
-		CultureGroup(const std::string& name_, std::istream& theStream);
+		CultureGroup(std::string _name, std::istream& theStream);
 
-		std::string getName() const { return name; }
-		std::map<std::string, Culture> getCultures() const { return cultures; }
+		[[nodiscard]] const auto& getName() const { return name; }
+		[[nodiscard]] const auto& getCultures() const { return cultures; }
 
 	private:
 		std::string name;

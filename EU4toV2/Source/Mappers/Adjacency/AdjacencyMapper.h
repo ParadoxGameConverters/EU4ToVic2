@@ -25,12 +25,12 @@ namespace mappers
 	{
 	public:
 		AdjacencyMapper();
-		std::optional<std::vector<int>> getVic2Adjacencies(int Vic2Province) const;
+		[[nodiscard]] std::optional<std::vector<int>> getVic2Adjacencies(int vic2Province) const;
 
 	private:
-		std::string getAdjacencyFilename();
+		static std::string getAdjacencyFilename();
 		void inputAdjacencies(std::istream& adjacenciesFile);
-		std::vector<int> readAnAdjacenciesSet(std::istream& adjacenciesFile, unsigned int numAdjacencies);
+		static std::vector<int> readAnAdjacenciesSet(std::istream& adjacenciesFile, unsigned int numAdjacencies);
 		void outputAdjacenciesMapData();
 
 		std::map<int, std::vector<int>> adjacencyMap;

@@ -8,8 +8,8 @@ EU4::Modifier::Modifier(std::istream& theStream)
 	registerKeyword("trigger", commonItems::ignoreItem);
 
 	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& effect, std::istream& theStream) {
-		commonItems::singleString amountSingleString(theStream);
-		auto amountString = amountSingleString.getString();
+		const commonItems::singleString amountSingleString(theStream);
+		const auto amountString = amountSingleString.getString();
 
 		std::smatch match;
 		if (std::regex_match(amountString, match, std::regex("-?[0-9]+([.][0-9]+)?")))
@@ -23,8 +23,8 @@ EU4::Modifier::Modifier(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
-double EU4::Modifier::getEffectAmount(const std::string& theEffect) const
+double EU4::Modifier::getEffectAmount(const std::string& modifier) const
 {
-	if (effects.count(theEffect) > 0) return effects.at(theEffect);
+	if (effects.count(modifier) > 0) return effects.at(modifier);
 	return 0;
 }

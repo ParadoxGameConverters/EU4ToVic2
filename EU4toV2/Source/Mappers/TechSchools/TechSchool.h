@@ -8,8 +8,9 @@ namespace mappers
 	class TechSchool: commonItems::parser
 	{
 	public:
-		TechSchool(std::istream& theStream);
-		double calculateComparisonScore(
+		explicit TechSchool(std::istream& theStream);
+
+		[[nodiscard]] double calculateComparisonScore(
 			double armyInvestment, 
 			double commerceInvestment, 
 			double cultureInvestment, 
@@ -17,11 +18,11 @@ namespace mappers
 			double navyInvestment) const;
 
 	private:
-		double armyBonus = 0.0;
-		double commerceBonus = 0.0;
-		double cultureBonus = 0.0;
-		double industryBonus = 0.0;
-		double navyBonus = 0.0;
+		double armyBonus = 0;
+		double commerceBonus = 0;
+		double cultureBonus = 0;
+		double industryBonus = 0;
+		double navyBonus = 0;
 	};
 }
 

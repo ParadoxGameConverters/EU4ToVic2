@@ -10,8 +10,7 @@ EU4::CountryHistory::CountryHistory(std::istream& theStream)
 			auto incLeaders = theDate.getLeaders();
 			leaders.insert(leaders.end(), incLeaders.begin(), incLeaders.end());
 			if (!theDate.getDynasty().empty()) dynasty = theDate.getDynasty();
-		}
-	);
+		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);

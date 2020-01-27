@@ -28,18 +28,17 @@ void mappers::RegionProvinceMapper::registerKeys()
 {
 	registerRegex("\\w\\w\\w_\\d+", [this](const std::string& regionName, std::istream& theStream)
 		{
-			commonItems::intList provinceList(theStream);
+			const commonItems::intList provinceList(theStream);
 			auto provinceVector = provinceList.getInts();
 			std::set<int> provinces(provinceVector.begin(), provinceVector.end());
 			theRegions.insert(make_pair(regionName, provinces));
-		}
-	);
+		});
 }
 
 bool mappers::RegionProvinceMapper::provinceIsInRegion(int province, const std::string& region) const
 {
 	const auto provinces = theRegions.find(region);
-	if (provinces != theRegions.end()) return (provinces->second.count(province) > 0);
+	if (provinces != theRegions.end()) return provinces->second.count(province) > 0;
 	return false;
 }
 

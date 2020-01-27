@@ -10,11 +10,12 @@ namespace EU4
 	{
 	public:
 		NationMergeParser();
-		const std::vector<EU4::MergeBlock>& getMergeBlocks() const { return mergeBlocks; }
-		bool getMergeDaimyos() const { return mergeDaimyos; }
+		
+		[[nodiscard]] const auto& getMergeBlocks() const { return mergeBlocks; }
+		[[nodiscard]] auto getMergeDaimyos() const { return mergeDaimyos; }
 
 	private:
-		std::vector<EU4::MergeBlock> mergeBlocks;
+		std::vector<MergeBlock> mergeBlocks;
 		bool mergeDaimyos = false;
 	};
 }

@@ -6,17 +6,17 @@ mappers::FactoryType::FactoryType(std::istream& theStream)
 {
 	registerKeyword("output_goods", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString outputStr(theStream);
+			const commonItems::singleString outputStr(theStream);
 			outputs = outputStr.getString();
 		});
 	registerKeyword("is_coastal", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString coastalStr(theStream);
+			const commonItems::singleString coastalStr(theStream);
 			coastal = (coastalStr.getString() == "yes");
 		});
 	registerKeyword("input_goods", [this](const std::string& unused, std::istream& theStream)
 		{
-			FactoryTypeInputs v2Inputs(theStream);
+			const FactoryTypeInputs v2Inputs(theStream);
 			inputs = v2Inputs.getProductionInputValues();
 		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);

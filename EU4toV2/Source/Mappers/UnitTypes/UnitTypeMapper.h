@@ -12,7 +12,8 @@ namespace mappers
 	{
 	public:
 		UnitTypeMapper();
-		const RegimentTypeMap& getUnitTypeMap() const { return unitTypeMap; }
+		
+		[[nodiscard]] const auto& getUnitTypeMap() const { return unitTypeMap; }
 
 	private:
 		RegimentTypeMap unitTypeMap;

@@ -6,7 +6,7 @@ EU4::EU4RelationDetails::EU4RelationDetails(std::istream& theStream)
 	// the object holding the relationship value in old/new saves
 	registerRegex("value|cached_sum", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleInt valueInt(theStream);
+			const commonItems::singleInt valueInt(theStream);
 			value = valueInt.getInt();
 		});
 	registerKeyword("military_access", [this](const std::string& unused, std::istream& theStream)
@@ -16,17 +16,17 @@ EU4::EU4RelationDetails::EU4RelationDetails(std::istream& theStream)
 		});
 	registerKeyword("last_send_diplomat", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString theDateStr(theStream);
+			const commonItems::singleString theDateStr(theStream);
 			last_send_diplomat = date(theDateStr.getString());
 		});
 	registerKeyword("last_war", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString theDateStr(theStream);
+			const commonItems::singleString theDateStr(theStream);
 			last_war = date(theDateStr.getString());
 		});
 	registerKeyword("attitude", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString attitudeStr(theStream);
+			const commonItems::singleString attitudeStr(theStream);
 			attitude = attitudeStr.getString();
 		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);

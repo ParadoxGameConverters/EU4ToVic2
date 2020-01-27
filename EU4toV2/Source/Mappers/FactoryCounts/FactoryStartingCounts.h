@@ -10,7 +10,8 @@ namespace mappers
 	{
 	public:
 		FactoryStartingCounts();
-		std::map<std::string, int> getFactoryStartingCounts() const { return startingCounts; }
+		
+		[[nodiscard]] const auto& getFactoryStartingCounts() const { return startingCounts; }
 
 	private:
 		std::map<std::string, int> startingCounts;

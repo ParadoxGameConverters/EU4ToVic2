@@ -7,7 +7,7 @@ mappers::ColonialFlag::ColonialFlag(std::istream& theStream, const std::string& 
 {
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleString nameStr(theStream);
+			const commonItems::singleString nameStr(theStream);
 			name = Utils::convertUTF8To8859_15(nameStr.getString());
 			std::transform(name.begin(), name.end(), name.begin(), ::tolower);
 		});

@@ -17,8 +17,8 @@ namespace EU4
 		Version& operator=(Version&&) = default;
 		~Version() = default;
 
-		Version(std::string version);
-		Version(std::istream& theStream);
+		explicit Version(std::string version);
+		explicit Version(std::istream& theStream);
 
 		bool operator >= (const Version& rhs) const;
 		bool operator > (const Version& rhs) const;

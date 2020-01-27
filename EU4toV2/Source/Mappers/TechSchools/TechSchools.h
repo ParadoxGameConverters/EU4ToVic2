@@ -11,13 +11,13 @@ namespace mappers
 	class TechSchools: commonItems::parser
 	{
 	public:
-		TechSchools(std::istream& theStream);
-		std::map<std::string, TechSchool> getTechSchools() const { return techSchools; }
+		explicit TechSchools(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getTechSchools() const { return techSchools; }
 
 	private:
 		std::map<std::string, TechSchool> techSchools;
-
-		mappers::BlockedTechSchools blockedTechSchools;
+		BlockedTechSchools blockedTechSchools;
 	};
 }
 

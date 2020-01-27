@@ -6,42 +6,42 @@ namespace EU4
 	class ProvinceStats
 	{
 	public:
-		double getGoodsProduced() const { return goodsProduced; }
-		double getPrice() const { return price; }
-		double getTradeEfficiency() const { return tradeEfficiency; }
-		double getProductionEfficiency() const { return productionEfficiency; }
-		double getTradeValue() const { return tradeValue; }
-		double getTotalTradeValue() const { return totalTradeValue; }
+		[[nodiscard]] auto getGoodsProduced() const { return goodsProduced; }
+		[[nodiscard]] auto getPrice() const { return price; }
+		[[nodiscard]] auto getTradeEfficiency() const { return tradeEfficiency; }
+		[[nodiscard]] auto getProductionEfficiency() const { return productionEfficiency; }
+		[[nodiscard]] auto getTradeValue() const { return tradeValue; }
+		[[nodiscard]] auto getTotalTradeValue() const { return totalTradeValue; }
 
-		double getBaseTax() const { return baseTax; }
-		double getBuildingsIncome() const { return buildingsIncome; }
-		double getTaxEfficiency() const { return taxEfficiency; }
-		double getTotalTaxIncome() const { return totalTaxIncome; }
+		[[nodiscard]] auto getBaseTax() const { return baseTax; }
+		[[nodiscard]] auto getBuildingsIncome() const { return buildingsIncome; }
+		[[nodiscard]] auto getTaxEfficiency() const { return taxEfficiency; }
+		[[nodiscard]] auto getTotalTaxIncome() const { return totalTaxIncome; }
 
-		void setGoodsProduced(double _goodsProduced) { goodsProduced = _goodsProduced; }
-		void setPrice(double _price) { price = _price; }
-		void setTradeEfficiency(double _tradeEfficiency) { tradeEfficiency = _tradeEfficiency; }
-		void setProductionEfficiency(double _productionEfficiency) { productionEfficiency = _productionEfficiency; }
-		void setTradeValue(double _tradeValue) { tradeValue = _tradeValue; }
-		void setTotalTradeValue(double _totalTradeValue) { totalTradeValue = _totalTradeValue; }
+		void setGoodsProduced(const double _goodsProduced) { goodsProduced = _goodsProduced; }
+		void setPrice(const double _price) { price = _price; }
+		void setTradeEfficiency(const double _tradeEfficiency) { tradeEfficiency = _tradeEfficiency; }
+		void setProductionEfficiency(const double _productionEfficiency) { productionEfficiency = _productionEfficiency; }
+		void setTradeValue(const double _tradeValue) { tradeValue = _tradeValue; }
+		void setTotalTradeValue(const double _totalTradeValue) { totalTradeValue = _totalTradeValue; }
 
-		void setBaseTax(double _baseTax) { baseTax = _baseTax; }
-		void setBuildingsIncome(double _buildingsIncome) { buildingsIncome = _buildingsIncome; }
-		void setTaxEfficiency(double _taxEfficiency) { taxEfficiency = _taxEfficiency; }
-		void setTotalTaxIncome(double _totalTaxIncome) { totalTaxIncome = _totalTaxIncome; }
+		void setBaseTax(const double _baseTax) { baseTax = _baseTax; }
+		void setBuildingsIncome(const double _buildingsIncome) { buildingsIncome = _buildingsIncome; }
+		void setTaxEfficiency(const double _taxEfficiency) { taxEfficiency = _taxEfficiency; }
+		void setTotalTaxIncome(const double _totalTaxIncome) { totalTaxIncome = _totalTaxIncome; }
 
 	private:
-		double goodsProduced = 0.0;
-		double price = 0.0;
-		double tradeEfficiency = 0.0;
-		double productionEfficiency = 0.0;
-		double tradeValue = 0.0;
-		double totalTradeValue = 0.0;
+		double goodsProduced = 0;
+		double price = 0;
+		double tradeEfficiency = 0;
+		double productionEfficiency = 0;
+		double tradeValue = 0;
+		double totalTradeValue = 0;
 
-		double baseTax = 0.0;
-		double buildingsIncome = 0.0;
-		double taxEfficiency = 0.0;
-		double totalTaxIncome = 0.0;
+		double baseTax = 0;
+		double buildingsIncome = 0;
+		double taxEfficiency = 0;
+		double totalTaxIncome = 0;
 	};
 }
 

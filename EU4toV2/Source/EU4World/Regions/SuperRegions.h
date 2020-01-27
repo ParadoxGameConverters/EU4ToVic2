@@ -1,5 +1,5 @@
-#ifndef SUPERREGIONS_H
-#define SUPERREGIONS_H
+#ifndef SUPER_REGIONS_H
+#define SUPER_REGIONS_H
 
 #include "newParser.h"
 #include <map>
@@ -10,12 +10,13 @@ namespace EU4
 	{
 	public:
 		SuperRegions() = default;
-		SuperRegions(std::istream& theStream);
-		const std::map<std::string, std::vector<std::string>>& getSuperRegions() const { return superRegionMap; }
+		explicit SuperRegions(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getSuperRegions() const { return superRegionMap; }
 
 	private:
 		std::map<std::string, std::vector<std::string>> superRegionMap;
 	};
 }
 
-#endif // SUPERREGIONS_H
+#endif // SUPER_REGIONS_H

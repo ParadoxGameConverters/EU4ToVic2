@@ -11,9 +11,10 @@ namespace mappers
 	{
 	public:
 		RegionProvinceMapper();
-		RegionProvinceMapper(std::istream& theStream);
-		bool provinceIsInRegion(int province, const std::string& region) const;
-		std::set<int> getProvincesInRegion(const std::string& region) const;
+		explicit RegionProvinceMapper(std::istream& theStream);
+		
+		[[nodiscard]] bool provinceIsInRegion(int province, const std::string& region) const;
+		[[nodiscard]] std::set<int> getProvincesInRegion(const std::string& region) const;
 
 	private:
 		void registerKeys();

@@ -11,8 +11,9 @@ namespace mappers
 	{
 	public:
 		PopTypes() = default;
-		PopTypes(std::istream& theStream);
-		const std::multimap<std::string, MapperPop>& getPopTypes() const { return popTypes; }
+		explicit PopTypes(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getPopTypes() const { return popTypes; }
 
 	private:
 		std::multimap<std::string, MapperPop> popTypes;

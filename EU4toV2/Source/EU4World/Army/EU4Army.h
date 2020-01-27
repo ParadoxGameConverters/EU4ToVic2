@@ -12,7 +12,7 @@ namespace EU4
 	public:
 		EU4Army() = default;
 		EU4Army(std::istream& theStream, const std::string& potentialNavy); // Also applies to ships
-		[[nodiscard]] auto getName() const { return name; }
+		[[nodiscard]] const auto& getName() const { return name; }
 		[[nodiscard]] auto getLocation() const { return location; }
 		[[nodiscard]] auto getArmyFloats() const { return armyFloats; }
 		[[nodiscard]] const auto& getRegiments() const { return regimentList; }

@@ -1,7 +1,7 @@
 #include "Reforms.h"
 #include "../Country/Country.h"
 
-V2::Reforms::Reforms(const CountryDetails& details, const std::shared_ptr<EU4::Country> srcCountry):
+V2::Reforms::Reforms(const CountryDetails& details, const EU4::Country& srcCountry):
 	slavery(details.reforms.slavery),
 	vote_franchise(details.reforms.vote_franchise),
 	upper_house_composition(details.reforms.upper_house_composition),
@@ -11,7 +11,7 @@ V2::Reforms::Reforms(const CountryDetails& details, const std::shared_ptr<EU4::C
 	trade_unions(details.reforms.trade_unions),
 	political_parties(details.reforms.political_parties)
 {
-	if (srcCountry->hasModifier("the_abolish_slavery_act") || srcCountry->hasModifier("abolish_slavery_act"))
+	if (srcCountry.hasModifier("the_abolish_slavery_act") || srcCountry.hasModifier("abolish_slavery_act"))
 	{
 		abolishSlavery = true;
 	}

@@ -6,7 +6,7 @@ EU4::TradeGoods::TradeGoods(std::istream& theStream)
 {
 	registerRegex("[a-z_]+", [this](const std::string& tradeGood, std::istream& theStream)
 		{
-			TradeGood newGood(theStream);
+			const TradeGood newGood(theStream);
 			tradeGoods.insert(std::make_pair(tradeGood, newGood.getPrice()));
 		});
 

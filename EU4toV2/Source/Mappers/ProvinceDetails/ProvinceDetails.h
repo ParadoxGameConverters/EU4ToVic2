@@ -10,8 +10,8 @@ namespace mappers
 	{
 	public:
 		ProvinceDetails() = default;
-		ProvinceDetails(const std::string& filename);
-		ProvinceDetails(std::istream& theStream);
+		explicit ProvinceDetails(const std::string& filename);
+		explicit ProvinceDetails(std::istream& theStream);
 
 		// These values are open to ease management.
 		// This is a storage container for V2::Province.

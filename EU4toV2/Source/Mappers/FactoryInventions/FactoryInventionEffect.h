@@ -8,8 +8,9 @@ namespace mappers
 	class FactoryInventionEffect : commonItems::parser
 	{
 	public:
-		FactoryInventionEffect(std::istream& theStream);
-		std::string getFactoryName() const { return factoryName; }
+		explicit FactoryInventionEffect(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getFactoryName() const { return factoryName; }
 
 	private:
 		std::string factoryName;

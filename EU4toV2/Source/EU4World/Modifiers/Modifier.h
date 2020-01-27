@@ -10,17 +10,16 @@ namespace EU4
 	{
 	public:
 		Modifier() = default;
-		Modifier(std::istream& theStream);
-		double getEffectAmount(const std::string& modifier) const;
+		explicit Modifier(std::istream& theStream);
+		
+		[[nodiscard]] double getEffectAmount(const std::string& modifier) const;
 
-		const std::map<std::string, double>& getAllEffects() const { return effects; }
+		[[nodiscard]] const auto& getAllEffects() const { return effects; }
 
 	private:
 		std::map<std::string, double> effects;
 	};
 
 }
-
-
 
 #endif // MODIFIER_H

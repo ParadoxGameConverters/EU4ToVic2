@@ -12,8 +12,8 @@ namespace mappers
 	public:
 		ProvinceMappingsVersion(const std::string& versionString, std::istream& theStream);
 
-		const EU4::Version& getVersion() const { return version; }
-		std::vector<ProvinceMapping> getMappings() const { return mappings; }
+		[[nodiscard]] const auto& getVersion() const { return version; }
+		[[nodiscard]] const auto& getMappings() const { return mappings; }
 
 	private:
 		EU4::Version version;

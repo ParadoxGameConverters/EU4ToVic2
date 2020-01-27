@@ -10,11 +10,13 @@ namespace mappers
 	{
 	public:
 		FactoryTechMapper();
-		FactoryTechMapper(std::istream& theStream);
-		std::map<std::string, std::string> getFactoryTechMap() const { return factoryTechMap; }
+		explicit FactoryTechMapper(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getFactoryTechMap() const { return factoryTechMap; }
 
 	private:
 		void registerKeys();
+		
 		std::map<std::string, std::string> factoryTechMap;
 	};
 }

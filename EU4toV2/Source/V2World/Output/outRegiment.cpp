@@ -11,7 +11,7 @@ std::ostream& V2::operator<<(std::ostream& output, const Regiment& regiment)
 		output << "\tregiment = {\n";
 	}
 	output << "\t\tname=\"" << regiment.name << "\"\n";
-	output << "\t\ttype=" << V2::RegimentTypeToName[regiment.regimentType] << "\n";
+	output << "\t\ttype=" << RegimentTypeToName[regiment.regimentType] << "\n";
 	if (!regiment.isShip)
 	{
 		output << "\t\thome=" << regiment.homeProvinceID << "\n";

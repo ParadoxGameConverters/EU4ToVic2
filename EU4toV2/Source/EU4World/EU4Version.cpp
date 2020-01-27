@@ -21,154 +21,87 @@ EU4::Version::Version(std::string version)
 }
 
 
-EU4::Version::Version(std::istream& input)
+EU4::Version::Version(std::istream& theStream)
 {
 	registerKeyword("first", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleInt firstString(theStream);
+			const commonItems::singleInt firstString(theStream);
 			firstPart = firstString.getInt();
 		});
 	registerKeyword("second", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleInt firstString(theStream);
+			const commonItems::singleInt firstString(theStream);
 			secondPart = firstString.getInt();
 		});
 	registerKeyword("third", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleInt firstString(theStream);
+			const commonItems::singleInt firstString(theStream);
 			thirdPart = firstString.getInt();
 		});
 	registerKeyword("forth", [this](const std::string& unused, std::istream& theStream)
 		{
-			commonItems::singleInt firstString(theStream);
+			const commonItems::singleInt firstString(theStream);
 			fourthPart = firstString.getInt();
 		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
-	parseStream(input);
+	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-
-bool EU4::Version::operator >= (const EU4::Version& rhs) const
+bool EU4::Version::operator >= (const Version& rhs) const
 {
-	if (firstPart > rhs.firstPart)
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart > rhs.secondPart))
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart == rhs.secondPart) && (thirdPart > rhs.thirdPart))
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart == rhs.secondPart) && (thirdPart == rhs.thirdPart) && (fourthPart >= rhs.fourthPart))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	if (firstPart > rhs.firstPart) return true;
+	if (firstPart == rhs.firstPart && secondPart > rhs.secondPart) return true;
+	if (firstPart == rhs.firstPart && secondPart == rhs.secondPart && thirdPart > rhs.thirdPart) return true;
+	if (firstPart == rhs.firstPart && secondPart == rhs.secondPart && thirdPart == rhs.thirdPart && fourthPart >= rhs.fourthPart) return true;
+	return false;
 }
 
-
-bool EU4::Version::operator > (const EU4::Version& rhs) const
+bool EU4::Version::operator > (const Version& rhs) const
 {
-	if (firstPart > rhs.firstPart)
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart > rhs.secondPart))
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart == rhs.secondPart) && (thirdPart > rhs.thirdPart))
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart == rhs.secondPart) && (thirdPart == rhs.thirdPart) && (fourthPart > rhs.fourthPart))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	if (firstPart > rhs.firstPart) return true;
+	if (firstPart == rhs.firstPart && secondPart > rhs.secondPart) return true;
+	if (firstPart == rhs.firstPart && secondPart == rhs.secondPart && thirdPart > rhs.thirdPart) return true;
+	if (firstPart == rhs.firstPart && secondPart == rhs.secondPart && thirdPart == rhs.thirdPart && fourthPart > rhs.fourthPart) return true;
+	return false;
 }
 
-
-bool EU4::Version::operator < (const EU4::Version& rhs) const
+bool EU4::Version::operator < (const Version& rhs) const
 {
-	if (firstPart < rhs.firstPart)
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart < rhs.secondPart))
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart == rhs.secondPart) && (thirdPart < rhs.thirdPart))
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart == rhs.secondPart) && (thirdPart == rhs.thirdPart) && (fourthPart < rhs.fourthPart))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	if (firstPart < rhs.firstPart) return true;
+	if (firstPart == rhs.firstPart && secondPart < rhs.secondPart) return true;
+	if (firstPart == rhs.firstPart && secondPart == rhs.secondPart && thirdPart < rhs.thirdPart) return true;
+	if (firstPart == rhs.firstPart && secondPart == rhs.secondPart && thirdPart == rhs.thirdPart && fourthPart < rhs.fourthPart) return true;
+	return false;
 }
 
-
-bool EU4::Version::operator <= (const EU4::Version& rhs) const
+bool EU4::Version::operator <= (const Version& rhs) const
 {
-	if (firstPart < rhs.firstPart)
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart < rhs.secondPart))
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart == rhs.secondPart) && (thirdPart < rhs.thirdPart))
-	{
-		return true;
-	}
-	else if ((firstPart == rhs.firstPart) && (secondPart == rhs.secondPart) && (thirdPart == rhs.thirdPart) && (fourthPart <= rhs.fourthPart))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	if (firstPart < rhs.firstPart) return true;
+	if (firstPart == rhs.firstPart && secondPart < rhs.secondPart) return true;
+	if (firstPart == rhs.firstPart && secondPart == rhs.secondPart && thirdPart < rhs.thirdPart) return true;
+	if (firstPart == rhs.firstPart && secondPart == rhs.secondPart && thirdPart == rhs.thirdPart && fourthPart <= rhs.fourthPart) return true;
+	return false;
 }
 
-
-bool EU4::Version::operator == (const EU4::Version& rhs) const
+bool EU4::Version::operator == (const Version& rhs) const
 {
-	return ((firstPart == rhs.firstPart) &&
-			(secondPart == rhs.secondPart) &&
-			(thirdPart == rhs.thirdPart) &&
-			(fourthPart == rhs.fourthPart));
+	return firstPart == rhs.firstPart &&
+			secondPart == rhs.secondPart &&
+			thirdPart == rhs.thirdPart &&
+			fourthPart == rhs.fourthPart;
 }
 
-
-bool EU4::Version::operator != (const EU4::Version& rhs) const
+bool EU4::Version::operator != (const Version& rhs) const
 {
-	return ((firstPart != rhs.firstPart) ||
-			(secondPart != rhs.secondPart) ||
-			(thirdPart != rhs.thirdPart) ||
-			(fourthPart != rhs.fourthPart));
+	return firstPart != rhs.firstPart ||
+			secondPart != rhs.secondPart ||
+			thirdPart != rhs.thirdPart ||
+			fourthPart != rhs.fourthPart;
 }
 
-
-std::ostream& EU4::operator<<(std::ostream& out, const EU4::Version& version)
+std::ostream& EU4::operator<<(std::ostream& out, const Version& version)
 {
 	out << version.firstPart << '.';
 	out << version.secondPart << '.';

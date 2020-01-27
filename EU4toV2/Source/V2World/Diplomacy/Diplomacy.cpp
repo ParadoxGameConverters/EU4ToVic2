@@ -46,7 +46,7 @@ void V2::Diplomacy::convertDiplomacy(
 
 		if (agreementMapper.isAgreementInColonies(agreement.getAgreementType()))
 		{
-			country2->second->setColonyOverlord(country1->second->getTag());
+			country2->second->setColonyOverlord(V2Tag1);
 			
 			// Do we annex or not?
 			if (country2->second->getSourceCountry()->getLibertyDesire() < theConfiguration.getLibertyThreshold())

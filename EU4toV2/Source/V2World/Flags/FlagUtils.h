@@ -6,11 +6,11 @@
 
 namespace V2
 {
-	bool CreateColonialFlag(
+	bool createColonialFlag(
 		const std::string& colonialOverlordPath, 
 		const std::string& colonialBasePath, 
 		const std::string& targetPath);
-	bool CreateCustomFlag(
+	bool createCustomFlag(
 		const commonItems::Color& c1, 
 		const commonItems::Color& c2, 
 		const commonItems::Color& c3, 

@@ -21,7 +21,7 @@ void V2::Localisation::readFromCountry(const EU4::Country& source)
 	}
 }
 
-void V2::Localisation::setPartyKey(size_t partyIndex, const std::string& partyKey)
+void V2::Localisation::setPartyKey(const size_t partyIndex, const std::string& partyKey)
 {
 	if (parties.size() <= partyIndex)
 	{
@@ -30,7 +30,7 @@ void V2::Localisation::setPartyKey(size_t partyIndex, const std::string& partyKe
 	parties[partyIndex].key = partyKey;
 }
 
-void V2::Localisation::setPartyName(size_t partyIndex, const std::string& language, const std::string& name)
+void V2::Localisation::setPartyName(const size_t partyIndex, const std::string& language, const std::string& name)
 {
 	if (parties.size() <= partyIndex)
 	{
@@ -52,7 +52,7 @@ std::string V2::Localisation::convert(const std::string& text)
 
 std::string V2::Localisation::getLocalName() const
 {
-	for (std::string thisname : name)
+	for (const auto& thisname : name)
 	{
 		if (!thisname.empty()) return thisname;
 	}
@@ -62,7 +62,7 @@ std::string V2::Localisation::getLocalName() const
 
 std::string V2::Localisation::getLocalAdjective() const
 {
-	for (std::string thisname : adjective)
+	for (const auto& thisname : adjective)
 	{
 		if (!thisname.empty()) return thisname;
 	}
@@ -73,7 +73,7 @@ std::string V2::Localisation::stripAccents(const std::string& text)
 {
 	std::string accents = "àáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞ";
 	std::string without = "aaaaaaaceeeeiiiidnooooooouuuuytyAAAAAAACEEEEIIIIDNOOOOOOOUUUUYT";
-	std::string out(text);
+	auto out(text);
 
 	for (unsigned int i = 0; i < accents.size(); i++)
 	{

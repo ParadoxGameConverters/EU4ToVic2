@@ -29,18 +29,18 @@ void EU4::Modifiers::processFolder(const std::string& folderName)
 	{
 		std::set<std::string> filenames;
 		Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/" + folderName + "/", filenames);
-		for (auto filename : filenames)
+		for (const auto& filename : filenames)
 		{
 			parseFile(theConfiguration.getEU4Path() + "/common/" + folderName + "/" + filename);
 		}
 	}
-	for (auto modName : theConfiguration.getEU4Mods())
+	for (const auto& modName : theConfiguration.getEU4Mods())
 	{
 		if (Utils::doesFolderExist(modName + "/common/" + folderName))
 		{
 			std::set<std::string> filenames;
 			Utils::GetAllFilesInFolder(modName + "/common/" + folderName + "/", filenames);
-			for (auto filename : filenames)
+			for (const auto& filename : filenames)
 			{
 				parseFile(modName + "/common/" + folderName + "/" + filename);
 			}

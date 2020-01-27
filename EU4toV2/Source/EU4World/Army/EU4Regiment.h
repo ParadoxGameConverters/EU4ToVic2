@@ -48,8 +48,8 @@ namespace EU4
 	public:
 		EU4Regiment() = default;
 		explicit EU4Regiment(std::istream& theStream); // Also applies to ships
-		[[nodiscard]] auto getType() const { return regimentType; }
-		[[nodiscard]] auto getName() const { return name; }
+		[[nodiscard]] const auto& getType() const { return regimentType; }
+		[[nodiscard]] const auto& getName() const { return name; }
 		[[nodiscard]] auto getHome() const { return home; }
 		[[nodiscard]] auto getCategory() const { return category; }
 		[[nodiscard]] auto getStrength() const { return strength; }

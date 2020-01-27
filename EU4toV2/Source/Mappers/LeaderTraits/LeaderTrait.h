@@ -8,13 +8,15 @@ namespace mappers
 	class LeaderTrait : commonItems::parser
 	{
 	public:
-		LeaderTrait(std::istream& theStream);
-		int getFire() const { return fire; }
-		int getShock() const { return shock; }
-		int getManeuver() const { return maneuver; }
-		int getSiege() const { return siege; }
-		int getOther() const { return other; }
-		bool matches(const int& leaderFire, const int& leaderShock, const int& leaderManeuver, const int& leaderSiege) const;
+		explicit LeaderTrait(std::istream& theStream);
+		
+		[[nodiscard]] auto getFire() const { return fire; }
+		[[nodiscard]] auto getShock() const { return shock; }
+		[[nodiscard]] auto getManeuver() const { return maneuver; }
+		[[nodiscard]] auto getSiege() const { return siege; }
+		[[nodiscard]] auto getOther() const { return other; }
+		
+		[[nodiscard]] bool matches(const int& leaderFire, const int& leaderShock, const int& leaderManeuver, const int& leaderSiege) const;
 
 	private:
 		int fire = 0;

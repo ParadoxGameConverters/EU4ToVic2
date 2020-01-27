@@ -7,32 +7,26 @@
 #include "V2World/V2World.h"
 #include <fstream>
 #include "Mappers/VersionParser/VersionParser.h"
+#include "EU4ToVic2Converter.h"
 
-
-void setOutputName(const std::string& EU4SaveFileName);
-void deleteExistingOutputFolder();
-void ConvertEU4ToVic2(const std::string& EU4SaveFileName, const mappers::VersionParser& versionParser)
+void convertEU4ToVic2(const std::string& eu4SaveFileName, const mappers::VersionParser& versionParser)
 {
 	ConfigurationFile configurationFile("configuration.txt");
-	setOutputName(EU4SaveFileName);
+	setOutputName(eu4SaveFileName);
 	deleteExistingOutputFolder();
 
-	mappers::IdeaEffectMapper ideaEffectMapper;
-	mappers::TechGroupsMapper techGroupsMapper;
+	const mappers::IdeaEffectMapper ideaEffectMapper;
+	const mappers::TechGroupsMapper techGroupsMapper;
 
-	EU4::World sourceWorld(EU4SaveFileName, ideaEffectMapper);
+	const EU4::World sourceWorld(eu4SaveFileName, ideaEffectMapper);
 	V2::World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper, versionParser);
 
 	LOG(LogLevel::Info) << "* Conversion complete *";
 }
 
-
-std::string trimPath(const std::string& fileName);
-std::string trimExtension(const std::string& fileName);
-std::string replaceCharacter(std::string fileName, char character);
-void setOutputName(const std::string& EU4SaveFileName)
+void setOutputName(const std::string& eu4SaveFileName)
 {
-	std::string outputName = trimPath(EU4SaveFileName);
+	std::string outputName = trimPath(eu4SaveFileName);
 	outputName = trimExtension(outputName);
 	outputName = replaceCharacter(outputName, '-');
 	outputName = replaceCharacter(outputName, ' ');
@@ -41,13 +35,11 @@ void setOutputName(const std::string& EU4SaveFileName)
 	LOG(LogLevel::Info) << "Using output name " << outputName;
 }
 
-
 std::string trimPath(const std::string& fileName)
 {
 	const int lastSlash = fileName.find_last_of("\\");
 	return fileName.substr(lastSlash + 1, fileName.length());
 }
-
 
 std::string trimExtension(const std::string& fileName)
 {
@@ -55,10 +47,9 @@ std::string trimExtension(const std::string& fileName)
 	return fileName.substr(0, length);
 }
 
-
 std::string replaceCharacter(std::string fileName, char character)
 {
-	int position = fileName.find_first_of(character);
+	auto position = fileName.find_first_of(character);
 	while (position != std::string::npos)
 	{
 		fileName.replace(position, 1, "_");
@@ -68,11 +59,10 @@ std::string replaceCharacter(std::string fileName, char character)
 	return fileName;
 }
 
-
 void deleteExistingOutputFolder()
 {
-	std::string outputFolder = Utils::getCurrentDirectory() + "/output/" + theConfiguration.getOutputName();
-	if (Utils::doesFolderExist(outputFolder.c_str()))
+	const auto outputFolder = Utils::getCurrentDirectory() + "/output/" + theConfiguration.getOutputName();
+	if (Utils::doesFolderExist(outputFolder))
 	{
 		if (!Utils::deleteFolder(outputFolder))
 		{

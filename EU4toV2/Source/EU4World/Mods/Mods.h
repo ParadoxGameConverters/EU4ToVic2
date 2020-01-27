@@ -11,7 +11,8 @@ namespace EU4
 	{
 	public:
 		Mods(const std::vector<std::string>& usedMods, Configuration& theConfiguration);
-		std::optional<std::string> getModPath(const std::string& modName) const;
+		
+		[[nodiscard]] std::optional<std::string> getModPath(const std::string& modName) const;
 
 	private:
 		void loadEU4ModDirectory(const Configuration& theConfiguration);

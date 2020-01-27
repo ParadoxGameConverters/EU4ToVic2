@@ -43,26 +43,26 @@ namespace EU4
 		void addCore(const std::shared_ptr<Province>& core);
 	   void setInHRE(const bool _inHRE) { inHRE = _inHRE; }
 		void setEmperor(const bool _emperor) { holyRomanEmperor = _emperor; }
-		void setCelestialEmperor(bool _celestialEmperor) { celestialEmperor = _celestialEmperor; }
-		void eatCountry(std::shared_ptr<Country> target);
+		void setCelestialEmperor(const bool _celestialEmperor) { celestialEmperor = _celestialEmperor; }
+		void eatCountry(Country& target);
 		void setColonialRegion(const std::string& region) { colonialRegion = region; }
 		void takeArmies(std::shared_ptr<Country>);
 		void clearArmies();
-		void viveLaRevolution(bool revolting) { revolutionary = revolting; }
+		void viveLaRevolution(const bool revolting) { revolutionary = revolting; }
 		void setTag(const std::string& _tag) { tag = _tag; }
 		void dropMinorityCultures();
 		void filterLeaders();
 		void resolveRegimentTypes(const mappers::UnitTypeMapper& unitTypeMapper);
 
-		[[nodiscard]] auto getTag() const { return tag; }
+		[[nodiscard]] const auto& getTag() const { return tag; }
 		[[nodiscard]] auto getCapital() const { return capital; }
 		[[nodiscard]] auto getInHRE() const { return inHRE; }
 		[[nodiscard]] auto getHolyRomanEmperor() const { return holyRomanEmperor; }
 		[[nodiscard]] auto getCelestialEmperor() const { return celestialEmperor; }
-		[[nodiscard]] auto getTechGroup() const { return techGroup; }
+		[[nodiscard]] const auto& getTechGroup() const { return techGroup; }
 		[[nodiscard]] auto getIsolationism() const { return isolationism; }
-		[[nodiscard]] auto getPrimaryCulture() const { return primaryCulture; }
-		[[nodiscard]] auto getReligion() const { return religion; }
+		[[nodiscard]] const auto& getPrimaryCulture() const { return primaryCulture; }
+		[[nodiscard]] const auto& getReligion() const { return religion; }
 		[[nodiscard]] auto getScore() const { return score; }
 		[[nodiscard]] auto getStability() const { return stability; }
 		[[nodiscard]] auto getAverageAutonomy() const { return averageAutonomy; }
@@ -90,13 +90,13 @@ namespace EU4
 		[[nodiscard]] auto getLiberal() const { return liberal; }
 		[[nodiscard]] auto getPossibleDaimyo() const { return possibleDaimyo; }
 		[[nodiscard]] auto getPossibleShogun() const { return possibleShogun; }
-		[[nodiscard]] auto getGovernment() const { return government; }
+		[[nodiscard]] const auto& getGovernment() const { return government; }
 		[[nodiscard]] auto isCustom() const { return customNation; }
 		[[nodiscard]] auto isColony() const { return colony; }
 		[[nodiscard]] auto getLibertyDesire() const { return libertyDesire; }
 		[[nodiscard]] auto isRevolutionary() const { return revolutionary; }
-		[[nodiscard]] auto getRandomName() const { return randomName; }
-		[[nodiscard]] auto getName() const { return name; }
+		[[nodiscard]] const auto& getRandomName() const { return randomName; }
+		[[nodiscard]] const auto& getName() const { return name; }
 				
 		[[nodiscard]] const auto& getReforms() const { return governmentReforms; }
 		[[nodiscard]] const auto& getRelations() const { return relations; }

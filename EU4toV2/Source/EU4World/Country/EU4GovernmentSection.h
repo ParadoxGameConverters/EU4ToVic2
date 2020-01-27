@@ -10,7 +10,7 @@ namespace EU4
 	{
 	public:
 		explicit GovernmentSection(std::istream& theStream);
-		[[nodiscard]] auto getGovernment() const { return government; }
+		[[nodiscard]] const auto& getGovernment() const { return government; }
 		[[nodiscard]] const auto& getGovernmentReforms() const { return reformStack; }
 
 	private:

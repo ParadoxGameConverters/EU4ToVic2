@@ -7,9 +7,6 @@
     <ClCompile Include="Source\EU4World\Regions\Area.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Regions\AreaNames.cpp">
-      <Filter>EU4World\Regions</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Regions\Areas.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
@@ -540,9 +537,6 @@
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\EU4World\Regions\Area.h">
-      <Filter>EU4World\Regions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Regions\AreaNames.h">
       <Filter>EU4World\Regions</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Areas.h">

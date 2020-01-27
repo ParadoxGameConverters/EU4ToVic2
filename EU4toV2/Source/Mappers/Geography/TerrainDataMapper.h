@@ -11,12 +11,14 @@ namespace mappers
 	{
 	public:
 		TerrainDataMapper();
-		TerrainDataMapper(std::istream& theStream);
-		const std::map<int, std::string>& getTerrainMap() const { return terrainMap; }
-		std::optional<std::string> getTerrainForID(int provinceID) const;
+		explicit TerrainDataMapper(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getTerrainMap() const { return terrainMap; }
+		[[nodiscard]] std::optional<std::string> getTerrainForID(int provinceID) const;
 
 	private:
 		void registerKeys();
+		
 		std::map<int, std::string> terrainMap;
 	};
 }

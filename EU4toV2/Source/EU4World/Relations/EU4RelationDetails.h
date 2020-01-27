@@ -9,12 +9,13 @@ namespace EU4
 	class EU4RelationDetails :  commonItems::parser
 	{
 	public:
-		EU4RelationDetails(std::istream& theStream);
-		int getRelations() const { return value; }
-		bool hasMilitaryAccess() const { return military_access; }
-		date getDiplomatLastSent() const { return last_send_diplomat; }
-		date getLastWar() const { return last_war; }
-		std::string getAttitude() const { return attitude; }
+		explicit EU4RelationDetails(std::istream& theStream);
+		
+		[[nodiscard]] auto getRelations() const { return value; }
+		[[nodiscard]] auto hasMilitaryAccess() const { return military_access; }
+		[[nodiscard]] auto getDiplomatLastSent() const { return last_send_diplomat; }
+		[[nodiscard]] auto getLastWar() const { return last_war; }
+		[[nodiscard]] const auto& getAttitude() const { return attitude; }
 
 	private:
 		int value = 0; // the relationship value

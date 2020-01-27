@@ -12,12 +12,14 @@ namespace mappers
 	{
 	public:
 		ReligionMapper();
-		ReligionMapper(std::istream& theStream);
-		std::optional<std::string> getVic2Religion(const std::string& EU4Religion) const;
+		explicit ReligionMapper(std::istream& theStream);
+		
+		[[nodiscard]] std::optional<std::string> getVic2Religion(const std::string& eu4Religion) const;
 
 	private:
 		void registerKeys();
-		std::map<std::string, std::string> EU4ToVic2ReligionMap;
+		
+		std::map<std::string, std::string> eu4ToVic2ReligionMap;
 	};
 }
 

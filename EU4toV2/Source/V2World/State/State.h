@@ -14,23 +14,23 @@ namespace V2
 	public:
 		State(int newId, std::shared_ptr<Province> firstProvince);
 
+		void setColonial(const bool col) { colonial = col; }
+		void addProvince(std::shared_ptr<Province> newProvince) { provinces.push_back(newProvince); }
+
+		[[nodiscard]] auto isColonial() const { return colonial; }
+		[[nodiscard]] auto getFactoryCount() const { return factories.size(); }
+		[[nodiscard]] auto getID() const { return id; }
+		[[nodiscard]] const auto& getProvinces() const { return provinces; }
+
+		[[nodiscard]] bool isCoastal() const;
+		[[nodiscard]] bool hasLocalSupply(const std::string& product) const;
+		[[nodiscard]] double getSuppliedInputs(std::shared_ptr<Factory> factory) const;
+		[[nodiscard]] bool provInState(int id) const;
+		[[nodiscard]] bool hasLandConnection() const;
+		[[nodiscard]] double getMfgRatio() const;
+
 		void addRailroads();
 		void addFactory(std::shared_ptr<Factory> factory);
-
-		bool isCoastal() const;
-		bool hasLocalSupply(const std::string& product) const;
-		double getSuppliedInputs(std::shared_ptr<Factory> factory) const;
-		bool provInState(int id) const;
-		bool hasLandConnection() const;
-		double getMfgRatio() const;
-
-		void addProvince(std::shared_ptr<Province> newProvince) { provinces.push_back(newProvince); }
-		void setColonial(bool col) { colonial = col; }
-
-		bool isColonial() const { return colonial; };
-		int getFactoryCount() const { return factories.size(); };
-		int getID() const { return id; };
-		std::vector<std::shared_ptr<Province>> getProvinces() const { return provinces; };
 		void rebuildNavalBase();
 		
 	private:

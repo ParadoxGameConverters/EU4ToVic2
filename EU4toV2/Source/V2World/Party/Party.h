@@ -9,10 +9,11 @@ namespace V2
 	class Party
 	{
 	public:
-		Party(const mappers::PartyType& partyType);
-		bool isActiveOn(date query) const;
-		std::string getName() const { return name; }
-		std::string getIdeology() const { return partyDetails.getIdeology(); }
+		explicit Party(const mappers::PartyType& partyType);
+		
+		[[nodiscard]] bool isActiveOn(date query) const;
+		[[nodiscard]] const auto& getName() const { return name; }
+		[[nodiscard]] const auto& getIdeology() const { return partyDetails.getIdeology(); }
 
 		friend std::ostream& operator<<(std::ostream& output, const Party& party);
 

@@ -9,10 +9,11 @@ namespace mappers
 	{
 	public:
 		MapperPop() = default;
-		MapperPop(std::istream& theStream);
-		std::string getCulture() const { return culture; }
-		std::string getReligion() const { return religion; }
-		int getSize() const { return size; }
+		explicit MapperPop(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getCulture() const { return culture; }
+		[[nodiscard]] const auto& getReligion() const { return religion; }
+		[[nodiscard]] auto getSize() const { return size; }
 
 	private:
 		std::string culture;

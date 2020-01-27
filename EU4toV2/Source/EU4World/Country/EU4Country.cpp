@@ -621,33 +621,33 @@ int EU4::Country::getManufactoryCount() const
 	return mfgCount;
 }
 
-void EU4::Country::eatCountry(std::shared_ptr<Country> target)
+void EU4::Country::eatCountry(Country& target)
 {
 	// auto-cannibalism is forbidden
-	if (target->getTag() == tag) return;
+	if (target.getTag() == tag) return;
 
-	LOG(LogLevel::Info) << " - " << tag << " is assimilating " << target->getTag();
+	LOG(LogLevel::Info) << " - " << tag << " is assimilating " << target.getTag();
 
 	// for calculation of weighted averages
-	auto totalProvinces = target->provinces.size() + provinces.size();
+	auto totalProvinces = target.provinces.size() + provinces.size();
 	if (!totalProvinces) totalProvinces = 1;
 
 	const auto myWeight = static_cast<double>(provinces.size()) / totalProvinces;
-	const auto targetWeight = static_cast<double>(target->provinces.size()) / totalProvinces;
+	const auto targetWeight = static_cast<double>(target.provinces.size()) / totalProvinces;
 
 	// acquire target's cores (always)
-	for (auto& core: target->getCores())
+	for (auto& core: target.getCores())
 	{
 		addCore(core);
 		core->addCore(tag);
-		core->removeCore(target->tag);
+		core->removeCore(target.tag);
 	}
 
 	// everything else, do only if this country actually currently exists
-	if (!target->provinces.empty())
+	if (!target.provinces.empty())
 	{
 		// acquire target's provinces
-		for (const auto& province: target->provinces)
+		for (const auto& province: target.provinces)
 		{
 			province->setOwnerString(tag);
 			province->setControllerString(tag);
@@ -655,24 +655,24 @@ void EU4::Country::eatCountry(std::shared_ptr<Country> target)
 		}
 
 		// acquire target's armies, navies, admirals, and generals
-		armies.insert(armies.end(), target->armies.begin(), target->armies.end());
-		militaryLeaders.insert(militaryLeaders.end(), target->militaryLeaders.begin(), target->militaryLeaders.end());
+		armies.insert(armies.end(), target.armies.begin(), target.armies.end());
+		militaryLeaders.insert(militaryLeaders.end(), target.militaryLeaders.begin(), target.militaryLeaders.end());
 
 		// re-balance prestige, badboy, inflation and techs from weighted average
-		score = myWeight * score + targetWeight * target->score;
-		admTech = myWeight * admTech + targetWeight * target->admTech;
-		dipTech = myWeight * dipTech + targetWeight * target->dipTech;
-		milTech = myWeight * milTech + targetWeight * target->milTech;
-		army = myWeight * army + targetWeight * target->army;
-		navy = myWeight * navy + targetWeight * target->navy;
-		commerce = myWeight * commerce + targetWeight * target->commerce;
-		industry = myWeight * industry + targetWeight * target->industry;
-		culture = myWeight * culture + targetWeight * target->culture;
+		score = myWeight * score + targetWeight * target.score;
+		admTech = myWeight * admTech + targetWeight * target.admTech;
+		dipTech = myWeight * dipTech + targetWeight * target.dipTech;
+		milTech = myWeight * milTech + targetWeight * target.milTech;
+		army = myWeight * army + targetWeight * target.army;
+		navy = myWeight * navy + targetWeight * target.navy;
+		commerce = myWeight * commerce + targetWeight * target.commerce;
+		industry = myWeight * industry + targetWeight * target.industry;
+		culture = myWeight * culture + targetWeight * target.culture;
 	}
 
 	// coreless, landless countries will be cleaned up automatically
-	target->clearProvinces();
-	target->clearCores();
+	target.clearProvinces();
+	target.clearCores();
 }
 
 void EU4::Country::takeArmies(std::shared_ptr<Country> target)

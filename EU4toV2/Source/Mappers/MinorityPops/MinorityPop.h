@@ -8,9 +8,10 @@ namespace mappers
 	class MinorityPop : commonItems::parser
 	{
 	public:
-		MinorityPop(std::istream& theStream);
-		std::string getReligion() const { return religion; }
-		std::string getCulture() const { return culture; }
+		explicit MinorityPop(std::istream& theStream);
+		
+		[[nodiscard]] const auto& getReligion() const { return religion; }
+		[[nodiscard]] const auto& getCulture() const { return culture; }
 
 	private:
 		std::string religion;

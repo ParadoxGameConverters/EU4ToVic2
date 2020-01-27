@@ -10,11 +10,13 @@ namespace mappers
 	{
 	public:
 		MinorityPopMapper();
-		MinorityPopMapper(std::istream& theStream);
-		bool blankMajorityFromMinority(V2::Pop& pop) const;
+		explicit MinorityPopMapper(std::istream& theStream);
+		
+		[[nodiscard]] bool blankMajorityFromMinority(V2::Pop& pop) const;
 
 	private:
 		void registerKeys();
+		
 		std::vector<std::pair<std::string, std::string>> minorityPopMap;
 
 	};
