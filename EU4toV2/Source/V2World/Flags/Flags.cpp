@@ -119,7 +119,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 			auto flag = colonialFlagsMapper.getFlag(key);
 
 			if (!flag) continue;
-			if (!flag->getOverlord().empty()) continue;
+			if (flag->getOverlord().empty()) continue;
 
 			for (auto failCountryItr = colonialFail.begin(); failCountryItr != colonialFail.end(); ++failCountryItr)
 			{
@@ -129,7 +129,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 					colonialFlagMapping[(*failCountryItr)->getTag()] = *flag;
 					auto overlord = (*failCountryItr)->getColonyOverlord();
 					flag->setOverlord(overlord);
-					LOG(LogLevel::Info) << "\tCountry with tag " << (*failCountryItr)->getTag() << " is now " << key << ", ruled by " << overlord;
+					LOG(LogLevel::Info) << "\tA premade flag is available for " << (*failCountryItr)->getTag() << " (" << key << "), ruled by " << overlord;
 
 					usableFlagTags.erase(flag->getName());
 					requiredTags.erase((*failCountryItr)->getTag());
@@ -214,7 +214,7 @@ void V2::Flags::determineUseableFlags()
 				}
 			}
 		}
-		availableFlags.erase(flag);	// in case we didn't remove it before, we don't want to consider it again
+		availableFlags.erase(flag); // in case we didn't remove it before, we don't want to consider it again
 	}
 }
 
