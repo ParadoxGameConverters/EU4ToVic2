@@ -38,11 +38,10 @@ V2::Country::Country(
 	const std::string& _commonCountryFile, 
 	const mappers::PartyNameMapper& partyNameMapper,
 	const mappers::PartyTypeMapper& partyTypeMapper):
-tag(std::move(_tag))
+tag(std::move(_tag)), commonCountryFile(Localisation::convert(_commonCountryFile))
 {
 	newCountry = true;
 	dynamicCountry = false;
-	commonCountryFile = Localisation::convert(_commonCountryFile);
 
 	initParties(partyNameMapper, partyTypeMapper);
 }
