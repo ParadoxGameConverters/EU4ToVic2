@@ -1,5 +1,5 @@
 # Version info
 
-version = "1.0K"
-name = "Kurland"
+version = "1.0L-prerelease"
+name = "Lucca"
 descriptionLine = "compatible with 1.29 and previous"

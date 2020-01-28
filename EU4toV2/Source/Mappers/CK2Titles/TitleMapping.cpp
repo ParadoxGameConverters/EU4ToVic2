@@ -8,7 +8,7 @@ mappers::TitleMapping::TitleMapping(std::istream& theStream)
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
 		{
 			const commonItems::singleString nameStr(theStream);
-			name = Utils::convertUTF8To8859_15(nameStr.getString());
+			name = nameStr.getString();
 		});
 	registerKeyword("title", [this](const std::string& unused, std::istream& theStream)
 		{
