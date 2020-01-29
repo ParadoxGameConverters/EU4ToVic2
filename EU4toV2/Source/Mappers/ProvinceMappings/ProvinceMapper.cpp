@@ -6,6 +6,8 @@
 #include <fstream>
 #include <stdexcept>
 #include "ParserHelpers.h"
+#include <filesystem>
+namespace fs = std::filesystem;
 
 mappers::ProvinceMapper::ProvinceMapper()
 {
@@ -125,7 +127,7 @@ bool mappers::ProvinceMapper::isProvinceResettable(int vic2ProvinceNumber, const
 
 void mappers::ProvinceMapper::determineValidProvinces()
 {
-	std::ifstream definitionFile((theConfiguration.getEU4Path() + "/map/definition.csv"));
+	std::ifstream definitionFile(fs::u8path(theConfiguration.getEU4Path() + "/map/definition.csv"));
 	if (!definitionFile.is_open()) throw std::runtime_error("Could not open <eu4>/map/definition.csv");
 
 	char input[256];

@@ -1,7 +1,7 @@
 configuration = {
 
 	# Path to your EU4 save game.
-	EU4SaveGame = "C:\dir1ŠčžąłШ\Europa Universalis IV\save games\United_States1806_01_12.eu4"
+	EU4SaveGame = "C:\dir1ŠčžąłШ\Europa Universalis IV\save games\orastava.eu4"
 
 	# Europa Universalis 4 directory: A path on your computer where Europa Universalis 4 is installed
 	EU4directory = "C:\dir1ŠčžąłШ\eu4"

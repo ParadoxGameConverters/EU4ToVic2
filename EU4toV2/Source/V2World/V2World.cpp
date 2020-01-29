@@ -9,6 +9,8 @@
 #include "../EU4World/World.h"
 #include "../Helpers/TechValues.h"
 #include "Flags/Flags.h"
+#include <filesystem>
+namespace fs = std::filesystem;
 
 constexpr int MAX_EQUALITY_COUNTRIES = 5;
 constexpr int MAX_LIBERTY_COUNTRIES = 20;
@@ -1110,7 +1112,7 @@ void V2::World::outputLocalisation() const
 	{
 		LOG(LogLevel::Info) << "It's a random world";
 		// we need to strip out the existing country names from the localization file
-		std::ifstream sourceFile(source);
+		std::ifstream sourceFile(fs::u8path(source));
 		std::ofstream targetFile(dest);
 
 		std::string line;
