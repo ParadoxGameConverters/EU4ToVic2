@@ -37,32 +37,32 @@
             <maxValue>1</maxValue>
           </preference>
           <preference>
-            <name>removeType</name>
+            <name>remove_type</name>
             <friendlyName>Drop cores of dead nations?</friendlyName>
             <description>Which landless nations to remove</description>
             <entryOptions>
               <entryOption>
                 <name>1</name>
-                <friendlyName>None - leave all</friendlyName>
+                <friendlyName>1 - None - leave all</friendlyName>
                 <description>Remove none of them</description>
                 <isDefault>false</isDefault>
               </entryOption>
               <entryOption>
                 <name>2</name>
-                <friendlyName>Dead - no culture remains</friendlyName>
+                <friendlyName>2 - Dead - no culture remains</friendlyName>
                 <description>Remove ones without cultural backing</description>
                 <isDefault>true</isDefault>
               </entryOption>
               <entryOption>
                 <name>3</name>
-                <friendlyName>All - dead is dead</friendlyName>
+                <friendlyName>3 - All - dead is dead</friendlyName>
                 <description>Remove all of them</description>
                 <isDefault>false</isDefault>
               </entryOption>
             </entryOptions>
           </preference>
           <preference>
-            <name>libertyThreshold</name>
+            <name>liberty_threshold</name>
             <friendlyName>Liberty threshold for Colonies</friendlyName>
             <description>The threshold value for when colonies are not absorbed. Default 50% (loyal colonies absorbed)</description>
             <hasDirectlyEditableValue>true</hasDirectlyEditableValue>
@@ -71,32 +71,32 @@
             <maxValue>100</maxValue>
           </preference>
           <preference>
-            <name>popShaping</name>
+            <name>pop_shaping</name>
             <friendlyName>Shape population?</friendlyName>
             <description>Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers.</description>
             <entryOptions>
               <entryOption>
                 <name>1</name>
-                <friendlyName>Stick to vanilla pop sizes.</friendlyName>
+                <friendlyName>1 - Stick to vanilla pop sizes.</friendlyName>
                 <description>Use Vanilla population sizes.</description>
                 <isDefault>false</isDefault>
               </entryOption>
               <entryOption>
                 <name>2</name>
-                <friendlyName>Devpush means more people!</friendlyName>
+                <friendlyName>2 - Devpush means more people!</friendlyName>
                 <description>Adjust population sizes.</description>
                 <isDefault>true</isDefault>
               </entryOption>
               <entryOption>
                 <name>3</name>
-                <friendlyName>Extreme - abs. devsize</friendlyName>
+                <friendlyName>3 - Extreme - abs. devsize</friendlyName>
                 <description>Redistribute everyone according to absolute value of provinces.</description>
                 <isDefault>false</isDefault>
               </entryOption>
             </entryOptions>
           </preference>
 	<preference>
-            <name>popShapingFactor</name>
+            <name>pop_shaping_factor</name>
             <friendlyName>Shaping Factor?</friendlyName>
             <description>How much does EU4 affect population sizes? 0 - Vanilla, 100 - Fully (1 dev increase approx 1% pop increase)</description>
             <hasDirectlyEditableValue>true</hasDirectlyEditableValue>
@@ -105,57 +105,57 @@
             <maxValue>100</maxValue>
         </preference>
 		<preference>
-			<name>coreHandling</name>
+			<name>core_handling</name>
 			<friendlyName>Auto-assign national cores?</friendlyName>
 			<description>Assign cores for nationalities and cultural unions (Can be an issue for CK2 and/or flat dev imports).</description>
 			<entryOptions>
 			  <entryOption>
 				<name>1</name>
-				<friendlyName>Yes, unification is nigh.</friendlyName>
+				<friendlyName>1 - Yes, unification is nigh.</friendlyName>
 				<description>Use defaults</description>
 				<isDefault>true</isDefault>
 			  </entryOption>
 			  <entryOption>
 				<name>2</name>
-				<friendlyName>No national cores</friendlyName>
+				<friendlyName>2 - No national cores</friendlyName>
 				<description>For primary nationalities</description>
 				<isDefault>false</isDefault>
 			  </entryOption>
 			  <entryOption>
 				<name>3</name>
-				<friendlyName>No cultural union cores</friendlyName>
+				<friendlyName>3 - No cultural union cores</friendlyName>
 				<description>No Germany, apparently.</description>
 				<isDefault>false</isDefault>
 			  </entryOption>
 			  <entryOption>
 				<name>4</name>
-				<friendlyName>Don't assign any.</friendlyName>
+				<friendlyName>4 - Don't assign any.</friendlyName>
 				<description>Don't touch anything.</description>
 				<isDefault>false</isDefault>
 			  </entryOption>
 			</entryOptions>
 		</preference>
 		<preference>
-			<name>euroCentrism</name>
+			<name>euro_centrism</name>
 			<friendlyName>Make world Eurocentric?</friendlyName>
 			<description>Drop literacy and civilization levels for non-europeans? (configurable!)</description>
 			<entryOptions>
 			  <entryOption>
 				<name>1</name>
-				<friendlyName>Use EU4 institutions and tech</friendlyName>
+				<friendlyName>1 - Use EU4 institutions and tech</friendlyName>
 				<description>Use defaults</description>
 				<isDefault>true</isDefault>
 			  </entryOption>
 			  <entryOption>
 				<name>2</name>
-				<friendlyName>Time to rule the waves!</friendlyName>
+				<friendlyName>2 - Time to rule the waves!</friendlyName>
 				<description>Configurable via techgroups.txt</description>
 				<isDefault>false</isDefault>
 			  </entryOption>
 			</entryOptions>
 		</preference>
 	  <preference>
-            <name>randomiseRgos</name>
+            <name>randomise_rgos</name>
             <friendlyName>Randomise RGOs?</friendlyName>
             <description>If set, RGOs will be shuffled within similar climate and terrain provinces.</description>
             <entryOptions>
