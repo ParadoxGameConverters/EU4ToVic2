@@ -233,8 +233,11 @@ void V2::World::initializeCultureMappers()
 void V2::World::convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	initializeCountries(sourceWorld, ideaEffectMapper);
+	LOG(LogLevel::Info) << "-> Converting National Values";
 	convertNationalValues();
+	LOG(LogLevel::Info) << "-> Converting Prestige";
 	convertPrestige();
+	LOG(LogLevel::Info) << "-> Adding Potential Countries";
 	addAllPotentialCountries();
 }
 
@@ -1106,7 +1109,7 @@ void V2::World::outputLocalisation() const
 	if (isRandomWorld)
 	{
 		LOG(LogLevel::Info) << "It's a random world";
-		// we need to strip out the existing country names from the localisation file
+		// we need to strip out the existing country names from the localization file
 		std::ifstream sourceFile(source);
 		std::ofstream targetFile(dest);
 
@@ -1131,9 +1134,9 @@ void V2::World::outputLocalisation() const
 		output.close();
 	}
 
-	LOG(LogLevel::Info) << "<- Writing Localisation Names";
+	LOG(LogLevel::Info) << "<- Writing Localization Names";
 	std::ofstream output(localisationPath + "/0_Names.csv", std::ofstream::app);
-	if (!output.is_open()) throw std::runtime_error("Could not update localisation text file");
+	if (!output.is_open()) throw std::runtime_error("Could not update localization text file");
 
 	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
 	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");

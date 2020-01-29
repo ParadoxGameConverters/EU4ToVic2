@@ -732,6 +732,11 @@ std::string EU4::Country::getAdjective(const std::string& language) const
 
 	const auto& findIter = adjectivesByLanguage.find(language);
 	const auto& engIter = adjectivesByLanguage.find("english");
+	if (engIter == adjectivesByLanguage.end())
+	{
+		// localizations haven't loaded at all, otherwise this would exist. Bail.
+		return adjective;
+	}
 
 	if (findIter != adjectivesByLanguage.end())
 	{

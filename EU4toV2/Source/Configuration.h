@@ -44,6 +44,7 @@ class Configuration: commonItems::parser
 		[[nodiscard]] auto getDebug() const { return debug; }
 		[[nodiscard]] auto getRandomiseRgos() const { return randomiseRgos; }
 
+		[[nodiscard]] const auto& getEU4SaveGamePath() const { return EU4SaveGamePath; }
 		[[nodiscard]] const auto& getEU4Path() const { return EU4Path; }
 		[[nodiscard]] const auto& getEU4DocumentsPath() const { return EU4DocumentsPath; }
 		[[nodiscard]] const auto& getSteamWorkshopPath() const { return SteamWorkshopPath; }
@@ -64,8 +65,13 @@ class Configuration: commonItems::parser
 		static void verifyEU4Path(const std::string& path, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
 		static void verifyVic2Path(const std::string& path, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
 		static void verifyVic2DocumentsPath(const std::string& path, bool (*doesFolderExist)(const std::string& path2));
+		void setOutputName();
+		static std::string trimPath(const std::string& fileName);
+		static std::string trimExtension(const std::string& fileName);
+		static std::string replaceCharacter(std::string fileName, char character);
 
 		// options from configuration.txt
+		std::string EU4SaveGamePath;
 		std::string EU4Path;
 		std::string EU4DocumentsPath;
 		std::string SteamWorkshopPath;

@@ -18,8 +18,10 @@
 #include <fstream>
 #include <string>
 #include "Relations/EU4Empire.h"
+#include <filesystem>
+namespace fs = std::filesystem;
 
-EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper)
+EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	LOG(LogLevel::Info) << "*** Hello EU4, loading World. ***";
 	registerKeyword("EU4txt", [](const std::string& unused, std::istream& theStream) {});
@@ -117,10 +119,10 @@ EU4::World::World(const std::string& EU4SaveFileName, const mappers::IdeaEffectM
 	registerRegex("[A-Za-z0-9\\_]+", commonItems::ignoreItem);
 
 	LOG(LogLevel::Info) << "-> Verifying EU4 save.";
-	verifySave(EU4SaveFileName);
+	verifySave();
 
 	LOG(LogLevel::Info) << "-> Importing EU4 save.";
-	parseFile(EU4SaveFileName);
+	parseFile(theConfiguration.getEU4SaveGamePath());
 	clearRegisteredKeywords();
 
 	LOG(LogLevel::Info) << "*** Building world ***";
@@ -187,9 +189,9 @@ void EU4::World::fillHistoricalData()
 }
 
 
-void EU4::World::verifySave(const std::string& EU4SaveFileName)
+void EU4::World::verifySave()
 {
-	std::ifstream saveFile(EU4SaveFileName);
+	std::ifstream saveFile(fs::u8path(theConfiguration.getEU4SaveGamePath()));
 	if (!saveFile.is_open()) throw std::runtime_error("Could not open save! Exiting!");
 
 	char buffer[8];
@@ -320,7 +322,7 @@ void EU4::World::loadEU4RegionsOldVersion()
 		regionFilename = itr + "/map/region.txt";
 	}
 
-	std::ifstream theStream(regionFilename);
+	std::ifstream theStream(fs::u8path(regionFilename));
 	Areas installedAreas(theStream);
 	theStream.close();
 	assignProvincesToAreas(installedAreas.getAreas());
@@ -350,16 +352,19 @@ void EU4::World::loadEU4RegionsNewVersion()
 		superRegionFilename = itr + "/map/superregion.txt";
 	}
 
-	std::ifstream areaStream(areaFilename);
+	std::ifstream areaStream(fs::u8path(areaFilename));
+	if (!areaStream.is_open()) throw std::runtime_error("Could not open map/area.txt!");
 	Areas installedAreas(areaStream);
 	areaStream.close();
 	assignProvincesToAreas(installedAreas.getAreas());
 
-	std::ifstream superRegionFile(superRegionFilename);
+	std::ifstream superRegionFile(fs::u8path(superRegionFilename));
+	if (!superRegionFile.is_open()) throw std::runtime_error("Could not open map/superregion.txt!");
 	SuperRegions sRegions(superRegionFile);
 	superRegionFile.close();
 
-	std::ifstream regionStream(regionFilename);
+	std::ifstream regionStream(fs::u8path(regionFilename));
+	if (!regionStream.is_open()) throw std::runtime_error("Could not open map/region.txt!");
 	regions = std::make_unique<Regions>(sRegions, installedAreas, regionStream);
 	regionStream.close();
 }
@@ -367,7 +372,8 @@ void EU4::World::loadEU4RegionsNewVersion()
 
 void EU4::World::readCommonCountries()
 {
-	std::ifstream commonCountries(theConfiguration.getEU4Path() + "/common/country_tags/00_countries.txt");	// the data in the countries file
+	std::ifstream commonCountries(fs::u8path(theConfiguration.getEU4Path() + "/common/country_tags/00_countries.txt"));	// the data in the countries file
+	if (!commonCountries.is_open()) throw std::runtime_error("Could not open common/country_tags/00_countries.txt!");
 	readCommonCountriesFile(commonCountries, theConfiguration.getEU4Path());
 	for (const auto& itr: theConfiguration.getEU4Mods())
 	{
@@ -375,7 +381,8 @@ void EU4::World::readCommonCountries()
 		Utils::GetAllFilesInFolder(itr + "/common/country_tags/", fileNames);
 		for (const auto& fileItr: fileNames)
 		{
-			std::ifstream convertedCommonCountries(itr + "/common/country_tags/" + fileItr);	// a stream of the data in the converted countries file
+			std::ifstream convertedCommonCountries(fs::u8path(itr + "/common/country_tags/" + fileItr));	// a stream of the data in the converted countries file
+			if (!convertedCommonCountries.is_open()) throw std::runtime_error("Could not open common/country_tags/" + fileItr + "!");
 			readCommonCountriesFile(convertedCommonCountries, itr);
 		}
 	}

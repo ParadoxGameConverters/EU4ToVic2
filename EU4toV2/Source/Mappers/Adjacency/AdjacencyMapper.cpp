@@ -3,13 +3,15 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include <fstream>
+#include <filesystem>
+namespace fs = std::filesystem;
 
 mappers::AdjacencyMapper::AdjacencyMapper()
 {
 	LOG(LogLevel::Info) << "Importing province adjacencies.";
 	const auto& filename = getAdjacencyFilename();
 
-	std::ifstream adjacenciesFile(filename, std::ios_base::binary);
+	std::ifstream adjacenciesFile(fs::u8path(filename), std::ios_base::binary);
 	if (!adjacenciesFile.is_open()) throw std::runtime_error("Could not open " + filename + ", aborting!");
 
 	inputAdjacencies(adjacenciesFile);

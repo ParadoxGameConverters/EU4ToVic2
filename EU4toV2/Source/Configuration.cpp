@@ -8,6 +8,12 @@ Configuration theConfiguration;
 
 void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))
 {
+	registerKeyword(std::regex("EU4SaveGame"), [this, doesFolderExist, doesFileExist](const std::string& unused, std::istream& theStream) 
+		{
+			const commonItems::singleString path(theStream);
+			EU4SaveGamePath = path.getString();
+			setOutputName();
+		});
 	registerKeyword(std::regex("EU4directory"), [this, doesFolderExist, doesFileExist](const std::string& unused, std::istream& theStream){
 		const commonItems::singleString path(theStream);
 		EU4Path = path.getString();
@@ -119,6 +125,40 @@ bool Configuration::wasDLCActive(const std::string& DLC) const
 	return false;
 }
 
+void Configuration::setOutputName()
+{
+	outputName = trimPath(EU4SaveGamePath);
+	outputName = trimExtension(outputName);
+	outputName = replaceCharacter(outputName, '-');
+	outputName = replaceCharacter(outputName, ' ');
+
+	theConfiguration.setOutputName(outputName);
+	LOG(LogLevel::Info) << "Using output name " << outputName;
+}
+
+std::string Configuration::trimPath(const std::string& fileName)
+{
+	const int lastSlash = fileName.find_last_of("\\");
+	return fileName.substr(lastSlash + 1, fileName.length());
+}
+
+std::string Configuration::trimExtension(const std::string& fileName)
+{
+	const int length = fileName.find_last_of(".");
+	return fileName.substr(0, length);
+}
+
+std::string Configuration::replaceCharacter(std::string fileName, char character)
+{
+	auto position = fileName.find_first_of(character);
+	while (position != std::string::npos)
+	{
+		fileName.replace(position, 1, "_");
+		position = fileName.find_first_of(character);
+	}
+
+	return fileName;
+}
 
 ConfigurationFile::ConfigurationFile(const std::string& filename)
 {
