@@ -12,8 +12,8 @@ add_compile_options("-std=c++17")
 add_compile_options("-g")
 
 include_directories("../common_items")
-include_directories("Helpers/elzip")
-include_directories("Helpers/elzip/minizip")
+include_directories("Source/Helpers/elzip")
+include_directories("Source/Helpers/elzip/minizip")
 include_directories("${PROJECT_SOURCE_DIR}")
 
 file(GLOB MAIN_SOURCES "${PROJECT_SOURCE_DIR}/*.cpp")
