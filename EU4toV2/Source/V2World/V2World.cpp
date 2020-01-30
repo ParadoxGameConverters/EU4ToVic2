@@ -9,6 +9,8 @@
 #include "../EU4World/World.h"
 #include "../Helpers/TechValues.h"
 #include "Flags/Flags.h"
+#include <filesystem>
+namespace fs = std::filesystem;
 
 constexpr int MAX_EQUALITY_COUNTRIES = 5;
 constexpr int MAX_LIBERTY_COUNTRIES = 20;
@@ -233,8 +235,11 @@ void V2::World::initializeCultureMappers()
 void V2::World::convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	initializeCountries(sourceWorld, ideaEffectMapper);
+	LOG(LogLevel::Info) << "-> Converting National Values";
 	convertNationalValues();
+	LOG(LogLevel::Info) << "-> Converting Prestige";
 	convertPrestige();
+	LOG(LogLevel::Info) << "-> Adding Potential Countries";
 	addAllPotentialCountries();
 }
 
@@ -1106,8 +1111,8 @@ void V2::World::outputLocalisation() const
 	if (isRandomWorld)
 	{
 		LOG(LogLevel::Info) << "It's a random world";
-		// we need to strip out the existing country names from the localisation file
-		std::ifstream sourceFile(source);
+		// we need to strip out the existing country names from the localization file
+		std::ifstream sourceFile(fs::u8path(source));
 		std::ofstream targetFile(dest);
 
 		std::string line;
@@ -1131,9 +1136,9 @@ void V2::World::outputLocalisation() const
 		output.close();
 	}
 
-	LOG(LogLevel::Info) << "<- Writing Localisation Names";
+	LOG(LogLevel::Info) << "<- Writing Localization Names";
 	std::ofstream output(localisationPath + "/0_Names.csv", std::ofstream::app);
-	if (!output.is_open()) throw std::runtime_error("Could not update localisation text file");
+	if (!output.is_open()) throw std::runtime_error("Could not update localization text file");
 
 	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
 	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");

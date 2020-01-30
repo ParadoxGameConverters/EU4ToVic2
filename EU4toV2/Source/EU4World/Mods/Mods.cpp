@@ -7,6 +7,8 @@
 #include <set>
 #include <stdexcept>
 #include <string>
+#include <filesystem>
+namespace fs = std::filesystem;
 
 EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConfiguration)
 {
@@ -59,7 +61,7 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 		const auto descriptorFilename = path + "/descriptor.mod";
 		if (Utils::doesFolderExist(path) && Utils::DoesFileExist(descriptorFilename))
 		{
-			std::ifstream modFile(path + "/descriptor.mod");
+			std::ifstream modFile(fs::u8path(path + "/descriptor.mod"));
 			Mod theMod(modFile);
 			modFile.close();
 
@@ -101,7 +103,7 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 		{
 			try
 			{
-				std::ifstream modFile(searchDirectory + "/mod/" + filename);
+				std::ifstream modFile(fs::u8path(searchDirectory + "/mod/" + filename));
 				Mod theMod(modFile);
 				modFile.close();
 

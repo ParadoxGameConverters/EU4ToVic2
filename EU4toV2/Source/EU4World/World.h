@@ -23,7 +23,7 @@ namespace EU4
 	class World: commonItems::parser
 	{
 	public:
-		World(const std::string& EU4SaveFileName, const mappers::IdeaEffectMapper& ideaEffectMapper);
+		World(const mappers::IdeaEffectMapper& ideaEffectMapper);
 		
 		[[nodiscard]] bool isRandomWorld() const;
 		[[nodiscard]] auto getTotalProvinceWeights() const { return provinces->geTotalProvinceWeights(); }
@@ -41,7 +41,7 @@ namespace EU4
 		[[nodiscard]] const auto& getHistoricalData() const { return historicalData; }
 		
 	private:
-		static void verifySave(const std::string& EU4SaveFileName);
+		static void verifySave();
 		void loadRevolutionTarget();
 		void dropMinoritiesFromCountries();
 		void addProvinceInfoToCountries();

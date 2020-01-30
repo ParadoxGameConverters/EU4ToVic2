@@ -2,6 +2,8 @@
 #include "OSCompatibilityLayer.h"
 #include "../../Configuration.h"
 #include <fstream>
+#include <filesystem>
+namespace fs = std::filesystem;
 
 V2::ProvinceNameParser::ProvinceNameParser()
 {
@@ -17,7 +19,7 @@ V2::ProvinceNameParser::ProvinceNameParser()
 
 void V2::ProvinceNameParser::importProvinceLocalizations(const std::string& file)
 {
-	std::ifstream locFile(file);
+	std::ifstream locFile(fs::u8path(file));
 
 	while (locFile.good() && !locFile.eof())
 	{

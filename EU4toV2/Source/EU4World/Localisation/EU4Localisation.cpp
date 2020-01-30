@@ -4,6 +4,8 @@
 #include <set>
 #include "OSCompatibilityLayer.h"
 #include "../../Configuration.h"
+#include <filesystem>
+namespace fs = std::filesystem;
 
 EU4::EU4Localisation::EU4Localisation()
 {
@@ -17,7 +19,7 @@ EU4::EU4Localisation::EU4Localisation()
 
 void EU4::EU4Localisation::readFromFile(const std::string& fileName)
 {
-	std::ifstream in(fileName);
+	std::ifstream in(fs::u8path(fileName));
 
 	const int maxLineLength = 10000;	// the maximum line length
 	char line[maxLineLength];			// the line being processed
