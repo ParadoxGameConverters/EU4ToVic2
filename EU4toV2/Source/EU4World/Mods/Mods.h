@@ -20,6 +20,8 @@ namespace EU4
 		void loadCK2ExportDirectory(const Configuration& theConfiguration);
 		void loadModDirectory(const std::string& searchDirectory);
 
+		bool extractZip(const std::string& archive, const std::string& path) const;
+
 		std::map<std::string, std::string> possibleMods;
 		std::map<std::string, std::string> possibleCompressedMods;
 	};

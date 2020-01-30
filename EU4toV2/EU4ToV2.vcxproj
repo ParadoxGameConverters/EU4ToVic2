@@ -119,7 +119,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\common_items;Source/Helpers/elzip;Source/Helpers/elzip/minizip;$(WindowsSDK_IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\common_items;Source/Helpers/elzip;$(WindowsSDK_IncludePath)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -230,31 +230,6 @@
     <ClCompile Include="Source\EU4World\Wars\EU4War.cpp" />
     <ClCompile Include="Source\EU4World\Wars\EU4WarDetails.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
-    <ClCompile Include="Source\Helpers\elzip\elzip.cpp" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\adler32.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\compress.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\crc32.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\deflate.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\gzclose.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\gzlib.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\gzread.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\gzwrite.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\infback.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\inffast.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\inflate.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\inftrees.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\ioapi.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\iowin32.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\miniunz.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\minizip.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\mztools.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\trees.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\uncompr.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\unzip.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\zip.c" />
-    <ClCompile Include="Source\Helpers\elzip\minizip\zutil.c" />
-    <ClCompile Include="Source\Helpers\elzip\unzipper.cpp" />
-    <ClCompile Include="Source\Helpers\elzip\zipper.cpp" />
     <ClCompile Include="Source\Helpers\targa.cpp" />
     <ClCompile Include="Source\Helpers\TechValues.cpp" />
     <ClCompile Include="Source\main.cpp" />
@@ -382,6 +357,7 @@
     <ClInclude Include="..\common_items\OSCompatibilityLayer.h" />
     <ClInclude Include="..\common_items\ParserHelpers.h" />
     <ClInclude Include="..\common_items\StringUtils.h" />
+    <ClInclude Include="..\ZipLib\ZipFile.h" />
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\EU4World\Army\EU4Army.h" />
@@ -437,26 +413,6 @@
     <ClInclude Include="Source\EU4World\Wars\EU4War.h" />
     <ClInclude Include="Source\EU4World\Wars\EU4WarDetails.h" />
     <ClInclude Include="Source\EU4World\World.h" />
-    <ClInclude Include="Source\Helpers\elzip\elzip.hpp" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\crc32.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\crypt.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\deflate.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\gzguts.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\inffast.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\inffixed.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\inflate.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\inftrees.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\ioapi.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\iowin32.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\mztools.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\trees.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\unzip.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\zconf.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\zip.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\zlib.h" />
-    <ClInclude Include="Source\Helpers\elzip\minizip\zutil.h" />
-    <ClInclude Include="Source\Helpers\elzip\unzipper.h" />
-    <ClInclude Include="Source\Helpers\elzip\zipper.h" />
     <ClInclude Include="Source\Helpers\targa.h" />
     <ClInclude Include="Source\Helpers\TechValues.h" />
     <ClInclude Include="Source\Mappers\Adjacency\AdjacencyMapper.h" />
@@ -558,6 +514,11 @@
     <ClInclude Include="Source\V2World\State\State.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
     <ClInclude Include="Source\V2World\War\War.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZipLib\ZipLib.vcxproj">
+      <Project>{5c9fd859-ddf9-4510-8397-b329b0ae8c48}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

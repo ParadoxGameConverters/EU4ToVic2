@@ -532,81 +532,6 @@
     <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGoods.cpp">
       <Filter>EU4World\TradeGoods</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\elzip.cpp">
-      <Filter>Helpers\elzip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\unzipper.cpp">
-      <Filter>Helpers\elzip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\zipper.cpp">
-      <Filter>Helpers\elzip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\adler32.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\compress.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\crc32.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\deflate.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\gzclose.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\gzlib.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\gzread.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\gzwrite.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\infback.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\inffast.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\inflate.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\inftrees.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\ioapi.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\iowin32.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\miniunz.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\minizip.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\mztools.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\trees.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\uncompr.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\unzip.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\zip.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Helpers\elzip\minizip\zutil.c">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1100,65 +1025,8 @@
     <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGoods.h">
       <Filter>EU4World\TradeGoods</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\elzip.hpp">
-      <Filter>Helpers\elzip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\unzipper.h">
-      <Filter>Helpers\elzip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\zipper.h">
-      <Filter>Helpers\elzip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\crc32.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\crypt.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\deflate.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\gzguts.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\inffast.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\inffixed.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\inflate.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\inftrees.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\ioapi.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\iowin32.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\mztools.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\trees.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\unzip.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\zconf.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\zip.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\zlib.h">
-      <Filter>Helpers\elzip\minizip</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\elzip\minizip\zutil.h">
-      <Filter>Helpers\elzip\minizip</Filter>
+    <ClInclude Include="..\ZipLib\ZipFile.h">
+      <Filter>Helpers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1386,12 +1254,6 @@
     </Filter>
     <Filter Include="EU4World\TradeGoods">
       <UniqueIdentifier>{c3667a54-ec75-4e75-b1f0-c372e33d08b6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Helpers\elzip">
-      <UniqueIdentifier>{d79a454c-306e-4044-8e8b-f7666e5f764a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Helpers\elzip\minizip">
-      <UniqueIdentifier>{39e0f868-2375-4763-bd37-3f69d32b3af1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

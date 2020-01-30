@@ -8,7 +8,7 @@
 #include <stdexcept>
 #include <string>
 #include <filesystem>
-#include "elzip.hpp"
+#include "../../../../ZipLib/ZipFile.h"
 
 namespace fs = std::filesystem;
 
@@ -157,7 +157,7 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						possibleCompressedMods.insert(std::make_pair(theMod.getName(), recordDirectory));
 						possibleCompressedMods.insert(std::make_pair("mod/" + filename, recordDirectory));
 						possibleCompressedMods.insert(std::make_pair(trimmedFilename, recordDirectory));
-						Log(LogLevel::Debug) << "\tFound a compessed mod named " << theMod.getName() <<
+						Log(LogLevel::Info) << "\tFound a compessed mod named " << theMod.getName() <<
 							" with a mod file at " << searchDirectory << "/mod/" + filename <<
 							" and itself at " << recordDirectory;
 					}
@@ -201,8 +201,8 @@ std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) con
 
 		if (!Utils::doesFolderExist("mods/" + uncompressedName))
 		{
-			LOG(LogLevel::Info) << "\t\tUncompressing: " << archivePath;
-			if (!elz::extractZip(archivePath, "mods/" + uncompressedName))
+			LOG(LogLevel::Info) << "\t\tUncompressing: " << archivePath;			
+			if (!extractZip(archivePath, "mods/" + uncompressedName))
 			{
 				LOG(LogLevel::Warning) << "We have trouble automatically uncompressing your mod.";
 				LOG(LogLevel::Warning) << "Please, manually uncompress: " << archivePath;
@@ -220,4 +220,42 @@ std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) con
 	}
 
 	return std::nullopt;
+}
+
+bool EU4::Mods::extractZip(const std::string& archive, const std::string& path) const
+{
+	fs::create_directory(path);
+	auto modfile = ZipFile::Open(archive);
+	if (!modfile) return false;
+	for (size_t entryNum = 0; entryNum < modfile->GetEntriesCount(); ++entryNum)
+	{
+		const auto& entry = modfile->GetEntry(entryNum);
+		const auto& inpath = entry->GetFullName();
+		const auto& name = entry->GetName();
+		if (entry->IsDirectory()) continue;
+
+		// Does target directory exist?
+		const auto dirnamepos = inpath.find(name);
+		const auto dirname = path + "/" + inpath.substr(0, dirnamepos);
+		if (!exists(fs::u8path(dirname)))
+		{
+			// we need to craft our way through to target directory.
+			auto remainder = inpath;
+			auto currentpath = path;
+			while (remainder != name)
+			{
+				const auto pos = remainder.find_first_of('/');
+				if (pos != std::string::npos)
+				{
+					auto makedirname = remainder.substr(0, pos);
+					currentpath += "/" + makedirname;
+					create_directory(fs::u8path(currentpath));
+					remainder = remainder.substr(pos + 1, remainder.length());
+				}
+				else break;
+			}
+		}
+		ZipFile::ExtractFile(archive, inpath, path + "/" + inpath);
+	}
+	return true;
 }
