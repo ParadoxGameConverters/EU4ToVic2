@@ -8,6 +8,8 @@
 #include <stdexcept>
 #include <string>
 #include <filesystem>
+#include "elzip.hpp"
+
 namespace fs = std::filesystem;
 
 EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConfiguration)
@@ -15,7 +17,7 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConf
 	loadEU4ModDirectory(theConfiguration);
 	loadSteamWorkshopDirectory(theConfiguration);
 	loadCK2ExportDirectory(theConfiguration);
-
+	
 	Log(LogLevel::Info) << "\tFinding Used Mods";
 	for (const auto& usedMod: usedMods)
 	{
@@ -26,7 +28,7 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConf
 				throw std::invalid_argument(usedMod + " could not be found in the specified mod directory " + \
 					"- a valid mod directory must be specified. Tried " + *possibleModPath);
 
-			LOG(LogLevel::Info) << "\t\tUsing EU4 Mod is " << *possibleModPath;
+			LOG(LogLevel::Info) << "\t\t->> Using EU4 Mod: " << *possibleModPath;
 			theConfiguration.addEU4Mod(*possibleModPath);
 		}
 		else
@@ -195,14 +197,26 @@ std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) con
 			uncompressedName = uncompressedName.substr(pos + 1, uncompressedName.size());
 		}
 
+		if (!Utils::doesFolderExist("mods/")) fs::create_directory("mods/");		
+
+		if (!Utils::doesFolderExist("mods/" + uncompressedName))
+		{
+			LOG(LogLevel::Info) << "\t\tUncompressing: " << archivePath;
+			if (!elz::extractZip(archivePath, "mods/" + uncompressedName))
+			{
+				LOG(LogLevel::Warning) << "We have trouble automatically uncompressing your mod.";
+				LOG(LogLevel::Warning) << "Please, manually uncompress: " << archivePath;
+				LOG(LogLevel::Warning) << "Into: EU4ToVic2/mod/" << uncompressedName;
+				LOG(LogLevel::Warning) << "Then run the converter again. Thank you and good luck.";
+				return std::nullopt;
+			}
+		}
+
 		if (Utils::doesFolderExist("mods/" + uncompressedName))
 		{
 			return "mods/" + uncompressedName;
 		}
-		
-		LOG(LogLevel::Warning) << "For now, manually uncompress " << archivePath << \
-			" into the converter directory at EU4ToVic2/mods/" << uncompressedName;
-		LOG(LogLevel::Warning) << "Then run the converter again";
+
 	}
 
 	return std::nullopt;

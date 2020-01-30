@@ -119,7 +119,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\common_items;$(BOOST_INCLUDE);$(WindowsSDK_IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\common_items;..\11Zip;..\11Zip\minizip\src;$(WindowsSDK_IncludePath)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -167,6 +167,31 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\11Zip\elzip.cpp" />
+    <ClCompile Include="..\11Zip\minizip\src\adler32.c" />
+    <ClCompile Include="..\11Zip\minizip\src\compress.c" />
+    <ClCompile Include="..\11Zip\minizip\src\crc32.c" />
+    <ClCompile Include="..\11Zip\minizip\src\deflate.c" />
+    <ClCompile Include="..\11Zip\minizip\src\gzclose.c" />
+    <ClCompile Include="..\11Zip\minizip\src\gzlib.c" />
+    <ClCompile Include="..\11Zip\minizip\src\gzread.c" />
+    <ClCompile Include="..\11Zip\minizip\src\gzwrite.c" />
+    <ClCompile Include="..\11Zip\minizip\src\infback.c" />
+    <ClCompile Include="..\11Zip\minizip\src\inffast.c" />
+    <ClCompile Include="..\11Zip\minizip\src\inflate.c" />
+    <ClCompile Include="..\11Zip\minizip\src\inftrees.c" />
+    <ClCompile Include="..\11Zip\minizip\src\ioapi.c" />
+    <ClCompile Include="..\11Zip\minizip\src\iowin32.c" />
+    <ClCompile Include="..\11Zip\minizip\src\miniunz.c" />
+    <ClCompile Include="..\11Zip\minizip\src\minizip.c" />
+    <ClCompile Include="..\11Zip\minizip\src\mztools.c" />
+    <ClCompile Include="..\11Zip\minizip\src\trees.c" />
+    <ClCompile Include="..\11Zip\minizip\src\uncompr.c" />
+    <ClCompile Include="..\11Zip\minizip\src\unzip.c" />
+    <ClCompile Include="..\11Zip\minizip\src\zip.c" />
+    <ClCompile Include="..\11Zip\minizip\src\zutil.c" />
+    <ClCompile Include="..\11Zip\unzipper.cpp" />
+    <ClCompile Include="..\11Zip\zipper.cpp" />
     <ClCompile Include="..\common_items\CardinalToOrdinal.cpp" />
     <ClCompile Include="..\common_items\Color.cpp" />
     <ClCompile Include="..\common_items\CommonUtils.cpp" />
@@ -348,6 +373,26 @@
     <ClCompile Include="Source\V2World\War\War.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\11Zip\elzip.hpp" />
+    <ClInclude Include="..\11Zip\minizip\src\crc32.h" />
+    <ClInclude Include="..\11Zip\minizip\src\crypt.h" />
+    <ClInclude Include="..\11Zip\minizip\src\deflate.h" />
+    <ClInclude Include="..\11Zip\minizip\src\gzguts.h" />
+    <ClInclude Include="..\11Zip\minizip\src\inffast.h" />
+    <ClInclude Include="..\11Zip\minizip\src\inffixed.h" />
+    <ClInclude Include="..\11Zip\minizip\src\inflate.h" />
+    <ClInclude Include="..\11Zip\minizip\src\inftrees.h" />
+    <ClInclude Include="..\11Zip\minizip\src\ioapi.h" />
+    <ClInclude Include="..\11Zip\minizip\src\iowin32.h" />
+    <ClInclude Include="..\11Zip\minizip\src\mztools.h" />
+    <ClInclude Include="..\11Zip\minizip\src\trees.h" />
+    <ClInclude Include="..\11Zip\minizip\src\unzip.h" />
+    <ClInclude Include="..\11Zip\minizip\src\zconf.h" />
+    <ClInclude Include="..\11Zip\minizip\src\zip.h" />
+    <ClInclude Include="..\11Zip\minizip\src\zlib.h" />
+    <ClInclude Include="..\11Zip\minizip\src\zutil.h" />
+    <ClInclude Include="..\11Zip\unzipper.h" />
+    <ClInclude Include="..\11Zip\zipper.h" />
     <ClInclude Include="..\common_items\CardinalToOrdinal.h" />
     <ClInclude Include="..\common_items\Color.h" />
     <ClInclude Include="..\common_items\Date.h" />
