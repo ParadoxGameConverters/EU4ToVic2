@@ -11,6 +11,8 @@
 #include "zlib.h"
 #include "unzip.h"
 
+#pragma warning(disable:4996)
+
 #define READ_8(adr)  ((unsigned char)*(adr))
 #define READ_16(adr) ( READ_8(adr) | (READ_8(adr+1) << 8) )
 #define READ_32(adr) ( READ_16(adr) | (READ_16((adr)+2) << 16) )

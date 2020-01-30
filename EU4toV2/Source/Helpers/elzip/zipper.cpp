@@ -1,8 +1,9 @@
 #include "zipper.h"
 #include <zlib.h>
-#include <algorithm>
 #include <sstream>
-#include <time.h>
+#include <ctime>
+
+#pragma warning(disable:4996)
 
 namespace ziputils
 {

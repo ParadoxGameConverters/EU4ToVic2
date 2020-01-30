@@ -12,6 +12,8 @@
          Copyright (C) 2009-2010 Mathias Svensson ( http://result42.com )
 */
 
+#pragma warning(disable:4996)
+
 #if (!defined(_WIN32)) && (!defined(WIN32)) && (!defined(__APPLE__))
         #ifndef __USE_FILE_OFFSET64
                 #define __USE_FILE_OFFSET64
@@ -276,7 +278,7 @@ int do_list(uf)
                 (uLong)file_info.tmu_date.tm_year % 100,
                 (uLong)file_info.tmu_date.tm_hour,(uLong)file_info.tmu_date.tm_min,
                 (uLong)file_info.crc,filename_inzip);
-        if ((i+1)<gi.number_entry)
+        if (i+(uLong)1<gi.number_entry)
         {
             err = unzGoToNextFile(uf);
             if (err!=UNZ_OK)
@@ -476,7 +478,7 @@ int do_extract(uf,opt_extract_without_path,opt_overwrite,password)
                                       password) != UNZ_OK)
             break;
 
-        if ((i+1)<gi.number_entry)
+        if (i+(uLong)1 < gi.number_entry)
         {
             err = unzGoToNextFile(uf);
             if (err!=UNZ_OK)

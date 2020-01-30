@@ -12,12 +12,12 @@ add_compile_options("-std=c++17")
 add_compile_options("-g")
 
 include_directories("../common_items")
-include_directories("../11Zip")
-include_directories("../11Zip/minizip/src")
 include_directories("${PROJECT_SOURCE_DIR}")
 
 file(GLOB MAIN_SOURCES "${PROJECT_SOURCE_DIR}/*.cpp")
 file(GLOB HELPER_SOURCES "${PROJECT_SOURCE_DIR}/Helpers/*.cpp")
+file(GLOB HELPER_ELZIP_SOURCES "${PROJECT_SOURCE_DIR}/Helpers/elzip/*.cpp")
+file(GLOB HELPER_MINIZIP_SOURCES "${PROJECT_SOURCE_DIR}/Helpers/elzip/minizip/*.c")
 file(GLOB VIC2WORLD_SOURCES "${PROJECT_SOURCE_DIR}/V2World/*.cpp")
 file(GLOB V2_ARMY_SOURCES "${PROJECT_SOURCE_DIR}/V2World/Army/*.cpp")
 file(GLOB V2_OUTPUT_SOURCES "${PROJECT_SOURCE_DIR}/V2World/Output/*.cpp")
@@ -102,13 +102,12 @@ set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/Object.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/newParser.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/ParserHelpers.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/StringUtils.cpp")
-set(ZIP_SOURCE_DIR "../11Zip")
-file(GLOB ZIP_SOURCES "$(ZIP_SOURCE_DIR)/*.cpp")
-file(GLOB MINIZIP_SOURCES "$(ZIP_SOURCE_DIR)/minizip/src/*.c")
 
 add_executable(EU4ToVic2 
 	${MAIN_SOURCES}
 	${HELPER_SOURCES}
+	${HELPER_ELZIP_SOURCES}
+	${HELPER_MINIZIP_SOURCES}
 	${VIC2WORLD_SOURCES}
 	${V2_ARMY_SOURCES}
 	${V2_COUNTRY_SOURCES}
@@ -184,8 +183,6 @@ add_executable(EU4ToVic2
 	${EU4_WARS_SOURCES}
 	${EU4_TRADEGOODS_SOURCES}
 	${COMMON_SOURCES}
-	${ZIP_SOURCES}
-	${MINIZIP_SOURCES}
 )
 add_custom_command(TARGET EU4ToVic2 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
 add_custom_command(TARGET EU4ToVic2 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ./Copy_Files.sh)

@@ -4,6 +4,7 @@
  */
 
 #include "gzguts.h"
+#pragma warning(disable:4996)
 
 #if defined(_WIN32) && !defined(__BORLANDC__) && !defined(__MINGW32__)
 #  define LSEEK _lseeki64
@@ -242,7 +243,7 @@ local gzFile gz_open(path, fd, mode)
 #ifdef WIDECHAR
         fd == -2 ? _wopen(path, oflag, 0666) :
 #endif
-        open((const char *)path, oflag, 0666));
+        _open((const char *)path, oflag, 0666));
     if (state->fd == -1) {
         free(state->path);
         free(state);

@@ -11,7 +11,7 @@
          Modifications for Zip64 support on both zip and unzip
          Copyright (C) 2009-2010 Mathias Svensson ( http://result42.com )
 */
-
+#pragma warning(disable:4996)
 
 #if (!defined(_WIN32)) && (!defined(WIN32)) && (!defined(__APPLE__))
         #ifndef __USE_FILE_OFFSET64

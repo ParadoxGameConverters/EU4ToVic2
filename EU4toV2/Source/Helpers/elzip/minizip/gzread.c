@@ -2,7 +2,7 @@
  * Copyright (C) 2004, 2005, 2010, 2011, 2012, 2013, 2016 Mark Adler
  * For conditions of distribution and use, see copyright notice in zlib.h
  */
-
+#pragma warning(disable:4996)
 #include "gzguts.h"
 
 /* Local functions */
@@ -32,7 +32,7 @@ local int gz_load(state, buf, len, have)
         get = len - *have;
         if (get > max)
             get = max;
-        ret = read(state->fd, buf + *have, get);
+        ret = _read(state->fd, buf + *have, get);
         if (ret <= 0)
             break;
         *have += (unsigned)ret;
@@ -648,7 +648,7 @@ int ZEXPORT gzclose_r(file)
     err = state->err == Z_BUF_ERROR ? Z_BUF_ERROR : Z_OK;
     gz_error(state, Z_OK, NULL);
     free(state->path);
-    ret = close(state->fd);
+    ret = _close(state->fd);
     free(state);
     return ret ? Z_ERRNO : err;
 }
