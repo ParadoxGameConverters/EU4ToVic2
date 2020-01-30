@@ -127,7 +127,7 @@ void V2::Country::initFromEU4Country(
 	// Localization
 	localisation.setTag(tag);
 	localisation.readFromCountry(*srcCountry);
-	
+
 	// Capital
 	const auto oldCapital = srcCountry->getCapital();
 	auto potentialCapitals = provinceMapper.getVic2ProvinceNumbers(oldCapital);

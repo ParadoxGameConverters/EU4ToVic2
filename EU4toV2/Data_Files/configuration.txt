@@ -1,16 +1,16 @@
-configuration = {
-
-	# Path to your EU4 save game.
-	EU4SaveGame = "C:\Users\User\Documents\Paradox Interactive\Europa Universalis IV\save games\sagevame.eu4"
-
+configuration =
+{
 	# Europa Universalis 4 directory: A path on your computer where Europa Universalis 4 is installed
 	EU4directory = "C:\Program Files (x86)\Steam\steamapps\common\Europa Universalis IV"
 
 	# EU4 Documents Directory: A path on your computer where Europa Universalis 4 keeps temporary files
 	EU4DocumentsDirectory = "C:\Users\User\Documents\Paradox Interactive\Europa Universalis IV"
 
+	# Steam Workshop Directory: A path on your computer where Steam Workshop keeps EU4 mods
+	SteamWorkshopDirectory = "C:\Program Files (x86)\Steam\SteamApps\workshop\content\236850"
+
 	# CK2 Export Directory: A path on your computer where Crusader Kings 2 keeps exported games
-	CK2ExportDirectory = "C:\Users\User\Documents\Paradox Interactive\Crusader Kings II\eu4_export\mod"
+	CK2ExportDirectory = "C:\Users\User\Documents\Paradox Interactive\Crusader Kings II\eu4_export"
 
 	# Victoria 2 directory: A path on your computer where Victoria 2 is installed
 	Vic2directory = "C:\Program Files (x86)\Steam\steamapps\common\Victoria 2"
@@ -18,50 +18,45 @@ configuration = {
 	# Victoria 2 Documents directory: A path on your computer where Victoria 2 keeps temporary files
 	Vic2Documentsdirectory = "C:\Users\User\Documents\Paradox Interactive\Victoria II"
 
-	# Steam Workshop Directory: A path on your computer where Steam Workshop keeps EU4 mods
-	SteamWorkshopDirectory = "C:\Program Files (x86)\Steam\SteamApps\workshop\content\236850"
-
-	# Reset Provinces?: Whether or not to reset resettable V2 provinces
-	#	Yes	 - Reset provinces
-	#	No	 - Don't reset provinces
-	resetProvinces = "no"
+	# Savegame: The savegame to convert
+	SaveGame = "C:\Users\User\Documents\Paradox Interactive\Europa Universalis IV\save games\autosave.eu4"
 
 	# Max Literacy: The maximum literacy a nation will start with. Default 100%
 	max_literacy = "1"
 
-	# Types of Landless nations to remove: Which landless nations to remove
-	#	1	 - Remove none of them
-	#	2	 - Remove ones without cultural backing
-	#	3	 - Remove all of them
-	removeType = "2"
+	# Drop cores of dead nations?: Which landless nations to remove
+	#	1 - None - leave all	 - Remove none of them
+	#	2 - Dead - no culture remains	 - Remove ones without cultural backing
+	#	3 - All - dead is dead	 - Remove all of them
+	remove_type = "2"
 
-	# Liberty threshold: The threshold value for when colonies are not absorbed. Default 50% (loyal colonies absorbed)
-	libertyThreshold = "50"
+	# Liberty threshold for Colonies: The threshold value for when colonies are not absorbed. Default 50% (loyal colonies absorbed)
+	liberty_threshold = "0"
 
 	# Shape population?: Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers.
-	# 	1	 	- Use Vanilla population sizes.
-	#	2		- Adjust population sizes.
-	#	3		- Extreme Redistribution.
-	popShaping = "1"
-	
+	#	1 - Stick to vanilla pop sizes.	 - Use Vanilla population sizes.
+	#	2 - Devpush means more people!	 - Adjust population sizes.
+	#	3 - Extreme - abs. devsize	 - Redistribute everyone according to absolute value of provinces.
+	pop_shaping = "2"
+
 	# Shaping Factor?: How much does EU4 affect population sizes? 0 - Vanilla, 100 - Fully (1 dev increase approx 1% pop increase)
-	popShapingFactor = "100"
+	pop_shaping_factor = "100"
 
-	# Auto-assign national cores outside own borders based on dominant population and their cultural unions? (makes nationalism and forming nations possible)
-	# 	1	 	- Yes, as it should be
-	#	2		- Do not assign national cores (cannot reclaim cultural land without infamy)
-	#	3		- Do not assign cultural union cores (no scandinavia or germany!)
-	#	4		- Do not assign either
-	coreHandling = "1"
+	# Auto-assign national cores?: Assign cores for nationalities and cultural unions (Can be an issue for CK2 and/or flat dev imports).
+	#	1 - Yes, unification is nigh.	 - Use defaults
+	#	2 - No national cores	 - For primary nationalities
+	#	3 - No cultural union cores	 - No Germany, apparently.
+	#	4 - Don't assign any.	 - Don't touch anything.
+	core_handling = "1"
 
-	# Make world Eurocentric?
-	# 	1	 	- Leave as is in EU4. Most countries will be civilized.
-	#	2		- Drop literacy and civilization progress for non-europeans.
-	euroCentrism = "1"
+	# Make world Eurocentric?: Drop literacy and civilization levels for non-europeans? (configurable!)
+	#	1 - Use EU4 institutions and tech	 - Use defaults
+	#	2 - Time to rule the waves!	 - Configurable via techgroups.txt
+	euro_centrism = "2"
 
-	# Randomize RGOs?
-	#	no	- stick to vanilla RGOs
-	#	yes	- randomize RGOs within similar climate/terrain provinces
-	randomiseRgos = "no"
-	
+	# Randomise RGOs?: If set, RGOs will be shuffled within similar climate and terrain provinces.
+	#	No	 - Historical RGOs
+	#	Yes	 - Shuffled RGOs
+	randomise_rgos = "no"
+
 }
