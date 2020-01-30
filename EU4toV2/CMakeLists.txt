@@ -102,9 +102,9 @@ set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/Object.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/newParser.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/ParserHelpers.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/StringUtils.cpp")
-set(ZIP_SOURCE_DIR "../11Zip/")
+set(ZIP_SOURCE_DIR "../11Zip")
 file(GLOB ZIP_SOURCES "$(ZIP_SOURCE_DIR)/*.cpp")
-file(GLOB MINIZIP_SOURCES "$(ZIP_SOURCE_DIR)/minizip/src/*.cpp")
+file(GLOB MINIZIP_SOURCES "$(ZIP_SOURCE_DIR)/minizip/src/*.c")
 
 add_executable(EU4ToVic2 
 	${MAIN_SOURCES}
