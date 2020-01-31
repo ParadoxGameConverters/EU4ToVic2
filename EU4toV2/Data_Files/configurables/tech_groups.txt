@@ -25,8 +25,8 @@ eastern = {
 }
 
 ottoman = {
-	westernization = 9
-	literacy = 6
+	westernization = 10
+	literacy = 3
 }
 
 muslim = {
