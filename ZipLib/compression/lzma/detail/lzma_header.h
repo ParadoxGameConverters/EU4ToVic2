@@ -7,7 +7,7 @@
 #include "../../../extlibs/lzma/LzmaEnc.h"
 #endif
 
-#ifdef #ifdef __linux__
+#ifdef __linux__
 #include "../../../extlibs/lzma/unix/7zVersion.h"
 #include "../../../extlibs/lzma/LzmaEnc.h"
 #endif
