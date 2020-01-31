@@ -11,6 +11,7 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
 add_compile_options("-std=c++17")
 add_compile_options("-lstdc++fs")
 add_compile_options("-O2")
+add_compile_options("-pthread")
 
 include_directories("../common_items")
 include_directories("../ZipLib")

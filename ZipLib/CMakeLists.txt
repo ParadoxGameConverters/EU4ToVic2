@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.5)
 #set(CMAKE_VERBOSE_MAKEFILE on)
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
 add_compile_options("-std=c++17")
 add_compile_options("-lstdc++fs")
+add_compile_options("-pthread")
 add_compile_options("-O2")
 
 project(ZIPLIB)
@@ -21,4 +24,6 @@ ${BZIP2_FILES}
 ${LZMA_UNIX_FILES}
 ${LZMA_UNIX_UTIL_FILES}
 ${ZLIB_FILES})
+
+target_link_libraries(${PROJECT_NAME} Threads::Threads)
 target_include_directories (${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
