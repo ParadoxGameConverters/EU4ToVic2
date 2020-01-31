@@ -1025,9 +1025,6 @@
     <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGoods.h">
       <Filter>EU4World\TradeGoods</Filter>
     </ClInclude>
-    <ClInclude Include="..\ZipLib\ZipFile.h">
-      <Filter>Helpers</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
