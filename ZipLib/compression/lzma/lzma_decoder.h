@@ -8,7 +8,7 @@
 #include "../../extlibs/lzma/LzmaDec.h"
 #endif
 
-#ifdef __unix__
+#ifdef __linux__
 #include "../../extlibs/lzma/unix/LzmaDec.h"
 #endif
 

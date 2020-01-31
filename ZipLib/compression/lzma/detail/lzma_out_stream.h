@@ -4,7 +4,7 @@
 #include "../../../extlibs/lzma/Types.h"
 #endif
 
-#ifdef __unix__
+#ifdef __linux__
 #include "../../../extlibs/lzma/Types.h"
 #endif
 
