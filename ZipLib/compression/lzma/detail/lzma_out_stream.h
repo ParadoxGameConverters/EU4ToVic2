@@ -5,7 +5,7 @@
 #endif
 
 #ifdef __linux__
-#include "../../../extlibs/lzma/Types.h"
+#include "../../../extlibs/lzma/unix/Types.h"
 #endif
 
 namespace detail

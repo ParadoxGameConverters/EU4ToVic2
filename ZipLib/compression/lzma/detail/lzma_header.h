@@ -9,7 +9,7 @@
 
 #ifdef __linux__
 #include "../../../extlibs/lzma/unix/7zVersion.h"
-#include "../../../extlibs/lzma/LzmaEnc.h"
+#include "../../../extlibs/lzma/unix/LzmaEnc.h"
 #endif
 
 
