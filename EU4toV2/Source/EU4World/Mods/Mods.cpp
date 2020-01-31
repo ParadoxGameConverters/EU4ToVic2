@@ -8,7 +8,7 @@
 #include <stdexcept>
 #include <string>
 #include <filesystem>
-#include "../../../../ZipLib/ZipFile.h"
+#include "ZipFile.h"
 
 namespace fs = std::filesystem;
 
