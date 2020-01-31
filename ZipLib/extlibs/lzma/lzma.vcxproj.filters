@@ -125,6 +125,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="XzEnc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="7z.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -210,9 +213,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="XzCrc64.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="XzEnc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

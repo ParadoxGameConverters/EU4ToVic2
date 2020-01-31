@@ -189,7 +189,7 @@ add_executable(EU4ToVic2
 	${COMMON_SOURCES}
 )
 
-target_link_libraries(EU4ToVic2 ZIPLIB)
+target_link_libraries(EU4ToVic2 LINK_PUBLIC ZIPLIB stdc++fs)
 
 add_custom_command(TARGET EU4ToVic2 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
 add_custom_command(TARGET EU4ToVic2 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ./Copy_Files.sh)

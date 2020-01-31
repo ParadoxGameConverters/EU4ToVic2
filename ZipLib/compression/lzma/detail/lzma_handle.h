@@ -1,7 +1,13 @@
 #pragma once
 #include "lzma_alloc.h"
 
+#ifdef _WIN32
 #include "../../../extlibs/lzma/LzmaEnc.h"
+#endif
+
+#ifdef linux
+#include "../../../extlibs/lzma/unix/LzmaEnc.h"
+#endif
 
 namespace detail
 {

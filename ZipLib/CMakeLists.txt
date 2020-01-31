@@ -8,11 +8,17 @@ project(ZIPLIB)
 SET(CMAKE_CXX_COMPILER g++-8)
 
 file(GLOB CPP_FILES *.cpp)
-file(GLOB CPP_FILES detail/*.cpp)
-file(GLOB CPP_FILES extlibs/bzip2/*.c)
-file(GLOB CPP_FILES extlibs/lzma/*.c)
-file(GLOB CPP_FILES extlibs/lzma/unix/*.c)
-file(GLOB CPP_FILES extlibs/lzma/unix/LzmaUtil/*.c)
-file(GLOB CPP_FILES extlibs/zlib/*.c)
+file(GLOB DETAIL_FILES detail/*.cpp)
+file(GLOB BZIP2_FILES extlibs/bzip2/*.c)
+file(GLOB LZMA_UNIX_FILES extlibs/lzma/unix/*.c)
+file(GLOB LZMA_UNIX_UTIL_FILES extlibs/lzma/unix/LzmaUtil/*.c)
+file(GLOB ZLIB_FILES extlibs/zlib/*.c)
 
-add_library(${PROJECT_NAME} STATIC ${CPP_FILES})
+add_library(${PROJECT_NAME} STATIC 
+${CPP_FILES}
+${DETAIL_FILES}
+${BZIP2_FILES}
+${LZMA_UNIX_FILES}
+${LZMA_UNIX_UTIL_FILES}
+${ZLIB_FILES})
+target_include_directories (${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

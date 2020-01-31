@@ -4,7 +4,13 @@
 #include "detail/lzma_alloc.h"
 #include "lzma_decoder_properties.h"
 
+#ifdef _WIN32
 #include "../../extlibs/lzma/LzmaDec.h"
+#endif
+
+#ifdef linux
+#include "../../extlibs/lzma/unix/LzmaDec.h"
+#endif
 
 #include <cstdint>
 

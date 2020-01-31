@@ -2,8 +2,16 @@
 #include "lzma_handle.h"
 #include "lzma_out_stream.h"
 
+#ifdef _WIN32
 #include "../../../extlibs/lzma/7zVersion.h"
 #include "../../../extlibs/lzma/LzmaEnc.h"
+#endif
+
+#ifdef linux
+#include "../../../extlibs/lzma/unix/7zVersion.h"
+#include "../../../extlibs/lzma/LzmaEnc.h"
+#endif
+
 
 namespace detail
 {

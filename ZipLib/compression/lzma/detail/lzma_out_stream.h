@@ -1,5 +1,12 @@
 #pragma once
+
+#ifdef _WIN32
 #include "../../../extlibs/lzma/Types.h"
+#endif
+
+#ifdef linux
+#include "../../../extlibs/lzma/Types.h"
+#endif
 
 namespace detail
 {
