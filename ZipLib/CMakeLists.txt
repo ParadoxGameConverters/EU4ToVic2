@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 #set(CMAKE_VERBOSE_MAKEFILE on)
+add_compile_options("-std=c++17")
+add_compile_options("-lstdc++fs")
+add_compile_options("-O2")
 
 project(ZIPLIB)
 SET(CMAKE_CXX_COMPILER g++-8)

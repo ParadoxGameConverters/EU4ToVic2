@@ -9,6 +9,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
 
 add_compile_options("-std=c++17")
+add_compile_options("-lstdc++fs")
 add_compile_options("-O2")
 
 include_directories("../common_items")
@@ -106,8 +107,6 @@ set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/newParser.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/ParserHelpers.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/StringUtils.cpp")
 
-target_link_libraries(ZIPLIB)
-
 add_executable(EU4ToVic2 
 	${MAIN_SOURCES}
 	${HELPER_SOURCES}
@@ -189,6 +188,8 @@ add_executable(EU4ToVic2
 	${EU4_TRADEGOODS_SOURCES}
 	${COMMON_SOURCES}
 )
+
+target_link_libraries(EU4ToVic2 ZIPLIB)
 
 add_custom_command(TARGET EU4ToVic2 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
 add_custom_command(TARGET EU4ToVic2 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ./Copy_Files.sh)
