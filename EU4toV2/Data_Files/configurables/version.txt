@@ -1,5 +1,5 @@
 # Version info
 
-version = "1.0L"
-name = "Lucca"
+version = "1.0M-prerelease"
+name = "Mexico"
 descriptionLine = "compatible with 1.29 and previous"
