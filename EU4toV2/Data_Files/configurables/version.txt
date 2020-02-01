@@ -1,5 +1,5 @@
 # Version info
 
-version = "1.0L-prerelease"
+version = "1.0L"
 name = "Lucca"
 descriptionLine = "compatible with 1.29 and previous"
