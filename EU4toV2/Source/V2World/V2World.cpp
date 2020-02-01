@@ -719,11 +719,12 @@ void V2::World::convertTechs(const EU4::World& sourceWorld)
 	{
 		if (helpers::TechValues::isValidCountryForTechConversion(*country.second))
 		{
-			country.second->setArmyTech(techValues.getNormalizedArmyTech(*country.second->getSourceCountry()));
-			country.second->setNavyTech(techValues.getNormalizedNavyTech(*country.second->getSourceCountry()));
-			country.second->setCommerceTech(techValues.getNormalizedCommerceTech(*country.second->getSourceCountry()));
-			country.second->setCultureTech(techValues.getNormalizedCultureTech(*country.second->getSourceCountry()));
-			country.second->setIndustryTech(techValues.getNormalizedIndustryTech(*country.second->getSourceCountry()));
+			const auto armyScore = techValues.getNormalizedArmyTech(*country.second->getSourceCountry());
+			const auto navyScore = techValues.getNormalizedNavyTech(*country.second->getSourceCountry());
+			const auto cultureScore = techValues.getNormalizedCultureTech(*country.second->getSourceCountry());
+			const auto industryScore = techValues.getNormalizedIndustryTech(*country.second->getSourceCountry());
+			const auto commerceScore = techValues.getNormalizedCommerceTech(*country.second->getSourceCountry());
+			country.second->setTechs(startingTechMapper, startingInventionMapper, armyScore, navyScore, cultureScore, industryScore, commerceScore);
 		}
 	}
 }

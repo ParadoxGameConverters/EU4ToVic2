@@ -29,6 +29,8 @@
 #include "../Mappers/RGORandomization/BucketList.h"
 #include "../Mappers/PortProvinces/PortProvinces.h"
 #include "../Mappers/WarGoalMapper/WarGoalMapper.h"
+#include "../Mappers/StartingTechMapper/StartingTechMapper.h"
+#include "../Mappers/StartingInventionMapper/StartingInventionMapper.h"
 #include "Province/ProvinceNameParser.h"
 #include <list>
 #include <memory>
@@ -136,6 +138,8 @@ namespace V2
 		mappers::BucketList bucketShuffler;
 		mappers::PortProvinces portProvincesMapper;
 		mappers::WarGoalMapper warGoalMapper;
+		mappers::StartingTechMapper startingTechMapper;
+		mappers::StartingInventionMapper startingInventionMapper;
 		ProvinceNameParser provinceNameParser;
 		CountryPopLogger countryPopLogger;
 		MappingChecker mappingChecker;

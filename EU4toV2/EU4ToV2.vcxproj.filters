@@ -532,6 +532,21 @@
     <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGoods.cpp">
       <Filter>EU4World\TradeGoods</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTech.cpp">
+      <Filter>Mappers\StartingTechMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTechMapper.cpp">
+      <Filter>Mappers\StartingTechMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.cpp">
+      <Filter>Mappers\StartingInventionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionMapper.cpp">
+      <Filter>Mappers\StartingInventionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionLimit.cpp">
+      <Filter>Mappers\StartingInventionMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1025,6 +1040,21 @@
     <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGoods.h">
       <Filter>EU4World\TradeGoods</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTech.h">
+      <Filter>Mappers\StartingTechMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTechMapper.h">
+      <Filter>Mappers\StartingTechMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.h">
+      <Filter>Mappers\StartingInventionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionMapper.h">
+      <Filter>Mappers\StartingInventionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionLimit.h">
+      <Filter>Mappers\StartingInventionMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1251,6 +1281,12 @@
     </Filter>
     <Filter Include="EU4World\TradeGoods">
       <UniqueIdentifier>{c3667a54-ec75-4e75-b1f0-c372e33d08b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\StartingTechMapper">
+      <UniqueIdentifier>{c274b979-7555-4ad5-898a-377275dc3065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\StartingInventionMapper">
+      <UniqueIdentifier>{f0564fa4-ea77-4ab4-80fd-e52476a508c6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

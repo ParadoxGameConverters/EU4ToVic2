@@ -296,6 +296,11 @@
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
     <ClCompile Include="Source\Mappers\RGORandomization\Bucket.cpp" />
     <ClCompile Include="Source\Mappers\RGORandomization\BucketList.cpp" />
+    <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.cpp" />
+    <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionLimit.cpp" />
+    <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionMapper.cpp" />
+    <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTech.cpp" />
+    <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTechMapper.cpp" />
     <ClCompile Include="Source\Mappers\StateMapper\StateMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroups.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroupsMapper.cpp" />
@@ -477,6 +482,11 @@
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h" />
     <ClInclude Include="Source\Mappers\RGORandomization\Bucket.h" />
     <ClInclude Include="Source\Mappers\RGORandomization\BucketList.h" />
+    <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.h" />
+    <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionLimit.h" />
+    <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionMapper.h" />
+    <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTech.h" />
+    <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTechMapper.h" />
     <ClInclude Include="Source\Mappers\StateMapper\StateMapper.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroups.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroupsMapper.h" />

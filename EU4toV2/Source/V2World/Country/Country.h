@@ -21,6 +21,8 @@ namespace EU4
 }
 namespace mappers
 {
+	class StartingInventionMapper;
+	class StartingTechMapper;
 	class RegimentCostsMapper;
 	class AdjacencyMapper;
 	class LeaderTraitMapper;
@@ -93,11 +95,13 @@ namespace V2
 		void addRailroadtoCapitalState();
 		void addTech(const std::string& newTech) { techs.insert(newTech); }
 		void convertLandlessReforms(const Country& capitalOwner);
-		void setArmyTech(double normalizedScore);
-		void setNavyTech(double normalizedScore);
-		void setCommerceTech(double normalizedScore);
-		void setIndustryTech(double normalizedScore);
-		void setCultureTech(double normalizedScore);
+		void setTechs(const mappers::StartingTechMapper& startingTechMapper, 
+			const mappers::StartingInventionMapper& startingInventionMapper, 
+			double armyScore,
+			double navyScore,
+			double cultureScore,
+			double industryScore,
+			double commerceScore);
 		void setNationalValue(const std::string& nv) { details.nationalValue = nv; }
 
 		bool addFactory(std::shared_ptr<Factory> factory);

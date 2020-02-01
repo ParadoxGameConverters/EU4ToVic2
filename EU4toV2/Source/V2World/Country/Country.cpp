@@ -12,6 +12,8 @@
 #include "../../Mappers/LeaderTraits/LeaderTraitMapper.h"
 #include "../../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../../Mappers/RegimentCosts/RegimentCostsMapper.h"
+#include "../../Mappers/StartingTechMapper/StartingTechMapper.h"
+#include "../../Mappers/StartingInventionMapper/StartingInventionMapper.h"
 #include "../Flags/Flags.h"
 #include <cmath>
 
@@ -732,223 +734,29 @@ void V2::Country::convertLandlessReforms(const Country& capitalOwner) // Use cur
 	}
 }
 
-void V2::Country::setArmyTech(const double normalizedScore)
+void V2::Country::setTechs(const mappers::StartingTechMapper& startingTechMapper,
+	const mappers::StartingInventionMapper& startingInventionMapper,
+	double armyScore,
+	double navyScore,
+	double cultureScore,
+	double industryScore,
+	double commerceScore)
 {
 	if (!details.civilized) return;
 
-	if (normalizedScore >= -1.0)
-	{
-		techs.insert("flintlock_rifles");
-		inventions.insert("flintlock_rifle_armament");
-	}
-	if (normalizedScore >= -0.9)
-	{
-		techs.insert("bronze_muzzle_loaded_artillery");
-	}
-	if (normalizedScore >= -0.2)
-	{
-		techs.insert("post_napoleonic_thought");
-		inventions.insert("post_napoleonic_army_doctrine");
-	}
-	if (normalizedScore >= 0.2)
-	{
-		techs.insert("army_command_principle");
-	}
-	if (normalizedScore >= 0.6)
-	{
-		techs.insert("military_staff_system");
-		inventions.insert("cuirassier_activation");
-		inventions.insert("dragoon_activation");
-		inventions.insert("_hussar_activation");
-	}
-	if (normalizedScore >= 1.0)
-	{
-		techs.insert("army_professionalism");
-		inventions.insert("army_academic_training");
-		inventions.insert("field_training");
-		inventions.insert("army_societal_status");
-	}
-}
+	const auto armyTechs = startingTechMapper.getTechsForGroupAndScore("army", armyScore);
+	const auto navyTechs = startingTechMapper.getTechsForGroupAndScore("navy", navyScore);
+	const auto cultureTechs = startingTechMapper.getTechsForGroupAndScore("culture", cultureScore);
+	const auto industryTechs = startingTechMapper.getTechsForGroupAndScore("industry", industryScore);
+	const auto commerceTechs = startingTechMapper.getTechsForGroupAndScore("commerce", commerceScore);
 
-void V2::Country::setNavyTech(const double normalizedScore)
-{
-	if (!details.civilized) return;
+	techs.insert(armyTechs.begin(), armyTechs.end());
+	techs.insert(navyTechs.begin(), navyTechs.end());
+	techs.insert(cultureTechs.begin(), cultureTechs.end());
+	techs.insert(industryTechs.begin(), industryTechs.end());
+	techs.insert(commerceTechs.begin(), commerceTechs.end());
 
-	if (normalizedScore >= 0)
-	{
-		techs.insert("post_nelsonian_thought");
-		inventions.insert("long_range_fire_tactic");
-		inventions.insert("speedy_maneuvering_tactic");
-	}
-	if (normalizedScore >= 0.036)
-	{
-		techs.insert("the_command_principle");
-	}
-	if (normalizedScore >= 0.571)
-	{
-		techs.insert("clipper_design");
-		techs.insert("naval_design_bureaus");
-		techs.insert("alphabetic_flag_signaling");
-		inventions.insert("building_station_shipyards");
-	}
-	if (normalizedScore >= 0.857)
-	{
-		techs.insert("battleship_column_doctrine");
-		techs.insert("steamers");
-		inventions.insert("long_range_fire_tactic");
-		inventions.insert("speedy_maneuvering_tactic");
-		inventions.insert("mechanized_fishing_vessels");
-		inventions.insert("steamer_automatic_construction_plants");
-		inventions.insert("steamer_transports");
-		inventions.insert("commerce_raiders");
-	}
-	if (normalizedScore >= 1.0)
-	{
-		techs.insert("naval_professionalism");
-		inventions.insert("academic_training");
-		inventions.insert("combat_station_training");
-		inventions.insert("societal_status");
-	}
-}
-
-void V2::Country::setCommerceTech(const double normalizedScore)
-{
-	if (!details.civilized) return;
-
-	techs.insert("no_standard");
-	if (normalizedScore >= -0.777)
-	{
-		techs.insert("guild_based_production");
-	}
-	if (normalizedScore >= -0.555)
-	{
-		techs.insert("private_banks");
-	}
-	if (normalizedScore >= -0.333)
-	{
-		techs.insert("early_classical_theory_and_critique");
-	}
-	if (normalizedScore >= -.277)
-	{
-		techs.insert("freedom_of_trade");
-		inventions.insert("john_ramsay_mcculloch");
-		inventions.insert("nassau_william_sr");
-		inventions.insert("james_mill");
-	}
-	if (normalizedScore >= 0.333)
-	{
-		techs.insert("stock_exchange");
-		inventions.insert("multitude_of_financial_instruments");
-		inventions.insert("insurance_companies");
-		inventions.insert("regulated_buying_and_selling_of_stocks");
-	}
-	if (normalizedScore >= 0.777)
-	{
-		techs.insert("ad_hoc_money_bill_printing");
-		techs.insert("market_structure");
-		inventions.insert("silver_standard");
-		inventions.insert("decimal_monetary_system");
-		inventions.insert("polypoly_structure");
-		inventions.insert("oligopoly_structure");
-		inventions.insert("monopoly_structure");
-	}
-
-	if (normalizedScore >= 1.0)
-	{
-		techs.insert("late_classical_theory");
-		inventions.insert("john_elliot_cairnes");
-		inventions.insert("robert_torrens");
-		inventions.insert("john_stuart_mill");
-	}
-}
-
-void V2::Country::setIndustryTech(double normalizedScore)
-{
-	if (!details.civilized) return;
-
-	if (normalizedScore >= -1.0)
-	{
-		techs.insert("water_wheel_power");
-		inventions.insert("tulls_seed_drill");
-	}
-	if (normalizedScore >= -0.714)
-	{
-		techs.insert("publishing_industry");
-	}
-	if (normalizedScore >= -0.143)
-	{
-		techs.insert("mechanized_mining");
-		techs.insert("basic_chemistry");
-		inventions.insert("ammunition_production");
-		inventions.insert("small_arms_production");
-		inventions.insert("explosives_production");
-		inventions.insert("artillery_production");
-	}
-	if (normalizedScore >= 0.143)
-	{
-		techs.insert("practical_steam_engine");
-		inventions.insert("rotherham_plough");
-	}
-	if (normalizedScore >= 0.428)
-	{
-		techs.insert("experimental_railroad");
-	}
-	if (normalizedScore >= 0.714)
-	{
-		techs.insert("mechanical_production");
-		inventions.insert("sharp_n_roberts_power_loom");
-		inventions.insert("jacquard_power_loom");
-		inventions.insert("northrop_power_loom");
-		inventions.insert("mechanical_saw");
-		inventions.insert("mechanical_precision_saw");
-		inventions.insert("hussey_n_mccormicks_reaping_machine");
-		inventions.insert("pitts_threshing_machine");
-		inventions.insert("mechanized_slaughtering_block");
-		inventions.insert("precision_work");
-	}
-	if (normalizedScore >= 1.0)
-	{
-		techs.insert("clean_coal");
-		inventions.insert("pit_coal");
-		inventions.insert("coke");
-	}
-}
-
-void V2::Country::setCultureTech(double normalizedScore)
-{
-	if (!details.civilized) return;
-
-	techs.insert("classicism_n_early_romanticism");
-	inventions.insert("carlism");
-	techs.insert("late_enlightenment_philosophy");
-	inventions.insert("declaration_of_the_rights_of_man");
-	if (normalizedScore >= -0.333)
-	{
-		techs.insert("enlightenment_thought");
-		inventions.insert("paternalism");
-		inventions.insert("constitutionalism");
-		inventions.insert("atheism");
-		inventions.insert("egalitarianism");
-		inventions.insert("rationalism");
-		inventions.insert("caste_privileges");
-		inventions.insert("sati_abolished");
-		inventions.insert("pig_fat_cartridges");
-	}
-	if (normalizedScore >= 0.333)
-	{
-		techs.insert("malthusian_thought");
-	}
-	if (normalizedScore >= 0.333)
-	{
-		techs.insert("introspectionism");
-	}
-	if (normalizedScore >= 0.666)
-	{
-		techs.insert("romanticism");
-		inventions.insert("romanticist_literature");
-		inventions.insert("romanticist_art");
-		inventions.insert("romanticist_music");
-	}
+	inventions = startingInventionMapper.getInventionsForTechs(techs);
 }
 
 bool V2::Country::addFactory(std::shared_ptr<Factory> factory)
