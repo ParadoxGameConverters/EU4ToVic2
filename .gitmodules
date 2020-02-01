@@ -7,3 +7,6 @@
 [submodule "googletest"]
 	path = googletest
 	url = https://github.com/abseil/googletest
+[submodule "ZipLib"]
+	path = ZipLib
+	url = https://github.com/ParadoxGameConverters/ZipLib.git

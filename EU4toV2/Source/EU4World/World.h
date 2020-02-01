@@ -41,7 +41,7 @@ namespace EU4
 		[[nodiscard]] const auto& getHistoricalData() const { return historicalData; }
 		
 	private:
-		static void verifySave();
+		void verifySave();
 		void loadRevolutionTarget();
 		void dropMinoritiesFromCountries();
 		void addProvinceInfoToCountries();
@@ -61,6 +61,15 @@ namespace EU4
 	   void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas) const;
 		void fillHistoricalData();
 		void addTradeGoodsToProvinces() const;
+		bool uncompressSave();		
+
+		struct saveData
+		{
+			bool compressed = false;
+			std::string metadata;
+			std::string gamestate;
+		};
+		saveData saveGame;
 		
 		std::string holyRomanEmperor;
 		std::string celestialEmperor;

@@ -2,20 +2,27 @@ cmake_minimum_required(VERSION 3.5)
 #set(CMAKE_VERBOSE_MAKEFILE on)
 
 project(EU4ToVic2)
-SET(CMAKE_CXX_COMPILER g++-8)
+#SET(CMAKE_CXX_COMPILER g++-8)
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/Source)
 set(PROJECT_SOURCE_DIR ${CMAKE_SOURCE_DIR}/Source)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
 
 add_compile_options("-std=c++17")
-add_compile_options("-g")
+add_compile_options("-lstdc++fs")
+add_compile_options("-O2")
+add_compile_options("-pthread")
 
 include_directories("../common_items")
+include_directories("../ZipLib")
 include_directories("${PROJECT_SOURCE_DIR}")
+
+add_subdirectory(../ZipLib [binary_dir])
 
 file(GLOB MAIN_SOURCES "${PROJECT_SOURCE_DIR}/*.cpp")
 file(GLOB HELPER_SOURCES "${PROJECT_SOURCE_DIR}/Helpers/*.cpp")
+file(GLOB HELPER_ELZIP_SOURCES "${PROJECT_SOURCE_DIR}/Helpers/elzip/*.cpp")
+file(GLOB HELPER_MINIZIP_SOURCES "${PROJECT_SOURCE_DIR}/Helpers/elzip/minizip/*.c")
 file(GLOB VIC2WORLD_SOURCES "${PROJECT_SOURCE_DIR}/V2World/*.cpp")
 file(GLOB V2_ARMY_SOURCES "${PROJECT_SOURCE_DIR}/V2World/Army/*.cpp")
 file(GLOB V2_OUTPUT_SOURCES "${PROJECT_SOURCE_DIR}/V2World/Output/*.cpp")
@@ -104,6 +111,8 @@ set(COMMON_SOURCES ${COMMON_SOURCES} "../common_items/StringUtils.cpp")
 add_executable(EU4ToVic2 
 	${MAIN_SOURCES}
 	${HELPER_SOURCES}
+	${HELPER_ELZIP_SOURCES}
+	${HELPER_MINIZIP_SOURCES}
 	${VIC2WORLD_SOURCES}
 	${V2_ARMY_SOURCES}
 	${V2_COUNTRY_SOURCES}
@@ -180,5 +189,8 @@ add_executable(EU4ToVic2
 	${EU4_TRADEGOODS_SOURCES}
 	${COMMON_SOURCES}
 )
+
+target_link_libraries(EU4ToVic2 LINK_PUBLIC ZIPLIB stdc++fs)
+
 add_custom_command(TARGET EU4ToVic2 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
 add_custom_command(TARGET EU4ToVic2 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ./Copy_Files.sh)

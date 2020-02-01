@@ -8,6 +8,8 @@
 #include <stdexcept>
 #include <string>
 #include <filesystem>
+#include <ZipFile.h>
+
 namespace fs = std::filesystem;
 
 EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConfiguration)
@@ -15,7 +17,7 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConf
 	loadEU4ModDirectory(theConfiguration);
 	loadSteamWorkshopDirectory(theConfiguration);
 	loadCK2ExportDirectory(theConfiguration);
-
+	
 	Log(LogLevel::Info) << "\tFinding Used Mods";
 	for (const auto& usedMod: usedMods)
 	{
@@ -26,7 +28,7 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConf
 				throw std::invalid_argument(usedMod + " could not be found in the specified mod directory " + \
 					"- a valid mod directory must be specified. Tried " + *possibleModPath);
 
-			LOG(LogLevel::Info) << "\t\tUsing EU4 Mod is " << *possibleModPath;
+			LOG(LogLevel::Info) << "\t\t->> Using EU4 Mod: " << *possibleModPath;
 			theConfiguration.addEU4Mod(*possibleModPath);
 		}
 		else
@@ -155,7 +157,7 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						possibleCompressedMods.insert(std::make_pair(theMod.getName(), recordDirectory));
 						possibleCompressedMods.insert(std::make_pair("mod/" + filename, recordDirectory));
 						possibleCompressedMods.insert(std::make_pair(trimmedFilename, recordDirectory));
-						Log(LogLevel::Debug) << "\tFound a compessed mod named " << theMod.getName() <<
+						Log(LogLevel::Info) << "\t\tFound a compessed mod named " << theMod.getName() <<
 							" with a mod file at " << searchDirectory << "/mod/" + filename <<
 							" and itself at " << recordDirectory;
 					}
@@ -195,15 +197,65 @@ std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) con
 			uncompressedName = uncompressedName.substr(pos + 1, uncompressedName.size());
 		}
 
+		if (!Utils::doesFolderExist("mods/")) fs::create_directory("mods/");		
+
+		if (!Utils::doesFolderExist("mods/" + uncompressedName))
+		{
+			LOG(LogLevel::Info) << "\t\tUncompressing: " << archivePath;			
+			if (!extractZip(archivePath, "mods/" + uncompressedName))
+			{
+				LOG(LogLevel::Warning) << "We have trouble automatically uncompressing your mod.";
+				LOG(LogLevel::Warning) << "Please, manually uncompress: " << archivePath;
+				LOG(LogLevel::Warning) << "Into: EU4ToVic2/mod/" << uncompressedName;
+				LOG(LogLevel::Warning) << "Then run the converter again. Thank you and good luck.";
+				return std::nullopt;
+			}
+		}
+
 		if (Utils::doesFolderExist("mods/" + uncompressedName))
 		{
 			return "mods/" + uncompressedName;
 		}
-		
-		LOG(LogLevel::Warning) << "For now, manually uncompress " << archivePath << \
-			" into the converter directory at EU4ToVic2/mods/" << uncompressedName;
-		LOG(LogLevel::Warning) << "Then run the converter again";
+
 	}
 
 	return std::nullopt;
+}
+
+bool EU4::Mods::extractZip(const std::string& archive, const std::string& path) const
+{
+	fs::create_directory(path);
+	auto modfile = ZipFile::Open(archive);
+	if (!modfile) return false;
+	for (size_t entryNum = 0; entryNum < modfile->GetEntriesCount(); ++entryNum)
+	{
+		const auto& entry = modfile->GetEntry(entryNum);
+		const auto& inpath = entry->GetFullName();
+		const auto& name = entry->GetName();
+		if (entry->IsDirectory()) continue;
+
+		// Does target directory exist?
+		const auto dirnamepos = inpath.find(name);
+		const auto dirname = path + "/" + inpath.substr(0, dirnamepos);
+		if (!exists(fs::u8path(dirname)))
+		{
+			// we need to craft our way through to target directory.
+			auto remainder = inpath;
+			auto currentpath = path;
+			while (remainder != name)
+			{
+				const auto pos = remainder.find_first_of('/');
+				if (pos != std::string::npos)
+				{
+					auto makedirname = remainder.substr(0, pos);
+					currentpath += "/" + makedirname;
+					create_directory(fs::u8path(currentpath));
+					remainder = remainder.substr(pos + 1, remainder.length());
+				}
+				else break;
+			}
+		}
+		ZipFile::ExtractFile(archive, inpath, path + "/" + inpath);
+	}
+	return true;
 }

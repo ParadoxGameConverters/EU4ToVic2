@@ -18,6 +18,7 @@
 #include <fstream>
 #include <string>
 #include "Relations/EU4Empire.h"
+#include <ZipFile.h>
 #include <filesystem>
 namespace fs = std::filesystem;
 
@@ -122,7 +123,18 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	verifySave();
 
 	LOG(LogLevel::Info) << "-> Importing EU4 save.";
-	parseFile(theConfiguration.getEU4SaveGamePath());
+	if (!saveGame.compressed)
+	{
+		parseFile(theConfiguration.getEU4SaveGamePath());
+	}
+	else
+	{
+		auto mdata = std::istringstream(saveGame.metadata);
+		parseStream(mdata);
+		auto gstate = std::istringstream(saveGame.gamestate);
+		parseStream(gstate);
+	}
+	
 	clearRegisteredKeywords();
 
 	LOG(LogLevel::Info) << "*** Building world ***";
@@ -196,10 +208,6 @@ void EU4::World::verifySave()
 
 	char buffer[8];
 	saveFile.get(buffer, 8);
-	if (buffer[0] == 'P' && buffer[1] == 'K')
-	{
-		throw std::runtime_error("Saves must be uncompressed to be converted.");
-	}
 	if (
 		buffer[0] == 'E' &&
 		buffer[1] == 'U' &&
@@ -209,9 +217,46 @@ void EU4::World::verifySave()
 		buffer[5] == 'n' &&
 		buffer[6] == 'M'
 	) throw std::runtime_error("Ironman saves cannot be converted.");
+	if (buffer[0] == 'P' && buffer[1] == 'K')
+	{
+		LOG(LogLevel::Info) << "Saves must be uncompressed to be converted.";
+		LOG(LogLevel::Info) << "Just kidding.";
+		if (!uncompressSave()) throw std::runtime_error("Failed to unpack the compressed save!");
+	}
 
 	saveFile.close();
 }
+
+bool EU4::World::uncompressSave()
+{
+	auto savefile = ZipFile::Open(theConfiguration.getEU4SaveGamePath());
+	if (!savefile) return false;
+	for (size_t entryNum = 0; entryNum < savefile->GetEntriesCount(); ++entryNum)
+	{
+		const auto& entry = savefile->GetEntry(entryNum);
+		const auto& name = entry->GetName();
+		if (name == "meta")
+		{
+			LOG(LogLevel::Info) << ">> Uncompressing metadata";
+			saveGame.metadata = std::string{std::istreambuf_iterator<char>(*entry->GetDecompressionStream()),
+				std::istreambuf_iterator<char>()};
+		}
+		else if (name == "gamestate")
+		{
+			LOG(LogLevel::Info) << ">> Uncompressing gamestate";
+			saveGame.gamestate = std::string{ std::istreambuf_iterator<char>(*entry->GetDecompressionStream()),
+				std::istreambuf_iterator<char>() };
+		}
+		else if (name == "ai")
+		{
+			LOG(LogLevel::Info) << ">> Uncompressing ai and forgetting it existed";
+			saveGame.compressed = true;
+		}
+		else throw std::runtime_error("Unrecognized savegame structure!");
+	}
+	return true;
+}
+
 
 void EU4::World::loadRevolutionTarget()
 {
