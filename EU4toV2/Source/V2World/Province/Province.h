@@ -62,6 +62,8 @@ namespace V2
 		void setFortLevel(const int level) { fortLevel = level; }
 		void setNavalBaseLevel(const int level) { navalBaseLevel = level; }
 		void setLandConnection(const bool _connection) { landConnection = _connection; }
+		void setColonial(const int colonyLevel) { colonial = colonyLevel; }
+		void setTerritorialCore(const bool territory) { territorialCore = territory; }
 		void setSameContinent() { sameContinent = true; }
 		void addCore(const std::string& newCore);
 		void addPopDemographic(const Demographic& d);
@@ -75,6 +77,7 @@ namespace V2
 		[[nodiscard]] auto hasLandConnection() const { return landConnection; }
 		[[nodiscard]] auto getMfgCount() const { return mfgCount; }
 		[[nodiscard]] auto isColony() const { return colonial != 0; }
+		[[nodiscard]] auto getColonyLevel() const { return colonial; }
 		[[nodiscard]] auto wasColony() const { return wasColonised; }
 		[[nodiscard]] const auto& getEU4IDs() const { return eu4IDs; }
 		[[nodiscard]] const auto& getRgoType() const { return details.rgoType; }

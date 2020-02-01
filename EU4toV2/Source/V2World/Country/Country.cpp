@@ -268,12 +268,14 @@ V2::Relation& V2::Country::getRelation(const std::string& target)
 
 void V2::Country::absorbColony(Country& vassal)
 {
-	// change province ownership and add owner cores if needed
+	// change province ownership and drop provinces to colony status.
+	// We are NOT dropping colonial nation cores, so the player may release the nation manually if desired.
 	for (auto& province : vassal.getProvinces())
 	{
 		province.second->setOwner(tag);
 		province.second->setController(tag);
-		province.second->addCore(tag);
+		if (!province.second->isColony()) province.second->setColonial(2);
+		province.second->setTerritorialCore(true);
 	}
 	vassal.provinces.clear();
 
