@@ -81,7 +81,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		{
 			LOG(LogLevel::Info) << "-> Loading Provinces";
 			modifierTypes.initialize();
-			provinces = std::make_unique<Provinces>(theStream, buildingTypes, modifierTypes);
+			provinces = std::make_unique<Provinces>(theStream);
 
 			const auto& possibleDate = provinces->getProvince(1)->getFirstOwnedDate();
 			if (possibleDate) theConfiguration.setFirstEU4Date(*possibleDate);

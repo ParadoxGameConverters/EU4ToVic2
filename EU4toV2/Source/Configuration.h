@@ -43,6 +43,7 @@ class Configuration: commonItems::parser
 		[[nodiscard]] auto getPopShapingFactor() const { return popShapingFactor; }
 		[[nodiscard]] auto getDebug() const { return debug; }
 		[[nodiscard]] auto getRandomiseRgos() const { return randomiseRgos; }
+		[[nodiscard]] auto getConvertAll() const { return convertAll; }
 
 		[[nodiscard]] const auto& getEU4SaveGamePath() const { return EU4SaveGamePath; }
 		[[nodiscard]] const auto& getEU4Path() const { return EU4Path; }
@@ -88,6 +89,7 @@ class Configuration: commonItems::parser
 		double popShapingFactor = 50.0;
 		bool debug = false;
 		bool randomiseRgos = false;
+		bool convertAll = false;
 	
 		// items set during conversion
 		EU4::Version version;

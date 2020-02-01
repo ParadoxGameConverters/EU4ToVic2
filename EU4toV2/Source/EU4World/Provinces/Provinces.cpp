@@ -3,11 +3,11 @@
 #include "ParserHelpers.h"
 #include <fstream>
 
-EU4::Provinces::Provinces(std::istream& theStream, const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes) 
+EU4::Provinces::Provinces(std::istream& theStream)
 {
-	registerRegex("-[0-9]+", [this, buildingTypes, modifierTypes](const std::string& numberString, std::istream& theStream)
+	registerRegex("-[0-9]+", [this](const std::string& numberString, std::istream& theStream)
 	{
-		auto newProvince = std::make_shared<Province>(numberString, theStream, buildingTypes, modifierTypes);
+		auto newProvince = std::make_shared<Province>(numberString, theStream);
 		provinces.insert(std::make_pair(newProvince->getNum(), std::move(newProvince)));
 	});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);

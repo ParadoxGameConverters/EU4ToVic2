@@ -12,7 +12,7 @@ namespace EU4
 	class Provinces: commonItems::parser
 	{
 	public:
-		Provinces(std::istream& theStream, const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes);
+		explicit Provinces(std::istream& theStream);
 		
 		[[nodiscard]] auto geTotalProvinceWeights() const { return totalProvinceWeights; }
 		[[nodiscard]] const auto& getAllProvinces() const { return provinces; }

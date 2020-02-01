@@ -82,9 +82,14 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 	});
 	registerKeyword("randomise_rgos", [this](const std::string& unused, std::istream& theStream){
 		const commonItems::singleString randomiseRgosString(theStream);
-		randomiseRgos = (randomiseRgosString.getString() == "yes");
+		randomiseRgos = randomiseRgosString.getString() == "yes";
 		LOG(LogLevel::Info) << "Randomise RGOs: " << randomiseRgosString.getString();
 	});
+	registerKeyword("convert_all", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString convertAllString(theStream);
+		convertAll = convertAllString.getString() == "yes";
+		LOG(LogLevel::Info) << "Convert All: " << convertAllString.getString();
+		});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
 	LOG(LogLevel::Info) << "Reading configuration file";

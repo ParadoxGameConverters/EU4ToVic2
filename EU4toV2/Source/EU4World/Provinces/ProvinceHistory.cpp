@@ -59,6 +59,25 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 	parseStream(theStream);
 	clearRegisteredKeywords();
 
+	if (theConfiguration.getConvertAll())
+	{
+		// Drop conversion history if we're converting everyone by config.
+		if (!cultureHistory.empty())
+		{
+			auto lastCulture = cultureHistory.back();
+			lastCulture.first = theConfiguration.getStartEU4Date();
+			cultureHistory.clear();
+			cultureHistory.emplace_back(lastCulture);
+		}
+		if (!religionHistory.empty())
+		{
+			auto lastReligion = religionHistory.back();
+			lastReligion.first = theConfiguration.getStartEU4Date();
+			religionHistory.clear();
+			religionHistory.emplace_back(lastReligion);
+		}
+	}
+
 	if (!startingCulture.empty() && (cultureHistory.empty() || cultureHistory.begin()->first != theConfiguration.getStartEU4Date()))
 	{
 		cultureHistory.insert(cultureHistory.begin(), std::make_pair(theConfiguration.getStartEU4Date(), startingCulture));

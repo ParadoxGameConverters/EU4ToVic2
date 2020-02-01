@@ -33,13 +33,7 @@ TEST(EU4World_ProvincesTests, defaultProvincesIsEmpty)
 	std::stringstream input;
 	input << "={}";
 
-	std::stringstream buildingsInput;
-	mappers::Buildings buildings(buildingsInput);
-
-	std::stringstream modifiersInput;
-	EU4::Modifiers modifiers(modifiersInput);
-
-	EU4::Provinces theProvinces(input, buildings, modifiers);
+	EU4::Provinces theProvinces(input);
 	ASSERT_EQ(theProvinces.getAllProvinces().size(), 0);
 }
 
@@ -53,13 +47,7 @@ TEST(EU4World_ProvincesTests, provincesCanBeInput)
 	input << "}\n";
 	input << "}";
 
-	std::stringstream buildingsInput;
-	mappers::Buildings buildings(buildingsInput);
-
-	std::stringstream modifiersInput;
-	EU4::Modifiers modifiers(modifiersInput);
-
-	EU4::Provinces theProvinces(input, buildings, modifiers);
+	EU4::Provinces theProvinces(input);
 	ASSERT_EQ(theProvinces.getAllProvinces().size(), 1);
 }
 
@@ -73,13 +61,7 @@ TEST(EU4World_ProvincesTests, gettingNonExsistentProvinceThrowsException)
 	input << "}\n";
 	input << "}";
 
-	std::stringstream buildingsInput;
-	mappers::Buildings buildings(buildingsInput);
-
-	std::stringstream modifiersInput;
-	EU4::Modifiers modifiers(modifiersInput);
-
-	EU4::Provinces theProvinces(input, buildings, modifiers);
+	EU4::Provinces theProvinces(input);
 	ASSERT_THROW(theProvinces.getProvince(42), std::range_error);
 }
 
@@ -93,38 +75,6 @@ TEST(EU4World_ProvincesTests, canGetProvince)
 	input << "}\n";
 	input << "}";
 
-	std::stringstream buildingsInput;
-	mappers::Buildings buildings(buildingsInput);
-
-	std::stringstream modifiersInput;
-	EU4::Modifiers modifiers(modifiersInput);
-
-	EU4::Provinces theProvinces(input, buildings, modifiers);
+	EU4::Provinces theProvinces(input);
 	ASSERT_EQ(theProvinces.getProvince(1)->getNum(), 1);
 }
-
-/* No longet tested, as it requires file I/O
-TEST(EU4World_ProvincesTests, checkAllProvincesMappedNotesMissingProvince)
-{
-	std::stringstream input;
-	input << "={\n";
-	input << "={\n";
-	input << "-1={}";
-	input << "}\n";
-	input << "}";
-	EU4::Provinces theProvinces(input);
-
-	std::stringstream provinceMapperInput;
-	provinceMapperInput << "0.0.0.0 = {\n";
-	provinceMapperInput << "}";
-	Configuration testConfig;
-	mappers::ProvinceMapper mapper(provinceMapperInput, testConfig);
-
-	std::stringstream buffer;
-	std::streambuf* sbuf = std::cout.rdbuf();
-	std::cout.rdbuf(buffer.rdbuf());
-	theProvinces.checkAllProvincesMapped(mapper);
-	std::cout.rdbuf(sbuf);
-
-	ASSERT_EQ(buffer.str(), "No mapping for province 1\n");
-}*/
