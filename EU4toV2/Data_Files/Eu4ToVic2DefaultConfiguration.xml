@@ -1,180 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<configuration
-  Comment="This file is used to build the configuration parth of the frontend. This is done at run-time, so errors here might prevent the frontend from running.">
-  <!--This part contains the various options that will be displayed as preferences in the converter ui, and outputted as configuration.txt as input for the converter tool itself-->
-  <converterOptions>
-    <categories>
-      <category>
-        <friendlyName>Configuration</friendlyName>
-        <preferences>
-          <!-- <preference>
-            <name>resetProvinces</name>
-            <friendlyName>Reset Provinces?</friendlyName>
-            <description>Whether or not to reset resettable V2 provinces</description>
-            <entryOptions>
-              <entryOption>
-                <name>yes</name>
-                <friendlyName>Yes</friendlyName>
-                <description>Reset provinces</description>
-                <isDefault>false</isDefault>
-              </entryOption>
-              <entryOption>
-                <name>no</name>
-                <friendlyName>No</friendlyName>
-                <description>Don't reset provinces</description>
-                <isDefault>true</isDefault>
-              </entryOption>
-            </entryOptions>
-          </preference> -->
-          <preference>
-            <name>max_literacy</name>
-            <friendlyName>Max Literacy</friendlyName>
-            <description>The maximum literacy a nation will start with. Default 100%</description>
-            <hasDirectlyEditableValue>true</hasDirectlyEditableValue>
-            <value>1</value>
-            <minValue>0.1</minValue>
-            <maxValue>1</maxValue>
-          </preference>
-          <preference>
-            <name>remove_type</name>
-            <friendlyName>Drop cores of dead nations?</friendlyName>
-            <description>Which landless nations to remove</description>
-            <entryOptions>
-              <entryOption>
-                <name>1</name>
-                <friendlyName>1 - None - leave all</friendlyName>
-                <description>Remove none of them</description>
-                <isDefault>false</isDefault>
-              </entryOption>
-              <entryOption>
-                <name>2</name>
-                <friendlyName>2 - Dead - no culture remains</friendlyName>
-                <description>Remove ones without cultural backing</description>
-                <isDefault>true</isDefault>
-              </entryOption>
-              <entryOption>
-                <name>3</name>
-                <friendlyName>3 - All - dead is dead</friendlyName>
-                <description>Remove all of them</description>
-                <isDefault>false</isDefault>
-              </entryOption>
-            </entryOptions>
-          </preference>
-          <preference>
-            <name>liberty_threshold</name>
-            <friendlyName>Liberty threshold for Colonies</friendlyName>
-            <description>The threshold value for when colonies are not absorbed. Default 50% (loyal colonies absorbed)</description>
-            <hasDirectlyEditableValue>true</hasDirectlyEditableValue>
-            <value>50</value>
-            <minValue>1</minValue>
-            <maxValue>100</maxValue>
-          </preference>
-          <preference>
-            <name>pop_shaping</name>
-            <friendlyName>Shape population?</friendlyName>
-            <description>Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers.</description>
-            <entryOptions>
-              <entryOption>
-                <name>1</name>
-                <friendlyName>1 - Stick to vanilla pop sizes.</friendlyName>
-                <description>Use Vanilla population sizes.</description>
-                <isDefault>false</isDefault>
-              </entryOption>
-              <entryOption>
-                <name>2</name>
-                <friendlyName>2 - Devpush means more people!</friendlyName>
-                <description>Adjust population sizes.</description>
-                <isDefault>true</isDefault>
-              </entryOption>
-              <entryOption>
-                <name>3</name>
-                <friendlyName>3 - Extreme - abs. devsize</friendlyName>
-                <description>Redistribute everyone according to absolute value of provinces.</description>
-                <isDefault>false</isDefault>
-              </entryOption>
-            </entryOptions>
-          </preference>
-	<preference>
-            <name>pop_shaping_factor</name>
-            <friendlyName>Shaping Factor?</friendlyName>
-            <description>How much does EU4 affect population sizes? 0 - Vanilla, 100 - Fully (1 dev increase approx 1% pop increase)</description>
-            <hasDirectlyEditableValue>true</hasDirectlyEditableValue>
-            <value>100</value>
-            <minValue>1</minValue>
-            <maxValue>100</maxValue>
-        </preference>
-		<preference>
-			<name>core_handling</name>
-			<friendlyName>Auto-assign national cores?</friendlyName>
-			<description>Assign cores for nationalities and cultural unions (Can be an issue for CK2 and/or flat dev imports).</description>
-			<entryOptions>
-			  <entryOption>
-				<name>1</name>
-				<friendlyName>1 - Yes, unification is nigh.</friendlyName>
-				<description>Use defaults</description>
-				<isDefault>true</isDefault>
-			  </entryOption>
-			  <entryOption>
-				<name>2</name>
-				<friendlyName>2 - No national cores</friendlyName>
-				<description>For primary nationalities</description>
-				<isDefault>false</isDefault>
-			  </entryOption>
-			  <entryOption>
-				<name>3</name>
-				<friendlyName>3 - No cultural union cores</friendlyName>
-				<description>No Germany, apparently.</description>
-				<isDefault>false</isDefault>
-			  </entryOption>
-			  <entryOption>
-				<name>4</name>
-				<friendlyName>4 - Don't assign any.</friendlyName>
-				<description>Don't touch anything.</description>
-				<isDefault>false</isDefault>
-			  </entryOption>
-			</entryOptions>
-		</preference>
-		<preference>
-			<name>euro_centrism</name>
-			<friendlyName>Make world Eurocentric?</friendlyName>
-			<description>Drop literacy and civilization levels for non-europeans? (configurable!)</description>
-			<entryOptions>
-			  <entryOption>
-				<name>1</name>
-				<friendlyName>1 - Use EU4 institutions and tech</friendlyName>
-				<description>Use defaults</description>
-				<isDefault>true</isDefault>
-			  </entryOption>
-			  <entryOption>
-				<name>2</name>
-				<friendlyName>2 - Time to rule the waves!</friendlyName>
-				<description>Configurable via techgroups.txt</description>
-				<isDefault>false</isDefault>
-			  </entryOption>
-			</entryOptions>
-		</preference>
-	  <preference>
-            <name>randomise_rgos</name>
-            <friendlyName>Randomise RGOs?</friendlyName>
-            <description>If set, RGOs will be shuffled within similar climate and terrain provinces.</description>
-            <entryOptions>
-              <entryOption>
-                <name>no</name>
-                <friendlyName>No</friendlyName>
-                <description>Historical RGOs</description>
-                <isDefault>true</isDefault>
-              </entryOption>
-              <entryOption>
-                <name>yes</name>
-                <friendlyName>Yes</friendlyName>
-                <description>Shuffled RGOs</description>
-                <isDefault>false</isDefault>
-              </entryOption>
-            </entryOptions>
-          </preference>
-        </preferences>
-      </category>
-    </categories>
-  </converterOptions>
+<configuration Comment="This file is used to build the configuration parth of the frontend. This is done at run-time, so errors here might prevent the frontend from running.">
+<!--This part contains the various options that will be displayed as preferences in the converter ui, and outputted as configuration.txt as input for the converter tool itself-->
+<converterOptions>
+	<categories>
+		<category>
+			<friendlyName>Configuration</friendlyName>
+			<preferences>
+				<!-- <preference>
+					<name>resetProvinces</name>
+					<friendlyName>Reset Provinces?</friendlyName>
+					<description>Whether or not to reset resettable V2 provinces</description>
+					<entryOptions>
+						<entryOption>
+							<name>yes</name>
+							<friendlyName>Yes</friendlyName>
+							<description>Reset provinces</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>no</name>
+							<friendlyName>No</friendlyName>
+							<description>Don't reset provinces</description>
+							<isDefault>true</isDefault>
+						</entryOption>
+					</entryOptions>
+				</preference> -->
+				<preference>
+					<name>max_literacy</name>
+					<friendlyName>Max Literacy</friendlyName>
+					<description>The maximum literacy a nation will start with. Default 100%</description>
+					<hasDirectlyEditableValue>true</hasDirectlyEditableValue>
+					<value>1</value>
+					<minValue>0.1</minValue>
+					<maxValue>1</maxValue>
+				</preference>
+				<preference>
+					<name>remove_type</name>
+					<friendlyName>Drop cores of dead nations?</friendlyName>
+					<description>Which landless nations to remove</description>
+					<entryOptions>
+						<entryOption>
+							<name>1</name>
+							<friendlyName>1 - None - leave all</friendlyName>
+							<description>Remove none of them</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>2</name>
+							<friendlyName>2 - Dead - no culture remains</friendlyName>
+							<description>Remove ones without cultural backing</description>
+							<isDefault>true</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>3</name>
+							<friendlyName>3 - All - dead is dead</friendlyName>
+							<description>Remove all of them</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+					</entryOptions>
+				</preference>
+				<preference>
+					<name>liberty_threshold</name>
+					<friendlyName>Liberty threshold for Colonies</friendlyName>
+					<description>The threshold value for when colonies are not absorbed. Default 50% (loyal colonies absorbed)</description>
+					<hasDirectlyEditableValue>true</hasDirectlyEditableValue>
+					<value>50</value>
+					<minValue>1</minValue>
+					<maxValue>100</maxValue>
+				</preference>
+				<preference>
+					<name>pop_shaping</name>
+					<friendlyName>Shape population?</friendlyName>
+					<description>Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers.</description>
+					<entryOptions>
+						<entryOption>
+							<name>1</name>
+							<friendlyName>1 - Stick to vanilla pop sizes.</friendlyName>
+							<description>Use Vanilla population sizes.</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>2</name>
+							<friendlyName>2 - Devpush means more people!</friendlyName>
+							<description>Adjust population sizes.</description>
+							<isDefault>true</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>3</name>
+							<friendlyName>3 - Extreme - abs. devsize</friendlyName>
+							<description>Redistribute everyone according to absolute value of provinces.</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+					</entryOptions>
+				</preference>
+				<preference>
+					<name>pop_shaping_factor</name>
+					<friendlyName>Shaping Factor?</friendlyName>
+					<description>How much does EU4 affect population sizes? 0 - Vanilla, 100 - Fully (1 dev increase approx 1% pop increase)</description>
+					<hasDirectlyEditableValue>true</hasDirectlyEditableValue>
+					<value>100</value>
+					<minValue>1</minValue>
+					<maxValue>100</maxValue>
+				</preference>
+				<preference>
+					<name>core_handling</name>
+					<friendlyName>Auto-assign national cores?</friendlyName>
+					<description>Assign cores for nationalities and cultural unions (Can be an issue for CK2 and/or flat dev imports).</description>
+					<entryOptions>
+						<entryOption>
+							<name>1</name>
+							<friendlyName>1 - Yes, unification is nigh.</friendlyName>
+							<description>Use defaults</description>
+							<isDefault>true</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>2</name>
+							<friendlyName>2 - No national cores</friendlyName>
+							<description>For primary nationalities</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>3</name>
+							<friendlyName>3 - No cultural union cores</friendlyName>
+							<description>No Germany, apparently.</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>4</name>
+							<friendlyName>4 - Don't assign any.</friendlyName>
+							<description>Don't touch anything.</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+					</entryOptions>
+					</preference>
+				<preference>
+					<name>euro_centrism</name>
+					<friendlyName>Make world Eurocentric?</friendlyName>
+					<description>Drop literacy and civilization levels for non-europeans? (configurable!)</description>
+					<entryOptions>
+						<entryOption>
+							<name>1</name>
+							<friendlyName>1 - Use EU4 institutions and tech</friendlyName>
+							<description>Use defaults</description>
+							<isDefault>true</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>2</name>
+							<friendlyName>2 - Time to rule the waves!</friendlyName>
+							<description>Configurable via techgroups.txt</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+					</entryOptions>
+				</preference>
+				<preference>
+					<name>randomise_rgos</name>
+					<friendlyName>Randomise RGOs?</friendlyName>
+					<description>If set, RGOs will be shuffled within similar climate and terrain provinces.</description>
+					<entryOptions>
+						<entryOption>
+							<name>no</name>
+							<friendlyName>No</friendlyName>
+							<description>Historical RGOs</description>
+							<isDefault>true</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>yes</name>
+							<friendlyName>Yes</friendlyName>
+							<description>Shuffled RGOs</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+					</entryOptions>
+				</preference>
+				<preference>
+					<name>convert_all</name>
+					<friendlyName>Any conversion in EU4 converts:</friendlyName>
+					<description>We can convert everyone and their cows, but this will have negative effects on gameplay (assimilation, hotspot crises). Do not change unless you know what to expect.</description>
+					<entryOptions>
+						<entryOption>
+							<name>no</name>
+							<friendlyName>Nobility and merchants (good)</friendlyName>
+							<description>All upper strata + 50% of middle strata</description>
+							<isDefault>true</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>yes</name>
+							<friendlyName>Everyone inc. peasants (BAD!)</friendlyName>
+							<description>100% of population</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+					</entryOptions>
+				</preference>
+			</preferences>
+		</category>
+	</categories>
+</converterOptions>
 </configuration>

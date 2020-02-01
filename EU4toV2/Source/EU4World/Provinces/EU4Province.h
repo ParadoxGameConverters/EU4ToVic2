@@ -16,12 +16,7 @@ namespace EU4
 	class Province: commonItems::parser
 	{
 	public:
-		Province(
-			const std::string& numString,
-			std::istream& theStream,
-			const mappers::Buildings& buildingTypes,
-			const Modifiers& modifierTypes
-		);
+		Province(const std::string& numString, std::istream& theStream);
 
 		void addCore(const std::string& tag) { cores.insert(tag); }
 		void removeCore(const std::string& tag) { cores.erase(tag); }

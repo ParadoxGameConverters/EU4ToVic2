@@ -13,6 +13,7 @@ mappers::TechGroups::TechGroups(std::istream& theStream)
 			const commonItems::singleInt literacyInt(theStream);
 			literacyBoost = literacyInt.getInt();
 		});
+	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();

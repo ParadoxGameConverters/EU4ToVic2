@@ -11,12 +11,8 @@
 
 const double BUILDING_COST_TO_WEIGHT_RATIO = 0.02;
 
-EU4::Province::Province(
-	const std::string& numString,
-	std::istream& theStream,
-	const mappers::Buildings& buildingTypes,
-	const Modifiers& modifierTypes
-) {
+EU4::Province::Province(const std::string& numString, std::istream& theStream)
+{
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) 
 		{
 			const commonItems::singleString nameString(theStream);
@@ -125,7 +121,7 @@ EU4::Province::Province(
 	num = 0 - stoi(numString);
 
 	// for old versions of EU4 (< 1.12), copy tax to production if necessary
-	if ((baseProduction == 0.0f) && (baseTax > 0.0f))
+	if (baseProduction == 0 && baseTax > 0)
 	{
 		baseProduction = baseTax;
 	}
