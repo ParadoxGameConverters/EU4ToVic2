@@ -5,6 +5,7 @@
 #include <string>
 #include <memory>
 #include <vector>
+#include <set>
 
 namespace EU4
 {
@@ -40,19 +41,18 @@ namespace helpers
 		[[nodiscard]] static double getCountryCommerceTech(const EU4::Country& country);
 		[[nodiscard]] static double getCountryCultureTech(const EU4::Country& country);
 		[[nodiscard]] static double getCountryIndustryTech(const EU4::Country& country);
-		[[nodiscard]] static double getNormalizedScore(double score, double min, double median);
-		[[nodiscard]] static double dropOutliers(std::vector<double>& scores, double mean);
 
-		double armyMax = 0;
-		double navyMax = 0;
-		double commerceMax = 0;
-		double cultureMax = 0;
-		double industryMax = 0;
-		double armyMean = 0;
-		double navyMean = 0;
-		double commerceMean = 0;
-		double cultureMean = 0;
-		double industryMean = 0;
+		double armyStep = 0;
+		double navyStep = 0;
+		double commerceStep = 0;
+		double cultureStep = 0;
+		double industryStep = 0;
+		std::vector<double> armyScores;
+		std::vector<double> navyScores;
+		std::vector<double> commerceScores;
+		std::vector<double> cultureScores;
+		std::vector<double> industryScores;
+
 	};
 }
 

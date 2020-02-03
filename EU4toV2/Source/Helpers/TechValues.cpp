@@ -2,65 +2,44 @@
 #include "../EU4World/Country/EU4Country.h"
 #include "../V2World/Country/Country.h"
 #include <algorithm>
-#include "Log.h"
 
 helpers::TechValues::TechValues(const std::map<std::string, std::shared_ptr<V2::Country>>& countries)
 {
-	std::vector<double> armyScores;
-	std::vector<double> navyScores;
-	std::vector<double> commerceScores;
-	std::vector<double> cultureScores;
-	std::vector<double> industryScores;
-	int totalCountries = 0;
 	
 	for (const auto& countryItr: countries)
 	{
 		const auto& country = countryItr.second;
 		if (!isValidCountryForTechConversion(*country)) continue;
-
-		auto armyScore = getCountryArmyTech(*country->getSourceCountry());
-		armyScores.emplace_back(armyScore);
-		armyMean += armyScore;
-
-		auto navyScore = getCountryNavyTech(*country->getSourceCountry());
-		navyScores.emplace_back(navyScore);
-		navyMean += navyScore;
-
-		auto commerceScore = getCountryCommerceTech(*country->getSourceCountry());
-		commerceScores.emplace_back(commerceScore);
-		commerceMean += commerceScore;
-
-		auto cultureScore = getCountryCultureTech(*country->getSourceCountry());
-		cultureScores.emplace_back(cultureScore);
-		cultureMean += cultureScore;
-
-		auto industryScore = getCountryIndustryTech(*country->getSourceCountry());
-		industryScores.emplace_back(industryScore);
-		industryMean += industryScore;
 		
-		++totalCountries;
+		armyScores.emplace_back(getCountryArmyTech(*country->getSourceCountry()));
+		navyScores.emplace_back(getCountryNavyTech(*country->getSourceCountry()));
+		commerceScores.emplace_back(getCountryCommerceTech(*country->getSourceCountry()));
+		cultureScores.emplace_back(getCountryCultureTech(*country->getSourceCountry()));
+		industryScores.emplace_back(getCountryIndustryTech(*country->getSourceCountry()));
 	}
 
-	if (!armyScores.empty()) armyMean /= totalCountries;
-	if (!navyScores.empty()) navyMean /= totalCountries;
-	if (!commerceScores.empty()) commerceMean /= totalCountries;
-	if (!cultureScores.empty()) cultureMean /= totalCountries;
-	if (!industryScores.empty()) industryMean /= totalCountries;
+	if (armyScores.empty()) return; // Well crap. Play dead and hope they go away.
 
-	armyMean = dropOutliers(armyScores, armyMean);
-	navyMean = dropOutliers(navyScores, navyMean);
-	commerceMean = dropOutliers(commerceScores, commerceMean);
-	cultureMean = dropOutliers(cultureScores, cultureMean);
-	industryMean = dropOutliers(industryScores, industryMean);
-	
-	if (!armyScores.empty()) armyMax = armyScores.back();
-	if (!navyScores.empty()) navyMax = navyScores.back();
-	if (!commerceScores.empty()) commerceMax = commerceScores.back();
-	if (!cultureScores.empty()) cultureMax = cultureScores.back();
-	if (!industryScores.empty()) industryMax = industryScores.back();
+	// Drop all repeated scores, not using sets because we need indexes
+	std::sort(armyScores.begin(), armyScores.end());
+	armyScores.erase(std::unique(armyScores.begin(), armyScores.end()), armyScores.end());
+	std::sort(navyScores.begin(), navyScores.end());
+	navyScores.erase(std::unique(navyScores.begin(), navyScores.end()), navyScores.end());
+	std::sort(commerceScores.begin(), commerceScores.end());
+	commerceScores.erase(std::unique(commerceScores.begin(), commerceScores.end()), commerceScores.end());
+	std::sort(cultureScores.begin(), cultureScores.end());
+	cultureScores.erase(std::unique(cultureScores.begin(), cultureScores.end()), cultureScores.end());
+	std::sort(industryScores.begin(), industryScores.end());
+	industryScores.erase(std::unique(industryScores.begin(), industryScores.end()), industryScores.end());
 
-	Log(LogLevel::Debug) << "Industry median : " << industryMedian << "Industry mean : " << industryMean << "industry min : " << industryMin << " industry max: " << industryMax;
-
+	// For a given set of scores, how much does each rank matter? Scale on -1 to 1.
+	// For a single civilized nation (roman empire or smlr.) it will get 1 in everything. As a consequence
+	// no country will ever have -1 in anything, but this is not an issue in practice.
+	armyStep = 2.0 / armyScores.size();
+	navyStep = 2.0 / navyScores.size();
+	commerceStep = 2.0 / commerceScores.size();
+	cultureStep = 2.0 / cultureScores.size();
+	industryStep = 2.0 / industryScores.size();	
 }
 
 bool helpers::TechValues::isValidCountryForTechConversion(const V2::Country& country)
@@ -70,28 +49,42 @@ bool helpers::TechValues::isValidCountryForTechConversion(const V2::Country& cou
 
 double helpers::TechValues::getNormalizedArmyTech(const EU4::Country& country) const
 {
-	return getNormalizedScore(getCountryArmyTech(country), armyMax, armyMedian);
+	const auto score = getCountryArmyTech(country);
+	const auto it = std::find(armyScores.begin(), armyScores.end(), score);
+	const auto index = std::distance(armyScores.begin(), it);
+	return (static_cast<long>(index) + 1) * armyStep - 1;
 }
 
 double helpers::TechValues::getNormalizedNavyTech(const EU4::Country& country) const
 {
-	return getNormalizedScore(getCountryNavyTech(country), navyMax, navyMedian);
+	const auto score = getCountryNavyTech(country);
+	const auto it = std::find(navyScores.begin(), navyScores.end(), score);
+	const auto index = std::distance(navyScores.begin(), it);
+	return (static_cast<long>(index) + 1) * navyStep - 1;
 }
 
 double helpers::TechValues::getNormalizedCommerceTech(const EU4::Country& country) const
 {
-	return getNormalizedScore(getCountryCommerceTech(country), commerceMax, commerceMedian);
+	const auto score = getCountryCommerceTech(country);
+	const auto it = std::find(commerceScores.begin(), commerceScores.end(), score);
+	const auto index = std::distance(commerceScores.begin(), it);
+	return (static_cast<long>(index) + 1) * commerceStep - 1;
 }
 
 double helpers::TechValues::getNormalizedCultureTech(const EU4::Country& country) const
 {
-	return getNormalizedScore(getCountryCultureTech(country), cultureMax, cultureMedian);
+	const auto score = getCountryCultureTech(country);
+	const auto it = std::find(cultureScores.begin(), cultureScores.end(), score);
+	const auto index = std::distance(cultureScores.begin(), it);
+	return (static_cast<long>(index) + 1) * cultureStep - 1;
 }
 
 double helpers::TechValues::getNormalizedIndustryTech(const EU4::Country& country) const
 {
-	Log(LogLevel::Debug) << country.getTag() << " " << country.getName() << " normalized score: " << getNormalizedScore(getCountryIndustryTech(country), industryMax, industryMedian);
-	return getNormalizedScore(getCountryIndustryTech(country), industryMax, industryMedian);
+	const auto score = getCountryIndustryTech(country);
+	const auto it = std::find(industryScores.begin(), industryScores.end(), score);
+	const auto index = std::distance(industryScores.begin(), it);
+	return (static_cast<long>(index) + 1) * industryStep - 1;
 }
 
 double helpers::TechValues::getCountryArmyTech(const EU4::Country& country)
@@ -116,32 +109,6 @@ double helpers::TechValues::getCountryCultureTech(const EU4::Country& country)
 
 double helpers::TechValues::getCountryIndustryTech(const EU4::Country& country)
 {
-	Log(LogLevel::Debug) << country.getName() << " ind score: " << (country.getAdmTech() + country.getDipTech() + country.getMilTech()) * ( 1.0 + country.getIndustry() / 10.0) << " indscore " << country.getIndustry();
 	return (country.getAdmTech() + country.getDipTech() + country.getMilTech()) * ( 1.0 + country.getIndustry() / 10.0);
 }
 
-double helpers::TechValues::getNormalizedScore(const double score, const double max, const double median)
-{
-	if (median == max) return 1;
-	return (score - median) / (max - median);
-}
-
-double helpers::TechValues::dropOutliers(std::vector<double>& scores, const double mean)
-{
-	auto size = scores.size();
-	if (size == 0) return 0;
-	std::sort(scores.begin(), scores.end());
-	auto mid = size/2;
-
-	const auto medianRaw = size % 2 == 0 ? (scores[mid] + scores[mid-1]) / 2 : scores[mid];
-
-	// Drop outliers.
-	std::vector<double> filteredScores;
-	for (const auto& score: scores) if (std::abs(score - medianRaw) < 0.5 * medianRaw) filteredScores.emplace_back(score);
-	scores.swap(filteredScores);
-	
-	size = scores.size();
-	if (size == 0) return 0;
-	mid = size/2;
-	return size % 2 == 0 ? (scores[mid] + scores[mid-1]) / 2 : scores[mid];
-}
