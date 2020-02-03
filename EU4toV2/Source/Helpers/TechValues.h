@@ -4,6 +4,7 @@
 #include <map>
 #include <string>
 #include <memory>
+#include <vector>
 
 namespace EU4
 {
@@ -39,14 +40,14 @@ namespace helpers
 		[[nodiscard]] static double getCountryCommerceTech(const EU4::Country& country);
 		[[nodiscard]] static double getCountryCultureTech(const EU4::Country& country);
 		[[nodiscard]] static double getCountryIndustryTech(const EU4::Country& country);
-		[[nodiscard]] static double getNormalizedScore(double score, double max, double mean);
+		[[nodiscard]] static double getNormalizedScore(double score, double min, double median);
+		[[nodiscard]] static double dropOutliers(std::vector<double>& scores, double mean);
 
 		double armyMax = 0;
 		double navyMax = 0;
 		double commerceMax = 0;
 		double cultureMax = 0;
 		double industryMax = 0;
-
 		double armyMean = 0;
 		double navyMean = 0;
 		double commerceMean = 0;
