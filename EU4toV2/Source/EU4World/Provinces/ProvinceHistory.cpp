@@ -9,18 +9,15 @@ const date FUTURE_DATE("2000.1.1");
 
 EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 {
-	std::string startingCulture;
-	std::string startingReligion;
-
 	registerKeyword("owner", [this](const std::string& unused, std::istream & theStream) {
 		const commonItems::singleString ownerString(theStream);
 		ownershipHistory.emplace_back(std::make_pair(theConfiguration.getStartEU4Date(), ownerString.getString()));
 	});
-	registerKeyword("culture", [&startingCulture](const std::string& unused, std::istream & theStream) {
+	registerKeyword("culture", [this](const std::string& unused, std::istream & theStream) {
 		const commonItems::singleString cultureString(theStream);
 		startingCulture = cultureString.getString();
 	});
-	registerKeyword("religion", [&startingReligion](const std::string& unused, std::istream & theStream) {
+	registerKeyword("religion", [this](const std::string& unused, std::istream & theStream) {
 		const commonItems::singleString religionString(theStream);
 		startingReligion = religionString.getString();
 	});

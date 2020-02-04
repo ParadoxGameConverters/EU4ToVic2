@@ -156,6 +156,9 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	LOG(LogLevel::Info) << "-> Loading Regions";
 	loadRegions();
 
+	LOG(LogLevel::Info) << "-> Cataloguing Native Fauna";
+	catalogueNativeCultures();
+
 	LOG(LogLevel::Info) << "-> Reading Countries";
 	readCommonCountries();
 
@@ -193,6 +196,16 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		removeLandlessNations();
 	}
 	LOG(LogLevel::Info) << "*** Good-bye EU4, you served us well. ***";
+}
+
+void EU4::World::catalogueNativeCultures()
+{
+	for (const auto& province: provinces->getAllProvinces())
+	{
+		if (province.second->getOriginalCulture().empty()) continue;
+		const auto& superRegionName = regions->getParentSuperRegionName(province.first);
+		nativeCultures[superRegionName].insert(province.second->getOriginalCulture());
+	}
 }
 
 void EU4::World::fillHistoricalData()

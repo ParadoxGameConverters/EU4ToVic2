@@ -39,6 +39,7 @@ namespace EU4
 		[[nodiscard]] const auto& getCultureGroupsMapper() const { return cultureGroupsMapper; }
 		[[nodiscard]] const auto& getProvinces() const { return provinces->getAllProvinces(); }
 		[[nodiscard]] const auto& getHistoricalData() const { return historicalData; }
+		[[nodiscard]] const auto& getNativeCultures() const { return nativeCultures; }
 		
 	private:
 		void verifySave();
@@ -61,7 +62,9 @@ namespace EU4
 	   void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas) const;
 		void fillHistoricalData();
 		void addTradeGoodsToProvinces() const;
-		bool uncompressSave();		
+		void catalogueNativeCultures();
+		bool uncompressSave();
+		
 
 		struct saveData
 		{
@@ -81,6 +84,7 @@ namespace EU4
 		std::string revolutionTargetString;
 		std::map<std::string, mappers::UnitType> unitTypeMap;
 		std::vector<War> wars;
+		std::map<std::string, std::set<std::string>> nativeCultures; // superregion-culturenames
 		
 		TradeGoods tradeGoods;		
 		Religions theReligions;

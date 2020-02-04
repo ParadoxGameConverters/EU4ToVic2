@@ -29,6 +29,7 @@ namespace EU4
 		[[nodiscard]] const auto& getName() const { return name; }
 		[[nodiscard]] const auto& getOwnerString() const { return ownerString; }
 		[[nodiscard]] const auto& getControllerString() const { return controllerString; }
+		[[nodiscard]] const auto& getOriginalCulture() const { return provinceHistory.getOriginalCulture(); }
 		[[nodiscard]] auto getNum() const { return num; }
 		[[nodiscard]] auto inHre() const { return inHRE; }
 		[[nodiscard]] auto isTerritorialCore() const { return territorialCore; }

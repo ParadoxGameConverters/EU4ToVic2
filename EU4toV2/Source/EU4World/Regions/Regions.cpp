@@ -57,6 +57,40 @@ bool EU4::Regions::provinceInRegion(int province, const std::string& regionName)
 	return false;
 }
 
+const std::string& EU4::Regions::getParentAreaName(const int provinceID) const
+{	
+	for (const auto& region: regions)
+	{
+		for (const auto& areaName: region.second.getAreaNames())
+		{
+			if (region.second.areaContainsProvince(areaName, provinceID)) return areaName;
+		}
+	}
+	throw std::runtime_error("Province ID " + std::to_string(provinceID) + " has no parent area name!");
+}
+
+const std::string& EU4::Regions::getParentRegionName(const int provinceID) const
+{	
+	for (const auto& region: regions)
+	{
+		if (region.second.regionContainsProvince(provinceID)) return region.first;
+	}
+	throw std::runtime_error("Province ID " + std::to_string(provinceID) + " has no parent region name!");
+}
+
+const std::string& EU4::Regions::getParentSuperRegionName(const int provinceID) const
+{	
+	for (const auto& superRegion: superRegions)
+	{
+		for (const auto& regionalName: superRegion.second)
+		{
+			const auto& regionalItr = regions.find(regionalName);
+			if (regionalItr->second.regionContainsProvince(provinceID)) return superRegion.first;
+		}
+	}
+	throw std::runtime_error("Province ID " + std::to_string(provinceID) + " has no parent super-region name!");
+}
+
 bool EU4::Regions::regionIsValid(const std::string& regionName) const
 {
 	const auto& regionItr = regions.find(regionName);

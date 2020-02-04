@@ -20,6 +20,10 @@ namespace EU4
 		[[nodiscard]] virtual bool provinceInRegion(int province, const std::string& regionName) const;
 		[[nodiscard]] virtual bool regionIsValid(const std::string& regionName) const;
 
+		[[nodiscard]] const std::string& getParentAreaName(int provinceID) const;
+		[[nodiscard]] const std::string& getParentRegionName(int provinceID) const;
+		[[nodiscard]] const std::string& getParentSuperRegionName(int provinceID) const;
+
 	private:
 		std::map<std::string, Region> regions;
 		std::map<std::string, std::vector<std::string>> superRegions;

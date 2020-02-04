@@ -17,6 +17,7 @@ namespace EU4
 
 		[[nodiscard]] std::optional<date> getFirstOwnedDate() const;
 		[[nodiscard]] bool hasOriginalCulture() const;
+		[[nodiscard]] const auto& getOriginalCulture() const { return startingCulture; }
 		[[nodiscard]] bool wasColonized() const;
 		
 		[[nodiscard]] auto getOriginalDevelopment() const { return originalTax + originalProduction + originalManpower; }
@@ -25,6 +26,9 @@ namespace EU4
 	private:
 		void buildPopRatios();
 		void decayPopRatios(const date& oldDate, const date& newDate, PopRatio& currentPop);
+
+		std::string startingCulture;
+		std::string startingReligion;
 
 		std::vector<std::pair<date, std::string>> ownershipHistory;
 		std::vector<std::pair<date, std::string>> religionHistory;
