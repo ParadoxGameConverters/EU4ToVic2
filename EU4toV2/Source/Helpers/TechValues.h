@@ -42,6 +42,9 @@ namespace helpers
 		[[nodiscard]] static double getCountryCultureTech(const EU4::Country& country);
 		[[nodiscard]] static double getCountryIndustryTech(const EU4::Country& country);
 
+		void gatherScores(const std::map<std::string, std::shared_ptr<V2::Country>>& countries);
+		void calculateSteps();
+
 		double armyStep = 0;
 		double navyStep = 0;
 		double commerceStep = 0;

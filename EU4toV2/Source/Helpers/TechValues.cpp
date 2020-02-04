@@ -5,7 +5,13 @@
 
 helpers::TechValues::TechValues(const std::map<std::string, std::shared_ptr<V2::Country>>& countries)
 {
-	
+	gatherScores(countries);
+	if (armyScores.empty()) return; // Well crap. Play dead and hope they go away.
+	calculateSteps();
+}
+
+void helpers::TechValues::gatherScores(const std::map<std::string, std::shared_ptr<V2::Country>>& countries)
+{
 	for (const auto& countryItr: countries)
 	{
 		const auto& country = countryItr.second;
@@ -17,9 +23,10 @@ helpers::TechValues::TechValues(const std::map<std::string, std::shared_ptr<V2::
 		cultureScores.emplace_back(getCountryCultureTech(*country->getSourceCountry()));
 		industryScores.emplace_back(getCountryIndustryTech(*country->getSourceCountry()));
 	}
+}
 
-	if (armyScores.empty()) return; // Well crap. Play dead and hope they go away.
-
+void helpers::TechValues::calculateSteps()
+{
 	// Drop all repeated scores, not using sets because we need indexes
 	std::sort(armyScores.begin(), armyScores.end());
 	armyScores.erase(std::unique(armyScores.begin(), armyScores.end()), armyScores.end());
@@ -40,6 +47,7 @@ helpers::TechValues::TechValues(const std::map<std::string, std::shared_ptr<V2::
 	commerceStep = 2.0 / commerceScores.size();
 	cultureStep = 2.0 / cultureScores.size();
 	industryStep = 2.0 / industryScores.size();	
+
 }
 
 bool helpers::TechValues::isValidCountryForTechConversion(const V2::Country& country)
@@ -52,7 +60,7 @@ double helpers::TechValues::getNormalizedArmyTech(const EU4::Country& country) c
 	const auto score = getCountryArmyTech(country);
 	const auto it = std::find(armyScores.begin(), armyScores.end(), score);
 	const auto index = std::distance(armyScores.begin(), it);
-	return (static_cast<long>(index) + 1) * armyStep - 1;
+	return (static_cast<double>(index) + 1) * armyStep - 1;
 }
 
 double helpers::TechValues::getNormalizedNavyTech(const EU4::Country& country) const
@@ -60,7 +68,7 @@ double helpers::TechValues::getNormalizedNavyTech(const EU4::Country& country) c
 	const auto score = getCountryNavyTech(country);
 	const auto it = std::find(navyScores.begin(), navyScores.end(), score);
 	const auto index = std::distance(navyScores.begin(), it);
-	return (static_cast<long>(index) + 1) * navyStep - 1;
+	return (static_cast<double>(index) + 1) * navyStep - 1;
 }
 
 double helpers::TechValues::getNormalizedCommerceTech(const EU4::Country& country) const
@@ -68,7 +76,7 @@ double helpers::TechValues::getNormalizedCommerceTech(const EU4::Country& countr
 	const auto score = getCountryCommerceTech(country);
 	const auto it = std::find(commerceScores.begin(), commerceScores.end(), score);
 	const auto index = std::distance(commerceScores.begin(), it);
-	return (static_cast<long>(index) + 1) * commerceStep - 1;
+	return (static_cast<double>(index) + 1) * commerceStep - 1;
 }
 
 double helpers::TechValues::getNormalizedCultureTech(const EU4::Country& country) const
@@ -76,7 +84,7 @@ double helpers::TechValues::getNormalizedCultureTech(const EU4::Country& country
 	const auto score = getCountryCultureTech(country);
 	const auto it = std::find(cultureScores.begin(), cultureScores.end(), score);
 	const auto index = std::distance(cultureScores.begin(), it);
-	return (static_cast<long>(index) + 1) * cultureStep - 1;
+	return (static_cast<double>(index) + 1) * cultureStep - 1;
 }
 
 double helpers::TechValues::getNormalizedIndustryTech(const EU4::Country& country) const
@@ -84,7 +92,7 @@ double helpers::TechValues::getNormalizedIndustryTech(const EU4::Country& countr
 	const auto score = getCountryIndustryTech(country);
 	const auto it = std::find(industryScores.begin(), industryScores.end(), score);
 	const auto index = std::distance(industryScores.begin(), it);
-	return (static_cast<long>(index) + 1) * industryStep - 1;
+	return (static_cast<double>(index) + 1) * industryStep - 1;
 }
 
 double helpers::TechValues::getCountryArmyTech(const EU4::Country& country)
