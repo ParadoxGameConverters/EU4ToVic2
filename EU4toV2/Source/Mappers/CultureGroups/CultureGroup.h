@@ -15,6 +15,9 @@ namespace mappers
 		[[nodiscard]] const auto& getName() const { return name; }
 		[[nodiscard]] const auto& getCultures() const { return cultures; }
 
+		void addCulture(const std::string& name, const Culture& culture) { cultures.insert(std::make_pair(name, culture)); }
+		void mergeCulture(const std::string& name, const Culture& culture);
+
 	private:
 		std::string name;
 		std::string graphicalCulture;

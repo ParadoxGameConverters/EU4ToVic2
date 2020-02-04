@@ -8,6 +8,10 @@
 #include <vector>
 #include "CultureMappingRule.h"
 
+namespace EU4 {
+	class World;
+}
+
 namespace mappers
 {
 	class CultureMapper: commonItems::parser

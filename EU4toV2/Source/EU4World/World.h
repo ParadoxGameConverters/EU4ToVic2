@@ -17,6 +17,7 @@
 #include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "newParser.h"
 #include <memory>
+#include <map>
 
 namespace EU4
 {
@@ -63,6 +64,8 @@ namespace EU4
 		void fillHistoricalData();
 		void addTradeGoodsToProvinces() const;
 		void catalogueNativeCultures();
+		void generateNeoCultures();
+		std::string generateNeoCulture(const std::string& superRegionName, const std::string& oldCultureName);
 		bool uncompressSave();
 		
 
@@ -78,13 +81,14 @@ namespace EU4
 		std::string celestialEmperor;
 		std::unique_ptr<Regions> regions;
 		std::unique_ptr<Provinces> provinces;
-		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
+		std::map<std::string, std::shared_ptr<Country>> theCountries;
 		std::vector<EU4Agreement> diplomacy;
 		std::unique_ptr<Version> version;
 		std::string revolutionTargetString;
 		std::map<std::string, mappers::UnitType> unitTypeMap;
 		std::vector<War> wars;
 		std::map<std::string, std::set<std::string>> nativeCultures; // superregion-culturenames
+		std::map<std::pair<std::string, std::string>, std::string> generatedCultures; // origculture/superregion - neoculture (cache)
 		
 		TradeGoods tradeGoods;		
 		Religions theReligions;

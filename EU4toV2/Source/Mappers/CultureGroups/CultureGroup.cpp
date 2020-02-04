@@ -34,3 +34,11 @@ mappers::CultureGroup::CultureGroup(std::string _name, std::istream& theStream):
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
+
+void mappers::CultureGroup::mergeCulture(const std::string& name, const Culture& culture)
+{
+	const auto& cultureItr = cultures.find(name);
+	cultureItr->second.addNameNames(culture.getMaleNames());
+	cultureItr->second.addFemaleNames(culture.getFemaleNames());
+	cultureItr->second.addDynastyNames(culture.getDynastyNames());
+}

@@ -66,6 +66,12 @@ std::optional<mappers::CultureGroup> mappers::CultureGroups::getCulturalGroup(co
 	return std::nullopt;
 }
 
+mappers::CultureGroup& mappers::CultureGroups::retrieveCultureGroup(const std::string& culture)
+{
+	const auto& mapping = cultureToGroupMap.find(culture);
+	return mapping->second;	
+}
+
 std::vector<mappers::Culture> mappers::CultureGroups::getCulturesInGroup(const std::string& group) const
 {
 	const auto& mapping = groupToCulturesMap.find(group);

@@ -17,6 +17,7 @@ namespace mappers
 		[[nodiscard]] std::optional<CultureGroup> getCulturalGroup(const std::string& culture) const;
 		[[nodiscard]] std::vector<Culture> getCulturesInGroup(const std::string& group) const;
 		[[nodiscard]] const auto& getCultureToGroupMap() const { return cultureToGroupMap; }
+		CultureGroup& retrieveCultureGroup(const std::string& culture);
 
 	private:
 		void registerKeys();

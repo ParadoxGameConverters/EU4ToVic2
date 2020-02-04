@@ -229,7 +229,7 @@ void V2::World::initializeCultureMappers()
 	cultureMapper.loadFile("configurables/culture_map.txt");
 	
 	LOG(LogLevel::Info) << "Parsing slave culture mappings.";
-	slaveCultureMapper.loadFile("configurables/culture_map_slaves.txt");
+	slaveCultureMapper.loadFile("configurables/culture_map_slaves.txt");	
 }
 
 void V2::World::convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)

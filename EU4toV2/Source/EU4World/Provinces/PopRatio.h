@@ -16,7 +16,8 @@ namespace EU4
 		void convertToCulture(const std::string& culture);
 		void convertToReligion(const std::string& religion);
 		void convertTo(const std::string& culture, const std::string& religion);
-
+		void setCulture(const std::string& cul) { culture = cul; }
+		
 		[[nodiscard]] const auto& getCulture() const { return culture; }
 		[[nodiscard]] const auto& getReligion() const { return religion; }
 		[[nodiscard]] auto getUpperRatio() const { return upperRatio; }
