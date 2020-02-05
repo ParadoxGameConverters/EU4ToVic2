@@ -20,7 +20,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	const mappers::TechGroupsMapper& techGroupsMapper, 
 	const mappers::VersionParser& versionParser):
 historicalData(sourceWorld.getHistoricalData())
-{
+{	
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
 	LOG(LogLevel::Info) << "-> Importing Provinces";
 	importProvinces();
@@ -40,6 +40,9 @@ historicalData(sourceWorld.getHistoricalData())
 	LOG(LogLevel::Info) << "-> Loading Culture Mapping Rules";
 	initializeCultureMappers();
 	mappingChecker.check(sourceWorld, provinceMapper, religionMapper, cultureMapper);
+
+	LOG(LogLevel::Info) << "-> Pouring From Hollow Into Empty";
+	cultureGroupsMapper.importNeoCultures(sourceWorld, cultureMapper);
 	
 	LOG(LogLevel::Info) << "-> Converting Countries";
 	convertCountries(sourceWorld, ideaEffectMapper);
@@ -229,7 +232,9 @@ void V2::World::initializeCultureMappers()
 	cultureMapper.loadFile("configurables/culture_map.txt");
 	
 	LOG(LogLevel::Info) << "Parsing slave culture mappings.";
-	slaveCultureMapper.loadFile("configurables/culture_map_slaves.txt");	
+	slaveCultureMapper.loadFile("configurables/culture_map_slaves.txt");
+
+	cultureGroupsMapper.initForV2();
 }
 
 void V2::World::convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)

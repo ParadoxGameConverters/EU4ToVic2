@@ -44,12 +44,15 @@ void V2::MappingChecker::checkAllEU4ReligionsMapped(const EU4::World& sourceWorl
 
 void V2::MappingChecker::checkAllEU4CulturesMapped(const EU4::World& sourceWorld, const mappers::CultureMapper& cultureMapper)
 {
-	for (const auto& cultureItr : sourceWorld.getCultureGroupsMapper().getCultureToGroupMap())
+	for (const auto& cultureGroupItr : sourceWorld.getCultureGroupsMapper().getCultureGroupsMap())
 	{
-		const auto& matched = cultureMapper.cultureMatch(sourceWorld.getRegions(), cultureItr.first, "", 0, "");
-		if (!matched)
+		for (const auto& cultureItr: cultureGroupItr.second.getCultures())
 		{
-			LOG(LogLevel::Warning) << "No Vic2 culture mapping for EU4 culture " << cultureItr.first;
+			const auto& matched = cultureMapper.cultureMatch(sourceWorld.getRegions(), cultureItr.first, "", 0, "");
+			if (!matched)
+			{
+				LOG(LogLevel::Warning) << "No Vic2 culture mapping for EU4 culture " << cultureItr.first;
+			}			
 		}
 	}
 }

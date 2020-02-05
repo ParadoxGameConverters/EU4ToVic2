@@ -9,6 +9,21 @@ mappers::CultureGroup::CultureGroup(std::string _name, std::istream& theStream):
 			const commonItems::singleString token(theStream);
 			graphicalCulture = token.getString();
 		});
+	registerKeyword("unit", [this](const std::string& unused, std::istream& theStream)
+		{
+			const commonItems::singleString unitStr(theStream);
+			unit = unitStr.getString();
+		});
+	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream)
+		{
+			const commonItems::singleString leaderStr(theStream);
+			leader = leaderStr.getString();
+		});
+	registerKeyword("is_overseas", [this](const std::string& unused, std::istream& theStream)
+		{
+			const commonItems::singleString overseasStr(theStream);
+			isOverseas = overseasStr.getString();
+		});
 	registerKeyword("male_names", [this](const std::string& unused, std::istream& theStream)
 		{
 			const commonItems::stringList names(theStream);
@@ -41,4 +56,12 @@ void mappers::CultureGroup::mergeCulture(const std::string& name, const Culture&
 	cultureItr->second.addNameNames(culture.getMaleNames());
 	cultureItr->second.addFemaleNames(culture.getFemaleNames());
 	cultureItr->second.addDynastyNames(culture.getDynastyNames());
+}
+
+void mappers::CultureGroup::addCulture(const std::string& name, const Culture& culture, const std::string& oldCulture)
+{
+	auto newCulture = culture;
+	newCulture.setNeoCulture(true);
+	newCulture.setOriginalCulture(oldCulture);
+	cultures.insert(std::make_pair(name, newCulture));
 }

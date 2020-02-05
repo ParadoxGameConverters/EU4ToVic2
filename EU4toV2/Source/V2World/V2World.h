@@ -31,6 +31,7 @@
 #include "../Mappers/WarGoalMapper/WarGoalMapper.h"
 #include "../Mappers/StartingTechMapper/StartingTechMapper.h"
 #include "../Mappers/StartingInventionMapper/StartingInventionMapper.h"
+#include "../Mappers/CultureGroups/CultureGroups.h"
 #include "Province/ProvinceNameParser.h"
 #include <list>
 #include <memory>
@@ -140,6 +141,7 @@ namespace V2
 		mappers::WarGoalMapper warGoalMapper;
 		mappers::StartingTechMapper startingTechMapper;
 		mappers::StartingInventionMapper startingInventionMapper;
+		mappers::CultureGroups cultureGroupsMapper;
 		ProvinceNameParser provinceNameParser;
 		CountryPopLogger countryPopLogger;
 		MappingChecker mappingChecker;
