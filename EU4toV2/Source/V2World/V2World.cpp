@@ -43,12 +43,15 @@ historicalData(sourceWorld.getHistoricalData())
 
 	LOG(LogLevel::Info) << "-> Pouring From Hollow Into Empty";
 	cultureGroupsMapper.importNeoCultures(sourceWorld, cultureMapper);
-	
+
 	LOG(LogLevel::Info) << "-> Converting Countries";
 	convertCountries(sourceWorld, ideaEffectMapper);
 
 	LOG(LogLevel::Info) << "-> Converting Provinces";
 	convertProvinces(sourceWorld);
+
+	LOG(LogLevel::Info) << "-> Cataloguing Invasive Fauna";
+	transcribeNeoCultures();
 
 	LOG(LogLevel::Info) << "-> Converting Diplomacy";
 	diplomacy.convertDiplomacy(sourceWorld.getDiplomaticAgreements(), countryMapper, countries);
@@ -78,6 +81,63 @@ historicalData(sourceWorld.getHistoricalData())
 	
 	LOG(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
+
+void V2::World::transcribeNeoCultures()
+{
+	std::map<std::string, std::string> seenCultures;
+	for (const auto& province: provinces)
+	{
+		auto seenNeoCultures = province.second->getGeneratedNeoCultures();
+		for (const auto& seenNeoCulture: seenNeoCultures)
+		{
+			seenCultures.insert(std::make_pair(seenNeoCulture, province.second->getSuperRegion()));
+		}		
+	}
+	Log(LogLevel::Debug) << "Seen cultures: " << seenCultures.size();
+	for (const auto& culture: seenCultures)
+	{
+		auto workString = culture.first;
+		// drop _culture
+		auto position = workString.find("_culture");
+		workString = workString.substr(0, position);
+		Log(LogLevel::Debug) << "ws1 : " << workString << " region: " << culture.second;
+
+		position = workString.find("_" + culture.second);
+		auto regionbit = culture.second;
+		Log(LogLevel::Debug) << "rbit : " << regionbit;
+		auto cultureBit = workString.substr(0, position);
+		Log(LogLevel::Debug) << "region: " << regionbit << " culture " << cultureBit;
+
+		auto localizationLine = culture.first + ";";
+		auto incLoc = regionLocalizations.getEnglishFor(cultureBit);
+		if (incLoc) localizationLine += *incLoc + " ";
+		incLoc = regionLocalizations.getEnglishFor(regionbit + "_adj");
+		if (incLoc) localizationLine += *incLoc;
+		localizationLine += ";";
+
+		incLoc = regionLocalizations.getFrenchFor(cultureBit);
+		if (incLoc) localizationLine += *incLoc + " ";
+		incLoc = regionLocalizations.getFrenchFor(regionbit + "_adj");
+		if (incLoc) localizationLine += *incLoc;
+		localizationLine += ";";
+		
+		incLoc = regionLocalizations.getGermanFor(cultureBit);
+		if (incLoc) localizationLine += *incLoc + " ";
+		incLoc = regionLocalizations.getGermanFor(regionbit + "_adj");
+		if (incLoc) localizationLine += *incLoc;
+		localizationLine += ";;";
+
+		incLoc = regionLocalizations.getSpanishFor(cultureBit);
+		if (incLoc) localizationLine += *incLoc + " ";
+		incLoc = regionLocalizations.getSpanishFor(regionbit + "_adj");
+		if (incLoc) localizationLine += *incLoc;
+		localizationLine += ";;;;;;;;;X";
+
+		neoCultureLocalizations.insert(localizationLine);
+		Log(LogLevel::Debug) << "Got line: " << localizationLine;
+	}
+}
+
 
 void V2::World::importProvinces()
 {
@@ -1035,10 +1095,27 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	LOG(LogLevel::Info) << "<- Sending Botanical Expedition";
 	outputHistory();
 
+	LOG(LogLevel::Info) << "<- Writing Treatise on the Origins of Invasive Fauna";
+	outputNeoCultures();
+
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
 	verifyCountriesWritten();
 }
+
+void V2::World::outputNeoCultures() const
+{
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/localisation/0_Neocultures.csv");
+	if (!output.is_open()) throw std::runtime_error("Could not create neocultures file!");
+
+	output << "KEY;ENGLISH;FRENCH;GERMAN;POLISH;SPANISH;ITALIAN;HUNGARIAN;CZECH;HUNGARIAN;DUTCH;PORTUGUESE;RUSSIAN;FINNISH;X\n";
+	for (const auto& line : neoCultureLocalizations)
+	{
+		output << line << "\n";
+	}
+	output.close();
+}
+
 
 void V2::World::transcribeHistoricalData()
 {

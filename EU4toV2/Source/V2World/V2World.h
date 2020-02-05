@@ -68,6 +68,7 @@ namespace V2
 		std::map<std::string, std::shared_ptr<Country>> dynamicCountries;
 		std::vector<War> wars;
 		std::vector<std::pair<std::string, EU4::HistoricalEntry>> historicalData; // HoI4 export dynasty+rulers
+		std::set<std::string> neoCultureLocalizations; // raw strings for output.
 
 		[[nodiscard]] std::optional<std::string> determineProvinceOwnership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
 		[[nodiscard]] std::shared_ptr<Province> getProvince(int provID) const;
@@ -112,9 +113,11 @@ namespace V2
 		void outputWars() const;
 		void outputHistory() const;
 		void outputCultures() const;
+		void outputNeoCultures() const;
 		void verifyCountriesWritten() const;
 		void convertWars(const EU4::World& sourceWorld);
 		void transcribeHistoricalData();
+		void transcribeNeoCultures();
 		
 		mappers::ProvinceMapper provinceMapper;
 		mappers::Continents continentsMapper;

@@ -3,6 +3,7 @@
 
 #include <map>
 #include <string>
+#include <optional>
 
 namespace mappers
 {
@@ -10,6 +11,11 @@ namespace mappers
 	{
 	public:
 		RegionLocalizations();
+
+		[[nodiscard]] std::optional<std::string> getEnglishFor(const std::string& key);
+		[[nodiscard]] std::optional<std::string> getFrenchFor(const std::string& key);
+		[[nodiscard]] std::optional<std::string> getSpanishFor(const std::string& key);
+		[[nodiscard]] std::optional<std::string> getGermanFor(const std::string& key);
 
 	private:
 		std::map<std::string, std::string> spaLocalisations; // region, adj_loc

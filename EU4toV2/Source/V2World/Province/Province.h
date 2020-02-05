@@ -87,6 +87,8 @@ namespace V2
 		[[nodiscard]] const auto& getOwner() const { return details.owner; }
 		[[nodiscard]] const auto& getController() const { return details.controller; }
 		[[nodiscard]] const auto& getFilename() const { return filename; }
+		[[nodiscard]] const auto& getGeneratedNeoCultures() const { return generatedNeoCultures; }
+		[[nodiscard]] const auto& getSuperRegion() const { return superRegion; }
 
 		[[nodiscard]] int getTotalPopulation() const;
 		[[nodiscard]] std::vector<std::string> getCulturesOverThreshold(double percentOfPopulation) const;
@@ -147,6 +149,8 @@ namespace V2
 		std::set<int> eu4IDs; // Source province IDs, fuzzy at best, use with care (might belong to whomever or be un-colonized).
 		std::set<std::string> importedBuildings;
 		std::set<std::string> importedIdeas;
+		std::set<std::string> generatedNeoCultures; // accounting storage.
+		std::string superRegion; // orientation issue.
 		std::map<REGIMENTTYPE, int> unitNameCount;
 		mappers::ProvinceDetails details;
 

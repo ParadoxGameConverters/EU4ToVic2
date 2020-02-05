@@ -2,7 +2,6 @@
 #include "../../Configuration.h"
 #include "OSCompatibilityLayer.h"
 #include <fstream>
-#include <sstream>
 #include <filesystem>
 #include "Log.h"
 namespace fs = std::filesystem;
@@ -40,6 +39,8 @@ mappers::RegionLocalizations::RegionLocalizations()
 			gerLocalisations.insert(locMap.begin(), locMap.end());
 		}
 	}
+	LOG(LogLevel::Info) << "Loaded: " << engLocalisations.size() << " " << fraLocalisations.size() << " " << spaLocalisations.size() << " " << gerLocalisations.size();
+
 }
 
 std::map<std::string, std::string> mappers::RegionLocalizations::chopFile(const std::string& locFile) const
@@ -54,18 +55,44 @@ std::map<std::string, std::string> mappers::RegionLocalizations::chopFile(const 
 	
 	while (std::getline(theFile, line))
 	{
-		std::istringstream iss(line);
-		std::string keyblock, loc;
-		
-		// something went wrong
-		if (!(iss >> keyblock >> loc)) break;
-		
-		// we need only adjectives
-		const auto position = keyblock.find(":");
+		const auto position = line.find_first_of(":");
 		if (position == std::string::npos) continue;
 
-		auto key = keyblock.substr(0, position);
+		auto key = line.substr(1, position - 1);
+		if (line.length() < position + 3) continue;
+		auto loc = line.substr(position + 2, line.length());
+		if (loc.length() < 5) continue;
+		loc = loc.substr(2, loc.length() - 3);
 		storedLocs.insert(std::make_pair(key, loc));
 	}
+	theFile.close();
 	return storedLocs;
+}
+
+std::optional<std::string> mappers::RegionLocalizations::getEnglishFor(const std::string& key)
+{
+	auto itr = engLocalisations.find(key);
+	if (itr != engLocalisations.end()) return itr->second;
+	return std::nullopt;
+}
+
+std::optional<std::string> mappers::RegionLocalizations::getFrenchFor(const std::string& key)
+{
+	auto itr = fraLocalisations.find(key);
+	if (itr != fraLocalisations.end()) return itr->second;
+	return std::nullopt;
+}
+
+std::optional<std::string> mappers::RegionLocalizations::getSpanishFor(const std::string& key)
+{
+	auto itr = spaLocalisations.find(key);
+	if (itr != spaLocalisations.end()) return itr->second;
+	return std::nullopt;
+}
+
+std::optional<std::string> mappers::RegionLocalizations::getGermanFor(const std::string& key)
+{
+	auto itr = gerLocalisations.find(key);
+	if (itr != gerLocalisations.end()) return itr->second;
+	return std::nullopt;
 }
