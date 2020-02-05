@@ -96,7 +96,7 @@ void mappers::CultureGroups::importNeoCultures(const EU4::World& sourceWorld, co
 
 			// Let's find out what V2 culture group this one is supposed to belong to.
 			const auto& origeu4CultureName = eu4CultureIter.second.getOriginalCulture();
-			const auto& destV2cultureName = cultureMapper.cultureMatch(sourceWorld.getRegions(), origeu4CultureName, "", 0, "");
+			const auto& destV2cultureName = cultureMapper.cultureNonRegionalNonReligiousMatch(sourceWorld.getRegions(), origeu4CultureName, "", 0, "");
 			if (!destV2cultureName)
 			{
 				// yeah let's not go there.
@@ -116,6 +116,7 @@ void mappers::CultureGroups::importNeoCultures(const EU4::World& sourceWorld, co
 			v2Culture.transmogrify();
 
 			// and file under appropriate group.
+			Log(LogLevel::Debug) << " Filing neoculture " << eu4CultureIter.first << " generated from eu4's " << origeu4CultureName << " into " << *destV2cultureName << " in group " << destV2cultureGroup->getName();
 			destV2cultureGroup->addCulture(eu4CultureIter.first, v2Culture, eu4CultureIter.first);
 		}
 	}

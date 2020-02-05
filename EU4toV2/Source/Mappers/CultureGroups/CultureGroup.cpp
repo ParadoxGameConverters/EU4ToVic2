@@ -24,6 +24,11 @@ mappers::CultureGroup::CultureGroup(std::string _name, std::istream& theStream):
 			const commonItems::singleString overseasStr(theStream);
 			isOverseas = overseasStr.getString();
 		});
+	registerKeyword("union", [this](const std::string& unused, std::istream& theStream)
+		{
+			const commonItems::singleString unionStr(theStream);
+			culturalUnionTag = unionStr.getString();
+		});
 	registerKeyword("male_names", [this](const std::string& unused, std::istream& theStream)
 		{
 			const commonItems::stringList names(theStream);

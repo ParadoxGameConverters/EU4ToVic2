@@ -113,3 +113,20 @@ std::optional<std::string> mappers::CultureMappingRule::cultureRegionalMatch(
 	// Otherwise, as usual.
 	return cultureMatch(eu4Regions, eu4culture, eu4religion, eu4Province, eu4ownerTag);
 }
+
+std::optional<std::string> mappers::CultureMappingRule::cultureNonRegionalNonReligiousMatch(
+	const EU4::Regions& eu4Regions,
+	const std::string& eu4culture,
+	const std::string& eu4religion,
+	int eu4Province,
+	const std::string& eu4ownerTag
+) const
+{
+	// This is a non regional non religious match. We need a mapping without any region/religion, so if the
+	// mapping rule has any regional/religious qualifiers it needs to fail.
+	if (!regions.empty()) return std::nullopt;
+	if (!religions.empty()) return std::nullopt;
+
+	// Otherwise, as usual.
+	return cultureMatch(eu4Regions, eu4culture, eu4religion, eu4Province, eu4ownerTag);
+}

@@ -329,6 +329,7 @@
     <ClCompile Include="Source\V2World\Output\outAgreement.cpp" />
     <ClCompile Include="Source\V2World\Output\outArmy.cpp" />
     <ClCompile Include="Source\V2World\Output\outCountry.cpp" />
+    <ClCompile Include="Source\V2World\Output\outCultureGroups.cpp" />
     <ClCompile Include="Source\V2World\Output\outFactory.cpp" />
     <ClCompile Include="Source\V2World\Output\outHistory.cpp" />
     <ClCompile Include="Source\V2World\Output\outLeader.cpp" />

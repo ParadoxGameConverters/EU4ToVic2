@@ -110,6 +110,7 @@ namespace V2
 		void outputCountries() const;
 		void outputWars() const;
 		void outputHistory() const;
+		void outputCultures() const;
 		void verifyCountriesWritten() const;
 		void convertWars(const EU4::World& sourceWorld);
 		void transcribeHistoricalData();

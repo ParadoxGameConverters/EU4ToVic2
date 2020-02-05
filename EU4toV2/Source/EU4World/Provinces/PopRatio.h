@@ -16,7 +16,7 @@ namespace EU4
 		void convertToCulture(const std::string& culture);
 		void convertToReligion(const std::string& religion);
 		void convertTo(const std::string& culture, const std::string& religion);
-		void setCulture(const std::string& cul, const std::string& sr) { originalEU4culture = culture; culture = cul; targetSuperRegion = sr; }
+		void setCulture(const std::string& cul, const std::string& sr);
 		
 		[[nodiscard]] const auto& getCulture() const { return culture; }
 		[[nodiscard]] const auto& getOriginalCulture() const { return originalEU4culture; }

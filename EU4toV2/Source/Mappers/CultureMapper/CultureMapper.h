@@ -36,8 +36,12 @@ namespace mappers
 			int eu4Province,
 			const std::string& eu4ownerTag) const;
 
-		
-		void registerCultureMatch(const std::string& v2Culture, const std::string& eu4Culture, const std::string& eu4SuperRegion);
+		[[nodiscard]] std::optional<std::string> cultureNonRegionalNonReligiousMatch(
+			const EU4::Regions& eu4Regions,
+			const std::string& eu4culture,
+			const std::string& eu4religion,
+			int eu4Province,
+			const std::string& eu4ownerTag) const;
 
 	private:
 		void registerKeys();

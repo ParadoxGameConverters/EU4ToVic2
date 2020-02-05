@@ -24,15 +24,15 @@ mappers::Culture::Culture(std::istream& theStream)
 			const commonItems::stringList names(theStream);
 			femaleNames = names.getStrings();
 		});
-	registerKeyword("female_names", [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("first_names", [this](const std::string& unused, std::istream& theStream)
 		{
 			const commonItems::stringList names(theStream);
-			femaleNames = names.getStrings();
+			firstNames = names.getStrings();
 		});
-	registerKeyword("female_names", [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("last_names", [this](const std::string& unused, std::istream& theStream)
 		{
 			const commonItems::stringList names(theStream);
-			femaleNames = names.getStrings();
+			lastNames = names.getStrings();
 		});
 	registerKeyword("dynasty_names", [this](const std::string& unused, std::istream& theStream)
 		{

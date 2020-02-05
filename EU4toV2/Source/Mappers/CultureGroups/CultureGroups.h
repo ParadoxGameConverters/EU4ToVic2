@@ -30,6 +30,8 @@ namespace mappers
 		CultureGroup* retrieveCultureGroup(const std::string& cultureName);
 		[[nodiscard]] CultureGroup getCultureGroup(const std::string& cultureGroupName) const;
 
+		friend std::ostream& operator<<(std::ostream& output, const CultureGroups& cultureGroupsMapper);
+
 	private:
 		void registerKeys();
 		

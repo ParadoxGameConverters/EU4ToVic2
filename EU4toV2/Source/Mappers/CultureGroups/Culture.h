@@ -30,6 +30,8 @@ namespace mappers
 
 		void transmogrify();
 
+		friend std::ostream& operator<<(std::ostream& output, const Culture& culture);
+
 	private:
 		std::string primaryTag;
 		std::string graphicalCulture;

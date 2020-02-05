@@ -42,6 +42,9 @@ namespace mappers
 {
 	std::ostream& operator<<(std::ostream& output, const PartyType& partyDetails);
 	std::ostream& operator<<(std::ostream& output, const VersionParser& versionParser);
+	std::ostream& operator<<(std::ostream& output, const CultureGroups& cultureGroupsMapper);
+	std::ostream& operator<<(std::ostream& output, const CultureGroup& cultureGroup);
+	std::ostream& operator<<(std::ostream& output, const Culture& culture);
 }
 
 #endif // OUTPUT_H

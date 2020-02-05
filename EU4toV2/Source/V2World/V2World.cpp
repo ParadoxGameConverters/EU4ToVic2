@@ -72,9 +72,10 @@ historicalData(sourceWorld.getHistoricalData())
 	convertWars(sourceWorld);
 	LOG(LogLevel::Info) << "-> Converting Botanical Definitions";
 	transcribeHistoricalData();
-	LOG(LogLevel::Info) << "---> Le Dump <---";
-	
+
+	LOG(LogLevel::Info) << "---> Le Dump <---";	
 	output(versionParser);
+	
 	LOG(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
 
@@ -1025,6 +1026,9 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	LOG(LogLevel::Info) << "<- Writing Armed and Unarmed Conflicts";
 	outputWars();
 
+	LOG(LogLevel::Info) << "<- Writing Culture Definitions";
+	outputCultures();
+
 	LOG(LogLevel::Info) << "<- Writing Pops";
 	outputPops();
 
@@ -1057,6 +1061,18 @@ void V2::World::outputHistory() const
 	output << historicalData;
 	output.close();
 }
+
+void V2::World::outputCultures() const
+{
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/cultures.txt");
+	if (!output.is_open())
+	{
+		throw std::runtime_error("Could not create cultures file at output/" + theConfiguration.getOutputName() + "/common/cultures.txt - " + Utils::GetLastErrorString());
+	}
+	output << cultureGroupsMapper;	
+	output.close();
+}
+
 
 void V2::World::outputWars() const
 {

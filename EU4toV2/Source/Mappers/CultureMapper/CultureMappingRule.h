@@ -31,6 +31,13 @@ namespace mappers
 			int eu4Province,
 			const std::string& eu4ownerTag) const;
 
+		[[nodiscard]] std::optional<std::string> cultureNonRegionalNonReligiousMatch(
+			const EU4::Regions& eu4Regions,
+			const std::string& eu4culture,
+			const std::string& eu4religion,
+			int eu4Province,
+			const std::string& eu4ownerTag) const;
+
 	private:
 		std::string destinationCulture;
 		std::set<std::string> cultures;
