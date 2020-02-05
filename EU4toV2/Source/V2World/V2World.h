@@ -32,6 +32,7 @@
 #include "../Mappers/StartingTechMapper/StartingTechMapper.h"
 #include "../Mappers/StartingInventionMapper/StartingInventionMapper.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
+#include "../Mappers/RegionLocalizations/RegionLocalizations.h"
 #include "Province/ProvinceNameParser.h"
 #include <list>
 #include <memory>
@@ -143,11 +144,12 @@ namespace V2
 		mappers::StartingTechMapper startingTechMapper;
 		mappers::StartingInventionMapper startingInventionMapper;
 		mappers::CultureGroups cultureGroupsMapper;
+		mappers::RegionLocalizations regionLocalizations;
 		ProvinceNameParser provinceNameParser;
 		CountryPopLogger countryPopLogger;
 		MappingChecker mappingChecker;
 		ModFile modFile;
-		Diplomacy diplomacy;
+		Diplomacy diplomacy;		
 	};
 	
 	std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);

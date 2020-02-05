@@ -291,6 +291,7 @@
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
     <ClCompile Include="Source\Mappers\RegimentCosts\RegimentCostsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\RegionLocalizations\RegionLocalizations.cpp" />
     <ClCompile Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
@@ -479,6 +480,7 @@
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />
     <ClInclude Include="Source\Mappers\RegimentCosts\RegimentCostsMapper.h" />
+    <ClInclude Include="Source\Mappers\RegionLocalizations\RegionLocalizations.h" />
     <ClInclude Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h" />

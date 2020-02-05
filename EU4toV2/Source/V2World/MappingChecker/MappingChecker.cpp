@@ -48,6 +48,8 @@ void V2::MappingChecker::checkAllEU4CulturesMapped(const EU4::World& sourceWorld
 	{
 		for (const auto& cultureItr: cultureGroupItr.second.getCultures())
 		{
+			if (cultureItr.second.getNeoCulture()) continue; // no mapping for these.
+			
 			const auto& matched = cultureMapper.cultureMatch(sourceWorld.getRegions(), cultureItr.first, "", 0, "");
 			if (!matched)
 			{

@@ -216,7 +216,6 @@ void V2::Province::determineDemographics(
 	for (const auto& popRatio : popRatios)
 	{
 		auto dstCulture = cultureMapper.cultureMatch(eu4Regions, popRatio.getCulture(), popRatio.getReligion(), eu4ProvID, oldOwnerTag);
-		if (dstCulture) Log(LogLevel::Debug) << provinceID << " " << name << " matched immediately to " << *dstCulture << " for cltr:" << popRatio.getOriginalCulture() << " relgn:" << popRatio.getReligion() << " eu4pid:" << eu4ProvID << " oot:" << oldOwnerTag;
 		if (!dstCulture)
 		{
 			// No panic, yet. We may be dealing with a neoculture.
@@ -225,7 +224,6 @@ void V2::Province::determineDemographics(
 				// This is a neoculture. Failure to map is not an option. Locate a mapping based on original culture if one exists, but ping for
 				// area, region or superregion. We're not interested in general mappings.
 				dstCulture = cultureMapper.cultureRegionalMatch(eu4Regions, popRatio.getOriginalCulture(), popRatio.getReligion(), eu4ProvID, oldOwnerTag);
-				Log(LogLevel::Debug) << provinceID << " " << name << " matched later to " << *dstCulture << " for cltr:" << popRatio.getOriginalCulture() << " relgn:" << popRatio.getReligion() << " eu4pid:" << eu4ProvID << " oot:" << oldOwnerTag;
 				if (!dstCulture)
 				{
 					// There is no overriding rule. We're good to force neoculture.

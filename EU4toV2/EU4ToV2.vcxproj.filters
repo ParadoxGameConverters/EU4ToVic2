@@ -553,6 +553,9 @@
     <ClCompile Include="Source\V2World\Output\outCultureGroups.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\RegionLocalizations\RegionLocalizations.cpp">
+      <Filter>Mappers\RegionLocalizations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1064,6 +1067,9 @@
     <ClInclude Include="Source\Mappers\SuperGroupMapper\SuperGroupMapper.h">
       <Filter>Mappers\SuperGroupMapper</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\RegionLocalizations\RegionLocalizations.h">
+      <Filter>Mappers\RegionLocalizations</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1299,6 +1305,9 @@
     </Filter>
     <Filter Include="Mappers\SuperGroupMapper">
       <UniqueIdentifier>{beec465c-6bb9-4718-b32c-6d1a522e9962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\RegionLocalizations">
+      <UniqueIdentifier>{a93eee1b-4ac7-45bd-b487-b0fd8cc6ce36}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
