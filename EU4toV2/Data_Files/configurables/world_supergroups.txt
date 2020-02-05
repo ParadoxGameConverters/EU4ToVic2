@@ -1,0 +1,19 @@
+old_world = {
+	india_superregion 
+	east_indies_superregion
+	oceania_superregion
+	china_superregion
+	europe_superregion
+	eastern_europe_superregion
+	tartary_superregion
+	far_east_superregion
+	africa_superregion
+	near_east_superregion
+	persia_superregion
+}
+
+new_world = {
+	south_america_superregion
+	north_america_superregion
+	central_america_superregion
+}

@@ -302,6 +302,7 @@
     <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTech.cpp" />
     <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTechMapper.cpp" />
     <ClCompile Include="Source\Mappers\StateMapper\StateMapper.cpp" />
+    <ClCompile Include="Source\Mappers\SuperGroupMapper\SuperGroupMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroups.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroupsMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchool.cpp" />
@@ -488,6 +489,7 @@
     <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTech.h" />
     <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTechMapper.h" />
     <ClInclude Include="Source\Mappers\StateMapper\StateMapper.h" />
+    <ClInclude Include="Source\Mappers\SuperGroupMapper\SuperGroupMapper.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroups.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroupsMapper.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchool.h" />

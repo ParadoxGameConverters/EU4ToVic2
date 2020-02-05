@@ -103,7 +103,7 @@ namespace V2
 			const std::vector<std::shared_ptr<EU4::Province>>& provinceSources,
 			const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
 			const EU4::Regions& eu4Regions,
-			const mappers::CultureMapper& cultureMapper,
+			mappers::CultureMapper& cultureMapper,
 			const mappers::CultureMapper& slaveCultureMapper,
 			const mappers::Continents& continentsMapper,
 			const mappers::ReligionMapper& religionMapper,
@@ -171,7 +171,7 @@ namespace V2
 			const std::string& oldOwnerTag,
 			int destNum,
 			double provPopRatio,
-			const mappers::CultureMapper& cultureMapper,
+			mappers::CultureMapper& cultureMapper,
 			const mappers::CultureMapper& slaveCultureMapper,
 			const mappers::Continents& continentsMapper,
 			const mappers::ReligionMapper& religionMapper);

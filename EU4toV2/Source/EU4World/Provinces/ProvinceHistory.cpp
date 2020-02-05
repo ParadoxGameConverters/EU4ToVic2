@@ -213,7 +213,7 @@ void EU4::ProvinceHistory::decayPopRatios(const date& oldDate, const date& newDa
 	currentPop.increase(diffInYears);
 }
 
-void EU4::ProvinceHistory::updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName)
+void EU4::ProvinceHistory::updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName, const std::string& superRegion)
 {
-	for (auto& popRatio: popRatios) if (popRatio.getCulture() == oldCultureName) popRatio.setCulture(neoCultureName);
+	for (auto& popRatio: popRatios) if (popRatio.getCulture() == oldCultureName) popRatio.setCulture(neoCultureName, superRegion);
 }

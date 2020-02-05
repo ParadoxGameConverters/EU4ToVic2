@@ -10,11 +10,7 @@ link = { vic2 = afro_norse eu4 = dutch eu4 = flemish eu4 = batavian eu4 = frisia
 link = { vic2 = afro_norse eu4 = swedish eu4 = gotar eu4 = gutnish eu4 = swedish_colonial eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = anglo_norse eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = norse_gaelic eu4 = finnish eu4 = karelian eu4 = finnish_colonial eu4 = ugrorussian eu4 = sapmi eu4 = lappish }
 
 # British
-link = { vic2 = afro_american eu4 = english eu4 = scottish eu4 = anglo_saxon eu4 = anglosaxon eu4 = pictish region = mississippi_region }
-link = { vic2 = afro_american eu4 = english eu4 = scottish eu4 = anglo_saxon eu4 = anglosaxon eu4 = pictish region = southeast_america_region }
-link = { vic2 = afro_american eu4 = english eu4 = scottish eu4 = anglo_saxon eu4 = anglosaxon eu4 = pictish region = northeast_america_region }
-link = { vic2 = afro_american eu4 = english eu4 = scottish eu4 = anglo_saxon eu4 = anglosaxon eu4 = pictish region = mexico_region }
-link = { vic2 = afro_american eu4 = english eu4 = scottish eu4 = anglo_saxon eu4 = anglosaxon eu4 = pictish eu4 = american region = central_america_region }
+link = { vic2 = afro_american eu4 = english eu4 = scottish eu4 = anglo_saxon eu4 = anglosaxon eu4 = pictish region = mississippi_region region = southeast_america_region region = northeast_america_region region = mexico_region region = rio_grande_region }
 link = { vic2 = afro_caribbean eu4 = english eu4 = scottish eu4 = anglo_saxon eu4 = anglosaxon eu4 = pictish }
 
 # Italic

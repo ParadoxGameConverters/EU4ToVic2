@@ -212,8 +212,31 @@ void EU4::World::generateNeoCultures()
 			const auto currentCulture = popratio.getCulture();
 			if (nativeCultures[superRegionName].count(currentCulture)) continue;
 
-			// Has a previous pop ratio already updated us? Check local cache. We may be a neoCulture already.
-			if (province.second->getGeneratedCultures().count(currentCulture)) continue;
+			// Are we a neoculture? Bail if so.
+			if (!popratio.getOriginalCulture().empty()) continue;
+			
+			// Are we within the supergroup? Find out where that culture is native.
+			std::string nativeSuperRegionName;
+			for (const auto& nativeRegion: nativeCultures) if (nativeRegion.second.count(currentCulture)) nativeSuperRegionName = nativeRegion.first;
+			if (nativeSuperRegionName.empty())
+			{
+				// This is not unusual. Oromo appear later and are not relevant to us.
+				// For american, mexican, brazilian and similar, we'll merge them later with our neocultures through culture_maps.txt.
+				continue;
+			}
+			const auto& currentSuperGroup = superGroupMapper.getGroupForSuperRegion(superRegionName);
+			if (!currentSuperGroup)
+			{
+				Log(LogLevel::Warning) << "Super-Region " << superRegionName << " has no defined super-group in worlds_supergroups.txt! Fix this!";
+				continue;				
+			}
+			const auto& nativeSuperGroup = superGroupMapper.getGroupForSuperRegion(nativeSuperRegionName);
+			if (!nativeSuperGroup)
+			{
+				Log(LogLevel::Warning) << "Super-Region " << nativeSuperRegionName << " has no defined super-group in worlds_supergroups.txt! Fix this!";
+				continue;				
+			}
+			if (*nativeSuperGroup == *currentSuperGroup) continue; // Do not mutate within the same super group.
 			
 			// Check global cache if we already did this pair.
 			std::string neoCulture;
@@ -229,8 +252,7 @@ void EU4::World::generateNeoCultures()
 				neoCulture = genItr->second;
 			}
 			// Now update the pop ratio.
-			province.second->updatePopRatioCulture(currentCulture, neoCulture);
-			province.second->updateGeneratedCultures(neoCulture);
+			province.second->updatePopRatioCulture(currentCulture, neoCulture, superRegionName);
 			Log(LogLevel::Debug) << "Province " << province.first << " " << province.second->getName() << " swapping " << currentCulture << " for " << neoCulture;
 		}
 	}

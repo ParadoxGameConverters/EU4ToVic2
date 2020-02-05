@@ -24,15 +24,14 @@ namespace EU4
 		void setControllerString(const std::string& _controller) { controllerString = _controller; }
 		void setTradeGoodPrice(double price) { tradeGoodsPrice = price; }
 		void setArea(const std::string& a) { areaName = a; }
-		void updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName) { provinceHistory.updatePopRatioCulture(oldCultureName, neoCultureName); }
-		void updateGeneratedCultures(const std::string& neoCulture) { generatedCultures.insert(neoCulture); }
+		void updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName, const std::string& superRegion)
+		{ provinceHistory.updatePopRatioCulture(oldCultureName, neoCultureName, superRegion); }
 
 		[[nodiscard]] const auto& getArea() const { return areaName; }
 		[[nodiscard]] const auto& getName() const { return name; }
 		[[nodiscard]] const auto& getOwnerString() const { return ownerString; }
 		[[nodiscard]] const auto& getControllerString() const { return controllerString; }
 		[[nodiscard]] const auto& getOriginalCulture() const { return provinceHistory.getOriginalCulture(); }
-		[[nodiscard]] const auto& getGeneratedCultures() const { return generatedCultures; }
 		[[nodiscard]] auto getNum() const { return num; }
 		[[nodiscard]] auto inHre() const { return inHRE; }
 		[[nodiscard]] auto isTerritorialCore() const { return territorialCore; }
@@ -73,7 +72,6 @@ namespace EU4
 		std::string ownerString;
 		std::string controllerString;
 		std::set<std::string> cores;
-		std::set<std::string> generatedCultures; // neoculture cache for this province.
 
 		bool inHRE = false;
 		bool colony = false;

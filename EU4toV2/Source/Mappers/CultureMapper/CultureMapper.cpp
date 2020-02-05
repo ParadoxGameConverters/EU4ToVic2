@@ -40,3 +40,25 @@ std::optional<std::string> mappers::CultureMapper::cultureMatch(
 	}
 	return std::nullopt;
 }
+
+std::optional<std::string> mappers::CultureMapper::cultureRegionalMatch(
+	const EU4::Regions& eu4Regions,
+	const std::string& eu4culture,
+	const std::string& eu4religion,
+	int eu4Province,
+	const std::string& eu4ownerTag) const
+{
+	for (const auto& cultureMappingRule: cultureMapRules)
+	{
+		const auto& possibleMatch = cultureMappingRule.cultureRegionalMatch(eu4Regions, eu4culture, eu4religion, eu4Province, eu4ownerTag);
+		if (possibleMatch) return *possibleMatch;
+	}
+	return std::nullopt;
+}
+
+void mappers::CultureMapper::registerCultureMatch(const std::string& v2Culture, const std::string& eu4Culture, const std::string& eu4SuperRegion)
+{
+	const CultureMappingRule rule(v2Culture, eu4Culture, eu4SuperRegion);
+	// new rules go to front so they match first, in case we have a non-regional match later but we need a regional hit.
+	cultureMapRules.push_front(rule);
+}

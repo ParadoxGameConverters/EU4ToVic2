@@ -547,6 +547,9 @@
     <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionLimit.cpp">
       <Filter>Mappers\StartingInventionMapper</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\SuperGroupMapper\SuperGroupMapper.cpp">
+      <Filter>Mappers\SuperGroupMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1055,6 +1058,9 @@
     <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionLimit.h">
       <Filter>Mappers\StartingInventionMapper</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\SuperGroupMapper\SuperGroupMapper.h">
+      <Filter>Mappers\SuperGroupMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1287,6 +1293,9 @@
     </Filter>
     <Filter Include="Mappers\StartingInventionMapper">
       <UniqueIdentifier>{f0564fa4-ea77-4ab4-80fd-e52476a508c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\SuperGroupMapper">
+      <UniqueIdentifier>{beec465c-6bb9-4718-b32c-6d1a522e9962}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

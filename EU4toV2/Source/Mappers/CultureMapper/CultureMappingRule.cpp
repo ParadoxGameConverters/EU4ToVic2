@@ -48,6 +48,13 @@ mappers::CultureMappingRule::CultureMappingRule(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
+mappers::CultureMappingRule::CultureMappingRule(const std::string& v2Culture, const std::string& eu4Culture, const std::string& eu4SuperRegion):
+	destinationCulture(v2Culture)
+{	
+	cultures.insert(eu4Culture);
+	regions.insert(eu4SuperRegion);
+}
+
 std::optional<std::string> mappers::CultureMappingRule::cultureMatch(
 	const EU4::Regions& eu4Regions,
 	const std::string& eu4culture,
@@ -89,4 +96,20 @@ std::optional<std::string> mappers::CultureMappingRule::cultureMatch(
 		if (!regionMatch) return std::nullopt;
 	}
 	return destinationCulture;
+}
+
+std::optional<std::string> mappers::CultureMappingRule::cultureRegionalMatch(
+	const EU4::Regions& eu4Regions,
+	const std::string& eu4culture,
+	const std::string& eu4religion,
+	int eu4Province,
+	const std::string& eu4ownerTag
+) const
+{
+	// This is a regional match. We need a mapping within the given region, so if the
+	// mapping rule has no regional qualifiers it needs to fail.
+	if (regions.empty()) return std::nullopt;
+
+	// Otherwise, as usual.
+	return cultureMatch(eu4Regions, eu4culture, eu4religion, eu4Province, eu4ownerTag);
 }

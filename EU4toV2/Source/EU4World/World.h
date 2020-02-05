@@ -15,6 +15,7 @@
 #include "../Mappers/Buildings/Buildings.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
 #include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
+#include "../Mappers/SuperGroupMapper/SuperGroupMapper.h"
 #include "newParser.h"
 #include <memory>
 #include <map>
@@ -96,6 +97,7 @@ namespace EU4
 		mappers::UnitTypeMapper unitTypeMapper;
 		mappers::Buildings buildingTypes;
 		mappers::CultureGroups cultureGroupsMapper;
+		mappers::SuperGroupMapper superGroupMapper;
 
 		// export data for hoi4
 		std::vector<std::pair<std::string, HistoricalEntry>> historicalData;

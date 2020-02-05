@@ -81,7 +81,7 @@ void V2::Province::convertFromOldProvince(
 	const std::vector<std::shared_ptr<EU4::Province>>& provinceSources,
 	const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
 	const EU4::Regions& eu4Regions,
-	const mappers::CultureMapper& cultureMapper,
+	mappers::CultureMapper& cultureMapper,
 	const mappers::CultureMapper& slaveCultureMapper,
 	const mappers::Continents& continentsMapper,
 	const mappers::ReligionMapper& religionMapper,
@@ -208,23 +208,36 @@ void V2::Province::determineDemographics(
 	const std::string& oldOwnerTag,
 	int destNum,
 	double provPopRatio,
-	const mappers::CultureMapper& cultureMapper,
+	mappers::CultureMapper& cultureMapper,
 	const mappers::CultureMapper& slaveCultureMapper,
 	const mappers::Continents& continentsMapper,
 	const mappers::ReligionMapper& religionMapper)
 {
 	for (const auto& popRatio : popRatios)
 	{
-		auto dstCulture = cultureMapper.cultureMatch(
-			eu4Regions,
-			popRatio.getCulture(),
-			popRatio.getReligion(),
-			eu4ProvID,
-			oldOwnerTag);
+		auto dstCulture = cultureMapper.cultureMatch(eu4Regions, popRatio.getCulture(), popRatio.getReligion(), eu4ProvID, oldOwnerTag);
+		if (!dstCulture)
+		{
+			// No panic, yet. We may be dealing with a neoculture.
+			if (!popRatio.getOriginalCulture().empty())
+			{
+				// This is a neoculture. Failure to map is not an option. Locate a mapping based on original culture if one exists, but ping for
+				// area, region or superregion. We're not interested in general mappings.
+				dstCulture = cultureMapper.cultureRegionalMatch(eu4Regions, popRatio.getOriginalCulture(), popRatio.getReligion(), eu4ProvID, oldOwnerTag);
+				if (!dstCulture)
+				{
+					// Noone bothered to map Kazakh La Platans, so we do so ourselves and use superregion as qualifier.
+					LOG(LogLevel::Debug) << "Province " << provinceID << " " << name << " Registering " << popRatio.getCulture() << " from " << popRatio.getOriginalCulture() << " within " << popRatio.getSuperRegion();
+					cultureMapper.registerCultureMatch(popRatio.getCulture(), popRatio.getCulture(), popRatio.getSuperRegion());
+					dstCulture.emplace(popRatio.getCulture());
+				}
+			}
+		}
+		
 		if (!dstCulture)
 		{
 			LOG(LogLevel::Warning) << "Could not convert eu4 culture " << popRatio.getCulture() << " for pops in Vic2 province " << destNum << "! Check mappings, substituting noculture.";
-			dstCulture = "noculture";
+			dstCulture.emplace("noculture");
 		}
 		else if (*dstCulture == "noculture")
 		{
@@ -235,7 +248,7 @@ void V2::Province::determineDemographics(
 		if (!religion)
 		{
 			LOG(LogLevel::Warning) << "Could not convert eu4 religion " << popRatio.getReligion() << " for pops in Vic2 province " << destNum << "! Check mappings, substituting no_religion.";
-			religion = "noreligion";
+			religion.emplace("noreligion");
 		}
 		else if (*religion == "noreligion")
 		{
@@ -254,12 +267,12 @@ void V2::Province::determineDemographics(
 			if (thisContinent && (thisContinent == "asia" || thisContinent == "oceania"))
 			{
 				if (theConfiguration.getDebug()) LOG(LogLevel::Warning) << "No mapping for slave culture in province " << destNum << " - using native culture (" << popRatio.getCulture() << ").";
-				slaveCulture = popRatio.getCulture();
+				slaveCulture.emplace(popRatio.getCulture());
 			}
 			else
 			{
 				if (theConfiguration.getDebug()) LOG(LogLevel::Warning) << "No mapping for slave culture for pops in Vic2 province " << destNum << " - using african_minor.";
-				slaveCulture = "african_minor";
+				slaveCulture.emplace("african_minor");
 			}
 		}
 

@@ -15,7 +15,7 @@ namespace EU4
 		ProvinceHistory() = default;
 		explicit ProvinceHistory(std::istream& theStream);
 
-		void updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName);
+		void updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName, const std::string& superRegion);
 
 		[[nodiscard]] std::optional<date> getFirstOwnedDate() const;
 		[[nodiscard]] bool hasOriginalCulture() const;

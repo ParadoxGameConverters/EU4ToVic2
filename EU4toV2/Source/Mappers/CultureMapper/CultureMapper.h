@@ -5,7 +5,7 @@
 #include "../../EU4World/Regions/Regions.h"
 #include <optional>
 #include <string>
-#include <vector>
+#include <list>
 #include "CultureMappingRule.h"
 
 namespace EU4 {
@@ -29,10 +29,20 @@ namespace mappers
 			int eu4Province,
 			const std::string& eu4ownerTag) const;
 
+		[[nodiscard]] std::optional<std::string> cultureRegionalMatch(
+			const EU4::Regions& eu4Regions,
+			const std::string& eu4culture,
+			const std::string& eu4religion,
+			int eu4Province,
+			const std::string& eu4ownerTag) const;
+
+		
+		void registerCultureMatch(const std::string& v2Culture, const std::string& eu4Culture, const std::string& eu4SuperRegion);
+
 	private:
 		void registerKeys();
 		
-		std::vector<CultureMappingRule> cultureMapRules;
+		std::list<CultureMappingRule> cultureMapRules;
 	};
 }
 
