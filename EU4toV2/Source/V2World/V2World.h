@@ -153,7 +153,7 @@ namespace V2
 		CountryPopLogger countryPopLogger;
 		MappingChecker mappingChecker;
 		ModFile modFile;
-		Diplomacy diplomacy;		
+		Diplomacy diplomacy;
 	};
 	
 	std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);

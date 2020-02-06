@@ -20,7 +20,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	const mappers::TechGroupsMapper& techGroupsMapper, 
 	const mappers::VersionParser& versionParser):
 historicalData(sourceWorld.getHistoricalData())
-{	
+{
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
 	LOG(LogLevel::Info) << "-> Importing Provinces";
 	importProvinces();

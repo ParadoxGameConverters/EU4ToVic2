@@ -2,6 +2,7 @@
 #include "ParserHelpers.h"
 #include "Log.h"
 #include "SuperRegion.h"
+#include <cmath>
 
 void mappers::SuperGroupMapper::init()
 {

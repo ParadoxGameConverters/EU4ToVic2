@@ -70,7 +70,7 @@ void mappers::CultureGroup::mergeCulture(const std::string& name, const Culture&
 	}
 }
 
-void mappers::CultureGroup::addCulture(const std::string& name, const Culture& culture, const std::string& oldCulture)
+void mappers::CultureGroup::addNeoCulture(const std::string& name, const Culture& culture, const std::string& oldCulture)
 {
 	auto newCulture = culture;
 	newCulture.setNeoCulture(true);

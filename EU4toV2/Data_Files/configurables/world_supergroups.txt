@@ -1,6 +1,6 @@
-# Assimilation rate of 1 means 25% population will assimilate every century
-# Scale is logarithmic, assimilation 4 means about 68% every century.
-# 0 is no cultural conversion at all. There is no maximum, but 100% cannot be reached.
+# Assimilation rate of 1 means 0.25% of remaining population will assimilate every year.
+# Scale is logarithmic, assimilation 4 means about 0.68% of remainder every year.
+# 0 is no cultural conversion at all. There is no maximum, but 100% conversion cannot be reached.
 # For 100% use converter option "Conversion converts everyone".
 
 old_world = {

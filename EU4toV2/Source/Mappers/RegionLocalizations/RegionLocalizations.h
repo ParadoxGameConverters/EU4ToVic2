@@ -18,7 +18,7 @@ namespace mappers
 		[[nodiscard]] std::optional<std::string> getGermanFor(const std::string& key);
 
 	private:
-		std::map<std::string, std::string> spaLocalisations; // region, adj_loc
+		std::map<std::string, std::string> spaLocalisations; // key, localization_text
 		std::map<std::string, std::string> engLocalisations;
 		std::map<std::string, std::string> gerLocalisations;
 		std::map<std::string, std::string> fraLocalisations;

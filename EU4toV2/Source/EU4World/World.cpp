@@ -305,7 +305,7 @@ std::string EU4::World::generateNeoCulture(const std::string& superRegionName, c
 	if (neoCultureItr == cultureGroupOpt->getCultures().end())
 	{
 		// We're golden. Register neoCulture.
-		cultureGroup->addCulture(neoCultureName, neoCulture, oldCultureName);
+		cultureGroup->addNeoCulture(neoCultureName, neoCulture, oldCultureName);
 	}
 	else
 	{

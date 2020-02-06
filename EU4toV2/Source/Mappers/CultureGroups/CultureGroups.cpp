@@ -86,13 +86,6 @@ std::map<std::string, mappers::Culture> mappers::CultureGroups::getCulturesInGro
 	return std::map<std::string, Culture>();
 }
 
-mappers::CultureGroup mappers::CultureGroups::getCultureGroup(const std::string& cultureGroupName) const
-{
-	const auto& cultureGroupItr = cultureGroupsMap.find(cultureGroupName);
-	if (cultureGroupItr != cultureGroupsMap.end()) return cultureGroupItr->second;
-	return CultureGroup();
-}
-
 void mappers::CultureGroups::importNeoCultures(const EU4::World& sourceWorld, const CultureMapper& cultureMapper)
 {
 	const auto& eu4CultureGroupsMapper = sourceWorld.getCultureGroupsMapper();
@@ -125,7 +118,7 @@ void mappers::CultureGroups::importNeoCultures(const EU4::World& sourceWorld, co
 			v2Culture.transmogrify();
 
 			// and file under appropriate group.
-			destV2cultureGroup->addCulture(eu4CultureIter.first, v2Culture, eu4CultureIter.first);
+			destV2cultureGroup->addNeoCulture(eu4CultureIter.first, v2Culture, eu4CultureIter.first);
 		}
 	}
 }

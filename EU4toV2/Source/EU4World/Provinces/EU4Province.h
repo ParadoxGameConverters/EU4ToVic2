@@ -71,11 +71,11 @@ namespace EU4
 		[[nodiscard]] BuildingWeightEffects getProvBuildingWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes) const;
 
 		int num = 0;
-		std::string	name;
+		std::string name;
 		std::string ownerString;
 		std::string controllerString;
-		std::string	culture;
-		std::string	religion;
+		std::string culture;
+		std::string religion;
 
 		std::set<std::string> cores;
 

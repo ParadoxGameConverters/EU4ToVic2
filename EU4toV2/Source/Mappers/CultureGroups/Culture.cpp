@@ -60,8 +60,8 @@ void mappers::Culture::transmogrify()
 	lastNames = dynastyNames;
 
 	std::random_device rd;
-   std::mt19937 eng(rd());
-   std::uniform_int_distribution<> distr(0, 255);
+	std::mt19937 eng(rd());
+	std::uniform_int_distribution<> distr(0, 255);
 	
 	const auto r = distr(eng);
 	const auto g = distr(eng);
