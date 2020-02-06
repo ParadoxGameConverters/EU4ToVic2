@@ -119,6 +119,8 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 
 	registerRegex("[A-Za-z0-9\\_]+", commonItems::ignoreItem);
 
+	superGroupMapper.init();
+
 	LOG(LogLevel::Info) << "-> Verifying EU4 save.";
 	verifySave();
 
@@ -157,7 +159,10 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 
 	LOG(LogLevel::Info) << "-> Loading Regions";
 	loadRegions();
-
+	
+	LOG(LogLevel::Info) << "-> Determining Demographics";
+	buildPopRatios();
+	
 	LOG(LogLevel::Info) << "-> Cataloguing Native Fauna";
 	catalogueNativeCultures();
 
@@ -203,6 +208,14 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	LOG(LogLevel::Info) << "*** Good-bye EU4, you served us well. ***";
 }
 
+void EU4::World::buildPopRatios() const
+{
+	for (const auto& province: provinces->getAllProvinces())
+	{
+		province.second->buildPopRatio(superGroupMapper, *regions);
+	}
+}
+
 void EU4::World::generateNeoCultures()
 {
 	for (const auto& province : provinces->getAllProvinces())
@@ -212,7 +225,7 @@ void EU4::World::generateNeoCultures()
 			// Are we operating within native super region for this culture's pop ratio?
 			const auto& superRegionName = regions->getParentSuperRegionName(province.first);
 			if (!superRegionName) continue;
-			const auto currentCulture = popratio.getCulture();
+			const auto& currentCulture = popratio.getCulture();
 			if (nativeCultures[*superRegionName].count(currentCulture)) continue;
 
 			// Are we a neoculture? Bail if so.
@@ -224,7 +237,7 @@ void EU4::World::generateNeoCultures()
 			if (nativeSuperRegionName.empty())
 			{
 				// This is not unusual. Oromo appear later and are not relevant to us.
-				// For american, mexican, brazilian and similar, we'll merge them later with our neocultures through culture_maps.txt.
+				// For eu4's american, mexican, brazilian and similar, we'll merge them later with our neocultures through culture_maps.txt.
 				continue;
 			}
 			const auto& currentSuperGroup = superGroupMapper.getGroupForSuperRegion(*superRegionName);

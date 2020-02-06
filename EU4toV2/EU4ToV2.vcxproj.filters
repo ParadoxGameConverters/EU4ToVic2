@@ -556,6 +556,12 @@
     <ClCompile Include="Source\Mappers\RegionLocalizations\RegionLocalizations.cpp">
       <Filter>Mappers\RegionLocalizations</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\SuperGroupMapper\Assimilation.cpp">
+      <Filter>Mappers\SuperGroupMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\SuperGroupMapper\SuperRegion.cpp">
+      <Filter>Mappers\SuperGroupMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1069,6 +1075,12 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\RegionLocalizations\RegionLocalizations.h">
       <Filter>Mappers\RegionLocalizations</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\SuperGroupMapper\Assimilation.h">
+      <Filter>Mappers\SuperGroupMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\SuperGroupMapper\SuperRegion.h">
+      <Filter>Mappers\SuperGroupMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

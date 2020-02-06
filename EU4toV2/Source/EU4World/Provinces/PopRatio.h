@@ -10,8 +10,8 @@ namespace EU4
 	public:
 		PopRatio(std::string _culture, std::string _religion);
 
-		void decay(float diffInYears, const PopRatio& currentPop);
-		void increase(float diffInYears);
+		void decay(float diffInYears, double assimilationFactor);
+		void increase(float diffInYears, double assimilationFactor);
 		void convertFrom();
 		void convertToCulture(const std::string& culture);
 		void convertToReligion(const std::string& religion);

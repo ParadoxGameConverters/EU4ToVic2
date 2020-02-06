@@ -48,7 +48,7 @@ TEST(EU4World_ProvinceHistoryTests, firstOwnedDateCanBeSetFromStartingOwner)
 	EU4::ProvinceHistory theHistory(input);
 	std::optional<date> firstOwnedDate = theHistory.getFirstOwnedDate();
 	ASSERT_TRUE(firstOwnedDate);
-	ASSERT_EQ(firstOwnedDate, date("1444.11.11"));
+	ASSERT_EQ(firstOwnedDate, date("1000.1.1"));
 }
 
 
@@ -184,7 +184,7 @@ TEST(EU4World_ProvinceHistoryTests, endCultureOrReligionChangeGivesSimpleChanged
 	input << "{\n";
 	input << "	culture=theCulture\n";
 	input << "	religion=theReligion\n";
-	input << "	1821.1.3={\n";
+	input << "	1836.1.1={\n";
 	input << "		culture=newCulture\n";
 	input << "		religion=newReligion\n";
 	input << "	}\n";
@@ -213,7 +213,7 @@ TEST(EU4World_ProvinceHistoryTests, pastCultureOrReligionChangeGivesDecayedRatio
 	input << "{\n";
 	input << "	culture=theCulture\n";
 	input << "	religion=theReligion\n";
-	input << "	1721.1.3={\n";
+	input << "	1736.1.1={\n";
 	input << "		culture=newCulture\n";
 	input << "		religion=newReligion\n";
 	input << "	}\n";
@@ -242,10 +242,10 @@ TEST(EU4World_ProvinceHistoryTests, multipleCultureOrReligionChangeGivesComplexR
 	input << "{\n";
 	input << "	culture=theCulture\n";
 	input << "	religion=theReligion\n";
-	input << "	1721.1.3={\n";
+	input << "	1736.1.1={\n";
 	input << "		religion=newReligion\n";
 	input << "	}\n";
-	input << "	1821.1.3={\n";
+	input << "	1836.1.1={\n";
 	input << "		culture=newCulture\n";
 	input << "	}\n";
 	input << "}";

@@ -30,6 +30,6 @@ class mockVic2Country: public V2::Country
 {
 	public:
 		MOCK_CONST_METHOD0(isCivilized, bool());
-		MOCK_CONST_METHOD0(getProvinces, std::map<int, std::shared_ptr<V2::Province>>());
+		MOCK_CONST_METHOD0(getProvinces, const std::map<int, std::shared_ptr<V2::Province>>&());
 		MOCK_CONST_METHOD0(getSourceCountry, std::shared_ptr<EU4::Country>());
 };

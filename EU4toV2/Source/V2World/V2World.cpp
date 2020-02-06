@@ -97,7 +97,7 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 	// population has been swapped with neocultures. This is a fuzzy process because
 	// multiple cultures mutate into single neoculture and only in some places, in others
 	// they can transform into different base vic2 cultures.
-	// We're updating primary/accepted only for significant global population (>15%).
+	// We're updating primary/accepted only for significant global neoculture population (>15%).
 	for (const auto& country: countries)
 	{
 		if (country.second->getProvinces().empty()) continue; // don't disturb the dead
@@ -106,7 +106,7 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 		std::map<std::string, std::string> generatedNeoCultures; // orig culture, neoculture mapping
 
 		// for countries without neocultures, stop wasting time. 
-		// Yankees, americano or vinlander are NOT neocultures.
+		// Yankee, americano or vinlander are NOT neocultures.
 		for (const auto& province: country.second->getProvinces())
 		{
 			if (!province.second->getGeneratedNeoCultures().empty())
@@ -130,15 +130,10 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 			}
 		}
 
-		for (const auto& drek: census)
-		{
-			Log(LogLevel::Debug) << country.second->getLocalName() << " census " << drek.first << " : " << drek.second;
-		}
-		
 		long totalPopulation = 0;
 		for (const auto& entry: census) totalPopulation += entry.second;
 
-		// Was any of the original eu4 cultures that mutated a source for our current prim/acc cultures?
+		// Was any of the original eu4 cultures that mutated into neocultures a source for our current prim/acc cultures?
 		auto primEU4Culture = country.second->getEU4PrimaryCulture();
 		auto primV2Culture = country.second->getPrimaryCulture();
 		auto accV2Cultures = country.second->getAcceptedCultures();
@@ -146,12 +141,10 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 		const auto& primIter = generatedNeoCultures.find(primEU4Culture);
 		if (primIter != generatedNeoCultures.end())
 		{
-			Log(LogLevel::Debug) << country.second->getLocalName() << " considering pairing: " << primIter->first << " " << primIter->second << " at census " << census[generatedNeoCultures[primEU4Culture]] << " vs " << census[primV2Culture];
 			// is this our primary population now? Do we have modified pops overwhelming unmodified ones?
 			if (census[generatedNeoCultures[primEU4Culture]] > census[primV2Culture])
 			{
-				// accept the reality of change.
-				Log(LogLevel::Debug) << country.second->getLocalName() << " primary culture is now: " << generatedNeoCultures[primEU4Culture] << " replacing " << primV2Culture;
+				// accept the reality of change. This can also happen if a small motherland integrates a large colony.
 				accV2Cultures.insert(primV2Culture);
 				primV2Culture = generatedNeoCultures[primEU4Culture];
 			}
@@ -159,26 +152,25 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 			{
 				// Well, at least it's an accepted culture now. This is very possible if the motherland
 				// assimilated a small colony on conversion.
-				Log(LogLevel::Debug) << country.second->getLocalName() << " has a new accepted culture (ex primary): " << generatedNeoCultures[primEU4Culture] << " " << census[generatedNeoCultures[primEU4Culture]] << "/" << 0.15 * totalPopulation;
 				accV2Cultures.insert(generatedNeoCultures[primEU4Culture]);
 			}
 		}
 		// Onto accepted cultures. This is simpler because we only add, no need to remove source cultures;
-		// This is essentially adding texans, americano or italoamericano to accepted cultures in usa.
+		// This is essentially like adding texans, americano or italoamericano to accepted cultures in usa.
 		for (const auto& entry: census)
 		{
 			for (const auto& genCulture: generatedNeoCultures)
 			{
 				if (entry.first == genCulture.second) // this is a neoculture.
 				{					
-					if (entry.second > 0.15 * totalPopulation)
+					if (entry.second > 0.15 * totalPopulation && entry.first != primV2Culture)
 					{
-						Log(LogLevel::Debug) << country.second->getLocalName() << " has a new accepted culture: " << entry.first << " " << entry.second << "/" << 0.15 * totalPopulation;
 						accV2Cultures.insert(entry.first);
 					}
 				}
 			}
 		}
+		// store and done.
 		country.second->setPrimaryCulture(primV2Culture);
 		country.second->setAcceptedCultures(accV2Cultures);
 	}

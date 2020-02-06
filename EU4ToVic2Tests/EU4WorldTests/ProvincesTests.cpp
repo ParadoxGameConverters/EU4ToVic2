@@ -24,6 +24,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "gtest/gtest.h"
 #include "../EU4toV2/Source/EU4World/Provinces/Provinces.h"
 #include "../EU4toV2/Source/Mappers/ProvinceMappings/ProvinceMapper.h"
+#include "../EU4toV2/Source/Mappers/SuperGroupMapper/SuperGroupMapper.h"
+#include "../EU4toV2/Source/EU4World/Regions/Regions.h"
 #include <sstream>
 
 
@@ -33,6 +35,9 @@ TEST(EU4World_ProvincesTests, defaultProvincesIsEmpty)
 	std::stringstream input;
 	input << "={}";
 
+	mappers::SuperGroupMapper superGroupMapper;
+	EU4::Regions regions;
+	
 	EU4::Provinces theProvinces(input);
 	ASSERT_EQ(theProvinces.getAllProvinces().size(), 0);
 }
@@ -46,6 +51,9 @@ TEST(EU4World_ProvincesTests, provincesCanBeInput)
 	input << "-1={}";
 	input << "}\n";
 	input << "}";
+
+	mappers::SuperGroupMapper superGroupMapper;
+	EU4::Regions regions;
 
 	EU4::Provinces theProvinces(input);
 	ASSERT_EQ(theProvinces.getAllProvinces().size(), 1);
@@ -61,6 +69,9 @@ TEST(EU4World_ProvincesTests, gettingNonExsistentProvinceThrowsException)
 	input << "}\n";
 	input << "}";
 
+	mappers::SuperGroupMapper superGroupMapper;
+	EU4::Regions regions;
+
 	EU4::Provinces theProvinces(input);
 	ASSERT_THROW(theProvinces.getProvince(42), std::range_error);
 }
@@ -74,6 +85,9 @@ TEST(EU4World_ProvincesTests, canGetProvince)
 	input << "-1={}";
 	input << "}\n";
 	input << "}";
+
+	mappers::SuperGroupMapper superGroupMapper;
+	EU4::Regions regions;
 
 	EU4::Provinces theProvinces(input);
 	ASSERT_EQ(theProvinces.getProvince(1)->getNum(), 1);

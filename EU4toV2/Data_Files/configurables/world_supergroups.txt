@@ -1,19 +1,24 @@
+# Assimilation rate of 1 means 25% population will assimilate every century
+# Scale is logarithmic, assimilation 4 means about 68% every century.
+# 0 is no cultural conversion at all. There is no maximum, but 100% cannot be reached.
+# For 100% use converter option "Conversion converts everyone".
+
 old_world = {
-	india_superregion 
-	east_indies_superregion
-	oceania_superregion
-	china_superregion
-	europe_superregion
-	eastern_europe_superregion
-	tartary_superregion
-	far_east_superregion
-	africa_superregion
-	near_east_superregion
-	persia_superregion
+	india_superregion = { assimilation = 1 }
+	east_indies_superregion = { assimilation = 1 }
+	oceania_superregion = { assimilation = 4 }
+	china_superregion = { assimilation = 1 }
+	europe_superregion = { assimilation = 1 }
+	eastern_europe_superregion = { assimilation = 1 }
+	tartary_superregion = { assimilation = 1 }
+	far_east_superregion = { assimilation = 1 }
+	africa_superregion = { assimilation = 2 }
+	near_east_superregion = { assimilation = 1 }
+	persia_superregion = { assimilation = 1 }
 }
 
 new_world = {
-	south_america_superregion
-	north_america_superregion
-	central_america_superregion
+	south_america_superregion = { assimilation = 4 }
+	north_america_superregion = { assimilation = 4 }
+	central_america_superregion = { assimilation = 4 }
 }

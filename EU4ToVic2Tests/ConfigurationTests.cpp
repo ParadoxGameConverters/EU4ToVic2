@@ -97,7 +97,7 @@ TEST(EU4ToVic2_ConfigurationTests, EU4PathThatDoesntExistFails)
 	Configuration testConfiguration;
 	std::stringstream input("EU4directory = \"C:\\FakeDirectory\"");
 
-	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\FakeDirectory does not exist");
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\FakeDirectory does not exist!");
 }
 
 
@@ -106,7 +106,7 @@ TEST(EU4ToVic2_ConfigurationTests, EU4PathWithoutExecutableFails)
 	Configuration testConfiguration;
 	std::stringstream input("EU4directory = \"C:\\EU4PathWithoutExecutable\"");
 
-	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\EU4PathWithoutExecutable does not contain Europa Universalis 4");
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\EU4PathWithoutExecutable does not contain Europa Universalis 4!");
 }
 
 
@@ -115,7 +115,7 @@ TEST(EU4ToVic2_ConfigurationTests, EU4PathWithoutDataFileFails)
 	Configuration testConfiguration;
 	std::stringstream input("EU4directory = \"C:\\EU4PathWithoutDataFile\"");
 
-	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\EU4PathWithoutDataFile does not appear to be a valid EU4 install");
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\EU4PathWithoutDataFile does not appear to be a valid EU4 install!");
 }
 
 
@@ -204,7 +204,7 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2PathThatDoesntExistFails)
 	Configuration testConfiguration;
 	std::stringstream input("Vic2directory = \"C:\\FakeDirectory\"");
 
-	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\FakeDirectory does not exist");
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\FakeDirectory does not exist!");
 }
 
 
@@ -213,7 +213,7 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2PathWithoutExecutableFails)
 	Configuration testConfiguration;
 	std::stringstream input("Vic2directory = \"C:\\Vic2PathWithoutExecutable\"");
 
-	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\Vic2PathWithoutExecutable does not contain Victoria 2");
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\Vic2PathWithoutExecutable does not contain Victoria 2!");
 }
 
 
@@ -242,7 +242,7 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2DocumentsPathThatDoesntExistFails)
 	Configuration testConfiguration;
 	std::stringstream input("Vic2Documentsdirectory = \"C:\\FakeDirectory\"");
 
-	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\FakeDirectory does not exist");
+	ASSERT_DEATH(testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist), "C:\\\\FakeDirectory does not exist!");
 }
 
 
@@ -309,7 +309,7 @@ TEST(EU4ToVic2_ConfigurationTests, RemoveTypeDefaultsToDead)
 TEST(EU4ToVic2_ConfigurationTests, RemoveTypeCanBeSet)
 {
 	Configuration testConfiguration;
-	std::stringstream input("removeType = 1");
+	std::stringstream input("remove_type = 1");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
 	ASSERT_EQ(testConfiguration.getRemoveType(), Configuration::DEADCORES::LeaveAll);
@@ -349,7 +349,7 @@ TEST(EU4ToVic2_ConfigurationTests, PopShapingDefaultsToVanilla)
 TEST(EU4ToVic2_ConfigurationTests, PopShapingCanBeSet)
 {
 	Configuration testConfiguration;
-	std::stringstream input("popShaping = 2");
+	std::stringstream input("pop_shaping = 2");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
 	ASSERT_EQ(testConfiguration.getPopShaping(), Configuration::POPSHAPES::PopShaping);
@@ -387,7 +387,7 @@ TEST(EU4ToVic2_ConfigurationTests, CoreHandlingDefaultsToNone)
 TEST(EU4ToVic2_ConfigurationTests, CoreHandlingCanBeSet)
 {
 	Configuration testConfiguration;
-	std::stringstream input("coreHandling = 2");
+	std::stringstream input("core_handling = 2");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
 	ASSERT_EQ(testConfiguration.getCoreHandling(), Configuration::COREHANDLES::DropNational);

@@ -47,6 +47,8 @@ namespace V2
 	{
 	public:
 		Country() = default;
+		virtual ~Country() = default;
+		
 		Country(
 			const std::string& countriesFileLine, 
 			bool _dynamicCountry, 
@@ -111,20 +113,20 @@ namespace V2
 		std::map<std::string, Relation>& getRelations() { return relations; }
 
 		[[nodiscard]] std::string getColonialRegion() const;
-		[[nodiscard]] std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }
+		[[nodiscard]] virtual std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }
 		[[nodiscard]] std::optional<UncivReforms> getUncivReforms() const { return uncivReforms; }
 		[[nodiscard]] NationalValue getNationalValueScores() const;
 		[[nodiscard]] auto isNewCountry() const { return newCountry; }
 		[[nodiscard]] auto getNumFactories() const { return details.numFactories; }
 		[[nodiscard]] auto getPrestige() const { return details.prestige; }
 		[[nodiscard]] auto isDynamicCountry() const { return dynamicCountry; }
-		[[nodiscard]] auto isCivilized() const { return details.civilized; }
+		[[nodiscard]] virtual bool isCivilized() const { return details.civilized; }
 		[[nodiscard]] auto getCapital() const { return details.capital; }
 		[[nodiscard]] auto getLocalName() const { return localisation.getLocalName(); }
 		[[nodiscard]] const auto& getStates() const { return states; }
 		[[nodiscard]] const auto& getTag() const { return tag; }
 		[[nodiscard]] const auto& getColonyOverlord() const { return colonyOverlord; }
-		[[nodiscard]] const auto& getProvinces() const { return provinces; }
+		[[nodiscard]] virtual const std::map<int, std::shared_ptr<Province>>& getProvinces() const { return provinces; }
 		[[nodiscard]] const auto& getCommonCountryFile() const { return commonCountryFile; }
 		[[nodiscard]] const auto& getReligion() const { return details.religion; }
 		[[nodiscard]] const auto& getLocalisation() const { return localisation; }

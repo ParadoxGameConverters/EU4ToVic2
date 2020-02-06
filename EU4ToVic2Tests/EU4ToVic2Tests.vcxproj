@@ -204,6 +204,9 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\StateMapper\StateMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\Assimilation.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\SuperGroupMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\SuperRegion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchool.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchoolMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchools.cpp" />

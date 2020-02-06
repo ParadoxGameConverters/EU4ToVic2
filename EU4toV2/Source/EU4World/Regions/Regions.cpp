@@ -88,10 +88,9 @@ std::optional<std::string> EU4::Regions::getParentSuperRegionName(const int prov
 		for (const auto& regionalName: superRegion.second)
 		{
 			const auto& regionalItr = regions.find(regionalName);
-			if (regionalItr->second.regionContainsProvince(provinceID)) return superRegion.first;
+			if (regionalItr != regions.end()) if (regionalItr->second.regionContainsProvince(provinceID)) return superRegion.first;
 		}
 	}
-	Log(LogLevel::Warning) << "Province ID " + std::to_string(provinceID) + " has no parent superregion name! (Area mismatch? Using newer EU4 version to convert older save?)";
 	return std::nullopt;
 }
 

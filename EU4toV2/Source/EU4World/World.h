@@ -11,7 +11,6 @@
 #include "Wars/EU4War.h"
 #include "TradeGoods/EU4TradeGoods.h"
 #include "../Mappers/UnitTypes/UnitTypeMapper.h"
-#include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/Buildings/Buildings.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
 #include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
@@ -66,10 +65,11 @@ namespace EU4
 		void addTradeGoodsToProvinces() const;
 		void catalogueNativeCultures();
 		void generateNeoCultures();
+		void buildPopRatios() const;
 		std::string generateNeoCulture(const std::string& superRegionName, const std::string& oldCultureName);
 		bool uncompressSave();
 		
-
+		
 		struct saveData
 		{
 			bool compressed = false;

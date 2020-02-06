@@ -254,6 +254,15 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\SuperRegions.cpp">
       <Filter>ConverterFiles\EU4World\Regions</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\Assimilation.cpp">
+      <Filter>ConverterFiles\Mappers\SuperGroupMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\SuperGroupMapper.cpp">
+      <Filter>ConverterFiles\Mappers\SuperGroupMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\SuperRegion.cpp">
+      <Filter>ConverterFiles\Mappers\SuperGroupMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -333,6 +342,9 @@
     </Filter>
     <Filter Include="ConverterFiles\Mappers\IdeaEffects">
       <UniqueIdentifier>{a200438b-4f49-4a38-a440-485e64d171b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\SuperGroupMapper">
+      <UniqueIdentifier>{88e40f2b-545c-4ad1-b53e-8931a8e8d5ae}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

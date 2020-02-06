@@ -16,7 +16,7 @@ namespace EU4
 		explicit ProvinceHistory(std::istream& theStream);
 
 		void updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName, const std::string& superRegion);
-		void buildPopRatios();
+		void buildPopRatios(double assimilationFactor);
 		void setStartingCulture(const std::string& culture) { startingCulture = culture; }
 		void setStartingReligion(const std::string& religion) { startingCulture = religion; }
 
@@ -30,7 +30,7 @@ namespace EU4
 		[[nodiscard]] const auto& getPopRatios() const { return popRatios; }
 		
 	private:
-		void decayPopRatios(const date& oldDate, const date& newDate, PopRatio& currentPop);
+		void decayPopRatios(const date& oldDate, const date& newDate, PopRatio& currentPop, double assimilationFactor);
 
 		std::string startingCulture;
 		std::string startingReligion;

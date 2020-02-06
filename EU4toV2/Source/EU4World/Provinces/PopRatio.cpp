@@ -4,22 +4,24 @@
 EU4::PopRatio::PopRatio(std::string _culture, std::string _religion):
 culture(std::move(_culture)), religion(std::move(_religion)){}
 
-void EU4::PopRatio::decay(float diffInYears, const PopRatio& currentPop)
+void EU4::PopRatio::decay(const float diffInYears, const double assimilationFactor)
 {
-	const auto upperNonCurrentRatio = 1 - currentPop.upperRatio;
-	const auto middleNonCurrentRatio = 1 - currentPop.middleRatio;
-	const auto lowerNonCurrentRatio = 1 - currentPop.lowerRatio;
+	// for standard factor 0.0025 ratio will decrease by 0.25% every year. It will never hit 0%
+	// for any assimilation factor but will progressively decrease at an ever-slower rate.
 
-	upperRatio -= std::min(.0025 * diffInYears * upperRatio / upperNonCurrentRatio, upperRatio);
-	middleRatio -= std::min(.0025 * diffInYears * middleRatio / middleNonCurrentRatio, middleRatio);
-	lowerRatio -= std::min(.0025 * diffInYears * lowerRatio / lowerNonCurrentRatio, lowerRatio);
+	upperRatio -= upperRatio * (1 - pow(1 - assimilationFactor, diffInYears));
+	middleRatio -= middleRatio * (1 - pow(1 - assimilationFactor, diffInYears));
+	lowerRatio -= lowerRatio * (1 - pow(1 - assimilationFactor, diffInYears));
 }
 
-void EU4::PopRatio::increase(float diffInYears)
+void EU4::PopRatio::increase(const float diffInYears, const double assimilationFactor)
 {
-	upperRatio += std::min(.0025 * diffInYears, 1 - upperRatio);
-	middleRatio += std::min(.0025 * diffInYears, 1 - middleRatio);
-	lowerRatio += std::min(.0025 * diffInYears, 1 - lowerRatio);
+	// for standard factor 0.0025 ratio will increase by 0.25% of the remainder every year. It will never hit 100%
+	// for any assimilation factor but will progressively increase at an ever-slower rate.
+	
+	upperRatio += (1 - upperRatio) * (1 - pow(1 - assimilationFactor, diffInYears));
+	middleRatio += (1 - middleRatio) * (1 - pow(1 - assimilationFactor, diffInYears));
+	lowerRatio += (1 - lowerRatio) * (1 - pow(1 - assimilationFactor, diffInYears));
 }
 
 void EU4::PopRatio::convertFrom()

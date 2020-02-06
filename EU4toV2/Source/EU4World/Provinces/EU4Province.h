@@ -10,6 +10,8 @@
 #include "../../Mappers/Buildings/Buildings.h"
 #include "../Modifiers/Modifiers.h"
 #include "newParser.h"
+#include "../../Mappers/SuperGroupMapper/SuperGroupMapper.h"
+#include "../Regions/Regions.h"
 
 namespace EU4
 {
@@ -26,6 +28,7 @@ namespace EU4
 		void setArea(const std::string& a) { areaName = a; }
 		void updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName, const std::string& superRegion)
 		{ provinceHistory.updatePopRatioCulture(oldCultureName, neoCultureName, superRegion); }
+		void buildPopRatio(const mappers::SuperGroupMapper& superGroupMapper, const Regions& regions);
 
 		[[nodiscard]] const auto& getArea() const { return areaName; }
 		[[nodiscard]] const auto& getName() const { return name; }

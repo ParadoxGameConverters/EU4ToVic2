@@ -93,7 +93,7 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 			commonItems::ignoreItem(unused, theStream);
 			hadOriginalColoniser = true;
 		});
-	registerKeyword("history", [this](const std::string& unused, std::istream& theStream) 
+	registerKeyword("history", [this](const std::string& unused, std::istream& theStream)
 		{
 			const ProvinceHistory theHistory(theStream);
 			provinceHistory = theHistory;
@@ -128,23 +128,32 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 	parseStream(theStream);
 	clearRegisteredKeywords();
 
+	num = 0 - stoi(numString);
+
 	if (!provinceHistory.hasInitializedHistory() && !culture.empty() && !religion.empty())
 	{
 		// recover from broken save data.
 		provinceHistory.setStartingCulture(culture);
 		provinceHistory.setStartingReligion(religion);
-		provinceHistory.buildPopRatios();
 	} // Else it's probably a blank province anyway.
 	
-	num = 0 - stoi(numString);
 
 	// for old versions of EU4 (< 1.12), copy tax to production if necessary
 	if (baseProduction == 0 && baseTax > 0)
 	{
 		baseProduction = baseTax;
 	}
-
 }
+
+void EU4::Province::buildPopRatio(const mappers::SuperGroupMapper& superGroupMapper, const Regions& regions)
+{
+	double assimilationFactor;
+	const auto& superRegionName = regions.getParentSuperRegionName(num);
+	if (superRegionName) assimilationFactor = superGroupMapper.getAssimilationFactor(*superRegionName);
+	else assimilationFactor = 0.0025;
+	provinceHistory.buildPopRatios(assimilationFactor);
+}
+
 
 bool EU4::Province::hasBuilding(const std::string& building) const
 {
