@@ -24,8 +24,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 #include "gtest/gtest.h"
 #include "../EU4toV2/Source/EU4World/Provinces/Provinces.h"
 #include "../EU4toV2/Source/Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "../EU4toV2/Source/Mappers/SuperGroupMapper/SuperGroupMapper.h"
-#include "../EU4toV2/Source/EU4World/Regions/Regions.h"
 #include <sstream>
 
 

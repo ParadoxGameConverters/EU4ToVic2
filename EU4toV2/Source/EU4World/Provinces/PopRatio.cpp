@@ -1,5 +1,6 @@
 #include "PopRatio.h"
 #include <algorithm>
+#include <cmath>
 
 EU4::PopRatio::PopRatio(std::string _culture, std::string _religion):
 culture(std::move(_culture)), religion(std::move(_religion)){}
