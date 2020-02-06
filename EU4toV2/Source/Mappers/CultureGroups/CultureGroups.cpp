@@ -50,7 +50,16 @@ void mappers::CultureGroups::registerKeys()
 		{
 			std::vector<Culture> cultures;
 			CultureGroup newGroup(cultureGroupName, theStream);
-			cultureGroupsMap.insert(std::make_pair(cultureGroupName, newGroup));
+			if (cultureGroupsMap.count(cultureGroupName))
+			{
+				// We would normally override base definitions with incoming CK2 ones, but CK2 definitions
+				// are crap and don't actually list all required cultures, so we have to merge.
+				for (const auto& cultureItr: newGroup.getCultures())
+				{
+					cultureGroupsMap[cultureGroupName].mergeCulture(cultureItr.first, cultureItr.second);
+				}				
+			}
+			else cultureGroupsMap.insert(std::make_pair(cultureGroupName, newGroup));
 		});
 }
 
@@ -116,7 +125,6 @@ void mappers::CultureGroups::importNeoCultures(const EU4::World& sourceWorld, co
 			v2Culture.transmogrify();
 
 			// and file under appropriate group.
-			Log(LogLevel::Debug) << " Filing neoculture " << eu4CultureIter.first << " generated from eu4's " << origeu4CultureName << " into " << *destV2cultureName << " in group " << destV2cultureGroup->getName();
 			destV2cultureGroup->addCulture(eu4CultureIter.first, v2Culture, eu4CultureIter.first);
 		}
 	}

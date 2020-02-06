@@ -18,6 +18,16 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 			const commonItems::singleString nameString(theStream);
 			name = nameString.getString();
 		});
+	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream) 
+		{
+			const commonItems::singleString cultureString(theStream);
+			culture = cultureString.getString();
+		});
+	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) 
+		{
+			const commonItems::singleString religionString(theStream);
+			religion = religionString.getString();
+		});
 	registerKeyword("base_tax", [this](const std::string& unused, std::istream& theStream) 
 		{
 			const commonItems::singleDouble baseTaxDouble(theStream);
@@ -118,6 +128,14 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 	parseStream(theStream);
 	clearRegisteredKeywords();
 
+	if (!provinceHistory.hasInitializedHistory() && !culture.empty() && !religion.empty())
+	{
+		// recover from broken save data.
+		provinceHistory.setStartingCulture(culture);
+		provinceHistory.setStartingReligion(religion);
+		provinceHistory.buildPopRatios();
+	} // Else it's probably a blank province anyway.
+	
 	num = 0 - stoi(numString);
 
 	// for old versions of EU4 (< 1.12), copy tax to production if necessary

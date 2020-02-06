@@ -211,8 +211,9 @@ void EU4::World::generateNeoCultures()
 		{
 			// Are we operating within native super region for this culture's pop ratio?
 			const auto& superRegionName = regions->getParentSuperRegionName(province.first);
+			if (!superRegionName) continue;
 			const auto currentCulture = popratio.getCulture();
-			if (nativeCultures[superRegionName].count(currentCulture)) continue;
+			if (nativeCultures[*superRegionName].count(currentCulture)) continue;
 
 			// Are we a neoculture? Bail if so.
 			if (!popratio.getOriginalCulture().empty()) continue;
@@ -226,10 +227,10 @@ void EU4::World::generateNeoCultures()
 				// For american, mexican, brazilian and similar, we'll merge them later with our neocultures through culture_maps.txt.
 				continue;
 			}
-			const auto& currentSuperGroup = superGroupMapper.getGroupForSuperRegion(superRegionName);
+			const auto& currentSuperGroup = superGroupMapper.getGroupForSuperRegion(*superRegionName);
 			if (!currentSuperGroup)
 			{
-				Log(LogLevel::Warning) << "Super-Region " << superRegionName << " has no defined super-group in worlds_supergroups.txt! Fix this!";
+				Log(LogLevel::Warning) << "Super-Region " << *superRegionName << " has no defined super-group in worlds_supergroups.txt! Fix this!";
 				continue;				
 			}
 			const auto& nativeSuperGroup = superGroupMapper.getGroupForSuperRegion(nativeSuperRegionName);
@@ -242,20 +243,19 @@ void EU4::World::generateNeoCultures()
 			
 			// Check global cache if we already did this pair.
 			std::string neoCulture;
-			const auto& genItr = generatedCultures.find(std::make_pair(currentCulture, superRegionName));
+			const auto& genItr = generatedCultures.find(std::make_pair(currentCulture, *superRegionName));
 			if (genItr == generatedCultures.end())
 			{
 				// We need to roll sleeves and get to work.
-				neoCulture = generateNeoCulture(superRegionName, currentCulture);
-				generatedCultures.insert(std::make_pair(std::make_pair(currentCulture, superRegionName), neoCulture));
+				neoCulture = generateNeoCulture(*superRegionName, currentCulture);
+				generatedCultures.insert(std::make_pair(std::make_pair(currentCulture, *superRegionName), neoCulture));
 			}
 			else
 			{
 				neoCulture = genItr->second;
 			}
 			// Now update the pop ratio.
-			province.second->updatePopRatioCulture(currentCulture, neoCulture, superRegionName);
-			Log(LogLevel::Debug) << "Province " << province.first << " " << province.second->getName() << " swapping " << currentCulture << " for " << neoCulture;
+			province.second->updatePopRatioCulture(currentCulture, neoCulture, *superRegionName);
 		}
 	}
 }
@@ -309,7 +309,7 @@ void EU4::World::catalogueNativeCultures()
 	{
 		if (province.second->getOriginalCulture().empty()) continue;
 		const auto& superRegionName = regions->getParentSuperRegionName(province.first);
-		nativeCultures[superRegionName].insert(province.second->getOriginalCulture());
+		if (superRegionName) nativeCultures[*superRegionName].insert(province.second->getOriginalCulture());
 	}
 }
 

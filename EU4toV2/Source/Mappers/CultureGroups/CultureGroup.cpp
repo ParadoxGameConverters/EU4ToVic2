@@ -58,9 +58,16 @@ mappers::CultureGroup::CultureGroup(std::string _name, std::istream& theStream):
 void mappers::CultureGroup::mergeCulture(const std::string& name, const Culture& culture)
 {
 	const auto& cultureItr = cultures.find(name);
-	cultureItr->second.addNameNames(culture.getMaleNames());
-	cultureItr->second.addFemaleNames(culture.getFemaleNames());
-	cultureItr->second.addDynastyNames(culture.getDynastyNames());
+	if (cultureItr != cultures.end())
+	{
+		cultureItr->second.addNameNames(culture.getMaleNames());
+		cultureItr->second.addFemaleNames(culture.getFemaleNames());
+		cultureItr->second.addDynastyNames(culture.getDynastyNames());		
+	}
+	else
+	{
+		cultures.insert(std::make_pair(name, culture));
+	}
 }
 
 void mappers::CultureGroup::addCulture(const std::string& name, const Culture& culture, const std::string& oldCulture)

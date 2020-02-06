@@ -112,6 +112,9 @@ bool EU4::ProvinceHistory::wasColonized() const
 
 void EU4::ProvinceHistory::buildPopRatios()
 {
+	// Don't build pop ratios for empty strings.
+	if (cultureHistory.empty() || religionHistory.empty()) return;
+	
 	auto endDate = theConfiguration.getLastEU4Date();
 	if (endDate > HARD_ENDING_DATE) endDate = HARD_ENDING_DATE;
 

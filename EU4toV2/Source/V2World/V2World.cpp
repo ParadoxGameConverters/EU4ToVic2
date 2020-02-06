@@ -93,48 +93,44 @@ void V2::World::transcribeNeoCultures()
 			seenCultures.insert(std::make_pair(seenNeoCulture, province.second->getSuperRegion()));
 		}		
 	}
-	Log(LogLevel::Debug) << "Seen cultures: " << seenCultures.size();
+	Log(LogLevel::Info) << "\tLocated " << seenCultures.size() << " new species.";
 	for (const auto& culture: seenCultures)
 	{
 		auto workString = culture.first;
 		// drop _culture
 		auto position = workString.find("_culture");
 		workString = workString.substr(0, position);
-		Log(LogLevel::Debug) << "ws1 : " << workString << " region: " << culture.second;
 
 		position = workString.find("_" + culture.second);
-		auto regionbit = culture.second;
-		Log(LogLevel::Debug) << "rbit : " << regionbit;
+		auto regionBit = culture.second;
 		auto cultureBit = workString.substr(0, position);
-		Log(LogLevel::Debug) << "region: " << regionbit << " culture " << cultureBit;
 
 		auto localizationLine = culture.first + ";";
 		auto incLoc = regionLocalizations.getEnglishFor(cultureBit);
 		if (incLoc) localizationLine += *incLoc + " ";
-		incLoc = regionLocalizations.getEnglishFor(regionbit + "_adj");
+		incLoc = regionLocalizations.getEnglishFor(regionBit + "_adj");
 		if (incLoc) localizationLine += *incLoc;
 		localizationLine += ";";
 
 		incLoc = regionLocalizations.getFrenchFor(cultureBit);
 		if (incLoc) localizationLine += *incLoc + " ";
-		incLoc = regionLocalizations.getFrenchFor(regionbit + "_adj");
+		incLoc = regionLocalizations.getFrenchFor(regionBit + "_adj");
 		if (incLoc) localizationLine += *incLoc;
 		localizationLine += ";";
 		
 		incLoc = regionLocalizations.getGermanFor(cultureBit);
 		if (incLoc) localizationLine += *incLoc + " ";
-		incLoc = regionLocalizations.getGermanFor(regionbit + "_adj");
+		incLoc = regionLocalizations.getGermanFor(regionBit + "_adj");
 		if (incLoc) localizationLine += *incLoc;
 		localizationLine += ";;";
 
 		incLoc = regionLocalizations.getSpanishFor(cultureBit);
 		if (incLoc) localizationLine += *incLoc + " ";
-		incLoc = regionLocalizations.getSpanishFor(regionbit + "_adj");
+		incLoc = regionLocalizations.getSpanishFor(regionBit + "_adj");
 		if (incLoc) localizationLine += *incLoc;
 		localizationLine += ";;;;;;;;;X";
 
 		neoCultureLocalizations.insert(localizationLine);
-		Log(LogLevel::Debug) << "Got line: " << localizationLine;
 	}
 }
 

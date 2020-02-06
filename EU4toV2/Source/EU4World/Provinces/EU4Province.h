@@ -71,6 +71,9 @@ namespace EU4
 		std::string	name;
 		std::string ownerString;
 		std::string controllerString;
+		std::string	culture;
+		std::string	religion;
+
 		std::set<std::string> cores;
 
 		bool inHRE = false;

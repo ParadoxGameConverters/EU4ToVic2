@@ -227,7 +227,6 @@ void V2::Province::determineDemographics(
 				if (!dstCulture)
 				{
 					// There is no overriding rule. We're good to force neoculture.
-					LOG(LogLevel::Debug) << "Province " << provinceID << " " << name << " Registering " << popRatio.getCulture() << " from " << popRatio.getOriginalCulture() << " within " << popRatio.getSuperRegion();
 					generatedNeoCultures.insert(popRatio.getCulture());
 					superRegion = popRatio.getSuperRegion();
 					dstCulture.emplace(popRatio.getCulture());
