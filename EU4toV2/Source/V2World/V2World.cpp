@@ -53,9 +53,6 @@ historicalData(sourceWorld.getHistoricalData())
 	LOG(LogLevel::Info) << "-> Cataloguing Invasive Fauna";
 	transcribeNeoCultures();
 
-	LOG(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
-	modifyPrimaryAndAcceptedCultures();
-
 	LOG(LogLevel::Info) << "-> Converting Diplomacy";
 	diplomacy.convertDiplomacy(sourceWorld.getDiplomaticAgreements(), countryMapper, countries);
 	LOG(LogLevel::Info) << "-> Setting Up Colonies";
@@ -70,6 +67,10 @@ historicalData(sourceWorld.getHistoricalData())
 	allocateFactories(sourceWorld);
 	LOG(LogLevel::Info) << "-> Distributing Pops";
 	setupPops(sourceWorld);
+
+	LOG(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
+	modifyPrimaryAndAcceptedCultures();
+
 	LOG(LogLevel::Info) << "-> Merging Nations";
 	addUnions();
 	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
@@ -99,14 +100,14 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 	// We're updating primary/accepted only for significant global population (>15%).
 	for (const auto& country: countries)
 	{
-		if (provinces.empty()) continue; // don't disturb the dead
+		if (country.second->getProvinces().empty()) continue; // don't disturb the dead
 		
 		std::map<std::string, long> census; //culture, population.
 		std::map<std::string, std::string> generatedNeoCultures; // orig culture, neoculture mapping
 
 		// for countries without neocultures, stop wasting time. 
 		// Yankees, americano or vinlander are NOT neocultures.
-		for (const auto& province: provinces)
+		for (const auto& province: country.second->getProvinces())
 		{
 			if (!province.second->getGeneratedNeoCultures().empty())
 			{
@@ -128,6 +129,12 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 				census[culture] += size;
 			}
 		}
+
+		for (const auto& drek: census)
+		{
+			Log(LogLevel::Debug) << country.second->getLocalName() << " census " << drek.first << " : " << drek.second;
+		}
+		
 		long totalPopulation = 0;
 		for (const auto& entry: census) totalPopulation += entry.second;
 
@@ -139,6 +146,7 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 		const auto& primIter = generatedNeoCultures.find(primEU4Culture);
 		if (primIter != generatedNeoCultures.end())
 		{
+			Log(LogLevel::Debug) << country.second->getLocalName() << " considering pairing: " << primIter->first << " " << primIter->second << " at census " << census[generatedNeoCultures[primEU4Culture]] << " vs " << census[primV2Culture];
 			// is this our primary population now? Do we have modified pops overwhelming unmodified ones?
 			if (census[generatedNeoCultures[primEU4Culture]] > census[primV2Culture])
 			{
