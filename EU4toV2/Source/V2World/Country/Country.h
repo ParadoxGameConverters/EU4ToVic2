@@ -103,6 +103,8 @@ namespace V2
 			double industryScore,
 			double commerceScore);
 		void setNationalValue(const std::string& nv) { details.nationalValue = nv; }
+		void setPrimaryCulture(const std::string& primary) { details.primaryCulture = primary; }
+		void setAcceptedCultures(const std::set<std::string>& accepted) { details.acceptedCultures = accepted; }
 
 		bool addFactory(std::shared_ptr<Factory> factory);
 		Relation& getRelation(const std::string& target);
@@ -127,6 +129,10 @@ namespace V2
 		[[nodiscard]] const auto& getReligion() const { return details.religion; }
 		[[nodiscard]] const auto& getLocalisation() const { return localisation; }
 		[[nodiscard]] const auto& getFilename() const { return details.filename; }
+		[[nodiscard]] const auto& getPrimaryCulture() const { return details.primaryCulture; }
+		[[nodiscard]] const auto& getEU4PrimaryCulture() const { return details.eu4PrimaryCulture; }
+		[[nodiscard]] const auto& getAcceptedCultures() const { return details.acceptedCultures; }
+		[[nodiscard]] const auto& getEU4AcceptedCultures() const { return details.eu4acceptedCultures; }
 
 		friend std::ostream& operator<<(std::ostream& output, const Country& country);
 		void outputCommons(std::ostream& output);

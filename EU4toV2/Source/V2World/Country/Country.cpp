@@ -216,6 +216,7 @@ void V2::Country::setPrimaryAndAcceptedCultures(const mappers::CultureMapper& cu
 	else
 	{
 		details.primaryCulture = *matched;
+		details.eu4PrimaryCulture = primCulture;
 	}
 
 	//accepted cultures
@@ -233,7 +234,11 @@ void V2::Country::setPrimaryAndAcceptedCultures(const mappers::CultureMapper& cu
 		const auto& dstCulture = cultureMapper.cultureMatch(eu4Regions, srcCulture, details.religion, oldCapital, srcCountry->getTag());
 		if (dstCulture)
 		{
-			if (details.primaryCulture != *dstCulture) details.acceptedCultures.insert(*dstCulture);
+			if (details.primaryCulture != *dstCulture)
+			{
+				details.acceptedCultures.insert(*dstCulture);
+				details.eu4acceptedCultures.insert(srcCulture);		
+			}
 		}
 		else
 		{

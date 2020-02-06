@@ -149,7 +149,7 @@ namespace V2
 		std::set<int> eu4IDs; // Source province IDs, fuzzy at best, use with care (might belong to whomever or be un-colonized).
 		std::set<std::string> importedBuildings;
 		std::set<std::string> importedIdeas;
-		std::set<std::string> generatedNeoCultures; // accounting storage.
+		std::map<std::string, std::string> generatedNeoCultures; // originalCulture->neoculture accounting storage.
 		std::string superRegion; // orientation issue.
 		std::map<REGIMENTTYPE, int> unitNameCount;
 		mappers::ProvinceDetails details;

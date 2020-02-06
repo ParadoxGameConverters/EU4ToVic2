@@ -118,6 +118,7 @@ namespace V2
 		void convertWars(const EU4::World& sourceWorld);
 		void transcribeHistoricalData();
 		void transcribeNeoCultures();
+		void modifyPrimaryAndAcceptedCultures();
 		
 		mappers::ProvinceMapper provinceMapper;
 		mappers::Continents continentsMapper;

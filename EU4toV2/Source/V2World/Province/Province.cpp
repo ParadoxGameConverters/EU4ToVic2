@@ -227,7 +227,7 @@ void V2::Province::determineDemographics(
 				if (!dstCulture)
 				{
 					// There is no overriding rule. We're good to force neoculture.
-					generatedNeoCultures.insert(popRatio.getCulture());
+					generatedNeoCultures.insert(std::make_pair(popRatio.getOriginalCulture(), popRatio.getCulture()));
 					superRegion = popRatio.getSuperRegion();
 					dstCulture.emplace(popRatio.getCulture());
 				}

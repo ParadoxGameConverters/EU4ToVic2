@@ -53,6 +53,9 @@ historicalData(sourceWorld.getHistoricalData())
 	LOG(LogLevel::Info) << "-> Cataloguing Invasive Fauna";
 	transcribeNeoCultures();
 
+	LOG(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
+	modifyPrimaryAndAcceptedCultures();
+
 	LOG(LogLevel::Info) << "-> Converting Diplomacy";
 	diplomacy.convertDiplomacy(sourceWorld.getDiplomaticAgreements(), countryMapper, countries);
 	LOG(LogLevel::Info) << "-> Setting Up Colonies";
@@ -82,6 +85,97 @@ historicalData(sourceWorld.getHistoricalData())
 	LOG(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
 
+void V2::World::modifyPrimaryAndAcceptedCultures()
+{
+	// Key to understanding - this entire function is relevant only for extreme edge cases
+	// where africans or other minority pops colonized new world and had neocultures generated
+	// in large numbers. All the other cultures that have proper mappings for new world
+	// will skip the majority of this process.
+	
+	// We're strolling through country provinces and registering how much of the
+	// population has been swapped with neocultures. This is a fuzzy process because
+	// multiple cultures mutate into single neoculture and only in some places, in others
+	// they can transform into different base vic2 cultures.
+	// We're updating primary/accepted only for significant global population (>15%).
+	for (const auto& country: countries)
+	{
+		if (provinces.empty()) continue; // don't disturb the dead
+		
+		std::map<std::string, long> census; //culture, population.
+		std::map<std::string, std::string> generatedNeoCultures; // orig culture, neoculture mapping
+
+		// for countries without neocultures, stop wasting time. 
+		// Yankees, americano or vinlander are NOT neocultures.
+		for (const auto& province: provinces)
+		{
+			if (!province.second->getGeneratedNeoCultures().empty())
+			{
+				auto tempCultures = province.second->getGeneratedNeoCultures();
+				generatedNeoCultures.insert(tempCultures.begin(), tempCultures.end());
+			}
+		}
+		if (generatedNeoCultures.empty()) continue;
+
+		// do a census
+		for (const auto& province: country.second->getProvinces())
+		{
+			const auto& pops = province.second->getPopsForOutput();
+			if (!pops) continue;
+			for (const auto& pop: pops->second)
+			{
+				const auto culture = pop->getCulture();
+				const auto size = pop->getSize();
+				census[culture] += size;
+			}
+		}
+		long totalPopulation = 0;
+		for (const auto& entry: census) totalPopulation += entry.second;
+
+		// Was any of the original eu4 cultures that mutated a source for our current prim/acc cultures?
+		auto primEU4Culture = country.second->getEU4PrimaryCulture();
+		auto primV2Culture = country.second->getPrimaryCulture();
+		auto accV2Cultures = country.second->getAcceptedCultures();
+
+		const auto& primIter = generatedNeoCultures.find(primEU4Culture);
+		if (primIter != generatedNeoCultures.end())
+		{
+			// is this our primary population now? Do we have modified pops overwhelming unmodified ones?
+			if (census[generatedNeoCultures[primEU4Culture]] > census[primV2Culture])
+			{
+				// accept the reality of change.
+				Log(LogLevel::Debug) << country.second->getLocalName() << " primary culture is now: " << generatedNeoCultures[primEU4Culture] << " replacing " << primV2Culture;
+				accV2Cultures.insert(primV2Culture);
+				primV2Culture = generatedNeoCultures[primEU4Culture];
+			}
+			else if (census[generatedNeoCultures[primEU4Culture]] > 0.15 * totalPopulation)
+			{
+				// Well, at least it's an accepted culture now. This is very possible if the motherland
+				// assimilated a small colony on conversion.
+				Log(LogLevel::Debug) << country.second->getLocalName() << " has a new accepted culture (ex primary): " << generatedNeoCultures[primEU4Culture] << " " << census[generatedNeoCultures[primEU4Culture]] << "/" << 0.15 * totalPopulation;
+				accV2Cultures.insert(generatedNeoCultures[primEU4Culture]);
+			}
+		}
+		// Onto accepted cultures. This is simpler because we only add, no need to remove source cultures;
+		// This is essentially adding texans, americano or italoamericano to accepted cultures in usa.
+		for (const auto& entry: census)
+		{
+			for (const auto& genCulture: generatedNeoCultures)
+			{
+				if (entry.first == genCulture.second) // this is a neoculture.
+				{					
+					if (entry.second > 0.15 * totalPopulation)
+					{
+						Log(LogLevel::Debug) << country.second->getLocalName() << " has a new accepted culture: " << entry.first << " " << entry.second << "/" << 0.15 * totalPopulation;
+						accV2Cultures.insert(entry.first);
+					}
+				}
+			}
+		}
+		country.second->setPrimaryCulture(primV2Culture);
+		country.second->setAcceptedCultures(accV2Cultures);
+	}
+}
+
 void V2::World::transcribeNeoCultures()
 {
 	std::map<std::string, std::string> seenCultures;
@@ -90,7 +184,7 @@ void V2::World::transcribeNeoCultures()
 		auto seenNeoCultures = province.second->getGeneratedNeoCultures();
 		for (const auto& seenNeoCulture: seenNeoCultures)
 		{
-			seenCultures.insert(std::make_pair(seenNeoCulture, province.second->getSuperRegion()));
+			seenCultures.insert(std::make_pair(seenNeoCulture.second, province.second->getSuperRegion()));
 		}		
 	}
 	Log(LogLevel::Info) << "\tLocated " << seenCultures.size() << " new species.";
