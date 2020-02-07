@@ -279,21 +279,6 @@ TEST(EU4World_ProvinceTests, popRatiosDefaultToEmpty)
 }
 
 
-TEST(EU4World_ProvinceTests, popRatiosCanBeAdded)
-{
-	std::stringstream input;
-	input << "={\n";
-	input << "	history={\n";
-	input << "		culture=theCulture\n";
-	input << "		religion=theReligion\n";
-	input << "	}\n";
-	input << "}";
-
-	EU4::Province theProvince("-1", input);
-	ASSERT_EQ(theProvince.getPopRatios().size(), 1);
-}
-
-
 TEST(EU4World_ProvinceTests, getFirstOwnedDateDefaultsToEmpty)
 {
 	std::stringstream input;
@@ -406,46 +391,3 @@ TEST(EU4World_ProvinceTests, hasModifierFindsModifiers)
 	ASSERT_TRUE(theProvince.hasModifier("center_of_trade_modifier"));
 }
 
-
-TEST(EU4World_ProvinceTests, getCulturePercentDefaultsToZero)
-{
-	std::stringstream input;
-	input << "={\n";
-	input << "}";
-
-	EU4::Province theProvince("-1", input);
-	ASSERT_EQ(theProvince.getCulturePercent("theCulture"), 0.0);
-}
-
-
-TEST(EU4World_ProvinceTests, getCulturePercentCanFullyMatch)
-{
-	std::stringstream input;
-	input << "={\n";
-	input << "	history={\n";
-	input << "		culture = theCulture\n";
-	input << "		religion=theReligion\n";
-	input << "	}\n";
-	input << "}";
-
-	EU4::Province theProvince("-1", input);
-	ASSERT_EQ(theProvince.getCulturePercent("theCulture"), 1.0);
-}
-
-
-TEST(EU4World_ProvinceTests, getCulturePercentDeterminedByHistory)
-{
-	std::stringstream input;
-	input << "={\n";
-	input << "	history={\n";
-	input << "		culture=theCulture\n";
-	input << "		religion=theReligion\n";
-	input << "		1636.1.1={\n";
-	input << "			culture=newCulture\n";
-	input << "		}\n";
-	input << "	}\n";
-	input << "}";
-
-	EU4::Province theProvince("-1", input);
-	ASSERT_EQ(theProvince.getCulturePercent("theCulture"), 0.5);
-}

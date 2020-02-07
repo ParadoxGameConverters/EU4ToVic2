@@ -72,19 +72,17 @@ TEST(Helpers_TechValuesTests, validCountryForTechConversionIfAllChecksPass)
 
 
 
-TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithNoCountries)
+TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsNegativeOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-
-	helpers::TechValues techValues(countries);
 
 	mockEU4Country country;
 	EXPECT_CALL(country, getAdmTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getMilTech).WillOnce(testing::Return(32));
-	std::set<std::string> nationalIdeas;
-	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedArmyTech(country), 1.0);
+	helpers::TechValues techValues(countries);
+
+	ASSERT_EQ(techValues.getNormalizedArmyTech(country), -1.0);
 }
 
 
@@ -94,6 +92,11 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithOn
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
+	EXPECT_CALL(*country, getArmy).WillRepeatedly(testing::Return(0));
+	EXPECT_CALL(*country, getNavy).WillRepeatedly(testing::Return(0));
+	EXPECT_CALL(*country, getCommerce).WillRepeatedly(testing::Return(0));
+	EXPECT_CALL(*country, getIndustry).WillRepeatedly(testing::Return(0));
+	EXPECT_CALL(*country, getCulture).WillRepeatedly(testing::Return(0));
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
@@ -213,7 +216,7 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsScaledScore)
 }
 
 
-TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithNoCountries)
+TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsNegativeOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
 
@@ -222,10 +225,8 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithNo
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getMilTech).WillOnce(testing::Return(32));
-	std::set<std::string> nationalIdeas;
-	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedNavyTech(country), 1.0);
+	ASSERT_EQ(techValues.getNormalizedNavyTech(country), -1.0);
 }
 
 
@@ -354,7 +355,7 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsScaledScore)
 }
 
 
-TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWithNoCountries)
+TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsNegativeOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
 	helpers::TechValues techValues(countries);
@@ -362,10 +363,8 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWi
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getAdmTech).WillOnce(testing::Return(32));
-	std::set<std::string> nationalIdeas;
-	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedCommerceTech(country), 1.0);
+	ASSERT_EQ(techValues.getNormalizedCommerceTech(country), -1.0);
 }
 
 
@@ -494,7 +493,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsScaledScore)
 }
 
 
-TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWithNoCountries)
+TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsNegativeOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
 
@@ -502,10 +501,8 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWit
 
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
-	std::set<std::string> nationalIdeas;
-	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedCultureTech(country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedCultureTech(country), -1.0);
 }
 
 
@@ -634,7 +631,7 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsScaledScore)
 }
 
 
-TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWithNoCountries)
+TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsNegativeOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
 
@@ -644,10 +641,8 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWi
 	EXPECT_CALL(country, getAdmTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getMilTech).WillOnce(testing::Return(32));
-	std::set<std::string> nationalIdeas;
-	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedIndustryTech(country), 1.0);
+	ASSERT_EQ(techValues.getNormalizedIndustryTech(country), -1.0);
 }
 
 
