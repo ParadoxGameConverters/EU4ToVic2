@@ -34,7 +34,11 @@ std::string mappers::TechSchoolMapper::findBestTechSchool(
 	double industryInvestment,
 	double navyInvestment) const
 {
-	const double totalInvestment = armyInvestment + navyInvestment + commerceInvestment + industryInvestment + cultureInvestment;
+	std::string bestSchool = "traditional_academic";
+
+	const auto totalInvestment = armyInvestment + navyInvestment + commerceInvestment + industryInvestment + cultureInvestment;
+	if (totalInvestment == 0) return bestSchool;
+
 	armyInvestment /= totalInvestment;
 	navyInvestment /= totalInvestment;
 	commerceInvestment /= totalInvestment;
@@ -42,7 +46,6 @@ std::string mappers::TechSchoolMapper::findBestTechSchool(
 	cultureInvestment /= totalInvestment;
 
 	auto lowestScore = 1.0;
-	std::string bestSchool = "traditional_academic";
 
 	for (const auto& techSchool : techSchools)
 	{
