@@ -111,7 +111,7 @@ EU4::Country::Country(
 			if (theVersion < Version("1.7.0.0"))
 			{
 				const commonItems::singleString cultureGroup(theStream);
-				culturalUnion = cultureGroupsMapper.getCulturalGroup(cultureGroup.getString());
+				culturalUnion = cultureGroupsMapper.getGroupForCulture(cultureGroup.getString());
 			}
 			else
 			{
@@ -306,7 +306,7 @@ void EU4::Country::determineCulturalUnion(const mappers::CultureGroups& cultureG
 {
 	if (development >= 1000 || governmentRank > 2)
 	{
-		culturalUnion = cultureGroupsMapper.getCulturalGroup(primaryCulture);
+		culturalUnion = cultureGroupsMapper.getGroupForCulture(primaryCulture);
 	}
 }
 

@@ -1348,7 +1348,7 @@ political_decisions = {
 					tag = BLZ
 					NOT = { exists = BLZ }
 				}
-				primary_culture = texan
+				primary_culture = meashighcaw
 				religion = protestant
 				government = democracy
 				civilized = yes
@@ -3261,7 +3261,7 @@ political_decisions = {
 					tag = MSK 
 					NOT = { exists = MSK   }
 				}
-				primary_culture = texan 
+				primary_culture = meashighcaw 
 				religion = catholic 
 				government = presidential_dictatorship 
 				civilized = yes

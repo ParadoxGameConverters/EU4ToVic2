@@ -119,6 +119,8 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 
 	registerRegex("[A-Za-z0-9\\_]+", commonItems::ignoreItem);
 
+	superGroupMapper.init();
+
 	LOG(LogLevel::Info) << "-> Verifying EU4 save.";
 	verifySave();
 
@@ -136,6 +138,8 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	}
 	
 	clearRegisteredKeywords();
+
+	cultureGroupsMapper.initForEU4();
 
 	LOG(LogLevel::Info) << "*** Building world ***";
 	LOG(LogLevel::Info) << "-> Loading Empires";
@@ -155,6 +159,15 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 
 	LOG(LogLevel::Info) << "-> Loading Regions";
 	loadRegions();
+	
+	LOG(LogLevel::Info) << "-> Determining Demographics";
+	buildPopRatios();
+	
+	LOG(LogLevel::Info) << "-> Cataloguing Native Fauna";
+	catalogueNativeCultures();
+
+	LOG(LogLevel::Info) << "-> Clasifying Invasive Fauna";
+	generateNeoCultures();
 
 	LOG(LogLevel::Info) << "-> Reading Countries";
 	readCommonCountries();
@@ -193,6 +206,124 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		removeLandlessNations();
 	}
 	LOG(LogLevel::Info) << "*** Good-bye EU4, you served us well. ***";
+}
+
+void EU4::World::buildPopRatios() const
+{
+	for (const auto& province: provinces->getAllProvinces())
+	{
+		province.second->buildPopRatio(superGroupMapper, *regions);
+	}
+}
+
+void EU4::World::generateNeoCultures()
+{
+	for (const auto& province : provinces->getAllProvinces())
+	{
+		for (const auto& popratio: province.second->getPopRatios())
+		{
+			// Are we operating within native super region for this culture's pop ratio?
+			const auto& superRegionName = regions->getParentSuperRegionName(province.first);
+			if (!superRegionName) continue;
+			const auto& currentCulture = popratio.getCulture();
+			if (nativeCultures[*superRegionName].count(currentCulture)) continue;
+
+			// Are we a neoculture? Bail if so.
+			if (!popratio.getOriginalCulture().empty()) continue;
+			
+			// Are we within the supergroup? Find out where that culture is native.
+			std::string nativeSuperRegionName;
+			for (const auto& nativeRegion: nativeCultures) if (nativeRegion.second.count(currentCulture)) nativeSuperRegionName = nativeRegion.first;
+			if (nativeSuperRegionName.empty())
+			{
+				// This is not unusual. Oromo appear later and are not relevant to us.
+				// For eu4's american, mexican, brazilian and similar, we'll merge them later with our neocultures through culture_maps.txt.
+				continue;
+			}
+			const auto& currentSuperGroup = superGroupMapper.getGroupForSuperRegion(*superRegionName);
+			if (!currentSuperGroup)
+			{
+				Log(LogLevel::Warning) << "Super-Region " << *superRegionName << " has no defined super-group in worlds_supergroups.txt! Fix this!";
+				continue;				
+			}
+			const auto& nativeSuperGroup = superGroupMapper.getGroupForSuperRegion(nativeSuperRegionName);
+			if (!nativeSuperGroup)
+			{
+				Log(LogLevel::Warning) << "Super-Region " << nativeSuperRegionName << " has no defined super-group in worlds_supergroups.txt! Fix this!";
+				continue;				
+			}
+			if (*nativeSuperGroup == *currentSuperGroup) continue; // Do not mutate within the same super group.
+			
+			// Check global cache if we already did this pair.
+			std::string neoCulture;
+			const auto& genItr = generatedCultures.find(std::make_pair(currentCulture, *superRegionName));
+			if (genItr == generatedCultures.end())
+			{
+				// We need to roll sleeves and get to work.
+				neoCulture = generateNeoCulture(*superRegionName, currentCulture);
+				generatedCultures.insert(std::make_pair(std::make_pair(currentCulture, *superRegionName), neoCulture));
+			}
+			else
+			{
+				neoCulture = genItr->second;
+			}
+			// Now update the pop ratio.
+			province.second->updatePopRatioCulture(currentCulture, neoCulture, *superRegionName);
+		}
+	}
+}
+
+std::string EU4::World::generateNeoCulture(const std::string& superRegionName, const std::string& oldCultureName)
+{
+	// pull culture group name
+	const auto& cultureGroupOpt = cultureGroupsMapper.getGroupForCulture(oldCultureName);
+	if (!cultureGroupOpt)
+	{
+		// Bail gracefully.
+		Log(LogLevel::Warning) << "Culture " << oldCultureName << " has no culture group defined! This should not happen!";
+		return oldCultureName;
+	}
+
+	// This is the new culture name.
+	const auto neoCultureName = cultureGroupOpt->getName() + "_" + superRegionName + "_culture";
+
+	// Grab culture definitions.
+	const auto& cultureItr = cultureGroupOpt->getCultures().find(oldCultureName);
+	if (cultureItr == cultureGroupOpt->getCultures().end())
+	{
+		// what is going in in there?
+		Log(LogLevel::Warning) << "Culture " << oldCultureName << " has no culture definitions! This should not happen!";
+		return oldCultureName;
+	}
+	auto neoCulture = cultureItr->second;
+	
+	// Ditch cultureGroupOpt and grab the editable version.
+	auto cultureGroup = cultureGroupsMapper.retrieveCultureGroup(oldCultureName);
+
+	// We may already have this neoCulture registered (generated by another culture within the same group).
+	const auto& neoCultureItr = cultureGroupOpt->getCultures().find(neoCultureName);
+	if (neoCultureItr == cultureGroupOpt->getCultures().end())
+	{
+		// We're golden. Register neoCulture.
+		cultureGroup->addNeoCulture(neoCultureName, neoCulture, oldCultureName);
+	}
+	else
+	{
+		// We need to append this culture's names on top the existing ones.
+		cultureGroup->mergeCulture(neoCultureName, neoCulture);
+	}
+	
+	return neoCultureName;
+}
+
+void EU4::World::catalogueNativeCultures()
+{
+	for (const auto& province: provinces->getAllProvinces())
+	{
+		if (province.second->getOriginalCulture().empty()) continue;
+		const auto& superRegionName = regions->getParentSuperRegionName(province.first);
+		if (superRegionName) nativeCultures[*superRegionName].insert(province.second->getOriginalCulture());
+	}
 }
 
 void EU4::World::fillHistoricalData()

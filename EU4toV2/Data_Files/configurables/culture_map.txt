@@ -79,9 +79,8 @@ link = { vic2 = anglo_canadian eu4 = english eu4 = american eu4 = irish eu4 = ga
 link = { vic2 = anglo_canadian eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = cascadia_region }
 link = { vic2 = australian eu4 = english eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = australia_region }
 link = { vic2 = australian eu4 = english eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = oceania_superregion }
-link = { vic2 = texan eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = central_america_region }
-link = { vic2 = texan eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = mexico_region }
-link = { vic2 = texan eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = california_region }
+link = { vic2 = texan eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = rio_grande_region region = mexico_region region = california_region }
+link = { vic2 = meashighcaw eu4 = english eu4 = american eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = central_america_superregion }
 link = { vic2 = falklander eu4 = english eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = south_america_superregion }
 link = { vic2 = anglo_african eu4 = english eu4 = irish eu4 = gaul eu4 = welsh eu4 = cornish eu4 = anglo_saxon eu4 = scottish eu4 = orkney eu4 = shetland eu4 = highland_scottish eu4 = gaelic_scottish eu4 = pictish region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = yankee eu4 = american }
@@ -172,23 +171,20 @@ link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = apulia_area
 link = { vic2 = all_italian eu4 = dalmatian eu4 = italian }
 
 # Iberian - castillian, catalan, galician, andalucian, portugese
-#Sidenote: Andalusian/Mozarabic can switch to Spanish if catholic, viceversa for Muslim spaniards
-link = { vic2 = spanish eu4 = andalucian religion = catholic religion = cathar religion = fraticelli religion = waldensian religion = lollard religion = catholic_heresy religion = arian religion = protestant religion = protestant_heresy religion = orthodox religion = bogomilist religion = monothelite religion = iconoclast religion = paulician religion = orthodox_heresy religion = coptic religion = monophysite religion = nestorian religion = messalian }
-link = { vic2 = andalucian eu4 = castillian eu4 = leonese religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 #Normal Spaniards
-link = { vic2 = mexican eu4 = brazilian eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = mexico_region }
-link = { vic2 = caribeno eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = carribeans_region }
-link = { vic2 = platinean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = la_plata_region }
-link = { vic2 = north_andean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = colombia_region }
-link = { vic2 = south_andean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = upper_peru_region }
-link = { vic2 = south_andean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = peru_region }
-link = { vic2 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = brazil_region }
-link = { vic2 = central_american eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = central_america_region }
-link = { vic2 = americano eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = south_america_superregion }
-link = { vic2 = americano eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = north_america_superregion }
-link = { vic2 = americano eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = central_america_superregion }
-link = { vic2 = sureno eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = oceania_superregion }
-link = { vic2 = morado eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+link = { vic2 = mexican eu4 = brazilian eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = mexico_region }
+link = { vic2 = caribeno eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = carribeans_region }
+link = { vic2 = platinean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = la_plata_region }
+link = { vic2 = north_andean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = colombia_region }
+link = { vic2 = south_andean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = upper_peru_region }
+link = { vic2 = south_andean eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = peru_region }
+link = { vic2 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = brazil_region }
+link = { vic2 = central_american eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = central_america_region }
+link = { vic2 = americano eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = south_america_superregion }
+link = { vic2 = americano eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = north_america_superregion }
+link = { vic2 = americano eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = central_america_superregion }
+link = { vic2 = sureno eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = oceania_superregion }
+link = { vic2 = morado eu4 = brazilian eu4 = mexican eu4 = visigothic eu4 = castillian eu4 = basque eu4 = leonese eu4 = catalan eu4 = aragonese eu4 = portugese eu4 = galician eu4 = suebi eu4 = andalucian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = visigothic eu4 = visigothic }
 link = { vic2 = spanish eu4 = castillian eu4 = leonese }
 link = { vic2 = galician eu4 = galician }
@@ -199,6 +195,9 @@ link = { vic2 = suebi eu4 = suebi }
 link = { vic2 = andalucian eu4 = andalucian }
 link = { vic2 = mexican eu4 = mexican }
 link = { vic2 = brazilian eu4 = brazilian }
+#Sidenote: Andalusian/Mozarabic can switch to Spanish if catholic, viceversa for Muslim spaniards
+link = { vic2 = spanish eu4 = andalucian religion = catholic religion = cathar religion = fraticelli religion = waldensian religion = lollard religion = catholic_heresy religion = arian religion = protestant religion = protestant_heresy religion = orthodox religion = bogomilist religion = monothelite religion = iconoclast religion = paulician religion = orthodox_heresy religion = coptic religion = monophysite religion = nestorian religion = messalian }
+link = { vic2 = andalucian eu4 = castillian eu4 = leonese religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 
 # French - cosmopolitan_french, gascon, normand, aquitaine, burgundian, occitain, wallonian
 link = { vic2 = french_canadian eu4 = outremer eu4 = cosmopolitan_french eu4 = gascon eu4 = normand eu4 = aquitaine eu4 = burgundian eu4 = occitain eu4 = breton region = northeast_america_region }

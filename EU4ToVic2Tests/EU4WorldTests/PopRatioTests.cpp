@@ -46,13 +46,11 @@ TEST(EU4World_PopRatioTests, decayIsByOneQuarterPercentPerYear)
 
 	EU4::PopRatio theRatio("theCulture", "theReligion");
 	theRatio.convertFrom();
-	EU4::PopRatio newRatio("newCulture", "newReligion");
-	newRatio.convertTo("newerCulture", "newerReligion");
-	theRatio.decay(100.0, newRatio);
+	theRatio.decay(1, 0.0025);
 
-	ASSERT_EQ(theRatio.getUpperRatio(), 0.25);
-	ASSERT_EQ(theRatio.getMiddleRatio(), 0.25);
-	ASSERT_EQ(theRatio.getLowerRatio(), 0.75);
+	ASSERT_NEAR(theRatio.getUpperRatio(), 0.49875, 0.0001);
+	ASSERT_NEAR(theRatio.getMiddleRatio(), 0.49875, 0.0001);
+	ASSERT_NEAR(theRatio.getLowerRatio(), 0.9975, 0.0001);
 }
 
 
@@ -62,11 +60,11 @@ TEST(EU4World_PopRatioTests, increaseIsByOneQuarterPercentPerYear)
 
 	EU4::PopRatio theRatio("theCulture", "theReligion");
 	theRatio.convertTo("newCulture", "newReligion");
-	theRatio.increase(100.0);
+	theRatio.increase(1, 0.0025);
 
-	ASSERT_EQ(theRatio.getUpperRatio(), 0.75);
-	ASSERT_EQ(theRatio.getMiddleRatio(), 0.75);
-	ASSERT_EQ(theRatio.getLowerRatio(), 0.25);
+	ASSERT_NEAR(theRatio.getUpperRatio(), 0.50125, 0.0001);
+	ASSERT_NEAR(theRatio.getMiddleRatio(), 0.50125, 0.0001);
+	ASSERT_NEAR(theRatio.getLowerRatio(), 0.0025, 0.0001);
 }
 
 

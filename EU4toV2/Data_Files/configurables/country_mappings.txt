@@ -1091,7 +1091,7 @@ link = { EU4 = AVA Vic2 = AVA } # Ava
 link = { EU4 = HSE Vic2 = HSE } # Hsenwi
 link = { EU4 = JOH Vic2 = JOH } # Johor
 link = { EU4 = KED Vic2 = KED } # Kedah
-link = { EU4 = LIG Vic2 = LIG } # Ligor
+link = { EU4 = LIG Vic2 = LGO } # Ligor
 link = { EU4 = MPH Vic2 = MPH } # Muan Phuang
 link = { EU4 = MYA Vic2 = MYA } # Mong Yang
 link = { EU4 = PRK Vic2 = PRK } # Perak

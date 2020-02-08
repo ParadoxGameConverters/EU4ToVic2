@@ -1,5 +1,6 @@
 #include "Regions.h"
 #include "Areas.h"
+#include "Log.h"
 
 EU4::Regions::Regions(const SuperRegions& sRegions, const Areas& areas, std::istream& regionsFile)
 {
@@ -55,6 +56,42 @@ bool EU4::Regions::provinceInRegion(int province, const std::string& regionName)
 	}
 
 	return false;
+}
+
+std::optional<std::string> EU4::Regions::getParentAreaName(const int provinceID) const
+{	
+	for (const auto& region: regions)
+	{
+		for (const auto& areaName: region.second.getAreaNames())
+		{
+			if (region.second.areaContainsProvince(areaName, provinceID)) return areaName;
+		}
+	}
+	Log(LogLevel::Warning) << "Province ID " + std::to_string(provinceID) + " has no parent area name! (Area mismatch? Using newer EU4 version to convert older save?)";
+	return std::nullopt;
+}
+
+std::optional<std::string> EU4::Regions::getParentRegionName(const int provinceID) const
+{	
+	for (const auto& region: regions)
+	{
+		if (region.second.regionContainsProvince(provinceID)) return region.first;
+	}
+	Log(LogLevel::Warning) << "Province ID " + std::to_string(provinceID) + " has no parent region name! (Area mismatch? Using newer EU4 version to convert older save?)";
+	return std::nullopt;
+}
+
+std::optional<std::string> EU4::Regions::getParentSuperRegionName(const int provinceID) const
+{	
+	for (const auto& superRegion: superRegions)
+	{
+		for (const auto& regionalName: superRegion.second)
+		{
+			const auto& regionalItr = regions.find(regionalName);
+			if (regionalItr != regions.end()) if (regionalItr->second.regionContainsProvince(provinceID)) return superRegion.first;
+		}
+	}
+	return std::nullopt;
 }
 
 bool EU4::Regions::regionIsValid(const std::string& regionName) const

@@ -66,9 +66,9 @@ namespace EU4
 		[[nodiscard]] auto getScore() const { return score; }
 		[[nodiscard]] auto getStability() const { return stability; }
 		[[nodiscard]] auto getAverageAutonomy() const { return averageAutonomy; }
-		[[nodiscard]] auto getAdmTech() const { return admTech; }
-		[[nodiscard]] auto getDipTech() const { return dipTech; }
-		[[nodiscard]] auto getMilTech() const { return milTech; }
+		[[nodiscard]] virtual double getAdmTech() const { return admTech; }
+		[[nodiscard]] virtual double getDipTech() const { return dipTech; }
+		[[nodiscard]] virtual double getMilTech() const { return milTech; }
 		[[nodiscard]] auto getArmy() const { return army; }
 		[[nodiscard]] auto getNavy() const { return navy; }
 		[[nodiscard]] auto getCommerce() const { return commerce; }
@@ -102,7 +102,7 @@ namespace EU4
 		[[nodiscard]] const auto& getRelations() const { return relations; }
 		[[nodiscard]] const auto& getArmies() const { return armies; }
 		[[nodiscard]] const auto& getColonialRegion() const { return colonialRegion; }
-		[[nodiscard]] const auto& getNationalIdeas() const { return nationalIdeas; }
+		[[nodiscard]] virtual const std::set<std::string>& getNationalIdeas() const { return nationalIdeas; }
 		[[nodiscard]] const auto& getHistoricalLeaders() const { return historicalLeaders; }
 		[[nodiscard]] const auto& getMilitaryLeaders() const { return militaryLeaders; }
 		[[nodiscard]] const auto& getHistoricalEntry() const { return historicalEntry; }

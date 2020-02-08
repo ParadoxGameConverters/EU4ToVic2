@@ -34,9 +34,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
+    <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -88,7 +88,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
@@ -97,6 +97,9 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>../common_items;../googletest/googletest;../googletest/googletest/include;../googletest/googlemock;../googletest/googlemock/include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -115,7 +118,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>../common_items;../googletest/googletest;../googletest/googletest/include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../common_items;../googletest/googletest;../googletest/googletest/include;../googletest/googlemock;../googletest/googlemock/include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -204,6 +207,9 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\StateMapper\StateMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\Assimilation.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\SuperGroupMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\SuperRegion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchool.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchoolMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchools.cpp" />

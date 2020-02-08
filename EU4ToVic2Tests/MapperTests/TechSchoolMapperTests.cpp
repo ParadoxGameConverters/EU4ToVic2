@@ -41,32 +41,6 @@ TEST(Mappers_TechSchoolMapperTests, InvestmentchangesTechSchool)
 }
 
 
-TEST(Mappers_TechSchoolMapperTests, PrussianTechSchoolBlocked)
-{
-	std::stringstream techSchoolsInput("schools = {\
-	traditional_academic = \
-	{\
-		army_tech_research_bonus = 0\
-		commerce_tech_research_bonus = 0\
-		culture_tech_research_bonus = 0\
-		industry_tech_research_bonus = 0\
-		navy_tech_research_bonus = 0\
-	}\
-	prussian_tech_school = {\
-		army_tech_research_bonus = 0.15\
-		commerce_tech_research_bonus = 0\
-		culture_tech_research_bonus = 0.05\
-		industry_tech_research_bonus = 0.15\
-		navy_tech_research_bonus = -0.15\
-		unciv_economic_modifier = -0.05\
-		unciv_military_modifier = -0.15\
-	}}");
-	mappers::TechSchoolMapper newTechSchools(techSchoolsInput);
-
-	ASSERT_NE(std::string("prussian_tech_school"), newTechSchools.findBestTechSchool(1.0, 0.1, 0.1, 1.0, 0.1));
-}
-
-
 TEST(Mappers_TechSchoolMapperTests, NoInvestmentDoesntCrash)
 {
 	std::stringstream techSchoolsInput("schools = {\

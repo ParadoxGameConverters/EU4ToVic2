@@ -10,6 +10,8 @@
 #include "../../Mappers/Buildings/Buildings.h"
 #include "../Modifiers/Modifiers.h"
 #include "newParser.h"
+#include "../../Mappers/SuperGroupMapper/SuperGroupMapper.h"
+#include "../Regions/Regions.h"
 
 namespace EU4
 {
@@ -24,11 +26,15 @@ namespace EU4
 		void setControllerString(const std::string& _controller) { controllerString = _controller; }
 		void setTradeGoodPrice(double price) { tradeGoodsPrice = price; }
 		void setArea(const std::string& a) { areaName = a; }
+		void updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName, const std::string& superRegion)
+		{ provinceHistory.updatePopRatioCulture(oldCultureName, neoCultureName, superRegion); }
+		void buildPopRatio(const mappers::SuperGroupMapper& superGroupMapper, const Regions& regions);
 
 		[[nodiscard]] const auto& getArea() const { return areaName; }
 		[[nodiscard]] const auto& getName() const { return name; }
 		[[nodiscard]] const auto& getOwnerString() const { return ownerString; }
 		[[nodiscard]] const auto& getControllerString() const { return controllerString; }
+		[[nodiscard]] const auto& getOriginalCulture() const { return provinceHistory.getOriginalCulture(); }
 		[[nodiscard]] auto getNum() const { return num; }
 		[[nodiscard]] auto inHre() const { return inHRE; }
 		[[nodiscard]] auto isTerritorialCore() const { return territorialCore; }
@@ -51,7 +57,7 @@ namespace EU4
 
 		[[nodiscard]] const auto& getProvinceStats() const { return provinceStats; }
 		[[nodiscard]] const auto& getCores() const { return cores; }
-		[[nodiscard]] const auto& getPopRatios() const { return provinceHistory.getPopRatios(); }
+		[[nodiscard]] auto& getPopRatios() { return provinceHistory.getPopRatios(); }
 		[[nodiscard]] const auto& exportBuildings() const { return buildings.getBuildings(); }
 
 		[[nodiscard]] bool hasBuilding(const std::string& building) const;
@@ -65,9 +71,12 @@ namespace EU4
 		[[nodiscard]] BuildingWeightEffects getProvBuildingWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes) const;
 
 		int num = 0;
-		std::string	name;
+		std::string name;
 		std::string ownerString;
 		std::string controllerString;
+		std::string culture;
+		std::string religion;
+
 		std::set<std::string> cores;
 
 		bool inHRE = false;

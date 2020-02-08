@@ -5,7 +5,6 @@
 #include <string>
 #include <memory>
 #include <vector>
-#include <set>
 
 namespace EU4
 {

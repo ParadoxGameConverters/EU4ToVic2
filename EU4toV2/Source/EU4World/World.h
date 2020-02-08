@@ -10,13 +10,14 @@
 #include "Country/EU4Country.h"
 #include "Wars/EU4War.h"
 #include "TradeGoods/EU4TradeGoods.h"
-#include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/UnitTypes/UnitTypeMapper.h"
 #include "../Mappers/Buildings/Buildings.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
 #include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
+#include "../Mappers/SuperGroupMapper/SuperGroupMapper.h"
 #include "newParser.h"
 #include <memory>
+#include <map>
 
 namespace EU4
 {
@@ -39,6 +40,7 @@ namespace EU4
 		[[nodiscard]] const auto& getCultureGroupsMapper() const { return cultureGroupsMapper; }
 		[[nodiscard]] const auto& getProvinces() const { return provinces->getAllProvinces(); }
 		[[nodiscard]] const auto& getHistoricalData() const { return historicalData; }
+		[[nodiscard]] const auto& getNativeCultures() const { return nativeCultures; }
 		
 	private:
 		void verifySave();
@@ -61,8 +63,13 @@ namespace EU4
 	   void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas) const;
 		void fillHistoricalData();
 		void addTradeGoodsToProvinces() const;
-		bool uncompressSave();		
-
+		void catalogueNativeCultures();
+		void generateNeoCultures();
+		void buildPopRatios() const;
+		std::string generateNeoCulture(const std::string& superRegionName, const std::string& oldCultureName);
+		bool uncompressSave();
+		
+		
 		struct saveData
 		{
 			bool compressed = false;
@@ -75,12 +82,14 @@ namespace EU4
 		std::string celestialEmperor;
 		std::unique_ptr<Regions> regions;
 		std::unique_ptr<Provinces> provinces;
-		std::map<std::string, std::shared_ptr<EU4::Country>> theCountries;
+		std::map<std::string, std::shared_ptr<Country>> theCountries;
 		std::vector<EU4Agreement> diplomacy;
 		std::unique_ptr<Version> version;
 		std::string revolutionTargetString;
 		std::map<std::string, mappers::UnitType> unitTypeMap;
 		std::vector<War> wars;
+		std::map<std::string, std::set<std::string>> nativeCultures; // superregion-culturenames
+		std::map<std::pair<std::string, std::string>, std::string> generatedCultures; // origculture/superregion - neoculture (cache)
 		
 		TradeGoods tradeGoods;		
 		Religions theReligions;
@@ -88,6 +97,7 @@ namespace EU4
 		mappers::UnitTypeMapper unitTypeMapper;
 		mappers::Buildings buildingTypes;
 		mappers::CultureGroups cultureGroupsMapper;
+		mappers::SuperGroupMapper superGroupMapper;
 
 		// export data for hoi4
 		std::vector<std::pair<std::string, HistoricalEntry>> historicalData;

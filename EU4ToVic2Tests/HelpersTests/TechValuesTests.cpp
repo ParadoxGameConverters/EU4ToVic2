@@ -27,7 +27,7 @@ TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfNoProvinces)
 	auto testCountry = std::make_shared<mockVic2Country>();
 	EXPECT_CALL(*testCountry, isCivilized).WillOnce(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> emptyProvinces;
-	EXPECT_CALL(*testCountry, getProvinces).WillOnce(testing::Return(emptyProvinces));
+	EXPECT_CALL(*testCountry, getProvinces).WillOnce(testing::ReturnRef(emptyProvinces));
 
 	ASSERT_FALSE(techValues.isValidCountryForTechConversion(*testCountry));
 }
@@ -44,7 +44,7 @@ TEST(Helpers_TechValuesTests, notValidCountryForTechConversionIfNoSourceCountry)
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(*testCountry, getProvinces).WillOnce(testing::Return(provinces));
+	EXPECT_CALL(*testCountry, getProvinces).WillOnce(testing::ReturnRef(provinces));
 	std::shared_ptr<EU4::Country> emptyCountry;
 	EXPECT_CALL(*testCountry, getSourceCountry).WillOnce(testing::Return(emptyCountry));
 
@@ -63,7 +63,7 @@ TEST(Helpers_TechValuesTests, validCountryForTechConversionIfAllChecksPass)
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(*testCountry, getProvinces).WillOnce(testing::Return(provinces));
+	EXPECT_CALL(*testCountry, getProvinces).WillOnce(testing::ReturnRef(provinces));
 	std::shared_ptr<EU4::Country> country = std::make_shared<EU4::Country>();
 	EXPECT_CALL(*testCountry, getSourceCountry).WillOnce(testing::Return(country));
 
@@ -72,19 +72,17 @@ TEST(Helpers_TechValuesTests, validCountryForTechConversionIfAllChecksPass)
 
 
 
-TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithNoCountries)
+TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsNegativeOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-
-	helpers::TechValues techValues(countries);
 
 	mockEU4Country country;
 	EXPECT_CALL(country, getAdmTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getMilTech).WillOnce(testing::Return(32));
-	std::set<std::string> nationalIdeas;
-	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedArmyTech(country), 1.0);
+	helpers::TechValues techValues(countries);
+
+	ASSERT_EQ(techValues.getNormalizedArmyTech(country), -1.0);
 }
 
 
@@ -97,15 +95,16 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneIfInitializedWithOn
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillOnce(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	
+	EXPECT_CALL(*testCountry, isCivilized).WillOnce(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillOnce(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillOnce(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
+	countries.insert(std::make_pair("TST", testCountry));
 	
 	helpers::TechValues techValues(countries);
 
@@ -119,27 +118,29 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneForHighestScore)
 	EXPECT_CALL(*country, getAdmTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getDipTech).WillRepeatedly(testing::Return(32));
 	EXPECT_CALL(*country, getMilTech).WillRepeatedly(testing::Return(32));
+
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillRepeatedly(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 
 	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
 	EXPECT_CALL(*country2, getDipTech).WillRepeatedly(testing::Return(8));
 	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
+
 	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry2;
-	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
+	auto testCountry2 = new mockVic2Country();
+	EXPECT_CALL(*testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry2, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
 
 	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
@@ -147,18 +148,18 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsOneForHighestScore)
 	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
 	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry3;
-	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
+	auto testCountry3 = new mockVic2Country();
+	EXPECT_CALL(*testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry3, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
-	countries.insert(std::make_pair("MID", &testCountry3));
-	countries.insert(std::make_pair("LOW", &testCountry3));
-
+	countries.insert(std::make_pair("TST", testCountry));
+	countries.insert(std::make_pair("MID", testCountry2));
+	countries.insert(std::make_pair("LOW", testCountry3));
+	
 	helpers::TechValues techValues(countries);
-
+	
 	ASSERT_EQ(techValues.getNormalizedArmyTech(*country), 1.0);
 }
 
@@ -172,13 +173,13 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsScaledScore)
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillRepeatedly(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 
 	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
@@ -186,10 +187,10 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsScaledScore)
 	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
 	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry2;
-	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
+	auto testCountry2 = new mockVic2Country();
+	EXPECT_CALL(*testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry2, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
 
 	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
@@ -197,23 +198,23 @@ TEST(Helpers_TechValuesTests, getNormalizedArmyTechReturnsScaledScore)
 	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
 	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry3;
-	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
+	auto testCountry3 = new mockVic2Country();
+	EXPECT_CALL(*testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry3, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
-	countries.insert(std::make_pair("MID", &testCountry2));
-	countries.insert(std::make_pair("LOW", &testCountry3));
+	countries.insert(std::make_pair("TST", testCountry));
+	countries.insert(std::make_pair("MID", testCountry2));
+	countries.insert(std::make_pair("LOW", testCountry3));
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_NEAR(techValues.getNormalizedArmyTech(*country2), (-2.0 / 7.0), 0.00001);
+	ASSERT_NEAR(techValues.getNormalizedArmyTech(*country2), 0.333, 0.001);
 }
 
 
-TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithNoCountries)
+TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsNegativeOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
 
@@ -222,10 +223,8 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithNo
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getMilTech).WillOnce(testing::Return(32));
-	std::set<std::string> nationalIdeas;
-	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedNavyTech(country), 1.0);
+	ASSERT_EQ(techValues.getNormalizedNavyTech(country), -1.0);
 }
 
 
@@ -238,15 +237,15 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneIfInitializedWithOn
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillOnce(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillOnce(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillOnce(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillOnce(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
+	countries.insert(std::make_pair("TST", testCountry));
 
 	helpers::TechValues techValues(countries);
 
@@ -263,13 +262,13 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneForHighestScore)
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillRepeatedly(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 
 	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
@@ -277,10 +276,10 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneForHighestScore)
 	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
 	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry2;
-	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
+	auto testCountry2 = new mockVic2Country();
+	EXPECT_CALL(*testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry2, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
 
 	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
@@ -288,15 +287,15 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsOneForHighestScore)
 	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
 	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry3;
-	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
+	auto testCountry3 = new mockVic2Country();
+	EXPECT_CALL(*testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry3, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
-	countries.insert(std::make_pair("MID", &testCountry3));
-	countries.insert(std::make_pair("LOW", &testCountry3));
+	countries.insert(std::make_pair("TST", testCountry));
+	countries.insert(std::make_pair("MID", testCountry2));
+	countries.insert(std::make_pair("LOW", testCountry3));
 
 	helpers::TechValues techValues(countries);
 
@@ -313,13 +312,13 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsScaledScore)
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillRepeatedly(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 
 	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
@@ -327,10 +326,10 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsScaledScore)
 	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
 	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry2;
-	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
+	auto testCountry2 = new mockVic2Country();
+	EXPECT_CALL(*testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry2, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
 
 	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
@@ -338,23 +337,23 @@ TEST(Helpers_TechValuesTests, getNormalizedNavyTechReturnsScaledScore)
 	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
 	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry3;
-	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
+	auto testCountry3 = new mockVic2Country();
+	EXPECT_CALL(*testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry3, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
-	countries.insert(std::make_pair("MID", &testCountry2));
-	countries.insert(std::make_pair("LOW", &testCountry3));
+	countries.insert(std::make_pair("TST", testCountry));
+	countries.insert(std::make_pair("MID", testCountry2));
+	countries.insert(std::make_pair("LOW", testCountry3));
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_NEAR(techValues.getNormalizedNavyTech(*country2), (-2.0 / 7.0), 0.00001);
+	ASSERT_NEAR(techValues.getNormalizedNavyTech(*country2), 0.333, 0.001);
 }
 
 
-TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWithNoCountries)
+TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsNegativeOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
 	helpers::TechValues techValues(countries);
@@ -362,10 +361,8 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWi
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getAdmTech).WillOnce(testing::Return(32));
-	std::set<std::string> nationalIdeas;
-	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedCommerceTech(country), 1.0);
+	ASSERT_EQ(techValues.getNormalizedCommerceTech(country), -1.0);
 }
 
 
@@ -378,15 +375,15 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneIfInitializedWi
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillOnce(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillOnce(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillOnce(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillOnce(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
+	countries.insert(std::make_pair("TST", testCountry));
 
 	helpers::TechValues techValues(countries);
 
@@ -403,13 +400,13 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneForHighestScore
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillRepeatedly(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 
 	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
@@ -417,10 +414,10 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneForHighestScore
 	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
 	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry2;
-	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
+	auto testCountry2 = new mockVic2Country();
+	EXPECT_CALL(*testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry2, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
 
 	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
@@ -428,15 +425,15 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsOneForHighestScore
 	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
 	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry3;
-	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
+	auto testCountry3 = new mockVic2Country();
+	EXPECT_CALL(*testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry3, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
-	countries.insert(std::make_pair("MID", &testCountry3));
-	countries.insert(std::make_pair("LOW", &testCountry3));
+	countries.insert(std::make_pair("TST", testCountry));
+	countries.insert(std::make_pair("MID", testCountry2));
+	countries.insert(std::make_pair("LOW", testCountry3));
 
 	helpers::TechValues techValues(countries);
 
@@ -453,13 +450,13 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsScaledScore)
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillRepeatedly(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 
 	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
@@ -467,10 +464,10 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsScaledScore)
 	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
 	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry2;
-	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
+	auto testCountry2 = new mockVic2Country();
+	EXPECT_CALL(*testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry2, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
 
 	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
@@ -478,23 +475,23 @@ TEST(Helpers_TechValuesTests, getNormalizedCommerceTechReturnsScaledScore)
 	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
 	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry3;
-	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
+	auto testCountry3 = new mockVic2Country();
+	EXPECT_CALL(*testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry3, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
-	countries.insert(std::make_pair("MID", &testCountry2));
-	countries.insert(std::make_pair("LOW", &testCountry3));
+	countries.insert(std::make_pair("TST", testCountry));
+	countries.insert(std::make_pair("MID", testCountry2));
+	countries.insert(std::make_pair("LOW", testCountry3));
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_NEAR(techValues.getNormalizedCommerceTech(*country2), (-2.0 / 7.0), 0.00001);
+	ASSERT_NEAR(techValues.getNormalizedCommerceTech(*country2), 0.333, 0.001);
 }
 
 
-TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWithNoCountries)
+TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsNegativeOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
 
@@ -502,10 +499,8 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWit
 
 	mockEU4Country country;
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
-	std::set<std::string> nationalIdeas;
-	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedCultureTech(country), 0.0);
+	ASSERT_EQ(techValues.getNormalizedCultureTech(country), -1.0);
 }
 
 
@@ -518,15 +513,15 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneIfInitializedWit
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillOnce(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillOnce(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillOnce(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillOnce(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
+	countries.insert(std::make_pair("TST", testCountry));
 
 	helpers::TechValues techValues(countries);
 
@@ -543,13 +538,13 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneForHighestScore)
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillRepeatedly(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 
 	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
@@ -557,10 +552,10 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneForHighestScore)
 	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
 	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry2;
-	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
+	auto testCountry2 = new mockVic2Country();
+	EXPECT_CALL(*testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry2, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
 
 	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
@@ -568,15 +563,15 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsOneForHighestScore)
 	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
 	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry3;
-	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
+	auto testCountry3 = new mockVic2Country();
+	EXPECT_CALL(*testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry3, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
-	countries.insert(std::make_pair("MID", &testCountry3));
-	countries.insert(std::make_pair("LOW", &testCountry3));
+	countries.insert(std::make_pair("TST", testCountry));
+	countries.insert(std::make_pair("MID", testCountry2));
+	countries.insert(std::make_pair("LOW", testCountry3));
 
 	helpers::TechValues techValues(countries);
 
@@ -593,13 +588,13 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsScaledScore)
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillRepeatedly(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 
 	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
@@ -607,10 +602,10 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsScaledScore)
 	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
 	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry2;
-	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
+	auto testCountry2 = new mockVic2Country();
+	EXPECT_CALL(*testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry2, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
 
 	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
@@ -618,23 +613,23 @@ TEST(Helpers_TechValuesTests, getNormalizedCultureTechReturnsScaledScore)
 	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
 	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry3;
-	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
+	auto testCountry3 = new mockVic2Country();
+	EXPECT_CALL(*testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry3, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
-	countries.insert(std::make_pair("MID", &testCountry2));
-	countries.insert(std::make_pair("LOW", &testCountry3));
+	countries.insert(std::make_pair("TST", testCountry));
+	countries.insert(std::make_pair("MID", testCountry2));
+	countries.insert(std::make_pair("LOW", testCountry3));
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_NEAR(techValues.getNormalizedCultureTech(*country2), (-2.0 / 7.0), 0.00001);
+	ASSERT_NEAR(techValues.getNormalizedCultureTech(*country2), 0.333, 0.001);
 }
 
 
-TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWithNoCountries)
+TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsNegativeOneIfInitializedWithNoCountries)
 {
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
 
@@ -644,10 +639,8 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWi
 	EXPECT_CALL(country, getAdmTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getDipTech).WillOnce(testing::Return(32));
 	EXPECT_CALL(country, getMilTech).WillOnce(testing::Return(32));
-	std::set<std::string> nationalIdeas;
-	EXPECT_CALL(country, getNationalIdeas).WillOnce(testing::ReturnRef(nationalIdeas));
 
-	ASSERT_EQ(techValues.getNormalizedIndustryTech(country), 1.0);
+	ASSERT_EQ(techValues.getNormalizedIndustryTech(country), -1.0);
 }
 
 
@@ -660,15 +653,15 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneIfInitializedWi
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillOnce(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillOnce(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillOnce(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillOnce(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
+	countries.insert(std::make_pair("TST", testCountry));
 
 	helpers::TechValues techValues(countries);
 
@@ -685,13 +678,13 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneForHighestScore
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillRepeatedly(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 
 	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
@@ -699,10 +692,10 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneForHighestScore
 	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
 	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry2;
-	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
+	auto testCountry2 = new mockVic2Country();
+	EXPECT_CALL(*testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry2, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
 
 	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
@@ -710,15 +703,15 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsOneForHighestScore
 	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
 	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry3;
-	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
+	auto testCountry3 = new mockVic2Country();
+	EXPECT_CALL(*testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry3, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
-	countries.insert(std::make_pair("MID", &testCountry2));
-	countries.insert(std::make_pair("LOW", &testCountry3));
+	countries.insert(std::make_pair("TST", testCountry));
+	countries.insert(std::make_pair("MID", testCountry2));
+	countries.insert(std::make_pair("LOW", testCountry3));
 
 	helpers::TechValues techValues(countries);
 
@@ -735,13 +728,13 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsScaledScore)
 	std::set<std::string> nationalIdeas;
 	EXPECT_CALL(*country, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry;
-	EXPECT_CALL(testCountry, isCivilized).WillRepeatedly(testing::Return(true));
+	auto testCountry = new mockVic2Country();
+	EXPECT_CALL(*testCountry, isCivilized).WillRepeatedly(testing::Return(true));
 	std::map<int, std::shared_ptr<V2::Province>> provinces;
 	std::shared_ptr<V2::Province> province;
 	provinces.insert(std::make_pair(1, province));
-	EXPECT_CALL(testCountry, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
+	EXPECT_CALL(*testCountry, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry, getSourceCountry).WillRepeatedly(testing::Return(country));
 
 	std::shared_ptr<mockEU4Country> country2 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country2, getAdmTech).WillRepeatedly(testing::Return(8));
@@ -749,10 +742,10 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsScaledScore)
 	EXPECT_CALL(*country2, getMilTech).WillRepeatedly(testing::Return(8));
 	EXPECT_CALL(*country2, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry2;
-	EXPECT_CALL(testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry2, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
+	auto testCountry2 = new mockVic2Country();
+	EXPECT_CALL(*testCountry2, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry2, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry2, getSourceCountry).WillRepeatedly(testing::Return(country2));
 
 	std::shared_ptr<mockEU4Country> country3 = std::make_shared<mockEU4Country>();
 	EXPECT_CALL(*country3, getAdmTech).WillRepeatedly(testing::Return(0));
@@ -760,17 +753,17 @@ TEST(Helpers_TechValuesTests, getNormalizedIndustryTechReturnsScaledScore)
 	EXPECT_CALL(*country3, getMilTech).WillRepeatedly(testing::Return(0));
 	EXPECT_CALL(*country3, getNationalIdeas).WillRepeatedly(testing::ReturnRef(nationalIdeas));
 
-	mockVic2Country testCountry3;
-	EXPECT_CALL(testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
-	EXPECT_CALL(testCountry3, getProvinces).WillRepeatedly(testing::Return(provinces));
-	EXPECT_CALL(testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
+	auto testCountry3 = new mockVic2Country();
+	EXPECT_CALL(*testCountry3, isCivilized).WillRepeatedly(testing::Return(true));
+	EXPECT_CALL(*testCountry3, getProvinces).WillRepeatedly(testing::ReturnRef(provinces));
+	EXPECT_CALL(*testCountry3, getSourceCountry).WillRepeatedly(testing::Return(country3));
 
 	std::map<std::string, std::shared_ptr<V2::Country>> countries;
-	countries.insert(std::make_pair("TST", &testCountry));
-	countries.insert(std::make_pair("MID", &testCountry2));
-	countries.insert(std::make_pair("LOW", &testCountry3));
+	countries.insert(std::make_pair("TST", testCountry));
+	countries.insert(std::make_pair("MID", testCountry2));
+	countries.insert(std::make_pair("LOW", testCountry3));
 
 	helpers::TechValues techValues(countries);
 
-	ASSERT_NEAR(techValues.getNormalizedIndustryTech(*country2), (-2.0 / 7.0), 0.00001);
+	ASSERT_NEAR(techValues.getNormalizedIndustryTech(*country2), 0.333, 0.001);
 }

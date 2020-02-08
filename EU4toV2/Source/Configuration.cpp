@@ -101,7 +101,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 void Configuration::verifyEU4Path(const std::string& path, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))
 {
 	if (!doesFolderExist(path)) throw std::runtime_error(path + " does not exist!");
-	if (!doesFileExist(path + "/eu4.exe")) throw std::runtime_error(path + " does not contain Europa Universalis 4!");
+	if (!doesFileExist(path + "/eu4.exe") && !doesFileExist(path + "/eu4")) throw std::runtime_error(path + " does not contain Europa Universalis 4!");
 	if (!doesFileExist(path + "/map/positions.txt")) throw std::runtime_error(path + " does not appear to be a valid EU4 install!");
 	LOG(LogLevel::Info) << "\tEU4 install path is " << path;
 }

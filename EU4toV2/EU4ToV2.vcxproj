@@ -24,8 +24,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>NotSet</CharacterSet>
-    <PlatformToolset>v141_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -57,8 +57,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IntDir>$(SolutionDir)\DebugIntermediate\</IntDir>
-    <IncludePath>$(UniversalCRT_IncludePath);$(BOOST_INCLUDE);$(VCInstallDir)include;$(WindowsSdkDir)include;../common_items</IncludePath>
-    <OutDir>$(SolutionDir)$(Configuration)\EU4ToVic2\</OutDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <OutDir>$(ProjectDir)\..\$(Configuration)\EU4ToVic2\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -94,7 +94,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Libraries\boost_1_55_0_lib;$(BOOST_INCLUDE);$(WindowsSDK_IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\common_items;..\ZipLib;$(WindowsSDK_IncludePath)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -104,7 +104,7 @@
       <AdditionalLibraryDirectories>D:\Libraries\boost_1_55_0_lib\lib32-msvc-12.0;$(BOOST_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>..\Copy_Files.bat</Command>
+      <Command>Copy_Files_Debug.bat</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copying Data Files</Message>
@@ -291,6 +291,7 @@
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
     <ClCompile Include="Source\Mappers\RegimentCosts\RegimentCostsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\RegionLocalizations\RegionLocalizations.cpp" />
     <ClCompile Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
@@ -302,6 +303,9 @@
     <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTech.cpp" />
     <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTechMapper.cpp" />
     <ClCompile Include="Source\Mappers\StateMapper\StateMapper.cpp" />
+    <ClCompile Include="Source\Mappers\SuperGroupMapper\Assimilation.cpp" />
+    <ClCompile Include="Source\Mappers\SuperGroupMapper\SuperGroupMapper.cpp" />
+    <ClCompile Include="Source\Mappers\SuperGroupMapper\SuperRegion.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroups.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroupsMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchool.cpp" />
@@ -328,6 +332,7 @@
     <ClCompile Include="Source\V2World\Output\outAgreement.cpp" />
     <ClCompile Include="Source\V2World\Output\outArmy.cpp" />
     <ClCompile Include="Source\V2World\Output\outCountry.cpp" />
+    <ClCompile Include="Source\V2World\Output\outCultureGroups.cpp" />
     <ClCompile Include="Source\V2World\Output\outFactory.cpp" />
     <ClCompile Include="Source\V2World\Output\outHistory.cpp" />
     <ClCompile Include="Source\V2World\Output\outLeader.cpp" />
@@ -477,6 +482,7 @@
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />
     <ClInclude Include="Source\Mappers\RegimentCosts\RegimentCostsMapper.h" />
+    <ClInclude Include="Source\Mappers\RegionLocalizations\RegionLocalizations.h" />
     <ClInclude Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h" />
@@ -488,6 +494,9 @@
     <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTech.h" />
     <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTechMapper.h" />
     <ClInclude Include="Source\Mappers\StateMapper\StateMapper.h" />
+    <ClInclude Include="Source\Mappers\SuperGroupMapper\Assimilation.h" />
+    <ClInclude Include="Source\Mappers\SuperGroupMapper\SuperGroupMapper.h" />
+    <ClInclude Include="Source\Mappers\SuperGroupMapper\SuperRegion.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroups.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroupsMapper.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchool.h" />

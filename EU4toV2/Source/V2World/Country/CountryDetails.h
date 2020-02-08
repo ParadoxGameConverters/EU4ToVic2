@@ -52,7 +52,9 @@ namespace V2
 		std::string filename;
 		std::vector<Party> parties;
 		std::string primaryCulture = "dummy";
+		std::string eu4PrimaryCulture;
 		std::set<std::string> acceptedCultures;
+		std::set<std::string> eu4acceptedCultures;
 		std::string religion = "shamanist";
 		std::string government = "absolute_monarchy";
 		bool civilized = false;

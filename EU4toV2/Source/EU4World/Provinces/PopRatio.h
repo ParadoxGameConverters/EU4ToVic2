@@ -10,14 +10,17 @@ namespace EU4
 	public:
 		PopRatio(std::string _culture, std::string _religion);
 
-		void decay(float diffInYears, const PopRatio& currentPop);
-		void increase(float diffInYears);
+		void decay(float diffInYears, double assimilationFactor);
+		void increase(float diffInYears, double assimilationFactor);
 		void convertFrom();
 		void convertToCulture(const std::string& culture);
 		void convertToReligion(const std::string& religion);
 		void convertTo(const std::string& culture, const std::string& religion);
-
+		void setCulture(const std::string& cul, const std::string& sr);
+		
 		[[nodiscard]] const auto& getCulture() const { return culture; }
+		[[nodiscard]] const auto& getOriginalCulture() const { return originalEU4culture; }
+		[[nodiscard]] const auto& getSuperRegion() const { return targetSuperRegion; }
 		[[nodiscard]] const auto& getReligion() const { return religion; }
 		[[nodiscard]] auto getUpperRatio() const { return upperRatio; }
 		[[nodiscard]] auto getMiddleRatio() const { return middleRatio; }
@@ -25,6 +28,8 @@ namespace EU4
 
 	private:
 		std::string culture;
+		std::string originalEU4culture; // Will be blank unless culture was swapped for a neoculture.
+		std::string targetSuperRegion; // for neoculture, this is our target superregion
 		std::string religion;
 		double upperRatio = 1;
 		double middleRatio = 1;

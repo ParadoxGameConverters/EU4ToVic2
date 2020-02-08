@@ -3,12 +3,17 @@
 
 #include "EU4Province.h"
 #include "newParser.h"
-#include "../../Mappers/Buildings/Buildings.h"
 #include "../../Configuration.h"
 #include <map>
 
+namespace mappers {
+	class SuperGroupMapper;
+}
+
 namespace EU4
 {
+	class Regions;
+
 	class Provinces: commonItems::parser
 	{
 	public:

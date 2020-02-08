@@ -9,18 +9,15 @@ const date FUTURE_DATE("2000.1.1");
 
 EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 {
-	std::string startingCulture;
-	std::string startingReligion;
-
 	registerKeyword("owner", [this](const std::string& unused, std::istream & theStream) {
 		const commonItems::singleString ownerString(theStream);
 		ownershipHistory.emplace_back(std::make_pair(theConfiguration.getStartEU4Date(), ownerString.getString()));
 	});
-	registerKeyword("culture", [&startingCulture](const std::string& unused, std::istream & theStream) {
+	registerKeyword("culture", [this](const std::string& unused, std::istream & theStream) {
 		const commonItems::singleString cultureString(theStream);
 		startingCulture = cultureString.getString();
 	});
-	registerKeyword("religion", [&startingReligion](const std::string& unused, std::istream & theStream) {
+	registerKeyword("religion", [this](const std::string& unused, std::istream & theStream) {
 		const commonItems::singleString religionString(theStream);
 		startingReligion = religionString.getString();
 	});
@@ -86,8 +83,6 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 	{
 		religionHistory.insert(religionHistory.begin(), std::make_pair(theConfiguration.getStartEU4Date(), startingReligion));
 	}
-
-	buildPopRatios();
 }
 
 std::optional<date> EU4::ProvinceHistory::getFirstOwnedDate() const
@@ -113,10 +108,13 @@ bool EU4::ProvinceHistory::wasColonized() const
 	return false;
 }
 
-void EU4::ProvinceHistory::buildPopRatios()
+void EU4::ProvinceHistory::buildPopRatios(const double assimilationFactor)
 {
+	// Don't build pop ratios for empty strings.
+	if (cultureHistory.empty() || religionHistory.empty()) return;
+	
 	auto endDate = theConfiguration.getLastEU4Date();
-	if (endDate > HARD_ENDING_DATE) endDate = HARD_ENDING_DATE;
+	if (endDate > HARD_ENDING_DATE || !endDate.isSet()) endDate = HARD_ENDING_DATE;
 
 	std::string startingCulture;
 	auto cultureEvent = cultureHistory.begin();
@@ -160,7 +158,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 
 		if (cultureEventDate < religionEventDate)
 		{
-			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
+			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio, assimilationFactor);
 			popRatios.push_back(currentRatio);
 			for (auto& itr: popRatios)
 			{
@@ -173,7 +171,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 		else if (cultureEventDate == religionEventDate)
 		{
 			// culture and religion change on the same day;
-			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio);
+			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio, assimilationFactor);
 			popRatios.push_back(currentRatio);
 			for (auto& itr: popRatios)
 			{
@@ -186,7 +184,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 		}
 		else if (religionEventDate < cultureEventDate)
 		{
-			decayPopRatios(lastLoopDate, religionEventDate, currentRatio);
+			decayPopRatios(lastLoopDate, religionEventDate, currentRatio, assimilationFactor);
 			popRatios.push_back(currentRatio);
 			for (auto& itr: popRatios)
 			{
@@ -197,7 +195,7 @@ void EU4::ProvinceHistory::buildPopRatios()
 			++religionEvent;
 		}
 	}
-	decayPopRatios(lastLoopDate, endDate, currentRatio);
+	decayPopRatios(lastLoopDate, endDate, currentRatio, assimilationFactor);
 
 	if (!currentRatio.getCulture().empty() || !currentRatio.getReligion().empty())
 	{
@@ -205,13 +203,18 @@ void EU4::ProvinceHistory::buildPopRatios()
 	}
 }
 
-void EU4::ProvinceHistory::decayPopRatios(const date& oldDate, const date& newDate, PopRatio& currentPop)
+void EU4::ProvinceHistory::decayPopRatios(const date& oldDate, const date& newDate, PopRatio& currentPop, const double assimilationFactor)
 {
 	// no decay needed for initial state
 	if (oldDate == theConfiguration.getStartEU4Date()) return;
 
 	const auto diffInYears = newDate.diffInYears(oldDate);
-	for (auto& popRatio: popRatios) popRatio.decay(diffInYears, currentPop);
+	for (auto& popRatio: popRatios) popRatio.decay(diffInYears, assimilationFactor);
 
-	currentPop.increase(diffInYears);
+	currentPop.increase(diffInYears, assimilationFactor);
+}
+
+void EU4::ProvinceHistory::updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName, const std::string& superRegion)
+{
+	for (auto& popRatio: popRatios) if (popRatio.getCulture() == oldCultureName) popRatio.setCulture(neoCultureName, superRegion);
 }

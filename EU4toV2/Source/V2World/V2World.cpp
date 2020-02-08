@@ -40,12 +40,18 @@ historicalData(sourceWorld.getHistoricalData())
 	LOG(LogLevel::Info) << "-> Loading Culture Mapping Rules";
 	initializeCultureMappers();
 	mappingChecker.check(sourceWorld, provinceMapper, religionMapper, cultureMapper);
-	
+
+	LOG(LogLevel::Info) << "-> Pouring From Hollow Into Empty";
+	cultureGroupsMapper.importNeoCultures(sourceWorld, cultureMapper);
+
 	LOG(LogLevel::Info) << "-> Converting Countries";
 	convertCountries(sourceWorld, ideaEffectMapper);
 
 	LOG(LogLevel::Info) << "-> Converting Provinces";
 	convertProvinces(sourceWorld);
+
+	LOG(LogLevel::Info) << "-> Cataloguing Invasive Fauna";
+	transcribeNeoCultures();
 
 	LOG(LogLevel::Info) << "-> Converting Diplomacy";
 	diplomacy.convertDiplomacy(sourceWorld.getDiplomaticAgreements(), countryMapper, countries);
@@ -61,6 +67,10 @@ historicalData(sourceWorld.getHistoricalData())
 	allocateFactories(sourceWorld);
 	LOG(LogLevel::Info) << "-> Distributing Pops";
 	setupPops(sourceWorld);
+
+	LOG(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
+	modifyPrimaryAndAcceptedCultures();
+
 	LOG(LogLevel::Info) << "-> Merging Nations";
 	addUnions();
 	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
@@ -69,11 +79,155 @@ historicalData(sourceWorld.getHistoricalData())
 	convertWars(sourceWorld);
 	LOG(LogLevel::Info) << "-> Converting Botanical Definitions";
 	transcribeHistoricalData();
-	LOG(LogLevel::Info) << "---> Le Dump <---";
-	
+
+	LOG(LogLevel::Info) << "---> Le Dump <---";	
 	output(versionParser);
+	
 	LOG(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
+
+void V2::World::modifyPrimaryAndAcceptedCultures()
+{
+	// Key to understanding - this entire function is relevant only for extreme edge cases
+	// where africans or other minority pops colonized new world and had neocultures generated
+	// in large numbers. All the other cultures that have proper mappings for new world
+	// will skip the majority of this process.
+	
+	// We're strolling through country provinces and registering how much of the
+	// population has been swapped with neocultures. This is a fuzzy process because
+	// multiple cultures mutate into single neoculture and only in some places, in others
+	// they can transform into different base vic2 cultures.
+	// We're updating primary/accepted only for significant global neoculture population (>15%).
+	for (const auto& country: countries)
+	{
+		if (country.second->getProvinces().empty()) continue; // don't disturb the dead
+		
+		std::map<std::string, long> census; //culture, population.
+		std::map<std::string, std::string> generatedNeoCultures; // orig culture, neoculture mapping
+
+		// for countries without neocultures, stop wasting time. 
+		// Yankee, americano or vinlander are NOT neocultures.
+		for (const auto& province: country.second->getProvinces())
+		{
+			if (!province.second->getGeneratedNeoCultures().empty())
+			{
+				auto tempCultures = province.second->getGeneratedNeoCultures();
+				generatedNeoCultures.insert(tempCultures.begin(), tempCultures.end());
+			}
+		}
+		if (generatedNeoCultures.empty()) continue;
+
+		// do a census
+		for (const auto& province: country.second->getProvinces())
+		{
+			const auto& pops = province.second->getPopsForOutput();
+			if (!pops) continue;
+			for (const auto& pop: pops->second)
+			{
+				const auto culture = pop->getCulture();
+				const auto size = pop->getSize();
+				census[culture] += size;
+			}
+		}
+
+		long totalPopulation = 0;
+		for (const auto& entry: census) totalPopulation += entry.second;
+
+		// Was any of the original eu4 cultures that mutated into neocultures a source for our current prim/acc cultures?
+		auto primEU4Culture = country.second->getEU4PrimaryCulture();
+		auto primV2Culture = country.second->getPrimaryCulture();
+		auto accV2Cultures = country.second->getAcceptedCultures();
+
+		const auto& primIter = generatedNeoCultures.find(primEU4Culture);
+		if (primIter != generatedNeoCultures.end())
+		{
+			// is this our primary population now? Do we have modified pops overwhelming unmodified ones?
+			if (census[generatedNeoCultures[primEU4Culture]] > census[primV2Culture])
+			{
+				// accept the reality of change. This can also happen if a small motherland integrates a large colony.
+				accV2Cultures.insert(primV2Culture);
+				primV2Culture = generatedNeoCultures[primEU4Culture];
+			}
+			else if (census[generatedNeoCultures[primEU4Culture]] > 0.15 * totalPopulation)
+			{
+				// Well, at least it's an accepted culture now. This is very possible if the motherland
+				// assimilated a small colony on conversion.
+				accV2Cultures.insert(generatedNeoCultures[primEU4Culture]);
+			}
+		}
+		// Onto accepted cultures. This is simpler because we only add, no need to remove source cultures;
+		// This is essentially like adding texans, americano or italoamericano to accepted cultures in usa.
+		for (const auto& entry: census)
+		{
+			for (const auto& genCulture: generatedNeoCultures)
+			{
+				if (entry.first == genCulture.second) // this is a neoculture.
+				{					
+					if (entry.second > 0.15 * totalPopulation && entry.first != primV2Culture)
+					{
+						accV2Cultures.insert(entry.first);
+					}
+				}
+			}
+		}
+		// store and done.
+		country.second->setPrimaryCulture(primV2Culture);
+		country.second->setAcceptedCultures(accV2Cultures);
+	}
+}
+
+void V2::World::transcribeNeoCultures()
+{
+	std::map<std::string, std::string> seenCultures;
+	for (const auto& province: provinces)
+	{
+		auto seenNeoCultures = province.second->getGeneratedNeoCultures();
+		for (const auto& seenNeoCulture: seenNeoCultures)
+		{
+			seenCultures.insert(std::make_pair(seenNeoCulture.second, province.second->getSuperRegion()));
+		}		
+	}
+	Log(LogLevel::Info) << "\tLocated " << seenCultures.size() << " new species.";
+	for (const auto& culture: seenCultures)
+	{
+		auto workString = culture.first;
+		// drop _culture
+		auto position = workString.find("_culture");
+		workString = workString.substr(0, position);
+
+		position = workString.find("_" + culture.second);
+		auto regionBit = culture.second;
+		auto cultureBit = workString.substr(0, position);
+
+		auto localizationLine = culture.first + ";";
+		auto incLoc = regionLocalizations.getEnglishFor(cultureBit);
+		if (incLoc) localizationLine += *incLoc + " ";
+		incLoc = regionLocalizations.getEnglishFor(regionBit + "_adj");
+		if (incLoc) localizationLine += *incLoc;
+		localizationLine += ";";
+
+		incLoc = regionLocalizations.getFrenchFor(cultureBit);
+		if (incLoc) localizationLine += *incLoc + " ";
+		incLoc = regionLocalizations.getFrenchFor(regionBit + "_adj");
+		if (incLoc) localizationLine += *incLoc;
+		localizationLine += ";";
+		
+		incLoc = regionLocalizations.getGermanFor(cultureBit);
+		if (incLoc) localizationLine += *incLoc + " ";
+		incLoc = regionLocalizations.getGermanFor(regionBit + "_adj");
+		if (incLoc) localizationLine += *incLoc;
+		localizationLine += ";;";
+
+		incLoc = regionLocalizations.getSpanishFor(cultureBit);
+		if (incLoc) localizationLine += *incLoc + " ";
+		incLoc = regionLocalizations.getSpanishFor(regionBit + "_adj");
+		if (incLoc) localizationLine += *incLoc;
+		localizationLine += ";;;;;;;;;X";
+
+		neoCultureLocalizations.insert(localizationLine);
+	}
+}
+
 
 void V2::World::importProvinces()
 {
@@ -230,6 +384,8 @@ void V2::World::initializeCultureMappers()
 	
 	LOG(LogLevel::Info) << "Parsing slave culture mappings.";
 	slaveCultureMapper.loadFile("configurables/culture_map_slaves.txt");
+
+	cultureGroupsMapper.initForV2();
 }
 
 void V2::World::convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
@@ -1020,16 +1176,36 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	LOG(LogLevel::Info) << "<- Writing Armed and Unarmed Conflicts";
 	outputWars();
 
+	LOG(LogLevel::Info) << "<- Writing Culture Definitions";
+	outputCultures();
+
 	LOG(LogLevel::Info) << "<- Writing Pops";
 	outputPops();
 
 	LOG(LogLevel::Info) << "<- Sending Botanical Expedition";
 	outputHistory();
 
+	LOG(LogLevel::Info) << "<- Writing Treatise on the Origins of Invasive Fauna";
+	outputNeoCultures();
+
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
 	verifyCountriesWritten();
 }
+
+void V2::World::outputNeoCultures() const
+{
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/localisation/0_Neocultures.csv");
+	if (!output.is_open()) throw std::runtime_error("Could not create neocultures file!");
+
+	output << "KEY;ENGLISH;FRENCH;GERMAN;POLISH;SPANISH;ITALIAN;HUNGARIAN;CZECH;HUNGARIAN;DUTCH;PORTUGUESE;RUSSIAN;FINNISH;X\n";
+	for (const auto& line : neoCultureLocalizations)
+	{
+		output << line << "\n";
+	}
+	output.close();
+}
+
 
 void V2::World::transcribeHistoricalData()
 {
@@ -1052,6 +1228,18 @@ void V2::World::outputHistory() const
 	output << historicalData;
 	output.close();
 }
+
+void V2::World::outputCultures() const
+{
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/cultures.txt");
+	if (!output.is_open())
+	{
+		throw std::runtime_error("Could not create cultures file at output/" + theConfiguration.getOutputName() + "/common/cultures.txt - " + Utils::GetLastErrorString());
+	}
+	output << cultureGroupsMapper;	
+	output.close();
+}
+
 
 void V2::World::outputWars() const
 {

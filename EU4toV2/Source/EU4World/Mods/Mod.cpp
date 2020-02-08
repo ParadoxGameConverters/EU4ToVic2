@@ -7,11 +7,7 @@ EU4::Mod::Mod(std::istream& theStream)
 		const commonItems::singleString nameString(theStream);
 		name = nameString.getString();
 	});
-	registerKeyword("path", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString pathString(theStream);
-		path = pathString.getString();
-	});
-	registerKeyword("archive", [this](const std::string& unused, std::istream& theStream) {
+	registerRegex("path|archive", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString pathString(theStream);
 		path = pathString.getString();
 	});

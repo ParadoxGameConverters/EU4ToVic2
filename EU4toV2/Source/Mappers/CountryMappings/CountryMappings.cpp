@@ -250,7 +250,7 @@ bool mappers::CountryMappings::inCorrectCultureGroup(const ColonyStruct& colony,
 {
 	if (!colony.cultureGroup.empty())
 	{
-		const auto& culturalGroup = cultureGroupsMapper.getCulturalGroup(primaryCulture);
+		const auto& culturalGroup = cultureGroupsMapper.getGroupForCulture(primaryCulture);
 		if (culturalGroup && culturalGroup->getName() != colony.cultureGroup) return false;
 	}
 	return true;

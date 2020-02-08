@@ -6,23 +6,35 @@
 #include <map>
 #include <optional>
 
+namespace EU4 {
+	class World;
+}
+
 namespace mappers
 {
+	class CultureMapper;
+
 	class CultureGroups: commonItems::parser
 	{
 	public:
-		CultureGroups();
+		CultureGroups() = default;
 		explicit CultureGroups(std::istream& theStream);
+
+		void initForEU4();
+		void initForV2();
+		void importNeoCultures(const EU4::World& sourceWorld, const CultureMapper& cultureMapper);
 		
-		[[nodiscard]] std::optional<CultureGroup> getCulturalGroup(const std::string& culture) const;
-		[[nodiscard]] std::vector<Culture> getCulturesInGroup(const std::string& group) const;
-		[[nodiscard]] const auto& getCultureToGroupMap() const { return cultureToGroupMap; }
+		[[nodiscard]] std::optional<CultureGroup> getGroupForCulture(const std::string& cultureName) const;
+		[[nodiscard]] std::map<std::string, Culture> getCulturesInGroup(const std::string& groupName) const;
+		[[nodiscard]] const auto& getCultureGroupsMap() const { return cultureGroupsMap; }
+		CultureGroup* retrieveCultureGroup(const std::string& cultureName);
+
+		friend std::ostream& operator<<(std::ostream& output, const CultureGroups& cultureGroupsMapper);
 
 	private:
 		void registerKeys();
 		
-		std::map<std::string, std::vector<Culture>> groupToCulturesMap;
-		std::map<std::string, CultureGroup> cultureToGroupMap;
+		std::map<std::string, CultureGroup> cultureGroupsMap;
 	};
 }
 

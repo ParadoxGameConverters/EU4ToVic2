@@ -5,8 +5,12 @@
 #include "../../EU4World/Regions/Regions.h"
 #include <optional>
 #include <string>
-#include <vector>
+#include <list>
 #include "CultureMappingRule.h"
+
+namespace EU4 {
+	class World;
+}
 
 namespace mappers
 {
@@ -19,6 +23,20 @@ namespace mappers
 		void loadFile(const std::string& fileName);
 
 		[[nodiscard]] std::optional<std::string> cultureMatch(
+			const EU4::Regions& eu4Regions,
+			const std::string& eu4culture,
+			const std::string& eu4religion,
+			int eu4Province,
+			const std::string& eu4ownerTag) const;
+
+		[[nodiscard]] std::optional<std::string> cultureRegionalMatch(
+			const EU4::Regions& eu4Regions,
+			const std::string& eu4culture,
+			const std::string& eu4religion,
+			int eu4Province,
+			const std::string& eu4ownerTag) const;
+
+		[[nodiscard]] std::optional<std::string> cultureNonRegionalNonReligiousMatch(
 			const EU4::Regions& eu4Regions,
 			const std::string& eu4culture,
 			const std::string& eu4religion,

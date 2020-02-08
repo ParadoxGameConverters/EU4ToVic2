@@ -40,3 +40,33 @@ std::optional<std::string> mappers::CultureMapper::cultureMatch(
 	}
 	return std::nullopt;
 }
+
+std::optional<std::string> mappers::CultureMapper::cultureRegionalMatch(
+	const EU4::Regions& eu4Regions,
+	const std::string& eu4culture,
+	const std::string& eu4religion,
+	int eu4Province,
+	const std::string& eu4ownerTag) const
+{
+	for (const auto& cultureMappingRule: cultureMapRules)
+	{
+		const auto& possibleMatch = cultureMappingRule.cultureRegionalMatch(eu4Regions, eu4culture, eu4religion, eu4Province, eu4ownerTag);
+		if (possibleMatch) return *possibleMatch;
+	}
+	return std::nullopt;
+}
+
+std::optional<std::string> mappers::CultureMapper::cultureNonRegionalNonReligiousMatch(
+	const EU4::Regions& eu4Regions,
+	const std::string& eu4culture,
+	const std::string& eu4religion,
+	int eu4Province,
+	const std::string& eu4ownerTag) const
+{
+	for (const auto& cultureMappingRule : cultureMapRules)
+	{
+		const auto& possibleMatch = cultureMappingRule.cultureNonRegionalNonReligiousMatch(eu4Regions, eu4culture, eu4religion, eu4Province, eu4ownerTag);
+		if (possibleMatch) return *possibleMatch;
+	}
+	return std::nullopt;
+}

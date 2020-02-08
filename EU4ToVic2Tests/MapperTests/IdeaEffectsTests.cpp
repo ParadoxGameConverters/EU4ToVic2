@@ -35,7 +35,7 @@ TEST(Mappers_IdeaEffectsTests, armyInvestmentValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getArmy(), 5);
+	ASSERT_EQ(ideaEffects.getArmy(), 0);
 }
 
 
@@ -48,7 +48,7 @@ TEST(Mappers_IdeaEffectsTests, armyInvestmentValueCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getArmy(), 6);
+	ASSERT_EQ(ideaEffects.getArmy(), 1);
 }
 
 
@@ -60,7 +60,7 @@ TEST(Mappers_IdeaEffectsTests, navyInvestmentValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getNavy(), 5);
+	ASSERT_EQ(ideaEffects.getNavy(), 0);
 }
 
 
@@ -73,7 +73,7 @@ TEST(Mappers_IdeaEffectsTests, navyInvestmentValueCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getNavy(), 1);
+	ASSERT_EQ(ideaEffects.getNavy(), -4);
 }
 
 
@@ -85,7 +85,7 @@ TEST(Mappers_IdeaEffectsTests, commerceInvestmentValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getCommerce(), 5);
+	ASSERT_EQ(ideaEffects.getCommerce(), 0);
 }
 
 
@@ -98,7 +98,7 @@ TEST(Mappers_IdeaEffectsTests, commerceInvestmentValueCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getCommerce(), 1);
+	ASSERT_EQ(ideaEffects.getCommerce(), -4);
 }
 
 
@@ -110,7 +110,7 @@ TEST(Mappers_IdeaEffectsTests, cultureInvestmentValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getCulture(), 5);
+	ASSERT_EQ(ideaEffects.getCulture(), 0);
 }
 
 
@@ -123,7 +123,7 @@ TEST(Mappers_IdeaEffectsTests, cultureInvestmentValueCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getCulture(), 1);
+	ASSERT_EQ(ideaEffects.getCulture(), -4);
 }
 
 
@@ -135,7 +135,7 @@ TEST(Mappers_IdeaEffectsTests, industryInvestmentValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getIndustry(), 5);
+	ASSERT_EQ(ideaEffects.getIndustry(), 0);
 }
 
 
@@ -148,7 +148,7 @@ TEST(Mappers_IdeaEffectsTests, industryInvestmentValueCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getIndustry(), 1);
+	ASSERT_EQ(ideaEffects.getIndustry(), -4);
 }
 
 
@@ -160,7 +160,7 @@ TEST(Mappers_IdeaEffectsTests, upperHouseLiberalValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getLiberal(), 5);
+	ASSERT_EQ(ideaEffects.getLiberal(), 0);
 }
 
 
@@ -173,7 +173,7 @@ TEST(Mappers_IdeaEffectsTests, upperHouseLiberalValueCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getLiberal(), 4);
+	ASSERT_EQ(ideaEffects.getLiberal(), -1);
 }
 
 
@@ -185,7 +185,7 @@ TEST(Mappers_IdeaEffectsTests, upperHouseReactionaryValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getReactionary(), 5);
+	ASSERT_EQ(ideaEffects.getReactionary(), 0);
 }
 
 
@@ -198,7 +198,7 @@ TEST(Mappers_IdeaEffectsTests, upperHouseReactionaryValueCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getReactionary(), 7);
+	ASSERT_EQ(ideaEffects.getReactionary(), 2);
 }
 
 
@@ -210,7 +210,7 @@ TEST(Mappers_IdeaEffectsTests, orderInfluenceValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getOrder(), 5);
+	ASSERT_EQ(ideaEffects.getOrder(), 0);
 }
 
 
@@ -223,7 +223,7 @@ TEST(Mappers_IdeaEffectsTests, orderInfluenceValueCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getOrder(), 1);
+	ASSERT_EQ(ideaEffects.getOrder(), -4);
 }
 
 
@@ -235,7 +235,7 @@ TEST(Mappers_IdeaEffectsTests, libertyInfluenceValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getLiberty(), 5);
+	ASSERT_EQ(ideaEffects.getLiberty(), 0);
 }
 
 
@@ -248,7 +248,7 @@ TEST(Mappers_IdeaEffectsTests, libertyInfluenceValueCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getLiberty(), 1);
+	ASSERT_EQ(ideaEffects.getLiberty(), -4);
 }
 
 
@@ -260,7 +260,7 @@ TEST(Mappers_IdeaEffectsTests, equalityInfluenceValueDefaultsToZero)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getEquality(), 5);
+	ASSERT_EQ(ideaEffects.getEquality(), 0);
 }
 
 
@@ -273,7 +273,7 @@ TEST(Mappers_IdeaEffectsTests, equalityInfluenceValueCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getEquality(), 1);
+	ASSERT_EQ(ideaEffects.getEquality(), -4);
 }
 
 
@@ -285,7 +285,7 @@ TEST(Mappers_IdeaEffectsTests, literacyLevelsDefaultsToFive)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getLiteracy(), 5);
+	ASSERT_EQ(ideaEffects.getLiteracy(), 0);
 }
 
 
@@ -298,7 +298,7 @@ TEST(Mappers_IdeaEffectsTests, literacyLevelsCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getLiteracy(), 7);
+	ASSERT_EQ(ideaEffects.getLiteracy(), 2);
 }
 
 TEST(Mappers_IdeaEffectsTests, slaveryLevelsDefaultsToFive)
@@ -309,7 +309,7 @@ TEST(Mappers_IdeaEffectsTests, slaveryLevelsDefaultsToFive)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getSlavery(), 5);
+	ASSERT_EQ(ideaEffects.getSlavery(), 0);
 }
 
 
@@ -322,7 +322,7 @@ TEST(Mappers_IdeaEffectsTests, slaveryLevelsCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getSlavery(), 7);
+	ASSERT_EQ(ideaEffects.getSlavery(), 2);
 }
 
 
@@ -334,7 +334,7 @@ TEST(Mappers_IdeaEffectsTests, upper_house_compositionLevelsDefaultsToFive)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getUpper_house_composition(), 5);
+	ASSERT_EQ(ideaEffects.getUpper_house_composition(), 0);
 }
 
 
@@ -347,7 +347,7 @@ TEST(Mappers_IdeaEffectsTests, upper_house_compositionLevelsCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getUpper_house_composition(), 7);
+	ASSERT_EQ(ideaEffects.getUpper_house_composition(), 2);
 }
 
 
@@ -359,7 +359,7 @@ TEST(Mappers_IdeaEffectsTests, vote_franchiseLevelsDefaultsToFive)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getVote_franchise(), 5);
+	ASSERT_EQ(ideaEffects.getVote_franchise(), 0);
 }
 
 
@@ -372,7 +372,7 @@ TEST(Mappers_IdeaEffectsTests, vote_franchiseLevelsCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getVote_franchise(), 7);
+	ASSERT_EQ(ideaEffects.getVote_franchise(), 2);
 }
 
 
@@ -384,7 +384,7 @@ TEST(Mappers_IdeaEffectsTests, voting_systemLevelsDefaultsToFive)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getVoting_system(), 5);
+	ASSERT_EQ(ideaEffects.getVoting_system(), 0);
 }
 
 
@@ -397,7 +397,7 @@ TEST(Mappers_IdeaEffectsTests, voting_systemLevelsCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getVoting_system(), 7);
+	ASSERT_EQ(ideaEffects.getVoting_system(), 2);
 }
 
 
@@ -409,7 +409,7 @@ TEST(Mappers_IdeaEffectsTests, public_meetingsLevelsDefaultsToFive)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getPublic_meetings(), 5);
+	ASSERT_EQ(ideaEffects.getPublic_meetings(), 0);
 }
 
 
@@ -422,7 +422,7 @@ TEST(Mappers_IdeaEffectsTests, public_meetingsLevelsCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getPublic_meetings(), 7);
+	ASSERT_EQ(ideaEffects.getPublic_meetings(), 2);
 }
 
 
@@ -434,7 +434,7 @@ TEST(Mappers_IdeaEffectsTests, press_rightsLevelsDefaultsToFive)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getPress_rights(), 5);
+	ASSERT_EQ(ideaEffects.getPress_rights(), 0);
 }
 
 
@@ -447,7 +447,7 @@ TEST(Mappers_IdeaEffectsTests, press_rightsLevelsCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getPress_rights(), 7);
+	ASSERT_EQ(ideaEffects.getPress_rights(), 2);
 }
 
 
@@ -459,7 +459,7 @@ TEST(Mappers_IdeaEffectsTests, trade_unionsLevelsDefaultsToFive)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getTrade_unions(), 5);
+	ASSERT_EQ(ideaEffects.getTrade_unions(), 0);
 }
 
 
@@ -472,7 +472,7 @@ TEST(Mappers_IdeaEffectsTests, trade_unionsLevelsCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getTrade_unions(), 7);
+	ASSERT_EQ(ideaEffects.getTrade_unions(), 2);
 }
 
 
@@ -484,7 +484,7 @@ TEST(Mappers_IdeaEffectsTests, political_partiesLevelsDefaultsToFive)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getPolitical_parties(), 5);
+	ASSERT_EQ(ideaEffects.getPolitical_parties(), 0);
 }
 
 
@@ -497,5 +497,5 @@ TEST(Mappers_IdeaEffectsTests, political_partiesLevelsCanBeSet)
 
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_EQ(ideaEffects.getPolitical_parties(), 7);
+	ASSERT_EQ(ideaEffects.getPolitical_parties(), 2);
 }

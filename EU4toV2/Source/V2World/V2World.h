@@ -31,6 +31,8 @@
 #include "../Mappers/WarGoalMapper/WarGoalMapper.h"
 #include "../Mappers/StartingTechMapper/StartingTechMapper.h"
 #include "../Mappers/StartingInventionMapper/StartingInventionMapper.h"
+#include "../Mappers/CultureGroups/CultureGroups.h"
+#include "../Mappers/RegionLocalizations/RegionLocalizations.h"
 #include "Province/ProvinceNameParser.h"
 #include <list>
 #include <memory>
@@ -66,6 +68,7 @@ namespace V2
 		std::map<std::string, std::shared_ptr<Country>> dynamicCountries;
 		std::vector<War> wars;
 		std::vector<std::pair<std::string, EU4::HistoricalEntry>> historicalData; // HoI4 export dynasty+rulers
+		std::set<std::string> neoCultureLocalizations; // raw strings for output.
 
 		[[nodiscard]] std::optional<std::string> determineProvinceOwnership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
 		[[nodiscard]] std::shared_ptr<Province> getProvince(int provID) const;
@@ -109,9 +112,13 @@ namespace V2
 		void outputCountries() const;
 		void outputWars() const;
 		void outputHistory() const;
+		void outputCultures() const;
+		void outputNeoCultures() const;
 		void verifyCountriesWritten() const;
 		void convertWars(const EU4::World& sourceWorld);
 		void transcribeHistoricalData();
+		void transcribeNeoCultures();
+		void modifyPrimaryAndAcceptedCultures();
 		
 		mappers::ProvinceMapper provinceMapper;
 		mappers::Continents continentsMapper;
@@ -140,6 +147,8 @@ namespace V2
 		mappers::WarGoalMapper warGoalMapper;
 		mappers::StartingTechMapper startingTechMapper;
 		mappers::StartingInventionMapper startingInventionMapper;
+		mappers::CultureGroups cultureGroupsMapper;
+		mappers::RegionLocalizations regionLocalizations;
 		ProvinceNameParser provinceNameParser;
 		CountryPopLogger countryPopLogger;
 		MappingChecker mappingChecker;
