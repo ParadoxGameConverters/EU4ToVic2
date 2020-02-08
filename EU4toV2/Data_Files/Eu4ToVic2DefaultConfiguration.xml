@@ -73,7 +73,7 @@
 						</entryOption>
 						<entryOption>
 							<name>2</name>
-							<friendlyName>2 - Sometimes, see liberty desire</friendlyName>
+							<friendlyName>2 - Sometimes, by attitude</friendlyName>
 							<description>Set the threshold manually</description>
 							<isDefault>false</isDefault>
 						</entryOption>
@@ -88,11 +88,27 @@
 				<preference>
 					<name>liberty_threshold</name>
 					<friendlyName>If "Sometimes", when exactly?</friendlyName>
-					<description>The threshold value for when colonies are not absorbed. Default 25% liberty desire.</description>
-					<hasDirectlyEditableValue>true</hasDirectlyEditableValue>
-					<value>25</value>
-					<minValue>0</minValue>
-					<maxValue>100</maxValue>
+					<description>The threshold attitude for when colonies are absorbed. Default is loyal.</description>
+					<entryOptions>
+						<entryOption>
+							<name>1</name>
+							<friendlyName>1 - Absorb Loyal only</friendlyName>
+							<description>Only Loyal colonies</description>
+							<isDefault>true</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>2</name>
+							<friendlyName>2 - Absorb Disloyal too</friendlyName>
+							<description>Disloyal colonies absorbed too.</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>3</name>
+							<friendlyName>3 - Absorb Rebellious as well</friendlyName>
+							<description>All colonies are absorbed</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+					</entryOptions>
 				</preference>
 				<preference>
 					<name>pop_shaping</name>

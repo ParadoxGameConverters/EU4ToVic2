@@ -57,9 +57,9 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		LOG(LogLevel::Info) << "Absorb Colonies: " << absorbInt.getInt();
 		});
 	registerKeyword("liberty_threshold", [this](const std::string& unused, std::istream& theStream){
-		const commonItems::singleDouble libertyThresholdDouble(theStream);
-		libertyThreshold = libertyThresholdDouble.getDouble();
-		LOG(LogLevel::Info) << "Liberty Treshold: " << libertyThreshold;
+		const commonItems::singleInt libertyThresholdInt(theStream);
+		libertyThreshold = LIBERTYDESIRE(libertyThresholdInt.getInt());
+		LOG(LogLevel::Info) << "Liberty Treshold: " << libertyThresholdInt.getInt();
 	});
 	registerKeyword("pop_shaping", [this](const std::string& unused, std::istream& theStream){
 		const commonItems::singleInt popShapingInt(theStream);

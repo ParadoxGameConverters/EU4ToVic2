@@ -466,65 +466,64 @@ void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEff
 
 void EU4::Country::determineLibertyDesire()
 {
-	if (colony && libertyDesire > 0)
+	if (!colony) return;
+	
+	const auto& relationship = relations.find(overlord);
+	if (relationship != relations.end())
 	{
-		const auto& relationship = relations.find(overlord);
-		if (relationship != relations.end())
+		const auto& attitude = relationship->second.getAttitude();
+		if (attitude == "attitude_rebellious")
 		{
-			const auto& attitude = relationship->second.getAttitude();
-			if (attitude == "attitude_rebellious")
-			{
-				libertyDesire = 95.0;
-			}
-			else if (attitude == "attitude_disloyal" || attitude == "attitude_disloyal_vassal")	// _vassal for pre-1.14 games
-			{
-				libertyDesire = 90.0;
-			}
-			else if (attitude == "attitude_outraged")
-			{
-				libertyDesire = 85.0;
-			}
-			else if (attitude == "attitude_rivalry")
-			{
-				libertyDesire = 80.0;
-			}
-			else if (attitude == "attitude_hostile")
-			{
-				libertyDesire = 75.0;
-			}
-			else if (attitude == "attitude_threatened")
-			{
-				libertyDesire = 65.0;
-			}
-			else if (attitude == "attitude_neutral")
-			{
-				libertyDesire = 50.0;
-			}
-			else if (attitude == "attitude_defensive")
-			{
-				libertyDesire = 35.0;
-			}
-			else if (attitude == "attitude_domineering")
-			{
-				libertyDesire = 20.0;
-			}
-			else if (attitude == "attitude_protective")
-			{
-				libertyDesire = 15.0;
-			}
-			else if (attitude == "attitude_allied" || attitude == "attitude_friendly")
-			{
-				libertyDesire = 10.0;
-			}
-			else if (attitude == "attitude_loyal" || attitude == "attitude_overlord" || attitude == "attitude_vassal")	// _vassal for pre-1.14 games
-			{
-				libertyDesire = 5.0;
-			}
-			else
-			{
-				LOG(LogLevel::Warning) << "Unknown attitude type " << attitude << " while setting liberty desire for " << tag;
-				libertyDesire = 95.0;
-			}
+			libertyDesire = 95.0;
+		}
+		else if (attitude == "attitude_disloyal" || attitude == "attitude_disloyal_vassal")	// _vassal for pre-1.14 games
+		{
+			libertyDesire = 90.0;
+		}
+		else if (attitude == "attitude_outraged")
+		{
+			libertyDesire = 85.0;
+		}
+		else if (attitude == "attitude_rivalry")
+		{
+			libertyDesire = 80.0;
+		}
+		else if (attitude == "attitude_hostile")
+		{
+			libertyDesire = 75.0;
+		}
+		else if (attitude == "attitude_threatened")
+		{
+			libertyDesire = 65.0;
+		}
+		else if (attitude == "attitude_neutral")
+		{
+			libertyDesire = 50.0;
+		}
+		else if (attitude == "attitude_defensive")
+		{
+			libertyDesire = 35.0;
+		}
+		else if (attitude == "attitude_domineering")
+		{
+			libertyDesire = 20.0;
+		}
+		else if (attitude == "attitude_protective")
+		{
+			libertyDesire = 15.0;
+		}
+		else if (attitude == "attitude_allied" || attitude == "attitude_friendly")
+		{
+			libertyDesire = 10.0;
+		}
+		else if (attitude == "attitude_loyal" || attitude == "attitude_overlord" || attitude == "attitude_vassal")	// _vassal for pre-1.14 games
+		{
+			libertyDesire = 5.0;
+		}
+		else
+		{
+			LOG(LogLevel::Warning) << "Unknown attitude type " << attitude << " while setting liberty desire for " << tag;
+			libertyDesire = 95.0;
 		}
 	}
 }
