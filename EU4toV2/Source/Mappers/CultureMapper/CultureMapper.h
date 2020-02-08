@@ -46,7 +46,7 @@ namespace mappers
 	private:
 		void registerKeys();
 		
-		std::list<CultureMappingRule> cultureMapRules;
+		std::vector<CultureMappingRule> cultureMapRules;
 	};
 }
 

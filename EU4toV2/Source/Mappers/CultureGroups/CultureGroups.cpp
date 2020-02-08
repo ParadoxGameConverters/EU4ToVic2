@@ -57,7 +57,7 @@ void mappers::CultureGroups::registerKeys()
 				for (const auto& cultureItr: newGroup.getCultures())
 				{
 					cultureGroupsMap[cultureGroupName].mergeCulture(cultureItr.first, cultureItr.second);
-				}				
+				}
 			}
 			else cultureGroupsMap.insert(std::make_pair(cultureGroupName, newGroup));
 		});
