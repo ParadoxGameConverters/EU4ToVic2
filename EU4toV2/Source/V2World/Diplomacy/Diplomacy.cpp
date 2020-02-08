@@ -49,7 +49,9 @@ void V2::Diplomacy::convertDiplomacy(
 			country2->second->setColonyOverlord(V2Tag1);
 			
 			// Do we annex or not?
-			if (country2->second->getSourceCountry()->getLibertyDesire() < theConfiguration.getLibertyThreshold())
+			if (theConfiguration.getAbsorbColonies() == Configuration::ABSORBCOLONIES::AbsorbAll || 
+				theConfiguration.getAbsorbColonies() == Configuration::ABSORBCOLONIES::AbsorbSome &&
+					country2->second->getSourceCountry()->getLibertyDesire() < theConfiguration.getLibertyThreshold())
 			{
 				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() <<
 					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << theConfiguration.getLibertyThreshold() << " liberty desire)";
