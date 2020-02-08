@@ -32,6 +32,8 @@ class Configuration: commonItems::parser
 		enum class POPSHAPES { Vanilla = 1, PopShaping = 2, Extreme = 3 };
 		enum class COREHANDLES { DropNone = 1, DropNational = 2, DropUnions = 3, DropAll = 4 };
 		enum class EUROCENTRISM { VanillaImport = 1, EuroCentric = 2 };
+		enum class ABSORBCOLONIES { AbsorbNone = 1, AbsorbSome = 2, AbsorbAll = 3 };
+		enum class LIBERTYDESIRE { Loyal = 1, Disloyal = 2, Rebellious = 3 };
 
 		[[nodiscard]] auto getPopShaping() const { return popShaping; }
 		[[nodiscard]] auto getCoreHandling() const { return coreHandling; }
@@ -41,6 +43,7 @@ class Configuration: commonItems::parser
 		[[nodiscard]] auto getMaxLiteracy() const { return MaxLiteracy; }
 		[[nodiscard]] auto getLibertyThreshold() const { return libertyThreshold; }
 		[[nodiscard]] auto getPopShapingFactor() const { return popShapingFactor; }
+		[[nodiscard]] auto getAbsorbColonies() const { return absorbColonies; }
 		[[nodiscard]] auto getDebug() const { return debug; }
 		[[nodiscard]] auto getRandomiseRgos() const { return randomiseRgos; }
 		[[nodiscard]] auto getConvertAll() const { return convertAll; }
@@ -81,11 +84,12 @@ class Configuration: commonItems::parser
 		std::string Vic2DocumentsPath;
 		std::string resetProvinces = "no";
 		double MaxLiteracy = 1.0;
-		double libertyThreshold = 50.0;
+		LIBERTYDESIRE libertyThreshold = LIBERTYDESIRE::Loyal;
 		POPSHAPES popShaping = POPSHAPES::Vanilla;
 		COREHANDLES coreHandling = COREHANDLES::DropNone;
 		DEADCORES removeType = DEADCORES::DeadCores;
 		EUROCENTRISM euroCentric = EUROCENTRISM::VanillaImport;
+		ABSORBCOLONIES absorbColonies = ABSORBCOLONIES::AbsorbNone;
 		double popShapingFactor = 50.0;
 		bool debug = false;
 		bool randomiseRgos = false;

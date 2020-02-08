@@ -31,9 +31,9 @@
 					<friendlyName>Max Literacy</friendlyName>
 					<description>The maximum literacy a nation will start with. Default 100%</description>
 					<hasDirectlyEditableValue>true</hasDirectlyEditableValue>
-					<value>1</value>
-					<minValue>0.1</minValue>
-					<maxValue>1</maxValue>
+					<value>100</value>
+					<minValue>1</minValue>
+					<maxValue>100</maxValue>
 				</preference>
 				<preference>
 					<name>remove_type</name>
@@ -61,13 +61,54 @@
 					</entryOptions>
 				</preference>
 				<preference>
+					<name>absorb_colonies</name>
+					<friendlyName>Turn Colonial Nations into territories?</friendlyName>
+					<description>How should we handle one's colonial nations?</description>
+					<entryOptions>
+						<entryOption>
+							<name>1</name>
+							<friendlyName>1 - Never, they are puppets</friendlyName>
+							<description>All will be independent</description>
+							<isDefault>true</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>2</name>
+							<friendlyName>2 - Sometimes, by attitude</friendlyName>
+							<description>Set the threshold manually</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>3</name>
+							<friendlyName>3 - All, even disloyal ones</friendlyName>
+							<description>Integrate every dependant colonial nation</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+					</entryOptions>
+				</preference>				
+				<preference>
 					<name>liberty_threshold</name>
-					<friendlyName>Liberty threshold for Colonies</friendlyName>
-					<description>The threshold value for when colonies are not absorbed. Default 50% (loyal colonies absorbed)</description>
-					<hasDirectlyEditableValue>true</hasDirectlyEditableValue>
-					<value>50</value>
-					<minValue>1</minValue>
-					<maxValue>100</maxValue>
+					<friendlyName>If "Sometimes", when exactly?</friendlyName>
+					<description>The threshold attitude for when colonies are absorbed. Default is loyal.</description>
+					<entryOptions>
+						<entryOption>
+							<name>1</name>
+							<friendlyName>1 - Absorb Loyal only</friendlyName>
+							<description>Only Loyal colonies</description>
+							<isDefault>true</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>2</name>
+							<friendlyName>2 - Absorb Disloyal too</friendlyName>
+							<description>Disloyal colonies absorbed too.</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>3</name>
+							<friendlyName>3 - Absorb Rebellious as well</friendlyName>
+							<description>All colonies are absorbed</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+					</entryOptions>
 				</preference>
 				<preference>
 					<name>pop_shaping</name>

@@ -338,7 +338,7 @@ TEST(EU4ToVic2_ConfigurationTests, MaxLiteracyDefaultsToOne)
 TEST(EU4ToVic2_ConfigurationTests, MaxLiteracyCanBeSet)
 {
 	Configuration testConfiguration;
-	std::stringstream input("max_literacy = 0.5");
+	std::stringstream input("max_literacy = 50");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
 	ASSERT_EQ(testConfiguration.getMaxLiteracy(), 0.5);
@@ -371,17 +371,17 @@ TEST(EU4ToVic2_ConfigurationTests, LibertyThresholdDefaultsToFifty)
 	std::stringstream input("");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ(testConfiguration.getLibertyThreshold(), 50.0);
+	ASSERT_EQ(testConfiguration.getLibertyThreshold(), Configuration::LIBERTYDESIRE::Loyal);
 }
 
 
 TEST(EU4ToVic2_ConfigurationTests, LibertyThresholdCanBeSet)
 {
 	Configuration testConfiguration;
-	std::stringstream input("libertyThreshold = 50.0");
+	std::stringstream input("liberty_threshold = 2");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ(testConfiguration.getLibertyThreshold(), 50.0);
+	ASSERT_EQ(testConfiguration.getLibertyThreshold(), Configuration::LIBERTYDESIRE::Disloyal);
 }
 
 
