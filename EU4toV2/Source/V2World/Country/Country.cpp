@@ -706,6 +706,13 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 
 	details.literacy *= theConfiguration.getMaxLiteracy() * (pow(10, civLevel / 100 * 0.9 + 0.1) / 10);
 
+	// drop nominal literacy according to starting date.
+
+	const auto diffYear = std::fmax(theConfiguration.getLastEU4Date().diffInYears(date("0.1.1")), 0);
+	const auto yearFactor = (0.1 + 4614700 * diffYear) / (1 + static_cast<float>(103810000) * diffYear - 54029 * pow(diffYear, 2));
+
+	details.literacy *= yearFactor;
+
 	if (civLevel == 100) details.civilized = true;
 
 	if (details.civilized == false)
