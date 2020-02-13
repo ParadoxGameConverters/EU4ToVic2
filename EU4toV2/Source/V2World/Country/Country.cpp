@@ -706,6 +706,25 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 
 	details.literacy *= theConfiguration.getMaxLiteracy() * (pow(10, civLevel / 100 * 0.9 + 0.1) / 10);
 
+	/*
+	Drop nominal literacy according to starting date. The curve is crafted to hit the following literacy percentage points:
+	1836: 1
+	1821: 0.85
+	1750: 0.5
+	1650: 0.3
+	1490: 0.2
+	1350: 0.15
+	It will fail to hit those points exactly but won't err by much.
+	*/
+	
+	auto lastDate = theConfiguration.getLastEU4Date();
+	if (lastDate > HARD_ENDING_DATE) lastDate = HARD_ENDING_DATE;
+	
+	const auto currentYear = std::fmax(lastDate.diffInYears(date("0.1.1")), 0);
+	const auto yearFactor = (0.1 + 4'614'700 * currentYear) / (1 + 103'810'000.0f * currentYear - 54'029 * pow(currentYear, 2));
+
+	details.literacy *= yearFactor;
+
 	if (civLevel == 100) details.civilized = true;
 
 	if (details.civilized == false)

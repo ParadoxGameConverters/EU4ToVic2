@@ -4,9 +4,6 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-const date HARD_ENDING_DATE("1836.1.1");
-const date FUTURE_DATE("2000.1.1");
-
 EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 {
 	registerKeyword("owner", [this](const std::string& unused, std::istream & theStream) {
