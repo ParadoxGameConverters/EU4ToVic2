@@ -10,6 +10,7 @@
 #include "EU4CountryFlags.h"
 #include "EU4Modifier.h"
 #include "EU4ActiveIdeas.h"
+#include <cmath>
 
 EU4::Country::Country(
 	std::string countryTag,
