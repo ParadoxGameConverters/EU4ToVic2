@@ -899,7 +899,7 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 		admMean += (admTech - admMean) / num;
 		++num;
 	}
-	
+
 	// give all extant civilized nations an industrial score
 	std::deque<std::pair<double, std::shared_ptr<Country>>> weightedCountries;
 	for (const auto& country : countries)
