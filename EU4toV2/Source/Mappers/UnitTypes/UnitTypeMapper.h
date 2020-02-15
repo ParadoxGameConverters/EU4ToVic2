@@ -11,7 +11,8 @@ namespace mappers
 	class UnitTypeMapper : commonItems::parser
 	{
 	public:
-		UnitTypeMapper();
+		UnitTypeMapper() = default;
+		void initUnitTypeMapper();
 		
 		[[nodiscard]] const auto& getUnitTypeMap() const { return unitTypeMap; }
 

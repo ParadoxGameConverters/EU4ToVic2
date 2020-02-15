@@ -66,6 +66,7 @@ namespace EU4
 		void catalogueNativeCultures();
 		void generateNeoCultures();
 		void buildPopRatios() const;
+		void calculateIndustry() const;
 		std::string generateNeoCulture(const std::string& superRegionName, const std::string& oldCultureName);
 		bool uncompressSave();
 		

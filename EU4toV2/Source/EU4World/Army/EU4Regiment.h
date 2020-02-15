@@ -40,7 +40,8 @@ namespace EU4
 		{ REGIMENTCATEGORY::heavy_ship, "heavy_ship" },
 		{ REGIMENTCATEGORY::light_ship, "light_ship" },
 		{ REGIMENTCATEGORY::galley, "galley" },
-		{ REGIMENTCATEGORY::transport, "transport" }
+		{ REGIMENTCATEGORY::transport, "transport" },
+		{ REGIMENTCATEGORY::num_reg_categories, "unassigned category!" }
 	};
 
 	class EU4Regiment : public  commonItems::parser

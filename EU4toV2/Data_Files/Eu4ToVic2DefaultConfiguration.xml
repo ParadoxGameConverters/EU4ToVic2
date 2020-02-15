@@ -184,13 +184,13 @@
 							<name>1</name>
 							<friendlyName>1 - Use EU4 institutions and tech</friendlyName>
 							<description>Use defaults</description>
-							<isDefault>true</isDefault>
+							<isDefault>false</isDefault>
 						</entryOption>
 						<entryOption>
 							<name>2</name>
 							<friendlyName>2 - Time to rule the waves!</friendlyName>
 							<description>Configurable via techgroups.txt</description>
-							<isDefault>false</isDefault>
+							<isDefault>true</isDefault>
 						</entryOption>
 					</entryOptions>
 				</preference>
