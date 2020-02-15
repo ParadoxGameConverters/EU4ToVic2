@@ -181,6 +181,9 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	LOG(LogLevel::Info) << "-> Merging Nations";
 	mergeNations();
 
+	LOG(LogLevel::Info) << "-> Calculating Industry";
+	calculateIndustry();
+
 	LOG(LogLevel::Info) << "-> Viva la revolution!";
 	loadRevolutionTarget();
 	if (!revolutionTargetString.empty())
@@ -206,6 +209,14 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		removeLandlessNations();
 	}
 	LOG(LogLevel::Info) << "*** Good-bye EU4, you served us well. ***";
+}
+
+void EU4::World::calculateIndustry() const
+{
+	for (const auto& country: theCountries)
+	{
+		country.second->buildManufactoryCount(theCountries);
+	}
 }
 
 void EU4::World::buildPopRatios() const

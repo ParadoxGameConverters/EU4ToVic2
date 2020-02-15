@@ -53,6 +53,8 @@ namespace EU4
 		void dropMinorityCultures();
 		void filterLeaders();
 		void resolveRegimentTypes(const mappers::UnitTypeMapper& unitTypeMapper);
+		void buildManufactoryCount(const std::map<std::string, std::shared_ptr<Country>>& theCountries);
+		void increaseMfgTransfer(const int increase) { mfgTransfer += increase; }
 
 		[[nodiscard]] const auto& getTag() const { return tag; }
 		[[nodiscard]] auto getCapital() const { return capital; }
@@ -95,6 +97,7 @@ namespace EU4
 		[[nodiscard]] auto isColony() const { return colony; }
 		[[nodiscard]] auto getLibertyDesire() const { return libertyDesire; }
 		[[nodiscard]] auto isRevolutionary() const { return revolutionary; }
+		[[nodiscard]] auto getManufactoryCount() const { return mfgCount + mfgTransfer; }
 		[[nodiscard]] const auto& getRandomName() const { return randomName; }
 		[[nodiscard]] const auto& getName() const { return name; }
 				
@@ -122,8 +125,8 @@ namespace EU4
 		[[nodiscard]] bool hasModifier(const std::string&) const;
 		[[nodiscard]] bool hasNationalIdea(const std::string&) const;
 		[[nodiscard]] bool hasFlag(const std::string&) const;
-		[[nodiscard]] int getManufactoryCount() const;
 		[[nodiscard]] int numEmbracedInstitutions() const;
+		[[nodiscard]] double getManufactoryDensity() const;
 
 	private:
 		void determineJapaneseRelations();
@@ -200,6 +203,8 @@ namespace EU4
 		std::string randomName; // the new name of this nation in Random World
 		bool revolutionary = false; // does this country wave the glorious tri-colored banner of the revolution
 		std::set<std::string> governmentReforms;
+		int mfgCount = 0;
+		int mfgTransfer = 0;
 
 		// Localization attributes
 		std::string	name; // the name of this country

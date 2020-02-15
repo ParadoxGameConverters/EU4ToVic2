@@ -604,9 +604,8 @@ void EU4::Country::resolveRegimentTypes(const mappers::UnitTypeMapper& unitTypeM
 	for (auto& itr: armies) itr.resolveRegimentTypes(unitTypeMapper);
 }
 
-int EU4::Country::getManufactoryCount() const
+void EU4::Country::buildManufactoryCount(const std::map<std::string, std::shared_ptr<Country>>& theCountries)
 {
-	auto mfgCount = 0;
 	for (const auto& province: provinces)
 	{
 		//TODO: Dump buildings and values into own parser - duplication at V2::Province
@@ -619,7 +618,19 @@ int EU4::Country::getManufactoryCount() const
 		if (province->hasBuilding("mills")) ++mfgCount;
 		if (province->hasBuilding("furnace")) mfgCount += 3;
 	}
-	return mfgCount;
+	if (!overlord.empty())
+	{
+		const auto transferCount = mfgCount - lround(mfgCount / 2);
+		mfgTransfer -= transferCount;
+		const auto& overlordCountry = theCountries.find(overlord);
+		if (overlordCountry != theCountries.end()) overlordCountry->second->increaseMfgTransfer(transferCount);
+	}
+}
+
+double EU4::Country::getManufactoryDensity() const
+{
+	if (provinces.empty()) return 0;
+	return static_cast<double>(mfgCount) / provinces.size();
 }
 
 void EU4::Country::eatCountry(Country& target)
