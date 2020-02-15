@@ -276,6 +276,8 @@ void EU4::Country::filterLeaders()
 
 void EU4::Country::dropMinorityCultures()
 {
+	if (!development) return;
+
 	std::vector<std::string> updatedCultures;
 	for (const auto& acceptedCulture: acceptedCultures)
 	{
@@ -289,7 +291,7 @@ void EU4::Country::dropMinorityCultures()
 			updatedCultures.push_back(acceptedCulture);
 		}
 	}
-	acceptedCultures = updatedCultures;
+	acceptedCultures.swap(updatedCultures);
 }
 
 double EU4::Country::getLegitimacy() const
