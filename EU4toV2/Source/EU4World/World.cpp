@@ -151,9 +151,6 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	LOG(LogLevel::Info) << "-> Processing Province Info";
 	addProvinceInfoToCountries();
 
-	LOG(LogLevel::Info) << "-> Eliminating Minorities";
-	dropMinoritiesFromCountries();
-
 	LOG(LogLevel::Info) << "-> Determining Province Weights";
 	provinces->determineTotalProvinceWeights(theConfiguration);
 
@@ -162,7 +159,10 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	
 	LOG(LogLevel::Info) << "-> Determining Demographics";
 	buildPopRatios();
-	
+
+	LOG(LogLevel::Info) << "-> Eliminating Minorities";
+	dropMinoritiesFromCountries();
+
 	LOG(LogLevel::Info) << "-> Cataloguing Native Fauna";
 	catalogueNativeCultures();
 
