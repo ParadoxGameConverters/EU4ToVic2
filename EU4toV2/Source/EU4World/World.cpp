@@ -140,6 +140,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	clearRegisteredKeywords();
 
 	cultureGroupsMapper.initForEU4();
+	unitTypeMapper.initUnitTypeMapper();
 
 	LOG(LogLevel::Info) << "*** Building world ***";
 	LOG(LogLevel::Info) << "-> Loading Empires";

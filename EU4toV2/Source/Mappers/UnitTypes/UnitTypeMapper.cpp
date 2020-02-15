@@ -6,7 +6,7 @@
 #include "../../Configuration.h"
 
 
-mappers::UnitTypeMapper::UnitTypeMapper()
+void mappers::UnitTypeMapper::initUnitTypeMapper()
 {
 	LOG(LogLevel::Info) << "Parsing unit strengths from EU4 installation.";
 
