@@ -1112,6 +1112,27 @@ pan_nationalist_rebels = {
 				has_country_modifier = global_liberal_agitation
 			}
 		}
+		## The this-should-not-count countries
+		modifier = {
+			factor = 0
+			country = {
+				tag = SWI #Switzerland
+			}
+		}
+		modifier = {
+			factor = 0
+			culture = irish #Ireland
+		}
+		modifier = {
+			factor = 0
+			country = {
+				tag = POR #Portugal
+			}
+		}
+		modifier = {
+			factor = 0
+			culture = andalusian #Andalusia/Granada should not become Arabia
+		}
 	}
 	
 	# The rebel type with the highest modifier for this pop gets picked
