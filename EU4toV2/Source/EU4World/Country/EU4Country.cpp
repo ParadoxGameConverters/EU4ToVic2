@@ -134,7 +134,7 @@ EU4::Country::Country(
 	//Relevant since 1.20 but we only use it for 1.26+
 	registerKeyword("age_score", [this, theVersion](const std::string& unused, std::istream& theStream) 
 		{
-			if (theVersion >= Version("1.26.0.0")) 
+			if (theVersion >= Version("1.26.0.0"))
 			{
 				const commonItems::doubleList ageScores(theStream);
 				for (auto& agScore : ageScores.getDoubles()) score += agScore;
@@ -242,6 +242,8 @@ EU4::Country::Country(
 			const CountryHistory theCountryHistory(theStream);
 			historicalLeaders = theCountryHistory.getLeaders();
 			if (!theCountryHistory.getDynasty().empty()) historicalEntry.lastDynasty = theCountryHistory.getDynasty();
+			historicalPrimaryCulture = theCountryHistory.getPrimaryCulture();
+			historicalReligion = theCountryHistory.getReligion();
 		});
 	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream)
 		{
@@ -253,12 +255,15 @@ EU4::Country::Country(
 	parseStream(theStream);
 	clearRegisteredKeywords();
 
+	if (primaryCulture.empty() && !historicalPrimaryCulture.empty()) primaryCulture = historicalPrimaryCulture;
+	if (religion.empty() && !historicalReligion.empty()) religion = historicalReligion;
+
 	determineJapaneseRelations();
 	determineInvestments(ideaEffectMapper);
 	determineLibertyDesire();
 	determineCulturalUnion(cultureGroupsMapper);
 	filterLeaders();
-	
+
 	// finalize history data.
 	if (government == "republic" || government == "theocracy") historicalEntry.monarchy = false;
 }
