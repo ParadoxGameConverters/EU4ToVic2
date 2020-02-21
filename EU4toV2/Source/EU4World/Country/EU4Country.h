@@ -147,9 +147,11 @@ namespace EU4
 		std::vector<bool> embracedInstitutions; // the institutions this nation has embraced
 		int isolationism = 1; // the isolationism of the country (for Shinto nations with Mandate of Heaven)
 		std::string primaryCulture; // the primary EU4 culture of this nation
+		std::string historicalPrimaryCulture;
 		std::vector<std::string> acceptedCultures; // the accepted EU4 cultures for this nation
 		std::optional<mappers::CultureGroup> culturalUnion;
 		std::string religion; // the accepted religion of this country
+		std::string historicalReligion;
 		double score = 0.0;
 		double admTech = 0.0; // the admin tech of this nation
 		double dipTech = 0.0; // the diplo tech of this nation

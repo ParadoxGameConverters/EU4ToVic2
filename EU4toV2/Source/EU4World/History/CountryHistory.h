@@ -13,10 +13,14 @@ namespace EU4
 		
 		[[nodiscard]] const auto& getLeaders() const { return leaders; }
 		[[nodiscard]] const auto& getDynasty() const { return dynasty; }
+		[[nodiscard]] const auto& getPrimaryCulture() const { return primaryCulture; }
+		[[nodiscard]] const auto& getReligion() const { return religion; }
 
 	private:
 		std::vector<Leader> leaders;
 		std::string dynasty;
+		std::string religion;
+		std::string primaryCulture;
 	};
 }
 

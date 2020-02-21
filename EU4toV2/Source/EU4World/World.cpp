@@ -715,7 +715,7 @@ void EU4::World::uniteJapan()
 
 void EU4::World::removeEmptyNations()
 {
-	std::map<std::string, std::shared_ptr<EU4::Country>> survivingCountries;
+	std::map<std::string, std::shared_ptr<Country>> survivingCountries;
 
 	for (const auto& country: theCountries)
 	{
@@ -732,7 +732,7 @@ void EU4::World::removeEmptyNations()
 
 void EU4::World::removeDeadLandlessNations()
 {
-	std::map<std::string, std::shared_ptr<EU4::Country>> landlessCountries;
+	std::map<std::string, std::shared_ptr<Country>> landlessCountries;
 	for (const auto& country: theCountries)
 	{
 		auto countryProvinces = country.second->getProvinces();
@@ -753,7 +753,7 @@ void EU4::World::removeDeadLandlessNations()
 
 void EU4::World::removeLandlessNations()
 {
-	std::map<std::string, std::shared_ptr<EU4::Country>> survivingCountries;
+	std::map<std::string, std::shared_ptr<Country>> survivingCountries;
 
 	for (const auto& country: theCountries)
 	{
