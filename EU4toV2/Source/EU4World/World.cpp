@@ -131,7 +131,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		if (!inBinary.is_open())
 		{
 			LOG(LogLevel::Error) << "Could not open " << theConfiguration.getEU4SaveGamePath() << " for parsing.";
-			return;
+			throw std::runtime_error("Could not open " + theConfiguration.getEU4SaveGamePath() + " for parsing.");
 		}
 		std::stringstream inStream;
 		inStream << inBinary.rdbuf();
