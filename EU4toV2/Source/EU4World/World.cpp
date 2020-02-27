@@ -127,14 +127,22 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	LOG(LogLevel::Info) << "-> Importing EU4 save.";
 	if (!saveGame.compressed)
 	{
-		parseFile(theConfiguration.getEU4SaveGamePath());
+		std::ifstream inBinary(fs::u8path(theConfiguration.getEU4SaveGamePath()), std::ios::binary);
+		if (!inBinary.is_open())
+		{
+			LOG(LogLevel::Error) << "Could not open " << theConfiguration.getEU4SaveGamePath() << " for parsing.";
+			throw std::runtime_error("Could not open " + theConfiguration.getEU4SaveGamePath() + " for parsing.");
+		}
+		std::stringstream inStream;
+		inStream << inBinary.rdbuf();
+		parseStream(inStream);
 	}
 	else
 	{
-		auto mdata = std::istringstream(saveGame.metadata);
-		parseStream(mdata);
-		auto gstate = std::istringstream(saveGame.gamestate);
-		parseStream(gstate);
+		auto metaData = std::istringstream(saveGame.metadata);
+		parseStream(metaData);
+		auto gameState = std::istringstream(saveGame.gamestate);
+		parseStream(gameState);
 	}
 	
 	clearRegisteredKeywords();
