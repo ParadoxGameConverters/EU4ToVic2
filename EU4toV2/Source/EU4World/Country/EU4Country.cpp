@@ -11,6 +11,7 @@
 #include "EU4Modifier.h"
 #include "EU4ActiveIdeas.h"
 #include <cmath>
+#include "OSCompatibilityLayer.h"
 
 EU4::Country::Country(
 	std::string countryTag,
@@ -24,6 +25,7 @@ EU4::Country::Country(
 		{
 			const commonItems::singleString theName(theStream);
 			name = theName.getString();
+			name = Utils::normalizeUTF8Path(name);
 		});
 	registerKeyword("custom_name", [this](const std::string& unused, std::istream& theStream)
 		{
