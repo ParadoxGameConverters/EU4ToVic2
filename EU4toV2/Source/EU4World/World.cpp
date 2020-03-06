@@ -135,16 +135,16 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		}
 		std::stringstream inStream;
 		inStream << inBinary.rdbuf();
-		parseStream(inStream);
+		saveGame.gamestate = inStream.str();
 	}
-	else
-	{
-		auto metaData = std::istringstream(saveGame.metadata);
-		parseStream(metaData);
-		auto gameState = std::istringstream(saveGame.gamestate);
-		parseStream(gameState);
-	}
-	
+
+	verifySaveContents();
+
+	auto metaData = std::istringstream(saveGame.metadata);
+	auto gameState = std::istringstream(saveGame.gamestate);
+	parseStream(metaData);
+	parseStream(gameState);
+
 	clearRegisteredKeywords();
 
 	cultureGroupsMapper.initForEU4();
@@ -351,30 +351,31 @@ void EU4::World::fillHistoricalData()
 	for (const auto& country : theCountries) historicalData.emplace_back(std::make_pair(country.first, country.second->getHistoricalEntry()));
 }
 
+void EU4::World::verifySaveContents()
+{
+	if (
+		saveGame.gamestate[0] == 'E' &&
+		saveGame.gamestate[1] == 'U' &&
+		saveGame.gamestate[2] == '4' &&
+		saveGame.gamestate[3] == 'b' &&
+		saveGame.gamestate[4] == 'i' &&
+		saveGame.gamestate[5] == 'n'
+	) throw std::runtime_error("Ironman saves cannot be converted.");
+}
 
 void EU4::World::verifySave()
 {
 	std::ifstream saveFile(fs::u8path(theConfiguration.getEU4SaveGamePath()));
 	if (!saveFile.is_open()) throw std::runtime_error("Could not open save! Exiting!");
 
-	char buffer[8];
-	saveFile.get(buffer, 8);
-	if (
-		buffer[0] == 'E' &&
-		buffer[1] == 'U' &&
-		buffer[2] == '4' &&
-		buffer[3] == 'b' &&
-		buffer[4] == 'i' &&
-		buffer[5] == 'n' &&
-		buffer[6] == 'M'
-	) throw std::runtime_error("Ironman saves cannot be converted.");
+	char buffer[3];
+	saveFile.get(buffer, 3);
 	if (buffer[0] == 'P' && buffer[1] == 'K')
 	{
 		LOG(LogLevel::Info) << "Saves must be uncompressed to be converted.";
 		LOG(LogLevel::Info) << "Just kidding.";
 		if (!uncompressSave()) throw std::runtime_error("Failed to unpack the compressed save!");
 	}
-
 	saveFile.close();
 }
 
