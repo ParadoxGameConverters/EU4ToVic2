@@ -44,6 +44,7 @@ namespace EU4
 		
 	private:
 		void verifySave();
+		void verifySaveContents();
 		void loadRevolutionTarget();
 		void dropMinoritiesFromCountries();
 		void addProvinceInfoToCountries();
