@@ -26,6 +26,7 @@ class Configuration: commonItems::parser
 		void setLastEU4Date(date _lastDate) { lastEU4Date = _lastDate; }
 		void setStartEU4Date(date _startDate) { startEU4Date = _startDate; }
 		void setOutputName(const std::string& name) { outputName = name; }
+		void setActualName(const std::string& name) { actualName = name; }
 		void addEU4Mod(const std::string& mod) { EU4Mods.push_back(mod); }
 		void setEU4Version(const EU4::Version& _version) { version = _version; }
 		void setEU4RandomSeed(int seed) { eu4Seed = seed; }
@@ -64,6 +65,7 @@ class Configuration: commonItems::parser
 		[[nodiscard]] const auto& getLastEU4Date() const { return lastEU4Date; }
 		[[nodiscard]] const auto& getStartEU4Date() const { return startEU4Date; }
 		[[nodiscard]] const auto& getOutputName() const { return outputName; }
+		[[nodiscard]] const auto& getActualName() const { return actualName; }
 		[[nodiscard]] const auto& getEU4Mods() const { return EU4Mods; }
 
 		[[nodiscard]] bool wasDLCActive(const std::string& DLC) const;
@@ -105,6 +107,7 @@ class Configuration: commonItems::parser
 		date startEU4Date = date("1000.1.1");
 		int eu4Seed = 0;
 		std::string outputName;
+		std::string actualName; // Not normalized like outputName
 		std::vector<std::string> activeDLCs;
 		std::vector<std::string> EU4Mods;
 };
