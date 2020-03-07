@@ -139,8 +139,10 @@ void Configuration::setOutputName()
 	outputName = trimPath(EU4SaveGamePath);
 	outputName = trimExtension(outputName);
 	outputName = replaceCharacter(outputName, '-');
-	outputName = replaceCharacter(outputName, ' ');
-
+	outputName = replaceCharacter(outputName, ' ');	
+	theConfiguration.setActualName(outputName);
+	
+	outputName = Utils::normalizeUTF8Path(outputName);
 	theConfiguration.setOutputName(outputName);
 	LOG(LogLevel::Info) << "Using output name " << outputName;
 }
@@ -171,7 +173,7 @@ std::string Configuration::replaceCharacter(std::string fileName, char character
 
 ConfigurationFile::ConfigurationFile(const std::string& filename)
 {
-	registerKeyword(std::regex("configuration"), [](const std::string& unused, std::istream& theStream){
+	registerKeyword("configuration", [](const std::string& unused, std::istream& theStream){
 		theConfiguration.instantiate(theStream, Utils::doesFolderExist, Utils::DoesFileExist);
 	});
 

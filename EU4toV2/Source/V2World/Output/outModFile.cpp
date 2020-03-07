@@ -1,8 +1,9 @@
 #include "output.h"
+#include "OSCompatibilityLayer.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const ModFile& modFile)
 {
-	output << "name = \"Converted - " << theConfiguration.getOutputName() << "\"\n";
+	output << "name = \"Converted - " << Utils::convertUTF8ToWin1252(theConfiguration.getActualName()) << "\"\n";
 	output << "path = \"mod/" << theConfiguration.getOutputName() << "\"\n";
 	output << "user_dir = \"" << theConfiguration.getOutputName() << "\"\n";
 	output << "replace = \"history/provinces\"\n";
