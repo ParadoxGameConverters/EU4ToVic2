@@ -6809,10 +6809,8 @@ political_decisions = {
 				all_core = {
 					OR = {
 						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-						}
-						owner = SHA
+						owner = { in_sphere = THIS }
+						owned_by = SHA
 					}
 				}
 			}
@@ -6820,20 +6818,27 @@ political_decisions = {
 		
 		effect = {
 			prestige = 10
-			#any_country = {
-			#	limit = {
-			#		in_sphere = THIS
-			#		NOT = { tag = THIS }
-			#		primary_culture = burmese
-			#	}
-			#	annex_to = THIS
-			#}
-			any_owned = {
-				add_core = BUR
-			}			
-			
 			change_tag = BUR
-			BUR = { add_accepted_culture = burmese }
+			any_country = {
+				limit = {
+					in_sphere = BUR
+					NOT = {
+						tag = BUR
+						tag = SHA
+					}
+					OR = {
+						primary_culture = burmese
+						primary_culture = shan
+						primary_culture = kachin
+						primary_culture = karen
+					}
+				}
+				annex_to = BUR
+			}
+			any_owned = { add_core = BUR }
+		}
+		ai_will_do = {
+			factor = 1
 		}
 	}
 	form_shan = {
@@ -6852,7 +6857,7 @@ political_decisions = {
 					OR = {
 						owned_by = THIS
 						owner = { in_sphere = THIS }
-						owner = BUR
+						owned_by = BUR
 					}
 				}
 			}
