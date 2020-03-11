@@ -1,0 +1,2841 @@
+### National countries events
+#These events are useful for CK2 conversions
+#because they make it possibly for a country of X culture
+#to become the X country
+
+country_event = {
+	id = 601001
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = flemish
+		NOT = { exists = BEL } #Cultural union
+		NOT = { exists = NET } #Cultural union
+		NOT = { exists = FLA } #Cultural country
+		FLA = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = flemish }
+						accepted_culture = flemish
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = flemish }
+						NOT = { accepted_culture = flemish }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = FLA
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = flemish
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601002
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = wallonian
+		NOT = { exists = BEL } #Cultural union
+		NOT = { exists = NET } #Cultural union
+		NOT = { exists = WLL } #Cultural country
+		WLL = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = wallonian }
+						accepted_culture = wallonian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = wallonian }
+						NOT = { accepted_culture = wallonian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = WLL
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = wallonian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601003
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = swiss
+		NOT = { exists = SWI } #Cultural country
+		SWI = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = swiss }
+						accepted_culture = swiss
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = swiss }
+						NOT = { accepted_culture = swiss }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = SWI
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = swiss
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601004
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = swedish
+		NOT = { exists = SCA } #Cultural union
+		NOT = { exists = SWE } #Cultural country
+		SWE = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = swedish }
+						accepted_culture = swedish
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = swedish }
+						NOT = { accepted_culture = swedish }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = SWE
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = swedish
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601005
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = danish
+		NOT = { exists = SCA } #Cultural union
+		NOT = { exists = DEN } #Cultural country
+		DEN = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = danish }
+						accepted_culture = danish
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = danish }
+						NOT = { accepted_culture = danish }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = DEN
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = danish
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601006
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = norwegian
+		NOT = { exists = SCA } #Cultural union
+		NOT = { exists = NOR } #Cultural country
+		NOR = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = norwegian }
+						accepted_culture = norwegian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = norwegian }
+						NOT = { accepted_culture = norwegian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = NOR
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = norwegian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601007
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = icelandic
+		NOT = { exists = SCA } #Cultural union
+		NOT = { exists = ICL } #Cultural country
+		ICL = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = icelandic }
+						accepted_culture = icelandic
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = icelandic }
+						NOT = { accepted_culture = icelandic }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = ICL
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = icelandic
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601008
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = finnish
+		NOT = { exists = SCA } #Cultural union
+		NOT = { exists = FIN } #Cultural country
+		FIN = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = finnish }
+						accepted_culture = finnish
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = finnish }
+						NOT = { accepted_culture = finnish }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = FIN
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = finnish
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601009
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = sami
+		NOT = { exists = SCA } #Cultural union
+		NOT = { exists = SMI } #Cultural country
+		SMI = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = sami }
+						accepted_culture = sami
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = sami }
+						NOT = { accepted_culture = sami }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = SMI
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = sami
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601010
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = irish
+		NOT = { exists = ENG } #Cultural union
+		NOT = { exists = IRE } #Cultural country
+		IRE = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = irish }
+						accepted_culture = irish
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = irish }
+						NOT = { accepted_culture = irish }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = IRE
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = irish
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601011
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = scottish
+		NOT = { exists = ENG } #Cultural union
+		NOT = { exists = SCO } #Cultural country
+		SCO = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = scottish }
+						accepted_culture = scottish
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = scottish }
+						NOT = { accepted_culture = scottish }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = SCO
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = scottish
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601012
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = english
+		NOT = { exists = ENG } #Cultural union
+		NOT = { exists = ENL } #Cultural country
+		ENL = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = english }
+						accepted_culture = english
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = english }
+						NOT = { accepted_culture = english }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = ENL
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = english
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601013
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = welsh
+		NOT = { exists = ENG } #Cultural union
+		NOT = { exists = WHA } #Cultural country
+		WHA = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = welsh }
+						accepted_culture = welsh
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = welsh }
+						NOT = { accepted_culture = welsh }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = WHA
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = welsh
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601014
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = xliponian
+		NOT = { exists = RME } #Cultural union
+		NOT = { exists = XLI } #Cultural country
+		XLI = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = xliponian }
+						accepted_culture = xliponian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = xliponian }
+						NOT = { accepted_culture = xliponian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = XLI
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = xliponian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601015
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = wenedyk
+		NOT = { exists = RME } #Cultural union
+		NOT = { exists = WEN } #Cultural country
+		WEN = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = wenedyk }
+						accepted_culture = wenedyk
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = wenedyk }
+						NOT = { accepted_culture = wenedyk }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = WEN
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = wenedyk
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601016
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	option = {
+		name = EVTOPTA601xxx
+	}
+	
+	immediate = {
+		change_tag = CAT
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = catalan
+			}
+			inherit = FROM
+		}
+	}
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1	
+		primary_culture = catalan
+		NOT = { exists = SPA } #Cultural union
+		NOT = { exists = CAT } #Cultural country
+		CAT = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = catalan }
+						accepted_culture = catalan
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = catalan }
+						NOT = { accepted_culture = catalan }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+}
+country_event = {
+	id = 601017
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = galician
+		NOT = { exists = SPA } #Cultural union
+		NOT = { exists = GLC } #Cultural country
+		GLC = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = galician }
+						accepted_culture = galician
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = galician }
+						NOT = { accepted_culture = galician }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = GLC
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = galician
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601018
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = spanish
+		NOT = { exists = SPA } #Cultural union
+		NOT = { exists = CST } #Cultural country
+		SPA = {
+			all_core = {
+				AND = {
+					is_primary_culture = SPA
+					OR = {
+						owned_by = THIS
+						owner = {
+							NOT = { primary_culture = spanish }
+							accepted_culture = spanish
+							in_sphere = THIS
+						}
+						owner = {
+							NOT = { primary_culture = spanish }
+							NOT = { accepted_culture = spanish }
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = CST
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = spanish
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601019
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = portuguese
+		NOT = { exists = POR } #Cultural country
+		POR = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = portuguese }
+						accepted_culture = portuguese
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = portuguese }
+						NOT = { accepted_culture = portuguese }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = POR
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = portuguese
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601020
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = french
+		NOT = { exists = FRA } #Cultural country
+		FRA = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = french }
+						accepted_culture = french
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = french }
+						NOT = { accepted_culture = french }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = FRA
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = french
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601021
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = breton
+		NOT = { exists = FRA } #Cultural union
+		NOT = { exists = BRT } #Cultural country
+		BRT = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = breton }
+						accepted_culture = breton
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = breton }
+						NOT = { accepted_culture = breton }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = BRT
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = breton
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601022
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = croat
+		NOT = { exists = YUG } #Cultural union
+		NOT = { exists = CRO } #Cultural country
+		CRO = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = croat }
+						accepted_culture = croat
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = croat }
+						NOT = { accepted_culture = croat }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = CRO
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = croat
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601023
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = serb
+		NOT = { exists = YUG } #Cultural union
+		NOT = { exists = SER } #Cultural country
+		NOT = { tag = MON }
+		SER = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = serb }
+						accepted_culture = serb
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = serb }
+						NOT = { accepted_culture = serb }
+					}
+					owner = MON
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = SER
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = serb
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601024
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = macedonian
+		NOT = { exists = YUG } #Cultural union
+		NOT = { exists = MCD } #Cultural country
+		MCD = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = macedonian }
+						accepted_culture = macedonian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = macedonian }
+						NOT = { accepted_culture = macedonian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = MCD
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = macedonian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601025
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = bulgarian
+		NOT = { exists = BUL } #Cultural country
+		BUL = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = bulgarian }
+						accepted_culture = bulgarian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = bulgarian }
+						NOT = { accepted_culture = bulgarian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = BUL
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = bulgarian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601026
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = albanian
+		NOT = { exists = ALB } #Cultural country
+		ALB = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = albanian }
+						accepted_culture = albanian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = albanian }
+						NOT = { accepted_culture = albanian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = ALB
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = albanian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601027
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = slovene
+		NOT = { exists = YUG } #Cultural union
+		NOT = { exists = SLO } #Cultural country
+		SLO = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = slovene }
+						accepted_culture = slovene
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = slovene }
+						NOT = { accepted_culture = slovene }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = SLO
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = slovene
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601028
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = bosniak
+		NOT = { exists = YUG } #Cultural union
+		NOT = { exists = BOS } #Cultural country
+		BOS = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = bosniak }
+						accepted_culture = bosniak
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = bosniak }
+						NOT = { accepted_culture = bosniak }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = BOS
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = bosniak
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601029
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = hungarian
+		NOT = { exists = KUK } #Cultural union
+		NOT = { exists = HUN } #Cultural country
+		HUN = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = hungarian }
+						accepted_culture = hungarian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = hungarian }
+						NOT = { accepted_culture = hungarian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = HUN
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = hungarian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601030
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = polish
+		NOT = { exists = PLC } #Cultural union
+		NOT = { exists = POL } #Cultural country
+		POL = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = polish }
+						accepted_culture = polish
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = polish }
+						NOT = { accepted_culture = polish }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = POL
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = polish
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601031
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = lithuanian
+		NOT = { exists = PLC } #Cultural union
+		NOT = { exists = LIT } #Cultural country
+		LIT = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = lithuanian }
+						accepted_culture = lithuanian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = lithuanian }
+						NOT = { accepted_culture = lithuanian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = LIT
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = lithuanian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601032
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = czech
+		NOT = { exists = CZH } #Cultural union
+		NOT = { exists = CZH } #Cultural country
+		CZH = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = czech }
+						accepted_culture = czech
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = czech }
+						NOT = { accepted_culture = czech }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = CZH
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = czech
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601033
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = slovak
+		NOT = { exists = CZH } #Cultural union
+		NOT = { exists = SLV } #Cultural country
+		SLV = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = slovak }
+						accepted_culture = slovak
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = slovak }
+						NOT = { accepted_culture = slovak }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = SLV
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = slovak
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601034
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = russian
+		NOT = { exists = RUS } #Cultural union
+		NOT = { exists = RUS } #Cultural country
+		RUS = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = russian }
+						accepted_culture = russian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = russian }
+						NOT = { accepted_culture = russian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = RUS
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = russian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601035
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = byelorussian
+		NOT = { exists = RUS } #Cultural union
+		NOT = { exists = BYE } #Cultural country
+		BYE = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = byelorussian }
+						accepted_culture = byelorussian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = byelorussian }
+						NOT = { accepted_culture = byelorussian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = BYE
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = byelorussian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601036
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = ukrainian
+		NOT = { exists = RUS } #Cultural union
+		NOT = { exists = UKR } #Cultural country
+		UKR = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = ukrainian }
+						accepted_culture = ukrainian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = ukrainian }
+						NOT = { accepted_culture = ukrainian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = UKR
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = ukrainian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601037
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = ugrian
+		NOT = { exists = RUS } #Cultural union
+		NOT = { exists = UGR } #Cultural country
+		UGR = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = ugrian }
+						accepted_culture = ugrian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = ugrian }
+						NOT = { accepted_culture = ugrian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = UGR
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = ugrian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601038
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = latvian
+		NOT = { exists = UBD } #Cultural union
+		NOT = { exists = LAT } #Cultural country
+		LAT = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = latvian }
+						accepted_culture = latvian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = latvian }
+						NOT = { accepted_culture = latvian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = LAT
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = latvian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601039
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = estonian
+		NOT = { exists = UBD } #Cultural union
+		NOT = { exists = EST } #Cultural country
+		EST = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = estonian }
+						accepted_culture = estonian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = estonian }
+						NOT = { accepted_culture = estonian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = EST
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = estonian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601040
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = greek
+		NOT = { exists = BYZ } #Cultural union
+		NOT = { exists = GRE } #Cultural country
+		GRE = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = greek }
+						accepted_culture = greek
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = greek }
+						NOT = { accepted_culture = greek }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = GRE
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = greek
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601041
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = alan
+		NOT = { exists = ALN } #Cultural country
+		ALN = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = alan }
+						accepted_culture = alan
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = alan }
+						NOT = { accepted_culture = alan }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = ALN
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = alan
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601042
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = syriac
+		NOT = { exists = ASY } #Cultural country
+		ASY = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = syriac }
+						accepted_culture = syriac
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = syriac }
+						NOT = { accepted_culture = syriac }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = ASY
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = syriac
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601043
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		always = no #Need to avoid Rûm and Tatars to become Turkey
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = turkish
+		NOT = { exists = TUR } #Cultural country
+		TUR = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = turkish }
+						accepted_culture = turkish
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = turkish }
+						NOT = { accepted_culture = turkish }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = TUR
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = turkish
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601044
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = azerbaijani
+		NOT = { exists = AZB } #Cultural country
+		AZB = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = azerbaijani }
+						accepted_culture = azerbaijani
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = azerbaijani }
+						NOT = { accepted_culture = azerbaijani }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = AZB
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = azerbaijani
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601045
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = north_caucasian
+		NOT = { exists = DKU } #Cultural country
+		DKU = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = north_caucasian }
+						accepted_culture = north_caucasian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = north_caucasian }
+						NOT = { accepted_culture = north_caucasian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = DKU
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = north_caucasian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601046
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = andalucian
+		NOT = { exists = ARA } #Cultural union
+		NOT = { exists = ADU } #Cultural country
+		ADU = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = andalucian }
+						accepted_culture = andalucian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = andalucian }
+						NOT = { accepted_culture = andalucian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = ADU
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = andalucian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601047
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = persian
+		NOT = { exists = PER } #Cultural country
+		PER = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = persian }
+						accepted_culture = persian
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = persian }
+						NOT = { accepted_culture = persian }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = PER
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = persian
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601048
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = kazak
+		NOT = { exists = KAZ } #Cultural country
+		KAZ = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = kazak }
+						accepted_culture = kazak
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = kazak }
+						NOT = { accepted_culture = kazak }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = KAZ
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = kazak
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601049
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = tibetan
+		NOT = { exists = TIB } #Cultural country
+		TIB = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = tibetan }
+						accepted_culture = tibetan
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = tibetan }
+						NOT = { accepted_culture = tibetan }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = TIB
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = tibetan
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+#country_event = { #It f--ks up formatting and I don't know why
+#	id = 601050
+#	title = EVTNAME601xxx
+#	desc = EVTDESC601xxx
+#	major = yes
+#	allow_multiple_instances = no
+#	
+#	mean_time_to_happen = {
+#		months = 1
+#	}
+#	
+#	option = { name = EVTOPTA601xxx }
+#	
+#	immediate = {
+#		change_tag = PHI
+#		prestige = 5
+#		any_country = {
+#			limit = {
+#				in_sphere = FROM
+#				accepted_culture = filipino
+#			}
+#			inherit = FROM
+#		}
+#	}
+#	
+#	trigger = {
+#		civilized = yes
+#		is_independant = yes
+#		war = no
+#		number_of_states = 2
+#		has_recently_lost_war = no
+#		nationalism_n_imperialism = 1
+#		primary_culture = filipino
+#		NOT = { exists = PHI } #Cultural country
+#		PHI = {
+#			all_core = {
+#				OR = {
+#					owned_by = THIS
+#					owner = {
+#						NOT = { primary_culture = filipino }
+#					}
+#				}
+#			}
+#		}
+#	}
+#	
+#}
+
+country_event = {
+	id = 601051
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = thai
+		NOT = { exists = SIA } #Cultural country
+		SIA = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = thai }
+						accepted_culture = thai
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = thai }
+						NOT = { accepted_culture = thai }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = SIA
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = thai
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = {
+	id = 601052
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	option = { name = EVTOPTA601xxx }
+	immediate = {
+		change_tag = KCH
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = kachin
+			}
+			inherit = FROM
+		}
+	}
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = kachin
+		NOT = { exists = BUR } #Cultural union
+		NOT = { exists = KCH } #Cultural country
+		KCH = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = kachin }
+						accepted_culture = kachin
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = kachin }
+						NOT = { accepted_culture = kachin }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+}
+country_event = {
+	id = 601053
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	trigger = {
+		civilized = yes
+		is_independant = yes
+		war = no
+		number_of_states = 2
+		has_recently_lost_war = no
+		nationalism_n_imperialism = 1
+		primary_culture = karen
+		NOT = { exists = BUR } #Cultural union
+		NOT = { exists = KAR } #Cultural country
+		KAR = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						NOT = { primary_culture = karen }
+						accepted_culture = karen
+						in_sphere = THIS
+					}
+					owner = {
+						NOT = { primary_culture = karen }
+						NOT = { accepted_culture = karen }
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+		change_tag = KAR
+		prestige = 5
+		any_country = {
+			limit = {
+				in_sphere = FROM
+				accepted_culture = karen
+			}
+			inherit = FROM
+		}
+	}
+	
+}
+country_event = { #Dummy - no effect
+	id = 601054
+	title = EVTNAME601xxx
+	desc = EVTDESC601xxx
+	major = yes
+	allow_multiple_instances = no
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA601xxx
+	}
+	immediate = {
+		change_tag = REB
+		#inherit = REB
+		prestige = -5
+	}
+	
+	trigger = {
+		always = no
+		primary_culture = noculture
+		any_owned_province = {
+			pop_majority_culture = noculture
+		}
+		any_country = {
+			NOT = { primary_culture = noculture }
+			NOT = { any_owned_province = {
+				pop_majority_culture = noculture
+			} }
+		}
+	}
+	
+}
