@@ -51,6 +51,11 @@ ALI_fascist;Synthetic Faction;Faction des Synthétiques;Fraktion der Syntheten;Fr
 ALI_liberal;Yun Key Faction;Faction de Jean Qui;Fraktion von Jan Kih;Frakcja Yan Key;Facción de Yan Key;Fazione Gian Chi;Yan kulcs frakciója;Frakce Yan Key;Yan kulcs frakciója;Faction of Yan Key;Faction of Yan Key;Ôğàêöèÿ ßí Êû;Yan-avaimen fraktio;x
 ALI_reactionary;Xenu Faction;Faction de Xénou;Fraktion von Xenu;Frakcja Xenu;Facción de Xenu;Fazione Xenu;Xenu frakciója;Xenuova frakce;Xenu frakciója;Xenu's Faction;A facção de Xenu;Ôğàêöèÿ Êñåíó;Xenan fraktio;x
 ALI_socialist;Nordic Faction;Faction des Nordiques;Fraktion der Nördlichen;Frakcja Nordiques;Facción de los Nordiques;Fazione Nordica;A Nordiques frakciója;Frakce Nordiques;A Nordiques frakciója;Faction of the Nordiques;Faction of the Nordiques;Ñêàíäèíàâñêàÿ Ôğàêöèÿ;Nordiquesin fraktio;x
+ALL;The Caliphate;Le Califat;Das Kalifat;Kalifat;El Califato;Il Califfato;A Kalifátus;Kalifát;A Kalifátus;Het Kalifaat;O Califado;Õàëèôàò;Kalifaatti;y
+ALL_proletarian_dictatorship;Nation of Islam;Nation de l'Islam;Nation des Islam;Naród Islamu;Nacion del Islam;Nazione dell'Islam;Az Iszlám Nemzete;Národ Islámu;Az Iszlám Nemzete;Natie van de Islam;Nação do Islã;Íàöèÿ Èñëàìà;Islamin kansakunta;y
+ALL_fascist_dictatorship;Islamic State;État Islamique;Islamischer Staat;Pañstwo Islamskie;Estado Islámico;Stato Islamico;Iszlám Állam;Islámskı Stát;Iszlám Állam;Islamitische Staat;Estado Islâmico;Èñëàìñêîå Ãîñóäàğñòâî;Islamilainen valtio;y
+ALL_democracy;Islamic Republic;République Islamique;Islamische Republik;Republika Islamska;República Islámica;Repubblica Islamica;Iszlám Köztársaság;Islámská Republika;Iszlám Köztársaság;Islamitische Republiek;República Islâmica;Èñëàìñêàÿ Ğåñïóáëèêà;Islamilainen tasavalta;y
+ALL_ADJ;Islamic;Islamique;Islamisch;Islamski;Islámica;Islamica;Iszlám;Islámskı;Iszlám;Islamitisch;Islâmico;èñëàìñê.;islamilainen;y
 ALN;Alania;Alanie;Alanien;Alania;Alania;Alania;Alania;Alania;Alania;Alania;Alania;Àëàíèÿ;Alania;x
 ALN_ADJ;Alan;Alain;Alanisch;Alan;Alan;Alana;Alan;Alan;Alan;Alan;Alan;Àëàí;Alan;x
 ALO;Alodia;Alodie;Alodien;Alodia;Alodia;Alodia;Alodia;Alodia;Alodia;Alodia;Alodia;Àëîäèÿ;Alwa tilan;x
@@ -85,6 +90,10 @@ ANS;Ansbach;Ansbach;Ansbach;Ansbach;Ansbach;Ansbach;Ansbach;Ansbach;Ansbach;Ansb
 ANS_ADJ;Ansbachian;Ansbachien;Ansbacher;Ansbachu;Ansbachesa;Ansbachiana;Ansbachian;Ansbachian;Ansbachian;Ansbachian;Ansbachiano;Àíñáàõñê.;Ansbachian;y
 ANT;Antemoro;Antemoro;Antemoro;Antaimoro;Antemoro;Antemoro;Antemoro;Antemoro;Antemoro;Antemoro;Antemoro;Àíòåìîğî;Antemoro;z
 ANT_ADJ;Antemoro;d'Antemoro;Antemoro-;Antaimoro;Antemora;di Antemoro;Antemoro;Antemoro;Antemoro;Antemoro;Antemoro;Àíòåìîğñê.;Antemoro;y
+AOM;Macao;Macao;Macau;Makau;Macao;Macao;Macao;Macau;Macao;Macau;Macau;Ìàêàî;Macao;y
+AOM_ADJ;Macanese;Macanaise;Macauer;Makausk.;de Macao;di Macao;Macauan;Macauán;Macauan;Macauan;Macaense;ìàêàíñê.;Macauan;y
+AOM_proletarian_dictatorship;Aomen;Aomen;Aomen;Aomen;Aomen;Aomen;Aomen;Aomen;Aomen;Aomen;Aomen;Àîìıíü;Aomen;y
+AOM_proletarian_dictatorship_ADJ;Aomen;d'Aomen;Aomen-;Aomensk.;de Aomen;di Aomen;Aomen;Aomen;Aomen;Aomen;de Aomen;àîìıíüñê.;Aomen;y
 AOT;Aotearoa;Aotéaroa;Aotearoa;Aotearoa;Aotearoa;Aotearoa;Aotearoa;Aotearoa;Aotearoa;Aotearoa;Aotearoa;Àîòıàğîà;Aotearoa;x
 AOT_ADJ;Aotearoa;d'Aotéaroa;Aotearoa-;Aotearoa;Aotearoa;di Aotearoa;Aotearoa;Aotearoa;Aotearoa;Aotearoa;Aotearoa;Àîòıàğîà;Aotearoa;x
 APA;Apache;Apaches;Apachen;Apacze;Apache;Apaci;Apache;Apache;Apache;Apache;Apache;Àïà÷è;Apache;z
@@ -234,6 +243,8 @@ BUK_proletarian_dictatorship;SSR Uzbekistan;RSS Ouzbékistan;SSR Usbekistan;SSR U
 BUK_proletarian_dictatorship_ADJ;Uzbek;Ouzbek;Usbekisch;uzbecki;Uzbekistán;Usbeca;üzbég;Uzbekistán;üzbég;Oezbeeks;Uzbeque;óçáåê;uzbekki;x
 CAD;Caddo;Caddos;Caddo;Caddo;Caddo;Caddo;caddo;Caddo;caddo;Caddo;Caddo;Êıääî;caddo;z
 CAD_ADJ;Caddo;des Caddos;Caddo-;Caddo;Caddo;di Caddo;caddo;Caddo;caddo;Caddo;Caddo;Êıääñê.;caddo;y
+CAY;Cayenne;Cayenne;Cayenne;Cayenne;Cayena;Caienna;Cayenne;Cayenne;Cayenne;Cayenne;Caiena;Êàéåííà;cayennenpippuri;y
+CAY_ADJ;Cayenne;Cayennaise;Cayenne-;Cayeñsk.;de Cayena;di Caienna;Cayenne-i;Cayenne;Cayenne-i;Cayenne;de Caiena;êàéåíñê.;cayennenpippuri;y
 CAR;Equatorial Africa;Afrique Équatoriale;Äquatoriales Afrika;Afryka Równikowa;África Ecuatorial;Africa Equatoriale;Egyenlítoi Afrika;Rovníková Afrika;Egyenlítoi Afrika;Equatoriaal Afrika;África equatorial;İêâàòîğèàëüíàÿ Àôğèêà;Päiväntasaajan Afrikka;x
 CAR_ADJ;Equatorial;Équatorial;Äquatorial;Równikowy;Ecuatorial;Equatoriale;Egyenlítoi;Rovníkovı;Egyenlítoi;Equatoriaal;Equatorial;İêâàòîğèàëüí.;Päiväntasaajan;x
 CAS;Cascadia;Cascadie;Kaskadien;Cascadia;Cascadia;Cascadia;Cascadia;Cascadia;Cascadia;Cascadia;Cascadia;Êàñêàäèÿ;Cascadia;x
@@ -497,6 +508,10 @@ HDY;Hadiya;Hadiya;Hadiyya;Hadiya;Hadiya;Hadiya;Hadiya;Hadiya;Hadiya;Hadiya;Hadia
 HDY_ADJ;Hadiyan;de Hadiya;Hadiyya-;Hadiyi;de Hadiya;di Hadiya;Hadiyan;Hadiyan;Hadiyan;Hadiyan;Hadiyan;Õàäèéñê.;Hadiyan;y
 HJO;Hojo;Hojo;Hojo;Hojo;Hojo;Hojo;Hojo;Hojo;Hojo;Hojo;Hojo;Õîäç¸;Hojo;z
 HJO_ADJ;Hojo;de Hojo;Hojo-;Hojo;Hojo;di Hojo;Hojo;Hojo;Hojo;Hojo;Hojo;Õîäç¸ñê.;Hojo;y
+HKG;Hong Kong;Hong Kong;Hong Kong;Hongkong;Hong Kong;Hong Kong;Hong Kong;Hong Kong;Hong Kong;Hong Kong;Hong Kong;Ãîíêîíã;Hongkong;y
+HKG_ADJ;Hong Konger;Hongkongaise;Hong Kong-;Hongkongsk.;de Hong Kong;di Hong Kong;Hong Konger;Hong Konger;Hong Konger;Hong Konger;de Hong Kong;Ãîíêîíãà;Hong Konger;y
+HKG_proletarian_dictatorship;Xianggang;Xianggang;Xianggang;Xianggang;Xianggang;Xianggang;Xianggang;Xianggang;Xianggang;Xianggang;Xianggang;Ñÿíãàí;Xianggang;y
+HKG_proletarian_dictatorship_ADJ;Xianggang;de Xianggang;Xianggang-;Xianggangsk.;de Xianggang;di Xianggang;Xianggang;Xianggang;Xianggang;Xianggang;de Xianggang;ñÿíãàíñê.;Xianggang;y
 HLL;Holland;Hollande;Holland;Holandia;Holanda;Olanda;Hollandia;Holandsko;Hollandia;Holland;Holanda;Ãîëëàíäèÿ;Hollanti;z
 HLL_ADJ;Dutch;Hollandais;Holländisch;Niderlandów;Holandesa;Olandese;holland;holandskı;holland;Nederlands;holandês;Ãîëëàíäñê.;hollantilainen;y
 HNN;Hunan;Hunan;Hunan;Hunan;Hunan;Hunan;Hunan;Hunan;Hunan;Hunan;Hunan;Õóíàíü;Hunan;x
@@ -584,6 +599,7 @@ KCH_ADJ;Kachin;Katchin;Kachin-;Kachin;Kachin;dei Kachin;Kachin;Kachin;Kachin;Kac
 KCX;Koch;Kotch;Koch;Kocz;Koch;Koch;Koch;Koch;Koch;Koch;Koch;Êó÷;Koch;z
 KCX_ADJ;Koch;du Kotch;Koch-;Koczu;Kochi;di Koch;Koch;Koch;Koch;Koch;Koch;Êó÷ñê.;Koch;y
 KDS;Kurdistan;Kurdistan;Kurdistan;Kurdistan;Kurdystan;Kurdistan;Kurdisztán;Kurdistan;Kurdisztán;Kurdistan;Curdistão;Êóğäèñòàí;Kurdistan;x
+KDS_ADJ;Kurdish;;;;;;;;;;;;;;;;;;;;;;;;;;
 KGR;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Êàíãğà;Kangra;z
 KGR_ADJ;Kangra;Kangrais;Kangra-;Kangry;Kangri;di Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Êàíãğàñê.;Kangra;y
 KHA;The Mongol Khanate;Le Khanat Mongol;Das Mongolische Khanat;Mongo³owie Chanat;El kanato mongol;Khanato Mongolo;A mongol Khanate;mongolskı Khanate;A mongol Khanate;de Mongoolse Khanate;O Khanato Mongol;Ìîíãîëüñêîå Õàíñòâî;mongolien Khanate;x
@@ -632,6 +648,8 @@ KOM;Comoros;Les Comores;Die Komoren;Komory;Comoras;Comore;Comore-szigetek;Komory
 KOM_ADJ;Comoran;Comorien;Komorisch;Komoran;Comoran;delle Comore;Comoran;Comoran;Comoran;Comoren;Comoran;Êîìîñê.;Komorien;x
 KON;Kongo;Kongo;Kongo;Kongo;Congo;Kongo;Kongo;Kongo;Kongo;Kongo;Congo;Êîíãî;Kongo;z
 KON_ADJ;Kongolese;Kongolais;Kongolisch;Konga;Congoleña;Kongolese;Kongolese;Kongolese;Kongolese;Kongolese;Congolês;Êîíãîëåçñê.;Kongolese;y
+KOS;Kosovo;Kosovo;Kosovo;Kosowo;Kosovo;Cossovo;Koszovó;Kosovo;Koszovó;Kosovo;Kosovo;Êîñîâî;kosovo;y
+KOS_ADJ;Kosovan;Kosovare;Kosovar;Kosowsk.;Kosovara;Cossovara;koszovói;Kosovskı;koszovói;Kosovan;Kosovar;êîñîâñê.;Kosovon;y
 KRL;Karelia;Carélie;Karelien;Karelia;Carelia;Carelia;Karélia;Karelia;Karélia;Karelia;Carélia;Êàğåëèÿ;Karjala;z
 KRL_ADJ;Karelian;Carélien;Karelisch;Karelii;Carela;Carela;karéliai;Karelian;karéliai;karelian;Careliano;Êàğåëüñê.;karjalainen;y
 KRM;Karaman;Karaman;Karaman;Karaman;Karaman;Karaman;Karaman;Karaman;Karaman;Karaman;Karaman;Êàğàìàí;Karaman;y
@@ -970,6 +988,12 @@ PTG;Patagonia;Patagonie;Patagonien;Patagonia;Patagonia;Patagonia;Patagónia;Patag
 PTG_ADJ;Patagonian;Patagonien;Patagonisch;Patagonian;patagón;Patagoniana;patagóniai;Patagonian;patagóniai;Patagonische;Patagônico;ïàòàãîíñê.;Patagonian;x
 PUE;Pueblo;Pueblos;Pueblo;Pueblo;Pueblo;Pueblo;Puebló;pueblo;Puebló;Pueblo;Pueblo;Ïóıáëî;Pueblo;z
 PUE_ADJ;Pueblo;Pueblo;Pueblo-;Pueblów;Pueblo;di Pueblo;Puebló;pueblo;Puebló;Pueblo;Pueblo;Ïóıáëñê.;Pueblo;y
+PYO;Pyongyang;Pyongyang;Pjöngjang;Phenian;Pyongyang;Pyongyang;Phenjan;Pchjongjang;Phenjan;Pyongyang;Pyongyang;Ïõåíüÿí;Pjongjang;y
+PYO_ADJ;Pyongyang;Pyongyangaise;Pjöngjang-;Pheniansk.;de Pyongyang;di Pyongyang;Phenjan;Pchjongjang;Phenjan;Pyongyang;de Pyongyang;ïõåíüÿíñê.;Pjongjang;y
+PYO_proletarian_dictatorship;DPR Korea;RPD Corée;DVR Korea;Korea Pó³nocna;RPD Corea;RPD Corea;Korea KND;DPR Korea;Korea KND;DPR Korea;RPD Korea;ÍÄĞ Êîğåÿ;Korean demokraattinen tasavalta;y
+PYO_proletarian_dictatorship_ADJ;Korean;Coréenne;Koreanisch;Koreañsk.;Coreana;Coreana;Koreai;Korejskı;Koreai;Koreaans;Coreano;êîğåéñê.;korealainen;y
+PYO_fascist_dictatorship;Juche Korea;Corée Juche;Korea Juche;Juche-Korea;Corea Juche;Corea Juche;Juche Korea;Juche Korea;Juche Korea;Juche Korea;Corea Juche;×ó÷õå Êîğåÿ;Juche Korea;y
+PYO_fascist_dictatorship_ADJ;Korean;Coréenne;Koreanisch;Koreañsk.;Coreana;Coreana;Koreai;Korejskı;Koreai;Koreaans;Coreano;êîğåéñê.;korealainen;y
 PZN;Poznan;Posnanie;Posen;Poznañ;Poznan;Posnania;Poznan;Poznaò;Poznan;Poznan;Poznan;Ïîçíàíü;Poznan;x
 PZN_ADJ;Poznan;Posnane;Posen;Poznañ;Poznan;Posana;Poznan;Poznaò;Poznan;Poznan;Poznan;Ïîçíàíñê.;Poznan;x
 QAR;Qara Koyunlu;Qara Qoyunlu;Qara Qoyunlu;Kara Kojunlu;Qara Qoyunlu;Kara Koyunlu;Qara Koyunlu;Qara Koyunlu;Qara Koyunlu;Qara Koyunlu;Qara Qoyunlu;Êàğà-Êîşíëó;Qara Koyunlu;z
@@ -1057,6 +1081,10 @@ SGP;Singapore;Singapour;Singapur;Singapur;Singapur;Singapore;Singapore;Singapur;
 SGP_ADJ;Singaporean;Singapourien;Singapurisch;Singapurski;Singapurense;Singaporeana;szingapúri;Singapurskı;szingapúri;Singaporees;Cingapuriano;ñèíãàïóğñê.;singaporelainen;x
 SHA;The Shan States;Les États Chans;Die Schan-Staaten;Shan Zjednoczone;Los estados Shan;Stati Shan;A Shan Államokban;Šanská státy;A Shan Államokban;de Shan staten;Os estados Shan;Ñòğàíû Øàíÿ;Shan valtiot;x
 SHA_ADJ;Shan;Chan;Schan-;Szanu;Shan;degli Shan;Shan;Shan;Shan;Shan;Shan;Øàíñê.;Shan;y
+SHD;Shandong;Shandong;Shandong;Shandong;Shandong;Shandong;Shandong;Shandong;Shandong;Shandong;Shandong;Øàíüäóí;Shandong;y
+SHD_ADJ;Shandong;du Shandong;Shandong-;Shandongsk.;de Shangdong;dello Shandong;Shandong;Shandong;Shandong;Shandong;de Shandong;Øàíüäóíà;Shandong;y
+SHG;Shanghai;Chang-Haï;Schanghai;Szanghaj;Shangai;Shanghai;Shanghai;Šanghaj;Shanghai;Shanghai;Xangai;Øàíõàé;Shanghai;y
+SHG_ADJ;Shanghai;de Chang-Haï;Schanghai-;Szanghajsk.;de Shangai;di Shanghai;Shanghai;Šanghaj;Shanghai;Shanghai;de Xangai;øàíõàéñê.;Shanghai;y
 SHO;Shona;Shonas;Shona;Shona;Shona;Shona;Shona;Shona;Shona;Shona;Shona;Øîíà;Shona;x
 SHO_ADJ;Shonan;Shona;Shona-;Shonan;Shonan;di Shona;Shonan;Shonan;Shonan;Shonan;Shonan;Øîíàí;Shonan;x
 SHS;Shoshone;Shoshones;Schoschonen;Szoszoni;Shoshone;Shoshone;Shoshone;Shoshone;Shoshone;Shoshone;Shoshone;Øîøîíû;Shoshone;z
@@ -1145,6 +1173,8 @@ SUK;Sukhothai;Sukhothaï;Sukhothai;Sukhothai;Sukhothai;Sukhothai;Sukhothai;Sukhot
 SUK_ADJ;Sukhothai;du Sukhothaï;Sukhothai-;Sukhothai;Sukhothai;di Sukhothai;Sukhothai;Sukhothai;Sukhothai;Sukhothai;Sukhothai;Ñóêõîòàè;Sukhothai;x
 SUL;Sulu;Sulu;Sulu;Sulu;Sulu;Sulu;Sulu;Sulu;Sulu;Sulu;Sulu;Ñóëó;Sulu;z
 SUL_ADJ;Sulu;Suluois;Sulu-;Sulu;Sulu;di Sulu;Sulu;Sulu;Sulu;Sulu;Sulu;Ñóëóñê.;Sulu;y
+SUR;Suriname;Suriname;Suriname;Surinam;Surinam;Suriname;Suriname;Surinam;Suriname;Suriname;Suriname;Ñóğèíàìà;suriname;y
+SUR_ADJ;Surinamese;Surinamienne;Surinamisch;Surinamsk.;de Surinam;Surinamese;Suriname;Surinam;Suriname;Suriname;de Suriname;ñóğèíàìñê.;Surinamin;y
 SUS;Susquehannock;Susquehannocks;Susquehannock;Susquehannock;Susquehannock;Susquehannock;Susquehannock;Susquehannock;Susquehannock;Susquehannock;Susquehannock;Ñàñêóåõàííîê;susquehannockit;z
 SUS_ADJ;Susquehannock;Susquehannock;Susquehannock-;Susquehannocków;Susquehannock;di Susquehannock;Susquehannock;Susquehannock;Susquehannock;Susquehannock;Susquehannock;Ñàñêóåõàííîêñê.;susquehannockit;y
 SVY;Savoy;Savoie;Savoyen;Sabaudia;Saboya;Savoia;Savoy;Savojsko;Savoy;Savoy;Savóia;Ñàâîéÿ;savoijinkaali;z
@@ -1165,6 +1195,10 @@ SZC;Sichuan;Sichuan;Sichuan;Syczuan;Sichuan;Sichuan;Sichuan;Sichuan;Sichuan;Sich
 SZC_ADJ;Sichuanese;du Sichuan;Sichuan-;Sichuanese;Sichuanés;di Sichuan;Sichuanese;Sichuanese;Sichuanese;Sichuanese;Sichuanese;Ñû÷óàíñê.;Sichuanese;x
 TAC;Tachibana;Tachibana;Tachibana;Tachibana;Tachibana;Tachibana;Tachibana;Tachibana;Tachibana;Tachibana;Tachibana;Òàòèáàíà;Tachibana;x
 TAC_ADJ;Tachibana;de Tachibana;Tachibana-;Tachibana;Tachibana;di Tachibana;Tachibana;Tachibana;Tachibana;Tachibana;Tachibana;Òàòèáàíà;Tachibana;x
+TAM;Transamur;Transamour;Transamur;Transamur;Transamur;Transamur;Transamur;Transamur;Transamur;Transamur;Transamur;Òğàíñàìóğ;Transamur;y
+TAM_ADJ;Transamurian;Transamourienne;Transamurisch;Transamursk.;de Transamur;del Transamur;Transamurian;Transamurian;Transamurian;Transamurisch;de Transamur;Òğàíñàìóğñê.;Transamurian;y
+TAM_proletarian_dictatorship;Wai Dongbei;Wai Dongbei;Wai Dongbei;Wai Dongbei;Wai Dongbei;Wai Dongbei;Wai Dongbei;Wai Dongbei;Wai Dongbei;Wai Dongbei;Wai Dongbei;Âàé Äóíáıé;Wai Dongbei;y
+TAM_proletarian_dictatorship_ADJ;Wai Dongbei;du Wai Dongbei;Wai Dongbei-;Wai-Dongbeisk.;de Wai Dongbei;del Wai Dongbei;Wai Dongbei;Wai Dongbei;Wai Dongbei;Wai Dongbei;de Wai Dongbei;Âàÿ-Äóíáıÿ;Wai Dongbei;y
 TAH;Tahiti;Tahiti;Tahiti;Tahiti;Tahití;Tahiti;Tahiti;Tahiti;Tahiti;Tahiti;Taiti;Òàõèòè;Tahiti;x
 TAH_ADJ;Tahitian;Tahitien;Tahitisch;tahitañski;Tahitiano;Tahitiana;tahiti;Tahitián;tahiti;Tahitian;Taitiano;Òàõèòñê.;Tahitin;x
 TAI;Taiwan;Taïwan;Taiwan;Tajwan;Taiwan;Taiwan;Taiwan;Tchajwan;Taiwan;Taiwan;Taiwan;Òàéâàíü;Taiwan;x

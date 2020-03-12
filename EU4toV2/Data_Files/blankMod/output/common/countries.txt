@@ -885,6 +885,18 @@ XLI		= "countries/Xliponia.txt"
 WEN		= "countries/Venedia.txt"
 PAE		= "countries/Paertia.txt"
 
+#1.29B
+ALL		= "countries/Allahdom.txt" #The Caliphate
+SUR		= "countries/Suriname.txt"
+CAY		= "countries/Cayenne.txt" #French Guyana
+KOS		= "countries/Kosovo.txt"
+SHG		= "countries/Shanghai.txt"
+PYO		= "countries/Pyongyang.txt"	#North Korea
+TAM		= "countries/Transamur.txt" #Vladivostok
+HKG		= "countries/Hong Kong.txt"
+AOM		= "countries/Macao.txt"
+SHD		= "countries/Shandong.txt"
+
 ##HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions
 D01		= "countries/D01.txt"
