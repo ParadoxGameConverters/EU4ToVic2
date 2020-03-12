@@ -157,7 +157,7 @@ EU4::Country::Country(
 	registerRegex("flags|hidden_flags|variables", [this](const std::string& unused, std::istream& theStream)
 		{
 			const EU4CountryFlags flagsBlock(theStream);
-			for (const auto& flag : flagsBlock.getFlags()) flags[flag] = true;
+			for (const auto& flag : flagsBlock.getFlags()) flags.insert(flag);
 		});
 	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream)
 		{
@@ -605,6 +605,12 @@ bool EU4::Country::hasFlag(const std::string& flag) const
 {
 	const auto& itr = flags.find(flag);
 	return itr != flags.end();
+}
+
+bool EU4::Country::hasReform(const std::string& reform) const
+{
+	const auto& itr = governmentReforms.find(reform);
+	return itr != governmentReforms.end();
 }
 
 void EU4::Country::resolveRegimentTypes(const mappers::UnitTypeMapper& unitTypeMapper)

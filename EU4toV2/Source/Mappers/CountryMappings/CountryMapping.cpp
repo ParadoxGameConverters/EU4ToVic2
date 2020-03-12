@@ -15,6 +15,16 @@ mappers::CountryMapping::CountryMapping(std::istream& theStream)
 			vic2Tag = v2str.getString();
 			std::transform(vic2Tag.begin(), vic2Tag.end(), vic2Tag.begin(), ::toupper);
 		});
+	registerKeyword("reform", [this](const std::string& unused, std::istream& theStream)
+		{
+			const commonItems::singleString reformStr(theStream);
+			reforms.insert(reformStr.getString());
+		});
+	registerKeyword("flag", [this](const std::string& unused, std::istream& theStream)
+		{
+			const commonItems::singleString flagStr(theStream);
+			flags.insert(flagStr.getString());
+		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
