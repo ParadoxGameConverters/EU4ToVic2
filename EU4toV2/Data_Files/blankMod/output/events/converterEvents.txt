@@ -758,6 +758,8 @@ country_event = {
 		NOT = { has_global_flag = zulu_angered }
 	}
 	
+	immediate = { set_global_flag = zulu_angered }
+	
 	mean_time_to_happen = {
 		months = 12
 		modifier = {
@@ -1292,6 +1294,7 @@ country_event = {
 		JAI = { exists = no }
 		SHI = { exists = no }
 		has_global_flag = der_postcolonialism
+		NOT = { has_global_flag = bharat_city }
 	}
 	
 	mean_time_to_happen = {
@@ -1305,6 +1308,8 @@ country_event = {
 			year = 1850
 		}
 	}
+	
+	immediate = { set_global_flag = bharat_city }
 	
 	option = {
 		name = "EVTOPTA451006"
@@ -1332,6 +1337,7 @@ country_event = {
 		owns = 2112
 		owns = 2113
 		has_global_flag = der_postcolonialism
+		NOT = { has_global_flag = zulu_angered }
 	}
 	
 	mean_time_to_happen = {
@@ -1345,6 +1351,8 @@ country_event = {
 			year = 1850
 		}
 	}
+	
+	immediate = { set_global_flag = zulu_angered }
 	
 	option = {
 		name = "EVTOPTA451005"
@@ -1582,5 +1590,1284 @@ country_event = {
 			remove_core = ITP
 		}
 		change_tag = ITA
+	}
+}
+country_event = { 
+	id = 550004
+	title = EVTNAME550004
+	desc = EVTDESC550xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TNT }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1469
+				state_id = 1075
+				state_id = 1079
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = tannu_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TNT }
+		change_tag = TNT
+		set_global_flag = tannu_clique
+	}
+}
+country_event = { 
+	id = 550005
+	title = EVTNAME550005
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TAM }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1082
+				state_id = 1086
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = transamur_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TAM }
+		change_tag = TAM
+		set_global_flag = transamur_clique
+	}
+}
+country_event = { 
+	id = 550006
+	title = EVTNAME550006
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = MCK }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1553
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = manchukuo_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = MCK }
+		change_tag = MCK
+		set_global_flag = manchukuo_clique
+	}
+}
+country_event = { 
+	id = 550007
+	title = EVTNAME550007
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = MGL }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 2608
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = mongol_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = MGL }
+		change_tag = MGL
+		set_global_flag = mongol_clique
+		add_accepted_culture = mongol
+	}
+}
+country_event = { 
+	id = 550008
+	title = EVTNAME550008
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = IMG }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1532
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = innmongolia_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = IMG }
+		change_tag = IMG
+		set_global_flag = innmongolia_clique
+	}
+}
+country_event = { 
+	id = 550009
+	title = EVTNAME550009
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = PYO }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1619
+				state_id = 1627
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = pyongyang_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = PYO }
+		change_tag = PYO
+		set_global_flag = pyongyang_clique
+		add_accepted_culture = korean
+	}
+}
+country_event = { 
+	id = 550010
+	title = EVTNAME550010
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = GMJ }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1618
+				state_id = 1614
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = mengjiang_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = GMJ }
+		change_tag = GMJ
+		set_global_flag = mengjiang_clique
+	}
+}
+country_event = { 
+	id = 550011
+	title = EVTNAME550011
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = SHD }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1563
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = shandong_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = SHD }
+		change_tag = SHD
+		set_global_flag = shandong_clique
+	}
+}
+country_event = { 
+	id = 550012
+	title = EVTNAME550012
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TPG }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1476
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = taiping_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TPG }
+		change_tag = TPG
+		set_global_flag = taiping_clique
+	}
+}
+country_event = { 
+	id = 550013
+	title = EVTNAME550013
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = SHG }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1539
+				state_id = 1611
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = shanghai_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = SHG }
+		change_tag = SHG
+		set_global_flag = shanghai_clique
+	}
+}
+country_event = { 
+	id = 550014
+	title = EVTNAME550014
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = HUI }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1472
+				state_id = 1473
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = anhui_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = HUI }
+		change_tag = HUI
+		set_global_flag = anhui_clique
+	}
+}
+country_event = { 
+	id = 550015
+	title = EVTNAME550015
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = SXI }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1576
+				state_id = 1529
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = shanxi_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = SXI }
+		change_tag = SXI
+		set_global_flag = shanxi_clique
+	}
+}
+country_event = { 
+	id = 550016
+	title = EVTNAME550016
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = HNN }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1529
+				state_id = 1516
+				state_id = 1523
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = hunan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = HNN }
+		change_tag = HNN
+		set_global_flag = hunan_clique
+	}
+}
+country_event = { 
+	id = 550017
+	title = EVTNAME550017
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = FJN }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1487
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = fujian_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = FJN }
+		change_tag = FJN
+		set_global_flag = fujian_clique
+	}
+}
+country_event = { 
+	id = 550018
+	title = EVTNAME550018
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TAI }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 2562
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = taiwan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TAI }
+		change_tag = TAI
+		set_global_flag = taiwan_clique
+	}
+}
+country_event = { 
+	id = 550019
+	title = EVTNAME550019
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = GXI }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1504
+				state_id = 1550
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = guangxi_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = GXI }
+		change_tag = GXI
+		set_global_flag = guangxi_clique
+	}
+}
+country_event = { 
+	id = 550020
+	title = EVTNAME550020
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = GNG }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1499
+				state_id = 1494
+				state_id = 1496
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = guangdong_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = GNG }
+		change_tag = GNG
+		set_global_flag = guangdong_clique
+	}
+}
+country_event = { 
+	id = 550021
+	title = EVTNAME550021
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = YNN }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1601
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = yunnan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = YNN }
+		change_tag = YNN
+		set_global_flag = yunnan_clique
+	}
+}
+country_event = { 
+	id = 550022
+	title = EVTNAME550022
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = SZC }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1578
+				state_id = 1581
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = sichuan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = SZC }
+		change_tag = SZC
+		set_global_flag = sichuan_clique
+	}
+}
+country_event = { 
+	id = 550023
+	title = EVTNAME550023
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = XSM }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1557
+				state_id = 1490
+				state_id = 2062
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = xibei_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = XSM }
+		change_tag = XSM
+		set_global_flag = xibei_clique
+	}
+}
+country_event = { 
+	id = 550024
+	title = EVTNAME550024
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = XIN }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1600
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = xinjiang_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = XIN }
+		change_tag = XIN
+		set_global_flag = xinjiang_clique
+		add_accepted_culture = uighur
+	}
+}
+country_event = { 
+	id = 550025
+	title = EVTNAME550025
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TIB }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1591
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = tibet_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TIB }
+		change_tag = TIB
+		set_global_flag = tibet_clique
+		add_accepted_culture = tibetan
+	}
+}
+country_event = { 
+	id = 550026
+	title = EVTNAME550026
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = KYR }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1185
+				state_id = 1190
+				state_id = 1207
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = kyrgyz_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = KYR }
+		change_tag = KYR
+		set_global_flag = kyrgyz_clique
+		add_accepted_culture = kirgiz
+	}
+}
+country_event = { 
+	id = 550027
+	title = EVTNAME550027
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = BHU }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1327
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = bhutan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = BHU }
+		change_tag = BHU
+		set_global_flag = bhutan_clique
+		add_accepted_culture = tibetan
+	}
+}
+country_event = { 
+	id = 550028
+	title = EVTNAME550028
+	desc = EVTDESC550028
+
+	trigger = { 
+		tag = ALL
+		NOT = { has_global_flag = allahu_akbar }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550028
+		ARA = {
+			all_core = {
+				remove_core = ARA
+				add_core = ALL
+			}
+		}
+		#Adding cores back to Saudi Arabia
+		NEJ = { all_core = { add_core = ARA } }
+		HDJ = { all_core = { add_core = ARA } }
+		HAL = { all_core = { add_core = ARA } }
+		ARA = { any_owned = { add_core = ARA } }
+		prestige = 10
+		set_global_flag = allahu_akbar
+		ALL = {
+			add_accepted_culture = union
+		}
+	}
+}
+country_event = { 
+	id = 550029
+	title = EVTNAME550029
+	desc = EVTDESC550029
+
+	trigger = { 
+		tag = SSU
+		SUD = { exists = no }
+		1827 = { owned_by = SSU } #Khartoum
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550029
+		change_tag = SUD
+		prestige = 10
+		capital = 1827
+	}
+}
+country_event = { 
+	id = 550030
+	title = EVTNAME550030
+	desc = EVTDESC5500030
+
+	trigger = { 
+		NOT = { tag = GUY }
+		SUR = { exists = no }
+		OR = {
+			capital = 2240
+			capital = 2245
+		}
+		is_independant = yes
+		NOT = { has_country_flag = precolonial }
+		NOT = { has_global_flag = suriname_exists }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550030
+		change_tag = SUR
+		prestige = 1
+		set_global_flag = suriname_exists
+		set_country_flag = buro_independence
+	}
+}
+country_event = { 
+	id = 550031
+	title = EVTNAME550031
+	desc = EVTDESC550031
+
+	trigger = { 
+		NOT = { tag = GUY }
+		CAY = { exists = no }
+		OR = {
+			capital = 2241
+			capital = 2246
+		}
+		is_independant = yes
+		NOT = { has_country_flag = precolonial }
+		NOT = { has_global_flag = cayenne_exists }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550031
+		change_tag = CAY
+		prestige = 1
+		set_global_flag = cayenne_exists
+		set_country_flag = buro_independence
+	}
+}
+country_event = { 
+	id = 550032
+	title = EVTNAME550032
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TAJ }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1207
+				state_id = 1217
+				state_id = 1224
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = tajik_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TAJ }
+		change_tag = TAJ
+		set_global_flag = tajik_clique
+		add_accepted_culture = tajik
+	}
+}
+country_event = { 
+	id = 550033
+	title = EVTNAME550033
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = PAN }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1227
+				state_id = 1236
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = punjab_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = PAN }
+		change_tag = PAN
+		set_global_flag = punjab_clique
+		add_accepted_culture = punjabi
+	}
+}
+country_event = { 
+	id = 550034
+	title = EVTNAME550034
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = ASM }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1258
+				state_id = 1252
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = assam_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = ASM }
+		change_tag = ASM
+		set_global_flag = assam_clique
+		add_accepted_culture = assamese
+	}
+}
+country_event = { 
+	id = 550035
+	title = EVTNAME550035
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = SHA }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1339
+				state_id = 1334
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = shan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = SHA }
+		change_tag = SHA
+		set_global_flag = shan_clique
+		add_accepted_culture = shan
+	}
+}
+country_event = { 
+	id = 550036
+	title = EVTNAME550036
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TOK }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1371
+				state_id = 1374
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = tonkin_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TOK }
+		change_tag = TOK
+		set_global_flag = tonkin_clique
+		add_accepted_culture = vietnamese
 	}
 }

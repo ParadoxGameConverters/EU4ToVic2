@@ -215,7 +215,14 @@ political_decisions = {
 			BEL_1992 = { add_core = CNG }
 			3246 = { add_core = JAN } #Jan Mayen
 			EGY_921 = { add_core = ISR } #Israel
-			ENG_1979 = { add_core = GUY } #Guyana
+			2239 = { add_core = GUY } #Guyana
+			2243 = { add_core = GUY }
+			2242 = { add_core = GUY }
+			1979 = { add_core = GUY }
+			2240 = { add_core = SUR } #Suriname
+			2245 = { add_core = SUR }
+			2241 = { add_core = CAY }
+			2246 = { add_core = CAY }
 			#From NNM
 			2181 = { add_core = CHP } #Chiapas
 			2182 = { add_core = CHP }
@@ -278,7 +285,7 @@ political_decisions = {
 			2231 = { add_core = STL } #Saint Lucia
 			2229 = { add_core = BBD } #Barbados
 			2233 = { add_core = GRD } #Grenada
-			2234 = { add_core = CUR remove_core = VNZ } #CuraÃ§ao
+			2234 = { add_core = CUR remove_core = VNZ } #Curaçao
 			2235 = { add_core = CUR remove_core = VNZ }
 			2409 = { add_core = STV } #Saint Vincent and the Grenadines
 			#Further addictions
@@ -326,6 +333,8 @@ political_decisions = {
 			any_country = { limit = { tag = LIB	 NOT = { exists = LIB } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = CNG	 NOT = { exists = CNG } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = GUY	 NOT = { exists = GUY } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = SUR	 NOT = { exists = SUR } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CAY	 NOT = { exists = CAY } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = CHP	 NOT = { exists = CHP } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = CEQ	 NOT = { exists = CEQ } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = ENT	 NOT = { exists = ENT } } set_country_flag = buro_independence }
@@ -1907,8 +1916,16 @@ political_decisions = {
 				tag = GCO
 				tag = BRZ
 				tag = VNZ
+				tag = SUR
+				tag = CAY
 			}
-			capital_scope = { is_core = GUY }
+			capital_scope = {
+				OR = {
+					is_core = GUY
+					is_core = SUR
+					is_core = CAY
+				}
+			}
 			NOT = { has_country_flag = precolonial }
 			NOT = { has_country_flag = postcol_1 }
 			NOT = { has_country_flag = postcol_2 }

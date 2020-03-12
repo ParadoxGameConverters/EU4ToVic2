@@ -13,3 +13,4 @@ unreleasable = AAA #Dummy country
 unreleasable = SPQ #Roman Empire
 unreleasable = ALI #Aliens
 unreleasable = UND #Undead
+unreleasable = ALL #The Caliphate

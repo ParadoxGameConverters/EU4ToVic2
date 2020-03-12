@@ -2918,7 +2918,7 @@ political_decisions = {
 					tag = SPQ
 					NOT = { exists = SPQ }
 				}
-				primary_culture = latin culture = brithenig culture = gaul culture = xliponian culture = wenedyk culture = bazramani
+				primary_culture = latin add_accepted_culture = brithenig add_accepted_culture = gaul add_accepted_culture = xliponian add_accepted_culture = wenedyk add_accepted_culture = bazramani
 				religion = catholic
 				government = absolute_monarchy
 				civilized = yes
@@ -2929,7 +2929,7 @@ political_decisions = {
 					tag = HRE
 					NOT = { exists = HRE }
 				}
-				primary_culture = south_german culture = north_german culture = north_italian culture = czech culture = frankish
+				primary_culture = south_german add_accepted_culture = north_german add_accepted_culture = north_italian add_accepted_culture = czech add_accepted_culture = frankish
 				religion = catholic
 				government = prussian_constitutionalism
 				civilized = yes
@@ -2973,7 +2973,7 @@ political_decisions = {
 					tag = LOR
 					NOT = { exists = LOR }
 				}
-				primary_culture = french culture = north_german
+				primary_culture = french add_accepted_culture = north_german
 				religion = catholic
 				government = absolute_monarchy
 				civilized = yes
@@ -2984,7 +2984,7 @@ political_decisions = {
 					tag = ALS
 					NOT = { exists = ALS }
 				}
-				primary_culture = french culture = north_german
+				primary_culture = french add_accepted_culture = north_german
 				religion = catholic
 				government = absolute_monarchy
 				civilized = yes
@@ -3050,7 +3050,7 @@ political_decisions = {
 					tag = RIG
 					NOT = { exists = RIG }
 				}
-				primary_culture = north_german culture = latvian
+				primary_culture = north_german add_accepted_culture = latvian
 				religion = catholic
 				government = theocracy
 				civilized = yes
@@ -3423,6 +3423,123 @@ political_decisions = {
 				civilized = yes
 				capital = 2068 
 			}
+		any_country = { #The Caliphate
+				limit = {
+					tag = ALL
+					NOT = { exists = ALL }
+				}
+				primary_culture = bedouin
+				add_accepted_culture = mashriqi
+				add_accepted_culture = misri
+				add_accepted_culture = maghrebi
+				add_accepted_culture = persian
+				religion = sunni
+				government = theocracy
+				civilized = yes
+				capital = 1151
+			}
+			any_country = { #Macao
+				limit = {
+					tag = AOM
+					NOT = { exists = AOM }
+				}
+				primary_culture = nanfaren
+				add_accepted_culture = portuguese
+				religion = catholic
+				government = hms_government
+				civilized = yes
+				capital = 1498
+			}
+			any_country = { #French Guyana
+				limit = {
+					tag = CAY
+					NOT = { exists = CAY }
+				}
+				primary_culture = nouvellien
+				religion = catholic
+				government = democracy
+				civilized = yes
+				capital = 2241
+			}
+			any_country = { #Hong Kong
+				limit = {
+					tag = HKG
+					NOT = { exists = HKG }
+				}
+				primary_culture = nanfaren
+				add_accepted_culture = english
+				add_accepted_culture = scottish
+				religion = protestant
+				government = hms_government
+				civilized = yes
+				capital = 1496
+			}
+			any_country = { #Kosovo
+				limit = {
+					tag = KOS
+					NOT = { exists = KOS }
+				}
+				primary_culture = albanian
+				religion = sunni
+				government = absolute_monarchy
+				civilized = yes
+				capital = 802
+			}
+			any_country = { #North Korea
+				limit = {
+					tag = PYO
+					NOT = { exists = PYO }
+				}
+				primary_culture = korean
+				religion = mahayana
+				government = proletarian_dictatorship
+				civilized = yes
+				capital = 1619
+			}
+			any_country = { #Shandong
+				limit = {
+					tag = SHD
+					NOT = { exists = SHD }
+				}
+				primary_culture = beifaren
+				religion = mahayana
+				government = absolute_monarchy
+				civilized = yes
+				capital = 1563
+			}
+			any_country = { #Shanghai
+				limit = {
+					tag = SHG
+					NOT = { exists = SHG }
+				}
+				primary_culture = beifaren
+				religion = mahayana
+				government = absolute_monarchy
+				civilized = yes
+				capital = 1538
+			}
+			any_country = { #Suriname
+				limit = {
+					tag = SUR
+					NOT = { exists = SUR }
+				}
+				primary_culture = nieuwereld
+				religion = protestant
+				government = hms_government
+				civilized = yes
+				capital = 2240
+			}
+			any_country = { #Transamur
+				limit = {
+					tag = TAM
+					NOT = { exists = TAM }
+				}
+				primary_culture = russian
+				religion = orthodox
+				government = absolute_monarchy
+				civilized = yes
+				capital = 1082
+			}
 			any_country = { limit = { tag = AAA NOT = { exists = AAA } } primary_culture = dummy religion = pre_schism government = theocracy civilized = no capital = 322 } # AAA
 			any_country = { limit = { tag = SMI NOT = { exists = SMI } } primary_culture = sami religion = protestant government = democracy civilized = yes capital = 336 } # Sami
 			any_country = { limit = { tag = MEM NOT = { exists = MEM } } primary_culture = south_german religion = catholic government = democracy civilized = yes capital = 593 } # Memmingen
@@ -3652,7 +3769,7 @@ political_decisions = {
 			any_country = { limit = { tag = XIA NOT = { exists = XIA } } primary_culture = beifaren religion = gelugpa government = absolute_monarchy civilized = no capital = 1612 } # Xia
 			any_country = { limit = { tag = AIN NOT = { exists = AIN } } primary_culture = ainu religion = shinto government = absolute_monarchy civilized = no capital = 1642 } # Ainu
 			any_country = { limit = { tag = TKG NOT = { exists = TKG } } primary_culture = japanese religion = shinto government = absolute_monarchy civilized = no capital = 1649 } # Tokugawa
-			any_country = { limit = { tag = LOU NOT = { exists = LOU } } primary_culture = americaine religion = catholic government = democracy civilized = yes capital = 139 } # Louisiana
+			any_country = { limit = { tag = LOU NOT = { exists = LOU } } primary_culture = nouvellien religion = catholic government = democracy civilized = yes capital = 139 } # Louisiana
 			any_country = { limit = { tag = AZT NOT = { exists = AZT } } primary_culture = aztec religion = aztec_reformed government = absolute_monarchy civilized = no capital = 2172 } # Aztec
 			any_country = { limit = { tag = CHM NOT = { exists = CHM } } primary_culture = quechua religion = shamanism government = absolute_monarchy civilized = no capital = 2292 } # Chimu
 			any_country = { limit = { tag = CRK NOT = { exists = CRK } } primary_culture = muskogean religion = shamanism government = absolute_monarchy civilized = no capital = 195 } # Creek
@@ -3725,7 +3842,7 @@ political_decisions = {
 			any_country = { limit = { tag = D47 NOT = { exists = D47 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D47
 			any_country = { limit = { tag = D48 NOT = { exists = D48 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D48
 			any_country = { limit = { tag = D49 NOT = { exists = D49 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D49
-			any_country = { limit = { tag = D50 NOT = { exists = D50 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D50
+			any_country = { limit = { tag = D50 NOT = { exists = D50 } } primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 } # D50			
 			#Cores for regional countries
 			TUR_806 = { add_core = MCD } #FYR Macedonia
 			TUR_788 = { add_core = BOS } #Bosnia
@@ -3940,6 +4057,14 @@ political_decisions = {
 			1446 = { add_core = TMR }
 			735 = { add_core = TST } # Bozen
 			2535 = { add_core = VTU } #Vanuatu
+			1496 = { add_core = HKG } #Hong Kong
+			1498 = { add_core = AOM } #Macao
+			CHI_1539 = { add_core = SHG } #Shanghai
+			CHI_1532 = { add_core = IMG } #Inner Mongolia
+			KOR_1619 = { add_core = PYO } #North Korea
+			KOR_1627 = { add_core = PYO }
+			802 = { add_core = KOS } #Kosovo
+			803 = { add_core = KOS }
 			#Exaggerated cultural Heimaten fix
 			PER = {
 				any_owned_province = {
@@ -4053,7 +4178,7 @@ political_decisions = {
 					NOT = { exists = ENG }
 				}
 				primary_culture = english
-				culture = scottish
+				add_accepted_culture = scottish
 			}
 			any_country = { #England proper
 				limit = {
@@ -4130,165 +4255,7 @@ political_decisions = {
 			}
 			any_owned = {
 				add_core = CHI
-			}
-			any_owned = { # Xinjiang
-				limit = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-						}
-					}
-					state_id = 1594
-					NOT = { exists = XIN }
-				}
-				add_core = XIN
-			}
-			any_owned = { #Xibei San Ma
-				limit = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-						}
-					}
-					OR = {
-						state_id = 1488
-						state_id = 1556
-						state_id = 1562
-						state_id = 1490
-					}
-					NOT = { exists = XBI }
-				}
-				add_core = XBI
-			}
-			
-			any_owned = { #Tibet
-				limit = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-						}
-					}
-					state_id = 1587	
-					NOT = { exists = TIB }
-				}
-				add_core = TIB
-			}
-			
-			any_owned = { #Mongolia
-				limit = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-						}
-					}
-					OR = {
-						state_id = 1465	
-						state_id = 1532
-					}
-					NOT = { exists = MGL }
-				}
-				add_core = MGL
-			}
-			
-			any_owned = { #Manchukuo
-				limit = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-						}
-					}
-					OR = {
-						state_id = 1553
-						state_id = 1082
-						state_id = 1079
-					}
-					NOT = { exists = MCK }
-				}
-				add_core = MCK
-			}
-			
-			any_owned = { #Korea
-				limit = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-						}
-					}
-					OR = {
-						state_id = 1619
-						state_id = 1627
-					}
-					NOT = { exists = KOR }
-				}
-				add_core = KOR
-			}
-			
-			any_owned = { #Yunnan
-				limit = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-						}
-					}
-					OR = {
-						state_id = 1505
-						state_id = 1601
-						state_id = 1578
-						state_id = 1581
-						state_id = 1523
-					}
-					NOT = { exists = YNN }
-				}
-				add_core = YNN
-			}
-			
-			any_owned = { #Guangxi
-				limit = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-						}
-					}
-					OR = {
-						state_id = 1529
-						state_id = 1504
-						state_id = 1499
-						state_id = 1494
-						state_id = 1550
-						state_id = 1487
-					}
-					NOT = { exists = GXI }
-				}
-				add_core = GXI
-			}
-			
-			any_owned = { #Dai Nam
-				limit = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-						}
-					}
-					OR = {
-						state_id = 1371
-						state_id = 1356
-						state_id = 1374
-					}
-					NOT = { exists = DAI }
-				}
-				add_core = DAI
-			}
-			
-			
+			}			
 			change_tag = CHI
 			
 			country_event = {
@@ -4358,10 +4325,18 @@ political_decisions = {
 			}
 			NOT = {
 				exists = BEL
-				exists = FLA
-				exists = WLL
 				tag = LUX
 				tag = SPQ
+			}
+			OR = {
+				AND = {
+					tag = FLA
+					WLL = { exists = no }
+				}
+				AND = {
+					tag = WLL
+					FLA = { exists = no }
+				}
 			}
 		}	
 		allow = {
@@ -4992,248 +4967,10 @@ political_decisions = {
 		effect = {
 			prestige = 10
 			any_owned = {
-				add_core = RME
+				add_core = SPQ
 			}			
 			
 			change_tag = SPQ
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	guangxi_clique = {
-		potential = {
-			NOT = { tag = CHI }
-			NOT = { exists = YUA }
-			NOT = { exists = GXI }
-			capital_scope = { continent = asia }
-			OR = {
-				primary_culture = manchu
-				primary_culture = nanfaren
-				primary_culture = beifaren
-				primary_culture = min
-				primary_culture = hakka
-				primary_culture = zhuang
-				primary_culture = miao
-				primary_culture = yi
-				primary_culture = uighur
-			}
-		}	
-		allow = {
-			capital_scope = {
-				OR = {
-					state_id = 1529
-					state_id = 1504
-					state_id = 1499
-					state_id = 1494
-					state_id = 1550
-					state_id = 1487
-				}
-			}
-		}
-		
-		effect = {
-			prestige = 10
-			any_owned = {
-				add_core = GXI
-			}			
-			
-			change_tag = GXI
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	manchu_clique = {
-		potential = {
-			NOT = { tag = CHI }
-			NOT = { exists = YUA }
-			NOT = { exists = MCK }
-			capital_scope = { continent = asia }
-			OR = {
-				primary_culture = manchu
-				primary_culture = nanfaren
-				primary_culture = beifaren
-				primary_culture = min
-				primary_culture = hakka
-				primary_culture = zhuang
-				primary_culture = miao
-				primary_culture = yi
-				primary_culture = uighur
-			}
-		}	
-		allow = {
-			capital_scope = {
-				OR = {
-					state_id = 1553
-					state_id = 1082
-					state_id = 1079
-				}
-			}
-		}
-		
-		effect = {
-			prestige = 10
-			any_owned = {
-				add_core = MCK
-			}			
-			
-			change_tag = MCK
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	shanxi_clique = {
-		potential = {
-			NOT = { tag = CHI }
-			NOT = { exists = YUA }
-			NOT = { exists = SXI }
-			capital_scope = { continent = asia }
-			OR = {
-				primary_culture = manchu
-				primary_culture = nanfaren
-				primary_culture = beifaren
-				primary_culture = min
-				primary_culture = hakka
-				primary_culture = zhuang
-				primary_culture = miao
-				primary_culture = yi
-				primary_culture = uighur
-			}
-		}	
-		allow = {
-			capital_scope = {
-				state_id = 1572
-			}
-		}
-		
-		effect = {
-			prestige = 10
-			any_owned = {
-				add_core = SXI
-			}			
-			
-			change_tag = SXI
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	xibei_clique = {
-		potential = {
-			NOT = { tag = CHI }
-			NOT = { exists = YUA }
-			NOT = { exists = XBI }
-			capital_scope = { continent = asia }
-			OR = {
-				primary_culture = manchu
-				primary_culture = nanfaren
-				primary_culture = beifaren
-				primary_culture = min
-				primary_culture = hakka
-				primary_culture = zhuang
-				primary_culture = miao
-				primary_culture = yi
-				primary_culture = uighur
-			}
-		}	
-		allow = {
-			capital_scope = {
-				OR = {
-					state_id = 1488
-					state_id = 1556
-					state_id = 1562
-					state_id = 1490
-				}
-			}
-		}
-		
-		effect = {
-			prestige = 10
-			any_owned = {
-				add_core = XBI
-			}			
-			
-			change_tag = XBI
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	xinjiang_clique = {
-		potential = {
-			NOT = { tag = CHI }
-			NOT = { exists = YUA }
-			NOT = { exists = XIN }
-			capital_scope = { continent = asia }
-			OR = {
-				primary_culture = manchu
-				primary_culture = nanfaren
-				primary_culture = beifaren
-				primary_culture = min
-				primary_culture = hakka
-				primary_culture = zhuang
-				primary_culture = miao
-				primary_culture = yi
-				primary_culture = uighur
-			}
-		}	
-		allow = {
-			capital_scope = {
-				state_id = 1594
-			}
-		}
-		
-		effect = {
-			prestige = 10
-			any_owned = {
-				add_core = XIN
-			}			
-			
-			change_tag = XIN
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	yunnan_clique = {
-		potential = {
-			NOT = { tag = CHI }
-			NOT = { exists = YUA }
-			NOT = { exists = YNN }
-			capital_scope = { continent = asia }
-			OR = {
-				primary_culture = manchu
-				primary_culture = nanfaren
-				primary_culture = beifaren
-				primary_culture = min
-				primary_culture = hakka
-				primary_culture = zhuang
-				primary_culture = miao
-				primary_culture = yi
-				primary_culture = uighur
-			}
-		}	
-		allow = {
-			capital_scope = {
-				OR = {
-					state_id = 1505
-					state_id = 1601
-					state_id = 1578
-					state_id = 1581
-					state_id = 1523
-				}
-			}
-		}
-		
-		effect = {
-			prestige = 10
-			any_owned = {
-				add_core = YNN
-			}			
-			
-			change_tag = YNN
 		}
 		ai_will_do = {
 			factor = 1
@@ -5517,7 +5254,7 @@ political_decisions = {
 			primary_culture = greek
 			NOT = {
 				exists = BYZ
-				exists = RME
+				exists = SPQ
 				exists = GRE
 				tag = TUR
 				tag = ITA
@@ -6234,6 +5971,7 @@ political_decisions = {
 				tag = ARA
 				tag = MUG
 				tag = TIM
+				tag = ALL
 			}
 		}	
 		allow = {
@@ -6286,6 +6024,7 @@ political_decisions = {
 				tag = TUR
 				tag = IRQ
 				tag = SYR
+				tag = ALL
 			}
 		}	
 		allow = {
@@ -6770,6 +6509,7 @@ political_decisions = {
 			NOT = {
 				exists = YEM
 				tag = ARA
+				tag = ALL
 			}
 		}	
 		allow = {
