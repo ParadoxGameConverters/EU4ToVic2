@@ -125,6 +125,7 @@ namespace EU4
 		[[nodiscard]] bool hasModifier(const std::string&) const;
 		[[nodiscard]] bool hasNationalIdea(const std::string&) const;
 		[[nodiscard]] bool hasFlag(const std::string&) const;
+		[[nodiscard]] bool hasReform(const std::string&) const;
 		[[nodiscard]] int numEmbracedInstitutions() const;
 		[[nodiscard]] double getManufactoryDensity() const;
 
@@ -178,7 +179,7 @@ namespace EU4
 		double trade_unions = 0;
 		double political_parties = 0;
 
-		std::map<std::string, bool> flags; // any flags set for this country
+		std::set<std::string> flags; // any flags set for this country
 		std::map<std::string, bool> modifiers; // any modifiers set for this country
 		bool possibleDaimyo = false; // if this country is possibly a daimyo
 		bool possibleShogun = false; // if this country is the shogun

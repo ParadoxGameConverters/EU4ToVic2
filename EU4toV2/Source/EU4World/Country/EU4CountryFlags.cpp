@@ -3,7 +3,7 @@
 
 EU4::EU4CountryFlags::EU4CountryFlags(std::istream& theStream)
 {
-	registerRegex("[a-z_]+", [this](const std::string& flag, std::istream& theStream)
+	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& flag, std::istream& theStream)
 		{
 			commonItems::ignoreItem(flag, theStream);
 			flags.insert(flag);

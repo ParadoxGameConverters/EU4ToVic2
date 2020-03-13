@@ -38,7 +38,7 @@ void mappers::CountryMappings::registerKeys()
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream)
 		{
 			const CountryMapping newMapping(theStream);
-			eu4TagToV2TagsRules.insert(make_pair(newMapping.getEU4Tag(), newMapping.getVic2Tag()));
+			eu4TagToV2TagsRules.push_back(std::make_pair(newMapping.getEU4Tag(), newMapping));
 		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 }
@@ -106,21 +106,52 @@ void mappers::CountryMappings::makeOneMapping(const EU4::Country& country, const
 {
 	const auto& EU4Tag = country.getTag();
 
-	auto mappingRule = eu4TagToV2TagsRules.find(EU4Tag);
-	mappingRule = ifValidGetCK2MappingRule(country, mappingRule);
+	auto mapped = attemptStraightMapping(country, vic2Countries, EU4Tag);
+	if (mapped) return;
 
+	// There was no functional mapping in country_mapping.txt. Let's see if we can generate a ck2 title from the country's name
+	// that we can map into vic2.
+
+	const auto& potentialCK2Title = determineMappableCK2Title(country);
+	if (potentialCK2Title) mapped = attemptStraightMapping(country, vic2Countries, *potentialCK2Title);
+	if (mapped) return;
+
+	// with no CK2 fallback, or a custom country, generate own tag.	
+	const auto& newVic2Tag = generateNewTag();
+	mapToNewTag(EU4Tag, newVic2Tag);
+}
+
+bool mappers::CountryMappings::attemptStraightMapping(const EU4::Country& country, const std::map<std::string, std::shared_ptr<V2::Country>>& vic2Countries, const std::string& EU4Tag)
+{
 	auto mapped = false;
-	if (mappingRule != eu4TagToV2TagsRules.end() && !country.isCustom())
+	for (const auto& mappingLine : eu4TagToV2TagsRules)
 	{
-		mapped = mapToExistingVic2Country(mappingRule->second, vic2Countries, EU4Tag);
-		if (!mapped) mapped = mapToFirstUnusedVic2Tag(mappingRule->second, EU4Tag);
+		if (mappingLine.first != EU4Tag) continue;
+		if (!mappingLine.second.getReforms().empty())
+		{
+			auto found = false;
+			for (const auto& requiredReform : mappingLine.second.getReforms())
+			{
+				if (country.hasReform(requiredReform)) found = true;
+			}
+			if (!found) continue;
+		}
+		if (!mappingLine.second.getFlags().empty())
+		{
+			auto found = false;
+			for (const auto& requiredFlag : mappingLine.second.getFlags())
+			{
+				if (country.hasFlag(requiredFlag)) found = true;
+			}
+			if (!found) continue;
+		}
+		// We have found a solid mapping candidate among existing definitions. Mapping to a live country first.
+		mapped = mapToExistingVic2Country(mappingLine.second.getVic2Tag(), vic2Countries, EU4Tag);
+		// Maybe a dead country?
+		if (!mapped) mapped = mapToFirstUnusedVic2Tag(mappingLine.second.getVic2Tag(), EU4Tag);
+		if (mapped) return mapped;
 	}
-
-	if (!mapped)
-	{
-		const auto& newVic2Tag = generateNewTag();
-		mapToNewTag(EU4Tag, newVic2Tag);
-	}
+	return mapped;
 }
 
 bool mappers::CountryMappings::mapToExistingVic2Country(const std::string& possibleVic2Tag, const std::map<std::string, std::shared_ptr<V2::Country>>& vic2Countries, const std::string& eu4Tag)
@@ -172,19 +203,19 @@ void mappers::CountryMappings::mapToNewTag(const std::string& eu4Tag, const std:
 	logMapping(eu4Tag, vic2Tag, "generated tag");
 }
 
-std::map<std::string, std::string>::iterator mappers::CountryMappings::ifValidGetCK2MappingRule(const EU4::Country& country, std::map<std::string, std::string>::iterator mappingRule)
+std::optional<std::string> mappers::CountryMappings::determineMappableCK2Title(const EU4::Country& country)
 {
-	if (mappingRule == eu4TagToV2TagsRules.end() || country.isCustom())
+	if (country.isCustom()) return std::nullopt; // Custom countries must get generated V2 tags.
+	
+	auto CK2Title = getCK2Title(country.getTag(), country.getName("english"), availableFlags);
+	if (!CK2Title) return std::nullopt;
+	
+	for (const auto& potentialMapping: eu4TagToV2TagsRules)
 	{
-		auto CK2Title = getCK2Title(country.getTag(), country.getName("english"), availableFlags);
-		if (CK2Title)
-		{
-			std::transform(CK2Title->begin(), CK2Title->end(), CK2Title->begin(), ::toupper);
-			mappingRule = eu4TagToV2TagsRules.find(*CK2Title);
-		}
+		if (potentialMapping.first == *CK2Title) return *CK2Title;
 	}
 
-	return mappingRule;
+	return std::nullopt;
 }
 
 bool mappers::CountryMappings::attemptColonialReplacement(
@@ -304,6 +335,7 @@ std::optional<std::string> mappers::CountryMappings::getCK2Title(
 		const auto& c_name = "c_" + titlename;
 		const auto& d_name = "d_" + titlename;
 		const auto& k_name = "k_" + titlename;
+		const auto& e_name = "e_" + titlename;
 
 		if (ck2titleMapper.doesTitleExist(c_name))
 		{
@@ -317,10 +349,15 @@ std::optional<std::string> mappers::CountryMappings::getCK2Title(
 		{
 			ck2title = k_name;
 		}
+		else if (ck2titleMapper.doesTitleExist(e_name))
+		{
+			ck2title = e_name;
+		}
 		else
 		{
-			// Mayle titles don't exist in the ck2 name mapping, but do exist in the flagset (c_znojmo).
-			if (availableFlags.find("k_" + titlename) != availableFlags.end()) return k_name;
+			// Maybe titles don't exist in the ck2 name mapping, but do exist in the flagset (c_znojmo).
+			if (availableFlags.find(e_name) != availableFlags.end()) return e_name;
+			if (availableFlags.find(k_name) != availableFlags.end()) return k_name;
 			if (availableFlags.find(d_name) != availableFlags.end()) return d_name;
 			if (availableFlags.find(c_name) != availableFlags.end()) return c_name;
 		}
