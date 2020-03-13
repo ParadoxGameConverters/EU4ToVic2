@@ -166,7 +166,7 @@ namespace V2
 		void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper);
 		void initParties(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper);
 		void setReligion(const std::string& religion, const mappers::ReligionMapper& religionMapper);
-		void setPrimaryAndAcceptedCultures(const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions);
+		void setPrimaryCulture(const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions);
 		void determineGovernmentType(const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::GovernmentMapper& governmentMapper);
 		void finalizeInvestments(const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void resolvePolitics();

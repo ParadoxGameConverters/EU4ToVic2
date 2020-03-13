@@ -89,6 +89,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	registerKeyword("countries", [this, ideaEffectMapper](const std::string& unused, std::istream& theStream)
 		{
 			LOG(LogLevel::Info) << "-> Loading Countries";
+			cultureGroupsMapper.initForEU4();
 			const Countries processedCountries(*version, theStream, ideaEffectMapper, cultureGroupsMapper);
 			auto theProcessedCountries = processedCountries.getTheCountries();
 			theCountries.swap(theProcessedCountries);
@@ -147,7 +148,6 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 
 	clearRegisteredKeywords();
 
-	cultureGroupsMapper.initForEU4();
 	unitTypeMapper.initUnitTypeMapper();
 
 	LOG(LogLevel::Info) << "*** Building world ***";

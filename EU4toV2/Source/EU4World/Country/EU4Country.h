@@ -119,7 +119,7 @@ namespace EU4
 		[[nodiscard]] std::string getName(const std::string& language) const;
 		[[nodiscard]] std::string getAdjective(const std::string& language) const;
 		[[nodiscard]] double getLegitimacy() const;
-		[[nodiscard]] std::optional<mappers::CultureGroup> getCulturalUnion() const { return culturalUnion; }
+		[[nodiscard]] bool getCulturalUnion() const { return culturalUnion; } // this is not used at the moment.
 		[[nodiscard]] bool cultureSurvivesInCores(const std::map<std::string, std::shared_ptr<Country>>& theCountries);
 		[[nodiscard]] int getTotalDev() const;
 		[[nodiscard]] bool hasModifier(const std::string&) const;
@@ -143,14 +143,14 @@ namespace EU4
 		bool inHRE = false; // if this country is an HRE member
 		bool holyRomanEmperor = false; // if this country is the emperor of the HRE
 		bool celestialEmperor = false; // if this country is the celestial emperor
+		bool culturalUnion = false;
 		int capital = 0; // the EU4 province that is this nation's capital
 		std::string techGroup; // the tech group for this nation
 		std::vector<bool> embracedInstitutions; // the institutions this nation has embraced
 		int isolationism = 1; // the isolationism of the country (for Shinto nations with Mandate of Heaven)
 		std::string primaryCulture; // the primary EU4 culture of this nation
 		std::string historicalPrimaryCulture;
-		std::vector<std::string> acceptedCultures; // the accepted EU4 cultures for this nation
-		std::optional<mappers::CultureGroup> culturalUnion;
+		std::set<std::string> acceptedCultures;  // this is not used at the moment.
 		std::string religion; // the accepted religion of this country
 		std::string historicalReligion;
 		double score = 0.0;
