@@ -603,14 +603,14 @@ bool EU4::Country::hasNationalIdea(const std::string& ni) const
 
 bool EU4::Country::hasFlag(const std::string& flag) const
 {
-	const auto& itr = flags.find(flag);
-	return itr != flags.end();
+	if (flags.count(flag)) return true;
+	return false;
 }
 
 bool EU4::Country::hasReform(const std::string& reform) const
 {
-	const auto& itr = governmentReforms.find(reform);
-	return itr != governmentReforms.end();
+	if (governmentReforms.count(reform)) return true;
+	return false;
 }
 
 void EU4::Country::resolveRegimentTypes(const mappers::UnitTypeMapper& unitTypeMapper)
