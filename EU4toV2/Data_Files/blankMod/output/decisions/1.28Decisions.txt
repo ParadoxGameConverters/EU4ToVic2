@@ -2,11 +2,12 @@ political_decisions = {
 	the_concession_to_the_travelers = {
 		image = fugitive_slave_act
 		potential = {
+			always = no #Can't seem to make it work
 			has_accepted_culture = gypsy
 			NOT = { exists = GYP }
 			nationalism_n_imperialism = 1
 			any_owned_province = {
-				is_primary_culture = gypsy
+				culture = gypsy
 				NOT = { is_core = THIS }
 			}
 			NOT = { has_global_flag = gypsy_exists }
@@ -19,16 +20,12 @@ political_decisions = {
 		effect = {
 			badboy = -1
 			any_owned_province = {
-				limit = { is_primary_culture = gypsy }
-				add_core = GYP
-			}
-			any_owned_province = {
 				limit = {
-					is_core = GYP
+					culture = gypsy
 					NOT = { is_core = THIS }
 				}
+				add_core = GYP
 				secede_province = GYP
-				remove_core = THIS
 			}
 			create_vassal = GYP
 			set_global_flag = gypsy_exists

@@ -71,3 +71,31 @@ province_event = {
 		}
 	}
 }
+country_event = {
+	id = 666002
+	title = "The Area 51"
+	desc = "Since the 20th of September $YEAR$, the Aliens have finally won the siege of the 'Face-book' horde who tried to drive them out of New Mexico. Hence, we rebaptized this place with its true alien name, Area 51"
+	picture = "Demonstration"
+	
+	trigger = {
+		tag = ALI
+		owns = 103 #New Mexico
+		owns = 104
+		owns = 105
+		NOT = { has_global_flag = area_51 }
+	}
+	
+	mean_time_to_happen = {
+		months = 0.01
+	}
+	
+	option = {
+		name = "For Xenu!"
+		103 = {
+			state_scope = {
+				change_region_name = "Area 51"
+			}
+		}
+		set_global_flag = area_51
+	}
+}

@@ -95,6 +95,10 @@ christian = {
 		icon = 39
 		color = { 0.9 0.4 0.4 }
 	}
+	hussite = {
+		icon = 59
+		color = { 161  139  40 }
+	}
 }
 
 muslim = {

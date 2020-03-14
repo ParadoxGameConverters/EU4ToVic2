@@ -101,7 +101,7 @@ link = { v2 = pre_schism eu4 = chalcedonism }
 link = { v2 = nestorian eu4 = chaldean }
 link = { v2 = cathar eu4 = gnostic }
 link = { v2 = arian eu4 = arianism }
-link = { v2 = lollard eu4 = hussite }
+link = { v2 = hussite eu4 = hussite }
 link = { v2 = sunni eu4 = wahhabi }
 link = { v2 = jain eu4 = jainism }
 link = { v2 = animist eu4 = pantheism eu4 = adi_dharam eu4 = polynesian_religion }
