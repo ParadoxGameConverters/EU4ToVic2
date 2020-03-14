@@ -7,7 +7,6 @@
 #include "../../Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "newParser.h"
 #include <memory>
-#include <optional>
 #include <set>
 #include "EU4NationalSymbol.h"
 #include "../EU4Version.h"
@@ -35,7 +34,12 @@ namespace EU4
 			const mappers::IdeaEffectMapper& ideaEffectMapper, 
 			const mappers::CultureGroups& cultureGroupsMapper
 		);
-
+		virtual ~Country() = default;
+		Country(const Country& source) = default;
+		Country& operator=(const Country&) = default;
+		Country(Country&&) = default;
+		Country& operator=(Country&&) = default;
+		
 		void readFromCommonCountry(const std::string& fileName, const std::string& fullFilename); // Add any additional information available from the specified country file.
 		void setLocalisationName(const std::string& language, const std::string& name);
 		void setLocalisationAdjective(const std::string& language, const std::string& adjective);
@@ -71,11 +75,11 @@ namespace EU4
 		[[nodiscard]] virtual double getAdmTech() const { return admTech; }
 		[[nodiscard]] virtual double getDipTech() const { return dipTech; }
 		[[nodiscard]] virtual double getMilTech() const { return milTech; }
-		[[nodiscard]] auto getArmy() const { return army; }
-		[[nodiscard]] auto getNavy() const { return navy; }
-		[[nodiscard]] auto getCommerce() const { return commerce; }
-		[[nodiscard]] auto getIndustry() const { return industry; }
-		[[nodiscard]] auto getCulture() const { return culture; }
+		[[nodiscard]] virtual double getArmy() const { return army; }
+		[[nodiscard]] virtual double getNavy() const { return navy; }
+		[[nodiscard]] virtual double getCommerce() const { return commerce; }
+		[[nodiscard]] virtual double getIndustry() const { return industry; }
+		[[nodiscard]] virtual double getCulture() const { return culture; }
 		[[nodiscard]] auto getSlavery() const { return slavery; }
 		[[nodiscard]] auto getUpper_house_composition() const { return upper_house_composition; }
 		[[nodiscard]] auto getVote_franchise() const { return vote_franchise; }
@@ -119,7 +123,7 @@ namespace EU4
 		[[nodiscard]] std::string getName(const std::string& language) const;
 		[[nodiscard]] std::string getAdjective(const std::string& language) const;
 		[[nodiscard]] double getLegitimacy() const;
-		[[nodiscard]] std::optional<mappers::CultureGroup> getCulturalUnion() const { return culturalUnion; }
+		[[nodiscard]] bool getCulturalUnion() const { return culturalUnion; } // this is not used at the moment.
 		[[nodiscard]] bool cultureSurvivesInCores(const std::map<std::string, std::shared_ptr<Country>>& theCountries);
 		[[nodiscard]] int getTotalDev() const;
 		[[nodiscard]] bool hasModifier(const std::string&) const;
@@ -143,14 +147,14 @@ namespace EU4
 		bool inHRE = false; // if this country is an HRE member
 		bool holyRomanEmperor = false; // if this country is the emperor of the HRE
 		bool celestialEmperor = false; // if this country is the celestial emperor
+		bool culturalUnion = false;
 		int capital = 0; // the EU4 province that is this nation's capital
 		std::string techGroup; // the tech group for this nation
 		std::vector<bool> embracedInstitutions; // the institutions this nation has embraced
 		int isolationism = 1; // the isolationism of the country (for Shinto nations with Mandate of Heaven)
 		std::string primaryCulture; // the primary EU4 culture of this nation
 		std::string historicalPrimaryCulture;
-		std::vector<std::string> acceptedCultures; // the accepted EU4 cultures for this nation
-		std::optional<mappers::CultureGroup> culturalUnion;
+		std::set<std::string> acceptedCultures;  // this is not used at the moment.
 		std::string religion; // the accepted religion of this country
 		std::string historicalReligion;
 		double score = 0.0;

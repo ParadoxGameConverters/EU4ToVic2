@@ -119,6 +119,7 @@ namespace V2
 		void transcribeHistoricalData();
 		void transcribeNeoCultures();
 		void modifyPrimaryAndAcceptedCultures();
+		void addAcceptedCultures();
 		
 		mappers::ProvinceMapper provinceMapper;
 		mappers::Continents continentsMapper;

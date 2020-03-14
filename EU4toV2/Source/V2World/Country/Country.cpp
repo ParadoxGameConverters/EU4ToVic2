@@ -143,8 +143,8 @@ void V2::Country::initFromEU4Country(
 	// religion
 	setReligion(_srcCountry->getReligion(), religionMapper);
 
-	// cultures
-	setPrimaryAndAcceptedCultures(cultureMapper, eu4Regions);
+	// culture - accepted cultures are irrelevant at this stage and we decided not to use eu4's sources at all.
+	setPrimaryCulture(cultureMapper, eu4Regions);
 
 	// Government
 	determineGovernmentType(ideaEffectMapper, governmentMapper);
@@ -196,7 +196,7 @@ void V2::Country::setReligion(const std::string& religion, const mappers::Religi
 	}
 }
 
-void V2::Country::setPrimaryAndAcceptedCultures(const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions)
+void V2::Country::setPrimaryCulture(const mappers::CultureMapper& cultureMapper, const EU4::Regions& eu4Regions)
 {
 	const auto oldCapital = srcCountry->getCapital();
 
@@ -217,33 +217,6 @@ void V2::Country::setPrimaryAndAcceptedCultures(const mappers::CultureMapper& cu
 	{
 		details.primaryCulture = *matched;
 		details.eu4PrimaryCulture = primCulture;
-	}
-
-	//accepted cultures
-	auto srcAcceptedCultures = srcCountry->getAcceptedCultures();
-	auto culturalUnion = srcCountry->getCulturalUnion();
-	if (culturalUnion)
-	{
-		for (const auto& unionCulture : culturalUnion->getCultures())
-		{
-			srcAcceptedCultures.push_back(unionCulture.first);
-		}
-	}
-	for (const auto& srcCulture : srcAcceptedCultures)
-	{		
-		const auto& dstCulture = cultureMapper.cultureMatch(eu4Regions, srcCulture, details.religion, oldCapital, srcCountry->getTag());
-		if (dstCulture)
-		{
-			if (details.primaryCulture != *dstCulture)
-			{
-				details.acceptedCultures.insert(*dstCulture);
-				details.eu4acceptedCultures.insert(srcCulture);		
-			}
-		}
-		else
-		{
-			LOG(LogLevel::Warning) << "No culture mapping defined for " << srcCulture << " (" << srcCountry->getTag() << " -> " << tag << ')';
-		}
 	}
 }
 

@@ -70,7 +70,9 @@ historicalData(sourceWorld.getHistoricalData())
 
 	LOG(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
 	modifyPrimaryAndAcceptedCultures();
-
+	LOG(LogLevel::Info) << "-> Monitoring Native Fauna Reaction";
+	addAcceptedCultures();
+	
 	LOG(LogLevel::Info) << "-> Merging Nations";
 	addUnions();
 	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
@@ -86,6 +88,71 @@ historicalData(sourceWorld.getHistoricalData())
 	LOG(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
 
+void V2::World::addAcceptedCultures()
+{
+	// Accepted cultures at this stage only contain neocultures (if > 0.15) and ex-primary culture if neoculture took over.
+	// We will do a census and add only those accepted cultures that are relevant to us, eu4 and cultural unions be damned.
+	
+	for (const auto& country : countries)
+	{
+		if (country.second->getProvinces().empty()) continue; // don't disturb the dead
+		std::map<std::string, long> census; //culture, population.
+		// do a census
+		for (const auto& province : country.second->getProvinces())
+		{
+			const auto& pops = province.second->getPopsForOutput();
+			if (!pops) continue;
+			for (const auto& pop : pops->second)
+			{
+				const auto culture = pop->getCulture();
+				const auto size = pop->getSize();
+				census[culture] += size;
+			}
+		}
+
+		long totalPopulation = 0;
+		for (const auto& entry : census) totalPopulation += entry.second;
+		if (!totalPopulation) return;
+
+		const auto& primaryCulture = country.second->getPrimaryCulture();
+		auto acceptedCultures = country.second->getAcceptedCultures();
+		const double primRatio = static_cast<double>(census[primaryCulture]) / totalPopulation;
+		auto cultureGroup = cultureGroupsMapper.getGroupForCulture(primaryCulture);
+		if (!cultureGroup) return;
+		auto cultureGroupCultures = cultureGroup->getCultures();
+		double sameGroupThreshold;
+		double foreignThreshold;
+
+		if (primRatio >= 0.5)
+		{
+			sameGroupThreshold = 0.15;
+			foreignThreshold = 0.2;
+		}
+		else
+		{
+			sameGroupThreshold = 0.1;
+			foreignThreshold = 0.15;
+		}
+		for (const auto& culture: census)
+		{
+			if (culture.first == primaryCulture) continue;
+			
+			const auto& cultureItr = cultureGroupCultures.find(culture.first);
+			const auto ratio = static_cast<double>(culture.second) / totalPopulation;
+			if (cultureItr != cultureGroupCultures.end())
+			{
+				// This is a sameGroupCulture
+				if (ratio >= sameGroupThreshold) acceptedCultures.insert(culture.first);
+			}
+			else
+			{
+				if (ratio >= foreignThreshold) acceptedCultures.insert(culture.first);
+			}
+		}
+		country.second->setAcceptedCultures(acceptedCultures);
+	}
+}
+	
 void V2::World::modifyPrimaryAndAcceptedCultures()
 {
 	// Key to understanding - this entire function is relevant only for extreme edge cases

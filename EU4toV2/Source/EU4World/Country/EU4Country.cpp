@@ -95,8 +95,9 @@ EU4::Country::Country(
 		});
 	registerKeyword("accepted_culture", [this](const std::string& unused, std::istream& theStream)
 		{
+			// accepted cultures are not used at the moment.
 			const commonItems::singleString theAcceptedCulture(theStream);
-			acceptedCultures.push_back(theAcceptedCulture.getString());
+			acceptedCultures.insert(theAcceptedCulture.getString());
 		});
 	registerKeyword("government_rank", [this](const std::string& unused, std::istream& theStream)
 		{
@@ -109,18 +110,10 @@ EU4::Country::Country(
 			development = theDevelopment.getInt();
 		});
 	// obsolete since 1.18 at the latest
-	registerKeyword("culture_group_union", [this, theVersion, cultureGroupsMapper](const std::string& unused, std::istream& theStream)
+	registerKeyword("culture_group_union", [this](const std::string& unused, std::istream& theStream)
 		{
-			if (theVersion < Version("1.7.0.0"))
-			{
-				const commonItems::singleString cultureGroup(theStream);
-				culturalUnion = cultureGroupsMapper.getGroupForCulture(cultureGroup.getString());
-			}
-			else
-			{
-				const mappers::CultureGroup newUnion(tag + "_union", theStream);
-				culturalUnion = newUnion;
-			}
+			commonItems::ignoreItem(unused, theStream);
+			culturalUnion = true;
 		});
 	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream)
 		{
@@ -284,9 +277,10 @@ void EU4::Country::filterLeaders()
 
 void EU4::Country::dropMinorityCultures()
 {
+	// This function is performed but results (accepted cultures) are not used at the moment.
 	if (!development) return;
 
-	std::vector<std::string> updatedCultures;
+	std::set<std::string> updatedCultures;
 	for (const auto& acceptedCulture: acceptedCultures)
 	{
 		double culturalDevelopment = 0;
@@ -294,10 +288,7 @@ void EU4::Country::dropMinorityCultures()
 		{
 			culturalDevelopment += p->getCulturePercent(acceptedCulture) * p->getTotalDevModifier();
 		}
-		if (culturalDevelopment / development > 0.15)
-		{
-			updatedCultures.push_back(acceptedCulture);
-		}
+		if (culturalDevelopment / development > 0.15) updatedCultures.insert(acceptedCulture);
 	}
 	acceptedCultures.swap(updatedCultures);
 }
@@ -314,9 +305,10 @@ double EU4::Country::getLegitimacy() const
 
 void EU4::Country::determineCulturalUnion(const mappers::CultureGroups& cultureGroupsMapper)
 {
+	// this is not used at the moment.
 	if (development >= 1000 || governmentRank > 2)
 	{
-		culturalUnion = cultureGroupsMapper.getGroupForCulture(primaryCulture);
+		culturalUnion = true;
 	}
 }
 
