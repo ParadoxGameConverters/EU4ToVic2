@@ -111,6 +111,40 @@ style =
 
 	title_image =
 	{
+		#Weird stuff
+				case =	{
+			trigger = { 
+				or = {
+					or = {
+						is_culture_group = non_human
+						is_culture_group = anti_human
+					}
+					and = {
+						civilized = no
+						part_of_sphere = yes
+
+						sphere_owner = {
+							or = {
+								is_culture_group = non_human 
+								is_culture_group = anti_human
+							}
+						}
+					}
+					and = {
+						civilized = no
+						is_vassal = yes
+
+						overlord = {
+							or = {
+								is_culture_group = non_human 
+								is_culture_group = anti_human
+							}
+						}
+					}					
+				}
+			}
+			picture = "news/not_human_newspaper.dds"
+		}
 		# FRA ###################
 		case =	{
 			trigger = { 

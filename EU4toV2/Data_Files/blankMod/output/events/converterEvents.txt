@@ -348,6 +348,7 @@ country_event = {
 	
 	trigger = {
 		tag = TUR
+		EGY = { exists = no }
 	}
 	
 	fire_only_once = yes
