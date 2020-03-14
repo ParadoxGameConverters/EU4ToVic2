@@ -1,0 +1,73 @@
+province_event = {
+	id = 666000
+	title = we_are_the_undeads_title
+	desc = we_are_the_undeads_desc
+	picture = "Demonstration"
+	
+	trigger = {
+		owner = {
+			OR = {
+				is_culture_group = non_human #Animals
+				is_culture_group = anti_human #Aliens
+			}
+		}
+		minorities = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = EVTOPTA666000
+		any_pop = {
+			limit = { is_accepted_culture = no }
+			reduce_pop = -1
+		}
+		add_province_modifier = {
+			name = occupied #No immigration in this anarchy land
+			duration = -1
+		}
+	}
+}
+province_event = {
+	id = 666001
+	title = go_away_undeads_title
+	desc = go_away_undeads_desc
+	picture = "Demonstration"
+	
+	trigger = {
+		NOT = {
+			owner = {
+				OR = {
+					is_culture_group = non_human #Animals
+					is_culture_group = anti_human #Aliens
+				}
+			}
+		}
+		any_pop = {
+			OR = {
+				is_culture_group = non_human
+				is_culture_group = anti_human
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = EVTOPTA666001
+		any_pop = {
+			limit = { 
+				OR = {
+					is_culture_group = non_human
+					is_culture_group = anti_human
+				}
+			}
+			assimilate = yes
+			literacy = -1
+		}
+	}
+}

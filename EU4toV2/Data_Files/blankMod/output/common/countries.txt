@@ -355,6 +355,7 @@ TYR		="countries/Tyrone.txt"##
 ULS		="countries/Ulster.txt"
 WHA		="countries/Wales.txt"##
 YOR		="countries/York.txt"##
+GBR		="countries/Albion.txt"##
 
 # Balkans
 ACH		="countries/Achaea.txt"##

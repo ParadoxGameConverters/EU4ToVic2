@@ -3903,7 +3903,7 @@ neo_european_cultures = {
 	french_canadian = { 
 		color = {168 195 255}
 
-		first_names = { Narcisse René Édouard Luc Letellier Théodore Louis François Auguste Joseph Pierre Luis-Phillippe Jean Gaspard Eugène Èssioff Huguel Jean-Pierre Gilles
+		first_names = { Narcisse René Èdouard Luc Letellier Théodore Louis Francois Auguste Joseph Pierre Luis-Phillippe Jean Gaspard Eugéne Èssioff Huguel Jean-Pierre Gilles
 		}
 		last_names = { Belleau Caron "de St.-Just" Robitaille Masson Angers Chapleau Jotte Pantaléon Langelier Damasne LeBlanc Brodeur Perodeau
 		}
@@ -3919,7 +3919,7 @@ neo_european_cultures = {
 	nouvellien = { 
 		color = {129 179 236}
 
-		first_names = { Narcisse René Édouard Luc Letellier Théodore Louis François Auguste Joseph Pierre Luis-Phillippe Jean Gaspard Eugène Èssioff Huguel Jean-Pierre Gilles
+		first_names = { Narcisse René Èdouard Luc Letellier Théodore Louis Francois Auguste Joseph Pierre Luis-Phillippe Jean Gaspard Eugéne Èssioff Huguel Jean-Pierre Gilles
 		}
 		last_names = { Belleau Caron "de St.-Just" Robitaille Masson Angers Chapleau Jotte Pantaléon Langelier Damasne LeBlanc Brodeur Perodeau
 		}
@@ -3928,7 +3928,7 @@ neo_european_cultures = {
 	australienne = { 
 		color = {151 129 165}
 
-		first_names = { Narcisse René Édouard Luc Letellier Théodore Louis François Auguste Joseph Pierre Luis-Phillippe Jean Gaspard Eugène Èssioff Huguel Jean-Pierre Gilles
+		first_names = { Narcisse René Èdouard Luc Letellier Théodore Louis Francois Auguste Joseph Pierre Luis-Phillippe Jean Gaspard Eugéne Èssioff Huguel Jean-Pierre Gilles
 		}
 		last_names = { Belleau Caron "de St.-Just" Robitaille Masson Angers Chapleau Jotte Pantaléon Langelier Damasne LeBlanc Brodeur Perodeau
 		}
@@ -3937,7 +3937,7 @@ neo_european_cultures = {
 	africaine = { 
 		color = {102 118 155}
 
-		first_names = { Narcisse René Édouard Luc Letellier Théodore Louis François Auguste Joseph Pierre Luis-Phillippe Jean Gaspard Eugène Èssioff Huguel Jean-Pierre Gilles
+		first_names = { Narcisse René Èdouard Luc Letellier Théodore Louis Francois Auguste Joseph Pierre Luis-Phillippe Jean Gaspard Eugéne Èssioff Huguel Jean-Pierre Gilles
 		}
 		last_names = { Belleau Caron "de St.-Just" Robitaille Masson Angers Chapleau Jotte Pantaléon Langelier Damasne LeBlanc Brodeur Perodeau
 		}
@@ -4888,8 +4888,30 @@ barbarian = {
 		last_names = { Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro }
 	}
 }
+anti_human = {
+	leader = no_leader
+	unit = ConfederateGC
+	undead = {
+		color = { 30 30 30 }
+		radicalism = 100
+		primary = UND
+
+		first_names = { General Doctor Leader Beknown Bespectacled Buried Befeared "Human-eater" }
+
+		last_names = { Banshee Ghost Poltergeist Draugr Ghoul Jiangshi Lich Mummy Revenant Spirit Skeleton Vampire Wight Zombie "the Undead" }
+	}
+	alien = {
+		color = { 0 150 0 }
+		radicalism = 100
+		primary = ALI
+
+		first_names = { Xirgliss Cathiox Zir Zarax Rekaxir Cax Zidlaxi Cabroxi Xidlor Zeraxim Moz Zoz Xaz Zax Zacadliss Cothaxir Xoblagiss Rezicax Morezac Midloxec }
+
+		last_names = { Flatwood Grey Gray Green Reptilian Martian Venusian Stargazer "Ford Prefect" "the AI" Blorg Demogorgon }
+	}
+}
 non_human = { #More names allover
-	leader = polar_bear
+	leader = no_leader
 	unit = SwedishGC
 	polar_bears = {
 		radicalism = 100
@@ -4917,24 +4939,6 @@ non_human = { #More names allover
 		first_names = { Mittens Fluffy Tom Smudge Shadow }
 
 		last_names = { "Vermin" "Tabby" "Tabby" "Bramblepelt" "Kitten" "Katturan" "Purr" "Bahari" "Cat" "Stalker" "O'Malley" "Tiger" "Scottish Folds" "Jellicle" "Sphynxes" "Cat" "Katturan" "Jellicle" "Critterkiller" "Manx" "Heavyside" "Purr" "von Furrington" "Felis Catus" "Meow" "Tiger" "Vermin" "Vermin" "Kitten" "Night" "Hairball" "Bramblepelt" "Meow" "Hiss" "Hiss" "Felis Catus" "Vermin" "Feline" "Feline" "Heavyside" "Purr" "Tom" "Tabby" "Katturan" "Meow" "Tom" "Wildcat" "Bramblepelt" "Felidae" "Feral" "Felidae" "Tabby" "-in-Boots" "Kitten" "Wildcat" "Bramblepelt" "Furry" "Ratcatcher" "Meow" "Feral" "Night" "Cat" "Bahari" "Freyja" "Scottish Folds" "Naberezhnye" "Lampron" }
-	}
-	undead = {
-		color = { 30 30 30 }
-		radicalism = 100
-		primary = UND
-
-		first_names = { General Doctor Leader Beknown Bespectacled Buried Befeared "Human-eater" }
-
-		last_names = { Banshee Ghost Poltergeist Draugr Ghoul Jiangshi Lich Mummy Revenant Spirit Skeleton Vampire Wight Zombie "the Undead" }
-	}
-	alien = {
-		color = { 0 150 0 }
-		radicalism = 100
-		primary = ALI
-
-		first_names = { Xirgliss Cathiox Zir Zarax Rekaxir Cax Zidlaxi Cabroxi Xidlor Zeraxim Moz Zoz Xaz Zax Zacadliss Cothaxir Xoblagiss Rezicax Morezac Midloxec }
-
-		last_names = { Flatwood Grey Gray Green Reptilian Martian Venusian Stargazer "Ford Prefect" "the AI" Blorg Demogorgon }
 	}
 	duck_culture = {
 		color = { 25 75 25}

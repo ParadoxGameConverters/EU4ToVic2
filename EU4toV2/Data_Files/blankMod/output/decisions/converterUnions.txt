@@ -4187,6 +4187,17 @@ political_decisions = {
 				}
 				primary_culture = english
 			}
+			any_country = { #Albion
+				limit = {
+					tag = GBR
+					NOT = { exists = GBR }
+				}
+				primary_culture = english
+				religion = protestant
+				government = hms_government
+				civilized = yes
+				capital = 300
+			}
 			set_global_flag = taiping_and_csa
 		}
 		ai_will_do = {
@@ -5090,100 +5101,6 @@ political_decisions = {
 			}			
 			set_global_flag = oh_fuck
 			change_tag = UND
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	go_away_undeads = {
-		potential = {
-			NOT = {
-				culture = polar_bears
-				culture = horse
-				culture = cat
-				culture = undead
-				culture = alien
-				culture = dog_culture
-				culture = duck_culture
-				culture = dragon_culture
-				culture = elephant_culture
-				culture = hedgehog_culture
-			}
-			any_pop = {
-				OR = {
-					culture = polar_bears
-					culture = horse
-					culture = cat
-					culture = undead
-					culture = alien
-					culture = dog_culture
-					culture = duck_culture
-					culture = dragon_culture
-					culture = elephant_culture
-					culture = hedgehog_culture
-				}
-			}
-			NOT = { has_country_flag = we_purged_them }
-		}	
-		allow = {
-			always = yes
-		}
-		
-		effect = {
-			any_pop = {
-				limit = {
-					OR = {
-						culture = polar_bears
-						culture = horse
-						culture = cat
-						culture = undead
-						culture = alien
-						culture = dog_culture
-						culture = duck_culture
-						culture = dragon_culture
-						culture = elephant_culture
-						culture = hedgehog_culture
-					}
-				}
-				reduce_pop = 0
-			}
-			set_country_flag = we_purged_them
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	we_are_the_undeads = {
-		potential = {
-			OR = {
-				culture = polar_bears
-				culture = horse
-				culture = cat
-				culture = undead
-				culture = alien
-				culture = dog_culture
-				culture = duck_culture
-				culture = dragon_culture
-				culture = elephant_culture
-				culture = hedgehog_culture
-			}
-			any_pop = {
-				is_primary_culture = no
-			}
-			NOT = { has_country_flag = we_purged_them }
-		}	
-		allow = {
-			always = yes
-		}
-		
-		effect = {
-			any_pop = {
-				limit = {
-					is_primary_culture = no
-				}
-				reduce_pop = 0
-			}
-			set_country_flag = we_purged_them
 		}
 		ai_will_do = {
 			factor = 1
