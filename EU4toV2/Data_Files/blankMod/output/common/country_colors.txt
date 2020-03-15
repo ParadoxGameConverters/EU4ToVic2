@@ -17,95 +17,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-
-
 # Country unit colors.
-
-# British Isles
-
-# **Connacht**
-CNN = {
-    color1= { 255 255 255  }
-    color2= { 80 79 88  }
-    color3= { 134 166 117  }
-}
-
-# **Cornwall**
-CRN = {
-    color1= { 255 87 127  }
-    color2= { 255 255 255  }
-    color3= { 166 189 199  }
-}
-
-# England
-ENG = {
-    color1= { 193 26 14  }
-    color2= { 99 137 153  }
-    color3= { 83 149 105  }
-}
-
-# **Leinster**
-LEI = {
-    color1= { 48 164 51  }
-    color2= { 183 176 194  }
-    color3= { 107 170 77  }
-}
-
-# **Irish Munster**
-MNS = {
-    color1= { 104 137 140  }
-    color2= { 107 94 169  }
-    color3= { 199 175 12  }
-}
-
-# Ireland
-IRE = {
-    color1= { 112 150 105  }
-    color2= { 136 157 23  }
-    color3= { 117 127 174  }
-}
-
-# **Lancaster**
-LAN = {
-    color1= { 121 162 109  }
-    color2= { 39 108 140  }
-    color3= { 131 101 85  }
-}
-
-# Scotland
-SCO = {
-    color1= { 199 175 12  }
-    color2= { 202 112 85  }
-    color3= { 104 137 140  }
-}
-
-# **Ulster**
-TYR = {
-    color1= { 131 101 85  }
-    color2= { 166 72 57  }
-    color3= { 121 162 109  }
-}
-
-# **Wales**
-WLS = {
-    color1= { 117 127 174  }
-    color2= { 161 126 128  }
-    color3= { 112 150 105  }
-}
-
-# **York**
-YOR = {
-    color1= { 107 170 77  }
-    color2= { 152 85 92  }
-    color3= { 48 164 51  }
-}
-
-# **Northumberland**
-NOL = {
-    color1= { 83 149 105  }
-    color2= { 126 203 120  }
-    color3= { 193 26 14  }
-}
 
 # Sweden
 SWE = {
@@ -114,11 +26,11 @@ SWE = {
     color3= { 193 26 14  }
 }
 
-# Denmark FIXED
+# Denmark FIXED (dark-blue coats, blue trousers and hats)
 DEN = {
-    color1= { 220 138 57  }
-    color2= { 136 157 23  }
-    color3= { 48 164 51  }
+color1= { 69 80 169 }
+color2= { 69 157 208 }
+color3= { 137 183 124 }
 }
 
 
@@ -127,13 +39,6 @@ FIN = {
     color1= { 182 134 100  }
     color2= { 39 108 140  }
     color3= { 112 150 105  }
-}
-
-# **Gotland**
-GOT = {
-    color1= { 191 113 133  }
-    color2= { 107 94 169  }
-    color3= { 121 162 109  }
 }
 
 # Norway
@@ -148,13 +53,6 @@ ALB = {
     color1= { 181 72 106  }
     color2= { 161 126 128  }
     color3= { 131 101 85  }
-}
-
-# **Athens**
-ATH = {
-    color1= { 113 112 96  }
-    color2= { 152 85 92  }
-    color3= { 117 127 174  }
 }
  
 # Awadh FIXED
@@ -215,21 +113,6 @@ GRE = {
     color3= { 197 92 106  }
 }
 
-# **Knights**
-KNI = {
-    color1= { 106 127 183  }
-    color2= { 101 102 163  }
-    color3= { 195 149 155  }
-}
-
-
-# **Morea**
-MOE = {
-    color1= { 113 150 11  }
-    color2= { 144 52 53  }
-    color3= { 154 69 116  }
-}
-
 # Moldavia FIXED
 MOL = {
     color1= { 69 80 169  }
@@ -243,21 +126,6 @@ MON = {
     color2= { 255 255 255  }
     color3= { 184 193 89  }
 }
-
-# **Naxos**
-NAX = {
-    color1= { 107 94 169  }
-    color2= { 124 140 162  }
-    color3= { 17 16 203  }
-}
-
-# **Ragusa**
-RAG = {
-    color1= { 202 112 85  }
-    color2= { 194 140 86  }
-    color3= { 137 183 124  }
-}
-
 
 # Serbia FIXED
 SER = {
@@ -287,11 +155,33 @@ TUR = {
     color3= { 135 104 85  }
 }
 
+
+# United Kingdom
+ENG = {
+    color1= { 193 26 14  }
+    color2= { 99 137 153  }
+    color3= { 83 149 105  }
+}
+
+# Ireland
+IRE = {
+    color1= { 112 150 105  }
+    color2= { 136 157 23  }
+    color3= { 117 127 174  }
+}
+
 # Ionian Islands FIXED
 ION = {
     color1= { 69 80 169  }
     color2= { 248 199 67  }
     color3= { 131 101 85  }
+}
+
+# Scotland
+SCO = {
+    color1= { 199 175 12  }
+    color2= { 202 112 85  }
+    color3= { 104 137 140  }
 }
 
 # Brazil
@@ -365,13 +255,6 @@ CLM = {
     color3= { 197 92 106  }
 }
 
-# Louisiana
-LOU = {
-    color1= { 144 52 53  }
-    color2= { 89 140 176  }
-    color3= { 154 69 116  }
-}
-
 # Mexico
 MEX = {
     color1= { 219 124 139  }
@@ -435,94 +318,6 @@ PRU = {
     color3= { 255 255 255  }
 }
 
-# Alsace
-ALS = {
-    color1= { 246 223 15  }
-    color2= { 99 137 153  }
-    color3= { 255 255 255  }
-}
-
-
-# Armagnac
-AMG = {
-    color1= { 252 233 58  }
-    color2= { 183 176 194  }
-    color3= { 119 151 122  }
-}
-
-
-# Auvergne
-AUV = {
-    color1= { 81 122 125  }
-    color2= { 136 157 23  }
-    color3= { 135 104 85  }
-}
-
-
-# Avignon
-AVI = {
-    color1= { 105 106 182  }
-    color2= { 39 108 140  }
-    color3= { 134 166 117  }
-}
-
-
-# Bourbonnais
-BOU = {
-    color1= { 120 148 140  }
-    color2= { 107 94 169  }
-    color3= { 166 189 199  }
-}
-
-
-# Brittany
-BRI = {
-    color1= { 118 99 151  }
-    color2= { 202 112 85  }
-    color3= { 83 149 105  }
-}
-
-
-# Burgundy
-BRG = {
-    color1= { 148 30 70  }
-    color2= { 166 72 57  }
-    color3= { 107 170 77  }
-}
-
-
-# Champagne
-CHP = {
-    color1= { 193 237 85  }
-    color2= { 161 126 128  }
-    color3= { 117 127 174  }
-}
-
-
-# Corsica
-COR = {
-    color1= { 106 178 46  }
-    color2= { 152 85 92  }
-    color3= { 131 101 85  }
-}
-
-
-# Dauphine
-DAU = {
-    color1= { 93 194 122  }
-    color2= { 126 203 120  }
-    color3= { 199 175 12  }
-}
-
-
-# Foix
-FOI = {
-    color1= { 205 178 107  }
-    color2= { 255 87 127  }
-    color3= { 104 137 140  }
-}
-
-
 # France
 FRA = {
     color1= { 63 125 214  }
@@ -530,63 +325,7 @@ FRA = {
     color3= { 121 162 109  }
 }
 
-
-# Guyenne
-GUY = {
-    color1= { 32 144 204  }
-    color2= { 255 255 255  }
-    color3= { 104 137 140  }
-}
-
-
-# Nevers
-NEV = {
-    color1= { 207 111 64  }
-    color2= { 255 87 127  }
-    color3= { 199 175 12  }
-}
-
-
-# Normandy
-NRM = {
-    color1= { 131 138 116  }
-    color2= { 129 177 125  }
-    color3= { 131 101 85  }
-}
-
-
-# Orleans
-ORL = {
-    color1= { 61 136 66  }
-    color2= { 94 117 55  }
-    color3= { 117 127 174  }
-}
-
-
-# Provence
-PRO = {
-    color1= { 93 160 163  }
-    color2= { 236 159 89  }
-    color3= { 107 170 77  }
-}
-
-
-# Toulouse
-TOU = {
-    color1= { 127 170 146  }
-    color2= { 89 140 176  }
-    color3= { 166 189 199  }
-}
-
-
-# Ansbach
-ANS = {
-    color1= { 120 77 119  }
-    color2= { 144 52 53  }
-    color3= { 135 104 85  }
-}
-
-# Anhalt
+# Anhalt FIXED
 ANH = {
     color1= { 134 224 126  }
     color2= { 244 56 49  }
@@ -804,7 +543,7 @@ SIC = {
     color3= { 131 101 85  }
 }
 
-# Siebenb�Egen
+# Siebenbürgen
 SIE = {
     color1= { 75 111 205  }
     color2= { 124 140 162  }
@@ -1317,8 +1056,2553 @@ TRA = {
     color2= { 122 182 242 }
     color3= { 255 255 255  }
 }
-CHM = {
-    color1= { 215 59 53  }
-    color2= { 122 182 242 }
+#### TAGS ADDED BY THE CONVERTER ####
+AAA = { # AAA
+    color1= { 0 0 0  }
+    color2= { 0 0 0  }
+    color3= { 0 0 0  }
+}
+
+AAC = { # Aachen
+    color1= { 247 206 12  }
+    color2= { 50 50 50  }
+    color3= { 193 26 14  }
+}
+
+ABK = { # Abkhazia
+    color1= { 0 128 0  }
+    color2= { 255 255 255  }
+    color3= { 0 128 0  }
+}
+
+ABO = { # Aborigines
+    color1= { 0 0 0  }
+    color2= { 128 0 0  }
+    color3= { 0 0 0  }
+}
+
+ACA = { # Acadia
+    color1= { 0 0 128  }
+    color2= { 255 0 0  }
+    color3= { 0 0 128  }
+}
+
+ACH = { # Achaea
+    color1= { 128 0 128  }
+    color2= { 255 255 0  }
+    color3= { 128 0 128  }
+}
+
+ADO = { # Andorra
+    color1= { 0 0 128  }
+    color2= { 255 255 0  }
+    color3= { 0 0 128  }
+}
+
+ADU = { # Andalucia
+    color1= { 0 128 0  }
+    color2= { 255 255 255  }
+    color3= { 0 128 0  }
+}
+
+AES = { # Anglo-Saxony
+    color1= { 255 0 0  }
+    color2= { 255 255 0  }
+    color3= { 255 0 0  }
+}
+
+AGU = { # Anguilla
+    color1= { 0 255 255  }
+    color2= { 255 255 255  }
+    color3= { 0 255 255  }
+}
+
+AIN = { # Ainu
+    color1= { 0 128 128  }
+    color2= { 255 255 255  }
+    color3= { 0 128 128  }
+}
+
+AKH = { # Astrakhan
+    color1= { 26 27 154  }
+    color2= { 161 126 128  }
+    color3= { 69 157 208  }
+}
+
+AKK = { # Ak Koyunlu
+    color1= { 4 144 178  }
+    color2= { 107 94 169  }
+    color3= { 195 149 155  }
+}
+
+ALE = { # Alencon
+    color1= { 0 0 255  }
+    color2= { 255 0 0  }
+    color3= { 0 0 255  }
+}
+
+ALI = { # Alien Invaders
+    color1= { 0 255 0  }
+    color2= { 0 0 0  }
+    color3= { 0 255 0  }
+}
+
+ALL = { # Allahdom
+    color1= { 0 128 0  }
+    color2= { 0 0 0  }
+    color3= { 0 128 0  }
+}
+
+ALN = { # Alania
+    color1= { 255 255 0  }
+    color2= { 255 0 0  }
+    color3= { 255 255 0  }
+}
+
+ALS = { # Alsace
+    color1= { 255 0 0  }
+    color2= { 255 255 0  }
+    color3= { 255 0 0  }
+}
+
+ALT = { # Altai Republic
+    color1= { 255 255 255  }
+    color2= { 255 255 255  }
     color3= { 255 255 255  }
+}
+
+ALW = { # Alawite
+    color1= { 0 128 0  }
+    color2= { 0 128 0  }
+    color3= { 0 128 0  }
+}
+
+AMG = { # Armagnac
+    color1= { 252 233 58  }
+    color2= { 183 176 194  }
+    color3= { 119 151 122  }
+}
+
+ANG = { # Angola
+    color1= { 255 0 0  }
+    color2= { 0 128 0  }
+    color3= { 255 0 0  }
+}
+
+ANN = { # Annam
+    color1= { 186 14 92  }
+    color2= { 101 102 163  }
+    color3= { 195 149 155  }
+}
+
+ANS = { # Ansbach
+    color1= { 120 77 119  }
+    color2= { 144 52 53  }
+    color3= { 135 104 85  }
+}
+
+AOM = { # Macao
+    color1= { 0 128 128  }
+    color2= { 0 128 128  }
+    color3= { 0 128 128  }
+}
+
+AOT = { # Aotearoa
+    color1= { 0 0 0  }
+    color2= { 128 0 0  }
+    color3= { 0 0 0  }
+}
+
+AQU = { # Aquileia
+    color1= { 0 0 255  }
+    color2= { 255 255 0  }
+    color3= { 0 0 255  }
+}
+
+ARK = { # Arakan
+    color1= { 212 211 151  }
+    color2= { 144 52 53  }
+    color3= { 197 92 106  }
+}
+
+ARN = { # Aragon
+    color1= { 166 68 72  }
+    color2= { 80 79 88  }
+    color3= { 122 179 97  }
+}
+
+ARO = { # Aro
+    color1= { 0 0 0  }
+    color2= { 0 0 0  }
+    color3= { 0 0 0  }
+}
+
+ARU = { # Arab Union
+    color1= { 0 128 0  }
+    color2= { 0 128 0  }
+    color3= { 0 128 0  }
+}
+
+ASH = { # Ashanti
+    color1= { 97 98 195  }
+    color2= { 183 176 194  }
+    color3= { 112 150 105  }
+}
+
+ASM = { # Assam
+    color1= { 163 5 77  }
+    color2= { 255 255 255  }
+    color3= { 17 16 203  }
+}
+
+ASY = { # Assyria
+    color1= { 0 0 255  }
+    color2= { 255 0 0  }
+    color3= { 0 0 255  }
+}
+
+ATB = { # Antigua and Barbuda
+    color1= { 255 0 0  }
+    color2= { 0 0 0  }
+    color3= { 255 0 0  }
+}
+
+ATH = { # Athens
+    color1= { 45 84 173  }
+    color2= { 255 255 255  }
+    color3= { 255 255 255  }
+}
+
+ATR = { # Asturias
+    color1= { 0 255 255  }
+    color2= { 255 255 0  }
+    color3= { 0 255 255  }
+}
+
+AUG = { # Augsburg
+    color1= { 255 0 0  }
+    color2= { 0 128 128  }
+    color3= { 255 0 0  }
+}
+
+AUV = { # Auvergne
+    color1= { 81 122 125  }
+    color2= { 136 157 23  }
+    color3= { 135 104 85  }
+}
+
+AVI = { # Avignon
+    color1= { 105 106 182  }
+    color2= { 39 108 140  }
+    color3= { 134 166 117  }
+}
+
+AWS = { # Awsa
+    color1= { 48 169 96  }
+    color2= { 129 177 125  }
+    color3= { 137 183 124  }
+}
+
+AYD = { # Aydin
+    color1= { 150 0 0  }
+    color2= { 255 255 255  }
+    color3= { 99 137 153  }
+}
+
+AZT = { # Aztec
+    color1= { 48 149 21  }
+    color2= { 195 149 155  }
+    color3= { 131 101 85  }
+}
+
+BAH = { # Deccan
+    color1= { 49 175 191  }
+    color2= { 80 79 88  }
+    color3= { 69 157 208  }
+}
+
+BAN = { # Banat
+    color1= { 255 0 0  }
+    color2= { 0 255 0  }
+    color3= { 255 0 0  }
+}
+
+BAR = { # Bar
+    color1= { 168 40 110  }
+    color2= { 255 255 255  }
+    color3= { 100 30 154  }
+}
+
+BBD = { # Barbados
+    color1= { 0 0 128  }
+    color2= { 255 255 0  }
+    color3= { 0 0 128  }
+}
+
+BEN = { # Benin
+    color1= { 110 173 129  }
+    color2= { 136 157 23  }
+    color3= { 255 255 255  }
+}
+
+BHM = { # Bahamas
+    color1= { 255 0 0  }
+    color2= { 255 0 0  }
+    color3= { 255 0 0  }
+}
+
+BHR = { # Bahrain
+    color1= { 255 255 255  }
+    color2= { 255 0 0  }
+    color3= { 255 255 255  }
+}
+
+BIA = { # Biafra
+    color1= { 255 0 0  }
+    color2= { 0 0 0  }
+    color3= { 255 0 0  }
+}
+
+BIH = { # Bihar
+    color1= { 100 94 125  }
+    color2= { 197 92 106  }
+    color3= { 17 16 203  }
+}
+
+BIJ = { # Bijapur
+    color1= { 40 50 66  }
+    color2= { 202 112 85  }
+    color3= { 193 26 14  }
+}
+
+BKF = { # Burkina Faso
+    color1= { 255 0 0  }
+    color2= { 0 255 0  }
+    color3= { 255 0 0  }
+}
+
+BKV = { # Bukovina
+    color1= { 0 0 255  }
+    color2= { 255 0 0  }
+    color3= { 0 0 255  }
+}
+
+BLC = { # Baluchistan
+    color1= { 175 82 16  }
+    color2= { 99 137 153  }
+    color3= { 154 69 116  }
+}
+
+BLZ = { # Belize
+    color1= { 0 255 0  }
+    color2= { 255 0 0  }
+    color3= { 0 255 0  }
+}
+
+BNG = { # Bengal
+    color1= { 36 109 194  }
+    color2= { 255 255 255  }
+    color3= { 197 92 106  }
+}
+
+BNT = { # Banten
+    color1= { 130 25 74  }
+    color2= { 194 140 86  }
+    color3= { 48 164 51  }
+}
+
+BNY = { # Bunyoro
+    color1= { 255 255 255  }
+    color2= { 0 0 255  }
+    color3= { 255 255 255  }
+}
+
+BOU = { # Bourbonnais
+    color1= { 120 148 140  }
+    color2= { 107 94 169  }
+    color3= { 166 189 199  }
+}
+
+BRB = { # Brabant
+    color1= { 118 193 153  }
+    color2= { 154 69 116  }
+    color3= { 166 189 199  }
+}
+
+BRD = { # Burundi
+    color1= { 0 255 0  }
+    color2= { 255 0 0  }
+    color3= { 0 255 0  }
+}
+
+BRG = { # Burgundy
+    color1= { 220 220 220  }
+    color2= { 99 26 44  }
+    color3= { 220 220 220  }
+}
+
+BRN = { # Brandenburg
+    color1= { 175 15 15  }
+    color2= { 70 70 70  }
+    color3= { 255 255 255  }
+}
+
+BRR = { # Berar
+    color1= { 255 255 255  }
+    color2= { 136 157 23  }
+    color3= { 80 79 88  }
+}
+
+BRT = { # Brittany
+    color1= { 255 255 255  }
+    color2= { 70 70 70  }
+    color3= { 35 110 165  }
+}
+
+BRY = { # Berry
+    color1= { 63 125 214  }
+    color2= { 177 129 125  }
+    color3= { 161 162 30  }
+}
+
+BSG = { # Basoga
+    color1= { 0 0 255  }
+    color2= { 255 255 0  }
+    color3= { 0 0 255  }
+}
+
+BSH = { # Basotho
+    color1= { 0 0 255  }
+    color2= { 0 255 0  }
+    color3= { 0 0 255  }
+}
+
+BSQ = { # Euskadi
+    color1= { 255 0 0  }
+    color2= { 0 255 0  }
+    color3= { 255 0 0  }
+}
+
+BUG = { # Buganda
+    color1= { 0 0 255  }
+    color2= { 255 255 255  }
+    color3= { 0 0 255  }
+}
+
+CAR = { # Equatorial Africa
+    color1= { 255 255 0  }
+    color2= { 255 255 255  }
+    color3= { 255 255 0  }
+}
+
+CAS = { # Cascadia
+    color1= { 0 0 255  }
+    color2= { 0 255 0  }
+    color3= { 0 0 255  }
+}
+
+CAY = { # Cayenne
+    color1= { 255 255 0  }
+    color2= { 0 255 0  }
+    color3= { 255 255 0  }
+}
+
+CEG = { # Coptic Egypt
+    color1= { 255 255 0  }
+    color2= { 255 255 0  }
+    color3= { 255 255 0  }
+}
+
+CGO = { # Congo-Brazzaville
+    color1= { 0 255 0  }
+    color2= { 255 0 0  }
+    color3= { 0 255 0  }
+}
+
+CHA = { # Champa
+    color1= { 53 151 151  }
+    color2= { 154 69 116  }
+    color3= { 121 162 109  }
+}
+
+CHD = { # Chad
+    color1= { 0 0 255  }
+    color2= { 255 255 0  }
+    color3= { 0 0 255  }
+}
+
+CHG = { # Chagatai Khanate
+    color1= { 87 92 104  }
+    color2= { 195 149 155  }
+    color3= { 104 137 140  }
+}
+
+CHK = { # Champassak
+    color1= { 139 131 162  }
+    color2= { 197 92 106  }
+    color3= { 199 175 12  }
+}
+
+CHM = { # Chimu
+    color1= { 39 123 126  }
+    color2= { 255 255 255  }
+    color3= { 104 137 140  }
+}
+
+CHO = { # Choshu
+    color1= { 255 0 0  }
+    color2= { 255 255 255  }
+    color3= { 255 0 0  }
+}
+
+CHY = { # Chechnya
+    color1= { 0 128 0  }
+    color2= { 255 0 0  }
+    color3= { 0 128 0  }
+}
+
+CIR = { # Circassia
+    color1= { 0 255 0  }
+    color2= { 255 255 0  }
+    color3= { 0 255 0  }
+}
+
+CLC = { # Cilicia
+    color1= { 255 0 0  }
+    color2= { 255 255 0  }
+    color3= { 255 0 0  }
+}
+
+CMR = { # Cameroon
+    color1= { 0 128 0  }
+    color2= { 255 0 0  }
+    color3= { 0 128 0  }
+}
+
+CND = { # Candar
+    color1= { 114 70 103  }
+    color2= { 202 112 85  }
+    color3= { 197 92 106  }
+}
+
+CNN = { # Connacht
+    color1= { 45 84 173  }
+    color2= { 255 255 255  }
+    color3= { 60 60 60  }
+}
+
+COP = { # Coptia
+    color1= { 255 255 255  }
+    color2= { 0 0 255  }
+    color3= { 255 255 255  }
+}
+
+CPG = { # Champagne
+    color1= { 193 237 85  }
+    color2= { 161 126 128  }
+    color3= { 117 127 174  }
+}
+
+CPL = { # Congress Poland
+    color1= { 175 15 15  }
+    color2= { 175 15 15  }
+    color3= { 175 15 15  }
+}
+
+CPV = { # Cape Verde
+    color1= { 0 0 255  }
+    color2= { 255 255 255  }
+    color3= { 0 0 255  }
+}
+
+CRB = { # Caribbean
+    color1= { 0 0 0  }
+    color2= { 255 0 0  }
+    color3= { 0 0 0  }
+}
+
+CRK = { # Creek
+    color1= { 108 139 208  }
+    color2= { 134 166 117  }
+    color3= { 121 162 109  }
+}
+
+CRN = { # Cornwall
+    color1= { 255 87 127  }
+    color2= { 255 255 255  }
+    color3= { 166 189 199  }
+}
+
+CRS = { # Corsica
+    color1= { 106 178 46  }
+    color2= { 152 85 92  }
+    color3= { 131 101 85  }
+}
+
+CRT = { # Carinthia
+    color1= { 255 255 0  }
+    color2= { 255 0 0  }
+    color3= { 255 255 0  }
+}
+
+CST = { # Castille
+    color1= { 193 26 14  }
+    color2= { 247 206 12  }
+    color3= { 255 255 255  }
+}
+
+CUR = { # Curacao
+    color1= { 0 0 255  }
+    color2= { 255 255 0  }
+    color3= { 0 0 255  }
+}
+
+CYR = { # Cyrenaica
+    color1= { 0 0 0  }
+    color2= { 255 255 255  }
+    color3= { 0 0 0  }
+}
+
+DAG = { # Dagestan
+    color1= { 0 255 0  }
+    color2= { 0 0 255  }
+    color3= { 0 255 0  }
+}
+
+DAH = { # Dahomey
+    color1= { 0 255 0  }
+    color2= { 255 255 0  }
+    color3= { 0 255 0  }
+}
+
+DAR = { # Darfur
+    color1= { 255 0 0  }
+    color2= { 0 0 0  }
+    color3= { 255 0 0  }
+}
+
+DAU = { # Dauphine
+    color1= { 93 194 122  }
+    color2= { 126 203 120  }
+    color3= { 199 175 12  }
+}
+
+DJI = { # Djibouti
+    color1= { 0 0 128  }
+    color2= { 0 128 0  }
+    color3= { 0 0 128  }
+}
+
+DKU = { # Don-Kuban Union
+    color1= { 255 0 255  }
+    color2= { 255 255 0  }
+    color3= { 255 0 255  }
+}
+
+DLH = { # Delhi
+    color1= { 58 181 55  }
+    color2= { 175 15 15  }
+    color3= { 26 56 141  }
+}
+
+DLM = { # Dalmatia
+    color1= { 0 0 255  }
+    color2= { 255 255 0  }
+    color3= { 0 0 255  }
+}
+
+DMN = { # Dominica
+    color1= { 0 128 0  }
+    color2= { 255 0 0  }
+    color3= { 0 128 0  }
+}
+
+DNB = { # Danubian Federation
+    color1= { 0 0 0  }
+    color2= { 255 255 0  }
+    color3= { 0 0 0  }
+}
+
+DRU = { # Druze
+    color1= { 0 255 0  }
+    color2= { 0 255 0  }
+    color3= { 0 255 0  }
+}
+
+DUL = { # Dulkadir
+    color1= { 97 119 31  }
+    color2= { 166 72 57  }
+    color3= { 80 79 88  }
+}
+
+DUR = { # Durrani Empire
+    color1= { 30 45 13  }
+    color2= { 124 140 162  }
+    color3= { 107 170 77  }
+}
+
+ENL = { # England
+    color1= { 175 15 15  }
+    color2= { 26 56 141  }
+    color3= { 175 15 15  }
+}
+
+ENR = { # Britannia
+    color1= { 193 26 14  }
+    color2= { 99 137 153  }
+    color3= { 83 149 105  }
+}
+
+ENT = { # Entre Rios
+    color1= { 0 0 128  }
+    color2= { 255 255 255  }
+    color3= { 0 0 128  }
+}
+
+EQG = { # Equatorial Guinea
+    color1= { 0 255 0  }
+    color2= { 0 0 255  }
+    color3= { 0 255 0  }
+}
+
+ERI = { # Eritrea
+    color1= { 180 215 244  }
+    color2= { 180 215 244  }
+    color3= { 180 215 244  }
+}
+
+ETR = { # Etruria
+    color1= { 74 126 117  }
+    color2= { 194 140 86  }
+    color3= { 107 170 77  }
+}
+
+FER = { # Ferrara
+    color1= { 192 102 151  }
+    color2= { 166 72 57  }
+    color3= { 195 149 155  }
+}
+
+FEZ = { # Fez
+    color1= { 191 110 62  }
+    color2= { 126 203 120  }
+    color3= { 183 176 194  }
+}
+
+FIJ = { # Fiji
+    color1= { 255 255 255  }
+    color2= { 0 0 128  }
+    color3= { 255 255 255  }
+}
+
+FIU = { # Fiume
+    color1= { 128 0 128  }
+    color2= { 255 255 0  }
+    color3= { 128 0 128  }
+}
+
+FJN = { # Fujian
+    color1= { 255 0 0  }
+    color2= { 0 0 255  }
+    color3= { 255 0 0  }
+}
+
+FOI = { # Foix
+    color1= { 175 15 15  }
+    color2= { 230 191 12  }
+    color3= { 90 79 103  }
+}
+
+FRI = { # Friesland
+    color1= { 247 206 12  }
+    color2= { 60 60 60  }
+    color3= { 60 60 60  }
+}
+
+FRK = { # Frankia
+    color1= { 62 122 189  }
+    color2= { 248 229 12  }
+    color3= { 62 122 189  }
+}
+
+FRO = { # Faroe
+    color1= { 255 255 255  }
+    color2= { 255 0 0  }
+    color3= { 255 255 255  }
+}
+
+FRR = { # Gallia
+    color1= { 62 122 189  }
+    color2= { 248 229 12  }
+    color3= { 62 122 189  }
+}
+
+FSA = { # Free States of America
+    color1= { 69 157 208  }
+    color2= { 124 140 162  }
+    color3= { 137 183 124  }
+}
+
+GAB = { # Gabon
+    color1= { 0 255 0  }
+    color2= { 0 0 128  }
+    color3= { 0 255 0  }
+}
+
+GBI = { # Guinea-Bissau
+    color1= { 255 255 0  }
+    color2= { 255 0 0  }
+    color3= { 255 255 0  }
+}
+
+GBR = { # Albion
+    color1= { 175 15 15  }
+    color2= { 26 56 141  }
+    color3= { 175 15 15  }
+}
+
+GDL = { # Guadeloupe
+    color1= { 0 0 0  }
+    color2= { 0 0 255  }
+    color3= { 0 0 0  }
+}
+
+GDW = { # Gondwana
+    color1= { 70 70 70  }
+    color2= { 255 255 255  }
+    color3= { 14 101 15  }
+}
+
+GEN = { # Genoa
+    color1= { 101 162 129  }
+    color2= { 161 126 128  }
+    color3= { 197 92 106  }
+}
+
+GHN = { # Ghana
+    color1= { 255 0 0  }
+    color2= { 0 0 0  }
+    color3= { 255 0 0  }
+}
+
+GLC = { # Galicia
+    color1= { 255 255 255  }
+    color2= { 0 0 128  }
+    color3= { 255 255 255  }
+}
+
+GLM = { # Galicia-Lodomeria
+    color1= { 255 0 0  }
+    color2= { 255 255 255  }
+    color3= { 255 0 0  }
+}
+
+GLR = { # Gelre
+    color1= { 248 229 12  }
+    color2= { 62 122 189  }
+    color3= { 50 50 50  }
+}
+
+GMB = { # Gambia
+    color1= { 0 0 255  }
+    color2= { 255 255 255  }
+    color3= { 0 0 255  }
+}
+
+GNE = { # Guinea
+    color1= { 255 0 0  }
+    color2= { 255 255 0  }
+    color3= { 255 0 0  }
+}
+
+GOC = { # Golcanda
+    color1= { 255 255 255  }
+    color2= { 255 87 127  }
+    color3= { 104 137 140  }
+}
+
+GOL = { # Golden Horde
+    color1= { 193 179 127  }
+    color2= { 255 87 127  }
+    color3= { 112 150 105  }
+}
+
+GOT = { # Gotland
+    color1= { 191 113 133  }
+    color2= { 107 94 169  }
+    color3= { 121 162 109  }
+}
+
+GRA = { # Granada
+    color1= { 194 205 83  }
+    color2= { 136 157 23  }
+    color3= { 17 16 203  }
+}
+
+GRD = { # Grenada
+    color1= { 255 255 0  }
+    color2= { 0 255 0  }
+    color3= { 255 255 0  }
+}
+
+GRH = { # Great Horde
+    color1= { 193 179 127  }
+    color2= { 255 87 127  }
+    color3= { 112 150 105  }
+}
+
+GRN = { # Greenland
+    color1= { 255 255 255  }
+    color2= { 255 0 0  }
+    color3= { 255 255 255  }
+}
+
+GUJ = { # Gujarat
+    color1= { 189 63 67  }
+    color2= { 186 166 104  }
+    color3= { 255 255 255  }
+}
+
+GUY = { # Guyana
+    color1= { 255 255 0  }
+    color2= { 0 255 0  }
+    color3= { 255 255 0  }
+}
+
+GYN = { # Guyenne
+    color1= { 32 144 204  }
+    color2= { 255 255 255  }
+    color3= { 104 137 140  }
+}
+
+GYP = { # Gypsyland
+    color1= { 0 0 128  }
+    color2= { 0 255 0  }
+    color3= { 0 0 128  }
+}
+
+HAL = { # Shammar
+    color1= { 255 0 0  }
+    color2= { 255 255 0  }
+    color3= { 255 0 0  }
+}
+
+HAR = { # Harar
+    color1= { 255 0 0  }
+    color2= { 0 255 0  }
+    color3= { 255 0 0  }
+}
+
+HAT = { # Hainaut
+    color1= { 43 42 130  }
+    color2= { 99 137 153  }
+    color3= { 187 79 86  }
+}
+
+HAU = { # Hausa
+    color1= { 48 169 96  }
+    color2= { 129 177 125  }
+    color3= { 137 183 124  }
+}
+
+HDU = { # Hindustan
+    color1= { 0 0 0  }
+    color2= { 255 255 255  }
+    color3= { 190 10 10  }
+}
+
+HKG = { # Hong Kong
+    color1= { 255 0 0  }
+    color2= { 255 0 0  }
+    color3= { 255 0 0  }
+}
+
+HLL = { # Holland
+    color1= { 156 96 100  }
+    color2= { 183 176 194  }
+    color3= { 122 179 97  }
+}
+
+HNS = { # Hansa
+    color1= { 190 20 20  }
+    color2= { 255 255 255  }
+    color3= { 100 30 30  }
+}
+
+HOH = { # Hohenzollern
+    color1= { 0 0 0  }
+    color2= { 255 255 255  }
+    color3= { 0 0 0  }
+}
+
+HRE = { # Holy Roman Empire
+    color1= { 255 255 0  }
+    color2= { 255 255 0  }
+    color3= { 255 255 0  }
+}
+
+HUR = { # Huron
+    color1= { 147 157 76  }
+    color2= { 219 124 139  }
+    color3= { 135 104 85  }
+}
+
+IDO = { # Indochina
+    color1= { 255 255 0  }
+    color2= { 255 255 0  }
+    color3= { 255 255 0  }
+}
+
+INC = { # Inca
+    color1= { 125 92 110  }
+    color2= { 195 149 155  }
+    color3= { 119 151 122  }
+}
+
+INO = { # Indonesia
+    color1= { 255 0 0  }
+    color2= { 255 255 255  }
+    color3= { 255 0 0  }
+}
+
+IRO = { # Iroquois
+    color1= { 87 182 80  }
+    color2= { 69 157 208  }
+    color3= { 135 104 85  }
+}
+
+ITP = { # Papal Italy
+    color1= { 193 26 14  }
+    color2= { 248 229 12  }
+    color3= { 255 255 255  }
+}
+
+IVC = { # Ivory Coast
+    color1= { 128 0 0  }
+    color2= { 0 255 0  }
+    color3= { 128 0 0  }
+}
+
+IZH = { # Ingria
+    color1= { 255 255 0  }
+    color2= { 0 0 255  }
+    color3= { 255 255 0  }
+}
+
+JAM = { # Jamaica
+    color1= { 0 0 255  }
+    color2= { 0 0 0  }
+    color3= { 0 0 255  }
+}
+
+JER = { # Jerusalem
+    color1= { 255 255 255  }
+    color2= { 255 255 0  }
+    color3= { 255 255 255  }
+}
+
+JOR = { # Jordan
+    color1= { 0 0 0  }
+    color2= { 0 255 0  }
+    color3= { 0 0 0  }
+}
+
+KAM = { # Kamchatka
+    color1= { 255 255 255  }
+    color2= { 0 0 255  }
+    color3= { 255 255 255  }
+}
+
+KAR = { # Karen
+    color1= { 0 0 255  }
+    color2= { 255 0 0  }
+    color3= { 0 0 255  }
+}
+
+KAZ = { # Kazakh
+    color1= { 112 194 63  }
+    color2= { 89 140 176  }
+    color3= { 104 137 140  }
+}
+
+KBO = { # Kanem-Bornu
+    color1= { 30 131 162  }
+    color2= { 236 159 89  }
+    color3= { 17 16 203  }
+}
+
+KCH = { # Kachin
+    color1= { 0 0 255  }
+    color2= { 0 0 255  }
+    color3= { 0 0 255  }
+}
+
+KDS = { # Kurdistan
+    color1= { 255 255 0  }
+    color2= { 255 255 0  }
+    color3= { 255 255 0  }
+}
+
+KHA = { # Mongol Khanate
+    color1= { 26 56 141  }
+    color2= { 175 15 15  }
+    color3= { 70 70 70  }
+}
+
+KHD = { # Khandesh
+    color1= { 255 255 255  }
+    color2= { 144 52 53  }
+    color3= { 166 189 199  }
+}
+
+KID = { # Kildare
+    color1= { 255 255 255  }
+    color2= { 255 0 0  }
+    color3= { 255 255 255  }
+}
+
+KLE = { # Kleves
+    color1= { 173 176 113  }
+    color2= { 107 94 169  }
+    color3= { 197 92 106  }
+}
+
+KLM = { # Kalimantan
+    color1= { 255 255 0  }
+    color2= { 0 0 0  }
+    color3= { 255 255 0  }
+}
+
+KMK = { # Kalmykia
+    color1= { 255 255 0  }
+    color2= { 0 0 255  }
+    color3= { 255 255 0  }
+}
+
+KMT = { # Nationalist China
+    color1= { 191 133 24  }
+    color2= { 15 85 150  }
+    color3= { 255 0 0  }
+}
+
+KNI = { # Knights
+    color1= { 193 26 14  }
+    color2= { 255 255 255  }
+    color3= { 193 26 14  }
+}
+
+KNY = { # Kenya
+    color1= { 0 0 0  }
+    color2= { 255 0 0  }
+    color3= { 0 0 0  }
+}
+
+KOL = { # Cologne
+    color1= { 60 60 60  }
+    color2= { 255 255 255  }
+    color3= { 255 255 255  }
+}
+
+KOM = { # Comoros
+    color1= { 0 255 0  }
+    color2= { 0 128 0  }
+    color3= { 0 255 0  }
+}
+
+KON = { # Kongo
+    color1= { 255 255 255  }
+    color2= { 107 94 169  }
+    color3= { 193 26 14  }
+}
+
+KOS = { # Kosovo
+    color1= { 0 0 255  }
+    color2= { 0 0 255  }
+    color3= { 0 0 255  }
+}
+
+KRL = { # Karelia
+    color1= { 0 128 0  }
+    color2= { 0 0 0  }
+    color3= { 0 128 0  }
+}
+
+KRM = { # Karaman
+    color1= { 153 141 117  }
+    color2= { 255 255 255  }
+    color3= { 99 137 153  }
+}
+
+KRN = { # Carnatic
+    color1= { 132 70 102  }
+    color2= { 89 140 176  }
+    color3= { 107 170 77  }
+}
+
+KRT = { # Carthage
+    color1= { 128 0 128  }
+    color2= { 255 255 255  }
+    color3= { 128 0 128  }
+}
+
+KUR = { # Kurland
+    color1= { 99 137 153  }
+    color2= { 195 149 155  }
+    color3= { 255 255 255  }
+}
+
+KWT = { # Kuwait
+    color1= { 255 0 0  }
+    color2= { 0 0 0  }
+    color3= { 255 0 0  }
+}
+
+KYR = { # Kyrgyzstan
+    color1= { 255 0 0  }
+    color2= { 255 255 0  }
+    color3= { 255 0 0  }
+}
+
+KZN = { # Kazan
+    color1= { 230 191 12  }
+    color2= { 71 71 71  }
+    color3= { 220 124 0  }
+}
+
+LAN = { # Lancaster
+    color1= { 121 162 109  }
+    color2= { 39 108 140  }
+    color3= { 131 101 85  }
+}
+
+LAN = { # Lanfang
+    color1= { 255 255 0  }
+    color2= { 0 0 0  }
+    color3= { 255 255 0  }
+}
+
+LAU = { # Lauenburg
+    color1= { 0 0 0  }
+    color2= { 255 255 0  }
+    color3= { 0 0 0  }
+}
+
+LBN = { # Lebanon
+    color1= { 255 0 0  }
+    color2= { 255 255 255  }
+    color3= { 255 0 0  }
+}
+
+LBY = { # Libya
+    color1= { 0 0 0  }
+    color2= { 0 128 0  }
+    color3= { 0 0 0  }
+}
+
+LEI = { # Leinster
+    color1= { 48 164 51  }
+    color2= { 183 176 194  }
+    color3= { 107 170 77  }
+}
+
+LGB = { # Longobardia
+    color1= { 146 108 146  }
+    color2= { 255 87 127  }
+    color3= { 183 176 194  }
+}
+
+LIE = { # Liechtenstein
+    color1= { 255 0 0  }
+    color2= { 255 255 0  }
+    color3= { 255 0 0  }
+}
+
+LIG = { # Liege
+    color1= { 149 186 37  }
+    color2= { 136 157 23  }
+    color3= { 255 255 255  }
+}
+
+LIM = { # Limburg
+    color1= { 255 255 255  }
+    color2= { 255 0 0  }
+    color3= { 255 255 255  }
+}
+
+LIV = { # Livonian Order
+    color1= { 175 15 15  }
+    color2= { 112 45 60  }
+    color3= { 62 122 189  }
+}
+
+LNA = { # Lan Na
+    color1= { 74 92 128  }
+    color2= { 39 108 140  }
+    color3= { 193 26 14  }
+}
+
+LOA = { # Loango
+    color1= { 200 202 85  }
+    color2= { 94 117 55  }
+    color3= { 17 16 203  }
+}
+
+LOR = { # Lorraine
+    color1= { 115 142 205  }
+    color2= { 166 72 57  }
+    color3= { 99 137 153  }
+}
+
+LOS = { # Los Altos
+    color1= { 0 0 128  }
+    color2= { 255 255 255  }
+    color3= { 0 0 128  }
+}
+
+LOU = { # Louisiana
+    color1= { 144 52 53  }
+    color2= { 89 140 176  }
+    color3= { 154 69 116  }
+}
+
+LPL = { # La Plata
+    color1= { 101 102 163  }
+    color2= { 236 159 89  }
+    color3= { 195 149 155  }
+}
+
+LSK = { # Alaska
+    color1= { 0 0 128  }
+    color2= { 255 255 0  }
+    color3= { 0 0 128  }
+}
+
+LTN = { # Latin Empire
+    color1= { 128 0 128  }
+    color2= { 128 0 128  }
+    color3= { 128 0 128  }
+}
+
+LUN = { # Luneburg
+    color1= { 135 109 147  }
+    color2= { 161 126 128  }
+    color3= { 183 176 194  }
+}
+
+LVN = { # Lombardy-Venice
+    color1= { 255 255 255  }
+    color2= { 255 255 255  }
+    color3= { 255 255 255  }
+}
+
+LXA = { # Lan Xang
+    color1= { 210 46 28  }
+    color2= { 202 112 85  }
+    color3= { 112 150 105  }
+}
+
+MAG = { # Magdeburg
+    color1= { 189 115 89  }
+    color2= { 152 85 92  }
+    color3= { 193 26 14  }
+}
+
+MAH = { # Maharashtra
+    color1= { 255 255 255  }
+    color2= { 194 140 86  }
+    color3= { 119 151 122  }
+}
+
+MAI = { # Mainz
+    color1= { 178 145 87  }
+    color2= { 126 203 120  }
+    color3= { 48 164 51  }
+}
+
+MAJ = { # Majeerteen
+    color1= { 255 0 0  }
+    color2= { 255 0 0  }
+    color3= { 255 0 0  }
+}
+
+MAL = { # Maluku
+    color1= { 255 0 0  }
+    color2= { 255 255 255  }
+    color3= { 255 0 0  }
+}
+
+MAR = { # Maharasthra
+    color1= { 255 255 255  }
+    color2= { 194 140 86  }
+    color3= { 119 151 122  }
+}
+
+MAU = { # Mauritius
+    color1= { 255 0 0  }
+    color2= { 0 0 128  }
+    color3= { 255 0 0  }
+}
+
+MAW = { # Malwa
+    color1= { 255 255 255  }
+    color2= { 175 15 15  }
+    color3= { 38 88 169  }
+}
+
+MAY = { # Maya
+    color1= { 94 136 191  }
+    color2= { 197 92 106  }
+    color3= { 134 166 117  }
+}
+
+MAZ = { # Mazovia
+    color1= { 175 15 15  }
+    color2= { 255 255 255  }
+    color3= { 230 191 12  }
+}
+
+MCD = { # Macedonia
+    color1= { 255 255 0  }
+    color2= { 255 0 0  }
+    color3= { 255 255 0  }
+}
+
+MCH = { # Manchu
+    color1= { 165 132 57  }
+    color2= { 250 250 0  }
+    color3= { 0 0 0  }
+}
+
+MDV = { # Moldova
+    color1= { 193 26 14  }
+    color2= { 60 60 60  }
+    color3= { 247 206 12  }
+}
+
+MEM = { # Memmingen
+    color1= { 255 255 0  }
+    color2= { 255 255 255  }
+    color3= { 255 255 0  }
+}
+
+MFA = { # Montferrat
+    color1= { 255 255 255  }
+    color2= { 255 0 0  }
+    color3= { 255 255 255  }
+}
+
+MGH = { # Maghreb
+    color1= { 224 146 113  }
+    color2= { 129 177 125  }
+    color3= { 48 164 51  }
+}
+
+MKS = { # Makassar
+    color1= { 117 179 128  }
+    color2= { 152 85 92  }
+    color3= { 199 175 12  }
+}
+
+MLC = { # Malacca
+    color1= { 100 146 197  }
+    color2= { 126 203 120  }
+    color3= { 131 101 85  }
+}
+
+MLD = { # Maldive
+    color1= { 128 0 0  }
+    color2= { 128 0 0  }
+    color3= { 128 0 0  }
+}
+
+MLI = { # Mali
+    color1= { 215 135 125  }
+    color2= { 202 112 85  }
+    color3= { 134 166 117  }
+}
+
+MLT = { # Malta
+    color1= { 255 255 255  }
+    color2= { 255 0 0  }
+    color3= { 255 255 255  }
+}
+
+MLW = { # Maravi
+    color1= { 0 0 0  }
+    color2= { 255 0 0  }
+    color3= { 0 0 0  }
+}
+
+MLY = { # Malaya
+    color1= { 60 125 190  }
+    color2= { 255 255 255  }
+    color3= { 190 60 60  }
+}
+
+MML = { # Memelland
+    color1= { 255 255 0  }
+    color2= { 255 0 0  }
+    color3= { 255 255 0  }
+}
+
+MNC = { # Monaco
+    color1= { 255 255 255  }
+    color2= { 255 0 0  }
+    color3= { 255 255 255  }
+}
+
+MNG = { # Ming
+    color1= { 191 133 24  }
+    color2= { 60 60 60  }
+    color3= { 230 20 15  }
+}
+
+MNR = { # Montserrat
+    color1= { 0 0 128  }
+    color2= { 0 0 128  }
+    color3= { 0 0 128  }
+}
+
+MNS = { # Munster
+    color1= { 104 137 140  }
+    color2= { 107 94 169  }
+    color3= { 199 175 12  }
+}
+
+MOE = { # Morea
+    color1= { 113 150 11  }
+    color2= { 144 52 53  }
+    color3= { 154 69 116  }
+}
+
+MOZ = { # Mozambique
+    color1= { 0 0 0  }
+    color2= { 255 0 0  }
+    color3= { 0 0 0  }
+}
+
+MRI = { # Madurai
+    color1= { 190 180 93  }
+    color2= { 124 140 162  }
+    color3= { 135 104 85  }
+}
+
+MRT = { # Marathas
+    color1= { 255 165 0  }
+    color2= { 255 165 0  }
+    color3= { 255 165 0  }
+}
+
+MSK = { # Mosquito Coast
+    color1= { 0 0 128  }
+    color2= { 255 255 255  }
+    color3= { 0 0 128  }
+}
+
+MTA = { # Mantua
+    color1= { 191 83 101  }
+    color2= { 126 203 120  }
+    color3= { 99 137 153  }
+}
+
+MTQ = { # Martinique
+    color1= { 0 0 128  }
+    color2= { 255 255 255  }
+    color3= { 0 0 128  }
+}
+
+MTR = { # Mataram
+    color1= { 227 162 94  }
+    color2= { 129 177 125  }
+    color3= { 107 170 77  }
+}
+
+MUN = { # Münster
+    color1= { 85 112 167  }
+    color2= { 129 177 125  }
+    color3= { 121 162 109  }
+}
+
+MUR = { # Murom
+    color1= { 0 0 128  }
+    color2= { 255 255 0  }
+    color3= { 0 0 128  }
+}
+
+MUS = { # Muscowy
+    color1= { 206 181 97  }
+    color2= { 94 117 55  }
+    color3= { 104 137 140  }
+}
+
+NAP = { # Naples
+    color1= { 0 0 255  }
+    color2= { 255 0 0  }
+    color3= { 0 0 255  }
+}
+
+NAV = { # Navarra
+    color1= { 154 182 242  }
+    color2= { 39 108 140  }
+    color3= { 17 16 203  }
+}
+
+NAX = { # Naxos
+    color1= { 255 255 255  }
+    color2= { 62 122 189  }
+    color3= { 255 255 255  }
+}
+
+NCT = { # Neuchatel
+    color1= { 255 255 0  }
+    color2= { 0 0 0  }
+    color3= { 255 255 0  }
+}
+
+NEV = { # Nevers
+    color1= { 207 111 64  }
+    color2= { 255 87 127  }
+    color3= { 199 175 12  }
+}
+
+NGR = { # Nigeria
+    color1= { 0 128 0  }
+    color2= { 255 255 255  }
+    color3= { 0 128 0  }
+}
+
+NIG = { # Niger
+    color1= { 255 165 0  }
+    color2= { 0 128 0  }
+    color3= { 255 165 0  }
+}
+
+NKO = { # Nkore
+    color1= { 0 128 0  }
+    color2= { 255 255 255  }
+    color3= { 0 128 0  }
+}
+
+NMB = { # Namibia
+    color1= { 0 0 128  }
+    color2= { 128 0 0  }
+    color3= { 0 0 128  }
+}
+
+NOG = { # Nogai
+    color1= { 144 181 106  }
+    color2= { 195 149 155  }
+    color3= { 187 79 86  }
+}
+
+NOL = { # Northumberland
+    color1= { 83 149 105  }
+    color2= { 126 203 120  }
+    color3= { 193 26 14  }
+}
+
+NOV = { # Novgorod
+    color1= { 97 126 37  }
+    color2= { 236 159 89  }
+    color3= { 199 175 12  }
+}
+
+NRM = { # Normandy
+    color1= { 131 138 116  }
+    color2= { 129 177 125  }
+    color3= { 131 101 85  }
+}
+
+NUB = { # Funj
+    color1= { 48 20 111  }
+    color2= { 166 72 57  }
+    color3= { 135 104 85  }
+}
+
+NUM = { # Nuremberg
+    color1= { 255 0 0  }
+    color2= { 255 255 255  }
+    color3= { 255 0 0  }
+}
+
+NYE = { # North Yemen
+    color1= { 160 120 120  }
+    color2= { 95 30 30  }
+    color3= { 255 255 255  }
+}
+
+NZH = { # Nizhny Novgorod
+    color1= { 205 32 26  }
+    color2= { 255 255 255  }
+    color3= { 70 50 40  }
+}
+
+OAX = { # Oaxaca
+    color1= { 255 255 255  }
+    color2= { 255 255 255  }
+    color3= { 255 255 255  }
+}
+
+OCC = { # Occitania
+    color1= { 128 0 0  }
+    color2= { 255 255 0  }
+    color3= { 128 0 0  }
+}
+
+OGO = { # Ostrogothia
+    color1= { 0 0 0  }
+    color2= { 0 0 0  }
+    color3= { 0 0 0  }
+}
+
+OIR = { # Oirat Horde
+    color1= { 204 184 177  }
+    color2= { 94 117 55  }
+    color3= { 83 149 105  }
+}
+
+OKA = { # Odoyev
+    color1= { 182 143 46  }
+    color2= { 64 27 3  }
+    color3= { 179 13 0  }
+}
+
+ORL = { # Orleans
+    color1= { 61 136 66  }
+    color2= { 94 117 55  }
+    color3= { 117 127 174  }
+}
+
+OYO = { # Oyo
+    color1= { 211 184 179  }
+    color2= { 255 255 255  }
+    color3= { 69 157 208  }
+}
+
+PAE = { # Paertia
+    color1= { 0 255 0  }
+    color2= { 255 255 0  }
+    color3= { 0 255 0  }
+}
+
+PAL = { # Palatinate
+    color1= { 220 220 220  }
+    color2= { 59 175 187  }
+    color3= { 60 60 60  }
+}
+
+PAT = { # Pattani
+    color1= { 162 134 164  }
+    color2= { 236 159 89  }
+    color3= { 166 189 199  }
+}
+
+PBC = { # Peru-Bolivia Confederation
+    color1= { 124 140 162  }
+    color2= { 144 52 53  }
+    color3= { 184 193 89  }
+}
+
+PEG = { # Pegu
+    color1= { 255 255 255  }
+    color2= { 175 15 15  }
+    color3= { 230 191 12  }
+}
+
+PIN = { # Pindus
+    color1= { 0 128 0  }
+    color2= { 255 0 0  }
+    color3= { 0 128 0  }
+}
+
+PIS = { # Pisa
+    color1= { 177 150 109  }
+    color2= { 89 140 176  }
+    color3= { 121 162 109  }
+}
+
+PLS = { # Palestine
+    color1= { 0 0 0  }
+    color2= { 0 128 0  }
+    color3= { 0 0 0  }
+}
+
+PLT = { # Polotsk
+    color1= { 52 110 196  }
+    color2= { 230 191 12  }
+    color3= { 230 242 16  }
+}
+
+POM = { # Pommerania
+    color1= { 111 122 184  }
+    color2= { 89 140 176  }
+    color3= { 131 101 85  }
+}
+
+PPG = { # Papua New Guinea
+    color1= { 0 0 0  }
+    color2= { 128 0 0  }
+    color3= { 0 0 0  }
+}
+
+PRI = { # Puerto Rico
+    color1= { 0 0 255  }
+    color2= { 255 0 0  }
+    color3= { 0 0 255  }
+}
+
+PRO = { # Provence
+    color1= { 93 160 163  }
+    color2= { 236 159 89  }
+    color3= { 107 170 77  }
+}
+
+PSK = { # Pskov
+    color1= { 82 123 95  }
+    color2= { 89 140 176  }
+    color3= { 131 101 85  }
+}
+
+PTG = { # Patagonia
+    color1= { 0 0 255  }
+    color2= { 0 255 0  }
+    color3= { 0 0 255  }
+}
+
+PYO = { # Pyongyang
+    color1= { 255 0 0  }
+    color2= { 255 0 0  }
+    color3= { 255 0 0  }
+}
+
+PZN = { # Poznan
+    color1= { 0 0 0  }
+    color2= { 255 255 255  }
+    color3= { 0 0 0  }
+}
+
+QAR = { # Qara Koyunlu
+    color1= { 116 153 8  }
+    color2= { 69 157 208  }
+    color3= { 107 170 77  }
+}
+
+QAS = { # Qasim Khanate
+    color1= { 82 135 124  }
+    color2= { 101 102 163  }
+    color3= { 117 127 174  }
+}
+
+QAT = { # Qatar
+    color1= { 0 0 128  }
+    color2= { 255 255 255  }
+    color3= { 0 0 128  }
+}
+
+QIN = { # Qing
+    color1= { 191 133 24  }
+    color2= { 15 85 150  }
+    color3= { 255 0 0  }
+}
+
+RAG = { # Ragusa
+    color1= { 255 255 255  }
+    color2= { 193 42 31  }
+    color3= { 255 255 255  }
+}
+
+RAJ = { # Rajputna
+    color1= { 119 151 122  }
+    color2= { 202 112 85  }
+    color3= { 80 79 88  }
+}
+
+RFR = { # Nanbu
+    color1= { 45 60 71  }
+    color2= { 97 97 184  }
+    color3= { 255 10 18  }
+}
+
+RGR = { # Rio Grande
+    color1= { 0 0 0  }
+    color2= { 255 255 255  }
+    color3= { 0 0 0  }
+}
+
+RGS = { # Rio Grande do Sul
+    color1= { 49 52 97  }
+    color2= { 156 157 149  }
+    color3= { 49 52 97  }
+}
+
+RHI = { # Rhineland
+    color1= { 0 255 0  }
+    color2= { 255 255 255  }
+    color3= { 0 255 0  }
+}
+
+RIG = { # Riga
+    color1= { 183 176 194  }
+    color2= { 197 92 106  }
+    color3= { 255 255 255  }
+}
+
+RPL = { # Rupert's Land
+    color1= { 255 0 0  }
+    color2= { 255 0 0  }
+    color3= { 255 0 0  }
+}
+
+RUM = { # Rum
+    color1= { 19 75 111  }
+    color2= { 19 75 111  }
+    color3= { 19 75 111  }
+}
+
+RVA = { # Ravensburg
+    color1= { 255 255 255  }
+    color2= { 0 0 128  }
+    color3= { 255 255 255  }
+}
+
+RWA = { # Rwanda
+    color1= { 255 0 0  }
+    color2= { 0 0 255  }
+    color3= { 255 0 0  }
+}
+
+RYA = { # Ryazan
+    color1= { 145 72 107  }
+    color2= { 219 124 139  }
+    color3= { 83 149 105  }
+}
+
+RYU = { # Ryukyu
+    color1= { 90 138 133  }
+    color2= { 101 102 163  }
+    color3= { 135 104 85  }
+}
+
+SAA = { # Saar
+    color1= { 0 0 128  }
+    color2= { 0 0 0  }
+    color3= { 0 0 128  }
+}
+
+SAK = { # Siak
+    color1= { 0 0 0  }
+    color2= { 255 255 0  }
+    color3= { 0 0 0  }
+}
+
+SAM = { # Samos
+    color1= { 255 0 0  }
+    color2= { 0 0 255  }
+    color3= { 255 0 0  }
+}
+
+SAO = { # Sao Tome
+    color1= { 0 255 0  }
+    color2= { 255 255 0  }
+    color3= { 0 255 0  }
+}
+
+SAT = { # Satsuma
+    color1= { 0 0 0  }
+    color2= { 255 255 255  }
+    color3= { 0 0 0  }
+}
+
+SCY = { # Sicily
+    color1= { 73 152 76  }
+    color2= { 219 124 139  }
+    color3= { 131 101 85  }
+}
+
+SDT = { # Sudetenland
+    color1= { 0 0 0  }
+    color2= { 255 0 0  }
+    color3= { 0 0 0  }
+}
+
+SEY = { # Seychelles
+    color1= { 0 0 255  }
+    color2= { 255 0 0  }
+    color3= { 0 0 255  }
+}
+
+SGH = { # Songhai
+    color1= { 62 175 151  }
+    color2= { 161 126 128  }
+    color3= { 119 151 122  }
+}
+
+SGP = { # Singapore
+    color1= { 255 255 255  }
+    color2= { 255 0 0  }
+    color3= { 255 255 255  }
+}
+
+SGU = { # Segu
+    color1= { 55 108 158  }
+    color2= { 89 140 176  }
+    color3= { 154 69 116  }
+}
+
+SHA = { # Shan
+    color1= { 189 123 130  }
+    color2= { 144 52 53  }
+    color3= { 119 151 122  }
+}
+
+SHD = { # Shandong
+    color1= { 255 69 0  }
+    color2= { 255 69 0  }
+    color3= { 255 69 0  }
+}
+
+SHG = { # Shanghai
+    color1= { 255 255 0  }
+    color2= { 0 0 0  }
+    color3= { 255 255 0  }
+}
+
+SHX = { # Shawnee
+    color1= { 212 105 118  }
+    color2= { 80 79 88  }
+    color3= { 166 189 199  }
+}
+
+SIB = { # Siberia
+    color1= { 255 255 255  }
+    color2= { 0 128 0  }
+    color3= { 255 255 255  }
+}
+
+SIH = { # Sibir
+    color1= { 139 138 160  }
+    color2= { 197 92 106  }
+    color3= { 122 179 97  }
+}
+
+SKN = { # St Kitts
+    color1= { 0 0 0  }
+    color2= { 255 255 255  }
+    color3= { 0 0 0  }
+}
+
+SLA = { # Slavic Union
+    color1= { 96 131 80  }
+    color2= { 144 52 53  }
+    color3= { 107 170 77  }
+}
+
+SLE = { # Sierra Leone
+    color1= { 0 255 0  }
+    color2= { 0 0 255  }
+    color3= { 0 255 0  }
+}
+
+SLS = { # Silesia
+    color1= { 84 166 93  }
+    color2= { 144 52 53  }
+    color3= { 107 170 77  }
+}
+
+SLZ = { # Salzburg
+    color1= { 149 119 9  }
+    color2= { 219 124 139  }
+    color3= { 83 149 105  }
+}
+
+SMI = { # Sami
+    color1= { 255 0 0  }
+    color2= { 0 0 255  }
+    color3= { 255 0 0  }
+}
+
+SMK = { # Smolensk
+    color1= { 106 160 43  }
+    color2= { 233 219 146  }
+    color3= { 255 255 255  }
+}
+
+SMO = { # Samoa
+    color1= { 255 0 0  }
+    color2= { 0 0 0  }
+    color3= { 255 0 0  }
+}
+
+SMR = { # San Marino
+    color1= { 0 0 128  }
+    color2= { 255 255 255  }
+    color3= { 0 0 128  }
+}
+
+SNA = { # Siena
+    color1= { 75 111 205  }
+    color2= { 124 140 162  }
+    color3= { 117 127 174  }
+}
+
+SNG = { # Senegal
+    color1= { 0 128 0  }
+    color2= { 255 255 0  }
+    color3= { 0 128 0  }
+}
+
+SOM = { # Somalia
+    color1= { 0 0 255  }
+    color2= { 0 0 255  }
+    color3= { 0 0 255  }
+}
+
+SON = { # Sonora
+    color1= { 255 0 0  }
+    color2= { 255 255 255  }
+    color3= { 255 0 0  }
+}
+
+SPC = { # Carlist Spain
+    color1= { 244 184 12  }
+    color2= { 180 0 85  }
+    color3= { 255 255 255  }
+}
+
+SPQ = { # Roman Empire
+    color1= { 128 0 128  }
+    color2= { 128 0 128  }
+    color3= { 128 0 128  }
+}
+
+SPU = { # South Peru
+    color1= { 124 140 162  }
+    color2= { 144 52 53  }
+    color3= { 184 193 89  }
+}
+
+SRD = { # Sardinia
+    color1= { 117 146 167  }
+    color2= { 101 102 163  }
+    color3= { 104 137 140  }
+}
+
+SRI = { # Ceylon
+    color1= { 141 21 58  }
+    color2= { 255 255 0  }
+    color3= { 141 21 58  }
+}
+
+SRU = { # Saruhan
+    color1= { 0 120 0  }
+    color2= { 255 255 255  }
+    color3= { 99 137 153  }
+}
+
+SSU = { # South Sudan
+    color1= { 201 205 208  }
+    color2= { 24 29 23  }
+    color3= { 201 205 208  }
+}
+
+STL = { # St Lucia
+    color1= { 0 0 128  }
+    color2= { 0 0 255  }
+    color3= { 0 0 128  }
+}
+
+STV = { # St Vincent
+    color1= { 255 255 0  }
+    color2= { 0 0 128  }
+    color3= { 255 255 0  }
+}
+
+STY = { # Styria
+    color1= { 40 63 102  }
+    color2= { 89 140 176  }
+    color3= { 117 127 174  }
+}
+
+SUA = { # Suazi
+    color1= { 167 156 150  }
+    color2= { 73 65 52  }
+    color3= { 167 156 150  }
+}
+
+SUD = { # Sudan
+    color1= { 219 222 201  }
+    color2= { 215 209 175  }
+    color3= { 219 222 201  }
+}
+
+SUL = { # Sulu
+    color1= { 89 164 144  }
+    color2= { 219 124 139  }
+    color3= { 187 79 86  }
+}
+
+SUR = { # Suriname
+    color1= { 255 255 255  }
+    color2= { 255 255 255  }
+    color3= { 255 255 255  }
+}
+
+SVY = { # Savoy
+    color1= { 255 255 255  }
+    color2= { 175 15 15  }
+    color3= { 255 255 255  }
+}
+
+SWA = { # Swahili
+    color1= { 255 255 255  }
+    color2= { 152 85 92  }
+    color3= { 187 79 86  }
+}
+
+SWH = { # Schleswig-Holstein
+    color1= { 255 255 255  }
+    color2= { 193 65 56  }
+    color3= { 255 255 255  }
+}
+
+SWK = { # Sarawak
+    color1= { 255 255 0  }
+    color2= { 0 0 0  }
+    color3= { 255 255 0  }
+}
+
+SYR = { # Syria
+    color1= { 27 40 30  }
+    color2= { 111 140 94  }
+    color3= { 27 40 30  }
+}
+
+TAH = { # Tahiti
+    color1= { 255 255 255  }
+    color2= { 255 0 0  }
+    color3= { 255 255 255  }
+}
+
+TAI = { # Taiwan
+    color1= { 77 90 98  }
+    color2= { 107 88 48  }
+    color3= { 77 90 98  }
+}
+
+TAJ = { # Tajikistan
+    color1= { 60 112 134  }
+    color2= { 255 234 117  }
+    color3= { 60 112 134  }
+}
+
+TAR = { # Tatarstan
+    color1= { 0 255 0  }
+    color2= { 255 0 0  }
+    color3= { 0 255 0  }
+}
+
+TBZ = { # Trebizond
+    color1= { 40 164 157  }
+    color2= { 161 126 128  }
+    color3= { 80 79 88  }
+}
+
+TCA = { # Transcaucasia
+    color1= { 36 132 247  }
+    color2= { 126 203 120  }
+    color3= { 48 164 51  }
+}
+
+TER = { # Trier
+    color1= { 208 104 44  }
+    color2= { 154 69 116  }
+    color3= { 134 166 117  }
+}
+
+TEU = { # Teutonic Order
+    color1= { 60 60 60  }
+    color2= { 255 255 255  }
+    color3= { 247 206 12  }
+}
+
+TGA = { # Tonga
+    color1= { 255 0 0  }
+    color2= { 255 255 255  }
+    color3= { 255 0 0  }
+}
+
+THU = { # Thuringia
+    color1= { 146 155 156  }
+    color2= { 194 140 86  }
+    color3= { 83 149 105  }
+}
+
+TIM = { # Timurid
+    color1= { 75 75 75  }
+    color2= { 255 0 0  }
+    color3= { 75 75 75  }
+}
+
+TIR = { # Tirol
+    color1= { 214 224 213  }
+    color2= { 69 157 208  }
+    color3= { 166 189 199  }
+}
+
+TKG = { # Tokugawa
+    color1= { 209 0 0  }
+    color2= { 37 37 37  }
+    color3= { 219 192 50  }
+}
+
+TKM = { # Turkmenistan
+    color1= { 45 51 37  }
+    color2= { 2 133 102  }
+    color3= { 45 51 37  }
+}
+
+TNT = { # Tannu Tuva
+    color1= { 255 0 0  }
+    color2= { 255 0 0  }
+    color3= { 255 0 0  }
+}
+
+TNZ = { # Tanzania
+    color1= { 105 195 193  }
+    color2= { 31 57 48  }
+    color3= { 105 195 193  }
+}
+
+TOG = { # Togo
+    color1= { 255 255 255  }
+    color2= { 0 128 0  }
+    color3= { 255 255 255  }
+}
+
+TOK = { # Tonkin
+    color1= { 81 144 126  }
+    color2= { 69 157 208  }
+    color3= { 255 255 255  }
+}
+
+TOO = { # Tooro
+    color1= { 255 255 0  }
+    color2= { 0 0 255  }
+    color3= { 255 255 0  }
+}
+
+TRZ = { # Trarza
+    color1= { 107 102 134  }
+    color2= { 175 167 180  }
+    color3= { 107 102 134  }
+}
+
+TST = { # South Tirol
+    color1= { 214 224 213  }
+    color2= { 69 157 208  }
+    color3= { 166 189 199  }
+}
+
+TSW = { # Botswana
+    color1= { 255 255 255  }
+    color2= { 0 0 0  }
+    color3= { 255 255 255  }
+}
+
+TTB = { # Trinidad
+    color1= { 255 0 0  }
+    color2= { 0 0 0  }
+    color3= { 255 0 0  }
+}
+
+TUL = { # Toulouse
+    color1= { 127 170 146  }
+    color2= { 89 140 176  }
+    color3= { 166 189 199  }
+}
+
+TVE = { # Tver
+    color1= { 180 20 20  }
+    color2= { 220 215 45  }
+    color3= { 166 189 199  }
+}
+
+TYR = { # Tyrone
+    color1= { 60 60 60  }
+    color2= { 255 255 255  }
+    color3= { 193 26 14  }
+}
+
+UCV = { # Uncivilized Nation
+    color1= { 0 0 0  }
+    color2= { 0 0 0  }
+    color3= { 0 0 0  }
+}
+
+UIL = { # Illinois
+    color1= { 69 157 208  }
+    color2= { 124 140 162  }
+    color3= { 137 183 124  }
+}
+
+ULM = { # Ulm
+    color1= { 0 0 0  }
+    color2= { 255 255 255  }
+    color3= { 0 0 0  }
+}
+
+ULS = { # Ulster
+    color1= { 255 255 0  }
+    color2= { 255 0 0  }
+    color3= { 255 255 0  }
+}
+
+UNB = { # Nebraska
+    color1= { 69 157 208  }
+    color2= { 124 140 162  }
+    color3= { 137 183 124  }
+}
+
+UND = { # Undead Horde
+    color1= { 0 0 0  }
+    color2= { 0 0 0  }
+    color3= { 0 0 0  }
+}
+
+UNM = { # New Mexico
+    color1= { 219 124 139  }
+    color2= { 101 102 163  }
+    color3= { 69 157 208  }
+}
+
+UNY = { # New York
+    color1= { 69 157 208  }
+    color2= { 124 140 162  }
+    color3= { 137 183 124  }
+}
+
+UOR = { # Oregon
+    color1= { 69 157 208  }
+    color2= { 124 140 162  }
+    color3= { 137 183 124  }
+}
+
+URA = { # Ural Republic
+    color1= { 0 0 0  }
+    color2= { 255 255 255  }
+    color3= { 0 0 0  }
+}
+
+URB = { # Urbino
+    color1= { 61 152 180  }
+    color2= { 255 255 255  }
+    color3= { 83 149 105  }
+}
+
+UTR = { # Utrecht
+    color1= { 223 198 64  }
+    color2= { 202 112 85  }
+    color3= { 17 16 203  }
+}
+
+UYG = { # Uyghurstan
+    color1= { 0 0 128  }
+    color2= { 255 255 255  }
+    color3= { 0 0 128  }
+}
+
+UZB = { # Uzbekistan
+    color1= { 0 0 128  }
+    color2= { 0 128 0  }
+    color3= { 0 0 128  }
+}
+
+VIJ = { # Vijaynagara
+    color1= { 166 189 199  }
+    color2= { 255 87 127  }
+    color3= { 183 176 194  }
+}
+
+VTU = { # Vanuatu
+    color1= { 0 0 0  }
+    color2= { 255 255 0  }
+    color3= { 0 0 0  }
+}
+
+WBG = { # Wurzburg
+    color1= { 147 146 106  }
+    color2= { 195 149 155  }
+    color3= { 135 104 85  }
+}
+
+WES = { # Westfalia
+    color1= { 255 255 255  }
+    color2= { 255 0 0  }
+    color3= { 255 255 255  }
+}
+
+WHA = { # Wales
+    color1= { 117 127 174  }
+    color2= { 161 126 128  }
+    color3= { 112 150 105  }
+}
+
+WSH = { # Western Sahara
+    color1= { 93 90 75  }
+    color2= { 93 90 75  }
+    color3= { 93 90 75  }
+}
+
+YAR = { # Yaroslavl
+    color1= { 220 220 0  }
+    color2= { 70 70 70  }
+    color3= { 70 70 70  }
+}
+
+YOR = { # York
+    color1= { 107 170 77  }
+    color2= { 152 85 92  }
+    color3= { 48 164 51  }
+}
+
+YUA = { # Yuan
+    color1= { 188 19 14  }
+    color2= { 0 0 0  }
+    color3= { 188 19 14  }
+}
+
+YUC = { # Yucatan
+    color1= { 255 255 255  }
+    color2= { 255 255 255  }
+    color3= { 255 255 255  }
+}
+
+ZAM = { # Zambia
+    color1= { 0 0 0  }
+    color2= { 255 255 255  }
+    color3= { 0 0 0  }
+}
+
+ZAP = { # Zapotec
+    color1= { 255 255 255  }
+    color2= { 99 137 153  }
+    color3= { 255 255 255  }
+}
+
+ZAZ = { # Zaporozhie
+    color1= { 117 112 131  }
+    color2= { 154 69 116  }
+    color3= { 119 151 122  }
+}
+
+ZBW = { # Zimbabwe
+    color1= { 95 108 110  }
+    color2= { 205 147 48  }
+    color3= { 95 108 110  }
+}
+
+ZIM = { # Mutapa
+    color1= { 255 255 255  }
+    color2= { 126 203 120  }
+    color3= { 122 179 97  }
 }
