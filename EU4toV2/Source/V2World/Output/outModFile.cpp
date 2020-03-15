@@ -3,7 +3,7 @@
 
 std::ostream& V2::operator<<(std::ostream& output, const ModFile& modFile)
 {
-	output << "name = \"Converted - " << Utils::convertUTF8ToWin1252(theConfiguration.getActualName()) << "\"\n";
+	output << "name = \"Converted - " << Localisation::convert(theConfiguration.getActualName()) << "\"\n";
 	output << "path = \"mod/" << theConfiguration.getOutputName() << "\"\n";
 	output << "user_dir = \"" << theConfiguration.getOutputName() << "\"\n";
 	output << "replace = \"history/provinces\"\n";
