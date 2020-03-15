@@ -47,7 +47,7 @@ void V2::Localisation::setPartyName(const size_t partyIndex, const std::string& 
 std::string V2::Localisation::convert(const std::string& text)
 {
 	if (text.empty()) return std::string();
-	return Utils::convertUTF8To8859_15(text);
+	return Utils::convertUTF8ToWin1252(text);
 }
 
 std::string V2::Localisation::getLocalName() const

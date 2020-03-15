@@ -14,7 +14,7 @@ build_script:
 test: off
 artifacts:
 - path: Release
-  name: EU4ToVic2
+  name: EU4ToVic2-1.0Mexico-prerelease
 deploy:
 - provider: GitHub
   release: windows_development_build
@@ -22,6 +22,6 @@ deploy:
   auth_token:
     secure: LBJzs4y9j0N5y0ajp7gmVk3Pvnec1UU5pTCdIMbQYUddEXQnWTJ79FXsd9SCs7YQ
   repository: paradoxGameConverters/EU4ToVic2
-  artifact: EU4ToVic2
+  artifact: EU4ToVic2-1.0Mexico-prerelease
   prerelease: true
   force_update: true
