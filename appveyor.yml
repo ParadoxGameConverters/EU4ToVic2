@@ -14,7 +14,7 @@ build_script:
 test: off
 artifacts:
 - path: Release
-  name: EU4ToVic2
+  name: EU4ToVic2-1.0M-prerelease
 deploy:
 - provider: GitHub
   release: windows_development_build
