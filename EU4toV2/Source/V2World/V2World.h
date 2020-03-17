@@ -121,7 +121,7 @@ namespace V2
 		void transcribeHistoricalData();
 		void transcribeNeoCultures();
 		void modifyPrimaryAndAcceptedCultures();
-		void addAcceptedCultures();
+		void addAcceptedCultures(const EU4::Regions& eu4Regions);
 		
 		mappers::ProvinceMapper provinceMapper;
 		mappers::Continents continentsMapper;

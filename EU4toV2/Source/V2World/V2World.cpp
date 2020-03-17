@@ -70,7 +70,7 @@ historicalData(sourceWorld.getHistoricalData())
 	LOG(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
 	modifyPrimaryAndAcceptedCultures();
 	LOG(LogLevel::Info) << "-> Monitoring Native Fauna Reaction";
-	addAcceptedCultures();
+	addAcceptedCultures(sourceWorld.getRegions());
 	Log(LogLevel::Info) << "-> Dropping Infected AI Cores";
 	dropCores();
 	Log(LogLevel::Info) << "-> Dropping Poorly-Shaped States";
@@ -142,7 +142,7 @@ void V2::World::dropCores()
 }
 
 
-void V2::World::addAcceptedCultures()
+void V2::World::addAcceptedCultures(const EU4::Regions& eu4Regions)
 {
 	// Accepted cultures at this stage only contain neocultures (if > 0.15) and ex-primary culture if neoculture took over.
 	// We will do a census among our full cores and add only those accepted cultures that are relevant to us, eu4 and cultural
@@ -206,6 +206,26 @@ void V2::World::addAcceptedCultures()
 				if (ratio >= foreignThreshold) acceptedCultures.insert(culture.first);
 			}
 		}
+
+		// finally, for colonial nations, we need to ensure their overlord's mutated culture is accepted, to ease
+		// cases where minority expulsion created monstrosities.
+
+		if (!country.second->getColonyOverlord().empty())
+		{
+			const auto& overlordTag = country.second->getColonyOverlord();
+			const auto& overlordItr = countries.find(overlordTag);
+			if (overlordItr == countries.end()) {
+				Log(LogLevel::Warning) << country.first << " has an invalid overlord: " << overlordTag; // huh
+				continue;
+			}
+			const auto& overlordPrimaryCulture = overlordItr->second->getSourceCountry()->getPrimaryCulture();
+			const auto& overlordReligion = overlordItr->second->getSourceCountry()->getReligion();
+			const auto& capital = country.second->getSourceCountry()->getCapital();
+			const auto& eu4Tag = country.second->getSourceCountry()->getTag();
+			const auto& overlordMutatedCulture = cultureMapper.cultureMatch(eu4Regions, overlordPrimaryCulture, overlordReligion, capital, eu4Tag);
+			if (overlordMutatedCulture && primaryCulture != *overlordMutatedCulture) acceptedCultures.insert(*overlordMutatedCulture);
+		}		 
+		
 		country.second->setAcceptedCultures(acceptedCultures);
 	}
 }
