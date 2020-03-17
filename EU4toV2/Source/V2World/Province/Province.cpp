@@ -57,6 +57,16 @@ filename(std::move(_filename))
 	if (navalBaseMapper.isProvinceCoastal(provinceID)) coastal = true;
 }
 
+std::string V2::Province::getDominantCulture()
+{
+	std::map<std::string, long> census;
+	for (const auto& pop: pops) census[pop->getCulture()] += pop->getSize();
+
+	using pair_type = decltype(census)::value_type;
+	const auto pr = std::max_element (std::begin(census), std::end(census), [](const pair_type& p1, const pair_type& p2) { return p1.second < p2.second; });
+	return pr->first;
+}
+
 void V2::Province::addVanillaPop(std::shared_ptr<Pop> vanillaPop)
 {
 	vanillaPops.push_back(vanillaPop);

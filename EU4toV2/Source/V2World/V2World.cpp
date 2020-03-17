@@ -67,12 +67,15 @@ historicalData(sourceWorld.getHistoricalData())
 	allocateFactories(sourceWorld);
 	LOG(LogLevel::Info) << "-> Distributing Pops";
 	setupPops(sourceWorld);
-
 	LOG(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
 	modifyPrimaryAndAcceptedCultures();
 	LOG(LogLevel::Info) << "-> Monitoring Native Fauna Reaction";
 	addAcceptedCultures();
-	
+	Log(LogLevel::Info) << "-> Dropping Infected AI Cores";
+	dropCores();
+	Log(LogLevel::Info) << "-> Dropping Poorly-Shaped States";
+	dropStates();
+
 	LOG(LogLevel::Info) << "-> Merging Nations";
 	addUnions();
 	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
@@ -88,10 +91,62 @@ historicalData(sourceWorld.getHistoricalData())
 	LOG(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
 
+void V2::World::dropStates()
+{
+	// We have dropped a lot of cores recently. It's time to drop states to territory status if they do not contain any own cores.
+	for (const auto& country: countries)
+	{
+		for (const auto& state: country.second->getStates())
+		{
+			auto hasCore = false;
+			for (const auto& province: state->getProvinces())
+			{
+				if (province->hasCore(country.first)) hasCore = true;
+			}
+			if (!hasCore) state->setProvincesAsTerritories();
+		}
+	}
+}
+
+void V2::World::dropCores()
+{
+	// This is quicker if we first build a country/culture cache and then check against it then iterate through 
+	// every province and do multiple unneeded checks.
+
+	std::map<std::string, std::set<std::string>> theCache; // tag, accepted cultures cache
+	std::set<std::string> deadCache; // dead countries where we need to preserve cores as they have no cultures.
+	
+	for (const auto& country: countries)
+	{
+		theCache[country.first] = country.second->getAcceptedCultures();
+		theCache[country.first].insert(country.second->getPrimaryCulture());
+		if (country.second->getProvinces().empty()) deadCache.insert(country.first);
+	}
+	
+	for (auto& province: provinces)
+	{
+		const auto dominantCulture = province.second->getDominantCulture();
+		std::set<std::string> survivingCores;
+		for (const auto& core: province.second->getCores())
+		{
+			// Dead countries take priority.
+			if (deadCache.count(core)) continue; // not touching this.
+			
+			const auto& cacheItr = theCache.find(core);
+			if (cacheItr == theCache.end()) continue; // Dropping unrecognized core;
+			
+			if (cacheItr->second.count(dominantCulture)) survivingCores.insert(cacheItr->first);
+		}
+		province.second->replaceCores(survivingCores);
+	}
+}
+
+
 void V2::World::addAcceptedCultures()
 {
 	// Accepted cultures at this stage only contain neocultures (if > 0.15) and ex-primary culture if neoculture took over.
-	// We will do a census and add only those accepted cultures that are relevant to us, eu4 and cultural unions be damned.
+	// We will do a census among our full cores and add only those accepted cultures that are relevant to us, eu4 and cultural
+	// unions be damned.
 	
 	for (const auto& country : countries)
 	{
@@ -100,6 +155,8 @@ void V2::World::addAcceptedCultures()
 		// do a census
 		for (const auto& province : country.second->getProvinces())
 		{
+			if (!province.second->hasCore(country.first)) continue; // We don't census territories.
+			
 			const auto& pops = province.second->getPopsForOutput();
 			if (!pops) continue;
 			for (const auto& pop : pops->second)
@@ -112,11 +169,11 @@ void V2::World::addAcceptedCultures()
 
 		long totalPopulation = 0;
 		for (const auto& entry : census) totalPopulation += entry.second;
-		if (!totalPopulation) return;
+		if (!totalPopulation) continue;
 
 		const auto& primaryCulture = country.second->getPrimaryCulture();
 		auto acceptedCultures = country.second->getAcceptedCultures();
-		const double primRatio = static_cast<double>(census[primaryCulture]) / totalPopulation;
+		const auto primRatio = static_cast<double>(census[primaryCulture]) / totalPopulation;
 		auto cultureGroup = cultureGroupsMapper.getGroupForCulture(primaryCulture);
 		if (!cultureGroup) return;
 		auto cultureGroupCultures = cultureGroup->getCultures();
