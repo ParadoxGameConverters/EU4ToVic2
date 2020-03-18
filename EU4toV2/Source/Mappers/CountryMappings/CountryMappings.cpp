@@ -160,7 +160,6 @@ bool mappers::CountryMappings::mapToExistingVic2Country(const std::string& possi
 	{
 		eu4TagToV2TagMap.insert(std::make_pair(eu4Tag, possibleVic2Tag));
 		v2TagToEU4TagMap.insert(std::make_pair(possibleVic2Tag, eu4Tag));
-
 		return true;
 	}
 
@@ -173,7 +172,6 @@ bool mappers::CountryMappings::mapToFirstUnusedVic2Tag(const std::string& possib
 	{
 		eu4TagToV2TagMap.insert(std::make_pair(eu4Tag, possibleVic2Tag));
 		v2TagToEU4TagMap.insert(std::make_pair(possibleVic2Tag, eu4Tag));
-
 		return true;
 	}
 

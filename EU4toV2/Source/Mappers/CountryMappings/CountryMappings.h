@@ -33,6 +33,7 @@ namespace mappers
 		[[nodiscard]] std::optional<std::string> getV2Tag(const std::string& eu4Tag) const;
 		[[nodiscard]] std::optional<std::string> getCK2Title(const std::string& eu4Tag, const std::string& countryName, const std::set<std::string>& availableFlags) const;
 		[[nodiscard]] const auto& getCK2TitleMapper() const { return ck2titleMapper; }
+		[[nodiscard]] static bool tagIsAlphaDigitDigit(const std::string& tag);
 
 		void createMappings(const EU4::World& srcWorld, const std::map<std::string, std::shared_ptr<V2::Country>>& vic2Countries, const ProvinceMapper& provinceMapper);
 
@@ -58,7 +59,6 @@ namespace mappers
 		std::string generateNewTag();
 
 		[[nodiscard]] static bool isPotentialColonialReplacement(const std::pair<std::string, std::shared_ptr<EU4::Country>>& country);
-		[[nodiscard]] static bool tagIsAlphaDigitDigit(const std::string& tag);
 		[[nodiscard]] bool capitalInRightVic2Region(
 			const ColonyStruct& colony,
 			std::optional<int> vic2Capital,

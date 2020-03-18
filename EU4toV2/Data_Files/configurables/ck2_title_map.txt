@@ -3600,4 +3600,3 @@ link = { name = "tschechoslowakei" title = "CZH" region = "e_carpathia" }
 link = { name = "macedonia" title = "MKD" region = "e_byzantium" }
 link = { name = "macédoine" title = "MKD" region = "e_byzantium" }
 link = { name = "mazedonien" title = "MKD" region = "e_byzantium" }
-link = { name = "alaska" title = "LSK" region = "e_russia" }
