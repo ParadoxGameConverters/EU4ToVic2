@@ -44,7 +44,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 			else // try something patronymic
 			{
 				if (!mappers::CountryMappings::tagIsAlphaDigitDigit(country.first)) continue;
-				
+
 				std::string religion = country.second->getReligion();
 				std::optional<std::string> randomCK2title;
 
@@ -119,7 +119,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 		for (const auto& key : colonyFlagsKeys)
 		{
 			auto flag = colonialFlagsMapper.getFlag(key);
-			
+
 			if (!flag) continue;
 			if (!flag->getOverlord().empty()) continue;
 

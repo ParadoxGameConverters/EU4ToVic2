@@ -115,7 +115,7 @@ void mappers::CountryMappings::makeOneMapping(const EU4::Country& country, const
 	const auto& potentialCK2Title = determineMappableCK2Title(country);
 	if (potentialCK2Title) mapped = attemptStraightMapping(country, vic2Countries, *potentialCK2Title);
 	if (mapped) return;
-	
+
 	// with no CK2 fallback, or a custom country, generate own tag.	
 	const auto& newVic2Tag = generateNewTag();
 	mapToNewTag(EU4Tag, newVic2Tag);
@@ -228,12 +228,12 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 	if (!potentialVic2Capitals.empty()) vic2Capital = *potentialVic2Capitals.begin();
 
 	for (const auto& colony: colonialTagMapper.getColonyList())
-	{		
+	{
 		if (!capitalInRightEU4Region(colony, EU4Capital, provinceMapper)) continue;
 		country.setColonialRegion(colony.EU4Region);
 
 		if (!capitalInRightVic2Region(colony, vic2Capital, srcWorld, country.getTag(), provinceMapper)) continue;
-		
+
 		if (!inCorrectCultureGroup(colony, country.getPrimaryCulture(), srcWorld.getCultureGroupsMapper())) continue;
 
 		if (tagIsAvailable(colony, vic2Countries))
