@@ -32,6 +32,7 @@ namespace V2
 		void addRailroads();
 		void addFactory(std::shared_ptr<Factory> factory);
 		void rebuildNavalBase();
+		void setProvincesAsTerritories();
 		
 	private:
 		int id = 0;

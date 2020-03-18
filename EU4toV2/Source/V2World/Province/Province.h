@@ -67,7 +67,9 @@ namespace V2
 		void setSameContinent() { sameContinent = true; }
 		void addCore(const std::string& newCore);
 		void addPopDemographic(const Demographic& d);
+		void replaceCores(const std::set<std::string>& cores) { details.cores = cores; }
 
+		[[nodiscard]] auto hasCore(const std::string& core) const { return details.cores.count(core) > 0; }
 		[[nodiscard]] auto getID() const { return provinceID; }
 		[[nodiscard]] auto isCoastal() const { return coastal; }
 		[[nodiscard]] auto getResettable() const { return resettable; }
@@ -89,7 +91,9 @@ namespace V2
 		[[nodiscard]] const auto& getFilename() const { return filename; }
 		[[nodiscard]] const auto& getGeneratedNeoCultures() const { return generatedNeoCultures; }
 		[[nodiscard]] const auto& getSuperRegion() const { return superRegion; }
+		[[nodiscard]] const auto& getCores() const { return details.cores; }
 
+		[[nodiscard]] std::string getDominantCulture();
 		[[nodiscard]] int getTotalPopulation() const;
 		[[nodiscard]] std::vector<std::string> getCulturesOverThreshold(double percentOfPopulation) const;
 		[[nodiscard]] std::optional<std::pair<int, std::vector<std::shared_ptr<Pop>>>> getPopsForOutput() const;

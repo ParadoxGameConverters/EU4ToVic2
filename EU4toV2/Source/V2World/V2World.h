@@ -79,6 +79,8 @@ namespace V2
 		std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, const EU4::Country& sourceCountry);
 		static std::set<std::string> discoverProvinceFilenames();
 
+		void dropStates();
+		void dropCores();
 		void importProvinces();
 		void shuffleRgos();
 		void importDefaultPops();
@@ -119,7 +121,7 @@ namespace V2
 		void transcribeHistoricalData();
 		void transcribeNeoCultures();
 		void modifyPrimaryAndAcceptedCultures();
-		void addAcceptedCultures();
+		void addAcceptedCultures(const EU4::Regions& eu4Regions);
 		
 		mappers::ProvinceMapper provinceMapper;
 		mappers::Continents continentsMapper;

@@ -6,6 +6,14 @@ V2::State::State(const int newId, std::shared_ptr<Province> firstProvince): id(n
 	provinces.push_back(firstProvince);
 }
 
+void V2::State::setProvincesAsTerritories()
+{
+	for (const auto& province: provinces)
+	{
+		province->setColonial(2);
+	}
+}
+
 void V2::State::addRailroads()
 {
 	for (const auto& province : provinces) province->increaseRailLevel(1);

@@ -88,7 +88,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 		if (overlord.empty()) continue;
 
 		std::string name = country.second->getLocalName();
-		name = Utils::convertUTF8To8859_15(name);
+		name = Utils::convertUTF8ToWin1252(name);
 		transform(name.begin(), name.end(), name.begin(), ::tolower);
 
 		auto colonialtitle = colonialFlagsMapper.getFlag(name);
