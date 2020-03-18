@@ -130,7 +130,7 @@ void V2::World::dropCores()
 		for (const auto& core: province.second->getCores())
 		{
 			// Dead countries take priority.
-			if (deadCache.count(core)) continue; // not touching this.
+			if (deadCache.count(core)) survivingCores.insert(core); // inserting automatically.
 			
 			const auto& cacheItr = theCache.find(core);
 			if (cacheItr == theCache.end()) continue; // Dropping unrecognized core;
