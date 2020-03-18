@@ -8,6 +8,7 @@ link = { tag = COL EU4_region = colonial_alaska V2_region = ENG_13 } #Columbia -
 link = { tag = NEW EU4_region = colonial_canada V2_region = ENG_74 } #Newfoundland - Capital in and/or owns all of Newfoundland
 link = { tag = CAN EU4_region = colonial_canada } #Canada
 link = { tag = LSK EU4_region = colonial_alaska V2_region = USA_1 } #Alaska - In Alaska
+link = { tag = LSK EU4_region = colonial_alaska V2_region = ENG_22 } #Alaska - In Colombia
 
 # Eastern USA
 link = { tag = NEN EU4_region = colonial_eastern_america V2_region = USA_247 is_culture_group = british } #New England - Capital in and/or owns all of V2 region New England & culture group British

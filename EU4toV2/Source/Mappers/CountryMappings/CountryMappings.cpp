@@ -76,7 +76,6 @@ void mappers::CountryMappings::createMappings(
 	{
 		if (isPotentialColonialReplacement(EU4Country))
 		{
-			Log(LogLevel::Debug) << EU4Country.first << " potential col replacement. ";
 			colonialCountries.insert(EU4Country.second);
 		}
 		else
@@ -109,7 +108,6 @@ void mappers::CountryMappings::makeOneMapping(const EU4::Country& country, const
 
 	auto mapped = attemptStraightMapping(country, vic2Countries, EU4Tag);
 	if (mapped) return;
-	Log(LogLevel::Debug) << EU4Tag << " failed straight mapping";
 
 	// There was no functional mapping in country_mapping.txt. Let's see if we can generate a ck2 title from the country's name
 	// that we can map into vic2.
@@ -117,12 +115,10 @@ void mappers::CountryMappings::makeOneMapping(const EU4::Country& country, const
 	const auto& potentialCK2Title = determineMappableCK2Title(country);
 	if (potentialCK2Title) mapped = attemptStraightMapping(country, vic2Countries, *potentialCK2Title);
 	if (mapped) return;
-	Log(LogLevel::Debug) << EU4Tag << " failed ck2 mapping";
 	
 	// with no CK2 fallback, or a custom country, generate own tag.	
 	const auto& newVic2Tag = generateNewTag();
 	mapToNewTag(EU4Tag, newVic2Tag);
-	Log(LogLevel::Debug) << EU4Tag << " mapping to new tag: " << newVic2Tag;
 }
 
 bool mappers::CountryMappings::attemptStraightMapping(const EU4::Country& country, const std::map<std::string, std::shared_ptr<V2::Country>>& vic2Countries, const std::string& EU4Tag)
@@ -164,7 +160,6 @@ bool mappers::CountryMappings::mapToExistingVic2Country(const std::string& possi
 	{
 		eu4TagToV2TagMap.insert(std::make_pair(eu4Tag, possibleVic2Tag));
 		v2TagToEU4TagMap.insert(std::make_pair(possibleVic2Tag, eu4Tag));
-		logMapping(eu4Tag, possibleVic2Tag, "existing tag");
 		return true;
 	}
 
@@ -177,7 +172,6 @@ bool mappers::CountryMappings::mapToFirstUnusedVic2Tag(const std::string& possib
 	{
 		eu4TagToV2TagMap.insert(std::make_pair(eu4Tag, possibleVic2Tag));
 		v2TagToEU4TagMap.insert(std::make_pair(possibleVic2Tag, eu4Tag));
-		logMapping(eu4Tag, possibleVic2Tag, "free tag");
 		return true;
 	}
 
@@ -236,25 +230,20 @@ bool mappers::CountryMappings::attemptColonialReplacement(
 	for (const auto& colony: colonialTagMapper.getColonyList())
 	{		
 		if (!capitalInRightEU4Region(colony, EU4Capital, provinceMapper)) continue;
-		Log(LogLevel::Debug) << country.getTag() << " success region check vs " << colony.EU4Region;
 		country.setColonialRegion(colony.EU4Region);
 
 		if (!capitalInRightVic2Region(colony, vic2Capital, srcWorld, country.getTag(), provinceMapper)) continue;
-		Log(LogLevel::Debug) << country.getTag() << " success v2 region check vs " << colony.V2Region;
 		
 		if (!inCorrectCultureGroup(colony, country.getPrimaryCulture(), srcWorld.getCultureGroupsMapper())) continue;
-		Log(LogLevel::Debug) << country.getTag() << " success CG check vs " << colony.cultureGroup;
 
 		if (tagIsAvailable(colony, vic2Countries))
 		{
-		Log(LogLevel::Debug) << country.getTag() << " tag available ";
 			eu4TagToV2TagMap.insert(make_pair(country.getTag(), colony.tag));
 			v2TagToEU4TagMap.insert(make_pair(colony.tag, country.getTag()));
 			logMapping(country.getTag(), colony.tag, "colonial replacement");
 			return true;
 		}
 	}
-	Log(LogLevel::Debug) << country.getTag() << " failed col replacement ";
 	return false;
 }
 
@@ -298,11 +287,8 @@ bool mappers::CountryMappings::inCorrectCultureGroup(const ColonyStruct& colony,
 
 bool mappers::CountryMappings::tagIsAvailable(const ColonyStruct& colony, const std::map<std::string, std::shared_ptr<V2::Country>>& vic2Countries) const
 {
-	Log(LogLevel::Debug) << " checking tag in vic2countries ";
 	if (vic2Countries.find(colony.tag) == vic2Countries.end()) return false;
-	Log(LogLevel::Debug) << " checking tag assigned already ";
 	if (tagIsAlreadyAssigned(colony.tag)) return false;
-	Log(LogLevel::Debug) << " tag free, proceeding ";
 	return true;
 }
 
