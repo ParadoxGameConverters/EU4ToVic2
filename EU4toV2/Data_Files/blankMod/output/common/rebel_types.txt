@@ -1112,7 +1112,7 @@ pan_nationalist_rebels = {
 				has_country_modifier = global_liberal_agitation
 			}
 		}
-		## The this-should-not-count countries
+		#Converter stuff
 		modifier = {
 			factor = 0
 			country = {
@@ -1132,6 +1132,24 @@ pan_nationalist_rebels = {
 		modifier = {
 			factor = 0
 			culture = andalusian #Andalusia/Granada should not become Arabia
+		}
+		modifier = {
+			factor = 0
+			country = {
+				capital_scope = { continent = north_america }
+			}
+		}
+		modifier = {
+			factor = 0
+			country = {
+				capital_scope = { continent = south_america }
+			}
+		}
+		modifier = {
+			factor = 0
+			country = {
+				capital_scope = { continent = oceania }
+			}
 		}
 	}
 	
