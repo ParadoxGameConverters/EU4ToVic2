@@ -62,11 +62,17 @@ void V2::Diplomacy::convertDiplomacy(
 				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() <<
 					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << libertyMap[theConfiguration.getLibertyThreshold()] << " liberty desire)";
 				country1->second->absorbColony(*country2->second);
-				for (auto& agreement2 : eu4agreements)
+				auto agreementItr = eu4agreements.begin();
+				while (agreementItr != eu4agreements.end())
 				{
-					if (agreement2.getTargetTag() == country2->second->getSourceCountry()->getTag())
+					if (agreementItr->getTargetTag() == country2->second->getSourceCountry()->getTag() || 
+						agreementItr->getOriginTag() == country1->second->getSourceCountry()->getTag())
 					{
-						agreement2.setTargetTag(country1->second->getSourceCountry()->getTag());
+						eu4agreements.erase(agreementItr);
+					}
+					else
+					{
+						++agreementItr;
 					}
 				}
 				continue;
