@@ -395,7 +395,7 @@ void V2::Flags::createColonialFlags() const
 				auto sourceFlagPath = folderPath + std::string("/") + baseFlag + suffix;
 
 				auto overlordFlag = tagMap.find(overlord);
-				if (overlordFlag == tagMap.end()) throw std::runtime_error("No flag exists for overlord " + overlord + ". Cannot create colony flag");
+				if (overlordFlag == tagMap.end()) throw std::runtime_error("No flag exists for " + V2Tag + "'s overlord " + overlord + ". Cannot create colony flag.");
 
 				auto overlordFlagPath = folderPath + std::string("/") + overlordFlag->second + ".tga";
 				flagFileFound = Utils::DoesFileExist(sourceFlagPath) && Utils::DoesFileExist(overlordFlagPath);
