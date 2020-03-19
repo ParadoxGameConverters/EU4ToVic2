@@ -124,18 +124,24 @@ void V2::World::dropCores()
 	}
 	
 	for (auto& province: provinces)
-	{
+	{				
+		if (province.second->getCores().empty()) continue;
 		const auto dominantCulture = province.second->getDominantCulture();
+		if (dominantCulture.empty()) continue;
 		std::set<std::string> survivingCores;
+		
 		for (const auto& core: province.second->getCores())
 		{
 			// Dead countries take priority.
-			if (deadCache.count(core)) survivingCores.insert(core); // inserting automatically.
+			if (deadCache.count(core)) {
+				survivingCores.insert(core); // inserting automatically.
+				continue;
+			}
 			
 			const auto& cacheItr = theCache.find(core);
-			if (cacheItr == theCache.end()) continue; // Dropping unrecognized core;
-			
+			if (cacheItr == theCache.end()) continue; // Dropping unrecognized core;			
 			if (cacheItr->second.count(dominantCulture)) survivingCores.insert(cacheItr->first);
+
 		}
 		province.second->replaceCores(survivingCores);
 	}
