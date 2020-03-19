@@ -11,8 +11,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 	registerKeyword("SaveGame", [this](const std::string& unused, std::istream& theStream) 
 		{
 			const commonItems::singleString path(theStream);
-			EU4SaveGamePath = path.getString();
-			setOutputName();
+			EU4SaveGamePath = path.getString();			
 		});
 	registerKeyword("EU4directory", [this, doesFolderExist, doesFileExist](const std::string& unused, std::istream& theStream){
 		const commonItems::singleString path(theStream);
@@ -94,12 +93,18 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		const commonItems::singleString convertAllString(theStream);
 		convertAll = convertAllString.getString() == "yes";
 		LOG(LogLevel::Info) << "Convert All: " << convertAllString.getString();
-		});
+	});
+	registerKeyword("output_name", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString outputNameStr(theStream);
+		incomingOutputName = outputNameStr.getString();
+		LOG(LogLevel::Info) << "Output Name: " << incomingOutputName;
+	});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
 	LOG(LogLevel::Info) << "Reading configuration file";
 	parseStream(theStream);
 	clearRegisteredKeywords();
+	setOutputName();
 }
 
 
@@ -136,7 +141,14 @@ bool Configuration::wasDLCActive(const std::string& DLC) const
 
 void Configuration::setOutputName()
 {
-	outputName = trimPath(EU4SaveGamePath);
+	if (incomingOutputName.empty())
+	{
+		outputName = trimPath(EU4SaveGamePath);
+	}
+	else
+	{
+		outputName = incomingOutputName;
+	}
 	outputName = trimExtension(outputName);
 	outputName = replaceCharacter(outputName, '-');
 	outputName = replaceCharacter(outputName, ' ');	

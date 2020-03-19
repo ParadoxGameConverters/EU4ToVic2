@@ -232,6 +232,13 @@
 						</entryOption>
 					</entryOptions>
 				</preference>
+				<preference>
+					<name>output_name</name>
+					<friendlyName>Mod Output Name (optional):</friendlyName>
+					<description>Please use ASCII latin characters only.</description>
+					<hasDirectlyEditableValue>true</hasDirectlyEditableValue>
+					<value></value>
+				</preference>
 			</preferences>
 		</category>
 	</categories>

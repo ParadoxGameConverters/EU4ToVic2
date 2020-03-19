@@ -106,7 +106,8 @@ class Configuration: commonItems::parser
 		date lastEU4Date;
 		date startEU4Date = date("1000.1.1");
 		int eu4Seed = 0;
-		std::string outputName;
+		std::string outputName;  // actual output name
+		std::string incomingOutputName; // from configuration file
 		std::string actualName; // Not normalized like outputName
 		std::vector<std::string> activeDLCs;
 		std::vector<std::string> EU4Mods;
