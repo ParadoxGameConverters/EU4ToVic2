@@ -128,9 +128,9 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 				std::string region = (*failCountryItr)->getColonialRegion();
 				if (region.empty() || flag->getRegion() == region)
 				{
-					colonialFlagMapping[(*failCountryItr)->getTag()] = *flag;
 					auto overlord = (*failCountryItr)->getColonyOverlord();
 					flag->setOverlord(overlord);
+					colonialFlagMapping[(*failCountryItr)->getTag()] = *flag;
 					LOG(LogLevel::Info) << "\tA premade flag is available for " << (*failCountryItr)->getTag() << " (" << key << "), ruled by " << overlord;
 
 					usableFlagTags.erase(flag->getName());
