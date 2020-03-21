@@ -3553,9 +3553,10 @@ link = { name = "fatimids" title = "d_fatimid" region = "e_arabia" }
 link = { name = "almohads" title = "d_almohad" region = "e_arabia" }
 link = { name = "almoravids" title = "d_almoravid" region = "e_arabia" }
 
-### This should not be here. If there's an use case for wanting countrues named something
-# to map to a particular TAG, that requires a separate mechanism from this,
-# one that would first endure nothing already mapped to these tags.
+### This should not be here. If there's an use case for wanting countries 
+# named something to map to a particular TAG, that requires a separate 
+# mechanism from this, one that would first ensure nothing already is mapped 
+# to these tags.
 #Main countries that exist in Vic2 but not in vanilla EU4 or CK2
 #link = { name = "texas" title = "TEX" region = "e_mexikha" }
 #link = { name = "belgium" title = "BEL" region = "e_france" }
