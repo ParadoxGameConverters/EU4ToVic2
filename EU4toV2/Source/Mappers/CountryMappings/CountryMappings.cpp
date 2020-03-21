@@ -321,7 +321,6 @@ std::optional<std::string> mappers::CountryMappings::getCK2Title(
 	const std::string& countryName, 
 	const std::set<std::string>& availableFlags) const
 {
-	if (!tagIsAlphaDigitDigit(eu4Tag)) return std::nullopt;
 
 	auto name = V2::Localisation::convert(countryName);
 	transform(name.begin(), name.end(), name.begin(), ::tolower);
