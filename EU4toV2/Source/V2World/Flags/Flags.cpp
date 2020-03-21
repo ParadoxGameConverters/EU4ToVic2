@@ -35,6 +35,10 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 			// Check for ck2 name, if one exists
 			auto ck2title = countryMapper.getCK2Title(country.first, country.second->getLocalName(), usableFlagTags);
 			// do we have a ready ck2 map?
+			if (!ck2title) Log(LogLevel::Debug) << country.second->getSourceCountry()->getTag() << " " << country.second->getLocalName() << " - no CK2 title match, thus no flag.";
+			if (ck2title && !usableFlagTags.count(*ck2title)) Log(LogLevel::Debug) << country.second->getSourceCountry()->getTag() << " " << country.second->getLocalName() << " has a CK2 match " << *ck2title << " but no flag found.";
+			if (ck2title && usableFlagTags.count(*ck2title)) Log(LogLevel::Debug) << country.second->getSourceCountry()->getTag() << " " << country.second->getLocalName() << " has a CK2 match " << *ck2title << ", flag is available.";
+
 			if (ck2title && usableFlagTags.count(*ck2title))
 			{
 				tagMap[country.first] = *ck2title;
@@ -52,17 +56,24 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 				if (religion == "sunni" || religion == "shiite" || religion == "ibadi")
 				{
 					randomCK2title = countryMapper.getCK2TitleMapper().getRandomIslamicFlag();
+					Log(LogLevel::Debug) << country.second->getSourceCountry()->getTag() << " Using a random muslim ck2title";
 				}
 				else if (religion == "mahayana" || religion == "gelugpa" || religion == "theravada" || religion == "sikh" || religion == "hindu" || religion == "jain")
 				{
 					randomCK2title = countryMapper.getCK2TitleMapper().getRandomIndianFlag();
+					Log(LogLevel::Debug) << country.second->getSourceCountry()->getTag() << " Using a random indian ck2title.";
 				}
 
 				if (randomCK2title && usableFlagTags.count(*randomCK2title))
 				{
+					Log(LogLevel::Debug) << country.second->getSourceCountry()->getTag() << " Random ck2title and flag to be used: " << *randomCK2title;
 					tagMap[country.first] = *randomCK2title;
 					usableFlagTags.erase(*randomCK2title);
 					requiredTags.erase(country.first);
+				}
+				else
+				{
+					if (randomCK2title) Log(LogLevel::Debug) << country.second->getSourceCountry()->getTag() << " Randomly assigned " << *randomCK2title << " has no flag and we're skipping it for now.";
 				}
 			}
 		}
@@ -149,6 +160,8 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 		auto randomTagIter = usableFlagTags.begin();
 		advance(randomTagIter, randomTagIndex);
 		tagMap[requiredTag] = *randomTagIter;
+		auto ctry = V2Countries.find(requiredTag);
+		Log(LogLevel::Debug) << ctry->second->getSourceCountry()->getTag() << " is using random flag: " << *randomTagIter;
 		if (usableFlagTags.size() > requiredTags.size() - tagMap.size())
 		{
 			usableFlagTags.erase(*randomTagIter);
