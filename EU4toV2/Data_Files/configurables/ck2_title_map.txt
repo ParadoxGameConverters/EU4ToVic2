@@ -727,7 +727,7 @@ link = { name = "compagnie catalane" 	 title = "d_catalan_company" 	 region = "d
 link = { name = "compagnie coumane" 	 title = "d_cuman_company" 	 region = "d_cuman_company" }
 link = { name = "compagnie de la rose" 	 title = "d_rose_company" 	 region = "d_rose_company" }
 link = { name = "Compagnie de la Tortue" 	 title = "d_han_mid_low" 	 region = "e_pirates" }
-link = { name = "compagnie de lÉtoile" 	 title = "d_star_company" 	 region = "d_star_company" }
+link = { name = "compagnie de l'étoile" 	 title = "d_star_company" 	 region = "d_star_company" }
 link = { name = "compagnie de saint-georges" 	 title = "d_company_of_st_george" 	 region = "d_company_of_st_george" }
 link = { name = "compagnie des steppes" 	 title = "d_shiite_cuman_company" 	 region = "d_shiite_cuman_company" }
 link = { name = "compagnie du bengale" 	 title = "d_bengal_company" 	 region = "d_bengal_company" }
@@ -1479,7 +1479,7 @@ link = { name = "hongrie" 	 title = "k_hungary" 	 region = "e_carpathia" }
 link = { name = "honnore" 	 title = "c_honnore" 	 region = "e_deccan" }
 link = { name = "horda de oro" 	 title = "e_golden_horde" 	 region = "e_golden_horde" }
 link = { name = "hordaland" 	 title = "c_bergenshus" 	 region = "e_scandinavia" }
-link = { name = "horde dor" 	 title = "e_golden_horde" 	 region = "e_golden_horde" }
+link = { name = "horde d'or" 	 title = "e_golden_horde" 	 region = "e_golden_horde" }
 link = { name = "Hors-la-loi des Marais" 	 title = "d_outlaws_of_the_marsh" 	 region = "e_pirates" }
 link = { name = "hrosos" 	 title = "c_alexandretta" 	 region = "e_arabia" }
 link = { name = "hufenaruchel" 	 title = "c_strathearn" 	 region = "e_britannia" }
@@ -1503,8 +1503,8 @@ link = { name = "idatarainadu" 	 title = "c_idatarainadu" 	 region = "e_deccan" 
 link = { name = "idensalmi" 	 title = "c_savolaks" 	 region = "e_scandinavia" }
 link = { name = "ifriqiya" 	 title = "k_africa" 	 region = "e_arabia" }
 link = { name = "Iglesia maniquea" 	 title = "d_manichean" 	 region = "e_pirates" }
-link = { name = "ikkila" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
-link = { name = "ikkile" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "Ikškila" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "Ikškile" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
 link = { name = "ikonion" 	 title = "d_ikonion" 	 region = "e_mali" }
 link = { name = "Îles egées" 	 title = "d_aegean_islands" 	 region = "e_byzantium" }
 link = { name = "Îles" 	 title = "d_the_isles" 	 region = "e_mali" }
@@ -1997,8 +1997,8 @@ link = { name = "liegnitz" 	 title = "c_lower_silesia" 	 region = "e_wendish_emp
 link = { name = "ligurian galleys" 	 title = "d_genoese_navy" 	 region = "e_pirates" }
 link = { name = "ligurische galleren" 	 title = "d_genoese_navy" 	 region = "e_pirates" }
 link = { name = "lilløhus" 	 title = "c_skane" 	 region = "e_scandinavia" }
-link = { name = "limbai" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
-link = { name = "limbaiai" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "limbaži" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "limbažiai" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
 link = { name = "Limbuwan" 	 title = "c_limbuwan" 	 region = "e_tibet" }
 link = { name = "Lingtsang" 	 title = "c_lingtsang" 	 region = "e_tibet" }
 link = { name = "linkøbing" 	 title = "c_ostergotland" 	 region = "e_scandinavia" }
@@ -2270,7 +2270,7 @@ link = { name = "mùnis" 	 title = "c_shetland" 	 region = "e_scandinavia" }
 link = { name = "munster" 	 title = "d_munster" 	 region = "e_britannia" }
 link = { name = "murcia" 	 title = "d_murcia" 	 region = "e_spain" }
 link = { name = "murcie" 	 title = "d_murcia" 	 region = "e_spain" }
-link = { name = "murom" 	 title = "d_vladimir" 	 region = "e_russia" }
+link = { name = "murom" 	 title = "d_murom" 	 region = "e_russia" }
 link = { name = "muromianos" 	 title = "d_muromians" 	 region = "e_mali" }
 link = { name = "muromians" 	 title = "d_muromians" 	 region = "e_mali" }
 link = { name = "mursiya" 	 title = "c_murcia" 	 region = "e_spain" }
@@ -3553,54 +3553,59 @@ link = { name = "fatimids" title = "d_fatimid" region = "e_arabia" }
 link = { name = "almohads" title = "d_almohad" region = "e_arabia" }
 link = { name = "almoravids" title = "d_almoravid" region = "e_arabia" }
 
-### This should not be here. If there's an use case for wanting countries 
-# named something to map to a particular TAG, that requires a separate 
-# mechanism from this, one that would first ensure nothing already is mapped 
-# to these tags.
+#1356 mod
+link = { name = "bolgars" title = "k_great_bulgaria" region = "e_russia" }
+link = { name = "dahra" title = "c_dhara" region = "e_deccan" }
+link = { name = "ingria" title = "d_izh" region = "e_russia" }
+link = { name = "mallorca" title = "c_mallorca" region = "e_spain" }
+link = { name = "majorca" title = "c_mallorca" region = "e_spain" }
+link = { name = "singapura" title = "c_sgp" region = "e_china_west_governor" }
+link = { name = "teke" title = "k_tekke" region = "e_byzantium" }
+link = { name = "thessaly" title = "d_thessalonika" region = "e_byzantium" }
+
 #Main countries that exist in Vic2 but not in vanilla EU4 or CK2
-#link = { name = "texas" title = "TEX" region = "e_mexikha" }
-#link = { name = "belgium" title = "BEL" region = "e_france" }
-#link = { name = "belgique" title = "BEL" region = "e_france" }
-#link = { name = "bélgica" title = "BEL" region = "e_france" }
-#link = { name = "belgien" title = "BEL" region = "e_france" }
-#link = { name = "uruguay" title = "URU" region = "e_mexikha" }
-#link = { name = "bolivia" title = "BOL" region = "e_mexikha" }
-#link = { name = "bolivie" title = "BOL" region = "e_mexikha" }
-#link = { name = "bolivien" title = "BOL" region = "e_mexikha" }
-#link = { name = "ecuador" title = "ECU" region = "e_mexikha" }
-#link = { name = "Équateur" title = "ECU" region = "e_mexikha" }
-#link = { name = "south africa" title = "SAF" region = "e_mexikha" }
-#link = { name = "afrique du sud" title = "SAF" region = "e_mexikha" }
-#link = { name = "sudáfrica" title = "SAF" region = "e_mexikha" }
-#link = { name = "südafrica" title = "SAF" region = "e_mexikha" }
-#link = { name = "philippines" title = "PHI" region = "e_mexikha" }
-#link = { name = "filipinas" title = "PHI" region = "e_mexikha" }
-#link = { name = "philippinen" title = "PHI" region = "e_mexikha" }
-#link = { name = "new zealand" title = "NZL" region = "e_mexikha" }
-#link = { name = "nouvelle-zélande" title = "NZL" region = "e_mexikha" }
-#link = { name = "nueva zelanda" title = "NZL" region = "e_mexikha" }
-#link = { name = "neuseeland" title = "NZL" region = "e_mexikha" }
-#link = { name = "yugoslavia" title = "YUG" region = "e_byzantium" }
-#link = { name = "yougoslavie" title = "YUG" region = "e_byzantium" }
-#link = { name = "jugoslawien" title = "YUG" region = "e_byzantium" }
-#link = { name = "belarus" title = "BYE" region = "e_russia" }
-#link = { name = "byelorussia" title = "BYE" region = "e_russia" }
-#link = { name = "biélorussie" title = "BYE" region = "e_russia" }
-#link = { name = "bielorrusia" title = "BYE" region = "e_russia" }
-#link = { name = "weißrussland" title = "BYE" region = "e_russia" }
-#link = { name = "two sicilies" title = "SI2" region = "e_italy" }
-#link = { name = "deux-siciles" title = "SI2" region = "e_italy" }
-#link = { name = "dos sicilias" title = "SI2" region = "e_italy" }
-#link = { name = "beider sizilien" title = "SI2" region = "e_italy" }
-#link = { name = "austria-hungary" title = "KUK" region = "e_carpathia" }
-#link = { name = "autriche-hongrie" title = "KUK" region = "e_carpathia" }
-#link = { name = "austria-hungría" title = "KUK" region = "e_carpathia" }
-#link = { name = "Österreich-ungarn" title = "KUK" region = "e_carpathia" }
-#link = { name = "czechoslovakia" title = "CZH" region = "e_carpathia" }
-#link = { name = "tchécoslovaquie" title = "CZH" region = "e_carpathia" }
-#link = { name = "checoslovaquia" title = "CZH" region = "e_carpathia" }
-#link = { name = "tschechoslowakei" title = "CZH" region = "e_carpathia" }
+link = { name = "belgium" title = "k_bel" region = "e_france" }
+link = { name = "belgique" title = "k_bel" region = "e_france" }
+link = { name = "bélgica" title = "k_bel" region = "e_france" }
+link = { name = "belgien" title = "k_bel" region = "e_france" }
+link = { name = "uruguay" title = "k_uru" region = "e_mexikha" }
+link = { name = "bolivia" title = "k_bol" region = "e_mexikha" }
+link = { name = "bolivie" title = "k_bol" region = "e_mexikha" }
+link = { name = "bolivien" title = "k_bol" region = "e_mexikha" }
+link = { name = "ecuador" title = "k_ecu" region = "e_mexikha" }
+link = { name = "Équateur" title = "k_ecu" region = "e_mexikha" }
+link = { name = "south africa" title = "e_saf" region = "e_mexikha" }
+link = { name = "afrique du sud" title = "e_saf" region = "e_mexikha" }
+link = { name = "sudáfrica" title = "e_saf" region = "e_mexikha" }
+link = { name = "südafrica" title = "e_saf" region = "e_mexikha" }
+link = { name = "philippines" title = "k_phi" region = "e_mexikha" }
+link = { name = "filipinas" title = "k_phi" region = "e_mexikha" }
+link = { name = "philippinen" title = "k_phi" region = "e_mexikha" }
+link = { name = "new zealand" title = "k_nzl" region = "e_mexikha" }
+link = { name = "nouvelle-zélande" title = "k_nzl" region = "e_mexikha" }
+link = { name = "nueva zelanda" title = "k_nzl" region = "e_mexikha" }
+link = { name = "neuseeland" title = "k_nzl" region = "e_mexikha" }
+link = { name = "yugoslavia" title = "k_yug" region = "e_byzantium" }
+link = { name = "yougoslavie" title = "k_yug" region = "e_byzantium" }
+link = { name = "jugoslawien" title = "k_yug" region = "e_byzantium" }
+link = { name = "belarus" title = "k_bye" region = "e_russia" }
+link = { name = "byelorussia" title = "k_bye" region = "e_russia" }
+link = { name = "biélorussie" title = "k_bye" region = "e_russia" }
+link = { name = "bielorrusia" title = "k_bye" region = "e_russia" }
+link = { name = "weißrussland" title = "k_bye" region = "e_russia" }
+link = { name = "two sicilies" title = "k_si2" region = "e_italy" }
+link = { name = "deux-siciles" title = "k_si2" region = "e_italy" }
+link = { name = "dos sicilias" title = "k_si2" region = "e_italy" }
+link = { name = "beider sizilien" title = "k_si2" region = "e_italy" }
+link = { name = "austria-hungary" title = "e_kuk" region = "e_carpathia" }
+link = { name = "autriche-hongrie" title = "e_kuk" region = "e_carpathia" }
+link = { name = "austria-hungría" title = "e_kuk" region = "e_carpathia" }
+link = { name = "Österreich-ungarn" title = "e_kuk" region = "e_carpathia" }
+link = { name = "czechoslovakia" title = "d_czh" region = "e_carpathia" }
+link = { name = "tchécoslovaquie" title = "d_czh" region = "e_carpathia" }
+link = { name = "checoslovaquia" title = "d_czh" region = "e_carpathia" }
+link = { name = "tschechoslowakei" title = "d_czh" region = "e_carpathia" }
 #Not in vanilla, but still
-#link = { name = "macedonia" title = "MKD" region = "e_byzantium" }
-#link = { name = "macédoine" title = "MKD" region = "e_byzantium" }
-#link = { name = "mazedonien" title = "MKD" region = "e_byzantium" }
+link = { name = "macedonia" title = "d_mkd" region = "e_byzantium" }
+link = { name = "macédoine" title = "d_mkd" region = "e_byzantium" }
+link = { name = "mazedonien" title = "d_mkd" region = "e_byzantium" }
