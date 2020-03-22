@@ -328,6 +328,7 @@ link = { EU4 = c_ulm Vic2 = ULM } # Ulm
 link = { EU4 = WBG Vic2 = WBG } # Wurzburg
 link = { EU4 = c_wurzburg Vic2 = WBG } #Wurzburg
 link = { EU4 = WES Vic2 = WES } # Westfalia
+link = { EU4 = k_westphalia Vic2 = WES } # Napoleonic Westphalia
 link = { EU4 = WUR Vic2 = WUR } # Wurttemberg
 link = { EU4 = c_wurttemberg Vic2 = WUR } #Wurttemberg
 link = { EU4 = NUM Vic2 = NUM } # Nuremberg
