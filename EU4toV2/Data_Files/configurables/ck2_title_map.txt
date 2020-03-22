@@ -363,7 +363,7 @@ link = { name = "bande bretonne" 	 title = "d_breton_band" 	 region = "d_breton_
 link = { name = "bande bulgare" 	 title = "d_bulgarian_band" 	 region = "d_bulgarian_band" }
 link = { name = "bande catalane" 	 title = "d_catalan_band" 	 region = "d_catalan_band" }
 link = { name = "bande coumane" 	 title = "d_cuman_band" 	 region = "d_cuman_band" }
-link = { name = "Bande de l?Orchidée" 	 title = "d_han_tiny_2" 	 region = "e_pirates" }
+link = { name = "Bande de l'Orchidée" 	 title = "d_han_tiny_2" 	 region = "e_pirates" }
 link = { name = "Bande de la Grue" 	 title = "d_han_low" 	 region = "e_pirates" }
 link = { name = "Bande de la Pivoine" 	 title = "d_han_tiny_1" 	 region = "e_pirates" }
 link = { name = "bande écossaise" 	 title = "d_scottish_band" 	 region = "d_scottish_band" }
@@ -1503,8 +1503,8 @@ link = { name = "idatarainadu" 	 title = "c_idatarainadu" 	 region = "e_deccan" 
 link = { name = "idensalmi" 	 title = "c_savolaks" 	 region = "e_scandinavia" }
 link = { name = "ifriqiya" 	 title = "k_africa" 	 region = "e_arabia" }
 link = { name = "Iglesia maniquea" 	 title = "d_manichean" 	 region = "e_pirates" }
-link = { name = "Ik?kila" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
-link = { name = "Ik?kile" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "Ik'kila" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "Ik'kile" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
 link = { name = "ikonion" 	 title = "d_ikonion" 	 region = "e_mali" }
 link = { name = "Îles egées" 	 title = "d_aegean_islands" 	 region = "e_byzantium" }
 link = { name = "Îles" 	 title = "d_the_isles" 	 region = "e_mali" }
@@ -1997,8 +1997,8 @@ link = { name = "liegnitz" 	 title = "c_lower_silesia" 	 region = "e_wendish_emp
 link = { name = "ligurian galleys" 	 title = "d_genoese_navy" 	 region = "e_pirates" }
 link = { name = "ligurische galleren" 	 title = "d_genoese_navy" 	 region = "e_pirates" }
 link = { name = "lilløhus" 	 title = "c_skane" 	 region = "e_scandinavia" }
-link = { name = "limba?i" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
-link = { name = "limba?iai" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "limba'i" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "limba'iai" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
 link = { name = "Limbuwan" 	 title = "c_limbuwan" 	 region = "e_tibet" }
 link = { name = "Lingtsang" 	 title = "c_lingtsang" 	 region = "e_tibet" }
 link = { name = "linkøbing" 	 title = "c_ostergotland" 	 region = "e_scandinavia" }
@@ -2620,7 +2620,7 @@ link = { name = "pressburg" 	 title = "d_pressburg" 	 region = "e_mali" }
 link = { name = "preußen" 	 title = "d_prussia" 	 region = "e_wendish_empire" }
 link = { name = "pronsk" 	 title = "d_pronsk" 	 region = "e_mali" }
 link = { name = "Protectorado occidental" 	 title = "e_china_west_governor" 	 region = "e_china_west_governor" }
-link = { name = "Protectorat des Régions de l?Ouest" 	 title = "e_china_west_governor" 	 region = "e_china_west_governor" }
+link = { name = "Protectorat des Régions de l'Ouest" 	 title = "e_china_west_governor" 	 region = "e_china_west_governor" }
 link = { name = "provence" 	 title = "d_provence" 	 region = "e_france" }
 link = { name = "provenza" 	 title = "d_provence" 	 region = "e_france" }
 link = { name = "prusia" 	 title = "d_prussia" 	 region = "e_wendish_empire" }
