@@ -727,7 +727,7 @@ link = { name = "compagnie catalane" 	 title = "d_catalan_company" 	 region = "d
 link = { name = "compagnie coumane" 	 title = "d_cuman_company" 	 region = "d_cuman_company" }
 link = { name = "compagnie de la rose" 	 title = "d_rose_company" 	 region = "d_rose_company" }
 link = { name = "Compagnie de la Tortue" 	 title = "d_han_mid_low" 	 region = "e_pirates" }
-link = { name = "compagnie de l?Étoile" 	 title = "d_star_company" 	 region = "d_star_company" }
+link = { name = "compagnie de l'étoile" 	 title = "d_star_company" 	 region = "d_star_company" }
 link = { name = "compagnie de saint-georges" 	 title = "d_company_of_st_george" 	 region = "d_company_of_st_george" }
 link = { name = "compagnie des steppes" 	 title = "d_shiite_cuman_company" 	 region = "d_shiite_cuman_company" }
 link = { name = "compagnie du bengale" 	 title = "d_bengal_company" 	 region = "d_bengal_company" }
@@ -1479,7 +1479,7 @@ link = { name = "hongrie" 	 title = "k_hungary" 	 region = "e_carpathia" }
 link = { name = "honnore" 	 title = "c_honnore" 	 region = "e_deccan" }
 link = { name = "horda de oro" 	 title = "e_golden_horde" 	 region = "e_golden_horde" }
 link = { name = "hordaland" 	 title = "c_bergenshus" 	 region = "e_scandinavia" }
-link = { name = "horde d?or" 	 title = "e_golden_horde" 	 region = "e_golden_horde" }
+link = { name = "horde d'or" 	 title = "e_golden_horde" 	 region = "e_golden_horde" }
 link = { name = "Hors-la-loi des Marais" 	 title = "d_outlaws_of_the_marsh" 	 region = "e_pirates" }
 link = { name = "hrosos" 	 title = "c_alexandretta" 	 region = "e_arabia" }
 link = { name = "hufenaruchel" 	 title = "c_strathearn" 	 region = "e_britannia" }
@@ -1503,8 +1503,8 @@ link = { name = "idatarainadu" 	 title = "c_idatarainadu" 	 region = "e_deccan" 
 link = { name = "idensalmi" 	 title = "c_savolaks" 	 region = "e_scandinavia" }
 link = { name = "ifriqiya" 	 title = "k_africa" 	 region = "e_arabia" }
 link = { name = "Iglesia maniquea" 	 title = "d_manichean" 	 region = "e_pirates" }
-link = { name = "ik?kila" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
-link = { name = "ik?kile" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "Ikškila" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "Ikškile" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
 link = { name = "ikonion" 	 title = "d_ikonion" 	 region = "e_mali" }
 link = { name = "Îles egées" 	 title = "d_aegean_islands" 	 region = "e_byzantium" }
 link = { name = "Îles" 	 title = "d_the_isles" 	 region = "e_mali" }
@@ -1959,7 +1959,7 @@ link = { name = "le calife kharidjite" 	 title = "d_kharijite" 	 region = "d_kha
 link = { name = "le caliphat ibadite" 	 title = "d_ibadi" 	 region = "e_mali" }
 link = { name = "le cheikhat hurufiste" 	 title = "d_hurufi" 	 region = "e_mali" }
 link = { name = "le cheikhat yézidi" 	 title = "d_yazidi" 	 region = "e_mali" }
-link = { name = "le patriarcat ?cuménique" 	 title = "k_orthodox" 	 region = "e_pirates" }
+link = { name = "le patriarcat cuménique" 	 title = "k_orthodox" 	 region = "e_pirates" }
 link = { name = "le patriarcat d'orient" 	 title = "d_nestorian" 	 region = "e_mali" }
 link = { name = "le patriarcat iconoclaste" 	 title = "d_iconoclast" 	 region = "e_mali" }
 link = { name = "le patriarcat monothélite" 	 title = "d_monothelite" 	 region = "e_mali" }
@@ -1997,8 +1997,8 @@ link = { name = "liegnitz" 	 title = "c_lower_silesia" 	 region = "e_wendish_emp
 link = { name = "ligurian galleys" 	 title = "d_genoese_navy" 	 region = "e_pirates" }
 link = { name = "ligurische galleren" 	 title = "d_genoese_navy" 	 region = "e_pirates" }
 link = { name = "lilløhus" 	 title = "c_skane" 	 region = "e_scandinavia" }
-link = { name = "limba?i" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
-link = { name = "limba?iai" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "limbaži" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
+link = { name = "limbažiai" 	 title = "c_lettigalians" 	 region = "e_wendish_empire" }
 link = { name = "Limbuwan" 	 title = "c_limbuwan" 	 region = "e_tibet" }
 link = { name = "Lingtsang" 	 title = "c_lingtsang" 	 region = "e_tibet" }
 link = { name = "linkøbing" 	 title = "c_ostergotland" 	 region = "e_scandinavia" }
