@@ -24,6 +24,7 @@ tech = {group = navy score = 1.0 name = naval_professionalism}
 
 tech = {group = commerce score = -0.8 name = no_standard}
 tech = {group = commerce score = -0.5 name = guild_based_production}
+tech = {group = commerce score = -0.4 name = private_banks}
 tech = {group = commerce score = -0.3 name = early_classical_theory_and_critique}
 tech = {group = commerce score = -0.2 name = freedom_of_trade}
 tech = {group = commerce score = 0.3 name = stock_exchange}
