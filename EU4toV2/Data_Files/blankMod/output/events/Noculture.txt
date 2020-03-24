@@ -1,3 +1,78 @@
+#Welcoming the player - Giving "Observer" option
+country_event = {
+	id = 1999999
+	title = EVTHELLOTITLE
+	desc = EVTHELLODESC
+	major = yes
+	
+	trigger = {
+		ai = no
+		NOT = { has_global_flag = hello_player }
+	}
+	
+	mean_time_to_happen = { months = 0.0001 }
+	
+	option = {
+		name = EVTHELLOPLAY
+		set_global_flag = hello_player
+	}
+	
+	option = {
+		name = EVTHELLOOBS
+		set_global_flag = hello_player
+		3246 = {
+			owner = {
+				country_event = 1999998
+			}
+		}
+		country_event = {
+			id = 1999997
+			days = 1
+		}
+	}
+}
+country_event = {
+	id = 1999998
+	title = EVTOBSTITLE
+	desc = EVTOBSDESC
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOBSOPTA
+		3246 = {
+			secede_province = AAA
+			remove_core = THIS
+			remove_core = SCA
+			remove_core = NOR
+			change_province_name = "Observer"
+			life_rating = -100
+			add_core = AAA
+			any_pop = {
+				reduce_pop = -1
+			}
+			add_province_modifier = {
+				name = occupied
+				duration = -1
+			}
+		}
+	}
+}
+country_event = {
+	id = 1999997
+	title = EVTOBSERVER
+	desc = EVTOBSERDESC
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOBSEROPTA
+		change_tag_no_core_switch = AAA
+		AAA = {
+			ruling_party_ideology = noIdeology
+			primary_culture = noculture
+			religion = noreligion
+		}
+	}
+}
 # At war with a landless country
 country_event = { 
 	id = 2500020
@@ -89,7 +164,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = aborigine
   }
  }
@@ -112,7 +187,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afar
   }
  }
@@ -135,7 +210,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afer
   }
  }
@@ -158,7 +233,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = africaine
   }
  }
@@ -181,7 +256,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = african_minor
   }
  }
@@ -204,7 +279,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = africano
   }
  }
@@ -227,7 +302,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afrighayi
   }
  }
@@ -250,7 +325,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afrigi
   }
  }
@@ -273,7 +348,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afro_american
   }
  }
@@ -296,7 +371,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afro_antillean
   }
  }
@@ -319,7 +394,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afro_brazilian
   }
  }
@@ -342,7 +417,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afro_caribbean
   }
  }
@@ -365,7 +440,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afro_caribeno
   }
  }
@@ -388,7 +463,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afro_carpathian
   }
  }
@@ -411,7 +486,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afro_greek
   }
  }
@@ -434,7 +509,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afro_italian
   }
  }
@@ -457,7 +532,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afro_norse
   }
  }
@@ -480,7 +555,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = afro_slavic
   }
  }
@@ -503,7 +578,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = aimara
   }
  }
@@ -526,7 +601,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ainu
   }
  }
@@ -549,7 +624,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = akan
   }
  }
@@ -572,7 +647,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = alan
   }
  }
@@ -595,7 +670,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = alaskan
   }
  }
@@ -618,7 +693,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = albanian
   }
  }
@@ -641,7 +716,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = alien
   }
  }
@@ -664,7 +739,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = all_italian
   }
  }
@@ -687,7 +762,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = amazonian
   }
  }
@@ -710,7 +785,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = americano
   }
  }
@@ -733,7 +808,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = amerikaner
   }
  }
@@ -756,7 +831,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = amhara
   }
  }
@@ -779,7 +854,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = andalucian
   }
  }
@@ -802,7 +877,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = anglo_african
   }
  }
@@ -825,7 +900,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = anglo_canadian
   }
  }
@@ -848,7 +923,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = anglo_indian
   }
  }
@@ -871,7 +946,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = anglo_saxon
   }
  }
@@ -894,7 +969,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = araucanian
   }
  }
@@ -917,7 +992,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = armenian
   }
  }
@@ -940,7 +1015,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = aromanian
   }
  }
@@ -963,7 +1038,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = arpitan
   }
  }
@@ -986,7 +1061,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ashkenazi
   }
  }
@@ -1009,7 +1084,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = asian_minor
   }
  }
@@ -1032,7 +1107,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = assamese
   }
  }
@@ -1055,7 +1130,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = assyrian
   }
  }
@@ -1078,7 +1153,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = australian
   }
  }
@@ -1101,7 +1176,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = australiano
   }
  }
@@ -1124,7 +1199,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = australienne
   }
  }
@@ -1147,7 +1222,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = australus
   }
  }
@@ -1170,7 +1245,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = avadhi
   }
  }
@@ -1193,7 +1268,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = azande
   }
  }
@@ -1216,7 +1291,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = azerbaijani
   }
  }
@@ -1239,7 +1314,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = baganda
   }
  }
@@ -1262,7 +1337,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = baguirmi
   }
  }
@@ -1285,7 +1360,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = bai
   }
  }
@@ -1308,7 +1383,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = bakongo
   }
  }
@@ -1331,7 +1406,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = baluchi
   }
  }
@@ -1354,7 +1429,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = bambara
   }
  }
@@ -1377,7 +1452,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = basque
   }
  }
@@ -1400,7 +1475,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = bazramani
   }
  }
@@ -1423,7 +1498,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = bedouin
   }
  }
@@ -1446,7 +1521,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = beifaren
   }
  }
@@ -1469,7 +1544,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = beja
   }
  }
@@ -1492,7 +1567,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = bengali
   }
  }
@@ -1515,7 +1590,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = berber
   }
  }
@@ -1538,7 +1613,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = bihari
   }
  }
@@ -1561,7 +1636,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = boer
   }
  }
@@ -1584,7 +1659,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = bornean
   }
  }
@@ -1607,7 +1682,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = bosniak
   }
  }
@@ -1630,7 +1705,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = brazilian
   }
  }
@@ -1653,7 +1728,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = breton
   }
  }
@@ -1676,7 +1751,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = brithenig
   }
  }
@@ -1699,7 +1774,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = british
   }
  }
@@ -1722,7 +1797,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = bulgarian
   }
  }
@@ -1745,7 +1820,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = burmese
   }
  }
@@ -1768,7 +1843,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = byelorussian
   }
  }
@@ -1791,7 +1866,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = caddoan
   }
  }
@@ -1814,7 +1889,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = cajun
   }
  }
@@ -1837,7 +1912,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = caribeno
   }
  }
@@ -1860,7 +1935,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = carribean
   }
  }
@@ -1883,7 +1958,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = cat
   }
  }
@@ -1906,7 +1981,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = catalan
   }
  }
@@ -1929,7 +2004,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = central_algonquian
   }
  }
@@ -1952,7 +2027,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = central_american
   }
  }
@@ -1975,7 +2050,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = chacoan
   }
  }
@@ -1998,7 +2073,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = chechen
   }
  }
@@ -2021,7 +2096,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = cherokee
   }
  }
@@ -2044,7 +2119,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = chewa
   }
  }
@@ -2067,7 +2142,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = chibchan
   }
  }
@@ -2090,7 +2165,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = chokwe
   }
  }
@@ -2113,7 +2188,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = circassian
   }
  }
@@ -2136,7 +2211,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = cree
   }
  }
@@ -2159,7 +2234,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = crni
   }
  }
@@ -2182,7 +2257,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = croat
   }
  }
@@ -2205,7 +2280,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = cushitic
   }
  }
@@ -2228,7 +2303,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = czarny
   }
  }
@@ -2251,7 +2326,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = czech
   }
  }
@@ -2274,7 +2349,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dagestani
   }
  }
@@ -2297,7 +2372,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dakota
   }
  }
@@ -2320,7 +2395,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dakshin
   }
  }
@@ -2343,7 +2418,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = danish
   }
  }
@@ -2366,7 +2441,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = delian
   }
  }
@@ -2389,7 +2464,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dhen
   }
  }
@@ -2412,7 +2487,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dinajidad
   }
  }
@@ -2435,7 +2510,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dinka
   }
  }
@@ -2458,7 +2533,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dixie
   }
  }
@@ -2481,7 +2556,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dog_culture
   }
  }
@@ -2504,7 +2579,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dongren
   }
  }
@@ -2527,7 +2602,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dragon_culture
   }
  }
@@ -2550,7 +2625,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = duck_culture
   }
  }
@@ -2572,8 +2647,9 @@ country_event = {
  picture = "Demonstration"
  
  trigger = {
+  always = no
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dummy
   }
  }
@@ -2596,7 +2672,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dutch
   }
  }
@@ -2619,7 +2695,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = dyula
   }
  }
@@ -2642,7 +2718,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ealimi
   }
  }
@@ -2665,7 +2741,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = east_kwa
   }
  }
@@ -2688,7 +2764,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = eastern_algonquian
   }
  }
@@ -2711,7 +2787,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = edo
   }
  }
@@ -2734,7 +2810,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = elephant_culture
   }
  }
@@ -2757,7 +2833,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = english
   }
  }
@@ -2780,7 +2856,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = eskaleut
   }
  }
@@ -2803,7 +2879,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = esmer
   }
  }
@@ -2826,7 +2902,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = estonian
   }
  }
@@ -2849,7 +2925,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ewe
   }
  }
@@ -2872,7 +2948,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = falklander
   }
  }
@@ -2895,7 +2971,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = fang
   }
  }
@@ -2918,7 +2994,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = fekete
   }
  }
@@ -2941,7 +3017,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = filipino
   }
  }
@@ -2964,7 +3040,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = finnish
   }
  }
@@ -2987,7 +3063,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = flemish
   }
  }
@@ -3010,7 +3086,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = foederatus
   }
  }
@@ -3033,7 +3109,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = fon
   }
  }
@@ -3056,7 +3132,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = forest_bantu
   }
  }
@@ -3079,7 +3155,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = frankish
   }
  }
@@ -3102,7 +3178,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = french
   }
  }
@@ -3125,7 +3201,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = french_australian
   }
  }
@@ -3148,7 +3224,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = french_canadian
   }
  }
@@ -3171,7 +3247,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = fulbe
   }
  }
@@ -3194,7 +3270,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = fur
   }
  }
@@ -3217,7 +3293,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = galician
   }
  }
@@ -3240,7 +3316,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = gaul
   }
  }
@@ -3263,7 +3339,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = georgian
   }
  }
@@ -3286,7 +3362,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = german
   }
  }
@@ -3309,7 +3385,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = greek
   }
  }
@@ -3332,7 +3408,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = griqua
   }
  }
@@ -3355,7 +3431,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = guajiro
   }
  }
@@ -3378,7 +3454,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = guarani
   }
  }
@@ -3401,7 +3477,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = gujarati
   }
  }
@@ -3424,7 +3500,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = guney
   }
  }
@@ -3447,7 +3523,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = gur
   }
  }
@@ -3470,7 +3546,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = gypsy
   }
  }
@@ -3493,7 +3569,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = hakka
   }
  }
@@ -3516,7 +3592,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = harari
   }
  }
@@ -3539,7 +3615,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = hausa
   }
  }
@@ -3562,7 +3638,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = hawaiian
   }
  }
@@ -3585,7 +3661,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = hazara
   }
  }
@@ -3608,7 +3684,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = hedgehog_culture
   }
  }
@@ -3631,7 +3707,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = heiren
   }
  }
@@ -3654,7 +3730,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = herero
   }
  }
@@ -3677,7 +3753,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = hnedy
   }
  }
@@ -3700,7 +3776,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = horse
   }
  }
@@ -3723,7 +3799,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = hungarian
   }
  }
@@ -3746,7 +3822,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ibibio
   }
  }
@@ -3769,7 +3845,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ibo
   }
  }
@@ -3792,7 +3868,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = icelandic
   }
  }
@@ -3815,7 +3891,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ifriqi
   }
  }
@@ -3838,7 +3914,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = inuit
   }
  }
@@ -3861,7 +3937,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = irish
   }
  }
@@ -3884,7 +3960,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = iroquoian
   }
  }
@@ -3907,7 +3983,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = italoamericano
   }
  }
@@ -3930,7 +4006,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = itsekari
   }
  }
@@ -3953,7 +4029,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = janalem
   }
  }
@@ -3976,7 +4052,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = janub
   }
  }
@@ -3999,7 +4075,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = janubi
   }
  }
@@ -4022,7 +4098,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = janubii
   }
  }
@@ -4045,7 +4121,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = japanese
   }
  }
@@ -4068,7 +4144,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = javan
   }
  }
@@ -4091,7 +4167,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = je
   }
  }
@@ -4114,7 +4190,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = jizni
   }
  }
@@ -4137,7 +4213,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = juzhno
   }
  }
@@ -4160,7 +4236,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kaala
   }
  }
@@ -4183,7 +4259,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kachin
   }
  }
@@ -4206,7 +4282,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kanauji
   }
  }
@@ -4229,7 +4305,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kannada
   }
  }
@@ -4252,7 +4328,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kanuri
   }
  }
@@ -4275,7 +4351,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = karen
   }
  }
@@ -4298,7 +4374,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kashmiri
   }
  }
@@ -4321,7 +4397,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kavango
   }
  }
@@ -4344,7 +4420,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kazak
   }
  }
@@ -4367,7 +4443,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kefficho
   }
  }
@@ -4390,7 +4466,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = khmer
   }
  }
@@ -4413,7 +4489,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = khoisan
   }
  }
@@ -4436,7 +4512,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kikuyu
   }
  }
@@ -4459,7 +4535,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kilombero
   }
  }
@@ -4482,7 +4558,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kingwana
   }
  }
@@ -4505,7 +4581,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kirgiz
   }
  }
@@ -4528,7 +4604,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = korean
   }
  }
@@ -4551,7 +4627,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kreol
   }
  }
@@ -4574,7 +4650,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kru
   }
  }
@@ -4597,7 +4673,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kuba
   }
  }
@@ -4620,7 +4696,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = kurdish
   }
  }
@@ -4643,7 +4719,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = lacustrine_bantu
   }
  }
@@ -4666,7 +4742,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = laessin
   }
  }
@@ -4689,7 +4765,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = lao
   }
  }
@@ -4712,7 +4788,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = latin
   }
  }
@@ -4735,7 +4811,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = latvian
   }
  }
@@ -4758,7 +4834,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = lendu
   }
  }
@@ -4781,7 +4857,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = lithuanian
   }
  }
@@ -4804,7 +4880,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = lombard
   }
  }
@@ -4827,7 +4903,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = lomwe
   }
  }
@@ -4850,7 +4926,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = louisianan
   }
  }
@@ -4873,7 +4949,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = lounast
   }
  }
@@ -4896,7 +4972,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = luba
   }
  }
@@ -4919,7 +4995,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = lumenoua
   }
  }
@@ -4942,7 +5018,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = lunda
   }
  }
@@ -4965,7 +5041,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = luo
   }
  }
@@ -4988,7 +5064,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = maasai
   }
  }
@@ -5011,7 +5087,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = macedonian
   }
  }
@@ -5034,7 +5110,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = maghreb_arabic
   }
  }
@@ -5057,7 +5133,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = maghrebi
   }
  }
@@ -5080,7 +5156,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = makua
   }
  }
@@ -5103,7 +5179,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = malagasy
   }
  }
@@ -5126,7 +5202,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = malay
   }
  }
@@ -5149,7 +5225,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = malayalam
   }
  }
@@ -5172,7 +5248,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = maltese
   }
  }
@@ -5195,7 +5271,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = manchu
   }
  }
@@ -5218,7 +5294,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = mande
   }
  }
@@ -5241,7 +5317,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = manipuri
   }
  }
@@ -5264,7 +5340,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = maori
   }
  }
@@ -5287,7 +5363,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = maranon
   }
  }
@@ -5310,7 +5386,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = marathi
   }
  }
@@ -5333,7 +5409,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = mashriqi
   }
  }
@@ -5356,7 +5432,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = maures
   }
  }
@@ -5379,7 +5455,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = mavro
   }
  }
@@ -5402,7 +5478,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = mayan
   }
  }
@@ -5425,7 +5501,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = meashighcaw
   }
  }
@@ -5448,7 +5524,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = melanesian
   }
  }
@@ -5471,7 +5547,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = metis
   }
  }
@@ -5494,7 +5570,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = mexican
   }
  }
@@ -5517,7 +5593,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = miao
   }
  }
@@ -5540,7 +5616,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = micronesian
   }
  }
@@ -5563,7 +5639,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = min
   }
  }
@@ -5586,7 +5662,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = misri
   }
  }
@@ -5609,7 +5685,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = moluccan
   }
  }
@@ -5632,7 +5708,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = mongo
   }
  }
@@ -5655,7 +5731,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = mongol
   }
  }
@@ -5678,7 +5754,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = montenegrin
   }
  }
@@ -5701,7 +5777,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = morado
   }
  }
@@ -5724,7 +5800,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = mossi
   }
  }
@@ -5747,7 +5823,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = muskogean
   }
  }
@@ -5770,7 +5846,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = mustvalge
   }
  }
@@ -5793,7 +5869,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = na_dene
   }
  }
@@ -5816,7 +5892,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nahua
   }
  }
@@ -5839,7 +5915,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nanfaren
   }
  }
@@ -5862,7 +5938,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nanren
   }
  }
@@ -5885,7 +5961,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = native_american
   }
  }
@@ -5908,7 +5984,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = navajo
   }
  }
@@ -5931,7 +6007,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nayeduniya
   }
  }
@@ -5954,7 +6030,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = negru
   }
  }
@@ -5977,7 +6053,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = neo_zelandais
   }
  }
@@ -6000,7 +6076,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = neokosmi
   }
  }
@@ -6023,7 +6099,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nepali
   }
  }
@@ -6046,7 +6122,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nguni
   }
  }
@@ -6069,7 +6145,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nieuwereld
   }
  }
@@ -6092,7 +6168,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nilotic
   }
  }
@@ -6115,7 +6191,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nimruzi
   }
  }
@@ -6137,8 +6213,9 @@ country_event = {
  picture = "Demonstration"
  
  trigger = {
+  always = no
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = noculture
   }
  }
@@ -6161,7 +6238,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = north_andean
   }
  }
@@ -6184,7 +6261,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = north_caucasian
   }
  }
@@ -6207,7 +6284,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = north_german
   }
  }
@@ -6230,7 +6307,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = north_italian
   }
  }
@@ -6253,7 +6330,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = norwegian
   }
  }
@@ -6276,7 +6353,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = notios
   }
  }
@@ -6299,7 +6376,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nouvellien
   }
  }
@@ -6322,7 +6399,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = novisvet
   }
  }
@@ -6345,7 +6422,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = novvymir
   }
  }
@@ -6368,7 +6445,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = novysvet
   }
  }
@@ -6391,7 +6468,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nowyswiat
   }
  }
@@ -6414,7 +6491,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nuba
   }
  }
@@ -6437,7 +6514,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nuer
   }
  }
@@ -6460,7 +6537,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = nyasa
   }
  }
@@ -6483,7 +6560,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = occitan
   }
  }
@@ -6506,7 +6583,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ontustik
   }
  }
@@ -6529,7 +6606,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = oriya
   }
  }
@@ -6552,7 +6629,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = oromo
   }
  }
@@ -6575,7 +6652,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ostrogothic
   }
  }
@@ -6598,7 +6675,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = outremer
   }
  }
@@ -6621,7 +6698,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ovimbundu
   }
  }
@@ -6644,7 +6721,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = panjabi
   }
  }
@@ -6667,7 +6744,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = pashtun
   }
  }
@@ -6690,7 +6767,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = patagonian
   }
  }
@@ -6713,7 +6790,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = penutian
   }
  }
@@ -6736,7 +6813,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = persian
   }
  }
@@ -6759,7 +6836,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = phianam
   }
  }
@@ -6782,7 +6859,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = picard
   }
  }
@@ -6805,7 +6882,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = pictish
   }
  }
@@ -6828,7 +6905,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = pishgam
   }
  }
@@ -6851,7 +6928,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = plains_algonquian
   }
  }
@@ -6874,7 +6951,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = platinean
   }
  }
@@ -6897,7 +6974,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = polar_bears
   }
  }
@@ -6920,7 +6997,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = polish
   }
  }
@@ -6943,7 +7020,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = poludniowy
   }
  }
@@ -6966,7 +7043,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = polynesian
   }
  }
@@ -6989,7 +7066,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = portuguese
   }
  }
@@ -7012,7 +7089,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = pueblo
   }
  }
@@ -7035,7 +7112,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = qalindigi
   }
  }
@@ -7058,7 +7135,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = quechua
   }
  }
@@ -7081,7 +7158,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = rajput
   }
  }
@@ -7104,7 +7181,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = rhinelander
   }
  }
@@ -7127,7 +7204,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = romanian
   }
  }
@@ -7150,7 +7227,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = romansh
   }
  }
@@ -7173,7 +7250,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ruanda
   }
  }
@@ -7196,7 +7273,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = rundi
   }
  }
@@ -7219,7 +7296,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = russian
   }
  }
@@ -7242,7 +7319,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = saahi
   }
  }
@@ -7265,7 +7342,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sami
   }
  }
@@ -7288,7 +7365,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sara
   }
  }
@@ -7311,7 +7388,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = schwarzreicher
   }
  }
@@ -7334,7 +7411,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = scottish
   }
  }
@@ -7357,7 +7434,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sena
   }
  }
@@ -7380,7 +7457,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = senufo
   }
  }
@@ -7403,7 +7480,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sephardic
   }
  }
@@ -7426,7 +7503,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = serb
   }
  }
@@ -7449,7 +7526,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = shan
   }
  }
@@ -7472,7 +7549,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = shona
   }
  }
@@ -7495,7 +7572,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = siberian
   }
  }
@@ -7518,7 +7595,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sidama
   }
  }
@@ -7541,7 +7618,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = siebenburger
   }
  }
@@ -7564,7 +7641,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sindi
   }
  }
@@ -7587,7 +7664,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sinhala
   }
  }
@@ -7610,7 +7687,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = siouan
   }
  }
@@ -7633,7 +7710,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = slovak
   }
  }
@@ -7656,7 +7733,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = slovene
   }
  }
@@ -7679,7 +7756,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = smugly
   }
  }
@@ -7702,7 +7779,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = somali
   }
  }
@@ -7725,7 +7802,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = songhai
   }
  }
@@ -7748,7 +7825,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sonoran
   }
  }
@@ -7771,7 +7848,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sotho
   }
  }
@@ -7794,7 +7871,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = south_andean
   }
  }
@@ -7817,7 +7894,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = south_forest_bantu
   }
  }
@@ -7840,7 +7917,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = south_german
   }
  }
@@ -7863,7 +7940,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = south_italian
   }
  }
@@ -7886,7 +7963,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = southern_bantu
   }
  }
@@ -7909,7 +7986,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = spanish
   }
  }
@@ -7932,7 +8009,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sudanese
   }
  }
@@ -7955,7 +8032,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sudic
   }
  }
@@ -7978,7 +8055,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sudreicher
   }
  }
@@ -8001,7 +8078,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = suebi
   }
  }
@@ -8024,7 +8101,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sukuma
   }
  }
@@ -8047,7 +8124,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sureno
   }
  }
@@ -8070,7 +8147,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = svart
   }
  }
@@ -8093,7 +8170,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = swahili
   }
  }
@@ -8116,7 +8193,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = swedish
   }
  }
@@ -8139,7 +8216,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = swiss
   }
  }
@@ -8162,7 +8239,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = swiss_french
   }
  }
@@ -8185,7 +8262,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = swiss_german
   }
  }
@@ -8208,7 +8285,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = swiss_italian
   }
  }
@@ -8231,7 +8308,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = sydlig
   }
  }
@@ -8254,7 +8331,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tajik
   }
  }
@@ -8277,7 +8354,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tamil
   }
  }
@@ -8300,7 +8377,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tarascan
   }
  }
@@ -8323,7 +8400,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tatar
   }
  }
@@ -8346,7 +8423,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = teda
   }
  }
@@ -8369,7 +8446,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = telegu
   }
  }
@@ -8392,7 +8469,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = texan
   }
  }
@@ -8415,7 +8492,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = thai
   }
  }
@@ -8438,7 +8515,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = thegioimoi
   }
  }
@@ -8461,7 +8538,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tibetan
   }
  }
@@ -8484,7 +8561,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tigray
   }
  }
@@ -8507,7 +8584,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tiv
   }
  }
@@ -8530,7 +8607,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tonga
   }
  }
@@ -8553,7 +8630,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tswana
   }
  }
@@ -8576,7 +8653,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tuareg
   }
  }
@@ -8599,7 +8676,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tupi
   }
  }
@@ -8622,7 +8699,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = tupinamba
   }
  }
@@ -8645,7 +8722,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = turkish
   }
  }
@@ -8668,7 +8745,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = turkmen
   }
  }
@@ -8691,7 +8768,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ubangian
   }
  }
@@ -8714,7 +8791,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ugrian
   }
  }
@@ -8737,7 +8814,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = uighur
   }
  }
@@ -8760,7 +8837,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ujvilag
   }
  }
@@ -8783,7 +8860,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = ukrainian
   }
  }
@@ -8806,7 +8883,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = undead
   }
  }
@@ -8829,7 +8906,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = unyamwezi
   }
  }
@@ -8852,7 +8929,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = usmailmian
   }
  }
@@ -8875,7 +8952,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = uzbek
   }
  }
@@ -8898,7 +8975,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = vietnamese
   }
  }
@@ -8921,7 +8998,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = vinlander
   }
  }
@@ -8944,7 +9021,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = visigothic
   }
  }
@@ -8967,7 +9044,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = volga_german
   }
  }
@@ -8990,7 +9067,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = wallonian
   }
  }
@@ -9013,7 +9090,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = welsh
   }
  }
@@ -9036,7 +9113,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = wenedyk
   }
  }
@@ -9059,7 +9136,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = western_nigritic
   }
  }
@@ -9082,7 +9159,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = western_slavic
   }
  }
@@ -9105,7 +9182,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = wolof
   }
  }
@@ -9128,7 +9205,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = xhosa
   }
  }
@@ -9151,7 +9228,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = xliponian
   }
  }
@@ -9174,7 +9251,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = yakut
   }
  }
@@ -9197,7 +9274,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = yangichi
   }
  }
@@ -9220,7 +9297,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = yankee
   }
  }
@@ -9243,7 +9320,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = yao
   }
  }
@@ -9266,7 +9343,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = yenidun
   }
  }
@@ -9289,7 +9366,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = yi
   }
  }
@@ -9312,7 +9389,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = yoruba
   }
  }
@@ -9335,7 +9412,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = yue
   }
  }
@@ -9358,7 +9435,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = yuzhny
   }
  }
@@ -9381,7 +9458,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = zapotec
   }
  }
@@ -9404,7 +9481,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = zhuang
   }
  }
@@ -9427,7 +9504,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = zuidelijk
   }
  }
@@ -9450,7 +9527,7 @@ country_event = {
  
  trigger = {
   OR = { primary_culture = noculture primary_culture = dummy }
-  capital_scope = {
+  total_pops = 1 capital_scope = {
    pop_majority_culture = zulu
   }
  }

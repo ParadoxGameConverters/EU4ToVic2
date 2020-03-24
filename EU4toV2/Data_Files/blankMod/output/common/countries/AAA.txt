@@ -4,3 +4,16 @@ color = { 154  132  126 }
 	
 graphical_culture = Generic
 
+party = {
+	name = "AAA_PARTY"
+	start_date = 769.1.1
+	end_date = 2000.1.1
+
+	ideology = noIdeology
+
+	economic_policy = noIssue
+	trade_policy = noIssue
+	religious_policy = noIssue
+	citizenship_policy = noIssue
+	war_policy = noIssue
+}
