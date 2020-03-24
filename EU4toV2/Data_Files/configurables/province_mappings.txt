@@ -858,13 +858,13 @@
 	link = { eu4 = 2943 v2 = 2294 }	# Chachapoyas -> Moyobamba
 	link = { eu4 = 814 eu4 = 2827 v2 = 2293 }	# Huanuco, Huaraz -> Huánuco
 	link = { eu4 = 811 eu4 = 810 v2 = 2296 }	# Jauja, Huancavelica -> Huancavelica
-	link = { eu4 = 808 eu4 = 2829 v2 = 2302 v2 = 2301 v2 = 2300 }	# MANY-TO-MANY: Cuzco, Ayaviri -> Cusco, Puerto Maldonado, Pucallpa
+	link = { eu4 = 808 eu4 = 2829 v2 = 2302 v2 = 2301 }	# MANY-TO-MANY: Cuzco, Ayaviri -> Cusco, Puerto Maldonado
 	link = { eu4 = 807 v2 = 2299 }	# Abancay -> Ayacucho
 	link = { eu4 = 806 v2 = 2297 }	# Nazca -> Ica
 	link = { eu4 = 2828 v2 = 2304 }	# Camana -> Arequipa
 	link = { eu4 = 2830 eu4 = 2947 eu4 = 804 eu4 = 2833 v2 = 2303 }	# Quero, Macaya, Puno, Madre de Dios -> Puno
 	link = { eu4 = 802 eu4 = 2831 eu4 = 2942 v2 = 2310 }	# Chuquiabo, Tiahuanaco, Charcas -> La Paz
-	link = { eu4 = 2832 v2 = 2320 v2 = 2321 }	# San Joaquin -> Riberalta, Cobija
+	link = { eu4 = 2832 v2 = 2320 v2 = 2321 v2 = 2549 }	# San Joaquin -> Riberalta, Cobija, Tarauacá
 	link = { eu4 = 803 v2 = 2319 }	# Moxos -> Santa Ana
 	link = { eu4 = 801 v2 = 2311 }	# Cochabamba -> Cochabamba
 	link = { eu4 = 805 v2 = 2578 }	# Arequipa -> Tacna
@@ -881,12 +881,12 @@
 	# Brazil
 	link = { eu4 = 2938 v2 = 2414 }	# Oiapoque -> Amapá
 	link = { eu4 = 747 v2 = 2415 }	# Amapa -> Macapá
-	link = { eu4 = 2934 eu4 = 2933 v2 = 2402 v2 = 2405 v2 = 2412 v2 = 2408 }	# MANY-TO-MANY: Manaus, Barcelos -> Manaus, Borba, Óbidos, Oriximina
-	link = { eu4 = 2930 eu4 = 2935 v2 = 2411 v2 = 2413 v2 = 2600 }	# MANY-TO-MANY: Santarem, Muturu -> Santarém, Marabá, Altamira
-	link = { eu4 = 2929 eu4 = 2890 eu4 = 748 eu4 = 2928 v2 = 2410 }	# Para, Marajó, Belem, Tucurui -> Belém
+	link = { eu4 = 2934 eu4 = 2933 v2 = 2402 v2 = 2405 v2 = 2404 v2 = 2403 v2 = 2401 v2 = 2407 }	# MANY-TO-MANY: Manaus, Barcelos -> Manaus, Borba, Tefe, Cachoeira, Marabitanas, Tabatinga
+	link = { eu4 = 2930 eu4 = 2935 v2 = 2411 v2 = 2413 v2 = 2600 v2 = 2412 v2 = 2408 }	# MANY-TO-MANY: Santarem, Muturu -> Santarém, Marabá, Altamira, Óbidos, Oriximina
+	link = { eu4 = 2929 eu4 = 2890 eu4 = 748 v2 = 2410 }	# Para, Marajó, Belem -> Belém
 	link = { eu4 = 2927 eu4 = 749 v2 = 2424 }	# Alcantara, Maranhao -> São Luís
 	link = { eu4 = 2926 eu4 = 2924 eu4 = 2923 v2 = 2425 }	# Grajau, Timon, Pastos Bons -> Chapada
-	link = { eu4 = 2910 eu4 = 2911 eu4 = 2909 v2 = 2423 }	# Pontal, Natividad, Conceicao -> Palmas
+	link = { eu4 = 2910 eu4 = 2911 eu4 = 2909 eu4 = 2928 v2 = 2423 }	# Pontal, Natividad, Conceicao, Tucurui -> Palmas
 	link = { eu4 = 2925 eu4 = 752 v2 = 2427 }	# Parnagua, Oeiras -> Oeiras
 	link = { eu4 = 2886 v2 = 2426 }	# Parnaiba -> Teresina
 	link = { eu4 = 751 v2 = 2429 }	# Ceara -> Fortaleza
@@ -927,8 +927,8 @@
 	link = { eu4 = 2903 eu4 = 2904 eu4 = 2902 v2 = 2417 }	# Caceres, Diamantino, Vila Bela -> Vila Bela
 	link = { eu4 = 2901 eu4 = 2900 v2 = 2550 }	# Cerejeiras, Guapore -> Forte do Príncipe
 	# Brazilian Wastelands
-	link = { eu4 = 1802 eu4 = 1803 eu4 = 2936 eu4 = 2823 eu4 = 2944 v2 = 2403 v2 = 2401 v2 = 2407 v2 = 2404 v2 = 2549 }	# MANY-TO-MANY: Western Amazonas, Eastern Amazonas, Guyana, Moyobamba, Ucayali -> Cachoeira, Marabitanas, Tabatinga, Tefe, Tarauacá
 	# Patagonia and such
+	link = { eu4 = 2823 eu4 = 2944 v2 = 2300 }	# Moyobamba, Ucayali -> Pucallpa
 	link = { eu4 = 796 v2 = 2308 }	# Arica -> Arica
 	link = { eu4 = 793 v2 = 2307 }	# Iquique -> Iquique
 	link = { eu4 = 2840 v2 = 2309 }	# Calama -> Calama
@@ -1560,9 +1560,8 @@
 	link = { eu4 = 305 eu4 = 1077 v2 = 1026 }	# Perm, Solikamsk -> Perm
 	link = { eu4 = 1080 v2 = 2689 }	# Pelym -> Mulda
 	link = { eu4 = 1780 v2 = 2685 }	# Komi -> Muzhi
-	link = { eu4 = 2426 v2 = 2687 v2 = 2614 }	# Yamal -> Amderma, Mordiyakha
-	link = { eu4 = 2425 v2 = 986 v2 = 2699 v2 = 985 v2 = 2688 v2 = 2589 }	# Nenets -> Naryn Mar, Izhma, Mezen, Inta, Shoyna
-	link = { eu4 = 1955 eu4 = 4122 eu4 = 4256 eu4 = 4257 v2 = 981 }	# Kholmogory, Shenkursk, Solvychegodsk, Mezen -> Archangel
+	link = { eu4 = 2426 eu4 = 2425 v2 = 2614 }	# Yamal, Nenets -> Mordiyakha
+	link = { eu4 = 1955 eu4 = 4122 eu4 = 4256 eu4 = 4257 v2 = 981 v2 = 985 v2 = 2589 v2 = 986 v2 = 2699 v2 = 2688 v2 = 2687 }	# MANY-TO-MANY: Kholmogory, Shenkursk, Solvychegodsk, Mezen -> Archangel, Mezen, Shoyna, Naryn Mar, Izhma, Inta, Amderma
 	link = { eu4 = 313 eu4 = 4258 v2 = 2588 }	# Soroka, Onega -> Onega
 	link = { eu4 = 1958 v2 = 993 }	# Kargopol -> Vyterga
 	link = { eu4 = 1777 v2 = 2587 v2 = 983 v2 = 982 }	# Kola -> Kola, Kandalaksha, Petsamo
@@ -2479,24 +2478,24 @@
 	link = { eu4 = 1784 eu4 = 1786 eu4 = 2194 eu4 = 1785 eu4 = 2200 }	# Tian Shan, Takla Makan, Qilian, Pamir, Suleiman Range -> DROPPED
 	# # Oceania
 	# Australia & New Zealand resettable region australia_zealand
-	link = { eu4 = 2731 eu4 = 2730 v2 = 2488 resettable = australia_zealand }	# Guugu Yimithirr, Awngthim -> Cooktown
-	link = { eu4 = 2729 eu4 = 2728 v2 = 2505 resettable = australia_zealand }	# Yolngu, Tiwi -> Palmerston
-	link = { eu4 = 2732 v2 = 2487 resettable = australia_zealand }	# Wulgurukaba -> Townsville
+	link = { eu4 = 2731 eu4 = 2730 v2 = 2488 v2 = 2604 resettable = australia_zealand }	# MANY-TO-MANY: Guugu Yimithirr, Awngthim -> Cooktown, Normanton
+	link = { eu4 = 2729 eu4 = 2728 v2 = 2505 v2 = 2506 v2 = 2603 v2 = 2507 resettable = australia_zealand }	# MANY-TO-MANY: Yolngu, Tiwi -> Palmerston, Tennant Creek, Tanami, Alice Springs
+	link = { eu4 = 2732 v2 = 2487 v2 = 2489 resettable = australia_zealand }	# Wulgurukaba -> Townsville, Longreach
 	link = { eu4 = 2733 v2 = 2484 resettable = australia_zealand }	# Baiali -> Gladstone
 	link = { eu4 = 1094 v2 = 2483 resettable = australia_zealand }	# Turrbal -> Brisbane
 	link = { eu4 = 1092 v2 = 2470 resettable = australia_zealand }	# Bundjalung -> Port Macquarie
-	link = { eu4 = 1090 v2 = 2469 v2 = 2468 resettable = australia_zealand }	# Eora -> Newcastle, Sydney
+	link = { eu4 = 1090 v2 = 2469 v2 = 2468 v2 = 2471 resettable = australia_zealand }	# Eora -> Newcastle, Sydney, Ophir
 	link = { eu4 = 2734 v2 = 2472 v2 = 2479 resettable = australia_zealand }	# Yuin -> Eden, Sale
-	link = { eu4 = 1087 v2 = 2476 resettable = australia_zealand }	# Wurundjeri -> Melbourne
+	link = { eu4 = 1087 v2 = 2476 v2 = 2480 resettable = australia_zealand }	# Wurundjeri -> Melbourne, Beechworth
 	link = { eu4 = 2735 v2 = 2477 v2 = 2493 resettable = australia_zealand }	# Gunditjmara -> Warmambool, Robe
 	link = { eu4 = 1086 v2 = 2491 resettable = australia_zealand }	# Kaurna -> Adelaide
-	link = { eu4 = 2736 v2 = 2492 v2 = 2494 resettable = australia_zealand }	# Nukunu -> Port Lincoln, Port Augusta
-	link = { eu4 = 2727 v2 = 2498 resettable = australia_zealand }	# Minang -> Kojonup
-	link = { eu4 = 1084 v2 = 2497 resettable = australia_zealand }	# Wadjuk -> Perth
-	link = { eu4 = 2726 v2 = 2499 resettable = australia_zealand }	# Malgana -> Geraldton
-	link = { eu4 = 1093 v2 = 2485 v2 = 2486 resettable = australia_zealand }	# Barunggam -> Clermont, Toowoomba
+	link = { eu4 = 2736 v2 = 2492 v2 = 2494 v2 = 2496 v2 = 2495 resettable = australia_zealand }	# Nukunu -> Port Lincoln, Port Augusta, Tarcoola, Oodnadatta
+	link = { eu4 = 2727 v2 = 2497 v2 = 2498 v2 = 2504 v2 = 2500 resettable = australia_zealand }	# Minang -> Perth, Kojonup, Esperance, Kalgoorlie
+	link = { eu4 = 1084 v2 = 2499 v2 = 2502 v2 = 2605 v2 = 2503 resettable = australia_zealand }	# Wadjuk -> Geraldton, Dampier, Gibson's Desert, Wiluna
+	link = { eu4 = 2726 v2 = 2602 v2 = 2601 v2 = 2501 resettable = australia_zealand }	# Malgana -> Roebourne, Sandy Desert, Broome
+	link = { eu4 = 1093 v2 = 2485 v2 = 2486 v2 = 2490 resettable = australia_zealand }	# Barunggam -> Clermont, Toowoomba, Charleville
 	link = { eu4 = 1091 v2 = 2474 resettable = australia_zealand }	# Kamilaroi -> Moree
-	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 resettable = australia_zealand }	# Wiradjuri -> Beechworth, Wagga Wagga, Ophir
+	link = { eu4 = 1089 v2 = 2473 v2 = 2475 resettable = australia_zealand }	# Wiradjuri -> Wagga Wagga, Broken Hill
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 resettable = australia_zealand }	# Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 resettable = australia_zealand }	# Paredarerme -> Tasmania
 	link = { eu4 = 1106 v2 = 2509 v2 = 2508 resettable = australia_zealand }	# Whangarei -> Auckland, Norfolk Island
@@ -2508,8 +2507,7 @@
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 resettable = australia_zealand }	# Timaru -> Christchurch, Hokitika
 	link = { eu4 = 1246 v2 = 2513 resettable = australia_zealand }	# Waihopai -> Dunedin
 	# Australian Desert
-	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 v2 = 2502 }	# Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome, Dampier
-	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 }	# Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
+	link = { eu4 = 1790 eu4 = 1791 }	# Western Australia, Central Australia -> DROPPED
 	# Pacific East resettable region = pacific
 	link = { eu4 = 1240 v2 = 658 v2 = 2526 v2 = 686 resettable = pacific }	# Hawaii -> Hawaii, Palmyra, Line Islands
 	link = { eu4 = 1997 v2 = 2623 }	# Midway -> Midway Island
@@ -2670,6 +2668,7 @@
 	link = { eu4 = 1783 v2 = 2590 v2 = 2666 v2 = 2661 v2 = 2662 v2 = 2664 v2 = 2621 v2 = 2665 v2 = 2619 v2 = 2647 v2 = 2668 v2 = 2643 }	# Eastern Siberia -> Ugolnoye, Pevek, Nizhnekolymsk, Cherskiy, Oyotuni, Srednekolymsk, Chokurdakh, Abiy, Yansk, Verkhoyansk, Honuu
 	link = { eu4 = 4482 v2 = 1328 }	# Sikkim -> Tumlong
 	link = { eu4 = 4402 }	# Gaoligong Mountains -> DROPPED
+	link = { eu4 = 1803 eu4 = 1802 eu4 = 2936 }	# Eastern Amazonas, Western Amazonas, Guyana -> DROPPED
 }
 1.28.0.0 = {
 	# ## WATER BODIES
@@ -3541,7 +3540,7 @@
 	link = { eu4 = 2828 v2 = 2304 }	# Camana -> Arequipa
 	link = { eu4 = 2830 eu4 = 2947 eu4 = 804 eu4 = 2833 v2 = 2303 }	# Quero, Macaya, Puno, Madre de Dios -> Puno
 	link = { eu4 = 802 eu4 = 2831 eu4 = 2942 v2 = 2310 }	# Chuquiabo, Tiahuanaco, Charcas -> La Paz
-	link = { eu4 = 2832 v2 = 2320 v2 = 2321 }	# San Joaquin -> Riberalta, Cobija
+	link = { eu4 = 2832 v2 = 2320 v2 = 2321 v2 = 2549 }	# San Joaquin -> Riberalta, Cobija, Tarauacá
 	link = { eu4 = 803 v2 = 2319 }	# Moxos -> Santa Ana
 	link = { eu4 = 801 v2 = 2311 }	# Cochabamba -> Cochabamba
 	link = { eu4 = 805 v2 = 2578 }	# Arequipa -> Tacna
@@ -3558,8 +3557,8 @@
 	# Brazil
 	link = { eu4 = 2938 v2 = 2414 }	# Oiapoque -> Amapá
 	link = { eu4 = 747 v2 = 2415 }	# Amapa -> Macapá
-	link = { eu4 = 2934 eu4 = 2933 v2 = 2402 v2 = 2405 v2 = 2412 v2 = 2408 }	# MANY-TO-MANY: Manaus, Barcelos -> Manaus, Borba, Óbidos, Oriximina
-	link = { eu4 = 2930 eu4 = 2935 v2 = 2411 v2 = 2413 v2 = 2600 }	# MANY-TO-MANY: Santarem, Muturu -> Santarém, Marabá, Altamira
+	link = { eu4 = 2934 eu4 = 2933 v2 = 2402 v2 = 2405 v2 = 2404 v2 = 2403 v2 = 2401 v2 = 2407 }	# MANY-TO-MANY: Manaus, Barcelos -> Manaus, Borba, Tefe, Cachoeira, Marabitanas, Tabatinga
+	link = { eu4 = 2930 eu4 = 2935 v2 = 2411 v2 = 2413 v2 = 2600 v2 = 2412 v2 = 2408 }	# MANY-TO-MANY: Santarem, Muturu -> Santarém, Marabá, Altamira, Óbidos, Oriximina
 	link = { eu4 = 2929 eu4 = 2890 eu4 = 748 eu4 = 2928 v2 = 2410 }	# Para, Marajó, Belem, Tucurui -> Belém
 	link = { eu4 = 2927 eu4 = 749 v2 = 2424 }	# Alcantara, Maranhao -> São Luís
 	link = { eu4 = 2926 eu4 = 2924 eu4 = 2923 v2 = 2425 }	# Grajau, Timon, Pastos Bons -> Chapada
@@ -3604,7 +3603,7 @@
 	link = { eu4 = 2903 eu4 = 2904 eu4 = 2902 v2 = 2417 }	# Caceres, Diamantino, Vila Bela -> Vila Bela
 	link = { eu4 = 2901 eu4 = 2900 v2 = 2550 }	# Cerejeiras, Guapore -> Forte do Príncipe
 	# Brazilian Wastelands
-	link = { eu4 = 1802 eu4 = 1803 eu4 = 2936 v2 = 2403 v2 = 2401 v2 = 2407 v2 = 2404 v2 = 2549 }	# MANY-TO-MANY: Western Amazonas, Eastern Amazonas, Guyana -> Cachoeira, Marabitanas, Tabatinga, Tefe, Tarauacá
+	link = { eu4 = 1802 eu4 = 1803 eu4 = 2936 }	# Western Amazonas, Eastern Amazonas, Guyana -> DROPPED
 	# Patagonia and such
 	link = { eu4 = 796 v2 = 2308 }	# Arica -> Arica
 	link = { eu4 = 793 v2 = 2307 }	# Iquique -> Iquique
@@ -4238,9 +4237,9 @@
 	link = { eu4 = 305 eu4 = 1077 v2 = 1026 }	# Perm, Solikamsk -> Perm
 	link = { eu4 = 1080 v2 = 2689 }	# Pelym -> Mulda
 	link = { eu4 = 1780 v2 = 2685 }	# Komi -> Muzhi
-	link = { eu4 = 2426 v2 = 2687 v2 = 2614 }	# Yamal -> Amderma, Mordiyakha
-	link = { eu4 = 2425 v2 = 986 v2 = 2699 v2 = 985 v2 = 2688 v2 = 2589 }	# Nenets -> Naryn Mar, Izhma, Mezen, Inta, Shoyna
-	link = { eu4 = 1955 eu4 = 4122 eu4 = 4256 eu4 = 4257 v2 = 981 }	# Kholmogory, Shenkursk, Solvychegodsk, Mezen -> Archangel
+	link = { eu4 = 2426 v2 = 2614 }	# Yamal -> Mordiyakha
+	link = { eu4 = 2425 }	# Nenets -> DROPPED
+	link = { eu4 = 1955 eu4 = 4122 eu4 = 4256 eu4 = 4257 v2 = 981 v2 = 985 v2 = 2699 v2 = 986 v2 = 2688 v2 = 2687 v2 = 2589 }	# MANY-TO-MANY: Kholmogory, Shenkursk, Solvychegodsk, Mezen -> Archangel, Mezen, Izhma, Naryn Mar, Inta, Amderma, Shoyna
 	link = { eu4 = 313 eu4 = 4258 v2 = 2588 }	# Soroka, Onega -> Onega
 	link = { eu4 = 1958 v2 = 993 }	# Kargopol -> Vyterga
 	link = { eu4 = 1777 v2 = 2587 v2 = 983 v2 = 982 }	# Kola -> Kola, Kandalaksha, Petsamo
@@ -5160,24 +5159,24 @@
 	link = { eu4 = 1784 eu4 = 1786 eu4 = 2194 eu4 = 1785 eu4 = 2200 }	# Tian Shan, Takla Makan, Qilian, Pamir, Suleiman Range -> DROPPED
 	# # Oceania
 	# Australia & New Zealand resettable region australia_zealand
-	link = { eu4 = 2731 eu4 = 2730 v2 = 2488 resettable = australia_zealand }	# Guugu Yimithirr, Awngthim -> Cooktown
-	link = { eu4 = 2729 eu4 = 2728 v2 = 2505 resettable = australia_zealand }	# Yolngu, Tiwi -> Palmerston
-	link = { eu4 = 2732 v2 = 2487 resettable = australia_zealand }	# Wulgurukaba -> Townsville
+	link = { eu4 = 2731 eu4 = 2730 v2 = 2488 v2 = 2604 resettable = australia_zealand }	# MANY-TO-MANY: Guugu Yimithirr, Awngthim -> Cooktown, Normanton
+	link = { eu4 = 2729 eu4 = 2728 v2 = 2505 v2 = 2506 v2 = 2603 v2 = 2507 resettable = australia_zealand }	# MANY-TO-MANY: Yolngu, Tiwi -> Palmerston, Tennant Creek, Tanami, Alice Springs
+	link = { eu4 = 2732 v2 = 2487 v2 = 2489 resettable = australia_zealand }	# Wulgurukaba -> Townsville, Longreach
 	link = { eu4 = 2733 v2 = 2484 resettable = australia_zealand }	# Baiali -> Gladstone
 	link = { eu4 = 1094 v2 = 2483 resettable = australia_zealand }	# Turrbal -> Brisbane
 	link = { eu4 = 1092 v2 = 2470 resettable = australia_zealand }	# Bundjalung -> Port Macquarie
-	link = { eu4 = 1090 v2 = 2469 v2 = 2468 resettable = australia_zealand }	# Eora -> Newcastle, Sydney
+	link = { eu4 = 1090 v2 = 2469 v2 = 2468 v2 = 2471 resettable = australia_zealand }	# Eora -> Newcastle, Sydney, Ophir
 	link = { eu4 = 2734 v2 = 2472 v2 = 2479 resettable = australia_zealand }	# Yuin -> Eden, Sale
-	link = { eu4 = 1087 v2 = 2476 resettable = australia_zealand }	# Wurundjeri -> Melbourne
+	link = { eu4 = 1087 v2 = 2476 v2 = 2480 resettable = australia_zealand }	# Wurundjeri -> Melbourne, Beechworth
 	link = { eu4 = 2735 v2 = 2477 v2 = 2493 resettable = australia_zealand }	# Gunditjmara -> Warmambool, Robe
 	link = { eu4 = 1086 v2 = 2491 resettable = australia_zealand }	# Kaurna -> Adelaide
-	link = { eu4 = 2736 v2 = 2492 v2 = 2494 resettable = australia_zealand }	# Nukunu -> Port Lincoln, Port Augusta
-	link = { eu4 = 2727 v2 = 2498 resettable = australia_zealand }	# Minang -> Kojonup
-	link = { eu4 = 1084 v2 = 2497 resettable = australia_zealand }	# Wadjuk -> Perth
-	link = { eu4 = 2726 v2 = 2499 resettable = australia_zealand }	# Malgana -> Geraldton
-	link = { eu4 = 1093 v2 = 2485 v2 = 2486 resettable = australia_zealand }	# Barunggam -> Clermont, Toowoomba
+	link = { eu4 = 2736 v2 = 2492 v2 = 2494 v2 = 2496 v2 = 2495 resettable = australia_zealand }	# Nukunu -> Port Lincoln, Port Augusta, Tarcoola, Oodnadatta
+	link = { eu4 = 2727 v2 = 2497 v2 = 2498 v2 = 2504 v2 = 2500 resettable = australia_zealand }	# Minang -> Perth, Kojonup, Esperance, Kalgoorlie
+	link = { eu4 = 1084 v2 = 2499 v2 = 2502 v2 = 2503 v2 = 2605 resettable = australia_zealand }	# Wadjuk -> Geraldton, Dampier, Wiluna, Gibson's Desert
+	link = { eu4 = 2726 v2 = 2602 v2 = 2601 v2 = 2501 resettable = australia_zealand }	# Malgana -> Roebourne, Sandy Desert, Broome
+	link = { eu4 = 1093 v2 = 2485 v2 = 2486 v2 = 2490 resettable = australia_zealand }	# Barunggam -> Clermont, Toowoomba, Charleville
 	link = { eu4 = 1091 v2 = 2474 resettable = australia_zealand }	# Kamilaroi -> Moree
-	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 resettable = australia_zealand }	# Wiradjuri -> Beechworth, Wagga Wagga, Ophir
+	link = { eu4 = 1089 v2 = 2473 v2 = 2475 resettable = australia_zealand }	# Wiradjuri -> Wagga Wagga, Broken Hill
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 resettable = australia_zealand }	# Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 resettable = australia_zealand }	# Paredarerme -> Tasmania
 	link = { eu4 = 1106 v2 = 2509 v2 = 2508 resettable = australia_zealand }	# Whangarei -> Auckland, Norfolk Island
@@ -5189,8 +5188,8 @@
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 resettable = australia_zealand }	# Timaru -> Christchurch, Hokitika
 	link = { eu4 = 1246 v2 = 2513 resettable = australia_zealand }	# Waihopai -> Dunedin
 	# Australian Desert
-	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 v2 = 2502 }	# Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome, Dampier
-	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 }	# Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
+	link = { eu4 = 1790 }	# Western Australia -> DROPPED
+	link = { eu4 = 1791 }	# Central Australia -> DROPPED
 	# Pacific East resettable region = pacific
 	link = { eu4 = 1240 v2 = 658 v2 = 2526 v2 = 686 resettable = pacific }	# Hawaii -> Hawaii, Palmyra, Line Islands
 	link = { eu4 = 1997 v2 = 2623 }	# Midway -> Midway Island
@@ -6209,7 +6208,7 @@
 	link = { eu4 = 2828 v2 = 2304 }	# Camana -> Arequipa
 	link = { eu4 = 2830 eu4 = 2947 eu4 = 804 eu4 = 2833 v2 = 2303 }	# Quero, Macaya, Puno, Madre de Dios -> Puno
 	link = { eu4 = 802 eu4 = 2831 eu4 = 2942 v2 = 2310 }	# Chuquiabo, Tiahuanaco, Charcas -> La Paz
-	link = { eu4 = 2832 v2 = 2320 v2 = 2321 }	# San Joaquin -> Riberalta, Cobija
+	link = { eu4 = 2832 v2 = 2320 v2 = 2321 v2 = 2549 }	# San Joaquin -> Riberalta, Cobija, Tarauacá
 	link = { eu4 = 803 v2 = 2319 }	# Moxos -> Santa Ana
 	link = { eu4 = 801 v2 = 2311 }	# Cochabamba -> Cochabamba
 	link = { eu4 = 805 v2 = 2578 }	# Arequipa -> Tacna
@@ -6226,8 +6225,8 @@
 	# Brazil
 	link = { eu4 = 2938 v2 = 2414 }	# Oiapoque -> Amapá
 	link = { eu4 = 747 v2 = 2415 }	# Amapa -> Macapá
-	link = { eu4 = 2934 eu4 = 2933 v2 = 2402 v2 = 2405 v2 = 2412 v2 = 2408 }	# MANY-TO-MANY: Manaus, Barcelos -> Manaus, Borba, Óbidos, Oriximina
-	link = { eu4 = 2930 eu4 = 2935 v2 = 2411 v2 = 2413 v2 = 2600 }	# MANY-TO-MANY: Santarem, Muturu -> Santarém, Marabá, Altamira
+	link = { eu4 = 2934 eu4 = 2933 v2 = 2402 v2 = 2405 v2 = 2404 v2 = 2403 v2 = 2407 v2 = 2401 }	# MANY-TO-MANY: Manaus, Barcelos -> Manaus, Borba, Tefe, Cachoeira, Tabatinga, Marabitanas
+	link = { eu4 = 2930 eu4 = 2935 v2 = 2411 v2 = 2413 v2 = 2600 v2 = 2412 v2 = 2408 }	# MANY-TO-MANY: Santarem, Muturu -> Santarém, Marabá, Altamira, Óbidos, Oriximina
 	link = { eu4 = 2929 eu4 = 2890 eu4 = 748 eu4 = 2928 v2 = 2410 }	# Para, Marajó, Belem, Tucurui -> Belém
 	link = { eu4 = 2927 eu4 = 749 v2 = 2424 }	# Alcantara, Maranhao -> São Luís
 	link = { eu4 = 2926 eu4 = 2924 eu4 = 2923 v2 = 2425 }	# Grajau, Timon, Pastos Bons -> Chapada
@@ -6272,7 +6271,7 @@
 	link = { eu4 = 2903 eu4 = 2904 eu4 = 2902 v2 = 2417 }	# Caceres, Diamantino, Vila Bela -> Vila Bela
 	link = { eu4 = 2901 eu4 = 2900 v2 = 2550 }	# Cerejeiras, Guapore -> Forte do Príncipe
 	# Brazilian Wastelands
-	link = { eu4 = 1802 eu4 = 1803 eu4 = 2936 v2 = 2403 v2 = 2401 v2 = 2407 v2 = 2404 v2 = 2549 }	# MANY-TO-MANY: Western Amazonas, Eastern Amazonas, Guyana -> Cachoeira, Marabitanas, Tabatinga, Tefe, Tarauacá
+	link = { eu4 = 1802 eu4 = 1803 eu4 = 2936 }	# Western Amazonas, Eastern Amazonas, Guyana -> DROPPED
 	# Patagonia and such
 	link = { eu4 = 796 v2 = 2308 }	# Arica -> Arica
 	link = { eu4 = 793 v2 = 2307 }	# Iquique -> Iquique
@@ -6893,8 +6892,8 @@
 	link = { eu4 = 1080 v2 = 2689 }	# Pelym -> Mulda
 	link = { eu4 = 1780 v2 = 2685 }	# Komi -> Muzhi
 	link = { eu4 = 2426 v2 = 2687 v2 = 2614 }	# Yamal -> Amderma, Mordiyakha
-	link = { eu4 = 2425 v2 = 986 v2 = 2699 v2 = 985 v2 = 2688 v2 = 2589 }	# Nenets -> Naryn Mar, Izhma, Mezen, Inta, Shoyna
-	link = { eu4 = 1955 eu4 = 4122 eu4 = 4256 eu4 = 4257 v2 = 981 }	# Kholmogory, Shenkursk, Solvychegodsk, Mezen -> Archangel
+	link = { eu4 = 2425 }	# Nenets -> DROPPED
+	link = { eu4 = 1955 eu4 = 4122 eu4 = 4256 eu4 = 4257 v2 = 981 v2 = 985 v2 = 2589 v2 = 986 v2 = 2699 v2 = 2688 }	# MANY-TO-MANY: Kholmogory, Shenkursk, Solvychegodsk, Mezen -> Archangel, Mezen, Shoyna, Naryn Mar, Izhma, Inta
 	link = { eu4 = 313 eu4 = 4258 v2 = 2588 }	# Soroka, Onega -> Onega
 	link = { eu4 = 1958 v2 = 993 }	# Kargopol -> Vyterga
 	link = { eu4 = 1777 v2 = 2587 v2 = 983 v2 = 982 }	# Kola -> Kola, Kandalaksha, Petsamo
@@ -7813,24 +7812,24 @@
 	link = { eu4 = 1784 eu4 = 1786 eu4 = 2194 eu4 = 1785 eu4 = 2200 }	# Tian Shan, Takla Makan, Qilian, Pamir, Suleiman Range -> DROPPED
 	# # Oceania
 	# Australia & New Zealand resettable region australia_zealand
-	link = { eu4 = 2731 eu4 = 2730 v2 = 2488 resettable = australia_zealand }	# Guugu Yimithirr, Awngthim -> Cooktown
-	link = { eu4 = 2729 eu4 = 2728 v2 = 2505 resettable = australia_zealand }	# Yolngu, Tiwi -> Palmerston
-	link = { eu4 = 2732 v2 = 2487 resettable = australia_zealand }	# Wulgurukaba -> Townsville
+	link = { eu4 = 2731 eu4 = 2730 v2 = 2488 v2 = 2604 resettable = australia_zealand }	# MANY-TO-MANY: Guugu Yimithirr, Awngthim -> Cooktown, Normanton
+	link = { eu4 = 2729 eu4 = 2728 v2 = 2505 v2 = 2506 v2 = 2603 v2 = 2507 resettable = australia_zealand }	# MANY-TO-MANY: Yolngu, Tiwi -> Palmerston, Tennant Creek, Tanami, Alice Springs
+	link = { eu4 = 2732 v2 = 2487 v2 = 2489 resettable = australia_zealand }	# Wulgurukaba -> Townsville, Longreach
 	link = { eu4 = 2733 v2 = 2484 resettable = australia_zealand }	# Baiali -> Gladstone
 	link = { eu4 = 1094 v2 = 2483 resettable = australia_zealand }	# Turrbal -> Brisbane
 	link = { eu4 = 1092 v2 = 2470 resettable = australia_zealand }	# Bundjalung -> Port Macquarie
-	link = { eu4 = 1090 v2 = 2469 v2 = 2468 resettable = australia_zealand }	# Eora -> Newcastle, Sydney
+	link = { eu4 = 1090 v2 = 2469 v2 = 2468 v2 = 2471 resettable = australia_zealand }	# Eora -> Newcastle, Sydney, Ophir
 	link = { eu4 = 2734 v2 = 2472 v2 = 2479 resettable = australia_zealand }	# Yuin -> Eden, Sale
-	link = { eu4 = 1087 v2 = 2476 resettable = australia_zealand }	# Wurundjeri -> Melbourne
+	link = { eu4 = 1087 v2 = 2476 v2 = 2480 resettable = australia_zealand }	# Wurundjeri -> Melbourne, Beechworth
 	link = { eu4 = 2735 v2 = 2477 v2 = 2493 resettable = australia_zealand }	# Gunditjmara -> Warmambool, Robe
 	link = { eu4 = 1086 v2 = 2491 resettable = australia_zealand }	# Kaurna -> Adelaide
-	link = { eu4 = 2736 v2 = 2492 v2 = 2494 resettable = australia_zealand }	# Nukunu -> Port Lincoln, Port Augusta
-	link = { eu4 = 2727 v2 = 2498 resettable = australia_zealand }	# Minang -> Kojonup
-	link = { eu4 = 1084 v2 = 2497 resettable = australia_zealand }	# Wadjuk -> Perth
-	link = { eu4 = 2726 v2 = 2499 resettable = australia_zealand }	# Malgana -> Geraldton
-	link = { eu4 = 1093 v2 = 2485 v2 = 2486 resettable = australia_zealand }	# Barunggam -> Clermont, Toowoomba
+	link = { eu4 = 2736 v2 = 2492 v2 = 2494 v2 = 2496 v2 = 2495 resettable = australia_zealand }	# Nukunu -> Port Lincoln, Port Augusta, Tarcoola, Oodnadatta
+	link = { eu4 = 2727 v2 = 2497 v2 = 2498 v2 = 2504 v2 = 2500 resettable = australia_zealand }	# Minang -> Perth, Kojonup, Esperance, Kalgoorlie
+	link = { eu4 = 1084 v2 = 2499 v2 = 2502 v2 = 2605 v2 = 2503 resettable = australia_zealand }	# Wadjuk -> Geraldton, Dampier, Gibson's Desert, Wiluna
+	link = { eu4 = 2726 v2 = 2602 v2 = 2601 v2 = 2501 resettable = australia_zealand }	# Malgana -> Roebourne, Sandy Desert, Broome
+	link = { eu4 = 1093 v2 = 2485 v2 = 2486 v2 = 2490 resettable = australia_zealand }	# Barunggam -> Clermont, Toowoomba, Charleville
 	link = { eu4 = 1091 v2 = 2474 resettable = australia_zealand }	# Kamilaroi -> Moree
-	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 resettable = australia_zealand }	# Wiradjuri -> Beechworth, Wagga Wagga, Ophir
+	link = { eu4 = 1089 v2 = 2473 v2 = 2475 resettable = australia_zealand }	# Wiradjuri -> Wagga Wagga, Broken Hill
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 resettable = australia_zealand }	# Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 resettable = australia_zealand }	# Paredarerme -> Tasmania
 	link = { eu4 = 1106 v2 = 2509 v2 = 2508 resettable = australia_zealand }	# Whangarei -> Auckland, Norfolk Island
@@ -7842,8 +7841,8 @@
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 resettable = australia_zealand }	# Timaru -> Christchurch, Hokitika
 	link = { eu4 = 1246 v2 = 2513 resettable = australia_zealand }	# Waihopai -> Dunedin
 	# Australian Desert
-	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 v2 = 2502 }	# Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome, Dampier
-	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 }	# Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
+	link = { eu4 = 1790 }	# Western Australia -> DROPPED
+	link = { eu4 = 1791 }	# Central Australia -> DROPPED
 	# Pacific East resettable region = pacific
 	link = { eu4 = 1240 v2 = 658 v2 = 2526 v2 = 686 resettable = pacific }	# Hawaii -> Hawaii, Palmyra, Line Islands
 	link = { eu4 = 1997 v2 = 2623 }	# Midway -> Midway Island
@@ -9018,9 +9017,9 @@
 	link = { eu4 = 4121 v2 = 254 v2 = 256 }	# Ulster -> Belfast, Armagh
 	link = { eu4 = 372 v2 = 255 }	# Tyrone -> Londonderry
 	link = { eu4 = 373 v2 = 263 }	# Pale -> Dublin
-	link = { eu4 = 374 v2 = 265 }	# Leinster-> Wexford
+	link = { eu4 = 374 v2 = 265 }	# Leinster -> Wexford
 	link = { eu4 = 4120 v2 = 264 }	# Kildare -> Kildare
-	link = { eu4 = 4119 v2 = 259 v2 = 257 }	# MANY-TO-MANY: Sligo, Donegal -> Sligo, Donegal
+	link = { eu4 = 4119 v2 = 259 v2 = 257 }	# Sligo -> Sligo, Donegal
 	link = { eu4 = 376 v2 = 258 }	# Connaught -> Galway
 	link = { eu4 = 375 v2 = 261 v2 = 260 }	# Limerick -> Limerick, Cork
 	link = { eu4 = 4118 v2 = 262 }	# Cork -> Waterford
