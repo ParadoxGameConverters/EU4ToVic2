@@ -1,7 +1,8 @@
 KEY;ENGLISH;FRENCH;GERMAN;POLISH;SPANISH;ITALIAN;HUNGARIAN;CZECH;HUNGARIAN;DUTCH;PORTUGUESE;RUSSIAN;FINNISH;X
 #translate notes;x = EN, FR, DE, IT controlled;y = as well as ES, PL, RU;z = …and PT;;;;;;;;;;;
-AAA;x;x;x;x;x;x;x;x;x;x;x;x;x;y
-AAA_ADJ;x;x;x;x;x;x;x;x;x;x;x;x;x;y
+AAA;The Observer;L'Observateur;Der Beobachter;Obserwator;El Observador;L'Osservatore;A megfigyelõ;Pozorovatel;A megfigyelõ;De waarnemer;O observador;Íàáëşäàòåëü;Tarkkailija;x
+AAA_ADJ;Observing;Observante;Beobachtend;Obserwowaæ;Observante;Osservante;megfigyelése;Pozorování;megfigyelése;Observeren;Observando;Íàáëşäàòåëÿ;tarkkailemalla;x
+AAA_PARTY;The Observing Faction;La faction observatrice;Die beobachtende Fraktion;Frakcja obserwuj¹ca;La facción observadora;La Fazione che Osserva;A megfigyelõ frakció;Pozorovací frakce;A megfigyelõ frakció;De waarnemende factie;A Facção Observadora;Ôğàêöèÿ Íàáëşäàòåëåé;Tarkkaileva ryhmä;x
 AAC;Aachen;Aix-la-Chapelle;Aachen;Aachen;Aquisgrán;Aquisgrana;Aachen;Aachen;Aachen;Aachen;Aachen;Ààõåí;Aachen;x
 AAC_ADJ;Aachener;Aixois;Aachener;Aachener;Aquisgranés;Aquisgranese;aachener;Aachener;aachener;Aachener;Aachener;Ààõåíåğ;Aachener;x
 ABB;Dongola;Dongola;Dongola;Dongola;Dongola;Dongola;Dongola;Dongola;Dongola;Dongola;Dongola;Äîíãîëà;Dongola;z
