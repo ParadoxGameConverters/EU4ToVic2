@@ -1,3 +1,31 @@
+# At war with a landless country
+country_event = { 
+	id = 2500020
+	title = NOWARTITLE
+	desc = NOWARDESC
+
+	trigger = { 
+		OR = {
+			exists = no
+			tag = REB #God knows why
+		}
+		war = yes
+	}
+
+	mean_time_to_happen = { months = 0.00001 } #F--king immediately
+
+	option = { 
+		name = NOWAROPTA
+		neutrality = yes
+		any_country = {
+			limit = {
+				war = FROM
+			}
+			end_war = FROM
+		}
+	}
+}
+
 ## Fixing noculture through events ##
 # Event 1000000: Noculture'd pops
 # Event 1000001: Accepted minority of noculture
