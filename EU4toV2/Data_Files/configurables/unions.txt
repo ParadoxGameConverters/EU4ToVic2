@@ -72,11 +72,11 @@ link = { tag = UBD culture = estonian } #and Estonia
 
 
 #Arab => Arabia
-link = { tag = ARA culture = maghrebi }
-link = { tag = ARA culture = misri } #and Egypt
-link = { tag = ARA culture = mashriqi } #and Iraq
+#link = { tag = ARA culture = maghrebi }
+#link = { tag = ARA culture = misri } #and Egypt
+#link = { tag = ARA culture = mashriqi } #and Iraq
 link = { tag = ARA culture = bedouin }
-link = { tag = ARA culture = berber }
+#link = { tag = ARA culture = berber }
 
 #Persian
 link = { tag = TKS culture = uzbek } #Turkestan
