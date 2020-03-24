@@ -35,7 +35,8 @@ class Configuration: commonItems::parser
 		enum class DEADCORES { LeaveAll = 1, DeadCores = 2, AllCores = 3 };
 		enum class POPSHAPES { Vanilla = 1, PopShaping = 2, Extreme = 3 };
 		enum class COREHANDLES { DropNone = 1, DropNational = 2, DropUnions = 3, DropAll = 4 };
-		enum class EUROCENTRISM { VanillaImport = 1, EuroCentric = 2 };
+		enum class EUROCENTRISM { EuroCentric = 1, VanillaImport = 2};
+		enum class AFRICARESET { ResetAfrica = 1, LeaveAfrica = 2 };
 		enum class ABSORBCOLONIES { AbsorbNone = 1, AbsorbSome = 2, AbsorbAll = 3 };
 		enum class LIBERTYDESIRE { Loyal = 1, Disloyal = 2, Rebellious = 3 };
 
@@ -51,6 +52,7 @@ class Configuration: commonItems::parser
 		[[nodiscard]] auto getDebug() const { return debug; }
 		[[nodiscard]] auto getRandomiseRgos() const { return randomiseRgos; }
 		[[nodiscard]] auto getConvertAll() const { return convertAll; }
+		[[nodiscard]] auto getAfricaReset() const { return africaReset; }
 
 		[[nodiscard]] const auto& getEU4SaveGamePath() const { return EU4SaveGamePath; }
 		[[nodiscard]] const auto& getEU4Path() const { return EU4Path; }
@@ -95,6 +97,7 @@ class Configuration: commonItems::parser
 		DEADCORES removeType = DEADCORES::DeadCores;
 		EUROCENTRISM euroCentric = EUROCENTRISM::VanillaImport;
 		ABSORBCOLONIES absorbColonies = ABSORBCOLONIES::AbsorbNone;
+		AFRICARESET africaReset = AFRICARESET::ResetAfrica;
 		double popShapingFactor = 50.0;
 		bool debug = false;
 		bool randomiseRgos = false;

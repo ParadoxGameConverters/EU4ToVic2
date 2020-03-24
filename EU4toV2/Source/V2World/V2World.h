@@ -33,6 +33,7 @@
 #include "../Mappers/StartingInventionMapper/StartingInventionMapper.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
 #include "../Mappers/RegionLocalizations/RegionLocalizations.h"
+#include "../Mappers/AfricaReset/AfricaResetMapper.h"
 #include "Province/ProvinceNameParser.h"
 #include <list>
 #include <memory>
@@ -90,7 +91,7 @@ namespace V2
 		void importPotentialCountry(const std::string& line, bool dynamicCountry);
 		void initializeCultureMappers();
 		void convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
-		void convertProvinces(const EU4::World& sourceWorld);
+		void convertProvinces(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper, const EU4::Regions& eu4Regions);
 		void initializeCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper);
 		void convertNationalValues();
 		void convertPrestige();
@@ -152,6 +153,7 @@ namespace V2
 		mappers::StartingInventionMapper startingInventionMapper;
 		mappers::CultureGroups cultureGroupsMapper;
 		mappers::RegionLocalizations regionLocalizations;
+		mappers::AfricaResetMapper africaResetMapper;
 		ProvinceNameParser provinceNameParser;
 		CountryPopLogger countryPopLogger;
 		MappingChecker mappingChecker;

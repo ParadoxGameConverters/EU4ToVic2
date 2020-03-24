@@ -562,6 +562,9 @@
     <ClCompile Include="Source\Mappers\SuperGroupMapper\SuperRegion.cpp">
       <Filter>Mappers\SuperGroupMapper</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\AfricaReset\AfricaResetMapper.cpp">
+      <Filter>Mappers\AfricaReset</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1082,6 +1085,9 @@
     <ClInclude Include="Source\Mappers\SuperGroupMapper\SuperRegion.h">
       <Filter>Mappers\SuperGroupMapper</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\AfricaReset\AfricaResetMapper.h">
+      <Filter>Mappers\AfricaReset</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1320,6 +1326,9 @@
     </Filter>
     <Filter Include="Mappers\RegionLocalizations">
       <UniqueIdentifier>{a93eee1b-4ac7-45bd-b487-b0fd8cc6ce36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\AfricaReset">
+      <UniqueIdentifier>{b28a005e-f675-484c-800a-bd321bfe49b2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

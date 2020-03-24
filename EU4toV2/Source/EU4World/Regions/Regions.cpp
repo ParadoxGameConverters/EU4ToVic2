@@ -14,7 +14,6 @@ EU4::Regions::Regions(const SuperRegions& sRegions, const Areas& areas, std::ist
 	parseStream(regionsFile);
 	clearRegisteredKeywords();
 
-	for (const auto& area : areas.getAreas()) regions.insert(std::make_pair(area.first, Region(area.second)));
 	superRegions = sRegions.getSuperRegions();
 }
 
