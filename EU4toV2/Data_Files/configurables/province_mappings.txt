@@ -2032,8 +2032,8 @@
 	link = { eu4 = 1999 v2 = 2406 }	# Cocos Island -> Cocos Islands
 	link = { eu4 = 1998 v2 = 2244 }	# Christmas Island -> Christmas Island
 	# Indo Wasteland
-	link = { eu4 = 1789 v2 = 1454 resettable = new_guinea }	# Papua -> Merah
-	link = { eu4 = 2740 v2 = 1422 v2 = 1428 resettable = indonesia }	# Borneo -> Muraleve, Sintang
+	link = { eu4 = 1789 resettable = new_guinea }	# Papua -> DROPPED
+	link = { eu4 = 2740 resettable = indonesia }	# Borneo -> DROPPED
 	# Persia
 	link = { eu4 = 2214 v2 = 1116 }	# Golestan -> Gorgan
 	link = { eu4 = 2236 v2 = 1150 }	# Bojnord -> Bojnurd
@@ -2536,7 +2536,7 @@
 	link = { eu4 = 1237 v2 = 2528 resettable = new_guinea }	# Hanuabada -> Port Moresby
 	link = { eu4 = 2722 eu4 = 2721 v2 = 2529 resettable = new_guinea }	# Daru, Kerema -> Kerema
 	link = { eu4 = 2723 eu4 = 2724 v2 = 1560 resettable = new_guinea }	# Yos Sudarso, Asmat -> Merauke
-	link = { eu4 = 2718 eu4 = 1245 v2 = 1453 v2 = 1452 resettable = new_guinea }	# MANY-TO-MANY: Fak-Fak, Manokwari -> Sorong, Biak
+	link = { eu4 = 2718 eu4 = 1245 v2 = 1453 v2 = 1452 v2 = 1454 resettable = new_guinea }	# MANY-TO-MANY: Fak-Fak, Manokwari -> Sorong, Biak, Merah
 	# Indonesia resettable region = indonesia
 	link = { eu4 = 2725 eu4 = 2696 v2 = 1451 resettable = indonesia }	# Aru, Yamdena -> Aru
 	link = { eu4 = 647 v2 = 1450 resettable = indonesia }	# Ceram -> Ceram
@@ -2583,10 +2583,10 @@
 	link = { eu4 = 637 v2 = 1396 resettable = indonesia }	# Jesselton -> Api
 	link = { eu4 = 2703 v2 = 1397 resettable = indonesia }	# Lehad Datu -> Sandakan
 	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 resettable = indonesia }	# Tarakan, Bulungan, Berau -> Tarakan
-	link = { eu4 = 638 eu4 = 2712 v2 = 1429 resettable = indonesia }	# Kutai, Samarinda -> Samarinda
+	link = { eu4 = 638 eu4 = 2712 v2 = 1429 v2 = 1422 resettable = indonesia }	# MANY-TO-MANY: Kutai, Samarinda -> Samarinda, Muraleve
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 resettable = indonesia }	# MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 resettable = indonesia }	# Sampit, Katapang -> Kota Waringin
-	link = { eu4 = 640 v2 = 1426 v2 = 2576 resettable = indonesia }	# Pontianak -> Pontianak, Natuna
+	link = { eu4 = 640 v2 = 1426 v2 = 2576 v2 = 1428 resettable = indonesia }	# Pontianak -> Pontianak, Natuna, Sintang
 	link = { eu4 = 2705 v2 = 1394 resettable = indonesia }	# Kuching -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 resettable = indonesia }	# MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	# Philippines resettable region = philippines
@@ -4713,8 +4713,8 @@
 	link = { eu4 = 1999 v2 = 2406 }	# Cocos Island -> Cocos Islands
 	link = { eu4 = 1998 v2 = 2244 }	# Christmas Island -> Christmas Island
 	# Indo Wasteland
-	link = { eu4 = 1789 v2 = 1454 resettable = new_guinea }	# Papua -> Merah
-	link = { eu4 = 2740 v2 = 1422 v2 = 1428 resettable = indonesia }	# Borneo -> Muraleve, Sintang
+	link = { eu4 = 1789 resettable = new_guinea }	# Papua -> DROPPED
+	link = { eu4 = 2740 resettable = indonesia }	# Borneo -> DROPPED
 	# Persia
 	link = { eu4 = 2214 v2 = 1116 }	# Golestan -> Gorgan
 	link = { eu4 = 2236 v2 = 1150 }	# Bojnord -> Bojnurd
@@ -5218,7 +5218,7 @@
 	link = { eu4 = 1237 v2 = 2528 resettable = new_guinea }	# Hanuabada -> Port Moresby
 	link = { eu4 = 2722 eu4 = 2721 v2 = 2529 resettable = new_guinea }	# Daru, Kerema -> Kerema
 	link = { eu4 = 2723 eu4 = 2724 v2 = 1560 resettable = new_guinea }	# Yos Sudarso, Asmat -> Merauke
-	link = { eu4 = 2718 eu4 = 1245 v2 = 1453 v2 = 1452 resettable = new_guinea }	# MANY-TO-MANY: Fak-Fak, Manokwari -> Sorong, Biak
+	link = { eu4 = 2718 eu4 = 1245 v2 = 1453 v2 = 1452 v2 = 1454 resettable = new_guinea }	# MANY-TO-MANY: Fak-Fak, Manokwari -> Sorong, Biak, Merah
 	# Indonesia resettable region = indonesia
 	link = { eu4 = 2725 eu4 = 2696 v2 = 1451 resettable = indonesia }	# Aru, Yamdena -> Aru
 	link = { eu4 = 647 v2 = 1450 resettable = indonesia }	# Ceram -> Ceram
@@ -5265,10 +5265,10 @@
 	link = { eu4 = 637 v2 = 1396 resettable = indonesia }	# Jesselton -> Api
 	link = { eu4 = 2703 v2 = 1397 resettable = indonesia }	# Lehad Datu -> Sandakan
 	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 resettable = indonesia }	# Tarakan, Bulungan, Berau -> Tarakan
-	link = { eu4 = 638 eu4 = 2712 v2 = 1429 resettable = indonesia }	# Kutai, Samarinda -> Samarinda
+	link = { eu4 = 638 eu4 = 2712 v2 = 1429 v2 = 1422 resettable = indonesia }	# MANY-TO-MANY: Kutai, Samarinda -> Samarinda, Muraleve
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 resettable = indonesia }	# MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 resettable = indonesia }	# Sampit, Katapang -> Kota Waringin
-	link = { eu4 = 640 v2 = 1426 v2 = 2576 resettable = indonesia }	# Pontianak -> Pontianak, Natuna
+	link = { eu4 = 640 v2 = 1426 v2 = 2576 v2 = 1428 resettable = indonesia }	# Pontianak -> Pontianak, Natuna, Sintang
 	link = { eu4 = 2705 v2 = 1394 resettable = indonesia }	# Kuching -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 resettable = indonesia }	# MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	# Philippines resettable region = philippines
@@ -7366,8 +7366,8 @@
 	link = { eu4 = 1999 v2 = 2406 }	# Cocos Island -> Cocos Islands
 	link = { eu4 = 1998 v2 = 2244 }	# Christmas Island -> Christmas Island
 	# Indo Wasteland
-	link = { eu4 = 1789 v2 = 1454 resettable = new_guinea }	# Papua -> Merah
-	link = { eu4 = 2740 v2 = 1422 v2 = 1428 resettable = indonesia }	# Borneo -> Muraleve, Sintang
+	link = { eu4 = 1789 resettable = new_guinea }	# Papua -> DROPPED
+	link = { eu4 = 2740 resettable = indonesia }	# Borneo -> DROPPED
 	# Persia
 	link = { eu4 = 2214 v2 = 1116 }	# Golestan -> Gorgan
 	link = { eu4 = 2236 v2 = 1150 }	# Bojnord -> Bojnurd
@@ -7871,7 +7871,7 @@
 	link = { eu4 = 1237 v2 = 2528 resettable = new_guinea }	# Hanuabada -> Port Moresby
 	link = { eu4 = 2722 eu4 = 2721 v2 = 2529 resettable = new_guinea }	# Daru, Kerema -> Kerema
 	link = { eu4 = 2723 eu4 = 2724 v2 = 1560 resettable = new_guinea }	# Yos Sudarso, Asmat -> Merauke
-	link = { eu4 = 2718 eu4 = 1245 v2 = 1453 v2 = 1452 resettable = new_guinea }	# MANY-TO-MANY: Fak-Fak, Manokwari -> Sorong, Biak
+	link = { eu4 = 2718 eu4 = 1245 v2 = 1453 v2 = 1452 v2 = 1454 resettable = new_guinea }	# MANY-TO-MANY: Fak-Fak, Manokwari -> Sorong, Biak, Merah
 	# Indonesia resettable region = indonesia
 	link = { eu4 = 2725 eu4 = 2696 v2 = 1451 resettable = indonesia }	# Aru, Yamdena -> Aru
 	link = { eu4 = 647 v2 = 1450 resettable = indonesia }	# Ceram -> Ceram
@@ -7918,10 +7918,10 @@
 	link = { eu4 = 637 v2 = 1396 resettable = indonesia }	# Jesselton -> Api
 	link = { eu4 = 2703 v2 = 1397 resettable = indonesia }	# Lehad Datu -> Sandakan
 	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 resettable = indonesia }	# Tarakan, Bulungan, Berau -> Tarakan
-	link = { eu4 = 638 eu4 = 2712 v2 = 1429 resettable = indonesia }	# Kutai, Samarinda -> Samarinda
+	link = { eu4 = 638 eu4 = 2712 v2 = 1429 v2 = 1422 resettable = indonesia }	# MANY-TO-MANY: Kutai, Samarinda -> Samarinda, Muraleve
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 resettable = indonesia }	# MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 resettable = indonesia }	# Sampit, Katapang -> Kota Waringin
-	link = { eu4 = 640 v2 = 1426 v2 = 2576 resettable = indonesia }	# Pontianak -> Pontianak, Natuna
+	link = { eu4 = 640 v2 = 1426 v2 = 2576 v2 = 1428 resettable = indonesia }	# Pontianak -> Pontianak, Natuna, Sintang
 	link = { eu4 = 2705 v2 = 1394 resettable = indonesia }	# Kuching -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 resettable = indonesia }	# MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	# Philippines resettable region = philippines
