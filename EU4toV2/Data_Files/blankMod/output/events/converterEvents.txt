@@ -2555,36 +2555,37 @@ country_event = {
 		add_accepted_culture = tibetan
 	}
 }
-country_event = { 
+province_event = { 
 	id = 550028
 	title = EVTNAME550028
 	desc = EVTDESC550028
 
 	trigger = { 
-		tag = ALL
-		NOT = { has_global_flag = allahu_akbar }
+		exists = ALL
+		controlled_by = ALL
+		any_pop = {
+			strata = middle
+			OR = { #Islamic
+				pop_majority_religion = sunni
+				pop_majority_religion = zikri
+				pop_majority_religion = yazidi
+				pop_majority_religion = sunni_heresy
+				pop_majority_religion = shiite
+				pop_majority_religion = hurufi
+				pop_majority_religion = druze
+				pop_majority_religion = shiite_heresy
+				pop_majority_religion = ibadi
+				pop_majority_religion = kharijite
+			}
+		}
+		NOT = { is_core = ALL }
 	}
 
-	mean_time_to_happen = { months = 1 }
+	mean_time_to_happen = { months = 0.0001 }
 
 	option = { 
 		name = EVTOPTA550028
-		ARA = {
-			all_core = {
-				remove_core = ARA
-				add_core = ALL
-			}
-		}
-		#Adding cores back to Saudi Arabia
-		NEJ = { all_core = { add_core = ARA } }
-		HDJ = { all_core = { add_core = ARA } }
-		HAL = { all_core = { add_core = ARA } }
-		ARA = { any_owned = { add_core = ARA } }
-		prestige = 10
-		set_global_flag = allahu_akbar
-		ALL = {
-			add_accepted_culture = union
-		}
+		add_core = ALL
 	}
 }
 country_event = { 
