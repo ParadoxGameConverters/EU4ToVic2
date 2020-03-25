@@ -763,9 +763,9 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 					const auto& regionName = eu4Regions.getParentRegionName(origProvinceID);
 					const auto& superRegionName = eu4Regions.getParentSuperRegionName(origProvinceID);
 					if (!areaName || !regionName || !superRegionName) continue;
-					if (africaResetMapper.isRegionResettable(*areaName)) resetProvince = true;
-					else if (africaResetMapper.isRegionResettable(*regionName)) resetProvince = true;
-					else if (africaResetMapper.isRegionResettable(*superRegionName)) resetProvince = true;
+					if (africaResetMapper.isRegionResettable(*areaName) ||
+						africaResetMapper.isRegionResettable(*regionName) ||
+						africaResetMapper.isRegionResettable(*superRegionName)) resetProvince = true;
 				}
 				if (resetProvince)
 				{

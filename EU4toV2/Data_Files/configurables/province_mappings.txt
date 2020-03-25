@@ -1665,7 +1665,7 @@
 	link = { eu4 = 384 eu4 = 2328 v2 = 1153 }	# Medina, Al Ula -> Medina
 	link = { eu4 = 385 eu4 = 4277 eu4 = 2330 eu4 = 2332 v2 = 1151 }	# Mecca, Taif, Ma'din Sulaym, Turubah -> Mecca
 	link = { eu4 = 386 eu4 = 2346 eu4 = 391 eu4 = 4282 v2 = 1155 }	# Bishah, Jazan, Najran, Sahda -> Abha
-	link = { eu4 = 2337 eu4 = 4273 eu4 = 4276 v2 = 1159 }	# Buraydah, Al-Kariatan, Jabal Tubaiq -> Halaban
+	link = { eu4 = 2337 eu4 = 4273 v2 = 1159 }	# Buraydah, Al-Kariatan -> Halaban
 	link = { eu4 = 2335 eu4 = 2336 v2 = 1161 }	# Dawasir, Aflaj -> Sharurah
 	link = { eu4 = 2334 eu4 = 1779 }	# Badiyat ash Sham, Rub' al Khali -> DROPPED
 	link = { eu4 = 2347 eu4 = 2339 v2 = 1164 v2 = 2586 }	# MANY-TO-MANY: Hofuf, Yabrin -> Hufuf, Al-Ahsa
@@ -2106,10 +2106,10 @@
 	link = { eu4 = 554 eu4 = 2070 eu4 = 4491 eu4 = 4492 eu4 = 4494 eu4 = 4485 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya, Dang, Doti, Khairabad, Palpa -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1326 }	# Katmandu, Limbuwan -> Katmandu
 	link = { eu4 = 565 eu4 = 4481 v2 = 1329 }	# Thimpu, Punakha -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 eu4 = 4516 eu4 = 4515 v2 = 1592 }	# Himalaya, Ngari, Purang, Gyirong -> Ngari
-	link = { eu4 = 676 eu4 = 4518 eu4 = 4514 eu4 = 2129 v2 = 1589 v2 = 1591 }	# MANY-TO-MANY: Shigatse, Tsurphu, Sakya, Changtang -> Shigatse, Changtang
+	link = { eu4 = 2128 eu4 = 4516 eu4 = 4515 v2 = 1592 }	# Ngari, Purang, Gyirong -> Ngari
+	link = { eu4 = 676 eu4 = 4518 eu4 = 4514 v2 = 1589 v2 = 1591 }	# MANY-TO-MANY: Shigatse, Tsurphu, Sakya -> Shigatse, Changtang
 	link = { eu4 = 706 eu4 = 2134 eu4 = 4204 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong, Anding -> Makhai, Balekungomi
-	link = { eu4 = 677 eu4 = 2130 eu4 = 2131 eu4 = 2132 eu4 = 4205 eu4 = 4519 eu4 = 4517 eu4 = 705 eu4 = 4522 v2 = 1587 v2 = 1588 v2 = 1590 v2 = 1558 }	# MANY-TO-MANY: Lhasa, Nyingchi, Qamdo, Markam, Nagchu, Damxung, Nedong, Gyegu, Aqenganggyai -> Lhasa, Chamdo, Lhodrak, Kegudo
+	link = { eu4 = 677 eu4 = 2130 eu4 = 2131 eu4 = 2132 eu4 = 4205 eu4 = 4519 eu4 = 4517 eu4 = 705 v2 = 1587 v2 = 1588 v2 = 1590 v2 = 1558 }	# MANY-TO-MANY: Lhasa, Nyingchi, Qamdo, Markam, Nagchu, Damxung, Nedong, Gyegu -> Lhasa, Chamdo, Lhodrak, Kegudo
 	link = { eu4 = 678 eu4 = 2133 v2 = 1586 }	# Tachienlu, Dege -> Yazhou
 	link = { eu4 = 2170 eu4 = 2135 v2 = 1582 }	# Songqu, Garze -> Longan
 	# Western India
@@ -2159,10 +2159,10 @@
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
 	link = { eu4 = 562 eu4 = 2045 eu4 = 4479 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur, Goraghat -> Darjeeling, Rajshahi
 	link = { eu4 = 571 eu4 = 2042 v2 = 1258 }	# Darrang, Koch Hajo -> Gauhati
-	link = { eu4 = 2040 eu4 = 1788 eu4 = 566 eu4 = 4440 eu4 = 4404 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Arunachal, Assam, Narayanpur, Minsin -> Dibrugarh, Tawang
+	link = { eu4 = 2040 eu4 = 566 eu4 = 4440 eu4 = 4404 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Assam, Narayanpur, Minsin -> Dibrugarh, Tawang
 	link = { eu4 = 570 eu4 = 573 eu4 = 2041 v2 = 1259 }	# Naga, Cachar, Manipur -> Imphal
 	link = { eu4 = 2091 eu4 = 567 eu4 = 4473 v2 = 2566 }	# Tripura, Silhet, Chakla -> Agartala
-	link = { eu4 = 1950 eu4 = 2046 eu4 = 4478 v2 = 1254 }	# Meghalaya, Nasirabad, Haibatnagar -> Dacca
+	link = { eu4 = 2046 eu4 = 4478 v2 = 1254 }	# Nasirabad, Haibatnagar -> Dacca
 	link = { eu4 = 568 eu4 = 564 eu4 = 4474 v2 = 1257 }	# Chittagong, Dhaka, Sonargaon -> Chittagong
 	link = { eu4 = 2039 eu4 = 4475 eu4 = 4476 v2 = 1256 }	# Sunderbans, Fathabad, Nadia -> Jessore
 	link = { eu4 = 563 eu4 = 2081 eu4 = 4477 eu4 = 4471 v2 = 1253 }	# Gauda, Lakhnor, Satgaon, Bishnupur -> Bardwan
@@ -2204,8 +2204,8 @@
 	link = { eu4 = 2099 eu4 = 4407 eu4 = 4409 v2 = 1324 v2 = 1323 }	# MANY-TO-MANY: Kandy, Ruhunu, Trincomale -> Trincomalee, Kandy
 	link = { eu4 = 572 v2 = 1321 }	# Kotte -> Colombo
 	# Myanmar
-	link = { eu4 = 580 eu4 = 2398 eu4 = 2397 eu4 = 4400 v2 = 1339 }	# Kale, Thaungdut, Tamanthi, Naga Hills -> Haka
-	link = { eu4 = 2402 eu4 = 579 eu4 = 4401 v2 = 1345 }	# Sandoway, Mrauk U, Arakan Mountains -> Sittwe
+	link = { eu4 = 580 eu4 = 2398 eu4 = 2397 v2 = 1339 }	# Kale, Thaungdut, Tamanthi -> Haka
+	link = { eu4 = 2402 eu4 = 579 v2 = 1345 }	# Sandoway, Mrauk U -> Sittwe
 	link = { eu4 = 2395 v2 = 1341 }	# Hkamti Long -> Putao
 	link = { eu4 = 2396 eu4 = 582 eu4 = 4405 v2 = 1342 }	# Mong Kawng, Mong Yang, Katha -> Myitkyina
 	link = { eu4 = 581 v2 = 1334 }	# Sagaing -> Ava
@@ -2313,7 +2313,7 @@
 	link = { eu4 = 2741 v2 = 1637 }	# Jeju -> Cheju
 	# Manchuria
 	link = { eu4 = 731 eu4 = 2107 eu4 = 2108 eu4 = 4654 eu4 = 4663 v2 = 1554 }	# Ilan Hala, Ningguta, Huncun, Fuerhe, Jixi -> Ninguta
-	link = { eu4 = 730 eu4 = 2188 eu4 = 4201 eu4 = 4653 eu4 = 4661 eu4 = 4657 v2 = 1555 }	# Girin, Alchuka, Jianzhou, Maolian, Edala, Changbai Mountains -> Jilin
+	link = { eu4 = 730 eu4 = 2188 eu4 = 4201 eu4 = 4653 eu4 = 4661 v2 = 1555 }	# Girin, Alchuka, Jianzhou, Maolian, Edala -> Jilin
 	link = { eu4 = 2112 eu4 = 2113 eu4 = 2111 eu4 = 726 eu4 = 2110 v2 = 1479 v2 = 1481 }	# MANY-TO-MANY: Andong, Gaizhou, Hetu Ala, Shenyang, Yehe -> Mukden, Port Arthur
 	link = { eu4 = 4652 v2 = 1480 }	# Haicheng -> Jinzhou
 	link = { eu4 = 725 eu4 = 4200 eu4 = 728 eu4 = 4660 v2 = 1552 }	# Cicigar, Hulan, Tuwan, Tunhe -> Qiqihar
@@ -2450,7 +2450,7 @@
 	# Sichuan
 	link = { eu4 = 2169 eu4 = 4211 v2 = 1581 v2 = 1583 v2 = 1579 }	# MANY-TO-MANY: Langzhong, Dazhou -> Kuizhou, Shunqing, Baotung
 	link = { eu4 = 680 v2 = 1577 }	# Chongqing -> Chongqing
-	link = { eu4 = 679 eu4 = 4212 eu4 = 4403 v2 = 1580 v2 = 1584 v2 = 1578 }	# MANY-TO-MANY: Chengdu, Jiazhou, Hengduan Mountains -> Jiading, Tongchuan, Chengdu
+	link = { eu4 = 679 eu4 = 4212 v2 = 1580 v2 = 1584 v2 = 1578 }	# MANY-TO-MANY: Chengdu, Jiazhou -> Jiading, Tongchuan, Chengdu
 	link = { eu4 = 675 eu4 = 2748 eu4 = 2168 v2 = 1585 }	# Umung, Jianchang, Bozhou -> Yibin
 	# Yun-Gui
 	link = { eu4 = 2166 eu4 = 661 eu4 = 2167 v2 = 1602 }	# Dehong, Dali, Lijiang -> Dali
@@ -4344,7 +4344,7 @@
 	link = { eu4 = 384 eu4 = 2328 v2 = 1153 }	# Medina, Al Ula -> Medina
 	link = { eu4 = 385 eu4 = 4277 eu4 = 2330 eu4 = 2332 v2 = 1151 }	# Mecca, Taif, Ma'din Sulaym, Turubah -> Mecca
 	link = { eu4 = 386 eu4 = 2346 eu4 = 391 eu4 = 4282 v2 = 1155 }	# Bishah, Jazan, Najran, Sahda -> Abha
-	link = { eu4 = 2337 eu4 = 4273 eu4 = 4276 v2 = 1159 }	# Buraydah, Al-Kariatan, Jabal Tubaiq -> Halaban
+	link = { eu4 = 2337 eu4 = 4273 v2 = 1159 }	# Buraydah, Al-Kariatan -> Halaban
 	link = { eu4 = 2335 eu4 = 2336 v2 = 1161 }	# Dawasir, Aflaj -> Sharurah
 	link = { eu4 = 2334 eu4 = 1779 }	# Badiyat ash Sham, Rub' al Khali -> DROPPED
 	link = { eu4 = 2347 eu4 = 2339 v2 = 1164 v2 = 2586 }	# MANY-TO-MANY: Hofuf, Yabrin -> Hufuf, Al-Ahsa
@@ -4787,11 +4787,11 @@
 	link = { eu4 = 554 eu4 = 2070 eu4 = 4491 eu4 = 4492 eu4 = 4494 eu4 = 4485 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya, Dang, Doti, Khairabad, Palpa -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1326 }	# Katmandu, Limbuwan -> Katmandu
 	link = { eu4 = 565 eu4 = 4481 v2 = 1329 }	# Thimpu, Punakha -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 eu4 = 4516 eu4 = 4515 v2 = 1592 }	# Himalaya, Ngari, Purang, Gyirong -> Ngari
+	link = { eu4 = 2128 eu4 = 4516 eu4 = 4515 v2 = 1592 }	# Ngari, Purang, Gyirong -> Ngari
 	link = { eu4 = 676 eu4 = 4518 eu4 = 4514 v2 = 1589 }	# Shigatse, Tsurphu, Sakya -> Shigatse
 	link = { eu4 = 2129 v2 = 1591 }	# Changtang -> Changtang
 	link = { eu4 = 706 eu4 = 2134 eu4 = 4204 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong, Anding -> Makhai, Balekungomi
-	link = { eu4 = 705 eu4 = 4522 v2 = 1558 }	# Gyegu, Aqenganggyai -> Kegudo
+	link = { eu4 = 705 v2 = 1558 }	# Gyegu -> Kegudo
 	link = { eu4 = 677 eu4 = 2130 eu4 = 2131 eu4 = 2132 eu4 = 4205 eu4 = 4519 eu4 = 4517 v2 = 1587 v2 = 1588 v2 = 1590 }	# MANY-TO-MANY: Lhasa, Nyingchi, Qamdo, Markam, Nagchu, Damxung, Nedong -> Lhasa, Chamdo, Lhodrak
 	link = { eu4 = 678 eu4 = 2133 v2 = 1586 }	# Tachienlu, Dege -> Yazhou
 	link = { eu4 = 2170 eu4 = 2135 v2 = 1582 }	# Songqu, Garze -> Longan
@@ -4842,10 +4842,10 @@
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
 	link = { eu4 = 562 eu4 = 2045 eu4 = 4479 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur, Goraghat -> Darjeeling, Rajshahi
 	link = { eu4 = 571 eu4 = 2042 v2 = 1258 }	# Darrang, Koch Hajo -> Gauhati
-	link = { eu4 = 2040 eu4 = 1788 eu4 = 566 eu4 = 4440 eu4 = 4404 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Arunachal, Assam, Narayanpur, Minsin -> Dibrugarh, Tawang
-	link = { eu4 = 2041 eu4 = 570 eu4 = 573 eu4 = 4400 v2 = 1259 }	# Manipur, Naga, Cachar, Naga Hills -> Imphal
+	link = { eu4 = 2040 eu4 = 566 eu4 = 4440 eu4 = 4404 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Assam, Narayanpur, Minsin -> Dibrugarh, Tawang
+	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2091 eu4 = 567 eu4 = 4473 v2 = 2566 }	# Tripura, Silhet, Chakla -> Agartala
-	link = { eu4 = 1950 eu4 = 2046 eu4 = 4478 v2 = 1254 }	# Meghalaya, Nasirabad, Haibatnagar -> Dacca
+	link = { eu4 = 2046 eu4 = 4478 v2 = 1254 }	# Nasirabad, Haibatnagar -> Dacca
 	link = { eu4 = 568 eu4 = 564 eu4 = 4474 v2 = 1257 }	# Chittagong, Dhaka, Sonargaon -> Chittagong
 	link = { eu4 = 2039 eu4 = 4475 eu4 = 4476 v2 = 1256 }	# Sunderbans, Fathabad, Nadia -> Jessore
 	link = { eu4 = 563 eu4 = 2081 eu4 = 4477 eu4 = 4471 v2 = 1253 }	# Gauda, Lakhnor, Satgaon, Bishnupur -> Bardwan
@@ -4888,7 +4888,7 @@
 	link = { eu4 = 572 v2 = 1321 }	# Kotte -> Colombo
 	# Myanmar
 	link = { eu4 = 580 eu4 = 2398 eu4 = 2397 v2 = 1339 }	# Kale, Thaungdut, Tamanthi -> Haka
-	link = { eu4 = 2402 eu4 = 579 eu4 = 4401 v2 = 1345 }	# Sandoway, Mrauk U, Arakan Mountains -> Sittwe
+	link = { eu4 = 2402 eu4 = 579 v2 = 1345 }	# Sandoway, Mrauk U -> Sittwe
 	link = { eu4 = 2395 v2 = 1341 }	# Hkamti Long -> Putao
 	link = { eu4 = 2396 eu4 = 582 eu4 = 4405 v2 = 1342 }	# Mong Kawng, Mong Yang, Katha -> Myitkyina
 	link = { eu4 = 581 v2 = 1334 }	# Sagaing -> Ava
@@ -5131,7 +5131,7 @@
 	# Sichuan
 	link = { eu4 = 2169 eu4 = 4211 v2 = 1581 v2 = 1583 v2 = 1579 }	# MANY-TO-MANY: Langzhong, Dazhou -> Kuizhou, Shunqing, Baotung
 	link = { eu4 = 680 v2 = 1577 }	# Chongqing -> Chongqing
-	link = { eu4 = 679 eu4 = 4212 eu4 = 4403 v2 = 1580 v2 = 1584 v2 = 1578 }	# MANY-TO-MANY: Chengdu, Jiazhou, Hengduan Mountains -> Jiading, Tongchuan, Chengdu
+	link = { eu4 = 679 eu4 = 4212 v2 = 1580 v2 = 1584 v2 = 1578 }	# MANY-TO-MANY: Chengdu, Jiazhou -> Jiading, Tongchuan, Chengdu
 	link = { eu4 = 675 eu4 = 2748 eu4 = 2168 v2 = 1585 }	# Umung, Jianchang, Bozhou -> Yibin
 	# Yun-Gui
 	link = { eu4 = 2166 eu4 = 661 eu4 = 2167 v2 = 1602 }	# Dehong, Dali, Lijiang -> Dali
@@ -6998,7 +6998,7 @@
 	link = { eu4 = 384 eu4 = 2328 v2 = 1153 }	# Medina, Al Ula -> Medina
 	link = { eu4 = 385 eu4 = 4277 eu4 = 2330 eu4 = 2332 v2 = 1151 }	# Mecca, Taif, Ma'din Sulaym, Turubah -> Mecca
 	link = { eu4 = 386 eu4 = 2346 eu4 = 391 eu4 = 4282 v2 = 1155 }	# Bishah, Jazan, Najran, Sahda -> Abha
-	link = { eu4 = 2337 eu4 = 4273 eu4 = 4276 v2 = 1159 }	# Buraydah, Al-Kariatan, Jabal Tubaiq -> Halaban
+	link = { eu4 = 2337 eu4 = 4273 v2 = 1159 }	# Buraydah, Al-Kariatan -> Halaban
 	link = { eu4 = 2335 eu4 = 2336 v2 = 1161 }	# Dawasir, Aflaj -> Sharurah
 	link = { eu4 = 2334 eu4 = 1779 }	# Badiyat ash Sham, Rub' al Khali -> DROPPED
 	link = { eu4 = 2347 eu4 = 2339 v2 = 1164 v2 = 2586 }	# MANY-TO-MANY: Hofuf, Yabrin -> Hufuf, Al-Ahsa
@@ -7440,11 +7440,11 @@
 	link = { eu4 = 554 eu4 = 2070 eu4 = 4491 eu4 = 4492 eu4 = 4494 eu4 = 4485 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya, Dang, Doti, Khairabad, Palpa -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1326 }	# Katmandu, Limbuwan -> Katmandu
 	link = { eu4 = 565 eu4 = 4481 v2 = 1329 }	# Thimpu, Punakha -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 eu4 = 4516 eu4 = 4515 v2 = 1592 }	# Himalaya, Ngari, Purang, Gyirong -> Ngari
+	link = { eu4 = 2128 eu4 = 4516 eu4 = 4515 v2 = 1592 }	# Ngari, Purang, Gyirong -> Ngari
 	link = { eu4 = 676 eu4 = 4518 eu4 = 4514 v2 = 1589 }	# Shigatse, Tsurphu, Sakya -> Shigatse
 	link = { eu4 = 2129 v2 = 1591 }	# Changtang -> Changtang
 	link = { eu4 = 706 eu4 = 2134 eu4 = 4204 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong, Anding -> Makhai, Balekungomi
-	link = { eu4 = 705 eu4 = 4522 v2 = 1558 }	# Gyegu, Aqenganggyai -> Kegudo
+	link = { eu4 = 705 v2 = 1558 }	# Gyegu -> Kegudo
 	link = { eu4 = 677 eu4 = 2130 eu4 = 2131 eu4 = 2132 eu4 = 4205 eu4 = 4519 eu4 = 4517 v2 = 1587 v2 = 1588 v2 = 1590 }	# MANY-TO-MANY: Lhasa, Nyingchi, Qamdo, Markam, Nagchu, Damxung, Nedong -> Lhasa, Chamdo, Lhodrak
 	link = { eu4 = 678 eu4 = 2133 v2 = 1586 }	# Tachienlu, Dege -> Yazhou
 	link = { eu4 = 2170 eu4 = 2135 v2 = 1582 }	# Songqu, Garze -> Longan
@@ -7495,10 +7495,10 @@
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
 	link = { eu4 = 562 eu4 = 2045 eu4 = 4479 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur, Goraghat -> Darjeeling, Rajshahi
 	link = { eu4 = 571 eu4 = 2042 v2 = 1258 }	# Darrang, Koch Hajo -> Gauhati
-	link = { eu4 = 2040 eu4 = 1788 eu4 = 566 eu4 = 4440 eu4 = 4404 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Arunachal, Assam, Narayanpur, Minsin -> Dibrugarh, Tawang
-	link = { eu4 = 2041 eu4 = 570 eu4 = 573 eu4 = 4400 v2 = 1259 }	# Manipur, Naga, Cachar, Naga Hills -> Imphal
+	link = { eu4 = 2040 eu4 = 566 eu4 = 4440 eu4 = 4404 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Assam, Narayanpur, Minsin -> Dibrugarh, Tawang
+	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2091 eu4 = 567 eu4 = 4473 v2 = 2566 }	# Tripura, Silhet, Chakla -> Agartala
-	link = { eu4 = 1950 eu4 = 2046 eu4 = 4478 v2 = 1254 }	# Meghalaya, Nasirabad, Haibatnagar -> Dacca
+	link = { eu4 = 2046 eu4 = 4478 v2 = 1254 }	# Nasirabad, Haibatnagar -> Dacca
 	link = { eu4 = 568 eu4 = 564 eu4 = 4474 v2 = 1257 }	# Chittagong, Dhaka, Sonargaon -> Chittagong
 	link = { eu4 = 2039 eu4 = 4475 eu4 = 4476 v2 = 1256 }	# Sunderbans, Fathabad, Nadia -> Jessore
 	link = { eu4 = 563 eu4 = 2081 eu4 = 4477 eu4 = 4471 v2 = 1253 }	# Gauda, Lakhnor, Satgaon, Bishnupur -> Bardwan
@@ -7541,7 +7541,7 @@
 	link = { eu4 = 572 v2 = 1321 }	# Kotte -> Colombo
 	# Myanmar
 	link = { eu4 = 580 eu4 = 2398 eu4 = 2397 v2 = 1339 }	# Kale, Thaungdut, Tamanthi -> Haka
-	link = { eu4 = 2402 eu4 = 579 eu4 = 4401 v2 = 1345 }	# Sandoway, Mrauk U, Arakan Mountains -> Sittwe
+	link = { eu4 = 2402 eu4 = 579 v2 = 1345 }	# Sandoway, Mrauk U -> Sittwe
 	link = { eu4 = 2395 v2 = 1341 }	# Hkamti Long -> Putao
 	link = { eu4 = 2396 eu4 = 582 eu4 = 4405 v2 = 1342 }	# Mong Kawng, Mong Yang, Katha -> Myitkyina
 	link = { eu4 = 581 v2 = 1334 }	# Sagaing -> Ava
@@ -7784,7 +7784,7 @@
 	# Sichuan
 	link = { eu4 = 2169 eu4 = 4211 v2 = 1581 v2 = 1583 v2 = 1579 }	# MANY-TO-MANY: Langzhong, Dazhou -> Kuizhou, Shunqing, Baotung
 	link = { eu4 = 680 v2 = 1577 }	# Chongqing -> Chongqing
-	link = { eu4 = 679 eu4 = 4212 eu4 = 4403 v2 = 1580 v2 = 1584 v2 = 1578 }	# MANY-TO-MANY: Chengdu, Jiazhou, Hengduan Mountains -> Jiading, Tongchuan, Chengdu
+	link = { eu4 = 679 eu4 = 4212 v2 = 1580 v2 = 1584 v2 = 1578 }	# MANY-TO-MANY: Chengdu, Jiazhou -> Jiading, Tongchuan, Chengdu
 	link = { eu4 = 675 eu4 = 2748 eu4 = 2168 v2 = 1585 }	# Umung, Jianchang, Bozhou -> Yibin
 	# Yun-Gui
 	link = { eu4 = 2166 eu4 = 661 eu4 = 2167 v2 = 1602 }	# Dehong, Dali, Lijiang -> Dali
@@ -9651,7 +9651,7 @@
 	link = { eu4 = 384 eu4 = 2328 v2 = 1153 }	# Medina, Al Ula -> Medina
 	link = { eu4 = 385 eu4 = 4277 eu4 = 2330 eu4 = 2332 v2 = 1151 }	# Mecca, Taif, Ma'din Sulaym, Turubah -> Mecca
 	link = { eu4 = 386 eu4 = 2346 eu4 = 391 eu4 = 4282 v2 = 1155 }	# Bishah, Jazan, Najran, Sahda -> Abha
-	link = { eu4 = 2337 eu4 = 4273 eu4 = 4276 v2 = 1159 }	# Buraydah, Al-Kariatan, Jabal Tubaiq -> Halaban
+	link = { eu4 = 2337 eu4 = 4273 v2 = 1159 }	# Buraydah, Al-Kariatan -> Halaban
 	link = { eu4 = 2335 eu4 = 2336 v2 = 1161 }	# Dawasir, Aflaj -> Sharurah
 	link = { eu4 = 2334 eu4 = 1779 }	# Badiyat ash Sham, Rub' al Khali -> DROPPED
 	link = { eu4 = 2347 eu4 = 2339 v2 = 1164 v2 = 2586 }	# MANY-TO-MANY: Hofuf, Yabrin -> Hufuf, Al-Ahsa
@@ -10093,7 +10093,7 @@
 	link = { eu4 = 554 eu4 = 2070 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1328 v2 = 1326 }	# MANY-TO-MANY: Katmandu, Limbuwan -> Tumlong, Katmandu
 	link = { eu4 = 565 v2 = 1329 }	# Thimpu -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 v2 = 1592 }	# Himalaya, Ngari -> Ngari
+	link = { eu4 = 2128 v2 = 1592 }	# Ngari -> Ngari
 	link = { eu4 = 676 v2 = 1589 }	# Shigatse -> Shigatse
 	link = { eu4 = 2129 v2 = 1591 }	# Changtang -> Changtang
 	link = { eu4 = 706 eu4 = 2134 eu4 = 4204 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong, Anding -> Makhai, Balekungomi
@@ -10148,10 +10148,10 @@
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
 	link = { eu4 = 562 eu4 = 2045 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur -> Darjeeling, Rajshahi
 	link = { eu4 = 571 eu4 = 2042 v2 = 1258 }	# Darrang, Koch Hajo -> Gauhati
-	link = { eu4 = 2040 eu4 = 1788 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Arunachal, Assam -> Dibrugarh, Tawang
+	link = { eu4 = 2040 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Assam -> Dibrugarh, Tawang
 	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2091 eu4 = 567 v2 = 2566 }	# Tripura, Silhet -> Agartala
-	link = { eu4 = 1950 eu4 = 2046 v2 = 1254 }	# Meghalaya, Nasirabad -> Dacca
+	link = { eu4 = 2046 v2 = 1254 }	# Nasirabad -> Dacca
 	link = { eu4 = 568 eu4 = 564 v2 = 1257 }	# Chittagong, Dhaka -> Chittagong
 	link = { eu4 = 2039 v2 = 1256 }	# Sunderbans -> Jessore
 	link = { eu4 = 563 eu4 = 2081 v2 = 1253 }	# Gauda, Lakhnor -> Bardwan
@@ -12302,7 +12302,7 @@
 	link = { eu4 = 384 eu4 = 2328 v2 = 1153 }	# Medina, Al Ula -> Medina
 	link = { eu4 = 385 eu4 = 4277 eu4 = 2330 eu4 = 2332 v2 = 1151 }	# Mecca, Taif, Ma'din Sulaym, Turubah -> Mecca
 	link = { eu4 = 386 eu4 = 2346 eu4 = 391 eu4 = 4282 v2 = 1155 }	# Bishah, Jazan, Najran, Sahda -> Abha
-	link = { eu4 = 2337 eu4 = 4273 eu4 = 4276 v2 = 1159 }	# Buraydah, Al-Kariatan, Jabal Tubaiq -> Halaban
+	link = { eu4 = 2337 eu4 = 4273 v2 = 1159 }	# Buraydah, Al-Kariatan -> Halaban
 	link = { eu4 = 2335 eu4 = 2336 v2 = 1161 }	# Dawasir, Aflaj -> Sharurah
 	link = { eu4 = 2334 eu4 = 1779 }	# Badiyat ash Sham, Rub' al Khali -> DROPPED
 	link = { eu4 = 2347 eu4 = 2339 v2 = 1164 v2 = 2586 }	# MANY-TO-MANY: Hofuf, Yabrin -> Hufuf, Al-Ahsa
@@ -12745,7 +12745,7 @@
 	link = { eu4 = 554 eu4 = 2070 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1328 v2 = 1326 }	# MANY-TO-MANY: Katmandu, Limbuwan -> Tumlong, Katmandu
 	link = { eu4 = 565 v2 = 1329 }	# Thimpu -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 v2 = 1592 }	# Himalaya, Ngari -> Ngari
+	link = { eu4 = 2128 v2 = 1592 }	# Ngari -> Ngari
 	link = { eu4 = 676 v2 = 1589 }	# Shigatse -> Shigatse
 	link = { eu4 = 2129 v2 = 1591 }	# Changtang -> Changtang
 	link = { eu4 = 706 eu4 = 2134 eu4 = 4204 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong, Anding -> Makhai, Balekungomi
@@ -12800,10 +12800,10 @@
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
 	link = { eu4 = 562 eu4 = 2045 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur -> Darjeeling, Rajshahi
 	link = { eu4 = 571 eu4 = 2042 v2 = 1258 }	# Darrang, Koch Hajo -> Gauhati
-	link = { eu4 = 2040 eu4 = 1788 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Arunachal, Assam -> Dibrugarh, Tawang
+	link = { eu4 = 2040 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Assam -> Dibrugarh, Tawang
 	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2091 eu4 = 567 v2 = 2566 }	# Tripura, Silhet -> Agartala
-	link = { eu4 = 1950 eu4 = 2046 v2 = 1254 }	# Meghalaya, Nasirabad -> Dacca
+	link = { eu4 = 2046 v2 = 1254 }	# Nasirabad -> Dacca
 	link = { eu4 = 568 eu4 = 564 v2 = 1257 }	# Chittagong, Dhaka -> Chittagong
 	link = { eu4 = 2039 v2 = 1256 }	# Sunderbans -> Jessore
 	link = { eu4 = 563 eu4 = 2081 v2 = 1253 }	# Gauda, Lakhnor -> Bardwan
@@ -15365,7 +15365,7 @@
 	link = { eu4 = 554 eu4 = 2070 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1328 v2 = 1326 }	# MANY-TO-MANY: Katmandu, Limbuwan -> Tumlong, Katmandu
 	link = { eu4 = 565 v2 = 1329 }	# Thimpu -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 v2 = 1592 }	# Himalaya, Ngari -> Ngari
+	link = { eu4 = 2128 v2 = 1592 }	# Ngari -> Ngari
 	link = { eu4 = 676 v2 = 1589 }	# Shigatse -> Shigatse
 	link = { eu4 = 2129 v2 = 1591 }	# Changtang -> Changtang
 	link = { eu4 = 706 eu4 = 2134 eu4 = 4204 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong, Anding -> Makhai, Balekungomi
@@ -15420,10 +15420,10 @@
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
 	link = { eu4 = 562 eu4 = 2045 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur -> Darjeeling, Rajshahi
 	link = { eu4 = 571 eu4 = 2042 v2 = 1258 }	# Darrang, Koch Hajo -> Gauhati
-	link = { eu4 = 2040 eu4 = 1788 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Arunachal, Assam -> Dibrugarh, Tawang
+	link = { eu4 = 2040 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Assam -> Dibrugarh, Tawang
 	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2091 eu4 = 567 v2 = 2566 }	# Tripura, Silhet -> Agartala
-	link = { eu4 = 1950 eu4 = 2046 v2 = 1254 }	# Meghalaya, Nasirabad -> Dacca
+	link = { eu4 = 2046 v2 = 1254 }	# Nasirabad -> Dacca
 	link = { eu4 = 568 eu4 = 564 v2 = 1257 }	# Chittagong, Dhaka -> Chittagong
 	link = { eu4 = 2039 v2 = 1256 }	# Sunderbans -> Jessore
 	link = { eu4 = 563 eu4 = 2081 v2 = 1253 }	# Gauda, Lakhnor -> Bardwan
@@ -17941,7 +17941,7 @@
 	link = { eu4 = 554 eu4 = 2070 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1328 v2 = 1326 }	# MANY-TO-MANY: Katmandu, Limbuwan -> Tumlong, Katmandu
 	link = { eu4 = 565 v2 = 1329 }	# Thimpu -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 v2 = 1592 }	# Himalaya, Ngari -> Ngari
+	link = { eu4 = 2128 v2 = 1592 }	# Ngari -> Ngari
 	link = { eu4 = 676 v2 = 1589 }	# Shigatse -> Shigatse
 	link = { eu4 = 2129 v2 = 1591 }	# Changtang -> Changtang
 	link = { eu4 = 706 eu4 = 2134 eu4 = 4204 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong, Anding -> Makhai, Balekungomi
@@ -17996,10 +17996,10 @@
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
 	link = { eu4 = 562 eu4 = 2045 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur -> Darjeeling, Rajshahi
 	link = { eu4 = 571 eu4 = 2042 v2 = 1258 }	# Darrang, Koch Hajo -> Gauhati
-	link = { eu4 = 2040 eu4 = 1788 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Arunachal, Assam -> Dibrugarh, Tawang
+	link = { eu4 = 2040 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Assam -> Dibrugarh, Tawang
 	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2091 eu4 = 567 v2 = 2566 }	# Tripura, Silhet -> Agartala
-	link = { eu4 = 1950 eu4 = 2046 v2 = 1254 }	# Meghalaya, Nasirabad -> Dacca
+	link = { eu4 = 2046 v2 = 1254 }	# Nasirabad -> Dacca
 	link = { eu4 = 568 eu4 = 564 v2 = 1257 }	# Chittagong, Dhaka -> Chittagong
 	link = { eu4 = 2039 v2 = 1256 }	# Sunderbans -> Jessore
 	link = { eu4 = 563 eu4 = 2081 v2 = 1253 }	# Gauda, Lakhnor -> Bardwan
@@ -20516,7 +20516,7 @@
 	link = { eu4 = 554 eu4 = 2070 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1328 v2 = 1326 }	# MANY-TO-MANY: Katmandu, Limbuwan -> Tumlong, Katmandu
 	link = { eu4 = 565 v2 = 1329 }	# Thimpu -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 v2 = 1592 }	# Himalaya, Ngari -> Ngari
+	link = { eu4 = 2128 v2 = 1592 }	# Ngari -> Ngari
 	link = { eu4 = 676 v2 = 1589 }	# Shigatse -> Shigatse
 	link = { eu4 = 2129 v2 = 1591 }	# Changtang -> Changtang
 	link = { eu4 = 706 eu4 = 2134 eu4 = 4204 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong, Anding -> Makhai, Balekungomi
@@ -20571,10 +20571,10 @@
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
 	link = { eu4 = 562 eu4 = 2045 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur -> Darjeeling, Rajshahi
 	link = { eu4 = 571 eu4 = 2042 v2 = 1258 }	# Darrang, Koch Hajo -> Gauhati
-	link = { eu4 = 2040 eu4 = 1788 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Arunachal, Assam -> Dibrugarh, Tawang
+	link = { eu4 = 2040 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Assam -> Dibrugarh, Tawang
 	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2091 eu4 = 567 v2 = 2566 }	# Tripura, Silhet -> Agartala
-	link = { eu4 = 1950 eu4 = 2046 v2 = 1254 }	# Meghalaya, Nasirabad -> Dacca
+	link = { eu4 = 2046 v2 = 1254 }	# Nasirabad -> Dacca
 	link = { eu4 = 568 eu4 = 564 v2 = 1257 }	# Chittagong, Dhaka -> Chittagong
 	link = { eu4 = 2039 v2 = 1256 }	# Sunderbans -> Jessore
 	link = { eu4 = 563 eu4 = 2081 v2 = 1253 }	# Gauda, Lakhnor -> Bardwan
@@ -22084,7 +22084,7 @@
 	link = { eu4 = 554 eu4 = 2070 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1328 v2 = 1326 }	# MANY-TO-MANY: Katmandu, Limbuwan -> Tumlong, Katmandu
 	link = { eu4 = 565 v2 = 1329 }	# Thimpu -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 v2 = 1592 }	# Himalaya, Ngari -> Ngari
+	link = { eu4 = 2128 v2 = 1592 }	# Ngari -> Ngari
 	link = { eu4 = 676 v2 = 1589 }	# Shigatse -> Shigatse
 	link = { eu4 = 2129 v2 = 1591 }	# Changtang -> Changtang
 	link = { eu4 = 706 eu4 = 2134 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong -> Makhai, Balekungomi
@@ -22139,10 +22139,10 @@
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
 	link = { eu4 = 562 eu4 = 2045 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur -> Darjeeling, Rajshahi
 	link = { eu4 = 571 eu4 = 2042 v2 = 1258 }	# Darrang, Koch Hajo -> Gauhati
-	link = { eu4 = 2040 eu4 = 1788 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Arunachal, Assam -> Dibrugarh, Tawang
+	link = { eu4 = 2040 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Assam -> Dibrugarh, Tawang
 	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2091 eu4 = 567 v2 = 2566 }	# Tripura, Silhet -> Agartala
-	link = { eu4 = 1950 eu4 = 2046 v2 = 1254 }	# Meghalaya, Nasirabad -> Dacca
+	link = { eu4 = 2046 v2 = 1254 }	# Nasirabad -> Dacca
 	link = { eu4 = 568 eu4 = 564 v2 = 1257 }	# Chittagong, Dhaka -> Chittagong
 	link = { eu4 = 2039 v2 = 1256 }	# Sunderbans -> Jessore
 	link = { eu4 = 563 eu4 = 2081 v2 = 1253 }	# Gauda, Lakhnor -> Bardwan
@@ -24641,7 +24641,7 @@
 	link = { eu4 = 554 eu4 = 2070 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1328 v2 = 1326 }	# MANY-TO-MANY: Katmandu, Limbuwan -> Tumlong, Katmandu
 	link = { eu4 = 565 v2 = 1329 }	# Thimpu -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 v2 = 1592 }	# Himalaya, Ngari -> Ngari
+	link = { eu4 = 2128 v2 = 1592 }	# Ngari -> Ngari
 	link = { eu4 = 676 v2 = 1589 }	# Shigatse -> Shigatse
 	link = { eu4 = 2129 v2 = 1591 }	# Changtang -> Changtang
 	link = { eu4 = 706 eu4 = 2134 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong -> Makhai, Balekungomi
@@ -24696,10 +24696,10 @@
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
 	link = { eu4 = 562 eu4 = 2045 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur -> Darjeeling, Rajshahi
 	link = { eu4 = 571 eu4 = 2042 v2 = 1258 }	# Darrang, Koch Hajo -> Gauhati
-	link = { eu4 = 2040 eu4 = 1788 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Arunachal, Assam -> Dibrugarh, Tawang
+	link = { eu4 = 2040 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Assam -> Dibrugarh, Tawang
 	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2091 eu4 = 567 v2 = 2566 }	# Tripura, Silhet -> Agartala
-	link = { eu4 = 1950 eu4 = 2046 v2 = 1254 }	# Meghalaya, Nasirabad -> Dacca
+	link = { eu4 = 2046 v2 = 1254 }	# Nasirabad -> Dacca
 	link = { eu4 = 568 eu4 = 564 v2 = 1257 }	# Chittagong, Dhaka -> Chittagong
 	link = { eu4 = 2039 v2 = 1256 }	# Sunderbans -> Jessore
 	link = { eu4 = 563 eu4 = 2081 v2 = 1253 }	# Gauda, Lakhnor -> Bardwan
@@ -27186,7 +27186,7 @@
 	link = { eu4 = 554 eu4 = 2070 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1328 v2 = 1326 }	# MANY-TO-MANY: Katmandu, Limbuwan -> Tumlong, Katmandu
 	link = { eu4 = 565 v2 = 1329 }	# Thimpu -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 v2 = 1592 }	# Himalaya, Ngari -> Ngari
+	link = { eu4 = 2128 v2 = 1592 }	# Ngari -> Ngari
 	link = { eu4 = 676 v2 = 1589 }	# Shigatse -> Shigatse
 	link = { eu4 = 2129 v2 = 1591 }	# Changtang -> Changtang
 	link = { eu4 = 706 eu4 = 2134 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong -> Makhai, Balekungomi
@@ -27241,10 +27241,10 @@
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
 	link = { eu4 = 562 eu4 = 2045 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur -> Darjeeling, Rajshahi
 	link = { eu4 = 571 eu4 = 2042 v2 = 1258 }	# Darrang, Koch Hajo -> Gauhati
-	link = { eu4 = 2040 eu4 = 1788 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Arunachal, Assam -> Dibrugarh, Tawang
+	link = { eu4 = 2040 eu4 = 566 v2 = 1260 v2 = 1593 }	# MANY-TO-MANY: Sadiya, Assam -> Dibrugarh, Tawang
 	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2091 eu4 = 567 v2 = 2566 }	# Tripura, Silhet -> Agartala
-	link = { eu4 = 1950 eu4 = 2046 v2 = 1254 }	# Meghalaya, Nasirabad -> Dacca
+	link = { eu4 = 2046 v2 = 1254 }	# Nasirabad -> Dacca
 	link = { eu4 = 568 eu4 = 564 v2 = 1257 }	# Chittagong, Dhaka -> Chittagong
 	link = { eu4 = 2039 v2 = 1256 }	# Sunderbans -> Jessore
 	link = { eu4 = 563 eu4 = 2081 v2 = 1253 }	# Gauda, Lakhnor -> Bardwan
@@ -29618,7 +29618,7 @@
 	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2040 v2 = 1260 }	# Sadiya -> Dibrugarh
 	link = { eu4 = 571 eu4 = 566 eu4 = 2042 v2 = 1258 }	# Darrang, Assam, Koch Hajo -> Gauhati
-	link = { eu4 = 1950 eu4 = 2046 v2 = 1254 }	# Meghalaya, Nasirabad -> Dacca
+	link = { eu4 = 2046 v2 = 1254 }	# Nasirabad -> Dacca
 	link = { eu4 = 2039 v2 = 1256 }	# Sunderbans -> Jessore
 	link = { eu4 = 561 v2 = 1251 }	# Bengal Delta -> Calcutta
 	link = { eu4 = 562 eu4 = 2045 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur -> Darjeeling, Rajshahi
@@ -29726,7 +29726,7 @@
 	link = { eu4 = 554 eu4 = 2070 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1328 v2 = 1326 }	# MANY-TO-MANY: Katmandu, Limbuwan -> Tumlong, Katmandu
 	link = { eu4 = 565 v2 = 1329 }	# Thimpu -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 v2 = 1592 }	# Himalaya, Ngari -> Ngari
+	link = { eu4 = 2128 v2 = 1592 }	# Ngari -> Ngari
 	link = { eu4 = 2129 eu4 = 676 v2 = 1591 v2 = 1589 }	# MANY-TO-MANY: Changtang, Shigatse -> Changtang, Shigatse
 	link = { eu4 = 706 eu4 = 2134 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong -> Makhai, Balekungomi
 	link = { eu4 = 705 v2 = 1558 }	# Gyegu -> Kegudo
@@ -29907,7 +29907,7 @@
 	link = { eu4 = 2353 v2 = 2611 }	# Tortkara -> Turgay
 	# Asian Wasteland
 	link = { v2 = 2525 }	# NOTHING -> Marcus
-	link = { eu4 = 1784 eu4 = 1786 eu4 = 2194 eu4 = 1785 eu4 = 2200 eu4 = 2397 eu4 = 1788 }	# Tian Shan, Takla Makan, Qilian, Pamir, Suleiman Range, Tamanthi, Arunachal -> DROPPED
+	link = { eu4 = 1784 eu4 = 1786 eu4 = 2194 eu4 = 1785 eu4 = 2200 eu4 = 2397 }	# Tian Shan, Takla Makan, Qilian, Pamir, Suleiman Range, Tamanthi -> DROPPED
 	# Lakes
 	link = { eu4 = 1891 eu4 = 1894 eu4 = 2001 eu4 = 1896 eu4 = 1895 }	# Lake Tuz, Sevan Lake, Siling Lake, Lake Hongze, Lake Taihu -> DROPPED
 	link = { eu4 = 1892 v2 = 3231 }	# Lake Van -> Lake Van
@@ -31939,7 +31939,7 @@
 	link = { eu4 = 2041 eu4 = 570 eu4 = 573 v2 = 1259 }	# Manipur, Naga, Cachar -> Imphal
 	link = { eu4 = 2040 v2 = 1260 }	# Sadiya -> Dibrugarh
 	link = { eu4 = 571 eu4 = 566 eu4 = 2042 v2 = 1258 }	# Darrang, Assam, Koch Hajo -> Gauhati
-	link = { eu4 = 1950 eu4 = 2046 v2 = 1254 }	# Meghalaya, Nasirabad -> Dacca
+	link = { eu4 = 2046 v2 = 1254 }	# Nasirabad -> Dacca
 	link = { eu4 = 2039 v2 = 1256 }	# Sunderbans -> Jessore
 	link = { eu4 = 561 v2 = 1251 }	# Bengal Delta -> Calcutta
 	link = { eu4 = 562 eu4 = 2045 v2 = 1252 v2 = 1255 }	# MANY-TO-MANY: Koch, Rangpur -> Darjeeling, Rajshahi
@@ -32047,7 +32047,7 @@
 	link = { eu4 = 554 eu4 = 2070 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1328 v2 = 1326 }	# MANY-TO-MANY: Katmandu, Limbuwan -> Tumlong, Katmandu
 	link = { eu4 = 565 v2 = 1329 }	# Thimpu -> Thimpu
-	link = { eu4 = 1787 eu4 = 2128 v2 = 1592 }	# Himalaya, Ngari -> Ngari
+	link = { eu4 = 2128 v2 = 1592 }	# Ngari -> Ngari
 	link = { eu4 = 2129 eu4 = 676 v2 = 1591 v2 = 1589 }	# MANY-TO-MANY: Changtang, Shigatse -> Changtang, Shigatse
 	link = { eu4 = 706 eu4 = 2134 v2 = 1556 v2 = 1557 }	# MANY-TO-MANY: Tsaidam, Rebgong -> Makhai, Balekungomi
 	link = { eu4 = 705 v2 = 1558 }	# Gyegu -> Kegudo
@@ -32228,7 +32228,7 @@
 	link = { eu4 = 2353 v2 = 2611 }	# Tortkara -> Turgay
 	# Asian Wasteland
 	link = { v2 = 2525 }	# NOTHING -> Marcus
-	link = { eu4 = 1784 eu4 = 1786 eu4 = 2194 eu4 = 1785 eu4 = 2200 eu4 = 2397 eu4 = 1788 }	# Tian Shan, Takla Makan, Qilian, Pamir, Suleiman Range, Tamanthi, Arunachal -> DROPPED
+	link = { eu4 = 1784 eu4 = 1786 eu4 = 2194 eu4 = 1785 eu4 = 2200 eu4 = 2397 }	# Tian Shan, Takla Makan, Qilian, Pamir, Suleiman Range, Tamanthi -> DROPPED
 	# Lakes
 	link = { eu4 = 1891 eu4 = 1894 eu4 = 2001 eu4 = 1896 eu4 = 1895 }	# Lake Tuz, Sevan Lake, Siling Lake, Lake Hongze, Lake Taihu -> DROPPED
 	link = { eu4 = 1892 v2 = 3231 }	# Lake Van -> Lake Van
