@@ -79,7 +79,12 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		const commonItems::singleInt euroCentrismInt(theStream);
 		euroCentric = EUROCENTRISM(euroCentrismInt.getInt());
 		LOG(LogLevel::Info) << "Eurocentrism: " << euroCentrismInt.getInt();
-	});
+		});
+	registerKeyword("africa_reset", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleInt africaResetInt(theStream);
+		africaReset = AFRICARESET(africaResetInt.getInt());
+		LOG(LogLevel::Info) << "Africa Reset: " << africaResetInt.getInt();
+		});
 	registerKeyword("debug", [this](const std::string& unused, std::istream& theStream){
 		const commonItems::singleString debugString(theStream);
 		debug = (debugString.getString() == "yes");

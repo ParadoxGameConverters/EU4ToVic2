@@ -174,7 +174,7 @@
 							<isDefault>false</isDefault>
 						</entryOption>
 					</entryOptions>
-					</preference>
+				</preference>
 				<preference>
 					<name>euro_centrism</name>
 					<friendlyName>Make world Eurocentric?</friendlyName>
@@ -182,15 +182,34 @@
 					<entryOptions>
 						<entryOption>
 							<name>1</name>
-							<friendlyName>1 - Use EU4 institutions and tech</friendlyName>
-							<description>Use defaults</description>
-							<isDefault>false</isDefault>
+							<friendlyName>1 - Time to sell some opium!</friendlyName>
+							<description>Configurable via techgroups.txt</description>
+							<isDefault>true</isDefault>
 						</entryOption>
 						<entryOption>
 							<name>2</name>
-							<friendlyName>2 - Time to rule the waves!</friendlyName>
-							<description>Configurable via techgroups.txt</description>
+							<friendlyName>2 - Use EU4 institutions (bad)</friendlyName>
+							<description>Use defaults</description>
+							<isDefault>false</isDefault>
+						</entryOption>
+					</entryOptions>
+				</preference>
+				<preference>
+					<name>africa_reset</name>
+					<friendlyName>Wipe sub-saharan Africa?</friendlyName>
+					<description>Turn it into proper colonizable real estate?</description>
+					<entryOptions>
+						<entryOption>
+							<name>1</name>
+							<friendlyName>1 - Time for a safari!</friendlyName>
+							<description>Wipe the primitives</description>
 							<isDefault>true</isDefault>
+						</entryOption>
+						<entryOption>
+							<name>2</name>
+							<friendlyName>2 - Leave africans in peace...</friendlyName>
+							<description>Don't alter EU4 endgame.</description>
+							<isDefault>false</isDefault>
 						</entryOption>
 					</entryOptions>
 				</preference>

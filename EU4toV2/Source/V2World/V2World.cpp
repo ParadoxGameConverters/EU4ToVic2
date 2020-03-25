@@ -6,6 +6,7 @@
 #include "OSCompatibilityLayer.h"
 #include "../Mappers/Pops/PopMapper.h"
 #include "../Mappers/VersionParser/VersionParser.h"
+#include "../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../EU4World/World.h"
 #include "../Helpers/TechValues.h"
 #include "Flags/Flags.h"
@@ -48,7 +49,7 @@ historicalData(sourceWorld.getHistoricalData())
 	convertCountries(sourceWorld, ideaEffectMapper);
 
 	LOG(LogLevel::Info) << "-> Converting Provinces";
-	convertProvinces(sourceWorld);
+	convertProvinces(sourceWorld, techGroupsMapper, sourceWorld.getRegions());
 
 	LOG(LogLevel::Info) << "-> Cataloguing Invasive Fauna";
 	transcribeNeoCultures();
@@ -703,7 +704,7 @@ unsigned int V2::World::countCivilizedNations() const
 	return numPotentialGPs;
 }
 
-void V2::World::convertProvinces(const EU4::World& sourceWorld)
+void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper, const EU4::Regions& eu4Regions)
 {
 	for (const auto& province : provinces)
 	{
@@ -720,13 +721,6 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld)
 			LOG(LogLevel::Warning) << "Invalid mapping found for V2 province " << province.first << " (" << province.second->getName() << ")";
 			// We have a buggy mapping somewhere. Better drop.
 			province.second->sterilizeProvince();
-			continue;
-		}
-		if (theConfiguration.getResetProvinces() == "yes" && provinceMapper.isProvinceResettable(province.first, "resettableRegion")) 
-		{
-			// This province is supposed to get filled by nearby provinces, later, somewhere.
-			// TODO: This functionality doesn't exist. We have vanilla pop output but that's broken.
-			province.second->setResettable();
 			continue;
 		}
 
@@ -753,6 +747,34 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld)
 		province.second->setController(controller);
 
 		const auto& ownerCountry = countries.find(owner);
+		if (ownerCountry == countries.end()) {
+			Log(LogLevel::Warning) << "Province " << province.first << " owner " << owner << " has no country.";
+			continue;
+		}
+		if (theConfiguration.getAfricaReset() == Configuration::AFRICARESET::ResetAfrica)
+		{
+			if (africaResetMapper.isTechResetable(techGroupsMapper.getWesternizationFromTechGroup(ownerCountry->second->getSourceCountry()->getTechGroup())))
+			{
+				auto resetProvince = false;
+				// A single match will trip the province into sterilization.
+				for (const auto& origProvinceID : eu4ProvinceNumbers)
+				{
+					const auto& areaName = eu4Regions.getParentAreaName(origProvinceID);
+					const auto& regionName = eu4Regions.getParentRegionName(origProvinceID);
+					const auto& superRegionName = eu4Regions.getParentSuperRegionName(origProvinceID);
+					if (!areaName || !regionName || !superRegionName) continue;
+					if (africaResetMapper.isRegionResettable(*areaName) ||
+						africaResetMapper.isRegionResettable(*regionName) ||
+						africaResetMapper.isRegionResettable(*superRegionName)) resetProvince = true;
+				}
+				if (resetProvince)
+				{
+					province.second->sterilizeProvince();
+					continue;
+				}
+			}
+		}
+
 		if (ownerCountry != countries.end())
 		{
 			ownerCountry->second->addProvince(province.second);
