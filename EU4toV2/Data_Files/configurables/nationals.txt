@@ -80,12 +80,12 @@ link = { tag = LIT culture = lithuanian } #and Lithuania
 link = { tag = UKR culture = western_slavic } #and (Red) Ruthenia
 
 #Czechoslovakian => Czechoslovakia
-link = { tag = CZH culture = czech } 
-link = { tag = SLV culture = slovak } #and Slovakia and Ruthenia
+link = { tag = CZE culture = czech } 
+link = { tag = SLV culture = slovak }
 
 #East Slavic
 link = { tag = BYE culture = byelorussian } #Russia and Belarus
-link = { tag = UKR culture = ukrainian } #Ruthenia/Ukraine
+link = { tag = UKR culture = ukrainian } #Ukraine
 link = { tag = UGR culture = ugrian } #Yugra
 
 #Baltic => United Baltic

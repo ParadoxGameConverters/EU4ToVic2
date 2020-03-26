@@ -11,6 +11,21 @@ country_event = {
 }
 
 country_event = { 
+	id = 250000
+	title = EVTNAME250001
+	desc = EVTDESC250001
+	is_triggered_only = yes 
+
+	option = { 
+		name = EVTOPTA250001
+		all_core = {
+			remove_core = THIS
+			add_core = HRE
+		}
+    }
+}
+
+country_event = { 
 	id = 250002
 	title = EVTNAME250002
 	desc = EVTDESC250002

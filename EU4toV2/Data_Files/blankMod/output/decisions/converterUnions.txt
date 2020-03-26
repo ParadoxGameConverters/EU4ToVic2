@@ -32,19 +32,57 @@ political_decisions = {
 		news_desc_medium = "hre_NEWS_MEDIUM"
 		news_desc_short = "hre_NEWS_SHORT"
 		potential = {
-			NOT = { has_global_flag = liberal_revolutions_should_now_fire }
-			has_country_flag = emperor_hre
+			OR = {
+				AND = {
+					NOT = { has_global_flag = liberal_revolutions_should_now_fire }
+					has_country_flag = emperor_hre
+				}
+				AND = {
+					has_country_flag = union_is_hre
+					NOT = {
+						capital_scope = { continent = africa }
+						capital_scope = { continent = north_america }
+						capital_scope = { continent = south_america }
+						capital_scope = { continent = oceania }
+						#tag = FSA
+						tag = CSA
+						tag = MGL
+						tag = SPQ
+						tag = SLA
+						tag = HRE
+					}
+				}
+			}
 			NOT = {
 				exists = HRE
 			}
 		}
 		allow = {
-			is_greater_power = yes
-			prestige = 65
+			OR = {
+				AND = {
+					is_greater_power = yes
+					prestige = 65
+					has_country_flag = emperor_hre
+				}
+				AND = {
+					has_country_flag = union_is_hre
+					prestige = 45
+					nationalism_n_imperialism = 1
+					war = no
+					is_greater_power = yes
+				}
+			}
 		}
+		
 		effect = {
 			change_tag = HRE
 			clr_country_flag = emperor_hre
+			any_country = {
+				limit = {
+					is_culture_group = THIS
+				}
+				set_country_flag = union_is_hre
+			}
 			any_country = {
 				limit = {
 					has_country_flag = member_hre
@@ -66,7 +104,38 @@ political_decisions = {
 				country_event = 250003
 				clr_country_flag = member_hre
 			}
-			GER = { all_core = { remove_core = GER add_core = HRE } }
+			any_country = {
+				limit = {
+					has_country_flag = member_hre
+					NOT = {
+						in_sphere = THIS
+					}
+				}
+				country_event = 250003
+				clr_country_flag = member_hre
+			}
+			any_country = {
+				limit = {
+					NOT = { is_greater_power = yes }
+					has_country_flag = union_is_hre
+					NOT = { has_country_flag = post_colonial_country }
+					NOT = {
+						capital_scope = { continent = africa }
+						capital_scope = { continent = north_america }
+						capital_scope = { continent = south_america }
+						capital_scope = { continent = oceania }
+					}
+					is_culture_group = THIS
+					in_sphere = THIS
+					OR = {
+						is_vassal = no
+						vassal_of = THIS
+					}
+				}
+				country_event = 11101
+			}
+			cultural_union = { country_event = 250000 }
+			add_accepted_culture = union
 		}
 	}
 	form_two_sicilies = {
@@ -185,9 +254,12 @@ political_decisions = {
 		}
 
 		effect = {
-			USA_129 = { add_core = CSA } #Dixieland for the ACW
+		#No longer needed because war with non-existant countries
+		#solves itself after a day now
+			#USA_129 = { add_core = CSA } #Dixieland for the ACW
+			#CHI_1476 = { add_core = TPG } #Taiping Heavenly Kingdom (for event)
 			
-			CHI_1476 = { add_core = TPG } #Taiping Heavenly Kingdom (for event)
+			
 			#Former colonies
 			any_country = {
 				limit = {
@@ -257,6 +329,16 @@ political_decisions = {
 			}
 			MTC = { set_country_flag = precolonial } # Métis Confederacy
 			#Countries not Vanilla in EU4 or Vic2
+			CZE = { #Czech Republic, "copy" of Czechoslovakia
+				primary_culture = czech
+				religion = catholic
+				government = absolute_monarchy
+				civilized = yes
+				capital = 625
+				nationalvalue = nv_liberty
+				ruling_party_ideology = conservative
+				political_reform = no_slavery
+			}
 			any_country = { #Trapalandia
 				limit = {
 					tag = TRL

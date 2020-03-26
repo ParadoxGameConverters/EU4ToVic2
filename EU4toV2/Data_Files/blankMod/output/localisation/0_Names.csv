@@ -339,6 +339,9 @@ CXI_democracy;The Republic of Xi;République des Xis;Die Xi-Republik;Republika Xi
 CXI_proletarian_dictatorship;The People's Republic of Xi;République Populaire des Xis;Die Xi-Volksrepublik;Republiki Ludowej Xi;La República Popular de Xi;Repubblica Popolare degli Xi;A Népköztársaság Xi;Xi lidové republiky;A Népköztársaság Xi;de People's Republic of Xi;República Popular da Xi;Íàğîäíàÿ Ğåñïóáëèêà Õè;kansantasavallan Xi;x
 CYR;Cyrenaica;Cyrénaïque;Cyrenaika;Cyrenaica;Cirenaica;Cirenaica;Cyrenaica;Cyrenaica;Cyrenaica;Cyrenaica;Cirenaica;Êèğåíàèêè;Kyrenaika;x
 CYR_ADJ;Cyrenaican;Cyrénaïque;Cyrenaikäer;Cyrenejczyk;Cyrenaican;Cirenaica;Cyrenaican;Cyrenaican;Cyrenaican;Cirenaica;Cirenaican;Êèğåíàèêñê.;Cyrenaican;x
+CZE;Czechia;Tchéquie;Tschechien;Czechy;Chequia;Cechia;Csehország;Èesko;Csehország;Tsjechië;Tchequia;×åõèÿ;Tsekki;z
+CZE_ADJ;Czech;tchèque;Tschechisch;Czesk.;Checa;Ceca;Cseh;Èeština;Cseh;Tsjechisch;Tcheco;×åøñê.;Tsekin;z
+CZE_democracy;The Czech Republic;La République Tchèque;Die tschechische Republik;Republika Czeska;La República Checa;Repubblica Ceca;Cseh Köztársaság;Èeská Republika;Cseh Köztársaság;De Tsjechische Republiek;A república Tcheca;×åøêàÿ Ğåñïóáëèêà;Tsekin Tasavalta;z
 DAG;Dagestan;Daguestan;Dagestan;Dagestan;Daguestán;Daghestan;Dagesztán;Dagestan;Dagesztán;Dagestan;Daguestão;Äàãåñòàí;Dagestanin;x
 DAG_ADJ;Dagestani;Daguestannais;Dagestanisch;Dagestani;Dagestani;del Daghestan;Dagestani;Dagestani;Dagestani;Dagestaanse;Daguestão;äàãåñòàíåö;Dagestani;x
 DAH;Dahomey;Dahoméy;Dahomey;Dahomej;Dahomey;Dahomey;Dahomey;Dahomey;Dahomey;Dahomey;Daomé;Äàãîìåÿ;Dahomey;z
@@ -607,7 +610,7 @@ KCH_ADJ;Kachin;Katchin;Kachin-;Kachin;Kachin;dei Kachin;Kachin;Kachin;Kachin;Kac
 KCX;Koch;Kotch;Koch;Kocz;Koch;Koch;Koch;Koch;Koch;Koch;Koch;Êó÷;Koch;z
 KCX_ADJ;Koch;du Kotch;Koch-;Koczu;Kochi;di Koch;Koch;Koch;Koch;Koch;Koch;Êó÷ñê.;Koch;y
 KDS;Kurdistan;Kurdistan;Kurdistan;Kurdistan;Kurdystan;Kurdistan;Kurdisztán;Kurdistan;Kurdisztán;Kurdistan;Curdistão;Êóğäèñòàí;Kurdistan;x
-KDS_ADJ;Kurdish;;;;;;;;;;;;;;;;;;;;;;;;;;
+KDS_ADJ;Kurdish;Kurde;Kurdisch;Kurdyjsk.;Kurda;Curda;Kurd;Kurdská;Kurd;Koerdische;Curda;Êóğäñê.;Kurdi;x
 KGR;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Êàíãğà;Kangra;z
 KGR_ADJ;Kangra;Kangrais;Kangra-;Kangry;Kangri;di Kangra;Kangra;Kangra;Kangra;Kangra;Kangra;Êàíãğàñê.;Kangra;y
 KHA;The Mongol Khanate;Le Khanat Mongol;Das Mongolische Khanat;Mongo³owie Chanat;El kanato mongol;Khanato Mongolo;A mongol Khanate;mongolskı Khanate;A mongol Khanate;de Mongoolse Khanate;O Khanato Mongol;Ìîíãîëüñêîå Õàíñòâî;mongolien Khanate;x
