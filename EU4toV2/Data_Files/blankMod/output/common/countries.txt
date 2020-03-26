@@ -898,6 +898,9 @@ HKG		= "countries/Hong Kong.txt"
 AOM		= "countries/Macao.txt"
 SHD		= "countries/Shandong.txt"
 
+# Czech Republic
+CZE		= "countries/Czechia.txt"
+
 ##HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions
 D01		= "countries/D01.txt"
