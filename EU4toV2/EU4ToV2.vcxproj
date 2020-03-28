@@ -171,6 +171,7 @@
     <ClCompile Include="..\common_items\Color.cpp" />
     <ClCompile Include="..\common_items\CommonUtils.cpp" />
     <ClCompile Include="..\common_items\Date.cpp" />
+    <ClCompile Include="..\common_items\iconvlite.cpp" />
     <ClCompile Include="..\common_items\Log.cpp" />
     <ClCompile Include="..\common_items\newParser.cpp" />
     <ClCompile Include="..\common_items\Object.cpp" />
@@ -362,6 +363,7 @@
     <ClInclude Include="..\common_items\CardinalToOrdinal.h" />
     <ClInclude Include="..\common_items\Color.h" />
     <ClInclude Include="..\common_items\Date.h" />
+    <ClInclude Include="..\common_items\iconvlite.h" />
     <ClInclude Include="..\common_items\Log.h" />
     <ClInclude Include="..\common_items\newParser.h" />
     <ClInclude Include="..\common_items\Object.h" />
