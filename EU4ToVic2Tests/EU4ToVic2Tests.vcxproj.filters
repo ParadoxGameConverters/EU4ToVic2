@@ -263,6 +263,9 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\SuperRegion.cpp">
       <Filter>ConverterFiles\Mappers\SuperGroupMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\common_items\iconvlite.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">

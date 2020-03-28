@@ -11,7 +11,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 	registerKeyword("SaveGame", [this](const std::string& unused, std::istream& theStream) 
 		{
 			const commonItems::singleString path(theStream);
-			EU4SaveGamePath = path.getString();			
+			EU4SaveGamePath = path.getString();
 		});
 	registerKeyword("EU4directory", [this, doesFolderExist, doesFileExist](const std::string& unused, std::istream& theStream){
 		const commonItems::singleString path(theStream);

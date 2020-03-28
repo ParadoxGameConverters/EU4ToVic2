@@ -565,6 +565,9 @@
     <ClCompile Include="Source\Mappers\AfricaReset\AfricaResetMapper.cpp">
       <Filter>Mappers\AfricaReset</Filter>
     </ClCompile>
+    <ClCompile Include="..\common_items\iconvlite.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1087,6 +1090,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\AfricaReset\AfricaResetMapper.h">
       <Filter>Mappers\AfricaReset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common_items\iconvlite.h">
+      <Filter>CommonItems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
