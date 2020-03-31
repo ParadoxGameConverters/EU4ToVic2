@@ -37,6 +37,7 @@ province_event = {
 	picture = "Demonstration"
 	
 	trigger = {
+		always = no
 		NOT = {
 			owner = {
 				OR = {
