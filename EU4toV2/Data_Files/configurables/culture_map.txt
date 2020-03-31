@@ -624,7 +624,7 @@ link = { vic2 = elephant_culture eu4 = elephant_culture }
 link = { vic2 = hedgehog_culture eu4 = hedgehog_culture }
 
 # noculture
-link = { vic2 = noculture eu4 = noculture }
+link = { vic2 = dummy eu4 = noculture }
 
 #633 AD mod cultures (Ostrogothic, Maghreb Latin, Syriac)
 link = { vic2 = bosniak eu4 = ostrogothic religion = slavic_pagan_reformed religion = animist }

@@ -277,7 +277,7 @@ link = { vic2 = polar_bears eu4 = jan_mayenese }
 link = { vic2 = horse eu4 = equine }
 
 # noculture
-link = { vic2 = noculture eu4 = noculture }
+link = { vic2 = dummy eu4 = noculture }
 
 # Non-humans
 #link = { vic2 = cat ck2 = cat } # CK2 doesn't export cats yet
