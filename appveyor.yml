@@ -14,7 +14,9 @@ build_script:
 test_script:
 - ps: >-
     vstest.console.exe /logger:Appveyor frontend\Frontend.Core.Tests\bin\Release\Frontend.Core.Tests.dll
+    
     EU4ToVic2Tests\Release\EU4ToVic2Tests.exe --gtest_output=xml:tests.xml
+    
     (new-object net.webclient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\tests.xml))
 artifacts:
 - path: Release
