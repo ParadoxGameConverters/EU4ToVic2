@@ -2,13 +2,11 @@ version: dev.{build}
 skip_tags: true
 image: Visual Studio 2019 Preview
 configuration: Release
+#msbuild -m EU4ToVic2.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+#msbuild -m EU4toV2/EU4ToV2.vcxproj -property:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 build_script:
 - cmd: >-
     git submodule update --init --recursive
-
-    msbuild -m EU4ToVic2.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-    msbuild -m EU4toV2/EU4ToV2.vcxproj -property:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
     msbuild -m EU4ToVic2Tests/EU4ToVic2Tests.vcxproj /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 test_script:
@@ -17,7 +15,9 @@ test_script:
     
     EU4ToVic2Tests\Release\EU4ToVic2Tests.exe --gtest_output=xml:tests.xml
     
-    (new-object net.webclient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\tests.xml))
+    $wc = New-Object 'System.Net.WebClient'
+    
+    $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\tests.xml))    
 artifacts:
 - path: Release
   name: EU4ToVic2-1.0Nitra-prerelease
