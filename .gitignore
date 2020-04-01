@@ -47,3 +47,5 @@ EU4toV2/CMakeFiles/EU4ToVic2.dir/progress.make
 EU4ToVic2Tests/EU4ToVic2Tests.vcxproj.user
 EU4ToVic2Tests/EU4ToVic2Tests/EU4ToVic2Tests.exe
 .gitmodules
+tests.xml
+log.txt

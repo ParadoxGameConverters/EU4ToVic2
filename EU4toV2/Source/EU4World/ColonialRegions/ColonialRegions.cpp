@@ -18,8 +18,15 @@ EU4::ColonialRegions::ColonialRegions()
 			}
 		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-		
-	parseFile(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt");
+
+	if (!Utils::DoesFileExist(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt"))
+	{
+		Log(LogLevel::Warning) << "Could not find " << theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt";
+	}
+	else
+	{
+		parseFile(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt");
+	}
 
 	for (const auto& mod: theConfiguration.getEU4Mods())
 	{

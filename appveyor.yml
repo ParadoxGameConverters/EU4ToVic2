@@ -6,12 +6,20 @@ build_script:
 - cmd: >-
     git submodule update --init --recursive
 
-    msbuild EU4ToVic2.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+    msbuild -m EU4ToVic2.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-    msbuild EU4toV2/EU4ToV2.vcxproj -property:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+    msbuild -m EU4toV2/EU4ToV2.vcxproj -property:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-    msbuild EU4ToVic2Tests/EU4ToVic2Tests.vcxproj /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-test: off
+    msbuild -m EU4ToVic2Tests/EU4ToVic2Tests.vcxproj /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+test_script:
+- ps: >-
+    vstest.console.exe /logger:Appveyor frontend\Frontend.Core.Tests\bin\Release\Frontend.Core.Tests.dll
+    
+    EU4ToVic2Tests\Release\EU4ToVic2Tests.exe --gtest_output=xml:tests.xml
+    
+    $wc = New-Object 'System.Net.WebClient'
+    
+    $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\tests.xml))    
 artifacts:
 - path: Release
   name: EU4ToVic2-1.0Nitra-prerelease

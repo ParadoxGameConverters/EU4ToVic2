@@ -1,10 +1,19 @@
 #include "BlockedTechSchools.h"
 #include "ParserHelpers.h"
+#include "OSCompatibilityLayer.h"
 
 mappers::BlockedTechSchools::BlockedTechSchools()
 {
 	registerKeys();
-	parseFile("configurables/blocked_tech_schools.txt");
+	if (!Utils::DoesFileExist("configurables/blocked_tech_schools.txt"))
+	{
+		Log(LogLevel::Warning) << "Could not find configurables/blocked_tech_schools.txt";
+	}
+	else
+	{
+		parseFile("configurables/blocked_tech_schools.txt");
+	}
+
 	clearRegisteredKeywords();
 }
 
