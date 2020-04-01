@@ -38,6 +38,7 @@ bool EU4::Regions::provinceInRegion(int province, const std::string& regionName)
 		for (const auto& regionalName: superRegionItr->second)
 		{
 			const auto& regionalItr = regions.find(regionalName);
+			if (regionalItr == regions.end()) continue;
 			if (regionalItr->second.regionContainsProvince(province)) return true;
 		}
 	}
