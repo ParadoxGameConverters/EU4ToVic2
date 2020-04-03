@@ -58,14 +58,16 @@ void V2::Diplomacy::convertDiplomacy(
 					country2->second->getSourceCountry()->getLibertyDesire() < libertyMap[theConfiguration.getLibertyThreshold()])
 			{
 				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() <<
-					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << libertyMap[theConfiguration.getLibertyThreshold()] << " liberty desire)";
+					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << 
+					libertyMap[theConfiguration.getLibertyThreshold()] << " liberty desire)";
 				country1->second->absorbColony(*country2->second);
 				continue;
 			}
 			
-			country2->second->setColonyOverlord(V2Tag1);
 			LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is not absorbing " << country2->second->getTag() <<
-				" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << libertyMap[theConfiguration.getLibertyThreshold()] << " liberty desire)";
+				" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << 
+				libertyMap[theConfiguration.getLibertyThreshold()] << " liberty desire)";
+			country2->second->setColonyOverlord(V2Tag1);
 		}
 
 		if (agreementMapper.isAgreementInOnesiders(agreement.getAgreementType()))
