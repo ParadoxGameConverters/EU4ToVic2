@@ -46,8 +46,6 @@ void V2::Diplomacy::convertDiplomacy(
 
 		if (agreementMapper.isAgreementInColonies(agreement.getAgreementType()))
 		{
-			country2->second->setColonyOverlord(V2Tag1);
-
 			std::map<Configuration::LIBERTYDESIRE, double> libertyMap = {
 				{Configuration::LIBERTYDESIRE::Loyal, 50.0},
 				{Configuration::LIBERTYDESIRE::Disloyal, 95.0},
@@ -62,22 +60,10 @@ void V2::Diplomacy::convertDiplomacy(
 				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() <<
 					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << libertyMap[theConfiguration.getLibertyThreshold()] << " liberty desire)";
 				country1->second->absorbColony(*country2->second);
-				auto agreementItr = eu4agreements.begin();
-				while (agreementItr != eu4agreements.end())
-				{
-					if (agreementItr->getTargetTag() == country2->second->getSourceCountry()->getTag() || 
-						agreementItr->getOriginTag() == country1->second->getSourceCountry()->getTag())
-					{
-						eu4agreements.erase(agreementItr);
-					}
-					else
-					{
-						++agreementItr;
-					}
-				}
 				continue;
 			}
 			
+			country2->second->setColonyOverlord(V2Tag1);
 			LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is not absorbing " << country2->second->getTag() <<
 				" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << libertyMap[theConfiguration.getLibertyThreshold()] << " liberty desire)";
 		}
