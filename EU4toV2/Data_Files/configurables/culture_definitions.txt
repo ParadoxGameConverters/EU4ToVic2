@@ -1788,6 +1788,42 @@ levantine = {
 		}
 		radicalism = 10
 	}
+	anatolian = {
+		color = {50 100 200}
+
+		first_names = { Adamantios Aléxandros Anastásios Andréas Antónios Aristídis Athanásios Avgóstinos Venizélos Charálampos
+		Charílaos Dimítrios Diomídis Elefthérios Emmanouíl Epameínontas Evripídis Gennaíos Geórgios Ilías
+		Ionnis Kítsos Konstantínos Kyriákos Kyriakoúlis Leonídas Makários Márkos Míchael Militiadis
+		Nikólaos Odysséas Óthon Panagiótis Pavlos Pétros Sofoklís Sotíris Spyridíon Spýros
+		Stáïkos Stéfanos Stylianós Themistoklís Theódoros Tharývoulos Tzannís Vásos Víktor Zinóvios
+		}
+
+		last_names = { Charalámpis Christákis-Zográfos Daglis Dousmanis Foúmis Gonatás Chatzianéstis Kallérgis Kanáris Katsimiros
+		Kolokotrónis Kondýlis Kountouriótis Kriezís Makriiánnis Mános Mavrokordátos Mavrovouniótis Metaxás Moúskos
+		Níder Othonaíos Paláskas Pan'galos Papadiamantópoulos Papadópoulos Papágos Papoúlas Parakevópoulos Plapoútas
+		Plastíras Sapountzákis Saráfis Smolénskis Sofoúlis Soútsos Spyromílios Staïkópoulos Stanotas "tis Elládas"
+		Trikoúpis Tsakalótos Tsolákoglou Typáldos-Alfonsátos Tzavélas Vássos Venizélos Voúlgaris Zaïmis Zymvrakákis
+		}
+		radicalism = 10
+	}
+	magnagreek = {
+		color = {100 200 50}
+
+		first_names = { Adamantios Aléxandros Anastásios Andréas Antónios Aristídis Athanásios Avgóstinos Venizélos Charálampos
+		Charílaos Dimítrios Diomídis Elefthérios Emmanouíl Epameínontas Evripídis Gennaíos Geórgios Ilías
+		Ionnis Kítsos Konstantínos Kyriákos Kyriakoúlis Leonídas Makários Márkos Míchael Militiadis
+		Nikólaos Odysséas Óthon Panagiótis Pavlos Pétros Sofoklís Sotíris Spyridíon Spýros
+		Stáïkos Stéfanos Stylianós Themistoklís Theódoros Tharývoulos Tzannís Vásos Víktor Zinóvios
+		}
+
+		last_names = { Charalámpis Christákis-Zográfos Daglis Dousmanis Foúmis Gonatás Chatzianéstis Kallérgis Kanáris Katsimiros
+		Kolokotrónis Kondýlis Kountouriótis Kriezís Makriiánnis Mános Mavrokordátos Mavrovouniótis Metaxás Moúskos
+		Níder Othonaíos Paláskas Pan'galos Papadiamantópoulos Papadópoulos Papágos Papoúlas Parakevópoulos Plapoútas
+		Plastíras Sapountzákis Saráfis Smolénskis Sofoúlis Soútsos Spyromílios Staïkópoulos Stanotas "tis Elládas"
+		Trikoúpis Tsakalótos Tsolákoglou Typáldos-Alfonsátos Tzavélas Vássos Venizélos Voúlgaris Zaïmis Zymvrakákis
+		}
+		radicalism = 10
+	}
 	georgian = {
 		color = {70 110 70}
 
@@ -2232,7 +2268,25 @@ arab = {
 			}
 			radicalism = 10
 		}
-	
+	frencharab = {
+		color = {0 172 181}
+
+		first_names = { 
+			"Abd Allah" "Abd al-Karim" "Abd al-Malik" "Abd al-Qadir" "Abd al-Rahman" "Abu Bakr" Ahmad Ali 
+			Fawzi Fuad Halil Hasan Hisham Ibrahim Ishaq Iskandar Ja'far Jamal Kamil Khalid 
+			Muhammad Mustafa "Nur al-Din" "Sa'd al-Din" Salim  Sa'ud Shukri
+			Tawfiq Umar Uthman Yahya Yusuf Zafir 		
+			}
+		
+		last_names = { 
+			"ibn Abd Allah" "ibn Abd al-Qadir" "ibn Abu Bakr" "ibn Ahmad" "ibn Ali"
+			"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
+			"ibn Muhammad" "ibn Mustafa" "ibn Salim"  
+			"ibn Umar" "ibn Uthman" "ibn Yusuf"
+			"al-Najdi" "al-Hijazi"   
+			}
+			radicalism = 10
+		}
 	union = ARA
 }
 
