@@ -1304,6 +1304,18 @@ link = { EU4 = k_angleland Vic2 = AES } # Anglo-Saxony
 link = { EU4 = k_frankish Vic2 = FRK } # Frankia
 link = { EU4 = k_suebia Vic2 = SUE } # Suebi
 
+##CK2EU4 Chinas
+link = { EU4 = WEI Vic2 = WEJ } # Wei
+link = { EU4 = HND Vic2 = HNX } # Han
+link = { EU4 = ZAO Vic2 = ZAO } # Zhao
+link = { EU4 = LIO Vic2 = LIO } # Liao
+link = { EU4 = XIA Vic2 = HSJ } # Xia
+link = { EU4 = DAX Vic2 = DAX } # Dai
+link = { EU4 = CEG Vic2 = CHX } # Cheng
+link = { EU4 = SNG Vic2 = SUM } # Song
+link = { EU4 = YIN Vic2 = YIN } # Yin
+link = { EU4 = CHN Vic2 = ZHX } # Zhongwuo
+
 ##1356 mod
 link = { EU4 = WHI Vic2 = WHI } # White Horde
 link = { EU4 = WRW Vic2 = WRW } # Warsaw-Rawa
