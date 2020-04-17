@@ -404,6 +404,7 @@ political_decisions = {
 				tag = SPQ
 				tag = SLA
 				tag = HRE
+				tag = WSF #Avoiding Zapadoslavia becomes Czechia or PLC
 			}
 		}
 		
@@ -1099,9 +1100,9 @@ political_decisions = {
 				change_province_name = "Kolmar"
 			}
 			409 = {
-				change_province_name = "Straﬂburg"
+				change_province_name = "Strassburg"
 				state_scope = {
-					change_region_name = "Elsaﬂ-Lothringen"
+					change_region_name = "Elsass-Lothringen"
 				}
 			}
 			prestige = 5
