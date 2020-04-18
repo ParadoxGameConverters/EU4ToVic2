@@ -126,6 +126,7 @@ country_event = {
 		has_recently_lost_war = no
 		nationalism_n_imperialism = 1
 		primary_culture = swiss
+		NOT = { tag = HRE }
 		NOT = { exists = SWI } #Cultural country
 		SWI = {
 			all_core = {
@@ -1560,6 +1561,7 @@ country_event = {
 		has_recently_lost_war = no
 		nationalism_n_imperialism = 1
 		primary_culture = polish
+		NOT = { tag = WSF }
 		NOT = { exists = PLC } #Cultural union
 		NOT = { exists = POL } #Cultural country
 		POL = {
@@ -1613,6 +1615,7 @@ country_event = {
 		has_recently_lost_war = no
 		nationalism_n_imperialism = 1
 		primary_culture = lithuanian
+		NOT = { tag = WSF }
 		NOT = { exists = PLC } #Cultural union
 		NOT = { exists = LIT } #Cultural country
 		LIT = {
@@ -1666,6 +1669,8 @@ country_event = {
 		has_recently_lost_war = no
 		nationalism_n_imperialism = 1
 		primary_culture = czech
+		NOT = { tag = WSF }
+		NOT = { tag = SLA }
 		NOT = { exists = CZH } #Cultural union
 		NOT = { exists = CZH } #Cultural country
 		CZH = {
@@ -1719,6 +1724,8 @@ country_event = {
 		has_recently_lost_war = no
 		nationalism_n_imperialism = 1
 		primary_culture = slovak
+		NOT = { tag = WSF }
+		NOT = { tag = SLA }
 		NOT = { exists = CZH } #Cultural union
 		NOT = { exists = SLV } #Cultural country
 		SLV = {
@@ -1772,6 +1779,7 @@ country_event = {
 		has_recently_lost_war = no
 		nationalism_n_imperialism = 1
 		primary_culture = russian
+		NOT = { tag = SLA }
 		NOT = { exists = RUS } #Cultural union
 		NOT = { exists = RUS } #Cultural country
 		RUS = {
@@ -1825,6 +1833,7 @@ country_event = {
 		has_recently_lost_war = no
 		nationalism_n_imperialism = 1
 		primary_culture = byelorussian
+		NOT = { tag = SLA }
 		NOT = { exists = RUS } #Cultural union
 		NOT = { exists = BYE } #Cultural country
 		BYE = {
@@ -1878,6 +1887,7 @@ country_event = {
 		has_recently_lost_war = no
 		nationalism_n_imperialism = 1
 		primary_culture = ukrainian
+		NOT = { tag = SLA }
 		NOT = { exists = RUS } #Cultural union
 		NOT = { exists = UKR } #Cultural country
 		UKR = {
@@ -1930,6 +1940,7 @@ country_event = {
 		number_of_states = 2
 		has_recently_lost_war = no
 		nationalism_n_imperialism = 1
+		NOT = { tag = SLA }
 		primary_culture = ugrian
 		NOT = { exists = RUS } #Cultural union
 		NOT = { exists = UGR } #Cultural country

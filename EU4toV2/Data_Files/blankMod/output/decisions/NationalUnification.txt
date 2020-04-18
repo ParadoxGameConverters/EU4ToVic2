@@ -404,7 +404,6 @@ political_decisions = {
 				tag = SPQ
 				tag = SLA
 				tag = HRE
-				tag = WSF #Avoiding Zapadoslavia becomes Czechia or PLC
 			}
 		}
 		
@@ -1100,9 +1099,9 @@ political_decisions = {
 				change_province_name = "Kolmar"
 			}
 			409 = {
-				change_province_name = "Strassburg"
+				change_province_name = "Straßburg"
 				state_scope = {
-					change_region_name = "Elsass-Lothringen"
+					change_region_name = "Elsaß-Lothringen"
 				}
 			}
 			prestige = 5
@@ -1562,6 +1561,7 @@ unite_moldavia_wallachia = {
 				tag = SLA
 				tag = HRE
 				tag = SLV
+				tag = WSF
 			}
 			OR = {
 				NOT = { exists = CZH }
