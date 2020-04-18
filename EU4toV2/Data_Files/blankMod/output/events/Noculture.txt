@@ -74,17 +74,19 @@ country_event = {
 	}
 }
 # At war with a landless country
+#Currently does nothing, as "end_war" does not accept THIS or FROM, but only tags
 country_event = { 
 	id = 2500020
 	title = NOWARTITLE
 	desc = NOWARDESC
 
 	trigger = { 
-		OR = {
-			exists = no
-			tag = REB #God knows why
-		}
-		war = yes
+		#OR = {
+		#	exists = no
+		#	tag = REB #God knows why
+		#}
+		#war = yes
+		always = no
 	}
 
 	mean_time_to_happen = { months = 0.00001 } #F--king immediately
