@@ -328,6 +328,10 @@ political_decisions = {
 				set_country_flag = precolonial
 			}
 			MTC = { set_country_flag = precolonial } # Métis Confederacy
+			ISR = { #Setting the Jewish country
+				primary_culture = israeli
+				add_accepted_culture = union
+			}
 			#Countries not Vanilla in EU4 or Vic2
 			CZE = { #Czech Republic, "copy" of Czechoslovakia
 				primary_culture = czech
@@ -3446,6 +3450,125 @@ political_decisions = {
 				civilized = yes
 				capital = 1082
 			}
+			any_country = { #Micronesia
+				limit = {
+					tag = FSM
+					NOT = { exists = FSM }
+				}
+				primary_culture = micronesian
+				religion = protestant
+				government = democracy
+				civilized = no
+				capital = 610
+			}
+			any_country = { #Guam
+				limit = {
+					tag = GUM
+					NOT = { exists = GUM }
+				}
+				primary_culture = micronesian
+				religion = protestant
+				government = democracy
+				civilized = no
+				capital = 2517
+			}
+			any_country = { #PRC
+				limit = {
+					tag = PRC
+					NOT = { exists = PRC }
+				}
+				primary_culture = beifaren
+				add_accepted_culture = nanfaren
+				religion = gelugpa
+				government = proletarian_dictatorship
+				civilized = yes
+				capital = 1612
+			}
+			any_country = { #RSI
+				limit = {
+					tag = RSI
+					NOT = { exists = RSI }
+				}
+				primary_culture = north_italian
+				add_accepted_culture = south_italian
+				religion = catholic
+				government = fascist_dictatorship
+				civilized = yes
+				capital = 727
+			}
+			any_country = { #Solomon Islands
+				limit = {
+					tag = SLM
+					NOT = { exists = SLM }
+				}
+				primary_culture = melanesian
+				add_accepted_culture = ashkenazi
+				religion = jewish
+				government = democracy
+				civilized = yes
+				capital = 2534
+			}
+			any_country = { #Vichy France
+				limit = {
+					tag = VIC
+					NOT = { exists = VIC }
+				}
+				primary_culture = french
+				religion = catholic
+				government = absolute_monarchy
+				civilized = yes
+				capital = 425
+			}
+			any_country = { #The Raj
+				limit = {
+					tag = RJX
+					NOT = { exists = RJX }
+				}
+				primary_culture = kanauji
+				add_accepted_culture = union
+				religion = hindu
+				government = hms_government
+				civilized = yes
+				capital = 1236
+				set_country_flag = precolonial
+			}
+			any_country = { #European Union
+				limit = {
+					tag = EUR
+					NOT = { exists = EUR }
+				}
+				primary_culture = dummy #Event will fix it
+				add_accepted_culture = bulgarian
+				add_accepted_culture = croatian
+				add_accepted_culture = czech
+				add_accepted_culture = danish
+				add_accepted_culture = dutch
+				add_accepted_culture = english
+				add_accepted_culture = estonian
+				add_accepted_culture = finnish
+				add_accepted_culture = french
+				add_accepted_culture = north_german
+				add_accepted_culture = south_german
+				add_accepted_culture = greek
+				add_accepted_culture = hungarian
+				add_accepted_culture = irish
+				add_accepted_culture = north_italian
+				add_accepted_culture = south_italian
+				add_accepted_culture = latvian
+				add_accepted_culture = lithuanian
+				add_accepted_culture = maltese
+				add_accepted_culture = polish
+				add_accepted_culture = portuguese
+				add_accepted_culture = romanian
+				add_accepted_culture = slovak
+				add_accepted_culture = slovene
+				add_accepted_culture = spanish
+				add_accepted_culture = swedish
+				religion = protestant
+				government = democracy
+				civilized = yes
+				capital = 387
+			}
 			any_country = { limit = { tag = AAA NOT = { exists = AAA } } primary_culture = dummy religion = pre_schism government = theocracy civilized = no capital = 322 } # AAA
 			any_country = { limit = { tag = SMI NOT = { exists = SMI } } primary_culture = sami religion = protestant government = democracy civilized = yes capital = 336 } # Sami
 			any_country = { limit = { tag = MEM NOT = { exists = MEM } } primary_culture = south_german religion = catholic government = democracy civilized = yes capital = 593 } # Memmingen
@@ -3971,6 +4094,13 @@ political_decisions = {
 			KOR_1627 = { add_core = PYO }
 			802 = { add_core = KOS } #Kosovo
 			803 = { add_core = KOS }
+			610 = { add_core = FSM } #Micronesia
+			2518 = { add_core = FSM } #--Palau
+			2519 = { add_core = FSM } 
+			2522 = { add_core = FSM } #--Marshall Islands
+			2517 = { add_core = GUM } #Guam
+			2521 = { add_core = GUM } #--North Mariana
+			2534 = { add_core = SLM remove_core = PPG } # Solomon Islands
 			#Exaggerated cultural Heimaten fix
 			PER = {
 				any_owned_province = {
@@ -6092,7 +6222,10 @@ political_decisions = {
 	EGY_copt = {
 		potential = {
 			tag = EGY
-			pop_majority_religion = coptic
+			OR = {
+				pop_majority_religion = coptic
+				pop_majority_religion = kemetic
+			}
 		}	
 		allow = {
 			war = no
@@ -6110,6 +6243,7 @@ political_decisions = {
 		potential = {
 			tag = CEG
 			NOT = { pop_majority_religion = coptic }
+			NOT = { pop_majority_religion = kemetic }
 		}	
 		allow = {
 			war = no
@@ -6622,6 +6756,52 @@ political_decisions = {
 				}
 				country_event = 11106
 			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	oy_vey = {
+		news = yes
+		news_desc_long = "jew_NEWS_LONG"
+		news_desc_medium = "jew_NEWS_MEDIUM"
+		news_desc_short = "jew_NEWS_SHORT"
+		potential = {
+			is_greater_power = yes
+			is_culture_group = ISR
+			NOT = {
+				exists = ISR
+			}
+			NOT = { primary_culture = hulwud }
+			NOT = { primary_culture = camite }
+			NOT = { has_global_flag = oy_vey }
+		}	
+		allow = {
+			war = no
+			nationalism_n_imperialism = 1
+		}
+		
+		effect = {
+			prestige = 25
+			add_accepted_culture = union
+			all_core = { add_core = ISR }
+			change_tag = ISR
+			any_country = {
+				limit = {
+					is_culture_group = ISR
+					in_sphere = THIS
+					NOT = {
+						has_country_flag = post_colonial_country
+						tag = THIS
+					}
+					OR = {
+						is_vassal = no
+						vassal_of = THIS
+					}
+				}
+				country_event = 11106
+			}
+			set_global_flag = oy_vey
 		}
 		ai_will_do = {
 			factor = 1
