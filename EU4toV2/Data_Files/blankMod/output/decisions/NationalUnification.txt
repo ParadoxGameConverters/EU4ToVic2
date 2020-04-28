@@ -404,6 +404,7 @@ political_decisions = {
 				tag = SPQ
 				tag = SLA
 				tag = HRE
+				tag = WSF
 			}
 		}
 		
