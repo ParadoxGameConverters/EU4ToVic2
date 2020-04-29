@@ -2,7 +2,7 @@
 #define BUILDING_H
 
 #include "../../EU4World/Modifiers/Modifier.h"
-#include "newParser.h"
+#include "Parser.h"
 
 namespace mappers
 {

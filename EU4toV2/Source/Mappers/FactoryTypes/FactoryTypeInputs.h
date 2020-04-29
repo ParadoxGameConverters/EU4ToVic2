@@ -1,7 +1,7 @@
 #ifndef FACTORY_TYPE_INPUTS_H
 #define FACTORY_TYPE_INPUTS_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 
 namespace mappers

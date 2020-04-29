@@ -2,7 +2,7 @@
 #define EU4RELATIONS_H
 
 #include "Date.h"
-#include "newParser.h"
+#include "Parser.h"
 #include "EU4RelationDetails.h"
 #include <map>
 

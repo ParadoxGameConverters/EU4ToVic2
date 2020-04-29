@@ -1,7 +1,7 @@
 #ifndef MODIFIER_H
 #define MODIFIER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 
 namespace EU4

@@ -1,7 +1,7 @@
 #ifndef LEADER_TRAIT_H
 #define LEADER_TRAIT_H
 
-#include "newParser.h"
+#include "Parser.h"
 
 namespace mappers
 {

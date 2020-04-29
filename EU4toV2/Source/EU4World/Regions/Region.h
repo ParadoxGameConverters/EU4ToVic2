@@ -1,7 +1,7 @@
 #ifndef EU4_REGION_H
 #define EU4_REGION_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "Areas.h"
 #include <set>
 

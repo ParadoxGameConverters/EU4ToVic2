@@ -1,7 +1,7 @@
 #ifndef FACTORY_INVENTION_MAPPER_H
 #define FACTORY_INVENTION_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 
 namespace mappers

@@ -1,7 +1,7 @@
 #ifndef STARTING_INVENTION_MAPPER_H
 #define STARTING_INVENTION_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 #include <set>
 

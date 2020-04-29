@@ -1,7 +1,7 @@
 #ifndef BUILDING_POSITION_H
 #define BUILDING_POSITION_H
 
-#include "newParser.h"
+#include "Parser.h"
 
 namespace mappers
 {

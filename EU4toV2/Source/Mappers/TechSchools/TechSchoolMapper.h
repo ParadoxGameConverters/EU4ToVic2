@@ -2,7 +2,7 @@
 #define TECH_SCHOOL_MAPPER
 
 #include "TechSchools.h"
-#include "newParser.h"
+#include "Parser.h"
 
 namespace mappers
 {

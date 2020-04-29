@@ -1,7 +1,7 @@
 #ifndef REGIMENT_COSTS_MAPPER_H
 #define REGIMENT_COSTS_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 
 namespace mappers

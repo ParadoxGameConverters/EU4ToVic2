@@ -1,7 +1,7 @@
 #ifndef CLIMATE_MAPPER_H
 #define CLIMATE_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 
 namespace mappers

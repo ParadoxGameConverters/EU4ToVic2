@@ -1,7 +1,7 @@
 #ifndef RELIGIONS_H
 #define RELIGIONS_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "Religion.h"
 #include <map>
 #include <optional>

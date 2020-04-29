@@ -1,7 +1,7 @@
 #ifndef EU4_MOD_H
 #define EU4_MOD_H
 
-#include "newParser.h"
+#include "Parser.h"
 
 namespace EU4
 {

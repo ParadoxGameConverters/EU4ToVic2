@@ -1,7 +1,7 @@
 #ifndef FACTORY_INVENTION_EFFECT_H
 #define FACTORY_INVENTION_EFFECT_H
 
-#include "newParser.h"
+#include "Parser.h"
 
 namespace mappers
 {

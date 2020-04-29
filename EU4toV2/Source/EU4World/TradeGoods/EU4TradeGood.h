@@ -2,7 +2,7 @@
 #define EU4TRADE_GOOD_H
 
 #include "Date.h"
-#include "newParser.h"
+#include "Parser.h"
 
 namespace EU4
 {

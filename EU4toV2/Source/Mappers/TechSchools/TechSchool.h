@@ -1,7 +1,7 @@
 #ifndef TECH_SCHOOL
 #define TECH_SCHOOL
 
-#include "newParser.h"
+#include "Parser.h"
 
 namespace mappers
 {

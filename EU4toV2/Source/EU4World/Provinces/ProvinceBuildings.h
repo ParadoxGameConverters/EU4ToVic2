@@ -1,7 +1,7 @@
 #ifndef PROVINCE_BUILDINGS_H
 #define PROVINCE_BUILDINGS_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace EU4

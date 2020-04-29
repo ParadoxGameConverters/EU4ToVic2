@@ -67,7 +67,7 @@
 		H:\Projects\Development\Boost\boost_1_57_0
 	</BOOST_INCLUDE>
     <IncludePath>$(IncludePath)</IncludePath>
-    <TargetName>EU4toV2Converter</TargetName>
+    <TargetName>EU4ToVic2Converter</TargetName>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
     <ReferencePath>$(ReferencePath)</ReferencePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
@@ -119,7 +119,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\common_items;..\ZipLib;$(WindowsSDK_IncludePath)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\commonItems;..\ZipLib</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -167,17 +167,16 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\common_items\CardinalToOrdinal.cpp" />
-    <ClCompile Include="..\common_items\Color.cpp" />
-    <ClCompile Include="..\common_items\CommonUtils.cpp" />
-    <ClCompile Include="..\common_items\Date.cpp" />
-    <ClCompile Include="..\common_items\iconvlite.cpp" />
-    <ClCompile Include="..\common_items\Log.cpp" />
-    <ClCompile Include="..\common_items\newParser.cpp" />
-    <ClCompile Include="..\common_items\Object.cpp" />
-    <ClCompile Include="..\common_items\ParserHelpers.cpp" />
-    <ClCompile Include="..\common_items\StringUtils.cpp" />
-    <ClCompile Include="..\common_items\WinUtils.cpp" />
+    <ClCompile Include="..\commonItems\CardinalToOrdinal.cpp" />
+    <ClCompile Include="..\commonItems\Color.cpp" />
+    <ClCompile Include="..\commonItems\CommonUtils.cpp" />
+    <ClCompile Include="..\commonItems\Date.cpp" />
+    <ClCompile Include="..\commonItems\iconvlite.cpp" />
+    <ClCompile Include="..\commonItems\Log.cpp" />
+    <ClCompile Include="..\commonItems\Parser.cpp" />
+    <ClCompile Include="..\commonItems\ParserHelpers.cpp" />
+    <ClCompile Include="..\commonItems\StringUtils.cpp" />
+    <ClCompile Include="..\commonItems\WinUtils.cpp" />
     <ClCompile Include="Source\Configuration.cpp" />
     <ClCompile Include="Source\EU4toV2Converter.cpp" />
     <ClCompile Include="Source\EU4World\Army\EU4Army.cpp" />
@@ -360,16 +359,15 @@
     <ClCompile Include="Source\V2World\War\War.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\common_items\CardinalToOrdinal.h" />
-    <ClInclude Include="..\common_items\Color.h" />
-    <ClInclude Include="..\common_items\Date.h" />
-    <ClInclude Include="..\common_items\iconvlite.h" />
-    <ClInclude Include="..\common_items\Log.h" />
-    <ClInclude Include="..\common_items\newParser.h" />
-    <ClInclude Include="..\common_items\Object.h" />
-    <ClInclude Include="..\common_items\OSCompatibilityLayer.h" />
-    <ClInclude Include="..\common_items\ParserHelpers.h" />
-    <ClInclude Include="..\common_items\StringUtils.h" />
+    <ClInclude Include="..\commonItems\CardinalToOrdinal.h" />
+    <ClInclude Include="..\commonItems\Color.h" />
+    <ClInclude Include="..\commonItems\Date.h" />
+    <ClInclude Include="..\commonItems\iconvlite.h" />
+    <ClInclude Include="..\commonItems\Log.h" />
+    <ClInclude Include="..\commonItems\OSCompatibilityLayer.h" />
+    <ClInclude Include="..\commonItems\Parser.h" />
+    <ClInclude Include="..\commonItems\ParserHelpers.h" />
+    <ClInclude Include="..\commonItems\StringUtils.h" />
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\EU4World\Army\EU4Army.h" />

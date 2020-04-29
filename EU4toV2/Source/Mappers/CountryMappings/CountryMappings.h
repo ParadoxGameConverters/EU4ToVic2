@@ -9,7 +9,7 @@
 #include "../CultureGroups/CultureGroups.h"
 #include "../CK2Titles/CK2TitleMapper.h"
 #include "../RegionProvinces/RegionProvinceMapper.h"
-#include "newParser.h"
+#include "Parser.h"
 #include "CountryMapping.h"
 
 namespace EU4

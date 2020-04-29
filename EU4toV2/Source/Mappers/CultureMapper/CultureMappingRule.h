@@ -1,7 +1,7 @@
 #ifndef CULTURE_MAPPING_RULE_H
 #define CULTURE_MAPPING_RULE_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace EU4 {

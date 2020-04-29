@@ -1,7 +1,7 @@
 #ifndef EU4_COLONIAL_REGION_H
 #define EU4_COLONIAL_REGION_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace EU4

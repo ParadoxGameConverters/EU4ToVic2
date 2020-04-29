@@ -1,7 +1,7 @@
 #ifndef SUPERREGION_H
 #define SUPERREGION_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace mappers
