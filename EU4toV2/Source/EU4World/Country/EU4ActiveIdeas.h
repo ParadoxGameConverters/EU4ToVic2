@@ -1,7 +1,7 @@
 #ifndef EU4ACTIVE_IDEAS_H
 #define EU4ACTIVE_IDEAS_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace EU4

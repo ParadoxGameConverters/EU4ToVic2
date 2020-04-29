@@ -1,7 +1,7 @@
 #ifndef EU4_VERSION_H
 #define EU4_VERSION_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <string>
 #include <ostream>
 

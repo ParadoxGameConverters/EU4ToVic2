@@ -2,7 +2,7 @@
 #define EU4_AREAS_H
 
 #include "Color.h"
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 #include <set>
 #include <string>

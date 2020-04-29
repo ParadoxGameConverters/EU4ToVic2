@@ -2,7 +2,7 @@
 #define EU4_AREA_H
 
 #include "Color.h"
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace EU4

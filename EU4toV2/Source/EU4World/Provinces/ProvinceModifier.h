@@ -1,7 +1,7 @@
 #ifndef PROVINCE_MODIFIER_H
 #define PROVINCE_MODIFIER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <string>
 
 namespace EU4

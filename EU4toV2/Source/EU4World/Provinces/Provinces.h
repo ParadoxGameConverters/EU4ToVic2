@@ -2,7 +2,7 @@
 #define PROVINCES_H
 
 #include "EU4Province.h"
-#include "newParser.h"
+#include "Parser.h"
 #include "../../Configuration.h"
 #include <map>
 

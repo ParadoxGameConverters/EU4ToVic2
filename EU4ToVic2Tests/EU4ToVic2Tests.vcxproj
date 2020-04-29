@@ -95,7 +95,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>../common_items;../googletest/googletest;../googletest/googletest/include;../googletest/googlemock;../googletest/googlemock/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../commonItems;../googletest/googletest;../googletest/googletest/include;../googletest/googlemock;../googletest/googlemock/include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <SupportJustMyCode>true</SupportJustMyCode>
@@ -162,14 +162,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\common_items\Color.cpp" />
-    <ClCompile Include="..\common_items\Date.cpp" />
-    <ClCompile Include="..\common_items\iconvlite.cpp" />
-    <ClCompile Include="..\common_items\Log.cpp" />
-    <ClCompile Include="..\common_items\newParser.cpp" />
-    <ClCompile Include="..\common_items\Object.cpp" />
-    <ClCompile Include="..\common_items\ParserHelpers.cpp" />
-    <ClCompile Include="..\common_items\WinUtils.cpp" />
+    <ClCompile Include="..\commonItems\Color.cpp" />
+    <ClCompile Include="..\commonItems\Date.cpp" />
+    <ClCompile Include="..\commonItems\iconvlite.cpp" />
+    <ClCompile Include="..\commonItems\Log.cpp" />
+    <ClCompile Include="..\commonItems\Parser.cpp" />
+    <ClCompile Include="..\commonItems\ParserHelpers.cpp" />
+    <ClCompile Include="..\commonItems\StringUtils.cpp" />
+    <ClCompile Include="..\commonItems\WinUtils.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Configuration.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegions.cpp" />

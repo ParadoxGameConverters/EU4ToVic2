@@ -1,7 +1,7 @@
 #ifndef MAP_PROVINCE_H
 #define MAP_PROVINCE_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace mappers

@@ -2,7 +2,7 @@
 #define EU4WAR_DETAILS_H
 
 #include "Date.h"
-#include "newParser.h"
+#include "Parser.h"
 
 namespace EU4
 {

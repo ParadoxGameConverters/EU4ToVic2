@@ -1,7 +1,7 @@
 #ifndef BUILDINGS_H
 #define BUILDINGS_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "Building.h"
 #include <map>
 #include <optional>

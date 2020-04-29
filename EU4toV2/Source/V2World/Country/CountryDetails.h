@@ -1,7 +1,7 @@
 #ifndef COUNTRY_DETAILS_H
 #define COUNTRY_DETAILS_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "../../V2World/Party/Party.h"
 #include <set>
 

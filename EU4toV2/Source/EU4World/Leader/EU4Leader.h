@@ -1,7 +1,7 @@
 #ifndef EU4_LEADER_H
 #define EU4_LEADER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "Date.h"
 
 namespace EU4

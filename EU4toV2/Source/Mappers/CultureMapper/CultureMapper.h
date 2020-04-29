@@ -1,7 +1,7 @@
 #ifndef CULTURE_MAPPER_H
 #define CULTURE_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "../../EU4World/Regions/Regions.h"
 #include <optional>
 #include <string>

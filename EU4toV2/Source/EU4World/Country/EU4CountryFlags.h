@@ -1,7 +1,7 @@
 #ifndef EU4_COUNTRY_FLAGS_H
 #define EU4_COUNTRY_FLAGS_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace EU4

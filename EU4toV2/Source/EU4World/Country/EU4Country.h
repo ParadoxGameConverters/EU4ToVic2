@@ -5,7 +5,7 @@
 #include "../../Mappers/CultureGroups/CultureGroups.h"
 #include "../../Mappers/UnitTypes/UnitTypeMapper.h"
 #include "../../Mappers/IdeaEffects/IdeaEffectMapper.h"
-#include "newParser.h"
+#include "Parser.h"
 #include <memory>
 #include <set>
 #include "EU4NationalSymbol.h"

@@ -15,7 +15,7 @@
 #include "../Mappers/CultureGroups/CultureGroups.h"
 #include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "../Mappers/SuperGroupMapper/SuperGroupMapper.h"
-#include "newParser.h"
+#include "Parser.h"
 #include <memory>
 #include <map>
 

@@ -1,7 +1,7 @@
 #ifndef EU4_TECHNOLOGY_H
 #define EU4_TECHNOLOGY_H
 
-#include "newParser.h"
+#include "Parser.h"
 
 namespace EU4
 {

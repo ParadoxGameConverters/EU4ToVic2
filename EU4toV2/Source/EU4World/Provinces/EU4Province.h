@@ -9,7 +9,7 @@
 #include "ProvinceStats.h"
 #include "../../Mappers/Buildings/Buildings.h"
 #include "../Modifiers/Modifiers.h"
-#include "newParser.h"
+#include "Parser.h"
 #include "../../Mappers/SuperGroupMapper/SuperGroupMapper.h"
 #include "../Regions/Regions.h"
 

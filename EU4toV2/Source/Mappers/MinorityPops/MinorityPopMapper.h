@@ -1,7 +1,7 @@
 #ifndef MINORITY_POP_MAPPER_H
 #define MINORITY_POP_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "../../V2World/Pop/Pop.h"
 
 namespace mappers

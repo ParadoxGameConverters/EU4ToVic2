@@ -1,7 +1,7 @@
 #ifndef SUPER_REGIONS_H
 #define SUPER_REGIONS_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 
 namespace EU4

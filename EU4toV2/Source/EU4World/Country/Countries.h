@@ -1,7 +1,7 @@
 #ifndef EU4_COUNTRIES_H
 #define EU4_COUNTRIES_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "../EU4Version.h"
 #include <map>
 #include <memory>

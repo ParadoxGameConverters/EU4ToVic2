@@ -1,7 +1,7 @@
 #ifndef PARTY_TYPE_MAPPER_H
 #define PARTY_TYPE_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "PartyType.h"
 #include <map>
 #include <string>

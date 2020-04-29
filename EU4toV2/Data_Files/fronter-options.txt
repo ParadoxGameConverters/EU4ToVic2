@@ -1,0 +1,237 @@
+option = {
+	name = max_literacy
+	displayName = "Max Literacy"
+	tooltip = "The maximum literacy a nation will start with. Default 100%"
+	textSelector = {	
+		value = "100"
+		editable = true
+		tooltip = "Range 10 to 100"
+	}
+}
+option = {
+	name = remove_type
+	displayName = "Drop cores of dead nations?"
+	tooltip = "Which landless nations to remove?"
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = "None - leave all"
+			tooltip = "Remove none of them"
+			default = false
+		}
+		radioOption = {
+			name = 2
+			displayName = "Dead - no culture remains"
+			tooltip = "Remove ones without cultural backing"
+			default = true
+		}
+		radioOption = {
+			name = 3
+			displayName = "All - dead is dead"
+			tooltip = "Remove all of them"
+			default = false		
+		}
+	}
+}
+option = {
+	name = absorb_colonies
+	displayName = "Turn Colonial Nations into territories?"
+	tooltip = "How should we handle one's colonial nations?"
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = "Never, they are puppets [default]"
+			tooltip = "All will be independent"
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = "Sometimes, by attitude"
+			tooltip = "Set the threshold in next selection"
+			default = false
+		}
+		radioOption = {
+			name = 3
+			displayName = "All, even disloyal ones"
+			tooltip = "Integrate every dependant colonial nation"
+			default = false
+		}
+	}
+}
+option = {
+	name = liberty_threshold
+	displayName = "If 'Sometimes' from previous question, when exactly?"
+	tooltip = "The threshold attitude for when colonies are absorbed. Default is loyal."
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = "Absorb Loyal only"
+			tooltip = "Only Loyal colonies"
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = "Absorb Disloyal too"
+			tooltip = "Disloyal colonies absorbed too."
+			default = false
+		}
+		radioOption = {
+			name = 3
+			displayName = "Absorb Rebellious as well"
+			tooltip = "All colonies are absorbed"
+			default = false
+		}
+	}
+}
+option = {
+	name = pop_shaping
+	displayName = "Should population be shaped to EU4's advances?"
+	tooltip = "Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers."
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = "Stick to vanilla pop sizes"
+			tooltip = "Use Vanilla population sizes"
+			default = false
+		}
+		radioOption = {
+			name = 2
+			displayName = "Dev push for more people!"
+			tooltip = "Adjust population sizes"
+			default = true
+		}
+		radioOption = {
+			name = 3
+			displayName = "Extreme - absolute dev size"
+			tooltip = "Redistribute everyone according to absolute value of provinces"
+			default = false
+		}
+	}
+}
+option = {
+	name = pop_shaping_factor
+	displayName = "Shaping Factor?"
+	tooltip = "How much does shaping affect population sizes? 0 - Vanilla, 100 - Fully"
+	textSelector = {	
+		value = "100"
+		editable = true
+		tooltip = "Range 0 to 100"
+	}
+}
+option = {
+	name = core_handling
+	displayName = "Auto-assign national cores?"
+	tooltip = "Assign cores for nationalities and cultural unions (Can be an issue for CK2 and/or flat dev imports)"
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = "Yes, unification is nigh"
+			tooltip = "Use defaults"
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = "No national cores"
+			tooltip = "No primary nationalities"
+			default = false
+		}
+		radioOption = {
+			name = 3
+			displayName = "No cultural union cores"
+			tooltip = "No Germany, apparently"
+			default = false
+		}
+		radioOption = {
+			name = 4
+			displayName = "Don't assign any"
+			tooltip = "Don't touch anything"
+			default = false
+		}
+	}
+}
+option = {
+	name = euro_centrism
+	displayName = "Make world Eurocentric?"
+	tooltip = "Drop literacy and civilization levels for non-europeans? (configurable!)"
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = "Time to sell some opium! [strongly recommended]"
+			tooltip = "Configurable via techgroups.txt"
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = "Use EU4 institutions [bad]"
+			tooltip = "Use EU4 tech levels - likely all nations civilized!"
+			default = false
+		}
+	}
+}
+option = {
+	name = africa_reset
+	displayName = "Wipe sub-saharan Africa?"
+	tooltip = "Turn it into proper colonizable real estate?"
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = "Time for a safari! [moderately recommended]"
+			tooltip = "Wipe the primitives"
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = "Leave africans in peace..."
+			tooltip = "Don't alter EU4 endgame"
+			default = false
+		}
+	}
+}
+option = {
+	name = randomise_rgos
+	displayName = "Randomise RGOs?"
+	tooltip = "If set, RGOs will be shuffled within similar climate and terrain provinces."
+	radioSelector = {
+		radioOption = {
+			name = no
+			displayName = "No"
+			tooltip = "Historical RGOs"
+			default = true
+		}
+		radioOption = {
+			name = yes
+			displayName = "Yes"
+			tooltip = "Shuffled RGOs"
+			default = false
+		}
+	}
+}
+option = {
+	name = convert_all
+	displayName = "Any religious/cultural conversion in EU4 converts:"
+	tooltip = "We can convert everyone and their cows, but this will have negative effects on gameplay (assimilation, hotspot crises). Do not change unless you know what to expect."
+	radioSelector = {
+		radioOption = {
+			name = no
+			displayName = "Nobility and merchants [vehemently recommended]"
+			tooltip = "All upper strata + 50% of middle strata"
+			default = true
+		}
+		radioOption = {
+			name = yes
+			displayName = "Everyone inc. peasants [discouraged]"
+			tooltip = "100% of population"
+			default = false
+		}
+	}
+}
+option = {
+	name = output_name
+	displayName = "Mod Output Name (optional):"
+	tooltip = "Please don't use cyrillic or chinese..."
+	textSelector = {	
+		value = ""
+		editable = true
+		tooltip = "Optional name for the converted mod"
+	}
+}

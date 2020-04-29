@@ -1,7 +1,7 @@
 #ifndef CULTURE_H
 #define CULTURE_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "Color.h"
 
 namespace mappers

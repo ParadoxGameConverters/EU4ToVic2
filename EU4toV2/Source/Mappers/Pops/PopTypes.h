@@ -1,7 +1,7 @@
 #ifndef POP_TYPES_H
 #define POP_TYPES_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "MapperPop.h"
 #include <map>
 

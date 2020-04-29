@@ -1,0 +1,84 @@
+﻿name = EU4ToVic2
+converterFolder = EU4ToVic2
+displayName = "Europa Universalis IV To Victoria II"
+sourceGame = "Europa Universalis IV"
+targetGame = "Victoria II"
+
+requiredFolder = {
+	name = EU4directory
+	displayName = "Europa Universalis 4 Install directory"
+	tooltip = "A path on your computer where Europa Universalis 4 is installed"
+	mandatory = true
+	searchPathType = steamFolder
+	searchPathID = 236850
+}
+requiredFolder = {
+	name = EU4DocumentsDirectory
+	displayName = "EU4 Documents Directory"
+	tooltip = "A path on your computer where Europa Universalis 4 keeps temporary files"
+	mandatory = true
+	searchPathType = windowsUsersFolder
+	searchPath = "Paradox Interactive\Europa Universalis IV"
+}
+requiredFolder = {
+	name = CK2ExportDirectory
+	displayName = "CK2 Export Directory"
+	tooltip = "A path on your computer where Crusader Kings 2 keeps exported games"
+	mandatory = true
+	searchPathType = windowsUsersFolder
+	searchPath = "Paradox Interactive\Crusader Kings II\eu4_export"
+}
+requiredFolder = {
+	name = SteamWorkshopDirectory
+	displayName = "EU4 Steam Workshop Directory"
+	tooltip = "A path on your computer where Steam Workshop keeps EU4 mods"
+	mandatory = true
+	searchPathType = direct
+	searchPath = "C:\Program Files (x86)\Steam\SteamApps\workshop\content\236850"
+}
+requiredFolder = {
+	name = Vic2directory
+	displayName = "Victoria 2 directory"
+	tooltip = "A path on your computer where Victoria 2 is installed"
+	mandatory = true
+	searchPathType = steamFolder
+	searchPathID = 42960
+}
+requiredFolder = {
+	name = Vic2Documentsdirectory
+	displayName = "Victoria 2 Documents directory"
+	tooltip = "A path on your computer where Victoria 2 keeps temporary files"
+	mandatory = true
+	searchPathType = windowsUsersFolder
+	searchPath = "Paradox Interactive\Victoria II"
+}
+requiredFolder = {
+	name = targetGameModPath
+	displayName = "Victoria 2 mod directory"
+	tooltip = "A path on your computer where Victoria 2 is installed"
+	mandatory = true
+	searchPathType = steamFolder
+	searchPathID = 42960
+	searchPath = "mod"
+}
+requiredFile = {
+	name = converterExe
+	displayName = "Path to the converter executable"
+	tooltip = "Path to EU4ToVic2Converter.exe"
+	mandatory = true
+	outputtable = false
+	searchPathType = converterFolder
+	searchPath = "EU4toVic2"
+	allowedExtension = "*.exe"
+	fileName = "EU4ToVic2Converter.exe"
+}
+requiredFile = {
+	name = SaveGame
+	displayName = "Path to the EU4 Savegame"
+	tooltip = "Path to your savegame from EU4"
+	mandatory = true
+	outputtable = true
+	searchPathType = windowsUsersFolder
+	searchPath = "Paradox Interactive\Europa Universalis IV\save games"
+	allowedExtension = "*.eu4"
+}
