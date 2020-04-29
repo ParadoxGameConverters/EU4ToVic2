@@ -1,24 +1,25 @@
-This program will convert a Europa Universalis 4 save game to a Victoria 2 save game.
+This program will convert a Europa Universalis IV save game to a Victoria II save game.
 
 ----
 IMPORTANT LINKS
 ----
 
-Forum thread: http://forum.paradoxplaza.com/forum/showthread.php?707362-The-EU4-to-V2-Converter-Project
+Forum Release Thread: https://forum.paradoxplaza.com/forum/index.php?threads/eu4-to-vic2-converter-release-thread.973026/
+Forum Devemopment Thread: https://forum.paradoxplaza.com/forum/index.php?threads/the-eu4-to-v2-converter-development-thread-not-for-troubleshooting.707362
 Github project: https://github.com/ParadoxGameConverters/EU4toVic2
 Windows development build: https://github.com/ParadoxGameConverters/EU4toVic2/releases/tag/windows_development_build
 
 ----
 REQUIREMENTS
 ----
-V2 - HoD required
+V2 - both expansions required!
 EU4
 
 -----
 INSTRUCTIONS
 -----
 1. Run ConverterFrontend.exe.
-2. Fill out all fields and keep clicking Next.
+2. Fill out all paths and set up any options. Then click Convert.
 
 
 ----
@@ -27,10 +28,10 @@ MANUAL METHOD INSTRUCTIONS
 
 1. Download the converter and unzip it wherever.
 2. Copy your EU4 save into the converter directory.
-3. Edit configuration.txt to point at your game installs, and to set any options you care about.
+3. Edit configuration-example.txt to point at your game installs, and to set any options you care about. Then rename it to configuration.txt.
 4. Drag and drop your save onto EU4toV2Converter.exe
 5. Go into the output folder, then the subfolder named after your save.
-6. Copy the folder named after your save and the corresponding mod file into your V2 mod folder.
+6. Copy the folder named after your save and the corresponding mod file into your V2 mod folder (in vic2 installation directory, NOT user directory).
 7. Start that copy of Victoria 2, and select the mod.
 
 ----
