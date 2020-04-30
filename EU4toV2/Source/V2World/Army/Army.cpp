@@ -148,7 +148,8 @@ V2::REGIMENTTYPE V2::Army::pickCategory(const EU4::REGIMENTCATEGORY incCategory,
 		chosenType = REGIMENTTYPE::clipper_transport;
 		break;
 	default:		
-		throw std::runtime_error("Unknown regiment category: " + EU4::RegimentCategoryTypes[incCategory]);
+		Log(LogLevel::Warning) << "Unknown regiment category: " + EU4::RegimentCategoryTypes[incCategory] + " defaulting to infantry. Hopefully this was not a ship!";
+		chosenType = REGIMENTTYPE::infantry;
 	}
 	return chosenType;
 }
