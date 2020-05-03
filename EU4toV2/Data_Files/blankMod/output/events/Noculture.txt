@@ -70,6 +70,8 @@ country_event = {
 			ruling_party_ideology = noIdeology
 			primary_culture = noculture
 			religion = noreligion
+			remove_accepted_culture = zzz_religion_shamanist
+			#Religions? This is Observer!
 		}
 	}
 }
