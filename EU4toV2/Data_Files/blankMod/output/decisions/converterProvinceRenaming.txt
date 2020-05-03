@@ -54,7 +54,7 @@ political_decisions = {
 		}
 		effect = {
 			830 = {
-				change_province_name = "DedeagíaÁ"
+				change_province_name = "Dedeag‚Äôa√ß"
 			}
 			clr_global_flag = 830_be_greek
 		}
@@ -175,7 +175,7 @@ political_decisions = {
 				change_province_name = "Vierzig Kirchen"
 			}
 			860 = {
-				change_province_name = "Mikligarr"
+				change_province_name = "Mikligar√∞r"
 			}
 			set_global_flag = thrace_be_greek
 		}
@@ -206,13 +206,13 @@ political_decisions = {
 		}
 		effect = {
 			858 = {
-				change_province_name = "KÔrklareli"
+				change_province_name = "K√Ørklareli"
 			}
 			860 = {
 				change_province_name = "Istanbul"
 			}
 			861 = {
-				change_province_name = "‹sk¸dar"
+				change_province_name = "√úsk√ºdar"
 			}
 			clr_global_flag = thrace_be_greek
 			clr_global_flag = thrace_be_slav
@@ -290,17 +290,17 @@ political_decisions = {
 			862 = {
 				change_province_name = "Izmit"
 				state_scope = {
-					change_region_name = "H¸davendig‚r"
+					change_region_name = "H√ºdavendig√¢r"
 				}
 			}
 			866 = {
 				change_province_name = "Afyon"
 			}
 			867 = {
-				change_province_name = "K¸tahya"
+				change_province_name = "K√ºtahya"
 			}
 			868 = {
-				change_province_name = "Eskiöehir"
+				change_province_name = "Eski≈°ehir"
 			}
 			clr_global_flag = hudav_be_greek
 		}
@@ -368,9 +368,9 @@ political_decisions = {
 		}
 		effect = {
 			865 = {
-				change_province_name = "«anakkale"
+				change_province_name = "√áanakkale"
 				state_scope = {
-					change_region_name = "AydÔn"
+					change_region_name = "Ayd√Øn"
 				}
 			}
 			869 = {
@@ -630,6 +630,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 70_changed }	
 		}
@@ -952,6 +953,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 139_changed }	
 		}
@@ -965,7 +967,7 @@ political_decisions = {
 		}
 		effect = {
 			139 = {
-				change_province_name = "Neum¸nich"
+				change_province_name = "Neum√ºnich"
 				state_scope = {
 					change_region_name = "Ludwigsland"
 				}
@@ -1022,7 +1024,7 @@ political_decisions = {
 		}
 		effect = {
 			139 = {
-				change_province_name = "N˝ Stockholm"
+				change_province_name = "N√Ω Stockholm"
 				state_scope = {
 					change_region_name = "Lovekurland"
 				}
@@ -1137,7 +1139,7 @@ political_decisions = {
 		}
 		effect = {
 			139 = {
-				change_province_name = "Nouvelle OrlÈans"
+				change_province_name = "Nouvelle Orl√©ans"
 				state_scope = {
 					change_region_name = "Louisiana"
 				}
@@ -1309,6 +1311,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 232_changed }	
 		}
@@ -1322,9 +1325,9 @@ political_decisions = {
 		}
 		effect = {
 			232 = {
-				change_province_name = "Neupreuﬂen"
+				change_province_name = "Neupreu√üen"
 				state_scope = {
-					change_region_name = "Neupreuﬂen"
+					change_region_name = "Neupreu√üen"
 				}
 			}
 			set_global_flag = 232_changed
@@ -1379,9 +1382,9 @@ political_decisions = {
 		}
 		effect = {
 			232 = {
-				change_province_name = "VÌnborg"
+				change_province_name = "V√≠nborg"
 				state_scope = {
-					change_region_name = "VÌnland"
+					change_region_name = "V√≠nland"
 				}
 			}
 			set_global_flag = 232_changed
@@ -1469,7 +1472,7 @@ political_decisions = {
 			232 = {
 				change_province_name = "Nueva Barcelona"
 				state_scope = {
-					change_region_name = "Nueva CataluÒa"
+					change_region_name = "Nueva Catalu√±a"
 				}
 			}
 			set_global_flag = 232_changed
@@ -1666,6 +1669,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 244_changed }	
 		}
@@ -1730,7 +1734,7 @@ political_decisions = {
 		}
 		effect = {
 			244 = {
-				change_province_name = "N˝ Malmˆ"
+				change_province_name = "N√Ω Malm√∂"
 				}
 			set_global_flag = 244_changed
 		}
@@ -1809,7 +1813,7 @@ political_decisions = {
 		}
 		effect = {
 			244 = {
-				change_province_name = "Nueva C·diz"
+				change_province_name = "Nueva C√°diz"
 			}
 			set_global_flag = 244_changed
 		}
@@ -1987,6 +1991,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 2510_changed }	
 		}
@@ -2051,7 +2056,7 @@ political_decisions = {
 		}
 		effect = {
 			2510 = {
-				change_province_name = "N˝ ÷stersund"
+				change_province_name = "N√Ω √ñstersund"
 			}
 			set_global_flag = 2510_changed
 		}
@@ -2308,6 +2313,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 220_changed }	
 		}
@@ -2321,7 +2327,7 @@ political_decisions = {
 		}
 		effect = {
 			220 = {
-				change_province_name = "W‰scher"
+				change_province_name = "W√§scher"
 			}
 			set_global_flag = 220_changed
 		}
@@ -2451,7 +2457,7 @@ political_decisions = {
 		}
 		effect = {
 			220 = {
-				change_province_name = "JuassÈz"
+				change_province_name = "Juass√©z"
 			}
 			set_global_flag = 220_changed
 		}
@@ -2629,6 +2635,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 89_changed }	
 		}
@@ -2772,7 +2779,7 @@ political_decisions = {
 		}
 		effect = {
 			89 = {
-				change_province_name = "Los ¡ngeles"
+				change_province_name = "Los √Ångeles"
 			}
 			set_global_flag = 89_changed
 		}
@@ -2950,6 +2957,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 84_changed }	
 		}
@@ -3117,7 +3125,7 @@ political_decisions = {
 		}
 		effect = {
 			84 = {
-				change_province_name = "Saint-FranÁois"
+				change_province_name = "Saint-Fran√ßois"
 			}
 			set_global_flag = 84_changed
 		}
@@ -3335,7 +3343,7 @@ political_decisions = {
 		}
 		effect = {
 			2131 = {
-				change_province_name = "Œles Malouines"
+				change_province_name = "√éles Malouines"
 			}
 			set_global_flag = 2131_changed
 		}
@@ -3353,6 +3361,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 2447_changed }	
 		}
@@ -3423,9 +3432,9 @@ political_decisions = {
 		}
 		effect = {
 			2447 = {
-				change_province_name = "Jan˙ar·in"
+				change_province_name = "Jan√∫ar√°in"
 				state_scope = {
-					change_region_name = "Jan˙ar·in"
+					change_region_name = "Jan√∫ar√°in"
 				}
 			}
 			set_global_flag = 2447_changed
@@ -3710,6 +3719,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 2450_changed }	
 		}
@@ -3868,9 +3878,9 @@ political_decisions = {
 		}
 		effect = {
 			2450 = {
-				change_province_name = "S„o Paulo"
+				change_province_name = "S√£o Paulo"
 				state_scope = {
-					change_region_name = "S„o Paulo"
+					change_region_name = "S√£o Paulo"
 				}
 			}
 			set_global_flag = 2450_changed
@@ -4067,6 +4077,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 2348_changed }	
 		}
@@ -4425,6 +4436,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 2214_changed }	
 		}
@@ -4711,7 +4723,7 @@ political_decisions = {
 		}
 		effect = {
 			2214 = {
-				change_province_name = "H·gios DomÌnikos"
+				change_province_name = "H√°gios Dom√≠nikos"
 				state_scope = {
 					change_region_name = "Achaeiola"
 				}
@@ -4743,7 +4755,7 @@ political_decisions = {
 		}
 		effect = {
 			2214 = {
-				change_province_name = "DÌ-Qi-Tian"
+				change_province_name = "D√≠-Qi-Tian"
 				state_scope = {
 					change_region_name = "Siniola"
 				}
