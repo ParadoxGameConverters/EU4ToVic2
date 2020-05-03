@@ -4946,16 +4946,16 @@ political_decisions = {
 			religious_policy = moralism
 			NOT = { exists = HYD }
 			OR = {
-				religion = sunni
-				religion = zikri
-				religion = yazidi
-				religion = sunni_heresy
-				religion = shiite
-				religion = hurufi
-				religion = druze
-				religion = shiite_heresy
-				religion = ibadi
-				religion = kharijite
+				accepted_culture = religion_sunni
+				accepted_culture = religion_zikri
+				accepted_culture = religion_yazidi
+				accepted_culture = religion_sunni_heresy
+				accepted_culture = religion_shiite
+				accepted_culture = religion_hurufi
+				accepted_culture = religion_druze
+				accepted_culture = religion_shiite_heresy
+				accepted_culture = religion_ibadi
+				accepted_culture = religion_kharijite
 			}
 		}	
 		allow = {
@@ -6223,8 +6223,9 @@ political_decisions = {
 		potential = {
 			tag = EGY
 			OR = {
-				pop_majority_religion = coptic
-				pop_majority_religion = kemetic
+				accepted_culture = religion_coptic
+				accepted_culture = religion_pre_schism
+				accepted_culture = religion_kemetic
 			}
 		}	
 		allow = {
@@ -6242,8 +6243,8 @@ political_decisions = {
 	EGY_not_copt = {
 		potential = {
 			tag = CEG
-			NOT = { pop_majority_religion = coptic }
-			NOT = { pop_majority_religion = kemetic }
+			NOT = { accepted_culture = religion_coptic }
+			NOT = { accepted_culture = religion_kemetic }
 		}	
 		allow = {
 			war = no

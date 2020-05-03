@@ -5177,3 +5177,80 @@ non_human = { #More names allover
 		last_names = { "Solisorex" "Eulipotyphla" "Talpidae" "Teja" "Scutisorex" "Crocidura" "Solisorex" "Surdisorex" "Teja" "Neohylomys" "Sylvisorex" "Atelerix" "Congosorex" "Neohylomys" "Hylomys" "Teja" "Paraechinus" "Mesechinus" "Surdisorex" "Scutisorex" "Teja" "Neohylomys" "Paraechinus" "Ruwenzorisorex" "Neohylomys" "Deinogalerix" "Chimarrogale" "Eulipotyphla" "Pholidocercus" "Crocidura" "Quill" "Neotetracus" "Echinosorex" "Solisorex" "Silvacola" "Podogymnura" "Erinaceus" "Diplomesodon" "Echinosorex" "Hylomys" "Hylomys" "Neotetracus" "Erinaceinae" "Surdisorex" "Scutisorex" "Prickles" "Hylomys" "Echinosorex" "Hylomys" "Crocidura" "Mesechinus" "Floof" "Floof" "Echinosorex" "Crocidura" "Silvacola" "Soricidae" "Myosorex" "Echinosorex" "Thorn" "Pholidocercus" "Prickles" "Teja" "Flesberg" "Königsberg" "Ragnit" "Königsberg" "Bahaduran" }
 	}
 }
+zzz_religions = {
+	#This group exists only to make religion appear in country diplomacy screen
+	#If it appears on map, something is wrong
+	#Leave this at the end of the file, trust me
+	leader = european
+	unit = PrussianGC
+	
+	religion_catholic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_cathar = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_fraticelli = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_waldensian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_lollard = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_catholic_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_arian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_protestant = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_protestant_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_mormon = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_orthodox = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_pre_schism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_bogomilist = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_monothelite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_iconoclast = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_paulician = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_orthodox_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_coptic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_monophysite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_nestorian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_messalian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_hussite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_sunni = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_zikri = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_yazidi = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_sunni_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_shiite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_hurufi = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_druze = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_shiite_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_ibadi = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_kharijite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_jewish = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_samaritan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_karaite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_jewish_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_mahayana = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_gelugpa = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_theravada = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_hindu = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_shinto = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_sikh = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_jain = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_animist = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_norse_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_tengri_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_baltic_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_finnish_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_aztec_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_slavic_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_west_african_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_zun_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_hellenic_pagan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_inca_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_shamanism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_totemism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_mayan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_nahuatl = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_inti = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_kemetic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_arab_pagan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_druidist = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_tibet_bon = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_muism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_zoroastrian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_manichean = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_mazdaki = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_zoroastrian_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	religion_noreligion = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+}
