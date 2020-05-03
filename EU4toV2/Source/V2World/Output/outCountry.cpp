@@ -108,6 +108,10 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 	{
 		output << "set_country_flag = celestial_emperor\n";
 	}
+	for (const auto& flag: country.details.countryFlags)
+	{
+		output << "set_country_flag = " << flag << "\n";
+	}
 	return output;
 }
 
