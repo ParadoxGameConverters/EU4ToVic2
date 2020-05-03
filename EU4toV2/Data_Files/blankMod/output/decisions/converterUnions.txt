@@ -336,6 +336,8 @@ political_decisions = {
 			CZE = { #Czech Republic, "copy" of Czechoslovakia
 				primary_culture = czech
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = absolute_monarchy
 				civilized = yes
 				capital = 625
@@ -350,6 +352,8 @@ political_decisions = {
 				}
 				primary_culture = horse
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = theocracy
 				civilized = yes
 				capital = 2131
@@ -362,6 +366,8 @@ political_decisions = {
 				}
 				primary_culture = yankee
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 3
@@ -373,6 +379,8 @@ political_decisions = {
 				}
 				primary_culture = macedonian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				government = democracy
 				civilized = yes
 				capital = 806
@@ -566,6 +574,8 @@ political_decisions = {
 				}
 				primary_culture = cat
 				religion = kemetic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_kemetic
 				government = theocracy
 				civilized = yes
 				capital = 1767
@@ -590,6 +600,8 @@ political_decisions = {
 				}
 				primary_culture = kurdish
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = democracy
 				civilized = yes
 				capital = 924
@@ -601,6 +613,8 @@ political_decisions = {
 				}
 				primary_culture = andalucian
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = theocracy
 				civilized = yes
 				capital = 510
@@ -612,6 +626,8 @@ political_decisions = {
 				}
 				primary_culture = maltese
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 854
@@ -623,6 +639,8 @@ political_decisions = {
 				}
 				primary_culture = lombard
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 726
 			}
@@ -636,6 +654,8 @@ political_decisions = {
 				add_accepted_culture = kirgiz
 				add_accepted_culture = tajik
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				government = democracy
 				capital = 1195
@@ -647,6 +667,8 @@ political_decisions = {
 				}
 				primary_culture = occitan
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				government = democracy
 				capital = 455
@@ -658,6 +680,8 @@ political_decisions = {
 				}
 				primary_culture = suebi
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 518
 			}
@@ -668,6 +692,8 @@ political_decisions = {
 				}
 				primary_culture = ostrogothic
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 640
 			}
@@ -678,6 +704,8 @@ political_decisions = {
 				}
 				primary_culture = visigothic
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 455
 			}
@@ -688,6 +716,8 @@ political_decisions = {
 				}
 				primary_culture = alan
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 1054
 			}
@@ -698,6 +728,8 @@ political_decisions = {
 				}
 				primary_culture = north_caucasian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				government = democracy
 				capital = 1048
@@ -709,6 +741,8 @@ political_decisions = {
 				}
 				primary_culture = maori
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				civilized = no
 				capital = 2512
 				set_country_flag = precolonial
@@ -720,6 +754,8 @@ political_decisions = {
 				}
 				primary_culture = aborigine
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				civilized = no
 				capital = 2468
 				set_country_flag = precolonial
@@ -731,6 +767,8 @@ political_decisions = {
 				}
 				primary_culture = ugrian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 1063
 			}
@@ -741,6 +779,8 @@ political_decisions = {
 				}
 				primary_culture = syriac
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 927
 			}
@@ -751,6 +791,8 @@ political_decisions = {
 				}
 				primary_culture = mashriqi
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 902
 			}
@@ -761,6 +803,8 @@ political_decisions = {
 				}
 				primary_culture = maghreb_arabic
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 1725
 			}
@@ -771,6 +815,8 @@ political_decisions = {
 				}
 				primary_culture = yakut
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 2648
 			}
@@ -781,6 +827,8 @@ political_decisions = {
 				}
 				primary_culture = siberian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 1075
 			}
@@ -798,6 +846,8 @@ political_decisions = {
 				add_accepted_culture = kachin
 				add_accepted_culture = karen
 				religion = mahayana
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_mahayana
 				civilized = yes
 				capital = 1346
 			}
@@ -808,6 +858,8 @@ political_decisions = {
 				}
 				primary_culture = anglo_saxon
 				religion = norse_pagan_reformed
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_norse_pagan_reformed
 				civilized = yes
 				capital = 300
 			}
@@ -818,6 +870,8 @@ political_decisions = {
 				}
 				primary_culture = frankish
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 425
 			}
@@ -828,6 +882,8 @@ political_decisions = {
 				}
 				primary_culture = brithenig
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = presidential_dictatorship
 				civilized = yes
 				capital = 300
@@ -839,6 +895,8 @@ political_decisions = {
 				}
 				primary_culture = gaul
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = presidential_dictatorship
 				civilized = yes
 				capital = 425
@@ -850,6 +908,8 @@ political_decisions = {
 				}
 				primary_culture = laessin
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = presidential_dictatorship
 				civilized = yes
 				capital = 619
@@ -861,6 +921,8 @@ political_decisions = {
 				}
 				primary_culture = basque
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 492
@@ -872,6 +934,8 @@ political_decisions = {
 				}
 				primary_culture = falklander
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 2239
@@ -883,6 +947,8 @@ political_decisions = {
 				}
 				primary_culture = tajik
 				religion = shia
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_shiite
 				government = democracy
 				civilized = yes
 				capital = 1207
@@ -894,6 +960,8 @@ political_decisions = {
 				}
 				primary_culture = tatar
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 1068
 			}
@@ -904,6 +972,8 @@ political_decisions = {
 				}
 				primary_culture = south_german
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 652
 			}
@@ -914,6 +984,8 @@ political_decisions = {
 				}
 				primary_culture = romanian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 662
 			}
@@ -924,6 +996,8 @@ political_decisions = {
 				}
 				primary_culture = spanish
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 487
 			}
@@ -934,6 +1008,8 @@ political_decisions = {
 				}
 				primary_culture = polish
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 706
 			}
@@ -944,6 +1020,8 @@ political_decisions = {
 				}
 				primary_culture = ukrainian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 1047
 			}
@@ -954,6 +1032,8 @@ political_decisions = {
 				}
 				primary_culture = croat
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 781
 			}
@@ -964,6 +1044,8 @@ political_decisions = {
 				}
 				primary_culture = south_german
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 619
 			}
@@ -974,6 +1056,8 @@ political_decisions = {
 				}
 				primary_culture = polish
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 702
 			}
@@ -984,6 +1068,8 @@ political_decisions = {
 				}
 				primary_culture = spanish
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 487
 			}
@@ -994,6 +1080,8 @@ political_decisions = {
 				}
 				primary_culture = mongol
 				religion = gelugpa
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_gelugpa
 				civilized = yes
 				capital = 1041
 			}
@@ -1004,6 +1092,8 @@ political_decisions = {
 				}
 				primary_culture = siberian
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				civilized = yes
 				capital = 1074
 			}
@@ -1014,6 +1104,8 @@ political_decisions = {
 				}
 				primary_culture = ugrian
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				civilized = yes
 				capital = 995
 			}
@@ -1024,6 +1116,8 @@ political_decisions = {
 				}
 				primary_culture = polish
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 694
 			}
@@ -1034,6 +1128,8 @@ political_decisions = {
 				}
 				primary_culture = polish
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 699
 			}
@@ -1044,6 +1140,8 @@ political_decisions = {
 				}
 				primary_culture = north_german
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 576
 			}
@@ -1054,6 +1152,8 @@ political_decisions = {
 				}
 				primary_culture = north_italian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				civilized = yes
 				capital = 741
 			}
@@ -1064,6 +1164,8 @@ political_decisions = {
 				}
 				primary_culture = north_german
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				civilized = yes
 				capital = 369
 			}
@@ -1074,6 +1176,8 @@ political_decisions = {
 				}
 				primary_culture = tatar
 				religion = gelugpa
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_gelugpa
 				civilized = yes
 				capital = 1469
 			}
@@ -1084,6 +1188,8 @@ political_decisions = {
 				}
 				primary_culture = tatar
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 1030
 			}
@@ -1094,6 +1200,8 @@ political_decisions = {
 				}
 				primary_culture = ugrian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 1058
 			}
@@ -1104,6 +1212,8 @@ political_decisions = {
 				}
 				primary_culture = mexican
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2181
@@ -1116,6 +1226,8 @@ political_decisions = {
 				}
 				primary_culture = brazilian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2432
@@ -1128,6 +1240,8 @@ political_decisions = {
 				}
 				primary_culture = platinean
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2356
@@ -1140,6 +1254,8 @@ political_decisions = {
 				}
 				primary_culture = central_american
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2187
@@ -1152,6 +1268,8 @@ political_decisions = {
 				}
 				primary_culture = platinean
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2348
@@ -1164,6 +1282,8 @@ political_decisions = {
 				}
 				primary_culture = zapotec
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2177
@@ -1176,6 +1296,8 @@ political_decisions = {
 				}
 				primary_culture = south_andean
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2310
@@ -1188,6 +1310,8 @@ political_decisions = {
 				}
 				primary_culture = patagonian
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = democracy
 				civilized = yes
 				capital = 2329
@@ -1200,6 +1324,8 @@ political_decisions = {
 				}
 				primary_culture = mexican
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 138
@@ -1212,6 +1338,8 @@ political_decisions = {
 				}
 				primary_culture = brazilian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2463
@@ -1224,6 +1352,8 @@ political_decisions = {
 				}
 				primary_culture = mexican
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2137
@@ -1236,6 +1366,8 @@ political_decisions = {
 				}
 				primary_culture = south_andean
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2304
@@ -1248,6 +1380,8 @@ political_decisions = {
 				}
 				primary_culture = mayan
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2183
@@ -1260,6 +1394,8 @@ political_decisions = {
 				}
 				primary_culture = meashighcaw
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 2190
@@ -1272,6 +1408,8 @@ political_decisions = {
 				}
 				primary_culture = yankee
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 119
@@ -1284,6 +1422,8 @@ political_decisions = {
 				}
 				primary_culture = yankee
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 223
@@ -1296,6 +1436,8 @@ political_decisions = {
 				}
 				primary_culture = eskaleut
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 251
@@ -1308,6 +1450,8 @@ political_decisions = {
 				}
 				primary_culture = afro_caribbean
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 2217
@@ -1320,6 +1464,8 @@ political_decisions = {
 				}
 				primary_culture = anglo_canadian
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 71
@@ -1332,6 +1478,8 @@ political_decisions = {
 				}
 				primary_culture = caribeno
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2222
@@ -1344,6 +1492,8 @@ political_decisions = {
 				}
 				primary_culture = anglo_canadian
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 36
@@ -1356,6 +1506,8 @@ political_decisions = {
 				}
 				primary_culture = afro_caribbean
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 2237
@@ -1368,6 +1520,8 @@ political_decisions = {
 				}
 				primary_culture = yankee
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 167
@@ -1380,6 +1534,8 @@ political_decisions = {
 				}
 				primary_culture = yankee
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 123
@@ -1392,6 +1548,8 @@ political_decisions = {
 				}
 				primary_culture = yankee
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 100
@@ -1404,6 +1562,8 @@ political_decisions = {
 				}
 				primary_culture = yankee
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 232
@@ -1416,6 +1576,8 @@ political_decisions = {
 				}
 				primary_culture = yankee
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 81
@@ -1427,6 +1589,8 @@ political_decisions = {
 				}
 				primary_culture = mashriqi
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 926
 			}
@@ -1437,6 +1601,8 @@ political_decisions = {
 				}
 				primary_culture = mashriqi
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 1155
 			}
@@ -1447,6 +1613,8 @@ political_decisions = {
 				}
 				primary_culture = bedouin
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 1162
 			}
@@ -1457,6 +1625,8 @@ political_decisions = {
 				}
 				primary_culture = armenian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 894
 			}
@@ -1467,6 +1637,8 @@ political_decisions = {
 				}
 				primary_culture = north_caucasian
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 1053
 			}
@@ -1477,6 +1649,8 @@ political_decisions = {
 				}
 				primary_culture = pashtun
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 1215
 			}
@@ -1487,6 +1661,8 @@ political_decisions = {
 				}
 				primary_culture = bedouin
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 908
 			}
@@ -1497,6 +1673,8 @@ political_decisions = {
 				}
 				primary_culture = bedouin
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 935
 			}
@@ -1507,6 +1685,8 @@ political_decisions = {
 				}
 				primary_culture = kirgiz
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 1189
 			}
@@ -1517,6 +1697,8 @@ political_decisions = {
 				}
 				primary_culture = mashriqi
 				religion = shiite
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_shiite
 				civilized = yes
 				capital = 1178
 			}
@@ -1527,6 +1709,8 @@ political_decisions = {
 				}
 				primary_culture = mashriqi
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 917
 			}
@@ -1537,6 +1721,8 @@ political_decisions = {
 				}
 				primary_culture = greek
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 882
 			}
@@ -1547,6 +1733,8 @@ political_decisions = {
 				}
 				primary_culture = georgian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				civilized = yes
 				capital = 1090
 			}
@@ -1557,6 +1745,8 @@ political_decisions = {
 				}
 				primary_culture = turkmen
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 1204
 			}
@@ -1567,6 +1757,8 @@ political_decisions = {
 				}
 				primary_culture = uighur
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 1594
 			}
@@ -1577,6 +1769,8 @@ political_decisions = {
 				}
 				primary_culture = uzbek
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 1195
 			}
@@ -1587,6 +1781,8 @@ political_decisions = {
 				}
 				primary_culture = bihari
 				religion = hindu
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_hindu
 				civilized = yes
 				capital = 1247
 			}
@@ -1597,6 +1793,8 @@ political_decisions = {
 				}
 				primary_culture = tamil
 				religion = hindu
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_hindu
 				civilized = yes
 				capital = 1304
 			}
@@ -1607,6 +1805,8 @@ political_decisions = {
 				}
 				primary_culture = avadhi
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				civilized = yes
 				capital = 1240
 			}
@@ -1617,6 +1817,8 @@ political_decisions = {
 				}
 				primary_culture = marathi
 				religion = hindu
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_hindu
 				civilized = yes
 				capital = 1299
 			}
@@ -1628,6 +1830,8 @@ political_decisions = {
 				}
 				primary_culture = swahili
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = no
 				capital = 2061
@@ -1640,6 +1844,8 @@ political_decisions = {
 				}
 				primary_culture = ibo
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = absolute_monarchy
 				civilized = no
 				capital = 1935
@@ -1652,6 +1858,8 @@ political_decisions = {
 				}
 				primary_culture = afar
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = no
 				capital = 1858
@@ -1664,6 +1872,8 @@ political_decisions = {
 				}
 				primary_culture = songhai
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = democracy
 				civilized = no
 				capital = 2609
@@ -1676,6 +1886,8 @@ political_decisions = {
 				}
 				primary_culture = sotho
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = absolute_monarchy
 				civilized = no
 				capital = 2104
@@ -1688,6 +1900,8 @@ political_decisions = {
 				}
 				primary_culture = bakongo
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 1977
@@ -1700,6 +1914,8 @@ political_decisions = {
 				}
 				primary_culture = sara
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = democracy
 				civilized = yes
 				capital = 1818
@@ -1712,6 +1928,8 @@ political_decisions = {
 				}
 				primary_culture = ibibio
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = absolute_monarchy
 				civilized = no
 				capital = 1934
@@ -1724,6 +1942,8 @@ political_decisions = {
 				}
 				primary_culture = maghrebi
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = no
 				capital = 1735
@@ -1736,6 +1956,8 @@ political_decisions = {
 				}
 				primary_culture = hausa
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = no
 				capital = 1815
@@ -1748,6 +1970,8 @@ political_decisions = {
 				}
 				primary_culture = songhai
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = no
 				capital = 1808
@@ -1760,6 +1984,8 @@ political_decisions = {
 				}
 				primary_culture = nguni
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = absolute_monarchy
 				civilized = no
 				capital = 2050
@@ -1772,6 +1998,8 @@ political_decisions = {
 				}
 				primary_culture = mande
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 1785
@@ -1784,6 +2012,8 @@ political_decisions = {
 				}
 				primary_culture = amhara
 				religion = coptic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_coptic
 				government = absolute_monarchy
 				civilized = no
 				capital = 1852
@@ -1796,6 +2026,8 @@ political_decisions = {
 				}
 				primary_culture = fulbe
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = no
 				capital = 1880
@@ -1808,6 +2040,8 @@ political_decisions = {
 				}
 				primary_culture = swahili
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 2024
@@ -1820,6 +2054,8 @@ political_decisions = {
 				}
 				primary_culture = maghrebi
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = yes
 				capital = 1741
@@ -1832,6 +2068,8 @@ political_decisions = {
 				}
 				primary_culture = fulbe
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = no
 				capital = 1804
@@ -1844,6 +2082,8 @@ political_decisions = {
 				}
 				primary_culture = nguni
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = absolute_monarchy
 				civilized = no
 				capital = 2108
@@ -1856,6 +2096,8 @@ political_decisions = {
 				}
 				primary_culture = maghrebi
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = yes
 				capital = 1680
@@ -1868,6 +2110,8 @@ political_decisions = {
 				}
 				primary_culture = songhai
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = democracy
 				civilized = yes
 				capital = 1812
@@ -1880,6 +2124,8 @@ political_decisions = {
 				}
 				primary_culture = shona
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = absolute_monarchy
 				civilized = no
 				capital = 2070
@@ -1892,6 +2138,8 @@ political_decisions = {
 				}
 				primary_culture = amhara
 				religion = coptic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_coptic
 				government = absolute_monarchy
 				civilized = no
 				capital = 1859
@@ -1904,6 +2152,8 @@ political_decisions = {
 				}
 				primary_culture = wolof
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 1783
@@ -1916,6 +2166,8 @@ political_decisions = {
 				}
 				primary_culture = nguni
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = absolute_monarchy
 				civilized = no
 				capital = 2114
@@ -1928,6 +2180,8 @@ political_decisions = {
 				}
 				primary_culture = tigray
 				religion = coptic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_coptic
 				government = absolute_monarchy
 				civilized = no
 				capital = 1853
@@ -1940,6 +2194,8 @@ political_decisions = {
 				}
 				primary_culture = ewe
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 1914
@@ -1952,6 +2208,8 @@ political_decisions = {
 				}
 				primary_culture = fulbe
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = no
 				capital = 1789
@@ -1964,6 +2222,8 @@ political_decisions = {
 				}
 				primary_culture = maures
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = no
 				capital = 1775
@@ -1976,6 +2236,8 @@ political_decisions = {
 				}
 				primary_culture = itsekari
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = absolute_monarchy
 				civilized = no
 				capital = 1931
@@ -1988,6 +2250,8 @@ political_decisions = {
 				}
 				primary_culture = xhosa
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = absolute_monarchy
 				civilized = no
 				capital = 2100
@@ -2000,6 +2264,8 @@ political_decisions = {
 				}
 				primary_culture = lunda
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 2012
@@ -2011,6 +2277,8 @@ political_decisions = {
 				}
 				primary_culture = maghrebi
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = democracy
 				civilized = yes
 				capital = 1773
@@ -2022,6 +2290,8 @@ political_decisions = {
 				}
 				primary_culture = morado
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 1876
@@ -2033,6 +2303,8 @@ political_decisions = {
 				}
 				primary_culture = morado
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 1877
@@ -2044,6 +2316,8 @@ political_decisions = {
 				}
 				primary_culture = morado
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 1955
@@ -2055,6 +2329,8 @@ political_decisions = {
 				}
 				primary_culture = morado
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 1954
@@ -2066,6 +2342,8 @@ political_decisions = {
 				}
 				primary_culture = afar
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = democracy
 				civilized = yes
 				capital = 1875
@@ -2077,6 +2355,8 @@ political_decisions = {
 				}
 				primary_culture = tigray
 				religion = coptic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_coptic
 				government = democracy
 				civilized = yes
 				capital = 1848
@@ -2088,6 +2368,8 @@ political_decisions = {
 				}
 				primary_culture = sudanese
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = democracy
 				civilized = yes
 				capital = 1844
@@ -2099,6 +2381,8 @@ political_decisions = {
 				}
 				primary_culture = african_minor
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = democracy
 				civilized = yes
 				capital = 2123
@@ -2110,6 +2394,8 @@ political_decisions = {
 				}
 				primary_culture = african_minor
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2125
@@ -2121,6 +2407,8 @@ political_decisions = {
 				}
 				primary_culture = african_minor
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2127
@@ -2274,6 +2562,8 @@ political_decisions = {
 				capital = 1440
 				primary_culture = moluccan
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 			}
 
 			any_country = { #Jambi
@@ -2284,6 +2574,8 @@ political_decisions = {
 				capital = 1398
 				primary_culture = malay
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 			}
 
 			any_country = { #Fujian
@@ -2294,6 +2586,8 @@ political_decisions = {
 				capital = 1482
 				primary_culture = min
 				religion = mahayana
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_mahayana
 			}
 
 			any_country = { #Guominjun
@@ -2304,6 +2598,8 @@ political_decisions = {
 				capital = 1559
 				primary_culture = beifaren
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 			}
 
 			any_country = { #Guangdong
@@ -2314,6 +2610,8 @@ political_decisions = {
 				capital = 1493
 				primary_culture = yue
 				religion = mahayana
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_mahayana
 			}
 
 			any_country = { #Hunan
@@ -2324,6 +2622,8 @@ political_decisions = {
 				capital = 1524
 				primary_culture = nanfaren
 				religion = mahayana
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_mahayana
 			}
 
 			any_country = { #Anhui
@@ -2334,6 +2634,8 @@ political_decisions = {
 				capital = 1474
 				primary_culture = beifaren
 				religion = mahayana
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_mahayana
 			}
 
 			any_country = { #Indonesia
@@ -2346,6 +2648,8 @@ political_decisions = {
 				government = democracy
 				civilized = yes
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 			}
 
 			any_country = { #Kachin
@@ -2356,6 +2660,8 @@ political_decisions = {
 				capital = 1314
 				primary_culture = kachin
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 			}
 
 			any_country = { #Kalimantan
@@ -2366,6 +2672,8 @@ political_decisions = {
 				capital = 1423
 				primary_culture = malay
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 			}
 
 			any_country = { #Nationalist China
@@ -2377,6 +2685,8 @@ political_decisions = {
 				primary_culture = nanfaren
 				government = presidential_dictatorship
 				religion = mahayana
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_mahayana
 			}
 
 			any_country = { #Maluku
@@ -2387,6 +2697,8 @@ political_decisions = {
 				capital = 1449
 				primary_culture = moluccan
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 			}
 
 			any_country = { #Sulawesi
@@ -2397,6 +2709,8 @@ political_decisions = {
 				capital = 1430
 				primary_culture = moluccan
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 			}
 
 			any_country = { #Sarawak
@@ -2408,6 +2722,8 @@ political_decisions = {
 				primary_culture = malay
 				civilized = yes
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 			}
 
 			any_country = { #Sichuan
@@ -2418,6 +2734,8 @@ political_decisions = {
 				capital = 1578
 				primary_culture = nanfaren
 				religion = mahayana
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_mahayana
 			}
 
 			any_country = { #Taiwan
@@ -2429,6 +2747,8 @@ political_decisions = {
 				primary_culture = nanfaren
 				civilized = yes
 				religion = mahayana
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_mahayana
 			}
 
 			any_country = { #Choshu
@@ -2439,6 +2759,8 @@ political_decisions = {
 				capital = 1640
 				primary_culture = japanese
 				religion = shinto
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_shinto
 			}
 
 			any_country = { #Ezo
@@ -2450,6 +2772,8 @@ political_decisions = {
 				primary_culture = japanese
 				government = presidential_dictatorship
 				religion = shinto
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_shinto
 			}
 
 			any_country = { #Kaga
@@ -2460,6 +2784,8 @@ political_decisions = {
 				capital = 1646
 				primary_culture = japanese
 				religion = shinto
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_shinto
 			}
 
 			any_country = { #Satsuma
@@ -2470,6 +2796,8 @@ political_decisions = {
 				capital = 1662
 				primary_culture = japanese
 				religion = shinto
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_shinto
 			}
 
 			any_country = { #Sendai
@@ -2480,6 +2808,8 @@ political_decisions = {
 				capital = 1668
 				primary_culture = japanese
 				religion = shinto
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_shinto
 			}
 
 			any_country = { #Tosa
@@ -2490,6 +2820,8 @@ political_decisions = {
 				capital = 1665
 				primary_culture = japanese
 				religion = shinto
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_shinto
 			}
 
 			any_country = { #Yonezawa
@@ -2500,6 +2832,8 @@ political_decisions = {
 				capital = 1673
 				primary_culture = japanese
 				religion = shinto
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_shinto
 			}
 
 			any_country = { #Fiji
@@ -2510,6 +2844,8 @@ political_decisions = {
 				capital = 2454
 				primary_culture = melanesian
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 			}
 
 			any_country = { #South Island
@@ -2522,6 +2858,8 @@ political_decisions = {
 				government = democracy
 				civilized = yes
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 			}
 
 			any_country = { #Tonga
@@ -2532,6 +2870,8 @@ political_decisions = {
 				capital = 2540
 				primary_culture = polynesian
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 			}
 			any_country = { #Alawite
 				limit = {
@@ -2541,7 +2881,9 @@ political_decisions = {
 				capital = 905
 				civilized = yes
 				primary_culture = mashriqi
-				religion = bedouin
+				religion = arab_pagan
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_arab_pagan
 			}
 			any_country = { #Biafra
 				limit = {
@@ -2551,6 +2893,8 @@ political_decisions = {
 				capital = 1935
 				primary_culture = ibo
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 			}
 			any_country = { #Buenos Aires
 				limit = {
@@ -2562,6 +2906,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = platinean
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 			}
 			any_country = { #Cascadia
 				limit = {
@@ -2574,6 +2920,8 @@ political_decisions = {
 				set_country_flag = buro_independence
 				primary_culture = anglo_canadian
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 			}
 			any_country = { #Coptic Egypt
 				limit = {
@@ -2584,6 +2932,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = misri
 				religion = coptic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_coptic
 			}
 			any_country = { #Druze
 				limit = {
@@ -2594,6 +2944,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = mashriqi
 				religion = druze
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_druze
 			}
 			any_country = { #Fiume
 				limit = {
@@ -2605,6 +2957,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = north_italian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 			}
 			any_country = { #Hansa
 				limit = {
@@ -2616,6 +2970,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = north_german
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 			}
 			any_country = { #Hohenzollern
 				limit = {
@@ -2626,6 +2982,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = south_german
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 			}
 			any_country = { #Papal Italy
 				limit = {
@@ -2637,6 +2995,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = south_italian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 			}
 			any_country = { #Karen
 				limit = {
@@ -2647,6 +3007,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = karen
 				religion = theravada
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_theravada
 			}
 			any_country = { #Limburg
 				limit = {
@@ -2657,6 +3019,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = north_german
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 			}
 			any_country = { #Lombardy-Venice
 				limit = {
@@ -2667,6 +3031,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = north_italian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 			}
 			any_country = { #Pindus
 				limit = {
@@ -2677,6 +3043,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = aromanian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 			}
 			any_country = { #Qatar
 				limit = {
@@ -2687,6 +3055,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = bedouin
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 			}
 			any_country = { #Syriac
 				limit = {
@@ -2697,6 +3067,8 @@ political_decisions = {
 				civilized = yes
 				primary_culture = assyrian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 			}
 			any_country = { #Tahiti
 				limit = {
@@ -2706,6 +3078,8 @@ political_decisions = {
 				capital = 801
 				primary_culture = polynesian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 			}
 			any_country = { #Esperantujo
 				limit = {
@@ -2714,6 +3088,8 @@ political_decisions = {
 				}
 				primary_culture = ashkenazi
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 706
@@ -2725,6 +3101,8 @@ political_decisions = {
 				}
 				primary_culture = gypsy
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				government = democracy
 				civilized = yes
 				capital = 806
@@ -2737,6 +3115,8 @@ political_decisions = {
 				primary_culture = bulgarian
 				add_accepted_culture = turkish
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				government = hms_government
 				civilized = yes
 				capital = 815
@@ -2748,6 +3128,8 @@ political_decisions = {
 				}
 				primary_culture = dog_culture
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 3
@@ -2759,6 +3141,8 @@ political_decisions = {
 				}
 				primary_culture = duck_culture
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = bourgeois_dictatorship
 				civilized = yes
 				capital = 84
@@ -2770,6 +3154,8 @@ political_decisions = {
 				}
 				primary_culture = dragon_culture
 				religion = animist
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_animist
 				government = absolute_monarchy
 				civilized = yes
 				capital = 1612
@@ -2781,6 +3167,8 @@ political_decisions = {
 				}
 				primary_culture = elephant_culture
 				religion = hindu
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_hindu
 				government = absolute_monarchy
 				civilized = yes
 				capital = 1236
@@ -2792,6 +3180,8 @@ political_decisions = {
 				}
 				primary_culture = hedgehog_culture
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy
 				civilized = yes
 				capital = 232
@@ -2803,6 +3193,8 @@ political_decisions = {
 				}
 				primary_culture = turkish
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = yes
 				capital = 873
@@ -2819,6 +3211,8 @@ political_decisions = {
 				add_accepted_culture = slovak
 				add_accepted_culture = polish
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				government = prussian_constitutionalism
 				civilized = yes
 				capital = 958
@@ -2830,6 +3224,8 @@ political_decisions = {
 				}
 				primary_culture = latin add_accepted_culture = brithenig add_accepted_culture = gaul add_accepted_culture = xliponian add_accepted_culture = wenedyk add_accepted_culture = bazramani
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = absolute_monarchy
 				civilized = yes
 				capital = 749
@@ -2841,6 +3237,8 @@ political_decisions = {
 				}
 				primary_culture = south_german add_accepted_culture = north_german add_accepted_culture = north_italian add_accepted_culture = czech add_accepted_culture = frankish
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = prussian_constitutionalism
 				civilized = yes
 				capital = 576
@@ -2852,6 +3250,8 @@ political_decisions = {
 				}
 				primary_culture = south_german
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = absolute_monarchy
 				civilized = yes
 				capital = 593
@@ -2863,6 +3263,8 @@ political_decisions = {
 				}
 				primary_culture = north_german
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = proletarian_dictatorship
 				civilized = yes
 				capital = 533
@@ -2874,6 +3276,8 @@ political_decisions = {
 				}
 				primary_culture = south_german
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = absolute_monarchy
 				civilized = yes
 				capital = 595
@@ -2885,6 +3289,8 @@ political_decisions = {
 				}
 				primary_culture = french add_accepted_culture = north_german
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = absolute_monarchy
 				civilized = yes
 				capital = 412
@@ -2896,6 +3302,8 @@ political_decisions = {
 				}
 				primary_culture = french add_accepted_culture = north_german
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = absolute_monarchy
 				civilized = yes
 				capital = 409
@@ -2907,6 +3315,8 @@ political_decisions = {
 				}
 				primary_culture = north_italian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 724
@@ -2918,6 +3328,8 @@ political_decisions = {
 				}
 				primary_culture = south_italian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = absolute_monarchy
 				civilized = yes
 				capital = 754
@@ -2929,6 +3341,8 @@ political_decisions = {
 				}
 				primary_culture = north_italian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = presidential_dictatorship
 				civilized = yes
 				capital = 765
@@ -2940,6 +3354,8 @@ political_decisions = {
 				}
 				primary_culture = south_italian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = absolute_monarchy
 				civilized = yes
 				capital = 762
@@ -2951,6 +3367,8 @@ political_decisions = {
 				}
 				primary_culture = north_italian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = presidential_dictatorship
 				civilized = yes
 				capital = 747
@@ -2962,6 +3380,8 @@ political_decisions = {
 				}
 				primary_culture = north_german add_accepted_culture = latvian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = theocracy
 				civilized = yes
 				capital = 354
@@ -2973,6 +3393,8 @@ political_decisions = {
 				}
 				primary_culture = greek
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				government = absolute_monarchy
 				civilized = yes
 				capital = 834
@@ -2984,6 +3406,8 @@ political_decisions = {
 				}
 				primary_culture = breton
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = presidential_dictatorship
 				civilized = yes
 				capital = 424
@@ -2995,6 +3419,8 @@ political_decisions = {
 				}
 				primary_culture = north_italian
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = presidential_dictatorship
 				civilized = yes
 				capital = 473
@@ -3006,6 +3432,8 @@ political_decisions = {
 				}
 				primary_culture = french
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = absolute_monarchy
 				civilized = yes
 				capital = 415
@@ -3017,6 +3445,8 @@ political_decisions = {
 				}
 				primary_culture = georgian 
 				religion = orthodox 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				government = presidential_dictatorship 
 				civilized = yes
 				capital = 1095 
@@ -3029,6 +3459,8 @@ political_decisions = {
 				}
 				primary_culture = french_canadian 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy 
 				civilized = yes
 				capital = 71 
@@ -3041,6 +3473,8 @@ political_decisions = {
 				}
 				primary_culture = catalan 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = theocracy 
 				civilized = yes
 				capital = 1 
@@ -3053,6 +3487,8 @@ political_decisions = {
 				}
 				primary_culture = spanish 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = hms_government 
 				civilized = yes
 				capital = 475 
@@ -3065,6 +3501,8 @@ political_decisions = {
 				}
 				primary_culture = mossi 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy 
 				civilized = yes
 				capital = 1901 
@@ -3077,6 +3515,8 @@ political_decisions = {
 				}
 				primary_culture = north_caucasian 
 				religion = orthodox 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				government = presidential_dictatorship 
 				civilized = yes
 				capital = 1055 
@@ -3089,6 +3529,8 @@ political_decisions = {
 				}
 				primary_culture = danish 
 				religion = protestant 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy 
 				civilized = yes
 				capital = 253 
@@ -3101,6 +3543,8 @@ political_decisions = {
 				}
 				primary_culture = mongol 
 				religion = gelugpa 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_gelugpa
 				government = presidential_dictatorship 
 				civilized = yes
 				capital = 1532 
@@ -3113,6 +3557,8 @@ political_decisions = {
 				}
 				primary_culture = estonian 
 				religion = orthodox 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				government = democracy 
 				civilized = yes
 				capital = 994 
@@ -3125,6 +3571,8 @@ political_decisions = {
 				}
 				primary_culture = swiss 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = hms_government 
 				civilized = yes
 				capital = 1 
@@ -3137,6 +3585,8 @@ political_decisions = {
 				}
 				primary_culture = romanian 
 				religion = orthodox 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				government = presidential_dictatorship 
 				civilized = yes
 				capital = 676 
@@ -3149,6 +3599,8 @@ political_decisions = {
 				}
 				primary_culture = north_german 
 				religion = protestant 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = presidential_dictatorship 
 				civilized = yes
 				capital = 698 
@@ -3161,6 +3613,8 @@ political_decisions = {
 				}
 				primary_culture = french 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = hms_government 
 				civilized = yes
 				capital = 1 
@@ -3173,6 +3627,8 @@ political_decisions = {
 				}
 				primary_culture = meashighcaw 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = presidential_dictatorship 
 				civilized = yes
 				capital = 2200 
@@ -3185,6 +3641,8 @@ political_decisions = {
 				}
 				primary_culture = swiss 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = presidential_dictatorship 
 				civilized = yes
 				capital = 608 
@@ -3197,6 +3655,8 @@ political_decisions = {
 				}
 				primary_culture = melanesian 
 				religion = protestant 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = presidential_dictatorship 
 				civilized = yes
 				capital = 2528 
@@ -3209,6 +3669,8 @@ political_decisions = {
 				}
 				primary_culture = north_german 
 				religion = protestant 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy 
 				civilized = yes
 				capital = 573 
@@ -3221,6 +3683,8 @@ political_decisions = {
 				}
 				primary_culture = greek 
 				religion = orthodox 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				government = hms_government 
 				civilized = yes
 				capital = 843 
@@ -3233,6 +3697,8 @@ political_decisions = {
 				}
 				primary_culture = malay 
 				religion = gelugpa 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_gelugpa
 				government = democracy 
 				civilized = yes
 				capital = 1384 
@@ -3245,6 +3711,8 @@ political_decisions = {
 				}
 				primary_culture = melanesian 
 				religion = protestant 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy 
 				civilized = yes
 				capital = 2543 
@@ -3257,6 +3725,8 @@ political_decisions = {
 				}
 				primary_culture = north_italian 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy 
 				civilized = yes
 				capital = 1 
@@ -3269,6 +3739,8 @@ political_decisions = {
 				}
 				primary_culture = north_german 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = fascist_dictatorship 
 				civilized = yes
 				capital = 629 
@@ -3281,6 +3753,8 @@ political_decisions = {
 				}
 				primary_culture = javan 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy 
 				civilized = yes
 				capital = 1446 
@@ -3293,6 +3767,8 @@ political_decisions = {
 				}
 				primary_culture = south_german 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy 
 				civilized = yes
 				capital = 735 
@@ -3305,6 +3781,8 @@ political_decisions = {
 				}
 				primary_culture = melanesian 
 				religion = protestant 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = democracy 
 				civilized = yes
 				capital = 2535 
@@ -3317,6 +3795,8 @@ political_decisions = {
 				}
 				primary_culture = polish 
 				religion = catholic 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = absolute_monarchy 
 				civilized = yes
 				capital = 706 
@@ -3329,6 +3809,8 @@ political_decisions = {
 				}
 				primary_culture = chewa 
 				religion = protestant 
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = presidential_dictatorship 
 				civilized = yes
 				capital = 2068 
@@ -3344,6 +3826,8 @@ political_decisions = {
 				add_accepted_culture = maghrebi
 				add_accepted_culture = persian
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = theocracy
 				civilized = yes
 				capital = 1151
@@ -3356,6 +3840,8 @@ political_decisions = {
 				primary_culture = nanfaren
 				add_accepted_culture = portuguese
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = hms_government
 				civilized = yes
 				capital = 1498
@@ -3367,6 +3853,8 @@ political_decisions = {
 				}
 				primary_culture = nouvellien
 				religion = catholic
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_catholic
 				government = democracy
 				civilized = yes
 				capital = 2241
@@ -3380,6 +3868,8 @@ political_decisions = {
 				add_accepted_culture = english
 				add_accepted_culture = scottish
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = hms_government
 				civilized = yes
 				capital = 1496
@@ -3391,6 +3881,8 @@ political_decisions = {
 				}
 				primary_culture = albanian
 				religion = sunni
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_sunni
 				government = absolute_monarchy
 				civilized = yes
 				capital = 802
@@ -3402,6 +3894,8 @@ political_decisions = {
 				}
 				primary_culture = korean
 				religion = mahayana
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_mahayana
 				government = proletarian_dictatorship
 				civilized = yes
 				capital = 1619
@@ -3413,6 +3907,8 @@ political_decisions = {
 				}
 				primary_culture = beifaren
 				religion = mahayana
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_mahayana
 				government = absolute_monarchy
 				civilized = yes
 				capital = 1563
@@ -3424,6 +3920,8 @@ political_decisions = {
 				}
 				primary_culture = beifaren
 				religion = mahayana
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_mahayana
 				government = absolute_monarchy
 				civilized = yes
 				capital = 1538
@@ -3435,6 +3933,8 @@ political_decisions = {
 				}
 				primary_culture = nieuwereld
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = hms_government
 				civilized = yes
 				capital = 2240
@@ -3446,128 +3946,11 @@ political_decisions = {
 				}
 				primary_culture = russian
 				religion = orthodox
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_orthodox
 				government = absolute_monarchy
 				civilized = yes
 				capital = 1082
-			}
-			any_country = { #Micronesia
-				limit = {
-					tag = FSM
-					NOT = { exists = FSM }
-				}
-				primary_culture = micronesian
-				religion = protestant
-				government = democracy
-				civilized = no
-				capital = 610
-			}
-			any_country = { #Guam
-				limit = {
-					tag = GUM
-					NOT = { exists = GUM }
-				}
-				primary_culture = micronesian
-				religion = protestant
-				government = democracy
-				civilized = no
-				capital = 2517
-			}
-			any_country = { #PRC
-				limit = {
-					tag = PRC
-					NOT = { exists = PRC }
-				}
-				primary_culture = beifaren
-				add_accepted_culture = nanfaren
-				religion = gelugpa
-				government = proletarian_dictatorship
-				civilized = yes
-				capital = 1612
-			}
-			any_country = { #RSI
-				limit = {
-					tag = RSI
-					NOT = { exists = RSI }
-				}
-				primary_culture = north_italian
-				add_accepted_culture = south_italian
-				religion = catholic
-				government = fascist_dictatorship
-				civilized = yes
-				capital = 727
-			}
-			any_country = { #Solomon Islands
-				limit = {
-					tag = SLM
-					NOT = { exists = SLM }
-				}
-				primary_culture = melanesian
-				add_accepted_culture = ashkenazi
-				religion = jewish
-				government = democracy
-				civilized = yes
-				capital = 2534
-			}
-			any_country = { #Vichy France
-				limit = {
-					tag = VIC
-					NOT = { exists = VIC }
-				}
-				primary_culture = french
-				religion = catholic
-				government = absolute_monarchy
-				civilized = yes
-				capital = 425
-			}
-			any_country = { #The Raj
-				limit = {
-					tag = RJX
-					NOT = { exists = RJX }
-				}
-				primary_culture = kanauji
-				add_accepted_culture = union
-				religion = hindu
-				government = hms_government
-				civilized = yes
-				capital = 1236
-				set_country_flag = precolonial
-			}
-			any_country = { #European Union
-				limit = {
-					tag = EUR
-					NOT = { exists = EUR }
-				}
-				primary_culture = dummy #Event will fix it
-				add_accepted_culture = bulgarian
-				add_accepted_culture = croatian
-				add_accepted_culture = czech
-				add_accepted_culture = danish
-				add_accepted_culture = dutch
-				add_accepted_culture = english
-				add_accepted_culture = estonian
-				add_accepted_culture = finnish
-				add_accepted_culture = french
-				add_accepted_culture = north_german
-				add_accepted_culture = south_german
-				add_accepted_culture = greek
-				add_accepted_culture = hungarian
-				add_accepted_culture = irish
-				add_accepted_culture = north_italian
-				add_accepted_culture = south_italian
-				add_accepted_culture = latvian
-				add_accepted_culture = lithuanian
-				add_accepted_culture = maltese
-				add_accepted_culture = polish
-				add_accepted_culture = portuguese
-				add_accepted_culture = romanian
-				add_accepted_culture = slovak
-				add_accepted_culture = slovene
-				add_accepted_culture = spanish
-				add_accepted_culture = swedish
-				religion = protestant
-				government = democracy
-				civilized = yes
-				capital = 387
 			}
 			any_country = { limit = { tag = AAA NOT = { exists = AAA } } primary_culture = dummy religion = pre_schism government = theocracy civilized = no capital = 322 } # AAA
 			any_country = { limit = { tag = SMI NOT = { exists = SMI } } primary_culture = sami religion = protestant government = democracy civilized = yes capital = 336 } # Sami
@@ -3732,16 +4115,16 @@ political_decisions = {
 			any_country = { limit = { tag = AMD NOT = { exists = AMD } } primary_culture = avadhi religion = sunni government = absolute_monarchy civilized = no capital = 1297 } # Ahmadnagar
 			any_country = { limit = { tag = BNG NOT = { exists = BNG } } primary_culture = bengali religion = sunni government = absolute_monarchy civilized = no capital = 1254 } # Bengal
 			any_country = { limit = { tag = BRR NOT = { exists = BRR } } primary_culture = marathi religion = sunni government = absolute_monarchy civilized = no capital = 1277 } # Berar
-			any_country = { limit = { tag = BIJ NOT = { exists = BIJ } } primary_culture = kannada religion = shia government = absolute_monarchy civilized = no capital = 1300 } # Bijapur
+			any_country = { limit = { tag = BIJ NOT = { exists = BIJ } } primary_culture = kannada religion = shiite government = absolute_monarchy civilized = no capital = 1300 } # Bijapur
 			any_country = { limit = { tag = DLH NOT = { exists = DLH } } primary_culture = kanauji religion = sunni government = absolute_monarchy civilized = yes capital = 1227 } # Delhi
 			any_country = { limit = { tag = GAK NOT = { exists = GAK } } primary_culture = kanauji religion = sunni government = absolute_monarchy civilized = no capital = 1227 } # Gakwar
-			any_country = { limit = { tag = GOC NOT = { exists = GOC } } primary_culture = telegu religion = shia government = absolute_monarchy civilized = yes capital = 1283 } # Golcanda
+			any_country = { limit = { tag = GOC NOT = { exists = GOC } } primary_culture = telegu religion = shiite government = absolute_monarchy civilized = yes capital = 1283 } # Golcanda
 			any_country = { limit = { tag = GDW NOT = { exists = GDW } } primary_culture = oriya religion = hindu government = absolute_monarchy civilized = no capital = 1262 } # Gondwana
-			any_country = { limit = { tag = GUJ NOT = { exists = GUJ } } primary_culture = panjabi religion = shia government = absolute_monarchy civilized = no capital = 1236 } # Gujarat
+			any_country = { limit = { tag = GUJ NOT = { exists = GUJ } } primary_culture = panjabi religion = shiite government = absolute_monarchy civilized = no capital = 1236 } # Gujarat
 			any_country = { limit = { tag = KRN NOT = { exists = KRN } } primary_culture = kannada religion = hindu government = absolute_monarchy civilized = no capital = 1313 } # Carnatic
-			any_country = { limit = { tag = KHD NOT = { exists = KHD } } primary_culture = panjabi religion = shia government = absolute_monarchy civilized = no capital = 1313 } # Khandesh
+			any_country = { limit = { tag = KHD NOT = { exists = KHD } } primary_culture = panjabi religion = shiite government = absolute_monarchy civilized = no capital = 1313 } # Khandesh
 			any_country = { limit = { tag = SRI NOT = { exists = SRI } } primary_culture = tamil religion = mahayana government = absolute_monarchy civilized = yes capital = 1321 } # Ceylon
-			any_country = { limit = { tag = MRI NOT = { exists = MRI } } primary_culture = persian religion = shia government = absolute_monarchy civilized = no capital = 1313 } # Madurai
+			any_country = { limit = { tag = MRI NOT = { exists = MRI } } primary_culture = persian religion = shiite government = absolute_monarchy civilized = no capital = 1313 } # Madurai
 			any_country = { limit = { tag = MAR NOT = { exists = MAR } } primary_culture = garathi religion = hindu government = absolute_monarchy civilized = no capital = 1277 } # Maharasthra
 			any_country = { limit = { tag = MLB NOT = { exists = MLB } } primary_culture = assamese religion = hindu government = absolute_monarchy civilized = no capital = 1259 } # Manipur
 			any_country = { limit = { tag = MLD NOT = { exists = MLD } } primary_culture = tamil religion = sunni government = absolute_monarchy civilized = no capital = 1325 } # Maldives
@@ -3818,7 +4201,7 @@ political_decisions = {
 			any_country = { limit = { tag = SRU NOT = { exists = SRU } } primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 870 } # Saruhan
 			any_country = { limit = { tag = MEN NOT = { exists = MEN } } primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 872 } # Mentese
 			any_country = { limit = { tag = RAM NOT = { exists = RAM } } primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 894 } # Ramazan
-			any_country = { limit = { tag = KHO NOT = { exists = KHO } } primary_culture = persian religion = shia government = absolute_monarchy civilized = no capital = 1150 } # Khorasan
+			any_country = { limit = { tag = KHO NOT = { exists = KHO } } primary_culture = persian religion = shiite government = absolute_monarchy civilized = no capital = 1150 } # Khorasan
 			any_country = { limit = { tag = QAR NOT = { exists = QAR } } primary_culture = azerbaijani religion = sunni government = absolute_monarchy civilized = no capital = 1108 } # Kara Koyunlu
 			any_country = { limit = { tag = TIM NOT = { exists = TIM } } primary_culture = persian religion = sunni government = absolute_monarchy civilized = no capital = 1199 } # Timurid
 			any_country = { limit = { tag = KAZ NOT = { exists = KAZ } } primary_culture = kazakh religion = sunni government = absolute_monarchy civilized = no capital = 1195 } # Kazakh
@@ -4230,6 +4613,8 @@ political_decisions = {
 				}
 				primary_culture = english
 				religion = protestant
+				remove_accepted_culture = zzz_religion_noreligion
+				add_accepted_culture = zzz_religion_protestant
 				government = hms_government
 				civilized = yes
 				capital = 300
