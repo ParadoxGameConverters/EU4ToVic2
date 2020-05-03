@@ -9645,7 +9645,7 @@ country_event = {
    pop_majority_religion = catholic
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_catholic }
+  NOT = { accepted_culture = zzz_religion_catholic }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9655,7 +9655,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_catholic
+  add_accepted_culture = zzz_religion_catholic
   set_country_flag = religi
  }
 }
@@ -9670,7 +9670,7 @@ country_event = {
    pop_majority_religion = cathar
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_cathar }
+  NOT = { accepted_culture = zzz_religion_cathar }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9680,7 +9680,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_cathar
+  add_accepted_culture = zzz_religion_cathar
   set_country_flag = religi
  }
 }
@@ -9695,7 +9695,7 @@ country_event = {
    pop_majority_religion = fraticelli
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_fraticelli }
+  NOT = { accepted_culture = zzz_religion_fraticelli }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9705,7 +9705,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_fraticelli
+  add_accepted_culture = zzz_religion_fraticelli
   set_country_flag = religi
  }
 }
@@ -9720,7 +9720,7 @@ country_event = {
    pop_majority_religion = waldensian
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_waldensian }
+  NOT = { accepted_culture = zzz_religion_waldensian }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9730,7 +9730,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_waldensian
+  add_accepted_culture = zzz_religion_waldensian
   set_country_flag = religi
  }
 }
@@ -9745,7 +9745,7 @@ country_event = {
    pop_majority_religion = lollard
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_lollard }
+  NOT = { accepted_culture = zzz_religion_lollard }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9755,7 +9755,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_lollard
+  add_accepted_culture = zzz_religion_lollard
   set_country_flag = religi
  }
 }
@@ -9770,7 +9770,7 @@ country_event = {
    pop_majority_religion = catholic_heresy
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_catholic_heresy }
+  NOT = { accepted_culture = zzz_religion_catholic_heresy }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9780,7 +9780,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_catholic_heresy
+  add_accepted_culture = zzz_religion_catholic_heresy
   set_country_flag = religi
  }
 }
@@ -9795,7 +9795,7 @@ country_event = {
    pop_majority_religion = arian
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_arian }
+  NOT = { accepted_culture = zzz_religion_arian }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9805,7 +9805,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_arian
+  add_accepted_culture = zzz_religion_arian
   set_country_flag = religi
  }
 }
@@ -9820,7 +9820,7 @@ country_event = {
    pop_majority_religion = protestant
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_protestant }
+  NOT = { accepted_culture = zzz_religion_protestant }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9830,7 +9830,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_protestant
+  add_accepted_culture = zzz_religion_protestant
   set_country_flag = religi
  }
 }
@@ -9845,7 +9845,7 @@ country_event = {
    pop_majority_religion = protestant_heresy
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_protestant_heresy }
+  NOT = { accepted_culture = zzz_religion_protestant_heresy }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9855,7 +9855,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_protestant_heresy
+  add_accepted_culture = zzz_religion_protestant_heresy
   set_country_flag = religi
  }
 }
@@ -9870,7 +9870,7 @@ country_event = {
    pop_majority_religion = mormon
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_mormon }
+  NOT = { accepted_culture = zzz_religion_mormon }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9880,7 +9880,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_mormon
+  add_accepted_culture = zzz_religion_mormon
   set_country_flag = religi
  }
 }
@@ -9895,7 +9895,7 @@ country_event = {
    pop_majority_religion = orthodox
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_orthodox }
+  NOT = { accepted_culture = zzz_religion_orthodox }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9905,7 +9905,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_orthodox
+  add_accepted_culture = zzz_religion_orthodox
   set_country_flag = religi
  }
 }
@@ -9920,7 +9920,7 @@ country_event = {
    pop_majority_religion = pre_schism
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_pre_schism }
+  NOT = { accepted_culture = zzz_religion_pre_schism }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9930,7 +9930,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_pre_schism
+  add_accepted_culture = zzz_religion_pre_schism
   set_country_flag = religi
  }
 }
@@ -9945,7 +9945,7 @@ country_event = {
    pop_majority_religion = bogomilist
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_bogomilist }
+  NOT = { accepted_culture = zzz_religion_bogomilist }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9955,7 +9955,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_bogomilist
+  add_accepted_culture = zzz_religion_bogomilist
   set_country_flag = religi
  }
 }
@@ -9970,7 +9970,7 @@ country_event = {
    pop_majority_religion = monothelite
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_monothelite }
+  NOT = { accepted_culture = zzz_religion_monothelite }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -9980,7 +9980,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_monothelite
+  add_accepted_culture = zzz_religion_monothelite
   set_country_flag = religi
  }
 }
@@ -9995,7 +9995,7 @@ country_event = {
    pop_majority_religion = iconoclast
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_iconoclast }
+  NOT = { accepted_culture = zzz_religion_iconoclast }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10005,7 +10005,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_iconoclast
+  add_accepted_culture = zzz_religion_iconoclast
   set_country_flag = religi
  }
 }
@@ -10020,7 +10020,7 @@ country_event = {
    pop_majority_religion = paulician
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_paulician }
+  NOT = { accepted_culture = zzz_religion_paulician }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10030,7 +10030,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_paulician
+  add_accepted_culture = zzz_religion_paulician
   set_country_flag = religi
  }
 }
@@ -10045,7 +10045,7 @@ country_event = {
    pop_majority_religion = orthodox_heresy
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_orthodox_heresy }
+  NOT = { accepted_culture = zzz_religion_orthodox_heresy }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10055,7 +10055,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_orthodox_heresy
+  add_accepted_culture = zzz_religion_orthodox_heresy
   set_country_flag = religi
  }
 }
@@ -10070,7 +10070,7 @@ country_event = {
    pop_majority_religion = coptic
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_coptic }
+  NOT = { accepted_culture = zzz_religion_coptic }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10080,7 +10080,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_coptic
+  add_accepted_culture = zzz_religion_coptic
   set_country_flag = religi
  }
 }
@@ -10095,7 +10095,7 @@ country_event = {
    pop_majority_religion = monophysite
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_monophysite }
+  NOT = { accepted_culture = zzz_religion_monophysite }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10105,7 +10105,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_monophysite
+  add_accepted_culture = zzz_religion_monophysite
   set_country_flag = religi
  }
 }
@@ -10120,7 +10120,7 @@ country_event = {
    pop_majority_religion = nestorian
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_nestorian }
+  NOT = { accepted_culture = zzz_religion_nestorian }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10130,7 +10130,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_nestorian
+  add_accepted_culture = zzz_religion_nestorian
   set_country_flag = religi
  }
 }
@@ -10145,7 +10145,7 @@ country_event = {
    pop_majority_religion = messalian
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_messalian }
+  NOT = { accepted_culture = zzz_religion_messalian }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10155,7 +10155,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_messalian
+  add_accepted_culture = zzz_religion_messalian
   set_country_flag = religi
  }
 }
@@ -10170,7 +10170,7 @@ country_event = {
    pop_majority_religion = hussite
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_hussite }
+  NOT = { accepted_culture = zzz_religion_hussite }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10180,7 +10180,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_hussite
+  add_accepted_culture = zzz_religion_hussite
   set_country_flag = religi
  }
 }
@@ -10195,7 +10195,7 @@ country_event = {
    pop_majority_religion = sunni
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_sunni }
+  NOT = { accepted_culture = zzz_religion_sunni }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10205,7 +10205,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_sunni
+  add_accepted_culture = zzz_religion_sunni
   set_country_flag = religi
  }
 }
@@ -10220,7 +10220,7 @@ country_event = {
    pop_majority_religion = zikri
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_zikri }
+  NOT = { accepted_culture = zzz_religion_zikri }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10230,7 +10230,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_zikri
+  add_accepted_culture = zzz_religion_zikri
   set_country_flag = religi
  }
 }
@@ -10245,7 +10245,7 @@ country_event = {
    pop_majority_religion = yazidi
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_yazidi }
+  NOT = { accepted_culture = zzz_religion_yazidi }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10255,7 +10255,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_yazidi
+  add_accepted_culture = zzz_religion_yazidi
   set_country_flag = religi
  }
 }
@@ -10270,7 +10270,7 @@ country_event = {
    pop_majority_religion = sunni_heresy
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_sunni_heresy }
+  NOT = { accepted_culture = zzz_religion_sunni_heresy }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10280,7 +10280,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_sunni_heresy
+  add_accepted_culture = zzz_religion_sunni_heresy
   set_country_flag = religi
  }
 }
@@ -10295,7 +10295,7 @@ country_event = {
    pop_majority_religion = shiite
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_shiite }
+  NOT = { accepted_culture = zzz_religion_shiite }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10305,7 +10305,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_shiite
+  add_accepted_culture = zzz_religion_shiite
   set_country_flag = religi
  }
 }
@@ -10320,7 +10320,7 @@ country_event = {
    pop_majority_religion = hurufi
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_hurufi }
+  NOT = { accepted_culture = zzz_religion_hurufi }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10330,7 +10330,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_hurufi
+  add_accepted_culture = zzz_religion_hurufi
   set_country_flag = religi
  }
 }
@@ -10345,7 +10345,7 @@ country_event = {
    pop_majority_religion = druze
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_druze }
+  NOT = { accepted_culture = zzz_religion_druze }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10355,7 +10355,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_druze
+  add_accepted_culture = zzz_religion_druze
   set_country_flag = religi
  }
 }
@@ -10370,7 +10370,7 @@ country_event = {
    pop_majority_religion = shiite_heresy
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_shiite_heresy }
+  NOT = { accepted_culture = zzz_religion_shiite_heresy }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10380,7 +10380,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_shiite_heresy
+  add_accepted_culture = zzz_religion_shiite_heresy
   set_country_flag = religi
  }
 }
@@ -10395,7 +10395,7 @@ country_event = {
    pop_majority_religion = ibadi
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_ibadi }
+  NOT = { accepted_culture = zzz_religion_ibadi }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10405,7 +10405,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_ibadi
+  add_accepted_culture = zzz_religion_ibadi
   set_country_flag = religi
  }
 }
@@ -10420,7 +10420,7 @@ country_event = {
    pop_majority_religion = kharijite
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_kharijite }
+  NOT = { accepted_culture = zzz_religion_kharijite }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10430,7 +10430,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_kharijite
+  add_accepted_culture = zzz_religion_kharijite
   set_country_flag = religi
  }
 }
@@ -10445,7 +10445,7 @@ country_event = {
    pop_majority_religion = jewish
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_jewish }
+  NOT = { accepted_culture = zzz_religion_jewish }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10455,7 +10455,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_jewish
+  add_accepted_culture = zzz_religion_jewish
   set_country_flag = religi
  }
 }
@@ -10470,7 +10470,7 @@ country_event = {
    pop_majority_religion = samaritan
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_samaritan }
+  NOT = { accepted_culture = zzz_religion_samaritan }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10480,7 +10480,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_samaritan
+  add_accepted_culture = zzz_religion_samaritan
   set_country_flag = religi
  }
 }
@@ -10495,7 +10495,7 @@ country_event = {
    pop_majority_religion = karaite
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_karaite }
+  NOT = { accepted_culture = zzz_religion_karaite }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10505,7 +10505,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_karaite
+  add_accepted_culture = zzz_religion_karaite
   set_country_flag = religi
  }
 }
@@ -10520,7 +10520,7 @@ country_event = {
    pop_majority_religion = jewish_heresy
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_jewish_heresy }
+  NOT = { accepted_culture = zzz_religion_jewish_heresy }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10530,7 +10530,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_jewish_heresy
+  add_accepted_culture = zzz_religion_jewish_heresy
   set_country_flag = religi
  }
 }
@@ -10545,7 +10545,7 @@ country_event = {
    pop_majority_religion = mahayana
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_mahayana }
+  NOT = { accepted_culture = zzz_religion_mahayana }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10555,7 +10555,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_mahayana
+  add_accepted_culture = zzz_religion_mahayana
   set_country_flag = religi
  }
 }
@@ -10570,7 +10570,7 @@ country_event = {
    pop_majority_religion = gelugpa
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_gelugpa }
+  NOT = { accepted_culture = zzz_religion_gelugpa }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10580,7 +10580,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_gelugpa
+  add_accepted_culture = zzz_religion_gelugpa
   set_country_flag = religi
  }
 }
@@ -10595,7 +10595,7 @@ country_event = {
    pop_majority_religion = theravada
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_theravada }
+  NOT = { accepted_culture = zzz_religion_theravada }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10605,7 +10605,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_theravada
+  add_accepted_culture = zzz_religion_theravada
   set_country_flag = religi
  }
 }
@@ -10620,7 +10620,7 @@ country_event = {
    pop_majority_religion = hindu
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_hindu }
+  NOT = { accepted_culture = zzz_religion_hindu }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10630,7 +10630,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_hindu
+  add_accepted_culture = zzz_religion_hindu
   set_country_flag = religi
  }
 }
@@ -10645,7 +10645,7 @@ country_event = {
    pop_majority_religion = shinto
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_shinto }
+  NOT = { accepted_culture = zzz_religion_shinto }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10655,7 +10655,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_shinto
+  add_accepted_culture = zzz_religion_shinto
   set_country_flag = religi
  }
 }
@@ -10670,7 +10670,7 @@ country_event = {
    pop_majority_religion = sikh
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_sikh }
+  NOT = { accepted_culture = zzz_religion_sikh }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10680,7 +10680,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_sikh
+  add_accepted_culture = zzz_religion_sikh
   set_country_flag = religi
  }
 }
@@ -10695,7 +10695,7 @@ country_event = {
    pop_majority_religion = jain
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_jain }
+  NOT = { accepted_culture = zzz_religion_jain }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10705,7 +10705,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_jain
+  add_accepted_culture = zzz_religion_jain
   set_country_flag = religi
  }
 }
@@ -10720,7 +10720,7 @@ country_event = {
    pop_majority_religion = animist
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_animist }
+  NOT = { accepted_culture = zzz_religion_animist }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10730,7 +10730,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_animist
+  add_accepted_culture = zzz_religion_animist
   set_country_flag = religi
  }
 }
@@ -10745,7 +10745,7 @@ country_event = {
    pop_majority_religion = norse_pagan_reformed
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_norse_pagan_reformed }
+  NOT = { accepted_culture = zzz_religion_norse_pagan_reformed }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10755,7 +10755,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_norse_pagan_reformed
+  add_accepted_culture = zzz_religion_norse_pagan_reformed
   set_country_flag = religi
  }
 }
@@ -10770,7 +10770,7 @@ country_event = {
    pop_majority_religion = tengri_pagan_reformed
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_tengri_pagan_reformed }
+  NOT = { accepted_culture = zzz_religion_tengri_pagan_reformed }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10780,7 +10780,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_tengri_pagan_reformed
+  add_accepted_culture = zzz_religion_tengri_pagan_reformed
   set_country_flag = religi
  }
 }
@@ -10795,7 +10795,7 @@ country_event = {
    pop_majority_religion = baltic_pagan_reformed
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_baltic_pagan_reformed }
+  NOT = { accepted_culture = zzz_religion_baltic_pagan_reformed }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10805,7 +10805,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_baltic_pagan_reformed
+  add_accepted_culture = zzz_religion_baltic_pagan_reformed
   set_country_flag = religi
  }
 }
@@ -10820,7 +10820,7 @@ country_event = {
    pop_majority_religion = finnish_pagan_reformed
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_finnish_pagan_reformed }
+  NOT = { accepted_culture = zzz_religion_finnish_pagan_reformed }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10830,7 +10830,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_finnish_pagan_reformed
+  add_accepted_culture = zzz_religion_finnish_pagan_reformed
   set_country_flag = religi
  }
 }
@@ -10845,7 +10845,7 @@ country_event = {
    pop_majority_religion = aztec_reformed
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_aztec_reformed }
+  NOT = { accepted_culture = zzz_religion_aztec_reformed }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10855,7 +10855,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_aztec_reformed
+  add_accepted_culture = zzz_religion_aztec_reformed
   set_country_flag = religi
  }
 }
@@ -10870,7 +10870,7 @@ country_event = {
    pop_majority_religion = slavic_pagan_reformed
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_slavic_pagan_reformed }
+  NOT = { accepted_culture = zzz_religion_slavic_pagan_reformed }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10880,7 +10880,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_slavic_pagan_reformed
+  add_accepted_culture = zzz_religion_slavic_pagan_reformed
   set_country_flag = religi
  }
 }
@@ -10895,7 +10895,7 @@ country_event = {
    pop_majority_religion = west_african_pagan_reformed
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_west_african_pagan_reformed }
+  NOT = { accepted_culture = zzz_religion_west_african_pagan_reformed }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10905,7 +10905,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_west_african_pagan_reformed
+  add_accepted_culture = zzz_religion_west_african_pagan_reformed
   set_country_flag = religi
  }
 }
@@ -10920,7 +10920,7 @@ country_event = {
    pop_majority_religion = zun_pagan_reformed
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_zun_pagan_reformed }
+  NOT = { accepted_culture = zzz_religion_zun_pagan_reformed }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10930,7 +10930,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_zun_pagan_reformed
+  add_accepted_culture = zzz_religion_zun_pagan_reformed
   set_country_flag = religi
  }
 }
@@ -10945,7 +10945,7 @@ country_event = {
    pop_majority_religion = hellenic_pagan
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_hellenic_pagan }
+  NOT = { accepted_culture = zzz_religion_hellenic_pagan }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10955,7 +10955,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_hellenic_pagan
+  add_accepted_culture = zzz_religion_hellenic_pagan
   set_country_flag = religi
  }
 }
@@ -10970,7 +10970,7 @@ country_event = {
    pop_majority_religion = inca_reformed
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_inca_reformed }
+  NOT = { accepted_culture = zzz_religion_inca_reformed }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -10980,7 +10980,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_inca_reformed
+  add_accepted_culture = zzz_religion_inca_reformed
   set_country_flag = religi
  }
 }
@@ -10995,7 +10995,7 @@ country_event = {
    pop_majority_religion = shamanism
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_shamanism }
+  NOT = { accepted_culture = zzz_religion_shamanism }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11005,7 +11005,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_shamanism
+  add_accepted_culture = zzz_religion_shamanism
   set_country_flag = religi
  }
 }
@@ -11020,7 +11020,7 @@ country_event = {
    pop_majority_religion = totemism
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_totemism }
+  NOT = { accepted_culture = zzz_religion_totemism }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11030,7 +11030,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_totemism
+  add_accepted_culture = zzz_religion_totemism
   set_country_flag = religi
  }
 }
@@ -11045,7 +11045,7 @@ country_event = {
    pop_majority_religion = mayan
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_mayan }
+  NOT = { accepted_culture = zzz_religion_mayan }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11055,7 +11055,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_mayan
+  add_accepted_culture = zzz_religion_mayan
   set_country_flag = religi
  }
 }
@@ -11070,7 +11070,7 @@ country_event = {
    pop_majority_religion = nahuatl
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_nahuatl }
+  NOT = { accepted_culture = zzz_religion_nahuatl }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11080,7 +11080,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_nahuatl
+  add_accepted_culture = zzz_religion_nahuatl
   set_country_flag = religi
  }
 }
@@ -11095,7 +11095,7 @@ country_event = {
    pop_majority_religion = inti
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_inti }
+  NOT = { accepted_culture = zzz_religion_inti }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11105,7 +11105,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_inti
+  add_accepted_culture = zzz_religion_inti
   set_country_flag = religi
  }
 }
@@ -11120,7 +11120,7 @@ country_event = {
    pop_majority_religion = kemetic
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_kemetic }
+  NOT = { accepted_culture = zzz_religion_kemetic }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11130,7 +11130,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_kemetic
+  add_accepted_culture = zzz_religion_kemetic
   set_country_flag = religi
  }
 }
@@ -11145,7 +11145,7 @@ country_event = {
    pop_majority_religion = arab_pagan
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_arab_pagan }
+  NOT = { accepted_culture = zzz_religion_arab_pagan }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11155,7 +11155,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_arab_pagan
+  add_accepted_culture = zzz_religion_arab_pagan
   set_country_flag = religi
  }
 }
@@ -11170,7 +11170,7 @@ country_event = {
    pop_majority_religion = druidist
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_druidist }
+  NOT = { accepted_culture = zzz_religion_druidist }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11180,7 +11180,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_druidist
+  add_accepted_culture = zzz_religion_druidist
   set_country_flag = religi
  }
 }
@@ -11195,7 +11195,7 @@ country_event = {
    pop_majority_religion = tibet_bon
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_tibet_bon }
+  NOT = { accepted_culture = zzz_religion_tibet_bon }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11205,7 +11205,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_tibet_bon
+  add_accepted_culture = zzz_religion_tibet_bon
   set_country_flag = religi
  }
 }
@@ -11220,7 +11220,7 @@ country_event = {
    pop_majority_religion = muism
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_muism }
+  NOT = { accepted_culture = zzz_religion_muism }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11230,7 +11230,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_muism
+  add_accepted_culture = zzz_religion_muism
   set_country_flag = religi
  }
 }
@@ -11245,7 +11245,7 @@ country_event = {
    pop_majority_religion = zoroastrian
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_zoroastrian }
+  NOT = { accepted_culture = zzz_religion_zoroastrian }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11255,7 +11255,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_zoroastrian
+  add_accepted_culture = zzz_religion_zoroastrian
   set_country_flag = religi
  }
 }
@@ -11270,7 +11270,7 @@ country_event = {
    pop_majority_religion = manichean
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_manichean }
+  NOT = { accepted_culture = zzz_religion_manichean }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11280,7 +11280,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_manichean
+  add_accepted_culture = zzz_religion_manichean
   set_country_flag = religi
  }
 }
@@ -11295,7 +11295,7 @@ country_event = {
    pop_majority_religion = mazdaki
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_mazdaki }
+  NOT = { accepted_culture = zzz_religion_mazdaki }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11305,7 +11305,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_mazdaki
+  add_accepted_culture = zzz_religion_mazdaki
   set_country_flag = religi
  }
 }
@@ -11320,7 +11320,7 @@ country_event = {
    pop_majority_religion = zoroastrian_heresy
    is_state_religion = yes
   }
-  NOT = { accepted_culture = religion_zoroastrian_heresy }
+  NOT = { accepted_culture = zzz_religion_zoroastrian_heresy }
   NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
@@ -11330,7 +11330,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_zoroastrian_heresy
+  add_accepted_culture = zzz_religion_zoroastrian_heresy
   set_country_flag = religi
  }
 }
@@ -11347,7 +11347,7 @@ country_event = {
 			is_state_religion = yes
 		}
 	}
-  NOT = { accepted_culture = religion_noreligion }
+  NOT = { accepted_culture = zzz_religion_noreligion }
   NOT = { has_country_flag = religi } # I'm not going to check for all of them
  }
  
@@ -11357,7 +11357,7 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = religion_noreligion
+  add_accepted_culture = zzz_religion_noreligion
   set_country_flag = religi
  }
 }
@@ -11375,7 +11375,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = catholic
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11385,8 +11385,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_catholic
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_catholic
   religion = catholic
  }
 }
@@ -11400,7 +11400,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = cathar
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11410,8 +11410,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_cathar
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_cathar
   religion = cathar
  }
 }
@@ -11425,7 +11425,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = fraticelli
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11435,8 +11435,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_fraticelli
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_fraticelli
   religion = fraticelli
  }
 }
@@ -11450,7 +11450,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = waldensian
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11460,8 +11460,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_waldensian
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_waldensian
   religion = waldensian
  }
 }
@@ -11475,7 +11475,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = lollard
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11485,8 +11485,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_lollard
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_lollard
   religion = lollard
  }
 }
@@ -11500,7 +11500,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = catholic_heresy
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11510,8 +11510,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_catholic_heresy
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_catholic_heresy
   religion = catholic_heresy
  }
 }
@@ -11525,7 +11525,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = arian
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11535,8 +11535,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_arian
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_arian
   religion = arian
  }
 }
@@ -11550,7 +11550,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = protestant
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11560,8 +11560,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_protestant
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_protestant
   religion = protestant
  }
 }
@@ -11575,7 +11575,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = protestant_heresy
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11585,8 +11585,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_protestant_heresy
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_protestant_heresy
   religion = protestant_heresy
  }
 }
@@ -11600,7 +11600,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = mormon
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11610,8 +11610,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_mormon
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_mormon
   religion = mormon
  }
 }
@@ -11625,7 +11625,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = orthodox
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11635,8 +11635,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_orthodox
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_orthodox
   religion = orthodox
  }
 }
@@ -11650,7 +11650,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = pre_schism
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11660,8 +11660,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_pre_schism
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_pre_schism
   religion = pre_schism
  }
 }
@@ -11675,7 +11675,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = bogomilist
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11685,8 +11685,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_bogomilist
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_bogomilist
   religion = bogomilist
  }
 }
@@ -11700,7 +11700,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = monothelite
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11710,8 +11710,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_monothelite
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_monothelite
   religion = monothelite
  }
 }
@@ -11725,7 +11725,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = iconoclast
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11735,8 +11735,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_iconoclast
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_iconoclast
   religion = iconoclast
  }
 }
@@ -11750,7 +11750,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = paulician
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11760,8 +11760,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_paulician
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_paulician
   religion = paulician
  }
 }
@@ -11775,7 +11775,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = orthodox_heresy
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11785,8 +11785,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_orthodox_heresy
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_orthodox_heresy
   religion = orthodox_heresy
  }
 }
@@ -11800,7 +11800,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = coptic
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11810,8 +11810,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_coptic
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_coptic
   religion = coptic
  }
 }
@@ -11825,7 +11825,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = monophysite
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11835,8 +11835,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_monophysite
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_monophysite
   religion = monophysite
  }
 }
@@ -11850,7 +11850,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = nestorian
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11860,8 +11860,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_nestorian
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_nestorian
   religion = nestorian
  }
 }
@@ -11875,7 +11875,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = messalian
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11885,8 +11885,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_messalian
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_messalian
   religion = messalian
  }
 }
@@ -11900,7 +11900,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = hussite
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11910,8 +11910,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_hussite
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_hussite
   religion = hussite
  }
 }
@@ -11925,7 +11925,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = sunni
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11935,8 +11935,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_sunni
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_sunni
   religion = sunni
  }
 }
@@ -11950,7 +11950,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = zikri
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11960,8 +11960,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_zikri
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_zikri
   religion = zikri
  }
 }
@@ -11975,7 +11975,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = yazidi
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -11985,8 +11985,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_yazidi
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_yazidi
   religion = yazidi
  }
 }
@@ -12000,7 +12000,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = sunni_heresy
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12010,8 +12010,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_sunni_heresy
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_sunni_heresy
   religion = sunni_heresy
  }
 }
@@ -12025,7 +12025,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = shiite
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12035,8 +12035,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_shiite
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_shiite
   religion = shiite
  }
 }
@@ -12050,7 +12050,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = hurufi
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12060,8 +12060,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_hurufi
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_hurufi
   religion = hurufi
  }
 }
@@ -12075,7 +12075,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = druze
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12085,8 +12085,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_druze
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_druze
   religion = druze
  }
 }
@@ -12100,7 +12100,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = shiite_heresy
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12110,8 +12110,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_shiite_heresy
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_shiite_heresy
   religion = shiite_heresy
  }
 }
@@ -12125,7 +12125,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = ibadi
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12135,8 +12135,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_ibadi
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_ibadi
   religion = ibadi
  }
 }
@@ -12150,7 +12150,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = kharijite
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12160,8 +12160,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_kharijite
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_kharijite
   religion = kharijite
  }
 }
@@ -12175,7 +12175,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = jewish
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12185,8 +12185,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_jewish
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_jewish
   religion = jewish
  }
 }
@@ -12200,7 +12200,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = samaritan
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12210,8 +12210,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_samaritan
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_samaritan
   religion = samaritan
  }
 }
@@ -12225,7 +12225,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = karaite
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12235,8 +12235,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_karaite
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_karaite
   religion = karaite
  }
 }
@@ -12250,7 +12250,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = jewish_heresy
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12260,8 +12260,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_jewish_heresy
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_jewish_heresy
   religion = jewish_heresy
  }
 }
@@ -12275,7 +12275,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = mahayana
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12285,8 +12285,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_mahayana
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_mahayana
   religion = mahayana
  }
 }
@@ -12300,7 +12300,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = gelugpa
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12310,8 +12310,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_gelugpa
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_gelugpa
   religion = gelugpa
  }
 }
@@ -12325,7 +12325,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = theravada
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12335,8 +12335,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_theravada
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_theravada
   religion = theravada
  }
 }
@@ -12350,7 +12350,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = hindu
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12360,8 +12360,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_hindu
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_hindu
   religion = hindu
  }
 }
@@ -12375,7 +12375,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = shinto
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12385,8 +12385,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_shinto
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_shinto
   religion = shinto
  }
 }
@@ -12400,7 +12400,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = sikh
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12410,8 +12410,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_sikh
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_sikh
   religion = sikh
  }
 }
@@ -12425,7 +12425,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = jain
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12435,8 +12435,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_jain
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_jain
   religion = jain
  }
 }
@@ -12450,7 +12450,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = animist
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12460,8 +12460,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_animist
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_animist
   religion = animist
  }
 }
@@ -12475,7 +12475,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = norse_pagan_reformed
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12485,8 +12485,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_norse_pagan_reformed
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_norse_pagan_reformed
   religion = norse_pagan_reformed
  }
 }
@@ -12500,7 +12500,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = tengri_pagan_reformed
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12510,8 +12510,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_tengri_pagan_reformed
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_tengri_pagan_reformed
   religion = tengri_pagan_reformed
  }
 }
@@ -12525,7 +12525,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = baltic_pagan_reformed
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12535,8 +12535,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_baltic_pagan_reformed
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_baltic_pagan_reformed
   religion = baltic_pagan_reformed
  }
 }
@@ -12550,7 +12550,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = finnish_pagan_reformed
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12560,8 +12560,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_finnish_pagan_reformed
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_finnish_pagan_reformed
   religion = finnish_pagan_reformed
  }
 }
@@ -12575,7 +12575,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = aztec_reformed
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12585,8 +12585,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_aztec_reformed
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_aztec_reformed
   religion = aztec_reformed
  }
 }
@@ -12600,7 +12600,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = slavic_pagan_reformed
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12610,8 +12610,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_slavic_pagan_reformed
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_slavic_pagan_reformed
   religion = slavic_pagan_reformed
  }
 }
@@ -12625,7 +12625,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = west_african_pagan_reformed
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12635,8 +12635,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_west_african_pagan_reformed
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_west_african_pagan_reformed
   religion = west_african_pagan_reformed
  }
 }
@@ -12650,7 +12650,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = zun_pagan_reformed
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12660,8 +12660,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_zun_pagan_reformed
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_zun_pagan_reformed
   religion = zun_pagan_reformed
  }
 }
@@ -12675,7 +12675,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = hellenic_pagan
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12685,8 +12685,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_hellenic_pagan
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_hellenic_pagan
   religion = hellenic_pagan
  }
 }
@@ -12700,7 +12700,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = inca_reformed
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12710,8 +12710,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_inca_reformed
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_inca_reformed
   religion = inca_reformed
  }
 }
@@ -12725,7 +12725,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = shamanism
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12735,8 +12735,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_shamanism
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_shamanism
   religion = shamanism
  }
 }
@@ -12750,7 +12750,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = totemism
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12760,8 +12760,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_totemism
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_totemism
   religion = totemism
  }
 }
@@ -12775,7 +12775,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = mayan
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12785,8 +12785,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_mayan
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_mayan
   religion = mayan
  }
 }
@@ -12800,7 +12800,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = nahuatl
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12810,8 +12810,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_nahuatl
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_nahuatl
   religion = nahuatl
  }
 }
@@ -12825,7 +12825,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = inti
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12835,8 +12835,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_inti
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_inti
   religion = inti
  }
 }
@@ -12850,7 +12850,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = kemetic
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12860,8 +12860,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_kemetic
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_kemetic
   religion = kemetic
  }
 }
@@ -12875,7 +12875,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = arab_pagan
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12885,8 +12885,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_arab_pagan
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_arab_pagan
   religion = arab_pagan
  }
 }
@@ -12900,7 +12900,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = druidist
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12910,8 +12910,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_druidist
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_druidist
   religion = druidist
  }
 }
@@ -12925,7 +12925,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = tibet_bon
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12935,8 +12935,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_tibet_bon
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_tibet_bon
   religion = tibet_bon
  }
 }
@@ -12950,7 +12950,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = muism
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12960,8 +12960,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_muism
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_muism
   religion = muism
  }
 }
@@ -12975,7 +12975,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = zoroastrian
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -12985,8 +12985,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_zoroastrian
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_zoroastrian
   religion = zoroastrian
  }
 }
@@ -13000,7 +13000,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = manichean
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -13010,8 +13010,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_manichean
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_manichean
   religion = manichean
  }
 }
@@ -13025,7 +13025,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = mazdaki
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -13035,8 +13035,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_mazdaki
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_mazdaki
   religion = mazdaki
  }
 }
@@ -13050,7 +13050,7 @@ country_event = {
   capital_scope = {
    pop_majority_religion = zoroastrian_heresy
   }
-  accepted_culture = religion_noreligion
+  accepted_culture = zzz_religion_noreligion
   has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
  }
  
@@ -13060,8 +13060,8 @@ country_event = {
  
  option = {
   name = EVTOPTARELNEW
-  remove_accepted_culture = religion_noreligion
-  add_accepted_culture = religion_zoroastrian_heresy
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_zoroastrian_heresy
   religion = zoroastrian_heresy
  }
 }

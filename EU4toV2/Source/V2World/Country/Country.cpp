@@ -1,28 +1,27 @@
-#include "OSCompatibilityLayer.h"
 #include "Country.h"
-#include "Log.h"
-#include "../../Mappers/PartyNames/PartyNameMapper.h"
-#include "../../Mappers/PartyTypes/PartyTypeMapper.h"
-#include "../../Mappers/ReligionMapper/ReligionMapper.h"
+#include "../../Mappers/CountryMappings/CountryMappings.h"
 #include "../../Mappers/CultureMapper/CultureMapper.h"
 #include "../../Mappers/GovernmentMapper/GovernmentMapper.h"
-#include "../../Mappers/CountryMappings/CountryMappings.h"
+#include "../../Mappers/LeaderTraits/LeaderTraitMapper.h"
+#include "../../Mappers/PartyNames/PartyNameMapper.h"
+#include "../../Mappers/PartyTypes/PartyTypeMapper.h"
+#include "../../Mappers/RegimentCosts/RegimentCostsMapper.h"
+#include "../../Mappers/ReligionMapper/ReligionMapper.h"
+#include "../../Mappers/StartingInventionMapper/StartingInventionMapper.h"
+#include "../../Mappers/StartingTechMapper/StartingTechMapper.h"
+#include "../../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../../Mappers/Unreleasables/Unreleasables.h"
-#include "../../Mappers/LeaderTraits/LeaderTraitMapper.h"
-#include "../../Mappers/TechGroups/TechGroupsMapper.h"
-#include "../../Mappers/RegimentCosts/RegimentCostsMapper.h"
-#include "../../Mappers/StartingTechMapper/StartingTechMapper.h"
-#include "../../Mappers/StartingInventionMapper/StartingInventionMapper.h"
 #include "../Flags/Flags.h"
+#include "Log.h"
+#include "OSCompatibilityLayer.h"
 #include <cmath>
 
-V2::Country::Country(
-	const std::string& countriesFileLine, 
-	const bool _dynamicCountry,
-	const mappers::PartyNameMapper& partyNameMapper,
-	const mappers::PartyTypeMapper& partyTypeMapper):
-dynamicCountry(_dynamicCountry)
+V2::Country::Country(const std::string& countriesFileLine,
+	 const bool _dynamicCountry,
+	 const mappers::PartyNameMapper& partyNameMapper,
+	 const mappers::PartyTypeMapper& partyTypeMapper):
+	 dynamicCountry(_dynamicCountry)
 {
 	// Load from a country file, if one exists. Otherwise rely on defaults.
 	int start = countriesFileLine.find_first_of('/');
@@ -30,17 +29,17 @@ dynamicCountry(_dynamicCountry)
 	const auto size = countriesFileLine.find_last_of('\"') - start;
 	const auto filename = countriesFileLine.substr(start, size);
 	details = CountryDetails(filename);
-	tag = countriesFileLine.substr(0, 3);	
+	tag = countriesFileLine.substr(0, 3);
 	commonCountryFile = Localisation::convert(filename);
 	initParties(partyNameMapper, partyTypeMapper);
 }
 
-V2::Country::Country(
-	std::string _tag, 
-	const std::string& _commonCountryFile, 
-	const mappers::PartyNameMapper& partyNameMapper,
-	const mappers::PartyTypeMapper& partyTypeMapper):
-tag(std::move(_tag)), commonCountryFile(Localisation::convert(_commonCountryFile))
+V2::Country::Country(std::string _tag,
+	 const std::string& _commonCountryFile,
+	 const mappers::PartyNameMapper& partyNameMapper,
+	 const mappers::PartyTypeMapper& partyTypeMapper):
+	 tag(std::move(_tag)),
+	 commonCountryFile(Localisation::convert(_commonCountryFile))
 {
 	newCountry = true;
 	dynamicCountry = false;
@@ -51,10 +50,11 @@ tag(std::move(_tag)), commonCountryFile(Localisation::convert(_commonCountryFile
 void V2::Country::initParties(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper)
 {
 	// We're a new nation so no parties are specified. Grab some.
-	if (details.parties.empty()) loadPartiesFromBlob(partyNameMapper, partyTypeMapper);
+	if (details.parties.empty())
+		loadPartiesFromBlob(partyNameMapper, partyTypeMapper);
 
 	// set a default ruling party
-	for (const auto& party : details.parties)
+	for (const auto& party: details.parties)
 	{
 		// We're pinging against this date only to protect against later-game parties.
 		if (party.isActiveOn(date("1836.1.1")))
@@ -84,26 +84,27 @@ void V2::Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameM
 		details.parties.push_back(newParty);
 		localisation.setPartyKey(ideology, partyKey);
 
-		for (const auto& language : languageMap) localisation.setPartyName(ideology, language.first, language.second);
+		for (const auto& language: languageMap)
+			localisation.setPartyName(ideology, language.first, language.second);
 
 		++ideology;
 	}
 }
 
-void V2::Country::initFromEU4Country(
-	const EU4::Regions& eu4Regions,
-	std::shared_ptr<EU4::Country> _srcCountry,
-	const mappers::TechSchoolMapper& techSchoolMapper,
-	const mappers::CultureMapper& cultureMapper,
-	const mappers::IdeaEffectMapper& ideaEffectMapper,
-	const mappers::ReligionMapper& religionMapper,
-	const mappers::ProvinceMapper& provinceMapper,
-	const mappers::GovernmentMapper& governmentMapper,
-	const mappers::CountryMappings& countryMapper
-) {
+void V2::Country::initFromEU4Country(const EU4::Regions& eu4Regions,
+	 std::shared_ptr<EU4::Country> _srcCountry,
+	 const mappers::TechSchoolMapper& techSchoolMapper,
+	 const mappers::CultureMapper& cultureMapper,
+	 const mappers::IdeaEffectMapper& ideaEffectMapper,
+	 const mappers::ReligionMapper& religionMapper,
+	 const mappers::ProvinceMapper& provinceMapper,
+	 const mappers::GovernmentMapper& governmentMapper,
+	 const mappers::CountryMappings& countryMapper)
+{
 	srcCountry = _srcCountry;
 
-	if (!srcCountry->getRandomName().empty()) newCountry = true;
+	if (!srcCountry->getRandomName().empty())
+		newCountry = true;
 
 	auto possibleFilename = Utils::GetFileFromTag("./blankMod/output/history/countries/", tag);
 	if (!possibleFilename)
@@ -133,7 +134,8 @@ void V2::Country::initFromEU4Country(
 	// Capital
 	const auto oldCapital = srcCountry->getCapital();
 	auto potentialCapitals = provinceMapper.getVic2ProvinceNumbers(oldCapital);
-	if (!potentialCapitals.empty()) details.capital = *potentialCapitals.begin();
+	if (!potentialCapitals.empty())
+		details.capital = *potentialCapitals.begin();
 
 	// HRE / Emperors
 	details.inHRE = srcCountry->getInHRE();
@@ -165,7 +167,7 @@ void V2::Country::initFromEU4Country(
 	calculateLiteracy();
 	determineTechSchool(techSchoolMapper);
 
-	//Consciousness
+	// Consciousness
 	calculateConsciousness();
 
 	// Misc
@@ -202,12 +204,13 @@ void V2::Country::setPrimaryCulture(const mappers::CultureMapper& cultureMapper,
 
 	// primary culture
 	auto primCulture = srcCountry->getPrimaryCulture();
-	if (primCulture.empty()) 
+	if (primCulture.empty())
 	{
 		primCulture = "noculture";
-		LOG(LogLevel::Warning) << "No primary culture for " << srcCountry->getTag() << "! Using noculture. (Is this a CK2 import? Forgot to fix CK2 converter culture/religion bugs?)";
+		LOG(LogLevel::Warning) << "No primary culture for " << srcCountry->getTag()
+									  << "! Using noculture. (Is this a CK2 import? Forgot to fix CK2 converter culture/religion bugs?)";
 	}
-	
+
 	const auto& matched = cultureMapper.cultureMatch(eu4Regions, primCulture, details.religion, oldCapital, srcCountry->getTag());
 	if (!matched)
 	{
@@ -237,7 +240,8 @@ void V2::Country::addRelation(Relation& newRelation)
 V2::Relation& V2::Country::getRelation(const std::string& target)
 {
 	const auto& relation = relations.find(target);
-	if (relation != relations.end()) return relation->second;
+	if (relation != relations.end())
+		return relation->second;
 	Relation newRelation(target);
 	relations.insert(std::make_pair(target, newRelation));
 	const auto& newRelRef = relations.find(target);
@@ -248,11 +252,12 @@ void V2::Country::absorbColony(Country& vassal)
 {
 	// change province ownership and drop provinces to colony status.
 	// We are NOT dropping colonial nation cores, so the player may release the nation manually if desired.
-	for (auto& province : vassal.getProvinces())
+	for (auto& province: vassal.getProvinces())
 	{
 		province.second->setOwner(tag);
 		province.second->setController(tag);
-		if (!province.second->isColony()) province.second->setColonial(2);
+		if (!province.second->isColony())
+			province.second->setColonial(2);
 		province.second->setTerritorialCore(true);
 	}
 	vassal.provinces.clear();
@@ -261,21 +266,21 @@ void V2::Country::absorbColony(Country& vassal)
 	srcCountry->takeArmies(vassal.getSourceCountry());
 
 	// assume the vassal's decisions (just canals, at the moment)
-	for (const auto& decision : vassal.decisions) decisions.insert(decision);
+	for (const auto& decision: vassal.decisions)
+		decisions.insert(decision);
 	vassal.decisions.clear();
 }
 
-void V2::Country::determineGovernmentType(
-	const mappers::IdeaEffectMapper& ideaEffectMapper, 
-	const mappers::GovernmentMapper& governmentMapper)
+void V2::Country::determineGovernmentType(const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::GovernmentMapper& governmentMapper)
 {
 	const auto& possibleGovernment = governmentMapper.matchGovernment(srcCountry->getGovernment());
 	details.government = *possibleGovernment;
 
-	for (const auto& reformStr : srcCountry->getReforms())
+	for (const auto& reformStr: srcCountry->getReforms())
 	{
 		auto enforce = ideaEffectMapper.getEnforceFromIdea(reformStr);
-		if (!enforce.empty()) details.government = enforce;
+		if (!enforce.empty())
+			details.government = enforce;
 	}
 
 	// Almost but not quite. Hardcoded but hey.
@@ -310,31 +315,32 @@ void V2::Country::finalizeInvestments(const mappers::IdeaEffectMapper& ideaEffec
 	// Collect and finalize all idea/reform/government effects. We have combined reforms + ideas incoming, but lack government component (the last 33%)
 	// Resulting scores for all of these will be between -5 and 5, with 0 being average and ignored.
 	// Each point above or below 5 should alter absolute values by 10%.
-		
-	if (ideaEffectMapper.getArmyFromIdea(details.government)) 
+
+	if (ideaEffectMapper.getArmyFromIdea(details.government))
 		details.technologies.army = (2 * details.technologies.army + ideaEffectMapper.getArmyFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getNavyFromIdea(details.government)) 
+	if (ideaEffectMapper.getNavyFromIdea(details.government))
 		details.technologies.navy = (2 * details.technologies.navy + ideaEffectMapper.getNavyFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getCommerceFromIdea(details.government)) 
+	if (ideaEffectMapper.getCommerceFromIdea(details.government))
 		details.technologies.commerce = (2 * details.technologies.commerce + ideaEffectMapper.getCommerceFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getIndustryFromIdea(details.government)) 
+	if (ideaEffectMapper.getIndustryFromIdea(details.government))
 		details.technologies.industry = (2 * details.technologies.industry + ideaEffectMapper.getIndustryFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getCultureFromIdea(details.government))
 		details.technologies.culture = (2 * details.technologies.culture + ideaEffectMapper.getCultureFromIdea(details.government)) / 3;
 
-	if (ideaEffectMapper.getSlaveryFromIdea(details.government)) 
+	if (ideaEffectMapper.getSlaveryFromIdea(details.government))
 		details.reforms.slavery = (2 * details.reforms.slavery + ideaEffectMapper.getSlaveryFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getUpper_house_compositionFromIdea(details.government)) 
-		details.reforms.upper_house_composition = (2 * details.reforms.upper_house_composition + ideaEffectMapper.getUpper_house_compositionFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getVote_franchiseFromIdea(details.government)) 
+	if (ideaEffectMapper.getUpper_house_compositionFromIdea(details.government))
+		details.reforms.upper_house_composition =
+			 (2 * details.reforms.upper_house_composition + ideaEffectMapper.getUpper_house_compositionFromIdea(details.government)) / 3;
+	if (ideaEffectMapper.getVote_franchiseFromIdea(details.government))
 		details.reforms.vote_franchise = (2 * details.reforms.vote_franchise + ideaEffectMapper.getVote_franchiseFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getVoting_systemFromIdea(details.government)) 
+	if (ideaEffectMapper.getVoting_systemFromIdea(details.government))
 		details.reforms.voting_system = (2 * details.reforms.voting_system + ideaEffectMapper.getVoting_systemFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getPublic_meetingsFromIdea(details.government)) 
+	if (ideaEffectMapper.getPublic_meetingsFromIdea(details.government))
 		details.reforms.public_meetings = (2 * details.reforms.public_meetings + ideaEffectMapper.getPublic_meetingsFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getPress_rightsFromIdea(details.government)) 
+	if (ideaEffectMapper.getPress_rightsFromIdea(details.government))
 		details.reforms.press_rights = (2 * details.reforms.press_rights + ideaEffectMapper.getPress_rightsFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getTrade_unionsFromIdea(details.government)) 
+	if (ideaEffectMapper.getTrade_unionsFromIdea(details.government))
 		details.reforms.trade_unions = (2 * details.reforms.trade_unions + ideaEffectMapper.getTrade_unionsFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getPolitical_partiesFromIdea(details.government))
 		details.reforms.political_parties = (2 * details.reforms.political_parties + ideaEffectMapper.getPolitical_partiesFromIdea(details.government)) / 3;
@@ -355,8 +361,10 @@ void V2::Country::finalizeInvestments(const mappers::IdeaEffectMapper& ideaEffec
 		details.literacyInvestment = (2 * details.literacyInvestment + ideaEffectMapper.getLiteracyFromIdea(details.government)) / 3;
 
 	// Finally a patch for those silly democracies that go too low.
-	if (details.government == "democracy" && details.reforms.vote_franchise < -2.5) details.reforms.vote_franchise = -2;
-	if (details.government == "democracy" && details.reforms.upper_house_composition < 0) details.reforms.upper_house_composition = 1;
+	if (details.government == "democracy" && details.reforms.vote_franchise < -2.5)
+		details.reforms.vote_franchise = -2;
+	if (details.government == "democracy" && details.reforms.upper_house_composition < 0)
+		details.reforms.upper_house_composition = 1;
 }
 
 void V2::Country::resolvePolitics()
@@ -399,7 +407,7 @@ void V2::Country::resolvePolitics()
 		ideology = "conservative";
 	}
 
-	for (const auto& party : details.parties)
+	for (const auto& party: details.parties)
 	{
 		if (party.isActiveOn(date("1836.1.1")) && party.getIdeology() == ideology)
 		{
@@ -411,7 +419,7 @@ void V2::Country::resolvePolitics()
 
 void V2::Country::generateRelations(const mappers::CountryMappings& countryMapper)
 {
-	for (auto srcRelation : srcCountry->getRelations())
+	for (auto srcRelation: srcCountry->getRelations())
 	{
 		const auto& V2Tag = countryMapper.getV2Tag(srcRelation.first);
 		if (V2Tag)
@@ -426,19 +434,22 @@ void V2::Country::calculateLiteracy()
 {
 	details.literacy = 0.4;
 
-	if (srcCountry->getReligion() == "protestant" ||
-		srcCountry->getReligion() == "anglican" ||
-		srcCountry->getReligion() == "confucian" ||
-		srcCountry->getReligion() == "reformed")
+	if (srcCountry->getReligion() == "protestant" || srcCountry->getReligion() == "anglican" || srcCountry->getReligion() == "confucian" ||
+		 srcCountry->getReligion() == "reformed")
 	{
 		details.literacy += 0.1;
 	}
 
-	if (srcCountry->hasModifier("the_school_establishment_act")) details.literacy += 0.05;
-	if (srcCountry->hasModifier("sunday_schools")) details.literacy += 0.05;
-	if (srcCountry->hasModifier("the_education_act")) details.literacy += 0.05;
-	if (srcCountry->hasModifier("monastic_education_system")) details.literacy += 0.05;
-	if (srcCountry->hasModifier("western_embassy_mission")) details.literacy += 0.05;
+	if (srcCountry->hasModifier("the_school_establishment_act"))
+		details.literacy += 0.05;
+	if (srcCountry->hasModifier("sunday_schools"))
+		details.literacy += 0.05;
+	if (srcCountry->hasModifier("the_education_act"))
+		details.literacy += 0.05;
+	if (srcCountry->hasModifier("monastic_education_system"))
+		details.literacy += 0.05;
+	if (srcCountry->hasModifier("western_embassy_mission"))
+		details.literacy += 0.05;
 
 	// Universities grant at most 10% literacy, with either having 10 or when having them in 10% of provinces, whichever comes sooner.
 	// Colleges do half of what universities do.
@@ -447,11 +458,13 @@ void V2::Country::calculateLiteracy()
 	const auto numProvinces = provinces.size();
 	auto numColleges = 0;
 	auto numUniversities = 0;
-	
-	for (const auto& province : provinces)
+
+	for (const auto& province: provinces)
 	{
-		if (province->hasBuilding("college")) numColleges++;
-		if (province->hasBuilding("university")) numUniversities++;
+		if (province->hasBuilding("college"))
+			numColleges++;
+		if (province->hasBuilding("university"))
+			numUniversities++;
 	}
 
 	double collegeBonus1 = 0;
@@ -481,22 +494,23 @@ void V2::Country::calculateLiteracy()
 
 void V2::Country::determineTechSchool(const mappers::TechSchoolMapper& techSchoolMapper)
 {
-	details.techSchool = techSchoolMapper.findBestTechSchool(
-		details.technologies.army,
-		details.technologies.commerce,
-		details.technologies.culture,
-		details.technologies.industry,
-		details.technologies.navy
-	);
+	details.techSchool = techSchoolMapper.findBestTechSchool(details.technologies.army,
+		 details.technologies.commerce,
+		 details.technologies.culture,
+		 details.technologies.industry,
+		 details.technologies.navy);
 }
 
 void V2::Country::buildCanals()
 {
-	for (const auto& prov : srcCountry->getProvinces())
+	for (const auto& prov: srcCountry->getProvinces())
 	{
-		if (prov->hasGreatProject("suez_canal")) decisions.insert("build_suez_canal");
-		if (prov->hasGreatProject("kiel_canal")) decisions.insert("build_kiel_canal");
-		if (prov->hasGreatProject("panama_canal")) decisions.insert("build_panama_canal");
+		if (prov->hasGreatProject("suez_canal"))
+			decisions.insert("build_suez_canal");
+		if (prov->hasGreatProject("kiel_canal"))
+			decisions.insert("build_kiel_canal");
+		if (prov->hasGreatProject("panama_canal"))
+			decisions.insert("build_panama_canal");
 	}
 }
 
@@ -508,7 +522,8 @@ void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMap
 
 	// Don't fire up Details if there's no point.
 	auto possibleFilename = Utils::GetFileFromTag("./blankMod/output/history/countries/", tag);
-	if (!possibleFilename) possibleFilename = Utils::GetFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
+	if (!possibleFilename)
+		possibleFilename = Utils::GetFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
 	if (!possibleFilename)
 	{
 		auto countryName = commonCountryFile;
@@ -523,7 +538,8 @@ void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMap
 void V2::Country::addProvince(std::shared_ptr<Province> _province)
 {
 	const auto& itr = provinces.find(_province->getID());
-	if (itr != provinces.end()) LOG(LogLevel::Error) << "Inserting province " << _province->getID() << " multiple times (addProvince())";
+	if (itr != provinces.end())
+		LOG(LogLevel::Error) << "Inserting province " << _province->getID() << " multiple times (addProvince())";
 	provinces.insert(make_pair(_province->getID(), _province));
 }
 
@@ -537,7 +553,7 @@ void V2::Country::addState(std::shared_ptr<State> newState, const mappers::PortP
 
 	std::vector<int> newProvinceNums;
 	newProvinceNums.reserve(newProvinceNums.size());
-	for (const auto& province : newProvinces)
+	for (const auto& province: newProvinces)
 	{
 		newProvinceNums.push_back(province->getID());
 	}
@@ -551,9 +567,9 @@ void V2::Country::addState(std::shared_ptr<State> newState, const mappers::PortP
 			provinces.insert(make_pair(newProvinces[i]->getID(), newProvinces[i]));
 		}
 
-		// find the province with the highest naval base level		
+		// find the province with the highest naval base level
 		const auto isPortProvince = std::find(portProvinces.begin(), portProvinces.end(), newProvinces[i]->getID()) != portProvinces.end();
-		if (newProvinces[i]->getNavalBaseLevel() > highestNavalLevel&& isPortProvince)
+		if (newProvinces[i]->getNavalBaseLevel() > highestNavalLevel && isPortProvince)
 		{
 			highestNavalLevel = newProvinces[i]->getNavalBaseLevel();
 			hasHighestLevel = i;
@@ -568,54 +584,56 @@ void V2::Country::addState(std::shared_ptr<State> newState, const mappers::PortP
 
 void V2::Country::convertLeaders(const mappers::LeaderTraitMapper& leaderTraitMapper)
 {
-	if (srcCountry == nullptr) return;
-	if (provinces.empty()) return;
+	if (srcCountry == nullptr)
+		return;
+	if (provinces.empty())
+		return;
 	auto eu4Leaders = srcCountry->getMilitaryLeaders();
-	if (eu4Leaders.empty()) return;
+	if (eu4Leaders.empty())
+		return;
 
-	for (const auto& eu4Leader : eu4Leaders)
+	for (const auto& eu4Leader: eu4Leaders)
 	{
 		Leader newLeader(eu4Leader, leaderTraitMapper);
 		leaders.push_back(newLeader);
 	}
 }
 
-void V2::Country::convertUncivReforms(const CIV_ALGORITHM techGroupAlgorithm, const double topTech, const int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper)
+void V2::Country::convertUncivReforms(const CIV_ALGORITHM techGroupAlgorithm,
+	 const double topTech,
+	 const int topInstitutions,
+	 const mappers::TechGroupsMapper& techGroupsMapper)
 {
 	switch (techGroupAlgorithm)
 	{
-	case(CIV_ALGORITHM::older):
-		oldCivConversionMethod();
-		break;
-	case(CIV_ALGORITHM::newer):
-		newCivConversionMethod(topTech, topInstitutions, techGroupsMapper);
-		break;
-	default:
-		break;
+		case (CIV_ALGORITHM::older):
+			oldCivConversionMethod();
+			break;
+		case (CIV_ALGORITHM::newer):
+			newCivConversionMethod(topTech, topInstitutions, techGroupsMapper);
+			break;
+		default:
+			break;
 	}
 }
 
 // civilization level conversion method for games up to 1.18
-void V2::Country::oldCivConversionMethod() 
+void V2::Country::oldCivConversionMethod()
 {
-	if (!srcCountry) return;
+	if (!srcCountry)
+		return;
 	const auto totalTechs = srcCountry->getMilTech() + srcCountry->getAdmTech();
 	const auto militaryDev = srcCountry->getMilTech() / totalTechs;
 	const auto socioEconDev = srcCountry->getAdmTech() / totalTechs;
 
-	if (srcCountry->getTechGroup() == "western" || 
-		srcCountry->getTechGroup() == "high_american" || 
-		srcCountry->getTechGroup() == "eastern" || 
-		srcCountry->getTechGroup() == "ottoman" || 
-		srcCountry->numEmbracedInstitutions() >= 7) //civilized, do nothing
+	if (srcCountry->getTechGroup() == "western" || srcCountry->getTechGroup() == "high_american" || srcCountry->getTechGroup() == "eastern" ||
+		 srcCountry->getTechGroup() == "ottoman" || srcCountry->numEmbracedInstitutions() >= 7) // civilized, do nothing
 	{
 		details.civilized = true;
 	}
-	else if ((srcCountry->getTechGroup() == "north_american" || 
-		srcCountry->getTechGroup() == "mesoamerican" || 
-		srcCountry->getTechGroup() == "south_american" || 
-		srcCountry->getTechGroup() == "new_world" || 
-		srcCountry->getTechGroup() == "andean") && srcCountry->numEmbracedInstitutions() <= 3)
+	else if ((srcCountry->getTechGroup() == "north_american" || srcCountry->getTechGroup() == "mesoamerican" || srcCountry->getTechGroup() == "south_american" ||
+					 srcCountry->getTechGroup() == "new_world" || srcCountry->getTechGroup() == "andean") &&
+				srcCountry->numEmbracedInstitutions() <= 3)
 	{
 		uncivReforms = UncivReforms(0, militaryDev, socioEconDev, this);
 	}
@@ -639,16 +657,15 @@ void V2::Country::oldCivConversionMethod()
 	{
 		uncivReforms = UncivReforms(30, militaryDev, socioEconDev, this);
 	}
-	else if (srcCountry->getTechGroup() == "sub_saharan" || 
-		srcCountry->getTechGroup() == "central_african" || 
-		srcCountry->getTechGroup() == "east_african" || 
-		srcCountry->numEmbracedInstitutions() == 4)
+	else if (srcCountry->getTechGroup() == "sub_saharan" || srcCountry->getTechGroup() == "central_african" || srcCountry->getTechGroup() == "east_african" ||
+				srcCountry->numEmbracedInstitutions() == 4)
 	{
 		uncivReforms = UncivReforms(20, militaryDev, socioEconDev, this);
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "Unhandled tech group (" << srcCountry->getTechGroup() << " with " << srcCountry->numEmbracedInstitutions() << " institutions) for " << tag << " - giving no reforms";
+		LOG(LogLevel::Warning) << "Unhandled tech group (" << srcCountry->getTechGroup() << " with " << srcCountry->numEmbracedInstitutions()
+									  << " institutions) for " << tag << " - giving no reforms";
 		uncivReforms = UncivReforms(0, militaryDev, socioEconDev, this);
 	}
 }
@@ -656,7 +673,8 @@ void V2::Country::oldCivConversionMethod()
 // civilization level conversion method for games 1.19+
 void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper)
 {
-	if (!srcCountry) return;
+	if (!srcCountry)
+		return;
 	auto totalTechs = srcCountry->getMilTech() + srcCountry->getAdmTech() + srcCountry->getDipTech();
 
 	// set civilization cut off for 6 techs behind the the tech leader (30 years behind tech)
@@ -666,8 +684,10 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 
 	auto civLevel = (totalTechs + 31 - topTech) * 4;
 	civLevel = civLevel + (static_cast<double>(srcCountry->numEmbracedInstitutions()) - topInstitutions) * 8;
-	if (civLevel > 100) civLevel = 100;
-	if (civLevel < 0) civLevel = 0;
+	if (civLevel > 100)
+		civLevel = 100;
+	if (civLevel < 0)
+		civLevel = 0;
 
 	const auto& techGroup = srcCountry->getTechGroup();
 
@@ -689,16 +709,18 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 	1350: 0.15
 	It will fail to hit those points exactly but won't err by much.
 	*/
-	
+
 	auto lastDate = theConfiguration.getLastEU4Date();
-	if (lastDate > HARD_ENDING_DATE) lastDate = HARD_ENDING_DATE;
-	
+	if (lastDate > HARD_ENDING_DATE)
+		lastDate = HARD_ENDING_DATE;
+
 	const auto currentYear = std::fmax(lastDate.diffInYears(date("0.1.1")), 0);
 	const auto yearFactor = (0.1 + 4'614'700 * currentYear) / (1 + 103'810'000.0f * currentYear - 54'029 * pow(currentYear, 2));
 
 	details.literacy *= yearFactor;
 
-	if (civLevel == 100) details.civilized = true;
+	if (civLevel == 100)
+		details.civilized = true;
 
 	if (details.civilized == false)
 	{
@@ -734,14 +756,15 @@ void V2::Country::convertLandlessReforms(const Country& capitalOwner) // Use cur
 }
 
 void V2::Country::setTechs(const mappers::StartingTechMapper& startingTechMapper,
-	const mappers::StartingInventionMapper& startingInventionMapper,
-	double armyScore,
-	double navyScore,
-	double cultureScore,
-	double industryScore,
-	double commerceScore)
+	 const mappers::StartingInventionMapper& startingInventionMapper,
+	 double armyScore,
+	 double navyScore,
+	 double cultureScore,
+	 double industryScore,
+	 double commerceScore)
 {
-	if (!details.civilized) return;
+	if (!details.civilized)
+		return;
 
 	const auto armyTechs = startingTechMapper.getTechsForGroupAndScore("army", armyScore);
 	const auto navyTechs = startingTechMapper.getTechsForGroupAndScore("navy", navyScore);
@@ -764,24 +787,31 @@ bool V2::Country::addFactory(std::shared_ptr<Factory> factory)
 	const auto requiredTech = factory->getRequiredTech();
 	if (!requiredTech.empty())
 	{
-		if (!techs.count(requiredTech)) return false;
+		if (!techs.count(requiredTech))
+			return false;
 	}
 
 	// check factory inventions
 	const auto requiredInvention = factory->getRequiredInvention();
 	if (!requiredInvention.empty())
 	{
-		if (!inventions.count(requiredInvention)) return false;
+		if (!inventions.count(requiredInvention))
+			return false;
 	}
 
 	// find a state to add the factory to, which meets the factory's requirements
 	std::vector<std::pair<double, std::shared_ptr<State>>> candidates;
 	for (const auto& candidate: states)
 	{
-		if (candidate->isColonial()) continue;
-		if (candidate->getFactoryCount() >= 8) continue;
-		if (factory->requiresCoastal()) if (!candidate->isCoastal()) continue;
-		if (!candidate->hasLandConnection()) continue;
+		if (candidate->isColonial())
+			continue;
+		if (candidate->getFactoryCount() >= 8)
+			continue;
+		if (factory->requiresCoastal())
+			if (!candidate->isCoastal())
+				continue;
+		if (!candidate->hasLandConnection())
+			continue;
 
 		auto candidateScore = candidate->getSuppliedInputs(factory) * 100;
 		candidateScore -= static_cast<double>(candidate->getFactoryCount()) * 10;
@@ -789,70 +819,82 @@ bool V2::Country::addFactory(std::shared_ptr<Factory> factory)
 		candidates.emplace_back(std::pair(candidateScore, candidate));
 	}
 
-	sort(candidates.begin(), candidates.end(), [](const std::pair<double, std::shared_ptr<State>>& lhs, const std::pair<double, std::shared_ptr<State>>& rhs)
-	{
-		if (lhs.first != rhs.first) return lhs.first > rhs.first;
+	sort(candidates.begin(), candidates.end(), [](const std::pair<double, std::shared_ptr<State>>& lhs, const std::pair<double, std::shared_ptr<State>>& rhs) {
+		if (lhs.first != rhs.first)
+			return lhs.first > rhs.first;
 		return lhs.second->getID() < rhs.second->getID();
 	});
 
-	if (candidates.empty()) return false;
+	if (candidates.empty())
+		return false;
 
 	candidates[0].second->addFactory(factory);
 	details.numFactories++;
 	return true;
 }
 
-void V2::Country::setupPops(
-	const double popWeightRatio,
-	const CIV_ALGORITHM popConversionAlgorithm,
-	const mappers::ProvinceMapper& provinceMapper
-) {
+void V2::Country::setupPops(const double popWeightRatio, const CIV_ALGORITHM popConversionAlgorithm, const mappers::ProvinceMapper& provinceMapper)
+{
 	// skip entirely for empty nations
-	if (states.empty()) return;
+	if (states.empty())
+		return;
 
 	// create the pops
-	for (const auto& province: provinces) province.second->doCreatePops(popWeightRatio, this, popConversionAlgorithm, provinceMapper);
+	for (const auto& province: provinces)
+		province.second->doCreatePops(popWeightRatio, this, popConversionAlgorithm, provinceMapper);
 }
 
-void V2::Country::convertArmies(
-	const mappers::RegimentCostsMapper& regimentCostsMapper,
-	const std::map<int, std::shared_ptr<Province>>& allProvinces,
-	const mappers::PortProvinces& portProvincesMapper,
-	const mappers::ProvinceMapper& provinceMapper)
+void V2::Country::convertArmies(const mappers::RegimentCostsMapper& regimentCostsMapper,
+	 const std::map<int, std::shared_ptr<Province>>& allProvinces,
+	 const mappers::PortProvinces& portProvincesMapper,
+	 const mappers::ProvinceMapper& provinceMapper)
 {
-	if (srcCountry == nullptr) return;
-	if (provinces.empty()) return;
+	if (srcCountry == nullptr)
+		return;
+	if (provinces.empty())
+		return;
 
 	// set up armies with whatever regiments they deserve, rounded down
 	// and keep track of the remainders for later
-	for (auto& eu4Army : srcCountry->getArmies())
+	for (auto& eu4Army: srcCountry->getArmies())
 	{
-		Army army(eu4Army, tag, details.civilized, regimentCostsMapper, allProvinces, provinceMapper, portProvincesMapper, unitNameCount, localisation.getLocalAdjective());
-		if (army.success()) armies.push_back(army); // That went well.
+		Army army(eu4Army,
+			 tag,
+			 details.civilized,
+			 regimentCostsMapper,
+			 allProvinces,
+			 provinceMapper,
+			 portProvincesMapper,
+			 unitNameCount,
+			 localisation.getLocalAdjective());
+		if (army.success())
+			armies.push_back(army); // That went well.
 		// copy over remainders, if any.
 		auto armyRemainders = army.getArmyRemainders();
-		for (const auto& remainder : armyRemainders) countryRemainders[remainder.first] += remainder.second;
+		for (const auto& remainder: armyRemainders)
+			countryRemainders[remainder.first] += remainder.second;
 	}
 
 	// allocate the remainders from the whole country to the armies according to their need, rounding up
-	for (auto& remainder : countryRemainders)
+	for (auto& remainder: countryRemainders)
 	{
 		while (remainder.second > 0.0)
 		{
 			auto army = getArmyForRemainder(remainder.first);
-			if (army == nullptr) break;
+			if (army == nullptr)
+				break;
 
 			switch (army->addRegimentToArmy(remainder.first, allProvinces, provinceMapper, portProvincesMapper, unitNameCount, localisation.getLocalAdjective()))
 			{
-			case AddRegimentToArmyResult::success:
-				remainder.second -= 1.0;
-				army->addRegimentRemainder(remainder.first, -1.0);
-				break;
-			case AddRegimentToArmyResult::retry:
-				break;
-			case AddRegimentToArmyResult::fail:
-				army->addRegimentRemainder(remainder.first, -2000.0);
-				break;
+				case AddRegimentToArmyResult::success:
+					remainder.second -= 1.0;
+					army->addRegimentRemainder(remainder.first, -1.0);
+					break;
+				case AddRegimentToArmyResult::retry:
+					break;
+				case AddRegimentToArmyResult::fail:
+					army->addRegimentRemainder(remainder.first, -2000.0);
+					break;
 			}
 		}
 	}
@@ -863,7 +905,7 @@ V2::Army* V2::Country::getArmyForRemainder(const REGIMENTTYPE chosenType)
 {
 	Army* retval = nullptr;
 	auto retvalRemainder = -1000.0;
-	for (auto& army : armies)
+	for (auto& army: armies)
 	{
 		// only add units to armies that originally had units of the same category
 		if (army.hasRegimentsOfType(chosenType))
@@ -881,6 +923,7 @@ V2::Army* V2::Country::getArmyForRemainder(const REGIMENTTYPE chosenType)
 
 std::string V2::Country::getColonialRegion() const
 {
-	if (!srcCountry) return std::string();
+	if (!srcCountry)
+		return std::string();
 	return srcCountry->getColonialRegion();
 }
