@@ -1,237 +1,312 @@
 option = {
 	name = max_literacy
-	displayName = "Max Literacy"
-	tooltip = "The maximum literacy a nation will start with. Default 100%"
+	displayName_english = "Max Literacy"
+	displayName_french = "Alphabétisation maximale"
+	tooltip_english = "The maximum literacy a nation will start with. Default 100%"
+	tooltip_french = "L'alphabétisation maximale avec laquelle une nation commencera. 100% par défaut"
 	textSelector = {	
 		value = "100"
 		editable = true
-		tooltip = "Range 10 to 100"
+		tooltip_english = "Range 10 to 100"
+		tooltip_french = "Plage de 10 à 100"
 	}
 }
 option = {
 	name = remove_type
-	displayName = "Drop cores of dead nations?"
-	tooltip = "Which landless nations to remove?"
+	displayName_english = "Drop cores of dead nations?"
+	displayName_french = "Lâcher des noyaux de nations mortes?"
+	tooltip_english = "Which landless nations to remove?"
+	tooltip_french = "Quelles nations sans terre supprimer?"
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = "None - leave all"
-			tooltip = "Remove none of them"
+			displayName_english = "None - leave all"
+			displayName_french = "Aucun - tout laisser"
+			tooltip_english = "Remove none of them"
+			tooltip_french = "Supprimer aucun d'entre eux"
 			default = false
 		}
 		radioOption = {
 			name = 2
-			displayName = "Dead - no culture remains"
-			tooltip = "Remove ones without cultural backing"
+			displayName_english = "Dead - no culture remains"
+			displayName_french = "Mort - il ne reste aucune culture"
+			tooltip_english = "Remove ones without cultural backing"
+			tooltip_french = "Supprimer ceux sans soutien culturel"
 			default = true
 		}
 		radioOption = {
 			name = 3
-			displayName = "All - dead is dead"
-			tooltip = "Remove all of them"
+			displayName_english = "All - dead is dead"
+			displayName_french = "Tout - mort est mort"
+			tooltip_english = "Remove all of them"
+			tooltip_french = "Retirez-les tous"
 			default = false		
 		}
 	}
 }
 option = {
 	name = absorb_colonies
-	displayName = "Turn Colonial Nations into territories?"
-	tooltip = "How should we handle one's colonial nations?"
+	displayName_english = "Turn Colonial Nations into territories?"
+	displayName_french = "Transformer les nations coloniales en territoires?"
+	tooltip_english = "How should we handle one's colonial nations?"
+	tooltip_french = "Comment devons-nous gérer nos nations coloniales?"
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = "Never, they are puppets [default]"
-			tooltip = "All will be independent"
+			displayName_english = "Never, they are puppets [default]"
+			displayName_french = "Jamais, ce ne sont des marionnettes [par défaut]"
+			tooltip_english = "All will be independent"
+			tooltip_french = "Tous seront indépendants"
 			default = true
 		}
 		radioOption = {
 			name = 2
-			displayName = "Sometimes, by attitude"
-			tooltip = "Set the threshold in next selection"
+			displayName_english = "Sometimes, by attitude"
+			displayName_french = "Parfois, par attitude"
+			tooltip_english = "Set the threshold in next selection"
+			tooltip_french = "Définissez le seuil dans la sélection suivante"
 			default = false
 		}
 		radioOption = {
 			name = 3
-			displayName = "All, even disloyal ones"
-			tooltip = "Integrate every dependant colonial nation"
+			displayName_english = "All, even disloyal ones"
+			displayName_french = "Tous, même déloyaux"
+			tooltip_english = "Integrate every dependant colonial nation"
+			tooltip_french = "Intégrer chaque nation coloniale dépendante"
 			default = false
 		}
 	}
 }
 option = {
 	name = liberty_threshold
-	displayName = "If 'Sometimes' from previous question, when exactly?"
-	tooltip = "The threshold attitude for when colonies are absorbed. Default is loyal."
+	displayName_english = "If 'Sometimes' from previous question, when exactly?"
+	displayName_french = "Si «Parfois» de la question précédente, quand exactement?"
+	tooltip_english = "The threshold attitude for when colonies are absorbed. Default is loyal."
+	tooltip_french = "L'attitude de seuil pour le moment où les colonies sont absorbées. La valeur par défaut est fidèle."
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = "Absorb Loyal only"
-			tooltip = "Only Loyal colonies"
+			displayName_english = "Absorb Loyal only"
+			displayName_french = "Absorber Loyal uniquement"
+			tooltip_english = "Only Loyal colonies"
+			tooltip_french = "Seules les colonies loyales"
 			default = true
 		}
 		radioOption = {
 			name = 2
-			displayName = "Absorb Disloyal too"
-			tooltip = "Disloyal colonies absorbed too."
+			displayName_english = "Absorb Disloyal too"
+			displayName_french = "Absorber déloyal aussi"
+			tooltip_english = "Disloyal colonies absorbed too."
+			tooltip_french = "Les colonies déloyales sont également absorbées."
 			default = false
 		}
 		radioOption = {
 			name = 3
-			displayName = "Absorb Rebellious as well"
-			tooltip = "All colonies are absorbed"
+			displayName_english = "Absorb Rebellious as well"
+			displayName_french = "Absorbe aussi les rebelles"
+			tooltip_english = "All colonies are absorbed"
+			tooltip_french = "Toutes les colonies sont absorbées"
 			default = false
 		}
 	}
 }
 option = {
 	name = pop_shaping
-	displayName = "Should population be shaped to EU4's advances?"
-	tooltip = "Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers."
+	displayName_english = "Should population be shaped to EU4's advances?"
+	displayName_french = "La population doit-elle être adaptée aux avancées de l'UE4?"
+	tooltip_english = "Adjust population size according to dev improvement over EU4 timeframe, buildings constructed, life rating in V2 and other province modifiers."
+	tooltip_french = "Ajustez la taille de la population en fonction de l'amélioration des développeurs sur la période de l'UE4, des bâtiments construits, de la durée de vie dans V2 et d'autres modificateurs de province."
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = "Stick to vanilla pop sizes"
-			tooltip = "Use Vanilla population sizes"
+			displayName_english = "Stick to vanilla pop sizes"
+			displayName_french = "Tenez-vous aux tailles pop vanille"
+			tooltip_english = "Use Vanilla population sizes"
+			tooltip_french = "Utiliser la taille des populations de vanille"
 			default = false
 		}
 		radioOption = {
 			name = 2
-			displayName = "Dev push for more people!"
-			tooltip = "Adjust population sizes"
+			displayName_english = "Dev push for more people!"
+			displayName_french = "Dev pousser pour plus de gens!"
+			tooltip_english = "Adjust population sizes"
+			tooltip_french = "Ajuster la taille des populations"
 			default = true
 		}
 		radioOption = {
 			name = 3
-			displayName = "Extreme - absolute dev size"
-			tooltip = "Redistribute everyone according to absolute value of provinces"
+			displayName_english = "Extreme - absolute dev size"
+			displayName_french = "Extreme - taille de développement absolue"
+			tooltip_english = "Redistribute everyone according to absolute value of provinces"
+			tooltip_french = "Redistribuer tout le monde selon la valeur absolue des provinces"
 			default = false
 		}
 	}
 }
 option = {
 	name = pop_shaping_factor
-	displayName = "Shaping Factor?"
-	tooltip = "How much does shaping affect population sizes? 0 - Vanilla, 100 - Fully"
+	displayName_english = "Shaping Factor?"
+	displayName_french = "Facteur de mise en forme?"
+	tooltip_english = "How much does shaping affect population sizes? 0 - Vanilla, 100 - Fully"
+	tooltip_french = "Dans quelle mesure la mise en forme affecte-t-elle la taille des populations? 0 - Vanille, 100 - Entièrement"
 	textSelector = {	
 		value = "100"
 		editable = true
-		tooltip = "Range 0 to 100"
+		tooltip_english = "Range 0 to 100"
+		tooltip_french = "Plage de 0 à 100"
 	}
 }
 option = {
 	name = core_handling
-	displayName = "Auto-assign national cores?"
-	tooltip = "Assign cores for nationalities and cultural unions (Can be an issue for CK2 and/or flat dev imports)"
+	displayName_english = "Auto-assign national cores?"
+	displayName_french = "Attribuer automatiquement des cœurs nationaux?"
+	tooltip_english = "Assign cores for nationalities and cultural unions (Can be an issue for CK2 and/or flat dev imports)"
+	tooltip_french = "Attribuer des noyaux pour les nationalités et les unions culturelles (peut être un problème pour les importations de CK2 et / ou de développement plat)"
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = "Yes, unification is nigh"
-			tooltip = "Use defaults"
+			displayName_english = "Yes, unification is nigh"
+			displayName_french = "Oui, l'unification est proche"
+			tooltip_english = "Use defaults"
+			tooltip_french = "Utiliser les valeurs par défaut"
 			default = true
 		}
 		radioOption = {
 			name = 2
-			displayName = "No national cores"
-			tooltip = "No primary nationalities"
+			displayName_english = "No national cores"
+			displayName_french = "Pas de cœurs nationaux"
+			tooltip_english = "No primary nationalities"
+			tooltip_french = "No primary nationalities"
 			default = false
 		}
 		radioOption = {
 			name = 3
-			displayName = "No cultural union cores"
-			tooltip = "No Germany, apparently"
+			displayName_english = "No cultural union cores"
+			displayName_french = "Pas de noyau d'union culturelle"
+			tooltip_english = "No Germany, apparently"
+			tooltip_french = "Pas d'Allemagne, apparemment"
 			default = false
 		}
 		radioOption = {
 			name = 4
-			displayName = "Don't assign any"
-			tooltip = "Don't touch anything"
+			displayName_english = "Don't assign any"
+			displayName_french = "N'en attribuer aucun"
+			tooltip_english = "Don't touch anything"
+			tooltip_french = "Ne touche à rien"
 			default = false
 		}
 	}
 }
 option = {
 	name = euro_centrism
-	displayName = "Make world Eurocentric?"
-	tooltip = "Drop literacy and civilization levels for non-europeans? (configurable!)"
+	displayName_english = "Make world Eurocentric?"
+	displayName_french = "Rendre le monde eurocentrique?"
+	tooltip_english = "Drop literacy and civilization levels for non-europeans? (configurable!)"
+	tooltip_french = "Abaisser les niveaux d'alphabétisation et de civilisation pour les non-européens? (configurable!)"
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = "Time to sell some opium! [strongly recommended]"
-			tooltip = "Configurable via techgroups.txt"
+			displayName_english = "Time to sell some opium! [strongly recommended]"
+			displayName_french = "Il est temps de vendre de l'opium! [fortement recommandé]"
+			tooltip_english = "Configurable via techgroups.txt"
+			tooltip_french = "Configurable via techgroups.txt"
 			default = true
 		}
 		radioOption = {
 			name = 2
-			displayName = "Use EU4 institutions [bad]"
-			tooltip = "Use EU4 tech levels - likely all nations civilized!"
+			displayName_english = "Use EU4 institutions [bad]"
+			displayName_french = "Utiliser les institutions de l'UE4 [mauvais]"
+			tooltip_english = "Use EU4 tech levels - likely all nations civilized!"
+			tooltip_french = "Utilisez les niveaux technologiques EU4 - probablement toutes les nations civilisées!"
 			default = false
 		}
 	}
 }
 option = {
 	name = africa_reset
-	displayName = "Wipe sub-saharan Africa?"
-	tooltip = "Turn it into proper colonizable real estate?"
+	displayName_english = "Wipe sub-saharan Africa?"
+	displayName_french = "Essuyez l'Afrique subsaharienne?"
+	tooltip_english = "Turn it into proper colonizable real estate?"
+	tooltip_french = "Le transformer en véritable bien colonisable?"
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = "Time for a safari! [moderately recommended]"
-			tooltip = "Wipe the primitives"
+			displayName_english = "Time for a safari! [moderately recommended]"
+			displayName_french = "Il est temps pour un safari! [moyennement recommandé]"
+			tooltip_english = "Wipe the primitives"
+			tooltip_french = "Essuyez les primitives"
 			default = true
 		}
 		radioOption = {
 			name = 2
-			displayName = "Leave africans in peace..."
-			tooltip = "Don't alter EU4 endgame"
+			displayName_english = "Leave africans in peace..."
+			displayName_french = "Laissez les Africains en paix ..."
+			tooltip_english = "Don't alter EU4 endgame"
+			tooltip_french = "Ne modifiez pas la fin de jeu EU4"
 			default = false
 		}
 	}
 }
 option = {
 	name = randomise_rgos
-	displayName = "Randomise RGOs?"
-	tooltip = "If set, RGOs will be shuffled within similar climate and terrain provinces."
+	displayName_english = "Randomise RGOs?"
+	displayName_french = "Randomiser les RGO?"
+	tooltip_english = "If set, RGOs will be shuffled within similar climate and terrain provinces."
+	tooltip_french = "S'ils sont définis, les RGO seront mélangés dans des provinces de climat et de terrain similaires."
 	radioSelector = {
 		radioOption = {
 			name = no
-			displayName = "No"
-			tooltip = "Historical RGOs"
+			displayName_english = "No"
+			displayName_french = "Non"
+			tooltip_english = "Historical RGOs"
+			tooltip_french = "RGO historiques"
 			default = true
 		}
 		radioOption = {
 			name = yes
-			displayName = "Yes"
-			tooltip = "Shuffled RGOs"
+			displayName_english = "Yes"
+			displayName_french = "Oui"
+			tooltip_english = "Shuffled RGOs"
+			tooltip_french = "RGO mélangés"
 			default = false
 		}
 	}
 }
 option = {
 	name = convert_all
-	displayName = "Any religious/cultural conversion in EU4 converts:"
-	tooltip = "We can convert everyone and their cows, but this will have negative effects on gameplay (assimilation, hotspot crises). Do not change unless you know what to expect."
+	displayName_english = "Any religious/cultural conversion in EU4 converts:"
+	displayName_french = "Toute conversion religieuse / culturelle dans EU4 convertit:"
+	tooltip_english = "We can convert everyone and their cows, but this will have negative effects on gameplay (assimilation, hotspot crises). Do not change unless you know what to expect."
+	tooltip_french = "Nous pouvons convertir tout le monde et leurs vaches, mais cela aura des effets négatifs sur le gameplay (assimilation, crises de hotspot). Ne changez que si vous savez à quoi vous attendre."
 	radioSelector = {
 		radioOption = {
 			name = no
-			displayName = "Nobility and merchants [vehemently recommended]"
-			tooltip = "All upper strata + 50% of middle strata"
+			displayName_english = "Nobility and merchants [vehemently recommended]"
+			displayName_french = "Noblesse et marchands [vivement recommandé]"
+			tooltip_english = "All upper strata + 50% of middle strata"
+			tooltip_french = "Toutes les strates supérieures + 50% des strates moyennes"
 			default = true
 		}
 		radioOption = {
 			name = yes
-			displayName = "Everyone inc. peasants [discouraged]"
-			tooltip = "100% of population"
+			displayName_english = "Everyone inc. peasants [discouraged]"
+			displayName_french = "Tout le monde inc. paysans [découragés]"
+			tooltip_english = "100% of population"
+			tooltip_french = "100% de la population"
 			default = false
 		}
 	}
 }
 option = {
 	name = output_name
-	displayName = "Mod Output Name (optional):"
-	tooltip = "Please don't use cyrillic or chinese..."
+	displayName_english = "Mod Output Name (optional):"
+	displayName_french = "Nom de sortie du module (facultatif):"
+	tooltip_english = "Please don't use cyrillic or chinese..."
+	tooltip_french = "Veuillez ne pas utiliser cyrillique ou chinois ..."
 	textSelector = {	
 		value = ""
 		editable = true
-		tooltip = "Optional name for the converted mod"
+		tooltip_english = "Optional name for the converted mod"
+		tooltip_french = "Nom facultatif pour le mod converti"
 	}
 }
