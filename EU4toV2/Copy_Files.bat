@@ -1,17 +1,18 @@
 echo on
 rem Copy converter data files
-copy "Data_Files\log.txt" "..\Release\EU4ToVic2\log.txt"
-copy "Data_Files\configuration-example.txt" "..\Release\EU4ToVic2\configuration-example.txt"
+copy "Data_Files\log.txt" "..\Release\EU4ToVic2\"
+copy "Data_Files\configuration-example.txt" "..\Release\EU4ToVic2\"
 
 mkdir "..\Release\Configuration"
-copy "Data_Files\fronter-configuration.txt" "..\Release\Configuration\fronter-configuration.txt"
-copy "Data_Files\fronter-options.txt" "..\Release\Configuration\fronter-options.txt"
+copy "Data_Files\fronter-configuration.txt" "..\Release\Configuration\"
+copy "Data_Files\fronter-options.txt" "..\Release\Configuration\"
+copy "Data_Files\*.yml" "..\Release\Configuration\"
 
 mkdir "..\Release\Docs"
-copy "Data_Files\ReadMe.txt" "..\Release\Docs\readme.txt"
-copy "Data_Files\FAQ.txt" "..\Release\Docs\FAQ.txt"
-copy "Data_Files\license.txt" "..\Release\Docs\license.txt"
-copy "Data_Files\after_converting.txt" "..\Release\Docs\after_converting.txt"
+copy "Data_Files\ReadMe.txt" "..\Release\Docs\"
+copy "Data_Files\FAQ.txt" "..\Release\Docs\"
+copy "Data_Files\license.txt" "..\Release\Docs\"
+copy "Data_Files\after_converting.txt" "..\Release\Docs\"
 
 rem Create Configurables
 del "..\Release\EU4ToVic2\configurables" /Q
