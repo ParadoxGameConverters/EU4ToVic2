@@ -64,7 +64,1065 @@ country_event = {
 			}
 			call_ally = no
 		}
+		FROM = {
+			country_event = 250999
+		}
 	}
+}
+country_event = {
+	id = 250999
+	title = "Debug - Religion"
+	desc = "I forgot, what is the religion of $COUNTRY$?"
+	picture = Riot
+	is_triggered_only = yes
+	immediate = {
+		FROM = {
+			remove_accepted_culture = zzz_religion_catholic
+			remove_accepted_culture = zzz_religion_cathar
+			remove_accepted_culture = zzz_religion_fraticelli
+			remove_accepted_culture = zzz_religion_waldensian
+			remove_accepted_culture = zzz_religion_lollard
+			remove_accepted_culture = zzz_religion_catholic_heresy
+			remove_accepted_culture = zzz_religion_arian
+			remove_accepted_culture = zzz_religion_protestant
+			remove_accepted_culture = zzz_religion_protestant_heresy
+			remove_accepted_culture = zzz_religion_mormon
+			remove_accepted_culture = zzz_religion_orthodox
+			remove_accepted_culture = zzz_religion_pre_schism
+			remove_accepted_culture = zzz_religion_bogomilist
+			remove_accepted_culture = zzz_religion_monothelite
+			remove_accepted_culture = zzz_religion_iconoclast
+			remove_accepted_culture = zzz_religion_paulician
+			remove_accepted_culture = zzz_religion_orthodox_heresy
+			remove_accepted_culture = zzz_religion_coptic
+			remove_accepted_culture = zzz_religion_monophysite
+			remove_accepted_culture = zzz_religion_nestorian
+			remove_accepted_culture = zzz_religion_messalian
+			remove_accepted_culture = zzz_religion_hussite
+			remove_accepted_culture = zzz_religion_sunni
+			remove_accepted_culture = zzz_religion_zikri
+			remove_accepted_culture = zzz_religion_yazidi
+			remove_accepted_culture = zzz_religion_sunni_heresy
+			remove_accepted_culture = zzz_religion_shiite
+			remove_accepted_culture = zzz_religion_hurufi
+			remove_accepted_culture = zzz_religion_druze
+			remove_accepted_culture = zzz_religion_shiite_heresy
+			remove_accepted_culture = zzz_religion_ibadi
+			remove_accepted_culture = zzz_religion_kharijite
+			remove_accepted_culture = zzz_religion_jewish
+			remove_accepted_culture = zzz_religion_samaritan
+			remove_accepted_culture = zzz_religion_karaite
+			remove_accepted_culture = zzz_religion_jewish_heresy
+			remove_accepted_culture = zzz_religion_mahayana
+			remove_accepted_culture = zzz_religion_gelugpa
+			remove_accepted_culture = zzz_religion_theravada
+			remove_accepted_culture = zzz_religion_hindu
+			remove_accepted_culture = zzz_religion_shinto
+			remove_accepted_culture = zzz_religion_sikh
+			remove_accepted_culture = zzz_religion_jain
+			remove_accepted_culture = zzz_religion_animist
+			remove_accepted_culture = zzz_religion_norse_pagan_reformed
+			remove_accepted_culture = zzz_religion_tengri_pagan_reformed
+			remove_accepted_culture = zzz_religion_baltic_pagan_reformed
+			remove_accepted_culture = zzz_religion_finnish_pagan_reformed
+			remove_accepted_culture = zzz_religion_aztec_reformed
+			remove_accepted_culture = zzz_religion_slavic_pagan_reformed
+			remove_accepted_culture = zzz_religion_west_african_pagan_reformed
+			remove_accepted_culture = zzz_religion_zun_pagan_reformed
+			remove_accepted_culture = zzz_religion_hellenic_pagan
+			remove_accepted_culture = zzz_religion_inca_reformed
+			remove_accepted_culture = zzz_religion_shamanism
+			remove_accepted_culture = zzz_religion_totemism
+			remove_accepted_culture = zzz_religion_mayan
+			remove_accepted_culture = zzz_religion_nahuatl
+			remove_accepted_culture = zzz_religion_inti
+			remove_accepted_culture = zzz_religion_kemetic
+			remove_accepted_culture = zzz_religion_arab_pagan
+			remove_accepted_culture = zzz_religion_druidist
+			remove_accepted_culture = zzz_religion_tibet_bon
+			remove_accepted_culture = zzz_religion_muism
+			remove_accepted_culture = zzz_religion_zoroastrian
+			remove_accepted_culture = zzz_religion_manichean
+			remove_accepted_culture = zzz_religion_mazdaki
+			remove_accepted_culture = zzz_religion_zoroastrian_heresy
+			remove_accepted_culture = zzz_religion_noreligion
+		}
+	}
+	# Player-only option because there are a fuckton of options
+	option = {
+		name = "(Player-only) Dice roll!"
+		FROM = {
+			clr_country_flag = religi
+		}
+		ai_chance = { factor = 0 }
+	}
+	#AI will choose correctly
+	 option = {
+	  name = "catholic"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_catholic
+	   religion = catholic
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_catholic }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "cathar"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_cathar
+	   religion = cathar
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_cathar }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "fraticelli"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_fraticelli
+	   religion = fraticelli
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_fraticelli }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "waldensian"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_waldensian
+	   religion = waldensian
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_waldensian }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "lollard"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_lollard
+	   religion = lollard
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_lollard }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "catholic_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_catholic_heresy
+	   religion = catholic_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_catholic_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "arian"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_arian
+	   religion = arian
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_arian }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "protestant"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_protestant
+	   religion = protestant
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_protestant }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "protestant_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_protestant_heresy
+	   religion = protestant_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_protestant_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "mormon"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_mormon
+	   religion = mormon
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_mormon }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "orthodox"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_orthodox
+	   religion = orthodox
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_orthodox }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "pre_schism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_pre_schism
+	   religion = pre_schism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_pre_schism }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "bogomilist"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_bogomilist
+	   religion = bogomilist
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_bogomilist }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "monothelite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_monothelite
+	   religion = monothelite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_monothelite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "iconoclast"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_iconoclast
+	   religion = iconoclast
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_iconoclast }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "paulician"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_paulician
+	   religion = paulician
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_paulician }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "orthodox_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_orthodox_heresy
+	   religion = orthodox_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_orthodox_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "coptic"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_coptic
+	   religion = coptic
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_coptic }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "monophysite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_monophysite
+	   religion = monophysite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_monophysite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "nestorian"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_nestorian
+	   religion = nestorian
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_nestorian }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "messalian"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_messalian
+	   religion = messalian
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_messalian }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "hussite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_hussite
+	   religion = hussite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_hussite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "sunni"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_sunni
+	   religion = sunni
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_sunni }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "zikri"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_zikri
+	   religion = zikri
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_zikri }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "yazidi"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_yazidi
+	   religion = yazidi
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_yazidi }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "sunni_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_sunni_heresy
+	   religion = sunni_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_sunni_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "shiite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_shiite
+	   religion = shiite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_shiite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "hurufi"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_hurufi
+	   religion = hurufi
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_hurufi }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "druze"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_druze
+	   religion = druze
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_druze }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "shiite_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_shiite_heresy
+	   religion = shiite_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_shiite_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "ibadi"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_ibadi
+	   religion = ibadi
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_ibadi }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "kharijite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_kharijite
+	   religion = kharijite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_kharijite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "jewish"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_jewish
+	   religion = jewish
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_jewish }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "samaritan"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_samaritan
+	   religion = samaritan
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_samaritan }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "karaite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_karaite
+	   religion = karaite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_karaite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "jewish_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_jewish_heresy
+	   religion = jewish_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_jewish_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "mahayana"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_mahayana
+	   religion = mahayana
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_mahayana }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "gelugpa"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_gelugpa
+	   religion = gelugpa
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_gelugpa }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "theravada"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_theravada
+	   religion = theravada
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_theravada }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "hindu"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_hindu
+	   religion = hindu
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_hindu }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "shinto"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_shinto
+	   religion = shinto
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_shinto }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "sikh"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_sikh
+	   religion = sikh
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_sikh }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "jain"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_jain
+	   religion = jain
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_jain }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "animist"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_animist
+	   religion = animist
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_animist }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "norse_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_norse_pagan_reformed
+	   religion = norse_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_norse_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "tengri_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_tengri_pagan_reformed
+	   religion = tengri_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_tengri_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "baltic_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_baltic_pagan_reformed
+	   religion = baltic_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_baltic_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "finnish_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_finnish_pagan_reformed
+	   religion = finnish_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_finnish_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "aztec_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_aztec_reformed
+	   religion = aztec_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_aztec_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "slavic_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_slavic_pagan_reformed
+	   religion = slavic_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_slavic_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "west_african_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_west_african_pagan_reformed
+	   religion = west_african_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_west_african_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "zun_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_zun_pagan_reformed
+	   religion = zun_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_zun_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "hellenic_pagan"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_hellenic_pagan
+	   religion = hellenic_pagan
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_hellenic_pagan }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "inca_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_inca_reformed
+	   religion = inca_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_inca_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "shamanism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_shamanism
+	   religion = shamanism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_shamanism }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "totemism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_totemism
+	   religion = totemism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_totemism }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "mayan"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_mayan
+	   religion = mayan
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_mayan }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "nahuatl"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_nahuatl
+	   religion = nahuatl
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_nahuatl }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "inti"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_inti
+	   religion = inti
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_inti }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "kemetic"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_kemetic
+	   religion = kemetic
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_kemetic }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "arab_pagan"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_arab_pagan
+	   religion = arab_pagan
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_arab_pagan }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "druidist"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_druidist
+	   religion = druidist
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_druidist }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "tibet_bon"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_tibet_bon
+	   religion = tibet_bon
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_tibet_bon }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "muism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_muism
+	   religion = muism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_muism }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "zoroastrian"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_zoroastrian
+	   religion = zoroastrian
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_zoroastrian }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "manichean"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_manichean
+	   religion = manichean
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_manichean }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "mazdaki"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_mazdaki
+	   religion = mazdaki
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_mazdaki }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "zoroastrian_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_zoroastrian_heresy
+	   religion = zoroastrian_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_zoroastrian_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "noreligion"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_noreligion
+	   religion = noreligion
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_noreligion }
+	   }
+	  }
+	 }
 }
 ##251xxx ~ Colonial independence events
 # Canada
