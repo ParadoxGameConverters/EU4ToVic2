@@ -1,237 +1,237 @@
 option = {
 	name = max_literacy
-	displayName = OPTION1
-	tooltip = OPTION1TIP
+	displayName = LIT
+	tooltip = LITTIP
 	textSelector = {	
 		value = "100"
 		editable = true
-		tooltip = OPTION1TEXTTIP
+		tooltip = LITTIP2
 	}
 }
 option = {
 	name = remove_type
-	displayName = OPTION2
-	tooltip = OPTION2TIP
+	displayName = EXPIRE
+	tooltip = EXPIRETIP
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = OP2R1
-			tooltip = OP2R1TIP
+			displayName = EXPIRE1
+			tooltip = EXPIRE1TIP
 			default = false
 		}
 		radioOption = {
 			name = 2
-			displayName = OP2R2
-			tooltip = OP2R2TIP
+			displayName = EXPIRE2
+			tooltip = EXPIRE2TIP
 			default = true
 		}
 		radioOption = {
 			name = 3
-			displayName = OP2R3
-			tooltip = OP2R3TIP
+			displayName = EXPIRE3
+			tooltip = EXPIRE3TIP
 			default = false		
 		}
 	}
 }
 option = {
 	name = absorb_colonies
-	displayName = OPTION3
-	tooltip = OPTION3TIP
+	displayName = 4THJULY
+	tooltip = 4THJULYTIP
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = OP3R1
-			tooltip = OP3R1TIP
+			displayName = 4THJULY1
+			tooltip = 4THJULY1TIP
 			default = true
 		}
 		radioOption = {
 			name = 2
-			displayName = OP3R2
-			tooltip = OP3R2TIP
+			displayName = 4THJULY2
+			tooltip = 4THJULY2TIP
 			default = false
 		}
 		radioOption = {
 			name = 3
-			displayName = OP3R3
-			tooltip = OP3R3TIP
+			displayName = 4THJULY3
+			tooltip = 4THJULY3TIP
 			default = false
 		}
 	}
 }
 option = {
 	name = liberty_threshold
-	displayName = OPTION4
-	tooltip = OPTION4TIP
+	displayName = FREEDOM
+	tooltip = FREEDOMTIP
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = OP4R1
-			tooltip = OP4R1TIP
+			displayName = FREEDOM1
+			tooltip = FREEDOM1TIP
 			default = true
 		}
 		radioOption = {
 			name = 2
-			displayName = OP4R2
-			tooltip = OP4R2TIP
+			displayName = FREEDOM2
+			tooltip = FREEDOM2TIP
 			default = false
 		}
 		radioOption = {
 			name = 3
-			displayName = OP4R3
-			tooltip = OP4R3TIP
+			displayName = FREEDOM3
+			tooltip = FREEDOM3TIP
 			default = false
 		}
 	}
 }
 option = {
 	name = pop_shaping
-	displayName = OPTION5
-	tooltip = OPTION5TIP
+	displayName = CENSUS
+	tooltip = CENSUSTIP
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = OP5R1
-			tooltip = OP5R1TIP
+			displayName = CENSUS1
+			tooltip = CENSUS1TIP
 			default = false
 		}
 		radioOption = {
 			name = 2
-			displayName = OP5R2
-			tooltip = OP5R2TIP
+			displayName = CENSUS2
+			tooltip = CENSUS2TIP
 			default = true
 		}
 		radioOption = {
 			name = 3
-			displayName = OP5R3
-			tooltip = OP5R3TIP
+			displayName = CENSUS3
+			tooltip = CENSUS3TIP
 			default = false
 		}
 	}
 }
 option = {
 	name = pop_shaping_factor
-	displayName = OPTION6
-	tooltip = OPTION6TIP
+	displayName = BIRTHRATES
+	tooltip = BIRTHRATESTIP
 	textSelector = {	
 		value = "100"
 		editable = true
-		tooltip = OPTION6TEXTTIP
+		tooltip = BIRTHRATESTIP2
 	}
 }
 option = {
 	name = core_handling
-	displayName = OPTION7
-	tooltip = OPTION7TIP
+	displayName = NATION
+	tooltip = NATIONTIP
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = OP7R1
-			tooltip = OP7R1TIP
+			displayName = NATION1
+			tooltip = NATION1TIP
 			default = true
 		}
 		radioOption = {
 			name = 2
-			displayName = OP7R2
-			tooltip = OP7R2TIP
+			displayName = NATION2
+			tooltip = NATION2TIP
 			default = false
 		}
 		radioOption = {
 			name = 3
-			displayName = OP7R3
-			tooltip = OP7R3TIP
+			displayName = NATION3
+			tooltip = NATION3TIP
 			default = false
 		}
 		radioOption = {
 			name = 4
-			displayName = OP7R4
-			tooltip = OP7R4TIP
+			displayName = NATION4
+			tooltip = NATION4TIP
 			default = false
 		}
 	}
 }
 option = {
 	name = euro_centrism
-	displayName = OPTION8
-	tooltip = OPTION8TIP
+	displayName = PRIVILEGE
+	tooltip = PRIVILEGETIP
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = OP8R1
-			tooltip = OP8R1TIP
+			displayName = PRIVILEGE1
+			tooltip = PRIVILEGE1TIP
 			default = true
 		}
 		radioOption = {
 			name = 2
-			displayName = OP8R2
-			tooltip = OP8R2TIP
+			displayName = PRIVILEGE2
+			tooltip = PRIVILEGE2TIP
 			default = false
 		}
 	}
 }
 option = {
 	name = africa_reset
-	displayName = OPTION9
-	tooltip = OPTION9TIP
+	displayName = AFRICA
+	tooltip = AFRICATIP
 	radioSelector = {
 		radioOption = {
 			name = 1
-			displayName = OP9R1
-			tooltip = OP9R1TIP
+			displayName = AFRICA1
+			tooltip = AFRICA1TIP
 			default = true
 		}
 		radioOption = {
 			name = 2
-			displayName = OP9R2
-			tooltip = OP9R2TIP
+			displayName = AFRICA2
+			tooltip = AFRICA2TIP
 			default = false
 		}
 	}
 }
 option = {
 	name = randomise_rgos
-	displayName = OPTION10
-	tooltip = OPTION10TIP
+	displayName = RGO
+	tooltip = RGOTIP
 	radioSelector = {
 		radioOption = {
 			name = no
-			displayName = OP10R1
-			tooltip = OP10R1TIP
+			displayName = RGO1
+			tooltip = RGO1TIP
 			default = true
 		}
 		radioOption = {
 			name = yes
-			displayName = OP10R2
-			tooltip = OP10R2TIP
+			displayName = RGO2
+			tooltip = RGO2TIP
 			default = false
 		}
 	}
 }
 option = {
 	name = convert_all
-	displayName = OPTION11
-	tooltip = OPTION11TIP
+	displayName = EUCENSUS
+	tooltip = EUCENSUSTIP
 	radioSelector = {
 		radioOption = {
 			name = no
-			displayName = OP11R1
-			tooltip = OP11R1TIP
+			displayName = EUCENSUS1
+			tooltip = EUCENSUS1TIP
 			default = true
 		}
 		radioOption = {
 			name = yes
-			displayName = OP11R2
-			tooltip = OP11R2TIP
+			displayName = EUCENSUS2
+			tooltip = EUCENSUS2TIP
 			default = false
 		}
 	}
 }
 option = {
 	name = output_name
-	displayName = OPTION12
-	tooltip = OPTION12TIP
+	displayName = MODNAME
+	tooltip = MODNAMETIP
 	textSelector = {	
 		value = ""
 		editable = true
-		tooltip = OPTION12TEXTTIP
+		tooltip = MODNAMETIP2
 	}
 }
