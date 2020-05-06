@@ -1,61 +1,61 @@
 name = EU4ToVic2
 converterFolder = EU4ToVic2
-displayName = DISPLAYNAME
-sourceGame = SOURCEGAME
-targetGame = TARGETGAME
+displayName = EU4DISPLAYNAME
+sourceGame = EU4GAME
+targetGame = VIC2GAME
 
 requiredFolder = {
 	name = EU4directory
-	displayName = FOLDER1
-	tooltip = FOLDER1TIP
+	displayName = EU4FOLDER
+	tooltip = EU4FOLDERTIP
 	mandatory = true
 	searchPathType = steamFolder
 	searchPathID = 236850
 }
 requiredFolder = {
 	name = EU4DocumentsDirectory
-	displayName = FOLDER2
-	tooltip = FOLDER2TIP
+	displayName = EU4DOC
+	tooltip = EU4DOCTIP
 	mandatory = true
 	searchPathType = windowsUsersFolder
 	searchPath = "Paradox Interactive\Europa Universalis IV"
 }
 requiredFolder = {
 	name = CK2ExportDirectory
-	displayName = FOLDER3
-	tooltip = FOLDER3TIP
+	displayName = CK2EXP
+	tooltip = CK2EXPTIP
 	mandatory = true
 	searchPathType = windowsUsersFolder
 	searchPath = "Paradox Interactive\Crusader Kings II\eu4_export"
 }
 requiredFolder = {
 	name = SteamWorkshopDirectory
-	displayName = FOLDER4
-	tooltip = FOLDER4TIP
+	displayName = EU4MOD
+	tooltip = EU4MODTIP
 	mandatory = true
 	searchPathType = direct
 	searchPath = "C:\Program Files (x86)\Steam\SteamApps\workshop\content\236850"
 }
 requiredFolder = {
 	name = Vic2directory
-	displayName = FOLDER5
-	tooltip = FOLDER5TIP
+	displayName = VIC2FOLDER
+	tooltip = VIC2FOLDERTIP
 	mandatory = true
 	searchPathType = steamFolder
 	searchPathID = 42960
 }
 requiredFolder = {
 	name = Vic2Documentsdirectory
-	displayName = FOLDER6
-	tooltip = FOLDER6TIP
+	displayName = VIC2DOC
+	tooltip = VIC2DOCTIP
 	mandatory = true
 	searchPathType = windowsUsersFolder
 	searchPath = "Paradox Interactive\Victoria II"
 }
 requiredFolder = {
 	name = targetGameModPath
-	displayName = FOLDER7
-	tooltip = FOLDER7TIP
+	displayName = VIC2MOD
+	tooltip = VIC2MODTIP
 	mandatory = true
 	searchPathType = steamFolder
 	searchPathID = 42960
@@ -63,8 +63,8 @@ requiredFolder = {
 }
 requiredFile = {
 	name = converterExe
-	displayName = FILE1
-	tooltip = FILE1TIP
+	displayName = EU4FILE
+	tooltip = EU4FILETIP
 	mandatory = true
 	outputtable = false
 	searchPathType = converterFolder
@@ -74,8 +74,8 @@ requiredFile = {
 }
 requiredFile = {
 	name = SaveGame
-	displayName = FILE2
-	tooltip = FILE2TIP
+	displayName = EU4SAVE
+	tooltip = EU4SAVETIP
 	mandatory = true
 	outputtable = true
 	searchPathType = windowsUsersFolder
