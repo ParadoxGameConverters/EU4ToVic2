@@ -1,7 +1,7 @@
 #ifndef LEADER_TRAIT_MAPPER_H
 #define LEADER_TRAIT_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "LeaderTrait.h"
 
 

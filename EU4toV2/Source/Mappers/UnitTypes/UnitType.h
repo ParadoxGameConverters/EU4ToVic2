@@ -1,7 +1,7 @@
 #ifndef UNIT_TYPE_H
 #define UNIT_TYPE_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "../../EU4World/Army/EU4Regiment.h"
 
 namespace mappers

@@ -1,7 +1,7 @@
 #ifndef EU4_DIPLOMACY_H
 #define EU4_DIPLOMACY_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "EU4Agreement.h"
 
 namespace EU4

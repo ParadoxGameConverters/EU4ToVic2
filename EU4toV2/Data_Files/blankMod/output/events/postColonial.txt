@@ -64,7 +64,1065 @@ country_event = {
 			}
 			call_ally = no
 		}
+		FROM = {
+			country_event = 250999
+		}
 	}
+}
+country_event = {
+	id = 250999
+	title = "Debug - Religion"
+	desc = "I forgot, what is the religion of $COUNTRY$?"
+	picture = Riot
+	is_triggered_only = yes
+	immediate = {
+		FROM = {
+			remove_accepted_culture = zzz_religion_catholic
+			remove_accepted_culture = zzz_religion_cathar
+			remove_accepted_culture = zzz_religion_fraticelli
+			remove_accepted_culture = zzz_religion_waldensian
+			remove_accepted_culture = zzz_religion_lollard
+			remove_accepted_culture = zzz_religion_catholic_heresy
+			remove_accepted_culture = zzz_religion_arian
+			remove_accepted_culture = zzz_religion_protestant
+			remove_accepted_culture = zzz_religion_protestant_heresy
+			remove_accepted_culture = zzz_religion_mormon
+			remove_accepted_culture = zzz_religion_orthodox
+			remove_accepted_culture = zzz_religion_pre_schism
+			remove_accepted_culture = zzz_religion_bogomilist
+			remove_accepted_culture = zzz_religion_monothelite
+			remove_accepted_culture = zzz_religion_iconoclast
+			remove_accepted_culture = zzz_religion_paulician
+			remove_accepted_culture = zzz_religion_orthodox_heresy
+			remove_accepted_culture = zzz_religion_coptic
+			remove_accepted_culture = zzz_religion_monophysite
+			remove_accepted_culture = zzz_religion_nestorian
+			remove_accepted_culture = zzz_religion_messalian
+			remove_accepted_culture = zzz_religion_hussite
+			remove_accepted_culture = zzz_religion_sunni
+			remove_accepted_culture = zzz_religion_zikri
+			remove_accepted_culture = zzz_religion_yazidi
+			remove_accepted_culture = zzz_religion_sunni_heresy
+			remove_accepted_culture = zzz_religion_shiite
+			remove_accepted_culture = zzz_religion_hurufi
+			remove_accepted_culture = zzz_religion_druze
+			remove_accepted_culture = zzz_religion_shiite_heresy
+			remove_accepted_culture = zzz_religion_ibadi
+			remove_accepted_culture = zzz_religion_kharijite
+			remove_accepted_culture = zzz_religion_jewish
+			remove_accepted_culture = zzz_religion_samaritan
+			remove_accepted_culture = zzz_religion_karaite
+			remove_accepted_culture = zzz_religion_jewish_heresy
+			remove_accepted_culture = zzz_religion_mahayana
+			remove_accepted_culture = zzz_religion_gelugpa
+			remove_accepted_culture = zzz_religion_theravada
+			remove_accepted_culture = zzz_religion_hindu
+			remove_accepted_culture = zzz_religion_shinto
+			remove_accepted_culture = zzz_religion_sikh
+			remove_accepted_culture = zzz_religion_jain
+			remove_accepted_culture = zzz_religion_animist
+			remove_accepted_culture = zzz_religion_norse_pagan_reformed
+			remove_accepted_culture = zzz_religion_tengri_pagan_reformed
+			remove_accepted_culture = zzz_religion_baltic_pagan_reformed
+			remove_accepted_culture = zzz_religion_finnish_pagan_reformed
+			remove_accepted_culture = zzz_religion_aztec_reformed
+			remove_accepted_culture = zzz_religion_slavic_pagan_reformed
+			remove_accepted_culture = zzz_religion_west_african_pagan_reformed
+			remove_accepted_culture = zzz_religion_zun_pagan_reformed
+			remove_accepted_culture = zzz_religion_hellenic_pagan
+			remove_accepted_culture = zzz_religion_inca_reformed
+			remove_accepted_culture = zzz_religion_shamanism
+			remove_accepted_culture = zzz_religion_totemism
+			remove_accepted_culture = zzz_religion_mayan
+			remove_accepted_culture = zzz_religion_nahuatl
+			remove_accepted_culture = zzz_religion_inti
+			remove_accepted_culture = zzz_religion_kemetic
+			remove_accepted_culture = zzz_religion_arab_pagan
+			remove_accepted_culture = zzz_religion_druidist
+			remove_accepted_culture = zzz_religion_tibet_bon
+			remove_accepted_culture = zzz_religion_muism
+			remove_accepted_culture = zzz_religion_zoroastrian
+			remove_accepted_culture = zzz_religion_manichean
+			remove_accepted_culture = zzz_religion_mazdaki
+			remove_accepted_culture = zzz_religion_zoroastrian_heresy
+			remove_accepted_culture = zzz_religion_noreligion
+		}
+	}
+	# Player-only option because there are a fuckton of options
+	option = {
+		name = "(Player-only) Dice roll!"
+		FROM = {
+			clr_country_flag = religi
+		}
+		ai_chance = { factor = 0 }
+	}
+	#AI will choose correctly
+	 option = {
+	  name = "catholic"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_catholic
+	   religion = catholic
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_catholic }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "cathar"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_cathar
+	   religion = cathar
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_cathar }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "fraticelli"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_fraticelli
+	   religion = fraticelli
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_fraticelli }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "waldensian"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_waldensian
+	   religion = waldensian
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_waldensian }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "lollard"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_lollard
+	   religion = lollard
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_lollard }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "catholic_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_catholic_heresy
+	   religion = catholic_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_catholic_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "arian"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_arian
+	   religion = arian
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_arian }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "protestant"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_protestant
+	   religion = protestant
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_protestant }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "protestant_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_protestant_heresy
+	   religion = protestant_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_protestant_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "mormon"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_mormon
+	   religion = mormon
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_mormon }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "orthodox"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_orthodox
+	   religion = orthodox
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_orthodox }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "pre_schism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_pre_schism
+	   religion = pre_schism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_pre_schism }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "bogomilist"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_bogomilist
+	   religion = bogomilist
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_bogomilist }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "monothelite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_monothelite
+	   religion = monothelite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_monothelite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "iconoclast"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_iconoclast
+	   religion = iconoclast
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_iconoclast }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "paulician"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_paulician
+	   religion = paulician
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_paulician }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "orthodox_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_orthodox_heresy
+	   religion = orthodox_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_orthodox_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "coptic"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_coptic
+	   religion = coptic
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_coptic }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "monophysite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_monophysite
+	   religion = monophysite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_monophysite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "nestorian"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_nestorian
+	   religion = nestorian
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_nestorian }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "messalian"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_messalian
+	   religion = messalian
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_messalian }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "hussite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_hussite
+	   religion = hussite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_hussite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "sunni"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_sunni
+	   religion = sunni
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_sunni }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "zikri"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_zikri
+	   religion = zikri
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_zikri }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "yazidi"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_yazidi
+	   religion = yazidi
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_yazidi }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "sunni_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_sunni_heresy
+	   religion = sunni_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_sunni_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "shiite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_shiite
+	   religion = shiite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_shiite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "hurufi"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_hurufi
+	   religion = hurufi
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_hurufi }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "druze"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_druze
+	   religion = druze
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_druze }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "shiite_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_shiite_heresy
+	   religion = shiite_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_shiite_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "ibadi"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_ibadi
+	   religion = ibadi
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_ibadi }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "kharijite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_kharijite
+	   religion = kharijite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_kharijite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "jewish"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_jewish
+	   religion = jewish
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_jewish }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "samaritan"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_samaritan
+	   religion = samaritan
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_samaritan }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "karaite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_karaite
+	   religion = karaite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_karaite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "jewish_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_jewish_heresy
+	   religion = jewish_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_jewish_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "mahayana"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_mahayana
+	   religion = mahayana
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_mahayana }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "gelugpa"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_gelugpa
+	   religion = gelugpa
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_gelugpa }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "theravada"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_theravada
+	   religion = theravada
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_theravada }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "hindu"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_hindu
+	   religion = hindu
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_hindu }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "shinto"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_shinto
+	   religion = shinto
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_shinto }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "sikh"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_sikh
+	   religion = sikh
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_sikh }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "jain"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_jain
+	   religion = jain
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_jain }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "animist"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_animist
+	   religion = animist
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_animist }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "norse_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_norse_pagan_reformed
+	   religion = norse_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_norse_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "tengri_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_tengri_pagan_reformed
+	   religion = tengri_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_tengri_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "baltic_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_baltic_pagan_reformed
+	   religion = baltic_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_baltic_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "finnish_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_finnish_pagan_reformed
+	   religion = finnish_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_finnish_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "aztec_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_aztec_reformed
+	   religion = aztec_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_aztec_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "slavic_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_slavic_pagan_reformed
+	   religion = slavic_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_slavic_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "west_african_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_west_african_pagan_reformed
+	   religion = west_african_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_west_african_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "zun_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_zun_pagan_reformed
+	   religion = zun_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_zun_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "hellenic_pagan"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_hellenic_pagan
+	   religion = hellenic_pagan
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_hellenic_pagan }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "inca_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_inca_reformed
+	   religion = inca_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_inca_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "shamanism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_shamanism
+	   religion = shamanism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_shamanism }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "totemism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_totemism
+	   religion = totemism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_totemism }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "mayan"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_mayan
+	   religion = mayan
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_mayan }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "nahuatl"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_nahuatl
+	   religion = nahuatl
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_nahuatl }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "inti"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_inti
+	   religion = inti
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_inti }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "kemetic"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_kemetic
+	   religion = kemetic
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_kemetic }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "arab_pagan"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_arab_pagan
+	   religion = arab_pagan
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_arab_pagan }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "druidist"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_druidist
+	   religion = druidist
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_druidist }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "tibet_bon"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_tibet_bon
+	   religion = tibet_bon
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_tibet_bon }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "muism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_muism
+	   religion = muism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_muism }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "zoroastrian"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_zoroastrian
+	   religion = zoroastrian
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_zoroastrian }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "manichean"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_manichean
+	   religion = manichean
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_manichean }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "mazdaki"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_mazdaki
+	   religion = mazdaki
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_mazdaki }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "zoroastrian_heresy"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_zoroastrian_heresy
+	   religion = zoroastrian_heresy
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_zoroastrian_heresy }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "noreligion"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_noreligion
+	   religion = noreligion
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_noreligion }
+	   }
+	  }
+	 }
 }
 ##251xxx ~ Colonial independence events
 # Canada
@@ -27410,7 +28468,7 @@ country_event = {
 #2611xx - Oceanian continent
 #2612xx - African continent
 #2613xx - African diaspora colonies
-country_event = {  id = 261000  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = amerikaner     pop_majority_culture = sudreicher     pop_majority_culture = ashkenazi     pop_majority_culture = north_german     pop_majority_culture = swiss     pop_majority_culture = south_german     pop_majority_culture = german    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = amerikaner capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
+country_event = {  id = 261000  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = amerikaner     pop_majority_culture = sudreicher     pop_majority_culture = north_german     pop_majority_culture = swiss     pop_majority_culture = south_german     pop_majority_culture = german    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = amerikaner capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261001  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = nieuwereld     pop_majority_culture = boer     pop_majority_culture = nieuwereld     pop_majority_culture = zuidelijk     pop_majority_culture = dutch     pop_majority_culture = flemish    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = nieuwereld  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261002  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = vinlander     pop_majority_culture = sydlig     pop_majority_culture = svart     pop_majority_culture = icelandic     pop_majority_culture = danish     pop_majority_culture = norwegian     pop_majority_culture = swedish     pop_majority_culture = sami    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = vinlander  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261003  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = { is_core = USA is_core = LOU } NOT = { is_core = CSA } NOT = { is_core = TEX }    OR = {     pop_majority_culture = yankee     pop_majority_culture = dixie     pop_majority_culture = anglo_canadian     pop_majority_culture = australian     pop_majority_culture = texan     pop_majority_culture = falklander     pop_majority_culture = anglo_african     pop_majority_culture = english     pop_majority_culture = scottish     pop_majority_culture = anglo_saxon     pop_majority_culture = pictish     pop_majority_culture = welsh     pop_majority_culture = irish    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = yankee  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
@@ -27436,7 +28494,7 @@ country_event = {  id = 261022  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx" 
 country_event = {  id = 261023  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = novvymir     pop_majority_culture = yuzhny     pop_majority_culture = smugly     pop_majority_culture = russian     pop_majority_culture = ukrainian     pop_majority_culture = byelorussian    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = novvymir  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261024  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = ujvilag     pop_majority_culture = delian     pop_majority_culture = fekete     pop_majority_culture = hungarian    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = ujvilag  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261025  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = lumenoua     pop_majority_culture = sudic     pop_majority_culture = negru     pop_majority_culture = romanian     pop_majority_culture = aromanian    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = lumenoua  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
-country_event = {  id = 261026  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = neokosmi     pop_majority_culture = notios     pop_majority_culture = mavro     pop_majority_culture = sephardic     pop_majority_culture = greek     pop_majority_culture = anatolian     pop_majority_culture = magnagreek     pop_majority_culture = georgian     pop_majority_culture = armenian     pop_majority_culture = sephardic    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = neokosmi  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
+country_event = {  id = 261026  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = neokosmi     pop_majority_culture = notios     pop_majority_culture = mavro     pop_majority_culture = greek     pop_majority_culture = anatolian     pop_majority_culture = magnagreek     pop_majority_culture = georgian     pop_majority_culture = armenian     pop_majority_culture = sephardic    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = neokosmi  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261027  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = yenidun     pop_majority_culture = guney     pop_majority_culture = esmer     pop_majority_culture = north_caucasian     pop_majority_culture = alan     pop_majority_culture = turkish    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = yenidun  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261028  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = ealimi     pop_majority_culture = janubii     pop_majority_culture = ifriqi     pop_majority_culture = maghrebi     pop_majority_culture = misri     pop_majority_culture = mashriqi     pop_majority_culture = bedouin     pop_majority_culture = frencharab     pop_majority_culture = berber    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = ealimi  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261029  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = dinajidad     pop_majority_culture = janub     pop_majority_culture = saahi     pop_majority_culture = tajik     pop_majority_culture = persian     pop_majority_culture = pashtun     pop_majority_culture = baluchi    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = dinajidad  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
@@ -27449,8 +28507,9 @@ country_event = {  id = 261035  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx" 
 country_event = {  id = 261036  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = nayeduniya     pop_majority_culture = dakshin     pop_majority_culture = kaala     pop_majority_culture = gujarati     pop_majority_culture = marathi     pop_majority_culture = sindi     pop_majority_culture = rajput    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = nayeduniya  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261037  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = nayeduniya     pop_majority_culture = dakshin     pop_majority_culture = kaala     pop_majority_culture = kannada     pop_majority_culture = malayalam     pop_majority_culture = tamil     pop_majority_culture = telegu     pop_majority_culture = asian_minor    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = nayeduniya  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261038  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = foederatus	pop_majority_culture = afer	pop_majority_culture = australus	pop_majority_culture = gaul	pop_majority_culture = laessin	pop_majority_culture = brithenig	pop_majority_culture = latin	pop_majority_culture = xliponian	primary_culture = wenedyk	primary_culture = bazramani	}   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = foederatus	capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
+country_event = {  id = 261039  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    OR = {     continent = north_america     continent = south_america    }    OR = {     pop_majority_culture = ashkenazi	pop_majority_culture = sephardic	pop_majority_culture = knaanic	pop_majority_culture = magogic	pop_majority_culture = yevanic	pop_majority_culture = mizrahi	pop_majority_culture = israeli	pop_majority_culture = misrayim	pop_majority_culture = zarphatic	pop_majority_culture = laaz	pop_majority_culture = kaifeng	pop_majority_culture = hulwud	pop_majority_culture = camite	}   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = hulwud	capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 
-country_event = {  id = 261100  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = amerikaner     pop_majority_culture = sudreicher     pop_majority_culture = ashkenazi     pop_majority_culture = north_german     pop_majority_culture = swiss     pop_majority_culture = south_german     pop_majority_culture = german    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = sudreicher  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
+country_event = {  id = 261100  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = amerikaner     pop_majority_culture = sudreicher     pop_majority_culture = north_german     pop_majority_culture = swiss     pop_majority_culture = south_german     pop_majority_culture = german    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = sudreicher  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261101  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = nieuwereld     pop_majority_culture = boer     pop_majority_culture = nieuwereld     pop_majority_culture = zuidelijk     pop_majority_culture = dutch     pop_majority_culture = flemish    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = zuidelijk  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261102  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = vinlander     pop_majority_culture = sydlig     pop_majority_culture = svart     pop_majority_culture = icelandic     pop_majority_culture = danish     pop_majority_culture = norwegian     pop_majority_culture = swedish     pop_majority_culture = sami    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = sydlig  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261103  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = yankee     pop_majority_culture = dixie     pop_majority_culture = anglo_canadian     pop_majority_culture = australian     pop_majority_culture = texan     pop_majority_culture = falklander     pop_majority_culture = anglo_african     pop_majority_culture = english     pop_majority_culture = scottish     pop_majority_culture = anglo_saxon     pop_majority_culture = pictish     pop_majority_culture = welsh     pop_majority_culture = irish    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = australian  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
@@ -27464,7 +28523,7 @@ country_event = {  id = 261110  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx" 
 country_event = {  id = 261111  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = novvymir     pop_majority_culture = yuzhny     pop_majority_culture = smugly     pop_majority_culture = russian     pop_majority_culture = ukrainian     pop_majority_culture = byelorussian    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = yuzhny  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261112  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = ujvilag     pop_majority_culture = delian     pop_majority_culture = fekete     pop_majority_culture = hungarian    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = delian  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261113  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = lumenoua     pop_majority_culture = sudic     pop_majority_culture = negru     pop_majority_culture = romanian     pop_majority_culture = aromanian    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = sudic  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
-country_event = {  id = 261114  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = neokosmi     pop_majority_culture = notios     pop_majority_culture = mavro     pop_majority_culture = sephardic     pop_majority_culture = greek     pop_majority_culture = anatolian     pop_majority_culture = magnagreek     pop_majority_culture = georgian     pop_majority_culture = armenian     pop_majority_culture = sephardic    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = notios  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
+country_event = {  id = 261114  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = neokosmi     pop_majority_culture = notios     pop_majority_culture = mavro     pop_majority_culture = greek     pop_majority_culture = anatolian     pop_majority_culture = magnagreek     pop_majority_culture = georgian     pop_majority_culture = armenian     pop_majority_culture = sephardic    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = notios  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261115  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = yenidun     pop_majority_culture = guney     pop_majority_culture = esmer     pop_majority_culture = north_caucasian     pop_majority_culture = alan     pop_majority_culture = turkish    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = guney  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261116  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = ealimi     pop_majority_culture = janubii     pop_majority_culture = ifriqi     pop_majority_culture = maghrebi     pop_majority_culture = misri     pop_majority_culture = mashriqi     pop_majority_culture = bedouin     pop_majority_culture = frencharab     pop_majority_culture = berber    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = janubii  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261117  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = dinajidad     pop_majority_culture = janub     pop_majority_culture = saahi     pop_majority_culture = tajik     pop_majority_culture = persian     pop_majority_culture = pashtun     pop_majority_culture = baluchi    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = janub  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
@@ -27477,8 +28536,9 @@ country_event = {  id = 261123  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx" 
 country_event = {  id = 261124  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = nayeduniya     pop_majority_culture = dakshin     pop_majority_culture = kaala     pop_majority_culture = gujarati     pop_majority_culture = marathi     pop_majority_culture = sindi     pop_majority_culture = rajput    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = dakshin  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261125  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = nayeduniya     pop_majority_culture = dakshin     pop_majority_culture = kaala     pop_majority_culture = kannada     pop_majority_culture = malayalam     pop_majority_culture = tamil     pop_majority_culture = telegu     pop_majority_culture = asian_minor    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = dakshin  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261126 title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = foederatus	pop_majority_culture = afer	pop_majority_culture = australus	pop_majority_culture = gaul	pop_majority_culture = laessin	pop_majority_culture = brithenig	pop_majority_culture = latin	pop_majority_culture = xliponian	primary_culture = wenedyk	primary_culture = bazramani	}   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = australus	capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
+country_event = {  id = 261127 title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = ashkenazi	pop_majority_culture = sephardic	pop_majority_culture = knaanic	pop_majority_culture = magogic	pop_majority_culture = yevanic	pop_majority_culture = mizrahi	pop_majority_culture = israeli	pop_majority_culture = misrayim	pop_majority_culture = zarphatic	pop_majority_culture = laaz	pop_majority_culture = kaifeng	pop_majority_culture = hulwud	pop_majority_culture = camite	}   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = camite	capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 
-country_event = {  id = 261200  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = amerikaner     pop_majority_culture = sudreicher     pop_majority_culture = ashkenazi     pop_majority_culture = north_german     pop_majority_culture = swiss     pop_majority_culture = south_german     pop_majority_culture = german    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = schwarzreicher  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
+country_event = {  id = 261200  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = oceania    OR = {     pop_majority_culture = amerikaner     pop_majority_culture = sudreicher     pop_majority_culture = north_german     pop_majority_culture = swiss     pop_majority_culture = south_german     pop_majority_culture = german    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = schwarzreicher  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261201  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = nieuwereld     pop_majority_culture = boer     pop_majority_culture = nieuwereld     pop_majority_culture = zuidelijk     pop_majority_culture = dutch     pop_majority_culture = flemish    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = boer  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261202  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = vinlander     pop_majority_culture = sydlig     pop_majority_culture = svart     pop_majority_culture = icelandic     pop_majority_culture = danish     pop_majority_culture = norwegian     pop_majority_culture = swedish     pop_majority_culture = sami    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = svart  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261203  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = yankee     pop_majority_culture = dixie     pop_majority_culture = anglo_canadian     pop_majority_culture = australian     pop_majority_culture = texan     pop_majority_culture = falklander     pop_majority_culture = anglo_african     pop_majority_culture = english     pop_majority_culture = scottish     pop_majority_culture = anglo_saxon     pop_majority_culture = pictish     pop_majority_culture = welsh     pop_majority_culture = irish    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = anglo_african  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
@@ -27492,7 +28552,7 @@ country_event = {  id = 261210  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx" 
 country_event = {  id = 261211  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = novvymir     pop_majority_culture = yuzhny     pop_majority_culture = smugly     pop_majority_culture = russian     pop_majority_culture = ukrainian     pop_majority_culture = byelorussian    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = smugly  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261212  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = ujvilag     pop_majority_culture = delian     pop_majority_culture = fekete     pop_majority_culture = hungarian    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = fekete  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261213  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = lumenoua     pop_majority_culture = sudic     pop_majority_culture = negru     pop_majority_culture = romanian     pop_majority_culture = aromanian    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = negru  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
-country_event = {  id = 261214  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = neokosmi     pop_majority_culture = notios     pop_majority_culture = mavro     pop_majority_culture = sephardic     pop_majority_culture = greek     pop_majority_culture = anatolian     pop_majority_culture = magnagreek     pop_majority_culture = georgian     pop_majority_culture = armenian     pop_majority_culture = sephardic    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = mavro  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
+country_event = {  id = 261214  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = neokosmi     pop_majority_culture = notios     pop_majority_culture = mavro     pop_majority_culture = greek     pop_majority_culture = anatolian     pop_majority_culture = magnagreek     pop_majority_culture = georgian     pop_majority_culture = armenian     pop_majority_culture = sephardic    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = mavro  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261215  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = yenidun     pop_majority_culture = guney     pop_majority_culture = esmer     pop_majority_culture = north_caucasian     pop_majority_culture = alan     pop_majority_culture = turkish    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = esmer  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261216  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = ealimi     pop_majority_culture = janubii     pop_majority_culture = ifriqi     pop_majority_culture = maghrebi     pop_majority_culture = misri     pop_majority_culture = mashriqi     pop_majority_culture = bedouin     pop_majority_culture = frencharab     pop_majority_culture = berber    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = ifriqi  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261217  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = dinajidad     pop_majority_culture = janub     pop_majority_culture = saahi     pop_majority_culture = tajik     pop_majority_culture = persian     pop_majority_culture = pashtun     pop_majority_culture = baluchi    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = saahi  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
@@ -27505,6 +28565,7 @@ country_event = {  id = 261223  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx" 
 country_event = {  id = 261224  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = nayeduniya     pop_majority_culture = dakshin     pop_majority_culture = kaala     pop_majority_culture = gujarati     pop_majority_culture = marathi     pop_majority_culture = sindi     pop_majority_culture = rajput    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = kaala  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261225  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa    OR = {     pop_majority_culture = nayeduniya     pop_majority_culture = dakshin     pop_majority_culture = kaala     pop_majority_culture = kannada     pop_majority_culture = malayalam     pop_majority_culture = tamil     pop_majority_culture = telegu     pop_majority_culture = asian_minor    }   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = kaala  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261226 title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa	OR = {     pop_majority_culture = foederatus	pop_majority_culture = afer	pop_majority_culture = australus	pop_majority_culture = gaul	pop_majority_culture = laessin	pop_majority_culture = brithenig	pop_majority_culture = latin	pop_majority_culture = xliponian	primary_culture = wenedyk	primary_culture = bazramani	}   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = afer	capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
+country_event = {  id = 261227 title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = {    continent = africa	OR = {     pop_majority_culture = ashkenazi	pop_majority_culture = sephardic	pop_majority_culture = knaanic	pop_majority_culture = magogic	pop_majority_culture = yevanic	pop_majority_culture = mizrahi	pop_majority_culture = israeli	pop_majority_culture = misrayim	pop_majority_culture = zarphatic	pop_majority_culture = laaz	pop_majority_culture = kaifeng	pop_majority_culture = hulwud	pop_majority_culture = camite	}   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = camite	capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 
 country_event = {  id = 261300  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = { pop_majority_culture = afro_american   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = afro_american  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}
 country_event = {  id = 261301  title = "EVTNAME261xxx"  desc = "EVTDESC261xxx"  picture = "census"    trigger = {   number_of_states = 1   has_country_flag = buro_independence    capital_scope = { pop_majority_culture = afro_caribbean   }   NOT = { has_country_flag = fixed_261 }  }    immediate = { set_country_flag = fixed_261 }    mean_time_to_happen = {   months = 1  }   option = {   name = "Amen."   primary_culture = afro_caribbean  capital_scope = { assimilate = yes }	ai_chance = { factor = 100 }	}	option = {  	name = "(Player-only) What's wrong with the old tongue?"	capital_scope = { assimilate = yes }	ai_chance = 0	}}

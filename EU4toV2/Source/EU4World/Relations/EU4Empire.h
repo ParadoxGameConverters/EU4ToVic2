@@ -1,7 +1,7 @@
 #ifndef EU4EMPIRE_H
 #define EU4EMPIRE_H
 
-#include "newParser.h"
+#include "Parser.h"
 
 namespace EU4
 {

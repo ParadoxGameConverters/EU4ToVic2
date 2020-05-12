@@ -1,7 +1,7 @@
 #ifndef EU4_MERGE_BLOCK_H
 #define EU4_MERGE_BLOCK_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace EU4

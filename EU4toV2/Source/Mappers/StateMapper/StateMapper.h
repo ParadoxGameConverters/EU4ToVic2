@@ -1,7 +1,7 @@
 #ifndef STATE_MAPPER_H
 #define STATE_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 #include <set>
 

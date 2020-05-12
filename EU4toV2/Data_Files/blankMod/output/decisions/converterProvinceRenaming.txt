@@ -6,6 +6,7 @@ political_decisions = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
+				is_culture_group = romantic
 				tag = SPQ
 				tag = BYZ
 			}
@@ -68,6 +69,7 @@ political_decisions = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
+				is_culture_group = romantic
 				tag = SPQ
 				tag = BYZ
 			}
@@ -228,6 +230,7 @@ political_decisions = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
+				is_culture_group = romantic
 				tag = SPQ
 				tag = BYZ
 			}
@@ -314,6 +317,7 @@ political_decisions = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
+				is_culture_group = romantic
 				tag = SPQ
 				tag = BYZ
 			}
@@ -388,6 +392,7 @@ political_decisions = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
+				is_culture_group = romantic
 				tag = SPQ
 				tag = BYZ
 			}
@@ -468,6 +473,7 @@ political_decisions = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
+				is_culture_group = romantic
 				tag = SPQ
 				tag = BYZ
 			}
@@ -551,6 +557,7 @@ political_decisions = {
 			OR = {
 				culture = greek
 				is_culture_group = italian
+				is_culture_group = romantic
 				tag = SPQ
 				tag = BYZ
 			}
@@ -630,6 +637,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 70_changed }	
 		}
@@ -952,6 +960,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 139_changed }	
 		}
@@ -1309,6 +1318,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 232_changed }	
 		}
@@ -1666,6 +1676,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 244_changed }	
 		}
@@ -1987,6 +1998,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 2510_changed }	
 		}
@@ -2308,6 +2320,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 220_changed }	
 		}
@@ -2629,6 +2642,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 89_changed }	
 		}
@@ -2950,6 +2964,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 84_changed }	
 		}
@@ -3353,6 +3368,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 2447_changed }	
 		}
@@ -3710,6 +3726,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 2450_changed }	
 		}
@@ -4067,6 +4084,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 2348_changed }	
 		}
@@ -4425,6 +4443,7 @@ political_decisions = {
 				is_culture_group = germanic
 				is_culture_group = pan_swiss
 			}
+			NOT = { primary_culture = dummy }
 			NOT = { year = 1837 }
 			NOT = { has_global_flag = 2214_changed }	
 		}

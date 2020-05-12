@@ -1,7 +1,7 @@
 #ifndef CULTURE_GROUP_H
 #define CULTURE_GROUP_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "Culture.h"
 #include <map>
 

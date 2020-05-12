@@ -404,7 +404,7 @@ political_decisions = {
 				tag = SPQ
 				tag = SLA
 				tag = HRE
-				tag = WSF #Avoiding Zapadoslavia becomes Czechia or PLC
+				tag = WSF
 			}
 		}
 		
@@ -888,16 +888,16 @@ political_decisions = {
 			nationalism_n_imperialism = 1
 			war = no
 			NOT = {
-				pop_majority_religion = sunni
-				pop_majority_religion = zikri
-				pop_majority_religion = yazidi
-				pop_majority_religion = sunni_heresy
-				pop_majority_religion = shiite
-				pop_majority_religion = hurufi
-				pop_majority_religion = druze
-				pop_majority_religion = shiite_heresy
-				pop_majority_religion = ibadi
-				pop_majority_religion = kharijite
+				accepted_culture = zzz_religion_sunni
+				accepted_culture = zzz_religion_zikri
+				accepted_culture = zzz_religion_yazidi
+				accepted_culture = zzz_religion_sunni_heresy
+				accepted_culture = zzz_religion_shiite
+				accepted_culture = zzz_religion_hurufi
+				accepted_culture = zzz_religion_druze
+				accepted_culture = zzz_religion_shiite_heresy
+				accepted_culture = zzz_religion_ibadi
+				accepted_culture = zzz_religion_kharijite
 			}
 			HND = {
 				all_core = {
@@ -974,16 +974,16 @@ political_decisions = {
 			nationalism_n_imperialism = 1
 			war = no
 			OR = {
-				pop_majority_religion = sunni
-				pop_majority_religion = zikri
-				pop_majority_religion = yazidi
-				pop_majority_religion = sunni_heresy
-				pop_majority_religion = shiite
-				pop_majority_religion = hurufi
-				pop_majority_religion = druze
-				pop_majority_religion = shiite_heresy
-				pop_majority_religion = ibadi
-				pop_majority_religion = kharijite
+				accepted_culture = zzz_religion_sunni
+				accepted_culture = zzz_religion_zikri
+				accepted_culture = zzz_religion_yazidi
+				accepted_culture = zzz_religion_sunni_heresy
+				accepted_culture = zzz_religion_shiite
+				accepted_culture = zzz_religion_hurufi
+				accepted_culture = zzz_religion_druze
+				accepted_culture = zzz_religion_shiite_heresy
+				accepted_culture = zzz_religion_ibadi
+				accepted_culture = zzz_religion_kharijite
 			}
 			HND = {
 				all_core = {
@@ -1100,9 +1100,9 @@ political_decisions = {
 				change_province_name = "Kolmar"
 			}
 			409 = {
-				change_province_name = "Strassburg"
+				change_province_name = "Straﬂburg"
 				state_scope = {
-					change_region_name = "Elsass-Lothringen"
+					change_region_name = "Elsaﬂ-Lothringen"
 				}
 			}
 			prestige = 5
@@ -1562,6 +1562,7 @@ unite_moldavia_wallachia = {
 				tag = SLA
 				tag = HRE
 				tag = SLV
+				tag = WSF
 			}
 			OR = {
 				NOT = { exists = CZH }

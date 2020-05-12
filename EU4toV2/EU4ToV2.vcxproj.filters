@@ -10,41 +10,17 @@
     <ClCompile Include="Source\EU4World\Regions\Areas.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="..\common_items\CommonUtils.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\CardinalToOrdinal.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\Color.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\Date.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\EU4Version.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\ID.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="..\common_items\Log.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\newParser.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\ParserHelpers.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Regions\Region.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Regions\Regions.cpp">
       <Filter>EU4World\Regions</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\WinUtils.cpp">
-      <Filter>CommonItems</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\World.cpp">
       <Filter>EU4World</Filter>
@@ -109,9 +85,6 @@
     <ClCompile Include="Source\EU4World\Country\EU4GovernmentSection.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
-    <ClCompile Include="..\common_items\StringUtils.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Country\EU4NationalSymbol.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
@@ -165,9 +138,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Country\EU4ActiveIdeas.cpp">
       <Filter>EU4World\Country</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\Object.cpp">
-      <Filter>CommonItems</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegion.cpp">
       <Filter>EU4World\ColonialRegions</Filter>
@@ -565,7 +535,34 @@
     <ClCompile Include="Source\Mappers\AfricaReset\AfricaResetMapper.cpp">
       <Filter>Mappers\AfricaReset</Filter>
     </ClCompile>
-    <ClCompile Include="..\common_items\iconvlite.cpp">
+    <ClCompile Include="..\commonItems\CardinalToOrdinal.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\Color.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\CommonUtils.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\Date.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\iconvlite.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\Log.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\Parser.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ParserHelpers.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\StringUtils.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\WinUtils.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
   </ItemGroup>
@@ -578,32 +575,11 @@
     <ClInclude Include="Source\EU4World\Regions\Areas.h">
       <Filter>EU4World\Regions</Filter>
     </ClInclude>
-    <ClInclude Include="..\common_items\CardinalToOrdinal.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common_items\Color.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common_items\Date.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\EU4Version.h">
       <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\ID.h">
       <Filter>EU4World</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common_items\Log.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common_items\newParser.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common_items\OSCompatibilityLayer.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common_items\ParserHelpers.h">
-      <Filter>CommonItems</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Regions.h">
       <Filter>EU4World\Regions</Filter>
@@ -680,9 +656,6 @@
     <ClInclude Include="Source\EU4World\Country\EU4GovernmentSection.h">
       <Filter>EU4World\Country</Filter>
     </ClInclude>
-    <ClInclude Include="..\common_items\StringUtils.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\Country\EU4NationalSymbol.h">
       <Filter>EU4World\Country</Filter>
     </ClInclude>
@@ -736,9 +709,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Country\EU4ActiveIdeas.h">
       <Filter>EU4World\Country</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common_items\Object.h">
-      <Filter>CommonItems</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegion.h">
       <Filter>EU4World\ColonialRegions</Filter>
@@ -1091,7 +1061,31 @@
     <ClInclude Include="Source\Mappers\AfricaReset\AfricaResetMapper.h">
       <Filter>Mappers\AfricaReset</Filter>
     </ClInclude>
-    <ClInclude Include="..\common_items\iconvlite.h">
+    <ClInclude Include="..\commonItems\CardinalToOrdinal.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\Color.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\Date.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\iconvlite.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\Log.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\OSCompatibilityLayer.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\Parser.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\ParserHelpers.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\StringUtils.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
   </ItemGroup>

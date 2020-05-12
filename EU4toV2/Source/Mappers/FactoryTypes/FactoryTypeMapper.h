@@ -1,7 +1,7 @@
 #ifndef FACTORY_TYPE_LOADER_H
 #define FACTORY_TYPE_LOADER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "FactoryType.h"
 #include "../FactoryInventions/FactoryInventionMapper.h"
 #include "../FactoryTechs/FactoryTechMapper.h"

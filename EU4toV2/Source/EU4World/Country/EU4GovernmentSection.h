@@ -1,7 +1,7 @@
 #ifndef EU4_GOVERNMENT_SECTION_H
 #define EU4_GOVERNMENT_SECTION_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace EU4

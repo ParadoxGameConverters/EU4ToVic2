@@ -1,7 +1,7 @@
 #ifndef WAR_GOAL_MAPPER_H
 #define WAR_GOAL_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 #include <set>
 #include <optional>

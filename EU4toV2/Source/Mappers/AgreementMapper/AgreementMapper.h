@@ -1,7 +1,7 @@
 #ifndef AGREEMENT_MAPPER_H
 #define AGREEMENT_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace mappers

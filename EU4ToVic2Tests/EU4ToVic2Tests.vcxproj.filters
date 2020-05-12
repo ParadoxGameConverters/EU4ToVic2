@@ -18,24 +18,6 @@
     <ClCompile Include="..\EU4toV2\Source\Configuration.cpp">
       <Filter>ConverterFiles</Filter>
     </ClCompile>
-    <ClCompile Include="..\common_items\Color.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\Log.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\newParser.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\Object.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\ParserHelpers.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\WinUtils.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
     <ClCompile Include="ConfigurationTests.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Area.cpp">
       <Filter>ConverterFiles\EU4World\Regions</Filter>
@@ -64,9 +46,6 @@
     </ClCompile>
     <ClCompile Include="EU4WorldTests\PopRatioTests.cpp">
       <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\common_items\Date.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\DateItemsTests.cpp">
       <Filter>EU4WorldTests</Filter>
@@ -263,7 +242,28 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\SuperRegion.cpp">
       <Filter>ConverterFiles\Mappers\SuperGroupMapper</Filter>
     </ClCompile>
-    <ClCompile Include="..\common_items\iconvlite.cpp">
+    <ClCompile Include="..\commonItems\Color.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\Date.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\iconvlite.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\Log.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\Parser.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ParserHelpers.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\StringUtils.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\WinUtils.cpp">
       <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
   </ItemGroup>
@@ -276,9 +276,6 @@
     </Filter>
     <Filter Include="ConverterFiles">
       <UniqueIdentifier>{15d90f21-825c-4b5c-8541-ce76f1fb3bf3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ConverterFiles\commonItems">
-      <UniqueIdentifier>{b062b06f-cfb6-4a7c-8d34-14615884b65b}</UniqueIdentifier>
     </Filter>
     <Filter Include="ConverterFiles\Vic2World">
       <UniqueIdentifier>{e38cf41f-c863-4ffd-8b4a-54af80f25231}</UniqueIdentifier>
@@ -348,6 +345,9 @@
     </Filter>
     <Filter Include="ConverterFiles\Mappers\SuperGroupMapper">
       <UniqueIdentifier>{88e40f2b-545c-4ad1-b53e-8931a8e8d5ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\commonItems">
+      <UniqueIdentifier>{87c6ec85-b77f-4e5f-9685-fe52f9d29d40}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

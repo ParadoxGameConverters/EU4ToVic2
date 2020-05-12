@@ -1,11 +1,14 @@
 #include "Log.h"
 #include "EU4ToVic2Converter.h"
 #include "Mappers/VersionParser/VersionParser.h"
+#include <fstream>
 
 int main(const int argc, const char * argv[])
 {
 	try
 	{
+      std::ofstream clearLog("log.txt");
+		clearLog.close();
 		const mappers::VersionParser versionParser;
 		LOG(LogLevel::Info) << versionParser;
 		LOG(LogLevel::Info) << "Built on " << __TIMESTAMP__;

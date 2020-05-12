@@ -3,7 +3,7 @@
 
 #include "EU4World/EU4Version.h"
 #include "Date.h"
-#include "newParser.h"
+#include "Parser.h"
 #include <string>
 #include <vector>
 

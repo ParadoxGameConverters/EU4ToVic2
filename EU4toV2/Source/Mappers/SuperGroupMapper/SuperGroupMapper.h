@@ -1,7 +1,7 @@
 #ifndef SUPER_GROUP_MAPPER_H
 #define SUPER_GROUP_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 #include <set>
 

@@ -1,7 +1,7 @@
 #ifndef COLONIAL_FLAGS_MAPPER
 #define COLONIAL_FLAGS_MAPPER
 
-#include "newParser.h"
+#include "Parser.h"
 #include "ColonialFlagRegion.h"
 #include <map>
 #include <string>

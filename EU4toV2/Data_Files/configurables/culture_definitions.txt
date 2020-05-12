@@ -73,15 +73,6 @@ germanic = {
 		"von Wrangel" "von Zieten" "zur Lippe" "von Roon" "von Hohenhausen" "d'Aspre von Hoobreuk" "von Hortstein" "von Hötzendorf" "von Kirbach"
 		"von Kobratin" "von Schönburg" "von Tegetthoff" "von Uchatius" "von Wittelsbach" "von Württemberg" "von Zahringen" Wagner Wittmann "zu Hohenlohe"}
 	}
-	ashkenazi = { 
-		color = { 130 100 100}
-
-		first_names = { Abraham Albert Benjamin Daniel David Franz Gustav Heinrich Hermann Isaak Ignatz Jakob Jeremias Josef Leonhard Michael Mose Salomon Saul Shmuel
-		Sigmund Simon Theodor }
-
-		last_names = { Abramovitch Ashkenazi Bernstein Birnbaum Bloch Cantor Cohen Frank Friedländer Ginsberg Goldstein Horowitz Israel Jacobsohn Kagan Kaplan Klein
-		Levin Luria Morgenstern Nathan Oren Rosenthal Sachs Schapiro Schwartz Weinstein Weiss }
-	}
 	amerikaner = {
 		color = { 70 103 123 }
 
@@ -163,7 +154,154 @@ germanic = {
 	
 	union = GER
 }
+jewish_group = {
+	leader = european
+	unit = EuropeanGC
+	
+	ashkenazi = { 
+		color = { 130 100 100}
 
+		first_names = { Abraham Albert Benjamin Daniel David Franz Gustav Heinrich Hermann Isaak Ignatz Jakob Jeremias Josef Leonhard Michael Mose Salomon Saul Shmuel
+		Sigmund Simon Theodor }
+
+		last_names = { Abramovitch Ashkenazi Bernstein Birnbaum Bloch Cantor Cohen Frank Friedländer Ginsberg Goldstein Horowitz Israel Jacobsohn Kagan Kaplan Klein
+		Levin Luria Morgenstern Nathan Oren Rosenthal Sachs Schapiro Schwartz Weinstein Weiss }
+	}
+	sephardic = {
+		color = {50 60 10}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	knaanic = {
+		color = {128 156 201}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	magogic = {
+		color = {0 157 227}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	yevanic = {
+		color = {151 184 220}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	mizrahi = {
+		color = {205 127 130}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	israeli = {
+		color = {150  212  214}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	misrayim = {
+		color = {89 131 155}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	zarphatic = {
+		color = {179 131 175}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	laaz = {
+		color = {57 53 195}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	kaifeng = {
+		color = {232 96 11}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	hulwud = {
+		color = {116 109 85}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	camite = {
+		color = {22 22 29}
+
+		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
+		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
+		}
+
+		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+		Sassoon Sebag
+		}
+	}
+	
+	union = ISR
+}
 beneluxian = {
 	leader = european
 	unit = EuropeanGC
@@ -1856,17 +1994,6 @@ levantine = {
 		Kaloian Kamalian Khachaturian Khatchaturiants Konstandyan Konstanian Mamikonian Mardvian Matinian Melik-Aghamalian
 		Mkhitarian Mussiniants Pahlevanian Peleshyan Safrazpekian Sahakiam Sarksyan Sekoyan Shadunts Shahsuvarian
 		Tavakyalian Tchartichian Tcholakhian Ter-Sarkayan Terzian Tigraniants Tigranov Toshian Varapetian Vartanian
-		}
-	}
-	sephardic = {
-		color = {50 60 10}
-
-		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
-		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
-		}
-
-		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
-		Sassoon Sebag
 		}
 	}
 
@@ -5049,4 +5176,81 @@ non_human = { #More names allover
 
 		last_names = { "Solisorex" "Eulipotyphla" "Talpidae" "Teja" "Scutisorex" "Crocidura" "Solisorex" "Surdisorex" "Teja" "Neohylomys" "Sylvisorex" "Atelerix" "Congosorex" "Neohylomys" "Hylomys" "Teja" "Paraechinus" "Mesechinus" "Surdisorex" "Scutisorex" "Teja" "Neohylomys" "Paraechinus" "Ruwenzorisorex" "Neohylomys" "Deinogalerix" "Chimarrogale" "Eulipotyphla" "Pholidocercus" "Crocidura" "Quill" "Neotetracus" "Echinosorex" "Solisorex" "Silvacola" "Podogymnura" "Erinaceus" "Diplomesodon" "Echinosorex" "Hylomys" "Hylomys" "Neotetracus" "Erinaceinae" "Surdisorex" "Scutisorex" "Prickles" "Hylomys" "Echinosorex" "Hylomys" "Crocidura" "Mesechinus" "Floof" "Floof" "Echinosorex" "Crocidura" "Silvacola" "Soricidae" "Myosorex" "Echinosorex" "Thorn" "Pholidocercus" "Prickles" "Teja" "Flesberg" "Königsberg" "Ragnit" "Königsberg" "Bahaduran" }
 	}
+}
+zzz_religions = {
+	#This group exists only to make religion appear in country diplomacy screen
+	#If it appears on map, something is wrong
+	#Leave this at the end of the file, trust me
+	leader = european
+	unit = PrussianGC
+	
+	zzz_religion_catholic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_cathar = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_fraticelli = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_waldensian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_lollard = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_catholic_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_arian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_protestant = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_protestant_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_mormon = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_orthodox = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_pre_schism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_bogomilist = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_monothelite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_iconoclast = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_paulician = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_orthodox_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_coptic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_monophysite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_nestorian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_messalian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_hussite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_sunni = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_zikri = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_yazidi = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_sunni_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_shiite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_hurufi = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_druze = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_shiite_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_ibadi = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_kharijite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_jewish = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_samaritan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_karaite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_jewish_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_mahayana = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_gelugpa = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_theravada = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_hindu = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_shinto = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_sikh = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_jain = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_animist = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_norse_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_tengri_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_baltic_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_finnish_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_aztec_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_slavic_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_west_african_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_zun_pagan_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_hellenic_pagan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_inca_reformed = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_shamanism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_totemism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_mayan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_nahuatl = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_inti = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_kemetic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_arab_pagan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_druidist = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_tibet_bon = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_muism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_zoroastrian = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_manichean = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_mazdaki = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_zoroastrian_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_noreligion = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 }

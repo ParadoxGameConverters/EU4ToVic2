@@ -1,7 +1,7 @@
 #ifndef RELIGION_MAPPER_H
 #define RELIGION_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 #include <optional>
 #include <string>

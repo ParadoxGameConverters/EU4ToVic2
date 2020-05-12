@@ -4,7 +4,7 @@
 #include "ProvinceMappingsVersion.h"
 #include "../../EU4World/ColonialRegions/ColonialRegions.h"
 #include "../../Configuration.h"
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 #include <set>
 

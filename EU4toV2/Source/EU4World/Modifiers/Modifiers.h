@@ -2,7 +2,7 @@
 #define MODIFIERS_H
 
 #include "Modifier.h"
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 
 namespace EU4

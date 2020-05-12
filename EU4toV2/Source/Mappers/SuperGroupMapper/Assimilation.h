@@ -1,7 +1,7 @@
 #ifndef ASSIMILATION_H
 #define ASSIMILATION_H
 
-#include "newParser.h"
+#include "Parser.h"
 
 namespace mappers
 {

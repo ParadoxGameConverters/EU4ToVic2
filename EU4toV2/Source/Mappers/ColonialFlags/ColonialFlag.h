@@ -1,7 +1,7 @@
 #ifndef COLONIAL_FLAG_H
 #define COLONIAL_FLAG_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <string>
 
 namespace mappers

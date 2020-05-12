@@ -1,7 +1,7 @@
 #ifndef EU4_REGIONS_H
 #define EU4_REGIONS_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include "Region.h"
 #include "Areas.h"
 #include "SuperRegions.h"

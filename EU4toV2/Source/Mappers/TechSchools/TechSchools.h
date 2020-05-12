@@ -3,7 +3,7 @@
 
 #include "TechSchool.h"
 #include "../BlockedTechSchools/BlockedTechSchools.h"
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 
 namespace mappers

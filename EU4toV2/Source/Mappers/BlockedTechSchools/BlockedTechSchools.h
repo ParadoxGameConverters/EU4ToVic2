@@ -1,7 +1,7 @@
 #ifndef BLOCKED_TECH_SCHOOLS_H
 #define BLOCKED_TECH_SCHOOLS_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <string>
 #include <vector>
 

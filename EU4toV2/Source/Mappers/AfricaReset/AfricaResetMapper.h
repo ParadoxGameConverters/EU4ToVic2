@@ -1,7 +1,7 @@
 #ifndef AFRICA_RESET_MAPPER_H
 #define AFRICA_RESET_MAPPER_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <set>
 
 namespace mappers

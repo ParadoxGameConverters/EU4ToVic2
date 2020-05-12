@@ -1,7 +1,7 @@
 #ifndef PARTY_NAME_H
 #define PARTY_NAME_H
 
-#include "newParser.h"
+#include "Parser.h"
 #include <map>
 
 namespace mappers
