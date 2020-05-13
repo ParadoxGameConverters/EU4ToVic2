@@ -1436,13 +1436,13 @@
 	link = { eu4 = 2963 eu4 = 4523 v2 = 700 }	# Notec, Inowroclaw -> Bromberg
 	link = { eu4 = 1859 v2 = 694 }	# Chelmno -> Torun
 	link = { eu4 = 256 eu4 = 4524 v2 = 708 }	# Plock, Dobrzyn -> Plock
-	link = { eu4 = 1938 v2 = 709 }	# Wizna -> Lomza
+	link = { eu4 = 1938 v2 = 707 v2 = 709 }	# Wizna -> Suwalki, Lomza
 	link = { eu4 = 257 eu4 = 4525 v2 = 706 }	# Warszawa, Rawa -> Warsaw
 	link = { eu4 = 269 v2 = 719 v2 = 711 }	# Podlasie -> Bialystock, Siedlice
-	link = { eu4 = 767 v2 = 707 }	# Ortelsburg -> Suwalki
+	link = { eu4 = 767 v2 = 697 }	# Ortelsburg -> Gumbinnen
 	link = { eu4 = 42 eu4 = 2958 v2 = 696 }	# Warmia, Osterode -> Allenstein
 	link = { eu4 = 1841 v2 = 693 }	# Marienburg -> Elbing
-	link = { eu4 = 41 v2 = 695 v2 = 697 }	# Königsberg -> Königsberg, Gumbinnen
+	link = { eu4 = 41 v2 = 695 }	# Königsberg -> Königsberg
 	# Belarus
 	link = { eu4 = 277 v2 = 937 }	# Brest -> Brest-Litovsk
 	link = { eu4 = 1937 v2 = 936 }	# Grodno -> Grodno
