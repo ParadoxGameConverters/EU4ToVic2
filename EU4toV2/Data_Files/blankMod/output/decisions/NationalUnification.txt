@@ -6,6 +6,71 @@
 # -Gran Colombia decision restored without having it releasable at start
 
 political_decisions = {
+
+	form_scandinavia = {
+        news = yes
+        news_desc_long = "form_scandinavia_NEWS_LONG"
+        news_desc_medium = "form_scandinavia_NEWS_MEDIUM"
+        news_desc_short = "form_scandinavia_NEWS_SHORT"
+        potential = {
+            OR = {
+                is_culture_group = scandinavian
+                is_culture_group = bears
+            }
+            NOT = {
+                exists = SCA
+                capital_scope = { continent = africa }
+                capital_scope = { continent = north_america }
+                capital_scope = { continent = south_america }
+                capital_scope = { continent = oceania }
+            }
+           
+        }
+       
+        allow = {
+            is_greater_power = yes
+            prestige = 45
+            war = no
+            SCA = {
+                all_core = {
+                    OR = {
+                        owned_by = THIS
+                        owner = {
+                            in_sphere = THIS
+                        }
+                    }
+                }
+            }
+        }
+       
+        effect = {
+            prestige = 20
+            change_tag = SCA
+            add_accepted_culture = swedish
+            add_accepted_culture = danish
+            add_accepted_culture = norwegian
+            add_accepted_culture = finnish
+            add_accepted_culture = icelandic
+            add_accepted_culture = sami
+            any_country = {
+                limit = {
+                    NOT = {
+                        is_greater_power = yes
+                        capital_scope = { continent = africa }
+                        capital_scope = { continent = north_america }
+                        capital_scope = { continent = south_america }
+                        capital_scope = { continent = oceania }
+                    }
+                    is_culture_group = scandinavian
+                    in_sphere = THIS
+                }
+                country_event = { id=11101 days=0 }
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+    }
 	
 	form_south_german_confederation = {
 		potential = {
