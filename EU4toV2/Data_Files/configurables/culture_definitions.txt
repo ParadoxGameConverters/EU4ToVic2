@@ -513,33 +513,6 @@ scandinavian = {
 			Hætta Somby Turi Magga Dunfjeld Kvitfjell Kappfjell
 		}
 	}
-	vinlander = { 
-		color = {76 73 172}
-
-		first_names = { Agnar Ásgeir Björn Eidur Einar Emil Geir Gudmund Gunnar Hannes
-		Hermann Jón Kristján Magnús Ólafur Pétur Sigurdur Stefán Sveinn Tryggvi }
-		
-		last_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
-		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
-	}
-	sydlig = { 
-		color = {97 22 101}
-
-		first_names = { Agnar Ásgeir Björn Eidur Einar Emil Geir Gudmund Gunnar Hannes
-		Hermann Jón Kristján Magnús Ólafur Pétur Sigurdur Stefán Sveinn Tryggvi }
-		
-		last_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
-		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
-	}
-	svart = { 
-		color = {48 12 91}
-
-		first_names = { Agnar Ásgeir Björn Eidur Einar Emil Geir Gudmund Gunnar Hannes
-		Hermann Jón Kristján Magnús Ólafur Pétur Sigurdur Stefán Sveinn Tryggvi }
-		
-		last_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
-		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
-	}
 	union = SCA
 }
 
@@ -4130,6 +4103,33 @@ neo_european_cultures = {
 		}
 		last_names = { Byrne Christie Clegg Copley Courtenay Dawkins Fuller Godwin Immelman James Kerzner Lessing Mann McIntosh Morgan Parow Pollock Rabin Rhodes Sheckter Shepstone Southey Steer
 		}
+	}
+	vinlander = { 
+		color = {76 73 172}
+
+		first_names = { Agnar Ásgeir Björn Eidur Einar Emil Geir Gudmund Gunnar Hannes
+		Hermann Jón Kristján Magnús Ólafur Pétur Sigurdur Stefán Sveinn Tryggvi }
+		
+		last_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
+		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
+	}
+	sydlig = { 
+		color = {97 22 101}
+
+		first_names = { Agnar Ásgeir Björn Eidur Einar Emil Geir Gudmund Gunnar Hannes
+		Hermann Jón Kristján Magnús Ólafur Pétur Sigurdur Stefán Sveinn Tryggvi }
+		
+		last_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
+		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
+	}
+	svart = { 
+		color = {48 12 91}
+
+		first_names = { Agnar Ásgeir Björn Eidur Einar Emil Geir Gudmund Gunnar Hannes
+		Hermann Jón Kristján Magnús Ólafur Pétur Sigurdur Stefán Sveinn Tryggvi }
+		
+		last_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
+		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
 	}
 }
 
