@@ -9,7 +9,6 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 
-#add_compile_options("-std=c++17")
 add_compile_options("-lstdc++fs")
 add_compile_options("-O2")
 add_compile_options("-pthread")
