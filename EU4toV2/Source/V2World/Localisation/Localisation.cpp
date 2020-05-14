@@ -47,6 +47,9 @@ void V2::Localisation::setPartyName(const size_t partyIndex, const std::string& 
 std::string V2::Localisation::convert(const std::string& text)
 {
 	if (text.empty()) return std::string();
+	#ifdef __APPLE__
+		return text;
+	#endif
 	return Utils::convertUTF8ToWin1252(text);
 }
 

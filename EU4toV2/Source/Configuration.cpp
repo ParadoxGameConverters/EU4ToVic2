@@ -115,7 +115,7 @@ void Configuration::verifyEU4Path(const std::string& path, bool (*doesFolderExis
 {
 	if (!doesFolderExist(path))
 		throw std::runtime_error(path + " does not exist!");
-	if (!doesFileExist(path + "/eu4.exe") && !doesFileExist(path + "/eu4"))
+	if (!doesFileExist(path + "/eu4.exe") && !doesFileExist(path + "/eu4") && !doesFolderExist(path + "/eu4.app"))
 		throw std::runtime_error(path + " does not contain Europa Universalis 4!");
 	if (!doesFileExist(path + "/map/positions.txt"))
 		throw std::runtime_error(path + " does not appear to be a valid EU4 install!");
@@ -126,7 +126,7 @@ void Configuration::verifyVic2Path(const std::string& path, bool (*doesFolderExi
 {
 	if (!doesFolderExist(path))
 		throw std::runtime_error(path + " does not exist!");
-	if (!doesFileExist(path + "/v2game.exe"))
+	if (!doesFileExist(path + "/v2game.exe") && !doesFolderExist(path + "/Victoria 2 - Heart Of Darkness.app") && !doesFolderExist(path + "../../MacOS"))
 		throw std::runtime_error(path + " does not contain Victoria 2!");
 	LOG(LogLevel::Info) << "\tVictoria 2 install path is " << path;
 }
@@ -168,9 +168,12 @@ void Configuration::setOutputName()
 }
 
 std::string Configuration::trimPath(const std::string& fileName)
-{
-	const int lastSlash = fileName.find_last_of("\\");
-	return fileName.substr(lastSlash + 1, fileName.length());
+{    
+    int lastSlash = fileName.find_last_of('\\');
+    std::string newName = fileName.substr(lastSlash + 1, fileName.length());
+    lastSlash = newName.find_last_of('/');
+    newName = newName.substr(lastSlash + 1, fileName.length());
+    return newName;
 }
 
 std::string Configuration::trimExtension(const std::string& fileName)

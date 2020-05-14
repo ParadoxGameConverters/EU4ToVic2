@@ -1393,6 +1393,7 @@ void V2::World::convertWars(const EU4::World& sourceWorld)
 
 void V2::World::output(const mappers::VersionParser& versionParser) const
 {
+	fs::create_directory("output");
 	LOG(LogLevel::Info) << "<- Copying Mod Template";
 	Utils::copyFolder("blankMod/output", "output/output");
 	LOG(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
