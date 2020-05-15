@@ -5,7 +5,6 @@
 #include "Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "Mappers/TechGroups/TechGroupsMapper.h"
 #include "V2World/V2World.h"
-#include <fstream>
 #include "Mappers/VersionParser/VersionParser.h"
 #include "EU4ToVic2Converter.h"
 
