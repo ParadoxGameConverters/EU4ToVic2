@@ -11,7 +11,7 @@ country_event = { #Esperanto event
 		year = 1887
 		civilized = yes
 		invention = expressionist_literature
-		literacy = 30 #Let's hope they know how to write before books
+		literacy = 0.3 #Let's hope they know how to write before books
 	}
 	
 	mean_time_to_happen = {
