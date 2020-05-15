@@ -4830,4 +4830,291 @@ political_decisions = {
 			factor = 1
 		}
 	}
+	
+# Korean province renamings
+# Currently for Japan and China
+japanese_names_in_korea = {
+	potential = {
+		OR = {
+			tag = JAP
+			primary_culture = japanese
+		}
+		owns = 1627
+		owns = 1632
+		owns = 1619
+		owns = 1624
+		NOT = {
+			has_global_flag = japan_has_renamed_korea
+		}
+	}
+
+	allow = {
+		prestige = 10
+	}
+
+	effect = {
+		1622 = {
+			change_province_name = "Seishin"
+		}
+		1623 = {
+			change_province_name = "Kyojo"
+		}
+		1621 = {
+			change_province_name = "Kanko"
+		}
+		1620 = {
+			change_province_name = "Kokai"
+		}
+		1619 = {
+			change_province_name = "Heijo"
+			state_scope = {
+				change_region_name = "Heijo"
+			}
+		}
+		1629 = {
+			change_province_name = "Gonzan"
+		}
+		1625 = {
+			change_province_name = "Tetsugen"
+		}
+		1626 = {
+			change_province_name = "Kaishu"
+		}
+		1627 = {
+			change_province_name = "Shariin"
+			state_scope = {
+				change_region_name = "Shariin"
+			}
+		}
+		1630 = {
+			change_province_name = "Koryo"
+		}
+		1631 = {
+			change_province_name = "Heisho"
+		}
+		1636 = {
+			change_province_name = "Seishu"
+		}
+		1628 = {
+			change_province_name = "Linsen"
+		}
+		1624 = {
+			change_province_name = "Keijo"
+			state_scope = {
+				change_region_name = "Keijo"
+			}
+		}
+		1634 = {
+			change_province_name = "Shinho"
+		}
+		1633 = {
+			change_province_name = "Taikyu"
+		}
+		1635 = {
+			change_province_name = "Rashu"
+		}
+		1637 = {
+			change_province_name = "Saishu"
+		}
+		1632 = {
+			change_province_name = "Keishu"
+			state_scope = {
+				change_region_name = "Keishu"
+			}
+		}
+		prestige = 5
+		set_global_flag = japan_has_renamed_korea
+		clr_global_flag = china_has_renamed_korea
+	}
+}
+restore_korea = {
+	potential = {
+		OR = {
+			tag = KOR
+			primary_culture = korean
+		}
+		OR = {
+			has_global_flag = japan_has_renamed_korea
+			has_global_flag = china_has_renamed_korea
+		}
+		owns = 1627
+		owns = 1632
+		owns = 1619
+		owns = 1624
+	}
+
+	allow = {
+		prestige = 10
+	}
+
+	effect = {
+		1622 = {
+			change_province_name = "Chongjin"
+		}
+		1623 = {
+			change_province_name = "Kimchaek"
+		}
+		1621 = {
+			change_province_name = "Hamhung"
+		}
+		1620 = {
+			change_province_name = "Chonchon"
+		}
+		1619 = {
+			change_province_name = "Pyongyang"
+			state_scope = {
+				change_region_name = "Pyongyang"
+			}
+		}
+		1629 = {
+			change_province_name = "Wonsan"
+		}
+		1625 = {
+			change_province_name = "Kaesong"
+		}
+		1626 = {
+			change_province_name = "Haeju"
+		}
+		1627 = {
+			change_province_name = "Sariwon"
+			state_scope = {
+				change_region_name = "Sariwon"
+			}
+		}
+		1630 = {
+			change_province_name = "Kangnung"
+		}
+		1631 = {
+			change_province_name = "Wonju"
+		}
+		1636 = {
+			change_province_name = "Taejon"
+		}
+		1628 = {
+			change_province_name = "Incheon"
+		}
+		1624 = {
+			change_province_name = "Seoul"
+			state_scope = {
+				change_region_name = "Seoul"
+			}
+		}
+		1634 = {
+			change_province_name = "Pohang"
+		}
+		1633 = {
+			change_province_name = "Taegu"
+		}
+		1635 = {
+			change_province_name = "Kwanju"
+		}
+		1637 = {
+			change_province_name = "Cheju"
+		}
+		1632 = {
+			change_province_name = "Pusan"
+			state_scope = {
+				change_region_name = "Busan"
+			}
+		}
+		prestige = 10
+		clr_global_flag = japan_has_renamed_korea
+		clr_global_flag = china_has_renamed_korea
+	}
+}
+chinese_names_in_korea = {
+	potential = {
+		OR = {
+			tag = CHI
+			primary_culture = beifaren
+			primary_culture = nanfaren
+			primary_culture = manchu
+		}
+		NOT = { has_global_flag = china_has_renamed_korea }
+		owns = 1627
+		owns = 1632
+		owns = 1619
+		owns = 1624
+	}
+
+	allow = {
+		prestige = 10
+	}
+
+	effect = {
+		1622 = {
+			change_province_name = "Qingjin"
+		}
+		1623 = {
+			change_province_name = "Jince"
+		}
+		1621 = {
+			change_province_name = "Xianxing"
+		}
+		1620 = {
+			change_province_name = "Qianchuan"
+		}
+		1619 = {
+			change_province_name = "Pingrang"
+			state_scope = {
+				change_region_name = "Pingrang"
+			}
+		}
+		1629 = {
+			change_province_name = "Yuanshan"
+		}
+		1625 = {
+			change_province_name = "Kaicheng"
+		}
+		1626 = {
+			change_province_name = "Haizhou"
+		}
+		1627 = {
+			change_province_name = "Shaliyuan"
+			state_scope = {
+				change_region_name = "Shaliyuan"
+			}
+		}
+		1630 = {
+			change_province_name = "Jiangling"
+		}
+		1631 = {
+			change_province_name = "Wanzhou"
+		}
+		1636 = {
+			change_province_name = "Datian"
+		}
+		1628 = {
+			change_province_name = "Renchuan"
+		}
+		1624 = {
+			change_province_name = "Hancheng"
+			state_scope = {
+				change_region_name = "Hancheng"
+			}
+		}
+		1634 = {
+			change_province_name = "Puxiang"
+		}
+		1633 = {
+			change_province_name = "Daqiu"
+		}
+		1635 = {
+			change_province_name = "Guangzhou"
+		}
+		1637 = {
+			change_province_name = "Jizhou"
+		}
+		1632 = {
+			change_province_name = "Fushan"
+			state_scope = {
+				change_region_name = "Fushan"
+			}
+		}
+		prestige = 10
+		clr_global_flag = japan_has_renamed_korea
+		set_global_flag = china_has_renamed_korea
+	}
+}
+
 }
