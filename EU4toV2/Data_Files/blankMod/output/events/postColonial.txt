@@ -1330,7 +1330,7 @@ country_event = {
 country_event = {
  id = 251002
  title = EVTNAME251002
- desc = EVTDESC251002
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -1389,7 +1389,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251002
+  name = EVTOPTA251001
   create_vassal = LSK
   diplomatic_influence = {
    who = LSK
@@ -1404,7 +1404,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251002
+  name = EVTOPTB251001
   LSK = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -1531,7 +1531,7 @@ country_event = {
 country_event = {
  id = 251003
  title = EVTNAME251003
- desc = EVTDESC251003
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -1590,7 +1590,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251003
+  name = EVTOPTA251001
   create_vassal = USA
   diplomatic_influence = {
    who = USA
@@ -1605,7 +1605,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251003
+  name = EVTOPTB251001
   USA = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -1732,7 +1732,7 @@ country_event = {
 country_event = {
  id = 251004
  title = EVTNAME251004
- desc = EVTDESC251004
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -1791,7 +1791,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251004
+  name = EVTOPTA251001
   create_vassal = UCA
   diplomatic_influence = {
    who = UCA
@@ -1806,7 +1806,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251004
+  name = EVTOPTB251001
   UCA = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -1933,7 +1933,7 @@ country_event = {
 country_event = {
  id = 251005
  title = EVTNAME251005
- desc = EVTDESC251005
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -1992,7 +1992,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251005
+  name = EVTOPTA251001
   create_vassal = MEX
   diplomatic_influence = {
    who = MEX
@@ -2007,7 +2007,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251005
+  name = EVTOPTB251001
   MEX = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -2134,7 +2134,7 @@ country_event = {
 country_event = {
  id = 251006
  title = EVTNAME251006
- desc = EVTDESC251006
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -2193,7 +2193,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251006
+  name = EVTOPTA251001
   create_vassal = BRZ
   diplomatic_influence = {
    who = BRZ
@@ -2208,7 +2208,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251006
+  name = EVTOPTB251001
   BRZ = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -2335,7 +2335,7 @@ country_event = {
 country_event = {
  id = 251007
  title = EVTNAME251007
- desc = EVTDESC251007
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -2394,7 +2394,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251007
+  name = EVTOPTA251001
   create_vassal = PEU
   diplomatic_influence = {
    who = PEU
@@ -2409,7 +2409,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251007
+  name = EVTOPTB251001
   PEU = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -2536,7 +2536,7 @@ country_event = {
 country_event = {
  id = 251008
  title = EVTNAME251008
- desc = EVTDESC251008
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -2595,7 +2595,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251008
+  name = EVTOPTA251001
   create_vassal = ARG
   diplomatic_influence = {
    who = ARG
@@ -2610,7 +2610,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251008
+  name = EVTOPTB251001
   ARG = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -2737,7 +2737,7 @@ country_event = {
 country_event = {
  id = 251009
  title = EVTNAME251009
- desc = EVTDESC251009
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -2796,7 +2796,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251009
+  name = EVTOPTA251001
   create_vassal = PRG
   diplomatic_influence = {
    who = PRG
@@ -2811,7 +2811,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251009
+  name = EVTOPTB251001
   PRG = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -2938,7 +2938,7 @@ country_event = {
 country_event = {
  id = 251010
  title = EVTNAME251010
- desc = EVTDESC251010
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -2997,7 +2997,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251010
+  name = EVTOPTA251001
   create_vassal = URU
   diplomatic_influence = {
    who = URU
@@ -3012,7 +3012,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251010
+  name = EVTOPTB251001
   URU = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -3139,7 +3139,7 @@ country_event = {
 country_event = {
  id = 251011
  title = EVTNAME251011
- desc = EVTDESC251011
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -3198,7 +3198,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251011
+  name = EVTOPTA251001
   create_vassal = BOL
   diplomatic_influence = {
    who = BOL
@@ -3213,7 +3213,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251011
+  name = EVTOPTB251001
   BOL = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -3340,7 +3340,7 @@ country_event = {
 country_event = {
  id = 251012
  title = EVTNAME251012
- desc = EVTDESC251012
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -3399,7 +3399,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251012
+  name = EVTOPTA251001
   create_vassal = CLM
   diplomatic_influence = {
    who = CLM
@@ -3414,7 +3414,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251012
+  name = EVTOPTB251001
   CLM = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -3541,7 +3541,7 @@ country_event = {
 country_event = {
  id = 251013
  title = EVTNAME251013
- desc = EVTDESC251013
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -3600,7 +3600,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251013
+  name = EVTOPTA251001
   create_vassal = VNZ
   diplomatic_influence = {
    who = VNZ
@@ -3615,7 +3615,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251013
+  name = EVTOPTB251001
   VNZ = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -3742,7 +3742,7 @@ country_event = {
 country_event = {
  id = 251014
  title = EVTNAME251014
- desc = EVTDESC251014
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -3800,7 +3800,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251014
+  name = EVTOPTA251001
   create_vassal = MLY
   diplomatic_influence = {
    who = MLY
@@ -3815,7 +3815,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251014
+  name = EVTOPTB251001
   MLY = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -3942,7 +3942,7 @@ country_event = {
 country_event = {
  id = 251015
  title = EVTNAME251015
- desc = EVTDESC251015
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -4001,7 +4001,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251015
+  name = EVTOPTA251001
   create_vassal = LOU
   diplomatic_influence = {
    who = LOU
@@ -4016,7 +4016,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251015
+  name = EVTOPTB251001
   LOU = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -4143,7 +4143,7 @@ country_event = {
 country_event = {
  id = 251016
  title = EVTNAME251016
- desc = EVTDESC251016
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -4201,7 +4201,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251016
+  name = EVTOPTA251001
   create_vassal = HND
   diplomatic_influence = {
    who = HND
@@ -4216,7 +4216,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251016
+  name = EVTOPTB251001
   HND = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -4343,7 +4343,7 @@ country_event = {
 country_event = {
  id = 251017
  title = EVTNAME251017
- desc = EVTDESC251017
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -4402,7 +4402,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251017
+  name = EVTOPTA251001
   create_vassal = AST
   diplomatic_influence = {
    who = AST
@@ -4417,7 +4417,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251017
+  name = EVTOPTB251001
   AST = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -4544,7 +4544,7 @@ country_event = {
 country_event = {
  id = 251018
  title = EVTNAME251018
- desc = EVTDESC251018
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -4602,7 +4602,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251018
+  name = EVTOPTA251001
   create_vassal = PHI
   diplomatic_influence = {
    who = PHI
@@ -4617,7 +4617,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251018
+  name = EVTOPTB251001
   PHI = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -4744,7 +4744,7 @@ country_event = {
 country_event = {
  id = 251019
  title = EVTNAME251019
- desc = EVTDESC251019
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -4803,7 +4803,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251019
+  name = EVTOPTA251001
   create_vassal = NZL
   diplomatic_influence = {
    who = NZL
@@ -4818,7 +4818,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251019
+  name = EVTOPTB251001
   NZL = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -4945,7 +4945,7 @@ country_event = {
 country_event = {
  id = 251020
  title = EVTNAME251020
- desc = EVTDESC251020
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -5004,7 +5004,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251020
+  name = EVTOPTA251001
   create_vassal = MAD
   diplomatic_influence = {
    who = MAD
@@ -5019,7 +5019,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251020
+  name = EVTOPTB251001
   MAD = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -5146,7 +5146,7 @@ country_event = {
 country_event = {
  id = 251021
  title = EVTNAME251021
- desc = EVTDESC251021
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -5205,7 +5205,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251021
+  name = EVTOPTA251001
   create_vassal = SAF
   diplomatic_influence = {
    who = SAF
@@ -5220,7 +5220,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251021
+  name = EVTOPTB251001
   SAF = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -5347,7 +5347,7 @@ country_event = {
 country_event = {
  id = 251022
  title = EVTNAME251022
- desc = EVTDESC251022
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -5406,7 +5406,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251022
+  name = EVTOPTA251001
   create_vassal = RHO
   diplomatic_influence = {
    who = RHO
@@ -5421,7 +5421,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251022
+  name = EVTOPTB251001
   RHO = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -5548,7 +5548,7 @@ country_event = {
 country_event = {
  id = 251023
  title = EVTNAME251023
- desc = EVTDESC251023
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -5607,7 +5607,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251023
+  name = EVTOPTA251001
   create_vassal = LIB
   diplomatic_influence = {
    who = LIB
@@ -5622,7 +5622,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251023
+  name = EVTOPTB251001
   LIB = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -5749,7 +5749,7 @@ country_event = {
 country_event = {
  id = 251024
  title = EVTNAME251024
- desc = EVTDESC251024
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -5808,7 +5808,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251024
+  name = EVTOPTA251001
   create_vassal = CNG
   diplomatic_influence = {
    who = CNG
@@ -5823,7 +5823,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251024
+  name = EVTOPTB251001
   CNG = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -5950,7 +5950,7 @@ country_event = {
 country_event = {
  id = 251025
  title = EVTNAME251025
- desc = EVTDESC251025
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -6009,7 +6009,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251025
+  name = EVTOPTA251001
   create_vassal = CHL
   diplomatic_influence = {
    who = CHL
@@ -6024,7 +6024,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251025
+  name = EVTOPTB251001
   CHL = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -6151,7 +6151,7 @@ country_event = {
 country_event = {
  id = 251026
  title = EVTNAME251026
- desc = EVTDESC251026
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -6210,7 +6210,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251026
+  name = EVTOPTA251001
   create_vassal = QUE
   diplomatic_influence = {
    who = QUE
@@ -6225,7 +6225,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251026
+  name = EVTOPTB251001
   QUE = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -6352,7 +6352,7 @@ country_event = {
 country_event = {
  id = 251027
  title = EVTNAME251027
- desc = EVTDESC251027
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -6411,7 +6411,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251027
+  name = EVTOPTA251001
   create_vassal = COL
   diplomatic_influence = {
    who = COL
@@ -6426,7 +6426,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251027
+  name = EVTOPTB251001
   COL = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -6553,7 +6553,7 @@ country_event = {
 country_event = {
  id = 251028
  title = EVTNAME251028
- desc = EVTDESC251028
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -6612,7 +6612,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251028
+  name = EVTOPTA251001
   create_vassal = NEW
   diplomatic_influence = {
    who = NEW
@@ -6627,7 +6627,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251028
+  name = EVTOPTB251001
   NEW = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -6754,7 +6754,7 @@ country_event = {
 country_event = {
  id = 251029
  title = EVTNAME251029
- desc = EVTDESC251029
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -6813,7 +6813,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251029
+  name = EVTOPTA251001
   create_vassal = NEN
   diplomatic_influence = {
    who = NEN
@@ -6828,7 +6828,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251029
+  name = EVTOPTB251001
   NEN = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -6955,7 +6955,7 @@ country_event = {
 country_event = {
  id = 251030
  title = EVTNAME251030
- desc = EVTDESC251030
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -7014,7 +7014,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251030
+  name = EVTOPTA251001
   create_vassal = MAN
   diplomatic_influence = {
    who = MAN
@@ -7029,7 +7029,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251030
+  name = EVTOPTB251001
   MAN = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -7156,7 +7156,7 @@ country_event = {
 country_event = {
  id = 251031
  title = EVTNAME251031
- desc = EVTDESC251031
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -7215,7 +7215,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251031
+  name = EVTOPTA251001
   create_vassal = TEX
   diplomatic_influence = {
    who = TEX
@@ -7230,7 +7230,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251031
+  name = EVTOPTB251001
   TEX = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -7357,7 +7357,7 @@ country_event = {
 country_event = {
  id = 251032
  title = EVTNAME251032
- desc = EVTDESC251032
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -7416,7 +7416,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251032
+  name = EVTOPTA251001
   create_vassal = CSA
   diplomatic_influence = {
    who = CSA
@@ -7431,7 +7431,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251032
+  name = EVTOPTB251001
   CSA = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -7558,7 +7558,7 @@ country_event = {
 country_event = {
  id = 251033
  title = EVTNAME251033
- desc = EVTDESC251033
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -7617,7 +7617,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251033
+  name = EVTOPTA251001
   create_vassal = DES
   diplomatic_influence = {
    who = DES
@@ -7632,7 +7632,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251033
+  name = EVTOPTB251001
   DES = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -7759,7 +7759,7 @@ country_event = {
 country_event = {
  id = 251034
  title = EVTNAME251034
- desc = EVTDESC251034
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -7818,7 +7818,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251034
+  name = EVTOPTA251001
   create_vassal = CAL
   diplomatic_influence = {
    who = CAL
@@ -7833,7 +7833,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251034
+  name = EVTOPTB251001
   CAL = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -7960,7 +7960,7 @@ country_event = {
 country_event = {
  id = 251035
  title = EVTNAME251035
- desc = EVTDESC251035
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -8019,7 +8019,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251035
+  name = EVTOPTA251001
   create_vassal = CUB
   diplomatic_influence = {
    who = CUB
@@ -8034,7 +8034,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251035
+  name = EVTOPTB251001
   CUB = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -8161,7 +8161,7 @@ country_event = {
 country_event = {
  id = 251036
  title = EVTNAME251036
- desc = EVTDESC251036
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -8220,7 +8220,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251036
+  name = EVTOPTA251001
   create_vassal = HAI
   diplomatic_influence = {
    who = HAI
@@ -8235,7 +8235,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251036
+  name = EVTOPTB251001
   HAI = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -8362,7 +8362,7 @@ country_event = {
 country_event = {
  id = 251037
  title = EVTNAME251037
- desc = EVTDESC251037
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -8421,7 +8421,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251037
+  name = EVTOPTA251001
   create_vassal = DOM
   diplomatic_influence = {
    who = DOM
@@ -8436,7 +8436,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251037
+  name = EVTOPTB251001
   DOM = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -8563,7 +8563,7 @@ country_event = {
 country_event = {
  id = 251038
  title = EVTNAME251038
- desc = EVTDESC251038
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -8622,7 +8622,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251038
+  name = EVTOPTA251001
   create_vassal = COS
   diplomatic_influence = {
    who = COS
@@ -8637,7 +8637,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251038
+  name = EVTOPTB251001
   COS = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -8764,7 +8764,7 @@ country_event = {
 country_event = {
  id = 251039
  title = EVTNAME251039
- desc = EVTDESC251039
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -8823,7 +8823,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251039
+  name = EVTOPTA251001
   create_vassal = HON
   diplomatic_influence = {
    who = HON
@@ -8838,7 +8838,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251039
+  name = EVTOPTB251001
   HON = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -8965,7 +8965,7 @@ country_event = {
 country_event = {
  id = 251040
  title = EVTNAME251040
- desc = EVTDESC251040
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -9024,7 +9024,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251040
+  name = EVTOPTA251001
   create_vassal = ELS
   diplomatic_influence = {
    who = ELS
@@ -9039,7 +9039,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251040
+  name = EVTOPTB251001
   ELS = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -9166,7 +9166,7 @@ country_event = {
 country_event = {
  id = 251041
  title = EVTNAME251041
- desc = EVTDESC251041
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -9225,7 +9225,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251041
+  name = EVTOPTA251001
   create_vassal = PNM
   diplomatic_influence = {
    who = PNM
@@ -9240,7 +9240,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251041
+  name = EVTOPTB251001
   PNM = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -9367,7 +9367,7 @@ country_event = {
 country_event = {
  id = 251042
  title = EVTNAME251042
- desc = EVTDESC251042
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -9426,7 +9426,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251042
+  name = EVTOPTA251001
   create_vassal = ECU
   diplomatic_influence = {
    who = ECU
@@ -9441,7 +9441,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251042
+  name = EVTOPTB251001
   ECU = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -9568,7 +9568,7 @@ country_event = {
 country_event = {
  id = 251043
  title = EVTNAME251043
- desc = EVTDESC251043
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -9627,7 +9627,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251043
+  name = EVTOPTA251001
   create_vassal = GUA
   diplomatic_influence = {
    who = GUA
@@ -9642,7 +9642,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251043
+  name = EVTOPTB251001
   GUA = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -9769,7 +9769,7 @@ country_event = {
 country_event = {
  id = 251044
  title = EVTNAME251044
- desc = EVTDESC251044
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -9828,7 +9828,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251044
+  name = EVTOPTA251001
   create_vassal = NIC
   diplomatic_influence = {
    who = NIC
@@ -9843,7 +9843,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251044
+  name = EVTOPTB251001
   NIC = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -9970,7 +9970,7 @@ country_event = {
 country_event = {
  id = 251045
  title = EVTNAME251045
- desc = EVTDESC251045
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -10029,7 +10029,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251045
+  name = EVTOPTA251001
   create_vassal = GUY
   diplomatic_influence = {
    who = GUY
@@ -10044,7 +10044,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251045
+  name = EVTOPTB251001
   GUY = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -10171,7 +10171,7 @@ country_event = {
 country_event = {
  id = 251046
  title = EVTNAME251046
- desc = EVTDESC251046
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -10230,7 +10230,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251046
+  name = EVTOPTA251001
   create_vassal = CHP
   diplomatic_influence = {
    who = CHP
@@ -10245,7 +10245,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251046
+  name = EVTOPTB251001
   CHP = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -10372,7 +10372,7 @@ country_event = {
 country_event = {
  id = 251047
  title = EVTNAME251047
- desc = EVTDESC251047
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -10431,7 +10431,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251047
+  name = EVTOPTA251001
   create_vassal = CEQ
   diplomatic_influence = {
    who = CEQ
@@ -10446,7 +10446,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251047
+  name = EVTOPTB251001
   CEQ = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -10573,7 +10573,7 @@ country_event = {
 country_event = {
  id = 251048
  title = EVTNAME251048
- desc = EVTDESC251048
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -10632,7 +10632,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251048
+  name = EVTOPTA251001
   create_vassal = ENT
   diplomatic_influence = {
    who = ENT
@@ -10647,7 +10647,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251048
+  name = EVTOPTB251001
   ENT = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -10774,7 +10774,7 @@ country_event = {
 country_event = {
  id = 251049
  title = EVTNAME251049
- desc = EVTDESC251049
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -10833,7 +10833,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251049
+  name = EVTOPTA251001
   create_vassal = LOS
   diplomatic_influence = {
    who = LOS
@@ -10848,7 +10848,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251049
+  name = EVTOPTB251001
   LOS = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -10975,7 +10975,7 @@ country_event = {
 country_event = {
  id = 251050
  title = EVTNAME251050
- desc = EVTDESC251050
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -11034,7 +11034,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251050
+  name = EVTOPTA251001
   create_vassal = OAX
   diplomatic_influence = {
    who = OAX
@@ -11049,7 +11049,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251050
+  name = EVTOPTB251001
   OAX = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -11176,7 +11176,7 @@ country_event = {
 country_event = {
  id = 251051
  title = EVTNAME251051
- desc = EVTDESC251051
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -11235,7 +11235,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251051
+  name = EVTOPTA251001
   create_vassal = RGR
   diplomatic_influence = {
    who = RGR
@@ -11250,7 +11250,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251051
+  name = EVTOPTB251001
   RGR = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -11377,7 +11377,7 @@ country_event = {
 country_event = {
  id = 251052
  title = EVTNAME251052
- desc = EVTDESC251052
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -11436,7 +11436,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251052
+  name = EVTOPTA251001
   create_vassal = RGS
   diplomatic_influence = {
    who = RGS
@@ -11451,7 +11451,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251052
+  name = EVTOPTB251001
   RGS = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -11578,7 +11578,7 @@ country_event = {
 country_event = {
  id = 251053
  title = EVTNAME251053
- desc = EVTDESC251053
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -11637,7 +11637,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251053
+  name = EVTOPTA251001
   create_vassal = SON
   diplomatic_influence = {
    who = SON
@@ -11652,7 +11652,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251053
+  name = EVTOPTB251001
   SON = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -11779,7 +11779,7 @@ country_event = {
 country_event = {
  id = 251054
  title = EVTNAME251054
- desc = EVTDESC251054
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -11837,7 +11837,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251054
+  name = EVTOPTA251001
   create_vassal = TRS
   diplomatic_influence = {
    who = TRS
@@ -11852,7 +11852,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251054
+  name = EVTOPTB251001
   TRS = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -11979,7 +11979,7 @@ country_event = {
 country_event = {
  id = 251055
  title = EVTNAME251055
- desc = EVTDESC251055
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -12038,7 +12038,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251055
+  name = EVTOPTA251001
   create_vassal = YUC
   diplomatic_influence = {
    who = YUC
@@ -12053,7 +12053,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251055
+  name = EVTOPTB251001
   YUC = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -12180,7 +12180,7 @@ country_event = {
 country_event = {
  id = 251056
  title = EVTNAME251056
- desc = EVTDESC251056
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -12239,7 +12239,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251056
+  name = EVTOPTA251001
   create_vassal = BLZ
   diplomatic_influence = {
    who = BLZ
@@ -12254,7 +12254,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251056
+  name = EVTOPTB251001
   BLZ = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -12381,7 +12381,7 @@ country_event = {
 country_event = {
  id = 251057
  title = EVTNAME251057
- desc = EVTDESC251057
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -12440,7 +12440,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251057
+  name = EVTOPTA251001
   create_vassal = DAK
   diplomatic_influence = {
    who = DAK
@@ -12455,7 +12455,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251057
+  name = EVTOPTB251001
   DAK = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -12582,7 +12582,7 @@ country_event = {
 country_event = {
  id = 251058
  title = EVTNAME251058
- desc = EVTDESC251058
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -12640,7 +12640,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251058
+  name = EVTOPTA251001
   create_vassal = GRN
   diplomatic_influence = {
    who = GRN
@@ -12655,7 +12655,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251058
+  name = EVTOPTB251001
   GRN = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -12782,7 +12782,7 @@ country_event = {
 country_event = {
  id = 251059
  title = EVTNAME251059
- desc = EVTDESC251059
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -12841,7 +12841,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251059
+  name = EVTOPTA251001
   create_vassal = JAM
   diplomatic_influence = {
    who = JAM
@@ -12856,7 +12856,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251059
+  name = EVTOPTB251001
   JAM = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -12983,7 +12983,7 @@ country_event = {
 country_event = {
  id = 251060
  title = EVTNAME251060
- desc = EVTDESC251060
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -13042,7 +13042,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251060
+  name = EVTOPTA251001
   create_vassal = PRI
   diplomatic_influence = {
    who = PRI
@@ -13057,7 +13057,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251060
+  name = EVTOPTB251001
   PRI = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -13184,7 +13184,7 @@ country_event = {
 country_event = {
  id = 251061
  title = EVTNAME251061
- desc = EVTDESC251061
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -13243,7 +13243,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251061
+  name = EVTOPTA251001
   create_vassal = TTB
   diplomatic_influence = {
    who = TTB
@@ -13258,7 +13258,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251061
+  name = EVTOPTB251001
   TTB = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -13385,7 +13385,7 @@ country_event = {
 country_event = {
  id = 251062
  title = EVTNAME251062
- desc = EVTDESC251062
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -13444,7 +13444,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251062
+  name = EVTOPTA251001
   create_vassal = UIL
   diplomatic_influence = {
    who = UIL
@@ -13459,7 +13459,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251062
+  name = EVTOPTB251001
   UIL = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -13586,7 +13586,7 @@ country_event = {
 country_event = {
  id = 251063
  title = EVTNAME251063
- desc = EVTDESC251063
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -13645,7 +13645,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251063
+  name = EVTOPTA251001
   create_vassal = UNB
   diplomatic_influence = {
    who = UNB
@@ -13660,7 +13660,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251063
+  name = EVTOPTB251001
   UNB = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -13787,7 +13787,7 @@ country_event = {
 country_event = {
  id = 251064
  title = EVTNAME251064
- desc = EVTDESC251064
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -13846,7 +13846,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251064
+  name = EVTOPTA251001
   create_vassal = UNM
   diplomatic_influence = {
    who = UNM
@@ -13861,7 +13861,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251064
+  name = EVTOPTB251001
   UNM = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -13988,7 +13988,7 @@ country_event = {
 country_event = {
  id = 251065
  title = EVTNAME251065
- desc = EVTDESC251065
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -14047,7 +14047,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251065
+  name = EVTOPTA251001
   create_vassal = UOR
   diplomatic_influence = {
    who = UOR
@@ -14062,7 +14062,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251065
+  name = EVTOPTB251001
   UOR = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -14189,7 +14189,7 @@ country_event = {
 country_event = {
  id = 251066
  title = EVTNAME251066
- desc = EVTDESC251066
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -14250,7 +14250,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251066
+  name = EVTOPTA251001
   create_vassal = ORA
   diplomatic_influence = {
    who = ORA
@@ -14265,7 +14265,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251066
+  name = EVTOPTB251001
   ORA = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -14392,7 +14392,7 @@ country_event = {
 country_event = {
  id = 251067
  title = EVTNAME251067
- desc = EVTDESC251067
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -14453,7 +14453,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251067
+  name = EVTOPTA251001
   create_vassal = TRN
   diplomatic_influence = {
    who = TRN
@@ -14468,7 +14468,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251067
+  name = EVTOPTB251001
   TRN = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -14595,7 +14595,7 @@ country_event = {
 country_event = {
  id = 251068
  title = EVTNAME251068
- desc = EVTDESC251068
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -14656,7 +14656,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251068
+  name = EVTOPTA251001
   create_vassal = NAL
   diplomatic_influence = {
    who = NAL
@@ -14671,7 +14671,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251068
+  name = EVTOPTB251001
   NAL = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -14798,7 +14798,7 @@ country_event = {
 country_event = {
  id = 251069
  title = EVTNAME251069
- desc = EVTDESC251069
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -14857,7 +14857,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251069
+  name = EVTOPTA251001
   create_vassal = SUR
   diplomatic_influence = {
    who = SUR
@@ -14872,7 +14872,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251069
+  name = EVTOPTB251001
   SUR = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -14999,7 +14999,7 @@ country_event = {
 country_event = {
  id = 251070
  title = EVTNAME251070
- desc = EVTDESC251070
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -15058,7 +15058,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251070
+  name = EVTOPTA251001
   create_vassal = CAY
   diplomatic_influence = {
    who = CAY
@@ -15073,7 +15073,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251070
+  name = EVTOPTB251001
   CAY = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -15200,7 +15200,7 @@ country_event = {
 country_event = {
  id = 251071
  title = EVTNAME251071
- desc = EVTDESC251071
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -15259,7 +15259,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251071
+  name = EVTOPTA251001
   create_vassal = HAW
   diplomatic_influence = {
    who = HAW
@@ -15274,7 +15274,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251071
+  name = EVTOPTB251001
   HAW = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -15401,7 +15401,7 @@ country_event = {
 country_event = {
  id = 251072
  title = EVTNAME251072
- desc = EVTDESC251072
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -15460,7 +15460,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251072
+  name = EVTOPTA251001
   create_vassal = BHM
   diplomatic_influence = {
    who = BHM
@@ -15475,7 +15475,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251072
+  name = EVTOPTB251001
   BHM = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -15602,7 +15602,7 @@ country_event = {
 country_event = {
  id = 251073
  title = EVTNAME251073
- desc = EVTDESC251073
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -15661,7 +15661,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251073
+  name = EVTOPTA251001
   create_vassal = AGU
   diplomatic_influence = {
    who = AGU
@@ -15676,7 +15676,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251073
+  name = EVTOPTB251001
   AGU = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -15803,7 +15803,7 @@ country_event = {
 country_event = {
  id = 251074
  title = EVTNAME251074
- desc = EVTDESC251074
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -15862,7 +15862,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251074
+  name = EVTOPTA251001
   create_vassal = ATB
   diplomatic_influence = {
    who = ATB
@@ -15877,7 +15877,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251074
+  name = EVTOPTB251001
   ATB = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -16004,7 +16004,7 @@ country_event = {
 country_event = {
  id = 251075
  title = EVTNAME251075
- desc = EVTDESC251075
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -16063,7 +16063,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251075
+  name = EVTOPTA251001
   create_vassal = SKN
   diplomatic_influence = {
    who = SKN
@@ -16078,7 +16078,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251075
+  name = EVTOPTB251001
   SKN = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -16205,7 +16205,7 @@ country_event = {
 country_event = {
  id = 251076
  title = EVTNAME251076
- desc = EVTDESC251076
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -16264,7 +16264,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251076
+  name = EVTOPTA251001
   create_vassal = MNR
   diplomatic_influence = {
    who = MNR
@@ -16279,7 +16279,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251076
+  name = EVTOPTB251001
   MNR = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -16406,7 +16406,7 @@ country_event = {
 country_event = {
  id = 251077
  title = EVTNAME251077
- desc = EVTDESC251077
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -16465,7 +16465,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251077
+  name = EVTOPTA251001
   create_vassal = GDL
   diplomatic_influence = {
    who = GDL
@@ -16480,7 +16480,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251077
+  name = EVTOPTB251001
   GDL = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -16607,7 +16607,7 @@ country_event = {
 country_event = {
  id = 251078
  title = EVTNAME251078
- desc = EVTDESC251078
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -16666,7 +16666,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251078
+  name = EVTOPTA251001
   create_vassal = DMN
   diplomatic_influence = {
    who = DMN
@@ -16681,7 +16681,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251078
+  name = EVTOPTB251001
   DMN = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -16808,7 +16808,7 @@ country_event = {
 country_event = {
  id = 251079
  title = EVTNAME251079
- desc = EVTDESC251079
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -16867,7 +16867,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251079
+  name = EVTOPTA251001
   create_vassal = MTQ
   diplomatic_influence = {
    who = MTQ
@@ -16882,7 +16882,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251079
+  name = EVTOPTB251001
   MTQ = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -17009,7 +17009,7 @@ country_event = {
 country_event = {
  id = 251080
  title = EVTNAME251080
- desc = EVTDESC251080
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -17068,7 +17068,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251080
+  name = EVTOPTA251001
   create_vassal = STL
   diplomatic_influence = {
    who = STL
@@ -17083,7 +17083,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251080
+  name = EVTOPTB251001
   STL = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -17210,7 +17210,7 @@ country_event = {
 country_event = {
  id = 251081
  title = EVTNAME251081
- desc = EVTDESC251081
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -17269,7 +17269,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251081
+  name = EVTOPTA251001
   create_vassal = BBD
   diplomatic_influence = {
    who = BBD
@@ -17284,7 +17284,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251081
+  name = EVTOPTB251001
   BBD = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -17411,7 +17411,7 @@ country_event = {
 country_event = {
  id = 251082
  title = EVTNAME251082
- desc = EVTDESC251082
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -17470,7 +17470,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251082
+  name = EVTOPTA251001
   create_vassal = GRD
   diplomatic_influence = {
    who = GRD
@@ -17485,7 +17485,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251082
+  name = EVTOPTB251001
   GRD = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -17612,7 +17612,7 @@ country_event = {
 country_event = {
  id = 251083
  title = EVTNAME251083
- desc = EVTDESC251083
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -17671,7 +17671,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251083
+  name = EVTOPTA251001
   create_vassal = CUR
   diplomatic_influence = {
    who = CUR
@@ -17686,7 +17686,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251083
+  name = EVTOPTB251001
   CUR = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -17813,7 +17813,7 @@ country_event = {
 country_event = {
  id = 251084
  title = EVTNAME251084
- desc = EVTDESC251084
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -17872,7 +17872,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251084
+  name = EVTOPTA251001
   create_vassal = STV
   diplomatic_influence = {
    who = STV
@@ -17887,7 +17887,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251084
+  name = EVTOPTB251001
   STV = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -18014,7 +18014,7 @@ country_event = {
 country_event = {
  id = 251085
  title = EVTNAME251085
- desc = EVTDESC251085
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -18073,7 +18073,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251085
+  name = EVTOPTA251001
   create_vassal = BUE
   diplomatic_influence = {
    who = BUE
@@ -18088,7 +18088,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251085
+  name = EVTOPTB251001
   BUE = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -18215,7 +18215,7 @@ country_event = {
 country_event = {
  id = 251086
  title = EVTNAME251086
- desc = EVTDESC251086
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -18274,7 +18274,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251086
+  name = EVTOPTA251001
   create_vassal = ALD
   diplomatic_influence = {
    who = ALD
@@ -18289,7 +18289,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251086
+  name = EVTOPTB251001
   ALD = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -18416,7 +18416,7 @@ country_event = {
 country_event = {
  id = 251087
  title = EVTNAME251087
- desc = EVTDESC251087
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -18475,7 +18475,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251087
+  name = EVTOPTA251001
   create_vassal = MOR
   diplomatic_influence = {
    who = MOR
@@ -18490,7 +18490,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251087
+  name = EVTOPTB251001
   MOR = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -18617,7 +18617,7 @@ country_event = {
 country_event = {
  id = 251088
  title = EVTNAME251088
- desc = EVTDESC251088
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -18676,7 +18676,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251088
+  name = EVTOPTA251001
   create_vassal = WSH
   diplomatic_influence = {
    who = WSH
@@ -18691,7 +18691,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251088
+  name = EVTOPTB251001
   WSH = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -18818,7 +18818,7 @@ country_event = {
 country_event = {
  id = 251089
  title = EVTNAME251089
- desc = EVTDESC251089
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -18877,7 +18877,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251089
+  name = EVTOPTA251001
   create_vassal = TUN
   diplomatic_influence = {
    who = TUN
@@ -18892,7 +18892,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251089
+  name = EVTOPTB251001
   TUN = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -19019,7 +19019,7 @@ country_event = {
 country_event = {
  id = 251090
  title = EVTNAME251090
- desc = EVTDESC251090
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -19078,7 +19078,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251090
+  name = EVTOPTA251001
   create_vassal = LBY
   diplomatic_influence = {
    who = LBY
@@ -19093,7 +19093,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251090
+  name = EVTOPTB251001
   LBY = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -19220,7 +19220,7 @@ country_event = {
 country_event = {
  id = 251091
  title = EVTNAME251091
- desc = EVTDESC251091
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -19279,7 +19279,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251091
+  name = EVTOPTA251001
   create_vassal = EGY
   diplomatic_influence = {
    who = EGY
@@ -19294,7 +19294,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251091
+  name = EVTOPTB251001
   EGY = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -19421,7 +19421,7 @@ country_event = {
 country_event = {
  id = 251092
  title = EVTNAME251092
- desc = EVTDESC251092
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -19480,7 +19480,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251092
+  name = EVTOPTA251001
   create_vassal = ETH
   diplomatic_influence = {
    who = ETH
@@ -19495,7 +19495,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251092
+  name = EVTOPTB251001
   ETH = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -19622,7 +19622,7 @@ country_event = {
 country_event = {
  id = 251093
  title = EVTNAME251093
- desc = EVTDESC251093
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -19681,7 +19681,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251093
+  name = EVTOPTA251001
   create_vassal = ERI
   diplomatic_influence = {
    who = ERI
@@ -19696,7 +19696,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251093
+  name = EVTOPTB251001
   ERI = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -19823,7 +19823,7 @@ country_event = {
 country_event = {
  id = 251094
  title = EVTNAME251094
- desc = EVTDESC251094
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -19882,7 +19882,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251094
+  name = EVTOPTA251001
   create_vassal = TRZ
   diplomatic_influence = {
    who = TRZ
@@ -19897,7 +19897,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251094
+  name = EVTOPTB251001
   TRZ = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -20024,7 +20024,7 @@ country_event = {
 country_event = {
  id = 251095
  title = EVTNAME251095
- desc = EVTDESC251095
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -20083,7 +20083,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251095
+  name = EVTOPTA251001
   create_vassal = MLI
   diplomatic_influence = {
    who = MLI
@@ -20098,7 +20098,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251095
+  name = EVTOPTB251001
   MLI = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -20225,7 +20225,7 @@ country_event = {
 country_event = {
  id = 251096
  title = EVTNAME251096
- desc = EVTDESC251096
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -20284,7 +20284,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251096
+  name = EVTOPTA251001
   create_vassal = SNG
   diplomatic_influence = {
    who = SNG
@@ -20299,7 +20299,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251096
+  name = EVTOPTB251001
   SNG = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -20426,7 +20426,7 @@ country_event = {
 country_event = {
  id = 251097
  title = EVTNAME251097
- desc = EVTDESC251097
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -20485,7 +20485,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251097
+  name = EVTOPTA251001
   create_vassal = NIG
   diplomatic_influence = {
    who = NIG
@@ -20500,7 +20500,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251097
+  name = EVTOPTB251001
   NIG = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -20627,7 +20627,7 @@ country_event = {
 country_event = {
  id = 251098
  title = EVTNAME251098
- desc = EVTDESC251098
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -20686,7 +20686,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251098
+  name = EVTOPTA251001
   create_vassal = BKF
   diplomatic_influence = {
    who = BKF
@@ -20701,7 +20701,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251098
+  name = EVTOPTB251001
   BKF = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -20828,7 +20828,7 @@ country_event = {
 country_event = {
  id = 251099
  title = EVTNAME251099
- desc = EVTDESC251099
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -20887,7 +20887,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251099
+  name = EVTOPTA251001
   create_vassal = TOG
   diplomatic_influence = {
    who = TOG
@@ -20902,7 +20902,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251099
+  name = EVTOPTB251001
   TOG = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -21029,7 +21029,7 @@ country_event = {
 country_event = {
  id = 251100
  title = EVTNAME251100
- desc = EVTDESC251100
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -21088,7 +21088,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251100
+  name = EVTOPTA251001
   create_vassal = DAH
   diplomatic_influence = {
    who = DAH
@@ -21103,7 +21103,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251100
+  name = EVTOPTB251001
   DAH = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -21230,7 +21230,7 @@ country_event = {
 country_event = {
  id = 251101
  title = EVTNAME251101
- desc = EVTDESC251101
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -21289,7 +21289,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251101
+  name = EVTOPTA251001
   create_vassal = NGR
   diplomatic_influence = {
    who = NGR
@@ -21304,7 +21304,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251101
+  name = EVTOPTB251001
   NGR = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -21431,7 +21431,7 @@ country_event = {
 country_event = {
  id = 251102
  title = EVTNAME251102
- desc = EVTDESC251102
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -21490,7 +21490,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251102
+  name = EVTOPTA251001
   create_vassal = BUG
   diplomatic_influence = {
    who = BUG
@@ -21505,7 +21505,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251102
+  name = EVTOPTB251001
   BUG = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -21632,7 +21632,7 @@ country_event = {
 country_event = {
  id = 251103
  title = EVTNAME251103
- desc = EVTDESC251103
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -21691,7 +21691,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251103
+  name = EVTOPTA251001
   create_vassal = KNY
   diplomatic_influence = {
    who = KNY
@@ -21706,7 +21706,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251103
+  name = EVTOPTB251001
   KNY = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -21833,7 +21833,7 @@ country_event = {
 country_event = {
  id = 251104
  title = EVTNAME251104
- desc = EVTDESC251104
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -21892,7 +21892,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251104
+  name = EVTOPTA251001
   create_vassal = ZBW
   diplomatic_influence = {
    who = ZBW
@@ -21907,7 +21907,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251104
+  name = EVTOPTB251001
   ZBW = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -22034,7 +22034,7 @@ country_event = {
 country_event = {
  id = 251105
  title = EVTNAME251105
- desc = EVTDESC251105
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -22093,7 +22093,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251105
+  name = EVTOPTA251001
   create_vassal = ZAM
   diplomatic_influence = {
    who = ZAM
@@ -22108,7 +22108,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251105
+  name = EVTOPTB251001
   ZAM = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -22235,7 +22235,7 @@ country_event = {
 country_event = {
  id = 251106
  title = EVTNAME251106
- desc = EVTDESC251106
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -22294,7 +22294,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251106
+  name = EVTOPTA251001
   create_vassal = GNE
   diplomatic_influence = {
    who = GNE
@@ -22309,7 +22309,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251106
+  name = EVTOPTB251001
   GNE = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -22436,7 +22436,7 @@ country_event = {
 country_event = {
  id = 251107
  title = EVTNAME251107
- desc = EVTDESC251107
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -22495,7 +22495,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251107
+  name = EVTOPTA251001
   create_vassal = SLE
   diplomatic_influence = {
    who = SLE
@@ -22510,7 +22510,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251107
+  name = EVTOPTB251001
   SLE = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -22637,7 +22637,7 @@ country_event = {
 country_event = {
  id = 251108
  title = EVTNAME251108
- desc = EVTDESC251108
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -22696,7 +22696,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251108
+  name = EVTOPTA251001
   create_vassal = IVC
   diplomatic_influence = {
    who = IVC
@@ -22711,7 +22711,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251108
+  name = EVTOPTB251001
   IVC = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -22838,7 +22838,7 @@ country_event = {
 country_event = {
  id = 251109
  title = EVTNAME251109
- desc = EVTDESC251109
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -22897,7 +22897,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251109
+  name = EVTOPTA251001
   create_vassal = GHN
   diplomatic_influence = {
    who = GHN
@@ -22912,7 +22912,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251109
+  name = EVTOPTB251001
   GHN = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -23039,7 +23039,7 @@ country_event = {
 country_event = {
  id = 251110
  title = EVTNAME251110
- desc = EVTDESC251110
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -23098,7 +23098,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251110
+  name = EVTOPTA251001
   create_vassal = SUD
   diplomatic_influence = {
    who = SUD
@@ -23113,7 +23113,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251110
+  name = EVTOPTB251001
   SUD = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -23240,7 +23240,7 @@ country_event = {
 country_event = {
  id = 251111
  title = EVTNAME251111
- desc = EVTDESC251111
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -23299,7 +23299,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251111
+  name = EVTOPTA251001
   create_vassal = SSU
   diplomatic_influence = {
    who = SSU
@@ -23314,7 +23314,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251111
+  name = EVTOPTB251001
   SSU = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -23441,7 +23441,7 @@ country_event = {
 country_event = {
  id = 251112
  title = EVTNAME251112
- desc = EVTDESC251112
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -23500,7 +23500,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251112
+  name = EVTOPTA251001
   create_vassal = SOM
   diplomatic_influence = {
    who = SOM
@@ -23515,7 +23515,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251112
+  name = EVTOPTB251001
   SOM = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -23642,7 +23642,7 @@ country_event = {
 country_event = {
  id = 251113
  title = EVTNAME251113
- desc = EVTDESC251113
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -23701,7 +23701,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251113
+  name = EVTOPTA251001
   create_vassal = CAR
   diplomatic_influence = {
    who = CAR
@@ -23716,7 +23716,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251113
+  name = EVTOPTB251001
   CAR = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -23843,7 +23843,7 @@ country_event = {
 country_event = {
  id = 251114
  title = EVTNAME251114
- desc = EVTDESC251114
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -23902,7 +23902,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251114
+  name = EVTOPTA251001
   create_vassal = CHD
   diplomatic_influence = {
    who = CHD
@@ -23917,7 +23917,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251114
+  name = EVTOPTB251001
   CHD = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -24044,7 +24044,7 @@ country_event = {
 country_event = {
  id = 251115
  title = EVTNAME251115
- desc = EVTDESC251115
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -24103,7 +24103,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251115
+  name = EVTOPTA251001
   create_vassal = CMR
   diplomatic_influence = {
    who = CMR
@@ -24118,7 +24118,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251115
+  name = EVTOPTB251001
   CMR = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -24245,7 +24245,7 @@ country_event = {
 country_event = {
  id = 251116
  title = EVTNAME251116
- desc = EVTDESC251116
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -24304,7 +24304,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251116
+  name = EVTOPTA251001
   create_vassal = CGO
   diplomatic_influence = {
    who = CGO
@@ -24319,7 +24319,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251116
+  name = EVTOPTB251001
   CGO = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -24446,7 +24446,7 @@ country_event = {
 country_event = {
  id = 251117
  title = EVTNAME251117
- desc = EVTDESC251117
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -24505,7 +24505,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251117
+  name = EVTOPTA251001
   create_vassal = GAB
   diplomatic_influence = {
    who = GAB
@@ -24520,7 +24520,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251117
+  name = EVTOPTB251001
   GAB = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -24647,7 +24647,7 @@ country_event = {
 country_event = {
  id = 251118
  title = EVTNAME251118
- desc = EVTDESC251118
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -24706,7 +24706,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251118
+  name = EVTOPTA251001
   create_vassal = TNZ
   diplomatic_influence = {
    who = TNZ
@@ -24721,7 +24721,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251118
+  name = EVTOPTB251001
   TNZ = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -24848,7 +24848,7 @@ country_event = {
 country_event = {
  id = 251119
  title = EVTNAME251119
- desc = EVTDESC251119
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -24907,7 +24907,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251119
+  name = EVTOPTA251001
   create_vassal = ANG
   diplomatic_influence = {
    who = ANG
@@ -24922,7 +24922,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251119
+  name = EVTOPTB251001
   ANG = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -25049,7 +25049,7 @@ country_event = {
 country_event = {
  id = 251120
  title = EVTNAME251120
- desc = EVTDESC251120
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -25108,7 +25108,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251120
+  name = EVTOPTA251001
   create_vassal = NMB
   diplomatic_influence = {
    who = NMB
@@ -25123,7 +25123,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251120
+  name = EVTOPTB251001
   NMB = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -25250,7 +25250,7 @@ country_event = {
 country_event = {
  id = 251121
  title = EVTNAME251121
- desc = EVTDESC251121
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -25309,7 +25309,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251121
+  name = EVTOPTA251001
   create_vassal = TSW
   diplomatic_influence = {
    who = TSW
@@ -25324,7 +25324,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251121
+  name = EVTOPTB251001
   TSW = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -25451,7 +25451,7 @@ country_event = {
 country_event = {
  id = 251122
  title = EVTNAME251122
- desc = EVTDESC251122
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -25510,7 +25510,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251122
+  name = EVTOPTA251001
   create_vassal = MOZ
   diplomatic_influence = {
    who = MOZ
@@ -25525,7 +25525,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251122
+  name = EVTOPTB251001
   MOZ = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -25652,7 +25652,7 @@ country_event = {
 country_event = {
  id = 251123
  title = EVTNAME251123
- desc = EVTDESC251123
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -25711,7 +25711,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251123
+  name = EVTOPTA251001
   create_vassal = GBI
   diplomatic_influence = {
    who = GBI
@@ -25726,7 +25726,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251123
+  name = EVTOPTB251001
   GBI = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -25853,7 +25853,7 @@ country_event = {
 country_event = {
  id = 251124
  title = EVTNAME251124
- desc = EVTDESC251124
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -25912,7 +25912,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251124
+  name = EVTOPTA251001
   create_vassal = GMB
   diplomatic_influence = {
    who = GMB
@@ -25927,7 +25927,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251124
+  name = EVTOPTB251001
   GMB = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -26054,7 +26054,7 @@ country_event = {
 country_event = {
  id = 251125
  title = EVTNAME251125
- desc = EVTDESC251125
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -26113,7 +26113,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251125
+  name = EVTOPTA251001
   create_vassal = RWA
   diplomatic_influence = {
    who = RWA
@@ -26128,7 +26128,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251125
+  name = EVTOPTB251001
   RWA = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -26255,7 +26255,7 @@ country_event = {
 country_event = {
  id = 251126
  title = EVTNAME251126
- desc = EVTDESC251126
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -26314,7 +26314,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251126
+  name = EVTOPTA251001
   create_vassal = BRD
   diplomatic_influence = {
    who = BRD
@@ -26329,7 +26329,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251126
+  name = EVTOPTB251001
   BRD = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -26456,7 +26456,7 @@ country_event = {
 country_event = {
  id = 251127
  title = EVTNAME251127
- desc = EVTDESC251127
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -26515,7 +26515,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251127
+  name = EVTOPTA251001
   create_vassal = SUA
   diplomatic_influence = {
    who = SUA
@@ -26530,7 +26530,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251127
+  name = EVTOPTB251001
   SUA = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -26657,7 +26657,7 @@ country_event = {
 country_event = {
  id = 251128
  title = EVTNAME251128
- desc = EVTDESC251128
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -26716,7 +26716,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251128
+  name = EVTOPTA251001
   create_vassal = BSH
   diplomatic_influence = {
    who = BSH
@@ -26731,7 +26731,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251128
+  name = EVTOPTB251001
   BSH = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -26858,7 +26858,7 @@ country_event = {
 country_event = {
  id = 251129
  title = EVTNAME251129
- desc = EVTDESC251129
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -26917,7 +26917,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251129
+  name = EVTOPTA251001
   create_vassal = CPV
   diplomatic_influence = {
    who = CPV
@@ -26932,7 +26932,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251129
+  name = EVTOPTB251001
   CPV = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -27059,7 +27059,7 @@ country_event = {
 country_event = {
  id = 251130
  title = EVTNAME251130
- desc = EVTDESC251130
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -27118,7 +27118,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251130
+  name = EVTOPTA251001
   create_vassal = EQG
   diplomatic_influence = {
    who = EQG
@@ -27133,7 +27133,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251130
+  name = EVTOPTB251001
   EQG = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -27260,7 +27260,7 @@ country_event = {
 country_event = {
  id = 251131
  title = EVTNAME251131
- desc = EVTDESC251131
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -27319,7 +27319,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251131
+  name = EVTOPTA251001
   create_vassal = SAO
   diplomatic_influence = {
    who = SAO
@@ -27334,7 +27334,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251131
+  name = EVTOPTB251001
   SAO = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -27461,7 +27461,7 @@ country_event = {
 country_event = {
  id = 251132
  title = EVTNAME251132
- desc = EVTDESC251132
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -27520,7 +27520,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251132
+  name = EVTOPTA251001
   create_vassal = DJI
   diplomatic_influence = {
    who = DJI
@@ -27535,7 +27535,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251132
+  name = EVTOPTB251001
   DJI = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -27662,7 +27662,7 @@ country_event = {
 country_event = {
  id = 251133
  title = EVTNAME251133
- desc = EVTDESC251133
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -27721,7 +27721,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251133
+  name = EVTOPTA251001
   create_vassal = KOM
   diplomatic_influence = {
    who = KOM
@@ -27736,7 +27736,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251133
+  name = EVTOPTB251001
   KOM = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -27863,7 +27863,7 @@ country_event = {
 country_event = {
  id = 251134
  title = EVTNAME251134
- desc = EVTDESC251134
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -27922,7 +27922,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251134
+  name = EVTOPTA251001
   create_vassal = MAU
   diplomatic_influence = {
    who = MAU
@@ -27937,7 +27937,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251134
+  name = EVTOPTB251001
   MAU = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -28064,7 +28064,7 @@ country_event = {
 country_event = {
  id = 251135
  title = EVTNAME251135
- desc = EVTDESC251135
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -28123,7 +28123,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251135
+  name = EVTOPTA251001
   create_vassal = SEY
   diplomatic_influence = {
    who = SEY
@@ -28138,7 +28138,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251135
+  name = EVTOPTB251001
   SEY = { country_event = { id = 251000 days = 1 }
   }
   relation = {
@@ -28265,7 +28265,7 @@ country_event = {
 country_event = {
  id = 251136
  title = EVTNAME251136
- desc = EVTDESC251136
+ desc = EVTDESC251001
  major = yes
  picture = Riot
  trigger = {
@@ -28324,7 +28324,7 @@ country_event = {
   }
  }
  option = {
-  name = EVTOPTA251136
+  name = EVTOPTA251001
   create_vassal = MLW
   diplomatic_influence = {
    who = MLW
@@ -28339,7 +28339,7 @@ country_event = {
   }
  }
     option = {
-  name = EVTOPTB251136
+  name = EVTOPTB251001
   MLW = { country_event = { id = 251000 days = 1 }
   }
   relation = {
