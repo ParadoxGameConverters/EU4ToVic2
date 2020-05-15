@@ -105,6 +105,7 @@ file(GLOB EU4_TRADEGOODS_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/TradeGoods/*.cp
 set(COMMON_SOURCES "../commonItems/CommonFunctions.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/Color.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/Date.cpp")
+set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/GameVersion.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/LinuxUtils.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/Log.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/Parser.cpp")
