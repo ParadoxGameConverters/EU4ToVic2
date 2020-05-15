@@ -24,7 +24,7 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConf
 		auto possibleModPath = getModPath(usedMod);
 		if (possibleModPath)
 		{
-			if (!Utils::doesFolderExist(*possibleModPath) && !Utils::DoesFileExist(*possibleModPath))
+			if (!Utils::DoesFolderExist(*possibleModPath) && !Utils::DoesFileExist(*possibleModPath))
 				throw std::invalid_argument(usedMod + " could not be found in the specified mod directory " + \
 					"- a valid mod directory must be specified. Tried " + *possibleModPath);
 
@@ -41,7 +41,7 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConf
 void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 {
 	const auto EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();
-	if (!Utils::doesFolderExist(EU4DocumentsLoc))
+	if (!Utils::DoesFolderExist(EU4DocumentsLoc))
 		throw std::invalid_argument("No Europa Universalis 4 documents directory was specified in configuration.txt, or the path was invalid!");
 
 	LOG(LogLevel::Info) << "\tEU4 Documents directory is " << EU4DocumentsLoc;
@@ -51,17 +51,16 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration)
 {
 	const auto steamWorkshopPath = theConfiguration.getSteamWorkshopPath();
-	if (!Utils::doesFolderExist(steamWorkshopPath))
+	if (!Utils::DoesFolderExist(steamWorkshopPath))
 		throw std::invalid_argument("No Steam Worksop directory was specified in configuration.txt, or the path was invalid");
 
 	LOG(LogLevel::Info) << "\tSteam Workshop directory is " << steamWorkshopPath;
-	std::set<std::string> subfolders;
-	Utils::GetAllSubfolders(steamWorkshopPath, subfolders);
+	auto subfolders = Utils::GetAllSubfolders(steamWorkshopPath);
 	for (const auto& subfolder: subfolders)
 	{
 		const auto path = steamWorkshopPath + "/" + subfolder;
 		const auto descriptorFilename = path + "/descriptor.mod";
-		if (Utils::doesFolderExist(path) && Utils::DoesFileExist(descriptorFilename))
+		if (Utils::DoesFolderExist(path) && Utils::DoesFileExist(descriptorFilename))
 		{
 			std::ifstream modFile(fs::u8path(path + "/descriptor.mod"));
 			Mod theMod(modFile);
@@ -81,7 +80,7 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 {
 	const auto CK2ExportLoc = theConfiguration.getCK2ExportPath();
-	if (!Utils::doesFolderExist(CK2ExportLoc))
+	if (!Utils::DoesFolderExist(CK2ExportLoc))
 	{
 		LOG(LogLevel::Warning) << "No Crusader Kings 2 mod directory was specified in configuration.txt," \
 			" or the path was invalid - this will cause problems with CK2 converted saves";
@@ -96,8 +95,7 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 
 void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 {
-	std::set<std::string> filenames;
-	Utils::GetAllFilesInFolder(searchDirectory + "/mod", filenames);
+	auto filenames = Utils::GetAllFilesInFolder(searchDirectory + "/mod");
 	for (const auto& filename: filenames)
 	{
 		const auto pos = filename.find_last_of('.');
@@ -116,11 +114,11 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						const auto trimmedFilename = filename.substr(0, pos);
 
 						std::string recordDirectory;
-						if (Utils::doesFolderExist(theMod.getPath()))
+						if (Utils::DoesFolderExist(theMod.getPath()))
 						{
 							recordDirectory = theMod.getPath();
 						}
-						else if (Utils::doesFolderExist(searchDirectory + "/" + theMod.getPath()))
+						else if (Utils::DoesFolderExist(searchDirectory + "/" + theMod.getPath()))
 						{
 							recordDirectory = searchDirectory + "/" + theMod.getPath();
 						}
@@ -197,9 +195,9 @@ std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) con
 			uncompressedName = uncompressedName.substr(pos + 1, uncompressedName.size());
 		}
 
-		if (!Utils::doesFolderExist("mods/")) fs::create_directory("mods/");		
+		if (!Utils::DoesFolderExist("mods/")) fs::create_directory("mods/");		
 
-		if (!Utils::doesFolderExist("mods/" + uncompressedName))
+		if (!Utils::DoesFolderExist("mods/" + uncompressedName))
 		{
 			LOG(LogLevel::Info) << "\t\tUncompressing: " << archivePath;			
 			if (!extractZip(archivePath, "mods/" + uncompressedName))
@@ -212,7 +210,7 @@ std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) con
 			}
 		}
 
-		if (Utils::doesFolderExist("mods/" + uncompressedName))
+		if (Utils::DoesFolderExist("mods/" + uncompressedName))
 		{
 			return "mods/" + uncompressedName;
 		}

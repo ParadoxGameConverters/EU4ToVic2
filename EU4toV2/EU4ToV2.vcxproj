@@ -167,11 +167,13 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\commonItems\CardinalToOrdinal.cpp" />
     <ClCompile Include="..\commonItems\Color.cpp" />
+    <ClCompile Include="..\commonItems\CommonFunctions.cpp" />
     <ClCompile Include="..\commonItems\Date.cpp" />
+    <ClCompile Include="..\commonItems\GameVersion.cpp" />
     <ClCompile Include="..\commonItems\iconvlite.cpp" />
     <ClCompile Include="..\commonItems\Log.cpp" />
+    <ClCompile Include="..\commonItems\OSCommonLayer.cpp" />
     <ClCompile Include="..\commonItems\Parser.cpp" />
     <ClCompile Include="..\commonItems\ParserHelpers.cpp" />
     <ClCompile Include="..\commonItems\StringUtils.cpp" />
@@ -194,7 +196,6 @@
     <ClCompile Include="Source\EU4World\Country\EU4Technology.cpp" />
     <ClCompile Include="Source\EU4World\Diplomacy\EU4Agreement.cpp" />
     <ClCompile Include="Source\EU4World\Diplomacy\EU4Diplomacy.cpp" />
-    <ClCompile Include="Source\EU4World\EU4Version.cpp" />
     <ClCompile Include="Source\EU4World\History\CountryHistory.cpp" />
     <ClCompile Include="Source\EU4World\History\CountryHistoryDate.cpp" />
     <ClCompile Include="Source\EU4World\ID.cpp" />
@@ -358,9 +359,10 @@
     <ClCompile Include="Source\V2World\War\War.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\commonItems\CardinalToOrdinal.h" />
     <ClInclude Include="..\commonItems\Color.h" />
+    <ClInclude Include="..\commonItems\CommonFunctions.h" />
     <ClInclude Include="..\commonItems\Date.h" />
+    <ClInclude Include="..\commonItems\GameVersion.h" />
     <ClInclude Include="..\commonItems\iconvlite.h" />
     <ClInclude Include="..\commonItems\Log.h" />
     <ClInclude Include="..\commonItems\OSCompatibilityLayer.h" />
@@ -385,7 +387,6 @@
     <ClInclude Include="Source\EU4World\Country\EU4Technology.h" />
     <ClInclude Include="Source\EU4World\Diplomacy\EU4Agreement.h" />
     <ClInclude Include="Source\EU4World\Diplomacy\EU4Diplomacy.h" />
-    <ClInclude Include="Source\EU4World\EU4Version.h" />
     <ClInclude Include="Source\EU4World\History\CountryHistory.h" />
     <ClInclude Include="Source\EU4World\History\CountryHistoryDate.h" />
     <ClInclude Include="Source\EU4World\ID.h" />

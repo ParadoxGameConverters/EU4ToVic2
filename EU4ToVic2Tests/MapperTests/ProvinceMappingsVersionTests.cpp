@@ -38,7 +38,7 @@ TEST(Mappers_ProvinceMappingsVersionTests, VersionCanBeSet)
 
 	mappers::ProvinceMappingsVersion theMappingVersion(versionString, input);
 
-	EU4::Version version(versionString);
+	GameVersion version(versionString);
 	ASSERT_EQ(theMappingVersion.getVersion(), version);
 }
 

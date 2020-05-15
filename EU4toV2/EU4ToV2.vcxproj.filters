@@ -10,9 +10,6 @@
     <ClCompile Include="Source\EU4World\Regions\Areas.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\EU4Version.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\ID.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
@@ -535,9 +532,6 @@
     <ClCompile Include="Source\Mappers\AfricaReset\AfricaResetMapper.cpp">
       <Filter>Mappers\AfricaReset</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\CardinalToOrdinal.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
     <ClCompile Include="..\commonItems\Color.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
@@ -562,6 +556,15 @@
     <ClCompile Include="..\commonItems\WinUtils.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
+    <ClCompile Include="..\commonItems\OSCommonLayer.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\CommonFunctions.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\GameVersion.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -571,9 +574,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Areas.h">
       <Filter>EU4World\Regions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\EU4Version.h">
-      <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\ID.h">
       <Filter>EU4World</Filter>
@@ -1058,9 +1058,6 @@
     <ClInclude Include="Source\Mappers\AfricaReset\AfricaResetMapper.h">
       <Filter>Mappers\AfricaReset</Filter>
     </ClInclude>
-    <ClInclude Include="..\commonItems\CardinalToOrdinal.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
     <ClInclude Include="..\commonItems\Color.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
@@ -1083,6 +1080,12 @@
       <Filter>CommonItems</Filter>
     </ClInclude>
     <ClInclude Include="..\commonItems\StringUtils.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\CommonFunctions.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\GameVersion.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
   </ItemGroup>

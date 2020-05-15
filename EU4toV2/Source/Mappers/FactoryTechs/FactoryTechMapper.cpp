@@ -10,8 +10,7 @@ mappers::FactoryTechMapper::FactoryTechMapper()
 	registerKeys();
 	LOG(LogLevel::Info) << "Parsing V2 Factory Techs";
 
-	std::set<std::string> filenames;
-	Utils::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/technologies/", filenames);
+	auto filenames = Utils::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/technologies/");
 	for (const auto& filename : filenames)
 	{
 		parseFile(theConfiguration.getVic2Path() + "/technologies/" + filename);

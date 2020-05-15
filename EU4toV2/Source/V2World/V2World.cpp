@@ -446,13 +446,13 @@ void V2::World::importProvinces()
 std::set<std::string> V2::World::discoverProvinceFilenames()
 {
 	std::set<std::string> provinceFilenames;
-	if (Utils::doesFolderExist("./blankMod/output/history/provinces"))
+	if (Utils::DoesFolderExist("./blankMod/output/history/provinces"))
 	{
-		Utils::GetAllFilesInFolderRecursive("./blankMod/output/history/provinces", provinceFilenames);
+		provinceFilenames = Utils::GetAllFilesInFolderRecursive("./blankMod/output/history/provinces");
 	}
 	if (provinceFilenames.empty())
 	{
-		Utils::GetAllFilesInFolderRecursive(theConfiguration.getVic2Path() + "/history/provinces", provinceFilenames);
+		provinceFilenames = Utils::GetAllFilesInFolderRecursive(theConfiguration.getVic2Path() + "/history/provinces");
 	}
 
 	return provinceFilenames;
@@ -479,8 +479,7 @@ void V2::World::importDefaultPops()
 {
 	totalWorldPopulation = 0;
 
-	std::set<std::string> filenames;
-	Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/", filenames);
+	auto filenames = Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/");
 
 	LOG(LogLevel::Info) << "Parsing minority pops mappings";
 
@@ -1076,7 +1075,7 @@ void V2::World::convertUncivReforms(const EU4::World& sourceWorld, const mappers
 	auto techGroupAlgorithm = CIV_ALGORITHM::newer;
 	double topTech = 0;
 	auto topInstitutions = 0;
-	const auto version18 = EU4::Version("1.18.0");
+	const auto version18 = GameVersion("1.18.0");
 
 	if (sourceWorld.getVersion() >= version18)
 	{
@@ -1274,7 +1273,7 @@ void V2::World::setupPops(const EU4::World& sourceWorld)
 	const auto popWeightRatio = my_totalWorldPopulation / sourceWorld.getTotalProvinceWeights(); // This is relevant only for extreme reshaping.
 
 	CIV_ALGORITHM popAlgorithm;
-	const auto version12 = EU4::Version("1.12.0");
+	const auto version12 = GameVersion("1.12.0");
 	if (sourceWorld.getVersion() >= version12)
 	{
 		popAlgorithm = CIV_ALGORITHM::newer;
@@ -1395,9 +1394,9 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 {
 	fs::create_directory("output");
 	LOG(LogLevel::Info) << "<- Copying Mod Template";
-	Utils::copyFolder("blankMod/output", "output/output");
+	Utils::CopyFolder("blankMod/output", "output/output");
 	LOG(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
-	Utils::renameFolder("output/output", "output/" + theConfiguration.getOutputName());
+	Utils::RenameFolder("output/output", "output/" + theConfiguration.getOutputName());
 	LOG(LogLevel::Info) << "<- Crafting .mod File";
 	createModFile();
 

@@ -2,7 +2,7 @@
 #define EU4_WORLD_H
 
 #include "Diplomacy/EU4Diplomacy.h"
-#include "EU4Version.h"
+#include "GameVersion.h"
 #include "Provinces/Provinces.h"
 #include "Regions/Regions.h"
 #include "Religions/Religions.h"
@@ -86,7 +86,7 @@ namespace EU4
 		std::unique_ptr<Provinces> provinces;
 		std::map<std::string, std::shared_ptr<Country>> theCountries;
 		std::vector<EU4Agreement> diplomacy;
-		std::unique_ptr<Version> version;
+		std::unique_ptr<GameVersion> version;
 		std::string revolutionTargetString;
 		std::map<std::string, mappers::UnitType> unitTypeMap;
 		std::vector<War> wars;

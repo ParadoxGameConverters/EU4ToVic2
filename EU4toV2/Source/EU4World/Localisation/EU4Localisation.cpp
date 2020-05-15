@@ -52,8 +52,7 @@ void EU4::EU4Localisation::readFromFile(const std::string& fileName)
 void EU4::EU4Localisation::readFromAllFilesInFolder(const std::string& folderPath)
 {
 	// Get all files in the folder.
-	std::set<std::string> fileNames;
-	Utils::GetAllFilesInFolder(folderPath, fileNames);
+	auto fileNames = Utils::GetAllFilesInFolder(folderPath);
 
 	// Read all these files.
 	for (const auto& fileName : fileNames)

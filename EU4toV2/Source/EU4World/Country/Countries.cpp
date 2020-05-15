@@ -2,7 +2,7 @@
 #include "ParserHelpers.h"
 
 EU4::Countries::Countries(
-	const Version& theVersion,
+	const GameVersion& theVersion,
 	std::istream& theStream,
 	const mappers::IdeaEffectMapper& ideaEffectMapper, 
 	const mappers::CultureGroups& cultureGroupsMapper)

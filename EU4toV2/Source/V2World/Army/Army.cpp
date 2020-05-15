@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <random>
 #include <queue>
-#include "CardinalToOrdinal.h"
+#include "CommonFunctions.h"
 
 V2::Army::Army(const EU4::EU4Army& eu4Army,
                std::string _tag,
@@ -366,7 +366,7 @@ std::shared_ptr<V2::Province> V2::Army::getProvinceForExpeditionaryArmy(const st
 std::string V2::Army::getRegimentName(REGIMENTTYPE chosenType, std::map<REGIMENTTYPE, int>& unitNameCount, const std::string& localAdjective)
 {
 	std::stringstream str;
-	str << ++unitNameCount[chosenType] << CardinalToOrdinal(unitNameCount[chosenType]); // 1st, 2nd, etc
+	str << ++unitNameCount[chosenType] << cardinalToOrdinal(unitNameCount[chosenType]); // 1st, 2nd, etc
 	if (localAdjective.empty())
 	{
 		str << " ";

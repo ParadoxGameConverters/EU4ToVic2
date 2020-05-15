@@ -9,7 +9,7 @@
 #include <memory>
 #include <set>
 #include "EU4NationalSymbol.h"
-#include "../EU4Version.h"
+#include "GameVersion.h"
 #include "../Leader/EU4Leader.h"
 #include "../Relations/EU4RelationDetails.h"
 #include "../Provinces/EU4Province.h"
@@ -29,7 +29,7 @@ namespace EU4
 		Country() = default;
 		Country(
 			std::string countryTag,
-			const Version& theVersion,
+			const GameVersion& theVersion,
 			std::istream& theStream,
 			const mappers::IdeaEffectMapper& ideaEffectMapper, 
 			const mappers::CultureGroups& cultureGroupsMapper

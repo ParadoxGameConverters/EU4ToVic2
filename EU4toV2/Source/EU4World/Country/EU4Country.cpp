@@ -15,7 +15,7 @@
 
 EU4::Country::Country(
 	std::string countryTag,
-	const Version& theVersion, 
+	const GameVersion& theVersion, 
 	std::istream& theStream, 
 	const mappers::IdeaEffectMapper& ideaEffectMapper, 
 	const mappers::CultureGroups& cultureGroupsMapper
@@ -42,7 +42,7 @@ EU4::Country::Country(
 	registerKeyword("map_color", [this](const std::string& unused, std::istream& theStream)
 		{
 			auto colorColor = commonItems::Color(theStream);
-			colorColor.RandomlyFlunctuate(30);
+			colorColor.RandomlyFluctuate(30);
 			// Countries whose colors are included in the object here tend to be generated countries,
 			// i.e. colonial nations which take on the color of their parent. To help distinguish 
 			// these countries from their parent's other colonies we randomly adjust the color.
@@ -129,7 +129,7 @@ EU4::Country::Country(
 	//Relevant since 1.20 but we only use it for 1.26+
 	registerKeyword("age_score", [this, theVersion](const std::string& unused, std::istream& theStream) 
 		{
-			if (theVersion >= Version("1.26.0.0"))
+			if (theVersion >= GameVersion("1.26.0.0"))
 			{
 				const commonItems::doubleList ageScores(theStream);
 				for (auto& agScore : ageScores.getDoubles()) score += agScore;
@@ -162,7 +162,7 @@ EU4::Country::Country(
 		});
 	registerKeyword("government", [this, theVersion](const std::string& unused, std::istream& theStream)
 		{
-			if (theVersion < Version("1.23.0.0"))
+			if (theVersion < GameVersion("1.23.0.0"))
 			{
 				const commonItems::singleString govStr(theStream);
 				government = govStr.getString();

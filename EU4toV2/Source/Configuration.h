@@ -1,7 +1,7 @@
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 
-#include "EU4World/EU4Version.h"
+#include "GameVersion.h"
 #include "Date.h"
 #include "Parser.h"
 #include <string>
@@ -20,7 +20,7 @@ class Configuration: commonItems::parser
 		Configuration& operator=(Configuration&&) = default;
 		~Configuration() = default;
 
-		void instantiate(std::istream& theStream, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
+		void instantiate(std::istream& theStream, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
 
 		void setFirstEU4Date(date _firstDate) { firstEU4Date = _firstDate; }
 		void setLastEU4Date(date _lastDate) { lastEU4Date = _lastDate; }
@@ -28,7 +28,7 @@ class Configuration: commonItems::parser
 		void setOutputName(const std::string& name) { outputName = name; }
 		void setActualName(const std::string& name) { actualName = name; }
 		void addEU4Mod(const std::string& mod) { EU4Mods.push_back(mod); }
-		void setEU4Version(const EU4::Version& _version) { version = _version; }
+		void setEU4Version(const GameVersion& _version) { version = _version; }
 		void setEU4RandomSeed(int seed) { eu4Seed = seed; }
 		void setActiveDLCs(const std::vector<std::string>& _activeDLCs) { activeDLCs = _activeDLCs; }
 
@@ -73,9 +73,9 @@ class Configuration: commonItems::parser
 		[[nodiscard]] bool wasDLCActive(const std::string& DLC) const;
 
 	private:
-		static void verifyEU4Path(const std::string& path, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
-		static void verifyVic2Path(const std::string& path, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
-		static void verifyVic2DocumentsPath(const std::string& path, bool (*doesFolderExist)(const std::string& path2));
+		static void verifyEU4Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
+		static void verifyVic2Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
+		static void verifyVic2DocumentsPath(const std::string& path, bool (*DoesFolderExist)(const std::string& path2));
 		void setOutputName();
 		static std::string trimPath(const std::string& fileName);
 		static std::string trimExtension(const std::string& fileName);
@@ -104,7 +104,7 @@ class Configuration: commonItems::parser
 		bool convertAll = false;
 	
 		// items set during conversion
-		EU4::Version version;
+		GameVersion version;
 		date firstEU4Date;
 		date lastEU4Date;
 		date startEU4Date = date("1000.1.1");

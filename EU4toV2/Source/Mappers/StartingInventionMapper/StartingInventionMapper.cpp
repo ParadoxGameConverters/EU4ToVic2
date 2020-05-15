@@ -10,8 +10,7 @@ mappers::StartingInventionMapper::StartingInventionMapper()
 {
 	LOG(LogLevel::Info) << "Parsing Starting Inventions";
 	registerKeys();
-	std::set<std::string> filenames;
-	Utils::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/inventions/", filenames);
+	auto filenames = Utils::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/inventions/");
 	for (const auto& filename : filenames)
 	{
 		parseFile(theConfiguration.getVic2Path() + "/inventions/" + filename);

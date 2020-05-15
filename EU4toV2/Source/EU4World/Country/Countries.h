@@ -2,7 +2,7 @@
 #define EU4_COUNTRIES_H
 
 #include "Parser.h"
-#include "../EU4Version.h"
+#include "GameVersion.h"
 #include <map>
 #include <memory>
 #include "../../Mappers/IdeaEffects/IdeaEffectMapper.h"
@@ -14,7 +14,7 @@ namespace EU4
 	class Countries: public commonItems::parser
 	{
 	public:
-		Countries(const Version& theVersion, 
+		Countries(const GameVersion& theVersion, 
 			std::istream& theStream, 
 			const mappers::IdeaEffectMapper& ideaEffectMapper, 
 			const mappers::CultureGroups& cultureGroupsMapper);

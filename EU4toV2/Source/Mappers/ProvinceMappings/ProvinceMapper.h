@@ -29,7 +29,7 @@ namespace mappers
 
 	private:
 		void registerKeys();
-		static ProvinceMappingsVersion getMappingsVersion(const std::map<EU4::Version, ProvinceMappingsVersion>& mappingsVersions, const EU4::Version& newVersion);
+		static ProvinceMappingsVersion getMappingsVersion(const std::map<GameVersion, ProvinceMappingsVersion>& mappingsVersions, const GameVersion& newVersion);
 		void createMappings(const ProvinceMappingsVersion& provinceMappingsVersion);
 		void addProvincesToResettableRegion(const std::string& regionName, const std::vector<int>& provinces);
 		void determineValidProvinces();
@@ -39,7 +39,7 @@ namespace mappers
 		std::map<std::string, std::set<int>> resettableProvinces;
 		std::set<int> validProvinces;
 		EU4::ColonialRegions colonialRegionsMapper;
-		std::map<EU4::Version, ProvinceMappingsVersion> mappingVersions;
+		std::map<GameVersion, ProvinceMappingsVersion> mappingVersions;
 	};
 }
 
