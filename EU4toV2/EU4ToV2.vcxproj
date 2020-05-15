@@ -169,7 +169,6 @@
   <ItemGroup>
     <ClCompile Include="..\commonItems\CardinalToOrdinal.cpp" />
     <ClCompile Include="..\commonItems\Color.cpp" />
-    <ClCompile Include="..\commonItems\CommonUtils.cpp" />
     <ClCompile Include="..\commonItems\Date.cpp" />
     <ClCompile Include="..\commonItems\iconvlite.cpp" />
     <ClCompile Include="..\commonItems\Log.cpp" />

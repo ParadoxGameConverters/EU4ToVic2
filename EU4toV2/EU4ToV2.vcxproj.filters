@@ -541,9 +541,6 @@
     <ClCompile Include="..\commonItems\Color.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\CommonUtils.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
     <ClCompile Include="..\commonItems\Date.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>

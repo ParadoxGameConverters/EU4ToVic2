@@ -159,6 +159,7 @@ class Country
 	Localisation localisation;
 	EU4::NationalSymbol nationalColors;
 
+	std::optional<std::string> V2::Country::getFileFromTag(const std::string& directoryPath, const std::string& tag) const;
 	void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper);
 	void initParties(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper);
 	void setReligion(const std::string& religion, const mappers::ReligionMapper& religionMapper);
