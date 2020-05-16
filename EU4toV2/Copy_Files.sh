@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Copy converter globals
-cp "Data_Files/configuration.txt" "Release-Linux/configuration.txt"
-cp "Data_Files/ReadMe.txt" "Release-Linux/ReadMe.txt"
-cp "Data_Files/FAQ.txt" "Release-Linux/FAQ.txt"
-cp "Data_Files/after_converting.txt" "Release-Linux/after_converting.txt"
-cp "Data_Files/license.txt" "Release-Linux/license.txt"
+cp "Data_Files/configuration-example.txt" "Release-Linux/"
+cp "Data_Files/ReadMe.txt" "Release-Linux/"
+cp "Data_Files/FAQ.txt" "Release-Linux/"
+cp "Data_Files/after_converting.txt" "Release-Linux/"
+cp "Data_Files/license.txt" "Release-Linux/"
 
 # Copy configurables
 rm -rf "Release-Linux/configurables"
@@ -47,9 +47,3 @@ mkdir "Release-Linux/blankMod/output/history/units"
 # Copy Flags
 rm -rf "Release-Linux/flags"
 cp -r "Data_Files/flags" "Release-Linux/flags"
-
-# Create changelog
-#del Release-Linux/changelog.txt
-#git log --oneline --decorate >> Release-Linux/log.txt
-#(for /f "delims=" %%i in (Release-Linux/log.txt) do @echo %%i)>Release-Linux/changelog.txt
-#del Release-Linux/log.txt
