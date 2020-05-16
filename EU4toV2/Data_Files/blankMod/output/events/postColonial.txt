@@ -11,7 +11,7 @@ country_event = { #Esperanto event
 		year = 1887
 		civilized = yes
 		invention = expressionist_literature
-		literacy = 30 #Let's hope they know how to write before books
+		literacy = 0.3 #Let's hope they know how to write before books
 	}
 	
 	mean_time_to_happen = {
@@ -1281,7 +1281,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -1482,7 +1482,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -1683,7 +1683,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -1884,7 +1884,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -2085,7 +2085,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -2286,7 +2286,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -2487,7 +2487,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -2688,7 +2688,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -2889,7 +2889,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -3090,7 +3090,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -3291,7 +3291,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -3492,7 +3492,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -3693,7 +3693,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -3893,7 +3893,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -4094,7 +4094,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -4294,7 +4294,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -4495,7 +4495,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -4695,7 +4695,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -4896,7 +4896,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -5097,7 +5097,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -5298,7 +5298,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -5499,7 +5499,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -5700,7 +5700,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -5901,7 +5901,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -6102,7 +6102,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -6303,7 +6303,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -6504,7 +6504,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -6705,7 +6705,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -6906,7 +6906,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -7107,7 +7107,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -7308,7 +7308,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -7509,7 +7509,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -7710,7 +7710,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -7911,7 +7911,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -8112,7 +8112,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -8313,7 +8313,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -8514,7 +8514,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -8715,7 +8715,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -8916,7 +8916,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -9117,7 +9117,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -9318,7 +9318,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -9519,7 +9519,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -9720,7 +9720,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -9921,7 +9921,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -10122,7 +10122,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -10323,7 +10323,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -10524,7 +10524,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -10725,7 +10725,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -10926,7 +10926,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -11127,7 +11127,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -11328,7 +11328,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -11529,7 +11529,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -11730,7 +11730,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -11930,7 +11930,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -12131,7 +12131,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -12332,7 +12332,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -12533,7 +12533,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -12733,7 +12733,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -12934,7 +12934,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -13135,7 +13135,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -13336,7 +13336,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -13537,7 +13537,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -13738,7 +13738,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -13939,7 +13939,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -14140,7 +14140,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -14343,7 +14343,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -14546,7 +14546,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -14749,7 +14749,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -14950,7 +14950,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -15151,7 +15151,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -15352,7 +15352,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -15553,7 +15553,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -15754,7 +15754,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -15955,7 +15955,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -16156,7 +16156,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -16357,7 +16357,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -16558,7 +16558,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -16759,7 +16759,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -16960,7 +16960,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -17161,7 +17161,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -17362,7 +17362,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -17563,7 +17563,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -17764,7 +17764,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -17965,7 +17965,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -18166,7 +18166,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -18367,7 +18367,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -18568,7 +18568,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -18769,7 +18769,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -18970,7 +18970,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -19171,7 +19171,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -19372,7 +19372,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -19573,7 +19573,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -19774,7 +19774,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -19975,7 +19975,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -20176,7 +20176,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -20377,7 +20377,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -20578,7 +20578,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -20779,7 +20779,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -20980,7 +20980,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -21181,7 +21181,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -21382,7 +21382,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -21583,7 +21583,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -21784,7 +21784,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -21985,7 +21985,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -22186,7 +22186,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -22387,7 +22387,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -22588,7 +22588,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -22789,7 +22789,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -22990,7 +22990,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -23191,7 +23191,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -23392,7 +23392,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -23593,7 +23593,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -23794,7 +23794,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -23995,7 +23995,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -24196,7 +24196,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -24397,7 +24397,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -24598,7 +24598,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -24799,7 +24799,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -25000,7 +25000,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -25201,7 +25201,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -25402,7 +25402,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -25603,7 +25603,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -25804,7 +25804,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -26005,7 +26005,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -26206,7 +26206,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -26407,7 +26407,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -26608,7 +26608,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -26809,7 +26809,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -27010,7 +27010,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -27211,7 +27211,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -27412,7 +27412,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -27613,7 +27613,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -27814,7 +27814,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -28015,7 +28015,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -28216,7 +28216,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
@@ -28417,7 +28417,7 @@ country_event = {
    }
    modifier = {
     factor = 0.2
-    lost_national = 10 #At least 10 unclaimed cores
+    lost_national = 0.1 #Lost at least 10% of national provinces
    }
    modifier = {
     factor = 3
