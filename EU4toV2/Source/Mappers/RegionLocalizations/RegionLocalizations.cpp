@@ -10,8 +10,7 @@ mappers::RegionLocalizations::RegionLocalizations()
 {
 	LOG(LogLevel::Info) << "Parsing Region Localizations.";
 
-	std::set<std::string> locFiles;
-	Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/localisation/", locFiles);
+	auto locFiles = Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/localisation/");
 	for (const auto& locFile : locFiles)
 	{
 		auto position = locFile.find("l_english");

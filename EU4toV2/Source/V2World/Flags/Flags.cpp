@@ -238,9 +238,11 @@ std::set<std::string> V2::Flags::determineAvailableFlags()
 	std::set<std::string> availableFlags;
 
 	const std::vector<std::string> availableFlagFolders = { "flags", theConfiguration.getVic2Path() + "/gfx/flags" };
+
 	for (const auto& availableFlagFolder: availableFlagFolders)
 	{
-		Utils::GetAllFilesInFolder(availableFlagFolder, availableFlags);
+		auto availableFlagFiles = Utils::GetAllFilesInFolder(availableFlagFolder);
+		availableFlags.insert(availableFlagFiles.begin(), availableFlagFiles.end());
 	}
 
 	return availableFlags;

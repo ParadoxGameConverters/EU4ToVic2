@@ -106,10 +106,10 @@ void V2::Country::initFromEU4Country(const EU4::Regions& eu4Regions,
 	if (!srcCountry->getRandomName().empty())
 		newCountry = true;
 
-	auto possibleFilename = Utils::GetFileFromTag("./blankMod/output/history/countries/", tag);
+	auto possibleFilename = getFileFromTag("./blankMod/output/history/countries/", tag);
 	if (!possibleFilename)
 	{
-		possibleFilename = Utils::GetFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
+		possibleFilename = getFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
 	}
 
 	if (!possibleFilename)
@@ -521,9 +521,9 @@ void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMap
 	details.isReleasableVassal = unreleasablesMapper.isTagReleasable(tag);
 
 	// Don't fire up Details if there's no point.
-	auto possibleFilename = Utils::GetFileFromTag("./blankMod/output/history/countries/", tag);
+	auto possibleFilename = getFileFromTag("./blankMod/output/history/countries/", tag);
 	if (!possibleFilename)
-		possibleFilename = Utils::GetFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
+		possibleFilename = getFileFromTag(theConfiguration.getVic2Path() + "/history/countries/", tag);
 	if (!possibleFilename)
 	{
 		auto countryName = commonCountryFile;
@@ -926,4 +926,18 @@ std::string V2::Country::getColonialRegion() const
 	if (!srcCountry)
 		return std::string();
 	return srcCountry->getColonialRegion();
+}
+
+std::optional<std::string> V2::Country::getFileFromTag(const std::string& directoryPath, const std::string& tag) const
+{
+	auto foundFiles = Utils::GetAllFilesInFolder(directoryPath);
+	for (std::string file: foundFiles)
+	{
+		if (tag == file.substr(0, 3))
+		{
+			return file;
+		}
+	}
+
+	return {};
 }

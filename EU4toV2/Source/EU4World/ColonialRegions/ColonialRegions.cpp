@@ -29,11 +29,10 @@ EU4::ColonialRegions::ColonialRegions()
 	}
 
 	for (const auto& mod: theConfiguration.getEU4Mods())
-	{
-		std::set<std::string> filenames;
-		if (Utils::doesFolderExist(mod + "/common/colonial_regions/"))
+	{		
+		if (Utils::DoesFolderExist(mod + "/common/colonial_regions/"))
 		{
-			Utils::GetAllFilesInFolder(mod + "/common/colonial_regions/", filenames);
+			auto filenames = Utils::GetAllFilesInFolder(mod + "/common/colonial_regions/");
 			for (const auto& filename : filenames)
 			{
 				parseFile(mod + "/common/colonial_regions/" + filename);

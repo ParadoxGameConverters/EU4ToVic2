@@ -6,9 +6,6 @@
     <ClCompile Include="EU4WorldTests\AreasTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\EU4VersionTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="EU4WorldTests\RegionsTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
@@ -33,9 +30,6 @@
     </ClCompile>
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp">
       <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\EU4Version.cpp">
-      <Filter>ConverterFiles\EU4World</Filter>
     </ClCompile>
     <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
     <ClCompile Include="MapperTests\ReligionMappingTests.cpp">
@@ -264,6 +258,12 @@
       <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
     <ClCompile Include="..\commonItems\WinUtils.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\OSCommonLayer.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\GameVersion.cpp">
       <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
   </ItemGroup>

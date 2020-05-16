@@ -3,13 +3,11 @@
 #include "OSCompatibilityLayer.h"
 #include "../../Mappers/Pops/PopMapper.h"
 #include "../Pop/Pop.h"
-#include <fstream>
 
 void V2::CountryPopLogger::logPopsByCountry(const std::map<int, std::shared_ptr<Province>>& provinces)
 {
 	 // country, poptype, num
-	std::set<std::string> filenames;
-	Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/", filenames);
+	auto filenames = Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/");
 	
 	for (const auto& filename : filenames) logPopsFromFile(provinces, filename);
 	outputLog(popsByCountry);

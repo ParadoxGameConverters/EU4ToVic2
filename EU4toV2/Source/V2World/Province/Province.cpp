@@ -3,7 +3,7 @@
 #include "../../Configuration.h"
 #include "../Country/Country.h"
 #include <cmath>
-#include "CardinalToOrdinal.h"
+#include "CommonFunctions.h"
 #include <algorithm>
 #include "Log.h"
 #include "../Army/Regiment.h"
@@ -857,7 +857,7 @@ bool V2::Province::growSoldierPop(Pop& pop)
 std::string V2::Province::getRegimentName(const REGIMENTTYPE chosenType)
 {
 	std::stringstream str;
-	str << ++unitNameCount[chosenType] << CardinalToOrdinal(unitNameCount[chosenType]); // 1st, 2nd, etc
+	str << ++unitNameCount[chosenType] << cardinalToOrdinal(unitNameCount[chosenType]); // 1st, 2nd, etc
 	str << " " << name << " "; // Hamburg, Lyon, etc
 	switch (chosenType)
 	{

@@ -30,7 +30,7 @@ link = { v2 = zikri eu4 = zikri }
 link = { v2 = yazidi eu4 = yazidi }
 link = { v2 = sunni_heresy eu4 = sunni_heresy }
 
-link = { v2 = shiite eu4 = shiite }
+link = { v2 = shiite eu4 = shiite eu4 = qarmatian }
 link = { v2 = hurufi eu4 = hurufi }
 link = { v2 = druze eu4 = druze }
 link = { v2 = shiite_heresy eu4 = shiite_heresy }

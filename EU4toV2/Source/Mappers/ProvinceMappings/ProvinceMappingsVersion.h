@@ -3,7 +3,7 @@
 
 #include "Parser.h"
 #include "ProvinceMapping.h"
-#include "../../EU4World/EU4Version.h"
+#include "GameVersion.h"
 
 namespace mappers
 {
@@ -16,7 +16,7 @@ namespace mappers
 		[[nodiscard]] const auto& getMappings() const { return mappings; }
 
 	private:
-		EU4::Version version;
+		GameVersion version;
 		std::vector<ProvinceMapping> mappings;
 	};
 }

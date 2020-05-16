@@ -7,16 +7,16 @@
 
 Configuration theConfiguration;
 
-void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))
+void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))
 {
 	registerKeyword("SaveGame", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		EU4SaveGamePath = path.getString();
 	});
-	registerKeyword("EU4directory", [this, doesFolderExist, doesFileExist](const std::string& unused, std::istream& theStream) {
+	registerKeyword("EU4directory", [this, DoesFolderExist, doesFileExist](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		EU4Path = path.getString();
-		verifyEU4Path(EU4Path, doesFolderExist, doesFileExist);
+		verifyEU4Path(EU4Path, DoesFolderExist, doesFileExist);
 	});
 	registerKeyword("EU4DocumentsDirectory", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
@@ -30,15 +30,15 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 		const commonItems::singleString path(theStream);
 		CK2ExportPath = path.getString();
 	});
-	registerKeyword("Vic2directory", [this, doesFolderExist, doesFileExist](const std::string& unused, std::istream& theStream) {
+	registerKeyword("Vic2directory", [this, DoesFolderExist, doesFileExist](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		Vic2Path = path.getString();
-		verifyVic2Path(Vic2Path, doesFolderExist, doesFileExist);
+		verifyVic2Path(Vic2Path, DoesFolderExist, doesFileExist);
 	});
-	registerKeyword("Vic2Documentsdirectory", [this, doesFolderExist](const std::string& unused, std::istream& theStream) {
+	registerKeyword("Vic2Documentsdirectory", [this, DoesFolderExist](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		Vic2DocumentsPath = path.getString();
-		verifyVic2DocumentsPath(Vic2DocumentsPath, doesFolderExist);
+		verifyVic2DocumentsPath(Vic2DocumentsPath, DoesFolderExist);
 	});
 	registerKeyword("max_literacy", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString maxLiteracyString(theStream);
@@ -111,29 +111,29 @@ void Configuration::instantiate(std::istream& theStream, bool (*doesFolderExist)
 	setOutputName();
 }
 
-void Configuration::verifyEU4Path(const std::string& path, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))
+void Configuration::verifyEU4Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))
 {
-	if (!doesFolderExist(path))
+	if (!DoesFolderExist(path))
 		throw std::runtime_error(path + " does not exist!");
-	if (!doesFileExist(path + "/eu4.exe") && !doesFileExist(path + "/eu4") && !doesFolderExist(path + "/eu4.app"))
+	if (!doesFileExist(path + "/eu4.exe") && !doesFileExist(path + "/eu4") && !DoesFolderExist(path + "/eu4.app"))
 		throw std::runtime_error(path + " does not contain Europa Universalis 4!");
 	if (!doesFileExist(path + "/map/positions.txt"))
 		throw std::runtime_error(path + " does not appear to be a valid EU4 install!");
 	LOG(LogLevel::Info) << "\tEU4 install path is " << path;
 }
 
-void Configuration::verifyVic2Path(const std::string& path, bool (*doesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))
+void Configuration::verifyVic2Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))
 {
-	if (!doesFolderExist(path))
+	if (!DoesFolderExist(path))
 		throw std::runtime_error(path + " does not exist!");
-	if (!doesFileExist(path + "/v2game.exe") && !doesFolderExist(path + "/Victoria 2 - Heart Of Darkness.app") && !doesFolderExist(path + "../../MacOS"))
+	if (!doesFileExist(path + "/v2game.exe") && !DoesFolderExist(path + "/Victoria 2 - Heart Of Darkness.app") && !DoesFolderExist(path + "../../MacOS"))
 		throw std::runtime_error(path + " does not contain Victoria 2!");
 	LOG(LogLevel::Info) << "\tVictoria 2 install path is " << path;
 }
 
-void Configuration::verifyVic2DocumentsPath(const std::string& path, bool (*doesFolderExist)(const std::string& path2))
+void Configuration::verifyVic2DocumentsPath(const std::string& path, bool (*DoesFolderExist)(const std::string& path2))
 {
-	if (!doesFolderExist(path))
+	if (!DoesFolderExist(path))
 		throw std::runtime_error(path + " does not exist!");
 	LOG(LogLevel::Info) << "\tVictoria 2 documents directory is " << path;
 }
@@ -203,7 +203,7 @@ ConfigurationFile::ConfigurationFile(const std::string& filename)
 		throw std::runtime_error("Cound not open configuration file!");
 	}
 
-	theConfiguration.instantiate(confFile, Utils::doesFolderExist, Utils::DoesFileExist);
+	theConfiguration.instantiate(confFile, Utils::DoesFolderExist, Utils::DoesFileExist);
 
 	confFile.close();
 }

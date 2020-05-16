@@ -47,19 +47,17 @@ void mappers::CountryMappings::getAvailableFlags()
 {
 	LOG(LogLevel::Info) << "\tCataloguing available flags";
 	const std::vector<std::string> availableFlagFolders = { "flags", theConfiguration.getVic2Path() + "/gfx/flags" };
-
-	std::set<std::string> availableFlagFiles;
+	
 	for (const auto& availableFlagFolder: availableFlagFolders)
 	{
-		Utils::GetAllFilesInFolder(availableFlagFolder, availableFlagFiles);
-	}
-
-	for (const auto& file: availableFlagFiles)
-	{
-		const auto lastdot = file.find_last_of(".");
-		if (lastdot != std::string::npos)
+		auto availableFlagFiles = Utils::GetAllFilesInFolder(availableFlagFolder);
+		for (const auto& file: availableFlagFiles)
 		{
-			availableFlags.insert(file.substr(0, lastdot)); 
+			const auto lastdot = file.find_last_of(".");
+			if (lastdot != std::string::npos)
+			{
+				availableFlags.insert(file.substr(0, lastdot));
+			}
 		}
 	}
 }

@@ -13,5 +13,5 @@ mappers::ProvinceMappingsVersion::ProvinceMappingsVersion(const std::string& ver
 	parseStream(theStream);
 	clearRegisteredKeywords();
 
-	version = EU4::Version(versionString);
+	version = GameVersion(versionString);
 }

@@ -1,7 +1,7 @@
 #include "World.h"
 #include "Country/Countries.h"
 #include "Country/EU4Country.h"
-#include "EU4Version.h"
+#include "GameVersion.h"
 #include "Localisation/EU4Localisation.h"
 #include "Mods/Mods.h"
 #include "Provinces/EU4Province.h"
@@ -43,7 +43,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		});
 	registerKeyword("savegame_version", [this](const std::string& unused, std::istream& theStream)
 		{
-			version = std::make_unique<Version>(theStream);
+			version = std::make_unique<GameVersion>(theStream);
 			theConfiguration.setEU4Version(*version);
 			Log(LogLevel::Info) << "Savegave version: " << *version;
 		});
@@ -476,7 +476,7 @@ void EU4::World::addProvinceInfoToCountries()
 
 void EU4::World::loadRegions()
 {
-	if (*version >= Version("1.14"))
+	if (*version >= GameVersion("1.14"))
 	{
 		loadEU4RegionsNewVersion();
 	}
@@ -574,8 +574,7 @@ void EU4::World::readCommonCountries()
 	readCommonCountriesFile(commonCountries, theConfiguration.getEU4Path());
 	for (const auto& itr: theConfiguration.getEU4Mods())
 	{
-		std::set<std::string> fileNames;
-		Utils::GetAllFilesInFolder(itr + "/common/country_tags/", fileNames);
+		auto fileNames = Utils::GetAllFilesInFolder(itr + "/common/country_tags/");
 		for (const auto& fileItr: fileNames)
 		{
 			std::ifstream convertedCommonCountries(fs::u8path(itr + "/common/country_tags/" + fileItr));	// a stream of the data in the converted countries file
@@ -694,7 +693,7 @@ void EU4::World::uniteJapan()
 
 	std::shared_ptr<Country> japan;
 
-	if (*version >= Version("1.20.0.0"))
+	if (*version >= GameVersion("1.20.0.0"))
 	{
 		for (const auto& country : theCountries)
 		{

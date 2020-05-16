@@ -636,7 +636,7 @@ link = { vic2 = alan eu4 = scythian }
 link = { vic2 = persian eu4 = parthian }
 
 # Animals
-link = { vic2 = polar_bears eu4 = jan_mayenese eu4 = bear eu4 = red_panda_culture }
+link = { vic2 = polar_bears eu4 = jan_mayenese eu4 = bear eu4 = red_panda }
 link = { vic2 = horse eu4 = equine eu4 = horse }
 link = { vic2 = dog_culture eu4 = dog_culture }
 link = { vic2 = duck_culture eu4 = duck_culture }

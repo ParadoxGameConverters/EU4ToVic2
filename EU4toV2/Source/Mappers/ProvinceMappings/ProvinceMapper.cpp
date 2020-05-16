@@ -1,7 +1,7 @@
 #include "ProvinceMapper.h"
 #include "ProvinceMappingsVersion.h"
 #include "../../Configuration.h"
-#include "../../EU4World/EU4Version.h"
+#include "GameVersion.h"
 #include "Log.h"
 #include <fstream>
 #include <stdexcept>
@@ -45,7 +45,7 @@ bool mappers::ProvinceMapper::provinceIsInRegion(int province, const std::string
 	return colonialRegionsMapper.provinceIsInRegion(province, region);
 }
 
-mappers::ProvinceMappingsVersion mappers::ProvinceMapper::getMappingsVersion(const std::map<EU4::Version, ProvinceMappingsVersion>& mappingsVersions, const EU4::Version& newVersion)
+mappers::ProvinceMappingsVersion mappers::ProvinceMapper::getMappingsVersion(const std::map<GameVersion, ProvinceMappingsVersion>& mappingsVersions, const GameVersion& newVersion)
 {
 	for (auto mappingsVersion = mappingsVersions.rbegin(); mappingsVersion != mappingsVersions.rend(); ++mappingsVersion)
 	{

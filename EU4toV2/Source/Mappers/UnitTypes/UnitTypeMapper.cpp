@@ -10,8 +10,7 @@ void mappers::UnitTypeMapper::initUnitTypeMapper()
 {
 	LOG(LogLevel::Info) << "Parsing unit strengths from EU4 installation.";
 
-	std::set<std::string> filenames;
-	Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/units/", filenames);
+	auto filenames = Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/units/");
 	for (const auto& filename : filenames)
 	{
 		addUnitFileToRegimentTypeMap(theConfiguration.getEU4Path() + "/common/units", filename);
@@ -19,8 +18,7 @@ void mappers::UnitTypeMapper::initUnitTypeMapper()
 
 	for (const auto& modName : theConfiguration.getEU4Mods())
 	{
-		std::set<std::string> moreFilenames;
-		Utils::GetAllFilesInFolder(modName + "/common/units/", moreFilenames);
+		auto moreFilenames = Utils::GetAllFilesInFolder(modName + "/common/units/");
 		for (const auto& filename : moreFilenames)
 		{
 			addUnitFileToRegimentTypeMap(modName + "/common/units", filename);

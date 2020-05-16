@@ -7,10 +7,9 @@ mappers::Buildings::Buildings()
 {
 	registerKeys();
 
-	if (Utils::doesFolderExist(theConfiguration.getEU4Path() + "/common/buildings"))
+	if (Utils::DoesFolderExist(theConfiguration.getEU4Path() + "/common/buildings"))
 	{
-		std::set<std::string> filenames;
-		Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/buildings/", filenames);
+		auto filenames = Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/buildings/");
 		for (const auto& filename : filenames)
 		{
 			parseFile(theConfiguration.getEU4Path() + "/common/buildings/" + filename);
@@ -18,10 +17,9 @@ mappers::Buildings::Buildings()
 	}
 	for (const auto& modName : theConfiguration.getEU4Mods())
 	{
-		if (Utils::doesFolderExist(modName + "/common/buildings"))
+		if (Utils::DoesFolderExist(modName + "/common/buildings"))
 		{
-			std::set<std::string> filenames;
-			Utils::GetAllFilesInFolder(modName + "/common/buildings/", filenames);
+			auto filenames = Utils::GetAllFilesInFolder(modName + "/common/buildings/");
 			for (const auto& filename : filenames)
 			{
 				parseFile(modName + "/common/buildings/" + filename);
