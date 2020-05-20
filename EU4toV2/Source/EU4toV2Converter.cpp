@@ -10,16 +10,20 @@
 
 void convertEU4ToVic2(const mappers::VersionParser& versionParser)
 {
+	Log(LogLevel::Progress) << "0 %";
 	ConfigurationFile configurationFile("configuration.txt");
 	deleteExistingOutputFolder();
+	Log(LogLevel::Progress) << "4 %";
 
 	const mappers::IdeaEffectMapper ideaEffectMapper;
 	const mappers::TechGroupsMapper techGroupsMapper;
+	Log(LogLevel::Progress) << "5 %";
 
 	const EU4::World sourceWorld(ideaEffectMapper);
 	V2::World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper, versionParser);
 
 	LOG(LogLevel::Info) << "* Conversion complete *";
+	Log(LogLevel::Progress) << "100 %";
 }
 
 

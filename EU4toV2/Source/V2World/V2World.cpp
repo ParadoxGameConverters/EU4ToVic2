@@ -22,12 +22,15 @@ V2::World::World(const EU4::World& sourceWorld,
 	 const mappers::VersionParser& versionParser):
 	 historicalData(sourceWorld.getHistoricalData())
 {
+	Log(LogLevel::Progress) << "45 %";
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
 	LOG(LogLevel::Info) << "-> Importing Provinces";
 	importProvinces();
+	Log(LogLevel::Progress) << "46 %";
 
 	LOG(LogLevel::Info) << "-> Importing Vanilla Pops";
 	importDefaultPops();
+	Log(LogLevel::Progress) << "47 %";
 
 	if (theConfiguration.getDebug())
 		countryPopLogger.logPopsByCountry(provinces);
@@ -35,59 +38,96 @@ V2::World::World(const EU4::World& sourceWorld,
 	LOG(LogLevel::Info) << "-> Importing Potential Countries";
 	importPotentialCountries();
 	isRandomWorld = sourceWorld.isRandomWorld();
+	Log(LogLevel::Progress) << "48 %";
 
 	LOG(LogLevel::Info) << "-> Loading Country Mapping Rules";
 	countryMapper.createMappings(sourceWorld, potentialCountries, provinceMapper);
+	Log(LogLevel::Progress) << "49 %";
 
 	LOG(LogLevel::Info) << "-> Loading Culture Mapping Rules";
 	initializeCultureMappers();
 	mappingChecker.check(sourceWorld, provinceMapper, religionMapper, cultureMapper);
+	Log(LogLevel::Progress) << "50 %";
 
 	LOG(LogLevel::Info) << "-> Pouring From Hollow Into Empty";
 	cultureGroupsMapper.importNeoCultures(sourceWorld, cultureMapper);
+	Log(LogLevel::Progress) << "51 %";
 
 	LOG(LogLevel::Info) << "-> Converting Countries";
 	convertCountries(sourceWorld, ideaEffectMapper);
+	Log(LogLevel::Progress) << "52 %";
 
 	LOG(LogLevel::Info) << "-> Converting Provinces";
 	convertProvinces(sourceWorld, techGroupsMapper, sourceWorld.getRegions());
+	Log(LogLevel::Progress) << "53 %";
 
 	LOG(LogLevel::Info) << "-> Cataloguing Invasive Fauna";
 	transcribeNeoCultures();
+	Log(LogLevel::Progress) << "54 %";
 
 	LOG(LogLevel::Info) << "-> Converting Diplomacy";
 	diplomacy.convertDiplomacy(sourceWorld.getDiplomaticAgreements(), countryMapper, countries);
+	Log(LogLevel::Progress) << "55 %";
+
 	LOG(LogLevel::Info) << "-> Setting Up Colonies";
 	setupColonies();
+	Log(LogLevel::Progress) << "56 %";
+
 	LOG(LogLevel::Info) << "-> Setting Up States";
 	setupStates();
+	Log(LogLevel::Progress) << "57 %";
+
 	LOG(LogLevel::Info) << "-> Generating Unciv Reforms";
 	convertUncivReforms(sourceWorld, techGroupsMapper);
+	Log(LogLevel::Progress) << "58 %";
+
 	LOG(LogLevel::Info) << "-> Converting Technology Levels";
 	convertTechs(sourceWorld);
+	Log(LogLevel::Progress) << "59 %";
+	
 	LOG(LogLevel::Info) << "-> Distributing Factories";
 	allocateFactories(sourceWorld);
+	Log(LogLevel::Progress) << "60 %";
+
 	LOG(LogLevel::Info) << "-> Distributing Pops";
 	setupPops(sourceWorld);
+	Log(LogLevel::Progress) << "61 %";
+
 	LOG(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
 	modifyPrimaryAndAcceptedCultures();
+	Log(LogLevel::Progress) << "62 %";
+
 	LOG(LogLevel::Info) << "-> Monitoring Native Fauna Reaction";
 	addAcceptedCultures(sourceWorld.getRegions());
+	Log(LogLevel::Progress) << "63 %";
+
 	Log(LogLevel::Info) << "-> Dropping Infected AI Cores";
 	dropCores();
+	Log(LogLevel::Progress) << "64 %";
+
 	Log(LogLevel::Info) << "-> Dropping Poorly-Shaped States";
 	dropStates();
+	Log(LogLevel::Progress) << "65 %";
 
 	LOG(LogLevel::Info) << "-> Merging Nations";
 	addUnions();
+	Log(LogLevel::Progress) << "66 %";
+	
 	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
 	convertArmies();
+	Log(LogLevel::Progress) << "67 %";
+
 	LOG(LogLevel::Info) << "-> Converting Ongoing Conflicts";
 	convertWars(sourceWorld);
+	Log(LogLevel::Progress) << "68 %";
+
 	LOG(LogLevel::Info) << "-> Describing Religion";
 	addReligionCulture();
+	Log(LogLevel::Progress) << "69 %";
+
 	LOG(LogLevel::Info) << "-> Converting Botanical Definitions";
 	transcribeHistoricalData();
+	Log(LogLevel::Progress) << "70 %";
 
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	output(versionParser);
@@ -1393,22 +1433,29 @@ void V2::World::convertWars(const EU4::World& sourceWorld)
 void V2::World::output(const mappers::VersionParser& versionParser) const
 {
 	Utils::TryCreateFolder("output");
+	Log(LogLevel::Progress) << "80 %";
 	
 	LOG(LogLevel::Info) << "<- Copying Mod Template";
 	Utils::CopyFolder("blankMod/output", "output/output");
+	Log(LogLevel::Progress) << "81 %";
+
 	LOG(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
 	Utils::RenameFolder("output/output", "output/" + theConfiguration.getOutputName());
+	Log(LogLevel::Progress) << "82 %";
+
 	LOG(LogLevel::Info) << "<- Crafting .mod File";
 	createModFile();
+	Log(LogLevel::Progress) << "83 %";
 
 	// Record converter version
 	LOG(LogLevel::Info) << "<- Writing version";
 	outputVersion(versionParser);
+	Log(LogLevel::Progress) << "84 %";
 
 	// Update bookmark starting dates
 	LOG(LogLevel::Info) << "<- Updating bookmarks";
 	modifyDefines();
-
+	Log(LogLevel::Progress) << "85 %";
 
 	// Create common\countries path.
 	const auto countriesPath = "output/" + theConfiguration.getOutputName() + "/common/countries";
@@ -1416,46 +1463,62 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	{
 		return;
 	}
+	Log(LogLevel::Progress) << "86 %";
 
 	// Output common\countries.txt
 	LOG(LogLevel::Info) << "<- Creating countries.txt";
 	outputCommonCountries();
+	Log(LogLevel::Progress) << "87 %";
 
 	// Create flags for all new countries.
 	LOG(LogLevel::Info) << "-> Creating Flags";
 	Flags flags;
+	Log(LogLevel::Progress) << "88 %";
+
 	LOG(LogLevel::Info) << "-> Setting Flags";
 	flags.setV2Tags(countries, countryMapper);
+	Log(LogLevel::Progress) << "89 %";
+
 	LOG(LogLevel::Info) << "<- Writing Flags";
 	flags.output();
+	Log(LogLevel::Progress) << "90 %";
 
 	// Create localizations for all new countries. We don't actually know the names yet so we just use the tags as the names.
 	LOG(LogLevel::Info) << "<- Writing Localisation Text";
 	outputLocalisation();
+	Log(LogLevel::Progress) << "91 %";
 
 	LOG(LogLevel::Info) << "<- Writing Provinces";
 	outputProvinces();
+	Log(LogLevel::Progress) << "92 %";
 
 	LOG(LogLevel::Info) << "<- Writing Countries";
 	outputCountries();
+	Log(LogLevel::Progress) << "93 %";
 
 	LOG(LogLevel::Info) << "<- Writing Diplomacy";
 	diplomacy.output();
+	Log(LogLevel::Progress) << "94 %";
 
 	LOG(LogLevel::Info) << "<- Writing Armed and Unarmed Conflicts";
 	outputWars();
+	Log(LogLevel::Progress) << "95 %";
 
 	LOG(LogLevel::Info) << "<- Writing Culture Definitions";
 	outputCultures();
+	Log(LogLevel::Progress) << "96 %";
 
 	LOG(LogLevel::Info) << "<- Writing Pops";
 	outputPops();
+	Log(LogLevel::Progress) << "97 %";
 
 	LOG(LogLevel::Info) << "<- Sending Botanical Expedition";
 	outputHistory();
+	Log(LogLevel::Progress) << "98 %";
 
 	LOG(LogLevel::Info) << "<- Writing Treatise on the Origins of Invasive Fauna";
 	outputNeoCultures();
+	Log(LogLevel::Progress) << "99 %";
 
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";

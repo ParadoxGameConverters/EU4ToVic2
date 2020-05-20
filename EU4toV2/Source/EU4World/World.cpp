@@ -121,9 +121,11 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	registerRegex("[A-Za-z0-9\\_]+", commonItems::ignoreItem);
 
 	superGroupMapper.init();
+	Log(LogLevel::Progress) << "6 %";
 
 	LOG(LogLevel::Info) << "-> Verifying EU4 save.";
 	verifySave();
+	Log(LogLevel::Progress) << "7 %";
 
 	LOG(LogLevel::Info) << "-> Importing EU4 save.";
 	if (!saveGame.compressed)
@@ -138,60 +140,78 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		inStream << inBinary.rdbuf();
 		saveGame.gamestate = inStream.str();
 	}
+	Log(LogLevel::Progress) << "8 %";
 
 	verifySaveContents();
+	Log(LogLevel::Progress) << "9 %";
 
 	auto metaData = std::istringstream(saveGame.metadata);
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(metaData);
 	parseStream(gameState);
+	Log(LogLevel::Progress) << "15 %";
 
 	clearRegisteredKeywords();
 
 	unitTypeMapper.initUnitTypeMapper();
+	Log(LogLevel::Progress) << "16 %";
 
 	LOG(LogLevel::Info) << "*** Building world ***";
 	LOG(LogLevel::Info) << "-> Loading Empires";
 	setEmpires();
+	Log(LogLevel::Progress) << "17 %";
 
 	LOG(LogLevel::Info) << "-> Setting Province Weight";
 	addTradeGoodsToProvinces();
+	Log(LogLevel::Progress) << "18 %";
 
 	LOG(LogLevel::Info) << "-> Processing Province Info";
 	addProvinceInfoToCountries();
+	Log(LogLevel::Progress) << "19 %";
 
 	LOG(LogLevel::Info) << "-> Determining Province Weights";
 	provinces->determineTotalProvinceWeights(theConfiguration);
+	Log(LogLevel::Progress) << "20 %";
 
 	LOG(LogLevel::Info) << "-> Loading Regions";
 	loadRegions();
+	Log(LogLevel::Progress) << "21 %";
 	
 	LOG(LogLevel::Info) << "-> Determining Demographics";
 	buildPopRatios();
+	Log(LogLevel::Progress) << "22 %";
 
 	LOG(LogLevel::Info) << "-> Eliminating Minorities";
 	dropMinoritiesFromCountries();
+	Log(LogLevel::Progress) << "23 %";
 
 	LOG(LogLevel::Info) << "-> Cataloguing Native Fauna";
 	catalogueNativeCultures();
+	Log(LogLevel::Progress) << "24 %";
 
 	LOG(LogLevel::Info) << "-> Clasifying Invasive Fauna";
 	generateNeoCultures();
+	Log(LogLevel::Progress) << "25 %";
 
 	LOG(LogLevel::Info) << "-> Reading Countries";
 	readCommonCountries();
+	Log(LogLevel::Progress) << "26 %";
 
 	LOG(LogLevel::Info) << "-> Setting Localizations";
 	setLocalisations();
+	Log(LogLevel::Progress) << "27 %";
 
 	LOG(LogLevel::Info) << "-> Resolving Regiments";
 	resolveRegimentTypes();
+	Log(LogLevel::Progress) << "28 %";
 
 	LOG(LogLevel::Info) << "-> Merging Nations";
 	mergeNations();
+	Log(LogLevel::Progress) << "29 %";
 
 	LOG(LogLevel::Info) << "-> Calculating Industry";
 	calculateIndustry();
+	Log(LogLevel::Progress) << "30 %";
 
 	LOG(LogLevel::Info) << "-> Viva la revolution!";
 	loadRevolutionTarget();
@@ -203,9 +223,11 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	{
 		LOG(LogLevel::Info) << " vvv ... revolution failed. :/";
 	}
+	Log(LogLevel::Progress) << "31 %";
 
 	LOG(LogLevel::Info) << "-> Doing Accounting and dishes";
 	fillHistoricalData();
+	Log(LogLevel::Progress) << "32 %";
 
 	LOG(LogLevel::Info) << "-> Dropping Empty Nations";
 	removeEmptyNations();
@@ -218,6 +240,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		removeLandlessNations();
 	}
 	LOG(LogLevel::Info) << "*** Good-bye EU4, you served us well. ***";
+	Log(LogLevel::Progress) << "40 %";
 }
 
 void EU4::World::calculateIndustry() const

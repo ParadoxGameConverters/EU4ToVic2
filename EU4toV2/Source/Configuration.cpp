@@ -109,6 +109,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 	parseStream(theStream);
 	clearRegisteredKeywords();
 	setOutputName();
+	Log(LogLevel::Progress) << "3 %";
 }
 
 void Configuration::verifyEU4Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))
