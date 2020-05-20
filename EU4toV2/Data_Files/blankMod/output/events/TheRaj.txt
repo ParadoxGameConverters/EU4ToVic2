@@ -1,0 +1,135 @@
+country_event = {
+	id = 5000000
+	title = THERAJTITLE
+	desc = THERAJDESC
+	picture = queenvictoria
+	
+	major = yes
+	fire_only_once = no
+	allow_multiple_instances = no
+	
+	trigger = {
+		great_wars_enabled = yes
+		NOT = { has_global_flag = the_raj }
+		is_greater_power = yes
+	}
+	
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = THERAJOPTA
+		set_global_flag = the_raj
+		ENG_1236 = { add_core = RJX remove_core = HND }
+		ENG_1247 = { add_core = RJX remove_core = HND }
+		ENG_1251 = { add_core = RJX remove_core = HND }
+		ENG_1252 = { add_core = RJX remove_core = HND }
+		ENG_1258 = { add_core = RJX remove_core = HND }
+		ENG_1261 = { add_core = RJX remove_core = HND }
+		ENG_1264 = { add_core = RJX remove_core = HND }
+		ENG_1275 = { add_core = RJX remove_core = HND }
+		ENG_1291 = { add_core = RJX remove_core = HND }
+		ENG_1297 = { add_core = RJX remove_core = HND }
+		ENG_1304 = { add_core = RJX remove_core = HND }
+		ENG_1305 = { add_core = RJX remove_core = HND }
+		ENG_1317 = { add_core = RJX remove_core = HND }
+		#ENG_1321 = { add_core = RJX remove_core = HND } # Sri Lanka and Maldives
+		ENG_1343 = { add_core = RJX remove_core = HND }
+		HYD_1283 = { add_core = RJX remove_core = HND }
+		NAG_1277 = { add_core = RJX remove_core = HND }
+		MYS_1314 = { add_core = RJX remove_core = HND }
+		    1593 = { add_core = RJX remove_core = HND }
+		SIN_1288 = { add_core = RJX remove_core = HND }
+		KAL_1221 = { add_core = RJX remove_core = HND }
+		PAN_1224 = { add_core = RJX remove_core = HND }
+		PAN_1227 = { add_core = RJX remove_core = HND }
+	}
+}
+country_event = {
+	id = 5000001
+	title = INTRAJTITLE
+	desc = INTRAJDESC
+	picture = queenvictoria
+	
+	major = yes
+	fire_only_once = no
+	allow_multiple_instances = no
+	
+	trigger = {
+		has_global_flag = the_raj
+		is_culture_group = south_asian
+		NOT = {
+			tag = HND # India
+			tag = HDU # Pakistan
+			tag = NEP
+			tag = BHU
+			tag = RJX
+		}
+		is_independant = no
+		exists = yes
+	}
+	
+	mean_time_to_happen = { months = 0.001 }
+	
+	option = {
+		name = INTRAJOPTA
+		overlord = { inherit = THIS }
+	}
+}
+country_event = {
+	id = 5000002
+	title = IAMRAJTITLE
+	desc = IAMRAJDESC
+	picture = queenvictoria
+	
+	fire_only_once = no
+	allow_multiple_instances = no
+	
+	trigger = {
+		is_independant = yes
+		tag = RJX
+		exists = yes
+	}
+	
+	mean_time_to_happen = { months = 0.001 }
+	
+	option = {
+		name = IAMRAJOPTA
+		HND = { annex_to = THIS } # If multiple Indias exist
+		HDU = { annex_to = THIS }
+		change_tag = HND
+		release_vassal = HDU
+		all_core = { add_core = HND }
+	}
+}
+
+country_event = {
+	id = 5000003
+	title = ITSRAJTITLE
+	desc = ITSRAJDESC
+	picture = queenvictoria
+	
+	fire_only_once = no
+	allow_multiple_instances = no
+	
+	trigger = {
+		is_greater_power = yes
+		any_owned_province = { is_core = RJX }
+		NOT = { exists = RJX }
+		war = no
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = ITSRAJOPTA
+		any_owned = {
+			limit = {
+				is_core = RJX
+			}
+			secede_province = RJX
+		}
+		create_vassal = RJX
+	}
+}
