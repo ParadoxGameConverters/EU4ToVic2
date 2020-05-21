@@ -594,6 +594,8 @@ void V2::Country::convertLeaders(const mappers::LeaderTraitMapper& leaderTraitMa
 
 	for (const auto& eu4Leader: eu4Leaders)
 	{
+		if (eu4Leader.isFemale())
+			continue; // Sorry. No female generals or admirals.
 		Leader newLeader(eu4Leader, leaderTraitMapper);
 		leaders.push_back(newLeader);
 	}
