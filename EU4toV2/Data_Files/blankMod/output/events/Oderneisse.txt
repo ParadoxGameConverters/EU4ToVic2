@@ -1,0 +1,302 @@
+country_event = {
+	id = 5000100
+	title = EVTNAME5000100
+	desc = EVTDESC5000100
+	picture = treaty
+	
+	trigger = {
+		OR = {
+			is_culture_group = polish_culture_group
+			is_culture_group = czecho_slovak_culture_group
+			is_culture_group = east_slavic
+			tag = POL
+			tag = PLC
+		}
+		NOT = {
+			tag = HRE
+			tag = GER
+			tag = NGF
+			tag = PRU
+			has_global_flag = polish_prussia
+		}
+		owns = 546 # Stettin
+		owns = 679 # Kolberg
+	}
+	
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = EVTOPTA5000100
+		set_global_flag = polish_prussia
+		546 = { change_province_name = "Szczecin" }
+		679 = { change_province_name = "Kolobrzeg" }
+		680 = { change_province_name = "Koszalin" }
+		681 = { change_province_name = "Kostrzyn" }
+		692 = { change_province_name = "Walcz" }
+		699 = {
+			change_province_name = "Poznan"
+			state_scope = { change_region_name = "Poznan" }
+		}
+		# Oder-Neiße Linie
+		681 = { secede_province = THIS }
+		549 = {
+			owner = { # Who owns Berlin?
+				country_event = 5000110
+			}
+		}
+	}
+}
+country_event = {
+	id = 5000110
+	title = EVTNAME5000110
+	desc = EVTDESC5000110
+	picture = treaty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA5000110
+		547 = { secede_province = THIS }
+		548 = { secede_province = THIS }
+		545 = { secede_province = THIS }
+		544 = { secede_province = THIS }
+	}
+}
+country_event = {
+	id = 5000101
+	title = EVTNAME5000101
+	desc = EVTDESC5000101
+	picture = treaty
+	
+	trigger = {
+		NOT = {
+			is_culture_group = polish_culture_group
+			is_culture_group = czecho_slovak_culture_group
+			is_culture_group = east_slavic
+			tag = POL
+			tag = PLC
+		}
+		OR = {
+			tag = HRE
+			tag = GER
+			tag = NGF
+			tag = PRU
+			is_culture_group = germanic
+		}		
+		has_global_flag = polish_prussia
+		owns = 546 # Stettin
+		owns = 679 # Kolberg
+	}
+	
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = EVTOPTA5000101
+		clr_global_flag = polish_prussia
+		546 = { change_province_name = "Stettin" }
+		679 = { change_province_name = "Kolberg" }
+		680 = { change_province_name = "Köslin" }
+		681 = { change_province_name = "Küstrin" }
+		692 = { change_province_name = "Deutsch Krone" }
+		699 = {
+			change_province_name = "Posen"
+			state_scope = { change_region_name = "Posen" }
+		}
+	}
+}
+country_event = {
+	id = 5000102
+	title = EVTNAME5000102
+	desc = EVTDESC5000102
+	picture = treaty
+	
+	trigger = {
+		OR = {
+			is_culture_group = polish_culture_group
+			is_culture_group = czecho_slovak_culture_group
+			is_culture_group = east_slavic
+			tag = POL
+			tag = PLC
+		}
+		NOT = {
+			tag = HRE
+			tag = GER
+			tag = NGF
+			tag = PRU
+			has_global_flag = polish_koenigsberg
+		}
+		owns = 695 # Königsberg
+		OR = {
+			tag = LIT
+			LIT = { exists = no }
+		}
+		is_independant = yes
+	}
+	
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = EVTOPTA5000102
+		set_global_flag = polish_koenigsberg
+		696 = { # Allenstein
+			change_province_name = "Olsztyn"
+			state_scope = { change_region_name = "Masuria" }
+		}
+		695 = { # Königsberg
+			change_province_name = "Kaliningrad"
+			state_scope = { change_region_name = "Kaliningrad" }
+		}
+		697 = { change_province_name = "Gusev" } # Gumbinnen
+		698 = { change_province_name = "Klaipeda" } # Memel
+	}
+}
+
+country_event = {
+	id = 5000103
+	title = EVTNAME5000103
+	desc = EVTDESC5000103
+	picture = treaty
+	
+	trigger = {
+		NOT = {
+			is_culture_group = polish_culture_group
+			is_culture_group = czecho_slovak_culture_group
+			is_culture_group = east_slavic
+			tag = POL
+			tag = PLC
+		}
+		OR = {
+			tag = HRE
+			tag = GER
+			tag = NGF
+			tag = PRU
+			is_culture_group = germanic
+		}		
+		has_global_flag = polish_koenigsberg
+		owns = 695 # Königsberg
+	}
+	
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = EVTOPTA5000103
+		clr_global_flag = polish_koenigsberg
+		696 = {
+			change_province_name = "Allenstein"
+			state_scope = { change_region_name = "Westpreußen" }
+		}
+		695 = {
+			change_province_name = "Königsberg"
+			state_scope = { change_region_name = "Ostpreußen" }
+		}
+		697 = { change_province_name = "Gumbinnen" }
+		698 = { change_province_name = "Memel" }
+	}
+}
+country_event = { # Give Kaliningrad to Russians
+	id = 5000104
+	title = EVTNAME5000102
+	desc = EVTDESC5000102
+	picture = treaty
+	
+	trigger = {
+		OR = {
+			is_culture_group = polish_culture_group
+			is_culture_group = czecho_slovak_culture_group
+			is_culture_group = east_slavic
+			tag = POL
+			tag = PLC
+		}
+		NOT = {
+			tag = HRE
+			tag = GER
+			tag = NGF
+			tag = PRU
+			has_global_flag = polish_koenigsberg
+		}
+		is_independant = no
+		owns = 695 # Königsberg
+	}
+	
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = EVTOPTA5000102
+		set_global_flag = polish_koenigsberg
+		696 = { # Allenstein
+			change_province_name = "Olsztyn"
+			state_scope = { change_region_name = "Masuria" }
+		}
+		695 = { # Königsberg
+			change_province_name = "Kaliningrad"
+			state_scope = { change_region_name = "Kaliningrad" }
+		}
+		697 = { change_province_name = "Gusev" } # Gumbinnen
+		698 = { change_province_name = "Klaipeda" } # Memel
+		overlord = {
+			country_event = 5000114
+		}
+	}
+}
+country_event = {
+	id = 5000114
+	title = EVTNAME5000114
+	desc = EVTDESC5000114
+	picture = treaty
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA5000114
+		695 = { secede_province = THIS }
+		697 = { secede_province = THIS }
+		698 = { secede_province = THIS }
+	}
+}
+country_event = { # Give Memel to Lithuania
+	id = 5000105
+	title = EVTNAME5000102
+	desc = EVTDESC5000102
+	picture = treaty
+	
+	trigger = {
+		OR = {
+			is_culture_group = polish_culture_group
+			is_culture_group = czecho_slovak_culture_group
+			is_culture_group = east_slavic
+			tag = POL
+			tag = PLC
+		}
+		NOT = {
+			tag = HRE
+			tag = GER
+			tag = NGF
+			tag = PRU
+			has_global_flag = polish_koenigsberg
+		}
+		owns = 695 # Königsberg
+		is_independant = yes
+		NOT = { tag = LIT }
+		exists = LIT
+	}
+	
+	mean_time_to_happen = { months = 1 }
+	
+	option = {
+		name = EVTOPTA5000102
+		set_global_flag = polish_koenigsberg
+		696 = { # Allenstein
+			change_province_name = "Olsztyn"
+			state_scope = { change_region_name = "Masuria" }
+		}
+		695 = { # Königsberg
+			change_province_name = "Kaliningrad"
+			state_scope = { change_region_name = "Kaliningrad" }
+		}
+		697 = { change_province_name = "Gusev" } # Gumbinnen
+		698 = { # Memel
+			change_province_name = "Klaipeda"
+			secede_province = LIT
+		}
+	}
+}
