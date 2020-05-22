@@ -415,7 +415,7 @@ link = { vic2 = guajiro eu4 = arawak region = bogota_area region = coquivacoa_ar
 link = { vic2 = guajiro eu4 = guajiro }
 link = { vic2 = carribean eu4 = arawak eu4 = carib }
 
-# MÃ©tis - Christian Native North Americans (huge line of code)
+# Métis - Christian Native North Americans (huge line of code)
 link = { vic2 = metis eu4 = dakota eu4 = nakota eu4 = chiwere eu4 = osage eu4 = catawba eu4 = cherokee eu4 = iroquois eu4 = iroquis eu4 = huron eu4 = susquehannock eu4 = pueblo eu4 = piman eu4 = shoshone eu4 = kiowa eu4 = kamchatkan eu4 = aleutian eu4 = inuit eu4 = cree eu4 = shawnee eu4 = anishinabe eu4 = illini eu4 = mesquakie eu4 = navajo eu4 = chipewyan eu4 = athabascan eu4 = apache eu4 = haida eu4 = chinook eu4 = salish eu4 = yokuts eu4 = arapaho eu4 = cheyenne eu4 = blackfoot eu4 = delaware eu4 = abenaki eu4 = mikmaq eu4 = mahican eu4 = powhatan eu4 = pequot eu4 = creek eu4 = choctaw eu4 = chickasaw eu4 = pawnee eu4 = wichita eu4 = caddo eu4 = tlingit eu4 = miwok religion = catholic religion = cathar religion = fraticelli religion = waldensian religion = lollard religion = catholic_heresy religion = arian religion = protestant religion = protestant_heresy religion = orthodox religion = bogomilist religion = monothelite religion = iconoclast religion = paulician religion = orthodox_heresy religion = coptic religion = monophysite religion = nestorian religion = messalian }
 
 # North American - dakota, cherokee, pueblo, aleutian, inuit, cree, iroquis, huron, navajo, shawnee, delaware, creek, etc
@@ -1129,8 +1129,3 @@ link = { vic2 = persian eu4 = scythian eu4 = sarmatian eu4 = iazyges eu4 = budin
 link = { vic2 = cat eu4 = cat }
 link = { vic2 = undead eu4 = zombiec eu4 = zombie }
 link = { vic2 = alien eu4 = alien } # No actual culture, but ok
-
-#CK2 Mythos mod - not exporting to EU4, however
-#link = { vic2 = undead eu4 = djinni eu4 = zombie_culture eu4 = vampire_culture eu4 = werewolf_culture }
-#link = { vic2 = icelandic eu4 = jotunn }
-#link = { vic2 = alien eu4 = draconic }

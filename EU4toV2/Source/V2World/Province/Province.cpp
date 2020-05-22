@@ -271,17 +271,24 @@ void V2::Province::determineDemographics(
 			popRatio.getReligion(),
 			eu4ProvID,
 			oldOwnerTag);
+		auto thisContinent = continentsMapper.getEU4Continent(eu4ProvID);
+		if (!slaveCulture && !popRatio.getOriginalCulture().empty())
+			slaveCulture = slaveCultureMapper.cultureMatch(
+			eu4Regions,
+			popRatio.getOriginalCulture(),
+			popRatio.getReligion(),
+			eu4ProvID,
+			oldOwnerTag);
 		if (!slaveCulture)
 		{
-			auto thisContinent = continentsMapper.getEU4Continent(eu4ProvID);
-			if (thisContinent && (thisContinent == "asia" || thisContinent == "oceania"))
+			if (thisContinent && (*thisContinent == "asia" || *thisContinent == "africa" || *thisContinent == "oceania"))
 			{
-				if (theConfiguration.getDebug()) LOG(LogLevel::Warning) << "No mapping for slave culture in province " << destNum << " - using native culture (" << popRatio.getCulture() << ").";
+				LOG(LogLevel::Warning) << "No mapping for slave culture " << popRatio.getCulture() << "("<< popRatio.getOriginalCulture() << ")/" << popRatio.getReligion() << " in province " << destNum << "/" << *thisContinent << " - using native culture (" << popRatio.getCulture() << ").";
 				slaveCulture.emplace(popRatio.getCulture());
 			}
 			else
 			{
-				if (theConfiguration.getDebug()) LOG(LogLevel::Warning) << "No mapping for slave culture for pops in Vic2 province " << destNum << " - using african_minor.";
+				LOG(LogLevel::Warning) << "No mapping for slave culture " << popRatio.getCulture() << "("<< popRatio.getOriginalCulture() << ")/" << popRatio.getReligion() << " for pops in Vic2 province " << destNum << "/" << *thisContinent << " - using african_minor.";
 				slaveCulture.emplace("african_minor");
 			}
 		}
