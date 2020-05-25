@@ -21,10 +21,8 @@ V2::Province::Province(
 	const mappers::NavalBaseMapper& navalBaseMapper):
 filename(std::move(_filename))
 {
-	const auto slash = filename.find_last_of("/");
-	const auto numDigits = filename.find_first_of("-") - slash - 2;
-	const auto temp = filename.substr(slash + 1, numDigits);
-	provinceID = stoi(temp);
+	const auto temp = trimPath(filename);
+	provinceID = std::stoi(temp);
 
 	//In case we're overriding provinces (not true by default)
 	if (Utils::DoesFileExist("./blankMod/output/history/provinces" + filename))

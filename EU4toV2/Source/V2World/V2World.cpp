@@ -473,6 +473,8 @@ void V2::World::importProvinces()
 	auto provinceFilenames = discoverProvinceFilenames();
 	for (const auto& provinceFilename: provinceFilenames)
 	{
+		if (provinceFilename.find(".txt") == std::string::npos)
+			continue;
 		auto newProvince = std::make_shared<Province>(provinceFilename, climateMapper, terrainDataMapper, provinceNameParser, navalBaseMapper);
 		provinces.insert(std::make_pair(newProvince->getID(), newProvince));
 	}
