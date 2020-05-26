@@ -340,9 +340,9 @@ void V2::Flags::createCustomFlags() const
 		int r, g, b = 0;
 		flagColor.GetRGB(r, g, b);
 
-		int colourcount = flagColorMapper.getNumFlagColors();
+		auto colourCount = static_cast<int>(flagColorMapper.getNumFlagColors());
 
-		if (r > colourcount || g > colourcount || b > colourcount)
+		if (r > colourCount || g > colourCount || b > colourCount)
 		{
 			LOG(LogLevel::Error) << V2Tag << "'s flag has some missing colours.";
 			continue;

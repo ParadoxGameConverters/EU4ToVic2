@@ -28,7 +28,7 @@ EU4::EU4Army::EU4Army(std::istream& theStream, const std::string& potentialNavy)
 
 double EU4::EU4Army::getAverageStrength(REGIMENTCATEGORY category) const
 {
-	const int regimentCount = regimentList.size();
+	const auto regimentCount = regimentList.size();
 	auto totalStrength = 0.0;
 	for (const auto& regiment : regimentList)
 	{

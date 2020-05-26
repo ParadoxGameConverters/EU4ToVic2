@@ -4,6 +4,7 @@
 #include "ParserHelpers.h"
 #include <fstream>
 #include <vector>
+#include "CommonFunctions.h"
 
 Configuration theConfiguration;
 
@@ -166,33 +167,6 @@ void Configuration::setOutputName()
 	outputName = Utils::normalizeUTF8Path(outputName);
 	theConfiguration.setOutputName(outputName);
 	LOG(LogLevel::Info) << "Using output name " << outputName;
-}
-
-std::string Configuration::trimPath(const std::string& fileName)
-{    
-    int lastSlash = fileName.find_last_of('\\');
-    std::string newName = fileName.substr(lastSlash + 1, fileName.length());
-    lastSlash = newName.find_last_of('/');
-    newName = newName.substr(lastSlash + 1, fileName.length());
-    return newName;
-}
-
-std::string Configuration::trimExtension(const std::string& fileName)
-{
-	const int length = fileName.find_last_of(".");
-	return fileName.substr(0, length);
-}
-
-std::string Configuration::replaceCharacter(std::string fileName, char character)
-{
-	auto position = fileName.find_first_of(character);
-	while (position != std::string::npos)
-	{
-		fileName.replace(position, 1, "_");
-		position = fileName.find_first_of(character);
-	}
-
-	return fileName;
 }
 
 ConfigurationFile::ConfigurationFile(const std::string& filename)

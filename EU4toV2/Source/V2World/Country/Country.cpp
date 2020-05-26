@@ -24,7 +24,7 @@ V2::Country::Country(const std::string& countriesFileLine,
 	 dynamicCountry(_dynamicCountry)
 {
 	// Load from a country file, if one exists. Otherwise rely on defaults.
-	int start = countriesFileLine.find_first_of('/');
+	auto start = countriesFileLine.find_first_of('/');
 	start++;
 	const auto size = countriesFileLine.find_last_of('\"') - start;
 	const auto filename = countriesFileLine.substr(start, size);
@@ -527,8 +527,8 @@ void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMap
 	if (!possibleFilename)
 	{
 		auto countryName = commonCountryFile;
-		const int lastSlash = countryName.find_last_of("/");
-		countryName = countryName.substr(lastSlash + 1, countryName.size());
+		auto lastSlash = countryName.find_last_of('/');
+		countryName = countryName.substr(++lastSlash, countryName.size());
 		details.filename = tag + " - " + countryName;
 		return;
 	}

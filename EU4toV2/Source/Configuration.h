@@ -77,9 +77,6 @@ class Configuration: commonItems::parser
 		static void verifyVic2Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
 		static void verifyVic2DocumentsPath(const std::string& path, bool (*DoesFolderExist)(const std::string& path2));
 		void setOutputName();
-		static std::string trimPath(const std::string& fileName);
-		static std::string trimExtension(const std::string& fileName);
-		static std::string replaceCharacter(std::string fileName, char character);
 
 		// options from configuration.txt
 		std::string EU4SaveGamePath;

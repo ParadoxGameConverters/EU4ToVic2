@@ -979,7 +979,7 @@ std::optional<std::string> V2::World::determineProvinceControllership(const std:
 	{
 		if (tag.second.size() > maxCount)
 		{
-			maxCount = tag.second.size();
+			maxCount = static_cast<int>(tag.second.size());
 			winner = tag.first;
 		}
 	}
