@@ -622,7 +622,7 @@ void V2::Province::createPops(
 		newPopulation = static_cast<long>(popWeightRatio * totalWeight);
 
 		auto vic2Provinces = provinceMapper.getVic2ProvinceNumbers(*eu4IDs.begin()); // the first province maps to the same places as the others.
-		int numOfV2Provs = vic2Provinces.size();
+		auto numOfV2Provs = static_cast<int>(vic2Provinces.size());
 		if (numOfV2Provs > 1)
 		{
 			if (numOfV2Provs == 2)

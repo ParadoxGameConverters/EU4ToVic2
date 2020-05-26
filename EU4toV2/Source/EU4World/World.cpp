@@ -408,7 +408,7 @@ bool EU4::World::uncompressSave()
 	if (!savefile) return false;
 	for (size_t entryNum = 0; entryNum < savefile->GetEntriesCount(); ++entryNum)
 	{
-		const auto& entry = savefile->GetEntry(entryNum);
+		const auto& entry = savefile->GetEntry(static_cast<int>(entryNum));
 		const auto& name = entry->GetName();
 		if (name == "meta")
 		{

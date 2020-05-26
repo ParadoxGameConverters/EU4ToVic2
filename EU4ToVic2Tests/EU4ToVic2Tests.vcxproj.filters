@@ -266,6 +266,9 @@
     <ClCompile Include="..\commonItems\GameVersion.cpp">
       <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
+    <ClCompile Include="..\commonItems\CommonFunctions.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">

@@ -35,7 +35,7 @@ double V2::State::getSuppliedInputs(std::shared_ptr<Factory> factory) const
 {
 	// find out the needs
 	std::map<std::string, double> inputs = factory->getInputs();
-	const int numNeeds = inputs.size();
+	const int numNeeds = static_cast<int>(inputs.size());
 	if (!numNeeds) return 0;
 
 	// find out what we have from both RGOs and existing factories

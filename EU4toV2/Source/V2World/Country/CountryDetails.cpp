@@ -40,7 +40,7 @@ V2::CountryDetails::CountryDetails(std::istream& theStream)
 
 void V2::CountryDetails::registerKeys()
 {
-	registerKeyword(std::regex("party"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("party", [this](const std::string& unused, std::istream& theStream) {
 		const mappers::PartyType newPartyType(theStream);
 		const Party newParty(newPartyType);
 		parties.push_back(newParty);
@@ -69,17 +69,17 @@ void V2::CountryDetails::registerKeys()
 		const commonItems::singleDouble conscDbl(theStream);
 		nonstateConsciousness = conscDbl.getDouble();
 	});
-	registerKeyword(std::regex("is_releasable_vassal"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("is_releasable_vassal", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString releasableStr(theStream);
 		isReleasableVassal = releasableStr.getString() == "yes";
 	});
-	registerKeyword(std::regex("nationalvalue"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("nationalvalue", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString nationalvalueStr(theStream);
 		nationalValue = nationalvalueStr.getString();
 	});
-	registerKeyword(std::regex("capital"), [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("capital", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleInt capitalInt(theStream);
 		capital = capitalInt.getInt();
 	});
-	registerKeyword(std::regex("[a-zA-Z0-9\\_.:]+"), commonItems::ignoreItem);
+	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 }
