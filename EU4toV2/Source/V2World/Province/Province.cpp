@@ -22,7 +22,15 @@ V2::Province::Province(
 filename(std::move(_filename))
 {
 	const auto temp = trimPath(filename);
-	provinceID = std::stoi(temp);
+	try
+	{
+		provinceID = std::stoi(temp);
+	}
+	catch (std::exception& e)
+	{
+		Log(LogLevel::Error) << "Failed to extract province number from file name: " << filename << " " << e.what();
+		throw std::runtime_error("Failed to extract province number from file name: " + filename + " " + e.what());
+	}
 
 	//In case we're overriding provinces (not true by default)
 	if (Utils::DoesFileExist("./blankMod/output/history/provinces" + filename))
