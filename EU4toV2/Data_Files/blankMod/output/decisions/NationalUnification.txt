@@ -500,7 +500,9 @@ political_decisions = {
 		}
 		effect = {
 			prestige = 20
-			all_core = { remove_core = THIS }
+			all_core = { 
+				add_core = THIS
+			}
 			change_tag = culture
 			any_country = {
 				limit = {
