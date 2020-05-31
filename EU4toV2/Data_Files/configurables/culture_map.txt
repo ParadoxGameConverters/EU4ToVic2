@@ -236,15 +236,20 @@ link = { vic2 = wallonian eu4 = wallonian eu4 = wallonian_UKS }
 link = { vic2 = frankish eu4 = old_frankish eu4 = frankish }
 link = { vic2 = outremer eu4 = outremer eu4 = crusader_culture }
 
-# Finno Urgic - finnish, estonian, sapmi, ingrian, karelian, uralic
+# Finno Urgic - finnish, sapmi, ingrian, karelian, uralic - share colonial cultures with baltic cultures
 link = { vic2 = usmailmian eu4 = estonian eu4 = kurland_culture eu4 = latvian eu4 = ingrian eu4 = old_prussian eu4 = pruthenian eu4 = baltic_colonial region = south_america_superregion }
 link = { vic2 = usmailmian eu4 = estonian eu4 = kurland_culture eu4 = latvian eu4 = ingrian eu4 = old_prussian eu4 = pruthenian eu4 = baltic_colonial region = north_america_superregion }
 link = { vic2 = usmailmian eu4 = estonian eu4 = kurland_culture eu4 = latvian eu4 = ingrian eu4 = old_prussian eu4 = pruthenian eu4 = baltic_colonial region = central_america_superregion }
 link = { vic2 = lounast eu4 = estonian eu4 = kurland_culture eu4 = latvian eu4 = ingrian eu4 = old_prussian eu4 = pruthenian eu4 = baltic_colonial region = oceania_superregion }
 link = { vic2 = mustvalge eu4 = estonian eu4 = kurland_culture eu4 = latvian eu4 = ingrian eu4 = old_prussian eu4 = pruthenian eu4 = baltic_colonial region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
-link = { vic2 = finnish eu4 = finnish eu4 = karelian }
-link = { vic2 = estonian eu4 = estonian eu4 = ingrian }
+link = { vic2 = finnish eu4 = finnish eu4 = karelian eu4 = ingrian }
 link = { vic2 = ugrian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki }
+
+# Baltic - lithuanian, old_prussian/pruthenian (depending on mod used, they go into lithuanian as they're closest), latvian
+# Lithuanian colonial culture is in west slavs due to their PLC cultural union.
+link = { vic2 = lithuanian eu4 = lithuanian eu4 = pruthenian eu4 = old_prussian }
+link = { vic2 = latvian eu4 = latvian eu4 = kurland_culture }
+link = { vic2 = estonian eu4 = estonian }
 
 # South Slav - croatian, serbian, bulgarian, romanian, albanian
 link = { vic2 = novisvet eu4 = montenegrin eu4 = bosnian eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = south_america_superregion }
@@ -316,10 +321,6 @@ link = { vic2 = sudic eu4 = moldovan eu4 = romanian eu4 = transylvanian eu4 = mo
 link = { vic2 = negru eu4 = moldovan eu4 = romanian eu4 = transylvanian eu4 = moldovian eu4 = romanian_colonial eu4 = vlach eu4 = dacian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = aromanian eu4 = moldovan eu4 = romanian eu4 = transylvania region = balkan_region }
 link = { vic2 = romanian eu4 = moldovan eu4 = romanian eu4 = transylvanian }
-
-# Baltic - lithuanian, old_prussian, latvian
-link = { vic2 = lithuanian eu4 = lithuanian }
-link = { vic2 = latvian eu4 = latvian eu4 = old_prussian eu4 = kurland_culture }
 
 # Byzantine - greek, georgian, armenian, pontic_greek
 link = { vic2 = neokosmi eu4 = magnagreek eu4 = anatolian eu4 = greek eu4 = bithynian eu4 = lykian eu4 = gothic eu4 = goths eu4 = pontic_greek eu4 = atlantean eu4 = spartan eu4 = athenian eu4 = sicilian_greek eu4 = cappadocian eu4 = greek_colonial eu4 = pontic eu4 = thracian eu4 = pannonian eu4 = illyrian eu4 = galatian eu4 = georgian eu4 = armenian eu4 = armenian_colonial eu4 = cilician eu4 = ge_armenian eu4 = owm_armenian eu4 = alan eu4 = scythian eu4 = maghreb_latin eu4 = punic eu4 = african_romance eu4 = babylonian eu4 = syriac eu4 = chaldean eu4 = romano_persian eu4 = aramean region = south_america_superregion }
@@ -629,7 +630,6 @@ link = { vic2 = greek eu4 = atlantean eu4 = spartan eu4 = athenian }
 link = { vic2 = anglo_saxon eu4 = anglosaxon }
 link = { vic2 = coptic eu4 = old_egyptian eu4 = old_egyptian_mod }
 link = { vic2 = danish eu4 = scanian }
-link = { vic2 = latvian eu4 = pruthenian }
 link = { vic2 = maghreb_arabic eu4 = phoenician }
 link = { vic2 = sephardic eu4 = hebrew eu4 = aramaic }
 link = { vic2 = alan eu4 = scythian }
