@@ -683,7 +683,7 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 	// set number for civilization level based on techs and institutions
 	// at 31 techs behind completely uncivilized
 	// each institution behind is equivalent to 2 techs behind
-
+	
 	auto civLevel = (totalTechs + 31 - topTech) * 4;
 	civLevel = civLevel + (static_cast<double>(srcCountry->numEmbracedInstitutions()) - topInstitutions) * 8;
 	if (civLevel > 100)
@@ -695,8 +695,13 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 
 	if (theConfiguration.getEuroCentrism() == Configuration::EUROCENTRISM::EuroCentric)
 	{
+		// For eurocentric setups, we do some overrides. Literacy is boosted or reduced according to specs
 		details.literacy *= 1 + (static_cast<double>(techGroupsMapper.getLiteracyFromTechGroup(techGroup)) - 5.0) * 10.0 / 100.0;
-		civLevel = civLevel * (static_cast<double>(techGroupsMapper.getWesternizationFromTechGroup(techGroup)) / 10.0);
+		// Westernization=10 countries must be civilized even if lagging behind in tech and scores, otherwise we scale it according to config file.
+		if (techGroupsMapper.getWesternizationFromTechGroup(techGroup) == 10)
+			civLevel = 100;
+		else
+			civLevel = civLevel * (static_cast<double>(techGroupsMapper.getWesternizationFromTechGroup(techGroup)) / 10.0);
 	}
 
 	details.literacy *= theConfiguration.getMaxLiteracy() * (pow(10, civLevel / 100 * 0.9 + 0.1) / 10);
