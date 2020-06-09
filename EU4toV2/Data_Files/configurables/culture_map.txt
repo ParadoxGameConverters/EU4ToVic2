@@ -146,48 +146,21 @@ link = { vic2 = bazramani eu4 = roman region = arabia_region }
 link = { vic2 = latin eu4 = roman } #Should be only Italy, but who can be sure?
 
 #Colonial Italian
-link = { vic2 = italoamericano eu4 = dalmatian eu4 = old_lombard eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian eu4 = italian eu4 = etrurian eu4 = dalmatian eu4 = emilian eu4 = friulian eu4 = romagnol eu4 = neapolitan eu4 = sardinian eu4 = sicilian eu4 = corsican eu4 = c_latin eu4 = napolitan_colonial eu4 = maltese eu4 = africano eu4 = americano eu4 = asiatico eu4 = australiano region = south_america_superregion }
-link = { vic2 = italoamericano eu4 = dalmatian eu4 = old_lombard eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian eu4 = italian eu4 = etrurian eu4 = dalmatian eu4 = emilian eu4 = friulian eu4 = romagnol eu4 = neapolitan eu4 = sardinian eu4 = sicilian eu4 = corsican eu4 = c_latin eu4 = napolitan_colonial eu4 = maltese eu4 = africano eu4 = americano eu4 = asiatico eu4 = australiano region = north_america_superregion }
-link = { vic2 = italoamericano eu4 = dalmatian eu4 = old_lombard eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian eu4 = italian eu4 = etrurian eu4 = dalmatian eu4 = emilian eu4 = friulian eu4 = romagnolc eu4 = neapolitan eu4 = sardinian eu4 = sicilian eu4 = corsican eu4 = c_latin eu4 = napolitan_colonial eu4 = maltese eu4 = africano eu4 = americano eu4 = asiatico eu4 = australiano region = central_america_superregion }
+link = { vic2 = italoamericano eu4 = dalmatian eu4 = old_lombard eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian eu4 = italian eu4 = etrurian eu4 = dalmatian eu4 = emilian eu4 = friulian eu4 = romagnol eu4 = neapolitan eu4 = sardinian eu4 = sicilian eu4 = corsican eu4 = c_latin eu4 = napolitan_colonial eu4 = maltese eu4 = africano eu4 = americano eu4 = asiatico eu4 = australiano region = central_america_superregion region = north_america_superregion region = south_america_superregion }
 link = { vic2 = australiano eu4 = dalmatian eu4 = old_lombard eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian eu4 = italian eu4 = etrurian eu4 = dalmatian eu4 = emilian eu4 = friulian eu4 = romagnol eu4 = neapolitan eu4 = sardinian eu4 = sicilian eu4 = corsican eu4 = c_latin eu4 = napolitan_colonial eu4 = maltese eu4 = africano eu4 = americano eu4 = asiatico eu4 = australiano region = oceania_superregion }
 link = { vic2 = africano eu4 = dalmatian eu4 = old_lombard eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian eu4 = italian eu4 = etrurian eu4 = dalmatian eu4 = emilian eu4 = friulian eu4 = romagnolc eu4 = neapolitan eu4 = sardinian eu4 = sicilian eu4 = corsican eu4 = c_latin eu4 = napolitan_colonial eu4 = maltese eu4 = africano eu4 = americano eu4 = asiatico eu4 = australiano region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 
 link = { vic2 = lombard eu4 = old_lombard }
 link = { vic2 = maltese eu4 = maltese }
 #Sidenote: Muslim Southern Italians convert to Maltese (historical Siculo-Arabic)
-link = { vic2 = maltese eu4 = dalmatian eu4 = sicilian religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = sardinian religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = neapolitan religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = sicily_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = corsica_sardinia_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = sicily_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = naples_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = calabria_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = old_lombard eu4 = italian region = apulia_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = sicily_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = corsica_sardinia_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = sicily_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = naples_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = calabria_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = maltese eu4 = dalmatian eu4 = roman eu4 = latin region = apulia_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
+link = { vic2 = maltese eu4 = dalmatian eu4 = sicilian eu4 = sardinian eu4 = neapolitan eu4 = roman eu4 = latin eu4 = old_lombard eu4 = italian region = apulia_area region = calabria_area region = naples_area region = sicily_area region = corsica_sardinia_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 
 # Italian
-link = { vic2 = north_italian eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian }
-link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = lombardy_area }
-link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = venetia_area }
-link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = piedmont_area }
-link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = tuscany_area }
-link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = liguria_area }
-link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = emilia_romagna_area }
-link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = central_italy_area }
+link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = lombardy_area region = venetia_area region = piedmont_area region = tuscany_area region = liguria_area region = emilia_romagna_area region = central_italy_area }
+link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = sicily_area region = corsica_sardinia_area region = naples_area region = calabria_area apulia_area }
+link = { vic2 = north_italian eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian eu4 = dalmatian }
 link = { vic2 = south_italian eu4 = neapolitan eu4 = sardinian eu4 = sicilian }
-link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = sicily_area }
-link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = corsica_sardinia_area }
-link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = sicily_area }
-link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = naples_area }
-link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = calabria_area }
-link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = apulia_area }
-link = { vic2 = all_italian eu4 = dalmatian eu4 = italian }
+link = { vic2 = all_italian eu4 = italian }
 
 # Iberian - castillian, catalan, galician, andalucian, portugese
 #Sidenote: Andalusian/Mozarabic can switch to Spanish if catholic, viceversa for Muslim spaniards
