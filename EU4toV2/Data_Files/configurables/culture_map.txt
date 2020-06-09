@@ -157,7 +157,7 @@ link = { vic2 = maltese eu4 = dalmatian eu4 = sicilian eu4 = sardinian eu4 = nea
 
 # Italian
 link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = lombardy_area region = venetia_area region = piedmont_area region = tuscany_area region = liguria_area region = emilia_romagna_area region = central_italy_area }
-link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = sicily_area region = corsica_sardinia_area region = naples_area region = calabria_area apulia_area }
+link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = sicily_area region = corsica_sardinia_area region = naples_area region = calabria_area region = apulia_area }
 link = { vic2 = north_italian eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian eu4 = dalmatian }
 link = { vic2 = south_italian eu4 = neapolitan eu4 = sardinian eu4 = sicilian }
 link = { vic2 = all_italian eu4 = italian }

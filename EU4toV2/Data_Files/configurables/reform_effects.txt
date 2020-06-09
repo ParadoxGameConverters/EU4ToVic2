@@ -284,7 +284,7 @@ organising_our_religion_reform = { order = 6 reactionary = 6 }
 # Theocracy 8
 religion_in_one_country_reform = { culture = 3 equality = 3 army = 6 public_meetings = 3 }
 religious_permanent_revolution_reform = { culture = 3 equality = 2 commerce = 3 army = 7 public_meetings = 2 }
-many_fingers_of_god_reform = { equlity = 9 public_meetings = 9 }
+many_fingers_of_god_reform = { equality = 9 public_meetings = 9 }
 priestly_autonomy_reform = { liberty = 6 public_meetings = 6 }
 proclaim_religious_head_reform = { equality = 3 public_meetings = 4 }
 all_under_tengri_reform = { army = 6 culture = 3 literacy = 3 }
