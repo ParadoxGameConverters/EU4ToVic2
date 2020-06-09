@@ -13,6 +13,7 @@ old_world = {
 	tartary_superregion = { assimilation = 1 }
 	far_east_superregion = { assimilation = 1 }
 	africa_superregion = { assimilation = 2 }
+	southern_africa_superregion = { assimilation = 2 }
 	near_east_superregion = { assimilation = 1 }
 	persia_superregion = { assimilation = 1 }
 }
@@ -21,4 +22,5 @@ new_world = {
 	south_america_superregion = { assimilation = 4 }
 	north_america_superregion = { assimilation = 4 }
 	central_america_superregion = { assimilation = 4 }
+	andes_superregion = { assimilation = 4 }
 }
