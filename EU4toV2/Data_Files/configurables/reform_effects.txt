@@ -49,6 +49,8 @@ shogunate = { order = 7 culture = 6}
 english_monarchy = { liberty = 7 liberal = 7 commerce = 6 navy = 6 }
 mandala_reform = { order = 6 commerce = 4 }
 revolutionary_empire_reform = { equality = 10 liberal = 9 army = 8 }
+austrian_archduchy_reform = { order = 8 reactionary = 8 culture = 6 }
+austrian_dual_monarchy = { order = 7 reactionary = 6 culture = 8 }
 
 # Monarchy 2 - Tech
 enforce_privileges_reform = { army = 7 culture = 3 order = 6 }
@@ -60,6 +62,9 @@ poligar_reform = { army = 6 equality = 6 }
 khalsa_reform = { army = 8 navy = 7 }
 deccani_society_reform = { commerce = 7 culture = 6  equality = 6 }
 mughal_government = { army = 8 navy = 7 equality = 10 }
+black_army_reform = { army = 6 equality = 6 reactionary = 4 }
+legion_of_honor_reform = { equality = 7 army = 6 }
+imperial_nobility_reform = { culture = 7 equality = 6 reactionary = 4 }
 
 # Monarchy 3 - Voting
 centralize_reform = { upper_house_composition = 2 vote_franchise = 2 voting_system = 2 }
@@ -83,14 +88,19 @@ royal_decree_reform = { political_parties = 1 public_meetings = 1 }
 aristocratic_court_reform = { political_parties = 4 public_meetings = 7 }
 general_estates_reform = { political_parties = 6 public_meetings = 6 industry = 7 }
 states_general_reform = { political_parties = 8 public_meetings = 10 }
+legislative_sejm = { political_parties = 6 public_meetings = 7 }
+integrated_sejmiks = { public_meetings = 8 political_parties = 6 }
+imperial_decree_reform = { political_parties = 1 public_meetings = 1 }
 
 # Monarchy 6 - Slavery, Press Rights, Trade Unions
 letat_cest_moi_reform = { slavery = 0 press_rights = 0 trade_unions = 0 political_parties = 0 }
 regional_representation_reform = { press_rights = 6 trade_unions = 8 }
+consulate_reform = { trade_unions = 7 public_meetings = 8 }
 
 # Monarchy 7 - Press Rights, Trade Unions
 political_absolutism_reform = { press_rights = 2 trade_unions = 3 political_parties = 0 }
 legislative_houses_reform = { enforce = prussian_constitutionalism press_rights = 6 trade_unions = 6 political_parties = 6 }
+emperor_of_the_revolution_reform = { enforce = bourgeois_dictatorship political_parties = 1 }
 
 # Monarchy basic - Nothing, this is ignored
 monarchy_mechanic = { }
