@@ -2973,7 +2973,7 @@ link = { name = "songhay" 	 title = "d_songhay" 	 region = "e_mali" }
 link = { name = "sons of kaleva" 	 title = "d_sons_kaleva" 	 region = "e_pirates" }
 link = { name = "sorabes" 	 title = "d_sorbs" 	 region = "e_mali" }
 link = { name = "sorben" 	 title = "d_sorbs" 	 region = "e_mali" }
-link = { name = "sorbia # brennaburg" 	 title = "d_brandenburg" 	 region = "e_hre" }
+link = { name = "sorbia" 	 title = "d_sorbs" 	 region = "e_hre" }
 link = { name = "sorbios" 	 title = "d_sorbs" 	 region = "e_mali" }
 link = { name = "sorbs" 	 title = "d_sorbs" 	 region = "e_mali" }
 link = { name = "søreyar" 	 title = "c_innse_gall" 	 region = "e_britannia" }
@@ -3529,6 +3529,30 @@ link = { name = "zoroastrische kirche" 	 title = "d_zoroastrian" 	 region = "e_m
 link = { name = "zuarina" 	 title = "c_mecklemburg" 	 region = "e_wendish_empire" }
 link = { name = "zypern" 	 title = "k_cyprus" 	 region = "e_mali" }
 link = { name = "Secret Denmark" 	 title = "secretdenmark" 	 region = "e_scandinavia" }
+
+#
+link = { name = "osnabruck" title = "c_osnabruck" region = "e_hre" }
+link = { name = "osnabrück" title = "c_osnabruck" region = "e_hre" }
+link = { name = "bamberg" title = "c_bamberg" region = "e_hre" }
+link = { name = "rugen" 	 title = "c_rugen" 	 region = "e_wendish_empire" }
+link = { name = "rügen" 	 title = "c_rugen" 	 region = "e_wendish_empire" }
+link = { name = "bologna" title = "c_bologna" region = "e_italy" }
+link = { name = "bologne" title = "c_bologna" region = "e_italy" }
+link = { name = "saluzzo" title = "c_saluzzo" region = "e_italy" }
+link = { name = "saluces" title = "c_saluzzo" region = "e_italy" }
+link = { name = "padova" title = "c_padova" region = "e_italy" }
+link = { name = "padua" title = "c_padova" region = "e_italy" }
+link = { name = "padoue" title = "c_padova" region = "e_italy" }
+link = { name = "wolgast" 	 title = "c_wolgast" 	 region = "e_wendish_empire" }
+link = { name = "stettin" 	 title = "c_stettin" 	 region = "e_wendish_empire" }
+link = { name = "opole" 	 title = "c_opole" 	 region = "e_wendish_empire" }
+link = { name = "passau" title = "c_passau" region = "e_hre" }
+link = { name = "trento" title = "c_trent" region = "e_hre" }
+link = { name = "trent" title = "c_trent" region = "e_hre" }
+link = { name = "trient" title = "c_trent" region = "e_hre" }
+link = { name = "trente" title = "c_trent" region = "e_hre" }
+
+#
 
 # EU4 scripted client states names
 link = { name = "Republic of Westphalia" title = "k_westphalia" region = "e_hre" }

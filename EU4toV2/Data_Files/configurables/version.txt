@@ -2,4 +2,4 @@
 
 version = "1.0N"
 name = "Nitra-prerelease"
-descriptionLine = "compatible with 1.29 and previous"
+descriptionLine = "compatible with 1.30 and previous"

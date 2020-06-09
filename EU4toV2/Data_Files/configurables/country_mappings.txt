@@ -9,12 +9,12 @@
 # (country) => (ck2title) means that the CK2 mapping already gives correct flag, no need of further mapping work
 #
 # further expansion is possible using flag=<..> and reform=<...> specifiers, or both, eg.:
-# link = { EU4 = PAP Vic2 = ITP reform = kingdom_of_god }
+# link = { EU4 = PAP Vic2 = ITP reform = kingdom_of_god_reform }
 # link = { EU4 = EGY flag = caliphate_done Vic2 = ALL }
 # link = { EU4 = ULM flag = embraced_by_aliens flag = survived_zombie_apocalipse reform = alien_government Vic2 = ALI }
 # you can use multiple flags and/or reforms in the same line and only one of each needs to match in order for the mapping to become valid.
 # If you're using these specifiers, keep the line ABOVE the line without specifiers, as it must be of higher priority:
-# link = { EU4 = PAP Vic2 = ITP reform = kingdom_of_god }
+# link = { EU4 = PAP Vic2 = ITP reform = kingdom_of_god_reform }
 # link = { EU4 = PAP Vic2 = PAP }
 
 # Special countries..
@@ -71,6 +71,8 @@ link = { EU4 = CRT Vic2 = CRE } # Crete
 link = { EU4 = d_krete Vic2 = CRE } # Crete
 link = { EU4 = CYP Vic2 = CYP } # Cyprus
 link = { EU4 = k_cyprus Vic2 = CYP } # Cyprus
+link = { EU4 = DAL Vic2 = DLM } # Dalmatia
+link = { EU4 = d_dalmatia Vic2 = DLM } #Dalmatia
 link = { EU4 = EPI Vic2 = EPI } # Epirus
 link = { EU4 = d_epirus Vic2 = EPI } # Epirus
 link = { EU4 = GRE Vic2 = GRE } # Greece
@@ -167,6 +169,15 @@ link = { EU4 = VNZ Vic2 = VNZ } # Venezuela
 link = { EU4 = AUS Vic2 = AST } # Australia
 link = { EU4 = CAL Vic2 = CAL } # California
 link = { EU4 = TEX Vic2 = TEX } # Texas
+link = { EU4 = CSC Vic2 = CAS } # Cascadia
+link = { EU4 = ALA Vic2 = LSK } # Alaska
+link = { EU4 = NZL Vic2 = NZL } # New Zealand
+link = { EU4 = ILI Vic2 = UIL } # Illinois
+link = { EU4 = FLO Vic2 = FLR } # Florida
+link = { EU4 = VRM Vic2 = VRM } # Vermont
+link = { EU4 = SNA Vic2 = SON } # Sonora
+link = { EU4 = WSI Vic2 = WSI } # West Indies
+link = { EU4 = CUB Vic2 = CUB } # Cuba
 
 #Eastern Europe
 link = { EU4 = DNZ Vic2 = DZG } # Danzig
@@ -384,6 +395,7 @@ link = { EU4 = d_modena Vic2 = MOD } # Modena
 link = { EU4 = NAP Vic2 = NAP } # Naples
 link = { EU4 = k_naples Vic2 = NAP } # Naples
 link = { EU4 = PAP Vic2 = PAP } # Papal States
+link = { EU4 = PAP Vic2 = ITP reform = kingdom_of_god_reform } # Kingdom of God => Papal Italy
 link = { EU4 = k_papal_state Vic2 = PAP } # Papal States
 link = { EU4 = k_papacy Vic2 = PAP } # Papal States
 link = { EU4 = PAR Vic2 = PAR } # Parma
@@ -483,98 +495,143 @@ link = { EU4 = GLH Vic2 = GOL } # Golden Horde
 link = { EU4 = e_golden_horde Vic2 = GOL } # Golden Horde
 
 #Arabia 
+# Note: all mappings have an alternative version if they become The Caliphate
 link = { EU4 = ADE Vic2 = ADE } # Aden
+link = { EU4 = ADE Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = c_aden Vic2 = ADE } # Aden
 link = { EU4 = d_sanaa Vic2 = ADE } # Sanaa => Aden
 link = { EU4 = ALH Vic2 = ALH } # Haasa
+link = { EU4 = ALH Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = c_al_hasa Vic2 = ALH } # Haasa
 link = { EU4 = d_amman Vic2 = ALH } # Haasa
 link = { EU4 = ANZ Vic2 = ANZ } # Anizah
+link = { EU4 = ANZ Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = ARB Vic2 = ARA } # Arabia
+link = { EU4 = ARB Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = e_arabs Vic2 = ARA } # Arabia
 link = { EU4 = k_arabia Vic2 = ARA } # Arabia
 link = { EU4 = e_arabia Vic2 = ARA } # Arabia
 link = { EU4 = ARD Vic2 = ARD } # Ardalan
+link = { EU4 = ARD Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = BHT Vic2 = KDS } # Bohtan/Soran => Kurdistan
+link = { EU4 = BHT Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = DAW Vic2 = DAW } # Dawasir
+link = { EU4 = DAW Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = ERE Vic2 = ERE } # Eretna
+link = { EU4 = ERE Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_eretnid Vic2 = ERE } # Eretna
 link = { EU4 = FAD Vic2 = FAD } # Fadl
+link = { EU4 = FAD Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = GRM Vic2 = GRM } # Germiyan
+link = { EU4 = GRM Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_germiyan Vic2 = GRM } # Germiyan
 link = { EU4 = HDR Vic2 = HDR } # Hadramawt
+link = { EU4 = HDR Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = d_hadramut Vic2 = HDR } # Hadramawt
 link = { EU4 = HED Vic2 = HDJ } # Hedjaz
+link = { EU4 = HED Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = LEB Vic2 = LBN } # Lebanon
+link = { EU4 = LEB Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_tripoli Vic2 = LBN } # Tripoli of Lebanon => Lebanon
 link = { EU4 = d_tripoli Vic2 = LBN } # Tripoli of Lebanon => Lebanon
 link = { EU4 = MAK Vic2 = MKA } # Makuria
 link = { EU4 = c_makuria Vic2 = MKA } # Makuria
 #link = { EU4 = MDA Vic2 = XXX } # Medina => d_medina
 link = { EU4 = MFL Vic2 = MFL } # Mikhlaf
+link = { EU4 = MFL Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = MHR Vic2 = MHR } # Mahra
+link = { EU4 = MHR Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = c_mahra Vic2 = MHR } # Mahra
 link = { EU4 = NAJ Vic2 = NEJ } # Najd => Nejd
+link = { EU4 = NAJ Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = NJR Vic2 = NJR } # Najran
+link = { EU4 = NJR Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = c_najran Vic2 = NJR } # Najran
 link = { EU4 = OMA Vic2 = OMA } # Oman
+link = { EU4 = OMA Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = RAS Vic2 = RAS } # Rassids
+link = { EU4 = RAS Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = SHM Vic2 = HAL } # Shammar
+link = { EU4 = SHM Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = d_oman Vic2 = OMA } # Oman
 link = { EU4 = SHR Vic2 = ABU } # Sharjah => Abu Dhabi
+link = { EU4 = SHR Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = c_dhu_zabi Vic2 = ABU } # Dhu Zhabi => Abu Dhabi
 link = { EU4 = SRV Vic2 = SRV } # Shirvanshah
 link = { EU4 = YAS Vic2 = YAS } # Yas (Dubai)
+link = { EU4 = YAS Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = YEM Vic2 = YEM } # Yemen
+link = { EU4 = YEM Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_yemen Vic2 = YEM } # Yemen
 link = { EU4 = HSN Vic2 = AYU } # Hisn Khayfa/Ayyubids
+link = { EU4 = HSN Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = BTL Vic2 = BTL } # Bitlis
+link = { EU4 = BTL Vic2 = ALL flag = unified_islam } # The Caliphate
 
 #Asia Minor  
 link = { EU4 = AKK Vic2 = AKK } # Ak Koyunlu
+link = { EU4 = AKK Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = AYD Vic2 = AYD } # Aydin
+link = { EU4 = AYD Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_aydin Vic2 = AYD } # Aydin
 link = { EU4 = CND Vic2 = CND } # Candar
+link = { EU4 = CND Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_candar Vic2 = CND } # Candar
 link = { EU4 = DUL Vic2 = DUL } # Dulkadir
+link = { EU4 = DUL Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = IRQ Vic2 = IRQ } # Iraq
+link = { EU4 = IRQ Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_iraq Vic2 = IRQ } # Iraq
 link = { EU4 = KAR Vic2 = KRM } # Karaman
+link = { EU4 = KAR Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_karaman Vic2 = KRM } # Karaman
 link = { EU4 = SYR Vic2 = SYR } # Syria
+link = { EU4 = SYR Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_syria Vic2 = SYR } # Syria
 link = { EU4 = TRE Vic2 = TBZ } # Trebizond
 link = { EU4 = k_trebizond Vic2 = TBZ } # Trebizond
 link = { EU4 = d_trebizond Vic2 = TBZ } # Trebizond
 link = { EU4 = SRU Vic2 = SRU } # Saruhan
+link = { EU4 = SRU Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_saruhan Vic2 = SRU } # Saruhan
 link = { EU4 = MEN Vic2 = MEN } # Mentese
+link = { EU4 = MEN Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_mentese Vic2 = MEN } # Mentese
 link = { EU4 = RAM Vic2 = RAM } # Ramazan
+link = { EU4 = RAM Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = AVR Vic2 = AVR } # Avars
 link = { EU4 = MLK Vic2 = MLK } # Karabakh/Kashen
 link = { EU4 = SME Vic2 = SME } # Samtskhe
 link = { EU4 = ARL Vic2 = ARL } # Ardabil
 link = { EU4 = MSY Vic2 = MSY } # Mushashaiyyah
 link = { EU4 = RUM Vic2 = RUM } # Rûm
+link = { EU4 = RUM Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_rum Vic2 = RUM } # Rûm
 
 #Maghreb
 link = { EU4 = ALG Vic2 = ALD } # Algiers
+link = { EU4 = ALG Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = d_alger Vic2 = ALD } # Alger
 link = { EU4 = FEZ Vic2 = FEZ } # Fez
+link = { EU4 = FEZ Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = d_fes Vic2 = FEZ } # Fez
 link = { EU4 = MAM Vic2 = EGY } # Mamluks => Egypt
+link = { EU4 = MAM Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = d_mamluks Vic2 = EGY } # Mamluks => Egypt
 link = { EU4 = MOR Vic2 = MOR } # Morocco
+link = { EU4 = MOR Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_morocco Vic2 = MOR } # Morocco
 link = { EU4 = TRP Vic2 = TRI } # Tripoli
+link = { EU4 = TRP Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = d_tripolitania Vic2 = TRI } # Tripoli(tania)
 link = { EU4 = TUN Vic2 = TUN } # Tunisia
+link = { EU4 = TUN Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = d_tunis Vic2 = TUN } # Tunisia
 link = { EU4 = EGY Vic2 = EGY } # Egypt
+link = { EU4 = EGY Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = k_egypt Vic2 = EGY } # Egypt
 link = { EU4 = KBA Vic2 = KBA } # Kabylia
+link = { EU4 = KBA Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = d_kabylia Vic2 = KBA } # Kabylia
 link = { EU4 = TFL Vic2 = TFL } # Tafilalt
 link = { EU4 = SOS Vic2 = SOS } # Sus
@@ -600,12 +657,14 @@ link = { EU4 = c_bukhara Vic2 = BUK } # Bukhara
 #Persia 
 link = { EU4 = AFG Vic2 = AFG } # Afghanistan
 link = { EU4 = k_afghanistan Vic2 = AFG } # Afghanistan
+link = { EU4 = AFG Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = KHO Vic2 = KHO } # Khorasan
 link = { EU4 = k_khorasan Vic2 = KHO } # Khorasan
 link = { EU4 = d_khorasan Vic2 = KHO } # Khorasan
 link = { EU4 = PER Vic2 = PER } # Persia
 link = { EU4 = k_persia Vic2 = PER } # Persia
 link = { EU4 = e_persia Vic2 = PER } # Persia
+link = { EU4 = PER Vic2 = ALL flag = unified_islam } # The Caliphate
 link = { EU4 = QAR Vic2 = QAR } # Qara Koyunlu
 link = { EU4 = TIM Vic2 = TIM } # Timurid
 link = { EU4 = e_timurids Vic2 = TIM } # Timurid
@@ -1227,6 +1286,51 @@ link = { EU4 = SYN Vic2 = ALI } # Synthetic => Alien Invaders
 link = { EU4 = JPR Vic2 = JPR } #Jeypore
 link = { EU4 = PRD Vic2 = PRD } #Parlakhimidi
 
+# 1.30 New Tags
+link = { EU4 = UBV Vic2 = UBV } # Münich
+link = { EU4 = LBV Vic2 = LBV } # Landshut
+link = { EU4 = ING Vic2 = ING } # Ingolstadt
+#link = { EU4 = PSS Vic2 = XXX } # Passau => c_passau
+link = { EU4 = MBZ Vic2 = MBZ } # Montfort-Bregenz
+link = { EU4 = KNZ Vic2 = KNZ } # Konstanz
+link = { EU4 = ROT Vic2 = ROT } # Rothenburg
+link = { EU4 = BYT Vic2 = BYT } # Bayreuth
+link = { EU4 = REG Vic2 = REG } # Regensburg
+link = { EU4 = GNV Vic2 = GNV } # Geneva
+link = { EU4 = TTL Vic2 = TTL } # Three Leagues (Grigioni)
+#link = { EU4 = OPL Vic2 = XXX } # Opole => c_opole
+#link = { EU4 = GLG Vic2 = XXX } # Glogau => c_lower_silesia
+#link = { EU4 = BLG Vic2 = XXX } # Bologna => c_bologna
+#link = { EU4 = PDV Vic2 = XXX } # Padova => c_padova
+#link = { EU4 = SZO Vic2 = XXX } # Saluzzo => c_saluzzo
+#link = { EU4 = SPL Vic2 = XXX } # Spoleto => d_spoleto
+#link = { EU4 = WOL Vic2 = XXX } # Wolgast => c_wolgast
+#link = { EU4 = STE Vic2 = XXX } # Stettin => c_stettin
+link = { EU4 = GOS Vic2 = GOS } # Goslar
+#link = { EU4 = SOR Vic2 = XXX } # Sorbia => d_sorbs
+#link = { EU4 = RUG Vic2 = XXX } # Rügen => c_rugen
+link = { EU4 = CLI Vic2 = CLI } # Cilli
+link = { EU4 = HRZ Vic2 = HRZ } # Herzegovina
+#link = { EU4 = TNT Vic2 = XXX } # Trent => c_trent
+link = { EU4 = BRG Vic2 = BEG } # Berg
+link = { EU4 = MLH Vic2 = MLH } # Mulhouse
+#link = { EU4 = BAM Vic2 = XXX } # Bamberg => c_bamberg
+link = { EU4 = RUP Vic2 = RUP } # Ruppin
+link = { EU4 = LIP Vic2 = LIP } # Lippe
+link = { EU4 = PAD Vic2 = PAD } # Paderborn
+link = { EU4 = CLB Vic2 = CLB } # Calenberg
+link = { EU4 = DWT Vic2 = DWT } # Donauwörth
+#link = { EU4 = OSN Vic2 = XXX } # Osnabrück => c_osnabruck
+#link = { EU4 = VRN Vic2 = XXX } # Verona => d_verona
+link = { EU4 = COB Vic2 = COB } # Coburg => Saxe-Coburg-Gotha
+link = { EU4 = LOT Vic2 = LOT } # Lotharingia
+link = { EU4 = PGA Vic2 = PGA } # Perugia
+
+# 1.30 Formabless
+link = { EU4 = TTS Vic2 = SIC } # Two Sicilies
+#link = { EU4 = FKN Vic2 = XXX } # Franconia => d_franconia
+#link = { EU4 = SWA Vic2 = XXX } # Swabia => d_swabia
+
 #Converter tags:
 link = { EU4 = JOM Vic2 = JOM } # Jomsvikings
 link = { EU4 = d_jomsvikings Vic2 = JOM } # Jomsvikings
@@ -1407,7 +1511,6 @@ link = { EU4 = CZC Vic2 = CSU } #Cuzco
 link = { EU4 = ANJ Vic2 = ANJ } #Anjou
 #link = { EU4 = BLE Vic2 = d_balearic } #Baleares
 #link = { EU4 = BOZ Vic2 = d_beloozero } #Beloozero
-#link = { EU4 = DLM Vic2 = d_dalmatia } #Dalmatia
 #link = { EU4 = ISF Vic2 = d_esfahan } #Isfahan
 #link = { EU4 = GLC Vic2 = d_galich } #Galich
 #link = { EU4 = KAB Vic2 = d_kabul } #Kabulistan

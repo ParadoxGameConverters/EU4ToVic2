@@ -479,6 +479,10 @@ V2::Province::pop_points V2::Province::getPopPoints_1(
 	else if (importedBuildings.count("regimental_camp")) { armyBuilding = 4; }
 	else if (importedBuildings.count("arsenal")) { armyBuilding = 6; }
 	else if (importedBuildings.count("conscription_center")) { armyBuilding = 8; }
+	if (importedBuildings.count("ramparts")) armyBuilding += 4;
+	if (importedBuildings.count("soldier_households")) armyBuilding += 8;
+	if (importedBuildings.count("impressment_offices")) armyBuilding += 4;
+	if (importedBuildings.count("coastal_defence")) armyBuilding += 4;
 
 	auto productionBuilding = 0;
 	if (importedBuildings.count("constable")) { productionBuilding = 1; }
@@ -514,6 +518,7 @@ V2::Province::pop_points V2::Province::getPopPoints_1(
 	pts.bureaucrats += static_cast<double>(govBuilding) * 2;
 	if (importedIdeas.count("administrative_ideas")) pts.bureaucrats += 10;
 	if (importedIdeas.count("expansion_ideas") && wasColonised) pts.bureaucrats += 10;
+	if (importedBuildings.count("state_house")) pts.bureaucrats *= 2;
 
 	pts.aristocrats += 7 * (static_cast<double>(tradeBuilding) + 11);
 	if (importedBuildings.count("farm_estate") || importedBuildings.count("plantations")) pts.aristocrats *= 2;
