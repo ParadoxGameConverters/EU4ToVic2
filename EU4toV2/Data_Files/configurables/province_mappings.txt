@@ -477,7 +477,7 @@
 	link = { eu4 = 1741 eu4 = 1737 eu4 = 1738 v2 = 3180 v2 = 3175 }	# MANY-TO-MANY: Tiki Basin, Marquesas Islands, Flint Island -> Coast of the Marquesas, Southern Line Islands
 	link = { eu4 = 1305 v2 = 2758 v2 = 2759 }	# Gulf of Gabes -> Gulf of Gabes, Malta Channel
 	link = { eu4 = 4131 v2 = 1670 v2 = 1672 }	# Mutsu -> Morioka, Aomori
-	link = { eu4 = 4153 eu4 = 4146 eu4 = 4155 eu4 = 4159 eu4 = 4160 eu4 = 4161 eu4 = 4157 eu4 = 4162 eu4 = 4154 eu4 = 4156 eu4 = 4167 eu4 = 4168 eu4 = 4169 eu4 = 4172 eu4 = 4179 eu4 = 4170 eu4 = 4177 eu4 = 4178 eu4 = 4569 }	# The Scandes, Langfjella, The Carpathians, The Alps, The Alps, The Alps, The Alps, The Alps, The Pyrenees, The Caucasus, High Atlas, High Atlas, Aures, Zagros, Hakkari Mountains, Zagros, Alborz, Pontic Mountains, High Atlas -> DROPPED
+	link = { eu4 = 4153 eu4 = 4146 eu4 = 4155 eu4 = 4159 eu4 = 4160 eu4 = 4161 eu4 = 4157 eu4 = 4154 eu4 = 4156 eu4 = 4167 eu4 = 4168 eu4 = 4169 eu4 = 4172 eu4 = 4179 eu4 = 4170 eu4 = 4177 eu4 = 4178 eu4 = 4569 eu4 = 4162 }	# The Scandes, Langfjella, The Carpathians, The Alps, The Alps, The Alps, The Alps, The Pyrenees, The Caucasus, High Atlas, High Atlas, Aures, Zagros, Hakkari Mountains, Zagros, Alborz, Pontic Mountains, High Atlas, The Alps -> DROPPED
 	# ## LANDS
 	# ## North America
 	# Alaska
@@ -1119,8 +1119,8 @@
 	link = { eu4 = 4777 v2 = 452 }	# Forez -> St Étienne
 	link = { eu4 = 4391 v2 = 453 }	# Vivarais -> Valence
 	link = { eu4 = 203 eu4 = 4719 v2 = 451 }	# Lyonnais, Annecy -> Lyon
-	link = { eu4 = 4720 v2 = 465 }	# Geneva -> Annecy
-	link = { eu4 = 205 v2 = 466 }	# Chambery -> Chambéry
+	link = { eu4 = 4720 v2 = 607 v2 = 608 }	# Geneva -> Geneva, Neuchâtel
+	link = { eu4 = 205 v2 = 466 v2 = 465 }	# Chambery -> Chambéry, Annecy
 	link = { eu4 = 4764 v2 = 433 }	# Salins -> Lons
 	link = { eu4 = 193 v2 = 432 }	# Franche-Comté -> Besançon
 	link = { eu4 = 1877 v2 = 431 }	# Charolais -> Macon
@@ -1190,7 +1190,7 @@
 	link = { eu4 = 114 v2 = 743 }	# Ravenna -> Ravenna
 	link = { eu4 = 113 v2 = 742 }	# Ferrara -> Ferrara
 	link = { eu4 = 106 v2 = 739 }	# Modena -> Modena
-	link = { eu4 = 105 v2 = 738 }	# Parma -> Parma
+	link = { eu4 = 105 eu4 = 109 v2 = 738 }	# Parma, Mantua -> Parma
 	link = { eu4 = 101 v2 = 724 }	# Genoa -> Genoa
 	link = { eu4 = 2992 v2 = 725 }	# Albenga -> Savona
 	link = { eu4 = 102 v2 = 472 }	# Nice -> Nice
@@ -1198,9 +1198,9 @@
 	link = { eu4 = 103 v2 = 721 }	# Turin -> Aosta
 	link = { eu4 = 2981 eu4 = 4728 v2 = 723 }	# Montferrat, Pavia -> Alessandria
 	link = { eu4 = 2979 v2 = 722 }	# Novara -> Novara
-	link = { eu4 = 104 eu4 = 1862 v2 = 726 }	# Milan, Cremona -> Milan
-	link = { eu4 = 4739 eu4 = 107 v2 = 727 }	# Bergamo, Brescia -> Bergamo
-	link = { eu4 = 109 v2 = 728 }	# Mantua -> Brescia
+	link = { eu4 = 104 eu4 = 1862 eu4 = 4740 v2 = 726 }	# Milan, Cremona, Como -> Milan
+	link = { eu4 = 4739 v2 = 727 }	# Bergamo -> Bergamo
+	link = { eu4 = 107 v2 = 728 }	# Brescia -> Brescia
 	link = { eu4 = 4729 v2 = 731 }	# Padova -> Padua
 	link = { eu4 = 108 v2 = 730 }	# Verona -> Verona
 	link = { eu4 = 1774 v2 = 732 }	# Treviso -> Treviso
@@ -1208,12 +1208,11 @@
 	link = { eu4 = 111 v2 = 733 v2 = 737 }	# Friuli -> Udine, Gorizia
 	link = { eu4 = 110 v2 = 734 }	# Trentino -> Trent
 	link = { eu4 = 1871 v2 = 609 }	# Wallis -> Sitten
-	link = { eu4 = 1867 eu4 = 4721 v2 = 608 v2 = 607 }	# MANY-TO-MANY: Vaud, Fribourg -> Neuchâtel, Geneva
-	link = { eu4 = 165 v2 = 605 v2 = 604 }	# Bern -> Bern, Basel
+	link = { eu4 = 1867 eu4 = 4721 v2 = 604 }	# Vaud, Fribourg -> Basel
+	link = { eu4 = 165 v2 = 605 }	# Bern -> Bern
 	link = { eu4 = 166 v2 = 606 }	# Waldstätte -> Lucerne
 	link = { eu4 = 1869 eu4 = 1870 v2 = 603 }	# Zürich, St Gallen -> Zurich
-	link = { eu4 = 4740 v2 = 2568 }	# Como -> Lugano
-	link = { eu4 = 1873 eu4 = 4722 v2 = 611 }	# Chur, Illanz -> Chur
+	link = { eu4 = 1873 eu4 = 4722 v2 = 611 v2 = 2568 }	# MANY-TO-MANY: Chur, Illanz -> Chur, Lugano
 	# Benelux
 	link = { eu4 = 94 v2 = 397 }	# Luxemburg -> Luxembourg
 	link = { eu4 = 93 v2 = 395 v2 = 398 v2 = 396 }	# Liège -> Liège, Arlon, Spa
@@ -2119,7 +2118,7 @@
 	link = { eu4 = 2221 eu4 = 4325 eu4 = 4324 v2 = 1147 }	# Mashhad, Sarakhs, Ghuriyan -> Mashhad
 	link = { eu4 = 2235 eu4 = 427 eu4 = 4326 v2 = 1149 }	# Sabzevar, Qumis, Nishapur -> Sabzevar
 	link = { eu4 = 436 eu4 = 4334 eu4 = 4336 v2 = 1148 }	# Birjand, Tabas, Tun -> Birjand
-	link = { eu4 = 435 eu4 = 434 v2 = 1144 }	# Zaranj, Quhistan -> Zahedan
+	link = { eu4 = 434 v2 = 1144 }	# Quhistan -> Zahedan
 	link = { eu4 = 2233 v2 = 1146 }	# Chabahar -> Chabahar
 	link = { eu4 = 432 v2 = 1140 }	# Kerman -> Kerman
 	link = { eu4 = 2234 eu4 = 4345 v2 = 1139 }	# Rafsanjan, Saidabad -> Sirjan
@@ -2172,7 +2171,7 @@
 	link = { eu4 = 578 v2 = 1218 }	# Roh -> Peshawar
 	link = { eu4 = 2073 v2 = 1225 v2 = 1223 }	# Baltistan -> Gilgit, Chitral
 	# Afghanistan
-	link = { eu4 = 2224 eu4 = 2230 v2 = 1214 }	# Ferah, Chakhansur -> Farrah
+	link = { eu4 = 2224 eu4 = 2230 eu4 = 435 v2 = 1214 }	# Ferah, Chakhansur, Zaranj -> Farrah
 	link = { eu4 = 447 eu4 = 2229 v2 = 1215 }	# Kandahar, Bust -> Kandahar
 	link = { eu4 = 448 v2 = 1217 }	# Gazni -> Ghazni
 	link = { eu4 = 2226 v2 = 1216 }	# Jalalabad -> Jalalabad
