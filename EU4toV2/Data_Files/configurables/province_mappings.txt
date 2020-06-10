@@ -1194,11 +1194,10 @@
 	link = { eu4 = 101 v2 = 724 }	# Genoa -> Genoa
 	link = { eu4 = 2992 v2 = 725 }	# Albenga -> Savona
 	link = { eu4 = 102 v2 = 472 }	# Nice -> Nice
-	link = { eu4 = 1875 eu4 = 4727 v2 = 720 }	# Cuneo, Saluzzo -> Turin
-	link = { eu4 = 103 v2 = 721 }	# Turin -> Aosta
-	link = { eu4 = 2981 eu4 = 4728 v2 = 723 }	# Montferrat, Pavia -> Alessandria
+	link = { eu4 = 103 eu4 = 1875 eu4 = 4727 v2 = 720 v2 = 721 }	# MANY-TO-MANY: Turin, Cuneo, Saluzzo -> Turin, Aosta
+	link = { eu4 = 2981 v2 = 723 }	# Montferrat -> Alessandria
 	link = { eu4 = 2979 v2 = 722 }	# Novara -> Novara
-	link = { eu4 = 104 eu4 = 1862 eu4 = 4740 v2 = 726 }	# Milan, Cremona, Como -> Milan
+	link = { eu4 = 104 eu4 = 1862 eu4 = 4740 eu4 = 4728 v2 = 726 }	# Milan, Cremona, Como, Pavia -> Milan
 	link = { eu4 = 4739 v2 = 727 }	# Bergamo -> Bergamo
 	link = { eu4 = 107 v2 = 728 }	# Brescia -> Brescia
 	link = { eu4 = 4729 v2 = 731 }	# Padova -> Padua
@@ -1570,7 +1569,7 @@
 	link = { eu4 = 287 eu4 = 2414 v2 = 1048 }	# Kuban, Azaraba -> Ekaterinodar
 	link = { eu4 = 286 v2 = 1047 }	# Azov -> Azov
 	link = { eu4 = 288 eu4 = 468 v2 = 1046 }	# Lower Don, Manych -> Chirskaya
-	link = { eu4 = 466 v2 = 1040 }	# Sarai -> Zarevka
+	link = { eu4 = 466 eu4 = 2365 v2 = 1040 }	# Sarai, Orda -> Zarevka
 	link = { eu4 = 2417 v2 = 1041 }	# Kuma -> Elitsa
 	link = { eu4 = 464 v2 = 1036 }	# Astrakhan -> Astrakhan
 	link = { eu4 = 2416 v2 = 1050 }	# Majar -> Stavropol
@@ -1583,8 +1582,8 @@
 	link = { eu4 = 1856 v2 = 1095 }	# Abkhazia -> Sukhumi
 	link = { eu4 = 462 v2 = 1094 }	# Odishi -> Poti
 	link = { eu4 = 2196 v2 = 1096 }	# Guria -> Batum
-	link = { eu4 = 422 v2 = 1092 }	# Imereti -> Kutaisi
-	link = { eu4 = 2203 eu4 = 4301 v2 = 1091 }	# Kakheti, Kartli -> Pasanauri
+	link = { eu4 = 422 eu4 = 4301 v2 = 1092 }	# Imereti, Kartli -> Kutaisi
+	link = { eu4 = 2203 v2 = 1091 }	# Kakheti -> Pasanauri
 	link = { eu4 = 419 v2 = 1098 v2 = 1099 }	# Yerevan -> Erivan, Gyumri
 	link = { eu4 = 2205 v2 = 1101 v2 = 1100 }	# Nakhchivan -> Nakhichevan, Kapan
 	link = { eu4 = 2202 v2 = 1106 }	# Melikates -> Agdam
@@ -1601,9 +1600,9 @@
 	link = { eu4 = 293 v2 = 943 }	# Smolensk -> Smolensk
 	link = { eu4 = 4245 v2 = 1014 v2 = 1015 }	# Vyazma -> Vyazma, Peremyshl
 	link = { eu4 = 2418 v2 = 1038 }	# Ukek -> Novo Uzensk
-	link = { eu4 = 2419 v2 = 1043 }	# Kanadey -> Busuluk
+	link = { eu4 = 474 v2 = 1043 }	# Yaik -> Busuluk
 	link = { eu4 = 473 eu4 = 1965 v2 = 1034 }	# Samara, Buzuluk -> Samara
-	link = { eu4 = 1081 v2 = 1033 v2 = 1035 }	# Simbirsk -> Simbirsk, Syzran
+	link = { eu4 = 1081 eu4 = 2419 v2 = 1033 v2 = 1035 }	# MANY-TO-MANY: Simbirsk, Kanadey -> Simbirsk, Syzran
 	link = { eu4 = 303 eu4 = 2415 v2 = 1037 }	# Saratov, Etkara -> Saratov
 	link = { eu4 = 304 v2 = 1021 }	# Penza -> Penza
 	link = { eu4 = 302 eu4 = 1778 v2 = 1025 }	# Tambov, Kasimov -> Tambov
@@ -1742,12 +1741,12 @@
 	link = { eu4 = 2337 eu4 = 4273 eu4 = 4276 v2 = 1159 }	# Buraydah, Al-Kariatan, Jabal Tubaiq -> Halaban
 	link = { eu4 = 2335 eu4 = 2336 v2 = 1161 }	# Dawasir, Aflaj -> Sharurah
 	link = { eu4 = 2334 eu4 = 1779 }	# Badiyat ash Sham, Rub' al Khali -> DROPPED
-	link = { eu4 = 2347 eu4 = 2339 v2 = 1164 v2 = 2586 }	# MANY-TO-MANY: Hofuf, Yabrin -> Hufuf, Al-Ahsa
+	link = { eu4 = 2347 v2 = 1164 }	# Hofuf -> Hufuf
 	link = { eu4 = 394 eu4 = 2340 v2 = 1163 }	# Al-Qatif, Grane -> Qatif
 	# Trucial States
 	link = { eu4 = 395 v2 = 1165 }	# Qatar -> Doha
 	link = { eu4 = 396 v2 = 1162 }	# Bahrain -> Bahrain
-	link = { eu4 = 397 eu4 = 404 eu4 = 2333 v2 = 1167 }	# Bani Yas, Liwa, Zufra -> Abu Dhabi
+	link = { eu4 = 397 eu4 = 404 v2 = 1167 }	# Bani Yas, Liwa -> Abu Dhabi
 	link = { eu4 = 398 v2 = 1168 }	# Qawasim -> Dubai
 	link = { eu4 = 403 v2 = 1170 }	# Nizwa -> Nizwa
 	link = { eu4 = 399 eu4 = 4285 v2 = 1169 }	# Batinah, Baraimi -> Sohar
@@ -2118,13 +2117,13 @@
 	link = { eu4 = 2221 eu4 = 4325 eu4 = 4324 v2 = 1147 }	# Mashhad, Sarakhs, Ghuriyan -> Mashhad
 	link = { eu4 = 2235 eu4 = 427 eu4 = 4326 v2 = 1149 }	# Sabzevar, Qumis, Nishapur -> Sabzevar
 	link = { eu4 = 436 eu4 = 4334 eu4 = 4336 v2 = 1148 }	# Birjand, Tabas, Tun -> Birjand
-	link = { eu4 = 434 v2 = 1144 }	# Quhistan -> Zahedan
-	link = { eu4 = 2233 v2 = 1146 }	# Chabahar -> Chabahar
+	link = { eu4 = 434 }	# Quhistan -> DROPPED
+	link = { eu4 = 2233 }	# Chabahar -> DROPPED
 	link = { eu4 = 432 v2 = 1140 }	# Kerman -> Kerman
 	link = { eu4 = 2234 eu4 = 4345 v2 = 1139 }	# Rafsanjan, Saidabad -> Sirjan
-	link = { eu4 = 4327 v2 = 1145 }	# Jask -> Jask
+	link = { eu4 = 4327 v2 = 1145 v2 = 1146 }	# Jask -> Jask, Chabahar
 	link = { eu4 = 431 eu4 = 2999 v2 = 1142 }	# Mogostan, Hormuz -> Bandar Abbas
-	link = { eu4 = 2220 v2 = 1143 }	# Bam -> Bam
+	link = { eu4 = 2220 v2 = 1143 v2 = 1144 }	# Bam -> Bam, Zahedan
 	link = { eu4 = 424 eu4 = 4340 v2 = 1112 }	# Ardabil, Astara -> Ardabil
 	link = { eu4 = 416 eu4 = 4300 v2 = 1108 }	# Tabriz, Mianeh -> Tabriz
 	link = { eu4 = 4304 v2 = 1109 }	# Khoy -> Khvoy
@@ -2181,7 +2180,7 @@
 	link = { eu4 = 2225 eu4 = 449 v2 = 1213 }	# Bamyan, Ghor -> Bamyan
 	link = { eu4 = 2227 eu4 = 452 v2 = 1210 }	# Kunduz, Badakhshan -> Faizabad
 	# Nepal, Bhutan, Tibet
-	link = { eu4 = 554 eu4 = 2070 eu4 = 4491 eu4 = 4492 eu4 = 4494 eu4 = 4485 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya, Dang, Doti, Khairabad, Palpa -> Jumla
+	link = { eu4 = 554 eu4 = 2070 eu4 = 4492 eu4 = 4485 v2 = 1327 }	# Baisi Rajya, Chaubisi Rajya, Doti, Palpa -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1326 }	# Katmandu, Limbuwan -> Katmandu
 	link = { eu4 = 565 eu4 = 4481 v2 = 1329 }	# Thimpu, Punakha -> Thimpu
 	link = { eu4 = 2128 eu4 = 4516 eu4 = 4515 v2 = 1592 }	# Ngari, Purang, Gyirong -> Ngari
@@ -2228,10 +2227,10 @@
 	link = { eu4 = 559 eu4 = 4466 eu4 = 4467 v2 = 1273 }	# Jhansi, Mahoba, Kalinjar -> Chhatarpur
 	link = { eu4 = 2097 eu4 = 4468 v2 = 1274 }	# Baghelkhand, Bandogarh -> Rewa
 	link = { eu4 = 555 eu4 = 556 eu4 = 4496 v2 = 1243 }	# Jaunpur, Lower Doab, Kora -> Allahabad
-	link = { eu4 = 523 eu4 = 2094 eu4 = 4497 v2 = 1242 v2 = 1244 }	# MANY-TO-MANY: Lucknow, Bahreich, Kannauj -> Lucknow, Fyzabad
+	link = { eu4 = 523 eu4 = 2094 eu4 = 4497 eu4 = 4494 eu4 = 4495 v2 = 1242 v2 = 1244 }	# MANY-TO-MANY: Lucknow, Bahreich, Kannauj, Khairabad, Feyzabad -> Lucknow, Fyzabad
 	# Eastern India, Bangladesh
 	link = { eu4 = 2095 eu4 = 4490 v2 = 1245 }	# Varanasi, Ghazipur -> Benares
-	link = { eu4 = 2055 eu4 = 4495 eu4 = 4488 v2 = 1246 }	# Gorakhpur, Feyzabad, Champaran -> Gorakhpur
+	link = { eu4 = 2055 eu4 = 4488 eu4 = 4491 v2 = 1246 }	# Gorakhpur, Champaran, Dang -> Gorakhpur
 	link = { eu4 = 2047 eu4 = 4484 eu4 = 4486 eu4 = 4483 v2 = 1247 }	# Tirhut, Makwanpur, Purnia, Morang -> Patna
 	link = { eu4 = 2096 eu4 = 558 eu4 = 4489 eu4 = 4487 eu4 = 4472 eu4 = 4469 v2 = 1248 }	# Damin, Pataliputra, Hajipur, Saran, Monghyr, Rohtasgarh -> Gaya
 	link = { eu4 = 2044 v2 = 1250 }	# Bhagalpur -> Bhagalpur
@@ -2434,8 +2433,8 @@
 	link = { eu4 = 2126 eu4 = 2364 eu4 = 460 v2 = 1189 }	# Chuy, Talas, Uzkend -> Bishkek
 	# Kazakhstan
 	link = { eu4 = 443 eu4 = 439 v2 = 1194 }	# Ustyurt, Mangyshlak -> Aqtau
-	link = { eu4 = 469 eu4 = 2367 eu4 = 2365 eu4 = 470 eu4 = 465 v2 = 1182 }	# Ryn, Lower Yik, Orda, Bayuly, Nogay -> Guryev
-	link = { eu4 = 474 eu4 = 2366 v2 = 2610 }	# Yaik, Utva -> Uralsk
+	link = { eu4 = 469 eu4 = 2367 eu4 = 470 eu4 = 465 v2 = 1182 }	# Ryn, Lower Yik, Bayuly, Nogay -> Guryev
+	link = { eu4 = 2366 v2 = 2610 }	# Utva -> Uralsk
 	link = { eu4 = 472 v2 = 1183 }	# Zhetyru -> Aqtobe
 	link = { eu4 = 2351 eu4 = 471 eu4 = 2352 v2 = 2702 }	# Shekty, Alimuly, Alty-Kuduk -> Aralsk
 	link = { eu4 = 4692 eu4 = 2358 eu4 = 2353 v2 = 2611 }	# Turgay, Altyn, Tortkara -> Turgay
@@ -2747,6 +2746,7 @@
 	link = { eu4 = 4482 v2 = 1328 }	# Sikkim -> Tumlong
 	link = { eu4 = 4402 }	# Gaoligong Mountains -> DROPPED
 	link = { eu4 = 1803 eu4 = 1802 eu4 = 2936 }	# Eastern Amazonas, Western Amazonas, Guyana -> DROPPED
+	link = { eu4 = 2333 eu4 = 2339 v2 = 2586 }	# Zufra, Yabrin -> Al-Ahsa
 }
 1.29.0.0 = {
 	# ## WATER BODIES
