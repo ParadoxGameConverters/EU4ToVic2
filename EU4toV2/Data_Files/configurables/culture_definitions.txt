@@ -755,7 +755,7 @@ romantic = {
 			Panuiy Preuiaty Prubeany Prucuiy Pumpuiy Pušenseny Reparaty Scurzescy Šèiey Šèmpruia Šèrše Šeru Šešeru
 			Šeženy Šeraiy Ueatru Uènusta Uiebrey Unue Útoeany Žusupureany }
 	}
-latin = {
+	latin = {
         color = {61 0 105}
 
         first_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
@@ -792,7 +792,7 @@ latin = {
 		Volusus }
     }
 	
-xliponian = {
+	xliponian = {
         color = { 149 96 149 }
 
         first_names = { Agili Aibudi Aili Aimili Albi Amadi Annai Annei Anni Andoni Arri
@@ -827,192 +827,8 @@ xliponian = {
 		Duberd Dubul Dudidan Dull Durd Barro Bar Badia Berres Besbillo Bed Bidul
 		Bolusus }
 
-}
-
-wenedyk = {
-        color = { 224 224 96 }
-
-        first_names = { Akilëv Ajbušcëv "Al'jaëv" Ajajlëv Albëv Amašcëv Annaëv Anneëv Annëv Antuëv Arrëv
-		Artraëv Asinëv Aštilëv Aštëv "Orl'jaëv" Otruëv Kajkilëv Kajžkëv "Kal'jaëv" Kaližëv
-		Kalpurnëv Kassëv Kložëv Klajaëv Kokkeëv Kvinëv "Kranl'jaëv" Kronkanëv Kuriašcëv
-		Kurëv Kurštëv Dekëv Džëv Dvišcëv Dvilëv Durmëv Ekvišcëv Fabëv Fabrikëv Fannëv
-		Flavëv Fulvëv Furëv Gabinëv Galrjaëv Geganëv "Gl'jalëv" Gjajnëv Gjokëv Grašcëv
-		Rjajanëv Hiršcëv Raštëv Ratjasëv Hosštilëv Julëv Junëv Juvjašcëv "Lal'jaëv" Laršcëv
-		Likinëv Livëv Lukilëv Lukreštëv Manlëv Markëv Marëv Mjamëv Mjajaëv Minikëv
-		Minëv Minukëv Možëv Mukëv Najvëv Nošcëv Numrjaëv Numikëv Oktavëv Ovižëv
-		Papirëv Petruëv Pinarëv Pupeëv Pupilëv Pušcëv "Popil'ëv" Prakëv Postumëv
-		Kvinkštilëv Kvinkštëv "Rubl'jalëv" Rufëv Ruštilëv Sallusštëv Saluëv Salvëv Skribuëv
-		Seëv Sjapruëv Sjaštëv Srjažëv Srjatraëv Srjavilëv Sekštëv Sikinëv Svetuëv Sulpikëv
-		Tarpeëv Tarkvištëv Trjajaštëv Štištinëv Štiturëv Tukkëv Tullëv Ulpëv Valrjaëv Vežëv
-		"Vl'jaleëv" Vrjažlëv Vrjažnëv Vibëv Villëv Vipsanëv "Vitl'jalëv" Vitruvëv Vlomnjëv }
-		
-        last_names = { Akulij Agriklaja Agrippaja Ahalaja Ajavbarbskij Albinskij Albskij Ambustskij Annaliskij Akvilaja
-		Aquilinskij Arvinaja Asljalij Asinaja "Atljal'skij" Avitskij Balbskij Barbaja Barbatskij Basskij Beškaja
-		"Bibakul'skij" "Bibul'skij" Blajskij Brohskij Brutskij "Bubul'skij" Bukkoj Bulbskij Buteoj Kajkskij Kajpioj
-		Kajsar Kalidskij Kalvinskij Kalvskij Kamil'skij Kaninskij Kanskij Kapitoj Karboj Kaštilinaja Katoj
-		"Katul'skij" Kjarjaja Kjasskij Kefegskij Kikrjaoj Kikurinskij Kiloj Kinkinnatskij Kinnaja Kradskij Kranikja
-		Kranutskij Kravinskij Kravskij Kosskij Kostaja Kottaja Krassipij Krassskij Krispinskij Krispskij Kulleoj
-		Kurioj Kursraja Kurvskij Žatatskij Žatrjaja Žatoj Žves "Dlabl'jalaja" Drasvoj Druskij "Figul'skij" Fimbriaja
-		Flakskij Favskij Flaskij Frutoj Fulloj Fuskij Galeoj "Gjal'jal'skij" Glabrioj Grahskij Gurgeskij Habitskij
-		"L'javaja" Imprjajoskij "Jul'skij" Labeoj Laktukaja Lajaskij Lanatskij Lajvinskij Latrjajasiskij "L'jatul'skij" Lepidskij
-		Liboj Likinskij Lugskij "Lukul'skij" Lupskij Lurkoj Makrjaja Makulaja Mallelaskij Mamrjakskij "Markljal'skij" Maroj
-		Mrjajadaja Mrjagskij Mrjolaja Messallaja "Mecal'skij" Murjaja Mskij Muskaja Nasikaja Nasoj Nattaja Neposkij Njaoj
-		Njavaja Nigrjaja "Novljal'skij" Okljalaja "Pakil'skij" Pajtskij Pansaja Papskij "Patrjakul'skij" "Pol'skij" Pavoj Prjaja Piktra
-		Pisoj Plankskij Plotskij Popliklaaja Postumskij Poštitskij Prajkvinskij Prajtekstatskij Priskskij Prokulskij
-		Publiklaja Pulhaja "Pul'skij" "Pulvil'skij" Purpureoj Kvadratskij Rallaja "Režil'skij" "Regul'skij" Rufskij Rugaja Rulluskij
-		"Ruštil'skij" Salinatraja Saturninskij Skajvaja Skajvlaja Skapulaja Skorskij Skipioj Skrofaja Sjajkaja Sevrjoskij
-		Silanskij Siloj "Sil'skij" Stlaoj Straboj Strukskij Sullaja Suraja Torskij Triarev Trigjajnskij Trjoj Tubrjaoj
-		Tubrjatskij "Tubul'skij" Tužtanskij "Tul'skij" Turdskij Varroj Varskij Vašcaja Vjareskij Vespilloj Vetskij "Vitul'skij"
-		Vloskij }
-
-}
-
-bazramani = {
-        color = { 224 186 169 }
-
-        first_names = { Aghhelid Yavuyid Yalid Yamelid Avid Amayid Anyaed Anyeid Anyid Andanid Arriuh
-		Artarid Ahenid Ayelid Ayid Aralid Ahranid Kaghhelid Kayeghhid Kalid Kaleyiuh
-		Kavurnid Kahhid Klayid Kloelid Kakhceid Kamenid Karnalid Karunganid Kuriayiuh
-		Kurid Kurtid Daghhid Deyid Dameyid Duilid Durmid Yakhiyid Favid Favreghhid Fanyiuh
-		Flavid Fuvid Furid Gavenid Galarid Gaghhanid Galid Gamenid Ganughhid Ghrayiuh
-		Haranyid Hertid Harayid Hartanhid Hahtelid Eulid Eunid Euvandid Lalid Lartiuh
-		Leghhenid Levid Lughhelid Lukhrayid Manlid Marcid Marid Mammid Mananid Meneghhiuh
-		Menid Menughhid Mayid Mughhid Navid Nayid Numarid Numeghhid Vakhtavid Vaveyiuh
-		Paverid Pahranid Penarid Pambeid Pambelid Pandid Pavelid Parcid Pahtumiuh
-		Khinkhtelid Khinkhtid Ruvalid Rufid Ruyelid Haluhtid Halanid Havid Hkhrevaniuh
-		Heid Hamfranid Handid Hargid Hartarid Harvelid Hahctid Heghhenid Hueyanid Huveghhiuh
-		Tarpeid Tarquiyid Tarandid Teyenid Teyurid Tukhcid Tulid Ovid Valarid Vayiuh
-		Valeid Vargelid Vargenid Vevid Velid Vefhanid Veyalid Vehruvid Valunyiuh }
-        last_names = { Aghhule Aghreghhal Aghrefv Ahal Ahanavarbd Avend Avd Ambuhtd Anyaleh Akhil
-		Akhilend Arve Ahal Ahe Ayald Aveyd Bavd Barv Barbayd Bahhd Bahy
-		Bevaghhuld Bevuld Vlahd Vrakhkhhd Vruyd Buvucd Bukhg Buvd Buye Kaghhd Kav
-		Kahar Kaleyd Kavend Kavd Kameld Kanend Kand Kavey Karv Kayele Kay
-		Kayuld Kalar Kahd Kahhaghhd Keghhar Keghhurend Kel Kengenyayd Keny Kald Karneghha
-		Karnuyd Karvend Karvd Kahhd Kahy Kahy Krahhevah Krahhd Krehpend Krehpd Kule
-		Kur Kurhar Kurvd Dandayd Dandar Dany Devah Dalaval Darh Zruhd Feghhuld Femvr
-		Flakhcd Favd Flard Frany Ful Fuhd Gale Gamald Ghlavr Ghrakhkhhd Gurgah Haveyuh
-		Hav Embariohd Euld Lave Lakhtug Lanah Lanayd Lavend Layaranheh Landuld Laveyuh
-		Lev Leghhend Langd Lughhuld Luvd Lurg Maghhar Maghhul Maleold Mamarcd Marcald Mar
-		Marany Margd Marul Mahhal Mayald Mura Md Muhg Naheg Nah Nahy Navah Nar
-		Narv Neghhar Navald Vaghhal Paghheld Payd Panh Pavd Payarculd Pald Pav Par Pekhtar
-		Peh Flangd Flayd Pafleghhal Pahtumd Payeyd Fraghhanend Frayahctayd Frehcd Fraghhuluh
-		Puvleghhal Pulkhhar Puld Puveld Purpure Khazrayd Ral Raghheld Raghhuld Rufd Rug Ruluh
-		Ruyeld Halenayar Hayurnend Hcav Hcaval Hcavul Hcard Hcev Hkhraf Hanag Havaruh
-		Heland Hel Held Htal Hhrav Hhrukhtd Hul Hur Tard Hriarid Hreghhamend Hr Tuvar
-		Tuvartd Tuvuld Tuyeyand Tuld Tuld Varr Vard Vay Varrah Vahpel Vayd Veyuluh
-		Valuhuh }
-}
-
-foederatus = { #From Latin name for USA
-        color = { 20 83 173 }
-
-        first_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
-		Artorius Asinius Atilius Atius Aurelius Autronius Caecilius Caedicius Caelius Calidius
-		Calpurnius Cassius Claudius Cloelius Cocceius Cominius Cornelius Coruncanius Curiatius
-		Curius Curtius Decius Didius Domitius Duilius Durmius Equitius Fabius Fabricius Fannius
-		Flavius Fulvius Furius Gabinius Galerius Geganius Gellius Geminius Genucius Gratius
-		Herennius Hirtius Horatius Hortensius Hostilius Iulius Iunius Iuventius Laelius Lartius
-		Licinius Livius Lucilius Lucretius Manlius Marcius Marius Memmius Menenius Minicius
-		Minius Minucius Modius Mucius Naevius Nautius Numerius Numicius Octavius Ovidius
-		Papirius Petronius Pinarius Pompeius Pompilius Pontius Popillius Porcius Postumius
-		Quinctilius Quinctius Rubellius Rufius Rutilius Sallustius Salonius Salvius Scribonius
-		Seius Sempronius Sentius Sergius Sertorius Servilius Sextius Sicinius Suetonius Sulpicius
-		Tarpeius Tarquitius Terentius Titinius Titurius Tuccius Tullius Ulpius Valerius Vedius
-		Velleius Vergilius Verginius Vibius Villius Vipsanius Vitellius Vitruvius Volumnius }
-		
-        last_names = { Aculeo Agricola Agrippa Ahala Ahenobarbus Albinus Albus Ambustus Annalis Aquila
-		Aquilinus Arvina Asellio Asina Atellus Avitus Balbus Barba Barbatus Bassus Bestia
-		Bibaculus Bibulus Blaesus Brocchus Brutus Bubulcus Bucco Bulbus Buteo Caecus Caepio
-		Caesar Calidus Calvinus Calvus Camillus Caninus Canus Capito Carbo Catilina Cato
-		Catulus Celer Celsus Cethegus Cicero Cicurinus Cilo Cincinnatus Cinna Cordus Cornicen
-		Cornutus Corvinus Corvus Cossus Costa Cotta Crassipes Crassus Crispinus Crispus Culleo
-		Curio Cursor Curvus Dentatus Denter Dento Dives Dolabella Dorsuo Drusus Figulus Fimbria
-		Flaccus Favus Florus Fronto Fullo Fusus Galeo Gemellus Glabrio Gracchus Gurges Habitus
-		Helva Imperiosus Iullus Labeo Lactuca Laenas Lanatus Laevinus Laterensis Lentulus Lepidus
-		Libo Licinus Longus Lucullus Lupus Lurco Macer Macula Malleolus Mamercus Marcellus Maro
-		Merenda Mergus Merula Messalla Metellus Murena Mus Musca Nasica Naso Natta Nepos Nero
-		Nerva Niger Novellus Ocella Pacilus Paetus Pansa Papus Paterculus Paullus Pavo Pera Pictor
-		Piso Plancus Plautus Poplicola Postumus Potitus Praeconinus Praetextatus Priscus Proculus
-		Publicola Pulcher Pullus Pulvillus Purpureo Quadratus Ralla Regillus Regulus Rufus Ruga Rullus
-		Rutilus Salinator Saturninus Scaeva Scaevola Scapula Scaurus Scipio Scrofa Seneca Severus
-		Silanus Silo Silus Stolo Strabo Structus Sulla Sura Taurus Triarius Trigeminus Trio Tubero
-		Tubertus Tubulus Tuditanus Tullus Turdus Varro Varus Vatia Verres Vespillo Vetus Vitulus
-		Volusus }
-}
-
-afer = {
-        color = { 173 136 117 }
-
-        first_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
-		Artorius Asinius Atilius Atius Aurelius Autronius Caecilius Caedicius Caelius Calidius
-		Calpurnius Cassius Claudius Cloelius Cocceius Cominius Cornelius Coruncanius Curiatius
-		Curius Curtius Decius Didius Domitius Duilius Durmius Equitius Fabius Fabricius Fannius
-		Flavius Fulvius Furius Gabinius Galerius Geganius Gellius Geminius Genucius Gratius
-		Herennius Hirtius Horatius Hortensius Hostilius Iulius Iunius Iuventius Laelius Lartius
-		Licinius Livius Lucilius Lucretius Manlius Marcius Marius Memmius Menenius Minicius
-		Minius Minucius Modius Mucius Naevius Nautius Numerius Numicius Octavius Ovidius
-		Papirius Petronius Pinarius Pompeius Pompilius Pontius Popillius Porcius Postumius
-		Quinctilius Quinctius Rubellius Rufius Rutilius Sallustius Salonius Salvius Scribonius
-		Seius Sempronius Sentius Sergius Sertorius Servilius Sextius Sicinius Suetonius Sulpicius
-		Tarpeius Tarquitius Terentius Titinius Titurius Tuccius Tullius Ulpius Valerius Vedius
-		Velleius Vergilius Verginius Vibius Villius Vipsanius Vitellius Vitruvius Volumnius }
-		
-        last_names = { Aculeo Agricola Agrippa Ahala Ahenobarbus Albinus Albus Ambustus Annalis Aquila
-		Aquilinus Arvina Asellio Asina Atellus Avitus Balbus Barba Barbatus Bassus Bestia
-		Bibaculus Bibulus Blaesus Brocchus Brutus Bubulcus Bucco Bulbus Buteo Caecus Caepio
-		Caesar Calidus Calvinus Calvus Camillus Caninus Canus Capito Carbo Catilina Cato
-		Catulus Celer Celsus Cethegus Cicero Cicurinus Cilo Cincinnatus Cinna Cordus Cornicen
-		Cornutus Corvinus Corvus Cossus Costa Cotta Crassipes Crassus Crispinus Crispus Culleo
-		Curio Cursor Curvus Dentatus Denter Dento Dives Dolabella Dorsuo Drusus Figulus Fimbria
-		Flaccus Favus Florus Fronto Fullo Fusus Galeo Gemellus Glabrio Gracchus Gurges Habitus
-		Helva Imperiosus Iullus Labeo Lactuca Laenas Lanatus Laevinus Laterensis Lentulus Lepidus
-		Libo Licinus Longus Lucullus Lupus Lurco Macer Macula Malleolus Mamercus Marcellus Maro
-		Merenda Mergus Merula Messalla Metellus Murena Mus Musca Nasica Naso Natta Nepos Nero
-		Nerva Niger Novellus Ocella Pacilus Paetus Pansa Papus Paterculus Paullus Pavo Pera Pictor
-		Piso Plancus Plautus Poplicola Postumus Potitus Praeconinus Praetextatus Priscus Proculus
-		Publicola Pulcher Pullus Pulvillus Purpureo Quadratus Ralla Regillus Regulus Rufus Ruga Rullus
-		Rutilus Salinator Saturninus Scaeva Scaevola Scapula Scaurus Scipio Scrofa Seneca Severus
-		Silanus Silo Silus Stolo Strabo Structus Sulla Sura Taurus Triarius Trigeminus Trio Tubero
-		Tubertus Tubulus Tuditanus Tullus Turdus Varro Varus Vatia Verres Vespillo Vetus Vitulus
-		Volusus }
-}
-
-australus = {
-        color = { 218 53 65 }
-
-        first_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
-		Artorius Asinius Atilius Atius Aurelius Autronius Caecilius Caedicius Caelius Calidius
-		Calpurnius Cassius Claudius Cloelius Cocceius Cominius Cornelius Coruncanius Curiatius
-		Curius Curtius Decius Didius Domitius Duilius Durmius Equitius Fabius Fabricius Fannius
-		Flavius Fulvius Furius Gabinius Galerius Geganius Gellius Geminius Genucius Gratius
-		Herennius Hirtius Horatius Hortensius Hostilius Iulius Iunius Iuventius Laelius Lartius
-		Licinius Livius Lucilius Lucretius Manlius Marcius Marius Memmius Menenius Minicius
-		Minius Minucius Modius Mucius Naevius Nautius Numerius Numicius Octavius Ovidius
-		Papirius Petronius Pinarius Pompeius Pompilius Pontius Popillius Porcius Postumius
-		Quinctilius Quinctius Rubellius Rufius Rutilius Sallustius Salonius Salvius Scribonius
-		Seius Sempronius Sentius Sergius Sertorius Servilius Sextius Sicinius Suetonius Sulpicius
-		Tarpeius Tarquitius Terentius Titinius Titurius Tuccius Tullius Ulpius Valerius Vedius
-		Velleius Vergilius Verginius Vibius Villius Vipsanius Vitellius Vitruvius Volumnius }
-		
-        last_names = { Aculeo Agricola Agrippa Ahala Ahenobarbus Albinus Albus Ambustus Annalis Aquila
-		Aquilinus Arvina Asellio Asina Atellus Avitus Balbus Barba Barbatus Bassus Bestia
-		Bibaculus Bibulus Blaesus Brocchus Brutus Bubulcus Bucco Bulbus Buteo Caecus Caepio
-		Caesar Calidus Calvinus Calvus Camillus Caninus Canus Capito Carbo Catilina Cato
-		Catulus Celer Celsus Cethegus Cicero Cicurinus Cilo Cincinnatus Cinna Cordus Cornicen
-		Cornutus Corvinus Corvus Cossus Costa Cotta Crassipes Crassus Crispinus Crispus Culleo
-		Curio Cursor Curvus Dentatus Denter Dento Dives Dolabella Dorsuo Drusus Figulus Fimbria
-		Flaccus Favus Florus Fronto Fullo Fusus Galeo Gemellus Glabrio Gracchus Gurges Habitus
-		Helva Imperiosus Iullus Labeo Lactuca Laenas Lanatus Laevinus Laterensis Lentulus Lepidus
-		Libo Licinus Longus Lucullus Lupus Lurco Macer Macula Malleolus Mamercus Marcellus Maro
-		Merenda Mergus Merula Messalla Metellus Murena Mus Musca Nasica Naso Natta Nepos Nero
-		Nerva Niger Novellus Ocella Pacilus Paetus Pansa Papus Paterculus Paullus Pavo Pera Pictor
-		Piso Plancus Plautus Poplicola Postumus Potitus Praeconinus Praetextatus Priscus Proculus
-		Publicola Pulcher Pullus Pulvillus Purpureo Quadratus Ralla Regillus Regulus Rufus Ruga Rullus
-		Rutilus Salinator Saturninus Scaeva Scaevola Scapula Scaurus Scipio Scrofa Seneca Severus
-		Silanus Silo Silus Stolo Strabo Structus Sulla Sura Taurus Triarius Trigeminus Trio Tubero
-		Tubertus Tubulus Tuditanus Tullus Turdus Varro Varus Vatia Verres Vespillo Vetus Vitulus
-		Volusus }
 	}
+
 	union = SPQ
 }
 
@@ -2066,6 +1882,43 @@ levantine = {
 		}
 		radicalism = 10
 	}
+
+	bazramani = {
+		color = { 224 186 169 }
+
+		first_names = { Aghhelid Yavuyid Yalid Yamelid Avid Amayid Anyaed Anyeid Anyid Andanid Arriuh
+		Artarid Ahenid Ayelid Ayid Aralid Ahranid Kaghhelid Kayeghhid Kalid Kaleyiuh
+		Kavurnid Kahhid Klayid Kloelid Kakhceid Kamenid Karnalid Karunganid Kuriayiuh
+		Kurid Kurtid Daghhid Deyid Dameyid Duilid Durmid Yakhiyid Favid Favreghhid Fanyiuh
+		Flavid Fuvid Furid Gavenid Galarid Gaghhanid Galid Gamenid Ganughhid Ghrayiuh
+		Haranyid Hertid Harayid Hartanhid Hahtelid Eulid Eunid Euvandid Lalid Lartiuh
+		Leghhenid Levid Lughhelid Lukhrayid Manlid Marcid Marid Mammid Mananid Meneghhiuh
+		Menid Menughhid Mayid Mughhid Navid Nayid Numarid Numeghhid Vakhtavid Vaveyiuh
+		Paverid Pahranid Penarid Pambeid Pambelid Pandid Pavelid Parcid Pahtumiuh
+		Khinkhtelid Khinkhtid Ruvalid Rufid Ruyelid Haluhtid Halanid Havid Hkhrevaniuh
+		Heid Hamfranid Handid Hargid Hartarid Harvelid Hahctid Heghhenid Hueyanid Huveghhiuh
+		Tarpeid Tarquiyid Tarandid Teyenid Teyurid Tukhcid Tulid Ovid Valarid Vayiuh
+		Valeid Vargelid Vargenid Vevid Velid Vefhanid Veyalid Vehruvid Valunyiuh }
+		last_names = { Aghhule Aghreghhal Aghrefv Ahal Ahanavarbd Avend Avd Ambuhtd Anyaleh Akhil
+		Akhilend Arve Ahal Ahe Ayald Aveyd Bavd Barv Barbayd Bahhd Bahy
+		Bevaghhuld Bevuld Vlahd Vrakhkhhd Vruyd Buvucd Bukhg Buvd Buye Kaghhd Kav
+		Kahar Kaleyd Kavend Kavd Kameld Kanend Kand Kavey Karv Kayele Kay
+		Kayuld Kalar Kahd Kahhaghhd Keghhar Keghhurend Kel Kengenyayd Keny Kald Karneghha
+		Karnuyd Karvend Karvd Kahhd Kahy Kahy Krahhevah Krahhd Krehpend Krehpd Kule
+		Kur Kurhar Kurvd Dandayd Dandar Dany Devah Dalaval Darh Zruhd Feghhuld Femvr
+		Flakhcd Favd Flard Frany Ful Fuhd Gale Gamald Ghlavr Ghrakhkhhd Gurgah Haveyuh
+		Hav Embariohd Euld Lave Lakhtug Lanah Lanayd Lavend Layaranheh Landuld Laveyuh
+		Lev Leghhend Langd Lughhuld Luvd Lurg Maghhar Maghhul Maleold Mamarcd Marcald Mar
+		Marany Margd Marul Mahhal Mayald Mura Md Muhg Naheg Nah Nahy Navah Nar
+		Narv Neghhar Navald Vaghhal Paghheld Payd Panh Pavd Payarculd Pald Pav Par Pekhtar
+		Peh Flangd Flayd Pafleghhal Pahtumd Payeyd Fraghhanend Frayahctayd Frehcd Fraghhuluh
+		Puvleghhal Pulkhhar Puld Puveld Purpure Khazrayd Ral Raghheld Raghhuld Rufd Rug Ruluh
+		Ruyeld Halenayar Hayurnend Hcav Hcaval Hcavul Hcard Hcev Hkhraf Hanag Havaruh
+		Heland Hel Held Htal Hhrav Hhrukhtd Hul Hur Tard Hriarid Hreghhamend Hr Tuvar
+		Tuvartd Tuvuld Tuyeyand Tuld Tuld Varr Vard Vay Varrah Vahpel Vayd Veyuluh
+		Valuhuh }
+	}
+
 }
 
 turko_semitic = {
@@ -4131,6 +3984,154 @@ neo_european_cultures = {
 		last_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
 		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
 	}
+	foederatus = { #From Latin name for USA
+        color = { 20 83 173 }
+
+        first_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
+		Artorius Asinius Atilius Atius Aurelius Autronius Caecilius Caedicius Caelius Calidius
+		Calpurnius Cassius Claudius Cloelius Cocceius Cominius Cornelius Coruncanius Curiatius
+		Curius Curtius Decius Didius Domitius Duilius Durmius Equitius Fabius Fabricius Fannius
+		Flavius Fulvius Furius Gabinius Galerius Geganius Gellius Geminius Genucius Gratius
+		Herennius Hirtius Horatius Hortensius Hostilius Iulius Iunius Iuventius Laelius Lartius
+		Licinius Livius Lucilius Lucretius Manlius Marcius Marius Memmius Menenius Minicius
+		Minius Minucius Modius Mucius Naevius Nautius Numerius Numicius Octavius Ovidius
+		Papirius Petronius Pinarius Pompeius Pompilius Pontius Popillius Porcius Postumius
+		Quinctilius Quinctius Rubellius Rufius Rutilius Sallustius Salonius Salvius Scribonius
+		Seius Sempronius Sentius Sergius Sertorius Servilius Sextius Sicinius Suetonius Sulpicius
+		Tarpeius Tarquitius Terentius Titinius Titurius Tuccius Tullius Ulpius Valerius Vedius
+		Velleius Vergilius Verginius Vibius Villius Vipsanius Vitellius Vitruvius Volumnius }
+		
+        last_names = { Aculeo Agricola Agrippa Ahala Ahenobarbus Albinus Albus Ambustus Annalis Aquila
+		Aquilinus Arvina Asellio Asina Atellus Avitus Balbus Barba Barbatus Bassus Bestia
+		Bibaculus Bibulus Blaesus Brocchus Brutus Bubulcus Bucco Bulbus Buteo Caecus Caepio
+		Caesar Calidus Calvinus Calvus Camillus Caninus Canus Capito Carbo Catilina Cato
+		Catulus Celer Celsus Cethegus Cicero Cicurinus Cilo Cincinnatus Cinna Cordus Cornicen
+		Cornutus Corvinus Corvus Cossus Costa Cotta Crassipes Crassus Crispinus Crispus Culleo
+		Curio Cursor Curvus Dentatus Denter Dento Dives Dolabella Dorsuo Drusus Figulus Fimbria
+		Flaccus Favus Florus Fronto Fullo Fusus Galeo Gemellus Glabrio Gracchus Gurges Habitus
+		Helva Imperiosus Iullus Labeo Lactuca Laenas Lanatus Laevinus Laterensis Lentulus Lepidus
+		Libo Licinus Longus Lucullus Lupus Lurco Macer Macula Malleolus Mamercus Marcellus Maro
+		Merenda Mergus Merula Messalla Metellus Murena Mus Musca Nasica Naso Natta Nepos Nero
+		Nerva Niger Novellus Ocella Pacilus Paetus Pansa Papus Paterculus Paullus Pavo Pera Pictor
+		Piso Plancus Plautus Poplicola Postumus Potitus Praeconinus Praetextatus Priscus Proculus
+		Publicola Pulcher Pullus Pulvillus Purpureo Quadratus Ralla Regillus Regulus Rufus Ruga Rullus
+		Rutilus Salinator Saturninus Scaeva Scaevola Scapula Scaurus Scipio Scrofa Seneca Severus
+		Silanus Silo Silus Stolo Strabo Structus Sulla Sura Taurus Triarius Trigeminus Trio Tubero
+		Tubertus Tubulus Tuditanus Tullus Turdus Varro Varus Vatia Verres Vespillo Vetus Vitulus
+		Volusus }
+	}
+
+
+	afer = {
+        color = { 173 136 117 }
+
+        first_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
+		Artorius Asinius Atilius Atius Aurelius Autronius Caecilius Caedicius Caelius Calidius
+		Calpurnius Cassius Claudius Cloelius Cocceius Cominius Cornelius Coruncanius Curiatius
+		Curius Curtius Decius Didius Domitius Duilius Durmius Equitius Fabius Fabricius Fannius
+		Flavius Fulvius Furius Gabinius Galerius Geganius Gellius Geminius Genucius Gratius
+		Herennius Hirtius Horatius Hortensius Hostilius Iulius Iunius Iuventius Laelius Lartius
+		Licinius Livius Lucilius Lucretius Manlius Marcius Marius Memmius Menenius Minicius
+		Minius Minucius Modius Mucius Naevius Nautius Numerius Numicius Octavius Ovidius
+		Papirius Petronius Pinarius Pompeius Pompilius Pontius Popillius Porcius Postumius
+		Quinctilius Quinctius Rubellius Rufius Rutilius Sallustius Salonius Salvius Scribonius
+		Seius Sempronius Sentius Sergius Sertorius Servilius Sextius Sicinius Suetonius Sulpicius
+		Tarpeius Tarquitius Terentius Titinius Titurius Tuccius Tullius Ulpius Valerius Vedius
+		Velleius Vergilius Verginius Vibius Villius Vipsanius Vitellius Vitruvius Volumnius }
+		
+        last_names = { Aculeo Agricola Agrippa Ahala Ahenobarbus Albinus Albus Ambustus Annalis Aquila
+		Aquilinus Arvina Asellio Asina Atellus Avitus Balbus Barba Barbatus Bassus Bestia
+		Bibaculus Bibulus Blaesus Brocchus Brutus Bubulcus Bucco Bulbus Buteo Caecus Caepio
+		Caesar Calidus Calvinus Calvus Camillus Caninus Canus Capito Carbo Catilina Cato
+		Catulus Celer Celsus Cethegus Cicero Cicurinus Cilo Cincinnatus Cinna Cordus Cornicen
+		Cornutus Corvinus Corvus Cossus Costa Cotta Crassipes Crassus Crispinus Crispus Culleo
+		Curio Cursor Curvus Dentatus Denter Dento Dives Dolabella Dorsuo Drusus Figulus Fimbria
+		Flaccus Favus Florus Fronto Fullo Fusus Galeo Gemellus Glabrio Gracchus Gurges Habitus
+		Helva Imperiosus Iullus Labeo Lactuca Laenas Lanatus Laevinus Laterensis Lentulus Lepidus
+		Libo Licinus Longus Lucullus Lupus Lurco Macer Macula Malleolus Mamercus Marcellus Maro
+		Merenda Mergus Merula Messalla Metellus Murena Mus Musca Nasica Naso Natta Nepos Nero
+		Nerva Niger Novellus Ocella Pacilus Paetus Pansa Papus Paterculus Paullus Pavo Pera Pictor
+		Piso Plancus Plautus Poplicola Postumus Potitus Praeconinus Praetextatus Priscus Proculus
+		Publicola Pulcher Pullus Pulvillus Purpureo Quadratus Ralla Regillus Regulus Rufus Ruga Rullus
+		Rutilus Salinator Saturninus Scaeva Scaevola Scapula Scaurus Scipio Scrofa Seneca Severus
+		Silanus Silo Silus Stolo Strabo Structus Sulla Sura Taurus Triarius Trigeminus Trio Tubero
+		Tubertus Tubulus Tuditanus Tullus Turdus Varro Varus Vatia Verres Vespillo Vetus Vitulus
+		Volusus }
+	}
+
+	wenedyk = {
+        color = { 224 224 96 }
+
+        first_names = { Akilëv Ajbušcëv "Al'jaëv" Ajajlëv Albëv Amašcëv Annaëv Anneëv Annëv Antuëv Arrëv
+		Artraëv Asinëv Aštilëv Aštëv "Orl'jaëv" Otruëv Kajkilëv Kajžkëv "Kal'jaëv" Kaližëv
+		Kalpurnëv Kassëv Kložëv Klajaëv Kokkeëv Kvinëv "Kranl'jaëv" Kronkanëv Kuriašcëv
+		Kurëv Kurštëv Dekëv Džëv Dvišcëv Dvilëv Durmëv Ekvišcëv Fabëv Fabrikëv Fannëv
+		Flavëv Fulvëv Furëv Gabinëv Galrjaëv Geganëv "Gl'jalëv" Gjajnëv Gjokëv Grašcëv
+		Rjajanëv Hiršcëv Raštëv Ratjasëv Hosštilëv Julëv Junëv Juvjašcëv "Lal'jaëv" Laršcëv
+		Likinëv Livëv Lukilëv Lukreštëv Manlëv Markëv Marëv Mjamëv Mjajaëv Minikëv
+		Minëv Minukëv Možëv Mukëv Najvëv Nošcëv Numrjaëv Numikëv Oktavëv Ovižëv
+		Papirëv Petruëv Pinarëv Pupeëv Pupilëv Pušcëv "Popil'ëv" Prakëv Postumëv
+		Kvinkštilëv Kvinkštëv "Rubl'jalëv" Rufëv Ruštilëv Sallusštëv Saluëv Salvëv Skribuëv
+		Seëv Sjapruëv Sjaštëv Srjažëv Srjatraëv Srjavilëv Sekštëv Sikinëv Svetuëv Sulpikëv
+		Tarpeëv Tarkvištëv Trjajaštëv Štištinëv Štiturëv Tukkëv Tullëv Ulpëv Valrjaëv Vežëv
+		"Vl'jaleëv" Vrjažlëv Vrjažnëv Vibëv Villëv Vipsanëv "Vitl'jalëv" Vitruvëv Vlomnjëv }
+		
+        last_names = { Akulij Agriklaja Agrippaja Ahalaja Ajavbarbskij Albinskij Albskij Ambustskij Annaliskij Akvilaja
+		Aquilinskij Arvinaja Asljalij Asinaja "Atljal'skij" Avitskij Balbskij Barbaja Barbatskij Basskij Beškaja
+		"Bibakul'skij" "Bibul'skij" Blajskij Brohskij Brutskij "Bubul'skij" Bukkoj Bulbskij Buteoj Kajkskij Kajpioj
+		Kajsar Kalidskij Kalvinskij Kalvskij Kamil'skij Kaninskij Kanskij Kapitoj Karboj Kaštilinaja Katoj
+		"Katul'skij" Kjarjaja Kjasskij Kefegskij Kikrjaoj Kikurinskij Kiloj Kinkinnatskij Kinnaja Kradskij Kranikja
+		Kranutskij Kravinskij Kravskij Kosskij Kostaja Kottaja Krassipij Krassskij Krispinskij Krispskij Kulleoj
+		Kurioj Kursraja Kurvskij Žatatskij Žatrjaja Žatoj Žves "Dlabl'jalaja" Drasvoj Druskij "Figul'skij" Fimbriaja
+		Flakskij Favskij Flaskij Frutoj Fulloj Fuskij Galeoj "Gjal'jal'skij" Glabrioj Grahskij Gurgeskij Habitskij
+		"L'javaja" Imprjajoskij "Jul'skij" Labeoj Laktukaja Lajaskij Lanatskij Lajvinskij Latrjajasiskij "L'jatul'skij" Lepidskij
+		Liboj Likinskij Lugskij "Lukul'skij" Lupskij Lurkoj Makrjaja Makulaja Mallelaskij Mamrjakskij "Markljal'skij" Maroj
+		Mrjajadaja Mrjagskij Mrjolaja Messallaja "Mecal'skij" Murjaja Mskij Muskaja Nasikaja Nasoj Nattaja Neposkij Njaoj
+		Njavaja Nigrjaja "Novljal'skij" Okljalaja "Pakil'skij" Pajtskij Pansaja Papskij "Patrjakul'skij" "Pol'skij" Pavoj Prjaja Piktra
+		Pisoj Plankskij Plotskij Popliklaaja Postumskij Poštitskij Prajkvinskij Prajtekstatskij Priskskij Prokulskij
+		Publiklaja Pulhaja "Pul'skij" "Pulvil'skij" Purpureoj Kvadratskij Rallaja "Režil'skij" "Regul'skij" Rufskij Rugaja Rulluskij
+		"Ruštil'skij" Salinatraja Saturninskij Skajvaja Skajvlaja Skapulaja Skorskij Skipioj Skrofaja Sjajkaja Sevrjoskij
+		Silanskij Siloj "Sil'skij" Stlaoj Straboj Strukskij Sullaja Suraja Torskij Triarev Trigjajnskij Trjoj Tubrjaoj
+		Tubrjatskij "Tubul'skij" Tužtanskij "Tul'skij" Turdskij Varroj Varskij Vašcaja Vjareskij Vespilloj Vetskij "Vitul'skij"
+		Vloskij }
+	}
+
+	australus = {
+        color = { 218 53 65 }
+
+        first_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
+		Artorius Asinius Atilius Atius Aurelius Autronius Caecilius Caedicius Caelius Calidius
+		Calpurnius Cassius Claudius Cloelius Cocceius Cominius Cornelius Coruncanius Curiatius
+		Curius Curtius Decius Didius Domitius Duilius Durmius Equitius Fabius Fabricius Fannius
+		Flavius Fulvius Furius Gabinius Galerius Geganius Gellius Geminius Genucius Gratius
+		Herennius Hirtius Horatius Hortensius Hostilius Iulius Iunius Iuventius Laelius Lartius
+		Licinius Livius Lucilius Lucretius Manlius Marcius Marius Memmius Menenius Minicius
+		Minius Minucius Modius Mucius Naevius Nautius Numerius Numicius Octavius Ovidius
+		Papirius Petronius Pinarius Pompeius Pompilius Pontius Popillius Porcius Postumius
+		Quinctilius Quinctius Rubellius Rufius Rutilius Sallustius Salonius Salvius Scribonius
+		Seius Sempronius Sentius Sergius Sertorius Servilius Sextius Sicinius Suetonius Sulpicius
+		Tarpeius Tarquitius Terentius Titinius Titurius Tuccius Tullius Ulpius Valerius Vedius
+		Velleius Vergilius Verginius Vibius Villius Vipsanius Vitellius Vitruvius Volumnius }
+		
+        last_names = { Aculeo Agricola Agrippa Ahala Ahenobarbus Albinus Albus Ambustus Annalis Aquila
+		Aquilinus Arvina Asellio Asina Atellus Avitus Balbus Barba Barbatus Bassus Bestia
+		Bibaculus Bibulus Blaesus Brocchus Brutus Bubulcus Bucco Bulbus Buteo Caecus Caepio
+		Caesar Calidus Calvinus Calvus Camillus Caninus Canus Capito Carbo Catilina Cato
+		Catulus Celer Celsus Cethegus Cicero Cicurinus Cilo Cincinnatus Cinna Cordus Cornicen
+		Cornutus Corvinus Corvus Cossus Costa Cotta Crassipes Crassus Crispinus Crispus Culleo
+		Curio Cursor Curvus Dentatus Denter Dento Dives Dolabella Dorsuo Drusus Figulus Fimbria
+		Flaccus Favus Florus Fronto Fullo Fusus Galeo Gemellus Glabrio Gracchus Gurges Habitus
+		Helva Imperiosus Iullus Labeo Lactuca Laenas Lanatus Laevinus Laterensis Lentulus Lepidus
+		Libo Licinus Longus Lucullus Lupus Lurco Macer Macula Malleolus Mamercus Marcellus Maro
+		Merenda Mergus Merula Messalla Metellus Murena Mus Musca Nasica Naso Natta Nepos Nero
+		Nerva Niger Novellus Ocella Pacilus Paetus Pansa Papus Paterculus Paullus Pavo Pera Pictor
+		Piso Plancus Plautus Poplicola Postumus Potitus Praeconinus Praetextatus Priscus Proculus
+		Publicola Pulcher Pullus Pulvillus Purpureo Quadratus Ralla Regillus Regulus Rufus Ruga Rullus
+		Rutilus Salinator Saturninus Scaeva Scaevola Scapula Scaurus Scipio Scrofa Seneca Severus
+		Silanus Silo Silus Stolo Strabo Structus Sulla Sura Taurus Triarius Trigeminus Trio Tubero
+		Tubertus Tubulus Tuditanus Tullus Turdus Varro Varus Vatia Verres Vespillo Vetus Vitulus
+		Volusus }
+	}
 }
 
 latin_american_cultures = {
@@ -4433,8 +4434,7 @@ african_diaspora_cultures = {
 		Kolchak Kuropatkin Lazarev Makarov Men'shikov Nakhimov Nebogatov
 		Nikolayevich Ostrovskiy Pavlov Putyatin Romanov Rozhestvenskiy Skobelev
 		Shuvalov Surkov Tukhachevskiy Yegorov Yudenich Vorontsov Voroshilov Zavoyko }
-    }
-	
+    }	
 }
 
 west_african = {
