@@ -24,10 +24,6 @@ link = { vic2 = zarphatic eu4 = zarphatic }
 link = { vic2 = laaz eu4 = laaz }
 link = { vic2 = kaifeng eu4 = kaifeng }
 
-# Slovene
-link = { vic2 = slovene eu4 = slovene }
-link = { vic2 = slovene eu4 = austrian region = carinthia_area }
-
 # Germanic - North German, South German, Ashkenazi
 # Swiss - Swiss
 link = { vic2 = amerikaner eu4 = berliner eu4 = styrian eu4 = tirolian eu4 = alamanni eu4 = lugii eu4 = quadi eu4 = marcoman eu4 = bastarnae eu4 = gepid eu4 = greuthungi eu4 = thuringian eu4 = varinian eu4 = rugii eu4 = vandalic eu4 = pommeranian eu4 = prussian eu4 = lower_saxon eu4 = hannoverian eu4 = saxon eu4 = hessian eu4 = old_saxon eu4 = german eu4 = thuringian eu4 = colognian eu4 = old_gothic eu4 = baltendeutsche eu4 = eastphalian eu4 = high_saxon eu4 = low_saxon eu4 = moselfranconian eu4 = westphalian eu4 = feldern eu4 = franconian eu4 = swabian eu4 = rheinlaender eu4 = bavarian eu4 = austrian eu4 = eastfranconian eu4 = high_alemanisch eu4 = rhine_alemanisch eu4 = ripuarianfranconian eu4 = schlesischdeutsch eu4 = schwabisch eu4 = alemanisch_colonial eu4 = amerikaner eu4 = prussian_colonial eu4 = berber_germanic eu4 = old_frankish eu4 = frankish eu4 = ostrogothic eu4 = gepid eu4 = swiss eu4 = romansh eu4 = suisse region = south_america_superregion }
@@ -223,11 +219,11 @@ link = { vic2 = latvian eu4 = latvian eu4 = kurland_culture }
 link = { vic2 = estonian eu4 = estonian }
 
 # South Slav - croatian, serbian, bulgarian, romanian, albanian
-link = { vic2 = novisvet eu4 = montenegrin eu4 = bosnian eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = south_america_superregion }
-link = { vic2 = novisvet eu4 = montenegrin eu4 = bosnian eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = north_america_superregion }
-link = { vic2 = novisvet eu4 = montenegrin eu4 = bosnian eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = central_america_superregion }
-link = { vic2 = juzhno eu4 = montenegrin eu4 = bosnian eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = oceania_superregion }
-link = { vic2 = crni eu4 = montenegrin eu4 = bosnian eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+link = { vic2 = novisvet eu4 = montenegrin eu4 = bosnian eu4 = slovene eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = south_america_superregion }
+link = { vic2 = novisvet eu4 = montenegrin eu4 = bosnian eu4 = slovene eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = north_america_superregion }
+link = { vic2 = novisvet eu4 = montenegrin eu4 = bosnian eu4 = slovene eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = central_america_superregion }
+link = { vic2 = juzhno eu4 = montenegrin eu4 = bosnian eu4 = slovene eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = oceania_superregion }
+link = { vic2 = crni eu4 = montenegrin eu4 = bosnian eu4 = slovene eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = bosniak eu4 = croatian eu4 = serbian religion = sunni }
 link = { vic2 = bosniak eu4 = croatian eu4 = serbian religion = shiite }
 link = { vic2 = bosniak eu4 = bosnian }
@@ -245,7 +241,8 @@ link = { vic2 = macedonian eu4 = serb eu4 = montenegrin region = albania_area }
 link = { vic2 = serb eu4 = serbian eu4 = montenegrin }
 link = { vic2 = bulgarian eu4 = sclavenian eu4 = bulgarian }
 link = { vic2 = albanian eu4 = albanian }		
-link = { vic2 = slovene eu4 = carantanian }						   
+link = { vic2 = slovene eu4 = carantanian eu4 = slovene }						   
+link = { vic2 = slovene eu4 = austrian region = carinthia_area }
 
 # West Slav - polish, schlesian, czech, slovak
 link = { vic2 = novysvet eu4 = czech eu4 = moravian eu4 = silesian eu4 = slovak region = south_america_superregion }
