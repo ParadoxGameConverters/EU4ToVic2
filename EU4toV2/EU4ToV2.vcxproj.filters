@@ -1335,7 +1335,4 @@
       <UniqueIdentifier>{b28a005e-f675-484c-800a-bd321bfe49b2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="EU4ToV2.rc" />
-  </ItemGroup>
 </Project>
