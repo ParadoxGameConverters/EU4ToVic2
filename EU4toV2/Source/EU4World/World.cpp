@@ -391,27 +391,17 @@ void EU4::World::verifySaveContents()
 	{
 		char* outBuf1;
 		size_t outSize1;
-
 		auto result = rakaly_eu4_melt(saveGame.gamestate.c_str(), saveGame.gamestate.length(), &outBuf1, &outSize1);
 		if (result)
 			throw std::runtime_error("This ironman save cannot be melted. Sorry. Try with an external melting tool.");
-		saveGame.gamestate = std::string(outBuf1 + '\0');
-
-		std::ofstream gstate("gstate.txt");
-		gstate << saveGame.gamestate;
-		gstate.close();
+		saveGame.gamestate = std::string(outBuf1);
 
 		char* outBuf2;
 		size_t outSize2;
-
 		result = rakaly_eu4_melt(saveGame.metadata.c_str(), saveGame.metadata.length(), &outBuf2, &outSize2);
 		if (result)
 			throw std::runtime_error("This ironman save cannot be melted. Sorry. Try with an external melting tool.");
-		saveGame.metadata = std::string(outBuf2 + '\0');
-
-		std::ofstream mdata("mdata.txt");
-		mdata << saveGame.metadata;
-		mdata.close();
+		saveGame.metadata = std::string(outBuf2);
 	}
 }
 
