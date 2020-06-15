@@ -19,6 +19,7 @@
 #include <string>
 #include "Relations/EU4Empire.h"
 #include <ZipFile.h>
+#include "../Helpers/rakaly.h"
 #include <filesystem>
 namespace fs = std::filesystem;
 
@@ -383,7 +384,17 @@ void EU4::World::verifySaveContents()
 		saveGame.gamestate[3] == 'b' &&
 		saveGame.gamestate[4] == 'i' &&
 		saveGame.gamestate[5] == 'n'
-	) throw std::runtime_error("Ironman saves cannot be converted.");
+	) //throw std::runtime_error("Ironman saves cannot be converted.");
+	{
+		char** output;
+		size_t* outLen;
+		const auto result = rakaly_eu4_melt(saveGame.gamestate.c_str(), saveGame.gamestate.length(), output, outLen);
+		const auto outStr = std::string(*output);
+		std::ofstream outfile("out.file");
+		outfile << outStr;
+		outfile.close();
+		throw std::runtime_error("Ironman saves cannot be converted.");
+	}
 }
 
 void EU4::World::verifySave()
@@ -395,8 +406,6 @@ void EU4::World::verifySave()
 	saveFile.get(buffer, 3);
 	if (buffer[0] == 'P' && buffer[1] == 'K')
 	{
-		LOG(LogLevel::Info) << "Saves must be uncompressed to be converted.";
-		LOG(LogLevel::Info) << "Just kidding.";
 		if (!uncompressSave()) throw std::runtime_error("Failed to unpack the compressed save!");
 	}
 	saveFile.close();

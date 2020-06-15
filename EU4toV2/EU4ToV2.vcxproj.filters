@@ -1088,6 +1088,10 @@
     <ClInclude Include="..\commonItems\GameVersion.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Helpers\rakaly.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1330,5 +1334,8 @@
     <Filter Include="Mappers\AfricaReset">
       <UniqueIdentifier>{b28a005e-f675-484c-800a-bd321bfe49b2}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="EU4ToV2.rc" />
   </ItemGroup>
 </Project>
