@@ -16,6 +16,7 @@ add_link_options(-no-pie)
 include_directories("../commonItems")
 include_directories("../ZipLib")
 include_directories("${PROJECT_SOURCE_DIR}")
+link_directories(${CMAKE_SOURCE_DIR}/Resources)
 
 add_subdirectory(../ZipLib [binary_dir])
 
@@ -200,7 +201,7 @@ add_executable(EU4ToVic2
 	${COMMON_SOURCES}
 )
 
-target_link_libraries(EU4ToVic2 LINK_PUBLIC ZIPLIB stdc++fs)
+target_link_libraries(EU4ToVic2 LINK_PUBLIC ZIPLIB stdc++fs rakaly)
 
 add_custom_command(TARGET EU4ToVic2 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
 add_custom_command(TARGET EU4ToVic2 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ./Copy_Files.sh)

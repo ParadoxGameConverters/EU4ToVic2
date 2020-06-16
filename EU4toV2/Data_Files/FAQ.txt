@@ -1,11 +1,8 @@
-Q: I have an ironman save. Can it be converted?
-A: Ironman saves (compressed or not) are encrypted saves. Converter cannot decrypt them, you need a special utility/service for that.
-  1. Google "paperman", and use its web-interface (or standalone utility) to decrypt ironman into paperman save.
-  2. Load paperman save in eu4 and then resave it into a new savegame (to iron out any potential decryption issues).
-  3. Convert the freshly saved result.
+Q: I have a compressed save. Can it be converted?
+A: Yes.
 
-Q: The converter says my save is ironman. What do I do?
-A: Use the technique listed above.
+Q: I have an ironman save. Can it be converted?
+A: Yup.
 
 Q: I loaded my mod, but nothing changed. What's wrong?
 A: You probably placed the mod in the My Documents mod folder. It needs to go in the Vic2 install location's mod folder.

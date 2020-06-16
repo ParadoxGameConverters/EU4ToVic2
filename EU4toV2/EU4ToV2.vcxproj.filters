@@ -1088,6 +1088,10 @@
     <ClInclude Include="..\commonItems\GameVersion.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Helpers\rakaly.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">

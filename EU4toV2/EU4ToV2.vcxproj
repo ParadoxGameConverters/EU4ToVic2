@@ -248,7 +248,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Resources\rakaly.dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -519,6 +519,7 @@
     <ClInclude Include="..\commonItems\Parser.h" />
     <ClInclude Include="..\commonItems\ParserHelpers.h" />
     <ClInclude Include="..\commonItems\StringUtils.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
     <ClInclude Include="Source\EU4World\Army\EU4Army.h" />
@@ -573,6 +574,7 @@
     <ClInclude Include="Source\EU4World\Wars\EU4War.h" />
     <ClInclude Include="Source\EU4World\Wars\EU4WarDetails.h" />
     <ClInclude Include="Source\EU4World\World.h" />
+    <ClInclude Include="Source\Helpers\rakaly.h" />
     <ClInclude Include="Source\Helpers\targa.h" />
     <ClInclude Include="Source\Helpers\TechValues.h" />
     <ClInclude Include="Source\Mappers\Adjacency\AdjacencyMapper.h" />
