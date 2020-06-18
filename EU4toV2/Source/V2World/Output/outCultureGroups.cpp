@@ -50,14 +50,14 @@ std::ostream& mappers::operator<<(std::ostream& output, const Culture& culture)
 	output << "\t\tfirst_names = { ";
 	for (const auto& firstName : culture.firstNames)
 	{
-		output << V2::Localisation::convert(firstName) << " ";
+		output << firstName << " ";
 	}
 	output << " }\n";
 	output << "\t\t\n";
 	output << "\t\tlast_names = { ";
 	for (const auto& lastName : culture.lastNames)
 	{
-		output << V2::Localisation::convert(lastName) << " ";
+		output << lastName << " ";
 	}
 	output << " }\n";
 	output << "\t\t\n";
