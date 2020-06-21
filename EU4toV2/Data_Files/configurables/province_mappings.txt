@@ -2117,13 +2117,13 @@
 	link = { eu4 = 2221 eu4 = 4325 eu4 = 4324 v2 = 1147 }	# Mashhad, Sarakhs, Ghuriyan -> Mashhad
 	link = { eu4 = 2235 eu4 = 427 eu4 = 4326 v2 = 1149 }	# Sabzevar, Qumis, Nishapur -> Sabzevar
 	link = { eu4 = 436 eu4 = 4334 eu4 = 4336 v2 = 1148 }	# Birjand, Tabas, Tun -> Birjand
-	link = { eu4 = 434 }	# Quhistan -> DROPPED
-	link = { eu4 = 2233 }	# Chabahar -> DROPPED
+	link = { eu4 = 434 v2 = 1144 }	# Quhistan -> Zahedan
+	link = { eu4 = 2233 v2 = 1146 }	# Chabahar -> Chabahar
 	link = { eu4 = 432 v2 = 1140 }	# Kerman -> Kerman
 	link = { eu4 = 2234 eu4 = 4345 v2 = 1139 }	# Rafsanjan, Saidabad -> Sirjan
-	link = { eu4 = 4327 v2 = 1145 v2 = 1146 }	# Jask -> Jask, Chabahar
+	link = { eu4 = 4327 v2 = 1145 }	# Jask -> Jask
 	link = { eu4 = 431 eu4 = 2999 v2 = 1142 }	# Mogostan, Hormuz -> Bandar Abbas
-	link = { eu4 = 2220 v2 = 1143 v2 = 1144 }	# Bam -> Bam, Zahedan
+	link = { eu4 = 2220 v2 = 1143 }	# Bam -> Bam
 	link = { eu4 = 424 eu4 = 4340 v2 = 1112 }	# Ardabil, Astara -> Ardabil
 	link = { eu4 = 416 eu4 = 4300 v2 = 1108 }	# Tabriz, Mianeh -> Tabriz
 	link = { eu4 = 4304 v2 = 1109 }	# Khoy -> Khvoy
