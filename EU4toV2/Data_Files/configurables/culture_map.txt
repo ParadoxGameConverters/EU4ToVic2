@@ -637,12 +637,12 @@ link = { vic2 = south_german eu4 = thuringian }
 link = { vic2 = sephardic eu4 = mizrahim }
 link = { vic2 = assyrian eu4 = babylonian eu4 = syriac eu4 = assyrian }
 
-#M&T cultures (daaaamn long list)
+#Mod cultures (M&T, Missions expanded, etc)
 #Sidenote, no new culture was created
 #Cultures were linked to the most similar EU one possible
 #Feel free to fix any error
 link = { vic2 = north_caucasian eu4 = abazin }
-link = { vic2 = french_canadian eu4 = acadian }
+link = { vic2 = french_canadian eu4 = acadian eu4 = quebecois }
 link = { vic2 = malay eu4 = acehenese }
 link = { vic2 = french eu4 = africaine }
 link = { vic2 = anglo_african eu4 = african }
