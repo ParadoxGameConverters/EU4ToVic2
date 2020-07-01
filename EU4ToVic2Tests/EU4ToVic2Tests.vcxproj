@@ -239,6 +239,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Building.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Buildings.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CountryMappings\CountryMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CulturalUnions\CulturalUnion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapper.cpp" />
@@ -282,6 +283,7 @@
     <ClCompile Include="MapperTests\BlockedTechSchoolsTests.cpp" />
     <ClCompile Include="MapperTests\BuildingsTests.cpp" />
     <ClCompile Include="MapperTests\BuildingTests.cpp" />
+    <ClCompile Include="MapperTests\CountryMappings\CountryMappingTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionMapperTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapperTests.cpp" />
