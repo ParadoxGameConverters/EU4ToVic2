@@ -269,6 +269,12 @@
     <ClCompile Include="..\commonItems\CommonFunctions.cpp">
       <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CountryMappings\CountryMapping.cpp">
+      <Filter>ConverterFiles\Mappers\CountryMappings</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CountryMappings\CountryMappingTests.cpp">
+      <Filter>MapperTests\CountryMappings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -351,6 +357,12 @@
     </Filter>
     <Filter Include="ConverterFiles\commonItems">
       <UniqueIdentifier>{87c6ec85-b77f-4e5f-9685-fe52f9d29d40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\CountryMappings">
+      <UniqueIdentifier>{5a7d0b3e-be05-4c5e-b821-003d63baa3f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\CountryMappings">
+      <UniqueIdentifier>{1d2e3714-20f2-4f78-aaea-16be904f82a3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
