@@ -35,7 +35,7 @@ link = { vic2 = afro_antillean eu4 = quebecois eu4 = picard eu4 = celtic_breton 
 link = { vic2 = afro_slavic eu4 = finnish eu4 = finnish eu4 = udmurt eu4 = karelian eu4 = mari_culture eu4 = estonian eu4 = ingrian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki }
 
 # Slavic
-link = { vic2 = afro_slavic eu4 = slovene eu4 = sclavenian eu4 = carantanian eu4 = croatian eu4 = slovene eu4 = schlesian eu4 = kashubian eu4 = sorbian eu4 = tracki eu4 = alzzecio eu4 = serb eu4 = montenegrin eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak }
+link = { vic2 = afro_slavic eu4 = slovene eu4 = sclavenian eu4 = carantanian eu4 = croatian eu4 = slovene eu4 = schlesian eu4 = kashubian eu4 = sorbian eu4 = tracki eu4 = alzzecio eu4 = serbian eu4 = montenegrin eu4 = balkan_colonial eu4 = macedonian eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak }
 link = { vic2 = afro_slavic eu4 = czech eu4 = moravian eu4 = silesian eu4 = slovak eu4 = mazovian eu4 = polish }
 link = { vic2 = afro_slavic eu4 = serbian }
 link = { vic2 = afro_slavic eu4 = antean eu4 = russian eu4 = circassian eu4 = dagestani eu4 = ilmenian eu4 = permic_culture eu4 = kishinyov eu4 = meshchera eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = ruthenian eu4 = ukrainian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki }
