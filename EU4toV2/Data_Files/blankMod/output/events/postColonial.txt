@@ -5769,23 +5769,23 @@ country_event = {
   months = 120
   modifier = {
    factor = 10000
-   NOT = { year = 1820 }
+   NOT = { year = 1880 }
   }
   modifier = {
    factor = 0.75
-   year = 1860
+   year = 1890
   }
   modifier = {
    factor = 0.75
-   year = 1870
+   year = 1900
   }
   modifier = {
    factor = 0.75
-   year = 1875
+   year = 1905
   }
   modifier = {
    factor = 0.5
-   year = 1880
+   year = 1910
   }
  }
     immediate = {
