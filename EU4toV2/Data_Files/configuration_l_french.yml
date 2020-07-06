@@ -36,7 +36,7 @@ l_french:
  VIC2SAVETIP: "Chemin vers votre sauvegarde de Vic2"
  EU4DOC: "Répertoire des documents Europa Universalis IV"
  EU4DOCTIP: "Un chemin sur votre ordinateur où Europa Universalis IV conserve des fichiers temporaires"
- CK2EXP: "Répertoire d'exportation de Crusader Kings II"
+ CK2EXP: "(Facultatif) Répertoire d'exportation de Crusader Kings II"
  CK2EXPTIP: "(Facultatif) Un chemin sur votre ordinateur où Crusader Kings II conserve les jeux exportés"
  VIC2DOC: "Répertoire des documents Victoria II"
  VIC2DOCTIP: "Un chemin sur votre ordinateur où Victoria II conserve des fichiers temporaires"

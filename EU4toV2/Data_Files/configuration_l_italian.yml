@@ -36,7 +36,7 @@ l_italian:
  VIC2SAVETIP: "Percorso per il tuo savegame da Vic2"
  EU4DOC: "Cartella dei documenti di Europa Universalis IV"
  EU4DOCTIP: "Un percorso in cui Europa Universalis IV conserva file temporanei"
- CK2EXP: "Cartella di esportazione di Crusader Kings II"
+ CK2EXP: "(Opzionale) Cartella di esportazione di Crusader Kings II"
  CK2EXPTIP: "(Opzionale) Un percorso in cui Crusader Kings II mantiene i giochi esportati"
  VIC2DOC: "Cartella dei documenti di Victoria II"
  VIC2DOCTIP: "Un percorso in cui Victoria II conserva i file temporanei"
