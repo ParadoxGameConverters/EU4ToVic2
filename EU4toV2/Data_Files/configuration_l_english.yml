@@ -36,7 +36,7 @@ l_english:
  VIC2SAVETIP: "Path to your savegame from Vic2"
  EU4DOC: "Europa Universalis IV Documents Directory"
  EU4DOCTIP: "A path on your computer where Europa Universalis IV keeps temporary files"
- CK2EXP: "Crusader Kings II Export Directory"
+ CK2EXP: "(Optional) Crusader Kings II Export Directory"
  CK2EXPTIP: "(Optional) A path on your computer where Crusader Kings II keeps exported games"
  VIC2DOC: "Victoria II Documents Directory"
  VIC2DOCTIP: "A path on your computer where Victoria II keeps temporary files"

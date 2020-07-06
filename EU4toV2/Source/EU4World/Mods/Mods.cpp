@@ -83,8 +83,8 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 	const auto CK2ExportLoc = theConfiguration.getCK2ExportPath();
 	if (!Utils::DoesFolderExist(CK2ExportLoc))
 	{
-		LOG(LogLevel::Warning) << "No Crusader Kings 2 mod directory was specified in configuration.txt,"
-										  " or the path was invalid - this will cause problems with CK2 converted saves";
+		LOG(LogLevel::Warning) << "No Crusader Kings 2 export directory was specified in configuration.txt,"
+										  " or the path was invalid - this may cause problems with old CK2 converted saves";
 	}
 	else
 	{
