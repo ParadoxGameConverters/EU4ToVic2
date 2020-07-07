@@ -1455,18 +1455,17 @@ void V2::World::addUnions()
 						}
 						break;
 					case Configuration::COREHANDLES::DropNone:
-						if (!unionCores)
-							break;
-						for (const auto& core: *unionCores)
-						{
-							province.second->addCore(core);
-						}
-						if (!nationalCores)
-							break;
-						for (const auto& core: *nationalCores)
-						{
-							province.second->addCore(core);
-						}
+						if (unionCores)
+							for (const auto& core: *unionCores)
+							{
+								province.second->addCore(core);
+							}
+						if (nationalCores)
+							for (const auto& core: *nationalCores)
+							{
+								province.second->addCore(core);
+							}
+						break;
 					case Configuration::COREHANDLES::DropAll:
 					default:
 						break;

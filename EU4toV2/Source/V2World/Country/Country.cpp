@@ -677,7 +677,7 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 {
 	// We must run this for all countries, even those without eu4 counterparts. For those (dead) nations we must cheat and use eurocentrism regardless of configuration setup.
 	
-	auto totalTechs = 0;
+	double totalTechs;
 	if (srcCountry)
 	{
 		totalTechs = srcCountry->getMilTech() + srcCountry->getAdmTech() + srcCountry->getDipTech();
@@ -690,7 +690,7 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 	// at 31 techs behind completely uncivilized
 	// each institution behind is equivalent to 2 techs behind
 	
-	auto civLevel = (totalTechs + 31 - topTech) * 4;
+	auto civLevel = (totalTechs + 31.0 - topTech) * 4;
 	civLevel = civLevel + (static_cast<double>(srcCountry->numEmbracedInstitutions()) - topInstitutions) * 8;
 	if (civLevel > 100)
 		civLevel = 100;
