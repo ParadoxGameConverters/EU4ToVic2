@@ -7,39 +7,40 @@
 
 namespace V2
 {
-	class Factory;
-	class Province;
-	class State
-	{
-	public:
-		State(int newId, std::shared_ptr<Province> firstProvince);
+class Factory;
+class Province;
+class State
+{
+  public:
+	State(int newId, std::shared_ptr<Province> firstProvince);
 
-		void setColonial(const bool col) { colonial = col; }
-		void addProvince(std::shared_ptr<Province> newProvince) { provinces.push_back(newProvince); }
+	void setColonial(const bool col) { colonial = col; }
+	void addProvince(std::shared_ptr<Province> newProvince) { provinces.push_back(newProvince); }
 
-		[[nodiscard]] auto isColonial() const { return colonial; }
-		[[nodiscard]] auto getFactoryCount() const { return factories.size(); }
-		[[nodiscard]] auto getID() const { return id; }
-		[[nodiscard]] const auto& getProvinces() const { return provinces; }
+	[[nodiscard]] auto isColonial() const { return colonial; }
+	[[nodiscard]] auto getFactoryCount() const { return factories.size(); }
+	[[nodiscard]] auto getID() const { return id; }
+	[[nodiscard]] const auto& getProvinces() const { return provinces; }
 
-		[[nodiscard]] bool isCoastal() const;
-		[[nodiscard]] bool hasLocalSupply(const std::string& product) const;
-		[[nodiscard]] double getSuppliedInputs(std::shared_ptr<Factory> factory) const;
-		[[nodiscard]] bool provInState(int id) const;
-		[[nodiscard]] bool hasLandConnection() const;
-		[[nodiscard]] double getMfgRatio() const;
+	[[nodiscard]] bool isCoastal() const;
+	[[nodiscard]] bool hasLocalSupply(const std::string& product) const;
+	[[nodiscard]] double getSuppliedInputs(std::shared_ptr<Factory> factory) const;
+	[[nodiscard]] bool provInState(int id) const;
+	[[nodiscard]] bool hasLandConnection() const;
+	[[nodiscard]] double getMfgRatio() const;
 
-		void addRailroads();
-		void addFactory(std::shared_ptr<Factory> factory);
-		void rebuildNavalBase();
-		void setProvincesAsTerritories();
-		
-	private:
-		int id = 0;
-		bool colonial = false;
-		std::vector<std::shared_ptr<Province>> provinces;
-		std::vector<std::shared_ptr<Factory>> factories;
-	};
-}
+	void addRailroads();
+	void addFactory(std::shared_ptr<Factory> factory);
+	void rebuildNavalBase();
+	void setProvincesAsTerritories();
+	void setProvincesAsStates();
 
-#endif	// STATE_H
+  private:
+	int id = 0;
+	bool colonial = false;
+	std::vector<std::shared_ptr<Province>> provinces;
+	std::vector<std::shared_ptr<Factory>> factories;
+};
+} // namespace V2
+
+#endif // STATE_H

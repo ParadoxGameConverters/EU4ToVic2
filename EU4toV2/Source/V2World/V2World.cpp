@@ -23,6 +23,12 @@ V2::World::World(const EU4::World& sourceWorld,
 	 historicalData(sourceWorld.getHistoricalData())
 {
 	Log(LogLevel::Progress) << "45 %";
+
+	LOG(LogLevel::Info) << "Parsing cultural union mappings.";
+	culturalUnionMapper.loadFile("configurables/unions.txt");
+	LOG(LogLevel::Info) << "Parsing nationalities mappings.";
+	culturalNationalitiesMapper.loadFile("configurables/nationals.txt");
+
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
 	LOG(LogLevel::Info) << "-> Importing Provinces";
 	importProvinces();
@@ -84,7 +90,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	LOG(LogLevel::Info) << "-> Converting Technology Levels";
 	convertTechs(sourceWorld);
 	Log(LogLevel::Progress) << "59 %";
-	
+
 	LOG(LogLevel::Info) << "-> Distributing Factories";
 	allocateFactories(sourceWorld);
 	Log(LogLevel::Progress) << "60 %";
@@ -112,7 +118,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	LOG(LogLevel::Info) << "-> Merging Nations";
 	addUnions();
 	Log(LogLevel::Progress) << "66 %";
-	
+
 	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
 	convertArmies();
 	Log(LogLevel::Progress) << "67 %";
@@ -152,19 +158,89 @@ void V2::World::addReligionCulture()
 
 void V2::World::dropStates()
 {
-	// We have dropped a lot of cores recently. It's time to drop states to territory status if they do not contain any own cores.
+	// Due to countless revisions, states generally exist in undefined/untrusted state as unless they are colonies in progress,
+	// for which we're fairly certain they are level 1.
+	//
+	// This function DROPS states to territory status if they do not contain civilized people.
+	// If the owner is uncivilized, it RISES any states to states and will fastforward any colonies in progress to full states too.
+
 	for (const auto& country: countries)
 	{
-		for (const auto& state: country.second->getStates())
+		// Are we uncivilized?
+		if (!country.second->isCivilized())
 		{
-			auto hasCore = false;
-			for (const auto& province: state->getProvinces())
+			// State everything.
+			for (const auto& state: country.second->getStates())
+				state->setProvincesAsStates();
+		}
+		else
+		{
+			// We go state by state.
+			for (const auto& state: country.second->getStates())
 			{
-				if (province->hasCore(country.first))
-					hasCore = true;
+				// First we look for cores and state (ignore) all provinces containing our cores.
+				auto hasCore = false;
+				for (const auto& province: state->getProvinces())
+				{
+					if (province->hasCore(country.first))
+						hasCore = true;
+				}
+				if (hasCore)
+				{
+					state->setProvincesAsStates();
+					continue;
+				}
+
+				// Otherwise, we need to look at the population. Does the primary culture belong to a nation (primary or union) that (extant or extinct) is
+				// civilized?
+				auto hasCivilizedPeople = false;
+				for (const auto& province: state->getProvinces())
+				{
+					const auto& majorityCulture = province->getDominantCulture();
+					const auto& belongsToNations = culturalNationalitiesMapper.getCoresForCulture(majorityCulture);
+					const auto& belongsToUnions = culturalUnionMapper.getCoresForCulture(majorityCulture);
+					if (!belongsToNations && !belongsToUnions)
+					{
+						// This culture has no known primary/union nation. Let's move to next province.
+						Log(LogLevel::Debug) << "culture: " << majorityCulture << " has no nations!";
+						continue;
+					}
+
+					std::vector<std::string> allCores;
+					if (belongsToNations)
+						allCores.insert(allCores.end(), belongsToNations->begin(), belongsToNations->end());
+					if (belongsToUnions)
+						allCores.insert(allCores.end(), belongsToUnions->begin(), belongsToUnions->end());
+
+					for (const auto& core: allCores)
+					{
+						// Which country is this?
+						const auto& countryItr = countries.find(core);
+						if (countryItr == countries.end())
+						{
+							// no dice, we don't have this nation on file, dead or alive.
+							Log(LogLevel::Debug) << "core: " << core << " has no country!";
+							continue;
+						}
+						if (countryItr->second->isCivilized())
+						{
+							// Ahah, finally, these people belong to a civilized nation.
+							hasCivilizedPeople = true;
+							break;
+						}
+					}
+				}
+				if (hasCivilizedPeople)
+				{
+					// A single province in a state containing civilized people is sufficient.
+					state->setProvincesAsStates();
+				}
+				else
+				{
+					// We didn't find cores nor civilized people (or people belonging to a specific nation), so we're dropping state to territory.
+					state->setProvincesAsTerritories();
+				}
 			}
-			if (!hasCore)
-				state->setProvincesAsTerritories();
 		}
 	}
 }
@@ -1349,11 +1425,6 @@ void V2::World::addUnions()
 	if (theConfiguration.getCoreHandling() == Configuration::COREHANDLES::DropAll)
 		return;
 
-	LOG(LogLevel::Info) << "Parsing cultural union mappings.";
-	culturalUnionMapper.loadFile("configurables/unions.txt");
-	LOG(LogLevel::Info) << "Parsing nationalities mappings.";
-	culturalNationalitiesMapper.loadFile("configurables/nationals.txt");
-
 	LOG(LogLevel::Info) << "Distributing national and cultural union cores.";
 
 	for (const auto& province: provinces)
@@ -1436,7 +1507,7 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 {
 	Utils::TryCreateFolder("output");
 	Log(LogLevel::Progress) << "80 %";
-	
+
 	LOG(LogLevel::Info) << "<- Copying Mod Template";
 	Utils::CopyFolder("blankMod/output", "output/output");
 	Log(LogLevel::Progress) << "81 %";

@@ -675,9 +675,15 @@ void V2::Country::oldCivConversionMethod()
 // civilization level conversion method for games 1.19+
 void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper)
 {
-	if (!srcCountry)
+	// We must run this for all countries, even those without eu4 counterparts. For those (dead) nations we must cheat and use eurocentrism regardless of configuration setup.
+	
+	auto totalTechs = 0;
+	if (srcCountry)
+	{
+		totalTechs = srcCountry->getMilTech() + srcCountry->getAdmTech() + srcCountry->getDipTech();
+	}
+	else
 		return;
-	auto totalTechs = srcCountry->getMilTech() + srcCountry->getAdmTech() + srcCountry->getDipTech();
 
 	// set civilization cut off for 6 techs behind the the tech leader (30 years behind tech)
 	// set number for civilization level based on techs and institutions
@@ -752,9 +758,12 @@ void V2::Country::addRailroadtoCapitalState()
 
 void V2::Country::convertLandlessReforms(const Country& capitalOwner) // Use current capital owner to set up.
 {
+	// We can only copy reforms from the same civilized-level nation. This means India might be uncivilized, but inherit britain's civilized reforms,
+	// which come into play once it is released and westernizes.
+
 	if (capitalOwner.isCivilized())
 	{
-		details.civilized = true;
+		reforms = capitalOwner.getReforms();
 	}
 	else
 	{
