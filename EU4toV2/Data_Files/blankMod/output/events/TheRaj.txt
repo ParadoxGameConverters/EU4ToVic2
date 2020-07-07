@@ -133,3 +133,115 @@ country_event = {
 		create_vassal = RJX
 	}
 }
+
+province_event = {
+	id = 5000004
+	title = EVTNAME5000004
+	desc = EVTDESC5000004
+	picture = arrested
+	
+	trigger = {
+		owner = { has_country_flag = the_gypsy_question }
+		GYP = { exists = no }
+		is_capital = no
+		NOT = { is_core = GYP }
+		any_pop = {
+			has_pop_culture = gypsy
+			OR = {
+				strata = rich
+				type = craftsmen
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = EVTOPTA5000004
+		add_core = GYP
+	}
+}
+province_event = {
+	id = 5000005
+	title = EVTNAME5000005
+	desc = EVTDESC5000005
+	picture = Egyptian
+	
+	trigger = {
+		province_id = 1760
+		NOT = { has_global_flag = egy_desert }
+		1758 = { empty = yes }
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	option = {
+		name = EVTOPTA5000005
+		set_global_flag = egy_desert
+		1758 = {
+			add_core = THIS
+			change_controller = THIS
+			secede_province = THIS
+		}
+	}
+}
+province_event = {
+	id = 5000006
+	title = EVTNAME5000006
+	desc = EVTDESC5000006
+	picture = Nile
+	
+	trigger = {
+		province_id = 1742
+		NOT = { has_global_flag = fezzan }
+		1741 = { empty = yes }
+	}
+	
+	mean_time_to_happen = {
+		months = 5
+	}
+	
+	option = {
+		name = EVTOPTA5000006
+		set_global_flag = fezzan
+		1741 = {
+			add_core = THIS
+			change_controller = THIS
+			secede_province = THIS
+		}
+	}
+}
+country_event = {
+	id = 5000007
+	title = EVTNAME5000007
+	desc = EVTDESC5000007
+	picture = Ottoman
+	
+	trigger = {
+		OR = {
+			tag = MSY # Mushasha
+			AND = {
+				tag = ARD # Ardalan
+				KDS = { exists = no }
+			}
+			tag = MGR # Maregheh
+			tag = ARL # Ardabil
+		}
+		PER = { exists = yes }
+		NOT = { has_global_flag = persian_minor }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = EVTOPTA500007
+		set_global_flag = persian_minor
+		PER = { inherit = THIS }
+	}
+}
