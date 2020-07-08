@@ -1,7 +1,7 @@
 # This file allows technology groups to affect westernization of the country,
 # should this option be enabled in the converter.
 #
-# This file also links _VIC2_ cultures to _EU4+ tech groups. This is important as it's the only way to sensibly
+# This file also links _VIC2_ cultures to _EU4_ tech groups. This is important as it's the only way to sensibly
 # determine if a culture (not country!) is civilized. This is enabled always and a separate function from eurocentrism.
 # 
 # Scale for westernization is 0 to 10 where:
