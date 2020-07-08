@@ -36,6 +36,8 @@ class CultureMappingRule: commonItems::parser
 		 int eu4Province,
 		 const std::string& eu4ownerTag) const;
 
+	[[nodiscard]] const auto& getDestinationCulture() const { return destinationCulture; }
+
   private:
 	std::string destinationCulture;
 	std::set<std::string> cultures;

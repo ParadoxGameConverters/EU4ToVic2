@@ -27,7 +27,7 @@ western = {
 	# British
 	yankee dixie anglo_canadian australian texan falklander anglo_african english scottish anglo_saxon pictish british welsh irish
 	# Roman
-	foederatus afer australus brithenig gaul laessin wenedyk spanish romanian xliponian aromanian latin
+	foederatus afer australus brithenig gaul laessin wenedyk spanish xliponian latin
 	# Italian
 	italoamericano australiano africano lombard maltese north_italian south_italian all_italian
 	# Iberian 
@@ -40,6 +40,8 @@ western = {
 	novysvet jizni hnedy nowyswiat poludniowy czarny polish slovak czech
 	# Odd
 	ostrogothic
+	# Slave
+	afro_norse afro_american afro_caribbean afro_italian afro_caribeno afro_brazilian afro_antillean
 	# Animals
 	polar_bears horse cat dog_culture duck_culture dragon_culture elephant_culture hedgehog_culture
 	}
@@ -61,6 +63,8 @@ eastern = {
 	ujvilag delian fekete hungarian lumenoua sudic negru aromanian romanian
 	# Greek-ish
 	neokosmi notios mavro greek magnagreek georgian armenian yenidun guney esmer north_caucasian alan
+	# Slave
+	afro_slavic afro_carpathian afro_greek
 	}
 }
 
@@ -128,7 +132,7 @@ chinese = {
 	# Khmer
 	thegioimoi phianam dhen vietnamese khmer
 	# Malay
-	bornean malay filipino javan malagasy moluccan
+	bornean malay filipino javan moluccan
 	# Thai
 	thai lao shan
 	# Burman
@@ -147,7 +151,6 @@ nomad_group = {
 sub_saharan = {
 	westernization = 2
 	cultures = {
-	afro_american 
 	# Sahelian
 	wolof fulbe hausa kanuri maures tuareg baguirmi
 	# Malian
@@ -191,7 +194,7 @@ andean = {
 	# South american
 	chibchan maranon quechua aimara amazonian tupi je guarani patagonian araucanian chacoan 
 	# Uh 
-	noculture
+	noculture dummy
 	}
 }	
 

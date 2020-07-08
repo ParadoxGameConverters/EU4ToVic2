@@ -221,7 +221,7 @@ link = { vic2 = byelorussian eu4 = russian_culture region = smolensk_area }
 link = { vic2 = ukrainian eu4 = russian_culture region = ruthenia_region }
 link = { vic2 = ukrainian eu4 = ukrainian }
 link = { vic2 = western_slavic eu4 = kishinyov }
-link = { vic2 = russian eu4 = russian_culture eu4 = old_slavic eu4 = pomor eu4 = russian_colonial
+link = { vic2 = russian eu4 = russian_culture eu4 = old_slavic eu4 = pomor eu4 = russian_colonial }
 link = { vic2 = ugric eu4 = meshchera eu4 = ugrorussian }
 
 # Carpathian - hungarian, romanian, transylvanian
@@ -368,7 +368,6 @@ link = { vic2 = bornean eu4 = bornean }
 link = { vic2 = malay eu4 = malayan eu4 = sumatran eu4 = acehenese eu4 = banjar eu4 = batak eu4 = indonesian eu4 = malay_colonial eu4 = minang }
 link = { vic2 = filipino eu4 = filipino u4 = cebuano eu4 = fiilpino_colonial eu4 = filipino_colonial eu4 = maguindanao eu4 = philipino eu4 = tagalog eu4 = taiwanese eu4 = tausug }
 link = { vic2 = javan eu4 = javanese eu4 = balinese eu4 = sundanese eu4 = javan_colonial eu4 = javan }
-link = { vic2 = malagasy eu4 = madagascan eu4 = vazimba eu4 = vezu }
 link = { vic2 = moluccan eu4 = sulawesi eu4 = moluccan eu4 = bugis eu4 = bungku eu4 = chamorro eu4 = dayak eu4 = minahasa }
 
 # Thai - central_thai, lao, northern_thai, shan
@@ -499,7 +498,7 @@ link = { vic2 = unyamwezi eu4 = takama } # Tanzania
 link = { vic2 = rundi eu4 = rwandan provinceid = 4070 } # Burundi
 link = { vic2 = ruanda eu4 = rwandan } # Rwanda
 link = { vic2 = baganda eu4 = ganda } # Uganda
-link = { vic2 = malagasy eu4 = madagasque }
+link = { vic2 = malagasy eu4 = madagasque eu4 = madagascan eu4 = vazimba eu4 = vezu }
 
 # South Africa - khoisan, shona, sena, makua
 link = { vic2 = herero eu4 = khoisan provinceid = 1174 } # Namibia

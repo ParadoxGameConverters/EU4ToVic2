@@ -112,7 +112,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "64 %";
 
 	Log(LogLevel::Info) << "-> Dropping Poorly-Shaped States";
-	dropStates();
+	dropStates(techGroupsMapper);
 	Log(LogLevel::Progress) << "65 %";
 
 	LOG(LogLevel::Info) << "-> Merging Nations";
@@ -156,10 +156,9 @@ void V2::World::addReligionCulture()
 }
 
 
-void V2::World::dropStates()
+void V2::World::dropStates(const mappers::TechGroupsMapper& techGroupsMapper)
 {
-	// Due to countless revisions, states generally exist in undefined/untrusted state as unless they are colonies in progress,
-	// for which we're fairly certain they are level 1.
+	// States generally exist in undefined/untrusted (EU4) state unless they are colonies in progress, which are level 1.
 	//
 	// This function DROPS states to territory status if they do not contain civilized people.
 	// If the owner is uncivilized, it RISES any states to states and will fastforward any colonies in progress to full states too.
@@ -178,7 +177,7 @@ void V2::World::dropStates()
 			// We go state by state.
 			for (const auto& state: country.second->getStates())
 			{
-				// First we look for cores and state (ignore) all provinces containing our cores.
+				// First we look for cores and state the state if it contains containing our core(s).
 				auto hasCore = false;
 				for (const auto& province: state->getProvinces())
 				{
@@ -191,44 +190,14 @@ void V2::World::dropStates()
 					continue;
 				}
 
-				// Otherwise, we need to look at the population. Does the primary culture belong to a nation (primary or union) that (extant or extinct) is
-				// civilized?
+				// Otherwise, we need to look at the population. Do we have a westernization score for the dominant culture?
 				auto hasCivilizedPeople = false;
 				for (const auto& province: state->getProvinces())
 				{
 					const auto& majorityCulture = province->getDominantCulture();
-					const auto& belongsToNations = culturalNationalitiesMapper.getCoresForCulture(majorityCulture);
-					const auto& belongsToUnions = culturalUnionMapper.getCoresForCulture(majorityCulture);
-					if (!belongsToNations && !belongsToUnions)
-					{
-						// This culture has no known primary/union nation. Let's move to next province.
-						Log(LogLevel::Debug) << "culture: " << majorityCulture << " has no nations!";
-						continue;
-					}
-
-					std::vector<std::string> allCores;
-					if (belongsToNations)
-						allCores.insert(allCores.end(), belongsToNations->begin(), belongsToNations->end());
-					if (belongsToUnions)
-						allCores.insert(allCores.end(), belongsToUnions->begin(), belongsToUnions->end());
-
-					for (const auto& core: allCores)
-					{
-						// Which country is this?
-						const auto& countryItr = countries.find(core);
-						if (countryItr == countries.end())
-						{
-							// no dice, we don't have this nation on file, dead or alive.
-							Log(LogLevel::Debug) << "core: " << core << " has no country!";
-							continue;
-						}
-						if (countryItr->second->isCivilized())
-						{
-							// Ahah, finally, these people belong to a civilized nation.
-							hasCivilizedPeople = true;
-							break;
-						}
-					}
+					const auto score = techGroupsMapper.getWesternizationFromCulture(majorityCulture);
+					if (score == 10)
+						hasCivilizedPeople = true;
 				}
 				if (hasCivilizedPeople)
 				{
@@ -237,7 +206,7 @@ void V2::World::dropStates()
 				}
 				else
 				{
-					// We didn't find cores nor civilized people (or people belonging to a specific nation), so we're dropping state to territory.
+					// We didn't find cores nor civilized people (or lack westernization scores), so we're dropping state to territory.
 					state->setProvincesAsTerritories();
 				}
 			}
