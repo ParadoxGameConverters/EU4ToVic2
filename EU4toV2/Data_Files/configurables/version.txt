@@ -1,5 +1,5 @@
 # Version info
 
 version = "1.0O"
-name = "Oyo-prerelease"
+name = "Oyo"
 descriptionLine = "compatible with 1.30 and previous"
