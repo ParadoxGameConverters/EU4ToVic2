@@ -110,6 +110,7 @@ class Country
 
 	[[nodiscard]] std::string getColonialRegion() const;
 	[[nodiscard]] virtual std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }
+	[[nodiscard]] std::optional<Reforms> getReforms() const { return reforms; }
 	[[nodiscard]] std::optional<UncivReforms> getUncivReforms() const { return uncivReforms; }
 	[[nodiscard]] NationalValue getNationalValueScores() const;
 	[[nodiscard]] auto isNewCountry() const { return newCountry; }

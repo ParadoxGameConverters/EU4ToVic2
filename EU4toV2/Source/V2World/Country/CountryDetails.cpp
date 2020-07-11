@@ -58,8 +58,8 @@ void V2::CountryDetails::registerKeys()
 		government = governmentStr.getString();
 	});
 	registerKeyword("civilized", [this](const std::string& unused, std::istream& theStream) {
-		commonItems::ignoreItem(unused, theStream);
-		civilized = true;
+		const commonItems::singleString civilizedStr(theStream);
+		civilized = civilizedStr.getString() == "yes";
 	});
 	registerKeyword("consciousness", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleDouble conscDbl(theStream);

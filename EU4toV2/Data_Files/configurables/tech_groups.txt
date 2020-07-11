@@ -1,7 +1,10 @@
 # This file allows technology groups to affect westernization of the country,
 # should this option be enabled in the converter.
+#
+# This file also links _VIC2_ cultures to _EU4_ tech groups. This is important as it's the only way to sensibly
+# determine if a culture (not country!) is civilized. This is enabled always and a separate function from eurocentrism.
 # 
-# Scale is 0 to 10 where:
+# Scale for westernization is 0 to 10 where:
 # 0 - These are stone-age people
 # 5 - Uncililized but not primitive tribes of north africa
 # 10 - A modern tea-drinking Man-o-war sailing colonial empire
@@ -12,68 +15,194 @@
 # 5 - Standard levels of literacy for this group
 # 10 - Extraordinarily literate aliens from Atlantis
 
-# Do not change tags in here without changing every other reference to them.
-# If adding new technology, make sure they are uniquely named.
-
 western = {
 	westernization = 10
+	cultures = {
+	# Germanic
+	amerikaner sudreicher schwarzreicher north_german swiss south_german german
+	# Dutch
+	boer nieuwereld zuidelijk dutch flemish
+	# Scandinavian
+	vinlander sydlig svart icelandic danish norwegian swedish sami
+	# British
+	yankee dixie anglo_canadian australian texan falklander anglo_african english scottish anglo_saxon pictish british welsh irish
+	# Roman
+	foederatus afer australus brithenig gaul laessin wenedyk spanish xliponian latin
+	# Italian
+	italoamericano australiano africano lombard maltese north_italian south_italian all_italian
+	# Iberian 
+	mexican caribeno platinean north_andean south_andean brazilian central_american americano sureno morado spanish andalucian visigothic galician catalan portuguese basque suebi
+	# French
+	french_canadian nouvellien australienne africaine french breton occitan wallonian frankish outremer picard
+	# Finnish	
+	usmailmian lounast mustvalge finnish ugrian
+	# West Slavic
+	novysvet jizni hnedy nowyswiat poludniowy czarny polish slovak czech
+	# Odd
+	ostrogothic
+	# Slave
+	afro_norse afro_american afro_caribbean afro_italian afro_caribeno afro_brazilian afro_antillean
+	# Animals
+	polar_bears horse cat dog_culture duck_culture dragon_culture elephant_culture hedgehog_culture
+	}
 }
 
 eastern = {
 	westernization = 10
 	literacy = 4
+	cultures = {
+	# Jewish
+	hulwud camite ashkenazi knaanic magogic yevanic mizrahi israeli misrayim sephardic zarphatic laaz kaifeng
+	# Baltic
+	lithuanian latvian estonian
+	# South Slavic
+	slovene novisvet juzhno crni bosniak croat macedonian serb bulgarian albanian
+	# East Slavic
+	novvymir yuzhny smugly russian ukrainian byelorussian ukrainian western_slavic ugric
+	# Carpathian
+	ujvilag delian fekete hungarian lumenoua sudic negru aromanian romanian
+	# Greek-ish
+	neokosmi notios mavro greek magnagreek georgian armenian yenidun guney esmer north_caucasian alan
+	# Slave
+	afro_slavic afro_carpathian afro_greek
+	}
 }
 
 ottoman = {
 	westernization = 10
 	literacy = 3
+	cultures = {
+	turkish
+	}
 }
 
 muslim = {
 	westernization = 6
+	cultures = {
+	# Arabic
+	ealimi janubii ifriqi frencharab maghrebi misri mashriqi bedouin berber maghreb_arabic assyrian bazramani 
+	# Persian
+	dinajidad janub saahi tajik persian pashtun baluchi
+	# Odd
+	assyrian
+	}
 }
 
 indian = {
 	westernization = 5
+	cultures = {
+	# Indian
+	nayeduniya dakshin kaala
+	# Aryan
+	assamese bengali bihari manipuri nepali oriya sinhala gujarati marathi sindi rajput
+	# Hindustani
+	avadhi kanauji panjabi kashmiri
+	# Dravidian
+	kannada malayalam tamil telegu asian_minor
+	}
 }
 
 east_african = {
 	westernization = 4
+	cultures = {
+	# Horn
+	amhara coptic sidama tigray somali harari oromo afar
+	# East
+	swahili kikuyu maasai sukuma unyamwezi rundi ruanda baganda malagasy
+	# South
+	herero khoisan sotho xhosa zulu nguni shona tonga sena makua yao african_minor
+	}
 }
 
 central_african = {
 	westernization = 3
+	cultures = {
+	# North central
+	fang fur beja azande nuba nuer sudanese luo teda
+	# Congo
+	mongo bakongo luba lunda ovimbundu
+	}
 }
 
 chinese = {
 	westernization = 4
+	cultures = {
+	# East Asian
+	dongren nanren heiren japanese manchu beifaren nanfaren korean ainu hakka miao min zhuang yi yue
+	# Khmer
+	thegioimoi phianam dhen vietnamese khmer
+	# Malay
+	bornean malay filipino javan moluccan
+	# Thai
+	thai lao shan
+	# Burman
+	burmese tibetan bai kachin karen
+	}
 }
 
 nomad_group = {
 	westernization = 3
+	cultures = {
+	# Altaic
+	janalem ontustik qalindigi azerbaijani hazara turkmen mongol uzbek kazak kirgiz siberian yakut tatar kurdish uighur
+	}
 }
 
 sub_saharan = {
 	westernization = 2
+	cultures = {
+	# Sahelian
+	wolof fulbe hausa kanuri maures tuareg baguirmi
+	# Malian
+	songhai mande bambara dyula
+	# southwest coast
+	akan ewe fon edo yoruba ibo mossi tiv kru 
+	}
 }
 
 north_american = {
 	westernization = 3
+	cultures = {
+	# Metis
+	metis
+	# North american
+	siouan iroquoian cherokee sonoran eskaleut central_algonquian na_dene penutian plains_algonquian eastern_algonquian muskogean caddoan native_american_minor
+	}
 }
 
 mesoamerican = {
 	westernization = 1
+	cultures = {
+	# Central american
+	zapotec tarascan mayan nahua
+	}
 }
 
 south_american = {
 	westernization = 1
+	cultures = {
+	# Carribean
+	guajiro carribean
+	# Pacific
+	hawaiian maori aborigine melanesian micronesian polynesian
+	}
 }
 
 andean = {
 	westernization = 1
+	cultures = {
+	# South american
+	chibchan maranon quechua aimara amazonian tupi je guarani patagonian araucanian chacoan 
+	# Uh 
+	noculture dummy
+	}
 }	
 
 high_american = {
 	westernization = 10
 	literacy = 8
+	cultures = {
+	# Special
+	undead alien 
+	}
 }

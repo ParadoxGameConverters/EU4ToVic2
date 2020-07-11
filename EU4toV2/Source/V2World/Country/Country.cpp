@@ -674,9 +674,10 @@ void V2::Country::oldCivConversionMethod()
 
 // civilization level conversion method for games 1.19+
 void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper)
-{
+{	
 	if (!srcCountry)
 		return;
+
 	auto totalTechs = srcCountry->getMilTech() + srcCountry->getAdmTech() + srcCountry->getDipTech();
 
 	// set civilization cut off for 6 techs behind the the tech leader (30 years behind tech)
@@ -684,7 +685,7 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 	// at 31 techs behind completely uncivilized
 	// each institution behind is equivalent to 2 techs behind
 	
-	auto civLevel = (totalTechs + 31 - topTech) * 4;
+	auto civLevel = (totalTechs + 31.0 - topTech) * 4;
 	civLevel = civLevel + (static_cast<double>(srcCountry->numEmbracedInstitutions()) - topInstitutions) * 8;
 	if (civLevel > 100)
 		civLevel = 100;
@@ -752,9 +753,12 @@ void V2::Country::addRailroadtoCapitalState()
 
 void V2::Country::convertLandlessReforms(const Country& capitalOwner) // Use current capital owner to set up.
 {
+	// We can only copy reforms from the same civilized-level nation. This means India might be uncivilized, but inherit britain's civilized reforms,
+	// which come into play once it is released and westernizes.
+
 	if (capitalOwner.isCivilized())
 	{
-		details.civilized = true;
+		reforms = capitalOwner.getReforms();
 	}
 	else
 	{
