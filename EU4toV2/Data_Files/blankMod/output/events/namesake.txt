@@ -1,3 +1,9 @@
+#Let's say you're Venice
+#But you don't hold Venice-city
+#You'll get an event giving you the namefake flag
+#Now, let's say you hold Lucca-city then
+#You'll be given an event that makes you become Lucca
+
 country_event = {
 	id = 690000
 	title = "EVTNAMEFAKE"
