@@ -1,0 +1,1108 @@
+#Let's say you're Venice
+#But you don't hold Venice-city
+#You'll get an event giving you the namefake flag
+#Now, let's say you hold Lucca-city then
+#You'll be given an event that makes you become Lucca
+
+country_event = {
+	id = 690000
+	title = "EVTNAMEFAKE"
+	desc = "EVTDESCFAKE"
+	picture = "Unite"
+	
+	trigger = {
+		NOT = { has_country_flag = namefake }
+		OR = {
+			AND = { tag = BRA NOT = { owns = 536 } } #	Braunschweig
+			AND = { tag = BRE NOT = { owns = 539 } } #	Bremen
+			AND = { tag = DZG NOT = { owns = 690 } } #	Danzig
+			AND = { tag = FRM NOT = { owns = 564 } } #	Frankfurt
+			AND = { tag = HAM NOT = { owns = 528 } } #	Hamburg
+			AND = { tag = HAN NOT = { owns = 534 } } #	Hannover
+			AND = { tag = LIP NOT = { owns = 585 } } #	Lippe
+			AND = { tag = LUB NOT = { owns = 530 } } #	Lübeck
+			AND = { tag = LUX NOT = { owns = 397 } } #	Luxembourg
+			AND = { tag = OLD NOT = { owns = 540 } } #	Oldenburg
+			AND = { tag = NUM NOT = { owns = 595 } } #	Nuremberg
+			AND = { tag = LUC NOT = { owns = 746 } } #	Lucca
+			AND = { tag = MOD NOT = { owns = 739 } } #	Modena
+			AND = { tag = PAR NOT = { owns = 738 } } #	Parma
+			AND = { tag = TRE NOT = { owns = 736 } } #	Trieste
+			AND = { tag = VEN NOT = { owns = 729 } } #	Venice
+			AND = { tag = KRA NOT = { owns = 703 } } #	Krakow
+			AND = { tag = AAC NOT = { owns = 576 } } #	Aachen
+			AND = { tag = AUG NOT = { owns = 592 } } #	Augsburg
+			AND = { tag = KOL NOT = { owns = 575 } } #	Cologne
+			AND = { tag = LAU NOT = { owns = 529 } } #	Lauenburg
+			AND = { tag = MAI NOT = { owns = 570 } } #	Mainz
+			AND = { tag = MUN NOT = { owns = 581 } } #	Münster
+			AND = { tag = SLZ NOT = { owns = 613 } } #	Salzburg
+			AND = { tag = STY NOT = { owns = 616 } } #	Styria
+			AND = { tag = TIR NOT = { owns = 612 } } #	Tirol
+			AND = { tag = TER NOT = { owns = 572 } } #	Trier
+			AND = { tag = WBG NOT = { owns = 597 } } #	Würzburg
+			AND = { tag = FER NOT = { owns = 742 } } #	Ferrara
+			AND = { tag = GEN NOT = { owns = 724 } } #	Genoa
+			AND = { tag = NAP NOT = { owns = 754 } } #	Naples
+			AND = { tag = SNA NOT = { owns = 747 } } #	Siena
+			AND = { tag = RIG NOT = { owns = 354 } } #	Riga
+			AND = { tag = ALE NOT = { owns = 417 } } #	Alençon
+			AND = { tag = AVI NOT = { owns = 468 } } #	Avignon
+			AND = { tag = FOI NOT = { owns = 457 } } #	Foix
+			AND = { tag = ORL NOT = { owns = 438 } } #	Orléans
+			AND = { tag = TUL NOT = { owns = 455 } } #	Toulouse
+			AND = { tag = LIG NOT = { owns = 395 } } #	Liège
+			AND = { tag = UTR NOT = { owns = 377 } } #	Utrecht
+			AND = { tag = PZN NOT = { owns = 699 } } #	Poznań
+			AND = { tag = FIU NOT = { owns = 778 } } #	Fiume
+			AND = { tag = NCT NOT = { owns = 608 } } #	Neuchâtel
+			AND = { tag = SAA NOT = { owns = 573 } } #	Saar
+			AND = { tag = TST NOT = { owns = 735 } } #	South Tirol
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 0.2
+	}
+	
+	option = {
+		name = "Ok."
+		set_country_flag = namefake
+	}
+}
+
+country_event = {
+ id = 690001
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  BRA = { exists = no }
+  owns = 536
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = BRA
+  capital = 536
+ }
+}
+country_event = {
+ id = 690002
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  BRE = { exists = no }
+  owns = 539
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = BRE
+  capital = 539
+ }
+}
+country_event = {
+ id = 690003
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  DZG = { exists = no }
+  owns = 690
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = DZG
+  capital = 690
+ }
+}
+country_event = {
+ id = 690004
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  FRM = { exists = no }
+  owns = 564
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = FRM
+  capital = 564
+ }
+}
+country_event = {
+ id = 690005
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  HAM = { exists = no }
+  owns = 528
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = HAM
+  capital = 528
+ }
+}
+country_event = {
+ id = 690006
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  HAN = { exists = no }
+  owns = 534
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = HAN
+  capital = 534
+ }
+}
+country_event = {
+ id = 690007
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  LIP = { exists = no }
+  owns = 585
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = LIP
+  capital = 585
+ }
+}
+country_event = {
+ id = 690008
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  LUB = { exists = no }
+  owns = 530
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = LUB
+  capital = 530
+ }
+}
+country_event = {
+ id = 690009
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  LUX = { exists = no }
+  owns = 397
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = LUX
+  capital = 397
+ }
+}
+country_event = {
+ id = 690010
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  OLD = { exists = no }
+  owns = 540
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = OLD
+  capital = 540
+ }
+}
+country_event = {
+ id = 690011
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  NUM = { exists = no }
+  owns = 595
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = NUM
+  capital = 595
+ }
+}
+country_event = {
+ id = 690012
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  LUC = { exists = no }
+  owns = 746
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = LUC
+  capital = 746
+ }
+}
+country_event = {
+ id = 690013
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  MOD = { exists = no }
+  owns = 739
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = MOD
+  capital = 739
+ }
+}
+country_event = {
+ id = 690014
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  PAR = { exists = no }
+  owns = 738
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = PAR
+  capital = 738
+ }
+}
+country_event = {
+ id = 690015
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  TRE = { exists = no }
+  owns = 736
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = TRE
+  capital = 736
+ }
+}
+country_event = {
+ id = 690016
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  VEN = { exists = no }
+  owns = 729
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = VEN
+  capital = 729
+ }
+}
+country_event = {
+ id = 690017
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  KRA = { exists = no }
+  owns = 703
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = KRA
+  capital = 703
+ }
+}
+country_event = {
+ id = 690018
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  AAC = { exists = no }
+  owns = 576
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = AAC
+  capital = 576
+ }
+}
+country_event = {
+ id = 690019
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  AUG = { exists = no }
+  owns = 592
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = AUG
+  capital = 592
+ }
+}
+country_event = {
+ id = 690020
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  KOL = { exists = no }
+  owns = 575
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = KOL
+  capital = 575
+ }
+}
+country_event = {
+ id = 690021
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  LAU = { exists = no }
+  owns = 529
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = LAU
+  capital = 529
+ }
+}
+country_event = {
+ id = 690022
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  MAI = { exists = no }
+  owns = 570
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = MAI
+  capital = 570
+ }
+}
+country_event = {
+ id = 690023
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  MUN = { exists = no }
+  owns = 581
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = MUN
+  capital = 581
+ }
+}
+country_event = {
+ id = 690024
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  SLZ = { exists = no }
+  owns = 613
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = SLZ
+  capital = 613
+ }
+}
+country_event = {
+ id = 690025
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  STY = { exists = no }
+  owns = 616
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = STY
+  capital = 616
+ }
+}
+country_event = {
+ id = 690026
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  TIR = { exists = no }
+  owns = 612
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = TIR
+  capital = 612
+ }
+}
+country_event = {
+ id = 690027
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  TER = { exists = no }
+  owns = 572
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = TER
+  capital = 572
+ }
+}
+country_event = {
+ id = 690028
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  WBG = { exists = no }
+  owns = 597
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = WBG
+  capital = 597
+ }
+}
+country_event = {
+ id = 690029
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  FER = { exists = no }
+  owns = 742
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = FER
+  capital = 742
+ }
+}
+country_event = {
+ id = 690030
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  GEN = { exists = no }
+  owns = 724
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = GEN
+  capital = 724
+ }
+}
+country_event = {
+ id = 690031
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  NAP = { exists = no }
+  owns = 754
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = NAP
+  capital = 754
+ }
+}
+country_event = {
+ id = 690032
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  SNA = { exists = no }
+  owns = 747
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = SNA
+  capital = 747
+ }
+}
+country_event = {
+ id = 690033
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  RIG = { exists = no }
+  owns = 354
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = RIG
+  capital = 354
+ }
+}
+country_event = {
+ id = 690034
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  ALE = { exists = no }
+  owns = 417
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = ALE
+  capital = 417
+ }
+}
+country_event = {
+ id = 690035
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  AVI = { exists = no }
+  owns = 468
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = AVI
+  capital = 468
+ }
+}
+country_event = {
+ id = 690036
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  FOI = { exists = no }
+  owns = 457
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = FOI
+  capital = 457
+ }
+}
+country_event = {
+ id = 690037
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  ORL = { exists = no }
+  owns = 438
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = ORL
+  capital = 438
+ }
+}
+country_event = {
+ id = 690038
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  TUL = { exists = no }
+  owns = 455
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = TUL
+  capital = 455
+ }
+}
+country_event = {
+ id = 690039
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  LIG = { exists = no }
+  owns = 395
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = LIG
+  capital = 395
+ }
+}
+country_event = {
+ id = 690040
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  UTR = { exists = no }
+  owns = 377
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = UTR
+  capital = 377
+ }
+}
+country_event = {
+ id = 690041
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  PZN = { exists = no }
+  owns = 699
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = PZN
+  capital = 699
+ }
+}
+country_event = {
+ id = 690042
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  FIU = { exists = no }
+  owns = 778
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = FIU
+  capital = 778
+ }
+}
+country_event = {
+ id = 690043
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  NCT = { exists = no }
+  owns = 608
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = NCT
+  capital = 608
+ }
+}
+country_event = {
+ id = 690044
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  SAA = { exists = no }
+  owns = 573
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = SAA
+  capital = 573
+ }
+}
+country_event = {
+ id = 690045
+ title = EVTNAMENAMEFAKE
+ desc = EVTDESCNAMEFAKE
+ picture = "Unite"
+ 
+ trigger = {
+  has_country_flag = namefake
+  TST = { exists = no }
+  owns = 735
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.2
+ }
+ 
+ option = {
+  name = EVTOPTANAMEFAKE
+  clr_country_flag = namefake
+  change_tag = TST
+  capital = 735
+ }
+}
