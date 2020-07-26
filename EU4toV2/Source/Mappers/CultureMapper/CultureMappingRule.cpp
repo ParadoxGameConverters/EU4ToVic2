@@ -83,9 +83,7 @@ std::optional<std::string> mappers::CultureMappingRule::cultureMatch(const EU4::
 		{
 			if (!eu4Regions.regionIsValid(region))
 			{
-				Log(LogLevel::Warning) << "Checking for culture " << eu4culture << " inside invalid region: " << region << "! Fix the mapping rules!";
-				// We could say this was a match, and thus pretend this region entry doesn't exist, but it's better
-				// for the converter to explode across the logs and scream all invalid names. So, continue.
+				// Regions change between versions so don't react to invalid region name.
 				continue;
 			}
 			if (eu4Regions.provinceInRegion(eu4Province, region))
