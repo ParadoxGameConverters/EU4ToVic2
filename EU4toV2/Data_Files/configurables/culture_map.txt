@@ -88,9 +88,9 @@ link = { vic2 = irish eu4 = irish eu4 = gallawa eu4 = hiberno_norman }
 
 # Latin - maltese, lombard, umbrian, sicilian, ligurian, piedmontese, romagnan, sardinian, tuscan, venetian
 #Split of the Roman Empire
-link = { vic2 = foederatus eu4 = roman eu4 = latin eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
-link = { vic2 = afer eu4 = roman eu4 = latin eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = oceania_superregion }
-link = { vic2 = australus eu4 = roman eu4 = latin eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+link = { vic2 = foederatus eu4 = roman eu4 = britannian eu4 = celtiberian eu4 = pannonian eu4 = graecus eu4 = latin eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
+link = { vic2 = afer eu4 = roman eu4 = britannian eu4 = latin eu4 = celtiberian eu4 = pannonian eu4 = graecus eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = oceania_superregion }
+link = { vic2 = australus eu4 = roman eu4 = britannian eu4 = celtiberian eu4 = pannonian eu4 = graecus eu4 = latin eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = brithenig eu4 = roman region = british_isles_region }
 link = { vic2 = brithenig eu4 = romano_british eu4 = britannian }
 link = { vic2 = gaul eu4 = roman region = france_region region = low_countries_region }
@@ -100,8 +100,11 @@ link = { vic2 = laessin eu4 = helvetian eu4 = noric eu4 = theodisc eu4 = hyperbo
 link = { vic2 = wenedyk eu4 = roman region = poland_region region = ruthenia_region region = crimea_region }
 link = { vic2 = wenedyk eu4 = tracki eu4 = alzzecio eu4 = wenedyk } #Slavo-Roman
 link = { vic2 = spanish eu4 = roman region = iberia_region }
+link = { vic2 = spanish eu4 = celtiberian }
 link = { vic2 = romanian eu4 = roman region = carpathia_region }
+link = { vic2 = hungarian eu4 = pannonian }
 link = { vic2 = xliponian eu4 = roman region = northern_greece_area region = morea_area region = thrace_area }
+link = { vic2 = greek eu4 = graecus }
 link = { vic2 = aromanian eu4 = roman region = balkan_region }
 link = { vic2 = maghreb_arabic eu4 = roman region = egypt_region region = maghreb_region }
 link = { vic2 = maghreb_arabic eu4 = phoenician eu4 = aegyptian eu4 = carthaginian eu4 = punic eu4 = african_romance }
