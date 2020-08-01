@@ -2,7 +2,7 @@ color = { 255 204 2 }
 graphical_culture = RussianGC
 party = {
 	name = "ARM_conservative"
-	start_date = 1826.1.1
+	start_date = 1000.1.1
 	end_date = 1935.1.1
 
 	ideology = conservative
@@ -30,7 +30,7 @@ party = {
 
 party = {
 	name = "ARM_liberal"
-	start_date = 1863.1.1
+	start_date = 1680.1.1
 	end_date = 1895.1.1
 
 	ideology = liberal
@@ -44,7 +44,7 @@ party = {
 
 party = {
 	name = "ARM_socialist"
-	start_date = 1848.1.1
+	start_date = 1790.1.1
 	end_date = 1900.1.1
 
 	ideology = socialist
@@ -100,7 +100,7 @@ party = {
 
 party = {
 	name = "ARM_reactionary"
-	start_date = 1820.1.1
+	start_date = 1680.1.1
 	end_date = 2000.1.1
 
 	ideology = reactionary
@@ -114,7 +114,7 @@ party = {
 
 party = {
 	name = "ARM_anarcho_liberal"
-	start_date = 1830.1.1
+	start_date = 1710.1.1
 	end_date = 2000.1.1
 
 	ideology = anarcho_liberal

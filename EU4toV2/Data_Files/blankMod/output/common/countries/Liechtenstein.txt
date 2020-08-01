@@ -3,7 +3,7 @@ graphical_culture = AustriaHungaryGC
 
 party = {
 	name = "SWI_liberal"
-	start_date = 1820.1.1
+	start_date = 1680.1.1
 	end_date = 2000.1.1
 
 	ideology = liberal
@@ -17,7 +17,7 @@ party = {
 
 party = {
 	name = "SWI_reactionary"
-	start_date = 1820.1.1
+	start_date = 1680.1.1
 	end_date = 2000.1.1
 
 	ideology = reactionary
@@ -31,7 +31,7 @@ party = {
 
 party = {
 	name = "SWI_conservative"
-	start_date = 1820.1.1
+	start_date = 1000.1.1
 	end_date = 2000.1.1
 
 	ideology = conservative
@@ -45,7 +45,7 @@ party = {
 
 party = {
 	name = "SWI_socialist"
-	start_date = 1848.1.1
+	start_date = 1790.1.1
 	end_date = 2000.1.1
 
 	ideology = socialist
@@ -101,7 +101,7 @@ party = {
 
 party = {
 	name = "SWI_anarcho_liberal"
-	start_date = 1820.1.1
+	start_date = 1710.1.1
 	end_date = 2000.1.1
 
 	ideology = anarcho_liberal

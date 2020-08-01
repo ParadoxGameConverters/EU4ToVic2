@@ -3,7 +3,7 @@ color = { 149 96 149 }
 
 party = {
     name = "RME_Kyriarchia"
-    start_date = 1820.1.1
+    start_date = 1000.1.1
     end_date = 2000.1.1
 
     ideology = conservative
@@ -17,7 +17,7 @@ party = {
 
 party = {
     name = "RME_foederati"
-    start_date = 1820.1.1
+    start_date = 1680.1.1
     end_date = 2000.1.1
 
     ideology = liberal
@@ -45,7 +45,7 @@ party = {
 
 party = {
     name = "RME_reactionary"
-    start_date = 1820.1.1
+    start_date = 1680.1.1
     end_date = 2000.1.1
 
     ideology = reactionary
@@ -59,7 +59,7 @@ party = {
 
 party = {
     name = "RME_socialist"
-    start_date = 1849.1.1
+    start_date = 1790.1.1
     end_date = 2000.1.1
 
     ideology = socialist
@@ -87,7 +87,7 @@ party = {
 
 party = {
     name = "RME_radical_party"
-    start_date = 1830.1.1
+    start_date = 1710.1.1
     end_date = 2000.1.1
 
     ideology = anarcho_liberal

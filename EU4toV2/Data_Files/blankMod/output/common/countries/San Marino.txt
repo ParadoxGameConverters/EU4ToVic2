@@ -3,7 +3,7 @@ graphical_culture = ItalianGC
 
 party = {
 	name = "TUS_reactionary"
-	start_date = 1820.1.1
+	start_date = 1680.1.1
 	end_date = 2000.1.1
 
 	ideology = reactionary
@@ -17,7 +17,7 @@ party = {
 
 party = {
 	name = "TUS_conservative"
-	start_date = 1820.1.1
+	start_date = 1000.1.1
 	end_date = 2000.1.1
 
 	ideology = conservative
@@ -31,7 +31,7 @@ party = {
 
 party = {
 	name = "TUS_liberal"
-	start_date = 1820.1.1
+	start_date = 1680.1.1
 	end_date = 1890.1.1
 
 	ideology = liberal
@@ -59,7 +59,7 @@ party = {
 
 party = {
 	name = "TUS_socialist"
-	start_date = 1848.1.1
+	start_date = 1790.1.1
 	end_date = 2000.1.1
 
 	ideology = socialist
@@ -87,7 +87,7 @@ party = {
 
 party = {
 	name = "TUS_anarcho_liberal"
-	start_date = 1820.1.1
+	start_date = 1710.1.1
 	end_date = 2000.1.1
 
 	ideology = anarcho_liberal

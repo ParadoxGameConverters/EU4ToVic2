@@ -1,0 +1,152 @@
+#####################
+# Enable Socialists
+#####################
+country_event = {
+	id = 100000024
+	title = "EVTNAME100000024"
+	desc = "EVTDESC100000024"
+	# news = yes
+	# news_desc_long = "EVTDESC1000_NEWS_LONG"
+	# news_desc_medium = "EVTDESC1000_NEWS_MEDIUM"
+	# news_desc_short = "EVTDESC1000_NEWS_SHORT"
+	picture = "Socialism"
+	
+	trigger = {
+		NOT = {
+			is_ideology_enabled = socialist 
+		}
+		government = proletarian_dictatorship
+	}
+	# fire_only_once = yes
+	major = yes
+
+	mean_time_to_happen = {
+		months = 0
+		
+	}
+
+	option = {
+		name = "EVTOPTA100000024"
+		enable_ideology = socialist
+		
+		# any_country = {
+			# limit = {
+				# government = proletarian_dictatorship
+			# }
+		set_country_flag = peasant_republic_flag
+		# }
+	}
+}
+country_event = {
+	id = 100000025
+	title = "EVTNAME100000025"
+	desc = "EVTDESC100000025"
+	# news = yes
+	# news_desc_long = "EVTDESC1000_NEWS_LONG"
+	# news_desc_medium = "EVTDESC1000_NEWS_MEDIUM"
+	# news_desc_short = "EVTDESC1000_NEWS_SHORT"
+	picture = "Socialism"
+	
+	trigger = {
+		has_country_flag = peasant_republic_flag
+		# government = proletarian_dictatorship
+		# NOT = { ruling_party_ideology = socialist }
+		# NOT = { ruling_party_ideology = communist }
+		is_ideology_enabled = socialist 
+		# NOT = { year = 1840 }
+	}
+
+	mean_time_to_happen = {
+		months = 0
+		
+	}
+
+	option = {
+		name = "EVTOPTA100000025"
+		
+		ruling_party_ideology = socialist
+		government = proletarian_dictatorship
+		
+		political_reform = underground_parties
+		
+		upper_house = {
+			ideology = socialist
+			value = 0.5
+		}
+		poor_strata = {
+			ideology = {
+				factor = 0.6
+				value = socialist
+			}
+		}
+		middle_strata = {
+			ideology = {
+				factor = 0.3
+				value = socialist
+			}
+		}
+		
+		clr_country_flag = peasant_republic_flag
+	}
+}
+
+##########################
+# Enable Liberal
+##########################
+
+country_event = {
+	id = 100200024
+	title = "EVTNAME100200024"
+	desc = "EVTDESC100200024"
+	# news = yes
+	# news_desc_long = "EVTDESC1002_NEWS_LONG"
+	# news_desc_medium = "EVTDESC1002_NEWS_MEDIUM"
+	# news_desc_short = "EVTDESC1002_NEWS_SHORT"
+	picture = "AnarchoLiberals"
+	
+	trigger = {
+		government = bourgeois_dictatorship
+		NOT = { ruling_party_ideology = anarcho_liberal }
+		NOT = { ruling_party_ideology = liberal }
+		# NOT = { year = 1840 }
+	}
+	
+	# major = yes
+	# fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 0
+	}
+
+	option = {
+		name = "EVTOPTA100200024"
+		ruling_party_ideology = liberal
+		
+		# political_reform = party_appointed
+		political_reform = underground_parties
+		#political_reform = none_voting
+		
+		upper_house = {
+			ideology = liberal
+			value = 0.3
+		}
+		poor_strata = {
+			ideology = {
+				factor = 0.3
+				value = liberal
+			}
+		}
+		middle_strata = {
+			ideology = {
+				factor = 0.5
+				value = liberal
+			}
+		}
+		rich_strata = {
+			ideology = {
+				factor = 0.1
+				value = liberal
+			}
+		}
+	}
+}
