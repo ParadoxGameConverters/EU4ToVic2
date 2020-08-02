@@ -27,7 +27,7 @@ country_event = {
 		enable_ideology = socialist
 		country_event = {
 			id = 100000025
-			days = 7
+			days = 30
 		}
 	}
 }
