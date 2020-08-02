@@ -25,7 +25,22 @@ country_event = {
 	option = {
 		name = "EVTOPTA100000024"
 		enable_ideology = socialist
-		
+		country_event = {
+			id = 100000025
+			days = 30
+		}
+	}
+}
+country_event = { # -- Part two: [ insert Soviet anthem ]
+	id = 100000025
+	title = "EVTNAME100000024"
+	desc = "EVTDESC100000024"
+	picture = "Socialism"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA100000024"
 		ruling_party_ideology = socialist
 		political_reform = underground_parties
 		upper_house = {
@@ -48,9 +63,9 @@ country_event = {
 }
 
 country_event = {
-	id = 100200024
-	title = "EVTNAME100200024"
-	desc = "EVTDESC100200024"
+	id = 100200026
+	title = "EVTNAME100200026"
+	desc = "EVTDESC100200026"
 	# news = yes
 	# news_desc_long = "EVTDESC1002_NEWS_LONG"
 	# news_desc_medium = "EVTDESC1002_NEWS_MEDIUM"
@@ -71,7 +86,7 @@ country_event = {
 	}
 
 	option = {
-		name = "EVTOPTA100200024"
+		name = "EVTOPTA100200026"
 		ruling_party_ideology = liberal
 		political_reform = underground_parties
 		
