@@ -98,7 +98,9 @@ country_event = {
 		HDU = { annex_to = THIS }
 		change_tag = HND
 		release_vassal = HDU
-		all_core = { add_core = HND }
+		all_core = { add_core = HND remove_core = RJX }
+		# Partition of India-Pakistan
+		HDU = { all_core = { add_core = HDU remove_core = RJX remove_core = HND } }
 	}
 }
 
@@ -112,6 +114,14 @@ country_event = {
 	allow_multiple_instances = no
 	
 	trigger = {
+		NOT = { is_culture_group = south_asian }
+		NOT = {
+			tag = HND # India
+			tag = HDU # Pakistan
+			tag = NEP
+			tag = BHU
+			tag = RJX
+		}
 		is_greater_power = yes
 		any_owned_province = { is_core = RJX }
 		NOT = { exists = RJX }
