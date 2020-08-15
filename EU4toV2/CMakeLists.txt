@@ -113,6 +113,7 @@ set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/Parser.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/ParserHelpers.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/StringUtils.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/OSCommonLayer.cpp")
+set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/targa.cpp")
 
 add_executable(EU4ToVic2 
 	${MAIN_SOURCES}

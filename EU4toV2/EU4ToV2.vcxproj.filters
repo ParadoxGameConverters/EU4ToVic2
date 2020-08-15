@@ -436,9 +436,6 @@
     <ClCompile Include="Source\V2World\Flags\FlagUtils.cpp">
       <Filter>Vic2World\Flags</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Helpers\targa.cpp">
-      <Filter>Helpers</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Country\Country.cpp">
       <Filter>Vic2World\Country</Filter>
     </ClCompile>
@@ -563,6 +560,9 @@
       <Filter>CommonItems</Filter>
     </ClCompile>
     <ClCompile Include="..\commonItems\GameVersion.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\targa.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
   </ItemGroup>
@@ -974,9 +974,6 @@
     <ClInclude Include="Source\V2World\Flags\FlagUtils.h">
       <Filter>Vic2World\Flags</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Helpers\targa.h">
-      <Filter>Helpers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Country\Country.h">
       <Filter>Vic2World\Country</Filter>
     </ClInclude>
@@ -1086,6 +1083,9 @@
       <Filter>CommonItems</Filter>
     </ClInclude>
     <ClInclude Include="..\commonItems\GameVersion.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\targa.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
     <ClInclude Include="Source\Helpers\rakaly.h">

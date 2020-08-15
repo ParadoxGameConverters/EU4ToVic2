@@ -1,5 +1,5 @@
 #include "FlagUtils.h"
-#include "../../Helpers/targa.h"
+#include "targa.h"
 #include "Log.h"
 
 bool V2::createColonialFlag(
