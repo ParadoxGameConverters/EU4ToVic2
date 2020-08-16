@@ -1,5 +1,5 @@
 #include "FlagUtils.h"
-#include "../../Helpers/targa.h"
+#include "targa.h"
 #include "Log.h"
 
 bool V2::createColonialFlag(
@@ -14,6 +14,7 @@ bool V2::createColonialFlag(
 	if (0 != res)
 	{
 		LOG(LogLevel::Error) << "Failed to create colonial flag: could not open " << colonialBasePath;
+		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
@@ -21,6 +22,7 @@ bool V2::createColonialFlag(
 	if (0 != res)
 	{
 		LOG(LogLevel::Error) << "Failed to create colonial flag: could not open " << colonialOverlordPath;
+		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
@@ -45,6 +47,7 @@ bool V2::createColonialFlag(
 				if (res)
 				{
 					LOG(LogLevel::Error) << "Failed to create colonial flag: could not read pixel data";
+					LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 					return false;
 				}
 				tb += b / 4; tg += g / 4; tr += r / 4;
@@ -54,6 +57,7 @@ bool V2::createColonialFlag(
 			if (res)
 			{
 				LOG(LogLevel::Error) << "Failed to create colonial flag: could not write pixel data";
+				LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 				return false;
 			}
 		}
@@ -62,6 +66,7 @@ bool V2::createColonialFlag(
 	if (0 != res)
 	{
 		LOG(LogLevel::Error) << "Failed to create colonial flag: could not write to " << targetPath;
+		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
@@ -83,6 +88,7 @@ bool V2::createCustomFlag(
 	if (res)
 	{
 		LOG(LogLevel::Error) << "Failed to create custom flag: could not open " << basePath;
+		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
@@ -90,6 +96,7 @@ bool V2::createCustomFlag(
 	if (res)
 	{
 		LOG(LogLevel::Error) << "Failed to create custom flag: could not open " << emblemPath;
+		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
@@ -105,6 +112,7 @@ bool V2::createCustomFlag(
 			if (res)
 			{
 				LOG(LogLevel::Error) << "Failed to create custom flag: could not read pixel data";
+				LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 				return false;
 			}
 
@@ -129,6 +137,7 @@ bool V2::createCustomFlag(
 				if (res)
 				{
 					LOG(LogLevel::Error) << "Failed to create custom flag: could not read pixel data";
+					LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 					return false;
 				}
 				
@@ -145,6 +154,7 @@ bool V2::createCustomFlag(
 			if (res)
 			{
 				LOG(LogLevel::Error) << "Failed to create custom flag: could not write pixel data";
+				LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 				return false;
 			}
 
@@ -155,6 +165,7 @@ bool V2::createCustomFlag(
 	if (res)
 	{
 		LOG(LogLevel::Error) << "Failed to create custom flag: could not write to " << targetPath;
+		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
