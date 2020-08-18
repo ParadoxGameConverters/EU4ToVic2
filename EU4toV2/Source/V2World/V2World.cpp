@@ -216,6 +216,9 @@ void V2::World::dropStates(const mappers::TechGroupsMapper& techGroupsMapper)
 
 void V2::World::dropCores()
 {
+	// This function is used to drop EXTANT country cores over provinces where they do not have primary/accepted culture dominance.
+	// Dead country cores will remain so something can be released.
+	
 	// This is quicker if we first build a country/culture cache and then check against it then iterate through
 	// every province and do multiple unneeded checks.
 
@@ -225,17 +228,18 @@ void V2::World::dropCores()
 	for (const auto& country: countries)
 	{
 		theCache[country.first] = country.second->getAcceptedCultures();
-		theCache[country.first].insert(country.second->getPrimaryCulture());
+		if (!country.second->getPrimaryCulture().empty())
+			theCache[country.first].insert(country.second->getPrimaryCulture());
 		if (country.second->getProvinces().empty())
 			deadCache.insert(country.first);
 	}
 
 	for (auto& province: provinces)
 	{
-		if (province.second->getCores().empty())
+		if (province.second->getCores().empty()) // Don't waste time 
 			continue;
 		const auto dominantCulture = province.second->getDominantCulture();
-		if (dominantCulture.empty())
+		if (dominantCulture.empty()) // Let's not drop anything if we don't know what should remain.
 			continue;
 		std::set<std::string> survivingCores;
 
@@ -251,7 +255,7 @@ void V2::World::dropCores()
 			const auto& cacheItr = theCache.find(core);
 			if (cacheItr == theCache.end())
 				continue; // Dropping unrecognized core;
-			if (cacheItr->second.count(dominantCulture))
+			if (cacheItr->second.count(dominantCulture)) // This province has core's (tag's) accepted culture, we can retain this core.
 				survivingCores.insert(cacheItr->first);
 		}
 		province.second->replaceCores(survivingCores);
