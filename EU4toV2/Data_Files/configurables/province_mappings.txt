@@ -2551,7 +2551,6 @@
 	# Taiwan resettable region taiwan
 	link = { eu4 = 2155 eu4 = 2154 eu4 = 738 v2 = 1485 v2 = 2562 resettable = taiwan }	# MANY-TO-MANY: Middag, Kelang, Sakam -> Taibei, Tainan
 	# Asian Wasteland
-	link = { v2 = 2525 }	# NOTHING -> Marcus
 	link = { eu4 = 1784 eu4 = 1786 eu4 = 2194 eu4 = 1785 eu4 = 2200 }	# Tian Shan, Takla Makan, Qilian, Pamir, Suleiman Range -> DROPPED
 	# # Oceania
 	# Australia & New Zealand resettable region australia_zealand
@@ -2602,7 +2601,7 @@
 	link = { eu4 = 1992 v2 = 2523 resettable = pacific }	# Nauru -> Nauru
 	link = { eu4 = 1991 v2 = 2527 resettable = pacific }	# Gilbert Islands -> Gilbert Islands
 	link = { eu4 = 1993 v2 = 2522 resettable = pacific }	# Marshall Islands -> Marshall Islands
-	link = { eu4 = 1994 v2 = 2524 resettable = pacific }	# Wake -> Wake
+	link = { eu4 = 1994 v2 = 2524 v2 = 2525 resettable = pacific }	# Wake -> Wake, Marcus
 	link = { eu4 = 1235 v2 = 1654 v2 = 2521 v2 = 2517 resettable = pacific }	# Guam -> Bonin, Saipan, Guam
 	link = { eu4 = 1995 v2 = 610 v2 = 2579 resettable = pacific }	# Micronesia -> Ponape, Truk
 	link = { eu4 = 1996 v2 = 2519 v2 = 2518 resettable = pacific }	# Palau -> Yap, Palau

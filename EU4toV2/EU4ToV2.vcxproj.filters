@@ -1091,7 +1091,6 @@
     <ClInclude Include="Source\Helpers\rakaly.h">
       <Filter>Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
