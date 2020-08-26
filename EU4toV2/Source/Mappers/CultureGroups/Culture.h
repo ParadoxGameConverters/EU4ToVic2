@@ -40,7 +40,7 @@ namespace mappers
 		std::vector<std::string> firstNames;
 		std::vector<std::string> lastNames;
 		std::vector<std::string> dynastyNames;
-		commonItems::newColor color;
+		std::optional<commonItems::newColor> color;
 		int radicalism = 0;
 		bool neoCulture = false; // culture generated on-the-fly by the converter
 		std::string originalCulture; // relevant only for neocultures so we know where they originated from.

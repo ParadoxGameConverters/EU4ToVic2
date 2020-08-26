@@ -10,7 +10,7 @@ struct CustomColorsBlock
 	int flag = 0;
 	int color = 0;
 	int symbolIndex = 0;
-	commonItems::newColor flagColors;
+	std::optional<commonItems::newColor> flagColors;
 };
 
 class CustomColors: public commonItems::parser

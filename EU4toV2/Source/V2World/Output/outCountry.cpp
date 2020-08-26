@@ -118,7 +118,8 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 void V2::Country::outputCommons(std::ostream& output)
 {
 	output << "graphical_culture = UsGC\n";	// default to US graphics
-	output << "color = { " << nationalColors.getMapColor() << " }\n";
+	if (nationalColors.getMapColor())
+		output << "color = " << *nationalColors.getMapColor() << "\n";
 	for (const auto& party : details.parties) output << party;
 }
 

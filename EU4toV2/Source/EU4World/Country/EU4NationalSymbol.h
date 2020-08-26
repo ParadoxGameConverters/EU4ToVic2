@@ -24,9 +24,9 @@ class NationalSymbol: public commonItems::parser
 
   private:
 	CustomColors customColors;
-	commonItems::newColor mapColor;
-	commonItems::newColor countryColor;
-	commonItems::newColor revolutionaryColor;
+	std::optional<commonItems::newColor> mapColor;
+	std::optional<commonItems::newColor> countryColor;
+	std::optional<commonItems::newColor> revolutionaryColor;
 	bool customColorsInitialized = false;
 };
 } // namespace EU4
