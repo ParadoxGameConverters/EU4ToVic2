@@ -529,9 +529,6 @@
     <ClCompile Include="Source\Mappers\AfricaReset\AfricaResetMapper.cpp">
       <Filter>Mappers\AfricaReset</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\Color.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
     <ClCompile Include="..\commonItems\Date.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
@@ -563,6 +560,9 @@
       <Filter>CommonItems</Filter>
     </ClCompile>
     <ClCompile Include="..\commonItems\targa.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\newColor.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1055,9 +1055,6 @@
     <ClInclude Include="Source\Mappers\AfricaReset\AfricaResetMapper.h">
       <Filter>Mappers\AfricaReset</Filter>
     </ClInclude>
-    <ClInclude Include="..\commonItems\Color.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
     <ClInclude Include="..\commonItems\Date.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
@@ -1090,6 +1087,9 @@
     </ClInclude>
     <ClInclude Include="Source\Helpers\rakaly.h">
       <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\newColor.h">
+      <Filter>CommonItems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

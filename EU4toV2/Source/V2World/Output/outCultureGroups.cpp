@@ -37,7 +37,7 @@ std::ostream& mappers::operator<<(std::ostream& output, const CultureGroup& cult
 
 std::ostream& mappers::operator<<(std::ostream& output, const Culture& culture)
 {
-	output << "\t\tcolor = { " << culture.color << " }\n";
+	output << "\t\tcolor = " << culture.color << "\n";
 	if (culture.radicalism)
 	{
 		output << "\t\tradicalism = " << culture.radicalism << "\n";
