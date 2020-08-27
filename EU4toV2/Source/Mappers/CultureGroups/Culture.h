@@ -2,7 +2,7 @@
 #define CULTURE_H
 
 #include "Parser.h"
-#include "Color.h"
+#include "newColor.h"
 
 namespace mappers
 {
@@ -20,7 +20,7 @@ namespace mappers
 
 		void setFirstNames(const std::vector<std::string>& fnames) { firstNames = fnames; }
 		void setLastNames(const std::vector<std::string>& lnames) { lastNames = lnames; }
-		void setColor(const commonItems::Color& theColor) { color = theColor; }
+		void setColor(const commonItems::newColor& theColor) { color = theColor; }
 		
 		void addNameNames(const std::vector<std::string>& names) { maleNames.insert(maleNames.end(), names.begin(), names.end()); }
 		void addFemaleNames(const std::vector<std::string>& names) { femaleNames.insert(femaleNames.end(), names.begin(), names.end()); }
@@ -40,7 +40,7 @@ namespace mappers
 		std::vector<std::string> firstNames;
 		std::vector<std::string> lastNames;
 		std::vector<std::string> dynastyNames;
-		commonItems::Color color;
+		std::optional<commonItems::newColor> color;
 		int radicalism = 0;
 		bool neoCulture = false; // culture generated on-the-fly by the converter
 		std::string originalCulture; // relevant only for neocultures so we know where they originated from.

@@ -236,9 +236,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\SuperGroupMapper\SuperRegion.cpp">
       <Filter>ConverterFiles\Mappers\SuperGroupMapper</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\Color.cpp">
-      <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
     <ClCompile Include="..\commonItems\Date.cpp">
       <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
@@ -274,6 +271,9 @@
     </ClCompile>
     <ClCompile Include="MapperTests\CountryMappings\CountryMappingTests.cpp">
       <Filter>MapperTests\CountryMappings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\newColor.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
