@@ -5,7 +5,7 @@ export CXX=/usr/bin/g++-9 &&
 
 rm -rf Release/ &&
 cd Fronter &&
-./build_linuex.sh &&
+./build_linux.sh &&
 mv Release ../ &&
 cd ../EU4toV2 &&
 rm -rf build &&
