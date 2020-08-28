@@ -16,17 +16,17 @@ class NationalSymbol: public commonItems::parser
 	auto& getCustomColors() { return customColors; }
 	[[nodiscard]] auto isCustomColorsInitialized() const { return customColorsInitialized; }
 
-	void setMapColor(const commonItems::newColor& col) { mapColor = col; }
-	void setCountryColor(const commonItems::newColor& col) { countryColor = col; }
-	void setRevolutionaryColor(const commonItems::newColor& col) { revolutionaryColor = col; }
+	void setMapColor(const commonItems::Color& col) { mapColor = col; }
+	void setCountryColor(const commonItems::Color& col) { countryColor = col; }
+	void setRevolutionaryColor(const commonItems::Color& col) { revolutionaryColor = col; }
 	void setCustomColors(const CustomColors& col) { customColors = col; }
 	void setCustomColorsInitialized() { customColorsInitialized = true; }
 
   private:
 	CustomColors customColors;
-	std::optional<commonItems::newColor> mapColor;
-	std::optional<commonItems::newColor> countryColor;
-	std::optional<commonItems::newColor> revolutionaryColor;
+	std::optional<commonItems::Color> mapColor;
+	std::optional<commonItems::Color> countryColor;
+	std::optional<commonItems::Color> revolutionaryColor;
 	bool customColorsInitialized = false;
 };
 } // namespace EU4

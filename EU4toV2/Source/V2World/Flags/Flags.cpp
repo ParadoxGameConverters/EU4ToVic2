@@ -373,11 +373,11 @@ void V2::Flags::createCustomFlags() const
 				auto gColor = flagColorMapper.getFlagColorByIndex(g);
 				auto bColor = flagColorMapper.getFlagColorByIndex(b);
 				if (!rColor)
-					rColor = commonItems::newColor();
+					rColor = commonItems::Color();
 				if (!gColor)
-					gColor = commonItems::newColor();
+					gColor = commonItems::Color();
 				if (!bColor)
-					bColor = commonItems::newColor();
+					bColor = commonItems::Color();
 				createCustomFlag(*rColor, *gColor, *bColor, sourceEmblemPath, sourceFlagPath, destFlagPath);
 			}
 			else

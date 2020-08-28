@@ -64,5 +64,5 @@ TEST(Mappers_TechSchoolMapperTests, NoInvestmentDoesntCrash)
 	}}");
 	mappers::TechSchoolMapper newTechSchools(techSchoolsInput);
 
-	ASSERT_NO_THROW(newTechSchools.findBestTechSchool(0.0, 0.0, 0.0, 0.0, 0.0));
+	ASSERT_NO_THROW(const auto& bestschool = newTechSchools.findBestTechSchool(0.0, 0.0, 0.0, 0.0, 0.0));
 }

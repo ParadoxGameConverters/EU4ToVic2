@@ -562,7 +562,7 @@
     <ClCompile Include="..\commonItems\targa.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\newColor.cpp">
+    <ClCompile Include="..\commonItems\Color.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1088,7 +1088,7 @@
     <ClInclude Include="Source\Helpers\rakaly.h">
       <Filter>Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="..\commonItems\newColor.h">
+    <ClInclude Include="..\commonItems\Color.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
   </ItemGroup>

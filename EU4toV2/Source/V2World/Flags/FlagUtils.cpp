@@ -72,9 +72,9 @@ bool V2::createColonialFlag(const std::string& colonialOverlordPath, const std::
 	return true;
 }
 
-bool V2::createCustomFlag(const commonItems::newColor& c1,
-	 const commonItems::newColor& c2,
-	 const commonItems::newColor& c3,
+bool V2::createCustomFlag(const commonItems::Color& c1,
+	 const commonItems::Color& c2,
+	 const commonItems::Color& c3,
 	 const std::string& emblemPath,
 	 const std::string& basePath,
 	 const std::string& targetPath)
