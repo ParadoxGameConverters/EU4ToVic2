@@ -36,7 +36,7 @@ EU4::Country::Country(std::string countryTag,
 	});
 	// This is obsolete and not applicable from at least 1.19+, probably further back
 	registerKeyword("map_color", [this](const std::string& unused, std::istream& theStream) {
-		auto colorColor = commonItems::newColor::Factory::getColor(theStream);
+		auto colorColor = commonItems::Color::Factory::getColor(theStream);
 		colorColor.RandomlyFluctuate(30);
 		// Countries whose colors are included in the object here tend to be generated countries,
 		// i.e. colonial nations which take on the color of their parent. To help distinguish
@@ -203,7 +203,7 @@ EU4::Country::Country(std::string countryTag,
 	});
 	// This is obsolete and not applicable from at least 1.19+, probably further back
 	registerKeyword("revolutionary_colors", [this](const std::string& unused, std::istream& theStream) {
-		const auto colorColor = commonItems::newColor::Factory::getColor(theStream);
+		const auto colorColor = commonItems::Color::Factory::getColor(theStream);
 		nationalColors.setRevolutionaryColor(colorColor);
 	});
 	registerKeyword("history", [this](const std::string& unused, std::istream& theStream) {
@@ -218,7 +218,7 @@ EU4::Country::Country(std::string countryTag,
 		const ID idBlock(theStream);
 		activeLeaderIDs.insert(idBlock.getIDNum());
 	});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();
@@ -549,7 +549,7 @@ void EU4::Country::readFromCommonCountry(const std::string& fileName, const std:
 	if (!nationalColors.getMapColor())
 	{
 		registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
-			const auto color = commonItems::newColor::Factory::getColor(theStream);
+			const auto color = commonItems::Color::Factory::getColor(theStream);
 			nationalColors.setMapColor(color);
 		});
 		registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);

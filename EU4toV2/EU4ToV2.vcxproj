@@ -317,12 +317,12 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\commonItems\Color.cpp" />
     <ClCompile Include="..\commonItems\CommonFunctions.cpp" />
     <ClCompile Include="..\commonItems\Date.cpp" />
     <ClCompile Include="..\commonItems\GameVersion.cpp" />
     <ClCompile Include="..\commonItems\iconvlite.cpp" />
     <ClCompile Include="..\commonItems\Log.cpp" />
-    <ClCompile Include="..\commonItems\newColor.cpp" />
     <ClCompile Include="..\commonItems\OSCommonLayer.cpp" />
     <ClCompile Include="..\commonItems\Parser.cpp" />
     <ClCompile Include="..\commonItems\ParserHelpers.cpp" />
@@ -509,12 +509,12 @@
     <ClCompile Include="Source\V2World\War\War.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\commonItems\Color.h" />
     <ClInclude Include="..\commonItems\CommonFunctions.h" />
     <ClInclude Include="..\commonItems\Date.h" />
     <ClInclude Include="..\commonItems\GameVersion.h" />
     <ClInclude Include="..\commonItems\iconvlite.h" />
     <ClInclude Include="..\commonItems\Log.h" />
-    <ClInclude Include="..\commonItems\newColor.h" />
     <ClInclude Include="..\commonItems\OSCompatibilityLayer.h" />
     <ClInclude Include="..\commonItems\Parser.h" />
     <ClInclude Include="..\commonItems\ParserHelpers.h" />

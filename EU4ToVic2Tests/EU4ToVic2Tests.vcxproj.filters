@@ -272,7 +272,7 @@
     <ClCompile Include="MapperTests\CountryMappings\CountryMappingTests.cpp">
       <Filter>MapperTests\CountryMappings</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\newColor.cpp">
+    <ClCompile Include="..\commonItems\Color.cpp">
       <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
   </ItemGroup>

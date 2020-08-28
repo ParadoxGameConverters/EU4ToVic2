@@ -33,13 +33,13 @@ mappers::Culture::Culture(std::istream& theStream)
 		dynastyNames = names.getStrings();
 	});
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
-		color = commonItems::newColor::Factory::getColor(theStream);
+		color = commonItems::Color::Factory::getColor(theStream);
 	});
 	registerKeyword("radicalism", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleInt radicalInt(theStream);
 		radicalism = radicalInt.getInt();
 	});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();
@@ -57,6 +57,6 @@ void mappers::Culture::transmogrify()
 	const auto r = distr(eng);
 	const auto g = distr(eng);
 	const auto b = distr(eng);
-	color = commonItems::newColor(std::array<int, 3>{r, g, b});
+	color = commonItems::Color(std::array<int, 3>{r, g, b});
 	primaryTag.clear();
 }

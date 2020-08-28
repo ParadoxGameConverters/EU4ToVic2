@@ -2,7 +2,7 @@
 #define FLAG_COLOR_MAPPER_H
 
 #include "Parser.h"
-#include "newColor.h"
+#include "Color.h"
 
 namespace mappers
 {
@@ -13,12 +13,12 @@ class FlagColorMapper: commonItems::parser
 	explicit FlagColorMapper(std::istream& theStream);
 
 	[[nodiscard]] auto getNumFlagColors() const { return flagColorMapping.size(); }
-	[[nodiscard]] std::optional<commonItems::newColor> getFlagColorByIndex(int index) const;
+	[[nodiscard]] std::optional<commonItems::Color> getFlagColorByIndex(int index) const;
 
   private:
 	void registerKeys();
 
-	std::vector<commonItems::newColor> flagColorMapping;
+	std::vector<commonItems::Color> flagColorMapping;
 };
 }; // namespace mappers
 
