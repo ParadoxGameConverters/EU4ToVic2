@@ -22,6 +22,9 @@ link = { v2 = monophysite eu4 = monophysite }
 link = { v2 = nestorian eu4 = nestorian }
 link = { v2 = messalian eu4 = messalian }
 
+link = { v2 = adamites eu4 = adamites }
+link = { v2 = insular_celtic eu4 = catholic }
+link = { v2 = gnostic eu4 = gnostic }
 
 #Muslims
 
