@@ -5253,4 +5253,6 @@ zzz_religions = {
 	zzz_religion_mazdaki = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_zoroastrian_heresy = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_noreligion = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_adamites = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_gnostic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 }
