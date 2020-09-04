@@ -1439,6 +1439,9 @@ link = { eu4 = TOL v2 = TOL } # Tolaki
 link = { eu4 = UDM v2 = UDM } # Udmurtia
 link = { eu4 = VYL v2 = VYL } # Vyatskaya Zemlya
 
+# CK3EU4 additions
+link = { eu4 = CVS v2 = CVS } # Chuvashia
+
 ##M&T basic mappings (only those whose tags already exist)
 link = { eu4 = AAA v2 = AAA } #Dummy
 link = { eu4 = JBC v2 = AAC } #JulichClevesBerg
