@@ -19,10 +19,7 @@
 #include <fstream>
 #include <set>
 #include <string>
-extern "C"
-{
-#include "../Helpers/rakaly.h"
-}
+#include "../Helpers/rakaly_wrapper.h"
 #include <filesystem>
 namespace fs = std::filesystem;
 
@@ -389,19 +386,8 @@ void EU4::World::verifySaveContents()
 	if (saveGame.gamestate[0] == 'E' && saveGame.gamestate[1] == 'U' && saveGame.gamestate[2] == '4' && saveGame.gamestate[3] == 'b' &&
 		 saveGame.gamestate[4] == 'i' && saveGame.gamestate[5] == 'n')
 	{
-		char* outBuf1;
-		size_t outSize1;
-		auto result = rakaly_eu4_melt(saveGame.gamestate.c_str(), saveGame.gamestate.length(), &outBuf1, &outSize1);
-		if (result)
-			throw std::runtime_error("This ironman save cannot be melted. Sorry. Try with an external melting tool.");
-		saveGame.gamestate = std::string(outBuf1);
-
-		char* outBuf2;
-		size_t outSize2;
-		result = rakaly_eu4_melt(saveGame.metadata.c_str(), saveGame.metadata.length(), &outBuf2, &outSize2);
-		if (result)
-			throw std::runtime_error("This ironman save cannot be melted. Sorry. Try with an external melting tool.");
-		saveGame.metadata = std::string(outBuf2);
+		saveGame.gamestate = rakaly::meltEU4(saveGame.gamestate);
+		saveGame.metadata = rakaly::meltEU4(saveGame.metadata);
 	}
 }
 
