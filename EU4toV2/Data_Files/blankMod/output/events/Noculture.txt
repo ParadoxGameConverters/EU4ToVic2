@@ -11343,14 +11343,12 @@ country_event = {
  picture = census
 
  trigger = {
-	#Can't have it check for "noreligion" pops, it would fail to find them
-	NOT = {
-		any_owned_province = {
-			is_state_religion = yes
-		}
-	}
-  NOT = { accepted_culture = zzz_religion_noreligion }
-  NOT = { has_country_flag = religi } # I'm not going to check for all of them
+  any_owned_province = {
+   pop_majority_religion = gnostic
+   is_state_religion = yes
+  }
+  NOT = { accepted_culture = zzz_religion_gnostic }
+  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
  }
  
  mean_time_to_happen = {
@@ -11359,11 +11357,35 @@ country_event = {
  
  option = {
   name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_gnostic
   set_country_flag = religi
  }
 }
+country_event = {
+ id = 1001069
+ title = EVTNAMERELIGI
+ desc = EVTDESCRELIGI
+ picture = census
 
+ trigger = {
+  any_owned_province = {
+   pop_majority_religion = adamites
+   is_state_religion = yes
+  }
+  NOT = { accepted_culture = zzz_religion_adamites }
+  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.1
+ }
+ 
+ option = {
+  name = EVTOPTARELIGI
+  add_accepted_culture = zzz_religion_adamites
+  set_country_flag = religi
+ }
+}
 ###
 ###
 
@@ -13065,5 +13087,55 @@ country_event = {
   remove_accepted_culture = zzz_religion_noreligion
   add_accepted_culture = zzz_religion_zoroastrian_heresy
   religion = zoroastrian_heresy
+ }
+}
+country_event = {
+ id = 1002068
+ title = EVTNAMERELNEW
+ desc = EVTDESCRELNEW
+ picture = census
+
+ trigger = {
+  capital_scope = {
+   pop_majority_religion = adamites
+  }
+  accepted_culture = zzz_religion_noreligion
+  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.1
+ }
+ 
+ option = {
+  name = EVTOPTARELNEW
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_adamites
+  religion = adamites
+ }
+}
+country_event = {
+ id = 1002069
+ title = EVTNAMERELNEW
+ desc = EVTDESCRELNEW
+ picture = census
+
+ trigger = {
+  capital_scope = {
+   pop_majority_religion = gnostic
+  }
+  accepted_culture = zzz_religion_noreligion
+  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.1
+ }
+ 
+ option = {
+  name = EVTOPTARELNEW
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_gnostic
+  religion = gnostic
  }
 }
