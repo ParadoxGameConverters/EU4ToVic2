@@ -24,8 +24,8 @@ namespace V2
 		friend std::ostream& operator<<(std::ostream& output, const Localisation& localisation);
 
 		// All localizations are stored internally as UTF-8. However V2 doesn't seem to handle Unicode
-		// so we convert the text to ANSI Latin-1 before writing it.
-		static std::string convert(const std::string&);
+		// so we convert the text to the appropriate Windows codepage (1250, 1251, and 1252).
+		static std::string convert(const std::string&, int language = 0);
 		static std::string stripAccents(const std::string&);
 
 		[[nodiscard]] std::string getLocalName() const;
