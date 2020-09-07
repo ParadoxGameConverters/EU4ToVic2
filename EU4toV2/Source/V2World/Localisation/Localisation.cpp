@@ -44,13 +44,33 @@ void V2::Localisation::setPartyName(const size_t partyIndex, const std::string& 
 	}
 }
 
-std::string V2::Localisation::convert(const std::string& text)
+std::string V2::Localisation::convert(const std::string& text, int language)
 {
 	if (text.empty()) return std::string();
-	#ifdef __APPLE__
+#ifdef __APPLE__
 		return text;
-	#endif
-	return Utils::convertUTF8ToWin1252(text);
+#endif
+	switch (language)
+	{
+		case  0: // English
+		case  1: // French
+		case  2: // German
+		case  4: // Spanish
+		case  5: // Italian
+		case  6: // Swedish
+		case  9: // Dutch
+		case 10: // Portugese
+		case 12: // Finnish
+			return Utils::convertUTF8ToWin1252(text);
+		case  3: // Polish
+		case  7: // Czech
+		case  8: // Hungarian
+			return Utils::convertUTF8ToWin1250(text);
+		case 11: // Russian
+			return Utils::convertUTF8ToWin1251(text);
+		default:
+			return std::string();
+	}
 }
 
 std::string V2::Localisation::getLocalName() const

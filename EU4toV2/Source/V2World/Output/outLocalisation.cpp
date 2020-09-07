@@ -3,25 +3,25 @@
 std::ostream& V2::operator<<(std::ostream& output, const Localisation& localisation)
 {
 	output << Localisation::convert(localisation.tag);
-	for (const auto& localisedName: localisation.name)
+	for (int i = 0; i < V2::Localisation::numLanguages; ++i)
 	{
-		output << ';' << Localisation::convert(localisedName);
+		output << ';' << Localisation::convert(localisation.name[i], i);
 	}
 	output << "x\n";
 
 	output << Localisation::convert(localisation.tag) << "_ADJ";
-	for (const auto& localisedAdjective: localisation.adjective)
+	for (int i = 0; i < V2::Localisation::numLanguages; ++i)
 	{
-		output << ';' << Localisation::convert(localisedAdjective);
+		output << ';' << Localisation::convert(localisation.adjective[i], i);
 	}
 	output << "x\n";
 
 	for (const auto& party: localisation.parties)
 	{
 		output << Localisation::convert(party.key);
-		for (const auto& localisedPartyName : party.name)
+		for (int i = 0; i < V2::Localisation::numLanguages; ++i)
 		{
-			output << ';' << Localisation::convert(localisedPartyName);
+			output << ';' << Localisation::convert(party.name[i], i);
 		}
 		output << "x\n";
 	}
