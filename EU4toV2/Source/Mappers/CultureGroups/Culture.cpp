@@ -33,7 +33,7 @@ mappers::Culture::Culture(std::istream& theStream)
 		dynastyNames = names.getStrings();
 	});
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
-		color = commonItems::Color::Factory::getColor(theStream);
+		color = commonItems::Color::Factory{}.getColor(theStream);
 	});
 	registerKeyword("radicalism", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleInt radicalInt(theStream);

@@ -24,7 +24,7 @@ EU4::CustomColors::CustomColors(std::istream& theStream)
 		customColors.symbolIndex = siInt.getInt() + 1;
 	});
 	registerKeyword("flag_colors", [this](const std::string& colorsString, std::istream& theStream) {
-		customColors.flagColors = commonItems::Color::Factory::getColor(theStream);
+		customColors.flagColors = commonItems::Color::Factory{}.getColor(theStream);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 

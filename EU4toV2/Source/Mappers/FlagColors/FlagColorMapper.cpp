@@ -21,7 +21,7 @@ mappers::FlagColorMapper::FlagColorMapper(std::istream& theStream)
 void mappers::FlagColorMapper::registerKeys()
 {
 	registerKeyword("flag_color", [this](const std::string& unused, std::istream& theStream) {
-		const auto theColor = commonItems::Color::Factory::getColor(theStream);
+		const auto theColor = commonItems::Color::Factory{}.getColor(theStream);
 		flagColorMapping.push_back(theColor);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
