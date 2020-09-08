@@ -3,10 +3,7 @@
 
 #include <stdexcept>
 #include <string>
-
-extern "C" {
 #include "rakaly.h"
-}
 
 namespace rakaly
 {
@@ -20,7 +17,7 @@ inline std::string meltFinish(MeltedBuffer * melt)
 		throw std::runtime_error("librakaly returned an error: " + std::to_string(result));
 	}
 
-	int len = rakaly_melt_data_length(melt) + 1;
+	size_t len = rakaly_melt_data_length(melt);
 	std::string str(len, ' ');
 
 	if (rakaly_melt_write_data(melt, str.data(), len) != len)
@@ -38,10 +35,10 @@ inline std::string meltEU4(const std::string& encrypted)
 	return meltFinish(rakaly_eu4_melt(encrypted.c_str(), encrypted.length()));
 }
 
-//inline std::string meltCK3(const std::string& encrypted)
-//{
-//	return meltFinish(rakaly_ck3_melt(encrypted.c_str(), encrypted.length()));
-//}
+inline std::string meltCK3(const std::string& encrypted)
+{
+	return meltFinish(rakaly_ck3_melt(encrypted.c_str(), encrypted.length()));
+}
 
 }
 
