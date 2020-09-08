@@ -7,6 +7,34 @@
  */
 typedef struct MeltedBuffer MeltedBuffer;
 
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
+
+/**
+ * Melts binary encoded CK3 data into normal plaintext data. The melted buffer, when written utf-8 encoded
+ * plaintext.
+ *
+ * Parameters:
+ *
+ *  - data: Pointer to immutable data that represents the binary data. The data can be:
+ *    - autosave save
+ *    - ironman save
+ *    - binary data
+ *  - data_len: Length of the data indicated by the data pointer. It is undefined behavior if the
+ *  given length does not match the actual length of the data
+ *
+ * If an unknown token is encountered and rakaly doesn't know how to convert it to plaintext there
+ * are two possible outcomes:
+ *
+ *  - If the token is part of an object's key then key and value will not appear in the plaintext
+ *  output
+ *  - Else the object value (or array value) will be string of "__unknown_x0$z" where z is the
+ *  hexadecimal representation of the unknown token.
+ */
+MeltedBuffer *rakaly_ck3_melt(const char *data_ptr,
+                              size_t data_len);
+
 /**
  * Melts binary encoded ironman data into normal plaintext data that can be understood by EU4
  * natively. The melted buffer, when written out will contain windows-1252 encoded plaintext.
@@ -80,3 +108,7 @@ int rakaly_melt_error_code(const MeltedBuffer *res);
  * - Given buffer must be at least the given length in size
  */
 int rakaly_melt_write_data(const MeltedBuffer *res, char *buffer, size_t length);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif // __cplusplus
