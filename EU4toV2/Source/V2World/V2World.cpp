@@ -519,12 +519,12 @@ void V2::World::transcribeNeoCultures()
 
 void V2::World::importProvinces()
 {
-	auto provinceFilenames = discoverProvinceFilenames();
-	for (const auto& provinceFilename: provinceFilenames)
+	const auto provinceFileNames = discoverProvinceFilenames();
+	for (const auto& provinceFileName: provinceFileNames)
 	{
-		if (provinceFilename.find(".txt") == std::string::npos)
+		if (provinceFileName.find(".txt") == std::string::npos)
 			continue;
-		auto newProvince = std::make_shared<Province>(provinceFilename, climateMapper, terrainDataMapper, provinceNameParser, navalBaseMapper);
+		auto newProvince = std::make_shared<Province>(provinceFileName, climateMapper, terrainDataMapper, provinceNameParser, navalBaseMapper);
 		provinces.insert(std::make_pair(newProvince->getID(), newProvince));
 	}
 
@@ -537,9 +537,9 @@ void V2::World::importProvinces()
 std::set<std::string> V2::World::discoverProvinceFilenames()
 {
 	std::set<std::string> provinceFilenames;
-	if (Utils::DoesFolderExist("./blankMod/output/history/provinces"))
+	if (Utils::DoesFolderExist("blankMod/output/history/provinces"))
 	{
-		provinceFilenames = Utils::GetAllFilesInFolderRecursive("./blankMod/output/history/provinces");
+		provinceFilenames = Utils::GetAllFilesInFolderRecursive("blankMod/output/history/provinces");
 	}
 	if (provinceFilenames.empty())
 	{

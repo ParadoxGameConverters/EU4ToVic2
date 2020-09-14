@@ -33,13 +33,13 @@ filename(std::move(_filename))
 	}
 
 	//In case we're overriding provinces (not true by default)
-	if (Utils::DoesFileExist("./blankMod/output/history/provinces" + filename))
+	if (Utils::DoesFileExist("blankMod/output/history/provinces/" + filename))
 	{
-		details = mappers::ProvinceDetails("./blankMod/output/history/provinces" + filename);
+		details = mappers::ProvinceDetails("blankMod/output/history/provinces/" + filename);
 	}
 	else
 	{
-		details = mappers::ProvinceDetails(theConfiguration.getVic2Path() + "/history/provinces" + filename);
+		details = mappers::ProvinceDetails(theConfiguration.getVic2Path() + "/history/provinces/" + filename);
 	}
 
 	for (const auto& climate : climateMapper.getClimateMap())
