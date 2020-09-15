@@ -387,9 +387,6 @@ void EU4::World::verifySaveContents()
 		 saveGame.gamestate[4] == 'i' && saveGame.gamestate[5] == 'n')
 	{
 		saveGame.gamestate = rakaly::meltEU4(saveGame.gamestate);
-		std::ofstream dump("dump.txt");
-		dump << saveGame.gamestate;
-		dump.close();
 		saveGame.metadata = rakaly::meltEU4(saveGame.metadata);
 	}
 }
