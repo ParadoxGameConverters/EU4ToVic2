@@ -1733,11 +1733,13 @@ void V2::World::outputProvinces() const
 	for (const auto& province: provinces)
 	{
 		auto filename = province.second->getFilename();
-		const auto lastSlash = filename.find_last_of('/');
+		auto lastSlash = filename.find_last_of('/');
+		if (lastSlash == std::string::npos) lastSlash = filename.find_last_of('\\');
 		auto path = filename.substr(0, lastSlash);
-		Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces" + path);
+		if (!Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces/" + path))
+			throw std::runtime_error("Could not create directory: output/" + theConfiguration.getOutputName() + "/history/provinces/" + path);
 
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/provinces" + filename);
+		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename);
 		if (!output.is_open())
 		{
 			throw std::runtime_error("Could not create province history file output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename +
