@@ -575,6 +575,7 @@
     <ClInclude Include="Source\EU4World\Wars\EU4WarDetails.h" />
     <ClInclude Include="Source\EU4World\World.h" />
     <ClInclude Include="Source\Helpers\rakaly.h" />
+    <ClInclude Include="Source\Helpers\rakaly_wrapper.h" />
     <ClInclude Include="Source\Helpers\TechValues.h" />
     <ClInclude Include="Source\Mappers\Adjacency\AdjacencyMapper.h" />
     <ClInclude Include="Source\Mappers\AfricaReset\AfricaResetMapper.h" />
