@@ -1561,6 +1561,8 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
 	verifyCountriesWritten();
+
+	outputV2Mod();
 }
 
 void V2::World::outputNeoCultures() const
@@ -1873,4 +1875,16 @@ std::string V2::World::clipCountryFileName(const std::string& incoming) const
 		return incoming;
 	else
 		return incoming.substr(0, 76) + ".txt";
+}
+
+
+void V2::World::outputV2Mod() const
+{
+	if (!theConfiguration.getVic2ModName().empty())
+	{
+		LOG(LogLevel::Info) << "<- Copying " + theConfiguration.getVic2ModName() + " files";
+		const auto& mod = theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName() + "/map";
+		const auto& dest = "output/" + theConfiguration.getOutputName() + "/map";
+		std::filesystem::copy(mod, dest, std::filesystem::copy_options::recursive);
+	}
 }
