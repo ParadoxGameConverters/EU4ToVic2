@@ -7,20 +7,20 @@ V2::CountryDetails::CountryDetails(std::string _filename): filename(std::move(_f
 {
 	registerKeys();
 
-	if (Utils::DoesFileExist("./blankMod/output/common/countries/" + filename))
+	if (commonItems::DoesFileExist("./blankMod/output/common/countries/" + filename))
 	{
 		parseFile("./blankMod/output/common/countries/" + filename);
 	}
-	else if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
+	else if (commonItems::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
 	{
 		parseFile(theConfiguration.getVic2Path() + "/common/countries/" + filename);
 	}
 	// Maybe we're initializing a dead nation. If so look in the /other/ place.
-	else if (Utils::DoesFileExist("./blankMod/output/history/countries/" + filename))
+	else if (commonItems::DoesFileExist("./blankMod/output/history/countries/" + filename))
 	{
 		parseFile("./blankMod/output/history/countries/" + filename);
 	}
-	else if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/history/countries/" + filename))
+	else if (commonItems::DoesFileExist(theConfiguration.getVic2Path() + "/history/countries/" + filename))
 	{
 		parseFile(theConfiguration.getVic2Path() + "/history/countries/" + filename);
 	}

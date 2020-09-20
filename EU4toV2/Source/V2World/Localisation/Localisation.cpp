@@ -61,13 +61,13 @@ std::string V2::Localisation::convert(const std::string& text, int language)
 		case  9: // Dutch
 		case 10: // Portugese
 		case 12: // Finnish
-			return Utils::convertUTF8ToWin1252(text);
+			return commonItems::convertUTF8ToWin1252(text);
 		case  3: // Polish
 		case  7: // Czech
 		case  8: // Hungarian
-			return Utils::convertUTF8ToWin1250(text);
+			return commonItems::convertUTF8ToWin1250(text);
 		case 11: // Russian
-			return Utils::convertUTF8ToWin1251(text);
+			return commonItems::convertUTF8ToWin1251(text);
 		default:
 			return std::string();
 	}

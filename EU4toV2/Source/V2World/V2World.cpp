@@ -537,13 +537,13 @@ void V2::World::importProvinces()
 std::set<std::string> V2::World::discoverProvinceFilenames()
 {
 	std::set<std::string> provinceFilenames;
-	if (Utils::DoesFolderExist("blankMod/output/history/provinces"))
+	if (commonItems::DoesFolderExist("blankMod/output/history/provinces"))
 	{
-		provinceFilenames = Utils::GetAllFilesInFolderRecursive("blankMod/output/history/provinces");
+		provinceFilenames = commonItems::GetAllFilesInFolderRecursive("blankMod/output/history/provinces");
 	}
 	if (provinceFilenames.empty())
 	{
-		provinceFilenames = Utils::GetAllFilesInFolderRecursive(theConfiguration.getVic2Path() + "/history/provinces");
+		provinceFilenames = commonItems::GetAllFilesInFolderRecursive(theConfiguration.getVic2Path() + "/history/provinces");
 	}
 
 	return provinceFilenames;
@@ -570,7 +570,7 @@ void V2::World::importDefaultPops()
 {
 	totalWorldPopulation = 0;
 
-	auto filenames = Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/");
+	auto filenames = commonItems::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/");
 
 	LOG(LogLevel::Info) << "Parsing minority pops mappings";
 
@@ -1477,15 +1477,15 @@ void V2::World::convertWars(const EU4::World& sourceWorld)
 
 void V2::World::output(const mappers::VersionParser& versionParser) const
 {
-	Utils::TryCreateFolder("output");
+	commonItems::TryCreateFolder("output");
 	Log(LogLevel::Progress) << "80 %";
 
 	LOG(LogLevel::Info) << "<- Copying Mod Template";
-	Utils::CopyFolder("blankMod/output", "output/output");
+	commonItems::CopyFolder("blankMod/output", "output/output");
 	Log(LogLevel::Progress) << "81 %";
 
 	LOG(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
-	Utils::RenameFolder("output/output", "output/" + theConfiguration.getOutputName());
+	commonItems::RenameFolder("output/output", "output/" + theConfiguration.getOutputName());
 	Log(LogLevel::Progress) << "82 %";
 
 	LOG(LogLevel::Info) << "<- Crafting .mod File";
@@ -1504,7 +1504,7 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 
 	// Create common\countries path.
 	const auto countriesPath = "output/" + theConfiguration.getOutputName() + "/common/countries";
-	if (!Utils::TryCreateFolder(countriesPath))
+	if (!commonItems::TryCreateFolder(countriesPath))
 	{
 		return;
 	}
@@ -1603,7 +1603,7 @@ void V2::World::outputHistory() const
 	if (!output.is_open())
 	{
 		throw std::runtime_error("Could not send botanical expedition output/" + theConfiguration.getOutputName() + "/common/botanical_expedition.txt - " +
-										 Utils::GetLastErrorString());
+										 commonItems::GetLastErrorString());
 	}
 	output << historicalData;
 	output.close();
@@ -1615,7 +1615,7 @@ void V2::World::outputCultures() const
 	if (!output.is_open())
 	{
 		throw std::runtime_error(
-			 "Could not create cultures file at output/" + theConfiguration.getOutputName() + "/common/cultures.txt - " + Utils::GetLastErrorString());
+			 "Could not create cultures file at output/" + theConfiguration.getOutputName() + "/common/cultures.txt - " + commonItems::GetLastErrorString());
 	}
 	output << cultureGroupsMapper;
 	output.close();
@@ -1624,7 +1624,7 @@ void V2::World::outputCultures() const
 
 void V2::World::outputWars() const
 {
-	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/wars");
+	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/wars");
 	for (const auto& war: wars)
 	{
 		const auto& filename = war.generateFileName();
@@ -1632,7 +1632,7 @@ void V2::World::outputWars() const
 		if (!output.is_open())
 		{
 			throw std::runtime_error(
-				 "Could not create wars file output/" + theConfiguration.getOutputName() + "/history/wars/" + filename + " - " + Utils::GetLastErrorString());
+				 "Could not create wars file output/" + theConfiguration.getOutputName() + "/history/wars/" + filename + " - " + commonItems::GetLastErrorString());
 		}
 		output << war;
 		output.close();
@@ -1676,7 +1676,7 @@ void V2::World::outputCommonCountries() const
 void V2::World::outputLocalisation() const
 {
 	auto localisationPath = "output/" + theConfiguration.getOutputName() + "/localisation";
-	if (!Utils::TryCreateFolder(localisationPath))
+	if (!commonItems::TryCreateFolder(localisationPath))
 		return;
 
 	auto source = theConfiguration.getVic2Path() + "/localisation/text.csv";
@@ -1715,8 +1715,8 @@ void V2::World::outputLocalisation() const
 	if (!output.is_open())
 		throw std::runtime_error("Could not update localization text file");
 
-	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
-	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
+	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
+	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
 	for (const auto& country: countries)
 	{
 		if (country.second->isNewCountry())
@@ -1729,21 +1729,21 @@ void V2::World::outputLocalisation() const
 
 void V2::World::outputProvinces() const
 {
-	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces");
+	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces");
 	for (const auto& province: provinces)
 	{
 		auto filename = province.second->getFilename();
 		auto lastSlash = filename.find_last_of('/');
 		if (lastSlash == std::string::npos) lastSlash = filename.find_last_of('\\');
 		auto path = filename.substr(0, lastSlash);
-		if (!Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces/" + path))
+		if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces/" + path))
 			throw std::runtime_error("Could not create directory: output/" + theConfiguration.getOutputName() + "/history/provinces/" + path);
 
 		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename);
 		if (!output.is_open())
 		{
 			throw std::runtime_error("Could not create province history file output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename +
-											 " - " + Utils::GetLastErrorString());
+											 " - " + commonItems::GetLastErrorString());
 		}
 		output << *province.second;
 		output.close();
@@ -1841,11 +1841,11 @@ void V2::World::verifyCountriesWritten() const
 		const auto size = line.find_last_of('\"') - start - 1;
 		countryFileName = line.substr(start + 1, size);
 
-		if (Utils::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/countries/" + countryFileName))
+		if (commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/countries/" + countryFileName))
 		{
 			continue;
 		}
-		if (Utils::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + countryFileName))
+		if (commonItems::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + countryFileName))
 		{
 			continue;
 		}

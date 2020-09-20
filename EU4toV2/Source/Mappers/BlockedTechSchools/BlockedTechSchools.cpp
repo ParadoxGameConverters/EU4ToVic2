@@ -5,7 +5,7 @@
 mappers::BlockedTechSchools::BlockedTechSchools()
 {
 	registerKeys();
-	if (!Utils::DoesFileExist("configurables/blocked_tech_schools.txt"))
+	if (!commonItems::DoesFileExist("configurables/blocked_tech_schools.txt"))
 	{
 		Log(LogLevel::Warning) << "Could not find configurables/blocked_tech_schools.txt";
 	}

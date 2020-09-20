@@ -52,7 +52,7 @@ void mappers::CountryMappings::getAvailableFlags()
 
 	for (const auto& availableFlagFolder: availableFlagFolders)
 	{
-		auto availableFlagFiles = Utils::GetAllFilesInFolder(availableFlagFolder);
+		auto availableFlagFiles = commonItems::GetAllFilesInFolder(availableFlagFolder);
 		for (const auto& file: availableFlagFiles)
 		{
 			const auto lastDot = file.find_last_of('.');

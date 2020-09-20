@@ -539,7 +539,7 @@ void EU4::World::loadEU4RegionsOldVersion()
 
 	for (const auto& itr: theConfiguration.getEU4Mods())
 	{
-		if (!Utils::DoesFileExist(itr + "/map/region.txt"))
+		if (!commonItems::DoesFileExist(itr + "/map/region.txt"))
 		{
 			continue;
 		}
@@ -563,19 +563,19 @@ void EU4::World::loadEU4RegionsNewVersion()
 	auto superRegionFilename = theConfiguration.getEU4Path() + "/map/superregion.txt";
 	for (const auto& itr: theConfiguration.getEU4Mods())
 	{
-		if (!Utils::DoesFileExist(itr + "/map/area.txt"))
+		if (!commonItems::DoesFileExist(itr + "/map/area.txt"))
 			continue;
 		areaFilename = itr + "/map/area.txt";
 	}
 	for (const auto& itr: theConfiguration.getEU4Mods())
 	{
-		if (!Utils::DoesFileExist(itr + "/map/region.txt"))
+		if (!commonItems::DoesFileExist(itr + "/map/region.txt"))
 			continue;
 		regionFilename = itr + "/map/region.txt";
 	}
 	for (const auto& itr: theConfiguration.getEU4Mods())
 	{
-		if (!Utils::DoesFileExist(itr + "/map/superregion.txt"))
+		if (!commonItems::DoesFileExist(itr + "/map/superregion.txt"))
 			continue;
 		superRegionFilename = itr + "/map/superregion.txt";
 	}
@@ -609,7 +609,7 @@ void EU4::World::readCommonCountries()
 	readCommonCountriesFile(commonCountries, theConfiguration.getEU4Path());
 	for (const auto& itr: theConfiguration.getEU4Mods())
 	{
-		auto fileNames = Utils::GetAllFilesInFolder(itr + "/common/country_tags/");
+		auto fileNames = commonItems::GetAllFilesInFolder(itr + "/common/country_tags/");
 		for (const auto& fileItr: fileNames)
 		{
 			std::ifstream convertedCommonCountries(fs::u8path(itr + "/common/country_tags/" + fileItr)); // a stream of the data in the converted countries file
@@ -662,7 +662,7 @@ void EU4::World::readCommonCountriesFile(std::istream& in, const std::string& ro
 				auto fullFilename = rootPath + "/common/" + fileName;
 				const auto lastPathSeparatorPos = fullFilename.find_last_of('/');
 				auto localFileName = fullFilename.substr(lastPathSeparatorPos + 1, std::string::npos);
-				if (Utils::DoesFileExist(fullFilename))
+				if (commonItems::DoesFileExist(fullFilename))
 				{
 					country->readFromCommonCountry(localFileName, fullFilename);
 				}

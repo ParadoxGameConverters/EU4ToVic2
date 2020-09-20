@@ -211,7 +211,7 @@ void V2::Diplomacy::convertRelationsToInfluence(const std::map<std::string, std:
 
 void V2::Diplomacy::output() const
 {
-	Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/diplomacy");
+	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/diplomacy");
 
 	std::ofstream alliances("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Alliances.txt");
 	if (!alliances.is_open()) throw std::runtime_error("Could not create alliances history file!");

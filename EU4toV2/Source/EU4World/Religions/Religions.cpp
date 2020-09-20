@@ -11,14 +11,14 @@ EU4::Religions::Religions()
 
 	registerKeys();
 
-	auto filenames = Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/religions/");
+	auto filenames = commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/religions/");
 	for (const auto& filename : filenames)
 	{
 		parseFile(theConfiguration.getEU4Path() + "/common/religions/" + filename);
 	}
 	for (const auto& modName : theConfiguration.getEU4Mods())
 	{
-		auto moreFilenames = Utils::GetAllFilesInFolder(modName + "/common/religions/");
+		auto moreFilenames = commonItems::GetAllFilesInFolder(modName + "/common/religions/");
 		for (const auto& filename : filenames)
 		{
 			parseFile(modName + "/common/religions/" + filename);

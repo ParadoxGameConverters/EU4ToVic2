@@ -11,14 +11,14 @@ void mappers::CultureGroups::initForEU4()
 	LOG(LogLevel::Info) << "Parsing Cultures and Culture Groups";
 	registerKeys();
 
-	auto cultureFiles = Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/cultures/");
+	auto cultureFiles = commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/cultures/");
 	for (const auto& cultureFile : cultureFiles)
 	{
 		parseFile(theConfiguration.getEU4Path() + "/common/cultures/" + cultureFile);
 	}
 	for (const auto& itr: theConfiguration.getEU4Mods())
 	{
-		auto moreCultureFiles = Utils::GetAllFilesInFolder(itr + "/common/cultures/");
+		auto moreCultureFiles = commonItems::GetAllFilesInFolder(itr + "/common/cultures/");
 		for (const auto& cultureFile: moreCultureFiles)
 		{
 			parseFile(itr + "/common/cultures/" + cultureFile);

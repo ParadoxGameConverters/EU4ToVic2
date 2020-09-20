@@ -7,7 +7,7 @@
 void V2::CountryPopLogger::logPopsByCountry(const std::map<int, std::shared_ptr<Province>>& provinces)
 {
 	 // country, poptype, num
-	auto filenames = Utils::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/");
+	auto filenames = commonItems::GetAllFilesInFolder("./blankMod/output/history/pops/1836.1.1/");
 	
 	for (const auto& filename : filenames) logPopsFromFile(provinces, filename);
 	outputLog(popsByCountry);

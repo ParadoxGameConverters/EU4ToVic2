@@ -24,7 +24,7 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConf
 		auto possibleModPath = getModPath(usedMod);
 		if (possibleModPath)
 		{
-			if (!Utils::DoesFolderExist(*possibleModPath) && !Utils::DoesFileExist(*possibleModPath))
+			if (!commonItems::DoesFolderExist(*possibleModPath) && !commonItems::DoesFileExist(*possibleModPath))
 				throw std::invalid_argument(
 					 usedMod + " could not be found in the specified mod directory " + "- a valid mod directory must be specified. Tried " + *possibleModPath);
 
@@ -42,7 +42,7 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods, Configuration& theConf
 void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 {
 	const auto& EU4DocumentsLoc = theConfiguration.getEU4DocumentsPath();
-	if (!Utils::DoesFolderExist(EU4DocumentsLoc))
+	if (!commonItems::DoesFolderExist(EU4DocumentsLoc))
 		throw std::invalid_argument("No Europa Universalis 4 documents directory was specified in configuration.txt, or the path was invalid!");
 
 	LOG(LogLevel::Info) << "\tEU4 Documents directory is " << EU4DocumentsLoc;
@@ -52,16 +52,16 @@ void EU4::Mods::loadEU4ModDirectory(const Configuration& theConfiguration)
 void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration)
 {
 	const auto& steamWorkshopPath = theConfiguration.getSteamWorkshopPath();
-	if (!Utils::DoesFolderExist(steamWorkshopPath))
+	if (!commonItems::DoesFolderExist(steamWorkshopPath))
 		throw std::invalid_argument("No Steam Worksop directory was specified in configuration.txt, or the path was invalid");
 
 	LOG(LogLevel::Info) << "\tSteam Workshop directory is " << steamWorkshopPath;
-	auto subfolders = Utils::GetAllSubfolders(steamWorkshopPath);
+	auto subfolders = commonItems::GetAllSubfolders(steamWorkshopPath);
 	for (const auto& subfolder: subfolders)
 	{
 		const auto path = steamWorkshopPath + "/" + subfolder;
 		const auto descriptorFilename = path + "/descriptor.mod";
-		if (Utils::DoesFolderExist(path) && Utils::DoesFileExist(descriptorFilename))
+		if (commonItems::DoesFolderExist(path) && commonItems::DoesFileExist(descriptorFilename))
 		{
 			std::ifstream modFile(fs::u8path(path + "/descriptor.mod"));
 			Mod theMod(modFile);
@@ -81,7 +81,7 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 {
 	const auto CK2ExportLoc = theConfiguration.getCK2ExportPath();
-	if (!Utils::DoesFolderExist(CK2ExportLoc))
+	if (!commonItems::DoesFolderExist(CK2ExportLoc))
 	{
 		LOG(LogLevel::Warning) << "No Crusader Kings 2 export directory was specified in configuration.txt,"
 										  " or the path was invalid - this may cause problems with old CK2 converted saves";
@@ -96,7 +96,7 @@ void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 
 void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 {
-	auto filenames = Utils::GetAllFilesInFolder(searchDirectory + "/mod");
+	auto filenames = commonItems::GetAllFilesInFolder(searchDirectory + "/mod");
 	for (const auto& filename: filenames)
 	{
 		const auto pos = filename.find_last_of('.');
@@ -115,11 +115,11 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						const auto trimmedFilename = filename.substr(0, pos);
 
 						std::string recordDirectory;
-						if (Utils::DoesFolderExist(theMod.getPath()))
+						if (commonItems::DoesFolderExist(theMod.getPath()))
 						{
 							recordDirectory = theMod.getPath();
 						}
-						else if (Utils::DoesFolderExist(searchDirectory + "/" + theMod.getPath()))
+						else if (commonItems::DoesFolderExist(searchDirectory + "/" + theMod.getPath()))
 						{
 							recordDirectory = searchDirectory + "/" + theMod.getPath();
 						}
@@ -137,11 +137,11 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 					else
 					{
 						std::string recordDirectory;
-						if (Utils::DoesFileExist(theMod.getPath()))
+						if (commonItems::DoesFileExist(theMod.getPath()))
 						{
 							recordDirectory = theMod.getPath();
 						}
-						else if (Utils::DoesFileExist(searchDirectory + "/" + theMod.getPath()))
+						else if (commonItems::DoesFileExist(searchDirectory + "/" + theMod.getPath()))
 						{
 							recordDirectory = searchDirectory + "/" + theMod.getPath();
 						}
@@ -195,9 +195,9 @@ std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) con
 			uncompressedName = uncompressedName.substr(pos + 1, uncompressedName.size());
 		}
 
-		Utils::TryCreateFolder("mods/");
+		commonItems::TryCreateFolder("mods/");
 
-		if (!Utils::DoesFolderExist("mods/" + uncompressedName))
+		if (!commonItems::DoesFolderExist("mods/" + uncompressedName))
 		{
 			LOG(LogLevel::Info) << "\t\tUncompressing: " << archivePath;
 			if (!extractZip(archivePath, "mods/" + uncompressedName))
@@ -210,7 +210,7 @@ std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) con
 			}
 		}
 
-		if (Utils::DoesFolderExist("mods/" + uncompressedName))
+		if (commonItems::DoesFolderExist("mods/" + uncompressedName))
 		{
 			return "mods/" + uncompressedName;
 		}
@@ -221,7 +221,7 @@ std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) con
 
 bool EU4::Mods::extractZip(const std::string& archive, const std::string& path) const
 {
-	Utils::TryCreateFolder(path);
+	commonItems::TryCreateFolder(path);
 	auto modfile = ZipFile::Open(archive);
 	if (!modfile)
 		return false;
@@ -236,7 +236,7 @@ bool EU4::Mods::extractZip(const std::string& archive, const std::string& path) 
 		// Does target directory exist?
 		const auto dirnamepos = inpath.find(name);
 		const auto dirname = path + "/" + inpath.substr(0, dirnamepos);
-		if (!Utils::DoesFolderExist(dirname))
+		if (!commonItems::DoesFolderExist(dirname))
 		{
 			// we need to craft our way through to target directory.
 			auto remainder = inpath;
@@ -248,7 +248,7 @@ bool EU4::Mods::extractZip(const std::string& archive, const std::string& path) 
 				{
 					auto makedirname = remainder.substr(0, pos);
 					currentpath += "/" + makedirname;
-					Utils::TryCreateFolder(currentpath);
+					commonItems::TryCreateFolder(currentpath);
 					remainder = remainder.substr(pos + 1, remainder.length());
 				}
 				else

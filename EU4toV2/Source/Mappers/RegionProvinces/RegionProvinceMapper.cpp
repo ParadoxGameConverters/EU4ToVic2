@@ -6,7 +6,7 @@
 mappers::RegionProvinceMapper::RegionProvinceMapper()
 {
 	registerKeys();
-	if (Utils::DoesFileExist("./blankMod/output/map/region.txt"))
+	if (commonItems::DoesFileExist("./blankMod/output/map/region.txt"))
 	{
 		parseFile("./blankMod/output/map/region.txt");
 	}
