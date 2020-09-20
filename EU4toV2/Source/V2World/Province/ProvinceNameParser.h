@@ -12,6 +12,7 @@ namespace V2
 		ProvinceNameParser();
 		
 		[[nodiscard]] std::optional<std::string> getProvinceName(int provID) const;
+		[[nodiscard]] const auto& getProvinceNames() const { return provinceNames; }
 		
 	private:
 		std::map<int, std::string> provinceNames;

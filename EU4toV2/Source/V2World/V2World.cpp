@@ -1570,6 +1570,7 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	Log(LogLevel::Progress) << "99 %";
 
 	outputV2Mod();
+	outProvLoc();
 
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
@@ -1897,5 +1898,17 @@ void V2::World::outputV2Mod() const
 		const auto& mod = theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName() + "/map";
 		const auto& dest = "output/" + theConfiguration.getOutputName() + "/map";
 		std::filesystem::copy(mod, dest, std::filesystem::copy_options::recursive);
+	}
+}
+
+void V2::World::outProvLoc() const
+{
+	LOG(LogLevel::Info) << "<- Outputting province localisation";
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/localisation/00_provinces.csv");
+	if (!output.is_open())
+		throw std::runtime_error("Could not create 00_provinces.csv");
+	for (const auto& province: provinceNameParser.getProvinceNames())
+	{
+		output << "PROV" << province.first << ";" << province.second << ";;;;;;;;;;;;;;;;;;;;;;x;;;;;;\n";
 	}
 }
