@@ -595,6 +595,17 @@ std::set<std::string> V2::World::discoverProvinceFilenames()
 	}
 	if (provinceFilenames.empty())
 	{
+		if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty()
+			&& commonItems::DoesFolderExist(theConfiguration.getVic2ModPath() + "/" + mod + "/history/provinces"))
+		{
+			provinceFilenames = commonItems::GetAllFilesInFolderRecursive(
+				theConfiguration.getVic2ModPath() + "/" + mod + "/history/provinces");
+		}
+		else
+		{
+			provinceFilenames = commonItems::GetAllFilesInFolderRecursive(
+				theConfiguration.getVic2Path() + "/history/provinces");
+		}
 		provinceFilenames = commonItems::GetAllFilesInFolderRecursive(theConfiguration.getVic2Path() + "/history/provinces");
 	}
 
@@ -1558,11 +1569,11 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	outputNeoCultures();
 	Log(LogLevel::Progress) << "99 %";
 
+	outputV2Mod();
+
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
 	verifyCountriesWritten();
-
-	outputV2Mod();
 }
 
 void V2::World::outputNeoCultures() const
