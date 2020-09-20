@@ -7,7 +7,7 @@ namespace fs = std::filesystem;
 
 V2::ProvinceNameParser::ProvinceNameParser()
 {
-	if (Utils::DoesFileExist("./blankMod/output/localisation/text.csv"))
+	if (commonItems::DoesFileExist("./blankMod/output/localisation/text.csv"))
 	{
 		importProvinceLocalizations("./blankMod/output/localisation/text.csv");
 	}

@@ -10,7 +10,7 @@ mappers::StateMapper::StateMapper()
 	registerKeys();
 
 	std::string filename;
-	if (Utils::DoesFileExist("./blankMod/output/map/region.txt"))
+	if (commonItems::DoesFileExist("./blankMod/output/map/region.txt"))
 	{
 		filename = "./blankMod/output/map/region.txt";
 	}

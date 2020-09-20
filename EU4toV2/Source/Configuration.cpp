@@ -164,7 +164,7 @@ void Configuration::setOutputName()
 	outputName = replaceCharacter(outputName, ' ');
 	theConfiguration.setActualName(outputName);
 
-	outputName = Utils::normalizeUTF8Path(outputName);
+	outputName = commonItems::normalizeUTF8Path(outputName);
 	theConfiguration.setOutputName(outputName);
 	LOG(LogLevel::Info) << "Using output name " << outputName;
 }
@@ -178,7 +178,7 @@ ConfigurationFile::ConfigurationFile(const std::string& filename)
 		throw std::runtime_error("Cound not open configuration file!");
 	}
 
-	theConfiguration.instantiate(confFile, Utils::DoesFolderExist, Utils::DoesFileExist);
+	theConfiguration.instantiate(confFile, commonItems::DoesFolderExist, commonItems::DoesFileExist);
 
 	confFile.close();
 }

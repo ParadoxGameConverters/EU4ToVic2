@@ -30,9 +30,9 @@ void convertEU4ToVic2(const mappers::VersionParser& versionParser)
 void deleteExistingOutputFolder()
 {
 	const auto outputFolder = "output/" + theConfiguration.getOutputName();
-	if (Utils::DoesFolderExist(outputFolder))
+	if (commonItems::DoesFolderExist(outputFolder))
 	{
-		if (!Utils::DeleteFolder(outputFolder))
+		if (!commonItems::DeleteFolder(outputFolder))
 		{
 			throw std::runtime_error("Could not delete pre-existing output folder: output/" + theConfiguration.getOutputName());
 		}

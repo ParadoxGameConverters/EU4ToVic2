@@ -19,7 +19,7 @@ EU4::ColonialRegions::ColonialRegions()
 		});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 
-	if (!Utils::DoesFileExist(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt"))
+	if (!commonItems::DoesFileExist(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt"))
 	{
 		Log(LogLevel::Warning) << "Could not find " << theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt";
 	}
@@ -30,9 +30,9 @@ EU4::ColonialRegions::ColonialRegions()
 
 	for (const auto& mod: theConfiguration.getEU4Mods())
 	{		
-		if (Utils::DoesFolderExist(mod + "/common/colonial_regions/"))
+		if (commonItems::DoesFolderExist(mod + "/common/colonial_regions/"))
 		{
-			auto filenames = Utils::GetAllFilesInFolder(mod + "/common/colonial_regions/");
+			auto filenames = commonItems::GetAllFilesInFolder(mod + "/common/colonial_regions/");
 			for (const auto& filename : filenames)
 			{
 				parseFile(mod + "/common/colonial_regions/" + filename);

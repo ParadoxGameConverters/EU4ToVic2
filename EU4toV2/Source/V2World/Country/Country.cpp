@@ -941,7 +941,7 @@ std::string V2::Country::getColonialRegion() const
 
 std::optional<std::string> V2::Country::getFileFromTag(const std::string& directoryPath, const std::string& tag) const
 {
-	auto foundFiles = Utils::GetAllFilesInFolder(directoryPath);
+	auto foundFiles = commonItems::GetAllFilesInFolder(directoryPath);
 	for (std::string file: foundFiles)
 	{
 		if (tag == file.substr(0, 3))

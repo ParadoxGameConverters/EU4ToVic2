@@ -10,7 +10,7 @@ mappers::FactoryInventionMapper::FactoryInventionMapper()
 {
 	LOG(LogLevel::Info) << "Parsing V2 Factory Inventions";
 	registerKeys();
-	auto filenames = Utils::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/inventions/");
+	auto filenames = commonItems::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/inventions/");
 	for (const auto& filename : filenames)
 	{
 		parseFile(theConfiguration.getVic2Path() + "/inventions/" + filename);

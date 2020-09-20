@@ -238,7 +238,7 @@ std::set<std::string> V2::Flags::determineAvailableFlags()
 
 	for (const auto& availableFlagFolder: availableFlagFolders)
 	{
-		auto availableFlagFiles = Utils::GetAllFilesInFolder(availableFlagFolder);
+		auto availableFlagFiles = commonItems::GetAllFilesInFolder(availableFlagFolder);
 		availableFlags.insert(availableFlagFiles.begin(), availableFlagFiles.end());
 	}
 
@@ -285,12 +285,12 @@ void V2::Flags::output() const
 
 void V2::Flags::createOutputFolders()
 {
-	if (!Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/gfx"))
+	if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/gfx"))
 	{
 		LOG(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName() << "/gfx";
 		exit(-1);
 	}
-	if (!Utils::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/gfx/flags"))
+	if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/gfx/flags"))
 	{
 		LOG(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName() << "/gfx/flags";
 		exit(-1);
@@ -310,11 +310,11 @@ void V2::Flags::copyFlags() const
 			for (auto availableFolderItr = availableFlagFolders.begin(); availableFolderItr != availableFlagFolders.end() && !flagFileFound; ++availableFolderItr)
 			{
 				const auto sourceFlagPath = *availableFolderItr + '/' + flagTag + flagFileSuffix;
-				flagFileFound = Utils::DoesFileExist(sourceFlagPath);
+				flagFileFound = commonItems::DoesFileExist(sourceFlagPath);
 				if (flagFileFound)
 				{
 					const auto destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + flagFileSuffix;
-					Utils::TryCopyFile(sourceFlagPath, destFlagPath);
+					commonItems::TryCopyFile(sourceFlagPath, destFlagPath);
 				}
 			}
 		}
@@ -364,7 +364,7 @@ void V2::Flags::createCustomFlags() const
 			auto sourceEmblemPath = baseFlagFolder + "/CustomEmblems/" + std::to_string(emblem) + suffix;
 			auto sourceFlagPath = baseFlagFolder + "/CustomBases/" + baseFlagStr + ".tga";
 
-			flagFileFound = Utils::DoesFileExist(sourceFlagPath) && Utils::DoesFileExist(sourceEmblemPath);
+			flagFileFound = commonItems::DoesFileExist(sourceFlagPath) && commonItems::DoesFileExist(sourceEmblemPath);
 			if (flagFileFound)
 			{
 				auto destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
@@ -382,7 +382,7 @@ void V2::Flags::createCustomFlags() const
 			}
 			else
 			{
-				if (!Utils::DoesFileExist(sourceFlagPath))
+				if (!commonItems::DoesFileExist(sourceFlagPath))
 					throw std::runtime_error("Could not find " + sourceFlagPath);
 				throw std::runtime_error("Could not find " + sourceEmblemPath);
 			}
@@ -425,7 +425,7 @@ void V2::Flags::createColonialFlags() const
 					throw std::runtime_error("No flag exists for " + V2Tag + "'s overlord " + overlord + ". Cannot create colony flag.");
 
 				auto overlordFlagPath = folderPath + std::string("/") + overlordFlag->second + ".tga";
-				flagFileFound = Utils::DoesFileExist(sourceFlagPath) && Utils::DoesFileExist(overlordFlagPath);
+				flagFileFound = commonItems::DoesFileExist(sourceFlagPath) && commonItems::DoesFileExist(overlordFlagPath);
 				if (flagFileFound)
 				{
 					auto destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
@@ -433,7 +433,7 @@ void V2::Flags::createColonialFlags() const
 				}
 				else
 				{
-					if (!Utils::DoesFileExist(sourceFlagPath))
+					if (!commonItems::DoesFileExist(sourceFlagPath))
 						throw std::runtime_error("Could not find " + sourceFlagPath);
 					throw std::runtime_error("Could not find " + overlordFlagPath);
 				}
@@ -441,11 +441,11 @@ void V2::Flags::createColonialFlags() const
 			else
 			{
 				auto sourceFlagPath = folderPath + std::string("/") + baseFlag + suffix;
-				flagFileFound = Utils::DoesFileExist(sourceFlagPath);
+				flagFileFound = commonItems::DoesFileExist(sourceFlagPath);
 				if (flagFileFound)
 				{
 					auto destFlagPath = "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + V2Tag + suffix;
-					Utils::TryCopyFile(sourceFlagPath, destFlagPath);
+					commonItems::TryCopyFile(sourceFlagPath, destFlagPath);
 				}
 				else
 				{

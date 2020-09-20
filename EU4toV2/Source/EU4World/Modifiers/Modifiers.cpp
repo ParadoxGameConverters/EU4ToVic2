@@ -25,9 +25,9 @@ void EU4::Modifiers::initialize()
 
 void EU4::Modifiers::processFolder(const std::string& folderName)
 {
-	if (Utils::DoesFolderExist(theConfiguration.getEU4Path() + "/common/" + folderName))
+	if (commonItems::DoesFolderExist(theConfiguration.getEU4Path() + "/common/" + folderName))
 	{
-		auto filenames = Utils::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/" + folderName + "/");
+		auto filenames = commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/" + folderName + "/");
 		for (const auto& filename : filenames)
 		{
 			parseFile(theConfiguration.getEU4Path() + "/common/" + folderName + "/" + filename);
@@ -35,9 +35,9 @@ void EU4::Modifiers::processFolder(const std::string& folderName)
 	}
 	for (const auto& modName : theConfiguration.getEU4Mods())
 	{
-		if (Utils::DoesFolderExist(modName + "/common/" + folderName))
+		if (commonItems::DoesFolderExist(modName + "/common/" + folderName))
 		{
-			auto filenames = Utils::GetAllFilesInFolder(modName + "/common/" + folderName + "/");
+			auto filenames = commonItems::GetAllFilesInFolder(modName + "/common/" + folderName + "/");
 			for (const auto& filename : filenames)
 			{
 				parseFile(modName + "/common/" + folderName + "/" + filename);

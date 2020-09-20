@@ -26,11 +26,11 @@ mappers::AdjacencyMapper::AdjacencyMapper()
 std::string mappers::AdjacencyMapper::getAdjacencyFilename()
 {
 	auto filename = theConfiguration.getVic2DocumentsPath() + "/map/cache/adjacencies.bin";
-	if (!Utils::DoesFileExist(filename))
+	if (!commonItems::DoesFileExist(filename))
 	{
 		LOG(LogLevel::Warning) << "Could not find " << filename << " - looking in install folder.";
 		filename = theConfiguration.getVic2Path() + "/map/cache/adjacencies.bin";
-		if (!Utils::DoesFileExist(filename)) throw std::runtime_error("Could not find " + filename + ". Try running Vic2 and converting again.");
+		if (!commonItems::DoesFileExist(filename)) throw std::runtime_error("Could not find " + filename + ". Try running Vic2 and converting again.");
 		LOG(LogLevel::Warning) << "No need to worry, it was there all along.";
 	}
 	return filename;

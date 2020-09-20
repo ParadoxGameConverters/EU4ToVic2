@@ -11,7 +11,7 @@ mappers::Continents::Continents()
 	for (const auto& mod: theConfiguration.getEU4Mods())
 	{
 		const auto& continentFile = mod + "/map/continent.txt";
-		if (Utils::DoesFileExist(continentFile)) parseFile(continentFile);
+		if (commonItems::DoesFileExist(continentFile)) parseFile(continentFile);
 	}
 	if (continentMap.empty()) parseFile(theConfiguration.getEU4Path() + "/map/continent.txt");
 	if (continentMap.empty()) LOG(LogLevel::Warning) << "No continent mappings found - may lead to problems later";

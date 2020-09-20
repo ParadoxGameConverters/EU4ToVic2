@@ -23,7 +23,7 @@ EU4::Country::Country(std::string countryTag,
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString theName(theStream);
 		name = theName.getString();
-		name = Utils::normalizeUTF8Path(name);
+		name = commonItems::normalizeUTF8Path(name);
 	});
 	registerKeyword("custom_name", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString theName(theStream);
