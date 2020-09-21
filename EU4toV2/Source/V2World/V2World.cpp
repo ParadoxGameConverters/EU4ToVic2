@@ -1895,9 +1895,16 @@ void V2::World::outputV2Mod() const
 	if (!theConfiguration.getVic2ModName().empty())
 	{
 		LOG(LogLevel::Info) << "<- Copying " + theConfiguration.getVic2ModName() + " files";
-		const auto& mod = theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName() + "/map";
-		const auto& dest = "output/" + theConfiguration.getOutputName() + "/map";
-		std::filesystem::copy(mod, dest, std::filesystem::copy_options::recursive);
+		const auto& modPath = theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName();
+		const auto& dest = "output/" + theConfiguration.getOutputName();
+
+		std::set<std::string> files;
+		files.insert("/map");
+
+		for (const auto& file: files)
+		{
+			std::filesystem::copy(modPath + file, dest + file, std::filesystem::copy_options::recursive);
+		}
 	}
 }
 
