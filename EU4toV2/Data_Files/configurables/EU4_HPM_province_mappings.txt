@@ -936,7 +936,8 @@
 	link = { eu4 = 796 v2 = 2308 }	# 0 "Arica -> Arica
 	link = { eu4 = 793 v2 = 2307 }	# 0 "Iquique -> Iquique
 	link = { eu4 = 2840 v2 = 2309 }	# 0 "Calama -> Calama
-	link = { eu4 = 2841 eu4 = 2839 v2 = 2305 }	# 0 "Antofagasta, 0 "Puna de Atacama -> Antofagasta
+	link = { eu4 = 2841 v2 = 2305 }	# 0 "Antofagasta -> Antofagasta
+	link = { eu4 = 2839 v2 = 1714 }	# 0 "Puna de Atacama -> Santa Rosa
 	link = { eu4 = 792 v2 = 2322 }	# 0 "Copiapo -> Copiapo
 	link = { eu4 = 2843 v2 = 2385 }	# 0 "La Rioja -> La Rioja
 	link = { eu4 = 791 v2 = 2374 v2 = 2375 }	# 0 "Catamarca -> Catamarca, Vinchina
@@ -1286,7 +1287,7 @@
 	link = { eu4 = 1762 v2 = 566 }	# 1 "Niederhessen -> Kassel
 	link = { eu4 = 69 v2 = 580 }	# 1 "Dortmund -> Dortmund
 	link = { eu4 = 86 v2 = 581 }	# 0 "Münster -> Munster
-	link = { eu4 = 2973 v2 = 542 }	# 0 "Meppen -> Lingen
+	link = { eu4 = 2973 v2 = 542 v2 = 1743 }	# 0 "Meppen -> Lingen, Nordhorn
 	link = { eu4 = 2972 eu4 = 4775 v2 = 585 v2 = 582 }	# MANY-TO-MANY: 0 "Paderborn, Bielefeld -> Detmold, Bielefeld
 	link = { eu4 = 56 v2 = 538 }	# 0 "Osnabrück -> Osnabruck
 	link = { eu4 = 55 v2 = 540 }	# 0 "Oldenburg -> Oldenburg
@@ -1800,7 +1801,7 @@
 	link = { eu4 = 1127 v2 = 1717 v2 = 1716 }	# 0 "Tuat -> Chenachene, Tindouf
 	link = { eu4 = 2472 eu4 = 2457 eu4 = 350 v2 = 1711 }	# 0 "Ouargla, 0 "Mzab, 0 "Laghouat -> Ouargla
 	link = { eu4 = 2456 v2 = 1712 }	# 0 "Touggourt -> Tuggurt
-	link = { eu4 = 1794 v2 = 1720 v2 = 1714 v2 = 1718 v2 = 1719 v2 = 1721 v2 = 1722 }	# 0 "Central Sahara -> Bechar, Santa Rosa, In Salah, Ilizi, In Guezzam, Tin Zawatene
+	link = { eu4 = 1794 v2 = 1720 v2 = 1718 v2 = 1719 v2 = 1721 v2 = 1722 }	# 0 "Central Sahara -> Bechar, In Salah, Ilizi, In Guezzam, Tin Zawatene
 	# Tunisia
 	link = { eu4 = 341 v2 = 1725 }	# 0 "Tunis -> Tunis
 	link = { eu4 = 2455 v2 = 1726 }	# 0 "Bizerte -> Bizerte
@@ -1809,10 +1810,9 @@
 	link = { eu4 = 2473 v2 = 1728 }	# 0 "Sousse -> Kairouan
 	link = { eu4 = 2453 eu4 = 353 eu4 = 2954 v2 = 1730 }	# 0 "Sfax, 0 "Tataouine, 0 "Djerba -> Gabes
 	# Libya
-	link = { eu4 = 2450 v2 = 1744 }	# 0 "Ghadames -> Sabha
+	link = { eu4 = 4567 eu4 = 2450 v2 = 1744 }	# 0 "Sabha,  0 "Ghadames -> Sabha
 	link = { eu4 = 354 eu4 = 2452 v2 = 1731 }	# 0 "Tripoli, 0 "Zuwarah -> Tripoli
 	link = { eu4 = 2449 v2 = 1732 }	# 0 "Jufra -> Ghayran
-	link = { eu4 = 4567 v2 = 1743 }	# 0 "Sabha -> Nordhorn
 	link = { eu4 = 2448 v2 = 1742 }	# 0 "Fezzan -> Wath
 	link = { eu4 = 2474 v2 = 1741 }	# 1 "Tajarhi -> Murzuk
 	link = { eu4 = 2451 v2 = 1733 }	# 0 "Thubaqt -> Misratah
