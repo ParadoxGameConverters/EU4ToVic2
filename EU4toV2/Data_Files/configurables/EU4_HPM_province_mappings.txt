@@ -529,7 +529,7 @@
 	link = { eu4 = 2586 eu4 = 2587 v2 = 53 }	# 0 "Tionontate, 0 "Odawa -> Barrie
 	link = { eu4 = 987 v2 = 54 v2 = 55 }	# 0 "Niagara -> Windsor, Hamilton
 	link = { eu4 = 2581 eu4 = 2580 eu4 = 992 eu4 = 1002 v2 = 63 }	# 0 "Timiskaming, 0 "Atikamekw, 0 "Algonquin, 0 "Abitibi -> Temiscaming
-	link = { eu4 = 999 v2 = 2593 }	# 0 "Cisasipi -> Fort George
+	link = { eu4 = 999 eu4 = 1000 v2 = 2593 }	# 0 "Cisasipi, 0 "Cree -> Fort George
 	link = { eu4 = 998 v2 = 2592 v2 = 2626 }	# 0 "Qikirmiut -> Ungava, Sakami
 	link = { eu4 = 2574 v2 = 76 v2 = 2627 v2 = 9 }	# 0 "Sikumiut -> Hopedale, Coudersport, Fort MacKenzie
 	link = { eu4 = 2575 eu4 = 997 v2 = 2625 }	# 0 "Naskapi, 0 "Chisedec -> North West River
@@ -994,7 +994,7 @@
 	link = { eu4 = 1098 v2 = 2129 v2 = 2132 v2 = 2130 }	# 0 "St. Helena -> Saint Helena, Tristan da Cunha, Ascension
 	# # Europe
 	# Greenland & Iceland
-	link = { eu4 = 1104 eu4 = 1105 eu4 = 1804 v2 = 251 v2 = 2591 v2 = 2632 v2 = 2636 }	# MANY-TO-MANY: 0 "Eiriksfjord, 0 "Vestbygden, 0 "Greenland -> Nuuk, Tranquebar, Kwangchowan, Aasiaat
+	link = { eu4 = 1104 eu4 = 1105 eu4 = 1804 v2 = 251 v2 = 2591 v2 = 2636 }	# MANY-TO-MANY: 0 "Eiriksfjord, 0 "Vestbygden, 0 "Greenland -> Nuuk, Tranquebar, Aasiaat
 	link = { eu4 = 370 eu4 = 371 v2 = 252 }	# 0 "Reykjavik, 0 "Akureyri -> Iceland
 	# British Isles
 	link = { eu4 = 1979 v2 = 253 }	# 0 "Färöarna -> Faroe Islands
@@ -1687,8 +1687,8 @@
 	link = { eu4 = 332 v2 = 896 }	# 0 "Marash -> Marash
 	link = { eu4 = 2304 v2 = 884 }	# 0 "Canik -> Giresun
 	link = { eu4 = 330 v2 = 882 }	# 0 "Trebizond -> Trabzon
-	link = { eu4 = 4310 v2 = 889 }	# 0 "Divrigi -> Malatya
-	link = { eu4 = 2303 v2 = 899 }	# 0 "Malatya -> Urfa
+	link = { eu4 = 2303 eu4 = 4310 v2 = 889 }	# 0 "Malatya, 0 "Divrigi -> Malatya
+	link = { eu4 = 2308 v2 = 899 }	# 1 "Urfa -> Urfa
 	link = { eu4 = 2305 v2 = 888 }	# 0 "Erzincan -> Erzincan
 	link = { eu4 = 4303 v2 = 886 }	# 0 "Oltu -> Ardahan
 	link = { eu4 = 331 v2 = 887 }	# 0 "Erzurum -> Erzurum
@@ -1701,7 +1701,8 @@
 	link = { eu4 = 418 v2 = 893 }	# 0 "Diyarbakir -> Diyarbakir
 	# Syria & Lebanon
 	link = { eu4 = 4298 v2 = 898 }	# 0 "Ayntab -> Antep
-	link = { eu4 = 407 eu4 = 2308 eu4 = 4292 v2 = 901 }	# 0 "Ar Raqqa, 1 "Urfa, 0 "Mardin -> Raqqah
+	link = { eu4 = 4292 v2 = 1813 }	# 0 "Mardin -> Hasakah
+	link = { eu4 = 407 v2 = 901 }	# 0 "Ar Raqqa -> Raqqah
 	link = { eu4 = 377 v2 = 897 }	# 0 "Aleppo -> Aleppo
 	link = { eu4 = 2313 v2 = 900 }	# 0 "Antioch -> Antakya
 	link = { eu4 = 378 v2 = 905 }	# 0 "Tarabulus -> Latakia
@@ -1798,7 +1799,7 @@
 	link = { eu4 = 351 eu4 = 2458 v2 = 1710 }	# 1 "Biskra, 0 "Hodna -> Biskra
 	link = { eu4 = 2459 v2 = 1713 }	# 0 "Titteri -> Laghwat
 	link = { eu4 = 2463 v2 = 1715 }	# 0 "Kasdir -> Naama
-	link = { eu4 = 1127 v2 = 1717 v2 = 1716 }	# 0 "Tuat -> Chenachene, Tindouf
+	link = { eu4 = 1127 v2 = 1716 }	# 0 "Tuat -> Tindouf
 	link = { eu4 = 2472 eu4 = 2457 eu4 = 350 v2 = 1711 }	# 0 "Ouargla, 0 "Mzab, 0 "Laghouat -> Ouargla
 	link = { eu4 = 2456 v2 = 1712 }	# 0 "Touggourt -> Tuggurt
 	link = { eu4 = 1794 v2 = 1720 v2 = 1718 v2 = 1719 v2 = 1721 v2 = 1722 }	# 0 "Central Sahara -> Bechar, In Salah, Ilizi, In Guezzam, Tin Zawatene
@@ -1810,7 +1811,7 @@
 	link = { eu4 = 2473 v2 = 1728 }	# 0 "Sousse -> Kairouan
 	link = { eu4 = 2453 eu4 = 353 eu4 = 2954 v2 = 1730 }	# 0 "Sfax, 0 "Tataouine, 0 "Djerba -> Gabes
 	# Libya
-	link = { eu4 = 4567 eu4 = 2450 v2 = 1744 }	# 0 "Sabha,  0 "Ghadames -> Sabha
+	link = { eu4 = 4567 eu4 = 2450 v2 = 1744 }	# 0 "Sabha, 0 "Ghadames -> Sabha
 	link = { eu4 = 354 eu4 = 2452 v2 = 1731 }	# 0 "Tripoli, 0 "Zuwarah -> Tripoli
 	link = { eu4 = 2449 v2 = 1732 }	# 0 "Jufra -> Ghayran
 	link = { eu4 = 2448 v2 = 1742 }	# 0 "Fezzan -> Wath
@@ -1890,7 +1891,7 @@
 	# Mali
 	link = { eu4 = 2271 eu4 = 1130 v2 = 1807 resettable = west_africa_interior }	# 0 "Azawagh, 0 "Tadmekka -> Tessalit
 	link = { eu4 = 2262 eu4 = 1133 eu4 = 2264 v2 = 1805 resettable = west_africa_interior }	# 0 "Karabara, 0 "Gao, 0 "Hombori -> Gao
-	link = { eu4 = 1128 v2 = 1806 resettable = west_africa_interior }	# 0 "Taudeni -> Bayuda
+	link = { eu4 = 1128 v2 = 1717 resettable = west_africa_interior }	# 0 "Taudeni -> Chenachene
 	link = { eu4 = 1129 eu4 = 2247 v2 = 2609 resettable = west_africa_interior }	# 0 "Azawad, 0 "Hodh -> Araouane
 	link = { eu4 = 2260 eu4 = 1132 v2 = 1803 resettable = west_africa_interior }	# 0 "Mema, 0 "Timbuktu -> Timbuktu
 	link = { eu4 = 2259 eu4 = 2261 eu4 = 1134 eu4 = 2263 v2 = 1804 resettable = west_africa_interior }	# 0 "Sah, 0 "Kala, 0 "Jenne, 0 "Haayre -> Bandiagara
@@ -1909,7 +1910,7 @@
 	link = { eu4 = 2273 eu4 = 2270 v2 = 1810 resettable = west_africa_interior }	# 0 "Ader, 0 "Dallol -> Dosso
 	link = { eu4 = 2269 v2 = 1808 resettable = west_africa_interior }	# 0 "Zarmaganda -> Niamey
 	link = { eu4 = 2268 eu4 = 1142 v2 = 1809 resettable = west_africa_interior }	# 0 "Aribanda, 0 "Dendi -> Say
-	link = { eu4 = 2272 eu4 = 2274 v2 = 1813 resettable = west_africa_interior }	# 0 "Azbin, 0 "Air -> Hasakah
+	link = { eu4 = 2272 eu4 = 2274 resettable = west_africa_interior }	# 0 "Azbin, 0 "Air -> DROPPED
 	link = { eu4 = 2275 v2 = 1812 resettable = west_africa_interior }	# 0 "Tenere -> Agades
 	link = { eu4 = 2277 v2 = 1817 resettable = west_africa_interior }	# 0 "Kawar -> Bilma
 	link = { eu4 = 2475 v2 = 1814 resettable = west_africa_interior }	# 0 "Djado -> Madama
@@ -2061,7 +2062,8 @@
 	# Sudan
 	link = { eu4 = 1232 v2 = 1833 }	# 0 "Suakin -> Suakin
 	link = { eu4 = 1229 eu4 = 2323 v2 = 1836 }	# 0 "Berber, 0 "Sahra an Nübyah -> Hayya
-	link = { eu4 = 1228 eu4 = 1220 eu4 = 2322 v2 = 1835 }	# 0 "Dongola, 0 "Bayuda, 0 "Wadi Halfa -> Dongola
+	link = { eu4 = 1228 eu4 = 2322 v2 = 1835 }	# 0 "Dongola, 0 "Wadi Halfa -> Dongola
+	link = { eu4 = 1220 v2 = 1806 }	# 0 "Bayuda -> Bayuda
 	link = { eu4 = 2797 v2 = 1837 }	# 0 "Shendy -> Atbara
 	link = { eu4 = 1226 v2 = 1829 }	# 0 "Beja -> Kassala
 	link = { eu4 = 1225 eu4 = 4033 v2 = 1830 }	# 0 "Butana, 0 "Al Qadarif -> Sennar
@@ -2553,7 +2555,7 @@
 	link = { eu4 = 667 v2 = 1496 v2 = 1493 }	# 0 "Canton -> Hong Kong, Canton
 	link = { eu4 = 668 v2 = 1498 }	# 0 "Macau -> Macao
 	link = { eu4 = 665 v2 = 1501 }	# 0 "Shiuhing -> Zhaoqing
-	link = { eu4 = 2159 eu4 = 2161 v2 = 1495 }	# 0 "Leichow, 0 "Limchow -> Maoming
+	link = { eu4 = 2159 eu4 = 2161 v2 = 1495 v2 = 2632 }	# MANY-TO-MANY: 0 "Leichow, 0 "Limchow -> Maoming, Kwangchowan
 	link = { eu4 = 666 eu4 = 2160 v2 = 1499 }	# 0 "Kingchow, 0 "Ngaichow -> Hainan
 	# Taiwan resettable region taiwan
 	link = { eu4 = 2155 eu4 = 2154 eu4 = 738 v2 = 1485 v2 = 2562 v2 = 2681 resettable = taiwan }	# MANY-TO-MANY: 0 "Middag, 0 "Kelang, 0 "Sakam -> Tainan, Taitung, Taipei
