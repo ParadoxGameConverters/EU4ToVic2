@@ -31,15 +31,31 @@ mappers::StateMapper::StateMapper(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
+mappers::StateMapper::StateMapper(std::string& filename)
+{
+	registerKeys();
+	parseFile(filename);
+	clearRegisteredKeywords();
+}
+
 void mappers::StateMapper::registerKeys()
 {
-	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& unused, std::istream& theStream) 
+	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& id, std::istream& theStream) 
 		{
 			const commonItems::intList provinceList(theStream);
 
+			std::regex stateNum("([A-Z]{3}_)([0-9]+)");
+			std::smatch sm;
+			std::regex_search(id, sm, stateNum);
+			const auto& stateID = std::stoi(sm[2].str());
+
 			std::set<int> provinces;
 			for (auto province : provinceList.getInts()) provinces.insert(province);
-			for (auto province : provinces) stateProvincesMap.insert(std::make_pair(province, provinces));
+			for (auto province : provinces)
+			{
+				stateProvincesMap.insert(std::make_pair(province, provinces));
+				stateMap.insert(std::make_pair(stateID, provinces));
+			}
 		});
 }
 
