@@ -33,6 +33,7 @@ class State
 	void rebuildNavalBase();
 	void setProvincesAsTerritories();
 	void setProvincesAsStates();
+	void setProvinceOwnership();
 
   private:
 	int id = 0;

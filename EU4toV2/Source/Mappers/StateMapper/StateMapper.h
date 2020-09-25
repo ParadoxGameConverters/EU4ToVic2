@@ -12,9 +12,10 @@ namespace mappers
 	public:
 		StateMapper();
 		explicit StateMapper(std::istream& theStream);
-		explicit StateMapper(std::string& filename);
+		explicit StateMapper(const std::string& filename);
 		
 		[[nodiscard]] std::set<int> getAllProvincesInState(int province) const;
+		[[nodiscard]] std::set<int> getProvincesByStateID(int stateID) const;
 		[[nodiscard]] const auto& getStateMap() const { return stateMap; }
 
 	private:

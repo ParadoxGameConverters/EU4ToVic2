@@ -119,3 +119,11 @@ void V2::State::rebuildNavalBase()
 	if (prov)
 		prov->setNavalBaseLevel(level);
 }
+
+void V2::State::setProvinceOwnership()
+{
+	for (auto& province: provinces)
+	{
+		province->setStateID(getID());
+	}
+}

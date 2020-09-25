@@ -33,6 +33,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 	});
 	registerKeyword("Vic2directory", [this, DoesFolderExist, doesFileExist](std::istream& theStream) {
 		Vic2Path = commonItems::getString(theStream);
+		vanillaVic2Path = Vic2Path; //vanillaWorld needs it unchanged; if !vic2Mod.empty() Vic2Path is changed
 		verifyVic2Path(Vic2Path, DoesFolderExist, doesFileExist);
 		LOG(LogLevel::Info) << "Vic2 path: " << Vic2Path;
 	});

@@ -2,12 +2,15 @@
 #include "../EU4World/World.h"
 #include "../Helpers/TechValues.h"
 #include "../Mappers/Pops/PopMapper.h"
+#include "../Mappers/StateMapper/StateMapper.h"
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../Mappers/VersionParser/VersionParser.h"
 #include "CommonFunctions.h"
 #include "Configuration.h"
 #include "CultureGroups/CultureGroup.h"
+#include "Events/Events.h"
 #include "Flags/Flags.h"
+#include "Province/ProvinceNameParser.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include <cfloat>
@@ -140,6 +143,13 @@ V2::World::World(const EU4::World& sourceWorld,
 	LOG(LogLevel::Info) << "-> Converting country flags";
 	convertCountryFlags();
 	Log(LogLevel::Progress) << "71 %";
+
+	if (!theConfiguration.getOutputName().empty())
+	{
+		LOG(LogLevel::Debug) << "Converting events";
+		convertEvents();
+		Log(LogLevel::Progress) << "72 %";
+	}
 
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	output(versionParser);
@@ -595,18 +605,8 @@ std::set<std::string> V2::World::discoverProvinceFilenames()
 	}
 	if (provinceFilenames.empty())
 	{
-		if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty()
-			&& commonItems::DoesFolderExist(theConfiguration.getVic2ModPath() + "/" + mod + "/history/provinces"))
-		{
-			provinceFilenames = commonItems::GetAllFilesInFolderRecursive(
-				theConfiguration.getVic2ModPath() + "/" + mod + "/history/provinces");
-		}
-		else
-		{
-			provinceFilenames = commonItems::GetAllFilesInFolderRecursive(
+		provinceFilenames = commonItems::GetAllFilesInFolderRecursive(
 				theConfiguration.getVic2Path() + "/history/provinces");
-		}
-		provinceFilenames = commonItems::GetAllFilesInFolderRecursive(theConfiguration.getVic2Path() + "/history/provinces");
 	}
 
 	return provinceFilenames;
@@ -1149,6 +1149,7 @@ void V2::World::setupStates()
 		}
 
 		newState->rebuildNavalBase();
+		newState->setProvinceOwnership();
 		const auto& iter2 = countries.find(owner);
 		if (iter2 != countries.end())
 		{
@@ -1571,6 +1572,11 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 
 	outputV2Mod();
 	outProvLoc();
+	outputStateMap(theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName() + "/map/region.txt",
+		 "output/" + theConfiguration.getOutputName() + "/region.txt");
+
+	LOG(LogLevel::Info) << "<- Outputting events";
+	outEvents();
 
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
@@ -1913,9 +1919,344 @@ void V2::World::outProvLoc() const
 	LOG(LogLevel::Info) << "<- Outputting province localisation";
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/localisation/00_provinces.csv");
 	if (!output.is_open())
-		throw std::runtime_error("Could not create 00_provinces.csv");
+		Log(LogLevel::Warning) << "Could not create 00_provinces.csv";
 	for (const auto& province: provinceNameParser.getProvinceNames())
 	{
 		output << "PROV" << province.first << ";" << province.second << ";;;;;;;;;;;;;;;;;;;;;;x;;;;;;\n";
+	}
+}
+
+void V2::World::convertEvents()
+{
+	drawProvinceMap();
+	drawStateMap();
+	outStateMap("output/state_map.txt");
+	outProvinceMap("output/province_map.txt");
+
+	LOG(LogLevel::Debug) << "Loading event files";
+	std::set<std::string> evtFiles;
+	if (commonItems::DoesFolderExist("blankMod/output/events"))
+	{
+		evtFiles = commonItems::GetAllFilesInFolder("blankMod/output/events");
+	}
+	for (const auto& evtFile: evtFiles)
+	{
+		LOG(LogLevel::Debug) << " -> " << evtFile;
+		Events eventsFile("blankMod/output/events/" + evtFile);
+		eventsFile.updateEvents(stateMap, provinceMap);
+		for (const auto& theEvents: eventsFile.getEvents())
+		{
+			events.insert(make_pair(evtFile, theEvents));
+		}
+	}
+}
+
+void V2::World::drawProvinceMap()
+{
+	std::ofstream output("output/provinceMap.log");
+	if (!output.is_open())
+		Log(LogLevel::Debug) << "Could not provinceMap.log";
+
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+	{
+		LOG(LogLevel::Debug) << "Drawing province map (V2 -> " << mod << ")";
+		const auto& vanillaProvs = vanillaWorld.getProvinces();
+		//Parse vanilla mappings
+		const auto& vanillaMapper = vanillaWorld.getProvinceMapper();
+		//Import mod province localisation
+		//const auto& modLocalisation = vanillaWorld.getProvinceNameParser();
+		const auto& locProvs = provinceNameParser.getProvinceNames();
+
+		//All that are not localised in the mod map to themselves
+		mapUnlocalized(vanillaProvs, locProvs, output);
+		//Provinces mapped to the same eu4 province
+		mapUnchanged(vanillaProvs, vanillaMapper, provinceMapper, output);
+		//Process all remaining
+		mapLeftovers(vanillaProvs, vanillaMapper, provinceMapper, output);
+
+		for (const auto& province: vanillaProvs)
+		{
+			int origProvinceID = province;
+			if (provinceMap.find(origProvinceID) != provinceMap.end())
+				continue;
+			output << "Original province:\t" << province << "\tUnmapped\n";
+		}
+	}
+}
+
+void V2::World::drawStateMap()
+{
+	std::ofstream output("output/stateMap.log");
+	if (!output.is_open())
+		Log(LogLevel::Debug) << "Could not create stateMap.log";
+
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+	{
+		LOG(LogLevel::Debug) << "Drawing state map (V2 -> " << mod << ")";
+		const auto& vanillaStates = vanillaWorld.getStateMapper().getStateMap();
+
+		for (const auto& state: vanillaStates)
+		{
+			int origStateID = state.first;
+			output << "Original state:\t" << origStateID << " -> (";
+			int modStateID;
+
+			if (const auto& stateProvinces = state.second; !stateProvinces.empty())
+			{
+				int chosenProvince;
+				if (std::find(stateProvinces.begin(), stateProvinces.end(), origStateID) != stateProvinces.end())
+				{
+					chosenProvince = origStateID;
+				}
+				else
+				{
+					chosenProvince = *stateProvinces.begin();
+				}
+				output << " " << chosenProvince;
+				int modProvince = provinceMap.find(chosenProvince)->second;
+				output << " -> " << modProvince;
+				for (const auto& state: stateMapper.getStateMap())
+				{
+					const auto& provList = state.second;
+					if (std::find(provList.begin(), provList.end(), modProvince) != provList.end())
+					{
+						modStateID = state.first;
+						break;
+					}
+				}
+				addStateMapping(origStateID, modStateID);
+			}
+			output << " ) ->\t" << modStateID << "\n";
+		}
+	}
+}
+
+void V2::World::outputStateMap(std::string srcFile, std::string outFile) const
+{
+	const mappers::StateMapper map(srcFile);
+
+	LOG(LogLevel::Debug) << "Outputting states to " + outFile;
+	std::ofstream output(outFile);
+	if (!output.is_open())
+		Log(LogLevel::Debug) << "Could not create " + outFile;
+
+	for (const auto& state: map.getStateMap())
+	{
+		output << "ID:\t" << state.first << "\tProvinces: ";
+		for (const auto& province: state.second)
+		{
+			output << " " << province;
+		}
+		output << "\n";
+	}
+}
+
+void V2::World::outStateMap(std::string outFile) const
+{
+	verifyMap(stateMap);
+
+	Log(LogLevel::Debug) << "Outputting state map";
+	std::ofstream output(outFile);
+	if (!output.is_open())
+		Log(LogLevel::Debug) << "Could not create " + outFile;
+	for (const auto& mapping: stateMap)
+	{
+		output << "V2 state:\t" << mapping.first << "\tMod state:\t" << mapping.second << "\n";
+	}
+}
+
+void V2::World::outProvinceMap(std::string outFile) const
+{
+	verifyMap(provinceMap);
+	
+	Log(LogLevel::Debug) << "Outputting province map";
+	std::ofstream output(outFile);
+	if (!output.is_open())
+		Log(LogLevel::Debug) << "Could not create " + outFile;
+	for (const auto& mapping: provinceMap)
+	{
+		output << "V2 province:\t" << mapping.first << "\tMod province:\t" << mapping.second << "\n";
+	}
+}
+
+void V2::World::outEvents() const
+{
+	for (const auto& event: events)
+	{
+		std::ofstream output("output/" + theConfiguration.getOutputName() + "/events/" + event.first);
+		if (!output.is_open())
+			Log(LogLevel::Warning) << "Could not create " + event.first;
+		output << event.second;
+	}
+}
+
+void V2::World::verifyMap(std::map<int, int> theMap) const
+{
+	bool mapChecksOut = true;
+	auto mapItr = theMap.begin();
+	const auto& mapEnd = theMap.end();
+
+	for (mapItr; mapItr != mapEnd; ++mapItr)
+	{
+		if (theMap.count(mapItr->first) > 1)
+		{
+			mapChecksOut = false;
+			break;
+		}
+		if (!mapChecksOut) break;
+	}
+	if (mapChecksOut) Log(LogLevel::Debug) << "Map checked out";
+	else Log(LogLevel::Debug) << "Map didn't check out";
+}
+
+void V2::World::mapUnlocalized(const std::vector<int>& vanillaProvs,
+	 std::map<int, std::string> locProvs,
+	 std::ofstream& output)
+{
+	for (const auto& province: vanillaProvs)
+	{
+		int origProvinceID = province;
+		output << "Original province:\t" << origProvinceID << " ->";
+		int modProvinceID = 0;
+
+		if (locProvs.find(origProvinceID) == locProvs.end())
+		{
+			modProvinceID = origProvinceID;
+			addProvinceMapping(origProvinceID, modProvinceID);
+		}
+		if (modProvinceID > 0)
+		{
+			output << " " << modProvinceID << " Unlocalized province";
+		}
+		output << "\n";
+	}
+}
+
+void V2::World::mapUnchanged(const std::vector<int>& vanillaProvs,
+	 const mappers::ProvinceMapper& vanillaMapper,
+	 const mappers::ProvinceMapper& modMapper,
+	 std::ofstream& output)
+{
+	for (const auto& province: vanillaProvs)
+	{
+		int origProvinceID = province;
+		if (provinceMap.find(origProvinceID) != provinceMap.end())
+			continue;
+
+		output << "Original province:\t" << origProvinceID << " ->";
+		int modProvinceID = 0;
+
+		//Get all eu4 provinces that map to this one
+		const auto& eu4Provs = vanillaMapper.getEU4ProvinceNumbers(origProvinceID);
+
+		//For each one of them
+		for (int eu4Prov: eu4Provs)
+		{
+			//Find all mod provinces that they map to
+			if (const auto& modProvs = modMapper.getVic2ProvinceNumbers(eu4Prov); 
+				!modProvs.empty())
+			{
+				output << " " << eu4Prov << " (";
+				for (const auto& modProv: modProvs)
+				{
+					output << " " << modProv;
+				}
+				output << " )";
+
+				//If original ID is there, map it to itself
+				if (const auto& modProvsItr = std::find(modProvs.begin(), modProvs.end(), origProvinceID);
+					 modProvsItr != modProvs.end())
+				{
+					modProvinceID = *modProvsItr;
+					addProvinceMapping(origProvinceID, modProvinceID);
+				}
+			}
+		}
+		if (modProvinceID > 0)
+		{
+			output << " -> " << modProvinceID << " Unchanged ID";
+		}
+		output << "\n";
+	}
+}
+
+void V2::World::mapLeftovers(const std::vector<int>& vanillaProvs,
+	 const mappers::ProvinceMapper& vanillaMapper,
+	 const mappers::ProvinceMapper& modMapper,
+	 std::ofstream& output)
+{
+	//Cycle through all the provinces imported from Vanilla V2
+	for (const auto& province: vanillaProvs)
+	{
+		int origProvinceID = province;
+		if (provinceMap.find(origProvinceID) != provinceMap.end())
+			continue;
+
+		output << "Original province:\t" << origProvinceID << " ->";
+		int modProvinceID = 0;
+		//Get all eu4 provinces that map to this one
+		const auto& eu4Provs = vanillaMapper.getEU4ProvinceNumbers(origProvinceID);
+
+		int fallback;
+		//If original province can't be mapped, map it to the first one found in first mapping
+		for (int eu4Prov: eu4Provs)
+		{
+			if (eu4Prov > 0)
+			{
+				for (int vic2Prov: modMapper.getVic2ProvinceNumbers(eu4Prov))
+				{
+					if (vic2Prov > 0)
+						fallback = vic2Prov;
+				}
+			}
+		}
+
+		//For each one of them
+		for (int eu4Prov: eu4Provs)
+		{
+			//Find all mod provinces that they map to
+			if (const auto& modProvs = modMapper.getVic2ProvinceNumbers(eu4Prov);
+				 !modProvs.empty())
+			{
+				output << " " << eu4Prov << " (";
+				for (const auto& modProv: modProvs)
+				{
+					output << " " << modProv;
+				}
+				output << " )";
+
+				bool isMapped = false;
+				auto modProvsItr = modProvs.begin();
+				const auto& e = modProvs.end();
+
+				//Check all mod provinces mapped to eu4 province
+				for (const auto& modProv: modProvs)
+				{
+					//Check if it's mapped
+					for (const auto& mapping: provinceMap)
+					{
+						if (mapping.second == modProv)
+						{
+							isMapped = true;
+						}
+					}
+					if (!isMapped)
+					{
+						modProvinceID = modProv;
+						addProvinceMapping(origProvinceID, modProvinceID);
+						output << " -> " << modProvinceID << " Unmapped province\n";
+						break;
+					}
+				}
+				if (!isMapped)
+					break;
+			}
+		}
+
+		if (provinceMap.find(origProvinceID) == provinceMap.end())
+		{
+			addProvinceMapping(origProvinceID, fallback);
+			output << " -> " << fallback << " Fallback\n";
+		}
 	}
 }

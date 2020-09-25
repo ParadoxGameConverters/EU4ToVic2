@@ -454,6 +454,7 @@
     <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp" />
+    <ClCompile Include="Source\V2World\Events\Events.cpp" />
     <ClCompile Include="Source\V2World\Flags\Flags.cpp" />
     <ClCompile Include="Source\V2World\Flags\FlagUtils.cpp" />
     <ClCompile Include="Source\V2World\Leader\Leader.cpp" />
@@ -485,6 +486,7 @@
     <ClCompile Include="Source\V2World\Reforms\UncivReforms.cpp" />
     <ClCompile Include="Source\V2World\State\State.cpp" />
     <ClCompile Include="Source\V2World\V2World.cpp" />
+    <ClCompile Include="Source\V2World\VanillaWorld\VanillaWorld.cpp" />
     <ClCompile Include="Source\V2World\War\War.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -646,6 +648,7 @@
     <ClInclude Include="Source\V2World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Relation.h" />
+    <ClInclude Include="Source\V2World\Events\Events.h" />
     <ClInclude Include="Source\V2World\Factory\Factory.h" />
     <ClInclude Include="Source\V2World\Flags\Flags.h" />
     <ClInclude Include="Source\V2World\Flags\FlagUtils.h" />
@@ -662,6 +665,7 @@
     <ClInclude Include="Source\V2World\Reforms\UncivReforms.h" />
     <ClInclude Include="Source\V2World\State\State.h" />
     <ClInclude Include="Source\V2World\V2World.h" />
+    <ClInclude Include="Source\V2World\VanillaWorld\VanillaWorld.h" />
     <ClInclude Include="Source\V2World\War\War.h" />
   </ItemGroup>
   <ItemGroup>
