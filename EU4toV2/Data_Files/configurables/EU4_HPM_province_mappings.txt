@@ -956,8 +956,8 @@
 	link = { eu4 = 2884 v2 = 2465 }	# 0 "Povos das Missoes -> Passo Fundo
 	link = { eu4 = 2879 v2 = 2466 v2 = 2467 }	# 0 "Santa Tecla -> Santa Maria, Alegrete
 	link = { eu4 = 2857 v2 = 2463 v2 = 2464 }	# 0 "Rio Grande do Sul -> Porto Alegre, Pelotas
-	link = { eu4 = 2852 v2 = 2346 }	# 0 "Salto -> Colonia
-	link = { eu4 = 772 eu4 = 2851 v2 = 2345 }	# 0 "Uruguay, 0 "Colonia -> Paysandu
+	link = { eu4 = 2851 v2 = 2346 }	# 0 "Colonia -> Colonia
+	link = { eu4 = 772 eu4 = 2852 v2 = 2345 }	# 0 "Uruguay, 0 "Salto -> Paysandu
 	link = { eu4 = 2850 v2 = 2344 }	# 0 "Montevideo -> Montevideo
 	link = { eu4 = 773 v2 = 2347 }	# 0 "Banda Oriental -> Melo
 	link = { eu4 = 2848 v2 = 2360 v2 = 2359 v2 = 2357 v2 = 2361 }	# 0 "Santa Fe -> Parana, Colon, Curuzu Cuatia, Santa Espiritu
@@ -989,8 +989,8 @@
 	link = { eu4 = 781 v2 = 2398 }	# 0 "Puerto Deseado -> Puerto Deseado
 	link = { eu4 = 2869 v2 = 2399 }	# 0 "Florida Blanca -> Rio Galleagos
 	link = { eu4 = 782 v2 = 2400 v2 = 2335 }	# 0 "Tierra del Fuego -> Rio Grande, Porvenir
-	link = { eu4 = 1095 v2 = 2131 }	# 0 "Falklands -> Falkland & South Georgia
-	link = { eu4 = 2025 v2 = 2133 }	# South Georgia -> Gizab
+	link = { eu4 = 1095 eu4 = 2025 v2 = 2131 }	# 0 "Falklands, South Georgia -> Falkland & South Georgia
+	link = { eu4 = 2225 v2 = 2133 }	# 0 "Bamyan -> Gizab
 	link = { eu4 = 1098 v2 = 2129 v2 = 2132 v2 = 2130 }	# 0 "St. Helena -> Saint Helena, Tristan da Cunha, Ascension
 	# # Europe
 	# Greenland & Iceland
@@ -2113,8 +2113,7 @@
 	link = { eu4 = 1102 v2 = 2125 }	# 0 "Mauritius -> Mauritius
 	link = { eu4 = 1103 v2 = 2126 }	# 0 "Île Bourbon -> Bourbon
 	link = { eu4 = 574 v2 = 1320 }	# 0 "The Andamans -> Andaman Islands
-	link = { eu4 = 1999 v2 = 2406 }	# 0 "Cocos Island -> Penghu
-	link = { eu4 = 1998 v2 = 2244 }	# 0 "Christmas Island -> Christimas & Cocos
+	link = { eu4 = 1998 eu4 = 1999 v2 = 2244 }	# 0 "Christmas Island, 0 "Cocos Island -> Christimas & Cocos
 	# Indo Wasteland
 	link = { eu4 = 1789 resettable = new_guinea }	# 0 "Papua -> DROPPED
 	link = { eu4 = 2740 resettable = indonesia }	# 0 "Borneo -> DROPPED
@@ -2185,7 +2184,7 @@
 	link = { eu4 = 451 v2 = 1209 }	# 0 "Kabul -> Kabul
 	link = { eu4 = 446 v2 = 1212 }	# 0 "Herat -> Herat
 	link = { eu4 = 2228 eu4 = 450 v2 = 1211 }	# 0 "Maymana, 0 "Balkh -> Balkh
-	link = { eu4 = 2225 eu4 = 449 v2 = 1213 }	# 0 "Bamyan, 0 "Ghor -> Bamyan
+	link = { eu4 = 449 v2 = 1213 }	# 0 "Ghor -> Bamyan
 	link = { eu4 = 2227 eu4 = 452 v2 = 1210 }	# 0 "Kunduz, 0 "Badakhshan -> Kunduz
 	# Nepal, Bhutan, Tibet
 	link = { eu4 = 554 eu4 = 2070 eu4 = 4492 eu4 = 4485 v2 = 1327 }	# 0 "Baisi Rajya, 0 "Chaubisi Rajya, 0 "Doti, 0 "Palpa -> Jumla
@@ -2558,7 +2557,7 @@
 	link = { eu4 = 2159 eu4 = 2161 v2 = 1495 v2 = 2632 }	# MANY-TO-MANY: 0 "Leichow, 0 "Limchow -> Maoming, Kwangchowan
 	link = { eu4 = 666 eu4 = 2160 v2 = 1499 }	# 0 "Kingchow, 0 "Ngaichow -> Hainan
 	# Taiwan resettable region taiwan
-	link = { eu4 = 2155 eu4 = 2154 eu4 = 738 v2 = 1485 v2 = 2562 v2 = 2681 resettable = taiwan }	# MANY-TO-MANY: 0 "Middag, 0 "Kelang, 0 "Sakam -> Tainan, Taitung, Taipei
+	link = { eu4 = 2155 eu4 = 2154 eu4 = 738 v2 = 1485 v2 = 2562 v2 = 2681 v2 = 2406 resettable = taiwan }	# MANY-TO-MANY: 0 "Middag, 0 "Kelang, 0 "Sakam -> Tainan, Taitung, Taipei, Penghu
 	# Asian Wasteland
 	link = { eu4 = 1784 eu4 = 1786 eu4 = 2194 eu4 = 1785 eu4 = 2200 }	# 0 "Tian Shan, 0 "Takla Makan, 1 "Qilian, 0 "Pamir, 0 "Suleiman Range -> DROPPED
 	# # Oceania
