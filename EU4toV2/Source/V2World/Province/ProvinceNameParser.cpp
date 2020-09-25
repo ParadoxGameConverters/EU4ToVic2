@@ -34,6 +34,18 @@ V2::ProvinceNameParser::ProvinceNameParser()
 	}
 }
 
+V2::ProvinceNameParser::ProvinceNameParser(std::string folder)
+{
+	if (Utils::DoesFolderExist(folder))
+	{
+		const auto& locFiles = Utils::GetAllFilesInFolderRecursive(folder);
+		for (const auto& locFile: locFiles)
+		{
+			importProvinceLocalizations(folder + "/" + locFile);
+		}
+	}
+}
+
 void V2::ProvinceNameParser::importProvinceLocalizations(const std::string& file)
 {
 	std::ifstream locFile(fs::u8path(file));

@@ -10,6 +10,7 @@ namespace V2
 	{
 	public:
 		ProvinceNameParser();
+		explicit ProvinceNameParser(std::string folder);
 		
 		[[nodiscard]] std::optional<std::string> getProvinceName(int provID) const;
 		[[nodiscard]] const auto& getProvinceNames() const { return provinceNames; }
