@@ -36,11 +36,6 @@ V2::Province::Province(std::string _filename,
 	{
 		details = mappers::ProvinceDetailsMapper("blankMod/output/history/provinces/" + filename).getProvinceDetails();
 	}
-	else if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
-	{
-		const auto& modPath = theConfiguration.getVic2ModPath() + "/" + mod;
-		details = mappers::ProvinceDetailsMapper(modPath + "/history/provinces/" + filename).getProvinceDetails();	
-	}
 	else
 	{
 		details = mappers::ProvinceDetailsMapper(theConfiguration.getVic2Path() + "/history/provinces/" + filename).getProvinceDetails();

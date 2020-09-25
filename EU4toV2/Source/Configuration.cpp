@@ -114,6 +114,11 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 	parseStream(theStream);
 	clearRegisteredKeywords();
 	setOutputName();
+	if (!vic2Mod.empty())
+	{
+		Vic2Path = Vic2ModPath + "/" + vic2Mod;
+		Vic2DocumentsPath += "/" + vic2Mod;
+	}
 	Log(LogLevel::Progress) << "3 %";
 }
 

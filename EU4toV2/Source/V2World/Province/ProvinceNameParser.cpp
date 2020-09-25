@@ -11,22 +11,10 @@ V2::ProvinceNameParser::ProvinceNameParser()
 	{
 		importProvinceLocalizations("./blankMod/output/localisation/text.csv");
 	}
-	else if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
-	{
-		const auto& modLocPath = theConfiguration.getVic2ModPath() + "/" + mod + "/localisation";
-		if (Utils::DoesFolderExist(modLocPath))
-		{
-			const auto& locFiles = Utils::GetAllFilesInFolderRecursive(modLocPath);
-			for (const auto& locFile: locFiles)
-			{
-				importProvinceLocalizations(modLocPath + "/" + locFile);
-			}
-		}
-	}
 	const auto& provLocPath = theConfiguration.getVic2Path() + "/localisation";
-	if (Utils::DoesFolderExist(provLocPath))
+	if (commonItems::DoesFolderExist(provLocPath))
 	{
-		const auto& locFiles = Utils::GetAllFilesInFolderRecursive(provLocPath);
+		const auto& locFiles = commonItems::GetAllFilesInFolderRecursive(provLocPath);
 		for (const auto& locFile: locFiles)
 		{
 			importProvinceLocalizations(provLocPath + "/" + locFile);
@@ -36,9 +24,9 @@ V2::ProvinceNameParser::ProvinceNameParser()
 
 V2::ProvinceNameParser::ProvinceNameParser(std::string folder)
 {
-	if (Utils::DoesFolderExist(folder))
+	if (commonItems::DoesFolderExist(folder))
 	{
-		const auto& locFiles = Utils::GetAllFilesInFolderRecursive(folder);
+		const auto& locFiles = commonItems::GetAllFilesInFolderRecursive(folder);
 		for (const auto& locFile: locFiles)
 		{
 			importProvinceLocalizations(folder + "/" + locFile);
