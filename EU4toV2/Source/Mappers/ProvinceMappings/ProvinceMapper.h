@@ -13,10 +13,12 @@ class ProvinceMapper: commonItems::parser
   public:
 	ProvinceMapper();
 	explicit ProvinceMapper(std::istream& mainStream, std::istream& colonialStream, const Configuration& testConfiguration);
+	explicit ProvinceMapper(const std::string& file);
 
 	[[nodiscard]] std::set<int> getVic2ProvinceNumbers(int eu4ProvinceNumber) const;
 	[[nodiscard]] std::set<int> getEU4ProvinceNumbers(int vic2ProvinceNumber) const;
 	[[nodiscard]] std::optional<std::string> getColonialRegionForProvince(int province) const;
+	[[nodiscard]] const auto& getVic2ToEU4ProvinceMap() const { return vic2ToEU4ProvinceMap; }
 
   private:
 	void registerKeys();

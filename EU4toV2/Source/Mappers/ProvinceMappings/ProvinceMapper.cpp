@@ -39,6 +39,17 @@ mappers::ProvinceMapper::ProvinceMapper(std::istream& mainStream, std::istream& 
 	createMappings(mappings);
 }
 
+mappers::ProvinceMapper::ProvinceMapper(const std::string& file)
+{
+	LOG(LogLevel::Info) << "Parsing " + file;
+	registerKeys();
+	parseFile(file);
+	clearRegisteredKeywords();
+
+	const auto& mappings = getBestMappingsVersion(theConfiguration.getEU4Version());
+	createMappings(mappings);
+}
+
 void mappers::ProvinceMapper::registerKeys()
 {
 	registerRegex(R"([\d.]+)", [this](const std::string& versionString, std::istream& theStream) {
