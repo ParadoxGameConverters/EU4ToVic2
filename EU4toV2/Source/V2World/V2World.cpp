@@ -1901,15 +1901,40 @@ void V2::World::outputV2Mod() const
 	if (!theConfiguration.getVic2ModName().empty())
 	{
 		LOG(LogLevel::Info) << "<- Copying " + theConfiguration.getVic2ModName() + " files";
-		const auto& modPath = theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName();
-		const auto& dest = "output/" + theConfiguration.getOutputName();
+		const auto& mod = theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName();
+		const auto& output = "output/" + theConfiguration.getOutputName();
 
-		std::set<std::string> files;
-		files.insert("/map");
+		// /common
+		std::filesystem::copy_file(mod + "/common/goods.txt", output + "/common/goods.txt");
+		std::filesystem::copy_file(mod + "/common/production_types.txt", output + "/common/production_types.txt");
+		std::filesystem::copy_file(mod + "/common/pop_types.txt", output + "/common/pop_types.txt");
 
-		for (const auto& file: files)
+		//	/map
+		std::filesystem::copy(mod + "/map", output + "/map", std::filesystem::copy_options::recursive);
+
+		//	/gfx/interface
+		const auto& leaders = commonItems::GetAllFilesInFolder(mod + "/gfx/interface/leaders");
+		for (const auto& leader: leaders)
 		{
-			std::filesystem::copy(modPath + file, dest + file, std::filesystem::copy_options::recursive);
+			std::filesystem::copy_file(mod + "/gfx/interface/leaders/" + leader, output + "/gfx/interface/leaders/" + leader, std::filesystem::copy_options::recursive);
+		}
+		const auto& gfxInterfaceFiles = commonItems::GetAllFilesInFolder(mod + "/gfx/interface");
+		for (const auto& file: gfxInterfaceFiles)
+		{
+			if (file != "icon_religion.dds")
+			{
+				std::filesystem::copy_file(mod + "/gfx/interface/" + file, output + "/gfx/interface/" + file);
+			}
+		}
+
+		//	/interface
+		const auto& interfaceFiles = commonItems::GetAllFilesInFolder(mod + "/interface");
+		for (const auto& file: interfaceFiles)
+		{
+			if (file != "general_gfx.gfx")
+			{
+				std::filesystem::copy_file(mod + "/interface/" + file, output + "/interface/" + file);	
+			}
 		}
 	}
 }

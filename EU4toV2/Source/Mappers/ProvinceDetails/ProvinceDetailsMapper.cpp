@@ -27,6 +27,9 @@ void mappers::ProvinceDetailsMapper::registerKeys()
 	registerKeyword("add_core", [this](const std::string& unused, std::istream& theStream) {
 		provinceDetails.cores.insert(commonItems::singleString(theStream).getString());
 	});
+	registerKeyword("trade_goods", [this](const std::string& unused, std::istream& theStream) {
+		provinceDetails.rgoType = commonItems::singleString(theStream).getString();
+	});
 	registerKeyword("life_rating", [this](const std::string& unused, std::istream& theStream) {
 		provinceDetails.lifeRating = commonItems::singleInt(theStream).getInt();
 	});
