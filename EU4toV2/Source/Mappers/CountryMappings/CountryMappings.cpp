@@ -25,7 +25,14 @@ mappers::CountryMappings::CountryMappings():
 
 	LOG(LogLevel::Info) << "Parsing Country Mapping Rules.";
 	registerKeys();
-	parseFile("configurables/country_mappings.txt");
+	if (theConfiguration.isHpmEnabled())
+	{
+		parseFile("configurables/HPM/country_mappings.txt");
+	}
+	else
+	{
+		parseFile("configurables/country_mappings.txt");
+	}
 	clearRegisteredKeywords();
 }
 
