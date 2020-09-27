@@ -1,5 +1,5 @@
 #include "StateMapper.h"
-#include "../../Configuration.h"
+#include "Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
@@ -63,14 +63,6 @@ std::set<int> mappers::StateMapper::getAllProvincesInState(const int province) c
 {
 	const auto& mapping = stateProvincesMap.find(province);
 	if (mapping != stateProvincesMap.end()) return mapping->second;
-	std::set<int> empty;
-	return empty;
-}
-
-std::set<int> mappers::StateMapper::getProvincesByStateID(const int stateID) const
-{
-	const auto& mapping = stateMap.find(stateID);
-	if (mapping != stateMap.end()) return mapping->second;
 	std::set<int> empty;
 	return empty;
 }
