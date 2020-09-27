@@ -1889,8 +1889,8 @@ void V2::World::copyHpmFiles() const
 	commonItems::CopyFolder(hpm + "/map", out + "/map");
 
 	// common/countries
-	const auto& countriesFiles = Utils::GetAllFilesInFolder(mod + "/common/countries");
-	const auto& converterCountries = Utils::GetAllFilesInFolder(output + "/common/countries");
+	const auto& countriesFiles = commonItems::GetAllFilesInFolder(mod + "/common/countries");
+	const auto& converterCountries = commonItems::GetAllFilesInFolder(output + "/common/countries");
 	for (const auto& file : countriesFiles)
 	{
 		if (converterCountries.find(file) == converterCountries.end())

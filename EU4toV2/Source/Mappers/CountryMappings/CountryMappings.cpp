@@ -1,4 +1,5 @@
 #include "CountryMappings.h"
+#include "Configuration.h"
 #include "CountryMapping.h"
 #include "CultureGroups/CultureGroups.h"
 #include "CultureGroups/CultureGroup.h"
