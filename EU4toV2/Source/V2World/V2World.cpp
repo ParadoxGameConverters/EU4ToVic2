@@ -1927,8 +1927,8 @@ void V2::World::copyModFiles() const
 		std::filesystem::copy_file(mod + "/common/pop_types.txt", output + "/common/pop_types.txt");
 
 		// common/countries
-		const auto& countriesFiles = Utils::GetAllFilesInFolder(mod + "/common/countries");
-		const auto& converterCountries = Utils::GetAllFilesInFolder(output + "/common/countries");
+		const auto& countriesFiles = commonItems::GetAllFilesInFolder(mod + "/common/countries");
+		const auto& converterCountries = commonItems::GetAllFilesInFolder(output + "/common/countries");
 		for (const auto& file: countriesFiles)
 		{
 			if (converterCountries.find(file) == converterCountries.end())
@@ -1972,8 +1972,8 @@ void V2::World::copyModFiles() const
 		}
 
 		// decisions
-		const auto& converterDecisions = Utils::GetAllFilesInFolder(output + "/decisions");
-		const auto& decisionsFiles = Utils::GetAllFilesInFolder(mod + "/decisions");
+		const auto& converterDecisions = commonItems::GetAllFilesInFolder(output + "/decisions");
+		const auto& decisionsFiles = commonItems::GetAllFilesInFolder(mod + "/decisions");
 		for (const auto& file: decisionsFiles)
 		{
 			//if(converterDecisions.find(file) != converterDecisions.end())
@@ -1982,7 +1982,7 @@ void V2::World::copyModFiles() const
 			//}
 			std::filesystem::copy_file(mod + "/decisions/" + file, output + "/decisions/" + file);
 		}
-		const auto& configurablesDecisions = Utils::GetAllFilesInFolder("configurables/" + theConfiguration.getVic2ModName() + "/decisions");
+		const auto& configurablesDecisions = commonItems::GetAllFilesInFolder("configurables/" + theConfiguration.getVic2ModName() + "/decisions");
 		for (const auto& file: configurablesDecisions)
 		{
 			//if (decisionsFiles.find(file) != decisionsFiles.end())
@@ -1994,8 +1994,8 @@ void V2::World::copyModFiles() const
 		}
 
 		// events
-		const auto& converterEvents = Utils::GetAllFilesInFolder(output + "/events");
-		const auto& eventsFiles = Utils::GetAllFilesInFolder(mod + "/events");
+		const auto& converterEvents = commonItems::GetAllFilesInFolder(output + "/events");
+		const auto& eventsFiles = commonItems::GetAllFilesInFolder(mod + "/events");
 		for (const auto& file: eventsFiles)
 		{
 			//if(converterEvents.find(file) != converterEvents.end())
@@ -2004,7 +2004,7 @@ void V2::World::copyModFiles() const
 			//}
 			std::filesystem::copy_file(mod + "/events/" + file, output + "/events/" + file);
 		}
-		const auto& configurablesEvents = Utils::GetAllFilesInFolder("configurables/" + theConfiguration.getVic2ModName() + "/events");
+		const auto& configurablesEvents = commonItems::GetAllFilesInFolder("configurables/" + theConfiguration.getVic2ModName() + "/events");
 		for (const auto& file: configurablesEvents)
 		{
 			//if (eventsFiles.find(file) != eventsFiles.end())
