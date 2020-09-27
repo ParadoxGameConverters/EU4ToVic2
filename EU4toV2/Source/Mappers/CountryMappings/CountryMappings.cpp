@@ -25,7 +25,14 @@ mappers::CountryMappings::CountryMappings():
 
 	LOG(LogLevel::Info) << "Parsing Country Mapping Rules.";
 	registerKeys();
-	parseFile("configurables/country_mappings.txt");
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+	{
+		parseFile("configurables/" + mod + "_country_mappings.txt");
+	}
+	else
+	{
+		parseFile("configurables/country_mappings.txt");
+	}
 	clearRegisteredKeywords();
 }
 
