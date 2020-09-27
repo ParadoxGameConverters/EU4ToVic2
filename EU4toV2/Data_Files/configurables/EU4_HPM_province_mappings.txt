@@ -883,8 +883,7 @@
 	link = { eu4 = 2883 v2 = 2337 }	# 0 "Melodia -> Fortin Falcon
 	link = { eu4 = 2854 v2 = 2366 v2 = 2367 }	# 0 "Chaco Central -> Formosa, Xolotas
 	# Brazil
-	link = { eu4 = 2938 v2 = 2414 }	# 0 "Oiapoque -> Jezira
-	link = { eu4 = 747 v2 = 2415 }	# 0 "Amapa -> Macapa
+	link = { eu4 = 747 eu4 = 2938 v2 = 2415 }	# 0 "Amapa, 0 "Oiapoque -> Macapa
 	link = { eu4 = 2934 eu4 = 2933 v2 = 2402 v2 = 2405 v2 = 2404 v2 = 2403 v2 = 2401 v2 = 2407 }	# MANY-TO-MANY: 0 "Manaus, 0 "Barcelos -> Manaus, Borba, Tefe, Cachoeira, Marabitanas, Tabatinga
 	link = { eu4 = 2930 eu4 = 2935 v2 = 2411 v2 = 2413 v2 = 2600 v2 = 2412 v2 = 2408 }	# MANY-TO-MANY: 0 "Santarem, 0 "Muturu -> Santarem, Maraba, Altamira, Obidos, Oriximina
 	link = { eu4 = 2929 eu4 = 2890 eu4 = 748 v2 = 2410 }	# 0 "Para, 0 "Marajó, 0 "Belem -> Belem
@@ -994,7 +993,7 @@
 	link = { eu4 = 1098 v2 = 2129 v2 = 2132 v2 = 2130 }	# 0 "St. Helena -> Saint Helena, Tristan da Cunha, Ascension
 	# # Europe
 	# Greenland & Iceland
-	link = { eu4 = 1104 eu4 = 1105 eu4 = 1804 v2 = 251 v2 = 2591 v2 = 2636 }	# MANY-TO-MANY: 0 "Eiriksfjord, 0 "Vestbygden, 0 "Greenland -> Nuuk, Tranquebar, Aasiaat
+	link = { eu4 = 1104 eu4 = 1105 eu4 = 1804 v2 = 251 v2 = 2636 }	# MANY-TO-MANY: 0 "Eiriksfjord, 0 "Vestbygden, 0 "Greenland -> Nuuk, Aasiaat
 	link = { eu4 = 370 eu4 = 371 v2 = 252 }	# 0 "Reykjavik, 0 "Akureyri -> Iceland
 	# British Isles
 	link = { eu4 = 1979 v2 = 253 }	# 0 "Färöarna -> Faroe Islands
@@ -1640,7 +1639,7 @@
 	link = { eu4 = 1080 v2 = 2689 }	# 0 "Pelym -> Vojvoz
 	link = { eu4 = 1780 v2 = 2685 }	# 0 "Komi -> Verkhoturye
 	link = { eu4 = 2426 eu4 = 2425 v2 = 2614 }	# 0 "Yamal, 0 "Nenets -> Shadrinsk
-	link = { eu4 = 1955 eu4 = 4122 eu4 = 4256 eu4 = 4257 v2 = 981 v2 = 985 v2 = 2589 v2 = 986 v2 = 2699 v2 = 2688 v2 = 2687 }	# MANY-TO-MANY: 0 "Kholmogory, 0 "Shenkursk, 0 "Solvychegodsk, 0 "Mezen -> Arkhangelsk, Mezen, Tsushima, Naryn Mar, Izma, Inta, Amderma
+	link = { eu4 = 1955 eu4 = 4122 eu4 = 4256 eu4 = 4257 v2 = 981 v2 = 985 v2 = 986 v2 = 2699 v2 = 2688 v2 = 2687 }	# MANY-TO-MANY: 0 "Kholmogory, 0 "Shenkursk, 0 "Solvychegodsk, 0 "Mezen -> Arkhangelsk, Mezen, Naryn Mar, Izma, Inta, Amderma
 	link = { eu4 = 313 eu4 = 4258 v2 = 2588 }	# 0 "Soroka, 0 "Onega -> Onega
 	link = { eu4 = 1958 v2 = 993 }	# 0 "Kargopol -> Vyterga
 	link = { eu4 = 1777 v2 = 2587 v2 = 983 v2 = 982 }	# 0 "Kola -> Kola, Kandalaksha, Petsamo
@@ -1693,11 +1692,11 @@
 	link = { eu4 = 4303 v2 = 886 }	# 0 "Oltu -> Ardahan
 	link = { eu4 = 331 v2 = 887 }	# 0 "Erzurum -> Erzurum
 	link = { eu4 = 4302 v2 = 885 }	# 0 "Bayazid -> Kars
-	link = { eu4 = 4296 eu4 = 4295 v2 = 892 }	# 0 "Bitlis, 0 "Hisn Kayfa -> Bay
+	link = { eu4 = 4295 v2 = 892 v2 = 2414 }	# 0 "Hisn Kayfa -> Bay, Jezira
 	link = { eu4 = 2307 v2 = 890 }	# 0 "Van -> Van
 	link = { eu4 = 423 v2 = 1090 }	# 1 "Tbilisi -> Tblisi
 	link = { eu4 = 2204 v2 = 1093 }	# 1 "Kars -> Akhaltsikhe
-	link = { eu4 = 2306 v2 = 891 }	# 0 "Mush -> Bitlis
+	link = { eu4 = 4296 eu4 = 2306 v2 = 891 }	# 0 "Bitlis, 0 "Mush -> Bitlis
 	link = { eu4 = 418 v2 = 893 }	# 0 "Diyarbakir -> Diyarbakir
 	# Syria & Lebanon
 	link = { eu4 = 4298 v2 = 898 }	# 0 "Ayntab -> Antep
@@ -1782,7 +1781,8 @@
 	link = { eu4 = 344 eu4 = 4568 v2 = 1690 }	# 0 "Marrakech, 0 "Demnate -> Marrakesh
 	link = { eu4 = 2468 v2 = 1692 }	# 0 "Tadla -> Huribka
 	link = { eu4 = 2467 v2 = 1682 }	# 0 "Meknes -> Meknes
-	link = { eu4 = 1751 eu4 = 4561 v2 = 1687 }	# 0 "Ceuta, 0 "Tétouan -> Tetouan
+	link = { eu4 = 1751 v2 = 2590 }	# 0 "Ceuta -> Ceuta
+	link = { eu4 = 4561 v2 = 1687 }	# 0 "Tétouan -> Tetouan
 	link = { eu4 = 335 v2 = 1689 v2 = 1688 }	# 0 "Melilla -> Melilla, Ajdir
 	link = { eu4 = 343 v2 = 1683 v2 = 1680 v2 = 1681 }	# 0 "Fez -> Taza, Fez, Wazzan
 	link = { eu4 = 349 v2 = 1697 }	# 0 "Figuig -> Figuig
@@ -2279,7 +2279,8 @@
 	link = { eu4 = 2029 eu4 = 4413 v2 = 1316 }	# 0 "South Kanara, 0 "Cannanore -> Mangalore
 	link = { eu4 = 533 v2 = 1314 }	# 0 "Mysore -> Mysore
 	link = { eu4 = 538 eu4 = 4414 v2 = 1311 }	# 0 "Kongu, 0 "Salem -> Coimbatore
-	link = { eu4 = 2026 eu4 = 2085 eu4 = 4415 eu4 = 4416 v2 = 1309 }	# 0 "Tanjore, 0 "Tiruchirappalli, 0 "Negapatam, 0 "Tranqebar -> Tanjore
+	link = { eu4 = 4416 v2 = 2591 }	# 0 "Tranqebar -> Tranquebar
+	link = { eu4 = 2026 eu4 = 2085 eu4 = 4415 v2 = 1309 }	# 0 "Tanjore, 0 "Tiruchirappalli, 0 "Negapatam -> Tanjore
 	link = { eu4 = 536 eu4 = 2101 eu4 = 4410 eu4 = 4412 v2 = 1310 }	# 0 "Madurai, 0 "Tirunelveli, 0 "Kumari, 0 "Dindigul -> Madurai
 	link = { eu4 = 534 v2 = 1317 }	# 1 "Calicut -> Calicut
 	link = { eu4 = 535 v2 = 1318 }	# 0 "Kochin -> Cochin
@@ -2376,7 +2377,8 @@
 	# Shikoku, Kyushu, Okinawa
 	link = { eu4 = 1820 v2 = 1667 }	# 0 "Awa -> Tokushima
 	link = { eu4 = 1819 eu4 = 4186 v2 = 1666 v2 = 1665 }	# MANY-TO-MANY: 0 "Tosa, 0 "Iyo -> Matsuyama, Kochi
-	link = { eu4 = 1818 eu4 = 4182 eu4 = 4651 v2 = 1660 v2 = 1661 }	# MANY-TO-MANY: 0 "Chikuzen, 0 "Hizen, Tsushima -> Fukuoka, Nagasaki
+	link = { eu4 = 4651 v2 = 2589 }	# Tsushima -> Tsushima
+	link = { eu4 = 1818 eu4 = 4182 v2 = 1660 v2 = 1661 }	# MANY-TO-MANY: 0 "Chikuzen, 0 "Hizen -> Fukuoka, Nagasaki
 	link = { eu4 = 1014 eu4 = 4181 v2 = 1664 }	# 0 "Bungo, 0 "Higo -> Kumamoto
 	link = { eu4 = 1012 eu4 = 4180 v2 = 1663 v2 = 1662 }	# MANY-TO-MANY: 0 "Satsuma, 0 "Hyuga -> Miyazaki, Kagoshima
 	link = { eu4 = 1015 v2 = 1679 v2 = 1678 }	# 0 "Okinawa -> Amami, Okinawa
@@ -2584,9 +2586,9 @@
 	link = { eu4 = 1085 v2 = 2482 resettable = australia_zealand }	# 0 "Paredarerme -> Van Diemen's Land
 	link = { eu4 = 1106 v2 = 2509 v2 = 2508 resettable = australia_zealand }	# 0 "Whangarei -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 resettable = australia_zealand }	# 0 "Taranaki -> Ngamotu
-	link = { eu4 = 2739 v2 = 2571 resettable = australia_zealand }	# 0 "Kirikiriroa -> Tauranga
+	link = { eu4 = 2739 v2 = 2524 resettable = australia_zealand }	# 0 "Kirikiriroa -> Kirikiriroa
 	link = { eu4 = 2737 v2 = 2512 resettable = australia_zealand }	# 0 "Ahuriri -> Te Upoko-o-te-Ika
-	link = { eu4 = 1108 v2 = 2511 resettable = australia_zealand }	# 0 "Tauranga -> Ahuriri
+	link = { eu4 = 1108 v2 = 2511 v2 = 2571 resettable = australia_zealand }	# 0 "Tauranga -> Ahuriri, Tauranga
 	link = { eu4 = 2738 v2 = 2516 resettable = australia_zealand }	# 0 "Waitaha -> Whakatu
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 resettable = australia_zealand }	# 0 "Timaru -> Otautahi, Hokitika
 	link = { eu4 = 1246 v2 = 2513 resettable = australia_zealand }	# 0 "Waihopai -> Otepoti
@@ -2609,7 +2611,7 @@
 	link = { eu4 = 1992 v2 = 2523 resettable = pacific }	# 0 "Nauru -> Nauru
 	link = { eu4 = 1991 v2 = 2527 resettable = pacific }	# 0 "Gilbert Islands -> Gilbert Islands
 	link = { eu4 = 1993 v2 = 2522 resettable = pacific }	# 0 "Marshall Islands -> Marshall Islands
-	link = { eu4 = 1994 v2 = 2524 v2 = 2525 resettable = pacific }	# 0 "Wake -> Kirikiriroa, Marcus
+	link = { eu4 = 1994 v2 = 2525 resettable = pacific }	# 0 "Wake -> Marcus
 	link = { eu4 = 1235 v2 = 1654 v2 = 2521 v2 = 2517 resettable = pacific }	# 0 "Guam -> Bonin, Saipan, Guam
 	link = { eu4 = 1995 v2 = 610 v2 = 2579 resettable = pacific }	# 0 "Micronesia -> Ponape, Truk
 	link = { eu4 = 1996 v2 = 2519 v2 = 2518 resettable = pacific }	# 0 "Palau -> Yap, Palau
@@ -2749,7 +2751,7 @@
 	# Siberian Wasteland
 	link = { eu4 = 1781 v2 = 2654 v2 = 2693 v2 = 2657 v2 = 2658 v2 = 2680 v2 = 2659 }	# 0 "Western Siberia -> Hatanga, Essey, Dudinka, Kurgan, Volochanka, Khalmer-Sede
 	link = { eu4 = 1782 v2 = 2667 v2 = 2652 v2 = 2649 v2 = 2670 v2 = 2671 v2 = 2673 v2 = 2651 v2 = 2653 v2 = 2675 v2 = 2674 v2 = 2655 }	# 0 "Central Siberia -> Batagay, Kular, Tomtor, Verkhneudinsk, Barguzin, Olenek, Mirny, Saskylah, Erbogachen, Abakan, Essej
-	link = { eu4 = 1783 v2 = 2590 v2 = 2666 v2 = 2661 v2 = 2664 v2 = 2621 v2 = 2665 v2 = 2619 v2 = 2647 v2 = 2668 v2 = 2643 }	# 0 "Eastern Siberia -> Ceuta, Komsomolskiy, Belebino, Khasab, Srednekolymsk, Chokurdakh, Indigirka, Lifau, Adyca, Honuu
+	link = { eu4 = 1783 v2 = 2666 v2 = 2661 v2 = 2664 v2 = 2621 v2 = 2665 v2 = 2619 v2 = 2647 v2 = 2668 v2 = 2643 }	# 0 "Eastern Siberia -> Komsomolskiy, Belebino, Khasab, Srednekolymsk, Chokurdakh, Indigirka, Lifau, Adyca, Honuu
 	link = { eu4 = 4482 v2 = 1328 }	# 0 "Sikkim -> Tumlong
 	link = { eu4 = 4402 }	# 0 "Gaoligong Mountains -> DROPPED
 	link = { eu4 = 1803 eu4 = 1802 eu4 = 2936 }	# 0 "Eastern Amazonas, 0 "Western Amazonas, 0 "Guyana -> DROPPED
