@@ -140,8 +140,7 @@ class World
 
 	void addStateMapping(int origID, int modID) { stateMap.insert(std::make_pair(origID, modID)); }
 	void addProvinceMapping(int origID, int modID) { provinceMap.insert(std::make_pair(origID, modID)); }
-	void outputV2Mod() const;
-	void outProvLoc() const;
+	void copyModFiles() const;
 	void outputStateMap(std::string srcFile, std::string outFile) const;
 	void outStateMap(std::string outFile) const;
 	void outProvinceMap(std::string outFile) const;
