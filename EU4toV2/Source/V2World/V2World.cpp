@@ -28,7 +28,8 @@ V2::World::World(const EU4::World& sourceWorld,
 	culturalUnionMapper.loadFile("configurables/unions.txt");
 	LOG(LogLevel::Info) << "Parsing nationalities mappings.";
 	culturalNationalitiesMapper.loadFile("configurables/nationals.txt");
-
+	religionMapper.scrapeCustomReligions();
+	
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
 	LOG(LogLevel::Info) << "-> Importing Provinces";
 	importProvinces();
