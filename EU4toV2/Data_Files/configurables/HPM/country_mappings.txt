@@ -516,7 +516,7 @@ link = { eu4 = e_arabs v2 = ARA } # Arabia
 link = { eu4 = k_arabia v2 = ARA } # Arabia
 link = { eu4 = e_arabia v2 = ARA } # Arabia
 link = { eu4 = ARD v2 = ARD } # Ardalan
-link = { eu4 = BHT v2 = KDS } # Bohtan/Soran => Kurdistan
+link = { eu4 = BHT v2 = SRN } # Bohtan/Soran
 link = { eu4 = DAW v2 = DAW } # Dawasir
 link = { eu4 = ERE v2 = ERE } # Eretna
 link = { eu4 = k_eretnid v2 = ERE } # Eretna
@@ -1567,3 +1567,17 @@ link = { eu4 = UIG v2 = XIN } #Uighurustan
 link = { eu4 = YEM v2 = YEM } #Yemen
 link = { eu4 = YRK v2 = YRK } #Yarkand
 link = { eu4 = ZOU v2 = ZHO } #Zhou
+
+### Converted to HPM countries
+map = { vic = MLB mod = MNP } #Manipur
+map = { vic = PAH mod = PHG } #Pahang
+map = { vic = NCT mod = NEH } #Neuchatel
+map = { vic = HOB mod = HBY } #Hobyo
+map = { vic = ARD mod = RDL } #Ardalan
+map = { vic = LIM mod = LBG } #Limburg
+map = { vic = SCY mod = SYC } #Sicily
+map = { vic = MOL mod = MDV } #Moldova
+map = { vic = BUE mod = SBA } #Buenos Aires
+map = { vic = FAD mod = FDL } #Fadl
+map = { vic = MGU mod = MGH } #Maghreb
+map = { vic = KOM mod = CMS } #Comoros
