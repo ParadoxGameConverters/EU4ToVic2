@@ -686,37 +686,54 @@ void V2::World::importPotentialCountries()
 	dynamicCountries.clear();
 
 	std::ifstream v2CountriesInput;
-	v2CountriesInput.open("./blankMod/output/common/countries.txt");
-	if (!v2CountriesInput.is_open())
-		throw std::runtime_error("Could not open countries.txt. The converter may be corrupted, try downloading it again.");
-
-	auto dynamicSection = false;
-	while (!v2CountriesInput.eof())
+	std::set<std::string> countriesFiles;
+	countriesFiles.insert("./blankMod/output/common/countries.txt");
+	if (theConfiguration.isHpmEnabled())
 	{
-		std::string line;
-		getline(v2CountriesInput, line);
-
-		if (line[0] == '#' || line.size() < 3)
-			continue;
-		if (line.substr(0, 12) == "dynamic_tags")
-		{
-			dynamicSection = true;
-			continue;
-		}
-		importPotentialCountry(line, dynamicSection);
+		countriesFiles.insert(theConfiguration.getVic2Path() + "/common/countries.txt");
 	}
-	v2CountriesInput.close();
+
+	for (const auto& countriesFile: countriesFiles)
+	{
+		v2CountriesInput.open(countriesFile);
+		if (!v2CountriesInput.is_open())
+			throw std::runtime_error("Could not open countries.txt. The converter may be corrupted, try downloading it again.");
+
+		auto dynamicSection = false;
+		while (!v2CountriesInput.eof())
+		{
+			std::string line;
+			getline(v2CountriesInput, line);
+
+			if (line[0] == '#' || line.size() < 3)
+				continue;
+			if (line.substr(0, 12) == "dynamic_tags")
+			{
+				dynamicSection = true;
+				continue;
+			}
+			importPotentialCountry(line, dynamicSection);
+		}
+		v2CountriesInput.close();
+	}
 }
 
 void V2::World::importPotentialCountry(const std::string& line, bool dynamicCountry)
 {
 	auto tag = line.substr(0, 3);
 
-	auto newCountry = std::make_shared<Country>(line, dynamicCountry, partyNameMapper, partyTypeMapper);
-	potentialCountries.insert(std::make_pair(tag, newCountry));
-	if (dynamicCountry)
+	
+	if (countryMapper.getV2TagToModTagMap().find(tag) == countryMapper.getV2TagToModTagMap().end())
 	{
-		dynamicCountries.insert(std::make_pair(tag, newCountry));
+		auto newCountry = std::make_shared<Country>(line, dynamicCountry, partyNameMapper, partyTypeMapper);
+		if (potentialCountries.find(tag) == potentialCountries.end())
+		{
+			potentialCountries.insert(std::make_pair(tag, newCountry));
+		}
+		if (dynamicCountry && dynamicCountries.find(tag) == dynamicCountries.end())
+		{
+			dynamicCountries.insert(std::make_pair(tag, newCountry));
+		}
 	}
 }
 
@@ -1889,13 +1906,13 @@ void V2::World::copyHpmFiles() const
 	commonItems::CopyFolder(hpm + "/map", out + "/map");
 
 	// common/countries
-	const auto& countriesFiles = commonItems::GetAllFilesInFolder(mod + "/common/countries");
-	const auto& converterCountries = commonItems::GetAllFilesInFolder(output + "/common/countries");
+	const auto& countriesFiles = commonItems::GetAllFilesInFolder(hpm + "/common/countries");
+	const auto& converterCountries = commonItems::GetAllFilesInFolder(out + "/common/countries");
 	for (const auto& file : countriesFiles)
 	{
 		if (converterCountries.find(file) == converterCountries.end())
 		{
-			std::filesystem::copy_file(mod + "/common/countries/" + file, output + "/common/countries/" + file);
+			fs::copy_file(hpm + "/common/countries/" + file, out + "/common/countries/" + file);
 		}
 	}
 }
