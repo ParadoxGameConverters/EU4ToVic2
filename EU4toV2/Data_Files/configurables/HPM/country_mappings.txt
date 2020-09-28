@@ -699,8 +699,8 @@ link = { eu4 = ENA v2 = ENA } # Ennarea
 
 #East African Additions
 
-link = { eu4 = AFA v2 = AFA } # Afar
-link = { eu4 = d_afar v2 = AFA } # Afar
+link = { eu4 = AFA v2 = AWS } # Afar
+link = { eu4 = d_afar v2 = AWS } # Afar
 link = { eu4 = ALO v2 = ALO } # Alodia
 link = { eu4 = d_alodia v2 = ALO } # Alodia
 link = { eu4 = DAR v2 = DAR } # Darfur
@@ -1447,7 +1447,7 @@ link = { eu4 = AAA v2 = AAA } #Dummy
 link = { eu4 = JBC v2 = AAC } #JulichClevesBerg
 link = { eu4 = JUL v2 = AAC } #Julich
 link = { eu4 = BYA v2 = ABU } #BanuYas
-link = { eu4 = DUR v2 = AFG } #Durrani
+link = { eu4 = DUR v2 = DUR } #Durrani
 link = { eu4 = ALC v2 = ALB } #AnjouAlbania
 link = { eu4 = AHS v2 = ALH } #Ahsaa
 link = { eu4 = ANG v2 = AMA } #Amago
@@ -1576,8 +1576,13 @@ map = { vic = HOB mod = HBY } #Hobyo
 map = { vic = ARD mod = RDL } #Ardalan
 map = { vic = LIM mod = LBG } #Limburg
 map = { vic = SCY mod = SYC } #Sicily
-map = { vic = MOL mod = MDV } #Moldova
 map = { vic = BUE mod = SBA } #Buenos Aires
 map = { vic = FAD mod = FDL } #Fadl
 map = { vic = MGU mod = MGH } #Maghreb
 map = { vic = KOM mod = CMS } #Comoros
+map = { vic = LBX mod = LBA } #Luba
+map = { vic = LUN mod = LNB } #Luneburg
+map = { vic = LND mod = LUN } #Lunda
+map = { vic = JMB mod = DJA } #Jambi
+map = { vic = PAN mod = PNJ } #Panjab
+map = { vic = PHI mod = PHL } #Phillipines
