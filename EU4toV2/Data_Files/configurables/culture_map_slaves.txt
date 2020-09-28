@@ -209,7 +209,7 @@ link = { vic2 = fang eu4 = sawabantu } # Cameroon, Gabon, EG
 link = { vic2 = fur eu4 = nubian region = darfur_central_sahara_area }
 link = { vic2 = beja eu4 = nubian region = red_sea_coast_area }
 link = { vic2 = beja eu4 = beja }
-link = { vic2 = sudanese eu4 = nubian eu4 = zaghawa }
+link = { vic2 = sudanese eu4 = nubian eu4 = zaghawa eu4 = daju }
 link = { vic2 = luo eu4 = acholi } # South Sudan
 
 # Horn of Africa

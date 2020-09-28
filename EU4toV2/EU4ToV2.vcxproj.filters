@@ -565,6 +565,9 @@
     <ClCompile Include="..\commonItems\Color.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp">
+      <Filter>Mappers\AcceptedCultureThresholds</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1094,6 +1097,9 @@
     <ClInclude Include="Source\Helpers\rakaly_wrapper.h">
       <Filter>Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.h">
+      <Filter>Mappers\AcceptedCultureThresholds</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1335,6 +1341,9 @@
     </Filter>
     <Filter Include="Mappers\AfricaReset">
       <UniqueIdentifier>{b28a005e-f675-484c-800a-bd321bfe49b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\AcceptedCultureThresholds">
+      <UniqueIdentifier>{b53b167f-ad1c-43c3-b114-c0af0bd35ad7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 #define WORLD_H
 
 #include "../EU4World/Country/EU4Country.h"
+#include "../Mappers/AcceptedCultureThresholds/AcceptedCultureThresholdsMapper.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../Mappers/AfricaReset/AfricaResetMapper.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
@@ -156,6 +157,7 @@ class World
 	mappers::CultureGroups cultureGroupsMapper;
 	mappers::RegionLocalizations regionLocalizations;
 	mappers::AfricaResetMapper africaResetMapper;
+	mappers::AcceptedCultureThresholdsMapper acceptedCultureThresholdsMapper;
 	ProvinceNameParser provinceNameParser;
 	CountryPopLogger countryPopLogger;
 	MappingChecker mappingChecker;

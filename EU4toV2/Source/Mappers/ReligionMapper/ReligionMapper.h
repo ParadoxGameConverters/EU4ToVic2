@@ -8,19 +8,20 @@
 
 namespace mappers
 {
-	class ReligionMapper: commonItems::parser
-	{
-	public:
-		ReligionMapper();
-		explicit ReligionMapper(std::istream& theStream);
-		
-		[[nodiscard]] std::optional<std::string> getVic2Religion(const std::string& eu4Religion) const;
+class ReligionMapper: commonItems::parser
+{
+  public:
+	ReligionMapper();
+	explicit ReligionMapper(std::istream& theStream);
 
-	private:
-		void registerKeys();
-		
-		std::map<std::string, std::string> eu4ToVic2ReligionMap;
-	};
-}
+	[[nodiscard]] std::optional<std::string> getVic2Religion(const std::string& eu4Religion) const;
+	void scrapeCustomReligions();
+
+  private:
+	void registerKeys();
+
+	std::map<std::string, std::string> eu4ToVic2ReligionMap;
+};
+} // namespace mappers
 
 #endif // RELIGION_MAPPER_H
