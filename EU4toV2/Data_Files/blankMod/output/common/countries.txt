@@ -908,12 +908,6 @@ OSP		= "countries/OldSpain.txt"
 
 QNG		="countries/China.txt"
 
-# HPM
-PGG		= "countries/Pingnan Guo.txt"
-PAK		= "countries/Pakistan.txt"
-ARC		= "countries/Argentine Conf.txt"
-COR		= "countries/Corrientes.txt" #CRT originally already taken
-
 ##HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions
 D01		= "countries/D01.txt"

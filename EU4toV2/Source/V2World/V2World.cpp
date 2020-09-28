@@ -715,37 +715,54 @@ void V2::World::importPotentialCountries()
 	dynamicCountries.clear();
 
 	std::ifstream v2CountriesInput;
-	v2CountriesInput.open("./blankMod/output/common/countries.txt");
-	if (!v2CountriesInput.is_open())
-		throw std::runtime_error("Could not open countries.txt. The converter may be corrupted, try downloading it again.");
-
-	auto dynamicSection = false;
-	while (!v2CountriesInput.eof())
+	std::set<std::string> countriesFiles;
+	countriesFiles.insert("./blankMod/output/common/countries.txt");
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
 	{
-		std::string line;
-		getline(v2CountriesInput, line);
-
-		if (line[0] == '#' || line.size() < 3)
-			continue;
-		if (line.substr(0, 12) == "dynamic_tags")
-		{
-			dynamicSection = true;
-			continue;
-		}
-		importPotentialCountry(line, dynamicSection);
+		countriesFiles.insert(theConfiguration.getVic2ModPath() + "/" + mod  + "/common/countries.txt");
 	}
-	v2CountriesInput.close();
+
+	for (const auto& countriesFile: countriesFiles)
+	{
+		v2CountriesInput.open(countriesFile);
+		if (!v2CountriesInput.is_open())
+			throw std::runtime_error("Could not open countries.txt. The converter may be corrupted, try downloading it again.");
+
+		auto dynamicSection = false;
+		while (!v2CountriesInput.eof())
+		{
+			std::string line;
+			getline(v2CountriesInput, line);
+
+			if (line[0] == '#' || line.size() < 3)
+				continue;
+			if (line.substr(0, 12) == "dynamic_tags")
+			{
+				dynamicSection = true;
+				continue;
+			}
+			importPotentialCountry(line, dynamicSection);
+		}
+		v2CountriesInput.close();
+	}
 }
 
 void V2::World::importPotentialCountry(const std::string& line, bool dynamicCountry)
 {
 	auto tag = line.substr(0, 3);
 
-	auto newCountry = std::make_shared<Country>(line, dynamicCountry, partyNameMapper, partyTypeMapper);
-	potentialCountries.insert(std::make_pair(tag, newCountry));
-	if (dynamicCountry)
+	
+	if (countryMapper.getV2TagToModTagMap().find(tag) == countryMapper.getV2TagToModTagMap().end())
 	{
-		dynamicCountries.insert(std::make_pair(tag, newCountry));
+		auto newCountry = std::make_shared<Country>(line, dynamicCountry, partyNameMapper, partyTypeMapper);
+		if (potentialCountries.find(tag) == potentialCountries.end())
+		{
+			potentialCountries.insert(std::make_pair(tag, newCountry));
+		}
+		if (dynamicCountry && dynamicCountries.find(tag) == dynamicCountries.end())
+		{
+			dynamicCountries.insert(std::make_pair(tag, newCountry));
+		}
 	}
 }
 
@@ -1922,9 +1939,11 @@ void V2::World::copyModFiles() const
 		const auto& output = "output/" + theConfiguration.getOutputName();
 
 		// /common
-		std::filesystem::copy_file(mod + "/common/goods.txt", output + "/common/goods.txt");
-		std::filesystem::copy_file(mod + "/common/production_types.txt", output + "/common/production_types.txt");
-		std::filesystem::copy_file(mod + "/common/pop_types.txt", output + "/common/pop_types.txt");
+		fs::copy_file(mod + "/common/goods.txt", output + "/common/goods.txt");
+		fs::copy_file(mod + "/common/production_types.txt", output + "/common/production_types.txt");
+		fs::copy_file(mod + "/common/pop_types.txt", output + "/common/pop_types.txt");
+		fs::copy_file(mod + "/common/technology.txt", output + "/common/technology.txt");
+		fs::copy_file(mod + "/common/event_modifiers.txt", output + "/common/event_modifiers.txt");
 
 		// common/countries
 		const auto& countriesFiles = commonItems::GetAllFilesInFolder(mod + "/common/countries");
@@ -1933,25 +1952,25 @@ void V2::World::copyModFiles() const
 		{
 			if (converterCountries.find(file) == converterCountries.end())
 			{
-				std::filesystem::copy_file(mod + "/common/countries/" + file, output + "/common/countries/" + file);
+				fs::copy_file(mod + "/common/countries/" + file, output + "/common/countries/" + file);
 			}
 		}
 
 		//	/map
-		std::filesystem::copy(mod + "/map", output + "/map", std::filesystem::copy_options::recursive);
+		fs::copy(mod + "/map", output + "/map", fs::copy_options::recursive);
 
 		//	/gfx/interface
 		const auto& leaders = commonItems::GetAllFilesInFolder(mod + "/gfx/interface/leaders");
 		for (const auto& leader: leaders)
 		{
-			std::filesystem::copy_file(mod + "/gfx/interface/leaders/" + leader, output + "/gfx/interface/leaders/" + leader, std::filesystem::copy_options::recursive);
+			fs::copy_file(mod + "/gfx/interface/leaders/" + leader, output + "/gfx/interface/leaders/" + leader, fs::copy_options::recursive);
 		}
 		const auto& gfxInterfaceFiles = commonItems::GetAllFilesInFolder(mod + "/gfx/interface");
 		for (const auto& file: gfxInterfaceFiles)
 		{
 			if (file != "icon_religion.dds")
 			{
-				std::filesystem::copy_file(mod + "/gfx/interface/" + file, output + "/gfx/interface/" + file);
+				fs::copy_file(mod + "/gfx/interface/" + file, output + "/gfx/interface/" + file);
 			}
 		}
 
@@ -1961,14 +1980,14 @@ void V2::World::copyModFiles() const
 		{
 			if (file != "general_gfx.gfx")
 			{
-				std::filesystem::copy_file(mod + "/interface/" + file, output + "/interface/" + file);	
+				fs::copy_file(mod + "/interface/" + file, output + "/interface/" + file);	
 			}
 		}
 		// localisation
 		const auto& localisationFiles = commonItems::GetAllFilesInFolder(mod + "/localisation");
 		for (const auto& file: localisationFiles)
 		{
-			std::filesystem::copy_file(mod + "/localisation/" + file, output + "/localisation/" + file);
+			fs::copy_file(mod + "/localisation/" + file, output + "/localisation/" + file);
 		}
 
 		// decisions
@@ -1980,7 +1999,7 @@ void V2::World::copyModFiles() const
 			//{
 				fs::remove(output + "/decisions/" + file);
 			//}
-			std::filesystem::copy_file(mod + "/decisions/" + file, output + "/decisions/" + file);
+			fs::copy_file(mod + "/decisions/" + file, output + "/decisions/" + file);
 		}
 		const auto& configurablesDecisions = commonItems::GetAllFilesInFolder("configurables/" + theConfiguration.getVic2ModName() + "/decisions");
 		for (const auto& file: configurablesDecisions)
@@ -1989,7 +2008,7 @@ void V2::World::copyModFiles() const
 			//{
 				fs::remove(output + "/decisions/" + file);
 			//}
-			std::filesystem::copy_file("configurables/" + theConfiguration.getVic2ModName() + "/decisions/" + file,
+			fs::copy_file("configurables/" + theConfiguration.getVic2ModName() + "/decisions/" + file,
 							output + "/decisions/" + file);
 		}
 
@@ -2002,7 +2021,7 @@ void V2::World::copyModFiles() const
 			//{
 				fs::remove(output + "/events/" + file);
 			//}
-			std::filesystem::copy_file(mod + "/events/" + file, output + "/events/" + file);
+			fs::copy_file(mod + "/events/" + file, output + "/events/" + file);
 		}
 		const auto& configurablesEvents = commonItems::GetAllFilesInFolder("configurables/" + theConfiguration.getVic2ModName() + "/events");
 		for (const auto& file: configurablesEvents)
@@ -2011,7 +2030,7 @@ void V2::World::copyModFiles() const
 			//{
 				fs::remove(output + "/events/" + file);
 			//}
-			std::filesystem::copy_file("configurables/" + theConfiguration.getVic2ModName() + "/events/" + file,
+			fs::copy_file("configurables/" + theConfiguration.getVic2ModName() + "/events/" + file,
 							output + "/events/" + file);
 		}
 	}

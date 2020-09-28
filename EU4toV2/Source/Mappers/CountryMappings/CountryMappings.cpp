@@ -63,6 +63,11 @@ void mappers::CountryMappings::registerKeys()
 		else
 			eu4TagToV2TagsRules.emplace_back(std::make_pair("---custom---", newMapping));
 	});
+	registerKeyword("map", [this](const std::string& unused, std::istream& theStream) {
+		const CountryMapping newMapping(theStream);
+		if (!newMapping.getVanillaTag().empty())
+			v2TagToModTagMap.insert(make_pair(newMapping.getVanillaTag(), newMapping.getModTag()));
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
@@ -286,7 +291,17 @@ std::optional<std::string> mappers::CountryMappings::getV2Tag(const std::string&
 	}
 
 	if (const auto& findIter = eu4TagToV2TagMap.find(eu4Tag); findIter != eu4TagToV2TagMap.end())
-		return findIter->second;
+	{
+		if (const auto& v2Tag = findIter->second;
+			v2TagToModTagMap.find(v2Tag) == v2TagToModTagMap.end())
+		{
+			return v2Tag;
+		}
+		else
+		{
+			return v2TagToModTagMap.find(v2Tag)->second;
+		}
+	}
 	else
 		return std::nullopt;
 }
