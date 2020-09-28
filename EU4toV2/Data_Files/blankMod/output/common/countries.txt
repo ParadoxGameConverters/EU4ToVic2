@@ -376,6 +376,7 @@ BEN 		="countries/Benin.txt"
 # Africa
 KON 		="countries/Kongo.txt"
 MLI 		="countries/Mali.txt"
+ML1 		="countries/Malindi.txt"
 NUB 		="countries/Funj.txt"
 SGH 		="countries/Songhai.txt"
 SWA		="countries/Swahili.txt"

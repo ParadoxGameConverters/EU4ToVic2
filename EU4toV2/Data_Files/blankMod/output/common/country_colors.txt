@@ -2515,6 +2515,12 @@ MLD = { # Maldive
     color3= { 128 0 0  }
 }
 
+ML1 = { # Malindi
+    color1= { 153 210 135  }
+    color2= { 112 73 185  }
+    color3= { 94 231 187  }
+}
+
 MLI = { # Mali
     color1= { 215 135 125  }
     color2= { 202 112 85  }
