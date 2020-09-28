@@ -518,9 +518,8 @@
 	link = { eu4 = 2015 eu4 = 1007 v2 = 50 }	# 0 "Nipigon, 0 "Ojibwa -> Thunder Bay
 	link = { eu4 = 1001 eu4 = 2588 v2 = 51 }	# 0 "Soto, 0 "Piscatang -> Sault Ste Marie
 	link = { eu4 = 1003 eu4 = 2589 eu4 = 2590 v2 = 48 }	# 0 "Mosoni, 0 "Kesagami, 0 "Shaggami -> Fort Albany
-	link = { eu4 = 1004 v2 = 2628 }	# 0 "Attawapiskat -> Ocos
 	link = { eu4 = 2591 v2 = 2594 }	# 0 "Outoulibi -> Osnaburgh House
-	link = { eu4 = 2592 v2 = 47 }	# 0 "Omushkego -> Fort Severn
+	link = { eu4 = 2592 eu4 = 1004 v2 = 47 }	# 0 "Omushkego, 0 "Attawapiskat -> Fort Severn
 	# Quebec
 	link = { eu4 = 2671 eu4 = 988 v2 = 52 }	# 0 "Missisage, 0 "Huron -> Orillia
 	link = { eu4 = 991 eu4 = 2585 v2 = 57 }	# 0 "Nipissing, 0 "Kichesipi -> Bytown
@@ -531,7 +530,7 @@
 	link = { eu4 = 2581 eu4 = 2580 eu4 = 992 eu4 = 1002 v2 = 63 }	# 0 "Timiskaming, 0 "Atikamekw, 0 "Algonquin, 0 "Abitibi -> Temiscaming
 	link = { eu4 = 999 eu4 = 1000 v2 = 2593 }	# 0 "Cisasipi, 0 "Cree -> Fort George
 	link = { eu4 = 998 v2 = 2592 v2 = 2626 }	# 0 "Qikirmiut -> Ungava, Sakami
-	link = { eu4 = 2574 v2 = 76 v2 = 2627 v2 = 9 }	# 0 "Sikumiut -> Hopedale, Coudersport, Fort MacKenzie
+	link = { eu4 = 2574 v2 = 76 v2 = 9 }	# 0 "Sikumiut -> Hopedale, Fort MacKenzie
 	link = { eu4 = 2575 eu4 = 997 v2 = 2625 }	# 0 "Naskapi, 0 "Chisedec -> North West River
 	link = { eu4 = 2576 eu4 = 2578 eu4 = 996 v2 = 62 }	# 0 "Mingan, 0 "Anticosti, 0 "Innu -> Sept-Iles
 	link = { eu4 = 981 eu4 = 980 v2 = 75 }	# 0 "Taqamkuk, 0 "Beothuk -> Port-Aux-Basques
@@ -573,7 +572,7 @@
 	link = { eu4 = 962 v2 = 230 v2 = 231 }	# 0 "Unami -> Trenton, Camden
 	link = { eu4 = 956 v2 = 223 }	# 0 "Lenape -> Philadelphia
 	link = { eu4 = 2023 v2 = 224 }	# 0 "Munsee -> Scranton
-	link = { eu4 = 954 v2 = 228 }	# 0 "Allegheny -> Erie
+	link = { eu4 = 954 v2 = 228 v2 = 2627 }	# 0 "Allegheny -> Erie, Coudersport
 	link = { eu4 = 2557 v2 = 225 }	# 0 "Atrakwaye -> Williamsport
 	link = { eu4 = 2555 v2 = 227 }	# 0 "Honniasont -> Pittsburgh
 	link = { eu4 = 2556 eu4 = 955 v2 = 226 }	# 0 "Juniata, 0 "Susquehanna -> Harrisburg
@@ -787,7 +786,8 @@
 	link = { eu4 = 843 eu4 = 4589 v2 = 2190 }	# 0 "Belize, 0 "Moran -> Belize
 	link = { eu4 = 842 eu4 = 4594 v2 = 2189 }	# 0 "Petén, 0 "Tzul -> Sayaxche
 	link = { eu4 = 2636 v2 = 2188 }	# 0 "Chacujal -> Puerto Barrios
-	link = { eu4 = 841 eu4 = 4587 v2 = 2187 }	# 0 "Guatemala, 0 "Qumarkaj -> La Mesilla
+	link = { eu4 = 4587 v2 = 2187 }	# 0 "Qumarkaj -> La Mesilla
+	link = { eu4 = 841 v2 = 2628 }	# 0 "Guatemala -> Ocos
 	link = { eu4 = 2653 v2 = 2186 }	# 0 "Iximché -> Guatemala City
 	link = { eu4 = 839 v2 = 2191 v2 = 2192 }	# 0 "Pipil -> San Salvador, San Miguel
 	link = { eu4 = 2637 v2 = 2194 }	# 0 "Chortli -> San Pedro Sula
@@ -1633,13 +1633,13 @@
 	link = { eu4 = 1082 eu4 = 2422 eu4 = 4264 v2 = 1030 }	# 0 "Kazan, 0 "Veda-Suvar, 0 "Tetyushi -> Kazan
 	link = { eu4 = 2421 eu4 = 4267 v2 = 1032 }	# 1 "Juketau, 0 "Bolgar -> Chistopol
 	link = { eu4 = 475 v2 = 1042 }	# 0 "Bashkortostan -> Ufa
-	link = { eu4 = 2441 eu4 = 2444 v2 = 1059 }	# 0 "Iglino, 0 "Bashgird -> Chelyabinsk
-	link = { eu4 = 1078 eu4 = 2427 v2 = 1058 v2 = 1062 }	# MANY-TO-MANY: 0 "Tura, 0 "Ostyaki -> Ekaterinburg, Berezov
+	link = { eu4 = 2441 eu4 = 2444 v2 = 1058 v2 = 1059 }	# MANY-TO-MANY: 0 "Iglino, 0 "Bashgird -> Ekaterinburg, Chelyabinsk
+	link = { eu4 = 1078 eu4 = 2427 v2 = 1062 v2 = 2685 }	# MANY-TO-MANY: 0 "Tura, 0 "Ostyaki -> Berezov, Verkhoturye
 	link = { eu4 = 305 eu4 = 1077 v2 = 1026 }	# 0 "Perm, 0 "Solikamsk -> Perm
 	link = { eu4 = 1080 v2 = 2689 }	# 0 "Pelym -> Vojvoz
-	link = { eu4 = 1780 v2 = 2685 }	# 0 "Komi -> Verkhoturye
-	link = { eu4 = 2426 eu4 = 2425 v2 = 2614 }	# 0 "Yamal, 0 "Nenets -> Shadrinsk
-	link = { eu4 = 1955 eu4 = 4122 eu4 = 4256 eu4 = 4257 v2 = 981 v2 = 985 v2 = 986 v2 = 2699 v2 = 2688 v2 = 2687 }	# MANY-TO-MANY: 0 "Kholmogory, 0 "Shenkursk, 0 "Solvychegodsk, 0 "Mezen -> Arkhangelsk, Mezen, Naryn Mar, Izma, Inta, Amderma
+	link = { eu4 = 1780 v2 = 2687 }	# 0 "Komi -> Amderma
+	link = { eu4 = 2426 eu4 = 2425 }	# 0 "Yamal, 0 "Nenets -> DROPPED
+	link = { eu4 = 1955 eu4 = 4122 eu4 = 4256 eu4 = 4257 v2 = 981 v2 = 985 v2 = 986 v2 = 2699 v2 = 2688 }	# MANY-TO-MANY: 0 "Kholmogory, 0 "Shenkursk, 0 "Solvychegodsk, 0 "Mezen -> Arkhangelsk, Mezen, Naryn Mar, Izma, Inta
 	link = { eu4 = 313 eu4 = 4258 v2 = 2588 }	# 0 "Soroka, 0 "Onega -> Onega
 	link = { eu4 = 1958 v2 = 993 }	# 0 "Kargopol -> Vyterga
 	link = { eu4 = 1777 v2 = 2587 v2 = 983 v2 = 982 }	# 0 "Kola -> Kola, Kandalaksha, Petsamo
@@ -1756,7 +1756,7 @@
 	link = { eu4 = 398 v2 = 1168 }	# 0 "Qawasim -> Dubai
 	link = { eu4 = 403 v2 = 1170 }	# 0 "Nizwa -> Nizwa
 	link = { eu4 = 399 eu4 = 4285 v2 = 1169 }	# 1 "Batinah, 0 "Baraimi -> Suhar
-	link = { eu4 = 400 v2 = 1166 }	# 0 "Muscat -> Muscat
+	link = { eu4 = 400 v2 = 1166 v2 = 2640 }	# 0 "Muscat -> Muscat, Gwadar
 	link = { eu4 = 4286 eu4 = 4287 v2 = 1171 }	# 0 "Ash Sharqiyah, 0 "Ibra -> Sur
 	link = { eu4 = 2341 eu4 = 2342 v2 = 1172 }	# 1 "Masirah, 0 "Wusta -> Duqm
 	link = { eu4 = 401 v2 = 1174 }	# 0 "Dhofar -> Salalah
@@ -2704,7 +2704,7 @@
 	link = { eu4 = 1043 v2 = 2639 v2 = 1072 }	# 0 "Okhotsk -> Arman, Okhotsk
 	link = { eu4 = 1047 v2 = 2641 }	# 0 "Jugjur -> Ajan
 	link = { eu4 = 2103 v2 = 1080 }	# 0 "Udi -> Chumikan
-	link = { eu4 = 1040 eu4 = 1039 v2 = 2620 v2 = 2640 }	# MANY-TO-MANY: 0 "Suntar Khayata, 0 "Verkhoyansk -> Susuman, Gwadar
+	link = { eu4 = 1040 eu4 = 1039 v2 = 2620 }	# 0 "Suntar Khayata, 0 "Verkhoyansk -> Susuman
 	link = { eu4 = 1042 v2 = 2642 }	# 0 "Sakha -> Tomtor
 	link = { eu4 = 2438 eu4 = 1046 v2 = 2648 }	# 0 "Kharya, 0 "Maya -> Handyga
 	# Eastern Siberia
@@ -2742,14 +2742,15 @@
 	link = { eu4 = 4691 v2 = 2690 }	# As -> Yugansk
 	link = { eu4 = 1074 v2 = 1066 }	# 0 "Sibir -> Tobolsk
 	link = { eu4 = 4690 eu4 = 4689 v2 = 2686 }	# Ishim, Om -> Kainsk
-	link = { eu4 = 1075 eu4 = 1076 v2 = 1061 }	# 0 "Tyumen, 0 "Kurgan -> Tyumen
+	link = { eu4 = 1076 v2 = 2658 v2 = 2614 }	# 0 "Kurgan -> Kurgan, Shadrinsk
+	link = { eu4 = 1075 v2 = 1061 }	# 0 "Tyumen -> Tyumen
 	link = { eu4 = 1966 v2 = 1060 }	# 0 "Chelyaba -> Orsk
 	# Urals
 	link = { eu4 = 2420 v2 = 1044 }	# 0 "Agyidel -> Orenburg
 	# Northern Russia Proper
 	# Central Russia Proper
 	# Siberian Wasteland
-	link = { eu4 = 1781 v2 = 2654 v2 = 2693 v2 = 2657 v2 = 2658 v2 = 2680 v2 = 2659 }	# 0 "Western Siberia -> Hatanga, Essey, Dudinka, Kurgan, Volochanka, Khalmer-Sede
+	link = { eu4 = 1781 v2 = 2654 v2 = 2693 v2 = 2657 v2 = 2680 v2 = 2659 }	# 0 "Western Siberia -> Hatanga, Essey, Dudinka, Volochanka, Khalmer-Sede
 	link = { eu4 = 1782 v2 = 2667 v2 = 2652 v2 = 2649 v2 = 2670 v2 = 2671 v2 = 2673 v2 = 2651 v2 = 2653 v2 = 2675 v2 = 2674 v2 = 2655 }	# 0 "Central Siberia -> Batagay, Kular, Tomtor, Verkhneudinsk, Barguzin, Olenek, Mirny, Saskylah, Erbogachen, Abakan, Essej
 	link = { eu4 = 1783 v2 = 2666 v2 = 2661 v2 = 2664 v2 = 2621 v2 = 2665 v2 = 2619 v2 = 2647 v2 = 2668 v2 = 2643 }	# 0 "Eastern Siberia -> Komsomolskiy, Belebino, Khasab, Srednekolymsk, Chokurdakh, Indigirka, Lifau, Adyca, Honuu
 	link = { eu4 = 4482 v2 = 1328 }	# 0 "Sikkim -> Tumlong
