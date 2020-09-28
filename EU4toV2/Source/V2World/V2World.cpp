@@ -29,7 +29,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	LOG(LogLevel::Info) << "Parsing nationalities mappings.";
 	culturalNationalitiesMapper.loadFile("configurables/nationals.txt");
 	religionMapper.scrapeCustomReligions();
-	
+
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
 	LOG(LogLevel::Info) << "-> Importing Provinces";
 	importProvinces();
@@ -219,7 +219,7 @@ void V2::World::dropCores()
 {
 	// This function is used to drop EXTANT country cores over provinces where they do not have primary/accepted culture dominance.
 	// Dead country cores will remain so something can be released.
-	
+
 	// This is quicker if we first build a country/culture cache and then check against it then iterate through
 	// every province and do multiple unneeded checks.
 
@@ -237,7 +237,7 @@ void V2::World::dropCores()
 
 	for (auto& province: provinces)
 	{
-		if (province.second->getCores().empty()) // Don't waste time 
+		if (province.second->getCores().empty()) // Don't waste time
 			continue;
 		const auto dominantCulture = province.second->getDominantCulture();
 		if (dominantCulture.empty()) // Let's not drop anything if we don't know what should remain.
@@ -255,7 +255,7 @@ void V2::World::dropCores()
 
 			const auto& cacheItr = theCache.find(core);
 			if (cacheItr == theCache.end())
-				continue; // Dropping unrecognized core;
+				continue;											// Dropping unrecognized core;
 			if (cacheItr->second.count(dominantCulture)) // This province has core's (tag's) accepted culture, we can retain this core.
 				survivingCores.insert(cacheItr->first);
 		}
@@ -300,24 +300,13 @@ void V2::World::addAcceptedCultures(const EU4::Regions& eu4Regions)
 
 		const auto& primaryCulture = country.second->getPrimaryCulture();
 		auto acceptedCultures = country.second->getAcceptedCultures();
-		const auto primRatio = static_cast<double>(census[primaryCulture]) / totalPopulation;
 		auto cultureGroup = cultureGroupsMapper.getGroupForCulture(primaryCulture);
 		if (!cultureGroup)
 			return;
 		auto cultureGroupCultures = cultureGroup->getCultures();
-		double sameGroupThreshold;
-		double foreignThreshold;
+		const auto sameGroupThreshold = acceptedCultureThresholdsMapper.getSameGroup();
+		const auto foreignThreshold = acceptedCultureThresholdsMapper.getForeignGroup();
 
-		if (primRatio >= 0.5)
-		{
-			sameGroupThreshold = 0.15;
-			foreignThreshold = 0.2;
-		}
-		else
-		{
-			sameGroupThreshold = 0.1;
-			foreignThreshold = 0.15;
-		}
 		for (const auto& culture: census)
 		{
 			if (culture.first == primaryCulture)
@@ -429,7 +418,7 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 				accV2Cultures.insert(primV2Culture);
 				primV2Culture = generatedNeoCultures[primEU4Culture];
 			}
-			else if (census[generatedNeoCultures[primEU4Culture]] > 0.15 * totalPopulation)
+			else if (census[generatedNeoCultures[primEU4Culture]] > acceptedCultureThresholdsMapper.getSameGroup() * totalPopulation)
 			{
 				// Well, at least it's an accepted culture now. This is very possible if the motherland
 				// assimilated a small colony on conversion.
@@ -444,7 +433,7 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 			{
 				if (entry.first == genCulture.second) // this is a neoculture.
 				{
-					if (entry.second > 0.15 * totalPopulation && entry.first != primV2Culture)
+					if (entry.second > acceptedCultureThresholdsMapper.getSameGroup() * totalPopulation && entry.first != primV2Culture)
 					{
 						accV2Cultures.insert(entry.first);
 					}
@@ -1735,7 +1724,8 @@ void V2::World::outputProvinces() const
 	{
 		auto filename = province.second->getFilename();
 		auto lastSlash = filename.find_last_of('/');
-		if (lastSlash == std::string::npos) lastSlash = filename.find_last_of('\\');
+		if (lastSlash == std::string::npos)
+			lastSlash = filename.find_last_of('\\');
 		auto path = filename.substr(0, lastSlash);
 		if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces/" + path))
 			throw std::runtime_error("Could not create directory: output/" + theConfiguration.getOutputName() + "/history/provinces/" + path);

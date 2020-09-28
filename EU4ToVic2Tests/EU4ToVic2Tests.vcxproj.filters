@@ -275,6 +275,12 @@
     <ClCompile Include="..\commonItems\Color.cpp">
       <Filter>ConverterFiles\commonItems</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\AcceptedCultureThresholdsMapperTests.cpp">
+      <Filter>MapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp">
+      <Filter>ConverterFiles\Mappers\AcceptedCultureThresholds</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -363,6 +369,9 @@
     </Filter>
     <Filter Include="MapperTests\CountryMappings">
       <UniqueIdentifier>{1d2e3714-20f2-4f78-aaea-16be904f82a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\AcceptedCultureThresholds">
+      <UniqueIdentifier>{452c1153-fca1-4e1c-90f9-1ccbaa336746}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
