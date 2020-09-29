@@ -1605,12 +1605,15 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	outputNeoCultures();
 	Log(LogLevel::Progress) << "99 %";
 
-	copyModFiles();
-	outputStateMap(theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName() + "/map/region.txt",
-		 "output/" + theConfiguration.getOutputName() + "/region.txt");
+	if (!theConfiguration.getVic2ModName().empty())
+	{
+		copyModFiles();
+		outputStateMap(theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName() + "/map/region.txt",
+			 "output/" + theConfiguration.getOutputName() + "/region.txt");
 
-	LOG(LogLevel::Info) << "<- Outputting events";
-	outEvents();
+		LOG(LogLevel::Info) << "<- Outputting events";
+		outEvents();
+	}
 
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
@@ -1973,6 +1976,9 @@ void V2::World::copyModFiles() const
 				fs::copy_file(mod + "/gfx/interface/" + file, output + "/gfx/interface/" + file);
 			}
 		}
+
+		// gfx/anims
+		fs::copy(mod + "/gfx/anims", output + "/gfx/anims", fs::copy_options::recursive);
 
 		//	/interface
 		const auto& interfaceFiles = commonItems::GetAllFilesInFolder(mod + "/interface");
