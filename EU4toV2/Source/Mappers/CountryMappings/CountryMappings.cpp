@@ -28,7 +28,7 @@ mappers::CountryMappings::CountryMappings():
 	registerKeys();
 	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
 	{
-		parseFile("configurables/" + mod + "_country_mappings.txt");
+		parseFile("configurables/" + mod + "/country_mappings.txt");
 	}
 	else
 	{

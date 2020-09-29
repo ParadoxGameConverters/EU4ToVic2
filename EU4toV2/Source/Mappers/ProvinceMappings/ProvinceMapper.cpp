@@ -16,7 +16,7 @@ mappers::ProvinceMapper::ProvinceMapper(): colonialRegionsMapper(std::make_uniqu
 	registerKeys();
 	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
 	{
-		parseFile("configurables/EU4_" + mod + "_province_mappings.txt");
+		parseFile("configurables/" + mod + "/province_mappings.txt");
 	}
 	else
 	{
