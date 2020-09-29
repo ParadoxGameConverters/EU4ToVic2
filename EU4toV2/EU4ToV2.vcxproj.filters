@@ -568,6 +568,12 @@
     <ClCompile Include="Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp">
       <Filter>Mappers\AcceptedCultureThresholds</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\CountryFlags\CountryFlags.cpp">
+      <Filter>Mappers\CountryFlags</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CountryFlags\CountryFlagsMapping.cpp">
+      <Filter>Mappers\CountryFlags</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1100,6 +1106,12 @@
     <ClInclude Include="Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.h">
       <Filter>Mappers\AcceptedCultureThresholds</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\CountryFlags\CountryFlags.h">
+      <Filter>Mappers\CountryFlags</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CountryFlags\CountryFlagsMapping.h">
+      <Filter>Mappers\CountryFlags</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1344,6 +1356,9 @@
     </Filter>
     <Filter Include="Mappers\AcceptedCultureThresholds">
       <UniqueIdentifier>{b53b167f-ad1c-43c3-b114-c0af0bd35ad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CountryFlags">
+      <UniqueIdentifier>{c2f5257a-dea3-40f3-9aa0-466dce08a547}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

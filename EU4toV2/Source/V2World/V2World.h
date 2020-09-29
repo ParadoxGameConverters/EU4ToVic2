@@ -1,3 +1,4 @@
+
 #ifndef WORLD_H
 #define WORLD_H
 
@@ -5,6 +6,7 @@
 #include "../Mappers/AcceptedCultureThresholds/AcceptedCultureThresholdsMapper.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../Mappers/AfricaReset/AfricaResetMapper.h"
+#include "../Mappers/CountryFlags/CountryFlags.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/CulturalUnions/CulturalUnionMapper.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
@@ -127,6 +129,8 @@ class World
 	void addAcceptedCultures(const EU4::Regions& eu4Regions);
 	void addReligionCulture();
 
+	void convertCountryFlags();
+
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
 	mappers::CountryMappings countryMapper;
@@ -163,6 +167,7 @@ class World
 	MappingChecker mappingChecker;
 	ModFile modFile;
 	Diplomacy diplomacy;
+	mappers::CountryFlags countryFlags;
 };
 
 std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);
