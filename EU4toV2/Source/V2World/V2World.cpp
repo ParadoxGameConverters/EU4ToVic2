@@ -144,9 +144,9 @@ V2::World::World(const EU4::World& sourceWorld,
 	convertCountryFlags();
 	Log(LogLevel::Progress) << "71 %";
 
-	if (!theConfiguration.getOutputName().empty())
+	if (!theConfiguration.getVic2ModName().empty())
 	{
-		LOG(LogLevel::Debug) << "Converting events";
+		LOG(LogLevel::Info) << "Converting events";
 		convertEvents();
 		Log(LogLevel::Progress) << "72 %";
 	}
