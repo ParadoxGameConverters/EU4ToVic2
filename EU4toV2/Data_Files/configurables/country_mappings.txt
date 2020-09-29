@@ -459,6 +459,7 @@ link = { eu4 = UTR v2 = UTR } # Utrecht
 
 #Russia 
 link = { eu4 = ARM v2 = ARM } # Armenia
+link = { eu4 = e_armenia v2 = ARM } # (Greater) Armenia
 link = { eu4 = k_armenia v2 = ARM } # Armenia
 link = { eu4 = AST v2 = AKH } # Astrakhan
 link = { eu4 = CRI v2 = CRI } # Crimea
@@ -694,6 +695,7 @@ link = { eu4 = SFA v2 = SOF } # Sofala
 link = { eu4 = MBA v2 = MBA } # Mombasa
 link = { eu4 = MLI v2 = ML1 } # Malindi
 link = { eu4 = AJU v2 = AJU } # Ajuuraan
+link = { eu4 = e_ajuraan v2 = AJU } # Aju(u)raan
 link = { eu4 = MDI v2 = MDI } # Mogadishu
 link = { eu4 = ENA v2 = ENA } # Ennarea
 
@@ -1061,6 +1063,7 @@ link = { eu4 = d_smolensk v2 = SMK } # Smolensk
 link = { eu4 = NZH v2 = NZH } # Nizhny Novgorod
 link = { eu4 = c_nizhny_novgorod v2 = NZH } # Nizhny Novgorod
 link = { eu4 = KOJ v2 = JER } # Jerusalem
+link = { eu4 = e_outremer v2 = JER } # Outremer => Jerusalem
 link = { eu4 = k_jerusalem v2 = JER } # Jerusalem
 link = { eu4 = MSA v2 = MLY } # Malaya
 link = { eu4 = HIN v2 = HDU } # Hindustan
@@ -1375,12 +1378,27 @@ link = { eu4 = WEI v2 = WEJ } # Wei
 link = { eu4 = HND v2 = HNX } # Han
 link = { eu4 = ZAO v2 = ZAO } # Zhao
 link = { eu4 = LIO v2 = LIO } # Liao
+link = { eu4 = e_liao v2 = LIO } # Liao
 link = { eu4 = XIA v2 = HSJ } # Xia
 link = { eu4 = DAX v2 = DAX } # Dai
 link = { eu4 = CEG v2 = CHX } # Cheng
 link = { eu4 = SNG v2 = SUM } # Song
 link = { eu4 = YIN v2 = YIN } # Yin
 link = { eu4 = CHN v2 = ZHX } # Zhongwuo
+
+link = { eu4 = CVS v2 = CVS } # Chuvashia
+
+## CK3 titles with a Vic2 equivalent
+# Empires
+link = { eu4 = e_guinea v2 = GNE } # Guinea
+link = { eu4 = e_maghreb v2 = MGH } # Maghreb
+link = { eu4 = e_siberia v2 = SIB } # Siberia
+link = { eu4 = e_kirghiz_khanate v2 = KYR } # Kyrgyz Khanate => Kyrgyzstan
+link = { eu4 = e_slavia v2 = SLA } # Slavia => Slavic Union
+link = { eu4 = e_uyghur_khanate v2 = UYG } # Uyghur Khanate => Uyghurstan
+# Kingdoms
+# Duchies
+# Counties
 
 ##1356 mod
 link = { eu4 = WHI v2 = WHI } # White Horde
@@ -1438,9 +1456,6 @@ link = { eu4 = TDG v2 = TDG } # Tidung
 link = { eu4 = TOL v2 = TOL } # Tolaki
 link = { eu4 = UDM v2 = UDM } # Udmurtia
 link = { eu4 = VYL v2 = VYL } # Vyatskaya Zemlya
-
-# CK3EU4 additions
-link = { eu4 = CVS v2 = CVS } # Chuvashia
 
 ##M&T basic mappings (only those whose tags already exist)
 link = { eu4 = AAA v2 = AAA } #Dummy

@@ -3659,3 +3659,68 @@ link = { name = "tschechoslowakei" title = "d_czh" region = "e_carpathia" }
 link = { name = "macedonia" title = "d_mkd" region = "e_byzantium" }
 link = { name = "macédoine" title = "d_mkd" region = "e_byzantium" }
 link = { name = "mazedonien" title = "d_mkd" region = "e_byzantium" }
+
+## CK3 titles - may God have mercy on me
+# Empires
+link = { name = "ajuraan" title = "e_ajuraan" region = "e_ajuraan" }
+link = { name = "ajuran" title = "e_ajuraan" region = "e_ajuraan" }
+link = { name = "guinea" title = "e_guinea" region = "e_guinea }
+link = { name = "kanem-bornu" title = "e_kanem" region = "e_kanem" } # e_kanem already in country_mappings
+link = { name = "kanem-bornou" title = "e_kanem" region = "e_kanem" }
+link = { name = "maghreb" title = "e_maghreb" region = "e_maghreb" }
+link = { name = "pictavia" 	 title = "k_scotland" 	 region = "e_britannia" }
+link = { name = "pictavie" 	 title = "k_scotland" 	 region = "e_britannia" }
+link = { name = "mongolia" 	 title = "e_mongol_empire" 	 region = "e_mongol_empire" }
+link = { name = "mongolie" 	 title = "e_mongol_empire" 	 region = "e_mongol_empire" }
+link = { name = "mongolei" 	 title = "e_mongol_empire" 	 region = "e_mongol_empire" }
+link = { name = "siberia" title = "e_siberia" region = "e_siberia" }
+link = { name = "sibérie" title = "e_siberia" region = "e_siberia" }
+link = { name = "sibirien" title = "e_siberia" region = "e_siberia" }
+link = { name = "turan" title = "e_turan" region = "e_turan" }
+link = { name = "volga-ural" title = "e_volga-ural" region = "e_volga-ural" }
+link = { name = "volga-oural" title = "e_volga-ural" region = "e_volga-ural" }
+link = { name = "wolga-ural" title = "e_volga-ural" region = "e_volga-ural" }
+link = { name = "aarlud khanate" title = "e_aarlud_khanate" region = "e_aarlud_khanate" }
+link = { name = "khanat aarlud" title = "e_aarlud_khanate" region = "e_aarlud_khanate" }
+link = { name = "aarlud-khanat" title = "e_aarlud_khanate" region = "e_aarlud_khanate" }
+link = { name = "bactria" title = "e_bactria" region = "e_bactria" }
+link = { name = "bactrie" title = "e_bactria" region = "e_bactria" }
+link = { name = "baktrien" title = "e_bactria" region = "e_bactria" }
+link = { name = "baruun khanate" title = "e_baruun_khanate" region = "e_baruun_khanate" }
+link = { name = "khanat baruun" title = "e_baruun_khanate" region = "e_baruun_khanate" }
+link = { name = "baruun-khanat" title = "e_baruun_khanate" region = "e_baruun_khanate" }
+link = { name = "black horde" title = "e_black_horde" region = "e_black_horde" }
+link = { name = "horde noire" title = "e_black_horde" region = "e_black_horde" }
+link = { name = "schwarze horde" title = "e_black_horde" region = "e_black_horde" }
+link = { name = "chagatai" title = "e_chagatai" region = "e_chagatai" }
+link = { name = "tchaghataï" title = "e_chagatai" region = "e_chagatai" }
+link = { name = "greater armenia" title = "e_armenia" region = "e_armenia" }
+link = { name = "grande arménie" title = "e_armenia" region = "e_armenia" }
+link = { name = "großarmenien" title = "e_armenia" region = "e_armenia" }
+link = { name = "india" title = "e_india" region = "e_india" }
+link = { name = "inde" title = "e_india" region = "e_india" }
+link = { name = "indien" title = "e_india" region = "e_india" }
+link = { name = "kara khitai" title = "e_kara_khitai" region = "e_kara_khitai" }
+link = { name = "kara khitaï" title = "e_kara_khitai" region = "e_kara_khitai" }
+link = { name = "great liao" title = "e_liao" region = "e_liao" } # Renamed Kyrgyz Khanate
+link = { name = "grand liao" title = "e_liao" region = "e_liao" } 
+link = { name = "groß-liao" title = "e_liao" region = "e_liao" } 
+link = { name = "outremer" title = "e_outremer" region = "e_outremer" }
+link = { name = "slavia" title = "e_slavia" region = "e_slavia" }
+link = { name = "slavie" title = "e_slavia" region = "e_slavia" }
+link = { name = "slawenland" title = "e_slavia" region = "e_slavia" }
+link = { name = "tögsköl khanate" title = "e_togskol_khanate" region = "e_togskol_khanate" }
+link = { name = "khanat tögsköl" title = "e_togskol_khanate" region = "e_togskol_khanate" }
+link = { name = "tögsköl-khanat" title = "e_togskol_khanate" region = "e_togskol_khanate" }
+link = { name = "uyghur khanate" title = "e_uyghur_khanate" region = "e_uyghur_khanate" }
+link = { name = "khanat ouïghour" title = "e_uyghur_khanate" region = "e_uyghur_khanate" }
+link = { name = "uiguren-khanat" title = "e_uyghur_khanate" region = "e_uyghur_khanate" }
+link = { name = "white horde" title = "e_white_horde" region = "e_white_horde" }
+link = { name = "horde blanche" title = "e_white_horde" region = "e_white_horde" }
+link = { name = "weiße horde" title = "e_white_horde" region = "e_white_horde" }
+
+# Kingdoms 
+
+# Counties
+
+# Duchies
