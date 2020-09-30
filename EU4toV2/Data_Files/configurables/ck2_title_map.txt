@@ -3720,7 +3720,63 @@ link = { name = "horde blanche" title = "e_white_horde" region = "e_white_horde"
 link = { name = "weiße horde" title = "e_white_horde" region = "e_white_horde" }
 
 # Kingdoms 
-
-# Counties
+link = { name = "lotharingia" title = "k_lotharingia" region = "e_hre" }
+link = { name = "pontus" title = "k_pontus" region = "e_byzantium" }
+link = { name = "armenian principalities" title = "k_armenia" region = "e_byzantium" }
+link = { name = "old armenia" title = "k_armenia" region = "e_byzantium" }
+link = { name = "sápmi" title = "k_sapmi" region = "e_scandinavia" }
+link = { name = "winideheim" title = "k_winideheim" region = "e_wendish_empire" }
+link = { name = "galicia-volhynia" title = "k_galicia-volhynia" region = "e_russia" }
+link = { name = "white rus'" title = "k_white_rus" region = "e_russia" }
+link = { name = "bjarmaland" title = "k_bjarmaland" region = "e_russia" }
+link = { name = "zaporizhia" title = "k_pontic_steppe" region = "e_russia" }
+link = { name = "caucasus" title = "k_caucasus" region = "e_russia" }
+link = { name = "caspian steppe" title = "k_caspian_steppe" region = "e_russia" }
+link = { name = "mogyër confederation" title = "k_magyar" region = "e_russia" }
+link = { name = "mordvinia" title = "k_mordvinia" region = "e_volga-ural" }
+link = { name = "permia" title = "k_perm" region = "e_volga-ural" }
+link = { name = "bashkiria" title = "k_bashkiria" region = "e_volga-ural" }
+link = { name = "ob" title = "k_ob" region = "e_siberia" }
+link = { name = "tuva" title = "k_tuva" region = "e_mongol_empire" }
+link = { name = "khakassia" title = "k_khakassia" region = "e_mongol_empire" }
+link = { name = "buryatia" title = "k_buryatia" region = "e_mongol_empire" }
+link = { name = "angara" title = "k_angara" region = "e_mongol_empire" }
+link = { name = "kimek" title = "k_kimek" region = "e_tartaria" }
+link = { name = "dzungaria" title = "k_dzungaria" region = "e_tartaria" }
+link = { name = "khotan" title = "k_khotan" region = "e_turan" }
+link = { name = "oghuz il" title = "k_oghuz_il" region = "e_turan" }
+link = { name = "transoxiana" title = "k_transoxiana" region = "e_turan" }
+link = { name = "tahert" title = "k_tahert" region = "e_maghreb" }
+link = { name = "anbiya" title = "k_anbiya" region = "e_maghreb" }
+link = { name = "sahara" title = "k_sahara" region = "e_maghreb" }
+link = { name = "adal" title = "k_adal" region = "e_abyssinia" }
+link = { name = "outer ajuraan" title = "k_outer_ajuraan" region = "e_ajuraan" }
+link = { name = "kanem" title = "k_kanem" region = "e_kanem" }
+link = { name = "sao" title = "k_sao" region = "e_kanem" }
+link = { name = "hausaland" title = "k_hausaland" region = "e_kanem" }
+link = { name = "darfur" title = "k_darfur" region = "e_kanem" }
+link = { name = "takrur" title = "k_takrur" region = "e_mali" }
+link = { name = "jenne" title = "k_jenne" region = "e_mali" }
+link = { name = "kaabu" title = "k_kaabu" region = "e_guinea" }
+link = { name = "toro" title = "k_toro" region = "e_guinea" }
+link = { name = "kong" title = "k_kong" region = "e_guinea" }
+link = { name = "adiukru" title = "k_adiukru" region = "e_guinea" }
+link = { name = "akan" title = "k_akan" region = "e_guinea" }
+link = { name = "gur" title = "k_gur" region = "e_guinea" }
+link = { name = "borgu" title = "k_borgu" region = "e_guinea" }
+link = { name = "yorubaland" title = "k_yorubaland" region = "e_guinea" }
+link = { name = "igbo-benue" title = "k_igbo-benue" region = "e_guinea" }
+link = { name = "himalaya" title = "k_nepal" region = "e_rajastan" }
+link = { name = "pagan" title = "k_pagan" region = "e_bengal" }
+link = { name = "Ü" title = "k_u" region = "e_tibet" }
+link = { name = "tsang" title = "k_tsang" region = "e_tibet" }
+link = { name = "gyalrong" title = "k_gyalrong" region = "e_tibet" }
+link = { name = "gugé" title = "k_guge" region = "e_tibet" }
+link = { name = "maryül" title = "k_maryul" region = "e_tibet" }
+link = { name = "lhomon" title = "k_lhomon" region = e_tibet" }
+link = { name = "austria" title = "k_austria" region = "e_hre" }
+link = { name = "danelaw" title = "k_danelaw" region = "e_scandinavia" }
 
 # Duchies
+
+# Counties

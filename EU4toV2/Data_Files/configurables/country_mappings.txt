@@ -290,6 +290,7 @@ link = { eu4 = GER v2 = GER } # Germany
 link = { eu4 = k_germany v2 = GER } # Germany
 link = { eu4 = e_germany v2 = GER } # Germany
 link = { eu4 = HAB v2 = AUS } # Austria
+link = { eu4 = k_austria v2 = AUS } # Austria
 link = { eu4 = c_osterreich v2 = AUS } # Austria
 link = { eu4 = k_eastern_marches v2 = AUS } # Eastern Marches => Austria
 link = { eu4 = HAM v2 = HAM } # Hamburg
@@ -487,6 +488,7 @@ link = { eu4 = k_ruthenia v2 = UKR } # Ruthenia => Ukraine
 link = { eu4 = YAR v2 = YAR } # Yaroslavl
 link = { eu4 = d_yaroslavl v2 = YAR } # Yaroslavl
 link = { eu4 = ZAZ v2 = ZAZ } # Zaporozhie
+link = { eu4 = k_pontic_steppe v2 = ZAZ } # Zarpozihia => Zaporozhie
 link = { eu4 = NOG v2 = NOG } # Nogai
 link = { eu4 = SIB v2 = SIB } # Sibir
 link = { eu4 = d_sibir v2 = SIB } # Sibir
@@ -496,6 +498,7 @@ link = { eu4 = PRM v2 = PRM } # Perm
 link = { eu4 = k_perm v2 = PRM } # Perm
 link = { eu4 = FEO v2 = FEO } # Theodoro
 link = { eu4 = BSH v2 = BSK } # Bashkiria
+link = { eu4 = k_bashkiria v2 = BSK } # Bashkiria
 link = { eu4 = c_bashkirs v2 = BSK } # Bashkiria
 #link = { eu4 = BLO v2 = XXX } #Beloozero => d_beloozero
 #link = { eu4 = RSO v2 = XXX } #Rostov => d_rostov
@@ -632,6 +635,7 @@ link = { eu4 = QAR v2 = QAR } # Qara Koyunlu
 link = { eu4 = TIM v2 = TIM } # Timurid
 link = { eu4 = e_timurids v2 = TIM } # Timurid
 link = { eu4 = TRS v2 = TRX } # Transoxiana
+link = { eu4 = k_transoxiana v2 = TRX } # Transoxiana
 #link = { eu4 = KRY v2 = XXX } # Gilan => d_gilan
 link = { eu4 = CIR v2 = CIR } # Circassia
 link = { eu4 = GAZ v2 = GZK } # Gazikumukh
@@ -682,12 +686,15 @@ link = { eu4 = d_songhay v2 = SGH } # Songhai
 link = { eu4 = ZAN v2 = SWA } # Swahili
 link = { eu4 = ZIM v2 = ZIM } # Mutapa
 link = { eu4 = ADA v2 = ADA } # Adal
+link = { eu4 = k_adal v2 = ADA } # Adal
 link = { eu4 = HAU v2 = HAU } # Hausa
 link = { eu4 = k_hausaland v2 = HAU } # Hausa(land)
 link = { eu4 = KBO v2 = KBO } # Kanem Bornu
 link = { eu4 = e_kanem v2 = KBO } # Kanem (Bornu)
+link = { eu4 = k_kanem v2 = KBO } # Kanem
 link = { eu4 = LOA v2 = LOA } # Loango
 link = { eu4 = OYO v2 = OYO } # Oyo
+link = { eu4 = k_yorubaland v2 = OYO } # Yorubaland => Oyo
 link = { eu4 = SOF v2 = SGU } # Segu
 link = { eu4 = SOK v2 = SOK } # Sokoto
 link = { eu4 = JOL v2 = WOL } # Jolof
@@ -706,6 +713,7 @@ link = { eu4 = d_afar v2 = AFA } # Afar
 link = { eu4 = ALO v2 = ALO } # Alodia
 link = { eu4 = d_alodia v2 = ALO } # Alodia
 link = { eu4 = DAR v2 = DAR } # Darfur
+link = { eu4 = k_darfur v2 = DAR } # Darfur
 link = { eu4 = GLE v2 = GEL } # Geledi
 link = { eu4 = HAR v2 = HAR } # Harar
 link = { eu4 = HOB v2 = HOB } # Hobyo
@@ -839,6 +847,7 @@ link = { eu4 = SST v2 = SHA } # Shan
 link = { eu4 = SUK v2 = SUK } # Sukhothai
 link = { eu4 = SUL v2 = SUL } # Sulu
 link = { eu4 = TAU v2 = BUR } # Taungu => Burma
+link = { eu4 = k_pagan v2 = BUR } # Pagan => Burma
 link = { eu4 = TIB v2 = TIB } # Tibet
 link = { eu4 = e_tibet v2 = TIB } # Tibet
 link = { eu4 = TOK v2 = TOK } # Tonkin
@@ -872,6 +881,7 @@ link = { eu4 = KRC v2 = KRC } # Khorchin
 link = { eu4 = KLK v2 = KLK } # Khalkha
 link = { eu4 = HMI v2 = HMI } # Karadel
 link = { eu4 = ZUN v2 = ZUN } # Zunghar
+link = { eu4 = k_dzungaria v2 = ZUN } # Dzungaria => Zunghar
 link = { eu4 = KAS v2 = YRK } # Yarkand
 link = { eu4 = CHH v2 = CHH } # Chahar
 
@@ -879,6 +889,7 @@ link = { eu4 = CHH v2 = CHH } # Chahar
 link = { eu4 = KSD v2 = KSD } # Khoshuud
 link = { eu4 = SYG v2 = SYG } # Sarig Yogir
 link = { eu4 = UTS v2 = UTS } # Utsang
+link = { eu4 = k_tsang v2 = UTS } # Tsang => Ü-Tsang (named Tsang)
 link = { eu4 = d_lhasa v2 = UTS } #Utsang
 link = { eu4 = k_yarlung v2 = UTS } #Utsang
 link = { eu4 = KAM v2 = MDO } # Mdokhams
@@ -886,6 +897,7 @@ link = { eu4 = d_kham v2 = MDO } # Mdokhams
 link = { eu4 = GUG v2 = GUG } # Guge
 link = { eu4 = k_guge v2 = GUG } # Guge
 link = { eu4 = PHA v2 = PHA } # Phagmodrupa
+link = { eu4 = k_u v2 = PHA } # Ü => Phagmodrupa (named Ü)
 
 #Non-Han China proper tags
 link = { eu4 = CDL v2 = CDL } # Dali
@@ -970,6 +982,7 @@ link = { eu4 = MEW v2 = MWT } # Mewat
 link = { eu4 = BDA v2 = BER } # Baroda => Beroda
 link = { eu4 = BST v2 = BAS } # Bastar
 link = { eu4 = BHU v2 = BHU } # Bhutan
+link = { eu4 = k_lhomon v2 = BHU } # Lhomon => Bhutan
 link = { eu4 = d_bhutan v2 = BHU } # Bhutan
 link = { eu4 = BND v2 = BUN } # Bundelkhand
 link = { eu4 = CEY v2 = SRI } # Ceylon
@@ -986,6 +999,7 @@ link = { eu4 = HAD v2 = HAD } # Hadoti
 link = { eu4 = NGA v2 = NGA } # Nagaur
 link = { eu4 = RMP v2 = RMP } # Rohilkandh
 link = { eu4 = LDK v2 = LDK } # Ladakh
+link = { eu4 = k_maryul v2 = LDK } # Maryül => Ladakh
 link = { eu4 = d_ladakh v2 = LDK } # Ladakh
 link = { eu4 = BGL v2 = BGL } # Bagelkhand
 link = { eu4 = JFN v2 = JFN } # Jaffna
@@ -1105,10 +1119,13 @@ link = { eu4 = DAH v2 = DAH } # Dahomey
 link = { eu4 = DGB v2 = DGB } # Dagbon
 link = { eu4 = FUL v2 = FUL } # Fulo
 link = { eu4 = JNN v2 = JNN } # Jenne
+link = { eu4 = k_jenne v2 = JNN } # Jenne
 link = { eu4 = c_djenne v2 = JNN } # Jenne
 link = { eu4 = KAN v2 = KAN } # Kano
 link = { eu4 = KBU v2 = GBU } # Kaabu
+link = { eu4 = k_kaabu v2 = GBU } # Kaabu
 link = { eu4 = KNG v2 = KNG } # Kong
+link = { eu4 = k_kong v2 = KNG } # Kong
 link = { eu4 = KTS v2 = KTS } # Katsina
 link = { eu4 = MSI v2 = MOS } # Mossi
 link = { eu4 = NUP v2 = NUP } # Nupe
@@ -1145,6 +1162,7 @@ link = { eu4 = HOD v2 = HOD } # Hodyntsy
 link = { eu4 = CHV v2 = CHV } # Chavchuveny
 link = { eu4 = KMC v2 = KMC } # Kamchadals
 link = { eu4 = BRT v2 = BYA } # Buryats
+link = { eu4 = k_buryatia v2 = BYA } # Buryatia
 
 #North American Additions
 link = { eu4 = ARP v2 = ARP } # Arapaho
@@ -1289,6 +1307,7 @@ link = { eu4 = DWT v2 = DWT } # Donauwörth
 #link = { eu4 = VRN v2 = XXX } # Verona => d_verona
 link = { eu4 = COB v2 = COB } # Coburg => Saxe-Coburg-Gotha
 link = { eu4 = LOT v2 = LOT } # Lotharingia
+link = { eu4 = k_lotharingia v2 = LOT } # Lotharingia
 link = { eu4 = PGA v2 = PGA } # Perugia
 
 # 1.30 Formabless
@@ -1334,6 +1353,7 @@ link = { eu4 = k_phi v2 = PHI } #Philippines
 link = { eu4 = k_nzl v2 = NZL } #New Zealand
 link = { eu4 = k_yug v2 = YUG } #Yugoslavia
 link = { eu4 = k_bye v2 = BYE } #Belarus
+link = { eu4 = k_white_rus v2 = BYE } # White Rus' => Belarus (=White Russia)
 link = { eu4 = k_si2 v2 = SIC } #Two Sicilies
 link = { eu4 = d_azerbaijan v2 = AZB } #Azerbaijan
 link = { eu4 = e_kuk v2 = KUK } #Austria-Hungary
@@ -1396,7 +1416,14 @@ link = { eu4 = e_siberia v2 = SIB } # Siberia
 link = { eu4 = e_kirghiz_khanate v2 = KYR } # Kyrgyz Khanate => Kyrgyzstan
 link = { eu4 = e_slavia v2 = SLA } # Slavia => Slavic Union
 link = { eu4 = e_uyghur_khanate v2 = UYG } # Uyghur Khanate => Uyghurstan
+
 # Kingdoms
+link = { eu4 = k_pontus v2 = PNT } # Pontus
+link = { eu4 = k_tuva v2 = TNT } # (Tannu) Tuva
+link = { eu4 = k_gur v2 = BKF } # Gur => Burkina Faso
+link = { eu4 = k_igbo-benue v2 = BIA } # Igbo-Benue => Biafra
+link = { eu4 = k_toro v2 = TOO } # T(o)oro
+
 # Duchies
 # Counties
 
