@@ -1,5 +1,5 @@
 # Version info
 
-version = "1.0P"
-name = "Picardy"
+version = "1.0Q"
+name = "Qi-prerelease"
 descriptionLine = "compatible with 1.30 and previous"
