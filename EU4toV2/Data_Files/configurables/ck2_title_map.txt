@@ -3664,7 +3664,7 @@ link = { name = "mazedonien" title = "d_mkd" region = "e_byzantium" }
 # Empires
 link = { name = "ajuraan" title = "e_ajuraan" region = "e_ajuraan" }
 link = { name = "ajuran" title = "e_ajuraan" region = "e_ajuraan" }
-link = { name = "guinea" title = "e_guinea" region = "e_guinea }
+link = { name = "guinea" title = "e_guinea" region = "e_guinea" }
 link = { name = "kanem-bornu" title = "e_kanem" region = "e_kanem" } # e_kanem already in country_mappings
 link = { name = "kanem-bornou" title = "e_kanem" region = "e_kanem" }
 link = { name = "maghreb" title = "e_maghreb" region = "e_maghreb" }
