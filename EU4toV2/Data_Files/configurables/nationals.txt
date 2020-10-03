@@ -42,7 +42,7 @@ link = { tag = LGB culture = lombard } #Longobardia
 #Latin descendants
 link = { tag = ENR culture = brithenig } #Brittania
 link = { tag = FRR culture = gaul } #Gallia
-link = { tag = AUR culture = laessin } #L√§√üinia
+link = { tag = AUR culture = laessin } #L‰ﬂinia
 #link = { tag = HSP culture = latin } #Hesperia - most of "latin" is outside Italy
 link = { tag = XLI culture = xliponian } #Xliponia
 link = { tag = WEN culture = wenedyk } #Venedia
@@ -153,7 +153,7 @@ link = { tag = AOT culture = maori } #Maori
 link = { tag = ABO culture = aborigine } #Aborigines
 #no cultural union for Poly-, Mela- and Micronesian
 
-#Native Americans (only M√©tis generated are put)
+#Native Americans (only MÈtis generated are put)
 link = { tag = CHE culture = cherokee } #Cherokee
 
 #USA
