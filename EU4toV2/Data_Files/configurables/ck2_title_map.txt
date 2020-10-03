@@ -2357,7 +2357,7 @@ link = { name = "nisani" 	 title = "c_meissen" 	 region = "e_hre" }
 link = { name = "nish" 	 title = "c_naissus" 	 region = "e_byzantium" }
 link = { name = "nitra " 	 title = "d_nyitra" 	 region = "e_carpathia" }
 link = { name = "nitra" 	 title = "c_nitra" 	 region = "e_carpathia" }
-link = { name = "noba # roman novae" 	 title = "c_tyrnovo" 	 region = "e_byzantium" }
+link = { name = "noba" 	 title = "c_tyrnovo" 	 region = "e_byzantium" }
 link = { name = "nobatia" 	 title = "d_nobatia" 	 region = "e_abyssinia" }
 link = { name = "nofant" 	 title = "c_galloway" 	 region = "e_britannia" }
 link = { name = "norðreyjar" 	 title = "d_orkney" 	 region = "e_scandinavia" }
@@ -3778,5 +3778,160 @@ link = { name = "austria" title = "k_austria" region = "e_hre" }
 link = { name = "danelaw" title = "k_danelaw" region = "e_scandinavia" }
 
 # Duchies
+## The ones that already have flags due to CK2
+link = { name = "arakan" title = "d_arakan" region = "e_hre" }
+link = { name = "ashanti" title = "d_ashanti" region = "e_hre" }
+link = { name = "augsburg" title = "d_augsburg" region = "e_hre" }
+link = { name = "air" title = "d_air" region = "e_hre" }
+link = { name = "benin" title = "d_benin" region = "e_hre" }
+link = { name = "bukovina" title = "d_bukovina" region = "e_hre" }
+link = { name = "coptic papacy" title = "d_coptic_papacy" region = "e_hre" }
+link = { name = "chuvashia" title = "d_chuvashia" region = "e_hre" }
+link = { name = "dárfúr" title = "d_darfur" region = "e_hre" }
+link = { name = "fezzan" title = "d_fezzan" region = "e_hre" }
+link = { name = "angria" title = "d_angria" region = "e_hre" }
+link = { name = "hesse" title = "d_hesse" region = "e_hre" }
+link = { name = "fura jalon" title = "d_jalon" region = "e_hre" }
+link = { name = "djolof" title = "d_jolof" region = "e_hre" }
+link = { name = "kaffa" title = "d_kaffa" region = "e_hre" }
+link = { name = "kano" title = "d_kano" region = "e_hre" }
+link = { name = "kebbi" title = "d_kebbi" region = "e_hre" }
+link = { name = "katsina" title = "d_katsina" region = "e_hre" }
+link = { name = "kazan" title = "d_kazan" region = "e_hre" }
+link = { name = "lebanon" title = "d_lebanon" region = "e_hre" }
+link = { name = "mogadishu" title = "d_mogadishu" region = "e_hre" }
+link = { name = "najd" title = "d_najd" region = "e_hre" }
+link = { name = "nupe" title = "d_nupe" region = "e_hre" }
+link = { name = "wadaï" title = "d_wadai" region = "e_hre" }
+link = { name = "oyo" title = "d_oyo" region = "e_hre" }
+link = { name = "shammar" title = "d_shammar" region = "e_hre" }
+link = { name = "showa" title = "d_showa" region = "e_hre" }
+link = { name = "tafilalt" title = "d_tafilalt" region = "e_hre" }
+link = { name = "udmurtia" title = "d_udmurtia" region = "e_hre" }
+link = { name = "uzboy" title = "d_uzboy" region = "e_hre" }
+link = { name = "yatenga" title = "d_yatenga" region = "e_hre" }
+link = { name = "agder" title = "c_agder" region = "e_hre" }
+link = { name = "aksum" title = "c_aksum" region = "e_hre" }
+link = { name = "al-jawf" title = "c_al_jawf" region = "e_hre" }
+link = { name = "anhalt" title = "c_anhalt" region = "e_hre" }
+link = { name = "aral il" title = "c_aral" region = "e_hre" }
+link = { name = "armagnac" title = "c_armagnac" region = "e_hre" }
+link = { name = "asir" title = "c_asir" region = "e_hre" }
+link = { name = "bacs" title = "c_bacs" region = "e_hre" }
+link = { name = "bahrain" title = "c_bahrein" region = "e_hre" }
+link = { name = "bambuk" title = "c_bambuk" region = "e_hre" }
+link = { name = "bar" title = "c_bar" region = "e_hre" }
+link = { name = "batang" title = "c_batang" region = "e_hre" }
+link = { name = "bejaia" title = "c_bejaija" region = "e_hre" }
+link = { name = "karachev" title = "c_bryansk" region = "e_hre" }
+link = { name = "canarias" title = "c_canarias" region = "e_hre" }
+link = { name = "cephalonia" title = "c_cephalonia" region = "e_hre" }
+link = { name = "chudia" title = "c_chud" region = "e_hre" }
+link = { name = "currezia" title = "c_chur" region = "e_hre" }
+link = { name = "coimbra" title = "c_coimbra" region = "e_hre" }
+link = { name = "delta" title = "c_delta" region = "e_hre" }
+link = { name = "ephesos" title = "c_ephesos" region = "e_hre" }
+link = { name = "gabes" title = "c_gabes" region = "e_hre" }
+link = { name = "gurgan" title = "c_gurgan" region = "e_hre" }
+link = { name = "hålogaland" title = "c_halogaland" region = "e_hre" }
+link = { name = "homs" title = "c_homs" region = "e_hre" }
+link = { name = "ishim" title = "c_ishim" region = "e_hre" }
+link = { name = "jülich" title = "c_julich" region = "e_hre" }
+link = { name = "kairouan" title = "c_kairwan" region = "e_hre" }
+link = { name = "kazakh" title = "c_kazakh" region = "e_hre" }
+link = { name = "khopyor" title = "c_khopyor" region = "e_hre" }
+link = { name = "kufa" title = "c_kufa" region = "e_hre" }
+link = { name = "lausitz" title = "c_lausitz" region = "e_hre" }
+link = { name = "lower silesia" title = "c_lower_silesia" region = "e_hre" }
+link = { name = "mahra" title = "c_mahra" region = "e_hre" }
+link = { name = "mecca" title = "c_mecca" region = "e_hre" }
+link = { name = "mzab" title = "c_mzab" region = "e_hre" }
+link = { name = "nishapur" title = "c_nishapur" region = "e_hre" }
+link = { name = "nizhny novgorod" title = "c_nizhny_novgorod" region = "e_hre" }
+link = { name = "nordgau" title = "c_nordgau" region = "e_hre" }
+link = { name = "nyima" title = "c_nyima" region = "e_hre" }
+link = { name = "opolye" title = "c_opole" region = "e_hre" }
+link = { name = "opplond" title = "c_oppland" region = "e_hre" }
+link = { name = "philippopolis" title = "c_philippopolis" region = "e_hre" }
+link = { name = "piedmonte" title = "c_piemonte" region = "e_hre" }
+link = { name = "pinsk" title = "c_pinsk" region = "e_hre" }
+link = { name = "rayy" title = "c_rayy" region = "e_hre" }
+link = { name = "salzburg" title = "c_salzburg" region = "e_hre" }
+link = { name = "shirvan" title = "c_shirvan" region = "e_hre" }
+link = { name = "syrte" title = "c_syrte" region = "e_hre" }
+link = { name = "tadmekka" title = "c_tadmekka" region = "e_hre" }
+link = { name = "taghaza" title = "c_taghaza" region = "e_hre" }
+link = { name = "tao-klarjeti" title = "c_tao" region = "e_hre" }
+link = { name = "thessali" title = "c_thessalia" region = "e_hre" }
+link = { name = "tyrol" title = "c_tirol" region = "e_hre" }
+link = { name = "turgay" title = "c_turgay" region = "e_hre" }
+link = { name = "upper silesia" title = "c_upper_silesia" region = "e_hre" }
+link = { name = "vaspurakan" title = "c_vaspurakan" region = "e_hre" }
+link = { name = "luki" title = "c_velikiye_luki" region = "e_hre" }
+link = { name = "ustyug" title = "c_veliky_ustug" region = "e_hre" }
+link = { name = "viken" title = "c_viken" region = "e_hre" }
+link = { name = "viscaya" title = "c_viscaya" region = "e_hre" }
+link = { name = "vologda" title = "c_vologda" region = "e_hre" }
+link = { name = "east franconia" title = "c_wurzburg" region = "e_hre" }
+link = { name = "yazd" title = "c_yazd" region = "e_hre" }
+link = { name = "zachlumia" title = "c_zachlumia" region = "e_hre" }
+link = { name = "al-hasa" title = "d_al_hasa" region = "e_hre" }
+link = { name = "alsace" title = "d_alsace" region = "e_hre" }
+link = { name = "amman" title = "d_amman" region = "e_hre" }
+link = { name = "armeniac" title = "d_armeniacon" region = "e_hre" }
+link = { name = "bergslagen" title = "d_bergslagen" region = "e_hre" }
+link = { name = "biarmia" title = "d_bjarmia" region = "e_hre" }
+link = { name = "nordmark" title = "d_brandenburg" region = "e_hre" }
+link = { name = "charkliq" title = "d_charkliq" region = "e_hre" }
+link = { name = "cibyrrhaeot" title = "d_cibyrrhaeot" region = "e_hre" }
+link = { name = "corsica" title = "d_corsica" region = "e_hre" }
+link = { name = "courland" title = "d_courland" region = "e_hre" }
+link = { name = "crimea" title = "d_crimea" region = "e_hre" }
+link = { name = "viennois" title = "d_dauphine" region = "e_hre" }
+link = { name = "dêgê" title = "d_dege" region = "e_hre" }
+link = { name = "don valley" title = "d_don" region = "e_hre" }
+link = { name = "rif" title = "d_el_rif" region = "e_hre" }
+link = { name = "euphrates" title = "d_euphrates" region = "e_hre" }
+link = { name = "ferghana" title = "d_ferghana" region = "e_hre" }
+link = { name = "west franconia" title = "d_franconia" region = "e_hre" }
+link = { name = "halych" title = "d_galich" region = "e_hre" }
+link = { name = "visby" title = "d_gotland" region = "e_hre" }
+link = { name = "greater poland" title = "d_greater_poland" region = "e_hre" }
+link = { name = "grodno" title = "d_grodno" region = "e_hre" }
+link = { name = "hadramawt" title = "d_hadramut" region = "e_hre" }
+link = { name = "hormuz" title = "d_hormuz" region = "e_hre" }
+link = { name = "istria" title = "d_istria" region = "e_hre" }
+link = { name = "d_rabbinism" title = "d_jewish" region = "e_hre" }
+link = { name = "kirman" title = "d_kerman" region = "e_hre" }
+link = { name = "khuzestan" title = "d_khozistan" region = "e_hre" }
+link = { name = "guoládat" title = "d_kola" region = "e_hre" }
+link = { name = "krain" title = "d_krain" region = "e_hre" }
+link = { name = "kuyavia" title = "d_kuyavia" region = "e_hre" }
+link = { name = "lesser poland" title = "d_lesser_poland" region = "e_hre" }
+link = { name = "latigalians" title = "d_lettigalians" region = "e_hre" }
+link = { name = "marrakesh" title = "d_marrakech" region = "e_hre" }
+link = { name = "masuria" title = "d_mazovia" region = "e_hre" }
+link = { name = "moravia" title = "d_moravia" region = "e_hre" }
+link = { name = "nagqu" title = "d_nagchu" region = "e_hre" }
+link = { name = "nangqên" title = "d_nangqen" region = "e_hre" }
+link = { name = "palestine" title = "d_palestine" region = "e_hre" }
+link = { name = "palmyra" title = "d_palmyra" region = "e_hre" }
+link = { name = "xining" title = "d_qinghai" region = "e_hre" }
+link = { name = "san'a'" title = "d_sanaa" region = "e_hre" }
+link = { name = "xigazê" title = "d_shigatse" region = "e_hre" }
+link = { name = "slesvig" title = "d_slesvig" region = "e_hre" }
+link = { name = "steyermark" title = "d_steiermark" region = "e_hre" }
+link = { name = "strymon" title = "d_strymon" region = "e_hre" }
+link = { name = "ta'izz" title = "d_taizz" region = "e_hre" }
+link = { name = "languedoc" title = "d_toulouse" region = "e_hre" }
+link = { name = "trændalog" title = "d_trondelag" region = "e_hre" }
+link = { name = "ungvár" title = "d_ungvar" region = "e_hre" }
+link = { name = "transjurania" title = "d_upper_burgundy" region = "e_hre" }
+link = { name = "vepsia" title = "d_veps" region = "e_hre" }
+link = { name = "vestlond" title = "d_vestlandet" region = "e_hre" }
+link = { name = "khorezm" title = "k_khwarezm" region = "e_hre" }
+link = { name = "westfalen" title = "k_westphalia" region = "e_hre" }
+
+## The ones that needed new flags
 
 # Counties
