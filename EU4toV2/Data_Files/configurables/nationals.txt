@@ -79,6 +79,9 @@ link = { tag = POL culture = polish } #and Poland
 link = { tag = LIT culture = lithuanian } #and Lithuania
 link = { tag = UKR culture = western_slavic } #and (Red) Ruthenia
 
+#Other West Slavic
+link = { tag = POM culture = oldpommeranian } #Slavic Pomerania
+
 #Czechoslovakian => Czechoslovakia
 link = { tag = CZE culture = czech } 
 link = { tag = SLV culture = slovak }
