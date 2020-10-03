@@ -1425,6 +1425,38 @@ link = { eu4 = k_igbo-benue v2 = BIA } # Igbo-Benue => Biafra
 link = { eu4 = k_toro v2 = TOO } # T(o)oro
 
 # Duchies
+link = { eu4 = d_arakan v2 = ARK } # Arakan
+link = { eu4 = d_ashanti v2 = ASH } # Ashanti
+link = { eu4 = d_augsburg v2 = AUG } # Augsburg
+link = { eu4 = d_air v2 = AYR } # Air
+link = { eu4 = d_benin v2 = BEN } # Benin
+link = { eu4 = d_bukovina v2 = BKV } # Bukovina
+link = { eu4 = d_coptic_papacy v2 = CEG } # Coptic Papacy => Coptic Egypt
+link = { eu4 = d_chuvashia v2 = CVS } # Chuvashia
+link = { eu4 = d_darfur v2 = DAR } # Darfur
+link = { eu4 = d_fezzan v2 = FZA } # Fezzan
+link = { eu4 = d_angria v2 = HAN } # Angria => Hannover
+link = { eu4 = d_hesse v2 = HES } # Hesse
+link = { eu4 = d_jalon v2 = JAL } # Jalon
+link = { eu4 = d_jolof v2 = JOL } # Jolof
+link = { eu4 = d_kaffa v2 = KAF } # Kaffa
+link = { eu4 = d_kano v2 = KAN } # Kano
+link = { eu4 = d_kebbi v2 = KEB } # Kebbi
+link = { eu4 = d_katsina v2 = KTS } # Katsina
+link = { eu4 = d_kazan v2 = KZN } # Kazan
+link = { eu4 = d_lebanon v2 = LEB } # Lebanon
+link = { eu4 = d_mogadishu v2 = MDI } # Mogadishu
+link = { eu4 = d_najd v2 = NEJ } # Nejd
+link = { eu4 = d_nupe v2 = NUP } # Nupe
+link = { eu4 = d_wadai v2 = OUA } # Waddai
+link = { eu4 = d_oyo v2 = OYO } # Oyo
+link = { eu4 = d_shammar v2 = SHM } # Shammar
+link = { eu4 = d_showa v2 = SOA } # Showa
+link = { eu4 = d_tafilalt v2 = TFL } # Tafilalt
+link = { eu4 = d_udmurtia v2 = UDM } # Udmurtia
+link = { eu4 = d_uzboy v2 = UZB } # Uzboy => Uzbekistan
+link = { eu4 = d_yatenga v2 = YAT } # Yatenga
+
 # Counties
 
 ##1356 mod
