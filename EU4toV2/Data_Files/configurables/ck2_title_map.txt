@@ -3664,7 +3664,7 @@ link = { name = "mazedonien" title = "d_mkd" region = "e_byzantium" }
 # Empires
 link = { name = "ajuraan" title = "e_ajuraan" region = "e_ajuraan" }
 link = { name = "ajuran" title = "e_ajuraan" region = "e_ajuraan" }
-link = { name = "guinea" title = "e_guinea" region = "e_guinea" }
+link = { name = "guinea" title = "e_guinea" region = "e_guinea }
 link = { name = "kanem-bornu" title = "e_kanem" region = "e_kanem" } # e_kanem already in country_mappings
 link = { name = "kanem-bornou" title = "e_kanem" region = "e_kanem" }
 link = { name = "maghreb" title = "e_maghreb" region = "e_maghreb" }
@@ -3932,6 +3932,37 @@ link = { name = "vestlond" title = "d_vestlandet" region = "e_hre" }
 link = { name = "khorezm" title = "k_khwarezm" region = "e_hre" }
 link = { name = "westfalen" title = "k_westphalia" region = "e_hre" }
 
+link = { name = "ostfalen" title = "d_brunswick" region = "e_hre" }
+link = { name = "machva" title = "d_belgrade" region = "e_hre" }
+link = { name = "optimatoi" title = "d_nikomedeia" region = "e_hre" }
+link = { name = "glemajohka" title = "c_kemi" region = "e_hre" }
+link = { name = "ostmark" title = "d_brandenburg" region = "e_hre" }
+link = { name = "yedisan" title = "d_cherson" region = "e_hre" }
+link = { name = "utrecht" title = "d_utr" region = "e_hre" }
+link = { name = "chaldia" title = "d_asy" region = "e_hre" }
+link = { name = "the northern isles" title = "d_fro" region = "e_hre" }
+link = { name = "jalmat" title = "d_tar" region = "e_hre" }
+
 ## The ones that needed new flags
+link = { name = "dobrudja" title = "d_dobrudja" region = "e_hre" }
+link = { name = "opsikion" title = "d_opsikion" region = "e_hre" }
+link = { name = "bucellaria" title = "d_bucellaria" region = "e_hre" }
+link = { name = "cappadocia" title = "d_cappadocia" region = "e_hre" }
+link = { name = "friuli" title = "d_friuli" region = "e_hre" }
+link = { name = "emilia" title = "d_emilia" region = "e_hre" }
+link = { name = "Åarjetje" title = "d_aarjetje" region = "e_hre" }
+link = { name = "duortnoseatnu" title = "d_duortnoseatnu" region = "e_hre" }
+link = { name = "cherven cities" title = "d_cherven cities" region = "e_hre" }
+link = { name = "novosil" title = "d_novosil" region = "e_hre" }
+link = { name = "levedia" title = "d_levedia" region = "e_hre" }
+link = { name = "ciscaucasia" title = "d_ciscaucasia" region = "e_hre" }
+link = { name = "volga-bulgaria" title = "d_volga-bulgaria" region = "e_hre" }
+link = { name = "martyubia" title = "d_martyubia" region = "e_hre" }
+link = { name = "voronezh" title = "d_voronezh" region = "e_hre" }
+link = { name = "uraltau" title = "d_uraltau" region = "e_hre" }
+link = { name = "vogulia" title = "d_vogulia" region = "e_hre" }
+link = { name = "ostyaki" title = "d_ostyaki" region = "e_hre" }
+link = { name = "konda" title = "d_konda" region = "e_hre" }
+link = { name = "pelym" title = "d_pelym" region = "e_hre" }
 
 # Counties
