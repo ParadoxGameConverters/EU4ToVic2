@@ -457,6 +457,7 @@ link = { eu4 = LUX v2 = LUX } # Luxembourg
 link = { eu4 = d_luxembourg v2 = LUX } # Luxembourg
 link = { eu4 = NED v2 = NET } # Netherlands
 link = { eu4 = UTR v2 = UTR } # Utrecht
+link = { eu4 = d_utr v2 = UTR } # Utrecht
 
 #Russia 
 link = { eu4 = ARM v2 = ARM } # Armenia
@@ -1456,6 +1457,9 @@ link = { eu4 = d_tafilalt v2 = TFL } # Tafilalt
 link = { eu4 = d_udmurtia v2 = UDM } # Udmurtia
 link = { eu4 = d_uzboy v2 = UZB } # Uzboy => Uzbekistan
 link = { eu4 = d_yatenga v2 = YAT } # Yatenga
+link = { eu4 = d_asy v2 = ASY } # Chaldea => Assyria
+link = { eu4 = d_fro v2 = FRO } # The Northern Isles => Faroe
+link = { eu4 = d_tar v2 = TAR } # Jalmat => Tatarstan
 
 # Counties
 
