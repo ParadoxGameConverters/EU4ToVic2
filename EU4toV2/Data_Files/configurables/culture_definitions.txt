@@ -1356,7 +1356,7 @@ polish_culture_group = {
 		Rokossowski Rola-Zymierski Rómmel Rózicky Rybinski Rydz-Smigly Sanguszko Skrzynecki Soltyk Sowinski
 		Taczanowski Traugutt Wawrzecki Wieniawa-Dlugoszowski Wybicki Wysocki Zajaczek Zaluski Zamoyski Zeligowski }
 	}
-		sorbian
+	sorbian = {
 		color = {0 48 239}
 		
 		first_names = { Czedrog Jaromar Niklot Ons Wizlaw Aleksander Andrzej Antoni Aron Barnim Bedrich Blazej Blus Bogislav Bohdan Bohumir Boleslaw Borivoj Bozydar Branimir Branislav Bretislav Budivoj Burislav Czcibor Czimislav Dervan Dobieslav Dobromil Drosuk Dytryk Frantisek Gawel Grzegorz Havel Henry Jacenty Jakub Jakusz Janusz Jaromar Jaromil Jaromir Jaroslav Jedrzej Jindrich Jozef Juliusz Kajetan Kamil Karel Kasimir Kasper Kliment Kolman Kornel Kresimir Krzeslaw Kruto Krzysztof Lech Leszek Lubomir Lucjan Ludvik Marek Marian Martin Mateusz Mieszko Miliduch Miloslav Milosz Miroslav Mlcislaw Mstivoj Niklot Nikolaus Oldrich Ondrej Otokar Patryk Pawel Petrus Piotr Prendota Pribignev Pribislav Przemysl Przybyslaw Radomil Radomir Radoslav Ratibor Rostislav Ryszard Sambor Sobieslav Stanislav Strasz Swietopelk Svietoslav Szczepan Szczesny Szymon Tadeusz Tetzlav Tomasz Udalrich Urjasz Vojtech Vaclav Vratislav Vitslav Walenty Wertislav Wawrzyniec Venceslav Wincenty Wizlaw Wladyslaw Wlodek Wlodzimierz Wlodzislaw Vratislav Zbigniew Zdenek Zdislav Zygmunt }
@@ -1364,7 +1364,7 @@ polish_culture_group = {
 		last_names = { Obroditen Gryfita "z Liubic" Swieca Grzymala Jastrzebiec Lodzia Lubicz Nalecz Gniewosz "z Roztoki" "ze Slupska" }
 		radicalism = 10
 	}
-	oldpommeranian
+	oldpommeranian = {
 		color = {64 122 186}
 		
 		first_names = { Aleksander Andrzej Antoni Aron Barnim Bartosz Bedrich Bezprzym Blazej Bogislaw Bohdan Bohumir Boleslaw Borzywoj Bozydar Branimir Branislav Bretislav Casimir Ctibor Dobieslaw Dobromil Drosuk Dytryk Frantisek Gawel Grzegorz Havel Jacenty Jakub Jakusz Janusz Jaromar Jaromil Jaromir Jaroslav Jedrzej Jindrich Jiri Jozef Juliusz Kajetan Kamil Karel Kasper Kazimierz Kliment Kolman Kornel Kresimir Krzesla  Krzysztof Lech Leszek Lubomir Lucjan Ludvik Marek Marian Martin Mateusz Mieszko Mikolas Miloslaw Milosz Miroslaw Mscislaw Msciwo  Oldrich Ondrej Otokar Patryk Pawel Piotr Prendota Przemysl Przybyslaw Radomil Radomir Radoslav Rostislav Ryszard Sambor Sobiesalv Stanislaw Strasz Swietopelk Swietoslaw Szczepan Szczesny Szymon Tadeusz Tomasz Udalrich Urjasz Vojtech Waclaw Walenty Wratyslaw Wawrzyniec Vaclav Wincenty Wislaw Wladyslaw Wlodek Wlodzimierz Wlodzislaw Zbigniew Zdenek Zdislav Zygmunt }
