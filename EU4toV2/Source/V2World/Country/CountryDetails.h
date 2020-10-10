@@ -50,7 +50,10 @@ class CountryDetails: commonItems::parser
 	// This is a storage container for V2::Country.
 	// Some of these values are loaded from files, others are adjusted on the fly.
 	std::string filename;
+	std::string graphicalCulture;
+	std::string color;
 	std::vector<Party> parties;
+	std::string unitNames;
 	std::string primaryCulture = "dummy";
 	std::string eu4PrimaryCulture;
 	std::set<std::string> acceptedCultures;

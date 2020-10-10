@@ -40,10 +40,22 @@ V2::CountryDetails::CountryDetails(std::istream& theStream)
 
 void V2::CountryDetails::registerKeys()
 {
+	registerKeyword("graphical_culture", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString graphCulStr(theStream);
+		graphicalCulture = graphCulStr.getString();
+	});
+	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::stringOfItem colorStr(theStream);
+		color = colorStr.getString();
+	});
 	registerKeyword("party", [this](const std::string& unused, std::istream& theStream) {
 		const mappers::PartyType newPartyType(theStream);
 		const Party newParty(newPartyType);
 		parties.push_back(newParty);
+	});
+	registerKeyword("unit_names", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::stringOfItem unitNamesStr(theStream);
+		unitNames = unitNamesStr.getString();
 	});
 	registerKeyword("primary_culture", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString primCulStr(theStream);

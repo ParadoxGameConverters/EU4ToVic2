@@ -70,7 +70,7 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 	output << "nonstate_consciousness= " << country.details.nonstateConsciousness << "\n";
 	output << "\n";
 	output << "# Technologies\n";
-	for (const auto& tech : country.techs)
+	for (const auto& tech: country.techs)
 	{
 		output << tech << " = 1\n";
 	}
@@ -85,14 +85,14 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 		output << "\n";
 		output << "# Decisions\n";
 		output << "1.1.1 = {\n";
-		for (const auto& decision : country.decisions)
+		for (const auto& decision: country.decisions)
 		{
 			output << "\tdecision = " << decision << "\n";
 		}
 		output << "}\n";
 	}
 
-	//output << "	schools=\"%s\"\n", techSchool.c_str());
+	// output << "	schools=\"%s\"\n", techSchool.c_str());
 
 	output << "oob = \"" << (country.tag + "_OOB.txt") << "\"\n";
 
@@ -117,29 +117,52 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 
 void V2::Country::outputCommons(std::ostream& output)
 {
-	output << "graphical_culture = UsGC\n";	// default to US graphics
+	output << "graphical_culture = ";
+	auto graphicalCulture = modCommons.getGraphicalCulture();
+	if (graphicalCulture.empty())
+		graphicalCulture = details.graphicalCulture;
+	if (!graphicalCulture.empty())
+		output << graphicalCulture << '\n';
+	else
+		output << "UsGC\n"; // default to US graphics
+	
 	if (nationalColors.getMapColor())
 		output << "color " << *nationalColors.getMapColor() << "\n";
-	for (const auto& party : details.parties) output << party;
+	else if (!modCommons.getColor().empty())
+		output << "color " << modCommons.getColor() << '\n';
+	else if (!details.color.empty())
+		output << "color " << details.color << '\n';
+
+	auto parties = modCommons.getParties();
+	if (parties.empty())
+		parties = details.parties;
+	for (const auto& party: parties)
+		output << party;
+
+	auto unitNames = modCommons.getUnitNames();
+	if (unitNames.empty())
+		unitNames = details.unitNames;
+	if (!unitNames.empty())
+		output << "unit_names" << unitNames;
 }
 
 void V2::Country::outputOOB(std::ostream& output)
 {
 	output << "#Sphere of Influence\n";
 	output << "\n";
-	for (const auto& relation : relations)
+	for (const auto& relation: relations)
 	{
 		output << relation.second;
 	}
 	output << "\n";
 	output << "#Leaders\n";
-	for (const auto& leader : leaders)
+	for (const auto& leader: leaders)
 	{
 		output << leader;
 	}
 	output << "\n";
 	output << "#Armies\n";
-	for (const auto& army : armies)
+	for (const auto& army: armies)
 	{
 		output << army;
 	}

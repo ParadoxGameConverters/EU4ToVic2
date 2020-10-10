@@ -10,6 +10,7 @@ class PartyTypeMapper: commonItems::parser
   public:
 	PartyTypeMapper();
 	explicit PartyTypeMapper(std::istream& theStream);
+	explicit PartyTypeMapper(const std::string& filename);
 
 	[[nodiscard]] std::optional<PartyType> getPartyTypeByIdeology(const std::string& ideology) const;
 

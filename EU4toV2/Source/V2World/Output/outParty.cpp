@@ -15,10 +15,9 @@ std::ostream& mappers::operator<<(std::ostream& output, const PartyType& partyDe
 	output << "\tstart_date = " << partyDetails.start_date << '\n';
 	output << "\tend_date = " << partyDetails.end_date << "\n\n";
 	output << "\tideology = " << partyDetails.ideology << "\n\n";
-	output << "\teconomic_policy = " << partyDetails.economic_policy << '\n';
-	output << "\ttrade_policy = " << partyDetails.trade_policy << '\n';
-	output << "\treligious_policy = " << partyDetails.religious_policy << '\n';
-	output << "\tcitizenship_policy = " << partyDetails.citizenship_policy << '\n';
-	output << "\twar_policy = " << partyDetails.war_policy << '\n';
+	for (const auto& [policy, position]: partyDetails.policies)
+	{
+		output << "\t" << policy << " = " << position << '\n';
+	}
 	return output;
 }

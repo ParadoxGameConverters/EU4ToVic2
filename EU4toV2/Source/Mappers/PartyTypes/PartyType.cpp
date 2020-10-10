@@ -1,6 +1,6 @@
 #include "PartyType.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 mappers::PartyType::PartyType(std::istream& theStream)
 {
@@ -23,20 +23,9 @@ void mappers::PartyType::registerKeys()
 	registerKeyword("end_date", [this](const std::string& unused, std::istream& theStream) {
 		end_date = date(commonItems::singleString(theStream).getString());
 	});
-	registerKeyword("economic_policy", [this](const std::string& unused, std::istream& theStream) {
-		economic_policy = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("trade_policy", [this](const std::string& unused, std::istream& theStream) {
-		trade_policy = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("religious_policy", [this](const std::string& unused, std::istream& theStream) {
-		religious_policy = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("citizenship_policy", [this](const std::string& unused, std::istream& theStream) {
-		citizenship_policy = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("war_policy", [this](const std::string& unused, std::istream& theStream) {
-		war_policy = commonItems::singleString(theStream).getString();
+	registerRegex("[a-z_]+", [this](const std::string& policy, std::istream& theStream) {
+		const commonItems::singleString positionStr(theStream);
+		policies.insert(std::make_pair(policy, positionStr.getString()));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

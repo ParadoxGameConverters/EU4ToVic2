@@ -18,6 +18,13 @@ mappers::PartyTypeMapper::PartyTypeMapper(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
+mappers::PartyTypeMapper::PartyTypeMapper(const std::string& filename)
+{
+	registerKeys();
+	parseFile(filename);
+	clearRegisteredKeywords();
+}
+
 void mappers::PartyTypeMapper::registerKeys()
 {
 	registerRegex(commonItems::catchallRegex, [this](const std::string& partyIdeology, std::istream& theStream) {

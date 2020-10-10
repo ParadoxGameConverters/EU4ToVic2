@@ -14,6 +14,7 @@
 #include "../Mappers/Geography/Continents.h"
 #include "../Mappers/Geography/TerrainDataMapper.h"
 #include "../Mappers/GovernmentMapper/GovernmentMapper.h"
+#include "../Mappers/Issues/Issues.h"
 #include "../Mappers/LeaderTraits/LeaderTraitMapper.h"
 #include "../Mappers/MinorityPops/MinorityPopMapper.h"
 #include "../Mappers/NavalBases/NavalBaseMapper.h"
@@ -130,6 +131,8 @@ class World
 	void convertCountryFlags();
 	void updateDeadNations();
 	void copyHpmFiles() const;
+	void updateCountryDetails();
+	std::vector<std::string> getIssues(const std::string& issueCategory);
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
@@ -168,6 +171,7 @@ class World
 	Diplomacy diplomacy;
 	mappers::CountryFlags countryFlags;
 	mappers::UnionTagsMapper unionTagsMapper;
+	mappers::Issues issues;
 };
 
 std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);

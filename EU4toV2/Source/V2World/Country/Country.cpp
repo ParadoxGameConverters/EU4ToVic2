@@ -34,6 +34,7 @@ V2::Country::Country(const std::string& countriesFileLine,
 	tag = countriesFileLine.substr(0, 3);
 	commonCountryFile = Localisation::convert(filename);
 	initParties(partyNameMapper, partyTypeMapper);
+	modCommons = ModCommons(filename);
 }
 
 V2::Country::Country(std::string _tag,
@@ -953,4 +954,12 @@ std::optional<std::string> V2::Country::getFileFromTag(const std::string& direct
 	}
 
 	return {};
+}
+
+void V2::Country::addPolicy(const std::string& partyName, const std::string& policy, const std::string& position)
+{
+	const auto& partyItr = std::find_if(details.parties.begin(), details.parties.end(), [partyName](const V2::Party& party){
+		return party.getName() == partyName;
+	});
+	partyItr->addPolicy(policy, position);
 }

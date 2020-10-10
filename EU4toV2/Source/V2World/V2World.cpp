@@ -141,6 +141,13 @@ V2::World::World(const EU4::World& sourceWorld,
 	convertCountryFlags();
 	Log(LogLevel::Progress) << "71 %";
 
+	if (theConfiguration.isHpmEnabled())
+	{
+		LOG(LogLevel::Info) << "-> Update country details";
+		updateCountryDetails();
+		Log(LogLevel::Progress) << "72 %";
+	}
+
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	output(versionParser);
 
@@ -690,7 +697,6 @@ void V2::World::importPotentialCountries()
 	if (theConfiguration.isHpmEnabled())
 	{
 		countriesFiles.push_back(theConfiguration.getVic2Path() + "/common/countries.txt");
-		countriesFiles.push_back("configurables/HPM/common/countries.txt");
 	}
 	countriesFiles.push_back("./blankMod/output/common/countries.txt");
 
@@ -1747,16 +1753,13 @@ void V2::World::outputCountries() const
 			output.close();
 		}
 		// commons file
-		if (country.second->isDynamicCountry() || country.second->isNewCountry())
-		{
-			std::ofstream output(
-				 "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
-			if (!output.is_open())
-				throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" +
-												 clipCountryFileName(country.second->getCommonCountryFile()));
-			country.second->outputCommons(output);
-			output.close();
-		}
+		std::ofstream commons(
+			 "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
+		if (!commons.is_open())
+			throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" +
+											 clipCountryFileName(country.second->getCommonCountryFile()));
+		country.second->outputCommons(commons);
+		commons.close();
 		// OOB
 		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt");
 		if (!output.is_open())
@@ -1903,17 +1906,6 @@ void V2::World::copyHpmFiles() const
 
 	commonItems::CopyFolder(hpm + "/map", out + "/map");
 
-	// common/countries
-	const auto& countriesFiles = commonItems::GetAllFilesInFolder(hpm + "/common/countries");
-	const auto& converterCountries = commonItems::GetAllFilesInFolder(out + "/common/countries");
-	for (const auto& file : countriesFiles)
-	{
-		if (converterCountries.find(file) == converterCountries.end())
-		{
-			fs::copy_file(hpm + "/common/countries/" + file, out + "/common/countries/" + file);
-		}
-	}
-
 	// flags
 	const std::vector<std::string> flagFileSuffixes = {".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga"};
 	for (const auto& [tag, unused]: countries)
@@ -1927,4 +1919,36 @@ void V2::World::copyHpmFiles() const
 			fs::copy_file(hpm + "/gfx/flags/" + tag + suffix, out + "/gfx/flags/" + tag + suffix);
 		}
 	}
+
+	fs::copy_file(hpm + "/common/issues.txt", out + "/common/issues.txt");
+}
+
+void V2::World::updateCountryDetails()
+{
+	mappers::PartyTypeMapper modPartyBlob("configurables/HPM/party_blobs.txt");
+
+	for (const auto& [tag, country]: countries)
+	{
+		for (const auto& party: country->getParties()) //load parties from countryDetails
+		{
+			for (const auto& policy: getIssues("party_issues")) //common/issues.txt
+			{
+				if (!party.getPolicies().contains(policy))
+				{
+					const auto& partyType = modPartyBlob.getPartyTypeByIdeology(party.getIdeology());
+					if (partyType)
+					{
+						const auto& defaultPosition = partyType->getPolicyPosition(policy);
+						country->addPolicy(party.getName(), policy, defaultPosition);
+					}
+				}
+			}
+		}
+	}
+}
+
+std::vector<std::string> V2::World::getIssues(const std::string& issueCategory)
+{
+	const auto& issuesItr = issues.getCategories().find(issueCategory);
+	return issuesItr->second;
 }
