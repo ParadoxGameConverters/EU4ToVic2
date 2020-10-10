@@ -1755,7 +1755,7 @@
 	link = { eu4 = 397 eu4 = 404 v2 = 1167 }	# 0 "Bani Yas, 0 "Liwa -> Abu Dhabi
 	link = { eu4 = 398 v2 = 1168 }	# 0 "Qawasim -> Dubai
 	link = { eu4 = 403 v2 = 1170 }	# 0 "Nizwa -> Nizwa
-	link = { eu4 = 399 eu4 = 4285 v2 = 1169 }	# 1 "Batinah, 0 "Baraimi -> Suhar
+	link = { eu4 = 399 eu4 = 4285 v2 = 1169 v2 = 2664 }	# MANY-TO-MANY: 1 "Batinah, 0 "Baraimi -> Suhar, Khasab
 	link = { eu4 = 400 v2 = 1166 v2 = 2640 }	# 0 "Muscat -> Muscat, Gwadar
 	link = { eu4 = 4286 eu4 = 4287 v2 = 1171 }	# 0 "Ash Sharqiyah, 0 "Ibra -> Sur
 	link = { eu4 = 2341 eu4 = 2342 v2 = 1172 }	# 1 "Masirah, 0 "Wusta -> Duqm
@@ -2629,7 +2629,7 @@
 	link = { eu4 = 645 eu4 = 646 v2 = 1449 resettable = indonesia }	# 0 "Buru, 0 "Ambon -> Ambon
 	link = { eu4 = 648 eu4 = 649 v2 = 1448 resettable = indonesia }	# 0 "Halmahera, 0 "Ternate -> Ternate
 	link = { eu4 = 650 eu4 = 2717 v2 = 1447 resettable = indonesia }	# 0 "Tidore, 0 "Sula -> Taliabu
-	link = { eu4 = 2695 v2 = 1446 resettable = indonesia }	# 0 "East Timor -> Dili
+	link = { eu4 = 2695 v2 = 1446 v2 = 2647 resettable = indonesia }	# 0 "East Timor -> Dili, Lifau
 	link = { eu4 = 635 v2 = 1445 v2 = 1443 resettable = indonesia }	# 0 "West Timor -> Koepang, Rote
 	link = { eu4 = 634 v2 = 1441 resettable = indonesia }	# 0 "Sumba -> Sumba
 	link = { eu4 = 633 v2 = 1439 v2 = 1444 resettable = indonesia }	# 0 "Flores -> Flores, Alor
@@ -2723,13 +2723,13 @@
 	link = { eu4 = 1060 v2 = 1075 }	# 0 "Irkutsk -> Irkutsk
 	link = { eu4 = 1062 v2 = 1076 }	# 0 "Angara -> Nizhneudinsk
 	link = { eu4 = 1061 eu4 = 2431 v2 = 2701 v2 = 2656 }	# MANY-TO-MANY: 0 "West Tunguska, 0 "Uchamin -> Kansk, Baikit
-	link = { eu4 = 2432 eu4 = 1064 v2 = 1063 }	# 0 "Chulym, 0 "Tomsk -> Tomsk
-	link = { eu4 = 1063 eu4 = 2443 eu4 = 1065 eu4 = 480 v2 = 1077 v2 = 1067 }	# MANY-TO-MANY: 0 "Sayan, 0 "Kan, 0 "Kuznetsk, 0 "Pegaya Orda -> Krasnoyarsk, Kemerevo
+	link = { eu4 = 2432 eu4 = 1064 eu4 = 480 eu4 = 2433 v2 = 1063 }	# 0 "Chulym, 0 "Tomsk, 0 "Pegaya Orda, 0 "Vah -> Tomsk
+	link = { eu4 = 1063 eu4 = 2443 eu4 = 1065 v2 = 1077 }	# 0 "Sayan, 0 "Kan, 0 "Kuznetsk -> Krasnoyarsk
 	link = { eu4 = 716 v2 = 1469 }	# 0 "Tannu Uriankhai -> Uriankhai
-	link = { eu4 = 1066 v2 = 1068 }	# 0 "Altai Uriankhai -> Ulala
-	link = { eu4 = 4687 eu4 = 2434 v2 = 2698 }	# Imakia, 0 "Barnaul -> Kuznetsk
-	link = { eu4 = 4688 v2 = 1064 }	# Baraba -> Omsk
-	link = { eu4 = 2433 eu4 = 2428 eu4 = 1071 v2 = 2683 }	# 0 "Vah, 0 "Yugan, 0 "Irtesh -> Narym
+	link = { eu4 = 1066 v2 = 1068 v2 = 2674 v2 = 2698 }	# 0 "Altai Uriankhai -> Ulala, Abakan, Kuznetsk
+	link = { eu4 = 2434 v2 = 1067 }	# 0 "Barnaul -> Kemerevo
+	link = { eu4 = 4690 eu4 = 4689 v2 = 1064 }	# Ishim, Om -> Omsk
+	link = { eu4 = 2428 eu4 = 1071 eu4 = 4688 v2 = 2683 }	# 0 "Yugan, 0 "Irtesh, Baraba -> Narym
 	link = { eu4 = 1068 v2 = 2691 }	# 0 "Ket -> Minusk
 	link = { eu4 = 1067 v2 = 2692 }	# 0 "Turukhan -> Kostino
 	# Western Siberia
@@ -2741,7 +2741,7 @@
 	link = { eu4 = 1073 v2 = 2682 }	# 0 "Berezov -> Obdorsk
 	link = { eu4 = 4691 v2 = 2690 }	# As -> Yugansk
 	link = { eu4 = 1074 v2 = 1066 }	# 0 "Sibir -> Tobolsk
-	link = { eu4 = 4690 eu4 = 4689 v2 = 2686 }	# Ishim, Om -> Kainsk
+	link = { eu4 = 4687 v2 = 2686 }	# Imakia -> Kainsk
 	link = { eu4 = 1076 v2 = 2658 v2 = 2614 }	# 0 "Kurgan -> Kurgan, Shadrinsk
 	link = { eu4 = 1075 v2 = 1061 }	# 0 "Tyumen -> Tyumen
 	link = { eu4 = 1966 v2 = 1060 }	# 0 "Chelyaba -> Orsk
@@ -2751,8 +2751,8 @@
 	# Central Russia Proper
 	# Siberian Wasteland
 	link = { eu4 = 1781 v2 = 2654 v2 = 2693 v2 = 2657 v2 = 2680 v2 = 2659 }	# 0 "Western Siberia -> Hatanga, Essey, Dudinka, Volochanka, Khalmer-Sede
-	link = { eu4 = 1782 v2 = 2667 v2 = 2652 v2 = 2649 v2 = 2670 v2 = 2671 v2 = 2673 v2 = 2651 v2 = 2653 v2 = 2675 v2 = 2674 v2 = 2655 }	# 0 "Central Siberia -> Batagay, Kular, Tomtor, Verkhneudinsk, Barguzin, Olenek, Mirny, Saskylah, Erbogachen, Abakan, Essej
-	link = { eu4 = 1783 v2 = 2666 v2 = 2661 v2 = 2664 v2 = 2621 v2 = 2665 v2 = 2619 v2 = 2647 v2 = 2668 v2 = 2643 }	# 0 "Eastern Siberia -> Komsomolskiy, Belebino, Khasab, Srednekolymsk, Chokurdakh, Indigirka, Lifau, Adyca, Honuu
+	link = { eu4 = 1782 v2 = 2667 v2 = 2652 v2 = 2649 v2 = 2670 v2 = 2671 v2 = 2673 v2 = 2651 v2 = 2653 v2 = 2675 v2 = 2655 }	# 0 "Central Siberia -> Batagay, Kular, Tomtor, Verkhneudinsk, Barguzin, Olenek, Mirny, Saskylah, Erbogachen, Essej
+	link = { eu4 = 1783 v2 = 2666 v2 = 2661 v2 = 2621 v2 = 2665 v2 = 2619 v2 = 2668 v2 = 2643 }	# 0 "Eastern Siberia -> Komsomolskiy, Belebino, Srednekolymsk, Chokurdakh, Indigirka, Adyca, Honuu
 	link = { eu4 = 4482 v2 = 1328 }	# 0 "Sikkim -> Tumlong
 	link = { eu4 = 4402 }	# 0 "Gaoligong Mountains -> DROPPED
 	link = { eu4 = 1803 eu4 = 1802 eu4 = 2936 }	# 0 "Eastern Amazonas, 0 "Western Amazonas, 0 "Guyana -> DROPPED
