@@ -149,6 +149,10 @@ V2::World::World(const EU4::World& sourceWorld,
 		LOG(LogLevel::Info) << "Converting events";
 		convertEvents();
 		Log(LogLevel::Progress) << "72 %";
+
+		LOG(LogLevel::Info) << "-> Update country details";
+		updateCountryDetails();
+		Log(LogLevel::Progress) << "73 %";
 	}
 
 	LOG(LogLevel::Info) << "---> Le Dump <---";
@@ -715,12 +719,12 @@ void V2::World::importPotentialCountries()
 	dynamicCountries.clear();
 
 	std::ifstream v2CountriesInput;
-	std::set<std::string> countriesFiles;
-	countriesFiles.insert("./blankMod/output/common/countries.txt");
+	std::vector<std::string> countriesFiles;
 	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
 	{
-		countriesFiles.insert(theConfiguration.getVic2ModPath() + "/" + mod  + "/common/countries.txt");
+		countriesFiles.push_back(theConfiguration.getVic2ModPath() + "/" + mod  + "/common/countries.txt");
 	}
+	countriesFiles.push_back("./blankMod/output/common/countries.txt");
 
 	for (const auto& countriesFile: countriesFiles)
 	{
@@ -752,13 +756,11 @@ void V2::World::importPotentialCountry(const std::string& line, bool dynamicCoun
 	auto tag = line.substr(0, 3);
 
 	
-	if (countryMapper.getV2TagToModTagMap().find(tag) == countryMapper.getV2TagToModTagMap().end())
+	if (countryMapper.getV2TagToModTagMap().find(tag) == countryMapper.getV2TagToModTagMap().end()
+		&& potentialCountries.find(tag) == potentialCountries.end())
 	{
 		auto newCountry = std::make_shared<Country>(line, dynamicCountry, partyNameMapper, partyTypeMapper);
-		if (potentialCountries.find(tag) == potentialCountries.end())
-		{
-			potentialCountries.insert(std::make_pair(tag, newCountry));
-		}
+		potentialCountries.insert(std::make_pair(tag, newCountry));
 		if (dynamicCountry && dynamicCountries.find(tag) == dynamicCountries.end())
 		{
 			dynamicCountries.insert(std::make_pair(tag, newCountry));
@@ -1607,12 +1609,12 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 
 	if (!theConfiguration.getVic2ModName().empty())
 	{
+		LOG(LogLevel::Info) << "<- Outputting events";
+		outEvents();
+
 		copyModFiles();
 		outputStateMap(theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName() + "/map/region.txt",
 			 "output/" + theConfiguration.getOutputName() + "/region.txt");
-
-		LOG(LogLevel::Info) << "<- Outputting events";
-		outEvents();
 	}
 
 	// verify countries got written
@@ -1784,16 +1786,13 @@ void V2::World::outputCountries() const
 			output.close();
 		}
 		// commons file
-		if (country.second->isDynamicCountry() || country.second->isNewCountry())
-		{
-			std::ofstream output(
-				 "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
-			if (!output.is_open())
-				throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" +
-												 clipCountryFileName(country.second->getCommonCountryFile()));
-			country.second->outputCommons(output);
-			output.close();
-		}
+		std::ofstream commons(
+			 "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
+		if (!commons.is_open())
+			throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" +
+											 clipCountryFileName(country.second->getCommonCountryFile()));
+		country.second->outputCommons(commons);
+		commons.close();
 		// OOB
 		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt");
 		if (!output.is_open())
@@ -1947,17 +1946,7 @@ void V2::World::copyModFiles() const
 		fs::copy_file(mod + "/common/pop_types.txt", output + "/common/pop_types.txt");
 		fs::copy_file(mod + "/common/technology.txt", output + "/common/technology.txt");
 		fs::copy_file(mod + "/common/event_modifiers.txt", output + "/common/event_modifiers.txt");
-
-		// common/countries
-		const auto& countriesFiles = commonItems::GetAllFilesInFolder(mod + "/common/countries");
-		const auto& converterCountries = commonItems::GetAllFilesInFolder(output + "/common/countries");
-		for (const auto& file: countriesFiles)
-		{
-			if (converterCountries.find(file) == converterCountries.end())
-			{
-				fs::copy_file(mod + "/common/countries/" + file, output + "/common/countries/" + file);
-			}
-		}
+		fs::copy_file(mod + "/common/issues.txt", output + "/common/issues.txt");
 
 		//	/map
 		fs::copy(mod + "/map", output + "/map", fs::copy_options::recursive);
@@ -2375,4 +2364,34 @@ void V2::World::mapLeftovers(const std::vector<int>& vanillaProvs,
 			output << " -> " << fallback << " Fallback\n";
 		}
 	}
+}
+
+void V2::World::updateCountryDetails()
+{
+	mappers::PartyTypeMapper modPartyBlob("configurables/" + theConfiguration.getVic2ModName() + "/party_blobs.txt");
+
+	for (const auto& country: countries)
+	{
+		for (const auto& party: country.second->getParties()) //load parties from countryDetails
+		{
+			for (const auto& policy: getIssues("party_issues")) //common/issues.txt
+			{
+				if (const auto& policies = party.getPolicies(); policies.find(policy) == policies.end())
+				{
+					const auto& partyType = modPartyBlob.getPartyTypeByIdeology(party.getIdeology());
+					if (partyType)
+					{
+						const auto& defaultPosition = partyType->getPolicyPosition(policy);
+						country.second->addPolicy(party.getName(), policy, defaultPosition);
+					}
+				}
+			}
+		}
+	}
+}
+
+std::vector<std::string> V2::World::getIssues(const std::string& issueCategory)
+{
+	const auto& issuesItr = issues.getCategories().find(issueCategory);
+	return issuesItr->second;
 }

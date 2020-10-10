@@ -398,6 +398,7 @@
     <ClCompile Include="Source\Mappers\GovernmentMapper\GovernmentMapper.cpp" />
     <ClCompile Include="Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp" />
     <ClCompile Include="Source\Mappers\IdeaEffects\IdeaEffects.cpp" />
+    <ClCompile Include="Source\Mappers\Issues\Issues.cpp" />
     <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTrait.cpp" />
     <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTraitMapper.cpp" />
     <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTraitTypes.cpp" />
@@ -451,6 +452,7 @@
     <ClCompile Include="Source\V2World\Army\Regiment.cpp" />
     <ClCompile Include="Source\V2World\Country\Country.cpp" />
     <ClCompile Include="Source\V2World\Country\CountryDetails.cpp" />
+    <ClCompile Include="Source\V2World\Country\ModCommons.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp" />
@@ -592,6 +594,7 @@
     <ClInclude Include="Source\Mappers\GovernmentMapper\GovernmentMapper.h" />
     <ClInclude Include="Source\Mappers\IdeaEffects\IdeaEffectMapper.h" />
     <ClInclude Include="Source\Mappers\IdeaEffects\IdeaEffects.h" />
+    <ClInclude Include="Source\Mappers\Issues\Issues.h" />
     <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTrait.h" />
     <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTraitMapper.h" />
     <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTraitTypes.h" />
@@ -645,6 +648,7 @@
     <ClInclude Include="Source\V2World\Army\Regiment.h" />
     <ClInclude Include="Source\V2World\Country\Country.h" />
     <ClInclude Include="Source\V2World\Country\CountryDetails.h" />
+    <ClInclude Include="Source\V2World\Country\ModCommons.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Relation.h" />
