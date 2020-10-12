@@ -1586,3 +1586,7 @@ map = { vic = JMB mod = DJA } #Jambi
 map = { vic = PAN mod = PNJ } #Panjab
 map = { vic = PHI mod = PHL } #Phillipines
 map = { vic = LUN mod = LNB } #Luneburg
+map = { vic = BAH mod = BMN } #Bahmanis
+map = { vic = BRY mod = BEY } #Berry
+map = { vic = CRT mod = CTI } #Carinthia
+map = { vic = SYC mod = SRC } #Syriac
