@@ -600,7 +600,6 @@ RAM		="countries/Ramazan.txt"
 #Persia
 DUR		="countries/Durrani.txt"
 KHO		="countries/Khorasan.txt"
-JAL		="countries/Jalayirid.txt"
 QAR		="countries/QaraKoyunlu.txt"
 TIM		="countries/Timurid.txt"
 KAZ		="countries/Kazakh.txt"
@@ -613,7 +612,6 @@ TKS     =   "countries/Turkestan.txt"
 # Japan
 TAC		="countries/Tachibana.txt"
 FUJ 		="countries/Fujiwara.txt"
-TAI 		="countries/Taira.txt"
 
 #Others
 ABO     =   "countries/Aborigines.txt"
