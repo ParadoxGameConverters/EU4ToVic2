@@ -568,6 +568,12 @@
     <ClCompile Include="Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp">
       <Filter>Mappers\AcceptedCultureThresholds</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Decisions\Decision.cpp">
+      <Filter>Vic2World\Decisions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Decisions\Decisions.cpp">
+      <Filter>Vic2World\Decisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1100,6 +1106,12 @@
     <ClInclude Include="Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.h">
       <Filter>Mappers\AcceptedCultureThresholds</Filter>
     </ClInclude>
+    <ClInclude Include="Source\V2World\Decisions\Decision.h">
+      <Filter>Vic2World\Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Decisions\Decisions.h">
+      <Filter>Vic2World\Decisions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1344,6 +1356,9 @@
     </Filter>
     <Filter Include="Mappers\AcceptedCultureThresholds">
       <UniqueIdentifier>{b53b167f-ad1c-43c3-b114-c0af0bd35ad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Decisions">
+      <UniqueIdentifier>{3d513321-c860-4957-a221-ba781d78254e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

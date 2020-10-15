@@ -453,6 +453,8 @@
     <ClCompile Include="Source\V2World\Country\Country.cpp" />
     <ClCompile Include="Source\V2World\Country\CountryDetails.cpp" />
     <ClCompile Include="Source\V2World\Country\CountryPopLogger.cpp" />
+    <ClCompile Include="Source\V2World\Decisions\Decision.cpp" />
+    <ClCompile Include="Source\V2World\Decisions\Decisions.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp" />
@@ -648,6 +650,8 @@
     <ClInclude Include="Source\V2World\Country\Country.h" />
     <ClInclude Include="Source\V2World\Country\CountryDetails.h" />
     <ClInclude Include="Source\V2World\Country\CountryPopLogger.h" />
+    <ClInclude Include="Source\V2World\Decisions\Decision.h" />
+    <ClInclude Include="Source\V2World\Decisions\Decisions.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Relation.h" />
