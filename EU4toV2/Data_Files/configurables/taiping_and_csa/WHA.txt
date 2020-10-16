@@ -1,0 +1,5 @@
+capital = 273
+civilized = yes
+government = absolute_monarchy
+primary_culture = welsh
+religion = protestant

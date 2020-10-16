@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_protestant
+capital = 2513
+civilized = yes
+government = democracy
+religion = protestant
+remove_accepted_culture = zzz_religion_shamanism
+set_country_flag = buro_independence

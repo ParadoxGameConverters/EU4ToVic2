@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_orthodox
+capital = 994
+civilized = yes
+government = democracy
+primary_culture = estonian
+religion = orthodox
+remove_accepted_culture = zzz_religion_shamanism

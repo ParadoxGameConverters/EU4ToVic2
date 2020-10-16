@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_sunni
+capital = 1204
+civilized = yes
+primary_culture = turkmen
+religion = sunni
+remove_accepted_culture = zzz_religion_shamanism

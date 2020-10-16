@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_shiite
+capital = 1207
+civilized = yes
+government = democracy
+primary_culture = tajik
+religion = shia
+remove_accepted_culture = zzz_religion_shamanism

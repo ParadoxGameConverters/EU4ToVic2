@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_orthodox
+capital = 1055
+civilized = yes
+government = presidential_dictatorship
+primary_culture = north_caucasian
+religion = orthodox
+remove_accepted_culture = zzz_religion_shamanism

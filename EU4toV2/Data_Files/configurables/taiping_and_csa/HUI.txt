@@ -1,0 +1,5 @@
+add_accepted_culture = zzz_religion_mahayana
+capital = 1474
+primary_culture = beifaren
+religion = mahayana
+remove_accepted_culture = zzz_religion_shamanism

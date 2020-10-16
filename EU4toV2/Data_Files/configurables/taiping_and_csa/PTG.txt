@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_animist
+capital = 2329
+civilized = yes
+government = democracy
+primary_culture = patagonian
+religion = animist
+remove_accepted_culture = zzz_religion_shamanism

@@ -1,0 +1,5 @@
+capital = 946
+civilized = yes
+government = absolute_monarchy
+primary_culture = byelorussian
+religion = orthodox

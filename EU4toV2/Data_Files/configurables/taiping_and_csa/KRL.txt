@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_protestant
+capital = 995
+civilized = yes
+primary_culture = ugrian
+religion = protestant
+remove_accepted_culture = zzz_religion_shamanism

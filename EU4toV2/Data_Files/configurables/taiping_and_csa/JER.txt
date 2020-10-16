@@ -1,0 +1,5 @@
+capital = 917
+civilized = yes
+government = theocracy
+primary_culture = outremer
+religion = catholic

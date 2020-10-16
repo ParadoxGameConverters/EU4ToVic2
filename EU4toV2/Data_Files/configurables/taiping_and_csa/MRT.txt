@@ -1,0 +1,5 @@
+capital = 1297
+civilized = no
+government = absolute_monarchy
+primary_culture = marathi
+religion = hindu

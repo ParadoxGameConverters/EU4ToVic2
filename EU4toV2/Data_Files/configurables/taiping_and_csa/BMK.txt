@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_sunni
+capital = 2609
+civilized = no
+government = democracy
+primary_culture = songhai
+religion = sunni
+remove_accepted_culture = zzz_religion_shamanism

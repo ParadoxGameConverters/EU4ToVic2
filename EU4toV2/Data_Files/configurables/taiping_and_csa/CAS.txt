@@ -1,0 +1,8 @@
+add_accepted_culture = zzz_religion_protestant
+capital = 78
+civilized = yes
+government = democracy
+primary_culture = anglo_canadian
+religion = protestant
+remove_accepted_culture = zzz_religion_shamanism
+set_country_flag = buro_independence

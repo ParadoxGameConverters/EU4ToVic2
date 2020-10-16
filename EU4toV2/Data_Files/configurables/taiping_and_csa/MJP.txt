@@ -1,0 +1,5 @@
+capital = 1418
+civilized = no
+government = absolute_monarchy
+primary_culture = javanese
+religion = hindu

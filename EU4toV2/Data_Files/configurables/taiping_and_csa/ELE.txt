@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_hindu
+capital = 1236
+civilized = yes
+government = absolute_monarchy
+primary_culture = elephant_culture
+religion = hindu
+remove_accepted_culture = zzz_religion_shamanism

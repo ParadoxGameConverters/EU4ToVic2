@@ -1,0 +1,6 @@
+add_accepted_culture = vietnamese
+capital = 1346
+civilized = yes
+primary_culture = thai
+religion = mahayana
+remove_accepted_culture = zzz_religion_shamanism

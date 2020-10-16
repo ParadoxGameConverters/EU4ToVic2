@@ -1,0 +1,5 @@
+capital = 2177
+civilized = no
+government = absolute_monarchy
+primary_culture = zapotec
+religion = shamanism

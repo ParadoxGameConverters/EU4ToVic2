@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_hindu
+capital = 1304
+civilized = yes
+primary_culture = tamil
+religion = hindu
+remove_accepted_culture = zzz_religion_shamanism

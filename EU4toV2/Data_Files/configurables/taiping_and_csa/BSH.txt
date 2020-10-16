@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_animist
+capital = 2104
+civilized = no
+government = absolute_monarchy
+primary_culture = sotho
+religion = animist
+remove_accepted_culture = zzz_religion_shamanism

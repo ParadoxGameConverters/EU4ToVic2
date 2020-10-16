@@ -1,0 +1,5 @@
+capital = 683
+civilized = yes
+government = absolute_monarchy
+primary_culture = polish
+religion = catholic

@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_catholic
+capital = 300
+civilized = yes
+government = presidential_dictatorship
+primary_culture = brithenig
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism

@@ -1,0 +1,5 @@
+capital = 1219
+civilized = no
+government = absolute_monarchy
+primary_culture = baluchi
+religion = sunni

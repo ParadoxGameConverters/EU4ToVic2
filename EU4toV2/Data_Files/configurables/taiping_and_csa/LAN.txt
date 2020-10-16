@@ -1,0 +1,5 @@
+capital = 1426
+civilized = no
+government = democracy
+primary_culture = hakka
+religion = gelugpa

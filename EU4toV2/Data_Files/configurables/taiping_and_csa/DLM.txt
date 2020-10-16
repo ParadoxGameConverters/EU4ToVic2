@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_catholic
+capital = 781
+civilized = yes
+primary_culture = croat
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism

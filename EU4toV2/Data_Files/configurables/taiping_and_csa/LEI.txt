@@ -1,0 +1,5 @@
+capital = 263
+civilized = yes
+government = absolute_monarchy
+primary_culture = irish
+religion = catholic

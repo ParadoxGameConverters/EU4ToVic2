@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_sunni
+capital = 510
+civilized = yes
+government = theocracy
+primary_culture = andalucian
+religion = sunni
+remove_accepted_culture = zzz_religion_shamanism

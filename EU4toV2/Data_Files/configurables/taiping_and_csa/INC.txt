@@ -1,0 +1,5 @@
+capital = 2302
+civilized = no
+government = absolute_monarchy
+primary_culture = quechua
+religion = shamanism

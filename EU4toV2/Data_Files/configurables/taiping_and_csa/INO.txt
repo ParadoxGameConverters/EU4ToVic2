@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_sunni
+capital = 1413
+civilized = yes
+government = democracy
+primary_culture = javan
+religion = sunni
+remove_accepted_culture = zzz_religion_shamanism

@@ -1,0 +1,7 @@
+add_accepted_culture = mashriqi
+capital = 1151
+civilized = yes
+government = theocracy
+primary_culture = bedouin
+religion = sunni
+remove_accepted_culture = zzz_religion_shamanism

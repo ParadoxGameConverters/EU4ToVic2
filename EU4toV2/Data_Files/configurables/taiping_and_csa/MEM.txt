@@ -1,0 +1,5 @@
+capital = 593
+civilized = yes
+government = democracy
+primary_culture = south_german
+religion = catholic

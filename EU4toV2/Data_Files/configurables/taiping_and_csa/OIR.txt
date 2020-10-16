@@ -1,0 +1,5 @@
+capital = 1465
+civilized = no
+government = absolute_monarchy
+primary_culture = mongol
+religion = tengri_pagan_reformed

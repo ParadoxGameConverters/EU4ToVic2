@@ -1,0 +1,5 @@
+capital = 1199
+civilized = no
+government = absolute_monarchy
+primary_culture = persian
+religion = sunni

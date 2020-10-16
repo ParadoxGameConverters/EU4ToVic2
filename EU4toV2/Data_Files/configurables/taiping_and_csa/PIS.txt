@@ -1,0 +1,5 @@
+capital = 745
+civilized = yes
+government = presidential_dictatorship
+primary_culture = north_italian
+religion = catholic

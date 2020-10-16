@@ -1,0 +1,7 @@
+add_accepted_culture = north_german
+capital = 412
+civilized = yes
+government = absolute_monarchy
+primary_culture = french
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism

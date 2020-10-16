@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_shinto
+capital = 1642
+government = presidential_dictatorship
+primary_culture = japanese
+religion = shinto
+remove_accepted_culture = zzz_religion_shamanism

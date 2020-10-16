@@ -1,0 +1,5 @@
+capital = 549
+civilized = yes
+government = prussian_constitutionalism
+primary_culture = north_german
+religion = protestant

@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_catholic
+capital = 762
+civilized = yes
+government = absolute_monarchy
+primary_culture = south_italian
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism

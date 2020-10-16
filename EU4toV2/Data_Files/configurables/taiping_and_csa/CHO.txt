@@ -1,0 +1,5 @@
+add_accepted_culture = zzz_religion_shinto
+capital = 1640
+primary_culture = japanese
+religion = shinto
+remove_accepted_culture = zzz_religion_shamanism

@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_sunni
+capital = 802
+civilized = yes
+government = absolute_monarchy
+primary_culture = albanian
+religion = sunni
+remove_accepted_culture = zzz_religion_shamanism

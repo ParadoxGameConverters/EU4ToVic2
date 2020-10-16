@@ -1,0 +1,5 @@
+capital = 322
+civilized = no
+government = theocracy
+primary_culture = dummy
+religion = pre_schism

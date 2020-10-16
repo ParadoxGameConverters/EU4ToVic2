@@ -1,0 +1,5 @@
+capital = 1345
+civilized = no
+government = absolute_monarchy
+primary_culture = burmese
+religion = hindu

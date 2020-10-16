@@ -1,0 +1,5 @@
+capital = 2001
+civilized = no
+government = absolute_monarchy
+primary_culture = bakongo
+religion = shamanism

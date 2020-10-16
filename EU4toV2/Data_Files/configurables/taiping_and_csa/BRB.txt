@@ -1,0 +1,5 @@
+capital = 387
+civilized = yes
+government = absolute_monarchy
+primary_culture = flemish
+religion = catholic

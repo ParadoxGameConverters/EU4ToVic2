@@ -1,0 +1,5 @@
+capital = 529
+civilized = yes
+government = absolute_monarchy
+primary_culture = north_german
+religion = protestant

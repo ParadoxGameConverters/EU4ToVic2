@@ -1,0 +1,5 @@
+capital = 1369
+civilized = no
+government = absolute_monarchy
+primary_culture = vietnamese
+religion = gelugpa

@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_catholic
+capital = 1901
+civilized = yes
+government = democracy
+primary_culture = mossi
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism

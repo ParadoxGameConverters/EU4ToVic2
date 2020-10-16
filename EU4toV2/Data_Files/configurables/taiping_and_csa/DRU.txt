@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_druze
+capital = 906
+civilized = yes
+primary_culture = mashriqi
+religion = druze
+remove_accepted_culture = zzz_religion_shamanism

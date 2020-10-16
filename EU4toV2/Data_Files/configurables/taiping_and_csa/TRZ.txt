@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_sunni
+capital = 1775
+civilized = no
+government = absolute_monarchy
+primary_culture = maures
+religion = sunni
+remove_accepted_culture = zzz_religion_shamanism

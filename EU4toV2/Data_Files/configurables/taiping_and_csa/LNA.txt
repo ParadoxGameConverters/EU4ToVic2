@@ -1,0 +1,5 @@
+capital = 1355
+civilized = no
+government = absolute_monarchy
+primary_culture = thai
+religion = gelugpa

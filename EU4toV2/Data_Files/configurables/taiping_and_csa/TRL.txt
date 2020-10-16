@@ -1,0 +1,8 @@
+add_accepted_culture = zzz_religion_animist
+capital = 2131
+civilized = yes
+government = theocracy
+primary_culture = horse
+religion = animist
+remove_accepted_culture = zzz_religion_shamanism
+set_country_flag = precolonial

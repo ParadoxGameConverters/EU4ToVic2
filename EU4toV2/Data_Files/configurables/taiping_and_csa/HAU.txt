@@ -1,0 +1,5 @@
+capital = 1948
+civilized = no
+government = absolute_monarchy
+primary_culture = hausa
+religion = sunni

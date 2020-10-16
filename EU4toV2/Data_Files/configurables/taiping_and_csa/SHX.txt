@@ -1,0 +1,5 @@
+capital = 223
+civilized = no
+government = absolute_monarchy
+primary_culture = central_algonquian
+religion = shamanism

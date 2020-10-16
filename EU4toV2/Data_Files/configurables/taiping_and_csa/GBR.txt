@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_protestant
+capital = 300
+civilized = yes
+government = hms_government
+primary_culture = english
+religion = protestant
+remove_accepted_culture = zzz_religion_shamanism

@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_orthodox
+capital = 834
+civilized = yes
+government = absolute_monarchy
+primary_culture = greek
+religion = orthodox
+remove_accepted_culture = zzz_religion_shamanism

@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_protestant
+capital = 698
+civilized = yes
+government = presidential_dictatorship
+primary_culture = north_german
+religion = protestant
+remove_accepted_culture = zzz_religion_shamanism

@@ -1,0 +1,5 @@
+capital = 1236
+civilized = no
+government = absolute_monarchy
+primary_culture = panjabi
+religion = shiite

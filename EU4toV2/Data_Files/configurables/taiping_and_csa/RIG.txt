@@ -1,0 +1,7 @@
+add_accepted_culture = latvian
+capital = 354
+civilized = yes
+government = theocracy
+primary_culture = north_german
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism

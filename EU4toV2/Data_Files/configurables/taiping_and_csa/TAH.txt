@@ -1,0 +1,5 @@
+add_accepted_culture = zzz_religion_catholic
+capital = 801
+primary_culture = polynesian
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism

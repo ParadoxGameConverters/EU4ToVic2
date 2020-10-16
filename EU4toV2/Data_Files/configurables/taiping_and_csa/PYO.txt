@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_mahayana
+capital = 1619
+civilized = yes
+government = proletarian_dictatorship
+primary_culture = korean
+religion = mahayana
+remove_accepted_culture = zzz_religion_shamanism

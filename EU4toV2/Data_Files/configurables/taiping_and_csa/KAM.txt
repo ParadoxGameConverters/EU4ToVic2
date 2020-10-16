@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_animist
+capital = 1074
+civilized = yes
+primary_culture = siberian
+religion = animist
+remove_accepted_culture = zzz_religion_shamanism

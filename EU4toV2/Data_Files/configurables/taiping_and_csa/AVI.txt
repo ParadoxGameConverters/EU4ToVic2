@@ -1,0 +1,5 @@
+capital = 468
+civilized = yes
+government = theocracy
+primary_culture = occitan
+religion = catholic

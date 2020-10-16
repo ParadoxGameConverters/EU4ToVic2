@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_sunni
+capital = 873
+civilized = yes
+government = absolute_monarchy
+primary_culture = turkish
+religion = sunni
+remove_accepted_culture = zzz_religion_shamanism

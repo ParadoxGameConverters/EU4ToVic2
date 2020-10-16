@@ -1,0 +1,5 @@
+capital = 1254
+civilized = no
+government = absolute_monarchy
+primary_culture = bengali
+religion = sunni

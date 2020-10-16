@@ -1,0 +1,2 @@
+add_accepted_culture = union
+primary_culture = israeli

@@ -1,0 +1,5 @@
+add_accepted_culture = zzz_religion_mahayana
+capital = 1482
+primary_culture = min
+religion = mahayana
+remove_accepted_culture = zzz_religion_shamanism

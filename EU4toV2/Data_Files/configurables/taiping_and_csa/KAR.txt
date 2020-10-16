@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_theravada
+capital = 1343
+civilized = yes
+primary_culture = karen
+religion = theravada
+remove_accepted_culture = zzz_religion_shamanism

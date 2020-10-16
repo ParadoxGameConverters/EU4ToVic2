@@ -1,0 +1,7 @@
+add_accepted_culture = north_german
+capital = 576
+civilized = yes
+government = prussian_constitutionalism
+primary_culture = south_german
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism

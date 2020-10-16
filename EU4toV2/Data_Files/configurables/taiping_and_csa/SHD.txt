@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_mahayana
+capital = 1563
+civilized = yes
+government = absolute_monarchy
+primary_culture = beifaren
+religion = mahayana
+remove_accepted_culture = zzz_religion_shamanism

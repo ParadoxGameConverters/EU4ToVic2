@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_catholic
+capital = 1914
+civilized = yes
+government = democracy
+primary_culture = ewe
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism

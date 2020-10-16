@@ -1,0 +1,5 @@
+capital = 1920
+civilized = no
+government = absolute_monarchy
+primary_culture = fon
+religion = sunni

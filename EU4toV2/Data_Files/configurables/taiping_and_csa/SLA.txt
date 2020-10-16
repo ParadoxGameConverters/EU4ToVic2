@@ -1,0 +1,7 @@
+add_accepted_culture = byelorussian
+capital = 958
+civilized = yes
+government = prussian_constitutionalism
+primary_culture = russian
+religion = orthodox
+remove_accepted_culture = zzz_religion_shamanism

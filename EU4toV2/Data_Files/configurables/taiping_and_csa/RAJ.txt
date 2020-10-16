@@ -1,0 +1,5 @@
+capital = 1288
+civilized = no
+government = absolute_monarchy
+primary_culture = rajput
+religion = hindu

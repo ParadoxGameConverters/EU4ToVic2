@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_mahayana
+capital = 2221
+government = presidential_dictatorship
+primary_culture = nanfaren
+religion = mahayana
+remove_accepted_culture = zzz_religion_shamanism

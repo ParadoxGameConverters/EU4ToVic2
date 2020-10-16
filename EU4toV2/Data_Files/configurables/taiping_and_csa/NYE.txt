@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_shiite
+capital = 1178
+civilized = yes
+primary_culture = mashriqi
+religion = shiite
+remove_accepted_culture = zzz_religion_shamanism

@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_animist
+capital = 2512
+civilized = no
+primary_culture = maori
+religion = animist
+remove_accepted_culture = zzz_religion_shamanism
+set_country_flag = precolonial

@@ -1,0 +1,10 @@
+add_accepted_culture = zzz_religion_hindu
+capital = 1251
+civilized = yes
+government = hms_government
+nationalvalue = nv_equality
+political_reform = no_slavery
+primary_culture = marathi
+religion = hindu
+remove_accepted_culture = zzz_religion_shamanism
+ruling_party_ideology = conservative

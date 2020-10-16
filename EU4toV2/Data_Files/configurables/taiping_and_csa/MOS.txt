@@ -1,0 +1,5 @@
+capital = 1901
+civilized = no
+government = absolute_monarchy
+primary_culture = mossi
+religion = sunni

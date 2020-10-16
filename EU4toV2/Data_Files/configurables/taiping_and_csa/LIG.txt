@@ -1,0 +1,5 @@
+capital = 395
+civilized = yes
+government = theocracy
+primary_culture = wallonian
+religion = catholic

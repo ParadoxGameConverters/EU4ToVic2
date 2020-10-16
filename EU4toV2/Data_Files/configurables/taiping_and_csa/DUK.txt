@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_protestant
+capital = 84
+civilized = yes
+government = bourgeois_dictatorship
+primary_culture = duck_culture
+religion = protestant
+remove_accepted_culture = zzz_religion_shamanism

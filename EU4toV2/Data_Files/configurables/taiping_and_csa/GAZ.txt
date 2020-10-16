@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_animist
+capital = 2050
+civilized = no
+government = absolute_monarchy
+primary_culture = nguni
+religion = animist
+remove_accepted_culture = zzz_religion_shamanism

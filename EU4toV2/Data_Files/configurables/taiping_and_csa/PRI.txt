@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_catholic
+capital = 2222
+civilized = yes
+government = democracy
+primary_culture = caribeno
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism

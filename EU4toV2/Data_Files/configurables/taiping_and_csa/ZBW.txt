@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_protestant
+capital = 2068
+civilized = yes
+government = presidential_dictatorship
+primary_culture = chewa
+religion = protestant
+remove_accepted_culture = zzz_religion_shamanism

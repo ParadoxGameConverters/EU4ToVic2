@@ -1,0 +1,5 @@
+capital = 1006
+civilized = yes
+government = absolute_monarchy
+primary_culture = russian
+religion = orthodox

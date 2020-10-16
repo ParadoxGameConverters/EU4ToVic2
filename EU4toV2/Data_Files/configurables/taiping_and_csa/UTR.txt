@@ -1,0 +1,5 @@
+capital = 377
+civilized = yes
+government = absolute_monarchy
+primary_culture = dutch
+religion = protestant

@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_animist
+capital = 1612
+civilized = yes
+government = absolute_monarchy
+primary_culture = dragon_culture
+religion = animist
+remove_accepted_culture = zzz_religion_shamanism

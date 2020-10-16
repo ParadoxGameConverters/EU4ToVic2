@@ -1,0 +1,5 @@
+capital = 943
+civilized = yes
+government = presidential_dictatorship
+primary_culture = russian
+religion = orthodox

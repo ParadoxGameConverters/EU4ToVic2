@@ -1,7 +1,9 @@
 #include "Decisions.h"
+#include "../Country/Country.h"
 #include "ParserHelpers.h"
 #include "OSCompatibilityLayer.h"
 #include "Log.h"
+#include <fstream>
 
 V2::Decisions::Decisions(const std::string& filename)
 {
@@ -119,5 +121,60 @@ void V2::Decisions::updateDecisions(const std::map<std::string, std::shared_ptr<
 	{
 		if (countries.find("KHA") == countries.end())
 			decisions.erase(theDecision);
+	}
+
+	if (const auto& theDecision = decisions.find("taiping_and_csa"); theDecision == decisions.end())
+		Log(LogLevel::Warning) << "Could not load taiping_and_csa decision";
+	else
+	{
+		std::string effect;
+		effect += "= {\n";
+
+		std::ifstream input;
+		input.open("configurables/taiping_and_csa/former colonies and natives.txt");
+		if (!input.is_open())
+			Log(LogLevel::Info) << "Could not open \"former colonies and natives.txt\"";
+		while (!input.eof())
+		{
+			std::string line;
+			getline(input, line);
+			effect += line + "\n";
+		}
+		input.close();
+
+		const auto& deadTagsData(commonItems::GetAllFilesInFolder("configurables/taiping_and_csa"));
+		for (const auto& tagFile: deadTagsData)
+		{
+			if (tagFile == "former colonies and natives.txt")
+				continue;
+			const auto& lastDot = tagFile.find_last_of('.');
+			const auto& tag = tagFile.substr(0, lastDot);
+			if (countries.find(tag) != countries.end())
+			{
+				const auto& country = *countries.find(tag)->second;
+				effect += "\t\t\tany_country = { #" + country.getLocalName() + "\n";
+				effect += "\t\t\t\tlimit = {\n";
+				effect += "\t\t\t\t\ttag = " + tag + "\n";
+				effect += "\t\t\t\t\tNOT = { exists = " + tag + " }\n";
+				effect += "\t\t\t\t}\n";
+
+				std::ifstream input;
+				input.open("configurables/taiping_and_csa/" + tagFile);
+				if (!input.is_open())
+					Log(LogLevel::Info) << "Could not open " << tagFile;
+				while (!input.eof())
+				{
+					std::string line;
+					getline(input, line);
+					effect += "\t\t\t\t" + line + "\n";
+				}
+				input.close();
+
+				effect += "\t\t\t}\n";
+			}
+		}
+		effect += "\t\t\tset_global_flag = taiping_and_csa\n";
+		effect += "\t\t}\n";
+		(theDecision->second).updateDecision("effect", effect);
 	}
 }

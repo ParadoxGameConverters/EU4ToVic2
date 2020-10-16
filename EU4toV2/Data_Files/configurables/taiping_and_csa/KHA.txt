@@ -1,0 +1,5 @@
+capital = 1465
+civilized = yes
+government = absolute_monarchy
+primary_culture = mongol
+religion = gelugpa

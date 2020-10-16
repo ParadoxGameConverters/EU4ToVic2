@@ -1,0 +1,7 @@
+add_accepted_culture = english
+capital = 1496
+civilized = yes
+government = hms_government
+primary_culture = nanfaren
+religion = protestant
+remove_accepted_culture = zzz_religion_shamanism

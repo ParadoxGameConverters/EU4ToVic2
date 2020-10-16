@@ -1,0 +1,10 @@
+add_accepted_culture = zzz_religion_catholic
+capital = 625
+civilized = yes
+government = absolute_monarchy
+nationalvalue = nv_liberty
+political_reform = no_slavery
+primary_culture = czech
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism
+ruling_party_ideology = conservative

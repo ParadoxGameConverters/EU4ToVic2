@@ -1,0 +1,5 @@
+capital = 2035
+civilized = no
+government = absolute_monarchy
+primary_culture = rundi
+religion = shamanism

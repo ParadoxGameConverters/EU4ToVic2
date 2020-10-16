@@ -1,0 +1,5 @@
+capital = 1910
+civilized = no
+government = absolute_monarchy
+primary_culture = akan
+religion = protestant

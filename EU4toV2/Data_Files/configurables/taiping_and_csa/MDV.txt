@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_orthodox
+capital = 676
+civilized = yes
+government = presidential_dictatorship
+primary_culture = romanian
+religion = orthodox
+remove_accepted_culture = zzz_religion_shamanism

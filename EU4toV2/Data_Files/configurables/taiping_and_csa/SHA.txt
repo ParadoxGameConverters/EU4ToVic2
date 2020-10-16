@@ -1,0 +1,5 @@
+capital = 1336
+civilized = no
+government = absolute_monarchy
+primary_culture = shan
+religion = theravada

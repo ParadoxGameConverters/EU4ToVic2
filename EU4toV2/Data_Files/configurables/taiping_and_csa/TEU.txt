@@ -1,0 +1,5 @@
+capital = 695
+civilized = yes
+government = theocracy
+primary_culture = north_german
+religion = catholic

@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_sunni
+capital = 1053
+civilized = yes
+primary_culture = north_caucasian
+religion = sunni
+remove_accepted_culture = zzz_religion_shamanism

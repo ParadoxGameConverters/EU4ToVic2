@@ -1,0 +1,8 @@
+add_accepted_culture = zzz_religion_kemetic
+capital = 1767
+civilized = yes
+government = theocracy
+primary_culture = cat
+religion = kemetic
+remove_accepted_culture = zzz_religion_shamanism
+set_country_flag = precolonial

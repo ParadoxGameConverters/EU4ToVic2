@@ -1,0 +1,5 @@
+capital = 1160
+civilized = no
+government = absolute_monarchy
+primary_culture = bedouin
+religion = sunni

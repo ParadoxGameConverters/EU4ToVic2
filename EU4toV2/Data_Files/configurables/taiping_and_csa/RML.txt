@@ -1,0 +1,7 @@
+add_accepted_culture = turkish
+capital = 815
+civilized = yes
+government = hms_government
+primary_culture = bulgarian
+religion = orthodox
+remove_accepted_culture = zzz_religion_shamanism

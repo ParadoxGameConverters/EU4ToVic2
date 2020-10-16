@@ -1,0 +1,5 @@
+add_accepted_culture = zzz_religion_sunni
+capital = 1423
+primary_culture = malay
+religion = sunni
+remove_accepted_culture = zzz_religion_shamanism

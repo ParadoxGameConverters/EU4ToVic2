@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_protestant
+capital = 2543
+civilized = yes
+government = democracy
+primary_culture = melanesian
+religion = protestant
+remove_accepted_culture = zzz_religion_shamanism

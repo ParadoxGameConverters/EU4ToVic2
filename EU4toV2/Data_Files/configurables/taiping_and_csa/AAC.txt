@@ -1,0 +1,5 @@
+capital = 576
+civilized = yes
+government = presidential_dictatorship
+primary_culture = north_german
+religion = protestant

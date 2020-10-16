@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_arab_pagan
+capital = 905
+civilized = yes
+primary_culture = mashriqi
+religion = arab_pagan
+remove_accepted_culture = zzz_religion_shamanism

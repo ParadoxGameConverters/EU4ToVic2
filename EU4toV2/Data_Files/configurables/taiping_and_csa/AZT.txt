@@ -1,0 +1,5 @@
+capital = 2172
+civilized = no
+government = absolute_monarchy
+primary_culture = aztec
+religion = aztec_reformed

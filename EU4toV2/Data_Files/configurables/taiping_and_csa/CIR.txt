@@ -1,0 +1,5 @@
+capital = 1049
+civilized = yes
+government = presidential_dictatorship
+primary_culture = north_caucasian
+religion = orthodox

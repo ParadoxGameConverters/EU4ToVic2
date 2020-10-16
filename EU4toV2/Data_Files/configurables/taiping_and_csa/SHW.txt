@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_coptic
+capital = 1859
+civilized = no
+government = absolute_monarchy
+primary_culture = amhara
+religion = coptic
+remove_accepted_culture = zzz_religion_shamanism

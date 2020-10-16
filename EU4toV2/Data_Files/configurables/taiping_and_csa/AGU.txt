@@ -1,0 +1,4 @@
+capital = 2236
+civilized = yes
+government = democracy
+set_country_flag = buro_independence

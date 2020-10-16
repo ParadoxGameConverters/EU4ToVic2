@@ -1,0 +1,7 @@
+add_accepted_culture = portuguese
+capital = 1498
+civilized = yes
+government = hms_government
+primary_culture = nanfaren
+religion = catholic
+remove_accepted_culture = zzz_religion_shamanism

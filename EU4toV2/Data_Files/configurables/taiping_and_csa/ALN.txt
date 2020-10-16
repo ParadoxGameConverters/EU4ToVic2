@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_orthodox
+capital = 1054
+civilized = yes
+primary_culture = alan
+religion = orthodox
+remove_accepted_culture = zzz_religion_shamanism

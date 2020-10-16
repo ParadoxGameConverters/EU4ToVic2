@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_catholic
+capital = 533
+civilized = yes
+government = proletarian_dictatorship
+primary_culture = north_german
+religion = protestant
+remove_accepted_culture = zzz_religion_shamanism

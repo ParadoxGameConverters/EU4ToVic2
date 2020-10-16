@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_norse_pagan_reformed
+capital = 300
+civilized = yes
+primary_culture = anglo_saxon
+religion = norse_pagan_reformed
+remove_accepted_culture = zzz_religion_shamanism

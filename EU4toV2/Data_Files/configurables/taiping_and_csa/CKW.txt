@@ -1,0 +1,5 @@
+capital = 1982
+civilized = no
+government = absolute_monarchy
+primary_culture = ovimbundu
+religion = shamanism

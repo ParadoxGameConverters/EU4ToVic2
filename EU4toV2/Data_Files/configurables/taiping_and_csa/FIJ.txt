@@ -1,0 +1,5 @@
+add_accepted_culture = zzz_religion_protestant
+capital = 2454
+primary_culture = melanesian
+religion = protestant
+remove_accepted_culture = zzz_religion_shamanism

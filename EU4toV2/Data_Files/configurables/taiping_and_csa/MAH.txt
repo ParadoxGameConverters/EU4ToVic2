@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_hindu
+capital = 1299
+civilized = yes
+primary_culture = marathi
+religion = hindu
+remove_accepted_culture = zzz_religion_shamanism

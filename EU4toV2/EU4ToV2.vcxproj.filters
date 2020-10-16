@@ -577,6 +577,9 @@
     <ClCompile Include="Source\V2World\Output\outDecisions.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Decisions\TaipingCSA.cpp">
+      <Filter>Vic2World\Decisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1113,6 +1116,9 @@
       <Filter>Vic2World\Decisions</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\Decisions\Decisions.h">
+      <Filter>Vic2World\Decisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Decisions\TaipingCSA.h">
       <Filter>Vic2World\Decisions</Filter>
     </ClInclude>
   </ItemGroup>

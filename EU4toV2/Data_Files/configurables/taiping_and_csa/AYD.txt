@@ -1,0 +1,5 @@
+capital = 869
+civilized = no
+government = absolute_monarchy
+primary_culture = turkish
+religion = sunni

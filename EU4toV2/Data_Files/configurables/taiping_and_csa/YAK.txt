@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_orthodox
+capital = 2648
+civilized = yes
+primary_culture = yakut
+religion = orthodox
+remove_accepted_culture = zzz_religion_shamanism

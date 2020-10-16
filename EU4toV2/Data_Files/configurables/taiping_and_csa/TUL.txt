@@ -1,0 +1,5 @@
+capital = 455
+civilized = yes
+government = absolute_monarchy
+primary_culture = occitan
+religion = catholic

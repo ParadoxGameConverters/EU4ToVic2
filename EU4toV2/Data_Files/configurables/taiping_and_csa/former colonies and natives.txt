@@ -1,0 +1,73 @@
+		#No longer needed because war with non-existant countries
+		#solves itself after a day now
+			#USA_129 = { add_core = CSA } #Dixieland for the ACW
+			#CHI_1476 = { add_core = TPG } #Taiping Heavenly Kingdom (for event)
+			
+			
+			#Former colonies
+			any_country = {
+				limit = {
+					NOT = {
+						is_culture_group = oceanic
+						is_culture_group = native_central_american
+						is_culture_group = native_south_american
+						is_culture_group = native_north_american
+						is_culture_group = native_caribbean
+						is_culture_group = non_human
+						is_culture_group = southern_african
+						is_culture_group = east_african
+						is_culture_group = central_african
+						is_culture_group = west_african
+					}
+					capital_scope = {
+						OR = {
+							continent = north_america
+							continent = south_america
+							continent = oceania
+							AND = {
+								continent = africa
+								NOT = {
+									state_id = 1704 #Tlemcen
+									state_id = 1708 #Constantine
+									state_id = 1714 #Western Sahara
+									state_id = 1718 #Sahara
+									state_id = 1746 #Sinai
+									state_id = 1750 #Lower Egypt
+									state_id = 1753 #Matruh
+									state_id = 1754 #Libya
+									state_id = 1758 #Egyptian Desert
+									state_id = 1762 #Middle Egypt
+									state_id = 1771 #Upper Egypt
+									state_id = 1700 #Algiers
+									state_id = 1683 #Taza
+									state_id = 1686 #Fez
+									state_id = 1688 #al-Rif
+									state_id = 1693 #Morocco
+									state_id = 1696 #West Morocco
+									state_id = 1739 #Fezzan
+									state_id = 1743 #Tripoli
+								}
+							}
+						}
+					}
+				}
+				set_country_flag = buro_independence
+			}
+			#Native special - avoiding Iroquois forming USA 2c.
+			any_country = {
+				limit = {
+					OR = {
+						is_culture_group = oceanic
+						is_culture_group = native_central_american
+						is_culture_group = native_south_american
+						is_culture_group = native_north_american
+						is_culture_group = native_caribbean
+						is_culture_group = non_human
+						is_culture_group = southern_african
+						is_culture_group = east_african
+						is_culture_group = central_african
+						is_culture_group = west_african
+					}
+				}
+				set_country_flag = precolonial
+			}

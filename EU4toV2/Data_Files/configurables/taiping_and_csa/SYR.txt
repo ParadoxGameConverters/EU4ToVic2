@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_sunni
+capital = 902
+civilized = yes
+primary_culture = mashriqi
+religion = sunni
+remove_accepted_culture = zzz_religion_shamanism

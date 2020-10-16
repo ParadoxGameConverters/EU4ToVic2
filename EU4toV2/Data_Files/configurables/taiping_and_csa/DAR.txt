@@ -1,0 +1,5 @@
+capital = 1841
+civilized = no
+government = absolute_monarchy
+primary_culture = fur
+religion = sunni

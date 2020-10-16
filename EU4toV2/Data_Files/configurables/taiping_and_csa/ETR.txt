@@ -1,0 +1,5 @@
+capital = 744
+civilized = yes
+government = absolute_monarchy
+primary_culture = north_italian
+religion = catholic

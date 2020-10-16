@@ -1,0 +1,5 @@
+capital = 1430
+civilized = no
+government = absolute_monarchy
+primary_culture = javan
+religion = sunni

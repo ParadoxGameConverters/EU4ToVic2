@@ -1,0 +1,5 @@
+add_accepted_culture = zzz_religion_animist
+capital = 1314
+primary_culture = kachin
+religion = animist
+remove_accepted_culture = zzz_religion_shamanism

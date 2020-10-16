@@ -1,0 +1,6 @@
+add_accepted_culture = zzz_religion_orthodox
+capital = 1725
+civilized = yes
+primary_culture = maghreb_arabic
+religion = orthodox
+remove_accepted_culture = zzz_religion_shamanism

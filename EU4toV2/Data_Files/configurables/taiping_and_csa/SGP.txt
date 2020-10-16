@@ -1,0 +1,7 @@
+add_accepted_culture = zzz_religion_gelugpa
+capital = 1384
+civilized = yes
+government = democracy
+primary_culture = malay
+religion = gelugpa
+remove_accepted_culture = zzz_religion_shamanism
