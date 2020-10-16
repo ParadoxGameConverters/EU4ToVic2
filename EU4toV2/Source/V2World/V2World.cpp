@@ -136,6 +136,11 @@ V2::World::World(const EU4::World& sourceWorld,
 	transcribeHistoricalData();
 	Log(LogLevel::Progress) << "70 %";
 
+	importDecisions();
+	LOG(LogLevel::Info) << "-> Updating decisions";
+	updateDecisions();
+	Log(LogLevel::Progress) << "72 %";
+
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	output(versionParser);
 
@@ -1555,6 +1560,9 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	outputNeoCultures();
 	Log(LogLevel::Progress) << "99 %";
 
+	LOG(LogLevel::Info) << "<- Outputting decisions";
+	outDecisions();
+
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
 	verifyCountriesWritten();
@@ -1892,4 +1900,33 @@ std::shared_ptr<V2::Country> V2::World::getCountry(const std::string& tag) const
 {
 	const auto& countryItr = countries.find(tag);
 	return (countryItr != countries.end()) ? countryItr->second : nullptr;
+}
+
+void V2::World::importDecisions()
+{
+	const auto& decisionsFiles = commonItems::GetAllFilesInFolder("blankMod/output/decisions");
+	Log(LogLevel::Info) << "Loading decisions";
+	for (const auto& decisionsFile: decisionsFiles)
+	{
+		LOG(LogLevel::Info) << " -> " << decisionsFile;
+		Decisions theDecisions(decisionsFile);
+		decisions.insert(make_pair(decisionsFile, std::move(theDecisions)));
+	}
+}
+
+void V2::World::updateDecisions()
+{
+	auto& converterUnions = decisions.find("converterUnions.txt")->second;
+	converterUnions.updateDecisions(countries);
+}
+
+void V2::World::outDecisions() const
+{
+	for (const auto& decisionsFile: decisions)
+	{
+		std::ofstream output("output/" + theConfiguration.getOutputName() + "/decisions/" + decisionsFile.first);
+		if (!output.is_open())
+			Log(LogLevel::Debug) << "Could not create " << decisionsFile.first;
+		output << decisionsFile.second;
+	}
 }
