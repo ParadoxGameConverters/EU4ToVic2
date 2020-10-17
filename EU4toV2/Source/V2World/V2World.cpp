@@ -1,4 +1,4 @@
-#include "Decisions/TaipingCSA.h"
+#include "Decisions/Taiping.h"
 #include "V2World.h"
 #include "../EU4World/World.h"
 #include "../Helpers/TechValues.h"
@@ -143,7 +143,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "72 %";
 
 	LOG(LogLevel::Info) << "-> Importing history from taiping_and_csa";
-	getCountryHistoryFromTaipingCSA();
+	getCountryHistoryFromTaiping();
 	Log(LogLevel::Progress) << "73 %";
 
 	LOG(LogLevel::Info) << "---> Le Dump <---";
@@ -1936,14 +1936,14 @@ void V2::World::outDecisions() const
 	}
 }
 
-void V2::World::getCountryHistoryFromTaipingCSA()
+void V2::World::getCountryHistoryFromTaiping()
 {
 	const auto& converterUnions = decisions.find("converterUnions.txt")->second.getDecisions();
-	if (const auto& taipingCSA = converterUnions.find("taiping_and_csa"); taipingCSA != converterUnions.end())
+	if (const auto& taiping = converterUnions.find("taiping_and_csa"); taiping != converterUnions.end())
 	{
 		commonItems::TryCreateFolder("output/history");
-		std::istringstream effect(taipingCSA->second.getEffect());
-		TaipingCSA theHistory(effect);
+		std::istringstream effect(taiping->second.getEffect());
+		Taiping theHistory(effect);
 
 		for (const auto& country: theHistory.getCountries())
 		{

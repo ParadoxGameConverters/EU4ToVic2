@@ -5,11 +5,11 @@
 
 namespace V2
 {
-class TaipingCSA: commonItems::parser
+class Taiping: commonItems::parser
 {
   public:
-	TaipingCSA() = default;
-	explicit TaipingCSA(std::istream& theStream);
+	Taiping() = default;
+	explicit Taiping(std::istream& theStream);
 
 	[[nodiscard]] const auto& getTag() const { return tag; }
 	[[nodiscard]] const auto& getHistory() const { return history; }

@@ -577,7 +577,7 @@
     <ClCompile Include="Source\V2World\Output\outDecisions.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Decisions\TaipingCSA.cpp">
+    <ClCompile Include="Source\V2World\Decisions\Taiping.cpp">
       <Filter>Vic2World\Decisions</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1118,7 +1118,7 @@
     <ClInclude Include="Source\V2World\Decisions\Decisions.h">
       <Filter>Vic2World\Decisions</Filter>
     </ClInclude>
-    <ClInclude Include="Source\V2World\Decisions\TaipingCSA.h">
+    <ClInclude Include="Source\V2World\Decisions\Taiping.h">
       <Filter>Vic2World\Decisions</Filter>
     </ClInclude>
   </ItemGroup>

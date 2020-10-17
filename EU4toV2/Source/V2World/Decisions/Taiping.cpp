@@ -1,21 +1,21 @@
-#include "TaipingCSA.h"
+#include "Taiping.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "Log.h"
 
-V2::TaipingCSA::TaipingCSA(std::istream& effect)
+V2::Taiping::Taiping(std::istream& effect)
 {
 	registerKeyword("any_country", [this](const std::string& unused, std::istream& theStream) {
-		TaipingCSA newTaipingCSA(theStream);
-		countries.insert(make_pair(newTaipingCSA.getTag(), newTaipingCSA.getHistory()));
+		Taiping newTaiping(theStream);
+		countries.insert(make_pair(newTaiping.getTag(), newTaiping.getHistory()));
 	});
 	registerRegex("[A-Z]{3}", [this](const std::string& tag, std::istream& theStream) {
-		TaipingCSA newTaipingCSA(theStream);
-		countries.insert(make_pair(tag, newTaipingCSA.getHistory()));
+		Taiping newTaiping(theStream);
+		countries.insert(make_pair(tag, newTaiping.getHistory()));
 	});
 	registerRegex("[A-Z]{3}_[0-9]+|[0-9]+", [this](const std::string& id, std::istream& theStream) {
-		TaipingCSA newTaipingCSA(theStream);
-		countryCores.insert(make_pair(id, newTaipingCSA.getCore()));
+		Taiping newTaiping(theStream);
+		countryCores.insert(make_pair(id, newTaiping.getCore()));
 	});
 	registerKeyword("limit", [this](const std::string& unused, std::istream& theStream) {
 		Limit newLimit(theStream);
