@@ -6,6 +6,8 @@
 V2::Taiping::Taiping(std::istream& effect)
 {
 	registerKeyword("any_country", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::stringOfItem body(theStream);
+		Log(LogLevel::Info) << body.getString();
 		Taiping newTaiping(theStream);
 		countries.insert(make_pair(newTaiping.getTag(), newTaiping.getHistory()));
 	});

@@ -130,7 +130,6 @@ class World
 	void importDecisions();
 	void updateDecisions();
 	void outDecisions() const;
-	void getCountryHistoryFromTaiping();
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;

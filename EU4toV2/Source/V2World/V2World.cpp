@@ -142,10 +142,6 @@ V2::World::World(const EU4::World& sourceWorld,
 	updateDecisions();
 	Log(LogLevel::Progress) << "72 %";
 
-	LOG(LogLevel::Info) << "-> Importing history from taiping_and_csa";
-	getCountryHistoryFromTaiping();
-	Log(LogLevel::Progress) << "73 %";
-
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	output(versionParser);
 
@@ -1933,54 +1929,5 @@ void V2::World::outDecisions() const
 		if (!output.is_open())
 			Log(LogLevel::Debug) << "Could not create " << decisionsFile.first;
 		output << decisionsFile.second;
-	}
-}
-
-void V2::World::getCountryHistoryFromTaiping()
-{
-	const auto& converterUnions = decisions.find("converterUnions.txt")->second.getDecisions();
-	if (const auto& taiping = converterUnions.find("taiping_and_csa"); taiping != converterUnions.end())
-	{
-		commonItems::TryCreateFolder("output/history");
-		std::istringstream effect(taiping->second.getEffect());
-		Taiping theHistory(effect);
-
-		for (const auto& country: theHistory.getCountries())
-		{
-			std::ofstream output("output/history/" + country.first + ".txt");
-			if (!output.is_open())
-				Log(LogLevel::Debug) << "Could not create " << country.first << ".txt";
-			for (const auto& entry: country.second)
-			{
-				output << entry.first << " = " << entry.second << "\n";
-			}
-		}
-
-		/*std::map<std::string, std::vector<std::string>> countryCores;
-		for (const auto& core: theHistory.getCountryCores())
-		{
-			if (countryCores.find(core.second) == countryCores.end())
-			{
-				std::vector<std::string> cores;
-				cores.push_back(core.first);
-				countryCores.insert(make_pair(core.second, cores));
-			}
-			else
-			{
-				auto& cores = countryCores.find(core.second)->second;
-				cores.push_back(core.first);
-			}
-		}
-
-		for (const auto& country: countryCores)
-		{
-			std::ofstream output("output/history/" + country.first + "_cores.txt");
-			if (!output.is_open())
-				Log(LogLevel::Debug) << "Could not create " << country.first << "_cores.txt";
-			for (const auto& core: country.second)
-			{
-				output << core << "\n";
-			}
-		}*/
 	}
 }

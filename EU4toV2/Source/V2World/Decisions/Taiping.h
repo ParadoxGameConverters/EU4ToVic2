@@ -18,6 +18,7 @@ class Taiping: commonItems::parser
 	[[nodiscard]] const auto& getCore() const { return core; }
 
   private:
+  	std::vector<std::string> bodies;
   	std::string tag;
   	std::map<std::string, std::string> history;
 	std::map<std::string, std::map<std::string, std::string>> countries;

@@ -1,4 +1,5 @@
 #include "Decisions.h"
+#include "Taiping.h"
 #include "../Country/Country.h"
 #include "ParserHelpers.h"
 #include "OSCompatibilityLayer.h"
@@ -127,52 +128,28 @@ void V2::Decisions::updateDecisions(const std::map<std::string, std::shared_ptr<
 		Log(LogLevel::Warning) << "Could not load taiping_and_csa decision";
 	else
 	{
+		std::istringstream effectString(theDecision->second.getEffect());
+		Taiping taiping(effectString);
+
 		std::string effect;
 		effect += "= {\n";
-
-		std::ifstream input;
-		input.open("configurables/taiping_and_csa/former colonies and natives.txt");
-		if (!input.is_open())
-			Log(LogLevel::Info) << "Could not open \"former colonies and natives.txt\"";
-		while (!input.eof())
+		for (const auto& country: taiping.getCountries())
 		{
-			std::string line;
-			getline(input, line);
-			effect += line + "\n";
-		}
-		input.close();
-
-		const auto& deadTagsData(commonItems::GetAllFilesInFolder("configurables/taiping_and_csa"));
-		for (const auto& tagFile: deadTagsData)
-		{
-			if (tagFile == "former colonies and natives.txt")
-				continue;
-			const auto& lastDot = tagFile.find_last_of('.');
-			const auto& tag = tagFile.substr(0, lastDot);
-			if (countries.find(tag) != countries.end())
+			if (countries.find(country.first) != countries.end())
 			{
-				const auto& country = *countries.find(tag)->second;
-				effect += "\t\t\tany_country = { #" + country.getLocalName() + "\n";
+				effect += "\t\t\tany_country = {\n";
 				effect += "\t\t\t\tlimit = {\n";
-				effect += "\t\t\t\t\ttag = " + tag + "\n";
-				effect += "\t\t\t\t\tNOT = { exists = " + tag + " }\n";
+				effect += "\t\t\t\t\ttag = " + country.first + "\n";
+				effect += "\t\t\t\t\tNOT = { exists = " + country.first + "}\n";
 				effect += "\t\t\t\t}\n";
-
-				std::ifstream input;
-				input.open("configurables/taiping_and_csa/" + tagFile);
-				if (!input.is_open())
-					Log(LogLevel::Info) << "Could not open " << tagFile;
-				while (!input.eof())
+				for (const auto& historyEntry: country.second)
 				{
-					std::string line;
-					getline(input, line);
-					effect += "\t\t\t\t" + line + "\n";
+					effect += "\t\t\t\t" + historyEntry.first + " = " + historyEntry.second + "\n";
 				}
-				input.close();
-
 				effect += "\t\t\t}\n";
 			}
 		}
+
 		effect += "\t\t\tset_global_flag = taiping_and_csa\n";
 		effect += "\t\t}\n";
 		(theDecision->second).updateDecision("effect", effect);
