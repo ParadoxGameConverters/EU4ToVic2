@@ -131,23 +131,82 @@ void V2::Decisions::updateDecisions(const std::map<std::string, std::shared_ptr<
 		std::istringstream effectString(theDecision->second.getEffect());
 		Taiping taiping(effectString);
 
+		std::vector<std::string> heimaten = {"PER", "TUR", "RUS", "SLA"};
 		std::string effect;
 		effect += "= {\n";
-		for (const auto& country: taiping.getCountries())
+		for (const auto& nonCountrySpecificEffect: taiping.getNonCountrySpecificEffects())
 		{
-			if (countries.find(country.first) != countries.end())
+			effect += "\t\t\t" + nonCountrySpecificEffect + "\n";
+		}
+		for (const auto& tag: taiping.getTagEffectMap())
+		{
+			if (countries.find(tag.first) != countries.end()
+				 && std::find(heimaten.begin(), heimaten.end(), tag.first) == heimaten.end()
+				 && tag.first != "CHI")
 			{
-				effect += "\t\t\tany_country = {\n";
-				effect += "\t\t\t\tlimit = {\n";
-				effect += "\t\t\t\t\ttag = " + country.first + "\n";
-				effect += "\t\t\t\t\tNOT = { exists = " + country.first + "}\n";
+				effect += "\t\t\t" + tag.second + "\n";
+			}
+		}
+		for (const auto& coreEffect: taiping.getCountryCores())
+		{
+			effect += "\t\t\t" + coreEffect + "\n";
+		}
+
+		//Heimaten
+		std::vector<std::string> coresToRemove = {"GEO", "ARM", "AZB"};
+		bool anythingToRemove = false;
+		for (const auto& tag: coresToRemove)
+		{
+			if (countries.find(tag) != countries.end())
+			{
+				anythingToRemove = true;
+				break;
+			}
+		}
+		if (anythingToRemove)
+		{
+			for (const auto& tag: heimaten)
+			{
+				if (countries.find(tag) == countries.end())
+					continue;
+				effect += "\t\t\t" + tag + " = {\n";
+				effect += "\t\t\t\tany_owned_province = {\n";
+				effect += "\t\t\t\t\tlimit = {\n";
+				effect += "\t\t\t\t\t\tNOT = {\n";
+				effect += "\t\t\t\t\t\t\tregion = RUS_1090 #Georgia\n";
+				effect += "\t\t\t\t\t\t\tregion = RUS_1098 #Armenia\n";
+				effect += "\t\t\t\t\t\t\tregion = RUS_1102 #Azerbaijan\n";
+				effect += "\t\t\t\t\t\t}\n";
+				effect += "\t\t\t\t\t}\n";
+				if (countries.find("GEO") != countries.end())
+					effect += "\t\t\t\t\tremove_core = GEO\n";
+				if (countries.find("ARM") != countries.end())
+					effect += "\t\t\t\t\tremove_core = ARM\n";
+				if (countries.find("AZB") != countries.end())
+					effect += "\t\t\t\t\tremove_core = AZB\n";
 				effect += "\t\t\t\t}\n";
-				for (const auto& historyEntry: country.second)
-				{
-					effect += "\t\t\t\t" + historyEntry.first + " = " + historyEntry.second + "\n";
-				}
 				effect += "\t\t\t}\n";
 			}
+		}
+
+		if (countries.find("CHI") != countries.end())
+		{
+			effect += "\t\t\tCHI = {\n";
+			effect += "\t\t\t\tany_owned_province = {\n";
+			effect += "\t\t\t\t\tlimit = {\n";
+			effect += "\t\t\t\t\t\tNOT = {\n";
+			if (countries.find("MGL") != countries.end())
+				effect += "\t\t\t\t\t\t\tis_core = MGL\n";
+			effect += "\t\t\t\t\t\t\tregion = CHI_2608 #Mongolia proper\n";
+			effect += "\t\t\t\t\t\t}\n";
+			effect += "\t\t\t\t\t}\n";
+			effect += "\t\t\t\t}\n";
+			if (countries.find("KHA") != countries.end())
+				effect += "\t\t\t\tremove_core = KHA\n";
+			if (countries.find("MGL") != countries.end())
+				effect += "\t\t\t\tremove_core = MGL\n";
+			effect += "\t\t\t\tadd_core = IMG\n";
+			effect += "\t\t\t}\n";
 		}
 
 		effect += "\t\t\tset_global_flag = taiping_and_csa\n";

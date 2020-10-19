@@ -7,35 +7,30 @@ V2::Taiping::Taiping(std::istream& effect)
 {
 	registerKeyword("any_country", [this](const std::string& unused, std::istream& theStream) {
 		const auto body = commonItems::stringOfItem(theStream).getString();
-		Log(LogLevel::Info) << body;
+		const auto& fullEffect = "any_country " + body;
 		std::stringstream bodyStream(body);
 		Taiping newTaiping(bodyStream);
-		countries.insert(make_pair(newTaiping.getTag(), newTaiping.getHistory()));
+		if (const auto& tag = newTaiping.getTag(); !tag.empty())
+			tagEffectMap.insert(make_pair(newTaiping.getTag(), fullEffect));
+		else
+			nonCountrySpecificEffects.push_back(fullEffect);
 	});
 	registerRegex("[A-Z]{3}", [this](const std::string& tag, std::istream& theStream) {
-		Taiping newTaiping(theStream);
-		countries.insert(make_pair(tag, newTaiping.getHistory()));
+		const auto body = commonItems::stringOfItem(theStream).getString();
+		const auto& fullEffect = tag + " " + body;
+		std::stringstream bodyStream(body);
+		Taiping newTaiping(bodyStream);
+		tagEffectMap.insert(make_pair(tag, fullEffect));
 	});
 	registerRegex("[A-Z]{3}_[0-9]+|[0-9]+", [this](const std::string& id, std::istream& theStream) {
-		Taiping newTaiping(theStream);
-		countryCores.insert(make_pair(id, newTaiping.getCore()));
+		const auto body = commonItems::stringOfItem(theStream).getString();
+		const auto& fullEffect = id + " " + body;
+		countryCores.push_back(fullEffect);
 	});
 	registerKeyword("limit", [this](const std::string& unused, std::istream& theStream) {
 		Limit newLimit(theStream);
 		tag = newLimit.getTag();
 	});
-	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& entry, std::istream& theStream) {
-		commonItems::singleString historyStr(theStream);
-		history.insert(make_pair(entry, historyStr.getString()));
-	});
-	registerKeyword("add_core", [this](const std::string& unused, std::istream& theStream) {
-		commonItems::singleString tagStr(theStream);
-		core = tagStr.getString();
-	});	
-	registerKeyword("any_owned", commonItems::ignoreItem);
-	registerKeyword("any_owned_province", commonItems::ignoreItem);
-	registerKeyword("activate_technology", commonItems::ignoreItem);
-	registerKeyword("add_country_modifier", commonItems::ignoreItem);
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	parseStream(effect);
 	clearRegisteredKeywords();
