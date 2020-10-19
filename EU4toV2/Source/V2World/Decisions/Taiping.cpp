@@ -6,9 +6,10 @@
 V2::Taiping::Taiping(std::istream& effect)
 {
 	registerKeyword("any_country", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::stringOfItem body(theStream);
-		Log(LogLevel::Info) << body.getString();
-		Taiping newTaiping(theStream);
+		const auto body = commonItems::stringOfItem(theStream).getString();
+		Log(LogLevel::Info) << body;
+		std::stringstream bodyStream(body);
+		Taiping newTaiping(bodyStream);
 		countries.insert(make_pair(newTaiping.getTag(), newTaiping.getHistory()));
 	});
 	registerRegex("[A-Z]{3}", [this](const std::string& tag, std::istream& theStream) {
