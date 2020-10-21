@@ -6,9 +6,11 @@ mappers::ProvinceMappingsVersion::ProvinceMappingsVersion(const std::string& ver
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream)
 		{
 			const ProvinceMapping newMapping(theStream);
+			if (newMapping.getEU4Provinces().empty() && newMapping.getVic2Provinces().empty())
+				return; // comment.
 			mappings.push_back(newMapping);
 		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	
 	parseStream(theStream);
 	clearRegisteredKeywords();

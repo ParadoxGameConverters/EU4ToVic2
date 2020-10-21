@@ -18,7 +18,7 @@ mappers::ProvinceMapping::ProvinceMapping(std::istream& theStream)
 			const commonItems::singleString regionString(theStream);
 			resettableRegions.insert(regionString.getString());
 		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();
