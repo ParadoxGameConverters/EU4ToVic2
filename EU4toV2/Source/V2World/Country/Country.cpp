@@ -33,8 +33,8 @@ V2::Country::Country(const std::string& countriesFileLine,
 	details = CountryDetails(filename);
 	tag = countriesFileLine.substr(0, 3);
 	commonCountryFile = Localisation::convert(filename);
-	modCommons = ModCommons(filename);
 	initParties(partyNameMapper, partyTypeMapper);
+	modCommons = ModCommons(filename);
 }
 
 V2::Country::Country(std::string _tag,

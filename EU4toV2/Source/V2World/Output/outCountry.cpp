@@ -52,6 +52,16 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 		output << "political_parties=underground_parties\n";
 	}
 
+	if (const auto& modReforms = country.getModReforms(); !modReforms.empty())
+	{
+		output << "\n";
+		output << "#Mod Reforms\n";
+		for (const auto& modReform: modReforms)
+		{
+			output << modReform.first << "=" << modReform.second << "\n";
+		}
+	}
+
 	output << "\n";
 	output << "ruling_party = " << country.details.rulingParty << "\n";
 	output << "upper_house = \n";

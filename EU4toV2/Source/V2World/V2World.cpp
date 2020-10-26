@@ -1991,6 +1991,7 @@ void V2::World::updateCountryDetails()
 {
 	for (const auto& [tag, country]: countries)
 	{
+		//Parties
 		for (const auto& party: country->getParties()) //load parties from countryDetails
 		{
 			if (!party.getPolicies().contains("social_policy"))
@@ -2002,6 +2003,18 @@ void V2::World::updateCountryDetails()
 					country->addPolicy(party.getName(), "social_policy", defaultPosition);
 				}
 			}
+		}
+
+		//Reforms
+		std::map<std::string, std::string> theReforms;
+		if (country->isCivilized())
+			theReforms = modReforms.getReforms();
+		else
+			theReforms = modReforms.getUncivReforms();
+
+		for (const auto& [reform, position] : theReforms)
+		{
+			country->setReformPosition(reform, position);
 		}
 	}
 }
