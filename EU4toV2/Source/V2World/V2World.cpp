@@ -820,7 +820,7 @@ void V2::World::addAllPotentialCountries()
 		if (countryItr == countries.end())
 		{
 			// Note: This is a dead country.
-			potentialCountry.second->initFromHistory(unreleasablesMapper);
+			potentialCountry.second->initFromHistory(unreleasablesMapper, partyNameMapper, partyTypeMapper);
 			countries.insert(make_pair(potentialCountry.first, potentialCountry.second));
 		}
 	}

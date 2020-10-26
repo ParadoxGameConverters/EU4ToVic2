@@ -515,7 +515,7 @@ void V2::Country::buildCanals()
 }
 
 // used only for countries which are NOT converted (i.e. unions, dead countries, etc)
-void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMapper)
+void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMapper, const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper)
 {
 	// Ping unreleasable_tags for this country's TAG
 	details.isReleasableVassal = unreleasablesMapper.isTagReleasable(tag);
@@ -533,6 +533,7 @@ void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMap
 		return;
 	}
 	details = CountryDetails(*possibleFilename);
+	initParties(partyNameMapper, partyTypeMapper);
 }
 
 void V2::Country::addProvince(std::shared_ptr<Province> _province)
