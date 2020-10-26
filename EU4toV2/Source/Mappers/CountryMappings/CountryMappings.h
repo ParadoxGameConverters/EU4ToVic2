@@ -26,6 +26,7 @@ class CountryMappings: commonItems::parser
 	[[nodiscard]] const auto& getTitleMapper() const { return *titleMapper; }
 	[[nodiscard]] static bool tagIsAlphaDigitDigit(const std::string& tag);
 	[[nodiscard]] const auto& getV2TagToModTagMap() const { return v2TagToModTagMap; }
+	[[nodiscard]] const auto& getReassigningMap() const { return reassigningMap; }
 
 	void createMappings(const std::shared_ptr<CultureGroups>& theCultureGroupsMapper,
 		 const std::map<std::string, std::shared_ptr<EU4::Country>>& eu4Countries,
@@ -48,6 +49,7 @@ class CountryMappings: commonItems::parser
 	std::map<std::string, std::string> eu4TagToV2TagMap;
 	std::map<std::string, std::string> v2TagToEU4TagMap;
 	std::map<std::string, std::string> v2TagToModTagMap;
+	std::map<std::string, std::string> reassigningMap;
 
 	char generatedV2TagPrefix = 'X';
 	int generatedV2TagSuffix = 0;

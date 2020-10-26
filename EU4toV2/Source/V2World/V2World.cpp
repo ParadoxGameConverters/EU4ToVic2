@@ -146,6 +146,8 @@ V2::World::World(const EU4::World& sourceWorld,
 
 	if (!theConfiguration.getVic2ModName().empty())
 	{
+		identifyReassignedTags();
+
 		LOG(LogLevel::Info) << "Converting events";
 		convertEvents();
 		Log(LogLevel::Progress) << "72 %";
@@ -723,6 +725,7 @@ void V2::World::importPotentialCountries()
 	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
 	{
 		countriesFiles.push_back(theConfiguration.getVic2ModPath() + "/" + mod  + "/common/countries.txt");
+		countriesFiles.push_back("configurables/" + mod  + "/common/countries.txt");
 	}
 	countriesFiles.push_back("./blankMod/output/common/countries.txt");
 
@@ -730,7 +733,7 @@ void V2::World::importPotentialCountries()
 	{
 		v2CountriesInput.open(countriesFile);
 		if (!v2CountriesInput.is_open())
-			throw std::runtime_error("Could not open countries.txt. The converter may be corrupted, try downloading it again.");
+			throw std::runtime_error("Could not open " + countriesFile + ". The converter may be corrupted, try downloading it again.");
 
 		auto dynamicSection = false;
 		while (!v2CountriesInput.eof())
@@ -1735,6 +1738,51 @@ void V2::World::outputLocalisation() const
 	auto dest = localisationPath + "/text.csv";
 
 	LOG(LogLevel::Info) << "<- Writing Localization Names";
+
+	// Don't copy tag localisation if not needed or overriding mod localisation
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+	{
+		std::ifstream inNames("./blankMod/output/localisation/0_Names.csv");
+		if (!inNames.is_open())
+			throw std::runtime_error("Could not open blankMod/output/localisation/0_Names.csv for reading");
+		std::ofstream outNames(localisationPath + "/0_Names.csv");
+		if (!outNames.is_open())
+			throw std::runtime_error("Could not open " + localisationPath + "/0_Names.csv for writing");
+
+		// Vic2 tags transformed into corresponding mod tag (e.g for HPM: MLB -> MNP)
+		// MLB is no longer needed, MNP would override mod localisation
+		std::vector<std::string> tagsInMap;
+		for (const auto& tag: countryMapper.getV2TagToModTagMap())
+		{
+			tagsInMap.push_back(tag.first);
+			tagsInMap.push_back(tag.second);
+		}
+		// Vic2 countries assigned new tag (e.g. for HPM: LUN -> LNB)
+		// LUN would override mod localisation for Lundu
+		for (const auto& tag: countryMapper.getReassigningMap())
+		{
+			tagsInMap.push_back(tag.first);
+		}
+
+		while (!inNames.eof())
+		{
+			std::string line;
+			getline(inNames, line);
+
+			if (line.substr(0, 3) == "KEY") // KEY;ENGLISH;FRENCH..
+			outNames << line << "\n";
+			if (line.substr(0, 16) == "#translate notes")
+			outNames << line << "\n";
+
+			const auto& tag = line.substr(0, 3);
+			if (countries.find(tag) != countries.end()
+				 && std::find(tagsInMap.begin(), tagsInMap.end(), tag) == tagsInMap.end())
+				outNames << line << "\n";
+		}
+		inNames.close();
+		outNames.close();
+	}
+
 	std::ofstream output(localisationPath + "/0_Names.csv", std::ofstream::app);
 	if (!output.is_open())
 		throw std::runtime_error("Could not update localization text file");
@@ -1743,7 +1791,7 @@ void V2::World::outputLocalisation() const
 	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
 	for (const auto& country: countries)
 	{
-		if (country.second->isNewCountry())
+		if (country.second->isNewCountry() || isTagReassigned(country.second->getTag()))
 		{
 			output << country.second->getLocalisation();
 		}
@@ -2407,4 +2455,33 @@ std::vector<std::string> V2::World::getIssues(const std::string& issueCategory)
 {
 	const auto& issuesItr = issues.getCategories().find(issueCategory);
 	return issuesItr->second;
+}
+
+void V2::World::identifyReassignedTags()
+{
+	std::ifstream v2CountriesInput;
+	
+	v2CountriesInput.open("configurables/" + theConfiguration.getVic2ModName() + "/common/countries.txt");
+	if (!v2CountriesInput.is_open())
+		throw std::runtime_error("Could not open configurables/" + theConfiguration.getVic2ModName() + "/common/countries.txt");
+
+	while (!v2CountriesInput.eof())
+	{
+		std::string line;
+		getline(v2CountriesInput, line);
+		reassignedTags.push_back(line.substr(0, 3));
+	}
+	v2CountriesInput.close();
+}
+
+bool V2::World::isTagReassigned(const std::string& tag) const
+{
+	bool isReassigned = false;
+
+	if (theConfiguration.getVic2ModName().empty())
+		return isReassigned;
+	
+	if (std::find(reassignedTags.begin(), reassignedTags.end(), tag) != reassignedTags.end())
+		isReassigned = true;
+	return isReassigned;
 }

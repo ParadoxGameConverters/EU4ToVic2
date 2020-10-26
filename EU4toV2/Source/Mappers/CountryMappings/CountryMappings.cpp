@@ -68,6 +68,11 @@ void mappers::CountryMappings::registerKeys()
 		if (!newMapping.getVanillaTag().empty())
 			v2TagToModTagMap.insert(make_pair(newMapping.getVanillaTag(), newMapping.getModTag()));
 	});
+	registerKeyword("reassign", [this](const std::string& unused, std::istream& theStream) {
+		const CountryMapping newMapping(theStream);
+		if (!newMapping.getOldTag().empty())
+			reassigningMap.insert(make_pair(newMapping.getOldTag(), newMapping.getNewTag()));
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
