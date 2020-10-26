@@ -141,6 +141,11 @@ V2::World::World(const EU4::World& sourceWorld,
 	convertCountryFlags();
 	Log(LogLevel::Progress) << "71 %";
 
+	if (theConfiguration.isHpmEnabled())
+	{
+		identifyReassignedTags();
+	}
+
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	output(versionParser);
 
@@ -686,18 +691,19 @@ void V2::World::importPotentialCountries()
 	dynamicCountries.clear();
 
 	std::ifstream v2CountriesInput;
-	std::set<std::string> countriesFiles;
-	countriesFiles.insert("./blankMod/output/common/countries.txt");
+	std::vector<std::string> countriesFiles;
 	if (theConfiguration.isHpmEnabled())
 	{
-		countriesFiles.insert(theConfiguration.getVic2Path() + "/common/countries.txt");
+		countriesFiles.push_back(theConfiguration.getVic2Path() + "/common/countries.txt");
+		countriesFiles.push_back("configurables/HPM/common/countries.txt");
 	}
+	countriesFiles.push_back("./blankMod/output/common/countries.txt");
 
 	for (const auto& countriesFile: countriesFiles)
 	{
 		v2CountriesInput.open(countriesFile);
 		if (!v2CountriesInput.is_open())
-			throw std::runtime_error("Could not open countries.txt. The converter may be corrupted, try downloading it again.");
+			throw std::runtime_error("Could not open " + countriesFile + ". The converter may be corrupted, try downloading it again.");
 
 		auto dynamicSection = false;
 		while (!v2CountriesInput.eof())
@@ -723,14 +729,11 @@ void V2::World::importPotentialCountry(const std::string& line, bool dynamicCoun
 	auto tag = line.substr(0, 3);
 
 	
-	if (countryMapper.getV2TagToModTagMap().find(tag) == countryMapper.getV2TagToModTagMap().end())
+	if (!countryMapper.getV2TagToModTagMap().contains(tag) && !potentialCountries.contains(tag))
 	{
 		auto newCountry = std::make_shared<Country>(line, dynamicCountry, partyNameMapper, partyTypeMapper);
-		if (potentialCountries.find(tag) == potentialCountries.end())
-		{
-			potentialCountries.insert(std::make_pair(tag, newCountry));
-		}
-		if (dynamicCountry && dynamicCountries.find(tag) == dynamicCountries.end())
+		potentialCountries.insert(std::make_pair(tag, newCountry));
+		if (dynamicCountry && !dynamicCountries.contains(tag))
 		{
 			dynamicCountries.insert(std::make_pair(tag, newCountry));
 		}
@@ -1698,6 +1701,50 @@ void V2::World::outputLocalisation() const
 	auto dest = localisationPath + "/text.csv";
 
 	LOG(LogLevel::Info) << "<- Writing Localization Names";
+
+	// Don't copy tag localisation if not needed or overriding mod localisation
+	if (theConfiguration.isHpmEnabled())
+	{
+		std::ifstream inNames("./blankMod/output/localisation/0_Names.csv");
+		if (!inNames.is_open())
+			throw std::runtime_error("Could not open blankMod/output/localisation/0_Names.csv for reading");
+		std::ofstream outNames(localisationPath + "/0_Names.csv");
+		if (!outNames.is_open())
+			throw std::runtime_error("Could not open " + localisationPath + "/0_Names.csv for writing");
+
+		// Vic2 tags transformed into corresponding mod tag (e.g for HPM: MLB -> MNP)
+		// MLB is no longer needed, MNP would override mod localisation
+		std::vector<std::string> tagsInMap;
+		for (const auto& tag: countryMapper.getV2TagToModTagMap())
+		{
+			tagsInMap.push_back(tag.first);
+			tagsInMap.push_back(tag.second);
+		}
+		// Vic2 countries assigned new tag (e.g. for HPM: LUN -> LNB)
+		// LUN would override mod localisation for Lundu
+		for (const auto& tag: countryMapper.getReassigningMap())
+		{
+			tagsInMap.push_back(tag.first);
+		}
+
+		while (!inNames.eof())
+		{
+			std::string line;
+			getline(inNames, line);
+
+			if (line.substr(0, 3) == "KEY") // KEY;ENGLISH;FRENCH..
+			outNames << line << "\n";
+			if (line.substr(0, 16) == "#translate notes")
+			outNames << line << "\n";
+
+			const auto& tag = line.substr(0, 3);
+			if (countries.contains(tag) && std::find(tagsInMap.begin(), tagsInMap.end(), tag) == tagsInMap.end())
+				outNames << line << "\n";
+		}
+		inNames.close();
+		outNames.close();
+	}
+
 	std::ofstream output(localisationPath + "/0_Names.csv", std::ofstream::app);
 	if (!output.is_open())
 		throw std::runtime_error("Could not update localization text file");
@@ -1706,7 +1753,7 @@ void V2::World::outputLocalisation() const
 	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
 	for (const auto& country: countries)
 	{
-		if (country.second->isNewCountry())
+		if (country.second->isNewCountry() || isTagReassigned(country.second->getTag()))
 		{
 			output << country.second->getLocalisation();
 		}
@@ -1915,4 +1962,33 @@ void V2::World::copyHpmFiles() const
 			fs::copy_file(hpm + "/common/countries/" + file, out + "/common/countries/" + file);
 		}
 	}
+}
+
+void V2::World::identifyReassignedTags()
+{
+	std::ifstream v2CountriesInput;
+
+	v2CountriesInput.open("configurables/HPM/common/countries.txt");
+	if (!v2CountriesInput.is_open())
+		throw std::runtime_error("Could not open configurables/HPM/common/countries.txt");
+
+	while (!v2CountriesInput.eof())
+	{
+		std::string line;
+		getline(v2CountriesInput, line);
+		reassignedTags.push_back(line.substr(0, 3));
+	}
+	v2CountriesInput.close();
+}
+
+bool V2::World::isTagReassigned(const std::string& tag) const
+{
+	bool isReassigned = false;
+
+	if (!theConfiguration.isHpmEnabled())
+		return isReassigned;
+
+	if (std::find(reassignedTags.begin(), reassignedTags.end(), tag) != reassignedTags.end())
+		isReassigned = true;
+	return isReassigned;
 }

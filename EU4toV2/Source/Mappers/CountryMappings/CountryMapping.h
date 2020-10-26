@@ -15,6 +15,8 @@ class CountryMapping: commonItems::parser
 	[[nodiscard]] const auto& getVic2Tag() const { return vic2Tag; }
 	[[nodiscard]] const auto& getVanillaTag() const { return vanillaTag; }
 	[[nodiscard]] const auto& getModTag() const { return modTag; }
+	[[nodiscard]] const auto& getOldTag() const { return oldTag; }
+	[[nodiscard]] const auto& getNewTag() const { return newTag; }
 	[[nodiscard]] const auto& getReforms() const { return reforms; }
 	[[nodiscard]] const auto& getFlags() const { return flags; }
 
@@ -25,6 +27,8 @@ class CountryMapping: commonItems::parser
 	std::string vic2Tag;
 	std::string vanillaTag;
 	std::string modTag;
+	std::string oldTag;
+	std::string newTag;
 	std::set<std::string> reforms;
 	std::set<std::string> flags;
 };

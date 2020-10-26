@@ -259,8 +259,8 @@ link = { eu4 = d_provence v2 = PRO } # Provence
 link = { eu4 = SPI v2 = SAR } # Sardinia-Piedmont
 link = { eu4 = TOU v2 = TUL } # Toulouse
 link = { eu4 = d_toulouse v2 = TUL } # Toulouse
-link = { eu4 = BER v2 = BRY } # Berry
-link = { eu4 = d_berry v2 = BRY } # Berry
+link = { eu4 = BER v2 = BEY } # Berry
+link = { eu4 = d_berry v2 = BEY } # Berry
 
 #HRE
 link = { eu4 = AAC v2 = AAC } # Aachen 
@@ -305,8 +305,8 @@ link = { eu4 = d_koln v2 = KOL } # Cologne
 link = { eu4 = LAU v2 = LAU } # Lauenburg
 link = { eu4 = LOR v2 = LOR } # Lorraine
 link = { eu4 = d_upper_lorraine v2 = LOR } # Lorraine
-link = { eu4 = LUN v2 = LUN } # Luneburg
-link = { eu4 = c_luneburg v2 = LUN } # Lunebrg
+link = { eu4 = LUN v2 = LNB } # Luneburg
+link = { eu4 = c_luneburg v2 = LNB } # Lunebrg
 link = { eu4 = MAG v2 = MAG } # Magdeburg
 link = { eu4 = MAI v2 = MAI } # Mainz
 link = { eu4 = c_mainz v2 = MAI } # Mainz
@@ -913,7 +913,7 @@ link = { eu4 = BNG v2 = BNG } # Bengal
 link = { eu4 = k_bengal v2 = BNG } # Bengal
 link = { eu4 = e_bengal v2 = BNG } # Bengal
 link = { eu4 = BIJ v2 = BIJ } # Bijapur
-link = { eu4 = BAH v2 = BAH } # Bahmanis
+link = { eu4 = BAH v2 = BMN } # Bahmanis
 link = { eu4 = DLH v2 = DLH } # Delhi
 link = { eu4 = k_delhi v2 = DLH } # Delhi
 link = { eu4 = GOC v2 = GOC } # Golconda
@@ -1351,7 +1351,7 @@ link = { eu4 = k_mauretania v2 = TRZ } #Mauretania
 link = { eu4 = k_romagna v2 = RMG } #Romagna
 
 ##Added for some decisions to have a sense
-link = { eu4 = d_carinthia v2 = CRT } #Carinthia
+link = { eu4 = d_carinthia v2 = CTI } #Carinthia
 link = { eu4 = e_latin_empire v2 = LTN } #Latin Empire
 
 ##Just a joke mod
@@ -1585,8 +1585,10 @@ map = { vic = LND mod = LUN } #Lunda
 map = { vic = JMB mod = DJA } #Jambi
 map = { vic = PAN mod = PNJ } #Panjab
 map = { vic = PHI mod = PHL } #Phillipines
-map = { vic = LUN mod = LNB } #Luneburg
-map = { vic = BAH mod = BMN } #Bahmanis
-map = { vic = BRY mod = BEY } #Berry
-map = { vic = CRT mod = CTI } #Carinthia
-map = { vic = SYC mod = SRC } #Syriac
+
+### Create new tag for vanilla tag already taken in HPM
+reassign = { old = LUN new = LNB } #Luneburg
+reassign = { old = BAH new = BMN } #Bahmanis
+reassign = { old = BRY new = BEY } #Berry
+reassign = { old = CRT new = CTI } #Carinthia
+reassign = { old = SYC new = SRC } #Syriac
