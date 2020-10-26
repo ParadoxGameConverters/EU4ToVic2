@@ -33,8 +33,8 @@ V2::Country::Country(const std::string& countriesFileLine,
 	details = CountryDetails(filename);
 	tag = countriesFileLine.substr(0, 3);
 	commonCountryFile = Localisation::convert(filename);
-	initParties(partyNameMapper, partyTypeMapper);
 	modCommons = ModCommons(filename);
+	initParties(partyNameMapper, partyTypeMapper);
 }
 
 V2::Country::Country(std::string _tag,
@@ -52,12 +52,17 @@ V2::Country::Country(std::string _tag,
 
 void V2::Country::initParties(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper)
 {
+	// Check mod parties first
+	std::vector<Party> parties = modCommons.getParties();
+	if (parties.empty())
+		parties = details.parties;
+
 	// We're a new nation so no parties are specified. Grab some.
-	if (details.parties.empty())
-		loadPartiesFromBlob(partyNameMapper, partyTypeMapper);
+	if (parties.empty())
+		loadPartiesFromBlob(partyNameMapper, partyTypeMapper);	// Can load also for mod, only names are used
 
 	// set a default ruling party
-	for (const auto& party: details.parties)
+	for (const auto& party: parties)
 	{
 		// We're pinging against this date only to protect against later-game parties.
 		if (party.isActiveOn(date("1836.1.1")))

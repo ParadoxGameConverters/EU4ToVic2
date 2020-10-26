@@ -15,6 +15,7 @@
 #include "../Mappers/Geography/TerrainDataMapper.h"
 #include "../Mappers/GovernmentMapper/GovernmentMapper.h"
 #include "../Mappers/Issues/Issues.h"
+#include "../Mappers/Issues/ModReforms.h"
 #include "../Mappers/LeaderTraits/LeaderTraitMapper.h"
 #include "../Mappers/MinorityPops/MinorityPopMapper.h"
 #include "../Mappers/NavalBases/NavalBaseMapper.h"
@@ -85,6 +86,7 @@ class World
 	[[nodiscard]] std::string clipCountryFileName(const std::string& incoming) const;
 	[[nodiscard]] const auto& getStateMap() const { return stateMap; }
 	[[nodiscard]] const auto& getProvinceMap() const { return provinceMap; }
+	[[nodiscard]] const auto& getModReforms() const { return modReforms; }
 
 	static std::optional<std::string> determineProvinceControllership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld);
 	std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, const EU4::Country& sourceCountry);
@@ -204,6 +206,7 @@ class World
 	std::map<std::string, std::string> events;
 	VanillaWorld vanillaWorld;
 	mappers::Issues issues;
+	mappers::ModReforms modReforms;
 };
 
 std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);

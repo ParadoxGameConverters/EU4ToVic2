@@ -574,6 +574,9 @@
     <ClCompile Include="Source\Mappers\Issues\Issues.cpp">
       <Filter>Mappers\Issues</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Issues\ModReforms.cpp">
+      <Filter>Mappers\Issues</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1107,6 +1110,9 @@
       <Filter>Vic2World\Country</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\Issues\Issues.h">
+      <Filter>Mappers\Issues</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Issues\ModReforms.h">
       <Filter>Mappers\Issues</Filter>
     </ClInclude>
   </ItemGroup>

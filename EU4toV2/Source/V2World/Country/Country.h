@@ -115,6 +115,7 @@ class Country
 	Relation& getRelation(const std::string& target);
 	std::map<std::string, Relation>& getRelations() { return relations; }
 	void addPolicy(const std::string& partyName, const std::string& policy, const std::string& position);
+	void setReformPosition(const std::string& reform, const std::string& position) { modReforms.insert(make_pair(reform, position)); }
 
 	[[nodiscard]] std::string getColonialRegion() const;
 	[[nodiscard]] virtual std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }
@@ -143,6 +144,7 @@ class Country
 	[[nodiscard]] bool isEmperorHRE() const { return details.holyRomanEmperor; }
 	[[nodiscard]] bool isMemberHRE() const { return details.inHRE; }
 	[[nodiscard]] const auto& getParties() const { return details.parties; }
+	[[nodiscard]] const auto& getModReforms() const { return modReforms; }
 
 	friend std::ostream& operator<<(std::ostream& output, const Country& country);
 	void outputCommons(std::ostream& output);
@@ -171,6 +173,7 @@ class Country
 	Localisation localisation;
 	EU4::NationalSymbol nationalColors;
 	ModCommons modCommons;
+	std::map<std::string, std::string> modReforms;
 
 	[[nodiscard]] std::optional<std::string> getFileFromTag(const std::string& directoryPath, const std::string& tag) const;
 	void loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper);

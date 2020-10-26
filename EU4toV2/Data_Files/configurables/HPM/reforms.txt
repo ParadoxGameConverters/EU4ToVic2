@@ -1,0 +1,14 @@
+conscription = mandatory_service
+citizens_rights = primary_culture_only
+debt_law = serfdom
+border_policy = closed_borders
+penal_system = capital_punishment
+child_labor = child_labor_legal
+
+unciv = {
+	monetary_reform = no_monetary_reform
+	research_reform = no_research_reform
+	firearms_production = no_firearms_production
+	western_shipyards = no_western_shipyards
+	foreign_artillery = no_foreign_artillery
+}
