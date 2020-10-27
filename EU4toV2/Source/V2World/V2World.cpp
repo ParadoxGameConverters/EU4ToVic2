@@ -1581,6 +1581,7 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	if (theConfiguration.isHpmEnabled())
 	{
 		copyHpmFiles();
+		updateFlags();
 	}
 
 	// verify countries got written
@@ -1991,4 +1992,27 @@ bool V2::World::isTagReassigned(const std::string& tag) const
 	if (std::find(reassignedTags.begin(), reassignedTags.end(), tag) != reassignedTags.end())
 		isReassigned = true;
 	return isReassigned;
+}
+
+void V2::World::updateFlags() const
+{
+	LOG(LogLevel::Info) << "<- Updating flags";
+	const std::vector<std::string> flagFileSuffixes = {".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga"};
+	const auto& hpm = theConfiguration.getVic2Path();
+	const auto& out = "output/" + theConfiguration.getOutputName();
+
+	for (const auto& [hpmTag, newTag]: countryMapper.getReassigningMap())
+	{
+		for (const auto& suffix: flagFileSuffixes)
+		{
+			const auto& hpmFile = out + "/gfx/flags/" + hpmTag + suffix;
+			const auto& newFile = out + "/gfx/flags/" + newTag + suffix;
+			fs::rename(hpmFile, newFile);
+
+			if (commonItems::DoesFileExist(hpm + "/gfx/flags/" + hpmTag + suffix))
+				fs::copy_file(hpm + "/gfx/flags/" + hpmTag + suffix, out + "/gfx/flags/" + hpmTag + suffix);
+			else
+				Log(LogLevel::Info) << hpmTag << suffix << " does not exist in HPM/gfx/flags/";
+		}
+	}
 }

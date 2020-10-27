@@ -133,6 +133,7 @@ class World
 	void copyHpmFiles() const;
 	void identifyReassignedTags();
 	bool isTagReassigned(const std::string& tag) const;
+	void updateFlags() const;
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
