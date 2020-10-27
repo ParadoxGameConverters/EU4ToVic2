@@ -2503,7 +2503,7 @@ void V2::World::updateFlags() const
 			const auto& newFile = output + "/gfx/flags/" + tag.second + suffix;
 			fs::rename(oldFile, newFile);
 
-			if (Utils::DoesFileExist(mod + "/gfx/flags/" + tag.first + suffix))
+			if (commonItems::DoesFileExist(mod + "/gfx/flags/" + tag.first + suffix))
 				fs::copy_file(mod + "/gfx/flags/" + tag.first + suffix, output + "/gfx/flags/" + tag.first + suffix);
 			else
 				Log(LogLevel::Info) << tag.first << suffix << " does not exist in "
