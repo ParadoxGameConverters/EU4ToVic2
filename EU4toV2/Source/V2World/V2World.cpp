@@ -1618,6 +1618,9 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 		copyModFiles();
 		outputStateMap(theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName() + "/map/region.txt",
 			 "output/" + theConfiguration.getOutputName() + "/region.txt");
+
+		LOG(LogLevel::Info) << "<- Updating flags";
+		updateFlags();
 	}
 
 	// verify countries got written
@@ -2484,4 +2487,27 @@ bool V2::World::isTagReassigned(const std::string& tag) const
 	if (std::find(reassignedTags.begin(), reassignedTags.end(), tag) != reassignedTags.end())
 		isReassigned = true;
 	return isReassigned;
+}
+
+void V2::World::updateFlags() const
+{
+	const std::vector<std::string> flagFileSuffixes = {".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga"};
+	const auto& mod = theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName();
+	const auto& output = "output/" + theConfiguration.getOutputName();
+
+	for (const auto& tag: countryMapper.getReassigningMap())
+	{
+		for (const auto& suffix: flagFileSuffixes)
+		{
+			const auto& oldFile = output + "/gfx/flags/" + tag.first + suffix;
+			const auto& newFile = output + "/gfx/flags/" + tag.second + suffix;
+			fs::rename(oldFile, newFile);
+
+			if (Utils::DoesFileExist(mod + "/gfx/flags/" + tag.first + suffix))
+				fs::copy_file(mod + "/gfx/flags/" + tag.first + suffix, output + "/gfx/flags/" + tag.first + suffix);
+			else
+				Log(LogLevel::Info) << tag.first << suffix << " does not exist in "
+					 << theConfiguration.getVic2ModName() << "/gfx/flags/";
+		}
+	}
 }

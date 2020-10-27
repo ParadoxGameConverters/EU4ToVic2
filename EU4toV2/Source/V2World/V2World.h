@@ -168,6 +168,7 @@ class World
 	std::vector<std::string> getIssues(const std::string& issueCategory);
 	void identifyReassignedTags();
 	bool isTagReassigned(const std::string& tag) const;
+	void updateFlags() const;
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
