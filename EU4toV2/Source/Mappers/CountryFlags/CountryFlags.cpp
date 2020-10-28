@@ -9,11 +9,23 @@ mappers::CountryFlags::CountryFlags()
 	clearRegisteredKeywords();
 };
 
+mappers::CountryFlags::CountryFlags(std::istream& theStream)
+{
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+};
+
 void mappers::CountryFlags::registerKeys()
 {
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
 		const CountryFlagsMapping newMapping(theStream);
 		if (!newMapping.getEU4Flag().empty())
-			flags.insert(std::make_pair(newMapping.getEU4Flag(), newMapping.getV2Flags()));
+		{
+			for (const auto& v2Flag: newMapping.getV2Flags())
+			{
+				flags.insert(std::make_pair(newMapping.getEU4Flag(), v2Flag));
+			}
+		}
 	});
 }

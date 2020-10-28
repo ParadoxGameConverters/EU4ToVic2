@@ -9,13 +9,14 @@ namespace mappers
 	{
 	public:
 		CountryFlags();
+		explicit CountryFlags(std::istream& theStream);
 
 		void registerKeys();
 
 		[[nodiscard]] const auto& getFlags() const { return flags; }
 	
 	private:
-		std::map<std::string, std::vector<std::string>> flags;
+		std::multimap<std::string, std::string> flags;
 	};
 }
 

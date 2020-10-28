@@ -169,11 +169,12 @@ void V2::World::convertCountryFlags()
 		{
 			for (const auto& flag: srcCountry->getFlags())
 			{
-				if (const auto& flagMapping = theFlags.find(flag); flagMapping != theFlags.end())
+				if (auto flagRangeItr = theFlags.equal_range(flag); flagRangeItr.first != theFlags.end())
 				{
-					for (const auto& v2Flag: flagMapping->second)
+					while (flagRangeItr.first != flagRangeItr.second)
 					{
-						country.second->addCountryFlag(v2Flag);
+						country.second->addCountryFlag(flagRangeItr.first->second);
+						++flagRangeItr.first;
 					}
 				}
 			}
