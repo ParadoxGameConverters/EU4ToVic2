@@ -18,4 +18,5 @@ void mappers::CountryFlagsMapping::registerKeys()
 		const commonItems::singleString _v2Flag(theStream);
 		v2Flags.push_back(_v2Flag.getString());
 	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

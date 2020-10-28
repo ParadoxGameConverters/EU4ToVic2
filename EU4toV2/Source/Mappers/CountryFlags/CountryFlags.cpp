@@ -28,4 +28,5 @@ void mappers::CountryFlags::registerKeys()
 			}
 		}
 	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
