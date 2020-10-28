@@ -5,20 +5,20 @@
 
 namespace mappers
 {
-	class CountryFlags: commonItems::parser
-	{
-	public:
-		CountryFlags();
-		explicit CountryFlags(std::istream& theStream);
+class CountryFlags: commonItems::parser
+{
+  public:
+	CountryFlags();
+	explicit CountryFlags(std::istream& theStream);
 
-		void registerKeys();
+	void registerKeys();
 
-		[[nodiscard]] const auto& getFlags() const { return flags; }
-	
-	private:
-		std::multimap<std::string, std::string> flags;
-	};
-}
+	[[nodiscard]] const auto& getFlags() const { return flags; }
+
+  private:
+	std::multimap<std::string, std::string> flags;
+};
+} // namespace mappers
 
 
 #endif // COUNTRY_FLAGS_H

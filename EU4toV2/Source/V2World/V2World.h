@@ -128,7 +128,6 @@ class World
 	void modifyPrimaryAndAcceptedCultures();
 	void addAcceptedCultures(const EU4::Regions& eu4Regions);
 	void addReligionCulture();
-
 	void convertCountryFlags();
 
 	mappers::ProvinceMapper provinceMapper;
