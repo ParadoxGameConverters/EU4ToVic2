@@ -1582,6 +1582,8 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	if (theConfiguration.isHpmEnabled())
 	{
 		copyHpmFiles();
+		outputGTFO(countries);
+		outputReturnCores(countries);
 	}
 
 	// verify countries got written

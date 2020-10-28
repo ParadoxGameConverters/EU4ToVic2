@@ -131,6 +131,8 @@ class World
 	void updateDeadNations();
 	void copyHpmFiles() const;
 	void updateCountryDetails();
+	void outputGTFO(std::map<std::string, std::shared_ptr<Country>> countries) const;
+	void outputReturnCores(std::map<std::string, std::shared_ptr<V2::Country>> countries) const;
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
