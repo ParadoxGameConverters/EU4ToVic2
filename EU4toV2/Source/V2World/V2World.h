@@ -169,6 +169,8 @@ class World
 	void identifyReassignedTags();
 	bool isTagReassigned(const std::string& tag) const;
 	void updateFlags() const;
+	void outputGTFO(std::map<std::string, std::shared_ptr<Country>> countries) const;
+	void outputReturnCores(std::map<std::string, std::shared_ptr<V2::Country>> countries) const;
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;

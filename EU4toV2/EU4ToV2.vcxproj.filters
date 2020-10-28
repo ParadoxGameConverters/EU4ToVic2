@@ -577,6 +577,9 @@
     <ClCompile Include="Source\Mappers\Issues\ModReforms.cpp">
       <Filter>Mappers\Issues</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Decisions\HPMDecisions.cpp">
+      <Filter>Vic2World\Decisions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1368,6 +1371,9 @@
     </Filter>
     <Filter Include="Mappers\Issues">
       <UniqueIdentifier>{f4853390-d27f-4271-b312-020a641c50c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vic2World\Decisions">
+      <UniqueIdentifier>{8758d162-b22a-45e3-b4d7-1a122c111a14}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
