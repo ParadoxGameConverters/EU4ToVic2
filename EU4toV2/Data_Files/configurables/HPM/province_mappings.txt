@@ -276,10 +276,10 @@
 	link = { eu4 = 1337 v2 = 2790 }	# 0 "Coast of Gujarat -> Gulf of Gujarat
 	link = { eu4 = 1335 eu4 = 4347 v2 = 2788 }	# 0 "Persian Gulf, 0 "Pirate Coast -> Persian Gulf
 	link = { eu4 = 1334 v2 = 2787 }	# 0 "Straits of Hormuz -> Hormuz Strait
-	link = { eu4 = 1336 eu4 = 1332 v2 = 2789 }	# 0 "Coast of Makran, 0 "Gulf of Oman -> Gulf of Indus
-	link = { eu4 = 1333 v2 = 2786 }	# 0 "Gulf of Masirah -> Gulf of Oman
+	link = { eu4 = 1336 v2 = 2789 }	# 0 "Coast of Makran -> Gulf of Indus
+	link = { eu4 = 1332 v2 = 2786 }	# 0 "Gulf of Oman -> Gulf of Oman
 	link = { eu4 = 1452 v2 = 2905 }	# 0 "Northern Arabian Sea -> Eastern Arabian Sea
-	link = { eu4 = 4346 v2 = 2785 }	# 0 "Qamr Bay -> Coast of Mascate
+	link = { eu4 = 4346 eu4 = 1333 v2 = 2785 }	# 0 "Qamr Bay, 0 "Gulf of Masirah -> Coast of Mascate
 	link = { eu4 = 1331 v2 = 2784 v2 = 2783 }	# 0 "Gulf of Aden -> Bal el Mandeb, Straits of Obokk
 	link = { eu4 = 1329 eu4 = 4333 eu4 = 1330 v2 = 2782 }	# 0 "Red Sea, 0 "Dahlak Archipelago, 0 "Bab el Mandeb -> Red Sea
 	link = { eu4 = 1328 v2 = 2781 }	# 0 "Gulf of Suez -> Gulf of Suez
@@ -2708,14 +2708,15 @@
 	link = { eu4 = 1042 v2 = 2642 }	# 0 "Sakha -> Tomtor
 	link = { eu4 = 2438 eu4 = 1046 v2 = 2648 }	# 0 "Kharya, 0 "Maya -> Handyga
 	# Eastern Siberia
-	link = { eu4 = 2102 v2 = 2697 }	# 0 "Urkan -> Jingkiri
+	link = { eu4 = 2102 v2 = 2697 v2 = 1081 }	# 0 "Urkan -> Jingkiri, Yakesa
 	link = { eu4 = 1052 v2 = 2696 }	# 0 "Stanovoy -> Nerjungri
 	link = { eu4 = 1051 v2 = 2644 }	# 0 "Aldan -> Tommot
 	link = { eu4 = 1045 v2 = 2672 v2 = 1069 }	# 0 "Yakut -> Borogoncy, Yakutsk
 	link = { eu4 = 2435 v2 = 2645 }	# 0 "Nukhtui -> Bodaybo
-	link = { eu4 = 2446 v2 = 1081 }	# 0 "Chara -> Yakesa
-	link = { eu4 = 1058 v2 = 1079 }	# 0 "Onan Gol -> Nerchinsk
-	link = { eu4 = 1057 eu4 = 1056 v2 = 1078 }	# 0 "Ude, 0 "Barguzin -> Chita
+	link = { eu4 = 2446 v2 = 1079 }	# 0 "Chara -> Nerchinsk
+	link = { eu4 = 1058 v2 = 1078 }	# 0 "Onan Gol -> Chita
+	link = { eu4 = 1056 v2 = 2671 }	# 0 "Barguzin -> Barguzin
+	link = { eu4 = 1057 v2 = 2670 }	# 0 "Ude -> Verkhneudinsk
 	link = { eu4 = 1055 v2 = 2676 }	# 0 "Kirenga -> Kirensk
 	link = { eu4 = 1054 eu4 = 2437 v2 = 2695 v2 = 2650 }	# MANY-TO-MANY: 0 "Mukhtuya, 0 "Seganka -> Lensk, Malykaj
 	link = { eu4 = 1059 eu4 = 2436 v2 = 2694 }	# 0 "East Tunguska, 0 "Chuna -> Erbogacen
@@ -2729,17 +2730,18 @@
 	link = { eu4 = 1066 v2 = 1068 v2 = 2674 v2 = 2698 }	# 0 "Altai Uriankhai -> Ulala, Abakan, Kuznetsk
 	link = { eu4 = 2434 v2 = 1067 }	# 0 "Barnaul -> Kemerevo
 	link = { eu4 = 4690 eu4 = 4689 v2 = 1064 }	# Ishim, Om -> Omsk
-	link = { eu4 = 2428 eu4 = 1071 eu4 = 4688 v2 = 2683 }	# 0 "Yugan, 0 "Irtesh, Baraba -> Narym
+	link = { eu4 = 4688 v2 = 2683 }	# Baraba -> Narym
 	link = { eu4 = 1068 v2 = 2691 }	# 0 "Ket -> Minusk
 	link = { eu4 = 1067 v2 = 2692 }	# 0 "Turukhan -> Kostino
 	# Western Siberia
 	link = { eu4 = 2430 v2 = 2615 }	# 0 "Baykha -> Sidorovsk
 	link = { eu4 = 1070 v2 = 1070 }	# 0 "Narim -> Yeniseysk
-	link = { eu4 = 2429 v2 = 2646 }	# 0 "Agan -> Surgut
-	link = { eu4 = 1069 v2 = 1065 }	# 0 "Surgut -> Nyagan
-	link = { eu4 = 2445 eu4 = 1072 v2 = 2613 v2 = 2684 }	# MANY-TO-MANY: 0 "Mangazea, 0 "Obdorsk -> Nadym, Aksarka
-	link = { eu4 = 1073 v2 = 2682 }	# 0 "Berezov -> Obdorsk
-	link = { eu4 = 4691 v2 = 2690 }	# As -> Yugansk
+	link = { eu4 = 1071 v2 = 2646 }	# 0 "Irtesh -> Surgut
+	link = { eu4 = 1069 v2 = 2613 }	# 0 "Surgut -> Nadym
+	link = { eu4 = 2429 v2 = 1065 }	# 0 "Agan -> Nyagan
+	link = { eu4 = 2445 eu4 = 1072 v2 = 2684 }	# 0 "Mangazea, 0 "Obdorsk -> Aksarka
+	link = { eu4 = 1073 eu4 = 4691 v2 = 2682 }	# 0 "Berezov, As -> Obdorsk
+	link = { eu4 = 2428 v2 = 2690 }	# 0 "Yugan -> Yugansk
 	link = { eu4 = 1074 v2 = 1066 }	# 0 "Sibir -> Tobolsk
 	link = { eu4 = 4687 v2 = 2686 }	# Imakia -> Kainsk
 	link = { eu4 = 1076 v2 = 2658 v2 = 2614 }	# 0 "Kurgan -> Kurgan, Shadrinsk
@@ -2751,7 +2753,7 @@
 	# Central Russia Proper
 	# Siberian Wasteland
 	link = { eu4 = 1781 v2 = 2654 v2 = 2693 v2 = 2657 v2 = 2680 v2 = 2659 }	# 0 "Western Siberia -> Hatanga, Essey, Dudinka, Volochanka, Khalmer-Sede
-	link = { eu4 = 1782 v2 = 2667 v2 = 2652 v2 = 2649 v2 = 2670 v2 = 2671 v2 = 2673 v2 = 2651 v2 = 2653 v2 = 2675 v2 = 2655 }	# 0 "Central Siberia -> Batagay, Kular, Tomtor, Verkhneudinsk, Barguzin, Olenek, Mirny, Saskylah, Erbogachen, Essej
+	link = { eu4 = 1782 v2 = 2667 v2 = 2652 v2 = 2649 v2 = 2673 v2 = 2651 v2 = 2653 v2 = 2675 v2 = 2655 }	# 0 "Central Siberia -> Batagay, Kular, Tomtor, Olenek, Mirny, Saskylah, Erbogachen, Essej
 	link = { eu4 = 1783 v2 = 2666 v2 = 2661 v2 = 2621 v2 = 2665 v2 = 2619 v2 = 2668 v2 = 2643 }	# 0 "Eastern Siberia -> Komsomolskiy, Belebino, Srednekolymsk, Chokurdakh, Indigirka, Adyca, Honuu
 	link = { eu4 = 4482 v2 = 1328 }	# 0 "Sikkim -> Tumlong
 	link = { eu4 = 4402 }	# 0 "Gaoligong Mountains -> DROPPED
