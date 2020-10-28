@@ -94,6 +94,7 @@ namespace EU4
 		[[nodiscard]] auto getLiteracy() const { return literacy; }
 		[[nodiscard]] auto getReactionary() const { return reactionary; }
 		[[nodiscard]] auto getLiberal() const { return liberal; }
+		[[nodiscard]] auto getFlags() const { return flags; }
 		[[nodiscard]] auto getPossibleDaimyo() const { return possibleDaimyo; }
 		[[nodiscard]] auto getPossibleShogun() const { return possibleShogun; }
 		[[nodiscard]] const auto& getGovernment() const { return government; }

@@ -136,6 +136,10 @@ V2::World::World(const EU4::World& sourceWorld,
 	transcribeHistoricalData();
 	Log(LogLevel::Progress) << "70 %";
 
+	LOG(LogLevel::Info) << "-> Converting country flags";
+	convertCountryFlags();
+	Log(LogLevel::Progress) << "71 %";
+
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	output(versionParser);
 
@@ -153,6 +157,28 @@ void V2::World::addReligionCulture()
 			cultureReligion += country.second->getReligion();
 		country.second->addAcceptedCulture(cultureReligion);
 		country.second->addCountryFlag("religi");
+	}
+}
+
+void V2::World::convertCountryFlags()
+{
+	const auto& theFlags = countryFlags.getFlags();
+	for (const auto& country: countries)
+	{
+		if (const auto& srcCountry = country.second->getSourceCountry(); srcCountry)
+		{
+			for (const auto& flag: srcCountry->getFlags())
+			{
+				if (auto flagRangeItr = theFlags.equal_range(flag); flagRangeItr.first != theFlags.end())
+				{
+					while (flagRangeItr.first != flagRangeItr.second)
+					{
+						country.second->addCountryFlag(flagRangeItr.first->second);
+						++flagRangeItr.first;
+					}
+				}
+			}
+		}
 	}
 }
 

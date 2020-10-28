@@ -377,6 +377,8 @@
     <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTags\ColonialTag.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTags\ColonialTagsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\CountryFlags\CountryFlags.cpp" />
+    <ClCompile Include="Source\Mappers\CountryFlags\CountryFlagsMapping.cpp" />
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMapping.cpp" />
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMappings.cpp" />
     <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnion.cpp" />
@@ -572,6 +574,8 @@
     <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.h" />
     <ClInclude Include="Source\Mappers\ColonialTags\ColonialTag.h" />
     <ClInclude Include="Source\Mappers\ColonialTags\ColonialTagsMapper.h" />
+    <ClInclude Include="Source\Mappers\CountryFlags\CountryFlags.h" />
+    <ClInclude Include="Source\Mappers\CountryFlags\CountryFlagsMapping.h" />
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMapping.h" />
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMappings.h" />
     <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnion.h" />
