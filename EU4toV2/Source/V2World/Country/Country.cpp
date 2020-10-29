@@ -415,7 +415,11 @@ void V2::Country::resolvePolitics()
 		ideology = "conservative";
 	}
 
-	for (const auto& party: details.parties)
+	std::vector<Party> parties = modCommons.getParties();
+	if (parties.empty())
+		parties = details.parties;
+
+	for (const auto& party: parties)
 	{
 		if (party.isActiveOn(date("1836.1.1")) && party.getIdeology() == ideology)
 		{
