@@ -1,0 +1,103 @@
+event = {
+  id = 1100
+  year = 1836
+  trade_goods = precious_metal
+  mtth = 12
+  title = EVTNAME1100
+  desc = EVTDESC1100
+  button = EVTOPTA1100
+  num_provinces = 25
+  exclude = sulphur
+  exclude = iron
+  exclude = coal
+}
+event = {
+  id = 1107
+  year = 1880
+  trade_goods = rubber
+  mtth = 36
+  title = EVTNAME1107
+  desc = EVTDESC1107
+  button = EVTOPTA1107
+  num_provinces = 34
+  exclude = sulphur
+  exclude = iron
+  exclude = coal
+  invention = daimlers_automobile
+  invention = edison_light_bulb
+  tech = infiltration
+  tech = aeronautics
+  trigger_year = 1900
+}
+event = {
+  id = 1108
+  year = 1890
+  trade_goods = rubber
+  mtth = 20
+  # 1107 is not a typo here, it
+  # reuses the texts from previous event.
+  title = EVTNAME1107
+  desc = EVTDESC1107
+  button = EVTOPTA1107
+  num_provinces = 34
+  exclude = sulphur
+  exclude = iron
+  exclude = coal
+  invention = daimlers_automobile
+  invention = edison_light_bulb
+  tech = infiltration
+  tech = aeronautics
+  trigger_year = 1900
+}
+event = {
+  id = 1109
+  year = 1870
+  trade_goods = oil
+  mtth = 12
+  title = EVTNAME1109
+  desc = EVTDESC1109
+  button = EVTOPTA1109
+  num_provinces = 20
+  exclude = sulphur
+  exclude = iron
+  exclude = coal
+  invention = daimlers_automobile
+  invention = cracking
+  invention = protected_cruisers
+}
+event = {
+  id = 1122
+  year = 1890
+  trade_goods = oil
+  mtth = 12
+  # Not a typo, reuses above text.
+  title = EVTNAME1109
+  desc = EVTDESC1109
+  button = EVTOPTA1109
+  num_provinces = 20
+  exclude = sulphur
+  exclude = iron
+  exclude = coal
+  invention = daimlers_automobile
+  invention = cracking
+  invention = protected_cruisers
+}
+event = {
+  id = 1122
+  year = 1910
+  trade_goods = oil
+  mtth = 12
+  # Not a typo, reuses above text.
+  title = EVTNAME1109
+  desc = EVTDESC1109
+  button = EVTOPTA1109
+  num_provinces = 10
+  exclude = sulphur
+  exclude = iron
+  exclude = coal
+  invention = daimlers_automobile
+  invention = cracking
+  invention = protected_cruisers
+}
+
+

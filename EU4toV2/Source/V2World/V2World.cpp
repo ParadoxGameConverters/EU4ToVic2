@@ -579,6 +579,9 @@ void V2::World::shuffleRgos()
 		bucketShuffler.putInBucket(prov.second);
 	}
 	bucketShuffler.shuffle();
+
+        // Reuse the random engine from the main RGO shuffle for events.
+        eventRgoShuffler.shuffle(provinces, bucketShuffler.getRandomEngine());
 }
 
 
@@ -1551,6 +1554,7 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 
 	LOG(LogLevel::Info) << "<- Writing Provinces";
 	outputProvinces();
+        outputProvinceEvents();
 	Log(LogLevel::Progress) << "92 %";
 
 	LOG(LogLevel::Info) << "<- Writing Countries";
@@ -1765,6 +1769,26 @@ void V2::World::outputProvinces() const
 		output << *province.second;
 		output.close();
 	}
+}
+
+void V2::World::outputProvinceEvents() const
+{
+	if (!theConfiguration.getRandomiseRgos())
+	{
+                return;
+        }
+        std::ofstream output("output/" + theConfiguration.getOutputName() + "/events/Goods.txt");
+        if (!output.is_open())
+        {
+                throw std::runtime_error("Could not create Goods.txt");
+        }
+
+        const auto& events = eventRgoShuffler.getEvents();
+        for (const auto& event : events)
+        {
+                output << event;
+        }
+        output.close();
 }
 
 void V2::World::outputCountries() const

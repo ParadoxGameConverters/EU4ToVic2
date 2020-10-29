@@ -19,8 +19,9 @@ namespace mappers
 
 		void putInBucket(std::shared_ptr<V2::Province> prov);
 		void shuffle();
+                std::default_random_engine& getRandomEngine();
 
-	private:
+              private:
 		std::vector<Bucket> buckets;
 		std::default_random_engine shuffler;
 	};

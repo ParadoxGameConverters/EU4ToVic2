@@ -431,6 +431,7 @@
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
     <ClCompile Include="Source\Mappers\RGORandomization\Bucket.cpp" />
     <ClCompile Include="Source\Mappers\RGORandomization\BucketList.cpp" />
+    <ClCompile Include="Source\Mappers\RGORandomization\EventList.cpp" />
     <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.cpp" />
     <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionLimit.cpp" />
     <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionMapper.cpp" />
@@ -458,6 +459,7 @@
     <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp" />
+    <ClCompile Include="Source\V2World\Event\Event.cpp" />
     <ClCompile Include="Source\V2World\Flags\Flags.cpp" />
     <ClCompile Include="Source\V2World\Flags\FlagUtils.cpp" />
     <ClCompile Include="Source\V2World\Leader\Leader.cpp" />
@@ -467,6 +469,7 @@
     <ClCompile Include="Source\V2World\Output\outArmy.cpp" />
     <ClCompile Include="Source\V2World\Output\outCountry.cpp" />
     <ClCompile Include="Source\V2World\Output\outCultureGroups.cpp" />
+    <ClCompile Include="Source\V2World\Output\outEvent.cpp" />
     <ClCompile Include="Source\V2World\Output\outFactory.cpp" />
     <ClCompile Include="Source\V2World\Output\outHistory.cpp" />
     <ClCompile Include="Source\V2World\Output\outLeader.cpp" />
@@ -628,6 +631,7 @@
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h" />
     <ClInclude Include="Source\Mappers\RGORandomization\Bucket.h" />
     <ClInclude Include="Source\Mappers\RGORandomization\BucketList.h" />
+    <ClInclude Include="Source\Mappers\RGORandomization\EventList.h" />
     <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.h" />
     <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionLimit.h" />
     <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionMapper.h" />
@@ -655,6 +659,7 @@
     <ClInclude Include="Source\V2World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Relation.h" />
+    <ClInclude Include="Source\V2World\Event\Event.h" />
     <ClInclude Include="Source\V2World\Factory\Factory.h" />
     <ClInclude Include="Source\V2World\Flags\Flags.h" />
     <ClInclude Include="Source\V2World\Flags\FlagUtils.h" />

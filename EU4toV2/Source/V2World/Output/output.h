@@ -5,6 +5,7 @@
 #include "../Diplomacy/Agreement.h"
 #include "../Army/Army.h"
 #include "../Country/Country.h"
+#include "../Event/Event.h"
 #include "../Factory/Factory.h"
 #include "../Leader/Leader.h"
 #include "../Localisation/Localisation.h"
@@ -36,6 +37,7 @@ namespace V2
 	std::ostream& operator<<(std::ostream& output, const UncivReforms& uncivReforms);
 	std::ostream& operator<<(std::ostream& output, const ModFile& modFile);
 	std::ostream& operator<<(std::ostream& output, const War& war);
+	std::ostream& operator<<(std::ostream& output, const Event& event);
 }
 
 namespace mappers

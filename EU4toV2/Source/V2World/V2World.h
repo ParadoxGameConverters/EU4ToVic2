@@ -24,6 +24,7 @@
 #include "../Mappers/PortProvinces/PortProvinces.h"
 #include "../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Mappers/RGORandomization/BucketList.h"
+#include "../Mappers/RGORandomization/EventList.h"
 #include "../Mappers/RegimentCosts/RegimentCostsMapper.h"
 #include "../Mappers/RegionLocalizations/RegionLocalizations.h"
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
@@ -116,6 +117,7 @@ class World
 	void outputCommonCountries() const;
 	void outputLocalisation() const;
 	void outputProvinces() const;
+	void outputProvinceEvents() const;
 	void outputCountries() const;
 	void outputWars() const;
 	void outputHistory() const;
@@ -153,6 +155,7 @@ class World
 	mappers::LeaderTraitMapper leaderTraitMapper;
 	mappers::NavalBaseMapper navalBaseMapper;
 	mappers::BucketList bucketShuffler;
+	mappers::EventList eventRgoShuffler;
 	mappers::PortProvinces portProvincesMapper;
 	mappers::WarGoalMapper warGoalMapper;
 	mappers::StartingTechMapper startingTechMapper;

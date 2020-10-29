@@ -53,3 +53,7 @@ void mappers::BucketList::shuffle()
 	}
 }
 
+std::default_random_engine& mappers::BucketList::getRandomEngine()
+{
+        return shuffler;
+}
