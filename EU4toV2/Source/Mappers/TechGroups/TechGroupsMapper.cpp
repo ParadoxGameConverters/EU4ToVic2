@@ -3,6 +3,7 @@
 #include "ParserHelpers.h"
 #include "TechGroups.h"
 #include "CommonRegexes.h"
+#include "Configuration.h"
 
 mappers::TechGroupsMapper::TechGroupsMapper()
 {
@@ -21,7 +22,11 @@ mappers::TechGroupsMapper::TechGroupsMapper()
 		}
 	});
 
-	parseFile("configurables/tech_groups.txt");
+	std::string configFolder = "configurables";
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+		configFolder = "configurables/" + mod;
+
+	parseFile(configFolder + "/tech_groups.txt");
 	clearRegisteredKeywords();
 }
 

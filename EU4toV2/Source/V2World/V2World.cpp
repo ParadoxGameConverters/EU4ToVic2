@@ -773,11 +773,15 @@ void V2::World::importPotentialCountry(const std::string& line, bool dynamicCoun
 
 void V2::World::initializeCultureMappers()
 {
+	std::string configFolder = "configurables";
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+		configFolder = "configurables/" + mod;
+
 	LOG(LogLevel::Info) << "Parsing culture mappings.";
-	cultureMapper.loadFile("configurables/culture_map.txt");
+	cultureMapper.loadFile(configFolder + "/culture_map.txt");
 
 	LOG(LogLevel::Info) << "Parsing slave culture mappings.";
-	slaveCultureMapper.loadFile("configurables/culture_map_slaves.txt");
+	slaveCultureMapper.loadFile(configFolder + "/culture_map_slaves.txt");
 
 	cultureGroupsMapper.initForV2();
 }

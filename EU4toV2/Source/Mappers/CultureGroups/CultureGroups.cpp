@@ -28,7 +28,12 @@ void mappers::CultureGroups::initForV2()
 {
 	LOG(LogLevel::Info) << "Parsing V2 Cultures and Culture Groups";
 	registerKeys();
-	parseFile("configurables/culture_definitions.txt");
+
+	std::string configFolder = "configurables";
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+		configFolder = "configurables/" + mod;
+
+	parseFile(configFolder + "/culture_definitions.txt");
 	clearRegisteredKeywords();
 }
 
