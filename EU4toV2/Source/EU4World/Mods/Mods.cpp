@@ -81,12 +81,7 @@ void EU4::Mods::loadSteamWorkshopDirectory(const Configuration& theConfiguration
 void EU4::Mods::loadCK2ExportDirectory(const Configuration& theConfiguration)
 {
 	const auto CK2ExportLoc = theConfiguration.getCK2ExportPath();
-	if (!commonItems::DoesFolderExist(CK2ExportLoc))
-	{
-		LOG(LogLevel::Warning) << "No Crusader Kings 2 export directory was specified in configuration.txt,"
-										  " or the path was invalid - this may cause problems with old CK2 converted saves";
-	}
-	else
+	if (commonItems::DoesFolderExist(CK2ExportLoc))
 	{
 		LOG(LogLevel::Info) << "\tCK2 export directory is " << CK2ExportLoc;
 		loadModDirectory(CK2ExportLoc);
