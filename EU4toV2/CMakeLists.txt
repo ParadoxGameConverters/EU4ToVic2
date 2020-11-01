@@ -15,6 +15,10 @@ add_link_options(-no-pie)
 
 include_directories("../commonItems")
 include_directories("../ZipLib")
+include_directories("Source")
+include_directories("Source/Mappers")
+include_directories("Source/EU4World")
+include_directories("Source/Vic2World")
 include_directories("${PROJECT_SOURCE_DIR}")
 link_directories(${CMAKE_SOURCE_DIR}/Resources)
 
