@@ -326,6 +326,12 @@
     <ClCompile Include="EU4WorldTests\CountryTests\EU4ActiveIdeasTests.cpp">
       <Filter>EU4WorldTests\CountryTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CountryFlags.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4CountryFlagsTests.cpp">
+      <Filter>EU4WorldTests\CountryTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">

@@ -9,7 +9,7 @@ TEST(EU4World_Country_EU4ActiveIdeasTests, primitivesDefaultToBlank)
 	ASSERT_TRUE(ideas.getActiveIdeas().empty());
 }
 
-TEST(EU4World_ColonialRegionTests, ideasDevelopedTo7OrMoreAreLoaded)
+TEST(EU4World_Country_EU4ActiveIdeasTests, ideasDevelopedTo7OrMoreAreLoaded)
 {
 	std::stringstream input;
 	input << "idea1 = 4\n";
