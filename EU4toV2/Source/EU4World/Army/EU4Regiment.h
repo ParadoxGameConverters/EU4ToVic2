@@ -2,7 +2,7 @@
 #define EU4_REGIMENT_H
 
 #include <map>
-#include "../ID.h"
+#include "ID.h"
 
 namespace EU4
 {
@@ -59,6 +59,8 @@ namespace EU4
 		void setTypeStrength(const int tStrength) { typeStrength = tStrength; }
 
 	private:
+		void registerKeys();
+		
 		std::string name;
 		std::string regimentType;
 		int home = 0;

@@ -3,7 +3,7 @@
 #include "Log.h"
 #include <set>
 #include "OSCompatibilityLayer.h"
-#include "../../Configuration.h"
+#include "Configuration.h"
 
 
 void mappers::UnitTypeMapper::initUnitTypeMapper()
@@ -26,6 +26,14 @@ void mappers::UnitTypeMapper::initUnitTypeMapper()
 	}
 }
 
+void mappers::UnitTypeMapper::loadUnitType(const std::string& unitName, std::istream& theStream)
+{
+	UnitType unitType(theStream);
+	if (unitType.getCategory() == EU4::REGIMENTCATEGORY::transport)
+		unitType.setStrength(24);
+	unitTypeMap.insert(std::pair(unitName, unitType));
+}
+
 void mappers::UnitTypeMapper::addUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename)
 {
 	const auto period = filename.find_last_of('.');
@@ -38,7 +46,7 @@ void mappers::UnitTypeMapper::addUnitFileToRegimentTypeMap(const std::string& di
 		return;
 	}
 
-	// patch fr transports
+	// patch for transports
 	if (unitType.getCategory() == EU4::REGIMENTCATEGORY::transport) unitType.setStrength(24);
 
 	unitTypeMap.insert(std::pair(name, unitType));

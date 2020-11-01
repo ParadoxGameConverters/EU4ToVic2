@@ -13,6 +13,7 @@ namespace mappers
 	public:
 		UnitTypeMapper() = default;
 		void initUnitTypeMapper();
+		void loadUnitType(const std::string& unitName, std::istream& theStream);
 		
 		[[nodiscard]] const auto& getUnitTypeMap() const { return unitTypeMap; }
 
