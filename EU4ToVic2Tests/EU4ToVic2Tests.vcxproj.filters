@@ -314,6 +314,12 @@
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp">
       <Filter>MapperTests\UnitTypeMapper</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\ColonialRegionTests\ColonialRegionsTests.cpp">
+      <Filter>EU4WorldTests\ColonialRegionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ColonialRegionTests\ColonialRegionTests.cpp">
+      <Filter>EU4WorldTests\ColonialRegionTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -420,6 +426,9 @@
     </Filter>
     <Filter Include="ConverterFiles\EU4World\Army">
       <UniqueIdentifier>{b2f5378a-0c3e-4d85-99bc-aaad494fca33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\ColonialRegionTests">
+      <UniqueIdentifier>{3c4ba794-5214-4922-8e90-a45603710a86}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

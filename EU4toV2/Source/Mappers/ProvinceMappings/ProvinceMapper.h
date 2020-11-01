@@ -23,7 +23,7 @@ class ProvinceMapper: commonItems::parser
 
 	[[nodiscard]] std::vector<int> getVic2ProvinceNumbers(int eu4ProvinceNumber) const;
 	[[nodiscard]] std::vector<int> getEU4ProvinceNumbers(int vic2ProvinceNumber) const;
-	[[nodiscard]] bool provinceIsInRegion(int province, const std::string& region) const;
+	[[nodiscard]] bool provinceIsInColonialRegion(int province, const std::string& region) const;
 	[[nodiscard]] auto isValidProvince(const int province) const { return validProvinces.count(province) > 0; }
 
   private:

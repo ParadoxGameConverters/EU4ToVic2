@@ -238,6 +238,8 @@
     <ClCompile Include="EU4WorldTests\AreasTests.cpp" />
     <ClCompile Include="EU4WorldTests\ArmyTests\EU4ArmyTests.cpp" />
     <ClCompile Include="EU4WorldTests\ArmyTests\EU4RegimentTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ColonialRegionTests\ColonialRegionsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ColonialRegionTests\ColonialRegionTests.cpp" />
     <ClCompile Include="EU4WorldTests\DateItemsTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4ProvinceTests.cpp" />

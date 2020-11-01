@@ -272,7 +272,7 @@ bool mappers::CountryMappings::attemptColonialReplacement(EU4::Country& country,
 bool mappers::CountryMappings::capitalInRightEU4Region(const ColonyStruct& colony, int eu4Capital, const ProvinceMapper& provinceMapper)
 {
 	if (!colony.EU4Region.empty())
-		return provinceMapper.provinceIsInRegion(eu4Capital, colony.EU4Region);
+		return provinceMapper.provinceIsInColonialRegion(eu4Capital, colony.EU4Region);
 	return true;
 }
 
