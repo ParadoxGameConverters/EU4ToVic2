@@ -187,6 +187,7 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegions.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4ActiveIdeas.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CountryFlags.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CustomColors.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp" />
@@ -244,6 +245,7 @@
     <ClCompile Include="EU4WorldTests\ColonialRegionTests\ColonialRegionTests.cpp" />
     <ClCompile Include="EU4WorldTests\CountryTests\EU4ActiveIdeasTests.cpp" />
     <ClCompile Include="EU4WorldTests\CountryTests\EU4CountryFlagsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4CustomColorsTests.cpp" />
     <ClCompile Include="EU4WorldTests\DateItemsTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4ProvinceTests.cpp" />
