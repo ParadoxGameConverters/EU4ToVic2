@@ -73,7 +73,7 @@ TEST(EU4World_EU4ArmyTests, shipsCanBeResolved)
 
 	navy.resolveRegimentTypes(unitTypeMapper);
 
-	ASSERT_EQ(120, navy.getTotalTypeStrength(EU4::REGIMENTCATEGORY::heavy_ship)); // two heavy ships worth 2 each
+	ASSERT_EQ(120, navy.getTotalTypeStrength(EU4::REGIMENTCATEGORY::heavy_ship)); // two heavy ships worth 60 each
 	ASSERT_EQ(24, navy.getTotalTypeStrength(EU4::REGIMENTCATEGORY::transport));	// one transport worth 24, not 4.
 }
 
