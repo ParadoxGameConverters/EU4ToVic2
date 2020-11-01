@@ -290,6 +290,18 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryFlags\CountryFlagsMapping.cpp">
       <Filter>ConverterFiles\Mappers\CountryFlags</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\ArmyTests\EU4ArmyTests.cpp">
+      <Filter>EU4WorldTests\ArmyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ArmyTests\EU4RegimentTests.cpp">
+      <Filter>EU4WorldTests\ArmyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeMapperTests.cpp">
+      <Filter>MapperTests\UnitTypeMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp">
+      <Filter>MapperTests\UnitTypeMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -384,6 +396,12 @@
     </Filter>
     <Filter Include="ConverterFiles\Mappers\CountryFlags">
       <UniqueIdentifier>{1c20ca0a-63b8-4ac3-8084-221a1eae83a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\ArmyTests">
+      <UniqueIdentifier>{8b4cf8fd-564d-4388-a36c-68d9520b21d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\UnitTypeMapper">
+      <UniqueIdentifier>{852740be-a108-48df-af08-ef0c9671d738}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

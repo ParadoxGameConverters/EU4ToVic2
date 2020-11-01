@@ -146,7 +146,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../commonItems;../googletest/googletest;../googletest/googletest/include;../googletest/googlemock;../googletest/googlemock/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../commonItems;../googletest/googletest;../googletest/googletest/include;../googletest/googlemock;../googletest/googlemock/include;../EU4toV2/Source</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -157,7 +157,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>../commonItems;../googletest/googletest;../googletest/googletest/include;../googletest/googlemock;../googletest/googlemock/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../commonItems;../googletest/googletest;../googletest/googletest/include;../googletest/googlemock;../googletest/googlemock/include;../EU4toV2/Source;../EU4toV2/Source/EU4World;../EU4toV2/Source/Mappers;../EU4toV2/Source/V2World</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -232,6 +232,8 @@
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="ConfigurationTests.cpp" />
     <ClCompile Include="EU4WorldTests\AreasTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ArmyTests\EU4ArmyTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ArmyTests\EU4RegimentTests.cpp" />
     <ClCompile Include="EU4WorldTests\DateItemsTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4ProvinceTests.cpp" />
@@ -268,6 +270,8 @@
     <ClCompile Include="MapperTests\StateMapperTests.cpp" />
     <ClCompile Include="MapperTests\TechSchoolMapperTests.cpp" />
     <ClCompile Include="MapperTests\TechSchoolTests.cpp" />
+    <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeMapperTests.cpp" />
+    <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mocks\EU4CountryMock.h" />
