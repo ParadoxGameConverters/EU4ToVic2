@@ -16,11 +16,11 @@ TEST(Mappers_UnitTypeMapperTests, UnitTypesCanBeMatched)
 	unitTypeMapper.loadUnitType("some-infantry", input2);
 
 	const auto unitType1 = unitTypeMapper.getUnitTypeForRegimentTypeName("some-cavalry");
-	ASSERT_EQ(EU4::REGIMENTCATEGORY::cavalry, unitType1->getCategory());
+	ASSERT_EQ("cavalry", unitType1->getCategory());
 	ASSERT_EQ(2, unitType1->getStrength());
 
 	const auto unitType2 = unitTypeMapper.getUnitTypeForRegimentTypeName("some-infantry");
-	ASSERT_EQ(EU4::REGIMENTCATEGORY::infantry, unitType2->getCategory());
+	ASSERT_EQ("infantry", unitType2->getCategory());
 	ASSERT_EQ(4, unitType2->getStrength());
 }
 
@@ -41,7 +41,7 @@ TEST(Mappers_UnitTypeMapperTests, UnitTypeMismatchReturnsNull)
 	ASSERT_FALSE(unitType);
 }
 
-TEST(Mappers_UnitTypeMapperTests, TransportUnitTypeIsSetTo24)
+TEST(Mappers_UnitTypeMapperTests, TransportUnitTypeIsSetTo24Strength)
 {
 	mappers::UnitTypeMapper unitTypeMapper;
 

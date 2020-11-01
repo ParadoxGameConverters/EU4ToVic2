@@ -49,8 +49,8 @@ TEST(EU4World_EU4ArmyTests, regimentsCanBeResolved)
 
 	army.resolveRegimentTypes(unitTypeMapper);
 
-	ASSERT_EQ(4, army.getTotalTypeStrength(EU4::REGIMENTCATEGORY::infantry)); // two inf regiments worth 2 each
-	ASSERT_EQ(4, army.getTotalTypeStrength(EU4::REGIMENTCATEGORY::cavalry));  // one cav regiment worth 4
+	ASSERT_EQ(4, army.getTotalTypeStrength("infantry")); // two inf regiments worth 2 each
+	ASSERT_EQ(4, army.getTotalTypeStrength("cavalry"));  // one cav regiment worth 4
 }
 
 TEST(EU4World_EU4ArmyTests, shipsCanBeResolved)
@@ -73,8 +73,8 @@ TEST(EU4World_EU4ArmyTests, shipsCanBeResolved)
 
 	navy.resolveRegimentTypes(unitTypeMapper);
 
-	ASSERT_EQ(120, navy.getTotalTypeStrength(EU4::REGIMENTCATEGORY::heavy_ship)); // two heavy ships worth 60 each
-	ASSERT_EQ(24, navy.getTotalTypeStrength(EU4::REGIMENTCATEGORY::transport));	// one transport worth 24, not 4.
+	ASSERT_EQ(120, navy.getTotalTypeStrength("heavy_ship")); // two heavy ships worth 60 each
+	ASSERT_EQ(24, navy.getTotalTypeStrength("transport"));	// one transport worth 24, not 4.
 }
 
 TEST(EU4World_EU4ArmyTests, resolvingUnknownUnitTypesThrowsException)

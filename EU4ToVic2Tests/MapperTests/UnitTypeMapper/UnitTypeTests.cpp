@@ -7,7 +7,7 @@ TEST(Mappers_UnitTypeTests, primitivesDefaultToBlank)
 	const mappers::UnitType unitType(input);
 
 	ASSERT_EQ(0, unitType.getStrength());
-	ASSERT_EQ(EU4::REGIMENTCATEGORY::num_reg_categories, unitType.getCategory());
+	ASSERT_TRUE(unitType.getCategory().empty());
 }
 
 TEST(Mappers_UnitTypeTests, regimentLoadsPrimitives)
@@ -26,5 +26,5 @@ TEST(Mappers_UnitTypeTests, regimentLoadsPrimitives)
 	const mappers::UnitType unitType(input);
 
 	ASSERT_EQ(12, unitType.getStrength()); // Sum of all pips loaded.
-	ASSERT_EQ(EU4::REGIMENTCATEGORY::cavalry, unitType.getCategory());
+	ASSERT_EQ("cavalry", unitType.getCategory());
 }

@@ -20,7 +20,7 @@ class EU4Army: public commonItems::parser
 	[[nodiscard]] auto getArmyFloats() const { return armyFloats; }
 	[[nodiscard]] const auto& getRegiments() const { return regimentList; }
 
-	[[nodiscard]] int getTotalTypeStrength(REGIMENTCATEGORY category) const;
+	[[nodiscard]] int getTotalTypeStrength(const std::string& category) const;
 
 	void resolveRegimentTypes(const mappers::UnitTypeMapper& unitTypeMapper);
 

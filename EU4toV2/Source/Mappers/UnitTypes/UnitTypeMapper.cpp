@@ -18,8 +18,6 @@ void mappers::UnitTypeMapper::initUnitTypeMapper()
 void mappers::UnitTypeMapper::loadUnitType(const std::string& unitName, std::istream& theStream)
 {
 	UnitType unitType(theStream);
-	if (unitType.getCategory() == EU4::REGIMENTCATEGORY::transport)
-		unitType.setStrength(24);
 	unitTypeMap.insert(std::pair(unitName, unitType));
 }
 
@@ -29,15 +27,11 @@ void mappers::UnitTypeMapper::addUnitFileToRegimentTypeMap(const std::string& di
 	auto name = filename.substr(0, period);
 
 	UnitType unitType(directory + "/" + filename);
-	if (unitType.getCategory() == EU4::REGIMENTCATEGORY::num_reg_categories)
+	if (unitType.getCategory().empty())
 	{
 		LOG(LogLevel::Warning) << "Unit file for " << name << " at: " << directory << "/" << filename << " has no type!";
 		return;
 	}
-
-	// patch for transports
-	if (unitType.getCategory() == EU4::REGIMENTCATEGORY::transport)
-		unitType.setStrength(24);
 
 	unitTypeMap.insert(std::pair(name, unitType));
 }

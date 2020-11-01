@@ -28,7 +28,7 @@ void EU4::EU4Army::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-int EU4::EU4Army::getTotalTypeStrength(const REGIMENTCATEGORY category) const
+int EU4::EU4Army::getTotalTypeStrength(const std::string& category) const
 {
 	auto totalStrength = 0;
 	for (const auto& regiment: regimentList)

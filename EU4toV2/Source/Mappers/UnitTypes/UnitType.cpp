@@ -6,6 +6,10 @@ mappers::UnitType::UnitType(std::istream& theStream)
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+
+	// patch for transports
+	if (unitType == "transport")
+		strength = 24;
 }
 
 mappers::UnitType::UnitType(const std::string& filePath)
@@ -13,6 +17,10 @@ mappers::UnitType::UnitType(const std::string& filePath)
 	registerKeys();
 	parseFile(filePath);
 	clearRegisteredKeywords();
+
+	// patch for transports
+	if (unitType == "transport")
+		strength = 24;
 }
 
 void mappers::UnitType::registerKeys()
@@ -22,10 +30,7 @@ void mappers::UnitType::registerKeys()
 			 strength += commonItems::singleInt(theStream).getInt();
 		 });
 	registerKeyword("type", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString typeStr(theStream);
-		if (const auto& checkType = EU4::RegimentCategoryNames.find(typeStr.getString()); checkType == EU4::RegimentCategoryNames.end())
-			throw std::runtime_error("Illegal unit type: " + typeStr.getString() + ", aborting!");
-		unitType = EU4::RegimentCategoryNames[typeStr.getString()];
+		unitType = commonItems::singleString(theStream).getString();
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

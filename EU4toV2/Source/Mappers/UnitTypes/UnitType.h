@@ -1,6 +1,5 @@
 #ifndef UNIT_TYPE_H
 #define UNIT_TYPE_H
-#include "Army/EU4Regiment.h"
 #include "Parser.h"
 
 namespace mappers
@@ -20,7 +19,7 @@ class UnitType: commonItems::parser
   private:
 	void registerKeys();
 
-	EU4::REGIMENTCATEGORY unitType = EU4::REGIMENTCATEGORY::num_reg_categories;
+	std::string unitType;
 	int strength = 0;
 };
 }; // namespace mappers
