@@ -1,29 +1,18 @@
 #include "UnitTypeMapper.h"
-#include "ParserHelpers.h"
-#include "Log.h"
-#include <set>
-#include "OSCompatibilityLayer.h"
 #include "Configuration.h"
-
+#include "OSCompatibilityLayer.h"
+#include <set>
 
 void mappers::UnitTypeMapper::initUnitTypeMapper()
 {
 	LOG(LogLevel::Info) << "Parsing unit strengths from EU4 installation.";
 
-	auto filenames = commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/units/");
-	for (const auto& filename : filenames)
-	{
+	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/units/"))
 		addUnitFileToRegimentTypeMap(theConfiguration.getEU4Path() + "/common/units", filename);
-	}
 
-	for (const auto& modName : theConfiguration.getEU4Mods())
-	{
-		auto moreFilenames = commonItems::GetAllFilesInFolder(modName + "/common/units/");
-		for (const auto& filename : moreFilenames)
-		{
+	for (const auto& modName: theConfiguration.getEU4Mods())
+		for (const auto& filename: commonItems::GetAllFilesInFolder(modName + "/common/units/"))
 			addUnitFileToRegimentTypeMap(modName + "/common/units", filename);
-		}
-	}
 }
 
 void mappers::UnitTypeMapper::loadUnitType(const std::string& unitName, std::istream& theStream)
@@ -47,7 +36,16 @@ void mappers::UnitTypeMapper::addUnitFileToRegimentTypeMap(const std::string& di
 	}
 
 	// patch for transports
-	if (unitType.getCategory() == EU4::REGIMENTCATEGORY::transport) unitType.setStrength(24);
+	if (unitType.getCategory() == EU4::REGIMENTCATEGORY::transport)
+		unitType.setStrength(24);
 
 	unitTypeMap.insert(std::pair(name, unitType));
+}
+
+std::optional<mappers::UnitType> mappers::UnitTypeMapper::getUnitTypeForRegimentTypeName(const std::string& regimentTypeName) const
+{
+	if (const auto& typeItr = unitTypeMap.find(regimentTypeName); typeItr != unitTypeMap.end())
+		return typeItr->second;
+	else
+		return std::nullopt;
 }

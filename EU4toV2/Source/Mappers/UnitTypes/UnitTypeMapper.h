@@ -1,26 +1,23 @@
 #ifndef UNIT_TYPE_MAPPER_H
 #define UNIT_TYPE_MAPPER_H
-
 #include "Parser.h"
-#include "UnitType.h"
+#include "UnitTypes/UnitType.h"
 
 namespace mappers
 {
-	typedef std::map<std::string, UnitType> RegimentTypeMap;
+class UnitTypeMapper
+{
+  public:
+	UnitTypeMapper() = default;
+	void initUnitTypeMapper();																 // production
+	void loadUnitType(const std::string& unitName, std::istream& theStream); // testing
 
-	class UnitTypeMapper : commonItems::parser
-	{
-	public:
-		UnitTypeMapper() = default;
-		void initUnitTypeMapper();
-		void loadUnitType(const std::string& unitName, std::istream& theStream);
-		
-		[[nodiscard]] const auto& getUnitTypeMap() const { return unitTypeMap; }
+	[[nodiscard]] std::optional<UnitType> getUnitTypeForRegimentTypeName(const std::string& regimentTypeName) const;
 
-	private:
-		RegimentTypeMap unitTypeMap;
-		void addUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename);
-	};
+  private:
+	std::map<std::string, UnitType> unitTypeMap;
+	void addUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename);
 };
+}; // namespace mappers
 
 #endif // UNIT_TYPE_MAPPER_H

@@ -1,9 +1,12 @@
 #ifndef EU4_ARMY_H
 #define EU4_ARMY_H
 #include "EU4Regiment.h"
-#include "UnitTypes/UnitTypeMapper.h"
 #include <vector>
 
+namespace mappers
+{
+class UnitTypeMapper;
+}
 namespace EU4
 {
 class EU4Army: public commonItems::parser
@@ -17,7 +20,6 @@ class EU4Army: public commonItems::parser
 	[[nodiscard]] auto getArmyFloats() const { return armyFloats; }
 	[[nodiscard]] const auto& getRegiments() const { return regimentList; }
 
-	[[nodiscard]] double getAverageStrength(REGIMENTCATEGORY category) const;
 	[[nodiscard]] int getTotalTypeStrength(REGIMENTCATEGORY category) const;
 
 	void resolveRegimentTypes(const mappers::UnitTypeMapper& unitTypeMapper);

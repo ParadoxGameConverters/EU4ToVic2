@@ -181,6 +181,8 @@
     <ClCompile Include="..\commonItems\StringUtils.cpp" />
     <ClCompile Include="..\commonItems\WinUtils.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Configuration.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Army\EU4Army.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Army\EU4Regiment.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegions.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp" />
@@ -227,6 +229,8 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchool.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchoolMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchools.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitType.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />

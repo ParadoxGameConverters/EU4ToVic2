@@ -1,24 +1,20 @@
-#include "gtest/gtest.h"
 #include "UnitTypes/UnitType.h"
+#include "gtest/gtest.h"
 
-TEST(EU4World_EU4RegimentTests, regimentInitsDefaults)
+TEST(Mappers_UnitTypeTests, primitivesDefaultToBlank)
 {
 	std::stringstream input;
-	EU4::EU4Regiment regiment(input);
+	const mappers::UnitType unitType(input);
 
-	ASSERT_TRUE(regiment.getType().empty());
-	ASSERT_TRUE(regiment.getName().empty());
-	ASSERT_EQ(0, regiment.getHome());
-	ASSERT_EQ(0, regiment.getTypeStrength());
-	ASSERT_EQ(0.0, regiment.getStrength());
-	ASSERT_EQ(EU4::REGIMENTCATEGORY::num_reg_categories, regiment.getCategory());
+	ASSERT_EQ(0, unitType.getStrength());
+	ASSERT_EQ(EU4::REGIMENTCATEGORY::num_reg_categories, unitType.getCategory());
 }
 
-TEST(EU4World_EU4RegimentTests, regimentLoadsPrimitives)
+TEST(Mappers_UnitTypeTests, regimentLoadsPrimitives)
 {
 	std::stringstream input;
 	input << "type = cavalry\n";
-	input << "unit_type = sub_saharan\n";
+	input << "unit_type = sub_saharan\n"; // irrelevant
 	input << "maneuver = 2\n";
 	input << "offensive_morale = 3\n";
 	input << "defensive_morale = 3\n";
@@ -26,13 +22,9 @@ TEST(EU4World_EU4RegimentTests, regimentLoadsPrimitives)
 	input << "defensive_fire = 0\n";
 	input << "offensive_shock = 2\n";
 	input << "defensive_shock = 2\n";
-	
-	EU4::EU4Regiment regiment(input);
 
-	ASSERT_EQ("cavalry", regiment.getType());
-	ASSERT_TRUE(regiment.getName().empty());
-	ASSERT_EQ(0, regiment.getHome());
-	ASSERT_EQ(0, regiment.getTypeStrength());
-	ASSERT_EQ(0.0, regiment.getStrength());
-	ASSERT_EQ(EU4::REGIMENTCATEGORY::num_reg_categories, regiment.getCategory());
+	const mappers::UnitType unitType(input);
+
+	ASSERT_EQ(12, unitType.getStrength()); // Sum of all pips loaded.
+	ASSERT_EQ(EU4::REGIMENTCATEGORY::cavalry, unitType.getCategory());
 }

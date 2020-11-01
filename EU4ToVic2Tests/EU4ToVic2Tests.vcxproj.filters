@@ -299,6 +299,18 @@
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeMapperTests.cpp">
       <Filter>MapperTests\UnitTypeMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitType.cpp">
+      <Filter>ConverterFiles\Mappers\UnitTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitTypeMapper.cpp">
+      <Filter>ConverterFiles\Mappers\UnitTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Army\EU4Army.cpp">
+      <Filter>ConverterFiles\EU4World\Army</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Army\EU4Regiment.cpp">
+      <Filter>ConverterFiles\EU4World\Army</Filter>
+    </ClCompile>
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp">
       <Filter>MapperTests\UnitTypeMapper</Filter>
     </ClCompile>
@@ -402,6 +414,12 @@
     </Filter>
     <Filter Include="MapperTests\UnitTypeMapper">
       <UniqueIdentifier>{852740be-a108-48df-af08-ef0c9671d738}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\UnitTypes">
+      <UniqueIdentifier>{6c3a6832-a8fe-4b28-a5f7-3686c3d2e7f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Army">
+      <UniqueIdentifier>{b2f5378a-0c3e-4d85-99bc-aaad494fca33}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
