@@ -401,6 +401,12 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4LeaderID.cpp">
       <Filter>ConverterFiles\EU4World\Leader</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderIDTests.cpp">
+      <Filter>EU4WorldTests\LeaderTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderTests.cpp">
+      <Filter>EU4WorldTests\LeaderTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -534,6 +540,9 @@
     </Filter>
     <Filter Include="ConverterFiles\Mappers\LeaderTraits">
       <UniqueIdentifier>{62486fa8-5234-4b3b-b7af-a9425f7bd101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\LeaderTests">
+      <UniqueIdentifier>{8bce8ceb-98b3-42e1-abc2-2e0a054602f8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
