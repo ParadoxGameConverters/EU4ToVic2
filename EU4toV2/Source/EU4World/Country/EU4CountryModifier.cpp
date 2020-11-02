@@ -1,14 +1,14 @@
-#include "EU4Modifier.h"
+#include "EU4CountryModifier.h"
 #include "ParserHelpers.h"
 
-EU4::EU4Modifier::EU4Modifier(std::istream& theStream)
+EU4::EU4CountryModifier::EU4CountryModifier(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-void EU4::EU4Modifier::registerKeys()
+void EU4::EU4CountryModifier::registerKeys()
 {
 	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream) {
 		modifier = commonItems::singleString(theStream).getString();

@@ -321,7 +321,7 @@
     <ClCompile Include="Source\EU4World\Country\EU4CountryFlags.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4CustomColors.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4GovernmentSection.cpp" />
-    <ClCompile Include="Source\EU4World\Country\EU4Modifier.cpp" />
+    <ClCompile Include="Source\EU4World\Country\EU4CountryModifier.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4NationalSymbol.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4ReformStackSection.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4Technology.cpp" />
@@ -515,7 +515,7 @@
     <ClInclude Include="Source\EU4World\Country\EU4CountryFlags.h" />
     <ClInclude Include="Source\EU4World\Country\EU4CustomColors.h" />
     <ClInclude Include="Source\EU4World\Country\EU4GovernmentSection.h" />
-    <ClInclude Include="Source\EU4World\Country\EU4Modifier.h" />
+    <ClInclude Include="Source\EU4World\Country\EU4CountryModifier.h" />
     <ClInclude Include="Source\EU4World\Country\EU4NationalSymbol.h" />
     <ClInclude Include="Source\EU4World\Country\EU4ReformStackSection.h" />
     <ClInclude Include="Source\EU4World\Country\EU4Technology.h" />

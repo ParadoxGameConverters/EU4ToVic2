@@ -188,9 +188,9 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4ActiveIdeas.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4Country.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CountryFlags.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CountryModifier.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CustomColors.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4GovernmentSection.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4Modifier.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4NationalSymbol.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4ReformStackSection.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4Technology.cpp" />
@@ -264,7 +264,7 @@
     <ClCompile Include="EU4WorldTests\CountryTests\EU4CountryFlagsTests.cpp" />
     <ClCompile Include="EU4WorldTests\CountryTests\EU4CustomColorsTests.cpp" />
     <ClCompile Include="EU4WorldTests\CountryTests\EU4GovernmentSectionTests.cpp" />
-    <ClCompile Include="EU4WorldTests\CountryTests\EU4ModifierTests.cpp" />
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4CountryModifierTests.cpp" />
     <ClCompile Include="EU4WorldTests\CountryTests\EU4NationalSymbolTests.cpp" />
     <ClCompile Include="EU4WorldTests\CountryTests\EU4ReformStackSectionTests.cpp" />
     <ClCompile Include="EU4WorldTests\CountryTests\EU4TechnologyTests.cpp" />

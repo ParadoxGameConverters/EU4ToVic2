@@ -341,12 +341,6 @@
     <ClCompile Include="EU4WorldTests\CountryTests\EU4GovernmentSectionTests.cpp">
       <Filter>EU4WorldTests\CountryTests</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\CountryTests\EU4ModifierTests.cpp">
-      <Filter>EU4WorldTests\CountryTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4Modifier.cpp">
-      <Filter>ConverterFiles\EU4World\Country</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4NationalSymbol.cpp">
       <Filter>ConverterFiles\EU4World\Country</Filter>
     </ClCompile>
@@ -406,6 +400,12 @@
     </ClCompile>
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderTests.cpp">
       <Filter>EU4WorldTests\LeaderTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4CountryModifierTests.cpp">
+      <Filter>EU4WorldTests\CountryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CountryModifier.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

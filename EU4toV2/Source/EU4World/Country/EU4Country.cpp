@@ -3,7 +3,7 @@
 #include "EU4ActiveIdeas.h"
 #include "EU4CountryFlags.h"
 #include "EU4GovernmentSection.h"
-#include "EU4Modifier.h"
+#include "EU4CountryModifier.h"
 #include "EU4Technology.h"
 #include "History/CountryHistory.h"
 #include "Log.h"
@@ -122,7 +122,7 @@ void EU4::Country::registerKeys(const GameVersion& theVersion)
 			flags.insert(flag);
 	});
 	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream) {
-		const EU4Modifier newModifier(theStream);
+		const EU4CountryModifier newModifier(theStream);
 		if (!newModifier.getModifier().empty())
 			modifiers.insert(newModifier.getModifier());
 	});
