@@ -403,7 +403,7 @@ void EU4::Country::determineInvestments(const mappers::IdeaEffectMapper& ideaEff
 void EU4::Country::determineLibertyDesire()
 {
 	// Most of this function relates exclusively to old saves, approx. 1.26 (and potentially earlier).
-	// Colonies in current saves there are only two values - loyal (<50) or disloyal (>50), as this is a calculated
+	// Colonies in current saves have only two values - loyal (<50) or disloyal (>50), as this is a calculated
 	// and not stored value, and colonies cannot be outraged, threatened, disloyal, etc.
 	// So, we make due in V2's portion of relationship conversion, while leaving this for legacy reasons.
 
