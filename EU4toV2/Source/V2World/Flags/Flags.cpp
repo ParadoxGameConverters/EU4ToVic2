@@ -179,10 +179,9 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 		}
 		else if (eu4country->isRevolutionary() && nationalColors.getRevolutionaryColor())
 		{
-			const auto customColors = std::make_shared<EU4::CustomColors>();
-			customColors->setFlagColors(*nationalColors.getRevolutionaryColor());
-			nationalColors.setCustomColors(customColors);
-			customFlagMapping[tag] = *customColors;
+			EU4::CustomColors customColors;
+			customColors.setFlagColors(*nationalColors.getRevolutionaryColor());
+			customFlagMapping[tag] = customColors;
 		}
 	}
 }
