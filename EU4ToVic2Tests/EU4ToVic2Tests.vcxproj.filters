@@ -314,6 +314,30 @@
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp">
       <Filter>MapperTests\UnitTypeMapper</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\ColonialRegionTests\ColonialRegionsTests.cpp">
+      <Filter>EU4WorldTests\ColonialRegionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ColonialRegionTests\ColonialRegionTests.cpp">
+      <Filter>EU4WorldTests\ColonialRegionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4ActiveIdeas.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4ActiveIdeasTests.cpp">
+      <Filter>EU4WorldTests\CountryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CountryFlags.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4CountryFlagsTests.cpp">
+      <Filter>EU4WorldTests\CountryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4CustomColorsTests.cpp">
+      <Filter>EU4WorldTests\CountryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CustomColors.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -420,6 +444,15 @@
     </Filter>
     <Filter Include="ConverterFiles\EU4World\Army">
       <UniqueIdentifier>{b2f5378a-0c3e-4d85-99bc-aaad494fca33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\ColonialRegionTests">
+      <UniqueIdentifier>{3c4ba794-5214-4922-8e90-a45603710a86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Country">
+      <UniqueIdentifier>{0e894d6c-7a92-43f8-96c3-f2cd27503524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\CountryTests">
+      <UniqueIdentifier>{098b1753-e277-44c6-89dc-ae2ba96ae0fa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

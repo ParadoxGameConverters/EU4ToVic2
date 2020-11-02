@@ -6,15 +6,19 @@
 
 namespace EU4
 {
-	class ColonialRegions: commonItems::parser
-	{
-	public:
-		ColonialRegions();
-		[[nodiscard]] bool provinceIsInRegion(int province, const std::string& region) const;
+class ColonialRegions: commonItems::parser
+{
+  public:
+	ColonialRegions();
+	explicit ColonialRegions(std::istream& theStream);
 
-	private:
-		std::map<int, std::string> provinceToColonialRegions;
-	};
-}
+	[[nodiscard]] bool provinceIsInColonialRegion(int province, const std::string& region) const;
+
+  private:
+	void registerKeys();
+
+	std::map<int, std::string> provinceToColonialRegions;
+};
+} // namespace EU4
 
 #endif // EU4_COLONIAL_REGIONS_H

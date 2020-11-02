@@ -39,9 +39,9 @@ void mappers::ProvinceMapper::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-bool mappers::ProvinceMapper::provinceIsInRegion(int province, const std::string& region) const
+bool mappers::ProvinceMapper::provinceIsInColonialRegion(int province, const std::string& region) const
 {
-	return colonialRegionsMapper.provinceIsInRegion(province, region);
+	return colonialRegionsMapper.provinceIsInColonialRegion(province, region);
 }
 
 mappers::ProvinceMappingsVersion mappers::ProvinceMapper::getMappingsVersion(const std::map<GameVersion, ProvinceMappingsVersion>& mappingsVersions,

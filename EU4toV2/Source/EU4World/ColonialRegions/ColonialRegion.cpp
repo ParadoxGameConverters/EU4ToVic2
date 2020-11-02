@@ -3,13 +3,16 @@
 
 EU4::ColonialRegion::ColonialRegion(std::istream& theStream)
 {
-	registerKeyword("provinces", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::intList theProvinces(theStream);
-			for (const auto& provinceID : theProvinces.getInts()) provinces.insert(provinceID);
-		});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+}
+
+void EU4::ColonialRegion::registerKeys()
+{
+	registerKeyword("provinces", [this](const std::string& unused, std::istream& theStream) {
+		for (const auto& provinceID: commonItems::intList(theStream).getInts())
+			provinces.insert(provinceID);
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
