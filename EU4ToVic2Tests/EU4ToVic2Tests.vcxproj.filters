@@ -110,15 +110,6 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp">
       <Filter>ConverterFiles\EU4World\Mods</Filter>
     </ClCompile>
-    <ClCompile Include="MapperTests\IdeaEffectsTests.cpp">
-      <Filter>MapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="MapperTests\IdeaEffectsMapperTests.cpp">
-      <Filter>MapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="HelpersTests\TechValuesTests.cpp">
-      <Filter>HelpersTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp">
       <Filter>ConverterFiles\Helpers</Filter>
     </ClCompile>
@@ -338,6 +329,78 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CustomColors.cpp">
       <Filter>ConverterFiles\EU4World\Country</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4ReformStackSection.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4ReformStackSectionTests.cpp">
+      <Filter>EU4WorldTests\CountryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4GovernmentSection.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4GovernmentSectionTests.cpp">
+      <Filter>EU4WorldTests\CountryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4ModifierTests.cpp">
+      <Filter>EU4WorldTests\CountryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4Modifier.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4NationalSymbol.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4NationalSymbolTests.cpp">
+      <Filter>EU4WorldTests\CountryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4TechnologyTests.cpp">
+      <Filter>EU4WorldTests\CountryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4Technology.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4Country.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsMapperTests.cpp">
+      <Filter>MapperTests\IdeaEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsTests.cpp">
+      <Filter>MapperTests\IdeaEffects</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4Empire.cpp">
+      <Filter>ConverterFiles\EU4World\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4RelationDetails.cpp">
+      <Filter>ConverterFiles\EU4World\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4Relations.cpp">
+      <Filter>ConverterFiles\EU4World\Relations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\History\CountryHistory.cpp">
+      <Filter>ConverterFiles\EU4World\History</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\History\CountryHistoryDate.cpp">
+      <Filter>ConverterFiles\EU4World\History</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\ID.cpp">
+      <Filter>ConverterFiles\EU4World</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\Localisation\Localisation.cpp">
+      <Filter>ConverterFiles\Vic2World\Localisation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\LeaderTraits\LeaderTrait.cpp">
+      <Filter>ConverterFiles\Mappers\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\LeaderTraits\LeaderTraitMapper.cpp">
+      <Filter>ConverterFiles\Mappers\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\LeaderTraits\LeaderTraitTypes.cpp">
+      <Filter>ConverterFiles\Mappers\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4Leader.cpp">
+      <Filter>ConverterFiles\EU4World\Leader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -454,15 +517,30 @@
     <Filter Include="EU4WorldTests\CountryTests">
       <UniqueIdentifier>{098b1753-e277-44c6-89dc-ae2ba96ae0fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MapperTests\IdeaEffects">
+      <UniqueIdentifier>{f3dd355b-d872-43a1-b644-bf4f45d99184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Relations">
+      <UniqueIdentifier>{5fdd85ed-3de3-404a-802a-7d621fc28805}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\History">
+      <UniqueIdentifier>{e9da018b-fabd-48be-b1d9-cb32350a8270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Vic2World\Localisation">
+      <UniqueIdentifier>{5e43f3e9-47ee-4279-a11f-474a2e00100d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Leader">
+      <UniqueIdentifier>{e76d75c4-733e-4341-8709-86158863e5ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\LeaderTraits">
+      <UniqueIdentifier>{62486fa8-5234-4b3b-b7af-a9425f7bd101}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mocks\RegionsMock.h">
       <Filter>Mocks</Filter>
     </ClInclude>
     <ClInclude Include="Mocks\Vic2CountryMock.h">
-      <Filter>Mocks</Filter>
-    </ClInclude>
-    <ClInclude Include="Mocks\EU4CountryMock.h">
       <Filter>Mocks</Filter>
     </ClInclude>
   </ItemGroup>

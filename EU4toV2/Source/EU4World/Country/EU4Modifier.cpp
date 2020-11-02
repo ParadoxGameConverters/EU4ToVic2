@@ -3,13 +3,15 @@
 
 EU4::EU4Modifier::EU4Modifier(std::istream& theStream)
 {
-	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString modifierStr(theStream);
-			modifier = modifierStr.getString();
-		});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+}
+
+void EU4::EU4Modifier::registerKeys()
+{
+	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream) {
+		modifier = commonItems::singleString(theStream).getString();
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
