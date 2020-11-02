@@ -10,9 +10,6 @@
     <ClCompile Include="Source\EU4World\Regions\Areas.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\ID.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Regions\Region.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
@@ -574,6 +571,9 @@
     <ClCompile Include="Source\Mappers\CountryFlags\CountryFlagsMapping.cpp">
       <Filter>Mappers\CountryFlags</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Leader\EU4LeaderID.cpp">
+      <Filter>EU4World\Leader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -583,9 +583,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Areas.h">
       <Filter>EU4World\Regions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\ID.h">
-      <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Regions.h">
       <Filter>EU4World\Regions</Filter>
@@ -1111,6 +1108,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\CountryFlags\CountryFlagsMapping.h">
       <Filter>Mappers\CountryFlags</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Leader\EU4LeaderID.h">
+      <Filter>EU4World\Leader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -196,8 +196,8 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4Technology.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\History\CountryHistory.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\History\CountryHistoryDate.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\ID.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4Leader.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4LeaderID.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp" />

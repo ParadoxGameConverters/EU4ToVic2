@@ -383,9 +383,6 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\History\CountryHistoryDate.cpp">
       <Filter>ConverterFiles\EU4World\History</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\ID.cpp">
-      <Filter>ConverterFiles\EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\V2World\Localisation\Localisation.cpp">
       <Filter>ConverterFiles\Vic2World\Localisation</Filter>
     </ClCompile>
@@ -399,6 +396,9 @@
       <Filter>ConverterFiles\Mappers\LeaderTraits</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4Leader.cpp">
+      <Filter>ConverterFiles\EU4World\Leader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4LeaderID.cpp">
       <Filter>ConverterFiles\EU4World\Leader</Filter>
     </ClCompile>
   </ItemGroup>

@@ -329,8 +329,8 @@
     <ClCompile Include="Source\EU4World\Diplomacy\EU4Diplomacy.cpp" />
     <ClCompile Include="Source\EU4World\History\CountryHistory.cpp" />
     <ClCompile Include="Source\EU4World\History\CountryHistoryDate.cpp" />
-    <ClCompile Include="Source\EU4World\ID.cpp" />
     <ClCompile Include="Source\EU4World\Leader\EU4Leader.cpp" />
+    <ClCompile Include="Source\EU4World\Leader\EU4LeaderID.cpp" />
     <ClCompile Include="Source\EU4World\Localisation\EU4Localisation.cpp" />
     <ClCompile Include="Source\EU4World\Modifiers\Modifier.cpp" />
     <ClCompile Include="Source\EU4World\Modifiers\Modifiers.cpp" />
@@ -523,8 +523,8 @@
     <ClInclude Include="Source\EU4World\Diplomacy\EU4Diplomacy.h" />
     <ClInclude Include="Source\EU4World\History\CountryHistory.h" />
     <ClInclude Include="Source\EU4World\History\CountryHistoryDate.h" />
-    <ClInclude Include="Source\EU4World\ID.h" />
     <ClInclude Include="Source\EU4World\Leader\EU4Leader.h" />
+    <ClInclude Include="Source\EU4World\Leader\EU4LeaderID.h" />
     <ClInclude Include="Source\EU4World\Localisation\EU4Localisation.h" />
     <ClInclude Include="Source\EU4World\Modifiers\Modifier.h" />
     <ClInclude Include="Source\EU4World\Modifiers\Modifiers.h" />

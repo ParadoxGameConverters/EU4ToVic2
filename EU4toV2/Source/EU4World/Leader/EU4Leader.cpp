@@ -1,5 +1,5 @@
 #include "EU4Leader.h"
-#include "../ID.h"
+#include "EU4LeaderID.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 
@@ -42,8 +42,9 @@ EU4::Leader::Leader(std::istream& theStream)
 		activationDate = date(dateString.getString());
 	});
 	registerKeyword("id", [this](const std::string& idType, std::istream& theStream) {
-		const ID theID(theStream);
-		leaderID = theID.getIDNum();
+		const LeaderID theID(theStream);
+		if (theID.getIDNum())
+			leaderID = *theID.getIDNum();
 	});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
 

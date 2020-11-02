@@ -13,10 +13,9 @@
 #include "V2World/Localisation/Localisation.h"
 #include <cmath>
 
-EU4::Country::Country(std::string countryTag,
-	 const GameVersion& theVersion,
-	 std::istream& theStream,
-	 const mappers::IdeaEffectMapper& ideaEffectMapper):
+#include "Leader/EU4LeaderID.h"
+
+EU4::Country::Country(std::string countryTag, const GameVersion& theVersion, std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper):
 	 tag(std::move(countryTag))
 {
 	registerKeys(theVersion);
@@ -195,8 +194,9 @@ void EU4::Country::registerKeys(const GameVersion& theVersion)
 		historicalReligion = theCountryHistory.getReligion();
 	});
 	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream) {
-		const ID idBlock(theStream);
-		activeLeaderIDs.insert(idBlock.getIDNum());
+		const LeaderID idBlock(theStream);
+		if (idBlock.getIDNum())
+			activeLeaderIDs.insert(*idBlock.getIDNum());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
