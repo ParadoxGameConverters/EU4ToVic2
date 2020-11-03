@@ -46,7 +46,6 @@ class World: commonItems::parser
 	void verifySave();
 	void verifySaveContents();
 	void loadRevolutionTarget();
-	void dropMinoritiesFromCountries();
 	void addProvinceInfoToCountries();
 	void loadRegions();
 	void loadEU4RegionsNewVersion();

@@ -1,54 +1,47 @@
 #include "EU4Leader.h"
-#include "../ID.h"
+#include "EU4LeaderID.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 
 EU4::Leader::Leader(std::istream& theStream)
 {
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
+
+void EU4::Leader::registerKeys()
+{
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString nameString(theStream);
-		name = nameString.getString();
+		name = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("type", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString typeString(theStream);
-		leaderType = typeString.getString();
+		leaderType = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("female", [this](const std::string& unused, std::istream& theStream) {
 		commonItems::ignoreItem(unused, theStream);
 		female = true;
 	});
 	registerKeyword("manuever", [this](const std::string& unused, std::istream& theStream) { // don't fix PDX typo!
-		const commonItems::singleInt theValue(theStream);
-		maneuver = theValue.getInt();
+		maneuver = commonItems::singleInt(theStream).getInt();
 	});
 	registerKeyword("fire", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleInt theValue(theStream);
-		fire = theValue.getInt();
+		fire = commonItems::singleInt(theStream).getInt();
 	});
 	registerKeyword("shock", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleInt theValue(theStream);
-		shock = theValue.getInt();
+		shock = commonItems::singleInt(theStream).getInt();
 	});
 	registerKeyword("siege", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleInt theValue(theStream);
-		siege = theValue.getInt();
-	});
-	registerKeyword("country", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString countryString(theStream);
-		country = countryString.getString();
+		siege = commonItems::singleInt(theStream).getInt();
 	});
 	registerKeyword("activation", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString dateString(theStream);
-		activationDate = date(dateString.getString());
+		activationDate = date(commonItems::singleString(theStream).getString());
 	});
-	registerKeyword("id", [this](const std::string& idType, std::istream& theStream) {
-		const ID theID(theStream);
+	registerKeyword("id", [this](const std::string& unused, std::istream& theStream) {
+		const LeaderID theID(theStream);
 		leaderID = theID.getIDNum();
 	});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
-	parseStream(theStream);
-	clearRegisteredKeywords();
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 bool EU4::Leader::isLand() const

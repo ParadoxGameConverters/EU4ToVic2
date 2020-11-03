@@ -186,8 +186,18 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegions.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4ActiveIdeas.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4Country.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CountryFlags.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CountryModifier.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CustomColors.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4GovernmentSection.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4NationalSymbol.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4ReformStackSection.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4Technology.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\History\CountryHistory.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\History\CountryHistoryDate.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4Leader.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4LeaderID.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp" />
@@ -203,6 +213,9 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Region.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Regions.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\SuperRegions.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4Empire.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4RelationDetails.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4Relations.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp" />
@@ -220,6 +233,9 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffects.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\LeaderTraits\LeaderTrait.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\LeaderTraits\LeaderTraitMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\LeaderTraits\LeaderTraitTypes.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -234,6 +250,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchools.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\V2World\Localisation\Localisation.cpp" />
     <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -246,9 +263,16 @@
     <ClCompile Include="EU4WorldTests\CountryTests\EU4ActiveIdeasTests.cpp" />
     <ClCompile Include="EU4WorldTests\CountryTests\EU4CountryFlagsTests.cpp" />
     <ClCompile Include="EU4WorldTests\CountryTests\EU4CustomColorsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4GovernmentSectionTests.cpp" />
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4CountryModifierTests.cpp" />
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4NationalSymbolTests.cpp" />
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4ReformStackSectionTests.cpp" />
+    <ClCompile Include="EU4WorldTests\CountryTests\EU4TechnologyTests.cpp" />
     <ClCompile Include="EU4WorldTests\DateItemsTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4ProvinceTests.cpp" />
+    <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderIDTests.cpp" />
+    <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModifiersTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModifierTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModTests.cpp" />
@@ -262,7 +286,6 @@
     <ClCompile Include="EU4WorldTests\ReligionGroupTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionsTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionTests.cpp" />
-    <ClCompile Include="HelpersTests\TechValuesTests.cpp" />
     <ClCompile Include="MapperTests\AcceptedCultureThresholdsMapperTests.cpp" />
     <ClCompile Include="MapperTests\BlockedTechSchoolsTests.cpp" />
     <ClCompile Include="MapperTests\BuildingsTests.cpp" />
@@ -272,8 +295,8 @@
     <ClCompile Include="MapperTests\CulturalUnionMapperTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapperTests.cpp" />
-    <ClCompile Include="MapperTests\IdeaEffectsMapperTests.cpp" />
-    <ClCompile Include="MapperTests\IdeaEffectsTests.cpp" />
+    <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />
@@ -286,7 +309,6 @@
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mocks\EU4CountryMock.h" />
     <ClInclude Include="Mocks\RegionsMock.h" />
     <ClInclude Include="Mocks\Vic2CountryMock.h" />
   </ItemGroup>

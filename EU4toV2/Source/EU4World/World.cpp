@@ -91,8 +91,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	});
 	registerKeyword("countries", [this, ideaEffectMapper](const std::string& unused, std::istream& theStream) {
 		LOG(LogLevel::Info) << "-> Loading Countries";
-		cultureGroupsMapper.initForEU4();
-		const Countries processedCountries(*version, theStream, ideaEffectMapper, cultureGroupsMapper);
+		const Countries processedCountries(*version, theStream, ideaEffectMapper);
 		auto theProcessedCountries = processedCountries.getTheCountries();
 		theCountries.swap(theProcessedCountries);
 	});
@@ -152,6 +151,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	clearRegisteredKeywords();
 
 	unitTypeMapper.initUnitTypeMapper();
+	cultureGroupsMapper.initForEU4();
 	Log(LogLevel::Progress) << "16 %";
 
 	LOG(LogLevel::Info) << "*** Building world ***";
@@ -178,10 +178,6 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	LOG(LogLevel::Info) << "-> Determining Demographics";
 	buildPopRatios();
 	Log(LogLevel::Progress) << "22 %";
-
-	LOG(LogLevel::Info) << "-> Eliminating Minorities";
-	dropMinoritiesFromCountries();
-	Log(LogLevel::Progress) << "23 %";
 
 	LOG(LogLevel::Info) << "-> Cataloguing Native Fauna";
 	catalogueNativeCultures();
@@ -450,14 +446,6 @@ void EU4::World::loadRevolutionTarget()
 	}
 }
 
-void EU4::World::dropMinoritiesFromCountries()
-{
-	for (const auto& country: theCountries)
-	{
-		country.second->dropMinorityCultures();
-	}
-}
-
 void EU4::World::addTradeGoodsToProvinces() const
 {
 	for (auto& province: provinces->getAllProvinces())
@@ -718,7 +706,7 @@ void EU4::World::mergeNations()
 			for (const auto& slaveTag: mergeBlock.getSlaves())
 			{
 				const auto& slave = getCountry(slaveTag);
-				master->eatCountry(*slave);
+				master->eatCountry(slave);
 			}
 		}
 	}
@@ -755,7 +743,7 @@ void EU4::World::uniteJapan()
 	{
 		if (country.second->getPossibleDaimyo())
 		{
-			japan->eatCountry(*country.second);
+			japan->eatCountry(country.second);
 		}
 	}
 }
