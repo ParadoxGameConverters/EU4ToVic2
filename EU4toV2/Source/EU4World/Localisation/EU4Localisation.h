@@ -24,7 +24,7 @@ class EU4Localisation
 	[[nodiscard]] static std::pair<std::string, std::string> determineKeyLocalisationPair(const std::string& text);
 	[[nodiscard]] static std::string removeUTF8BOM(const std::string& text);
 
-	std::map<std::string, std::map<std::string, std::string>> localisations; // key/<language, value>
+	std::map<std::string, std::map<std::string, std::string>> localisations; // key, map<language, value>
 };
 } // namespace EU4
 

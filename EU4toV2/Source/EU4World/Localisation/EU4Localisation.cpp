@@ -34,7 +34,7 @@ void EU4::EU4Localisation::readFromFile(const std::string& fileName)
 void EU4::EU4Localisation::readFromStream(std::istream& theStream)
 {
 	std::string line;
-	std::getline(theStream, line); // First line is the language like "l_english:"
+	std::getline(theStream, line); // First line is the language is like "l_english:"
 
 	const auto& language = determineLanguageForFile(removeUTF8BOM(line));
 	if (!language)
@@ -75,9 +75,9 @@ std::optional<std::map<std::string, std::string>> EU4::EU4Localisation::getTextI
 std::optional<std::string> EU4::EU4Localisation::determineLanguageForFile(const std::string& text)
 {
 	if (text.size() < 2 || text[0] != 'l' || text[1] != '_')
-		return std::nullopt; // Not in the desired format - no "l_"
+		return std::nullopt;
 
-	const size_t beginPos = 2; // Skip l_ for our language name.
+	const size_t beginPos = 2;
 	const auto endPos = text.find(':', beginPos);
 	if (endPos == std::string::npos)
 		return std::nullopt;
@@ -92,17 +92,17 @@ std::pair<std::string, std::string> EU4::EU4Localisation::determineKeyLocalisati
 	if (text.size() > 2 && (text[0] == '#' || text[1] == '#'))
 		return blankReturn;
 
-	const auto keyBeginPos = text.find_first_not_of(' '); // the first non-space character
+	const auto keyBeginPos = text.find_first_not_of(' ');
 	if (keyBeginPos == std::string::npos)
 		return blankReturn;
 
-	const auto keyEndPos = text.find_first_of(':', keyBeginPos + 1); // the end of the key
-	const auto quotePos = text.find_first_of('"', keyEndPos);		  // the beginning of the string literal
+	const auto keyEndPos = text.find_first_of(':', keyBeginPos + 1);
+	const auto quotePos = text.find_first_of('"', keyEndPos);
 	if (quotePos == std::string::npos)
 		return blankReturn;
 
-	const auto localisationBeginPos = quotePos + 1;								// where the localization begins
-	const auto localisationEndPos = text.find_last_of('"', text.size()); // where the localization ends
+	const auto localisationBeginPos = quotePos + 1;
+	const auto localisationEndPos = text.find_last_of('"', text.size());
 	return std::make_pair(text.substr(keyBeginPos, keyEndPos - keyBeginPos), text.substr(localisationBeginPos, localisationEndPos - localisationBeginPos));
 }
 
