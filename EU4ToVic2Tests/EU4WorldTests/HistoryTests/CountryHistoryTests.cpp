@@ -56,10 +56,10 @@ TEST(EU4World_CountryHistoryTests, datesCanBeParsedForRulerLeaders)
 	std::stringstream input;
 	input << "2.2.2 = {\n";
 	input << "\tmonarch = {\n";
-	input << "\tname = Boby\n";
-	input << "\tdynasty = Bobbypants\n";
+	input << "\t\tname = Boby\n";
+	input << "\t\tdynasty = Bobbypants\n";
 	input << "\t\tleader = {\n";
-	input << "\t\tname=\"Boby 1st of Bobbypants\"\n";
+	input << "\t\t\tname=\"Boby 1st of Bobbypants\"\n";
 	input << "\t\t}\n";
 	input << "\t}\n";
 	input << "}\n";

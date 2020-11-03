@@ -31,10 +31,10 @@ TEST(EU4World_CountryHistoryDateTests, monarchLeaderAndDynastyCanBeLoaded)
 {
 	std::stringstream input;
 	input << "monarch = {\n";
-	input << "name = Boby\n";
-	input << "dynasty = Bobbypants\n";
+	input << "\tname = Boby\n";
+	input << "\tdynasty = Bobbypants\n";
 	input << "\tleader = {\n";
-	input << "\tname=\"Boby 1st of Bobbypants\"\n";
+	input << "\t\tname=\"Boby 1st of Bobbypants\"\n";
 	input << "\t}\n";
 	input << "}\n";
 	const EU4::CountryHistoryDate historyDate(input, std::string());

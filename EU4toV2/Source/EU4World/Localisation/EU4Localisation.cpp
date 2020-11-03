@@ -94,15 +94,13 @@ std::pair<std::string, std::string> EU4::EU4Localisation::determineKeyLocalisati
 
 	const auto keyBeginPos = text.find_first_not_of(' '); // the first non-space character
 	if (keyBeginPos == std::string::npos)
-	{
 		return blankReturn;
-	}
+
 	const auto keyEndPos = text.find_first_of(':', keyBeginPos + 1); // the end of the key
 	const auto quotePos = text.find_first_of('"', keyEndPos);		  // the beginning of the string literal
 	if (quotePos == std::string::npos)
-	{
 		return blankReturn;
-	}
+
 	const auto localisationBeginPos = quotePos + 1;								// where the localization begins
 	const auto localisationEndPos = text.find_last_of('"', text.size()); // where the localization ends
 	return std::make_pair(text.substr(keyBeginPos, keyEndPos - keyBeginPos), text.substr(localisationBeginPos, localisationEndPos - localisationBeginPos));
