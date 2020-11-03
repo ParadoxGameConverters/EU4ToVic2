@@ -2,7 +2,7 @@
 #include "gtest/gtest.h"
 #include <sstream>
 
-TEST(Mappers_IdeaEffectMapperTests, getEnforceFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getEnforceFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -32,7 +32,7 @@ TEST(Mappers_IdeaEffectMapperTests, getEnforceFromIdeaCanBeSetForIdea)
 	ASSERT_EQ("absolute_monarchy", theMapper.getEnforceFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getArmyFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getArmyFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -62,7 +62,7 @@ TEST(Mappers_IdeaEffectMapperTests, getArmyFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getArmyFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getNavyFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getNavyFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -92,7 +92,7 @@ TEST(Mappers_IdeaEffectMapperTests, getNavyFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getNavyFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getCommerceFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getCommerceFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -122,7 +122,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCommerceFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getCommerceFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getCultureFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getCultureFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -152,7 +152,7 @@ TEST(Mappers_IdeaEffectMapperTests, getCultureFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getCultureFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getIndustryFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getIndustryFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -182,7 +182,7 @@ TEST(Mappers_IdeaEffectMapperTests, getIndustryFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getIndustryFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getLibertyFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getLibertyFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -212,7 +212,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLibertyFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getLibertyFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getEqualityFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getEqualityFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -242,7 +242,7 @@ TEST(Mappers_IdeaEffectMapperTests, getEqualityFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getEqualityFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getOrderFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getOrderFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -272,7 +272,7 @@ TEST(Mappers_IdeaEffectMapperTests, getOrderFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getOrderFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -302,7 +302,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLiteracyFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getLiteracyFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getLiberalFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getLiberalFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -332,7 +332,7 @@ TEST(Mappers_IdeaEffectMapperTests, getLiberalFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getLiberalFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getReactionaryFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getReactionaryFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -362,7 +362,7 @@ TEST(Mappers_IdeaEffectMapperTests, getReactionaryFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getReactionaryFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getSlaveryFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getSlaveryFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -392,7 +392,7 @@ TEST(Mappers_IdeaEffectMapperTests, getSlaveryFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getSlaveryFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getUpper_house_compositionFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getUpper_house_compositionFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -422,7 +422,7 @@ TEST(Mappers_IdeaEffectMapperTests, getUpper_house_compositionFromIdeaCanBeSetFo
 	ASSERT_EQ(-4, theMapper.getUpper_house_compositionFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getVote_franchiseFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getVote_franchiseFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -452,7 +452,7 @@ TEST(Mappers_IdeaEffectMapperTests, getVote_franchiseFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getVote_franchiseFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getVoting_systemFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getVoting_systemFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -482,7 +482,7 @@ TEST(Mappers_IdeaEffectMapperTests, getVoting_systemFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getVoting_systemFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getPublic_meetingsFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getPublic_meetingsFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -512,7 +512,7 @@ TEST(Mappers_IdeaEffectMapperTests, getPublic_meetingsFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getPublic_meetingsFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getPress_rightsFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getPress_rightsFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -542,7 +542,7 @@ TEST(Mappers_IdeaEffectMapperTests, getPress_rightsFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getPress_rightsFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getTrade_unionsFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getTrade_unionsFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);
@@ -572,7 +572,7 @@ TEST(Mappers_IdeaEffectMapperTests, getTrade_unionsFromIdeaCanBeSetForIdea)
 	ASSERT_EQ(-4, theMapper.getTrade_unionsFromIdea("specifiedIdea"));
 }
 
-TEST(Mappers_IdeaEffectMapperTests, getPolitical_partiesFromIdeaReturnsNullForMissingIdea)
+TEST(Mappers_IdeaEffectMapperTests, getPolitical_partiesFromIdeaReturnsNullOptForMissingIdea)
 {
 	std::stringstream input;
 	const mappers::IdeaEffectMapper theMapper(input);

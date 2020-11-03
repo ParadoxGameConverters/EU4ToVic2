@@ -1,14 +1,14 @@
 #include "Country/EU4Technology.h"
 #include "gtest/gtest.h"
 
-TEST(EU4World_Country_EU4TechnologyTests, primitivesDefaultToBlank)
+TEST(EU4World_Country_EU4TechnologyTests, primitivesDefaultToZero)
 {
 	std::stringstream input;
 	const EU4::EU4Technology technology(input);
 
-	ASSERT_FALSE(technology.getAdm());
-	ASSERT_FALSE(technology.getDip());
-	ASSERT_FALSE(technology.getMil());
+	ASSERT_EQ(0, technology.getAdm());
+	ASSERT_EQ(0, technology.getDip());
+	ASSERT_EQ(0, technology.getMil());
 }
 
 TEST(EU4World_Country_EU4TechnologyTests, technologyLevelsCanBeLoaded)

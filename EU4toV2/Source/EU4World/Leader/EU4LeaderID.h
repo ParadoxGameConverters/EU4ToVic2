@@ -15,7 +15,7 @@ class LeaderID: commonItems::parser
   private:
 	void registerKeys();
 
-	std::optional<int> IDNum;
+	int IDNum = 0;
 };
 } // namespace EU4
 

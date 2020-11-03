@@ -39,8 +39,7 @@ void EU4::Leader::registerKeys()
 	});
 	registerKeyword("id", [this](const std::string& unused, std::istream& theStream) {
 		const LeaderID theID(theStream);
-		if (theID.getIDNum())
-			leaderID = *theID.getIDNum();
+		leaderID = theID.getIDNum();
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

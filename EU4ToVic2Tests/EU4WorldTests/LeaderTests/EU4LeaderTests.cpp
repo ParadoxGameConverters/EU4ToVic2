@@ -1,7 +1,7 @@
 #include "Leader/EU4Leader.h"
 #include "gtest/gtest.h"
 
-TEST(EU4World_EU4LeaderTests, primitivesDefaultToBlank)
+TEST(EU4World_EU4LeaderTests, primitivesDefaultToDefaultValues)
 {
 	std::stringstream input;
 	const EU4::Leader leader(input);
@@ -39,7 +39,6 @@ TEST(EU4World_EU4LeaderTests, primitivesCanBeLoaded)
 	ASSERT_EQ(2, leader.getShock());
 	ASSERT_EQ(3, leader.getManeuver());
 	ASSERT_EQ(9, leader.getSiege());
-	ASSERT_EQ(32, leader.getID());
 	ASSERT_EQ(32, leader.getID());
 }
 

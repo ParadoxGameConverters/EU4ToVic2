@@ -195,8 +195,7 @@ void EU4::Country::registerKeys(const GameVersion& theVersion)
 	});
 	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream) {
 		const LeaderID idBlock(theStream);
-		if (idBlock.getIDNum())
-			activeLeaderIDs.insert(*idBlock.getIDNum());
+		activeLeaderIDs.insert(idBlock.getIDNum());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
