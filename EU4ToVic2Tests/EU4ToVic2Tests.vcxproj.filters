@@ -419,6 +419,12 @@
     <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4DiplomacyTests.cpp">
       <Filter>EU4WorldTests\DiplomacyTests</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryDateTests.cpp">
+      <Filter>EU4WorldTests\HistoryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryTests.cpp">
+      <Filter>EU4WorldTests\HistoryTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -561,6 +567,9 @@
     </Filter>
     <Filter Include="EU4WorldTests\DiplomacyTests">
       <UniqueIdentifier>{6af4a2d5-77bb-4126-8b95-0c402318ae64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\HistoryTests">
+      <UniqueIdentifier>{06e87d1e-dd91-4dc6-916d-66ce52c71035}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -275,6 +275,8 @@
     <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4DiplomacyTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4ProvinceTests.cpp" />
+    <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryDateTests.cpp" />
+    <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryTests.cpp" />
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderIDTests.cpp" />
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModifiersTests.cpp" />
