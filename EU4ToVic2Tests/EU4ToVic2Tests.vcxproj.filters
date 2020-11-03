@@ -407,6 +407,18 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CountryModifier.cpp">
       <Filter>ConverterFiles\EU4World\Country</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Diplomacy\EU4Agreement.cpp">
+      <Filter>ConverterFiles\EU4World\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Diplomacy\EU4Diplomacy.cpp">
+      <Filter>ConverterFiles\EU4World\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4AgreementTests.cpp">
+      <Filter>EU4WorldTests\DiplomacyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4DiplomacyTests.cpp">
+      <Filter>EU4WorldTests\DiplomacyTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -543,6 +555,12 @@
     </Filter>
     <Filter Include="EU4WorldTests\LeaderTests">
       <UniqueIdentifier>{8bce8ceb-98b3-42e1-abc2-2e0a054602f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Diplomacy">
+      <UniqueIdentifier>{2f5ac726-5ae7-4d46-a130-01c92c637cd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\DiplomacyTests">
+      <UniqueIdentifier>{6af4a2d5-77bb-4126-8b95-0c402318ae64}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -194,6 +194,8 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4NationalSymbol.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4ReformStackSection.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4Technology.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Diplomacy\EU4Agreement.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Diplomacy\EU4Diplomacy.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\History\CountryHistory.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\History\CountryHistoryDate.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4Leader.cpp" />
@@ -269,6 +271,8 @@
     <ClCompile Include="EU4WorldTests\CountryTests\EU4ReformStackSectionTests.cpp" />
     <ClCompile Include="EU4WorldTests\CountryTests\EU4TechnologyTests.cpp" />
     <ClCompile Include="EU4WorldTests\DateItemsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4AgreementTests.cpp" />
+    <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4DiplomacyTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\EU4ProvinceTests.cpp" />
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderIDTests.cpp" />
