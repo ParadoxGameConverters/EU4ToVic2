@@ -431,6 +431,18 @@
     <ClCompile Include="EU4WorldTests\ModTests\ModTests.cpp">
       <Filter>EU4WorldTests\ModTests</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\NationMergeTests\MergeBlocksTests.cpp">
+      <Filter>EU4WorldTests\NationMergeTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\NationMergeTests\NationMergeParserTests.cpp">
+      <Filter>EU4WorldTests\NationMergeTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\NationMerger\MergeBlock.cpp">
+      <Filter>ConverterFiles\EU4World\NationMerger</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\NationMerger\NationMergeParser.cpp">
+      <Filter>ConverterFiles\EU4World\NationMerger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -588,6 +600,12 @@
     </Filter>
     <Filter Include="EU4WorldTests\ModTests">
       <UniqueIdentifier>{fd4d6833-de97-4d14-a2c2-d8912ef7cfee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\NationMergeTests">
+      <UniqueIdentifier>{6c23e9e9-a7db-4123-956f-ee1310ddb748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\NationMerger">
+      <UniqueIdentifier>{f3d9f248-b995-4078-a030-097778109c6e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
