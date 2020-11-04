@@ -104,9 +104,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp">
       <Filter>ConverterFiles\Mappers\ProvinceMappings</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\ModTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp">
       <Filter>ConverterFiles\EU4World\Mods</Filter>
     </ClCompile>
@@ -122,14 +119,8 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp">
       <Filter>ConverterFiles\EU4World\Modifiers</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\ModifierTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp">
       <Filter>ConverterFiles\EU4World\Modifiers</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\ModifiersTests.cpp">
-      <Filter>EU4WorldTests</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\ProvinceModifierTests.cpp">
       <Filter>EU4WorldTests</Filter>
@@ -431,6 +422,15 @@
     <ClCompile Include="EU4WorldTests\LocalisationTests\EU4LocalisationTests.cpp">
       <Filter>EU4WorldTests\LocalisationTests</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\ModifierTests\ModifiersTests.cpp">
+      <Filter>EU4WorldTests\ModifierTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ModifierTests\ModifierTests.cpp">
+      <Filter>EU4WorldTests\ModifierTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ModTests\ModTests.cpp">
+      <Filter>EU4WorldTests\ModTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -582,6 +582,12 @@
     </Filter>
     <Filter Include="EU4WorldTests\LocalisationTests">
       <UniqueIdentifier>{1691522c-454b-49c1-bb4c-a089057d307b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\ModifierTests">
+      <UniqueIdentifier>{532ffa3b-e9ed-48e8-8c7d-9740c3d13f98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\ModTests">
+      <UniqueIdentifier>{fd4d6833-de97-4d14-a2c2-d8912ef7cfee}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,7 @@
 #include "ParserHelpers.h"
 #include <algorithm>
 #include <iomanip>
+#include "CommonFunctions.h"
 
 mappers::CountryMappings::CountryMappings()
 {
@@ -54,13 +55,7 @@ void mappers::CountryMappings::getAvailableFlags()
 	{
 		auto availableFlagFiles = commonItems::GetAllFilesInFolder(availableFlagFolder);
 		for (const auto& file: availableFlagFiles)
-		{
-			const auto lastDot = file.find_last_of('.');
-			if (lastDot != std::string::npos)
-			{
-				availableFlags.insert(file.substr(0, lastDot));
-			}
-		}
+			availableFlags.insert(trimExtension(file));
 	}
 }
 

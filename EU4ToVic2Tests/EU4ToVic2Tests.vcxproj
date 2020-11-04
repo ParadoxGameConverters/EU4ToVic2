@@ -281,9 +281,9 @@
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderIDTests.cpp" />
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderTests.cpp" />
     <ClCompile Include="EU4WorldTests\LocalisationTests\EU4LocalisationTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ModifiersTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ModifierTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ModTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ModifierTests\ModifiersTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ModifierTests\ModifierTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ModTests\ModTests.cpp" />
     <ClCompile Include="EU4WorldTests\PopRatioTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceBuildingsTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceHistoryTests.cpp" />

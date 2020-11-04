@@ -4,6 +4,7 @@
 #include "../Mappers/Pops/PopMapper.h"
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../Mappers/VersionParser/VersionParser.h"
+#include "CommonFunctions.h"
 #include "Flags/Flags.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -1749,10 +1750,7 @@ void V2::World::outputProvinces() const
 	for (const auto& province: provinces)
 	{
 		auto filename = province.second->getFilename();
-		auto lastSlash = filename.find_last_of('/');
-		if (lastSlash == std::string::npos)
-			lastSlash = filename.find_last_of('\\');
-		auto path = filename.substr(0, lastSlash);
+		auto path = trimPath(filename);
 		if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces/" + path))
 			throw std::runtime_error("Could not create directory: output/" + theConfiguration.getOutputName() + "/history/provinces/" + path);
 

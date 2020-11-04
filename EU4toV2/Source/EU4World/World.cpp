@@ -62,7 +62,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	});
 	registerKeyword("mod_enabled", [](const std::string& unused, std::istream& theStream) {
 		const commonItems::stringList modList(theStream);
-		Mods theMods(modList.getStrings(), theConfiguration);
+		Mods theMods(modList.getStrings());
 	});
 	registerKeyword("revolution_target", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString revTargetStr(theStream);

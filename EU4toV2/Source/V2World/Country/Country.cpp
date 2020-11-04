@@ -13,6 +13,7 @@
 #include "../../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../../Mappers/Unreleasables/Unreleasables.h"
 #include "../Flags/Flags.h"
+#include "CommonFunctions.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include <cmath>
@@ -115,8 +116,7 @@ void V2::Country::initFromEU4Country(const EU4::Regions& eu4Regions,
 	if (!possibleFilename)
 	{
 		auto countryName = commonCountryFile;
-		const auto lastSlash = countryName.find_last_of("/");
-		countryName = countryName.substr(lastSlash + 1, countryName.size());
+		countryName = trimPath(countryName);
 		details.filename = tag + " - " + countryName;
 	}
 	else
@@ -515,7 +515,9 @@ void V2::Country::buildCanals()
 }
 
 // used only for countries which are NOT converted (i.e. unions, dead countries, etc)
-void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMapper, const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper)
+void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMapper,
+	 const mappers::PartyNameMapper& partyNameMapper,
+	 const mappers::PartyTypeMapper& partyTypeMapper)
 {
 	// Ping unreleasable_tags for this country's TAG
 	details.isReleasableVassal = unreleasablesMapper.isTagReleasable(tag);
@@ -675,7 +677,7 @@ void V2::Country::oldCivConversionMethod()
 
 // civilization level conversion method for games 1.19+
 void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper)
-{	
+{
 	if (!srcCountry)
 		return;
 
@@ -685,7 +687,7 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 	// set number for civilization level based on techs and institutions
 	// at 31 techs behind completely uncivilized
 	// each institution behind is equivalent to 2 techs behind
-	
+
 	auto civLevel = (totalTechs + 31.0 - topTech) * 4;
 	civLevel = civLevel + (static_cast<double>(srcCountry->numEmbracedInstitutions()) - topInstitutions) * 8;
 	if (civLevel > 100)
