@@ -407,6 +407,30 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\EU4CountryModifier.cpp">
       <Filter>ConverterFiles\EU4World\Country</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Diplomacy\EU4Agreement.cpp">
+      <Filter>ConverterFiles\EU4World\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Diplomacy\EU4Diplomacy.cpp">
+      <Filter>ConverterFiles\EU4World\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4AgreementTests.cpp">
+      <Filter>EU4WorldTests\DiplomacyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4DiplomacyTests.cpp">
+      <Filter>EU4WorldTests\DiplomacyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryDateTests.cpp">
+      <Filter>EU4WorldTests\HistoryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryTests.cpp">
+      <Filter>EU4WorldTests\HistoryTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Localisation\EU4Localisation.cpp">
+      <Filter>ConverterFiles\EU4World\Localisation</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\LocalisationTests\EU4LocalisationTests.cpp">
+      <Filter>EU4WorldTests\LocalisationTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -543,6 +567,21 @@
     </Filter>
     <Filter Include="EU4WorldTests\LeaderTests">
       <UniqueIdentifier>{8bce8ceb-98b3-42e1-abc2-2e0a054602f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Diplomacy">
+      <UniqueIdentifier>{2f5ac726-5ae7-4d46-a130-01c92c637cd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\DiplomacyTests">
+      <UniqueIdentifier>{6af4a2d5-77bb-4126-8b95-0c402318ae64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\HistoryTests">
+      <UniqueIdentifier>{06e87d1e-dd91-4dc6-916d-66ce52c71035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Localisation">
+      <UniqueIdentifier>{320f60f1-92dd-4106-a494-abe23993b751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\LocalisationTests">
+      <UniqueIdentifier>{1691522c-454b-49c1-bb4c-a089057d307b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

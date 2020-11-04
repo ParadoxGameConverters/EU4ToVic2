@@ -1,5 +1,6 @@
 #include "World.h"
 #include "../Configuration.h"
+#include "../Helpers/rakaly_wrapper.h"
 #include "Country/Countries.h"
 #include "Country/EU4Country.h"
 #include "GameVersion.h"
@@ -16,11 +17,10 @@
 #include <ZipFile.h>
 #include <algorithm>
 #include <exception>
+#include <filesystem>
 #include <fstream>
 #include <set>
 #include <string>
-#include "../Helpers/rakaly_wrapper.h"
-#include <filesystem>
 namespace fs = std::filesystem;
 
 EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
@@ -665,20 +665,15 @@ void EU4::World::setLocalisations()
 
 	for (const auto& theCountry: theCountries)
 	{
-		const auto& nameLocalisations = localisation.getTextInEachLanguage(theCountry.second->getTag()); // the names in all languages
-		for (const auto& nameLocalisation: nameLocalisations)															 // the name under consideration
-		{
-			const auto& language = nameLocalisation.first; // the language
-			const auto& name = nameLocalisation.second;	  // the name of the country in this language
-			theCountry.second->setLocalisationName(language, name);
-		}
-		const auto& adjectiveLocalisations = localisation.getTextInEachLanguage(theCountry.second->getTag() + "_ADJ"); // the adjectives in all languages
-		for (const auto& adjectiveLocalisation: adjectiveLocalisations)																// the adjective under consideration
-		{
-			const auto& language = adjectiveLocalisation.first;	// the language
-			const auto& adjective = adjectiveLocalisation.second; // the adjective for the country in this language
-			theCountry.second->setLocalisationAdjective(language, adjective);
-		}
+		const auto& nameLocalisations = localisation.getTextInEachLanguage(theCountry.second->getTag());
+		if (nameLocalisations)
+			for (const auto& [language, name]: *nameLocalisations)
+				theCountry.second->setLocalisationName(language, name);
+
+		const auto& adjectiveLocalisations = localisation.getTextInEachLanguage(theCountry.second->getTag() + "_ADJ");
+		if (adjectiveLocalisations)
+			for (const auto& [language, adjective]: *adjectiveLocalisations)
+				theCountry.second->setLocalisationAdjective(language, adjective);
 	}
 }
 
