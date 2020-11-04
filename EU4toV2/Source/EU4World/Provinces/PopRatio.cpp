@@ -2,8 +2,9 @@
 #include <algorithm>
 #include <cmath>
 
-EU4::PopRatio::PopRatio(std::string _culture, std::string _religion):
-culture(std::move(_culture)), religion(std::move(_religion)){}
+EU4::PopRatio::PopRatio(std::string _culture, std::string _religion): culture(std::move(_culture)), religion(std::move(_religion))
+{
+}
 
 void EU4::PopRatio::decay(const float diffInYears, const double assimilationFactor)
 {
@@ -19,7 +20,7 @@ void EU4::PopRatio::increase(const float diffInYears, const double assimilationF
 {
 	// for standard factor 0.0025 ratio will increase by 0.25% of the remainder every year. It will never hit 100%
 	// for any assimilation factor but will progressively increase at an ever-slower rate.
-	
+
 	upperRatio += (1 - upperRatio) * (1 - pow(1 - assimilationFactor, diffInYears));
 	middleRatio += (1 - middleRatio) * (1 - pow(1 - assimilationFactor, diffInYears));
 	lowerRatio += (1 - lowerRatio) * (1 - pow(1 - assimilationFactor, diffInYears));
@@ -58,7 +59,10 @@ void EU4::PopRatio::convertTo(const std::string& _culture, const std::string& _r
 
 void EU4::PopRatio::setCulture(const std::string& cul, const std::string& sr)
 {
-	if (originalEU4culture.empty()) originalEU4culture = culture;
+	// Used to override history entries when loading neocultures.
+
+	if (originalEU4culture.empty())
+		originalEU4culture = culture;
 	culture = cul;
 	targetSuperRegion = sr;
 }

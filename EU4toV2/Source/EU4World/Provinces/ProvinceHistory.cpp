@@ -33,19 +33,14 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 	registerRegex("\\d+\\.\\d+\\.\\d+", [this](const std::string& dateString, std::istream& theStream) {
 		auto theDate = date(dateString);
 		const DateItems theItems(theStream);
-		for (const auto& theItem : theItems.getDateChanges())
+		for (const auto& [changeType, changeValue] : theItems.getDateChanges())
 		{
-			switch (theItem.first) {
-			case DateItemType::OWNER_CHANGE:
-				ownershipHistory.emplace_back(std::make_pair(theDate, theItem.second));
-				break;
-			case DateItemType::CULTURE_CHANGE:
-				cultureHistory.emplace_back(std::make_pair(theDate, theItem.second));
-				break;
-			case DateItemType::RELIGION_CHANGE:
-				religionHistory.emplace_back(std::make_pair(theDate, theItem.second));
-				break;
-			}
+			if (changeType == "owner")
+				ownershipHistory.emplace_back(std::make_pair(theDate, changeValue));
+			else if (changeType == "culture")
+				cultureHistory.emplace_back(std::make_pair(theDate, changeValue));
+			else if (changeType == "religion")
+				religionHistory.emplace_back(std::make_pair(theDate, changeValue));
 		}
 	});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);

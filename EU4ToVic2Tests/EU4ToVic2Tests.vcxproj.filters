@@ -38,12 +38,6 @@
     <ClCompile Include="MapperTests\ReligionMapperTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\PopRatioTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\DateItemsTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="EU4WorldTests\ProvinceHistoryTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
@@ -443,6 +437,12 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\NationMerger\NationMergeParser.cpp">
       <Filter>ConverterFiles\EU4World\NationMerger</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\ProvinceTests\DateItemsTests.cpp">
+      <Filter>EU4WorldTests\ProvinceTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ProvinceTests\PopRatioTests.cpp">
+      <Filter>EU4WorldTests\ProvinceTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -606,6 +606,9 @@
     </Filter>
     <Filter Include="ConverterFiles\EU4World\NationMerger">
       <UniqueIdentifier>{f3d9f248-b995-4078-a030-097778109c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\ProvinceTests">
+      <UniqueIdentifier>{a30ef1f2-f902-43aa-973c-2f2b9a714263}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
