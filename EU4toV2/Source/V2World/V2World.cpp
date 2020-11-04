@@ -1631,6 +1631,9 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 			outputGTFO(countries);
 			outputReturnCores(countries);
 		}
+
+		Log(LogLevel::Info) << "<- Outputting technologies";
+		outputTechnologies();
 	}
 
 	// verify countries got written
@@ -2109,8 +2112,8 @@ void V2::World::copyModFiles() const
 		}
 
 		// poptypes
-		const auto& poptypesFiles = Utils::GetAllFilesInFolder(mod + "/poptypes");
-		Utils::TryCreateFolder(output + "/poptypes");
+		const auto& poptypesFiles = commonItems::GetAllFilesInFolder(mod + "/poptypes");
+		commonItems::TryCreateFolder(output + "/poptypes");
 		for (const auto& file: poptypesFiles)
 		{
 			fs::copy_file(mod + "/poptypes/" + file, output + "/poptypes/" + file);
@@ -2545,5 +2548,27 @@ void V2::World::updateFlags() const
 				Log(LogLevel::Info) << tag.first << suffix << " does not exist in "
 					 << theConfiguration.getVic2ModName() << "/gfx/flags/";
 		}
+	}
+}
+
+void V2::World::outputTechnologies() const
+{
+	std::string commentArea;
+
+	for (const auto& category: technologies.getCategories())
+	{
+		std::ofstream output("output/" + theConfiguration.getOutputName() + "/technologies/" + category.first);
+		if (!output.is_open())
+			throw std::runtime_error("Could not open " + category.first + " for writing");
+		for (const auto& technology: category.second)
+		{
+			if (technology.getArea() != commentArea)
+			{
+				commentArea = technology.getArea();
+				output << "#" << commentArea << "\n";
+			}
+			output << technology;
+		}
+		output.close();
 	}
 }

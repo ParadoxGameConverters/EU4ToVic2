@@ -437,6 +437,9 @@
     <ClCompile Include="Source\Mappers\SuperGroupMapper\SuperRegion.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroups.cpp" />
     <ClCompile Include="Source\Mappers\TechGroups\TechGroupsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Technologies\Technologies.cpp" />
+    <ClCompile Include="Source\Mappers\Technologies\Technology.cpp" />
+    <ClCompile Include="Source\Mappers\Technologies\TechYearMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchool.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchoolMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchools.cpp" />
@@ -479,6 +482,7 @@
     <ClCompile Include="Source\V2World\Output\outReforms.cpp" />
     <ClCompile Include="Source\V2World\Output\outRegiment.cpp" />
     <ClCompile Include="Source\V2World\Output\outRelation.cpp" />
+    <ClCompile Include="Source\V2World\Output\outTechnology.cpp" />
     <ClCompile Include="Source\V2World\Output\outUncivReforms.cpp" />
     <ClCompile Include="Source\V2World\Output\outVersion.cpp" />
     <ClCompile Include="Source\V2World\Output\outWar.cpp" />
@@ -635,6 +639,9 @@
     <ClInclude Include="Source\Mappers\SuperGroupMapper\SuperRegion.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroups.h" />
     <ClInclude Include="Source\Mappers\TechGroups\TechGroupsMapper.h" />
+    <ClInclude Include="Source\Mappers\Technologies\Technologies.h" />
+    <ClInclude Include="Source\Mappers\Technologies\Technology.h" />
+    <ClInclude Include="Source\Mappers\Technologies\TechYearMapper.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchool.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchoolMapper.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchools.h" />

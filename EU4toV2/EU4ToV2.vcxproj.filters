@@ -580,6 +580,18 @@
     <ClCompile Include="Source\V2World\Decisions\HPMDecisions.cpp">
       <Filter>Vic2World\Decisions</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Technologies\Technologies.cpp">
+      <Filter>Mappers\Technologies</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Technologies\TechYearMapper.cpp">
+      <Filter>Mappers\Technologies</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Technologies\Technology.cpp">
+      <Filter>Mappers\Technologies</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outTechnology.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1118,6 +1130,15 @@
     <ClInclude Include="Source\Mappers\Issues\ModReforms.h">
       <Filter>Mappers\Issues</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\Technologies\Technologies.h">
+      <Filter>Mappers\Technologies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Technologies\TechYearMapper.h">
+      <Filter>Mappers\Technologies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Technologies\Technology.h">
+      <Filter>Mappers\Technologies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1374,6 +1395,9 @@
     </Filter>
     <Filter Include="Vic2World\Decisions">
       <UniqueIdentifier>{8758d162-b22a-45e3-b4d7-1a122c111a14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\Technologies">
+      <UniqueIdentifier>{4ace6f45-ae89-404d-b1ad-74efcac08a4f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

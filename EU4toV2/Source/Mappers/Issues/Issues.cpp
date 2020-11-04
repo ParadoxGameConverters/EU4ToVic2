@@ -17,7 +17,6 @@ mappers::Issues::Issues()
 void mappers::Issues::registerKeys()
 {
 	registerRegex("[a-z_]+", [this](const std::string& categoryName, std::istream& theStream) {
-		Log(LogLevel::Info) << " -> " << categoryName;
 		commonItems::stringsOfItemNames issuesStr(theStream);
 		const auto& issues = issuesStr.getStrings();
 		categories.insert(std::make_pair(categoryName, issues));
