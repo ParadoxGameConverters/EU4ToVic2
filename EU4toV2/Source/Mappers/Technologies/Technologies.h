@@ -14,6 +14,7 @@ class Technologies: commonItems::parser
 	Technologies();
 
 	void updateTechs();
+	void setTechLevels();
 
 	[[nodiscard]] const auto& getCategories() const { return categories; }
 	[[nodiscard]] const auto& getTechnologies() const { return technologies; }

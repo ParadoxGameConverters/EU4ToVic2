@@ -14,9 +14,11 @@ class Technology: commonItems::parser
 
 	void setTechName(const std::string& techName) { name = techName; }
 	void setYear(const std::string& techYear) { year = stoi(techYear); }
+	void setLevel(int techLevel) { level = techLevel; }
 
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getArea() const { return area; }
+	[[nodiscard]] const auto& getLevel() const { return level; }
 	[[nodiscard]] const auto& getYear() const { return year; }
 	[[nodiscard]] const auto& getCost() const { return cost; }
 	[[nodiscard]] const auto& getUncivMilitary() const { return uncivMilitary; }
@@ -30,6 +32,7 @@ class Technology: commonItems::parser
 
 	std::string name;
 	std::string area;
+	int level;
 	int year;
 	int cost;
 	std::string uncivMilitary;
