@@ -28,7 +28,6 @@
 #include "../Mappers/RegionLocalizations/RegionLocalizations.h"
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/StartingInventionMapper/StartingInventionMapper.h"
-#include "../Mappers/StartingTechMapper/StartingTechMapper.h"
 #include "../Mappers/StateMapper/StateMapper.h"
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../Mappers/Technologies/Technologies.h"
@@ -198,7 +197,6 @@ class World
 	mappers::BucketList bucketShuffler;
 	mappers::PortProvinces portProvincesMapper;
 	mappers::WarGoalMapper warGoalMapper;
-	mappers::StartingTechMapper startingTechMapper;
 	mappers::StartingInventionMapper startingInventionMapper;
 	mappers::CultureGroups cultureGroupsMapper;
 	mappers::RegionLocalizations regionLocalizations;

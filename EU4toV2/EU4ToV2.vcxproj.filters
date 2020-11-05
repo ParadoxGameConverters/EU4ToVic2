@@ -592,6 +592,12 @@
     <ClCompile Include="Source\V2World\Output\outTechnology.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Technologies\StartingTech.cpp">
+      <Filter>Mappers\Technologies</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Technologies\StartingTechMapper.cpp">
+      <Filter>Mappers\Technologies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1137,6 +1143,12 @@
       <Filter>Mappers\Technologies</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\Technologies\Technology.h">
+      <Filter>Mappers\Technologies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Technologies\StartingTech.h">
+      <Filter>Mappers\Technologies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Technologies\StartingTechMapper.h">
       <Filter>Mappers\Technologies</Filter>
     </ClInclude>
   </ItemGroup>

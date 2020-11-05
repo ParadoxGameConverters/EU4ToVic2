@@ -23,7 +23,7 @@ class Regions;
 namespace mappers
 {
 class StartingInventionMapper;
-class StartingTechMapper;
+class Technologies;
 class RegimentCostsMapper;
 class AdjacencyMapper;
 class LeaderTraitMapper;
@@ -94,7 +94,7 @@ class Country
 	void addRailroadtoCapitalState();
 	void addTech(const std::string& newTech) { techs.insert(newTech); }
 	void convertLandlessReforms(const Country& capitalOwner);
-	void setTechs(const mappers::StartingTechMapper& startingTechMapper,
+	void setTechs(const mappers::Technologies& technologies,
 		 const mappers::StartingInventionMapper& startingInventionMapper,
 		 double armyScore,
 		 double navyScore,

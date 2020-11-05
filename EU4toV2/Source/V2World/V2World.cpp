@@ -1269,7 +1269,7 @@ void V2::World::convertTechs(const EU4::World& sourceWorld)
 			const auto cultureScore = techValues.getNormalizedCultureTech(*country.second->getSourceCountry());
 			const auto industryScore = techValues.getNormalizedIndustryTech(*country.second->getSourceCountry());
 			const auto commerceScore = techValues.getNormalizedCommerceTech(*country.second->getSourceCountry());
-			country.second->setTechs(startingTechMapper, startingInventionMapper, armyScore, navyScore, cultureScore, industryScore, commerceScore);
+			country.second->setTechs(technologies, startingInventionMapper, armyScore, navyScore, cultureScore, industryScore, commerceScore);
 		}
 	}
 }
