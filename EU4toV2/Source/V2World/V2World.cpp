@@ -2060,6 +2060,10 @@ void V2::World::copyModFiles() const
 				fs::copy_file(mod + "/interface/" + file, output + "/interface/" + file);	
 			}
 		}
+
+		// inventions
+		fs::copy(mod + "/inventions", output + "/inventions", fs::copy_options::recursive);
+
 		// localisation
 		const auto& localisationFiles = commonItems::GetAllFilesInFolder(mod + "/localisation");
 		for (const auto& file: localisationFiles)
