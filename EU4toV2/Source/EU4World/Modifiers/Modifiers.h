@@ -9,10 +9,9 @@ namespace EU4
 class Modifiers: commonItems::parser
 {
   public:
-	Modifiers() = default;
+	Modifiers();
 	explicit Modifiers(std::istream& theStream);
 
-	void initialize();
 	[[nodiscard]] std::optional<Modifier> getModifier(const std::string& modifierName) const;
 
   private:

@@ -10,7 +10,7 @@ EU4::Modifiers::Modifiers(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
-void EU4::Modifiers::initialize()
+EU4::Modifiers::Modifiers()
 {
 	registerKeys();
 	processFolder("event_modifiers");

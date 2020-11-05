@@ -15,7 +15,7 @@ class PopRatio
 	void convertToCulture(const std::string& culture);
 	void convertToReligion(const std::string& religion);
 	void convertTo(const std::string& culture, const std::string& religion);
-	void setCulture(const std::string& cul, const std::string& sr);
+	void setNeoCulture(const std::string& neoCulture, const std::string& superRegion);
 
 	[[nodiscard]] const auto& getCulture() const { return culture; }
 	[[nodiscard]] const auto& getOriginalCulture() const { return originalEU4culture; }

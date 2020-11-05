@@ -5,6 +5,17 @@
 
 namespace EU4
 {
+struct DateChange
+{
+	DateChange(const std::string& theChangeType, const std::string& theChangeValue)
+	{
+		changeType = theChangeType;
+		changeValue = theChangeValue;
+	}
+	std::string changeType;
+	std::string changeValue;
+};
+
 class DateItems: commonItems::parser
 {
   public:
@@ -15,7 +26,7 @@ class DateItems: commonItems::parser
   private:
 	void registerKeys();
 
-	std::vector<std::pair<std::string, std::string>> dateChanges; // changeType, changeValue
+	std::vector<DateChange> dateChanges; // changeType, changeValue
 };
 } // namespace EU4
 

@@ -33,14 +33,14 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 	registerRegex("\\d+\\.\\d+\\.\\d+", [this](const std::string& dateString, std::istream& theStream) {
 		auto theDate = date(dateString);
 		const DateItems theItems(theStream);
-		for (const auto& [changeType, changeValue] : theItems.getDateChanges())
+		for (const auto& dateChange : theItems.getDateChanges())
 		{
-			if (changeType == "owner")
-				ownershipHistory.emplace_back(std::make_pair(theDate, changeValue));
-			else if (changeType == "culture")
-				cultureHistory.emplace_back(std::make_pair(theDate, changeValue));
-			else if (changeType == "religion")
-				religionHistory.emplace_back(std::make_pair(theDate, changeValue));
+			if (dateChange.changeType == "owner")
+				ownershipHistory.emplace_back(std::make_pair(theDate, dateChange.changeValue));
+			else if (dateChange.changeType == "culture")
+				cultureHistory.emplace_back(std::make_pair(theDate, dateChange.changeValue));
+			else if (dateChange.changeType == "religion")
+				religionHistory.emplace_back(std::make_pair(theDate, dateChange.changeValue));
 		}
 	});
 	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
@@ -208,5 +208,5 @@ void EU4::ProvinceHistory::decayPopRatios(const date& oldDate, const date& newDa
 
 void EU4::ProvinceHistory::updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName, const std::string& superRegion)
 {
-	for (auto& popRatio: popRatios) if (popRatio.getCulture() == oldCultureName) popRatio.setCulture(neoCultureName, superRegion);
+	for (auto& popRatio: popRatios) if (popRatio.getCulture() == oldCultureName) popRatio.setNeoCulture(neoCultureName, superRegion);
 }

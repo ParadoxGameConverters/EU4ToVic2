@@ -1750,7 +1750,7 @@ void V2::World::outputProvinces() const
 	for (const auto& province: provinces)
 	{
 		auto filename = province.second->getFilename();
-		auto path = trimPath(filename);
+		auto path = getPath(filename);
 		if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces/" + path))
 			throw std::runtime_error("Could not create directory: output/" + theConfiguration.getOutputName() + "/history/provinces/" + path);
 

@@ -11,7 +11,7 @@ EU4::DateItems::DateItems(std::istream& theStream)
 void EU4::DateItems::registerKeys()
 {
 	registerRegex("owner|culture|religion", [this](const std::string& changeType, std::istream& theStream) {
-		dateChanges.emplace_back(changeType, commonItems::singleString(theStream).getString());
+		dateChanges.emplace_back(DateChange(changeType, commonItems::singleString(theStream).getString()));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

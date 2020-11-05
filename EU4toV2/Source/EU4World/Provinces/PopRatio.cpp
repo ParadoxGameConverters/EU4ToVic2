@@ -57,12 +57,12 @@ void EU4::PopRatio::convertTo(const std::string& _culture, const std::string& _r
 	religion = _religion;
 }
 
-void EU4::PopRatio::setCulture(const std::string& cul, const std::string& sr)
+void EU4::PopRatio::setNeoCulture(const std::string& neoCulture, const std::string& superRegion)
 {
 	// Used to override history entries when loading neocultures.
 
 	if (originalEU4culture.empty())
 		originalEU4culture = culture;
-	culture = cul;
-	targetSuperRegion = sr;
+	culture = neoCulture;
+	targetSuperRegion = superRegion;
 }
