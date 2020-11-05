@@ -1,184 +1,227 @@
-1836 = {
+# Use this to override original tech availability dates
+1815 = {
 	post_napoleonic_thought
-	strategic_mobility
 	flintlock_rifles
-	muzzle_loaded_rifles
 	bronze_muzzle_loaded_artillery
-	iron_muzzle_loaded_artillery
 	military_staff_system
-	military_plans
 	army_command_principle
-	army_professionalism
 	private_banks
-	stock_exchange
 	no_standard
-	ad_hoc_money_bill_printing
-	private_bank_money_bill_printing
 	early_classical_theory_and_critique
-	late_classical_theory
-	collectivist_theory
 	freedom_of_trade
-	market_structure
-	business_regulations
 	guild_based_production
-	organized_factories
-	scientific_management
 	classicism_n_early_romanticism
-	romanticism
-	realism
 	late_enlightenment_philosophy
 	malthusian_thought
-	positivism
-	functionalism
 	enlightenment_thought
-	ideological_thought
 	introspectionism
-	associationism
-	piston_steam_engine
-	high_pressure_steam_engine
-	compound_steam_engines
-	mechanical_production
-	interchangeable_parts
-	semi_automatization
+	water_wheel_power
+	publishing_industry
 	mechanized_mining
 	experimental_railroad
 	basic_chemistry
-	medicine
-	inorganic_chemistry
 	post_nelsonian_thought
-	battleship_column_doctrine
 	clipper_design
-	steamers
 	naval_design_bureaus
-	fire_control_systems
 	alphabetic_flag_signaling
-	naval_plans
 	the_command_principle
-	naval_professionalism
 }
-1840 = {
-	idealism
-	state_n_government
-	puddling
-	early_railroad
+1825 = {
+	ad_hoc_money_bill_printing
+	late_classical_theory
+	market_structure
+	organized_factories
+	romanticism
+	positivism
+	ideological_thought
+	associationism
+	practical_steam_engine
+	mechanical_production
+	clean_coal
 }
-1850 = {
-	point_defense_system
-	breech_loaded_rifles
-	iron_breech_loaded_artillery
-	military_statistics
-	army_decision_making
-	business_banks
-	central_bank_money_bill_printing
-	the_historical_theory
-	market_regulations
-	time_saving_measures
-	impressionism
-	biologism
-	nationalism_n_imperialism
-	phenomenalism
-	steam_turbine
-	pneumatic_and_hydraulics
-	hot_blast
-	iron_railroad
-	organic_chemistry
-	weapon_platforms
-	naval_statistics
-	naval_decision_making
-}
-1855 = {
-	raider_group_doctrine
-	iron_steamers
-}
-1860 = {
-	empiricism
-}
-1870 = {
-	deep_defense_system
-	machine_guns
-	steel_breech_loaded_artillery
-	military_logistics
-	army_risk_management
-	investment_banks
-	modern_central_bank_system
-	neoclassical_theory
-	economic_responsibility
-	management_strategy
-	expressionism
-	analytic_philosophy
-	social_science
-	revolution_n_counterrevolution
-	experimental_psychology
-	assembly_line
-	bessemer_process
-	steel_railroad
-	electricity
-	main_armament
-	naval_logistics
-	naval_risk_management
-}
-1875 = {
-	blue_and_brown_water_schools
-}
-1880 = {
-	phenomenology_n_hermeneutic
-	combustion_engine
-	steel_steamers
-}
-1890 = {
-	psychoanalysis
-	advanced_metallurgy
-}
-1895 = {
-	high_sea_battle_fleet
-}
-1898 = {
-	integral_rail_system
-}
-1900 = {
-	infiltration
-	bolt_action_rifles
-	indirect_artillery_fire
-	military_directionism
-	army_nco_training
-	bank_inspection_board
-	market_determined_exchange_rates
-	keynesian_economics
-	government_interventionism
-	organizational_development
-	mass_culture_n_the_avant_garde
-	anti__rationalism
-	social_alienation
-	mass_politics
-	electrical_power_generation
-	shift_work
-	synthetic_polymers
-	steam_turbine_ships
-	advanced_naval_design
-	naval_directionism
-	naval_nco_training
-}
-1905 = {
-	electric_furnace
-}
-1910 = {
-	behaviorism
-}
-1914 = {
-	aeronautics
-	modern_naval_doctrine
-}
-1915 = {
-	limited_access_roads
-}
-1919 = {
-	modern_army_doctrine
-	modern_divisional_structure
-	heavy_armament_dunno
-	great_war_experience
-	mutual_funds
-	oil_driven_ships
-	modern_naval_design
-	naval_integration
-	modern_naval_training
-}
+
+# Original tech availability dates
+#1836 = {
+#	post_napoleonic_thought
+#	strategic_mobility
+#	flintlock_rifles
+#	muzzle_loaded_rifles
+#	bronze_muzzle_loaded_artillery
+#	iron_muzzle_loaded_artillery
+#	military_staff_system
+#	military_plans
+#	army_command_principle
+#	army_professionalism
+#	private_banks
+#	stock_exchange
+#	no_standard
+#	ad_hoc_money_bill_printing
+#	private_bank_money_bill_printing
+#	early_classical_theory_and_critique
+#	late_classical_theory
+#	collectivist_theory
+#	freedom_of_trade
+#	market_structure
+#	business_regulations
+#	guild_based_production
+#	organized_factories
+#	scientific_management
+#	classicism_n_early_romanticism
+#	romanticism
+#	realism
+#	late_enlightenment_philosophy
+#	malthusian_thought
+#	positivism
+#	functionalism
+#	enlightenment_thought
+#	ideological_thought
+#	introspectionism
+#	associationism
+#	piston_steam_engine
+#	high_pressure_steam_engine
+#	compound_steam_engines
+#	mechanical_production
+#	interchangeable_parts
+#	semi_automatization
+#	mechanized_mining
+#	experimental_railroad
+#	basic_chemistry
+#	medicine
+#	inorganic_chemistry
+#	post_nelsonian_thought
+#	battleship_column_doctrine
+#	clipper_design
+#	steamers
+#	naval_design_bureaus
+#	fire_control_systems
+#	alphabetic_flag_signaling
+#	naval_plans
+#	the_command_principle
+#	naval_professionalism
+#}
+#1840 = {
+#	idealism
+#	state_n_government
+#	puddling
+#	early_railroad
+#}
+#1850 = {
+#	point_defense_system
+#	breech_loaded_rifles
+#	iron_breech_loaded_artillery
+#	military_statistics
+#	army_decision_making
+#	business_banks
+#	central_bank_money_bill_printing
+#	the_historical_theory
+#	market_regulations
+#	time_saving_measures
+#	impressionism
+#	biologism
+#	nationalism_n_imperialism
+#	phenomenalism
+#	steam_turbine
+#	pneumatic_and_hydraulics
+#	hot_blast
+#	iron_railroad
+#	organic_chemistry
+#	weapon_platforms
+#	naval_statistics
+#	naval_decision_making
+#}
+#1855 = {
+#	raider_group_doctrine
+#	iron_steamers
+#}
+#1860 = {
+#	empiricism
+#}
+#1870 = {
+#	deep_defense_system
+#	machine_guns
+#	steel_breech_loaded_artillery
+#	military_logistics
+#	army_risk_management
+#	investment_banks
+#	modern_central_bank_system
+#	neoclassical_theory
+#	economic_responsibility
+#	management_strategy
+#	expressionism
+#	analytic_philosophy
+#	social_science
+#	revolution_n_counterrevolution
+#	experimental_psychology
+#	assembly_line
+#	bessemer_process
+#	steel_railroad
+#	electricity
+#	main_armament
+#	naval_logistics
+#	naval_risk_management
+#}
+#1875 = {
+#	blue_and_brown_water_schools
+#}
+#1880 = {
+#	phenomenology_n_hermeneutic
+#	combustion_engine
+#	steel_steamers
+#}
+#1890 = {
+#	psychoanalysis
+#	advanced_metallurgy
+#}
+#1895 = {
+#	high_sea_battle_fleet
+#}
+#1898 = {
+#	integral_rail_system
+#}
+#1900 = {
+#	infiltration
+#	bolt_action_rifles
+#	indirect_artillery_fire
+#	military_directionism
+#	army_nco_training
+#	bank_inspection_board
+#	market_determined_exchange_rates
+#	keynesian_economics
+#	government_interventionism
+#	organizational_development
+#	mass_culture_n_the_avant_garde
+#	anti__rationalism
+#	social_alienation
+#	mass_politics
+#	electrical_power_generation
+#	shift_work
+#	synthetic_polymers
+#	steam_turbine_ships
+#	advanced_naval_design
+#	naval_directionism
+#	naval_nco_training
+#}
+#1905 = {
+#	electric_furnace
+#}
+#1910 = {
+#	behaviorism
+#}
+#1914 = {
+#	aeronautics
+#	modern_naval_doctrine
+#}
+#1915 = {
+#	limited_access_roads
+#}
+#1919 = {
+#	modern_army_doctrine
+#	modern_divisional_structure
+#	heavy_armament_dunno
+#	great_war_experience
+#	mutual_funds
+#	oil_driven_ships
+#	modern_naval_design
+#	naval_integration
+#	modern_naval_training
+#}
