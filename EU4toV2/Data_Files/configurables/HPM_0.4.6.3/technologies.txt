@@ -1,46 +1,3 @@
-# Use this to override original tech availability dates. Comments are there for convenience.
-1815 = {
-	post_napoleonic_thought	#army_doctrine_1
-	flintlock_rifles	#light_armament_1
-	bronze_muzzle_loaded_artillery	#heavy_armament_1
-	military_staff_system	#military_science_1
-	army_command_principle	#army_leadership_1
-	private_banks	#financial_institutions_1
-	no_standard	#monetary_system_1
-	early_classical_theory_and_critique	#economic_thought_and_critique_1
-	freedom_of_trade	#market_functionality_1
-	guild_based_production	#tech_organization_1
-	classicism_n_early_romanticism	#aesthetics_1
-	late_enlightenment_philosophy	#philosophy_1
-	malthusian_thought	#social_thought_1
-	enlightenment_thought	#political_thought_1
-	introspectionism	#psychology_1
-	piston_steam_engine	#tech_power_1
-	mechanical_production	#mechanization_1
-	mechanized_mining	#metallurgy_1
-	experimental_railroad	#tech_infrastructure_1
-	basic_chemistry	#chemistry_and_electricity_1
-	post_nelsonian_thought	#naval_doctrine_1
-	clipper_design	#ship_construction_1
-	naval_design_bureaus	#naval_engineering_1
-	alphabetic_flag_signaling	#naval_science_1
-	the_command_principle	#naval_leadership_1
-}
-1825 = {
-	ad_hoc_money_bill_printing	#monetary_system_2
-	late_classical_theory	#economic_thought_and_critique_2
-	market_structure	#market_functionality_2
-	organized_factories	#tech_organization_2
-	romanticism	#aesthetics_2
-	positivism	#social_thought_2
-	ideological_thought	#political_thought_2
-	associationism	#psychology_2
-	high_pressure_steam_engine	#tech_power_2
-	interchangeable_parts	#mechanization_2
-	puddling	#metallurgy_2
-}
-
-# Original tech availability dates
 #1836 = {
 #	post_napoleonic_thought	#army_doctrine_1
 #	strategic_mobility	#army_doctrine_2
@@ -83,7 +40,7 @@
 #	mechanical_production	#mechanization_1
 #	interchangeable_parts	#mechanization_2
 #	semi_automatization	#mechanization_3
-#	mechanized_mining	#metallurgy_1
+#	hot_blast	#metallurgy_1
 #	experimental_railroad	#tech_infrastructure_1
 #	basic_chemistry	#chemistry_and_electricity_1
 #	medicine	#chemistry_and_electricity_2
@@ -102,7 +59,7 @@
 #1840 = {
 #	idealism	#philosophy_2
 #	state_n_government	#political_thought_3
-#	puddling	#metallurgy_2
+#	mechanized_mining	#metallurgy_2
 #	early_railroad	#tech_infrastructure_2
 #}
 #1850 = {
@@ -122,7 +79,7 @@
 #	phenomenalism	#psychology_3
 #	steam_turbine	#tech_power_4
 #	pneumatic_and_hydraulics	#mechanization_4
-#	hot_blast	#metallurgy_3
+#	regenerative_furnaces	#metallurgy_3
 #	iron_railroad	#tech_infrastructure_3
 #	organic_chemistry	#chemistry_and_electricity_4
 #	weapon_platforms	#naval_engineering_3
@@ -153,7 +110,7 @@
 #	revolution_n_counterrevolution	#political_thought_5
 #	experimental_psychology	#psychology_4
 #	assembly_line	#mechanization_5
-#	bessemer_process	#metallurgy_4
+#	drilling_and_blasting	#metallurgy_4
 #	steel_railroad	#tech_infrastructure_4
 #	electricity	#chemistry_and_electricity_5
 #	main_armament	#naval_engineering_4
