@@ -1,4 +1,5 @@
 #include "UnitTypeMapper.h"
+#include "CommonFunctions.h"
 #include "Configuration.h"
 #include "OSCompatibilityLayer.h"
 #include <set>
@@ -23,8 +24,7 @@ void mappers::UnitTypeMapper::loadUnitType(const std::string& unitName, std::ist
 
 void mappers::UnitTypeMapper::addUnitFileToRegimentTypeMap(const std::string& directory, const std::string& filename)
 {
-	const auto period = filename.find_last_of('.');
-	auto name = filename.substr(0, period);
+	auto name = trimExtension(filename);
 
 	UnitType unitType(directory + "/" + filename);
 	if (unitType.getCategory().empty())

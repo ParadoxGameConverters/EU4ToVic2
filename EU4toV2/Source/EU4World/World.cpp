@@ -62,7 +62,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	});
 	registerKeyword("mod_enabled", [](const std::string& unused, std::istream& theStream) {
 		const commonItems::stringList modList(theStream);
-		Mods theMods(modList.getStrings(), theConfiguration);
+		Mods theMods(modList.getStrings());
 	});
 	registerKeyword("revolution_target", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString revTargetStr(theStream);
@@ -82,7 +82,6 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	});
 	registerKeyword("provinces", [this](const std::string& unused, std::istream& theStream) {
 		LOG(LogLevel::Info) << "-> Loading Provinces";
-		modifierTypes.initialize();
 		provinces = std::make_unique<Provinces>(theStream);
 
 		const auto& possibleDate = provinces->getProvince(1)->getFirstOwnedDate();
@@ -149,7 +148,9 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	Log(LogLevel::Progress) << "15 %";
 
 	clearRegisteredKeywords();
-
+	// With mods loaded we can init stuff that requires them.
+	modifierTypes = std::make_unique<Modifiers>();
+	buildingTypes = std::make_unique<mappers::Buildings>();
 	unitTypeMapper.initUnitTypeMapper();
 	cultureGroupsMapper.initForEU4();
 	Log(LogLevel::Progress) << "16 %";
@@ -459,7 +460,7 @@ void EU4::World::addTradeGoodsToProvinces() const
 		{
 			province.second->setTradeGoodPrice(*price);
 		}
-		province.second->determineProvinceWeight(buildingTypes, modifierTypes);
+		province.second->determineProvinceWeight(*buildingTypes, *modifierTypes);
 	}
 }
 

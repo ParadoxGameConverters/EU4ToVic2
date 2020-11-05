@@ -1,36 +1,33 @@
 #ifndef DATE_ITEMS_H
 #define DATE_ITEMS_H
-
 #include "Parser.h"
 #include <vector>
-#include <map>
 
 namespace EU4
 {
-	enum class DateItemType
+struct DateChange
+{
+	DateChange(const std::string& theChangeType, const std::string& theChangeValue)
 	{
-		OWNER_CHANGE,
-		CULTURE_CHANGE,
-		RELIGION_CHANGE
-	};
+		changeType = theChangeType;
+		changeValue = theChangeValue;
+	}
+	std::string changeType;
+	std::string changeValue;
+};
 
-	static std::map<std::string, DateItemType> DateItemNames
-	{
-		{ "owner", DateItemType::OWNER_CHANGE },
-		{ "culture", DateItemType::CULTURE_CHANGE },
-		{ "religion", DateItemType::RELIGION_CHANGE }
-	};
+class DateItems: commonItems::parser
+{
+  public:
+	explicit DateItems(std::istream& theStream);
 
-	class DateItems : commonItems::parser
-	{
-	public:
-		explicit DateItems(std::istream& theStream);
-		
-		[[nodiscard]] const auto& getDateChanges() const { return dateChanges; }
+	[[nodiscard]] const auto& getDateChanges() const { return dateChanges; }
 
-	private:
-		std::vector<std::pair<DateItemType, std::string>> dateChanges;
-	};
-}
+  private:
+	void registerKeys();
+
+	std::vector<DateChange> dateChanges; // changeType, changeValue
+};
+} // namespace EU4
 
 #endif // DATE_ITEMS_H

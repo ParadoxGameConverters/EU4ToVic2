@@ -94,9 +94,9 @@ class World: commonItems::parser
 
 	TradeGoods tradeGoods;
 	Religions theReligions;
-	Modifiers modifierTypes;
+	std::unique_ptr<Modifiers> modifierTypes;
 	mappers::UnitTypeMapper unitTypeMapper;
-	mappers::Buildings buildingTypes;
+	std::unique_ptr<mappers::Buildings> buildingTypes;
 	mappers::CultureGroups cultureGroupsMapper;
 	mappers::SuperGroupMapper superGroupMapper;
 
