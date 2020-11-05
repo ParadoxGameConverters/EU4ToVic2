@@ -10,10 +10,10 @@ namespace mappers
 class Technology: commonItems::parser
 {
   public:
-	Technology(std::istream& theStream, const TechYearMapper& techYearMap);
+	Technology(std::istream& theStream);
 
 	void setTechName(const std::string& techName) { name = techName; }
-	void updateYear(const std::map<std::string, std::string>& theMap);
+	void setYear(const std::string& techYear) { year = stoi(techYear); }
 
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getArea() const { return area; }

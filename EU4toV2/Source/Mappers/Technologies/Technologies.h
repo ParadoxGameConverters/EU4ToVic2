@@ -13,6 +13,8 @@ class Technologies: commonItems::parser
   public:
 	Technologies();
 
+	void updateTechs();
+
 	[[nodiscard]] const auto& getCategories() const { return categories; }
 	[[nodiscard]] const auto& getTechnologies() const { return technologies; }
 
