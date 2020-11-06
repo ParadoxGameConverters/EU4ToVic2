@@ -2051,6 +2051,9 @@ void V2::World::copyModFiles() const
 		// gfx/anims
 		fs::copy(mod + "/gfx/anims", output + "/gfx/anims", fs::copy_options::recursive);
 
+		// gfx/pictures
+		fs::copy(mod + "/gfx/pictures/tech", output + "/gfx/pictures/tech", fs::copy_options::recursive);
+
 		//	/interface
 		const auto& interfaceFiles = commonItems::GetAllFilesInFolder(mod + "/interface");
 		for (const auto& file: interfaceFiles)
