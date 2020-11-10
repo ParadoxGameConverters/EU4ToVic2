@@ -1614,14 +1614,13 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	outputNeoCultures();
 	Log(LogLevel::Progress) << "99 %";
 
-	if (!theConfiguration.getVic2ModName().empty())
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
 	{
 		LOG(LogLevel::Info) << "<- Outputting events";
 		outEvents();
 
 		copyModFiles();
-		outputStateMap(theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName() + "/map/region.txt",
-			 "output/" + theConfiguration.getOutputName() + "/region.txt");
+		outputStateMap(theConfiguration.getVic2ModPath() + "/" + mod + "/map/region.txt", "output/region.txt");
 
 		LOG(LogLevel::Info) << "<- Updating flags";
 		updateFlags();
@@ -2196,41 +2195,91 @@ void V2::World::drawStateMap()
 	{
 		LOG(LogLevel::Debug) << "Drawing state map (V2 -> " << mod << ")";
 		const auto& vanillaStates = vanillaWorld.getStateMapper().getStateMap();
+		std::map<int, std::map<int, int>> freqMap;
 
 		for (const auto& state: vanillaStates)
 		{
-			int origStateID = state.first;
-			output << "Original state:\t" << origStateID << " -> (";
-			int modStateID;
+			output << "Original state:\t" << state.first << "\n";
+			std::map<int, int> freqCounter;
 
 			if (const auto& stateProvinces = state.second; !stateProvinces.empty())
 			{
-				int chosenProvince;
-				if (std::find(stateProvinces.begin(), stateProvinces.end(), origStateID) != stateProvinces.end())
+				for (const auto& province: stateProvinces)
 				{
-					chosenProvince = origStateID;
+					const auto& modStateID = getModStateId(province, output);
+					freqCounter[modStateID]++;
+					output << " -> " << modStateID << "\t{" << freqCounter[modStateID] << "}\n";
 				}
-				else
-				{
-					chosenProvince = *stateProvinces.begin();
-				}
-				output << " " << chosenProvince;
-				int modProvince = provinceMap.find(chosenProvince)->second;
-				output << " -> " << modProvince;
-				for (const auto& state: stateMapper.getStateMap())
-				{
-					const auto& provList = state.second;
-					if (std::find(provList.begin(), provList.end(), modProvince) != provList.end())
-					{
-						modStateID = state.first;
-						break;
-					}
-				}
-				addStateMapping(origStateID, modStateID);
 			}
-			output << " ) ->\t" << modStateID << "\n";
+			freqMap[state.first] = freqCounter;
+		}
+
+		std::vector<int> sortedStates;
+		sortStateMap(freqMap, sortedStates);
+
+		auto idItr = sortedStates.begin();
+		while (idItr != sortedStates.end())
+		{
+			const auto& stateItr = freqMap.find(*idItr);
+			const auto& modStateID = findBestMatch(*stateItr);
+			addStateMapping(stateItr->first, modStateID);
+			freqMap.erase(stateItr->first);
+			updateStateMap(freqMap, modStateID);
+			sortStateMap(freqMap, sortedStates);
+			idItr = sortedStates.begin();
 		}
 	}
+}
+
+int V2::World::findBestMatch(const std::pair<int, std::map<int, int>>& state)
+{
+	const auto& matchItr = std::max_element(
+		state.second.begin(), state.second.end(),
+		[](const std::pair<int, int>& state1, const std::pair<int, int>& state2){
+			return state1.second < state2.second;
+		}
+	);
+	return matchItr->first;
+}
+
+void V2::World::sortStateMap(std::map<int, std::map<int, int>>& freqMap, std::vector<int>& sortedStates)
+{
+	sortedStates.clear();
+	for (const auto& state: freqMap)
+	{
+		if (state.second.size() == 1)
+			sortedStates.push_back(state.first);
+	}
+	for (const auto& state: freqMap)
+	{
+		if (state.second.size() > 1)
+			sortedStates.push_back(state.first);
+	}
+}
+
+void V2::World::updateStateMap(std::map<int, std::map<int, int>>& freqMap, int modStateID)
+{
+	for (auto& remainingState: freqMap)
+	{
+		auto& modStates = remainingState.second;
+		if (modStates.count(modStateID) && modStates.size() > 1)
+		{
+			modStates.erase(modStateID);
+		}
+	}
+}
+
+int V2::World::getModStateId(int province, std::ofstream& output)
+{
+	output << "( " << province;
+	int modProvince = provinceMap.find(province)->second;
+	output << " -> " << modProvince << " )";
+
+	const auto& modStates = stateMapper.getStateMap();
+	const auto& modStateItr = std::find_if(modStates.begin(), modStates.end(), [modProvince](const std::pair<int, std::set<int>> modState) {
+		return modState.second.count(modProvince);
+	});
+	return modStateItr->first;
 }
 
 void V2::World::outputStateMap(std::string srcFile, std::string outFile) const
@@ -2255,7 +2304,8 @@ void V2::World::outputStateMap(std::string srcFile, std::string outFile) const
 
 void V2::World::outStateMap(std::string outFile) const
 {
-	verifyMap(stateMap);
+	if (!verifyMap(stateMap))
+		LOG(LogLevel::Debug) << "State map did not check out. Check " << outFile << " for duplicate mappings";
 
 	Log(LogLevel::Debug) << "Outputting state map";
 	std::ofstream output(outFile);
@@ -2269,8 +2319,9 @@ void V2::World::outStateMap(std::string outFile) const
 
 void V2::World::outProvinceMap(std::string outFile) const
 {
-	verifyMap(provinceMap);
-	
+	if (!verifyMap(stateMap))
+		LOG(LogLevel::Debug) << "Province map did not check out. Check " << outFile << " for duplicate mappings";
+
 	Log(LogLevel::Debug) << "Outputting province map";
 	std::ofstream output(outFile);
 	if (!output.is_open())
@@ -2292,7 +2343,7 @@ void V2::World::outEvents() const
 	}
 }
 
-void V2::World::verifyMap(std::map<int, int> theMap) const
+bool V2::World::verifyMap(std::map<int, int> theMap) const
 {
 	bool mapChecksOut = true;
 	auto mapItr = theMap.begin();
@@ -2307,8 +2358,7 @@ void V2::World::verifyMap(std::map<int, int> theMap) const
 		}
 		if (!mapChecksOut) break;
 	}
-	if (mapChecksOut) Log(LogLevel::Debug) << "Map checked out";
-	else Log(LogLevel::Debug) << "Map didn't check out";
+	return mapChecksOut;
 }
 
 void V2::World::mapUnlocalized(const std::vector<int>& vanillaProvs,
