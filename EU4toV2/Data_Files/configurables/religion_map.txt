@@ -127,10 +127,14 @@ link = { v2 = pre_schism eu4 = nicene }
 link = { v2 = sunni eu4 = islamic } #Before Shia schism
 link = { v2 = sunni_heresy eu4 = abadites eu4 = quranism eu4 = qadariyya eu4 = khawariji eu4 = haruriyyah eu4 = wahhabi eu4 = mahdi eu4 = salafi eu4 = twelver eu4 = zayid eu4 = ismaili eu4 = uwaisi eu4 = quamatian }
 link = { v2 = arab_pagan eu4 = semitic_pagan_reformed }
-link = { v2 = druidist eu4 = druidist }
-link = { v2 = kemetic eu4 = kemetic }
+link = { v2 = druidist eu4 = druidist eu4 = druidism }
+link = { v2 = kemetic eu4 = kemetic eu4 = kemetism }
 link = { v2 = animist eu4 = vasconic }
 link = { v2 = jewish eu4 = tzadikite }
 link = { v2 = jewish_heresy eu4 = bosporan_faith } #Hypsistarians
 
 link = { v2 = noreligion eu4 = r_zombie } #Zombie mod
+
+#IMP:CK3
+link = { v2 = canaanite eu4 = canaanite }
+link = { v2 = mardukism eu4 = mardukism }

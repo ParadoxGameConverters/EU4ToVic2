@@ -310,6 +310,14 @@ pagan = {
 		icon = 57
 		color = { 0.1 0.3 0.85 }
 	}
+	canaanite = {
+		icon = 61
+		color = { 0.1 0.2 0.3 }
+	}
+	mardukism = {
+		icon = 62
+		color = { 0.3 0.2 0.1 }
+	}
 }
 
 zoroastrian = {

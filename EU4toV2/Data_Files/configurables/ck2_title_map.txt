@@ -3966,3 +3966,68 @@ link = { name = "konda" title = "d_konda" region = "e_hre" }
 link = { name = "pelym" title = "d_pelym" region = "e_hre" }
 
 # Counties
+
+
+### IMP:CK3 important countries
+link = { name = "antigonid Kingdom" title = "k_IMPTOCK3_PRY" region = "e_imp" }
+link = { name = "boihaemia" title = "k_bohemia" region = "e_imp" }
+link = { name = "burgundia" title = "k_burgundy" region = "e_imp" }
+link = { name = "byzantion" title = "e_byzantium" region = "e_imp" }
+link = { name = "caledonia" title = "k_scotland" region = "e_imp" }
+link = { name = "carthage" title = "k_IMPTOCK3_CAR" region = "e_imp" }
+link = { name = "croton" title = "c_consenza" region = "e_imp" }
+link = { name = "delmatia" title = "d_dalmatia" region = "e_imp" }
+link = { name = "delphi" title = "k_IMPTOCK3_DLP" region = "e_imp" }
+link = { name = "dumnonia" title = "d_cornwall" region = "e_imp" }
+link = { name = "eblania" title = "c_dublin" region = "e_imp" }
+link = { name = "etruria" title = "k_IMPTOCK3_ETR" region = "e_imp" }
+link = { name = "hermione" title = "k_IMPTOCK3_HRM" region = "e_imp" }
+link = { name = "judea" title = "k_israel" region = "e_imp" }
+link = { name = "korkyra" title = "k_IMPTOCK3_KRK" region = "e_imp" }
+link = { name = "langobardia" title = "k_IMPTOCK3_LGB" region = "e_imp" }
+link = { name = "macedon" title = "k_IMPTOCK3_MAC" region = "e_imp" }
+link = { name = "malaya" title = "k_IMPTOCK3_MLY" region = "e_imp" }
+link = { name = "maurya" title = "k_IMPTOCK3_MRY" region = "e_imp" }
+link = { name = "odrysia" title = "k_IMPTOCK3_ODR" region = "e_imp" }
+link = { name = "parisia" title = "k_IMPTOCK3_PRS" region = "e_imp" }
+link = { name = "parthia" title = "k_IMPTOCK3_PAR" region = "e_imp" }
+link = { name = "rhodes" title = "k_IMPTOCK3_RHO" region = "e_imp" }
+link = { name = "rome" title = "e_roman_empire" region = "e_imp" }
+link = { name = "samaria" title = "k_IMPTOCK3_SMA" region = "e_imp" }
+link = { name = "samnium" title = "k_IMPTOCK3_SAM" region = "e_imp" }
+link = { name = "sarmatia" title = "k_IMPTOCK3_SRM" region = "e_imp" }
+link = { name = "scythia" title = "k_IMPTOCK3_SCY" region = "e_imp" }
+link = { name = "seleukid Empire" title = "k_IMPTOCK3_SEL" region = "e_imp" }
+link = { name = "sparta" title = "k_IMPTOCK3_SPA" region = "e_imp" }
+link = { name = "syracusae" title = "c_siracusa" region = "e_imp" }
+link = { name = "tarentum" title = "c_taranto" region = "e_imp" }
+link = { name = "taurinia" title = "k_IMPTOCK3_TAU" region = "e_imp" }
+link = { name = "teutonia" title = "d_teutonic_order" region = "e_imp" }
+link = { name = "thebes" title = "k_IMPTOCK3_THE" region = "e_imp" }
+link = { name = "vasconia" title = "k_IMPTOCK3_VSC" region = "e_imp" }
+link = { name = "veneto" title = "k_venice" region = "e_imp" }
+link = { name = "achaea" title = "d_achaia" region = "e_imp" }
+link = { name = "aestuia" title = "d_estonia" region = "e_imp" }
+link = { name = "aquitania" title = "k_aquitaine" region = "e_imp" }
+link = { name = "asturia" title = "k_asturias" region = "e_imp" }
+link = { name = "cantabria" title = "k_IMPTOCK3_CNN" region = "e_imp" }
+link = { name = "gallaecia" title = "k_spanish_galicia" region = "e_imp" }
+link = { name = "lusitania" title = "k_portugal" region = "e_imp" }
+link = { name = "suebia" title = "k_suebia" region = "e_imp" }
+link = { name = "assyria" title = "k_IMPTOCK3_ASR" region = "e_imp" }
+link = { name = "babylon" title = "k_IMPTOCK3_BBY" region = "e_imp" }
+link = { name = "belgia" title = "k_bel" region = "e_imp" }
+link = { name = "crete" title = "d_krete" region = "e_imp" }
+link = { name = "helvetia" title = "d_swiss" region = "e_imp" }
+link = { name = "hibernia" title = "k_ireland" region = "e_imp" }
+link = { name = "illyria" title = "k_IMPTOCK3_ILL" region = "e_imp" }
+link = { name = "saxonia" title = "k_saxony" region = "e_imp" }
+link = { name = "dacia" title = "k_dacia" region = "e_imp" }
+link = { name = "gaul" title = "k_IMPTOCK3_GAU" region = "e_imp" }
+link = { name = "hellenic League" title = "k_IMPTOCK3_HLA" region = "e_imp" }
+link = { name = "phoenicia" title = "k_IMPTOCK3_PPN" region = "e_imp" }
+link = { name = "peloponnesian League" title = "k_IMPTOCK3_PLL" region = "e_imp" }
+link = { name = "corinth" title = "k_IMPTOCK3_corinth" region = "e_imp" }
+link = { name = "eastern Rome" title = "e_byzantium" region = "e_imp" }
+link = { name = "olympia" title = "k_IMPTOCK3_olympia" region = "e_imp" }
+link = { name = "sikelia" title = "k_sicily" region = "e_imp" }
