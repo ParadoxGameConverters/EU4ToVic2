@@ -708,7 +708,11 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 			civLevel = civLevel * (static_cast<double>(techGroupsMapper.getWesternizationFromTechGroup(techGroup)) / 10.0);
 	}
 
-	details.literacy *= theConfiguration.getMaxLiteracy() * (pow(10, civLevel / 100 * 0.9 + 0.1) / 10);
+	// Hardcoded exception for shinto countries so japan-likes may retain high industrialization potential
+	if (details.religion == "shinto")
+		details.literacy *= theConfiguration.getMaxLiteracy();
+	else
+		details.literacy *= theConfiguration.getMaxLiteracy() * (pow(10, civLevel / 100 * 0.9 + 0.1) / 10);
 
 	/*
 	Drop nominal literacy according to starting date. The curve is crafted to hit the following literacy percentage points:
