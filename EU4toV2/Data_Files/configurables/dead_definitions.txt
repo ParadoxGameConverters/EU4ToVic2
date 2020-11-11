@@ -1,3 +1,8 @@
+# This file defines culture, religions, government, civilized and capital for dead nations.
+# These will override whatever we loaded in vanilla history files. What isn't listed will default to either history entries or won't be set, depending on case.
+# Tag is mandatory, the rest is not. Only one of each is allowed:
+# tag, primary_culture, religion, government, civilized, capital
+
 link = { tag = AAA primary_culture = dummy religion = pre_schism government = theocracy civilized = no capital = 322 }
 link = { tag = AAC primary_culture = north_german religion = protestant government = presidential_dictatorship civilized = yes capital = 576 }
 link = { tag = ABB primary_culture = sudanese religion = sunni government = absolute_monarchy civilized = no capital = 1835 }

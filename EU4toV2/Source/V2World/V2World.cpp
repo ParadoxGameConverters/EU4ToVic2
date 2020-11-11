@@ -119,6 +119,10 @@ V2::World::World(const EU4::World& sourceWorld,
 
 	LOG(LogLevel::Info) << "-> Merging Nations";
 	addUnions();
+
+	Log(LogLevel::Info) << "-> Invoking the Undead";
+	updateDeadNations();
+
 	Log(LogLevel::Progress) << "66 %";
 
 	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
@@ -146,6 +150,29 @@ V2::World::World(const EU4::World& sourceWorld,
 
 	LOG(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
+
+void V2::World::updateDeadNations()
+{
+	// We're updating dead nations with definitions from our predefined data file.
+	for (const auto& [tag, country]: countries)
+		if (country->getProvinces().empty()) // Dead as a doornail.
+		{
+			const auto& definition = deadDefinitionMapper.getDeadDefinitionForTag(tag);
+			if (!definition)
+				continue;
+			if (definition->culture)
+				country->setPrimaryCulture(*definition->culture);
+			if (definition->religion)
+				country->setReligion(*definition->religion);
+			if (definition->government)
+				country->setGovernment(*definition->government);
+			if (definition->capital)
+				country->setCapital(*definition->capital);
+			if (definition->civilized)
+				country->setCivilized(*definition->civilized);
+		}
+}
+
 
 void V2::World::addReligionCulture()
 {
