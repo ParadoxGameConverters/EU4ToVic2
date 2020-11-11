@@ -1,0 +1,586 @@
+link = { tag = AAA primary_culture = dummy religion = pre_schism government = theocracy civilized = no capital = 322 }
+link = { tag = AAC primary_culture = north_german religion = protestant government = presidential_dictatorship civilized = yes capital = 576 }
+link = { tag = ABB primary_culture = sudanese religion = sunni government = absolute_monarchy civilized = no capital = 1835 }
+link = { tag = ABK primary_culture = georgian religion = orthodox government = presidential_dictatorship civilized = yes capital = 1095 }
+link = { tag = ABO primary_culture = aborigine religion = animist civilized = no capital = 2468 }
+link = { tag = ACA primary_culture = french_canadian religion = catholic government = democracy civilized = yes capital = 71 }
+link = { tag = ACH primary_culture = greek religion = orthodox government = absolute_monarchy civilized = yes capital = 842 }
+link = { tag = ADA primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 2068 }
+link = { tag = ADO primary_culture = catalan religion = catholic government = theocracy civilized = yes capital = 1 }
+link = { tag = ADU primary_culture = andalucian religion = sunni government = theocracy civilized = yes capital = 510 }
+link = { tag = AES primary_culture = anglo_saxon religion = norse_pagan_reformed civilized = yes capital = 300 }
+link = { tag = AGC primary_culture = swahili religion = sunni government = absolute_monarchy civilized = no capital = 2061 }
+link = { tag = AGU government = democracy civilized = yes capital = 2236 }
+link = { tag = AIN primary_culture = ainu religion = shinto government = absolute_monarchy civilized = no capital = 1642 }
+link = { tag = AKH primary_culture = tatar religion = sunni government = absolute_monarchy civilized = no capital = 1036 }
+link = { tag = AKK primary_culture = azerbaijani religion = sunni government = absolute_monarchy civilized = no capital = 893 }
+link = { tag = ALE primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 417 }
+link = { tag = ALH primary_culture = bedouin religion = sunni government = absolute_monarchy civilized = no capital = 1157 }
+link = { tag = ALI primary_culture = alien religion = noreligion government = theocracy civilized = yes }
+link = { tag = ALL primary_culture = bedouin religion = sunni government = theocracy civilized = yes capital = 1151 }
+link = { tag = ALN primary_culture = alan religion = orthodox civilized = yes capital = 1054 }
+link = { tag = ALS primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 409 }
+link = { tag = ALT primary_culture = tatar religion = sunni civilized = yes capital = 1068 }
+link = { tag = ALW capital = 905 civilized = yes primary_culture = mashriqi religion = arab_pagan }
+link = { tag = AMD primary_culture = avadhi religion = sunni government = absolute_monarchy civilized = no capital = 1297 }
+link = { tag = AMG primary_culture = occitan religion = catholic government = absolute_monarchy civilized = yes capital = 460 }
+link = { tag = AND primary_culture = telegu religion = hindu government = absolute_monarchy civilized = no capital = 1283 }
+link = { tag = ANN primary_culture = vietnamese religion = gelugpa government = absolute_monarchy civilized = no capital = 1375 }
+link = { tag = ANS primary_culture = south_german religion = catholic government = absolute_monarchy civilized = yes capital = 595 }
+link = { tag = ANT primary_culture = malagasy religion = shamanism government = absolute_monarchy civilized = no capital = 2115 }
+link = { tag = AOM primary_culture = nanfaren religion = catholic government = hms_government civilized = yes capital = 1498 }
+link = { tag = AOT primary_culture = maori religion = animist civilized = no capital = 2512 }
+link = { tag = AQU primary_culture = north_italian religion = catholic government = theocracy civilized = yes capital = 736 }
+link = { tag = ARK primary_culture = burmese religion = hindu government = absolute_monarchy civilized = no capital = 1345 }
+link = { tag = ARN primary_culture = catalan religion = catholic government = absolute_monarchy civilized = yes capital = 498 }
+link = { tag = ARO primary_culture = ibo religion = animist government = absolute_monarchy civilized = no capital = 1935 }
+link = { tag = ARU primary_culture = mashriqi religion = sunni civilized = yes capital = 926 }
+link = { tag = ASH primary_culture = akan religion = protestant government = absolute_monarchy civilized = no capital = 1910 }
+link = { tag = ASM primary_culture = assamese religion = hindu government = absolute_monarchy civilized = no capital = 1259 }
+link = { tag = ASR primary_culture = mashriqi religion = sunni civilized = yes capital = 1155 }
+link = { tag = AST primary_culture = australian }
+link = { tag = ASY primary_culture = syriac religion = orthodox civilized = yes capital = 927 }
+link = { tag = ATB government = democracy civilized = yes capital = 2224 }
+link = { tag = ATH primary_culture = greek religion = orthodox government = absolute_monarchy civilized = yes capital = 834 }
+link = { tag = ATR primary_culture = spanish religion = catholic government = hms_government civilized = yes capital = 475 }
+link = { tag = AUG primary_culture = south_german religion = catholic government = absolute_monarchy civilized = yes capital = 592 }
+link = { tag = AUR primary_culture = laessin religion = catholic government = presidential_dictatorship civilized = yes capital = 619 }
+link = { tag = AUV primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 448 }
+link = { tag = AVI primary_culture = occitan religion = catholic government = theocracy civilized = yes capital = 468 }
+link = { tag = AWS primary_culture = afar religion = sunni government = absolute_monarchy civilized = no capital = 1858 }
+link = { tag = AYD primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 869 }
+link = { tag = AZT primary_culture = aztec religion = aztec_reformed government = absolute_monarchy civilized = no capital = 2172 }
+link = { tag = BAH primary_culture = avadhi religion = hindu government = absolute_monarchy civilized = no capital = 1283 }
+link = { tag = BAN primary_culture = south_german religion = catholic civilized = yes capital = 652 }
+link = { tag = BAR primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 408 }
+link = { tag = BBD government = democracy civilized = yes capital = 2229 }
+link = { tag = BEN primary_culture = edo religion = shamanism government = absolute_monarchy civilized = no capital = 1928 }
+link = { tag = BHM government = democracy civilized = yes capital = 2219 }
+link = { tag = BHR primary_culture = bedouin religion = sunni civilized = yes capital = 1162 }
+link = { tag = BIA capital = 1935 primary_culture = ibo religion = animist }
+link = { tag = BIH primary_culture = bihari religion = hindu civilized = yes capital = 1247 }
+link = { tag = BIJ primary_culture = kannada religion = shiite government = absolute_monarchy civilized = no capital = 1300 }
+link = { tag = BIM capital = 1440 primary_culture = moluccan religion = sunni }
+link = { tag = BKF primary_culture = mossi religion = catholic government = democracy civilized = yes capital = 1901 }
+link = { tag = BKV primary_culture = romanian religion = orthodox civilized = yes capital = 662 }
+link = { tag = BLC primary_culture = baluchi religion = sunni government = absolute_monarchy civilized = no capital = 1219 }
+link = { tag = BLZ primary_culture = meashighcaw religion = protestant government = democracy civilized = yes capital = 2190 }
+link = { tag = BMK primary_culture = songhai religion = sunni government = democracy civilized = no capital = 2609 }
+link = { tag = BNG primary_culture = bengali religion = sunni government = absolute_monarchy civilized = no capital = 1254 }
+link = { tag = BNT primary_culture = javanese religion = sunni government = absolute_monarchy civilized = no capital = 1413 }
+link = { tag = BNY primary_culture = baganda religion = shamanism government = absolute_monarchy civilized = no capital = 2019 }
+link = { tag = BOU primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 430 }
+link = { tag = BRB primary_culture = flemish religion = catholic government = absolute_monarchy civilized = yes capital = 387 }
+link = { tag = BRD primary_culture = rundi religion = shamanism government = absolute_monarchy civilized = no capital = 2035 }
+link = { tag = BRG primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 428 }
+link = { tag = BRN primary_culture = north_german religion = protestant government = prussian_constitutionalism civilized = yes capital = 549 }
+link = { tag = BRR primary_culture = marathi religion = sunni government = absolute_monarchy civilized = no capital = 1277 }
+link = { tag = BRT primary_culture = breton religion = catholic government = presidential_dictatorship civilized = yes capital = 424 }
+link = { tag = BRY primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 439 }
+link = { tag = BSG primary_culture = baganda religion = shamanism government = absolute_monarchy civilized = no capital = 2019 }
+link = { tag = BSH primary_culture = sotho religion = animist government = absolute_monarchy civilized = no capital = 2104 }
+link = { tag = BSQ primary_culture = basque religion = catholic government = democracy civilized = yes capital = 492 }
+link = { tag = BTS primary_culture = malagasy religion = shamanism government = absolute_monarchy civilized = no capital = 2115 }
+link = { tag = BUE capital = 2348 government = democracy civilized = yes primary_culture = platinean religion = catholic }
+link = { tag = BUG primary_culture = baganda religion = shamanism government = absolute_monarchy civilized = no capital = 2019 }
+link = { tag = CAS capital = 78 government = democracy civilized = yes primary_culture = anglo_canadian religion = protestant }
+link = { tag = CAY primary_culture = nouvellien religion = catholic government = democracy civilized = yes capital = 2241 }
+link = { tag = CEG capital = 1751 civilized = yes primary_culture = misri religion = coptic }
+link = { tag = CEQ primary_culture = brazilian religion = catholic government = democracy civilized = yes capital = 2432 }
+link = { tag = CGO primary_culture = bakongo religion = catholic government = democracy civilized = yes capital = 1977 }
+link = { tag = CHA primary_culture = vietnamese religion = gelugpa government = absolute_monarchy civilized = no capital = 1380 }
+link = { tag = CHD primary_culture = sara religion = sunni government = democracy civilized = yes capital = 1818 }
+link = { tag = CHG primary_culture = mongol religion = tengri_pagan_reformed government = absolute_monarchy civilized = no capital = 1195 }
+link = { tag = CHI }
+link = { tag = CHK primary_culture = lao religion = gelugpa government = absolute_monarchy civilized = no capital = 1356 }
+link = { tag = CHM primary_culture = quechua religion = shamanism government = absolute_monarchy civilized = no capital = 2292 }
+link = { tag = CHO capital = 1640 primary_culture = japanese religion = shinto }
+link = { tag = CHP primary_culture = mexican religion = catholic government = democracy civilized = yes capital = 2181 }
+link = { tag = CHY primary_culture = north_caucasian religion = orthodox government = presidential_dictatorship civilized = yes capital = 1055 }
+link = { tag = CIR primary_culture = north_caucasian religion = orthodox government = presidential_dictatorship civilized = yes capital = 1049 }
+link = { tag = CKW primary_culture = ovimbundu religion = shamanism government = absolute_monarchy civilized = no capital = 1982 }
+link = { tag = CLA primary_culture = ibibio religion = animist government = absolute_monarchy civilized = no capital = 1934 }
+link = { tag = CLC primary_culture = armenian religion = orthodox civilized = yes capital = 894 }
+link = { tag = CND primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 880 }
+link = { tag = CNN primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 258 }
+link = { tag = CPG primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 406 }
+link = { tag = CPL primary_culture = polish religion = catholic civilized = yes capital = 706 }
+link = { tag = CPV primary_culture = morado religion = catholic government = democracy civilized = yes capital = 1876 }
+link = { tag = CRB government = democracy civilized = yes capital = 2237 }
+link = { tag = CRK primary_culture = muskogean religion = shamanism government = absolute_monarchy civilized = no capital = 195 }
+link = { tag = CRN primary_culture = welsh religion = protestant government = absolute_monarchy civilized = yes capital = 299 }
+link = { tag = CRS primary_culture = north_italian religion = catholic government = presidential_dictatorship civilized = yes capital = 473 }
+link = { tag = CRT primary_culture = south_german religion = catholic government = absolute_monarchy civilized = yes capital = 618 }
+link = { tag = CST primary_culture = spanish religion = catholic government = absolute_monarchy civilized = yes capital = 489 }
+link = { tag = CUR government = democracy civilized = yes capital = 2234 }
+link = { tag = CYR primary_culture = maghrebi religion = sunni government = absolute_monarchy civilized = no capital = 1735 }
+link = { tag = CZE primary_culture = czech religion = catholic government = absolute_monarchy civilized = yes capital = 625 }
+link = { tag = D01 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D02 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D03 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D04 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D05 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D06 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D07 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D08 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D09 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D10 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D11 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D12 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D13 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D14 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D15 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D16 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D17 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D18 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D19 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D20 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D21 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D22 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D23 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D24 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D25 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D26 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D27 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D28 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D29 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D30 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D31 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D32 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D33 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D34 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D35 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D36 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D37 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D38 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D39 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D40 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D41 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D42 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D43 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D44 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D45 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D46 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D47 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D48 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D49 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = D50 primary_culture = dummy religion = pre_schism government = presidential_dictatorship civilized = yes capital = 322 }
+link = { tag = DAG primary_culture = north_caucasian religion = sunni civilized = yes capital = 1053 }
+link = { tag = DAH primary_culture = fon religion = sunni government = absolute_monarchy civilized = no capital = 1920 }
+link = { tag = DAK primary_culture = yankee religion = protestant government = democracy civilized = yes capital = 119 }
+link = { tag = DAM primary_culture = hausa religion = sunni government = absolute_monarchy civilized = no capital = 1815 }
+link = { tag = DAR primary_culture = fur religion = sunni government = absolute_monarchy civilized = no capital = 1841 }
+link = { tag = DAU primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 451 }
+link = { tag = DJA capital = 1398 primary_culture = malay religion = sunni }
+link = { tag = DJI primary_culture = afar religion = sunni government = democracy civilized = yes capital = 1875 }
+link = { tag = DKU primary_culture = north_caucasian religion = orthodox civilized = yes government = democracy capital = 1048 }
+link = { tag = DLH primary_culture = kanauji religion = sunni government = absolute_monarchy civilized = yes capital = 1227 }
+link = { tag = DLM primary_culture = croat religion = catholic civilized = yes capital = 781 }
+link = { tag = DMN government = democracy civilized = yes capital = 2232 }
+link = { tag = DMS primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 260 }
+link = { tag = DNB primary_culture = south_german religion = catholic civilized = yes capital = 619 }
+link = { tag = DND primary_culture = songhai religion = sunni government = absolute_monarchy civilized = no capital = 1808 }
+link = { tag = DOG primary_culture = dog_culture religion = catholic government = democracy civilized = yes capital = 3 }
+link = { tag = DON primary_culture = ukrainian religion = orthodox civilized = yes capital = 1047 }
+link = { tag = DRA primary_culture = tamil religion = hindu civilized = yes capital = 1304 }
+link = { tag = DRK primary_culture = dragon_culture religion = animist government = absolute_monarchy civilized = yes capital = 1612 }
+link = { tag = DRU capital = 906 civilized = yes primary_culture = mashriqi religion = druze }
+link = { tag = DTT primary_culture = north_german religion = protestant government = proletarian_dictatorship civilized = yes capital = 533 }
+link = { tag = DUK primary_culture = duck_culture religion = protestant government = bourgeois_dictatorship civilized = yes capital = 84 }
+link = { tag = DUL primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 878 }
+link = { tag = DUR primary_culture = pashtun religion = sunni civilized = yes capital = 1215 }
+link = { tag = ELE primary_culture = elephant_culture religion = hindu government = absolute_monarchy civilized = yes capital = 1236 }
+link = { tag = ENG primary_culture = english }
+link = { tag = ENL primary_culture = english }
+link = { tag = ENR primary_culture = brithenig religion = catholic government = presidential_dictatorship civilized = yes capital = 300 }
+link = { tag = ENT primary_culture = platinean religion = catholic government = democracy civilized = yes capital = 2356 }
+link = { tag = EPI primary_culture = greek religion = orthodox government = absolute_monarchy civilized = yes capital = 826 }
+link = { tag = EQG primary_culture = morado religion = catholic government = democracy civilized = yes capital = 1955 }
+link = { tag = ERI primary_culture = tigray religion = coptic government = democracy civilized = yes capital = 1848 }
+link = { tag = ETR primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 744 }
+link = { tag = EZO capital = 1642 primary_culture = japanese government = presidential_dictatorship religion = shinto }
+link = { tag = FER primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 742 }
+link = { tag = FEZ primary_culture = maghrebi religion = sunni government = absolute_monarchy civilized = yes capital = 1680 }
+link = { tag = FIJ capital = 2454 primary_culture = melanesian religion = protestant }
+link = { tag = FIU capital = 778 government = democracy civilized = yes primary_culture = north_italian religion = catholic }
+link = { tag = FJN capital = 1482 primary_culture = min religion = mahayana }
+link = { tag = FOI primary_culture = occitan religion = catholic government = absolute_monarchy civilized = yes capital = 457 }
+link = { tag = FRI primary_culture = dutch religion = protestant government = absolute_monarchy civilized = yes capital = 385 }
+link = { tag = FRK primary_culture = frankish religion = catholic civilized = yes capital = 425 }
+link = { tag = FRO primary_culture = danish religion = protestant government = democracy civilized = yes capital = 253 }
+link = { tag = FRR primary_culture = gaul religion = catholic government = presidential_dictatorship civilized = yes capital = 425 }
+link = { tag = FSA primary_culture = yankee religion = protestant government = democracy civilized = yes capital = 223 }
+link = { tag = GAK primary_culture = kanauji religion = sunni government = absolute_monarchy civilized = no capital = 1227 }
+link = { tag = GAZ primary_culture = nguni religion = animist government = absolute_monarchy civilized = no capital = 2050 }
+link = { tag = GBI primary_culture = morado religion = catholic government = democracy civilized = yes capital = 1877 }
+link = { tag = GBR primary_culture = english religion = protestant government = hms_government civilized = yes capital = 300 }
+link = { tag = GBU primary_culture = dinka religion = sunni government = absolute_monarchy civilized = no capital = 1878 }
+link = { tag = GDL government = democracy civilized = yes capital = 2230 }
+link = { tag = GDW primary_culture = oriya religion = hindu government = absolute_monarchy civilized = no capital = 1262 }
+link = { tag = GEL primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 1870 }
+link = { tag = GEN primary_culture = north_italian religion = catholic government = democracy civilized = yes capital = 724 }
+link = { tag = GLC primary_culture = galician religion = catholic government = absolute_monarchy civilized = yes capital = 475 }
+link = { tag = GLM primary_culture = polish religion = catholic civilized = yes capital = 702 }
+link = { tag = GLR primary_culture = dutch religion = protestant government = absolute_monarchy civilized = yes capital = 578 }
+link = { tag = GMB primary_culture = mande religion = protestant government = democracy civilized = yes capital = 1785 }
+link = { tag = GMJ capital = 1559 primary_culture = beifaren religion = protestant }
+link = { tag = GNG capital = 1493 primary_culture = yue religion = mahayana }
+link = { tag = GOC primary_culture = telegu religion = shiite government = absolute_monarchy civilized = yes capital = 1283 }
+link = { tag = GOL primary_culture = mongol religion = tengri_pagan_reformed government = absolute_monarchy civilized = no capital = 1012 }
+link = { tag = GON primary_culture = amhara religion = coptic government = absolute_monarchy civilized = no capital = 1852 }
+link = { tag = GOT primary_culture = swedish religion = protestant government = absolute_monarchy civilized = yes capital = 331 }
+link = { tag = GRA primary_culture = andalucian religion = sunni government = absolute_monarchy civilized = yes capital = 513 }
+link = { tag = GRD government = democracy civilized = yes capital = 2233 }
+link = { tag = GRH primary_culture = mongol religion = tengri_pagan_reformed government = absolute_monarchy civilized = yes capital = 1012 }
+link = { tag = GRN primary_culture = eskaleut religion = protestant government = democracy civilized = yes capital = 251 }
+link = { tag = GUJ primary_culture = panjabi religion = shiite government = absolute_monarchy civilized = no capital = 1236 }
+link = { tag = GUY primary_culture = falklander religion = protestant government = democracy civilized = yes capital = 2239 }
+link = { tag = GYN primary_culture = occitan religion = catholic government = absolute_monarchy civilized = yes capital = 458 }
+link = { tag = GYP primary_culture = gypsy religion = orthodox government = democracy civilized = yes capital = 806 }
+link = { tag = HAL primary_culture = bedouin religion = sunni government = absolute_monarchy civilized = no capital = 1160 }
+link = { tag = HAR primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 2068 }
+link = { tag = HAT primary_culture = wallonian religion = catholic government = absolute_monarchy civilized = yes capital = 394 }
+link = { tag = HAU primary_culture = hausa religion = sunni government = absolute_monarchy civilized = no capital = 1948 }
+link = { tag = HDU primary_culture = avadhi religion = sunni civilized = yes capital = 1240 }
+link = { tag = HDY primary_culture = amhara religion = sunni government = absolute_monarchy civilized = no capital = 1852 }
+link = { tag = HEG primary_culture = hedgehog_culture religion = protestant government = democracy civilized = yes capital = 232 }
+link = { tag = HKG primary_culture = nanfaren religion = protestant government = hms_government civilized = yes capital = 1496 }
+link = { tag = HLL primary_culture = dutch religion = protestant government = absolute_monarchy civilized = yes capital = 375 }
+link = { tag = HNN capital = 1524 primary_culture = nanfaren religion = mahayana }
+link = { tag = HNS capital = 530 government = democracy civilized = yes primary_culture = north_german religion = protestant }
+link = { tag = HOH capital = 594 civilized = yes primary_culture = south_german religion = catholic }
+link = { tag = HRE primary_culture = south_german religion = catholic government = prussian_constitutionalism civilized = yes capital = 576 }
+link = { tag = HSC primary_culture = pictish religion = catholic government = absolute_monarchy civilized = yes capital = 266 }
+link = { tag = HUI capital = 1474 primary_culture = beifaren religion = mahayana }
+link = { tag = HUR primary_culture = iroquoian religion = shamanism government = absolute_monarchy civilized = no capital = 46 }
+link = { tag = IBR primary_culture = spanish religion = catholic civilized = yes capital = 487 }
+link = { tag = IDO primary_culture = thai religion = mahayana civilized = yes capital = 1346 }
+link = { tag = IMG primary_culture = mongol religion = gelugpa government = presidential_dictatorship civilized = yes capital = 1532 }
+link = { tag = INC primary_culture = quechua religion = shamanism government = absolute_monarchy civilized = no capital = 2302 }
+link = { tag = INO capital = 1413 primary_culture = javan government = democracy civilized = yes religion = sunni }
+link = { tag = IRO primary_culture = iroquoian religion = shamanism government = absolute_monarchy civilized = no capital = 57 }
+link = { tag = ISR primary_culture = israeli }
+link = { tag = ITP capital = 749 government = theocracy civilized = yes primary_culture = south_italian religion = catholic }
+link = { tag = IZH primary_culture = estonian religion = orthodox government = democracy civilized = yes capital = 994 }
+link = { tag = JAL primary_culture = fulbe religion = sunni government = absolute_monarchy civilized = no capital = 1880 }
+link = { tag = JAM primary_culture = afro_caribbean religion = protestant government = democracy civilized = yes capital = 2217 }
+link = { tag = JER primary_culture = outremer religion = catholic government = theocracy civilized = yes capital = 917 }
+link = { tag = JJI primary_culture = amhara religion = sunni government = absolute_monarchy civilized = no capital = 1852 }
+link = { tag = JOR primary_culture = bedouin religion = sunni civilized = yes capital = 908 }
+link = { tag = KAG capital = 1646 primary_culture = japanese religion = shinto }
+link = { tag = KAM primary_culture = siberian religion = animist civilized = yes capital = 1074 }
+link = { tag = KAR capital = 1343 civilized = yes primary_culture = karen religion = theravada }
+link = { tag = KAZ primary_culture = kazakh religion = sunni government = absolute_monarchy civilized = no capital = 1195 }
+link = { tag = KBO primary_culture = kanuri religion = sunni government = absolute_monarchy civilized = no capital = 1821 }
+link = { tag = KCH capital = 1314 primary_culture = kachin religion = animist }
+link = { tag = KDS primary_culture = kurdish religion = sunni government = democracy civilized = yes capital = 924 }
+link = { tag = KHA primary_culture = mongol religion = gelugpa government = absolute_monarchy civilized = yes capital = 1465 }
+link = { tag = KHD primary_culture = panjabi religion = shiite government = absolute_monarchy civilized = no capital = 1313 }
+link = { tag = KHO primary_culture = persian religion = shiite government = absolute_monarchy civilized = no capital = 1150 }
+link = { tag = KID primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 264 }
+link = { tag = KIK primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 }
+link = { tag = KLE primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 577 }
+link = { tag = KLM capital = 1423 primary_culture = malay religion = sunni }
+link = { tag = KMK primary_culture = mongol religion = gelugpa civilized = yes capital = 1041 }
+link = { tag = KMT capital = 2221 primary_culture = nanfaren government = presidential_dictatorship religion = mahayana }
+link = { tag = KNG primary_culture = dyula religion = sunni government = absolute_monarchy civilized = no capital = 1898 }
+link = { tag = KNI primary_culture = occitan religion = catholic government = theocracy civilized = yes capital = 854 }
+link = { tag = KNY primary_culture = swahili religion = protestant government = democracy civilized = yes capital = 2024 }
+link = { tag = KOL primary_culture = north_german religion = protestant government = theocracy civilized = yes capital = 575 }
+link = { tag = KOM primary_culture = african_minor religion = sunni government = democracy civilized = yes capital = 2123 }
+link = { tag = KON primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 2001 }
+link = { tag = KOS primary_culture = albanian religion = sunni government = absolute_monarchy civilized = yes capital = 802 }
+link = { tag = KRL primary_culture = ugrian religion = protestant civilized = yes capital = 995 }
+link = { tag = KRM primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 873 }
+link = { tag = KRN primary_culture = kannada religion = hindu government = absolute_monarchy civilized = no capital = 1313 }
+link = { tag = KRT primary_culture = maghreb_arabic religion = orthodox civilized = yes capital = 1725 }
+link = { tag = KRW primary_culture = african_minor religion = shamanism government = absolute_monarchy civilized = no capital = 2034 }
+link = { tag = KSJ primary_culture = ovimbundu religion = shamanism government = absolute_monarchy civilized = no capital = 1999 }
+link = { tag = KTI primary_culture = javan religion = sunni government = absolute_monarchy civilized = no capital = 1429 }
+link = { tag = KUB primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 }
+link = { tag = KUR primary_culture = latvian religion = protestant government = absolute_monarchy civilized = yes capital = 359 }
+link = { tag = KWT primary_culture = bedouin religion = sunni civilized = yes capital = 935 }
+link = { tag = KYR primary_culture = kirgiz religion = sunni civilized = yes capital = 1189 }
+link = { tag = KZB primary_culture = shona religion = shamanism government = absolute_monarchy civilized = no capital = 2016 }
+link = { tag = KZN primary_culture = tatar religion = sunni government = absolute_monarchy civilized = no capital = 1030 }
+link = { tag = LAN primary_culture = hakka religion = gelugpa government = democracy civilized = no capital = 1426 }
+link = { tag = LAU primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 529 }
+link = { tag = LBN primary_culture = mashriqi religion = sunni government = presidential_dictatorship civilized = yes capital = 913 }
+link = { tag = LBX primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 }
+link = { tag = LBY primary_culture = maghrebi religion = sunni government = absolute_monarchy civilized = yes capital = 1741 }
+link = { tag = LDU primary_culture = african_minor religion = shamanism government = absolute_monarchy civilized = no capital = 1959 }
+link = { tag = LEI primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 263 }
+link = { tag = LGB primary_culture = lombard religion = catholic civilized = yes capital = 726 }
+link = { tag = LIE primary_culture = swiss religion = catholic government = hms_government civilized = yes capital = 1 }
+link = { tag = LIG primary_culture = wallonian religion = catholic government = theocracy civilized = yes capital = 395 }
+link = { tag = LIM capital = 381 civilized = yes primary_culture = north_german religion = protestant }
+link = { tag = LIV primary_culture = north_german religion = catholic government = theocracy civilized = yes capital = 355 }
+link = { tag = LNA primary_culture = thai religion = gelugpa government = absolute_monarchy civilized = no capital = 1355 }
+link = { tag = LND primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 }
+link = { tag = LOA primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 2624 }
+link = { tag = LOR primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 412 }
+link = { tag = LOS primary_culture = central_american religion = catholic government = democracy civilized = yes capital = 2187 }
+link = { tag = LOU primary_culture = nouvellien religion = catholic government = democracy civilized = yes capital = 139 }
+link = { tag = LPL primary_culture = platinean religion = catholic government = democracy civilized = yes capital = 2348 }
+link = { tag = LSK primary_culture = yankee religion = protestant government = democracy civilized = yes capital = 3 }
+link = { tag = LTN primary_culture = outremer religion = catholic government = absolute_monarchy civilized = yes capital = 860 }
+link = { tag = LUN primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 532 }
+link = { tag = LVN capital = 729 civilized = yes primary_culture = north_italian religion = catholic }
+link = { tag = LXA primary_culture = lao religion = gelugpa government = absolute_monarchy civilized = no capital = 1356 }
+link = { tag = MAG primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 553 }
+link = { tag = MAH primary_culture = marathi religion = hindu civilized = yes capital = 1299 }
+link = { tag = MAI primary_culture = north_german religion = protestant government = theocracy civilized = yes capital = 570 }
+link = { tag = MAJ primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 1873 }
+link = { tag = MAL capital = 1449 primary_culture = moluccan religion = sunni }
+link = { tag = MAR primary_culture = garathi religion = hindu government = absolute_monarchy civilized = no capital = 1277 }
+link = { tag = MAS primary_culture = fulbe religion = sunni government = absolute_monarchy civilized = no capital = 1804 }
+link = { tag = MAT primary_culture = nguni religion = animist government = absolute_monarchy civilized = no capital = 2108 }
+link = { tag = MAU primary_culture = african_minor religion = catholic government = democracy civilized = yes capital = 2125 }
+link = { tag = MAW primary_culture = marathi religion = sunni government = absolute_monarchy civilized = no capital = 1271 }
+link = { tag = MAY primary_culture = mayan religion = shamanism government = absolute_monarchy civilized = no capital = 2183 }
+link = { tag = MAZ primary_culture = polish religion = catholic government = absolute_monarchy civilized = yes capital = 706 }
+link = { tag = MCD primary_culture = macedonian religion = orthodox government = democracy civilized = yes capital = 806 }
+link = { tag = MCH primary_culture = manchu religion = gelugpa government = absolute_monarchy civilized = no capital = 1002 }
+link = { tag = MDV primary_culture = romanian religion = orthodox government = presidential_dictatorship civilized = yes capital = 676 }
+link = { tag = MEM primary_culture = south_german religion = catholic government = democracy civilized = yes capital = 593 }
+link = { tag = MEN primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 872 }
+link = { tag = MFA primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 723 }
+link = { tag = MFY primary_culture = malagasy religion = shamanism government = absolute_monarchy civilized = no capital = 2115 }
+link = { tag = MGH primary_culture = maghrebi religion = sunni government = absolute_monarchy civilized = yes capital = 1680 }
+link = { tag = MIA primary_culture = cat religion = kemetic government = theocracy civilized = yes capital = 1767 }
+link = { tag = MIR primary_culture = malagasy religion = shamanism government = absolute_monarchy civilized = no capital = 2115 }
+link = { tag = MJP primary_culture = javanese religion = hindu government = absolute_monarchy civilized = no capital = 1418 }
+link = { tag = MKS primary_culture = javan religion = sunni government = absolute_monarchy civilized = no capital = 1430 }
+link = { tag = MKU primary_culture = african_minor religion = shamanism government = absolute_monarchy civilized = no capital = 2060 }
+link = { tag = MLB primary_culture = assamese religion = hindu government = absolute_monarchy civilized = no capital = 1259 }
+link = { tag = MLC primary_culture = malay religion = sunni government = absolute_monarchy civilized = no capital = 1386 }
+link = { tag = MLD primary_culture = tamil religion = sunni government = absolute_monarchy civilized = no capital = 1325 }
+link = { tag = MLI primary_culture = dinka religion = sunni government = absolute_monarchy civilized = no capital = 1803 }
+link = { tag = MLT primary_culture = maltese religion = catholic government = democracy civilized = yes capital = 854 }
+link = { tag = MLW primary_culture = chewa religion = shamanism government = absolute_monarchy civilized = no capital = 2067 }
+link = { tag = MLY primary_culture = malay religion = sunni government = absolute_monarchy civilized = yes capital = 1386 }
+link = { tag = MML primary_culture = north_german religion = protestant government = presidential_dictatorship civilized = yes capital = 698 }
+link = { tag = MNC primary_culture = french religion = catholic government = hms_government civilized = yes capital = 1 }
+link = { tag = MNG primary_culture = beifaren religion = gelugpa government = absolute_monarchy civilized = yes capital = 1612 }
+link = { tag = MNR government = democracy civilized = yes capital = 2225 }
+link = { tag = MNS primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 260 }
+link = { tag = MOE primary_culture = greek religion = orthodox government = absolute_monarchy civilized = yes capital = 841 }
+link = { tag = MOS primary_culture = mossi religion = sunni government = absolute_monarchy civilized = no capital = 1901 }
+link = { tag = MRI primary_culture = persian religion = shiite government = absolute_monarchy civilized = no capital = 1313 }
+link = { tag = MRT primary_culture = marathi religion = hindu government = absolute_monarchy civilized = no capital = 1297 }
+link = { tag = MRU primary_culture = anglo_canadian religion = protestant government = democracy civilized = yes capital = 71 }
+link = { tag = MSK primary_culture = meashighcaw religion = catholic government = presidential_dictatorship civilized = yes capital = 2200 }
+link = { tag = MTA primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 728 }
+link = { tag = MTC }
+link = { tag = MTQ government = democracy civilized = yes capital = 2228 }
+link = { tag = MTR primary_culture = javanese religion = sunni government = absolute_monarchy civilized = no capital = 1416 }
+link = { tag = MUN primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 581 }
+link = { tag = MUR primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1013 }
+link = { tag = MUS primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1008 }
+link = { tag = NAP primary_culture = south_italian religion = catholic government = absolute_monarchy civilized = yes capital = 754 }
+link = { tag = NAV primary_culture = basque religion = catholic government = absolute_monarchy civilized = yes capital = 493 }
+link = { tag = NAX primary_culture = greek religion = orthodox government = absolute_monarchy civilized = yes capital = 845 }
+link = { tag = NCT primary_culture = swiss religion = catholic government = presidential_dictatorship civilized = yes capital = 608 }
+link = { tag = NEV primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 430 }
+link = { tag = NIG primary_culture = songhai religion = sunni government = democracy civilized = yes capital = 1812 }
+link = { tag = NIZ primary_culture = bengali religion = hindu government = absolute_monarchy civilized = no capital = 1254 }
+link = { tag = NKO primary_culture = baganda religion = shamanism government = absolute_monarchy civilized = no capital = 2019 }
+link = { tag = NOG primary_culture = tatar religion = sunni government = absolute_monarchy civilized = no capital = 1012 }
+link = { tag = NOL primary_culture = english religion = protestant government = absolute_monarchy civilized = yes capital = 280 }
+link = { tag = NOV primary_culture = russian religion = orthodox government = presidential_dictatorship civilized = yes capital = 1003 }
+link = { tag = NRM primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 415 }
+link = { tag = NUB primary_culture = sudanese religion = shamanism government = absolute_monarchy civilized = no capital = 1830 }
+link = { tag = NUM primary_culture = south_german religion = catholic government = absolute_monarchy civilized = yes capital = 595 }
+link = { tag = NYE primary_culture = mashriqi religion = shiite civilized = yes capital = 1178 }
+link = { tag = NZH primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1020 }
+link = { tag = NZL primary_culture = australian }
+link = { tag = OAX primary_culture = zapotec religion = catholic government = democracy civilized = yes capital = 2177 }
+link = { tag = OCC primary_culture = occitan religion = catholic civilized = yes government = democracy capital = 455 }
+link = { tag = OGO primary_culture = ostrogothic religion = catholic civilized = yes capital = 640 }
+link = { tag = OIR primary_culture = mongol religion = tengri_pagan_reformed government = absolute_monarchy civilized = no capital = 1465 }
+link = { tag = OKA primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1011 }
+link = { tag = ORL primary_culture = french religion = catholic government = absolute_monarchy civilized = yes capital = 438 }
+link = { tag = OYO primary_culture = yoruba religion = sunni government = absolute_monarchy civilized = no capital = 1923 }
+link = { tag = PAL primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 578 }
+link = { tag = PAT primary_culture = malay religion = sunni government = absolute_monarchy civilized = no capital = 1392 }
+link = { tag = PBC primary_culture = south_andean religion = catholic government = democracy civilized = yes capital = 2310 }
+link = { tag = PEG primary_culture = burmese religion = gelugpa government = absolute_monarchy civilized = no capital = 1332 }
+link = { tag = PER }
+link = { tag = PIN capital = 824 civilized = yes primary_culture = aromanian religion = orthodox }
+link = { tag = PIS primary_culture = north_italian religion = catholic government = presidential_dictatorship civilized = yes capital = 745 }
+link = { tag = PLS primary_culture = mashriqi religion = sunni civilized = yes capital = 917 }
+link = { tag = PLT primary_culture = byelorussian religion = orthodox government = absolute_monarchy civilized = yes capital = 946 }
+link = { tag = PML primary_culture = polish religion = catholic civilized = yes capital = 694 }
+link = { tag = PNT primary_culture = greek religion = orthodox civilized = yes capital = 882 }
+link = { tag = POM primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 546 }
+link = { tag = PPG primary_culture = melanesian religion = protestant government = presidential_dictatorship civilized = yes capital = 2528 }
+link = { tag = PRI primary_culture = caribeno religion = catholic government = democracy civilized = yes capital = 2222 }
+link = { tag = PRO primary_culture = occitan religion = catholic government = absolute_monarchy civilized = yes capital = 467 }
+link = { tag = PSK primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1006 }
+link = { tag = PTG primary_culture = patagonian religion = animist government = democracy civilized = yes capital = 2329 }
+link = { tag = PYO primary_culture = korean religion = mahayana government = proletarian_dictatorship civilized = yes capital = 1619 }
+link = { tag = PZN primary_culture = polish religion = catholic civilized = yes capital = 699 }
+link = { tag = QAR primary_culture = azerbaijani religion = sunni government = absolute_monarchy civilized = no capital = 1108 }
+link = { tag = QAS primary_culture = tatar religion = sunni government = absolute_monarchy civilized = no capital = 1012 }
+link = { tag = QAT capital = 1165 civilized = yes primary_culture = bedouin religion = sunni }
+link = { tag = QIN primary_culture = manchu religion = gelugpa government = absolute_monarchy civilized = no capital = 1612 }
+link = { tag = RAG primary_culture = north_italian religion = catholic government = presidential_dictatorship civilized = yes capital = 782 }
+link = { tag = RAJ primary_culture = rajput religion = hindu government = absolute_monarchy civilized = no capital = 1288 }
+link = { tag = RAM primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 894 }
+link = { tag = RFR primary_culture = japanese religion = shinto government = absolute_monarchy civilized = no capital = 1668 }
+link = { tag = RGR primary_culture = mexican religion = catholic government = democracy civilized = yes capital = 138 }
+link = { tag = RGS primary_culture = brazilian religion = catholic government = democracy civilized = yes capital = 2463 }
+link = { tag = RHI primary_culture = north_german religion = catholic civilized = yes capital = 576 }
+link = { tag = RHO primary_culture = anglo_african }
+link = { tag = RIG primary_culture = north_german religion = catholic government = theocracy civilized = yes capital = 354 }
+link = { tag = RJX primary_culture = marathi religion = hindu government = hms_government civilized = yes capital = 1251 }
+link = { tag = RMG primary_culture = north_italian religion = catholic civilized = yes capital = 741 }
+link = { tag = RML primary_culture = bulgarian religion = orthodox government = hms_government civilized = yes capital = 815 }
+link = { tag = RPL primary_culture = anglo_canadian religion = protestant government = democracy civilized = yes capital = 36 }
+link = { tag = RUM primary_culture = turkish religion = sunni government = absolute_monarchy civilized = yes capital = 873 }
+link = { tag = RUS }
+link = { tag = RVA primary_culture = south_german religion = catholic government = democracy civilized = yes capital = 593 }
+link = { tag = RWA primary_culture = ruanda religion = shamanism government = absolute_monarchy civilized = no capital = 2034 }
+link = { tag = RYA primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1012 }
+link = { tag = RYU primary_culture = japanese religion = shinto government = absolute_monarchy civilized = yes capital = 1678 }
+link = { tag = RZW primary_culture = shona religion = shamanism government = absolute_monarchy civilized = no capital = 2068 }
+link = { tag = SAA primary_culture = north_german religion = protestant government = democracy civilized = yes capital = 573 }
+link = { tag = SAF primary_culture = anglo_african }
+link = { tag = SAK primary_culture = malay religion = sunni government = absolute_monarchy civilized = no capital = 1401 }
+link = { tag = SAM primary_culture = greek religion = orthodox government = hms_government civilized = yes capital = 843 }
+link = { tag = SAO primary_culture = morado religion = catholic government = democracy civilized = yes capital = 1954 }
+link = { tag = SAT capital = 1662 primary_culture = japanese religion = shinto }
+link = { tag = SCO primary_culture = scottish }
+link = { tag = SCY primary_culture = south_italian religion = catholic government = absolute_monarchy civilized = yes capital = 762 }
+link = { tag = SDT primary_culture = north_german religion = catholic government = fascist_dictatorship civilized = yes capital = 629 }
+link = { tag = SEN capital = 1668 primary_culture = japanese religion = shinto }
+link = { tag = SEY primary_culture = african_minor religion = catholic government = democracy civilized = yes capital = 2127 }
+link = { tag = SGH primary_culture = songhai religion = sunni government = absolute_monarchy civilized = no capital = 1805 }
+link = { tag = SGP primary_culture = malay religion = gelugpa government = democracy civilized = yes capital = 1384 }
+link = { tag = SGU primary_culture = dinka religion = sunni government = absolute_monarchy civilized = no capital = 1800 }
+link = { tag = SHA primary_culture = shan religion = theravada government = absolute_monarchy civilized = no capital = 1336 }
+link = { tag = SHD primary_culture = beifaren religion = mahayana government = absolute_monarchy civilized = yes capital = 1563 }
+link = { tag = SHG primary_culture = beifaren religion = mahayana government = absolute_monarchy civilized = yes capital = 1538 }
+link = { tag = SHO primary_culture = shona religion = animist government = absolute_monarchy civilized = no capital = 2070 }
+link = { tag = SHW primary_culture = amhara religion = coptic government = absolute_monarchy civilized = no capital = 1859 }
+link = { tag = SHX primary_culture = central_algonquian religion = shamanism government = absolute_monarchy civilized = no capital = 223 }
+link = { tag = SIB primary_culture = siberian religion = orthodox civilized = yes capital = 1075 }
+link = { tag = SIH primary_culture = tatar religion = sunni government = absolute_monarchy civilized = no capital = 1061 }
+link = { tag = SKA primary_culture = malagasy religion = shamanism government = absolute_monarchy civilized = no capital = 2115 }
+link = { tag = SKN government = democracy civilized = yes capital = 2227 }
+link = { tag = SLA primary_culture = russian religion = orthodox government = prussian_constitutionalism civilized = yes capital = 958 }
+link = { tag = SLN primary_culture = irish religion = catholic government = absolute_monarchy civilized = yes capital = 259 }
+link = { tag = SLS primary_culture = polish religion = catholic government = absolute_monarchy civilized = yes capital = 683 }
+link = { tag = SLW capital = 1430 primary_culture = moluccan religion = sunni }
+link = { tag = SLZ primary_culture = south_german religion = catholic government = theocracy civilized = yes capital = 613 }
+link = { tag = SMI primary_culture = sami religion = protestant government = democracy civilized = yes capital = 336 }
+link = { tag = SMK primary_culture = russian religion = orthodox government = presidential_dictatorship civilized = yes capital = 943 }
+link = { tag = SMO primary_culture = melanesian religion = protestant government = democracy civilized = yes capital = 2543 }
+link = { tag = SMR primary_culture = north_italian religion = catholic government = democracy civilized = yes capital = 1 }
+link = { tag = SNA primary_culture = north_italian religion = catholic government = presidential_dictatorship civilized = yes capital = 747 }
+link = { tag = SNG primary_culture = wolof religion = protestant government = democracy civilized = yes capital = 1783 }
+link = { tag = SNZ capital = 2513 government = democracy civilized = yes religion = protestant }
+link = { tag = SOF primary_culture = shona religion = sunni government = absolute_monarchy civilized = no capital = 2060 }
+link = { tag = SOM primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 1868 }
+link = { tag = SON primary_culture = mexican religion = catholic government = democracy civilized = yes capital = 2137 }
+link = { tag = SPC primary_culture = spanish religion = catholic civilized = yes capital = 487 }
+link = { tag = SPQ primary_culture = latin religion = catholic government = absolute_monarchy civilized = yes capital = 749 }
+link = { tag = SPU primary_culture = south_andean religion = catholic government = democracy civilized = yes capital = 2304 }
+link = { tag = SRD primary_culture = north_italian religion = catholic government = presidential_dictatorship civilized = yes capital = 765 }
+link = { tag = SRI primary_culture = tamil religion = mahayana government = absolute_monarchy civilized = yes capital = 1321 }
+link = { tag = SRU primary_culture = turkish religion = sunni government = absolute_monarchy civilized = no capital = 870 }
+link = { tag = SSU primary_culture = sudanese religion = sunni government = democracy civilized = yes capital = 1844 }
+link = { tag = STL government = democracy civilized = yes capital = 2231 }
+link = { tag = STV government = democracy civilized = yes capital = 2409 }
+link = { tag = STY primary_culture = south_german religion = catholic government = absolute_monarchy civilized = yes capital = 616 }
+link = { tag = SUA primary_culture = nguni religion = animist government = absolute_monarchy civilized = no capital = 2114 }
+link = { tag = SUE primary_culture = suebi religion = catholic civilized = yes capital = 518 }
+link = { tag = SUK primary_culture = thai religion = gelugpa government = absolute_monarchy civilized = no capital = 1355 }
+link = { tag = SUL primary_culture = filipino religion = sunni government = absolute_monarchy civilized = no capital = 1464 }
+link = { tag = SUR primary_culture = nieuwereld religion = protestant government = hms_government civilized = yes capital = 2240 }
+link = { tag = SVY primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 466 }
+link = { tag = SWA primary_culture = swahili religion = sunni government = absolute_monarchy civilized = no capital = 2024 }
+link = { tag = SWH primary_culture = north_german religion = protestant civilized = yes capital = 369 }
+link = { tag = SWK capital = 1394 primary_culture = malay civilized = yes religion = sunni }
+link = { tag = SYC capital = 902 civilized = yes primary_culture = assyrian religion = orthodox }
+link = { tag = SYO primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 }
+link = { tag = SYR primary_culture = mashriqi religion = sunni civilized = yes capital = 902 }
+link = { tag = SZC capital = 1578 primary_culture = nanfaren religion = mahayana }
+link = { tag = TAH capital = 801 primary_culture = polynesian religion = catholic }
+link = { tag = TAI capital = 1485 primary_culture = nanfaren civilized = yes religion = mahayana }
+link = { tag = TAJ primary_culture = tajik religion = shia government = democracy civilized = yes capital = 1207 }
+link = { tag = TAM primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1082 }
+link = { tag = TAR primary_culture = tatar religion = sunni civilized = yes capital = 1030 }
+link = { tag = TBK primary_culture = chewa religion = shamanism government = absolute_monarchy civilized = no capital = 2067 }
+link = { tag = TBZ primary_culture = greek religion = orthodox government = absolute_monarchy civilized = yes capital = 882 }
+link = { tag = TCA primary_culture = georgian religion = orthodox civilized = yes capital = 1090 }
+link = { tag = TER primary_culture = north_german religion = protestant government = theocracy civilized = yes capital = 572 }
+link = { tag = TEU primary_culture = north_german religion = catholic government = theocracy civilized = yes capital = 695 }
+link = { tag = TGA capital = 2540 primary_culture = polynesian religion = protestant }
+link = { tag = THU primary_culture = south_german religion = protestant government = absolute_monarchy civilized = yes capital = 554 }
+link = { tag = TIG primary_culture = tigray religion = coptic government = absolute_monarchy civilized = no capital = 1853 }
+link = { tag = TIM primary_culture = persian religion = sunni government = absolute_monarchy civilized = no capital = 1199 }
+link = { tag = TIR primary_culture = south_german religion = catholic government = theocracy civilized = yes capital = 612 }
+link = { tag = TKG primary_culture = japanese religion = shinto government = absolute_monarchy civilized = no capital = 1649 }
+link = { tag = TKM primary_culture = turkmen religion = sunni civilized = yes capital = 1204 }
+link = { tag = TKS primary_culture = uzbek religion = sunni civilized = yes government = democracy capital = 1195 }
+link = { tag = TMR primary_culture = javan religion = catholic government = democracy civilized = yes capital = 1446 }
+link = { tag = TNT primary_culture = tatar religion = gelugpa civilized = yes capital = 1469 }
+link = { tag = TOG primary_culture = ewe religion = catholic government = democracy civilized = yes capital = 1914 }
+link = { tag = TOK primary_culture = vietnamese religion = gelugpa government = absolute_monarchy civilized = no capital = 1369 }
+link = { tag = TOO primary_culture = fulbe religion = sunni government = absolute_monarchy civilized = no capital = 1789 }
+link = { tag = TOS capital = 1665 primary_culture = japanese religion = shinto }
+link = { tag = TRL primary_culture = horse religion = animist government = theocracy civilized = yes capital = 2131 }
+link = { tag = TRS primary_culture = aztec religion = aztec_reformed government = absolute_monarchy civilized = no capital = 2170 }
+link = { tag = TRZ primary_culture = maures religion = sunni government = absolute_monarchy civilized = no capital = 1775 }
+link = { tag = TST primary_culture = south_german religion = catholic government = democracy civilized = yes capital = 735 }
+link = { tag = TTB primary_culture = afro_caribbean religion = protestant government = democracy civilized = yes capital = 2237 }
+link = { tag = TUL primary_culture = occitan religion = catholic government = absolute_monarchy civilized = yes capital = 455 }
+link = { tag = TUR }
+link = { tag = TVE primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 998 }
+link = { tag = TYR primary_culture = irish religion = protestant government = absolute_monarchy civilized = yes capital = 255 }
+link = { tag = UBH primary_culture = chewa religion = shamanism government = absolute_monarchy civilized = no capital = 2067 }
+link = { tag = UGR primary_culture = ugrian religion = orthodox civilized = yes capital = 1063 }
+link = { tag = UIL primary_culture = yankee religion = protestant government = democracy civilized = yes capital = 167 }
+link = { tag = ULM primary_culture = south_german religion = catholic government = absolute_monarchy civilized = yes capital = 593 }
+link = { tag = ULS primary_culture = irish religion = protestant government = absolute_monarchy civilized = yes capital = 254 }
+link = { tag = UNB primary_culture = yankee religion = protestant government = democracy civilized = yes capital = 123 }
+link = { tag = UND primary_culture = undead religion = noreligion government = theocracy civilized = yes capital = 744 }
+link = { tag = UNM primary_culture = yankee religion = protestant government = democracy civilized = yes capital = 100 }
+link = { tag = UNY primary_culture = yankee religion = protestant government = democracy civilized = yes capital = 232 }
+link = { tag = UOR primary_culture = yankee religion = protestant government = democracy civilized = yes capital = 81 }
+link = { tag = URA primary_culture = ugrian religion = orthodox civilized = yes capital = 1058 }
+link = { tag = URB primary_culture = north_italian religion = catholic government = absolute_monarchy civilized = yes capital = 752 }
+link = { tag = UTR primary_culture = dutch religion = protestant government = absolute_monarchy civilized = yes capital = 377 }
+link = { tag = UYG primary_culture = uighur religion = sunni civilized = yes capital = 1594 }
+link = { tag = UZB primary_culture = uzbek religion = sunni civilized = yes capital = 1195 }
+link = { tag = VGO primary_culture = visigothic religion = catholic civilized = yes capital = 455 }
+link = { tag = VIJ primary_culture = kannada religion = hindu government = absolute_monarchy civilized = yes capital = 1313 }
+link = { tag = VTU primary_culture = melanesian religion = protestant government = democracy civilized = yes capital = 2535 }
+link = { tag = WBG primary_culture = south_german religion = catholic government = theocracy civilized = yes capital = 597 }
+link = { tag = WES primary_culture = north_german religion = protestant government = absolute_monarchy civilized = yes capital = 566 }
+link = { tag = WHA primary_culture = welsh religion = protestant government = absolute_monarchy civilized = yes capital = 273 }
+link = { tag = WLY primary_culture = amhara religion = protestant government = absolute_monarchy civilized = no capital = 1852 }
+link = { tag = WOL primary_culture = wolof religion = sunni government = absolute_monarchy civilized = no capital = 1783 }
+link = { tag = WRI primary_culture = itsekari religion = animist government = absolute_monarchy civilized = no capital = 1931 }
+link = { tag = WRL primary_culture = somali religion = sunni government = absolute_monarchy civilized = no capital = 1873 }
+link = { tag = WSF primary_culture = polish religion = catholic government = absolute_monarchy civilized = yes capital = 706 }
+link = { tag = WSH primary_culture = maghrebi religion = sunni government = democracy civilized = yes capital = 1773 }
+link = { tag = WUU primary_culture = beifaren religion = gelugpa government = absolute_monarchy civilized = no capital = 1612 }
+link = { tag = XEO primary_culture = ashkenazi religion = catholic government = democracy civilized = yes capital = 706 }
+link = { tag = XHO primary_culture = xhosa religion = animist government = absolute_monarchy civilized = no capital = 2100 }
+link = { tag = XIA primary_culture = beifaren religion = gelugpa government = absolute_monarchy civilized = no capital = 1612 }
+link = { tag = YAK primary_culture = yakut religion = orthodox civilized = yes capital = 2648 }
+link = { tag = YAR primary_culture = russian religion = orthodox government = absolute_monarchy civilized = yes capital = 1001 }
+link = { tag = YKA primary_culture = bakongo religion = shamanism government = absolute_monarchy civilized = no capital = 1982 }
+link = { tag = YOR primary_culture = english religion = protestant government = absolute_monarchy civilized = yes capital = 282 }
+link = { tag = YUA primary_culture = mongol religion = gelugpa government = absolute_monarchy civilized = yes capital = 1612 }
+link = { tag = YUC primary_culture = mayan religion = catholic government = democracy civilized = yes capital = 2183 }
+link = { tag = YZW capital = 1673 primary_culture = japanese religion = shinto }
+link = { tag = ZAM primary_culture = lunda religion = protestant government = democracy civilized = yes capital = 2012 }
+link = { tag = ZAP primary_culture = zapotec religion = shamanism government = absolute_monarchy civilized = no capital = 2177 }
+link = { tag = ZAZ primary_culture = tatar religion = orthodox government = presidential_dictatorship civilized = no capital = 976 }
+link = { tag = ZBW primary_culture = chewa religion = protestant government = presidential_dictatorship civilized = yes capital = 2068 }
+link = { tag = ZIM primary_culture = shona religion = shamanism government = absolute_monarchy civilized = no capital = 2068 }
+link = { tag = OSP capital = 487 primary_culture = oldspain religion = pagan government = absolute_monarchy civilized = no }
+link = { tag = VAN capital = 706 primary_culture = vandal religion = catholic government = absolute_monarchy civilized = yes }
