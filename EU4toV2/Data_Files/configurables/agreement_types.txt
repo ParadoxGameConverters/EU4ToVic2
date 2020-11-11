@@ -15,4 +15,11 @@ doublesiders = { royal_marriage alliance }
 tributaries = { tributary_state }
 
 # Vassals are sphered, boosted relations, set with high influence, doublesided military access and reduced prestige.
-vassals = { vassal client_vassal client_march daimyo_vassal protectorate march colonial colony union personal_union }
+# We've included subjects expanded vassal types (they all go into puppets). Expand the list as needed, it will automatically be applied.
+vassals = { vassal client_vassal client_march daimyo_vassal protectorate march colonial colony union 
+personal_union protectorate puppet_state dominion dominion_tc autonomous_dominion autonomous_dominion_tc 
+roman_client_kingdom voivodeship fief_subject crusader_state_vassal salic_personal_union nahuatl_vassal 
+peasant_vassal pirate_brotherhood_vassal imperial_tributary_state sister_republic muslim_tributary_vassal 
+mandala_trade_vassal integrated_tribe_subject dutch_province_subject revolution_subject persian_satrapy 
+naval_march trade_outpost integrated_personal_union brother_kingdom iqta_vassal papal_sanctuary_subject 
+imperial_feud_subject pagan_chiefdom native_reserve }
