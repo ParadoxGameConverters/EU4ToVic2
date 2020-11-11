@@ -902,6 +902,10 @@ CZE		= "countries/Czechia.txt"
 
 RJX		= "countries/Raj.txt"
 
+#IMP:CK3
+VAN		= "countries/Vandals.txt"
+OSP		= "countries/OldSpain.txt"
+
 ##HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions
 D01		= "countries/D01.txt"

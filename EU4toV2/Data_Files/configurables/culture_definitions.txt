@@ -151,6 +151,31 @@ germanic = {
 		"von Wrangel" "von Zieten" "zur Lippe" "von Roon" "von Hohenhausen" "d'Aspre von Hoobreuk" "von Hortstein" "von Hötzendorf" "von Kirbach"
 		"von Kobratin" "von Schönburg" "von Tegetthoff" "von Uchatius" "von Wittelsbach" "von Württemberg" "von Zahringen" Wagner Wittmann "zu Hohenlohe"}
 	}
+	vandal = {
+		color = { 77 27 23 }
+		first_names = { Adelbert Adolf Albrecht Alexander Alfons Alfred August Alois Anton Arthur
+		Bernhard Burkhard Christian Dieter Edmund Eduard Edwin Engelbert Erwin Erich Ernst 
+		Ferdinand Florian Franz Friedrich Fritz Georg Gebhard Gerhard Gottfried Günther
+		Gustav Hasso Heinrich Helmuth Hermann Horst Hugo Jakob Joachim Johann Joseph Julius Jürgen 
+		Karl Konrad Kurt Leonhard Leopold Lorenz Lothar Ludwig Lukas Manfred Maximilian Michael 
+		Nikolaus Otto Pascal Paul Peter Reinhard Rudolf Ruprecht Stefan Theodor Viktor Walter Werner 
+		Wilhelm Wolfgang }
+		
+		last_names = { Beck-Rzikowsky Behncke Blos Brommy Cordemann Dankl Dreyer Droste Eisner Geiss 
+		Goering Groener Hainisch Haus Held Hellpach "Herwarth von Bittenfeld" Heppendorf Hoffmann 
+		Hummel Köhler Krohn Ludendorff Mergenthaler Miklas Remmele Schmitt Schobber Schree Seitz Steeb
+		Stolzer Trunk "Vogel von Falkenstein" "von Alten" "von Anhalt" "von Arentschildt" "von Bülow" 
+		"von Baden" "von Benedek" "von Bismarck-Bohlen" "von Blumenthal" "von Blomberg" "von Böhm-Ermolli"
+		"von Boyen" "von Braunschweig" "von Brudermann" "von Clam-Gallas" "von dem Knesebeck" 
+		"von der Tann" "von Dietrich" "von Gablenz" "von Gebser" "von Grünne" "von Habsburg" "von Fritsch"
+		 "von Halkett" "von Hannover" "von Hartmann" "von Haynau" "von Hess" 
+		"von Hessen-Darmstadt" "von Hessen-Kassel" "von Hindenburg" "von Hohenzollern" "von Holstein-Gottorp" "von Knorr" "von Kleefeld"
+		"von Manteuffel" "von Mecklenburg-Schwerin" "von Mecklenburg-Strelitz" "von Moltke" "von Oldenburg" "von Rauch" "von Ravensberg" 
+		"von Reuter" "von Richthofen" "von Sachsen-Altenburg" "von Sachsen-Coburg-Gotha" "von Sachsen-Meiningen" 
+		"von Sachsen-Weimar-Eisenach" "von Schlieffen" "von Schwarzburg" "von Spee" "von Tirpitz" "von Waldeck und Pyrmont" "von Wettin" 
+		"von Wrangel" "von Zieten" "zur Lippe" "von Roon" "von Hohenhausen" "d'Aspre von Hoobreuk" "von Hortstein" "von Hötzendorf" "von Kirbach"
+		"von Kobratin" "von Schönburg" "von Tegetthoff" "von Uchatius" "von Wittelsbach" "von Württemberg" "von Zahringen" Wagner Wittmann "zu Hohenlohe"}
+	}
 	
 	union = GER
 }
@@ -441,6 +466,61 @@ pan_swiss = {
 		Ador Calonder Chaudet Comtesse "de Prangins" Dufour Fornerod Guisan Ruchet Ruchonnet }
 	}
 }
+pre_indo_european = {
+	leader = european
+	unit = EuropeaGC
+	
+	nuragic = {
+		color = { 128 106 96 }
+		first_names = {
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
+		}
+		last_names = { # no last names
+			""
+		}
+	}
+	oldspain = {
+		color = { 255 30 0 }
+		first_names = {
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
+		}
+		last_names = {
+			Punicid Orisid Amidian Nisunidian Tiresidian Budidian Gargoridian Culcidian Indicidian Iscerbelidian Karidian Korbidian Lagunidian Mandonidian Magavarician Uxentican Umarilid Turenidian Urceticidian
+		}
+	}
+	pie_american = {
+		color = { 106 96 128 }
+		first_names = {
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
+		}
+		last_names = { # no last names
+			""
+		}
+	}
+	pie_oceanian = {
+		color = { 96 128 106 }
+		first_names = {
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
+		}
+		last_names = { # no last names
+			""
+		}
+	}
+	pie_african = {
+		color = { 96 106 128 }
+		first_names = {
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
+		}
+		last_names = { # no last names
+			""
+		}
+	}
+}
 	
 scandinavian = {
 	leader = european
@@ -675,6 +755,22 @@ italian = {
 
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
 		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+	}
+	illyrian = {
+		color = { 102 88 61 }
+		first_names = {
+			Andinos Andios Anneses Annos Aplis Aploudos Aplos Apouros Baidaros Baizo Baizos Baolios Bardourios Bato Byoukos Byousas Bizo Bryoukos Karrios Daiekos Daitor Dasantos Dasios Dazomenos Dazos Epikaris Iettos Implaios Laidikalios Laidietis Laidos Labios Ledros Massurios Messios Messor Paio Panentios Panes Panto Pantos Plannios Plares Prorados Sarnos Skenobarbos Sestos Statanios Statikos Statos Souttis Temaios Tizios Tritonos Tritos Turelios Ulkidios Baranos Baridios Bendo Bepos Berzoulos
+			Karbanios Germanos Labianos Pinsos Pladomenos Verzaieos
+			Anadros Bouzetios Ditos Loantios Pantadienos Plator Platourios Rufantius Sestenius Stennas Vendes
+			Tourranios Tourrinios Touros
+			Andes Iaritos Montanos Parmanicos Sarios Seneka Silos Sinos
+			Blaidaros Dasmenos Lensos Sassaios Skilos Sourko
+			Kralos Liros Passalos Likkaios
+			Skenos
+		}
+		last_names = {
+			Andinid Andid Annesid Annid Aplid Apludid Apurid Baizid Bardurid Batid Beukid Beusid Bizid Karrid Daitorid Dasid Dazomenid Dazid Epicarid Iettid Laidicalid Laidietid Laidid Ledrid Messid Messorid Panentid Panid Pantid Plannid Plarid Proradid Samekkid Sarnid Skenobarbid Statanid Statikid Statid Suttid Tizid Tritonid Tritid Turelid Varanid Varidid Vendid Vepid Verzulid Carvanid Germanid Lavianid Pinsid Pladomenid Platid Verzaiid Anadrid Buzetid Ditid Loantid Pantadienid Platorid Platourid Portid Rufantid Sestenid Stennid Vendid Tourranid Tourrinid Tourid Iaritid Montanid Parmanikid Sarid Senekid Silid Sinid Blaidarid Dasmenid Lensid Sassaid Skilid Surkid Kralid Lirid Passalid Likkaid Skenid
+		}
 	}
 	
 	union = ITA
@@ -1751,6 +1847,24 @@ levantine = {
 	}
 	magnagreek = {
 		color = {100 200 50}
+
+		first_names = { Adamantios Aléxandros Anastásios Andréas Antónios Aristídis Athanásios Avgóstinos Venizélos Charálampos
+		Charílaos Dimítrios Diomídis Elefthérios Emmanouíl Epameínontas Evripídis Gennaíos Geórgios Ilías
+		Ionnis Kítsos Konstantínos Kyriákos Kyriakoúlis Leonídas Makários Márkos Míchael Militiadis
+		Nikólaos Odysséas Óthon Panagiótis Pavlos Pétros Sofoklís Sotíris Spyridíon Spýros
+		Stáïkos Stéfanos Stylianós Themistoklís Theódoros Tharývoulos Tzannís Vásos Víktor Zinóvios
+		}
+
+		last_names = { Charalámpis Christákis-Zográfos Daglis Dousmanis Foúmis Gonatás Chatzianéstis Kallérgis Kanáris Katsimiros
+		Kolokotrónis Kondýlis Kountouriótis Kriezís Makriiánnis Mános Mavrokordátos Mavrovouniótis Metaxás Moúskos
+		Níder Othonaíos Paláskas Pan'galos Papadiamantópoulos Papadópoulos Papágos Papoúlas Parakevópoulos Plapoútas
+		Plastíras Sapountzákis Saráfis Smolénskis Sofoúlis Soútsos Spyromílios Staïkópoulos Stanotas "tis Elládas"
+		Trikoúpis Tsakalótos Tsolákoglou Typáldos-Alfonsátos Tzavélas Vássos Venizélos Voúlgaris Zaïmis Zymvrakákis
+		}
+		radicalism = 10
+	}
+	alexandrine = {
+		color = { 192 204 61 }
 
 		first_names = { Adamantios Aléxandros Anastásios Andréas Antónios Aristídis Athanásios Avgóstinos Venizélos Charálampos
 		Charílaos Dimítrios Diomídis Elefthérios Emmanouíl Epameínontas Evripídis Gennaíos Geórgios Ilías
@@ -5271,4 +5385,6 @@ zzz_religions = {
 	zzz_religion_noreligion = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_adamites = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_gnostic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_canaanite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_mardukism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 }

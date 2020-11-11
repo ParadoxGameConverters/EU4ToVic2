@@ -9633,7 +9633,116 @@ country_event = {
   primary_culture = magnagreek
  }
 }
-
+country_event = {
+ id = 1000410
+ title = EVTNAME000002
+ desc = EVTDESC000002
+ picture = "Demonstration"
+ 
+ trigger = {
+  OR = { primary_culture = noculture primary_culture = dummy }
+  total_pops = 1 capital_scope = {
+   pop_majority_culture = oldspain
+  }
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.001
+ }
+ 
+ option = {
+  name = EVTOPTA000002
+  primary_culture = oldspain
+ }
+}
+country_event = {
+ id = 1000411
+ title = EVTNAME000002
+ desc = EVTDESC000002
+ picture = "Demonstration"
+ 
+ trigger = {
+  OR = { primary_culture = noculture primary_culture = dummy }
+  total_pops = 1 capital_scope = {
+   pop_majority_culture = illyrian
+  }
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.001
+ }
+ 
+ option = {
+  name = EVTOPTA000002
+  primary_culture = illyrian
+ }
+}
+country_event = {
+ id = 1000412
+ title = EVTNAME000002
+ desc = EVTDESC000002
+ picture = "Demonstration"
+ 
+ trigger = {
+  OR = { primary_culture = noculture primary_culture = dummy }
+  total_pops = 1 capital_scope = {
+   pop_majority_culture = nuragic
+  }
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.001
+ }
+ 
+ option = {
+  name = EVTOPTA000002
+  primary_culture = nuragic
+ }
+}
+country_event = {
+ id = 1000413
+ title = EVTNAME000002
+ desc = EVTDESC000002
+ picture = "Demonstration"
+ 
+ trigger = {
+  OR = { primary_culture = noculture primary_culture = dummy }
+  total_pops = 1 capital_scope = {
+   pop_majority_culture = vandal
+  }
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.001
+ }
+ 
+ option = {
+  name = EVTOPTA000002
+  primary_culture = vandal
+ }
+}
+country_event = {
+ id = 1000414
+ title = EVTNAME000002
+ desc = EVTDESC000002
+ picture = "Demonstration"
+ 
+ trigger = {
+  OR = { primary_culture = noculture primary_culture = dummy }
+  total_pops = 1 capital_scope = {
+   pop_majority_culture = alexandrine
+  }
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.001
+ }
+ 
+ option = {
+  name = EVTOPTA000002
+  primary_culture = alexandrine
+ }
+}
 ##
 
 country_event = {
@@ -13137,5 +13246,55 @@ country_event = {
   remove_accepted_culture = zzz_religion_noreligion
   add_accepted_culture = zzz_religion_gnostic
   religion = gnostic
+ }
+}
+country_event = {
+ id = 1002070
+ title = EVTNAMERELNEW
+ desc = EVTDESCRELNEW
+ picture = census
+
+ trigger = {
+  capital_scope = {
+   pop_majority_religion = canaanite
+  }
+  accepted_culture = zzz_religion_noreligion
+  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.1
+ }
+ 
+ option = {
+  name = EVTOPTARELNEW
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_canaanite
+  religion = canaanite
+ }
+}
+country_event = {
+ id = 1002071
+ title = EVTNAMERELNEW
+ desc = EVTDESCRELNEW
+ picture = census
+
+ trigger = {
+  capital_scope = {
+   pop_majority_religion = mardukism
+  }
+  accepted_culture = zzz_religion_noreligion
+  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.1
+ }
+ 
+ option = {
+  name = EVTOPTARELNEW
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_religion_mardukism
+  religion = mardukism
  }
 }
