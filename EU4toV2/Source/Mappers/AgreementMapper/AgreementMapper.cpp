@@ -1,6 +1,6 @@
 #include "AgreementMapper.h"
-#include "ParserHelpers.h"
 #include "Log.h"
+#include "ParserHelpers.h"
 
 mappers::AgreementMapper::AgreementMapper()
 {
@@ -19,30 +19,25 @@ mappers::AgreementMapper::AgreementMapper(std::istream& theStream)
 
 void mappers::AgreementMapper::registerKeys()
 {
-	registerKeyword("colonies", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::stringList subjectList(theStream);
-			for (const auto& subject : subjectList.getStrings()) colonies.insert(subject);
-		});
-	registerKeyword("onesiders", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::stringList subjectList(theStream);
-			for (const auto& subject : subjectList.getStrings()) onesiders.insert(subject);
-		});
-	registerKeyword("doublesiders", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::stringList subjectList(theStream);
-			for (const auto& subject : subjectList.getStrings()) doublesiders.insert(subject);
-		});
-	registerKeyword("tributaries", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::stringList subjectList(theStream);
-			for (const auto& subject : subjectList.getStrings()) tributaries.insert(subject);
-		});
-	registerKeyword("vassals", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::stringList subjectList(theStream);
-			for (const auto& subject : subjectList.getStrings()) vassals.insert(subject);
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerKeyword("colonies", [this](const std::string& unused, std::istream& theStream) {
+		const auto theList = commonItems::stringList(theStream).getStrings();
+		colonies.insert(theList.begin(), theList.end());
+	});
+	registerKeyword("onesiders", [this](const std::string& unused, std::istream& theStream) {
+		const auto theList = commonItems::stringList(theStream).getStrings();
+		onesiders.insert(theList.begin(), theList.end());
+	});
+	registerKeyword("doublesiders", [this](const std::string& unused, std::istream& theStream) {
+		const auto theList = commonItems::stringList(theStream).getStrings();
+		doublesiders.insert(theList.begin(), theList.end());
+	});
+	registerKeyword("tributaries", [this](const std::string& unused, std::istream& theStream) {
+		const auto theList = commonItems::stringList(theStream).getStrings();
+		tributaries.insert(theList.begin(), theList.end());
+	});
+	registerKeyword("vassals", [this](const std::string& unused, std::istream& theStream) {
+		const auto theList = commonItems::stringList(theStream).getStrings();
+		vassals.insert(theList.begin(), theList.end());
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

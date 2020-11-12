@@ -226,6 +226,7 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\AgreementMapper\AgreementMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Building.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Buildings.cpp" />
@@ -301,6 +302,7 @@
     <ClCompile Include="EU4WorldTests\ReligionsTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionTests.cpp" />
     <ClCompile Include="MapperTests\AcceptedCultureThresholdsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\AgreementMapper\AgreementMapperTests.cpp" />
     <ClCompile Include="MapperTests\BlockedTechSchoolsTests.cpp" />
     <ClCompile Include="MapperTests\BuildingsTests.cpp" />
     <ClCompile Include="MapperTests\BuildingTests.cpp" />
