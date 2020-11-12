@@ -1,17 +1,16 @@
 #ifndef EU4_PROVINCE_H
 #define EU4_PROVINCE_H
-
 #include "Date.h"
 #include "BuildingWeightEffects.h"
 #include "PopRatio.h"
 #include "ProvinceBuildings.h"
 #include "ProvinceHistory.h"
 #include "ProvinceStats.h"
-#include "../../Mappers/Buildings/Buildings.h"
-#include "../Modifiers/Modifiers.h"
+#include "Buildings/Buildings.h"
+#include "Modifiers/Modifiers.h"
 #include "Parser.h"
-#include "../../Mappers/SuperGroupMapper/SuperGroupMapper.h"
-#include "../Regions/Regions.h"
+#include "SuperGroupMapper/SuperGroupMapper.h"
+#include "Regions/Regions.h"
 
 namespace EU4
 {
@@ -41,7 +40,7 @@ namespace EU4
 		[[nodiscard]] auto isColony() const { return colony; }
 		[[nodiscard]] auto isCity() const { return city; }
 		[[nodiscard]] auto isState() const { return stated; }
-		[[nodiscard]] auto wasColonised() const { return hadOriginalColoniser || provinceHistory.wasColonized(); }
+		[[nodiscard]] auto wasColonized() const { return hadOriginalColonizer || provinceHistory.wasColonized(); }
 		[[nodiscard]] auto hasModifier(const std::string& modifierName) const { return modifiers.count(modifierName) > 0; }
 		[[nodiscard]] auto getTotalWeight() const { return totalWeight; }
 		[[nodiscard]] auto getBaseTax() const { return baseTax; }
@@ -57,17 +56,18 @@ namespace EU4
 
 		[[nodiscard]] const auto& getProvinceStats() const { return provinceStats; }
 		[[nodiscard]] const auto& getCores() const { return cores; }
-		[[nodiscard]] auto& getPopRatios() { return provinceHistory.getPopRatios(); }
+		[[nodiscard]] const auto& getPopRatios() const { return provinceHistory.getPopRatios(); }
 		[[nodiscard]] const auto& exportBuildings() const { return buildings.getBuildings(); }
 
 		[[nodiscard]] bool hasBuilding(const std::string& building) const;
 		[[nodiscard]] bool hasGreatProject(const std::string& greatProject) const;
-		[[nodiscard]] double getCulturePercent(const std::string& culture) const;
+		[[nodiscard]] double getCulturePercent(const std::string& theCulture) const;
 		[[nodiscard]] std::optional<date> getFirstOwnedDate() const { return provinceHistory.getFirstOwnedDate(); }
 
 		void determineProvinceWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes);
 
 	private:
+		void registerKeys();
 		[[nodiscard]] BuildingWeightEffects getProvBuildingWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes) const;
 
 		int num = 0;
@@ -81,7 +81,7 @@ namespace EU4
 
 		bool inHRE = false;
 		bool colony = false;
-		bool hadOriginalColoniser = false;
+		bool hadOriginalColonizer = false;
 		bool territorialCore = false;
 		bool city = false;
 

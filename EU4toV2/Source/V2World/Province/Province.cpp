@@ -129,7 +129,7 @@ void V2::Province::convertFromOldProvince(
 		}
 	}
 	// Single colonized province is enough
-	for (const auto& oldProvince : provinceSources) if (oldProvince->wasColonised()) wasColonised = true;
+	for (const auto& oldProvince : provinceSources) if (oldProvince->wasColonized()) wasColonised = true;
 
 	// For buildings, we go with averages.
 	for (const auto& oldProvince : provinceSources)

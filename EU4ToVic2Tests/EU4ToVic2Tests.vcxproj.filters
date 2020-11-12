@@ -38,9 +38,6 @@
     <ClCompile Include="MapperTests\ReligionMapperTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\ProvinceHistoryTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="EU4WorldTests\ReligionTests.cpp">
       <Filter>EU4WorldTests</Filter>
     </ClCompile>
@@ -71,14 +68,8 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceHistory.cpp">
       <Filter>ConverterFiles\EU4World\Provinces</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\EU4ProvinceTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\Provinces.cpp">
       <Filter>ConverterFiles\EU4World\Provinces</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\ProvincesTests.cpp">
-      <Filter>EU4WorldTests</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp">
       <Filter>ConverterFiles\Mappers\ProvinceMappings</Filter>
@@ -107,17 +98,11 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceBuildings.cpp">
       <Filter>ConverterFiles\EU4World\Provinces</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\ProvinceBuildingsTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp">
       <Filter>ConverterFiles\EU4World\Modifiers</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp">
       <Filter>ConverterFiles\EU4World\Modifiers</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\ProvinceModifierTests.cpp">
-      <Filter>EU4WorldTests</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceModifier.cpp">
       <Filter>ConverterFiles\EU4World\Provinces</Filter>
@@ -460,6 +445,21 @@
     </ClCompile>
     <ClCompile Include="MapperTests\AgreementMapper\AgreementMapperTests.cpp">
       <Filter>MapperTests\AgreementMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceModifierTests.cpp">
+      <Filter>EU4WorldTests\ProvinceTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceHistoryTests.cpp">
+      <Filter>EU4WorldTests\ProvinceTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceBuildingsTests.cpp">
+      <Filter>EU4WorldTests\ProvinceTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ProvinceTests\ProvincesTests.cpp">
+      <Filter>EU4WorldTests\ProvinceTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ProvinceTests\EU4ProvinceTests.cpp">
+      <Filter>EU4WorldTests\ProvinceTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
