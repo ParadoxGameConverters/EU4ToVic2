@@ -574,6 +574,12 @@
     <ClCompile Include="Source\EU4World\Country\EU4CountryModifier.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.cpp">
+      <Filter>Mappers\DeadDefinitionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapping.cpp">
+      <Filter>Mappers\DeadDefinitionMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1112,6 +1118,12 @@
     <ClInclude Include="Source\EU4World\Country\EU4CountryModifier.h">
       <Filter>EU4World\Country</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.h">
+      <Filter>Mappers\DeadDefinitionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapping.h">
+      <Filter>Mappers\DeadDefinitionMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1359,6 +1371,9 @@
     </Filter>
     <Filter Include="Mappers\CountryFlags">
       <UniqueIdentifier>{c2f5257a-dea3-40f3-9aa0-466dce08a547}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\DeadDefinitionMapper">
+      <UniqueIdentifier>{f1195239-6d04-4195-b19c-5a567619bc87}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

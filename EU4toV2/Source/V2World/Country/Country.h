@@ -105,6 +105,10 @@ class Country
 	void setAcceptedCultures(const std::set<std::string>& accepted) { details.acceptedCultures = accepted; }
 	void addAcceptedCulture(const std::string& culture) { details.acceptedCultures.insert(culture); }
 	void addCountryFlag(const std::string& flag) { details.countryFlags.insert(flag); }
+	void setReligion(const std::string& religion) { details.religion = religion; }
+	void setGovernment(const std::string& government) { details.government = government; }
+	void setCapital(const int capital) { details.capital = capital; }
+	void setCivilized(const bool civilized) { details.civilized = civilized; }
 
 	bool addFactory(std::shared_ptr<Factory> factory);
 	Relation& getRelation(const std::string& target);

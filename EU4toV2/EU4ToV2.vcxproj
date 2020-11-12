@@ -388,6 +388,8 @@
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
+    <ClCompile Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.cpp" />
+    <ClCompile Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapping.cpp" />
     <ClCompile Include="Source\Mappers\FactoryCounts\FactoryStartingCounts.cpp" />
     <ClCompile Include="Source\Mappers\FactoryInventions\FactoryInventionMapper.cpp" />
     <ClCompile Include="Source\Mappers\FactoryInventions\FactoryInventionDetails.cpp" />
@@ -585,6 +587,8 @@
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
+    <ClInclude Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.h" />
+    <ClInclude Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapping.h" />
     <ClInclude Include="Source\Mappers\FactoryCounts\FactoryStartingCounts.h" />
     <ClInclude Include="Source\Mappers\FactoryInventions\FactoryInventionMapper.h" />
     <ClInclude Include="Source\Mappers\FactoryInventions\FactoryInventionDetails.h" />

@@ -1,7 +1,5 @@
-
 #ifndef WORLD_H
 #define WORLD_H
-
 #include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/AcceptedCultureThresholds/AcceptedCultureThresholdsMapper.h"
 #include "../Mappers/Adjacency/AdjacencyMapper.h"
@@ -11,6 +9,7 @@
 #include "../Mappers/CulturalUnions/CulturalUnionMapper.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
+#include "../Mappers/DeadDefinitionMapper/DeadDefinitionMapper.h"
 #include "../Mappers/FactoryTypes/FactoryTypeMapper.h"
 #include "../Mappers/Geography/ClimateMapper.h"
 #include "../Mappers/Geography/Continents.h"
@@ -129,6 +128,7 @@ class World
 	void addAcceptedCultures(const EU4::Regions& eu4Regions);
 	void addReligionCulture();
 	void convertCountryFlags();
+	void updateDeadNations();
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
@@ -161,6 +161,7 @@ class World
 	mappers::RegionLocalizations regionLocalizations;
 	mappers::AfricaResetMapper africaResetMapper;
 	mappers::AcceptedCultureThresholdsMapper acceptedCultureThresholdsMapper;
+	mappers::DeadDefinitionMapper deadDefinitionMapper;
 	ProvinceNameParser provinceNameParser;
 	CountryPopLogger countryPopLogger;
 	MappingChecker mappingChecker;
