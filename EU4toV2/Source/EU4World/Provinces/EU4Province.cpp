@@ -28,9 +28,7 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 
 	// for old versions of EU4 (< 1.12), copy tax to production if necessary
 	if (baseProduction == 0.0 && baseTax > 0)
-	{
 		baseProduction = baseTax;
-	}
 }
 
 void EU4::Province::registerKeys()

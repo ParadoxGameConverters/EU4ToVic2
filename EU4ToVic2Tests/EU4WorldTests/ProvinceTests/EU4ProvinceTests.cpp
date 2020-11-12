@@ -40,7 +40,7 @@ TEST(EU4World_ProvinceTests, coresCanBeSetWithNewStyle)
 {
 	std::stringstream input;
 	input << "cores={\n";
-	input << "	\"TAG\"\n";
+	input << "\t\"TAG\"\n";
 	input << "}\n";
 	const EU4::Province theProvince("-1", input);
 

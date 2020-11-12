@@ -25,10 +25,10 @@ TEST(EU4World_ProvincesTests, gettingNonExistentProvinceThrowsException)
 	input << "-1={}";
 	const EU4::Provinces theProvinces(input);
 	
-	ASSERT_THROW(const auto& test = theProvinces.getProvince(42), std::range_error);
+	ASSERT_THROW(const auto& breakPlease = theProvinces.getProvince(42), std::range_error);
 }
 
-TEST(EU4World_ProvincesTests, provicneCanBeRetrieved)
+TEST(EU4World_ProvincesTests, provinceCanBeRetrieved)
 {
 	std::stringstream input;
 	input << "-1={}";

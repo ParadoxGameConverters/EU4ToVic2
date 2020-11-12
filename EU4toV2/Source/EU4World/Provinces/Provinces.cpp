@@ -120,7 +120,7 @@ void EU4::Provinces::logTotalProvinceWeights() const
 		}
 		else
 		{
-			world_tag_weights.insert(std::pair<std::string, std::vector<double>>(province.second->getOwnerString(), map_values));
+			world_tag_weights.insert(std::pair(province.second->getOwnerString(), map_values));
 		}
 	}
 	LOG(LogLevel::Info) << "Sum of all Province Weights: " << totalProvinceWeights;
