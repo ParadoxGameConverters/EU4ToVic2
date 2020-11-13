@@ -17,16 +17,18 @@ class ProvinceHistory: commonItems::parser
 	void updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName, const std::string& superRegion);
 	void buildPopRatios(double assimilationFactor);
 	void setStartingCulture(const std::string& culture) { startingCulture = culture; }
-	void setStartingReligion(const std::string& religion) { startingCulture = religion; }
+	void setStartingReligion(const std::string& religion) { startingReligion = religion; }
+
+	[[nodiscard]] const auto& getStartingCulture() const { return startingCulture; }
+	[[nodiscard]] const auto& getStartingReligion() const { return startingReligion; }
+	[[nodiscard]] const auto& getPopRatios() const { return popRatios; }
 
 	[[nodiscard]] std::optional<date> getFirstOwnedDate() const;
 	[[nodiscard]] bool hasOriginalCulture() const;
-	[[nodiscard]] const auto& getOriginalCulture() const { return startingCulture; }
 	[[nodiscard]] bool wasColonized() const;
 	[[nodiscard]] bool hasInitializedHistory() const { return !religionHistory.empty() && !cultureHistory.empty(); }
-
 	[[nodiscard]] auto getOriginalDevelopment() const { return originalTax + originalProduction + originalManpower; }
-	[[nodiscard]] const auto& getPopRatios() const { return popRatios; }
+
 
   private:
 	void registerKeys();

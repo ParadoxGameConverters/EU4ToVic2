@@ -194,3 +194,86 @@ TEST(EU4World_Province_HistoryTests, popRatiosCanBeConstructed)
 	ASSERT_NEAR(1, pop1.getMiddleRatio() + pop2.getMiddleRatio() + pop3.getMiddleRatio() + pop4.getMiddleRatio(), 0.001);
 	ASSERT_NEAR(1, pop1.getLowerRatio() + pop2.getLowerRatio() + pop3.getLowerRatio() + pop4.getLowerRatio(), 0.001);
 }
+
+TEST(EU4World_Province_HistoryTests, startingCultureCanBeOverridden)
+{
+	std::stringstream input;
+	input << "culture = dummy\n";
+	EU4::ProvinceHistory theHistory(input);
+
+	ASSERT_EQ("dummy", theHistory.getStartingCulture());
+
+	theHistory.setStartingCulture("culture");
+
+	ASSERT_EQ("culture", theHistory.getStartingCulture());
+}
+
+TEST(EU4World_Province_HistoryTests, startingReligionCanBeOverridden)
+{
+	std::stringstream input;
+	input << "religion = dummy\n";
+	EU4::ProvinceHistory theHistory(input);
+
+	ASSERT_EQ("dummy", theHistory.getStartingReligion());
+
+	theHistory.setStartingReligion("religion");
+
+	ASSERT_EQ("religion", theHistory.getStartingReligion());
+}
+
+TEST(EU4World_Province_HistoryTests, historyIsInitializedForBothCultureAndReligion)
+{
+	std::stringstream input1;
+	EU4::ProvinceHistory theHistory1(input1);
+	std::stringstream input2;
+	input2 << "culture = dummy_culture\n";
+	EU4::ProvinceHistory theHistory2(input2);
+	std::stringstream input3;
+	input3 << "religion = dummy_religion\n";
+	EU4::ProvinceHistory theHistory3(input3);
+	std::stringstream input4;
+	input4 << "culture = dummy_culture\n";
+	input4 << "religion = dummy_religion\n";
+	EU4::ProvinceHistory theHistory4(input4);
+
+	ASSERT_FALSE(theHistory1.hasInitializedHistory());
+	ASSERT_FALSE(theHistory2.hasInitializedHistory());
+	ASSERT_FALSE(theHistory3.hasInitializedHistory());
+	ASSERT_TRUE(theHistory4.hasInitializedHistory());
+}
+
+TEST(EU4World_Province_HistoryTests, popratioculturesCanBeOverriddenbyNeocultures)
+{
+	std::stringstream input;
+	input << "culture = aztec\n"; // (popratio1)
+	input << "religion = nahuatl\n";
+	input << "1500.1.1 = {\n";
+	input << "\tculture=spanish\n"; // colonized (popratio2)
+	input << "}\n";
+	input << "1505.1.1 = {\n";
+	input << "\treligion=catholic\n"; // converted religion (popratio3)
+	input << "}\n";
+	EU4::ProvinceHistory theHistory(input);
+
+	theHistory.buildPopRatios(0.0025);
+	theHistory.updatePopRatioCulture("spanish", "mexican", "central_america");
+
+	const auto& popRatio1 = theHistory.getPopRatios()[0];
+	const auto& popRatio2 = theHistory.getPopRatios()[1];
+	const auto& popRatio3 = theHistory.getPopRatios()[2];
+
+	ASSERT_EQ("aztec", popRatio1.getCulture());
+	ASSERT_EQ("nahuatl", popRatio1.getReligion());
+	ASSERT_TRUE(popRatio1.getOriginalCulture().empty());
+	ASSERT_TRUE(popRatio1.getSuperRegion().empty());
+
+	ASSERT_EQ("mexican", popRatio2.getCulture());
+	ASSERT_EQ("spanish", popRatio2.getOriginalCulture());
+	ASSERT_EQ("nahuatl", popRatio2.getReligion());
+	ASSERT_EQ("central_america", popRatio2.getSuperRegion());
+
+	ASSERT_EQ("mexican", popRatio3.getCulture());
+	ASSERT_EQ("spanish", popRatio3.getOriginalCulture());
+	ASSERT_EQ("catholic", popRatio3.getReligion());
+	ASSERT_EQ("central_america", popRatio3.getSuperRegion());
+}
