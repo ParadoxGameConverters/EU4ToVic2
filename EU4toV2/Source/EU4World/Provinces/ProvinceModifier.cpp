@@ -3,12 +3,15 @@
 
 EU4::ProvinceModifier::ProvinceModifier(std::istream& theStream)
 {
-	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString modifierString(theStream);
-		modifier = modifierString.getString();
-	});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+}
+
+void EU4::ProvinceModifier::registerKeys()
+{
+	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream) {
+		modifier = commonItems::singleString(theStream).getString();
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

@@ -129,7 +129,7 @@ void V2::Province::convertFromOldProvince(
 		}
 	}
 	// Single colonized province is enough
-	for (const auto& oldProvince : provinceSources) if (oldProvince->wasColonised()) wasColonised = true;
+	for (const auto& oldProvince : provinceSources) if (oldProvince->wasColonized()) wasColonised = true;
 
 	// For buildings, we go with averages.
 	for (const auto& oldProvince : provinceSources)
@@ -152,7 +152,7 @@ void V2::Province::convertFromOldProvince(
 		if (oldProvince->hasBuilding("fort6")) ++fortLevel; // obsolete, exclusive with fort_18th_century
 
 		// Add up different building types.
-		auto provinceBuildings = oldProvince->exportBuildings();
+		auto provinceBuildings = oldProvince->getBuildings();
 		importedBuildings.insert(provinceBuildings.begin(), provinceBuildings.end());
 	}
 	mfgCount = lround(mfgCount / provinceSources.size()); // Since these are built everywhere, use average.
