@@ -4,7 +4,6 @@ copy "Data_Files\log.txt" "..\Debug\EU4ToVic2\"
 copy "Data_Files\configuration-example.txt" "..\Debug\EU4ToVic2\"
 copy "Resources\msvcp140_codecvt_ids.dll" "..\Debug\EU4ToVic2\"
 copy "Resources\vcruntime140_1.dll" "..\Debug\EU4ToVic2\"
-copy "Resources\VC_redist.x64.exe" "..\Debug\EU4ToVic2\"
 copy "Resources\rakaly.dll" "..\Debug\EU4ToVic2\"
 
 mkdir "..\Debug\Configuration"
