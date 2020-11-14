@@ -24,11 +24,18 @@ class Province: commonItems::parser
 	[[nodiscard]] auto isTerritorialCore() const { return territorialCore; }
 	[[nodiscard]] auto isColony() const { return colony; }
 	[[nodiscard]] auto isCity() const { return city; }
-	[[nodiscard]] auto isState() const { return stated; }
 	[[nodiscard]] auto wasColonized() const { return hadOriginalColonizer || provinceHistory.wasColonized(); }
 	[[nodiscard]] auto hasModifier(const std::string& modifierName) const { return modifiers.count(modifierName); }
-	[[nodiscard]] auto getTotalWeight() const { return totalWeight; }
+
 	[[nodiscard]] auto getBaseTax() const { return baseTax; }
+	[[nodiscard]] auto getBaseProduction() const { return baseProduction; }
+	[[nodiscard]] auto getBaseManpower() const { return baseManpower; }
+	[[nodiscard]] auto getFirstOwnedDate() const { return provinceHistory.getFirstOwnedDate(); }
+	[[nodiscard]] auto hasBuilding(const std::string& building) const { return buildings.hasBuilding(building); }
+	[[nodiscard]] auto hasGreatProject(const std::string& greatProject) const { return greatProjects.count(greatProject); }
+
+	// These relate to province weight and are used for debug logging and various dev-related calcs.
+	// Some are mislabeled and represent not what they claim. Some are calced wrong. This needs to be revamped.
 	[[nodiscard]] auto getTaxIncome() const { return taxIncome; }
 	[[nodiscard]] auto getProductionIncome() const { return productionIncome; }
 	[[nodiscard]] auto getManpowerWeight() const { return manpowerWeight; }
@@ -36,8 +43,7 @@ class Province: commonItems::parser
 	[[nodiscard]] auto getTotalDevModifier() const { return devModifier; }
 	[[nodiscard]] auto getDevDelta() const { return devDelta; }
 	[[nodiscard]] auto getModifierWeight() const { return modifierWeight; }
-	[[nodiscard]] auto getProsperity() const { return prosperity; }
-	[[nodiscard]] auto getFirstOwnedDate() const { return provinceHistory.getFirstOwnedDate(); }
+	[[nodiscard]] auto getTotalWeight() const { return totalWeight; } // TODO: test this when possible.
 
 	[[nodiscard]] const auto& getArea() const { return areaName; }
 	[[nodiscard]] const auto& getName() const { return name; }
@@ -45,13 +51,11 @@ class Province: commonItems::parser
 	[[nodiscard]] const auto& getControllerString() const { return controllerString; }
 	[[nodiscard]] const auto& getOriginalCulture() const { return provinceHistory.getStartingCulture(); }
 	[[nodiscard]] const auto& getTradeGoods() const { return tradeGoods; }
-	[[nodiscard]] const auto& getProvinceStats() const { return provinceStats; }
+	[[nodiscard]] const auto& getProvinceStats() const { return provinceStats; } // Debug datablock for CSV export
 	[[nodiscard]] const auto& getCores() const { return cores; }
 	[[nodiscard]] const auto& getPopRatios() const { return provinceHistory.getPopRatios(); }
-	[[nodiscard]] const auto& exportBuildings() const { return buildings.getBuildings(); }
+	[[nodiscard]] const auto& getBuildings() const { return buildings.getBuildings(); }
 
-	[[nodiscard]] bool hasBuilding(const std::string& building) const;
-	[[nodiscard]] bool hasGreatProject(const std::string& greatProject) const;
 	[[nodiscard]] double getCulturePercent(const std::string& theCulture) const;
 
 	void addCore(const std::string& tag) { cores.insert(tag); }
@@ -85,7 +89,6 @@ class Province: commonItems::parser
 	bool hadOriginalColonizer = false;
 	bool territorialCore = false;
 	bool city = false;
-	bool stated = false;
 	int centerOfTradeLevel = 0;
 
 	ProvinceHistory provinceHistory;
@@ -99,7 +102,8 @@ class Province: commonItems::parser
 	// province attributes for weights
 	double baseTax = 0;
 	double baseProduction = 0;
-	double manpower = 0;
+	double baseManpower = 0;
+	
 	double totalWeight = 0;
 	double tradeGoodsPrice = 0;
 	double taxIncome = 0;
@@ -109,7 +113,6 @@ class Province: commonItems::parser
 	double devModifier = 0;
 	double devDelta = 0;
 	double modifierWeight = 0;
-	double prosperity = 0;
 	ProvinceStats provinceStats;
 };
 } // namespace EU4

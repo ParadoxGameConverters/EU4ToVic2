@@ -48,11 +48,13 @@ void EU4::Province::registerKeys()
 	registerKeyword("base_production", [this](const std::string& unused, std::istream& theStream) {
 		baseProduction = commonItems::singleDouble(theStream).getDouble();
 	});
+	// One of these is obsolete but required for old versions.
 	registerKeyword("base_manpower", [this](const std::string& unused, std::istream& theStream) {
-		manpower = commonItems::singleDouble(theStream).getDouble();
+		baseManpower = commonItems::singleDouble(theStream).getDouble();
 	});
+	// No idea which one.
 	registerKeyword("manpower", [this](const std::string& unused, std::istream& theStream) {
-		manpower = commonItems::singleDouble(theStream).getDouble();
+		baseManpower = commonItems::singleDouble(theStream).getDouble();
 	});
 	registerKeyword("owner", [this](const std::string& unused, std::istream& theStream) {
 		ownerString = commonItems::singleString(theStream).getString();
@@ -121,16 +123,6 @@ void EU4::Province::buildPopRatio(const mappers::SuperGroupMapper& superGroupMap
 	provinceHistory.buildPopRatios(assimilationFactor);
 }
 
-bool EU4::Province::hasBuilding(const std::string& building) const
-{
-	return buildings.hasBuilding(building);
-}
-
-bool EU4::Province::hasGreatProject(const std::string& greatProject) const
-{
-	return greatProjects.count(greatProject);
-}
-
 double EU4::Province::getCulturePercent(const std::string& theCulture) const
 {
 	auto culturePercent = 0.0;
@@ -143,7 +135,7 @@ double EU4::Province::getCulturePercent(const std::string& theCulture) const
 
 void EU4::Province::determineProvinceWeight(const mappers::Buildings& buildingTypes, const Modifiers& modifierTypes)
 {
-	auto manpower_weight = manpower;
+	auto manpower_weight = baseManpower;
 	const auto taxEfficiency = 1.0;
 
 	const auto buildingWeightEffects = getProvBuildingWeight(buildingTypes, modifierTypes);
@@ -177,7 +169,7 @@ void EU4::Province::determineProvinceWeight(const mappers::Buildings& buildingTy
 	manpowerWeight = manpower_weight;
 
 	// dev modifier
-	devModifier = baseTax + baseProduction + manpower;
+	devModifier = baseTax + baseProduction + baseManpower;
 	devDelta = devModifier - provinceHistory.getOriginalDevelopment();
 	modifierWeight = buildingWeight + manpower_weight + production_income + total_tx;
 
