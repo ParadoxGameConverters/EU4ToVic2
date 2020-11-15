@@ -479,6 +479,18 @@
     <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodTests.cpp">
       <Filter>EU4WorldTests\TradeGoodTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Wars\EU4War.cpp">
+      <Filter>ConverterFiles\EU4World\Wars</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Wars\EU4WarDetails.cpp">
+      <Filter>ConverterFiles\EU4World\Wars</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\WarTests\WarDetailsTests.cpp">
+      <Filter>EU4WorldTests\WarTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\WarTests\WarTests.cpp">
+      <Filter>EU4WorldTests\WarTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -672,6 +684,12 @@
     </Filter>
     <Filter Include="EU4WorldTests\TradeGoodTests">
       <UniqueIdentifier>{e83cb394-4895-438a-b764-e9b5a482a3ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Wars">
+      <UniqueIdentifier>{c22ed081-a0f7-4441-9b98-94e2c39e4eb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\WarTests">
+      <UniqueIdentifier>{c13bc394-5ac8-41aa-acc3-a2bb2e6cc12c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
