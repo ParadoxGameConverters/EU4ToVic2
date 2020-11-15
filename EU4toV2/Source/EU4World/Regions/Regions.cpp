@@ -14,7 +14,7 @@ EU4::Regions::Regions(const SuperRegions& sRegions, const Areas& areas, std::ist
 
 void EU4::Regions::registerKeys(const Areas& areas)
 {
-	registerRegex("\\w+_region", [this, areas](const std::string& regionName, std::istream& areasFile) {
+	registerRegex(R"(\w+_region)", [this, areas](const std::string& regionName, std::istream& areasFile) {
 		Region newRegion(areasFile);
 		newRegion.addProvinces(areas);
 		regions.insert(make_pair(regionName, newRegion));
