@@ -30,8 +30,6 @@ namespace V2
 		int relations = 0;
 		int influence = 0;
 		bool militaryAccess = false;
-		date lastSendDiplomat;
-		date lastWar;
 		int level = 2;
 	};
 }

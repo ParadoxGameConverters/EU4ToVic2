@@ -299,6 +299,9 @@
     <ClCompile Include="EU4WorldTests\RegionsTests\RegionsTests.cpp" />
     <ClCompile Include="EU4WorldTests\RegionsTests\RegionTests.cpp" />
     <ClCompile Include="EU4WorldTests\RegionsTests\SuperRegionTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4EmpireTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationDetailsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationsTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionGroupTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionsTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionTests.cpp" />

@@ -464,6 +464,15 @@
     <ClCompile Include="EU4WorldTests\RegionsTests\RegionsTests.cpp">
       <Filter>EU4WorldTests\RegionsTests</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4EmpireTests.cpp">
+      <Filter>EU4WorldTests\RelationTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationDetailsTests.cpp">
+      <Filter>EU4WorldTests\RelationTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationsTests.cpp">
+      <Filter>EU4WorldTests\RelationTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -645,6 +654,9 @@
     </Filter>
     <Filter Include="EU4WorldTests\RegionsTests">
       <UniqueIdentifier>{7f6a8d78-3bbe-4953-af7c-65a2fae3e7e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\RelationTests">
+      <UniqueIdentifier>{df67a9ff-6dac-4e4d-b05e-a0598cfdc412}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
