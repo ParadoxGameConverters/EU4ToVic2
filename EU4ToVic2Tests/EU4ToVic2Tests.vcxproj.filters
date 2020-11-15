@@ -467,6 +467,18 @@
     <ClCompile Include="EU4WorldTests\ReligionTests\ReligionsTests.cpp">
       <Filter>EU4WorldTests\ReligionTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\TradeGoods\EU4TradeGood.cpp">
+      <Filter>ConverterFiles\EU4World\TradeGoods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\TradeGoods\EU4TradeGoods.cpp">
+      <Filter>ConverterFiles\EU4World\TradeGoods</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodsTests.cpp">
+      <Filter>EU4WorldTests\TradeGoodTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodTests.cpp">
+      <Filter>EU4WorldTests\TradeGoodTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -654,6 +666,12 @@
     </Filter>
     <Filter Include="EU4WorldTests\ReligionTests">
       <UniqueIdentifier>{7e2f6cf6-9854-49bd-a85a-aedbfa69576c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\TradeGoods">
+      <UniqueIdentifier>{7770bb08-ced0-408e-a940-d5f1b78157a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\TradeGoodTests">
+      <UniqueIdentifier>{e83cb394-4895-438a-b764-e9b5a482a3ec}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
