@@ -26,18 +26,6 @@
     <ClCompile Include="MapperTests\ReligionMapperTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\ReligionTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\ReligionGroupTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\ReligionsTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religion.cpp">
-      <Filter>ConverterFiles\EU4World\Religions</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\ReligionGroup.cpp">
       <Filter>ConverterFiles\EU4World\Religions</Filter>
     </ClCompile>
@@ -473,6 +461,12 @@
     <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationsTests.cpp">
       <Filter>EU4WorldTests\RelationTests</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\ReligionTests\ReligionGroupTests.cpp">
+      <Filter>EU4WorldTests\ReligionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ReligionTests\ReligionsTests.cpp">
+      <Filter>EU4WorldTests\ReligionTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -657,6 +651,9 @@
     </Filter>
     <Filter Include="EU4WorldTests\RelationTests">
       <UniqueIdentifier>{df67a9ff-6dac-4e4d-b05e-a0598cfdc412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\ReligionTests">
+      <UniqueIdentifier>{7e2f6cf6-9854-49bd-a85a-aedbfa69576c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

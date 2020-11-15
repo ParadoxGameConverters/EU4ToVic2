@@ -19,9 +19,6 @@
     <ClCompile Include="Source\EU4World\World.cpp">
       <Filter>EU4World</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Religions\Religion.cpp">
-      <Filter>EU4World\Religions</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Religions\ReligionGroup.cpp">
       <Filter>EU4World\Religions</Filter>
     </ClCompile>
@@ -598,9 +595,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\World.h">
       <Filter>EU4World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Religions\Religion.h">
-      <Filter>EU4World\Religions</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Religions\ReligionGroup.h">
       <Filter>EU4World\Religions</Filter>

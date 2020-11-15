@@ -221,7 +221,6 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4Empire.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4RelationDetails.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4Relations.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp" />
@@ -302,9 +301,8 @@
     <ClCompile Include="EU4WorldTests\RelationTests\EU4EmpireTests.cpp" />
     <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationDetailsTests.cpp" />
     <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationsTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ReligionGroupTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ReligionsTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ReligionTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ReligionTests\ReligionGroupTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ReligionTests\ReligionsTests.cpp" />
     <ClCompile Include="MapperTests\AcceptedCultureThresholdsMapperTests.cpp" />
     <ClCompile Include="MapperTests\AgreementMapper\AgreementMapperTests.cpp" />
     <ClCompile Include="MapperTests\BlockedTechSchoolsTests.cpp" />

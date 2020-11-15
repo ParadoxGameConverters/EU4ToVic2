@@ -353,7 +353,6 @@
     <ClCompile Include="Source\EU4World\Relations\EU4Empire.cpp" />
     <ClCompile Include="Source\EU4World\Relations\EU4RelationDetails.cpp" />
     <ClCompile Include="Source\EU4World\Relations\EU4Relations.cpp" />
-    <ClCompile Include="Source\EU4World\Religions\Religion.cpp" />
     <ClCompile Include="Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="Source\EU4World\Religions\Religions.cpp" />
     <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGood.cpp" />
@@ -551,7 +550,6 @@
     <ClInclude Include="Source\EU4World\Relations\EU4Empire.h" />
     <ClInclude Include="Source\EU4World\Relations\EU4RelationDetails.h" />
     <ClInclude Include="Source\EU4World\Relations\EU4Relations.h" />
-    <ClInclude Include="Source\EU4World\Religions\Religion.h" />
     <ClInclude Include="Source\EU4World\Religions\ReligionGroup.h" />
     <ClInclude Include="Source\EU4World\Religions\Religions.h" />
     <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGood.h" />

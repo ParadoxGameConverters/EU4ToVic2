@@ -35,9 +35,9 @@ void V2::MappingChecker::checkAllEU4ReligionsMapped(const EU4::World& sourceWorl
 {
 	for (const auto& EU4Religion : sourceWorld.getReligions().getAllReligions())
 	{
-		if (!religionMapper.getVic2Religion(EU4Religion.first))
+		if (!religionMapper.getVic2Religion(EU4Religion))
 		{
-			Log(LogLevel::Warning) << "No religion mapping for EU4 religion " << EU4Religion.first;
+			Log(LogLevel::Warning) << "No religion mapping for EU4 religion " << EU4Religion;
 		}
 	}
 }
