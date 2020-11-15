@@ -1126,7 +1126,10 @@ void V2::World::setupColonies()
 		if (capital != provinces.end())
 		{
 			auto capitalSources = capital->second->getEU4IDs();
-			capitalContinent = continentsMapper.getEU4Continent(*capitalSources.begin());
+			if (capitalSources.empty())
+				continue;
+			else
+				capitalContinent = continentsMapper.getEU4Continent(*capitalSources.begin());
 			if (!capitalContinent)
 				continue;
 		}
