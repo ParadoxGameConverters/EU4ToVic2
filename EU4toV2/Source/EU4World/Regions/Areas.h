@@ -1,6 +1,5 @@
 #ifndef EU4_AREAS_H
 #define EU4_AREAS_H
-
 #include "Parser.h"
 #include <map>
 #include <set>
@@ -17,6 +16,8 @@ class Areas: commonItems::parser
 	[[nodiscard]] const auto& getAreas() const { return theAreas; }
 
   private:
+	void registerKeys();
+
 	std::map<std::string, std::set<int>> theAreas;
 };
 } // namespace EU4

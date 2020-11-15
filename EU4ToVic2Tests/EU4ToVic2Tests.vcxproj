@@ -263,7 +263,6 @@
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="ConfigurationTests.cpp" />
-    <ClCompile Include="EU4WorldTests\AreasTests.cpp" />
     <ClCompile Include="EU4WorldTests\ArmyTests\EU4ArmyTests.cpp" />
     <ClCompile Include="EU4WorldTests\ArmyTests\EU4RegimentTests.cpp" />
     <ClCompile Include="EU4WorldTests\ColonialRegionTests\ColonialRegionsTests.cpp" />
@@ -278,7 +277,6 @@
     <ClCompile Include="EU4WorldTests\CountryTests\EU4TechnologyTests.cpp" />
     <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4AgreementTests.cpp" />
     <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4DiplomacyTests.cpp" />
-    <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryDateTests.cpp" />
     <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryTests.cpp" />
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderIDTests.cpp" />
@@ -296,8 +294,11 @@
     <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceHistoryTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceModifierTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceTests\ProvincesTests.cpp" />
-    <ClCompile Include="EU4WorldTests\RegionsTests.cpp" />
-    <ClCompile Include="EU4WorldTests\RegionTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RegionsTests\AreasTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RegionsTests\AreaTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RegionsTests\RegionsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RegionsTests\RegionTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RegionsTests\SuperRegionTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionGroupTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionsTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionTests.cpp" />
@@ -327,7 +328,6 @@
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mocks\RegionsMock.h" />
     <ClInclude Include="Mocks\Vic2CountryMock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

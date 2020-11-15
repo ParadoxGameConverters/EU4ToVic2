@@ -1,6 +1,5 @@
 #ifndef EU4_AREA_H
 #define EU4_AREA_H
-
 #include "Parser.h"
 #include <set>
 
@@ -14,6 +13,8 @@ class Area: commonItems::parser
 	[[nodiscard]] const auto& getProvinces() const { return provinces; }
 
   private:
+	void registerKeywords();
+	
 	std::set<int> provinces;
 };
 } // namespace EU4

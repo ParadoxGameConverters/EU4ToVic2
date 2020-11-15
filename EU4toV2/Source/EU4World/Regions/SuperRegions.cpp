@@ -3,17 +3,21 @@
 
 EU4::SuperRegions::SuperRegions(std::istream& theStream)
 {
-	registerRegex("\\w+_superregion", [this](const std::string& sregionName, std::istream& theStream)
-		{
-			const commonItems::stringList regionList(theStream);
-			for (const auto& region: regionList.getStrings())
-			{
-				if (region == "restrict_charter") continue;
-				superRegionMap[sregionName].emplace_back(region);
-			}
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
+
+void EU4::SuperRegions::registerKeys()
+{
+	registerRegex(R"([a-zA-Z0-9]+_superregion)", [this](const std::string& sregionName, std::istream& theStream) {
+		for (const auto& regionName: commonItems::stringList(theStream).getStrings())
+		{
+			if (regionName == "restrict_charter")
+				continue;
+			superRegionMap[sregionName].insert(regionName);
+		}
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+

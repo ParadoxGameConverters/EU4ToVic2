@@ -3,15 +3,6 @@
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
-    <ClCompile Include="EU4WorldTests\AreasTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\RegionsTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\RegionTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Configuration.cpp">
       <Filter>ConverterFiles</Filter>
     </ClCompile>
@@ -27,9 +18,6 @@
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Regions.cpp">
       <Filter>ConverterFiles\EU4World\Regions</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp">
-      <Filter>EU4WorldTests</Filter>
     </ClCompile>
     <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
     <ClCompile Include="MapperTests\ReligionMappingTests.cpp">
@@ -461,6 +449,21 @@
     <ClCompile Include="EU4WorldTests\ProvinceTests\EU4ProvinceTests.cpp">
       <Filter>EU4WorldTests\ProvinceTests</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionsTests\AreaTests.cpp">
+      <Filter>EU4WorldTests\RegionsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionsTests\RegionTests.cpp">
+      <Filter>EU4WorldTests\RegionsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionsTests\SuperRegionTests.cpp">
+      <Filter>EU4WorldTests\RegionsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionsTests\AreasTests.cpp">
+      <Filter>EU4WorldTests\RegionsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionsTests\RegionsTests.cpp">
+      <Filter>EU4WorldTests\RegionsTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -640,11 +643,11 @@
     <Filter Include="MapperTests\AgreementMapper">
       <UniqueIdentifier>{e52ec598-45ed-4bd8-8e1b-7fd1caf4570f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="EU4WorldTests\RegionsTests">
+      <UniqueIdentifier>{7f6a8d78-3bbe-4953-af7c-65a2fae3e7e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mocks\RegionsMock.h">
-      <Filter>Mocks</Filter>
-    </ClInclude>
     <ClInclude Include="Mocks\Vic2CountryMock.h">
       <Filter>Mocks</Filter>
     </ClInclude>
