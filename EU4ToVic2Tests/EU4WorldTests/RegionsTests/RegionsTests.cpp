@@ -192,7 +192,7 @@ TEST(EU4World_Regions_RegionsTests, newStyleParentNamesReturnNulloptOnMismatch)
 	ASSERT_EQ(std::nullopt, theRegions.getParentSuperRegionName(9));
 }
 
-TEST(EU4World_Regions_RegionsTests, oldStyleParentNamesCanBeRetrievedButItsADummyOrBlank)
+TEST(EU4World_Regions_RegionsTests, oldStyleParentNamesCanBeRetrievedButItsADummyOrNullopt)
 {
 	std::stringstream areasInput;
 	areasInput << "test_region = {\n";
@@ -203,7 +203,7 @@ TEST(EU4World_Regions_RegionsTests, oldStyleParentNamesCanBeRetrievedButItsADumm
 
 	ASSERT_EQ("dummyArea", *theRegions.getParentAreaName(1));
 	ASSERT_EQ("test_region", *theRegions.getParentRegionName(1));
-	ASSERT_TRUE(theRegions.getParentSuperRegionName(1)->empty());
+	ASSERT_EQ(std::nullopt, theRegions.getParentSuperRegionName(1));
 }
 
 TEST(EU4World_Regions_RegionsTests, newStyleParentNamesCanBeRetrieved)
