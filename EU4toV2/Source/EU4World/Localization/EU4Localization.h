@@ -1,5 +1,5 @@
-#ifndef EU4_LOCALISATION_H
-#define EU4_LOCALISATION_H
+#ifndef EU4_LOCALIZATION_H
+#define EU4_LOCALIZATION_H
 #include <map>
 #include <optional>
 #include <string>
@@ -7,10 +7,10 @@
 
 namespace EU4
 {
-class EU4Localisation
+class EU4Localization
 {
   public:
-	EU4Localisation();
+	EU4Localization();
 
 	void readFromAllFilesInFolder(const std::string& folderPath);
 	void readFromFile(const std::string& fileName);
@@ -24,7 +24,7 @@ class EU4Localisation
 	[[nodiscard]] static std::pair<std::string, std::string> determineKeyLocalisationPair(const std::string& text);
 	[[nodiscard]] static std::string removeUTF8BOM(const std::string& text);
 
-	std::map<std::string, std::map<std::string, std::string>> localisations; // key, map<language, value>
+	std::map<std::string, std::map<std::string, std::string>> localizations; // key, map<language, value>
 };
 } // namespace EU4
 

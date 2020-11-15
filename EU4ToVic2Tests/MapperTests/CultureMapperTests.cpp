@@ -19,7 +19,7 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.*/
 
-
+/*
 
 #include "gtest/gtest.h"
 #include "../EU4toV2/Source/Mappers/CultureMapper/CultureMapper.h"
@@ -216,4 +216,4 @@ TEST(Mappers_CultureMapperTests, multipleSourceCulturesMatch)
 	mockRegions regions;
 	std::optional<std::string> match = theMapper.cultureMatch(regions, "sourceCulture2", "", -1, "");
 	ASSERT_TRUE(match);
-}
+}*/

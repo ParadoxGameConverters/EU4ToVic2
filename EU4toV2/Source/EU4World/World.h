@@ -1,20 +1,19 @@
 #ifndef EU4_WORLD_H
 #define EU4_WORLD_H
-
-#include "../Mappers/Buildings/Buildings.h"
-#include "../Mappers/CultureGroups/CultureGroups.h"
-#include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
-#include "../Mappers/SuperGroupMapper/SuperGroupMapper.h"
-#include "../Mappers/UnitTypes/UnitTypeMapper.h"
+#include "Buildings/Buildings.h"
 #include "Country/EU4Country.h"
+#include "CultureGroups/CultureGroups.h"
 #include "Diplomacy/EU4Diplomacy.h"
 #include "GameVersion.h"
+#include "IdeaEffects/IdeaEffectMapper.h"
 #include "Modifiers/Modifiers.h"
 #include "Parser.h"
 #include "Provinces/Provinces.h"
 #include "Regions/Regions.h"
 #include "Religions/Religions.h"
+#include "SuperGroupMapper/SuperGroupMapper.h"
 #include "TradeGoods/EU4TradeGoods.h"
+#include "UnitTypes/UnitTypeMapper.h"
 #include "Wars/EU4War.h"
 #include <map>
 #include <memory>
@@ -26,9 +25,8 @@ class World: commonItems::parser
   public:
 	World(const mappers::IdeaEffectMapper& ideaEffectMapper);
 
-	[[nodiscard]] bool isRandomWorld() const;
 	[[nodiscard]] auto getTotalProvinceWeights() const { return provinces->geTotalProvinceWeights(); }
-	[[nodiscard]] std::shared_ptr<Province> getProvince(int provNum) const;
+	[[nodiscard]] std::shared_ptr<Province> getProvince(int provNum) const { return provinces->getProvince(provNum); }
 	[[nodiscard]] std::shared_ptr<Country> getCountry(const std::string& tag) const;
 
 	[[nodiscard]] const auto& getCountries() const { return theCountries; }
@@ -43,6 +41,8 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getNativeCultures() const { return nativeCultures; }
 
   private:
+	void registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper);
+
 	void verifySave();
 	void verifySaveContents();
 	void loadRevolutionTarget();
@@ -52,7 +52,7 @@ class World: commonItems::parser
 	void loadEU4RegionsOldVersion();
 	void readCommonCountries();
 	void readCommonCountriesFile(std::istream&, const std::string& rootPath);
-	void setLocalisations();
+	void setLocalizations();
 	void resolveRegimentTypes();
 	void mergeNations();
 	void uniteJapan();
@@ -62,7 +62,7 @@ class World: commonItems::parser
 	void setEmpires();
 	void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas) const;
 	void fillHistoricalData();
-	void addTradeGoodsToProvinces() const;
+	void addTradeGoodsAndBuildProvinceWeights() const;
 	void catalogueNativeCultures();
 	void generateNeoCultures();
 	void buildPopRatios() const;

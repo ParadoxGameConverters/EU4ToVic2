@@ -1,7 +1,14 @@
 #include "ReligionGroup.h"
 #include "ParserHelpers.h"
 
-EU4::ReligionGroup::ReligionGroup(const std::string& groupName, std::istream& theStream)
+EU4::ReligionGroup::ReligionGroup(std::istream& theStream)
+{
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
+
+void EU4::ReligionGroup::registerKeys()
 {
 	registerKeyword("defender_of_faith", commonItems::ignoreItem);
 	registerKeyword("can_form_personal_unions", commonItems::ignoreItem);
@@ -13,13 +20,9 @@ EU4::ReligionGroup::ReligionGroup(const std::string& groupName, std::istream& th
 	registerKeyword("harmonized_modifier", commonItems::ignoreItem);
 	registerKeyword("crusade_name", commonItems::ignoreItem);
 
-	registerRegex("[a-zA-Z0-9_]+", [this, groupName](const std::string& religionName, std::istream& theStream)
-		{
-			Religion newReligion(religionName, groupName);
-			religions.insert(std::make_pair(religionName, newReligion));
-			commonItems::ignoreItem(religionName, theStream);
-		});
-
-	parseStream(theStream);
-	clearRegisteredKeywords();
+	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& religionName, std::istream& theStream) {
+		commonItems::ignoreItem(religionName, theStream);
+		religions.insert(religionName);
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

@@ -3,15 +3,6 @@
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
-    <ClCompile Include="EU4WorldTests\AreasTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\RegionsTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\RegionTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Configuration.cpp">
       <Filter>ConverterFiles</Filter>
     </ClCompile>
@@ -28,27 +19,12 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Regions.cpp">
       <Filter>ConverterFiles\EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
     <ClCompile Include="MapperTests\ReligionMappingTests.cpp">
       <Filter>MapperTests</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\ReligionMapperTests.cpp">
       <Filter>MapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\ReligionTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\ReligionGroupTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\ReligionsTests.cpp">
-      <Filter>EU4WorldTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religion.cpp">
-      <Filter>ConverterFiles\EU4World\Religions</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\ReligionGroup.cpp">
       <Filter>ConverterFiles\EU4World\Religions</Filter>
@@ -395,12 +371,6 @@
     <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryTests.cpp">
       <Filter>EU4WorldTests\HistoryTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Localisation\EU4Localisation.cpp">
-      <Filter>ConverterFiles\EU4World\Localisation</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\LocalisationTests\EU4LocalisationTests.cpp">
-      <Filter>EU4WorldTests\LocalisationTests</Filter>
-    </ClCompile>
     <ClCompile Include="EU4WorldTests\ModifierTests\ModifiersTests.cpp">
       <Filter>EU4WorldTests\ModifierTests</Filter>
     </ClCompile>
@@ -460,6 +430,66 @@
     </ClCompile>
     <ClCompile Include="EU4WorldTests\ProvinceTests\EU4ProvinceTests.cpp">
       <Filter>EU4WorldTests\ProvinceTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionsTests\AreaTests.cpp">
+      <Filter>EU4WorldTests\RegionsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionsTests\RegionTests.cpp">
+      <Filter>EU4WorldTests\RegionsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionsTests\SuperRegionTests.cpp">
+      <Filter>EU4WorldTests\RegionsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionsTests\AreasTests.cpp">
+      <Filter>EU4WorldTests\RegionsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RegionsTests\RegionsTests.cpp">
+      <Filter>EU4WorldTests\RegionsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4EmpireTests.cpp">
+      <Filter>EU4WorldTests\RelationTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationDetailsTests.cpp">
+      <Filter>EU4WorldTests\RelationTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationsTests.cpp">
+      <Filter>EU4WorldTests\RelationTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ReligionTests\ReligionGroupTests.cpp">
+      <Filter>EU4WorldTests\ReligionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ReligionTests\ReligionsTests.cpp">
+      <Filter>EU4WorldTests\ReligionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\TradeGoods\EU4TradeGood.cpp">
+      <Filter>ConverterFiles\EU4World\TradeGoods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\TradeGoods\EU4TradeGoods.cpp">
+      <Filter>ConverterFiles\EU4World\TradeGoods</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodsTests.cpp">
+      <Filter>EU4WorldTests\TradeGoodTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodTests.cpp">
+      <Filter>EU4WorldTests\TradeGoodTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Wars\EU4War.cpp">
+      <Filter>ConverterFiles\EU4World\Wars</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Wars\EU4WarDetails.cpp">
+      <Filter>ConverterFiles\EU4World\Wars</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\WarTests\WarDetailsTests.cpp">
+      <Filter>EU4WorldTests\WarTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\WarTests\WarTests.cpp">
+      <Filter>EU4WorldTests\WarTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\LocalizationTests\EU4LocalizationTests.cpp">
+      <Filter>EU4WorldTests\LocalizationTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Localization\EU4Localization.cpp">
+      <Filter>ConverterFiles\EU4World\Localization</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -607,12 +637,6 @@
     <Filter Include="EU4WorldTests\HistoryTests">
       <UniqueIdentifier>{06e87d1e-dd91-4dc6-916d-66ce52c71035}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ConverterFiles\EU4World\Localisation">
-      <UniqueIdentifier>{320f60f1-92dd-4106-a494-abe23993b751}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EU4WorldTests\LocalisationTests">
-      <UniqueIdentifier>{1691522c-454b-49c1-bb4c-a089057d307b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="EU4WorldTests\ModifierTests">
       <UniqueIdentifier>{532ffa3b-e9ed-48e8-8c7d-9740c3d13f98}</UniqueIdentifier>
     </Filter>
@@ -640,11 +664,35 @@
     <Filter Include="MapperTests\AgreementMapper">
       <UniqueIdentifier>{e52ec598-45ed-4bd8-8e1b-7fd1caf4570f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="EU4WorldTests\RegionsTests">
+      <UniqueIdentifier>{7f6a8d78-3bbe-4953-af7c-65a2fae3e7e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\RelationTests">
+      <UniqueIdentifier>{df67a9ff-6dac-4e4d-b05e-a0598cfdc412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\ReligionTests">
+      <UniqueIdentifier>{7e2f6cf6-9854-49bd-a85a-aedbfa69576c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\TradeGoods">
+      <UniqueIdentifier>{7770bb08-ced0-408e-a940-d5f1b78157a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\TradeGoodTests">
+      <UniqueIdentifier>{e83cb394-4895-438a-b764-e9b5a482a3ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Wars">
+      <UniqueIdentifier>{c22ed081-a0f7-4441-9b98-94e2c39e4eb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\WarTests">
+      <UniqueIdentifier>{c13bc394-5ac8-41aa-acc3-a2bb2e6cc12c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\LocalizationTests">
+      <UniqueIdentifier>{1691522c-454b-49c1-bb4c-a089057d307b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Localization">
+      <UniqueIdentifier>{320f60f1-92dd-4106-a494-abe23993b751}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mocks\RegionsMock.h">
-      <Filter>Mocks</Filter>
-    </ClInclude>
     <ClInclude Include="Mocks\Vic2CountryMock.h">
       <Filter>Mocks</Filter>
     </ClInclude>

@@ -146,7 +146,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_SILENCE_CXX20_U8PATH_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../commonItems;../googletest/googletest;../googletest/googletest/include;../googletest/googlemock;../googletest/googlemock/include;../EU4toV2/Source</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../commonItems;../googletest/googletest;../googletest/googletest/include;../googletest/googlemock;../googletest/googlemock/include;../EU4toV2/Source;../EU4toV2/Source/EU4World;../EU4toV2/Source/Mappers;../EU4toV2/Source/V2World</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -200,7 +200,7 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\History\CountryHistoryDate.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4Leader.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4LeaderID.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Localisation\EU4Localisation.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Localization\EU4Localization.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp" />
@@ -221,9 +221,12 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4Empire.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4RelationDetails.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4Relations.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\TradeGoods\EU4TradeGood.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\TradeGoods\EU4TradeGoods.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Wars\EU4War.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Wars\EU4WarDetails.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\AgreementMapper\AgreementMapper.cpp" />
@@ -263,7 +266,6 @@
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="ConfigurationTests.cpp" />
-    <ClCompile Include="EU4WorldTests\AreasTests.cpp" />
     <ClCompile Include="EU4WorldTests\ArmyTests\EU4ArmyTests.cpp" />
     <ClCompile Include="EU4WorldTests\ArmyTests\EU4RegimentTests.cpp" />
     <ClCompile Include="EU4WorldTests\ColonialRegionTests\ColonialRegionsTests.cpp" />
@@ -278,12 +280,11 @@
     <ClCompile Include="EU4WorldTests\CountryTests\EU4TechnologyTests.cpp" />
     <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4AgreementTests.cpp" />
     <ClCompile Include="EU4WorldTests\DiplomacyTests\EU4DiplomacyTests.cpp" />
-    <ClCompile Include="EU4WorldTests\EU4AreaTests.cpp" />
     <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryDateTests.cpp" />
     <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryTests.cpp" />
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderIDTests.cpp" />
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderTests.cpp" />
-    <ClCompile Include="EU4WorldTests\LocalisationTests\EU4LocalisationTests.cpp" />
+    <ClCompile Include="EU4WorldTests\LocalizationTests\EU4LocalizationTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModifierTests\ModifiersTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModifierTests\ModifierTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModTests\ModTests.cpp" />
@@ -296,11 +297,20 @@
     <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceHistoryTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceModifierTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceTests\ProvincesTests.cpp" />
-    <ClCompile Include="EU4WorldTests\RegionsTests.cpp" />
-    <ClCompile Include="EU4WorldTests\RegionTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ReligionGroupTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ReligionsTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ReligionTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RegionsTests\AreasTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RegionsTests\AreaTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RegionsTests\RegionsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RegionsTests\RegionTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RegionsTests\SuperRegionTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4EmpireTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationDetailsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ReligionTests\ReligionGroupTests.cpp" />
+    <ClCompile Include="EU4WorldTests\ReligionTests\ReligionsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodsTests.cpp" />
+    <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodTests.cpp" />
+    <ClCompile Include="EU4WorldTests\WarTests\WarTests.cpp" />
+    <ClCompile Include="EU4WorldTests\WarTests\WarDetailsTests.cpp" />
     <ClCompile Include="MapperTests\AcceptedCultureThresholdsMapperTests.cpp" />
     <ClCompile Include="MapperTests\AgreementMapper\AgreementMapperTests.cpp" />
     <ClCompile Include="MapperTests\BlockedTechSchoolsTests.cpp" />
@@ -327,7 +337,6 @@
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mocks\RegionsMock.h" />
     <ClInclude Include="Mocks\Vic2CountryMock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
