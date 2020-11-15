@@ -174,7 +174,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_SILENCE_CXX20_U8PATH_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\commonItems;..\ZipLib;Source;Source\MAppers;Source\EU4World;Source\V2World</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\commonItems;..\ZipLib;Source\Mappers;Source;Source\EU4World;Source\Vic2World;Source\Helpers</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -222,7 +222,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_SILENCE_CXX20_U8PATH_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\commonItems;..\ZipLib;Source\Mappers;Source;Source\EU4World;Source\Mappers;Source\Vic2World;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\commonItems;..\ZipLib;Source\Mappers;Source;Source\EU4World;Source\Vic2World;Source\Helpers</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -331,7 +331,7 @@
     <ClCompile Include="Source\EU4World\History\CountryHistoryDate.cpp" />
     <ClCompile Include="Source\EU4World\Leader\EU4Leader.cpp" />
     <ClCompile Include="Source\EU4World\Leader\EU4LeaderID.cpp" />
-    <ClCompile Include="Source\EU4World\Localisation\EU4Localisation.cpp" />
+    <ClCompile Include="Source\EU4World\Localization\EU4Localization.cpp" />
     <ClCompile Include="Source\EU4World\Modifiers\Modifier.cpp" />
     <ClCompile Include="Source\EU4World\Modifiers\Modifiers.cpp" />
     <ClCompile Include="Source\EU4World\Mods\Mod.cpp" />
@@ -526,7 +526,7 @@
     <ClInclude Include="Source\EU4World\History\CountryHistoryDate.h" />
     <ClInclude Include="Source\EU4World\Leader\EU4Leader.h" />
     <ClInclude Include="Source\EU4World\Leader\EU4LeaderID.h" />
-    <ClInclude Include="Source\EU4World\Localisation\EU4Localisation.h" />
+    <ClInclude Include="Source\EU4World\Localization\EU4Localization.h" />
     <ClInclude Include="Source\EU4World\Modifiers\Modifier.h" />
     <ClInclude Include="Source\EU4World\Modifiers\Modifiers.h" />
     <ClInclude Include="Source\EU4World\Mods\Mod.h" />

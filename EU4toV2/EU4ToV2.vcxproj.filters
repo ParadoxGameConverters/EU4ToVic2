@@ -154,9 +154,6 @@
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp">
       <Filter>Mappers\CultureGroups</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Localisation\EU4Localisation.cpp">
-      <Filter>EU4World\Localisation</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\CK2Titles\CK2TitleMapper.cpp">
       <Filter>Mappers\CK2Titles</Filter>
     </ClCompile>
@@ -577,6 +574,9 @@
     <ClCompile Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapping.cpp">
       <Filter>Mappers\DeadDefinitionMapper</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Localization\EU4Localization.cpp">
+      <Filter>EU4World\Localization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -736,9 +736,6 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h">
       <Filter>Mappers\CultureGroups</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Localisation\EU4Localisation.h">
-      <Filter>EU4World\Localisation</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\CK2Titles\CK2TitleMapper.h">
       <Filter>Mappers\CK2Titles</Filter>
@@ -1118,6 +1115,9 @@
     <ClInclude Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapping.h">
       <Filter>Mappers\DeadDefinitionMapper</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\Localization\EU4Localization.h">
+      <Filter>EU4World\Localization</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1188,9 +1188,6 @@
     </Filter>
     <Filter Include="Mappers\CultureGroups">
       <UniqueIdentifier>{4b63845e-9288-4ea1-a7aa-18bccaf0ef3f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EU4World\Localisation">
-      <UniqueIdentifier>{378138b0-2893-41e3-8f98-70df21541f19}</UniqueIdentifier>
     </Filter>
     <Filter Include="Mappers\CK2Titles">
       <UniqueIdentifier>{5095124a-bcad-425f-aa6c-8299c482a4a3}</UniqueIdentifier>
@@ -1368,6 +1365,9 @@
     </Filter>
     <Filter Include="Mappers\DeadDefinitionMapper">
       <UniqueIdentifier>{f1195239-6d04-4195-b19c-5a567619bc87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Localization">
+      <UniqueIdentifier>{54c68c10-27ee-404c-abe0-c2096b685936}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

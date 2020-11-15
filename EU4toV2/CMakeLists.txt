@@ -19,6 +19,7 @@ include_directories("Source")
 include_directories("Source/Mappers")
 include_directories("Source/EU4World")
 include_directories("Source/Vic2World")
+include_directories("Source/Helpers")
 include_directories("${PROJECT_SOURCE_DIR}")
 link_directories(${CMAKE_SOURCE_DIR}/Resources)
 
@@ -107,7 +108,7 @@ file(GLOB EU4_REGIONS_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Regions/*.cpp")
 file(GLOB EU4_COUNTRY_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Country/*.cpp")
 file(GLOB EU4_ARMY_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Army/*.cpp")
 file(GLOB EU4_RELIGIONS_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Religions/*.cpp")
-file(GLOB EU4_LOCALISATION_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Localisation/*.cpp")
+file(GLOB EU4_LOCALIZATION_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Localization/*.cpp")
 file(GLOB EU4_WARS_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Wars/*.cpp")
 file(GLOB EU4_TRADEGOODS_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/TradeGoods/*.cpp")
 set(COMMON_SOURCES "../commonItems/CommonFunctions.cpp")
@@ -206,7 +207,7 @@ add_executable(EU4ToVic2
 	${EU4_ARMY_SOURCES}
 	${EU4_REGIONS_SOURCES}
 	${EU4_RELIGIONS_SOURCES}
-	${EU4_LOCALISATION_SOURCES}
+	${EU4_LOCALIZATION_SOURCES}
 	${EU4_WARS_SOURCES}
 	${EU4_TRADEGOODS_SOURCES}
 	${COMMON_SOURCES}

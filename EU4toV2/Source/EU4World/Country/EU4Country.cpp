@@ -489,7 +489,7 @@ void EU4::Country::readFromCommonCountry(const std::string& fileName, const std:
 	}
 }
 
-void EU4::Country::setLocalisationName(const std::string& language, const std::string& incName)
+void EU4::Country::setLocalizationName(const std::string& language, const std::string& incName)
 {
 	// This is a workaround for vic2 crashes when there are 1-letter names for countries in localizations.
 	// So, instead of U, there is now UU. Yay, victory.
@@ -505,7 +505,7 @@ void EU4::Country::setLocalisationName(const std::string& language, const std::s
 	}
 }
 
-void EU4::Country::setLocalisationAdjective(const std::string& language, const std::string& incAdjective)
+void EU4::Country::setLocalizationAdjective(const std::string& language, const std::string& incAdjective)
 {
 	adjectivesByLanguage[language] = incAdjective;
 }

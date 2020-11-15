@@ -29,8 +29,8 @@ class Country: commonItems::parser
 
 	void readFromCommonCountry(const std::string& fileName,
 		 const std::string& fullFileName); // Add any additional information available from the specified country file.
-	void setLocalisationName(const std::string& language, const std::string& incName);
-	void setLocalisationAdjective(const std::string& language, const std::string& incAdjective);
+	void setLocalizationName(const std::string& language, const std::string& incName);
+	void setLocalizationAdjective(const std::string& language, const std::string& incAdjective);
 	void addProvince(const std::shared_ptr<Province>& province);
 	void addCore(const std::shared_ptr<Province>& core);
 	void setInHRE(const bool _inHRE) { inHRE = _inHRE; }

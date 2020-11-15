@@ -200,7 +200,7 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\History\CountryHistoryDate.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4Leader.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4LeaderID.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Localisation\EU4Localisation.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Localization\EU4Localization.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp" />
@@ -284,7 +284,7 @@
     <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryTests.cpp" />
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderIDTests.cpp" />
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderTests.cpp" />
-    <ClCompile Include="EU4WorldTests\LocalisationTests\EU4LocalisationTests.cpp" />
+    <ClCompile Include="EU4WorldTests\LocalizationTests\EU4LocalizationTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModifierTests\ModifiersTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModifierTests\ModifierTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModTests\ModTests.cpp" />

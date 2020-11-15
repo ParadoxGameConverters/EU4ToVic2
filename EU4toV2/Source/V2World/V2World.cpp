@@ -45,7 +45,6 @@ V2::World::World(const EU4::World& sourceWorld,
 
 	LOG(LogLevel::Info) << "-> Importing Potential Countries";
 	importPotentialCountries();
-	isRandomWorld = sourceWorld.isRandomWorld();
 	Log(LogLevel::Progress) << "48 %";
 
 	LOG(LogLevel::Info) << "-> Loading Country Mapping Rules";
@@ -1725,34 +1724,6 @@ void V2::World::outputLocalisation() const
 
 	auto source = theConfiguration.getVic2Path() + "/localisation/text.csv";
 	auto dest = localisationPath + "/text.csv";
-
-	if (isRandomWorld)
-	{
-		LOG(LogLevel::Info) << "It's a random world";
-		// we need to strip out the existing country names from the localization file
-		std::ifstream sourceFile(fs::u8path(source));
-		std::ofstream targetFile(dest);
-
-		std::string line;
-		std::regex countryTag("^[A-Z][A-Z][A-Z];");
-		std::regex rebels("^REB;");
-		std::smatch match;
-		while (std::getline(sourceFile, line))
-		{
-			if (std::regex_search(line, match, countryTag) && !std::regex_search(line, match, rebels))
-			{
-				continue;
-			}
-
-			targetFile << line << '\n';
-		}
-		sourceFile.close();
-		targetFile.close();
-
-		// ...and also empty out 0_Names.csv
-		std::ofstream output("test.txt", std::ofstream::out | std::ofstream::trunc);
-		output.close();
-	}
 
 	LOG(LogLevel::Info) << "<- Writing Localization Names";
 	std::ofstream output(localisationPath + "/0_Names.csv", std::ofstream::app);

@@ -371,12 +371,6 @@
     <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryTests.cpp">
       <Filter>EU4WorldTests\HistoryTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Localisation\EU4Localisation.cpp">
-      <Filter>ConverterFiles\EU4World\Localisation</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\LocalisationTests\EU4LocalisationTests.cpp">
-      <Filter>EU4WorldTests\LocalisationTests</Filter>
-    </ClCompile>
     <ClCompile Include="EU4WorldTests\ModifierTests\ModifiersTests.cpp">
       <Filter>EU4WorldTests\ModifierTests</Filter>
     </ClCompile>
@@ -490,6 +484,12 @@
     </ClCompile>
     <ClCompile Include="EU4WorldTests\WarTests\WarTests.cpp">
       <Filter>EU4WorldTests\WarTests</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\LocalizationTests\EU4LocalizationTests.cpp">
+      <Filter>EU4WorldTests\LocalizationTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Localization\EU4Localization.cpp">
+      <Filter>ConverterFiles\EU4World\Localization</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -637,12 +637,6 @@
     <Filter Include="EU4WorldTests\HistoryTests">
       <UniqueIdentifier>{06e87d1e-dd91-4dc6-916d-66ce52c71035}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ConverterFiles\EU4World\Localisation">
-      <UniqueIdentifier>{320f60f1-92dd-4106-a494-abe23993b751}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EU4WorldTests\LocalisationTests">
-      <UniqueIdentifier>{1691522c-454b-49c1-bb4c-a089057d307b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="EU4WorldTests\ModifierTests">
       <UniqueIdentifier>{532ffa3b-e9ed-48e8-8c7d-9740c3d13f98}</UniqueIdentifier>
     </Filter>
@@ -690,6 +684,12 @@
     </Filter>
     <Filter Include="EU4WorldTests\WarTests">
       <UniqueIdentifier>{c13bc394-5ac8-41aa-acc3-a2bb2e6cc12c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\LocalizationTests">
+      <UniqueIdentifier>{1691522c-454b-49c1-bb4c-a089057d307b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\EU4World\Localization">
+      <UniqueIdentifier>{320f60f1-92dd-4106-a494-abe23993b751}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

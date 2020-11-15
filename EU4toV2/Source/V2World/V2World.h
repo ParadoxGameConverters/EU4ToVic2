@@ -63,7 +63,6 @@ class World
   private:
 	long totalWorldPopulation = 0;
 	int stateId = 0; // ID counter for generated states
-	bool isRandomWorld = false;
 
 	std::map<std::string, std::list<int>> popRegions;
 	std::map<int, std::shared_ptr<Province>> provinces;
