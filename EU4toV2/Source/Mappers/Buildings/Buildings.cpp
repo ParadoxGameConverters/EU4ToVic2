@@ -35,8 +35,8 @@ void mappers::Buildings::registerKeys()
 
 std::optional<mappers::Building> mappers::Buildings::getBuilding(const std::string& buildingName) const
 {
-	if (buildings.contains(buildingName))
-		return buildings.at(buildingName);
+	if (const auto& building = buildings.find(buildingName); building != buildings.end())
+		return building->second;
 	else
 		return std::nullopt;
 }
