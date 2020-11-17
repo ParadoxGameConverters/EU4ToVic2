@@ -11,7 +11,7 @@ class AfricaResetMapper: commonItems::parser
 	AfricaResetMapper();
 	explicit AfricaResetMapper(std::istream& theStream);
 
-	[[nodiscard]] auto isRegionResettable(const std::string& region) const { return resettableRegions.count(region) > 0; }
+	[[nodiscard]] auto isRegionResettable(const std::string& region) const { return resettableRegions.contains(region); }
 	[[nodiscard]] auto isTechResettable(int techLevel) const { return techLevel < reset_below_westernization; }
 
   private:
