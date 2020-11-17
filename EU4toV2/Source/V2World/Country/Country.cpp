@@ -828,8 +828,6 @@ bool V2::Country::addFactory(std::shared_ptr<Factory> factory)
 		if (factory->requiresCoastal())
 			if (!candidate->isCoastal())
 				continue;
-		if (!candidate->hasLandConnection())
-			continue;
 
 		auto candidateScore = candidate->getSuppliedInputs(factory) * 100;
 		candidateScore -= static_cast<double>(candidate->getFactoryCount()) * 10;

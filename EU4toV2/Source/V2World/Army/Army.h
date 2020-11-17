@@ -2,7 +2,6 @@
 #define ARMY_H
 
 #include "../../EU4World/Army/EU4Army.h"
-#include "../../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../../Mappers/PortProvinces/PortProvinces.h"
 #include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../../Mappers/RegimentCosts/RegimentCostsMapper.h"

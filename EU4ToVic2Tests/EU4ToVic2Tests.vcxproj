@@ -229,6 +229,7 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Wars\EU4WarDetails.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\AfricaReset\AfricaResetMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\AgreementMapper\AgreementMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Building.cpp" />
@@ -311,11 +312,12 @@
     <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodTests.cpp" />
     <ClCompile Include="EU4WorldTests\WarTests\WarTests.cpp" />
     <ClCompile Include="EU4WorldTests\WarTests\WarDetailsTests.cpp" />
-    <ClCompile Include="MapperTests\AcceptedCultureThresholdsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\AcceptedCultureThresholdsMapper\AcceptedCultureThresholdsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\AfricaResetMapper\AfricaResetMapperTests.cpp" />
     <ClCompile Include="MapperTests\AgreementMapper\AgreementMapperTests.cpp" />
-    <ClCompile Include="MapperTests\BlockedTechSchoolsTests.cpp" />
-    <ClCompile Include="MapperTests\BuildingsTests.cpp" />
-    <ClCompile Include="MapperTests\BuildingTests.cpp" />
+    <ClCompile Include="MapperTests\BlockedTechSchools\BlockedTechSchoolsTests.cpp" />
+    <ClCompile Include="MapperTests\Buildings\BuildingsTests.cpp" />
+    <ClCompile Include="MapperTests\Buildings\BuildingTests.cpp" />
     <ClCompile Include="MapperTests\CountryFlagsMapperTests.cpp" />
     <ClCompile Include="MapperTests\CountryMappings\CountryMappingTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionMapperTests.cpp" />

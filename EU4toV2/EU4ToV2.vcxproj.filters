@@ -166,9 +166,6 @@
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMappings.cpp">
       <Filter>Mappers\CountryMappings</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\Adjacency\AdjacencyMapper.cpp">
-      <Filter>Mappers\Adjacency</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\Geography\ClimateMapper.cpp">
       <Filter>Mappers\Geography</Filter>
     </ClCompile>
@@ -749,9 +746,6 @@
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMappings.h">
       <Filter>Mappers\CountryMappings</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\Adjacency\AdjacencyMapper.h">
-      <Filter>Mappers\Adjacency</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\Geography\ClimateMapper.h">
       <Filter>Mappers\Geography</Filter>
     </ClInclude>
@@ -1194,9 +1188,6 @@
     </Filter>
     <Filter Include="Mappers\CountryMappings">
       <UniqueIdentifier>{555fbb7e-7576-40ca-a00c-3c0c85145fb1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Mappers\Adjacency">
-      <UniqueIdentifier>{b1c912a8-37e7-40fd-a471-45254f092ca0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Mappers\Geography">
       <UniqueIdentifier>{4700b363-a004-434a-8672-55fc2a36d624}</UniqueIdentifier>

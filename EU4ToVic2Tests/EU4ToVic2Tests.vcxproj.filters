@@ -89,12 +89,6 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegions.cpp">
       <Filter>ConverterFiles\EU4World\ColonialRegions</Filter>
     </ClCompile>
-    <ClCompile Include="MapperTests\BuildingsTests.cpp">
-      <Filter>MapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="MapperTests\BuildingTests.cpp">
-      <Filter>MapperTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Building.cpp">
       <Filter>ConverterFiles\Mappers\Buildings</Filter>
     </ClCompile>
@@ -115,9 +109,6 @@
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\StateMapper\StateMapper.cpp">
       <Filter>ConverterFiles\Mappers\StateMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="MapperTests\BlockedTechSchoolsTests.cpp">
-      <Filter>MapperTests</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp">
       <Filter>ConverterFiles\Mappers\BlockedTechSchools</Filter>
@@ -211,9 +202,6 @@
     </ClCompile>
     <ClCompile Include="..\commonItems\Color.cpp">
       <Filter>ConverterFiles\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="MapperTests\AcceptedCultureThresholdsMapperTests.cpp">
-      <Filter>MapperTests</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp">
       <Filter>ConverterFiles\Mappers\AcceptedCultureThresholds</Filter>
@@ -491,6 +479,24 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Localization\EU4Localization.cpp">
       <Filter>ConverterFiles\EU4World\Localization</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\AcceptedCultureThresholdsMapper\AcceptedCultureThresholdsMapperTests.cpp">
+      <Filter>MapperTests\AcceptedCultureThresholdsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\AfricaResetMapper\AfricaResetMapperTests.cpp">
+      <Filter>MapperTests\AfricaResetMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\AfricaReset\AfricaResetMapper.cpp">
+      <Filter>ConverterFiles\Mappers\AfricaResetMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\BlockedTechSchools\BlockedTechSchoolsTests.cpp">
+      <Filter>MapperTests\BlockedTechSchools</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\Buildings\BuildingsTests.cpp">
+      <Filter>MapperTests\Buildings</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\Buildings\BuildingTests.cpp">
+      <Filter>MapperTests\Buildings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -690,6 +696,21 @@
     </Filter>
     <Filter Include="ConverterFiles\EU4World\Localization">
       <UniqueIdentifier>{320f60f1-92dd-4106-a494-abe23993b751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\AcceptedCultureThresholdsMapper">
+      <UniqueIdentifier>{612fe503-5dc4-42c1-a346-80262855a3d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\AfricaResetMapper">
+      <UniqueIdentifier>{567ad37a-1c0d-4a74-ad70-5266b93617bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\AfricaResetMapper">
+      <UniqueIdentifier>{af61c9c9-cd2c-4653-ae99-ca34ec060075}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\BlockedTechSchools">
+      <UniqueIdentifier>{e3e0de58-3f68-4476-b6ba-e3729e5ef82d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\Buildings">
+      <UniqueIdentifier>{f578b110-e73a-4693-b7c7-4d040675a326}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
