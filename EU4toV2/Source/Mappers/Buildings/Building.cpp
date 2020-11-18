@@ -3,9 +3,15 @@
 
 mappers::Building::Building(std::istream& theStream)
 {
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
+
+void mappers::Building::registerKeys()
+{
 	registerKeyword("cost", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleDouble costDouble(theStream);
-		cost = costDouble.getDouble();
+		cost = commonItems::singleDouble(theStream).getDouble();
 	});
 	registerKeyword("modifier", [this](const std::string& unused, std::istream& theStream) {
 		modifier = EU4::Modifier(theStream);
@@ -14,8 +20,5 @@ mappers::Building::Building(std::istream& theStream)
 		commonItems::ignoreItem(unused, theStream);
 		manufactory = true;
 	});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
-	parseStream(theStream);
-	clearRegisteredKeywords();
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

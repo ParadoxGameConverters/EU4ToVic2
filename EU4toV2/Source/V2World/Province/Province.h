@@ -61,10 +61,8 @@ namespace V2
 		void increaseRailLevel(const int level) { railLevel += level; }
 		void setFortLevel(const int level) { fortLevel = level; }
 		void setNavalBaseLevel(const int level) { navalBaseLevel = level; }
-		void setLandConnection(const bool _connection) { landConnection = _connection; }
 		void setColonial(const int colonyLevel) { colonial = colonyLevel; }
 		void setTerritorialCore(const bool territory) { territorialCore = territory; }
-		void setSameContinent() { sameContinent = true; }
 		void addCore(const std::string& newCore);
 		void addPopDemographic(const Demographic& d);
 		void replaceCores(const std::set<std::string>& cores) { details.cores = cores; }
@@ -76,7 +74,6 @@ namespace V2
 		[[nodiscard]] auto isTerritorialCore() const { return territorialCore; }
 		[[nodiscard]] auto hasNavalBase() const { return navalBaseLevel > 0; }
 		[[nodiscard]] auto getNavalBaseLevel() const { return navalBaseLevel; }
-		[[nodiscard]] auto hasLandConnection() const { return landConnection; }
 		[[nodiscard]] auto getMfgCount() const { return mfgCount; }
 		[[nodiscard]] auto isColony() const { return colonial != 0; }
 		[[nodiscard]] auto getColonyLevel() const { return colonial; }
@@ -139,9 +136,7 @@ namespace V2
 		int fortLevel = 0;
 		int navalBaseLevel = 0;
 		int railLevel = 0;
-		bool landConnection = false;
 		int mfgCount = 0;
-		bool sameContinent = false;
 		double devpushMod = 0.0;
 		double weightMod = 0.0;
 		double totalWeight = 0.0;

@@ -76,10 +76,6 @@ V2::World::World(const EU4::World& sourceWorld,
 	diplomacy.convertDiplomacy(sourceWorld.getDiplomaticAgreements(), countryMapper, countries);
 	Log(LogLevel::Progress) << "55 %";
 
-	LOG(LogLevel::Info) << "-> Setting Up Colonies";
-	setupColonies();
-	Log(LogLevel::Progress) << "56 %";
-
 	LOG(LogLevel::Info) << "-> Setting Up States";
 	setupStates();
 	Log(LogLevel::Progress) << "57 %";
@@ -946,7 +942,7 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 		}
 		if (theConfiguration.getAfricaReset() == Configuration::AFRICARESET::ResetAfrica)
 		{
-			if (africaResetMapper.isTechResetable(techGroupsMapper.getWesternizationFromTechGroup(ownerCountry->second->getSourceCountry()->getTechGroup())))
+			if (africaResetMapper.isTechResettable(techGroupsMapper.getWesternizationFromTechGroup(ownerCountry->second->getSourceCountry()->getTechGroup())))
 			{
 				auto resetProvince = false;
 				// A single match will trip the province into sterilization.
@@ -1078,76 +1074,6 @@ std::optional<std::string> V2::World::determineProvinceControllership(const std:
 	if (winner.empty())
 		return std::nullopt;
 	return winner;
-}
-
-void V2::World::setupColonies()
-{
-	for (auto& countryItr: countries)
-	{
-		// find all land connections to capitals
-		auto openProvinces = provinces;
-		std::queue<int> goodProvinces;
-
-		auto openItr = openProvinces.find(countryItr.second->getCapital());
-		if (openItr == openProvinces.end())
-			continue;
-
-		// if the capital is not owned, don't bother running
-		if (openItr->second->getOwner() != countryItr.first)
-			continue;
-
-		openItr->second->setLandConnection(true);
-		goodProvinces.push(openItr->first);
-		openProvinces.erase(openItr);
-
-		do
-		{
-			const auto& currentProvince = goodProvinces.front();
-			goodProvinces.pop();
-			auto adjacencies = adjacencyMapper.getVic2Adjacencies(currentProvince);
-			if (!adjacencies)
-				continue;
-			for (auto adjacency: *adjacencies)
-			{
-				auto openItr2 = openProvinces.find(adjacency);
-				if (openItr2 == openProvinces.end())
-					continue;
-				if (openItr2->second->getOwner() != countryItr.first)
-					continue;
-				openItr2->second->setLandConnection(true);
-				goodProvinces.push(openItr2->first);
-				openProvinces.erase(openItr2);
-			}
-		} while (!goodProvinces.empty());
-
-		// find all provinces on the same continent as the owner's capital
-		std::optional<std::string> capitalContinent;
-		auto capital = provinces.find(countryItr.second->getCapital());
-		if (capital != provinces.end())
-		{
-			auto capitalSources = capital->second->getEU4IDs();
-			if (capitalSources.empty())
-				continue;
-			else
-				capitalContinent = continentsMapper.getEU4Continent(*capitalSources.begin());
-			if (!capitalContinent)
-				continue;
-		}
-		else
-		{
-			continue;
-		}
-		auto ownedProvinces = countryItr.second->getProvinces();
-		for (const auto& ownedProvince: ownedProvinces)
-		{
-			auto provinceSources = ownedProvince.second->getEU4IDs();
-			auto continent = continentsMapper.getEU4Continent(*provinceSources.begin());
-			if (continent && continent == capitalContinent)
-			{
-				ownedProvince.second->setSameContinent();
-			}
-		}
-	}
 }
 
 void V2::World::setupStates()

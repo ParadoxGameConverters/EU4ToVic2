@@ -1,6 +1,5 @@
-#include "../EU4toV2/Source/Mappers/AcceptedCultureThresholds/AcceptedCultureThresholdsMapper.h"
+#include "AcceptedCultureThresholds/AcceptedCultureThresholdsMapper.h"
 #include "gtest/gtest.h"
-#include <sstream>
 
 TEST(Mappers_AcceptedCultureThresholdsMapperTests, PrimitivesDefaultToZero)
 {

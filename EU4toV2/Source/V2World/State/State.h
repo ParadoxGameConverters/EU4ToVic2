@@ -26,7 +26,6 @@ class State
 	[[nodiscard]] bool hasLocalSupply(const std::string& product) const;
 	[[nodiscard]] double getSuppliedInputs(std::shared_ptr<Factory> factory) const;
 	[[nodiscard]] bool provInState(int id) const;
-	[[nodiscard]] bool hasLandConnection() const;
 	[[nodiscard]] double getMfgRatio() const;
 
 	void addRailroads();

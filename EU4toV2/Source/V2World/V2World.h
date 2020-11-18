@@ -2,7 +2,6 @@
 #define WORLD_H
 #include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/AcceptedCultureThresholds/AcceptedCultureThresholdsMapper.h"
-#include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../Mappers/AfricaReset/AfricaResetMapper.h"
 #include "../Mappers/CountryFlags/CountryFlags.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
@@ -98,7 +97,6 @@ class World
 	void convertNationalValues();
 	void convertPrestige();
 	void addAllPotentialCountries();
-	void setupColonies();
 	void setupStates();
 	void convertUncivReforms(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper);
 	void convertTechs(const EU4::World& sourceWorld);
@@ -132,7 +130,6 @@ class World
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
 	mappers::CountryMappings countryMapper;
-	mappers::AdjacencyMapper adjacencyMapper;
 	mappers::ClimateMapper climateMapper;
 	mappers::TerrainDataMapper terrainDataMapper;
 	mappers::CultureMapper cultureMapper;

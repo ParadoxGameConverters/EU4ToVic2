@@ -90,11 +90,6 @@ void V2::State::addFactory(std::shared_ptr<Factory> factory)
 		factories.push_back(*addFactory);
 }
 
-bool V2::State::hasLandConnection() const
-{
-	return provinces[0]->hasLandConnection();
-}
-
 double V2::State::getMfgRatio() const
 {
 	// count the manufactories in the source provinces
