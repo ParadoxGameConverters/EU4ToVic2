@@ -20,6 +20,6 @@ TEST(Mappers_BuildingsTests, buildingIsReturned)
 	input << "}";
 	const mappers::Buildings theBuildings(input);
 
-	ASSERT_EQ(100, theBuildings.getBuilding("testBuilding")->getCost());
-	ASSERT_EQ(200, theBuildings.getBuilding("testBuilding2")->getCost());
+	ASSERT_NEAR(100, theBuildings.getBuilding("testBuilding")->getCost(), 0.001);
+	ASSERT_NEAR(200, theBuildings.getBuilding("testBuilding2")->getCost(), 0.001);
 }

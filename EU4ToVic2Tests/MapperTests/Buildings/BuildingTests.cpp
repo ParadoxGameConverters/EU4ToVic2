@@ -15,7 +15,7 @@ TEST(Mappers_BuildingTests, costCanBeSet)
 	input << "cost = 100\n";
 	const mappers::Building theBuilding(input);
 
-	ASSERT_EQ(100, theBuilding.getCost());
+	ASSERT_NEAR(100, theBuilding.getCost(), 0.001);
 }
 
 TEST(Mappers_BuildingTests, modifiersDefaultToEmpty)
@@ -36,8 +36,8 @@ TEST(Mappers_BuildingTests, modifiersCanBeAdded)
 	const mappers::Building theBuilding(input);
 
 	ASSERT_EQ(2, theBuilding.getModifier().getAllEffects().size());
-	ASSERT_EQ(0.5, theBuilding.getModifier().getAllEffects().at("aModifier"));
-	ASSERT_EQ(0.75, theBuilding.getModifier().getAllEffects().at("anotherModifier"));
+	ASSERT_NEAR(0.5, theBuilding.getModifier().getAllEffects().at("aModifier"), 0.001);
+	ASSERT_NEAR(0.75, theBuilding.getModifier().getAllEffects().at("anotherModifier"), 0.001);
 }
 
 TEST(Mappers_BuildingTests, manufacturyDefaultsToFalse)
