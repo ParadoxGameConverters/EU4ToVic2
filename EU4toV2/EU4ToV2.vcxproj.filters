@@ -61,15 +61,6 @@
     <ClCompile Include="Source\EU4World\Provinces\ProvinceBuildings.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Modifiers\Modifier.cpp">
-      <Filter>EU4World\Modifiers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Modifiers\Modifiers.cpp">
-      <Filter>EU4World\Modifiers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Provinces\ProvinceModifier.cpp">
-      <Filter>EU4World\Provinces</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Country\EU4ReformStackSection.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
@@ -475,12 +466,6 @@
     <ClCompile Include="Source\V2World\Output\outHistory.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGood.cpp">
-      <Filter>EU4World\TradeGoods</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGoods.cpp">
-      <Filter>EU4World\TradeGoods</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTech.cpp">
       <Filter>Mappers\StartingTechMapper</Filter>
     </ClCompile>
@@ -632,22 +617,7 @@
     <ClInclude Include="Source\Helpers\TechValues.h">
       <Filter>Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\Provinces\ProvinceStats.h">
-      <Filter>EU4World\Provinces</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\ProvinceBuildings.h">
-      <Filter>EU4World\Provinces</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Modifiers\Modifier.h">
-      <Filter>EU4World\Modifiers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Modifiers\Modifiers.h">
-      <Filter>EU4World\Modifiers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Provinces\ProvinceModifier.h">
-      <Filter>EU4World\Provinces</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Provinces\BuildingWeightEffects.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Country\EU4ReformStackSection.h">
@@ -1013,12 +983,6 @@
     <ClInclude Include="Source\V2World\War\War.h">
       <Filter>Vic2World\War</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGood.h">
-      <Filter>EU4World\TradeGoods</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGoods.h">
-      <Filter>EU4World\TradeGoods</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTech.h">
       <Filter>Mappers\StartingTechMapper</Filter>
     </ClInclude>
@@ -1143,9 +1107,6 @@
     </Filter>
     <Filter Include="Helpers">
       <UniqueIdentifier>{ef5e0061-2ce9-448e-9f80-9fa52991faf9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EU4World\Modifiers">
-      <UniqueIdentifier>{a148c2bc-522b-45d5-9087-5f5b840c943f}</UniqueIdentifier>
     </Filter>
     <Filter Include="EU4World\Country">
       <UniqueIdentifier>{0eaaaa58-d93f-4f51-a6fe-dce31727ca87}</UniqueIdentifier>
@@ -1329,9 +1290,6 @@
     </Filter>
     <Filter Include="Mappers\WarGoalMapper">
       <UniqueIdentifier>{9b194f63-f1ef-46e2-9f4a-7fad6d7b19c9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EU4World\TradeGoods">
-      <UniqueIdentifier>{c3667a54-ec75-4e75-b1f0-c372e33d08b6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Mappers\StartingTechMapper">
       <UniqueIdentifier>{c274b979-7555-4ad5-898a-377275dc3065}</UniqueIdentifier>

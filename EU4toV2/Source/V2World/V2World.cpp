@@ -615,11 +615,11 @@ void V2::World::importDefaultPops()
 
 	for (const auto& filename: filenames)
 	{
-		importPopsFromFile(filename, minorityPopMapper);
+		importPopsFromFile(filename);
 	}
 }
 
-void V2::World::importPopsFromFile(const std::string& filename, const mappers::MinorityPopMapper& minorityPopMapper)
+void V2::World::importPopsFromFile(const std::string& filename)
 {
 	std::list<int> popProvinces;
 
@@ -631,12 +631,12 @@ void V2::World::importPopsFromFile(const std::string& filename, const mappers::M
 		int provinceNum = provinceItr.first;
 		popProvinces.push_back(provinceNum);
 
-		importPopsFromProvince(provinceNum, provinceItr.second, minorityPopMapper);
+		importPopsFromProvince(provinceNum, provinceItr.second);
 	}
 	popRegions.insert(std::make_pair(filename, popProvinces));
 }
 
-void V2::World::importPopsFromProvince(const int provinceID, const mappers::PopTypes& popType, const mappers::MinorityPopMapper& minorityPopMapper)
+void V2::World::importPopsFromProvince(const int provinceID, const mappers::PopTypes& popType)
 {
 	auto provincePopulation = 0;
 	auto provinceSlavePopulation = 0;
@@ -1005,7 +1005,7 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::vect
 		if (ownerTag.empty())
 			continue; // Don't touch un-colonized provinces.
 		theClaims[ownerTag].push_back(eu4province);
-		theShares[ownerTag] = std::make_pair(lround(eu4province->getTotalDevModifier()), lround(eu4province->getBaseTax()));
+		theShares[ownerTag] = std::make_pair(lround(eu4province->getProvinceWeight()), lround(eu4province->getBaseTax()));
 	}
 	// Let's see who the lucky winner is.
 	std::string winner;
@@ -1044,7 +1044,7 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::vect
 	}
 	if (winner.empty())
 		return std::nullopt;
-	return winner;
+	return std::move(winner);
 }
 
 std::optional<std::string> V2::World::determineProvinceControllership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld)
@@ -1073,7 +1073,7 @@ std::optional<std::string> V2::World::determineProvinceControllership(const std:
 	}
 	if (winner.empty())
 		return std::nullopt;
-	return winner;
+	return std::move(winner);
 }
 
 void V2::World::setupStates()
@@ -1271,7 +1271,7 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 		threshold = country.first;
 	}
 
-	if (totalIndWeight == 0)
+	if (totalIndWeight == 0.0)
 	{
 		LOG(LogLevel::Warning) << "No factories for anyone! Industry levels are too unified - are you converting a starting date?";
 		return;
@@ -1281,7 +1281,7 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 
 	// remove nations that won't have enough industrial score for even one factory
 	auto factoryList = factoryTypeMapper.buildFactories();
-	while (lround(weightedCountries.begin()->first / totalIndWeight * factoryList.size()) < 1.0)
+	while (lround(weightedCountries.begin()->first / totalIndWeight * static_cast<double>(factoryList.size())) < 1.0)
 	{
 		weightedCountries.pop_front();
 		if (weightedCountries.empty())
@@ -1295,7 +1295,7 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 	std::vector<std::pair<int, std::shared_ptr<Country>>> factoryCounts;
 	for (const auto& country: weightedCountries)
 	{
-		int factories = lround(country.first / totalIndWeight * factoryList.size());
+		int factories = lround(country.first / totalIndWeight * static_cast<double>(factoryList.size()));
 		factoryCounts.emplace_back(std::pair<int, std::shared_ptr<Country>>(factories, country.second));
 	}
 
@@ -1332,8 +1332,12 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 
 void V2::World::setupPops(const EU4::World& sourceWorld)
 {
-	const auto my_totalWorldPopulation = totalWorldPopulation;												// Extreme will redistribute vanilla pops.
-	const auto popWeightRatio = my_totalWorldPopulation / sourceWorld.getTotalProvinceWeights(); // This is relevant only for extreme reshaping.
+	const auto my_totalWorldPopulation = totalWorldPopulation; // Extreme will redistribute vanilla pops.
+	auto totalProvinceWeight = 0.0;
+	for (const auto& [countryID, country]: countries)
+		for (const auto& [provinceID, province]: country->getProvinces())
+			totalProvinceWeight += province->getProvinceWeight();
+	const auto popWeightRatio = my_totalWorldPopulation / totalProvinceWeight; // This is relevant only for extreme reshaping.
 
 	CIV_ALGORITHM popAlgorithm;
 	const auto version12 = GameVersion("1.12.0");
@@ -1347,17 +1351,13 @@ void V2::World::setupPops(const EU4::World& sourceWorld)
 	}
 
 	for (const auto& country: countries)
-	{
 		country.second->setupPops(popWeightRatio, popAlgorithm, provinceMapper);
-	}
 
 	LOG(LogLevel::Info) << "Vanilla world population: " << totalWorldPopulation;
 	if (theConfiguration.getPopShaping() == Configuration::POPSHAPES::Extreme)
 	{
-		LOG(LogLevel::Info) << "\tModified world population: " << my_totalWorldPopulation;
-		LOG(LogLevel::Info) << "\tTotal world weight sum: " << sourceWorld.getTotalProvinceWeights();
-		LOG(LogLevel::Info) << "\t" << my_totalWorldPopulation << " / " << sourceWorld.getTotalProvinceWeights();
-		LOG(LogLevel::Info) << "\tPopulation per weight point is: " << popWeightRatio;
+		LOG(LogLevel::Info) << "\tTotal world weight sum: " << totalProvinceWeight << " (dev + buildings)";
+		LOG(LogLevel::Info) << "\tPopulation per weight point is: " << my_totalWorldPopulation << " / " << totalProvinceWeight << " = " << popWeightRatio;
 	}
 	long newTotalPopulation = 0;
 	for (const auto& province: provinces)
@@ -1412,7 +1412,6 @@ void V2::World::addUnions()
 							}
 						break;
 					case Configuration::COREHANDLES::DropAll:
-					default:
 						break;
 				}
 			}

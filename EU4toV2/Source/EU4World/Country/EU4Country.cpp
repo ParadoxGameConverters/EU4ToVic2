@@ -2,8 +2,8 @@
 #include "Configuration.h"
 #include "EU4ActiveIdeas.h"
 #include "EU4CountryFlags.h"
-#include "EU4GovernmentSection.h"
 #include "EU4CountryModifier.h"
+#include "EU4GovernmentSection.h"
 #include "EU4Technology.h"
 #include "History/CountryHistory.h"
 #include "Log.h"
@@ -740,10 +740,10 @@ void EU4::Country::clearCores()
 	cores.clear();
 }
 
-int EU4::Country::getTotalDev() const
+double EU4::Country::getCountryWeight() const
 {
-	auto totalDev = 0;
+	auto totalDev = 0.0;
 	for (const auto& province: provinces)
-		totalDev += static_cast<int>(std::round(province->getTotalDevModifier()));
+		totalDev += province->getProvinceWeight();
 	return totalDev;
 }

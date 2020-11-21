@@ -74,15 +74,6 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceBuildings.cpp">
       <Filter>ConverterFiles\EU4World\Provinces</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp">
-      <Filter>ConverterFiles\EU4World\Modifiers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp">
-      <Filter>ConverterFiles\EU4World\Modifiers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceModifier.cpp">
-      <Filter>ConverterFiles\EU4World\Provinces</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\ColonialRegions\ColonialRegion.cpp">
       <Filter>ConverterFiles\EU4World\ColonialRegions</Filter>
     </ClCompile>
@@ -359,12 +350,6 @@
     <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryTests.cpp">
       <Filter>EU4WorldTests\HistoryTests</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\ModifierTests\ModifiersTests.cpp">
-      <Filter>EU4WorldTests\ModifierTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\ModifierTests\ModifierTests.cpp">
-      <Filter>EU4WorldTests\ModifierTests</Filter>
-    </ClCompile>
     <ClCompile Include="EU4WorldTests\ModTests\ModTests.cpp">
       <Filter>EU4WorldTests\ModTests</Filter>
     </ClCompile>
@@ -403,9 +388,6 @@
     </ClCompile>
     <ClCompile Include="MapperTests\AgreementMapper\AgreementMapperTests.cpp">
       <Filter>MapperTests\AgreementMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceModifierTests.cpp">
-      <Filter>EU4WorldTests\ProvinceTests</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceHistoryTests.cpp">
       <Filter>EU4WorldTests\ProvinceTests</Filter>
@@ -448,18 +430,6 @@
     </ClCompile>
     <ClCompile Include="EU4WorldTests\ReligionTests\ReligionsTests.cpp">
       <Filter>EU4WorldTests\ReligionTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\TradeGoods\EU4TradeGood.cpp">
-      <Filter>ConverterFiles\EU4World\TradeGoods</Filter>
-    </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\TradeGoods\EU4TradeGoods.cpp">
-      <Filter>ConverterFiles\EU4World\TradeGoods</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodsTests.cpp">
-      <Filter>EU4WorldTests\TradeGoodTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodTests.cpp">
-      <Filter>EU4WorldTests\TradeGoodTests</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Wars\EU4War.cpp">
       <Filter>ConverterFiles\EU4World\Wars</Filter>
@@ -543,9 +513,6 @@
     </Filter>
     <Filter Include="HelpersTests">
       <UniqueIdentifier>{990552e6-b585-4a97-8e3c-63c6099e25e1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ConverterFiles\EU4World\Modifiers">
-      <UniqueIdentifier>{b50f49fb-ec18-4d14-aac1-f0ff92d9acbf}</UniqueIdentifier>
     </Filter>
     <Filter Include="ConverterFiles\EU4World\ColonialRegions">
       <UniqueIdentifier>{7fba0347-5440-48b3-8dc3-04c9100995d6}</UniqueIdentifier>
@@ -643,9 +610,6 @@
     <Filter Include="EU4WorldTests\HistoryTests">
       <UniqueIdentifier>{06e87d1e-dd91-4dc6-916d-66ce52c71035}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EU4WorldTests\ModifierTests">
-      <UniqueIdentifier>{532ffa3b-e9ed-48e8-8c7d-9740c3d13f98}</UniqueIdentifier>
-    </Filter>
     <Filter Include="EU4WorldTests\ModTests">
       <UniqueIdentifier>{fd4d6833-de97-4d14-a2c2-d8912ef7cfee}</UniqueIdentifier>
     </Filter>
@@ -678,12 +642,6 @@
     </Filter>
     <Filter Include="EU4WorldTests\ReligionTests">
       <UniqueIdentifier>{7e2f6cf6-9854-49bd-a85a-aedbfa69576c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ConverterFiles\EU4World\TradeGoods">
-      <UniqueIdentifier>{7770bb08-ced0-408e-a940-d5f1b78157a7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EU4WorldTests\TradeGoodTests">
-      <UniqueIdentifier>{e83cb394-4895-438a-b764-e9b5a482a3ec}</UniqueIdentifier>
     </Filter>
     <Filter Include="ConverterFiles\EU4World\Wars">
       <UniqueIdentifier>{c22ed081-a0f7-4441-9b98-94e2c39e4eb2}</UniqueIdentifier>

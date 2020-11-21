@@ -1,27 +1,28 @@
 #include "Diplomacy.h"
-#include "Log.h"
 #include "../../Configuration.h"
+#include "../../EU4World/Country/EU4Country.h"
+#include "../Country/Country.h"
+#include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "Relation.h"
-#include "../../EU4World/Country/EU4Country.h"
 #include <fstream>
-#include "../Country/Country.h"
 
-void V2::Diplomacy::convertDiplomacy(
-	std::vector<EU4::EU4Agreement> eu4agreements,
-	const mappers::CountryMappings& countryMapper, 
-	std::map<std::string, std::shared_ptr<Country>>& countries)
+void V2::Diplomacy::convertDiplomacy(std::vector<EU4::EU4Agreement> eu4agreements,
+	 const mappers::CountryMappings& countryMapper,
+	 std::map<std::string, std::shared_ptr<Country>>& countries)
 {
-	for (auto& agreement : eu4agreements)
+	for (auto& agreement: eu4agreements)
 	{
 		auto EU4Tag1 = agreement.getOriginTag();
 		auto ifV2Tag1 = countryMapper.getV2Tag(EU4Tag1);
-		if (!ifV2Tag1) continue;
+		if (!ifV2Tag1)
+			continue;
 		auto V2Tag1 = *ifV2Tag1;
 
 		auto EU4Tag2 = agreement.getTargetTag();
 		auto ifV2Tag2 = countryMapper.getV2Tag(EU4Tag2);
-		if (!ifV2Tag2) continue;
+		if (!ifV2Tag2)
+			continue;
 		auto V2Tag2 = *ifV2Tag2;
 
 		const auto& country1 = countries.find(V2Tag1);
@@ -38,8 +39,10 @@ void V2::Diplomacy::convertDiplomacy(
 		}
 
 		// Stop creating relations for/with nations that didn't survive province conversion!
-		if (country1->second->getProvinces().empty()) continue;
-		if (country2->second->getProvinces().empty()) continue;
+		if (country1->second->getProvinces().empty())
+			continue;
+		if (country2->second->getProvinces().empty())
+			continue;
 
 		auto& r1 = country1->second->getRelation(V2Tag2);
 		auto& r2 = country2->second->getRelation(V2Tag1);
@@ -47,26 +50,26 @@ void V2::Diplomacy::convertDiplomacy(
 		if (agreementMapper.isAgreementInColonies(agreement.getAgreementType()))
 		{
 			std::map<Configuration::LIBERTYDESIRE, double> libertyMap = {
-				{Configuration::LIBERTYDESIRE::Loyal, 50.0},
-				{Configuration::LIBERTYDESIRE::Disloyal, 95.0},
-				{Configuration::LIBERTYDESIRE::Rebellious, 100.0},
+				 {Configuration::LIBERTYDESIRE::Loyal, 50.0},
+				 {Configuration::LIBERTYDESIRE::Disloyal, 95.0},
+				 {Configuration::LIBERTYDESIRE::Rebellious, 100.0},
 			};
-			
+
 			// Do we annex or not?
-			if (theConfiguration.getAbsorbColonies() == Configuration::ABSORBCOLONIES::AbsorbAll || 
-				theConfiguration.getAbsorbColonies() == Configuration::ABSORBCOLONIES::AbsorbSome &&
-					country2->second->getSourceCountry()->getLibertyDesire() < libertyMap[theConfiguration.getLibertyThreshold()])
+			if (theConfiguration.getAbsorbColonies() == Configuration::ABSORBCOLONIES::AbsorbAll ||
+				 theConfiguration.getAbsorbColonies() == Configuration::ABSORBCOLONIES::AbsorbSome &&
+					  country2->second->getSourceCountry()->getLibertyDesire() < libertyMap[theConfiguration.getLibertyThreshold()])
 			{
-				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() <<
-					" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << 
-					libertyMap[theConfiguration.getLibertyThreshold()] << " liberty desire)";
+				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() << " ("
+										  << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << libertyMap[theConfiguration.getLibertyThreshold()]
+										  << " liberty desire)";
 				country1->second->absorbColony(*country2->second);
 				continue;
 			}
-			
-			LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is not absorbing " << country2->second->getTag() <<
-				" (" << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << 
-				libertyMap[theConfiguration.getLibertyThreshold()] << " liberty desire)";
+
+			LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is not absorbing " << country2->second->getTag() << " ("
+									  << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << libertyMap[theConfiguration.getLibertyThreshold()]
+									  << " liberty desire)";
 			country2->second->setColonyOverlord(V2Tag1);
 		}
 
@@ -112,11 +115,13 @@ void V2::Diplomacy::storeDevValues(const Country& country1, const Country& count
 {
 	const auto& V2Tag1 = country1.getTag();
 	const auto& V2Tag2 = country2.getTag();
-	
-	// We need to calculate devs and conglomerate devs (vassals + overlord) so that we can alter starting prestige
+
+	// We need to calculate weights and conglomerate weights (vassals + overlord) so that we can alter starting prestige
 	// of individual vassals. We cannot do so yet as we don't know who's alive, dead or a vassal at all.
-	if (!vassalCache[V2Tag2]) vassalCache[V2Tag2] = country2.getSourceCountry()->getTotalDev();
-	if (!masterCache[V2Tag1]) masterCache[V2Tag1] = country1.getSourceCountry()->getTotalDev();
+	if (!vassalCache.contains(V2Tag2))
+		vassalCache[V2Tag2] = country2.getSourceCountry()->getCountryWeight();
+	if (!masterCache.contains(V2Tag1))
+		masterCache[V2Tag1] = country1.getSourceCountry()->getCountryWeight();
 	masterVassals[V2Tag1].insert(V2Tag2);
 }
 
@@ -124,7 +129,8 @@ void V2::Diplomacy::processOnesider(Relation& r1)
 {
 	// influence level +1, but never exceed 4
 	// military access is not implied
-	if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
+	if (r1.getLevel() < 4)
+		r1.setLevel(r1.getLevel() + 1);
 	r1.increaseRelations(50);
 }
 
@@ -132,9 +138,11 @@ void V2::Diplomacy::processDoublesider(Relation& r1, Relation& r2)
 {
 	// doublesiders are bidirectional; influence level +1, but never exceed 4
 	// They don't set military access, as it's not implied (not even for alliances).
-	if (r1.getLevel() < 4) r1.setLevel(r1.getLevel() + 1);
+	if (r1.getLevel() < 4)
+		r1.setLevel(r1.getLevel() + 1);
 	r1.increaseRelations(50);
-	if (r2.getLevel() < 4) r2.setLevel(r2.getLevel() + 1);
+	if (r2.getLevel() < 4)
+		r2.setLevel(r2.getLevel() + 1);
 	r2.increaseRelations(50);
 }
 
@@ -160,17 +168,18 @@ void V2::Diplomacy::processVassal(Relation& r1, Relation& r2)
 
 void V2::Diplomacy::reduceVassalPrestige(const std::map<std::string, std::shared_ptr<Country>>& countries)
 {
-	// Alter prestige of vassals based on conglomerate dev size.
-	for (const auto& conglomerate : masterVassals)
+	// Alter prestige of vassals based on conglomerate weight size.
+	for (const auto& conglomerate: masterVassals)
 	{
-		const auto& masterDev = masterCache[conglomerate.first];
-		auto conglomerateDev = masterDev;
-		for (const auto& vassal : conglomerate.second) conglomerateDev += vassalCache[vassal];
-		if (!conglomerateDev) continue;
-		for (const auto& vassal : conglomerate.second)
+		const auto& masterWeight = masterCache.at(conglomerate.first);
+		auto conglomerateWeight = masterWeight;
+		for (const auto& vassal: conglomerate.second)
+			conglomerateWeight += vassalCache.at(vassal);
+		if (conglomerateWeight == 0.0)
+			continue;
+		for (const auto& vassal: conglomerate.second)
 		{
-			if (!vassalCache[vassal]) continue;
-			const auto ratio = static_cast<double>(vassalCache[vassal]) / conglomerateDev;
+			const auto ratio = static_cast<double>(vassalCache.at(vassal)) / conglomerateWeight;
 			const auto newPrestige = ratio * countries.find(vassal)->second->getPrestige();
 			countries.find(vassal)->second->setPrestige(newPrestige);
 		}
@@ -179,11 +188,11 @@ void V2::Diplomacy::reduceVassalPrestige(const std::map<std::string, std::shared
 
 void V2::Diplomacy::convertRelationsToInfluence(const std::map<std::string, std::shared_ptr<Country>>& countries)
 {
-	// Reward good starting relations with a small amount of extra influence, which will be relevant 
+	// Reward good starting relations with a small amount of extra influence, which will be relevant
 	// to stating GPs, and will look natural.
-	for (const auto& country : countries)
+	for (const auto& country: countries)
 	{
-		for (auto& relation : country.second->getRelations())
+		for (auto& relation: country.second->getRelations())
 		{
 			if (relation.second.getRelations() > 50)
 			{
@@ -214,17 +223,21 @@ void V2::Diplomacy::output() const
 	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/diplomacy");
 
 	std::ofstream alliances("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Alliances.txt");
-	if (!alliances.is_open()) throw std::runtime_error("Could not create alliances history file!");
+	if (!alliances.is_open())
+		throw std::runtime_error("Could not create alliances history file!");
 
 	std::ofstream guarantees("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Guarantees.txt");
-	if (!guarantees.is_open()) throw std::runtime_error("Could not create guarantees history file!");
+	if (!guarantees.is_open())
+		throw std::runtime_error("Could not create guarantees history file!");
 
 	std::ofstream puppetStates("output/" + theConfiguration.getOutputName() + "/history/diplomacy/PuppetStates.txt");
-	if (!puppetStates.is_open()) throw std::runtime_error("Could not create puppet states history file!");
+	if (!puppetStates.is_open())
+		throw std::runtime_error("Could not create puppet states history file!");
 
 	std::ofstream unions("output/" + theConfiguration.getOutputName() + "/history/diplomacy/Unions.txt");
-	if (!unions.is_open()) throw std::runtime_error("Could not create unions history file!");
-	
+	if (!unions.is_open())
+		throw std::runtime_error("Could not create unions history file!");
+
 	for (const auto& agreement: agreements)
 	{
 		if (agreement.getType() == "guarantee")
@@ -248,7 +261,7 @@ void V2::Diplomacy::output() const
 			LOG(LogLevel::Warning) << "Cannot output diplomatic agreement type " << agreement.getType() << "!";
 		}
 	}
-	
+
 	alliances.close();
 	guarantees.close();
 	puppetStates.close();

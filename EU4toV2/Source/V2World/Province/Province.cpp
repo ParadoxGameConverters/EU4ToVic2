@@ -205,19 +205,17 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 	// onto development and weight data
 	for (const auto& oldProvince: provinceSources)
 	{
-		devpushMod += oldProvince->getDevDelta() / 100.0;
-		weightMod += oldProvince->getModifierWeight() / 100.0;
-		totalWeight += oldProvince->getTotalWeight();
+		investmentFactor += oldProvince->getInvestmentFactor() / 100.0;
+		provinceWeight += oldProvince->getProvinceWeight();
 	}
-	devpushMod /= provinceSources.size();
-	weightMod /= provinceSources.size();
-	const double totalSourceDevelopmentWeight = totalWeight;
-	totalWeight /= provinceSources.size();
+	investmentFactor /= static_cast<double>(provinceSources.size());
+	const auto totalSourceDevelopmentWeight = provinceWeight;
+	provinceWeight /= static_cast<double>(provinceSources.size());
 
-	// And finally, demographics, using development rations of source provinces.
+	// And finally, demographics
 	for (const auto& oldProvince: provinceSources)
 	{
-		const double provincePopulationWeight = oldProvince->getTotalWeight() / totalSourceDevelopmentWeight;
+		const auto provincePopulationWeight = oldProvince->getProvinceWeight() / totalSourceDevelopmentWeight;
 		auto popRatios = oldProvince->getPopRatios();
 		determineDemographics(eu4Regions,
 			 popRatios,
@@ -354,7 +352,7 @@ std::optional<std::shared_ptr<V2::Factory>> V2::Province::addFactory(std::shared
 	if (itr == factories.end())
 	{
 		factories.insert(std::make_pair(factory->getTypeName(), factory));
-		return factory;
+		return std::move(factory);
 	}
 	itr->second->increaseLevel();
 	return std::nullopt;
@@ -440,7 +438,6 @@ void V2::Province::doCreatePops(const double popWeightRatio,
 		createPops(demographic, popWeightRatio, _owner, popConversionAlgorithm, provinceMapper);
 	}
 	combinePops();
-
 	// organize pops for adding minorities
 	std::map<std::string, int> totals;
 	std::map<std::string, std::vector<std::shared_ptr<Pop>>> thePops;
@@ -776,9 +773,9 @@ void V2::Province::createPops(const Demographic& demographic,
 	 const mappers::ProvinceMapper& provinceMapper)
 {
 	long newPopulation = 0;
-	auto lifeRatingMod = (static_cast<double>(details.lifeRating) - 30.0) / 200.0;
-	auto shapeMod = theConfiguration.getPopShapingFactor() / 100.0;
-	auto provinceDevModifier = 1 + (lifeRatingMod + devpushMod + weightMod) * shapeMod;
+	const auto shapeFactor = theConfiguration.getPopShapingFactor() / 100.0;
+	const auto lifeRatingMod = (static_cast<double>(details.lifeRating) - 35.0) / 200.0;
+	const auto provinceDevModifier = 1 + (lifeRatingMod + investmentFactor * shapeFactor);
 
 	switch (theConfiguration.getPopShaping())
 	{
@@ -791,25 +788,8 @@ void V2::Province::createPops(const Demographic& demographic,
 			break;
 
 		case Configuration::POPSHAPES::Extreme:
-			newPopulation = static_cast<long>(popWeightRatio * totalWeight);
-
-			auto vic2Provinces = provinceMapper.getVic2ProvinceNumbers(*eu4IDs.begin()); // the first province maps to the same places as the others.
-			auto numOfV2Provs = static_cast<int>(vic2Provinces.size());
-			if (numOfV2Provs > 1)
-			{
-				if (numOfV2Provs == 2)
-				{
-					newPopulation /= numOfV2Provs;
-					newPopulation = static_cast<long>(newPopulation * 1.10);
-				}
-				else
-				{
-					newPopulation /= numOfV2Provs;
-					newPopulation = static_cast<long>(newPopulation * 1.15);
-				}
-			}
-
-			newPopulation = vanillaPopulation + static_cast<long>((newPopulation - vanillaPopulation) * (theConfiguration.getPopShapingFactor() / 100.0));
+			newPopulation = static_cast<long>(popWeightRatio * provinceWeight);
+			newPopulation = vanillaPopulation + static_cast<long>((newPopulation - vanillaPopulation) * shapeFactor);
 			break;
 	}
 
@@ -822,8 +802,6 @@ void V2::Province::createPops(const Demographic& demographic,
 		case CIV_ALGORITHM::newer:
 			pts = getPopPoints_2(demographic, newPopulation, _owner);
 			break;
-		default:
-			LOG(LogLevel::Error) << "Invalid pop conversion algorithm specified; not generating pops.";
 	}
 
 	// Uncivilized cannot have capitalists, clerks, or craftsmen, and get fewer bureaucrats
@@ -913,34 +891,33 @@ void V2::Province::createPops(const Demographic& demographic,
 
 void V2::Province::combinePops()
 {
-	std::vector<std::shared_ptr<Pop>> trashPops;
 	for (auto lhs = pops.begin(); lhs != pops.end(); ++lhs)
 	{
+		if ((*lhs)->isTrashed())
+			continue;
 		auto rhs = lhs;
 		for (++rhs; rhs != pops.end(); ++rhs)
 		{
+			if ((*rhs)->isTrashed())
+				continue;
 			if ((*lhs)->combine(**rhs))
 			{
-				trashPops.push_back(*rhs);
+				(*rhs)->setTrashed();
+				continue;
 			}
 			if ((*rhs)->getSize() < 1)
 			{
-				trashPops.push_back(*rhs);
+				(*rhs)->setTrashed();
 			}
 		}
 	}
 
 	std::vector<std::shared_ptr<Pop>> consolidatedPops;
-	for (const auto& itr: pops)
+	for (const auto& pop: pops)
 	{
-		auto isTrashed = false;
-		for (const auto& titr: trashPops)
-		{
-			if (itr == titr)
-				isTrashed = true;
-		}
-		if (!isTrashed)
-			consolidatedPops.push_back(itr);
+		if (pop->isTrashed())
+			continue;
+		consolidatedPops.emplace_back(pop);
 	}
 	pops.swap(consolidatedPops);
 }

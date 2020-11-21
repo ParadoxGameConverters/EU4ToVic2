@@ -6,13 +6,11 @@
 #include "Diplomacy/EU4Diplomacy.h"
 #include "GameVersion.h"
 #include "IdeaEffects/IdeaEffectMapper.h"
-#include "Modifiers/Modifiers.h"
 #include "Parser.h"
 #include "Provinces/Provinces.h"
 #include "Regions/Regions.h"
 #include "Religions/Religions.h"
 #include "SuperGroupMapper/SuperGroupMapper.h"
-#include "TradeGoods/EU4TradeGoods.h"
 #include "UnitTypes/UnitTypeMapper.h"
 #include "Wars/EU4War.h"
 #include <map>
@@ -25,7 +23,6 @@ class World: commonItems::parser
   public:
 	World(const mappers::IdeaEffectMapper& ideaEffectMapper);
 
-	[[nodiscard]] auto getTotalProvinceWeights() const { return provinces->geTotalProvinceWeights(); }
 	[[nodiscard]] std::shared_ptr<Province> getProvince(int provNum) const { return provinces->getProvince(provNum); }
 	[[nodiscard]] std::shared_ptr<Country> getCountry(const std::string& tag) const;
 
@@ -62,14 +59,13 @@ class World: commonItems::parser
 	void setEmpires();
 	void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas) const;
 	void fillHistoricalData();
-	void addTradeGoodsAndBuildProvinceWeights() const;
+	void buildProvinceWeights() const;
 	void catalogueNativeCultures();
 	void generateNeoCultures();
 	void buildPopRatios() const;
 	void calculateIndustry() const;
 	std::string generateNeoCulture(const std::string& superRegionName, const std::string& oldCultureName);
 	bool uncompressSave();
-
 
 	struct saveData
 	{
@@ -92,9 +88,7 @@ class World: commonItems::parser
 	std::map<std::string, std::set<std::string>> nativeCultures;						// superregion-culturenames
 	std::map<std::pair<std::string, std::string>, std::string> generatedCultures; // origculture/superregion - neoculture (cache)
 
-	TradeGoods tradeGoods;
 	Religions theReligions;
-	std::unique_ptr<Modifiers> modifierTypes;
 	mappers::UnitTypeMapper unitTypeMapper;
 	std::unique_ptr<mappers::Buildings> buildingTypes;
 	mappers::CultureGroups cultureGroupsMapper;

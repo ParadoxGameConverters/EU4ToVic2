@@ -27,7 +27,6 @@ TEST(EU4World_ProvinceTests, primitivesDefaultToDefaults)
 	ASSERT_EQ(0.0, theProvince.getBaseTax());
 	ASSERT_EQ(0.0, theProvince.getBaseProduction());
 	ASSERT_EQ(0.0, theProvince.getBaseManpower());
-	ASSERT_TRUE(theProvince.getTradeGoods().empty());
 }
 
 TEST(EU4World_ProvinceTests, primitivesCanBeSet)
@@ -54,7 +53,6 @@ TEST(EU4World_ProvinceTests, primitivesCanBeSet)
 	ASSERT_EQ(3.0, theProvince.getBaseTax());
 	ASSERT_EQ(4.0, theProvince.getBaseProduction());
 	ASSERT_EQ(5.0, theProvince.getBaseManpower());
-	ASSERT_EQ("bananas", theProvince.getTradeGoods());
 }
 
 TEST(EU4World_ProvinceTests, coresCanBeSetWithNewStyle)
@@ -231,25 +229,6 @@ TEST(EU4World_ProvinceTests, hasGreatProjectFindsProjects)
 	ASSERT_TRUE(theProvince.hasGreatProject("test_canal"));
 }
 
-TEST(EU4World_ProvinceTests, hasModifierDefaultsToFalse)
-{
-	std::stringstream input;
-	const EU4::Province theProvince("-1", input);
-
-	ASSERT_FALSE(theProvince.hasModifier("center_of_trade_modifier"));
-}
-
-TEST(EU4World_ProvinceTests, hasModifierFindsModifiers)
-{
-	std::stringstream input;
-	input << "modifier={\n";
-	input << "\tmodifier=\"center_of_trade_modifier\"\n";
-	input << "}\n";
-	const EU4::Province theProvince("-1", input);
-
-	ASSERT_TRUE(theProvince.hasModifier("center_of_trade_modifier"));
-}
-
 TEST(EU4World_ProvinceTests, firstOwnedDateDefaultsToNullopt)
 {
 	std::stringstream input;
@@ -312,7 +291,7 @@ TEST(EU4World_ProvinceTests, getPopRatiosLoadCorrectAsssimilationFactorAndBuild)
 	input << "\t}\n";
 	input << "}\n";
 	EU4::Province theProvince("-1", input);
-	//theProvince.buildPopRatio(stuff, more stuff); // TODO: Test when superGroupMapper and regions are available!
+	// theProvince.buildPopRatio(stuff, more stuff); // TODO: Test when superGroupMapper and regions are available!
 }
 
 TEST(EU4World_ProvinceTests, buildingsForwardedFromBuildings)
@@ -346,15 +325,223 @@ TEST(EU4World_ProvinceTests, culturePercentCanBeRetrieved)
 	// theProvince.buildPopRatio(stuff, more stuff); // TODO: Test when superGroupMapper and regions are available!
 }
 
-TEST(EU4World_ProvinceTests, provinceWeightCanBeCalculated)
+TEST(EU4World_ProvinceTests, provinceWeightWithoutOwnerIsZero)
 {
 	std::stringstream input;
 	input << "base_tax = 3\n";
 	input << "base_production = 4\n";
 	input << "base_manpower = 5\n";
-	input << "tradegoods = bananas\n";
 	EU4::Province theProvince("-1", input);
 
-	// TODO: Revise this entire function
-	// theProvince.determineProvinceWeight(stuff, more stuff); // TODO: Test this when buildingWeights and modifierTypes are available!
+	const mappers::Buildings buildings;
+
+	theProvince.determineProvinceWeight(buildings);
+
+	ASSERT_EQ(0.0, theProvince.getProvinceWeight());
+}
+
+TEST(EU4World_ProvinceTests, provinceWeightWithoutBuildingsIsCombinedDevelopment)
+{
+	std::stringstream input;
+	input << "owner = TST\n";
+	input << "base_tax = 3\n";
+	input << "base_production = 4\n";
+	input << "base_manpower = 5\n";
+	EU4::Province theProvince("-1", input);
+
+	const mappers::Buildings buildings;
+
+	theProvince.determineProvinceWeight(buildings);
+
+	ASSERT_NEAR(12, theProvince.getProvinceWeight(), 0.001);
+}
+
+TEST(EU4World_ProvinceTests, provinceWeightIncreasesByOnePercentOfBuildingsCost)
+{
+	std::stringstream input;
+	input << "owner = TST\n";
+	input << "base_tax = 3\n";
+	input << "base_production = 4\n";
+	input << "base_manpower = 5\n";
+	input << "buildings = {\n";
+	input << "\tshack = lovely\n";
+	input << "\twatermill = nice\n";
+	input << "}\n";
+	EU4::Province theProvince("-1", input);
+
+	std::stringstream buildingStream;
+	buildingStream << "shack = { cost = 100 }\n";
+	buildingStream << "watermill = { cost = 700 }\n"; // sums to 8 in total
+	const mappers::Buildings buildings(buildingStream);
+
+	theProvince.determineProvinceWeight(buildings);
+
+	ASSERT_NEAR(20.0, theProvince.getProvinceWeight(), 0.001);
+}
+
+TEST(EU4World_ProvinceTests, investmentFactorForNoOwnerIsZero)
+{
+	std::stringstream input;
+	input << "base_tax = 3\n";
+	input << "base_production = 4\n";
+	input << "base_manpower = 5\n";
+	input << "history = {\n";
+	input << "\tbase_tax = 1\n";
+	input << "\tbase_production = 2\n";
+	input << "\tbase_manpower = 1\n";
+	input << "}\n";
+
+	EU4::Province theProvince("-1", input);
+
+	std::stringstream buildingStream;
+	const mappers::Buildings buildings(buildingStream);
+
+	theProvince.determineProvinceWeight(buildings);
+
+	ASSERT_EQ(0.0, theProvince.getInvestmentFactor());
+}
+
+TEST(EU4World_ProvinceTests, investmentFactorWithoutBuildingsCanBeCalculated)
+{
+	std::stringstream input;
+	input << "owner = TST\n";
+	input << "base_tax = 1\n";
+	input << "base_production = 12\n"; // increased by 10
+	input << "base_manpower = 1\n";
+	input << "history = {\n";
+	input << "\tbase_tax = 1\n";
+	input << "\tbase_production = 2\n";
+	input << "\tbase_manpower = 1\n";
+	input << "}\n";
+
+	EU4::Province theProvince("-1", input);
+
+	std::stringstream buildingStream;
+	const mappers::Buildings buildings(buildingStream);
+
+	// Increasing development by 10 gives us a factor of 0 (log10(10) - 1) * 10
+	theProvince.determineProvinceWeight(buildings);
+
+	ASSERT_EQ(0.0, theProvince.getInvestmentFactor());
+}
+
+TEST(EU4World_ProvinceTests, investmentFactorWithoutBuildingsCanBeCalculatedAbove10)
+{
+	std::stringstream input;
+	input << "owner = TST\n";
+	input << "base_tax = 1\n";
+	input << "base_production = 102\n"; // increased by 100
+	input << "base_manpower = 1\n";
+	input << "history = {\n";
+	input << "\tbase_tax = 1\n";
+	input << "\tbase_production = 2\n";
+	input << "\tbase_manpower = 1\n";
+	input << "}\n";
+
+	EU4::Province theProvince("-1", input);
+
+	std::stringstream buildingStream;
+	const mappers::Buildings buildings(buildingStream);
+
+	// Increasing development by 100 gives us a factor of 10 (log10(100) - 1) * 10
+	theProvince.determineProvinceWeight(buildings);
+
+	ASSERT_NEAR(10.0, theProvince.getInvestmentFactor(), 0.001);
+}
+
+TEST(EU4World_ProvinceTests, investmentFactorUsesOnePercentBuildingsCostAsDev)
+{
+	std::stringstream input;
+	input << "owner = TST\n";
+	input << "base_tax = 1\n";
+	input << "base_production = 92\n"; // increased by 90
+	input << "base_manpower = 1\n";
+	input << "history = {\n";
+	input << "\tbase_tax = 1\n";
+	input << "\tbase_production = 2\n";
+	input << "\tbase_manpower = 1\n";
+	input << "}\n";
+	input << "buildings = {\n";
+	input << "\tshack = lovely\n";
+	input << "\twatermill = nice\n";
+	input << "}\n";
+	EU4::Province theProvince("-1", input);
+
+	std::stringstream buildingStream;
+	buildingStream << "shack = { cost = 300 }\n";
+	buildingStream << "watermill = { cost = 700 }\n"; // sums to 10 in total
+	const mappers::Buildings buildings(buildingStream);
+
+	// Increasing development by 90 + 10 gives us a factor of 10 (log10(100) - 1) * 10
+	theProvince.determineProvinceWeight(buildings);
+
+	ASSERT_NEAR(10.0, theProvince.getInvestmentFactor(), 0.001);
+}
+
+TEST(EU4World_ProvinceTests, investmentFactorIsNegativeBelow10Investment)
+{
+	std::stringstream input;
+	input << "owner = TST\n";
+	input << "base_tax = 1\n";
+	input << "base_production = 3\n"; // increased by 1
+	input << "base_manpower = 1\n";
+	input << "history = {\n";
+	input << "\tbase_tax = 1\n";
+	input << "\tbase_production = 2\n";
+	input << "\tbase_manpower = 1\n";
+	input << "}\n";
+	EU4::Province theProvince("-1", input);
+
+	std::stringstream buildingStream;
+	const mappers::Buildings buildings(buildingStream);
+
+	// Increasing development by 1 gives us a factor of -10 (log10(1) - 1) * 10
+	theProvince.determineProvinceWeight(buildings);
+
+	ASSERT_NEAR(-10.0, theProvince.getInvestmentFactor(), 0.001);
+}
+
+TEST(EU4World_ProvinceTests, investmentFactorIsNegative10ForZeroInvestment)
+{
+	std::stringstream input;
+	input << "owner = TST\n";
+	input << "base_tax = 1\n";
+	input << "base_production = 2\n";
+	input << "base_manpower = 1\n";
+	input << "history = {\n";
+	input << "\tbase_tax = 1\n";
+	input << "\tbase_production = 2\n";
+	input << "\tbase_manpower = 1\n";
+	input << "}\n";
+	EU4::Province theProvince("-1", input);
+
+	std::stringstream buildingStream;
+	const mappers::Buildings buildings(buildingStream);
+
+	theProvince.determineProvinceWeight(buildings);
+
+	ASSERT_NEAR(-10.0, theProvince.getInvestmentFactor(), 0.001);
+}
+
+TEST(EU4World_ProvinceTests, investmentFactorScalesLinearlyForNegativeInvestment)
+{
+	std::stringstream input;
+	input << "owner = TST\n";
+	input << "base_tax = 1\n";
+	input << "base_production = 2\n"; // Decreased by 10
+	input << "base_manpower = 1\n";
+	input << "history = {\n";
+	input << "\tbase_tax = 1\n";
+	input << "\tbase_production = 12\n";
+	input << "\tbase_manpower = 1\n";
+	input << "}\n";
+	EU4::Province theProvince("-1", input);
+
+	std::stringstream buildingStream;
+	const mappers::Buildings buildings(buildingStream);
+
+	// -10 - 0.1/dev
+	theProvince.determineProvinceWeight(buildings);
+
+	ASSERT_NEAR(-11.0, theProvince.getInvestmentFactor(), 0.001);
 }

@@ -86,8 +86,8 @@ class World
 	void importProvinces();
 	void shuffleRgos();
 	void importDefaultPops();
-	void importPopsFromFile(const std::string& filename, const mappers::MinorityPopMapper& minorityPopMapper);
-	void importPopsFromProvince(int provinceID, const mappers::PopTypes& popType, const mappers::MinorityPopMapper& minorityPopMapper);
+	void importPopsFromFile(const std::string& filename);
+	void importPopsFromProvince(int provinceID, const mappers::PopTypes& popType);
 	void importPotentialCountries();
 	void importPotentialCountry(const std::string& line, bool dynamicCountry);
 	void initializeCultureMappers();
