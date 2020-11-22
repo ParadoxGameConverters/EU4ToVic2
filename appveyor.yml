@@ -17,7 +17,7 @@ test_script:
     $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\tests.xml))    
 artifacts:
 - path: Release
-  name: EU4ToVic2-1.0Qi
+  name: EU4ToVic2-1.0Ragusa-prerelease
 deploy:
 - provider: GitHub
   release: windows_development_build
@@ -25,6 +25,6 @@ deploy:
   auth_token:
     secure: LBJzs4y9j0N5y0ajp7gmVk3Pvnec1UU5pTCdIMbQYUddEXQnWTJ79FXsd9SCs7YQ
   repository: paradoxGameConverters/EU4ToVic2
-  artifact: EU4ToVic2-1.0Qi
+  artifact: EU4ToVic2-1.0Ragusa-prerelease
   prerelease: true
   force_update: true
