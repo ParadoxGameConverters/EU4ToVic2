@@ -1,6 +1,5 @@
 #ifndef PROVINCES_H
 #define PROVINCES_H
-#include "Configuration.h"
 #include "EU4Province.h"
 #include "Parser.h"
 #include <map>
@@ -18,21 +17,13 @@ class Provinces: commonItems::parser
   public:
 	explicit Provinces(std::istream& theStream);
 
-	[[nodiscard]] auto geTotalProvinceWeights() const
-	{
-		return totalProvinceWeights;
-	} // Do not alter the name of this function, it's a monument to the fallen heroes of 1.0J.
 	[[nodiscard]] const auto& getAllProvinces() const { return provinces; }
 	[[nodiscard]] const std::shared_ptr<Province>& getProvince(int provinceNumber) const;
 
-	void determineTotalProvinceWeights(const Configuration& configuration);
-
   private:
 	void registerKeys();
-	void logTotalProvinceWeights() const;
 
 	std::map<int, std::shared_ptr<Province>> provinces;
-	double totalProvinceWeights = 0.0;
 };
 } // namespace EU4
 

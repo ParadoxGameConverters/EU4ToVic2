@@ -332,8 +332,6 @@
     <ClCompile Include="Source\EU4World\Leader\EU4Leader.cpp" />
     <ClCompile Include="Source\EU4World\Leader\EU4LeaderID.cpp" />
     <ClCompile Include="Source\EU4World\Localization\EU4Localization.cpp" />
-    <ClCompile Include="Source\EU4World\Modifiers\Modifier.cpp" />
-    <ClCompile Include="Source\EU4World\Modifiers\Modifiers.cpp" />
     <ClCompile Include="Source\EU4World\Mods\Mod.cpp" />
     <ClCompile Include="Source\EU4World\Mods\Mods.cpp" />
     <ClCompile Include="Source\EU4World\NationMerger\MergeBlock.cpp" />
@@ -343,7 +341,6 @@
     <ClCompile Include="Source\EU4World\Provinces\PopRatio.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\ProvinceBuildings.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\ProvinceHistory.cpp" />
-    <ClCompile Include="Source\EU4World\Provinces\ProvinceModifier.cpp" />
     <ClCompile Include="Source\EU4World\Provinces\Provinces.cpp" />
     <ClCompile Include="Source\EU4World\Regions\Area.cpp" />
     <ClCompile Include="Source\EU4World\Regions\Areas.cpp" />
@@ -355,8 +352,6 @@
     <ClCompile Include="Source\EU4World\Relations\EU4Relations.cpp" />
     <ClCompile Include="Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="Source\EU4World\Religions\Religions.cpp" />
-    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGood.cpp" />
-    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGoods.cpp" />
     <ClCompile Include="Source\EU4World\Wars\EU4War.cpp" />
     <ClCompile Include="Source\EU4World\Wars\EU4WarDetails.cpp" />
     <ClCompile Include="Source\EU4World\World.cpp" />
@@ -526,21 +521,16 @@
     <ClInclude Include="Source\EU4World\Leader\EU4Leader.h" />
     <ClInclude Include="Source\EU4World\Leader\EU4LeaderID.h" />
     <ClInclude Include="Source\EU4World\Localization\EU4Localization.h" />
-    <ClInclude Include="Source\EU4World\Modifiers\Modifier.h" />
-    <ClInclude Include="Source\EU4World\Modifiers\Modifiers.h" />
     <ClInclude Include="Source\EU4World\Mods\Mod.h" />
     <ClInclude Include="Source\EU4World\Mods\Mods.h" />
     <ClInclude Include="Source\EU4World\NationMerger\MergeBlock.h" />
     <ClInclude Include="Source\EU4World\NationMerger\NationMergeParser.h" />
-    <ClInclude Include="Source\EU4World\Provinces\BuildingWeightEffects.h" />
     <ClInclude Include="Source\EU4World\Provinces\DateItems.h" />
     <ClInclude Include="Source\EU4World\Provinces\EU4Province.h" />
     <ClInclude Include="Source\EU4World\Provinces\PopRatio.h" />
     <ClInclude Include="Source\EU4World\Provinces\ProvinceBuildings.h" />
     <ClInclude Include="Source\EU4World\Provinces\ProvinceHistory.h" />
-    <ClInclude Include="Source\EU4World\Provinces\ProvinceModifier.h" />
     <ClInclude Include="Source\EU4World\Provinces\Provinces.h" />
-    <ClInclude Include="Source\EU4World\Provinces\ProvinceStats.h" />
     <ClInclude Include="Source\EU4World\Regions\Area.h" />
     <ClInclude Include="Source\EU4World\Regions\Areas.h" />
     <ClInclude Include="Source\EU4World\Regions\Region.h" />
@@ -551,8 +541,6 @@
     <ClInclude Include="Source\EU4World\Relations\EU4Relations.h" />
     <ClInclude Include="Source\EU4World\Religions\ReligionGroup.h" />
     <ClInclude Include="Source\EU4World\Religions\Religions.h" />
-    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGood.h" />
-    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGoods.h" />
     <ClInclude Include="Source\EU4World\Wars\EU4War.h" />
     <ClInclude Include="Source\EU4World\Wars\EU4WarDetails.h" />
     <ClInclude Include="Source\EU4World\World.h" />

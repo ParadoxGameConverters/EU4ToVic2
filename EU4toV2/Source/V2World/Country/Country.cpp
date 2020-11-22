@@ -851,10 +851,6 @@ bool V2::Country::addFactory(std::shared_ptr<Factory> factory)
 
 void V2::Country::setupPops(const double popWeightRatio, const CIV_ALGORITHM popConversionAlgorithm, const mappers::ProvinceMapper& provinceMapper)
 {
-	// skip entirely for empty nations
-	if (states.empty())
-		return;
-
 	// create the pops
 	for (const auto& province: provinces)
 		province.second->doCreatePops(popWeightRatio, this, popConversionAlgorithm, provinceMapper);

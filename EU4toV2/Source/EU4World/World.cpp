@@ -62,7 +62,6 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 
 	clearRegisteredKeywords();
 	// With mods loaded we can init stuff that requires them.
-	modifierTypes = std::make_unique<Modifiers>();
 	buildingTypes = std::make_unique<mappers::Buildings>();
 	unitTypeMapper.initUnitTypeMapper();
 	cultureGroupsMapper.initForEU4();
@@ -73,17 +72,13 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	setEmpires();
 	Log(LogLevel::Progress) << "17 %";
 
-	LOG(LogLevel::Info) << "-> Setting Province Weight";
-	addTradeGoodsAndBuildProvinceWeights();
+	LOG(LogLevel::Info) << "-> Calculating Province Weights";
+	buildProvinceWeights();
 	Log(LogLevel::Progress) << "18 %";
 
 	LOG(LogLevel::Info) << "-> Processing Province Info";
 	addProvinceInfoToCountries();
 	Log(LogLevel::Progress) << "19 %";
-
-	LOG(LogLevel::Info) << "-> Determining Province Weights";
-	provinces->determineTotalProvinceWeights(theConfiguration);
-	Log(LogLevel::Progress) << "20 %";
 
 	LOG(LogLevel::Info) << "-> Loading Regions";
 	loadRegions();
@@ -223,10 +218,6 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	registerKeyword("active_war", [this](const std::string& unused, std::istream& theStream) {
 		const War newWar(theStream);
 		wars.push_back(newWar);
-	});
-	registerKeyword("change_price", [this](const std::string& unused, std::istream& theStream) {
-		const TradeGoods theGoods(theStream);
-		tradeGoods = theGoods;
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
@@ -434,18 +425,10 @@ void EU4::World::loadRevolutionTarget()
 	}
 }
 
-void EU4::World::addTradeGoodsAndBuildProvinceWeights() const
+void EU4::World::buildProvinceWeights() const
 {
 	for (const auto& province: provinces->getAllProvinces())
-	{
-		const auto& price = tradeGoods.getPrice(province.second->getTradeGoods());
-		if (!price) // This should fire only for very broken saves as trade good price will default to "unknown" trade good in regular saves.
-			Log(LogLevel::Warning) << "Unknown trade good in province " << province.first << " - " << province.second->getName();
-		else
-			province.second->setTradeGoodPrice(*price);
-
-		province.second->determineProvinceWeight(*buildingTypes, *modifierTypes);
-	}
+		province.second->determineProvinceWeight(*buildingTypes);
 }
 
 void EU4::World::addProvinceInfoToCountries()
@@ -617,7 +600,7 @@ void EU4::World::setLocalizations()
 		if (nameLocalizations)
 			for (const auto& [language, name]: *nameLocalizations)
 				theCountry.second->setLocalizationName(language, name);
-		
+
 		const auto& adjectiveLocalizations = localization.getTextInEachLanguage(theCountry.second->getTag() + "_ADJ");
 		if (adjectiveLocalizations)
 			for (const auto& [language, adjective]: *adjectiveLocalizations)

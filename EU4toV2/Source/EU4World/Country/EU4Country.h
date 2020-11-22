@@ -111,7 +111,7 @@ class Country: commonItems::parser
 	[[nodiscard]] std::string getAdjective(const std::string& language) const;
 	[[nodiscard]] double getLegitimacy() const;
 	[[nodiscard]] bool cultureSurvivesInCores(const std::map<std::string, std::shared_ptr<Country>>& theCountries);
-	[[nodiscard]] int getTotalDev() const;
+	[[nodiscard]] double getCountryWeight() const;
 	[[nodiscard]] bool hasModifier(const std::string&) const;
 	[[nodiscard]] bool hasNationalIdea(const std::string&) const;
 	[[nodiscard]] bool hasFlag(const std::string&) const;

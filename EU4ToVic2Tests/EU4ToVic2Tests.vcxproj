@@ -201,8 +201,6 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4Leader.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4LeaderID.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Localization\EU4Localization.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifier.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Modifiers\Modifiers.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\NationMerger\MergeBlock.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\NationMerger\NationMergeParser.cpp" />
@@ -211,7 +209,6 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\PopRatio.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceBuildings.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceHistory.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\ProvinceModifier.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Provinces\Provinces.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Area.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\Areas.cpp" />
@@ -223,8 +220,6 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Relations\EU4Relations.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\ReligionGroup.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Religions\Religions.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\TradeGoods\EU4TradeGood.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\TradeGoods\EU4TradeGoods.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Wars\EU4War.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Wars\EU4WarDetails.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp" />
@@ -286,8 +281,6 @@
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderIDTests.cpp" />
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderTests.cpp" />
     <ClCompile Include="EU4WorldTests\LocalizationTests\EU4LocalizationTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ModifierTests\ModifiersTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ModifierTests\ModifierTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModTests\ModTests.cpp" />
     <ClCompile Include="EU4WorldTests\NationMergeTests\MergeBlocksTests.cpp" />
     <ClCompile Include="EU4WorldTests\NationMergeTests\NationMergeParserTests.cpp" />
@@ -296,7 +289,6 @@
     <ClCompile Include="EU4WorldTests\ProvinceTests\PopRatioTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceBuildingsTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceHistoryTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ProvinceTests\ProvinceModifierTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceTests\ProvincesTests.cpp" />
     <ClCompile Include="EU4WorldTests\RegionsTests\AreasTests.cpp" />
     <ClCompile Include="EU4WorldTests\RegionsTests\AreaTests.cpp" />
@@ -308,8 +300,6 @@
     <ClCompile Include="EU4WorldTests\RelationTests\EU4RelationsTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionTests\ReligionGroupTests.cpp" />
     <ClCompile Include="EU4WorldTests\ReligionTests\ReligionsTests.cpp" />
-    <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodsTests.cpp" />
-    <ClCompile Include="EU4WorldTests\TradeGoodTests\TradeGoodTests.cpp" />
     <ClCompile Include="EU4WorldTests\WarTests\WarTests.cpp" />
     <ClCompile Include="EU4WorldTests\WarTests\WarDetailsTests.cpp" />
     <ClCompile Include="MapperTests\AcceptedCultureThresholdsMapper\AcceptedCultureThresholdsMapperTests.cpp" />
