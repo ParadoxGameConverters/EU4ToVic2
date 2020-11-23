@@ -229,6 +229,9 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Building.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Buildings.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialFlags\ColonialFlag.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialFlags\ColonialFlagRegion.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryFlags\CountryFlags.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryFlags\CountryFlagsMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryMappings\CountryMapping.cpp" />
@@ -310,6 +313,9 @@
     <ClCompile Include="MapperTests\BlockedTechSchools\BlockedTechSchoolsTests.cpp" />
     <ClCompile Include="MapperTests\Buildings\BuildingsTests.cpp" />
     <ClCompile Include="MapperTests\Buildings\BuildingTests.cpp" />
+    <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagTests.cpp" />
+    <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagRegionTests.cpp" />
     <ClCompile Include="MapperTests\CountryFlagsMapperTests.cpp" />
     <ClCompile Include="MapperTests\CountryMappings\CountryMappingTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionMapperTests.cpp" />

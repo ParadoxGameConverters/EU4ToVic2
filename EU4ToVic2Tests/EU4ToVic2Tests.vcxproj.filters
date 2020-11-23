@@ -479,6 +479,24 @@
     <ClCompile Include="MapperTests\TitleMapper\TitleMappingTests.cpp">
       <Filter>MapperTests\Titles</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialFlags\ColonialFlag.cpp">
+      <Filter>ConverterFiles\Mappers\ColonialFlagsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialFlags\ColonialFlagRegion.cpp">
+      <Filter>ConverterFiles\Mappers\ColonialFlagsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp">
+      <Filter>ConverterFiles\Mappers\ColonialFlagsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagsMapperTests.cpp">
+      <Filter>MapperTests\ColonialFlagsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagTests.cpp">
+      <Filter>MapperTests\ColonialFlagsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagRegionTests.cpp">
+      <Filter>MapperTests\ColonialFlagsMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -687,6 +705,12 @@
     </Filter>
     <Filter Include="MapperTests\Titles">
       <UniqueIdentifier>{e97ce281-f7c5-4f80-9490-49ed0a431997}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\ColonialFlagsMapper">
+      <UniqueIdentifier>{960a7f83-e3fe-4a5f-955e-4d50c1f5d6bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\ColonialFlagsMapper">
+      <UniqueIdentifier>{a1182343-4eef-4815-b4da-2d41f97f979e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -119,7 +119,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 
 	if (!colonialFail.empty())
 	{
-		std::vector<std::string> colonyFlagsKeys = colonialFlagsMapper.getNames();
+		std::vector<std::string> colonyFlagsKeys = colonialFlagsMapper.getCommonNames();
 
 		std::random_device rd;
 		std::mt19937 g(rd());
@@ -413,7 +413,7 @@ void V2::Flags::createColonialFlags() const
 		for (auto i = 0; i < 5; i++)
 		{
 			const auto& suffix = flagFileSuffixes[i];
-			const auto folderPath = "flags";
+			const auto& folderPath = "flags";
 			bool flagFileFound;
 
 			if ((i == 0 || i == 3) // monarchy or vanilla
