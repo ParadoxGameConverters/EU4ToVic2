@@ -5,7 +5,7 @@
 #include "../../EU4World/World.h"
 #include "../../V2World/Country/Country.h"
 #include "../../V2World/Localisation/Localisation.h"
-#include "../CK2Titles/CK2TitleMapper.h"
+#include "../Titles/TitleMapper.h"
 #include "../ProvinceMappings/ProvinceMapper.h"
 #include "CountryMapping.h"
 #include "Log.h"
@@ -217,14 +217,14 @@ std::optional<std::string> mappers::CountryMappings::determineMappableCK2Title(c
 	if (country.isCustom())
 		return std::nullopt; // Custom countries must get generated V2 tags.
 
-	auto CK2Title = getCK2Title(country.getTag(), country.getName("english"), availableFlags);
-	if (!CK2Title)
+	auto title = getTitle(country.getTag(), country.getName("english"), availableFlags);
+	if (!title)
 		return std::nullopt;
 
 	for (const auto& potentialMapping: eu4TagToV2TagsRules)
 	{
-		if (potentialMapping.first == *CK2Title)
-			return *CK2Title;
+		if (potentialMapping.first == *title)
+			return *title;
 	}
 
 	return std::nullopt;
@@ -341,7 +341,7 @@ std::optional<std::string> mappers::CountryMappings::getV2Tag(const std::string&
 	return std::nullopt;
 }
 
-std::optional<std::string> mappers::CountryMappings::getCK2Title(const std::string& eu4Tag,
+std::optional<std::string> mappers::CountryMappings::getTitle(const std::string& eu4Tag,
 	 const std::string& countryName,
 	 const std::set<std::string>& availableFlags) const
 {
@@ -349,8 +349,8 @@ std::optional<std::string> mappers::CountryMappings::getCK2Title(const std::stri
 	auto name = V2::Localisation::convert(countryName);
 	transform(name.begin(), name.end(), name.begin(), ::tolower);
 
-	auto ck2title = ck2titleMapper.getTitle(name);
-	if (!ck2title)
+	auto title = titleMapper.getTitleForName(name);
+	if (!title)
 	{
 		const auto& titlename = V2::Localisation::stripAccents(name);
 		const auto& c_name = "c_" + titlename;
@@ -358,21 +358,21 @@ std::optional<std::string> mappers::CountryMappings::getCK2Title(const std::stri
 		const auto& k_name = "k_" + titlename;
 		const auto& e_name = "e_" + titlename;
 
-		if (ck2titleMapper.doesTitleExist(c_name))
+		if (titleMapper.doesTitleExist(c_name))
 		{
-			ck2title = c_name;
+			title = c_name;
 		}
-		else if (ck2titleMapper.doesTitleExist(d_name))
+		else if (titleMapper.doesTitleExist(d_name))
 		{
-			ck2title = d_name;
+			title = d_name;
 		}
-		else if (ck2titleMapper.doesTitleExist(k_name))
+		else if (titleMapper.doesTitleExist(k_name))
 		{
-			ck2title = k_name;
+			title = k_name;
 		}
-		else if (ck2titleMapper.doesTitleExist(e_name))
+		else if (titleMapper.doesTitleExist(e_name))
 		{
-			ck2title = e_name;
+			title = e_name;
 		}
 		else
 		{
@@ -387,5 +387,5 @@ std::optional<std::string> mappers::CountryMappings::getCK2Title(const std::stri
 				return c_name;
 		}
 	}
-	return ck2title;
+	return title;
 }

@@ -467,6 +467,18 @@
     <ClCompile Include="MapperTests\Buildings\BuildingTests.cpp">
       <Filter>MapperTests\Buildings</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Titles\TitleMapper.cpp">
+      <Filter>ConverterFiles\Mappers\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Titles\TitleMapping.cpp">
+      <Filter>ConverterFiles\Mappers\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\TitleMapper\TitleMapperTests.cpp">
+      <Filter>MapperTests\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\TitleMapper\TitleMappingTests.cpp">
+      <Filter>MapperTests\Titles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -669,6 +681,12 @@
     </Filter>
     <Filter Include="MapperTests\Buildings">
       <UniqueIdentifier>{f578b110-e73a-4693-b7c7-4d040675a326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\Titles">
+      <UniqueIdentifier>{eb074419-f16f-4e5c-b989-60ed5bdc9819}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\Titles">
+      <UniqueIdentifier>{e97ce281-f7c5-4f80-9490-49ed0a431997}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

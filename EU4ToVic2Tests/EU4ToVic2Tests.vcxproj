@@ -255,6 +255,8 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchool.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchoolMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchools.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Titles\TitleMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Titles\TitleMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Localisation\Localisation.cpp" />
@@ -325,6 +327,8 @@
     <ClCompile Include="MapperTests\StateMapperTests.cpp" />
     <ClCompile Include="MapperTests\TechSchoolMapperTests.cpp" />
     <ClCompile Include="MapperTests\TechSchoolTests.cpp" />
+    <ClCompile Include="MapperTests\TitleMapper\TitleMapperTests.cpp" />
+    <ClCompile Include="MapperTests\TitleMapper\TitleMappingTests.cpp" />
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeMapperTests.cpp" />
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp" />
   </ItemGroup>

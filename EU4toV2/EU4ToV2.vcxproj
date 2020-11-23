@@ -363,8 +363,6 @@
     <ClCompile Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp" />
     <ClCompile Include="Source\Mappers\Buildings\Building.cpp" />
     <ClCompile Include="Source\Mappers\Buildings\Buildings.cpp" />
-    <ClCompile Include="Source\Mappers\CK2Titles\CK2TitleMapper.cpp" />
-    <ClCompile Include="Source\Mappers\CK2Titles\TitleMapping.cpp" />
     <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlag.cpp" />
     <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlagRegion.cpp" />
     <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp" />
@@ -440,6 +438,8 @@
     <ClCompile Include="Source\Mappers\TechSchools\TechSchool.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchoolMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchools.cpp" />
+    <ClCompile Include="Source\Mappers\Titles\TitleMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Titles\TitleMapping.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp" />
@@ -553,8 +553,6 @@
     <ClInclude Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.h" />
     <ClInclude Include="Source\Mappers\Buildings\Building.h" />
     <ClInclude Include="Source\Mappers\Buildings\Buildings.h" />
-    <ClInclude Include="Source\Mappers\CK2Titles\CK2TitleMapper.h" />
-    <ClInclude Include="Source\Mappers\CK2Titles\TitleMapping.h" />
     <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlag.h" />
     <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlagRegion.h" />
     <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.h" />
@@ -630,6 +628,8 @@
     <ClInclude Include="Source\Mappers\TechSchools\TechSchool.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchoolMapper.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchools.h" />
+    <ClInclude Include="Source\Mappers\Titles\TitleMapper.h" />
+    <ClInclude Include="Source\Mappers\Titles\TitleMapping.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitType.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
     <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h" />
