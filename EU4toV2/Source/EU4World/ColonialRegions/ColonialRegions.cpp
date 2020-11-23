@@ -39,10 +39,10 @@ void EU4::ColonialRegions::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-bool EU4::ColonialRegions::provinceIsInColonialRegion(const int province, const std::string& region) const
+std::optional<std::string> EU4::ColonialRegions::getColonialRegionForProvince(int province) const
 {
-	const auto& mapping = provinceToColonialRegions.find(province);
-	if (mapping != provinceToColonialRegions.end())
-		return mapping->second == region;
-	return false;
+	if (const auto& mapping = provinceToColonialRegions.find(province); mapping != provinceToColonialRegions.end())
+		return mapping->second;
+	else
+		return std::nullopt;
 }

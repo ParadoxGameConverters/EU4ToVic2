@@ -9,7 +9,7 @@ TEST(Mappers_ColonialFlagRegionTests, flagsDefaultToEmpty)
 	ASSERT_TRUE(region.getRegionalFlags().empty());
 }
 
-TEST(Mappers_TitleMappingTests, flagsCanBeLoaded)
+TEST(Mappers_ColonialFlagRegionTests, flagsCanBeLoaded)
 {
 	std::stringstream input;
 	input << "flag = { name = \"Alaska\" }\n";

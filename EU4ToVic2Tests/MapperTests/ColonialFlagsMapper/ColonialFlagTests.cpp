@@ -12,7 +12,7 @@ TEST(Mappers_ColonialFlagTests, primitivesDefaultToDefaults)
 	ASSERT_FALSE(flag.isUnique());
 }
 
-TEST(Mappers_TitleMapperTests, primitivesCanBeLoadedAndNormalized)
+TEST(Mappers_ColonialFlagTests, primitivesCanBeLoadedAndNormalized)
 {
 	std::stringstream input;
 	input << "name = \"New Spain\" unique = \"true\"\n";
@@ -22,7 +22,7 @@ TEST(Mappers_TitleMapperTests, primitivesCanBeLoadedAndNormalized)
 	ASSERT_TRUE(flag.isUnique());
 }
 
-TEST(Mappers_TitleMapperTests, overlordCanBeSet)
+TEST(Mappers_ColonialFlagTests, overlordCanBeSet)
 {
 	std::stringstream input;
 	input << "name = \"New Spain\" unique = \"true\"\n";

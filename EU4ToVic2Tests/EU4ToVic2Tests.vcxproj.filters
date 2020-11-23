@@ -497,6 +497,24 @@
     <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagRegionTests.cpp">
       <Filter>MapperTests\ColonialFlagsMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialTags\ColonialTag.cpp">
+      <Filter>ConverterFiles\Mappers\ColonialTagsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialTags\ColonialTagsMapper.cpp">
+      <Filter>ConverterFiles\Mappers\ColonialTagsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ColonialTagsMapper\ColonialTagsMapperTests.cpp">
+      <Filter>MapperTests\ColonialTagsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ColonialTagsMapper\ColonialTagTests.cpp">
+      <Filter>MapperTests\ColonialTagsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp">
+      <Filter>ConverterFiles\Mappers\V2ProvinceRegionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\V2ProvinceRegionsMapper\V2ProvinceRegionsMapperTests.cpp">
+      <Filter>MapperTests\V2ProvinceRegionsMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -711,6 +729,18 @@
     </Filter>
     <Filter Include="MapperTests\ColonialFlagsMapper">
       <UniqueIdentifier>{a1182343-4eef-4815-b4da-2d41f97f979e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\ColonialTagsMapper">
+      <UniqueIdentifier>{42987712-ee0a-4ea7-a6d2-d6f592b1c60c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\ColonialTagsMapper">
+      <UniqueIdentifier>{b1a20c11-0423-4a3e-aff7-4062335d05ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\V2ProvinceRegionsMapper">
+      <UniqueIdentifier>{9bed7a69-562d-45fa-b646-b279bf604ab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\V2ProvinceRegionsMapper">
+      <UniqueIdentifier>{42f3b01f-5bb7-4ea7-88bf-103bea8fea47}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

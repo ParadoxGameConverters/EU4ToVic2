@@ -307,9 +307,6 @@
     <ClCompile Include="Source\Mappers\RGORandomization\BucketList.cpp">
       <Filter>Mappers\RGORandomization</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.cpp">
-      <Filter>Mappers\RegionProvinces</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\PortProvinces\PortProvinces.cpp">
       <Filter>Mappers\PortProvinces</Filter>
     </ClCompile>
@@ -558,6 +555,9 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\Titles\TitleMapping.cpp">
       <Filter>Mappers\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp">
+      <Filter>Mappers\V2ProvinceRegionsMapper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -866,9 +866,6 @@
     <ClInclude Include="Source\Mappers\RGORandomization\BucketList.h">
       <Filter>Mappers\RGORandomization</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.h">
-      <Filter>Mappers\RegionProvinces</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\PortProvinces\PortProvinces.h">
       <Filter>Mappers\PortProvinces</Filter>
     </ClInclude>
@@ -1076,6 +1073,9 @@
     <ClInclude Include="Source\Mappers\Titles\TitleMapping.h">
       <Filter>Mappers\Titles</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.h">
+      <Filter>Mappers\V2ProvinceRegionsMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1225,9 +1225,6 @@
     <Filter Include="Mappers\RGORandomization">
       <UniqueIdentifier>{63392046-e39d-4304-b1ef-bf0f118a1ed6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Mappers\RegionProvinces">
-      <UniqueIdentifier>{20e118dd-a05a-43d1-af80-c5ff91db7e1b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Mappers\PortProvinces">
       <UniqueIdentifier>{cf57a5e8-a8d7-4839-81fb-1a19da32768b}</UniqueIdentifier>
     </Filter>
@@ -1317,6 +1314,9 @@
     </Filter>
     <Filter Include="Mappers\Titles">
       <UniqueIdentifier>{5095124a-bcad-425f-aa6c-8299c482a4a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\V2ProvinceRegionsMapper">
+      <UniqueIdentifier>{20e118dd-a05a-43d1-af80-c5ff91db7e1b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

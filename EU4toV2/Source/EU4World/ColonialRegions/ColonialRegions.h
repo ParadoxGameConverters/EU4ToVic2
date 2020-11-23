@@ -1,6 +1,5 @@
 #ifndef EU4_COLONIAL_REGIONS_H
 #define EU4_COLONIAL_REGIONS_H
-
 #include "Parser.h"
 #include <map>
 
@@ -12,7 +11,7 @@ class ColonialRegions: commonItems::parser
 	ColonialRegions();
 	explicit ColonialRegions(std::istream& theStream);
 
-	[[nodiscard]] bool provinceIsInColonialRegion(int province, const std::string& region) const;
+	[[nodiscard]] std::optional<std::string> getColonialRegionForProvince(int province) const;
 
   private:
 	void registerKeys();

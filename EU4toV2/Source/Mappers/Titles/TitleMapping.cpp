@@ -1,6 +1,5 @@
 #include "TitleMapping.h"
 #include "ParserHelpers.h"
-#include "../../../../Fronter/commonItems/Log.h"
 
 mappers::TitleMapping::TitleMapping(std::istream& theStream)
 {
