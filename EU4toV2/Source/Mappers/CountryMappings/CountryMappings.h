@@ -1,14 +1,13 @@
 #ifndef COUNTRY_MAPPINGS_H
 #define COUNTRY_MAPPINGS_H
-
 #include <map>
 #include <optional>
 #include <set>
 #include "../ColonialTags/ColonialTagsMapper.h"
 #include "../ProvinceMappings/ProvinceMapper.h"
 #include "../CultureGroups/CultureGroups.h"
-#include "../CK2Titles/CK2TitleMapper.h"
-#include "../RegionProvinces/RegionProvinceMapper.h"
+#include "../Titles/TitleMapper.h"
+#include "V2ProvinceRegionsMapper/V2ProvinceRegionsMapper.h"
 #include "Parser.h"
 #include "CountryMapping.h"
 
@@ -31,8 +30,10 @@ namespace mappers
 		explicit CountryMappings(std::istream& theStream);
 	
 		[[nodiscard]] std::optional<std::string> getV2Tag(const std::string& eu4Tag) const;
-		[[nodiscard]] std::optional<std::string> getCK2Title(const std::string& eu4Tag, const std::string& countryName, const std::set<std::string>& availableFlags) const;
-		[[nodiscard]] const auto& getCK2TitleMapper() const { return ck2titleMapper; }
+		[[nodiscard]] std::optional<std::string> getTitle(const std::string& eu4Tag,
+			 const std::string& countryName,
+			 const std::set<std::string>& availableFlags) const;
+		[[nodiscard]] const auto& getTitleMapper() const { return titleMapper; }
 		[[nodiscard]] static bool tagIsAlphaDigitDigit(const std::string& tag);
 
 		void createMappings(const EU4::World& srcWorld, const std::map<std::string, std::shared_ptr<V2::Country>>& vic2Countries, const ProvinceMapper& provinceMapper);
@@ -53,19 +54,10 @@ namespace mappers
 			const std::map<std::string, std::shared_ptr<V2::Country>>& vic2Countries,
 			const ProvinceMapper& provinceMapper
 		);
-		static bool capitalInRightEU4Region(const ColonyStruct& colony, int eu4Capital, const ProvinceMapper& provinceMapper);
-		static bool inCorrectCultureGroup(const ColonyStruct& colony, const std::string& primaryCulture, const CultureGroups& cultureGroupsMapper);
-		static void logMapping(const std::string& eu4Tag, const std::string& v2Tag, const std::string& reason);
 		std::string generateNewTag();
 
 		[[nodiscard]] static bool isPotentialColonialReplacement(const std::pair<std::string, std::shared_ptr<EU4::Country>>& country);
-		[[nodiscard]] bool capitalInRightVic2Region(
-			const ColonyStruct& colony,
-			std::optional<int> vic2Capital,
-			const EU4::World& srcWorld,
-			const std::string& eu4Tag,
-			const ProvinceMapper& provinceMapper) const;
-		[[nodiscard]] bool tagIsAvailable(const ColonyStruct& colony, const std::map<std::string, std::shared_ptr<V2::Country>>& vic2Countries) const;
+		[[nodiscard]] bool tagIsAvailable(const std::string& colonyTag, const std::map<std::string, std::shared_ptr<V2::Country>>& vic2Countries) const;
 		[[nodiscard]] bool tagIsAlreadyAssigned(const std::string& vic2Tag) const;
 
 		std::vector<std::pair<std::string, CountryMapping>> eu4TagToV2TagsRules; // eu4Tag, related_rule
@@ -76,9 +68,9 @@ namespace mappers
 		char generatedV2TagPrefix = 'X';
 		int generatedV2TagSuffix = 0;
 
-		CK2TitleMapper ck2titleMapper;
+		TitleMapper titleMapper;
 		ColonialTagMapper colonialTagMapper;
-		RegionProvinceMapper regionProvinceMapper;
+		V2ProvinceRegionsMapper v2provinceRegionsMapper;
 };
 }
 

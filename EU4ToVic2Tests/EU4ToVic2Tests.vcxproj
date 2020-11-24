@@ -229,6 +229,11 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Building.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Buildings\Buildings.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialFlags\ColonialFlag.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialFlags\ColonialFlagRegion.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialTags\ColonialTag.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialTags\ColonialTagsMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryFlags\CountryFlags.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryFlags\CountryFlagsMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryMappings\CountryMapping.cpp" />
@@ -255,8 +260,11 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchool.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchoolMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchools.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Titles\TitleMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Titles\TitleMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Localisation\Localisation.cpp" />
     <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
@@ -308,7 +316,13 @@
     <ClCompile Include="MapperTests\BlockedTechSchools\BlockedTechSchoolsTests.cpp" />
     <ClCompile Include="MapperTests\Buildings\BuildingsTests.cpp" />
     <ClCompile Include="MapperTests\Buildings\BuildingTests.cpp" />
-    <ClCompile Include="MapperTests\CountryFlagsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagTests.cpp" />
+    <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagRegionTests.cpp" />
+    <ClCompile Include="MapperTests\ColonialTagsMapper\ColonialTagsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\ColonialTagsMapper\ColonialTagTests.cpp" />
+    <ClCompile Include="MapperTests\CountryFlags\CountryFlagsMappingTests.cpp" />
+    <ClCompile Include="MapperTests\CountryFlags\CountryFlagsTests.cpp" />
     <ClCompile Include="MapperTests\CountryMappings\CountryMappingTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionMapperTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionTests.cpp" />
@@ -325,8 +339,11 @@
     <ClCompile Include="MapperTests\StateMapperTests.cpp" />
     <ClCompile Include="MapperTests\TechSchoolMapperTests.cpp" />
     <ClCompile Include="MapperTests\TechSchoolTests.cpp" />
+    <ClCompile Include="MapperTests\TitleMapper\TitleMapperTests.cpp" />
+    <ClCompile Include="MapperTests\TitleMapper\TitleMappingTests.cpp" />
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeMapperTests.cpp" />
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp" />
+    <ClCompile Include="MapperTests\V2ProvinceRegionsMapper\V2ProvinceRegionsMapperTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mocks\Vic2CountryMock.h" />

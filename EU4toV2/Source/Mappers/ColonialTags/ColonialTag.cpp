@@ -3,28 +3,41 @@
 
 mappers::ColonialTag::ColonialTag(std::istream& theStream)
 {
-	registerKeyword("tag", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString tagStr(theStream);
-			colonyTag.tag = tagStr.getString();
-		});
-	registerKeyword("EU4_region", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString eu4Str(theStream);
-			colonyTag.EU4Region = eu4Str.getString();
-		});
-	registerKeyword("V2_region", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString v2Str(theStream);
-			colonyTag.V2Region = v2Str.getString();
-		});
-	registerKeyword("is_culture_group", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString cgStr(theStream);
-			colonyTag.cultureGroup = cgStr.getString();
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+}
+
+void mappers::ColonialTag::registerKeys()
+{
+	registerKeyword("tag", [this](const std::string& unused, std::istream& theStream) {
+		colonyTag.tag = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("eu4region", [this](const std::string& unused, std::istream& theStream) {
+		colonyTag.EU4Regions.insert(commonItems::singleString(theStream).getString());
+	});
+	registerKeyword("v2region", [this](const std::string& unused, std::istream& theStream) {
+		colonyTag.V2Regions.insert(commonItems::singleString(theStream).getString());
+	});
+	registerKeyword("cultureGroup", [this](const std::string& unused, std::istream& theStream) {
+		colonyTag.cultureGroups.insert(commonItems::singleString(theStream).getString());
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+bool mappers::ColonyStruct::match(const std::string& eu4Region, const std::string& v2Region, const std::string& cultureGroup) const
+{
+	if (!eu4Region.empty() && !EU4Regions.empty() && !EU4Regions.contains(eu4Region))
+		return false;
+	if (eu4Region.empty() && !EU4Regions.empty())
+		return false;
+	if (!v2Region.empty() && !V2Regions.empty() && !V2Regions.contains(v2Region))
+		return false;
+	if (v2Region.empty() && !V2Regions.empty())
+		return false;
+	if (!cultureGroup.empty() && !cultureGroups.empty() && !cultureGroups.contains(cultureGroup))
+		return false;
+	if (cultureGroup.empty() && !cultureGroups.empty())
+		return false;
+	return true;
 }

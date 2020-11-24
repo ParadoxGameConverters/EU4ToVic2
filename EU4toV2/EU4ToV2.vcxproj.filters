@@ -145,12 +145,6 @@
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp">
       <Filter>Mappers\CultureGroups</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\CK2Titles\CK2TitleMapper.cpp">
-      <Filter>Mappers\CK2Titles</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\CK2Titles\TitleMapping.cpp">
-      <Filter>Mappers\CK2Titles</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMapping.cpp">
       <Filter>Mappers\CountryMappings</Filter>
     </ClCompile>
@@ -312,9 +306,6 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\RGORandomization\BucketList.cpp">
       <Filter>Mappers\RGORandomization</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.cpp">
-      <Filter>Mappers\RegionProvinces</Filter>
     </ClCompile>
     <ClCompile Include="Source\Mappers\PortProvinces\PortProvinces.cpp">
       <Filter>Mappers\PortProvinces</Filter>
@@ -559,6 +550,15 @@
     <ClCompile Include="Source\EU4World\Localization\EU4Localization.cpp">
       <Filter>EU4World\Localization</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Titles\TitleMapper.cpp">
+      <Filter>Mappers\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Titles\TitleMapping.cpp">
+      <Filter>Mappers\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp">
+      <Filter>Mappers\V2ProvinceRegionsMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -703,12 +703,6 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h">
       <Filter>Mappers\CultureGroups</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\CK2Titles\CK2TitleMapper.h">
-      <Filter>Mappers\CK2Titles</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\CK2Titles\TitleMapping.h">
-      <Filter>Mappers\CK2Titles</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMapping.h">
       <Filter>Mappers\CountryMappings</Filter>
@@ -871,9 +865,6 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\RGORandomization\BucketList.h">
       <Filter>Mappers\RGORandomization</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.h">
-      <Filter>Mappers\RegionProvinces</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\PortProvinces\PortProvinces.h">
       <Filter>Mappers\PortProvinces</Filter>
@@ -1076,6 +1067,15 @@
     <ClInclude Include="Source\EU4World\Localization\EU4Localization.h">
       <Filter>EU4World\Localization</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\Titles\TitleMapper.h">
+      <Filter>Mappers\Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Titles\TitleMapping.h">
+      <Filter>Mappers\Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.h">
+      <Filter>Mappers\V2ProvinceRegionsMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1143,9 +1143,6 @@
     </Filter>
     <Filter Include="Mappers\CultureGroups">
       <UniqueIdentifier>{4b63845e-9288-4ea1-a7aa-18bccaf0ef3f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Mappers\CK2Titles">
-      <UniqueIdentifier>{5095124a-bcad-425f-aa6c-8299c482a4a3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Mappers\CountryMappings">
       <UniqueIdentifier>{555fbb7e-7576-40ca-a00c-3c0c85145fb1}</UniqueIdentifier>
@@ -1227,9 +1224,6 @@
     </Filter>
     <Filter Include="Mappers\RGORandomization">
       <UniqueIdentifier>{63392046-e39d-4304-b1ef-bf0f118a1ed6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Mappers\RegionProvinces">
-      <UniqueIdentifier>{20e118dd-a05a-43d1-af80-c5ff91db7e1b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Mappers\PortProvinces">
       <UniqueIdentifier>{cf57a5e8-a8d7-4839-81fb-1a19da32768b}</UniqueIdentifier>
@@ -1317,6 +1311,12 @@
     </Filter>
     <Filter Include="EU4World\Localization">
       <UniqueIdentifier>{54c68c10-27ee-404c-abe0-c2096b685936}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\Titles">
+      <UniqueIdentifier>{5095124a-bcad-425f-aa6c-8299c482a4a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\V2ProvinceRegionsMapper">
+      <UniqueIdentifier>{20e118dd-a05a-43d1-af80-c5ff91db7e1b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

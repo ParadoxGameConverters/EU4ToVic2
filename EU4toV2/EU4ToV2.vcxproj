@@ -363,8 +363,6 @@
     <ClCompile Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.cpp" />
     <ClCompile Include="Source\Mappers\Buildings\Building.cpp" />
     <ClCompile Include="Source\Mappers\Buildings\Buildings.cpp" />
-    <ClCompile Include="Source\Mappers\CK2Titles\CK2TitleMapper.cpp" />
-    <ClCompile Include="Source\Mappers\CK2Titles\TitleMapping.cpp" />
     <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlag.cpp" />
     <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlagRegion.cpp" />
     <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp" />
@@ -421,7 +419,6 @@
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
     <ClCompile Include="Source\Mappers\RegimentCosts\RegimentCostsMapper.cpp" />
     <ClCompile Include="Source\Mappers\RegionLocalizations\RegionLocalizations.cpp" />
-    <ClCompile Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
     <ClCompile Include="Source\Mappers\RGORandomization\Bucket.cpp" />
@@ -440,9 +437,12 @@
     <ClCompile Include="Source\Mappers\TechSchools\TechSchool.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchoolMapper.cpp" />
     <ClCompile Include="Source\Mappers\TechSchools\TechSchools.cpp" />
+    <ClCompile Include="Source\Mappers\Titles\TitleMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Titles\TitleMapping.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp" />
+    <ClCompile Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp" />
     <ClCompile Include="Source\Mappers\VersionParser\VersionParser.cpp" />
     <ClCompile Include="Source\Mappers\WarGoalMapper\WarGoalMapper.cpp" />
     <ClCompile Include="Source\V2World\Army\Army.cpp" />
@@ -553,8 +553,6 @@
     <ClInclude Include="Source\Mappers\BlockedTechSchools\BlockedTechSchools.h" />
     <ClInclude Include="Source\Mappers\Buildings\Building.h" />
     <ClInclude Include="Source\Mappers\Buildings\Buildings.h" />
-    <ClInclude Include="Source\Mappers\CK2Titles\CK2TitleMapper.h" />
-    <ClInclude Include="Source\Mappers\CK2Titles\TitleMapping.h" />
     <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlag.h" />
     <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlagRegion.h" />
     <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.h" />
@@ -611,7 +609,6 @@
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />
     <ClInclude Include="Source\Mappers\RegimentCosts\RegimentCostsMapper.h" />
     <ClInclude Include="Source\Mappers\RegionLocalizations\RegionLocalizations.h" />
-    <ClInclude Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h" />
     <ClInclude Include="Source\Mappers\RGORandomization\Bucket.h" />
@@ -630,9 +627,12 @@
     <ClInclude Include="Source\Mappers\TechSchools\TechSchool.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchoolMapper.h" />
     <ClInclude Include="Source\Mappers\TechSchools\TechSchools.h" />
+    <ClInclude Include="Source\Mappers\Titles\TitleMapper.h" />
+    <ClInclude Include="Source\Mappers\Titles\TitleMapping.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitType.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
     <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h" />
+    <ClInclude Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.h" />
     <ClInclude Include="Source\Mappers\VersionParser\VersionParser.h" />
     <ClInclude Include="Source\Mappers\WarGoalMapper\WarGoalMapper.h" />
     <ClInclude Include="Source\V2World\Army\Army.h" />

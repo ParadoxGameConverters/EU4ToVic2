@@ -1,6 +1,5 @@
 #include "ColonialTagsMapper.h"
 #include "Parser.h"
-#include <fstream>
 #include "ParserHelpers.h"
 
 mappers::ColonialTagMapper::ColonialTagMapper()
@@ -19,10 +18,17 @@ mappers::ColonialTagMapper::ColonialTagMapper(std::istream& theStream)
 
 void mappers::ColonialTagMapper::registerKeys()
 {
-	registerKeyword("link", [this](const std::string& unused, std::istream& theStream)
-		{
-			const ColonialTag colonialBlock(theStream);
-			colonyList.push_back(colonialBlock.getColonyTag());
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
+		const ColonialTag colonialBlock(theStream);
+		colonyList.push_back(colonialBlock.getColonyTag());
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+std::optional<std::string> mappers::ColonialTagMapper::getColonialTag(const std::string& eu4Region, const std::string& v2Region, const std::string& cultureGroup) const
+{
+	for (const auto& colonyTag: colonyList)
+		if (colonyTag.match(eu4Region, v2Region, cultureGroup))
+			return colonyTag.tag;
+	return std::nullopt;
 }

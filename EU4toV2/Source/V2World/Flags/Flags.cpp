@@ -1,7 +1,7 @@
 #include "Flags.h"
 #include "../../Configuration.h"
 #include "../../EU4World/Country/EU4Country.h"
-#include "../../Mappers/CK2Titles/CK2TitleMapper.h"
+#include "../../Mappers/Titles/TitleMapper.h"
 #include "../Country/Country.h"
 #include "FlagUtils.h"
 #include "Log.h"
@@ -33,13 +33,13 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 		if (country.second->getSourceCountry() && requiredTags.count(country.first))
 		{
 			// Check for ck2 name, if one exists
-			auto ck2title = countryMapper.getCK2Title(country.first, country.second->getLocalName(), usableFlagTags);
+			auto title = countryMapper.getTitle(country.first, country.second->getLocalName(), usableFlagTags);
 
 			// do we have a ready ck2 map?
-			if (ck2title && usableFlagTags.count(*ck2title))
+			if (title && usableFlagTags.count(*title))
 			{
-				tagMap[country.first] = *ck2title;
-				usableFlagTags.erase(*ck2title);
+				tagMap[country.first] = *title;
+				usableFlagTags.erase(*title);
 				requiredTags.erase(country.first);
 			}
 			else // try something patronymic
@@ -48,23 +48,23 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 					continue;
 
 				std::string religion = country.second->getReligion();
-				std::optional<std::string> randomCK2title;
+				std::optional<std::string> randomTitle;
 
 				// Yay hardcoded paths. If I get round to it, I'll point these at religion.txt instead.
 				if (religion == "sunni" || religion == "shiite" || religion == "ibadi")
 				{
-					randomCK2title = countryMapper.getCK2TitleMapper().getRandomIslamicFlag();
+					randomTitle = countryMapper.getTitleMapper().getRandomIslamicTitle();
 				}
 				else if (religion == "mahayana" || religion == "gelugpa" || religion == "theravada" || religion == "sikh" || religion == "hindu" ||
 							religion == "jain")
 				{
-					randomCK2title = countryMapper.getCK2TitleMapper().getRandomIndianFlag();
+					randomTitle = countryMapper.getTitleMapper().getRandomIndianTitle();
 				}
 
-				if (randomCK2title && usableFlagTags.count(*randomCK2title))
+				if (randomTitle && usableFlagTags.count(*randomTitle))
 				{
-					tagMap[country.first] = *randomCK2title;
-					usableFlagTags.erase(*randomCK2title);
+					tagMap[country.first] = *randomTitle;
+					usableFlagTags.erase(*randomTitle);
 					requiredTags.erase(country.first);
 				}
 				else
@@ -119,7 +119,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 
 	if (!colonialFail.empty())
 	{
-		std::vector<std::string> colonyFlagsKeys = colonialFlagsMapper.getNames();
+		std::vector<std::string> colonyFlagsKeys = colonialFlagsMapper.getCommonNames();
 
 		std::random_device rd;
 		std::mt19937 g(rd());
@@ -413,7 +413,7 @@ void V2::Flags::createColonialFlags() const
 		for (auto i = 0; i < 5; i++)
 		{
 			const auto& suffix = flagFileSuffixes[i];
-			const auto folderPath = "flags";
+			const auto& folderPath = "flags";
 			bool flagFileFound;
 
 			if ((i == 0 || i == 3) // monarchy or vanilla

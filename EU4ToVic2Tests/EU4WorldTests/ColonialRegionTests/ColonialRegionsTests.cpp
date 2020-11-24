@@ -16,7 +16,9 @@ TEST(EU4World_ColonialRegionsTests, provincesCanBeMatched)
 
 	const auto regions = EU4::ColonialRegions(input);
 
-	ASSERT_TRUE(regions.provinceIsInColonialRegion(1, "colonial_alaska"));
+	ASSERT_EQ("colonial_alaska", regions.getColonialRegionForProvince(1));
+	ASSERT_EQ("colonial_alaska", regions.getColonialRegionForProvince(2));
+	ASSERT_EQ("colonial_alaska", regions.getColonialRegionForProvince(3));
 }
 
 TEST(EU4World_ColonialRegionsTests, provincesCanBeMisMatched)
@@ -34,8 +36,5 @@ TEST(EU4World_ColonialRegionsTests, provincesCanBeMisMatched)
 
 	const auto regions = EU4::ColonialRegions(input);
 
-	ASSERT_FALSE(regions.provinceIsInColonialRegion(1, "colonial_alabama"));
-	ASSERT_FALSE(regions.provinceIsInColonialRegion(5, "colonial_alabama"));
-	ASSERT_FALSE(regions.provinceIsInColonialRegion(5, "colonial_alaska"));
-	ASSERT_FALSE(regions.provinceIsInColonialRegion(1, "colonial_placeholder"));
+	ASSERT_EQ(std::nullopt, regions.getColonialRegionForProvince(4));
 }
