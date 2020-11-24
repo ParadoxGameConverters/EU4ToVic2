@@ -259,8 +259,6 @@ TEST(Mappers_CountryMappingsTests, getTitleCanTapInTheDark)
 
 TEST(Mappers_CountryMappingsTests, getTitleReturnsNulloptOnAbjectFailure)
 {
-	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
 	std::stringstream ieInput;
 	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
 	GameVersion version(0, 0, 0, 0);
