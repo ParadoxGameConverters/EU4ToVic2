@@ -43,8 +43,8 @@ mappers::CountryMappings::CountryMappings(std::istream& mainStream,
 
 void mappers::CountryMappings::registerKeys()
 {
-	/* Step 1. Load our mappings. Already we hit exceptions, as we map against reforms as well as flags. We support universal mappings, so a country regardless
-	 * of its name can map to a target TAG if it has appropriate reforms or flags.
+	/* Step 1. Load our mappings. Already we hit exceptions, as we map against reforms as well as flags. We support universal mappings, so we can
+	 * encounter incomplete rules without our key identifier - eu4 tag, and can map to the target TAG with appropriate reforms or flags.
 	 */
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
 		const CountryMapping newMapping(theStream);
@@ -60,12 +60,12 @@ void mappers::CountryMappings::createMappings(const std::shared_ptr<CultureGroup
 	 const std::map<std::string, std::shared_ptr<EU4::Country>>& eu4Countries,
 	 const ProvinceMapper& provinceMapper)
 {
-	/* Step 2. This is entry proper, feeding it both sets of countries and external mappers. First it will try to see if any EU4 countries are colonies,
+	/* Step 2. This is entry proper, feeding it incoming eu4 countries and external mappers. First we try to see if any EU4 countries are colonies,
 	 * putting them aside, as those have special treatment.
 	 */
 
 	cultureGroupsMapper = theCultureGroupsMapper;
-	LOG(LogLevel::Info) << "Creating country mappings";
+	LOG(LogLevel::Info) << "Creating Country Mappings.";
 
 	std::vector<std::shared_ptr<EU4::Country>> colonialCountries;
 	for (const auto& EU4Country: eu4Countries)
@@ -84,8 +84,7 @@ void mappers::CountryMappings::createMappings(const std::shared_ptr<CultureGroup
 
 bool mappers::CountryMappings::isPotentialColonialReplacement(const std::pair<std::string, std::shared_ptr<EU4::Country>>& country)
 {
-	// Colonies are invariably C04 or similar. We're only concerned about those countries are still dependent, not released ones.
-
+	// Colonies are invariably C04 or similar. We're only concerned about countries which are still dependent, not released ones.
 	if (country.second->isColony() && tagIsAlphaDigitDigit(country.first))
 		return true;
 	return false;
@@ -108,8 +107,8 @@ void mappers::CountryMappings::makeOneMapping(const std::shared_ptr<EU4::Country
 	if (mapped)
 		return;
 
-	// There was no functional mapping in country_mapping.txt. Let's see if we can locate a CK title from the country's name
-	// that we can map into vic2.
+	// There was no functional mapping in country_mapping.txt. Let's see if we can locate a CK title from the country's name or
+	// from title_map.txt that we can map into vic2.
 
 	const auto& potentialCKTitle = determineMappableCKTitle(*country);
 	if (potentialCKTitle)
@@ -204,7 +203,7 @@ std::optional<std::string> mappers::CountryMappings::determineMappableCKTitle(co
 	if (country.isCustom())
 		return std::nullopt; // Custom countries must get generated V2 tags.
 
-	// Look for any reasonable title that looks like our name.
+	// Look for any reasonable title that matcher, or even looks like our name, that we know of (in title_map.txt).
 	auto title = getTitle(country.getName("english"));
 
 	if (!title)
@@ -223,7 +222,7 @@ std::optional<std::string> mappers::CountryMappings::determineMappableCKTitle(co
 bool mappers::CountryMappings::attemptColonialReplacement(EU4::Country& country, const ProvinceMapper& provinceMapper)
 {
 	/* Step 5. Now it gets fun. We know a country may be a colony, and we have rules for those. We'll now gather all
-	 * prerequisite info and see if we can match it against one of our known colonies that have predefined tags.
+	 * prerequisite info and see if we can match it against one of our known colonies that have predefined tags (in colonial_tags.txt).
 	 */
 
 	// incoming region
@@ -268,6 +267,7 @@ bool mappers::CountryMappings::tagIsAlreadyAssigned(const std::string& vic2Tag) 
 
 std::optional<std::string> mappers::CountryMappings::getV2Tag(const std::string& eu4Tag) const
 {
+	// This is an override for anything that looks like a rebellious title.
 	const std::vector<std::string> eu4RebelTags = {"REB", "PIR", "NAT"};
 	const std::string v2RebelTag = "REB";
 	if (find(eu4RebelTags.begin(), eu4RebelTags.end(), eu4Tag) != eu4RebelTags.end())
@@ -275,14 +275,15 @@ std::optional<std::string> mappers::CountryMappings::getV2Tag(const std::string&
 		return std::optional{v2RebelTag};
 	}
 
-	const auto& findIter = eu4TagToV2TagMap.find(eu4Tag);
-	if (findIter != eu4TagToV2TagMap.end())
+	if (const auto& findIter = eu4TagToV2TagMap.find(eu4Tag); findIter != eu4TagToV2TagMap.end())
 		return findIter->second;
-	return std::nullopt;
+	else
+		return std::nullopt;
 }
 
 std::optional<std::string> mappers::CountryMappings::getTitle(const std::string& countryName) const
 {
+	// The most bizarre part of the mapper. First look for titles that match our name, then get creative.
 
 	auto name = V2::Localisation::convert(countryName);
 	transform(name.begin(), name.end(), name.begin(), ::tolower);
