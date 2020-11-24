@@ -4031,3 +4031,5 @@ link = { name = "corinth" title = "k_IMPTOCK3_corinth" region = "e_imp" }
 link = { name = "eastern Rome" title = "e_byzantium" region = "e_imp" }
 link = { name = "olympia" title = "k_IMPTOCK3_olympia" region = "e_imp" }
 link = { name = "sikelia" title = "k_sicily" region = "e_imp" }
+
+link = { name = "kirghiz khanate" title = "e_kirghiz_khanate" region = "e_ck3" }

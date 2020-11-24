@@ -25,6 +25,15 @@ TEST(Mappers_TitleMappingTests, primitivesCanBeLoaded)
 	ASSERT_FALSE(mapping.hasIslamicRegion());
 }
 
+TEST(Mappers_TitleMappingTests, namesAreLowercased)
+{
+	std::stringstream input;
+	input << "name = Alampur\n";
+	const mappers::TitleMapping mapping(input);
+
+	ASSERT_EQ("alampur", mapping.getName());
+}
+
 TEST(Mappers_TitleMappingTests, indianRegionCanBeMatched)
 {
 	std::stringstream input;
@@ -45,7 +54,7 @@ TEST(Mappers_TitleMappingTests, islamicRegionCanBeMatched)
 	input << "region = e_persia\n";
 	const mappers::TitleMapping mapping(input);
 
-	ASSERT_EQ("Alamut", mapping.getName());
+	ASSERT_EQ("alamut", mapping.getName());
 	ASSERT_EQ("c_alamut", mapping.getTitle());
 	ASSERT_FALSE(mapping.hasIndianRegion());
 	ASSERT_TRUE(mapping.hasIslamicRegion());

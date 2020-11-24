@@ -12,6 +12,7 @@ namespace fs = std::filesystem;
 mappers::ProvinceMapper::ProvinceMapper()
 {
 	LOG(LogLevel::Info) << "Parsing province mappings";
+	colonialRegionsMapper = std::make_unique<EU4::ColonialRegions>();
 	registerKeys();
 	parseFile("configurables/province_mappings.txt");
 	clearRegisteredKeywords();
@@ -20,10 +21,11 @@ mappers::ProvinceMapper::ProvinceMapper()
 	createMappings(mappings);
 }
 
-mappers::ProvinceMapper::ProvinceMapper(std::istream& theStream, const Configuration& testConfiguration)
+mappers::ProvinceMapper::ProvinceMapper(std::istream& mainStream, std::istream& colonialStream, const Configuration& testConfiguration)
 {
+	colonialRegionsMapper = std::make_unique<EU4::ColonialRegions>(colonialStream);
 	registerKeys();
-	parseStream(theStream);
+	parseStream(mainStream);
 	clearRegisteredKeywords();
 
 	const auto& mappings = getMappingsVersion(mappingVersions, testConfiguration.getEU4Version());
@@ -41,7 +43,7 @@ void mappers::ProvinceMapper::registerKeys()
 
 std::optional<std::string> mappers::ProvinceMapper::getColonialRegionForProvince(int province) const
 {
-	return colonialRegionsMapper.getColonialRegionForProvince(province);
+	return colonialRegionsMapper->getColonialRegionForProvince(province);
 }
 
 mappers::ProvinceMappingsVersion mappers::ProvinceMapper::getMappingsVersion(const std::map<GameVersion, ProvinceMappingsVersion>& mappingsVersions,

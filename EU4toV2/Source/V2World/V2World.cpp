@@ -48,7 +48,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "48 %";
 
 	LOG(LogLevel::Info) << "-> Loading Country Mapping Rules";
-	countryMapper.createMappings(sourceWorld, potentialCountries, provinceMapper);
+	countryMapper.createMappings(sourceWorld.getCultureGroupsMapper(), sourceWorld.getCountries(), provinceMapper);
 	Log(LogLevel::Progress) << "49 %";
 
 	LOG(LogLevel::Info) << "-> Loading Culture Mapping Rules";

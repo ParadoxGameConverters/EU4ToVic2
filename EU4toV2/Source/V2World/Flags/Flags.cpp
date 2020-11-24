@@ -1,18 +1,16 @@
 #include "Flags.h"
-#include "../../Configuration.h"
-#include "../../EU4World/Country/EU4Country.h"
-#include "../../Mappers/Titles/TitleMapper.h"
-#include "../Country/Country.h"
+#include "Configuration.h"
+#include "EU4World/Country/EU4Country.h"
 #include "FlagUtils.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
+#include "Titles/TitleMapper.h"
+#include "V2World/Country/Country.h"
 #include <algorithm>
 #include <chrono>
 #include <fstream>
 #include <iterator>
 #include <random>
-
-const std::vector<std::string> V2::Flags::flagFileSuffixes = {".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga"};
 
 void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>& V2Countries, const mappers::CountryMappings& countryMapper)
 {
@@ -33,7 +31,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 		if (country.second->getSourceCountry() && requiredTags.count(country.first))
 		{
 			// Check for ck2 name, if one exists
-			auto title = countryMapper.getTitle(country.first, country.second->getLocalName(), usableFlagTags);
+			auto title = countryMapper.getTitle(country.second->getLocalName());
 
 			// do we have a ready ck2 map?
 			if (title && usableFlagTags.count(*title))

@@ -518,6 +518,24 @@
     <ClCompile Include="MapperTests\CountryFlags\CountryFlagsMappingTests.cpp">
       <Filter>MapperTests\CountryFlagsMapper</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\CountryMappings\CountryMappingsTests.cpp">
+      <Filter>MapperTests\CountryMappings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CountryMappings\CountryMappings.cpp">
+      <Filter>ConverterFiles\Mappers\CountryMappings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\Culture.cpp">
+      <Filter>ConverterFiles\Mappers\CultureGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroup.cpp">
+      <Filter>ConverterFiles\Mappers\CultureGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroups.cpp">
+      <Filter>ConverterFiles\Mappers\CultureGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Country\Countries.cpp">
+      <Filter>ConverterFiles\EU4World\Country</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -747,6 +765,9 @@
     </Filter>
     <Filter Include="MapperTests\CountryFlagsMapper">
       <UniqueIdentifier>{8b15d950-84b7-4dbf-b510-5fcb56e686a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\CultureGroups">
+      <UniqueIdentifier>{2d18cd24-c9af-4f15-9f93-64ba6c994b0b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
