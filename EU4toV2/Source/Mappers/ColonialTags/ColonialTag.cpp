@@ -33,7 +33,7 @@ bool mappers::ColonyStruct::match(const std::string& eu4Region, const std::strin
 		return false;
 	if (!v2Region.empty() && !V2Regions.empty() && !V2Regions.contains(v2Region))
 		return false;
-	if (V2Regions.empty() && !V2Regions.empty())
+	if (v2Region.empty() && !V2Regions.empty())
 		return false;
 	if (!cultureGroup.empty() && !cultureGroups.empty() && !cultureGroups.contains(cultureGroup))
 		return false;

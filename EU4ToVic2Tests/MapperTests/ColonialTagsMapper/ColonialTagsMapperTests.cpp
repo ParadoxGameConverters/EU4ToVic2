@@ -22,25 +22,3 @@ TEST(Mappers_ColonialTagsMapperTests, colonialTagMatchReturnsFirstCandidate)
 
 	ASSERT_EQ("ORA", *match);
 }
-
-TEST(Mappers_ColonialTagsMapperTests, excessiveQualifiersDontBotherMatchFallbacks)
-{
-	std::stringstream input;
-	input << "link = { tag = ORA cultureGroup = beneluxian }\n";
-	const mappers::ColonialTagMapper mapper(input);
-
-	const auto& match = mapper.getColonialTag("south_africa_region", "ENG_2087", "beneluxian");
-
-	ASSERT_EQ("ORA", *match);
-}
-
-TEST(Mappers_ColonialTagsMapperTests, insufficientQualifiersDoBotherMatchFallbacks)
-{
-	std::stringstream input;
-	input << "link = { tag = ORA eu4region = south_africa_region v2region = ENG_2087 cultureGroup = beneluxian }\n";
-	const mappers::ColonialTagMapper mapper(input);
-
-	const auto& match = mapper.getColonialTag("", "", "beneluxian");
-
-	ASSERT_EQ(std::nullopt, match);
-}

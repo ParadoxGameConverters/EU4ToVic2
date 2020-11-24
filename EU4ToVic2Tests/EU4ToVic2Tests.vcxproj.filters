@@ -197,9 +197,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.cpp">
       <Filter>ConverterFiles\Mappers\AcceptedCultureThresholds</Filter>
     </ClCompile>
-    <ClCompile Include="MapperTests\CountryFlagsMapperTests.cpp">
-      <Filter>MapperTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryFlags\CountryFlags.cpp">
       <Filter>ConverterFiles\Mappers\CountryFlags</Filter>
     </ClCompile>
@@ -515,6 +512,12 @@
     <ClCompile Include="MapperTests\V2ProvinceRegionsMapper\V2ProvinceRegionsMapperTests.cpp">
       <Filter>MapperTests\V2ProvinceRegionsMapper</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\CountryFlags\CountryFlagsTests.cpp">
+      <Filter>MapperTests\CountryFlagsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CountryFlags\CountryFlagsMappingTests.cpp">
+      <Filter>MapperTests\CountryFlagsMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -741,6 +744,9 @@
     </Filter>
     <Filter Include="MapperTests\V2ProvinceRegionsMapper">
       <UniqueIdentifier>{42f3b01f-5bb7-4ea7-88bf-103bea8fea47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\CountryFlagsMapper">
+      <UniqueIdentifier>{8b15d950-84b7-4dbf-b510-5fcb56e686a1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

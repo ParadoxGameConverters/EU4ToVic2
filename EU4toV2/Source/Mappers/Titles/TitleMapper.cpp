@@ -35,7 +35,6 @@ void mappers::TitleMapper::registerKeys()
 
 std::optional<std::string> mappers::TitleMapper::getTitleForName(const std::string& name) const
 {
-
 	if (const auto& mapping = titleMap.find(name); mapping != titleMap.end())
 		return mapping->second;
 	else

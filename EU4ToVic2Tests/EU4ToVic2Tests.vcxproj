@@ -321,7 +321,8 @@
     <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagRegionTests.cpp" />
     <ClCompile Include="MapperTests\ColonialTagsMapper\ColonialTagsMapperTests.cpp" />
     <ClCompile Include="MapperTests\ColonialTagsMapper\ColonialTagTests.cpp" />
-    <ClCompile Include="MapperTests\CountryFlagsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\CountryFlags\CountryFlagsMappingTests.cpp" />
+    <ClCompile Include="MapperTests\CountryFlags\CountryFlagsTests.cpp" />
     <ClCompile Include="MapperTests\CountryMappings\CountryMappingTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionMapperTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionTests.cpp" />
