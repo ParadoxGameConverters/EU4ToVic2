@@ -9,10 +9,9 @@
 #include <stdexcept>
 namespace fs = std::filesystem;
 
-mappers::ProvinceMapper::ProvinceMapper()
+mappers::ProvinceMapper::ProvinceMapper(): colonialRegionsMapper(std::make_unique<EU4::ColonialRegions>())
 {
 	LOG(LogLevel::Info) << "Parsing province mappings";
-	colonialRegionsMapper = std::make_unique<EU4::ColonialRegions>();
 	registerKeys();
 	parseFile("configurables/province_mappings.txt");
 	clearRegisteredKeywords();
@@ -21,9 +20,9 @@ mappers::ProvinceMapper::ProvinceMapper()
 	createMappings(mappings);
 }
 
-mappers::ProvinceMapper::ProvinceMapper(std::istream& mainStream, std::istream& colonialStream, const Configuration& testConfiguration)
+mappers::ProvinceMapper::ProvinceMapper(std::istream& mainStream, std::istream& colonialStream, const Configuration& testConfiguration):
+	 colonialRegionsMapper(std::make_unique<EU4::ColonialRegions>(colonialStream))
 {
-	colonialRegionsMapper = std::make_unique<EU4::ColonialRegions>(colonialStream);
 	registerKeys();
 	parseStream(mainStream);
 	clearRegisteredKeywords();

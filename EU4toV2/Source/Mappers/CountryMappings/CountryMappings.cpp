@@ -10,7 +10,9 @@
 #include <iomanip>
 #include <locale>
 
-mappers::CountryMappings::CountryMappings()
+mappers::CountryMappings::CountryMappings():
+	 titleMapper(std::make_unique<TitleMapper>()), colonialTagMapper(std::make_unique<ColonialTagMapper>()),
+	 v2provinceRegionsMapper(std::make_unique<V2ProvinceRegionsMapper>())
 {
 	/* This rather involved mapper is at the heart of the converter. Unlike simpler title->tag mappers of CK* series, this one requires a lot of sub-mappers.
 	 * Reason for this is that country location, culture and other modifiers can determine the course of the mapping. Furthermore, for countries with specific
@@ -20,9 +22,6 @@ mappers::CountryMappings::CountryMappings()
 	 */
 
 	LOG(LogLevel::Info) << "Parsing Country Mapping Rules.";
-	titleMapper = std::make_unique<TitleMapper>();
-	v2provinceRegionsMapper = std::make_unique<V2ProvinceRegionsMapper>();
-	colonialTagMapper = std::make_unique<ColonialTagMapper>();
 	registerKeys();
 	parseFile("configurables/country_mappings.txt");
 	clearRegisteredKeywords();
@@ -31,11 +30,12 @@ mappers::CountryMappings::CountryMappings()
 mappers::CountryMappings::CountryMappings(std::istream& mainStream,
 	 std::istream& titleMapperStream,
 	 std::istream& v2RegionsStream,
-	 std::istream& colonialTagStream)
+	 std::istream& colonialTagStream):
+	 titleMapper(std::make_unique<TitleMapper>(titleMapperStream)),
+	 colonialTagMapper(std::make_unique<ColonialTagMapper>(colonialTagStream)),
+	 v2provinceRegionsMapper(std::make_unique<V2ProvinceRegionsMapper>(v2RegionsStream))
+
 {
-	titleMapper = std::make_unique<TitleMapper>(titleMapperStream);
-	v2provinceRegionsMapper = std::make_unique<V2ProvinceRegionsMapper>(v2RegionsStream);
-	colonialTagMapper = std::make_unique<ColonialTagMapper>(colonialTagStream);
 	registerKeys();
 	parseStream(mainStream);
 	clearRegisteredKeywords();

@@ -203,8 +203,6 @@ TEST(Mappers_CountryMappingsTests, V2GetterReturnsNulloptForUnmappedTags)
 
 TEST(Mappers_CountryMappingsTests, getTitleReturnsTitleGuesstimate)
 {
-	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
 	std::stringstream ieInput;
 	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
 	GameVersion version(0, 0, 0, 0);
@@ -233,8 +231,6 @@ TEST(Mappers_CountryMappingsTests, getTitleReturnsTitleGuesstimate)
 
 TEST(Mappers_CountryMappingsTests, getTitleCanTapInTheDark)
 {
-	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
 	std::stringstream ieInput;
 	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
 	GameVersion version(0, 0, 0, 0);
