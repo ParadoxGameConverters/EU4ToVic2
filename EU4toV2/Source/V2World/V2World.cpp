@@ -988,7 +988,8 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 			 slaveCultureMapper,
 			 continentsMapper,
 			 religionMapper,
-			 countryMapper);
+			 countryMapper,
+			 provinceMapper);
 	}
 }
 
