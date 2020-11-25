@@ -7,11 +7,6 @@
 
 TEST(Mappers_CountryMappingsTests, trivialLinksCanBeMapped)
 {
-	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
-	std::stringstream ieInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
-	GameVersion version(0, 0, 0, 0);
 	std::stringstream titleMapperStream;
 	std::stringstream v2RegionsStream;
 	std::stringstream colonialTagStream;
@@ -19,7 +14,9 @@ TEST(Mappers_CountryMappingsTests, trivialLinksCanBeMapped)
 	mainInput << "link = { eu4 = SWE v2 = DEN }";
 	mappers::CountryMappings mapper(mainInput, titleMapperStream, v2RegionsStream, colonialTagStream);
 
-
+	std::stringstream ieInput;
+	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
+	GameVersion version(0, 0, 0, 0);
 	std::stringstream countryInput;
 	countryInput << "SWE = {}";
 	EU4::Countries countries(version, countryInput, ideaEffectMapper);
@@ -30,6 +27,8 @@ TEST(Mappers_CountryMappingsTests, trivialLinksCanBeMapped)
 	provinceInput << "0.0.0.0 = {}";
 	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
+	std::stringstream cgInput;
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
 	// Trivial, right?
@@ -41,21 +40,17 @@ TEST(Mappers_CountryMappingsTests, trivialLinksCanBeMapped)
 
 TEST(Mappers_CountryMappingsTests, titleNameGuesstimatesCanBeMapped)
 {
-	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
-	std::stringstream ieInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
-	GameVersion version(0, 0, 0, 0);
-	std::stringstream titleMapperStream;
-	titleMapperStream << "link = { name = \"sweden\" title = k_sweden region = e_scandinavia }";
-
 	std::stringstream v2RegionsStream;
 	std::stringstream colonialTagStream;
+	std::stringstream titleMapperStream;
+	titleMapperStream << "link = { name = \"sweden\" title = k_sweden region = e_scandinavia }";
 	std::stringstream mainInput;
 	mainInput << "link = { eu4 = k_sweden v2 = DEN }";
 	mappers::CountryMappings mapper(mainInput, titleMapperStream, v2RegionsStream, colonialTagStream);
 
-
+	std::stringstream ieInput;
+	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
+	GameVersion version(0, 0, 0, 0);
 	std::stringstream countryInput;
 	countryInput << "X89 = { name = \"Sweden\"}";
 	EU4::Countries countries(version, countryInput, ideaEffectMapper);
@@ -66,6 +61,9 @@ TEST(Mappers_CountryMappingsTests, titleNameGuesstimatesCanBeMapped)
 	provinceInput << "0.0.0.0 = {}";
 	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
+	std::stringstream cgInput;
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
+
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
 	const auto& match = mapper.getV2Tag("X89");
@@ -75,19 +73,15 @@ TEST(Mappers_CountryMappingsTests, titleNameGuesstimatesCanBeMapped)
 
 TEST(Mappers_CountryMappingsTests, unmatchedLinksMapToDynamicTags)
 {
-	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
-	std::stringstream ieInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
-	GameVersion version(0, 0, 0, 0);
 	std::stringstream titleMapperStream;
-
 	std::stringstream v2RegionsStream;
 	std::stringstream colonialTagStream;
 	std::stringstream mainInput;
 	mappers::CountryMappings mapper(mainInput, titleMapperStream, v2RegionsStream, colonialTagStream);
 
-
+	GameVersion version(0, 0, 0, 0);
+	std::stringstream ieInput;
+	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
 	std::stringstream countryInput;
 	countryInput << "X89 = {}";
 	EU4::Countries countries(version, countryInput, ideaEffectMapper);
@@ -98,6 +92,8 @@ TEST(Mappers_CountryMappingsTests, unmatchedLinksMapToDynamicTags)
 	provinceInput << "0.0.0.0 = {}";
 	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
+	std::stringstream cgInput;
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
 	const auto& match = mapper.getV2Tag("X89");
@@ -107,14 +103,7 @@ TEST(Mappers_CountryMappingsTests, unmatchedLinksMapToDynamicTags)
 
 TEST(Mappers_CountryMappingsTests, colonialReplacementsCanBeDefined)
 {
-	std::stringstream cgInput;
-	cgInput << "british = { english }";
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
-	std::stringstream ieInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
-	GameVersion version(0, 0, 0, 0);
 	std::stringstream titleMapperStream;
-
 	std::stringstream v2RegionsStream;
 	v2RegionsStream << "ENG_30 = { 100 }";
 	std::stringstream colonialTagStream;
@@ -122,7 +111,9 @@ TEST(Mappers_CountryMappingsTests, colonialReplacementsCanBeDefined)
 	std::stringstream mainInput;
 	mappers::CountryMappings mapper(mainInput, titleMapperStream, v2RegionsStream, colonialTagStream);
 
-
+	GameVersion version(0, 0, 0, 0);
+	std::stringstream ieInput;
+	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
 	std::stringstream countryInput;
 	countryInput << "C01 = { name = \"New Lancaster\" primary_culture = english capital = 1 colonial_parent = ENG }";
 	EU4::Countries countries(version, countryInput, ideaEffectMapper);
@@ -134,6 +125,9 @@ TEST(Mappers_CountryMappingsTests, colonialReplacementsCanBeDefined)
 	provinceInput << "0.0.0.0 = { link = { eu4 = 1 v2 = 100 }";
 	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
+	std::stringstream cgInput;
+	cgInput << "british = { english }";
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
 	const auto& match = mapper.getV2Tag("C01");
@@ -143,11 +137,6 @@ TEST(Mappers_CountryMappingsTests, colonialReplacementsCanBeDefined)
 
 TEST(Mappers_CountryMappingsTests, V2GetterReturnsTagForMappedTags)
 {
-	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
-	std::stringstream ieInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
-	GameVersion version(0, 0, 0, 0);
 	std::stringstream titleMapperStream;
 	std::stringstream v2RegionsStream;
 	std::stringstream colonialTagStream;
@@ -155,7 +144,9 @@ TEST(Mappers_CountryMappingsTests, V2GetterReturnsTagForMappedTags)
 	mainInput << "link = { eu4 = SWE v2 = DEN }";
 	mappers::CountryMappings mapper(mainInput, titleMapperStream, v2RegionsStream, colonialTagStream);
 
-
+	GameVersion version(0, 0, 0, 0);
+	std::stringstream ieInput;
+	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
 	std::stringstream countryInput;
 	countryInput << "SWE = {}";
 	EU4::Countries countries(version, countryInput, ideaEffectMapper);
@@ -166,6 +157,8 @@ TEST(Mappers_CountryMappingsTests, V2GetterReturnsTagForMappedTags)
 	provinceInput << "0.0.0.0 = {}";
 	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
+	std::stringstream cgInput;
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
 	ASSERT_EQ("DEN", *mapper.getV2Tag("SWE"));
@@ -173,11 +166,6 @@ TEST(Mappers_CountryMappingsTests, V2GetterReturnsTagForMappedTags)
 
 TEST(Mappers_CountryMappingsTests, V2GetterReturnsNulloptForUnmappedTags)
 {
-	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
-	std::stringstream ieInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
-	GameVersion version(0, 0, 0, 0);
 	std::stringstream titleMapperStream;
 	std::stringstream v2RegionsStream;
 	std::stringstream colonialTagStream;
@@ -185,7 +173,9 @@ TEST(Mappers_CountryMappingsTests, V2GetterReturnsNulloptForUnmappedTags)
 	mainInput << "link = { eu4 = SWE v2 = DEN }";
 	mappers::CountryMappings mapper(mainInput, titleMapperStream, v2RegionsStream, colonialTagStream);
 
-
+	GameVersion version(0, 0, 0, 0);
+	std::stringstream ieInput;
+	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
 	std::stringstream countryInput;
 	countryInput << "SWE = {}";
 	EU4::Countries countries(version, countryInput, ideaEffectMapper);
@@ -196,6 +186,8 @@ TEST(Mappers_CountryMappingsTests, V2GetterReturnsNulloptForUnmappedTags)
 	provinceInput << "0.0.0.0 = {}";
 	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
+	std::stringstream cgInput;
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
 	ASSERT_EQ(std::nullopt, mapper.getV2Tag("DEN"));
@@ -203,84 +195,39 @@ TEST(Mappers_CountryMappingsTests, V2GetterReturnsNulloptForUnmappedTags)
 
 TEST(Mappers_CountryMappingsTests, getTitleReturnsTitleGuesstimate)
 {
-	std::stringstream ieInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
-	GameVersion version(0, 0, 0, 0);
 	std::stringstream titleMapperStream;
-	titleMapperStream << "link = { name = \"Sweden\" title = k_sverige region = e_scandinavia }";
-
+	titleMapperStream << "link = { name = \"sweden\" title = k_sverige region = e_scandinavia }";
 	std::stringstream v2RegionsStream;
 	std::stringstream colonialTagStream;
 	std::stringstream mainInput;
 	mainInput << "link = { eu4 = k_sweden v2 = DEN }";
 	mappers::CountryMappings mapper(mainInput, titleMapperStream, v2RegionsStream, colonialTagStream);
 
-
-	std::stringstream countryInput;
-	countryInput << "X89 = { name = \"Sweden\"}";
-	EU4::Countries countries(version, countryInput, ideaEffectMapper);
-
-	const Configuration testConfiguration;
-	std::stringstream colonialInput;
-	std::stringstream provinceInput;
-	provinceInput << "0.0.0.0 = {}";
-	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
-
-	ASSERT_EQ("k_sverige", *mapper.getTitle("Sweden"));
+	ASSERT_EQ("k_sverige", *mapper.getTitle("SWEDEN"));
 }
 
 TEST(Mappers_CountryMappingsTests, getTitleCanTapInTheDark)
 {
-	std::stringstream ieInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
-	GameVersion version(0, 0, 0, 0);
 	std::stringstream titleMapperStream;
 	titleMapperStream << "link = { name = \"svebjod\" title = k_sweden region = e_scandinavia }";
-
 	std::stringstream v2RegionsStream;
 	std::stringstream colonialTagStream;
 	std::stringstream mainInput;
 	mainInput << "link = { eu4 = k_sweden v2 = DEN }";
 	mappers::CountryMappings mapper(mainInput, titleMapperStream, v2RegionsStream, colonialTagStream);
-
-
-	std::stringstream countryInput;
-	countryInput << "X89 = { name = \"Sweden\"}";
-	EU4::Countries countries(version, countryInput, ideaEffectMapper);
-
-	const Configuration testConfiguration;
-	std::stringstream colonialInput;
-	std::stringstream provinceInput;
-	provinceInput << "0.0.0.0 = {}";
-	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
 	ASSERT_EQ("k_sweden", *mapper.getTitle("Sweden"));
 }
 
 TEST(Mappers_CountryMappingsTests, getTitleReturnsNulloptOnAbjectFailure)
 {
-	std::stringstream ieInput;
-	mappers::IdeaEffectMapper ideaEffectMapper(ieInput);
-	GameVersion version(0, 0, 0, 0);
 	std::stringstream titleMapperStream;
 	titleMapperStream << "link = { name = \"svebjod\" title = k_sverige region = e_scandinavia }";
-
 	std::stringstream v2RegionsStream;
 	std::stringstream colonialTagStream;
 	std::stringstream mainInput;
 	mainInput << "link = { eu4 = k_sweden v2 = DEN }";
 	mappers::CountryMappings mapper(mainInput, titleMapperStream, v2RegionsStream, colonialTagStream);
-
-
-	std::stringstream countryInput;
-	countryInput << "X89 = { name = \"Sweden\"}";
-	EU4::Countries countries(version, countryInput, ideaEffectMapper);
-
-	const Configuration testConfiguration;
-	std::stringstream colonialInput;
-	std::stringstream provinceInput;
-	provinceInput << "0.0.0.0 = {}";
-	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
 	ASSERT_EQ(std::nullopt, mapper.getTitle("Sweden"));
 }
