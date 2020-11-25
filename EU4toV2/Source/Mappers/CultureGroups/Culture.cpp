@@ -46,13 +46,13 @@ void mappers::Culture::transmogrify()
 	firstNames = maleNames;
 	lastNames = dynastyNames;
 
-	std::random_device randomDevice;
-	std::mt19937 engine(randomDevice());
-	const std::uniform_int_distribution<> distribution(0, 255);
+	std::random_device theRandomDevice;
+	std::mt19937 theEngine(theRandomDevice());
+	const std::uniform_int_distribution<> theDistribution(0, 255);
 
-	const auto r = distribution(engine);
-	const auto g = distribution(engine);
-	const auto b = distribution(engine);
+	const auto r = theDistribution(theEngine);
+	const auto g = theDistribution(theEngine);
+	const auto b = theDistribution(theEngine);
 	color = commonItems::Color(std::array<int, 3>{r, g, b});
 	primaryTag.clear();
 }
