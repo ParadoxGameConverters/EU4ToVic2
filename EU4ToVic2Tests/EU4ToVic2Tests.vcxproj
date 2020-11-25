@@ -330,8 +330,8 @@
     <ClCompile Include="MapperTests\CountryFlags\CountryFlagsTests.cpp" />
     <ClCompile Include="MapperTests\CountryMappings\CountryMappingsTests.cpp" />
     <ClCompile Include="MapperTests\CountryMappings\CountryMappingTests.cpp" />
-    <ClCompile Include="MapperTests\CulturalUnionMapperTests.cpp" />
-    <ClCompile Include="MapperTests\CulturalUnionTests.cpp" />
+    <ClCompile Include="MapperTests\CulturalUnionMapper\CulturalUnionMapperTests.cpp" />
+    <ClCompile Include="MapperTests\CulturalUnionMapper\CulturalUnionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapperTests.cpp" />
     <ClCompile Include="MapperTests\DeadDefinitionMapper\DeadDefinitionMapperTests.cpp" />
     <ClCompile Include="MapperTests\DeadDefinitionMapper\DeadDefinitionMappingTests.cpp" />

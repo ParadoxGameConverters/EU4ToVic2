@@ -26,9 +26,9 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "45 %";
 
 	LOG(LogLevel::Info) << "Parsing cultural union mappings.";
-	culturalUnionMapper.loadFile("configurables/unions.txt");
+	culturalUnionMapper = std::make_unique<mappers::CulturalUnionMapper>("configurables/unions.txt");
 	LOG(LogLevel::Info) << "Parsing nationalities mappings.";
-	culturalNationalitiesMapper.loadFile("configurables/nationals.txt");
+	culturalNationalitiesMapper = std::make_unique<mappers::CulturalUnionMapper>("configurables/nationals.txt");
 	religionMapper.scrapeCustomReligions();
 
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
@@ -1380,8 +1380,8 @@ void V2::World::addUnions()
 			auto cultures = province.second->getCulturesOverThreshold(0.5);
 			for (const auto& culture: cultures)
 			{
-				auto unionCores = culturalUnionMapper.getCoresForCulture(culture);
-				auto nationalCores = culturalNationalitiesMapper.getCoresForCulture(culture);
+				auto unionCores = culturalUnionMapper->getCoresForCulture(culture);
+				auto nationalCores = culturalNationalitiesMapper->getCoresForCulture(culture);
 				switch (theConfiguration.getCoreHandling())
 				{
 					case Configuration::COREHANDLES::DropNational:
