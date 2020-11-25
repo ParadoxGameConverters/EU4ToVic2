@@ -1,6 +1,5 @@
 #ifndef CULTURE_MAPPING_RULE_H
 #define CULTURE_MAPPING_RULE_H
-
 #include "Parser.h"
 #include <set>
 
@@ -16,7 +15,6 @@ class CultureMappingRule: commonItems::parser
   public:
 	CultureMappingRule() = default;
 	explicit CultureMappingRule(std::istream& theStream);
-	CultureMappingRule(const std::string& v2Culture, const std::string& eu4Culture, const std::string& eu4SuperRegion);
 
 	[[nodiscard]] std::optional<std::string> cultureMatch(const EU4::Regions& eu4Regions,
 		 const std::string& eu4culture,
@@ -36,9 +34,9 @@ class CultureMappingRule: commonItems::parser
 		 int eu4Province,
 		 const std::string& eu4ownerTag) const;
 
-	[[nodiscard]] const auto& getDestinationCulture() const { return destinationCulture; }
-
   private:
+	void registerKeys();
+
 	std::string destinationCulture;
 	std::set<std::string> cultures;
 	std::set<std::string> religions;

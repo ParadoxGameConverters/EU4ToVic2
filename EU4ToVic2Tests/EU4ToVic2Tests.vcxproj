@@ -335,7 +335,8 @@
     <ClCompile Include="MapperTests\CultureGroups\CultureGroupsTests.cpp" />
     <ClCompile Include="MapperTests\CultureGroups\CultureGroupTests.cpp" />
     <ClCompile Include="MapperTests\CultureGroups\CultureTests.cpp" />
-    <ClCompile Include="MapperTests\CultureMapperTests.cpp" />
+    <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp" />
+    <ClCompile Include="MapperTests\CultureMapper\CultureMappingRuleTests.cpp" />
     <ClCompile Include="MapperTests\DeadDefinitionMapper\DeadDefinitionMapperTests.cpp" />
     <ClCompile Include="MapperTests\DeadDefinitionMapper\DeadDefinitionMappingTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsMapperTests.cpp" />

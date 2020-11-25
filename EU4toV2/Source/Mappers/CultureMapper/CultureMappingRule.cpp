@@ -1,52 +1,35 @@
 #include "CultureMappingRule.h"
-#include "../../EU4World/Regions/Regions.h"
-#include "Log.h"
 #include "ParserHelpers.h"
+#include "Regions/Regions.h"
 
 mappers::CultureMappingRule::CultureMappingRule(std::istream& theStream)
 {
-	registerKeyword("vic2", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString v2Str(theStream);
-		destinationCulture = v2Str.getString();
-	});
-	registerKeyword("region", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString regionStr(theStream);
-		regions.insert(regionStr.getString());
-	});
-	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString religionStr(theStream);
-		religions.insert(religionStr.getString());
-	});
-	registerKeyword("owner", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString ownerStr(theStream);
-		owners.insert(ownerStr.getString());
-	});
-	registerKeyword("provinceid", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString provinceStr(theStream);
-		try
-		{
-			provinces.insert(stoi(provinceStr.getString()));
-		}
-		catch (std::exception&)
-		{
-			Log(LogLevel::Warning) << "Invalid province ID in culture mapper: " << provinceStr.getString();
-		}
-	});
-	registerKeyword("eu4", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString eu4Str(theStream);
-		cultures.insert(eu4Str.getString());
-	});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-mappers::CultureMappingRule::CultureMappingRule(const std::string& v2Culture, const std::string& eu4Culture, const std::string& eu4SuperRegion):
-	 destinationCulture(v2Culture)
+void mappers::CultureMappingRule::registerKeys()
 {
-	cultures.insert(eu4Culture);
-	regions.insert(eu4SuperRegion);
+	registerKeyword("vic2", [this](const std::string& unused, std::istream& theStream) {
+		destinationCulture = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("region", [this](const std::string& unused, std::istream& theStream) {
+		regions.insert(commonItems::singleString(theStream).getString());
+	});
+	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) {
+		religions.insert(commonItems::singleString(theStream).getString());
+	});
+	registerKeyword("owner", [this](const std::string& unused, std::istream& theStream) {
+		owners.insert(commonItems::singleString(theStream).getString());
+	});
+	registerKeyword("provinceid", [this](const std::string& unused, std::istream& theStream) {
+		provinces.insert(commonItems::singleInt(theStream).getInt());
+	});
+	registerKeyword("eu4", [this](const std::string& unused, std::istream& theStream) {
+		cultures.insert(commonItems::singleString(theStream).getString());
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 std::optional<std::string> mappers::CultureMappingRule::cultureMatch(const EU4::Regions& eu4Regions,

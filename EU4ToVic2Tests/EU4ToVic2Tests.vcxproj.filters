@@ -134,9 +134,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffects.cpp">
       <Filter>ConverterFiles\Mappers\IdeaEffects</Filter>
     </ClCompile>
-    <ClCompile Include="MapperTests\CultureMapperTests.cpp">
-      <Filter>MapperTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Regions\SuperRegions.cpp">
       <Filter>ConverterFiles\EU4World\Regions</Filter>
     </ClCompile>
@@ -545,6 +542,12 @@
     <ClCompile Include="MapperTests\CultureGroups\CultureTests.cpp">
       <Filter>MapperTests\CultureGroups</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp">
+      <Filter>MapperTests\CultureMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureMapper\CultureMappingRuleTests.cpp">
+      <Filter>MapperTests\CultureMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -783,6 +786,9 @@
     </Filter>
     <Filter Include="MapperTests\CultureGroups">
       <UniqueIdentifier>{c47bab07-99bd-403a-b30e-7685818103f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\CultureMapper">
+      <UniqueIdentifier>{84de5c8f-757a-4fa8-a60c-8691b0cb12d3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

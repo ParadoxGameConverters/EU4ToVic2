@@ -1,17 +1,7 @@
 #ifndef CULTURE_MAPPER_H
 #define CULTURE_MAPPER_H
-
-#include "../../EU4World/Regions/Regions.h"
 #include "CultureMappingRule.h"
 #include "Parser.h"
-#include <list>
-#include <optional>
-#include <string>
-
-namespace EU4
-{
-class World;
-}
 
 namespace mappers
 {
