@@ -48,7 +48,7 @@ void mappers::Culture::transmogrify()
 
 	std::random_device theRandomDevice;
 	std::mt19937 theEngine(theRandomDevice());
-	const std::uniform_int_distribution<> theDistribution(0, 255);
+	std::uniform_int_distribution<> theDistribution(0, 255);
 
 	const auto r = theDistribution(theEngine);
 	const auto g = theDistribution(theEngine);
