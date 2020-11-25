@@ -2,8 +2,6 @@
 #define DEAD_DEFINITION_MAPPER
 #include "DeadDefinitionMapping.h"
 #include "Parser.h"
-#include <map>
-#include <string>
 
 namespace mappers
 {
