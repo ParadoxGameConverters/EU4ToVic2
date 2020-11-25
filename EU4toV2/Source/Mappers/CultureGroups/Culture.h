@@ -1,51 +1,61 @@
 #ifndef CULTURE_H
 #define CULTURE_H
-
-#include "Parser.h"
 #include "Color.h"
+#include "Parser.h"
 
 namespace mappers
 {
-	class Culture: commonItems::parser
+class Culture: commonItems::parser
+{
+  public:
+	Culture() = default;
+	explicit Culture(std::istream& theStream);
+
+	[[nodiscard]] const auto& getMaleNames() const { return maleNames; }
+	[[nodiscard]] const auto& getFemaleNames() const { return femaleNames; }
+	[[nodiscard]] const auto& getFirstNames() const { return firstNames; }
+	[[nodiscard]] const auto& getLastNames() const { return lastNames; }
+	[[nodiscard]] const auto& getDynastyNames() const { return dynastyNames; }
+	[[nodiscard]] const auto& getOriginalCulture() const { return originalCulture; }
+	[[nodiscard]] const auto& getColor() const { return color; }
+	[[nodiscard]] const auto& getPrimaryTag() const { return primaryTag; }
+	[[nodiscard]] const auto& getGraphicalCulture() const { return graphicalCulture; }
+	[[nodiscard]] auto isNeoCulture() const { return neoCulture; }
+	[[nodiscard]] auto getRadicalism() const { return radicalism; }
+
+	void setFirstNames(const std::vector<std::string>& theFirstNames) { firstNames = theFirstNames; }
+	void setLastNames(const std::vector<std::string>& theLastNames) { lastNames = theLastNames; }
+	void setColor(const commonItems::Color& theColor) { color = theColor; }
+
+	void addMaleNames(const std::vector<std::string>& names) { maleNames.insert(maleNames.end(), names.begin(), names.end()); }
+	void addFemaleNames(const std::vector<std::string>& names) { femaleNames.insert(femaleNames.end(), names.begin(), names.end()); }
+	void addDynastyNames(const std::vector<std::string>& names) { dynastyNames.insert(dynastyNames.end(), names.begin(), names.end()); }
+	void setNeoCulture(const bool nc)
 	{
-	public:
-		Culture() = default;
-		explicit Culture(std::istream& theStream);
+		neoCulture = nc;
+		radicalism = 10;
+	}
+	void setOriginalCulture(const std::string& origName) { originalCulture = origName; }
 
-		[[nodiscard]] const auto& getMaleNames() const { return maleNames; }
-		[[nodiscard]] const auto& getFemaleNames() const { return femaleNames; }
-		[[nodiscard]] const auto& getDynastyNames() const { return dynastyNames; }
-		[[nodiscard]] const auto& getOriginalCulture() const { return originalCulture; }
-		[[nodiscard]] auto getNeoCulture() const { return neoCulture; }
+	void transmogrify();
 
-		void setFirstNames(const std::vector<std::string>& fnames) { firstNames = fnames; }
-		void setLastNames(const std::vector<std::string>& lnames) { lastNames = lnames; }
-		void setColor(const commonItems::Color& theColor) { color = theColor; }
-		
-		void addNameNames(const std::vector<std::string>& names) { maleNames.insert(maleNames.end(), names.begin(), names.end()); }
-		void addFemaleNames(const std::vector<std::string>& names) { femaleNames.insert(femaleNames.end(), names.begin(), names.end()); }
-		void addDynastyNames(const std::vector<std::string>& names) { dynastyNames.insert(dynastyNames.end(), names.begin(), names.end()); }
-		void setNeoCulture(const bool nc) { neoCulture = nc; radicalism = 10; }
-		void setOriginalCulture(const std::string& origName) { originalCulture = origName; }
+	friend std::ostream& operator<<(std::ostream& output, const Culture& culture);
 
-		void transmogrify();
+  private:
+	void registerKeys();
 
-		friend std::ostream& operator<<(std::ostream& output, const Culture& culture);
-
-	private:
-		std::string primaryTag;
-		std::string graphicalCulture;
-		std::vector<std::string> maleNames;
-		std::vector<std::string> femaleNames;
-		std::vector<std::string> firstNames;
-		std::vector<std::string> lastNames;
-		std::vector<std::string> dynastyNames;
-		std::optional<commonItems::Color> color;
-		int radicalism = 0;
-		bool neoCulture = false; // culture generated on-the-fly by the converter
-		std::string originalCulture; // relevant only for neocultures so we know where they originated from.
-
-	};
-}
+	std::string primaryTag;
+	std::string graphicalCulture;
+	std::vector<std::string> maleNames;
+	std::vector<std::string> femaleNames;
+	std::vector<std::string> firstNames;
+	std::vector<std::string> lastNames;
+	std::vector<std::string> dynastyNames;
+	std::optional<commonItems::Color> color;
+	int radicalism = 0;
+	bool neoCulture = false;	  // culture generated on-the-fly by the converter
+	std::string originalCulture; // relevant only for neocultures so we know where they originated from.
+};
+} // namespace mappers
 
 #endif // CULTURE_H

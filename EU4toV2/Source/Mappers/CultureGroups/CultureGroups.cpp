@@ -1,29 +1,25 @@
 #include "CultureGroups.h"
-#include "../../Configuration.h"
-#include "../../EU4World/World.h"
-#include "../CultureMapper/CultureMapper.h"
+#include "Configuration.h"
+#include "Culture.h"
+#include "CultureGroup.h"
+#include "CultureMapper/CultureMapper.h"
+#include "EU4World/World.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
-#include <set>
+#include "ParserHelpers.h"
 
 void mappers::CultureGroups::initForEU4()
 {
 	LOG(LogLevel::Info) << "Parsing Cultures and Culture Groups";
 	registerKeys();
 
-	auto cultureFiles = commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/cultures/");
-	for (const auto& cultureFile: cultureFiles)
-	{
+	for (const auto& cultureFile: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/cultures/"))
 		parseFile(theConfiguration.getEU4Path() + "/common/cultures/" + cultureFile);
-	}
-	for (const auto& itr: theConfiguration.getEU4Mods())
-	{
-		auto moreCultureFiles = commonItems::GetAllFilesInFolder(itr + "/common/cultures/");
-		for (const auto& cultureFile: moreCultureFiles)
-		{
-			parseFile(itr + "/common/cultures/" + cultureFile);
-		}
-	}
+
+	for (const auto& modPath: theConfiguration.getEU4Mods())
+		for (const auto& cultureFile: commonItems::GetAllFilesInFolder(modPath + "/common/cultures/"))
+			parseFile(modPath + "/common/cultures/" + cultureFile);
+
 	clearRegisteredKeywords();
 }
 
@@ -44,81 +40,66 @@ mappers::CultureGroups::CultureGroups(std::istream& theStream)
 
 void mappers::CultureGroups::registerKeys()
 {
-	registerRegex("\\w+", [this](const std::string& cultureGroupName, std::istream& theStream) {
-		std::vector<Culture> cultures;
-		CultureGroup newGroup(cultureGroupName, theStream);
-		if (cultureGroupsMap.count(cultureGroupName))
+	registerRegex(R"([\w_]+)", [this](const std::string& cultureGroupName, std::istream& theStream) {
+		auto newGroup = std::make_shared<CultureGroup>(cultureGroupName, theStream);
+		if (cultureGroupsMap.contains(cultureGroupName))
 		{
 			// We would normally override base definitions with incoming CK2 ones, but CK2 definitions
 			// are crap and don't actually list all required cultures, so we have to merge.
-			for (const auto& cultureItr: newGroup.getCultures())
-			{
-				cultureGroupsMap[cultureGroupName].mergeCulture(cultureItr.first, cultureItr.second);
-			}
+			for (const auto& [cultureName, culture]: newGroup->getCultures())
+				cultureGroupsMap[cultureGroupName]->mergeCulture(cultureName, culture);
 		}
 		else
+		{
 			cultureGroupsMap.insert(std::make_pair(cultureGroupName, newGroup));
+		}
 	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-std::optional<mappers::CultureGroup> mappers::CultureGroups::getGroupForCulture(const std::string& cultureName) const
+std::shared_ptr<mappers::CultureGroup> mappers::CultureGroups::getGroupForCulture(const std::string& cultureName) const
 {
 	for (const auto& cultureGroupItr: cultureGroupsMap)
-		if (cultureGroupItr.second.containsCulture(cultureName))
+		if (cultureGroupItr.second->containsCulture(cultureName))
 			return cultureGroupItr.second;
-	return std::nullopt;
-}
-
-mappers::CultureGroup* mappers::CultureGroups::retrieveCultureGroup(const std::string& cultureName)
-{
-	for (auto& cultureGroupItr: cultureGroupsMap)
-		if (cultureGroupItr.second.containsCulture(cultureName))
-			return &cultureGroupItr.second;
 	return nullptr;
 }
 
-std::map<std::string, mappers::Culture> mappers::CultureGroups::getCulturesInGroup(const std::string& groupName) const
+void mappers::CultureGroups::importNeoCultures(const EU4::Regions& regions,
+	 const std::shared_ptr<CultureGroups>& eu4CultureGroupsMapper,
+	 const CultureMapper& cultureMapper) const
 {
-	const auto& mapping = cultureGroupsMap.find(groupName);
-	if (mapping != cultureGroupsMap.end())
-		return mapping->second.getCultures();
-	return std::map<std::string, Culture>();
-}
-
-void mappers::CultureGroups::importNeoCultures(const EU4::World& sourceWorld, const CultureMapper& cultureMapper)
-{
-	const auto& eu4CultureGroupsMapper = sourceWorld.getCultureGroupsMapper();
-	for (const auto& eu4CultureGroupIter: eu4CultureGroupsMapper->getCultureGroupsMap())
+	for (const auto& [eu4CultureGroupName, eu4CultureGroup]: eu4CultureGroupsMapper->getCultureGroupsMap())
 	{
-		for (const auto& eu4CultureIter: eu4CultureGroupIter.second.getCultures())
+		for (const auto& [eu4CultureName, eu4Culture]: eu4CultureGroup->getCultures())
 		{
 			// Hello random eu4 culture. Are you a neoculture?
-			if (!eu4CultureIter.second.getNeoCulture())
+			if (!eu4Culture->isNeoCulture())
 				continue;
 
 			// Let's find out what V2 culture group this one is supposed to belong to.
-			const auto& origeu4CultureName = eu4CultureIter.second.getOriginalCulture();
-			const auto& destV2cultureName = cultureMapper.cultureNonRegionalNonReligiousMatch(sourceWorld.getRegions(), origeu4CultureName, "", 0, "");
-			if (!destV2cultureName)
+			const auto& origEU4CultureName = eu4Culture->getOriginalCulture();
+			const auto& destV2CultureName = cultureMapper.cultureNonRegionalNonReligiousMatch(regions, origEU4CultureName, "", 0, "");
+			if (!destV2CultureName)
 			{
 				// yeah let's not go there.
-				Log(LogLevel::Warning) << "Unable to locate culture mapping for EU4 culture: " << origeu4CultureName << ". This will end in tears.";
+				Log(LogLevel::Warning) << "Unable to locate culture mapping for EU4 culture: " << origEU4CultureName << ". This will end in tears.";
 				continue;
 			}
-			const auto& destV2cultureGroup = retrieveCultureGroup(*destV2cultureName);
-			if (!destV2cultureGroup)
+			const auto& destV2CultureGroup = getGroupForCulture(*destV2CultureName);
+			if (!destV2CultureGroup)
 			{
 				// let's not go there either.
-				Log(LogLevel::Warning) << "Unable to locate culture group for V2 culture: " << *destV2cultureName << ". This will end in blood.";
+				Log(LogLevel::Warning) << "Unable to locate culture group for V2 culture: " << *destV2CultureName << ". This will end in blood.";
 				continue;
 			}
 
 			// Now transmogrify eu4 culture definitions into V2 culture definitions.
-			auto v2Culture = eu4CultureIter.second;
-			v2Culture.transmogrify();
+			auto v2Culture = std::make_shared<Culture>(*eu4Culture);
+			v2Culture->transmogrify();
 
 			// and file under appropriate group.
-			destV2cultureGroup->addNeoCulture(eu4CultureIter.first, v2Culture, eu4CultureIter.first);
+			destV2CultureGroup->addNeoCulture(eu4CultureName, v2Culture, eu4CultureName);
 		}
 	}
 }

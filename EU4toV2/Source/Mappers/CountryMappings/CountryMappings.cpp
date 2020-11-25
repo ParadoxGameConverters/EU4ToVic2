@@ -1,6 +1,7 @@
 #include "CountryMappings.h"
 #include "CountryMapping.h"
 #include "CultureGroups/CultureGroups.h"
+#include "CultureGroups/CultureGroup.h"
 #include "EU4World/Country/EU4Country.h"
 #include "Log.h"
 #include "ParserHelpers.h"

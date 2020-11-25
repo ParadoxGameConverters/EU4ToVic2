@@ -3,6 +3,8 @@
 #include "../../Mappers/CultureMapper/CultureMapper.h"
 #include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"
+#include "CultureGroups/Culture.h"
+#include "CultureGroups/CultureGroup.h"
 #include "Log.h"
 
 void V2::MappingChecker::check(const EU4::World& sourceWorld,
@@ -46,9 +48,9 @@ void V2::MappingChecker::checkAllEU4CulturesMapped(const EU4::World& sourceWorld
 {
 	for (const auto& cultureGroupItr: sourceWorld.getCultureGroupsMapper()->getCultureGroupsMap())
 	{
-		for (const auto& cultureItr: cultureGroupItr.second.getCultures())
+		for (const auto& cultureItr: cultureGroupItr.second->getCultures())
 		{
-			if (cultureItr.second.getNeoCulture())
+			if (cultureItr.second->isNeoCulture())
 				continue; // no mapping for these.
 
 			const auto& matched = cultureMapper.cultureMatch(sourceWorld.getRegions(), cultureItr.first, "", 0, "");

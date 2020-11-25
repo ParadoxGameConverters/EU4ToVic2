@@ -118,7 +118,7 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						}
 						else
 						{
-							throw std::invalid_argument("");
+							throw std::invalid_argument("Folder does not exist!");
 						}
 
 						possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory));
@@ -140,7 +140,7 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						}
 						else
 						{
-							throw std::invalid_argument("");
+							throw std::invalid_argument("Path does not exist!");
 						}
 
 						const auto trimmedFilename = trimExtension(filename);
@@ -153,11 +153,10 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 					}
 				}
 			}
-			catch (std::exception&)
+			catch (std::exception& e)
 			{
 				LOG(LogLevel::Warning) << "Error while reading " << searchDirectory << "/mod/" << filename
-											  << ". "
-												  "Mod will not be useable for conversions.";
+											  << ". Mod will not be useable for conversions. (" << e.what() << ")";
 			}
 		}
 	}

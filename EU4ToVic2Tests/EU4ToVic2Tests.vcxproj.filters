@@ -536,6 +536,15 @@
     <ClCompile Include="MapperTests\CulturalUnionMapper\CulturalUnionTests.cpp">
       <Filter>MapperTests\CulturalUnionMapper</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\CultureGroups\CultureGroupsTests.cpp">
+      <Filter>MapperTests\CultureGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureGroups\CultureGroupTests.cpp">
+      <Filter>MapperTests\CultureGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureGroups\CultureTests.cpp">
+      <Filter>MapperTests\CultureGroups</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -771,6 +780,9 @@
     </Filter>
     <Filter Include="MapperTests\CulturalUnionMapper">
       <UniqueIdentifier>{a37efa2c-ef77-4d7f-8ac5-fce923806690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\CultureGroups">
+      <UniqueIdentifier>{c47bab07-99bd-403a-b30e-7685818103f9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

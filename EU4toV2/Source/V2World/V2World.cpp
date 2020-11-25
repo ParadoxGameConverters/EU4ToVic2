@@ -5,6 +5,7 @@
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../Mappers/VersionParser/VersionParser.h"
 #include "CommonFunctions.h"
+#include "CultureGroups/CultureGroup.h"
 #include "Flags/Flags.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -57,7 +58,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "50 %";
 
 	LOG(LogLevel::Info) << "-> Pouring From Hollow Into Empty";
-	cultureGroupsMapper.importNeoCultures(sourceWorld, cultureMapper);
+	cultureGroupsMapper.importNeoCultures(sourceWorld.getRegions(), sourceWorld.getCultureGroupsMapper(), cultureMapper);
 	Log(LogLevel::Progress) << "51 %";
 
 	LOG(LogLevel::Info) << "-> Converting Countries";
@@ -349,7 +350,7 @@ void V2::World::addAcceptedCultures(const EU4::Regions& eu4Regions)
 
 		const auto& primaryCulture = country.second->getPrimaryCulture();
 		auto acceptedCultures = country.second->getAcceptedCultures();
-		auto cultureGroup = cultureGroupsMapper.getGroupForCulture(primaryCulture);
+		const auto& cultureGroup = cultureGroupsMapper.getGroupForCulture(primaryCulture);
 		if (!cultureGroup)
 			return;
 		auto cultureGroupCultures = cultureGroup->getCultures();
