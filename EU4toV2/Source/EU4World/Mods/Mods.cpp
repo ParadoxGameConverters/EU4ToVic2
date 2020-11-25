@@ -152,6 +152,34 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 												  << "/mod/" + filename << " and itself at " << recordDirectory;
 					}
 				}
+				else if (theMod.getName().empty() && !theMod.getPath().empty())
+				{
+					Log(LogLevel::Info) << "\t\tMod at " << searchDirectory + "/mod/" + filename << " has no name. Attempting to locate descriptor.mod.";
+					std::string recordDirectory;
+					if (commonItems::DoesFileExist(theMod.getPath() + "/descriptor.mod"))
+					{
+						theMod.overLoad(theMod.getPath() + "/descriptor.mod");
+						recordDirectory = theMod.getPath();
+					}
+					else if (commonItems::DoesFolderExist(searchDirectory + "/" + theMod.getPath() + "/descriptor.mod"))
+					{
+						theMod.overLoad(searchDirectory + "/" + theMod.getPath() + "/descriptor.mod");
+						recordDirectory = searchDirectory + "/" + theMod.getPath();
+					}
+					if (theMod.isValid())
+					{
+						const auto trimmedFilename = trimExtension(filename);
+						possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory));
+						possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory));
+						possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory));
+						Log(LogLevel::Info) << "\t\tSalvaged potential mod named " << theMod.getName() << " with a mod file at " << searchDirectory << "/mod/" + filename
+												  << " and itself at " << recordDirectory;
+					}
+					else
+					{
+						Log(LogLevel::Warning) << "Could not salvage unnamed mod at " << searchDirectory << "/mod/" + filename << " - descriptor.mod not found!";
+					}
+				}
 			}
 			catch (std::exception& e)
 			{

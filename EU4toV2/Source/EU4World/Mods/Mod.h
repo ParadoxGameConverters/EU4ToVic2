@@ -8,6 +8,7 @@ class Mod: commonItems::parser
 {
   public:
 	explicit Mod(std::istream& theStream);
+	void overLoad(const std::string& filePath);
 
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getPath() const { return path; }
