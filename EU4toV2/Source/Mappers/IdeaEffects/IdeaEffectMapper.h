@@ -1,8 +1,7 @@
 #ifndef IDEA_EFFECT_MAPPER_H
 #define IDEA_EFFECT_MAPPER_H
-#include "Parser.h"
-#include <map>
 #include "IdeaEffects.h"
+#include "Parser.h"
 
 namespace mappers
 {
