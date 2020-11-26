@@ -59,7 +59,7 @@ TEST(Mappers_FactoryTypeTests, techsInventionsAndCountsCanBeAssigned)
 	countInput << "screw_factory = 3";
 	const mappers::FactoryStartingCounts countMapper(countInput);
 	
-	mapper.assignTechsAndCounts(techMapper.getFactoryTechMap(), inventionMapper.getFactoryInventionMap(), countMapper.getFactoryStartingCounts());
+	mapper.assignTechsAndCounts(techMapper.getTechForFactoryType("screw_factory"), inventionMapper.getInventionForFactoryType("screw_factory"), countMapper.getCountForFactoryType("screw_factory"));
 
 	ASSERT_EQ(3, mapper.getStartingCount());
 	ASSERT_EQ("screw_casting", mapper.getRequiredInvention());

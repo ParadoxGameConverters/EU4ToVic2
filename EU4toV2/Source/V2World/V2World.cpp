@@ -1386,32 +1386,18 @@ void V2::World::addUnions()
 				switch (theConfiguration.getCoreHandling())
 				{
 					case Configuration::COREHANDLES::DropNational:
-						if (!unionCores)
-							break;
-						for (const auto& core: *unionCores)
-						{
+						for (const auto& core: unionCores)
 							province.second->addCore(core);
-						}
 						break;
 					case Configuration::COREHANDLES::DropUnions:
-						if (!nationalCores)
-							break;
-						for (const auto& core: *nationalCores)
-						{
+						for (const auto& core: nationalCores)
 							province.second->addCore(core);
-						}
 						break;
 					case Configuration::COREHANDLES::DropNone:
-						if (unionCores)
-							for (const auto& core: *unionCores)
-							{
-								province.second->addCore(core);
-							}
-						if (nationalCores)
-							for (const auto& core: *nationalCores)
-							{
-								province.second->addCore(core);
-							}
+						for (const auto& core: unionCores)
+							province.second->addCore(core);
+						for (const auto& core: nationalCores)
+							province.second->addCore(core);
 						break;
 					case Configuration::COREHANDLES::DropAll:
 						break;

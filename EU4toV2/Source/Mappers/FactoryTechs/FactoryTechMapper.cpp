@@ -30,3 +30,11 @@ void mappers::FactoryTechMapper::registerKeys()
 			factoryTechMap.insert(std::make_pair(techDetails.getFactoryName(), tech));
 	});
 }
+
+std::optional<std::string> mappers::FactoryTechMapper::getTechForFactoryType(const std::string& factoryType) const
+{
+	if (const auto& typeItr = factoryTechMap.find(factoryType); typeItr != factoryTechMap.end())
+		return typeItr->second;
+	else
+		return std::nullopt;
+}

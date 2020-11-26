@@ -29,3 +29,11 @@ void mappers::FactoryInventionMapper::registerKeys()
 			factoryInventionMap.insert(std::make_pair(theEffect.getFactoryName(), invention));
 	});
 }
+
+std::optional<std::string> mappers::FactoryInventionMapper::getInventionForFactoryType(const std::string& factoryType) const
+{
+	if (const auto& typeItr = factoryInventionMap.find(factoryType); typeItr != factoryInventionMap.end())
+		return typeItr->second;
+	else
+		return std::nullopt;
+}

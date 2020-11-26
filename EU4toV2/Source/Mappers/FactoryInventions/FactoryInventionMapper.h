@@ -11,7 +11,7 @@ class FactoryInventionMapper: commonItems::parser
 	FactoryInventionMapper();
 	explicit FactoryInventionMapper(std::istream& theStream);
 
-	[[nodiscard]] const auto& getFactoryInventionMap() const { return factoryInventionMap; }
+	[[nodiscard]] std::optional<std::string> getInventionForFactoryType(const std::string& factoryType) const;
 
   private:
 	void registerKeys();

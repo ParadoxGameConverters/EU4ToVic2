@@ -632,6 +632,9 @@
     <ClCompile Include="MapperTests\GovernmentMapper\GovernmentMapperTests.cpp">
       <Filter>MapperTests\GovernmentMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\Output\outCultureGroups.cpp">
+      <Filter>ConverterFiles\Vic2World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -915,6 +918,9 @@
     </Filter>
     <Filter Include="MapperTests\GovernmentMapper">
       <UniqueIdentifier>{2a004f5f-2a5d-49ac-bf45-3212073efb72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Vic2World\Output">
+      <UniqueIdentifier>{0dd8d101-ba5a-495e-8b51-22fd43a48cdb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

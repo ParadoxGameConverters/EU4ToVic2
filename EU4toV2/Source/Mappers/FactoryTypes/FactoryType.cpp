@@ -24,17 +24,16 @@ void mappers::FactoryType::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-void mappers::FactoryType::assignTechsAndCounts(const std::map<std::string, std::string>& factoryTechMap,
-	 const std::map<std::string, std::string>& factoryInventionMap,
-	 const std::map<std::string, int>& startingCounts)
+void mappers::FactoryType::assignTechsAndCounts(const std::optional<std::string>& theRequiredTech,
+	 const std::optional<std::string>& theRequiredInvention,
+	 const std::optional<int>& theStartingCount)
 {
+	if (theRequiredTech)
+		requiredTech = *theRequiredTech;
 
-	if (const auto& factoryTechItr = factoryTechMap.find(factoryTypeName); factoryTechItr != factoryTechMap.end())
-		requiredTech = factoryTechItr->second;
+	if (theRequiredInvention)
+		requiredInvention = *theRequiredInvention;
 
-	if (const auto& factoryInventionItr = factoryInventionMap.find(factoryTypeName); factoryInventionItr != factoryInventionMap.end())
-		requiredInvention = factoryInventionItr->second;
-
-	if (const auto& startingCountItr = startingCounts.find(factoryTypeName); startingCountItr != startingCounts.end())
-		startingCount = startingCountItr->second;
+	if (theStartingCount)
+		startingCount = *theStartingCount;
 }

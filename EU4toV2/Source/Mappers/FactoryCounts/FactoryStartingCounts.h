@@ -10,7 +10,7 @@ class FactoryStartingCounts: commonItems::parser
 	FactoryStartingCounts();
 	explicit FactoryStartingCounts(std::istream& theStream);
 
-	[[nodiscard]] const auto& getFactoryStartingCounts() const { return startingCounts; }
+	[[nodiscard]] std::optional<int> getCountForFactoryType(const std::string& factoryType) const;
 
   private:
 	void registerKeywords();

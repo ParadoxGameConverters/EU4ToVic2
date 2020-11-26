@@ -18,9 +18,9 @@ class FactoryType: commonItems::parser
 	[[nodiscard]] const auto& getOutputs() const { return outputs; }
 	[[nodiscard]] const auto& getName() const { return factoryTypeName; }
 
-	void assignTechsAndCounts(const std::map<std::string, std::string>& factoryTechMap,
-		 const std::map<std::string, std::string>& factoryInventionMap,
-		 const std::map<std::string, int>& startingCounts);
+	void assignTechsAndCounts(const std::optional<std::string>& theRequiredTech,
+		 const std::optional<std::string>& theRequiredInvention,
+		 const std::optional<int>& theStartingCount);
 
   private:
 	void registerKeys();

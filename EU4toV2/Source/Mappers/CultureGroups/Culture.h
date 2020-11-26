@@ -19,7 +19,6 @@ class Culture: commonItems::parser
 	[[nodiscard]] const auto& getOriginalCulture() const { return originalCulture; }
 	[[nodiscard]] const auto& getColor() const { return color; }
 	[[nodiscard]] const auto& getPrimaryTag() const { return primaryTag; }
-	[[nodiscard]] const auto& getGraphicalCulture() const { return graphicalCulture; }
 	[[nodiscard]] auto isNeoCulture() const { return neoCulture; }
 	[[nodiscard]] auto getRadicalism() const { return radicalism; }
 
@@ -45,7 +44,6 @@ class Culture: commonItems::parser
 	void registerKeys();
 
 	std::string primaryTag;
-	std::string graphicalCulture;
 	std::vector<std::string> maleNames;
 	std::vector<std::string> femaleNames;
 	std::vector<std::string> firstNames;

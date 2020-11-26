@@ -39,9 +39,9 @@ void mappers::FactoryTypeMapper::registerKeys()
 void mappers::FactoryTypeMapper::assignFactories()
 {
 	for (auto& factoryType: factoryTypes)
-		factoryType.assignTechsAndCounts(factoryTechs->getFactoryTechMap(),
-			 factoryInventions->getFactoryInventionMap(),
-			 factoryStartingCounts->getFactoryStartingCounts());
+		factoryType.assignTechsAndCounts(factoryTechs->getTechForFactoryType(factoryType.getName()),
+			 factoryInventions->getInventionForFactoryType(factoryType.getName()),
+			 factoryStartingCounts->getCountForFactoryType(factoryType.getName()));
 }
 
 std::deque<std::shared_ptr<V2::Factory>> mappers::FactoryTypeMapper::buildFactories() const

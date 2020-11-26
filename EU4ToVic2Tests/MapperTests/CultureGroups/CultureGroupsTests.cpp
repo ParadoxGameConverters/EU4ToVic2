@@ -103,3 +103,49 @@ TEST(Mappers_CultureGroupsTests, neoculturesCanBeImportedFromEU4IntoV2)
 	const auto& v2NeoCulture = vgroup->getCultures().find("neoculture")->second;
 	ASSERT_TRUE(v2NeoCulture->isNeoCulture());
 }
+
+
+TEST(Mappers_CultureGroupsTests, v2CultureGroupsCanBeOutput)
+{
+	std::stringstream input;
+	input << "someculturegroup = {\n";
+	input << "\tleader = european\n";
+	input << "\tis_overseas = yes\n";
+	input << "\tunit = MiddleEasternGC\n";
+	input << "\tunion = TAG\n";
+	input << "\tsomeculture = {\n";
+	input << "\t\tprimary = TAG\n";
+	input << "\t\tfirst_names = { Bob Jon }\n";
+	input << "\t\tlast_names = { Bobby Johnny }\n";
+	input << "\t\tradicalism = 4\n";
+	input << "\t\tcolor = { 1 2 3 }\n";
+	input << "\t}\n";
+	input << "}\n";
+	mappers::CultureGroups groups(input);
+
+	std::stringstream output;
+	output << "someculturegroup = {\n";
+	output << "\tleader = european\n";
+	output << "\tis_overseas = yes\n";
+	output << "\tunit = MiddleEasternGC\n";
+	output << "\t\n";
+	output << "\tsomeculture = {\n";
+	output << "\t\tcolor = { 1 2 3 }\n";
+	output << "\t\tradicalism = 4\n";
+	output << "\t\tprimary = TAG\n";
+	output << "\t\t\n";
+	output << "\t\tfirst_names = { Bob Jon }\n";
+	output << "\t\t\n";
+	output << "\t\tlast_names = { Bobby Johnny }\n";
+	output << "\t\t\n";
+	output << "\t}\n";
+	output << "\t\n";
+	output << "\tunion = TAG\n";
+	output << "\t\n";
+	output << "}\n\n";
+
+	std::stringstream actual;
+	actual << groups;
+
+	ASSERT_EQ(output.str(), actual.str());
+}

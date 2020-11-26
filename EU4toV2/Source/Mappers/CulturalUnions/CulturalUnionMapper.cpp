@@ -25,11 +25,11 @@ void mappers::CulturalUnionMapper::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-std::optional<std::vector<std::string>> mappers::CulturalUnionMapper::getCoresForCulture(const std::string& culture) const
+std::vector<std::string> mappers::CulturalUnionMapper::getCoresForCulture(const std::string& culture) const
 {
 
 	if (const auto& mapping = unionMap.find(culture); mapping != unionMap.end())
 		return mapping->second;
 	else
-		return std::nullopt;
+		return std::vector<std::string>();
 }

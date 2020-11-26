@@ -285,6 +285,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Localisation\Localisation.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\V2World\Output\outCultureGroups.cpp" />
     <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />

@@ -25,14 +25,10 @@ class CultureGroup: commonItems::parser
 	void registerKeys();
 
 	std::string name;
-	std::string graphicalCulture;
 	std::string unit;
 	std::string leader;
 	std::string isOverseas;
 	std::string culturalUnionTag;
-	std::vector<std::string> maleNames;
-	std::vector<std::string> femaleNames;
-	std::vector<std::string> dynastyNames;
 	std::map<std::string, std::shared_ptr<Culture>> cultures;
 };
 } // namespace mappers

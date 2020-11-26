@@ -10,7 +10,7 @@ class FactoryTechMapper: commonItems::parser
 	FactoryTechMapper();
 	explicit FactoryTechMapper(std::istream& theStream);
 
-	[[nodiscard]] const auto& getFactoryTechMap() const { return factoryTechMap; }
+	[[nodiscard]] std::optional<std::string> getTechForFactoryType(const std::string& factoryType) const;
 
   private:
 	void registerKeys();

@@ -23,3 +23,11 @@ void mappers::FactoryStartingCounts::registerKeywords()
 		startingCounts.insert(std::make_pair(factoryName, commonItems::singleInt(theStream).getInt()));
 	});
 }
+
+std::optional<int> mappers::FactoryStartingCounts::getCountForFactoryType(const std::string& factoryType) const
+{
+	if (const auto& typeItr = startingCounts.find(factoryType); typeItr != startingCounts.end())
+		return typeItr->second;
+	else
+		return std::nullopt;
+}

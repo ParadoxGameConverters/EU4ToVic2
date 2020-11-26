@@ -54,14 +54,14 @@ std::ostream& mappers::operator<<(std::ostream& output, const Culture& culture)
 	{
 		output << firstName << " ";
 	}
-	output << " }\n";
+	output << "}\n";
 	output << "\t\t\n";
 	output << "\t\tlast_names = { ";
 	for (const auto& lastName: culture.lastNames)
 	{
 		output << lastName << " ";
 	}
-	output << " }\n";
+	output << "}\n";
 	output << "\t\t\n";
 	return output;
 }

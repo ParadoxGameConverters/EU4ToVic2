@@ -10,7 +10,7 @@ class CulturalUnionMapper: commonItems::parser
 	CulturalUnionMapper(const std::string& filename);
 	explicit CulturalUnionMapper(std::istream& theStream);
 
-	[[nodiscard]] std::optional<std::vector<std::string>> getCoresForCulture(const std::string& culture) const;
+	[[nodiscard]] std::vector<std::string> getCoresForCulture(const std::string& culture) const;
 
   private:
 	void registerKeys();
