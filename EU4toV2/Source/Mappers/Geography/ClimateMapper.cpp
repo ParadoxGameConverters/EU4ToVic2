@@ -1,7 +1,7 @@
 #include "ClimateMapper.h"
-#include "ParserHelpers.h"
-#include "../../Configuration.h"
+#include "Configuration.h"
 #include "Log.h"
+#include "ParserHelpers.h"
 
 mappers::ClimateMapper::ClimateMapper()
 {
@@ -20,30 +20,15 @@ mappers::ClimateMapper::ClimateMapper(std::istream& theStream)
 
 void mappers::ClimateMapper::registerKeys()
 {
-	registerRegex("mild_climate|temperate_climate|harsh_climate|inhospitable_climate", [this](const std::string& climate, std::istream& theStream)
+	registerRegex(commonItems::catchallRegex, [this](const std::string& climate, std::istream& theStream) {
+		if (seenSoFar.contains(climate))
 		{
-			if (!mild_climate && climate == "mild_climate") {
-				commonItems::ignoreItem(climate, theStream);
-				mild_climate = true;
-				return;
-			}
-			if (!temperate_climate && climate == "temperate_climate") {
-				commonItems::ignoreItem(climate, theStream);
-				temperate_climate = true;
-				return;
-			}
-			if (!harsh_climate && climate == "harsh_climate") {
-				commonItems::ignoreItem(climate, theStream);
-				harsh_climate = true;
-				return;
-			}
-			if (!inhospitable_climate && climate == "inhospitable_climate") {
-				commonItems::ignoreItem(climate, theStream);
-				inhospitable_climate = true;
-				return;
-			}
-			const commonItems::intList provList(theStream);
-			climateMap.insert(std::make_pair(climate, provList.getInts()));
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+			climateMap.insert(std::make_pair(climate, commonItems::intList(theStream).getInts()));
+		}
+		else
+		{
+			commonItems::ignoreItem(climate, theStream);
+			seenSoFar.insert(climate);
+		}
+	});
 }

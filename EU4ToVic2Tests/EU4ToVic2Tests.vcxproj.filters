@@ -608,6 +608,18 @@
     <ClCompile Include="MapperTests\FlagColors\FlagColorTests.cpp">
       <Filter>MapperTests\FlagColors</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Geography\ClimateMapper.cpp">
+      <Filter>ConverterFiles\Mappers\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Geography\Continents.cpp">
+      <Filter>ConverterFiles\Mappers\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Geography\TerrainDataMapper.cpp">
+      <Filter>ConverterFiles\Mappers\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\Geography\ClimateMapperTests.cpp">
+      <Filter>MapperTests\Geography</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -879,6 +891,12 @@
     </Filter>
     <Filter Include="MapperTests\FlagColors">
       <UniqueIdentifier>{fb4bbdb4-6f0e-459c-9653-106bc375934e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\Geography">
+      <UniqueIdentifier>{380a58b3-badd-4a85-bb59-f060f6bb79f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\Geography">
+      <UniqueIdentifier>{428d42c8-0842-4255-8ce0-7ce18669078c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
