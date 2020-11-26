@@ -252,6 +252,8 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryInventions\FactoryInventionDetails.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryInventions\FactoryInventionEffect.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryInventions\FactoryInventionMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryTechs\FactoryTechDetails.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryTechs\FactoryTechMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffects.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\LeaderTraits\LeaderTrait.cpp" />
@@ -347,6 +349,8 @@
     <ClCompile Include="MapperTests\FactoryInventions\FactoryInventionDetailsTests.cpp" />
     <ClCompile Include="MapperTests\FactoryInventions\FactoryInventionEffectTests.cpp" />
     <ClCompile Include="MapperTests\FactoryInventions\FactoryInventionMapperTests.cpp" />
+    <ClCompile Include="MapperTests\FactoryTechs\FactoryTechDetailsTests.cpp" />
+    <ClCompile Include="MapperTests\FactoryTechs\FactoryTechMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
