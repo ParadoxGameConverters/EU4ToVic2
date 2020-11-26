@@ -363,6 +363,8 @@
     <ClCompile Include="MapperTests\FactoryTypes\FactoryTypeTests.cpp" />
     <ClCompile Include="MapperTests\FlagColors\FlagColorTests.cpp" />
     <ClCompile Include="MapperTests\Geography\ClimateMapperTests.cpp" />
+    <ClCompile Include="MapperTests\Geography\ContinentsTests.cpp" />
+    <ClCompile Include="MapperTests\Geography\TerrainDataMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />

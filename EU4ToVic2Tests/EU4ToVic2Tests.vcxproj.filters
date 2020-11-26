@@ -620,6 +620,12 @@
     <ClCompile Include="MapperTests\Geography\ClimateMapperTests.cpp">
       <Filter>MapperTests\Geography</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\Geography\ContinentsTests.cpp">
+      <Filter>MapperTests\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\Geography\TerrainDataMapperTests.cpp">
+      <Filter>MapperTests\Geography</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
