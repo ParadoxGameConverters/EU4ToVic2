@@ -248,6 +248,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapping.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryCounts\FactoryStartingCounts.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffects.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\LeaderTraits\LeaderTrait.cpp" />
@@ -339,6 +340,7 @@
     <ClCompile Include="MapperTests\CultureMapper\CultureMappingRuleTests.cpp" />
     <ClCompile Include="MapperTests\DeadDefinitionMapper\DeadDefinitionMapperTests.cpp" />
     <ClCompile Include="MapperTests\DeadDefinitionMapper\DeadDefinitionMappingTests.cpp" />
+    <ClCompile Include="MapperTests\FactoryCounts\FactoryCountsTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />

@@ -548,6 +548,12 @@
     <ClCompile Include="MapperTests\CultureMapper\CultureMappingRuleTests.cpp">
       <Filter>MapperTests\CultureMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryCounts\FactoryStartingCounts.cpp">
+      <Filter>ConverterFiles\Mappers\FactoryCounts</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\FactoryCounts\FactoryCountsTests.cpp">
+      <Filter>MapperTests\FactoryCounts</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -789,6 +795,12 @@
     </Filter>
     <Filter Include="MapperTests\CultureMapper">
       <UniqueIdentifier>{84de5c8f-757a-4fa8-a60c-8691b0cb12d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\FactoryCounts">
+      <UniqueIdentifier>{f5182cb0-c6be-415c-b001-080f95b7a757}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\FactoryCounts">
+      <UniqueIdentifier>{b766dacb-1603-464b-b3a6-5633f7f72334}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
