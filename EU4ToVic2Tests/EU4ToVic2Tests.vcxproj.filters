@@ -626,6 +626,12 @@
     <ClCompile Include="MapperTests\Geography\TerrainDataMapperTests.cpp">
       <Filter>MapperTests\Geography</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\GovernmentMapper\GovernmentMapper.cpp">
+      <Filter>ConverterFiles\Mappers\GovernmentMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\GovernmentMapper\GovernmentMapperTests.cpp">
+      <Filter>MapperTests\GovernmentMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -903,6 +909,12 @@
     </Filter>
     <Filter Include="ConverterFiles\Mappers\Geography">
       <UniqueIdentifier>{428d42c8-0842-4255-8ce0-7ce18669078c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\GovernmentMapper">
+      <UniqueIdentifier>{a4003e1a-f221-4092-94f6-d8801e49d1fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\GovernmentMapper">
+      <UniqueIdentifier>{2a004f5f-2a5d-49ac-bf45-3212073efb72}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

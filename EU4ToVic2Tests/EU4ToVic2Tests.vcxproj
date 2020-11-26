@@ -261,6 +261,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\Geography\ClimateMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Geography\Continents.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Geography\TerrainDataMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\GovernmentMapper\GovernmentMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffects.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\LeaderTraits\LeaderTrait.cpp" />
@@ -365,6 +366,7 @@
     <ClCompile Include="MapperTests\Geography\ClimateMapperTests.cpp" />
     <ClCompile Include="MapperTests\Geography\ContinentsTests.cpp" />
     <ClCompile Include="MapperTests\Geography\TerrainDataMapperTests.cpp" />
+    <ClCompile Include="MapperTests\GovernmentMapper\GovernmentMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
