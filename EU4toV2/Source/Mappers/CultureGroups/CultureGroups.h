@@ -1,41 +1,36 @@
 #ifndef CULTURE_GROUPS_H
 #define CULTURE_GROUPS_H
-
 #include "Parser.h"
-#include "CultureGroup.h"
-#include <map>
-#include <optional>
 
-namespace EU4 {
-	class World;
+namespace EU4
+{
+class Regions;
 }
 
 namespace mappers
 {
-	class CultureMapper;
+class CultureGroup;
+class CultureMapper;
+class CultureGroups: commonItems::parser
+{
+  public:
+	CultureGroups() = default;
+	explicit CultureGroups(std::istream& theStream);
 
-	class CultureGroups: commonItems::parser
-	{
-	public:
-		CultureGroups() = default;
-		explicit CultureGroups(std::istream& theStream);
+	void initForEU4();
+	void initForV2();
+	void importNeoCultures(const EU4::Regions& regions, const std::shared_ptr<CultureGroups>& eu4CultureGroupsMapper, const CultureMapper& cultureMapper) const;
 
-		void initForEU4();
-		void initForV2();
-		void importNeoCultures(const EU4::World& sourceWorld, const CultureMapper& cultureMapper);
-		
-		[[nodiscard]] std::optional<CultureGroup> getGroupForCulture(const std::string& cultureName) const;
-		[[nodiscard]] std::map<std::string, Culture> getCulturesInGroup(const std::string& groupName) const;
-		[[nodiscard]] const auto& getCultureGroupsMap() const { return cultureGroupsMap; }
-		CultureGroup* retrieveCultureGroup(const std::string& cultureName);
+	[[nodiscard]] std::shared_ptr<CultureGroup> getGroupForCulture(const std::string& cultureName) const;
+	[[nodiscard]] const auto& getCultureGroupsMap() const { return cultureGroupsMap; }
 
-		friend std::ostream& operator<<(std::ostream& output, const CultureGroups& cultureGroupsMapper);
+	friend std::ostream& operator<<(std::ostream& output, const CultureGroups& cultureGroupsMapper);
 
-	private:
-		void registerKeys();
-		
-		std::map<std::string, CultureGroup> cultureGroupsMap;
-	};
-}
+  private:
+	void registerKeys();
+
+	std::map<std::string, std::shared_ptr<CultureGroup>> cultureGroupsMap;
+};
+} // namespace mappers
 
 #endif // CULTURE_GROUPS_H

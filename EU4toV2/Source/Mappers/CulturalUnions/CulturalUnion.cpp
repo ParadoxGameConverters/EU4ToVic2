@@ -3,19 +3,18 @@
 
 mappers::CulturalUnion::CulturalUnion(std::istream& theStream)
 {
-	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString cultureString(theStream);
-			culture = cultureString.getString();
-		});
-	registerKeyword("tag", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString tagString(theStream);
-			tags.push_back(tagString.getString());
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
-	theUnion = std::make_pair(culture, tags);
+}
+
+void mappers::CulturalUnion::registerKeys()
+{
+	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream) {
+		culture = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("tag", [this](const std::string& unused, std::istream& theStream) {
+		tags.emplace_back(commonItems::singleString(theStream).getString());
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

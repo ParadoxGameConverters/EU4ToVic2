@@ -1,5 +1,5 @@
 #include "FlagColorMapper.h"
-#include "../../Configuration.h"
+#include "Configuration.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 
@@ -22,14 +22,15 @@ void mappers::FlagColorMapper::registerKeys()
 {
 	registerKeyword("flag_color", [this](const std::string& unused, std::istream& theStream) {
 		const auto theColor = commonItems::Color::Factory{}.getColor(theStream);
-		flagColorMapping.push_back(theColor);
+		flagColorMapping.emplace_back(theColor);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 std::optional<commonItems::Color> mappers::FlagColorMapper::getFlagColorByIndex(int index) const
 {
-	if (flagColorMapping.empty() || static_cast<long>(index) >= static_cast<long>(flagColorMapping.size()))
+	if (flagColorMapping.empty() || static_cast<size_t>(index) >= flagColorMapping.size() - 1)
 		return std::nullopt;
-	return flagColorMapping[index];
+	else
+		return flagColorMapping.at(index);
 }

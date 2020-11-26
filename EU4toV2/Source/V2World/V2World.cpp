@@ -5,6 +5,7 @@
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../Mappers/VersionParser/VersionParser.h"
 #include "CommonFunctions.h"
+#include "CultureGroups/CultureGroup.h"
 #include "Flags/Flags.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -26,9 +27,9 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "45 %";
 
 	LOG(LogLevel::Info) << "Parsing cultural union mappings.";
-	culturalUnionMapper.loadFile("configurables/unions.txt");
+	culturalUnionMapper = std::make_unique<mappers::CulturalUnionMapper>("configurables/unions.txt");
 	LOG(LogLevel::Info) << "Parsing nationalities mappings.";
-	culturalNationalitiesMapper.loadFile("configurables/nationals.txt");
+	culturalNationalitiesMapper = std::make_unique<mappers::CulturalUnionMapper>("configurables/nationals.txt");
 	religionMapper.scrapeCustomReligions();
 
 	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
@@ -48,7 +49,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "48 %";
 
 	LOG(LogLevel::Info) << "-> Loading Country Mapping Rules";
-	countryMapper.createMappings(sourceWorld, potentialCountries, provinceMapper);
+	countryMapper.createMappings(sourceWorld.getCultureGroupsMapper(), sourceWorld.getCountries(), provinceMapper);
 	Log(LogLevel::Progress) << "49 %";
 
 	LOG(LogLevel::Info) << "-> Loading Culture Mapping Rules";
@@ -57,7 +58,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "50 %";
 
 	LOG(LogLevel::Info) << "-> Pouring From Hollow Into Empty";
-	cultureGroupsMapper.importNeoCultures(sourceWorld, cultureMapper);
+	cultureGroupsMapper.importNeoCultures(sourceWorld.getRegions(), sourceWorld.getCultureGroupsMapper(), cultureMapper);
 	Log(LogLevel::Progress) << "51 %";
 
 	LOG(LogLevel::Info) << "-> Converting Countries";
@@ -349,7 +350,7 @@ void V2::World::addAcceptedCultures(const EU4::Regions& eu4Regions)
 
 		const auto& primaryCulture = country.second->getPrimaryCulture();
 		auto acceptedCultures = country.second->getAcceptedCultures();
-		auto cultureGroup = cultureGroupsMapper.getGroupForCulture(primaryCulture);
+		const auto& cultureGroup = cultureGroupsMapper.getGroupForCulture(primaryCulture);
 		if (!cultureGroup)
 			return;
 		auto cultureGroupCultures = cultureGroup->getCultures();
@@ -988,7 +989,8 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 			 slaveCultureMapper,
 			 continentsMapper,
 			 religionMapper,
-			 countryMapper);
+			 countryMapper,
+			 provinceMapper);
 	}
 }
 
@@ -1379,37 +1381,23 @@ void V2::World::addUnions()
 			auto cultures = province.second->getCulturesOverThreshold(0.5);
 			for (const auto& culture: cultures)
 			{
-				auto unionCores = culturalUnionMapper.getCoresForCulture(culture);
-				auto nationalCores = culturalNationalitiesMapper.getCoresForCulture(culture);
+				auto unionCores = culturalUnionMapper->getCoresForCulture(culture);
+				auto nationalCores = culturalNationalitiesMapper->getCoresForCulture(culture);
 				switch (theConfiguration.getCoreHandling())
 				{
 					case Configuration::COREHANDLES::DropNational:
-						if (!unionCores)
-							break;
-						for (const auto& core: *unionCores)
-						{
+						for (const auto& core: unionCores)
 							province.second->addCore(core);
-						}
 						break;
 					case Configuration::COREHANDLES::DropUnions:
-						if (!nationalCores)
-							break;
-						for (const auto& core: *nationalCores)
-						{
+						for (const auto& core: nationalCores)
 							province.second->addCore(core);
-						}
 						break;
 					case Configuration::COREHANDLES::DropNone:
-						if (unionCores)
-							for (const auto& core: *unionCores)
-							{
-								province.second->addCore(core);
-							}
-						if (nationalCores)
-							for (const auto& core: *nationalCores)
-							{
-								province.second->addCore(core);
-							}
+						for (const auto& core: unionCores)
+							province.second->addCore(core);
+						for (const auto& core: nationalCores)
+							province.second->addCore(core);
 						break;
 					case Configuration::COREHANDLES::DropAll:
 						break;

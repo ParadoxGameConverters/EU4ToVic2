@@ -19,20 +19,22 @@ mappers::GovernmentMapper::GovernmentMapper(std::istream& theStream)
 
 void mappers::GovernmentMapper::registerKeys()
 {
-	registerRegex("[a-z_]+", [this](const std::string& sourceGov, std::istream& theStream)
-		{
-			commonItems::stringList govList(theStream);
-			for (auto destGov : govList.getStrings()) {
-				governmentMap.insert(make_pair(destGov, sourceGov));
-			}
-		});
-	registerRegex("[a-z0-9\\_]+", commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, [this](const std::string& sourceGov, std::istream& theStream) {
+		for (const auto& destGov: commonItems::stringList(theStream).getStrings())
+			governmentMap.insert(make_pair(destGov, sourceGov));
+	});
 }
 
 std::optional<std::string> mappers::GovernmentMapper::matchGovernment(const std::string& sourceGovernment) const
 {
-	const auto& mapping = governmentMap.find(sourceGovernment);
-	if (mapping != governmentMap.end()) return mapping->second;
-	LOG(LogLevel::Warning) << "No government mapping defined for " << sourceGovernment;
-	return std::nullopt;
+
+	if (const auto& mapping = governmentMap.find(sourceGovernment); mapping != governmentMap.end())
+	{
+		return mapping->second;
+	}
+	else
+	{
+		LOG(LogLevel::Warning) << "No government mapping defined for " << sourceGovernment << "!";
+		return std::nullopt;
+	}
 }

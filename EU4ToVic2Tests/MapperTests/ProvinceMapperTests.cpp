@@ -5,25 +5,27 @@
 
 TEST(Mappers_ProvinceMapperTests, emptyMappingsDefaultToEmpty)
 {
+	std::stringstream colonialInput;
 	std::stringstream input;
 	input << "0.0.0.0 = {\n";
 	input << "}";
 
 	const Configuration testConfiguration;
-	const mappers::ProvinceMapper theMapper(input, testConfiguration);
+	const mappers::ProvinceMapper theMapper(input, colonialInput, testConfiguration);
 
 	ASSERT_EQ(theMapper.getVic2ProvinceNumbers(1).size(), 0);
 }
 
 TEST(Mappers_ProvinceMapperTests, canLookupVic2Provinces)
 {
+	std::stringstream colonialInput;
 	std::stringstream input;
 	input << "0.0.0.0 = {\n";
 	input << "	link = { eu4 = 2 eu4 = 1 v2 = 2 v2 = 1 }\n";
 	input << "}";
 
 	const Configuration testConfiguration;
-	const mappers::ProvinceMapper theMapper(input, testConfiguration);
+	const mappers::ProvinceMapper theMapper(input, colonialInput, testConfiguration);
 
 	ASSERT_EQ(theMapper.getVic2ProvinceNumbers(1).size(), 2);
 	ASSERT_EQ(theMapper.getVic2ProvinceNumbers(1)[0], 2);
@@ -35,13 +37,14 @@ TEST(Mappers_ProvinceMapperTests, canLookupVic2Provinces)
 
 TEST(Mappers_ProvinceMapperTests, canLookupEU4Provinces)
 {
+	std::stringstream colonialInput;
 	std::stringstream input;
 	input << "0.0.0.0 = {\n";
 	input << "	link = { eu4 = 2 eu4 = 1 v2 = 2 v2 = 1 }\n";
 	input << "}";
 
 	const Configuration testConfiguration;
-	const mappers::ProvinceMapper theMapper(input, testConfiguration);
+	const mappers::ProvinceMapper theMapper(input, colonialInput, testConfiguration);
 
 	ASSERT_EQ(theMapper.getEU4ProvinceNumbers(1).size(), 2);
 	ASSERT_EQ(theMapper.getEU4ProvinceNumbers(1)[0], 2);
@@ -53,6 +56,7 @@ TEST(Mappers_ProvinceMapperTests, canLookupEU4Provinces)
 
 TEST(Mappers_ProvinceMapperTests, properVesionIsUsed)
 {
+	std::stringstream colonialInput;
 	std::stringstream input;
 	input << "0.0.0.0 = {\n";
 	input << "	link = { eu4 = 2 eu4 = 1 v2 = 2 v2 = 1 }\n";
@@ -67,7 +71,7 @@ TEST(Mappers_ProvinceMapperTests, properVesionIsUsed)
 	Configuration testConfiguration;
 	const GameVersion testVersion("1.1.0.0");
 	testConfiguration.setEU4Version(testVersion);
-	const mappers::ProvinceMapper theMapper(input, testConfiguration);
+	const mappers::ProvinceMapper theMapper(input, colonialInput, testConfiguration);
 
 	ASSERT_EQ(theMapper.getVic2ProvinceNumbers(1).size(), 2);
 	ASSERT_EQ(theMapper.getVic2ProvinceNumbers(1)[0], 3);

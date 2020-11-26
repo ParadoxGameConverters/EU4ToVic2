@@ -91,7 +91,7 @@ class World: commonItems::parser
 	Religions theReligions;
 	mappers::UnitTypeMapper unitTypeMapper;
 	std::unique_ptr<mappers::Buildings> buildingTypes;
-	mappers::CultureGroups cultureGroupsMapper;
+	std::shared_ptr<mappers::CultureGroups> cultureGroupsMapper;
 	mappers::SuperGroupMapper superGroupMapper;
 
 	// export data for hoi4

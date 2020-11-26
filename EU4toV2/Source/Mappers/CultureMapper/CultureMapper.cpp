@@ -2,6 +2,7 @@
 #include "CultureMappingRule.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "Regions/Regions.h"
 
 mappers::CultureMapper::CultureMapper(std::istream& theStream)
 {
@@ -21,9 +22,9 @@ void mappers::CultureMapper::registerKeys()
 {
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
 		const CultureMappingRule rule(theStream);
-		cultureMapRules.push_back(rule);
+		cultureMapRules.emplace_back(rule);
 	});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 std::optional<std::string> mappers::CultureMapper::cultureMatch(const EU4::Regions& eu4Regions,

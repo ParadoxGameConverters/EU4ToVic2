@@ -1,31 +1,30 @@
 #include "IdeaEffects/IdeaEffects.h"
 #include "gtest/gtest.h"
-#include <sstream>
 
 TEST(Mappers_IdeaEffectsTests, primitivesDefaultToNullopt)
 {
 	std::stringstream input;
 	mappers::IdeaEffects ideaEffects(input);
 
-	ASSERT_FALSE(ideaEffects.getArmy());
-	ASSERT_FALSE(ideaEffects.getNavy());
-	ASSERT_FALSE(ideaEffects.getCommerce());
-	ASSERT_FALSE(ideaEffects.getCulture());
-	ASSERT_FALSE(ideaEffects.getIndustry());
-	ASSERT_FALSE(ideaEffects.getLiberal());
-	ASSERT_FALSE(ideaEffects.getReactionary());
-	ASSERT_FALSE(ideaEffects.getOrder());
-	ASSERT_FALSE(ideaEffects.getLiberty());
-	ASSERT_FALSE(ideaEffects.getEquality());
-	ASSERT_FALSE(ideaEffects.getLiteracy());
-	ASSERT_FALSE(ideaEffects.getSlavery());
-	ASSERT_FALSE(ideaEffects.getUpper_house_composition());
-	ASSERT_FALSE(ideaEffects.getVote_franchise());
-	ASSERT_FALSE(ideaEffects.getVoting_system());
-	ASSERT_FALSE(ideaEffects.getPublic_meetings());
-	ASSERT_FALSE(ideaEffects.getPress_rights());
-	ASSERT_FALSE(ideaEffects.getTrade_unions());
-	ASSERT_FALSE(ideaEffects.getPolitical_parties());
+	ASSERT_EQ(std::nullopt, ideaEffects.getArmy());
+	ASSERT_EQ(std::nullopt, ideaEffects.getNavy());
+	ASSERT_EQ(std::nullopt, ideaEffects.getCommerce());
+	ASSERT_EQ(std::nullopt, ideaEffects.getCulture());
+	ASSERT_EQ(std::nullopt, ideaEffects.getIndustry());
+	ASSERT_EQ(std::nullopt, ideaEffects.getLiberal());
+	ASSERT_EQ(std::nullopt, ideaEffects.getReactionary());
+	ASSERT_EQ(std::nullopt, ideaEffects.getOrder());
+	ASSERT_EQ(std::nullopt, ideaEffects.getLiberty());
+	ASSERT_EQ(std::nullopt, ideaEffects.getEquality());
+	ASSERT_EQ(std::nullopt, ideaEffects.getLiteracy());
+	ASSERT_EQ(std::nullopt, ideaEffects.getSlavery());
+	ASSERT_EQ(std::nullopt, ideaEffects.getUpper_house_composition());
+	ASSERT_EQ(std::nullopt, ideaEffects.getVote_franchise());
+	ASSERT_EQ(std::nullopt, ideaEffects.getVoting_system());
+	ASSERT_EQ(std::nullopt, ideaEffects.getPublic_meetings());
+	ASSERT_EQ(std::nullopt, ideaEffects.getPress_rights());
+	ASSERT_EQ(std::nullopt, ideaEffects.getTrade_unions());
+	ASSERT_EQ(std::nullopt, ideaEffects.getPolitical_parties());
 }
 
 TEST(Mappers_IdeaEffectsTests, primitivesCanBeSet)

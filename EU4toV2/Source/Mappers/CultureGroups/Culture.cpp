@@ -4,45 +4,38 @@
 
 mappers::Culture::Culture(std::istream& theStream)
 {
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
+
+void mappers::Culture::registerKeys()
+{
 	registerKeyword("primary", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString primaryStr(theStream);
-		primaryTag = primaryStr.getString();
-	});
-	registerKeyword("graphical_culture", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString graphicStr(theStream);
-		graphicalCulture = graphicStr.getString();
+		primaryTag = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("male_names", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::stringList names(theStream);
-		maleNames = names.getStrings();
+		maleNames = commonItems::stringList(theStream).getStrings();
 	});
 	registerKeyword("female_names", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::stringList names(theStream);
-		femaleNames = names.getStrings();
+		femaleNames = commonItems::stringList(theStream).getStrings();
 	});
 	registerKeyword("first_names", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::stringList names(theStream);
-		firstNames = names.getStrings();
+		firstNames = commonItems::stringList(theStream).getStrings();
 	});
 	registerKeyword("last_names", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::stringList names(theStream);
-		lastNames = names.getStrings();
+		lastNames = commonItems::stringList(theStream).getStrings();
 	});
 	registerKeyword("dynasty_names", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::stringList names(theStream);
-		dynastyNames = names.getStrings();
+		dynastyNames = commonItems::stringList(theStream).getStrings();
 	});
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
 		color = commonItems::Color::Factory{}.getColor(theStream);
 	});
 	registerKeyword("radicalism", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleInt radicalInt(theStream);
-		radicalism = radicalInt.getInt();
+		radicalism = commonItems::singleInt(theStream).getInt();
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
-
-	parseStream(theStream);
-	clearRegisteredKeywords();
 }
 
 void mappers::Culture::transmogrify()
@@ -50,13 +43,13 @@ void mappers::Culture::transmogrify()
 	firstNames = maleNames;
 	lastNames = dynastyNames;
 
-	std::random_device rd;
-	std::mt19937 eng(rd());
-	std::uniform_int_distribution<> distr(0, 255);
+	std::random_device theRandomDevice;
+	std::mt19937 theEngine(theRandomDevice());
+	std::uniform_int_distribution<> theDistribution(0, 255);
 
-	const auto r = distr(eng);
-	const auto g = distr(eng);
-	const auto b = distr(eng);
+	const auto r = theDistribution(theEngine);
+	const auto g = theDistribution(theEngine);
+	const auto b = theDistribution(theEngine);
 	color = commonItems::Color(std::array<int, 3>{r, g, b});
 	primaryTag.clear();
 }

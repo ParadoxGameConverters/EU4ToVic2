@@ -111,7 +111,8 @@ class Province
 		 const mappers::CultureMapper& slaveCultureMapper,
 		 const mappers::Continents& continentsMapper,
 		 const mappers::ReligionMapper& religionMapper,
-		 const mappers::CountryMappings& countryMapper);
+		 const mappers::CountryMappings& countryMapper,
+		 const mappers::ProvinceMapper& provinceMapper);
 	void doCreatePops(double popWeightRatio, Country* _owner, CIV_ALGORITHM popConversionAlgorithm, const mappers::ProvinceMapper& provinceMapper);
 
 	friend std::ostream& operator<<(std::ostream& output, const Province& province);

@@ -14,7 +14,7 @@ namespace V2
 		
 		void increaseLevel() { level++; }
 
-		[[nodiscard]] auto requiresCoastal() const { return factoryType.getCoastal(); }
+		[[nodiscard]] auto requiresCoastal() const { return factoryType.isCoastal(); }
 		[[nodiscard]] const auto& getRequiredTech() const { return factoryType.getRequiredTech(); }
 		[[nodiscard]] const auto& getRequiredInvention() const { return factoryType.getRequiredInvention(); }
 		[[nodiscard]] const auto& getTypeName() const { return factoryType.getName(); }

@@ -12,6 +12,7 @@ void mappers::TitleMapping::registerKeys()
 {
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
 		name = commonItems::singleString(theStream).getString();
+		transform(name.begin(), name.end(), name.begin(), ::tolower);
 	});
 	registerKeyword("title", [this](const std::string& unused, std::istream& theStream) {
 		title = commonItems::singleString(theStream).getString();

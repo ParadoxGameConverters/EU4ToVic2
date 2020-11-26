@@ -19,7 +19,7 @@ class ProvinceMapper: commonItems::parser
 {
   public:
 	ProvinceMapper();
-	explicit ProvinceMapper(std::istream& theStream, const Configuration& testConfiguration);
+	explicit ProvinceMapper(std::istream& mainStream, std::istream& colonialStream, const Configuration& testConfiguration);
 
 	[[nodiscard]] std::vector<int> getVic2ProvinceNumbers(int eu4ProvinceNumber) const;
 	[[nodiscard]] std::vector<int> getEU4ProvinceNumbers(int vic2ProvinceNumber) const;
@@ -35,7 +35,7 @@ class ProvinceMapper: commonItems::parser
 	std::map<int, std::vector<int>> vic2ToEU4ProvinceMap;
 	std::map<int, std::vector<int>> eu4ToVic2ProvinceMap;
 	std::set<int> validProvinces;
-	EU4::ColonialRegions colonialRegionsMapper;
+	std::unique_ptr<EU4::ColonialRegions> colonialRegionsMapper;
 	std::map<GameVersion, ProvinceMappingsVersion> mappingVersions;
 };
 } // namespace mappers

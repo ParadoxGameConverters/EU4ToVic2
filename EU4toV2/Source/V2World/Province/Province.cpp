@@ -105,7 +105,8 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 	 const mappers::CultureMapper& slaveCultureMapper,
 	 const mappers::Continents& continentsMapper,
 	 const mappers::ReligionMapper& religionMapper,
-	 const mappers::CountryMappings& countryMapper)
+	 const mappers::CountryMappings& countryMapper,
+	 const mappers::ProvinceMapper& provinceMapper)
 {
 	// Drop vanilla cores
 	details.cores.clear();
@@ -203,14 +204,26 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 	determineColonial(); // Sanity check at most, we would probably be ok without it.
 
 	// onto development and weight data
+
+	// Extreme rebalancing note:
+	// When mapping M-to-N, generally speaking, we're summing up all incoming development, and distributing
+	// it across target provinces. This way we maintain total investment and aren't wasting dev.
+	//
+	// Devpush shaping note:
+	// For devpush we're averaging our investment factor from the incoming provinces, without regard to other
+	// provinces around us.
+	std::set<int> coTargets; // These would be all the target provinces in the same mapping link.
 	for (const auto& oldProvince: provinceSources)
 	{
+		const auto& targets = provinceMapper.getVic2ProvinceNumbers(oldProvince->getNum());
+		coTargets.insert(targets.begin(), targets.end());
 		investmentFactor += oldProvince->getInvestmentFactor() / 100.0;
 		provinceWeight += oldProvince->getProvinceWeight();
 	}
 	investmentFactor /= static_cast<double>(provinceSources.size());
 	const auto totalSourceDevelopmentWeight = provinceWeight;
-	provinceWeight /= static_cast<double>(provinceSources.size());
+
+	provinceWeight /= static_cast<double>(coTargets.size()); // dividing by target provinces.
 
 	// And finally, demographics
 	for (const auto& oldProvince: provinceSources)

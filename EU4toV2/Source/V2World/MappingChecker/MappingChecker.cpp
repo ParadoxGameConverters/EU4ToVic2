@@ -1,14 +1,16 @@
 #include "MappingChecker.h"
-#include "Log.h"
+#include "../../EU4World/World.h"
+#include "../../Mappers/CultureMapper/CultureMapper.h"
 #include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"
-#include "../../Mappers/CultureMapper/CultureMapper.h"
-#include "../../EU4World/World.h"
+#include "CultureGroups/Culture.h"
+#include "CultureGroups/CultureGroup.h"
+#include "Log.h"
 
 void V2::MappingChecker::check(const EU4::World& sourceWorld,
-	const mappers::ProvinceMapper& provinceMapper,
-	const mappers::ReligionMapper& religionMapper,
-	const mappers::CultureMapper& cultureMapper) const
+	 const mappers::ProvinceMapper& provinceMapper,
+	 const mappers::ReligionMapper& religionMapper,
+	 const mappers::CultureMapper& cultureMapper) const
 {
 	LOG(LogLevel::Info) << "-> Checking all Land Provinces Mapped (and may kraken take the rest)";
 	checkAllEU4ProvincesMapped(sourceWorld, provinceMapper);
@@ -21,7 +23,7 @@ void V2::MappingChecker::check(const EU4::World& sourceWorld,
 
 void V2::MappingChecker::checkAllEU4ProvincesMapped(const EU4::World& sourceWorld, const mappers::ProvinceMapper& provinceMapper)
 {
-	for (const auto& eu4province : sourceWorld.getProvinces())
+	for (const auto& eu4province: sourceWorld.getProvinces())
 	{
 		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(eu4province.first);
 		if (Vic2Provinces.empty() && provinceMapper.isValidProvince(eu4province.first))
@@ -33,7 +35,7 @@ void V2::MappingChecker::checkAllEU4ProvincesMapped(const EU4::World& sourceWorl
 
 void V2::MappingChecker::checkAllEU4ReligionsMapped(const EU4::World& sourceWorld, const mappers::ReligionMapper& religionMapper)
 {
-	for (const auto& EU4Religion : sourceWorld.getReligions().getAllReligions())
+	for (const auto& EU4Religion: sourceWorld.getReligions().getAllReligions())
 	{
 		if (!religionMapper.getVic2Religion(EU4Religion))
 		{
@@ -44,17 +46,18 @@ void V2::MappingChecker::checkAllEU4ReligionsMapped(const EU4::World& sourceWorl
 
 void V2::MappingChecker::checkAllEU4CulturesMapped(const EU4::World& sourceWorld, const mappers::CultureMapper& cultureMapper)
 {
-	for (const auto& cultureGroupItr : sourceWorld.getCultureGroupsMapper().getCultureGroupsMap())
+	for (const auto& cultureGroupItr: sourceWorld.getCultureGroupsMapper()->getCultureGroupsMap())
 	{
-		for (const auto& cultureItr: cultureGroupItr.second.getCultures())
+		for (const auto& cultureItr: cultureGroupItr.second->getCultures())
 		{
-			if (cultureItr.second.getNeoCulture()) continue; // no mapping for these.
-			
+			if (cultureItr.second->isNeoCulture())
+				continue; // no mapping for these.
+
 			const auto& matched = cultureMapper.cultureMatch(sourceWorld.getRegions(), cultureItr.first, "", 0, "");
 			if (!matched)
 			{
 				LOG(LogLevel::Warning) << "No Vic2 culture mapping for EU4 culture " << cultureItr.first;
-			}			
+			}
 		}
 	}
 }

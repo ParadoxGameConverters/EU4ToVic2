@@ -142,8 +142,8 @@ class World
 	mappers::ReligionMapper religionMapper;
 	mappers::StateMapper stateMapper;
 	mappers::TechSchoolMapper techSchoolMapper;
-	mappers::CulturalUnionMapper culturalUnionMapper;
-	mappers::CulturalUnionMapper culturalNationalitiesMapper;
+	std::unique_ptr<mappers::CulturalUnionMapper> culturalUnionMapper;
+	std::unique_ptr<mappers::CulturalUnionMapper> culturalNationalitiesMapper;
 	mappers::FactoryTypeMapper factoryTypeMapper;
 	mappers::Unreleasables unreleasablesMapper;
 	mappers::LeaderTraitMapper leaderTraitMapper;

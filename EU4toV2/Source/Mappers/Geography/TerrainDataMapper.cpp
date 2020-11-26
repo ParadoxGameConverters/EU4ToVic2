@@ -1,6 +1,6 @@
 #include "TerrainDataMapper.h"
-#include "ParserHelpers.h"
 #include "Log.h"
+#include "ParserHelpers.h"
 
 mappers::TerrainDataMapper::TerrainDataMapper()
 {
@@ -19,17 +19,17 @@ mappers::TerrainDataMapper::TerrainDataMapper(std::istream& theStream)
 
 void mappers::TerrainDataMapper::registerKeys()
 {
-	registerRegex("[0-9]+", [this](const std::string& provID, std::istream& theStream)
-		{
-			const commonItems::singleString terrainStr(theStream);
-			terrainMap.insert(std::make_pair(stoi(provID), terrainStr.getString()));
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerRegex(R"(\d+)", [this](const std::string& provID, std::istream& theStream) {
+		terrainMap.insert(std::make_pair(stoi(provID), commonItems::singleString(theStream).getString()));
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 std::optional<std::string> mappers::TerrainDataMapper::getTerrainForID(const int provinceID) const
 {
 	const auto& terrainItr = terrainMap.find(provinceID);
-	if (terrainItr != terrainMap.end()) return terrainItr->second;
-	return std::nullopt;
+	if (terrainItr != terrainMap.end())
+		return terrainItr->second;
+	else
+		return std::nullopt;
 }
