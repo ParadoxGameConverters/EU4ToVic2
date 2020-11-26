@@ -135,7 +135,6 @@ TEST(Mappers_CultureGroupTests, v2CultureGroupCanBeOutput)
 	input << "}\n";
 	mappers::CultureGroup group("someculturegroup", input);
 
-
 	std::stringstream output;
 	output << "\tleader = european\n";
 	output << "\tis_overseas = yes\n";

@@ -1,8 +1,8 @@
+#include "FactoryCounts/FactoryStartingCounts.h"
+#include "FactoryInventions/FactoryInventionMapper.h"
+#include "FactoryTechs/FactoryTechMapper.h"
 #include "FactoryTypes/FactoryType.h"
 #include "gtest/gtest.h"
-#include "FactoryTechs/FactoryTechMapper.h"
-#include "FactoryInventions/FactoryInventionMapper.h"
-#include "FactoryCounts/FactoryStartingCounts.h"
 
 TEST(Mappers_FactoryTypeTests, primitivesDefaultToDefaults)
 {
@@ -27,7 +27,7 @@ TEST(Mappers_FactoryTypeTests, primitivesCanBeLoaded)
 	input << "\tscrew_cap = 0.2\n";
 	input << "}\n";
 	input << "output_goods = screw\n";
-	
+
 	const mappers::FactoryType mapper(input, "screw_factory");
 
 	ASSERT_TRUE(mapper.isCoastal());
@@ -58,8 +58,10 @@ TEST(Mappers_FactoryTypeTests, techsInventionsAndCountsCanBeAssigned)
 	std::stringstream countInput;
 	countInput << "screw_factory = 3";
 	const mappers::FactoryStartingCounts countMapper(countInput);
-	
-	mapper.assignTechsAndCounts(techMapper.getTechForFactoryType("screw_factory"), inventionMapper.getInventionForFactoryType("screw_factory"), countMapper.getCountForFactoryType("screw_factory"));
+
+	mapper.assignTechsAndCounts(techMapper.getTechForFactoryType(mapper.getName()),
+		 inventionMapper.getInventionForFactoryType(mapper.getName()),
+		 countMapper.getCountForFactoryType(mapper.getName()));
 
 	ASSERT_EQ(3, mapper.getStartingCount());
 	ASSERT_EQ("screw_casting", mapper.getRequiredInvention());

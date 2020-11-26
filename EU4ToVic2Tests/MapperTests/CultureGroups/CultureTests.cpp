@@ -208,10 +208,9 @@ TEST(Mappers_CultureTests, transmogrifiedCultureCanBeOutput)
 
 	std::stringstream actual;
 	actual << culture;
-	
+
 	ASSERT_EQ(output.str(), actual.str());
 }
-
 
 TEST(Mappers_CultureTests, v2CultureCanBeOutput)
 {
