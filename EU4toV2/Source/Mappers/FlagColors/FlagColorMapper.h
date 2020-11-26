@@ -1,8 +1,7 @@
 #ifndef FLAG_COLOR_MAPPER_H
 #define FLAG_COLOR_MAPPER_H
-
-#include "Parser.h"
 #include "Color.h"
+#include "Parser.h"
 
 namespace mappers
 {

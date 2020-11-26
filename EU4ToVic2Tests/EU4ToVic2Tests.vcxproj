@@ -257,6 +257,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryTypes\FactoryType.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryTypes\FactoryTypeInputs.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryTypes\FactoryTypeMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FlagColors\FlagColorMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\IdeaEffects\IdeaEffects.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\LeaderTraits\LeaderTrait.cpp" />
@@ -357,6 +358,7 @@
     <ClCompile Include="MapperTests\FactoryTypes\FactoryTypeInputsTests.cpp" />
     <ClCompile Include="MapperTests\FactoryTypes\FactoryTypeMapperTests.cpp" />
     <ClCompile Include="MapperTests\FactoryTypes\FactoryTypeTests.cpp" />
+    <ClCompile Include="MapperTests\FlagColors\FlagColorTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />

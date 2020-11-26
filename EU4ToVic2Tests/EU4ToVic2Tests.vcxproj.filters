@@ -602,6 +602,12 @@
     <ClCompile Include="MapperTests\FactoryTypes\FactoryTypeTests.cpp">
       <Filter>MapperTests\FactoryTypes</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FlagColors\FlagColorMapper.cpp">
+      <Filter>ConverterFiles\Mappers\FlagColors</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\FlagColors\FlagColorTests.cpp">
+      <Filter>MapperTests\FlagColors</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -867,6 +873,12 @@
     </Filter>
     <Filter Include="MapperTests\FactoryTypes">
       <UniqueIdentifier>{1732d476-20fd-4e0d-b932-4bd657631779}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\FlagColors">
+      <UniqueIdentifier>{f3fb9830-14ce-42af-9001-ceb9d7623fc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\FlagColors">
+      <UniqueIdentifier>{fb4bbdb4-6f0e-459c-9653-106bc375934e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
