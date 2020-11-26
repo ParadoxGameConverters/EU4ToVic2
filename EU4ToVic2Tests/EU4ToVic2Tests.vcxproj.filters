@@ -584,6 +584,24 @@
     <ClCompile Include="MapperTests\FactoryTechs\FactoryTechMapperTests.cpp">
       <Filter>MapperTests\FactoryTechs</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryTypes\FactoryType.cpp">
+      <Filter>ConverterFiles\Mappers\FactoryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryTypes\FactoryTypeInputs.cpp">
+      <Filter>ConverterFiles\Mappers\FactoryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryTypes\FactoryTypeMapper.cpp">
+      <Filter>ConverterFiles\Mappers\FactoryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\FactoryTypes\FactoryTypeInputsTests.cpp">
+      <Filter>MapperTests\FactoryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\FactoryTypes\FactoryTypeMapperTests.cpp">
+      <Filter>MapperTests\FactoryTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\FactoryTypes\FactoryTypeTests.cpp">
+      <Filter>MapperTests\FactoryTypes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -843,6 +861,12 @@
     </Filter>
     <Filter Include="MapperTests\FactoryTechs">
       <UniqueIdentifier>{7f97fb51-0da0-4132-9326-623b8cde0b2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\FactoryTypes">
+      <UniqueIdentifier>{d2d4573c-0283-4138-ae38-cf74cd621523}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\FactoryTypes">
+      <UniqueIdentifier>{1732d476-20fd-4e0d-b932-4bd657631779}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

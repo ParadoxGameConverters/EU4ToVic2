@@ -1,22 +1,21 @@
 #ifndef FACTORY_TYPE_INPUTS_H
 #define FACTORY_TYPE_INPUTS_H
-
 #include "Parser.h"
-#include <map>
 
 namespace mappers
 {
+class FactoryTypeInputs: commonItems::parser
+{
+  public:
+	explicit FactoryTypeInputs(std::istream& theStream);
 
-	class FactoryTypeInputs : commonItems::parser
-	{
-	public:
-		explicit FactoryTypeInputs(std::istream& theStream);
-		
-		[[nodiscard]] const auto& getProductionInputValues() const { return productionInputValues; }
+	[[nodiscard]] const auto& getProductionInputValues() const { return productionInputValues; }
 
-	private:
-		std::map<std::string, double> productionInputValues;
-	};
-}
+  private:
+	void registerKeys();
+
+	std::map<std::string, double> productionInputValues;
+};
+} // namespace mappers
 
 #endif // FACTORY_TYPE_INPUTS_H
