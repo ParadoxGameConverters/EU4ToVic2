@@ -554,6 +554,24 @@
     <ClCompile Include="MapperTests\FactoryCounts\FactoryCountsTests.cpp">
       <Filter>MapperTests\FactoryCounts</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryInventions\FactoryInventionDetails.cpp">
+      <Filter>ConverterFiles\Mappers\FactoryInventions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryInventions\FactoryInventionEffect.cpp">
+      <Filter>ConverterFiles\Mappers\FactoryInventions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\FactoryInventions\FactoryInventionMapper.cpp">
+      <Filter>ConverterFiles\Mappers\FactoryInventions</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\FactoryInventions\FactoryInventionDetailsTests.cpp">
+      <Filter>MapperTests\FactoryInventions</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\FactoryInventions\FactoryInventionEffectTests.cpp">
+      <Filter>MapperTests\FactoryInventions</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\FactoryInventions\FactoryInventionMapperTests.cpp">
+      <Filter>MapperTests\FactoryInventions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -801,6 +819,12 @@
     </Filter>
     <Filter Include="MapperTests\FactoryCounts">
       <UniqueIdentifier>{b766dacb-1603-464b-b3a6-5633f7f72334}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\FactoryInventions">
+      <UniqueIdentifier>{d45c14c9-b472-473d-b480-419615790629}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\FactoryInventions">
+      <UniqueIdentifier>{ae204b3e-ad00-4bde-bdd5-a57fabcae613}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

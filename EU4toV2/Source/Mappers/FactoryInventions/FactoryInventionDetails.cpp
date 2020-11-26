@@ -3,13 +3,15 @@
 
 mappers::FactoryInventionDetails::FactoryInventionDetails(std::istream& theStream)
 {
-	registerRegex("activate_building", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString buildingStr(theStream);
-			factoryName = buildingStr.getString();
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+}
+
+void mappers::FactoryInventionDetails::registerKeys()
+{
+	registerRegex("activate_building", [this](const std::string& unused, std::istream& theStream) {
+		factoryName = commonItems::singleString(theStream).getString();
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
