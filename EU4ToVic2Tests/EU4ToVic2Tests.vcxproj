@@ -370,6 +370,9 @@
     <ClCompile Include="MapperTests\GovernmentMapper\GovernmentMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsMapperTests.cpp" />
     <ClCompile Include="MapperTests\IdeaEffects\IdeaEffectsTests.cpp" />
+    <ClCompile Include="MapperTests\LeaderTraits\LeaderTraitMapperTests.cpp" />
+    <ClCompile Include="MapperTests\LeaderTraits\LeaderTraitTests.cpp" />
+    <ClCompile Include="MapperTests\LeaderTraits\LeaderTraitTypesTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />

@@ -635,6 +635,15 @@
     <ClCompile Include="..\EU4toV2\Source\V2World\Output\outCultureGroups.cpp">
       <Filter>ConverterFiles\Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\LeaderTraits\LeaderTraitMapperTests.cpp">
+      <Filter>MapperTests\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\LeaderTraits\LeaderTraitTests.cpp">
+      <Filter>MapperTests\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\LeaderTraits\LeaderTraitTypesTests.cpp">
+      <Filter>MapperTests\LeaderTraits</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -921,6 +930,9 @@
     </Filter>
     <Filter Include="ConverterFiles\Vic2World\Output">
       <UniqueIdentifier>{0dd8d101-ba5a-495e-8b51-22fd43a48cdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\LeaderTraits">
+      <UniqueIdentifier>{4dfe9adf-33ec-4a05-983a-653509bac257}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
