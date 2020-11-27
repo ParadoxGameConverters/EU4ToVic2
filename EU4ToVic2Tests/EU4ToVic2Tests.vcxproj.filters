@@ -677,6 +677,18 @@
     <ClCompile Include="MapperTests\NavalBaseMapper\NavalBaseTests.cpp">
       <Filter>MapperTests\NavalBaseMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyNames\PartyName.cpp">
+      <Filter>ConverterFiles\Mappers\PartyNameMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyNames\PartyNameMapper.cpp">
+      <Filter>ConverterFiles\Mappers\PartyNameMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PartyNameMapper\PartyNameMapperTests.cpp">
+      <Filter>MapperTests\PartyNameMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PartyNameMapper\PartyNameTests.cpp">
+      <Filter>MapperTests\PartyNameMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -981,6 +993,12 @@
     </Filter>
     <Filter Include="MapperTests\NavalBaseMapper">
       <UniqueIdentifier>{09c9c804-29f2-4666-b188-c029e6deaf16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\PartyNameMapper">
+      <UniqueIdentifier>{132c2610-3afa-4b06-803c-ff0907dad517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\PartyNameMapper">
+      <UniqueIdentifier>{b1a9f04f-2e30-45ed-9ea4-55b8be6134e6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

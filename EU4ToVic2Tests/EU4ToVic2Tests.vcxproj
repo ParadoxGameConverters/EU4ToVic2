@@ -272,6 +272,8 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\BuildingPosition.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\NavalBase.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\NavalBaseMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyNames\PartyName.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyNames\PartyNameMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -384,6 +386,8 @@
     <ClCompile Include="MapperTests\NavalBaseMapper\BuildingPositionTests.cpp" />
     <ClCompile Include="MapperTests\NavalBaseMapper\NavalBaseMapperTests.cpp" />
     <ClCompile Include="MapperTests\NavalBaseMapper\NavalBaseTests.cpp" />
+    <ClCompile Include="MapperTests\PartyNameMapper\PartyNameMapperTests.cpp" />
+    <ClCompile Include="MapperTests\PartyNameMapper\PartyNameTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />

@@ -70,14 +70,14 @@ void V2::Country::initParties(const mappers::PartyNameMapper& partyNameMapper, c
 void V2::Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper)
 {
 	size_t ideology = 0;
-	for (const auto& partyName: partyNameMapper.getMap())
+	for (const auto& [partyName, partyLanguageMap]: partyNameMapper.getPartyToLanguageMap())
 	{
-		auto partyKey = tag + '_' + partyName.first;
-		auto languageMap = partyName.second.getMap();
-		auto partyType = partyTypeMapper.getPartyTypeByIdeology(partyName.first);
+		auto partyKey = tag + '_' + partyName;
+		auto languageMap = partyLanguageMap.getLanguageToNameMap();
+		auto partyType = partyTypeMapper.getPartyTypeByIdeology(partyName);
 		if (!partyType)
 		{
-			Log(LogLevel::Warning) << "Party type " << partyName.first << " has no entry in party_blobs.txt!";
+			Log(LogLevel::Warning) << "Party type " << partyName << " has no entry in party_blobs.txt!";
 			continue;
 		}
 		partyType->setName(partyKey);
@@ -85,8 +85,8 @@ void V2::Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameM
 		details.parties.push_back(newParty);
 		localisation.setPartyKey(ideology, partyKey);
 
-		for (const auto& language: languageMap)
-			localisation.setPartyName(ideology, language.first, language.second);
+		for (const auto& [language, name]: languageMap)
+			localisation.setPartyName(ideology, language, name);
 
 		++ideology;
 	}
