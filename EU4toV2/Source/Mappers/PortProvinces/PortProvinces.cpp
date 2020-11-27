@@ -19,13 +19,13 @@ mappers::PortProvinces::PortProvinces(std::istream& theStream)
 
 void mappers::PortProvinces::registerKeys()
 {
-	registerKeyword("whitelist", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("allowlist", [this](const std::string& unused, std::istream& theStream) {
 		const auto portVector = commonItems::intList(theStream).getInts();
-		whitelist.insert(portVector.begin(), portVector.end());
+		allowlist.insert(portVector.begin(), portVector.end());
 	});
-	registerKeyword("blacklist", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("denylist", [this](const std::string& unused, std::istream& theStream) {
 		auto portVector = commonItems::intList(theStream).getInts();
-		blacklist.insert(portVector.begin(), portVector.end());
+		denylist.insert(portVector.begin(), portVector.end());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

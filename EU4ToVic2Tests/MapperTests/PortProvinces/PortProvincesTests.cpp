@@ -1,42 +1,42 @@
 #include "PortProvinces/PortProvinces.h"
 #include "gtest/gtest.h"
 
-TEST(Mappers_PortProvincesTests, whitelistedProvinceCanBePinged)
+TEST(Mappers_PortProvincesTests, allowedProvinceCanBePinged)
 {
 	std::stringstream input;
-	input << "whitelist = { 1 2 3 }\n";
+	input << "allowlist = { 1 2 3 }\n";
 	const mappers::PortProvinces mapper(input);
 
-	ASSERT_TRUE(mapper.isProvinceIDWhitelisted(1));
-	ASSERT_TRUE(mapper.isProvinceIDWhitelisted(2));
-	ASSERT_TRUE(mapper.isProvinceIDWhitelisted(3));
+	ASSERT_TRUE(mapper.isProvinceIDAllowed(1));
+	ASSERT_TRUE(mapper.isProvinceIDAllowed(2));
+	ASSERT_TRUE(mapper.isProvinceIDAllowed(3));
 }
 
-TEST(Mappers_PortProvincesTests, blacklistedProvinceCanBePinged)
+TEST(Mappers_PortProvincesTests, deniedProvinceCanBePinged)
 {
 	std::stringstream input;
-	input << "blacklist = { 1 2 3 }\n";
+	input << "denylist = { 1 2 3 }\n";
 	const mappers::PortProvinces mapper(input);
 
-	ASSERT_TRUE(mapper.isProvinceIDBlacklisted(1));
-	ASSERT_TRUE(mapper.isProvinceIDBlacklisted(2));
-	ASSERT_TRUE(mapper.isProvinceIDBlacklisted(3));
+	ASSERT_TRUE(mapper.isProvinceIDDenied(1));
+	ASSERT_TRUE(mapper.isProvinceIDDenied(2));
+	ASSERT_TRUE(mapper.isProvinceIDDenied(3));
 }
 
 TEST(Mappers_PortProvincesTests, nonListedProvinceReturnsFalse)
 {
 	std::stringstream input;
-	input << "whitelist = { 1 2 3 }\n";
-	input << "blacklist = { 4 5 6 }\n";
+	input << "allowlist = { 1 2 3 }\n";
+	input << "denylist = { 4 5 6 }\n";
 	const mappers::PortProvinces mapper(input);
 
-	ASSERT_FALSE(mapper.isProvinceIDBlacklisted(1));
-	ASSERT_FALSE(mapper.isProvinceIDBlacklisted(2));
-	ASSERT_FALSE(mapper.isProvinceIDBlacklisted(3));
-	ASSERT_FALSE(mapper.isProvinceIDWhitelisted(4));
-	ASSERT_FALSE(mapper.isProvinceIDWhitelisted(5));
-	ASSERT_FALSE(mapper.isProvinceIDWhitelisted(6));
+	ASSERT_FALSE(mapper.isProvinceIDDenied(1));
+	ASSERT_FALSE(mapper.isProvinceIDDenied(2));
+	ASSERT_FALSE(mapper.isProvinceIDDenied(3));
+	ASSERT_FALSE(mapper.isProvinceIDAllowed(4));
+	ASSERT_FALSE(mapper.isProvinceIDAllowed(5));
+	ASSERT_FALSE(mapper.isProvinceIDAllowed(6));
 	
-	ASSERT_FALSE(mapper.isProvinceIDWhitelisted(7));
-	ASSERT_FALSE(mapper.isProvinceIDBlacklisted(7));
+	ASSERT_FALSE(mapper.isProvinceIDAllowed(7));
+	ASSERT_FALSE(mapper.isProvinceIDDenied(7));
 }

@@ -25,24 +25,24 @@ void mappers::MinorityPopMapper::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-bool mappers::MinorityPopMapper::blankMajorityFromMinority(const std::shared_ptr<V2::Pop>& pop) const
+bool mappers::MinorityPopMapper::blankMajorityFromMinority(V2::Pop& pop) const
 {
 	// We are blanking majority part from a minority pop so that we may apply any
 	// religion to gipsies or any culture to mormons.
 	for (const auto& [minorityCulture, minorityReligion]: minorityPopMap)
 	{
-		if (pop->getCulture() == minorityCulture && pop->getReligion() == minorityReligion)
+		if (pop.getCulture() == minorityCulture && pop.getReligion() == minorityReligion)
 			return true;
 
-		if (minorityCulture.empty() && pop->getReligion() == minorityReligion)
+		if (minorityCulture.empty() && pop.getReligion() == minorityReligion)
 		{
-			pop->blankCulture();
+			pop.blankCulture();
 			return true;
 		}
 
-		if (pop->getCulture() == minorityCulture && minorityReligion.empty())
+		if (pop.getCulture() == minorityCulture && minorityReligion.empty())
 		{
-			pop->blankReligion();
+			pop.blankReligion();
 			return true;
 		}
 	}

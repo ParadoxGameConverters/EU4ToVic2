@@ -115,10 +115,10 @@ V2::Army::Army(const EU4::EU4Army& eu4Army,
 	}
 
 	const auto selectedLocation = pickRandomProvinceID(locationCandidates);
-	if (isNavy && usePort && !portProvincesMapper.isProvinceIDWhitelisted(selectedLocation))
+	if (isNavy && usePort && !portProvincesMapper.isProvinceIDAllowed(selectedLocation))
 	{
-		LOG(LogLevel::Warning) << "Assigning navy to non-whitelisted port province " << selectedLocation
-									  << " - if the save crashes, try blacklisting this province";
+		LOG(LogLevel::Warning) << "Assigning navy to non-allowed port province " << selectedLocation
+									  << " - if the save crashes, try deny-listing this province";
 	}
 	location = selectedLocation;
 }
@@ -337,7 +337,7 @@ std::set<int> V2::Army::getPortProvinces(const std::set<int>& locationCandidates
 	std::vector<int> unblockedCandidates;
 	for (auto candidate: locationCandidates)
 	{
-		if (!portProvincesMapper.isProvinceIDBlacklisted(candidate))
+		if (!portProvincesMapper.isProvinceIDDenied(candidate))
 			unblockedCandidates.push_back(candidate);
 	}
 

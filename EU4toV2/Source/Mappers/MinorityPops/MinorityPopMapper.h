@@ -11,7 +11,7 @@ class MinorityPopMapper: commonItems::parser
 	MinorityPopMapper();
 	explicit MinorityPopMapper(std::istream& theStream);
 
-	[[nodiscard]] bool blankMajorityFromMinority(const std::shared_ptr<V2::Pop>& pop) const;
+	[[nodiscard]] bool blankMajorityFromMinority(V2::Pop& pop) const;
 
   private:
 	void registerKeys();

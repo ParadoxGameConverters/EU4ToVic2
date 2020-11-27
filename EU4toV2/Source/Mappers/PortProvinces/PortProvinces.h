@@ -13,14 +13,14 @@ class PortProvinces: commonItems::parser
 	PortProvinces();
 	explicit PortProvinces(std::istream& theStream);
 
-	[[nodiscard]] auto isProvinceIDBlacklisted(const int& provinceID) const { return blacklist.contains(provinceID); }
-	[[nodiscard]] auto isProvinceIDWhitelisted(const int& provinceID) const { return whitelist.contains(provinceID); }
+	[[nodiscard]] auto isProvinceIDDenied(const int& provinceID) const { return denylist.contains(provinceID); }
+	[[nodiscard]] auto isProvinceIDAllowed(const int& provinceID) const { return allowlist.contains(provinceID); }
 
   private:
 	void registerKeys();
 
-	std::set<int> whitelist;
-	std::set<int> blacklist;
+	std::set<int> allowlist;
+	std::set<int> denylist;
 };
 } // namespace mappers
 

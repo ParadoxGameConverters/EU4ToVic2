@@ -8,12 +8,12 @@ TEST(Mappers_MinorityPopMapperTests, minorityReligionBlanksMajorityCulture)
 	const mappers::MinorityPopMapper mapper(input);
 
 	// Let's make a V2::Pop
-	const auto pop = std::make_shared<V2::Pop>("aristocrat", 1000, "majorityCulture", "minorityReligion");
+	auto pop = V2::Pop("aristocrat", 1000, "majorityCulture", "minorityReligion");
 
 	const auto success = mapper.blankMajorityFromMinority(pop);
 
 	ASSERT_TRUE(success);
-	ASSERT_TRUE(pop->getCulture().empty());
+	ASSERT_TRUE(pop.getCulture().empty());
 }
 
 TEST(Mappers_MinorityPopMapperTests, minorityReligionMismatchDoesNothing)
@@ -22,13 +22,12 @@ TEST(Mappers_MinorityPopMapperTests, minorityReligionMismatchDoesNothing)
 	input << "minority = { religion = minorityReligion }";
 	const mappers::MinorityPopMapper mapper(input);
 
-	// Let's make a V2::Pop
-	const auto pop = std::make_shared<V2::Pop>("aristocrat", 1000, "majorityCulture", "majorityReligion");
+	auto pop = V2::Pop("aristocrat", 1000, "majorityCulture", "majorityReligion");
 
 	const auto success = mapper.blankMajorityFromMinority(pop);
 
 	ASSERT_FALSE(success);
-	ASSERT_EQ("majorityCulture", pop->getCulture());
+	ASSERT_EQ("majorityCulture", pop.getCulture());
 }
 
 TEST(Mappers_MinorityPopMapperTests, minorityCultureBlanksMajorityReligion)
@@ -37,13 +36,12 @@ TEST(Mappers_MinorityPopMapperTests, minorityCultureBlanksMajorityReligion)
 	input << "minority = { culture = minorityCulture }";
 	const mappers::MinorityPopMapper mapper(input);
 
-	// Let's make a V2::Pop
-	const auto pop = std::make_shared<V2::Pop>("aristocrat", 1000, "minorityCulture", "majorityReligion");
+	auto pop = V2::Pop("aristocrat", 1000, "minorityCulture", "majorityReligion");
 
 	const auto success = mapper.blankMajorityFromMinority(pop);
 
 	ASSERT_TRUE(success);
-	ASSERT_TRUE(pop->getReligion().empty());
+	ASSERT_TRUE(pop.getReligion().empty());
 }
 
 TEST(Mappers_MinorityPopMapperTests, minorityCultureMismatchDoesNothing)
@@ -52,13 +50,12 @@ TEST(Mappers_MinorityPopMapperTests, minorityCultureMismatchDoesNothing)
 	input << "minority = { culture = minorityCulture }";
 	const mappers::MinorityPopMapper mapper(input);
 
-	// Let's make a V2::Pop
-	const auto pop = std::make_shared<V2::Pop>("aristocrat", 1000, "majorityCulture", "majorityReligion");
+	auto pop = V2::Pop("aristocrat", 1000, "majorityCulture", "majorityReligion");
 
 	const auto success = mapper.blankMajorityFromMinority(pop);
 
 	ASSERT_FALSE(success);
-	ASSERT_EQ("majorityReligion", pop->getReligion());
+	ASSERT_EQ("majorityReligion", pop.getReligion());
 }
 
 TEST(Mappers_MinorityPopMapperTests, fullIncomingMinorityDoesNotChangeButReturnsTrue)
@@ -67,14 +64,13 @@ TEST(Mappers_MinorityPopMapperTests, fullIncomingMinorityDoesNotChangeButReturns
 	input << "minority = { religion = minorityReligion culture = minorityCulture }";
 	const mappers::MinorityPopMapper mapper(input);
 
-	// Let's make a V2::Pop
-	const auto pop = std::make_shared<V2::Pop>("aristocrat", 1000, "minorityCulture", "minorityReligion");
+	auto pop = V2::Pop("aristocrat", 1000, "minorityCulture", "minorityReligion");
 
 	const auto success = mapper.blankMajorityFromMinority(pop);
 
 	ASSERT_TRUE(success);
-	ASSERT_EQ("minorityReligion", pop->getReligion());
-	ASSERT_EQ("minorityCulture", pop->getCulture());
+	ASSERT_EQ("minorityReligion", pop.getReligion());
+	ASSERT_EQ("minorityCulture", pop.getCulture());
 }
 
 TEST(Mappers_MinorityPopMapperTests, fullIncomingMajorityDoesNotChange)
@@ -83,12 +79,11 @@ TEST(Mappers_MinorityPopMapperTests, fullIncomingMajorityDoesNotChange)
 	input << "minority = { religion = minorityReligion culture = minorityCulture }";
 	const mappers::MinorityPopMapper mapper(input);
 
-	// Let's make a V2::Pop
-	const auto pop = std::make_shared<V2::Pop>("aristocrat", 1000, "majorityCulture", "majorityReligion");
+	auto pop = V2::Pop("aristocrat", 1000, "majorityCulture", "majorityReligion");
 
 	const auto success = mapper.blankMajorityFromMinority(pop);
 
 	ASSERT_FALSE(success);
-	ASSERT_EQ("majorityReligion", pop->getReligion());
-	ASSERT_EQ("majorityCulture", pop->getCulture());
+	ASSERT_EQ("majorityReligion", pop.getReligion());
+	ASSERT_EQ("majorityCulture", pop.getCulture());
 }
