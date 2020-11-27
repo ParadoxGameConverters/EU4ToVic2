@@ -689,6 +689,21 @@
     <ClCompile Include="MapperTests\PartyNameMapper\PartyNameTests.cpp">
       <Filter>MapperTests\PartyNameMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyTypes\PartyType.cpp">
+      <Filter>ConverterFiles\Mappers\PartyTypeMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyTypes\PartyTypeMapper.cpp">
+      <Filter>ConverterFiles\Mappers\PartyTypeMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PartyTypeMapper\PartyTypeMapperTests.cpp">
+      <Filter>MapperTests\PartyTypeMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PartyTypeMapper\PartyTypeTests.cpp">
+      <Filter>MapperTests\PartyTypeMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\Output\outParty.cpp">
+      <Filter>ConverterFiles\Vic2World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -999,6 +1014,12 @@
     </Filter>
     <Filter Include="MapperTests\PartyNameMapper">
       <UniqueIdentifier>{b1a9f04f-2e30-45ed-9ea4-55b8be6134e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\PartyTypeMapper">
+      <UniqueIdentifier>{a74153df-0f1c-40a5-93a1-d7c7720cda30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\PartyTypeMapper">
+      <UniqueIdentifier>{76d15ac2-8860-4178-8e4b-69f711dcd09f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

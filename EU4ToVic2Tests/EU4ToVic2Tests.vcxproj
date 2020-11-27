@@ -274,6 +274,8 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\NavalBaseMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\PartyNames\PartyName.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\PartyNames\PartyNameMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyTypes\PartyType.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyTypes\PartyTypeMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -293,6 +295,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Localisation\Localisation.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Output\outCultureGroups.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\V2World\Output\outParty.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Pop\Pop.cpp" />
     <ClCompile Include="..\googletest\googlemock\src\gmock-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
@@ -388,6 +391,8 @@
     <ClCompile Include="MapperTests\NavalBaseMapper\NavalBaseTests.cpp" />
     <ClCompile Include="MapperTests\PartyNameMapper\PartyNameMapperTests.cpp" />
     <ClCompile Include="MapperTests\PartyNameMapper\PartyNameTests.cpp" />
+    <ClCompile Include="MapperTests\PartyTypeMapper\PartyTypeMapperTests.cpp" />
+    <ClCompile Include="MapperTests\PartyTypeMapper\PartyTypeTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />

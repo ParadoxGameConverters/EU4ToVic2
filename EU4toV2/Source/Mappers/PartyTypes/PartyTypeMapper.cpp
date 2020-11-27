@@ -1,6 +1,6 @@
 #include "PartyTypeMapper.h"
-#include <Log.h>
 #include "ParserHelpers.h"
+#include <Log.h>
 
 mappers::PartyTypeMapper::PartyTypeMapper()
 {
@@ -19,18 +19,17 @@ mappers::PartyTypeMapper::PartyTypeMapper(std::istream& theStream)
 
 void mappers::PartyTypeMapper::registerKeys()
 {
-	registerRegex("[a-z_]+", [this](const std::string& partyIdeology, std::istream& theStream) 
-		{
-			PartyType newType(theStream);
-			newType.setIdeology(partyIdeology);
-			partyTypeMap.insert(std::make_pair(partyIdeology, newType));
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, [this](const std::string& partyIdeology, std::istream& theStream) {
+		PartyType newType(theStream);
+		newType.setIdeology(partyIdeology);
+		partyTypeMap.insert(std::make_pair(partyIdeology, newType));
+	});
 }
 
 std::optional<mappers::PartyType> mappers::PartyTypeMapper::getPartyTypeByIdeology(const std::string& ideology) const
 {
-	const auto& partyTypeItr = partyTypeMap.find(ideology);
-	if (partyTypeItr != partyTypeMap.end()) return partyTypeItr->second;
-	return std::nullopt;
+	if (const auto& partyTypeItr = partyTypeMap.find(ideology); partyTypeItr != partyTypeMap.end())
+		return partyTypeItr->second;
+	else
+		return std::nullopt;
 }
