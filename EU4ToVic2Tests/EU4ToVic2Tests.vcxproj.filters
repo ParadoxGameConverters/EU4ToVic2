@@ -659,6 +659,24 @@
     <ClCompile Include="..\EU4toV2\Source\V2World\Pop\Pop.cpp">
       <Filter>ConverterFiles\Vic2World\Pop</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\BuildingPosition.cpp">
+      <Filter>ConverterFiles\Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\NavalBase.cpp">
+      <Filter>ConverterFiles\Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\NavalBaseMapper.cpp">
+      <Filter>ConverterFiles\Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\NavalBaseMapper\BuildingPositionTests.cpp">
+      <Filter>MapperTests\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\NavalBaseMapper\NavalBaseMapperTests.cpp">
+      <Filter>MapperTests\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\NavalBaseMapper\NavalBaseTests.cpp">
+      <Filter>MapperTests\NavalBaseMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -957,6 +975,12 @@
     </Filter>
     <Filter Include="ConverterFiles\Vic2World\Pop">
       <UniqueIdentifier>{a23d3fa0-7ed0-4624-8288-876165acd62e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\NavalBaseMapper">
+      <UniqueIdentifier>{e593baac-9dac-4ec1-ab21-14e643cf580c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\NavalBaseMapper">
+      <UniqueIdentifier>{09c9c804-29f2-4666-b188-c029e6deaf16}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -269,6 +269,9 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\LeaderTraits\LeaderTraitTypes.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\MinorityPops\MinorityPop.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\MinorityPops\MinorityPopMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\BuildingPosition.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\NavalBase.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\NavalBaseMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -378,6 +381,9 @@
     <ClCompile Include="MapperTests\LeaderTraits\LeaderTraitTypesTests.cpp" />
     <ClCompile Include="MapperTests\MinorityPopMapper\MinorityPopMapperTests.cpp" />
     <ClCompile Include="MapperTests\MinorityPopMapper\MinorityPopTests.cpp" />
+    <ClCompile Include="MapperTests\NavalBaseMapper\BuildingPositionTests.cpp" />
+    <ClCompile Include="MapperTests\NavalBaseMapper\NavalBaseMapperTests.cpp" />
+    <ClCompile Include="MapperTests\NavalBaseMapper\NavalBaseTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />

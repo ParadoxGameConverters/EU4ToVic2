@@ -3,13 +3,16 @@
 
 mappers::NavalBase::NavalBase(std::istream& theStream)
 {
-	registerKeyword("naval_base", [this](const std::string& unused, std::istream& theStream)
-	{
-			commonItems::ignoreItem(unused, theStream);
-			found = true;
-	});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+}
+
+void mappers::NavalBase::registerKeys()
+{
+	registerKeyword("naval_base", [this](const std::string& unused, std::istream& theStream) {
+		commonItems::ignoreItem(unused, theStream);
+		found = true;
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
