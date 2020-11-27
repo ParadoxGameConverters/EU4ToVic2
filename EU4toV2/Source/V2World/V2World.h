@@ -101,7 +101,8 @@ class World
 	void convertTechs(const EU4::World& sourceWorld);
 	void allocateFactories(const EU4::World& sourceWorld);
 	void setupPops(const EU4::World& sourceWorld);
-	void addUnions();
+	void addUnions(const EU4::World& sourceWorld);
+	void decentralizeHRE(const EU4::World& sourceWorld);
 	void convertArmies();
 	void output(const mappers::VersionParser& versionParser) const;
 	void createModFile() const;

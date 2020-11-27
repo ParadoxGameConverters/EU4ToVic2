@@ -3,6 +3,7 @@
 
 #include "../../Mappers/AgreementMapper/AgreementMapper.h"
 #include "../../Mappers/CountryMappings/CountryMappings.h"
+#include "../EU4toV2/Source/EU4World/World.h"
 #include "../EU4toV2/Source/EU4World/Diplomacy/EU4Agreement.h"
 #include "Agreement.h"
 #include <vector>
@@ -19,6 +20,7 @@ class Diplomacy
 	void convertDiplomacy(std::vector<EU4::EU4Agreement> agreements,
 		 const mappers::CountryMappings& countryMapper,
 		 std::map<std::string, std::shared_ptr<Country>>& countries);
+	void sphereHRE(const EU4::World& sourceWorld, std::map<std::string, std::shared_ptr<Country>>& countries);
 
   private:
 	std::vector<Agreement> agreements;

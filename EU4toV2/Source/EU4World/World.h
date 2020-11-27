@@ -36,6 +36,7 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getProvinces() const { return provinces->getAllProvinces(); }
 	[[nodiscard]] const auto& getHistoricalData() const { return historicalData; }
 	[[nodiscard]] const auto& getNativeCultures() const { return nativeCultures; }
+	[[nodiscard]] const auto& getHREReforms() const { return hreReforms; }
 
   private:
 	void registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper);
@@ -76,6 +77,7 @@ class World: commonItems::parser
 	saveData saveGame;
 
 	std::string holyRomanEmperor;
+	std::set<std::string> hreReforms;
 	std::string celestialEmperor;
 	std::unique_ptr<Regions> regions;
 	std::unique_ptr<Provinces> provinces;

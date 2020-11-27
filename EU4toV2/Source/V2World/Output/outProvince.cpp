@@ -11,10 +11,6 @@ std::ostream& V2::operator<<(std::ostream& output, const Province& province)
 	{
 		output << "add_core=" << core << "\n";
 	}
-	if (province.inHRE)
-	{
-		output << "add_core=HRE\n";
-	}
 	if (!province.details.rgoType.empty())
 	{
 		output << "trade_goods = " << province.details.rgoType << "\n";

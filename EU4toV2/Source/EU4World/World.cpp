@@ -193,6 +193,7 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	registerKeyword("empire", [this](const std::string& unused, std::istream& theStream) {
 		const EU4Empire empireBlock(theStream);
 		holyRomanEmperor = empireBlock.getEmperor();
+		hreReforms = empireBlock.getHREReforms();
 	});
 	// Old style of marking the emperor pre-1.20
 	registerKeyword("emperor", [this](const std::string& unused, std::istream& theStream) {
