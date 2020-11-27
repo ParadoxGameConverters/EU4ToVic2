@@ -32,7 +32,6 @@
 #include "../Mappers/Unreleasables/Unreleasables.h"
 #include "../Mappers/WarGoalMapper/WarGoalMapper.h"
 #include "Country/Country.h"
-#include "Country/CountryPopLogger.h"
 #include "Diplomacy/Diplomacy.h"
 #include "MappingChecker/MappingChecker.h"
 #include "Output/ModFile.h"
@@ -87,7 +86,7 @@ class World
 	void shuffleRgos();
 	void importDefaultPops();
 	void importPopsFromFile(const std::string& filename);
-	void importPopsFromProvince(int provinceID, const mappers::PopTypes& popType);
+	void importPopsFromProvince(int provinceID, const std::vector<mappers::PopDetails>& popsDetails);
 	void importPotentialCountries();
 	void importPotentialCountry(const std::string& line, bool dynamicCountry);
 	void initializeCultureMappers();
@@ -159,7 +158,6 @@ class World
 	mappers::AcceptedCultureThresholdsMapper acceptedCultureThresholdsMapper;
 	mappers::DeadDefinitionMapper deadDefinitionMapper;
 	ProvinceNameParser provinceNameParser;
-	CountryPopLogger countryPopLogger;
 	MappingChecker mappingChecker;
 	ModFile modFile;
 	Diplomacy diplomacy;

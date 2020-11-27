@@ -409,7 +409,7 @@
     <ClCompile Include="Source\Mappers\PartyNames\PartyNameMapper.cpp" />
     <ClCompile Include="Source\Mappers\PartyTypes\PartyType.cpp" />
     <ClCompile Include="Source\Mappers\PartyTypes\PartyTypeMapper.cpp" />
-    <ClCompile Include="Source\Mappers\Pops\MapperPop.cpp" />
+    <ClCompile Include="Source\Mappers\Pops\PopInstance.cpp" />
     <ClCompile Include="Source\Mappers\Pops\PopMapper.cpp" />
     <ClCompile Include="Source\Mappers\Pops\PopTypes.cpp" />
     <ClCompile Include="Source\Mappers\PortProvinces\PortProvinces.cpp" />
@@ -449,7 +449,6 @@
     <ClCompile Include="Source\V2World\Army\Regiment.cpp" />
     <ClCompile Include="Source\V2World\Country\Country.cpp" />
     <ClCompile Include="Source\V2World\Country\CountryDetails.cpp" />
-    <ClCompile Include="Source\V2World\Country\CountryPopLogger.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp" />
@@ -599,7 +598,7 @@
     <ClInclude Include="Source\Mappers\PartyNames\PartyNameMapper.h" />
     <ClInclude Include="Source\Mappers\PartyTypes\PartyType.h" />
     <ClInclude Include="Source\Mappers\PartyTypes\PartyTypeMapper.h" />
-    <ClInclude Include="Source\Mappers\Pops\MapperPop.h" />
+    <ClInclude Include="Source\Mappers\Pops\PopInstance.h" />
     <ClInclude Include="Source\Mappers\Pops\PopMapper.h" />
     <ClInclude Include="Source\Mappers\Pops\PopTypes.h" />
     <ClInclude Include="Source\Mappers\PortProvinces\PortProvinces.h" />
@@ -639,7 +638,6 @@
     <ClInclude Include="Source\V2World\Army\Regiment.h" />
     <ClInclude Include="Source\V2World\Country\Country.h" />
     <ClInclude Include="Source\V2World\Country\CountryDetails.h" />
-    <ClInclude Include="Source\V2World\Country\CountryPopLogger.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Relation.h" />

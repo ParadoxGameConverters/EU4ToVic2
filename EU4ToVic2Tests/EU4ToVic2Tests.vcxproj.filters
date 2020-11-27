@@ -704,6 +704,24 @@
     <ClCompile Include="..\EU4toV2\Source\V2World\Output\outParty.cpp">
       <Filter>ConverterFiles\Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Pops\PopInstance.cpp">
+      <Filter>ConverterFiles\Mappers\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Pops\PopMapper.cpp">
+      <Filter>ConverterFiles\Mappers\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Pops\PopTypes.cpp">
+      <Filter>ConverterFiles\Mappers\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\Pops\PopInstanceTests.cpp">
+      <Filter>MapperTests\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\Pops\PopMapperTests.cpp">
+      <Filter>MapperTests\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\Pops\PopTypesTests.cpp">
+      <Filter>MapperTests\Pops</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -1020,6 +1038,12 @@
     </Filter>
     <Filter Include="MapperTests\PartyTypeMapper">
       <UniqueIdentifier>{76d15ac2-8860-4178-8e4b-69f711dcd09f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\Pops">
+      <UniqueIdentifier>{ae9a2425-9ac4-407e-befc-4117343cb3f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\Pops">
+      <UniqueIdentifier>{a513121e-2fd3-4eda-8ea5-6380c904b7ff}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

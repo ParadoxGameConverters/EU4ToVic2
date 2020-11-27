@@ -276,6 +276,9 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\PartyNames\PartyNameMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\PartyTypes\PartyType.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\PartyTypes\PartyTypeMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Pops\PopInstance.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Pops\PopMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Pops\PopTypes.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -393,6 +396,9 @@
     <ClCompile Include="MapperTests\PartyNameMapper\PartyNameTests.cpp" />
     <ClCompile Include="MapperTests\PartyTypeMapper\PartyTypeMapperTests.cpp" />
     <ClCompile Include="MapperTests\PartyTypeMapper\PartyTypeTests.cpp" />
+    <ClCompile Include="MapperTests\Pops\PopInstanceTests.cpp" />
+    <ClCompile Include="MapperTests\Pops\PopMapperTests.cpp" />
+    <ClCompile Include="MapperTests\Pops\PopTypesTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />

@@ -370,9 +370,6 @@
     <ClCompile Include="Source\V2World\Output\outPop.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\Pops\MapperPop.cpp">
-      <Filter>Mappers\Pops</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Army\Army.cpp">
       <Filter>Vic2World\Army</Filter>
     </ClCompile>
@@ -414,9 +411,6 @@
     </ClCompile>
     <ClCompile Include="Source\V2World\Province\ProvinceNameParser.cpp">
       <Filter>Vic2World\Province</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Country\CountryPopLogger.cpp">
-      <Filter>Vic2World\Country</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\MappingChecker\MappingChecker.cpp">
       <Filter>Vic2World\MappingChecker</Filter>
@@ -558,6 +552,9 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp">
       <Filter>Mappers\V2ProvinceRegionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Pops\PopInstance.cpp">
+      <Filter>Mappers\Pops</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -905,9 +902,6 @@
     <ClInclude Include="Source\V2World\Pop\Pop.h">
       <Filter>Vic2World\Pop</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\Pops\MapperPop.h">
-      <Filter>Mappers\Pops</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Army\Army.h">
       <Filter>Vic2World\Army</Filter>
     </ClInclude>
@@ -940,9 +934,6 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\Province\ProvinceNameParser.h">
       <Filter>Vic2World\Province</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Country\CountryPopLogger.h">
-      <Filter>Vic2World\Country</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\MappingChecker\MappingChecker.h">
       <Filter>Vic2World\MappingChecker</Filter>
@@ -1075,6 +1066,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.h">
       <Filter>Mappers\V2ProvinceRegionsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Pops\PopInstance.h">
+      <Filter>Mappers\Pops</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

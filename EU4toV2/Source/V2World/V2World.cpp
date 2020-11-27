@@ -41,9 +41,6 @@ V2::World::World(const EU4::World& sourceWorld,
 	importDefaultPops();
 	Log(LogLevel::Progress) << "47 %";
 
-	if (theConfiguration.getDebug())
-		countryPopLogger.logPopsByCountry(provinces);
-
 	LOG(LogLevel::Info) << "-> Importing Potential Countries";
 	importPotentialCountries();
 	Log(LogLevel::Progress) << "48 %";
@@ -627,17 +624,16 @@ void V2::World::importPopsFromFile(const std::string& filename)
 	// We are using our own defaults instead of vanilla source because it was modded with cultural minorities.
 	const mappers::PopMapper popMapper("./blankMod/output/history/pops/1836.1.1/" + filename);
 
-	for (const auto& provinceItr: popMapper.getProvincePopTypeMap())
+	for (const auto& [provinceID, popDetails]: popMapper.getProvincePops())
 	{
-		int provinceNum = provinceItr.first;
-		popProvinces.push_back(provinceNum);
+		popProvinces.push_back(provinceID);
 
-		importPopsFromProvince(provinceNum, provinceItr.second);
+		importPopsFromProvince(provinceID, popDetails);
 	}
 	popRegions.insert(std::make_pair(filename, popProvinces));
 }
 
-void V2::World::importPopsFromProvince(const int provinceID, const mappers::PopTypes& popType)
+void V2::World::importPopsFromProvince(const int provinceID, const std::vector<mappers::PopDetails>& popsDetails)
 {
 	auto provincePopulation = 0;
 	auto provinceSlavePopulation = 0;
@@ -649,9 +645,9 @@ void V2::World::importPopsFromProvince(const int provinceID, const mappers::PopT
 		return;
 	}
 
-	for (const auto& pop: popType.getPopTypes())
+	for (const auto& popDetails: popsDetails)
 	{
-		auto newPop = std::make_shared<Pop>(pop.first, pop.second.getSize(), pop.second.getCulture(), pop.second.getReligion());
+		auto newPop = std::make_shared<Pop>(popDetails);
 		if (minorityPopMapper.blankMajorityFromMinority(newPop))
 		{
 			// If the pop we loaded had minority elements, their majority elements are now blank.
