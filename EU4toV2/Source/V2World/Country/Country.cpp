@@ -17,6 +17,7 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include <cmath>
+#include "Configuration.h"
 
 V2::Country::Country(const std::string& countriesFileLine,
 	 const bool _dynamicCountry,
@@ -554,11 +555,10 @@ void V2::Country::addState(std::shared_ptr<State> newState, const mappers::PortP
 	states.push_back(newState);
 	auto newProvinces = newState->getProvinces();
 
-	std::vector<int> newProvinceNums;
-	newProvinceNums.reserve(newProvinceNums.size());
+	std::set<int> newProvinceNums;
 	for (const auto& province: newProvinces)
 	{
-		newProvinceNums.push_back(province->getID());
+		newProvinceNums.insert(province->getID());
 	}
 	auto portProvinces = Army::getPortProvinces(newProvinceNums, provinces, portProvincesMapper);
 

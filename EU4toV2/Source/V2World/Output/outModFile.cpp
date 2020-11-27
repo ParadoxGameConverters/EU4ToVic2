@@ -1,5 +1,5 @@
 #include "output.h"
-#include "OSCompatibilityLayer.h"
+#include "Configuration.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const ModFile& modFile)
 {

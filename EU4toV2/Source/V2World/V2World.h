@@ -71,12 +71,12 @@ class World
 	std::vector<std::pair<std::string, EU4::HistoricalEntry>> historicalData; // HoI4 export dynasty+rulers
 	std::set<std::string> neoCultureLocalizations;									  // raw strings for output.
 
-	[[nodiscard]] std::optional<std::string> determineProvinceOwnership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
+	[[nodiscard]] std::optional<std::string> determineProvinceOwnership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
 	[[nodiscard]] std::shared_ptr<Province> getProvince(int provID) const;
 	[[nodiscard]] std::shared_ptr<Country> getCountry(const std::string& tag) const;
 	[[nodiscard]] unsigned int countCivilizedNations() const;
 
-	static std::optional<std::string> determineProvinceControllership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld);
+	static std::optional<std::string> determineProvinceControllership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld);
 	std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, const EU4::Country& sourceCountry);
 	static std::set<std::string> discoverProvinceFilenames();
 

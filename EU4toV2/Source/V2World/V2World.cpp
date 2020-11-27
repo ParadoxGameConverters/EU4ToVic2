@@ -13,6 +13,7 @@
 #include <filesystem>
 #include <fstream>
 #include <queue>
+#include "Configuration.h"
 namespace fs = std::filesystem;
 
 constexpr int MAX_EQUALITY_COUNTRIES = 5;
@@ -990,7 +991,7 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 	}
 }
 
-std::optional<std::string> V2::World::determineProvinceOwnership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const
+std::optional<std::string> V2::World::determineProvinceOwnership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const
 {
 	// determine ownership by province development.
 	std::map<std::string, std::vector<std::shared_ptr<EU4::Province>>> theClaims; // tag, claimed provinces
@@ -1045,7 +1046,7 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::vect
 	return std::move(winner);
 }
 
-std::optional<std::string> V2::World::determineProvinceControllership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld)
+std::optional<std::string> V2::World::determineProvinceControllership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld)
 {
 	// determine ownership by pure numbers. Errors due to equal numbers can be assigned to war uncertainty and fog of war. *shrug*
 	std::map<std::string, std::vector<int>> theClaims; // tag, claimed provinces

@@ -25,8 +25,7 @@ void V2::MappingChecker::checkAllEU4ProvincesMapped(const EU4::World& sourceWorl
 {
 	for (const auto& eu4province: sourceWorld.getProvinces())
 	{
-		auto Vic2Provinces = provinceMapper.getVic2ProvinceNumbers(eu4province.first);
-		if (Vic2Provinces.empty() && provinceMapper.isValidProvince(eu4province.first))
+		if (provinceMapper.getVic2ProvinceNumbers(eu4province.first).empty())
 		{
 			LOG(LogLevel::Warning) << "No mapping for EU4 province " << eu4province.first << ", check province_mappings.txt!";
 		}

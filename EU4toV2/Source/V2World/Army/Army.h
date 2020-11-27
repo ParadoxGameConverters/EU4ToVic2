@@ -46,7 +46,7 @@ class Army // also Navy
 		 std::map<REGIMENTTYPE, int>& unitNameCount,
 		 const std::string& localAdjective);
 
-	static std::vector<int> getPortProvinces(const std::vector<int>& locationCandidates,
+	static std::set<int> getPortProvinces(const std::set<int>& locationCandidates,
 		 std::map<int, std::shared_ptr<Province>> allProvinces,
 		 const mappers::PortProvinces& portProvincesMapper);
 
@@ -55,12 +55,12 @@ class Army // also Navy
 	void blockHomeProvince(int blocked);
 
 	static REGIMENTTYPE pickCategory(const std::string& incCategory, bool civilized);
-	static std::shared_ptr<Province> pickRandomPortProvince(const std::vector<int>& homeCandidates,
+	static std::shared_ptr<Province> pickRandomPortProvince(const std::set<int>& homeCandidates,
 		 const std::map<int, std::shared_ptr<Province>>& allProvinces);
 	static bool provinceRegimentCapacityPredicate(std::shared_ptr<Province> prov1, std::shared_ptr<Province> prov2);
 	static std::shared_ptr<Province> getProvinceForExpeditionaryArmy(const std::map<int, std::shared_ptr<Province>>& allProvinces, const std::string& tag);
 	static std::string getRegimentName(REGIMENTTYPE chosenType, std::map<REGIMENTTYPE, int>& unitNameCount, const std::string& localAdjective);
-	static int pickRandomProvinceID(std::vector<int> homeCandidates);
+	static int pickRandomProvinceID(std::set<int> homeCandidates);
 
 	std::string name;
 	int location = 0;

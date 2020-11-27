@@ -403,9 +403,9 @@
     <ClCompile Include="MapperTests\Pops\PopTypesTests.cpp" />
     <ClCompile Include="MapperTests\PortProvinces\PortProvincesTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceDetailsMapper\ProvinceDetailsMapperTests.cpp" />
-    <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
-    <ClCompile Include="MapperTests\ProvinceMappingTests.cpp" />
-    <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />
+    <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMapperTests.cpp" />
+    <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingsVersionTests.cpp" />
+    <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMapperTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMappingTests.cpp" />
     <ClCompile Include="MapperTests\StateMapperTests.cpp" />

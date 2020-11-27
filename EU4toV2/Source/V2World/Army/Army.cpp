@@ -300,7 +300,7 @@ std::optional<int> V2::Army::getProbabilisticHomeProvince(const REGIMENTTYPE cho
 	return *randomProvince.begin();
 }
 
-std::shared_ptr<V2::Province> V2::Army::pickRandomPortProvince(const std::vector<int>& homeCandidates,
+std::shared_ptr<V2::Province> V2::Army::pickRandomPortProvince(const std::set<int>& homeCandidates,
 	 const std::map<int, std::shared_ptr<Province>>& allProvinces)
 {
 	std::set<int> randomProvince;
@@ -312,7 +312,7 @@ std::shared_ptr<V2::Province> V2::Army::pickRandomPortProvince(const std::vector
 	return nullptr;
 }
 
-int V2::Army::pickRandomProvinceID(std::vector<int> homeCandidates)
+int V2::Army::pickRandomProvinceID(std::set<int> homeCandidates)
 {
 	std::set<int> randomProvince;
 	std::sample(homeCandidates.begin(), homeCandidates.end(), std::inserter(randomProvince, randomProvince.begin()), 1, std::mt19937{std::random_device{}()});
@@ -330,7 +330,7 @@ void V2::Army::blockHomeProvince(const int blocked)
 	}
 }
 
-std::vector<int> V2::Army::getPortProvinces(const std::vector<int>& locationCandidates,
+std::set<int> V2::Army::getPortProvinces(const std::set<int>& locationCandidates,
 	 std::map<int, std::shared_ptr<Province>> allProvinces,
 	 const mappers::PortProvinces& portProvincesMapper)
 {
@@ -341,7 +341,7 @@ std::vector<int> V2::Army::getPortProvinces(const std::vector<int>& locationCand
 			unblockedCandidates.push_back(candidate);
 	}
 
-	std::vector<int> coastalProvinces;
+	std::set<int> coastalProvinces;
 	for (auto& candidate: unblockedCandidates)
 	{
 		auto province = allProvinces.find(candidate);
@@ -349,7 +349,7 @@ std::vector<int> V2::Army::getPortProvinces(const std::vector<int>& locationCand
 		{
 			if (province->second->isCoastal())
 			{
-				coastalProvinces.push_back(candidate);
+				coastalProvinces.insert(candidate);
 			}
 		}
 	}
