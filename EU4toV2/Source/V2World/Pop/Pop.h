@@ -15,8 +15,8 @@ class Pop
 	bool combine(const Pop& rhs);
 	void changeSize(int delta) { size += delta; }
 	void incrementSupportedRegimentCount() { supportedRegiments++; }
-	void setCulture(std::string _culture) { culture = _culture; }
-	void setReligion(std::string _religion) { religion = _religion; }
+	void blankCulture() { culture.clear(); }
+	void blankReligion() { religion.clear(); }
 	void setTrashed() { trashed = true; }
 
 	int getSize() const { return size; }

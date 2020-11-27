@@ -652,7 +652,7 @@ void V2::World::importPopsFromProvince(const int provinceID, const mappers::PopT
 	for (const auto& pop: popType.getPopTypes())
 	{
 		auto newPop = std::make_shared<Pop>(pop.first, pop.second.getSize(), pop.second.getCulture(), pop.second.getReligion());
-		if (minorityPopMapper.blankMajorityFromMinority(*newPop))
+		if (minorityPopMapper.blankMajorityFromMinority(newPop))
 		{
 			// If the pop we loaded had minority elements, their majority elements are now blank.
 			// Ie. We've removed yankee from mormons, and we'll fill them later dynamically to become <majority_culture> mormons.

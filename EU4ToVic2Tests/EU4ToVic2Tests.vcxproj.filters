@@ -644,6 +644,21 @@
     <ClCompile Include="MapperTests\LeaderTraits\LeaderTraitTypesTests.cpp">
       <Filter>MapperTests\LeaderTraits</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\MinorityPops\MinorityPop.cpp">
+      <Filter>ConverterFiles\Mappers\MinorityPopMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\MinorityPops\MinorityPopMapper.cpp">
+      <Filter>ConverterFiles\Mappers\MinorityPopMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\MinorityPopMapper\MinorityPopMapperTests.cpp">
+      <Filter>MapperTests\MinorityPopMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\MinorityPopMapper\MinorityPopTests.cpp">
+      <Filter>MapperTests\MinorityPopMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\Pop\Pop.cpp">
+      <Filter>ConverterFiles\Vic2World\Pop</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -933,6 +948,15 @@
     </Filter>
     <Filter Include="MapperTests\LeaderTraits">
       <UniqueIdentifier>{4dfe9adf-33ec-4a05-983a-653509bac257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\MinorityPopMapper">
+      <UniqueIdentifier>{eef06d29-5db5-4a18-bc5a-082acab6e389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\MinorityPopMapper">
+      <UniqueIdentifier>{99d99563-58a4-48e8-a85b-a45c1e49593e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Vic2World\Pop">
+      <UniqueIdentifier>{a23d3fa0-7ed0-4624-8288-876165acd62e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
