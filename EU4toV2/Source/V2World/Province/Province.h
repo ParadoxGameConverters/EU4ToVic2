@@ -6,7 +6,7 @@
 #include "../../Mappers/Geography/ClimateMapper.h"
 #include "../../Mappers/Geography/TerrainDataMapper.h"
 #include "../../Mappers/NavalBases/NavalBaseMapper.h"
-#include "../../Mappers/ProvinceDetails/ProvinceDetails.h"
+#include "../../Mappers/ProvinceDetails/ProvinceDetailsMapper.h"
 #include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Factory/Factory.h"
 #include "../Pop/Pop.h"

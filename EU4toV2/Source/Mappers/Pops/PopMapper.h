@@ -1,25 +1,23 @@
 #ifndef POP_MAPPER_H
 #define POP_MAPPER_H
-
 #include "Parser.h"
 #include "PopTypes.h"
-#include <map>
 
 namespace mappers
 {
-	class PopMapper : commonItems::parser
-	{
-	public:
-		PopMapper() = default;
-		explicit PopMapper(std::istream& theStream);
-		explicit PopMapper(const std::string& filename);
-		
-		[[nodiscard]] const auto& getProvincePopTypeMap() const { return provincePopTypeMap; }
+class PopMapper: commonItems::parser
+{
+  public:
+	PopMapper() = default;
+	explicit PopMapper(const std::string& fileName);
+	explicit PopMapper(std::istream& theStream);
 
-	private:
-		void registerKeys();
-		std::map<int, PopTypes> provincePopTypeMap;
-	};
-}
+	[[nodiscard]] const auto& getProvincePops() const { return provincePops; }
+
+  private:
+	void registerKeys();
+	std::map<int, std::vector<PopDetails>> provincePops;
+};
+} // namespace mappers
 
 #endif // POP_MAPPER_H

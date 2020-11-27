@@ -222,7 +222,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_SILENCE_CXX20_U8PATH_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\commonItems;..\ZipLib;Source\Mappers;Source;Source\EU4World;Source\Vic2World;Source\Helpers</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\commonItems;..\ZipLib;Source\Mappers;Source;Source\EU4World;Source\V2World;Source\Helpers</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
@@ -409,11 +409,11 @@
     <ClCompile Include="Source\Mappers\PartyNames\PartyNameMapper.cpp" />
     <ClCompile Include="Source\Mappers\PartyTypes\PartyType.cpp" />
     <ClCompile Include="Source\Mappers\PartyTypes\PartyTypeMapper.cpp" />
-    <ClCompile Include="Source\Mappers\Pops\MapperPop.cpp" />
+    <ClCompile Include="Source\Mappers\Pops\PopInstance.cpp" />
     <ClCompile Include="Source\Mappers\Pops\PopMapper.cpp" />
     <ClCompile Include="Source\Mappers\Pops\PopTypes.cpp" />
     <ClCompile Include="Source\Mappers\PortProvinces\PortProvinces.cpp" />
-    <ClCompile Include="Source\Mappers\ProvinceDetails\ProvinceDetails.cpp" />
+    <ClCompile Include="Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -449,7 +449,6 @@
     <ClCompile Include="Source\V2World\Army\Regiment.cpp" />
     <ClCompile Include="Source\V2World\Country\Country.cpp" />
     <ClCompile Include="Source\V2World\Country\CountryDetails.cpp" />
-    <ClCompile Include="Source\V2World\Country\CountryPopLogger.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp" />
@@ -599,11 +598,11 @@
     <ClInclude Include="Source\Mappers\PartyNames\PartyNameMapper.h" />
     <ClInclude Include="Source\Mappers\PartyTypes\PartyType.h" />
     <ClInclude Include="Source\Mappers\PartyTypes\PartyTypeMapper.h" />
-    <ClInclude Include="Source\Mappers\Pops\MapperPop.h" />
+    <ClInclude Include="Source\Mappers\Pops\PopInstance.h" />
     <ClInclude Include="Source\Mappers\Pops\PopMapper.h" />
     <ClInclude Include="Source\Mappers\Pops\PopTypes.h" />
     <ClInclude Include="Source\Mappers\PortProvinces\PortProvinces.h" />
-    <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetails.h" />
+    <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />
@@ -639,7 +638,6 @@
     <ClInclude Include="Source\V2World\Army\Regiment.h" />
     <ClInclude Include="Source\V2World\Country\Country.h" />
     <ClInclude Include="Source\V2World\Country\CountryDetails.h" />
-    <ClInclude Include="Source\V2World\Country\CountryPopLogger.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Relation.h" />

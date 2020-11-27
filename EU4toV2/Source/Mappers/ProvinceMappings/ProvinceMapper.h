@@ -1,18 +1,11 @@
 #ifndef PROVINCE_MAPPER_H
 #define PROVINCE_MAPPER_H
-
-#include "../../Configuration.h"
-#include "../../EU4World/ColonialRegions/ColonialRegions.h"
 #include "Parser.h"
 #include "ProvinceMappingsVersion.h"
-#include <map>
 #include <set>
+#include "ColonialRegions/ColonialRegions.h"
 
-namespace EU4
-{
-class Version;
-}
-
+class Configuration;
 namespace mappers
 {
 class ProvinceMapper: commonItems::parser
@@ -21,20 +14,18 @@ class ProvinceMapper: commonItems::parser
 	ProvinceMapper();
 	explicit ProvinceMapper(std::istream& mainStream, std::istream& colonialStream, const Configuration& testConfiguration);
 
-	[[nodiscard]] std::vector<int> getVic2ProvinceNumbers(int eu4ProvinceNumber) const;
-	[[nodiscard]] std::vector<int> getEU4ProvinceNumbers(int vic2ProvinceNumber) const;
+	[[nodiscard]] std::set<int> getVic2ProvinceNumbers(int eu4ProvinceNumber) const;
+	[[nodiscard]] std::set<int> getEU4ProvinceNumbers(int vic2ProvinceNumber) const;
 	[[nodiscard]] std::optional<std::string> getColonialRegionForProvince(int province) const;
-	[[nodiscard]] auto isValidProvince(const int province) const { return validProvinces.contains(province); }
 
   private:
 	void registerKeys();
-	static ProvinceMappingsVersion getMappingsVersion(const std::map<GameVersion, ProvinceMappingsVersion>& mappingsVersions, const GameVersion& newVersion);
+	
+	[[nodiscard]] ProvinceMappingsVersion getBestMappingsVersion(const GameVersion& usedEU4Version) const;
 	void createMappings(const ProvinceMappingsVersion& provinceMappingsVersion);
-	void determineValidProvinces();
 
-	std::map<int, std::vector<int>> vic2ToEU4ProvinceMap;
-	std::map<int, std::vector<int>> eu4ToVic2ProvinceMap;
-	std::set<int> validProvinces;
+	std::map<int, std::set<int>> vic2ToEU4ProvinceMap;
+	std::map<int, std::set<int>> eu4ToVic2ProvinceMap;
 	std::unique_ptr<EU4::ColonialRegions> colonialRegionsMapper;
 	std::map<GameVersion, ProvinceMappingsVersion> mappingVersions;
 };

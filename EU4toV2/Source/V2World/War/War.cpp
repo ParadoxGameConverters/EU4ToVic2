@@ -56,7 +56,7 @@ bool V2::War::loadWar(const EU4::War& eu4War,
 
 	// we should map the target province to something, or reset it to zero if we cannot.
 	const auto& ifProvinceID = provinceMapper.getVic2ProvinceNumbers(details.targetProvinceID);
-	!ifProvinceID.empty() ? details.targetProvinceID = ifProvinceID[0] : details.targetProvinceID = 0;
+	!ifProvinceID.empty() ? details.targetProvinceID = *ifProvinceID.begin() : details.targetProvinceID = 0;
 	return true;
 }
 

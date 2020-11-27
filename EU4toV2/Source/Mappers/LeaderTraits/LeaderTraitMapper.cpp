@@ -1,7 +1,7 @@
 #include "LeaderTraitMapper.h"
 #include "LeaderTraitTypes.h"
-#include "ParserHelpers.h"
 #include "Log.h"
+#include "ParserHelpers.h"
 
 mappers::LeaderTraitMapper::LeaderTraitMapper()
 {
@@ -20,33 +20,33 @@ mappers::LeaderTraitMapper::LeaderTraitMapper(std::istream& theStream)
 
 void mappers::LeaderTraitMapper::registerKeys()
 {
-	registerKeyword("personality", [this](const std::string& unused, std::istream& theStream)
-		{
-			const LeaderTraitTypes traitBlock(theStream);
-			personalities = traitBlock.getTraits();
-		});
-	registerKeyword("background", [this](const std::string& unused, std::istream& theStream)
-		{
-			const LeaderTraitTypes traitBlock(theStream);
-			backgrounds = traitBlock.getTraits();
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerKeyword("personality", [this](const std::string& unused, std::istream& theStream) {
+		const LeaderTraitTypes traitBlock(theStream);
+		personalities = traitBlock.getTraits();
+	});
+	registerKeyword("background", [this](const std::string& unused, std::istream& theStream) {
+		const LeaderTraitTypes traitBlock(theStream);
+		backgrounds = traitBlock.getTraits();
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 std::optional<std::string> mappers::LeaderTraitMapper::getBackground(const int fire, const int shock, const int maneuver, const int siege) const
 {
-	for (const auto& traitItr: backgrounds)
+	for (const auto& trait: backgrounds)
 	{
-		if (traitItr.second.matches(fire, shock, maneuver, siege)) return traitItr.first;
+		if (trait.matches(fire, shock, maneuver, siege))
+			return trait.getName();
 	}
 	return std::nullopt;
 }
 
 std::optional<std::string> mappers::LeaderTraitMapper::getPersonality(const int fire, const int shock, const int maneuver, const int siege) const
 {
-	for (const auto& traitItr: personalities)
+	for (const auto& trait: personalities)
 	{
-		if (traitItr.second.matches(fire, shock, maneuver, siege)) return traitItr.first;
+		if (trait.matches(fire, shock, maneuver, siege))
+			return trait.getName();
 	}
 	return std::nullopt;
 }

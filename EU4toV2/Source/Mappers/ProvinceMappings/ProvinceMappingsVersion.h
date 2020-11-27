@@ -1,6 +1,5 @@
 #ifndef PROVINCE_MAPPING_VERSION_H
 #define PROVINCE_MAPPING_VERSION_H
-
 #include "GameVersion.h"
 #include "Parser.h"
 #include "ProvinceMapping.h"

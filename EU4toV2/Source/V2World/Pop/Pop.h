@@ -1,7 +1,7 @@
 #ifndef POP_H
 #define POP_H
 
-#include "../../Mappers/Pops/MapperPop.h"
+#include "../../Mappers/Pops/PopInstance.h"
 #include <string>
 
 namespace V2
@@ -10,13 +10,13 @@ class Pop
 {
   public:
 	Pop(std::string _type, int _size, std::string _culture, std::string _religion);
-	Pop(std::string _type, const mappers::MapperPop& mapperPop);
+	Pop(const mappers::PopDetails& popDetails);
 
 	bool combine(const Pop& rhs);
 	void changeSize(int delta) { size += delta; }
 	void incrementSupportedRegimentCount() { supportedRegiments++; }
-	void setCulture(std::string _culture) { culture = _culture; }
-	void setReligion(std::string _religion) { religion = _religion; }
+	void blankCulture() { culture.clear(); }
+	void blankReligion() { religion.clear(); }
 	void setTrashed() { trashed = true; }
 
 	int getSize() const { return size; }

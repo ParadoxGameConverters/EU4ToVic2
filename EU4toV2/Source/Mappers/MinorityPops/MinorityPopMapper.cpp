@@ -18,32 +18,31 @@ mappers::MinorityPopMapper::MinorityPopMapper(std::istream& theStream)
 
 void mappers::MinorityPopMapper::registerKeys()
 {
-	registerKeyword("minority", [this](const std::string& unused, std::istream& theStream)
-		{
-			const MinorityPop minPop(theStream);
-			minorityPopMap.emplace_back(make_pair(minPop.getCulture(), minPop.getReligion()));
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerKeyword("minority", [this](const std::string& unused, std::istream& theStream) {
+		const MinorityPop minPop(theStream);
+		minorityPopMap.emplace_back(make_pair(minPop.getCulture(), minPop.getReligion()));
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 bool mappers::MinorityPopMapper::blankMajorityFromMinority(V2::Pop& pop) const
 {
 	// We are blanking majority part from a minority pop so that we may apply any
 	// religion to gipsies or any culture to mormons.
-	for (const auto& minorityItr : minorityPopMap)
+	for (const auto& [minorityCulture, minorityReligion]: minorityPopMap)
 	{
-		if (pop.getCulture() == minorityItr.first && pop.getReligion() == minorityItr.second)
+		if (pop.getCulture() == minorityCulture && pop.getReligion() == minorityReligion)
+			return true;
+
+		if (minorityCulture.empty() && pop.getReligion() == minorityReligion)
 		{
+			pop.blankCulture();
 			return true;
 		}
-		if (minorityItr.first.empty() && pop.getReligion() == minorityItr.second)
+
+		if (pop.getCulture() == minorityCulture && minorityReligion.empty())
 		{
-			pop.setCulture("");
-			return true;
-		}
-		if (pop.getCulture() == minorityItr.first && minorityItr.second.empty())
-		{
-			pop.setReligion("");
+			pop.blankReligion();
 			return true;
 		}
 	}

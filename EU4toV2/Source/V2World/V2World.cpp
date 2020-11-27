@@ -13,6 +13,7 @@
 #include <filesystem>
 #include <fstream>
 #include <queue>
+#include "Configuration.h"
 namespace fs = std::filesystem;
 
 constexpr int MAX_EQUALITY_COUNTRIES = 5;
@@ -40,9 +41,6 @@ V2::World::World(const EU4::World& sourceWorld,
 	LOG(LogLevel::Info) << "-> Importing Vanilla Pops";
 	importDefaultPops();
 	Log(LogLevel::Progress) << "47 %";
-
-	if (theConfiguration.getDebug())
-		countryPopLogger.logPopsByCountry(provinces);
 
 	LOG(LogLevel::Info) << "-> Importing Potential Countries";
 	importPotentialCountries();
@@ -627,17 +625,16 @@ void V2::World::importPopsFromFile(const std::string& filename)
 	// We are using our own defaults instead of vanilla source because it was modded with cultural minorities.
 	const mappers::PopMapper popMapper("./blankMod/output/history/pops/1836.1.1/" + filename);
 
-	for (const auto& provinceItr: popMapper.getProvincePopTypeMap())
+	for (const auto& [provinceID, popDetails]: popMapper.getProvincePops())
 	{
-		int provinceNum = provinceItr.first;
-		popProvinces.push_back(provinceNum);
+		popProvinces.push_back(provinceID);
 
-		importPopsFromProvince(provinceNum, provinceItr.second);
+		importPopsFromProvince(provinceID, popDetails);
 	}
 	popRegions.insert(std::make_pair(filename, popProvinces));
 }
 
-void V2::World::importPopsFromProvince(const int provinceID, const mappers::PopTypes& popType)
+void V2::World::importPopsFromProvince(const int provinceID, const std::vector<mappers::PopDetails>& popsDetails)
 {
 	auto provincePopulation = 0;
 	auto provinceSlavePopulation = 0;
@@ -649,9 +646,9 @@ void V2::World::importPopsFromProvince(const int provinceID, const mappers::PopT
 		return;
 	}
 
-	for (const auto& pop: popType.getPopTypes())
+	for (const auto& popDetails: popsDetails)
 	{
-		auto newPop = std::make_shared<Pop>(pop.first, pop.second.getSize(), pop.second.getCulture(), pop.second.getReligion());
+		auto newPop = std::make_shared<Pop>(popDetails);
 		if (minorityPopMapper.blankMajorityFromMinority(*newPop))
 		{
 			// If the pop we loaded had minority elements, their majority elements are now blank.
@@ -994,7 +991,7 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 	}
 }
 
-std::optional<std::string> V2::World::determineProvinceOwnership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const
+std::optional<std::string> V2::World::determineProvinceOwnership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const
 {
 	// determine ownership by province development.
 	std::map<std::string, std::vector<std::shared_ptr<EU4::Province>>> theClaims; // tag, claimed provinces
@@ -1049,7 +1046,7 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::vect
 	return std::move(winner);
 }
 
-std::optional<std::string> V2::World::determineProvinceControllership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld)
+std::optional<std::string> V2::World::determineProvinceControllership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld)
 {
 	// determine ownership by pure numbers. Errors due to equal numbers can be assigned to war uncertainty and fog of war. *shrug*
 	std::map<std::string, std::vector<int>> theClaims; // tag, claimed provinces

@@ -50,17 +50,8 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp">
       <Filter>ConverterFiles\Mappers\ProvinceMappings</Filter>
     </ClCompile>
-    <ClCompile Include="MapperTests\ProvinceMappingTests.cpp">
-      <Filter>MapperTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp">
       <Filter>ConverterFiles\Mappers\ProvinceMappings</Filter>
-    </ClCompile>
-    <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp">
-      <Filter>MapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="MapperTests\ProvinceMapperTests.cpp">
-      <Filter>MapperTests</Filter>
     </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp">
       <Filter>ConverterFiles\Mappers\ProvinceMappings</Filter>
@@ -635,6 +626,114 @@
     <ClCompile Include="..\EU4toV2\Source\V2World\Output\outCultureGroups.cpp">
       <Filter>ConverterFiles\Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\LeaderTraits\LeaderTraitMapperTests.cpp">
+      <Filter>MapperTests\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\LeaderTraits\LeaderTraitTests.cpp">
+      <Filter>MapperTests\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\LeaderTraits\LeaderTraitTypesTests.cpp">
+      <Filter>MapperTests\LeaderTraits</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\MinorityPops\MinorityPop.cpp">
+      <Filter>ConverterFiles\Mappers\MinorityPopMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\MinorityPops\MinorityPopMapper.cpp">
+      <Filter>ConverterFiles\Mappers\MinorityPopMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\MinorityPopMapper\MinorityPopMapperTests.cpp">
+      <Filter>MapperTests\MinorityPopMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\MinorityPopMapper\MinorityPopTests.cpp">
+      <Filter>MapperTests\MinorityPopMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\Pop\Pop.cpp">
+      <Filter>ConverterFiles\Vic2World\Pop</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\BuildingPosition.cpp">
+      <Filter>ConverterFiles\Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\NavalBase.cpp">
+      <Filter>ConverterFiles\Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\NavalBases\NavalBaseMapper.cpp">
+      <Filter>ConverterFiles\Mappers\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\NavalBaseMapper\BuildingPositionTests.cpp">
+      <Filter>MapperTests\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\NavalBaseMapper\NavalBaseMapperTests.cpp">
+      <Filter>MapperTests\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\NavalBaseMapper\NavalBaseTests.cpp">
+      <Filter>MapperTests\NavalBaseMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyNames\PartyName.cpp">
+      <Filter>ConverterFiles\Mappers\PartyNameMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyNames\PartyNameMapper.cpp">
+      <Filter>ConverterFiles\Mappers\PartyNameMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PartyNameMapper\PartyNameMapperTests.cpp">
+      <Filter>MapperTests\PartyNameMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PartyNameMapper\PartyNameTests.cpp">
+      <Filter>MapperTests\PartyNameMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyTypes\PartyType.cpp">
+      <Filter>ConverterFiles\Mappers\PartyTypeMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PartyTypes\PartyTypeMapper.cpp">
+      <Filter>ConverterFiles\Mappers\PartyTypeMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PartyTypeMapper\PartyTypeMapperTests.cpp">
+      <Filter>MapperTests\PartyTypeMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PartyTypeMapper\PartyTypeTests.cpp">
+      <Filter>MapperTests\PartyTypeMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\V2World\Output\outParty.cpp">
+      <Filter>ConverterFiles\Vic2World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Pops\PopInstance.cpp">
+      <Filter>ConverterFiles\Mappers\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Pops\PopMapper.cpp">
+      <Filter>ConverterFiles\Mappers\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\Pops\PopTypes.cpp">
+      <Filter>ConverterFiles\Mappers\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\Pops\PopInstanceTests.cpp">
+      <Filter>MapperTests\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\Pops\PopMapperTests.cpp">
+      <Filter>MapperTests\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\Pops\PopTypesTests.cpp">
+      <Filter>MapperTests\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PortProvinces\PortProvinces.cpp">
+      <Filter>ConverterFiles\Mappers\PortProvinces</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PortProvinces\PortProvincesTests.cpp">
+      <Filter>MapperTests\PortProvinces</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.cpp">
+      <Filter>ConverterFiles\Mappers\ProvinceDetailsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceDetailsMapper\ProvinceDetailsMapperTests.cpp">
+      <Filter>MapperTests\ProvinceDetailsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMapperTests.cpp">
+      <Filter>MapperTests\ProvinceMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingsVersionTests.cpp">
+      <Filter>MapperTests\ProvinceMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingTests.cpp">
+      <Filter>MapperTests\ProvinceMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -921,6 +1020,57 @@
     </Filter>
     <Filter Include="ConverterFiles\Vic2World\Output">
       <UniqueIdentifier>{0dd8d101-ba5a-495e-8b51-22fd43a48cdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\LeaderTraits">
+      <UniqueIdentifier>{4dfe9adf-33ec-4a05-983a-653509bac257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\MinorityPopMapper">
+      <UniqueIdentifier>{eef06d29-5db5-4a18-bc5a-082acab6e389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\MinorityPopMapper">
+      <UniqueIdentifier>{99d99563-58a4-48e8-a85b-a45c1e49593e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Vic2World\Pop">
+      <UniqueIdentifier>{a23d3fa0-7ed0-4624-8288-876165acd62e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\NavalBaseMapper">
+      <UniqueIdentifier>{e593baac-9dac-4ec1-ab21-14e643cf580c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\NavalBaseMapper">
+      <UniqueIdentifier>{09c9c804-29f2-4666-b188-c029e6deaf16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\PartyNameMapper">
+      <UniqueIdentifier>{132c2610-3afa-4b06-803c-ff0907dad517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\PartyNameMapper">
+      <UniqueIdentifier>{b1a9f04f-2e30-45ed-9ea4-55b8be6134e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\PartyTypeMapper">
+      <UniqueIdentifier>{a74153df-0f1c-40a5-93a1-d7c7720cda30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\PartyTypeMapper">
+      <UniqueIdentifier>{76d15ac2-8860-4178-8e4b-69f711dcd09f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\Pops">
+      <UniqueIdentifier>{ae9a2425-9ac4-407e-befc-4117343cb3f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\Pops">
+      <UniqueIdentifier>{a513121e-2fd3-4eda-8ea5-6380c904b7ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\PortProvinces">
+      <UniqueIdentifier>{1f20b80a-2554-47a9-b32e-fcb4c274b416}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\PortProvinces">
+      <UniqueIdentifier>{bf43b742-65ad-482e-8ff4-de876a5fd83f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\ProvinceDetailsMapper">
+      <UniqueIdentifier>{b9804848-4b75-48f9-accb-eb88b643f7c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\ProvinceDetailsMapper">
+      <UniqueIdentifier>{70b6b123-b1c7-4e48-b600-90c436dc4e71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\ProvinceMapper">
+      <UniqueIdentifier>{f993b87b-54c7-4cba-83c7-ee9b5c845c88}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
