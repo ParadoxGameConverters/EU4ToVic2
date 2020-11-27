@@ -34,11 +34,11 @@ V2::Province::Province(std::string _filename,
 	// In case we're overriding provinces (not true by default)
 	if (commonItems::DoesFileExist("blankMod/output/history/provinces/" + filename))
 	{
-		details = mappers::ProvinceDetails("blankMod/output/history/provinces/" + filename);
+		details = mappers::ProvinceDetailsMapper("blankMod/output/history/provinces/" + filename).getProvinceDetails();
 	}
 	else
 	{
-		details = mappers::ProvinceDetails(theConfiguration.getVic2Path() + "/history/provinces/" + filename);
+		details = mappers::ProvinceDetailsMapper(theConfiguration.getVic2Path() + "/history/provinces/" + filename).getProvinceDetails();
 	}
 
 	for (const auto& climate: climateMapper.getClimateMap())

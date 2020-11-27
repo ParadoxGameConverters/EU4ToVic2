@@ -413,7 +413,7 @@
     <ClCompile Include="Source\Mappers\Pops\PopMapper.cpp" />
     <ClCompile Include="Source\Mappers\Pops\PopTypes.cpp" />
     <ClCompile Include="Source\Mappers\PortProvinces\PortProvinces.cpp" />
-    <ClCompile Include="Source\Mappers\ProvinceDetails\ProvinceDetails.cpp" />
+    <ClCompile Include="Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -602,7 +602,7 @@
     <ClInclude Include="Source\Mappers\Pops\PopMapper.h" />
     <ClInclude Include="Source\Mappers\Pops\PopTypes.h" />
     <ClInclude Include="Source\Mappers\PortProvinces\PortProvinces.h" />
-    <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetails.h" />
+    <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapping.h" />
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.h" />

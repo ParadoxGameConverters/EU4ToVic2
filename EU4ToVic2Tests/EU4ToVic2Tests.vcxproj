@@ -280,6 +280,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\Pops\PopMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Pops\PopTypes.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\PortProvinces\PortProvinces.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
@@ -401,6 +402,7 @@
     <ClCompile Include="MapperTests\Pops\PopMapperTests.cpp" />
     <ClCompile Include="MapperTests\Pops\PopTypesTests.cpp" />
     <ClCompile Include="MapperTests\PortProvinces\PortProvincesTests.cpp" />
+    <ClCompile Include="MapperTests\ProvinceDetailsMapper\ProvinceDetailsMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMappingsVersionTests.cpp" />
