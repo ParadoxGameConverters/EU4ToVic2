@@ -722,6 +722,12 @@
     <ClCompile Include="MapperTests\Pops\PopTypesTests.cpp">
       <Filter>MapperTests\Pops</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\PortProvinces\PortProvinces.cpp">
+      <Filter>ConverterFiles\Mappers\PortProvinces</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PortProvinces\PortProvincesTests.cpp">
+      <Filter>MapperTests\PortProvinces</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -1044,6 +1050,12 @@
     </Filter>
     <Filter Include="MapperTests\Pops">
       <UniqueIdentifier>{a513121e-2fd3-4eda-8ea5-6380c904b7ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\PortProvinces">
+      <UniqueIdentifier>{1f20b80a-2554-47a9-b32e-fcb4c274b416}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\PortProvinces">
+      <UniqueIdentifier>{bf43b742-65ad-482e-8ff4-de876a5fd83f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

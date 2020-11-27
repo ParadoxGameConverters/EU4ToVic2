@@ -12,7 +12,7 @@ TEST(Mappers_PartyTypeTests, primitivesDefaultToDefaults)
 	ASSERT_TRUE(mapper.getName().empty());
 }
 
-TEST(Mappers_PartyNameTests, nameCanBeSet)
+TEST(Mappers_PartyTypeTests, nameCanBeSet)
 {
 	std::stringstream input;
 	mappers::PartyType mapper(input);
@@ -22,7 +22,7 @@ TEST(Mappers_PartyNameTests, nameCanBeSet)
 	ASSERT_EQ("Party", mapper.getName());
 }
 
-TEST(Mappers_PartyNameTests, ideologyCanBeSet)
+TEST(Mappers_PartyTypeTests, ideologyCanBeSet)
 {
 	std::stringstream input;
 	mappers::PartyType mapper(input);
@@ -32,7 +32,7 @@ TEST(Mappers_PartyNameTests, ideologyCanBeSet)
 	ASSERT_EQ("conservative", mapper.getIdeology());
 }
 
-TEST(Mappers_PartyNameTests, datesCanBeSet)
+TEST(Mappers_PartyTypeTests, datesCanBeSet)
 {
 	std::stringstream input;
 	input << "start_date = 1800.1.1\n";
@@ -43,7 +43,7 @@ TEST(Mappers_PartyNameTests, datesCanBeSet)
 	ASSERT_EQ(date("2000.1.1"), mapper.getEndDate());
 }
 
-TEST(Mappers_PartyNameTests, partyTypeCanBeOutput)
+TEST(Mappers_PartyTypeTests, partyTypeCanBeOutput)
 {
 	std::stringstream input;
 	input << "start_date = 1000.1.1\n";

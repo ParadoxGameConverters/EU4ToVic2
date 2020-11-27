@@ -1,6 +1,6 @@
 #include "PortProvinces.h"
-#include "ParserHelpers.h"
 #include "Log.h"
+#include "ParserHelpers.h"
 
 mappers::PortProvinces::PortProvinces()
 {
@@ -19,17 +19,13 @@ mappers::PortProvinces::PortProvinces(std::istream& theStream)
 
 void mappers::PortProvinces::registerKeys()
 {
-	registerKeyword("whitelist", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::intList portList(theStream);
-			auto portVector = portList.getInts();
-			whitelist = std::set<int>(portVector.begin(), portVector.end());
-		});
-	registerKeyword("blacklist", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::intList portList(theStream);
-			auto portVector = portList.getInts();
-			blacklist = std::set<int>(portVector.begin(), portVector.end());
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerKeyword("whitelist", [this](const std::string& unused, std::istream& theStream) {
+		const auto portVector = commonItems::intList(theStream).getInts();
+		whitelist.insert(portVector.begin(), portVector.end());
+	});
+	registerKeyword("blacklist", [this](const std::string& unused, std::istream& theStream) {
+		auto portVector = commonItems::intList(theStream).getInts();
+		blacklist.insert(portVector.begin(), portVector.end());
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
