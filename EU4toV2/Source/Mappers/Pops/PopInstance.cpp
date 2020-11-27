@@ -1,5 +1,6 @@
 #include "PopInstance.h"
 #include "ParserHelpers.h"
+#include <cmath>
 
 mappers::PopInstance::PopInstance(std::istream& theStream, const std::string& thePopType)
 {
