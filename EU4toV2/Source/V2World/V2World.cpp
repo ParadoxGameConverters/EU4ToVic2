@@ -113,8 +113,8 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "65 %";
 
 	LOG(LogLevel::Info) << "-> Merging Nations";
-	addUnions(sourceWorld);
-	decentralizeHRE(sourceWorld);
+	addUnions(sourceWorld.decentralizedHRE());
+	decentralizeHRE(sourceWorld.decentralizedHRE());
 
 	Log(LogLevel::Info) << "-> Invoking the Undead";
 	updateDeadNations();
@@ -981,8 +981,7 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 			}
 		}
 
-		province.second->convertFromOldProvince(sourceWorld,
-			 filteredSources,
+		province.second->convertFromOldProvince(filteredSources,
 			 sourceWorld.getCountries(),
 			 sourceWorld.getRegions(),
 			 cultureMapper,
@@ -990,7 +989,8 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 			 continentsMapper,
 			 religionMapper,
 			 countryMapper,
-			 provinceMapper);
+			 provinceMapper,
+			 sourceWorld.decentralizedHRE());
 	}
 }
 
@@ -1367,7 +1367,7 @@ void V2::World::setupPops(const EU4::World& sourceWorld)
 	LOG(LogLevel::Info) << "New total world population: " << newTotalPopulation;
 }
 
-void V2::World::addUnions(const EU4::World& sourceWorld)
+void V2::World::addUnions(bool hreDecentralized)
 {
 	if (theConfiguration.getCoreHandling() == Configuration::COREHANDLES::DropAll)
 		return;
@@ -1386,8 +1386,7 @@ void V2::World::addUnions(const EU4::World& sourceWorld)
 
 				// Skip Germany if the Empire was decentralized
 				if (const auto& gerItr = std::find(unionCores.begin(), unionCores.end(), "GER");
-					sourceWorld.getHREReforms().count("emperor_reichskrieg")
-					&& gerItr != unionCores.end())
+					hreDecentralized && gerItr != unionCores.end())
 				{
 					unionCores.erase(gerItr);
 				}
@@ -1416,10 +1415,10 @@ void V2::World::addUnions(const EU4::World& sourceWorld)
 	}
 }
 
-void V2::World::decentralizeHRE(const EU4::World& sourceWorld)
+void V2::World::decentralizeHRE(bool hreDecentralized)
 {
-	if (sourceWorld.getHREReforms().count("emperor_reichskrieg"))
-		cultureGroupsMapper.getGroupForCulture("german")->setUnionTag("");
+	if (hreDecentralized)
+		cultureGroupsMapper.getGroupForCulture("german")->clearUnionTag();
 }
 
 

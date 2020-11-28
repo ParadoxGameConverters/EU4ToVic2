@@ -1,7 +1,7 @@
 #ifndef PROVINCE_H
 #define PROVINCE_H
 
-#include "../../EU4World/World.h"
+#include "World.h"
 #include "../../EU4World/Country/EU4Country.h"
 #include "../../EU4World/Provinces/EU4Province.h"
 #include "../../Mappers/Geography/ClimateMapper.h"
@@ -105,8 +105,7 @@ class Province
 	std::shared_ptr<Pop> getSoldierPopForArmy(bool force = false);
 
 	void sterilizeProvince();
-	void convertFromOldProvince(const EU4::World& sourceWorld,
-		 const std::vector<std::shared_ptr<EU4::Province>>& provinceSources,
+	void convertFromOldProvince(const std::vector<std::shared_ptr<EU4::Province>>& provinceSources,
 		 const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
 		 const EU4::Regions& eu4Regions,
 		 mappers::CultureMapper& cultureMapper,
@@ -114,7 +113,8 @@ class Province
 		 const mappers::Continents& continentsMapper,
 		 const mappers::ReligionMapper& religionMapper,
 		 const mappers::CountryMappings& countryMapper,
-		 const mappers::ProvinceMapper& provinceMapper);
+		 const mappers::ProvinceMapper& provinceMapper,
+		 bool hreDecentralized);
 	void doCreatePops(double popWeightRatio, Country* _owner, CIV_ALGORITHM popConversionAlgorithm, const mappers::ProvinceMapper& provinceMapper);
 
 	friend std::ostream& operator<<(std::ostream& output, const Province& province);

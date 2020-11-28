@@ -1,6 +1,6 @@
 #include "Province.h"
 #include "../../Configuration.h"
-#include "../../EU4World/World.h"
+#include "World.h"
 #include "../../EU4World/Regions/Regions.h"
 #include "../../Mappers/CountryMappings/CountryMappings.h"
 #include "../../Mappers/CultureMapper/CultureMapper.h"
@@ -99,8 +99,7 @@ void V2::Province::addCore(const std::string& newCore)
 	}
 }
 
-void V2::Province::convertFromOldProvince(const EU4::World& sourceWorld,
-	 const std::vector<std::shared_ptr<EU4::Province>>& provinceSources,
+void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4::Province>>& provinceSources,
 	 const std::map<std::string, std::shared_ptr<EU4::Country>>& theEU4Countries,
 	 const EU4::Regions& eu4Regions,
 	 mappers::CultureMapper& cultureMapper,
@@ -108,7 +107,8 @@ void V2::Province::convertFromOldProvince(const EU4::World& sourceWorld,
 	 const mappers::Continents& continentsMapper,
 	 const mappers::ReligionMapper& religionMapper,
 	 const mappers::CountryMappings& countryMapper,
-	 const mappers::ProvinceMapper& provinceMapper)
+	 const mappers::ProvinceMapper& provinceMapper,
+	 bool hreDecentralized)
 {
 	// Drop vanilla cores
 	details.cores.clear();
@@ -126,8 +126,7 @@ void V2::Province::convertFromOldProvince(const EU4::World& sourceWorld,
 		if (oldProvince->inHre())
 		{
 			inHRE = true;
-			if (const auto& hreReforms = sourceWorld.getHREReforms();
-				 std::find(hreReforms.begin(), hreReforms.end(), "emperor_reichskrieg") == hreReforms.end())
+			if (!hreDecentralized)
 				addCore("HRE");
 		}
 	}

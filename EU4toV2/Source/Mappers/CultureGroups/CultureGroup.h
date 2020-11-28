@@ -18,7 +18,7 @@ class CultureGroup: commonItems::parser
 
 	void addNeoCulture(const std::string& theName, const std::shared_ptr<Culture>& culture, const std::string& oldCulture);
 	void mergeCulture(const std::string& theName, const std::shared_ptr<Culture>& culture);
-	void setUnionTag(const std::string& tag) { culturalUnionTag = tag; }
+	void clearUnionTag() { culturalUnionTag.clear(); }
 
 	friend std::ostream& operator<<(std::ostream& output, const CultureGroup& cultureGroup);
 

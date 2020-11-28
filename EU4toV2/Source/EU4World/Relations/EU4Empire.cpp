@@ -14,8 +14,7 @@ void EU4::EU4Empire::registerKeywords()
 		emperor = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("passed_reform", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString reformStr(theStream);
-		reforms.insert(reformStr.getString());
+		reforms.insert(commonItems::singleString(theStream).getString());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

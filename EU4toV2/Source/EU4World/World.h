@@ -37,6 +37,7 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getHistoricalData() const { return historicalData; }
 	[[nodiscard]] const auto& getNativeCultures() const { return nativeCultures; }
 	[[nodiscard]] const auto& getHREReforms() const { return hreReforms; }
+	[[nodiscard]] bool decentralizedHRE() const { return hreReforms.contains("emperor_reichskrieg"); }
 
   private:
 	void registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper);
