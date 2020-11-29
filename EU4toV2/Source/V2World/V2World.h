@@ -101,8 +101,9 @@ class World
 	void convertTechs(const EU4::World& sourceWorld);
 	void allocateFactories(const EU4::World& sourceWorld);
 	void setupPops(const EU4::World& sourceWorld);
-	void addUnions(bool hreDecentralized);
-	void decentralizeHRE(bool hreDecentralized);
+	void addUnions(bool hreDecentralized, const std::string& emperorCulture);
+	void decentralizeHRE(bool hreDecentralized, const std::string& emperorCulture);
+	std::shared_ptr<Country> findEmperorHRE();
 	void convertArmies();
 	void output(const mappers::VersionParser& versionParser) const;
 	void createModFile() const;
