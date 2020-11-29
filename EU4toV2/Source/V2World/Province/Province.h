@@ -1,7 +1,6 @@
 #ifndef PROVINCE_H
 #define PROVINCE_H
 
-#include "World.h"
 #include "../../EU4World/Country/EU4Country.h"
 #include "../../EU4World/Provinces/EU4Province.h"
 #include "../../Mappers/Geography/ClimateMapper.h"

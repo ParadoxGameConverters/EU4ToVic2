@@ -3,7 +3,6 @@
 
 #include "../../Mappers/AgreementMapper/AgreementMapper.h"
 #include "../../Mappers/CountryMappings/CountryMappings.h"
-#include "../EU4toV2/Source/EU4World/World.h"
 #include "../EU4toV2/Source/EU4World/Diplomacy/EU4Agreement.h"
 #include "Agreement.h"
 #include <vector>
@@ -21,7 +20,7 @@ class Diplomacy
 		 const mappers::CountryMappings& countryMapper,
 		 std::map<std::string, std::shared_ptr<Country>>& countries);
 	void sphereHRE(bool hreDecentralized,
-		std::shared_ptr<Country> emperor,
+		const std::shared_ptr<Country>& emperor,
 		const std::map<std::string, std::shared_ptr<Country>>& countries);
 
   private:

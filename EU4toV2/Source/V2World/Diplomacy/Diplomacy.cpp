@@ -1,6 +1,5 @@
 #include "Diplomacy.h"
 #include "../../Configuration.h"
-#include "World.h"
 #include "../../EU4World/Country/EU4Country.h"
 #include "../Country/Country.h"
 #include "Log.h"
@@ -220,7 +219,7 @@ void V2::Diplomacy::convertRelationsToInfluence(const std::map<std::string, std:
 }
 
 void V2::Diplomacy::sphereHRE(bool hreDecentralized,
-	std::shared_ptr<Country> emperor,
+	const std::shared_ptr<Country>& emperor,
 	const std::map<std::string, std::shared_ptr<Country>>& countries
 ){
 	if (!hreDecentralized || !emperor)

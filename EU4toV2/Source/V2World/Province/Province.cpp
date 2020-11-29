@@ -1,6 +1,5 @@
 #include "Province.h"
 #include "../../Configuration.h"
-#include "World.h"
 #include "../../EU4World/Regions/Regions.h"
 #include "../../Mappers/CountryMappings/CountryMappings.h"
 #include "../../Mappers/CultureMapper/CultureMapper.h"
