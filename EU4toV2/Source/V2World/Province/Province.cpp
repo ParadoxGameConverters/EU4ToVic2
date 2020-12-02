@@ -106,7 +106,8 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 	 const mappers::Continents& continentsMapper,
 	 const mappers::ReligionMapper& religionMapper,
 	 const mappers::CountryMappings& countryMapper,
-	 const mappers::ProvinceMapper& provinceMapper)
+	 const mappers::ProvinceMapper& provinceMapper,
+	 bool hreDecentralized)
 {
 	// Drop vanilla cores
 	details.cores.clear();
@@ -120,9 +121,15 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 
 	// Single HRE province is enough
 	for (const auto& oldProvince: provinceSources)
+	{
 		if (oldProvince->inHre())
+		{
 			inHRE = true;
-
+			if (!hreDecentralized)
+				addCore("HRE");
+		}
+	}
+	
 	territorialCore = false; // A single territorial core will be sufficient to trip this.
 	for (const auto& oldProvince: provinceSources)
 	{

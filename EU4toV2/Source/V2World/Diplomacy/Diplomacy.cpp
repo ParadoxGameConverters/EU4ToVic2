@@ -218,6 +218,24 @@ void V2::Diplomacy::convertRelationsToInfluence(const std::map<std::string, std:
 	}
 }
 
+void V2::Diplomacy::sphereHRE(bool hreDecentralized,
+	const std::shared_ptr<Country>& emperor,
+	const std::map<std::string, std::shared_ptr<Country>>& countries
+){
+	if (!hreDecentralized || !emperor)
+		return;
+
+	Log(LogLevel::Info) << "\tSphereing HRE";
+	for (const auto& country: countries)
+	{
+		if (!country.second->isMemberHRE() || country.second->isEmperorHRE())
+			continue;
+		auto& relation = emperor->getRelation(country.second->getTag());
+		relation.setLevel(5);
+		relation.setAccess(true);
+	}
+}
+
 void V2::Diplomacy::output() const
 {
 	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/diplomacy");

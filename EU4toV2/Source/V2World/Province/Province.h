@@ -112,7 +112,8 @@ class Province
 		 const mappers::Continents& continentsMapper,
 		 const mappers::ReligionMapper& religionMapper,
 		 const mappers::CountryMappings& countryMapper,
-		 const mappers::ProvinceMapper& provinceMapper);
+		 const mappers::ProvinceMapper& provinceMapper,
+		 bool hreDecentralized);
 	void doCreatePops(double popWeightRatio, Country* _owner, CIV_ALGORITHM popConversionAlgorithm, const mappers::ProvinceMapper& provinceMapper);
 
 	friend std::ostream& operator<<(std::ostream& output, const Province& province);

@@ -73,6 +73,7 @@ V2::World::World(const EU4::World& sourceWorld,
 
 	LOG(LogLevel::Info) << "-> Converting Diplomacy";
 	diplomacy.convertDiplomacy(sourceWorld.getDiplomaticAgreements(), countryMapper, countries);
+	diplomacy.sphereHRE(sourceWorld.decentralizedHRE(), getHreEmperor(), countries);
 	Log(LogLevel::Progress) << "55 %";
 
 	LOG(LogLevel::Info) << "-> Setting Up States";
@@ -112,7 +113,8 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "65 %";
 
 	LOG(LogLevel::Info) << "-> Merging Nations";
-	addUnions();
+	decentralizeHRE(sourceWorld.decentralizedHRE(), getHreEmperor());
+	addUnions(sourceWorld.decentralizedHRE(), getHreEmperor());
 
 	Log(LogLevel::Info) << "-> Invoking the Undead";
 	updateDeadNations();
@@ -987,7 +989,8 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 			 continentsMapper,
 			 religionMapper,
 			 countryMapper,
-			 provinceMapper);
+			 provinceMapper,
+			 sourceWorld.decentralizedHRE());
 	}
 }
 
@@ -1364,12 +1367,15 @@ void V2::World::setupPops(const EU4::World& sourceWorld)
 	LOG(LogLevel::Info) << "New total world population: " << newTotalPopulation;
 }
 
-void V2::World::addUnions()
+void V2::World::addUnions(bool hreDecentralized, const std::shared_ptr<Country>& emperor)
 {
 	if (theConfiguration.getCoreHandling() == Configuration::COREHANDLES::DropAll)
 		return;
 
 	LOG(LogLevel::Info) << "Distributing national and cultural union cores.";
+	std::shared_ptr<mappers::CultureGroup> emperorCultureGroup;
+	if (emperor)
+		emperorCultureGroup = cultureGroupsMapper.getGroupForCulture(emperor->getPrimaryCulture());
 
 	for (const auto& province: provinces)
 	{
@@ -1380,6 +1386,9 @@ void V2::World::addUnions()
 			{
 				auto unionCores = culturalUnionMapper->getCoresForCulture(culture);
 				auto nationalCores = culturalNationalitiesMapper->getCoresForCulture(culture);
+				if (hreDecentralized && emperorCultureGroup->containsCulture(culture))
+					unionCores.clear();
+
 				switch (theConfiguration.getCoreHandling())
 				{
 					case Configuration::COREHANDLES::DropNational:
@@ -1402,6 +1411,22 @@ void V2::World::addUnions()
 			}
 		}
 	}
+}
+
+void V2::World::decentralizeHRE(bool hreDecentralized, const std::shared_ptr<Country>& emperor)
+{
+	if (hreDecentralized && emperor)
+		cultureGroupsMapper.getGroupForCulture(emperor->getPrimaryCulture())->clearUnionTag();
+}
+
+std::shared_ptr<V2::Country> V2::World::getHreEmperor() const
+{
+	for (const auto& [unused, country]: countries)
+	{
+		if (country->isEmperorHRE())
+			return country;
+	}
+	return nullptr;
 }
 
 

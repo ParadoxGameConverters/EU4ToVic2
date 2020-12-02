@@ -138,6 +138,8 @@ class Country
 	[[nodiscard]] const auto& getEU4PrimaryCulture() const { return details.eu4PrimaryCulture; }
 	[[nodiscard]] const auto& getAcceptedCultures() const { return details.acceptedCultures; }
 	[[nodiscard]] const auto& getEU4AcceptedCultures() const { return details.eu4acceptedCultures; }
+	[[nodiscard]] bool isEmperorHRE() const { return details.holyRomanEmperor; }
+	[[nodiscard]] bool isMemberHRE() const { return details.inHRE; }
 
 	friend std::ostream& operator<<(std::ostream& output, const Country& country);
 	void outputCommons(std::ostream& output);

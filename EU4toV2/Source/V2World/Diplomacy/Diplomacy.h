@@ -19,6 +19,9 @@ class Diplomacy
 	void convertDiplomacy(std::vector<EU4::EU4Agreement> agreements,
 		 const mappers::CountryMappings& countryMapper,
 		 std::map<std::string, std::shared_ptr<Country>>& countries);
+	void sphereHRE(bool hreDecentralized,
+		const std::shared_ptr<Country>& emperor,
+		const std::map<std::string, std::shared_ptr<Country>>& countries);
 
   private:
 	std::vector<Agreement> agreements;

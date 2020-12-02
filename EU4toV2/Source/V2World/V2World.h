@@ -75,6 +75,7 @@ class World
 	[[nodiscard]] std::shared_ptr<Province> getProvince(int provID) const;
 	[[nodiscard]] std::shared_ptr<Country> getCountry(const std::string& tag) const;
 	[[nodiscard]] unsigned int countCivilizedNations() const;
+	[[nodiscard]] std::shared_ptr<Country> getHreEmperor() const;
 
 	static std::optional<std::string> determineProvinceControllership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld);
 	std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, const EU4::Country& sourceCountry);
@@ -101,7 +102,8 @@ class World
 	void convertTechs(const EU4::World& sourceWorld);
 	void allocateFactories(const EU4::World& sourceWorld);
 	void setupPops(const EU4::World& sourceWorld);
-	void addUnions();
+	void addUnions(bool hreDecentralized, const std::shared_ptr<Country>& emperor);
+	void decentralizeHRE(bool hreDecentralized, const std::shared_ptr<Country>& emperor);
 	void convertArmies();
 	void output(const mappers::VersionParser& versionParser) const;
 	void createModFile() const;
