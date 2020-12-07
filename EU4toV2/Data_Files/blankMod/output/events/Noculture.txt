@@ -13298,3 +13298,53 @@ country_event = {
   religion = mardukism
  }
 }
+country_event = {
+ id = 1002072
+ title = EVTNAMERELNEW
+ desc = EVTDESCRELNEW
+ picture = census
+
+ trigger = {
+  capital_scope = {
+   pop_majority_religion = siberian_pagan_reformed
+  }
+  accepted_culture = zzz_religion_noreligion
+  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.1
+ }
+ 
+ option = {
+  name = EVTOPTARELNEW
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_siberian_pagan_reformed
+  religion = siberian_pagan_reformed
+ }
+}
+country_event = {
+ id = 1002073
+ title = EVTNAMERELNEW
+ desc = EVTDESCRELNEW
+ picture = census
+
+ trigger = {
+  capital_scope = {
+   pop_majority_religion = pagan_religion_reformed
+  }
+  accepted_culture = zzz_religion_noreligion
+  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+ }
+ 
+ mean_time_to_happen = {
+  months = 0.1
+ }
+ 
+ option = {
+  name = EVTOPTARELNEW
+  remove_accepted_culture = zzz_religion_noreligion
+  add_accepted_culture = zzz_pagan_religion_reformed
+  religion = pagan_religion_reformed
+ }
+}
