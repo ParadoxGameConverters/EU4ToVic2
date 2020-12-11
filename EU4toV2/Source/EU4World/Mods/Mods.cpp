@@ -53,7 +53,7 @@ void EU4::Mods::loadSteamWorkshopDirectory()
 {
 	const auto& steamWorkshopPath = theConfiguration.getSteamWorkshopPath();
 	if (!commonItems::DoesFolderExist(steamWorkshopPath))
-		throw std::invalid_argument("No Steam Worksop directory was specified in configuration.txt, or the path was invalid");
+		throw std::invalid_argument("No Steam Workshop directory was specified in configuration.txt, or the path was invalid");
 
 	LOG(LogLevel::Info) << "\tSteam Workshop directory is " << steamWorkshopPath;
 	auto subfolders = commonItems::GetAllSubfolders(steamWorkshopPath);
