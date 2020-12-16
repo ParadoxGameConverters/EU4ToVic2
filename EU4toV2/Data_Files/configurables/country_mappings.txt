@@ -845,7 +845,8 @@ link = { eu4 = MTR v2 = MTR } # Mataram
 link = { eu4 = OIR v2 = OIR } # Oirat Horde
 link = { eu4 = PAT v2 = PAT } # Pattani
 link = { eu4 = PEG v2 = PEG } # Pegu
-link = { eu4 = QNG v2 = CHI } # Qing => China
+link = { eu4 = QNG v2 = QNG } # Qing
+#link = { eu4 = QNG v2 = CHI } # Qing => China
 link = { eu4 = e_china_west_governor v2 = SXI } # Western Protectorate => Shanxi Clique
 link = { eu4 = RYU v2 = RYU } # Ryukyu
 link = { eu4 = SST v2 = SHA } # Shan
