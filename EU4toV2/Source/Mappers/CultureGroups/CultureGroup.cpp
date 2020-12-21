@@ -23,6 +23,9 @@ void mappers::CultureGroup::registerKeys()
 	registerKeyword("union", [this](const std::string& unused, std::istream& theStream) {
 		culturalUnionTag = commonItems::singleString(theStream).getString();
 	});
+	registerRegex("graphical_culture|female_names|dynasty_names|male_names", [this](const std::string& unused, std::istream& theStream) {
+		commonItems::ignoreItem(unused, theStream);
+	});
 	registerRegex(R"([\w_]+)", [this](const std::string& cultureName, std::istream& theStream) {
 		auto newCulture = std::make_shared<Culture>(theStream);
 		cultures.insert(std::make_pair(cultureName, newCulture));
