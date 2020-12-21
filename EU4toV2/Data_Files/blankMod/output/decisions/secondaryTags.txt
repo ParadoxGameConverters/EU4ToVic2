@@ -154,4 +154,45 @@ political_decisions = {
 			factor = 1
 		}
 	}
+	qing_china = {
+		picture = peking_convention
+		potential = {
+			tag = QNG
+			is_independant = yes
+			OR = {
+				is_greater_power = yes
+				AND = {
+					NOT = { exists = MNG }
+					owns = 1612
+				}
+			}
+			NOT = { year = 1837 }
+		}	
+		allow = {
+			OR = {
+				is_greater_power = yes
+				AND = {
+					NOT = { exists = MNG }
+					owns = 1612
+				}
+				NOT = {
+					any_neighbour_country = {
+						is_culture_group = CHI
+						OR = {
+							number_of_states = 5
+							is_independant = yes
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			any_owned = { limit = { is_core = QNG } remove_core = QNG add_core = CHI }
+			change_tag = CHI		
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

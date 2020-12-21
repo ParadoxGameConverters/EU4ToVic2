@@ -906,6 +906,8 @@ RJX		= "countries/Raj.txt"
 VAN		= "countries/Vandals.txt"
 OSP		= "countries/OldSpain.txt"
 
+QNG		="countries/China.txt"
+
 ##HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions
 D01		= "countries/D01.txt"
