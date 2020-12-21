@@ -12,8 +12,8 @@ void V2::MappingChecker::check(const EU4::World& sourceWorld,
 	 const mappers::ReligionMapper& religionMapper,
 	 const mappers::CultureMapper& cultureMapper) const
 {
-	LOG(LogLevel::Info) << "-> Checking all Land Provinces Mapped (and may kraken take the rest)";
-	checkAllEU4ProvincesMapped(sourceWorld, provinceMapper);
+	//LOG(LogLevel::Info) << "-> Checking all Land Provinces Mapped (and may kraken take the rest)";
+	//checkAllEU4ProvincesMapped(sourceWorld, provinceMapper); TODO: REenable after land/lake/sea filtering
 	LOG(LogLevel::Info) << "-> Checking all Cultures Mapped";
 	checkAllEU4CulturesMapped(sourceWorld, cultureMapper);
 	LOG(LogLevel::Info) << "-> Checking all Religions Mapped";
