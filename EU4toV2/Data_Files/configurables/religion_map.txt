@@ -53,7 +53,7 @@ link = { v2 = jain eu4 = jain }
 link = { v2 = gelugpa eu4 = vajrayana }
 
 #Pagans
-link = { v2 = animist eu4 = animism eu4 = pagan_religion_reformed }
+link = { v2 = animist eu4 = animism eu4 = pagan_religion_reformed eu4 = converted_siberian_pagan }
 link = { v2 = shamanism eu4 = shamanism }
 link = { v2 = totemism eu4 = totemism }
 link = { v2 = aztec_reformed eu4 = aztec_reformed }
