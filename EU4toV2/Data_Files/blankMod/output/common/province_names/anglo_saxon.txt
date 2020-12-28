@@ -3,31 +3,31 @@
 411 = "Mosul"
 1854 = "Sihhem"
 908 = "Minnesota"
-952 = "James ÃŠa"
+952 = "James Êa"
 953 = "Marianland"
-963 = { "Albany" "Albany on NÃ®wum EoforwÃ®ce" }
-965 = { "NÃ®weoforwÃ®cburg" "NÃ®weoforwÃ®cburg" }
-967 = { "Rhode ÃŽeg" "Providence" }
+963 = { "Albany" "Albany on Nîwum Eoforwîce" }
+965 = { "Nîweoforwîcburg" "Nîweoforwîcburg" }
+967 = { "Rhode Îeg" "Providence" }
 968 = { "Massachusetts" "Boston" }
-970 = { "NÃ®wu HÃ¢mtÃ»nscÃ®r" "PortesmuÃ°a" }
+970 = { "Nîwu Hâmtûnscîr" "Portesmuða" }
 973 = { "Vancouver" "Vancouver" }
-982 = "LidwicnÃ¦sÃ®eg"
-983 = "Eadweardes Ã†Ã¾elinges Iegland"
+982 = "Lidwicnæsîeg"
+983 = "Eadweardes Æþelinges Iegland"
 989 = "Ontario"
 993 = { "Cynelic Beorg" "Cynelic Beorg" }
 994 = { "Quebec" "Quebecbeorg" }
 
 492 = "Puerto Rico"
-2524 = "IndiÃ¦na"
-2561 = { "SÃ»Ã¾tun" "SÃ»Ã¾tun" }
+2524 = "Indiæna"
+2561 = { "Sûþtun" "Sûþtun" }
 2563 = { "Vermont" "Montpelier" }
 2569 = { "Halifax" "Halifax" }
 2585 = "Ottawa"
-2592 = "SÃ¦fern"
+2592 = "Sæfern"
 2670 = { "Toronto" "Toronto" }
 
 #Ireland
-4379 = "OffalyscÃ®r"
+4379 = "Offalyscîr"
 
 #Italy
 104 = { "Megelan" "Megelan" }
@@ -36,8 +36,8 @@
 134 = { "Uigenna" "Uigenna" }
 
 #England proper
-234="HÃ¢mtÃ»nescÃ®r" #Hampshire
+234="Hâmtûnescîr" #Hampshire
 236="Lunden" #London
 237="Oxnaford" #Oxford
-245="Eoforwic" #York
-249="Ã†grscÃ®r" #Ayrshire
+245="Eoforwîc" #York
+249="Ægrscîr" #Ayrshire
