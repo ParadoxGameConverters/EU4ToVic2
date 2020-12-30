@@ -33,5 +33,5 @@ deploy:
   release: 1.0R "Ragusa" - for 1.30 and previous
   auth_token:
     secure: LBJzs4y9j0N5y0ajp7gmVk3Pvnec1UU5pTCdIMbQYUddEXQnWTJ79FXsd9SCs7YQ
-  repository: paradoxGameConverters/CK3ToEU4
+  repository: paradoxGameConverters/EU4ToVic2
   artifact: EU4ToVic2-1.0Ragusa
