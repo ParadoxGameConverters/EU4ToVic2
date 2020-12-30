@@ -1,5 +1,5 @@
 # Version info
 
 version = "1.0R"
-name = "Ragusa-prerelease"
+name = "Ragusa"
 descriptionLine = "compatible with 1.30 and previous"
