@@ -3,7 +3,6 @@
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include <fstream>
-#include <vector>
 #include "CommonFunctions.h"
 
 Configuration theConfiguration;
@@ -128,7 +127,6 @@ void Configuration::verifyEU4Path(const std::string& path, bool (*DoesFolderExis
 		throw std::runtime_error(path + " does not contain Europa Universalis 4!");
 	if (!doesFileExist(path + "/map/positions.txt"))
 		throw std::runtime_error(path + " does not appear to be a valid EU4 install!");
-	LOG(LogLevel::Info) << "\tEU4 install path is " << path;
 }
 
 void Configuration::verifyVic2Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))
@@ -137,14 +135,12 @@ void Configuration::verifyVic2Path(const std::string& path, bool (*DoesFolderExi
 		throw std::runtime_error(path + " does not exist!");
 	if (!doesFileExist(path + "/v2game.exe") && !DoesFolderExist(path + "/Victoria 2 - Heart Of Darkness.app") && !DoesFolderExist(path + "../../MacOS"))
 		throw std::runtime_error(path + " does not contain Victoria 2!");
-	LOG(LogLevel::Info) << "\tVictoria 2 install path is " << path;
 }
 
 void Configuration::verifyVic2DocumentsPath(const std::string& path, bool (*DoesFolderExist)(const std::string& path2))
 {
 	if (!DoesFolderExist(path))
 		throw std::runtime_error(path + " does not exist!");
-	LOG(LogLevel::Info) << "\tVictoria 2 documents directory is " << path;
 }
 
 void Configuration::setOutputName()
