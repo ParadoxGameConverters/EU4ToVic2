@@ -177,11 +177,13 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		theConfiguration.setEU4Version(*version);
 		Log(LogLevel::Info) << "Savegave version: " << *version;
 	});
-	registerKeyword("dlc_enabled", [](const std::string& unused, std::istream& theStream) {
-		theConfiguration.setActiveDLCs(commonItems::stringList(theStream).getStrings());
-	});
 	registerKeyword("mod_enabled", [](const std::string& unused, std::istream& theStream) {
-		Mods theMods(commonItems::stringList(theStream).getStrings());
+		Log(LogLevel::Info) << "-> Detecting used mods.";
+		const auto modsList = commonItems::stringList(theStream).getStrings();
+		Log(LogLevel::Info) << "<> Savegame claims " << modsList.size() << " mods used:";
+		for (const auto& usedMod: modsList)
+			Log(LogLevel::Info) << "---> " << usedMod;
+		Mods theMods(modsList);
 	});
 	registerKeyword("revolution_target", [this](const std::string& unused, std::istream& theStream) {
 		revolutionTargetString = commonItems::singleString(theStream).getString();

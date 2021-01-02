@@ -25,16 +25,20 @@ EU4::Mods::Mods(const std::vector<std::string>& usedMods)
 		if (possibleModPath)
 		{
 			if (!commonItems::DoesFolderExist(*possibleModPath) && !commonItems::DoesFileExist(*possibleModPath))
-				throw std::invalid_argument(
-					 usedMod + " could not be found in the specified mod directory, a valid mod directory must be specified. Tried: " + *possibleModPath);
+			{
+				Log(LogLevel::Warning) << usedMod + " could not be found in the specified mod directory, a valid mod directory must be specified. Tried: " +
+														*possibleModPath;
+				continue;
+			}
 
 			LOG(LogLevel::Info) << "\t\t->> Using EU4 Mod: " << *possibleModPath;
 			theConfiguration.addEU4Mod(*possibleModPath);
 		}
 		else
 		{
-			throw std::invalid_argument("No path could be found for " + usedMod +
-												 ". This means you have either removed/unsubscribed a mod the game was using, or that it cannot be found!");
+			Log(LogLevel::Warning) << "Mod " + usedMod +
+													" could not be located. This means you have either removed/unsubscribed a mod the game was using, or that it cannot be "
+													"found! Skipping at your risk, but this can greatly affect conversion.";
 		}
 	}
 }
@@ -118,7 +122,9 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						}
 						else
 						{
-							throw std::invalid_argument("Folder does not exist!");
+							Log(LogLevel::Warning) << "Mod file " + searchDirectory + "/mod/" + filename + " points to " + theMod.getPath() +
+																	" which does not exist! Skipping at your risk, but this can greatly affect conversion.";
+							continue;
 						}
 
 						possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory));
@@ -140,7 +146,9 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						}
 						else
 						{
-							throw std::invalid_argument("Path does not exist!");
+							Log(LogLevel::Warning) << "Mod file " + searchDirectory + "/mod/" + filename + " points to " + theMod.getPath() +
+																	" which does not exist! Skipping at your risk, but this can greatly affect conversion.";
+							continue;
 						}
 
 						const auto trimmedFilename = trimExtension(filename);
@@ -172,8 +180,8 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 						possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory));
 						possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory));
 						possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory));
-						Log(LogLevel::Info) << "\t\tSalvaged potential mod named " << theMod.getName() << " with a mod file at " << searchDirectory << "/mod/" + filename
-												  << " and itself at " << recordDirectory;
+						Log(LogLevel::Info) << "\t\tSalvaged potential mod named " << theMod.getName() << " with a mod file at " << searchDirectory
+												  << "/mod/" + filename << " and itself at " << recordDirectory;
 					}
 					else
 					{
@@ -183,13 +191,12 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 			}
 			catch (std::exception& e)
 			{
-				LOG(LogLevel::Warning) << "Error while reading " << searchDirectory << "/mod/" << filename
-											  << ". Mod will not be useable for conversions. (" << e.what() << ")";
+				LOG(LogLevel::Warning) << "Error while reading " << searchDirectory << "/mod/" << filename << ". Mod will not be useable for conversions. ("
+											  << e.what() << ")";
 			}
 		}
 	}
 }
-
 
 std::optional<std::string> EU4::Mods::getModPath(const std::string& modName) const
 {

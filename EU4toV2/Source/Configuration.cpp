@@ -13,33 +13,40 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 	registerKeyword("SaveGame", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		EU4SaveGamePath = path.getString();
+		LOG(LogLevel::Info) << "EU4 savegame path: " << EU4SaveGamePath;
 	});
 	registerKeyword("EU4directory", [this, DoesFolderExist, doesFileExist](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		EU4Path = path.getString();
 		verifyEU4Path(EU4Path, DoesFolderExist, doesFileExist);
+		LOG(LogLevel::Info) << "EU4 path: " << EU4Path;
 	});
 	registerKeyword("EU4DocumentsDirectory", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		EU4DocumentsPath = path.getString();
+		LOG(LogLevel::Info) << "EU4 documents path: " << EU4DocumentsPath;
 	});
 	registerKeyword("SteamWorkshopDirectory", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		SteamWorkshopPath = path.getString();
+		LOG(LogLevel::Info) << "EU4 steam workshop path: " << SteamWorkshopPath;
 	});
 	registerKeyword("CK2ExportDirectory", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		CK2ExportPath = path.getString();
+		LOG(LogLevel::Info) << "CK2 Export path: " << CK2ExportPath;
 	});
 	registerKeyword("Vic2directory", [this, DoesFolderExist, doesFileExist](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		Vic2Path = path.getString();
 		verifyVic2Path(Vic2Path, DoesFolderExist, doesFileExist);
+		LOG(LogLevel::Info) << "Vic2 path: " << Vic2Path;
 	});
 	registerKeyword("Vic2Documentsdirectory", [this, DoesFolderExist](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		Vic2DocumentsPath = path.getString();
 		verifyVic2DocumentsPath(Vic2DocumentsPath, DoesFolderExist);
+		LOG(LogLevel::Info) << "Vic2 documents path: " << Vic2DocumentsPath;
 	});
 	registerKeyword("max_literacy", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString maxLiteracyString(theStream);
@@ -104,7 +111,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 		incomingOutputName = outputNameStr.getString();
 		LOG(LogLevel::Info) << "Output Name: " << incomingOutputName;
 	});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
 	LOG(LogLevel::Info) << "Reading configuration file";
 	parseStream(theStream);
@@ -138,15 +145,6 @@ void Configuration::verifyVic2DocumentsPath(const std::string& path, bool (*Does
 	if (!DoesFolderExist(path))
 		throw std::runtime_error(path + " does not exist!");
 	LOG(LogLevel::Info) << "\tVictoria 2 documents directory is " << path;
-}
-
-bool Configuration::wasDLCActive(const std::string& DLC) const
-{
-	for (const auto& activeDLC: activeDLCs)
-		if (DLC == activeDLC)
-			return true;
-
-	return false;
 }
 
 void Configuration::setOutputName()
