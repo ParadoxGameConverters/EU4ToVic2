@@ -734,6 +734,12 @@
     <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingTests.cpp">
       <Filter>MapperTests\ProvinceMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\RegimentCosts\RegimentCostsMapper.cpp">
+      <Filter>ConverterFiles\Mappers\RegimentCostsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\RegimentCostsMapper\RegimentCostsMapperTests.cpp">
+      <Filter>MapperTests\RegimentCostsMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -1071,6 +1077,12 @@
     </Filter>
     <Filter Include="MapperTests\ProvinceMapper">
       <UniqueIdentifier>{f993b87b-54c7-4cba-83c7-ee9b5c845c88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\RegimentCostsMapper">
+      <UniqueIdentifier>{5bf1a785-609c-4e3a-a3b5-15d946baa12e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\RegimentCostsMapper">
+      <UniqueIdentifier>{53174550-8ec6-4961-96e5-3b6f00045d62}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

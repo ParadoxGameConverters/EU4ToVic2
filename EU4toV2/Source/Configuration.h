@@ -30,7 +30,6 @@ class Configuration: commonItems::parser
 		void addEU4Mod(const std::string& mod) { EU4Mods.push_back(mod); }
 		void setEU4Version(const GameVersion& _version) { version = _version; }
 		void setEU4RandomSeed(int seed) { eu4Seed = seed; }
-		void setActiveDLCs(const std::vector<std::string>& _activeDLCs) { activeDLCs = _activeDLCs; }
 
 		enum class DEADCORES { LeaveAll = 1, DeadCores = 2, AllCores = 3 };
 		enum class POPSHAPES { Vanilla = 1, PopShaping = 2, Extreme = 3 };
@@ -70,8 +69,6 @@ class Configuration: commonItems::parser
 		[[nodiscard]] const auto& getActualName() const { return actualName; }
 		[[nodiscard]] const auto& getEU4Mods() const { return EU4Mods; }
 
-		[[nodiscard]] bool wasDLCActive(const std::string& DLC) const;
-
 	private:
 		static void verifyEU4Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
 		static void verifyVic2Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
@@ -109,7 +106,6 @@ class Configuration: commonItems::parser
 		std::string outputName;  // actual output name
 		std::string incomingOutputName; // from configuration file
 		std::string actualName; // Not normalized like outputName
-		std::vector<std::string> activeDLCs;
 		std::vector<std::string> EU4Mods;
 };
 
