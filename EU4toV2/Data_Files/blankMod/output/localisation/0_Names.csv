@@ -1297,8 +1297,8 @@ TYR;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone
 TYR_ADJ;Tyrone;de Tyrone;Tyrone-;Tyrone;Tyronesa;di Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Òèğîíñê.;Tyrone;y
 UBH;Buha;Bouha;Buha;Buha;Buha;Buha;Buha;Buha;Buha;Buha;Buha;Áóõà;Buha;z
 UBH_ADJ;Buhan;du Bouha;Buha-;Buhy;Buhana;di Buha;Buhan;Buhan;Buhan;Buhan;Buhan;Áóõñê.;Buhan;y
-UCV;Null;Null;Null;Null;Null;Null;Null;Null;Null;Null;Null;Íóëü;Null;x
-UCV_ADJ;Barbarian;Barbare;Barbarisch;Barbarzyñca;Bárbaro;Barbara;Barbár;Barbar;Barbár;Barbaar;bárbaro;âàğâàğ;Barbaari;x
+UCV;(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);x
+UCV_ADJ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;x
 UES;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Óıñóãè;Uesugi;z
 UES_ADJ;Uesugi;d'Uesugi;Uesugi-;Uesugi;Uesugi;di Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Óıñóãèéñê.;Uesugi;y
 UGR;Yugra;Ougra;Jugra;Yugra;Yugra;Jugra;Yugra;Jugra;Yugra;Yugra;Yugra;Şãğà;Yugra;x
