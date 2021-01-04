@@ -176,7 +176,7 @@ political_decisions = {
 					owns = 1612
 				}
 				NOT = {
-					any_neighbour_country = {
+					any_neighbor_country = {
 						is_culture_group = CHI
 						OR = {
 							number_of_states = 5
