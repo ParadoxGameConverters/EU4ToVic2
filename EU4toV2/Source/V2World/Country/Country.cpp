@@ -275,7 +275,8 @@ void V2::Country::absorbColony(Country& vassal)
 void V2::Country::determineGovernmentType(const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::GovernmentMapper& governmentMapper)
 {
 	const auto& possibleGovernment = governmentMapper.matchGovernment(srcCountry->getGovernment());
-	details.government = *possibleGovernment;
+	if (possibleGovernment)
+		details.government = *possibleGovernment;
 
 	for (const auto& reformStr: srcCountry->getReforms())
 	{
