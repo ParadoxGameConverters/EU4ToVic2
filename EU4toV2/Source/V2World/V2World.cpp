@@ -5,6 +5,7 @@
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../Mappers/VersionParser/VersionParser.h"
 #include "CommonFunctions.h"
+#include "Configuration.h"
 #include "CultureGroups/CultureGroup.h"
 #include "Flags/Flags.h"
 #include "Log.h"
@@ -13,7 +14,6 @@
 #include <filesystem>
 #include <fstream>
 #include <queue>
-#include "Configuration.h"
 namespace fs = std::filesystem;
 
 constexpr int MAX_EQUALITY_COUNTRIES = 5;
@@ -1641,7 +1641,7 @@ void V2::World::outputCommonCountries() const
 		// First output all regular countries, order matters!
 		if (dynamic == dynamicCountries.end())
 		{
-			output << country.first << " = \"countries/" << country.second->getCommonCountryFile() << "\"\n";
+			output << country.first << " = \"countries/" << clipCountryFileName(country.second->getCommonCountryFile()) << "\"\n";
 		}
 	}
 	output << "\n";
@@ -1649,7 +1649,7 @@ void V2::World::outputCommonCountries() const
 	output << "dynamic_tags = yes # any tags after this is considered dynamic dominions\n";
 	for (const auto& country: dynamicCountries)
 	{
-		output << country.first << " = \"countries/" << country.second->getCommonCountryFile() << "\"\n";
+		output << country.first << " = \"countries/" << clipCountryFileName(country.second->getCommonCountryFile()) << "\"\n";
 	}
 	output.close();
 }
@@ -1708,19 +1708,20 @@ void V2::World::outputCountries() const
 		// Country file
 		if (!country.second->isDynamicCountry())
 		{
-			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/countries/" + country.second->getFilename());
+			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/countries/" + clipCountryFileName(country.second->getFilename()));
 			if (!output.is_open())
-				throw std::runtime_error("Could not create country history file " + country.second->getFilename());
+				throw std::runtime_error("Could not create country history file " + clipCountryFileName(country.second->getFilename()));
 			output << *country.second;
 			output.close();
 		}
 		// commons file
 		if (country.second->isDynamicCountry() || country.second->isNewCountry())
 		{
-			std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/countries/" + country.second->getCommonCountryFile());
+			std::ofstream output(
+				 "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
 			if (!output.is_open())
-				throw std::runtime_error(
-					 "Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" + country.second->getCommonCountryFile());
+				throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" +
+												 clipCountryFileName(country.second->getCommonCountryFile()));
 			country.second->outputCommons(output);
 			output.close();
 		}
@@ -1852,4 +1853,12 @@ std::shared_ptr<V2::Country> V2::World::getCountry(const std::string& tag) const
 {
 	const auto& countryItr = countries.find(tag);
 	return (countryItr != countries.end()) ? countryItr->second : nullptr;
+}
+
+std::string V2::World::clipCountryFileName(const std::string& incoming) const
+{
+	if (incoming.size() <= 80)
+		return incoming;
+	else
+		return incoming.substr(0, 76) + ".txt";
 }
