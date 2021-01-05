@@ -76,6 +76,7 @@ class World
 	[[nodiscard]] std::shared_ptr<Country> getCountry(const std::string& tag) const;
 	[[nodiscard]] unsigned int countCivilizedNations() const;
 	[[nodiscard]] std::shared_ptr<Country> getHreEmperor() const;
+	[[nodiscard]] std::string clipCountryFileName(const std::string& incoming) const;
 
 	static std::optional<std::string> determineProvinceControllership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld);
 	std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, const EU4::Country& sourceCountry);
