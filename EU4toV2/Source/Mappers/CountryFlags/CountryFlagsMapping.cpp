@@ -11,12 +11,10 @@ mappers::CountryFlagsMapping::CountryFlagsMapping(std::istream& theStream)
 void mappers::CountryFlagsMapping::registerKeys()
 {
 	registerKeyword("eu4", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString _eu4Flag(theStream);
-		eu4Flag = _eu4Flag.getString();
+		eu4Flag = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("v2", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString _v2Flag(theStream);
-		v2Flags.push_back(_v2Flag.getString());
+		v2Flags.insert(commonItems::singleString(theStream).getString());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

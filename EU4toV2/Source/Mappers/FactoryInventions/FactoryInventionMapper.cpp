@@ -1,20 +1,16 @@
 #include "FactoryInventionMapper.h"
+#include "Configuration.h"
 #include "FactoryInventionEffect.h"
-#include "ParserHelpers.h"
-#include "OSCompatibilityLayer.h"
-#include "../../Configuration.h"
 #include "Log.h"
-#include <set>
+#include "OSCompatibilityLayer.h"
+#include "ParserHelpers.h"
 
 mappers::FactoryInventionMapper::FactoryInventionMapper()
 {
 	LOG(LogLevel::Info) << "Parsing V2 Factory Inventions";
 	registerKeys();
-	auto filenames = commonItems::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/inventions/");
-	for (const auto& filename : filenames)
-	{
+	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/inventions/"))
 		parseFile(theConfiguration.getVic2Path() + "/inventions/" + filename);
-	}
 	clearRegisteredKeywords();
 }
 
@@ -27,15 +23,17 @@ mappers::FactoryInventionMapper::FactoryInventionMapper(std::istream& theStream)
 
 void mappers::FactoryInventionMapper::registerKeys()
 {
-	// we need èüéö for jean_jaurès, johann_heinrich_von_thünen, léon_walras, eugen_von_böhm_bawerk :/
-	// If intellisense or something else complains, don't alter, it works.
-	registerRegex("[èüéöa-z_]+", [this](const std::string& invention, std::istream& theStream)
-		{
-			const FactoryInventionEffect theEffect(theStream);
-			if (!theEffect.getFactoryName().empty())
-			{
-				factoryInventionMap.insert(std::make_pair(theEffect.getFactoryName(), invention));
-			}
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, [this](const std::string& invention, std::istream& theStream) {
+		const FactoryInventionEffect theEffect(theStream);
+		if (!theEffect.getFactoryName().empty())
+			factoryInventionMap.insert(std::make_pair(theEffect.getFactoryName(), invention));
+	});
+}
+
+std::optional<std::string> mappers::FactoryInventionMapper::getInventionForFactoryType(const std::string& factoryType) const
+{
+	if (const auto& typeItr = factoryInventionMap.find(factoryType); typeItr != factoryInventionMap.end())
+		return typeItr->second;
+	else
+		return std::nullopt;
 }

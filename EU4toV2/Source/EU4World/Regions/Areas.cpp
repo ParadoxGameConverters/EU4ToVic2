@@ -1,15 +1,21 @@
 #include "Areas.h"
 #include "Area.h"
+#include "ParserHelpers.h"
 
 EU4::Areas::Areas(std::istream& theStream)
 {
-	registerRegex("[\\w_]+", [this](const std::string& areaName, std::istream& theStream) {
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
+
+void EU4::Areas::registerKeys()
+{
+	registerRegex(R"([\w_]+)", [this](const std::string& areaName, std::istream& theStream) {
 		const Area newArea(theStream);
 		theAreas.insert(std::make_pair(areaName, newArea.getProvinces()));
 	});
-
-	parseStream(theStream);
-	clearRegisteredKeywords();
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 std::optional<std::set<int>> EU4::Areas::getProvincesInArea(const std::string& area) const

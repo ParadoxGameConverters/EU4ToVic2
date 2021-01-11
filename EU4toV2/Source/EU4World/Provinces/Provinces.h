@@ -1,36 +1,30 @@
 #ifndef PROVINCES_H
 #define PROVINCES_H
-
 #include "EU4Province.h"
 #include "Parser.h"
-#include "../../Configuration.h"
 #include <map>
 
-namespace mappers {
-	class SuperGroupMapper;
+namespace mappers
+{
+class SuperGroupMapper;
 }
 
 namespace EU4
 {
-	class Regions;
+class Regions;
+class Provinces: commonItems::parser
+{
+  public:
+	explicit Provinces(std::istream& theStream);
 
-	class Provinces: commonItems::parser
-	{
-	public:
-		explicit Provinces(std::istream& theStream);
-		
-		[[nodiscard]] auto geTotalProvinceWeights() const { return totalProvinceWeights; }
-		[[nodiscard]] const auto& getAllProvinces() const { return provinces; }
-		std::shared_ptr<Province> getProvince(int provinceNumber);
-		
-		void determineTotalProvinceWeights(const Configuration& configuration);
+	[[nodiscard]] const auto& getAllProvinces() const { return provinces; }
+	[[nodiscard]] const std::shared_ptr<Province>& getProvince(int provinceNumber) const;
 
-	private:
-		void logTotalProvinceWeights() const;
+  private:
+	void registerKeys();
 
-		std::map<int, std::shared_ptr<Province>> provinces;
-		double totalProvinceWeights = 0.0;
-	};
-}
+	std::map<int, std::shared_ptr<Province>> provinces;
+};
+} // namespace EU4
 
 #endif // PROVINCES_H

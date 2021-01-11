@@ -1,24 +1,24 @@
 #include "ColonialFlag.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "OSCompatibilityLayer.h"
 
-mappers::ColonialFlag::ColonialFlag(std::istream& theStream, const std::string& region)
+mappers::ColonialFlag::ColonialFlag(std::istream& theStream, const std::string& theRegion): region(theRegion)
 {
-	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString nameStr(theStream);
-			name = nameStr.getString();
-			std::transform(name.begin(), name.end(), name.begin(), ::tolower);
-		});
-	registerKeyword("unique", [this](const std::string& unused, std::istream& theStream)
-		{
-			commonItems::ignoreItem(unused, theStream);
-			unique = true;
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+}
+
+void mappers::ColonialFlag::registerKeys()
+{
+	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
+		name = commonItems::singleString(theStream).getString();
+		std::transform(name.begin(), name.end(), name.begin(), ::tolower);
+	});
+	registerKeyword("unique", [this](const std::string& unused, std::istream& theStream) {
+		commonItems::ignoreItem(unused, theStream);
+		unique = true;
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 

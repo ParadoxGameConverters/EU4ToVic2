@@ -3,23 +3,21 @@
 
 EU4::EU4Regiment::EU4Regiment(std::istream& theStream)
 {
-	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString nameStr(theStream);
-			name = nameStr.getString();
-		});
-	registerKeyword("type", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString typeStr(theStream);
-			regimentType = typeStr.getString();
-		});
-	registerKeyword("home", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleInt homeInt(theStream);
-			home = homeInt.getInt();
-		});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+}
+
+void EU4::EU4Regiment::registerKeys()
+{
+	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
+		name = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("type", [this](const std::string& unused, std::istream& theStream) {
+		regimentType = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("home", [this](const std::string& unused, std::istream& theStream) {
+		home = commonItems::singleInt(theStream).getInt();
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

@@ -1,6 +1,5 @@
 #ifndef PROVINCE_MAPPING_H
 #define PROVINCE_MAPPING_H
-
 #include "Parser.h"
 #include <set>
 
@@ -17,8 +16,8 @@ class ProvinceMapping: commonItems::parser
   private:
 	void registerKeys();
 
-	std::vector<int> eu4Provinces;
-	std::vector<int> vic2Provinces;
+	std::set<int> eu4Provinces;
+	std::set<int> vic2Provinces;
 };
 } // namespace mappers
 

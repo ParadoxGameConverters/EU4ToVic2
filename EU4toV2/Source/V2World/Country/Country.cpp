@@ -13,9 +13,11 @@
 #include "../../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../../Mappers/Unreleasables/Unreleasables.h"
 #include "../Flags/Flags.h"
+#include "CommonFunctions.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include <cmath>
+#include "Configuration.h"
 
 V2::Country::Country(const std::string& countriesFileLine,
 	 const bool _dynamicCountry,
@@ -69,14 +71,14 @@ void V2::Country::initParties(const mappers::PartyNameMapper& partyNameMapper, c
 void V2::Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper)
 {
 	size_t ideology = 0;
-	for (const auto& partyName: partyNameMapper.getMap())
+	for (const auto& [partyName, partyLanguageMap]: partyNameMapper.getPartyToLanguageMap())
 	{
-		auto partyKey = tag + '_' + partyName.first;
-		auto languageMap = partyName.second.getMap();
-		auto partyType = partyTypeMapper.getPartyTypeByIdeology(partyName.first);
+		auto partyKey = tag + '_' + partyName;
+		auto languageMap = partyLanguageMap.getLanguageToNameMap();
+		auto partyType = partyTypeMapper.getPartyTypeByIdeology(partyName);
 		if (!partyType)
 		{
-			Log(LogLevel::Warning) << "Party type " << partyName.first << " has no entry in party_blobs.txt!";
+			Log(LogLevel::Warning) << "Party type " << partyName << " has no entry in party_blobs.txt!";
 			continue;
 		}
 		partyType->setName(partyKey);
@@ -84,8 +86,8 @@ void V2::Country::loadPartiesFromBlob(const mappers::PartyNameMapper& partyNameM
 		details.parties.push_back(newParty);
 		localisation.setPartyKey(ideology, partyKey);
 
-		for (const auto& language: languageMap)
-			localisation.setPartyName(ideology, language.first, language.second);
+		for (const auto& [language, name]: languageMap)
+			localisation.setPartyName(ideology, language, name);
 
 		++ideology;
 	}
@@ -115,8 +117,7 @@ void V2::Country::initFromEU4Country(const EU4::Regions& eu4Regions,
 	if (!possibleFilename)
 	{
 		auto countryName = commonCountryFile;
-		const auto lastSlash = countryName.find_last_of("/");
-		countryName = countryName.substr(lastSlash + 1, countryName.size());
+		countryName = trimPath(countryName);
 		details.filename = tag + " - " + countryName;
 	}
 	else
@@ -274,13 +275,14 @@ void V2::Country::absorbColony(Country& vassal)
 void V2::Country::determineGovernmentType(const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::GovernmentMapper& governmentMapper)
 {
 	const auto& possibleGovernment = governmentMapper.matchGovernment(srcCountry->getGovernment());
-	details.government = *possibleGovernment;
+	if (possibleGovernment)
+		details.government = *possibleGovernment;
 
 	for (const auto& reformStr: srcCountry->getReforms())
 	{
 		auto enforce = ideaEffectMapper.getEnforceFromIdea(reformStr);
-		if (!enforce.empty())
-			details.government = enforce;
+		if (enforce)
+			details.government = *enforce;
 	}
 
 	// Almost but not quite. Hardcoded but hey.
@@ -317,48 +319,48 @@ void V2::Country::finalizeInvestments(const mappers::IdeaEffectMapper& ideaEffec
 	// Each point above or below 5 should alter absolute values by 10%.
 
 	if (ideaEffectMapper.getArmyFromIdea(details.government))
-		details.technologies.army = (2 * details.technologies.army + ideaEffectMapper.getArmyFromIdea(details.government)) / 3;
+		details.technologies.army = (2 * details.technologies.army + *ideaEffectMapper.getArmyFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getNavyFromIdea(details.government))
-		details.technologies.navy = (2 * details.technologies.navy + ideaEffectMapper.getNavyFromIdea(details.government)) / 3;
+		details.technologies.navy = (2 * details.technologies.navy + *ideaEffectMapper.getNavyFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getCommerceFromIdea(details.government))
-		details.technologies.commerce = (2 * details.technologies.commerce + ideaEffectMapper.getCommerceFromIdea(details.government)) / 3;
+		details.technologies.commerce = (2 * details.technologies.commerce + *ideaEffectMapper.getCommerceFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getIndustryFromIdea(details.government))
-		details.technologies.industry = (2 * details.technologies.industry + ideaEffectMapper.getIndustryFromIdea(details.government)) / 3;
+		details.technologies.industry = (2 * details.technologies.industry + *ideaEffectMapper.getIndustryFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getCultureFromIdea(details.government))
-		details.technologies.culture = (2 * details.technologies.culture + ideaEffectMapper.getCultureFromIdea(details.government)) / 3;
+		details.technologies.culture = (2 * details.technologies.culture + *ideaEffectMapper.getCultureFromIdea(details.government)) / 3;
 
 	if (ideaEffectMapper.getSlaveryFromIdea(details.government))
-		details.reforms.slavery = (2 * details.reforms.slavery + ideaEffectMapper.getSlaveryFromIdea(details.government)) / 3;
+		details.reforms.slavery = (2 * details.reforms.slavery + *ideaEffectMapper.getSlaveryFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getUpper_house_compositionFromIdea(details.government))
 		details.reforms.upper_house_composition =
-			 (2 * details.reforms.upper_house_composition + ideaEffectMapper.getUpper_house_compositionFromIdea(details.government)) / 3;
+			 (2 * details.reforms.upper_house_composition + *ideaEffectMapper.getUpper_house_compositionFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getVote_franchiseFromIdea(details.government))
-		details.reforms.vote_franchise = (2 * details.reforms.vote_franchise + ideaEffectMapper.getVote_franchiseFromIdea(details.government)) / 3;
+		details.reforms.vote_franchise = (2 * details.reforms.vote_franchise + *ideaEffectMapper.getVote_franchiseFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getVoting_systemFromIdea(details.government))
-		details.reforms.voting_system = (2 * details.reforms.voting_system + ideaEffectMapper.getVoting_systemFromIdea(details.government)) / 3;
+		details.reforms.voting_system = (2 * details.reforms.voting_system + *ideaEffectMapper.getVoting_systemFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getPublic_meetingsFromIdea(details.government))
-		details.reforms.public_meetings = (2 * details.reforms.public_meetings + ideaEffectMapper.getPublic_meetingsFromIdea(details.government)) / 3;
+		details.reforms.public_meetings = (2 * details.reforms.public_meetings + *ideaEffectMapper.getPublic_meetingsFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getPress_rightsFromIdea(details.government))
-		details.reforms.press_rights = (2 * details.reforms.press_rights + ideaEffectMapper.getPress_rightsFromIdea(details.government)) / 3;
+		details.reforms.press_rights = (2 * details.reforms.press_rights + *ideaEffectMapper.getPress_rightsFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getTrade_unionsFromIdea(details.government))
-		details.reforms.trade_unions = (2 * details.reforms.trade_unions + ideaEffectMapper.getTrade_unionsFromIdea(details.government)) / 3;
+		details.reforms.trade_unions = (2 * details.reforms.trade_unions + *ideaEffectMapper.getTrade_unionsFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getPolitical_partiesFromIdea(details.government))
-		details.reforms.political_parties = (2 * details.reforms.political_parties + ideaEffectMapper.getPolitical_partiesFromIdea(details.government)) / 3;
+		details.reforms.political_parties = (2 * details.reforms.political_parties + *ideaEffectMapper.getPolitical_partiesFromIdea(details.government)) / 3;
 
 	if (ideaEffectMapper.getLibertyFromIdea(details.government))
-		details.nationalValues.liberty = (2 * details.nationalValues.liberty + ideaEffectMapper.getLibertyFromIdea(details.government)) / 3;
+		details.nationalValues.liberty = (2 * details.nationalValues.liberty + *ideaEffectMapper.getLibertyFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getEqualityFromIdea(details.government))
-		details.nationalValues.equality = (2 * details.nationalValues.equality + ideaEffectMapper.getEqualityFromIdea(details.government)) / 3;
+		details.nationalValues.equality = (2 * details.nationalValues.equality + *ideaEffectMapper.getEqualityFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getOrderFromIdea(details.government))
-		details.nationalValues.order = (2 * details.nationalValues.order + ideaEffectMapper.getOrderFromIdea(details.government)) / 3;
+		details.nationalValues.order = (2 * details.nationalValues.order + *ideaEffectMapper.getOrderFromIdea(details.government)) / 3;
 
 	if (ideaEffectMapper.getReactionaryFromIdea(details.government))
-		details.upperHouses.reactionary = (2 * details.upperHouses.reactionary + ideaEffectMapper.getReactionaryFromIdea(details.government)) / 3;
+		details.upperHouses.reactionary = (2 * details.upperHouses.reactionary + *ideaEffectMapper.getReactionaryFromIdea(details.government)) / 3;
 	if (ideaEffectMapper.getLiberalFromIdea(details.government))
-		details.upperHouses.liberal = (2 * details.upperHouses.liberal + ideaEffectMapper.getLiberalFromIdea(details.government)) / 3;
+		details.upperHouses.liberal = (2 * details.upperHouses.liberal + *ideaEffectMapper.getLiberalFromIdea(details.government)) / 3;
 
 	if (ideaEffectMapper.getLiteracyFromIdea(details.government))
-		details.literacyInvestment = (2 * details.literacyInvestment + ideaEffectMapper.getLiteracyFromIdea(details.government)) / 3;
+		details.literacyInvestment = (2 * details.literacyInvestment + *ideaEffectMapper.getLiteracyFromIdea(details.government)) / 3;
 
 	// Finally a patch for those silly democracies that go too low.
 	if (details.government == "democracy" && details.reforms.vote_franchise < -2.5)
@@ -515,7 +517,9 @@ void V2::Country::buildCanals()
 }
 
 // used only for countries which are NOT converted (i.e. unions, dead countries, etc)
-void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMapper, const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper)
+void V2::Country::initFromHistory(const mappers::Unreleasables& unreleasablesMapper,
+	 const mappers::PartyNameMapper& partyNameMapper,
+	 const mappers::PartyTypeMapper& partyTypeMapper)
 {
 	// Ping unreleasable_tags for this country's TAG
 	details.isReleasableVassal = unreleasablesMapper.isTagReleasable(tag);
@@ -552,11 +556,10 @@ void V2::Country::addState(std::shared_ptr<State> newState, const mappers::PortP
 	states.push_back(newState);
 	auto newProvinces = newState->getProvinces();
 
-	std::vector<int> newProvinceNums;
-	newProvinceNums.reserve(newProvinceNums.size());
+	std::set<int> newProvinceNums;
 	for (const auto& province: newProvinces)
 	{
-		newProvinceNums.push_back(province->getID());
+		newProvinceNums.insert(province->getID());
 	}
 	auto portProvinces = Army::getPortProvinces(newProvinceNums, provinces, portProvincesMapper);
 
@@ -675,7 +678,7 @@ void V2::Country::oldCivConversionMethod()
 
 // civilization level conversion method for games 1.19+
 void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper)
-{	
+{
 	if (!srcCountry)
 		return;
 
@@ -685,7 +688,7 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 	// set number for civilization level based on techs and institutions
 	// at 31 techs behind completely uncivilized
 	// each institution behind is equivalent to 2 techs behind
-	
+
 	auto civLevel = (totalTechs + 31.0 - topTech) * 4;
 	civLevel = civLevel + (static_cast<double>(srcCountry->numEmbracedInstitutions()) - topInstitutions) * 8;
 	if (civLevel > 100)
@@ -706,7 +709,11 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 			civLevel = civLevel * (static_cast<double>(techGroupsMapper.getWesternizationFromTechGroup(techGroup)) / 10.0);
 	}
 
-	details.literacy *= theConfiguration.getMaxLiteracy() * (pow(10, civLevel / 100 * 0.9 + 0.1) / 10);
+	// Hardcoded exception for shinto countries so japan-likes may retain high industrialization potential
+	if (details.religion == "shinto")
+		details.literacy *= theConfiguration.getMaxLiteracy();
+	else
+		details.literacy *= theConfiguration.getMaxLiteracy() * (pow(10, civLevel / 100 * 0.9 + 0.1) / 10);
 
 	/*
 	Drop nominal literacy according to starting date. The curve is crafted to hit the following literacy percentage points:
@@ -822,8 +829,6 @@ bool V2::Country::addFactory(std::shared_ptr<Factory> factory)
 		if (factory->requiresCoastal())
 			if (!candidate->isCoastal())
 				continue;
-		if (!candidate->hasLandConnection())
-			continue;
 
 		auto candidateScore = candidate->getSuppliedInputs(factory) * 100;
 		candidateScore -= static_cast<double>(candidate->getFactoryCount()) * 10;
@@ -847,10 +852,6 @@ bool V2::Country::addFactory(std::shared_ptr<Factory> factory)
 
 void V2::Country::setupPops(const double popWeightRatio, const CIV_ALGORITHM popConversionAlgorithm, const mappers::ProvinceMapper& provinceMapper)
 {
-	// skip entirely for empty nations
-	if (states.empty())
-		return;
-
 	// create the pops
 	for (const auto& province: provinces)
 		province.second->doCreatePops(popWeightRatio, this, popConversionAlgorithm, provinceMapper);

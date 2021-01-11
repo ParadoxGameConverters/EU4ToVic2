@@ -1,27 +1,23 @@
 #ifndef RELIGIONS_H
 #define RELIGIONS_H
-
 #include "Parser.h"
-#include "Religion.h"
-#include <map>
-#include <optional>
+#include <set>
 
 namespace EU4
 {
-	class Religions: commonItems::parser
-	{
-	public:
-		Religions();
-		explicit Religions(std::istream& theStream);
-		
-		[[nodiscard]] std::optional<Religion> getReligion(const std::string& name) const;
-		[[nodiscard]] const auto& getAllReligions() const { return theReligions; }
+class Religions: commonItems::parser
+{
+  public:
+	Religions();
+	explicit Religions(std::istream& theStream);
 
-	private:
-		void registerKeys();
-		
-		std::map<std::string, Religion> theReligions;
-	};
-}
+	[[nodiscard]] const auto& getAllReligions() const { return theReligions; }
+
+  private:
+	void registerKeys();
+
+	std::set<std::string> theReligions;
+};
+} // namespace EU4
 
 #endif // RELIGIONS_H

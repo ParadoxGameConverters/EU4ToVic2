@@ -74,6 +74,7 @@ link = { eu4 = BYZ v2 = BYZ } # Byzantium
 link = { eu4 = e_byzantium v2 = BYZ } # Byzantium
 link = { eu4 = CEP v2 = ION } # Corfu => Ionian Islands
 link = { eu4 = c_cephalonia v2 = ION } # Cephalonia => Ionian Islands
+link = { eu4 = k_IMPTOCK3_KRK v2 = ION } # Kerkyra => Ionian Islands
 link = { eu4 = CRO v2 = CRO } # Croatia
 link = { eu4 = k_croatia v2 = CRO } # Croatia
 link = { eu4 = CRT v2 = CRE } # Crete
@@ -86,6 +87,7 @@ link = { eu4 = EPI v2 = EPI } # Epirus
 link = { eu4 = d_epirus v2 = EPI } # Epirus
 link = { eu4 = GRE v2 = GRE } # Greece
 link = { eu4 = k_byzantium v2 = GRE } # Greece
+link = { eu4 = k_IMPTOCK3_HLA v2 = GRE } # Greece
 link = { eu4 = KNI v2 = KNI } # Knights
 link = { eu4 = d_knights_hospitaller v2 = KNI } # Knights
 link = { eu4 = MOE v2 = MOE } # Morea
@@ -389,6 +391,7 @@ link = { eu4 = ASU v2 = ATR } # Asturias
 link = { eu4 = AQU v2 = AQU } # Aquileia
 link = { eu4 = c_aquileia v2 = AQU } # Aquileia
 link = { eu4 = ETR v2 = ETR } # Etruria
+link = { eu4 = k_IMPTOCK3_ETR v2 = ETR } # Etruria
 link = { eu4 = FER v2 = FER } # Ferrara
 link = { eu4 = d_ferrara v2 = FER } # Ferrara
 link = { eu4 = GEN v2 = GEN } # Genoa
@@ -532,6 +535,7 @@ link = { eu4 = HDR v2 = HDR } # Hadramawt
 link = { eu4 = d_hadramut v2 = HDR } # Hadramawt
 link = { eu4 = HED v2 = HDJ } # Hedjaz
 link = { eu4 = LEB v2 = LBN } # Lebanon
+link = { eu4 = k_IMPTOCK3_PPN v2 = LBN } # Phoenicia => Lebanon
 link = { eu4 = k_tripoli v2 = LBN } # Tripoli of Lebanon => Lebanon
 link = { eu4 = d_tripoli v2 = LBN } # Tripoli of Lebanon => Lebanon
 link = { eu4 = MAK v2 = MKA } # Makuria
@@ -841,7 +845,8 @@ link = { eu4 = MTR v2 = MTR } # Mataram
 link = { eu4 = OIR v2 = OIR } # Oirat Horde
 link = { eu4 = PAT v2 = PAT } # Pattani
 link = { eu4 = PEG v2 = PEG } # Pegu
-link = { eu4 = QNG v2 = CHI } # Qing => China
+link = { eu4 = QNG v2 = QNG } # Qing
+#link = { eu4 = QNG v2 = CHI } # Qing => China
 link = { eu4 = e_china_west_governor v2 = SXI } # Western Protectorate => Shanxi Clique
 link = { eu4 = RYU v2 = RYU } # Ryukyu
 link = { eu4 = SST v2 = SHA } # Shan
@@ -1081,6 +1086,7 @@ link = { eu4 = KOJ v2 = JER } # Jerusalem
 link = { eu4 = e_outremer v2 = JER } # Outremer => Jerusalem
 link = { eu4 = k_jerusalem v2 = JER } # Jerusalem
 link = { eu4 = MSA v2 = MLY } # Malaya
+link = { eu4 = k_IMPTOCK3_MLY v2 = MLY } # Malaya
 link = { eu4 = HIN v2 = HDU } # Hindustan
 
 link = { eu4 = ABE v2 = ABE } # Abenaki
@@ -1645,3 +1651,11 @@ link = { eu4 = UIG v2 = XIN } #Uighurustan
 link = { eu4 = YEM v2 = YEM } #Yemen
 link = { eu4 = YRK v2 = YRK } #Yarkand
 link = { eu4 = ZOU v2 = ZHO } #Zhou
+
+## IMP:CK3 countries
+link = { eu4 = k_IMPTOCK3_CAR v2 = KRT } # Carthage
+link = { eu4 = k_IMPTOCK3_LGB v2 = LGB } # Langobardia
+link = { eu4 = k_IMPTOCK3_VSC v2 = BSQ } # Vasconia
+link = { eu4 = k_IMPTOCK3_ASR v2 = ASY } # Assyria
+link = { eu4 = k_IMPTOCK3_BBY v2 = BAB } # Babylon
+link = { eu4 = k_IMPTOCK3_GAU v2 = FRR } # Gaul

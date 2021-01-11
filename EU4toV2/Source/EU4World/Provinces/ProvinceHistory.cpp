@@ -1,55 +1,12 @@
 #include "ProvinceHistory.h"
+#include "Configuration.h"
 #include "DateItems.h"
-#include "../../Configuration.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 
 EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 {
-	registerKeyword("owner", [this](const std::string& unused, std::istream & theStream) {
-		const commonItems::singleString ownerString(theStream);
-		ownershipHistory.emplace_back(std::make_pair(theConfiguration.getStartEU4Date(), ownerString.getString()));
-	});
-	registerKeyword("culture", [this](const std::string& unused, std::istream & theStream) {
-		const commonItems::singleString cultureString(theStream);
-		startingCulture = cultureString.getString();
-	});
-	registerKeyword("religion", [this](const std::string& unused, std::istream & theStream) {
-		const commonItems::singleString religionString(theStream);
-		startingReligion = religionString.getString();
-	});
-	registerKeyword("base_tax", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleDouble baseTaxDouble(theStream);
-		originalTax = baseTaxDouble.getDouble();
-	});
-	registerKeyword("base_production", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleDouble baseProductionDouble(theStream);
-		originalProduction = baseProductionDouble.getDouble();
-	});
-	registerKeyword("base_manpower", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleDouble manpowerDouble(theStream);
-		originalManpower = manpowerDouble.getDouble();
-	});
-	registerRegex("\\d+\\.\\d+\\.\\d+", [this](const std::string& dateString, std::istream& theStream) {
-		auto theDate = date(dateString);
-		const DateItems theItems(theStream);
-		for (const auto& theItem : theItems.getDateChanges())
-		{
-			switch (theItem.first) {
-			case DateItemType::OWNER_CHANGE:
-				ownershipHistory.emplace_back(std::make_pair(theDate, theItem.second));
-				break;
-			case DateItemType::CULTURE_CHANGE:
-				cultureHistory.emplace_back(std::make_pair(theDate, theItem.second));
-				break;
-			case DateItemType::RELIGION_CHANGE:
-				religionHistory.emplace_back(std::make_pair(theDate, theItem.second));
-				break;
-			}
-		}
-	});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 
@@ -82,85 +39,114 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 	}
 }
 
+void EU4::ProvinceHistory::registerKeys()
+{
+	registerKeyword("owner", [this](const std::string& unused, std::istream& theStream) {
+		ownershipHistory.emplace_back(std::make_pair(theConfiguration.getStartEU4Date(), commonItems::singleString(theStream).getString()));
+	});
+	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream) {
+		startingCulture = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) {
+		startingReligion = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("base_tax", [this](const std::string& unused, std::istream& theStream) {
+		originalTax = commonItems::singleDouble(theStream).getDouble();
+	});
+	registerKeyword("base_production", [this](const std::string& unused, std::istream& theStream) {
+		originalProduction = commonItems::singleDouble(theStream).getDouble();
+	});
+	registerKeyword("base_manpower", [this](const std::string& unused, std::istream& theStream) {
+		originalManpower = commonItems::singleDouble(theStream).getDouble();
+	});
+	registerRegex(R"(\d+\.\d+\.\d+)", [this](const std::string& dateString, std::istream& theStream) {
+		auto theDate = date(dateString);
+		const DateItems theItems(theStream);
+		for (const auto& dateChange: theItems.getDateChanges())
+			if (dateChange.changeType == "owner")
+				ownershipHistory.emplace_back(std::make_pair(theDate, dateChange.changeValue));
+			else if (dateChange.changeType == "culture")
+				cultureHistory.emplace_back(std::make_pair(theDate, dateChange.changeValue));
+			else if (dateChange.changeType == "religion")
+				religionHistory.emplace_back(std::make_pair(theDate, dateChange.changeValue));
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
 std::optional<date> EU4::ProvinceHistory::getFirstOwnedDate() const
 {
-	if (!ownershipHistory.empty()) return ownershipHistory[0].first;
-	return std::nullopt;
+	if (!ownershipHistory.empty())
+		return ownershipHistory[0].first;
+	else
+		return std::nullopt;
 }
 
 bool EU4::ProvinceHistory::hasOriginalCulture() const
 {
-	if (cultureHistory.size() > 1 && cultureHistory[0].second != cultureHistory[cultureHistory.size() - 1].second) return false;
-	return true;
+	if (cultureHistory.size() > 1 && cultureHistory[0].second != cultureHistory[cultureHistory.size() - 1].second)
+		return false;
+	else
+		return true;
 }
 
 bool EU4::ProvinceHistory::wasColonized() const
 {
-	if (!ownershipHistory.empty() &&
-		ownershipHistory[0].first != theConfiguration.getStartEU4Date() &&
-		ownershipHistory[0].first != theConfiguration.getFirstEU4Date()) 
-	{
+	if (!ownershipHistory.empty() && ownershipHistory[0].first != theConfiguration.getStartEU4Date() &&
+		 ownershipHistory[0].first != theConfiguration.getFirstEU4Date())
 		return !hasOriginalCulture();
-	}
-	return false;
+	else
+		return false;
 }
 
 void EU4::ProvinceHistory::buildPopRatios(const double assimilationFactor)
 {
 	// Don't build pop ratios for empty strings.
-	if (cultureHistory.empty() || religionHistory.empty()) return;
-	
-	auto endDate = theConfiguration.getLastEU4Date();
-	if (endDate > HARD_ENDING_DATE || !endDate.isSet()) endDate = HARD_ENDING_DATE;
+	if (cultureHistory.empty() || religionHistory.empty())
+		return;
 
-	std::string startingCulture;
+	auto endDate = theConfiguration.getLastEU4Date();
+	if (endDate > HARD_ENDING_DATE || !endDate.isSet())
+		endDate = HARD_ENDING_DATE;
+
+	std::string startCulture;
 	auto cultureEvent = cultureHistory.begin();
 	if (cultureEvent != cultureHistory.end())
 	{
-		startingCulture = cultureEvent->second;
+		startCulture = cultureEvent->second;
 		++cultureEvent;
 	}
 
-	std::string startingReligion;
+	std::string startReligion;
 	auto religionEvent = religionHistory.begin();
 	if (religionEvent != religionHistory.end())
 	{
-		startingReligion = religionEvent->second;
+		startReligion = religionEvent->second;
 		++religionEvent;
 	}
 
-	PopRatio currentRatio(startingCulture, startingReligion);
+	PopRatio currentRatio(startCulture, startReligion);
 	date cultureEventDate;
 	date religionEventDate;
 	auto lastLoopDate = theConfiguration.getStartEU4Date();
 	while (cultureEvent != cultureHistory.end() || religionEvent != religionHistory.end())
 	{
 		if (cultureEvent == cultureHistory.end())
-		{
 			cultureEventDate = FUTURE_DATE;
-		}
 		else
-		{
 			cultureEventDate = cultureEvent->first;
-		}
 
 		if (religionEvent == religionHistory.end())
-		{
 			religionEventDate = FUTURE_DATE;
-		}
 		else
-		{
 			religionEventDate = religionEvent->first;
-		}
 
 		if (cultureEventDate < religionEventDate)
 		{
 			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio, assimilationFactor);
 			popRatios.push_back(currentRatio);
 			for (auto& itr: popRatios)
-			{
 				itr.convertFrom();
-			}
+
 			currentRatio.convertToCulture(cultureEvent->second);
 			lastLoopDate = cultureEventDate;
 			++cultureEvent;
@@ -171,9 +157,8 @@ void EU4::ProvinceHistory::buildPopRatios(const double assimilationFactor)
 			decayPopRatios(lastLoopDate, cultureEventDate, currentRatio, assimilationFactor);
 			popRatios.push_back(currentRatio);
 			for (auto& itr: popRatios)
-			{
 				itr.convertFrom();
-			}
+
 			currentRatio.convertTo(cultureEvent->second, religionEvent->second);
 			lastLoopDate = cultureEventDate;
 			++cultureEvent;
@@ -184,9 +169,8 @@ void EU4::ProvinceHistory::buildPopRatios(const double assimilationFactor)
 			decayPopRatios(lastLoopDate, religionEventDate, currentRatio, assimilationFactor);
 			popRatios.push_back(currentRatio);
 			for (auto& itr: popRatios)
-			{
 				itr.convertFrom();
-			}
+
 			currentRatio.convertToReligion(religionEvent->second);
 			lastLoopDate = religionEventDate;
 			++religionEvent;
@@ -195,23 +179,25 @@ void EU4::ProvinceHistory::buildPopRatios(const double assimilationFactor)
 	decayPopRatios(lastLoopDate, endDate, currentRatio, assimilationFactor);
 
 	if (!currentRatio.getCulture().empty() || !currentRatio.getReligion().empty())
-	{
 		popRatios.push_back(currentRatio);
-	}
 }
 
 void EU4::ProvinceHistory::decayPopRatios(const date& oldDate, const date& newDate, PopRatio& currentPop, const double assimilationFactor)
 {
 	// no decay needed for initial state
-	if (oldDate == theConfiguration.getStartEU4Date()) return;
+	if (oldDate == theConfiguration.getStartEU4Date())
+		return;
 
 	const auto diffInYears = newDate.diffInYears(oldDate);
-	for (auto& popRatio: popRatios) popRatio.decay(diffInYears, assimilationFactor);
+	for (auto& popRatio: popRatios)
+		popRatio.decay(diffInYears, assimilationFactor);
 
 	currentPop.increase(diffInYears, assimilationFactor);
 }
 
 void EU4::ProvinceHistory::updatePopRatioCulture(const std::string& oldCultureName, const std::string& neoCultureName, const std::string& superRegion)
 {
-	for (auto& popRatio: popRatios) if (popRatio.getCulture() == oldCultureName) popRatio.setCulture(neoCultureName, superRegion);
+	for (auto& popRatio: popRatios)
+		if (popRatio.getCulture() == oldCultureName)
+			popRatio.setNeoCulture(neoCultureName, superRegion);
 }

@@ -1,16 +1,14 @@
-
 #ifndef WORLD_H
 #define WORLD_H
-
 #include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/AcceptedCultureThresholds/AcceptedCultureThresholdsMapper.h"
-#include "../Mappers/Adjacency/AdjacencyMapper.h"
 #include "../Mappers/AfricaReset/AfricaResetMapper.h"
 #include "../Mappers/CountryFlags/CountryFlags.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/CulturalUnions/CulturalUnionMapper.h"
 #include "../Mappers/CultureGroups/CultureGroups.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
+#include "../Mappers/DeadDefinitionMapper/DeadDefinitionMapper.h"
 #include "../Mappers/FactoryTypes/FactoryTypeMapper.h"
 #include "../Mappers/Geography/ClimateMapper.h"
 #include "../Mappers/Geography/Continents.h"
@@ -35,7 +33,6 @@
 #include "../Mappers/Unreleasables/Unreleasables.h"
 #include "../Mappers/WarGoalMapper/WarGoalMapper.h"
 #include "Country/Country.h"
-#include "Country/CountryPopLogger.h"
 #include "Diplomacy/Diplomacy.h"
 #include "MappingChecker/MappingChecker.h"
 #include "Output/ModFile.h"
@@ -65,7 +62,6 @@ class World
   private:
 	long totalWorldPopulation = 0;
 	int stateId = 0; // ID counter for generated states
-	bool isRandomWorld = false;
 
 	std::map<std::string, std::list<int>> popRegions;
 	std::map<int, std::shared_ptr<Province>> provinces;
@@ -76,12 +72,14 @@ class World
 	std::vector<std::pair<std::string, EU4::HistoricalEntry>> historicalData; // HoI4 export dynasty+rulers
 	std::set<std::string> neoCultureLocalizations;									  // raw strings for output.
 
-	[[nodiscard]] std::optional<std::string> determineProvinceOwnership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
+	[[nodiscard]] std::optional<std::string> determineProvinceOwnership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
 	[[nodiscard]] std::shared_ptr<Province> getProvince(int provID) const;
 	[[nodiscard]] std::shared_ptr<Country> getCountry(const std::string& tag) const;
 	[[nodiscard]] unsigned int countCivilizedNations() const;
+	[[nodiscard]] std::shared_ptr<Country> getHreEmperor() const;
+	[[nodiscard]] std::string clipCountryFileName(const std::string& incoming) const;
 
-	static std::optional<std::string> determineProvinceControllership(const std::vector<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld);
+	static std::optional<std::string> determineProvinceControllership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld);
 	std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, const EU4::Country& sourceCountry);
 	static std::set<std::string> discoverProvinceFilenames();
 
@@ -90,8 +88,8 @@ class World
 	void importProvinces();
 	void shuffleRgos();
 	void importDefaultPops();
-	void importPopsFromFile(const std::string& filename, const mappers::MinorityPopMapper& minorityPopMapper);
-	void importPopsFromProvince(int provinceID, const mappers::PopTypes& popType, const mappers::MinorityPopMapper& minorityPopMapper);
+	void importPopsFromFile(const std::string& filename);
+	void importPopsFromProvince(int provinceID, const std::vector<mappers::PopDetails>& popsDetails);
 	void importPotentialCountries();
 	void importPotentialCountry(const std::string& line, bool dynamicCountry);
 	void initializeCultureMappers();
@@ -101,13 +99,13 @@ class World
 	void convertNationalValues();
 	void convertPrestige();
 	void addAllPotentialCountries();
-	void setupColonies();
 	void setupStates();
 	void convertUncivReforms(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper);
 	void convertTechs(const EU4::World& sourceWorld);
 	void allocateFactories(const EU4::World& sourceWorld);
 	void setupPops(const EU4::World& sourceWorld);
-	void addUnions();
+	void addUnions(bool hreDecentralized, const std::shared_ptr<Country>& emperor);
+	void decentralizeHRE(bool hreDecentralized, const std::shared_ptr<Country>& emperor);
 	void convertArmies();
 	void output(const mappers::VersionParser& versionParser) const;
 	void createModFile() const;
@@ -131,11 +129,11 @@ class World
 	void addAcceptedCultures(const EU4::Regions& eu4Regions);
 	void addReligionCulture();
 	void convertCountryFlags();
+	void updateDeadNations();
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
 	mappers::CountryMappings countryMapper;
-	mappers::AdjacencyMapper adjacencyMapper;
 	mappers::ClimateMapper climateMapper;
 	mappers::TerrainDataMapper terrainDataMapper;
 	mappers::CultureMapper cultureMapper;
@@ -148,8 +146,8 @@ class World
 	mappers::ReligionMapper religionMapper;
 	mappers::StateMapper stateMapper;
 	mappers::TechSchoolMapper techSchoolMapper;
-	mappers::CulturalUnionMapper culturalUnionMapper;
-	mappers::CulturalUnionMapper culturalNationalitiesMapper;
+	std::unique_ptr<mappers::CulturalUnionMapper> culturalUnionMapper;
+	std::unique_ptr<mappers::CulturalUnionMapper> culturalNationalitiesMapper;
 	mappers::FactoryTypeMapper factoryTypeMapper;
 	mappers::Unreleasables unreleasablesMapper;
 	mappers::LeaderTraitMapper leaderTraitMapper;
@@ -164,8 +162,8 @@ class World
 	mappers::RegionLocalizations regionLocalizations;
 	mappers::AfricaResetMapper africaResetMapper;
 	mappers::AcceptedCultureThresholdsMapper acceptedCultureThresholdsMapper;
+	mappers::DeadDefinitionMapper deadDefinitionMapper;
 	ProvinceNameParser provinceNameParser;
-	CountryPopLogger countryPopLogger;
 	MappingChecker mappingChecker;
 	ModFile modFile;
 	Diplomacy diplomacy;

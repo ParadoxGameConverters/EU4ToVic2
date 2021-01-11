@@ -1,20 +1,17 @@
 #ifndef EU4_WORLD_H
 #define EU4_WORLD_H
-
-#include "../Mappers/Buildings/Buildings.h"
-#include "../Mappers/CultureGroups/CultureGroups.h"
-#include "../Mappers/IdeaEffects/IdeaEffectMapper.h"
-#include "../Mappers/SuperGroupMapper/SuperGroupMapper.h"
-#include "../Mappers/UnitTypes/UnitTypeMapper.h"
+#include "Buildings/Buildings.h"
 #include "Country/EU4Country.h"
+#include "CultureGroups/CultureGroups.h"
 #include "Diplomacy/EU4Diplomacy.h"
 #include "GameVersion.h"
-#include "Modifiers/Modifiers.h"
+#include "IdeaEffects/IdeaEffectMapper.h"
 #include "Parser.h"
 #include "Provinces/Provinces.h"
 #include "Regions/Regions.h"
 #include "Religions/Religions.h"
-#include "TradeGoods/EU4TradeGoods.h"
+#include "SuperGroupMapper/SuperGroupMapper.h"
+#include "UnitTypes/UnitTypeMapper.h"
 #include "Wars/EU4War.h"
 #include <map>
 #include <memory>
@@ -26,9 +23,7 @@ class World: commonItems::parser
   public:
 	World(const mappers::IdeaEffectMapper& ideaEffectMapper);
 
-	[[nodiscard]] bool isRandomWorld() const;
-	[[nodiscard]] auto getTotalProvinceWeights() const { return provinces->geTotalProvinceWeights(); }
-	[[nodiscard]] std::shared_ptr<Province> getProvince(int provNum) const;
+	[[nodiscard]] std::shared_ptr<Province> getProvince(int provNum) const { return provinces->getProvince(provNum); }
 	[[nodiscard]] std::shared_ptr<Country> getCountry(const std::string& tag) const;
 
 	[[nodiscard]] const auto& getCountries() const { return theCountries; }
@@ -41,19 +36,22 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getProvinces() const { return provinces->getAllProvinces(); }
 	[[nodiscard]] const auto& getHistoricalData() const { return historicalData; }
 	[[nodiscard]] const auto& getNativeCultures() const { return nativeCultures; }
+	[[nodiscard]] const auto& getHREReforms() const { return hreReforms; }
+	[[nodiscard]] bool decentralizedHRE() const { return hreReforms.contains("emperor_reichskrieg"); }
 
   private:
+	void registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper);
+
 	void verifySave();
 	void verifySaveContents();
 	void loadRevolutionTarget();
-	void dropMinoritiesFromCountries();
 	void addProvinceInfoToCountries();
 	void loadRegions();
 	void loadEU4RegionsNewVersion();
 	void loadEU4RegionsOldVersion();
 	void readCommonCountries();
 	void readCommonCountriesFile(std::istream&, const std::string& rootPath);
-	void setLocalisations();
+	void setLocalizations();
 	void resolveRegimentTypes();
 	void mergeNations();
 	void uniteJapan();
@@ -63,14 +61,13 @@ class World: commonItems::parser
 	void setEmpires();
 	void assignProvincesToAreas(const std::map<std::string, std::set<int>>& theAreas) const;
 	void fillHistoricalData();
-	void addTradeGoodsToProvinces() const;
+	void buildProvinceWeights() const;
 	void catalogueNativeCultures();
 	void generateNeoCultures();
 	void buildPopRatios() const;
 	void calculateIndustry() const;
 	std::string generateNeoCulture(const std::string& superRegionName, const std::string& oldCultureName);
 	bool uncompressSave();
-
 
 	struct saveData
 	{
@@ -81,6 +78,7 @@ class World: commonItems::parser
 	saveData saveGame;
 
 	std::string holyRomanEmperor;
+	std::set<std::string> hreReforms;
 	std::string celestialEmperor;
 	std::unique_ptr<Regions> regions;
 	std::unique_ptr<Provinces> provinces;
@@ -93,12 +91,10 @@ class World: commonItems::parser
 	std::map<std::string, std::set<std::string>> nativeCultures;						// superregion-culturenames
 	std::map<std::pair<std::string, std::string>, std::string> generatedCultures; // origculture/superregion - neoculture (cache)
 
-	TradeGoods tradeGoods;
 	Religions theReligions;
-	Modifiers modifierTypes;
 	mappers::UnitTypeMapper unitTypeMapper;
-	mappers::Buildings buildingTypes;
-	mappers::CultureGroups cultureGroupsMapper;
+	std::unique_ptr<mappers::Buildings> buildingTypes;
+	std::shared_ptr<mappers::CultureGroups> cultureGroupsMapper;
 	mappers::SuperGroupMapper superGroupMapper;
 
 	// export data for hoi4

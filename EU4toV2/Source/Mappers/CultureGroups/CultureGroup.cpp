@@ -1,79 +1,56 @@
 #include "CultureGroup.h"
+#include "Culture.h"
 #include "ParserHelpers.h"
 
-mappers::CultureGroup::CultureGroup(std::string _name, std::istream& theStream):
-	name(std::move(_name))
+mappers::CultureGroup::CultureGroup(std::string theName, std::istream& theStream): name(std::move(theName))
 {
-	registerKeyword("graphical_culture", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString token(theStream);
-			graphicalCulture = token.getString();
-		});
-	registerKeyword("unit", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString unitStr(theStream);
-			unit = unitStr.getString();
-		});
-	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString leaderStr(theStream);
-			leader = leaderStr.getString();
-		});
-	registerKeyword("is_overseas", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString overseasStr(theStream);
-			isOverseas = overseasStr.getString();
-		});
-	registerKeyword("union", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString unionStr(theStream);
-			culturalUnionTag = unionStr.getString();
-		});
-	registerKeyword("male_names", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::stringList names(theStream);
-			maleNames = names.getStrings();
-		});
-	registerKeyword("female_names", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::stringList names(theStream);
-			femaleNames = names.getStrings();
-		});
-	registerKeyword("dynasty_names", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::stringList names(theStream);
-			dynastyNames = names.getStrings();
-		});
-	registerRegex("\\w+", [this](const std::string& cultureName, std::istream& theStream)
-		{
-			Culture newCulture(theStream);
-			cultures.insert(make_pair(cultureName, newCulture));
-		});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-void mappers::CultureGroup::mergeCulture(const std::string& name, const Culture& culture)
+void mappers::CultureGroup::registerKeys()
 {
-	const auto& cultureItr = cultures.find(name);
-	if (cultureItr != cultures.end())
+	registerKeyword("unit", [this](const std::string& unused, std::istream& theStream) {
+		unit = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream) {
+		leader = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("is_overseas", [this](const std::string& unused, std::istream& theStream) {
+		isOverseas = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("union", [this](const std::string& unused, std::istream& theStream) {
+		culturalUnionTag = commonItems::singleString(theStream).getString();
+	});
+	registerRegex("graphical_culture|female_names|dynasty_names|male_names", [this](const std::string& unused, std::istream& theStream) {
+		commonItems::ignoreItem(unused, theStream);
+	});
+	registerRegex(R"([\w_]+)", [this](const std::string& cultureName, std::istream& theStream) {
+		auto newCulture = std::make_shared<Culture>(theStream);
+		cultures.insert(std::make_pair(cultureName, newCulture));
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+void mappers::CultureGroup::mergeCulture(const std::string& theName, const std::shared_ptr<Culture>& culture)
+{
+	if (const auto& cultureItr = cultures.find(theName); cultureItr != cultures.end())
 	{
-		cultureItr->second.addNameNames(culture.getMaleNames());
-		cultureItr->second.addFemaleNames(culture.getFemaleNames());
-		cultureItr->second.addDynastyNames(culture.getDynastyNames());		
+		cultureItr->second->addMaleNames(culture->getMaleNames());
+		cultureItr->second->addFemaleNames(culture->getFemaleNames());
+		cultureItr->second->addDynastyNames(culture->getDynastyNames());
 	}
 	else
 	{
-		cultures.insert(std::make_pair(name, culture));
+		cultures.insert(std::make_pair(theName, culture));
 	}
 }
 
-void mappers::CultureGroup::addNeoCulture(const std::string& name, const Culture& culture, const std::string& oldCulture)
+void mappers::CultureGroup::addNeoCulture(const std::string& theName, const std::shared_ptr<Culture>& culture, const std::string& oldCulture)
 {
-	auto newCulture = culture;
-	newCulture.setNeoCulture(true);
-	newCulture.setOriginalCulture(oldCulture);
-	cultures.insert(std::make_pair(name, newCulture));
+	auto newCulture = std::make_shared<Culture>(*culture);
+	newCulture->setNeoCulture(true);
+	newCulture->setOriginalCulture(oldCulture);
+	cultures.insert(std::make_pair(theName, newCulture));
 }

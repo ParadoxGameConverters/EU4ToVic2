@@ -1,5 +1,5 @@
 #include "PartyNameMapper.h"
-#include <Log.h>
+#include "ParserHelpers.h"
 
 mappers::PartyNameMapper::PartyNameMapper()
 {
@@ -17,9 +17,8 @@ mappers::PartyNameMapper::PartyNameMapper(std::istream& theStream)
 
 void mappers::PartyNameMapper::registerKeys()
 {
-	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& party, std::istream& theStream) 
-		{
-			PartyName langToName(theStream);
-			partyToLanguageMap.insert(make_pair(party, langToName));
-		});
+	registerRegex(commonItems::catchallRegex, [this](const std::string& party, std::istream& theStream) {
+		const PartyName langToName(theStream);
+		partyToLanguageMap.insert(make_pair(party, langToName));
+	});
 }

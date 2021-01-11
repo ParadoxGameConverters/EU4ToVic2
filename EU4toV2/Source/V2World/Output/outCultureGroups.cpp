@@ -1,11 +1,12 @@
+#include "CultureGroups/CultureGroup.h"
 #include "output.h"
 
 std::ostream& mappers::operator<<(std::ostream& output, const CultureGroups& cultureGroupsMapper)
 {
-	for (const auto& cultureGroupItr: cultureGroupsMapper.getCultureGroupsMap())
+	for (const auto& [cultureGroupName, cultureGroup]: cultureGroupsMapper.getCultureGroupsMap())
 	{
-		output << cultureGroupItr.first << " = {\n";
-		output << cultureGroupItr.second;
+		output << cultureGroupName << " = {\n";
+		output << *cultureGroup;
 		output << "}\n\n";
 	}
 	return output;
@@ -20,10 +21,10 @@ std::ostream& mappers::operator<<(std::ostream& output, const CultureGroup& cult
 	}
 	output << "\tunit = " << cultureGroup.unit << "\n";
 	output << "\t\n";
-	for (const auto& cultureItr : cultureGroup.cultures)
+	for (const auto& [cultureName, culture]: cultureGroup.cultures)
 	{
-		output << "\t" << cultureItr.first << " = {\n";
-		output << cultureItr.second;
+		output << "\t" << cultureName << " = {\n";
+		output << *culture;
 		output << "\t}\n";
 	}
 	output << "\t\n";
@@ -49,18 +50,18 @@ std::ostream& mappers::operator<<(std::ostream& output, const Culture& culture)
 	}
 	output << "\t\t\n";
 	output << "\t\tfirst_names = { ";
-	for (const auto& firstName : culture.firstNames)
+	for (const auto& firstName: culture.firstNames)
 	{
 		output << firstName << " ";
 	}
-	output << " }\n";
+	output << "}\n";
 	output << "\t\t\n";
 	output << "\t\tlast_names = { ";
-	for (const auto& lastName : culture.lastNames)
+	for (const auto& lastName: culture.lastNames)
 	{
 		output << lastName << " ";
 	}
-	output << " }\n";
+	output << "}\n";
 	output << "\t\t\n";
 	return output;
 }

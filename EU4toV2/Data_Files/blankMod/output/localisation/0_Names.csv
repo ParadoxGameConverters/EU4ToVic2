@@ -1023,6 +1023,12 @@ QIN_democracy;The Republic of Qin;La République des Qins;Die Qin-Republik;Republ
 QIN_fascist_dictatorship;The Beijing Republic;La République de Pékin;Die Pekinger Republik;Republika Beijing;La república de Beijing;Repubblica di Pechino;A pekingi Köztársaság;Peking republika;A pekingi Köztársaság;de Beijing Republiek;A república de Beijing;Ïåêèíñêàÿ Ğåñïóáëèêà;Peking tasavalta;x
 QIN_fascist_dictatorship_ADJ;Beijing;Pékin;Peking;Pekin;Beijing;Pechinese;Peking;Peking;Peking;Beijing;Pequim;Ïåêèí;Peking;x
 QIN_proletarian_dictatorship;The People's Republic of Qin;La République Populaire des Qins;Die Qin-Volksrepublik;Chiñska Republika Ludowa Qin;La República Popular de Qin;Repubblica Popolare dei Qin;A Népköztársaság Qin;Qin lidové republiky;A Népköztársaság Qin;de People's Republic of Qin;A República Popular da Qin;Íàğîäíàÿ Ğåñïóáëèêà Öèíü;kansantasavallan Qin;x
+QNG;The Qing Empire;L'Empire Qing;Das Qing-Reich;Imperium Qing;El Imperio Qing;L'Impero Qing;A Qing Birodalom;Øíše Qing;A Qing Birodalom;Het Qing-rijk;O império Qing;Èìïåğèÿ Öèí;Qing-imperiumi;x
+QNG_ADJ;Qing;Qing;Qing;Qing;Qing;Qing;Qing;Qing;Qing;Qing;Qing;Öèí;Qing;x
+QNG_democracy;Tartar Cathay;Cathay Tartare;das Tartarisch. Cathay;Tatar Cathay;Tartar Cathay;il Cathay tartaro;Cathay tatár;Tatarská kata;Cathay tatár;Tandsteen Cathay;Tártaro Catai;Òàòàğñê. Êàòàé;Tataari Cathay;x
+QNG_proletarian_dictatorship;Tartar Cathay;Cathay Tartare;das Tartarisch. Cathay;Tatar Cathay;Tartar Cathay;il Cathay tartaro;Cathay tatár;Tatarská Cathay;Cathay tatár;Tandsteen Cathay;Tártaro Catai;Òàòàğñê. Êàòàé;Tataari Cathay;x
+QNG_fascist_dictatorship;Manchukuo;Mandchoukouo;Mandschukuo;Manchukuo;Manchukuo;Manchukuo;Mandzsukuo;Manchukuo;Mandzsukuo;Manchukuo;Manchukuo;Ìàíü÷æîó-Ãî;Manchukuo;x
+QNG_bourgeois_dictatorship;Manchukuo;Mandchoukouo;Mandschukuo;Manchukuo;Manchukuo;Manchukuo;Mandzsukuo;Manchukuo;Mandzsukuo;Manchukuo;Manchukuo;Ìàíü÷æîó-Ãî;Manchukuo;x
 RAG;Ragusa;Raguse;Ragusa;Raguza;Ragusa;Ragusa;Ragusa;Ragusa;Ragusa;Ragusa;Ragusa;Ğàãóçà;Ragusa;z
 RAG_ADJ;Ragusan;Ragusien;Ragusa-;Raguzy;Ragusana;Ragusana;Ragusan;Ragusan;Ragusan;Ragusan;Ragusan;Ğàãóçñê.;Ragusan;y
 RAJ;Rajputana;Rajputana;Rajputana;RadŸputana;Rajputna;Rajputana;Rajputana;Rajputana;Rajputana;Rajputana;Rajputana;Ğàäæïóòàíà;Rajputana;z
@@ -1291,8 +1297,8 @@ TYR;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone
 TYR_ADJ;Tyrone;de Tyrone;Tyrone-;Tyrone;Tyronesa;di Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Tyrone;Òèğîíñê.;Tyrone;y
 UBH;Buha;Bouha;Buha;Buha;Buha;Buha;Buha;Buha;Buha;Buha;Buha;Áóõà;Buha;z
 UBH_ADJ;Buhan;du Bouha;Buha-;Buhy;Buhana;di Buha;Buhan;Buhan;Buhan;Buhan;Buhan;Áóõñê.;Buhan;y
-UCV;Null;Null;Null;Null;Null;Null;Null;Null;Null;Null;Null;Íóëü;Null;x
-UCV_ADJ;Barbarian;Barbare;Barbarisch;Barbarzyñca;Bárbaro;Barbara;Barbár;Barbar;Barbár;Barbaar;bárbaro;âàğâàğ;Barbaari;x
+UCV;(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);(Terra Nullius);x
+UCV_ADJ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;x
 UES;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Óıñóãè;Uesugi;z
 UES_ADJ;Uesugi;d'Uesugi;Uesugi-;Uesugi;Uesugi;di Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Uesugi;Óıñóãèéñê.;Uesugi;y
 UGR;Yugra;Ougra;Jugra;Yugra;Yugra;Jugra;Yugra;Jugra;Yugra;Yugra;Yugra;Şãğà;Yugra;x

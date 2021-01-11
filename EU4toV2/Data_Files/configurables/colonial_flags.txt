@@ -1,20 +1,20 @@
 colonial_alaska = {
 	flag = { name = "Alaska" }
 	flag = { name = "Aleutia" }
-	flag = { name = "Alyeska" unique = "true" }
+	flag = { name = "Alyeska" unique = true }
 	flag = { name = "Pacifico Norte" }
 }
 colonial_australia = {
 	flag = { name = "Australia" }
 	flag = { name = "Tierra Austral" }
 	flag = { name = "Terre Australe" }
-	flag = { name = "New Holland" unique = "true" }
+	flag = { name = "New Holland" unique = true }
 }
 
 colonial_brazil = {
 	flag = { name = "Brazil" }
 	flag = { name = "Vera Cruz" }
-	flag = { name = "Granada Al-Jadida" unique = "true" }
+	flag = { name = "Granada Al-Jadida" unique = true }
 }
 
 colonial_california = {
@@ -27,20 +27,20 @@ colonial_california = {
 colonial_canada = {
 	flag = { name = "Canada" }
 	flag = { name = "Canadá" }
-	flag = { name = "Acadia" unique = "true" }
+	flag = { name = "Acadia" unique = true }
 	flag = { name = "Borealia" }
 	flag = { name = "Hudson Bay" }
-	flag = { name = "Kanata" unique = "true" }
+	flag = { name = "Kanata" unique = true }
 	flag = { name = "Labrador" }
 	flag = { name = "Laurentia" }
 	flag = { name = "Lavrador" }
 	flag = { name = "Newfoundland" }
-	flag = { name = "Nova Scotia" unique = "true" }
-	flag = { name = "Nova Hollandia" unique = "true" }
+	flag = { name = "Nova Scotia" unique = true }
+	flag = { name = "Nova Hollandia" unique = true }
 	flag = { name = "Nouvelle Ecosse" }
 	flag = { name = "Quebec" }
 	flag = { name = "Rupert's Land" }
-	flag = { name = "Vinland" unique = "true" }
+	flag = { name = "Vinland" unique = true }
 }
 
 colonial_columbia = {
@@ -86,7 +86,7 @@ colonial_louisiana = {
 colonial_mexico = {
 	flag = { name = "Mexico" }
 	flag = { name = "Guatemala" }
-	flag = { name = "New Spain" unique = "true" }
+	flag = { name = "New Spain" unique = true }
 	flag = { name = "Texas" }
 	flag = { name = "Yucatan" }
 }

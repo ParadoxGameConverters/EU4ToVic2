@@ -24,6 +24,8 @@ class Leader: commonItems::parser
 	[[nodiscard]] bool isLand() const;
 
   private:
+	void registerKeys();
+	
 	std::string name;
 	std::string leaderType;
 	bool female = false;
@@ -32,7 +34,6 @@ class Leader: commonItems::parser
 	int shock = 0;
 	int maneuver = 0;
 	int siege = 0;
-	std::string country;
 	int leaderID = 0;
 };
 } // namespace EU4

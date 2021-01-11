@@ -3,13 +3,18 @@
 
 EU4::EU4Empire::EU4Empire(std::istream& theStream)
 {
-	registerKeyword("emperor", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString emperorStr(theStream);
-			emperor = emperorStr.getString();
-		});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
+	registerKeywords();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+}
+
+void EU4::EU4Empire::registerKeywords()
+{
+	registerKeyword("emperor", [this](const std::string& unused, std::istream& theStream) {
+		emperor = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("passed_reform", [this](const std::string& unused, std::istream& theStream) {
+		reforms.insert(commonItems::singleString(theStream).getString());
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

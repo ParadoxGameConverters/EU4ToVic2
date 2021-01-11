@@ -3,11 +3,14 @@
 
 mappers::PartyName::PartyName(std::istream& theStream)
 {
-	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& language, std::istream& theStream) {
-		const commonItems::singleString incomingStr(theStream);
-		languageToNameMap.insert(std::make_pair(language, incomingStr.getString()));
-	});
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+}
+
+void mappers::PartyName::registerKeys()
+{
+	registerRegex(commonItems::catchallRegex, [this](const std::string& language, std::istream& theStream) {
+		languageToNameMap.insert(std::make_pair(language, commonItems::singleString(theStream).getString()));
+	});
 }

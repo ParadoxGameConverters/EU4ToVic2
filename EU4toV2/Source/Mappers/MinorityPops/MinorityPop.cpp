@@ -3,18 +3,18 @@
 
 mappers::MinorityPop::MinorityPop(std::istream& theStream)
 {
-	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream)
-	{
-		const commonItems::singleString religionStr(theStream);
-		religion = religionStr.getString();
-	});
-	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream)
-	{
-		const commonItems::singleString cultureStr(theStream);
-		culture = cultureStr.getString();
-	});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+}
+
+void mappers::MinorityPop::registerKeys()
+{
+	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) {
+		religion = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream) {
+		culture = commonItems::singleString(theStream).getString();
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

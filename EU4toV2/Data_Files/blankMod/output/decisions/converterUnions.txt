@@ -32,6 +32,7 @@ political_decisions = {
 		news_desc_medium = "hre_NEWS_MEDIUM"
 		news_desc_short = "hre_NEWS_SHORT"
 		potential = {
+			capital_scope = { is_core = HRE }
 			OR = {
 				AND = {
 					NOT = { has_global_flag = liberal_revolutions_should_now_fire }

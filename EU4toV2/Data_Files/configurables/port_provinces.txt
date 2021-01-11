@@ -1,7 +1,7 @@
 # Blacklist are provinces that have potential naval constructions in vanilla files but are actually
 # not coastal, leading to crashes if we use them for ports. Whitelist are verified coastal provinces.
 
-blacklist = {
+denylist = {
 39
 211
 212
@@ -55,7 +55,7 @@ blacklist = {
 2577
 }
 
-whitelist = {
+allowlist = {
 1
 2
 3

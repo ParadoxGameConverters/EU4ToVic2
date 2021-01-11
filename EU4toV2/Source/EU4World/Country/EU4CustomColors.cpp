@@ -3,17 +3,20 @@
 
 EU4::CustomColors::CustomColors(std::istream& theStream)
 {
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
+
+void EU4::CustomColors::registerKeys()
+{
 	registerKeyword("flag", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleInt flagInt(theStream);
 		// Why, paradox, why?
 		if (flagInt.getInt() < 0)
-		{
 			customColors.flag = 1;
-		}
 		else
-		{
 			customColors.flag = flagInt.getInt() + 1;
-		}
 	});
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleInt colorInt(theStream);
@@ -27,7 +30,4 @@ EU4::CustomColors::CustomColors(std::istream& theStream)
 		customColors.flagColors = commonItems::Color::Factory{}.getColor(theStream);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
-
-	parseStream(theStream);
-	clearRegisteredKeywords();
 }

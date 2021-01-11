@@ -1,20 +1,21 @@
 #include "Army.h"
+#include "CommonFunctions.h"
 #include "Log.h"
 #include <algorithm>
-#include <random>
 #include <queue>
-#include "CommonFunctions.h"
+#include <random>
 
 V2::Army::Army(const EU4::EU4Army& eu4Army,
-               std::string _tag,
-               const bool civilized, 
-               const mappers::RegimentCostsMapper& regimentCostsMapper, 
-               std::map<int, std::shared_ptr<Province>> allProvinces,
-               const mappers::ProvinceMapper& provinceMapper,
-               const mappers::PortProvinces& portProvincesMapper, 
-					std::map<REGIMENTTYPE, int>& unitNameCount,
-					const std::string& localAdjective):
-	name(eu4Army.getName()), tag(std::move(_tag))
+	 std::string _tag,
+	 const bool civilized,
+	 const mappers::RegimentCostsMapper& regimentCostsMapper,
+	 std::map<int, std::shared_ptr<Province>> allProvinces,
+	 const mappers::ProvinceMapper& provinceMapper,
+	 const mappers::PortProvinces& portProvincesMapper,
+	 std::map<REGIMENTTYPE, int>& unitNameCount,
+	 const std::string& localAdjective):
+	 name(eu4Army.getName()),
+	 tag(std::move(_tag))
 {
 	// See what we're dealing with
 	for (const auto& eu4Regiment: eu4Army.getRegiments())
@@ -23,21 +24,24 @@ V2::Army::Army(const EU4::EU4Army& eu4Army,
 		regimentCounts[eu4Regiment.getCategory()]++;
 		// Store potential homes
 		auto chosenType = pickCategory(eu4Regiment.getCategory(), civilized);
-		if (eu4Regiment.getHome() > 0) eu4homeProvinces[chosenType].push_back(eu4Regiment.getHome());
+		if (eu4Regiment.getHome() > 0)
+			eu4homeProvinces[chosenType].push_back(eu4Regiment.getHome());
 	}
 	isNavy = eu4Army.getArmyFloats();
 
 	// Create a build order and store remainders aside.
-	for (const auto& eu4RegimentItr : regimentCounts)
+	for (const auto& eu4RegimentItr: regimentCounts)
 	{
 		const auto typeStrength = eu4Army.getTotalTypeStrength(eu4RegimentItr.first);
-		if (!typeStrength) continue; // no regiments of this type
+		if (!typeStrength)
+			continue; // no regiments of this type
 
-		const auto& regimentCost = regimentCostsMapper.getCostForRegimentType(EU4::RegimentCategoryTypes[eu4RegimentItr.first]);
-		if (!regimentCost) continue; // Well, shit. Mapping error? 
+		const auto& regimentCost = regimentCostsMapper.getCostForRegimentType(eu4RegimentItr.first);
+		if (!regimentCost)
+			continue; // Well, shit. Mapping error?
 		auto chosenType = pickCategory(eu4RegimentItr.first, civilized);
 
-		const auto regimentCount = static_cast<double>(typeStrength) / *regimentCost;		
+		const auto regimentCount = static_cast<double>(typeStrength) / *regimentCost;
 		buildOrder[chosenType] = static_cast<int>(std::floor(regimentCount));
 		armyRemainders[chosenType] = regimentCount - buildOrder[chosenType];
 	}
@@ -48,7 +52,8 @@ V2::Army::Army(const EU4::EU4Army& eu4Army,
 	{
 		for (auto regimentCounter = 0; regimentCounter < buildItem.second; ++regimentCounter)
 		{
-			if (addRegimentToArmy(buildItem.first, allProvinces, provinceMapper, portProvincesMapper, unitNameCount, localAdjective) != AddRegimentToArmyResult::success)
+			if (addRegimentToArmy(buildItem.first, allProvinces, provinceMapper, portProvincesMapper, unitNameCount, localAdjective) !=
+				 AddRegimentToArmyResult::success)
 			{
 				// couldn't add, dissolve into pool
 				armyRemainders[buildItem.first] += 1;
@@ -59,7 +64,7 @@ V2::Army::Army(const EU4::EU4Army& eu4Army,
 			}
 		}
 	}
-	
+
 	// Place the army somewhere.
 
 	auto locationCandidates = provinceMapper.getVic2ProvinceNumbers(eu4Army.getLocation());
@@ -67,7 +72,7 @@ V2::Army::Army(const EU4::EU4Army& eu4Army,
 	{
 		Log(LogLevel::Warning) << "no mapping for province : " << eu4Army.getLocation();
 		// Mapping issues, great. Dissolve the army.
-		for (auto buildItem : buildSuceeded)
+		for (auto buildItem: buildSuceeded)
 		{
 			armyRemainders[buildItem.first] += buildItem.second;
 		}
@@ -79,7 +84,7 @@ V2::Army::Army(const EU4::EU4Army& eu4Army,
 		Log(LogLevel::Warning) << "zero mapping for province : " << eu4Army.getLocation();
 		// Good news - we have mapped the location province! Bad news, it's actually unmapped. How do we even get here?
 		// Dissolve the army.
-		for (auto buildItem : buildSuceeded)
+		for (auto buildItem: buildSuceeded)
 		{
 			armyRemainders[buildItem.first] += buildItem.second;
 		}
@@ -91,14 +96,15 @@ V2::Army::Army(const EU4::EU4Army& eu4Army,
 	if (isNavy)
 	{
 		const auto& provinceItr = allProvinces.find(*locationCandidates.begin());
-		if (provinceItr != allProvinces.end()) usePort = true; // It's in land provinces, so docked.
+		if (provinceItr != allProvinces.end())
+			usePort = true; // It's in land provinces, so docked.
 		if (usePort)
 		{
 			locationCandidates = getPortProvinces(locationCandidates, allProvinces, portProvincesMapper);
 			if (locationCandidates.empty())
 			{
 				// We have a navy and no port candidates. Yay. Better get rid of it.
-				for (auto buildItem : buildSuceeded)
+				for (auto buildItem: buildSuceeded)
 				{
 					armyRemainders[buildItem.first] += buildItem.second;
 				}
@@ -109,59 +115,59 @@ V2::Army::Army(const EU4::EU4Army& eu4Army,
 	}
 
 	const auto selectedLocation = pickRandomProvinceID(locationCandidates);
-	if (isNavy && usePort && !portProvincesMapper.isProvinceIDWhitelisted(selectedLocation))
+	if (isNavy && usePort && !portProvincesMapper.isProvinceIDAllowed(selectedLocation))
 	{
-		LOG(LogLevel::Warning) << "Assigning navy to non-whitelisted port province " << selectedLocation << " - if the save crashes, try blacklisting this province";
+		LOG(LogLevel::Warning) << "Assigning navy to non-allowed port province " << selectedLocation
+									  << " - if the save crashes, try deny-listing this province";
 	}
 	location = selectedLocation;
 }
 
-V2::REGIMENTTYPE V2::Army::pickCategory(const EU4::REGIMENTCATEGORY incCategory, const bool civilized)
+V2::REGIMENTTYPE V2::Army::pickCategory(const std::string& incCategory, const bool civilized)
 {
 	REGIMENTTYPE chosenType;
-	switch (incCategory)
+	if (incCategory == "infantry")
 	{
-	case EU4::REGIMENTCATEGORY::infantry:
 		if (civilized)
-		{
 			chosenType = REGIMENTTYPE::infantry;
-		}
 		else
-		{
 			chosenType = REGIMENTTYPE::irregular;
-		}
-		break;
-	case EU4::REGIMENTCATEGORY::cavalry:
+	}
+	else if (incCategory == "cavalry")
+	{
 		chosenType = REGIMENTTYPE::cavalry;
-		break;
-	case EU4::REGIMENTCATEGORY::artillery:
+	}
+	else if (incCategory == "artillery")
+	{
 		chosenType = REGIMENTTYPE::artillery;
-		break;
-	case EU4::REGIMENTCATEGORY::heavy_ship:
+	}
+	else if (incCategory == "heavy_ship")
+	{
 		chosenType = REGIMENTTYPE::manowar;
-		break;
-	case EU4::REGIMENTCATEGORY::light_ship:
-	case EU4::REGIMENTCATEGORY::galley:
+	}
+	else if (incCategory == "light_ship" || incCategory == "galley")
+	{
 		chosenType = REGIMENTTYPE::frigate;
-		break;
-	case EU4::REGIMENTCATEGORY::transport:
+	}
+	else if (incCategory == "transport")
+	{
 		chosenType = REGIMENTTYPE::clipper_transport;
-		break;
-	default:		
-		Log(LogLevel::Warning) << "Unknown regiment category: " + EU4::RegimentCategoryTypes[incCategory] + " defaulting to infantry. Hopefully this was not a ship!";
+	}
+	else
+	{
+		Log(LogLevel::Warning) << "Unknown regiment category: " + incCategory + " defaulting to infantry. Hopefully this was not a ship!";
 		chosenType = REGIMENTTYPE::infantry;
 	}
 	return chosenType;
 }
 
 // return values: 0 = success, -1 = retry from pool, -2 = do not retry
-V2::AddRegimentToArmyResult V2::Army::addRegimentToArmy(
-	const REGIMENTTYPE chosenType,
-	const std::map<int, std::shared_ptr<Province>>& allProvinces,
-	const mappers::ProvinceMapper& provinceMapper,
-	const mappers::PortProvinces& portProvincesMapper,
-	std::map<REGIMENTTYPE, int>& unitNameCount,
-	const std::string& localAdjective)
+V2::AddRegimentToArmyResult V2::Army::addRegimentToArmy(const REGIMENTTYPE chosenType,
+	 const std::map<int, std::shared_ptr<Province>>& allProvinces,
+	 const mappers::ProvinceMapper& provinceMapper,
+	 const mappers::PortProvinces& portProvincesMapper,
+	 std::map<REGIMENTTYPE, int>& unitNameCount,
+	 const std::string& localAdjective)
 {
 	// Make a regiment.
 	Regiment regiment(chosenType);
@@ -169,7 +175,8 @@ V2::AddRegimentToArmyResult V2::Army::addRegimentToArmy(
 	// Every regiment needs a home to draw soldiers from or to berth. Pick a home at random.
 	auto eu4Home = getProbabilisticHomeProvince(chosenType);
 	// We have an issue right there. Lack of eu4homes means a very broken save game. Abort.
-	if (!eu4Home) return AddRegimentToArmyResult::fail;
+	if (!eu4Home)
+		return AddRegimentToArmyResult::fail;
 
 	// Map the home to V2 province
 	auto homeCandidates = provinceMapper.getVic2ProvinceNumbers(*eu4Home);
@@ -183,32 +190,36 @@ V2::AddRegimentToArmyResult V2::Army::addRegimentToArmy(
 
 	// Old-style V2 province pointer. TO DO: Replace this with smart pointers.
 	std::shared_ptr<Province> homeProvince = nullptr;
-	
+
 	if (isNavy)
 	{
 		// Navies should only get homes in port provinces
 		homeCandidates = getPortProvinces(homeCandidates, allProvinces, portProvincesMapper);
-		if (!homeCandidates.empty()) homeProvince = pickRandomPortProvince(homeCandidates, allProvinces);
+		if (!homeCandidates.empty())
+			homeProvince = pickRandomPortProvince(homeCandidates, allProvinces);
 		// else: So far nothing. No berth.
 	}
 	else
 	{
 		// Armies should get a home in the candidate most capable of supporting them
 		std::vector<std::shared_ptr<Province>> sortedHomeCandidates;
-		for (auto candidate : homeCandidates)
+		for (auto candidate: homeCandidates)
 		{
 			auto provinceItr = allProvinces.find(candidate);
-			if (provinceItr != allProvinces.end()) sortedHomeCandidates.push_back(provinceItr->second);
+			if (provinceItr != allProvinces.end())
+				sortedHomeCandidates.push_back(provinceItr->second);
 		}
 		sort(sortedHomeCandidates.begin(), sortedHomeCandidates.end(), provinceRegimentCapacityPredicate);
 		if (!sortedHomeCandidates.empty())
 		{
-			for (const auto& sortedCandidate : sortedHomeCandidates)
+			for (const auto& sortedCandidate: sortedHomeCandidates)
 			{
 				homeProvince = sortedCandidate;
 				// Check owner!
-				if (homeProvince->getOwner() != tag) homeProvince = nullptr;
-				if (homeProvince) break;
+				if (homeProvince->getOwner() != tag)
+					homeProvince = nullptr;
+				if (homeProvince)
+					break;
 			}
 		}
 		if (!homeProvince)
@@ -222,7 +233,7 @@ V2::AddRegimentToArmyResult V2::Army::addRegimentToArmy(
 			// Seriously now, not a single province with any soldiers left? Then what are we doing?
 			return AddRegimentToArmyResult::fail;
 		}
-		///////// We have a home! Champagne and biscuits! 		
+		///////// We have a home! Champagne and biscuits!
 		// Armies need to be associated with pops
 		auto soldierPop = homeProvince->getSoldierPopForArmy();
 		if (!soldierPop)
@@ -277,63 +288,68 @@ V2::AddRegimentToArmyResult V2::Army::addRegimentToArmy(
 
 std::optional<int> V2::Army::getProbabilisticHomeProvince(const REGIMENTTYPE chosenType) const
 {
-	if (eu4homeProvinces.find(chosenType) == eu4homeProvinces.end()) return std::nullopt;
+	if (eu4homeProvinces.find(chosenType) == eu4homeProvinces.end())
+		return std::nullopt;
 
 	const auto& candidates = eu4homeProvinces.at(chosenType);
-	if (candidates.empty()) return std::nullopt;
+	if (candidates.empty())
+		return std::nullopt;
 
 	std::set<int> randomProvince;
-	std::sample(candidates.begin(), candidates.end(), std::inserter(randomProvince, randomProvince.begin()), 1, std::mt19937{ std::random_device{}() });
+	std::sample(candidates.begin(), candidates.end(), std::inserter(randomProvince, randomProvince.begin()), 1, std::mt19937{std::random_device{}()});
 	return *randomProvince.begin();
 }
 
-std::shared_ptr<V2::Province> V2::Army::pickRandomPortProvince(const std::vector<int>& homeCandidates, const std::map<int, std::shared_ptr<Province>>& allProvinces)
+std::shared_ptr<V2::Province> V2::Army::pickRandomPortProvince(const std::set<int>& homeCandidates,
+	 const std::map<int, std::shared_ptr<Province>>& allProvinces)
 {
 	std::set<int> randomProvince;
-	std::sample(homeCandidates.begin(), homeCandidates.end(), std::inserter(randomProvince, randomProvince.begin()), 1, std::mt19937{ std::random_device{}() });
+	std::sample(homeCandidates.begin(), homeCandidates.end(), std::inserter(randomProvince, randomProvince.begin()), 1, std::mt19937{std::random_device{}()});
 
 	const auto& provinceItr = allProvinces.find(*randomProvince.begin());
-	if (provinceItr != allProvinces.end()) return provinceItr->second;
+	if (provinceItr != allProvinces.end())
+		return provinceItr->second;
 	return nullptr;
 }
 
-int V2::Army::pickRandomProvinceID(std::vector<int> homeCandidates)
+int V2::Army::pickRandomProvinceID(std::set<int> homeCandidates)
 {
 	std::set<int> randomProvince;
-	std::sample(homeCandidates.begin(), homeCandidates.end(), std::inserter(randomProvince, randomProvince.begin()), 1, std::mt19937{ std::random_device{}() });
-	if (randomProvince.empty()) return 0;
+	std::sample(homeCandidates.begin(), homeCandidates.end(), std::inserter(randomProvince, randomProvince.begin()), 1, std::mt19937{std::random_device{}()});
+	if (randomProvince.empty())
+		return 0;
 	return *randomProvince.begin();
 }
 
 void V2::Army::blockHomeProvince(const int blocked)
 {
-	for (const auto& regType : RegimentTypeToName)
+	for (const auto& regType: RegimentTypeToName)
 	{
 		auto& homes = eu4homeProvinces[regType.first];
 		homes.erase(std::remove(homes.begin(), homes.end(), blocked), homes.end());
 	}
 }
 
-std::vector<int> V2::Army::getPortProvinces(
-	const std::vector<int>& locationCandidates,
-	std::map<int, std::shared_ptr<Province>> allProvinces,
-	const mappers::PortProvinces& portProvincesMapper)
+std::set<int> V2::Army::getPortProvinces(const std::set<int>& locationCandidates,
+	 std::map<int, std::shared_ptr<Province>> allProvinces,
+	 const mappers::PortProvinces& portProvincesMapper)
 {
 	std::vector<int> unblockedCandidates;
-	for (auto candidate : locationCandidates)
+	for (auto candidate: locationCandidates)
 	{
-		if (!portProvincesMapper.isProvinceIDBlacklisted(candidate)) unblockedCandidates.push_back(candidate);
+		if (!portProvincesMapper.isProvinceIDDenied(candidate))
+			unblockedCandidates.push_back(candidate);
 	}
 
-	std::vector<int> coastalProvinces;
-	for (auto& candidate : unblockedCandidates)
+	std::set<int> coastalProvinces;
+	for (auto& candidate: unblockedCandidates)
 	{
 		auto province = allProvinces.find(candidate);
 		if (province != allProvinces.end())
 		{
 			if (province->second->isCoastal())
 			{
-				coastalProvinces.push_back(candidate);
+				coastalProvinces.insert(candidate);
 			}
 		}
 	}
@@ -348,7 +364,7 @@ bool V2::Army::provinceRegimentCapacityPredicate(const std::shared_ptr<Province>
 std::shared_ptr<V2::Province> V2::Army::getProvinceForExpeditionaryArmy(const std::map<int, std::shared_ptr<Province>>& allProvinces, const std::string& tag)
 {
 	std::vector<std::shared_ptr<V2::Province>> candidates;
-	for (auto& provinceItr : allProvinces)
+	for (auto& provinceItr: allProvinces)
 	{
 		if (provinceItr.second->getOwner() == tag && !provinceItr.second->isColony() && !provinceItr.second->getPops("soldiers").empty())
 		{
@@ -377,40 +393,43 @@ std::string V2::Army::getRegimentName(REGIMENTTYPE chosenType, std::map<REGIMENT
 	}
 	switch (chosenType)
 	{
-	case REGIMENTTYPE::irregular:
-		str << "Irregulars";
-		break;
-	case REGIMENTTYPE::infantry:
-		str << "Infantry";
-		break;
-	case REGIMENTTYPE::cavalry:
-		str << "Cavalry";
-		break;
-	case REGIMENTTYPE::artillery:
-		str << "Artillery";
-		break;
-	case REGIMENTTYPE::manowar:
-		str << "Man'o'war";
-		break;
-	case REGIMENTTYPE::frigate:
-		str << "Frigate";
-		break;
-	case REGIMENTTYPE::clipper_transport:
-		str << "Clipper Transport";
-		break;
+		case REGIMENTTYPE::irregular:
+			str << "Irregulars";
+			break;
+		case REGIMENTTYPE::infantry:
+			str << "Infantry";
+			break;
+		case REGIMENTTYPE::cavalry:
+			str << "Cavalry";
+			break;
+		case REGIMENTTYPE::artillery:
+			str << "Artillery";
+			break;
+		case REGIMENTTYPE::manowar:
+			str << "Man'o'war";
+			break;
+		case REGIMENTTYPE::frigate:
+			str << "Frigate";
+			break;
+		case REGIMENTTYPE::clipper_transport:
+			str << "Clipper Transport";
+			break;
 	}
 	return str.str();
 }
 
 bool V2::Army::hasRegimentsOfType(const REGIMENTTYPE chosenType) const
 {
-	for (const auto& regiment : regiments) if (regiment.getType() == chosenType) return true;
+	for (const auto& regiment: regiments)
+		if (regiment.getType() == chosenType)
+			return true;
 	return false;
 }
 
 double V2::Army::getRegimentRemainder(const REGIMENTTYPE chosenType) const
 {
 	const auto& remainder = armyRemainders.find(chosenType);
-	if (remainder != armyRemainders.end()) return remainder->second;
+	if (remainder != armyRemainders.end())
+		return remainder->second;
 	return 0;
 }

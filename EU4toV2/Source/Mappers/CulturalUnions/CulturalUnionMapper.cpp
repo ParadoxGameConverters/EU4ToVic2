@@ -1,7 +1,6 @@
 #include "CulturalUnionMapper.h"
-#include "Log.h"
-#include "ParserHelpers.h"
 #include "CulturalUnion.h"
+#include "ParserHelpers.h"
 
 mappers::CulturalUnionMapper::CulturalUnionMapper(std::istream& theStream)
 {
@@ -10,7 +9,7 @@ mappers::CulturalUnionMapper::CulturalUnionMapper(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
-void mappers::CulturalUnionMapper::loadFile(const std::string& filename)
+mappers::CulturalUnionMapper::CulturalUnionMapper(const std::string& filename)
 {
 	registerKeys();
 	parseFile(filename);
@@ -19,18 +18,18 @@ void mappers::CulturalUnionMapper::loadFile(const std::string& filename)
 
 void mappers::CulturalUnionMapper::registerKeys()
 {
-	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) 
-		{
-			const CulturalUnion newUnion(theStream);
-			unionMap.insert(newUnion.getUnion());
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
-
+	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
+		const CulturalUnion newUnion(theStream);
+		unionMap.insert(std::make_pair(newUnion.getCulture(), newUnion.getTags()));
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-std::optional<std::vector<std::string>> mappers::CulturalUnionMapper::getCoresForCulture(const std::string& culture) const
+std::vector<std::string> mappers::CulturalUnionMapper::getCoresForCulture(const std::string& culture) const
 {
-	const auto& mapping = unionMap.find(culture);
-	if (mapping == unionMap.end()) return std::nullopt;
-	return mapping->second;
+
+	if (const auto& mapping = unionMap.find(culture); mapping != unionMap.end())
+		return mapping->second;
+	else
+		return std::vector<std::string>();
 }

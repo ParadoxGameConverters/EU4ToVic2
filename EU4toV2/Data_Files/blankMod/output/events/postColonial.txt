@@ -121,7 +121,9 @@ country_event = {
 			remove_accepted_culture = zzz_religion_sikh
 			remove_accepted_culture = zzz_religion_jain
 			remove_accepted_culture = zzz_religion_animist
+			remove_accepted_culture = zzz_religion_pagan_religion_reformed
 			remove_accepted_culture = zzz_religion_norse_pagan_reformed
+			remove_accepted_culture = zzz_religion_siberian_pagan_reformed
 			remove_accepted_culture = zzz_religion_tengri_pagan_reformed
 			remove_accepted_culture = zzz_religion_baltic_pagan_reformed
 			remove_accepted_culture = zzz_religion_finnish_pagan_reformed
@@ -148,6 +150,8 @@ country_event = {
 			remove_accepted_culture = zzz_religion_noreligion
 			remove_accepted_culture = zzz_religion_adamites
 			remove_accepted_culture = zzz_religion_gnostic
+			remove_accepted_culture = zzz_religion_canaanite
+			remove_accepted_culture = zzz_religion_mardukism
 		}
 	}
 	# Player-only option because there are a fuckton of options
@@ -790,6 +794,34 @@ country_event = {
 	  }
 	 }
 	 option = {
+	  name = "pagan_religion_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_pagan_religion_reformed
+	   religion = pagan_religion_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_pagan_religion_reformed }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "siberian_pagan_reformed"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_siberian_pagan_reformed
+	   religion = siberian_pagan_reformed
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_siberian_pagan_reformed }
+	   }
+	  }
+	 }
+	 option = {
 	  name = "tengri_pagan_reformed"
 	  FROM = {
 	   add_accepted_culture = zzz_religion_tengri_pagan_reformed
@@ -1136,6 +1168,34 @@ country_event = {
 	   modifier = {
 		factor = 0
 		NOT = { accepted_culture = zzz_religion_gnostic }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "canaanite"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_canaanite
+	   religion = canaanite
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_canaanite }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "mardukism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_mardukism
+	   religion = mardukism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_mardukism }
 	   }
 	  }
 	 }

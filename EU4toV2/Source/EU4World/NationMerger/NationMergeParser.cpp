@@ -3,19 +3,25 @@
 
 EU4::NationMergeParser::NationMergeParser()
 {
-	registerKeyword("merge_daimyos", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString daimyosStr(theStream);
-			mergeDaimyos = (daimyosStr.getString() == "yes");
-		});
-	registerRegex("[a-z_]+", [this](const std::string& unused, std::istream& theStream)
-		{
-			const MergeBlock newBlock(theStream);
-			mergeBlocks.push_back(newBlock);
-		});
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseFile("configurables/merge_nations.txt");
 	clearRegisteredKeywords();
 }
 
+EU4::NationMergeParser::NationMergeParser(std::istream& theStream)
+{
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
+
+void EU4::NationMergeParser::registerKeys()
+{
+	registerKeyword("merge_daimyos", [this](const std::string& unused, std::istream& theStream) {
+		mergeDaimyos = commonItems::singleString(theStream).getString() == "yes";
+	});
+	registerRegex(commonItems::catchallRegex, [this](const std::string& unused, std::istream& theStream) {
+		const MergeBlock newBlock(theStream);
+		mergeBlocks.push_back(newBlock);
+	});
+}

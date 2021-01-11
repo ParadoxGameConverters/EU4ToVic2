@@ -105,6 +105,10 @@ class Country
 	void setAcceptedCultures(const std::set<std::string>& accepted) { details.acceptedCultures = accepted; }
 	void addAcceptedCulture(const std::string& culture) { details.acceptedCultures.insert(culture); }
 	void addCountryFlag(const std::string& flag) { details.countryFlags.insert(flag); }
+	void setReligion(const std::string& religion) { details.religion = religion; }
+	void setGovernment(const std::string& government) { details.government = government; }
+	void setCapital(const int capital) { details.capital = capital; }
+	void setCivilized(const bool civilized) { details.civilized = civilized; }
 
 	bool addFactory(std::shared_ptr<Factory> factory);
 	Relation& getRelation(const std::string& target);
@@ -134,6 +138,8 @@ class Country
 	[[nodiscard]] const auto& getEU4PrimaryCulture() const { return details.eu4PrimaryCulture; }
 	[[nodiscard]] const auto& getAcceptedCultures() const { return details.acceptedCultures; }
 	[[nodiscard]] const auto& getEU4AcceptedCultures() const { return details.eu4acceptedCultures; }
+	[[nodiscard]] bool isEmperorHRE() const { return details.holyRomanEmperor; }
+	[[nodiscard]] bool isMemberHRE() const { return details.inHRE; }
 
 	friend std::ostream& operator<<(std::ostream& output, const Country& country);
 	void outputCommons(std::ostream& output);

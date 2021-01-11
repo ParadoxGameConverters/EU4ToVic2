@@ -1,10 +1,10 @@
 #include "PopMapper.h"
 #include "ParserHelpers.h"
 
-mappers::PopMapper::PopMapper(const std::string& filename)
+mappers::PopMapper::PopMapper(const std::string& fileName)
 {
 	registerKeys();
-	parseFile(filename);
+	parseFile(fileName);
 	clearRegisteredKeywords();
 }
 
@@ -17,10 +17,9 @@ mappers::PopMapper::PopMapper(std::istream& theStream)
 
 void mappers::PopMapper::registerKeys()
 {
-	registerRegex("[0-9]+", [this](const std::string& provinceID, std::istream& theStream)
-		{
-			PopTypes newPopType(theStream);
-			provincePopTypeMap.insert(std::make_pair(stoi(provinceID), newPopType));
-		});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerRegex(R"(\d+)", [this](const std::string& provinceID, std::istream& theStream) {
+		const PopTypes newPopType(theStream);
+		provincePops.insert(std::make_pair(stoi(provinceID), newPopType.getPopTypes()));
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

@@ -3,17 +3,16 @@
 
 EU4::EU4ActiveIdeas::EU4ActiveIdeas(std::istream& theStream)
 {
-	registerRegex("[a-zA-z0-9_]+", [this](const std::string& ideaName, std::istream& theStream)
-		{
-			const commonItems::singleInt ideaInt(theStream);
-			// Don't bother with incomplete ideas.
-			if (ideaInt.getInt() >= 7) activeIdeas.insert(ideaName);
-		}
-	);
-	registerRegex("[a-zA-Z0-9_\\.:]+", commonItems::ignoreItem);
-
+	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-
+void EU4::EU4ActiveIdeas::registerKeys()
+{
+	registerRegex(commonItems::catchallRegex, [this](const std::string& ideaName, std::istream& theStream) {
+		// Don't bother with incomplete ideas.
+		if (commonItems::singleInt(theStream).getInt() >= 7)
+			activeIdeas.insert(ideaName);
+	});
+}

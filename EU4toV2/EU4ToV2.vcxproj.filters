@@ -10,9 +10,6 @@
     <ClCompile Include="Source\EU4World\Regions\Areas.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\ID.cpp">
-      <Filter>EU4World</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Regions\Region.cpp">
       <Filter>EU4World\Regions</Filter>
     </ClCompile>
@@ -21,9 +18,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\World.cpp">
       <Filter>EU4World</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Religions\Religion.cpp">
-      <Filter>EU4World\Religions</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Religions\ReligionGroup.cpp">
       <Filter>EU4World\Religions</Filter>
@@ -67,15 +61,6 @@
     <ClCompile Include="Source\EU4World\Provinces\ProvinceBuildings.cpp">
       <Filter>EU4World\Provinces</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Modifiers\Modifier.cpp">
-      <Filter>EU4World\Modifiers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Modifiers\Modifiers.cpp">
-      <Filter>EU4World\Modifiers</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Provinces\ProvinceModifier.cpp">
-      <Filter>EU4World\Provinces</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\Country\EU4ReformStackSection.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
@@ -113,9 +98,6 @@
       <Filter>EU4World\Country</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Country\EU4CountryFlags.cpp">
-      <Filter>EU4World\Country</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Country\EU4Modifier.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Relations\EU4RelationDetails.cpp">
@@ -163,23 +145,11 @@
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp">
       <Filter>Mappers\CultureGroups</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Localisation\EU4Localisation.cpp">
-      <Filter>EU4World\Localisation</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\CK2Titles\CK2TitleMapper.cpp">
-      <Filter>Mappers\CK2Titles</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\CK2Titles\TitleMapping.cpp">
-      <Filter>Mappers\CK2Titles</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMapping.cpp">
       <Filter>Mappers\CountryMappings</Filter>
     </ClCompile>
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMappings.cpp">
       <Filter>Mappers\CountryMappings</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\Adjacency\AdjacencyMapper.cpp">
-      <Filter>Mappers\Adjacency</Filter>
     </ClCompile>
     <ClCompile Include="Source\Mappers\Geography\ClimateMapper.cpp">
       <Filter>Mappers\Geography</Filter>
@@ -337,9 +307,6 @@
     <ClCompile Include="Source\Mappers\RGORandomization\BucketList.cpp">
       <Filter>Mappers\RGORandomization</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.cpp">
-      <Filter>Mappers\RegionProvinces</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\PortProvinces\PortProvinces.cpp">
       <Filter>Mappers\PortProvinces</Filter>
     </ClCompile>
@@ -403,9 +370,6 @@
     <ClCompile Include="Source\V2World\Output\outPop.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\Pops\MapperPop.cpp">
-      <Filter>Mappers\Pops</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Army\Army.cpp">
       <Filter>Vic2World\Army</Filter>
     </ClCompile>
@@ -423,9 +387,6 @@
     </ClCompile>
     <ClCompile Include="Source\V2World\Output\outProvince.cpp">
       <Filter>Vic2World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\ProvinceDetails\ProvinceDetails.cpp">
-      <Filter>Mappers\ProvinceDetails</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\State\State.cpp">
       <Filter>Vic2World\State</Filter>
@@ -447,9 +408,6 @@
     </ClCompile>
     <ClCompile Include="Source\V2World\Province\ProvinceNameParser.cpp">
       <Filter>Vic2World\Province</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Country\CountryPopLogger.cpp">
-      <Filter>Vic2World\Country</Filter>
     </ClCompile>
     <ClCompile Include="Source\V2World\MappingChecker\MappingChecker.cpp">
       <Filter>Vic2World\MappingChecker</Filter>
@@ -489,12 +447,6 @@
     </ClCompile>
     <ClCompile Include="Source\V2World\Output\outHistory.cpp">
       <Filter>Vic2World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGood.cpp">
-      <Filter>EU4World\TradeGoods</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\TradeGoods\EU4TradeGoods.cpp">
-      <Filter>EU4World\TradeGoods</Filter>
     </ClCompile>
     <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTech.cpp">
       <Filter>Mappers\StartingTechMapper</Filter>
@@ -574,6 +526,36 @@
     <ClCompile Include="Source\Mappers\CountryFlags\CountryFlagsMapping.cpp">
       <Filter>Mappers\CountryFlags</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Leader\EU4LeaderID.cpp">
+      <Filter>EU4World\Leader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\EU4CountryModifier.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.cpp">
+      <Filter>Mappers\DeadDefinitionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapping.cpp">
+      <Filter>Mappers\DeadDefinitionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Localization\EU4Localization.cpp">
+      <Filter>EU4World\Localization</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Titles\TitleMapper.cpp">
+      <Filter>Mappers\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Titles\TitleMapping.cpp">
+      <Filter>Mappers\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp">
+      <Filter>Mappers\V2ProvinceRegionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\Pops\PopInstance.cpp">
+      <Filter>Mappers\Pops</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.cpp">
+      <Filter>Mappers\ProvinceDetails</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -584,9 +566,6 @@
     <ClInclude Include="Source\EU4World\Regions\Areas.h">
       <Filter>EU4World\Regions</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\ID.h">
-      <Filter>EU4World</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\Regions\Regions.h">
       <Filter>EU4World\Regions</Filter>
     </ClInclude>
@@ -595,9 +574,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\World.h">
       <Filter>EU4World</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Religions\Religion.h">
-      <Filter>EU4World\Religions</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Religions\ReligionGroup.h">
       <Filter>EU4World\Religions</Filter>
@@ -638,22 +614,7 @@
     <ClInclude Include="Source\Helpers\TechValues.h">
       <Filter>Helpers</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\Provinces\ProvinceStats.h">
-      <Filter>EU4World\Provinces</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\Provinces\ProvinceBuildings.h">
-      <Filter>EU4World\Provinces</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Modifiers\Modifier.h">
-      <Filter>EU4World\Modifiers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Modifiers\Modifiers.h">
-      <Filter>EU4World\Modifiers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Provinces\ProvinceModifier.h">
-      <Filter>EU4World\Provinces</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Provinces\BuildingWeightEffects.h">
       <Filter>EU4World\Provinces</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Country\EU4ReformStackSection.h">
@@ -693,9 +654,6 @@
       <Filter>EU4World\Country</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Country\EU4CountryFlags.h">
-      <Filter>EU4World\Country</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Country\EU4Modifier.h">
       <Filter>EU4World\Country</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Relations\EU4RelationDetails.h">
@@ -743,23 +701,11 @@
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h">
       <Filter>Mappers\CultureGroups</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\Localisation\EU4Localisation.h">
-      <Filter>EU4World\Localisation</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\CK2Titles\CK2TitleMapper.h">
-      <Filter>Mappers\CK2Titles</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\CK2Titles\TitleMapping.h">
-      <Filter>Mappers\CK2Titles</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMapping.h">
       <Filter>Mappers\CountryMappings</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMappings.h">
       <Filter>Mappers\CountryMappings</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\Adjacency\AdjacencyMapper.h">
-      <Filter>Mappers\Adjacency</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\Geography\ClimateMapper.h">
       <Filter>Mappers\Geography</Filter>
@@ -917,9 +863,6 @@
     <ClInclude Include="Source\Mappers\RGORandomization\BucketList.h">
       <Filter>Mappers\RGORandomization</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\RegionProvinces\RegionProvinceMapper.h">
-      <Filter>Mappers\RegionProvinces</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\PortProvinces\PortProvinces.h">
       <Filter>Mappers\PortProvinces</Filter>
     </ClInclude>
@@ -959,9 +902,6 @@
     <ClInclude Include="Source\V2World\Pop\Pop.h">
       <Filter>Vic2World\Pop</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\Pops\MapperPop.h">
-      <Filter>Mappers\Pops</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\Army\Army.h">
       <Filter>Vic2World\Army</Filter>
     </ClInclude>
@@ -970,9 +910,6 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\Province\Province.h">
       <Filter>Vic2World\Province</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetails.h">
-      <Filter>Mappers\ProvinceDetails</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\State\State.h">
       <Filter>Vic2World\State</Filter>
@@ -994,9 +931,6 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\Province\ProvinceNameParser.h">
       <Filter>Vic2World\Province</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\V2World\Country\CountryPopLogger.h">
-      <Filter>Vic2World\Country</Filter>
     </ClInclude>
     <ClInclude Include="Source\V2World\MappingChecker\MappingChecker.h">
       <Filter>Vic2World\MappingChecker</Filter>
@@ -1027,12 +961,6 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\War\War.h">
       <Filter>Vic2World\War</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGood.h">
-      <Filter>EU4World\TradeGoods</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\TradeGoods\EU4TradeGoods.h">
-      <Filter>EU4World\TradeGoods</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTech.h">
       <Filter>Mappers\StartingTechMapper</Filter>
@@ -1112,6 +1040,36 @@
     <ClInclude Include="Source\Mappers\CountryFlags\CountryFlagsMapping.h">
       <Filter>Mappers\CountryFlags</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\Leader\EU4LeaderID.h">
+      <Filter>EU4World\Leader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\EU4CountryModifier.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.h">
+      <Filter>Mappers\DeadDefinitionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapping.h">
+      <Filter>Mappers\DeadDefinitionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Localization\EU4Localization.h">
+      <Filter>EU4World\Localization</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Titles\TitleMapper.h">
+      <Filter>Mappers\Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Titles\TitleMapping.h">
+      <Filter>Mappers\Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.h">
+      <Filter>Mappers\V2ProvinceRegionsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Pops\PopInstance.h">
+      <Filter>Mappers\Pops</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.h">
+      <Filter>Mappers\ProvinceDetails</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1143,9 +1101,6 @@
     </Filter>
     <Filter Include="Helpers">
       <UniqueIdentifier>{ef5e0061-2ce9-448e-9f80-9fa52991faf9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="EU4World\Modifiers">
-      <UniqueIdentifier>{a148c2bc-522b-45d5-9087-5f5b840c943f}</UniqueIdentifier>
     </Filter>
     <Filter Include="EU4World\Country">
       <UniqueIdentifier>{0eaaaa58-d93f-4f51-a6fe-dce31727ca87}</UniqueIdentifier>
@@ -1183,17 +1138,8 @@
     <Filter Include="Mappers\CultureGroups">
       <UniqueIdentifier>{4b63845e-9288-4ea1-a7aa-18bccaf0ef3f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EU4World\Localisation">
-      <UniqueIdentifier>{378138b0-2893-41e3-8f98-70df21541f19}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Mappers\CK2Titles">
-      <UniqueIdentifier>{5095124a-bcad-425f-aa6c-8299c482a4a3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Mappers\CountryMappings">
       <UniqueIdentifier>{555fbb7e-7576-40ca-a00c-3c0c85145fb1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Mappers\Adjacency">
-      <UniqueIdentifier>{b1c912a8-37e7-40fd-a471-45254f092ca0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Mappers\Geography">
       <UniqueIdentifier>{4700b363-a004-434a-8672-55fc2a36d624}</UniqueIdentifier>
@@ -1273,9 +1219,6 @@
     <Filter Include="Mappers\RGORandomization">
       <UniqueIdentifier>{63392046-e39d-4304-b1ef-bf0f118a1ed6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Mappers\RegionProvinces">
-      <UniqueIdentifier>{20e118dd-a05a-43d1-af80-c5ff91db7e1b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Mappers\PortProvinces">
       <UniqueIdentifier>{cf57a5e8-a8d7-4839-81fb-1a19da32768b}</UniqueIdentifier>
     </Filter>
@@ -1336,9 +1279,6 @@
     <Filter Include="Mappers\WarGoalMapper">
       <UniqueIdentifier>{9b194f63-f1ef-46e2-9f4a-7fad6d7b19c9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EU4World\TradeGoods">
-      <UniqueIdentifier>{c3667a54-ec75-4e75-b1f0-c372e33d08b6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Mappers\StartingTechMapper">
       <UniqueIdentifier>{c274b979-7555-4ad5-898a-377275dc3065}</UniqueIdentifier>
     </Filter>
@@ -1359,6 +1299,18 @@
     </Filter>
     <Filter Include="Mappers\CountryFlags">
       <UniqueIdentifier>{c2f5257a-dea3-40f3-9aa0-466dce08a547}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\DeadDefinitionMapper">
+      <UniqueIdentifier>{f1195239-6d04-4195-b19c-5a567619bc87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Localization">
+      <UniqueIdentifier>{54c68c10-27ee-404c-abe0-c2096b685936}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\Titles">
+      <UniqueIdentifier>{5095124a-bcad-425f-aa6c-8299c482a4a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\V2ProvinceRegionsMapper">
+      <UniqueIdentifier>{20e118dd-a05a-43d1-af80-c5ff91db7e1b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
