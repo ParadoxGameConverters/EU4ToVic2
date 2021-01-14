@@ -1,5 +1,5 @@
 #include "LeaderTraitTypes.h"
-#include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::LeaderTraitTypes::LeaderTraitTypes(std::istream& theStream)
 {

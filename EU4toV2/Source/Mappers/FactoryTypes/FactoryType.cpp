@@ -1,6 +1,7 @@
 #include "FactoryType.h"
 #include "FactoryTypeInputs.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::FactoryType::FactoryType(std::istream& theStream, std::string theName): factoryTypeName(std::move(theName))
 {

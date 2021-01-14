@@ -296,6 +296,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\TechSchools\TechSchools.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Titles\TitleMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\Titles\TitleMapping.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\UnionTagsMapper\UnionTagsMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp" />
@@ -415,6 +416,7 @@
     <ClCompile Include="MapperTests\TechSchoolTests.cpp" />
     <ClCompile Include="MapperTests\TitleMapper\TitleMapperTests.cpp" />
     <ClCompile Include="MapperTests\TitleMapper\TitleMappingTests.cpp" />
+    <ClCompile Include="MapperTests\UnionTagsMapper\UnionTagsMapperTests.cpp" />
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeMapperTests.cpp" />
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp" />
     <ClCompile Include="MapperTests\V2ProvinceRegionsMapper\V2ProvinceRegionsMapperTests.cpp" />

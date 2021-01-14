@@ -3,6 +3,7 @@
 #include "DateItems.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 {

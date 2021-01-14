@@ -2,6 +2,7 @@
 #include "Configuration.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::Buildings::Buildings()
 {

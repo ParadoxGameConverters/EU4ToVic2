@@ -1,5 +1,6 @@
 #include "NavalBase.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::NavalBase::NavalBase(std::istream& theStream)
 {

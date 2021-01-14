@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <iomanip>
 #include <locale>
+#include "CommonRegexes.h"
 
 mappers::CountryMappings::CountryMappings():
 	 titleMapper(std::make_unique<TitleMapper>()), colonialTagMapper(std::make_unique<ColonialTagMapper>()),

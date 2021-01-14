@@ -4,6 +4,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 #include <cmath>
+#include "CommonRegexes.h"
 
 EU4::Province::Province(const std::string& numString, std::istream& theStream)
 {

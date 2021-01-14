@@ -1,6 +1,7 @@
 #include "PartyTypeMapper.h"
 #include "ParserHelpers.h"
 #include <Log.h>
+#include "CommonRegexes.h"
 
 mappers::PartyTypeMapper::PartyTypeMapper()
 {

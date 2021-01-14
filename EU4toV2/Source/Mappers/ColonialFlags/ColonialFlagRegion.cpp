@@ -1,5 +1,6 @@
 #include "ColonialFlagRegion.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::ColonialFlagRegion::ColonialFlagRegion(std::istream& theStream, const std::string& region)
 {

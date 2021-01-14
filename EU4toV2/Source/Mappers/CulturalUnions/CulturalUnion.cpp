@@ -1,5 +1,6 @@
 #include "CulturalUnion.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::CulturalUnion::CulturalUnion(std::istream& theStream)
 {
@@ -14,7 +15,7 @@ void mappers::CulturalUnion::registerKeys()
 		culture = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("tag", [this](const std::string& unused, std::istream& theStream) {
-		tags.emplace_back(commonItems::singleString(theStream).getString());
+		tags.insert(commonItems::singleString(theStream).getString());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

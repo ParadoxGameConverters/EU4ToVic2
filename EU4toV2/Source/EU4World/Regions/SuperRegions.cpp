@@ -1,5 +1,6 @@
 #include "SuperRegions.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::SuperRegions::SuperRegions(std::istream& theStream)
 {

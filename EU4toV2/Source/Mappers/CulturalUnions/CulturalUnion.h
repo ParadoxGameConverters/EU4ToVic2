@@ -1,5 +1,6 @@
 #ifndef CULTURAL_UNION_H
 #define CULTURAL_UNION_H
+#include <set>
 #include "Parser.h"
 
 namespace mappers
@@ -16,7 +17,7 @@ class CulturalUnion: commonItems::parser
 	void registerKeys();
 
 	std::string culture;
-	std::vector<std::string> tags;
+	std::set<std::string> tags;
 };
 } // namespace mappers
 

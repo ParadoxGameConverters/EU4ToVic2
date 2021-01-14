@@ -2,6 +2,7 @@
 #include "LeaderTraitTypes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::LeaderTraitMapper::LeaderTraitMapper()
 {

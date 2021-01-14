@@ -1,6 +1,7 @@
 #include "Areas.h"
 #include "Area.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::Areas::Areas(std::istream& theStream)
 {

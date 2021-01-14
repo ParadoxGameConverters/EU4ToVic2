@@ -17,6 +17,6 @@ TEST(Mappers_CulturalUnionTests, primitivesCanBeLoaded)
 	const mappers::CulturalUnion theCultureUnion(input);
 
 	ASSERT_EQ("a_culture", theCultureUnion.getCulture());
-	ASSERT_EQ("TAG", theCultureUnion.getTags()[0]);
-	ASSERT_EQ("TG2", theCultureUnion.getTags()[1]);
+	ASSERT_TRUE(theCultureUnion.getTags().contains("TAG"));
+	ASSERT_TRUE(theCultureUnion.getTags().contains("TG2"));
 }

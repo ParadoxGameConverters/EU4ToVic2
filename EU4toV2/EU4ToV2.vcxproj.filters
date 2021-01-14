@@ -556,6 +556,9 @@
     <ClCompile Include="Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.cpp">
       <Filter>Mappers\ProvinceDetails</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\UnionTagsMapper\UnionTagsMapper.cpp">
+      <Filter>Mappers\UnionTagsMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1070,6 +1073,12 @@
     <ClInclude Include="Source\Mappers\ProvinceDetails\ProvinceDetailsMapper.h">
       <Filter>Mappers\ProvinceDetails</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\UnionTagsMapper\UnionTagsMapper.h">
+      <Filter>Mappers\UnionTagsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\CommonRegexes.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1311,6 +1320,9 @@
     </Filter>
     <Filter Include="Mappers\V2ProvinceRegionsMapper">
       <UniqueIdentifier>{20e118dd-a05a-43d1-af80-c5ff91db7e1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\UnionTagsMapper">
+      <UniqueIdentifier>{8db610cd-e924-4080-a512-db81b67fab07}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

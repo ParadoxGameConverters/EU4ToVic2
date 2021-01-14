@@ -439,6 +439,7 @@
     <ClCompile Include="Source\Mappers\TechSchools\TechSchools.cpp" />
     <ClCompile Include="Source\Mappers\Titles\TitleMapper.cpp" />
     <ClCompile Include="Source\Mappers\Titles\TitleMapping.cpp" />
+    <ClCompile Include="Source\Mappers\UnionTagsMapper\UnionTagsMapper.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp" />
@@ -488,6 +489,7 @@
   <ItemGroup>
     <ClInclude Include="..\commonItems\Color.h" />
     <ClInclude Include="..\commonItems\CommonFunctions.h" />
+    <ClInclude Include="..\commonItems\CommonRegexes.h" />
     <ClInclude Include="..\commonItems\Date.h" />
     <ClInclude Include="..\commonItems\GameVersion.h" />
     <ClInclude Include="..\commonItems\iconvlite.h" />
@@ -628,6 +630,7 @@
     <ClInclude Include="Source\Mappers\TechSchools\TechSchools.h" />
     <ClInclude Include="Source\Mappers\Titles\TitleMapper.h" />
     <ClInclude Include="Source\Mappers\Titles\TitleMapping.h" />
+    <ClInclude Include="Source\Mappers\UnionTagsMapper\UnionTagsMapper.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitType.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
     <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h" />

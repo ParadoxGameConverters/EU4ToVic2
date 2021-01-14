@@ -1,5 +1,6 @@
 #include "CountryFlagsMapping.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::CountryFlagsMapping::CountryFlagsMapping(std::istream& theStream)
 {

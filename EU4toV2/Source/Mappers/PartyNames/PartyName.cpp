@@ -1,5 +1,6 @@
 #include "PartyName.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::PartyName::PartyName(std::istream& theStream)
 {

@@ -1,5 +1,6 @@
 #include "DateItems.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::DateItems::DateItems(std::istream& theStream)
 {

@@ -3,6 +3,7 @@
 #include "ParserHelpers.h"
 #include "TitleMapping.h"
 #include <random>
+#include "CommonRegexes.h"
 
 mappers::TitleMapper::TitleMapper()
 {

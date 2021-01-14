@@ -1,5 +1,6 @@
 #include "UnitType.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::UnitType::UnitType(std::istream& theStream)
 {

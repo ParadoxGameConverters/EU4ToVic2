@@ -4,6 +4,7 @@
 #include "ParserHelpers.h"
 #include <fstream>
 #include "CommonFunctions.h"
+#include "CommonRegexes.h"
 
 Configuration theConfiguration;
 

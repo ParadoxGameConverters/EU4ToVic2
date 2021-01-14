@@ -4,6 +4,7 @@
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "ReligionGroup.h"
+#include "CommonRegexes.h"
 
 EU4::Religions::Religions()
 {

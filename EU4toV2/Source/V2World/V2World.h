@@ -37,6 +37,7 @@
 #include "Output/ModFile.h"
 #include "Province/Province.h"
 #include "Province/ProvinceNameParser.h"
+#include "UnionTagsMapper/UnionTagsMapper.h"
 #include "War/War.h"
 #include <list>
 #include <memory>
@@ -165,6 +166,7 @@ class World
 	ModFile modFile;
 	Diplomacy diplomacy;
 	mappers::CountryFlags countryFlags;
+	mappers::UnionTagsMapper unionTagsMapper;
 };
 
 std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);

@@ -1,5 +1,6 @@
 #include "PartyNameMapper.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::PartyNameMapper::PartyNameMapper()
 {

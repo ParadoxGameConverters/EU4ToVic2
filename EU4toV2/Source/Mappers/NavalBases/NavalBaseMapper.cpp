@@ -3,6 +3,7 @@
 #include "Configuration.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::NavalBaseMapper::NavalBaseMapper()
 {

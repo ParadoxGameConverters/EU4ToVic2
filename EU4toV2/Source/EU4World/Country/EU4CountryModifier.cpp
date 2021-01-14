@@ -1,5 +1,6 @@
 #include "EU4CountryModifier.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::EU4CountryModifier::EU4CountryModifier(std::istream& theStream)
 {
