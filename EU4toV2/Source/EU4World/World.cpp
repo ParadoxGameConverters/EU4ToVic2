@@ -24,6 +24,7 @@
 #include <set>
 #include <string>
 namespace fs = std::filesystem;
+#include "CommonRegexes.h"
 
 EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {

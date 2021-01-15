@@ -1,5 +1,6 @@
 #include "MergeBlock.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::MergeBlock::MergeBlock(std::istream& theStream)
 {

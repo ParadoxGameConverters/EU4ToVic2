@@ -1,5 +1,6 @@
 #include "DeadDefinitionMapper.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::DeadDefinitionMapper::DeadDefinitionMapper()
 {

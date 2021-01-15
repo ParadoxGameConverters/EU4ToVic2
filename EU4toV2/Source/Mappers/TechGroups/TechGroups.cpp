@@ -1,5 +1,6 @@
 #include "TechGroups.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::TechGroups::TechGroups(std::istream& theStream)
 {

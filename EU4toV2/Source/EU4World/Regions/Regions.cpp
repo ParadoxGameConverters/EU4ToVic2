@@ -2,6 +2,7 @@
 #include "Areas.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::Regions::Regions(const SuperRegions& sRegions, const Areas& areas, std::istream& regionsFile)
 {

@@ -1,6 +1,7 @@
 #include "Culture.h"
 #include "ParserHelpers.h"
 #include <random>
+#include "CommonRegexes.h"
 
 mappers::Culture::Culture(std::istream& theStream)
 {

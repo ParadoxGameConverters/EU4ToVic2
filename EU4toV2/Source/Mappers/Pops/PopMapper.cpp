@@ -1,5 +1,6 @@
 #include "PopMapper.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::PopMapper::PopMapper(const std::string& fileName)
 {

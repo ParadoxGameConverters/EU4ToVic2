@@ -1,6 +1,7 @@
 #include "CulturalUnionMapper.h"
 #include "CulturalUnion.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::CulturalUnionMapper::CulturalUnionMapper(std::istream& theStream)
 {
@@ -25,11 +26,22 @@ void mappers::CulturalUnionMapper::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-std::vector<std::string> mappers::CulturalUnionMapper::getCoresForCulture(const std::string& culture) const
+std::set<std::string> mappers::CulturalUnionMapper::getCoresForCulture(const std::string& culture) const
 {
 
 	if (const auto& mapping = unionMap.find(culture); mapping != unionMap.end())
 		return mapping->second;
 	else
-		return std::vector<std::string>();
+		return std::set<std::string>();
+}
+
+std::set<std::string> mappers::CulturalUnionMapper::getCulturesForCore(const std::string& core) const
+{
+	std::set<std::string> toReturn;
+	for (const auto& [culture, tags]: unionMap)
+	{
+		if (tags.contains(core))
+			toReturn.insert(culture);
+	}
+	return toReturn;
 }

@@ -1,5 +1,6 @@
 #include "FactoryTechDetails.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::FactoryTechDetails::FactoryTechDetails(std::istream& theStream)
 {

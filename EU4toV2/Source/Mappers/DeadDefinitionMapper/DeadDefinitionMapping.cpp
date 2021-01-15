@@ -1,5 +1,6 @@
 #include "DeadDefinitionMapping.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::DeadDefinitionMapping::DeadDefinitionMapping(std::istream& theStream)
 {

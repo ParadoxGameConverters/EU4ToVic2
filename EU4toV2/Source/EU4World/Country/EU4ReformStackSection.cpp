@@ -1,5 +1,6 @@
 #include "EU4ReformStackSection.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::ReformStackSection::ReformStackSection(std::istream& theStream)
 {

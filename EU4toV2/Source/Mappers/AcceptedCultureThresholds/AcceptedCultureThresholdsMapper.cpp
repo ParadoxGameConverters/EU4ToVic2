@@ -1,6 +1,7 @@
 #include "AcceptedCultureThresholdsMapper.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::AcceptedCultureThresholdsMapper::AcceptedCultureThresholdsMapper()
 {

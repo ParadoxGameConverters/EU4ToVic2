@@ -12,7 +12,7 @@
 #include "Relations/EU4Relations.h"
 #include "V2World/Localisation/Localisation.h"
 #include <cmath>
-
+#include "CommonRegexes.h"
 #include "Leader/EU4LeaderID.h"
 
 EU4::Country::Country(std::string countryTag, const GameVersion& theVersion, std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper):

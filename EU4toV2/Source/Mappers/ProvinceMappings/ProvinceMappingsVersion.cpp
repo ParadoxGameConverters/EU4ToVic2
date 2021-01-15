@@ -1,5 +1,6 @@
 #include "ProvinceMappingsVersion.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::ProvinceMappingsVersion::ProvinceMappingsVersion(const std::string& versionString, std::istream& theStream): version(GameVersion(versionString))
 {

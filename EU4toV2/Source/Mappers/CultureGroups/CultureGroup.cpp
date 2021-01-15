@@ -1,6 +1,7 @@
 #include "CultureGroup.h"
 #include "Culture.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::CultureGroup::CultureGroup(std::string theName, std::istream& theStream): name(std::move(theName))
 {

@@ -8,6 +8,7 @@
 #include <fstream>
 #include <stdexcept>
 namespace fs = std::filesystem;
+#include "CommonRegexes.h"
 
 mappers::ProvinceMapper::ProvinceMapper(): colonialRegionsMapper(std::make_unique<EU4::ColonialRegions>())
 {

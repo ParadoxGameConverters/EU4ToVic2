@@ -2,6 +2,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "TechGroups.h"
+#include "CommonRegexes.h"
 
 mappers::TechGroupsMapper::TechGroupsMapper()
 {

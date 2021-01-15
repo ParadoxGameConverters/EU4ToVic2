@@ -318,18 +318,19 @@ void V2::World::addAcceptedCultures(const EU4::Regions& eu4Regions)
 {
 	// Accepted cultures at this stage only contain neocultures (if > 0.15) and ex-primary culture if neoculture took over.
 	// We will do a census among our full cores and add only those accepted cultures that are relevant to us, eu4 and cultural
-	// unions be damned.
+	// unions be damned. Vic2 cultural unions are exceptions and WILL add accepted cultures.
 
 	for (const auto& country: countries)
 	{
 		if (country.second->getProvinces().empty())
 			continue;								// don't disturb the dead
 		std::map<std::string, long> census; // culture, population.
-		// do a census
+		
+		// First, the census.
 		for (const auto& province: country.second->getProvinces())
 		{
 			if (!province.second->hasCore(country.first))
-				continue; // We don't census territories.
+				continue; // We don't census EU4/Vic2 territories.
 
 			const auto& pops = province.second->getPopsForOutput();
 			if (!pops)
@@ -374,6 +375,17 @@ void V2::World::addAcceptedCultures(const EU4::Regions& eu4Regions)
 			{
 				if (ratio >= foreignThreshold)
 					acceptedCultures.insert(culture.first);
+			}
+		}
+
+		// Now we look at vic2 cultural union exceptions.
+		if (unionTagsMapper.isTagUnionfull(country.first))
+		{
+			// We'll add all cultures from unions.txt that consider this tag its cultural union.
+			for (const auto& culture: culturalUnionMapper->getCulturesForCore(country.first))
+			{
+				if (culture != primaryCulture)
+					acceptedCultures.insert(culture);
 			}
 		}
 

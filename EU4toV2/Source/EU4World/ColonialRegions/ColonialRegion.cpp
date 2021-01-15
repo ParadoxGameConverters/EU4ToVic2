@@ -1,5 +1,6 @@
 #include "ColonialRegion.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::ColonialRegion::ColonialRegion(std::istream& theStream)
 {

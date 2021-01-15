@@ -1,6 +1,7 @@
 #include "CountryFlags.h"
 #include "CountryFlagsMapping.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::CountryFlags::CountryFlags()
 {

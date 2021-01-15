@@ -1,5 +1,6 @@
 #include "FactoryInventionDetails.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::FactoryInventionDetails::FactoryInventionDetails(std::istream& theStream)
 {

@@ -1,5 +1,6 @@
 #include "EU4CustomColors.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::CustomColors::CustomColors(std::istream& theStream)
 {

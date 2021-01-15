@@ -1,6 +1,7 @@
 #include "AfricaResetMapper.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::AfricaResetMapper::AfricaResetMapper()
 {

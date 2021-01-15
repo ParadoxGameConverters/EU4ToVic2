@@ -4,6 +4,7 @@
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "ReligionMapping.h"
+#include "CommonRegexes.h"
 
 mappers::ReligionMapper::ReligionMapper()
 {

@@ -1,5 +1,6 @@
 #include "BlockedTechSchools.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::BlockedTechSchools::BlockedTechSchools()
 {

@@ -1,6 +1,7 @@
 #include "FactoryInventionEffect.h"
 #include "FactoryInventionDetails.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::FactoryInventionEffect::FactoryInventionEffect(std::istream& theStream)
 {

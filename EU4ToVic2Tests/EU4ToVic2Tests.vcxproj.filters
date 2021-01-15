@@ -740,6 +740,12 @@
     <ClCompile Include="MapperTests\RegimentCostsMapper\RegimentCostsMapperTests.cpp">
       <Filter>MapperTests\RegimentCostsMapper</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\UnionTagsMapper\UnionTagsMapperTests.cpp">
+      <Filter>MapperTests\UnionTagsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\UnionTagsMapper\UnionTagsMapper.cpp">
+      <Filter>ConverterFiles\Mappers\UnionTagsMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -1083,6 +1089,12 @@
     </Filter>
     <Filter Include="MapperTests\RegimentCostsMapper">
       <UniqueIdentifier>{53174550-8ec6-4961-96e5-3b6f00045d62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\UnionTagsMapper">
+      <UniqueIdentifier>{16ac696f-3c03-4876-8602-ba11abfd9f7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\UnionTagsMapper">
+      <UniqueIdentifier>{a10535b0-deeb-4a34-b065-f36408863a8c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

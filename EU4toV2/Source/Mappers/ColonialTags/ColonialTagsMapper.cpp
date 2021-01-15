@@ -1,6 +1,7 @@
 #include "ColonialTagsMapper.h"
 #include "Parser.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::ColonialTagMapper::ColonialTagMapper()
 {

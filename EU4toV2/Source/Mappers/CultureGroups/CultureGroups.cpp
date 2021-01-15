@@ -7,6 +7,7 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 void mappers::CultureGroups::initForEU4()
 {

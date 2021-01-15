@@ -1,6 +1,7 @@
 #include "CultureMappingRule.h"
 #include "ParserHelpers.h"
 #include "Regions/Regions.h"
+#include "CommonRegexes.h"
 
 mappers::CultureMappingRule::CultureMappingRule(std::istream& theStream)
 {

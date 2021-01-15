@@ -1,6 +1,7 @@
 #include "AgreementMapper.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::AgreementMapper::AgreementMapper()
 {

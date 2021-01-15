@@ -1,5 +1,6 @@
 #include "IdeaEffects.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::IdeaEffects::IdeaEffects(std::istream& theStream)
 {
