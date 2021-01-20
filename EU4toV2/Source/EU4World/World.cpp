@@ -151,16 +151,16 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 
 void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
-	registerKeyword("EU4txt", [](const std::string& unused, std::istream& theStream) {
+	registerKeyword("EU4txt", [](std::istream& theStream) {
 	});
-	registerKeyword("date", [](const std::string& unused, std::istream& theStream) {
-		theConfiguration.setLastEU4Date(date(commonItems::singleString(theStream).getString()));
+	registerKeyword("date", [](std::istream& theStream) {
+		theConfiguration.setLastEU4Date(date(commonItems::getString(theStream)));
 	});
-	registerKeyword("start_date", [](const std::string& unused, std::istream& theStream) {
-		theConfiguration.setStartEU4Date(date(commonItems::singleString(theStream).getString()));
+	registerKeyword("start_date", [](std::istream& theStream) {
+		theConfiguration.setStartEU4Date(date(commonItems::getString(theStream)));
 	});
 	registerRegex("(multiplayer_)?random_seed", [](const std::string& unused, std::istream& theStream) {
-		auto theSeed = commonItems::singleString(theStream).getString();
+		auto theSeed = commonItems::getString(theStream);
 		if (theSeed.size() > 5)
 			theSeed = theSeed.substr(theSeed.size() - 5);
 		try
@@ -173,36 +173,36 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
 			theConfiguration.setEU4RandomSeed(0);
 		}
 	});
-	registerKeyword("savegame_version", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("savegame_version", [this](std::istream& theStream) {
 		version = std::make_unique<GameVersion>(theStream);
 		theConfiguration.setEU4Version(*version);
 		Log(LogLevel::Info) << "Savegave version: " << *version;
 	});
-	registerKeyword("mod_enabled", [](const std::string& unused, std::istream& theStream) {
+	registerKeyword("mod_enabled", [](std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Detecting used mods.";
-		const auto modsList = commonItems::stringList(theStream).getStrings();
+		const auto modsList = commonItems::getStrings(theStream);
 		Log(LogLevel::Info) << "<> Savegame claims " << modsList.size() << " mods used:";
 		for (const auto& usedMod: modsList)
 			Log(LogLevel::Info) << "---> " << usedMod;
 		Mods theMods(modsList);
 	});
-	registerKeyword("revolution_target", [this](const std::string& unused, std::istream& theStream) {
-		revolutionTargetString = commonItems::singleString(theStream).getString();
+	registerKeyword("revolution_target", [this](std::istream& theStream) {
+		revolutionTargetString = commonItems::getString(theStream);
 	});
-	registerKeyword("celestial_empire", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("celestial_empire", [this](std::istream& theStream) {
 		const EU4Empire empireBlock(theStream);
 		celestialEmperor = empireBlock.getEmperor();
 	});
-	registerKeyword("empire", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("empire", [this](std::istream& theStream) {
 		const EU4Empire empireBlock(theStream);
 		holyRomanEmperor = empireBlock.getEmperor();
 		hreReforms = empireBlock.getHREReforms();
 	});
 	// Old style of marking the emperor pre-1.20
-	registerKeyword("emperor", [this](const std::string& unused, std::istream& theStream) {
-		holyRomanEmperor = commonItems::singleString(theStream).getString();
+	registerKeyword("emperor", [this](std::istream& theStream) {
+		holyRomanEmperor = commonItems::getString(theStream);
 	});
-	registerKeyword("provinces", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("provinces", [this](std::istream& theStream) {
 		LOG(LogLevel::Info) << "-> Loading Provinces";
 		provinces = std::make_unique<Provinces>(theStream);
 
@@ -210,18 +210,18 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		if (possibleDate)
 			theConfiguration.setFirstEU4Date(*possibleDate);
 	});
-	registerKeyword("countries", [this, ideaEffectMapper](const std::string& unused, std::istream& theStream) {
+	registerKeyword("countries", [this, ideaEffectMapper](std::istream& theStream) {
 		LOG(LogLevel::Info) << "-> Loading Countries";
 		const Countries processedCountries(*version, theStream, ideaEffectMapper);
 		theCountries = processedCountries.getTheCountries();
 	});
-	registerKeyword("diplomacy", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("diplomacy", [this](std::istream& theStream) {
 		LOG(LogLevel::Info) << "-> Loading Diplomacy";
 		const EU4Diplomacy theDiplomacy(theStream);
 		diplomacy = theDiplomacy.getAgreements();
 		LOG(LogLevel::Info) << "-> Loaded " << diplomacy.size() << " agreements";
 	});
-	registerKeyword("active_war", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("active_war", [this](std::istream& theStream) {
 		const War newWar(theStream);
 		wars.push_back(newWar);
 	});

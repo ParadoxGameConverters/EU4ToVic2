@@ -12,16 +12,16 @@ EU4::War::War(std::istream& theStream)
 void EU4::War::registerKeys()
 {
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
-		name = commonItems::singleString(theStream).getString();
+		name = commonItems::getString(theStream);
 	});
 	registerKeyword("history", [this](const std::string& unused, std::istream& theStream) {
 		details.addDetails(theStream);
 	});
 	registerKeyword("attackers", [this](const std::string& unused, std::istream& theStream) {
-		attackers = commonItems::stringList(theStream).getStrings();
+		attackers = commonItems::getStrings(theStream);
 	});
 	registerKeyword("defenders", [this](const std::string& unused, std::istream& theStream) {
-		defenders = commonItems::stringList(theStream).getStrings();
+		defenders = commonItems::getStrings(theStream);
 	});
 	registerRegex(R"(take_\w+|defend_\w+|\w*superiority|blockade_\w+)", [this](const std::string& warGoalClass, std::istream& theStream) {
 		details.addDetails(theStream);

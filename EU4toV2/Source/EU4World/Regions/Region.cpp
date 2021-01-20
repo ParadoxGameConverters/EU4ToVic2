@@ -12,8 +12,8 @@ EU4::Region::Region(std::istream& theStream)
 
 void EU4::Region::registerKeys()
 {
-	registerKeyword("areas", [this](const std::string& unused, std::istream& theStream) {
-		for (const auto& areaName: commonItems::stringList(theStream).getStrings())
+	registerKeyword("areas", [this](std::istream& theStream) {
+		for (const auto& areaName: commonItems::getStrings(theStream))
 			areaNames.insert(areaName);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);

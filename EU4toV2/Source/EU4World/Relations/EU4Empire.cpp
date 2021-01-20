@@ -11,11 +11,11 @@ EU4::EU4Empire::EU4Empire(std::istream& theStream)
 
 void EU4::EU4Empire::registerKeywords()
 {
-	registerKeyword("emperor", [this](const std::string& unused, std::istream& theStream) {
-		emperor = commonItems::singleString(theStream).getString();
+	registerKeyword("emperor", [this](std::istream& theStream) {
+		emperor = commonItems::getString(theStream);
 	});
-	registerKeyword("passed_reform", [this](const std::string& unused, std::istream& theStream) {
-		reforms.insert(commonItems::singleString(theStream).getString());
+	registerKeyword("passed_reform", [this](std::istream& theStream) {
+		reforms.insert(commonItems::getString(theStream));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

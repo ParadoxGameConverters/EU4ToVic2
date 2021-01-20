@@ -12,9 +12,9 @@ EU4::Areas::Areas(std::istream& theStream)
 
 void EU4::Areas::registerKeys()
 {
-	registerRegex(R"([\w_]+)", [this](const std::string& areaName, std::istream& theStream) {
+	registerRegex(commonItems::stringRegex, [this](const std::string& areaName, std::istream& theStream) {
 		const Area newArea(theStream);
-		theAreas.insert(std::make_pair(areaName, newArea.getProvinces()));
+		theAreas.emplace(areaName, newArea.getProvinces());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

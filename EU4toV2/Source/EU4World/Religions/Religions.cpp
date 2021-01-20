@@ -30,7 +30,7 @@ EU4::Religions::Religions(std::istream& theStream)
 
 void EU4::Religions::registerKeys()
 {
-	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& unused, std::istream& theStream) {
+	registerRegex(commonItems::stringRegex, [this](const std::string& unused, std::istream& theStream) {
 		ReligionGroup newGroup(theStream);
 		const auto fetchedReligions = newGroup.takeReligions();
 		theReligions.insert(fetchedReligions.begin(), fetchedReligions.end());

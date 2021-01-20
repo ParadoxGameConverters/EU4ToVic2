@@ -12,7 +12,7 @@ EU4::SuperRegions::SuperRegions(std::istream& theStream)
 void EU4::SuperRegions::registerKeys()
 {
 	registerRegex(R"(\w+_superregion)", [this](const std::string& sregionName, std::istream& theStream) {
-		for (const auto& regionName: commonItems::stringList(theStream).getStrings())
+		for (const auto& regionName: commonItems::getStrings(theStream))
 		{
 			if (regionName == "restrict_charter")
 				continue;
