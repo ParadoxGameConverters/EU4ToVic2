@@ -18,7 +18,7 @@ void EU4::Regions::registerKeys(const Areas& areas)
 	registerRegex(R"(\w+_region)", [this, areas](const std::string& regionName, std::istream& areasFile) {
 		Region newRegion(areasFile);
 		newRegion.addProvinces(areas);
-		regions.insert(make_pair(regionName, newRegion));
+		regions.emplace(regionName, newRegion);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
@@ -26,7 +26,7 @@ void EU4::Regions::registerKeys(const Areas& areas)
 EU4::Regions::Regions(const Areas& areas)
 {
 	for (const auto& theArea: areas.getAreas())
-		regions.insert(std::make_pair(theArea.first, Region(theArea.second)));
+		regions.emplace(theArea.first, Region(theArea.second));
 }
 
 bool EU4::Regions::provinceInRegion(int province, const std::string& regionName) const
@@ -101,7 +101,7 @@ bool EU4::Regions::regionIsValid(const std::string& regionName) const
 
 	// And more stuff, what's the worst that could happen?
 	for (const auto& region: regions)
-		if (region.second.getAreaNames().count(regionName))
+		if (region.second.getAreaNames().contains(regionName))
 			return true;
 
 	return false;

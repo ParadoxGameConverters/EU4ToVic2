@@ -559,6 +559,9 @@
     <ClCompile Include="Source\Mappers\UnionTagsMapper\UnionTagsMapper.cpp">
       <Filter>Mappers\UnionTagsMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\commonItems\ConvenientParser.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1077,6 +1080,9 @@
       <Filter>Mappers\UnionTagsMapper</Filter>
     </ClInclude>
     <ClInclude Include="..\commonItems\CommonRegexes.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\ConvenientParser.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
   </ItemGroup>

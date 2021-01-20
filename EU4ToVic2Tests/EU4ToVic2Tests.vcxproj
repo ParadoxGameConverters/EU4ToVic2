@@ -171,6 +171,7 @@
   <ItemGroup>
     <ClCompile Include="..\commonItems\Color.cpp" />
     <ClCompile Include="..\commonItems\CommonFunctions.cpp" />
+    <ClCompile Include="..\commonItems\ConvenientParser.cpp" />
     <ClCompile Include="..\commonItems\Date.cpp" />
     <ClCompile Include="..\commonItems\GameVersion.cpp" />
     <ClCompile Include="..\commonItems\iconvlite.cpp" />
@@ -422,6 +423,7 @@
     <ClCompile Include="MapperTests\V2ProvinceRegionsMapper\V2ProvinceRegionsMapperTests.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\commonItems\ConvenientParser.h" />
     <ClInclude Include="Mocks\Vic2CountryMock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

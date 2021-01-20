@@ -746,6 +746,9 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnionTagsMapper\UnionTagsMapper.cpp">
       <Filter>ConverterFiles\Mappers\UnionTagsMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\commonItems\ConvenientParser.cpp">
+      <Filter>ConverterFiles\commonItems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -1100,6 +1103,9 @@
   <ItemGroup>
     <ClInclude Include="Mocks\Vic2CountryMock.h">
       <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\ConvenientParser.h">
+      <Filter>ConverterFiles\commonItems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

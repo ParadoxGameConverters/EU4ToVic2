@@ -12,14 +12,14 @@ EU4::EU4RelationDetails::EU4RelationDetails(std::istream& theStream)
 void EU4::EU4RelationDetails::registerKeys()
 {
 	registerRegex("value|cached_sum", [this](const std::string& unused, std::istream& theStream) {
-		value = commonItems::singleInt(theStream).getInt();
+		value = commonItems::getInt(theStream);
 	});
-	registerKeyword("military_access", [this](const std::string& unused, std::istream& theStream) {
-		commonItems::ignoreItem(unused, theStream);
+	registerKeyword("military_access", [this](std::istream& theStream) {
+		commonItems::ignoreItem("unused", theStream);
 		military_access = true;
 	});
-	registerKeyword("attitude", [this](const std::string& unused, std::istream& theStream) {
-		attitude = commonItems::singleString(theStream).getString();
+	registerKeyword("attitude", [this](std::istream& theStream) {
+		attitude = commonItems::getString(theStream);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

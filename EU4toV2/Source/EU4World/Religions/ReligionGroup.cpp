@@ -21,7 +21,7 @@ void EU4::ReligionGroup::registerKeys()
 	registerKeyword("harmonized_modifier", commonItems::ignoreItem);
 	registerKeyword("crusade_name", commonItems::ignoreItem);
 
-	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& religionName, std::istream& theStream) {
+	registerRegex(commonItems::stringRegex, [this](const std::string& religionName, std::istream& theStream) {
 		commonItems::ignoreItem(religionName, theStream);
 		religions.insert(religionName);
 	});
