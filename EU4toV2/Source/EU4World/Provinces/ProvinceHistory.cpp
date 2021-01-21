@@ -43,23 +43,13 @@ EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 void EU4::ProvinceHistory::registerKeys()
 {
 	registerKeyword("owner", [this](const std::string& unused, std::istream& theStream) {
-		ownershipHistory.emplace_back(std::make_pair(theConfiguration.getStartEU4Date(), commonItems::singleString(theStream).getString()));
+		ownershipHistory.emplace_back(std::make_pair(theConfiguration.getStartEU4Date(), commonItems::getString(theStream)));
 	});
-	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream) {
-		startingCulture = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) {
-		startingReligion = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("base_tax", [this](const std::string& unused, std::istream& theStream) {
-		originalTax = commonItems::singleDouble(theStream).getDouble();
-	});
-	registerKeyword("base_production", [this](const std::string& unused, std::istream& theStream) {
-		originalProduction = commonItems::singleDouble(theStream).getDouble();
-	});
-	registerKeyword("base_manpower", [this](const std::string& unused, std::istream& theStream) {
-		originalManpower = commonItems::singleDouble(theStream).getDouble();
-	});
+	registerSetter("culture", startingCulture);
+	registerSetter("religion", startingReligion);
+	registerSetter("base_tax", originalTax);
+	registerSetter("base_production", originalProduction);
+	registerSetter("base_manpower", originalManpower);
 	registerRegex(R"(\d+\.\d+\.\d+)", [this](const std::string& dateString, std::istream& theStream) {
 		auto theDate = date(dateString);
 		const DateItems theItems(theStream);

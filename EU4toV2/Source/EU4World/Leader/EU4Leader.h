@@ -2,11 +2,11 @@
 #define EU4_LEADER_H
 
 #include "Date.h"
-#include "Parser.h"
+#include "ConvenientParser.h"
 
 namespace EU4
 {
-class Leader: commonItems::parser
+class Leader: commonItems::convenientParser
 {
   public:
 	Leader() = default;

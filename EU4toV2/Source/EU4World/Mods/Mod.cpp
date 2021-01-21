@@ -1,6 +1,5 @@
 #include "Mod.h"
 #include "CommonFunctions.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
 
 EU4::Mod::Mod(std::istream& theStream)
@@ -25,11 +24,9 @@ void EU4::Mod::overLoad(const std::string& filePath)
 
 void EU4::Mod::registerKeys()
 {
-	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
-		name = commonItems::singleString(theStream).getString();
-	});
+	registerSetter("name", name);
 	registerRegex("path|archive", [this](const std::string& unused, std::istream& theStream) {
-		path = commonItems::singleString(theStream).getString();
+		path = commonItems::getString(theStream);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

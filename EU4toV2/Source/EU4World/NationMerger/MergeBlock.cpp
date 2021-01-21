@@ -1,5 +1,4 @@
 #include "MergeBlock.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
 
 EU4::MergeBlock::MergeBlock(std::istream& theStream)
@@ -11,14 +10,12 @@ EU4::MergeBlock::MergeBlock(std::istream& theStream)
 
 void EU4::MergeBlock::registerKeys()
 {
-	registerKeyword("master", [this](const std::string& unused, std::istream& theStream) {
-		master = commonItems::singleString(theStream).getString();
+	registerSetter("master", master);
+	registerKeyword("slave", [this](std::istream& theStream) {
+		slaves.insert(commonItems::getString(theStream));
 	});
-	registerKeyword("slave", [this](const std::string& unused, std::istream& theStream) {
-		slaves.insert(commonItems::singleString(theStream).getString());
-	});
-	registerKeyword("merge", [this](const std::string& unused, std::istream& theStream) {
-		merge = commonItems::singleString(theStream).getString() == "yes";
+	registerKeyword("merge", [this](std::istream& theStream) {
+		merge = commonItems::getString(theStream) == "yes";
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

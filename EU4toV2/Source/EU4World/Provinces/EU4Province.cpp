@@ -28,70 +28,52 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 
 void EU4::Province::registerKeys()
 {
-	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
-		name = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream) {
-		culture = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) {
-		religion = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("base_tax", [this](const std::string& unused, std::istream& theStream) {
-		baseTax = commonItems::singleDouble(theStream).getDouble();
-	});
-	registerKeyword("base_production", [this](const std::string& unused, std::istream& theStream) {
-		baseProduction = commonItems::singleDouble(theStream).getDouble();
-	});
+	registerSetter("name", name);
+	registerSetter("culture", culture);
+	registerSetter("religion", religion);
+	registerSetter("base_tax", baseTax);
+	registerSetter("base_production", baseProduction);
 	// One of these is obsolete but required for old versions.
-	registerKeyword("base_manpower", [this](const std::string& unused, std::istream& theStream) {
-		baseManpower = commonItems::singleDouble(theStream).getDouble();
-	});
+	registerSetter("base_manpower", baseManpower);
 	// No idea which one.
-	registerKeyword("manpower", [this](const std::string& unused, std::istream& theStream) {
-		baseManpower = commonItems::singleDouble(theStream).getDouble();
-	});
-	registerKeyword("owner", [this](const std::string& unused, std::istream& theStream) {
-		ownerString = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("controller", [this](const std::string& unused, std::istream& theStream) {
-		controllerString = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("cores", [this](const std::string& unused, std::istream& theStream) {
-		const auto& coreList = commonItems::stringList(theStream).getStrings();
+	registerSetter("manpower", baseManpower);
+	registerSetter("owner", ownerString);
+	registerSetter("controller", controllerString);
+	registerKeyword("cores", [this](std::istream& theStream) {
+		const auto& coreList = commonItems::getStrings(theStream);
 		cores.insert(coreList.begin(), coreList.end());
 	});
-	registerKeyword("core", [this](const std::string& unused, std::istream& theStream) {
-		cores.insert(commonItems::singleString(theStream).getString());
+	registerKeyword("core", [this](std::istream& theStream) {
+		cores.insert(commonItems::getString(theStream));
 	});
-	registerKeyword("territorial_core", [this](const std::string& unused, std::istream& theStream) {
-		commonItems::ignoreItem(unused, theStream);
+	registerKeyword("territorial_core", [this](std::istream& theStream) {
+		commonItems::ignoreItem("unused", theStream);
 		territorialCore = true;
 	});
-	registerKeyword("hre", [this](const std::string& unused, std::istream& theStream) {
-		inHRE = commonItems::singleString(theStream).getString() == "yes";
+	registerKeyword("hre", [this](std::istream& theStream) {
+		inHRE = commonItems::getString(theStream) == "yes";
 	});
-	registerKeyword("is_city", [this](const std::string& unused, std::istream& theStream) {
-		city = commonItems::singleString(theStream).getString() == "yes";
+	registerKeyword("is_city", [this](std::istream& theStream) {
+		city = commonItems::getString(theStream) == "yes";
 	});
-	registerKeyword("colonysize", [this](const std::string& unused, std::istream& theStream) {
-		commonItems::ignoreItem(unused, theStream);
+	registerKeyword("colonysize", [this](std::istream& theStream) {
+		commonItems::ignoreItem("unused", theStream);
 		colony = true;
 	});
-	registerKeyword("original_coloniser", [this](const std::string& unused, std::istream& theStream) {
-		commonItems::ignoreItem(unused, theStream);
+	registerKeyword("original_coloniser", [this]( std::istream& theStream) {
+		commonItems::ignoreItem("unused", theStream);
 		hadOriginalColonizer = true;
 	});
-	registerKeyword("history", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("history", [this](std::istream& theStream) {
 		const ProvinceHistory theHistory(theStream);
 		provinceHistory = theHistory;
 	});
-	registerKeyword("buildings", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("buildings", [this](std::istream& theStream) {
 		const ProvinceBuildings theBuildings(theStream);
 		buildings = theBuildings;
 	});
-	registerKeyword("great_projects", [this](const std::string& unused, std::istream& theStream) {
-		const auto& projectList = commonItems::stringList(theStream).getStrings();
+	registerKeyword("great_projects", [this](std::istream& theStream) {
+		const auto& projectList = commonItems::getStrings(theStream);
 		greatProjects.insert(projectList.begin(), projectList.end());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);

@@ -1,10 +1,10 @@
 #ifndef EU4_LEADER_ID_H
 #define EU4_LEADER_ID_H
-#include "Parser.h"
+#include "ConvenientParser.h"
 
 namespace EU4
 {
-class LeaderID: commonItems::parser
+class LeaderID: commonItems::convenientParser
 {
   public:
 	LeaderID() = default;

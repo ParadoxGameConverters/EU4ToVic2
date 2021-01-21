@@ -11,7 +11,7 @@ EU4::ProvinceBuildings::ProvinceBuildings(std::istream& theStream)
 
 void EU4::ProvinceBuildings::registerKeys()
 {
-	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& building, std::istream& theStream) {
+	registerRegex(commonItems::stringRegex, [this](const std::string& building, std::istream& theStream) {
 		commonItems::ignoreItem(building, theStream);
 		buildings.insert(building);
 	});

@@ -1,7 +1,7 @@
 #ifndef EU4_PROVINCE_H
 #define EU4_PROVINCE_H
 #include "Buildings/Buildings.h"
-#include "Parser.h"
+#include "ConvenientParser.h"
 #include "ProvinceBuildings.h"
 #include "ProvinceHistory.h"
 #include "Regions/Regions.h"
@@ -9,7 +9,7 @@
 
 namespace EU4
 {
-class Province: commonItems::parser
+class Province: commonItems::convenientParser
 {
   public:
 	Province(const std::string& numString, std::istream& theStream);

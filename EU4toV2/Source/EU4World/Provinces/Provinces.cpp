@@ -12,7 +12,7 @@ EU4::Provinces::Provinces(std::istream& theStream)
 
 void EU4::Provinces::registerKeys()
 {
-	registerRegex("-[0-9]+", [this](const std::string& numberString, std::istream& theStream) {
+	registerRegex(commonItems::integerRegex, [this](const std::string& numberString, std::istream& theStream) {
 		auto newProvince = std::make_shared<Province>(numberString, theStream);
 		provinces.insert(std::make_pair(newProvince->getNum(), std::move(newProvince)));
 	});

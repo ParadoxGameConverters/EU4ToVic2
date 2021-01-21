@@ -73,8 +73,8 @@ void EU4::Mods::loadSteamWorkshopDirectory()
 
 			if (theMod.isValid())
 			{
-				possibleMods.insert(std::make_pair("mod/ugc_" + subfolder + ".mod", path));
-				possibleMods.insert(std::make_pair(theMod.getName(), path));
+				possibleMods.emplace("mod/ugc_" + subfolder + ".mod", path);
+				possibleMods.emplace(theMod.getName(), path);
 				Log(LogLevel::Info) << "\t\tFound potential mod named " << theMod.getName() << " at " << path;
 			}
 		}
@@ -127,9 +127,9 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 							continue;
 						}
 
-						possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory));
-						possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory));
-						possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory));
+						possibleMods.emplace(theMod.getName(), recordDirectory);
+						possibleMods.emplace("mod/" + filename, recordDirectory);
+						possibleMods.emplace(trimmedFilename, recordDirectory);
 						Log(LogLevel::Info) << "\t\tFound potential mod named " << theMod.getName() << " with a mod file at " << searchDirectory << "/mod/" + filename
 												  << " and itself at " << recordDirectory;
 					}
@@ -153,9 +153,9 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 
 						const auto trimmedFilename = trimExtension(filename);
 
-						possibleCompressedMods.insert(std::make_pair(theMod.getName(), recordDirectory));
-						possibleCompressedMods.insert(std::make_pair("mod/" + filename, recordDirectory));
-						possibleCompressedMods.insert(std::make_pair(trimmedFilename, recordDirectory));
+						possibleCompressedMods.emplace(theMod.getName(), recordDirectory);
+						possibleCompressedMods.emplace("mod/" + filename, recordDirectory);
+						possibleCompressedMods.emplace(trimmedFilename, recordDirectory);
 						Log(LogLevel::Info) << "\t\tFound a compressed mod named " << theMod.getName() << " with a mod file at " << searchDirectory
 												  << "/mod/" + filename << " and itself at " << recordDirectory;
 					}
@@ -177,9 +177,9 @@ void EU4::Mods::loadModDirectory(const std::string& searchDirectory)
 					if (theMod.isValid())
 					{
 						const auto trimmedFilename = trimExtension(filename);
-						possibleMods.insert(std::make_pair(theMod.getName(), recordDirectory));
-						possibleMods.insert(std::make_pair("mod/" + filename, recordDirectory));
-						possibleMods.insert(std::make_pair(trimmedFilename, recordDirectory));
+						possibleMods.emplace(theMod.getName(), recordDirectory);
+						possibleMods.emplace("mod/" + filename, recordDirectory);
+						possibleMods.emplace(trimmedFilename, recordDirectory);
 						Log(LogLevel::Info) << "\t\tSalvaged potential mod named " << theMod.getName() << " with a mod file at " << searchDirectory
 												  << "/mod/" + filename << " and itself at " << recordDirectory;
 					}

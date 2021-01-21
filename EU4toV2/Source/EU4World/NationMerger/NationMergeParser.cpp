@@ -18,8 +18,8 @@ EU4::NationMergeParser::NationMergeParser(std::istream& theStream)
 
 void EU4::NationMergeParser::registerKeys()
 {
-	registerKeyword("merge_daimyos", [this](const std::string& unused, std::istream& theStream) {
-		mergeDaimyos = commonItems::singleString(theStream).getString() == "yes";
+	registerKeyword("merge_daimyos", [this](std::istream& theStream) {
+		mergeDaimyos = commonItems::getString(theStream) == "yes";
 	});
 	registerRegex(commonItems::catchallRegex, [this](const std::string& unused, std::istream& theStream) {
 		const MergeBlock newBlock(theStream);
