@@ -1,14 +1,14 @@
 #ifndef PROVINCE_HISTORY_H
 #define PROVINCE_HISTORY_H
 #include "Date.h"
-#include "Parser.h"
+#include "ConvenientParser.h"
 #include "PopRatio.h"
 #include <optional>
 #include <vector>
 
 namespace EU4
 {
-class ProvinceHistory: commonItems::parser
+class ProvinceHistory: commonItems::convenientParser
 {
   public:
 	ProvinceHistory() = default;

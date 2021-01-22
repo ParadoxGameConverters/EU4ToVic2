@@ -1,10 +1,10 @@
 #ifndef EU4_MOD_H
 #define EU4_MOD_H
-#include "Parser.h"
+#include "ConvenientParser.h"
 
 namespace EU4
 {
-class Mod: commonItems::parser
+class Mod: commonItems::convenientParser
 {
   public:
 	explicit Mod(std::istream& theStream);
