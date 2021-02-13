@@ -875,27 +875,27 @@ romantic = {
 	laessin = { 
 		color = { 214 156 129 }
 
-		first_names = { Abucatui Achemnatui Acheporecui Adrian Albinui Albui Allepsandri Ambarui Ambro?ui Anaronacui Anasta?ui
+		first_names = { Abucatui Achemnatui Acheporecui Adrian Albinui Albui Allepsandri Ambarui Ambrošui Anaronacui Anastašui
 			Andriai Añechui Añerestui Antoñinui Antoñui Añui Aporoñui Arcadzui Archemnui Artapsiai Auetui Augstinui
-			Augstui Aurelleanui Aurellui Bartoromeui Ba?ellui Bechellui Bellesariui Beñacui Beñedeptui Betumnatui
-			Brañod?enui Breñui Bretañecui Brezui Buld?ui Camurod?enui Carinui Carui Ca?ui Centui Chèchellui Chèllestinui
-			Cheprianui Cher?i Chèsa Chetsiui Chetui Chodo?ui Chuspai Ciaudzui Ciementsui Cometai Constañi Constantinui
-			Constantsui Corñellui Crasui Dadacui Dariui Deca?ui Dechemui Dechui Dentupei Desachentui Domechanui Domeñecui
-			Dometsui Drusui D?era?ui D?ermanui D?esatorecui D?èui Èd?edzui Ellanui Elpedzui Èmelleanui Èmellui Emnatsui
-			Eñodzui Eposomnatui Eptapori Ercullui Esarnui Ètsui Eubarnacui Fabeanui Fabiui Fabrichui Faran?i Faustui
+			Augstui Aurelleanui Aurellui Bartoromeui Bašellui Bechellui Bellesariui Beñacui Beñedeptui Betumnatui
+			Brañodženui Breñui Bretañecui Brezui Buldžui Camurodženui Carinui Carui Cašui Centui Chèchellui Chèllestinui
+			Cheprianui Cherši Chèsa Chetsiui Chetui Chodošui Chuspai Ciaudzui Ciementsui Cometai Constañi Constantinui
+			Constantsui Corñellui Crasui Dadacui Dariui Decašui Dechemui Dechui Dentupei Desachentui Domechanui Domeñecui
+			Dometsui Drusui Džerašui Džermanui Džesatorecui Džèui Èdžedzui Ellanui Elpedzui Èmelleanui Èmellui Emnatsui
+			Eñodzui Eposomnatui Eptapori Ercullui Esarnui Ètsui Eubarnacui Fabeanui Fabiui Fabrichui Faranši Faustui
 			Fellepui Felli Flaueanui Floreanui Gallenui Galleriui Garui Gordeanui Grachanui Gracui Ioañi Ioueanui
 			Iulleanui Iullui Iuñui Iuscheñeanui Iustinui Laurentsui Lleberiui Llecheñui Llo Llontsui Luchui Madacui
 			Magarui Mamnui Mapsemeanui Mapseminui Mapsemui Marcheanui Marchelinui Marcherui Marcomamnui Marcui Marinui
 			Mariui Martinui Mucapiui Ñepochanui Ñerua Numereanui Onoriui Optaueanui Optauiui Pascarui Paulinui Paurui
 			Petroñui Pompeiui Ponchanui Prescui Probui Publlui Rascui Resui Romanui Romurui Rufinui Rutsellui Sabeñeanui
-			Samomnatui Sandasatrui Satrei Saturninui Scherai ?emmacui ?emproñui ?epstui ?eptsemiui ?erd?ui ?euerinui
-			?euerui Sturanui Tachetui Tarutsenui Teberiui Teredatsei Tollemèui Trèanui Uallencheñanui Ualleñi Uallereanui
-			Ualleriui Uardañi Ued?ellui Uenantsui Ueptorinui Ueptro Uespa?eanui Uetalleanui Uoru?eanui Urbanui ?ocllechanui
-			?odorui ?oñe?ui ?opui ?osporui }
+			Samomnatui Sandasatrui Satrei Saturninui Scherai Šemmacui Šemproñui Šepstui Šeptsemiui Šerdžui Šeuerinui
+			Šeuerui Sturanui Tachetui Tarutsenui Teberiui Teredatsei Tollemèui Trèanui Uallencheñanui Ualleñi Uallereanui
+			Ualleriui Uardañi Uedžellui Uenantsui Ueptorinui Ueptro Uespašeanui Uetalleanui Uorušeanui Urbanui Žocllechanui
+			Žodorui Žoñešui Žopui Žosporui }
 		
-		last_names = { Amiandy Bezu Cèuiaty Cu?eiy Dentupeany Dracunsy Iuy Floeiy Ièntury Iepy Mar?ea Meie Oiechara
-			Panuiy Preuiaty Prubeany Prucuiy Pumpuiy Pu?enseny Reparaty Scurzescy ?èiey ?èmpruia ?èr?e ?eru ?e?eru
-			?e?eny ?eraiy Ueatru Uènusta Uiebrey Unue Útoeany ?usupureany }
+		last_names = { Amiandy Bezu Cèuiaty Cušeiy Dentupeany Dracunsy Iuy Floeiy Ièntury Iepy Maršea Meie Oiechara
+			Panuiy Preuiaty Prubeany Prucuiy Pumpuiy Pušenseny Reparaty Scurzescy Šèiey Šèmpruia Šèrše Šeru Šešeru
+			Šeženy Šeraiy Ueatru Uènusta Uiebrey Unue Útoeany Žusupureany }
 	}
 	latin = {
         color = {61 0 105}
@@ -977,7 +977,7 @@ romantic = {
 old_italic = {
 	leader = european
 	unit = ItalianGC
-	
+
 	sabellian = {
 		color = { 252 207 0 }
 		first_names = {
@@ -1290,7 +1290,7 @@ continental_celtic = {
 			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
 			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
 			Venutius Viridorix Vosenius Vodenos }
-		
+
 		last_names = { Ambonus Ambona Ambonii Ambonid Auaroses Auarosa Auarosii Auarosian Audaxus Audaxa Audaxii Audaxian Carosus Carosa Carosii Carosian
 			Culchus Culcha Culchi Culchian Leukus Leuka Leuki Leukian Mandonus Mandonia Mandonii Mandonian Punicus Punica Punici Punician
 			Tautalus Tautala Tautalii Tautalid Correius Correia Correid Correian Divicus Divica Divici Divicid Duratus Durata Duratii Duratian
@@ -1310,7 +1310,7 @@ continental_celtic = {
 			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
 			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
 			Venutius Viridorix Vosenius Vodenos }
-		
+
 		last_names = { Ambonus Ambona Ambonii Ambonid Auaroses Auarosa Auarosii Auarosian Audaxus Audaxa Audaxii Audaxian Carosus Carosa Carosii Carosian
 			Culchus Culcha Culchi Culchian Leukus Leuka Leuki Leukian Mandonus Mandonia Mandonii Mandonian Punicus Punica Punici Punician
 			Tautalus Tautala Tautalii Tautalid Correius Correia Correid Correian Divicus Divica Divici Divicid Duratus Durata Duratii Duratian
@@ -1330,7 +1330,7 @@ continental_celtic = {
 			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
 			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
 			Venutius Viridorix Vosenius Vodenos }
-		
+
 		last_names = { Ambonus Ambona Ambonii Ambonid Auaroses Auarosa Auarosii Auarosian Audaxus Audaxa Audaxii Audaxian Carosus Carosa Carosii Carosian
 			Culchus Culcha Culchi Culchian Leukus Leuka Leuki Leukian Mandonus Mandonia Mandonii Mandonian Punicus Punica Punici Punician
 			Tautalus Tautala Tautalii Tautalid Correius Correia Correid Correian Divicus Divica Divici Divicid Duratus Durata Duratii Duratian
@@ -1350,7 +1350,7 @@ continental_celtic = {
 			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
 			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
 			Venutius Viridorix Vosenius Vodenos }
-		
+
 		last_names = { Ambonus Ambona Ambonii Ambonid Auaroses Auarosa Auarosii Auarosian Audaxus Audaxa Audaxii Audaxian Carosus Carosa Carosii Carosian
 			Culchus Culcha Culchi Culchian Leukus Leuka Leuki Leukian Mandonus Mandonia Mandonii Mandonian Punicus Punica Punici Punician
 			Tautalus Tautala Tautalii Tautalid Correius Correia Correid Correian Divicus Divica Divici Divicid Duratus Durata Duratii Duratian
@@ -1370,7 +1370,7 @@ continental_celtic = {
 			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
 			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
 			Venutius Viridorix Vosenius Vodenos }
-		
+
 		last_names = { Ambonus Ambona Ambonii Ambonid Auaroses Auarosa Auarosii Auarosian Audaxus Audaxa Audaxii Audaxian Carosus Carosa Carosii Carosian
 			Culchus Culcha Culchi Culchian Leukus Leuka Leuki Leukian Mandonus Mandonia Mandonii Mandonian Punicus Punica Punici Punician
 			Tautalus Tautala Tautalii Tautalid Correius Correia Correid Correian Divicus Divica Divici Divicid Duratus Durata Duratii Duratian
@@ -1390,7 +1390,7 @@ continental_celtic = {
 			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
 			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
 			Venutius Viridorix Vosenius Vodenos }
-		
+
 		last_names = { Ambonus Ambona Ambonii Ambonid Auaroses Auarosa Auarosii Auarosian Audaxus Audaxa Audaxii Audaxian Carosus Carosa Carosii Carosian
 			Culchus Culcha Culchi Culchian Leukus Leuka Leuki Leukian Mandonus Mandonia Mandonii Mandonian Punicus Punica Punici Punician
 			Tautalus Tautala Tautalii Tautalid Correius Correia Correid Correian Divicus Divica Divici Divicid Duratus Durata Duratii Duratian
@@ -1399,7 +1399,7 @@ continental_celtic = {
 			Teutomalus Teutomala Teutomalii Teutomalian Viridorrius Viridorria Viridorrii Viridorrian Magunnus Magunna Magunnii Magunnid
 			Brennus Brenna Brennii Brennid Boius Boia Boii Boian Tannus Tanna Tanni Tannid Iccuius Iccuia Iccui Iccian Galanus Galana Galanii Galanid }
 	}
-	
+
 }
 
 south_slavic = {
@@ -1408,35 +1408,35 @@ south_slavic = {
 	croat = {
 		color = {140 140 190}
 
-		first_names = { Andrija Antun Bazilije Breno Dragutin D?ivo Filip Franjo Ga?par Ivan
-		Janko Jero Jerolim Josip Juraj Karlo Kre?imir Krsto Ljudevit Lucijan
+		first_names = { Andrija Antun Bazilije Breno Dragutin Dživo Filip Franjo Gašpar Ivan
+		Janko Jero Jerolim Josip Juraj Karlo Krešimir Krsto Ljudevit Lucijan
 		Luka Marijan Marin Matej Matko Maximiliam Medo Mihajlo Mirko Miroslav
 		Niko Nikola Orsat Pavle Petar Rafo Sebastijan Sismundo Slavko Stjepan
 		Svetoslav Svetozar Teo Teodor Toma Tomislav Vicko Vladimir Vlaho Zlatan
 		}
 
 		last_names = { Alapic Bakaric Bettera Bilic Blazevic Bondic Boroevic Bosnajk Bunic Crnkovic
-		Cuvaj Draskovic D?amanjic Eltz Erdödy Frankopan Gaj Getaldic Gradic Gregoric
+		Cuvaj Draskovic Džamanjic Eltz Erdödy Frankopan Gaj Getaldic Gradic Gregoric
 		Gucetic Gundulic Haulik Jelacic Kabuzic Keglevic Kostrencic Krstulovic Lagimja Mazuranic
 		Mihailovic Mohorovicic Mrazovic Natali Nazor Njegovan Palecek Pejacevic Philippovic Preradovic
-		Pucic Ranjina Sarkotic ?okcevic Sorkocevic Stankovaci Toma?ic Tomlejnovic Vakanovic Vla?ic
+		Pucic Ranjina Sarkotic Šokcevic Sorkocevic Stankovaci Tomašic Tomlejnovic Vakanovic Vlašic
 		}
 	}
 	serb = {
 		color = {150 65 80}
 
-		first_names = { Alaksandar Blagoje Bo?idar Branko Danilo Dejan Ðorde Dragan Dragi?a Dragoljub
-		Dragutin Dra?a Du?an Gavrilo Goran Janko Jovan Koca Kosta Krsto
-		Ljubisa Mihailo Milan Miliutin Milivoje Milojko Milo? Miodrag Mirko Miroslav
+		first_names = { Alaksandar Blagoje Božidar Branko Danilo Dejan Ðorde Dragan Dragiša Dragoljub
+		Dragutin Draža Dušan Gavrilo Goran Janko Jovan Koca Kosta Krsto
+		Ljubisa Mihailo Milan Miliutin Milivoje Milojko Miloš Miodrag Mirko Miroslav
 		Momcilo Nebojsa Nikola Pavle Peko Petar Radomir Ratko Sava Slobodan
-		Stepa Stojan Veljko Vaselien Vladimir Vojislav ?ivojin ?ivota Zoran Zvezdan
+		Stepa Stojan Veljko Vaselien Vladimir Vojislav Živojin Života Zoran Zvezdan
 		}
 
-		last_names = { Ad?ic Arandelovic Belimarkovic Blaznacac Bojovic Bo?anovic Bo?inovic Brankovic Damjanic Dapcevic
-		Dragutinovic Grujic Had?ilic Horvatovic Isakovic Jankovic Jokic Jovanovic Kadijevic Karadordevic
-		Le?janin Ljubicic Maric Mihailovic Milutinovic Miloradovic Mi?ic Nad Nedic Novak
-		Obrenovic Ojdanic Panic Paska? Pavkovic Pe?ic Petrovic Popovic Putnik Radulovic
-		Ra?ic ?ijan Simovic Sokolovic Stepanovic Vasiljevic Veric Vojvodic Vukotic ?ivkovic
+		last_names = { Adžic Arandelovic Belimarkovic Blaznacac Bojovic Božanovic Božinovic Brankovic Damjanic Dapcevic
+		Dragutinovic Grujic Hadžilic Horvatovic Isakovic Jankovic Jokic Jovanovic Kadijevic Karadordevic
+		Lešjanin Ljubicic Maric Mihailovic Milutinovic Miloradovic Mišic Nad Nedic Novak
+		Obrenovic Ojdanic Panic Paskaš Pavkovic Pešic Petrovic Popovic Putnik Radulovic
+		Rašic Šijan Simovic Sokolovic Stepanovic Vasiljevic Veric Vojvodic Vukotic Živkovic
 		}
 		radicalism = 15
 	}
@@ -1448,23 +1448,23 @@ south_slavic = {
 		Kliment Konstantin Krastyu Leonid Mihail Nikifor Niloa Penco Petar Petko
 		Petur Pravoslav Raco Radko Radoy Sava Simeon Sotir Stanislav Stanko
 		Stefan Stiliyan Stoyu Teodosi Todor Trifon Valko Vasil Veselin Velizar Vulko
-		Alaksandar Blagoje Bo?idar Branko Danilo Dejan Ðorde Dragan Dragi?a Dragoljub
-		Dragutin Dra?a Du?an Gavrilo Goran Janko Jovan Koca Kosta Krsto
-		Ljubisa Mihailo Milan Miliutin Milivoje Milojko Milo? Miodrag Mirko Miroslav
+		Alaksandar Blagoje Božidar Branko Danilo Dejan Ðorde Dragan Dragiša Dragoljub
+		Dragutin Draža Dušan Gavrilo Goran Janko Jovan Koca Kosta Krsto
+		Ljubisa Mihailo Milan Miliutin Milivoje Milojko Miloš Miodrag Mirko Miroslav
 		Momcilo Nebojsa Nikola Pavle Peko Petar Radomir Ratko Sava Slobodan
-		Stepa Stojan Veljko Vaselien Vladimir Vojislav ?ivojin ?ivota Zoran Zvezdan	
+		Stepa Stojan Veljko Vaselien Vladimir Vojislav Živojin Života Zoran Zvezdan	
 		}
 
-		last_names = { Agura Balabanov Balkanski Battemberg Blaskov Boyad?iev Bradistilov Carakciev Daskalov Dikov
+		last_names = { Agura Balabanov Balkanski Battemberg Blaskov Boyadžiev Bradistilov Carakciev Daskalov Dikov
 		Dimitriev Draganov Ficev Georgiev Hesapchiev Ilyev Ivanov Kirkov Kovacev Krayonski
 		Kutincev Lazarov Lukov Marinkov Marinov Mutkorov Naydenov Nazlamov Nikiforov Nikolaev
 		Pakoski Petroski Radev Saksokoburggotski Savoski Sirakoski Solaroski Stoyanoski Tenev Todoroski
 		Tsaklev Valkoski Valnaroski Vasilev Vazoski Velchev Veselinov Zafiroski Zhekoski Zlatarev Zlatev
-		Ad?ic Arandelovic Belimarkovic Blaznacac Bojovic Bo?anovic Bo?inovic Brankovic Damjanic Dapcevic
-		Dragutinovic Grujic Had?ilic Horvatovic Isakovic Jankovic Jokic Jovanovic Kadijevic Karadordevic
-		Le?janin Ljubicic Maric Mihailovic Milutinovic Miloradovic Mi?ic Nad Nedic Novak
-		Obrenovic Ojdanic Panic Paska? Pavkovic Pe?ic Petrovic Popovic Putnik Radulovic
-		Ra?ic ?ijan Simovic Sokolovic Stepanovic Vasiljevic Veric Vojvodic Vukotic ?ivkovic
+		Adžic Arandelovic Belimarkovic Blaznacac Bojovic Božanovic Božinovic Brankovic Damjanic Dapcevic
+		Dragutinovic Grujic Hadžilic Horvatovic Isakovic Jankovic Jokic Jovanovic Kadijevic Karadordevic
+		Lešjanin Ljubicic Maric Mihailovic Milutinovic Miloradovic Mišic Nad Nedic Novak
+		Obrenovic Ojdanic Panic Paskaš Pavkovic Pešic Petrovic Popovic Putnik Radulovic
+		Rašic Šijan Simovic Sokolovic Stepanovic Vasiljevic Veric Vojvodic Vukotic Živkovic
 		}
 		radicalism = 15
 	}
@@ -1478,7 +1478,7 @@ south_slavic = {
 		Stefan Stiliyan Stoyu Teodosi Todor Trifon Valko Vasil Velizar Vulko		
 		}
 
-		last_names = { Agura Balabanov Balkanski Battemberg Blaskov Boyad?iev Bradistilov Carakciev Daskalov Dikov
+		last_names = { Agura Balabanov Balkanski Battemberg Blaskov Boyadžiev Bradistilov Carakciev Daskalov Dikov
 		Dimitriev Draganov Ficev Georgiev Hesapchiev Ilyev Ivanov Kirkov Kovacev Krayonski
 		Kutincev Lazarov Lukov Marinkov Marinov Mutkorov Naydenov Nazlamov Nikiforov Nikolaev
 		Pakov Petrov Radev Saksokoburggotski Savov Sirakov Solarov Stoyanov Tenev Todorov
@@ -1507,87 +1507,87 @@ south_slavic = {
 		color = {0 90 128}
 
 		first_names = { Alenka Alfonz Alfred Andrej Anton Avgust Bartolomej Blaz Bojan Boris
-		Bostjian Bo?idar Ciril Danilo Demeter Drago Du?an Franc Gregorij Ivan
-		Ivo Jane? Jernej Jo?e Jurij Karpo Lado Leon Lojze Miha
+		Bostjian Božidar Ciril Danilo Demeter Drago Dušan Franc Gregorij Ivan
+		Ivo Janež Jernej Jože Jurij Karpo Lado Leon Lojze Miha
 		Milan Mladen Odilo Pino Rado Radovan Rudolf Slavko Slavoj Stane
-		Stanko Toma? Toncka Tone Viktor Vilko Vladimir Vladko Vojko ?eljko
+		Stanko Tomaš Toncka Tone Viktor Vilko Vladimir Vladko Vojko Željko
 		}
 
 		last_names = { Arnic Avbelj Avsenik Bajuk Bitenc Cankar Cec Cernigoj Czipott Dolar
-		Drolc Duletic Globocnik Gobec Godina Golob Haus Hladnik Ivanek Kantu?er
-		Kidric Komar Kopitar Kraigher Lipovsek Lipu?cek Macek Maister Marinko Miklo?ic
-		Mravlajk Pengov Pe?ek Peterle Pirec Plecnik Rozman Rupnik Sarh Srebrnic
-		Toma?ic Tom?ic Urbancic Vega "Von Windisch-Grätz" ?agar ?erjal ?i?ke Zornada Zupancic
+		Drolc Duletic Globocnik Gobec Godina Golob Haus Hladnik Ivanek Kantušer
+		Kidric Komar Kopitar Kraigher Lipovsek Lipušcek Macek Maister Marinko Miklošic
+		Mravlajk Pengov Pešek Peterle Pirec Plecnik Rozman Rupnik Sarh Srebrnic
+		Tomažic Tomšic Urbancic Vega "Von Windisch-Grätz" Žagar Žerjal Žižke Zornada Zupancic
 		}
 	}
 	bosniak = {
 		color = {30 200 200}
 
-		first_names = { Abdulvehhab Adnan Ahmed Ali Alija Asim Atif Beriz D?emal D?emaludin
+		first_names = { Abdulvehhab Adnan Ahmed Ali Alija Asim Atif Beriz Džemal Džemaludin
 		Elvir Enver Fikret Fuad Gazi Hakija Hamdija Hamid Haris Hasan
 		Husein Irfan Isa Ivan Izet Jusuf Mehmed Meho Mirsad Muhamed
-		Musa Mustafa Naser Osman Raif Rasim Refik Safet Safvet ?efer
+		Musa Mustafa Naser Osman Raif Rasim Refik Safet Safvet Šefer
 		Sejad Semezdin Semir Skender Sokollu Sulejman Vedad Zija Zlatko Zuko
 		}
 
-		last_names = { Abdic Arapovic Basgic Belkic Bijedic Catic Cau?evic Ceric Colakovic Dizdar
-		Dizdarevic D?ikic D?umhur Ekrem Grada?cevic Halilovic Husrev Ibi?evic Ilhamija Imamovic
-		Isakovic Izetbegovic Kodro Konjic Kulenovic Lagumd?ija Ljajic Ljubicic Ljubijankic Mehmedinovic
-		Muradbegovic Muzurovic Osmanagic Peco Plakalo Pozderac Prazina Rizvanbegovic ?abanad?ovic Salihovic
-		Sarajlic Selimovic Silajd?ic Sokolovic Spaho Terzic Tihic Turajlic Tükcan Ugljanin 
+		last_names = { Abdic Arapovic Basgic Belkic Bijedic Catic Cauševic Ceric Colakovic Dizdar
+		Dizdarevic Džikic Džumhur Ekrem Gradašcevic Halilovic Husrev Ibiševic Ilhamija Imamovic
+		Isakovic Izetbegovic Kodro Konjic Kulenovic Lagumdžija Ljajic Ljubicic Ljubijankic Mehmedinovic
+		Muradbegovic Muzurovic Osmanagic Peco Plakalo Pozderac Prazina Rizvanbegovic Šabanadžovic Salihovic
+		Sarajlic Selimovic Silajdžic Sokolovic Spaho Terzic Tihic Turajlic Tükcan Ugljanin 
 		}
 	}
 	novisvet = {
 		color = {119 100 129}
 
-		first_names = { Alaksandar Blagoje Bo?idar Branko Danilo Dejan Ðorde Dragan Dragi?a Dragoljub
-		Dragutin Dra?a Du?an Gavrilo Goran Janko Jovan Koca Kosta Krsto
-		Ljubisa Mihailo Milan Miliutin Milivoje Milojko Milo? Miodrag Mirko Miroslav
+		first_names = { Alaksandar Blagoje Božidar Branko Danilo Dejan Ðorde Dragan Dragiša Dragoljub
+		Dragutin Draža Dušan Gavrilo Goran Janko Jovan Koca Kosta Krsto
+		Ljubisa Mihailo Milan Miliutin Milivoje Milojko Miloš Miodrag Mirko Miroslav
 		Momcilo Nebojsa Nikola Pavle Peko Petar Radomir Ratko Sava Slobodan
-		Stepa Stojan Veljko Vaselien Vladimir Vojislav ?ivojin ?ivota Zoran Zvezdan
+		Stepa Stojan Veljko Vaselien Vladimir Vojislav Živojin Života Zoran Zvezdan
 		}
 
-		last_names = { Ad?ic Arandelovic Belimarkovic Blaznacac Bojovic Bo?anovic Bo?inovic Brankovic Damjanic Dapcevic
-		Dragutinovic Grujic Had?ilic Horvatovic Isakovic Jankovic Jokic Jovanovic Kadijevic Karadordevic
-		Le?janin Ljubicic Maric Mihailovic Milutinovic Miloradovic Mi?ic Nad Nedic Novak
-		Obrenovic Ojdanic Panic Paska? Pavkovic Pe?ic Petrovic Popovic Putnik Radulovic
-		Ra?ic ?ijan Simovic Sokolovic Stepanovic Vasiljevic Veric Vojvodic Vukotic ?ivkovic
+		last_names = { Adžic Arandelovic Belimarkovic Blaznacac Bojovic Božanovic Božinovic Brankovic Damjanic Dapcevic
+		Dragutinovic Grujic Hadžilic Horvatovic Isakovic Jankovic Jokic Jovanovic Kadijevic Karadordevic
+		Lešjanin Ljubicic Maric Mihailovic Milutinovic Miloradovic Mišic Nad Nedic Novak
+		Obrenovic Ojdanic Panic Paskaš Pavkovic Pešic Petrovic Popovic Putnik Radulovic
+		Rašic Šijan Simovic Sokolovic Stepanovic Vasiljevic Veric Vojvodic Vukotic Živkovic
 		}
 		radicalism = 15
 	}
 	juzhno = {
 		color = {140 50 59}
 
-		first_names = { Alaksandar Blagoje Bo?idar Branko Danilo Dejan Ðorde Dragan Dragi?a Dragoljub
-		Dragutin Dra?a Du?an Gavrilo Goran Janko Jovan Koca Kosta Krsto
-		Ljubisa Mihailo Milan Miliutin Milivoje Milojko Milo? Miodrag Mirko Miroslav
+		first_names = { Alaksandar Blagoje Božidar Branko Danilo Dejan Ðorde Dragan Dragiša Dragoljub
+		Dragutin Draža Dušan Gavrilo Goran Janko Jovan Koca Kosta Krsto
+		Ljubisa Mihailo Milan Miliutin Milivoje Milojko Miloš Miodrag Mirko Miroslav
 		Momcilo Nebojsa Nikola Pavle Peko Petar Radomir Ratko Sava Slobodan
-		Stepa Stojan Veljko Vaselien Vladimir Vojislav ?ivojin ?ivota Zoran Zvezdan
+		Stepa Stojan Veljko Vaselien Vladimir Vojislav Živojin Života Zoran Zvezdan
 		}
 
-		last_names = { Ad?ic Arandelovic Belimarkovic Blaznacac Bojovic Bo?anovic Bo?inovic Brankovic Damjanic Dapcevic
-		Dragutinovic Grujic Had?ilic Horvatovic Isakovic Jankovic Jokic Jovanovic Kadijevic Karadordevic
-		Le?janin Ljubicic Maric Mihailovic Milutinovic Miloradovic Mi?ic Nad Nedic Novak
-		Obrenovic Ojdanic Panic Paska? Pavkovic Pe?ic Petrovic Popovic Putnik Radulovic
-		Ra?ic ?ijan Simovic Sokolovic Stepanovic Vasiljevic Veric Vojvodic Vukotic ?ivkovic
+		last_names = { Adžic Arandelovic Belimarkovic Blaznacac Bojovic Božanovic Božinovic Brankovic Damjanic Dapcevic
+		Dragutinovic Grujic Hadžilic Horvatovic Isakovic Jankovic Jokic Jovanovic Kadijevic Karadordevic
+		Lešjanin Ljubicic Maric Mihailovic Milutinovic Miloradovic Mišic Nad Nedic Novak
+		Obrenovic Ojdanic Panic Paskaš Pavkovic Pešic Petrovic Popovic Putnik Radulovic
+		Rašic Šijan Simovic Sokolovic Stepanovic Vasiljevic Veric Vojvodic Vukotic Živkovic
 		}
 		radicalism = 15
 	}
 	crni = {
 		color = {91 39 48}
 
-		first_names = { Alaksandar Blagoje Bo?idar Branko Danilo Dejan Ðorde Dragan Dragi?a Dragoljub
-		Dragutin Dra?a Du?an Gavrilo Goran Janko Jovan Koca Kosta Krsto
-		Ljubisa Mihailo Milan Miliutin Milivoje Milojko Milo? Miodrag Mirko Miroslav
+		first_names = { Alaksandar Blagoje Božidar Branko Danilo Dejan Ðorde Dragan Dragiša Dragoljub
+		Dragutin Draža Dušan Gavrilo Goran Janko Jovan Koca Kosta Krsto
+		Ljubisa Mihailo Milan Miliutin Milivoje Milojko Miloš Miodrag Mirko Miroslav
 		Momcilo Nebojsa Nikola Pavle Peko Petar Radomir Ratko Sava Slobodan
-		Stepa Stojan Veljko Vaselien Vladimir Vojislav ?ivojin ?ivota Zoran Zvezdan
+		Stepa Stojan Veljko Vaselien Vladimir Vojislav Živojin Života Zoran Zvezdan
 		}
 
-		last_names = { Ad?ic Arandelovic Belimarkovic Blaznacac Bojovic Bo?anovic Bo?inovic Brankovic Damjanic Dapcevic
-		Dragutinovic Grujic Had?ilic Horvatovic Isakovic Jankovic Jokic Jovanovic Kadijevic Karadordevic
-		Le?janin Ljubicic Maric Mihailovic Milutinovic Miloradovic Mi?ic Nad Nedic Novak
-		Obrenovic Ojdanic Panic Paska? Pavkovic Pe?ic Petrovic Popovic Putnik Radulovic
-		Ra?ic ?ijan Simovic Sokolovic Stepanovic Vasiljevic Veric Vojvodic Vukotic ?ivkovic
+		last_names = { Adžic Arandelovic Belimarkovic Blaznacac Bojovic Božanovic Božinovic Brankovic Damjanic Dapcevic
+		Dragutinovic Grujic Hadžilic Horvatovic Isakovic Jankovic Jokic Jovanovic Kadijevic Karadordevic
+		Lešjanin Ljubicic Maric Mihailovic Milutinovic Miloradovic Mišic Nad Nedic Novak
+		Obrenovic Ojdanic Panic Paskaš Pavkovic Pešic Petrovic Popovic Putnik Radulovic
+		Rašic Šijan Simovic Sokolovic Stepanovic Vasiljevic Veric Vojvodic Vukotic Živkovic
 		}
 		radicalism = 15
 	}
@@ -1686,7 +1686,7 @@ pan_romanian = {
 dacian_group = {
 		leader = european
 		unit = AustriaHungaryGC
-		
+
 	dacian = {
 		color = { 255 128 128 }
 
@@ -1861,14 +1861,14 @@ polish_culture_group = {
 		Bronislovas Danielius Darius Gediminas Henrikas Jonas Jonusas Juozas Juras Jurgis
 		Justas Kazimieras Kazys Kipras Konstantinas Lukas Marijus Markas Mikalojus Mindaugas
 		Motejus Mykolas Paulius Petras Povilas Ramunas Ringaudas Rolandas Simonas Stasys
-		Steponas Valdas Valdemaras Viktoras Vilhelmas Visvaldas Vladimiras Vygantas Vytautas ?ydrunas
+		Steponas Valdas Valdemaras Viktoras Vilhelmas Visvaldas Vladimiras Vygantas Vytautas Žydrunas
 		}
 
-		last_names = { Adamkus Almenas Avizienis Baltru?aitis Brazauskas Basanavicius Birutis Brazd?iunas Buga Ciurlionis
-		Danauskas Daukantas Dobkevicius Dubeneckis Dvarionas Galdikas Grinius Gri?kevicius Ivanauskas Jablonskis
+		last_names = { Adamkus Almenas Avizienis Baltrušaitis Brazauskas Basanavicius Birutis Brazdžiunas Buga Ciurlionis
+		Danauskas Daukantas Dobkevicius Dubeneckis Dvarionas Galdikas Grinius Griškevicius Ivanauskas Jablonskis
 		Jucys Krupavicius Landsbergis Lozoraitis Merkys Paksas Paleckis Paulauskas Petrauskas Piskarkas
-		Po?ela Radvila ?abaniauskas Schatz Simonavicius ?irvydas ?le?evicius Semtona Snieckus Stauaitis
-		Strai?ys Stulginkis ?vedas Terleckas Urb?ys Vagnorius Vale?ka Voldemaras ?emaitis Zuokas
+		Požela Radvila Šabaniauskas Schatz Simonavicius Širvydas Šleževicius Semtona Snieckus Stauaitis
+		Straižys Stulginkis Švedas Terleckas Urbšys Vagnorius Valeška Voldemaras Žemaitis Zuokas
 		}
 	}
 	nowyswiat = {
@@ -1931,77 +1931,77 @@ czecho_slovak_culture_group = {
 		color = {120 120 255}
 
 		first_names = { Abraham Alexander Alfred Alois Antonín August Bedrich Benedikt Borivoj 
-                Cenek Dávid Drahoslav Edvard Emanuel Emil Ev?en Franti?ek "Franti?ek Josef" "Franti?ek Xaver" 
+                Cenek Dávid Drahoslav Edvard Emanuel Emil Evžen František "František Josef" "František Xaver" 
                 Hermenegild Ján "Ján Krtitel" "Ján Nepomuk" Jaroslav Jindrich Jirí Josef Kajetan Karel 
-                Konstantin Ladislav Ludvík Matyas Maxmilián Mikulá? Olbram Otakar Pavel Petr 
-                Radola Rafael Tomá? Václav Vincenc Vítezslav Vlastimil Vojtech Vratislav Zdenek }
+                Konstantin Ladislav Ludvík Matyas Maxmilián Mikuláš Olbram Otakar Pavel Petr 
+                Radola Rafael Tomáš Václav Vincenc Vítezslav Vlastimil Vojtech Vratislav Zdenek }
 
 		last_names = { Albert Balabán Basch Breisky Celovský Dvorák Fibich Gajda Gellner Hálek 
-                Hrdlicka Jirecek Kadlec Kafka Koller Krí?kovský Kucera Kuchar Lederer Makosky 
-                Mik Morávec Nemecek Neruda Novácek Novotný Popper Radecký Rokytanský ?afárik 
-                ?afránek Schack Schubert ?koda Skuherský Smetana ?nejdárek Suk Svoboda Syrový 
-                Tomá?ek Tyl Vitásek "von Mittrowitz-Nettolitzky" Vorí?ek Wankel Weber Zíbrt Zívr Zoubek }
+                Hrdlicka Jirecek Kadlec Kafka Koller Krížkovský Kucera Kuchar Lederer Makosky 
+                Mik Morávec Nemecek Neruda Novácek Novotný Popper Radecký Rokytanský Šafárik 
+                Šafránek Schack Schubert Škoda Skuherský Smetana Šnejdárek Suk Svoboda Syrový 
+                Tomášek Tyl Vitásek "von Mittrowitz-Nettolitzky" Voríšek Wankel Weber Zíbrt Zívr Zoubek }
 	}
 	
 	slovak = {
 		color = {120 255 255}
 
 		first_names = { Albín Alexander András Andrej Augustín Basil Cyprián Dalibor Dezider Dominik 
-                Eugen Fedor Ferdinand Franti?ek Frico Gabriel Gustáv Imrich Jáchym Ján 
+                Eugen Fedor Ferdinand František Frico Gabriel Gustáv Imrich Jáchym Ján 
                 Janko Jozef Juraj Karol Ladislav Levoslav Marián Marko Martin Matej 
-                Michal Mikulá? Milan Milo? Miloslav Miroslav Pavel Pavol Peter Ratislav 
-                Rudolf Samuel Sergej ?tefan Svetozár Tibor Tomá? Viliam Vladimír Vojtech }
+                Michal Mikuláš Milan Miloš Miloslav Miroslav Pavel Pavol Peter Ratislav 
+                Rudolf Samuel Sergej Štefan Svetozár Tibor Tomáš Viliam Vladimír Vojtech }
 
-		last_names = { Áchim Bázlic Bella Bene? Blaho Catlo? Cikker Clementis Daxner Dubcek 
-                Figu?-Bystrý Fre?o Gojdic Golian Hlinka Hod?a Hopko Hurban Hurban-Vajanský Husák 
-                Ivanka Kafenda Kardo? Kocak Kupkovic Mach Macudzinski Malár Malovec Markovic 
-                Masaryk Móry Moyses Rázus Rohácek Rudnay Selepcéni Sidor ?kultéty-Gábri? ?mik 
-                Sokol ?tefánik Suchon ?verma Tiso Trcka Tuka Turanec Viest Zoch }
+		last_names = { Áchim Bázlic Bella Beneš Blaho Catloš Cikker Clementis Daxner Dubcek 
+                Figuš-Bystrý Frešo Gojdic Golian Hlinka Hodža Hopko Hurban Hurban-Vajanský Husák 
+                Ivanka Kafenda Kardoš Kocak Kupkovic Mach Macudzinski Malár Malovec Markovic 
+                Masaryk Móry Moyses Rázus Rohácek Rudnay Selepcéni Sidor Škultéty-Gábriš Šmik 
+                Sokol Štefánik Suchon Šverma Tiso Trcka Tuka Turanec Viest Zoch }
 	}
 	novysvet = {
 		color = {100 134 236}
 
 		first_names = { Abraham Alexander Alfred Alois Antonín August Bedrich Benedikt Borivoj 
-                Cenek Dávid Drahoslav Edvard Emanuel Emil Ev?en Franti?ek "Franti?ek Josef" "Franti?ek Xaver" 
+                Cenek Dávid Drahoslav Edvard Emanuel Emil Evžen František "František Josef" "František Xaver" 
                 Hermenegild Ján "Ján Krtitel" "Ján Nepomuk" Jaroslav Jindrich Jirí Josef Kajetan Karel 
-                Konstantin Ladislav Ludvík Matyas Maxmilián Mikulá? Olbram Otakar Pavel Petr 
-                Radola Rafael Tomá? Václav Vincenc Vítezslav Vlastimil Vojtech Vratislav Zdenek }
+                Konstantin Ladislav Ludvík Matyas Maxmilián Mikuláš Olbram Otakar Pavel Petr 
+                Radola Rafael Tomáš Václav Vincenc Vítezslav Vlastimil Vojtech Vratislav Zdenek }
 
 		last_names = { Albert Balabán Basch Breisky Celovský Dvorák Fibich Gajda Gellner Hálek 
-                Hrdlicka Jirecek Kadlec Kafka Koller Krí?kovský Kucera Kuchar Lederer Makosky 
-                Mik Morávec Nemecek Neruda Novácek Novotný Popper Radecký Rokytanský ?afárik 
-                ?afránek Schack Schubert ?koda Skuherský Smetana ?nejdárek Suk Svoboda Syrový 
-                Tomá?ek Tyl Vitásek "von Mittrowitz-Nettolitzky" Vorí?ek Wankel Weber Zíbrt Zívr Zoubek }
+                Hrdlicka Jirecek Kadlec Kafka Koller Krížkovský Kucera Kuchar Lederer Makosky 
+                Mik Morávec Nemecek Neruda Novácek Novotný Popper Radecký Rokytanský Šafárik 
+                Šafránek Schack Schubert Škoda Skuherský Smetana Šnejdárek Suk Svoboda Syrový 
+                Tomášek Tyl Vitásek "von Mittrowitz-Nettolitzky" Voríšek Wankel Weber Zíbrt Zívr Zoubek }
 	}
 	jizni = {
 		color = {121 83 165}
 
 		first_names = { Abraham Alexander Alfred Alois Antonín August Bedrich Benedikt Borivoj 
-                Cenek Dávid Drahoslav Edvard Emanuel Emil Ev?en Franti?ek "Franti?ek Josef" "Franti?ek Xaver" 
+                Cenek Dávid Drahoslav Edvard Emanuel Emil Evžen František "František Josef" "František Xaver" 
                 Hermenegild Ján "Ján Krtitel" "Ján Nepomuk" Jaroslav Jindrich Jirí Josef Kajetan Karel 
-                Konstantin Ladislav Ludvík Matyas Maxmilián Mikulá? Olbram Otakar Pavel Petr 
-                Radola Rafael Tomá? Václav Vincenc Vítezslav Vlastimil Vojtech Vratislav Zdenek }
+                Konstantin Ladislav Ludvík Matyas Maxmilián Mikuláš Olbram Otakar Pavel Petr 
+                Radola Rafael Tomáš Václav Vincenc Vítezslav Vlastimil Vojtech Vratislav Zdenek }
 
 		last_names = { Albert Balabán Basch Breisky Celovský Dvorák Fibich Gajda Gellner Hálek 
-                Hrdlicka Jirecek Kadlec Kafka Koller Krí?kovský Kucera Kuchar Lederer Makosky 
-                Mik Morávec Nemecek Neruda Novácek Novotný Popper Radecký Rokytanský ?afárik 
-                ?afránek Schack Schubert ?koda Skuherský Smetana ?nejdárek Suk Svoboda Syrový 
-                Tomá?ek Tyl Vitásek "von Mittrowitz-Nettolitzky" Vorí?ek Wankel Weber Zíbrt Zívr Zoubek }
+                Hrdlicka Jirecek Kadlec Kafka Koller Krížkovský Kucera Kuchar Lederer Makosky 
+                Mik Morávec Nemecek Neruda Novácek Novotný Popper Radecký Rokytanský Šafárik 
+                Šafránek Schack Schubert Škoda Skuherský Smetana Šnejdárek Suk Svoboda Syrový 
+                Tomášek Tyl Vitásek "von Mittrowitz-Nettolitzky" Voríšek Wankel Weber Zíbrt Zívr Zoubek }
 	}
 	hnedy = {
 		color = {72 72 155}
 
 		first_names = { Abraham Alexander Alfred Alois Antonín August Bedrich Benedikt Borivoj 
-                Cenek Dávid Drahoslav Edvard Emanuel Emil Ev?en Franti?ek "Franti?ek Josef" "Franti?ek Xaver" 
+                Cenek Dávid Drahoslav Edvard Emanuel Emil Evžen František "František Josef" "František Xaver" 
                 Hermenegild Ján "Ján Krtitel" "Ján Nepomuk" Jaroslav Jindrich Jirí Josef Kajetan Karel 
-                Konstantin Ladislav Ludvík Matyas Maxmilián Mikulá? Olbram Otakar Pavel Petr 
-                Radola Rafael Tomá? Václav Vincenc Vítezslav Vlastimil Vojtech Vratislav Zdenek }
+                Konstantin Ladislav Ludvík Matyas Maxmilián Mikuláš Olbram Otakar Pavel Petr 
+                Radola Rafael Tomáš Václav Vincenc Vítezslav Vlastimil Vojtech Vratislav Zdenek }
 
 		last_names = { Albert Balabán Basch Breisky Celovský Dvorák Fibich Gajda Gellner Hálek 
-                Hrdlicka Jirecek Kadlec Kafka Koller Krí?kovský Kucera Kuchar Lederer Makosky 
-                Mik Morávec Nemecek Neruda Novácek Novotný Popper Radecký Rokytanský ?afárik 
-                ?afránek Schack Schubert ?koda Skuherský Smetana ?nejdárek Suk Svoboda Syrový 
-                Tomá?ek Tyl Vitásek "von Mittrowitz-Nettolitzky" Vorí?ek Wankel Weber Zíbrt Zívr Zoubek }
+                Hrdlicka Jirecek Kadlec Kafka Koller Krížkovský Kucera Kuchar Lederer Makosky 
+                Mik Morávec Nemecek Neruda Novácek Novotný Popper Radecký Rokytanský Šafárik 
+                Šafránek Schack Schubert Škoda Skuherský Smetana Šnejdárek Suk Svoboda Syrový 
+                Tomášek Tyl Vitásek "von Mittrowitz-Nettolitzky" Voríšek Wankel Weber Zíbrt Zívr Zoubek }
 	}
 	union = CZH
 }
@@ -2026,14 +2026,14 @@ east_slavic = {
 	byelorussian = {
 		color = {100 140 110}
 
-		first_names = { Aliaksandr Alieksiej Andrej Anton Borys Cyryl Dania D?mitry Hieorhij
+		first_names = { Aliaksandr Alieksiej Andrej Anton Borys Cyryl Dania Džmitry Hieorhij
 				Ivan Janka Jury Lavr Lieonid Lieu Mikalaj Paval Piotr Roman Ryhor
 				Stanislau Sierhiej Valiery Vasilij Viktar Uladzimir Vladyslau }
      
                         last_names = { Alieksiejev "Bulak-Balachowicz" Cybisov Dienykin Drahomyrov Holivin Hurko
-				Ivanov Kalinouski Kornjlov Kolcak Kuropatkin Luka?enka Mien?ikov Nachimov
-				Niebohatov Nikolajevic Pavlov Putiatin Ro?jestvienski Skobieliev Suchoj
-				Tuchacjeuski Jehorov Voroncov ?auryd }
+				Ivanov Kalinouski Kornjlov Kolcak Kuropatkin Lukašenka Mienšikov Nachimov
+				Niebohatov Nikolajevic Pavlov Putiatin Rožjestvienski Skobieliev Suchoj
+				Tuchacjeuski Jehorov Voroncov Žauryd }
         }
 	ukrainian = {
 		color = {160 160 60}
@@ -2107,16 +2107,16 @@ baltic = {
 
 		first_names = { Aaron Abrams Alberts Aleksandrs Aloizs Andrejs Arkadij Armands Arnolds Atis 
                 Brunis Bruno Eduards Eliass Elmars Emils Evgenijs Filips Fricis Gustavs 
-                Heinrihs Hermanis Izaks Janis Jazeps Jekabs Johans Juris Karlis Kri?janis 
-                Leo Mark Martin? Mihails Mikelis Nikolajs Oskars Pauls Peteris Rihards 
+                Heinrihs Hermanis Izaks Janis Jazeps Jekabs Johans Juris Karlis Krišjanis 
+                Leo Mark Martinš Mihails Mikelis Nikolajs Oskars Pauls Peteris Rihards 
                 Roberts Romans Sandis Sergejs Valdemars Valerians Valter Vilis Vladimirs Zigfrids
 		}
 
-		last_names = { Abakovskis Ap?enieks Balodis Baumanis Berkis Berzin? Betin? Braons Caks Cakste 
-                Caps Celmin? Dalin? Dambitis Darzin? "de Kolongs" Desslers Eizenteins Goppers Halsmans 
-                Irbitis Kalnin? Kalpaks Kucys Kovalevskis Krogzemis Kronvalds Kuks Kviesis Lacis 
-                Leiko Loskis Maters Matisons Meierovics Mihelssons Milenbahs Millers Needra Ozolin? 
-                Petrovs Pliek?ans Pumpurs Rothko Simanis Stucka Tumins Ulmanis Veidenbaums
+		last_names = { Abakovskis Apšenieks Balodis Baumanis Berkis Berzinš Betinš Braons Caks Cakste 
+                Caps Celminš Dalinš Dambitis Darzinš "de Kolongs" Desslers Eizenteins Goppers Halsmans 
+                Irbitis Kalninš Kalpaks Kucys Kovalevskis Krogzemis Kronvalds Kuks Kviesis Lacis 
+                Leiko Loskis Maters Matisons Meierovics Mihelssons Milenbahs Millers Needra Ozolinš 
+                Petrovs Pliekšans Pumpurs Rothko Simanis Stucka Tumins Ulmanis Veidenbaums
 		}
 	}
 	estonian = {
@@ -2344,7 +2344,7 @@ levantine = {
 
         last_names = { Thinis Memphis Abydos Herakleopolis Thebes Itjtawy Avaris Bubastis Sais }
     }
-
+	
 	lycian = {
 		color = { 140 201 138 }
 		first_names = { Morzios Gaizatorix Pylaemenes Mithridates Datames Ariobarzanes Ariamnes Ariarathes Croesus Gyges Ardys Sadyattes Atys Adrastus Gordias Midas
@@ -2434,7 +2434,7 @@ levantine = {
  			Sassanid Sassanid Sassanids Sassanid Mihranid Mihranid Mihranids Mihranid Chosroid Chosroid Chosroids Chosroid Artashid Artashid Artashids Artashid
  			Bagabignid Bagabignid Bagabignids Bagabignid Cambysid Cambysid Cambysids Cambysid Frataraka Frataraka Frataraka Frataraka }
 	}
-
+	
 	neokosmi = {
 		color = {149 91 141}
 
@@ -2582,8 +2582,8 @@ turko_semitic = {
 			Ibrahim Iskender Ismet Izzet Kamil Kazïm Kemal Lütfi 
 			Mahmut Mehmet Mithat Muhtar Murat Musa Mustafa  
 			Namïk Nazim Nurettin Nuri Numan Omar Osman  
-			Pertev Rauf Receb Re?ad Refet Rïfat Rïza  
-			Sabahaddin Said Selim ?evket ?ükrü Süleyman  
+			Pertev Rauf Receb Rešad Refet Rïfat Rïza  
+			Sabahaddin Said Selim Ševket Šükrü Süleyman  
 			Talat Tevfik Vefik Yusuf Yunus Ziya Ziyaeddin
 		}
 		
@@ -2592,12 +2592,12 @@ turko_semitic = {
 		}
 		
 		#last_names = { # If you pretend a "surname law" was already passed
-		#	Akdag? Akdog?u Akkaya Akka? Akkïlïç Akköz Aktug? Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
-		#	Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog?an Durak Dilmen Ekin Ercan Erdog?an Eren
-		#	Erentöz Erkin Ermi? Ertunç Estelik Güler Gümü? Gündog?an Gündüz Güney Güne? Güven Karan Kaya Korun
-		#	Koç Murat Nadir Nalci Ni?anyan Onan Onay Sag?lam Sedef Selçuk Tandog?an Ta?çï Tekin Terim Toraman
-		#	Turan Turgut Türkog?lu Yavuz Ya?ar Yener Yïldïrïm Yïldïz Yïlmaz Yüksel Çelik Çetin Çolak Çiller Öcalan
-		#	Örs Özbek Özbey Özcan Özer Özkan Öztürk Özil Ülker Inan ?aban ?elte ?en
+		#	Akdag’ Akdog’u Akkaya Akkaš Akkïlïç Akköz Aktug’ Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
+		#	Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog’an Durak Dilmen Ekin Ercan Erdog’an Eren
+		#	Erentöz Erkin Ermiš Ertunç Estelik Güler Gümüš Gündog’an Gündüz Güney Güneš Güven Karan Kaya Korun
+		#	Koç Murat Nadir Nalci Nišanyan Onan Onay Sag’lam Sedef Selçuk Tandog’an Tašçï Tekin Terim Toraman
+		#	Turan Turgut Türkog’lu Yavuz Yašar Yener Yïldïrïm Yïldïz Yïlmaz Yüksel Çelik Çetin Çolak Çiller Öcalan
+		#	Örs Özbek Özbey Özcan Özer Özkan Öztürk Özil Ülker Inan Šaban Šelte Šen
 		#}
 	}
 	azerbaijani = {
@@ -2624,8 +2624,8 @@ turko_semitic = {
 			Mollah Bek 
 			}
 		#last_names = { # If you pretend a "surname law" was already passed
-		#	Abdulayev Abdurakhmanov Akhmadov Aliev Aslanbekov Barayev Basayev Dudayev Dudin D?abrailov D?okharov Elmurzaev Ibragimov Isaev Kadyrov Khasanov Kurbanov Magomedov Maskhadov Mayrbekov Murtazaliev Musaev Otarsultanov
-		#	Sadulaev Sagaipov ?apiev ?i?hani Taymaskhanov Tsarnaev Umarov Vagabov Vakhaev Varayev Yamadaev Yandarbiev Zelimkhanov
+		#	Abdulayev Abdurakhmanov Akhmadov Aliev Aslanbekov Barayev Basayev Dudayev Dudin Džabrailov Džokharov Elmurzaev Ibragimov Isaev Kadyrov Khasanov Kurbanov Magomedov Maskhadov Mayrbekov Murtazaliev Musaev Otarsultanov
+		#	Sadulaev Sagaipov Šapiev Šišhani Taymaskhanov Tsarnaev Umarov Vagabov Vakhaev Varayev Yamadaev Yandarbiev Zelimkhanov
 		#}
 	}
 	yenidun = {
@@ -2638,18 +2638,18 @@ turko_semitic = {
 			Ibrahim Iskender Ismet Izzet Kamil Kazïm Kemal Lütfi 
 			Mahmut Mehmet Mithat Muhtar Murat Musa Mustafa  
 			Namïk Nazim Nurettin Nuri Numan Omar Osman  
-			Pertev Rauf Receb Re?ad Refet Rïfat Rïza  
-			Sabahaddin Said Selim ?evket ?ükrü Süleyman  
+			Pertev Rauf Receb Rešad Refet Rïfat Rïza  
+			Sabahaddin Said Selim Ševket Šükrü Süleyman  
 			Talat Tevfik Vefik Yusuf Yunus Ziya Ziyaeddin
 		}
 		
 		last_names = { 
-			Akdag? Akdog?u Akkaya Akka? Akkïlïç Akköz Aktug? Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
-			Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog?an Durak Dilmen Ekin Ercan Erdog?an Eren
-			Erentöz Erkin Ermi? Ertunç Estelik Güler Gümü? Gündog?an Gündüz Güney Güne? Güven Karan Kaya Korun
-			Koç Murat Nadir Nalci Ni?anyan Onan Onay Sag?lam Sedef Selçuk Tandog?an Ta?çï Tekin Terim Toraman
-			Turan Turgut Türkog?lu Yavuz Ya?ar Yener Yïldïrïm Yïldïz Yïlmaz Yüksel Çelik Çetin Çolak Çiller Öcalan
-			Örs Özbek Özbey Özcan Özer Özkan Öztürk Özil Ülker Inan ?aban ?elte ?en
+			Akdag’ Akdog’u Akkaya Akkaš Akkïlïç Akköz Aktug’ Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
+			Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog’an Durak Dilmen Ekin Ercan Erdog’an Eren
+			Erentöz Erkin Ermiš Ertunç Estelik Güler Gümüš Gündog’an Gündüz Güney Güneš Güven Karan Kaya Korun
+			Koç Murat Nadir Nalci Nišanyan Onan Onay Sag’lam Sedef Selçuk Tandog’an Tašçï Tekin Terim Toraman
+			Turan Turgut Türkog’lu Yavuz Yašar Yener Yïldïrïm Yïldïz Yïlmaz Yüksel Çelik Çetin Çolak Çiller Öcalan
+			Örs Özbek Özbey Özcan Özer Özkan Öztürk Özil Ülker Inan Šaban Šelte Šen
 		}
 	}
 	guney = {
@@ -2662,18 +2662,18 @@ turko_semitic = {
 			Ibrahim Iskender Ismet Izzet Kamil Kazïm Kemal Lütfi 
 			Mahmut Mehmet Mithat Muhtar Murat Musa Mustafa  
 			Namïk Nazim Nurettin Nuri Numan Omar Osman  
-			Pertev Rauf Receb Re?ad Refet Rïfat Rïza  
-			Sabahaddin Said Selim ?evket ?ükrü Süleyman  
+			Pertev Rauf Receb Rešad Refet Rïfat Rïza  
+			Sabahaddin Said Selim Ševket Šükrü Süleyman  
 			Talat Tevfik Vefik Yusuf Yunus Ziya Ziyaeddin
 		}
 		
 		last_names = { 
-			Akdag? Akdog?u Akkaya Akka? Akkïlïç Akköz Aktug? Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
-			Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog?an Durak Dilmen Ekin Ercan Erdog?an Eren
-			Erentöz Erkin Ermi? Ertunç Estelik Güler Gümü? Gündog?an Gündüz Güney Güne? Güven Karan Kaya Korun
-			Koç Murat Nadir Nalci Ni?anyan Onan Onay Sag?lam Sedef Selçuk Tandog?an Ta?çï Tekin Terim Toraman
-			Turan Turgut Türkog?lu Yavuz Ya?ar Yener Yïldïrïm Yïldïz Yïlmaz Yüksel Çelik Çetin Çolak Çiller Öcalan
-			Örs Özbek Özbey Özcan Özer Özkan Öztürk Özil Ülker Inan ?aban ?elte ?en
+			Akdag’ Akdog’u Akkaya Akkaš Akkïlïç Akköz Aktug’ Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
+			Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog’an Durak Dilmen Ekin Ercan Erdog’an Eren
+			Erentöz Erkin Ermiš Ertunç Estelik Güler Gümüš Gündog’an Gündüz Güney Güneš Güven Karan Kaya Korun
+			Koç Murat Nadir Nalci Nišanyan Onan Onay Sag’lam Sedef Selçuk Tandog’an Tašçï Tekin Terim Toraman
+			Turan Turgut Türkog’lu Yavuz Yašar Yener Yïldïrïm Yïldïz Yïlmaz Yüksel Çelik Çetin Çolak Çiller Öcalan
+			Örs Özbek Özbey Özcan Özer Özkan Öztürk Özil Ülker Inan Šaban Šelte Šen
 		}
 	}
 	esmer = {
@@ -2686,18 +2686,18 @@ turko_semitic = {
 			Ibrahim Iskender Ismet Izzet Kamil Kazïm Kemal Lütfi 
 			Mahmut Mehmet Mithat Muhtar Murat Musa Mustafa  
 			Namïk Nazim Nurettin Nuri Numan Omar Osman  
-			Pertev Rauf Receb Re?ad Refet Rïfat Rïza  
-			Sabahaddin Said Selim ?evket ?ükrü Süleyman  
+			Pertev Rauf Receb Rešad Refet Rïfat Rïza  
+			Sabahaddin Said Selim Ševket Šükrü Süleyman  
 			Talat Tevfik Vefik Yusuf Yunus Ziya Ziyaeddin
 		}
 		
 		last_names = { 
-			Akdag? Akdog?u Akkaya Akka? Akkïlïç Akköz Aktug? Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
-			Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog?an Durak Dilmen Ekin Ercan Erdog?an Eren
-			Erentöz Erkin Ermi? Ertunç Estelik Güler Gümü? Gündog?an Gündüz Güney Güne? Güven Karan Kaya Korun
-			Koç Murat Nadir Nalci Ni?anyan Onan Onay Sag?lam Sedef Selçuk Tandog?an Ta?çï Tekin Terim Toraman
-			Turan Turgut Türkog?lu Yavuz Ya?ar Yener Yïldïrïm Yïldïz Yïlmaz Yüksel Çelik Çetin Çolak Çiller Öcalan
-			Örs Özbek Özbey Özcan Özer Özkan Öztürk Özil Ülker Inan ?aban ?elte ?en
+			Akdag’ Akdog’u Akkaya Akkaš Akkïlïç Akköz Aktug’ Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
+			Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog’an Durak Dilmen Ekin Ercan Erdog’an Eren
+			Erentöz Erkin Ermiš Ertunç Estelik Güler Gümüš Gündog’an Gündüz Güney Güneš Güven Karan Kaya Korun
+			Koç Murat Nadir Nalci Nišanyan Onan Onay Sag’lam Sedef Selçuk Tandog’an Tašçï Tekin Terim Toraman
+			Turan Turgut Türkog’lu Yavuz Yašar Yener Yïldïrïm Yïldïz Yïlmaz Yüksel Çelik Çetin Çolak Çiller Öcalan
+			Örs Özbek Özbey Özcan Özer Özkan Öztürk Özil Ülker Inan Šaban Šelte Šen
 		}
 	}
 
@@ -2923,8 +2923,8 @@ iranian_turanian = {
 			}
 		#last_names = { # If you pretend a "surname law" was passed
 		#	Abdulayev Abdulin Abdullayev Abdulov Babayev Burkhanov Ibragimov Karimov Nabiyev
-		#	Niyazov Yo'ldoshev Ivanov Kirki? Gikalo Zelensky Ikramov Yakovlev Yusupov Mukhitdinov
-		#	Kamolov Rashidov Usmonxo'jayev Ni?onov Mirziyoyev
+		#	Niyazov Yo'ldoshev Ivanov Kirkiž Gikalo Zelensky Ikramov Yakovlev Yusupov Mukhitdinov
+		#	Kamolov Rashidov Usmonxo'jayev Nišonov Mirziyoyev
 		#}
 	}
 	kazak = {
@@ -2941,8 +2941,8 @@ iranian_turanian = {
 			Beg  Khan "Konanbai uli" "Kutebar uli" "Muhammad uli" "Qasim uli" 
 			}
 		#last_names = { # If you pretend a "surname law" was passed
-		#	Abdulayev Abdulin Abdullayev Abdulov Aitmukhambetov Aliyev Aronov Bay?anov Ibragimov
-		#	Karimov Kedryuk Nabiyev Niyazov Usenov ?akiyanov Nazarbayev
+		#	Abdulayev Abdulin Abdullayev Abdulov Aitmukhambetov Aliyev Aronov Bayžanov Ibragimov
+		#	Karimov Kedryuk Nabiyev Niyazov Usenov Žakiyanov Nazarbayev
 		#}
 	}
 	kirgiz = {
@@ -2955,8 +2955,8 @@ iranian_turanian = {
 			Beg 
 			}
 		#last_names = { # If you pretend a "surname law" was passed
-		#	Abdulayev Abdulin Abdullayev Abdulov Aytmatov Bay?anov Be?imov Ibragimov
-		#	Nogoyev Usenov Abdrakhmanov Isakeyev Uzyukov ?ubrikov Kulkov ?akhray Belotsky
+		#	Abdulayev Abdulin Abdullayev Abdulov Aytmatov Bayžanov Bešimov Ibragimov
+		#	Nogoyev Usenov Abdrakhmanov Isakeyev Uzyukov Šubrikov Kulkov Šakhray Belotsky
 		#}
 	}
 	tajik = {
@@ -2987,7 +2987,7 @@ iranian_turanian = {
 			}
 		#last_names = { # If you pretend a "surname law" was passed
 		#	Akhun Alptekin Muhiti Sabri Abdulbaki Bughra Abbas Qasim Batur Niyaz Laylinaman
-		#	Abdiqadir Abdulrixit Ajiyiming ?ahidi Ahmet Tiliwaldi Hisamudin Bekri Azizi Zakir Dawamet
+		#	Abdiqadir Abdulrixit Ajiyiming Šahidi Ahmet Tiliwaldi Hisamudin Bekri Azizi Zakir Dawamet
 		#}
 	}
 	pashtun = {
@@ -3023,7 +3023,7 @@ iranian_turanian = {
 			Khan
 		}
 		#last_names = { # If you pretend a "surname law" was passed
-		#	Askani Bahawalanzai Bangulzai Bhurgari "Bijarani Buledi" Chhalgari Marri ?irani
+		#	Askani Bahawalanzai Bangulzai Bhurgari "Bijarani Buledi" Chhalgari Marri Širani
 		#}
 	}
 	hazara = {
@@ -3051,7 +3051,7 @@ iranian_turanian = {
 		}
 		#last_names = { # If you pretend a "surname law" was passed
 		#	Abdulayev Abdulin Abdullayev Abdulov Garayev Ibragimov Muhadow Niyazov
-		#	Me?lauk Paskutsky Aron?tam Popok Mukhamedov Chubin Fonin Batyrov Babayev
+		#	Mežlauk Paskutsky Aronštam Popok Mukhamedov Chubin Fonin Batyrov Babayev
 		#	Karayev Ovezov Gapurow
 		#}
 	}
@@ -4709,37 +4709,37 @@ neo_european_cultures = {
 	wenedyk = {
         color = { 224 224 96 }
 
-        first_names = { Akilëv Ajbu?cëv "Al'jaëv" Ajajlëv Albëv Ama?cëv Annaëv Anneëv Annëv Antuëv Arrëv
-		Artraëv Asinëv A?tilëv A?tëv "Orl'jaëv" Otruëv Kajkilëv Kaj?këv "Kal'jaëv" Kali?ëv
-		Kalpurnëv Kassëv Klo?ëv Klajaëv Kokkeëv Kvinëv "Kranl'jaëv" Kronkanëv Kuria?cëv
-		Kurëv Kur?tëv Dekëv D?ëv Dvi?cëv Dvilëv Durmëv Ekvi?cëv Fabëv Fabrikëv Fannëv
-		Flavëv Fulvëv Furëv Gabinëv Galrjaëv Geganëv "Gl'jalëv" Gjajnëv Gjokëv Gra?cëv
-		Rjajanëv Hir?cëv Ra?tëv Ratjasëv Hos?tilëv Julëv Junëv Juvja?cëv "Lal'jaëv" Lar?cëv
-		Likinëv Livëv Lukilëv Lukre?tëv Manlëv Markëv Marëv Mjamëv Mjajaëv Minikëv
-		Minëv Minukëv Mo?ëv Mukëv Najvëv No?cëv Numrjaëv Numikëv Oktavëv Ovi?ëv
-		Papirëv Petruëv Pinarëv Pupeëv Pupilëv Pu?cëv "Popil'ëv" Prakëv Postumëv
-		Kvink?tilëv Kvink?tëv "Rubl'jalëv" Rufëv Ru?tilëv Sallus?tëv Saluëv Salvëv Skribuëv
-		Seëv Sjapruëv Sja?tëv Srja?ëv Srjatraëv Srjavilëv Sek?tëv Sikinëv Svetuëv Sulpikëv
-		Tarpeëv Tarkvi?tëv Trjaja?tëv ?ti?tinëv ?titurëv Tukkëv Tullëv Ulpëv Valrjaëv Ve?ëv
-		"Vl'jaleëv" Vrja?lëv Vrja?nëv Vibëv Villëv Vipsanëv "Vitl'jalëv" Vitruvëv Vlomnjëv }
+        first_names = { Akilëv Ajbušcëv "Al'jaëv" Ajajlëv Albëv Amašcëv Annaëv Anneëv Annëv Antuëv Arrëv
+		Artraëv Asinëv Aštilëv Aštëv "Orl'jaëv" Otruëv Kajkilëv Kajžkëv "Kal'jaëv" Kaližëv
+		Kalpurnëv Kassëv Kložëv Klajaëv Kokkeëv Kvinëv "Kranl'jaëv" Kronkanëv Kuriašcëv
+		Kurëv Kurštëv Dekëv Džëv Dvišcëv Dvilëv Durmëv Ekvišcëv Fabëv Fabrikëv Fannëv
+		Flavëv Fulvëv Furëv Gabinëv Galrjaëv Geganëv "Gl'jalëv" Gjajnëv Gjokëv Grašcëv
+		Rjajanëv Hiršcëv Raštëv Ratjasëv Hosštilëv Julëv Junëv Juvjašcëv "Lal'jaëv" Laršcëv
+		Likinëv Livëv Lukilëv Lukreštëv Manlëv Markëv Marëv Mjamëv Mjajaëv Minikëv
+		Minëv Minukëv Možëv Mukëv Najvëv Nošcëv Numrjaëv Numikëv Oktavëv Ovižëv
+		Papirëv Petruëv Pinarëv Pupeëv Pupilëv Pušcëv "Popil'ëv" Prakëv Postumëv
+		Kvinkštilëv Kvinkštëv "Rubl'jalëv" Rufëv Ruštilëv Sallusštëv Saluëv Salvëv Skribuëv
+		Seëv Sjapruëv Sjaštëv Srjažëv Srjatraëv Srjavilëv Sekštëv Sikinëv Svetuëv Sulpikëv
+		Tarpeëv Tarkvištëv Trjajaštëv Štištinëv Štiturëv Tukkëv Tullëv Ulpëv Valrjaëv Vežëv
+		"Vl'jaleëv" Vrjažlëv Vrjažnëv Vibëv Villëv Vipsanëv "Vitl'jalëv" Vitruvëv Vlomnjëv }
 		
         last_names = { Akulij Agriklaja Agrippaja Ahalaja Ajavbarbskij Albinskij Albskij Ambustskij Annaliskij Akvilaja
-		Aquilinskij Arvinaja Asljalij Asinaja "Atljal'skij" Avitskij Balbskij Barbaja Barbatskij Basskij Be?kaja
+		Aquilinskij Arvinaja Asljalij Asinaja "Atljal'skij" Avitskij Balbskij Barbaja Barbatskij Basskij Beškaja
 		"Bibakul'skij" "Bibul'skij" Blajskij Brohskij Brutskij "Bubul'skij" Bukkoj Bulbskij Buteoj Kajkskij Kajpioj
-		Kajsar Kalidskij Kalvinskij Kalvskij Kamil'skij Kaninskij Kanskij Kapitoj Karboj Ka?tilinaja Katoj
+		Kajsar Kalidskij Kalvinskij Kalvskij Kamil'skij Kaninskij Kanskij Kapitoj Karboj Kaštilinaja Katoj
 		"Katul'skij" Kjarjaja Kjasskij Kefegskij Kikrjaoj Kikurinskij Kiloj Kinkinnatskij Kinnaja Kradskij Kranikja
 		Kranutskij Kravinskij Kravskij Kosskij Kostaja Kottaja Krassipij Krassskij Krispinskij Krispskij Kulleoj
-		Kurioj Kursraja Kurvskij ?atatskij ?atrjaja ?atoj ?ves "Dlabl'jalaja" Drasvoj Druskij "Figul'skij" Fimbriaja
+		Kurioj Kursraja Kurvskij Žatatskij Žatrjaja Žatoj Žves "Dlabl'jalaja" Drasvoj Druskij "Figul'skij" Fimbriaja
 		Flakskij Favskij Flaskij Frutoj Fulloj Fuskij Galeoj "Gjal'jal'skij" Glabrioj Grahskij Gurgeskij Habitskij
 		"L'javaja" Imprjajoskij "Jul'skij" Labeoj Laktukaja Lajaskij Lanatskij Lajvinskij Latrjajasiskij "L'jatul'skij" Lepidskij
 		Liboj Likinskij Lugskij "Lukul'skij" Lupskij Lurkoj Makrjaja Makulaja Mallelaskij Mamrjakskij "Markljal'skij" Maroj
 		Mrjajadaja Mrjagskij Mrjolaja Messallaja "Mecal'skij" Murjaja Mskij Muskaja Nasikaja Nasoj Nattaja Neposkij Njaoj
 		Njavaja Nigrjaja "Novljal'skij" Okljalaja "Pakil'skij" Pajtskij Pansaja Papskij "Patrjakul'skij" "Pol'skij" Pavoj Prjaja Piktra
-		Pisoj Plankskij Plotskij Popliklaaja Postumskij Po?titskij Prajkvinskij Prajtekstatskij Priskskij Prokulskij
-		Publiklaja Pulhaja "Pul'skij" "Pulvil'skij" Purpureoj Kvadratskij Rallaja "Re?il'skij" "Regul'skij" Rufskij Rugaja Rulluskij
-		"Ru?til'skij" Salinatraja Saturninskij Skajvaja Skajvlaja Skapulaja Skorskij Skipioj Skrofaja Sjajkaja Sevrjoskij
+		Pisoj Plankskij Plotskij Popliklaaja Postumskij Poštitskij Prajkvinskij Prajtekstatskij Priskskij Prokulskij
+		Publiklaja Pulhaja "Pul'skij" "Pulvil'skij" Purpureoj Kvadratskij Rallaja "Režil'skij" "Regul'skij" Rufskij Rugaja Rulluskij
+		"Ruštil'skij" Salinatraja Saturninskij Skajvaja Skajvlaja Skapulaja Skorskij Skipioj Skrofaja Sjajkaja Sevrjoskij
 		Silanskij Siloj "Sil'skij" Stlaoj Straboj Strukskij Sullaja Suraja Torskij Triarev Trigjajnskij Trjoj Tubrjaoj
-		Tubrjatskij "Tubul'skij" Tu?tanskij "Tul'skij" Turdskij Varroj Varskij Va?caja Vjareskij Vespilloj Vetskij "Vitul'skij"
+		Tubrjatskij "Tubul'skij" Tužtanskij "Tul'skij" Turdskij Varroj Varskij Vašcaja Vjareskij Vespilloj Vetskij "Vitul'skij"
 		Vloskij }
 	}
 
@@ -5801,7 +5801,7 @@ non_human = { #More names allover
 			Teethless Smokey Deathwing Quicksilver "Grey Ghost" Seasmoke Pyre Scorch Dragon Wyrm Lindwurm Dovah Vlad Rattleskin Ash Benedict Rakshasha Draco Dracul
 			Drago Fafner Errol Glaedr Glaurung Icefyre Falkor Nagini Rathalos Piff Fred Voidaltarah Ddraig Drdrake Morttalis Barney }
 
-		last_names = { "Kytrapan" "Vorcasymath" "Kytrapan" "Carrafyrt" "Noighyd" "of the Fires" "Grautarrein" "Grautarrein" "of the Sun" "of the Skies" "of the Moon" "Grautarrein" "of the Skies" "Rainbowscale" "Carrafyrt" "of the Moon" "of the Waters" "Noighyd" "Mc?scale" "Colichir" "Eorikamat" "Colichir" "Grautarrein" "Vorcasymath" "Rackart" "of the Skies" "Vorcasymath" "Vilisynther" "of the Moon" "Kosorrat" "of the Waters" "of the Waters" "Seserriff" "Noighyd" "of the Moon" "of the Fires" "Vilisynther" "Gemhide" "of the Waters" "Vilisynther" "Goldscale" "Mc?scale" "Colichir" "Kerokarvar" "Kerokarvar" "Dragaret" "Kerokarvar" "Kytrapan" "Rainbowscale" "Grautarrein" "of the Moon" "Vorcasymath" "of the Skies" "Grautarrein" "of the Moon" "Colichir" "Kerokarvar" "Eorikamat" "of the Earths" "Colichir" "Noighyd" "of the Earths" "of the Fires" "Mc?scale" "Dragaret" "Draokoran" "Vilisynther" "of the Stars" "Vorcasymath" "of the Fires" "Mc?scale" "Eorikamat" "Lipari" "Cefalú" "Mazara" "Caltabellotta" "Catania" "Latakiah" "Rabat" }
+		last_names = { "Kytrapan" "Vorcasymath" "Kytrapan" "Carrafyrt" "Noighyd" "of the Fires" "Grautarrein" "Grautarrein" "of the Sun" "of the Skies" "of the Moon" "Grautarrein" "of the Skies" "Rainbowscale" "Carrafyrt" "of the Moon" "of the Waters" "Noighyd" "Mc’scale" "Colichir" "Eorikamat" "Colichir" "Grautarrein" "Vorcasymath" "Rackart" "of the Skies" "Vorcasymath" "Vilisynther" "of the Moon" "Kosorrat" "of the Waters" "of the Waters" "Seserriff" "Noighyd" "of the Moon" "of the Fires" "Vilisynther" "Gemhide" "of the Waters" "Vilisynther" "Goldscale" "Mc’scale" "Colichir" "Kerokarvar" "Kerokarvar" "Dragaret" "Kerokarvar" "Kytrapan" "Rainbowscale" "Grautarrein" "of the Moon" "Vorcasymath" "of the Skies" "Grautarrein" "of the Moon" "Colichir" "Kerokarvar" "Eorikamat" "of the Earths" "Colichir" "Noighyd" "of the Earths" "of the Fires" "Mc’scale" "Dragaret" "Draokoran" "Vilisynther" "of the Stars" "Vorcasymath" "of the Fires" "Mc’scale" "Eorikamat" "Lipari" "Cefalú" "Mazara" "Caltabellotta" "Catania" "Latakiah" "Rabat" }
 	}
 	elephant_culture = {
 		color = { 25 75 25}
