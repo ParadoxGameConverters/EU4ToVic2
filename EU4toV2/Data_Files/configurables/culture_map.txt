@@ -88,9 +88,9 @@ link = { vic2 = irish eu4 = irish eu4 = gallawa eu4 = hiberno_norman }
 
 # Latin - maltese, lombard, umbrian, sicilian, ligurian, piedmontese, romagnan, sardinian, tuscan, venetian
 #Split of the Roman Empire
-link = { vic2 = foederatus eu4 = roman eu4 = britannian eu4 = celtiberian eu4 = pannonian eu4 = graecus eu4 = latin eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
-link = { vic2 = afer eu4 = roman eu4 = britannian eu4 = latin eu4 = celtiberian eu4 = pannonian eu4 = graecus eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = oceania_superregion }
-link = { vic2 = australus eu4 = roman eu4 = britannian eu4 = celtiberian eu4 = pannonian eu4 = graecus eu4 = latin eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+link = { vic2 = foederatus eu4 = roman eu4 = britannian eu4 = pannonian eu4 = graecus eu4 = latin eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
+link = { vic2 = afer eu4 = roman eu4 = britannian eu4 = latin eu4 = pannonian eu4 = graecus eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = oceania_superregion }
+link = { vic2 = australus eu4 = roman eu4 = britannian eu4 = pannonian eu4 = graecus eu4 = latin eu4 = helvetian eu4 = noric eu4 = latin_colonial eu4 = romano_gallic eu4 = romano_british region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = brithenig eu4 = roman region = british_isles_region }
 link = { vic2 = gaul eu4 = roman region = france_region region = low_countries_region }
 link = { vic2 = laessin eu4 = roman region = north_german_region region = south_german_region region = baltic_region region = scandinavia_region region = balkan_region }
@@ -103,10 +103,9 @@ link = { vic2 = bazramani eu4 = roman region = persia_region region = caucasia_r
 link = { vic2 = aromanian eu4 = roman region = balkan_region }
 link = { vic2 = maghreb_arabic eu4 = roman region = egypt_region region = maghreb_region }
 link = { vic2 = brithenig eu4 = romano_british eu4 = britannian }
-link = { vic2 = spanish eu4 = celtiberian }
 link = { vic2 = hungarian eu4 = pannonian }
 link = { vic2 = greek eu4 = graecus }
-link = { vic2 = maghreb_arabic eu4 = phoenician eu4 = aegyptian eu4 = carthaginian eu4 = punic eu4 = african_romance }
+link = { vic2 = maghreb_arabic eu4 = aegyptian eu4 = carthaginian eu4 = african_romance }
 link = { vic2 = bazramani eu4 = arabus eu4 = romano_persian eu4 = aramean }
 link = { vic2 = gaul eu4 = romano_gallic eu4 = gaul eu4 = gaulic }
 link = { vic2 = laessin eu4 = helvetian eu4 = noric eu4 = theodisc eu4 = hyperborean }
@@ -120,9 +119,9 @@ link = { vic2 = africano eu4 = etrurian eu4 = dalmatian eu4 = old_lombard eu4 = 
 #Sidenote: Muslim Southern Italians convert to Maltese (historical Siculo-Arabic)
 link = { vic2 = maltese eu4 = dalmatian eu4 = sicilian eu4 = sardinian eu4 = neapolitan eu4 = roman eu4 = latin eu4 = old_lombard eu4 = italian region = apulia_area region = calabria_area region = naples_area region = sicily_area region = corsica_sardinia_area religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
 # Italian (Keep order below!)
-link = { vic2 = north_italian eu4 = etrurian eu4 = dalmatian eu4 = italian region = lombardy_area region = venetia_area region = piedmont_area region = tuscany_area region = liguria_area region = emilia_romagna_area region = central_italy_area }
+link = { vic2 = north_italian eu4 = dalmatian eu4 = italian region = lombardy_area region = venetia_area region = piedmont_area region = tuscany_area region = liguria_area region = emilia_romagna_area region = central_italy_area }
 link = { vic2 = south_italian eu4 = dalmatian eu4 = italian region = sicily_area region = corsica_sardinia_area region = naples_area region = calabria_area region = apulia_area }
-link = { vic2 = north_italian eu4 = etrurian eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian eu4 = dalmatian eu4 = emilian eu4 = friulian eu4 = romagnol }
+link = { vic2 = north_italian eu4 = lombard eu4 = umbrian eu4 = piedmontese eu4 = ligurian eu4 = romagnan eu4 = tuscan eu4 = venetian eu4 = dalmatian eu4 = emilian eu4 = friulian eu4 = romagnol }
 link = { vic2 = south_italian eu4 = neapolitan eu4 = sardinian eu4 = sicilian eu4 = corsican eu4 = c_latin eu4 = napolitan_colonial }
 link = { vic2 = lombard eu4 = old_lombard }
 link = { vic2 = maltese eu4 = maltese }
@@ -153,7 +152,7 @@ link = { vic2 = visigothic eu4 = visigothic }
 link = { vic2 = spanish eu4 = castillian eu4 = leonese eu4 = asturian eu4 = balearic eu4 = spanish_colonial eu4 = hispanic }
 link = { vic2 = galician eu4 = galician eu4 = galician_celtic }
 link = { vic2 = catalan eu4 = catalan eu4 = aragonese eu4 = valencian }
-link = { vic2 = portuguese eu4 = portugese eu4 = angolan eu4 = lusitanian }
+link = { vic2 = portuguese eu4 = portugese eu4 = angolan }
 link = { vic2 = basque eu4 = basque eu4 = basque_colonial }
 link = { vic2 = suebi eu4 = suebi }
 link = { vic2 = andalucian eu4 = andalucian }
@@ -238,7 +237,7 @@ link = { vic2 = sudic eu4 = moldovan eu4 = romanian eu4 = transylvanian eu4 = mo
 link = { vic2 = negru eu4 = moldovan eu4 = romanian eu4 = transylvanian eu4 = moldovian eu4 = romanian_colonial eu4 = vlach eu4 = dacian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = aromanian eu4 = moldovan eu4 = romanian eu4 = transylvania region = balkan_region }
 link = { vic2 = hungarian eu4 = hungarian eu4 = magyar eu4 = magyar_colonial eu4 = szaszok }
-link = { vic2 = romanian eu4 = moldovan eu4 = romanian eu4 = transylvanian eu4 = dacian eu4 = moldovian eu4 = romanian_colonial eu4 = vlach }
+link = { vic2 = romanian eu4 = moldovan eu4 = romanian eu4 = transylvanian eu4 = moldovian eu4 = romanian_colonial eu4 = vlach }
 
 # Byzantine - greek, georgian, armenian, pontic_greek
 link = { vic2 = neokosmi eu4 = alexandrine eu4 = atlantean eu4 = spartan eu4 = athenian eu4 = magnagreek eu4 = anatolian eu4 = greek eu4 = bithynian eu4 = lykian eu4 = gothic eu4 = goths eu4 = pontic_greek eu4 = atlantean eu4 = spartan eu4 = athenian eu4 = sicilian_greek eu4 = cappadocian eu4 = greek_colonial eu4 = pontic eu4 = thracian eu4 = pannonian eu4 = illyrian eu4 = galatian eu4 = georgian eu4 = armenian eu4 = armenian_colonial eu4 = cilician eu4 = ge_armenian eu4 = owm_armenian eu4 = alan eu4 = scythian eu4 = maghreb_latin eu4 = punic eu4 = african_romance eu4 = babylonian eu4 = syriac eu4 = chaldean eu4 = romano_persian eu4 = aramean region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
@@ -248,10 +247,10 @@ link = { vic2 = yenidun eu4 = avar_culture eu4 = hephthalite eu4 = turkish eu4 =
 link = { vic2 = guney eu4 = avar_culture eu4 = hephthalite eu4 = turkish eu4 = pecheneg eu4 = turkish_colonial eu4 = yorouk eu4 = azerbadjani eu4 = azerbaijani eu4 = circassian eu4 = dagestani eu4 = abazin eu4 = caucasus_colonial eu4 = chechen eu4 = ossetian eu4 = caucasian_albanian region = oceania_superregion }
 link = { vic2 = esmer eu4 = avar_culture eu4 = hephthalite eu4 = turkish eu4 = pecheneg eu4 = turkish_colonial eu4 = yorouk eu4 = azerbadjani eu4 = azerbaijani eu4 = circassian eu4 = dagestani eu4 = abazin eu4 = caucasus_colonial eu4 = chechen eu4 = ossetian eu4 = caucasian_albanian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = sephardic eu4 = magnagreek eu4 = anatolian eu4 = greek eu4 = bithynian eu4 = lykian eu4 = georgian eu4 = armenian eu4 = goths eu4 = spartan eu4 = athenian eu4 = atlantean religion = jewish }
-link = { vic2 = greek eu4 = bithynian eu4 = lykian eu4 = greek eu4 = gothic eu4 = goths eu4 = pontic_greek eu4 = atlantean eu4 = spartan eu4 = athenian eu4 = sicilian_greek  eu4 = cappadocian eu4 = galatian eu4 = greek_colonial eu4 = pontic eu4 = anatolian eu4 = thracian }
+link = { vic2 = greek eu4 = bithynian eu4 = lykian eu4 = greek eu4 = goths eu4 = pontic_greek eu4 = atlantean eu4 = spartan eu4 = athenian eu4 = sicilian_greek  eu4 = cappadocian eu4 = galatian eu4 = greek_colonial eu4 = pontic eu4 = anatolian }
 link = { vic2 = magnagreek eu4 = magnagreek }
 link = { vic2 = georgian eu4 = georgian }
-link = { vic2 = armenian eu4 = armenian eu4 = armenian_colonial eu4 = cilician eu4 = ge_armenian eu4 = owm_armenian}
+link = { vic2 = armenian eu4 = armenian eu4 = armenian_colonial eu4 = ge_armenian eu4 = owm_armenian}
 link = { vic2 = north_caucasian eu4 = circassian eu4 = dagestani eu4 = avar_culture eu4 = abazin eu4 = caucasian_albanian eu4 = caucasus_colonial eu4 = chechen eu4 = ossetian }
 link = { vic2 = alan eu4 = alan eu4 = scythian }
 
@@ -524,7 +523,7 @@ link = { vic2 = african_minor eu4 = bemba eu4 = kanouri }
 
 # barbarian / lost
 link = { vic2 = bosniak eu4 = ostrogothic religion = slavic_pagan_reformed religion = animist }
-link = { vic2 = ostrogothic eu4 = getian eu4 = gothic eu4 = ostrogothic eu4 = bastarnae eu4 = gepid eu4 = greuthungi }
+link = { vic2 = ostrogothic eu4 = gothic eu4 = ostrogothic eu4 = bastarnae eu4 = gepid eu4 = greuthungi }
 link = { vic2 = assyrian eu4 = babylonian eu4 = syriac eu4 = assyrian eu4 = chaldean }
 
 # Animals / Non-humans
@@ -543,7 +542,7 @@ link = { vic2 = alien eu4 = alien } # No actual culture, but ok
 link = { vic2 = noculture eu4 = noculture }
 
 # IMP:CK3 cultures
-link = { vic2 = oldspain eu4 = oldspain }
+link = { vic2 = oldspain eu4 = oldspain eu4 = iberic eu4 = turdetanian  }
 link = { vic2 = illyrian eu4 = illyrian }
 link = { vic2 = nuragic eu4 = nuragic }
 link = { vic2 = vandal eu4 = vandal }
@@ -552,3 +551,34 @@ link = { vic2 = alexandrine eu4 = alexandrine }
 link = { vic2 = pie_american eu4 = oldspain eu4 = illyrian eu4 = nuragic region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
 link = { vic2 = pie_oceanian eu4 = oldspain eu4 = illyrian eu4 = nuragic region = oceania_superregion }
 link = { vic2 = pie_african eu4 = oldspain eu4 = illyrian eu4 = nuragic region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+
+# Old Italic
+link = { vic2 = sabellian eu4 = sabellian }
+link = { vic2 = old_ligurian eu4 = old_ligurian }
+link = { vic2 = venetic eu4 = venetic }
+link = { vic2 = siculian eu4 = siculian }
+link = { vic2 = etrurian eu4 = etrurian }
+link = { vic2 = rhaetian eu4 = rhaetian }
+
+# Old Anatolian
+link = { vic2 = lycian eu4 = lycian }
+link = { vic2 = phrygian eu4 = phrygian }
+link = { vic2 = isaurian eu4 = isaurian }
+link = { vic2 = paphlagonian eu4 = paphlagonian }
+link = { vic2 = cilician eu4 = cilician }
+
+# Punic
+link = { vic2 = punic eu4 = punic }
+link = { vic2 = phoenician eu4 = phoenician }
+
+# Continental Celtic
+link = { vic2 = gallic eu4 = gallic }
+link = { vic2 = lepontic eu4 = lepontic }
+link = { vic2 = belgae eu4 = belgae }
+link = { vic2 = celtic_pannonian eu4 = celtic_pannonian }
+link = { vic2 = celtiberian eu4 = celtiberian }
+link = { vic2 = lusitanian eu4 = lusitanian }
+
+#Dacian
+link = { vic2 = dacian eu4 = dacian eu4 = getian }
+link = { vic2 = thracian eu4 = thracian }
