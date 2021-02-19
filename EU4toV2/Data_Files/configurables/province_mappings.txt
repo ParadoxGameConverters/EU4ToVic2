@@ -989,7 +989,8 @@
 	link = { eu4 = 1098 v2 = 2129 v2 = 2132 v2 = 2130 } # St. Helena -> Saint Helena, Tristan da Cunha, Ascension
 	link = { comment = "# # Europe" }
 	link = { comment = "# Greenland & Iceland" }
-	link = { eu4 = 1104 eu4 = 1105 eu4 = 1804 v2 = 251 v2 = 2591 v2 = 2632 v2 = 2636 } # MANY-TO-MANY: Eiriksfjord, Vestbygden, Greenland -> Godthab, Holsteinsborg, Ammassalik, Egedesminde
+	link = { eu4 = 1104 eu4 = 1105 v2 = 251 v2 = 2591 v2 = 2632 v2 = 2636 } # MANY-TO-MANY: Eiriksfjord, Vestbygden -> Godthab, Holsteinsborg, Ammassalik, Egedesminde
+	link = { eu4 = 1804 } # Greenland -> DROPPED
 	link = { eu4 = 370 eu4 = 371 v2 = 252 v2 = 3246 } # MANY-TO-MANY: Reykjavik, Akureyri -> Iceland, Jan Mayen
 	link = { comment = "# British Isles" }
 	link = { eu4 = 1979 v2 = 253 } # Färöarna -> Faroe Islands
