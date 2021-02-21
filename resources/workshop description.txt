@@ -32,9 +32,9 @@ Very generally, it takes your Europa Universalis 4 [b]saved game[/b] and convert
 You then have to [b]enable that mod[/b] when starting Vic2 launcher:
 
 [olist]
-[*] Start the Vic2 Launcher.
-[*] Select the converted mod.
-[*] Click [i]Start Victoria 2[/i].
+[*] Create a new playset in the launcher.
+[*] Add the conversion mod into the new playset, along with other mods you want to use (such as graphical ones)
+[*] On the Home page of the launcher, make sure the new playset is enabled and selected before pressing Play.
 [/olist]
 
 [h2]Troubleshooting and Suggestions[/h2]
