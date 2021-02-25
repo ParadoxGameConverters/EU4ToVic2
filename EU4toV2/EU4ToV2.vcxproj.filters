@@ -568,6 +568,9 @@
     <ClCompile Include="Source\V2World\Decisions\HPMDecisions.cpp">
       <Filter>Vic2World\Decisions</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\EU4ActivePolicy.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1093,6 +1096,9 @@
     </ClInclude>
     <ClInclude Include="Source\V2World\Country\ModCommons.h">
       <Filter>Vic2World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\EU4ActivePolicy.h">
+      <Filter>EU4World\Country</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
