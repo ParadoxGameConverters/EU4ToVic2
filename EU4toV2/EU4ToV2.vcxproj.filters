@@ -598,6 +598,9 @@
     <ClCompile Include="Source\Mappers\Technologies\StartingTechMapper.cpp">
       <Filter>Mappers\Technologies</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\EU4ActivePolicy.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1150,6 +1153,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\Technologies\StartingTechMapper.h">
       <Filter>Mappers\Technologies</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\EU4ActivePolicy.h">
+      <Filter>EU4World\Country</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

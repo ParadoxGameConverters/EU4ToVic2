@@ -1,6 +1,7 @@
 #include "EU4Country.h"
 #include "Configuration.h"
 #include "EU4ActiveIdeas.h"
+#include "EU4ActivePolicy.h"
 #include "EU4CountryFlags.h"
 #include "EU4CountryModifier.h"
 #include "EU4GovernmentSection.h"
@@ -196,6 +197,10 @@ void EU4::Country::registerKeys(const GameVersion& theVersion)
 	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream) {
 		const LeaderID idBlock(theStream);
 		activeLeaderIDs.insert(idBlock.getIDNum());
+	});
+	registerKeyword("active_policy", [this](const std::string& unused, std::istream& theStream) {
+		const EU4ActivePolicy policyBlock(theStream);
+		policies.insert(policyBlock.getPolicy());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
