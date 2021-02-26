@@ -866,6 +866,15 @@ void V2::World::convertNationalValues()
 	}
 
 	// The rest will default anyway.
+
+	// Mod NVs override base game
+	if (theConfiguration.isHpmEnabled())
+	{
+		for (const auto& [unused, country]: countries)
+		{
+			country->setHpmNationalValues();
+		}
+	}
 }
 
 void V2::World::convertPrestige()

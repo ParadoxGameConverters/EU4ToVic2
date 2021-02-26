@@ -119,6 +119,10 @@ class Country: commonItems::parser
 	[[nodiscard]] int numEmbracedInstitutions() const;
 	[[nodiscard]] double getManufactoryDensity() const;
 	[[nodiscard]] const auto& getPolicies() const { return policies; }
+	[[nodiscard]] double getAbsolutism() const { return absolutism; }
+	[[nodiscard]] double getArmyTradition() const { return armyTradition; }
+	[[nodiscard]] double getNavyTradition() const { return navyTradition; }
+	[[nodiscard]] double getArmyProfessionalism() const { return armyProfessionalism; }
 
   private:
 	void registerKeys(const GameVersion& theVersion);
@@ -197,6 +201,10 @@ class Country: commonItems::parser
 	int mfgCount = 0;
 	int mfgTransfer = 0;
 	std::set<std::string> policies;
+	double absolutism;
+	double armyTradition;
+	double navyTradition;
+	double armyProfessionalism;
 
 	// Localization attributes
 	std::string name; // the name of this country - used to export to disk as name.txt, must be normalized!
