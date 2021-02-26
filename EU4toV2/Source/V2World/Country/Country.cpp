@@ -973,3 +973,81 @@ void V2::Country::addPolicy(const std::string& partyName, const std::string& pol
 	});
 	partyItr->addPolicy(policy, position);
 }
+
+void V2::Country::determineNV(const std::string& mod)
+{
+	if (mod == "HPM")
+	{
+		// Take nv_equality and nv_liberty from the Converter
+		if (details.nationalValue == "nv_equality" || details.nationalValue == "nv_liberty")
+		{
+			return;
+		}
+
+		double productionEff = 0.0;
+		double tradeEff = 0.0;
+		const auto& reforms = srcCountry->getReforms();
+		const auto& ideas = srcCountry->getNationalIdeas();
+		const auto& policies = srcCountry->getPolicies();
+
+		// Production
+		if (reforms.count("administrative_monarchy")
+			|| reforms.count("administrative_republic")
+			|| reforms.count("constitutional_republic")
+			|| reforms.count("peasants_republic_legacy")
+			|| reforms.count("general_estates_reform")
+			|| reforms.count("peasants_republic")
+		){
+			productionEff += 0.1;
+		}
+		if (ideas.count("economic_ideas")) productionEff += 0.1;
+		if (ideas.count("custom_idea_production_efficiency")) productionEff += 0.05;
+		if (policies.count("the_combination_act")) productionEff += 0.2;
+		if (policies.count("enlightened_aristocracy")) productionEff += 0.1;
+		if (policies.count("the_transportation_act")) productionEff += 0.1;
+		if (policies.count("the_statute_of_monopolies")) productionEff += 0.1;
+		if (policies.count("taxation_with_representation")) productionEff += 0.1;
+
+		// Trade
+		if (reforms.count("constitutional_republic")
+			|| reforms.count("imperial_city")
+			|| reforms.count("dutch_republic_legacy")
+			|| reforms.count("enforce_trader_privileges_reform")
+			|| reforms.count("bengali_reform")
+			|| reforms.count("free_city")
+			|| reforms.count("dutch_republic")
+		){
+			tradeEff += 0.1;
+		}
+		if (ideas.count("trade_ideas")) tradeEff += 0.1;
+		if (ideas.count("custom_idea_trade_efficiency")) tradeEff += 0.05;
+		if (policies.count("the_statute_of_monopolies")) tradeEff += 0.1;
+		if (policies.count("the_banking_system")) tradeEff += 0.1;
+		if (policies.count("the_importation_act")) tradeEff += 0.2;
+		if (policies.count("cloth_quality_edict")) tradeEff += 0.2;
+		if (policies.count("encouragement_of_merchant_navy")) tradeEff += 0.1;
+		if (policies.count("public_road_act")) tradeEff += 0.1;
+
+		// nv_order
+		const auto& armyTradition = srcCountry->getArmyTradition();
+		const auto& navyTradition = srcCountry->getNavyTradition();
+		const auto& armyProfessionalism = srcCountry->getArmyProfessionalism();
+
+		if (productionEff + tradeEff >= 0.6)
+		{
+			details.nationalValue = "nv_productivity";
+		}
+		else if (armyTradition > 50 || navyTradition > 75 || armyProfessionalism > 0.8)
+		{
+			details.nationalValue = "nv_order";
+		}
+		else if (srcCountry->getAbsolutism() > 75)
+		{
+			details.nationalValue = "nv_autocracy";
+		}
+		else
+		{
+			details.nationalValue = "nv_tradition";
+		}
+	}
+}

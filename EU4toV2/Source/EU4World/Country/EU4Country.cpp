@@ -202,6 +202,18 @@ void EU4::Country::registerKeys(const GameVersion& theVersion)
 		const EU4ActivePolicy policyBlock(theStream);
 		policies.insert(policyBlock.getPolicy());
 	});
+	registerKeyword("absolutism", [this](const std::string& unused, std::istream& theStream) {
+		absolutism = commonItems::singleDouble(theStream).getDouble();
+	});
+	registerKeyword("army_tradition", [this](const std::string& unused, std::istream& theStream) {
+		armyTradition = commonItems::singleDouble(theStream).getDouble();
+	});
+	registerKeyword("navy_tradition", [this](const std::string& unused, std::istream& theStream) {
+		navyTradition = commonItems::singleDouble(theStream).getDouble();
+	});
+	registerKeyword("army_professionalism", [this](const std::string& unused, std::istream& theStream) {
+		armyProfessionalism = commonItems::singleDouble(theStream).getDouble();
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 

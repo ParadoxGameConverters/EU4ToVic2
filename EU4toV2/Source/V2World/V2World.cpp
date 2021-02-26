@@ -897,6 +897,15 @@ void V2::World::convertNationalValues()
 	}
 
 	// The rest will default anyway.
+
+	// Mod NVs override base game
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+	{
+		for (const auto& [tag, country]: countries)
+		{
+			country->determineNV(mod);
+		}
+	}
 }
 
 void V2::World::convertPrestige()
@@ -2028,6 +2037,9 @@ void V2::World::copyModFiles() const
 
 		fs::remove(output + "/common/rebel_types.txt");
 		fs::copy_file(mod + "/common/rebel_types.txt", output + "/common/rebel_types.txt");
+
+		fs::copy_file(mod + "/common/crime.txt", output + "/common/crime.txt");
+		fs::copy_file(mod + "/common/nationalvalues.txt", output + "/common/nationalvalues.txt");
 
 		//	/map
 		fs::copy(mod + "/map", output + "/map", fs::copy_options::recursive);
