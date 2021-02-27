@@ -117,6 +117,7 @@ class Country
 	void addPolicy(const std::string& partyName, const std::string& policy, const std::string& position);
 	void setReformPosition(const std::string& reform, const std::string& position) { modReforms.insert(make_pair(reform, position)); }
 	void determineNV(const std::string& modName);
+	void setUnitColors(const std::string& colors) { details.unitColors = colors; }
 
 	[[nodiscard]] std::string getColonialRegion() const;
 	[[nodiscard]] virtual std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }
@@ -147,6 +148,7 @@ class Country
 	[[nodiscard]] const auto& getParties() const { return details.parties; }
 	[[nodiscard]] const auto& getModReforms() const { return modReforms; }
 	[[nodiscard]] const auto& isReleasableVassal() const { return details.isReleasableVassal; }
+	[[nodiscard]] const auto& getUnitColors() const { return details.unitColors; }
 
 	friend std::ostream& operator<<(std::ostream& output, const Country& country);
 	void outputCommons(std::ostream& output);

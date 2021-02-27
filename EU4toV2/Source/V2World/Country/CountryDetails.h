@@ -79,6 +79,7 @@ class CountryDetails: commonItems::parser
 	double consciousness = 0;
 	double nonstateConsciousness = 0;
 	std::set<std::string> countryFlags;
+	std::string unitColors;
 
 	NationalValue nationalValues;
 	Technology technologies;

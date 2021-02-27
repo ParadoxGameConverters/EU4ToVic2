@@ -168,6 +168,7 @@ class World
 	 const mappers::ProvinceMapper& modMapper,
 	 std::ofstream& output);
 	void updateCountryDetails();
+	void importUnitColors();
 	std::vector<std::string> getIssues(const std::string& issueCategory);
 	void identifyReassignedTags();
 	bool isTagReassigned(const std::string& tag) const;
@@ -175,6 +176,7 @@ class World
 	void outputGTFO(std::map<std::string, std::shared_ptr<Country>> countries) const;
 	void outputReturnCores(std::map<std::string, std::shared_ptr<V2::Country>> countries) const;
 	void outputTechnologies() const;
+	void outputUnitColors() const;
 	int getModStateId(int province, std::ofstream& output);
 
 	mappers::ProvinceMapper provinceMapper;

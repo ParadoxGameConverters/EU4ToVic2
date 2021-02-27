@@ -4,6 +4,7 @@
 #include "../Mappers/Pops/PopMapper.h"
 #include "../Mappers/StateMapper/StateMapper.h"
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
+#include "../Mappers/UnitColors/UnitColors.h"
 #include "../Mappers/VersionParser/VersionParser.h"
 #include "CommonFunctions.h"
 #include "Configuration.h"
@@ -155,6 +156,10 @@ V2::World::World(const EU4::World& sourceWorld,
 		LOG(LogLevel::Info) << "-> Update country details";
 		updateCountryDetails();
 		Log(LogLevel::Progress) << "73 %";
+
+		LOG(LogLevel::Info) << "-> Importing country unit colors";
+		importUnitColors();
+		Log(LogLevel::Progress) << "74 %";
 	}
 
 	LOG(LogLevel::Info) << "---> Le Dump <---";
@@ -1642,6 +1647,9 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 
 		Log(LogLevel::Info) << "<- Outputting technologies";
 		outputTechnologies();
+
+		Log(LogLevel::Info) << "<- Outputting country unit colors";
+		outputUnitColors();
 	}
 
 	// verify countries got written
@@ -2040,6 +2048,9 @@ void V2::World::copyModFiles() const
 
 		fs::copy_file(mod + "/common/crime.txt", output + "/common/crime.txt");
 		fs::copy_file(mod + "/common/nationalvalues.txt", output + "/common/nationalvalues.txt");
+
+		//	/battleplans
+		fs::copy(mod + "/battleplans", output + "/battleplans", fs::copy_options::recursive);
 
 		//	/map
 		fs::copy(mod + "/map", output + "/map", fs::copy_options::recursive);
@@ -2562,6 +2573,19 @@ void V2::World::updateCountryDetails()
 	}
 }
 
+void V2::World::importUnitColors()
+{
+	mappers::UnitColors unitColors;
+	const auto& colorsMap = unitColors.getUnitColorsMap();
+	for (const auto& [tag, country]: countries)
+	{
+		if (colorsMap.find(tag) != colorsMap.end())
+		{
+			country->setUnitColors(colorsMap.find(tag)->second);
+		}
+	}
+}
+
 std::vector<std::string> V2::World::getIssues(const std::string& issueCategory)
 {
 	const auto& issuesItr = issues.getCategories().find(issueCategory);
@@ -2634,5 +2658,19 @@ void V2::World::outputTechnologies() const
 			output << technology;
 		}
 		output.close();
+	}
+}
+
+void V2::World::outputUnitColors() const
+{
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/country_colors.txt");
+	if (!output.is_open())
+		throw std::runtime_error("Could not open country_colors.txt for writing");
+	for (const auto& [tag, country]: countries)
+	{
+		if (const auto& colors = country->getUnitColors(); !colors.empty())
+		{
+			output << tag << " " << colors << "\n";
+		}
 	}
 }
