@@ -2030,6 +2030,7 @@ void V2::World::copyModFiles() const
 		LOG(LogLevel::Info) << "<- Copying " + theConfiguration.getVic2ModName() + " files";
 		const auto& mod = theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName();
 		const auto& output = "output/" + theConfiguration.getOutputName();
+		const auto& configurables = "configurables/" + theConfiguration.getVic2ModName();
 
 		// /common
 		fs::copy_file(mod + "/common/goods.txt", output + "/common/goods.txt");
@@ -2052,6 +2053,9 @@ void V2::World::copyModFiles() const
 		fs::copy_file(mod + "/common/static_modifiers.txt", output + "/common/static_modifier.txt");
 		fs::copy_file(mod + "/common/traits.txt", output + "/common/traits.txt");
 		fs::copy_file(mod + "/common/triggered_modifiers.txt", output + "/common/triggered_modifiers.txt");
+
+		fs::remove(output + "/common/religion.txt");
+		fs::copy_file(configurables + "/religion.txt", output + "/common/religion.txt");
 
 		//	/battleplans
 		fs::copy(mod + "/battleplans", output + "/battleplans", fs::copy_options::recursive);
