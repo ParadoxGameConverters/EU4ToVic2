@@ -1,4 +1,5 @@
 #include "PartyTypeMapper.h"
+#include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include <Log.h>
 #include "CommonRegexes.h"
@@ -20,9 +21,12 @@ mappers::PartyTypeMapper::PartyTypeMapper(std::istream& theStream)
 
 mappers::PartyTypeMapper::PartyTypeMapper(const std::string& filename)
 {
-	registerKeys();
-	parseFile(filename);
-	clearRegisteredKeywords();
+	if (commonItems::DoesFileExist(filename))
+	{
+		registerKeys();
+		parseFile(filename);
+		clearRegisteredKeywords();
+	}
 }
 
 void mappers::PartyTypeMapper::registerKeys()

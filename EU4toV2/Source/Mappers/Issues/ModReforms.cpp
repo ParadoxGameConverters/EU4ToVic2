@@ -6,9 +6,12 @@
 
 mappers::ModReforms::ModReforms()
 {
-	registerKeys();
-	parseFile("configurables/" + theConfiguration.getVic2ModName() + "/reforms.txt");
-	clearRegisteredKeywords();
+	if (commonItems::DoesFileExist("configurables/" + theConfiguration.getVic2ModName() + "/reforms.txt"))
+	{
+		registerKeys();
+		parseFile("configurables/" + theConfiguration.getVic2ModName() + "/reforms.txt");
+		clearRegisteredKeywords();
+	}
 }
 
 mappers::ModReforms::ModReforms(std::istream& theStream)

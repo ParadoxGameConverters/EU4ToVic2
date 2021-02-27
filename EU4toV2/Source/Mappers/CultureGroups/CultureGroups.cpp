@@ -29,11 +29,15 @@ void mappers::CultureGroups::initForV2()
 	LOG(LogLevel::Info) << "Parsing V2 Cultures and Culture Groups";
 	registerKeys();
 
-	std::string configFolder = "configurables";
-	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
-		configFolder = "configurables/" + mod;
-
-	parseFile(configFolder + "/culture_definitions.txt");
+	if (const auto& mod = theConfiguration.getVic2ModName();
+		!mod.empty() && commonItems::DoesFileExist("configurables/" + mod + "/culture_definitions.txt"))
+	{
+		parseFile("configurables/" + mod + "/culture_definitions.txt");
+	}
+	else
+	{
+		parseFile("configurables/culture_definitions.txt");
+	}
 	clearRegisteredKeywords();
 }
 

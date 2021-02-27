@@ -1,6 +1,7 @@
 #include "StartingTechMapper.h"
 #include "Configuration.h"
 #include "Log.h"
+#include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "Technologies.h"
 
@@ -13,11 +14,14 @@ mappers::StartingTechMapper::StartingTechMapper()
 	});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
-	std::string configFolder = "configurables";
-	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
-		configFolder = "configurables/" + mod;
-
-	parseFile(configFolder + "/starting_technologies.txt");
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty() && commonItems::DoesFileExist("configurables/" + mod + "/starting_technologies.txt"))
+	{
+		parseFile("configurables/" + mod + "/starting_technologies.txt");
+	}
+	else
+	{
+		parseFile("configurables/starting_technologies.txt");
+	}
 	clearRegisteredKeywords();
 }
 

@@ -7,9 +7,12 @@
 
 mappers::TechYearMapper::TechYearMapper()
 {
-	registerKeys();
-	parseFile("configurables/" + theConfiguration.getVic2ModName() + "/technologies.txt");
-	clearRegisteredKeywords();
+	if (commonItems::DoesFileExist("configurables/" + theConfiguration.getVic2ModName() + "/technologies.txt"))
+	{
+		registerKeys();
+		parseFile("configurables/" + theConfiguration.getVic2ModName() + "/technologies.txt");
+		clearRegisteredKeywords();
+	}
 }
 
 void mappers::TechYearMapper::registerKeys()

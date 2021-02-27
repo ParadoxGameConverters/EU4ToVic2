@@ -1,4 +1,5 @@
 #include "ProvinceMapper.h"
+#include "OSCompatibilityLayer.h"
 #include "Configuration.h"
 #include "GameVersion.h"
 #include "Log.h"
@@ -14,7 +15,8 @@ mappers::ProvinceMapper::ProvinceMapper(): colonialRegionsMapper(std::make_uniqu
 {
 	LOG(LogLevel::Info) << "Parsing province mappings";
 	registerKeys();
-	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+	if (const auto& mod = theConfiguration.getVic2ModName();
+		!mod.empty() && commonItems::DoesFileExist("configurables/" + mod + "/province_mappings.txt"))
 	{
 		parseFile("configurables/" + mod + "/province_mappings.txt");
 	}

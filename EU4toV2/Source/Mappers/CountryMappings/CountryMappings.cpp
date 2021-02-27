@@ -5,6 +5,7 @@
 #include "CultureGroups/CultureGroup.h"
 #include "EU4World/Country/EU4Country.h"
 #include "Log.h"
+#include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "ProvinceMappings/ProvinceMapper.h"
 #include "V2World/Localisation/Localisation.h"
@@ -26,7 +27,8 @@ mappers::CountryMappings::CountryMappings():
 
 	LOG(LogLevel::Info) << "Parsing Country Mapping Rules.";
 	registerKeys();
-	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+	if (const auto& mod = theConfiguration.getVic2ModName();
+		!mod.empty() && commonItems::DoesFileExist("configurables/" + mod + "/country_mappings.txt"))
 	{
 		parseFile("configurables/" + mod + "/country_mappings.txt");
 	}

@@ -595,7 +595,7 @@ void V2::World::importProvinces()
 	const auto provinceFileNames = discoverProvinceFilenames();
 	for (const auto& provinceFileName: provinceFileNames)
 	{
-		if (provinceFileName.find(".txt") == std::string::npos)
+		if (provinceFileName.find(".txt") == std::string::npos || provinceFileName.find("~") != std::string::npos)
 			continue;
 		auto newProvince = std::make_shared<Province>(provinceFileName, climateMapper, terrainDataMapper, provinceNameParser, navalBaseMapper);
 		provinces.insert(std::make_pair(newProvince->getID(), newProvince));
@@ -645,7 +645,8 @@ void V2::World::importDefaultPops()
 	totalWorldPopulation = 0;
 	std::string popsFolder;
 
-	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+	if (const auto& mod = theConfiguration.getVic2ModName();
+		 !mod.empty() && commonItems::DoesFolderExist(theConfiguration.getVic2ModPath() + "/" + mod + "/history/pops/1836.1.1/"))
 	{
 		popsFolder = theConfiguration.getVic2ModPath() + "/" + mod + "/history/pops/1836.1.1/";
 	}
@@ -668,7 +669,8 @@ void V2::World::importPopsFromFile(const std::string& filename)
 	std::list<int> popProvinces;
 	std::string popsFolder;
 
-	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
+	if (const auto& mod = theConfiguration.getVic2ModName();
+		 !mod.empty() && commonItems::DoesFolderExist(theConfiguration.getVic2ModPath() + "/" + mod + "/history/pops/1836.1.1/"))
 	{
 		popsFolder = theConfiguration.getVic2ModPath() + "/" + mod + "/history/pops/1836.1.1/";
 	}
@@ -729,8 +731,14 @@ void V2::World::importPotentialCountries()
 	std::vector<std::string> countriesFiles;
 	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
 	{
-		countriesFiles.push_back(theConfiguration.getVic2ModPath() + "/" + mod  + "/common/countries.txt");
-		countriesFiles.push_back("configurables/" + mod  + "/common/countries.txt");
+		if (commonItems::DoesFileExist(theConfiguration.getVic2ModPath() + "/" + mod  + "/common/countries.txt"))
+		{
+			countriesFiles.push_back(theConfiguration.getVic2ModPath() + "/" + mod  + "/common/countries.txt");
+		}
+		if (commonItems::DoesFileExist("configurables/" + mod  + "/common/countries.txt"))
+		{
+			countriesFiles.push_back("configurables/" + mod  + "/common/countries.txt");
+		}
 	}
 	countriesFiles.push_back("./blankMod/output/common/countries.txt");
 
@@ -778,15 +786,27 @@ void V2::World::importPotentialCountry(const std::string& line, bool dynamicCoun
 
 void V2::World::initializeCultureMappers()
 {
-	std::string configFolder = "configurables";
-	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
-		configFolder = "configurables/" + mod;
+	const auto& mod = theConfiguration.getVic2ModName();
 
 	LOG(LogLevel::Info) << "Parsing culture mappings.";
-	cultureMapper.loadFile(configFolder + "/culture_map.txt");
+	if (!mod.empty() && commonItems::DoesFileExist("configurables/" + mod + "/culture_map.txt"))
+	{
+		cultureMapper.loadFile("configurables/" + mod + "/culture_map.txt");
+	}
+	else
+	{
+		cultureMapper.loadFile("configurables/culture_map.txt");
+	}
 
 	LOG(LogLevel::Info) << "Parsing slave culture mappings.";
-	slaveCultureMapper.loadFile(configFolder + "/culture_map_slaves.txt");
+	if (!mod.empty() && commonItems::DoesFileExist("configurables/" + mod + "/culture_map_slaves.txt"))
+	{
+		slaveCultureMapper.loadFile("configurables/" + mod + "/culture_map_slaves.txt");
+	}
+	else
+	{
+		slaveCultureMapper.loadFile("configurables/culture_map_slaves.txt");
+	}
 
 	cultureGroupsMapper.initForV2();
 }
@@ -1889,14 +1909,14 @@ void V2::World::modifyDefines() const
 	std::ostringstream incomingDefines, incomingBookmarks;
 
 	// Edit starting date in defines + adjust GP count if needed
-	if (const auto& modName = theConfiguration.getVic2ModName(); !modName.empty())
+	if (const auto& mod = theConfiguration.getVic2ModName();
+		 !mod.empty() && commonItems::DoesFileExist("configurables/" + mod + "/common/defines.lua"))
 	{
-		const auto& mod = "configurables/" + modName;
 		const auto& output = "output/" + theConfiguration.getOutputName();
 
 		bool definesRemoved = fs::remove(output + "/common/defines.lua");
 		if (definesRemoved)
-			fs::copy_file(mod + "/common/defines.lua", output + "/common/defines.lua");
+			fs::copy_file("configurables/" + mod + "/common/defines.lua", output + "/common/defines.lua");
 		else
 			throw std::runtime_error("Could not replace defines.lua");
 	}
@@ -2602,6 +2622,10 @@ std::vector<std::string> V2::World::getIssues(const std::string& issueCategory)
 
 void V2::World::identifyReassignedTags()
 {
+	if (!commonItems::DoesFileExist("configurables/" + theConfiguration.getVic2ModName() + "/common/countries.txt"))
+	{
+		return;
+	}
 	std::ifstream v2CountriesInput;
 	
 	v2CountriesInput.open("configurables/" + theConfiguration.getVic2ModName() + "/common/countries.txt");

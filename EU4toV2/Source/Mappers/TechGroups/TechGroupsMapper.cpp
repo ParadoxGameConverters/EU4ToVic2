@@ -1,5 +1,6 @@
 #include "TechGroupsMapper.h"
 #include "Log.h"
+#include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "TechGroups.h"
 #include "CommonRegexes.h"
@@ -17,16 +18,20 @@ mappers::TechGroupsMapper::TechGroupsMapper()
 		{
 			const auto& culWestItr = cultureWesternization.find(culture);
 			if (culWestItr != cultureWesternization.end())
-				Log(LogLevel::Warning) << "Culture: " << culture << " already has a westernization score of " << culWestItr->second << "! Overriding with " << techGroups.getWesternization() << ".";
+				Log(LogLevel::Warning) << "Culture: " << culture << " already has a westernization score of " << culWestItr->second << "! Overriding with "
+											  << techGroups.getWesternization() << ".";
 			cultureWesternization[culture] = techGroups.getWesternization();
 		}
 	});
 
-	std::string configFolder = "configurables";
-	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty())
-		configFolder = "configurables/" + mod;
-
-	parseFile(configFolder + "/tech_groups.txt");
+	if (const auto& mod = theConfiguration.getVic2ModName(); !mod.empty() && commonItems::DoesFileExist("configurables/" + mod + "/tech_groups.txt"))
+	{
+		parseFile("configurables/" + mod + "/tech_groups.txt");
+	}
+	else
+	{
+		parseFile("configurables/tech_groups.txt");
+	}
 	clearRegisteredKeywords();
 }
 
