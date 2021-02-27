@@ -2048,6 +2048,10 @@ void V2::World::copyModFiles() const
 
 		fs::copy_file(mod + "/common/crime.txt", output + "/common/crime.txt");
 		fs::copy_file(mod + "/common/nationalvalues.txt", output + "/common/nationalvalues.txt");
+		fs::copy_file(mod + "/common/on_actions.txt", output + "/common/on_actions.txt");
+		fs::copy_file(mod + "/common/static_modifiers.txt", output + "/common/static_modifier.txt");
+		fs::copy_file(mod + "/common/traits.txt", output + "/common/traits.txt");
+		fs::copy_file(mod + "/common/triggered_modifiers.txt", output + "/common/triggered_modifiers.txt");
 
 		//	/battleplans
 		fs::copy(mod + "/battleplans", output + "/battleplans", fs::copy_options::recursive);
