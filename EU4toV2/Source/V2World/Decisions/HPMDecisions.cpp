@@ -6,7 +6,7 @@
 
 void V2::World::outputGTFO(std::map<std::string, std::shared_ptr<V2::Country>> countries) const
 {
-	const std::set<std::string> skip = {"AAA", "REB", "ALL", "CAT", "NAP", "YUE", "HRE"};
+	const std::set<std::string> skip = {"AAA", "REB", "ALL", "CAT", "NAP", "YUE", "HRE", "MIN", "YAO"};
 
 	std::ofstream outLoc("output/" + theConfiguration.getOutputName() + "/localisation/02_NNM_gtfo.csv");
 	if (!outLoc.is_open())
@@ -108,7 +108,7 @@ void V2::World::outputGTFO(std::map<std::string, std::shared_ptr<V2::Country>> c
 
 void V2::World::outputReturnCores(std::map<std::string, std::shared_ptr<V2::Country>> countries) const
 {
-	const std::set<std::string> skip = {"AAA", "REB", "ALL", "CAT", "NAP", "YUE", "HRE"};
+	const std::set<std::string> skip = {"AAA", "REB", "ALL", "CAT", "NAP", "YUE", "HRE", "MIN", "YAO"};
 
 	std::ofstream outLoc("output/" + theConfiguration.getOutputName() + "/localisation/00_HPM_return_cores.csv");
 	if (!outLoc.is_open())
