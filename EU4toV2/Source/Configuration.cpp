@@ -105,6 +105,10 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 		convertAll = convertAllString == "yes";
 		LOG(LogLevel::Info) << "Convert All: " << convertAllString;
 	});
+	registerKeyword("vic2_mod", [this](std::istream& theStream) {
+		vic2Mod = commonItems::getString(theStream);
+		LOG(LogLevel::Info) << "Vic2 Mod: " << vic2Mod;
+	});
 	registerKeyword("output_name", [this](std::istream& theStream) {
 		incomingOutputName = commonItems::getString(theStream);
 		LOG(LogLevel::Info) << "Output Name: " << incomingOutputName;
@@ -118,6 +122,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 	if (!vic2Mod.empty())
 	{
 		Vic2Path = Vic2ModPath + "/" + vic2Mod;
+		verifyVic2Mod(Vic2Path, DoesFolderExist);
 		Vic2DocumentsPath += "/" + vic2Mod;
 	}
 	Log(LogLevel::Progress) << "3 %";
@@ -152,6 +157,12 @@ void Configuration::verifyVic2ModPath(const std::string& path, bool (*DoesFolder
 	if (!DoesFolderExist(path))
 		throw std::runtime_error(path + " does not exist!");
 	LOG(LogLevel::Info) << "\tVictoria 2 mod directory is " << path;
+}
+
+void Configuration::verifyVic2Mod(const std::string& path, bool (*DoesFolderExist)(const std::string& path2))
+{
+	if (!DoesFolderExist(path))
+		throw std::runtime_error(path + " does not exist!");
 }
 
 void Configuration::setOutputName()

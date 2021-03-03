@@ -226,6 +226,16 @@ option = {
 	}
 }
 option = {
+	name = vic2_mod
+	displayName = V2MOD
+	tooltip = V2MODTIP
+	textSelector = {	
+		value = ""
+		editable = true
+		tooltip = V2MODTIP2
+	}
+}
+option = {
 	name = output_name
 	displayName = MODNAME
 	tooltip = MODNAMETIP

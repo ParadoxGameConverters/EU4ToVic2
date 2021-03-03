@@ -77,6 +77,8 @@ class Configuration: commonItems::parser
 		static void verifyVic2Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
 		static void verifyVic2DocumentsPath(const std::string& path, bool (*DoesFolderExist)(const std::string& path2));
 		static void verifyVic2ModPath(const std::string& path, bool (*DoesFolderExist)(const std::string& path2));
+		static void verifyVic2Mod(const std::string& path, bool (*DoesFolderExist)(const std::string& path2));
+
 		void setOutputName();
 
 		// options from configuration.txt
@@ -113,7 +115,7 @@ class Configuration: commonItems::parser
 		std::string incomingOutputName; // from configuration file
 		std::string actualName; // Not normalized like outputName
 		std::vector<std::string> EU4Mods;
-		std::string vic2Mod = "HPM";
+		std::string vic2Mod;
 };
 
 extern Configuration theConfiguration;

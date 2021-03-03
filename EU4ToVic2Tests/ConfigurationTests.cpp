@@ -52,6 +52,14 @@ bool fakeDoesFolderExist(const std::string& folder)
 	{
 		return true;
 	}
+	else if (folder == "C:\\Vic2ModPath")
+	{
+		return true;
+	}
+	else if (folder == "C:\\Vic2ModPath/Mod")
+	{
+		return true;
+	}
 	else
 	{
 		return false;
@@ -264,6 +272,86 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2PathCanBeSet)
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
 	ASSERT_EQ(testConfiguration.getVic2Path(), "C:\\Vic2Path");
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, Vic2ModPathDefaultsBlank)
+{
+	Configuration testConfiguration;
+	std::stringstream input("");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getVic2ModPath(), "");
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, Vic2ModPathCanBeSet)
+{
+	Configuration testConfiguration;
+	std::stringstream input("targetGameModPath = \"C:\\Vic2ModPath\"");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getVic2ModPath(), "C:\\Vic2ModPath");
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, VicModPathThatDoesntExistFails)
+{
+	Configuration testConfiguration;
+	std::stringstream input("targetGameModPath = \"C:\\FakeVic2ModPath\"");
+
+	try
+	{
+		testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+		FAIL();
+	}
+	catch( const std::runtime_error& e )
+	{
+	   // and this tests that it has the correct message
+	   ASSERT_STREQ( "C:\\FakeVic2ModPath does not exist!", e.what() );
+	}
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, Vic2ModDefaultsBlank)
+{
+	Configuration testConfiguration;
+	std::stringstream input("");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getVic2ModName(), "");
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, Vic2ModCanBeSet)
+{
+	Configuration testConfiguration;
+	std::stringstream input;
+	input << "targetGameModPath = \"C:\\Vic2ModPath\"";
+	input << "vic2_mod = \"Mod\"";
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ(testConfiguration.getVic2ModName(), "Mod");
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, VicModThatDoesntExistFails)
+{
+	Configuration testConfiguration;
+	std::stringstream input;
+	input << "targetGameModPath = \"C:\\Vic2ModPath\"";
+	input << "vic2_mod = \"FakeMod\"";
+
+	try
+	{
+		testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+		FAIL();
+	}
+	catch( const std::runtime_error& e )
+	{
+	   // and this tests that it has the correct message
+	   ASSERT_STREQ( "C:\\Vic2ModPath/FakeMod does not exist!", e.what() );
+	}
 }
 
 
