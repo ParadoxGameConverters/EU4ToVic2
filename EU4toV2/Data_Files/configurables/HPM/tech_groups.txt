@@ -37,7 +37,7 @@ western = {
 	# Finnish	
 	usmailmian lounast mustvalge finnish ugrian
 	# West Slavic
-	novysvet jizni hnedy nowyswiat poludniowy czarny polish slovak czech
+	novysvet jizni hnedy nowyswiat poludniowy czarny polish slovak czech sorbian oldpommeranian
 	# Odd
 	ostrogothic
 	# Slave
