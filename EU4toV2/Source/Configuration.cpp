@@ -140,7 +140,6 @@ void Configuration::setOutputName()
 {
 	if (incomingOutputName.empty())
 	{
-		Log(LogLevel::Debug) << "incoming " << incomingOutputName;
 		outputName = trimPath(EU4SaveGamePath);
 	}
 	else
