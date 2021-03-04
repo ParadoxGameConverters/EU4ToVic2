@@ -100,7 +100,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 		LOG(LogLevel::Info) << "Convert All: " << convertAllString;
 	});
 	registerKeyword("output_name", [this](std::istream& theStream) {
-		const auto incomingOutputName = commonItems::getString(theStream);
+		incomingOutputName = commonItems::getString(theStream);
 		LOG(LogLevel::Info) << "Output Name: " << incomingOutputName;
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
