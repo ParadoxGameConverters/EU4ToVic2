@@ -42,7 +42,7 @@ void V2::Events::updateEvents(const std::map<int, int>& stateMap, const std::map
 	for (auto& event: events)
 	{
 		std::regex state("([A-Z]{3}_)([0-9]+)");
-		std::regex prov("(province_id.*)([0-9]+)");
+		std::regex prov("(province_id\\s*=\\s*)([0-9]+)");
 		std::regex provScope("(\\s)([0-9]+)(\\s=\\s\\{)");
 
 		updateIDs(event, state, 2, stateMap);
@@ -58,22 +58,32 @@ void V2::Events::updateIDs(std::string& theEvent, std::regex expression, int cap
 	std::sregex_iterator matchItr(theEvent.begin(), theEvent.end(), expression);
 	while (matchItr != end)
 	{
-		if (matchItr->size() > 0)
+		if (matchItr->size() > 0) //or is it >= captureGroup?
 		{
-			std::string newStr;
-			for (int i = 1; i < matchItr->size(); ++i)
-			{
-				if (i != captureGroup)
-				{
-					newStr += (*matchItr)[i].str();
-				}
-				else
-				{
-					newStr += std::to_string(map.find(std::stoi((*matchItr)[i].str()))->second);
-				}
-			}
 			const auto& matchedStr = (*matchItr)[0].str();
-			theEvent.replace(theEvent.find(matchedStr), matchedStr.length(), newStr);
+			if (const auto& origID = std::stoi((*matchItr)[captureGroup].str());
+				map.find(origID)->first != map.find(origID)->second)
+			{
+				Log(LogLevel::Debug) << "Replacing " << matchedStr;
+				const auto& newID = std::to_string(map.find(origID)->second);
+				std::string newStr;
+
+				for (int i = 1; i < matchItr->size(); ++i)
+				{
+					if (i == captureGroup)
+					{
+						Log(LogLevel::Debug) << "-> " << newID;
+						newStr += newID;
+					}
+					else
+					{
+						Log(LogLevel::Debug) << "-> " << (*matchItr)[i].str();
+						newStr += (*matchItr)[i].str();
+					}
+				}
+				Log(LogLevel::Debug) << " with " << newStr;
+				theEvent.replace(theEvent.find(matchedStr), matchedStr.length(), newStr);
+			}
 		}
 		++matchItr;
 	}

@@ -2165,14 +2165,14 @@ void V2::World::convertEvents()
 
 	LOG(LogLevel::Debug) << "Loading event files";
 	std::set<std::string> evtFiles;
-	if (commonItems::DoesFolderExist("blankMod/output/events"))
+	for (const auto& eventFile: commonItems::GetAllFilesInFolder("blankMod/output/events"))
 	{
-		evtFiles = commonItems::GetAllFilesInFolder("blankMod/output/events");
+		evtFiles.insert("events/" + eventFile);
 	}
 	for (const auto& evtFile: evtFiles)
 	{
 		LOG(LogLevel::Debug) << " -> " << evtFile;
-		Events eventsFile("blankMod/output/events/" + evtFile);
+		Events eventsFile("blankMod/output/" + evtFile);
 		eventsFile.updateEvents(stateMap, provinceMap);
 		for (const auto& theEvents: eventsFile.getEvents())
 		{
@@ -2365,7 +2365,7 @@ void V2::World::outEvents() const
 {
 	for (const auto& event: events)
 	{
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/events/" + event.first);
+		std::ofstream output("output/" + theConfiguration.getOutputName() + "/" + event.first);
 		if (!output.is_open())
 			Log(LogLevel::Warning) << "Could not create " + event.first;
 		output << event.second;
