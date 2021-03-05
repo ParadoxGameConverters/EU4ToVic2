@@ -147,6 +147,8 @@ class World
 	void sortStateMap(std::map<int, std::map<int, int>>& freqMap, std::vector<int>& sortedStates);
 	void updateStateMap(std::map<int, std::map<int, int>>& freqMap, int modStateID);
 	void addProvinceMapping(int origID, int modID) { provinceMap.insert(std::make_pair(origID, modID)); }
+	void copyFolder(const std::string& folder, const std::string& src, const std::string& dest) const;
+	void mergeFolder(const std::string& folder, const std::string& src, const std::string& dest) const;
 	void copyModFiles() const;
 	void outputStateMap(std::string srcFile, std::string outFile) const;
 	void outStateMap(std::string outFile) const;

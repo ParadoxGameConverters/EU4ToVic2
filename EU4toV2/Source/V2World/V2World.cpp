@@ -2043,52 +2043,56 @@ std::string V2::World::clipCountryFileName(const std::string& incoming) const
 }
 
 
+void V2::World::copyFolder(const std::string& folder, const std::string& src, const std::string& dest) const
+{
+	if (commonItems::DoesFolderExist(src + "/" + folder))
+	{
+		fs::copy(src + "/" + folder, dest + "/" + folder, fs::copy_options::recursive);
+	}
+}
+
+void V2::World::mergeFolder(const std::string& folder, const std::string& src, const std::string& dest) const
+{
+	const auto& files = commonItems::GetAllFilesInFolder(src + "/" + folder);
+	for (const auto& file: files)
+	{
+		fs::copy_file(src + "/" + folder + "/" + file, dest + "/" + folder + "/" + file, fs::copy_options::recursive);
+	}
+}
+
 void V2::World::copyModFiles() const
 {
 	if (!theConfiguration.getVic2ModName().empty())
 	{
 		LOG(LogLevel::Info) << "<- Copying " + theConfiguration.getVic2ModName() + " files";
 		const auto& mod = theConfiguration.getVic2ModPath() + "/" + theConfiguration.getVic2ModName();
-		const auto& output = "output/" + theConfiguration.getOutputName();
 		const auto& configurables = "configurables/" + theConfiguration.getVic2ModName();
+		const auto& output = "output/" + theConfiguration.getOutputName();
 
-		// /common
-		fs::copy_file(mod + "/common/goods.txt", output + "/common/goods.txt");
-		fs::copy_file(mod + "/common/production_types.txt", output + "/common/production_types.txt");
-		fs::copy_file(mod + "/common/pop_types.txt", output + "/common/pop_types.txt");
-		fs::copy_file(mod + "/common/technology.txt", output + "/common/technology.txt");
-		fs::copy_file(mod + "/common/event_modifiers.txt", output + "/common/event_modifiers.txt");
-		fs::copy_file(mod + "/common/issues.txt", output + "/common/issues.txt");
-		fs::copy_file(mod + "/common/buildings.txt", output + "/common/buildings.txt");
-		fs::copy_file(mod + "/common/cb_types.txt", output + "/common/cb_types.txt");
-		fs::copy_file(mod + "/common/ideologies.txt", output + "/common/ideologies.txt");
-		fs::copy_file(mod + "/common/national_focus.txt", output + "/common/national_focus.txt");
-
-		fs::remove(output + "/common/rebel_types.txt");
-		fs::copy_file(mod + "/common/rebel_types.txt", output + "/common/rebel_types.txt");
-
-		fs::copy_file(mod + "/common/crime.txt", output + "/common/crime.txt");
-		fs::copy_file(mod + "/common/nationalvalues.txt", output + "/common/nationalvalues.txt");
-		fs::copy_file(mod + "/common/on_actions.txt", output + "/common/on_actions.txt");
-		fs::copy_file(mod + "/common/static_modifiers.txt", output + "/common/static_modifier.txt");
-		fs::copy_file(mod + "/common/traits.txt", output + "/common/traits.txt");
-		fs::copy_file(mod + "/common/triggered_modifiers.txt", output + "/common/triggered_modifiers.txt");
-
-		fs::remove(output + "/common/religion.txt");
-		fs::copy_file(configurables + "/religion.txt", output + "/common/religion.txt");
-
-		//	/battleplans
-		fs::copy(mod + "/battleplans", output + "/battleplans", fs::copy_options::recursive);
-
-		//	/map
-		fs::copy(mod + "/map", output + "/map", fs::copy_options::recursive);
-
-		//	/gfx/interface
-		const auto& leaders = commonItems::GetAllFilesInFolder(mod + "/gfx/interface/leaders");
-		for (const auto& leader: leaders)
+		const auto& commons = commonItems::GetAllFilesInFolder(mod + "/common");
+		for (const auto& file: commons)
 		{
-			fs::copy_file(mod + "/gfx/interface/leaders/" + leader, output + "/gfx/interface/leaders/" + leader, fs::copy_options::recursive);
+			if (file == "rebel_types.txt")
+			{
+				fs::remove(output + "/common/rebel_types.txt");
+			}
+			else if (commonItems::DoesFileExist(output + "/common/" + file))
+			{
+				continue;
+			}
+			fs::copy_file(mod + "/common/" + file, output + "/common/" + file);
 		}
+
+		if (commonItems::DoesFileExist(configurables + "/religion.txt"))
+		{
+			fs::remove(output + "/common/religion.txt");
+			fs::copy_file(configurables + "/religion.txt", output + "/common/religion.txt");
+		}
+
+		copyFolder("battleplans", mod, output);
+		copyFolder("map", mod, output);
+
+		mergeFolder("gfx/interface/leaders", mod, output);
 		const auto& gfxInterfaceFiles = commonItems::GetAllFilesInFolder(mod + "/gfx/interface");
 		for (const auto& file: gfxInterfaceFiles)
 		{
@@ -2098,13 +2102,9 @@ void V2::World::copyModFiles() const
 			}
 		}
 
-		// gfx/anims
-		fs::copy(mod + "/gfx/anims", output + "/gfx/anims", fs::copy_options::recursive);
+		copyFolder("gfx/anims", mod, output);
+		copyFolder("gfx/pictures/tech", mod, output);
 
-		// gfx/pictures
-		fs::copy(mod + "/gfx/pictures/tech", output + "/gfx/pictures/tech", fs::copy_options::recursive);
-
-		//	/interface
 		const auto& interfaceFiles = commonItems::GetAllFilesInFolder(mod + "/interface");
 		for (const auto& file: interfaceFiles)
 		{
@@ -2114,61 +2114,39 @@ void V2::World::copyModFiles() const
 			}
 		}
 
-		// inventions
-		fs::copy(mod + "/inventions", output + "/inventions", fs::copy_options::recursive);
+		copyFolder("inventions", mod, output);
+		mergeFolder("localisation", mod, output);
 
-		// localisation
-		const auto& localisationFiles = commonItems::GetAllFilesInFolder(mod + "/localisation");
-		for (const auto& file: localisationFiles)
-		{
-			fs::copy_file(mod + "/localisation/" + file, output + "/localisation/" + file);
-		}
-
-		// decisions
 		const auto& converterDecisions = commonItems::GetAllFilesInFolder(output + "/decisions");
 		const auto& decisionsFiles = commonItems::GetAllFilesInFolder(mod + "/decisions");
 		for (const auto& file: decisionsFiles)
 		{
-			//if(converterDecisions.find(file) != converterDecisions.end())
-			//{
-				fs::remove(output + "/decisions/" + file);
-			//}
+			fs::remove(output + "/decisions/" + file);
 			fs::copy_file(mod + "/decisions/" + file, output + "/decisions/" + file);
 		}
 		const auto& configurablesDecisions = commonItems::GetAllFilesInFolder("configurables/" + theConfiguration.getVic2ModName() + "/decisions");
 		for (const auto& file: configurablesDecisions)
 		{
-			//if (decisionsFiles.find(file) != decisionsFiles.end())
-			//{
-				fs::remove(output + "/decisions/" + file);
-			//}
+			fs::remove(output + "/decisions/" + file);
 			fs::copy_file("configurables/" + theConfiguration.getVic2ModName() + "/decisions/" + file,
 							output + "/decisions/" + file);
 		}
 
-		// events
 		const auto& converterEvents = commonItems::GetAllFilesInFolder(output + "/events");
 		const auto& eventsFiles = commonItems::GetAllFilesInFolder(mod + "/events");
 		for (const auto& file: eventsFiles)
 		{
-			//if(converterEvents.find(file) != converterEvents.end())
-			//{
-				fs::remove(output + "/events/" + file);
-			//}
+			fs::remove(output + "/events/" + file);
 			fs::copy_file(mod + "/events/" + file, output + "/events/" + file);
 		}
 		const auto& configurablesEvents = commonItems::GetAllFilesInFolder("configurables/" + theConfiguration.getVic2ModName() + "/events");
 		for (const auto& file: configurablesEvents)
 		{
-			//if (eventsFiles.find(file) != eventsFiles.end())
-			//{
-				fs::remove(output + "/events/" + file);
-			//}
+			fs::remove(output + "/events/" + file);
 			fs::copy_file("configurables/" + theConfiguration.getVic2ModName() + "/events/" + file,
 							output + "/events/" + file);
 		}
 
-		// poptypes
 		const auto& poptypesFiles = commonItems::GetAllFilesInFolder(mod + "/poptypes");
 		commonItems::TryCreateFolder(output + "/poptypes");
 		for (const auto& file: poptypesFiles)
