@@ -37,7 +37,7 @@ TEST(Mappers_StateMapperTests, getNoProvincesForNonexistentState)
 
 TEST(Mappers_StateMapperTests, getOnlySelfForOneProvinceState)
 {
-	std::stringstream input("STATE_1 = { 1 }");
+	std::stringstream input("ENG_1 = { 1 }");
 	mappers::StateMapper theStateMapper(input);
 
 	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 1);
@@ -46,7 +46,7 @@ TEST(Mappers_StateMapperTests, getOnlySelfForOneProvinceState)
 
 TEST(Mappers_StateMapperTests, getAllProvincesForMultiProvinceState)
 {
-	std::stringstream input("STATE_1 = { 1 2 3 }");
+	std::stringstream input("ENG_1 = { 1 2 3 }");
 	mappers::StateMapper theStateMapper(input);
 
 	ASSERT_EQ(theStateMapper.getAllProvincesInState(1).size(), 3);

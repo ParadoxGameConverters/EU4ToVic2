@@ -448,12 +448,6 @@
     <ClCompile Include="Source\V2World\Output\outHistory.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTech.cpp">
-      <Filter>Mappers\StartingTechMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTechMapper.cpp">
-      <Filter>Mappers\StartingTechMapper</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.cpp">
       <Filter>Mappers\StartingInventionMapper</Filter>
     </ClCompile>
@@ -603,6 +597,9 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\UnitColors\UnitColors.cpp">
       <Filter>Mappers\UnitColors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\State\StateNameParser.cpp">
+      <Filter>Vic2World\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1010,12 +1007,6 @@
     <ClInclude Include="Source\V2World\War\War.h">
       <Filter>Vic2World\War</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTech.h">
-      <Filter>Mappers\StartingTechMapper</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTechMapper.h">
-      <Filter>Mappers\StartingTechMapper</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.h">
       <Filter>Mappers\StartingInventionMapper</Filter>
     </ClInclude>
@@ -1162,6 +1153,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\UnitColors\UnitColors.h">
       <Filter>Mappers\UnitColors</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\State\StateNameParser.h">
+      <Filter>Vic2World\State</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

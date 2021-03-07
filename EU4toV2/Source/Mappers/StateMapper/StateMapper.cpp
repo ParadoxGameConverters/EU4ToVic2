@@ -40,23 +40,26 @@ mappers::StateMapper::StateMapper(const std::string& filename)
 
 void mappers::StateMapper::registerKeys()
 {
-	registerRegex("[a-zA-Z0-9_]+", [this](const std::string& id, std::istream& theStream) 
+	registerRegex("[A-Z]{3}_[0-9]+", [this](const std::string& id, std::istream& theStream) 
 		{
 			const commonItems::intList provinceList(theStream);
-
-			std::regex stateNum("([A-Z]{3}_)([0-9]+)");
-			std::smatch sm;
-			std::regex_search(id, sm, stateNum);
-			const auto& stateID = std::stoi(sm[2].str());
 
 			std::set<int> provinces;
 			for (auto province : provinceList.getInts()) provinces.insert(province);
 			for (auto province : provinces)
 			{
 				stateProvincesMap.insert(std::make_pair(province, provinces));
-				stateMap.insert(std::make_pair(stateID, provinces));
 			}
+			stateMap.insert(std::make_pair(id, provinces));
 		});
+}
+
+int mappers::StateMapper::getIntFromStateString(const std::string& stateString) const
+{
+	std::regex stateNum("([A-Z]{3}_)([0-9]+)");
+	std::smatch sm;
+	std::regex_search(stateString, sm, stateNum);
+	return std::stoi(sm[2].str());
 }
 
 std::set<int> mappers::StateMapper::getAllProvincesInState(const int province) const
