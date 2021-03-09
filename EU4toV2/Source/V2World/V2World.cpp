@@ -151,11 +151,11 @@ V2::World::World(const EU4::World& sourceWorld,
 	{
 		identifyReassignedTags();
 
-		LOG(LogLevel::Info) << "Converting events";
-		convertEvents();
+		LOG(LogLevel::Info) << "-> Converting province and state IDs";
+		convertIds();
 		Log(LogLevel::Progress) << "72 %";
 
-		LOG(LogLevel::Info) << "-> Update country details";
+		LOG(LogLevel::Info) << "-> Updating country details";
 		updateCountryDetails();
 		Log(LogLevel::Progress) << "73 %";
 
@@ -2157,31 +2157,31 @@ void V2::World::copyModFiles() const
 	}
 }
 
-void V2::World::convertEvents()
+void V2::World::convertIds()
 {
 	IdConverter idConverter(vanillaWorld.getProvinces(), provinceNameParser.getProvinceNames());
 	const auto& provinceMap = idConverter.getProvinceMap();
 	const auto& stateMap = idConverter.getStateMap();
 
-	LOG(LogLevel::Debug) << "Loading event files";
-	std::set<std::string> evtFiles;
+	LOG(LogLevel::Info) << "-> Loading Converter events and decisions";
+	std::set<std::string> files;
 	for (const auto& eventFile: commonItems::GetAllFilesInFolder("blankMod/output/events"))
 	{
-		evtFiles.insert("events/" + eventFile);
+		files.insert("events/" + eventFile);
 	}
 	for (const auto& decisionFile: commonItems::GetAllFilesInFolder("blankMod/output/decisions"))
 	{
-		evtFiles.insert("decisions/" + decisionFile);
+		files.insert("decisions/" + decisionFile);
 	}
 
-	for (const auto& evtFile: evtFiles)
+	Log(LogLevel::Info) << "\tConverting IDs";
+	for (const auto& file: files)
 	{
-		LOG(LogLevel::Debug) << " -> " << evtFile;
-		Events eventsFile("blankMod/output/" + evtFile);
+		Events eventsFile("blankMod/output/" + file);
 		eventsFile.updateEvents(stateMap, provinceMap);
 		for (const auto& theEvents: eventsFile.getEvents())
 		{
-			events.insert(make_pair(evtFile, theEvents));
+			events.insert(make_pair(file, theEvents));
 		}
 	}
 }

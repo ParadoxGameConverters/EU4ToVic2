@@ -64,7 +64,6 @@ void V2::Events::updateStateIDs(std::string& theEvent, std::regex expression, st
 			if (std::string newID; map.contains(matchedStr) && matchedStr != map.at(matchedStr))
 			{
 				newID = map.at(matchedStr);
-				Log(LogLevel::Debug) << "Replacing " << matchedStr << " with " << newID;
 				theEvent.replace(theEvent.find(matchedStr), matchedStr.length(), newID);
 			}
 		}
@@ -85,7 +84,6 @@ void V2::Events::updateIDs(std::string& theEvent, std::regex expression, int cap
 			if (const auto& origID = std::stoi((*matchItr)[captureGroup].str());
 				map.contains(origID) && origID != map.at(origID))
 			{
-				Log(LogLevel::Debug) << "Replacing " << matchedStr;
 				const auto& newID = std::to_string(map.at(origID));
 				std::string newStr;
 
@@ -93,16 +91,13 @@ void V2::Events::updateIDs(std::string& theEvent, std::regex expression, int cap
 				{
 					if (i == captureGroup)
 					{
-						Log(LogLevel::Debug) << "-> " << newID;
 						newStr += newID;
 					}
 					else
 					{
-						Log(LogLevel::Debug) << "-> " << (*matchItr)[i].str();
 						newStr += (*matchItr)[i].str();
 					}
 				}
-				Log(LogLevel::Debug) << " with " << newStr;
 				theEvent.replace(theEvent.find(matchedStr), matchedStr.length(), newStr);
 			}
 		}

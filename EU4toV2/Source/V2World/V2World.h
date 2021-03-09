@@ -88,12 +88,10 @@ class World
 	static std::optional<std::string> determineProvinceControllership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld);
 	std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, const EU4::Country& sourceCountry);
 	static std::set<std::string> discoverProvinceFilenames();
-	static std::set<std::string> discoverModProvinceFilenames();
 
 	void dropStates(const mappers::TechGroupsMapper& techGroupsMapper);
 	void dropCores();
 	void importProvinces();
-	void importModProvinces();
 	void shuffleRgos();
 	void importDefaultPops();
 	void importPopsFromFile(const std::string& filename);
@@ -142,7 +140,7 @@ class World
 	void mergeFolder(const std::string& folder, const std::string& src, const std::string& dest) const;
 	void copyModFiles() const;
 	void outEvents() const;
-	void convertEvents();
+	void convertIds();
 	void updateCountryDetails();
 	void importUnitColors();
 	std::vector<std::string> getIssues(const std::string& issueCategory);
