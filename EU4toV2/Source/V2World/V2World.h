@@ -75,8 +75,6 @@ class World
 	std::vector<War> wars;
 	std::vector<std::pair<std::string, EU4::HistoricalEntry>> historicalData; // HoI4 export dynasty+rulers
 	std::set<std::string> neoCultureLocalizations;									  // raw strings for output.
-	std::map<std::string, std::string> stateMap;
-	std::map<int, int> provinceMap;
 	std::vector<std::string> reassignedTags;
 
 	[[nodiscard]] std::optional<std::string> determineProvinceOwnership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
@@ -85,8 +83,6 @@ class World
 	[[nodiscard]] unsigned int countCivilizedNations() const;
 	[[nodiscard]] std::shared_ptr<Country> getHreEmperor() const;
 	[[nodiscard]] std::string clipCountryFileName(const std::string& incoming) const;
-	[[nodiscard]] const auto& getStateMap() const { return stateMap; }
-	[[nodiscard]] const auto& getProvinceMap() const { return provinceMap; }
 	[[nodiscard]] const auto& getModReforms() const { return modReforms; }
 
 	static std::optional<std::string> determineProvinceControllership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld);
@@ -142,34 +138,11 @@ class World
 	void convertCountryFlags();
 	void updateDeadNations();
 
-	void addStateMapping(std::string origID, std::string modID) { stateMap.insert(std::make_pair(origID, modID)); }
-	std::string findBestMatch(const std::pair<std::string, std::map<std::string, int>>& state);
-	void sortStateMap(std::map<std::string, std::map<std::string, int>>& freqMap, std::vector<std::string>& sortedStates);
-	void updateStateMap(std::map<std::string, std::map<std::string, int>>& freqMap, std::string modStateID);
-	void addProvinceMapping(int origID, int modID) { provinceMap.insert(std::make_pair(origID, modID)); }
 	void copyFolder(const std::string& folder, const std::string& src, const std::string& dest) const;
 	void mergeFolder(const std::string& folder, const std::string& src, const std::string& dest) const;
 	void copyModFiles() const;
-	void outputStateMap(std::string srcFile, std::string outFile) const;
-	void outStateMap(std::string outFile) const;
-	void outProvinceMap(std::string outFile) const;
 	void outEvents() const;
 	void convertEvents();
-	void drawProvinceMap();
-	void drawStateMap();
-	bool verifyMap(std::map<int, int> provinceMap) const;
-	bool verifyMap(std::map<std::string, std::string> stateMap) const;
-	void mapUnlocalized(const std::vector<int>& vanillaProvs,
-	 std::map<int, std::string> locProvs,
-	 std::ofstream& output);
-	void mapUnchanged(const std::vector<int>& vanillaProvs,
-	 const mappers::ProvinceMapper& vanillaMapper,
-	 const mappers::ProvinceMapper& modMapper,
-	 std::ofstream& output);
-	void mapLeftovers(const std::vector<int>& vanillaProvs,
-	 const mappers::ProvinceMapper& vanillaMapper,
-	 const mappers::ProvinceMapper& modMapper,
-	 std::ofstream& output);
 	void updateCountryDetails();
 	void importUnitColors();
 	std::vector<std::string> getIssues(const std::string& issueCategory);
@@ -180,7 +153,6 @@ class World
 	void outputReturnCores(std::map<std::string, std::shared_ptr<V2::Country>> countries) const;
 	void outputTechnologies() const;
 	void outputUnitColors() const;
-	std::string getModStateId(int province, std::ofstream& output);
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
