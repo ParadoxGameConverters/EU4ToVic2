@@ -43,8 +43,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 		LOG(LogLevel::Info) << "Vic2 documents path: " << Vic2DocumentsPath;
 	});
 	registerKeyword("targetGameModPath", [this, DoesFolderExist](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString path(theStream);
-		Vic2ModPath = path.getString();
+		Vic2ModPath = commonItems::getString(theStream);
 		verifyVic2ModPath(Vic2ModPath, DoesFolderExist);
 	});
 	registerKeyword("max_literacy", [this](std::istream& theStream) {

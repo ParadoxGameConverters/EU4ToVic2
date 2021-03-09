@@ -65,7 +65,7 @@ void V2::World::outputGTFO(std::map<std::string, std::shared_ptr<V2::Country>> c
 
 	for (const auto& country: countries)
 	{
-		if (skip.count(country.first))
+		if (skip.contains(country.first))
 			continue;
 		const auto& commonCountryFile = country.second->getCommonCountryFile();
 		const auto& dotPos = commonCountryFile.find_first_of('.');
@@ -172,7 +172,7 @@ void V2::World::outputReturnCores(std::map<std::string, std::shared_ptr<V2::Coun
 
 	for (const auto& country: countries)
 	{
-		if (skip.count(country.first))
+		if (skip.contains(country.first))
 			continue;
 		const auto& commonCountryFile = country.second->getCommonCountryFile();
 		const auto& dotPos = commonCountryFile.find_first_of('.');

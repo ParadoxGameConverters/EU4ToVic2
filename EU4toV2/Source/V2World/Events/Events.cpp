@@ -10,7 +10,7 @@ V2::Events::Events()
 	registerKeys();
 }
 
-V2::Events::Events(const std::string filename)
+V2::Events::Events(const std::string& filename)
 {
 	std::ifstream theFile(filename);
 	std::stringstream buffer;
@@ -19,7 +19,7 @@ V2::Events::Events(const std::string filename)
 	events.push_back(buffer.str());
 }
 
-V2::Events::Events(const std::set<std::string> evtFiles)
+V2::Events::Events(const std::set<std::string>& evtFiles)
 {
 	registerKeys();
 	for (const auto& evtFile: evtFiles)

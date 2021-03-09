@@ -27,7 +27,7 @@ mappers::StartingTechMapper::StartingTechMapper()
 
 std::vector<std::string> mappers::StartingTechMapper::getTechsForGroupAndScore(const std::string& group,
 	 const double score,
-	 const std::map<std::string, std::string> idNameMap) const
+	 const std::map<std::string, std::string>& idNameMap) const
 {
 	std::vector<std::string> toReturn;
 	for (const auto& tech: startingTechs)

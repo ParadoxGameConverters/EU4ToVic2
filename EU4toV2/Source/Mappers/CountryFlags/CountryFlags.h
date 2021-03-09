@@ -1,6 +1,5 @@
 #ifndef COUNTRY_FLAGS_H
 #define COUNTRY_FLAGS_H
-
 #include "Parser.h"
 
 namespace mappers

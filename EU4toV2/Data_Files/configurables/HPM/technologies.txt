@@ -17,7 +17,7 @@
 	introspectionism	#psychology_1
 	piston_steam_engine	#tech_power_1
 	mechanical_production	#mechanization_1
-	mechanized_mining	#metallurgy_1
+	hot_blast	#metallurgy_1
 	experimental_railroad	#tech_infrastructure_1
 	basic_chemistry	#chemistry_and_electricity_1
 	post_nelsonian_thought	#naval_doctrine_1
@@ -37,7 +37,7 @@
 	associationism	#psychology_2
 	high_pressure_steam_engine	#tech_power_2
 	interchangeable_parts	#mechanization_2
-	puddling	#metallurgy_2
+	mechanized_mining	#metallurgy_2
 }
 
 # Original tech availability dates
@@ -122,7 +122,7 @@
 #	phenomenalism	#psychology_3
 #	steam_turbine	#tech_power_4
 #	pneumatic_and_hydraulics	#mechanization_4
-#	hot_blast	#metallurgy_3
+#	regenerative_furnaces	#metallurgy_3
 #	iron_railroad	#tech_infrastructure_3
 #	organic_chemistry	#chemistry_and_electricity_4
 #	weapon_platforms	#naval_engineering_3
@@ -153,7 +153,7 @@
 #	revolution_n_counterrevolution	#political_thought_5
 #	experimental_psychology	#psychology_4
 #	assembly_line	#mechanization_5
-#	bessemer_process	#metallurgy_4
+#	drilling_and_blasting	#metallurgy_4
 #	steel_railroad	#tech_infrastructure_4
 #	electricity	#chemistry_and_electricity_5
 #	main_armament	#naval_engineering_4

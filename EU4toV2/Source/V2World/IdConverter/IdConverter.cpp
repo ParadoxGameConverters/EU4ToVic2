@@ -6,7 +6,7 @@
 #include <fstream>
 #include <set>
 
-V2::IdConverter::IdConverter(std::vector<int> vanillaProvinces, std::map<int, std::string> provinceLocalisation):
+V2::IdConverter::IdConverter(const std::vector<int>& vanillaProvinces, const std::map<int, std::string>& provinceLocalisation):
 	 mod(theConfiguration.getVic2ModName()), vanillaProvs(vanillaProvinces), locProvs(provinceLocalisation),
 	 vanillaMapper(mappers::ProvinceMapper("configurables/province_mappings.txt")),
 	 vanillaStateMapper(mappers::StateMapper(theConfiguration.getVanillaVic2Path() + "/map/region.txt")),

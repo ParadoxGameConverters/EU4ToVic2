@@ -15,7 +15,7 @@ class StartingTechMapper: commonItems::parser
 
 	[[nodiscard]] std::vector<std::string> getTechsForGroupAndScore(const std::string& group,
 		 double score,
-		 const std::map<std::string, std::string> idNameMap) const;
+		 const std::map<std::string, std::string>& idNameMap) const;
 
   private:
 	std::vector<StartingTech> startingTechs;

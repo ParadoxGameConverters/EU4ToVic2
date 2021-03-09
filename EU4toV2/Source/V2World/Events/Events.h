@@ -10,8 +10,8 @@ class Events: commonItems::parser
 {
   public:
 	Events();
-	explicit Events(const std::string filename);
-	explicit Events(const std::set<std::string> evtFiles);
+	explicit Events(const std::string& filename);
+	explicit Events(const std::set<std::string>& evtFiles);
 
 	void updateEvents(const std::map<std::string, std::string>& stateMap, const std::map<int, int>& provinceMap);
 	void updateStateIDs(std::string& theEvent, std::regex expression, std::map<std::string, std::string> map);

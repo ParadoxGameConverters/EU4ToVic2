@@ -1,6 +1,5 @@
 #ifndef COUNTRY_FLAGS_MAPPING_H
 #define COUNTRY_FLAGS_MAPPING_H
-
 #include "Parser.h"
 #include <set>
 

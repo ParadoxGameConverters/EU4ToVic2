@@ -7,7 +7,7 @@ namespace V2
 class IdConverter
 {
   public:
-	IdConverter(std::vector<int> vanillaProvinces, std::map<int, std::string> provinceLocalisation);
+	IdConverter(const std::vector<int>& vanillaProvinces, const std::map<int, std::string>& provinceLocalisation);
 
 	[[nodiscard]] const auto& getStateMap() const { return stateMap; }
 	[[nodiscard]] const auto& getProvinceMap() const { return provinceMap; }

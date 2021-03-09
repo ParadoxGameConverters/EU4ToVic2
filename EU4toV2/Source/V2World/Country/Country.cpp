@@ -991,42 +991,42 @@ void V2::Country::determineNV(const std::string& mod)
 		const auto& policies = srcCountry->getPolicies();
 
 		// Production
-		if (reforms.count("administrative_monarchy")
-			|| reforms.count("administrative_republic")
-			|| reforms.count("constitutional_republic")
-			|| reforms.count("peasants_republic_legacy")
-			|| reforms.count("general_estates_reform")
-			|| reforms.count("peasants_republic")
+		if (reforms.contains("administrative_monarchy")
+			|| reforms.contains("administrative_republic")
+			|| reforms.contains("constitutional_republic")
+			|| reforms.contains("peasants_republic_legacy")
+			|| reforms.contains("general_estates_reform")
+			|| reforms.contains("peasants_republic")
 		){
 			productionEff += 0.1;
 		}
-		if (ideas.count("economic_ideas")) productionEff += 0.1;
-		if (ideas.count("custom_idea_production_efficiency")) productionEff += 0.05;
-		if (policies.count("the_combination_act")) productionEff += 0.2;
-		if (policies.count("enlightened_aristocracy")) productionEff += 0.1;
-		if (policies.count("the_transportation_act")) productionEff += 0.1;
-		if (policies.count("the_statute_of_monopolies")) productionEff += 0.1;
-		if (policies.count("taxation_with_representation")) productionEff += 0.1;
+		if (ideas.contains("economic_ideas")) productionEff += 0.1;
+		if (ideas.contains("custom_idea_production_efficiency")) productionEff += 0.05;
+		if (policies.contains("the_combination_act")) productionEff += 0.2;
+		if (policies.contains("enlightened_aristocracy")) productionEff += 0.1;
+		if (policies.contains("the_transportation_act")) productionEff += 0.1;
+		if (policies.contains("the_statute_of_monopolies")) productionEff += 0.1;
+		if (policies.contains("taxation_with_representation")) productionEff += 0.1;
 
 		// Trade
-		if (reforms.count("constitutional_republic")
-			|| reforms.count("imperial_city")
-			|| reforms.count("dutch_republic_legacy")
-			|| reforms.count("enforce_trader_privileges_reform")
-			|| reforms.count("bengali_reform")
-			|| reforms.count("free_city")
-			|| reforms.count("dutch_republic")
+		if (reforms.contains("constitutional_republic")
+			|| reforms.contains("imperial_city")
+			|| reforms.contains("dutch_republic_legacy")
+			|| reforms.contains("enforce_trader_privileges_reform")
+			|| reforms.contains("bengali_reform")
+			|| reforms.contains("free_city")
+			|| reforms.contains("dutch_republic")
 		){
 			tradeEff += 0.1;
 		}
-		if (ideas.count("trade_ideas")) tradeEff += 0.1;
-		if (ideas.count("custom_idea_trade_efficiency")) tradeEff += 0.05;
-		if (policies.count("the_statute_of_monopolies")) tradeEff += 0.1;
-		if (policies.count("the_banking_system")) tradeEff += 0.1;
-		if (policies.count("the_importation_act")) tradeEff += 0.2;
-		if (policies.count("cloth_quality_edict")) tradeEff += 0.2;
-		if (policies.count("encouragement_of_merchant_navy")) tradeEff += 0.1;
-		if (policies.count("public_road_act")) tradeEff += 0.1;
+		if (ideas.contains("trade_ideas")) tradeEff += 0.1;
+		if (ideas.contains("custom_idea_trade_efficiency")) tradeEff += 0.05;
+		if (policies.contains("the_statute_of_monopolies")) tradeEff += 0.1;
+		if (policies.contains("the_banking_system")) tradeEff += 0.1;
+		if (policies.contains("the_importation_act")) tradeEff += 0.2;
+		if (policies.contains("cloth_quality_edict")) tradeEff += 0.2;
+		if (policies.contains("encouragement_of_merchant_navy")) tradeEff += 0.1;
+		if (policies.contains("public_road_act")) tradeEff += 0.1;
 
 		// nv_order
 		const auto& armyTradition = srcCountry->getArmyTradition();
