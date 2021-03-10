@@ -2200,36 +2200,45 @@ void V2::World::outEvents() const
 void V2::World::updateCountryDetails()
 {
 	mappers::PartyTypeMapper modPartyBlob("configurables/" + theConfiguration.getVic2ModName() + "/party_blobs.txt");
-
-	for (const auto& country: countries)
+	for (const auto& [unused, country]: countries)
 	{
 		//Parties
-		for (const auto& party: country.second->getParties()) //load parties from countryDetails
+		for (const auto& party: country->getParties()) //load parties from countryDetails
 		{
 			for (const auto& policy: getIssues("party_issues")) //common/issues.txt
 			{
-				if (const auto& policies = party.getPolicies(); policies.find(policy) == policies.end())
+				if (party.getPolicies().contains(policy))
 				{
-					const auto& partyType = modPartyBlob.getPartyTypeByIdeology(party.getIdeology());
-					if (partyType)
-					{
-						const auto& defaultPosition = partyType->getPolicyPosition(policy);
-						country.second->addPolicy(party.getName(), policy, defaultPosition);
-					}
+					continue;
+				}
+				const auto& partyType = modPartyBlob.getPartyTypeByIdeology(party.getIdeology());
+				if (!partyType)
+				{
+					Log(LogLevel::Warning) << "Could not find definitions for " << party.getIdeology() << " parties in configurables!";
+					continue;
+				}
+				const auto& defaultPosition = partyType->getPolicyPosition(policy);
+				if (defaultPosition)
+				{
+					country->addPolicy(party.getName(), policy, *defaultPosition);
+				}
+				else
+				{
+					Log(LogLevel::Warning) << "No default position found in configurables for " << policy;
 				}
 			}
 		}
 
 		//Reforms
 		std::map<std::string, std::string> theReforms;
-		if (country.second->isCivilized())
+		if (country->isCivilized())
 			theReforms = modReforms.getReforms();
 		else
 			theReforms = modReforms.getUncivReforms();
 
-		for (const auto& modReform: theReforms)
+		for (const auto& [modReform, position]: theReforms)
 		{
-			country.second->setReformPosition(modReform.first, modReform.second);
+			country->setReformPosition(modReform, position);
 		}
 	}
 }

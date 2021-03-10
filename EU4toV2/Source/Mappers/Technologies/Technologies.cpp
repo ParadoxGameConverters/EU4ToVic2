@@ -34,24 +34,24 @@ void mappers::Technologies::registerKeys(const std::string& filename)
 void mappers::Technologies::updateTechs()
 {
 	const auto& techYearMap = techYearMapper.getMap();
-	for (auto& category: categories)
+	for (auto& [unused, technologies]: categories)
 	{
-		for (auto& tech: category.second)
+		for (auto& tech: technologies)
 		{
-			if (const auto& mapItr = techYearMap.find(tech.getName()); mapItr != techYearMap.end())
-				tech.setYear(mapItr->second);
+			if (techYearMap.contains(tech.getName()))
+				tech.setYear(techYearMap.at(tech.getName()));
 		}
 	}
 }
 
 void mappers::Technologies::setTechLevels()
 {
-	for (auto& category: categories)
+	for (auto& [unused, technologies]: categories)
 	{
 		std::string group;
 		int i = 1;
 
-		for (auto& tech: category.second)
+		for (auto& tech: technologies)
 		{
 			if (tech.getArea() == group)
 				i++;
@@ -67,9 +67,9 @@ void mappers::Technologies::setTechLevels()
 
 void mappers::Technologies::makeIdNameMap()
 {
-	for (const auto& category: categories)
+	for (const auto& [unused, technologies]: categories)
 	{
-		for (const auto& tech: category.second)
+		for (const auto& tech: technologies)
 		{
 			const auto& id = tech.getArea() + "_" + std::to_string(tech.getLevel());
 			idNameMap[id] = tech.getName();

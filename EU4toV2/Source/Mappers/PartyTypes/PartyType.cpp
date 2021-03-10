@@ -29,3 +29,11 @@ void mappers::PartyType::registerKeys()
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
+
+std::optional<std::string> mappers::PartyType::getPolicyPosition(const std::string& policy) const
+{
+	if (policies.contains(policy))
+		return policies.at(policy);
+	else
+		return std::nullopt;
+}

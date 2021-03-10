@@ -46,10 +46,7 @@ void mappers::StateMapper::registerKeys()
 
 			std::set<int> provinces;
 			for (auto province : provinceList.getInts()) provinces.insert(province);
-			for (auto province : provinces)
-			{
-				stateProvincesMap.insert(std::make_pair(province, provinces));
-			}
+			for (auto province : provinces) stateProvincesMap.insert(std::make_pair(province, provinces));
 			stateMap.insert(std::make_pair(id, provinces));
 		});
 }

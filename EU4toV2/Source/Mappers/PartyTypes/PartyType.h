@@ -15,13 +15,13 @@ class PartyType: commonItems::parser
 	void setIdeology(const std::string& theIdeology) { ideology = theIdeology; }
 	void setStartDate(const std::string& startDate) { start_date = date(startDate); }
 	void addPolicy(const std::string& policy, const std::string& position) { policies.insert(make_pair(policy, position)); }
+	std::optional<std::string> getPolicyPosition(const std::string& policy) const;
 
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getIdeology() const { return ideology; }
 	[[nodiscard]] const auto& getStartDate() const { return start_date; }
 	[[nodiscard]] const auto& getEndDate() const { return end_date; }
 	[[nodiscard]] const auto& getPolicies() const { return policies; }
-	[[nodiscard]] const auto& getPolicyPosition(const std::string& policy) const { return policies.find(policy)->second; }
 
 	friend std::ostream& operator<<(std::ostream& output, const PartyType& partyDetails);
 
