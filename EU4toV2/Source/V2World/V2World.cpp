@@ -1305,7 +1305,7 @@ void V2::World::convertTechs(const EU4::World& sourceWorld)
 			const auto cultureScore = techValues.getNormalizedCultureTech(*country.second->getSourceCountry());
 			const auto industryScore = techValues.getNormalizedIndustryTech(*country.second->getSourceCountry());
 			const auto commerceScore = techValues.getNormalizedCommerceTech(*country.second->getSourceCountry());
-			country.second->setTechs(technologies, startingInventionMapper, armyScore, navyScore, cultureScore, industryScore, commerceScore);
+			country.second->setTechs(startingTechMapper, startingInventionMapper, armyScore, navyScore, cultureScore, industryScore, commerceScore);
 		}
 	}
 }
@@ -1665,9 +1665,6 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 			outputGTFO(countries);
 			outputReturnCores(countries);
 		}
-
-		Log(LogLevel::Info) << "<- Outputting technologies";
-		outputTechnologies();
 
 		Log(LogLevel::Info) << "<- Outputting country unit colors";
 		outputUnitColors();
@@ -2154,6 +2151,13 @@ void V2::World::copyModFiles() const
 		{
 			fs::copy_file(mod + "/poptypes/" + file, output + "/poptypes/" + file);
 		}
+
+		const auto& techFiles = commonItems::GetAllFilesInFolder(configurables + "/technologies");
+		for (const auto& file: techFiles)
+		{
+			fs::remove(output + "/technologies/" + file);
+			fs::copy_file(configurables + "/technologies/" + file, output + "/technologies/" + file);
+		}
 	}
 }
 
@@ -2318,29 +2322,12 @@ void V2::World::updateFlags() const
 	}
 }
 
-void V2::World::outputTechnologies() const
-{
-	for (const auto& category: technologies.getCategories())
-	{
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/technologies/" + category.first);
-		if (!output.is_open())
-			throw std::runtime_error("Could not open " + category.first + " for writing");
-		for (const auto& technology: category.second)
-		{
-			if (technology.getLevel() == 1)
-				output << "#" << technology.getArea() << "\n";
-			output << technology;
-		}
-		output.close();
-	}
-}
-
 void V2::World::outputUnitColors() const
 {
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/country_colors.txt");
 	if (!output.is_open())
 		throw std::runtime_error("Could not open country_colors.txt for writing");
-	for (const auto& [tag, country]: countries)
+	for (const auto& [tag, country] : countries)
 	{
 		if (const auto& colors = country->getUnitColors(); !colors.empty())
 		{

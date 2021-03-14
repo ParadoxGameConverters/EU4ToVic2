@@ -1,7 +1,6 @@
 #ifndef OUTPUT_H
 #define OUTPUT_H
 
-#include "../../Mappers/Technologies/Technology.h"
 #include "../../Mappers/VersionParser/VersionParser.h"
 #include "../Army/Army.h"
 #include "../Army/Regiment.h"
@@ -47,7 +46,6 @@ std::ostream& operator<<(std::ostream& output, const VersionParser& versionParse
 std::ostream& operator<<(std::ostream& output, const CultureGroups& cultureGroupsMapper);
 std::ostream& operator<<(std::ostream& output, const CultureGroup& cultureGroup);
 std::ostream& operator<<(std::ostream& output, const Culture& culture);
-std::ostream& operator<<(std::ostream& output, const Technology& technology);
 } // namespace mappers
 
 #endif // OUTPUT_H

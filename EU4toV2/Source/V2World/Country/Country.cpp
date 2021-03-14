@@ -8,7 +8,7 @@
 #include "../../Mappers/RegimentCosts/RegimentCostsMapper.h"
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../../Mappers/StartingInventionMapper/StartingInventionMapper.h"
-#include "../../Mappers/Technologies/Technologies.h"
+#include "../../Mappers/StartingTechMapper/StartingTechMapper.h"
 #include "../../Mappers/TechGroups/TechGroupsMapper.h"
 #include "../../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../../Mappers/Unreleasables/Unreleasables.h"
@@ -784,7 +784,7 @@ void V2::Country::convertLandlessReforms(const Country& capitalOwner) // Use cur
 	}
 }
 
-void V2::Country::setTechs(const mappers::Technologies& technologies,
+void V2::Country::setTechs(const mappers::StartingTechMapper& startingTechMapper,
 	 const mappers::StartingInventionMapper& startingInventionMapper,
 	 double armyScore,
 	 double navyScore,
@@ -795,12 +795,11 @@ void V2::Country::setTechs(const mappers::Technologies& technologies,
 	if (!details.civilized)
 		return;
 
-	const auto& startingTechMapper = technologies.getStartingTechMapper();
-	const auto armyTechs = startingTechMapper.getTechsForGroupAndScore("army", armyScore, technologies.getIdNameMap());
-	const auto navyTechs = startingTechMapper.getTechsForGroupAndScore("navy", navyScore, technologies.getIdNameMap());
-	const auto cultureTechs = startingTechMapper.getTechsForGroupAndScore("culture", cultureScore, technologies.getIdNameMap());
-	const auto industryTechs = startingTechMapper.getTechsForGroupAndScore("industry", industryScore, technologies.getIdNameMap());
-	const auto commerceTechs = startingTechMapper.getTechsForGroupAndScore("commerce", commerceScore, technologies.getIdNameMap());
+	const auto armyTechs = startingTechMapper.getTechsForGroupAndScore("army", armyScore);
+	const auto navyTechs = startingTechMapper.getTechsForGroupAndScore("navy", navyScore);
+	const auto cultureTechs = startingTechMapper.getTechsForGroupAndScore("culture", cultureScore);
+	const auto industryTechs = startingTechMapper.getTechsForGroupAndScore("industry", industryScore);
+	const auto commerceTechs = startingTechMapper.getTechsForGroupAndScore("commerce", commerceScore);
 
 	techs.insert(armyTechs.begin(), armyTechs.end());
 	techs.insert(navyTechs.begin(), navyTechs.end());

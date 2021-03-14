@@ -448,6 +448,12 @@
     <ClCompile Include="Source\V2World\Output\outHistory.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTech.cpp">
+      <Filter>Mappers\StartingTechMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\StartingTechMapper\StartingTechMapper.cpp">
+      <Filter>Mappers\StartingTechMapper</Filter>
+    </ClCompile>
     <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.cpp">
       <Filter>Mappers\StartingInventionMapper</Filter>
     </ClCompile>
@@ -574,25 +580,7 @@
     <ClCompile Include="Source\V2World\Decisions\HPMDecisions.cpp">
       <Filter>Vic2World\Decisions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\Technologies\Technologies.cpp">
-      <Filter>Mappers\Technologies</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\Technologies\TechYearMapper.cpp">
-      <Filter>Mappers\Technologies</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\Technologies\Technology.cpp">
-      <Filter>Mappers\Technologies</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Output\outTechnology.cpp">
-      <Filter>Vic2World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\Technologies\StartingTech.cpp">
-      <Filter>Mappers\Technologies</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Mappers\Technologies\StartingTechMapper.cpp">
-      <Filter>Mappers\Technologies</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Country\EU4ActivePolicy.cpp">
+     <ClCompile Include="Source\EU4World\Country\EU4ActivePolicy.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
     <ClCompile Include="Source\Mappers\UnitColors\UnitColors.cpp">
@@ -604,7 +592,7 @@
     <ClCompile Include="Source\V2World\IdConverter\IdConverter.cpp">
       <Filter>Vic2World\IdConverter</Filter>
     </ClCompile>
-  </ItemGroup>
+ </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
     <ClInclude Include="Source\EU4ToVic2Converter.h" />
@@ -1010,6 +998,12 @@
     <ClInclude Include="Source\V2World\War\War.h">
       <Filter>Vic2World\War</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTech.h">
+      <Filter>Mappers\StartingTechMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\StartingTechMapper\StartingTechMapper.h">
+      <Filter>Mappers\StartingTechMapper</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.h">
       <Filter>Mappers\StartingInventionMapper</Filter>
     </ClInclude>
@@ -1135,21 +1129,6 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\Issues\ModReforms.h">
       <Filter>Mappers\Issues</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\Technologies\Technologies.h">
-      <Filter>Mappers\Technologies</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\Technologies\TechYearMapper.h">
-      <Filter>Mappers\Technologies</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\Technologies\Technology.h">
-      <Filter>Mappers\Technologies</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\Technologies\StartingTech.h">
-      <Filter>Mappers\Technologies</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Mappers\Technologies\StartingTechMapper.h">
-      <Filter>Mappers\Technologies</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Country\EU4ActivePolicy.h">
       <Filter>EU4World\Country</Filter>
@@ -1419,9 +1398,6 @@
     </Filter>
     <Filter Include="Vic2World\Decisions">
       <UniqueIdentifier>{8758d162-b22a-45e3-b4d7-1a122c111a14}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Mappers\Technologies">
-      <UniqueIdentifier>{4ace6f45-ae89-404d-b1ad-74efcac08a4f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Mappers\UnitColors">
       <UniqueIdentifier>{623b94ab-6a42-4103-adbb-f044f043e7a9}</UniqueIdentifier>

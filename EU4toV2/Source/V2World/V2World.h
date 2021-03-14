@@ -28,9 +28,9 @@
 #include "../Mappers/RegionLocalizations/RegionLocalizations.h"
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/StartingInventionMapper/StartingInventionMapper.h"
+#include "../Mappers/StartingTechMapper/StartingTechMapper.h"
 #include "../Mappers/StateMapper/StateMapper.h"
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
-#include "../Mappers/Technologies/Technologies.h"
 #include "../Mappers/Unreleasables/Unreleasables.h"
 #include "../Mappers/WarGoalMapper/WarGoalMapper.h"
 #include "Country/Country.h"
@@ -149,7 +149,6 @@ class World
 	void updateFlags() const;
 	void outputGTFO(std::map<std::string, std::shared_ptr<Country>> countries) const;
 	void outputReturnCores(std::map<std::string, std::shared_ptr<V2::Country>> countries) const;
-	void outputTechnologies() const;
 	void outputUnitColors() const;
 
 	mappers::ProvinceMapper provinceMapper;
@@ -176,6 +175,7 @@ class World
 	mappers::BucketList bucketShuffler;
 	mappers::PortProvinces portProvincesMapper;
 	mappers::WarGoalMapper warGoalMapper;
+	mappers::StartingTechMapper startingTechMapper;
 	mappers::StartingInventionMapper startingInventionMapper;
 	mappers::CultureGroups cultureGroupsMapper;
 	mappers::RegionLocalizations regionLocalizations;
@@ -192,7 +192,6 @@ class World
 	VanillaWorld vanillaWorld;
 	mappers::Issues issues;
 	mappers::ModReforms modReforms;
-	mappers::Technologies technologies;
 };
 
 std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);
