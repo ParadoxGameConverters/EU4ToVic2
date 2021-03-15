@@ -4,7 +4,6 @@
 #include "../Mappers/Pops/PopMapper.h"
 #include "../Mappers/StateMapper/StateMapper.h"
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
-#include "../Mappers/UnitColors/UnitColors.h"
 #include "../Mappers/VersionParser/VersionParser.h"
 #include "CommonFunctions.h"
 #include "Configuration.h"
@@ -158,10 +157,6 @@ V2::World::World(const EU4::World& sourceWorld,
 		LOG(LogLevel::Info) << "-> Updating country details";
 		updateCountryDetails();
 		Log(LogLevel::Progress) << "73 %";
-
-		LOG(LogLevel::Info) << "-> Importing country unit colors";
-		importUnitColors();
-		Log(LogLevel::Progress) << "74 %";
 	}
 
 	LOG(LogLevel::Info) << "---> Le Dump <---";
@@ -1665,9 +1660,6 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 			outputGTFO(countries);
 			outputReturnCores(countries);
 		}
-
-		Log(LogLevel::Info) << "<- Outputting country unit colors";
-		outputUnitColors();
 	}
 
 	// verify countries got written
@@ -2247,19 +2239,6 @@ void V2::World::updateCountryDetails()
 	}
 }
 
-void V2::World::importUnitColors()
-{
-	mappers::UnitColors unitColors;
-	const auto& colorsMap = unitColors.getUnitColorsMap();
-	for (const auto& [tag, country]: countries)
-	{
-		if (colorsMap.find(tag) != colorsMap.end())
-		{
-			country->setUnitColors(colorsMap.find(tag)->second);
-		}
-	}
-}
-
 std::vector<std::string> V2::World::getIssues(const std::string& issueCategory)
 {
 	const auto& issuesItr = issues.getCategories().find(issueCategory);
@@ -2318,20 +2297,6 @@ void V2::World::updateFlags() const
 			else
 				Log(LogLevel::Info) << tag.first << suffix << " does not exist in "
 					 << theConfiguration.getVic2ModName() << "/gfx/flags/";
-		}
-	}
-}
-
-void V2::World::outputUnitColors() const
-{
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/country_colors.txt");
-	if (!output.is_open())
-		throw std::runtime_error("Could not open country_colors.txt for writing");
-	for (const auto& [tag, country] : countries)
-	{
-		if (const auto& colors = country->getUnitColors(); !colors.empty())
-		{
-			output << tag << " " << colors << "\n";
 		}
 	}
 }

@@ -444,7 +444,6 @@
     <ClCompile Include="Source\Mappers\Titles\TitleMapper.cpp" />
     <ClCompile Include="Source\Mappers\Titles\TitleMapping.cpp" />
     <ClCompile Include="Source\Mappers\UnionTagsMapper\UnionTagsMapper.cpp" />
-    <ClCompile Include="Source\Mappers\UnitColors\UnitColors.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp" />
@@ -646,7 +645,6 @@
     <ClInclude Include="Source\Mappers\Titles\TitleMapper.h" />
     <ClInclude Include="Source\Mappers\Titles\TitleMapping.h" />
     <ClInclude Include="Source\Mappers\UnionTagsMapper\UnionTagsMapper.h" />
-    <ClInclude Include="Source\Mappers\UnitColors\UnitColors.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitType.h" />
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
     <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h" />

@@ -583,9 +583,6 @@
      <ClCompile Include="Source\EU4World\Country\EU4ActivePolicy.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\UnitColors\UnitColors.cpp">
-      <Filter>Mappers\UnitColors</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\State\StateNameParser.cpp">
       <Filter>Vic2World\State</Filter>
     </ClCompile>
@@ -1133,9 +1130,6 @@
     <ClInclude Include="Source\EU4World\Country\EU4ActivePolicy.h">
       <Filter>EU4World\Country</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\UnitColors\UnitColors.h">
-      <Filter>Mappers\UnitColors</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\State\StateNameParser.h">
       <Filter>Vic2World\State</Filter>
     </ClInclude>
@@ -1398,9 +1392,6 @@
     </Filter>
     <Filter Include="Vic2World\Decisions">
       <UniqueIdentifier>{8758d162-b22a-45e3-b4d7-1a122c111a14}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Mappers\UnitColors">
-      <UniqueIdentifier>{623b94ab-6a42-4103-adbb-f044f043e7a9}</UniqueIdentifier>
     </Filter>
     <Filter Include="Vic2World\IdConverter">
       <UniqueIdentifier>{40c800f4-c46b-4750-881b-b49e04623cfc}</UniqueIdentifier>
