@@ -11,11 +11,9 @@ class EU4ActivePolicy: commonItems::parser
   public:
 	explicit EU4ActivePolicy(std::istream& theStream);
 	[[nodiscard]] const auto& getPolicy() const { return policy; }
-	[[nodiscard]] const auto& getDate() const { return date; }
 
   private:
 	std::string policy;
-	std::string date;
 };
 } // namespace EU4
 

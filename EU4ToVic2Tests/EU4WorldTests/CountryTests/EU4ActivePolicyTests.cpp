@@ -4,49 +4,22 @@
 
 
 
-TEST(EU4World_ActivePolicyTests, policyDefaultsToEmpty)
+TEST(EU4World_Country_EU4ActivePolicyTests, policyDefaultsToEmpty)
 {
 	std::stringstream input;
-	input << "={}";
 
 	EU4::EU4ActivePolicy thePolicy(input);
-	ASSERT_EQ(thePolicy.getPolicy(), "");
+	ASSERT_TRUE(thePolicy.getPolicy().empty());
 }
 
 
-TEST(EU4World_ActivePolicyTests, dateDefaultsToEmpty)
+TEST(EU4World_Country_EU4ActivePolicyTests, policyCanBeImported)
 {
 	std::stringstream input;
-	input << "={}";
-
-	EU4::EU4ActivePolicy thePolicy(input);
-	ASSERT_EQ(thePolicy.getDate(), "");
-}
-
-
-TEST(EU4World_ActivePolicyTests, policyCanBeImported)
-{
-	std::stringstream input;
-	input << "={\n";
-	input << "\t\t\tpolicy=\"agricultural_cultivations\"\n";
-	input << "\t\t\tdate=1815.11.2\n";
-	input << "\t\t}\n";
+	input << "policy=\"agricultural_cultivations\"";
 
 	EU4::EU4ActivePolicy thePolicy(input);
 	ASSERT_EQ(thePolicy.getPolicy(), "agricultural_cultivations");
-}
-
-
-TEST(EU4World_ActivePolicyTests, dateCanBeImported)
-{
-	std::stringstream input;
-	input << "={\n";
-	input << "\t\t\tpolicy=\"agricultural_cultivations\"\n";
-	input << "\t\t\tdate=1815.11.2\n";
-	input << "\t\t}\n";
-
-	EU4::EU4ActivePolicy thePolicy(input);
-	ASSERT_EQ(thePolicy.getDate(), "1815.11.2");
 }
 
 
