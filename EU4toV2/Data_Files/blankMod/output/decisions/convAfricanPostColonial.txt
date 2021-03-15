@@ -38,8 +38,6 @@ political_decisions = {
 					tag = ALD
 					exists = no
 				}
-				primary_culture = maghrebi
-				religion = sunni
 				capital = 1700
 				government = democracy
 			}
@@ -73,8 +71,6 @@ political_decisions = {
 					tag = MOR
 					exists = no
 				}
-				primary_culture = maghrebi
-				religion = sunni
 				capital = 1686
 				government = democracy
 			}
@@ -87,8 +83,6 @@ political_decisions = {
 					tag = TUN
 					exists = no
 				}
-				primary_culture = maghrebi
-				religion = sunni
 				capital = 1725
 				government = democracy
 			}
@@ -109,8 +103,6 @@ political_decisions = {
 					tag = LBY
 					exists = no
 				}
-				primary_culture = maghrebi
-				religion = sunni
 				capital = 1731
 				government = democracy
 			}
@@ -143,8 +135,6 @@ political_decisions = {
 					tag = EGY
 					exists = no
 				}
-				primary_culture = maghrebi
-				religion = sunni
 				capital = 1745
 				government = democracy
 			}
@@ -169,8 +159,6 @@ political_decisions = {
 					tag = ETH
 					exists = no
 				}
-				primary_culture = amhara
-				religion = coptic
 				capital = 1852
 				government = democracy
 			}
@@ -180,7 +168,7 @@ political_decisions = {
 			}
 			TRZ = {
 				add_accepted_culture = maures
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1801 = {
 				add_core = MLI
@@ -200,7 +188,7 @@ political_decisions = {
 			}
 			SNG = {
 				add_accepted_culture = wolof
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1794 = {
 				add_core = MLI
@@ -219,12 +207,10 @@ political_decisions = {
 					tag = MLI
 					exists = no
 				}
-				primary_culture = bambara
 				add_accepted_culture = bambara
-				religion = sunni
 				capital = 1794
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1813 = {
 				add_core = NIG
@@ -236,7 +222,7 @@ political_decisions = {
 			}
 			NIG = {
 				add_accepted_culture = mande
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1901 = {
 				add_core = BKF
@@ -244,7 +230,7 @@ political_decisions = {
 			}
 			BKF = {
 				add_accepted_culture = dyula
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1914 = {
 				add_core = TOG
@@ -252,7 +238,7 @@ political_decisions = {
 			}
 			TOG = {
 				add_accepted_culture = ewe
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1919 = {
 				add_core = DAH
@@ -263,12 +249,10 @@ political_decisions = {
 					tag = DAH
 					exists = no
 				}
-				primary_culture = fon
 				add_accepted_culture = fon
-				religion = sunni
 				capital = 1919
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			ENG_1887 = {
 				add_core = LIB
@@ -279,12 +263,10 @@ political_decisions = {
 					tag = LIB
 					exists = no
 				}
-				primary_culture = kru
 				add_accepted_culture = kru
-				religion = protestant
 				capital = 1887
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1927 = {
 				add_core = NGR
@@ -319,12 +301,10 @@ political_decisions = {
 					tag = NGR
 					exists = no
 				}
-				primary_culture = hausa
 				add_accepted_culture = hausa
-				religion = sunni
 				capital = 1941
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			BEL_1977 = {
 				add_core = CNG
@@ -351,12 +331,10 @@ political_decisions = {
 					tag = CNG
 					exists = no
 				}
-				primary_culture = bakongo
 				add_accepted_culture = bakongo
-				religion = catholic
 				capital = 1982
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			ENG_2019 = {
 				add_core = BUG
@@ -367,12 +345,10 @@ political_decisions = {
 					tag = BUG
 					exists = no
 				}
-				primary_culture = baganda
 				add_accepted_culture = baganda
-				religion = protestant
 				capital = 2019
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			ENG_2026 = {
 				add_core = KNY
@@ -387,12 +363,10 @@ political_decisions = {
 					tag = KNY
 					exists = no
 				}
-				primary_culture = swahili
 				add_accepted_culture = swahili
-				religion = protestant
 				capital = 2029
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			ENG_2068 = {
 				add_core = ZBW
@@ -408,19 +382,17 @@ political_decisions = {
 			}
 			ZAM = {
 				add_accepted_culture = tonga
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			any_country = {
 				limit = {
 					tag = ZBW
 					exists = no
 				}
-				primary_culture = shona
 				add_accepted_culture = shona
-				religion = protestant
 				capital = 2068
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			ENG_2087 = {
 				add_core = SAF
@@ -451,12 +423,10 @@ political_decisions = {
 					tag = SAF
 					exists = no
 				}
-				primary_culture = khoisan
 				add_accepted_culture = khoisan
-				religion = protestant
 				capital = 2087
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			MAD_2117 = {
 				add_core = MAD
@@ -475,12 +445,10 @@ political_decisions = {
 					tag = MAD
 					exists = no
 				}
-				primary_culture = malagasy
 				add_accepted_culture = malagasy
-				religion = sunni
 				capital = 2115
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1879 = {
 				add_core = GNE
@@ -491,12 +459,9 @@ political_decisions = {
 					tag = GNE
 					exists = no
 				}
-				primary_culture = african_minor
-				add_accepted_culture = african_minor
-				religion = protestant
 				capital = 1879
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1884 = {
 				add_core = SLE
@@ -507,12 +472,10 @@ political_decisions = {
 					tag = SLE
 					exists = no
 				}
-				primary_culture = kru
 				add_accepted_culture = kru
-				religion = protestant
 				capital = 1884
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1893 = {
 				add_core = IVC
@@ -527,12 +490,10 @@ political_decisions = {
 					tag = IVC
 					exists = no
 				}
-				primary_culture = akan
 				add_accepted_culture = akan
-				religion = protestant
 				capital = 1892
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1907 = {
 				add_core = GHN
@@ -543,12 +504,10 @@ political_decisions = {
 					tag = GHN
 					exists = no
 				}
-				primary_culture = akan
 				add_accepted_culture = akan
-				religion = protestant
 				capital = 1907
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			EGY_1834 = {
 				add_core = SUD
@@ -566,7 +525,7 @@ political_decisions = {
 			1832 = { add_core = SSU }
 			SSU = {
 				add_accepted_culture = sudanese
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			EGY_1838 = {
 				add_core = SUD
@@ -581,12 +540,10 @@ political_decisions = {
 					tag = SUD
 					exists = no
 				}
-				primary_culture = sudanese
 				add_accepted_culture = sudanese
-				religion = sunni
 				capital = 1827
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			ENG_1868 = {
 				add_core = SOM
@@ -620,19 +577,16 @@ political_decisions = {
 			}
 			CHD = {
 				add_accepted_culture = african_minor
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			any_country = {
 				limit = {
 					tag = CAR
 					exists = no
 				}
-				primary_culture = african_minor
-				add_accepted_culture = african_minor
-				religion = sunni
 				capital = 1965
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			ENG_1960 = {
 				add_core = CMR
@@ -647,12 +601,9 @@ political_decisions = {
 					tag = CMR
 					exists = no
 				}
-				primary_culture = african_minor
-				add_accepted_culture = african_minor
-				religion = protestant
 				capital = 1959
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1978 = { #Congo-Brazzaville
 				add_core = CGO
@@ -660,7 +611,7 @@ political_decisions = {
 			}
 			CGO = {
 				add_accepted_culture = bakongo
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			FRA_1972 = {
 				add_core = GAB
@@ -671,12 +622,9 @@ political_decisions = {
 					tag = GAB
 					exists = no
 				}
-				primary_culture = african_minor
-				add_accepted_culture = african_minor
-				religion = catholic
 				capital = 1972
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			ENG_2039 = {
 				add_core = TNZ
@@ -695,12 +643,9 @@ political_decisions = {
 					tag = TNZ
 					exists = no
 				}
-				primary_culture = swahili
-				add_accepted_culture = swahili
-				religion = protestant
 				capital = 2036
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			POR_2006 = {
 				add_core = ANG
@@ -719,12 +664,9 @@ political_decisions = {
 					tag = ANG
 					exists = no
 				}
-				primary_culture = bakongo
-				add_accepted_culture = ovimbundu
-				religion = catholic
 				capital = 1999
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			ENG_2078 = {
 				add_core = NMB
@@ -739,12 +681,10 @@ political_decisions = {
 					tag = NMB
 					exists = no
 				}
-				primary_culture = khoisan
 				add_accepted_culture = khoisan
-				religion = protestant
 				capital = 2078
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			ENG_2074 = {
 				add_core = TSW
@@ -755,12 +695,10 @@ political_decisions = {
 					tag = TSW
 					exists = no
 				}
-				primary_culture = tswana
 				add_accepted_culture = tswana
-				religion = protestant
 				capital = 2874
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			POR_2049 = {
 				add_core = MOZ
@@ -779,12 +717,10 @@ political_decisions = {
 					tag = MOZ
 					exists = no
 				}
-				primary_culture = tonga
 				add_accepted_culture = tonga
-				religion = catholic
 				capital = 2049
 				government = democracy
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			#single provinces that are screwing the state system
 			1877 = { #Guinea-Bissau
@@ -797,7 +733,7 @@ political_decisions = {
 			}
 			GBI = {
 				add_accepted_culture = african_minor
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			1785 = { #Gambia
 				add_core = GMB
@@ -805,7 +741,7 @@ political_decisions = {
 			}
 			GMB = {
 				add_accepted_culture = wolof
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			1916 = {
 				add_core = GHN
@@ -837,7 +773,7 @@ political_decisions = {
 			}
 			RWA = {
 				add_accepted_culture = ruanda
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			2035 = { #Burundi
 				add_core = BRD
@@ -845,7 +781,7 @@ political_decisions = {
 			}
 			BRD = {
 				add_accepted_culture = rundi
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			2114 = { #Swaziland
 				add_core = SUA
@@ -853,7 +789,7 @@ political_decisions = {
 			}
 			SUA = {
 				add_accepted_culture = zulu
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			2104 = { #Lesotho
 				add_core = BSH
@@ -861,28 +797,28 @@ political_decisions = {
 			}
 			BSH = {
 				add_accepted_culture = zulu
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			1876 = { add_core = CPV } #Cape Verde
 			CPV = {
 				add_accepted_culture = african_minor
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			1973 = { add_core = EQG remove_core = GAB } #Equatorial Guinea
 			GAB = {
 				add_accepted_culture = african_minor
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			1955 = { add_core = EQG remove_core = ANG }
 			1954 = { add_core = SAO remove_core = ANG } #São Tomé
 			SAO = {
 				add_accepted_culture = african_minor
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			1875 = { add_core = DJI remove_core = ERI } #Djibouti
 			DJI = {
 				add_accepted_culture = afar
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			2123 = { add_core = KOM remove_core = MAD } #Comoros
 			2124 = { add_core = KOM remove_core = MAD }
@@ -890,18 +826,18 @@ political_decisions = {
 			2126 = { add_core = MAU remove_core = MAD }
 			MAU = {
 				add_accepted_culture = african_minor
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			2127 = { add_core = SEY remove_core = MAD } #Seychelles
 			SEY = {
 				add_accepted_culture = african_minor
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			2066 = { add_core = MLW remove_core = ZAM } #Malawi
 			2067 = { add_core = MLW remove_core = MOZ }
 			MLW = {
 				add_accepted_culture = tonga
-				set_country_flag = buro_independence
+				primary_culture = dummy
 			}
 			set_global_flag = der_postcolonialism_2
 		}

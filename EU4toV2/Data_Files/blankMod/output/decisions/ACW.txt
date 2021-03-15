@@ -10,6 +10,17 @@ political_decisions = {
 				tag = CAL
 				tag = LSK
 				tag = LOU
+				tag = UIL # Illinois
+				tag = UNB # Nebraska
+				AND = {
+					tag = UNM # New Mexico
+					OR = {
+						primary_culture = texan
+						primary_culture = dixie
+					}
+				}
+				tag = UNY # New York
+				tag = UOR # Oregon
 			}
 			OR = {
 				is_vassal = no

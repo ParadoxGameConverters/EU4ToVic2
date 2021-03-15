@@ -2,10 +2,6 @@
 # has a national union TAG (ashkenazi), then it belongs here.
 # Otherwise (swedish, SCA) it also belongs in unions.txt
 
-#Jews (removed since they can pop up anywhere) => Israel
-#link = { tag = ISR culture = ashkenazi }
-#link = { tag = ISR culture = sephardi }
-
 #Germanics
 link = { tag = SUE culture = suebi } #Suebi
 link = { tag = OGO culture = ostrogothic } #Ostrogothia
@@ -36,7 +32,7 @@ link = { tag = WHA culture = welsh } #Wales
 
 #Italian => Italy
 link = { tag = SIC culture = south_italian } #Two Sicilies = South Italy
-link = { tag = MLT culture = maltese } #Malta, not Italy
+link = { tag = MLT culture = maltese } #Malta
 link = { tag = LGB culture = lombard } #Longobardia
 
 #Latin descendants
@@ -51,7 +47,7 @@ link = { tag = WEN culture = wenedyk } #Venedia
 link = { tag = BSQ culture = basque } #and Euskadi
 link = { tag = CAT culture = catalan } #and Catalonia
 link = { tag = GLC culture = galician } #and Galicia
-link = { tag = POR culture = portuguese } #Portugal (don't add Spain, be realistic)
+link = { tag = POR culture = portuguese } #Portugal
 link = { tag = VGO culture = visigothic } #Visigothia
 
 #French => France
@@ -78,6 +74,7 @@ link = { tag = HUN culture = hungarian } #Hungary
 link = { tag = POL culture = polish } #and Poland
 link = { tag = LIT culture = lithuanian } #and Lithuania
 link = { tag = UKR culture = western_slavic } #and (Red) Ruthenia
+# sorbian
 
 #Other West Slavic
 link = { tag = POM culture = old_pommeranian } #Slavic Pomerania
@@ -101,7 +98,6 @@ link = { tag = GEO culture = georgian } #Georgia
 link = { tag = ARM culture = armenian } #Armenia
 link = { tag = ALN culture = alan } #Alania
 link = { tag = ASY culture = syriac } #Assyria
-link = { tag = KRT culture = maghreb_arabic } # Carthage
 link = { tag = COP culture = coptic } # Coptia
 
 #Turkic
@@ -193,3 +189,4 @@ link = { tag = HEG culture = hedgehog_culture } # Mobian
 #IMP:CK3
 link = { tag = OSP culture = oldspain } #Pre-Roman Iberia
 link = { tag = VAN culture = vandal } # Vandals
+link = { tag = ETR culture = etrurian } # Etruria

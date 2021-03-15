@@ -57,6 +57,7 @@ link = { tag = YUG culture = bosniak }
 link = { tag = PLC culture = polish } #and Poland
 link = { tag = PLC culture = lithuanian } #and Lithuania
 link = { tag = PLC culture = western_slavic }
+link = { tag = PLC culture = sorbian }
 
 #Czechoslovakian => Czechoslovakia
 link = { tag = CZH culture = czech }
@@ -64,7 +65,6 @@ link = { tag = CZH culture = slovak }
 
 #East Slavic
 link = { tag = RUS culture = russian } #Russia
-link = { tag = RUS culture = byelorussian } #Russia and Belarus
 
 #Baltic => United Baltic
 link = { tag = UBD culture = latvian } #and Latvia

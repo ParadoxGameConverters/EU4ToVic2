@@ -1749,6 +1749,24 @@ red_shirts = {
 			NOT = { any_greater_power = { nationalism_n_imperialism = 1 } }
 			factor = 0
 		}
+		modifier = {
+			factor = 0
+			country = {
+				capital_scope = { continent = north_america }
+			}
+		}
+		modifier = {
+			factor = 0
+			country = {
+				capital_scope = { continent = south_america }
+			}
+		}
+		modifier = {
+			factor = 0
+			country = {
+				capital_scope = { continent = oceania }
+			}
+		}
 		
 		modifier = {
 			OR = {
@@ -2007,6 +2025,24 @@ indian_sepoys = {
 			NOT = { any_greater_power = { nationalism_n_imperialism = 1 } }
 			factor = 0
 		}	
+		modifier = {
+			factor = 0
+			country = {
+				capital_scope = { continent = north_america }
+			}
+		}
+		modifier = {
+			factor = 0
+			country = {
+				capital_scope = { continent = south_america }
+			}
+		}
+		modifier = {
+			factor = 0
+			country = {
+				capital_scope = { continent = oceania }
+			}
+		}
 		
 		modifier = {
 			war = yes

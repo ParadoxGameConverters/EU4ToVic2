@@ -2491,7 +2491,6 @@ province_event = {
 			OR = { #Islamic
 				pop_majority_religion = sunni
 				pop_majority_religion = zikri
-				pop_majority_religion = yazidi
 				pop_majority_religion = sunni_heresy
 				pop_majority_religion = shiite
 				pop_majority_religion = hurufi

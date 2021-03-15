@@ -50,6 +50,7 @@ political_decisions = {
 			change_tag = ARA
 			random_country = {
 				limit = {
+					ai = yes
 					is_culture_group = THIS
 					in_sphere = THIS
 					OR = {
@@ -57,7 +58,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 				}
-				country_event = 111011928
+				annex = FROM
 			}
 			add_accepted_culture = union
 			any_country = {

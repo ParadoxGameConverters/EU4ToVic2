@@ -1,3 +1,84 @@
+country_event = {
+	id = 601999
+	title = EVTNAMEGER
+	desc = EVTDESCGER
+	mean_time_to_happen = {
+		months = 2
+	}
+	trigger = {
+		OR = {
+			AND = {
+				primary_culture = north_german
+				NOT = { accepted_culture = south_german }
+			}
+			AND = {
+				primary_culture = south_german
+				NOT = { accepted_culture = north_german }
+			}
+		}
+	}
+	option = {
+		name = EVTOPTAGER
+	}
+	immediate = {
+		add_accepted_culture = north_german
+		add_accepted_culture = south_german
+	}
+}
+country_event = {
+	id = 601998
+	title = EVTNAMEITA
+	desc = EVTDESCITA
+	mean_time_to_happen = {
+		months = 2
+	}
+	trigger = {
+		OR = {
+			AND = {
+				primary_culture = north_italian
+				NOT = { accepted_culture = south_italian }
+			}
+			AND = {
+				primary_culture = south_italian
+				NOT = { accepted_culture = north_italian }
+			}
+		}
+	}
+	option = {
+		name = EVTOPTAITA
+	}
+	immediate = {
+		add_accepted_culture = north_italian
+		add_accepted_culture = south_italian
+	}
+}
+country_event = {
+	id = 601997
+	title = EVTNAMEUSA
+	desc = EVTDESCUSA
+	mean_time_to_happen = {
+		months = 2
+	}
+	trigger = {
+		OR = {
+			AND = {
+				primary_culture = yankee
+				NOT = { accepted_culture = dixie }
+			}
+			AND = {
+				primary_culture = dixie
+				NOT = { accepted_culture = yankee }
+			}
+		}
+	}
+	option = {
+		name = EVTOPTAUSA
+	}
+	immediate = {
+		add_accepted_culture = yankee
+		add_accepted_culture = dixie
+	}
+}
 ### National countries events
 #These events are useful for CK2 conversions
 #because they make it possibly for a country of X culture
@@ -981,6 +1062,8 @@ country_event = {
 		nationalism_n_imperialism = 1
 		primary_culture = portuguese
 		NOT = { exists = POR } #Cultural country
+		NOT = { tag = SPA }
+		NOT = { tag = SPC } # Solves loop
 		POR = {
 			all_core = {
 				OR = {

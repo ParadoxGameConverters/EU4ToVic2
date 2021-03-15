@@ -203,7 +203,7 @@ political_decisions = {
 			badboy = 1
 			any_country = {
 				limit = {
-					religion = catholic
+					accepted_culture = zzz_religion_catholic
 				}
 				relation = {
 					who = THIS

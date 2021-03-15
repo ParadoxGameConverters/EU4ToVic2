@@ -32,6 +32,7 @@ link = { eu4 = NAT v2 = NAT } # Natives
 
 # General wildcard overrides
 link = { v2 = ALL flag = unified_islam } # The Caliphate
+link = { eu4 = e_sunni v2 = ALL } # The Caliphate
 
 #Scandinavia
 link = { eu4 = SWE v2 = SWE } # Sweden
@@ -348,12 +349,12 @@ link = { eu4 = TRI v2 = TER } # Trier
 link = { eu4 = c_trier v2 = TER } #Trier
 link = { eu4 = ULM v2 = ULM } # Ulm
 link = { eu4 = c_ulm v2 = ULM } # Ulm
-link = { eu4 = WBG v2 = WBG } # Wurzburg
-link = { eu4 = c_wurzburg v2 = WBG } #Wurzburg
+link = { eu4 = WBG v2 = WBG } # Würzburg
+link = { eu4 = c_wurzburg v2 = WBG } #Würzburg
 link = { eu4 = WES v2 = WES } # Westfalia
 link = { eu4 = k_westphalia v2 = WES } # Napoleonic Westphalia
-link = { eu4 = WUR v2 = WUR } # Wurttemberg
-link = { eu4 = c_wurttemberg v2 = WUR } #Wurttemberg
+link = { eu4 = WUR v2 = WUR } # Württemberg
+link = { eu4 = c_wurttemberg v2 = WUR } #Württemberg
 link = { eu4 = NUM v2 = NUM } # Nuremberg
 link = { eu4 = c_nurnberg v2 = NUM } #Nuremberg
 link = { eu4 = MEM v2 = MEM } # Memmingen
@@ -829,6 +830,7 @@ link = { eu4 = TKI v2 = TKI } # Toki
 link = { eu4 = UTN v2 = UTU } # Utsunomiya
 link = { eu4 = TTI v2 = TSU } # Tsutsui
 
+link = { v2 = CHI flag = is_china_flag } # China
 link = { eu4 = KHA v2 = KHA } # Mongol Khanate
 link = { eu4 = k_mongolia v2 = KHA } # Mongol Khanate
 link = { eu4 = KHM v2 = CAM } # Khmer => Cambodia
@@ -1659,3 +1661,7 @@ link = { eu4 = k_IMPTOCK3_VSC v2 = BSQ } # Vasconia
 link = { eu4 = k_IMPTOCK3_ASR v2 = ASY } # Assyria
 link = { eu4 = k_IMPTOCK3_BBY v2 = BAB } # Babylon
 link = { eu4 = k_IMPTOCK3_GAU v2 = FRR } # Gaul
+
+# CK3 counties
+link = { eu4 = c_pegu v2 = PEG }
+link = { eu4 = c_qasim v2 = QAS }
