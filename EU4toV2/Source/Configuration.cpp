@@ -41,6 +41,9 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 		verifyVic2DocumentsPath(Vic2DocumentsPath, DoesFolderExist);
 		LOG(LogLevel::Info) << "Vic2 documents path: " << Vic2DocumentsPath;
 	});
+	registerKeyword("targetGameModPath", [this, DoesFolderExist](const std::string& unused, std::istream& theStream) {
+		Vic2ModPath = commonItems::getString(theStream);
+	});
 	registerKeyword("max_literacy", [this](std::istream& theStream) {
 		const auto maxLiteracyString = commonItems::getString(theStream);
 		MaxLiteracy = static_cast<double>(std::stoi(maxLiteracyString)) / 100;
@@ -99,6 +102,11 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 		convertAll = convertAllString == "yes";
 		LOG(LogLevel::Info) << "Convert All: " << convertAllString;
 	});
+	registerKeyword("hpm_enabled", [this](std::istream& theStream) {
+		const auto hpmEnabledString = commonItems::getString(theStream);
+		isHpmEnabled = hpmEnabledString == "yes";
+		LOG(LogLevel::Info) << "HPM enabled: " << hpmEnabledString;
+	});
 	registerKeyword("output_name", [this](std::istream& theStream) {
 		incomingOutputName = commonItems::getString(theStream);
 		LOG(LogLevel::Info) << "Output Name: " << incomingOutputName;
@@ -109,6 +117,11 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 	parseStream(theStream);
 	clearRegisteredKeywords();
 	setOutputName();
+	if (isHpmEnabled)
+	{
+		Vic2Path = Vic2ModPath + "/HPM";
+		Vic2DocumentsPath += "/HPM";
+	}
 	Log(LogLevel::Progress) << "3 %";
 }
 

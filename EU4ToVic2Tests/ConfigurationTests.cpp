@@ -462,3 +462,23 @@ TEST(EU4ToVic2_ConfigurationTests, DebugCanBeSet)
 }
 
 
+TEST(EU4ToVic2_ConfigurationTests, HpmDefaultsDisabled)
+{
+	Configuration testConfiguration;
+	std::stringstream input;
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_FALSE(testConfiguration.getIsHpmEnabled());
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, HpmCanBeEnabled)
+{
+	Configuration testConfiguration;
+	std::stringstream input("hpm_enabled = \"yes\"");
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_TRUE(testConfiguration.getIsHpmEnabled());
+}
+
+

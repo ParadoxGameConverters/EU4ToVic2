@@ -52,6 +52,7 @@ class Configuration: commonItems::parser
 		[[nodiscard]] auto getRandomiseRgos() const { return randomiseRgos; }
 		[[nodiscard]] auto getConvertAll() const { return convertAll; }
 		[[nodiscard]] auto getAfricaReset() const { return africaReset; }
+		[[nodiscard]] auto getIsHpmEnabled() const { return isHpmEnabled; }
 
 		[[nodiscard]] const auto& getEU4SaveGamePath() const { return EU4SaveGamePath; }
 		[[nodiscard]] const auto& getEU4Path() const { return EU4Path; }
@@ -83,6 +84,7 @@ class Configuration: commonItems::parser
 		std::string CK2ExportPath;
 		std::string Vic2Path;
 		std::string Vic2DocumentsPath;
+		std::string Vic2ModPath;
 		std::string resetProvinces = "no";
 		double MaxLiteracy = 1.0;
 		LIBERTYDESIRE libertyThreshold = LIBERTYDESIRE::Loyal;
@@ -96,6 +98,7 @@ class Configuration: commonItems::parser
 		bool debug = false;
 		bool randomiseRgos = false;
 		bool convertAll = false;
+		bool isHpmEnabled = false;
 	
 		// items set during conversion
 		GameVersion version;

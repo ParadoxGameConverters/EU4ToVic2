@@ -226,6 +226,23 @@ option = {
 	}
 }
 option = {
+	name = hpm_enabled
+	displayName = HPM
+	tooltip = HPMTIP
+	radioSelector = {
+		radioOption = {
+			name = yes
+			displayName = HPMENABLED
+			default = false
+		}
+		radioOption = {
+			name = no
+			displayName = HPMDISABLED
+			default = true
+		}
+	}
+}
+option = {
 	name = output_name
 	displayName = MODNAME
 	tooltip = MODNAMETIP
