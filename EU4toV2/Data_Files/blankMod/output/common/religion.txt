@@ -103,9 +103,16 @@ christian = {
 		icon = 39
 		color = { 0.6 0.8 0.6 }
 	}
+}
+
+gnostic_g = {
 	gnostic = {
 		icon = 60
 		color = { 0.5 0.75 0.3 }
+	}
+	yazidi = {
+		icon = 41
+		color = {1.0 0.8 0.0}
 	}
 }
 
@@ -117,10 +124,6 @@ muslim = {
 	zikri = {
 		icon = 40
 		color = {0.9 0.2 0.2}
-	}
-	yazidi = {
-		icon = 41
-		color = {1.0 0.8 0.0}
 	}
 	sunni_heresy = {
 		icon = 40
@@ -173,40 +176,47 @@ judaism = {
 	}
 }
 
+indian = {
+	hindu = {
+		color = { 0 0.8 0.8 }
+		icon = 11
+	}
+	sikh = {
+		color = { 0.3 0.8 0 }
+		icon = 13
+	}
+	jain = {
+		color = { 0.3 0.8 0 }
+		icon = 58
+	}
+}
+
 eastern = {
 	mahayana = {
 		color = { 0.8 0.3 0 }
 		icon = 8
 	}
-
-	gelugpa = {
+	gelugpa = { # EU4 Vajrayana
 		color = { 0 0.3 0.8 }
 		icon = 9
 	}
-
 	theravada = {
 		color = { 0.8 0 0.8 }
 		icon = 10
 	}
-
-	hindu = {
-		color = { 0 0.8 0.8 }
-		icon = 11
-	}
-
 	shinto = {
 		color = { 0.8 0 0 }
 		icon = 12
 	}
-
-	sikh = {
-		color = { 0.3 0.8 0 }
-		icon = 13
+	tibet_bon = {
+		icon = 56
+		color = { 0.1 0.3 0.85 }
+		pagan = yes
 	}
-
-	jain = {
-		color = { 0.3 0.8 0 }
-		icon = 58
+	muism = {
+		icon = 57
+		color = { 0.1 0.3 0.85 }
+		pagan = yes
 	}
 }
 
@@ -216,34 +226,9 @@ pagan = {
 		color = { 0.5 0.0 0.0 }
 		pagan = yes
 	}
-	norse_pagan_reformed= {
-		icon = 15
-		color = { 0.75 0.75 0.75 }
-		pagan = yes
-	}
 	tengri_pagan_reformed = {
 		icon = 16
 		color = { 0.1 0.3 0.85 }
-		pagan = yes
-	}
-	baltic_pagan_reformed = {
-		icon = 17
-		color = { 0.75 0.5 0.35 }
-		pagan = yes
-	}
-	finnish_pagan_reformed = {
-		icon = 18
-		color = { 0.65 0.65 0.1 }
-		pagan = yes
-	}
-	aztec_reformed = {
-		icon = 19
-		color = { 0.95 0.3 0.3 }
-		pagan = yes
-	}
-	slavic_pagan_reformed = {
-		icon = 20
-		color = { 0.85 0.73 0.4 }
 		pagan = yes
 	}
 	west_african_pagan_reformed = {
@@ -251,31 +236,9 @@ pagan = {
 		color = { .355 .191 .05 }
 		pagan = yes
 	}
-
-	zun_pagan_reformed = {
-		icon = 28
-		color = { 1.0 0.8 0.2 }
-		pagan = yes
-	}
-
-	hellenic_pagan = {
-		icon = 22
-		color = { 0.6 0.1 0.1 }
-		pagan = yes
-	}
-	inca_reformed = {
-		icon = 24
-		color = { 0.6 0.1 0.1 }
-		pagan = yes
-	}
 	shamanism = {
 		icon = 25
 		color = { 0.5 0.3 0.3 }
-		pagan = yes
-	}
-	totemism = {
-		icon = 26
-		color = { 0.5 0.45 0.45 }
 		pagan = yes
 	}
 	siberian_pagan_reformed = {
@@ -288,45 +251,125 @@ pagan = {
 		color = { 0 0 0 }
 		pagan = yes
 	}
-	mayan = {
-		icon = 19
-		color = { 0.95 0.3 0.3 }
+	scythian_pagan = {
+		icon = 71
+		color = { 0.5 0.19 0.2 }
+		pagan = yes
 	}
-	nahuatl = {
-		icon = 49
-		color = { 0.4 0.1 0.1 }
-	}
-	inti = {
-		icon = 50
-		color = { 1.0 0.8 0.0 }
-	}
+}
+mena_pagan = {
 	kemetic = {
 		icon = 52
 		color = { 0.4 0.6 0.6 }
+		pagan = yes
 	}
 	arab_pagan = {
 		icon = 53
 		color = { 0.6 0.1 0.2 }
-	}
-	druidist = {
-		icon = 54
-		color = { 0.9 0.6 0.9 }
-	}
-	tibet_bon = {
-		icon = 56
-		color = { 0.1 0.3 0.85 }
-	}
-	muism = {
-		icon = 57
-		color = { 0.1 0.3 0.85 }
+		pagan = yes
 	}
 	canaanite = {
 		icon = 61
 		color = { 0.1 0.2 0.3 }
+		pagan = yes
 	}
 	mardukism = {
 		icon = 62
 		color = { 0.3 0.2 0.1 }
+		pagan = yes
+	}
+	cybelene = {
+		icon = 66
+		color = { 0.6 0.05 0.3 }
+		pagan = yes
+	}
+	mithraism = {
+		icon = 68
+		color = { 0.82 0 0 }
+	}
+}
+euro_pagan = {
+	norse_pagan_reformed= {
+		icon = 15
+		color = { 0.75 0.75 0.75 }
+		pagan = yes
+	}
+	baltic_pagan_reformed = {
+		icon = 17
+		color = { 0.75 0.5 0.35 }
+		pagan = yes
+	}
+	finnish_pagan_reformed = {
+		icon = 18
+		color = { 0.65 0.65 0.1 }
+		pagan = yes
+	}
+	slavic_pagan_reformed = {
+		icon = 20
+		color = { 0.85 0.73 0.4 }
+		pagan = yes
+	}
+	hellenic_pagan = {
+		icon = 22
+		color = { 0.6 0.1 0.1 }
+		pagan = yes
+	}
+	druidist = {
+		icon = 54
+		color = { 0.9 0.6 0.9 }
+		pagan = yes
+	}
+	german_pagan = {
+		icon = 65
+		color = { 0.6 0.6 0.6 }
+		pagan = yes
+	}
+	zamolxism = {
+		icon = 67
+		color = { 0.45 0.29 0.15 }
+		pagan = yes
+	}
+	hetanism = { # Georgian-Armenian paganism
+		icon = 69
+		color = { 0.33 0.42 0.18 }
+		pagan = yes
+	}
+	iberian_pagan = {
+		icon = 70
+		color = { 0.91 0.71 0.82 }
+		pagan = yes
+	}
+}
+red_pagan = {
+	aztec_reformed = {
+		icon = 19
+		color = { 0.95 0.3 0.3 }
+		pagan = yes
+	}
+	inca_reformed = {
+		icon = 24
+		color = { 0.6 0.1 0.1 }
+		pagan = yes
+	}
+	totemism = {
+		icon = 26
+		color = { 0.5 0.45 0.45 }
+		pagan = yes
+	}
+	mayan = {
+		icon = 19
+		color = { 0.95 0.3 0.3 }
+		pagan = yes
+	}
+	nahuatl = {
+		icon = 49
+		color = { 0.4 0.1 0.1 }
+		pagan = yes
+	}
+	inti = {
+		icon = 50
+		color = { 1.0 0.8 0.0 }
+		pagan = yes
 	}
 }
 
@@ -346,5 +389,16 @@ zoroastrian = {
 	zoroastrian_heresy = {
 		icon = 46
 		color = { 0.9 0.3 0.3 }
+	}
+	zun_pagan_reformed = {
+		icon = 28
+		color = { 1.0 0.8 0.2 }
+		pagan = yes
+	}
+}
+dummy_g = {
+	dummy_religion = {
+		icon = 72
+		color = { 1 1 1 }
 	}
 }

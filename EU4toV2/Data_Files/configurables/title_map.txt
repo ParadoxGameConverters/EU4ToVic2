@@ -3970,6 +3970,7 @@ link = { name = "pelym" title = "d_pelym" region = "e_hre" }
 
 ### IMP:CK3 important countries
 link = { name = "antigonid Kingdom" title = "k_IMPTOCK3_PRY" region = "e_imp" }
+link = { name = "asian Kingdom" title = "k_IMPTOCK3_PRY" region = "e_imp" }
 link = { name = "boihaemia" title = "k_bohemia" region = "e_imp" }
 link = { name = "burgundia" title = "k_burgundy" region = "e_imp" }
 link = { name = "byzantion" title = "e_byzantium" region = "e_imp" }
@@ -4033,3 +4034,38 @@ link = { name = "olympia" title = "k_IMPTOCK3_olympia" region = "e_imp" }
 link = { name = "sikelia" title = "k_sicily" region = "e_imp" }
 
 link = { name = "kirghiz khanate" title = "e_kirghiz_khanate" region = "e_ck3" }
+
+## From CK3
+link = { name = "znojmo" title = "c_znojmo" region = "e_ck3" }
+link = { name = "westfriesland" title = "c_westfriesland" region = "e_ck3" }
+link = { name = "uzen" title = "c_uzens" region = "e_ck3" }
+link = { name = "värmaland" title = "c_varmland" region = "e_ck3" }
+link = { name = "vestrland" title = "c_vestisland" region = "e_ck3" }
+link = { name = "vodi" title = "c_vodi" region = "e_ck3" }
+link = { name = "sijilmasa" title = "c_sijilmasa" region = "e_ck3" }
+link = { name = "suzdal" title = "c_suzdal" region = "e_ck3" }
+link = { name = "tavasts" title = "d_tavasts" region = "e_ck3" }
+link = { name = "terebovl" title = "c_terebovl" region = "e_ck3" }
+link = { name = "tobol" title = "c_tobol" region = "e_ck3" }
+link = { name = "toropets" title = "c_toropets" region = "e_ck3" }
+link = { name = "trencín" title = "c_trencin" region = "e_ck3" }
+link = { name = "turów" title = "d_turov" region = "e_ck3" }
+link = { name = "tyumen" title = "c_tyumen" region = "e_ck3" }
+link = { name = "opava" title = "c_opava" region = "e_ck3" }
+link = { name = "orava" title = "c_orava" region = "e_ck3" }
+link = { name = "orkneyjar" title = "d_orkney" region = "e_ck3" }
+link = { name = "osel" title = "c_osel" region = "e_ck3" }
+link = { name = "otrar" title = "c_otrar" region = "e_ck3" }
+link = { name = "pegu" title = "c_pegu" region = "e_ck3" }
+link = { name = "peremyshl" title = "c_peremyshl" region = "e_ck3" }
+link = { name = "plock" title = "c_plock" region = "e_ck3" }
+link = { name = "plzen" title = "c_plzen" region = "e_ck3" }
+link = { name = "praha" title = "c_praha" region = "e_ck3" }
+link = { name = "qasim" title = "c_qasim" region = "e_ck3" }
+link = { name = "roslavl" title = "c_roslavl" region = "e_ck3" }
+link = { name = "sacz" title = "c_sacz" region = "e_ck3" }
+link = { name = "Šariš" title = "c_saris" region = "e_ck3" }
+link = { name = "sieradz" title = "c_sieradzko-leczyckie" region = "e_ck3" }
+link = { name = "litomerice" title = "c_litomerice" region = "e_ck3" }
+link = { name = "marmaros" title = "c_marmaros" region = "e_ck3" }
+link = { name = "atropatene" title = "d_azerbaijan" region = "e_imp" } # Namesake

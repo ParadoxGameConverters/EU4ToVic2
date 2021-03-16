@@ -24,10 +24,14 @@ western = {
 	boer nieuwereld zuidelijk dutch flemish
 	# Scandinavian
 	vinlander sydlig svart icelandic danish norwegian swedish sami
+	# Varangian
+	varangian_american varangian_australian varangian_african varangian nehwaustronijaz
 	# British
 	yankee dixie anglo_canadian australian texan falklander anglo_african english scottish anglo_saxon pictish british welsh irish
+	# Celtic
+	belgian gaulish celtiberian
 	# Roman
-	foederatus afer australus brithenig gaul laessin wenedyk spanish xliponian latin celtiberian graecus pannonian britannian
+	foederatus afer australus brithenig gaul laessin wenedyk spanish xliponian latin graecus pannonian britannian euxinian
 	# Italian
 	italoamericano australiano africano lombard maltese north_italian south_italian all_italian
 	# Iberian 
@@ -38,12 +42,14 @@ western = {
 	usmailmian lounast mustvalge finnish ugrian
 	# West Slavic
 	novysvet jizni hnedy nowyswiat poludniowy czarny polish slovak czech sorbian oldpommeranian
-	# Odd
-	ostrogothic
+	# Goths
+	ostrogothic gothic getian
 	# Slave
 	afro_norse afro_american afro_caribbean afro_italian afro_caribeno afro_brazilian afro_antillean
 	# Animals
 	polar_bears horse cat dog_culture duck_culture dragon_culture elephant_culture hedgehog_culture
+	# Other stuff
+	nuragic oldspain illyrian vandal dacian thracian pie_american pie_australian pie_african
 	}
 }
 
@@ -62,7 +68,7 @@ eastern = {
 	# Carpathian
 	ujvilag delian fekete hungarian lumenoua sudic negru aromanian romanian
 	# Greek-ish
-	neokosmi notios mavro greek magnagreek georgian armenian yenidun guney esmer north_caucasian alan
+	neokosmi notios mavro greek magnagreek georgian armenian yenidun guney esmer north_caucasian alan dytic_american dytic_australian dytic_african prettanian adelphic spaniolic galatian
 	# Slave
 	afro_slavic afro_carpathian afro_greek
 	}
@@ -73,6 +79,10 @@ ottoman = {
 	literacy = 3
 	cultures = {
 	turkish
+	# Carthage
+	punic_american punic_australian carthaginian ythalonim ualonuth sicorathi symacom ysthyalm sythchy ynnocho mlachthi inythmum gadolite bythlimmoth sidonian taliaite lacanite epicrateian pmpese ythbynuthi ychibarku liphocaneth mysehi
+	# Hittite
+	hittite_american hittite_australian luwian lydian hittite phrygian
 	}
 }
 

@@ -157,6 +157,7 @@ political_decisions = {
 			change_tag = SGF
 			any_country = {
 				limit = {
+					ai = yes
 					primary_culture = south_german
 					in_sphere = THIS
 					NOT = {
@@ -172,7 +173,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 				}
-				country_event = 11106
+				annex_to = FROM
 			}
 		}
 		ai_will_do = {
@@ -342,6 +343,7 @@ political_decisions = {
 			change_tag = SGF
 			any_country = {
 				limit = {
+					ai = yes
 					primary_culture = south_german
 					in_sphere = THIS
 					NOT = { 
@@ -356,7 +358,7 @@ political_decisions = {
 					}
 					NOT = { has_country_flag = post_colonial_country }
 				}
-				country_event = 11106
+				annex_to = FROM
 			}
 		}
 		ai_will_do = {
@@ -425,6 +427,7 @@ political_decisions = {
 			FRA_412 = { add_core = GER }
 			any_country = {
 				limit = {
+					ai = yes
 					OR = {
 						primary_culture = north_german
 						tag = SCH
@@ -437,7 +440,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 				}
-				country_event = 11106
+				annex_to = FROM
 			}
 		}
 		ai_will_do = {
@@ -957,7 +960,6 @@ political_decisions = {
 			NOT = {
 				accepted_culture = zzz_religion_sunni
 				accepted_culture = zzz_religion_zikri
-				accepted_culture = zzz_religion_yazidi
 				accepted_culture = zzz_religion_sunni_heresy
 				accepted_culture = zzz_religion_shiite
 				accepted_culture = zzz_religion_hurufi
@@ -1043,7 +1045,6 @@ political_decisions = {
 			OR = {
 				accepted_culture = zzz_religion_sunni
 				accepted_culture = zzz_religion_zikri
-				accepted_culture = zzz_religion_yazidi
 				accepted_culture = zzz_religion_sunni_heresy
 				accepted_culture = zzz_religion_shiite
 				accepted_culture = zzz_religion_hurufi
@@ -1412,6 +1413,7 @@ unite_moldavia_wallachia = {
 			set_country_flag = secondary_union_formation
 			any_country = {
 				limit = {
+					ai = yes
 					OR = {
 						primary_culture = north_german
 						tag = SCH
@@ -1424,7 +1426,7 @@ unite_moldavia_wallachia = {
 						vassal_of = THIS
 					}
 				}
-				country_event = 11106
+				annex_to = FROM
 			}
 		}
 		ai_will_do = {
@@ -1503,6 +1505,7 @@ unite_moldavia_wallachia = {
 				limit = {
 					primary_culture = south_german
 					in_sphere = THIS
+					ai = yes
 					NOT = { tag = THIS }
 					NOT = { tag = KUK }
 					#NOT = { tag = DNB }
@@ -1529,7 +1532,7 @@ unite_moldavia_wallachia = {
 						vassal_of = THIS
 					}
 				}
-				country_event = 11106
+				annex_to = FROM
 			}
 		}
 		ai_will_do = {

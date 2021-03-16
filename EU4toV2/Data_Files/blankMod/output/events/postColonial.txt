@@ -57,10 +57,10 @@ country_event = {
 		war = {
 			target = FROM
 			defender_goal = {
-				casus_belli = conquest
+				casus_belli = annex_core_country
 			}
 			attacker_goal = {
-				casus_belli = become_independent
+				casus_belli = eu4_colony_asks_independence
 			}
 			call_ally = no
 		}
@@ -152,6 +152,14 @@ country_event = {
 			remove_accepted_culture = zzz_religion_gnostic
 			remove_accepted_culture = zzz_religion_canaanite
 			remove_accepted_culture = zzz_religion_mardukism
+			remove_accepted_culture = zzz_religion_german_pagan
+			remove_accepted_culture = zzz_religion_cybelene
+			remove_accepted_culture = zzz_religion_zamolxism
+			remove_accepted_culture = zzz_religion_mithraism
+			remove_accepted_culture = zzz_religion_hetanism
+			remove_accepted_culture = zzz_religion_iberian_pagan
+			remove_accepted_culture = zzz_religion_scythian_pagan
+			remove_accepted_culture = zzz_religion_dummy_religion
 		}
 	}
 	# Player-only option because there are a fuckton of options
@@ -159,6 +167,8 @@ country_event = {
 		name = "(Player-only) Dice roll!"
 		FROM = {
 			clr_country_flag = religi
+			add_accepted_culture = zzz_religion_dummy_religion
+			religion = dummy_religion
 		}
 		ai_chance = { factor = 0 }
 	}
@@ -1210,6 +1220,118 @@ country_event = {
 	   modifier = {
 		factor = 0
 		NOT = { accepted_culture = zzz_religion_noreligion }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "german_pagan"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_german_pagan
+	   religion = german_pagan
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_german_pagan }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "cybelene"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_cybelene
+	   religion = cybelene
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_cybelene }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "zamolxism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_zamolxism
+	   religion = zamolxism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_zamolxism }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "mithraism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_mithraism
+	   religion = mithraism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_mithraism }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "hetanism"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_hetanism
+	   religion = hetanism
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_hetanism }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "iberian_pagan"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_iberian_pagan
+	   religion = iberian_pagan
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_iberian_pagan }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "scythian_pagan"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_scythian_pagan
+	   religion = scythian_pagan
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_scythian_pagan }
+	   }
+	  }
+	 }
+	 option = {
+	  name = "dummy_religion"
+	  FROM = {
+	   add_accepted_culture = zzz_religion_dummy_religion
+	   religion = dummy_religion
+	  }
+	  ai_chance = {
+	   factor = 100
+	   modifier = {
+		factor = 0
+		NOT = { accepted_culture = zzz_religion_dummy_religion }
 	   }
 	  }
 	 }

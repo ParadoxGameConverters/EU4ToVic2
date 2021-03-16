@@ -1,6 +1,5 @@
 # Do not change tags in here without changing every other reference to them.
 # If adding new groups or cultures, make sure they are unique.
-
 germanic = {
 	leader = european
 	unit = PrussianGC
@@ -128,31 +127,6 @@ germanic = {
 	schwarzreicher = {
 		color = { 42 42 42 }
 
-		first_names = { Adelbert Adolf Albrecht Alexander Alfons Alfred August Alois Anton Arthur
-		Bernhard Burkhard Christian Dieter Edmund Eduard Edwin Engelbert Erwin Erich Ernst 
-		Ferdinand Florian Franz Friedrich Fritz Georg Gebhard Gerhard Gottfried Günther
-		Gustav Hasso Heinrich Helmuth Hermann Horst Hugo Jakob Joachim Johann Joseph Julius Jürgen 
-		Karl Konrad Kurt Leonhard Leopold Lorenz Lothar Ludwig Lukas Manfred Maximilian Michael 
-		Nikolaus Otto Pascal Paul Peter Reinhard Rudolf Ruprecht Stefan Theodor Viktor Walter Werner 
-		Wilhelm Wolfgang }
-		
-		last_names = { Beck-Rzikowsky Behncke Blos Brommy Cordemann Dankl Dreyer Droste Eisner Geiss 
-		Goering Groener Hainisch Haus Held Hellpach "Herwarth von Bittenfeld" Heppendorf Hoffmann 
-		Hummel Köhler Krohn Ludendorff Mergenthaler Miklas Remmele Schmitt Schobber Schree Seitz Steeb
-		Stolzer Trunk "Vogel von Falkenstein" "von Alten" "von Anhalt" "von Arentschildt" "von Bülow" 
-		"von Baden" "von Benedek" "von Bismarck-Bohlen" "von Blumenthal" "von Blomberg" "von Böhm-Ermolli"
-		"von Boyen" "von Braunschweig" "von Brudermann" "von Clam-Gallas" "von dem Knesebeck" 
-		"von der Tann" "von Dietrich" "von Gablenz" "von Gebser" "von Grünne" "von Habsburg" "von Fritsch"
-		 "von Halkett" "von Hannover" "von Hartmann" "von Haynau" "von Hess" 
-		"von Hessen-Darmstadt" "von Hessen-Kassel" "von Hindenburg" "von Hohenzollern" "von Holstein-Gottorp" "von Knorr" "von Kleefeld"
-		"von Manteuffel" "von Mecklenburg-Schwerin" "von Mecklenburg-Strelitz" "von Moltke" "von Oldenburg" "von Rauch" "von Ravensberg" 
-		"von Reuter" "von Richthofen" "von Sachsen-Altenburg" "von Sachsen-Coburg-Gotha" "von Sachsen-Meiningen" 
-		"von Sachsen-Weimar-Eisenach" "von Schlieffen" "von Schwarzburg" "von Spee" "von Tirpitz" "von Waldeck und Pyrmont" "von Wettin" 
-		"von Wrangel" "von Zieten" "zur Lippe" "von Roon" "von Hohenhausen" "d'Aspre von Hoobreuk" "von Hortstein" "von Hötzendorf" "von Kirbach"
-		"von Kobratin" "von Schönburg" "von Tegetthoff" "von Uchatius" "von Wittelsbach" "von Württemberg" "von Zahringen" Wagner Wittmann "zu Hohenlohe"}
-	}
-	vandal = {
-		color = { 77 27 23 }
 		first_names = { Adelbert Adolf Albrecht Alexander Alfons Alfred August Alois Anton Arthur
 		Bernhard Burkhard Christian Dieter Edmund Eduard Edwin Engelbert Erwin Erich Ernst 
 		Ferdinand Florian Franz Friedrich Fritz Georg Gebhard Gerhard Gottfried Günther
@@ -476,8 +450,9 @@ pre_indo_european = {
 			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
 			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
 		}
-		last_names = { # no last names
-			""
+		last_names = { 
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
 		}
 	}
 	oldspain = {
@@ -496,8 +471,9 @@ pre_indo_european = {
 			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
 			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
 		}
-		last_names = { # no last names
-			""
+		last_names = { 
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
 		}
 	}
 	pie_oceanian = {
@@ -506,8 +482,9 @@ pre_indo_european = {
 			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
 			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
 		}
-		last_names = { # no last names
-			""
+		last_names = { 
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
 		}
 	}
 	pie_african = {
@@ -516,8 +493,9 @@ pre_indo_european = {
 			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
 			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
 		}
-		last_names = { # no last names
-			""
+		last_names = { 
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
 		}
 	}
 }
@@ -756,22 +734,6 @@ italian = {
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
 		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
 	}
-	illyrian = {
-		color = { 102 88 61 }
-		first_names = {
-			Andinos Andios Anneses Annos Aplis Aploudos Aplos Apouros Baidaros Baizo Baizos Baolios Bardourios Bato Byoukos Byousas Bizo Bryoukos Karrios Daiekos Daitor Dasantos Dasios Dazomenos Dazos Epikaris Iettos Implaios Laidikalios Laidietis Laidos Labios Ledros Massurios Messios Messor Paio Panentios Panes Panto Pantos Plannios Plares Prorados Sarnos Skenobarbos Sestos Statanios Statikos Statos Souttis Temaios Tizios Tritonos Tritos Turelios Ulkidios Baranos Baridios Bendo Bepos Berzoulos
-			Karbanios Germanos Labianos Pinsos Pladomenos Verzaieos
-			Anadros Bouzetios Ditos Loantios Pantadienos Plator Platourios Rufantius Sestenius Stennas Vendes
-			Tourranios Tourrinios Touros
-			Andes Iaritos Montanos Parmanicos Sarios Seneka Silos Sinos
-			Blaidaros Dasmenos Lensos Sassaios Skilos Sourko
-			Kralos Liros Passalos Likkaios
-			Skenos
-		}
-		last_names = {
-			Andinid Andid Annesid Annid Aplid Apludid Apurid Baizid Bardurid Batid Beukid Beusid Bizid Karrid Daitorid Dasid Dazomenid Dazid Epicarid Iettid Laidicalid Laidietid Laidid Ledrid Messid Messorid Panentid Panid Pantid Plannid Plarid Proradid Samekkid Sarnid Skenobarbid Statanid Statikid Statid Suttid Tizid Tritonid Tritid Turelid Varanid Varidid Vendid Vepid Verzulid Carvanid Germanid Lavianid Pinsid Pladomenid Platid Verzaiid Anadrid Buzetid Ditid Loantid Pantadienid Platorid Platourid Portid Rufantid Sestenid Stennid Vendid Tourranid Tourrinid Tourid Iaritid Montanid Parmanikid Sarid Senekid Silid Sinid Blaidarid Dasmenid Lensid Sassaid Skilid Surkid Kralid Lirid Passalid Likkaid Skenid
-		}
-	}
 	
 	union = ITA
 }
@@ -779,6 +741,27 @@ italian = {
 romantic = {
 	leader = european
 	unit = ItalianGC
+	
+	maghreb_arabic = {
+		color = {204 229 102}
+		first_names = { Masuna Mastigas Garmul Kusaila Lider Maximus Masguinas
+			Abakada Adam Aderbal
+			Admer Adrir Adum Afaghis Afalawas Afalku Afer Afulay Agafay Agama Agdada Agdun Agellid Aggur Aghali Aghecher Aghilas Agwillul
+			Ahamatu Ajeddig Akaday Akateiaji Akli Akorakor Aksel Aksil Akutla Akzer Alyamas Amawal
+			Amayas Ambay Amdegh Amellal Amennay Ameska Amessan Amin Amma Ammuc Amray Amri Anaba Annaber Antalas Anwa Aras
+			Asad Asaru Asirem Aszellay Atissi Awdia Awgustin Awinagh Awlagh Awzal Aylal Ayt'ere Az'regh Azenkwed Azrur Badda Badis
+			Bagay Barakat Beddis Berkan Br'ir'uc Bukkus Buwayh Buxtuc Capussa Cucung Dali Firmus Frawsen Gaia Galussa Gauda
+			Gaya Ghanim Ghaysan Ghumer Gildun Gulusa Hiba Hiempsal Himmi Hotha Iccaam
+			Ifni Ifser Ighlaf Igider Igmi Iher Iken Ilyas Immeghar Immel Irgen Isli Issam It'ij Itber Itri Ixfensen Ixzi Izri Kadidu
+			Karidenna Kawsen Kenan Keraja Khanchla Khenchela Khidr Kussil Lacumaces Laweye Lewnis Luki Madidu Magsen Mahtar
+			Masgaba Masgava Masinissa Masmud Masnsen Massinissa Massiva Massnsen Mastan Mastanabal Matiya Maysar Maziba Mazigh
+			Medjan Mellal Mennad Menzu Meq'wran Mez'yan Mezwar Micipsa Misagenes Misibsen Mukhtar
+			N'Guna Nasr Nazar Niptasan Nizamaddin Ptolemee Qutaiba Salomon Sammer
+			Seghada Sekla Sifaks Sifal Sisso Stembanos Suggut Tabat Tacfin Taffounnout Tahir Takfarinas Tanan
+			Tegama Thabitah Tifan Tiljad Ugdada Ugwistan Uqess'un Uregh Urtilian Urz'ig Uzmir Uzza Wahab Watt'as Xamida Yabdas Yaghmurasen
+			Yattuy Yeften Yeh'lem Yiliyen Yuba Yugerten Yugurthen Youkhanna Yunes Yusuf Yuva Z'effun Zalelsan Zer'wal Zigza Ziri  }
+		last_names = { Altavid Massyli Mauretania Byzacena Sitifensis Numidia Gaetuli Garamantes }
+	}
 	brithenig = { 
 		color = { 28 78 122 }
 
@@ -810,7 +793,7 @@ romantic = {
 			Simmagos Sévigiéos Lanualéos Ligatos Lléléos Luciéanos Maisémos Mèlcunéos Maiòréanos Méréadociéos Mogièstos
 			Auréléanos Ovénéanos Péscatrò Péos }
 	}
-	gaul = { 
+	euxinian = { 
 		color = { 30 170 60 }
 
 		first_names = { Ætius Agrippa Albanus Albus Ambrosinus Antoninus Appius Attilius Aulus Aurelius Ariovistus Arrius
@@ -1922,27 +1905,6 @@ levantine = {
 		last_names = { Andiyev Ashuraliyev Basiev Bazayev Bestayev Chibirov Din Dudarova Dzhanayev Fadzayev Farniev Gabulov Gassiev Gazyumov Guriev Khapov Khetagurov Kokoity Kusov Nyxas Pagayev Pliyeva Sanakoyev Tibilov Tokaty Torchinov Toshinori Valiyev Zangiev Zazirov }
 	}
 	
-	maghreb_arabic = {
-		color = {204 229 102}
-		first_names = { Masuna Mastigas Garmul Kusaila Lider Maximus Masguinas
-			Abakada Adam Aderbal
-			Admer Adrir Adum Afaghis Afalawas Afalku Afer Afulay Agafay Agama Agdada Agdun Agellid Aggur Aghali Aghecher Aghilas Agwillul
-			Ahamatu Ajeddig Akaday Akateiaji Akli Akorakor Aksel Aksil Akutla Akzer Alyamas Amawal
-			Amayas Ambay Amdegh Amellal Amennay Ameska Amessan Amin Amma Ammuc Amray Amri Anaba Annaber Antalas Anwa Aras
-			Asad Asaru Asirem Aszellay Atissi Awdia Awgustin Awinagh Awlagh Awzal Aylal Ayt'ere Az'regh Azenkwed Azrur Badda Badis
-			Bagay Barakat Beddis Berkan Br'ir'uc Bukkus Buwayh Buxtuc Capussa Cucung Dali Firmus Frawsen Gaia Galussa Gauda
-			Gaya Ghanim Ghaysan Ghumer Gildun Gulusa Hiba Hiempsal Himmi Hotha Iccaam
-			Ifni Ifser Ighlaf Igider Igmi Iher Iken Ilyas Immeghar Immel Irgen Isli Issam It'ij Itber Itri Ixfensen Ixzi Izri Kadidu
-			Karidenna Kawsen Kenan Keraja Khanchla Khenchela Khidr Kussil Lacumaces Laweye Lewnis Luki Madidu Magsen Mahtar
-			Masgaba Masgava Masinissa Masmud Masnsen Massinissa Massiva Massnsen Mastan Mastanabal Matiya Maysar Maziba Mazigh
-			Medjan Mellal Mennad Menzu Meq'wran Mez'yan Mezwar Micipsa Misagenes Misibsen Mukhtar
-			N'Guna Nasr Nazar Niptasan Nizamaddin Ptolemee Qutaiba Salomon Sammer
-			Seghada Sekla Sifaks Sifal Sisso Stembanos Suggut Tabat Tacfin Taffounnout Tahir Takfarinas Tanan
-			Tegama Thabitah Tifan Tiljad Ugdada Ugwistan Uqess'un Uregh Urtilian Urz'ig Uzmir Uzza Wahab Watt'as Xamida Yabdas Yaghmurasen
-			Yattuy Yeften Yeh'lem Yiliyen Yuba Yugerten Yugurthen Youkhanna Yunes Yusuf Yuva Z'effun Zalelsan Zer'wal Zigza Ziri  }
-		last_names = { Altavid Massyli Mauretania Byzacena Sitifensis Numidia Gaetuli Garamantes }
-	}
-	
 	assyrian = {
 		color = {165 76 153}
 		first_names = { Thomma Thoman Mamman Oommen Qako Yakob Pathros Pathe Pathappan Yohannan
@@ -2070,18 +2032,15 @@ turko_semitic = {
 			Talat Tevfik Vefik Yusuf Yunus Ziya Ziyaeddin
 		}
 		
-		last_names = { 
-			Bey Pasha 
+		last_names = {
+		Akdag’ Akdog’u Akkaya Akkaš Akkïlïç Akköz Aktug’ Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
+		Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog’an Durak Dilmen Ekin Ercan Erdog’an Eren
+		Erentöz Erkin Ermiš Ertunç Estelik Güler Gümüš Gündog’an Gündüz Güney Güneš Güven Karan Kaya Korun
+		Koç Murat Nadir Nalci Nišanyan Onan Onay Sag’lam Sedef Selçuk Tandog’an Tašçï Tekin Terim Toraman
+		Turan Turgut Türkog’lu Yavuz Yašar Yener Yïldïrïm Yïldïz Yïlmaz Yüksel Çelik Çetin Çolak Çiller Öcalan
+		Örs Özbek Özbey Özcan Özer Özkan Öztürk Özil Ülker Inan Šaban Šelte Šen
 		}
 		
-		#last_names = { # If you pretend a "surname law" was already passed
-		#	Akdag’ Akdog’u Akkaya Akkaš Akkïlïç Akköz Aktug’ Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
-		#	Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog’an Durak Dilmen Ekin Ercan Erdog’an Eren
-		#	Erentöz Erkin Ermiš Ertunç Estelik Güler Gümüš Gündog’an Gündüz Güney Güneš Güven Karan Kaya Korun
-		#	Koç Murat Nadir Nalci Nišanyan Onan Onay Sag’lam Sedef Selçuk Tandog’an Tašçï Tekin Terim Toraman
-		#	Turan Turgut Türkog’lu Yavuz Yašar Yener Yïldïrïm Yïldïz Yïlmaz Yüksel Çelik Çetin Çolak Çiller Öcalan
-		#	Örs Özbek Özbey Özcan Özer Özkan Öztürk Özil Ülker Inan Šaban Šelte Šen
-		#}
 	}
 	azerbaijani = {
 		color = {47 44 107}
@@ -2221,20 +2180,16 @@ arab = {
 			Nuri Rauf Rifat Selim Shukru Suleyman Urabi Yusuf Yunus Ziya
 			}
 		
-		last_names = { 
-			Bey Pasha 
+		last_names = {
+			"al-Annabi" "al-Araishi" "al-Asfawi" "al-Binzarti" "al-Fasi" "al-Gharyani"
+			"al-Jaza'iri" "al-Miknasi" "al-Misurati" "al-Murrakushi" "al-Qabisi" "al-Qayrawani" "al-Ribati" "al-Safaqisi"
+			"al-Silawi" "al-Sirti" "al-Susawi" "al-Tilimsani" "al-Tanjawi" "al-Tatwani" "al-Trablusi" "al-Tunusi" 
+			"al-Wahrani" "al-Warqali" "al-Wujdi"
+			"ibn Abd Allah" "ibn Abd al-Qadir" "ibn Abu Bakr" "ibn Ahmad" "ibn Ali"
+			"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
+			"ibn Muhammad" "ibn Mustafa" "ibn Salim"   
+			"ibn Umar" "ibn Uthman" "ibn Yusuf"  
 			}
-		
-		#last_names = { # If you pretend a "surname law" was passed
-		#	"al-Annabi" "al-Araishi" "al-Asfawi" "al-Binzarti" "al-Fasi" "al-Gharyani"
-		#	"al-Jaza'iri" "al-Miknasi" "al-Misurati" "al-Murrakushi" "al-Qabisi" "al-Qayrawani" "al-Ribati" "al-Safaqisi"
-		#	"al-Silawi" "al-Sirti" "al-Susawi" "al-Tilimsani" "al-Tanjawi" "al-Tatwani" "al-Trablusi" "al-Tunusi" 
-		#	"al-Wahrani" "al-Warqali" "al-Wujdi"
-		#	"ibn Abd Allah" "ibn Abd al-Qadir" "ibn Abu Bakr" "ibn Ahmad" "ibn Ali"
-		#	"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
-		#	"ibn Muhammad" "ibn Mustafa" "ibn Salim"   
-		#	"ibn Umar" "ibn Uthman" "ibn Yusuf"  
-		#	}
 	}
 	mashriqi = {
 		color = {40 183 54}
@@ -2435,12 +2390,9 @@ iranian_turanian = {
 			Askar Chingiz Ishim Kasim Kurman Jangir Murat Nasiridin Sadyk Vali
 			}
 		last_names = {
-			Beg 
-			}
-		#last_names = { # If you pretend a "surname law" was passed
-		#	Abdulayev Abdulin Abdullayev Abdulov Aytmatov Bayžanov Bešimov Ibragimov
-		#	Nogoyev Usenov Abdrakhmanov Isakeyev Uzyukov Šubrikov Kulkov Šakhray Belotsky
-		#}
+			Abdulayev Abdulin Abdullayev Abdulov Aytmatov Bayžanov Bešimov Ibragimov
+			Nogoyev Usenov Abdrakhmanov Isakeyev Uzyukov Šubrikov Kulkov Šakhray Belotsky
+		}
 	}
 	tajik = {
 		color = {122 127 111}
@@ -2452,12 +2404,9 @@ iranian_turanian = {
 			Nadir "Naser ed-Din" Nosret Reza
 			}
 		last_names = {
-			Khan
-			}
-		#last_names = { # If you pretend a "surname law" was passed
-		#	Abdulayev Abdulin Abdullayev Abdulov Ibragimov Karimov Nabiyev Niyazov
-		#	Makhamov Rahmon
-		#}
+			Abdulayev Abdulin Abdullayev Abdulov Ibragimov Karimov Nabiyev Niyazov
+			Makhamov Rahmon
+		}
 	}
 	uighur = {
 		color = {92 96 168}
@@ -2466,12 +2415,9 @@ iranian_turanian = {
 			Afaq Ahmed Arshad Bahayeddin Burhan Daud Hakim Husayin Kemal Maqsud Muhammad Musa Rashidin Satuq Timur Yaqub
 			}
 		last_names = {
-			Beg Khan
-			}
-		#last_names = { # If you pretend a "surname law" was passed
-		#	Akhun Alptekin Muhiti Sabri Abdulbaki Bughra Abbas Qasim Batur Niyaz Laylinaman
-		#	Abdiqadir Abdulrixit Ajiyiming Šahidi Ahmet Tiliwaldi Hisamudin Bekri Azizi Zakir Dawamet
-		#}
+			Akhun Alptekin Muhiti Sabri Abdulbaki Bughra Abbas Qasim Batur Niyaz Laylinaman
+			Abdiqadir Abdulrixit Ajiyiming Šahidi Ahmet Tiliwaldi Hisamudin Bekri Azizi Zakir Dawamet
+		}
 	}
 	pashtun = {
 		color = {199 151 230}
@@ -2483,13 +2429,10 @@ iranian_turanian = {
 			Qaysar Shahpur "Sher Ali" Shuja Suleyman Timur Yaqub Zaman
 		}
 		last_names = {
-			Khan
+			Achakzai Abdul Afghan Afghanzada Ahmadi Ahmadzai Akbar Akhtar Alakozai Alam Alizai Amin Aurakzai Aziz Barakzai Dawlatzai Durrani Ibrahimi Iqbal Ishaqzai Kabir Karzai Khan Malikzai Mohammad Mohammadzai
+			Nawabi Niazai Noor Noorzai Nuristani Orakzai Popalzai Poya Rahman Rasul Sadozai Safi Sardar Sediqi Shah Shahnawaz Sherkhanzai Sherzai Shirzai Sidiqi Stanikzai Taheri Ullah Yasin Yousafzai Yusufi Yusufzai
+			Zadran Zahid Zalmai Zazai
 		}
-		#last_names = { # If you pretend a "surname law" was passed
-		#	Achakzai Abdul Afghan Afghanzada Ahmadi Ahmadzai Akbar Akhtar Alakozai Alam Alizai Amin Aurakzai Aziz Barakzai Dawlatzai Durrani Ibrahimi Iqbal Ishaqzai Kabir Karzai Khan Malikzai Mohammad Mohammadzai
-		#	Nawabi Niazai Noor Noorzai Nuristani Orakzai Popalzai Poya Rahman Rasul Sadozai Safi Sardar Sediqi Shah Shahnawaz Sherkhanzai Sherzai Shirzai Sidiqi Stanikzai Taheri Ullah Yasin Yousafzai Yusufi Yusufzai
-		#	Zadran Zahid Zalmai Zazai
-		#}
 		radicalism = 10
 
 	}
@@ -2530,13 +2473,10 @@ iranian_turanian = {
 			Ahmed Haydar Mehmed Murad Nurberdi Qilich
 		}
 		last_names = {
-			Beg Khan
+			Abdulayev Abdulin Abdullayev Abdulov Garayev Ibragimov Muhadow Niyazov
+			Mežlauk Paskutsky Aronštam Popok Mukhamedov Chubin Fonin Batyrov Babayev
+			Karayev Ovezov Gapurow
 		}
-		#last_names = { # If you pretend a "surname law" was passed
-		#	Abdulayev Abdulin Abdullayev Abdulov Garayev Ibragimov Muhadow Niyazov
-		#	Mežlauk Paskutsky Aronštam Popok Mukhamedov Chubin Fonin Batyrov Babayev
-		#	Karayev Ovezov Gapurow
-		#}
 	}
 	kurdish = {
 		color = {176 201 238}
@@ -2546,14 +2486,11 @@ iranian_turanian = {
 			}
 		
 		last_names = {
-			Badirkhan Barzani Khan Shilak
-			}
-		#last_names = { # If you pretend a "surname law" was passed
-		#	Adan Ajîn Alîn Arjen Astî Avsîn Awira Azû Barêz Bazê Befrî Bejîn Belar Benaw Bendewa Beraw Berfende Bêrîcan Berma Berzê Beyan Bihest Bînahî Biwar Ceman Ciwana Daxaz Desmal Dîdar Dilara Dîlber Dilnîgar Dilpak Dilvîn
-		#	Diyar Enwa Ezo Ersîn Ewas Ezîn Ferman Fîrya Gerdan Gerdûn Gewrê Gilyaz Gul Gulaw Gulbawan Gulbent Gulbîn Gulê Gulistan Gulnaz Gulsa Gulxatûn Havîn Hawniyaz Helbest Hêvî Hilbîn Jêla Jînewer Kajîn Kejê Keyna Kocer
-		#	Lale Lerzan Mahabad Mercan Mîdya Narîn Nazdar Naznaz Nesrîn Nîna Nûcan Nûsîn Pelsîn Perîxan Pirnaz Rejnê Rewsen Rojbîn Ronahî Rûna Seîran Sergul Sîbel Sindis Sîtav Spêda Sana Sehrîvan Sewran Sures Tara Veman Xacê
-		#	Xemsîn Yasemîn Yekta Zende Zerya Zîv
-		#}
+			Adan Ajîn Alîn Arjen Astî Avsîn Awira Azû Barêz Bazê Befrî Bejîn Belar Benaw Bendewa Beraw Berfende Bêrîcan Berma Berzê Beyan Bihest Bînahî Biwar Ceman Ciwana Daxaz Desmal Dîdar Dilara Dîlber Dilnîgar Dilpak Dilvîn
+			Diyar Enwa Ezo Ersîn Ewas Ezîn Ferman Fîrya Gerdan Gerdûn Gewrê Gilyaz Gul Gulaw Gulbawan Gulbent Gulbîn Gulê Gulistan Gulnaz Gulsa Gulxatûn Havîn Hawniyaz Helbest Hêvî Hilbîn Jêla Jînewer Kajîn Kejê Keyna Kocer
+			Lale Lerzan Mahabad Mercan Mîdya Narîn Nazdar Naznaz Nesrîn Nîna Nûcan Nûsîn Pelsîn Perîxan Pirnaz Rejnê Rewsen Rojbîn Ronahî Rûna Seîran Sergul Sîbel Sindis Sîtav Spêda Sana Sehrîvan Sewran Sures Tara Veman Xacê
+			Xemsîn Yasemîn Yekta Zende Zerya Zîv
+		}
 			radicalism = 10
 	}
 	tatar = {
@@ -5165,22 +5102,18 @@ barbarian = {
 
 		last_names = { Aega Agilbert Artaud Bandeson Berchar Bernard Birin Blank Brun Bruno Burkhart Charibert Charivi Childebert Childeric Chlodobert Chlodowig Emme Grimald Landric Lothar Lul Radeburg Razo Rodbert Sergi Theudebald Theudebert Theuderic Werinbert Wighard }
 	}
+	vandal = {
+		color = { 100 150 100 }
+
+		first_names = { Abbo Aega Agobard Allowin Arnulf Asselin Berno Berthaire Bruno Cassyon Cheldric Childebrand Clodomir Clotaire Corbinian Dodo Ebroin Ebrulf Emme Evroult Faro Gerold Grifo Grimbald Hartmut Helinand Hildebold Hildeprand Humbert Imbert Jocelin Lambert Lanfranc Lebuin Letard Liudhard Liudolf Lul Mansuet Omer Reginar Reol Richomer Rothad Sergi Sicho Vedast Werinbert Willibrord Zwentibold }
+
+		last_names = { Aega Agilbert Artaud Bandeson Berchar Bernard Birin Blank Brun Bruno Burkhart Charibert Charivi Childebert Childeric Chlodobert Chlodowig Emme Grimald Landric Lothar Lul Radeburg Razo Rodbert Sergi Theudebald Theudebert Theuderic Werinbert Wighard }
+	}
 	suebi = {
 		color = {60 220 200 }
 		first_names = { Adoric Agriulfum Anila Argiovit Ariamir Audeca Becilla Chararici Commund Eboric Ermaric Framta Frumari Garding Gomedei Heremigari Hermeric Hildemir Ilderic Malaric Maldras Massila Miro Neufila Nitigisi Pantard Rechiari Rechila Rechimund Remismund Remisol Rodomiro Sunila Theudomir Uittimer Veremund }
 
 		last_names = { Adler Adrabaecampi Baemoi Batin Daimler Dengler Eberle Elser Ensselin Groner Hegelin Heinkelin Holderelin Idanha Kepler Kiesinger Laemmle Lugo Marcomanni Naristi Ourense Racatria Rommelin Sudini Suiones Tui Viseu Wekerle }
-	}
-	ostrogothic = {
-		color = {166 140 140}
-		first_names = { Adalfuns Adalrik Agila Alarich Amalaric Andagis Ansila Ardaric Ariaric Aspar Athalaric Athanagild Athanaric Atta Audo Audoacer
-			Ausvinth Avavagis Badwila Beremund Botheric Childefonse Chindaswinth Dag Eboric Ebrimuth Ediulf Egica Elemund Ermanaric Euric Eutharic
-			Evermud Ferhonanth Fridegar Frithigern Geberic Gisalric Gunderit Haduswinth Hairuwulf Hathus Hermanaric Hermenigild Heraric Hidelfons Hildibad
-			Hunuil Kunimund Leovigild Liuva Liuverich Oliba Rekimer Richila Roderik Suniefred Swinthila Tautila Teia Theodahad
-			Theodemer Theodoric Thorismund Theudis Thrasaric Thraustila Ulfilas Unwen Valamir Veremund Vulfila Wallia Wifred Wittigeis Witiza Adosinda Amalasuntha Amalfrida Amalina Amalwara Avagisa Avina Brunhilda Chlodoswintha Fredegonda Gailavira Gaileswintha Garsendis Gelvira
-			Goswintha Heva Hilduara Mataswintha Radegonda Riciberga }
-			
-		last_names = { Goten Terwingen Visigothen Greutungen Ostgoten }
 	}
 
 	anglo_saxon = {
@@ -5189,14 +5122,6 @@ barbarian = {
 		first_names = { Adelfrid Adelmar Adelstan Aethelstan Alfric Alfwine Ceadda Cenric Cola Cynebald Cynefrith Cyneric Cyneweard Ealhstan Ecgberht Eoforwine Gladwine Hildrad Hrodulf Hrothgar Leofric Leofsige Leofwine Oswine Sawine Wigberht Wigmund Wigstan Wilfrid Wine }
 
 		last_names = { Aelfwig Alfstan Athelred Auchenceter Auchterworthy Bloccsham Brownlowe Burgwine Cerdic Coldren Cuthberht Cwmcott Ecgred Estmund Gardyner Glover Godwinsson Gorbold Hrothsige Hwitmann Lea Leofwine Purcell Unred Wolfsige Wulfstan Wyndham Wynstan Wyther }
-	}
-
-	visigothic = {
-		color = {180 180 0}
-
-		first_names = { Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar }
-	
-		last_names = { Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro }
 	}
 }
 anti_human = {
@@ -5307,6 +5232,1628 @@ non_human = { #More names allover
 		last_names = { "Solisorex" "Eulipotyphla" "Talpidae" "Teja" "Scutisorex" "Crocidura" "Solisorex" "Surdisorex" "Teja" "Neohylomys" "Sylvisorex" "Atelerix" "Congosorex" "Neohylomys" "Hylomys" "Teja" "Paraechinus" "Mesechinus" "Surdisorex" "Scutisorex" "Teja" "Neohylomys" "Paraechinus" "Ruwenzorisorex" "Neohylomys" "Deinogalerix" "Chimarrogale" "Eulipotyphla" "Pholidocercus" "Crocidura" "Quill" "Neotetracus" "Echinosorex" "Solisorex" "Silvacola" "Podogymnura" "Erinaceus" "Diplomesodon" "Echinosorex" "Hylomys" "Hylomys" "Neotetracus" "Erinaceinae" "Surdisorex" "Scutisorex" "Prickles" "Hylomys" "Echinosorex" "Hylomys" "Crocidura" "Mesechinus" "Floof" "Floof" "Echinosorex" "Crocidura" "Silvacola" "Soricidae" "Myosorex" "Echinosorex" "Thorn" "Pholidocercus" "Prickles" "Teja" "Flesberg" "Königsberg" "Ragnit" "Königsberg" "Bahaduran" }
 	}
 }
+gothic_g = {
+	leader = european
+	unit = EuropeanGC
+	gothic = {
+		color = { 110 71 33 }
+		first_names = {
+		Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar
+		}
+		last_names = {
+		Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro
+		}
+	}
+	getian = {
+		color = { 24 153 204 }
+		first_names = {
+		Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar
+		}
+		last_names = {
+		Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro
+		}
+	}
+
+	visigothic = {
+		color = {180 180 0}
+
+		first_names = { Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar }
+	
+		last_names = { Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro }
+	}
+	ostrogothic = {
+		color = {166 140 140}
+		first_names = { Adalfuns Adalrik Agila Alarich Amalaric Andagis Ansila Ardaric Ariaric Aspar Athalaric Athanagild Athanaric Atta Audo Audoacer
+			Ausvinth Avavagis Badwila Beremund Botheric Childefonse Chindaswinth Dag Eboric Ebrimuth Ediulf Egica Elemund Ermanaric Euric Eutharic
+			Evermud Ferhonanth Fridegar Frithigern Geberic Gisalric Gunderit Haduswinth Hairuwulf Hathus Hermanaric Hermenigild Heraric Hidelfons Hildibad
+			Hunuil Kunimund Leovigild Liuva Liuverich Oliba Rekimer Richila Roderik Suniefred Swinthila Tautila Teia Theodahad
+			Theodemer Theodoric Thorismund Theudis Thrasaric Thraustila Ulfilas Unwen Valamir Veremund Vulfila Wallia Wifred Wittigeis Witiza Adosinda Amalasuntha Amalfrida Amalina Amalwara Avagisa Avina Brunhilda Chlodoswintha Fredegonda Gailavira Gaileswintha Garsendis Gelvira
+			Goswintha Heva Hilduara Mataswintha Radegonda Riciberga }
+			
+		last_names = { Goten Terwingen Visigothen Greutungen Ostgoten }
+	}
+}
+punic = {
+	leader = arab
+	unit = MiddleEasternGC
+	is_overseas = no
+	punic_american = {
+		color = { 157 169 78 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	punic_australian = {
+		color = { 123 159 145 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	carthaginian = {
+		color = { 56 50 195 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	ythalonim = {
+		color = { 212 180 155 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	ualonuth = {
+		color = { 19 91 55 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	sicorathi = {
+		color = { 151 171 108 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	symacom = {
+		color = { 201 180 152 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	ysthyalm = {
+		color = { 117 215 204 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	sythchy = {
+		color = { 214 10 77 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	ynnocho = {
+		color = { 148 225 171 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	mlachthi = {
+		color = { 92 236 188 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	inythmum = {
+		color = { 252 31 193 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	gadolite = {
+		color = { 85 77 116 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	bythlimmoth = {
+		color = { 222 27 140 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	sidonian = {
+		color = { 252 61 58 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	taliaite = {
+		color = { 20 255 246 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	lacanite = {
+		color = { 116 90 147 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	epicrateian = {
+		color = { 156 145 205 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	pmpese = {
+		color = { 3 220 37 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	ythbynuthi = {
+		color = { 212 86 78 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	ychibarku = {
+		color = { 243 142 87 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	liphocaneth = {
+		color = { 59 28 9 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}
+	mysehi = {
+		color = { 120 221 197 }
+		first_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+			Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+			Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+		}
+		last_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+			Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+			Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+			Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+		}
+	}	
+}
+varangian_g = {
+	leader = european
+	unit = EuropeanGC
+	varangian = {
+		color = { 116 201 216 }
+		first_names = {
+		Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar
+		}
+		last_names = {
+		Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro
+		}
+	}
+	nehwaustronijaz = {
+		color = { 81 6 51 }
+		first_names = {
+		Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar
+		}
+		last_names = {
+		Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro
+		}
+	}
+	varangian_american = {
+		color = { 70 91 119 }
+		first_names = {
+		Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar
+		}
+		last_names = {
+		Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro
+		}
+	}
+	varangian_australian = {
+		color = { 241 215 132 }
+		first_names = {
+		Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar
+		}
+		last_names = {
+		Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro
+		}
+	}
+	varangian_african = {
+		color = { 106 149 150 }
+		first_names = {
+		Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar
+		}
+		last_names = {
+		Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro
+		}
+	}
+}
+dytic_g = {
+	leader = european
+	unit = EuropeanGC
+	dytic_american = {
+		color = { 206 142 130 }
+		first_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+
+		last_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+	}
+	dytic_australian = {
+		color = { 203 78 182 }
+		first_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+
+		last_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+	}
+	dytic_african = {
+		color = { 113 112 129 }
+		first_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+
+		last_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+	}
+	prettanian = {
+		color = { 236 23 193 }
+		first_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+
+		last_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+	}
+	adelphic = {
+		color = { 37 236 186 }
+		first_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+
+		last_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+	}
+	spaniolic = {
+		color = { 20 102 223 }
+		first_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+
+		last_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+	}
+	galatian = {
+		color = { 130 5 172 }
+		first_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+
+		last_names = { Abreas Achaios Aineias Airopos Agaios Agatharchides Agathokles
+			Agathon Agelaos Agenor Agesipolis Agis Aiakides Aischines Aknonios
+			Akrotatos Alexandros Alexarchos Alketas Alkimachos Alkimos Amantas
+			Amphoteros Amyntas Anaxarchos Anaxikrates Anaximandros Anaxippos
+			Andragoras Andromachos Andromenes Andronikos Androsthenes Antenor
+			Antialkidas Antigonos Antikles Antimachos Antiochos Antipatros
+			Antiphates Antiphilos Antisthenes Aphrodisios Apollodoros
+			Apollodotos Apollonios Apollophanes Aratos Archagathos Archebios
+			Archelaos Archias Archidamos Archimedes Archippos Aretas Areus
+			Aristarchos Aristobulos Aristodemos Aristogeiton Aristomachos
+			Ariston Aristonikos Aristophanes Aristophon Aristoteles Arrhabaios
+			Arrhidaios Arseas Artemidoros Artemidotos Asandros Asklepiades
+			Athanadoros Athenodoros Attalos Audoleon Bakchides Balakros Bikon
+			Bryaxis Chabrias Chairestratos Chairondas Chares Charidemos
+			Charikles Charinos Chremes Chremonides Chrysippos Damokrates
+			Damophon Damoteles Deimachos Deinippos Demades Demaratos Demetrios
+			Demochares Demodamas Demogenes Demokleides Demokritos Demophanes
+			Demosthenes Derdas Deriades Didas Dikaiarchos Dikaios Dimnos
+			Diodoros Diodotos Diogenes Diomedes Dion Dionysios Dropidas
+			Echekrates Eisigonos Ekdemos Empedokles Epameinondas Epandros
+			Epikuros Epikydes Epimenes Epokillos Erasistratos Eratosthenes
+			Erigyios Euainetos Euandros Eubulos Eudamidas Eudoxos Euhemeros
+			Eukleides Eukrates Eukratides Euktemon Eumenes Eupolemos Euripides
+			Eurylochos Euthydemos Euthykrates Euthykritos Eutychides Euxenippos
+			Gelon Glaukias Gorgias Gorgippos Gorgos Gylippos Hagesandros
+			Halkyoneus Harpalos Hegemachos Hegesias Hekataios Hektor Helenos
+			Heliodoros Heliokles Hephaistion Herakleides Herakon Hermaios
+			Hermarchos Hermesianax Hermias Hermogenes Hermolaos Herodas
+			Heromenes Herophilos Hierax Hieron Hieronymos Hiketas Hippalos
+			Hipparchos Hippokrates Hippostratos Hyakinthos Hyperbatas Hypereides
+			Ikadion Iollas Iphikrates Ismenias Isokrates Kalas Kalliarchos
+			Kallines Kallisthenes Kallistratos Kallixeinos Karneades Karsis
+			Kassandros Kebalinos Kephalon Kephisodoros Kephisodotos Kephisophon
+			Kineas Kleandros Kleanthes Klearchos Kleitos Kleombrotos Kleomenes
+			Kleonymos Koinos Koroibos Krateros Krates Krateuas Krenides
+			Ktesikles Lachares Laomedon Leonidas Leonnatos Leontios Leosthenes
+			Leostratos Leukon Lydiadas Lykurgos Lysandridas Lysandros Lysias
+			Lysimachos Lysippos Lysistratos Machanidas Machatas Magas Makartatos
+			Marsyas Megaleas Megasthenes Meleagros Memnon Menandros Menedemos
+			Menelaos Menes Menidas Menippos Menon Menos Metrodoros Metron Milon
+			Mnaseas Mnesidemos Molon Nabis Neaichmos Nearchos Neoptolemos
+			Nikagoras Nikandros Nikanor Nikarchos Nikephoros Nikeratos Niketes
+			Nikias Nikodoros Nikokles Nikokrates Nikokreon Nikomachos Nikomedes
+			Nikostratos Numenios Olympiodoros Onomarchos Onomastos Ophellas
+			Orestes Paionios Pairisades Pantaleon Pantauchos Pantordanos
+			Parmenion Patrokles Pausanias Peithagoras Peithon Pelopidas Pelops
+			Perdikkas Peroidas Perseus Peukestas Peukolaos Pherekles Philemon
+			Philetairos Philetas Philinos Philippos Philokles Philon Philonides
+			Philopoimenos Philotas Philoxenos Phrynichos Phylarkhos Phyromachos
+			Platon Pleistarchos Polemon Polybios Polydamas Polydoros Polyeuktos
+			Polygnotos Polyperchon Poseidippos Poseidonios Praxibulos Praxiteles
+			Prepelaos Proteas Ptolemaios Pyrrhias Pyrrhos Pytheas Pythodelos
+			Satyros Seleukos Simmias Simonides Sophytes Sopolis Sosistratos
+			Sosthenes Sostratos Sotas Spalyris Spartokos Stasanor Stilpon
+			Stratokles Straton Stratonikos Taurion Tauriskos Teisikrates
+			Telesarchos Thearidas Themistios Theodamas Theodoros Theodotos
+			Theokritos Theophilos Theophrastos Thoas Thoinias Thoinon Thrasykles
+			Timaios Timarchos Timoleon Timotheos Tryphon Xanthippos Xenares
+			Xenokrates Xenophon Zeionises Zenon Zeuxis Zoilos Zopyrion Argaios
+		}
+	}
+}
+hittite_g = {
+	leader = arab
+	is_overseas = no
+	unit = MiddleEasternGC
+	hittite_american = {
+		color = { 91 219 211 }
+		first_names = {
+			Labarna Hattusili Mursili Hantili Zidanta Ammuna Huzziya Telipinus Alluwamna Tahurwaili
+			Muwatalli Tudhaliya Arnuwanda Suppiluliuma Urhi-Teshub Kurunta Asmi-Sarruma
+			Acmon Dymas Asius Otreus Eioneus Proteus Sangarius Phoenix Agenor Gordias
+			Adrastus Midas Lityerses Anchurus Mygdon Coroebus Pelops Tantalus Atreus
+			Atlas Oenomaus Pittheus Troezen Alcathous Dimoetes Pleisthenes Thyestes
+			Copreus Hippalcimus Sciron Cleones Letreus Perseus Alcaeus Sthenelus Mestor
+			Electryon Chrysippus Marmax Porthaon Euryalus Eurymachus Crotalus Acrias
+			Capetus Lycurgus Lasius Chalcodon Tricolonus Lycaon Aristomachus Prias
+			Pelagon Aeolius Cronius Erythras Leucon Magnes Agamemnon
+		}
+		last_names = {
+			Idmon Manes Atys Lydus Iardanus Agron Meles Myrsus Candaules Myrsilus
+			Alcaeus Belus Ninus Gyges Ardys Sadyattes Alyattes Croesus Cotys Asies
+			Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
+		}
+	}
+	hittite_australian = {
+		color = { 42 227 152 }
+		first_names = {
+			Labarna Hattusili Mursili Hantili Zidanta Ammuna Huzziya Telipinus Alluwamna Tahurwaili
+			Muwatalli Tudhaliya Arnuwanda Suppiluliuma Urhi-Teshub Kurunta Asmi-Sarruma
+			Acmon Dymas Asius Otreus Eioneus Proteus Sangarius Phoenix Agenor Gordias
+			Adrastus Midas Lityerses Anchurus Mygdon Coroebus Pelops Tantalus Atreus
+			Atlas Oenomaus Pittheus Troezen Alcathous Dimoetes Pleisthenes Thyestes
+			Copreus Hippalcimus Sciron Cleones Letreus Perseus Alcaeus Sthenelus Mestor
+			Electryon Chrysippus Marmax Porthaon Euryalus Eurymachus Crotalus Acrias
+			Capetus Lycurgus Lasius Chalcodon Tricolonus Lycaon Aristomachus Prias
+			Pelagon Aeolius Cronius Erythras Leucon Magnes Agamemnon
+		}
+		last_names = {
+			Idmon Manes Atys Lydus Iardanus Agron Meles Myrsus Candaules Myrsilus
+			Alcaeus Belus Ninus Gyges Ardys Sadyattes Alyattes Croesus Cotys Asies
+			Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
+		}
+	}
+	luwian = {
+		color = { 202 178 15 }
+		first_names = {
+			Labarna Hattusili Mursili Hantili Zidanta Ammuna Huzziya Telipinus Alluwamna Tahurwaili
+			Muwatalli Tudhaliya Arnuwanda Suppiluliuma Urhi-Teshub Kurunta Asmi-Sarruma
+			Acmon Dymas Asius Otreus Eioneus Proteus Sangarius Phoenix Agenor Gordias
+			Adrastus Midas Lityerses Anchurus Mygdon Coroebus Pelops Tantalus Atreus
+			Atlas Oenomaus Pittheus Troezen Alcathous Dimoetes Pleisthenes Thyestes
+			Copreus Hippalcimus Sciron Cleones Letreus Perseus Alcaeus Sthenelus Mestor
+			Electryon Chrysippus Marmax Porthaon Euryalus Eurymachus Crotalus Acrias
+			Capetus Lycurgus Lasius Chalcodon Tricolonus Lycaon Aristomachus Prias
+			Pelagon Aeolius Cronius Erythras Leucon Magnes Agamemnon
+		}
+		last_names = {
+			Idmon Manes Atys Lydus Iardanus Agron Meles Myrsus Candaules Myrsilus
+			Alcaeus Belus Ninus Gyges Ardys Sadyattes Alyattes Croesus Cotys Asies
+			Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
+		}
+	}
+	lydian = {
+		color = { 186 98 216 }
+		first_names = {
+			Labarna Hattusili Mursili Hantili Zidanta Ammuna Huzziya Telipinus Alluwamna Tahurwaili
+			Muwatalli Tudhaliya Arnuwanda Suppiluliuma Urhi-Teshub Kurunta Asmi-Sarruma
+			Acmon Dymas Asius Otreus Eioneus Proteus Sangarius Phoenix Agenor Gordias
+			Adrastus Midas Lityerses Anchurus Mygdon Coroebus Pelops Tantalus Atreus
+			Atlas Oenomaus Pittheus Troezen Alcathous Dimoetes Pleisthenes Thyestes
+			Copreus Hippalcimus Sciron Cleones Letreus Perseus Alcaeus Sthenelus Mestor
+			Electryon Chrysippus Marmax Porthaon Euryalus Eurymachus Crotalus Acrias
+			Capetus Lycurgus Lasius Chalcodon Tricolonus Lycaon Aristomachus Prias
+			Pelagon Aeolius Cronius Erythras Leucon Magnes Agamemnon
+		}
+		last_names = {
+			Idmon Manes Atys Lydus Iardanus Agron Meles Myrsus Candaules Myrsilus
+			Alcaeus Belus Ninus Gyges Ardys Sadyattes Alyattes Croesus Cotys Asies
+			Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
+		}
+	}
+	hittite_g = { # Recycling the loc because I had forgotten to add it
+		color = { 128 160 86 }
+		first_names = {
+			Labarna Hattusili Mursili Hantili Zidanta Ammuna Huzziya Telipinus Alluwamna Tahurwaili
+			Muwatalli Tudhaliya Arnuwanda Suppiluliuma Urhi-Teshub Kurunta Asmi-Sarruma
+			Acmon Dymas Asius Otreus Eioneus Proteus Sangarius Phoenix Agenor Gordias
+			Adrastus Midas Lityerses Anchurus Mygdon Coroebus Pelops Tantalus Atreus
+			Atlas Oenomaus Pittheus Troezen Alcathous Dimoetes Pleisthenes Thyestes
+			Copreus Hippalcimus Sciron Cleones Letreus Perseus Alcaeus Sthenelus Mestor
+			Electryon Chrysippus Marmax Porthaon Euryalus Eurymachus Crotalus Acrias
+			Capetus Lycurgus Lasius Chalcodon Tricolonus Lycaon Aristomachus Prias
+			Pelagon Aeolius Cronius Erythras Leucon Magnes Agamemnon
+		}
+		last_names = {
+			Idmon Manes Atys Lydus Iardanus Agron Meles Myrsus Candaules Myrsilus
+			Alcaeus Belus Ninus Gyges Ardys Sadyattes Alyattes Croesus Cotys Asies
+			Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
+		}
+	}
+	phrygian = {
+		color = { 170 158 164 }
+		first_names = {
+			Labarna Hattusili Mursili Hantili Zidanta Ammuna Huzziya Telipinus Alluwamna Tahurwaili
+			Muwatalli Tudhaliya Arnuwanda Suppiluliuma Urhi-Teshub Kurunta Asmi-Sarruma
+			Acmon Dymas Asius Otreus Eioneus Proteus Sangarius Phoenix Agenor Gordias
+			Adrastus Midas Lityerses Anchurus Mygdon Coroebus Pelops Tantalus Atreus
+			Atlas Oenomaus Pittheus Troezen Alcathous Dimoetes Pleisthenes Thyestes
+			Copreus Hippalcimus Sciron Cleones Letreus Perseus Alcaeus Sthenelus Mestor
+			Electryon Chrysippus Marmax Porthaon Euryalus Eurymachus Crotalus Acrias
+			Capetus Lycurgus Lasius Chalcodon Tricolonus Lycaon Aristomachus Prias
+			Pelagon Aeolius Cronius Erythras Leucon Magnes Agamemnon
+		}
+		last_names = {
+			Idmon Manes Atys Lydus Iardanus Agron Meles Myrsus Candaules Myrsilus
+			Alcaeus Belus Ninus Gyges Ardys Sadyattes Alyattes Croesus Cotys Asies
+			Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
+		}
+	}
+}
+celtic = {
+	leader = european
+	unit = BritishGC
+	belgian = {
+		color = { 103 83 47 }
+		first_names = {
+			Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+			Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+			Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+			Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+			Venutius Viridorix Vosenius Vodenos
+		}
+		last_names = {
+			Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+			Punician Tautalid Correian Divicid Duratian Elitovian
+			Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+		}
+	}
+	gaulish = {
+		color = { 216 113 104 }
+		first_names = {
+			Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+			Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+			Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+			Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+			Venutius Viridorix Vosenius Vodenos
+		}
+		last_names = {
+			Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+			Punician Tautalid Correian Divicid Duratian Elitovian
+			Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+		}
+	}
+	celtiberian = {
+		color = { 29 158 143 }
+		first_names = {
+			Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+			Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+			Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+			Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+			Venutius Viridorix Vosenius Vodenos
+		}
+		last_names = {
+			Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+			Punician Tautalid Correian Divicid Duratian Elitovian
+			Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+		}
+	}
+}
+balkan = {
+	leader = european
+	unit = EuropeanGC
+	dacian = {
+		color = { 246 252 142 }
+		first_names = {
+			Bastiza Bikilis Blegissa Blaesus Blaikisa Brasus Burebista Comosicus Cothelas Cotiso Dablosa Dadas Dadazai Daizus Dapyx Dardiolai Danillo Decibalus Dida Denzibalus Diernais Dotouzi Duras 
+			Kaigiza Komozoi Moskon Mucapor Mucatra Natoporus Orola Petipor Pierporus Rhemaxos Rholes Rubobostes Rolouzis Rigozus Scoris Tiati Tarbus Tsiru Zinna Vezina Zoutoula
+		}
+		last_names = {
+			Gudilanian Cotisian Durasian Dromichaetid Komozian Moskosian
+			Mucatralian Natoporian Orolosian Pieporian Rhemaxilid Rholicid
+			Rubobosticid Scorian Tiatian Tarbian Tsiricid Zinnicid
+		}
+	}
+	thracian = {
+		color = { 232 86 109 }
+		first_names = {
+			Adaios Amatokos Aulouporis Aulouzon Bendidoros Berisades Bessos Bithos Brinkainos Brinkazenis Brinkazeris Brinkazis Bryzos Byzas Delos Dentoubrisa Dentoupes Deopos Deosporis Desakenthos Diaskenthos Diazenis Dizapes Dizapor Dizas Dizazelpis Dolens Drenis Eptaikenthos Eptapis Eptaporis Eptenis Eptezenis Ezbenis Gaidres Hebryzelmis Kelsinos Kelsos Kenthos Kerses Kerzoula Kersibaulos Kersobleptes Ketriporis Ketrizeis Kokaios Kotys Maisades Markipor Moukakenthos Moukapaibes Moukapius Moukaporis Moukatralis Moukazenis Naipor Olipor Poris Pytros Raizdos Raskos Rekiper Rhaskos Rhaskuporis Rheboulas Rhesos Rhoemetalces Sadalas Satres Sautes Seikiper Seuthes Skaris Skilas Skostodokos Sparadokos Taruthinas Teres Tzitzis Zieisis Ziepyros Ziles Zipaibes Zipyron
+		}
+		last_names = {
+			Adaid Amatokid Aulouporid Aulouzonid Bendidorid Berisadid Bessid Bithid
+			Brinkainid Brinkazenid Brinkazerid Brinkazid Bryzid Byzid Kelsinid Kelsid
+			Kersobleptid Kerzulid Ketriporid Kocaid Delid Dentubrisid Dentupid Deopid
+			Deospurid Desakenthid Diaskenthid Diazenid Dizapid Dizaporid Dizid
+			Dizazelpid Dolenid Drenid Eptaikenthid Eptapid Eptaporid Eptenid Eptezenid
+			Ezbenid Gaidrid Hebryzelmid Kenthid Kersid Kersibaulid Kersobleptid
+			Ketriporid Ketrizeid Kotid Maisadid Markiporid Mukakenthid Mukapaibid
+			Mukapid Mukaporid Mukatralid Mukazenid Naiporid Oliporid Porid Pytrid
+			Raizdid Raskid Rekiperid Rhaskid Rhaskuporid Rheboulid Rhesid Rhoemetalkid
+			Sadalid Satrid Sortid Seikiperid Seuthid Skarid Skilid Skostodokid
+			Sparatokid Taruthinid Terid Tzitzid Zieisid Ziepyrid Zilid Zipaibid Zipyrid
+		}
+	}
+	illyrian = {
+		color = { 25 224 74 }
+		first_names = {
+			Andinos Andios Anneses Annos Aplis Aploudos Aplos Apouros Baidaros Baizo Baizos Baolios Bardourios Bato Byoukos Byousas Bizo Bryoukos Karrios Daiekos Daitor Dasantos Dasios Dazomenos Dazos Epikaris Iettos Implaios Laidikalios Laidietis Laidos Labios Ledros Massurios Messios Messor Paio Panentios Panes Panto Pantos Plannios Plares Prorados Sarnos Skenobarbos Sestos Statanios Statikos Statos Souttis Temaios Tizios Tritonos Tritos Turelios Ulkidios Baranos Baridios Bendo Bepos Berzoulos
+		   Karbanios Germanos Labianos Pinsos Pladomenos Verzaieos
+		}
+		last_names = {
+			Andinid Andid Annesid Annid Aplid Apludid Apurid Baizid Bardurid
+			Batid Beukid Beusid Bizid Karrid Daitorid Dasid Dazomenid Dazid
+			Epicarid Iettid Laidicalid Laidietid Laidid Ledrid Messid Messorid
+			Panentid Panid Pantid Plannid Plarid Proradid Samekkid Sarnid
+			Skenobarbid Statanid Statikid Statid Suttid Tizid Tritonid Tritid
+			Turelid Varanid Varidid Vendid Vepid Verzulid Carvanid Germanid
+			Lavianid Pinsid Pladomenid Platid Verzaiid Anadrid Buzetid Ditid
+			Loantid Pantadienid Platorid Platourid Portid Rufantid Sestenid
+			Stennid Vendid Tourranid Tourrinid Tourid Iaritid Montanid
+			Parmanikid Sarid Senekid Silid Sinid Blaidarid Dasmenid Lensid
+			Sassaid Skilid Surkid Kralid Lirid Passalid Likkaid Skenid
+		}
+	}
+}
+tyrrhenian = {
+	leader = european
+	unit = ItalianGC
+	etrurian = {
+		color = { 167 236 107 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+	rhaetian = {
+		color = { 140 131 11 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+	lemnian = {
+		color = { 244 101 234 }
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		last_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+	}
+}
 zzz_religions = {
 	#This group exists only to make religion appear in country diplomacy screen
 	#If it appears on map, something is wrong
@@ -5387,4 +6934,12 @@ zzz_religions = {
 	zzz_religion_gnostic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_canaanite = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_mardukism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_german_pagan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_cybelene = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_zamolxism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_mithraism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_hetanism = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_iberian_pagan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_scythian_pagan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_dummy_religion = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 }
