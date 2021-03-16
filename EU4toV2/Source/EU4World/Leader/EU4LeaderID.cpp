@@ -1,6 +1,7 @@
 #include "EU4LeaderID.h"
 #include "Log.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 EU4::LeaderID::LeaderID(std::istream& theStream)
 {

@@ -1,6 +1,7 @@
 #include "Mod.h"
 #include "CommonFunctions.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 EU4::Mod::Mod(std::istream& theStream)
 {
