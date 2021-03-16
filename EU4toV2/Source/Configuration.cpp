@@ -104,7 +104,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 	});
 	registerKeyword("hpm_enabled", [this](std::istream& theStream) {
 		const auto hpmEnabledString = commonItems::getString(theStream);
-		isHpmEnabled = hpmEnabledString == "yes";
+		vic2Mod = VIC2MOD(std::stoi(hpmEnabledString));
 		LOG(LogLevel::Info) << "HPM enabled: " << hpmEnabledString;
 	});
 	registerKeyword("output_name", [this](std::istream& theStream) {
@@ -117,7 +117,7 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 	parseStream(theStream);
 	clearRegisteredKeywords();
 	setOutputName();
-	if (isHpmEnabled)
+	if (isHpmEnabled())
 	{
 		Vic2Path = Vic2ModPath + "/HPM";
 		Vic2DocumentsPath += "/HPM";

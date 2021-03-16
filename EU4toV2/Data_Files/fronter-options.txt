@@ -231,12 +231,12 @@ option = {
 	tooltip = HPMTIP
 	radioSelector = {
 		radioOption = {
-			name = yes
+			name = 1
 			displayName = HPMENABLED
 			default = false
 		}
 		radioOption = {
-			name = no
+			name = 2
 			displayName = HPMDISABLED
 			default = true
 		}
