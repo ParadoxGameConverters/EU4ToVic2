@@ -267,6 +267,30 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2PathCanBeSet)
 }
 
 
+TEST(EU4ToVic2_ConfigurationTests, Vic2PathCanPointToHpm)
+{
+	Configuration testConfiguration;
+	std::stringstream input;
+	input << "targetGameModPath = \"C:\\Vic2ModPath\"";
+	input << "hpm_enabled = \"2\"";
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ("C:\\Vic2ModPath/HPM", testConfiguration.getVic2Path());
+}
+
+
+TEST(EU4ToVic2_ConfigurationTests, Vic2PathDefaultsToVanilla)
+{
+	Configuration testConfiguration;
+	std::stringstream input;
+	input << "Vic2directory = \"C:\\Vic2Path\"";
+	input << "hpm_enabled = \"1\"";
+	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
+
+	ASSERT_EQ("C:\\Vic2Path", testConfiguration.getVic2Path());
+}
+
+
 TEST(EU4ToVic2_ConfigurationTests, Vic2DocumentsPathDefaultsBlank)
 {
 	Configuration testConfiguration;

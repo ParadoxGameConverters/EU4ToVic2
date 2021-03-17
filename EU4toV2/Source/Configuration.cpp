@@ -41,8 +41,9 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 		verifyVic2DocumentsPath(Vic2DocumentsPath, DoesFolderExist);
 		LOG(LogLevel::Info) << "Vic2 documents path: " << Vic2DocumentsPath;
 	});
-	registerKeyword("targetGameModPath", [this, DoesFolderExist](const std::string& unused, std::istream& theStream) {
+	registerKeyword("targetGameModPath", [this](const std::string& unused, std::istream& theStream) {
 		Vic2ModPath = commonItems::getString(theStream);
+		LOG(LogLevel::Info) << "Vic2 mod path: " << Vic2ModPath;
 	});
 	registerKeyword("max_literacy", [this](std::istream& theStream) {
 		const auto maxLiteracyString = commonItems::getString(theStream);
@@ -120,7 +121,6 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 	if (isHpmEnabled())
 	{
 		Vic2Path = Vic2ModPath + "/HPM";
-		Vic2DocumentsPath += "/HPM";
 	}
 	Log(LogLevel::Progress) << "3 %";
 }
