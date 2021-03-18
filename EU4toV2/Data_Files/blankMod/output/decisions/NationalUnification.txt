@@ -4,6 +4,7 @@
 # -avoid cultural unions halted by new colonial cultures
 # -Pontifical Italy edits
 # -Gran Colombia decision restored without having it releasable at start
+# -North Sea Empire is an end-tag
 
 political_decisions = {
 
@@ -19,6 +20,7 @@ political_decisions = {
             }
             NOT = {
                 exists = SCA
+				exists = ENS
                 capital_scope = { continent = africa }
                 capital_scope = { continent = north_america }
                 capital_scope = { continent = south_america }
@@ -473,6 +475,7 @@ political_decisions = {
 				tag = SLA
 				tag = HRE
 				tag = WSF
+				tag = ENS
 			}
 		}
 		

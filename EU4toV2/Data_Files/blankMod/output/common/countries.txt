@@ -908,6 +908,22 @@ OSP		= "countries/OldSpain.txt"
 
 QNG		="countries/China.txt"
 
+# Furthermore
+ENS = "countries/Empire of the North Sea.txt"
+SRB = "countries/Sorbia.txt"
+DNL = "countries/Daneland.txt"
+SAB = "countries/Sabellia.txt"
+LGU = "countries/Liguria.txt"
+VNT = "countries/Venetic.txt"
+SKL = "countries/Siculia.txt"
+LEP = "countries/Lepontia.txt"
+MRL = "countries/Morlacchia.txt"
+PHO = "countries/Phoenicia.txt"
+PRT = "countries/Pruthenia.txt"
+PCH = "countries/Patzinakia.txt"
+SMT = "countries/Sarmatia.txt"
+TOC = "countries/Tocharia.txt"
+
 ##HoD Dominions
 dynamic_tags  = yes # any tags after this is considered dynamic dominions
 D01		= "countries/D01.txt"

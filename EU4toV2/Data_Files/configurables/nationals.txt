@@ -21,6 +21,7 @@ link = { tag = NOR culture = norwegian } #Norway
 link = { tag = ICL culture = icelandic } #Iceland
 link = { tag = FIN culture = finnish } #Finland
 link = { tag = SMI culture = sami } #Sami
+link = { tag = DNL culture = elsinorian } # Daneland
 
 #British
 link = { tag = ENL culture = english } #England
@@ -34,6 +35,7 @@ link = { tag = WHA culture = welsh } #Wales
 link = { tag = SIC culture = south_italian } #Two Sicilies = South Italy
 link = { tag = MLT culture = maltese } #Malta
 link = { tag = LGB culture = lombard } #Longobardia
+link = { tag = MRL culture = morlach } # Morlacchia
 
 #Latin descendants
 link = { tag = ENR culture = brithenig } #Brittania
@@ -74,6 +76,8 @@ link = { tag = HUN culture = hungarian } #Hungary
 link = { tag = POL culture = polish } #and Poland
 link = { tag = LIT culture = lithuanian } #and Lithuania
 link = { tag = UKR culture = western_slavic } #and (Red) Ruthenia
+link = { tag = PRT culture = pruthenian }
+link = { tag = SRB culture = sorbian }
 # sorbian
 
 #Other West Slavic
@@ -104,6 +108,9 @@ link = { tag = COP culture = coptic } # Coptia
 link = { tag = TUR culture = turkish } #the Ottomans
 link = { tag = AZB culture = azerbaijani } #Azerbaijan
 link = { tag = DKU culture = north_caucasian } #Don-Kuban Union
+link = { tag = PCH culture = pecheneg } # Patzinakia
+link = { tag = SMT culture = sarmatian } # Sarmatia
+link = { tag = TOC culture = tocharian } # Tocharia
 
 #Arab => Arabia
 link = { tag = EGY culture = misri } #and Egypt
@@ -190,3 +197,12 @@ link = { tag = HEG culture = hedgehog_culture } # Mobian
 link = { tag = OSP culture = oldspain } #Pre-Roman Iberia
 link = { tag = VAN culture = vandal } # Vandals
 link = { tag = ETR culture = etrurian } # Etruria
+
+# Old Italian
+link = { tag = SAB culture = sabellian }
+link = { tag = LGU culture = old_ligurian }
+link = { tag = VNT culture = venetic }
+link = { tag = SKL culture = siculian }
+link = { tag = LEP culture = lepontic }
+
+link = { tag = PHO culture = phoenician }

@@ -9743,6 +9743,578 @@ country_event = {
   primary_culture = alexandrine
  }
 }
+country_event = {
+	id = 1000415
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = elsinorian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = elsinorian
+	}
+}
+country_event = {
+	id = 1000516
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = sabellian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = sabellian
+	}
+}
+country_event = {
+	id = 1000617
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = old_ligurian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = old_ligurian
+	}
+}
+country_event = {
+	id = 1000718
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = venetic
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = venetic
+	}
+}
+country_event = {
+	id = 1000819
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = siculian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = siculian
+	}
+}
+country_event = {
+	id = 1000920
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = lepontic
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = lepontic
+	}
+}
+country_event = {
+	id = 1001021
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = noric
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = noric
+	}
+}
+country_event = {
+	id = 1001122
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = lusitanian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = lusitanian
+	}
+}
+country_event = {
+	id = 1001223
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = morlach
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = morlach
+	}
+}
+country_event = {
+	id = 1001324
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = phoenician
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = phoenician
+	}
+}
+country_event = {
+	id = 1001425
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = dacian_american
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = dacian_american
+	}
+}
+country_event = {
+	id = 1001526
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = dacian_african
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = dacian_african
+	}
+}
+country_event = {
+	id = 1001627
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = dacian_australian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = dacian_australian
+	}
+}
+country_event = {
+	id = 1001728
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = celtic_american
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = celtic_american
+	}
+}
+country_event = {
+	id = 1001829
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = celtic_african
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = celtic_african
+	}
+}
+country_event = {
+	id = 1001930
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = celtic_australian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = celtic_australian
+	}
+}
+country_event = {
+	id = 1002031
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = old_italian_american
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = old_italian_american
+	}
+}
+country_event = {
+	id = 1002132
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = old_italian_african
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = old_italian_african
+	}
+}
+country_event = {
+	id = 1002233
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = old_italian_australian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = old_italian_australian
+	}
+}
+country_event = {
+	id = 1002334
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = pruthenian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = pruthenian
+	}
+}
+country_event = {
+	id = 1002435
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = thracian_american
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = thracian_american
+	}
+}
+country_event = {
+	id = 1002536
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = thracian_african
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = thracian_african
+	}
+}
+country_event = {
+	id = 1002637
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = thracian_australian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = thracian_australian
+	}
+}
+country_event = {
+	id = 1002738
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = pecheneg
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = pecheneg
+	}
+}
+country_event = {
+	id = 1002839
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = sarmatian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = sarmatian
+	}
+}
+country_event = {
+	id = 1002940
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy	}
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = tocharian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = tocharian
+	}
+}
 ##
 
 country_event = {
