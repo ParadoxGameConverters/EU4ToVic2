@@ -1665,3 +1665,14 @@ link = { eu4 = k_IMPTOCK3_GAU v2 = FRR } # Gaul
 # CK3 counties
 link = { eu4 = c_pegu v2 = PEG }
 link = { eu4 = c_qasim v2 = QAS }
+
+# More addictions
+link = { eu4 = SUD v2 = SDT } # Sudetenland
+link = { eu4 = DNL v2 = DNL } # Daneland
+link = { eu4 = MSH v2 = MSH } # Meshchyora
+link = { eu4 = PRT v2 = PRT } # Pruthenia
+link = { eu4 = PCH v2 = PCH } # Patzinakia
+link = { eu4 = BEL v2 = BLG } # (Celtic) Belgium
+link = { eu4 = PHR v2 = PHR } # Phrygia
+link = { eu4 = TRO v2 = WIL } # Troy
+link = { eu4 = ENS v2 = ENS } # Empire of the North Sea

@@ -581,3 +581,19 @@ link = { tag = ZBW government = presidential_dictatorship civilized = yes capita
 link = { tag = ZIM capital = 2068 }
 link = { tag = OSP capital = 487 primary_culture = oldspain }
 link = { tag = VAN capital = 706 primary_culture = vandal civilized = yes }
+
+# Further addictions
+link = { tag = ENS primary_culture = danish add_accepted_culture = union civilized = yes capital = 372 }
+link = { tag = SRB primary_culture = sorbian religion = catholic capital = 549 civilized = yes }
+link = { tag = DNL primary_culture = elsinorian add_accepted_culture = danish civilized = yes capital = 278 }
+link = { tag = SAB primary_culture = sabellian civilized = yes }
+link = { tag = LGU primary_culture = old_ligurian civilized = yes }
+link = { tag = VNT primary_culture = venetic civilized = yes }
+link = { tag = SKL primary_culture = siculian civilized = yes }
+link = { tag = LEP primary_culture = lepontic civilized = yes }
+link = { tag = MRL primary_culture = morlach add_accepted_culture = north_italian civilized = yes capital = 781 religion = catholic }
+link = { tag = PHO government = democracy primary_culture = phoenician religion = canaanite civilized = yes capital = 913 }
+link = { tag = PRT primary_culture = pruthenian religion = catholic civilized = yes capital = 695 }
+link = { tag = PCH primary_culture = pecheneg }
+link = { tag = SMT primary_culture = sarmatian }
+link = { tag = TOC primary_culture = tocharian }

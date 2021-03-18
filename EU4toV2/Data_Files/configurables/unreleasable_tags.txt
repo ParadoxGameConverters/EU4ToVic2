@@ -16,3 +16,4 @@ unreleasable = UND #Undead
 unreleasable = ALL #The Caliphate
 unreleasable = GBR #Albion
 unreleasable = CZE #Czech Republic alone
+unreleasable = ENS # Empire of the North Sea

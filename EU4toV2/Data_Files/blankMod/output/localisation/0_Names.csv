@@ -374,6 +374,8 @@ DNB;Danubian Federation;Fédération Danubienne;Danubische Föderation;Federacja Na
 DNB_ADJ;Danubian;Danubien;Danubisch;dunajski;Danubio;Danubiana;dunai;Danubian;dunai;Danubian;Danubiano;Äóíàéñê.;Tonavan;x
 DND;Dendi;Dendi;Dendi;Dendi;Dendi;Dendi;Dendi;Dendi;Dendi;Dendi;Dendi;Äåíäè;Dendi;x
 DND_ADJ;Dendi;Dendi;Dendi-;Dendi;Dendi;di Dendi;Dendi;Dendi;Dendi;Dendi;Dendi;Äåíäè;Dendi;x
+DNL;Daneland;Daneland;Daneland;Daneland;Daneland;Daneland;Daneland;Daneland;Daneland;Daneland;Daneland;Äàíåëàíä;Daneland;x
+DNL_ADJ;Danelander;Danelandeuse;Daneländisch;Danelandsk;Danelandesa;del Daneland;Danelander;Danelandere;Danelander;Danelander;Danelander;Äàíåëàíäñê;Danelander;x
 DON;Cossackia;Cosaquie;Kosakenreich;Kozaków;Cossackia;Cosacchia;Cossackia;Cossackie;Cossackia;Cossackia;Cossaco;Êàçàêèÿ;Cossackia;x
 DON_ADJ;Cossack;Cosaque;Kosakisch;Kozak;cosaco;Cosacco;kozák;kozák;kozák;Kozak;Cossaco;êàçàê;kasakka;x
 DRA;Dravidistan;Dravidistan;Dravidistan;Dravidistan;Dravidistan;Dravidistan;Dravidistan;Dravidistán;Dravidistan;Dravidistan;Dravidistan;Äğàâèñèòàí;Dravidistan;x
@@ -394,6 +396,8 @@ ENL;England;Angleterre;England;Anglia;Inglaterra;Inghilterra;Anglia;Anglie;Angli
 ENL_ADJ;English;Anglais;Englisch;Anglii;Inglesa;Inglese;angol;anglictina;angol;Engels;Inglês;Àíãëèéñê.;englanti;y
 ENR;Britannia;Britannie;Britannien;Britannia;Britania;Britannia;Britannia;Britannia;Britannia;Britannia;Britannia;Áğèòàíèÿ;Britannia;x
 ENR_ADJ;Britannian;Britannique;Britannisch;Britannian;Britanno;Britanna;Britannian;Britannian;Britannian;Britannian;Britannian;Áğèòàíèñê.;Britannian;x
+ENS;The Empire of the North Sea;L'Empire de la Mer du Nord;Das Nordseereich;Imperium Morza Pó³nocnego;El Imperio del Mar del Norte;L'Impero del Mare del Nord;Az Északi-tenger birodalma;Øíše Severního moøe;Az Északi-tenger birodalma;Het Rijk van de Noordzee;O Império do Mar do Norte;Èìïåğèÿ Ñåâåğíîãî Ìîğÿ;Pohjanmeren imperiumi;x
+ENS_ADJ;Northern;Mer-du-Nordoise;Nördlich;Pó³nock;Norteña;Marsettentrionale;Északi;Severní;Északi;Noordelijk;Norte;Ñåâåğíîìîğñê;Pohjoinen;x
 ENT;Entre Ríos;Entre-Rios;Entre Ríos;Entre Ríos;Entre Ríos;Entre Ríos;Entre Ríos;Entre Ríos;Entre Ríos;Entre Ríos;Entre Ríos;İíòğå Ğèîñ;Entre Ríos;x
 ENT_ADJ;Entre Ríos;d'Entre-Rios;Entre Ríos-;Entre Ríos;Entre Ríos;di Entre Ríos;Entre Ríos;Entre Ríos;Entre Ríos;Entre Ríos;Entre Ríos;İíğåğèîñê.;Entre Ríos;x
 EPI;Epirus;Épire;Epirus;Epir;Epiro;Epiro;Epirusz;Epirus;Epirusz;Epirus;Epiro;İïèğ;Epirus;x
@@ -703,8 +707,12 @@ LEI;Leinster;Leinster;Leinster;Leinster;Leinster;Leinster;Leinster;Leinster;Lein
 LEI_ADJ;Leinster;du Leinster;Leinster-;Leinster;Leinsteriense;di Leinster;Leinster;Leinster;Leinster;Leinster;Leinster;Ëåíñòåğñê.;Leinster;y
 LEN;Lenape;Lenapes;Lenape;Delawarowie;Lenape;Lenape;Lenape;Lenape;Lenape;Lenape;Lenape;Äåëàâàğû;Lenape;z
 LEN_ADJ;Lenape;Lenape;Lenape-;Delewarów;Lenape;di Lenape;Lenape;Lenape;Lenape;Lenape;Lenape;Äåëàâàğñê.;Lenape;y
+LEP;Lepontia;Lépontie;Die Lepontei;Lepontia;Leponcia;Lepontia;Lepontia;Lepontia;Lepontia;Lepontia;Lepontia;Ëåïîíòèÿ;Lepontia;x
+LEP_ADJ;Lepontic;Lépontique;Lepontisch;Lepontsk;Lepontica;Lepontina;Lepontikus;Lepontic;Lepontikus;Lepontisch;Lepôntico;Ëåïîíòñê;Lepontinen;x
 LGB;Longobardia;Longobardie;Langobardenreich;Longobardowie;Langobardia;Longobardia;Longobardia;Longobardie;Longobardia;Longobardia;Longobardia;Ëîíãîáàğäèÿ;Longobardia;x
 LGB_ADJ;Longobard;Longobarde;Langobardisch;Longobardowie;Langobardo;Longobarda;Longobárd;Longobard;Longobárd;Longobard;Langobardo;Ëîíãîáàğä;Longobard;x
+LGU;Liguria;Ligurie;Ligurien;Liguria;Liguria;Liguria;Liguria;Ligurie;Liguria;Ligurië;Ligúria;Ëèãóğèÿ;Liguria;x
+LGU_ADJ;Ligurian;Ligurienne;Ligurisch;Liguryjsk;Ligura;Ligure;Liguriai;Ligurian;Liguriai;Ligurisch;Da Ligúria;Ëèãóğèéñê;Ligurialainen;x
 LIE;Liechtenstein;Liechtenstein;Liechtenstein;Liechtenstein;Liechtenstein;Liechtenstein;Liechtenstein;Lichtenštejnsko;Liechtenstein;Liechtenstein;Liechtenstein;Ëèõòåíøòåéí;Liechtenstein;x
 LIE_ADJ;Liechtensteiner;Liechtensteinois;Liechtensteinisch;Liechtensteiner;Liechtensteiner;Liechtensteiniana;Liechtensteiner;Liechtensteiner;Liechtensteiner;Liechtensteiner;Liechtensteiner;Ëèõòåíøòåéíñê.;Liechtensteiner;x
 LIG;Liège;Liège;Lüttich;Liège;Lieja;Liegi;Liège;Liège;Liège;Liège;Liège;Ëüåæ;Liège;z
@@ -860,6 +868,8 @@ MOZ;Mozambique;Mozambique;Mosambik;Mozambik;Mozambique;Mozambico;Mozambik;Mozamb
 MOZ_ADJ;Mozambican;Mozambicain;Mosambik;Mozambik;mozambiqueño;Mozambichese;mozambiki;Mozambik;mozambiki;Mozambikaanse;Moçambicano;Ìîçàìáèêñê.;Mosambikin;x
 MRI;Madurai;Maduraï;Madurai;Madura;Madurai;Madurai;Madurai;Madurai;Madurai;Madurai;Madurai;Ìàäóğàé;Madurai;z
 MRI_ADJ;Madurai;Madurais;Madurai-;Maduraju;Madurai;di Madurai;Madurai;Madurai;Madurai;Madurai;Madurai;Ìàäóğàéñê.;Madurai;y
+MRL;Morlacchia;Morlacquie;Morlacchien;Morlacchia;Morlaquia;Morlacchia;Morlacchia;Morlacchia;Morlacchia;Morlacchia;Morlacchia;Ìîğëàêêèÿ;Morlacchia;x
+MRL_ADJ;Morlach;Morlacque;Morlachisch;Morlachsk;Morlaca;Morlacca;Morlach;Morlach;Morlach;Morlach;Morlach;Ìîğëàõñê;Morlach;x
 MRU;the Maritime Union;L'Union Maritime;Die Maritime Union;Unia Morska;La Unión Marítima;L'Unione Marittima;A Tengerészeti Unió;Námoøní unie;A Tengerészeti Unió;De maritieme unie;A união marítima;Ìîğñêîé Ñîşç;Meriliitto;x
 MRU_ADJ;Maritime;Maritime;Maritim;Morski;Marítimo;Marittima;Tengeri;Námoøní;Tengeri;maritiem;Marítimo;ìîğñêîé;meri-;x
 MSK;Mosquito Coast;Côte des Mosquitos;Miskito-Küste;Wybrze¿e Miskito;Costa de miskitos;Costa di Miskito;Miskito-part;Pobøeí Miskito;Miskito-part;Miskito Coast;Costa do Miskito;Ìèñêèòî Ïîáåğåæüå;Miskito Coast;x
@@ -963,12 +973,16 @@ PAW;Pawnee;Pawnees;Pani;Paunisi;Pawnee;Pawnee;Záloghitelezo;Pawnee;Záloghitelezo
 PAW_ADJ;Pawnee;Pawnee;Pani-;Paunisów;Pawnee;di Pawnee;Záloghitelezo;Pawnee;Záloghitelezo;Pandhouder;Pawnee;Ïàóíñê.;Pawnee;y
 PBC;the Peru-Bolivia Confederation;La Confédération Pérou-Bolivie;Das Peru-Bolivien-Konföderation;Konfederacja Peru-Boliwia;La Confederación Perú-Bolivia;La Confederazione Perù-Bolivia;A Peru-Bolívia Szövetség;Konfederace Peru-Bolívie;A Peru-Bolívia Szövetség;De confederatie Peru-Bolivia;A Confederação Peru-Bolívia;Êîíôåäåğàöèÿ â Ïåğó è Áîëèâèè;Peru-Bolivian liitto;x
 PBC_ADJ;Peruvian-Bolivian;Péruvien-Bolivien;Peruanisch-Bolivianisch;Peruwiañsko-boliwijski;Peruano-boliviano;Peruviano-Boliviana;Perui-bolíviai;Peruánsko-bolivijskı;Perui-bolíviai;Peruaans-Boliviaanse;Peruana-boliviana;Ïåğóàíñêîãî áîëèâèéñê.;Perun-Bolivian;x
+PCH;Patzinakia;Patzinakie;Patzinakien;Patzinakia;Patzinaquia;Patzinachia;Patzinakia;Patzinakia;Patzinakia;Patzinakia;Patzinakia;Ïàöèíàêèÿ;Patzinakia;x
+PCH_ADJ;Pecheneg;Petchénègue;Petschenegisch;Pieczyngsk;Pechenega;Pecenega;Pecheneg;Pecheneg;Pecheneg;Pecheneg;Pecheneg;Ïå÷åíåãñê;Pecheneg;x
 PEG;Pegu;Pégou;Pegu;Pegu;Pegu;Pegu;Pegu;Pegu;Pegu;Pegu;Pegu;Ïåãó;Pegu;z
 PEG_ADJ;Pegu;du Pégou;Pegu-;Pegu;Peguana;di Pegu;Pegu;Pegu;Pegu;Pegu;Pegu;Ïåãóñê.;Pegu;y
 PEQ;Pequot;Pequots;Pequot;Pekoci;Pequot;Pequot;Pequot;Pequot;Pequot;Pequot;Pequot;Ïåêîòû;Pequot;z
 PEQ_ADJ;Pequot;Pequot;Pequot-;Pekotów;Pequot;di Pequot;Pequot;Pequot;Pequot;Pequot;Pequot;Ïåêîòñê.;Pequot;y
 PHA;Ü ;Ü ;Ü ;Ü ;Ü ;Ü ;Ü ;Ü ;Ü ;Ü ;Ü ;Ó ;Ü ;x
 PHA_ADJ;Üic;d'Ü;Üisch;Üa;de Ü;di Ü;Ü-;Ü-;Ü-;Ü-;Ü-;Óñê.;Ü-;x
+PHO;Phoenicia;Phénicie;Phönizien;Fenicja;Fenicia;Fenicia;Fönícia;Fénicie;Fönícia;Fenicië;Fenícia;Ôèíèêèÿ;Phoenicia;x
+PHO_ADJ;Phoenician;Phénicienne;Phönizisch;Fenick;Fenicia;Fenicia;föníciai;fénickı;föníciai;Fenicisch;Fenício;Ôèíèêèéñê;Foinikialainen;x
 PIM;Pima;Pimas;Pima;Pima;Pima;Pima;Pima;Pima;Pima;Pima;Pima;Ïèìà;Pima;z
 PIM_ADJ;Pima;Pima;Pima-;Pimów;Pima;di Pima;Pima;Pima;Pima;Pima;Pima;Ïèìñê.;Pima;y
 PIN;Pindus;Pinde;Pindos;Pindus;Pindus;Pindo;Pindusz;Pindus;Pindusz;Pindus;Pindus;Ïèíä;Pindus;x
@@ -995,6 +1009,8 @@ PRI;Puerto Rico;Porto Rico;Portoriko;Portoryko;Puerto Rico;Porto Rico;Puerto Ric
 PRI_ADJ;Puerto Rican;Portoricain;Puertorikanisch;Portorykañczyk;puertorriqueño;Portoricana;Puerto Ricó-i;portorickı;Puerto Ricó-i;Puerto Ricaan;Porto-riquenho;ïóığòîğèêàíåö;Puerto Rican;x
 PRO;Provence;Provence;Provence;Prowansja;Provenza;Provenza;Provence;Provence;Provence;Provence;Provença;Ïğîâàíñ;Provence;z
 PRO_ADJ;Provençal;Provençal;Provenzalisch;Prowansji;Provenzana;Provenzale;provence;Provençal;provence;Provençaalse;Provençal;Ïğîâàíñàëüñê.;provençal;y
+PRT;Pruthenia;Pruthénie;Pruthenien;Pruthenia;Prutenia;Prutenia;Pruthenia;Pruthenia;Pruthenia;Pruthenia;Prutênia;Ïğóòåíèÿ;Pruthenia;x
+PRT_ADJ;Pruthenian;Pruthénienne;Pruthenisch;Prusk;Prutena;Prutena;Pruthenianus;Pruthenian;Pruthenianus;Prutheens;Pruthenian;Ïğóòñê;Pruthenian;x
 PSK;Pskov;Pskov;Pskow;Psków;Pskov;Pskov;Pszkov;Pskov;Pszkov;Pskov;Pskov;Ïñêîâ;Pihkovan;z
 PSK_ADJ;Pskovian;de Pskov;Pskow-;Pskowa;Pskoviana;di Pskov;Pskovian;Pskovian;Pskovian;Pskovian;Pskovian;Ïñêîâñê.;Pskovian;y
 PTG;Patagonia;Patagonie;Patagonien;Patagonia;Patagonia;Patagonia;Patagónia;Patagonia;Patagónia;Patagonië;Patagônia;Ïàòàãîíèÿ;Patagonia;x
@@ -1074,6 +1090,8 @@ RZW;Butua;Butua;Butua;Butua;Butua;Butua;Butua;Butua;Butua;Butua;Butua;Áóòóà;Butu
 RZW_ADJ;Butuan;de Butua;Butua-;Butuan;Butuana;di Butua;Butuan;Butuan;Butuan;Butuan;Butuan;Áóòóàíñê.;Butuan;y
 SAA;Saar;Sarre;Saarland;Saar;Sarre;Saar;Saar;Saar;Saar;Saar;Sarre;Ñààğ;Saar;x
 SAA_ADJ;Saarländer;Sarrois;Saarländisch;Saarländer;Saarländer;della Saar;Saarländer;Saarländer;Saarländer;Saarländer;Saarländer;Ñààğñê.;Saarländer;x
+SAB;Sabellia;Sabellie;Die Sabellei;Sabellia;Sabellia;Sabellia;Sabellia;Sabellia;Sabellia;Sabellia;Sabellia;Ñàáåëëèÿ;Sabellia;x
+SAB_ADJ;Sabellian;Sabellienne;Sabellisch;Sabelsk;Sabeliana;Sabellica;Sabellian;Sabellian;Sabellian;Sabellian;Sabellian;Ñàáåëëèàíñê;Sabellian;x
 SAK;Siak;Siak;Siak;Siak;Siak;Siak;Siak;Siak;Siak;Siak;Siak;Ñèàê;Siak;z
 SAK_ADJ;Siak;de Siak;Siak-;Siaku;Siak;di Siak;Siak;Siak;Siak;Siak;Siak;Ñèàêñê.;Siak;y
 SAM;Samos;Samos;Samos;Samos;Samos;Samo;Samos;Samos;Samos;Samos;Samos;Ñàìîñ;Samoksen;x
@@ -1120,6 +1138,8 @@ SIO;Sioux;Sioux;Sioux;Siuksowie;Sioux;Siù;sziú;Sioux;sziú;Sioux;Sioux;Ñèó;Sioux;
 SIO_ADJ;Sioux;Sioux;Sioux-;Siuksów;Sioux;dei Siù;sziú;Sioux;sziú;Sioux;Sioux;Ñèóñê.;Sioux;y
 SKA;Sakalava;Sakalava;Sakalava;Sakalawa;Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Ñàêàëàâà;Sakalava;z
 SKA_ADJ;Sakalava;de Sakalava;Sakalava-;Sakalawów;Sakalava;di Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Sakalava;Ñàêàëàâñê.;Sakalava;y
+SKL;Siculia;Siculien;Siculien;Siculia;Siculia;Siculia;Siculia;Sicílie;Siculia;Siculia;Siculia;Ñèêóëèÿ;Siculia;x
+SKL_ADJ;Siculian;Siculienne;Siculisch;Sycylijsk;Siculiana;Sicula;Siculian;Siculskı;Siculian;Siculisch;Siculiano;Ñèêóëèéñê;Siculian;x
 SKN;Saint Kitts and Nevis;Saint-Christophe-et-Niévès;St. Kitts und Nevis;Saint Kitts i Nevis;San Cristóbal y Nieves;Saint Kitts e Nevis;Saint Kitts és Nevis;Svatı Kryštof a Nevis;Saint Kitts és Nevis;Saint Kitts en Nevis;São Cristóvão e Nevis;Ñåíò-Êèòñ è Íåâèñ;Saint Kitts ja Nevis;x
 SKN_ADJ;Kitts;Christophrien;Kitts-;Kitts;Kitts;Cristoforina;Kitts;Kitts;Kitts;Kitts;Cristóvão;Êèòòñ;Kitts;x
 SLE;Sierra Leone;Sierra-Léone;Sierra Leone;Sierra Leone;Sierra Leona;Sierra Leone;Sierra Leone;Sierra Leone;Sierra Leone;Sierra Leone;Serra Leoa;Ñüåğğà-Ëåîíå;Sierra Leone;x
@@ -1140,6 +1160,8 @@ SMO;Samoa;Samoa;Samoa;Samoa;Samoa;Samoa;Szamoa;Samoa;Szamoa;Samoa;Samoa;Ñàìîà;Sa
 SMO_ADJ;Samoan;Samoan;Samoanisch;Samoañczyk;Samoano;Samoana;szamoai;Samoan;szamoai;Samoaanse;Samoano;Ñàìîàñê.;samoa;x
 SMR;San Marino;Saint-Marin;San Marino;San Marino;San Marino;San Marino;San Marino;San Marino;San Marino;San Marino;San Marino;Ñàí-Ìàğèíî;San Marino;x
 SMR_ADJ;Sammarinese;Saint-Marinais;San-Marinesisch;Sammarinese;Sammarinés;Sammarinese;Sammarinese;Sammarinese;Sammarinese;Sammarinese;Sammarinese;Ñàí-Ìàğèíî;Sammarinese;x
+SMT;Sarmatia;Sarmatie;Sarmatien;Sarmatia;Sarmatia;Sarmazia;Sarmatia;Sarmatia;Sarmatia;Sarmatia;Sarmatia;Ñàğìàòèÿ;Sarmatia;x
+SMT_ADJ;Sarmatian;Sarmate;Sarmatisch;Sarmatsk;Sarmata;Sarmata;Szarmata;Sarmatština;Szarmata;Sarmatisch;Sármata;Ñàğìàòñê;Sarmatian;x
 SMZ;Shimazu;Shimazu;Shimazu;Shimazu;Shimazu;Shimazu;Shimazu;Šimazu;Shimazu;Shimazu;Shimazu;Ñèìàäçó;Shimazu;z
 SMZ_ADJ;Shimazu;de Shimazu;Shimazu-;Shimazu;Shimazu;di Shimazu;Shimazu;Šimazu;Shimazu;Shimazu;Shimazu;Ñèìàäçóñê.;Shimazu;y
 SNA;Siena;Sienne;Siena;Siena;Siena;Siena;Siena;Siena;Siena;Siena;Siena;Ñèåíà;Siena;z
@@ -1162,6 +1184,8 @@ SPQ_democracy;Senatorial Rome;Rome Sénatoriale;Senatorisches Rom;Senatorskich Rz
 SPQ_proletarian_dictatorship;The Union of Rome;L'Union de Rome;Die Union von Rom;Zwi¹zek Rzymie;La Unión de Roma;L'Unione di Roma;Az Unió a Római;Svaz Rím;Az Unió a Római;de Unie van Rome;A União de Roma;Ñîşç Ğèìà;Unionin Rooman;x
 SPU;South Peru;Pérou du Sud;Südperu;Po³udniowy Peru;Sur de Perú;Perù del Sud;Dél-Peru;Jiní Peru;Dél-Peru;Zuid-Peru;Sul do Peru;Şæíûé Ïåğó;Etelä-Peru;x
 SPU_ADJ;South Peruvian;Sud-Péruvien;Südperuanisch;Po³udniowy peruwiañski;Sur peruano;Sudperuviana;Dél-perui;Jiní peruánskı;Dél-perui;Zuid-Peruaans;Peruano do sul;Şæíî-ïåğóàíñê.;Etelä-Perula;x
+SRB;Sorbia;Sorabie;Sorbien;Sorbia;Sorbia;Sorbia;Sorbia;Sorbia;Sorbia;Sorbia;Sorbia;Ñîğáèÿ;Sorbia;x
+SRB_ADJ;Sorbian;Sorabe;Sorbisch;£u¿yck;Soraba;Soraba;Szorb;Luickosrbština;Szorb;Sorbisch;Sorábio;Ñîğáñê;Sorbi;x
 SRD;Sardinia;Sardaigne;Sardinien;Sardynia;Cerdeña;Sardegna;Szardínia;Sardinie;Szardínia;Sardinië;Sardenha;Ñàğäèíèÿ;Sardinia;z
 SRD_ADJ;Sardinian;Sarde;Sardisch;Sardynii;Sarda;Sarda;szardíniai;sardinskı;szardíniai;Sardijns;Sardo;Ñàğäèíñê.;Sardinian;y
 SRI;Ceylon;Ceylan;Ceylon;Cejlon;Ceilán;Ceylon;Ceylon;Cejlon;Ceylon;Ceylon;Ceilão;Öåéëîí;Ceylon;z
@@ -1263,6 +1287,8 @@ TNT;Tannu Tuva;Tannou-Touva;Tannu Tuwa;Tannu Tuva;Tannu Tuva;Tannu Tuva;Tannu Tu
 TNT_ADJ;Tuvan;Touvain;Tuwinisch;Tuvan;Tuvan;Tuvana;Tuvan;Tuvan;Tuvan;Tuvan;Tuvano;òóâèíñê.;Tuvan;x
 TNZ;Tanganyika;Tanganyika;Tanganjika;Tanganyika;Tanganyika;Tanganica;Tanganyika;Tanganyika;Tanganyika;Tanganyika;Tanganyika;Òàíãàíüèêà;Tanganjika;x
 TNZ_ADJ;Tanzanian;Tanzanien;Tansanisch;Tanzanian;Tanzano;Tanzana;tanzániai;Tanzanskı;tanzániai;Tanzaniaans;Tanzanian;Òàíçàíèéñê.;tansanialainen;x
+TOC;Tocharia;Tocharie;Tocharien;Tocharia;Tocharia;Tocaria;Tocharia;Tocharia;Tocharia;Tocharia;Tocharia;Òîõàğèÿ;Tocharia;x
+TOC_ADJ;Tocharian;Tocharienne;Tocharisch;Tocharian;Tocaria;Tocaria;Tocharian;Tocharian;Tocharian;Tochaars;Tochariana;Òîõàğñê;Tokarilainen;x
 TOG;Togo;Togo;Togo;Togo;Togo;Togo;Togo;Togo;Togo;Togo;Togo;Òîãî;Togo;x
 TOG_ADJ;Togo;Togolais;Togolesisch;Togo;Togolés;Togolese;togói;Togolese;togói;Togolese;Togolês;Òîãñê.;Togon;x
 TOK;Tonkin;Tonkin;Tonkin;Tonkin;Tonkín;Tonchino;Tonkin;Tonkin;Tonkin;Tonkin;Tonquim;Òîíêèí;Tonkin;z
@@ -1348,6 +1374,8 @@ VIJ;Vijayanagar;Vijayanâgara;Vijayanagar;WidŸajanagar;Vijayanagar;Vijayanagar;Vi
 VIJ_ADJ;Vijayanagara;de Vijayanâgara;Vijayanagar-;WidŸajanagaru;Vijaynesa;del Vijayanagar;Vijayanagara;Vijayanagara;Vijayanagara;Vijayanagara;Vijayanagara;Âèäæàÿíàãàğñê.;Vijayanagaran;y
 VND;Venad;Vénad;Wenad;Venad;Venad;Venad;Venad;Venad;Venad;Venad;Venad;Âåíàä;Venad;y
 VND_ADJ;Venad;Vénadois;Wenad-;Venadu;Venadi;del Venad;Venad;Venad;Venad;Venad;Venad;Âåíàäñê.;Venad;y
+VNT;Venetics;Vénétique;Die Venetei;Venetics;Venecia;Veneticia;Venetika;Venetics;Venetika;Venetica;Venéticos;Âåíåòèÿ;Venetiikka;x
+VNT_ADJ;Venetic;Vénétique;Venetisch;Venetsk;Venética;Venetica;Velencei;Venetickı;Velencei;Venetic;Venético;Âåíåòñê;Venetsia;x
 VTU;Vanuatu;Vanuatu;Vanuatu;Vanuatu;Vanuatu;Vanuatu;Vanuatu;Vanuatu;Vanuatu;Vanuatu;Vanuatu;Âàíóàòó;Vanuatu;x
 VTU_ADJ;Vanuatu;Vanuatuais;Vanuatuisch;Vanuatu;Vanuatu;di Vanuatu;Vanuatu;Vanuatu;Vanuatu;Vanuatu;Vanuatu;Âàíóàòó;Vanuatu;x
 WBG;Würzburg;Wurtzbourg;Würzburg;Würzburg;Würzburgo;Würzburg;Würzburg;Würzburg;Würzburg;Würzburg;Wurtzburgo;Âşğöáóğã;Würzburg;z
