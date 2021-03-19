@@ -129,6 +129,7 @@ class World
 	void addReligionCulture();
 	void convertCountryFlags();
 	void updateDeadNations();
+	void copyHpmFiles() const;
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
