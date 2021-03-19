@@ -271,11 +271,11 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2PathCanPointToHpm)
 {
 	Configuration testConfiguration;
 	std::stringstream input;
-	input << "targetGameModPath = \"C:\\Vic2ModPath\"";
-	input << "hpm_enabled = \"2\"";
+	input << "Vic2directory = \"C:\\Vic2Path\"";
+	input << "hybrid_enabled = \"2\"";
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
-	ASSERT_EQ("C:\\Vic2ModPath/HPM", testConfiguration.getVic2Path());
+	ASSERT_EQ("C:\\Vic2Path/mod/HPM", testConfiguration.getVic2Path());
 }
 
 
@@ -486,7 +486,7 @@ TEST(EU4ToVic2_ConfigurationTests, DebugCanBeSet)
 }
 
 
-TEST(EU4ToVic2_ConfigurationTests, HpmDefaultsDisabled)
+TEST(EU4ToVic2_ConfigurationTests, HybridDefaultsDisabled)
 {
 	Configuration testConfiguration;
 	std::stringstream input;
@@ -496,10 +496,10 @@ TEST(EU4ToVic2_ConfigurationTests, HpmDefaultsDisabled)
 }
 
 
-TEST(EU4ToVic2_ConfigurationTests, HpmCanBeEnabled)
+TEST(EU4ToVic2_ConfigurationTests, HybridCanBeEnabled)
 {
 	Configuration testConfiguration;
-	std::stringstream input("hpm_enabled = \"2\"");
+	std::stringstream input("hybrid_enabled = \"2\"");
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
 	ASSERT_TRUE(testConfiguration.isHpmEnabled());
