@@ -36,10 +36,6 @@ V2::Province::Province(std::string _filename,
 	{
 		details = mappers::ProvinceDetailsMapper("blankMod/output/history/provinces/" + filename).getProvinceDetails();
 	}
-	else if (theConfiguration.isHpmEnabled())
-	{
-		details = mappers::ProvinceDetailsMapper(theConfiguration.getVic2Path() + "/HPM/history/provinces/" + filename).getProvinceDetails();	
-	}
 	else
 	{
 		details = mappers::ProvinceDetailsMapper(theConfiguration.getVic2Path() + "/history/provinces/" + filename).getProvinceDetails();
