@@ -50,7 +50,7 @@ V2::Province::Province(std::string _filename,
 		}
 	}
 
-	if (details.terrain.empty())
+	if (details.terrain.empty() && !theConfiguration.isHpmEnabled())
 	{
 		auto terrain = terrainDataMapper.getTerrainForID(provinceID);
 		if (terrain)

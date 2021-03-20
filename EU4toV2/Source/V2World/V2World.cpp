@@ -1558,6 +1558,11 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	outputNeoCultures();
 	Log(LogLevel::Progress) << "99 %";
 
+	if (theConfiguration.isHpmEnabled())
+	{
+		copyHpmFiles();
+	}
+
 	// verify countries got written
 	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
 	verifyCountriesWritten();
@@ -1873,4 +1878,13 @@ std::string V2::World::clipCountryFileName(const std::string& incoming) const
 		return incoming;
 	else
 		return incoming.substr(0, 76) + ".txt";
+}
+
+void V2::World::copyHpmFiles() const
+{
+	LOG(LogLevel::Info) << "<- Copying HPM files";
+	const auto& hpm = theConfiguration.getVic2Path();
+	const auto& out = "output/" + theConfiguration.getOutputName();
+
+	commonItems::CopyFolder(hpm + "/map", out + "/map");
 }

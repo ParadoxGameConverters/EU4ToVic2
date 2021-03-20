@@ -14,7 +14,14 @@ mappers::ProvinceMapper::ProvinceMapper(): colonialRegionsMapper(std::make_uniqu
 {
 	LOG(LogLevel::Info) << "Parsing province mappings";
 	registerKeys();
-	parseFile("configurables/province_mappings.txt");
+	if (theConfiguration.isHpmEnabled())
+	{
+		parseFile("configurables/HPM/province_mappings.txt");
+	}
+	else
+	{
+		parseFile("configurables/province_mappings.txt");
+	}
 	clearRegisteredKeywords();
 
 	const auto& mappings = getBestMappingsVersion(theConfiguration.getEU4Version());
