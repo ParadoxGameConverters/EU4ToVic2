@@ -38,6 +38,7 @@ class Configuration: commonItems::parser
 		enum class AFRICARESET { ResetAfrica = 1, LeaveAfrica = 2 };
 		enum class ABSORBCOLONIES { AbsorbNone = 1, AbsorbSome = 2, AbsorbAll = 3 };
 		enum class LIBERTYDESIRE { Loyal = 1, Disloyal = 2, Rebellious = 3 };
+		enum class HYBRIDMOD { None = 1, HPM = 2 };
 
 		[[nodiscard]] auto getPopShaping() const { return popShaping; }
 		[[nodiscard]] auto getCoreHandling() const { return coreHandling; }
@@ -52,6 +53,7 @@ class Configuration: commonItems::parser
 		[[nodiscard]] auto getRandomiseRgos() const { return randomiseRgos; }
 		[[nodiscard]] auto getConvertAll() const { return convertAll; }
 		[[nodiscard]] auto getAfricaReset() const { return africaReset; }
+		[[nodiscard]] bool isHpmEnabled() const { return hybridMod == HYBRIDMOD::HPM; }
 
 		[[nodiscard]] const auto& getEU4SaveGamePath() const { return EU4SaveGamePath; }
 		[[nodiscard]] const auto& getEU4Path() const { return EU4Path; }
@@ -92,6 +94,7 @@ class Configuration: commonItems::parser
 		EUROCENTRISM euroCentric = EUROCENTRISM::VanillaImport;
 		ABSORBCOLONIES absorbColonies = ABSORBCOLONIES::AbsorbNone;
 		AFRICARESET africaReset = AFRICARESET::ResetAfrica;
+		HYBRIDMOD hybridMod = HYBRIDMOD::None;
 		double popShapingFactor = 50.0;
 		bool debug = false;
 		bool randomiseRgos = false;

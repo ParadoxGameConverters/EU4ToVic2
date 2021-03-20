@@ -99,6 +99,11 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 		convertAll = convertAllString == "yes";
 		LOG(LogLevel::Info) << "Convert All: " << convertAllString;
 	});
+	registerKeyword("hybrid_enabled", [this](std::istream& theStream) {
+		const auto hybridEnabledString = commonItems::getString(theStream);
+		hybridMod = HYBRIDMOD(std::stoi(hybridEnabledString));
+		LOG(LogLevel::Info) << "Hybrid mod enabled: " << hybridEnabledString;
+	});
 	registerKeyword("output_name", [this](std::istream& theStream) {
 		incomingOutputName = commonItems::getString(theStream);
 		LOG(LogLevel::Info) << "Output Name: " << incomingOutputName;
@@ -109,6 +114,10 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 	parseStream(theStream);
 	clearRegisteredKeywords();
 	setOutputName();
+	if (isHpmEnabled())
+	{
+		Vic2Path += "/mod/HPM";
+	}
 	Log(LogLevel::Progress) << "3 %";
 }
 
