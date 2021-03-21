@@ -1953,6 +1953,28 @@ void V2::World::copyHpmFiles() const
 	// rebels
 	fs::remove(out + "/common/rebel_types.txt");
 	fs::copy_file(hpm + "/common/rebel_types.txt", out + "/common/rebel_types.txt");
+
+	// events & decisions
+	for (const auto& file : commonItems::GetAllFilesInFolder(hpm + "/events"))
+	{
+		fs::remove(out + "/events/" + file);
+		fs::copy_file(hpm + "/events/" + file, out + "/events/" + file);
+	}
+	for (const auto& file : commonItems::GetAllFilesInFolder("configurables/HPM/events"))
+	{
+		fs::remove(out + "/events/" + file);
+		fs::copy_file("configurables/HPM/events/" + file, out + "/events/" + file);
+	}
+	for (const auto& file : commonItems::GetAllFilesInFolder(hpm + "/decisions"))
+	{
+		fs::remove(out + "/decisions/" + file);
+		fs::copy_file(hpm + "/decisions/" + file, out + "/decisions/" + file);
+	}
+	for (const auto& file : commonItems::GetAllFilesInFolder("configurables/HPM/decisions"))
+	{
+		fs::remove(out + "/decisions/" + file);
+		fs::copy_file("configurables/HPM/decisions/" + file, out + "/decisions/" + file);
+	}
 }
 
 void V2::World::updateCountryDetails()

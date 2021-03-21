@@ -1,0 +1,845 @@
+political_decisions = {
+	african_post_colonialism = {
+		potential = {
+			year = 1890
+			NOT = {
+				has_global_flag = der_postcolonialism_2
+			}
+			has_global_flag = der_postcolonialism
+		}
+		allow = {
+			ai = no		
+		}
+
+		effect = {
+			prestige = 25
+			ALD_1704 = {
+				add_core = ALD
+				flashpoint_tension = 10
+			}
+			FRA_1700 = {
+				add_core = ALD
+				flashpoint_tension = 10
+			}
+			ALD_1708 = {
+				add_core = ALD
+				flashpoint_tension = 10
+			}
+			ALD_1718 = {
+				add_core = ALD
+				flashpoint_tension = 10
+			}
+			ALD_1718 = {
+				add_core = ALD
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = ALD
+					exists = no
+				}
+				capital = 1700
+				government = democracy
+			}
+			MOR_1696 = {
+				add_core = MOR
+				add_core = WSH
+				flashpoint_tension = 10
+			}
+			2136 = { remove_core = WSH }
+			1694 = { remove_core = WSH }
+			1695 = { remove_core = WSH }
+			1696 = { remove_core = WSH }
+			MOR_1683 = {
+				add_core = MOR
+				flashpoint_tension = 10
+			}
+			MOR_1693 = {
+				add_core = MOR
+				flashpoint_tension = 10
+			}
+			MOR_1686 = {
+				add_core = MOR
+				flashpoint_tension = 10
+			}
+			MOR_1688 = {
+				add_core = MOR
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = MOR
+					exists = no
+				}
+				capital = 1686
+				government = democracy
+			}
+			TUN_1726 = {
+				add_core = TUN
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = TUN
+					exists = no
+				}
+				capital = 1725
+				government = democracy
+			}
+			TRI_1731 = {
+				add_core = LBY
+				flashpoint_tension = 10
+			}
+			TRI_1735 = {
+				add_core = LBY
+				flashpoint_tension = 10
+			}
+			TRI_1735 = {
+				add_core = LBY
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = LBY
+					exists = no
+				}
+				capital = 1731
+				government = democracy
+			}
+			EGY_1755 = {
+				add_core = EGY
+				flashpoint_tension = 10
+			}
+			EGY_1745 = {
+				add_core = EGY
+				flashpoint_tension = 10
+			}
+			EGY_1771 = {
+				add_core = EGY
+				flashpoint_tension = 10
+			}
+			EGY_1762 = {
+				add_core = EGY
+				flashpoint_tension = 10
+			}
+			EGY_1758 = {
+				add_core = EGY
+				flashpoint_tension = 10
+			}
+			EGY_1771 = {
+				add_core = EGY
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = EGY
+					exists = no
+				}
+				capital = 1745
+				government = democracy
+			}
+			ETH_1865 = {
+				add_core = ETH
+				flashpoint_tension = 10
+			}
+			ETH_1859 = {
+				add_core = ETH
+				flashpoint_tension = 10
+			}
+			ETH_1853 = {
+				add_core = ETH
+				flashpoint_tension = 10
+			}
+			ENG_1848 = { #Eritrea
+				add_core = ERI
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = ETH
+					exists = no
+				}
+				capital = 1852
+				government = democracy
+			}
+			FRA_1775 = {
+				add_core = TRZ
+				flashpoint_tension = 10
+			}
+			TRZ = {
+				add_accepted_culture = maures
+				primary_culture = dummy
+			}
+			FRA_1801 = {
+				add_core = MLI
+				flashpoint_tension = 10
+			}
+			FRA_1775 = {
+				add_core = TRZ
+				flashpoint_tension = 10
+			}
+			FRA_1783 = {
+				add_core = SNG
+				flashpoint_tension = 10
+			}
+			FRA_1788 = {
+				add_core = SNG
+				flashpoint_tension = 10
+			}
+			SNG = {
+				add_accepted_culture = wolof
+				primary_culture = dummy
+			}
+			FRA_1794 = {
+				add_core = MLI
+				flashpoint_tension = 10
+			}
+			FRA_1798 = {
+				add_core = MLI
+				flashpoint_tension = 10
+			}
+			FRA_1803 = {
+				add_core = MLI
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = MLI
+					exists = no
+				}
+				add_accepted_culture = bambara
+				capital = 1794
+				government = democracy
+				primary_culture = dummy
+			}
+			FRA_1813 = {
+				add_core = NIG
+				flashpoint_tension = 10
+			}
+			FRA_1808 = {
+				add_core = NIG
+				flashpoint_tension = 10
+			}
+			NIG = {
+				add_accepted_culture = mande
+				primary_culture = dummy
+			}
+			ASH_1910 = {
+				add_core = BKF
+				flashpoint_tension = 10
+			}
+			BKF = {
+				add_accepted_culture = dyula
+				primary_culture = dummy
+			}
+			FRA_1914 = {
+				add_core = TOG
+				flashpoint_tension = 10
+			}
+			TOG = {
+				add_accepted_culture = ewe
+				primary_culture = dummy
+			}
+			FRA_1919 = {
+				add_core = DAH
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = DAH
+					exists = no
+				}
+				add_accepted_culture = fon
+				capital = 1919
+				government = democracy
+				primary_culture = dummy
+			}
+			ENG_1887 = {
+				add_core = LIB
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = LIB
+					exists = no
+				}
+				add_accepted_culture = kru
+				capital = 1887
+				government = democracy
+				primary_culture = dummy
+			}
+			FRA_1927 = {
+				add_core = NGR
+				flashpoint_tension = 10
+			}
+			FRA_1927 = {
+				add_core = NGR
+				flashpoint_tension = 10
+			}
+			SOK_1945 = {
+				add_core = NGR
+				flashpoint_tension = 10
+			}
+			SOK_1937 = {
+				add_core = NGR
+				flashpoint_tension = 10
+			}
+			FRA_1930 = {
+				add_core = NGR
+				flashpoint_tension = 10
+			}
+			SOK_1934 = {
+				add_core = NGR
+				flashpoint_tension = 10
+			}
+			FRA_1923 = {
+				add_core = NGR
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = NGR
+					exists = no
+				}
+				add_accepted_culture = hausa
+				capital = 1941
+				government = democracy
+				primary_culture = dummy
+			}
+			BEL_1977 = {
+				add_core = CNG
+				flashpoint_tension = 10
+			}
+			BEL_1984 = {
+				add_core = CNG
+				flashpoint_tension = 10
+			}
+			BEL_1987 = {
+				add_core = CNG
+				flashpoint_tension = 10
+			}
+			BEL_1996 = {
+				add_core = CNG
+				flashpoint_tension = 10
+			}
+			BEL_1984 = {
+				add_core = CNG
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = CNG
+					exists = no
+				}
+				add_accepted_culture = bakongo
+				capital = 1982
+				government = democracy
+				primary_culture = dummy
+			}
+			ENG_2019 = {
+				add_core = BUG
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = BUG
+					exists = no
+				}
+				add_accepted_culture = baganda
+				capital = 2019
+				government = democracy
+				primary_culture = dummy
+			}
+			ENG_2026 = {
+				add_core = KNY
+				flashpoint_tension = 10
+			}
+			ENG_2024 = {
+				add_core = KNY
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = KNY
+					exists = no
+				}
+				add_accepted_culture = swahili
+				capital = 2029
+				government = democracy
+				primary_culture = dummy
+			}
+			ENG_2071 = {
+				add_core = ZBW
+				flashpoint_tension = 10
+			}
+			ENG_2014 = {
+				add_core = ZAM
+				flashpoint_tension = 10
+			}
+			ENG_2016 = {
+				add_core = ZAM
+				flashpoint_tension = 10
+			}
+			ZAM = {
+				add_accepted_culture = tonga
+				primary_culture = dummy
+			}
+			any_country = {
+				limit = {
+					tag = ZBW
+					exists = no
+				}
+				add_accepted_culture = shona
+				capital = 2068
+				government = democracy
+				primary_culture = dummy
+			}
+			ENG_2087 = {
+				add_core = SAF
+				flashpoint_tension = 10
+			}
+			ENG_2092 = {
+				add_core = SAF
+				flashpoint_tension = 10
+			}
+			ENG_2096 = {
+				add_core = SAF
+				flashpoint_tension = 10
+			}
+			ORA_2103 = {
+				add_core = SAF
+				flashpoint_tension = 10
+			}
+			ZUL_2113 = {
+				add_core = SAF
+				flashpoint_tension = 10
+			}
+			TRN_2108 = {
+				add_core = SAF
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = SAF
+					exists = no
+				}
+				add_accepted_culture = khoisan
+				capital = 2087
+				government = democracy
+				primary_culture = dummy
+			}
+			MAD_2117 = {
+				add_core = MAD
+				flashpoint_tension = 10
+			}
+			MAD_2121 = {
+				add_core = MAD
+				flashpoint_tension = 10
+			}
+			ENG_2125 = {
+				add_core = MAD
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = MAD
+					exists = no
+				}
+				add_accepted_culture = malagasy
+				capital = 2115
+				government = democracy
+				primary_culture = dummy
+			}
+			FRA_1883 = {
+				add_core = GNE
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = GNE
+					exists = no
+				}
+				capital = 1879
+				government = democracy
+				primary_culture = dummy
+			}
+			FRA_1884 = {
+				add_core = SLE
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = SLE
+					exists = no
+				}
+				add_accepted_culture = kru
+				capital = 1884
+				government = democracy
+				primary_culture = dummy
+			}
+			FRA_1893 = {
+				add_core = IVC
+				flashpoint_tension = 10
+			}
+			FRA_1892 = {
+				add_core = IVC
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = IVC
+					exists = no
+				}
+				add_accepted_culture = akan
+				capital = 1892
+				government = democracy
+				primary_culture = dummy
+			}
+			ASH_1909 = {
+				add_core = GHN
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = GHN
+					exists = no
+				}
+				add_accepted_culture = akan
+				capital = 1907
+				government = democracy
+				primary_culture = dummy
+			}
+			EGY_1834 = {
+				add_core = SUD
+				flashpoint_tension = 10
+			}
+			EGY_1827 = {
+				add_core = SUD
+				flashpoint_tension = 10
+			}
+			ENG_1844 = {
+				add_core = SUD
+				add_core = SSU
+				flashpoint_tension = 10
+			}
+			1832 = { add_core = SSU }
+			SSU = {
+				add_accepted_culture = sudanese
+				primary_culture = dummy
+			}
+			EGY_1838 = {
+				add_core = SUD
+				flashpoint_tension = 10
+			}
+			EGY_1838 = {
+				add_core = SUD
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = SUD
+					exists = no
+				}
+				add_accepted_culture = sudanese
+				capital = 1827
+				government = democracy
+				primary_culture = dummy
+			}
+			SOM_1868 = {
+				add_core = SOM
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = SOM
+					exists = no
+				}
+				primary_culture = somali
+				religion = sunni
+				capital = 1868
+				government = democracy
+			}
+			ENG_1818 = {
+				add_core = CAR
+				flashpoint_tension = 10
+			}
+			FRA_1965 = {
+				add_core = CAR
+				flashpoint_tension = 10
+			}
+			ENG_1818 = {
+				add_core = CHD
+				flashpoint_tension = 10
+			}
+			ENG_1825 = {
+				add_core = CHD
+				flashpoint_tension = 10
+			}
+			CHD = {
+				add_accepted_culture = african_minor
+				primary_culture = dummy
+			}
+			any_country = {
+				limit = {
+					tag = CAR
+					exists = no
+				}
+				capital = 1965
+				government = democracy
+				primary_culture = dummy
+			}
+			SOK_1963 = {
+				add_core = CMR
+				flashpoint_tension = 10
+			}
+			ENG_1956 = {
+				add_core = CMR
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = CMR
+					exists = no
+				}
+				capital = 1959
+				government = democracy
+				primary_culture = dummy
+			}
+			FRA_1978 = { #Congo-Brazzaville
+				add_core = CGO
+				flashpoint_tension = 10
+			}
+			CGO = {
+				add_accepted_culture = bakongo
+				primary_culture = dummy
+			}
+			FRA_1972 = {
+				add_core = GAB
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = GAB
+					exists = no
+				}
+				capital = 1972
+				government = democracy
+				primary_culture = dummy
+			}
+			ENG_2039 = {
+				add_core = TNZ
+				flashpoint_tension = 10
+			}
+			ENG_2044 = {
+				add_core = TNZ
+				flashpoint_tension = 10
+			}
+			ENG_2036 = {
+				add_core = TNZ
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = TNZ
+					exists = no
+				}
+				capital = 2036
+				government = democracy
+				primary_culture = dummy
+			}
+			POR_2006 = {
+				add_core = ANG
+				flashpoint_tension = 10
+			}
+			POR_1999 = {
+				add_core = ANG
+				flashpoint_tension = 10
+			}
+			POR_2003 = {
+				add_core = ANG
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = ANG
+					exists = no
+				}
+				capital = 1999
+				government = democracy
+				primary_culture = dummy
+			}
+			ENG_2078 = {
+				add_core = NMB
+				flashpoint_tension = 10
+			}
+			ENG_2083 = {
+				add_core = NMB
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = NMB
+					exists = no
+				}
+				add_accepted_culture = khoisan
+				capital = 2078
+				government = democracy
+				primary_culture = dummy
+			}
+			ENG_2074 = {
+				add_core = TSW
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = TSW
+					exists = no
+				}
+				add_accepted_culture = tswana
+				capital = 2874
+				government = democracy
+				primary_culture = dummy
+			}
+			POR_2049 = {
+				add_core = MOZ
+				flashpoint_tension = 10
+			}
+			POR_2054 = {
+				add_core = MOZ
+				flashpoint_tension = 10
+			}
+			POR_2060 = {
+				add_core = MOZ
+				flashpoint_tension = 10
+			}
+			any_country = {
+				limit = {
+					tag = MOZ
+					exists = no
+				}
+				add_accepted_culture = tonga
+				capital = 2049
+				government = democracy
+				primary_culture = dummy
+			}
+			#single provinces that are screwing the state system
+			1877 = { #Guinea-Bissau
+				add_core = GBI
+				remove_core = SNG
+			}
+			1878 = {
+				add_core = GBI
+				remove_core = SNG
+			}
+			GBI = {
+				add_accepted_culture = african_minor
+				primary_culture = dummy
+			}
+			1785 = { #Gambia
+				add_core = GMB
+				remove_core = SNG
+			}
+			GMB = {
+				add_accepted_culture = wolof
+				primary_culture = dummy
+			}
+			1916 = {
+				add_core = GHN
+				remove_core = TOG
+			}
+			1915 = {
+				add_core = GHN
+				remove_core = TOG
+			}
+			1961 = {
+				add_core = NGR
+				remove_core = CMR
+			}
+			1957 = {
+				add_core = NGR
+				remove_core = CMR
+			}
+			1955 = {
+				add_core = GAB
+				remove_core = CMR
+			}
+			1877 = {
+				add_core = EGY
+				remove_core = SUD
+			}
+			2034 = { #Rwanda
+				add_core = RWA
+				remove_core = TNZ
+			}
+			RWA = {
+				add_accepted_culture = ruanda
+				primary_culture = dummy
+			}
+			2035 = { #Burundi
+				add_core = BRD
+				remove_core = TNZ
+			}
+			BRD = {
+				add_accepted_culture = rundi
+				primary_culture = dummy
+			}
+			2114 = { #Swaziland
+				add_core = SUA
+				remove_core = SAF
+			}
+			SUA = {
+				add_accepted_culture = zulu
+				primary_culture = dummy
+			}
+			2104 = { #Lesotho
+				add_core = BSH
+				remove_core = TNZ
+			}
+			BSH = {
+				add_accepted_culture = zulu
+				primary_culture = dummy
+			}
+			1876 = { add_core = CPV } #Cape Verde
+			CPV = {
+				add_accepted_culture = african_minor
+				primary_culture = dummy
+			}
+			1973 = { add_core = EQG remove_core = GAB } #Equatorial Guinea
+			GAB = {
+				add_accepted_culture = african_minor
+				primary_culture = dummy
+			}
+			1955 = { add_core = EQG remove_core = ANG }
+			1954 = { add_core = SAO remove_core = ANG } #São Tomé
+			SAO = {
+				add_accepted_culture = african_minor
+				primary_culture = dummy
+			}
+			1875 = { add_core = DJI remove_core = ERI } #Djibouti
+			DJI = {
+				add_accepted_culture = afar
+				primary_culture = dummy
+			}
+			2123 = { add_core = KOM remove_core = MAD } #Comoros
+			2124 = { add_core = KOM remove_core = MAD }
+			2125 = { add_core = MAU remove_core = MAD } #Mauritius
+			2126 = { add_core = MAU remove_core = MAD }
+			MAU = {
+				add_accepted_culture = african_minor
+				primary_culture = dummy
+			}
+			2127 = { add_core = SEY remove_core = MAD } #Seychelles
+			SEY = {
+				add_accepted_culture = african_minor
+				primary_culture = dummy
+			}
+			2066 = { add_core = MLW remove_core = ZAM } #Malawi
+			2067 = { add_core = MLW remove_core = MOZ }
+			MLW = {
+				add_accepted_culture = tonga
+				primary_culture = dummy
+			}
+			set_global_flag = der_postcolonialism_2
+		}
+	}
+}
