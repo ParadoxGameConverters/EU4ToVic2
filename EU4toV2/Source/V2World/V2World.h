@@ -71,7 +71,6 @@ class World
 	std::vector<War> wars;
 	std::vector<std::pair<std::string, EU4::HistoricalEntry>> historicalData; // HoI4 export dynasty+rulers
 	std::set<std::string> neoCultureLocalizations;									  // raw strings for output.
-	std::vector<std::string> reassignedTags;
 
 	[[nodiscard]] std::optional<std::string> determineProvinceOwnership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
 	[[nodiscard]] std::shared_ptr<Province> getProvince(int provID) const;
@@ -131,9 +130,6 @@ class World
 	void convertCountryFlags();
 	void updateDeadNations();
 	void copyHpmFiles() const;
-	void identifyReassignedTags();
-	bool isTagReassigned(const std::string& tag) const;
-	void updateFlags() const;
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;

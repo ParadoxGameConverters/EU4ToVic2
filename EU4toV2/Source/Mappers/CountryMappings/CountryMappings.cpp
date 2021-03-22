@@ -1,5 +1,4 @@
 #include "CountryMappings.h"
-#include "Configuration.h"
 #include "CountryMapping.h"
 #include "CultureGroups/CultureGroups.h"
 #include "CultureGroups/CultureGroup.h"
@@ -26,14 +25,7 @@ mappers::CountryMappings::CountryMappings():
 
 	LOG(LogLevel::Info) << "Parsing Country Mapping Rules.";
 	registerKeys();
-	if (theConfiguration.isHpmEnabled())
-	{
-		parseFile("configurables/HPM/country_mappings.txt");
-	}
-	else
-	{
-		parseFile("configurables/country_mappings.txt");
-	}
+	parseFile("configurables/country_mappings.txt");
 	clearRegisteredKeywords();
 }
 
@@ -62,16 +54,6 @@ void mappers::CountryMappings::registerKeys()
 			eu4TagToV2TagsRules.emplace_back(std::make_pair(newMapping.getEU4Tag(), newMapping));
 		else
 			eu4TagToV2TagsRules.emplace_back(std::make_pair("---custom---", newMapping));
-	});
-	registerKeyword("map", [this](const std::string& unused, std::istream& theStream) {
-		const CountryMapping newMapping(theStream);
-		if (!newMapping.getVanillaTag().empty())
-			v2TagToModTagMap.insert(make_pair(newMapping.getVanillaTag(), newMapping.getModTag()));
-	});
-	registerKeyword("reassign", [this](const std::string& unused, std::istream& theStream) {
-		const CountryMapping newMapping(theStream);
-		if (!newMapping.getOldTag().empty())
-			reassigningMap.insert(make_pair(newMapping.getOldTag(), newMapping.getNewTag()));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
@@ -297,14 +279,17 @@ std::optional<std::string> mappers::CountryMappings::getV2Tag(const std::string&
 
 	if (const auto& findIter = eu4TagToV2TagMap.find(eu4Tag); findIter != eu4TagToV2TagMap.end())
 	{
-		if (const auto& v2Tag = findIter->second;
-			v2TagToModTagMap.find(v2Tag) == v2TagToModTagMap.end())
+		if (const auto& mappingIter = std::find_if(eu4TagToV2TagsRules.begin(), eu4TagToV2TagsRules.end(),
+			  [eu4Tag](std::pair<std::string, CountryMapping> mapping) {
+				  return eu4Tag == mapping.first;
+			  }
+		); mappingIter->second.getHpmTag().empty())
 		{
-			return v2Tag;
+			return findIter->second;
 		}
 		else
 		{
-			return v2TagToModTagMap.find(v2Tag)->second;
+			return mappingIter->second.getHpmTag();
 		}
 	}
 	else

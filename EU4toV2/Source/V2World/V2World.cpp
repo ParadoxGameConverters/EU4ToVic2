@@ -141,11 +141,6 @@ V2::World::World(const EU4::World& sourceWorld,
 	convertCountryFlags();
 	Log(LogLevel::Progress) << "71 %";
 
-	if (theConfiguration.isHpmEnabled())
-	{
-		identifyReassignedTags();
-	}
-
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	output(versionParser);
 
@@ -729,7 +724,7 @@ void V2::World::importPotentialCountry(const std::string& line, bool dynamicCoun
 	auto tag = line.substr(0, 3);
 
 	
-	if (!countryMapper.getV2TagToModTagMap().contains(tag) && !potentialCountries.contains(tag))
+	if (!potentialCountries.contains(tag))
 	{
 		auto newCountry = std::make_shared<Country>(line, dynamicCountry, partyNameMapper, partyTypeMapper);
 		potentialCountries.insert(std::make_pair(tag, newCountry));
@@ -1581,7 +1576,6 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	if (theConfiguration.isHpmEnabled())
 	{
 		copyHpmFiles();
-		updateFlags();
 	}
 
 	// verify countries got written
@@ -1702,50 +1696,6 @@ void V2::World::outputLocalisation() const
 	auto dest = localisationPath + "/text.csv";
 
 	LOG(LogLevel::Info) << "<- Writing Localization Names";
-
-	// Don't copy tag localisation if not needed or overriding mod localisation
-	if (theConfiguration.isHpmEnabled())
-	{
-		std::ifstream inNames("./blankMod/output/localisation/0_Names.csv");
-		if (!inNames.is_open())
-			throw std::runtime_error("Could not open blankMod/output/localisation/0_Names.csv for reading");
-		std::ofstream outNames(localisationPath + "/0_Names.csv");
-		if (!outNames.is_open())
-			throw std::runtime_error("Could not open " + localisationPath + "/0_Names.csv for writing");
-
-		// Vic2 tags transformed into corresponding mod tag (e.g for HPM: MLB -> MNP)
-		// MLB is no longer needed, MNP would override mod localisation
-		std::vector<std::string> tagsInMap;
-		for (const auto& tag: countryMapper.getV2TagToModTagMap())
-		{
-			tagsInMap.push_back(tag.first);
-			tagsInMap.push_back(tag.second);
-		}
-		// Vic2 countries assigned new tag (e.g. for HPM: LUN -> LNB)
-		// LUN would override mod localisation for Lundu
-		for (const auto& tag: countryMapper.getReassigningMap())
-		{
-			tagsInMap.push_back(tag.first);
-		}
-
-		while (!inNames.eof())
-		{
-			std::string line;
-			getline(inNames, line);
-
-			if (line.substr(0, 3) == "KEY") // KEY;ENGLISH;FRENCH..
-			outNames << line << "\n";
-			if (line.substr(0, 16) == "#translate notes")
-			outNames << line << "\n";
-
-			const auto& tag = line.substr(0, 3);
-			if (countries.contains(tag) && std::find(tagsInMap.begin(), tagsInMap.end(), tag) == tagsInMap.end())
-				outNames << line << "\n";
-		}
-		inNames.close();
-		outNames.close();
-	}
-
 	std::ofstream output(localisationPath + "/0_Names.csv", std::ofstream::app);
 	if (!output.is_open())
 		throw std::runtime_error("Could not update localization text file");
@@ -1754,7 +1704,7 @@ void V2::World::outputLocalisation() const
 	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
 	for (const auto& country: countries)
 	{
-		if (country.second->isNewCountry() || isTagReassigned(country.second->getTag()))
+		if (country.second->isNewCountry())
 		{
 			output << country.second->getLocalisation();
 		}
@@ -1963,56 +1913,18 @@ void V2::World::copyHpmFiles() const
 			fs::copy_file(hpm + "/common/countries/" + file, out + "/common/countries/" + file);
 		}
 	}
-}
 
-void V2::World::identifyReassignedTags()
-{
-	std::ifstream v2CountriesInput;
-
-	v2CountriesInput.open("configurables/HPM/common/countries.txt");
-	if (!v2CountriesInput.is_open())
-		throw std::runtime_error("Could not open configurables/HPM/common/countries.txt");
-
-	while (!v2CountriesInput.eof())
-	{
-		std::string line;
-		getline(v2CountriesInput, line);
-		reassignedTags.push_back(line.substr(0, 3));
-	}
-	v2CountriesInput.close();
-}
-
-bool V2::World::isTagReassigned(const std::string& tag) const
-{
-	bool isReassigned = false;
-
-	if (!theConfiguration.isHpmEnabled())
-		return isReassigned;
-
-	if (std::find(reassignedTags.begin(), reassignedTags.end(), tag) != reassignedTags.end())
-		isReassigned = true;
-	return isReassigned;
-}
-
-void V2::World::updateFlags() const
-{
-	LOG(LogLevel::Info) << "<- Updating flags";
+	// flags
 	const std::vector<std::string> flagFileSuffixes = {".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga"};
-	const auto& hpm = theConfiguration.getVic2Path();
-	const auto& out = "output/" + theConfiguration.getOutputName();
-
-	for (const auto& [hpmTag, newTag]: countryMapper.getReassigningMap())
+	for (const auto& [tag, unused]: countries)
 	{
 		for (const auto& suffix: flagFileSuffixes)
 		{
-			const auto& hpmFile = out + "/gfx/flags/" + hpmTag + suffix;
-			const auto& newFile = out + "/gfx/flags/" + newTag + suffix;
-			fs::rename(hpmFile, newFile);
+			if (!commonItems::DoesFileExist(hpm + "/gfx/flags/" + tag + suffix))
+				continue;
 
-			if (commonItems::DoesFileExist(hpm + "/gfx/flags/" + hpmTag + suffix))
-				fs::copy_file(hpm + "/gfx/flags/" + hpmTag + suffix, out + "/gfx/flags/" + hpmTag + suffix);
-			else
-				Log(LogLevel::Info) << hpmTag << suffix << " does not exist in HPM/gfx/flags/";
+			fs::remove(out + "/gfx/flags/" + tag + suffix);
+			fs::copy_file(hpm + "/gfx/flags/" + tag + suffix, out + "/gfx/flags/" + tag + suffix);
 		}
 	}
 }

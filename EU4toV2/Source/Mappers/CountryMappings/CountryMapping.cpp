@@ -17,17 +17,8 @@ void mappers::CountryMapping::registerKeys()
 	registerKeyword("v2", [this](const std::string& unused, std::istream& theStream) {
 		vic2Tag = commonItems::singleString(theStream).getString();
 	});
-	registerKeyword("vic", [this](const std::string& unused, std::istream& theStream) {
-		vanillaTag = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("mod", [this](const std::string& unused, std::istream& theStream) {
-		modTag = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("old", [this](const std::string& unused, std::istream& theStream) {
-		oldTag = commonItems::singleString(theStream).getString();
-	});
-	registerKeyword("new", [this](const std::string& unused, std::istream& theStream) {
-		newTag = commonItems::singleString(theStream).getString();
+	registerKeyword("hpm", [this](const std::string& unused, std::istream& theStream) {
+		hpmTag = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("reform", [this](const std::string& unused, std::istream& theStream) {
 		reforms.insert(commonItems::singleString(theStream).getString());
