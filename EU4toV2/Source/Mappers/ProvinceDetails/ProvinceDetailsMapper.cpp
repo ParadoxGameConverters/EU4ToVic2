@@ -34,7 +34,9 @@ void mappers::ProvinceDetailsMapper::registerKeys()
 		provinceDetails.lifeRating = commonItems::singleInt(theStream).getInt();
 	});
 	registerKeyword("terrain", [this](const std::string& unused, std::istream& theStream) {
-		provinceDetails.terrain = commonItems::singleString(theStream).getString();
+		const auto& terrainStr = commonItems::singleString(theStream).getString();
+		if (terrainStr != "coral_island")
+			provinceDetails.terrain = terrainStr;
 	});
 	registerKeyword("colonial", [this](const std::string& unused, std::istream& theStream) {
 		provinceDetails.colonial = commonItems::singleInt(theStream).getInt();
