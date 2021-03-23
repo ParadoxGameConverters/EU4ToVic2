@@ -55,7 +55,7 @@ link = { tag = AVI government = theocracy civilized = yes capital = 468 }
 link = { tag = AWS capital = 1858 }
 link = { tag = AYD capital = 869 }
 link = { tag = AZT primary_culture = aztec capital = 2172 }
-link = { tag = BAH capital = 1283 }
+link = { tag = BMN capital = 1283 }
 link = { tag = BAN civilized = yes capital = 652 }
 link = { tag = BAR civilized = yes capital = 408 }
 link = { tag = BBD government = democracy civilized = yes capital = 2229 }
@@ -81,7 +81,7 @@ link = { tag = BRG civilized = yes capital = 428 }
 link = { tag = BRN government = prussian_constitutionalism civilized = yes capital = 549 }
 link = { tag = BRR capital = 1277 }
 link = { tag = BRT primary_culture = breton government = presidential_dictatorship civilized = yes capital = 424 }
-link = { tag = BRY civilized = yes capital = 439 }
+link = { tag = BEY civilized = yes capital = 439 }
 link = { tag = BSG capital = 2019 }
 link = { tag = BSH primary_culture = sotho capital = 2104 }
 link = { tag = BSQ primary_culture = basque government = democracy civilized = yes capital = 492 }
@@ -114,7 +114,7 @@ link = { tag = CRB government = democracy civilized = yes capital = 2237 }
 link = { tag = CRK capital = 195 }
 link = { tag = CRN civilized = yes capital = 299 }
 link = { tag = CRS government = presidential_dictatorship civilized = yes capital = 473 }
-link = { tag = CRT civilized = yes capital = 618 }
+link = { tag = CTI civilized = yes capital = 618 }
 link = { tag = CST civilized = yes capital = 489 }
 link = { tag = CUR government = democracy civilized = yes capital = 2234 }
 link = { tag = CYR capital = 1735 }
@@ -192,7 +192,7 @@ link = { tag = DRU capital = 906 civilized = yes religion = druze }
 link = { tag = DTT government = proletarian_dictatorship civilized = yes capital = 533 }
 link = { tag = DUK primary_culture = duck_culture government = bourgeois_dictatorship civilized = yes capital = 84 }
 link = { tag = DUL capital = 878 }
-link = { tag = DUR civilized = yes capital = 1215 }
+link = { tag = DUR primary_culture = pashtun add_accepted_culture = hazara government = absolute_monarchy religion = sunni civilized = yes capital = 1215 }
 link = { tag = ELE primary_culture = elephant_culture civilized = yes capital = 1236 }
 link = { tag = ENG primary_culture = english }
 link = { tag = ENL primary_culture = english }
@@ -277,7 +277,7 @@ link = { tag = KAR capital = 1343 civilized = yes primary_culture = karen }
 link = { tag = KAZ primary_culture = kazakh religion = sunni capital = 1195 }
 link = { tag = KBO religion = sunni capital = 1821 }
 link = { tag = KCH capital = 1314 primary_culture = kachin }
-link = { tag = KDS primary_culture = kurdish government = democracy civilized = yes capital = 924 }
+link = { tag = SRN primary_culture = kurdish government = democracy civilized = yes capital = 924 }
 link = { tag = KHA primary_culture = mongol civilized = yes capital = 1465 }
 link = { tag = KHD capital = 1313 }
 link = { tag = KHO capital = 1150 }
@@ -310,7 +310,7 @@ link = { tag = KZN capital = 1030 }
 link = { tag = LAN government = democracy capital = 1426 }
 link = { tag = LAU civilized = yes capital = 529 }
 link = { tag = LBN government = presidential_dictatorship civilized = yes capital = 913 }
-link = { tag = LBX capital = 1982 }
+link = { tag = LBA capital = 1982 }
 link = { tag = LBY civilized = yes capital = 1741 }
 link = { tag = LDU capital = 1959 }
 link = { tag = LEI civilized = yes capital = 263 }
@@ -320,7 +320,7 @@ link = { tag = LIG government = theocracy civilized = yes capital = 395 }
 link = { tag = LIM capital = 381 civilized = yes }
 link = { tag = LIV religion = catholic government = theocracy civilized = yes capital = 355 }
 link = { tag = LNA capital = 1355 }
-link = { tag = LND capital = 1982 }
+link = { tag = LUN capital = 1982 }
 link = { tag = LOA capital = 2624 }
 link = { tag = LOR civilized = yes capital = 412 }
 link = { tag = LOS government = democracy civilized = yes capital = 2187 }
@@ -328,7 +328,7 @@ link = { tag = LOU government = democracy civilized = yes capital = 139 }
 link = { tag = LPL government = democracy civilized = yes capital = 2348 }
 link = { tag = LSK government = democracy civilized = yes capital = 3 }
 link = { tag = LTN civilized = yes capital = 860 }
-link = { tag = LUN civilized = yes capital = 532 }
+link = { tag = LNB civilized = yes capital = 532 }
 link = { tag = LVN capital = 729 civilized = yes }
 link = { tag = LXA capital = 1356 }
 link = { tag = MAG civilized = yes capital = 553 }
@@ -356,7 +356,7 @@ link = { tag = MIR capital = 2115 }
 link = { tag = MJP capital = 1418 }
 link = { tag = MKS capital = 1430 }
 link = { tag = MKU capital = 2060 }
-link = { tag = MLB capital = 1259 }
+link = { tag = MNP capital = 1259 }
 link = { tag = MLC capital = 1386 }
 link = { tag = MLD capital = 1325 }
 link = { tag = MLI capital = 1803 }
@@ -449,7 +449,7 @@ link = { tag = SAM government = hms_government civilized = yes capital = 843 }
 link = { tag = SAO government = democracy civilized = yes capital = 1954 }
 link = { tag = SAT capital = 1662 }
 link = { tag = SCO primary_culture = scottish }
-link = { tag = SCY civilized = yes capital = 762 }
+link = { tag = SYC civilized = yes capital = 762 }
 link = { tag = SDT primary_culture = north_german government = fascist_dictatorship civilized = yes capital = 629 }
 link = { tag = SEN capital = 1668 }
 link = { tag = SEY government = democracy civilized = yes capital = 2127 }

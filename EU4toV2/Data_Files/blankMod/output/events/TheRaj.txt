@@ -235,8 +235,8 @@ country_event = {
 		OR = {
 			tag = MSY # Mushasha
 			AND = {
-				tag = ARD # Ardalan
-				KDS = { exists = no }
+				tag = RDL # Ardalan
+				SRN = { exists = no } # Kurdistan
 			}
 			tag = MGR # Maregheh
 			tag = ARL # Ardabil

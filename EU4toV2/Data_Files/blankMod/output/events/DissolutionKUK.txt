@@ -694,10 +694,10 @@ country_event = {
 		tag = SIC
 		OR = {
 			NOT = { owns = 762 } #Palermo
-			exists = SCY
+			exists = SYC
 		}
 		war = no
-		NOT = { is_our_vassal = SCY }
+		NOT = { is_our_vassal = SYC }
 		has_recently_lost_war = yes
 		NOT = { exists = NAP }
 	}
@@ -734,7 +734,7 @@ country_event = {
 		war = no
 		NOT = { is_our_vassal = NAP }
 		has_recently_lost_war = yes
-		NOT = { exists = SCY }
+		NOT = { exists = SYC }
 	}
 	
 	mean_time_to_happen = {
@@ -749,7 +749,7 @@ country_event = {
 		any_pop = {
 			militancy = 2
 		}
-		change_tag = SCY
+		change_tag = SYC
 	}
 }
 # Gran Colombia but it lacks Colombia
