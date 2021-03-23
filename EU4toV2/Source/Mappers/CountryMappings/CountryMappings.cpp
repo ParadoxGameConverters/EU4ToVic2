@@ -278,20 +278,7 @@ std::optional<std::string> mappers::CountryMappings::getV2Tag(const std::string&
 	}
 
 	if (const auto& findIter = eu4TagToV2TagMap.find(eu4Tag); findIter != eu4TagToV2TagMap.end())
-	{
-		if (const auto& mappingIter = std::find_if(eu4TagToV2TagsRules.begin(), eu4TagToV2TagsRules.end(),
-			  [eu4Tag](std::pair<std::string, CountryMapping> mapping) {
-				  return eu4Tag == mapping.first;
-			  }
-		); mappingIter->second.getHpmTag().empty())
-		{
-			return findIter->second;
-		}
-		else
-		{
-			return mappingIter->second.getHpmTag();
-		}
-	}
+		return findIter->second;
 	else
 		return std::nullopt;
 }

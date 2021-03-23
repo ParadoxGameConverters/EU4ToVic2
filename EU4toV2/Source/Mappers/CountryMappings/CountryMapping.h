@@ -13,7 +13,6 @@ class CountryMapping: commonItems::parser
 
 	[[nodiscard]] const auto& getEU4Tag() const { return eu4Tag; }
 	[[nodiscard]] const auto& getVic2Tag() const { return vic2Tag; }
-	[[nodiscard]] const auto& getHpmTag() const { return hpmTag; }
 	[[nodiscard]] const auto& getReforms() const { return reforms; }
 	[[nodiscard]] const auto& getFlags() const { return flags; }
 

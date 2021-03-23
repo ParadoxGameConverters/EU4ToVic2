@@ -1,12 +1,16 @@
 #include "CountryMapping.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "Configuration.h"
+#include "ParserHelpers.h"
 
 mappers::CountryMapping::CountryMapping(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+
+	if (theConfiguration.isHpmEnabled() && !hpmTag.empty())
+		vic2Tag = hpmTag;
 }
 
 void mappers::CountryMapping::registerKeys()
