@@ -21,6 +21,7 @@ class CountryMapping: commonItems::parser
 
 	std::string eu4Tag;
 	std::string vic2Tag;
+	std::string hpmTag;
 	std::set<std::string> reforms;
 	std::set<std::string> flags;
 };
