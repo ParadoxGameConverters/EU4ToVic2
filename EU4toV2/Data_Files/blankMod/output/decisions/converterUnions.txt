@@ -144,15 +144,15 @@ political_decisions = {
 			OR = {
 				AND = {
 					primary_culture = south_italian
-					NOT = { exists = SCY }
+					NOT = { exists = SYC }
 					NOT = { exists = NAP }
 				}
 				AND = {
 					tag = NAP
-					NOT = { exists = SCY }
+					NOT = { exists = SYC }
 				}
 				AND = {
-					tag = SCY
+					tag = SYC
 					NOT = { exists = NAP }
 				}
 			}
@@ -750,9 +750,9 @@ political_decisions = {
 			724 = { add_core = GEN } #Genoa
 			754 = { add_core = NAP } #Naples
 			SAR_765 = { add_core = SRD } #Sardinia
-			SIC_763 = { add_core = SCY } #Sicily
+			SIC_763 = { add_core = SYC } #Sicily
 			747 = { add_core = SNA } #Siena
-			854 = { add_core = MLT remove_core = SCY } #Malta
+			854 = { add_core = MLT remove_core = SYC } #Malta
 			354 = { add_core = RIG } #Riga
 			834 = { add_core = ATH } #Athens
 			FRA_420 = { add_core = BRT } #Brittany
@@ -1636,7 +1636,7 @@ political_decisions = {
 	become_slovenia = {
 		potential = {
 			tag = AQU
-			tag = CRT
+			tag = CTI
 			is_culture_group = south_slavic
 			NOT = { exists = SLO }
 		}	
@@ -2629,7 +2629,7 @@ political_decisions = {
 		potential = {
 			primary_culture = kurdish
 			NOT = {
-				exists = KDS
+				exists = SRN
 				tag = PER
 				tag = ARA
 				tag = TUR
@@ -2641,7 +2641,7 @@ political_decisions = {
 		allow = {
 			war = no
 			prestige = 5
-			KDS = {
+			SRN = {
 				all_core = {
 					OR = {
 						owned_by = THIS
@@ -2666,10 +2666,10 @@ political_decisions = {
 				annex_to = THIS
 			}
 			any_owned = {
-				add_core = KDS
+				add_core = SRN
 			}			
 			
-			change_tag = KDS
+			change_tag = SRN
 		}
 		ai_will_do = {
 			factor = 1

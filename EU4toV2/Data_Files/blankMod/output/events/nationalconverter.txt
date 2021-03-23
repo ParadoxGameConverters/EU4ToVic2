@@ -3175,7 +3175,8 @@ country_event = {
 		nationalism_n_imperialism = 1
 		primary_culture = siculian
 		NOT = { exists = SKL } # Cultural country
-		NOT = { exists = SCY }
+		NOT = { exists = SYC }
+		NOT = { exists = SIC }
 		SKL = {
 			all_core = {
 				OR = {

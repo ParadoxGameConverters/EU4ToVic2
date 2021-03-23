@@ -124,7 +124,7 @@ link = { tag = XIN culture = uighur } #Xinjiang => Uyghurs
 #link = { tag = AFG culture = pashtun } #Afghanistan
 #link = { tag = AFG culture = hazara } #Afghanistan
 #link = { tag = KAL culture = baluchi } #Kalat
-link = { tag = KDS culture = kurdish } #Bohtan/Soran/Kurdistan
+link = { tag = SRN culture = kurdish } #Bohtan/Soran/Kurdistan
 #link = { tag = CRI tag = RUS culture = tatar } #Crimea and Russia
 
 #Central Asian
