@@ -118,32 +118,35 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 void V2::Country::outputCommons(std::ostream& output)
 {
 	output << "graphical_culture = ";
-	auto graphicalCulture = modCommons.getGraphicalCulture();
-	if (graphicalCulture.empty())
-		graphicalCulture = details.graphicalCulture;
-	if (!graphicalCulture.empty())
-		output << graphicalCulture << '\n';
+	if (!modCommons.getGraphicalCulture().empty())
+		output << modCommons.getGraphicalCulture() << "\n";
+	else if (!details.graphicalCulture.empty())
+		output << details.graphicalCulture << "\n";
 	else
 		output << "UsGC\n"; // default to US graphics
 	
 	if (nationalColors.getMapColor())
 		output << "color " << *nationalColors.getMapColor() << "\n";
-	else if (!modCommons.getColor().empty())
-		output << "color " << modCommons.getColor() << '\n';
-	else if (!details.color.empty())
-		output << "color " << details.color << '\n';
+	else if (!modCommons.getColorString().empty())
+		output << "color " << modCommons.getColorString() << "\n";
+	else if (!details.colorString.empty())
+		output << "color " << details.colorString << "\n";
 
-	auto parties = modCommons.getParties();
-	if (parties.empty())
-		parties = details.parties;
-	for (const auto& party: parties)
-		output << party;
+	if (!modCommons.getParties().empty())
+	{
+		for (const auto& party: modCommons.getParties())
+			output << party;
+	}
+	else
+	{
+		for (const auto& party: details.parties)
+			output << party;
+	}
 
-	auto unitNames = modCommons.getUnitNames();
-	if (unitNames.empty())
-		unitNames = details.unitNames;
-	if (!unitNames.empty())
-		output << "unit_names" << unitNames;
+	if (!modCommons.getUnitNames().empty())
+		output << "unit_names" << modCommons.getUnitNames();
+	else if (!details.unitNames.empty())
+		output << "unit_names" << details.unitNames;
 }
 
 void V2::Country::outputOOB(std::ostream& output)

@@ -13,16 +13,15 @@ class ModCommons: commonItems::parser
 	ModCommons() = default;
 	ModCommons(const std::string& filename);
 
-	std::optional<std::string> determineFilePath(const std::string& filename);
 	void setPartyDates();
 
-	[[nodiscard]] const auto& getColor() const { return color; }
+	[[nodiscard]] const auto& getColorString() const { return colorString; }
 	[[nodiscard]] const auto& getGraphicalCulture() const { return graphicalCulture; }
 	[[nodiscard]] const auto& getParties() const { return parties; }
 	[[nodiscard]] const auto& getUnitNames() const { return unitNames; }
 
   private:
-	std::string color;
+	std::string colorString;
 	std::string graphicalCulture;
 	std::vector<Party> parties;
 	std::string unitNames;

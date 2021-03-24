@@ -46,7 +46,7 @@ void V2::CountryDetails::registerKeys()
 	});
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::stringOfItem colorStr(theStream);
-		color = colorStr.getString();
+		colorString = colorStr.getString();
 	});
 	registerKeyword("party", [this](const std::string& unused, std::istream& theStream) {
 		const mappers::PartyType newPartyType(theStream);

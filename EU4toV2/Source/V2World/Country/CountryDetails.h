@@ -51,7 +51,7 @@ class CountryDetails: commonItems::parser
 	// Some of these values are loaded from files, others are adjusted on the fly.
 	std::string filename;
 	std::string graphicalCulture;
-	std::string color;
+	std::string colorString;
 	std::vector<Party> parties;
 	std::string unitNames;
 	std::string primaryCulture = "dummy";

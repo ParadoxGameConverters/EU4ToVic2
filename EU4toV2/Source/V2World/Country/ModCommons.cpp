@@ -7,12 +7,10 @@
 V2::ModCommons::ModCommons(const std::string& filename)
 {
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::stringOfItem colorStr(theStream);
-		color = colorStr.getString();
+		colorString = commonItems::stringOfItem(theStream).getString();
 	});
 	registerKeyword("graphical_culture", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString graphicalCultureStr(theStream);
-		graphicalCulture = graphicalCultureStr.getString();
+		graphicalCulture = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("party", [this](const std::string& unused, std::istream& theStream) {
 		const mappers::PartyType newPartyType(theStream);
@@ -20,26 +18,15 @@ V2::ModCommons::ModCommons(const std::string& filename)
 		parties.push_back(newParty);
 	});
 	registerKeyword("unit_names", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::stringOfItem unitNamesStr(theStream);
-		unitNames = unitNamesStr.getString();
+		unitNames = commonItems::stringOfItem(theStream).getString();
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
-	const auto& file = determineFilePath(filename);
-	if (file)
-		parseFile(*file);
+	if (commonItems::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
+		parseFile(theConfiguration.getVic2Path() + "/common/countries/" + filename);
 	clearRegisteredKeywords();
 
 	setPartyDates();
-}
-
-std::optional<std::string> V2::ModCommons::determineFilePath(const std::string& filename)
-{
-	const auto& mod = theConfiguration.getVic2Path();
-	if (commonItems::DoesFileExist(mod + "/common/countries/" + filename))
-		return mod + "/common/countries/" + filename;
-	else
-		return std::nullopt;
 }
 
 void V2::ModCommons::setPartyDates()
