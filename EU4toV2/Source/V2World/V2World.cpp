@@ -141,6 +141,13 @@ V2::World::World(const EU4::World& sourceWorld,
 	convertCountryFlags();
 	Log(LogLevel::Progress) << "71 %";
 
+	if (theConfiguration.isHpmEnabled())
+	{
+		LOG(LogLevel::Info) << "-> Update country details";
+		updateCountryDetails();
+		Log(LogLevel::Progress) << "72 %";
+	}
+
 	LOG(LogLevel::Info) << "---> Le Dump <---";
 	output(versionParser);
 
@@ -690,7 +697,6 @@ void V2::World::importPotentialCountries()
 	if (theConfiguration.isHpmEnabled())
 	{
 		countriesFiles.push_back(theConfiguration.getVic2Path() + "/common/countries.txt");
-		countriesFiles.push_back("configurables/HPM/common/countries.txt");
 	}
 	countriesFiles.push_back("./blankMod/output/common/countries.txt");
 
@@ -1747,16 +1753,13 @@ void V2::World::outputCountries() const
 			output.close();
 		}
 		// commons file
-		if (country.second->isDynamicCountry() || country.second->isNewCountry())
-		{
-			std::ofstream output(
-				 "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
-			if (!output.is_open())
-				throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" +
-												 clipCountryFileName(country.second->getCommonCountryFile()));
-			country.second->outputCommons(output);
-			output.close();
-		}
+		std::ofstream commons(
+			 "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
+		if (!commons.is_open())
+			throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" +
+											 clipCountryFileName(country.second->getCommonCountryFile()));
+		country.second->outputCommons(commons);
+		commons.close();
 		// OOB
 		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt");
 		if (!output.is_open())
@@ -1903,17 +1906,6 @@ void V2::World::copyHpmFiles() const
 
 	commonItems::CopyFolder(hpm + "/map", out + "/map");
 
-	// common/countries
-	const auto& countriesFiles = commonItems::GetAllFilesInFolder(hpm + "/common/countries");
-	const auto& converterCountries = commonItems::GetAllFilesInFolder(out + "/common/countries");
-	for (const auto& file : countriesFiles)
-	{
-		if (converterCountries.find(file) == converterCountries.end())
-		{
-			fs::copy_file(hpm + "/common/countries/" + file, out + "/common/countries/" + file);
-		}
-	}
-
 	// flags
 	const std::vector<std::string> flagFileSuffixes = {".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga"};
 	for (const auto& [tag, unused]: countries)
@@ -1925,6 +1917,48 @@ void V2::World::copyHpmFiles() const
 
 			fs::remove(out + "/gfx/flags/" + tag + suffix);
 			fs::copy_file(hpm + "/gfx/flags/" + tag + suffix, out + "/gfx/flags/" + tag + suffix);
+		}
+	}
+
+	fs::copy_file(hpm + "/common/issues.txt", out + "/common/issues.txt");
+
+	// gfx/interface
+	commonItems::CopyFolder(hpm + "/gfx/interface/leaders", out + "/gfx/interface/leaders");
+	const auto& gfxInterfaceFiles = commonItems::GetAllFilesInFolder(hpm + "/gfx/interface");
+	for (const auto& file: gfxInterfaceFiles)
+	{
+		if (file == "icon_religion.dds")
+			continue;
+		fs::copy_file(hpm + "/gfx/interface/" + file, out + "/gfx/interface/" + file);
+	}
+	
+	// interface
+	const auto& interfaceFiles = commonItems::GetAllFilesInFolder(hpm + "/interface");
+	for (const auto& file: interfaceFiles)
+	{
+		if (file == "general_gfx.gfx")
+			continue;
+		fs::copy_file(hpm + "/interface/" + file, out + "/interface/" + file);	
+	}
+
+	commonItems::CopyFolder(hpm + "/localisation", out + "/localisation");
+}
+
+void V2::World::updateCountryDetails()
+{
+	for (const auto& [tag, country]: countries)
+	{
+		for (const auto& party: country->getParties()) //load parties from countryDetails
+		{
+			if (!party.getPolicies().contains("social_policy"))
+			{
+				if (const auto& partyType = partyTypeMapper.getPartyTypeByIdeology(party.getIdeology());
+					partyType)
+				{
+					const auto& defaultPosition = partyType->getPolicyPosition("social_policy");
+					country->addPolicy(party.getName(), "social_policy", defaultPosition);
+				}
+			}
 		}
 	}
 }

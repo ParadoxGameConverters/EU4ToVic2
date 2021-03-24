@@ -1,5 +1,0 @@
-LNB = "countries/Luneburg.txt"
-BMN = "countries/Deccan.txt"
-BEY = "countries/Berry.txt"
-CTI = "countries/Carinthia.txt"
-SRC = "countries/Syriac.txt"

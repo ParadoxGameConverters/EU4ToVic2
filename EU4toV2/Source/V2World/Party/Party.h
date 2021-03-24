@@ -14,6 +14,10 @@ namespace V2
 		[[nodiscard]] bool isActiveOn(date query) const;
 		[[nodiscard]] const auto& getName() const { return name; }
 		[[nodiscard]] const auto& getIdeology() const { return partyDetails.getIdeology(); }
+		[[nodiscard]] const auto& getPolicies() const { return partyDetails.getPolicies(); }
+
+		void setStartDate(const std::string& startDate) { partyDetails.setStartDate(startDate); }
+		void addPolicy(const std::string& policy, const std::string& position) { partyDetails.addPolicy(policy, position); }
 
 		friend std::ostream& operator<<(std::ostream& output, const Party& party);
 

@@ -14,10 +14,10 @@
 #include "../../Mappers/Unreleasables/Unreleasables.h"
 #include "../Flags/Flags.h"
 #include "CommonFunctions.h"
+#include "Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include <cmath>
-#include "Configuration.h"
 
 V2::Country::Country(const std::string& countriesFileLine,
 	 const bool _dynamicCountry,
@@ -33,6 +33,7 @@ V2::Country::Country(const std::string& countriesFileLine,
 	details = CountryDetails(filename);
 	tag = countriesFileLine.substr(0, 3);
 	commonCountryFile = Localisation::convert(filename);
+	modCommons = ModCommons(filename);
 	initParties(partyNameMapper, partyTypeMapper);
 }
 
@@ -51,12 +52,19 @@ V2::Country::Country(std::string _tag,
 
 void V2::Country::initParties(const mappers::PartyNameMapper& partyNameMapper, const mappers::PartyTypeMapper& partyTypeMapper)
 {
+	// Check mod parties first
+	std::vector<Party> parties;
+	if (!modCommons.getParties().empty())
+		parties = modCommons.getParties();
+	else
+		parties = details.parties;
+
 	// We're a new nation so no parties are specified. Grab some.
-	if (details.parties.empty())
-		loadPartiesFromBlob(partyNameMapper, partyTypeMapper);
+	if (parties.empty())
+		loadPartiesFromBlob(partyNameMapper, partyTypeMapper);	// Can load also for mod, only names are used
 
 	// set a default ruling party
-	for (const auto& party: details.parties)
+	for (const auto& party: parties)
 	{
 		// We're pinging against this date only to protect against later-game parties.
 		if (party.isActiveOn(date("1836.1.1")))
@@ -409,7 +417,13 @@ void V2::Country::resolvePolitics()
 		ideology = "conservative";
 	}
 
-	for (const auto& party: details.parties)
+	std::vector<Party> parties;
+	if (!modCommons.getParties().empty())
+		parties = modCommons.getParties();
+	else
+		parties = details.parties;
+
+	for (const auto& party: parties)
 	{
 		if (party.isActiveOn(date("1836.1.1")) && party.getIdeology() == ideology)
 		{
@@ -953,4 +967,15 @@ std::optional<std::string> V2::Country::getFileFromTag(const std::string& direct
 	}
 
 	return {};
+}
+
+void V2::Country::addPolicy(const std::string& partyName, const std::string& policy, const std::string& position)
+{
+	if (const auto& partyItr = std::find_if(details.parties.begin(),
+			  details.parties.end(),
+			  [partyName](const V2::Party& party) {
+				  return party.getName() == partyName;
+			  });
+		 partyItr != details.parties.end())
+		partyItr->addPolicy(policy, position);
 }

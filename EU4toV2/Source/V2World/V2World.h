@@ -130,6 +130,7 @@ class World
 	void convertCountryFlags();
 	void updateDeadNations();
 	void copyHpmFiles() const;
+	void updateCountryDetails();
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
