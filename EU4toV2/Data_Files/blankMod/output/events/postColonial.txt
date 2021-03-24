@@ -18237,10 +18237,10 @@ country_event = {
     continent = asia
    }
   }
-  NOT = { has_country_flag = BUE_independence }
+  NOT = { has_country_flag = SBA_independence }
   has_global_flag = der_postcolonialism 
-  is_possible_vassal = BUE
-  NOT = { exists = BUE } 
+  is_possible_vassal = SBA
+  NOT = { exists = SBA } 
  }
     mean_time_to_happen = {
   months = 120
@@ -18266,15 +18266,15 @@ country_event = {
   }
  }
     immediate = {
-  set_country_flag = BUE_independence
+  set_country_flag = SBA_independence
   any_owned = {
    limit = {
-    is_core = BUE
+    is_core = SBA
    }
-   secede_province = BUE
+   secede_province = SBA
    remove_core = THIS
   }
-  BUE = {
+  SBA = {
    leadership = 80
    years_of_research = 5
    set_country_flag = buro_independence
@@ -18286,13 +18286,13 @@ country_event = {
  }
  option = {
   name = EVTOPTA251001
-  create_vassal = BUE
+  create_vassal = SBA
   diplomatic_influence = {
-   who = BUE
+   who = SBA
    value = 200
   }
   relation = {
-   who = BUE
+   who = SBA
    value = 50
   }
   ai_chance = {
@@ -18301,10 +18301,10 @@ country_event = {
  }
     option = {
   name = EVTOPTB251001
-  BUE = { country_event = { id = 251000 days = 1 }
+  SBA = { country_event = { id = 251000 days = 1 }
   }
   relation = {
-   who = BUE
+   who = SBA
    value = -50
   }
   ai_chance = {
@@ -27885,10 +27885,10 @@ country_event = {
     continent = asia
    }
   }
-  NOT = { has_country_flag = KOM_independence }
+  NOT = { has_country_flag = CMS_independence }
   has_global_flag = der_postcolonialism_2 war = no #Let's avoid indep. movements during WWI
-  is_possible_vassal = KOM
-  NOT = { exists = KOM } 
+  is_possible_vassal = CMS
+  NOT = { exists = CMS } 
  }
     mean_time_to_happen = {
   months = 120
@@ -27914,15 +27914,15 @@ country_event = {
   }
  }
     immediate = {
-  set_country_flag = KOM_independence
+  set_country_flag = CMS_independence
   any_owned = {
    limit = {
-    is_core = KOM
+    is_core = CMS
    }
-   secede_province = KOM
+   secede_province = CMS
    remove_core = THIS
   }
-  KOM = {
+  CMS = {
    leadership = 80
    years_of_research = 5
    set_country_flag = buro_independence
@@ -27934,13 +27934,13 @@ country_event = {
  }
  option = {
   name = EVTOPTA251001
-  create_vassal = KOM
+  create_vassal = CMS
   diplomatic_influence = {
-   who = KOM
+   who = CMS
    value = 200
   }
   relation = {
-   who = KOM
+   who = CMS
    value = 50
   }
   ai_chance = {
@@ -27949,10 +27949,10 @@ country_event = {
  }
     option = {
   name = EVTOPTB251001
-  KOM = { country_event = { id = 251000 days = 1 }
+  CMS = { country_event = { id = 251000 days = 1 }
   }
   relation = {
-   who = KOM
+   who = CMS
    value = -50
   }
   ai_chance = {

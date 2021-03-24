@@ -232,8 +232,8 @@ BSQ;Euskadi;Euskadi;Euskadi;Euskadi;Euskadi;Euskadi;Euskadi;Euskadi;Euskadi;Eusk
 BSQ_ADJ;Basque;Basque;Baskisch;baskijski;vasco;Basca;baszk;Baskiètina;baszk;baskisch;Basco;áàñêñê.;baski;x
 BTS;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Áåöèìàğàêà;Betsimisaraka;z
 BTS_ADJ;Betsimisaraka;de Betsimisaraka;Betsimisaraka-;Betsimisaraków;de Betsimisaraka;di Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Betsimisaraka;Áåöèìàğàêàíñê.;Betsimisaraka;y
-BUE;Buenos Aires;Buénos-Aïres;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Áóıíîñ Àéğåñ;Buenos Aires;x
-BUE_ADJ;Buenos Aires;Bonairien;Buenos Aires-;Buenos Aires;Buenos Aires;di Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Áóıíîñ-àéğåñ;Buenos Aires;x
+SBA;Buenos Aires;Buénos-Aïres;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Áóıíîñ Àéğåñ;Buenos Aires;x
+SBA_ADJ;Buenos Aires;Bonairien;Buenos Aires-;Buenos Aires;Buenos Aires;di Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Buenos Aires;Áóıíîñ-àéğåñ;Buenos Aires;x
 BUG;Buganda;Bouganda;Buganda;Buganda;Buganda;Buganda;Buganda;Buganda;Buganda;Buganda;Buganda;Áóãàíäà;Buganda;z
 BUG_ADJ;Bugandan;Bougandais;Bugandisch;Bugandy;Bugandesa;Bugandese;Bugandan;Bugandan;Bugandan;Buganda;Bugandã;Áóãàíäñê.;Bugandan;y
 BUK_presidential_dictatorship;Uzbekistan;Ouzbékistan;Usbekistan;Uzbekistan;Uzbekistán;Usbechistan;Üzbegisztán;Uzbekistán;Üzbegisztán;Oezbekistan;Uzbequistão;Óçáåêèñòàí;Uzbekistan;x
@@ -655,8 +655,8 @@ KOK_proletarian_dictatorship;SSR Kyrgyzstan;RSS Kirghizistan;SSR Kirgisistan;SSR
 KOK_proletarian_dictatorship_ADJ;Kyrgyz;Kirghize;Kirgisisch;Kirgizja;Kirguiso;Kirghizistan;kirgiz;Kyrgyzské;kirgiz;Kirgizische;Quirguiz;êèğãèçñê.;Kirgisian;x
 KOL;Cologne;Cologne;Köln;Kolonia;Colonia;Colonia;kölni;kolínská;kölni;Keulen;Colônia;Ê¸ëüí;Köln;y
 KOL_ADJ;Colognian;Colognien;Kölnisch;Kolonii;Coloniana;Colona;Colognian;Colognian;Colognian;kölsch;Colognian;Ê¸ëüíñê.;Colognian;y
-KOM;Comoros;Les Comores;Die Komoren;Komory;Comoras;Comore;Comore-szigetek;Komory;Comore-szigetek;Comoren;Comores;Êîìîğñêèå;Komorit;x
-KOM_ADJ;Comoran;Comorien;Komorisch;Komoran;Comoran;delle Comore;Comoran;Comoran;Comoran;Comoren;Comoran;Êîìîñê.;Komorien;x
+CMS;Comoros;Les Comores;Die Komoren;Komory;Comoras;Comore;Comore-szigetek;Komory;Comore-szigetek;Comoren;Comores;Êîìîğñêèå;Komorit;x
+CMS_ADJ;Comoran;Comorien;Komorisch;Komoran;Comoran;delle Comore;Comoran;Comoran;Comoran;Comoren;Comoran;Êîìîñê.;Komorien;x
 KON;Kongo;Kongo;Kongo;Kongo;Congo;Kongo;Kongo;Kongo;Kongo;Kongo;Congo;Êîíãî;Kongo;z
 KON_ADJ;Kongolese;Kongolais;Kongolisch;Konga;Congoleña;Kongolese;Kongolese;Kongolese;Kongolese;Kongolese;Congolês;Êîíãîëåçñê.;Kongolese;y
 KOS;Kosovo;Kosovo;Kosovo;Kosowo;Kosovo;Cossovo;Koszovó;Kosovo;Koszovó;Kosovo;Kosovo;Êîñîâî;kosovo;y
@@ -713,8 +713,8 @@ LIE;Liechtenstein;Liechtenstein;Liechtenstein;Liechtenstein;Liechtenstein;Liecht
 LIE_ADJ;Liechtensteiner;Liechtensteinois;Liechtensteinisch;Liechtensteiner;Liechtensteiner;Liechtensteiniana;Liechtensteiner;Liechtensteiner;Liechtensteiner;Liechtensteiner;Liechtensteiner;Ëèõòåíøòåéíñê.;Liechtensteiner;x
 LIG;Liège;Liège;Lüttich;Liège;Lieja;Liegi;Liège;Liège;Liège;Liège;Liège;Ëüåæ;Liège;z
 LIG_ADJ;Liegian;Liégeois;Lüttich-;Liège;Liejana;di Liegi;Liegian;Liegian;Liegian;Liegian;Liegiano;Ëüåæñê.;Liegian;y
-LIM;Limburg;Limbourg;Limburg;Limburgia;Limburg;Limburgo;Limburg;Limburg;Limburg;Limburg;Limburgo;Ëèìáóğã;Limburg;x
-LIM_ADJ;Limburgeois;Limbourgeois;Limburgisch;Limburgeois;Limburgeois;Limburghese;Limburgeois;Limburgeois;Limburgeois;Limburgeois;Limburgeois;Ëèìáóğãñê.;Limburgeois;x
+LBG;Limburg;Limbourg;Limburg;Limburgia;Limburg;Limburgo;Limburg;Limburg;Limburg;Limburg;Limburgo;Ëèìáóğã;Limburg;x
+LBG_ADJ;Limburgeois;Limbourgeois;Limburgisch;Limburgeois;Limburgeois;Limburghese;Limburgeois;Limburgeois;Limburgeois;Limburgeois;Limburgeois;Ëèìáóğãñê.;Limburgeois;x
 LIV;The Livonian Order;L'Ordre Livonien;Der Livländischen Orden;inflanckiemu;La Orden de Livonia;L'Ordine di Livonia;livóniai rendelés;Livonského rádu;livóniai rendelés;het Lijflandse Orde;A Ordem Livoniana;Ëèâîíñêèé Îğäåí;ritarikunnan;x
 LIV_ADJ;Livonian;Livonie;Livländisch;Liwonii;Livonia;Livoniana;liv;Livonian;liv;Livonian;Livonian;Ëèâîíñê.;Liivin;y
 LIV_democracy;Livonia;Livonie;Livonien;Liwonia;Livonia;Livonia;Livonia;Livonia;Livonia;Lijfland;Livônia;Ëèâîíèÿ;Livonia;z
@@ -894,8 +894,8 @@ NAV;Navarra;Navarre;Navarra;Nawarra;Navarra;Navarra;Navarra;Navarra;Navarra;Nava
 NAV_ADJ;Navarrese;Navarrais;Navarra-;Nawarrsk.;Navarra;Navarrese;navarraiak;Navarrese;navarraiak;Navarrese;Navarro;Íàâàğğñê.;Navarrese;y
 NAX;Naxos;Naxos;Naxos;Naksos;Naxos;Nasso;Naxos;Naxos;Naxos;Naxos;Naxos;Íàêñîñ;Naxos;y
 NAX_ADJ;Naxosian;de Naxos;Naxos-;Naksos;de Naxos;di Nasso;Naxosian;Naxosian;Naxosian;Naxosian;Naxosiano;Íàêñîññê.;Naxosian;y
-NCT;Neuchâtel;Neuchâtel;Neuenburg;Neuchâtel;Neuchâtel;Neocastello;Neuchatel;Neuchâtel;Neuchatel;Neuchâtel;Neuchâtel;Íåâøàòåëü;Neuchâtel;x
-NCT_ADJ;Neuchâtelois;Neuchâtelois;Neuenbürger;Neuchâteleur;Neuchâteleur;di Neocastello;Neuchâteleur;Neuchâteleur;Neuchâteleur;Neuchâteleur;Neuchâteleur;Íåâøàòåëüñê.;Neuchâteleur;x
+NEH;Neuchâtel;Neuchâtel;Neuenburg;Neuchâtel;Neuchâtel;Neocastello;Neuchatel;Neuchâtel;Neuchatel;Neuchâtel;Neuchâtel;Íåâøàòåëü;Neuchâtel;x
+NEH_ADJ;Neuchâtelois;Neuchâtelois;Neuenbürger;Neuchâteleur;Neuchâteleur;di Neocastello;Neuchâteleur;Neuchâteleur;Neuchâteleur;Neuchâteleur;Neuchâteleur;Íåâøàòåëüñê.;Neuchâteleur;x
 NEV;Nevers;Nevers;Nevers;Nevers;Nevers;Niverno;Nevers;Nevers;Nevers;Nevers;Nevers;Íåâåğ;Nevers;z
 NEV_ADJ;Nivernais;Nivernais;Nevers-;Neversu;Neversa;Nivernese;Nivernais;Nivernais;Nivernais;Nivernais;Nivernais;Íåâåğíèéñê.;Nivernais;y
 NGR;Nigeria;Nigéria;Nigeria;Nigeria;Nigeria;Nigeria;Nigéria;Nigérie;Nigéria;Nigeria;Nigéria;Íèãåğèÿ;Nigeria;x
@@ -1227,9 +1227,7 @@ SWH_ADJ;Schleswig-Holsteinian;Schleswigois-Holsteinois;Schleswig-Holsteinisch;Sc
 SWK;Sarawak;Sarawak;Sarawak;Sarawak;Sarawak;Sarawak;Sarawak;Sarawak;Sarawak;Sarawak;Sarawak;Ñàğàâàê;Sarawak;x
 SWK_ADJ;Sarawak;du Sarawak;Sarawak-;Sarawak;Sarawak;di Sarawak;Sarawak;Sarawak;Sarawak;Sarawak;Sarawak;Ñàğàâàê;Sarawak;x
 SYC;Sicily;Sicile;Sizilien;Sycylia;Sicilia;Sicilia;Szicília;Sicílie;Szicília;Sicilië;Sicília;Ñèöèëèÿ;Sisilia;z
-SYC;Syriac;Syriaque;Syrisch;Syriac;Siríaco;Siriaca;Szír;Syrskı;Szír;Syrisch;Siríaco;Ñèğèéñê.;Syyrialainen;x
 SYC_ADJ;Sicilian;Sicilien;Sizilianisch;Sycylii;Siciliana;Siciliana;szicíliai;sicilskı;szicíliai;Siciliaans;siciliano;Ñèöèëèéñê.;sisilialainen;y
-SYC_ADJ;Syriac;Syriaque;Syrisch;Syriac;Siríaco;Siriaca;szír;syrskı;szír;Syrisch;Siríaco;ñèğèéñê.;Syyrialainen;x
 SYO;Soyo;Soyo;Soyo;Soyo;Soyo;Soyo;Soyo;Soyo;Soyo;Soyo;Sonho;Ñîéî;Soyo;z
 SYO_ADJ;Soyoan;de Soyo;Soyo-;Soyo;Soyana;di Soyo;Soyoan;Soyoan;Soyoan;Soyoan;Soyoan;Ñîéîíñê.;Soyoan;y
 SYR;Syria;Syrie;Syrien;Syria;Siria;Siria;Szíria;Sırie;Szíria;Syrië;Síria;Ñèğèÿ;Syyria;x

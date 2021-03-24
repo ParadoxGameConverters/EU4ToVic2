@@ -289,7 +289,7 @@ political_decisions = {
 			2235 = { add_core = CUR remove_core = VNZ }
 			2409 = { add_core = STV } #Saint Vincent and the Grenadines
 			#Further addictions
-			ARG_2355 = { add_core = BUE } #Buenos Aires
+			ARG_2355 = { add_core = SBA } #Buenos Aires
 			set_global_flag = der_postcolonialism
 			#Ensuring correct cultures if released
 			any_country = { limit = { tag = QUE	 NOT = { exists = QUE } } set_country_flag = buro_independence }
@@ -366,7 +366,7 @@ political_decisions = {
 			any_country = { limit = { tag = GRD	 NOT = { exists = GRD } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = CUR	 NOT = { exists = CUR } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = STV	 NOT = { exists = STV } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = BUE	 NOT = { exists = BUE } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = SBA	 NOT = { exists = SBA } } set_country_flag = buro_independence }
 		}
 		
 		ai_will_do = {
