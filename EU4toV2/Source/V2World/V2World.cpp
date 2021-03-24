@@ -1921,34 +1921,44 @@ void V2::World::copyHpmFiles() const
 	}
 
 	fs::copy_file(hpm + "/common/issues.txt", out + "/common/issues.txt");
+
+	// gfx/interface
+	commonItems::CopyFolder(hpm + "/gfx/interface/leaders", out + "/gfx/interface/leaders");
+	const auto& gfxInterfaceFiles = commonItems::GetAllFilesInFolder(hpm + "/gfx/interface");
+	for (const auto& file: gfxInterfaceFiles)
+	{
+		if (file == "icon_religion.dds")
+			continue;
+		fs::copy_file(hpm + "/gfx/interface/" + file, out + "/gfx/interface/" + file);
+	}
+	
+	// interface
+	const auto& interfaceFiles = commonItems::GetAllFilesInFolder(hpm + "/interface");
+	for (const auto& file: interfaceFiles)
+	{
+		if (file == "general_gfx.gfx")
+			continue;
+		fs::copy_file(hpm + "/interface/" + file, out + "/interface/" + file);	
+	}
+
+	commonItems::CopyFolder(hpm + "/localisation", out + "/localisation");
 }
 
 void V2::World::updateCountryDetails()
 {
-	mappers::PartyTypeMapper modPartyBlob("configurables/HPM/party_blobs.txt");
-
 	for (const auto& [tag, country]: countries)
 	{
 		for (const auto& party: country->getParties()) //load parties from countryDetails
 		{
-			for (const auto& policy: getIssues("party_issues")) //common/issues.txt
+			if (!party.getPolicies().contains("social_policy"))
 			{
-				if (!party.getPolicies().contains(policy))
+				if (const auto& partyType = partyTypeMapper.getPartyTypeByIdeology(party.getIdeology());
+					partyType)
 				{
-					const auto& partyType = modPartyBlob.getPartyTypeByIdeology(party.getIdeology());
-					if (partyType)
-					{
-						const auto& defaultPosition = partyType->getPolicyPosition(policy);
-						country->addPolicy(party.getName(), policy, defaultPosition);
-					}
+					const auto& defaultPosition = partyType->getPolicyPosition("social_policy");
+					country->addPolicy(party.getName(), "social_policy", defaultPosition);
 				}
 			}
 		}
 	}
-}
-
-std::vector<std::string> V2::World::getIssues(const std::string& issueCategory)
-{
-	const auto& issuesItr = issues.getCategories().find(issueCategory);
-	return issuesItr->second;
 }

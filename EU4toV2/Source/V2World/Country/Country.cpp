@@ -14,10 +14,10 @@
 #include "../../Mappers/Unreleasables/Unreleasables.h"
 #include "../Flags/Flags.h"
 #include "CommonFunctions.h"
+#include "Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include <cmath>
-#include "Configuration.h"
 
 V2::Country::Country(const std::string& countriesFileLine,
 	 const bool _dynamicCountry,
@@ -958,8 +958,11 @@ std::optional<std::string> V2::Country::getFileFromTag(const std::string& direct
 
 void V2::Country::addPolicy(const std::string& partyName, const std::string& policy, const std::string& position)
 {
-	const auto& partyItr = std::find_if(details.parties.begin(), details.parties.end(), [partyName](const V2::Party& party){
-		return party.getName() == partyName;
-	});
-	partyItr->addPolicy(policy, position);
+	if (const auto& partyItr = std::find_if(details.parties.begin(),
+			  details.parties.end(),
+			  [partyName](const V2::Party& party) {
+				  return party.getName() == partyName;
+			  });
+		 partyItr != details.parties.end())
+		partyItr->addPolicy(policy, position);
 }

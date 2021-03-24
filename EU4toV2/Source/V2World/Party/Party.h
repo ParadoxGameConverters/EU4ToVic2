@@ -15,7 +15,6 @@ namespace V2
 		[[nodiscard]] const auto& getName() const { return name; }
 		[[nodiscard]] const auto& getIdeology() const { return partyDetails.getIdeology(); }
 		[[nodiscard]] const auto& getPolicies() const { return partyDetails.getPolicies(); }
-		[[nodiscard]] const auto& getPolicyPosition(const std::string& policy) const { return partyDetails.getPolicyPosition(policy); }
 
 		void setStartDate(const std::string& startDate) { partyDetails.setStartDate(startDate); }
 		void addPolicy(const std::string& policy, const std::string& position) { partyDetails.addPolicy(policy, position); }

@@ -11,6 +11,7 @@ conservative = {
 	religious_policy = moralism
 	citizenship_policy = limited_citizenship
 	war_policy = pro_military
+	social_policy = no_position_set
 }
 liberal = {
 	start_date = 1680.1.1
@@ -20,6 +21,7 @@ liberal = {
 	religious_policy = pluralism
 	citizenship_policy = limited_citizenship
 	war_policy = anti_military
+	social_policy = no_position_set
 }
 reactionary = {
 	start_date = 1680.1.1
@@ -29,6 +31,7 @@ reactionary = {
 	religious_policy = moralism
 	citizenship_policy = residency
 	war_policy = jingoism
+	social_policy = no_position_set
 }
 socialist = {
 	start_date = 1790.1.1
@@ -38,6 +41,7 @@ socialist = {
 	religious_policy = secularized
 	citizenship_policy = full_citizenship
 	war_policy = anti_military
+	social_policy = welfare_state
 }
 communist = {
 	start_date = 1849.1.1
@@ -47,6 +51,7 @@ communist = {
 	religious_policy = pro_atheism
 	citizenship_policy = full_citizenship
 	war_policy = pro_military
+	social_policy = populist_welfare
 }
 anarcho_liberal = {
 	start_date = 1710.1.1
@@ -56,6 +61,7 @@ anarcho_liberal = {
 	religious_policy = pro_atheism
 	citizenship_policy = full_citizenship
 	war_policy = pro_military
+	social_policy = no_state_interference
 }
 fascist = {
 	start_date = 1905.1.1
@@ -65,4 +71,5 @@ fascist = {
 	religious_policy = moralism
 	citizenship_policy = residency
 	war_policy = jingoism
+	social_policy = populist_welfare
 }
