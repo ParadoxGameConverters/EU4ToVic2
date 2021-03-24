@@ -709,7 +709,7 @@ political_decisions = {
 			ENG_2513 = { add_core = SNZ } #South Island
 			778 = { add_core = FIU } #Fiume
 			736 = { add_core = TRE } #Trieste
-			381 = { add_core = LIM } #Limburg
+			381 = { add_core = LBG } #Limburg
 			1165 = { add_core = QAT } #Qatar
 			801 = { add_core = TAH } #Tahiti
 			#Name-sakes cores
@@ -773,7 +773,7 @@ political_decisions = {
 			340 = { add_core = IZH }
 			698 = { add_core = MML } # Memelland
 			2200 = { add_core = MSK } # Miskito
-			608 = { add_core = NCT } # Neuchâtel
+			608 = { add_core = NEH } # Neuchâtel
 			2531 = { add_core = PPG } # Papua New Guinea
 			2529 = { add_core = PPG }
 			2530 = { add_core = PPG }

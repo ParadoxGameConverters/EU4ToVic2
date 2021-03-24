@@ -55,7 +55,7 @@ country_event = {
 			AND = { tag = UTR NOT = { owns = 377 } } #	Utrecht
 			AND = { tag = PZN NOT = { owns = 699 } } #	Poznań
 			AND = { tag = FIU NOT = { owns = 778 } } #	Fiume
-			AND = { tag = NCT NOT = { owns = 608 } } #	Neuchâtel
+			AND = { tag = NEH NOT = { owns = 608 } } #	Neuchâtel
 			AND = { tag = SAA NOT = { owns = 573 } } #	Saar
 			AND = { tag = TST NOT = { owns = 735 } } #	South Tirol
 		}
@@ -1045,7 +1045,7 @@ country_event = {
  
  trigger = {
   has_country_flag = namefake
-  NCT = { exists = no }
+  NEH = { exists = no }
   owns = 608
  }
  
@@ -1056,7 +1056,7 @@ country_event = {
  option = {
   name = EVTOPTANAMEFAKE
   clr_country_flag = namefake
-  change_tag = NCT
+  change_tag = NEH
   capital = 608
  }
 }
