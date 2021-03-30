@@ -32,14 +32,14 @@ tech = {group = commerce score = 0.7 name = ad_hoc_money_bill_printing}
 tech = {group = commerce score = 0.8 name = market_structure}
 tech = {group = commerce score = 1.0 name = late_classical_theory}
 
-tech = {group = industry score = -1.0 name = water_wheel_power}
-tech = {group = industry score = -0.7 name = publishing_industry}
-tech = {group = industry score = -0.2 name = mechanized_mining}
+tech = {group = industry score = -1.0 name = water_wheel_power hpm = piston_steam_engine}
+tech = {group = industry score = -0.7 name = publishing_industry hpm = mechanical_production}
+tech = {group = industry score = -0.2 name = mechanized_mining hpm = hot_blast}
 tech = {group = industry score = 0 name = basic_chemistry}
-tech = {group = industry score = 0.2 name = practical_steam_engine}
+tech = {group = industry score = 0.2 name = practical_steam_engine hpm = high_pressure_steam_engine}
 tech = {group = industry score = 0.4 name = experimental_railroad}
 tech = {group = industry score = 0.6 name = mechanical_production}
-tech = {group = industry score = 1.0 name = clean_coal}
+tech = {group = industry score = 1.0 name = clean_coal hpm = mechanized_mining}
 
 tech = {group = culture score = -1.0 name = classicism_n_early_romanticism}
 tech = {group = culture score = -1.0 name = late_enlightenment_philosophy}
