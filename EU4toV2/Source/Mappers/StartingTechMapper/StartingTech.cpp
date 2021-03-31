@@ -6,16 +6,16 @@
 mappers::StartingTech::StartingTech(std::istream& theStream)
 {
 	registerKeyword("group", [this](const std::string& unused, std::istream& theStream) {
-		group = commonItems::singleString(theStream).getString();
+		group = commonItems::getString(theStream);
 	});
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
-		name = commonItems::singleString(theStream).getString();
+		name = commonItems::getString(theStream);
 	});
 	registerKeyword("hpm", [this](const std::string& unused, std::istream& theStream) {
-		hpm = commonItems::singleString(theStream).getString();
+		hpm = commonItems::getString(theStream);
 	});
 	registerKeyword("score", [this](const std::string& unused, std::istream& theStream) {
-		score = commonItems::singleDouble(theStream).getDouble();
+		score = commonItems::getDouble(theStream);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
