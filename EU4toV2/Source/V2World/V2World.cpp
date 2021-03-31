@@ -1926,6 +1926,8 @@ void V2::World::copyHpmFiles() const
 	}
 
 	fs::copy_file(hpm + "/common/issues.txt", out + "/common/issues.txt");
+	fs::copy_file(hpm + "/common/goods.txt", out + "/common/goods.txt");
+	fs::copy_file(hpm + "/common/event_modifiers.txt", out + "/common/event_modifiers.txt");
 
 	// gfx/interface
 	commonItems::CopyFolder(hpm + "/gfx/interface/leaders", out + "/gfx/interface/leaders");
@@ -1937,6 +1939,9 @@ void V2::World::copyHpmFiles() const
 		fs::copy_file(hpm + "/gfx/interface/" + file, out + "/gfx/interface/" + file);
 	}
 	
+	// gfx/anims
+	commonItems::CopyFolder(hpm + "/gfx/anims", out + "/gfx/anims");
+
 	// interface
 	const auto& interfaceFiles = commonItems::GetAllFilesInFolder(hpm + "/interface");
 	for (const auto& file: interfaceFiles)
