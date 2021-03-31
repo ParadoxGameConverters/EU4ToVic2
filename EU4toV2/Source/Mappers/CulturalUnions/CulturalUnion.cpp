@@ -1,6 +1,7 @@
 #include "CulturalUnion.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "Configuration.h"
+#include "ParserHelpers.h"
 
 mappers::CulturalUnion::CulturalUnion(std::istream& theStream)
 {
@@ -17,5 +18,13 @@ void mappers::CulturalUnion::registerKeys()
 	registerKeyword("tag", [this](const std::string& unused, std::istream& theStream) {
 		tags.insert(commonItems::singleString(theStream).getString());
 	});
+	registerKeyword("hpm", [this](const std::string& unused, std::istream& theStream) {
+		hpm.insert(commonItems::singleString(theStream).getString());
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+
+	if (theConfiguration.isHpmEnabled() && !hpm.empty())
+	{
+		tags = hpm;
+	}
 }

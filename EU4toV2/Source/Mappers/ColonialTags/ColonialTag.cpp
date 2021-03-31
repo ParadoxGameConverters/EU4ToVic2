@@ -1,4 +1,5 @@
 #include "ColonialTag.h"
+#include "Configuration.h"
 #include "ParserHelpers.h"
 #include "CommonRegexes.h"
 
@@ -14,16 +15,34 @@ void mappers::ColonialTag::registerKeys()
 	registerKeyword("tag", [this](const std::string& unused, std::istream& theStream) {
 		colonyTag.tag = commonItems::singleString(theStream).getString();
 	});
+	registerKeyword("hpm", [this](const std::string& unused, std::istream& theStream) {
+		colonyTag.hpm = commonItems::singleString(theStream).getString();
+	});
 	registerKeyword("eu4region", [this](const std::string& unused, std::istream& theStream) {
 		colonyTag.EU4Regions.insert(commonItems::singleString(theStream).getString());
 	});
 	registerKeyword("v2region", [this](const std::string& unused, std::istream& theStream) {
 		colonyTag.V2Regions.insert(commonItems::singleString(theStream).getString());
 	});
+	registerKeyword("hpm_region", [this](const std::string& unused, std::istream& theStream) {
+		colonyTag.hpmRegions.insert(commonItems::singleString(theStream).getString());
+	});
 	registerKeyword("cultureGroup", [this](const std::string& unused, std::istream& theStream) {
 		colonyTag.cultureGroups.insert(commonItems::singleString(theStream).getString());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+
+	if (theConfiguration.isHpmEnabled())
+	{
+		if (!colonyTag.hpm.empty())
+		{
+			colonyTag.tag = colonyTag.hpm;
+		}
+		if (!colonyTag.hpmRegions.empty())
+		{
+			colonyTag.V2Regions = colonyTag.hpmRegions;
+		}
+	}
 }
 
 bool mappers::ColonyStruct::match(const std::string& eu4Region, const std::string& v2Region, const std::string& cultureGroup) const

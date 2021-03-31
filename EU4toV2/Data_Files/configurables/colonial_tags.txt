@@ -2,9 +2,9 @@
 # "post_colonialism" decision.  That will create new cores.
 
 
-link = { tag = QUE eu4region = colonial_canada v2region = ENG_58 } #Quebec - Capital in and/or owns all of V2 region Quebec & culture group French
-link = { tag = COL eu4region = colonial_canada v2region = ENG_13 } #Columbia - Capital in and/or owns all of in V2 region Columbia & culture group British
-link = { tag = COL eu4region = colonial_alaska v2region = ENG_13 } #Columbia - Capital in and/or owns all of in V2 region Columbia & culture group British
+link = { tag = QUE eu4region = colonial_canada v2region = ENG_58 hpm_region = CAN_58 } #Quebec - Capital in and/or owns all of V2 region Quebec & culture group French
+link = { tag = COL eu4region = colonial_canada v2region = ENG_13 hpm_region = CAN_13 } #Columbia - Capital in and/or owns all of in V2 region Columbia & culture group British
+link = { tag = COL eu4region = colonial_alaska v2region = ENG_13 hpm_region = CAN_13 } #Columbia - Capital in and/or owns all of in V2 region Columbia & culture group British
 link = { tag = NEW eu4region = colonial_canada v2region = ENG_74 } #Newfoundland - Capital in and/or owns all of Newfoundland
 link = { tag = CAN eu4region = colonial_canada } #Canada
 link = { tag = LSK eu4region = colonial_alaska v2region = USA_1 } #Alaska - In Alaska
@@ -42,7 +42,7 @@ link = { tag = COS eu4region = colonial_mexico v2region = UCA_2201 cultureGroup 
 link = { tag = PNM eu4region = colonial_mexico v2region = CLM_1723 } #Panama - Capital in and/or owns all of V2 region Panama
 link = { tag = GUA eu4region = colonial_mexico v2region = UCA_2186 cultureGroup = iberian } #Guatemala - Capital in and/or owns all of V2 region Guatemala
 link = { tag = BLZ eu4region = colonial_mexico v2region = UCA_2186 } #Belize
-link = { tag = HON eu4region = colonial_mexico v2region = UCA_2191 } #Honduras - Capital in and/or owns all of V2 region Honduras
+link = { tag = HON eu4region = colonial_mexico v2region = UCA_2191 hpm_region = UCA_2193 } #Honduras - Capital in and/or owns all of V2 region Honduras
 link = { tag = NIC eu4region = colonial_mexico v2region = UCA_2197 } #Nicaragua - Capital in and/or owns all of V2 region Nicaragua
 #link = { tag = UCA eu4region = colonial_mexico } #United States of Central America
 link = { tag = SON eu4region = colonial_mexico v2region = MEX_2138 } #Sonora
@@ -74,8 +74,8 @@ link = { tag = BOL eu4region = colonial_la_plata v2region = BOL_2305 } #Bolivia
 link = { tag = CHL eu4region = colonial_la_plata v2region = CHL_2322 } #Chile
 link = { tag = CHL eu4region = colonial_la_plata v2region = CHL_2327 } #Chile
 link = { tag = CHL eu4region = colonial_la_plata v2region = CHL_2332 } #Chile
-link = { tag = ENT eu4region = colonial_la_plata cultureGroup = iberian v2region = ARG_2357 } #Entre Ríos
-link = { tag = BUE eu4region = colonial_la_plata cultureGroup = iberian v2region = ARG_2355 } #Buenos Aires
+link = { tag = ENT eu4region = colonial_la_plata cultureGroup = iberian v2region = ARG_2357 hpm_region = ARG_2360 } #Entre Ríos
+link = { tag = BUE tag = SBA eu4region = colonial_la_plata cultureGroup = iberian v2region = ARG_2355 } #Buenos Aires
 link = { tag = LPL eu4region = colonial_la_plata cultureGroup = iberian } #La Plata
 link = { tag = ARG eu4region = colonial_la_plata } #Argentina
 
@@ -102,12 +102,12 @@ link = { tag = AST v2region = AST_2528 } #Australia - Capital in and/or owns any
 link = { tag = AST v2region = AST_2527 } #Australia - Capital in and/or owns any V2 region in Australia - Colonial World mod region
 link = { tag = AST v2region = AST_2454 } #Australia - Capital in and/or owns any V2 region in Australia - Colonial World mod region
 link = { tag = AST v2region = AST_2244 } #Australia - Capital in and/or owns any V2 region in Australia - Colonial World mod region
-link = { tag = PHI eu4region = colonial_australia v2region = SPA_1459 } #Philippines - Capital in and/or owns any V2 region in Philippines
-link = { tag = PHI eu4region = colonial_australia v2region = SPA_1455 } #Philippines - Capital in and/or owns any V2 region in Philippines
-link = { tag = PHI eu4region = colonial_australia v2region = SPA_1463 } #Philippines - Capital in and/or owns any V2 region in Philippines
-link = { tag = PHI v2region = SPA_1459 } #Philippines - Capital in and/or owns any V2 region in Philippines- Colonial World mod region
-link = { tag = PHI v2region = SPA_1455 } #Philippines - Capital in and/or owns any V2 region in Philippines- Colonial World mod region
-link = { tag = PHI v2region = SPA_1463 } #Philippines - Capital in and/or owns any V2 region in Philippines- Colonial World mod region
+link = { tag = PHI tag = PHL eu4region = colonial_australia v2region = SPA_1459 } #Philippines - Capital in and/or owns any V2 region in Philippines
+link = { tag = PHI tag = PHL eu4region = colonial_australia v2region = SPA_1455 } #Philippines - Capital in and/or owns any V2 region in Philippines
+link = { tag = PHI tag = PHL eu4region = colonial_australia v2region = SPA_1463 } #Philippines - Capital in and/or owns any V2 region in Philippines
+link = { tag = PHI tag = PHL v2region = SPA_1459 } #Philippines - Capital in and/or owns any V2 region in Philippines- Colonial World mod region
+link = { tag = PHI tag = PHL v2region = SPA_1455 } #Philippines - Capital in and/or owns any V2 region in Philippines- Colonial World mod region
+link = { tag = PHI tag = PHL v2region = SPA_1463 } #Philippines - Capital in and/or owns any V2 region in Philippines- Colonial World mod region
 link = { tag = NZL eu4region = colonial_australia v2region = ENG_2509 } #New Zealand
 
 #Pacific - Colonial World mod region
