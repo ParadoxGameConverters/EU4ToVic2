@@ -18,6 +18,7 @@ class CulturalUnion: commonItems::parser
 
 	std::string culture;
 	std::set<std::string> tags;
+	std::set<std::string> hpm;
 };
 } // namespace mappers
 

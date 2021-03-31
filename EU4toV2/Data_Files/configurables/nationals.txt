@@ -135,7 +135,7 @@ link = { tag = YAK culture = yakut } #Sakha
 
 #Indochina => Indochina
 link = { tag = CAM culture = khmer } # and Cambodia
-link = { tag = PHI culture = filipino } #Philippines
+link = { tag = PHI hpm = PHL culture = filipino } #Philippines
 link = { tag = JAV culture = javan } #Java
 link = { tag = SIA culture = thai } #and Siam
 link = { tag = LUA culture = lao } #and Luang Phrabang
