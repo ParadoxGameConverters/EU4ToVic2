@@ -558,11 +558,11 @@ country_event = {
 				OR = {
 					capital_scope = { is_core = IDO }
 					capital_scope = { is_core = MLY }
-					capital_scope = { is_core = PHI }
+					capital_scope = { is_core = PHL }
 				}
 				NOT = { tag = IDO }
 				NOT = { tag = MLY }
-				NOT = { tag = PHI }
+				NOT = { tag = PHL }
 			}
 		}
 		sphere_owner = {
@@ -1092,11 +1092,11 @@ country_event = {
 				OR = {
 					capital_scope = { is_core = IDO }
 					capital_scope = { is_core = MLY }
-					capital_scope = { is_core = PHI }
+					capital_scope = { is_core = PHL }
 				}
 				NOT = { tag = IDO }
 				NOT = { tag = MLY }
-				NOT = { tag = PHI }
+				NOT = { tag = PHL }
 			}
 		}
 		sphere_owner = {
@@ -2636,7 +2636,7 @@ country_event = {
 		NOT = { tag = CHI }
 		NOT = { tag = MNG }
 		NOT = { tag = YUA }
-		NOT = { exists = PAN }
+		NOT = { exists = PNJ }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
@@ -2663,8 +2663,8 @@ country_event = {
 	option = { 
 		name = EVTOPTA550xxx
 		prestige = 10
-		any_owned = { add_core = PAN }
-		change_tag = PAN
+		any_owned = { add_core = PNJ }
+		change_tag = PNJ
 		set_global_flag = punjab_clique
 		add_accepted_culture = punjabi
 	}

@@ -1209,7 +1209,7 @@ political_decisions = {
 	form_philippines = {
 		potential = {
 			NOT = {
-				exists = PHI
+				exists = PHL
 				tag = SPA
 				tag = USA
 			}
@@ -1258,10 +1258,10 @@ political_decisions = {
 				annex_to = THIS
 			}
 			any_owned = {
-				add_core = PHI
+				add_core = PHL
 			}			
 			
-			change_tag = PHI
+			change_tag = PHL
 		}
 		ai_will_do = {
 			factor = 1

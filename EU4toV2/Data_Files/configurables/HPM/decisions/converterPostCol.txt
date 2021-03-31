@@ -190,9 +190,9 @@ political_decisions = {
 			VNZ_2278 = { add_core = VNZ }
 			AST_2528 = { add_core = AST } #Australia
 			AST_2454 = { add_core = AST }
-			SPA_1459 = { add_core = PHI } #Philippines
-			SPA_1455 = { add_core = PHI }
-			SPA_1463 = { add_core = PHI }
+			SPA_1459 = { add_core = PHL } #Philippines
+			SPA_1455 = { add_core = PHL }
+			SPA_1463 = { add_core = PHL }
 			ENG_2509 = { add_core = NZL } #New Zealand
 			HAW_658 = { add_core = HAW } #Hawaii
 			MAD_2121 = { add_core = MAD } #Madagascar
