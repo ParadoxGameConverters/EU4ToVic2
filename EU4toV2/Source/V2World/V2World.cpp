@@ -732,6 +732,9 @@ void V2::World::importPotentialCountry(const std::string& line, bool dynamicCoun
 	
 	if (!potentialCountries.contains(tag))
 	{
+		if (theConfiguration.isHpmEnabled() && (tag == "PAN" || tag == "PHI"))
+			return;
+		
 		auto newCountry = std::make_shared<Country>(line, dynamicCountry, partyNameMapper, partyTypeMapper);
 		potentialCountries.insert(std::make_pair(tag, newCountry));
 		if (dynamicCountry && !dynamicCountries.contains(tag))
