@@ -113,7 +113,7 @@ link = { vic2 = maghreb_arabic eu4 = roman region = egypt_region region = maghre
 link = { vic2 = brithenig eu4 = romano_british eu4 = britannian }
 link = { vic2 = hungarian eu4 = pannonian }
 link = { vic2 = euxinian eu4 = graecus eu4 = euxinian eu4 = xliponian }
-link = { vic2 = maghreb_arabic eu4 = salinatorian eu4 = african_romance }
+link = { vic2 = maghreb_arabic eu4 = salinatorian eu4 = african_romance eu4 = aegyptian }
 link = { vic2 = bazramani eu4 = arabus eu4 = romano_persian eu4 = aramean eu4 = bazramani }
 link = { vic2 = gaul eu4 = romano_gallic eu4 = gaul eu4 = gaulic }
 link = { vic2 = laessin eu4 = helvetian eu4 = noric eu4 = theodisc eu4 = hyperborean }
