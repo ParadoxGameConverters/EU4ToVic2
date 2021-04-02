@@ -67,9 +67,17 @@ void V2::World::outputGTFO(std::map<std::string, std::shared_ptr<V2::Country>> c
 	{
 		if (skip.contains(tag))
 			continue;
-		const auto& commonCountryFile = country->getCommonCountryFile();
-		const auto& dotPos = commonCountryFile.find_first_of('.');
-		const auto& countryName = commonCountryFile.substr(0, dotPos);
+		std::string countryName;
+		if (!country->getLocalName().empty())
+		{
+			countryName = country->getLocalName();
+		}
+		else
+		{
+			const auto& commonCountryFile = country->getCommonCountryFile();
+			const auto& dotPos = commonCountryFile.find_first_of('.');
+			countryName = commonCountryFile.substr(0, dotPos);
+		}
 
 		output << "\n";
 		output << "\tgtfo_" << tag << " = {\n";
@@ -175,9 +183,17 @@ void V2::World::outputReturnCores(std::map<std::string, std::shared_ptr<V2::Coun
 	{
 		if (skip.contains(tag))
 			continue;
-		const auto& commonCountryFile = country->getCommonCountryFile();
-		const auto& dotPos = commonCountryFile.find_first_of('.');
-		const auto& countryName = commonCountryFile.substr(0, dotPos);
+		std::string countryName;
+		if (!country->getLocalName().empty())
+		{
+			countryName = country->getLocalName();
+		}
+		else
+		{
+			const auto& commonCountryFile = country->getCommonCountryFile();
+			const auto& dotPos = commonCountryFile.find_first_of('.');
+			countryName = commonCountryFile.substr(0, dotPos);
+		}
 		
 		output << "\n";
 		output << "\treturn_cores_" << tag << " = {\n";
