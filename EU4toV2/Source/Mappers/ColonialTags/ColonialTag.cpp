@@ -8,6 +8,18 @@ mappers::ColonialTag::ColonialTag(std::istream& theStream)
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+
+	if (theConfiguration.isHpmEnabled())
+	{
+		if (!colonyTag.hpm.empty())
+		{
+			colonyTag.tag = colonyTag.hpm;
+		}
+		if (!colonyTag.hpmRegions.empty())
+		{
+			colonyTag.V2Regions = colonyTag.hpmRegions;
+		}
+	}
 }
 
 void mappers::ColonialTag::registerKeys()
@@ -31,18 +43,6 @@ void mappers::ColonialTag::registerKeys()
 		colonyTag.cultureGroups.insert(commonItems::singleString(theStream).getString());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
-
-	if (theConfiguration.isHpmEnabled())
-	{
-		if (!colonyTag.hpm.empty())
-		{
-			colonyTag.tag = colonyTag.hpm;
-		}
-		if (!colonyTag.hpmRegions.empty())
-		{
-			colonyTag.V2Regions = colonyTag.hpmRegions;
-		}
-	}
 }
 
 bool mappers::ColonyStruct::match(const std::string& eu4Region, const std::string& v2Region, const std::string& cultureGroup) const
