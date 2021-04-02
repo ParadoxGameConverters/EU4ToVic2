@@ -8,6 +8,11 @@ mappers::CulturalUnion::CulturalUnion(std::istream& theStream)
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+
+	if (theConfiguration.isHpmEnabled() && !hpm.empty())
+	{
+		tags = hpm;
+	}
 }
 
 void mappers::CulturalUnion::registerKeys()
@@ -22,9 +27,4 @@ void mappers::CulturalUnion::registerKeys()
 		hpm.insert(commonItems::singleString(theStream).getString());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
-
-	if (theConfiguration.isHpmEnabled() && !hpm.empty())
-	{
-		tags = hpm;
-	}
 }
