@@ -1,0 +1,2351 @@
+political_decisions = {
+	the_post_colonialism = { #This decision adds cores to those post-colonial countries
+		potential = {
+			ai = no #Better let the player decide if they are willing to, as it may be not related to their campaign
+			NOT = {
+				has_global_flag = der_postcolonialism #To avoid having it spammed
+			}
+			NOT = { year = 1862 } #To avoid having that decision check forever
+		}
+		allow = {
+			ai = no
+		}
+
+		effect = {
+			CAN_58 = {	#Quebec
+				limit = {
+					OR = {
+						is_primary_culture = french
+						is_primary_culture = french_canadian
+					}
+				}
+				add_core = QUE
+			}
+			CAN_13 = {	#Columbia
+				limit = {
+					OR = {
+						is_primary_culture = english
+						is_primary_culture = anglo_canadian
+					}
+				}
+				add_core = COL
+			}
+			ENG_74 = { add_core = NEW } #Newfoundland
+			CAN_13 = { add_core = CAN } #Canada
+			ENG_22 = { add_core = CAN }
+			ENG_30 = { add_core = CAN }
+			ENG_36 = { add_core = CAN }
+			ENG_9 = { add_core = CAN }
+			CAN_46 = { add_core = CAN }
+			CAN_58 = { add_core = CAN }
+			ENG_68 = { add_core = CAN }
+			ENG_74 = { add_core = CAN }
+			ENG_9 = { add_core = CAN }
+			USA_1 = { add_core = LSK } #Alaska
+			USA_247 = {	#New England
+				limit = {
+					OR = {
+						is_primary_culture = english
+						is_primary_culture = yankee
+					}
+				}
+				add_core = NEN
+			}
+			USA_232 = { add_core = MAN } #Manhattan
+			TEX_132 = { add_core = TEX } #Texas
+			USA_118 = { add_core = USA } #USA
+			USA_121 = { add_core = USA }
+			USA_124 = { add_core = USA }
+			USA_126 = { add_core = USA }
+			USA_129 = { add_core = USA }
+			USA_139 = { add_core = USA }
+			USA_144 = { add_core = USA }
+			USA_148 = { add_core = USA }
+			USA_151 = { add_core = USA }
+			USA_158 = { add_core = USA }
+			USA_162 = { add_core = USA }
+			USA_168 = { add_core = USA }
+			USA_170 = { add_core = USA }
+			USA_176 = { add_core = USA }
+			USA_178 = { add_core = USA }
+			USA_185 = { add_core = USA }
+			USA_188 = { add_core = USA }
+			USA_194 = { add_core = USA }
+			USA_196 = { add_core = USA }
+			USA_200 = { add_core = USA }
+			USA_201 = { add_core = USA }
+			USA_211 = { add_core = USA }
+			USA_218 = { add_core = USA }
+			USA_219 = { add_core = USA }
+			USA_219 = { add_core = USA }
+			USA_223 = { add_core = USA }
+			USA_231 = { add_core = USA }
+			USA_232 = { add_core = USA }
+			USA_243 = { add_core = USA }
+			USA_247 = { add_core = USA }
+			USA_2556 = { add_core = USA }
+			USA_129 = { add_core = CSA } #Dixieland for the ACW
+			TEX_132 = { add_core = CSA }
+			USA_139 = { add_core = CSA }
+			USA_144 = { add_core = CSA }
+			USA_148 = { add_core = CSA }
+			USA_185 = { add_core = CSA }
+			USA_211 = { add_core = CSA }
+			USA_188 = { add_core = CSA }
+			#USA_2566 = { add_core = CSA }
+			USA_201 = { add_core = CSA }
+			USA_196 = { add_core = CSA }
+			USA_194 = { add_core = CSA }
+			USA_200 = { add_core = CSA }
+			USA_139 = { add_core = LOU } #Louisiana
+			USA_144 = { add_core = LOU }
+			USA_129 = { add_core = LOU }
+			USA_148 = { add_core = LOU }
+			USA_126 = { add_core = LOU }
+			USA_151 = { add_core = LOU }
+			USA_124 = { add_core = LOU }
+			MEX_94 = { add_core = DES } #Deseret
+			MEX_100 = { add_core = DES }
+			MEX_85 = { add_core = CAL } #California
+			SPA_2209 = { add_core = CUB } #Cuba
+			HAI_2213 = { add_core = HAI } #Haiti
+			2214 = { add_core = DOM } #Santo Domingo
+			2216 = { add_core = DOM }
+			UCA_2201 = { #Costa Rica
+				add_core = COS
+				add_core = UCA
+			}
+			UCA_2193 = { #Honduras & El Salvador
+				add_core = HON
+				add_core = UCA
+			}
+			2191 = { add_core = ELS remove_core = HON }
+			2192 = { add_core = ELS remove_core = HON }
+			CLM_1723 = { #Panama
+				add_core = PNM
+				add_core = UCA
+			}
+			ECU_2279 = { add_core = ECU } #Ecuador
+			UCA_2186 = { #Guatemala
+				add_core = GUA
+				add_core = UCA
+			}
+			UCA_2197 = { #Nicaragua
+				add_core = NIC
+				add_core = UCA
+			}
+			MEX_2138 = { add_core = MEX } #Mexico
+			MEX_2142 = { add_core = MEX }
+			MEX_2149 = { add_core = MEX }
+			MEX_2151 = { add_core = MEX }
+			MEX_2161 = { add_core = MEX }
+			MEX_2172 = { add_core = MEX }
+			MEX_2170 = { add_core = MEX }
+			MEX_2159 = { add_core = MEX }
+			MEX_2181 = { add_core = MEX }
+			BRZ_2306 = { add_core = BRZ } #Brazil
+			BRZ_2401 = { add_core = BRZ }
+			BRZ_2408 = { add_core = BRZ }
+			BRZ_2421 = { add_core = BRZ }
+			BRZ_2416 = { add_core = BRZ }
+			BRZ_2410 = { add_core = BRZ }
+			BRZ_2428 = { add_core = BRZ }
+			BRZ_2439 = { add_core = BRZ }
+			BRZ_2446 = { add_core = BRZ }
+			BRZ_2447 = { add_core = BRZ }
+			BRZ_2461 = { add_core = BRZ }
+			BRZ_2467 = { add_core = BRZ }
+			PEU_2289 = { add_core = PEU } #Peru
+			PEU_2291 = { add_core = PEU }
+			PEU_2300 = { add_core = PEU }
+			PEU_2303 = { add_core = PEU }
+			PEU_2289 = { add_core = PEU }
+			PEU_2297 = { add_core = PEU }
+			CHL_2322 = { add_core = CHL } #Chile
+			CHL_2327 = { add_core = CHL }
+			CHL_2332 = { add_core = CHL }
+			ARG_2355 = { add_core = ARG } #Argentina
+			ARG_2360 = { add_core = ARG }
+			ARG_2363 = { add_core = ARG }
+			ARG_2368 = { add_core = ARG }
+			ARG_2374 = { add_core = ARG }
+			ARG_2393 = { add_core = ARG }
+			ARG_2387 = { add_core = ARG }
+			ARG_2391 = { add_core = ARG }
+			ARG_2393 = { add_core = ARG }
+			ARG_2398 = { add_core = ARG }
+			ARG_2377 = { add_core = PRG } #Paraguay
+			PRG_2343 = { add_core = PRG }
+			URU_2344 = { add_core = URU } #Uruguay
+			BOL_2317 = { add_core = BOL } #Bolivia
+			BOL_2321 = { add_core = BOL }
+			BOL_2309 = { add_core = BOL }
+			BOL_2305 = { add_core = BOL }
+			CLM_2247 = { add_core = CLM } #Colombia
+			CLM_2251 = { add_core = CLM }
+			CLM_2259 = { add_core = CLM }
+			CLM_2262 = { add_core = CLM }
+			VNZ_2234 = { add_core = VNZ } #Venezuela
+			VNZ_2265 = { add_core = VNZ }
+			VNZ_2278 = { add_core = VNZ }
+			AST_2528 = { add_core = AST } #Australia
+			AST_2454 = { add_core = AST }
+			SPA_1459 = { add_core = PHL } #Philippines
+			SPA_1455 = { add_core = PHL }
+			SPA_1463 = { add_core = PHL }
+			ENG_2509 = { add_core = NZL } #New Zealand
+			HAW_658 = { add_core = HAW } #Hawaii
+			MAD_2121 = { add_core = MAD } #Madagascar
+			MAD_2117 = { add_core = MAD }
+			ENG_2087 = { add_core = SAF } #South Africa
+			ENG_2092 = { add_core = SAF }
+			ENG_2096 = { add_core = SAF }
+			ORA_2103 = { add_core = SAF }
+			ZUL_2113 = { add_core = SAF }
+			TRN_2108 = { add_core = SAF }
+			ENG_2071 = { add_core = RHO } #Rhodesia
+			ENG_1887 = { add_core = LIB } #Liberia
+			BEL_1977 = { add_core = CNG } #Congo
+			BEL_1984 = { add_core = CNG }
+			BEL_1987 = { add_core = CNG }
+			BEL_1996 = { add_core = CNG }
+			BEL_1984 = { add_core = CNG }
+			EGY_921 = { add_core = ISR } #Israel
+			2239 = { add_core = GUY } #Guyana
+			2243 = { add_core = GUY }
+			2242 = { add_core = GUY }
+			1979 = { add_core = GUY }
+			2240 = { add_core = SUR } #Suriname
+			2245 = { add_core = SUR }
+			2241 = { add_core = CAY }
+			2246 = { add_core = CAY }
+			#From NNM
+			2181 = { add_core = CHP } #Chiapas
+			2182 = { add_core = CHP }
+			BRZ_2428 = { add_core = CEQ } #Equador Confederation
+			ARG_2360 = { add_core = ENT } #Entre Rios
+			2187 = { add_core = LOS } #Los Altos
+			2182 = { add_core = LOS }
+			2177 = { add_core = OAX } #Oaxaca
+			2178 = { add_core = OAX }
+			138 = { add_core = RGR } #Rio Grande
+			2151 = { add_core = RGR }
+			2147 = { add_core = RGR }
+			2149 = { add_core = RGR }
+			2150 = { add_core = RGR }
+			2151 = { add_core = RGR }
+			2152 = { add_core = RGR }
+			BRZ_2467 = { add_core = RGS } #Rio Grande do Sul
+			102 = { add_core = SON } #Sonora
+			2137 = { add_core = SON }
+			2138 = { add_core = SON }
+			2139 = { add_core = SON }
+			2140 = { add_core = SON }
+			2141 = { add_core = SON }
+			2179 = { add_core = TRS } #Tarasco
+			2180 = { add_core = TRS }
+			2171 = { add_core = TRS }
+			2170 = { add_core = TRS }
+			2183 = { add_core = YUC } #Yucatan
+			2184 = { add_core = YUC }
+			2185 = { add_core = YUC }
+			2190 = { add_core = BLZ remove_core = GUA remove_core = UCA } #Belize
+			USA_118 = { add_core = DAK } #Dakota
+			USA_121 = { add_core = DAK }
+			2636 = { add_core = GRN } #Greenland
+			2636 = { add_core = GRN }
+			251 = { add_core = GRN }
+			2217 = { add_core = JAM } #Jamaica
+			2218 = { add_core = JAM }
+			2222 = { add_core = PRI } #Puerto Rico
+			2223 = { add_core = PRI }
+			2226 = { add_core = PRI }
+			2237 = { add_core = TTB } #Trinidad and Tobago
+			2238 = { add_core = TTB }
+			USA_168 = { add_core = UIL } #Illinois
+			USA_124 = { add_core = UNB } #Nebraska
+			MEX_103 = { add_core = UNM } #New Mexico
+			USA_81 = { add_core = UOR } #Oregon
+			#Further Caribbean islands:
+			2219 = { add_core = BHM } #Bahamas
+			2220 = { add_core = BHM }
+			2236 = { add_core = AGU } #Anguilla
+			2230 = { add_core = ATB } #Antigua and Barbuda
+			2227 = { add_core = SKN } #Saint Kitts and Nevis
+			2225 = { add_core = MNR } #Montserrat
+			2230 = { add_core = GDL } #Guadeloupe
+			2232 = { add_core = DMN } #Dominica
+			2228 = { add_core = MTQ } #Martinique
+			2231 = { add_core = STL } #Saint Lucia
+			2229 = { add_core = BBD } #Barbados
+			2233 = { add_core = GRD } #Grenada
+			2234 = { add_core = CUR remove_core = VNZ } #Curaçao
+			2235 = { add_core = CUR remove_core = VNZ }
+			2409 = { add_core = STV } #Saint Vincent and the Grenadines
+			#Further addictions
+			ARG_2355 = { add_core = BUE } #Buenos Aires
+			set_global_flag = der_postcolonialism
+			#Ensuring correct cultures if released
+			any_country = { limit = { tag = QUE	 NOT = { exists = QUE } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = COL	 NOT = { exists = COL } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = NEW	 NOT = { exists = NEW } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CAN	 NOT = { exists = CAN } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = LSK	 NOT = { exists = LSK } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = NEN	 NOT = { exists = NEN } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = MAN	 NOT = { exists = MAN } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = TEX	 NOT = { exists = TEX } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = USA	 NOT = { exists = USA } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CSA	 NOT = { exists = CSA } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = LOU	 NOT = { exists = LOU } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = DES	 NOT = { exists = DES } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CAL	 NOT = { exists = CAL } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CUB	 NOT = { exists = CUB } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = HAI	 NOT = { exists = HAI } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = DOM	 NOT = { exists = DOM } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = UCA	 NOT = { exists = UCA } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = COS	 NOT = { exists = COS } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = HON	 NOT = { exists = HON } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = ELS	 NOT = { exists = ELS } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = PNM	 NOT = { exists = PNM } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = ECU	 NOT = { exists = ECU } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = GUA	 NOT = { exists = GUA } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = NIC	 NOT = { exists = NIC } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = MEX	 NOT = { exists = MEX } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = BRZ	 NOT = { exists = BRZ } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = PEU	 NOT = { exists = PEU } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CHL	 NOT = { exists = CHL } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = ARG	 NOT = { exists = ARG } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = PRG	 NOT = { exists = PRG } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = URU	 NOT = { exists = URU } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = BOL	 NOT = { exists = BOL } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CLM	 NOT = { exists = CLM } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = VNZ	 NOT = { exists = VNZ } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = AST	 NOT = { exists = AST } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = NZL	 NOT = { exists = NZL } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = SAF	 NOT = { exists = SAF } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = RHO	 NOT = { exists = RHO } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = LIB	 NOT = { exists = LIB } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CNG	 NOT = { exists = CNG } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = GUY	 NOT = { exists = GUY } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = SUR	 NOT = { exists = SUR } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CAY	 NOT = { exists = CAY } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CHP	 NOT = { exists = CHP } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CEQ	 NOT = { exists = CEQ } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = ENT	 NOT = { exists = ENT } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = LOS	 NOT = { exists = LOS } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = OAX	 NOT = { exists = OAX } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = RGR	 NOT = { exists = RGR } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = RGS	 NOT = { exists = RGS } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = SON	 NOT = { exists = SON } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = YUC	 NOT = { exists = YUC } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = BLZ	 NOT = { exists = BLZ } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = DAK	 NOT = { exists = DAK } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = JAM	 NOT = { exists = JAM } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = PRI	 NOT = { exists = PRI } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = TTB	 NOT = { exists = TTB } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = UIL	 NOT = { exists = UIL } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = UNB	 NOT = { exists = UNB } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = UNM	 NOT = { exists = UNM } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = UOR	 NOT = { exists = UOR } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = BHM	 NOT = { exists = BHM } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = AGU	 NOT = { exists = AGU } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = ATB	 NOT = { exists = ATB } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = SKN	 NOT = { exists = SKN } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = MNR	 NOT = { exists = MNR } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = GDL	 NOT = { exists = GDL } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = DMN	 NOT = { exists = DMN } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = MTQ	 NOT = { exists = MTQ } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = STL	 NOT = { exists = STL } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = BBD	 NOT = { exists = BBD } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = GRD	 NOT = { exists = GRD } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = CUR	 NOT = { exists = CUR } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = STV	 NOT = { exists = STV } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = BUE	 NOT = { exists = BUE } } set_country_flag = buro_independence }
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	## Post-colonial country changes
+	postcol_LSK = {
+		potential = {
+			NOT = {
+				exists = LSK
+				tag = CAN
+				tag = COL
+				tag = USA
+			}
+			capital_scope = { is_core = LSK }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			LSK = {
+				all_core = {
+					owned_by = THIS
+					empty = yes
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = LSK
+			}
+			change_tag = LSK
+			capital = 3
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_QUE = {
+		potential = {
+			OR = {
+				primary_culture = french
+				primary_culture = french_canadian
+			}
+			NOT = {
+				exists = QUE
+				tag = CAN
+				tag = COL
+				tag = NEW
+			}
+			capital_scope = { is_core = QUE }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			QUE = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = CAN
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = QUE
+			}
+			change_tag = QUE
+			capital = 65
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_COL = {
+		potential = {
+			OR = {
+				primary_culture = british
+				primary_culture = english
+				primary_culture = anglo_canadian
+			}
+			NOT = {
+				exists = COL
+				tag = CAN
+				tag = NEW
+				tag = QUE
+			}
+			capital_scope = { is_core = COL }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			COL = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = CAN
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = COL
+			}
+			change_tag = COL
+			capital = 14
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_NEW = {
+		potential = {
+			OR = {
+				primary_culture = british
+				primary_culture = english
+				primary_culture = anglo_canadian
+			}
+			NOT = {
+				exists = NEW
+				tag = CAN
+				tag = COL
+				tag = QUE
+			}
+			capital_scope = { is_core = NEW }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			NEW = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = CAN
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = NEW
+			}
+			change_tag = NEW
+			capital = 74
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_CAN = {
+		potential = {
+			NOT = { exists = CAN }
+			capital_scope = { is_core = CAN }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			CAN = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = CAN
+			}
+			change_tag = CAN
+			capital = 57
+			set_country_flag = postcol_2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_NEN = {
+		potential = {
+			NOT = {
+				exists = NEN
+				tag = USA
+				tag = CAN
+				tag = QUE
+				tag = COL
+				tag = NEW
+			}
+			OR = {
+				primary_culture = british
+				primary_culture = english
+				primary_culture = yankee
+			}
+			capital_scope = { is_core = NEN }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			NEN = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = USA
+						owned_by = CSA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = NEN
+			}
+			change_tag = NEN
+			capital = 243
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_MAN = {
+		potential = {
+			NOT = {
+				exists = MAN
+				tag = USA
+				tag = NEN
+				tag = CAN
+				tag = QUE
+				tag = COL
+				tag = NEW
+			}
+			capital_scope = { is_core = MAN }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			MAN = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = NEN
+						owned_by = USA
+						owned_by = CSA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = MAN
+			}
+			change_tag = MAN
+			capital = 232
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_LOU = {
+		potential = {
+			NOT = {
+				exists = LOU
+				tag = USA
+				tag = CSA
+				tag = NEN
+			}
+			capital_scope = { is_core = LOU }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			LOU = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = USA
+						owned_by = CSA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = LOU
+				remove_core = USA
+				remove_core = CSA
+			}
+			change_tag = LOU
+			capital = 139 #New Orleans
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_TEX = {
+		potential = {
+			NOT = { exists = TEX }
+			capital_scope = { is_core = TEX }
+			NOT = {
+				tag = USA
+				tag = MEX
+			}
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			TEX = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = TEX
+			}
+			change_tag = TEX
+			capital = 133
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_USA = {
+		image = apply_for_USA_statehood
+		potential = {
+			NOT = { exists = USA }
+			capital_scope = { is_core = USA }
+			NOT = { tag = CAN }
+			NOT = { tag = CSA }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			USA = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = USA
+			}
+			change_tag = USA
+			capital = 220
+			set_country_flag = postcol_2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_CAL = {
+		potential = {
+			NOT = { exists = CAL }
+			capital_scope = { is_core = CAL }
+			NOT = { has_country_flag = precolonial }
+			NOT = {
+				tag = USA
+				tag = CAN
+				tag = MEX
+				tag = TEX
+			}
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			CAL = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = CAL
+			}
+			change_tag = CAL
+			capital = 84
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_CUB = {
+		potential = {
+			NOT = { exists = CUB }
+			capital_scope = { is_core = CUB }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			CUB = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = CUB
+			}
+			change_tag = CUB
+			capital = 2209
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_HAI = {
+		potential = {
+			NOT = { exists = HAI }
+			NOT = { tag = DOM }
+			capital_scope = { is_core = HAI }
+			OR = {
+				primary_culture = french
+				primary_culture = americaine
+				primary_culture = afro_caribbean
+			}
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			HAI = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			2213 = { remove_core = DOM } # To avoid Haiti disappearing
+			any_owned = {
+				add_core = HAI
+			}
+			change_tag = HAI
+			capital = 2213
+			release_vassal = DOM
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_DOM = {
+		potential = {
+			NOT = { exists = DOM }
+			NOT = { tag = HAI }
+			capital_scope = { is_core = DOM }
+			NOT = {
+				primary_culture = french
+				primary_culture = americaine
+				primary_culture = afro_caribbean
+			}
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			DOM = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			2214 = { remove_core = HAI } #Same as for Haiti
+			any_owned = {
+				add_core = DOM
+			}
+			change_tag = DOM
+			capital = 2214
+			release_vassal = HAI
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_COS = {
+		potential = {
+			NOT = { exists = COS }
+			OR = {
+				NOT = { tag = UCA }
+				AND = {
+					tag = UCA
+					NOT = { is_possible_vassal = ELS }
+					NOT = { is_possible_vassal = GUA }
+					NOT = { is_possible_vassal = HON }
+					NOT = { is_possible_vassal = NIC }
+				}
+			}
+			NOT = { tag = MEX }
+			capital_scope = { is_core = COS }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			COS = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = MEX
+						owned_by = UCA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = COS
+			}
+			change_tag = COS
+			capital = 2201
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_HON = {
+		potential = {
+			NOT = { exists = HON }
+			OR = {
+				NOT = { tag = UCA }
+				AND = {
+					tag = UCA
+					NOT = { is_possible_vassal = COS }
+					NOT = { is_possible_vassal = ELS }
+					NOT = { is_possible_vassal = GUA }
+					NOT = { is_possible_vassal = NIC }
+				}
+			}
+			NOT = { tag = MEX }
+			capital_scope = { is_core = HON }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			HON = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = MEX
+						owned_by = UCA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = HON
+			}
+			change_tag = HON
+			capital = 2193
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_NIC = {
+		image = postcol_HON
+		potential = {
+			NOT = { exists = NIC }
+			OR = {
+				NOT = { tag = UCA }
+				AND = {
+					tag = UCA
+					NOT = { is_possible_vassal = COS }
+					NOT = { is_possible_vassal = ELS }
+					NOT = { is_possible_vassal = GUA }
+					NOT = { is_possible_vassal = HON }
+				}
+			}
+			NOT = { tag = MEX }
+			capital_scope = { is_core = NIC }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			NIC = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = MEX
+						owned_by = UCA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = NIC
+			}
+			change_tag = NIC
+			capital = 2199
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_ELS = {
+		potential = {
+			NOT = { exists = ELS }
+			NOT = { tag = HON }
+			OR = {
+				NOT = { tag = UCA }
+				AND = {
+					tag = UCA
+					NOT = { is_possible_vassal = COS }
+					NOT = { is_possible_vassal = GUA }
+					NOT = { is_possible_vassal = HON }
+					NOT = { is_possible_vassal = NIC }
+				}
+			}
+			NOT = { tag = MEX }
+			capital_scope = { is_core = ELS }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			ELS = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = HON
+						owned_by = MEX
+						owned_by = UCA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = ELS
+			}
+			change_tag = ELS
+			capital = 2191
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_PNM = {
+		potential = {
+			NOT = { exists = PNM }
+			NOT = { tag = UCA }
+			NOT = { tag = MEX }
+			capital_scope = { is_core = PNM }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			PNM = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = MEX
+						owned_by = UCA
+						owned_by = CLM
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = PNM
+			}
+			change_tag = PNM
+			capital = 2204
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_GUA = {
+		potential = {
+			NOT = { exists = GUA }
+			OR = {
+				NOT = { tag = UCA }
+				AND = {
+					tag = UCA
+					NOT = { is_possible_vassal = COS }
+					NOT = { is_possible_vassal = ELS }
+					NOT = { is_possible_vassal = HON }
+					NOT = { is_possible_vassal = NIC }
+				}
+			}
+			NOT = { tag = MEX }
+			capital_scope = { is_core = GUA }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			GUA = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = MEX
+						owned_by = UCA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = GUA
+			}
+			change_tag = GUA
+			capital = 2186
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_UCA = {
+		potential = {
+			NOT = {
+				tag = UCA
+				tag = MEX
+			}
+			capital_scope = { is_core = UCA }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			UCA = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = MEX
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = UCA
+			}
+			change_tag = UCA
+			set_country_flag = postcol_2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_ECU = {
+		potential = {
+			NOT = { exists = ECU }
+			OR = {
+				NOT = { tag = GCO }
+				AND = {
+					tag = GCO
+					NOT = { is_possible_vassal = CLM }
+					NOT = { is_possible_vassal = VNZ }
+				}
+			}
+			NOT = { tag = CLM }
+			NOT = { tag = PEU }
+			NOT = { tag = VNZ }
+			NOT = { tag = ECU }
+			capital_scope = { is_core = ECU }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			ECU = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = GCO
+						owned_by = CLM
+						owned_by = PEU
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = ECU
+			}
+			change_tag = ECU
+			capital = 2279
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_MEX = {
+		image = restore_mexican_empire
+		potential = {
+			NOT = { exists = MEX }
+			NOT = { tag = USA }
+			NOT = { tag = UCA }
+			capital_scope = { is_core = MEX }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			MEX = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = TEX
+						owned_by = USA
+						owned_by = UCA
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = MEX
+			}
+			change_tag = MEX
+			capital = 2172
+			set_country_flag = postcol_2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_BRZ = {
+		potential = {
+			NOT = { exists = BRZ }
+			NOT = { tag = URU }
+			capital_scope = { is_core = BRZ }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			BRZ = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = BRZ
+			}
+			change_tag = BRZ
+			capital = 2447
+			set_country_flag = postcol_2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_PEU = {
+		potential = {
+			NOT = { exists = PEU }
+			NOT = { tag = GCO }
+			NOT = { tag = ECU }
+			OR = {
+				NOT = { tag = PBC }
+				AND = {
+					tag = PBC
+					NOT = { is_possible_vassal = BOL }
+				}
+			}
+			NOT = { tag = PBC }
+			capital_scope = { is_core = PEU }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			PEU = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = GCO
+						owned_by = CLM
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = PEU
+			}
+			change_tag = PEU
+			capital = 2295
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_ARG = {
+		potential = {
+			NOT = { exists = ARG }
+			NOT = { tag = URU }
+			NOT = { tag = CHL }
+			capital_scope = { is_core = ARG }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			ARG = {
+				all_core = {
+					OR = {
+						empty = yes
+						owned_by = THIS
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = PRG
+						owned_by = CHL
+						owned_by = URU
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = ARG
+			}
+			change_tag = ARG
+			capital = 2348
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_PRG = {
+		potential = {
+			NOT = { exists = PRG }
+			NOT = { tag = ARG }
+			NOT = { tag = URU }
+			NOT = { tag = BOL }
+			NOT = { tag = CHL }
+			capital_scope = { is_core = PRG }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			PRG = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = ARG
+						owned_by = CHL
+						owned_by = URU
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = PRG
+			}
+			change_tag = PRG
+			capital = 2339
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_URU = {
+		potential = {
+			NOT = { exists = URU }
+			NOT = { tag = ARG }
+			NOT = { tag = PRG }
+			NOT = { tag = BOL }
+			NOT = { tag = CHL }
+			capital_scope = { is_core = URU }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			URU = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = PRG
+						owned_by = CHL
+						owned_by = ARG
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = URU
+			}
+			change_tag = URU
+			capital = 2344
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_CHL = {
+		potential = {
+			NOT = { exists = CHL }
+			NOT = { tag = ARG }
+			NOT = { tag = PEU }
+			NOT = { tag = BOL }
+			capital_scope = { is_core = CHL }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			CHL_2322 = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = PRG
+						owned_by = BOL
+						owned_by = ARG
+					}
+			}
+			CHL_2327 = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = PRG
+						owned_by = BOL
+						owned_by = ARG
+					}
+			}
+			CHL_2332 = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = PRG
+						owned_by = BOL
+						owned_by = ARG
+					}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = CHL
+			}
+			change_tag = CHL
+			capital = 2324
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_BOL = {
+		potential = {
+			NOT = { exists = BOL }
+			NOT = { tag = ARG }
+			NOT = { tag = BRZ }
+			NOT = { tag = BOL }
+			NOT = { tag = CHL }
+			OR = {
+				NOT = { tag = PBC }
+				AND = {
+					tag = PBC
+					NOT = { is_possible_vassal = PEU }
+				}
+			}
+			capital_scope = { is_core = BOL }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			BOL = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = CHL
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = BOL
+			}
+			change_tag = BOL
+			capital = 2313
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_CLM = {
+		potential = {
+			NOT = { exists = CLM }
+			NOT = { tag = VNZ }
+			OR = {
+				NOT = { tag = GCO }
+				AND = {
+					tag = GCO
+					NOT = { is_possible_vassal = ECU }
+					NOT = { is_possible_vassal = VNZ }
+				}
+			}
+			NOT = { tag = ECU }
+			capital_scope = { is_core = CLM }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			CLM = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = GCO
+						owned_by = VNZ
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = CLM
+			}
+			change_tag = CLM
+			capital = 2247
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_VNZ = {
+		potential = {
+			NOT = { exists = VNZ }
+			OR = {
+				NOT = { tag = GCO }
+				AND = {
+					tag = GCO
+					NOT = { is_possible_vassal = ECU }
+					NOT = { is_possible_vassal = CLM }
+				}
+			}
+			NOT = { tag = CLM }
+			NOT = { tag = ECU }
+			NOT = { tag = BRZ }
+			capital_scope = { is_core = VNZ }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			VNZ = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+						owner = {
+							in_sphere = THIS
+						}
+						owned_by = GCO
+						owned_by = CLM
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = VNZ
+			}
+			change_tag = VNZ
+			capital = 2264
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_AST = {
+		potential = {
+			NOT = { exists = AST }
+			capital_scope = { is_core = AST }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_2 }
+			NOT = { tag = FIJ }
+		}	
+		allow = {
+			war = no
+			AST = {
+				all_core = {
+					OR = {
+						owned_by = THIS
+						empty = yes
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = AST
+			}
+			change_tag = AST
+			set_country_flag = postcol_2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	postcol_NZL = {
+		potential = {
+			NOT = { exists = NZL }
+			capital_scope = { is_core = NZL }
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			NZL = {
+				all_core = {
+					owned_by = THIS
+						empty = yes
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = NZL
+			}
+			change_tag = NZL
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	postcol_GUY = {
+		potential = {
+			NOT = {
+				exists = GUY
+				tag = GCO
+				tag = BRZ
+				tag = VNZ
+				tag = SUR
+				tag = CAY
+			}
+			capital_scope = {
+				OR = {
+					is_core = GUY
+					is_core = SUR
+					is_core = CAY
+				}
+			}
+			NOT = { has_country_flag = precolonial }
+			NOT = { has_country_flag = postcol_1 }
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			GUY = {
+				all_core = {
+					owned_by = THIS
+						empty = yes
+					owner = {
+						in_sphere = THIS
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_owned = {
+				add_core = GUY
+			}
+			change_tag = GUY
+			capital = 2239
+			set_country_flag = postcol_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	the_central_asia = {
+		potential = {
+			NOT = { has_global_flag = the_central_asia }
+			has_global_flag = der_postcolonialism
+			NOT = { exists = TKS }
+			NOT = {
+				primary_culture = kazak
+				primary_culture = uzbek
+				primary_culture = kirgiz
+				primary_culture = tajik
+				primary_culture = turkmen
+			}
+			TKS = { any_core = { owned_by = THIS } }
+		}
+		allow = {
+			nationalism_n_imperialism = 1
+			is_greater_power = yes
+		}
+		effect = {
+			set_global_flag = the_central_asia
+			TKS = {
+				any_core = {
+					remove_core = KAZ
+					remove_core = KOK
+					remove_core = KHI
+					remove_core = BUK
+					remove_core = TAJ
+				}
+			}
+			#Kazakhstan
+			RUS_1184 = { add_core = KAZ } #Akmolinsk
+			RUS_1185 = { add_core = KAZ } #Semireche
+			RUS_1182 = { add_core = KAZ } #Uralsk
+			KAZ = { primary_culture = kazak civilized = yes capital = 1181 government = presidential_dictatorship }
+			#Turkmenistan
+			RUS_1196 = {
+				add_core = KHI
+				any_pop = {
+					limit = { has_pop_culture = uzbek }
+					move_pop = 1195
+				}
+				any_pop = {
+					limit = { has_pop_culture = tajik }
+					move_pop = 1207
+				}
+				any_pop = {
+					limit = { has_pop_culture = kirgiz }
+					move_pop = 1189
+				}
+			}
+			KHI = { primary_culture = turkmen civilized = yes capital = 1204 government = presidential_dictatorship }
+			#Uzbekistan
+			RUS_1185 = {
+				add_core = BUK
+				any_pop = {
+					limit = { has_pop_culture = turkmen }
+					move_pop = 1204
+				}
+				any_pop = {
+					limit = { has_pop_culture = tajik }
+					move_pop = 1207
+				}
+				any_pop = {
+					limit = { has_pop_culture = kirgiz }
+					move_pop = 1189
+				}
+			}
+			1197 = { remove_core = BUK }
+			1197 = { add_core = KAZ }
+			BUK = { primary_culture = uzbek civilized = yes capital = 1195 government = presidential_dictatorship }
+			#Tajikistan
+			KHI_1191 = {
+				add_core = TAJ
+				any_pop = {
+					limit = { has_pop_culture = uzbek }
+					move_pop = 1195
+				}
+				any_pop = {
+					limit = { has_pop_culture = turkmen }
+					move_pop = 1204
+				}
+				any_pop = {
+					limit = { has_pop_culture = kirgiz }
+					move_pop = 1189
+				}
+			}
+			TAJ = { primary_culture = tajik civilized = yes capital = 1207 government = presidential_dictatorship }
+			#Kyrgyzstan
+			KOK_1190 = {
+				add_core = KOK
+				any_pop = {
+					limit = { has_pop_culture = uzbek }
+					move_pop = 1195
+				}
+				any_pop = {
+					limit = { has_pop_culture = tajik }
+					move_pop = 1207
+				}
+				any_pop = {
+					limit = { has_pop_culture = turkmen }
+					move_pop = 1204
+				}
+			}
+			KOK = { primary_culture = kirgiz civilized = yes capital = 1189 government = presidential_dictatorship }
+			1181 = { change_province_name = "Akmolinsk" }
+			1185 = { state_scope = { change_region_name = "Žetysu" } }
+			1207 = { change_province_name = "Dušanbe" }
+		}
+	}
+	postcol_CRB = {
+		potential = {
+			NOT = {
+				exists = CRB
+				tag = CUB
+				tag = HAI
+				tag = DOM
+			}
+			NOT = { has_country_flag = precolonial }
+			OR = {
+				capital = 2236
+				capital = 2224
+				capital = 2229
+				capital = 2219
+				capital = 2220
+				capital = 2234
+				capital = 2235
+				capital = 2232
+				capital = 2230
+				capital = 2233
+				capital = 2225
+				capital = 2228
+				capital = 2227
+				capital = 2231
+				capital = 2409
+				capital = 2217
+				capital = 2218
+				capital = 2222
+				capital = 2223
+				capital = 2237
+				capital = 2238
+				capital = 2226
+			}
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			2236 = { owned_by = THIS }
+			2230 = { owned_by = THIS }
+			2229 = { owned_by = THIS }
+			2219 = { owned_by = THIS }
+			2220 = { owned_by = THIS }
+			2232 = { owned_by = THIS }
+			2230 = { owned_by = THIS }
+			2233 = { owned_by = THIS }
+			2225 = { owned_by = THIS }
+			2228 = { owned_by = THIS }
+			2227 = { owned_by = THIS }
+			2231 = { owned_by = THIS }
+			2409 = { owned_by = THIS }
+			2217 = { owned_by = THIS }
+			2218 = { owned_by = THIS }
+			2222 = { owned_by = THIS }
+			2223 = { owned_by = THIS }
+			2237 = { owned_by = THIS }
+			2238 = { owned_by = THIS }
+			2226 = { owned_by = THIS }
+		}
+		
+		effect = {
+			prestige = 10
+			2236 = { add_core = CRB }
+			2230 = { add_core = CRB }
+			2229 = { add_core = CRB }
+			2219 = { add_core = CRB }
+			2220 = { add_core = CRB }
+			2234 = { add_core = CRB }
+			2235 = { add_core = CRB }
+			2232 = { add_core = CRB }
+			2230 = { add_core = CRB }
+			2233 = { add_core = CRB }
+			2225 = { add_core = CRB }
+			2226 = { add_core = CRB }
+			2228 = { add_core = CRB }
+			2227 = { add_core = CRB }
+			2231 = { add_core = CRB }
+			2409 = { add_core = CRB }
+			2217 = { add_core = CRB }
+			2218 = { add_core = CRB }
+			2222 = { add_core = CRB }
+			2223 = { add_core = CRB }
+			2237 = { add_core = CRB }
+			2238 = { add_core = CRB }
+			change_tag = CRB
+			set_country_flag = postcol_2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	vassal_CRB = {
+		potential = {
+			NOT = {
+				exists = CRB
+				tag = CUB
+				tag = HAI
+				tag = DOM
+				tag = ALI #Yeah...
+			}
+			NOT = { has_country_flag = precolonial }
+			NOT = {
+				capital = 2236
+				capital = 2224
+				capital = 2229
+				capital = 2219
+				capital = 2220
+				capital = 2234
+				capital = 2235
+				capital = 2232
+				capital = 2230
+				capital = 2233
+				capital = 2225
+				capital = 2228
+				capital = 2227
+				capital = 2231
+				capital = 2409
+				capital = 2217
+				capital = 2218
+				capital = 2222
+				capital = 2223
+				capital = 2237
+				capital = 2238
+				capital = 2226
+			}
+			OR = {
+				2236 = { owned_by = THIS }
+				2230 = { owned_by = THIS }
+				2229 = { owned_by = THIS }
+				2219 = { owned_by = THIS }
+				2220 = { owned_by = THIS }
+				2232 = { owned_by = THIS }
+				2230 = { owned_by = THIS }
+				2233 = { owned_by = THIS }
+				2234 = { owned_by = THIS }
+				2235 = { owned_by = THIS }
+				2225 = { owned_by = THIS }
+				2226 = { owned_by = THIS }
+				2228 = { owned_by = THIS }
+				2227 = { owned_by = THIS }
+				2231 = { owned_by = THIS }
+				2409 = { owned_by = THIS }
+				2217 = { owned_by = THIS }
+				2218 = { owned_by = THIS }
+				2222 = { owned_by = THIS }
+				2223 = { owned_by = THIS }
+				2237 = { owned_by = THIS }
+				2238 = { owned_by = THIS }
+			}
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+			2236 = { owned_by = THIS }
+			2230 = { owned_by = THIS }
+			2229 = { owned_by = THIS }
+			2219 = { owned_by = THIS }
+			2220 = { owned_by = THIS }
+			2232 = { owned_by = THIS }
+			2230 = { owned_by = THIS }
+			2233 = { owned_by = THIS }
+			2225 = { owned_by = THIS }
+			2226 = { owned_by = THIS }
+			2228 = { owned_by = THIS }
+			2227 = { owned_by = THIS }
+			2231 = { owned_by = THIS }
+			2409 = { owned_by = THIS }
+			2217 = { owned_by = THIS }
+			2218 = { owned_by = THIS }
+			2222 = { owned_by = THIS }
+			2223 = { owned_by = THIS }
+			2237 = { owned_by = THIS }
+			2238 = { owned_by = THIS }
+		}
+		
+		effect = {
+			prestige = 10
+			2236 = { add_core = CRB secede_province = CRB }
+			2230 = { add_core = CRB secede_province = CRB }
+			2229 = { add_core = CRB secede_province = CRB }
+			2219 = { add_core = CRB secede_province = CRB }
+			2220 = { add_core = CRB secede_province = CRB }
+			2234 = { add_core = CRB }
+			2235 = { add_core = CRB }
+			any_owned_province = {
+			limit = { province_id = 2234 }
+			secede_province = CRB
+			}
+			any_owned_province = {
+			limit = { province_id = 2235 }
+			secede_province = CRB
+			}
+			2232 = { add_core = CRB secede_province = CRB }
+			2230 = { add_core = CRB secede_province = CRB }
+			2233 = { add_core = CRB secede_province = CRB }
+			2225 = { add_core = CRB secede_province = CRB }
+			2226 = { add_core = CRB secede_province = CRB }
+			2228 = { add_core = CRB secede_province = CRB }
+			2227 = { add_core = CRB secede_province = CRB }
+			2231 = { add_core = CRB secede_province = CRB }
+			2409 = { add_core = CRB secede_province = CRB }
+			2217 = { add_core = CRB secede_province = CRB }
+			2218 = { add_core = CRB secede_province = CRB }
+			2222 = { add_core = CRB secede_province = CRB }
+			2223 = { add_core = CRB secede_province = CRB }
+			2237 = { add_core = CRB secede_province = CRB }
+			2238 = { add_core = CRB secede_province = CRB }
+			create_vassal = CRB
+			CRB = { set_country_flag = buro_independence }
+			CRB = { set_country_flag = postcol_2 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_peru_bolivia = {
+		image = form_gran_colombia
+		potential = {
+			has_global_flag = der_postcolonialism
+			OR = {
+				tag = PEU
+				tag = BOL
+			}
+			NOT = {
+				exists = PBC
+			}
+			NOT = { has_country_flag = postcol_2 }
+		}	
+		allow = {
+			war = no
+			is_greater_power = yes
+			PEU = {
+				all_core = {
+					owner = {
+						OR = {
+							tag = THIS
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+				}
+			}
+			BOL = {
+				all_core = {
+					owner = {
+						OR = {
+							tag = THIS
+							in_sphere = THIS
+							vassal_of = THIS
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					vassal_of = THIS
+				}
+				annex_to = THIS
+			}
+			
+			PEU = { all_core = { add_core = PBC } }
+			BOL = { all_core = { add_core = PBC } }
+			any_country = {
+				limit = {
+					in_sphere = THIS
+				}
+				
+				any_owned = {
+					limit = {
+						is_core = PBC
+					}
+					secede_province = THIS
+				}
+
+			}
+
+			change_tag = PBC
+			set_country_flag = postcol_2
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+}

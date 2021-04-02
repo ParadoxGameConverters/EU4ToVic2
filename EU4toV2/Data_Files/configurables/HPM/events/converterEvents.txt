@@ -1,0 +1,2797 @@
+country_event = { 
+	id = 250001 
+	title = EVTNAME250001
+	desc = EVTDESC250001
+	is_triggered_only = yes 
+
+	option = { 
+		name = EVTOPTA250001
+		FROM = { inherit = THIS }
+    }
+}
+
+country_event = { 
+	id = 250000
+	title = EVTNAME250001
+	desc = EVTDESC250001
+	is_triggered_only = yes 
+
+	option = { 
+		name = EVTOPTA250001
+		all_core = {
+			remove_core = THIS
+			add_core = HRE
+		}
+    }
+}
+
+country_event = { 
+	id = 250002
+	title = EVTNAME250002
+	desc = EVTDESC250002
+
+	trigger = { 
+		has_country_flag = emperor_hre 
+		has_global_flag = liberal_revolutions_should_now_fire 
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA250002
+		clr_country_flag = emperor_hre 
+		any_province = { remove_core = HRE }
+	}
+}
+
+country_event = {
+    id = 250003
+    title = EVTNAME250003
+    desc = EVTDESC250003
+
+    is_triggered_only = yes
+
+    option = {
+		name = EVTOPTA250003
+        FROM = { inherit = THIS }
+   
+        ai_chance = {
+            factor = 50
+            modifier = {
+                factor = 0
+                OR = {
+                    war = yes
+                    is_greater_power = yes
+                    is_secondary_power = yes
+                    involved_in_crisis = yes
+                    AND = {
+                        is_vassal = yes
+                        NOT = {
+                            is_our_vassal = FROM
+                        }
+                    }
+                    NOT = {
+                        relation = { who = FROM value = 25 }
+                    }
+                    AND = {
+                        part_of_sphere = yes
+                        NOT = {
+                            in_sphere = FROM
+                        }
+                    }
+                }
+            }
+            modifier = {
+                factor = 0.5
+				relation = { who = FROM value = 25 }
+				NOT = {
+					relation = { who = FROM value = 50 }
+				}
+            }
+            modifier = {
+                factor = 2
+                OR = {
+                    average_militancy = 4
+                    average_consciousness = 4
+                    relation = { who = FROM value = 75 }
+                    AND = {
+                        relation = { who = FROM value = 25 }
+                        neighbour = FROM
+                    }
+                }
+            }
+        }
+    }
+    option = {
+		name = EVTOPTB250003
+        THIS = { prestige = 25 }
+        FROM = { prestige = -25 }
+        any_owned = {
+            limit = {
+                is_core = HRE
+            }
+            remove_core = HRE
+        }
+           
+        ai_chance = {
+            factor = 50
+        }
+    }
+}
+
+country_event = { 
+	id = 250004 
+	title = EVTNAME250004
+	desc = EVTDESC250004
+	is_triggered_only = yes
+	
+	option = { 
+		name = EVTOPTA250004
+		release_vassal = XIN
+		release_vassal = XBI
+		release_vassal = TIB
+		release_vassal = MGL
+		release_vassal = MCK
+		release_vassal = KOR
+		release_vassal = YNN
+		release_vassal = GXI
+		release_vassal = DAI
+		ai_chance = {
+			factor = 100
+		}
+    }
+}
+
+country_event = {
+    id = 350001
+    title = EVTNAME350001
+    desc = EVTDESC350001
+
+    is_triggered_only = yes
+
+    option = {
+		name = EVTOPTA350001
+        FROM = { inherit = THIS }
+		any_owned = {
+			add_core = FROM
+			}
+   
+        ai_chance = {
+            factor = 50
+            modifier = {
+                factor = 0
+                OR = {
+                    war = yes
+                    is_greater_power = yes
+                    is_secondary_power = yes
+                    involved_in_crisis = yes
+                    AND = {
+                        is_vassal = yes
+                        NOT = {
+                            is_our_vassal = FROM
+                        }
+                    }
+                    NOT = {
+                        relation = { who = FROM value = 25 }
+                    }
+                    AND = {
+                        part_of_sphere = yes
+                        NOT = {
+                            in_sphere = FROM
+                        }
+                    }
+                }
+            }
+            modifier = {
+                factor = 0.5
+				relation = { who = FROM value = 25 }
+				NOT = {
+					relation = { who = FROM value = 50 }
+				}
+            }
+            modifier = {
+                factor = 2
+                OR = {
+                    average_militancy = 4
+                    average_consciousness = 4
+                    relation = { who = FROM value = 75 }
+                    AND = {
+                        relation = { who = FROM value = 25 }
+                        neighbour = FROM
+                    }
+                }
+            }
+        }
+    }
+    option = {
+		name = EVTOPTB350001
+        THIS = { prestige = 25 }
+        FROM = { prestige = -25 }
+		any_owned = {
+				add_core = FROM
+				}
+           
+        ai_chance = {
+            factor = 50
+        }
+    }
+}
+
+country_event = { 
+	id = 350002
+	title = EVTNAME350002
+	desc = EVTDESC350002
+
+	trigger = { 
+		has_country_flag = emperor_heaven
+		NOT = { is_year = 1880 }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA350002
+		clr_country_flag = emperor_heaven
+	}
+}
+
+country_event = { 
+	id = 350003 
+	title = EVTNAME350003
+	desc = EVTDESC350003
+
+	trigger = { 
+		tag = AOT
+		is_year = 1900
+		any_core = { empty = yes }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA350003
+		any_core = {
+			limit = { empty = yes }
+			secede_province = AOT
+			remove_core = NZL
+		}
+    }
+}
+
+country_event = { 
+	id = 350004
+	title = EVTNAME350004
+	desc = EVTDESC350004
+
+	trigger = { 
+		tag = ABO
+		is_year = 1900
+		any_core = { empty = yes }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA350004
+		any_core = {
+			limit = { empty = yes }
+			secede_province = ABO
+			remove_core = AST
+		}
+    }
+}
+country_event = {
+	id = 350005
+	title = EVTNAME350004B
+	desc = EVTDESC350004B
+	picture = "Riot"
+	
+	trigger = {
+		ai = no
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = EVTOPTA350004B
+		TUR_855 = { # Cyprus
+			limit = {
+				is_core = GRE
+				NOT = { owned_by = BYZ }
+			}
+			remove_core = GRE
+			add_core = CYP
+		}
+		EGY_843 = { # Crete
+			limit = {
+				is_core = GRE
+				NOT = { owned_by = BYZ }
+			}
+			add_core = CRE
+		}
+		EGY_897 = { # Aleppo
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+			add_core = SYR
+		}
+		EGY_903 = { # Damascus
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+			add_core = SYR
+		}
+		EGY_910 = { # Transjordan
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+		}
+		EGY_910 = { add_core = JOR }
+		EGY_915 = { # Lebanon
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+		}
+		EGY_915 = { add_core = LBN }
+		EGY_921 = { # Palestine
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+		}
+		EGY_921 = { add_core = PLS }
+	}
+}
+country_event = {
+	id = 350006
+	title = EVTNAME350005
+	desc = EVTDESC350005
+	picture = "Riot"
+	
+	trigger = {
+		tag = TUR
+		EGY = { exists = no }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = {
+		name = EVTOPTA350005
+		847 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+848 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+894 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+896 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+898 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_897 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_903 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_910 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_915 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_921 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+NEJ_1156 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_1755 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_1745 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_1771 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_1758 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_1762 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_1771 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_1827 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_1834 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+EGY_1838 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+ENG_1848 = { 
+			limit = {
+				owned_by = TUR
+			}
+			secede_province = EGY
+			remove_core = TUR
+		}
+		create_vassal = EGY
+	}
+}
+
+country_event = {
+	id = 451001
+	title = "EVTNAME451001"
+	desc = "EVTDESC451001"
+	major = yes
+	picture = "Riot"
+	
+	trigger = {
+		NOT = { civilization_progress = 0.5 }
+		civilized = no
+		is_cultural_union = no
+		NOT = { literacy = 0.5 }
+		NOT = { number_of_states = 5 } #Let's avoid big countries getting annexed
+		ai = no
+		has_global_flag = der_postcolonialism
+		OR = {
+			capital_scope = {
+				OR = {
+					continent = africa
+					continent = north_america
+					continent = south_america
+					continent = oceania
+				}
+			}
+			AND = {
+				capital_scope = { continent = asia }
+				capital_scope = { is_core = HND }
+			}
+			AND = {
+				capital_scope = { continent = asia }
+				OR = {
+					capital_scope = { is_core = IDO }
+					capital_scope = { is_core = MLY }
+					capital_scope = { is_core = PHL }
+				}
+				NOT = { tag = IDO }
+				NOT = { tag = MLY }
+				NOT = { tag = PHL }
+			}
+		}
+		sphere_owner = {
+			civilized = yes
+			neighbour = FROM
+			stronger_army_than = FROM
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+		modifier = {
+			factor = 0.75
+			year = 1850
+		}
+		modifier = {
+			factor = 0.75
+			year = 1875
+		}
+		modifier = {
+			factor = 0.75
+			year = 1900
+		}
+		modifier = {
+			factor = 0.5
+			year = 1914
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451001"
+		sphere_owner = { inherit = FROM }
+		sphere_owner = { badboy = 5 }
+	}
+}
+country_event = {
+	id = 451002
+	title = "EVTNAME451002"
+	desc = "EVTDESC451002"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = HES
+		HEK = { exists = no }
+		owns = 566
+		owns = 568
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451002"
+		566 = { add_core = HEK }
+		568 = { add_core = HEK }
+		release = HEK
+		create_vassal = HEK
+	}
+}
+country_event = {
+	id = 451003
+	title = "EVTNAME451003"
+	desc = "EVTDESC451003"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { tag = GER }
+		NOT = { tag = NGF }
+		NOT = { tag = SGF }
+		NOT = { tag = AUS }
+		NOT = { tag = KUK }
+		LIP = { exists = no }
+		owns = 585
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451003"
+		585 = { add_core = LIP }
+		#release = LIP
+		#create_vassal = LIP
+	}
+}
+country_event = {
+	id = 451004
+	title = "EVTNAME451004"
+	desc = "EVTDESC451004"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = SAX
+			tag = THU
+		}
+		COB = { exists = no }
+		MEI = { exists = no }
+		WEI = { exists = no }
+		owns = 562
+		owns = 563
+		owns = 561
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451004"
+		562 = { add_core = COB }
+		563 = { add_core = MEI }
+		561 = { add_core = WEI }
+		release = COB
+		create_vassal = COB
+		release = MEI
+		create_vassal = MEI
+		release = WEI
+		create_vassal = WEI
+	}
+}
+
+country_event = {
+	id = 451006
+	title = "EVTNAME451006"
+	desc = "EVTDESC451006"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		BHO = { exists = no }
+		IND = { exists = no }
+		JAI = { exists = no }
+		SHI = { exists = no }
+		has_global_flag = der_postcolonialism
+		NOT = { has_global_flag = india_angered }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451006"
+		1272 = { add_core = BHO }
+		1271 = { add_core = IND }
+		1268 = { add_core = JAI }
+		1235 = { add_core = SHI }
+		1272 = { any_pop = { militancy = 5 } }
+		1271 = { any_pop = { militancy = 5 } }
+		1268 = { any_pop = { militancy = 5 } }
+		1235 = { any_pop = { militancy = 5 } }
+		set_global_flag = india_angered
+	}
+}
+country_event = {
+	id = 451005
+	title = "EVTNAME451005"
+	desc = "EVTDESC451005"
+	major = yes
+	picture = "Riot"
+	
+	trigger = {
+		ZUL = { exists = no }
+		owns = 2111
+		owns = 2112
+		owns = 2113
+		has_global_flag = der_postcolonialism
+		NOT = { has_global_flag = zulu_angered }
+	}
+	
+	immediate = { set_global_flag = zulu_angered }
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451005"
+		2111 = { add_core = ZUL }
+		2112 = { add_core = ZUL }
+		2113 = { add_core = ZUL }
+		any_pop = {
+			limit = { has_pop_culture = zulu }
+			consciousness = 8
+			militancy = 8
+		}
+		set_global_flag = zulu_angered
+	}
+}
+
+country_event = {
+	id = 450008
+	title = EVTNAME450008
+	desc = EVTDESC450008
+	picture = "Orthodox"
+	
+	trigger = {
+		NOT = { has_country_flag = formed_in_transcaucasia }
+		NOT = { tag = RUS }
+		NOT = { tag = PER }
+		NOT = { tag = TUR }
+		NOT = {
+			tag = TCA
+			OR = { is_possible_vassal = ARM is_possible_vassal = AZB }
+		}
+		primary_culture = georgian
+		GEO = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+					owned_by = RUS
+					owned_by = PER
+					owned_by = TUR
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_country_flag = formed_in_transcaucasia
+		prestige = 5
+	}
+	option = {
+		name = EVTOPTA450008 #Georgia
+		change_tag = GEO
+		capital = 1090 #Tbilisi
+	}
+	
+}
+country_event = {
+	id = 450009
+	title = EVTNAME450009
+	desc = EVTDESC450009
+	picture = "darwin"
+	
+	trigger = {
+		NOT = { has_country_flag = atheocracy }
+		NOT = { tag = PAP }
+		OR = {
+		religious_policy = pro_atheism
+		religious_policy = secularized
+		}
+		AND = {
+			OR = {
+				tag = KNI
+				tag = TEU
+				tag = LIV
+			}
+			NOT = { government = theocracy }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_country_flag = atheocracy
+		government = absolute_monarchy
+		election = yes
+	}
+	option = {
+		name = EVTOPTA450009 #Knights to Malta
+		limit = {
+			tag = KNI
+			NOT = { exists = MLT }
+		}
+		change_tag = MLT
+		add_accepted_culture = maltese
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { tag = KNI }
+			}
+			modifier = {
+				factor = 0
+				exists = MLT
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB450009 #Teutonic to Prussia
+		limit = {
+			tag = TEU
+			NOT = { exists = PRU }
+		}
+		change_tag = PRU
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { tag = TEU }
+			}
+			modifier = {
+				factor = 0
+				exists = PRU
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC450009 #Livonian to Latvia
+		limit = {
+			tag = LIV
+			NOT = { exists = LAT }
+		}
+		change_tag = LAT
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { tag = LIV }
+			}
+			modifier = {
+				factor = 0
+				exists = LAT
+			}
+		}
+	}
+	option = {
+		name = EVTOPTD450009 #Fallback
+		limit = {
+			OR = {
+				NOT = {
+					tag = KNI
+					tag = TEU
+					tag = LIV
+				}
+				AND = {
+					tag = KNI
+					exists = MLT
+				}
+				AND = {
+					tag = TEU
+					exists = PRU
+				}
+				AND = {
+					tag = LIV
+					exists = LAT
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}	
+	
+}
+country_event = {
+	id = 450010
+	title = EVTNAME450008
+	desc = EVTDESC450008
+	picture = "Orthodox"
+	
+	trigger = {
+		NOT = { has_country_flag = formed_in_transcaucasia }
+		NOT = {
+			tag = TCA
+			OR = { is_possible_vassal = AZB is_possible_vassal = GEO }
+		}
+		NOT = { tag = RUS }
+		NOT = { tag = PER }
+		NOT = { tag = TUR }
+		primary_culture = armenian
+		ARM = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+					owned_by = RUS
+					owned_by = PER
+					owned_by = TUR
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_country_flag = formed_in_transcaucasia
+		prestige = 5
+	}
+	option = {
+		name = EVTOPTB450008 #Armenia
+		change_tag = ARM
+		capital = 1098 #Erivan
+	}
+	
+}
+country_event = {
+	id = 450011
+	title = EVTNAME450008
+	desc = EVTDESC450008
+	picture = "Orthodox"
+	
+	trigger = {
+		NOT = { has_country_flag = formed_in_transcaucasia }
+		NOT = {
+			tag = TCA
+			OR = { is_possible_vassal = ARM is_possible_vassal = GEO }
+		}
+		NOT = { tag = RUS }
+		NOT = { tag = PER }
+		NOT = { tag = TUR }
+		primary_culture = azerbaijani
+		AZB = {
+			all_core = {
+				OR = {
+					owned_by = THIS
+					owner = {
+						in_sphere = THIS
+					}
+					owned_by = RUS
+					owned_by = PER
+					owned_by = TUR
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_country_flag = formed_in_transcaucasia
+		prestige = 5
+	}
+	option = {
+		name = EVTOPTC450008 #Azerbaijan
+		change_tag = AZB
+		capital = 1102 #Baku
+	}
+	
+}
+country_event = {
+	id = 451001
+	title = "EVTNAME451001"
+	desc = "EVTDESC451001"
+	major = yes
+	picture = "Riot"
+	
+	trigger = {
+		NOT = { civilization_progress = 0.5 }
+		civilized = no
+		is_cultural_union = no
+		NOT = { literacy = 0.5 }
+		NOT = { number_of_states = 5 } #Let's avoid big countries getting annexed
+		ai = no
+		has_global_flag = der_postcolonialism
+		OR = {
+			capital_scope = {
+				OR = {
+					continent = africa
+					continent = north_america
+					continent = south_america
+					continent = oceania
+				}
+			}
+			AND = {
+				capital_scope = { continent = asia }
+				capital_scope = { is_core = HND }
+			}
+			AND = {
+				capital_scope = { continent = asia }
+				OR = {
+					capital_scope = { is_core = IDO }
+					capital_scope = { is_core = MLY }
+					capital_scope = { is_core = PHL }
+				}
+				NOT = { tag = IDO }
+				NOT = { tag = MLY }
+				NOT = { tag = PHL }
+			}
+		}
+		sphere_owner = {
+			civilized = yes
+			neighbour = FROM
+			stronger_army_than = FROM
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+		modifier = {
+			factor = 0.75
+			year = 1850
+		}
+		modifier = {
+			factor = 0.75
+			year = 1875
+		}
+		modifier = {
+			factor = 0.75
+			year = 1900
+		}
+		modifier = {
+			factor = 0.5
+			year = 1914
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451001"
+		sphere_owner = { inherit = FROM }
+		sphere_owner = { badboy = 5 }
+	}
+}
+country_event = {
+	id = 451002
+	title = "EVTNAME451002"
+	desc = "EVTDESC451002"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		tag = HES
+		HEK = { exists = no }
+		owns = 566
+		owns = 568
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451002"
+		566 = { add_core = HEK }
+		568 = { add_core = HEK }
+		release = HEK
+		create_vassal = HEK
+	}
+}
+country_event = {
+	id = 451003
+	title = "EVTNAME451003"
+	desc = "EVTDESC451003"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { tag = GER }
+		NOT = { tag = NGF }
+		NOT = { tag = SGF }
+		NOT = { tag = AUS }
+		NOT = { tag = KUK }
+		NOT = { tag = HLR }
+		LIP = { exists = no }
+		owns = 585
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451003"
+		585 = { add_core = LIP }
+		#release = LIP
+		#create_vassal = LIP
+	}
+}
+country_event = {
+	id = 451004
+	title = "EVTNAME451004"
+	desc = "EVTDESC451004"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = SAX
+			tag = THU
+		}
+		COB = { exists = no }
+		MEI = { exists = no }
+		WEI = { exists = no }
+		owns = 562
+		owns = 563
+		owns = 561
+		has_global_flag = der_postcolonialism
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA451004"
+		562 = { add_core = COB }
+		563 = { add_core = MEI }
+		561 = { add_core = WEI }
+		release = COB
+		create_vassal = COB
+		release = MEI
+		create_vassal = MEI
+		release = WEI
+		create_vassal = WEI
+	}
+}
+ country_event = {
+	id = 451006
+	title = "EVTNAME451006"
+	desc = "EVTDESC451006"
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		BHO = { exists = no }
+		IND = { exists = no }
+		JAI = { exists = no }
+		SHI = { exists = no }
+		has_global_flag = der_postcolonialism
+		NOT = { has_global_flag = bharat_city }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	immediate = { set_global_flag = bharat_city }
+	
+	option = {
+		name = "EVTOPTA451006"
+		1272 = { add_core = BHO }
+		1271 = { add_core = IND }
+		1268 = { add_core = JAI }
+		1235 = { add_core = SHI }
+		1272 = { any_pop = { militancy = 5 } }
+		1271 = { any_pop = { militancy = 5 } }
+		1268 = { any_pop = { militancy = 5 } }
+		1235 = { any_pop = { militancy = 5 } }
+	}
+}
+country_event = {
+	id = 451005
+	title = "EVTNAME451005"
+	desc = "EVTDESC451005"
+	major = yes
+	picture = "Riot"
+	fire_only_once = yes
+	
+	trigger = {
+		ZUL = { exists = no }
+		owns = 2111
+		owns = 2112
+		owns = 2113
+		has_global_flag = der_postcolonialism
+		NOT = { has_global_flag = zulu_angered }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			year = 1830
+		}
+		modifier = {
+			factor = 0.5
+			year = 1850
+		}
+	}
+	
+	immediate = { set_global_flag = zulu_angered }
+	
+	option = {
+		name = "EVTOPTA451005"
+		2111 = { add_core = ZUL }
+		2112 = { add_core = ZUL }
+		2113 = { add_core = ZUL }
+		any_pop = {
+			limit = { has_pop_culture = zulu }
+			consciousness = 8
+			militancy = 8
+		}
+	}
+}
+
+## Indonesian colony spread
+province_event = {
+	id = 97130
+	title = "$STATENAME$ Colonial Incorporation"
+	desc = "With the arrival of the $COUNTRY_ADJ$ colonial governor into $PROVINCENAME$, an effort has begun to incorporate $COUNTRY_ADJ$ $STATENAME$ into the larger Indonesian colonial administration."
+	
+	trigger = {
+		OR = {
+			region = BAL_1438 #Sunda
+			region = NET_1398 #Sumatra
+			region = ATJ_1405 #Atjeh
+			region = NET_1423 #South Borneo
+			region = BRU_1394 #North Borneo
+			region = NET_1447 #Moluccas
+			region = NET_1451 #Western New Guinea
+			region = AST_2528 #Southern New Guina
+			region = GER_2530 #Northern New Guinea
+		}
+		owned_by = THIS
+		controlled_by = THIS
+		any_neighbor_province = {
+			is_core = INO
+		}
+		owner = {
+			civilized = yes
+			NOT = { is_culture_group = southeast_asian }
+		}
+		OR = {
+			AND = {
+				owner = { owns = 1413 }
+				INO = { exists = no }
+			}
+			INO = {
+				vassal_of = THIS
+				is_culture_group = THIS
+			}
+		}
+		NOT = {
+			is_core = INO
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = "An excellent development!"
+		state_scope = {
+			any_owned = {
+				limit = {
+					NOT = { is_core = INO }
+				}
+				add_core = INO
+				any_pop = { militancy = -3 }
+				add_province_modifier = {
+					name = colonial_exploitation
+					duration = 1095
+				}
+			}
+		}
+		INO = { add_accepted_culture = malay }
+		state_scope = {
+			any_owned = {
+				limit = { is_core = INO }
+			}
+		}
+	}
+}
+country_event = { 
+	id = 550000
+	title = EVTNAMEBYZ
+	desc = EVTDESCBYZ
+
+	trigger = { 
+		tag = BYZ
+		number_of_states = 3
+		NOT = { has_global_flag = greek_BYZ }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTABYZ
+		set_global_flag = greek_BYZ
+		GRE = {
+			all_core = {
+				add_core = BYZ
+			}
+		}
+		GRE = {
+			all_core = {
+				remove_core = GRE
+			}
+		}
+		GRE = {
+			any_owned = {
+				limit = { is_primary_culture = yes } #workaround to get Greek provinces
+				add_core = GRE
+			}
+		}
+	}
+}
+country_event = { 
+	id = 550001
+	title = EVTNAMEGRE
+	desc = EVTDESCGRE
+
+	trigger = { 
+		NOT = { exists = BYZ }
+		ai = no #So the player will cry at 1453
+		has_global_flag = greek_BYZ
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTAGRE
+		clr_global_flag = greek_BYZ
+		BYZ = {
+			all_core = {
+				limit = { is_primary_culture = yes } #workaround to get Greek provinces
+				add_core = GRE
+			}
+		}
+		BYZ = {
+			all_core = { remove_core = BYZ }
+		}
+	}
+}
+country_event = { 
+	id = 550002
+	title = EVTNAMEITP
+	desc = EVTDESCITP
+
+	trigger = { 
+		tag = ITA
+		government = theocracy
+		NOT = { has_country_flag = ITA_to_ITP }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTAITP
+		set_country_flag = ITA_to_ITP
+		clr_country_flag = ITP_to_ITA
+		all_core = {
+			add_core = ITP
+			remove_core = ITA
+		}
+		change_tag = ITP
+	}
+}
+
+country_event = { 
+	id = 550003
+	title = EVTNAMEITA
+	desc = EVTDESCITA
+
+	trigger = { 
+		tag = ITP
+		NOT = { government = theocracy }
+		NOT = { has_country_flag = ITP_to_ITA }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTAITP
+		set_country_flag = ITP_to_ITA
+		clr_country_flag = ITA_to_ITP
+		all_core = {
+			add_core = ITA
+			remove_core = ITP
+		}
+		change_tag = ITA
+	}
+}
+country_event = { 
+	id = 550004
+	title = EVTNAME550004
+	desc = EVTDESC550xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TNT }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1469
+				state_id = 1075
+				state_id = 1079
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = tannu_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TNT }
+		change_tag = TNT
+		set_global_flag = tannu_clique
+	}
+}
+country_event = { 
+	id = 550005
+	title = EVTNAME550005
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TAM }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1082
+				state_id = 1086
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = transamur_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TAM }
+		change_tag = TAM
+		set_global_flag = transamur_clique
+	}
+}
+country_event = { 
+	id = 550006
+	title = EVTNAME550006
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = MCK }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1553
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = manchukuo_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = MCK }
+		change_tag = MCK
+		set_global_flag = manchukuo_clique
+	}
+}
+country_event = { 
+	id = 550007
+	title = EVTNAME550007
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = MGL }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 2608
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = mongol_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = MGL }
+		change_tag = MGL
+		set_global_flag = mongol_clique
+		add_accepted_culture = mongol
+	}
+}
+country_event = { 
+	id = 550008
+	title = EVTNAME550008
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = IMG }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1532
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = innmongolia_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = IMG }
+		change_tag = IMG
+		set_global_flag = innmongolia_clique
+	}
+}
+country_event = { 
+	id = 550009
+	title = EVTNAME550009
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = PYO }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1619
+				state_id = 1627
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = pyongyang_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = PYO }
+		change_tag = PYO
+		set_global_flag = pyongyang_clique
+		add_accepted_culture = korean
+	}
+}
+country_event = { 
+	id = 550010
+	title = EVTNAME550010
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = GMJ }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1618
+				state_id = 1614
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = mengjiang_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = GMJ }
+		change_tag = GMJ
+		set_global_flag = mengjiang_clique
+	}
+}
+country_event = { 
+	id = 550011
+	title = EVTNAME550011
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = SHD }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1563
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = shandong_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = SHD }
+		change_tag = SHD
+		set_global_flag = shandong_clique
+	}
+}
+country_event = { 
+	id = 550012
+	title = EVTNAME550012
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TPG }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1476
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = taiping_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TPG }
+		change_tag = TPG
+		set_global_flag = taiping_clique
+	}
+}
+country_event = { 
+	id = 550013
+	title = EVTNAME550013
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = SHG }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1539
+				state_id = 1611
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = shanghai_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = SHG }
+		change_tag = SHG
+		set_global_flag = shanghai_clique
+	}
+}
+country_event = { 
+	id = 550014
+	title = EVTNAME550014
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = HUI }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1472
+				state_id = 1473
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = anhui_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = HUI }
+		change_tag = HUI
+		set_global_flag = anhui_clique
+	}
+}
+country_event = { 
+	id = 550015
+	title = EVTNAME550015
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = SXI }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1576
+				state_id = 1529
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = shanxi_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = SXI }
+		change_tag = SXI
+		set_global_flag = shanxi_clique
+	}
+}
+country_event = { 
+	id = 550016
+	title = EVTNAME550016
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = HNN }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1529
+				state_id = 1516
+				state_id = 1523
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = hunan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = HNN }
+		change_tag = HNN
+		set_global_flag = hunan_clique
+	}
+}
+country_event = { 
+	id = 550017
+	title = EVTNAME550017
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = FJN }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1487
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = fujian_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = FJN }
+		change_tag = FJN
+		set_global_flag = fujian_clique
+	}
+}
+country_event = { 
+	id = 550018
+	title = EVTNAME550018
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TAI }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 2562
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = taiwan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TAI }
+		change_tag = TAI
+		set_global_flag = taiwan_clique
+	}
+}
+country_event = { 
+	id = 550019
+	title = EVTNAME550019
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = GXI }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1504
+				state_id = 1550
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = guangxi_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = GXI }
+		change_tag = GXI
+		set_global_flag = guangxi_clique
+	}
+}
+country_event = { 
+	id = 550020
+	title = EVTNAME550020
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = GNG }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1499
+				state_id = 1494
+				state_id = 1496
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = guangdong_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = GNG }
+		change_tag = GNG
+		set_global_flag = guangdong_clique
+	}
+}
+country_event = { 
+	id = 550021
+	title = EVTNAME550021
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = YNN }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1601
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = yunnan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = YNN }
+		change_tag = YNN
+		set_global_flag = yunnan_clique
+	}
+}
+country_event = { 
+	id = 550022
+	title = EVTNAME550022
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = SZC }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1578
+				state_id = 1581
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = sichuan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = SZC }
+		change_tag = SZC
+		set_global_flag = sichuan_clique
+	}
+}
+country_event = { 
+	id = 550023
+	title = EVTNAME550023
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = XSM }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1557
+				state_id = 1490
+				state_id = 2062
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = xibei_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = XSM }
+		change_tag = XSM
+		set_global_flag = xibei_clique
+	}
+}
+country_event = { 
+	id = 550024
+	title = EVTNAME550024
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = XIN }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1600
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = xinjiang_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = XIN }
+		change_tag = XIN
+		set_global_flag = xinjiang_clique
+		add_accepted_culture = uighur
+	}
+}
+country_event = { 
+	id = 550025
+	title = EVTNAME550025
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TIB }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1591
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = tibet_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TIB }
+		change_tag = TIB
+		set_global_flag = tibet_clique
+		add_accepted_culture = tibetan
+	}
+}
+country_event = { 
+	id = 550026
+	title = EVTNAME550026
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = KYR }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1185
+				state_id = 1190
+				state_id = 1207
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = kyrgyz_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = KYR }
+		change_tag = KYR
+		set_global_flag = kyrgyz_clique
+		add_accepted_culture = kirgiz
+	}
+}
+country_event = { 
+	id = 550027
+	title = EVTNAME550027
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = BHU }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			state_id = 1327
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = bhutan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = BHU }
+		change_tag = BHU
+		set_global_flag = bhutan_clique
+		add_accepted_culture = tibetan
+	}
+}
+province_event = { 
+	id = 550028
+	title = EVTNAME550028
+	desc = EVTDESC550028
+
+	trigger = { 
+		exists = ALL
+		controlled_by = ALL
+		any_pop = {
+			strata = middle
+			OR = { #Islamic
+				pop_majority_religion = sunni
+				pop_majority_religion = zikri
+				pop_majority_religion = sunni_heresy
+				pop_majority_religion = shiite
+				pop_majority_religion = hurufi
+				pop_majority_religion = druze
+				pop_majority_religion = shiite_heresy
+				pop_majority_religion = ibadi
+				pop_majority_religion = kharijite
+			}
+		}
+		NOT = { is_core = ALL }
+	}
+
+	mean_time_to_happen = { months = 0.0001 }
+
+	option = { 
+		name = EVTOPTA550028
+		add_core = ALL
+	}
+}
+country_event = { 
+	id = 550029
+	title = EVTNAME550029
+	desc = EVTDESC550029
+
+	trigger = { 
+		tag = SSU
+		SUD = { exists = no }
+		1827 = { owned_by = SSU } #Khartoum
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550029
+		change_tag = SUD
+		prestige = 10
+		capital = 1827
+	}
+}
+country_event = { 
+	id = 550030
+	title = EVTNAME550030
+	desc = EVTDESC5500030
+
+	trigger = { 
+		NOT = { tag = GUY }
+		SUR = { exists = no }
+		OR = {
+			capital = 2240
+			capital = 2245
+		}
+		is_independant = yes
+		NOT = { has_country_flag = precolonial }
+		NOT = { has_global_flag = suriname_exists }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550030
+		change_tag = SUR
+		prestige = 1
+		set_global_flag = suriname_exists
+		set_country_flag = buro_independence
+	}
+}
+country_event = { 
+	id = 550031
+	title = EVTNAME550031
+	desc = EVTDESC550031
+
+	trigger = { 
+		NOT = { tag = GUY }
+		CAY = { exists = no }
+		OR = {
+			capital = 2241
+			capital = 2246
+		}
+		is_independant = yes
+		NOT = { has_country_flag = precolonial }
+		NOT = { has_global_flag = cayenne_exists }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550031
+		change_tag = CAY
+		prestige = 1
+		set_global_flag = cayenne_exists
+		set_country_flag = buro_independence
+	}
+}
+country_event = { 
+	id = 550032
+	title = EVTNAME550032
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TAJ }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1207
+				state_id = 1217
+				state_id = 1224
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = tajik_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TAJ }
+		change_tag = TAJ
+		set_global_flag = tajik_clique
+		add_accepted_culture = tajik
+	}
+}
+country_event = { 
+	id = 550033
+	title = EVTNAME550033
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = PNJ }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1227
+				state_id = 1236
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = punjab_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = PNJ }
+		change_tag = PNJ
+		set_global_flag = punjab_clique
+		add_accepted_culture = punjabi
+	}
+}
+country_event = { 
+	id = 550034
+	title = EVTNAME550034
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = ASM }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1258
+				state_id = 1252
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = assam_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = ASM }
+		change_tag = ASM
+		set_global_flag = assam_clique
+		add_accepted_culture = assamese
+	}
+}
+country_event = { 
+	id = 550035
+	title = EVTNAME550035
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = SHA }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1339
+				state_id = 1334
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = shan_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = SHA }
+		change_tag = SHA
+		set_global_flag = shan_clique
+		add_accepted_culture = shan
+	}
+}
+country_event = { 
+	id = 550036
+	title = EVTNAME550036
+	desc = EVTDESC5500xxx
+
+	trigger = { 
+		NOT = { tag = CHI }
+		NOT = { tag = MNG }
+		NOT = { tag = YUA }
+		NOT = { exists = TOK }
+		NOT = { number_of_states = 6 }
+		capital_scope = {
+			OR = {
+				state_id = 1371
+				state_id = 1374
+			}
+		}
+		OR = {
+			primary_culture = manchu
+			primary_culture = nanfaren
+			primary_culture = beifaren
+			primary_culture = min
+			primary_culture = hakka
+			primary_culture = zhuang
+			primary_culture = miao
+			primary_culture = yi
+			primary_culture = uighur
+		}
+		NOT = { has_global_flag = tonkin_clique }
+	}
+
+	mean_time_to_happen = { months = 1 }
+
+	option = { 
+		name = EVTOPTA550xxx
+		prestige = 10
+		any_owned = { add_core = TOK }
+		change_tag = TOK
+		set_global_flag = tonkin_clique
+		add_accepted_culture = vietnamese
+	}
+}

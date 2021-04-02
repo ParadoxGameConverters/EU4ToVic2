@@ -732,6 +732,9 @@ void V2::World::importPotentialCountry(const std::string& line, bool dynamicCoun
 	
 	if (!potentialCountries.contains(tag))
 	{
+		if (theConfiguration.isHpmEnabled() && (tag == "PAN" || tag == "PHI"))
+			return;
+		
 		auto newCountry = std::make_shared<Country>(line, dynamicCountry, partyNameMapper, partyTypeMapper);
 		potentialCountries.insert(std::make_pair(tag, newCountry));
 		if (dynamicCountry && !dynamicCountries.contains(tag))
@@ -1582,6 +1585,8 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	if (theConfiguration.isHpmEnabled())
 	{
 		copyHpmFiles();
+		outputGTFO(countries);
+		outputReturnCores(countries);
 	}
 
 	// verify countries got written
@@ -1921,6 +1926,8 @@ void V2::World::copyHpmFiles() const
 	}
 
 	fs::copy_file(hpm + "/common/issues.txt", out + "/common/issues.txt");
+	fs::copy_file(hpm + "/common/goods.txt", out + "/common/goods.txt");
+	fs::copy_file(hpm + "/common/event_modifiers.txt", out + "/common/event_modifiers.txt");
 
 	// gfx/interface
 	commonItems::CopyFolder(hpm + "/gfx/interface/leaders", out + "/gfx/interface/leaders");
@@ -1932,6 +1939,9 @@ void V2::World::copyHpmFiles() const
 		fs::copy_file(hpm + "/gfx/interface/" + file, out + "/gfx/interface/" + file);
 	}
 	
+	// gfx/anims
+	commonItems::CopyFolder(hpm + "/gfx/anims", out + "/gfx/anims");
+
 	// interface
 	const auto& interfaceFiles = commonItems::GetAllFilesInFolder(hpm + "/interface");
 	for (const auto& file: interfaceFiles)
@@ -1953,6 +1963,28 @@ void V2::World::copyHpmFiles() const
 	// rebels
 	fs::remove(out + "/common/rebel_types.txt");
 	fs::copy_file(hpm + "/common/rebel_types.txt", out + "/common/rebel_types.txt");
+
+	// events & decisions
+	for (const auto& file : commonItems::GetAllFilesInFolder(hpm + "/events"))
+	{
+		fs::remove(out + "/events/" + file);
+		fs::copy_file(hpm + "/events/" + file, out + "/events/" + file);
+	}
+	for (const auto& file : commonItems::GetAllFilesInFolder("configurables/HPM/events"))
+	{
+		fs::remove(out + "/events/" + file);
+		fs::copy_file("configurables/HPM/events/" + file, out + "/events/" + file);
+	}
+	for (const auto& file : commonItems::GetAllFilesInFolder(hpm + "/decisions"))
+	{
+		fs::remove(out + "/decisions/" + file);
+		fs::copy_file(hpm + "/decisions/" + file, out + "/decisions/" + file);
+	}
+	for (const auto& file : commonItems::GetAllFilesInFolder("configurables/HPM/decisions"))
+	{
+		fs::remove(out + "/decisions/" + file);
+		fs::copy_file("configurables/HPM/decisions/" + file, out + "/decisions/" + file);
+	}
 }
 
 void V2::World::updateCountryDetails()
