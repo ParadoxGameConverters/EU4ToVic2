@@ -16,6 +16,7 @@ namespace mappers
 		
 	private:
 		std::string name;
+		std::string hpm;
 		std::string group;
 		double score = -1;
 	};

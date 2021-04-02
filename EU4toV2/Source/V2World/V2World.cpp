@@ -1942,6 +1942,17 @@ void V2::World::copyHpmFiles() const
 	}
 
 	commonItems::CopyFolder(hpm + "/localisation", out + "/localisation");
+
+	// technologies & inventions
+	commonItems::DeleteFolder(out + "/technologies");
+	commonItems::CopyFolder("configurables/HPM/technologies", out + "/technologies");
+	fs::copy_file(hpm + "/common/technology.txt", out + "/common/technology.txt");
+	commonItems::CopyFolder(hpm + "/inventions", out + "/inventions");
+	commonItems::CopyFolder(hpm + "/gfx/pictures/tech", out + "/gfx/pictures/tech");
+
+	// rebels
+	fs::remove(out + "/common/rebel_types.txt");
+	fs::copy_file(hpm + "/common/rebel_types.txt", out + "/common/rebel_types.txt");
 }
 
 void V2::World::updateCountryDetails()
