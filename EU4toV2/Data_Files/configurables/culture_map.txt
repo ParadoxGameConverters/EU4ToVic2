@@ -89,10 +89,10 @@ link = { vic2 = celtic_australian eu4 = irish eu4 = gallawa eu4 = gaul eu4 = wel
 link = { vic2 = celtic_african eu4 = irish eu4 = gallawa eu4 = gaul eu4 = welsh eu4 = welsh_celtic eu4 = cornish eu4 = gaelic_scottish eu4 = pictish eu4 = belgian eu4 = belgae eu4 = gaulish eu4 = gallic eu4 = celtiberian eu4 = scordiscian eu4 = celtic_pannonian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = welsh eu4 = welsh eu4 = welsh_celtic eu4 = cornish eu4 = east_welsh }
 link = { vic2 = irish eu4 = irish eu4 = gallawa eu4 = hiberno_norman }
-link = { vic2 = belgian eu4 = belgian eu4 = belgae }
-link = { vic2 = gaulish eu4 = gaulish eu4 = gallic }
-link = { vic2 = celtiberian eu4 = celtiberian }
-link = { vic2 = noric eu4 = scordiscian eu4 = celtic_pannonian }
+link = { vic2 = belgian eu4 = belgian eu4 = belgae eu4 = scaldic eu4 = treverian }
+link = { vic2 = gaulish eu4 = gaulish eu4 = gallic eu4 = auscian eu4 = armorican eu4 = lugdunian eu4 = lutetian eu4 = neustrian eu4 = arelatian eu4 = helvetian eu4 = lepontic }
+link = { vic2 = celtiberian eu4 = celtiberian eu4 = baetican eu4 = emporionian eu4 = manzanarian eu4 = cantabric eu4 = tagonian }
+link = { vic2 = noric eu4 = scordiscian eu4 = celtic_pannonian eu4 = noric eu4 = vindelician eu4 = multavian }
 
 # Latin - maltese, lombard, umbrian, sicilian, ligurian, piedmontese, romagnan, sardinian, tuscan, venetian
 #Split of the Roman Empire
@@ -261,7 +261,7 @@ link = { vic2 = bosniak eu4 = bosnian eu4 = bosniak }
 link = { vic2 = croat eu4 = croatian }
 link = { vic2 = serb eu4 = serbian eu4 = montenegrin eu4 = balkan_colonial }
 link = { vic2 = bulgarian eu4 = sclavenian eu4 = bulgarian }
-link = { vic2 = albanian eu4 = albanian eu4 = illyrian }		
+link = { vic2 = albanian eu4 = albanian eu4 = illyrian eu4 = arbereshe }		
 link = { vic2 = slovene eu4 = carantanian eu4 = slovene eu4 = slovenian }
 
 # West Slav - polish, schlesian, czech, slovak
@@ -323,7 +323,7 @@ link = { vic2 = magnagreek eu4 = magnagreek }
 link = { vic2 = georgian eu4 = georgian }
 link = { vic2 = armenian eu4 = armenian eu4 = armenian_colonial eu4 = ge_armenian eu4 = owm_armenian}
 link = { vic2 = north_caucasian eu4 = circassian eu4 = dagestani eu4 = avar_culture eu4 = abazin eu4 = caucasian_albanian eu4 = caucasus_colonial eu4 = chechen eu4 = ossetian }
-link = { vic2 = alan eu4 = alan eu4 = scythian }
+link = { vic2 = alan eu4 = alan eu4 = scythian eu4 = scolotian }
 
 # Thracian
 link = { vic2 = thracian_american eu4 = thracian region = central_america_superregion region = north_america_superregion region = south_america_superregion region = andes_superregion }
