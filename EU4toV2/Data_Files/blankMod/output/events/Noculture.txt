@@ -10315,6 +10315,292 @@ country_event = {
 		primary_culture = tocharian
 	}
 }
+country_event = {
+	id = 1002941
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = etrurian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = etrurian
+	}
+}
+country_event = {
+	id = 1002942
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = lemnian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = lemnian
+	}
+}
+country_event = {
+	id = 1002943
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = rhaetian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = rhaetian
+	}
+}
+country_event = {
+	id = 1002944
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = overnissian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = overnissian
+	}
+}
+country_event = {
+	id = 1002945
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = kleinvenedig
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = kleinvenedig
+	}
+}
+country_event = {
+	id = 1002946
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = holmgardr
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = holmgardr
+	}
+}
+country_event = {
+	id = 1002947
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = alpine
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = alpine
+	}
+}
+country_event = {
+	id = 1002948
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = neotyrrhenian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = neotyrrhenian
+	}
+}
+country_event = {
+	id = 1002949
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = tyrrhafrican
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = tyrrhafrican
+	}
+}
+country_event = {
+	id = 1002950
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = tyrrhaustralian
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = tyrrhaustralian
+	}
+}
+country_event = {
+	id = 1002951
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = virshjuros
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = virshjuros
+	}
+}
+country_event = {
+	id = 1002952
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = smelis
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = smelis
+	}
+}
+country_event = {
+	id = 1002953
+	title = EVTNAME000002
+	desc = EVTDESC000002
+	picture = "Demonstration"
+ 
+	trigger = {
+		OR = { primary_culture = noculture primary_culture = dummy }
+		total_pops = 1 capital_scope = {
+			pop_majority_culture = juodaodis
+		}
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.001
+	}
+ 
+	option = {
+		name = EVTOPTA000002
+		primary_culture = juodaodis
+	}
+}
 ##
 
 country_event = {

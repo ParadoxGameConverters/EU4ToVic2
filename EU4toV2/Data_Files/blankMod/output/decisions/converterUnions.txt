@@ -279,6 +279,10 @@ political_decisions = {
 						is_culture_group = central_african
 						is_culture_group = west_african
 					}
+					OR = { # Only for former colonies
+						civilized = yes
+						civilization_progress = 0.4
+					}
 					capital_scope = {
 						OR = {
 							continent = north_america
@@ -311,7 +315,9 @@ political_decisions = {
 						}
 					}
 				}
-				set_country_flag = buro_independence
+				# Ensure the correct colonial culture
+				clr_country_flag = religi
+				primary_culture = dummy
 			}
 			#Native special - avoiding Iroquois forming USA 2c.
 			any_country = {
