@@ -1,15 +1,15 @@
-#ifndef MOD_REFORMS_H
-#define MOD_REFORMS_H
+#ifndef HPM_REFORMS_H
+#define HPM_REFORMS_H
 
 #include "Parser.h"
 
 namespace mappers
 {
-class ModReforms: commonItems::parser
+class HpmReforms: commonItems::parser
 {
   public:
-	ModReforms();
-	explicit ModReforms(std::istream& theStream);
+	HpmReforms();
+	explicit HpmReforms(std::istream& theStream);
 
 	[[nodiscard]] const auto& getReforms() const { return reforms; }
 	[[nodiscard]] const auto& getUncivReforms() const { return uncivs; }
@@ -22,4 +22,4 @@ class ModReforms: commonItems::parser
 };
 } // namespace mappers
 
-#endif // MOD_REFORMS_H
+#endif // HPM_REFORMS_H

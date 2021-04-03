@@ -1,27 +1,27 @@
-#include "ModReforms.h"
+#include "HpmReforms.h"
 #include "CommonRegexes.h"
 #include "Configuration.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 
-mappers::ModReforms::ModReforms()
+mappers::HpmReforms::HpmReforms()
 {
 	registerKeys();
 	parseFile("configurables/HPM/reforms.txt");
 	clearRegisteredKeywords();
 }
 
-mappers::ModReforms::ModReforms(std::istream& theStream)
+mappers::HpmReforms::HpmReforms(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-void mappers::ModReforms::registerKeys()
+void mappers::HpmReforms::registerKeys()
 {
 	registerKeyword("unciv", [this](const std::string& unused, std::istream& theStream) {
-		ModReforms uncivReforms(theStream);
+		HpmReforms uncivReforms(theStream);
 		uncivs = uncivReforms.getReforms();
 	});
 	registerRegex(commonItems::catchallRegex, [this](const std::string& reform, std::istream& theStream) {

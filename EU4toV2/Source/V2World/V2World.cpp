@@ -2008,9 +2008,9 @@ void V2::World::updateCountryDetails()
 		//Reforms
 		std::map<std::string, std::string> theReforms;
 		if (country->isCivilized())
-			theReforms = modReforms.getReforms();
+			theReforms = hpmReforms.getReforms();
 		else
-			theReforms = modReforms.getUncivReforms();
+			theReforms = hpmReforms.getUncivReforms();
 
 		for (const auto& [reform, position] : theReforms)
 		{

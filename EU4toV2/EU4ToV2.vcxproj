@@ -398,7 +398,7 @@
     <ClCompile Include="Source\Mappers\GovernmentMapper\GovernmentMapper.cpp" />
     <ClCompile Include="Source\Mappers\IdeaEffects\IdeaEffectMapper.cpp" />
     <ClCompile Include="Source\Mappers\IdeaEffects\IdeaEffects.cpp" />
-    <ClCompile Include="Source\Mappers\Issues\ModReforms.cpp" />
+    <ClCompile Include="Source\Mappers\Issues\HpmReforms.cpp" />
     <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTrait.cpp" />
     <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTraitMapper.cpp" />
     <ClCompile Include="Source\Mappers\LeaderTraits\LeaderTraitTypes.cpp" />
@@ -593,7 +593,7 @@
     <ClInclude Include="Source\Mappers\GovernmentMapper\GovernmentMapper.h" />
     <ClInclude Include="Source\Mappers\IdeaEffects\IdeaEffectMapper.h" />
     <ClInclude Include="Source\Mappers\IdeaEffects\IdeaEffects.h" />
-    <ClInclude Include="Source\Mappers\Issues\ModReforms.h" />
+    <ClInclude Include="Source\Mappers\Issues\HpmReforms.h" />
     <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTrait.h" />
     <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTraitMapper.h" />
     <ClInclude Include="Source\Mappers\LeaderTraits\LeaderTraitTypes.h" />

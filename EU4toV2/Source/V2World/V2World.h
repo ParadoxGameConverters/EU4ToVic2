@@ -14,7 +14,7 @@
 #include "../Mappers/Geography/Continents.h"
 #include "../Mappers/Geography/TerrainDataMapper.h"
 #include "../Mappers/GovernmentMapper/GovernmentMapper.h"
-#include "../Mappers/Issues/ModReforms.h"
+#include "../Mappers/Issues/HpmReforms.h"
 #include "../Mappers/LeaderTraits/LeaderTraitMapper.h"
 #include "../Mappers/MinorityPops/MinorityPopMapper.h"
 #include "../Mappers/NavalBases/NavalBaseMapper.h"
@@ -79,7 +79,7 @@ class World
 	[[nodiscard]] unsigned int countCivilizedNations() const;
 	[[nodiscard]] std::shared_ptr<Country> getHreEmperor() const;
 	[[nodiscard]] std::string clipCountryFileName(const std::string& incoming) const;
-	[[nodiscard]] const auto& getModReforms() const { return modReforms; }
+	[[nodiscard]] const auto& getHpmReforms() const { return hpmReforms; }
 
 	static std::optional<std::string> determineProvinceControllership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld);
 	std::shared_ptr<Country> createOrLocateCountry(const std::string& V2Tag, const EU4::Country& sourceCountry);
@@ -173,7 +173,7 @@ class World
 	Diplomacy diplomacy;
 	mappers::CountryFlags countryFlags;
 	mappers::UnionTagsMapper unionTagsMapper;
-	mappers::ModReforms modReforms;
+	mappers::HpmReforms hpmReforms;
 };
 
 std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);

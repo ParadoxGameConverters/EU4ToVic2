@@ -568,7 +568,7 @@
     <ClCompile Include="Source\V2World\Decisions\HPMDecisions.cpp">
       <Filter>Vic2World\Decisions</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\Issues\ModReforms.cpp">
+    <ClCompile Include="Source\Mappers\Issues\HpmReforms.cpp">
       <Filter>Mappers\Issues</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1097,7 +1097,7 @@
     <ClInclude Include="Source\V2World\Country\ModCommons.h">
       <Filter>Vic2World\Country</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\Issues\ModReforms.h">
+    <ClInclude Include="Source\Mappers\Issues\HpmReforms.h">
       <Filter>Mappers\Issues</Filter>
     </ClInclude>
   </ItemGroup>
