@@ -1911,20 +1911,6 @@ void V2::World::copyHpmFiles() const
 
 	commonItems::CopyFolder(hpm + "/map", out + "/map");
 
-	// flags
-	const std::vector<std::string> flagFileSuffixes = {".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga"};
-	for (const auto& [tag, unused]: countries)
-	{
-		for (const auto& suffix: flagFileSuffixes)
-		{
-			if (!commonItems::DoesFileExist(hpm + "/gfx/flags/" + tag + suffix))
-				continue;
-
-			fs::remove(out + "/gfx/flags/" + tag + suffix);
-			fs::copy_file(hpm + "/gfx/flags/" + tag + suffix, out + "/gfx/flags/" + tag + suffix);
-		}
-	}
-
 	fs::copy_file(hpm + "/common/issues.txt", out + "/common/issues.txt");
 	fs::copy_file(hpm + "/common/goods.txt", out + "/common/goods.txt");
 	fs::copy_file(hpm + "/common/event_modifiers.txt", out + "/common/event_modifiers.txt");
