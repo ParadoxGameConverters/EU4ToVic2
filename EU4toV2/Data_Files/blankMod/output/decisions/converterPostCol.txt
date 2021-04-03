@@ -292,81 +292,88 @@ political_decisions = {
 			ARG_2355 = { add_core = SBA } #Buenos Aires
 			set_global_flag = der_postcolonialism
 			#Ensuring correct cultures if released
-			any_country = { limit = { tag = QUE	 NOT = { exists = QUE } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = COL	 NOT = { exists = COL } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = NEW	 NOT = { exists = NEW } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = CAN	 NOT = { exists = CAN } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = LSK	 NOT = { exists = LSK } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = NEN	 NOT = { exists = NEN } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = MAN	 NOT = { exists = MAN } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = TEX	 NOT = { exists = TEX } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = USA	 NOT = { exists = USA } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = CSA	 NOT = { exists = CSA } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = LOU	 NOT = { exists = LOU } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = DES	 NOT = { exists = DES } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = CAL	 NOT = { exists = CAL } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = CUB	 NOT = { exists = CUB } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = HAI	 NOT = { exists = HAI } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = DOM	 NOT = { exists = DOM } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = UCA	 NOT = { exists = UCA } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = COS	 NOT = { exists = COS } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = HON	 NOT = { exists = HON } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = ELS	 NOT = { exists = ELS } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = PNM	 NOT = { exists = PNM } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = ECU	 NOT = { exists = ECU } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = GUA	 NOT = { exists = GUA } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = NIC	 NOT = { exists = NIC } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = MEX	 NOT = { exists = MEX } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = BRZ	 NOT = { exists = BRZ } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = PEU	 NOT = { exists = PEU } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = CHL	 NOT = { exists = CHL } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = ARG	 NOT = { exists = ARG } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = PRG	 NOT = { exists = PRG } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = URU	 NOT = { exists = URU } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = BOL	 NOT = { exists = BOL } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = CLM	 NOT = { exists = CLM } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = VNZ	 NOT = { exists = VNZ } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = AST	 NOT = { exists = AST } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = NZL	 NOT = { exists = NZL } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = SAF	 NOT = { exists = SAF } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = RHO	 NOT = { exists = RHO } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = LIB	 NOT = { exists = LIB } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = CNG	 NOT = { exists = CNG } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = GUY	 NOT = { exists = GUY } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = SUR	 NOT = { exists = SUR } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = CAY	 NOT = { exists = CAY } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = CHP	 NOT = { exists = CHP } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = CEQ	 NOT = { exists = CEQ } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = ENT	 NOT = { exists = ENT } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = LOS	 NOT = { exists = LOS } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = OAX	 NOT = { exists = OAX } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = RGR	 NOT = { exists = RGR } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = RGS	 NOT = { exists = RGS } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = SON	 NOT = { exists = SON } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = YUC	 NOT = { exists = YUC } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = BLZ	 NOT = { exists = BLZ } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = DAK	 NOT = { exists = DAK } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = JAM	 NOT = { exists = JAM } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = PRI	 NOT = { exists = PRI } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = TTB	 NOT = { exists = TTB } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = UIL	 NOT = { exists = UIL } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = UNB	 NOT = { exists = UNB } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = UNM	 NOT = { exists = UNM } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = UOR	 NOT = { exists = UOR } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = BHM	 NOT = { exists = BHM } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = AGU	 NOT = { exists = AGU } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = ATB	 NOT = { exists = ATB } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = SKN	 NOT = { exists = SKN } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = MNR	 NOT = { exists = MNR } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = GDL	 NOT = { exists = GDL } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = DMN	 NOT = { exists = DMN } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = MTQ	 NOT = { exists = MTQ } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = STL	 NOT = { exists = STL } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = BBD	 NOT = { exists = BBD } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = GRD	 NOT = { exists = GRD } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = CUR	 NOT = { exists = CUR } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = STV	 NOT = { exists = STV } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = SBA	 NOT = { exists = SBA } } set_country_flag = buro_independence }
+			any_country = {
+				OR = {
+					AND = { tag = QUE NOT = { exists = QUE } }
+					AND = { tag = COL NOT = { exists = COL } }
+					AND = { tag = NEW NOT = { exists = NEW } }
+					AND = { tag = CAN NOT = { exists = CAN } }
+					AND = { tag = LSK NOT = { exists = LSK } }
+					AND = { tag = NEN NOT = { exists = NEN } }
+					AND = { tag = MAN NOT = { exists = MAN } }
+					AND = { tag = TEX NOT = { exists = TEX } }
+					AND = { tag = USA NOT = { exists = USA } }
+					AND = { tag = CSA NOT = { exists = CSA } }
+					AND = { tag = LOU NOT = { exists = LOU } }
+					AND = { tag = DES NOT = { exists = DES } }
+					AND = { tag = CAL NOT = { exists = CAL } }
+					AND = { tag = CUB NOT = { exists = CUB } }
+					AND = { tag = HAI NOT = { exists = HAI } }
+					AND = { tag = DOM NOT = { exists = DOM } }
+					AND = { tag = UCA NOT = { exists = UCA } }
+					AND = { tag = COS NOT = { exists = COS } }
+					AND = { tag = HON NOT = { exists = HON } }
+					AND = { tag = ELS NOT = { exists = ELS } }
+					AND = { tag = PNM NOT = { exists = PNM } }
+					AND = { tag = ECU NOT = { exists = ECU } }
+					AND = { tag = GUA NOT = { exists = GUA } }
+					AND = { tag = NIC NOT = { exists = NIC } }
+					AND = { tag = MEX NOT = { exists = MEX } }
+					AND = { tag = BRZ NOT = { exists = BRZ } }
+					AND = { tag = PEU NOT = { exists = PEU } }
+					AND = { tag = CHL NOT = { exists = CHL } }
+					AND = { tag = ARG NOT = { exists = ARG } }
+					AND = { tag = PRG NOT = { exists = PRG } }
+					AND = { tag = URU NOT = { exists = URU } }
+					AND = { tag = BOL NOT = { exists = BOL } }
+					AND = { tag = CLM NOT = { exists = CLM } }
+					AND = { tag = VNZ NOT = { exists = VNZ } }
+					AND = { tag = AST NOT = { exists = AST } }
+					AND = { tag = NZL NOT = { exists = NZL } }
+					AND = { tag = SAF NOT = { exists = SAF } }
+					AND = { tag = RHO NOT = { exists = RHO } }
+					AND = { tag = LIB NOT = { exists = LIB } }
+					AND = { tag = CNG NOT = { exists = CNG } }
+					AND = { tag = GUY NOT = { exists = GUY } }
+					AND = { tag = SUR NOT = { exists = SUR } }
+					AND = { tag = CAY NOT = { exists = CAY } }
+					AND = { tag = CHP NOT = { exists = CHP } }
+					AND = { tag = CEQ NOT = { exists = CEQ } }
+					AND = { tag = ENT NOT = { exists = ENT } }
+					AND = { tag = LOS NOT = { exists = LOS } }
+					AND = { tag = OAX NOT = { exists = OAX } }
+					AND = { tag = RGR NOT = { exists = RGR } }
+					AND = { tag = RGS NOT = { exists = RGS } }
+					AND = { tag = SON NOT = { exists = SON } }
+					AND = { tag = YUC NOT = { exists = YUC } }
+					AND = { tag = BLZ NOT = { exists = BLZ } }
+					AND = { tag = DAK NOT = { exists = DAK } }
+					AND = { tag = JAM NOT = { exists = JAM } }
+					AND = { tag = PRI NOT = { exists = PRI } }
+					AND = { tag = TTB NOT = { exists = TTB } }
+					AND = { tag = UIL NOT = { exists = UIL } }
+					AND = { tag = UNB NOT = { exists = UNB } }
+					AND = { tag = UNM NOT = { exists = UNM } }
+					AND = { tag = UOR NOT = { exists = UOR } }
+					AND = { tag = BHM NOT = { exists = BHM } }
+					AND = { tag = AGU NOT = { exists = AGU } }
+					AND = { tag = ATB NOT = { exists = ATB } }
+					AND = { tag = SKN NOT = { exists = SKN } }
+					AND = { tag = MNR NOT = { exists = MNR } }
+					AND = { tag = GDL NOT = { exists = GDL } }
+					AND = { tag = DMN NOT = { exists = DMN } }
+					AND = { tag = MTQ NOT = { exists = MTQ } }
+					AND = { tag = STL NOT = { exists = STL } }
+					AND = { tag = BBD NOT = { exists = BBD } }
+					AND = { tag = GRD NOT = { exists = GRD } }
+					AND = { tag = CUR NOT = { exists = CUR } }
+					AND = { tag = STV NOT = { exists = STV } }
+					AND = { tag = SBA NOT = { exists = SBA } }
+					AND = { tag = SAF NOT = { exists = SAF } }
+				}
+				clr_country_flag = religi
+				primary_culture = dummy
+			}
 		}
 		
 		ai_will_do = {
