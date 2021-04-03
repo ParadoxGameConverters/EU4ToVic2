@@ -63,10 +63,10 @@ TEST(Mappers_PartyTypeTests, partyTypeCanBeOutput)
 	expected << "\tstart_date = 1000.1.1\n";
 	expected << "\tend_date = 2000.1.1\n\n";
 	expected << "\tideology = conservative\n\n";
-	expected << "\teconomic_policy = interventionism\n";
-	expected << "\ttrade_policy = protectionism\n";
-	expected << "\treligious_policy = moralism\n";
 	expected << "\tcitizenship_policy = limited_citizenship\n";
+	expected << "\teconomic_policy = interventionism\n";
+	expected << "\treligious_policy = moralism\n";
+	expected << "\ttrade_policy = protectionism\n";
 	expected << "\twar_policy = pro_military\n";
 
 	ASSERT_EQ(expected.str(), output.str());
