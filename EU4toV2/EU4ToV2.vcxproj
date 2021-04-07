@@ -318,6 +318,7 @@
     <ClCompile Include="Source\EU4World\ColonialRegions\ColonialRegions.cpp" />
     <ClCompile Include="Source\EU4World\Country\Countries.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4ActiveIdeas.cpp" />
+    <ClCompile Include="Source\EU4World\Country\EU4ActivePolicy.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4Country.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4CountryFlags.cpp" />
     <ClCompile Include="Source\EU4World\Country\EU4CustomColors.cpp" />
@@ -511,6 +512,7 @@
     <ClInclude Include="Source\EU4World\ColonialRegions\ColonialRegions.h" />
     <ClInclude Include="Source\EU4World\Country\Countries.h" />
     <ClInclude Include="Source\EU4World\Country\EU4ActiveIdeas.h" />
+    <ClInclude Include="Source\EU4World\Country\EU4ActivePolicy.h" />
     <ClInclude Include="Source\EU4World\Country\EU4Country.h" />
     <ClInclude Include="Source\EU4World\Country\EU4CountryFlags.h" />
     <ClInclude Include="Source\EU4World\Country\EU4CustomColors.h" />

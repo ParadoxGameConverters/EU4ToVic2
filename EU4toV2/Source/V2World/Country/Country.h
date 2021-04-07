@@ -115,6 +115,7 @@ class Country
 	Relation& getRelation(const std::string& target);
 	std::map<std::string, Relation>& getRelations() { return relations; }
 	void addPolicy(const std::string& partyName, const std::string& policy, const std::string& position);
+	void setHpmNationalValues();
 
 	[[nodiscard]] std::string getColonialRegion() const;
 	[[nodiscard]] virtual std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }

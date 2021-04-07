@@ -866,6 +866,15 @@ void V2::World::convertNationalValues()
 	}
 
 	// The rest will default anyway.
+
+	// Mod NVs override base game
+	if (theConfiguration.isHpmEnabled())
+	{
+		for (const auto& [unused, country]: countries)
+		{
+			country->setHpmNationalValues();
+		}
+	}
 }
 
 void V2::World::convertPrestige()
@@ -1781,6 +1790,14 @@ void V2::World::modifyDefines() const
 	std::ostringstream incomingDefines, incomingBookmarks;
 
 	// Edit starting date in defines + adjust GP count if needed
+	if (theConfiguration.isHpmEnabled())
+	{
+		bool definesRemoved = fs::remove("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
+		if (definesRemoved)
+			fs::copy_file("configurables/HPM/common/defines.lua", "output/" + theConfiguration.getOutputName() + "/common/defines.lua");
+		else
+			throw std::runtime_error("Could not replace defines.lua");
+	}
 	std::ifstream defines_lua("output/" + theConfiguration.getOutputName() + "/common/defines.lua");
 	incomingDefines << defines_lua.rdbuf();
 	defines_lua.close();
@@ -1911,24 +1928,6 @@ void V2::World::copyHpmFiles() const
 
 	commonItems::CopyFolder(hpm + "/map", out + "/map");
 
-	// flags
-	const std::vector<std::string> flagFileSuffixes = {".tga", "_communist.tga", "_fascist.tga", "_monarchy.tga", "_republic.tga"};
-	for (const auto& [tag, unused]: countries)
-	{
-		for (const auto& suffix: flagFileSuffixes)
-		{
-			if (!commonItems::DoesFileExist(hpm + "/gfx/flags/" + tag + suffix))
-				continue;
-
-			fs::remove(out + "/gfx/flags/" + tag + suffix);
-			fs::copy_file(hpm + "/gfx/flags/" + tag + suffix, out + "/gfx/flags/" + tag + suffix);
-		}
-	}
-
-	fs::copy_file(hpm + "/common/issues.txt", out + "/common/issues.txt");
-	fs::copy_file(hpm + "/common/goods.txt", out + "/common/goods.txt");
-	fs::copy_file(hpm + "/common/event_modifiers.txt", out + "/common/event_modifiers.txt");
-
 	// gfx/interface
 	commonItems::CopyFolder(hpm + "/gfx/interface/leaders", out + "/gfx/interface/leaders");
 	const auto& gfxInterfaceFiles = commonItems::GetAllFilesInFolder(hpm + "/gfx/interface");
@@ -1956,13 +1955,8 @@ void V2::World::copyHpmFiles() const
 	// technologies & inventions
 	commonItems::DeleteFolder(out + "/technologies");
 	commonItems::CopyFolder("configurables/HPM/technologies", out + "/technologies");
-	fs::copy_file(hpm + "/common/technology.txt", out + "/common/technology.txt");
 	commonItems::CopyFolder(hpm + "/inventions", out + "/inventions");
 	commonItems::CopyFolder(hpm + "/gfx/pictures/tech", out + "/gfx/pictures/tech");
-
-	// rebels
-	fs::remove(out + "/common/rebel_types.txt");
-	fs::copy_file(hpm + "/common/rebel_types.txt", out + "/common/rebel_types.txt");
 
 	// events & decisions
 	for (const auto& file : commonItems::GetAllFilesInFolder(hpm + "/events"))
@@ -1985,6 +1979,18 @@ void V2::World::copyHpmFiles() const
 		fs::remove(out + "/decisions/" + file);
 		fs::copy_file("configurables/HPM/decisions/" + file, out + "/decisions/" + file);
 	}
+
+	// common
+	for (const auto& file: commonItems::GetAllFilesInFolder(hpm + "/common"))
+	{
+		if (file == "cb_types.txt" || file == "rebel_types.txt")
+			fs::remove(out + "/common/" + file);
+		else if (commonItems::DoesFileExist(out + "/common/" + file))
+			continue;
+		fs::copy_file(hpm + "/common/" + file, out + "/common/" + file);
+	}
+
+	commonItems::CopyFolder(hpm + "/battleplans", out + "/battleplans");
 }
 
 void V2::World::updateCountryDetails()
