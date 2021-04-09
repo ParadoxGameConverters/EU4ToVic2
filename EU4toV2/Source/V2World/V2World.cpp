@@ -2009,6 +2009,17 @@ void V2::World::copyHpmFiles() const
 	}
 
 	commonItems::CopyFolder(hpm + "/battleplans", out + "/battleplans");
+	commonItems::CopyFolder(hpm + "/poptypes", out + "/poptypes");
+	commonItems::CopyFolder(hpm + "/units", out + "/units");
+
+	// news
+	const auto& newsFiles = commonItems::GetAllFilesInFolder(hpm + "/news");
+	for (const auto& file: newsFiles)
+	{
+		if (commonItems::DoesFileExist(out + "/news/" + file))
+			continue;
+		fs::copy_file(hpm + "/news/" + file, out + "/news/" + file);
+	}
 }
 
 void V2::World::updateCountryDetails()
