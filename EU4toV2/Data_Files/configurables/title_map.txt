@@ -4069,3 +4069,194 @@ link = { name = "sieradz" title = "c_sieradzko-leczyckie" region = "e_ck3" }
 link = { name = "litomerice" title = "c_litomerice" region = "e_ck3" }
 link = { name = "marmaros" title = "c_marmaros" region = "e_ck3" }
 link = { name = "atropatene" title = "d_azerbaijan" region = "e_imp" } # Namesake
+
+# Added all missing duchies from CK3
+link = { name = "adrar"   title = "d_adrar"   region = "e_mali" }
+link = { name = "aksai chin"   title = "d_aksai_chin"   region = "e_mali" }
+link = { name = "aksay"   title = "d_aksay"   region = "e_mali" }
+link = { name = "al-said"   title = "d_al-said"   region = "e_mali" }
+link = { name = "al-wahat"   title = "d_al-wahat"   region = "e_mali" }
+link = { name = "ala tau"   title = "d_ala_tau"   region = "e_mali" }
+link = { name = "alakol"   title = "d_alakol"   region = "e_mali" }
+link = { name = "altay"   title = "d_altay"   region = "e_mali" }
+link = { name = "alwa"   title = "d_alwa"   region = "e_mali" }
+link = { name = "aqtobe"   title = "d_aqtobe"   region = "e_mali" }
+link = { name = "arkhangai"   title = "d_arkhangai"   region = "e_mali" }
+link = { name = "atyrau"   title = "d_atyrau"   region = "e_mali" }
+link = { name = "baguirmi"   title = "d_baguirmi"   region = "e_mali" }
+link = { name = "baigaluuls"   title = "d_baigaluuls"   region = "e_mali" }
+link = { name = "bali"   title = "d_bali"   region = "e_mali" }
+link = { name = "baltiyül"   title = "d_baltiyul"   region = "e_mali" }
+link = { name = "baqlin"   title = "d_baqlin"   region = "e_mali" }
+link = { name = "baraba steppe"   title = "d_baraba_steppe"   region = "e_mali" }
+link = { name = "bargujin tukum"   title = "d_bargujin_tukum"   region = "e_mali" }
+link = { name = "barsuki"   title = "d_barsuki"   region = "e_mali" }
+link = { name = "bassa"   title = "d_bassa"   region = "e_mali" }
+link = { name = "bazin"   title = "d_bazin"   region = "e_mali" }
+link = { name = "betpa"   title = "d_betpa"   region = "e_mali" }
+link = { name = "bobo"   title = "d_bobo"   region = "e_mali" }
+link = { name = "bornu"   title = "d_bornu"   region = "e_mali" }
+link = { name = "boyül"   title = "d_boyul"   region = "e_mali" }
+link = { name = "brong"   title = "d_brong"   region = "e_mali" }
+link = { name = "bugeac"   title = "d_bugeac"   region = "e_mali" }
+link = { name = "chah"   title = "d_chah"   region = "e_mali" }
+link = { name = "chakla"   title = "d_chakla"   region = "e_mali" }
+link = { name = "co'nyi"   title = "d_co'nyi"   region = "e_mali" }
+link = { name = "dagomba"   title = "d_dagomba"   region = "e_mali" }
+link = { name = "dahlaks"   title = "d_dahlaks"   region = "e_mali" }
+link = { name = "danakil"   title = "d_danakil"   region = "e_mali" }
+link = { name = "dauria"   title = "d_dauria"   region = "e_mali" }
+link = { name = "dawaro"   title = "d_dawaro"   region = "e_mali" }
+link = { name = "dendi"   title = "d_dendi"   region = "e_mali" }
+link = { name = "dhakina desa"   title = "d_dhakina_desa"   region = "e_mali" }
+link = { name = "diafunu"   title = "d_diafunu"   region = "e_mali" }
+link = { name = "diyarbakr"   title = "d_diyarbakr"   region = "e_mali" }
+link = { name = "diyarmudar"   title = "d_diyarmudar"   region = "e_mali" }
+link = { name = "diyarrabia"   title = "d_diyarrabia"   region = "e_mali" }
+link = { name = "dzayül"   title = "d_dzayul"   region = "e_mali" }
+link = { name = "eastern desert"   title = "d_eastern_desert"   region = "e_mali" }
+link = { name = "eastern sayan"   title = "d_eastern_sayan"   region = "e_mali" }
+link = { name = "eweland"   title = "d_eweland"   region = "e_mali" }
+link = { name = "eülge"   title = "d_eulge"   region = "e_mali" }
+link = { name = "gainlho"   title = "d_gainlho"   region = "e_mali" }
+link = { name = "ganzhou"   title = "d_ganzhou"   region = "e_mali" }
+link = { name = "ghat"   title = "d_ghat"   region = "e_mali" }
+link = { name = "ghur"   title = "d_ghur"   region = "e_mali" }
+link = { name = "giemajohka"   title = "d_giemajohka"   region = "e_mali" }
+link = { name = "gobi-altai"   title = "d_gobi-altai"   region = "e_mali" }
+link = { name = "gobir"   title = "d_gobir"   region = "e_mali" }
+link = { name = "golog"   title = "d_golog"   region = "e_mali" }
+link = { name = "guiyi"   title = "d_guiyi"   region = "e_mali" }
+link = { name = "gurbantünggüt"   title = "d_gurbantunggut"   region = "e_mali" }
+link = { name = "gyaman"   title = "d_gyaman"   region = "e_mali" }
+link = { name = "gyor"   title = "d_gyor"   region = "e_mali" }
+link = { name = "hafun"   title = "d_hafun"   region = "e_mali" }
+link = { name = "ibadan"   title = "d_ibadan"   region = "e_mali" }
+link = { name = "ife"   title = "d_ife"   region = "e_mali" }
+link = { name = "igboland"   title = "d_igboland"   region = "e_mali" }
+link = { name = "ili-alatau"   title = "d_ili-alatau"   region = "e_mali" }
+link = { name = "jabal kufs"   title = "d_jabal_kufs"   region = "e_mali" }
+link = { name = "jawf al-yamani"   title = "d_jawf_al-yamani"   region = "e_mali" }
+link = { name = "jemba"   title = "d_jemba"   region = "e_mali" }
+link = { name = "jerid"   title = "d_jerid"   region = "e_mali" }
+link = { name = "kagha"   title = "d_kagha"   region = "e_mali" }
+link = { name = "kaniaga"   title = "d_kaniaga"   region = "e_mali" }
+link = { name = "kara khoja"   title = "d_kara_khoja"   region = "e_mali" }
+link = { name = "karabas"   title = "d_karabas"   region = "e_mali" }
+link = { name = "karashar"   title = "d_karashar"   region = "e_mali" }
+link = { name = "kargassia"   title = "d_kargassia"   region = "e_mali" }
+link = { name = "karkaraly"   title = "d_karkaraly"   region = "e_mali" }
+link = { name = "kasa"   title = "d_kasa"   region = "e_mali" }
+link = { name = "kashgar"   title = "d_kashgar"   region = "e_mali" }
+link = { name = "kawar"   title = "d_kawar"   region = "e_mali" }
+link = { name = "kawkaw"   title = "d_kawkaw"   region = "e_mali" }
+link = { name = "kazym"   title = "d_kazym"   region = "e_mali" }
+link = { name = "kentarlau"   title = "d_kentarlau"   region = "e_mali" }
+link = { name = "khakass hollow"   title = "d_khakass_hollow"   region = "e_mali" }
+link = { name = "khasa"   title = "d_khasa"   region = "e_mali" }
+link = { name = "khovd"   title = "d_khovd"   region = "e_mali" }
+link = { name = "khövsgöl"   title = "d_khovsgol"   region = "e_mali" }
+link = { name = "kinnaur"   title = "d_kinnaur"   region = "e_mali" }
+link = { name = "kohestan"   title = "d_kohestan"   region = "e_mali" }
+link = { name = "kono"   title = "d_kono"   region = "e_mali" }
+link = { name = "kordofan"   title = "d_kordofan"   region = "e_mali" }
+link = { name = "kroumerie"   title = "d_kroumerie"   region = "e_mali" }
+link = { name = "kru"   title = "d_kru"   region = "e_mali" }
+link = { name = "kulyndy steppe"   title = "d_kulyndy_steppe"   region = "e_mali" }
+link = { name = "kurgan"   title = "d_kurgan"   region = "e_mali" }
+link = { name = "kush-murun"   title = "d_kush-murun"   region = "e_mali" }
+link = { name = "kwararafa"   title = "d_kwararafa"   region = "e_mali" }
+link = { name = "lanikaz"   title = "d_lanikaz"   region = "e_mali" }
+link = { name = "lasta"   title = "d_lasta"   region = "e_mali" }
+link = { name = "lhoyul"   title = "d_lhoyul"   region = "e_mali" }
+link = { name = "liangzhou"   title = "d_liangzhou"   region = "e_mali" }
+link = { name = "litang"   title = "d_litang"   region = "e_mali" }
+link = { name = "lobi"   title = "d_lobi"   region = "e_mali" }
+link = { name = "loma"   title = "d_loma"   region = "e_mali" }
+link = { name = "lower bosnia"   title = "d_lower_bosnia"   region = "e_mali" }
+link = { name = "lower gurma"   title = "d_lower_gurma"   region = "e_mali" }
+link = { name = "macva"   title = "d_macva"   region = "e_mali" }
+link = { name = "malho"   title = "d_malho"   region = "e_mali" }
+link = { name = "mamprusi"   title = "d_mamprusi"   region = "e_mali" }
+link = { name = "manding"   title = "d_manding"   region = "e_mali" }
+link = { name = "martyuba"   title = "d_martyuba"   region = "e_mali" }
+link = { name = "mema"   title = "d_mema"   region = "e_mali" }
+link = { name = "mora"   title = "d_mora"   region = "e_mali" }
+link = { name = "mugodzhar hills"   title = "d_mugodzhar_hills"   region = "e_mali" }
+link = { name = "muntenia"   title = "d_muntenia"   region = "e_mali" }
+link = { name = "muyunkum"   title = "d_muyunkum"   region = "e_mali" }
+link = { name = "naiman gobi"   title = "d_naiman_gobi"   region = "e_mali" }
+link = { name = "naqis"   title = "d_naqis"   region = "e_mali" }
+link = { name = "nasa"   title = "d_nasa"   region = "e_mali" }
+link = { name = "ngamring"   title = "d_ngamring"   region = "e_mali" }
+link = { name = "oltenia"   title = "d_oltenia"   region = "e_mali" }
+link = { name = "osrushana"   title = "d_osrushana"   region = "e_mali" }
+link = { name = "qilin"   title = "d_qilin"   region = "e_mali" }
+link = { name = "qumarlêb"   title = "d_qumarleb"   region = "e_mali" }
+link = { name = "ramaññadesa"   title = "d_ramannadesa"   region = "e_mali" }
+link = { name = "ruhunu"   title = "d_ruhunu"   region = "e_mali" }
+link = { name = "sa'gya"   title = "d_sa'gya"   region = "e_mali" }
+link = { name = "salair"   title = "d_salair"   region = "e_mali" }
+link = { name = "salamat"   title = "d_salamat"   region = "e_mali" }
+link = { name = "samalo"   title = "d_samalo"   region = "e_mali" }
+link = { name = "sanaag"   title = "d_sanaag"   region = "e_mali" }
+link = { name = "sapi"   title = "d_sapi"   region = "e_mali" }
+link = { name = "saryarka"   title = "d_saryarka"   region = "e_mali" }
+link = { name = "savalu"   title = "d_savalu"   region = "e_mali" }
+link = { name = "selenga valley"   title = "d_selenga_valley"   region = "e_mali" }
+link = { name = "semey"   title = "d_semey"   region = "e_mali" }
+link = { name = "shabelle"   title = "d_shabelle"   region = "e_mali" }
+link = { name = "shamir"   title = "d_shamir"   region = "e_mali" }
+link = { name = "shanzhou"   title = "d_shanzhou"   region = "e_mali" }
+link = { name = "sharka"   title = "d_sharka"   region = "e_mali" }
+link = { name = "shoria"   title = "d_shoria"   region = "e_mali" }
+link = { name = "silla"   title = "d_silla"   region = "e_mali" }
+link = { name = "soghd"   title = "d_soghd"   region = "e_mali" }
+link = { name = "somogy"   title = "d_somogy"   region = "e_mali" }
+link = { name = "sous"   title = "d_sous"   region = "e_mali" }
+link = { name = "sriksetra"   title = "d_sriksetra"   region = "e_mali" }
+link = { name = "syrmia"   title = "d_syrmia"   region = "e_mali" }
+link = { name = "tagant"   title = "d_tagant"   region = "e_mali" }
+link = { name = "tagaung"   title = "d_tagaung"   region = "e_mali" }
+link = { name = "tannu-ola"   title = "d_tannu-ola"   region = "e_mali" }
+link = { name = "tara"   title = "d_tara"   region = "e_mali" }
+link = { name = "tarbagatai"   title = "d_tarbagatai"   region = "e_mali" }
+link = { name = "tibesti"   title = "d_tibesti"   region = "e_mali" }
+link = { name = "togina"   title = "d_togina"   region = "e_mali" }
+link = { name = "touat"   title = "d_touat"   region = "e_mali" }
+link = { name = "transcarpathia"   title = "d_transcarpathia"   region = "e_mali" }
+link = { name = "transcaspiana"   title = "d_transcaspiana"   region = "e_mali" }
+link = { name = "transylvanian alps"   title = "d_transylvanian_alps"   region = "e_mali" }
+link = { name = "tsagaanbaigal"   title = "d_tsagaanbaigal"   region = "e_mali" }
+link = { name = "tuyuhun"   title = "d_tuyuhun"   region = "e_mali" }
+link = { name = "ubsunur hollow"   title = "d_ubsunur_hollow"   region = "e_mali" }
+link = { name = "uda valley"   title = "d_uda_valley"   region = "e_mali" }
+link = { name = "upper bosnia"   title = "d_upper_bosnia"   region = "e_mali" }
+link = { name = "upper gurma"   title = "d_upper_gurma"   region = "e_mali" }
+link = { name = "urdunn"   title = "d_urdunn"   region = "e_mali" }
+link = { name = "vasyugan mire"   title = "d_vasyugan_mire"   region = "e_mali" }
+link = { name = "visegrad"   title = "d_visegrad"   region = "e_mali" }
+link = { name = "vuovdisámieana"   title = "d_vuovdisamieana"   region = "e_mali" }
+link = { name = "wagadu"   title = "d_wagadu"   region = "e_mali" }
+link = { name = "wagadugu"   title = "d_wagadugu"   region = "e_mali" }
+link = { name = "wandala"   title = "d_wandala"   region = "e_mali" }
+link = { name = "wasit"   title = "d_wasit"   region = "e_mali" }
+link = { name = "wenyon"   title = "d_wenyon"   region = "e_mali" }
+link = { name = "west ajuraan"   title = "d_west_ajuraan"   region = "e_mali" }
+link = { name = "west dárfúr"   title = "d_west_darfur"   region = "e_mali" }
+link = { name = "western sayan"   title = "d_western_sayan"   region = "e_mali" }
+link = { name = "worodugu"   title = "d_worodugu"   region = "e_mali" }
+link = { name = "wuli"   title = "d_wuli"   region = "e_mali" }
+link = { name = "wuluhai"   title = "d_wuluhai"   region = "e_mali" }
+link = { name = "yamama"   title = "d_yamama"   region = "e_mali" }
+link = { name = "yenisei-kan"   title = "d_yenisei-kan"   region = "e_mali" }
+link = { name = "yijinai"   title = "d_yijinai"   region = "e_mali" }
+link = { name = "zab"   title = "d_zab"   region = "e_mali" }
+link = { name = "zaila"   title = "d_zaila"   region = "e_mali" }
+link = { name = "zammour"   title = "d_zammour"   region = "e_mali" }
+link = { name = "zanskar"   title = "d_zanskar"   region = "e_mali" }
+link = { name = "zhenfan"   title = "d_zhenfan"   region = "e_mali" }
+link = { name = "Ögräsh"   title = "d_ogrash"   region = "e_mali" }
+link = { name = "Ötüken"   title = "d_otuken"   region = "e_mali" }
+link = { name = "Övörkhangai"   title = "d_ovorkhangai"   region = "e_mali" }
+link = { name = "Üd valley"   title = "d_ud_valley"   region = "e_mali" }
