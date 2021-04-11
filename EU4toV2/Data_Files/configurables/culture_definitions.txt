@@ -1,5 +1,10 @@
 # Do not change tags in here without changing every other reference to them.
 # If adding new groups or cultures, make sure they are unique.
+# To adjust culture definitions for HPM hybrid mod use:
+# hpm = yes - culture is used only when "hybrid mod" is set to "HPM"
+# hpm = no - culture is used only when "hybrid mod" is set to "Default"
+# no entry - culture is used with all "hybrid mod" settings
+# hpm = tupinamba - redefines culture as tupinamba
 germanic = {
 	leader = european
 	unit = PrussianGC
