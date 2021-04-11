@@ -11,6 +11,7 @@ class Culture: commonItems::parser
 	Culture() = default;
 	explicit Culture(std::istream& theStream);
 
+	[[nodiscard]] const auto& getHpm() const { return hpm; }
 	[[nodiscard]] const auto& getMaleNames() const { return maleNames; }
 	[[nodiscard]] const auto& getFemaleNames() const { return femaleNames; }
 	[[nodiscard]] const auto& getFirstNames() const { return firstNames; }
@@ -43,6 +44,7 @@ class Culture: commonItems::parser
   private:
 	void registerKeys();
 
+	std::string hpm;
 	std::string primaryTag;
 	std::vector<std::string> maleNames;
 	std::vector<std::string> femaleNames;

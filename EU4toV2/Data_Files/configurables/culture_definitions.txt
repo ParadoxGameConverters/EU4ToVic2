@@ -195,6 +195,7 @@ germanic = {
 	union = GER
 }
 jewish_group = {
+	hpm = jewish_cultures
 	leader = european
 	unit = EuropeanGC
 	
@@ -838,6 +839,7 @@ romantic = {
 	unit = ItalianGC
 	
 	maghreb_arabic = {
+		hpm = no
 		color = {204 229 102}
 		first_names = { Masuna Mastigas Garmul Kusaila Lider Maximus Masguinas
 			Abakada Adam Aderbal
@@ -1232,6 +1234,7 @@ south_slavic = {
 		}
 	}
 	albanian = {
+		hpm = no
 		color = {140 0 0}
 
 		first_names = { Ahmet Ali Azem Bajram Behxhet Davud Ekrem Elez Enver Eqrem
@@ -1339,6 +1342,30 @@ south_slavic = {
 	}
 	union = YUG
 }
+pan_albanian = {
+	hpm = yes
+	leader = european
+	unit = AustriaHungaryGC
+	albanian = {
+		color = {140 0 0}
+
+		first_names = { Ahmet Ali Azem Bajram Behxhet Davud Ekrem Elez Enver Eqrem
+		Esad Fatmir Fejzi Fiqri Gjergj Gjon Hasan Hashim Ibrahim Idhomene
+		Iliaz Ishak Ismail Izet Kara Kastriot Koçi Köpryly Kostaq Lekë
+		Maliq Marin mehdi Musa Mustafa Pandeli Petro Qamil Qazim Ramush
+		Rexhep Shefqet Skënder Sulejman Tewfik Theofan Turhan Vasil Veton Xhafer
+		}
+
+		last_names = { Ahmeti al-Albani Bardha Bazna "Bej Alizoti" "Bej Biçakçiu" "Bej Delvina" "Bej Frashëri" "Bej Libohova" "Bej Ndroque"
+		"Bej Prishtina" "Bej Verlaci" "Bej Vrioni" "Bej Ypi" "Bej Zogu" Belishi Burbank Bushati Buza Çabej
+		Çeku Dine Dragoti Dukagiini Dushku Evangjeli Feza Hoxha Islami Kadare
+		Koculi Konica Konushevci Kosturi Kota Logoreci Merlika-Kruja Mitrovica Mula Noli
+		"Pashë Përmeti" "Pashë Tepelena" "Pashë Toptani" Poga "Qemal Bej" Shahini Skiroi Thaçi Troja Xoxe
+		}
+		radicalism = 15
+	}
+}
+
 pan_romanian = {
 	leader = european
 	unit = AustriaHungaryGC
@@ -1547,6 +1574,7 @@ polish_culture_group = {
 		radicalism = 10
 	}
 	lithuanian = { 
+		hpm = no
 		color = {17 162 48}
 
 		first_names = { Adolfas Aleksandras Algirdas Andrius Antanas Arturas Arunas Augustinas Balys Boris
@@ -1564,6 +1592,7 @@ polish_culture_group = {
 		}
 	}
 	pruthenian = { 
+		hpm = no
 		color = { 126 214 143 }
 
 		first_names = { 
@@ -1632,7 +1661,7 @@ polish_culture_group = {
 	}
 	virshjuros = { 
 		color = { 143 214 126 }
-
+	
 		first_names = { 
 			Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas 
 			Daugvilas Daumantas Dausprungas Dravenis Erdenis Erdvilas Gedigaudas
@@ -1643,7 +1672,7 @@ polish_culture_group = {
 			Rimgaila Rimvydas Ringaudas Sarunas Skirgaila Songaila Svarnas Svitrigaila Tarvydas Tovtivilas 
 			Traidenis Treniotas Vainius Vaisvilkas Valimantas Zygimantas
 			Vidmantas Vingoldas Virmantas Visvaldis Vizgirdas Vykintas Vytautas Vytenis Zivinbudas 
-		}
+}
 
 		last_names = {
 			Ugandi Gediminai Radziwill Gostautas Astikas Kesgaila Chodkiewicz Olshanski Chartoryski Giedraiciai Pac Plater Tyzenhaus Sapieha Ostrogski Oginski
@@ -1689,11 +1718,13 @@ polish_culture_group = {
 	}
 	
 	union = PLC
+	#hpm_union = POL
 }
 
 czecho_slovak_culture_group = {
 	leader = european
 	unit = AustriaHungaryGC
+	#hpm_unit = EuropeanGC
 
 	czech = {
 		color = {120 120 255}
@@ -1870,6 +1901,25 @@ east_slavic = {
 baltic = {
 	leader = european
 	unit = RussianGC
+	#hpm_unit = EuropeanGC
+	lithuanian = {
+		hpm = yes
+		color = {17 162 48}
+
+		first_names = { Adolfas Aleksandras Algirdas Andrius Antanas Arturas Arunas Augustinas Balys Boris
+		Bronislovas Danielius Darius Gediminas Henrikas Jonas Jonusas Juozas Juras Jurgis
+		Justas Kazimieras Kazys Kipras Konstantinas Lukas Marijus Markas Mikalojus Mindaugas
+		Motejus Mykolas Paulius Petras Povilas Ramunas Ringaudas Rolandas Simonas Stasys
+		Steponas Valdas Valdemaras Viktoras Vilhelmas Visvaldas Vladimiras Vygantas Vytautas Žydrunas
+		}
+
+		last_names = { Adamkus Almenas Avizienis Baltrušaitis Brazauskas Basanavicius Birutis Brazdžiunas Buga Ciurlionis
+		Danauskas Daukantas Dobkevicius Dubeneckis Dvarionas Galdikas Grinius Griškevicius Ivanauskas Jablonskis
+		Jucys Krupavicius Landsbergis Lozoraitis Merkys Paksas Paleckis Paulauskas Petrauskas Piskarkas
+		Požela Radvila Šabaniauskas Schatz Simonavicius Širvydas Šleževicius Semtona Snieckus Stauaitis
+		Straižys Stulginkis Švedas Terleckas Urbšys Vagnorius Valeška Voldemaras Žemaitis Zuokas
+		}
+	}
 	latvian = { 
 		color = {162 17 48}
 
@@ -2076,6 +2126,28 @@ levantine = {
 		last_names = { Andiyev Ashuraliyev Basiev Bazayev Bestayev Chibirov Din Dudarova Dzhanayev Fadzayev Farniev Gabulov Gassiev Gazyumov Guriev Khapov Khetagurov Kokoity Kusov Nyxas Pagayev Pliyeva Sanakoyev Tibilov Tokaty Torchinov Toshinori Valiyev Zangiev Zazirov }
 	}
 	
+	maghreb_arabic = {
+		hpm = yes
+		color = {204 229 102}
+		first_names = { Masuna Mastigas Garmul Kusaila Lider Maximus Masguinas
+			Abakada Adam Aderbal
+			Admer Adrir Adum Afaghis Afalawas Afalku Afer Afulay Agafay Agama Agdada Agdun Agellid Aggur Aghali Aghecher Aghilas Agwillul
+			Ahamatu Ajeddig Akaday Akateiaji Akli Akorakor Aksel Aksil Akutla Akzer Alyamas Amawal
+			Amayas Ambay Amdegh Amellal Amennay Ameska Amessan Amin Amma Ammuc Amray Amri Anaba Annaber Antalas Anwa Aras
+			Asad Asaru Asirem Aszellay Atissi Awdia Awgustin Awinagh Awlagh Awzal Aylal Ayt'ere Az'regh Azenkwed Azrur Badda Badis
+			Bagay Barakat Beddis Berkan Br'ir'uc Bukkus Buwayh Buxtuc Capussa Cucung Dali Firmus Frawsen Gaia Galussa Gauda
+			Gaya Ghanim Ghaysan Ghumer Gildun Gulusa Hiba Hiempsal Himmi Hotha Iccaam
+			Ifni Ifser Ighlaf Igider Igmi Iher Iken Ilyas Immeghar Immel Irgen Isli Issam It'ij Itber Itri Ixfensen Ixzi Izri Kadidu
+			Karidenna Kawsen Kenan Keraja Khanchla Khenchela Khidr Kussil Lacumaces Laweye Lewnis Luki Madidu Magsen Mahtar
+			Masgaba Masgava Masinissa Masmud Masnsen Massinissa Massiva Massnsen Mastan Mastanabal Matiya Maysar Maziba Mazigh
+			Medjan Mellal Mennad Menzu Meq'wran Mez'yan Mezwar Micipsa Misagenes Misibsen Mukhtar
+			N'Guna Nasr Nazar Niptasan Nizamaddin Ptolemee Qutaiba Salomon Sammer
+			Seghada Sekla Sifaks Sifal Sisso Stembanos Suggut Tabat Tacfin Taffounnout Tahir Takfarinas Tanan
+			Tegama Thabitah Tifan Tiljad Ugdada Ugwistan Uqess'un Uregh Urtilian Urz'ig Uzmir Uzza Wahab Watt'as Xamida Yabdas Yaghmurasen
+			Yattuy Yeften Yeh'lem Yiliyen Yuba Yugerten Yugurthen Youkhanna Yunes Yusuf Yuva Z'effun Zalelsan Zer'wal Zigza Ziri  }
+		last_names = { Altavid Massyli Mauretania Byzacena Sitifensis Numidia Gaetuli Garamantes }
+	}
+	
 	assyrian = {
 		color = {165 76 153}
 		first_names = { Thomma Thoman Mamman Oommen Qako Yakob Pathros Pathe Pathappan Yohannan
@@ -2203,7 +2275,8 @@ turko_semitic = {
 			Talat Tevfik Vefik Yusuf Yunus Ziya Ziyaeddin
 		}
 		
-		last_names = {
+		last_names = { 
+		#hpm = no
 		Akdag’ Akdog’u Akkaya Akkaš Akkïlïç Akköz Aktug’ Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
 		Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog’an Durak Dilmen Ekin Ercan Erdog’an Eren
 		Erentöz Erkin Ermiš Ertunç Estelik Güler Gümüš Gündog’an Gündüz Güney Güneš Güven Karan Kaya Korun
@@ -2226,6 +2299,25 @@ turko_semitic = {
 			Ahmadbek Ahmadzade Akbarzade Edigar Ganjavi Ibrahimbek Mehmandar Nakhchivani 
 			Qasimbek Qasimzade Rasulzade Tahirzade Talishkhan Topchubashi Zardabi
 			}
+	}
+	kurdish = {
+		hpm = yes
+		color = {176 201 238}
+
+		first_names = {
+			Abdal Abdulkarim Bedr Hafid Ihsan Mahmud Mohammed Qazi Reshid Said Ubaydallah
+			}
+		
+		last_names = {
+			Badirkhan Barzani Khan Shilak
+			}
+		#last_names = { # If you pretend a "surname law" was passed
+		#	Adan Ajîn Alîn Arjen Astî Avsîn Awira Azû Barêz Bazê Befrî Bejîn Belar Benaw Bendewa Beraw Berfende Bêrîcan Berma Berzê Beyan Bihest Bînahî Biwar Ceman Ciwana Daxaz Desmal Dîdar Dilara Dîlber Dilnîgar Dilpak Dilvîn
+		#	Diyar Enwa Ezo Ersîn Ewas Ezîn Ferman Fîrya Gerdan Gerdûn Gewrê Gilyaz Gul Gulaw Gulbawan Gulbent Gulbîn Gulê Gulistan Gulnaz Gulsa Gulxatûn Havîn Hawniyaz Helbest Hêvî Hilbîn Jêla Jînewer Kajîn Kejê Keyna Kocer
+		#	Lale Lerzan Mahabad Mercan Mîdya Narîn Nazdar Naznaz Nesrîn Nîna Nûcan Nûsîn Pelsîn Perîxan Pirnaz Rejnê Rewsen Rojbîn Ronahî Rûna Seîran Sergul Sîbel Sindis Sîtav Spêda Sana Sehrîvan Sewran Sures Tara Veman Xacê
+		#	Xemsîn Yasemîn Yekta Zende Zerya Zîv
+		#}
+			radicalism = 10
 	}
 	north_caucasian = {
 		color = {252 255 161}
@@ -2331,6 +2423,49 @@ turko_semitic = {
 
 }
 
+caucasian = {
+	hpm = yes
+	leader = arab
+	is_overseas = no
+	unit = MoroccoGC
+		
+		dagestani = {
+			color = {134 100 49}
+			first_names = {
+				Hadji Sheyh Rasul Umma Halil Gadzhimurat Ghazi "Gamzat-bek" Najmuddin Tapa Ali-Khaji Akusha Haidar Várkony Shamil Kamil Magomet Ibrahim Muhammad Mansur Dzhokhar Avshalumov Aliyeva Askerkhanov Gamzatov Puterbrot Abdulkhakim Adam Buvaysar Kuramagomed Khabib Ali Rustam
+				}
+			
+			last_names = { 
+				Awaral Gamzatov Mussayassul Aliev Murad "Ma'arulal" "X'indalal" Andis Didoi Anchikh Bagulal Bezhta Archin Chamalal Hinukhs Ratsitl Godoberi Khvarshi Rachabalda Karata Tokita Tindi Akhvakh Botlikh Hunzib al-Shishani Dargwa Kumyk Lezgiyar Tabasaran Lak Nogai Aghul Rutul al-Tsakhur Muhammad Hotso Bamat Gadzhiyev Fazu Gamzatovna
+			}
+			radicalism = 25
+		}
+		
+		chechen = {
+			color = {46 112 99}
+			first_names = {
+				Abuu Ayub Adam Ahmad Alikhan Alkhazur Aluu Andarbek Anzor Aptii Arzu Aslan Aslanbek Asuu Balavdi Baudi Bekkhan Bislan Bula Buvaisar Bworz Chabworz Deni Duqvaakha Eela Elbek Elbrus Elberd Emin Gada Ghanii Hassuh Hamid Hamzat Haaron Hasan Hooza Humid Husein Ibraahim Iljas Kanta Katii Kazbek Khasboolat Khasmohmad Khavazh Kyyra Lyoma Lecha "Madii Nel" Mairbek Mamed Mikaail Mohmad Movldi Movsar Mumaadi Murad Muusa Nezh Nurdi Ortsa Ramzan Ruman Ruslan Rustam Saida Saidali Saipuddi Shamsuuddi Sha'raani Sherip Shirvani Siraazhdi Sols Suliim Suliman Supjan Surkho "T'aaus" Umalt Turpal Vaakha Vaakhiita Yaaqub Visiita Yunaadi Yunus Yusup Yousef Zaindi Zakrii Zeelim Zhabii Zhamal Zhamalaila Zovra Mansur
+				}
+			
+			last_names = { 
+				Ajndi Shishani Akhmadov Dudayev Yamadayev Abramov Alkhanov Bargishev Basayev Dudaev Kadyrov Maskhadov Saidullayev Umarov Zakayev Akkiy Myalkiy Nokhchmakhkakhoy Alaroy Beltagoy Benoy Biltoy Dishni Chartoy Elistanzhkhoy Centoroy Enganoy Ersenoy Gendargenoy Gunoi Kharachoi Zandakhoi Terloy Beshni Chinkhoi Chanti Cheberloy Mutawakil Rigakhoy Buni Sharoy Shotoy Varandoy Batsbi al-Ingush al-Kist Tchermoeff
+			}
+			radicalism = 30
+		}
+		
+		circassian = {
+			color = {185 206 6}
+			first_names = {
+				Aghwrbiy Abatiy Albech Albot "Alhx'es" "Alhx'o" Alijiqwe Bale Batirbiy Biylhosten Blaneshu Bubeird Chetsu "Ch'ischiqwe" Chawis Dariqwe Dokshiqua Dzeghaschte Dzune Foqwe Ghwaze Gushina Gushipsa Hegwtsire Hanaqua Hetsu Jirandiqwe Kwshbiy Lhostenasch Mamsriqwe Menshaq Meshiqwe Nalbiy Nartshu Nerzan Pschimaxwe Qideghaze Schebet Shumaxwe Shupashe Takwu Tsumash Tighwenbiy Tighwen Werdeschawe Wezroqwe Yedij Zhore
+				}
+			
+			last_names = {
+				Neghwey al-Shishani Shapsug Zhaney Temirgoy Natukhai Syupako Abadzehs Kerzedzh Kuytsuk Khatirame Birdzh Cherch Ubykhs Mamkhegh Kabarday Cherkess Hatuqwai Bzhedug Kabardi Adyghe
+			}
+			radicalism = 20
+		}
+	}
+
 arab = {
 	leader = arab
 	is_overseas = no
@@ -2366,7 +2501,8 @@ arab = {
 			Nuri Rauf Rifat Selim Shukru Suleyman Urabi Yusuf Yunus Ziya
 			}
 		
-		last_names = {
+		last_names = { 
+			#hpm = no
 			"al-Annabi" "al-Araishi" "al-Asfawi" "al-Binzarti" "al-Fasi" "al-Gharyani"
 			"al-Jaza'iri" "al-Miknasi" "al-Misurati" "al-Murrakushi" "al-Qabisi" "al-Qayrawani" "al-Ribati" "al-Safaqisi"
 			"al-Silawi" "al-Sirti" "al-Susawi" "al-Tilimsani" "al-Tanjawi" "al-Tatwani" "al-Trablusi" "al-Tunusi" 
@@ -2374,8 +2510,13 @@ arab = {
 			"ibn Abd Allah" "ibn Abd al-Qadir" "ibn Abu Bakr" "ibn Ahmad" "ibn Ali"
 			"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
 			"ibn Muhammad" "ibn Mustafa" "ibn Salim"   
-			"ibn Umar" "ibn Uthman" "ibn Yusuf"  
-			}
+			"ibn Umar" "ibn Uthman" "ibn Yusuf" 
+			} 
+		
+		#last_names = { 
+		#	hpm = yes
+		#	Bey Pasha 
+		#}
 	}
 	mashriqi = {
 		color = {40 183 54}
@@ -2426,6 +2567,24 @@ arab = {
 			"al-Jazuli" Belkadi Mukrani "al-Rifi" "al-Sahrawi" "al-Shawiyyati" "al-Shiluhi" "al-Zanatawi"
 			}
 			radicalism = 10
+	}
+	maures = {
+		hpm = yes
+		color = {252 125 78}
+		first_names = { Abbas Malamah Abu "Ibn Muhammad" Tariq Farraj Galib Hajib Amira Asim Hasan Hayyan Jalaf Mansur Maymun Mujahid Mutarrif Nasr Tabit Tamim Ubada Ufayr Umar Wasil Yazid Yunus Zuhayr
+		}
+
+		last_names = { Ziyad al-Rahman Firnas al-Majriti al-Zahrawi al-Zarqali Bajjah Zuhr al-Idrisi Tufail Rushd al-Baitar Battuta Khaldon al-Qalasadi 
+		}
+	}
+	sudanese = {
+		hpm = yes
+		color = {241 241 78}
+		first_names = { Muhammad Abdullah Abbas said Ismail Mansur Rahman Abdallahi Hassan Malusi Tahir Wiraj Amsalu Nijam Bakri
+		}
+
+		last_names = { Ahmad Ali Zubayr Digna Azrak Hammuda al-Tasashi Nujumi
+		}
 	}
 
 	andalucian = {
@@ -2576,9 +2735,14 @@ iranian_turanian = {
 			Askar Chingiz Ishim Kasim Kurman Jangir Murat Nasiridin Sadyk Vali
 			}
 		last_names = {
+			#hpm = no
 			Abdulayev Abdulin Abdullayev Abdulov Aytmatov Bayžanov Bešimov Ibragimov
 			Nogoyev Usenov Abdrakhmanov Isakeyev Uzyukov Šubrikov Kulkov Šakhray Belotsky
-		}
+			}
+		#last_names = {
+		#	hpm = yes
+		#	Beg 
+		#}
 	}
 	tajik = {
 		color = {122 127 111}
@@ -2590,9 +2754,14 @@ iranian_turanian = {
 			Nadir "Naser ed-Din" Nosret Reza
 			}
 		last_names = {
+			#hpm = no
 			Abdulayev Abdulin Abdullayev Abdulov Ibragimov Karimov Nabiyev Niyazov
 			Makhamov Rahmon
-		}
+			}
+		#last_names = {
+		#	hpm = yes
+		#	Khan
+		#}
 	}
 	uighur = {
 		color = {92 96 168}
@@ -2601,9 +2770,14 @@ iranian_turanian = {
 			Afaq Ahmed Arshad Bahayeddin Burhan Daud Hakim Husayin Kemal Maqsud Muhammad Musa Rashidin Satuq Timur Yaqub
 			}
 		last_names = {
+			#hpm = no
 			Akhun Alptekin Muhiti Sabri Abdulbaki Bughra Abbas Qasim Batur Niyaz Laylinaman
 			Abdiqadir Abdulrixit Ajiyiming Šahidi Ahmet Tiliwaldi Hisamudin Bekri Azizi Zakir Dawamet
-		}
+			}
+		#last_names = {
+		#	hpm = yes
+		#	Beg Khan
+		#}
 	}
 	pashtun = {
 		color = {199 151 230}
@@ -2615,10 +2789,15 @@ iranian_turanian = {
 			Qaysar Shahpur "Sher Ali" Shuja Suleyman Timur Yaqub Zaman
 		}
 		last_names = {
+			#hpm = no
 			Achakzai Abdul Afghan Afghanzada Ahmadi Ahmadzai Akbar Akhtar Alakozai Alam Alizai Amin Aurakzai Aziz Barakzai Dawlatzai Durrani Ibrahimi Iqbal Ishaqzai Kabir Karzai Khan Malikzai Mohammad Mohammadzai
 			Nawabi Niazai Noor Noorzai Nuristani Orakzai Popalzai Poya Rahman Rasul Sadozai Safi Sardar Sediqi Shah Shahnawaz Sherkhanzai Sherzai Shirzai Sidiqi Stanikzai Taheri Ullah Yasin Yousafzai Yusufi Yusufzai
 			Zadran Zahid Zalmai Zazai
 		}
+		#last_names = {
+		#	hpm = yes
+		#	Khan
+		#}
 		radicalism = 10
 
 	}
@@ -2659,12 +2838,18 @@ iranian_turanian = {
 			Ahmed Haydar Mehmed Murad Nurberdi Qilich
 		}
 		last_names = {
+			#hpm = no
 			Abdulayev Abdulin Abdullayev Abdulov Garayev Ibragimov Muhadow Niyazov
 			Mežlauk Paskutsky Aronštam Popok Mukhamedov Chubin Fonin Batyrov Babayev
 			Karayev Ovezov Gapurow
 		}
+		#last_names = {
+		#	hpm = yes
+		#	Beg Khan
+		#}
 	}
 	kurdish = {
+		hpm = no
 		color = {176 201 238}
 
 		first_names = {
@@ -2872,6 +3057,18 @@ central_asian = {
 		}
 		radicalism = 10
 	}
+	nepali = {
+		hpm = yes
+		color = {173 123 190}
+
+		first_names = { Bhimsen Amar Ranjur Bhakti Jang Renaudip Shamsher "Bir Shamsher" "Deva Shamsher" "Chandra Shamsher" "Bhim Shamsher" 
+			
+		}
+		
+		last_names = { Thapa "Singh Thapa" Singh Rana "Bahadur Rana" 
+               
+		}
+	}
 	janalem = {
 		color = {167 200 107}
 
@@ -2920,6 +3117,7 @@ south_asian = {
 		}
 	}
 	bengali = {
+		hpm = no
 		color = {156 134 112}
 
 		first_names = { Murshid Quli Shujauddin Alauddin Alivardi Sirajuddaula "Mir Muhammad" Najimuddin Reza Saifuddaula Zainul Ahmad Mansur Mubarak Hasan Wasif Waris
@@ -2951,6 +3149,7 @@ south_asian = {
 		}
 	}
 	nepali = {
+		hpm = no
 		color = {173 123 190}
 
 		first_names = { Bhimsen Amar Ranjur Bhakti Jang Renaudip Shamsher "Bir Shamsher" "Deva Shamsher" "Chandra Shamsher" "Bhim Shamsher" 
@@ -3003,6 +3202,7 @@ south_asian = {
 		}
 	}
 	panjabi = {
+		hpm = no
 		color = {190 180 170}
 		first_names = { Ranjit Kharak Nau Nihal Chand Kaur Shir Dhalip Diwan Jassa Hari Bhuma Nawab Banda Baba Kapur
 			
@@ -3044,6 +3244,7 @@ south_asian = {
 		}
 	}
 	sindi = {
+		hpm = no
 		color = {190 65 230}
 		first_names = { "Morad Ali" "Nur Mohammad" Sobhdar Hosayn Shahdad Mohammad Nasir Morad Karim Gholam "Mir Fath"
 			
@@ -3138,6 +3339,42 @@ south_asian = {
 		}
 	}
 	union = HND
+}
+
+indo_iranian = {
+	hpm = yes
+	leader = indian
+	unit = IndianGC
+	bengali = {
+		color = {156 134 112}
+		first_names = { Murshid Quli Shujauddin Alauddin Alivardi Sirajuddaula "Mir Muhammad" Najimuddin Reza Saifuddaula Zainul Ahmad Mansur Mubarak Hasan Wasif Waris
+			
+		}
+		
+		last_names = { Jafar Muhammad Sarfaraz Ali "Qasim Ali" Najabut Bahadur Mirza
+               
+		}
+	}
+	panjabi = {
+		color = {190 180 170}
+		first_names = { Ranjit Kharak Nau Nihal Chand Kaur Shir Dhalip Diwan Jassa Hari Bhuma Nawab Banda Baba Kapur
+			
+		}
+		
+		last_names = { Singh Kunwar Bahadur Dhillon Nalwa Ahluwalia Ramgarhia Mal Mulraj
+               
+		}
+	}
+	sindi = {
+		color = {190 65 230}
+		first_names = { "Morad Ali" "Nur Mohammad" Sobhdar Hosayn Shahdad Mohammad Nasir Morad Karim Gholam "Mir Fath"
+			
+		}
+		
+		last_names = { Alwani Bjaeen Bhatti Bhil Bhurgari Bulfati Chandio Daudpota Gabol Kalpar Kolhi Magsi Mallaah Rajpar Sarki Sirki Solangi
+               
+		}
+	}
 }
 
 southeast_asian = {
@@ -3336,6 +3573,7 @@ east_asian = {
 	leader = asian
 	unit = ChineseGC
 	japanese = {
+		hpm = no
 		color = {230 230 230}
 
 		first_names = {
@@ -3392,6 +3630,7 @@ east_asian = {
 		}
 	}
 	korean = {
+		hpm = no
 		color = {87 89 25}
 
 		first_names = { Yi Jo Bak Yun Sim Kim Hong Seo Jeong Kwon Han 
@@ -3400,6 +3639,7 @@ east_asian = {
 		}
 	}
 	ainu = {
+		hpm = no
 		color = {130 130 130}
 		first_names = { Seimei Resaak Akihi Petennouk Unayanke Shiratekka Apniainu Pasekur Munkeke Shitekka Shinriki Shiromainu Menkakush
 		}
@@ -3487,6 +3727,33 @@ east_asian = {
 	
 }
 
+far_east_asian = {
+	hpm = yes
+	leader = asian
+	unit = ChineseGC
+	japanese = {
+		color = {230 230 230}
+		first_names = { Arisugawa Arichi Akiyama Araki Dewa Enomoto Hasegawa Honjo Ito Inoue Ichinohe Itagaki Kido Kuroda Katsura Kodama Kabayama Kawamura Kuroki Kawakami Kamimura Kataoka Kamio Kato Kanin Katsu Makino Muto Minami Masaki Matsudaira Nakamuta Nogi Nire Nozu Okubo Oyama Omura Oku Okada Osumi
+		Saigo Suzuki Sato Sakura Shibayama Shimamura Shirakawa Togo Takashima Tsuboi Tachibana Terauchi Tamon Takasugi Tokugawa Uehara Uryu Ugaki Ueda Yamagata Yamamoto Yamakawa Yashiro Yui Yamashita Yamaya Uesugi Takeda Abe Usami Watanabe Honda Hosokawa Asai	Askikaga Chosokabe Date Fukushima Genji Hachisuka Hattori Heike Hojo Ishida Kaga Kuki Maeda Miyamoto Mori Murakami Oda Okamoto Ooka Saito Shibata Shimazu Suwa Takigawa Tanuma Ukita Konoe Takashi Kujo Ichijo Gojo Aburakoji Anenokoji Asukai Daigo Hirohata Imaidegawa Inokuma Jimyoin Kajuji Kaoin Karasuma Kawashi Konjo Kuga Masachika	Matsuki	Minase	Nakayama Nanba Nomiya Oimikado Rakujochigusa Reizei Saioji Sanjo Shigenoi Shijo Shimizudani Tokudaiji Washio Yamashina	 
+		} 
+		
+		last_names = { Aritomo Goro Gentaro Gonnohyoe Heihachiro Hiroshi Hikonojo Hyoe Hayao Iwao Jiro Jinzaburo Kiyotaka Kuranosuke Kozo Kantaro Koichiro Kagenori Kageaki Kotohito Keisuke Kazushige Kenkichi Maresuke Masujiro Michisura Masatake Mitsuomi Mitsue Mineo Nariaki Nobuyoshi Rokuro Sukeyuki Sukenori Shoin Sumiyoshi Samata Soroku Shichiro Shigeto Sotokichi Shigeru Sadao Shinsaku Takayoshi Takamori Toshimichi Tsugumichi Tadakuni Tomonosuke Taro Toshiyoshi Tetsutaro Taruhito Takeaki Tamemoto Tomasaburo Yoshika Yoshinobu Yoshimichi Yoshida Yasukata Yahachi Yusaku Yoshifuru Yoshinori Yasuyoshi Ieyasu
+		}
+	}
+	korean = {
+		color = {87 89 25}
+		first_names = { Hwan Chung Hyong Shinjong Haung Ch'ok Taek Seon Si Jip Guk Mok Bo Yong Sun Gyu Hu Kim Rhee Bahk Choi Jung Yie Ee Gahn Kahn Gahl Kahl Gahm Kahng Kangjun Kae Kyun Kyong Kye Ko Kok Khong Kwak Kyo Ku Kuk Kun Kung Kwog Kwon Keun Kuem Ki Kil Pak Chae Nahn Namgung Nahng Lang Nae Noh Roi Than Tam Tang Tae Toh Tokko Ton Tong Tubongbanua Ryu Mangjul Maing Myong Myo Muk Pang Min Pyun Peom Paek Pin Pi Pok Sa Sagong Sam Sang Somoon Seonwoo Seul Song Sobong Sin Sim Yang Lyang Yu Chang Changgok Jei Chong Chegal Chin P'aeng P'an Ch'ang Pyong Hyung Hyun Huhng Hyeong Hwangbo Lee Ch'oe Cho Kang Yun Han
+		}
+		last_names = { Yi Jo Bak Hong Seo Jeong Jang Shin Lim Song Jin Jun Hwang Jeon Min Yoon Ahn Ko Joon Bae Nam An "Dong Hyun" Sung Ha Baek MinSu Cha Im Won Jihun Seong "Sang Min" Minwoo Minho "Ji Hoon" Joo Woo Woojin Donghyun Jongmin Jaehyun Ji "Seung Hyun" "Sung Min" Seungmin Jihoon "Jong-un" "Jong-il" "Pong-ju" "Yong-rim" "Yong-nam" "Ryong-hae" "Yong-ho"
+		}
+	}
+	ainu = {
+		color = {130 130 130}
+		first_names = { Seimei Resaak Akihi Petennouk Unayanke Shiratekka Apniainu Pasekur Munkeke Shitekka Shinriki Shiromainu Menkakush }
+		last_names = { Aterui Shakushine Koshamine Harukor Turushno Isonash Keutoranke }
+	}
+}
+
 oceanic = {
 	leader = nativeamerican
 	unit = AfricanGC
@@ -3537,6 +3804,7 @@ oceanic = {
 }
 
 native_central_american = {
+	hpm = native_american
 	leader = nativeamerican
 	unit = SouthAmericanGC
 	is_overseas = no
@@ -3602,6 +3870,7 @@ native_central_american = {
 }
 
 native_south_american = {
+	hpm = native_american
 	leader = nativeamerican
 	unit = SouthAmericanGC
 	is_overseas = no
@@ -3666,6 +3935,7 @@ native_south_american = {
 			Caca Capayan Hualfin Paccioca Pular Quilme Aconquijas Anguinahao Tocpo Omaguaca }
 	}
 	tupi = {
+		hpm = tupinamba
 		color = {89 80 175}
 		first_names = {Tibiriçá Piquerobi Caiubi Ramalho Italo Arah Pirijá Arata Toruí Mbicy}
 
@@ -3730,6 +4000,7 @@ native_south_american = {
 	}
 }
 native_north_american = {
+	hpm = native_american
 	leader = nativeamerican
 	unit = SouthAmericanGC
 	is_overseas = no
@@ -3784,6 +4055,14 @@ native_north_american = {
 			Wazhaze Tsishu Pasueli Wahakolin Sansueli Wyota Picayune Koholo Neodesha Owasso Pawhuska Niukonska Doppike Neosho Chetopa Hominy Pahusan 			
 		}
 	}
+	dakota = {
+		hpm = yes
+		color = {117 84 13}
+		first_names = { Sinté Thaóyate Thathanka Thasunke Mahpiya Istahba Hehaka Thahca Ohiyes Wanbdi Tamaha Inkpaduta
+		}
+		last_names = { Gleská Duta Iyotake Witko Luta Kohkophapi Sapa Huste Thankja
+		}
+	}
 	cherokee = {
 		color = {105  145  40}
 		first_names = {Sequoyah Attakullaculla Guwisguwi Moytoy Yonaguska Tsiyu Gansini Agi It Boudinot Lach'n Koatohee 
@@ -3797,6 +4076,38 @@ native_north_american = {
 			Chochuchee Kostayeak Ookouseteeh Kanitta Nemetuah Wyuka Tulco
 		}
 		last_names = {Mohe Diwali Waya Tsiyi Onacona Atagulkalu Degataga Cheasequah Adahy Atagulkalu
+		}
+	}
+	pueblo = {
+		hpm = yes
+		color = {222 238 156}
+		first_names = { Cochise Mangas Loco Taza Nana chihuahua Geronimo Alchesay Naiche Victorio
+		}
+		last_names = { Arivaipa Cibecue Coyotero Jicarilla Llanero Mescalero Nateges Tonto
+		}
+	}
+	inuit = {
+		hpm = yes
+		color = {210 243 242}
+		first_names = { Peter Ipeelee Jose Steve David Jack Goo Germaine James Pitseolak Kenojuak Ernie Caubvick
+		}
+		last_names = { Alakannuark Arreak Ashoona Enuaraq Evaloarjuk Ipeelee Irgittuq Keenainak Kunuk Kusugak Maksagak Nutarak Paniloo Piugattuk Pudluk Tiktaalaaq Ungallaq
+		}
+	}
+	cree = {
+		hpm = yes
+		color = {127 244 100}
+		first_names = { Louis Maskipitonew Alexis Samson Joe James Baptiste Felix Jacob
+		}
+		last_names = { Piche Kiskiyew Crane Saddleback Buffalo Rain
+		}
+	}
+	navajo = {
+		hpm = yes
+		color = {83 111 191}
+		first_names = { Narbona Mariano Zarcillos Manuelito Herrero Barboncito Ganado "Henry Chee" "Digul Chee"
+		}
+		last_names = { Naat'aa Martinez Ch'ilhanjini Largos Delagado Grande Da'ghaaii To'tso'nii Dodge
 		}
 	}
 	iroquoian = {
@@ -4249,6 +4560,19 @@ neo_european_cultures = {
 		last_names = { Belleau Caron "de St.-Just" Robitaille Masson Angers Chapleau Jotte Pantaléon Langelier Damasne LeBlanc Brodeur Perodeau
 		}
 		radicalism = 10
+	}
+	alaskan = {
+		hpm = yes
+		color = { 14 139 80 }
+			first_names = {Adam Alexander William Henry Michael Samuel Joshua George John Matthew Mark Luke Lucas Jeffrey Ulysses 
+			Joseph Charles Russell eksandr Alexei Andrei Anton Boris Dmitry Fyodor Gennady Giorgi Grigoriy Igor Ivan Kirill Konstantin Lavr Leonid Lev Maxim 
+			Mikhail Nikita Nikolai Oleg Pavel Pyotr Roman Semyon Sergei Valery Vasily Viktor Vladimir Vladislav Yegor Yevgeny Yuri
+			}
+		last_names = {Smith Washington Grant Sherman Chamberlain Powell Clemens Abbott Abercrombie Allen Ames Anderson Barkhauer Andrews Appleton
+				Armstrong Arthur Atkins Asboth Babcock Baker Pope Banks Barnard Barnes Barnum Barry Barstow Bartlett Bates 
+				Baxter Beatty Belknap Benton Blair Blunt Bradley Brown Buell Buford Burnside Butler Caldwell Campbell Carr Kuropatkin Lazarev
+				Makarov Menshikov Nakhimov Nebogatov Nikolaevich Ostrovsky Pavlov Putyatin Romanov Rozhestvensky Skobelev Shuvalov Surkov Tukhachevsky Yegorov Yudenich Vorontsov Voroshilov Zavoyko
+		}
 	}
 	anglo_african = {
 		color = { 210 106 47}
@@ -4703,6 +5027,21 @@ african_diaspora_cultures = {
 		Madiou Péralte Pierrot Planchet Price Price-Mars Riché Rigaud Rivière-Hérard Roumain
 		Roy Saget Salnave Salomon Sam Simon Soulouque Théodore Vincent Zamor }
 	}
+	kreol = { 
+		hpm = yes
+		color = { 63 32 10 }
+		first_names = { Alexis André Anténor Antoine Augustin Balthazar Beaubrun Céligny Charlemagne Charles
+			Cincinnatus Dantès Demesvar Denys Emmanuel Eugène Fabre Faustin Florvil François
+			Guillaume Hannibal Henri Jacques Jean Jean-Baptiste Jean-Louis Jean-Pierre Jonathas Joseph
+			Léon Louis Louis-Eugène Louis-Joseph Lysius Michel Monpoint Nissage Nord Oreste
+			Philippe Pierre Simon Sténio Sylvain Tandredè Thomas Timoleón Tirésias Vilbrum }
+		
+			last_names = { Alexis Ardouin Auguste Bellegarde Boisrond-Canal Bonnet Borno Boyer Brutus Christophe
+			Conzé Dartiguenave Delorme Dessalines Domingue Firmin Geffrad Granville Guerrier Hyppolite
+			Iginac Janvier Jeune Lafontant Laleau Leconte Légitime Legouaze Léon Lhérisson
+			Madiou Péralte Pierrot Planchet Price Price-Mars Riché Rigaud Rivière-Hérard Roumain
+			Roy Saget Salnave Salomon Sam Simon Soulouque Théodore Vincent Zamor }
+	}
 	afro_norse = { 
 		color = { 39 9 74 }
 
@@ -4879,6 +5218,7 @@ west_african = {
 		}
 	}
 	maures = {
+		hpm = no
 		color = {252 125 78}
 		first_names = { Abbas Malamah Abu "Ibn Muhammad" Tariq Farraj Galib Hajib Amira Asim Hasan Hayyan Jalaf Mansur Maymun Mujahid Mutarrif Nasr Tabit Tamim Ubada Ufayr Umar Wasil Yazid Yunus Zuhayr
 		}
@@ -4886,8 +5226,26 @@ west_african = {
 		last_names = { Ziyad al-Rahman Firnas al-Majriti al-Zahrawi al-Zarqali Bajjah Zuhr al-Idrisi Tufail Rushd al-Baitar Battuta Khaldon al-Qalasadi 
 		}
 	}
+	western_nigritic = {
+		hpm = yes
+		color = {12 0 255}
+		first_names = { Neneh Tejan Sheka Kanji Lansana Brima Foda Sekouba Alhassani Sekou Amara Losene Fodey Kaleefa Hatab Daba Massa Aoua Soumaila
+		}
+
+		last_names = { Diawara Sidibe Suso Jammeh Jaabi Keita Konneh Kanneh Conde
+		}
+	}
 	mossi = {
 		color = {230 14 213}
+		first_names = { Builsa Babato Gazari Alfa Dyori Bako Laganfyela Ali Kokoroko Sabana Tyeba Pintyeba Karamoko Sapilem Nyambre Salma Korongo Koom Yamba Tigre 
+		}
+
+		last_names = { Hano Hamaria Wattara Moru Dyan Nyandane 
+		}
+	}
+	gur = {
+		hpm = yes
+		color = {232 6 6}
 		first_names = { Builsa Babato Gazari Alfa Dyori Bako Laganfyela Ali Kokoroko Sabana Tyeba Pintyeba Karamoko Sapilem Nyambre Salma Korongo Koom Yamba Tigre 
 		}
 
@@ -4942,6 +5300,15 @@ west_african = {
 		last_names = { Oladigbolu Adeniran Agogoja Alowolodu Atobatele Zumaw Oyo Tofa Tonyon Bezon Hungbo Dudu
 		}
 	}
+	east_kwa = {
+		hpm = yes
+		color = {21 165 160}
+		first_names = { Siyanbola Lawani Adeyemi Adelu Atiba Oluewu Amodo Majotu Makua Adebo Bello Onikepe Gbadegesin Ajikin Abisi Lauru Kase Agidigbo Ademufekun
+		}
+
+		last_names = { Oladigbolu Adeniran Agogoja Alowolodu Atobatele Zumaw Oyo Tofa Tonyon Bezon Hungbo Dudu
+		}
+	}
 }
 
 central_african = {
@@ -4980,6 +5347,15 @@ central_african = {
 		last_names = { al-Kanemi Sayfawa Dalatumi Lefiami Kingibe Imam Gana
 		}
 	}
+	kuba = { #aka Bashong
+		hpm = yes
+		color = {166 72 57}
+		first_names = { Kasongo Umpafu Ilunga Kisula Nday Kitamba Maloba Ndaye Kumwimba Maniema 
+		}
+
+		last_names = { Nsungu Kukaya Ngombe Muzinga Kabale Konkola Kalombo Mande Nyembo 
+		}
+	}
 	luba = {
 		color = {87 45 69}
 		first_names = { Kasongo Umpafu Ilunga Kisula Nday Kitamba Maloba Ndaye Kumwimba Maniema 
@@ -4995,6 +5371,34 @@ central_african = {
 
 		last_names = { Kasang Nambing Kalong Mukaz Ditend Yaava Namwan Naweej Kamong Isot Kat Muteba
 		}
+	}
+	lendu = {
+		hpm = yes
+		color = { 40 4 60 }
+		first_names = { Mateso Baudouin Katanga Yuda Padiri Dunia Mayele }
+
+		last_names = { Vaweka Apuobo Leku Ndjabu Ninga Adirodo Ngudjolo Lubanga Chui Koka Zaba Yakutumba Mudundu }
+	}
+	kingwana = {
+		hpm = yes
+		color = {171 188 73}
+		first_names = { Bokobo Bomete Ilitosini Ndjandja }
+
+		last_names = { Taabwa Bwile Bembe Kabwari Buyu Bangubangu Zimba Kwami Tembo Nyanga Bhele Komo Nande }
+	}
+	chokwe = {
+		hpm = yes
+		color = {136 144 120}
+		first_names = { Kalembe	Kalembele Kambangaji Lundembe Ndembe Ngulu Tulembele Tumbangaji	 }
+
+		last_names = { Chokwe Lovale Balovale Nsongo }
+	}
+	kavango = {
+		hpm = yes
+		color = {76 34 120}
+		first_names = { Kalembe	Kalembele Kambangaji Lundembe Ndembe Ngulu Tulembele Tumbangaji	 }
+
+		last_names = { Chokwe Lovale Balovale Nsongo }
 	}
 	mongo = {
 		color = {150 44 197}
@@ -5026,6 +5430,32 @@ central_african = {
 		}
 
 		last_names = { Mussa Mutato Bowelle Makeda Nzinga Sundiata 
+		}
+	}
+	ubangian = {
+		hpm = yes
+		color = {104 17 17}
+		first_names = { Mahamat Hyacinthe Abdou Nassirou Abdoulaye Noureddine
+		}
+
+		last_names = { Sarandji Kamoun Nzapayeké Tiangaye Touadéra Dologuelé Samba-Panza Wodobodé Bozizé }
+	}
+	forest_bantu = {
+		hpm = yes
+		color = {237 134 16}
+		first_names = { Ngalifourou Muteba Mushidi Mbala Mutand Mudib Kangapu Cimbindu Mbumb Cakasekene Mulay Nawej Cikombe Waranankong
+		}
+
+		last_names = { Bongo Ganao Kalong Mukaz Ditend Yaava Namwan Naweej Kamong Isot Kat Muteba
+		}
+	}
+	south_forest_bantu = {
+		hpm = yes
+		color = {233 237 16}
+		first_names = { Kaumba Muteba Mushidi Mbala Mutand Mudib Kangapu Cimbindu Mbumb Cakasekene Mulay Nawej Cikombe Waranankong
+		}
+
+		last_names = { Kasang Nambing Kalong Mukaz Ditend Yaava Namwan Naweej Kamong Isot Kat Muteba
 		}
 	}
 }
@@ -5185,6 +5615,7 @@ east_african = {
 		}
 	}
 	sudanese = {
+		hpm = no
 		color = {241 241 78}
 		first_names = { Muhammad Abdullah Abbas said Ismail Mansur Rahman Abdallahi Hassan Malusi Tahir Wiraj Amsalu Nijam Bakri
 		}
@@ -5224,6 +5655,40 @@ east_african = {
 		last_names = { Mnywasele Mkasiwa Mirambo Msemwa Bulungute Mudimbe 
 		}
 	}
+	kilombero = {
+		hpm = yes
+		color = {96 106 66}
+		first_names = { Andikan Amadi Aren Bahari Averey Bakari Bash Bayode Bitalo Chane Chata Dakarai Davu Dume Fabunni Gamba Genet Guban Hajari Haruni Ife Ilo Issay Jabari Jabilo Jaguan Kabili Kamwimbile Kasim Kenyi Khairi Makalo Mansa Morathi Musawenkosi Raimi Razi Reth
+		}
+
+		last_names = { Mnywasele Mkasiwa Mirambo Msemwa Bulungute Mudimbe 
+		}
+	}
+	lacustrine_bantu = {
+		hpm = yes
+		color = {128 175 93}
+		first_names = { Mutesa Mwanga Kalema Kiweewa Ssemakookiro Jjunju Kyabaggo Namugala Kikulwe Kabulu
+		}
+
+		last_names = { Njovu Ndiga Ngo Nseenene Mmamba Ngonge Ngabi
+		}
+	}
+	cushitic = {
+		hpm = yes
+		color = {201 101 39}
+		first_names = { "Ibn Muhammad" Abdullah "Abbas said" Ismail Mansur Rahman Abdallahi Hassan Malusi Tahir Wiraj Amsalu Nijam Bakri
+		}
+
+		last_names = { Ahmad Ali Zubayr Digna Azrak Hammuda al-Tasashi Nujumi
+		}
+	}
+	nilotic = {
+		hpm = yes
+		color = {101 101 39}
+		first_names = { Okeyo Wanyanga Jaramobi Oluoch Oso Othiamba Waga Okoth Odongo Nyikaano Odaago Reth Kwa Dhyang Kolo Omaaro Wat Okwa }
+
+		last_names = { Kony Oculi Oneko p'Bitek Orombi Ramogi Luwum Obote Ocollo Tugo Tuga Tugi Ju Mono Ajalo Adugo Poolo Moolo }
+	}
 }
 
 southern_african = {
@@ -5232,6 +5697,15 @@ southern_african = {
 	unit = ZuluGC
 	chewa = {
 		color = {88 88 88}
+		first_names = { Andikan Amadi Aren Bahari Averey Bakari Bash Bayode Bitalo Chane Chata Dakarai Davu Dume Fabunni Gamba Genet Guban Hajari Haruni Ife Ilo Issay Jabari Jabilo Jaguan Kabili Kamwimbile Kasim Kenyi Khairi Makalo Mansa Morathi Musawenkosi Raimi Razi Reth
+		}
+
+		last_names = { Mwale Phiri Mkunkhuntha Mbewe Kalimakudzulu
+		}
+	}
+	nyasa = {
+		hpm = yes
+		color = {18 88 48}
 		first_names = { Andikan Amadi Aren Bahari Averey Bakari Bash Bayode Bitalo Chane Chata Dakarai Davu Dume Fabunni Gamba Genet Guban Hajari Haruni Ife Ilo Issay Jabari Jabilo Jaguan Kabili Kamwimbile Kasim Kenyi Khairi Makalo Mansa Morathi Musawenkosi Raimi Razi Reth
 		}
 
@@ -5280,6 +5754,15 @@ southern_african = {
 	}
 	nguni = {
 		color = {165 43 18}
+		first_names = { Kinjikitile Fambaltate Songea Ebabruma Mputa Mbemchapa Atepa Matola Magobi Rjoroza Wasesse Rinyizea Chapwanya Chakoma Kapola Kapungu Kindunda Kinjalla Kiwanga Mahengu Mburu Mhavanginonya Namkina Ngosingosi Schabruma Sentambandu Uawula Ulanga 
+		}
+
+		last_names = { Ngwale Farhenga Chimai Amari Kwira Mtemi Hanga Mwanawalifa Mbano
+		}
+	}
+	southern_bantu = {
+		hpm = yes
+		color = {165 111 17}
 		first_names = { Kinjikitile Fambaltate Songea Ebabruma Mputa Mbemchapa Atepa Matola Magobi Rjoroza Wasesse Rinyizea Chapwanya Chakoma Kapola Kapungu Kindunda Kinjalla Kiwanga Mahengu Mburu Mhavanginonya Namkina Ngosingosi Schabruma Sentambandu Uawula Ulanga 
 		}
 

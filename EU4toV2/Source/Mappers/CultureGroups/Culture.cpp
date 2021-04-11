@@ -12,6 +12,9 @@ mappers::Culture::Culture(std::istream& theStream)
 
 void mappers::Culture::registerKeys()
 {
+	registerKeyword("hpm", [this](const std::string& unused, std::istream& theStream) {
+		hpm = commonItems::singleString(theStream).getString();
+	});
 	registerKeyword("primary", [this](const std::string& unused, std::istream& theStream) {
 		primaryTag = commonItems::singleString(theStream).getString();
 	});
