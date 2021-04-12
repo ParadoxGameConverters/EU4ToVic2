@@ -50,6 +50,7 @@ class Culture: commonItems::parser
 	std::vector<std::string> femaleNames;
 	std::vector<std::string> firstNames;
 	std::vector<std::string> lastNames;
+	std::vector<std::string> hpmLastNames;
 	std::vector<std::string> dynastyNames;
 	std::optional<commonItems::Color> color;
 	int radicalism = 0;

@@ -29,9 +29,11 @@ class CultureGroup: commonItems::parser
 	std::string name;
 	std::string hpm;
 	std::string unit;
+	std::string hpmUnit;
 	std::string leader;
 	std::string isOverseas;
 	std::string culturalUnionTag;
+	std::string hpmUnionTag;
 	std::map<std::string, std::shared_ptr<Culture>> cultures;
 };
 } // namespace mappers

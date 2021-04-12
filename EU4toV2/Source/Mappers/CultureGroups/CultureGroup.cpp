@@ -9,6 +9,14 @@ mappers::CultureGroup::CultureGroup(std::string theName, std::istream& theStream
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+
+	if (theConfiguration.isHpmEnabled())
+	{
+		if (!hpmUnit.empty())
+			unit = hpmUnit;
+		if (!hpmUnionTag.empty())
+			culturalUnionTag = hpmUnionTag;
+	}
 }
 
 void mappers::CultureGroup::registerKeys()
@@ -19,6 +27,9 @@ void mappers::CultureGroup::registerKeys()
 	registerKeyword("unit", [this](const std::string& unused, std::istream& theStream) {
 		unit = commonItems::singleString(theStream).getString();
 	});
+	registerKeyword("hpm_unit", [this](const std::string& unused, std::istream& theStream) {
+		hpmUnit = commonItems::singleString(theStream).getString();
+	});
 	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream) {
 		leader = commonItems::singleString(theStream).getString();
 	});
@@ -27,6 +38,9 @@ void mappers::CultureGroup::registerKeys()
 	});
 	registerKeyword("union", [this](const std::string& unused, std::istream& theStream) {
 		culturalUnionTag = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("hpm_union", [this](const std::string& unused, std::istream& theStream) {
+		hpmUnionTag = commonItems::singleString(theStream).getString();
 	});
 	registerRegex("graphical_culture|female_names|dynasty_names|male_names", [this](const std::string& unused, std::istream& theStream) {
 		commonItems::ignoreItem(unused, theStream);

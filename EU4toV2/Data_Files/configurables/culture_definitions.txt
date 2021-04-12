@@ -1723,13 +1723,13 @@ polish_culture_group = {
 	}
 	
 	union = PLC
-	#hpm_union = POL
+	hpm_union = POL
 }
 
 czecho_slovak_culture_group = {
 	leader = european
 	unit = AustriaHungaryGC
-	#hpm_unit = EuropeanGC
+	hpm_unit = EuropeanGC
 
 	czech = {
 		color = {120 120 255}
@@ -1906,7 +1906,7 @@ east_slavic = {
 baltic = {
 	leader = european
 	unit = RussianGC
-	#hpm_unit = EuropeanGC
+	hpm_unit = EuropeanGC
 	lithuanian = {
 		hpm = yes
 		color = {17 162 48}
@@ -2281,7 +2281,6 @@ turko_semitic = {
 		}
 		
 		last_names = { 
-		#hpm = no
 		Akdag’ Akdog’u Akkaya Akkaš Akkïlïç Akköz Aktug’ Akyol Altïntop Avcï Aytimur Aziz Babalï Balbay Baykal
 		Bulut Burçak Binay Ceylan Demir Demirel Demirkol Deniz Dog’an Durak Dilmen Ekin Ercan Erdog’an Eren
 		Erentöz Erkin Ermiš Ertunç Estelik Güler Gümüš Gündog’an Gündüz Güney Güneš Güven Karan Kaya Korun
@@ -2507,7 +2506,6 @@ arab = {
 			}
 		
 		last_names = { 
-			#hpm = no
 			"al-Annabi" "al-Araishi" "al-Asfawi" "al-Binzarti" "al-Fasi" "al-Gharyani"
 			"al-Jaza'iri" "al-Miknasi" "al-Misurati" "al-Murrakushi" "al-Qabisi" "al-Qayrawani" "al-Ribati" "al-Safaqisi"
 			"al-Silawi" "al-Sirti" "al-Susawi" "al-Tilimsani" "al-Tanjawi" "al-Tatwani" "al-Trablusi" "al-Tunusi" 
@@ -2518,10 +2516,9 @@ arab = {
 			"ibn Umar" "ibn Uthman" "ibn Yusuf" 
 			} 
 		
-		#last_names = { 
-		#	hpm = yes
-		#	Bey Pasha 
-		#}
+		hpm_last_names = { 
+			Bey Pasha 
+		}
 	}
 	mashriqi = {
 		color = {40 183 54}
@@ -2740,14 +2737,12 @@ iranian_turanian = {
 			Askar Chingiz Ishim Kasim Kurman Jangir Murat Nasiridin Sadyk Vali
 			}
 		last_names = {
-			#hpm = no
 			Abdulayev Abdulin Abdullayev Abdulov Aytmatov Bayžanov Bešimov Ibragimov
 			Nogoyev Usenov Abdrakhmanov Isakeyev Uzyukov Šubrikov Kulkov Šakhray Belotsky
 			}
-		#last_names = {
-		#	hpm = yes
-		#	Beg 
-		#}
+		hpm_last_names = {
+			Beg 
+		}
 	}
 	tajik = {
 		color = {122 127 111}
@@ -2759,14 +2754,12 @@ iranian_turanian = {
 			Nadir "Naser ed-Din" Nosret Reza
 			}
 		last_names = {
-			#hpm = no
 			Abdulayev Abdulin Abdullayev Abdulov Ibragimov Karimov Nabiyev Niyazov
 			Makhamov Rahmon
 			}
-		#last_names = {
-		#	hpm = yes
-		#	Khan
-		#}
+		hpm_last_names = {
+			Khan
+		}
 	}
 	uighur = {
 		color = {92 96 168}
@@ -2775,14 +2768,12 @@ iranian_turanian = {
 			Afaq Ahmed Arshad Bahayeddin Burhan Daud Hakim Husayin Kemal Maqsud Muhammad Musa Rashidin Satuq Timur Yaqub
 			}
 		last_names = {
-			#hpm = no
 			Akhun Alptekin Muhiti Sabri Abdulbaki Bughra Abbas Qasim Batur Niyaz Laylinaman
 			Abdiqadir Abdulrixit Ajiyiming Šahidi Ahmet Tiliwaldi Hisamudin Bekri Azizi Zakir Dawamet
 			}
-		#last_names = {
-		#	hpm = yes
-		#	Beg Khan
-		#}
+		hpm_last_names = {
+			Beg Khan
+		}
 	}
 	pashtun = {
 		color = {199 151 230}
@@ -2794,15 +2785,13 @@ iranian_turanian = {
 			Qaysar Shahpur "Sher Ali" Shuja Suleyman Timur Yaqub Zaman
 		}
 		last_names = {
-			#hpm = no
 			Achakzai Abdul Afghan Afghanzada Ahmadi Ahmadzai Akbar Akhtar Alakozai Alam Alizai Amin Aurakzai Aziz Barakzai Dawlatzai Durrani Ibrahimi Iqbal Ishaqzai Kabir Karzai Khan Malikzai Mohammad Mohammadzai
 			Nawabi Niazai Noor Noorzai Nuristani Orakzai Popalzai Poya Rahman Rasul Sadozai Safi Sardar Sediqi Shah Shahnawaz Sherkhanzai Sherzai Shirzai Sidiqi Stanikzai Taheri Ullah Yasin Yousafzai Yusufi Yusufzai
 			Zadran Zahid Zalmai Zazai
 		}
-		#last_names = {
-		#	hpm = yes
-		#	Khan
-		#}
+		hpm_last_names = {
+			Khan
+		}
 		radicalism = 10
 
 	}
@@ -2843,15 +2832,13 @@ iranian_turanian = {
 			Ahmed Haydar Mehmed Murad Nurberdi Qilich
 		}
 		last_names = {
-			#hpm = no
 			Abdulayev Abdulin Abdullayev Abdulov Garayev Ibragimov Muhadow Niyazov
 			Mežlauk Paskutsky Aronštam Popok Mukhamedov Chubin Fonin Batyrov Babayev
 			Karayev Ovezov Gapurow
 		}
-		#last_names = {
-		#	hpm = yes
-		#	Beg Khan
-		#}
+		hpm_last_names = {
+			Beg Khan
+		}
 	}
 	kurdish = {
 		hpm = no
