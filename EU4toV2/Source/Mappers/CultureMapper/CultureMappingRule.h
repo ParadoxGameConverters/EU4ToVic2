@@ -38,6 +38,7 @@ class CultureMappingRule: commonItems::parser
 	void registerKeys();
 
 	std::string destinationCulture;
+	std::string hpmCulture;
 	std::set<std::string> cultures;
 	std::set<std::string> religions;
 	std::set<std::string> regions;

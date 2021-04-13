@@ -1,19 +1,26 @@
 #include "CultureMappingRule.h"
+#include "CommonRegexes.h"
+#include "Configuration.h"
 #include "ParserHelpers.h"
 #include "Regions/Regions.h"
-#include "CommonRegexes.h"
 
 mappers::CultureMappingRule::CultureMappingRule(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+
+	if (theConfiguration.isHpmEnabled() && !hpmCulture.empty())
+		destinationCulture = hpmCulture;
 }
 
 void mappers::CultureMappingRule::registerKeys()
 {
 	registerKeyword("vic2", [this](const std::string& unused, std::istream& theStream) {
 		destinationCulture = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("hpm", [this](const std::string& unused, std::istream& theStream) {
+		hpmCulture = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("region", [this](const std::string& unused, std::istream& theStream) {
 		regions.insert(commonItems::singleString(theStream).getString());

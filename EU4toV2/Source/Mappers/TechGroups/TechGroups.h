@@ -20,6 +20,7 @@ class TechGroups: commonItems::parser
 	int westernization = 5;
 	int literacyBoost = 5;
 	std::set<std::string> cultures;
+	std::set<std::string> hpmCultures;
 };
 } // namespace mappers
 

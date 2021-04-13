@@ -52,6 +52,8 @@ western = {
 	nuragic oldspain illyrian vandal pie_american pie_australian pie_african lusitanian
 	# Thracian-Dacian
 	dacian thracian dacian_american dacian_australian dacian_african thracian_american thracian_australian thracian_african
+	# HPM
+	kreol
 	}
 }
 
@@ -73,6 +75,8 @@ eastern = {
 	neokosmi notios mavro greek magnagreek georgian armenian yenidun guney esmer north_caucasian alan dytic_american dytic_australian dytic_african prettanian adelphic spaniolic galatian alexandrine
 	# Slave
 	afro_slavic afro_carpathian afro_greek
+	# HPM
+	alaskan dagestani chechen circassian
 	}
 }
 
@@ -92,11 +96,21 @@ muslim = {
 	westernization = 6
 	cultures = {
 	# Arabic
-	ealimi janubii ifriqi frencharab maghrebi misri mashriqi bedouin berber maghreb_arabic assyrian bazramani 
+	ealimi janubii ifriqi frencharab maghrebi misri mashriqi bedouin berber maghreb_arabic assyrian bazramani
 	# Persian
 	dinajidad janub saahi tajik persian pashtun baluchi
 	# Odd
 	assyrian pecheneg sarmatian tocharian
+	}
+	hpm_cultures = {
+	# Arabic
+	ealimi janubii ifriqi frencharab maghrebi misri mashriqi bedouin berber maghreb_arabic assyrian bazramani
+	# Persian
+	dinajidad janub saahi tajik persian pashtun baluchi
+	# Odd
+	assyrian pecheneg sarmatian tocharian
+	# HPM
+	maures sudanese
 	}
 }
 
@@ -123,6 +137,8 @@ east_african = {
 	swahili kikuyu maasai sukuma unyamwezi rundi ruanda baganda malagasy
 	# South
 	herero khoisan sotho xhosa zulu nguni shona tonga sena makua yao african_minor
+	# HPM
+	cushitic kilombero nyasa southern_bantu
 	}
 }
 
@@ -133,6 +149,14 @@ central_african = {
 	fang fur beja azande nuba nuer sudanese luo teda
 	# Congo
 	mongo bakongo luba lunda ovimbundu
+	}
+	hpm_cultures = {
+	# North central
+	fang fur beja azande nuba nuer luo teda
+	# Congo
+	mongo bakongo luba lunda ovimbundu
+	# HPM
+	ubangian forest_bantu lacustrine_bantu nilotic kuba lendu kingwana chokwe kavango south_forest_bantu
 	}
 }
 
@@ -168,7 +192,17 @@ sub_saharan = {
 	# Malian
 	songhai mande bambara dyula
 	# southwest coast
-	akan ewe fon edo yoruba ibo mossi tiv kru 
+	akan ewe fon edo yoruba ibo mossi tiv kru
+	}
+	hpm_cultures = {
+	# Sahelian
+	wolof fulbe hausa kanuri tuareg baguirmi
+	# Malian
+	songhai mande bambara dyula
+	# southwest coast
+	akan ewe fon edo yoruba ibo mossi tiv kru
+	# HPM
+	east_kwa western_nigritic gur
 	}
 }
 
@@ -179,6 +213,8 @@ north_american = {
 	metis
 	# North american
 	siouan iroquoian cherokee sonoran eskaleut central_algonquian na_dene penutian plains_algonquian eastern_algonquian muskogean caddoan native_american_minor
+	# HPM
+	dakota pueblo inuit cree navajo
 	}
 }
 
@@ -207,6 +243,8 @@ andean = {
 	chibchan maranon quechua aimara amazonian tupi je guarani patagonian araucanian chacoan 
 	# Uh 
 	noculture dummy
+	# HPM
+	tupinamba
 	}
 }	
 
