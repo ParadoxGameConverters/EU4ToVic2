@@ -41,8 +41,22 @@ mappers::CultureGroups::CultureGroups(std::istream& theStream)
 
 void mappers::CultureGroups::registerKeys()
 {
-	registerRegex(R"([\w_]+)", [this](const std::string& cultureGroupName, std::istream& theStream) {
+	registerRegex(R"([\w_]+)", [this](std::string cultureGroupName, std::istream& theStream) {
 		auto newGroup = std::make_shared<CultureGroup>(cultureGroupName, theStream);
+
+		if (const auto& hpm = newGroup->getHpm(); !hpm.empty())
+		{
+			if (!theConfiguration.isHpmEnabled() && hpm == "yes")
+				return;
+			if (theConfiguration.isHpmEnabled())
+			{
+				if (hpm == "no")
+					return;
+				else if (hpm != "yes")
+					cultureGroupName = hpm;
+			}
+		}
+
 		if (cultureGroupsMap.contains(cultureGroupName))
 		{
 			// We would normally override base definitions with incoming CK2 ones, but CK2 definitions

@@ -1,17 +1,24 @@
 #include "Culture.h"
+#include "CommonRegexes.h"
+#include "Configuration.h"
 #include "ParserHelpers.h"
 #include <random>
-#include "CommonRegexes.h"
 
 mappers::Culture::Culture(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+
+	if (theConfiguration.isHpmEnabled() && !hpmLastNames.empty())
+		lastNames = hpmLastNames;
 }
 
 void mappers::Culture::registerKeys()
 {
+	registerKeyword("hpm", [this](const std::string& unused, std::istream& theStream) {
+		hpm = commonItems::singleString(theStream).getString();
+	});
 	registerKeyword("primary", [this](const std::string& unused, std::istream& theStream) {
 		primaryTag = commonItems::singleString(theStream).getString();
 	});
@@ -26,6 +33,9 @@ void mappers::Culture::registerKeys()
 	});
 	registerKeyword("last_names", [this](const std::string& unused, std::istream& theStream) {
 		lastNames = commonItems::stringList(theStream).getStrings();
+	});
+	registerKeyword("hpm_last_names", [this](const std::string& unused, std::istream& theStream) {
+		hpmLastNames = commonItems::stringList(theStream).getStrings();
 	});
 	registerKeyword("dynasty_names", [this](const std::string& unused, std::istream& theStream) {
 		dynastyNames = commonItems::stringList(theStream).getStrings();

@@ -292,6 +292,7 @@ link = { vic2 = oldpommeranian eu4 = old_pommeranian }
 link = { vic2 = sorbian eu4 = sorbian eu4 = polabian eu4 = sorbs }
 
 # East Slav - russian, byelorussian, ruthenian
+link = { hpm = alaskan eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = ruthenian eu4 = ukrainian region = cascadia_region }
 link = { vic2 = novvymir eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = ruthenian eu4 = ukrainian region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
 link = { vic2 = yuzhny eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = ruthenian eu4 = ukrainian region = oceania_superregion }
 link = { vic2 = smugly eu4 = antean eu4 = kishinyov eu4 = chuvash eu4 = russian eu4 = ilmenian eu4 = severian eu4 = volhynian eu4 = novgorodian eu4 = ryazanian eu4 = russian_culture eu4 = pomor eu4 = russian_colonial eu4 = old_slavic eu4 = byelorussian eu4 = ruthenian eu4 = ukrainian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
@@ -336,6 +337,9 @@ link = { vic2 = greek eu4 = bithynian eu4 = lykian eu4 = greek eu4 = goths eu4 =
 link = { vic2 = magnagreek eu4 = magnagreek }
 link = { vic2 = georgian eu4 = georgian }
 link = { vic2 = armenian eu4 = armenian eu4 = armenian_colonial eu4 = ge_armenian eu4 = owm_armenian}
+link = { hpm = dagestani eu4 = dagestani }
+link = { hpm = chechen eu4 = chechen }
+link = { hpm = circassian eu4 = circassian }
 link = { vic2 = north_caucasian eu4 = circassian eu4 = dagestani eu4 = avar_culture eu4 = abazin eu4 = caucasian_albanian eu4 = caucasus_colonial eu4 = chechen eu4 = ossetian }
 link = { vic2 = alan eu4 = alan eu4 = scythian }
 
@@ -407,6 +411,7 @@ link = { vic2 = maranon eu4 = jivaro eu4 = chachapoyan eu4 = huancabamba eu4 = k
 link = { vic2 = quechua eu4 = inca eu4 = chimuan eu4 = chibcha eu4 = chimu eu4 = chiribaya eu4 = culle eu4 = huaylas eu4 = nazca eu4 = quechuan }
 link = { vic2 = aimara eu4 = aimara  eu4 = diaguita }
 link = { vic2 = amazonian eu4 = amazonian eu4 = maipurean }
+link = { hpm = tupinamba eu4 = tupinamba eu4 = tupi }
 link = { vic2 = tupi eu4 = tupinamba eu4 = tupi }
 link = { vic2 = je eu4 = ge }
 link = { vic2 = guarani eu4 = guarani eu4 = charruan }
@@ -423,12 +428,17 @@ link = { vic2 = carribean eu4 = arawak eu4 = arawako eu4 = carib eu4 = cariban e
 link = { vic2 = metis eu4 = dakota eu4 = nakota eu4 = chiwere eu4 = osage eu4 = catawba eu4 = cherokee eu4 = iroquois eu4 = iroquis eu4 = huron eu4 = susquehannock eu4 = pueblo eu4 = piman eu4 = shoshone eu4 = kiowa eu4 = kamchatkan eu4 = aleutian eu4 = inuit eu4 = cree eu4 = shawnee eu4 = anishinabe eu4 = illini eu4 = mesquakie eu4 = navajo eu4 = chipewyan eu4 = athabascan eu4 = apache eu4 = haida eu4 = chinook eu4 = salish eu4 = yokuts eu4 = arapaho eu4 = cheyenne eu4 = blackfoot eu4 = delaware eu4 = abenaki eu4 = mikmaq eu4 = mahican eu4 = powhatan eu4 = pequot eu4 = creek eu4 = choctaw eu4 = chickasaw eu4 = pawnee eu4 = wichita eu4 = caddo eu4 = tlingit eu4 = miwok religion = catholic religion = cathar religion = fraticelli religion = waldensian religion = lollard religion = catholic_heresy religion = arian religion = protestant religion = protestant_heresy religion = orthodox religion = bogomilist religion = monothelite religion = iconoclast religion = paulician religion = orthodox_heresy religion = coptic religion = monophysite religion = nestorian religion = messalian eu4 = mestizo }
 
 # North American - dakota, cherokee, pueblo, aleutian, inuit, cree, iroquis, huron, navajo, shawnee, delaware, creek, etc
+link = { hpm = dakota eu4 = dakota }
 link = { vic2 = siouan eu4 = dakota eu4 = nakota eu4 = chiwere eu4 = osage eu4 = catawba eu4 = kanza eu4 = lakota eu4 = missouri eu4 = osagee eu4 = woccon }
 link = { vic2 = iroquoian eu4 = iroquois eu4 = iroquis eu4 = huron eu4 = susquehannock eu4 = erielhonan eu4 = lenape eu4 = mingwe eu4 = neutral eu4 = tuscarora }
 link = { vic2 = cherokee eu4 = cherokee }
+link = { hpm = pueblo eu4 = pueblo }
 link = { vic2 = sonoran eu4 = pueblo eu4 = piman eu4 = shoshone eu4 = kiowa eu4 = cahuila eu4 = comanche eu4 = hopi eu4 = mayo eu4 = pima eu4 = purepechan eu4 = tarachatitian eu4 = tarahumaran eu4 = ute }
+link = { hpm = inuit eu4 = inuit }
 link = { vic2 = eskaleut eu4 = kamchatkan eu4 = aleutian eu4 = inuit eu4 = yupik }
+link = { hpm = cree eu4 = cree }
 link = { vic2 = central_algonquian eu4 = cree eu4 = shawnee eu4 = anishinabe eu4 = illini eu4 = mesquakie eu4 = innu eu4 = miami eu4 = odawa eu4 = ojibwa eu4 = potawatomi }
+link = { hpm = navajo eu4 = navajo }
 link = { vic2 = na_dene eu4 = navajo eu4 = chipewyan eu4 = athabascan eu4 = apache eu4 = haida eu4 = mescalero eu4 = lipan  eu4 = coahuiltec eu4 = hayda eu4 = hoopa eu4 = tanaina eu4 = tlingit }
 link = { vic2 = penutian eu4 = chinook eu4 = salish eu4 = yokuts eu4 = chilcotin eu4 = kalispel eu4 = penutian_colonial eu4 = sahaptian eu4 = shuswap eu4 = tsimishian eu4 = wintuan eu4 = yokut }
 link = { vic2 = plains_algonquian eu4 = arapaho eu4 = cheyenne eu4 = blackfoot eu4 = winnebago }
@@ -549,11 +559,13 @@ link = { vic2 = dyula eu4 = dyola }
 # Southwest Coast - akan, fon, yoruba, ibo, mossi
 link = { vic2 = ewe eu4 = fon provinceid = 1141 } # Togo
 link = { vic2 = edo eu4 = yorumba region = benin_area } # Nigeria
+link = { hpm = kru eu4 = senegambian region = guinea_coast_area }
 link = { vic2 = kru eu4 = dyola region = guinea_coast_area }
 link = { vic2 = akan eu4 = aka eu4 = ashanti eu4 = akaa }
 link = { vic2 = fon eu4 = fon }
 link = { vic2 = yoruba eu4 = yorumba }
 link = { vic2 = ibo eu4 = nupe eu4 = igbo }
+link = { hpm = gur eu4 = mossi eu4 = dagomba region = upper_volta_area region = lower_volta_area }
 link = { vic2 = mossi eu4 = mossi eu4 = dagomba }
 link = { vic2 = tiv eu4 = jukun }
 
@@ -582,21 +594,28 @@ link = { vic2 = oromo eu4 = ethiopian eu4 = oromo }
 link = { vic2 = afar eu4 = afar }
 
 # The Congo - bakongo, luba, lunda, mbundu
+link = { hpm = mongo eu4 = kuba eu4 = yaka provinceid = 1797 } # Northern Congo Basin
+link = { hpm = kuba eu4 = kuba eu4 = yaka }
 link = { vic2 = mongo eu4 = kuba } # DRC
+link = { hpm = kavango eu4 = kongolese eu4 = bakongo provinceid = 1170 provinceid = 2949 }
 link = { vic2 = bakongo eu4 = kongolese eu4 = bakongo }
+link = { hpm = luba eu4 = luba } # DRC
 link = { vic2 = luba eu4 = luba eu4 = kuba } # DRC
+link = { hpm = chokwe eu4 = chokwe }
 link = { vic2 = lunda eu4 = lunda eu4 = yaka eu4 = mbangala eu4 = chokwe } # DRC, Angola, Zambia
 link = { vic2 = ovimbundu eu4 = mbundu } # Angola
 
 # East Africa - swahili, malagasy
 link = { vic2 = sukuma eu4 = takama provinceid = 4061 } # Tanzania
 link = { vic2 = rundi eu4 = rwandan provinceid = 4070 } # Burundi
+link = { hpm = kingwana eu4 = kingwana }
 link = { vic2 = swahili eu4 = swahili eu4 = chimwini eu4 = chwezi eu4 = kimgao eu4 = kimwani eu4 = kingwana eu4 = kiunguja eu4 = swahili_colonial }
 link = { vic2 = kikuyu eu4 = bantu eu4 = bantu_colonial eu4 = kikuyu } # Kenya
 link = { vic2 = maasai eu4 = masaba } # Tanzania
 link = { vic2 = unyamwezi eu4 = takama } # Tanzania
 link = { vic2 = ruanda eu4 = rwandan } # Rwanda
 link = { vic2 = baganda eu4 = ganda } # Uganda
+link = { hpm = kilombero eu4 = madagasque provinceid = 4020 } # Comoros
 link = { vic2 = malagasy eu4 = madagasque eu4 = madagascan eu4 = vazimba eu4 = vezu }
 
 # South Africa - khoisan, shona, sena, makua
@@ -610,6 +629,8 @@ link = { vic2 = xhosa eu4 = xhosa }
 link = { vic2 = zulu eu4 = zulu }
 link = { vic2 = nguni eu4 = nguni } # South Africa
 link = { vic2 = shona eu4 = shona }
+link = { hpm = sena eu4 = nyasa provinceid = 4039 } # Lundu
+link = { hpm = nyasa eu4 = nyasa } # Lundu
 link = { vic2 = sena eu4 = nyasa }
 link = { vic2 = makua eu4 = makua }
 link = { vic2 = yao eu4 = bena } # Mozambique

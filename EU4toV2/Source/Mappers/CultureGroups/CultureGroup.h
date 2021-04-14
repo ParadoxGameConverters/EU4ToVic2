@@ -13,6 +13,7 @@ class CultureGroup: commonItems::parser
 	CultureGroup(std::string theName, std::istream& theStream);
 
 	[[nodiscard]] const auto& getName() const { return name; }
+	[[nodiscard]] const auto& getHpm() const { return hpm; }
 	[[nodiscard]] const auto& getCultures() const { return cultures; }
 	[[nodiscard]] auto containsCulture(const std::string& cultureName) const { return cultures.contains(cultureName); }
 
@@ -26,10 +27,13 @@ class CultureGroup: commonItems::parser
 	void registerKeys();
 
 	std::string name;
+	std::string hpm;
 	std::string unit;
+	std::string hpmUnit;
 	std::string leader;
 	std::string isOverseas;
 	std::string culturalUnionTag;
+	std::string hpmUnionTag;
 	std::map<std::string, std::shared_ptr<Culture>> cultures;
 };
 } // namespace mappers

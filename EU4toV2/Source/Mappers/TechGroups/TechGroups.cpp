@@ -1,24 +1,29 @@
 #include "TechGroups.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "Configuration.h"
+#include "ParserHelpers.h"
 
 mappers::TechGroups::TechGroups(std::istream& theStream)
 {
 	registerKeyword("westernization", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleInt westernizationInt(theStream);
-		westernization = westernizationInt.getInt();
+		westernization = commonItems::getInt(theStream);
 	});
 	registerKeyword("literacy", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleInt literacyInt(theStream);
-		literacyBoost = literacyInt.getInt();
+		literacyBoost = commonItems::getInt(theStream);
 	});
 	registerKeyword("cultures", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::stringList culList(theStream);
-		const auto& cultureList = culList.getStrings();
+		const auto& cultureList = commonItems::getStrings(theStream);
 		cultures.insert(cultureList.begin(), cultureList.end());
+	});
+	registerKeyword("hpm_cultures", [this](const std::string& unused, std::istream& theStream) {
+		const auto& cultureList = commonItems::getStrings(theStream);
+		hpmCultures.insert(cultureList.begin(), cultureList.end());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
 	parseStream(theStream);
 	clearRegisteredKeywords();
+
+	if (theConfiguration.isHpmEnabled() && !hpmCultures.empty())
+		cultures = hpmCultures;
 }
