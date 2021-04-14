@@ -2007,6 +2007,8 @@ void V2::World::copyHpmFiles() const
 			continue;
 		fs::copy_file(hpm + "/common/" + file, out + "/common/" + file);
 	}
+	fs::remove(out + "/common/religion.txt");
+	fs::copy_file("configurables/HPM/common/religion.txt", out + "/common/religion.txt");
 
 	commonItems::CopyFolder(hpm + "/battleplans", out + "/battleplans");
 	commonItems::CopyFolder(hpm + "/poptypes", out + "/poptypes");
