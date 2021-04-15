@@ -1599,7 +1599,6 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 
 	LOG(LogLevel::Info) << "<- Writing Religion Definitions";
 	outputReligions();
-	Log(LogLevel::Progress) << "96 %";
 
 	LOG(LogLevel::Info) << "<- Writing Pops";
 	outputPops();
