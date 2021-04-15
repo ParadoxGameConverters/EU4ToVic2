@@ -111,8 +111,17 @@ gnostic_g = {
 		color = { 0.5 0.75 0.3 }
 	}
 	yazidi = {
+		hpm = no
 		icon = 41
 		color = {1.0 0.8 0.0}
+	}
+}
+
+yazidi_group = {
+	hpm = yes
+	yazidi = {
+		icon = 41
+		color = { 0.4 0.0 1.0 }
 	}
 }
 
@@ -141,6 +150,7 @@ muslim = {
 	druze = {
 		icon = 43
 		color = {0.9 0.9 0.9}
+		hpm_color = { 0.7 0.8 0.6 }
 	}
 	shiite_heresy = {
 		icon = 40
@@ -150,6 +160,7 @@ muslim = {
 	ibadi = {
 		icon = 27
 		color = { 0 0.4 0 }
+		hpm_color = { 0.1 0.4 0.6 }
 	}
 	kharijite = {
 		icon = 44
@@ -158,6 +169,7 @@ muslim = {
 }
 
 judaism = {
+	hpm = jewish_group
 	jewish = {
 		icon = 7
 		color = { 0.3 0.5 0.3 }

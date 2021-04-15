@@ -1597,6 +1597,10 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 	outputCultures();
 	Log(LogLevel::Progress) << "96 %";
 
+	LOG(LogLevel::Info) << "<- Writing Religion Definitions";
+	outputReligions();
+	Log(LogLevel::Progress) << "96 %";
+
 	LOG(LogLevel::Info) << "<- Writing Pops";
 	outputPops();
 	Log(LogLevel::Progress) << "97 %";
@@ -1669,6 +1673,19 @@ void V2::World::outputCultures() const
 			 "Could not create cultures file at output/" + theConfiguration.getOutputName() + "/common/cultures.txt - " + commonItems::GetLastErrorString());
 	}
 	output << cultureGroupsMapper;
+	output.close();
+}
+
+
+void V2::World::outputReligions() const
+{
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/religion.txt");
+	if (!output.is_open())
+	{
+		throw std::runtime_error(
+			 "Could not create religions file at output/" + theConfiguration.getOutputName() + "/common/religion.txt - " + commonItems::GetLastErrorString());
+	}
+	output << religiousGroupsMapper;
 	output.close();
 }
 
@@ -2007,8 +2024,6 @@ void V2::World::copyHpmFiles() const
 			continue;
 		fs::copy_file(hpm + "/common/" + file, out + "/common/" + file);
 	}
-	fs::remove(out + "/common/religion.txt");
-	fs::copy_file("configurables/HPM/common/religion.txt", out + "/common/religion.txt");
 
 	commonItems::CopyFolder(hpm + "/battleplans", out + "/battleplans");
 	commonItems::CopyFolder(hpm + "/poptypes", out + "/poptypes");

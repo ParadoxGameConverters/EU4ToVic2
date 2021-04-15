@@ -423,6 +423,9 @@
     <ClCompile Include="Source\Mappers\RegionLocalizations\RegionLocalizations.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
+    <ClCompile Include="Source\Mappers\ReligiousGroups\Religion.cpp" />
+    <ClCompile Include="Source\Mappers\ReligiousGroups\ReligiousGroup.cpp" />
+    <ClCompile Include="Source\Mappers\ReligiousGroups\ReligiousGroups.cpp" />
     <ClCompile Include="Source\Mappers\RGORandomization\Bucket.cpp" />
     <ClCompile Include="Source\Mappers\RGORandomization\BucketList.cpp" />
     <ClCompile Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.cpp" />
@@ -477,6 +480,7 @@
     <ClCompile Include="Source\V2World\Output\outReforms.cpp" />
     <ClCompile Include="Source\V2World\Output\outRegiment.cpp" />
     <ClCompile Include="Source\V2World\Output\outRelation.cpp" />
+    <ClCompile Include="Source\V2World\Output\outReligiousGroups.cpp" />
     <ClCompile Include="Source\V2World\Output\outUncivReforms.cpp" />
     <ClCompile Include="Source\V2World\Output\outVersion.cpp" />
     <ClCompile Include="Source\V2World\Output\outWar.cpp" />
@@ -618,6 +622,9 @@
     <ClInclude Include="Source\Mappers\RegionLocalizations\RegionLocalizations.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h" />
+    <ClInclude Include="Source\Mappers\ReligiousGroups\Religion.h" />
+    <ClInclude Include="Source\Mappers\ReligiousGroups\ReligiousGroup.h" />
+    <ClInclude Include="Source\Mappers\ReligiousGroups\ReligiousGroups.h" />
     <ClInclude Include="Source\Mappers\RGORandomization\Bucket.h" />
     <ClInclude Include="Source\Mappers\RGORandomization\BucketList.h" />
     <ClInclude Include="Source\Mappers\StartingInventionMapper\StartingInventionDetails.h" />
