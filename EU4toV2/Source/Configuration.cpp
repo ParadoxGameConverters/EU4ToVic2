@@ -99,10 +99,10 @@ void Configuration::instantiate(std::istream& theStream, bool (*DoesFolderExist)
 		convertAll = convertAllString == "yes";
 		LOG(LogLevel::Info) << "Convert All: " << convertAllString;
 	});
-	registerKeyword("hybrid_enabled", [this](std::istream& theStream) {
-		const auto hybridEnabledString = commonItems::getString(theStream);
-		hybridMod = HYBRIDMOD(std::stoi(hybridEnabledString));
-		LOG(LogLevel::Info) << "Hybrid mod enabled: " << hybridEnabledString;
+	registerKeyword("hybrid_mod", [this](std::istream& theStream) {
+		const auto hybridModString = commonItems::getString(theStream);
+		hybridMod = HYBRIDMOD(std::stoi(hybridModString));
+		LOG(LogLevel::Info) << "Hybrid mod: " << hybridModString;
 	});
 	registerKeyword("output_name", [this](std::istream& theStream) {
 		incomingOutputName = commonItems::getString(theStream);

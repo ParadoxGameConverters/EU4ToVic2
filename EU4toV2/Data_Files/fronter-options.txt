@@ -226,6 +226,23 @@ option = {
 	}
 }
 option = {
+	name = hybrid_mod
+	displayName = HYBRIDMOD
+	tooltip = HYBRIDMODTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = HYBRIDMOD1
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = HYBRIDMOD2
+			default = false
+		}
+	}
+}
+option = {
 	name = output_name
 	displayName = MODNAME
 	tooltip = MODNAMETIP
