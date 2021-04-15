@@ -25,6 +25,7 @@
 #include "../Mappers/RegimentCosts/RegimentCostsMapper.h"
 #include "../Mappers/RegionLocalizations/RegionLocalizations.h"
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
+#include "../Mappers/ReligiousGroups/ReligiousGroups.h"
 #include "../Mappers/StartingInventionMapper/StartingInventionMapper.h"
 #include "../Mappers/StartingTechMapper/StartingTechMapper.h"
 #include "../Mappers/StateMapper/StateMapper.h"
@@ -120,6 +121,7 @@ class World
 	void outputHistory() const;
 	void outputCultures() const;
 	void outputNeoCultures() const;
+	void outputReligions() const;
 	void verifyCountriesWritten() const;
 	void convertWars(const EU4::World& sourceWorld);
 	void transcribeHistoricalData();
@@ -161,6 +163,7 @@ class World
 	mappers::StartingTechMapper startingTechMapper;
 	mappers::StartingInventionMapper startingInventionMapper;
 	mappers::CultureGroups cultureGroupsMapper;
+	mappers::ReligiousGroups religiousGroupsMapper;
 	mappers::RegionLocalizations regionLocalizations;
 	mappers::AfricaResetMapper africaResetMapper;
 	mappers::AcceptedCultureThresholdsMapper acceptedCultureThresholdsMapper;

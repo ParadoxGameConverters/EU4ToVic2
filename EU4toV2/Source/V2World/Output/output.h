@@ -17,6 +17,9 @@
 #include "../Reforms/UncivReforms.h"
 #include "../War/War.h"
 #include "CultureGroups/Culture.h"
+#include "ReligiousGroups/Religion.h"
+#include "ReligiousGroups/ReligiousGroup.h"
+#include "ReligiousGroups/ReligiousGroups.h"
 #include "ModFile.h"
 #include <ostream>
 
@@ -46,6 +49,9 @@ std::ostream& operator<<(std::ostream& output, const VersionParser& versionParse
 std::ostream& operator<<(std::ostream& output, const CultureGroups& cultureGroupsMapper);
 std::ostream& operator<<(std::ostream& output, const CultureGroup& cultureGroup);
 std::ostream& operator<<(std::ostream& output, const Culture& culture);
+std::ostream& operator<<(std::ostream& output, const ReligiousGroups& religiousGroupsMapper);
+std::ostream& operator<<(std::ostream& output, const ReligiousGroup& religiousGroup);
+std::ostream& operator<<(std::ostream& output, const Religion& religion);
 } // namespace mappers
 
 #endif // OUTPUT_H

@@ -571,6 +571,18 @@
     <ClCompile Include="Source\EU4World\Country\EU4ActivePolicy.cpp">
       <Filter>EU4World\Country</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\ReligiousGroups\ReligiousGroups.cpp">
+      <Filter>Mappers\ReligiousGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ReligiousGroups\ReligiousGroup.cpp">
+      <Filter>Mappers\ReligiousGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ReligiousGroups\Religion.cpp">
+      <Filter>Mappers\ReligiousGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outReligiousGroups.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1100,6 +1112,15 @@
     <ClInclude Include="Source\EU4World\Country\EU4ActivePolicy.h">
       <Filter>EU4World\Country</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\ReligiousGroups\ReligiousGroup.h">
+      <Filter>Mappers\ReligiousGroups</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ReligiousGroups\Religion.h">
+      <Filter>Mappers\ReligiousGroups</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ReligiousGroups\ReligiousGroups.h">
+      <Filter>Mappers\ReligiousGroups</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1347,6 +1368,9 @@
     </Filter>
     <Filter Include="Vic2World\Decisions">
       <UniqueIdentifier>{8758d162-b22a-45e3-b4d7-1a122c111a14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ReligiousGroups">
+      <UniqueIdentifier>{26f2aa56-2c79-4c55-9757-7507b1a40e54}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
