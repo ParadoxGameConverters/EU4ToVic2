@@ -2,6 +2,12 @@
 
 # Uses all 'modifiers' possible thats exported as a Modifier.
 
+# To adjust religion definitions for HPM hybrid mod use:
+# hpm = yes - religion is used only when "hybrid mod" is set to "HPM"
+# hpm = no - religion is used only when "hybrid mod" is set to "Default"
+# no entry - religion is used with all "hybrid mod" settings
+# hpm = jewish_group - redefines religion as jewish_group
+
 christian = {
 
 	catholic = {
