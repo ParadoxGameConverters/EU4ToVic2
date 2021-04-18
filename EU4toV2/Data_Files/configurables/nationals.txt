@@ -3,6 +3,7 @@
 # Otherwise (swedish, SCA) it also belongs in unions.txt
 
 #Germanics
+link = { tag = SDT culture = boehmisch } # Sudetenland / German Bohemia
 link = { tag = SUE culture = suebi } #Suebi
 link = { tag = OGO culture = ostrogothic } #Ostrogothia
 
@@ -30,9 +31,11 @@ link = { tag = AES culture = anglo_saxon } #Anglo-Saxony
 link = { tag = SCO culture = scottish } #Scotland
 link = { tag = SCO tag = HSC culture = pictish } #Pitcland
 link = { tag = WHA culture = welsh } #Wales
+link = { tag = NRM culture = guillaumois } # Normandy^2
 
 #Italian => Italy
 link = { tag = SIC culture = south_italian } #Two Sicilies = South Italy
+link = { tag = SIC culture = guiscard }
 link = { tag = MLT culture = maltese } #Malta
 link = { tag = LGB culture = lombard } #Longobardia
 link = { tag = MRL culture = morlach } # Morlacchia
@@ -68,6 +71,7 @@ link = { tag = SLO culture = slovene }
 link = { tag = BOS culture = bosniak }
 
 #Romanian and Hungarian
+link = { tag = SIE tag = ROM culture = szekely } # Szekelyland
 link = { tag = ROM culture = romanian } #Romania
 link = { tag = PIN culture = aromanian } #Pindus
 link = { tag = HUN culture = hungarian } #Hungary

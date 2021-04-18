@@ -19,17 +19,19 @@ western = {
 	westernization = 10
 	cultures = {
 	# Germanic
-	amerikaner sudreicher schwarzreicher north_german swiss south_german german overnissian kleinvenedig
+	north_german swiss south_german german overnissian boehmisch
+	# Germans with boats
+	kleinvenedig amerikaner sudreicher schwarzreicher wandernorse boer nieuwereld zuidelijk
 	# Dutch
-	boer nieuwereld zuidelijk dutch flemish
+	dutch flemish
 	# Scandinavian
-	vinlander sydlig svart icelandic danish norwegian swedish sami elsinorian holmgardr
+	vinlander sydlig svart icelandic danish norwegian swedish sami elsinorian holmgardr nyasverigian bomullborgar bundsfoervant hjartnaaeter raudhskogarling hvitrduptling guldfjalling silfrvazling
 	# Varangian
 	varangian_american varangian_australian varangian_african varangian nehwaustronijaz
 	# British
-	yankee dixie anglo_canadian australian texan falklander anglo_african english scottish anglo_saxon pictish british welsh irish
+	yankee dixie anglo_canadian australian texan falklander anglo_african english scottish anglo_saxon pictish british welsh irish redwoodian guyanese incacunapic
 	# Celtic
-	belgian gaulish celtiberian noric celtic_american celtic_african celtic_australian alpine
+	belgian gaulish celtiberian noric celtic_american celtic_african celtic_australian alpine y_wladfan nova_scotian
 	# Roman
 	foederatus afer australus brithenig gaul laessin wenedyk spanish xliponian latin graecus pannonian britannian euxinian
 	# Italian
@@ -37,9 +39,9 @@ western = {
 	# Iberian 
 	mexican caribeno platinean north_andean south_andean brazilian central_american americano sureno morado spanish andalucian visigothic galician catalan portuguese basque suebi
 	# French
-	french_canadian nouvellien australienne africaine french breton occitan wallonian frankish outremer picard
+	french_canadian nouvellien australienne africaine french breton occitan wallonian frankish outremer picard antartique guillaumois guiscard
 	# Finnish	
-	usmailmian lounast mustvalge finnish ugrian
+	usmailmian lounast mustvalge finnish ugrian antivuorean hopeajokan kepejokian kujaanan maraivoan meksikan salislahtian suurjokian
 	# West Slavic
 	novysvet jizni hnedy nowyswiat poludniowy czarny polish slovak czech sorbian oldpommeranian
 	# Goths
@@ -68,9 +70,9 @@ eastern = {
 	# South Slavic
 	slovene novisvet juzhno crni bosniak croat macedonian serb bulgarian albanian
 	# East Slavic
-	novvymir yuzhny smugly russian ukrainian byelorussian ukrainian western_slavic ugric
+	novvymir yuzhny smugly russian ukrainian byelorussian ukrainian western_slavic ugric alaskan kholodnovoynsky
 	# Carpathian
-	ujvilag delian fekete hungarian lumenoua sudic negru aromanian romanian
+	ujvilag delian fekete hungarian lumenoua sudic negru aromanian romanian szekely
 	# Greek-ish
 	neokosmi notios mavro greek magnagreek georgian armenian yenidun guney esmer north_caucasian alan dytic_american dytic_australian dytic_african prettanian adelphic spaniolic galatian alexandrine
 	# Slave
@@ -164,7 +166,7 @@ chinese = {
 	westernization = 4
 	cultures = {
 	# East Asian
-	dongren nanren heiren japanese manchu beifaren nanfaren korean ainu hakka miao min zhuang yi yue
+	dongren nanren heiren japanese manchu beifaren nanfaren korean ainu hakka miao min zhuang yi yue xiyeren beieren naiyeren
 	# Khmer
 	thegioimoi phianam dhen vietnamese khmer
 	# Malay
