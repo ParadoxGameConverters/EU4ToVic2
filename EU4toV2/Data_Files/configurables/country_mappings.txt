@@ -117,7 +117,7 @@ link = { eu4 = SLO v2 = SLV } # Nitra => Slovakia
 link = { eu4 = d_slovakia v2 = SLV } #Slovakia
 link = { eu4 = TUR v2 = TUR } # Ottomans
 link = { eu4 = k_ottoman v2 = TUR } # Ottomans
-link = { eu4 = k_anatolia v2 = TUR } # Anatolia => Turkey
+link = { eu4 = k_anatolia v2 = ANA } # Anatolia
 
 #British Isles 
 link = { eu4 = CNN v2 = CNN } # Connacht

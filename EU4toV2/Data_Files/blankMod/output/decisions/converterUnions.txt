@@ -1810,6 +1810,7 @@ political_decisions = {
 		potential = {
 			primary_culture = irish
 			NOT = {
+				exists = CEL
 				exists = IRE
 				tag = ENG
 				tag = ENL
@@ -3484,6 +3485,95 @@ political_decisions = {
 				annex_to = FROM
 			}
 			set_global_flag = oy_vey
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_celtic = {
+		potential = {
+			OR = {
+				primary_culture = irish
+				primary_culture = pictish
+				primary_culture = welsh
+				primary_culture = breton
+			}
+			NOT = {
+				exists = CEL
+				tag = ENG
+				tag = GBR
+				tag = SPQ
+			}
+		}	
+		allow = {
+			war = no
+			prestige = 5
+			IRE = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS } } } }
+			HSC = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS } } } }
+			WHA = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS } } } }
+			BRT = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS } } } }
+		}
+		
+		effect = {
+			prestige = 10
+			any_country = {
+				limit = {
+					in_sphere = THIS
+					NOT = {
+						tag = THIS
+					}
+					capital_scope = { continent = europe }
+					OR = {
+						primary_culture = irish
+						primary_culture = pictish
+						primary_culture = welsh
+						primary_culture = breton
+					}
+				}
+				annex_to = THIS
+			}
+			any_owned = { add_core = CEL }
+			IRE = { all_core = { add_core = CEL remove_core = ENG remove_core = GBR } }
+			HSC = { all_core = { add_core = CEL remove_core = SCO remove_core = ENG remove_core = GBR } }
+			WHA = { all_core = { add_core = CEL remove_core = ENG remove_core = GBR } }
+			BRT = { all_core = { add_core = CEL remove_core = FRA } }
+			add_accepted_culture = irish
+			add_accepted_culture = pictish
+			add_accepted_culture = welsh
+			add_accepted_culture = breton
+			
+			change_tag = CEL
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	form_tatar = {
+		potential = {
+			NOT = { exists = TAR }
+			civilized = yes
+			primary_culture = tatar
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			number_of_states = 5
+		}	
+		allow = {
+			war = no
+			OR = {
+				is_greater_power = yes
+				is_secondary_power = yes
+			}
+			has_unclaimed_cores = no
+		}
+		
+		effect = {
+			prestige = 10
+			any_core = {
+				add_core = TAR
+			}
+			change_tag = TAR
 		}
 		ai_will_do = {
 			factor = 1

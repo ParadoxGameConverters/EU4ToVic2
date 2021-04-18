@@ -195,4 +195,32 @@ political_decisions = {
 			factor = 1
 		}
 	}
+	tur_to_ana = {
+		potential = {
+			tag = TUR
+			NOT = {
+				accepted_culture = zzz_religion_sunni
+				accepted_culture = zzz_religion_zikri
+				accepted_culture = zzz_religion_sunni_heresy
+				accepted_culture = zzz_religion_shiite
+				accepted_culture = zzz_religion_hurufi
+				accepted_culture = zzz_religion_druze
+				accepted_culture = zzz_religion_shiite_heresy
+				accepted_culture = zzz_religion_ibadi
+				accepted_culture = zzz_religion_kharijite
+				primary_culture = turkish
+			}
+		}	
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			all_core = { remove_core = TUR add_core = ANA }
+			change_tag = ANA
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

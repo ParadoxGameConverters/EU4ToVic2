@@ -1,9 +1,9 @@
 # This file defines culture, religions, government, civilized and capital for dead nations.
 # These will override whatever we loaded in vanilla history files. What isn't listed will default to either history entries or won't be set, depending on case.
 # Tag is mandatory, the rest is not. Only one of each is allowed:
-# tag, primary_culture, religion, government, civilized, capital
+# tag, primary_culture, religion, government, civilized, capital, add_accepted_culture
 
-# Usually we default to "dummy" culture and "dummy_religion" religion, which automatically solve in-game (e.g. if ABC is mostly French, it'll become French); to absolute_monarchy and uncivilized.
+# Usually we default to "dummy" culture and "dummy_religion" religion, which automatically solve in-game (e.g. if ABC is mostly French, it'll become French); to absolute_monarchy and uncivilized. Of course, no extra accepted culture is added.
 
 link = { tag = AAA government = theocracy capital = 322 }
 link = { tag = AAC government = presidential_dictatorship civilized = yes capital = 576 }
@@ -30,6 +30,7 @@ link = { tag = ALT civilized = yes capital = 1068 }
 link = { tag = ALW capital = 905 civilized = yes }
 link = { tag = AMD capital = 1297 }
 link = { tag = AMG civilized = yes capital = 460 }
+link = { tag = ANA civilized = yes primary_culture = greek government = absolute_monarchy capital = 860 }
 link = { tag = AND capital = 1283 }
 link = { tag = ANN capital = 1375 }
 link = { tag = ANS civilized = yes capital = 595 }
@@ -91,6 +92,7 @@ link = { tag = BUG primary_culture = baganda capital = 2019 }
 link = { tag = CAS capital = 78 government = democracy civilized = yes }
 link = { tag = CAY government = democracy civilized = yes capital = 2241 }
 link = { tag = CEG capital = 1751 civilized = yes }
+link = { tag = CEL primary_culture = irish government = absolute_monarchy civilized = yes capital = 300 add_accepted_culture = welsh add_accepted_culture = pictish add_accepted_culture = breton }
 link = { tag = CEQ government = democracy civilized = yes capital = 2432 }
 link = { tag = CGO government = democracy civilized = yes capital = 1977 }
 link = { tag = CHA capital = 1380 }
