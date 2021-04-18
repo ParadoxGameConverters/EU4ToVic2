@@ -907,6 +907,10 @@ OSP		= "countries/OldSpain.txt"
 
 QNG		="countries/China.txt"
 
+# Added
+ANA		= "countries/Anatolia.txt"
+CEL		= "countries/TheCeltic.txt"
+
 # Furthermore
 ENS = "countries/Empire of the North Sea.txt"
 SRB = "countries/Sorbia.txt"

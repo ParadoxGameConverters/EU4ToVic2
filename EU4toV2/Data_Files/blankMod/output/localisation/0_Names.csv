@@ -71,6 +71,9 @@ AMD;Ahmadnagar;Ahmadnagar;Ahmednagar;Ahmadnagar;Ahmadnagar;Ahmednagar;Ahmadnagar
 AMD_ADJ;Ahmadnagar;d'Ahmadnagar;Ahmednagar-;Ahmadnagaru;Ahmednagarana;di Ahmednagar;Ahmadnagar;Ahmadnagar;Ahmadnagar;Ahmadnagar;Ahmadnagar;Àõìàäíàãàğñê.;Ahmadnagar;y
 AMG;Armagnac;Armagnac;Armagnac;Armaniak;Armagnac;Armagnaco;Armagnac;Armagnac;Armagnac;Armagnac;Armanhaque;Àğìàíüÿê;Armagnac;z
 AMG_ADJ;Armagnac;Armagnacot;Armagnac-;Armaniaku;Armagnacesa;Armagnacca;Armagnac;Armagnac;Armagnac;Armagnac;Armagnac;Àğìàíüÿêñê.;Armagnac;y
+ANA;Anatolia;Anatolie;Anatolien;Anatolia;Anatolia;Anatolia;Anatólia;Anatolie;Anatólia;Anatolië;Anatólia;Àíàòîëèÿ;Anatolia;x
+ANA_democracy;The Anatolian Republic;La République d'Anatolie;Die Anatolische Republik;Republika Anatolii;La República de Anatolia;La Repubblica Anatolica;Az Anatóliai Köztársaság;Anatolská Republika;Az Anatóliai Köztársaság;De Anatolische Republiek;A República da Anatólia;Àíàòîëèéñêàÿ Ğåñïóáëèêà;Anatolian tasavalta;x
+ANA_ADJ;Anatolian;anatolienne;Anatolisch;Anatolian;Anatolia;Anatolica;Anatóliai;Anatolsk;Anatóliai;Anatolisch;da Anatólia;Àíàòîëèéñê;Anatolialainen;x
 AND_absolute_monarchy;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Àíäõğà;Andhra;z
 AND_ADJ;Andhran;de l'Andhra;Andhra;Andhry;de Andhra;di Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Àíäõğàéñê.;Andhra;y
 AND_bourgeois_dictatorship;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Andhra;Àíäõğà;Andhra;z
@@ -252,6 +255,8 @@ CCW;Choctaw;Tchactas;Choctaw;Czoktawowie;Choctaw;Choctaw;csoktó;Choctaw;csoktó;C
 CCW_ADJ;Choctaw;des Tchactas;Choctaw;Czoktawów;Choctaw;di Choctaw;csoktó;Choctaw;csoktó;Choctaw;Choctaw;×îêòîñê.;Choctaw;y
 CEG;Egypt;Égypte;Ägypten;Egipt;Egipto;Egitto;Egyiptom;Egypt;Egyiptom;Egypte;Egito;Åãèïåò;Egypti;z
 CEG_ADJ;Egyptian;Égyptien;Ägyptisch;Egiptu;Egipcia;Egiziana;egyiptomi;Egyptskı;egyiptomi;Egyptische;egípcio;Åãèïåòñê.;egyptiläinen;y
+CEL;The Celtic Union;L'Union Celtique;Die Keltische Union;Unia Celtycka;La Unión Celta;L'unione Celtica;A Kelta Unió;Keltská unie;A Kelta Unió;De Keltische Unie;A União Celta;Êåëüòñêèé Ñîşç;Kelttien Unioni;x
+CEL_ADJ;Celtic;celtique;Keltisch;Celtyck;Céltica;Celtica;kelta;Keltsk;kelta;Keltisch;céltico;Êåëüòñê;Kelttiläinen;x
 CEQ;Equador Confederation;Équateur Confédération;Equador-Konföderation;Konfederacja Equador;Confederación Equador;Confederazione dell'Equatore;Ecuador Konföderáció;Konfederace Ekvádoru;Ecuador Konföderáció;Equador Confederation;Confederação do Equador;Êîíôåäåğàöèÿ İêâàäîğà;Euradionin konfederaatio;x
 CEQ_ADJ;Equadorian;Équatorien;Equadorisch;Equadorian;Ecuatoriano;Equatoriana;Equadorian;Ekvádorskı;Equadorian;Equadorian;Equatoriano;İêâàäîğÿíñê.;Equadorian;x
 CGO;Congo-Brazzaville;Congo-Brazzaville;Kongo-Brazzaville;Kongo-Brazzaville;Congo-Brazzaville;Congo-Brazzaville;Kongói Brazzaville;Kongo-Brazzaville;Kongói Brazzaville;Congo-Brazzaville;Congo-Brazzaville;Êîíãî-Áğàççàâèëü;Kongon;x
@@ -1314,6 +1319,8 @@ TTB;Trinidad;La Trinité;Trinidad;Trinidad;Trinidad;Trinidad;Trinidad;Trinidad;Tr
 TTB_ADJ;Trinidadian;Trinidadien;Trinidadisch;Trynidadyjski;Trinitario;di Trinidad;trinidadi;Trinidadskı;trinidadi;Trinidad;Trinitário;òğèíèäàäñê.;Trinidadian;x
 TTE;Ternate;Ternates;Ternate;Ternate;Ternate;Ternate;Ternate;Ternate;Ternate;Ternate;Ternate;Òåğíàòå;Ternate;x
 TTE_ADJ;Ternate;Ternate;Ternate-;Ternate;Ternate;di Ternate;Ternate;Ternate;Ternate;Ternate;Ternate;Òåğíàòå;Ternate;x
+TUR_theocracy;The Turkish Caliphate;Le Califat Turc;Das Türkische Kalifat;Kalifat turecki;El Califato Turco;Il Califfato turco;A Török Kalifátus;Tureckı Chalífát;A Török Kalifátus;Het Turkse Kalifaat;O Califado Turco;Òóğåöêèé Õàëèôàò;Turkin Kalifaatti;x
+TUR_theocracy_ADJ;Turkish;turque;Türkisch;Tureck;Turca;Turca;török;Tureck;török;Turks;turco;Òóğåöê;Turkki;x
 TUL;Toulouse;Toulouse;Tholosen;Tuluza;Toulouse;Tolosa;Toulouse;Toulouse;Toulouse;Toulouse;Tolosa;Òóëóçà;Toulouse;z
 TVE;Tver;Tver;Twer;Twer;Tver;Tver';Tver;Tver;Tver;Tver;Tver;Òâåğü;Tver;z
 TVE_ADJ;Tverian;de Tver;Twer-;Tweru;Tveriana;di Tver';Tverian;Tverian;Tverian;Tverian;Tverian;Òâåğñê.;Tverian;y
