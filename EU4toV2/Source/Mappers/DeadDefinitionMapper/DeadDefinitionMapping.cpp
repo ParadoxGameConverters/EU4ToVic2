@@ -29,5 +29,8 @@ void mappers::DeadDefinitionMapping::registerKeys()
 	registerKeyword("capital", [this](const std::string& unused, std::istream& theStream) {
 		deadDefinition.capital = commonItems::singleInt(theStream).getInt();
 	});
+	registerKeyword("add_accepted_culture", [this](const std::string& unused, std::istream& theStream) {
+		deadDefinition.acceptedCultures.insert(commonItems::getString(theStream));
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

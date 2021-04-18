@@ -1,6 +1,7 @@
 #ifndef DEAD_DEFINITION_MAPPING_H
 #define DEAD_DEFINITION_MAPPING_H
 #include "Parser.h"
+#include <set>
 #include <string>
 
 namespace mappers
@@ -13,6 +14,7 @@ struct DeadDefinition
 	std::optional<std::string> government;
 	std::optional<bool> civilized;
 	std::optional<int> capital;
+	std::set<std::string> acceptedCultures;
 };
 
 class DeadDefinitionMapping: commonItems::parser

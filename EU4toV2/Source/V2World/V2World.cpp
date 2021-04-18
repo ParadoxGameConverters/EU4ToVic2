@@ -173,6 +173,8 @@ void V2::World::updateDeadNations()
 				country->setCapital(*definition->capital);
 			if (definition->civilized)
 				country->setCivilized(*definition->civilized);
+			for (const auto& acceptedCulture: definition->acceptedCultures)
+				country->addAcceptedCulture(acceptedCulture);
 		}
 }
 
@@ -332,7 +334,7 @@ void V2::World::addAcceptedCultures(const EU4::Regions& eu4Regions)
 		if (country.second->getProvinces().empty())
 			continue;								// don't disturb the dead
 		std::map<std::string, long> census; // culture, population.
-		
+
 		// First, the census.
 		for (const auto& province: country.second->getProvinces())
 		{
@@ -747,12 +749,12 @@ void V2::World::importPotentialCountry(const std::string& line, bool dynamicCoun
 {
 	auto tag = line.substr(0, 3);
 
-	
+
 	if (!potentialCountries.contains(tag))
 	{
 		if (theConfiguration.isHpmEnabled() && (tag == "PAN" || tag == "PHI"))
 			return;
-		
+
 		auto newCountry = std::make_shared<Country>(line, dynamicCountry, partyNameMapper, partyTypeMapper);
 		potentialCountries.insert(std::make_pair(tag, newCountry));
 		if (dynamicCountry && !dynamicCountries.contains(tag))
@@ -1801,11 +1803,10 @@ void V2::World::outputCountries() const
 			output.close();
 		}
 		// commons file
-		std::ofstream commons(
-			 "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
+		std::ofstream commons("output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
 		if (!commons.is_open())
-			throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" +
-											 clipCountryFileName(country.second->getCommonCountryFile()));
+			throw std::runtime_error(
+				 "Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
 		country.second->outputCommons(commons);
 		commons.close();
 		// OOB
@@ -1971,7 +1972,7 @@ void V2::World::copyHpmFiles() const
 			continue;
 		fs::copy_file(hpm + "/gfx/interface/" + file, out + "/gfx/interface/" + file);
 	}
-	
+
 	// gfx/anims
 	commonItems::CopyFolder(hpm + "/gfx/anims", out + "/gfx/anims");
 
@@ -1981,7 +1982,7 @@ void V2::World::copyHpmFiles() const
 	{
 		if (file == "general_gfx.gfx")
 			continue;
-		fs::copy_file(hpm + "/interface/" + file, out + "/interface/" + file);	
+		fs::copy_file(hpm + "/interface/" + file, out + "/interface/" + file);
 	}
 
 	commonItems::CopyFolder(hpm + "/localisation", out + "/localisation");
@@ -1993,22 +1994,22 @@ void V2::World::copyHpmFiles() const
 	commonItems::CopyFolder(hpm + "/gfx/pictures/tech", out + "/gfx/pictures/tech");
 
 	// events & decisions
-	for (const auto& file : commonItems::GetAllFilesInFolder(hpm + "/events"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(hpm + "/events"))
 	{
 		fs::remove(out + "/events/" + file);
 		fs::copy_file(hpm + "/events/" + file, out + "/events/" + file);
 	}
-	for (const auto& file : commonItems::GetAllFilesInFolder("configurables/HPM/events"))
+	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/events"))
 	{
 		fs::remove(out + "/events/" + file);
 		fs::copy_file("configurables/HPM/events/" + file, out + "/events/" + file);
 	}
-	for (const auto& file : commonItems::GetAllFilesInFolder(hpm + "/decisions"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(hpm + "/decisions"))
 	{
 		fs::remove(out + "/decisions/" + file);
 		fs::copy_file(hpm + "/decisions/" + file, out + "/decisions/" + file);
 	}
-	for (const auto& file : commonItems::GetAllFilesInFolder("configurables/HPM/decisions"))
+	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/decisions"))
 	{
 		fs::remove(out + "/decisions/" + file);
 		fs::copy_file("configurables/HPM/decisions/" + file, out + "/decisions/" + file);
@@ -2042,12 +2043,11 @@ void V2::World::updateCountryDetails()
 {
 	for (const auto& [tag, country]: countries)
 	{
-		for (const auto& party: country->getParties()) //load parties from countryDetails
+		for (const auto& party: country->getParties()) // load parties from countryDetails
 		{
 			if (!party.getPolicies().contains("social_policy"))
 			{
-				if (const auto& partyType = partyTypeMapper.getPartyTypeByIdeology(party.getIdeology());
-					partyType)
+				if (const auto& partyType = partyTypeMapper.getPartyTypeByIdeology(party.getIdeology()); partyType)
 				{
 					const auto& defaultPosition = partyType->getPolicyPosition("social_policy");
 					country->addPolicy(party.getName(), "social_policy", defaultPosition);

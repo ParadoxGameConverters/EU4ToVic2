@@ -12,6 +12,7 @@ TEST(Mappers_DeadDefinitionMappingTests, primitivesDefaultToDefaults)
 	ASSERT_FALSE(mapping.getDefinition().government);
 	ASSERT_FALSE(mapping.getDefinition().civilized);
 	ASSERT_FALSE(mapping.getDefinition().capital);
+	ASSERT_TRUE(mapping.getDefinition().acceptedCultures.empty());
 }
 
 TEST(Mappers_DeadDefinitionMappingTests, primitivesCanBeLoaded)
@@ -23,6 +24,9 @@ TEST(Mappers_DeadDefinitionMappingTests, primitivesCanBeLoaded)
 	input << "government = theocracy\n";
 	input << "civilized = yes\n";
 	input << "capital = 322\n";
+	input << "add_accepted_culture = culture1\n";
+	input << "add_accepted_culture = culture2\n";
+	input << "add_accepted_culture = culture3\n";
 	const mappers::DeadDefinitionMapping mapping(input);
 
 	ASSERT_EQ("AAA", mapping.getDefinition().tag);
@@ -31,4 +35,8 @@ TEST(Mappers_DeadDefinitionMappingTests, primitivesCanBeLoaded)
 	ASSERT_EQ("theocracy", *mapping.getDefinition().government);
 	ASSERT_TRUE(*mapping.getDefinition().civilized);
 	ASSERT_EQ(322, *mapping.getDefinition().capital);
+	ASSERT_EQ(3, mapping.getDefinition().acceptedCultures.size());
+	ASSERT_TRUE(mapping.getDefinition().acceptedCultures.contains("culture1"));
+	ASSERT_TRUE(mapping.getDefinition().acceptedCultures.contains("culture2"));
+	ASSERT_TRUE(mapping.getDefinition().acceptedCultures.contains("culture3"));
 }
