@@ -4,6 +4,7 @@ political_decisions = {
 		potential = {	
 			exists = USA
 			USA = { government = democracy }
+			is_culture_group = USA
 			OR = {
 				tag = TEX
 				tag = DES
@@ -12,15 +13,12 @@ political_decisions = {
 				tag = LOU
 				tag = UIL # Illinois
 				tag = UNB # Nebraska
-				AND = {
-					tag = UNM # New Mexico
-					OR = {
-						primary_culture = texan
-						primary_culture = dixie
-					}
-				}
+				tag = UNM # New Mexico
 				tag = UNY # New York
 				tag = UOR # Oregon
+				capital_scope = { # Any other minors with dynamic tags, e.g. Vermont
+					is_core = USA
+				}
 			}
 			OR = {
 				is_vassal = no
