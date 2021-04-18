@@ -5,6 +5,7 @@
 #Germanics
 link = { tag = GER culture = north_german } # North Germany
 link = { tag = GER culture = south_german } #South Germany
+link = { tag = GER culture = boehmisch } # German Bohemia
 #link = { tag = GER culture = german } #CK2 converted - generic Germany
 link = { tag = FRK culture = frankish } #Frankia
 
@@ -27,10 +28,12 @@ link = { tag = ENG culture = irish } #Ireland
 link = { tag = ENG culture = scottish } #Scotland
 link = { tag = ENG tag = HSC culture = pictish } #Pitcland
 link = { tag = ENG culture = welsh } #Wales
+link = { tag = ENG culture = guillaumois } # Normandy^2
 
 #Italian => Italy
 link = { tag = ITA culture = north_italian }
 link = { tag = ITA culture = south_italian } #Two Sicilies = South Italy
+link = { tag = ITA culture = guiscard }
 #link = { tag = ITA culture = all_italian } #All-Italian is outside Italy...
 
 #Iberian => Spain
@@ -124,6 +127,7 @@ link = { tag = IDO tag = BUR culture = shan } #and Shan States
 link = { tag = IDO culture = burmese } #and Burma
 link = { tag = IDO culture = kachin } #and Kachin
 link = { tag = IDO culture = karen } #and Karen
+link = { tag = IDO culture = naiyeren }
 
 #East Asian
 link = { tag = CHI culture = manchu } #China and Manchuria
