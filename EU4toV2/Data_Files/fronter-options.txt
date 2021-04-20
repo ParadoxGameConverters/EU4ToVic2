@@ -238,6 +238,7 @@ option = {
 		radioOption = {
 			name = 2
 			displayName = HYBRIDMOD2
+			tooltip = HYBRIDMOD2TIP
 			default = false
 		}
 	}
