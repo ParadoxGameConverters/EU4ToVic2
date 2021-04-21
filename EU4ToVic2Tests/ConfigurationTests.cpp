@@ -52,6 +52,10 @@ bool fakeDoesFolderExist(const std::string& folder)
 	{
 		return true;
 	}
+	else if (folder == "C:\\Vic2Path/mod/HPM")
+	{
+		return true;
+	}
 	else
 	{
 		return false;
@@ -272,7 +276,7 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2PathCanPointToHpm)
 	Configuration testConfiguration;
 	std::stringstream input;
 	input << "Vic2directory = \"C:\\Vic2Path\"";
-	input << "hybrid_enabled = \"2\"";
+	input << "hybrid_mod = \"2\"";
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
 	ASSERT_EQ("C:\\Vic2Path/mod/HPM", testConfiguration.getVic2Path());
@@ -499,7 +503,9 @@ TEST(EU4ToVic2_ConfigurationTests, HybridDefaultsDisabled)
 TEST(EU4ToVic2_ConfigurationTests, HybridCanBeEnabled)
 {
 	Configuration testConfiguration;
-	std::stringstream input("hybrid_enabled = \"2\"");
+	std::stringstream input;
+	input << "Vic2directory = \"C:\\Vic2Path\"";
+	input << "hybrid_mod = \"2\"";
 	testConfiguration.instantiate(input, fakeDoesFolderExist, fakeDoesFileExist);
 
 	ASSERT_TRUE(testConfiguration.isHpmEnabled());

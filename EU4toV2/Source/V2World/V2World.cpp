@@ -1619,6 +1619,7 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 		copyHpmFiles();
 		outputGTFO(countries);
 		outputReturnCores(countries);
+		Log(LogLevel::Error) << "HPM Hybrid created. Do NOT enable HPM in Vic2 launcher, just this mod.";
 	}
 
 	// verify countries got written
