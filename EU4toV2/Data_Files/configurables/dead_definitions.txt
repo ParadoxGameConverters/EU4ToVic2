@@ -210,6 +210,7 @@ link = { tag = FEZ civilized = yes capital = 1680 }
 link = { tag = FIJ capital = 2454 primary_culture = melanesian }
 link = { tag = FIU capital = 778 government = democracy civilized = yes }
 link = { tag = FJN capital = 1482 primary_culture = min }
+link = { tag = FLR government = democracy civilized = yes capital = 199 }
 link = { tag = FOI civilized = yes capital = 457 }
 link = { tag = FRI civilized = yes capital = 385 }
 link = { tag = FRK primary_culture = frankish civilized = yes capital = 425 }
@@ -554,6 +555,7 @@ link = { tag = UYG primary_culture = uighur civilized = yes capital = 1594 }
 link = { tag = UZB primary_culture = uzbek civilized = yes capital = 1195 }
 link = { tag = VGO primary_culture = visigothic civilized = yes capital = 455 }
 link = { tag = VIJ civilized = yes capital = 1313 }
+link = { tag = VRM government = democracy civilized = yes capital = 246 }
 link = { tag = VTU primary_culture = melanesian government = democracy civilized = yes capital = 2535 }
 link = { tag = WBG government = theocracy civilized = yes capital = 597 }
 link = { tag = WES civilized = yes capital = 566 }
@@ -564,6 +566,7 @@ link = { tag = WRI capital = 1931 }
 link = { tag = WRL capital = 1873 }
 link = { tag = WSF primary_culture = polish civilized = yes capital = 706 }
 link = { tag = WSH government = democracy civilized = yes capital = 1773 }
+link = { tag = WSI government = democracy civilized = yes capital = 2237 }
 link = { tag = WUU capital = 1612 }
 link = { tag = XEO primary_culture = ashkenazi government = democracy civilized = yes capital = 706 }
 link = { tag = XHO primary_culture = xhosa capital = 2100 }

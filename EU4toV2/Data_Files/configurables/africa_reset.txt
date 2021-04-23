@@ -17,4 +17,5 @@ reset_regions = {
 	butua_area
 	zimbabwe_area
 	quelimane_area
+	oceania_superregion
 }

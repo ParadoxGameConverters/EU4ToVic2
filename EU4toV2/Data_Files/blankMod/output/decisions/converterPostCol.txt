@@ -257,6 +257,21 @@ political_decisions = {
 			2190 = { add_core = BLZ remove_core = GUA remove_core = UCA } #Belize
 			USA_118 = { add_core = DAK } #Dakota
 			USA_121 = { add_core = DAK }
+			246 = { add_core = VRM } # Vermont
+			USA_200 = { add_core = FLR } # Florida
+			2224 = { add_core = WSI } # West Indies
+			2229 = { add_core = WSI }
+			2218 = { add_core = WSI }
+			2232 = { add_core = WSI }
+			2233 = { add_core = WSI }
+			2217 = { add_core = WSI }
+			2225 = { add_core = WSI }
+			2227 = { add_core = WSI }
+			2231 = { add_core = WSI }
+			2409 = { add_core = WSI }
+			2237 = { add_core = WSI }
+			2238 = { add_core = WSI }
+			2220 = { add_core = WSI }
 			2636 = { add_core = GRN } #Greenland
 			2591 = { add_core = GRN }
 			2632 = { add_core = GRN }
@@ -370,6 +385,9 @@ political_decisions = {
 					AND = { tag = STV NOT = { exists = STV } }
 					AND = { tag = SBA NOT = { exists = SBA } }
 					AND = { tag = SAF NOT = { exists = SAF } }
+					AND = { tag = FLR NOT = { exists = FLR } }
+					AND = { tag = VRM NOT = { exists = VRM } }
+					AND = { tag = WSI NOT = { exists = WSI } }
 				}
 				clr_country_flag = religi
 				primary_culture = dummy

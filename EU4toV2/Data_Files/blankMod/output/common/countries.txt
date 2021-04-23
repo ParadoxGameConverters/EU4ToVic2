@@ -709,6 +709,10 @@ UNM     = "countries/New Mexico.txt"
 UNY     = "countries/New York.txt"
 UOR     = "countries/Oregon.txt"
 
+FLR = "countries/Florida.txt"
+VRM = "countries/Vermont.txt"
+WSI = "countries/West Indies.txt"
+
 #Middle East
 ARU		= "countries/Arab Union.txt"
 ASR		= "countries/Asir.txt"
