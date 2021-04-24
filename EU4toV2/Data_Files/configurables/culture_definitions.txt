@@ -405,13 +405,14 @@ jewish_group = {
 	mizrahi = {
 		color = {205 127 130}
 
-		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
-		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
-		}
+		first_names = { Chaikeh Eli Jonah Asher Aron Abel Abraham Avraam Gabriel Gershon Gideon Isaac
+		Israel Issachar Jacob Joel Joseph Mordecai Manasseh Moses Naftali Nathan Reuven Samson Samuel
+		Simeon Simon Solomon Yohanan Zachariah Chaim Moshe Malachi Jaffe Maimon Melamed Nathan
+		Amiel Benjamin Lazarus Matai Meshach Noah Shulamith Shylock Seraphim Seth Shafir Shailen
+		Saul Tivon Yechezkel Yehudi Yan Yanis Ronas Yosef Tobias Tov Dov Zakai Zakur Zamir Zabulon }
 
-		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
-		Sassoon Sebag
-		}
+		last_names = { Abrach Abocassis Abu Habibi Hadad Haziz Hysh Jamil Khalili Maklof Mofaz Mograbi
+		Nazarian Naqqash Sabag Sassoon Shamy Sharabani Sheriki Shirazi Soliman Yarkoni Zangi Zeitouni }
 	}
 	israeli = {
 		color = {150  212  214}
@@ -449,13 +450,19 @@ jewish_group = {
 	laaz = {
 		color = {57 53 195}
 
-		first_names = { Abraham Amos Baruch Binyamin Daniel David Efraim Ehud Eli Eliezer Elijah Gavriel Hebel Immanuel Itzhak Levi Mattiyahu Mensahe Mikhael Moshe 
-		Natan Noach Reuben Roi Shalom Shimon Tovia Uriel Uzziel Yaakov Yachin Yafe Yehoshua Yehudah Yochanan Yonatan Yosef Zohar
-		}
+		first_names = { Primo Elia Elìas Elio Giona Aronne Abele Abramo Ciro Prospero Manuele Immanuel
+		Emanuele Esaù Davide David Gabriele Gideone Michele Isacco Israel Issachar Giacobbe Gioele
+		Giuseppe Mordecai Moses Naftali Sansone Samuel Samuele Simeone Simon Simone Solomone
+		Zaccaria Malachia Beniamino Giobbe Lazzaro Noè Shulamith Tullio Serafino Seth Saulo Taddeo
+		Giovanni Yanis Ronas Silvio Tobia Giacomo Enrico Emilio René Salvatore Franco Felice Sergio
+		Oscar Hugo Ugo Haim Aldo Arturo Angelo Azaria Shlomo Sisto Vittorio Umberto Giacomo Cino }
 
-		last_names = { Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
-		Sassoon Sebag
-		}
+		last_names = { Artom Ascoli Brescia Colombo Cohen Coen Como Cremona Barzilai Behar Benetton
+		Bachi Calabresi Carpi Cantoni Fano Ferri Finzi Fiorentini Foà Franceschini Fubini Efrati
+		"de Benedetti" D'Ancona "da Como" "di Segni" "della Seta" "della Rocca" Ezra Guastalla Gattegno
+		Ginzburg Gluck Iezzi Liegi Lombroso Luzzatto Mayer Milano Montalcino Montefiore Levi
+		Livorno Luna Piperno Ravenna Ottolenghi Schiff Segre Sinigallia Spizzichino Supino Venezia
+		Vivanti Zargani Orvieto Galante Petito Modiano Modigliani Morpurgo Canetti Treves Parenzo }
 	}
 	kaifeng = {
 		color = {232 96 11}
@@ -1006,7 +1013,9 @@ british = {
 
 		first_names = { Alistair Amhlaidh Bhaltair Boyd Cairbre Callum Cormag Dand David Davidh Deorsa Diarmad Domnall Duff Eanraig Edan Fife Fingall Fraser Grahame Irvine Jamie Jock Lockie Neil Rabbie Rorie Ruairi Seoc Stewart }
 
-		last_names = { Aiken Armstrong Baird Campbell Carr Coburn Colquhoun Croft Douglass Ewart Faulkner Finley Glen Hardie Hendry Kelly Kerr Lindsay Lowe Lyon Maciomhair Mackenzie Maclean Matheson McDougall McEachern Munro Niven Oliver Rutherfurd Trask }
+		last_names = { Aiken Armstrong Baird Campbell Carr Coburn Colquhoun Croft Douglass Ewart Faulkner Finley Glen Hardie Hendry Kelly Kerr Lindsay Lowe Lyon Maciomhair Mackenzie Maclean Matheson McDougall McEachern Munro Niven Oliver Rutherfurd Trask Donoghue
+		McAllister Buchannan McDonald Abercrombie Barrie Argyle Currie Salmond Cunningham
+		Craighead Crosbie Gillmore Lyle MacAffee MacBain }
 	}
 
 	pictish = {
@@ -1896,7 +1905,10 @@ french = {
 
 		first_names = { Yann Yannic Pierre Jakez Elouan Frañsez Jaoua Paol Segal Alain Henri Hoël Michel Théodore }
       
-		last_names = { "de Cornouaille" Karter Gallo Kergoulay Bellec "le Goff" Treguier Riou Morvan Peron Jezeguel Salaun "le Bihan" }
+		last_names = { "de Cornouaille" Karter Gallo Kergoulay Bellec "le Goff" Treguier Riou Morvan
+		Peron Jezeguel Salaun "le Bihan" Merat Chevrolet Marchand Beaulieu Beaumont Travers Legrand
+		Leblanc Moreau Bernard Martin Thomas Chartres Durand Dubois Dupont Chastain Fournier
+		Comtois Fabron Couture Caron Dupuis Deschamps }
 	}
 	outremer = {
 		color = { 211  230  211 }
@@ -2375,9 +2387,13 @@ polish_culture_group = {
 	sorbian = {
 		color = {0 48 239}
 		
-		first_names = { Czedrog Jaromar Niklot Ons Wizlaw Aleksander Andrzej Antoni Aron Barnim Bedrich Blazej Blus Bogislav Bohdan Bohumir Boleslaw Borivoj Bozydar Branimir Branislav Bretislav Budivoj Burislav Czcibor Czimislav Dervan Dobieslav Dobromil Drosuk Dytryk Frantisek Gawel Grzegorz Havel Henry Jacenty Jakub Jakusz Janusz Jaromar Jaromil Jaromir Jaroslav Jedrzej Jindrich Jozef Juliusz Kajetan Kamil Karel Kasimir Kasper Kliment Kolman Kornel Kresimir Krzeslaw Kruto Krzysztof Lech Leszek Lubomir Lucjan Ludvik Marek Marian Martin Mateusz Mieszko Miliduch Miloslav Milosz Miroslav Mlcislaw Mstivoj Niklot Nikolaus Oldrich Ondrej Otokar Patryk Pawel Petrus Piotr Prendota Pribignev Pribislav Przemysl Przybyslaw Radomil Radomir Radoslav Ratibor Rostislav Ryszard Sambor Sobieslav Stanislav Strasz Swietopelk Svietoslav Szczepan Szczesny Szymon Tadeusz Tetzlav Tomasz Udalrich Urjasz Vojtech Vaclav Vratislav Vitslav Walenty Wertislav Wawrzyniec Venceslav Wincenty Wizlaw Wladyslaw Wlodek Wlodzimierz Wlodzislaw Vratislav Zbigniew Zdenek Zdislav Zygmunt }
+		first_names = { Albert Alfons Arnošt Artur Awgust Bart Bjarnat Erich Erwin Fryco Gerald Hajno
+		Handrij Hanzo Helmut Hendrich Hync Jakub Jan Jurij Korla Mato Macij Michal Miklawš Mercin
+		Pawol Rudolf Timo Uwe Werner Wjaclaw }
 		
-		last_names = { Obroditen Gryfita "z Liubic" Swieca Grzymala Jastrzebiec Lodzia Lubicz Nalecz Gniewosz "z Roztoki" "ze Slupska" }
+		last_names = { Obroditen Gryfita "z Liubic" Swieca Grzymala Jastrzebiec Lodzia Lubicz Nalecz Gniewosz "z Roztoki" "ze Slupska" Andricki Budar Cyž Frencel Jakula Jenc Koch Kocor Krawcec
+		Krušwica Kósyk Mlynk Nagel Nawka Njechornski Nowak Pilk Smoler Stempel Surowin Witkojc
+		Wjela Zejler Cišinski Cornakec Šenec }
 		radicalism = 10
 	}
 	oldpommeranian = {
@@ -2630,7 +2646,7 @@ east_slavic = {
 		Kolchak Kuropatkin Lazarev Makarov Men'shikov Nakhimov Nebogatov
 		Nikolayevich Ostrovskiy Pavlov Putyatin Romanov Rozhestvenskiy Skobelev
 		Shuvalov Surkov Tukhachevskiy Yegorov Yudenich Vorontsov Voroshilov Zavoyko }
-    	}
+    }
 	byelorussian = {
 		color = {100 140 110}
 
@@ -2642,7 +2658,7 @@ east_slavic = {
 		Ivanov Kalinouski Kornjlov Kolcak Kuropatkin Lukašenka Mienšikov Nachimov
 		Niebohatov Nikolajevic Pavlov Putiatin Rožjestvienski Skobieliev Suchoj
 		Tuchacjeuski Jehorov Voroncov Žauryd }
-    	}
+    }
 	ukrainian = {
 		color = {160 160 60}
 
@@ -2654,7 +2670,7 @@ east_slavic = {
 		Krapustians'kyy Kondratenko Leshchenko Lesh·chinskyy "Omelyanovych-Pavlenko"
 		Paskevych Petlyura Radchenko Shevchenko Skoropads'kyy Stefaniv Tymoshenko Vitovs'kyy }
 		radicalism = 10
-    	}
+    }
 	ugrian = {  
 		color = {60 160 160}
 		first_names = { Aleksandr Dmitri Ivan Jukka Santeri Vladimir }
@@ -2674,7 +2690,7 @@ east_slavic = {
 		Kolchak Kuropatkin Lazarev Makarov Men'shikov Nakhimov Nebogatov
 		Nikolayevich Ostrovskiy Pavlov Putyatin Romanov Rozhestvenskiy Skobelev
 		Shuvalov Surkov Tukhachevskiy Yegorov Yudenich Vorontsov Voroshilov Zavoyko }
-    	}
+    }
 	alaskan = {
 		color = { 14 139 80 }
 		first_names = { Adam Alexander William Henry Michael Samuel Joshua George John Matthew Mark Luke Lucas Jeffrey Ulysses 
@@ -2687,44 +2703,43 @@ east_slavic = {
 	}
 	kholodnovoynsky = {
 		color = { 105 164 125 }
-			first_names = {Adam Alexander William Henry Michael Samuel Joshua George John Matthew Mark Luke Lucas Jeffrey Ulysses 
-			Joseph Charles Russell eksandr Alexei Andrei Anton Boris Dmitry Fyodor Gennady Giorgi Grigoriy Igor Ivan Kirill Konstantin Lavr Leonid Lev Maxim 
-			Mikhail Nikita Nikolai Oleg Pavel Pyotr Roman Semyon Sergei Valery Vasily Viktor Vladimir Vladislav Yegor Yevgeny Yuri
-			}
-		last_names = {Smith Washington Grant Sherman Chamberlain Powell Clemens Abbott Abercrombie Allen Ames Anderson Barkhauer Andrews Appleton
-				Armstrong Arthur Atkins Asboth Babcock Baker Pope Banks Barnard Barnes Barnum Barry Barstow Bartlett Bates 
-				Baxter Beatty Belknap Benton Blair Blunt Bradley Brown Buell Buford Burnside Butler Caldwell Campbell Carr Kuropatkin Lazarev
-				Makarov Menshikov Nakhimov Nebogatov Nikolaevich Ostrovsky Pavlov Putyatin Romanov Rozhestvensky Skobelev Shuvalov Surkov Tukhachevsky Yegorov Yudenich Vorontsov Voroshilov Zavoyko
-		}
+		first_names = {Adam Alexander William Henry Michael Samuel Joshua George John Matthew Mark Luke Lucas Jeffrey Ulysses 
+		Joseph Charles Russell eksandr Alexei Andrei Anton Boris Dmitry Fyodor Gennady Giorgi Grigoriy Igor Ivan Kirill Konstantin Lavr Leonid Lev Maxim 
+		Mikhail Nikita Nikolai Oleg Pavel Pyotr Roman Semyon Sergei Valery Vasily Viktor Vladimir Vladislav Yegor Yevgeny Yuri }
+		
+		last_names = { Smith Washington Grant Sherman Chamberlain Powell Clemens Abbott Abercrombie Allen Ames Anderson Barkhauer Andrews Appleton
+		Armstrong Arthur Atkins Asboth Babcock Baker Pope Banks Barnard Barnes Barnum Barry Barstow Bartlett Bates 
+		Baxter Beatty Belknap Benton Blair Blunt Bradley Brown Buell Buford Burnside Butler Caldwell Campbell Carr Kuropatkin Lazarev
+		Makarov Menshikov Nakhimov Nebogatov Nikolaevich Ostrovsky Pavlov Putyatin Romanov Rozhestvensky Skobelev Shuvalov Surkov Tukhachevsky Yegorov Yudenich Vorontsov Voroshilov Zavoyko }
 	}
 	yuzhny = {
 		color = {49 53 16}
 
 		first_names = { Aleksandr Aleksey Andrey Anton Boris Dmitriy Fedor Gennadiy
-				Giorgiy Grigoriy Igor' Ivan Kiril Konstantin Lavr Leonid Lev Maksim
-				Mikhail Nikita Nikolay Oleg Pavel Potr Rotan Semon Sergey
-				Valeriy Vasiliy Viktor Vladimir Vladislav Yegor Yevgeniy Yuriy }
+		Giorgiy Grigoriy Igor' Ivan Kiril Konstantin Lavr Leonid Lev Maksim
+		Mikhail Nikita Nikolay Oleg Pavel Potr Rotan Semon Sergey
+		Valeriy Vasiliy Viktor Vladimir Vladislav Yegor Yevgeniy Yuriy }
 
-                   last_names = { Aleksseyev Antonov Azarov Badanov Brusilov Budonnyy Chibisov Denikin
-				Dragomirov Frolov Golivin Grishin Gurko Ivanov Konev Konstantinov Kornilov
-				Kolchak Kuropatkin Lazarev Makarov Men'shikov Nakhimov Nebogatov
-				Nikolayevich Ostrovskiy Pavlov Putyatin Romanov Rozhestvenskiy Skobelev
-				Shuvalov Surkov Tukhachevskiy Yegorov Yudenich Vorontsov Voroshilov Zavoyko }
-    	}
+		last_names = { Aleksseyev Antonov Azarov Badanov Brusilov Budonnyy Chibisov Denikin
+		Dragomirov Frolov Golivin Grishin Gurko Ivanov Konev Konstantinov Kornilov
+		Kolchak Kuropatkin Lazarev Makarov Men'shikov Nakhimov Nebogatov
+		Nikolayevich Ostrovskiy Pavlov Putyatin Romanov Rozhestvenskiy Skobelev
+		Shuvalov Surkov Tukhachevskiy Yegorov Yudenich Vorontsov Voroshilov Zavoyko }
+	}
 	smugly = {
 		color = {0 42 6}
 
 		first_names = { Aleksandr Aleksey Andrey Anton Boris Dmitriy Fedor Gennadiy
-				Giorgiy Grigoriy Igor' Ivan Kiril Konstantin Lavr Leonid Lev Maksim
-				Mikhail Nikita Nikolay Oleg Pavel Potr Rotan Semon Sergey
-				Valeriy Vasiliy Viktor Vladimir Vladislav Yegor Yevgeniy Yuriy }
+		Giorgiy Grigoriy Igor' Ivan Kiril Konstantin Lavr Leonid Lev Maksim
+		Mikhail Nikita Nikolay Oleg Pavel Potr Rotan Semon Sergey
+		Valeriy Vasiliy Viktor Vladimir Vladislav Yegor Yevgeniy Yuriy }
 
-                   last_names = { Aleksseyev Antonov Azarov Badanov Brusilov Budonnyy Chibisov Denikin
-				Dragomirov Frolov Golivin Grishin Gurko Ivanov Konev Konstantinov Kornilov
-				Kolchak Kuropatkin Lazarev Makarov Men'shikov Nakhimov Nebogatov
-				Nikolayevich Ostrovskiy Pavlov Putyatin Romanov Rozhestvenskiy Skobelev
-				Shuvalov Surkov Tukhachevskiy Yegorov Yudenich Vorontsov Voroshilov Zavoyko }
-    	}
+		last_names = { Aleksseyev Antonov Azarov Badanov Brusilov Budonnyy Chibisov Denikin
+		Dragomirov Frolov Golivin Grishin Gurko Ivanov Konev Konstantinov Kornilov
+		Kolchak Kuropatkin Lazarev Makarov Men'shikov Nakhimov Nebogatov
+		Nikolayevich Ostrovskiy Pavlov Putyatin Romanov Rozhestvenskiy Skobelev
+		Shuvalov Surkov Tukhachevskiy Yegorov Yudenich Vorontsov Voroshilov Zavoyko }
+	}
 	
 	union = RUS
 }
@@ -3628,7 +3643,12 @@ arab = {
 			"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
 			"ibn Muhammad" "ibn Mustafa" "ibn Salim"  
 			"ibn Umar" "ibn Uthman" "ibn Yusuf"
-			"al-Najdi" "al-Hijazi"   
+			"al-Ilidufransi" "al-Biri" "al-Uwrilyanisi" "al-Nwrmandi" "al-Langhuduki" "al-Luynihi"
+			"al-Dawfini" "al-Shambani" "al-Eunisi" "al-Sayntwnji" "al-Bawatui" "al-Jawin al-Wajasikuni"
+			"al-Buarjundi" "al-Bikardi" "al-Anjui" "al-Brwfansi" "al-Anjumuui" "al-Burbunaysi"
+			"al-Mariki" "al-Baritani" "al-Mayni" "al-Turini" "al-Liamuzini" "al-Fuui" "al-Awfirni"
+			"al-Biarini" "al-Alzasi" "al-Artawazi" "al-Rusiuni" "al-Falandarazi" "al-Faranshi" "al-Kumiti"
+			"al-Lurini" "al-Wabaruisi" "al-Kursiki" "al-Nayfrini"
 			}
 			radicalism = 10
 		}
@@ -4248,7 +4268,11 @@ southeast_asian = {
 
 		first_names = { "Muhammad" "Ahmad" "Sulaymân" "Bulkiah" "'Abd al-Qahhar" "Sayf ar-Rijal" "Hasan" "'Abd al-Jalîl" "Muhammad 'Alî" "'Abd al-Mubin" "Muhyî ad-Dîn" "Nasr ad-Dîn" "Kamâl ad-Dîn" "Alâ' ad-Dîn" "Sayf ad-Dîn" "Muhammad Jamâl ad-Dîn" "Muhammad Tâj ad-Dîn" }
 		
-		last_names = { Burnei Kutai Sibu Kuching }
+		last_names = { Burnei Kutai Sibu Kuching "anak Muhammad" "anak Ahmad" "anak Sulaymân"
+		"anak Bulkiah" "anak 'Abd al-Qahhar" "anak Sayf ar-Rijal" "anak Hasan" "anak 'Abd al-Jalîl"
+		"anak Muhammad 'Alî" "anak 'Abd al-Mubin" "anak Muhyî ad-Dîn" "anak Nasr ad-Dîn"
+		"anak Kamâl ad-Dîn" "anak Alâ' ad-Dîn" "anak Sayf ad-Dîn" "anak Muhammad Jamâl ad-Dîn"
+		"anak Muhammad Tâj ad-Dîn" }
 	}
 	filipino = {
 		color = {200 220 30}
