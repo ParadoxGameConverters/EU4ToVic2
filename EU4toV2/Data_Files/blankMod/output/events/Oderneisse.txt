@@ -26,7 +26,7 @@ country_event = {
 	mean_time_to_happen = { months = 1 }
 	
 	option = {
-		name = EVTOPTA5000100
+		name = STRING_OK
 		set_global_flag = polish_prussia
 		546 = { change_province_name = "Szczecin" }
 		679 = { change_province_name = "Kolobrzeg" }
@@ -55,7 +55,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = EVTOPTA5000110
+		name = STRING_OK
 		547 = { secede_province = THIS }
 		548 = { secede_province = THIS }
 		545 = { secede_province = THIS }
@@ -91,7 +91,7 @@ country_event = {
 	mean_time_to_happen = { months = 1 }
 	
 	option = {
-		name = EVTOPTA5000101
+		name = STRING_OK
 		clr_global_flag = polish_prussia
 		546 = { change_province_name = "Stettin" }
 		679 = { change_province_name = "Kolberg" }
@@ -136,7 +136,7 @@ country_event = {
 	mean_time_to_happen = { months = 1 }
 	
 	option = {
-		name = EVTOPTA5000102
+		name = STRING_OK
 		set_global_flag = polish_koenigsberg
 		696 = { # Allenstein
 			change_province_name = "Olsztyn"
@@ -179,7 +179,7 @@ country_event = {
 	mean_time_to_happen = { months = 1 }
 	
 	option = {
-		name = EVTOPTA5000103
+		name = STRING_OK
 		clr_global_flag = polish_koenigsberg
 		696 = {
 			change_province_name = "Allenstein"

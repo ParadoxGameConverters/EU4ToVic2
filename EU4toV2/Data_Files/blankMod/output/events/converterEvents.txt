@@ -46,7 +46,7 @@ country_event = {
 
 country_event = {
     id = 250003
-    title = EVTNAME250003
+    title = EVTNAME250001
     desc = EVTDESC250003
 
     is_triggered_only = yes
@@ -230,7 +230,7 @@ country_event = {
 	mean_time_to_happen = { months = 1 }
 
 	option = { 
-		name = EVTOPTA350002
+		name = EVTOPTA250002
 		clr_country_flag = emperor_heaven
 	}
 }
@@ -261,7 +261,7 @@ country_event = {
 country_event = { 
 	id = 350004
 	title = EVTNAME350004
-	desc = EVTDESC350004
+	desc = EVTDESC350003
 
 	trigger = { 
 		tag = ABO
@@ -272,7 +272,7 @@ country_event = {
 	mean_time_to_happen = { months = 1 }
 
 	option = { 
-		name = EVTOPTA350004
+		name = EVTOPTA350003
 		any_core = {
 			limit = { empty = yes }
 			secede_province = ABO
