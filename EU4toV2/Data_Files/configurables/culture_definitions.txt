@@ -86,11 +86,16 @@ germanic = {
 		Julius Karl Konrad Kurt Leonhard Leopold Lorenz Lothar Ludwig Maximilian
 		Michael Otto Reinhold Rudolf Stefan Theodor Viktor Walter Werner Wilhelm }
 		
-		last_names = { Beck-Rzikowsky Blos Dankl Eisner Geiss Goering Hainisch Haus Held Hellpach
-		Hoffmann Hummel Köhler Mergenthaler Miklas Remmele Schmitt Schobber Seitz Steeb
-		Stolzer Trunk "von Baden" "von Benedek" "von Böhm-Ermolli" "von Brudermann" "von Clam-Gallas" "von der Tann" "von Dietrich" "von Gablenz"
-		"von Grünne" "von Habsburg" "von Hartmann" "von Haynau" "von Hess" "von Hohenhausen" "d'Aspre von Hoobreuk" "von Hortstein" "von Hötzendorf" "von Kirbach"
-		"von Kobratin" "von Schönburg" "von Tegetthoff" "von Uchatius" "von Wittelsbach" "von Württemberg" "von Zahringen" Wagner Wittmann "zu Hohenlohe" }
+		last_names = { Fentzke Fanke Friske Wolfowitz Kotke Laser Mahlke Retzke Bugalke Bolke Klimke
+		Koskie Milke Panke Slezner Tomke,Woder Patzer Patner Lenkier Janke Jaske Maszke Henke Gruber
+		Kuller Pisier Byger Pietzner Blizner,Tengier Ulkier Paske Reske Hunke Loeske Silke Lutke Kozelke
+		Konde Kluske Regenke Pieche Griebe Busse Woder Reglier Tenger Patek Zel Kroll Wrubell Boruta
+		Gnat Rogall Szmygell Witt Wittek Kopp Soffka Gaffaka Winka Gensk 
+		"von Breslau" "von Bromberg" "von Thorn" "von Lublin" "von Landsberg" "von der Warthe"
+		"von Grünberg" "von Lodsch" "von Krakau" "von Warschau" "von Oppeln" "von Reichshof"
+		"von Bjelostock" "von Danzig" "von Kattowitz" "von Kjelzy" "von Allenstein" "von Posen"
+		"von Stettin" "von Kalisch" "von Schieratz" "von Lentschütz" "von Brest" "von Gnesen"
+		"von Jungleslau" "von Sandomir" }
 	}
 	boehmisch = {
 		color = { 35 212 184 }
@@ -101,37 +106,26 @@ germanic = {
 		Julius Karl Konrad Kurt Leonhard Leopold Lorenz Lothar Ludwig Maximilian
 		Michael Otto Reinhold Rudolf Stefan Theodor Viktor Walter Werner Wilhelm }
 		
-		last_names = { Beck-Rzikowsky Blos Dankl Eisner Geiss Goering Hainisch Haus Held Hellpach
-		Hoffmann Hummel Köhler Mergenthaler Miklas Remmele Schmitt Schobber Seitz Steeb
-		Stolzer Trunk "von Baden" "von Benedek" "von Böhm-Ermolli" "von Brudermann" "von Clam-Gallas" "von der Tann" "von Dietrich" "von Gablenz"
-		"von Grünne" "von Habsburg" "von Hartmann" "von Haynau" "von Hess" "von Hohenhausen" "d'Aspre von Hoobreuk" "von Hortstein" "von Hötzendorf" "von Kirbach"
-		"von Kobratin" "von Schönburg" "von Tegetthoff" "von Uchatius" "von Wittelsbach" "von Württemberg" "von Zahringen" Wagner Wittmann "zu Hohenlohe" }
+		last_names = { "von Prag" Pilsner "von Karlsbad" "von Aussig" "von Reichenberg" "von Königgrätz"
+		"von Pardubitz" "von Iglau" Budweiser "von Brünn" Olmützer "von Ostrau" Zliner Preßburger
+		"von Preßburg" "von Tyrnau" "von Trentschin" Laugaricio "von Neutra" "von Sillein"
+		Solna "von Neusohl" "von Eperies" Fragopolis "von Kaschau" }
 	}
 	amerikaner = {
 		color = { 70 103 123 }
 
-		first_names = { Adelbert Adolf Albrecht Alexander Alfons Alfred August Alois Anton Arthur
-		Bernhard Burkhard Christian Dieter Edmund Eduard Edwin Engelbert Erwin Erich Ernst 
-		Ferdinand Florian Franz Friedrich Fritz Georg Gebhard Gerhard Gottfried Günther
-		Gustav Hasso Heinrich Helmuth Hermann Horst Hugo Jakob Joachim Johann Joseph Julius Jürgen 
-		Karl Konrad Kurt Leonhard Leopold Lorenz Lothar Ludwig Lukas Manfred Maximilian Michael 
-		Nikolaus Otto Pascal Paul Peter Reinhard Rudolf Ruprecht Stefan Theodor Viktor Walter Werner 
-		Wilhelm Wolfgang }
+		first_names = { Dankmar Adolf Ferdinand Walter Albert Richard Henry Joseph John
+		Washington Frederick August Hans Adolph Horace Ludwig Anni Josef Earl Robert
+		Albert Richard Charles Rudolph Alfred Jimmy Carl Claire Andreas Lyonel Steven Carl 
+		George Don Uli Ubbe Klaus Kenya Charles "Franz Jozef" Harold "John Lewis" 
+		Emanuel Cornelius Donald Buzz Lorenz Peter Carl George Dwight Darrell Henry }
 		
-		last_names = { Beck-Rzikowsky Behncke Blos Brommy Cordemann Dankl Dreyer Droste Eisner Geiss 
-		Goering Groener Hainisch Haus Held Hellpach "Herwarth von Bittenfeld" Heppendorf Hoffmann 
-		Hummel Köhler Krohn Ludendorff Mergenthaler Miklas Remmele Schmitt Schobber Schree Seitz Steeb
-		Stolzer Trunk "Vogel von Falkenstein" "von Alten" "von Anhalt" "von Arentschildt" "von Bülow" 
-		"von Baden" "von Benedek" "von Bismarck-Bohlen" "von Blumenthal" "von Blomberg" "von Böhm-Ermolli"
-		"von Boyen" "von Braunschweig" "von Brudermann" "von Clam-Gallas" "von dem Knesebeck" 
-		"von der Tann" "von Dietrich" "von Gablenz" "von Gebser" "von Grünne" "von Habsburg" "von Fritsch"
-		 "von Halkett" "von Hannover" "von Hartmann" "von Haynau" "von Hess" 
-		"von Hessen-Darmstadt" "von Hessen-Kassel" "von Hindenburg" "von Hohenzollern" "von Holstein-Gottorp" "von Knorr" "von Kleefeld"
-		"von Manteuffel" "von Mecklenburg-Schwerin" "von Mecklenburg-Strelitz" "von Moltke" "von Oldenburg" "von Rauch" "von Ravensberg" 
-		"von Reuter" "von Richthofen" "von Sachsen-Altenburg" "von Sachsen-Coburg-Gotha" "von Sachsen-Meiningen" 
-		"von Sachsen-Weimar-Eisenach" "von Schlieffen" "von Schwarzburg" "von Spee" "von Tirpitz" "von Waldeck und Pyrmont" "von Wettin" 
-		"von Wrangel" "von Zieten" "zur Lippe" "von Roon" "von Hohenhausen" "d'Aspre von Hoobreuk" "von Hortstein" "von Hötzendorf" "von Kirbach"
-		"von Kobratin" "von Schönburg" "von Tegetthoff" "von Uchatius" "von Wittelsbach" "von Württemberg" "von Zahringen" Wagner Wittmann "zu Hohenlohe"}
+		last_names = { Adler Cluss Gottlieb Gropius Kahn Kiehnel Koch Molitor Roebling Sauer
+		Scheibler Schoenborn Schuler Strauch Trumbauer "Mies van der Rohe" Albers Bascom
+		Beneck Bierstadt Bock Dellschau Dirks Eisenstaedt Ernst Eytel Falkenstein Feininger 
+		Fischer Giers Grosz Heck Herzner Hofmann "Ert Iwwerks" Janson Kampelmann Robinson 
+		Kleibacker Kline Knerr Krimmel Keutze Krieghoff Trump Garfield Harding Nixon Aldrin Brentano
+		Walker Bush Eisenhower Issa Kissinger Roosevelt Schurz }
 	}
 	kleinvenedig = {
 		color = { 123 103 70 }
@@ -144,20 +138,8 @@ germanic = {
 		Nikolaus Otto Pascal Paul Peter Reinhard Rudolf Ruprecht Stefan Theodor Viktor Walter Werner 
 		Wilhelm Wolfgang }
 		
-		last_names = { Beck-Rzikowsky Behncke Blos Brommy Cordemann Dankl Dreyer Droste Eisner Geiss 
-		Goering Groener Hainisch Haus Held Hellpach "Herwarth von Bittenfeld" Heppendorf Hoffmann 
-		Hummel Köhler Krohn Ludendorff Mergenthaler Miklas Remmele Schmitt Schobber Schree Seitz Steeb
-		Stolzer Trunk "Vogel von Falkenstein" "von Alten" "von Anhalt" "von Arentschildt" "von Bülow" 
-		"von Baden" "von Benedek" "von Bismarck-Bohlen" "von Blumenthal" "von Blomberg" "von Böhm-Ermolli"
-		"von Boyen" "von Braunschweig" "von Brudermann" "von Clam-Gallas" "von dem Knesebeck" 
-		"von der Tann" "von Dietrich" "von Gablenz" "von Gebser" "von Grünne" "von Habsburg" "von Fritsch"
-		 "von Halkett" "von Hannover" "von Hartmann" "von Haynau" "von Hess" 
-		"von Hessen-Darmstadt" "von Hessen-Kassel" "von Hindenburg" "von Hohenzollern" "von Holstein-Gottorp" "von Knorr" "von Kleefeld"
-		"von Manteuffel" "von Mecklenburg-Schwerin" "von Mecklenburg-Strelitz" "von Moltke" "von Oldenburg" "von Rauch" "von Ravensberg" 
-		"von Reuter" "von Richthofen" "von Sachsen-Altenburg" "von Sachsen-Coburg-Gotha" "von Sachsen-Meiningen" 
-		"von Sachsen-Weimar-Eisenach" "von Schlieffen" "von Schwarzburg" "von Spee" "von Tirpitz" "von Waldeck und Pyrmont" "von Wettin" 
-		"von Wrangel" "von Zieten" "zur Lippe" "von Roon" "von Hohenhausen" "d'Aspre von Hoobreuk" "von Hortstein" "von Hötzendorf" "von Kirbach"
-		"von Kobratin" "von Schönburg" "von Tegetthoff" "von Uchatius" "von Wittelsbach" "von Württemberg" "von Zahringen" Wagner Wittmann "zu Hohenlohe"}
+		last_names = { "von Ehinger" Seissenhofer "von Key" Sayler Alfinger Federmann Hohermut
+		"von Speyer" Remboldt "von Hutten" Grübel Alemán }
 	}
 	sudreicher = {
 		color = { 91 53 53 }
@@ -609,8 +591,18 @@ beneluxian = {
 
 		first_names = { Sarel Rudolf Andries Hendrik Piet Racheltjie Dirkie Siener Koos Danie Christiaan Louis Petrus Paul Eugene Joubert
 		}
-		last_names = { Cilliers Botha Joubert Kruger Duquesne Potgieter "van Rensburg" "de la Rey" Theron "de Wet" Pretorius Retief "de Beer" Uys 
-		}
+		last_names = { Bascom Bok "de Kooning" DeVries Fles Fort Franck Jansen Melville Nieuwsma
+		Timmers "van Buren" Stratemeyer "van de Wetering" "Van Doren Stern" "Van Loon" Vanderbilt
+		Whitman Brie Aykroyd Aylesworth Paul Bachar Bex Bloodgood Bogart Bosworth Branch Brando 
+		Brown Buscemi Beefheart Carradine Clift Cooper "de Bont" "De Niro" DeHaan Dekker
+		"DeMille" Deschanel DeWitt Douglas Eastwood Farmer Ferlaak Foch Fonda Frehley Garity 
+		Gavankar Gaynes German Giamatti Gosselaar Grabeel Grable Hadid Hall Hoffman Houston Howard 
+		Huisman Jane Jansen Janssen Jolie Jenner Judels Kardashian Kristofferson LaRue Lautner Lutz 
+		McGraw Markle Meester Miller Parker Pfeiffer Pullman Ritter Romijn Schoonmaker Seymour 
+		Sinterniklaas Smits Smulders Spanjers Springsteen Struycken Swift Tellegen Temple Theron
+		"Van Alstyne" "van Amstel" "Van Beuren" "Van Cleef" "van der Pol" "VanderWaal" "Van Dien"
+		"Van Dyke" "Van Halen" "Van Patten" "Van Sant" "Van Sloan" "Van Wyngarden" "Van Zandt"
+		"Van Zant" Verhoeven Voorhees Warwick Wilson Schaal }
 		radicalism = 10
 	}
 	zuidelijk = {
@@ -618,8 +610,18 @@ beneluxian = {
 
 		first_names = { Sarel Rudolf Andries Hendrik Piet Racheltjie Dirkie Siener Koos Danie Christiaan Louis Petrus Paul Eugene Joubert
 		}
-		last_names = { Cilliers Botha Joubert Kruger Duquesne Potgieter "van Rensburg" "de la Rey" Theron "de Wet" Pretorius Retief "de Beer" Uys 
-		}
+		last_names = { Bascom Bok "de Kooning" DeVries Fles Fort Franck Jansen Melville Nieuwsma
+		Timmers "van Buren" Stratemeyer "van de Wetering" "Van Doren Stern" "Van Loon" Vanderbilt
+		Whitman Brie Aykroyd Aylesworth Paul Bachar Bex Bloodgood Bogart Bosworth Branch Brando 
+		Brown Buscemi Beefheart Carradine Clift Cooper "de Bont" "De Niro" DeHaan Dekker
+		"DeMille" Deschanel DeWitt Douglas Eastwood Farmer Ferlaak Foch Fonda Frehley Garity 
+		Gavankar Gaynes German Giamatti Gosselaar Grabeel Grable Hadid Hall Hoffman Houston Howard 
+		Huisman Jane Jansen Janssen Jolie Jenner Judels Kardashian Kristofferson LaRue Lautner Lutz 
+		McGraw Markle Meester Miller Parker Pfeiffer Pullman Ritter Romijn Schoonmaker Seymour 
+		Sinterniklaas Smits Smulders Spanjers Springsteen Struycken Swift Tellegen Temple Theron
+		"Van Alstyne" "van Amstel" "Van Beuren" "Van Cleef" "van der Pol" "VanderWaal" "Van Dien"
+		"Van Dyke" "Van Halen" "Van Patten" "Van Sant" "Van Sloan" "Van Wyngarden" "Van Zandt"
+		"Van Zant" Verhoeven Voorhees Warwick Wilson Schaal }
 		radicalism = 10
 	}
 	surinamian = {
@@ -856,8 +858,12 @@ scandinavian = {
 			Hávi Rakki Skrauti Snarfari Strangi Snjalli Súrr Skáld Viss Þrymr Þvari Ólfúss Órn Hvíti Sterki Auðgi
 			Rauði Spaki Svarti Rammi Mjóvi Ríki Lambi Skarfr Skál Sleggja Smjór Stjarna Strúgr Sálendingr
 			Súrr Sálingr Trausti Veðr Vámúli Váni Þistill Þjófi Þynning "af Bebbanburg" Byrrnesson "af Raumariki"
-			"af Raumariki" "af Dovre" "af Dovre" Veóy "af Raumsdalr" Eirikson Sognsdal Gunarrson Firdi
-			"af Aarhus" "af Aarhus" "af Aalborg" "af Aalborg" "af Varde" "af Varde" "af Skagen" "af Skagen"
+			"af Bedford" "af Berks" "af Buckingham" "af Cambridge" "af Chester" "af Cornwall"
+			"af Cumberland" "af Derby" "af Devon" "af Dorset" "af Durham" "af Essex" "af Gloucester"
+			"af Southampton" "af Hereford" "af Hertford" "af Huntingdon" "af Kent" "af Lancaster"
+			"af Leicester" "af Lincoln" "af Middlesex" "af Norfolk" "af Northampton" "af Northumberland"
+			"af Oxford" "af Rutland" "af Shrop" "af Somerset" "af Stafford" "af Suffolk" "af Surrey"
+			"af Sussex" "af Warwick" "af Westmorland" "af Wilts" "af Worcester" "af York"
 		}
 	}
 	vinlander = { 
@@ -1103,7 +1109,13 @@ italian = {
 		color = { 55 144 66 }
 
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
-		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		
+		last_names = { Paravia Tommaseo Bajamonti Monti Colautti Ferruzzi Tacconi Dudan Rismondo
+		Luxardo Pattiera Schön Gabric Missoni Bettiza "de' Vidovich" Garko Marenzzi Rosso 
+		Grepo Marinelli Santorio Grossich Parentino Trevisani Antico Smareglia Tartini Surian
+		Endrigo Vergerio Tomizza Arpino Bastianich Endrigo Vidali Juri Polani Rossanda Antonelli
+		Valli Benussi Dobrovic Benvenuti Cernogoraz Andretti Corneo Scoria Budicin Gasparini
+		Mori Fabris Sauro Filzi Schergat Marcceglia Bonifacio }
 	}
 	all_italian = {
 		color = {150 220 180}
@@ -1115,61 +1127,191 @@ italian = {
 		color = {119 194 190}
 
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
-		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
+		Miller Panetta Gatto Pelosi Rogan Rossi Thompson DeGette Tancredo Paccione "O'Dorisio"
+		Perino DeLauro DeStefano Fedele Grasso Rodney Mica Weldon Considine DeSantis Soto
+		Costello Manzullo Olivo Panici Russo Pompeo Mazzoli Mongiardo Landrieu Scalise Schiro
+		Baldacci D'Alesandro Morella Paca Capuano Cellucci Cogliano Furcolo Langone Malone
+		Menino Moakley Tisei Volpe Bentivolio Dondero Ficano Oberstar Vento Childers Cochran
+		Longino Palazzo Pickering Gianforte Corleone Amodei Augustine Ensign "Cortez Masto"
+		D'Allesandro Sgambati Bruno Bucco Christie Ferguson Florio Girgenti Guarini LoBiondo
+		Pallone Pascrell Rodino Roukema Russo Torricelli Carraro Domenici Addabbo D'Amato
+		Antonini Borelli Califano Cincotta Cino Cuomo DeSapio DiNapoli DioGuardi Ferraro
+		Fossella Frisa Gaeta Garbarino Giuliani Golisano Grimm Grucci Gucci Impellitteri LaFalce
+		"La Guardia" Lamberti Lanza Lazio Leone LiPetri Lopez Masiello Marcantonio Molinari
+		Paladino Pataki Pecora Poletti Sanzillo Savino Scaramucci Capone Smith Spinola Suozzi
+		Vallone Zanzi Foxx Cafaro Celebrezze Celeste DiSalle Ryan Tiberi Carosone }
 	}
 	australiano = {
 		color = {140 144 120}
 
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
-		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
+		Miller Panetta Gatto Pelosi Rogan Rossi Thompson DeGette Tancredo Paccione "O'Dorisio"
+		Perino DeLauro DeStefano Fedele Grasso Rodney Mica Weldon Considine DeSantis Soto
+		Costello Manzullo Olivo Panici Russo Pompeo Mazzoli Mongiardo Landrieu Scalise Schiro
+		Baldacci D'Alesandro Morella Paca Capuano Cellucci Cogliano Furcolo Langone Malone
+		Menino Moakley Tisei Volpe Bentivolio Dondero Ficano Oberstar Vento Childers Cochran
+		Longino Palazzo Pickering Gianforte Corleone Amodei Augustine Ensign "Cortez Masto"
+		D'Allesandro Sgambati Bruno Bucco Christie Ferguson Florio Girgenti Guarini LoBiondo
+		Pallone Pascrell Rodino Roukema Russo Torricelli Carraro Domenici Addabbo D'Amato
+		Antonini Borelli Califano Cincotta Cino Cuomo DeSapio DiNapoli DioGuardi Ferraro
+		Fossella Frisa Gaeta Garbarino Giuliani Golisano Grimm Grucci Gucci Impellitteri LaFalce
+		"La Guardia" Lamberti Lanza Lazio Leone LiPetri Lopez Masiello Marcantonio Molinari
+		Paladino Pataki Pecora Poletti Sanzillo Savino Scaramucci Capone Smith Spinola Suozzi
+		Vallone Zanzi Foxx Cafaro Celebrezze Celeste DiSalle Ryan Tiberi Carosone }
 	}
 	africano = {
 		color = {91 133 109}
 
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
-		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
+		Miller Panetta Gatto Pelosi Rogan Rossi Thompson DeGette Tancredo Paccione "O'Dorisio"
+		Perino DeLauro DeStefano Fedele Grasso Rodney Mica Weldon Considine DeSantis Soto
+		Costello Manzullo Olivo Panici Russo Pompeo Mazzoli Mongiardo Landrieu Scalise Schiro
+		Baldacci D'Alesandro Morella Paca Capuano Cellucci Cogliano Furcolo Langone Malone
+		Menino Moakley Tisei Volpe Bentivolio Dondero Ficano Oberstar Vento Childers Cochran
+		Longino Palazzo Pickering Gianforte Corleone Amodei Augustine Ensign "Cortez Masto"
+		D'Allesandro Sgambati Bruno Bucco Christie Ferguson Florio Girgenti Guarini LoBiondo
+		Pallone Pascrell Rodino Roukema Russo Torricelli Carraro Domenici Addabbo D'Amato
+		Antonini Borelli Califano Cincotta Cino Cuomo DeSapio DiNapoli DioGuardi Ferraro
+		Fossella Frisa Gaeta Garbarino Giuliani Golisano Grimm Grucci Gucci Impellitteri LaFalce
+		"La Guardia" Lamberti Lanza Lazio Leone LiPetri Lopez Masiello Marcantonio Molinari
+		Paladino Pataki Pecora Poletti Sanzillo Savino Scaramucci Capone Smith Spinola Suozzi
+		Vallone Zanzi Foxx Cafaro Celebrezze Celeste DiSalle Ryan Tiberi Carosone }
 	}
 	beltramian = {
 		color = { 243 228 246 }
 
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
-		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
+		Miller Panetta Gatto Pelosi Rogan Rossi Thompson DeGette Tancredo Paccione "O'Dorisio"
+		Perino DeLauro DeStefano Fedele Grasso Rodney Mica Weldon Considine DeSantis Soto
+		Costello Manzullo Olivo Panici Russo Pompeo Mazzoli Mongiardo Landrieu Scalise Schiro
+		Baldacci D'Alesandro Morella Paca Capuano Cellucci Cogliano Furcolo Langone Malone
+		Menino Moakley Tisei Volpe Bentivolio Dondero Ficano Oberstar Vento Childers Cochran
+		Longino Palazzo Pickering Gianforte Corleone Amodei Augustine Ensign "Cortez Masto"
+		D'Allesandro Sgambati Bruno Bucco Christie Ferguson Florio Girgenti Guarini LoBiondo
+		Pallone Pascrell Rodino Roukema Russo Torricelli Carraro Domenici Addabbo D'Amato
+		Antonini Borelli Califano Cincotta Cino Cuomo DeSapio DiNapoli DioGuardi Ferraro
+		Fossella Frisa Gaeta Garbarino Giuliani Golisano Grimm Grucci Gucci Impellitteri LaFalce
+		"La Guardia" Lamberti Lanza Lazio Leone LiPetri Lopez Masiello Marcantonio Molinari
+		Paladino Pataki Pecora Poletti Sanzillo Savino Scaramucci Capone Smith Spinola Suozzi
+		Vallone Zanzi Foxx Cafaro Celebrezze Celeste DiSalle Ryan Tiberi Carosone }
 	}
 	vespuccian = {
 		color = { 185 60 149 }
 
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
-		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
+		Miller Panetta Gatto Pelosi Rogan Rossi Thompson DeGette Tancredo Paccione "O'Dorisio"
+		Perino DeLauro DeStefano Fedele Grasso Rodney Mica Weldon Considine DeSantis Soto
+		Costello Manzullo Olivo Panici Russo Pompeo Mazzoli Mongiardo Landrieu Scalise Schiro
+		Baldacci D'Alesandro Morella Paca Capuano Cellucci Cogliano Furcolo Langone Malone
+		Menino Moakley Tisei Volpe Bentivolio Dondero Ficano Oberstar Vento Childers Cochran
+		Longino Palazzo Pickering Gianforte Corleone Amodei Augustine Ensign "Cortez Masto"
+		D'Allesandro Sgambati Bruno Bucco Christie Ferguson Florio Girgenti Guarini LoBiondo
+		Pallone Pascrell Rodino Roukema Russo Torricelli Carraro Domenici Addabbo D'Amato
+		Antonini Borelli Califano Cincotta Cino Cuomo DeSapio DiNapoli DioGuardi Ferraro
+		Fossella Frisa Gaeta Garbarino Giuliani Golisano Grimm Grucci Gucci Impellitteri LaFalce
+		"La Guardia" Lamberti Lanza Lazio Leone LiPetri Lopez Masiello Marcantonio Molinari
+		Paladino Pataki Pecora Poletti Sanzillo Savino Scaramucci Capone Smith Spinola Suozzi
+		Vallone Zanzi Foxx Cafaro Celebrezze Celeste DiSalle Ryan Tiberi Carosone }
 	}
 	ceian = {
 		color = { 150 146 210 }
 
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
-		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
+		Miller Panetta Gatto Pelosi Rogan Rossi Thompson DeGette Tancredo Paccione "O'Dorisio"
+		Perino DeLauro DeStefano Fedele Grasso Rodney Mica Weldon Considine DeSantis Soto
+		Costello Manzullo Olivo Panici Russo Pompeo Mazzoli Mongiardo Landrieu Scalise Schiro
+		Baldacci D'Alesandro Morella Paca Capuano Cellucci Cogliano Furcolo Langone Malone
+		Menino Moakley Tisei Volpe Bentivolio Dondero Ficano Oberstar Vento Childers Cochran
+		Longino Palazzo Pickering Gianforte Corleone Amodei Augustine Ensign "Cortez Masto"
+		D'Allesandro Sgambati Bruno Bucco Christie Ferguson Florio Girgenti Guarini LoBiondo
+		Pallone Pascrell Rodino Roukema Russo Torricelli Carraro Domenici Addabbo D'Amato
+		Antonini Borelli Califano Cincotta Cino Cuomo DeSapio DiNapoli DioGuardi Ferraro
+		Fossella Frisa Gaeta Garbarino Giuliani Golisano Grimm Grucci Gucci Impellitteri LaFalce
+		"La Guardia" Lamberti Lanza Lazio Leone LiPetri Lopez Masiello Marcantonio Molinari
+		Paladino Pataki Pecora Poletti Sanzillo Savino Scaramucci Capone Smith Spinola Suozzi
+		Vallone Zanzi Foxx Cafaro Celebrezze Celeste DiSalle Ryan Tiberi Carosone }
 	}
 	deagostinian = {
 		color = { 130 81 180 }
 
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
-		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
+		Miller Panetta Gatto Pelosi Rogan Rossi Thompson DeGette Tancredo Paccione "O'Dorisio"
+		Perino DeLauro DeStefano Fedele Grasso Rodney Mica Weldon Considine DeSantis Soto
+		Costello Manzullo Olivo Panici Russo Pompeo Mazzoli Mongiardo Landrieu Scalise Schiro
+		Baldacci D'Alesandro Morella Paca Capuano Cellucci Cogliano Furcolo Langone Malone
+		Menino Moakley Tisei Volpe Bentivolio Dondero Ficano Oberstar Vento Childers Cochran
+		Longino Palazzo Pickering Gianforte Corleone Amodei Augustine Ensign "Cortez Masto"
+		D'Allesandro Sgambati Bruno Bucco Christie Ferguson Florio Girgenti Guarini LoBiondo
+		Pallone Pascrell Rodino Roukema Russo Torricelli Carraro Domenici Addabbo D'Amato
+		Antonini Borelli Califano Cincotta Cino Cuomo DeSapio DiNapoli DioGuardi Ferraro
+		Fossella Frisa Gaeta Garbarino Giuliani Golisano Grimm Grucci Gucci Impellitteri LaFalce
+		"La Guardia" Lamberti Lanza Lazio Leone LiPetri Lopez Masiello Marcantonio Molinari
+		Paladino Pataki Pecora Poletti Sanzillo Savino Scaramucci Capone Smith Spinola Suozzi
+		Vallone Zanzi Foxx Cafaro Celebrezze Celeste DiSalle Ryan Tiberi Carosone }
 	}
 	cabottian = {
 		color = { 245 24 98 }
 
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
-		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
+		Miller Panetta Gatto Pelosi Rogan Rossi Thompson DeGette Tancredo Paccione "O'Dorisio"
+		Perino DeLauro DeStefano Fedele Grasso Rodney Mica Weldon Considine DeSantis Soto
+		Costello Manzullo Olivo Panici Russo Pompeo Mazzoli Mongiardo Landrieu Scalise Schiro
+		Baldacci D'Alesandro Morella Paca Capuano Cellucci Cogliano Furcolo Langone Malone
+		Menino Moakley Tisei Volpe Bentivolio Dondero Ficano Oberstar Vento Childers Cochran
+		Longino Palazzo Pickering Gianforte Corleone Amodei Augustine Ensign "Cortez Masto"
+		D'Allesandro Sgambati Bruno Bucco Christie Ferguson Florio Girgenti Guarini LoBiondo
+		Pallone Pascrell Rodino Roukema Russo Torricelli Carraro Domenici Addabbo D'Amato
+		Antonini Borelli Califano Cincotta Cino Cuomo DeSapio DiNapoli DioGuardi Ferraro
+		Fossella Frisa Gaeta Garbarino Giuliani Golisano Grimm Grucci Gucci Impellitteri LaFalce
+		"La Guardia" Lamberti Lanza Lazio Leone LiPetri Lopez Masiello Marcantonio Molinari
+		Paladino Pataki Pecora Poletti Sanzillo Savino Scaramucci Capone Smith Spinola Suozzi
+		Vallone Zanzi Foxx Cafaro Celebrezze Celeste DiSalle Ryan Tiberi Carosone }
 	}
 	trattoloyan = {
 		color = { 244 213 187 }
 
 		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
-		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
+		Miller Panetta Gatto Pelosi Rogan Rossi Thompson DeGette Tancredo Paccione "O'Dorisio"
+		Perino DeLauro DeStefano Fedele Grasso Rodney Mica Weldon Considine DeSantis Soto
+		Costello Manzullo Olivo Panici Russo Pompeo Mazzoli Mongiardo Landrieu Scalise Schiro
+		Baldacci D'Alesandro Morella Paca Capuano Cellucci Cogliano Furcolo Langone Malone
+		Menino Moakley Tisei Volpe Bentivolio Dondero Ficano Oberstar Vento Childers Cochran
+		Longino Palazzo Pickering Gianforte Corleone Amodei Augustine Ensign "Cortez Masto"
+		D'Allesandro Sgambati Bruno Bucco Christie Ferguson Florio Girgenti Guarini LoBiondo
+		Pallone Pascrell Rodino Roukema Russo Torricelli Carraro Domenici Addabbo D'Amato
+		Antonini Borelli Califano Cincotta Cino Cuomo DeSapio DiNapoli DioGuardi Ferraro
+		Fossella Frisa Gaeta Garbarino Giuliani Golisano Grimm Grucci Gucci Impellitteri LaFalce
+		"La Guardia" Lamberti Lanza Lazio Leone LiPetri Lopez Masiello Marcantonio Molinari
+		Paladino Pataki Pecora Poletti Sanzillo Savino Scaramucci Capone Smith Spinola Suozzi
+		Vallone Zanzi Foxx Cafaro Celebrezze Celeste DiSalle Ryan Tiberi Carosone }
 	}
 	garibaldine = {
 		color = { 244 89 14 }
 
-		first_names = { Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
-		last_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		first_names = { "Giuseppe Garibaldi" "Camillo Benso" Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
+		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
+		Miller Panetta Gatto Pelosi Rogan Rossi Thompson DeGette Tancredo Paccione "O'Dorisio"
+		Perino DeLauro DeStefano Fedele Grasso Rodney Mica Weldon Considine DeSantis Soto
+		Costello Manzullo Olivo Panici Russo Pompeo Mazzoli Mongiardo Landrieu Scalise Schiro
+		Baldacci D'Alesandro Morella Paca Capuano Cellucci Cogliano Furcolo Langone Malone
+		Menino Moakley Tisei Volpe Bentivolio Dondero Ficano Oberstar Vento Childers Cochran
+		Longino Palazzo Pickering Gianforte Corleone Amodei Augustine Ensign "Cortez Masto"
+		D'Allesandro Sgambati Bruno Bucco Christie Ferguson Florio Girgenti Guarini LoBiondo
+		Pallone Pascrell Rodino Roukema Russo Torricelli Carraro Domenici Addabbo D'Amato
+		Antonini Borelli Califano Cincotta Cino Cuomo DeSapio DiNapoli DioGuardi Ferraro
+		Fossella Frisa Gaeta Garbarino Giuliani Golisano Grimm Grucci Gucci Impellitteri LaFalce
+		"La Guardia" Lamberti Lanza Lazio Leone LiPetri Lopez Masiello Marcantonio Molinari
+		Paladino Pataki Pecora Poletti Sanzillo Savino Scaramucci Capone Smith Spinola Suozzi
+		Vallone Zanzi Foxx Cafaro Celebrezze Celeste DiSalle Ryan Tiberi Carosone }
 	}
 	
 	union = ITA
@@ -1919,7 +2061,16 @@ french = {
 		Joseph Jules Julien Lazare Léopold Leroy Louis Lucien Matthieu Michel
 		Napoléon Nicolas Patrice Paul Philippe Pierre Robert Thibaut Thierry Thomas }
 		
-		last_names = { "de Narbonne" "de Bourgogne-Comté" "de l'Aigle" "de Flotte" "de Vendome" "de Champagne" "de Namur" "de Bissy" "d'Eu" "von Margrave" "du Perche" "de Boulogne" "Puy du Fou" "de Preuilly" "de Salins" "d'Oisy" "de Barthe" "de Fezensac" "de Boisrobert" "de Bourbon" "d'Angoulême" "de Guyenne" "Le Tellier" "de Talleyrand" "de Batarnay" "de Beaumont-au-Maine" "de Hainaut" "de Crecy" "de Bellegarde" "de St. Hilary" "d'Aubigny" "de Albemarle" "de Verre" "d'Évreux" "de Blundeville" "de Mellent" "de Baalun" "de Vernon" Estouteville "de Vexin-Amiens" "de Tilly" }
+		last_names = { Emicho "Sans-Avoir" Gautier "de Taranto" Bohemond Tancred Herman
+		"de Hauteville" "de Salerno" "de Bouillon" Godfrey Eustace "de Boulogne" Baldwin
+		"de Fauquembergues" Galilee Nazareth "de Bazoches" Gervaise Fulcher "de Chartres"
+		"de le Bourg" "de Saint-Pol" Grenier "de Hainaut" Grez Raymond "de Saint-Gilles"
+		"de Monteil" Cerdagne "Le Puy" Béarn Bigorre Guinard "de Roussillon" Aicard "d'Arles"
+		"de Lusignan" Berenguer Aguilers Raimbaut Roman "d'Orange" Odo Bayeux Chocques
+		Curthose "de Guader" Héribrand Hierges Vermandois Coucy Embriaco Montlhéry Alan
+		Lastours "d'Auvergne" "de Bourgogne" "de Blois" "de Toulouse" "de Boulogne"
+		"de Provence" Lemarquis "de Flandre" "de Bretagne" "de Normandie" "de La Trémoille"
+		Gênes Lotharingie Tarente Arménie Croisé Fatimide Danichmendide "de Roum" Arslan }
 	}
 	guillaumois = { 
 		color = { 138 181 186 }
@@ -1929,11 +2080,21 @@ french = {
 		Joseph Jules Julien Lazare Léopold Leroy Louis Lucien Matthieu Michel
 		Napoléon Nicolas Patrice Paul Philippe Pierre Robert Thibaut Thierry Thomas }
 		
-		last_names = { Anthoine "Baraguey d'Hilliers" Bazaine Billot Bonaparte Bosquet "Boué de Lapeyrère" Bouët-Willaumez Boulanger Bourbaki
-		Bugeaud Caillard Canrobert Courbet Cousin-Mountauban Davout "de Bourbon" "de Castellane" "de Castelnau" "de Gaulle" 
-		"de Langle de Cary" "de MacMahon" "de Montaignac" "de Saint Arnaud" d'Orleans Dubail Dubois Duchêne Dupetit-Thouars Exelmans
-		Foch Forey "Franchet d'Espèrey" Gallieni Gouraud Guillaumat Hamelin Harispe Hoche Humbert
-		Jaurès Joffre Lebouef Lyautey Murat "Ney d'Elchingen" Nivelle Péllissier Petain Vaillant }
+		last_names = { Amond Archer Argent Aucourte Avery Bailey Bacca Banister Baskerville Basset 
+		Beauchamp Beaumont Bellamy Belford Blampied Blanchard Blodgett Bonner Bragg Brazier 
+		Brocket Bryan Bullen Bunker Burce Burcy Burgoyne Burke "de Burgh" Buttle Butcher Boucher 
+		Carpenter Carter Chamberlain Chambers Champernon Champernowne Cambernon Champernoun
+		Champnon Chamborne Chancellor Condon Corbett Cornely Courtenay Cruise Curtis Dalton 
+		Darrell Daubney Daugherty Delaney Devere "de Vere" Devereux Disney Dorsey Draper Drury 
+		D'Arcy D'Onston "De Gascur" "de Lacy" "De Quincey" "De Marisco" "de Voil" Enfield Farmer Fay 
+		"de Fae" FitzJoly FitzWilliam Florence Fortescue Francis French Gascoignes Geary Godfrey Grant 
+		Granville Hall Halsall Harcourt Henry Hirons Hamblin Ilbert Ingram Ingrams Irons Jolly Jordan 
+		Lamar Lamarr Large l'Argent Latimer Leavitt Lever Levett Longe Lovell Lowell Luci Lyon Lyons 
+		Lear Major Malet Mallory Mandeville Marion Mayeux Mayoh Mayor Montgomery Mottershead 
+		Mundy Montagu Morris Mortimer Neville Osment Osmond Pane Percy Pomeroy Pople Purefoy 
+		Quincy Roy Royall Russell Rockett Sarell Sayre Sidney Sinclair Spencer "St Clair" "St Leger"
+		"Saint Claire" Seymour Taillefer Talbot Taney Terrell Tracey Travis Varley Verley Vavasour Vere 
+		Vernon Vincent Vipond Wallace Warren Wharmby Wilburn Worley Wyvill Zouch }
 	}
 	guiscard = { 
 		color = { 166 229 58 }
@@ -1955,8 +2116,11 @@ french = {
 		first_names = { Agnar Ásgeir Björn Eidur Einar Emil Geir Gudmund Gunnar Hannes
 		Hermann Jón Kristján Magnús Ólafur Pétur Sigurdur Stefán Sveinn Tryggvi }
 		
-		last_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
-		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
+		last_names = { Anger Angot Anquetil Auber Aumont Azouf Aze Brument Burnouf Ernouf
+		Estur Frigard Gaument Godefroy Gonnor Gounouf Guillhouf Harang Harou Hastain Havard
+		Héron Houlegate Ingouf Youf Néel Onfroy Osmond Osouf Quétil Rabec Renouf
+		Théroulde Troude Tostain Toutain Turquétil Tougard Turgot Turgis Varanger
+		Varangot Yver }
 	}
 	union = FRA
 	
@@ -2200,14 +2364,16 @@ pan_romanian = {
 	}
 	aromanian = {
 		color = {154 154 0}
-		first_names = { Adrian Alexandru Andrei Anton Artur Bogdan Carol Cezar Constantin Constin
-		Cosmin Daniel Dumitru Emanuel Eremia Eugen Ferdinand Flaviu Florea Gheorghe
-		Grigore Henric Horatiu Iacob Ilie Ioan Ion "Ion Emanuel" Iosif Iulian
-		Iuliu Laurentiu Leontin Luca Lucian Mihai Mircea Nicolae Ovidiu Petru
-		Radu Sergiu Silviu Simion Stefan Valeriu Vasile Victor Vintila Vlad
+		first_names = { Andrejan Andrejaš Andrijaš Basaraba Beshim Boriša Borisav Davidko
+		Dobrosav Dragojlo Enoh Falkon Gojkan Hrista Idriz Ignjatija Ilijan Ismajlo Johain
+		Jusejin Kolovrat Konstandin Liljan Matejkan Matijaš Matoš Mihaj Mijajlo Mijodrag
+		Milaši Milašin Mujamed Petrašin Petrul Prvul Radaši Radašin Radija Radul Sekula
+		Stadija Staniša Stanoje Stanojko Stanojlo Stavrija Stojimir Stojkan Tadijan Tadiša
+		Toman Tomisav Veljkan Vlasije Vlaško Vukaši Živul
 		}
 
-		last_names = { Angelescu Antonescu Argetoianu Averescu Baldescu Barozzi Berindei Cernat Christecu Cihoski
+		last_names = { Batzaria Carafoli Caragiu Caramitru Djuvara Hašotti Papahagi		
+		Angelescu Antonescu Argetoianu Averescu Baldescu Barozzi Berindei Cernat Christecu Cihoski
 		Ciuperca Coanda Crainiceanu Critescu Culcer Cuza "de Hohenzollern" Dona Dragalina Dumitrescu
 		Falcoianu Florescu Gardescu Grigorescu Froza Harjeu Holban Iancovescu Iliasevici Iliescu
 		Ionascu Ionescu Ionitiu Koslinski Lahovary Lupescu Mardarescu Murgescu Poenaru Prezan
@@ -2673,7 +2839,10 @@ east_slavic = {
     }
 	ugrian = {  
 		color = {60 160 160}
-		first_names = { Aleksandr Dmitri Ivan Jukka Santeri Vladimir }
+		first_names = { Aleksandr Dmitri Ivan Jukka Santeri Vladimir Chukhpelek Epkuv Evtin
+		Kushchta Lyutya Makshchim Mikipur Mikit Mikul Mikuv Payal Pilya Sanka Shcherki
+		Tepan Tyomkigi Untary Vashchka Vashchkigi Välakshchi Yoshchka Yoshchkigi
+		Yukhur Yuvan }
 
 		last_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
 	}
@@ -3586,7 +3755,6 @@ arab = {
 			"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
 			"ibn Muhammad" "ibn Mustafa" "ibn Salim"  
 			"ibn Umar" "ibn Uthman" "ibn Yusuf"
-			"al-Najdi" "al-Hijazi"   
 			}
 			radicalism = 10
 		}
@@ -3605,7 +3773,6 @@ arab = {
 			"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
 			"ibn Muhammad" "ibn Mustafa" "ibn Salim"  
 			"ibn Umar" "ibn Uthman" "ibn Yusuf"
-			"al-Najdi" "al-Hijazi"   
 			}
 			radicalism = 10
 		}
@@ -3624,7 +3791,6 @@ arab = {
 			"ibn Fuad" "ibn Halil" "ibn Hasan" "ibn Hisham" "ibn Ishaq" "ibn Ja'far" "ibm Kamil" "ibn Khalid" 
 			"ibn Muhammad" "ibn Mustafa" "ibn Salim"  
 			"ibn Umar" "ibn Uthman" "ibn Yusuf"
-			"al-Najdi" "al-Hijazi"   
 			}
 			radicalism = 10
 		}
@@ -3907,7 +4073,7 @@ iranian_turanian = {
 			Kwirapabhadra Lariska Mahasammate Mahisvare Manisvare Mitrakseme Mitraske Mitre
 			Moksasene Moksasome Moksawarme Molyoke Mukalanti Munkhare Murdhagate Nandabala
 			Nandake Nande Nandipale Nasme Natte Naradeve Nirot Nupura Nyagrodhe Padmakesar
-			Padmottare Pakacandre PaN_casikhi Pawaske Pesane Prabhankare Prabhase Pranada Prasamnake
+			Padmottare Pakacandre Pañcasikhi Pawaske Pesane Prabhankare Prabhase Pranada Prasamnake
 			Pravare Priyadeve Ptompile Puñaiyse Puñakame Puñaraksite Puñicamndre Punyamitre
 			Purtas Rahule Raktadewe Ratnacuda Ratnasikhi Rsivadam Rudramukhe Rudrasarme Sagare 
 			Samantatir Samcite Samghatrate Sanavasi Sanghasarme Sankene Sanum Saputanase Sarasike
