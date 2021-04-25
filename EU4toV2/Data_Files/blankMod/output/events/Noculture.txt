@@ -3,7 +3,7 @@ country_event = {
 	id = 1999999
 	title = EVTHELLOTITLE
 	desc = EVTHELLODESC
-	picture = news
+	picture = observer
 	major = yes
 	
 	trigger = {
@@ -12,6 +12,64 @@ country_event = {
 	}
 	
 	mean_time_to_happen = { months = 0.0001 }
+	
+	immediate = { # Syrian Question event merged in
+		TUR_855 = { # Cyprus
+			limit = {
+				is_core = GRE
+				NOT = { owned_by = BYZ }
+			}
+			remove_core = GRE
+			add_core = CYP
+		}
+		EGY_843 = { # Crete
+			limit = {
+				is_core = GRE
+				NOT = { owned_by = BYZ }
+			}
+			add_core = CRE
+		}
+		EGY_897 = { # Aleppo
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+			add_core = SYR
+		}
+		EGY_903 = { # Damascus
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+			add_core = SYR
+		}
+		EGY_910 = { # Transjordan
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+		}
+		EGY_910 = { add_core = JOR }
+		EGY_915 = { # Lebanon
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+		}
+		EGY_915 = { add_core = LBN }
+		EGY_921 = { # Palestine
+			limit = {
+				is_core = IRQ
+				NOT = { owned_by = IRQ }
+			}
+			remove_core = IRQ
+		}
+		EGY_921 = { add_core = PLS }
+	}
 	
 	option = {
 		name = EVTHELLOPLAY
@@ -22,30 +80,14 @@ country_event = {
 		name = EVTHELLOOBS
 		set_global_flag = hello_player
 		3246 = {
-			owner = {
-				country_event = 1999998
-			}
+			secede_province = THIS
+			state_scope = { is_slave = no }
 		}
-		country_event = {
-			id = 1999997
-			days = 1
-		}
-	}
-}
-country_event = {
-	id = 1999998
-	title = EVTOBSTITLE
-	desc = EVTOBSDESC
-	picture = observer
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOBSOPTA
 		3246 = {
 			secede_province = AAA
-			remove_core = THIS
 			remove_core = SCA
 			remove_core = NOR
+			remove_core = ICL
 			change_province_name = "Observer"
 			life_rating = -100
 			add_core = AAA
@@ -57,17 +99,6 @@ country_event = {
 				duration = -1
 			}
 		}
-	}
-}
-country_event = {
-	id = 1999997
-	title = EVTOBSERVER
-	desc = EVTOBSERDESC
-	picture = observer
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOBSEROPTA
 		change_tag_no_core_switch = AAA
 		AAA = {
 			ruling_party_ideology = noIdeology
