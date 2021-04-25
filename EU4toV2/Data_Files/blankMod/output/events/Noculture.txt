@@ -3,6 +3,7 @@ country_event = {
 	id = 1999999
 	title = EVTHELLOTITLE
 	desc = EVTHELLODESC
+	picture = news
 	major = yes
 	
 	trigger = {
@@ -35,6 +36,7 @@ country_event = {
 	id = 1999998
 	title = EVTOBSTITLE
 	desc = EVTOBSDESC
+	picture = observer
 	is_triggered_only = yes
 	
 	option = {
@@ -61,6 +63,7 @@ country_event = {
 	id = 1999997
 	title = EVTOBSERVER
 	desc = EVTOBSERDESC
+	picture = observer
 	is_triggered_only = yes
 	
 	option = {
@@ -346,7 +349,7 @@ country_event = {
 	id = 1000009
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "HuckleberryFinn"
 
 	trigger = {
 		OR = {
@@ -372,7 +375,7 @@ country_event = {
 	id = 1000010
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "NavioNegreiro"
 
 	trigger = {
 		OR = {
@@ -398,7 +401,7 @@ country_event = {
 	id = 1000011
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "NavioNegreiro"
 
 	trigger = {
 		OR = {
@@ -424,7 +427,7 @@ country_event = {
 	id = 1000012
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "NavioNegreiro"
 
 	trigger = {
 		OR = {
@@ -450,7 +453,7 @@ country_event = {
 	id = 1000013
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "NavioNegreiro"
 
 	trigger = {
 		OR = {
@@ -476,7 +479,7 @@ country_event = {
 	id = 1000014
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "NavioNegreiro"
 
 	trigger = {
 		OR = {
@@ -502,7 +505,7 @@ country_event = {
 	id = 1000015
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "NavioNegreiro"
 
 	trigger = {
 		OR = {
@@ -528,7 +531,7 @@ country_event = {
 	id = 1000016
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "NavioNegreiro"
 
 	trigger = {
 		OR = {
@@ -554,7 +557,7 @@ country_event = {
 	id = 1000017
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "NavioNegreiro"
 
 	trigger = {
 		OR = {
@@ -580,7 +583,7 @@ country_event = {
 	id = 1000018
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "NavioNegreiro"
 
 	trigger = {
 		OR = {
@@ -632,7 +635,7 @@ country_event = {
 	id = 1000020
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "kurils"
 
 	trigger = {
 		OR = {
@@ -710,7 +713,7 @@ country_event = {
 	id = 1000023
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "alaska"
 
 	trigger = {
 		OR = {
@@ -814,7 +817,7 @@ country_event = {
 	id = 1000027
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "sight"
 
 	trigger = {
 		OR = {
@@ -1308,7 +1311,7 @@ country_event = {
 	id = 1000046
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Socialism"
 
 	trigger = {
 		OR = {
@@ -1412,7 +1415,7 @@ country_event = {
 	id = 1000050
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "austflag"
 
 	trigger = {
 		OR = {
@@ -1854,7 +1857,7 @@ country_event = {
 	id = 1000067
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "asian_ruler"
 
 	trigger = {
 		OR = {
@@ -2036,7 +2039,7 @@ country_event = {
 	id = 1000074
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "threehurrahs"
 
 	trigger = {
 		OR = {
@@ -2244,7 +2247,7 @@ country_event = {
 	id = 1000082
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "queenvictoria"
 
 	trigger = {
 		OR = {
@@ -2504,7 +2507,7 @@ country_event = {
 	id = 1000092
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Cubanrebels"
 
 	trigger = {
 		OR = {
@@ -2972,7 +2975,7 @@ country_event = {
 	id = 1000110
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Egyptian"
 
 	trigger = {
 		OR = {
@@ -3310,7 +3313,7 @@ country_event = {
 	id = 1000123
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "danishgovernment"
 
 	trigger = {
 		OR = {
@@ -3466,7 +3469,7 @@ country_event = {
 	id = 1000129
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "kkk"
 
 	trigger = {
 		OR = {
@@ -3830,7 +3833,7 @@ country_event = {
 	id = 1000143
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "elephant"
 
 	trigger = {
 		OR = {
@@ -3882,7 +3885,7 @@ country_event = {
 	id = 1000145
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "queenvictoria"
 
 	trigger = {
 		OR = {
@@ -4350,7 +4353,7 @@ country_event = {
 	id = 1000163
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "ArcdeTriomphe"
 
 	trigger = {
 		OR = {
@@ -4688,7 +4691,7 @@ country_event = {
 	id = 1000176
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "threehurrahs"
 
 	trigger = {
 		OR = {
@@ -4896,7 +4899,7 @@ country_event = {
 	id = 1000184
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Bonaparte"
 
 	trigger = {
 		OR = {
@@ -5572,7 +5575,7 @@ country_event = {
 	id = 1000210
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Budapest"
 
 	trigger = {
 		OR = {
@@ -6066,7 +6069,7 @@ country_event = {
 	id = 1000229
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "japanese_power"
 
 	trigger = {
 		OR = {
@@ -7444,7 +7447,7 @@ country_event = {
 	id = 1000282
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "troy"
 
 	trigger = {
 		OR = {
@@ -7782,7 +7785,7 @@ country_event = {
 	id = 1000295
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "asian_ruler"
 
 	trigger = {
 		OR = {
@@ -8224,7 +8227,7 @@ country_event = {
 	id = 1000312
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Metis"
 
 	trigger = {
 		OR = {
@@ -8380,7 +8383,7 @@ country_event = {
 	id = 1000318
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Nile"
 
 	trigger = {
 		OR = {
@@ -8770,7 +8773,7 @@ country_event = {
 	id = 1000333
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "asian_ruler"
 
 	trigger = {
 		OR = {
@@ -9212,7 +9215,7 @@ country_event = {
 	id = 1000350
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Deutschlandlied"
 
 	trigger = {
 		OR = {
@@ -9238,7 +9241,7 @@ country_event = {
 	id = 1000351
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Western"
 
 	trigger = {
 		OR = {
@@ -9264,7 +9267,7 @@ country_event = {
 	id = 1000352
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "norwayflag"
 
 	trigger = {
 		OR = {
@@ -9914,7 +9917,7 @@ country_event = {
 	id = 1000377
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "threehurrahs"
 
 	trigger = {
 		OR = {
@@ -10408,7 +10411,7 @@ country_event = {
 	id = 1000396
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "selling_bears_to_jan_meyen"
 
 	trigger = {
 		OR = {
@@ -10694,7 +10697,7 @@ country_event = {
 	id = 1000407
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Machupicchu"
 
 	trigger = {
 		OR = {
@@ -10928,7 +10931,7 @@ country_event = {
 	id = 1000416
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Dostoevsky"
 
 	trigger = {
 		OR = {
@@ -11526,7 +11529,7 @@ country_event = {
 	id = 1000439
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Sioux"
 
 	trigger = {
 		OR = {
@@ -11838,7 +11841,7 @@ country_event = {
 	id = 1000451
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "bayern"
 
 	trigger = {
 		OR = {
@@ -12228,7 +12231,7 @@ country_event = {
 	id = 1000466
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Scandinavian"
 
 	trigger = {
 		OR = {
@@ -12566,7 +12569,7 @@ country_event = {
 	id = 1000479
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "saloon"
 
 	trigger = {
 		OR = {
@@ -13034,7 +13037,7 @@ country_event = {
 	id = 1000497
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Ottoman"
 
 	trigger = {
 		OR = {
@@ -13294,7 +13297,7 @@ country_event = {
 	id = 1000507
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Posada"
 
 	trigger = {
 		OR = {
@@ -13996,7 +13999,7 @@ country_event = {
 	id = 1000534
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "yankee"
 
 	trigger = {
 		OR = {
@@ -14360,7 +14363,7 @@ country_event = {
 	id = 1000548
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "Dreyfus"
 
 	trigger = {
 		OR = {
@@ -14438,7 +14441,7 @@ country_event = {
 	id = 1000551
 	title = EVTNAME000002
 	desc = EVTDESC000002
-	picture = "Demonstration"
+	picture = "zulu"
 
 	trigger = {
 		OR = {
@@ -14464,4036 +14467,4036 @@ country_event = {
 ##
 
 country_event = {
- id = 1001000
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = catholic
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_catholic }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_catholic
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001001
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = cathar
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_cathar }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_cathar
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001002
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = fraticelli
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_fraticelli }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_fraticelli
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001003
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = waldensian
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_waldensian }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_waldensian
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001004
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = lollard
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_lollard }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_lollard
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001005
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = catholic_heresy
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_catholic_heresy }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_catholic_heresy
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001006
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = arian
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_arian }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_arian
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001007
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = protestant
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_protestant }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_protestant
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001008
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = protestant_heresy
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_protestant_heresy }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_protestant_heresy
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001009
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = mormon
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_mormon }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_mormon
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001010
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = orthodox
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_orthodox }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_orthodox
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001011
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = pre_schism
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_pre_schism }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_pre_schism
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001012
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = bogomilist
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_bogomilist }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_bogomilist
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001013
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = monothelite
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_monothelite }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_monothelite
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001014
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = iconoclast
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_iconoclast }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_iconoclast
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001015
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = paulician
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_paulician }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_paulician
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001016
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = orthodox_heresy
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_orthodox_heresy }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_orthodox_heresy
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001017
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = coptic
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_coptic }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_coptic
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001018
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = monophysite
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_monophysite }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_monophysite
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001019
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = nestorian
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_nestorian }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_nestorian
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001020
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = messalian
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_messalian }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_messalian
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001021
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = hussite
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_hussite }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_hussite
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001022
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = sunni
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_sunni }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_sunni
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001023
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = zikri
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_zikri }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_zikri
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001024
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = yazidi
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_yazidi }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_yazidi
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001025
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = sunni_heresy
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_sunni_heresy }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_sunni_heresy
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001026
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = shiite
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_shiite }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_shiite
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001027
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = hurufi
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_hurufi }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_hurufi
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001028
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = druze
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_druze }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_druze
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001029
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = shiite_heresy
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_shiite_heresy }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_shiite_heresy
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001030
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = ibadi
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_ibadi }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_ibadi
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001031
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = kharijite
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_kharijite }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_kharijite
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001032
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = jewish
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_jewish }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_jewish
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001033
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = samaritan
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_samaritan }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_samaritan
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001034
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = karaite
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_karaite }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_karaite
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001035
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = jewish_heresy
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_jewish_heresy }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_jewish_heresy
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001036
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = mahayana
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_mahayana }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_mahayana
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001037
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = gelugpa
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_gelugpa }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_gelugpa
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001038
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = theravada
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_theravada }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_theravada
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001039
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = hindu
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_hindu }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_hindu
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001040
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = shinto
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_shinto }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_shinto
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001041
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = sikh
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_sikh }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_sikh
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001042
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = jain
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_jain }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_jain
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001043
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = animist
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_animist }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_animist
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001044
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = norse_pagan_reformed
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_norse_pagan_reformed }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_norse_pagan_reformed
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001045
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = tengri_pagan_reformed
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_tengri_pagan_reformed }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_tengri_pagan_reformed
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001046
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = baltic_pagan_reformed
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_baltic_pagan_reformed }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_baltic_pagan_reformed
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001047
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = finnish_pagan_reformed
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_finnish_pagan_reformed }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_finnish_pagan_reformed
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001048
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = aztec_reformed
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_aztec_reformed }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_aztec_reformed
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001049
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = slavic_pagan_reformed
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_slavic_pagan_reformed }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_slavic_pagan_reformed
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001050
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = west_african_pagan_reformed
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_west_african_pagan_reformed }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_west_african_pagan_reformed
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001051
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = zun_pagan_reformed
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_zun_pagan_reformed }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_zun_pagan_reformed
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001052
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = hellenic_pagan
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_hellenic_pagan }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_hellenic_pagan
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001053
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = inca_reformed
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_inca_reformed }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_inca_reformed
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001054
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = shamanism
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_shamanism }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_shamanism
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001055
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = totemism
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_totemism }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_totemism
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001056
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = mayan
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_mayan }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_mayan
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001057
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = nahuatl
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_nahuatl }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_nahuatl
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001058
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = inti
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_inti }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_inti
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001059
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = kemetic
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_kemetic }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_kemetic
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001060
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = arab_pagan
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_arab_pagan }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_arab_pagan
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001061
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = druidist
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_druidist }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_druidist
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001062
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = tibet_bon
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_tibet_bon }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_tibet_bon
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001063
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = muism
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_muism }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_muism
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001064
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = zoroastrian
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_zoroastrian }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_zoroastrian
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001065
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = manichean
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_manichean }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_manichean
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001066
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = mazdaki
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_mazdaki }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_mazdaki
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001067
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = zoroastrian_heresy
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_zoroastrian_heresy }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_zoroastrian_heresy
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001068
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = gnostic
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_gnostic }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_gnostic
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001069
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = adamites
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_adamites }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_adamites
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001070
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = german_pagan
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_german_pagan }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_german_pagan
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001071
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = cybelene
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_cybelene }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_cybelene
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001072
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = zamolxism
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_zamolxism }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_zamolxism
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001073
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = mithraism
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_mithraism }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_mithraism
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001074
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = hetanism
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_hetanism }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_hetanism
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001075
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = iberian_pagan
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_iberian_pagan }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_iberian_pagan
-  set_country_flag = religi
- }
-}
-country_event = {
- id = 1001076
- title = EVTNAMERELIGI
- desc = EVTDESCRELIGI
- picture = census
-
- trigger = {
-  any_owned_province = {
-   pop_majority_religion = scythian_pagan
-   is_state_religion = yes
-  }
-  NOT = { accepted_culture = zzz_religion_scythian_pagan }
-  NOT = { has_country_flag = religi  } # I'm not going to check for all of them
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELIGI
-  add_accepted_culture = zzz_religion_scythian_pagan
-  set_country_flag = religi
- }
+	id = 1001000
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = catholic
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_catholic }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = STRING_OK
+		add_accepted_culture = zzz_religion_catholic
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001001
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = cathar
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_cathar }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_cathar
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001002
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = fraticelli
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_fraticelli }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_fraticelli
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001003
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = waldensian
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_waldensian }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_waldensian
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001004
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = lollard
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_lollard }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_lollard
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001005
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = catholic_heresy
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_catholic_heresy }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_catholic_heresy
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001006
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = arian
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_arian }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_arian
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001007
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = protestant
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_protestant }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_protestant
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001008
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = protestant_heresy
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_protestant_heresy }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_protestant_heresy
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001009
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = mormon
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_mormon }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_mormon
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001010
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = Orthodox
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = orthodox
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_orthodox }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_orthodox
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001011
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = pre_schism
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_pre_schism }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_pre_schism
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001012
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = bogomilist
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_bogomilist }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_bogomilist
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001013
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = monothelite
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_monothelite }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_monothelite
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001014
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = iconoclast
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_iconoclast }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_iconoclast
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001015
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = paulician
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_paulician }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_paulician
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001016
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = orthodox_heresy
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_orthodox_heresy }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_orthodox_heresy
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001017
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = coptic
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_coptic }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_coptic
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001018
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = monophysite
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_monophysite }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_monophysite
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001019
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = nestorian
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_nestorian }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_nestorian
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001020
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = messalian
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_messalian }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_messalian
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001021
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = christ
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = hussite
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_hussite }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_hussite
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001022
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = sunni
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_sunni }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_sunni
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001023
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = zikri
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_zikri }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_zikri
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001024
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = yazidi
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_yazidi }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_yazidi
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001025
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = sunni_heresy
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_sunni_heresy }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_sunni_heresy
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001026
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = sultan
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = shiite
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_shiite }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_shiite
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001027
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = hurufi
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_hurufi }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_hurufi
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001028
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = druze
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_druze }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_druze
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001029
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = shiite_heresy
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_shiite_heresy }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_shiite_heresy
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001030
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = ibadi
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_ibadi }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_ibadi
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001031
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = kharijite
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_kharijite }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_kharijite
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001032
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = jews
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = jewish
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_jewish }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_jewish
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001033
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = jews
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = samaritan
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_samaritan }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_samaritan
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001034
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = jews
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = karaite
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_karaite }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_karaite
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001035
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = jews
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = jewish_heresy
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_jewish_heresy }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_jewish_heresy
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001036
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = mahayana
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_mahayana }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_mahayana
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001037
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = gelugpa
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_gelugpa }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_gelugpa
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001038
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = theravada
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_theravada }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_theravada
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001039
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = LordDalhousie
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = hindu
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_hindu }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_hindu
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001040
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = japanese_power
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = shinto
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_shinto }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_shinto
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001041
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = sikh
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_sikh }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_sikh
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001042
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = jain
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_jain }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_jain
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001043
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = animist
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_animist }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_animist
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001044
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = norse_pagan_reformed
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_norse_pagan_reformed }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_norse_pagan_reformed
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001045
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = tengri_pagan_reformed
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_tengri_pagan_reformed }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_tengri_pagan_reformed
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001046
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = baltic_pagan_reformed
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_baltic_pagan_reformed }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_baltic_pagan_reformed
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001047
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = finnish_pagan_reformed
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_finnish_pagan_reformed }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_finnish_pagan_reformed
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001048
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = aztec_reformed
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_aztec_reformed }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_aztec_reformed
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001049
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = slavic_pagan_reformed
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_slavic_pagan_reformed }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_slavic_pagan_reformed
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001050
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = west_african_pagan_reformed
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_west_african_pagan_reformed }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_west_african_pagan_reformed
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001051
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = zun_pagan_reformed
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_zun_pagan_reformed }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_zun_pagan_reformed
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001052
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = Walhalla
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = hellenic_pagan
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_hellenic_pagan }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_hellenic_pagan
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001053
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = Machupicchu
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = inca_reformed
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_inca_reformed }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_inca_reformed
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001054
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = shamanism
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_shamanism }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_shamanism
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001055
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = totemism
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_totemism }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_totemism
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001056
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = mayan
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_mayan }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_mayan
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001057
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = nahuatl
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_nahuatl }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_nahuatl
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001058
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = inti
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_inti }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_inti
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001059
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = Egyptian
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = kemetic
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_kemetic }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_kemetic
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001060
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = arab_pagan
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_arab_pagan }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_arab_pagan
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001061
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = druidist
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_druidist }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_druidist
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001062
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = tibet_bon
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_tibet_bon }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_tibet_bon
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001063
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = muism
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_muism }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_muism
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001064
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = zoroastrian
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_zoroastrian }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_zoroastrian
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001065
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = manichean
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_manichean }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_manichean
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001066
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = mazdaki
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_mazdaki }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_mazdaki
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001067
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = zoroastrian_heresy
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_zoroastrian_heresy }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_zoroastrian_heresy
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001068
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = gnostic
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_gnostic }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_gnostic
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001069
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = adamites
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_adamites }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_adamites
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001070
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = german_pagan
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_german_pagan }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_german_pagan
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001071
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = cybelene
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_cybelene }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_cybelene
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001072
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = zamolxism
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_zamolxism }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_zamolxism
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001073
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = mithraism
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_mithraism }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_mithraism
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001074
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = hetanism
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_hetanism }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_hetanism
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001075
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = iberian_pagan
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_iberian_pagan }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_iberian_pagan
+		set_country_flag = religi
+	}
+}
+country_event = {
+	id = 1001076
+	title = EVTNAMERELIGI
+	desc = EVTDESCRELIGI
+	picture = census
+
+	trigger = {
+		any_owned_province = {
+			pop_majority_religion = scythian_pagan
+			is_state_religion = yes
+		}
+		NOT = { accepted_culture = zzz_religion_scythian_pagan }
+		NOT = { has_country_flag = religi  } # I'm not going to check for all of them
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELIGI
+		add_accepted_culture = zzz_religion_scythian_pagan
+		set_country_flag = religi
+	}
 }
 ###
 ###
 
 country_event = {
- id = 1002000
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = catholic
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_catholic
-  religion = catholic
- }
-}
-country_event = {
- id = 1002001
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = cathar
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_cathar
-  religion = cathar
- }
-}
-country_event = {
- id = 1002002
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = fraticelli
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_fraticelli
-  religion = fraticelli
- }
-}
-country_event = {
- id = 1002003
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = waldensian
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_waldensian
-  religion = waldensian
- }
-}
-country_event = {
- id = 1002004
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = lollard
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_lollard
-  religion = lollard
- }
-}
-country_event = {
- id = 1002005
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = catholic_heresy
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_catholic_heresy
-  religion = catholic_heresy
- }
-}
-country_event = {
- id = 1002006
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = arian
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_arian
-  religion = arian
- }
-}
-country_event = {
- id = 1002007
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = protestant
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_protestant
-  religion = protestant
- }
-}
-country_event = {
- id = 1002008
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = protestant_heresy
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_protestant_heresy
-  religion = protestant_heresy
- }
-}
-country_event = {
- id = 1002009
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = mormon
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_mormon
-  religion = mormon
- }
-}
-country_event = {
- id = 1002010
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = orthodox
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_orthodox
-  religion = orthodox
- }
-}
-country_event = {
- id = 1002011
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = pre_schism
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_pre_schism
-  religion = pre_schism
- }
-}
-country_event = {
- id = 1002012
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = bogomilist
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_bogomilist
-  religion = bogomilist
- }
-}
-country_event = {
- id = 1002013
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = monothelite
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_monothelite
-  religion = monothelite
- }
-}
-country_event = {
- id = 1002014
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = iconoclast
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_iconoclast
-  religion = iconoclast
- }
-}
-country_event = {
- id = 1002015
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = paulician
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_paulician
-  religion = paulician
- }
-}
-country_event = {
- id = 1002016
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = orthodox_heresy
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_orthodox_heresy
-  religion = orthodox_heresy
- }
-}
-country_event = {
- id = 1002017
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = coptic
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_coptic
-  religion = coptic
- }
-}
-country_event = {
- id = 1002018
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = monophysite
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_monophysite
-  religion = monophysite
- }
-}
-country_event = {
- id = 1002019
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = nestorian
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_nestorian
-  religion = nestorian
- }
-}
-country_event = {
- id = 1002020
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = messalian
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_messalian
-  religion = messalian
- }
-}
-country_event = {
- id = 1002021
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = hussite
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_hussite
-  religion = hussite
- }
-}
-country_event = {
- id = 1002022
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = sunni
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_sunni
-  religion = sunni
- }
-}
-country_event = {
- id = 1002023
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = zikri
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_zikri
-  religion = zikri
- }
-}
-country_event = {
- id = 1002024
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = yazidi
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_yazidi
-  religion = yazidi
- }
-}
-country_event = {
- id = 1002025
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = sunni_heresy
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_sunni_heresy
-  religion = sunni_heresy
- }
-}
-country_event = {
- id = 1002026
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = shiite
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_shiite
-  religion = shiite
- }
-}
-country_event = {
- id = 1002027
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = hurufi
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_hurufi
-  religion = hurufi
- }
-}
-country_event = {
- id = 1002028
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = druze
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_druze
-  religion = druze
- }
-}
-country_event = {
- id = 1002029
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = shiite_heresy
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_shiite_heresy
-  religion = shiite_heresy
- }
-}
-country_event = {
- id = 1002030
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = ibadi
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_ibadi
-  religion = ibadi
- }
-}
-country_event = {
- id = 1002031
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = kharijite
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_kharijite
-  religion = kharijite
- }
-}
-country_event = {
- id = 1002032
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = jewish
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_jewish
-  religion = jewish
- }
-}
-country_event = {
- id = 1002033
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = samaritan
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_samaritan
-  religion = samaritan
- }
-}
-country_event = {
- id = 1002034
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = karaite
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_karaite
-  religion = karaite
- }
-}
-country_event = {
- id = 1002035
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = jewish_heresy
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_jewish_heresy
-  religion = jewish_heresy
- }
-}
-country_event = {
- id = 1002036
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = mahayana
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_mahayana
-  religion = mahayana
- }
-}
-country_event = {
- id = 1002037
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = gelugpa
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_gelugpa
-  religion = gelugpa
- }
-}
-country_event = {
- id = 1002038
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = theravada
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_theravada
-  religion = theravada
- }
-}
-country_event = {
- id = 1002039
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = hindu
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_hindu
-  religion = hindu
- }
-}
-country_event = {
- id = 1002040
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = shinto
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_shinto
-  religion = shinto
- }
-}
-country_event = {
- id = 1002041
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = sikh
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_sikh
-  religion = sikh
- }
-}
-country_event = {
- id = 1002042
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = jain
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_jain
-  religion = jain
- }
-}
-country_event = {
- id = 1002043
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = animist
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_animist
-  religion = animist
- }
-}
-country_event = {
- id = 1002044
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = norse_pagan_reformed
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_norse_pagan_reformed
-  religion = norse_pagan_reformed
- }
-}
-country_event = {
- id = 1002045
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = tengri_pagan_reformed
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_tengri_pagan_reformed
-  religion = tengri_pagan_reformed
- }
-}
-country_event = {
- id = 1002046
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = baltic_pagan_reformed
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_baltic_pagan_reformed
-  religion = baltic_pagan_reformed
- }
-}
-country_event = {
- id = 1002047
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = finnish_pagan_reformed
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_finnish_pagan_reformed
-  religion = finnish_pagan_reformed
- }
-}
-country_event = {
- id = 1002048
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = aztec_reformed
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_aztec_reformed
-  religion = aztec_reformed
- }
-}
-country_event = {
- id = 1002049
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = slavic_pagan_reformed
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_slavic_pagan_reformed
-  religion = slavic_pagan_reformed
- }
-}
-country_event = {
- id = 1002050
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = west_african_pagan_reformed
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_west_african_pagan_reformed
-  religion = west_african_pagan_reformed
- }
-}
-country_event = {
- id = 1002051
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = zun_pagan_reformed
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_zun_pagan_reformed
-  religion = zun_pagan_reformed
- }
-}
-country_event = {
- id = 1002052
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = hellenic_pagan
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_hellenic_pagan
-  religion = hellenic_pagan
- }
-}
-country_event = {
- id = 1002053
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = inca_reformed
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_inca_reformed
-  religion = inca_reformed
- }
-}
-country_event = {
- id = 1002054
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = shamanism
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_shamanism
-  religion = shamanism
- }
-}
-country_event = {
- id = 1002055
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = totemism
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_totemism
-  religion = totemism
- }
-}
-country_event = {
- id = 1002056
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = mayan
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_mayan
-  religion = mayan
- }
-}
-country_event = {
- id = 1002057
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = nahuatl
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_nahuatl
-  religion = nahuatl
- }
-}
-country_event = {
- id = 1002058
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = inti
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_inti
-  religion = inti
- }
-}
-country_event = {
- id = 1002059
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = kemetic
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_kemetic
-  religion = kemetic
- }
-}
-country_event = {
- id = 1002060
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = arab_pagan
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_arab_pagan
-  religion = arab_pagan
- }
-}
-country_event = {
- id = 1002061
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = druidist
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_druidist
-  religion = druidist
- }
-}
-country_event = {
- id = 1002062
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = tibet_bon
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_tibet_bon
-  religion = tibet_bon
- }
-}
-country_event = {
- id = 1002063
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = muism
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_muism
-  religion = muism
- }
-}
-country_event = {
- id = 1002064
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = zoroastrian
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_zoroastrian
-  religion = zoroastrian
- }
-}
-country_event = {
- id = 1002065
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = manichean
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_manichean
-  religion = manichean
- }
-}
-country_event = {
- id = 1002066
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = mazdaki
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_mazdaki
-  religion = mazdaki
- }
-}
-country_event = {
- id = 1002067
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = zoroastrian_heresy
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_zoroastrian_heresy
-  religion = zoroastrian_heresy
- }
-}
-country_event = {
- id = 1002068
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = adamites
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_adamites
-  religion = adamites
- }
-}
-country_event = {
- id = 1002069
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = gnostic
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_gnostic
-  religion = gnostic
- }
-}
-country_event = {
- id = 1002070
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = canaanite
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_canaanite
-  religion = canaanite
- }
-}
-country_event = {
- id = 1002071
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = mardukism
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_religion_mardukism
-  religion = mardukism
- }
-}
-country_event = {
- id = 1002072
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = siberian_pagan_reformed
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_siberian_pagan_reformed
-  religion = siberian_pagan_reformed
- }
-}
-country_event = {
- id = 1002073
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = pagan_religion_reformed
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_pagan_religion_reformed
-  religion = pagan_religion_reformed
- }
-}
-country_event = {
- id = 1002074
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = german_pagan
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_german_pagan
-  religion = german_pagan
- }
-}
-country_event = {
- id = 1002075
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = cybelene
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_cybelene
-  religion = cybelene
- }
-}
-country_event = {
- id = 1002076
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = zamolxism
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_zamolxism
-  religion = zamolxism
- }
-}
-country_event = {
- id = 1002077
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = mithraism
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_mithraism
-  religion = mithraism
- }
-}
-country_event = {
- id = 1002078
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = hetanism
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_hetanism
-  religion = hetanism
- }
-}
-country_event = {
- id = 1002079
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = iberian_pagan
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_iberian_pagan
-  religion = iberian_pagan
- }
-}
-country_event = {
- id = 1002080
- title = EVTNAMERELNEW
- desc = EVTDESCRELNEW
- picture = census
-
- trigger = {
-  capital_scope = {
-   pop_majority_religion = scythian_pagan
-  }
-  OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
-  has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
- }
- 
- mean_time_to_happen = {
-  months = 0.1
- }
- 
- option = {
-  name = EVTOPTARELNEW
-  remove_accepted_culture = zzz_religion_noreligion
-	remove_accepted_culture = zzz_religion_dummy_religion
-  add_accepted_culture = zzz_scythian_pagan
-  religion = scythian_pagan
- }
+	id = 1002000
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = catholic
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_catholic
+		religion = catholic
+	}
+}
+country_event = {
+	id = 1002001
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = cathar
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_cathar
+		religion = cathar
+	}
+}
+country_event = {
+	id = 1002002
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = fraticelli
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_fraticelli
+		religion = fraticelli
+	}
+}
+country_event = {
+	id = 1002003
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = waldensian
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_waldensian
+		religion = waldensian
+	}
+}
+country_event = {
+	id = 1002004
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = lollard
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_lollard
+		religion = lollard
+	}
+}
+country_event = {
+	id = 1002005
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = catholic_heresy
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_catholic_heresy
+		religion = catholic_heresy
+	}
+}
+country_event = {
+	id = 1002006
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = arian
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_arian
+		religion = arian
+	}
+}
+country_event = {
+	id = 1002007
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = protestant
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_protestant
+		religion = protestant
+	}
+}
+country_event = {
+	id = 1002008
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = protestant_heresy
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_protestant_heresy
+		religion = protestant_heresy
+	}
+}
+country_event = {
+	id = 1002009
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = mormon
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_mormon
+		religion = mormon
+	}
+}
+country_event = {
+	id = 1002010
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = Orthodox
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = orthodox
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_orthodox
+		religion = orthodox
+	}
+}
+country_event = {
+	id = 1002011
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = pre_schism
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_pre_schism
+		religion = pre_schism
+	}
+}
+country_event = {
+	id = 1002012
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = bogomilist
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_bogomilist
+		religion = bogomilist
+	}
+}
+country_event = {
+	id = 1002013
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = monothelite
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_monothelite
+		religion = monothelite
+	}
+}
+country_event = {
+	id = 1002014
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = iconoclast
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_iconoclast
+		religion = iconoclast
+	}
+}
+country_event = {
+	id = 1002015
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = paulician
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_paulician
+		religion = paulician
+	}
+}
+country_event = {
+	id = 1002016
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = orthodox_heresy
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_orthodox_heresy
+		religion = orthodox_heresy
+	}
+}
+country_event = {
+	id = 1002017
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = coptic
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_coptic
+		religion = coptic
+	}
+}
+country_event = {
+	id = 1002018
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = monophysite
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_monophysite
+		religion = monophysite
+	}
+}
+country_event = {
+	id = 1002019
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = nestorian
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_nestorian
+		religion = nestorian
+	}
+}
+country_event = {
+	id = 1002020
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = messalian
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_messalian
+		religion = messalian
+	}
+}
+country_event = {
+	id = 1002021
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = christ
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = hussite
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_hussite
+		religion = hussite
+	}
+}
+country_event = {
+	id = 1002022
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = sunni
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_sunni
+		religion = sunni
+	}
+}
+country_event = {
+	id = 1002023
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = zikri
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_zikri
+		religion = zikri
+	}
+}
+country_event = {
+	id = 1002024
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = yazidi
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_yazidi
+		religion = yazidi
+	}
+}
+country_event = {
+	id = 1002025
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = sunni_heresy
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_sunni_heresy
+		religion = sunni_heresy
+	}
+}
+country_event = {
+	id = 1002026
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = sultan
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = shiite
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_shiite
+		religion = shiite
+	}
+}
+country_event = {
+	id = 1002027
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = hurufi
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_hurufi
+		religion = hurufi
+	}
+}
+country_event = {
+	id = 1002028
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = druze
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_druze
+		religion = druze
+	}
+}
+country_event = {
+	id = 1002029
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = shiite_heresy
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_shiite_heresy
+		religion = shiite_heresy
+	}
+}
+country_event = {
+	id = 1002030
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = ibadi
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_ibadi
+		religion = ibadi
+	}
+}
+country_event = {
+	id = 1002031
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = kharijite
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_kharijite
+		religion = kharijite
+	}
+}
+country_event = {
+	id = 1002032
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = jews
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = jewish
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_jewish
+		religion = jewish
+	}
+}
+country_event = {
+	id = 1002033
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = jews
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = samaritan
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_samaritan
+		religion = samaritan
+	}
+}
+country_event = {
+	id = 1002034
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = jews
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = karaite
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_karaite
+		religion = karaite
+	}
+}
+country_event = {
+	id = 1002035
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = jews
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = jewish_heresy
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_jewish_heresy
+		religion = jewish_heresy
+	}
+}
+country_event = {
+	id = 1002036
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = mahayana
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_mahayana
+		religion = mahayana
+	}
+}
+country_event = {
+	id = 1002037
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = gelugpa
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_gelugpa
+		religion = gelugpa
+	}
+}
+country_event = {
+	id = 1002038
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = theravada
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_theravada
+		religion = theravada
+	}
+}
+country_event = {
+	id = 1002039
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = hindu
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_hindu
+		religion = hindu
+	}
+}
+country_event = {
+	id = 1002040
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = japanese_power
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = shinto
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_shinto
+		religion = shinto
+	}
+}
+country_event = {
+	id = 1002041
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = sikh
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_sikh
+		religion = sikh
+	}
+}
+country_event = {
+	id = 1002042
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = jain
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_jain
+		religion = jain
+	}
+}
+country_event = {
+	id = 1002043
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = animist
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_animist
+		religion = animist
+	}
+}
+country_event = {
+	id = 1002044
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = norse_pagan_reformed
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_norse_pagan_reformed
+		religion = norse_pagan_reformed
+	}
+}
+country_event = {
+	id = 1002045
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = tengri_pagan_reformed
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_tengri_pagan_reformed
+		religion = tengri_pagan_reformed
+	}
+}
+country_event = {
+	id = 1002046
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = baltic_pagan_reformed
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_baltic_pagan_reformed
+		religion = baltic_pagan_reformed
+	}
+}
+country_event = {
+	id = 1002047
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = finnish_pagan_reformed
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_finnish_pagan_reformed
+		religion = finnish_pagan_reformed
+	}
+}
+country_event = {
+	id = 1002048
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = aztec_reformed
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_aztec_reformed
+		religion = aztec_reformed
+	}
+}
+country_event = {
+	id = 1002049
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = slavic_pagan_reformed
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_slavic_pagan_reformed
+		religion = slavic_pagan_reformed
+	}
+}
+country_event = {
+	id = 1002050
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = west_african_pagan_reformed
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_west_african_pagan_reformed
+		religion = west_african_pagan_reformed
+	}
+}
+country_event = {
+	id = 1002051
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = zun_pagan_reformed
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_zun_pagan_reformed
+		religion = zun_pagan_reformed
+	}
+}
+country_event = {
+	id = 1002052
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = Walhalla
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = hellenic_pagan
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_hellenic_pagan
+		religion = hellenic_pagan
+	}
+}
+country_event = {
+	id = 1002053
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = Machupicchu
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = inca_reformed
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_inca_reformed
+		religion = inca_reformed
+	}
+}
+country_event = {
+	id = 1002054
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = shamanism
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_shamanism
+		religion = shamanism
+	}
+}
+country_event = {
+	id = 1002055
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = totemism
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_totemism
+		religion = totemism
+	}
+}
+country_event = {
+	id = 1002056
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = mayan
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_mayan
+		religion = mayan
+	}
+}
+country_event = {
+	id = 1002057
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = nahuatl
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_nahuatl
+		religion = nahuatl
+	}
+}
+country_event = {
+	id = 1002058
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = inti
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_inti
+		religion = inti
+	}
+}
+country_event = {
+	id = 1002059
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = Egyptian
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = kemetic
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_kemetic
+		religion = kemetic
+	}
+}
+country_event = {
+	id = 1002060
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = arab_pagan
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_arab_pagan
+		religion = arab_pagan
+	}
+}
+country_event = {
+	id = 1002061
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = druidist
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_druidist
+		religion = druidist
+	}
+}
+country_event = {
+	id = 1002062
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = tibet_bon
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_tibet_bon
+		religion = tibet_bon
+	}
+}
+country_event = {
+	id = 1002063
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = muism
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_muism
+		religion = muism
+	}
+}
+country_event = {
+	id = 1002064
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = zoroastrian
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_zoroastrian
+		religion = zoroastrian
+	}
+}
+country_event = {
+	id = 1002065
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = manichean
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_manichean
+		religion = manichean
+	}
+}
+country_event = {
+	id = 1002066
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = mazdaki
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_mazdaki
+		religion = mazdaki
+	}
+}
+country_event = {
+	id = 1002067
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = zoroastrian_heresy
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_zoroastrian_heresy
+		religion = zoroastrian_heresy
+	}
+}
+country_event = {
+	id = 1002068
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = adamites
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_adamites
+		religion = adamites
+	}
+}
+country_event = {
+	id = 1002069
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = gnostic
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_gnostic
+		religion = gnostic
+	}
+}
+country_event = {
+	id = 1002070
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = canaanite
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_canaanite
+		religion = canaanite
+	}
+}
+country_event = {
+	id = 1002071
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = mardukism
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_religion_mardukism
+		religion = mardukism
+	}
+}
+country_event = {
+	id = 1002072
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = siberian_pagan_reformed
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_siberian_pagan_reformed
+		religion = siberian_pagan_reformed
+	}
+}
+country_event = {
+	id = 1002073
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = pagan_religion_reformed
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_pagan_religion_reformed
+		religion = pagan_religion_reformed
+	}
+}
+country_event = {
+	id = 1002074
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = german_pagan
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_german_pagan
+		religion = german_pagan
+	}
+}
+country_event = {
+	id = 1002075
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = cybelene
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_cybelene
+		religion = cybelene
+	}
+}
+country_event = {
+	id = 1002076
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = zamolxism
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_zamolxism
+		religion = zamolxism
+	}
+}
+country_event = {
+	id = 1002077
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = mithraism
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_mithraism
+		religion = mithraism
+	}
+}
+country_event = {
+	id = 1002078
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = hetanism
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_hetanism
+		religion = hetanism
+	}
+}
+country_event = {
+	id = 1002079
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = iberian_pagan
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_iberian_pagan
+		religion = iberian_pagan
+	}
+}
+country_event = {
+	id = 1002080
+	title = EVTNAMERELNEW
+	desc = EVTDESCRELNEW
+	picture = census
+
+	trigger = {
+		capital_scope = {
+			pop_majority_religion = scythian_pagan
+		}
+		OR = { accepted_culture = zzz_religion_noreligion accepted_culture = zzz_religion_dummy_religion }
+		has_country_flag = religi  total_pops = 1 #Ensures we checked for religion and that there are people
+	}
+ 
+	mean_time_to_happen = {
+		months = 0.1
+	}
+ 
+	option = {
+		name = EVTOPTARELNEW
+		remove_accepted_culture = zzz_religion_noreligion
+		remove_accepted_culture = zzz_religion_dummy_religion
+		add_accepted_culture = zzz_scythian_pagan
+		religion = scythian_pagan
+	}
 }
