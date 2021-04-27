@@ -1,5 +1,5 @@
 # Version info
 
-version = "1.0R"
-name = "Ragusa"
-descriptionLine = "compatible with 1.30 and previous"
+version = "1.0S"
+name = "Stettin"
+descriptionLine = "compatible with 1.31 and previous"

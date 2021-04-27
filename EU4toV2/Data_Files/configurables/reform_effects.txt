@@ -134,6 +134,7 @@ ambrosian_republic = { equality = 7 liberal = 9 army = 6 commerce = 4 }
 veche_republic = { equality = 8 liberal = 7 commerce = 6 }
 american_republic = { liberty = 10 liberal = 6 reactionary = 3 culture = 6 }
 federal_republic = { liberty = 8 liberal = 7 reactionary = 3 culture = 6 }
+colonial_government = { enforce = presidential_dictatorship order = 6 reactionary = 4 } # obsolete in 1.31, replaced with crown_colony_government
 crown_colony_government = { enforce = presidential_dictatorship order = 6 reactionary = 4 }
 private_enterprise_colony_government = { liberty = 6 liberal = 6 commerce = 7 navy = 6 industry = 6 }
 self_governing_colony_government = { liberty = 8 liberal = 8 industry = 6 }
