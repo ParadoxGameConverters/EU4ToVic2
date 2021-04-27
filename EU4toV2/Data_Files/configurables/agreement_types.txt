@@ -3,7 +3,7 @@
 
 # These are colonies, they can be integrated or not, depending on their liberty desire and config settings.
 # They are turned into vassals if not annexed.
-colonies = { colony colonial }
+colonies = { colony colonial crown_colony private_enterprise self_governing_colony }
 
 # Onesiders boost relations and give some extra influence over target
 onesiders = { guarantee }
