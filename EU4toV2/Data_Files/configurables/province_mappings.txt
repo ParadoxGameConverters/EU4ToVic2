@@ -570,7 +570,7 @@
 	link = { eu4 = 965 v2 = 232 v2 = 233 } # Manahahttan -> New York, Long Island
 	link = { eu4 = 963 v2 = 234 } # Machkantowoon -> Albany
 	link = { eu4 = 2558 v2 = 235 } # Espachomy -> Binghamton
-	link = { eu4 = 2559 eu4 = 4926 eu4 = 964 v2 = 240 } # Tekontaroken, Adirondacks, Kanien'kehaka -> Plattsburgh
+	link = { eu4 = 2559 eu4 = 964 v2 = 240 } # Tekontaroken, Kanien'kehaka -> Plattsburgh
 	link = { eu4 = 4912 v2 = 239 } # Kaniatarowanen -> Watertown
 	link = { eu4 = 961 eu4 = 960 v2 = 238 } # Onyo'taaka, Onondagaono -> Syracuse
 	link = { eu4 = 959 v2 = 237 } # Gayogohono -> Rochester
@@ -613,6 +613,7 @@
 	link = { eu4 = 4928 } # Allegheny Front -> DROPPED
 	link = { eu4 = 4930 } # Alleghenies -> DROPPED
 	link = { eu4 = 4931 } # Cumberland Mountains -> DROPPED
+	link = { eu4 = 4926 } # Adirondacks -> DROPPED
 	link = { comment = "# Florida" }
 	link = { eu4 = 2540 eu4 = 4880 v2 = 2555 } # Etowah, Combahee -> Augusta
 	link = { eu4 = 929 eu4 = 2539 v2 = 204 } # Guale, Mocama -> Savannah
