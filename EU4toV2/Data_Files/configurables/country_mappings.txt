@@ -117,6 +117,8 @@ link = { eu4 = SLO v2 = SLV } # Nitra => Slovakia
 link = { eu4 = d_slovakia v2 = SLV } #Slovakia
 link = { eu4 = TUR v2 = TUR } # Ottomans
 link = { eu4 = k_ottoman v2 = TUR } # Ottomans
+link = { v2 = TUR flag = is_turkey_flag } # Turkey
+link = { v2 = TUR flag = is_revolutionary_turkey_flag } # Turkey
 link = { eu4 = k_anatolia v2 = ANA } # Anatolia
 
 #British Isles 
@@ -629,6 +631,8 @@ link = { eu4 = BUK v2 = BUK } # Bukhara
 link = { eu4 = c_bukhara v2 = BUK } # Bukhara
 
 #Persia 
+link = { v2 = TIM flag = is_gurkani_flag } # Gurkani => Timurid
+link = { v2 = PER flag = is_revolutionary_gurkani_flag } # Gurkani => Persia
 link = { eu4 = AFG v2 = AFG } # Afghanistan
 link = { eu4 = k_afghanistan v2 = AFG } # Afghanistan
 link = { eu4 = KHO v2 = KHO } # Khorasan
@@ -774,6 +778,8 @@ link = { eu4 = MFY v2 = MFY } # Mahafaly
 link = { eu4 = ANT v2 = ANT } # Antemoro
 
 #Far East
+link = { v2 = DAI flag = is_dai_nam_flag } # Dai Nam => Dai Viet
+link = { v2 = DAI flag = is_viet_nam_flag } # Vietnam => Dai Viet
 link = { eu4 = ANN v2 = ANN } # Annam
 link = { eu4 = ARK v2 = ARK } # Arakan
 link = { eu4 = ATJ v2 = ATJ } # Atjeh
@@ -831,6 +837,11 @@ link = { eu4 = UTN v2 = UTU } # Utsunomiya
 link = { eu4 = TTI v2 = TSU } # Tsutsui
 
 link = { v2 = CHI flag = is_china_flag } # China
+link = { v2 = CHI flag = is_revolutionary_china_flag } # China
+link = { v2 = SRJ flag = is_srijivaya_flag } # Srivijaya
+link = { v2 = MJP flag = is_majapahit_empire_flag } # Majapahit
+link = { v2 = INO flag = is_nusantara_flag } # Nusantara => Indonesia
+link = { v2 = BUR flag = is_burma } # Burma
 link = { eu4 = KHA v2 = KHA } # Mongol Khanate
 link = { eu4 = k_mongolia v2 = KHA } # Mongol Khanate
 link = { eu4 = KHM v2 = CAM } # Khmer => Cambodia
@@ -1077,6 +1088,7 @@ link = { eu4 = RJP v2 = RAJ } # Rajputana
 link = { eu4 = k_rajputana v2 = RAJ } # Rajputana
 
 link = { eu4 = BAR v2 = BAR } # Bar
+link = { v2 = LUB eu4 = is_hanseatic_league_flag } # The Hansa => Lübeck
 link = { eu4 = HSA v2 = LUB } # Lubeck
 link = { eu4 = c_lubeck v2 = LUB } # Lubeck
 link = { eu4 = k_hansa v2 = LUB } # Hansa => Lubeck
