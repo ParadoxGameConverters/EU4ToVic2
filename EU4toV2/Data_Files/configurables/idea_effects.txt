@@ -358,3 +358,18 @@ quantity_ideas = {
 	order = 4
 	equality = 7
 }
+
+horde_gov_ideas = {
+	order = 8
+	army = 6
+	commerce = 6
+	literacy = 3
+	equality = 2
+}
+
+theocracy_gov_ideas = {
+	literacy = 6
+	order = 7
+	equality = 2
+	army = 6
+}
