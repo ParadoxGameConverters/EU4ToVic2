@@ -233,8 +233,6 @@ south_american = {
 	cultures = {
 	# Carribean
 	guajiro carribean
-	# Pacific
-	hawaiian maori aborigine melanesian micronesian polynesian
 	}
 }
 
@@ -250,6 +248,22 @@ andean = {
 	}
 }	
 
+polynesian_tech = {
+	westernization = 1
+	cultures = {
+	# Pacific
+	hawaiian maori melanesian micronesian polynesian
+	}
+}
+
+aboriginal_tech = {
+	westernization = 1
+	cultures = {
+	# Aboriginal
+	aborigine
+	}
+}
+
 high_american = {
 	westernization = 10
 	literacy = 8
@@ -258,3 +272,4 @@ high_american = {
 	undead alien 
 	}
 }
+
