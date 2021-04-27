@@ -61,7 +61,7 @@ link = { v2 = gelugpa eu4 = vajrayana }
 link = { v2 = muism eu4 = muism }
 
 # Major Pagans
-link = { v2 = animist eu4 = animism eu4 = pagan_religion_reformed eu4 = converted_siberian_pagan }
+link = { v2 = animist eu4 = animism eu4 = pagan_religion_reformed eu4 = converted_siberian_pagan eu4 = dreamtime }
 link = { v2 = shamanism eu4 = shamanism }
 link = { v2 = totemism eu4 = totemism }
 link = { v2 = arab_pagan eu4 = arab_pagan eu4 = semitic_pagan_reformed }

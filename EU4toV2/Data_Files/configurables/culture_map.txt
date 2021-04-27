@@ -490,21 +490,21 @@ link = { vic2 = metis eu4 = dakota eu4 = nakota eu4 = chiwere eu4 = osage eu4 = 
 
 # North American - dakota, cherokee, pueblo, aleutian, inuit, cree, iroquis, huron, navajo, shawnee, delaware, creek, etc
 link = { hpm = dakota vic2 = siouan eu4 = dakota }
-link = { vic2 = siouan eu4 = dakota eu4 = nakota eu4 = chiwere eu4 = osage eu4 = catawba eu4 = kanza eu4 = lakota eu4 = missouri eu4 = osagee eu4 = woccon }
-link = { vic2 = iroquoian eu4 = iroquois eu4 = iroquis eu4 = huron eu4 = susquehannock eu4 = erielhonan eu4 = lenape eu4 = mingwe eu4 = neutral eu4 = tuscarora }
+link = { vic2 = siouan eu4 = dakota eu4 = nakota eu4 = chiwere eu4 = osage eu4 = catawba eu4 = kanza eu4 = lakota eu4 = missouri eu4 = osagee eu4 = woccon eu4 = yuchi }
+link = { vic2 = iroquoian eu4 = iroquois eu4 = iroquis eu4 = huron eu4 = susquehannock eu4 = erielhonan eu4 = lenape eu4 = mingwe eu4 = neutral eu4 = tuscarora eu4 = tionontate eu4 = laurentian }
 link = { vic2 = cherokee eu4 = cherokee }
 link = { hpm = pueblo vic2 = sonoran eu4 = pueblo }
 link = { vic2 = sonoran eu4 = pueblo eu4 = piman eu4 = shoshone eu4 = kiowa eu4 = cahuila eu4 = comanche eu4 = hopi eu4 = mayo eu4 = pima eu4 = purepechan eu4 = tarachatitian eu4 = tarahumaran eu4 = ute }
 link = { hpm = inuit vic2 = eskaleut eu4 = inuit }
 link = { vic2 = eskaleut eu4 = kamchatkan eu4 = aleutian eu4 = inuit eu4 = yupik }
-link = { hpm = cree vic2 = central_algonquian eu4 = cree }
-link = { vic2 = central_algonquian eu4 = cree eu4 = shawnee eu4 = anishinabe eu4 = illini eu4 = mesquakie eu4 = innu eu4 = miami eu4 = odawa eu4 = ojibwa eu4 = potawatomi }
+link = { hpm = cree vic2 = central_algonquian eu4 = cree eu4 = plains_cree }
+link = { vic2 = central_algonquian eu4 = cree eu4 = shawnee eu4 = anishinabe eu4 = illini eu4 = mesquakie eu4 = innu eu4 = miami eu4 = odawa eu4 = ojibwa eu4 = potawatomi eu4 = bungi eu4 = plains_cree }
 link = { hpm = navajo vic2 = na_dene eu4 = navajo }
 link = { vic2 = na_dene eu4 = navajo eu4 = chipewyan eu4 = athabascan eu4 = apache eu4 = haida eu4 = mescalero eu4 = lipan  eu4 = coahuiltec eu4 = hayda eu4 = hoopa eu4 = tanaina eu4 = tlingit }
 link = { vic2 = penutian eu4 = chinook eu4 = salish eu4 = yokuts eu4 = chilcotin eu4 = kalispel eu4 = penutian_colonial eu4 = sahaptian eu4 = shuswap eu4 = tsimishian eu4 = wintuan eu4 = yokut }
 link = { vic2 = plains_algonquian eu4 = arapaho eu4 = cheyenne eu4 = blackfoot eu4 = winnebago }
-link = { vic2 = eastern_algonquian eu4 = delaware eu4 = abenaki eu4 = mikmaq eu4 = miqmaq eu4 = mahican eu4 = powhatan eu4 = pequot }
-link = { vic2 = muskogean eu4 = creek eu4 = choctaw eu4 = chickasaw }
+link = { vic2 = eastern_algonquian eu4 = delaware eu4 = abenaki eu4 = mikmaq eu4 = miqmaq eu4 = mahican eu4 = powhatan eu4 = pequot eu4 = algonquin eu4 = maliseet eu4 = massachusset }
+link = { vic2 = muskogean eu4 = creek eu4 = choctaw eu4 = chickasaw eu4 = yamasee eu4 = yoron eu4 = natchez }
 link = { vic2 = caddoan eu4 = pawnee eu4 = wichita eu4 = caddo }
 link = { vic2 = native_american_minor eu4 = tlingit eu4 = miwok }
 
@@ -529,7 +529,7 @@ link = { vic2 = yi eu4 = yi }
 link = { vic2 = yue eu4 = cantonese }
 
 # Mon Khmer - khmer, mon, vietnamese
-link = { vic2 = thegioimoi eu4 = vietnamese eu4 = cham eu4 = khmer eu4 = degar eu4 = khmer_colonial eu4 = khmu eu4 = malayan eu4 = sumatran eu4 = acehnese eu4 = banjar eu4 = batak eu4 = indonesian eu4 = malay_colonial eu4 = minang eu4 = bornean eu4 = filipino eu4 = cebuano eu4 = filipino_colonial eu4 = maguindanao eu4 = philipino eu4 = tagalog eu4 = taiwanese eu4 = tausug eu4 = javanese eu4 = balinese eu4 = javan eu4 = javan_colonial eu4 = sundanese eu4 = sulawesi eu4 = moluccan eu4 = bugis eu4 = bungku eu4 = chamorro eu4 = dayak eu4 = minahasa eu4 = central_thai eu4 = northern_thai eu4 = dambru eu4 = lanna eu4 = sipsong_thai eu4 = thai eu4 = thai_colonial eu4 = lao eu4 = laotian eu4 = shan eu4 = burmese eu4 = mon eu4 = arakanese eu4 = burman_colonial eu4 = monic eu4 = garjati eu4 = gondi eu4 = jharkhandi eu4 = central_indian_colonial eu4 = yizu eu4 = kachin eu4 = karen region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
+link = { vic2 = thegioimoi eu4 = vietnamese eu4 = cham eu4 = khmer eu4 = degar eu4 = khmer_colonial eu4 = khmu eu4 = malayan eu4 = sumatran eu4 = acehnese eu4 = banjar eu4 = batak eu4 = indonesian eu4 = malay_colonial eu4 = minang eu4 = bornean eu4 = filipino eu4 = cebuano eu4 = filipino_colonial eu4 = maguindanao eu4 = philipino eu4 = tagalog eu4 = taiwanese eu4 = tausug eu4 = acehnese eu4 = javanese eu4 = balinese eu4 = javan eu4 = javan_colonial eu4 = sundanese eu4 = sulawesi eu4 = moluccan eu4 = bugis eu4 = bungku eu4 = chamorro eu4 = dayak eu4 = minahasa eu4 = central_thai eu4 = northern_thai eu4 = dambru eu4 = lanna eu4 = sipsong_thai eu4 = thai eu4 = thai_colonial eu4 = lao eu4 = laotian eu4 = shan eu4 = burmese eu4 = mon eu4 = arakanese eu4 = burman_colonial eu4 = monic eu4 = garjati eu4 = gondi eu4 = jharkhandi eu4 = central_indian_colonial eu4 = yizu eu4 = kachin eu4 = karen region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
 link = { vic2 = phianam eu4 = vietnamese eu4 = cham eu4 = khmer eu4 = degar eu4 = khmer_colonial eu4 = khmu eu4 = malayan eu4 = sumatran eu4 = acehnese eu4 = banjar eu4 = batak eu4 = indonesian eu4 = malay_colonial eu4 = minang eu4 = bornean eu4 = filipino eu4 = cebuano eu4 = filipino_colonial eu4 = maguindanao eu4 = philipino eu4 = tagalog eu4 = taiwanese eu4 = tausug eu4 = javanese eu4 = balinese eu4 = javan eu4 = javan_colonial eu4 = sundanese eu4 = sulawesi eu4 = moluccan eu4 = bugis eu4 = bungku eu4 = chamorro eu4 = dayak eu4 = minahasa eu4 = central_thai eu4 = northern_thai eu4 = dambru eu4 = lanna eu4 = sipsong_thai eu4 = thai eu4 = thai_colonial eu4 = lao eu4 = laotian eu4 = shan eu4 = burmese eu4 = mon eu4 = arakanese eu4 = burman_colonial eu4 = monic eu4 = garjati eu4 = gondi eu4 = jharkhandi eu4 = central_indian_colonial eu4 = yizu eu4 = kachin eu4 = karen region = oceania_superregion }
 link = { vic2 = dhen eu4 = vietnamese eu4 = cham eu4 = khmer eu4 = degar eu4 = khmer_colonial eu4 = khmu eu4 = malayan eu4 = sumatran eu4 = acehnese eu4 = banjar eu4 = batak eu4 = indonesian eu4 = malay_colonial eu4 = minang eu4 = bornean eu4 = filipino eu4 = cebuano eu4 = filipino_colonial eu4 = maguindanao eu4 = philipino eu4 = tagalog eu4 = taiwanese eu4 = tausug eu4 = javanese eu4 = balinese eu4 = javan eu4 = javan_colonial eu4 = sundanese eu4 = sulawesi eu4 = moluccan eu4 = bugis eu4 = bungku eu4 = chamorro eu4 = dayak eu4 = minahasa eu4 = central_thai eu4 = northern_thai eu4 = dambru eu4 = lanna eu4 = sipsong_thai eu4 = thai eu4 = thai_colonial eu4 = lao eu4 = laotian eu4 = shan eu4 = burmese eu4 = mon eu4 = arakanese eu4 = burman_colonial eu4 = monic eu4 = garjati eu4 = gondi eu4 = jharkhandi eu4 = central_indian_colonial eu4 = yizu eu4 = kachin eu4 = karen region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = vietnamese eu4 = vietnamese eu4 = cham }
@@ -539,7 +539,7 @@ link = { vic2 = khmer eu4 = khmer eu4 = degar eu4 = khmer_colonial eu4 = khmu }
 link = { vic2 = bornean eu4 = bornean }
 link = { vic2 = malay eu4 = malayan eu4 = sumatran eu4 = acehenese eu4 = banjar eu4 = batak eu4 = indonesian eu4 = malay_colonial eu4 = minang }
 link = { vic2 = filipino eu4 = filipino u4 = cebuano eu4 = fiilpino_colonial eu4 = filipino_colonial eu4 = maguindanao eu4 = philipino eu4 = tagalog eu4 = taiwanese eu4 = tausug }
-link = { vic2 = javan eu4 = javanese eu4 = balinese eu4 = sundanese eu4 = javan_colonial eu4 = javan }
+link = { vic2 = javan eu4 = javanese eu4 = balinese eu4 = sundanese eu4 = javan_colonial eu4 = javan eu4 = acehnese }
 link = { vic2 = moluccan eu4 = sulawesi eu4 = moluccan eu4 = bugis eu4 = bungku eu4 = chamorro eu4 = dayak eu4 = minahasa }
 
 # Thai - central_thai, lao, northern_thai, shan
@@ -558,9 +558,10 @@ link = { vic2 = karen eu4 = karen }
 link = { vic2 = hawaiian eu4 = polynesian provinceid = 1240 provinceid = 1997 }
 link = { vic2 = melanesian eu4 = polynesian region = melanesia_area }
 link = { vic2 = maori eu4 = polynesian region = oceanea_region }
+link = { vic2 = maori eu4 = maori }
 link = { vic2 = micronesian eu4 = polynesian region = micronesia_area }
 link = { vic2 = hawaiian eu4 = hawaian }
-link = { vic2 = aborigine eu4 = aboriginal eu4 = maori }
+link = { vic2 = aborigine eu4 = aboriginal eu4 = paman eu4 = gamilaraay eu4 = yura eu4 = gunwinyguan eu4 = nyoongah eu4 = palawa eu4 = kulin }
 link = { vic2 = melanesian eu4 = melanesian eu4 = papuan eu4 = halmahera }
 link = { vic2 = micronesian eu4 = micronesian }
 link = { vic2 = polynesian eu4 = polynesian }
