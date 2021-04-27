@@ -92,20 +92,9 @@ link = { vic2 = guajiro eu4 = arawak region = bogota_area region = coquivacoa_ar
 link = { vic2 = guajiro eu4 = guajiro }
 link = { vic2 = carribean eu4 = arawak eu4 = carib }
 
-# North American
-link = { vic2 = siouan eu4 = dakota eu4 = nakota eu4 = chiwere eu4 = osage eu4 = catawba }
-link = { vic2 = iroquoian eu4 = iroquois eu4 = iroquis eu4 = huron eu4 = susquehannock }
-link = { vic2 = cherokee eu4 = cherokee }
-link = { vic2 = sonoran eu4 = pueblo eu4 = piman eu4 = shoshone eu4 = kiowa }
+# North American - Generic Amerindian slavery
 link = { vic2 = eskaleut eu4 = kamchatkan eu4 = aleutian eu4 = inuit }
-link = { vic2 = central_algonquian eu4 = cree eu4 = shawnee eu4 = anishinabe eu4 = illini eu4 = mesquakie }
-link = { vic2 = na_dene eu4 = navajo eu4 = chipewyan eu4 = athabascan eu4 = apache eu4 = haida eu4 = lipan eu4 = mescalero }
-link = { vic2 = penutian eu4 = chinook eu4 = salish eu4 = yokuts }
-link = { vic2 = plains_algonquian eu4 = arapaho eu4 = cheyenne eu4 = blackfoot }
-link = { vic2 = eastern_algonquian eu4 = delaware eu4 = abenaki eu4 = mikmaq eu4 = mahican eu4 = powhatan eu4 = pequot }
-link = { vic2 = muskogean eu4 = creek eu4 = choctaw eu4 = chickasaw }
-link = { vic2 = caddoan eu4 = pawnee eu4 = wichita eu4 = caddo }
-link = { vic2 = native_american_minor eu4 = tlingit eu4 = miwok }
+link = { vic2 = native_american_minor eu4 = dakota eu4 = nakota eu4 = chiwere eu4 = osage eu4 = catawba eu4 = iroquois eu4 = iroquis eu4 = huron eu4 = susquehannock eu4 = cherokee eu4 = pueblo eu4 = piman eu4 = shoshone eu4 = kiowa eu4 = cree eu4 = shawnee eu4 = anishinabe eu4 = illini eu4 = mesquakie eu4 = plains_cree eu4 = navajo eu4 = chipewyan eu4 = athabascan eu4 = apache eu4 = haida eu4 = lipan eu4 = mescalero eu4 = chinook eu4 = salish eu4 = yokuts eu4 = arapaho eu4 = cheyenne eu4 = blackfoot eu4 = delaware eu4 = abenaki eu4 = mikmaq eu4 = mahican eu4 = powhatan eu4 = pequot eu4 = creek eu4 = choctaw eu4 = chickasaw eu4 = pawnee eu4 = wichita eu4 = caddo eu4 = tlingit eu4 = miwok eu4 = bungi eu4 = tionontate eu4 = laurentian eu4 = innu eu4 = algonquin eu4 = maliseet eu4 = yoron eu4 = miami eu4 = yuchi eu4 = natchez eu4 = yamasee }
 
 # East Asian
 link = { vic2 = japanese eu4 = japanese eu4 = kyushuan eu4 = togoku }
@@ -129,7 +118,7 @@ link = { vic2 = khmer eu4 = khmer }
 link = { vic2 = bornean eu4 = bornean }
 link = { vic2 = malay eu4 = malayan eu4 = sumatran }
 link = { vic2 = filipino eu4 = filipino }
-link = { vic2 = javan eu4 = javanese }
+link = { vic2 = javan eu4 = javanese eu4 = acehnese eu4 = sundanese eu4 = nusa_tenggara }
 link = { vic2 = malagasy eu4 = madagascan }
 link = { vic2 = moluccan eu4 = sulawesi eu4 = moluccan }
 

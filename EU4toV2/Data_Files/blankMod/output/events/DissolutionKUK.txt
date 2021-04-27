@@ -423,7 +423,7 @@ country_event = { #Not-so-United Kingdom - Scotland flees
 }
 country_event = { #Austria-Hungary destroyed
 	id = 452013
-	title = EVTNAME452013
+	title = EVTNAME452006
 	desc = EVTDESC452013
 	picture = "Demonstration"
 	major = yes
@@ -491,7 +491,7 @@ country_event = { #PLC destroyed
 }
 country_event = { #PLC destroyed
 	id = 452015
-	title = EVTNAME452015
+	title = EVTNAME452014
 	desc = EVTDESC452015
 	picture = "Demonstration"
 	major = yes
@@ -523,7 +523,7 @@ country_event = { #PLC destroyed
 }
 country_event = { #PLC destroyed
 	id = 452016
-	title = EVTNAME452016
+	title = EVTNAME452014
 	desc = EVTDESC452016
 	picture = "Demonstration"
 	major = yes
@@ -564,7 +564,7 @@ country_event = { #PLC destroyed
 }
 country_event = { #Austria-Hungary destroyed
 	id = 452017
-	title = EVTNAME452017
+	title = EVTNAME452006
 	desc = EVTDESC452017
 	picture = "Demonstration"
 	major = yes
@@ -678,7 +678,7 @@ country_event = {
 		prestige = 10
 	}
 	option = {
-		name = EVTOPTA452019
+		name = STRING_OK
 		change_tag = SAX
 	}
 }
@@ -720,7 +720,7 @@ country_event = {
 
 country_event = {
 	id = 452021
-	title = EVTNAME452021
+	title = EVTNAME452020
 	desc = EVTDESC452021
 	picture = "Demonstration"
 	major = yes
@@ -745,7 +745,7 @@ country_event = {
 		prestige = -10
 	}
 	option = {
-		name = EVTOPTA452021
+		name = EVTOPTA452020
 		any_pop = {
 			militancy = 2
 		}
@@ -795,8 +795,8 @@ country_event = {
 }
 country_event = {
 	id = 452023
-	title = EVTNAME452023
-	desc = EVTDESC452023
+	title = EVTNAME452022
+	desc = EVTDESC452022
 	picture = "Demonstration"
 	major = yes
 	
@@ -836,8 +836,8 @@ country_event = {
 }
 country_event = {
 	id = 452024
-	title = EVTNAME452024
-	desc = EVTDESC452024
+	title = EVTNAME452022
+	desc = EVTDESC452022
 	picture = "Demonstration"
 	major = yes
 	
@@ -878,8 +878,8 @@ country_event = {
 }
 country_event = {
 	id = 452025
-	title = EVTNAME452025
-	desc = EVTDESC452025
+	title = EVTNAME452022
+	desc = EVTDESC452022
 	picture = "Demonstration"
 	major = yes
 	

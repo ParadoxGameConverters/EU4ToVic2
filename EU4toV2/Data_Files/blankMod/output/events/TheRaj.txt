@@ -17,7 +17,7 @@ country_event = {
 	mean_time_to_happen = { months = 1 }
 	
 	option = {
-		name = THERAJOPTA
+		name = STRING_OK
 		set_global_flag = the_raj
 		ENG_1236 = { add_core = RJX remove_core = HND }
 		ENG_1247 = { add_core = RJX remove_core = HND }
@@ -71,7 +71,7 @@ country_event = {
 	mean_time_to_happen = { months = 0.001 }
 	
 	option = {
-		name = INTRAJOPTA
+		name = STRING_OK
 		overlord = { inherit = THIS }
 	}
 }
@@ -133,7 +133,7 @@ country_event = {
 	}
 	
 	option = {
-		name = ITSRAJOPTA
+		name = STRING_OK
 		any_owned = {
 			limit = {
 				is_core = RJX
@@ -190,7 +190,7 @@ province_event = {
 	}
 	
 	option = {
-		name = EVTOPTA5000005
+		name = STRING_WHY
 		set_global_flag = egy_desert
 		1758 = {
 			add_core = THIS
@@ -216,7 +216,7 @@ province_event = {
 	}
 	
 	option = {
-		name = EVTOPTA5000006
+		name = STRING_WHY
 		set_global_flag = fezzan
 		1741 = {
 			add_core = THIS

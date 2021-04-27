@@ -139,7 +139,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = FLA
 		prestige = 5
 		any_country = {
@@ -193,7 +193,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = WLL
 		prestige = 5
 		any_country = {
@@ -246,7 +246,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SWI
 		prestige = 5
 		any_country = {
@@ -299,7 +299,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SWE
 		prestige = 5
 		any_country = {
@@ -352,7 +352,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = DEN
 		prestige = 5
 		any_country = {
@@ -405,7 +405,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = NOR
 		prestige = 5
 		any_country = {
@@ -458,7 +458,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = ICL
 		prestige = 5
 		any_country = {
@@ -511,7 +511,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = FIN
 		prestige = 5
 		any_country = {
@@ -564,7 +564,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SMI
 		prestige = 5
 		any_country = {
@@ -617,7 +617,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = IRE
 		prestige = 5
 		any_country = {
@@ -670,7 +670,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SCO
 		prestige = 5
 		any_country = {
@@ -723,7 +723,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = ENL
 		prestige = 5
 		any_country = {
@@ -776,7 +776,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = WHA
 		prestige = 5
 		any_country = {
@@ -829,7 +829,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = XLI
 		prestige = 5
 		any_country = {
@@ -882,7 +882,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = WEN
 		prestige = 5
 		any_country = {
@@ -903,7 +903,7 @@ country_event = {
 	allow_multiple_instances = no
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 	}
 	
 	immediate = {
@@ -991,7 +991,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = GLC
 		prestige = 5
 		any_country = {
@@ -1047,7 +1047,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = CST
 		prestige = 5
 		any_country = {
@@ -1101,7 +1101,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = POR
 		prestige = 5
 		any_country = {
@@ -1153,7 +1153,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = FRA
 		prestige = 5
 		any_country = {
@@ -1206,7 +1206,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = BRT
 		prestige = 5
 		any_country = {
@@ -1259,7 +1259,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = CRO
 		prestige = 5
 		any_country = {
@@ -1314,7 +1314,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SER
 		prestige = 5
 		any_country = {
@@ -1367,7 +1367,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = MCD
 		prestige = 5
 		any_country = {
@@ -1419,7 +1419,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = BUL
 		prestige = 5
 		any_country = {
@@ -1471,7 +1471,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = ALB
 		prestige = 5
 		any_country = {
@@ -1524,7 +1524,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SLO
 		prestige = 5
 		any_country = {
@@ -1577,7 +1577,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = BOS
 		prestige = 5
 		any_country = {
@@ -1630,7 +1630,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = HUN
 		prestige = 5
 		any_country = {
@@ -1684,7 +1684,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = POL
 		prestige = 5
 		any_country = {
@@ -1738,7 +1738,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = LIT
 		prestige = 5
 		any_country = {
@@ -1793,7 +1793,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = CZH
 		prestige = 5
 		any_country = {
@@ -1848,7 +1848,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SLV
 		prestige = 5
 		any_country = {
@@ -1902,7 +1902,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = RUS
 		prestige = 5
 		any_country = {
@@ -1956,7 +1956,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = BYE
 		prestige = 5
 		any_country = {
@@ -2010,7 +2010,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = UKR
 		prestige = 5
 		any_country = {
@@ -2064,7 +2064,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = UGR
 		prestige = 5
 		any_country = {
@@ -2117,7 +2117,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = LAT
 		prestige = 5
 		any_country = {
@@ -2170,7 +2170,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = EST
 		prestige = 5
 		any_country = {
@@ -2223,7 +2223,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = GRE
 		prestige = 5
 		any_country = {
@@ -2275,7 +2275,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = ALN
 		prestige = 5
 		any_country = {
@@ -2327,7 +2327,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = ASY
 		prestige = 5
 		any_country = {
@@ -2380,7 +2380,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = TUR
 		prestige = 5
 		any_country = {
@@ -2432,7 +2432,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = AZB
 		prestige = 5
 		any_country = {
@@ -2484,7 +2484,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = DKU
 		prestige = 5
 		any_country = {
@@ -2537,7 +2537,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = ADU
 		prestige = 5
 		any_country = {
@@ -2589,7 +2589,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = PER
 		prestige = 5
 		any_country = {
@@ -2641,7 +2641,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = KAZ
 		prestige = 5
 		any_country = {
@@ -2693,7 +2693,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = TIB
 		prestige = 5
 		any_country = {
@@ -2717,7 +2717,7 @@ country_event = {
 #		months = 1
 #	}
 #	
-#	option = { name = EVTOPTA601xxx }
+#	option = { name = STRING_OK }
 #	
 #	immediate = {
 #		change_tag = PHI
@@ -2793,7 +2793,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SIA
 		prestige = 5
 		any_country = {
@@ -2813,7 +2813,7 @@ country_event = {
 	major = yes
 	allow_multiple_instances = no
 	
-	option = { name = EVTOPTA601xxx }
+	option = { name = STRING_OK }
 	immediate = {
 		change_tag = KCH
 		prestige = 5
@@ -2899,7 +2899,7 @@ country_event = {
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = KAR
 		prestige = 5
 		any_country = {
@@ -2924,7 +2924,7 @@ country_event = { #Dummy - no effect
 	}
 	
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 	}
 	immediate = {
 		change_tag = REB
@@ -2989,7 +2989,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = DNL
 		prestige = 5
 		any_country = {
@@ -3041,7 +3041,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SAB
 		prestige = 5
 		any_country = {
@@ -3093,7 +3093,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = LGU
 		prestige = 5
 		any_country = {
@@ -3146,7 +3146,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = VNT
 		prestige = 5
 		any_country = {
@@ -3200,7 +3200,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SKL
 		prestige = 5
 		any_country = {
@@ -3252,7 +3252,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = LEP
 		prestige = 5
 		any_country = {
@@ -3307,7 +3307,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = MRL
 		prestige = 5
 		any_country = {
@@ -3359,7 +3359,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = PHO
 		prestige = 5
 		any_country = {
@@ -3416,7 +3416,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = PRT
 		prestige = 5
 		any_country = {
@@ -3468,7 +3468,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = PCH
 		prestige = 5
 		any_country = {
@@ -3520,7 +3520,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SMT
 		prestige = 5
 		any_country = {
@@ -3572,7 +3572,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = TOC
 		prestige = 5
 		any_country = {
@@ -3628,7 +3628,7 @@ country_event = {
 	}
  
 	option = {
-		name = EVTOPTA601xxx
+		name = STRING_OK
 		change_tag = SRB
 		prestige = 5
 		any_country = {

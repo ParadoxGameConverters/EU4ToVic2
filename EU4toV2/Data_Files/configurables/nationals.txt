@@ -60,6 +60,7 @@ link = { tag = FRA culture = picard }
 link = { tag = OCC culture = occitan } #and Occitania
 link = { tag = BRT culture = breton } #and Brittany
 link = { tag = JER culture = outremer } #Jerusalem
+link = { tag = NRM culture = rollonian } # and Normandy
 
 #South Slavic => Yugoslavia (and own nationstates)
 link = { tag = CRO culture = croat }

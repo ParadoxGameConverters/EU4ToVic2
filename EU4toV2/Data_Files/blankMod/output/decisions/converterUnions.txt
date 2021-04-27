@@ -3445,9 +3445,9 @@ political_decisions = {
 	}
 	oy_vey = {
 		news = yes
-		news_desc_long = "jew_NEWS_LONG"
-		news_desc_medium = "jew_NEWS_MEDIUM"
-		news_desc_short = "jew_NEWS_SHORT"
+		news_desc_long = "jew_NEWS"
+		news_desc_medium = "jew_NEWS"
+		news_desc_short = "jew_NEWS"
 		potential = {
 			is_greater_power = yes
 			is_culture_group = ISR

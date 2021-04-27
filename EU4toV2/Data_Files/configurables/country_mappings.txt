@@ -1324,6 +1324,126 @@ link = { eu4 = TTS v2 = SIC } # Two Sicilies
 #link = { eu4 = FKN v2 = XXX } # Franconia => d_franconia
 #link = { eu4 = SWA v2 = XXX } # Swabia => d_swabia
 
+# Leviathan New Tags
+link = { eu4 = BNE v2 = BNE } # Bone
+link = { eu4 = BEU v2 = BAU } # Berau
+link = { eu4 = SMB v2 = SMB } # Sambas
+link = { eu4 = BRS v2 = BRS } # Barus
+link = { eu4 = DLI v2 = DLI } # Deli
+link = { eu4 = JMB v2 = DJA } # Jambi
+link = { eu4 = PAH v2 = PHG } # Pahang
+link = { eu4 = KEL v2 = KEL } # Kelantang
+link = { eu4 = IND v2 = IPR } # Indrapura
+link = { eu4 = JAR v2 = JAR } # Jarai
+link = { eu4 = RHA v2 = RHD } # Rhade
+link = { eu4 = KOH v2 = KOH } # Koho
+link = { eu4 = SIA v2 = IDO } # Siam (formable) => Indochina
+
+# Leviathan Australian tags
+link = { eu4 = TIW v2 = TIW } # Tiwi
+link = { eu4 = LAR v2 = AUL } # Larrakia
+link = { eu4 = YOL v2 = AUY } # Yolngu
+link = { eu4 = YNU v2 = AUN } # Yanuwa
+link = { eu4 = AWN v2 = AUA } # Awngthim
+link = { eu4 = GMI v2 = AUI } # Gamilaraay
+link = { eu4 = MIA v2 = AUM } # Mianjin
+link = { eu4 = EOR v2 = AUE } # Eora
+link = { eu4 = KUL v2 = KUL } # Kulin
+link = { eu4 = KAU v2 = AUK } # Kaurna
+link = { eu4 = PLW v2 = AUP } # Palawa
+link = { eu4 = WRU v2 = AUW } # Wurundjeri
+link = { eu4 = NOO v2 = AUO } # Noongar
+link = { eu4 = MLG v2 = AUZ } # Malagana
+
+# Leviathan Maori tags
+link = { eu4 = AOT v2 = AOT } # Aotearoa
+link = { eu4 = MAA v2 = NZM } # Mataatua
+link = { eu4 = TAN v2 = NZN } # Tainui
+link = { eu4 = TAK v2 = NZK } # Takitimu
+link = { eu4 = TNK v2 = NZR } # Taranaki
+link = { eu4 = TEA v2 = NZA } # Te Arawa
+link = { eu4 = TTT v2 = NZT } # Te Tai Tokerau
+link = { eu4 = WAI v2 = SNZ } # Waitaha => South Island
+
+# Leviathan Oceanic tags
+link = { eu4 = UHW v2 = HAW } # Hawaii
+link = { eu4 = HAW v2 = HWH } # Hawaii Island
+link = { eu4 = MAU v2 = HWM } # Maui
+link = { eu4 = OAH v2 = HWO } # O'ahu
+link = { eu4 = KAA v2 = HWK } # Kaua'i
+link = { eu4 = TOG v2 = TGA } # Tonga
+link = { eu4 = SAM v2 = SMO } # Samoa
+link = { eu4 = VIT v2 = FIJ } # Fiji
+link = { eu4 = VIL v2 = FJV } # Fiji Island
+link = { eu4 = VNL v2 = FJW } # Vanua
+link = { eu4 = LAI v2 = FJL } # Lau
+
+#North America Mississippians
+link = { eu4 = ALT v2 = ALM } # Altamaha
+link = { eu4 = ICH v2 = ICH } # Ichisi
+link = { eu4 = COF v2 = COF } # Cofitachequi
+link = { eu4 = JOA v2 = JOA } # Joara
+link = { eu4 = ETO v2 = ETO } # Etowah
+link = { eu4 = SAT v2 = STP } # Satapo
+link = { eu4 = CIA v2 = CIA } # Chiaha
+link = { eu4 = COO v2 = COO } # Coosa
+link = { eu4 = ABI v2 = ABI } # Abihka
+link = { eu4 = COW v2 = COW } # Coweta
+link = { eu4 = NTZ v2 = NTZ } # Natchez
+link = { eu4 = CAQ v2 = CAQ } # Casqui
+link = { eu4 = PCH v2 = PCA } # Pacaha
+link = { eu4 = QUI v2 = QUI } # Quizquiz
+link = { eu4 = CCA v2 = CCA } # Chisca
+link = { eu4 = ATA v2 = ATA } # Atahachi
+link = { eu4 = KSI v2 = KSI } # Kasihta
+link = { eu4 = OEO v2 = OEO } # Oneota
+link = { eu4 = ANL v2 = ANL } # Anilco
+link = { eu4 = NTC v2 = NTC } # Natchitoches
+link = { eu4 = HNI v2 = HNI } # Hasinai
+
+#North American Iroquoians
+link = { eu4 = MOH v2 = MOH } # Mohawk
+link = { eu4 = ONE v2 = ONE } # Oneida
+link = { eu4 = ONO v2 = ONO } # Onondaga
+link = { eu4 = CAY v2 = CYG } # Cayuga
+link = { eu4 = SEN v2 = SNC } # Seneca
+link = { eu4 = TAH v2 = THN } # Tahontaenrat
+link = { eu4 = ATT v2 = ATT } # Attignawantan
+link = { eu4 = AGG v2 = AGG } # Attigneenongnahac
+link = { eu4 = ATW v2 = ATW } # Attiwandaron
+link = { eu4 = ARN v2 = ARR } # Arendaronon
+link = { eu4 = TIO v2 = TIO } # Tionontate
+link = { eu4 = OSH v2 = OSH } # Osheaga
+link = { eu4 = STA v2 = STA } # Stadacona
+link = { eu4 = ERI v2 = ERY } # Erie
+link = { eu4 = WEN v2 = WNR } # Wenro
+link = { eu4 = TSC v2 = TSC } # Tuscarora
+
+#North American Pueblos
+link = { eu4 = OHK v2 = OHK } # Ohkay Owingeh
+link = { eu4 = ISL v2 = ISL } # Isleta
+link = { eu4 = ACO v2 = ACO } # Acoma
+
+#North American Other Federations and Tags
+link = { eu4 = CAO v2 = CAO } # Cahokia
+link = { eu4 = PEO v2 = PEO } # Peoria
+link = { eu4 = KSK v2 = KSK } # Kaskakia
+link = { eu4 = PEN v2 = PEN } # Penobscot
+link = { eu4 = MLS v2 = MLS } # Maliseet
+link = { eu4 = NEH v2 = NHY } # Nehiyaw
+link = { eu4 = NAK v2 = NAK } # Nakawe
+link = { eu4 = HWK v2 = HWK } # Hathawekela
+link = { eu4 = CLG v2 = CLG } # Chalahgawtha
+link = { eu4 = KSP v2 = KSP } # Kispoko
+link = { eu4 = MSG v2 = MSG } # Mississage
+link = { eu4 = WCY v2 = WCY } # Wichiyena
+link = { eu4 = LAK v2 = DAK } # Lakota => Dakota
+
+#North America Missing Tags for a good map
+link = { eu4 = INN v2 = INN } # Innu
+link = { eu4 = WAM v2 = WAM } # Wampanoag
+link = { eu4 = AGQ v2 = ALQ } # Algonquin
+
 #Converter tags:
 link = { eu4 = JOM v2 = JOM } # Jomsvikings
 link = { eu4 = d_jomsvikings v2 = JOM } # Jomsvikings
@@ -1671,7 +1791,7 @@ link = { eu4 = SUD v2 = SDT } # Sudetenland
 link = { eu4 = DNL v2 = DNL } # Daneland
 link = { eu4 = MSH v2 = MSH } # Meshchyora
 link = { eu4 = PRT v2 = PRT } # Pruthenia
-link = { eu4 = PCH v2 = PCH } # Patzinakia
+link = { eu4 = PTZ v2 = PCH } # Patzinakia
 link = { eu4 = BEL v2 = BLG } # (Celtic) Belgium
 link = { eu4 = PHR v2 = PHR } # Phrygia
 link = { eu4 = TRO v2 = WIL } # Troy
