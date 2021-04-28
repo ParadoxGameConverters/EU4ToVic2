@@ -394,10 +394,11 @@ link = { tag = NIZ capital = 1254 }
 link = { tag = NKO capital = 2019 }
 link = { tag = NOG capital = 1012 }
 link = { tag = NOL civilized = yes capital = 280 }
-link = { tag = NOV government = presidential_dictatorship civilized = yes capital = 1003 }
+link = { tag = NOV government = democracy civilized = yes capital = 71 }
 link = { tag = NRM civilized = yes capital = 415 }
 link = { tag = NUB capital = 1830 }
 link = { tag = NUM civilized = yes capital = 595 }
+link = { tag = NVG government = presidential_dictatorship civilized = yes capital = 1003 }
 link = { tag = NYE civilized = yes capital = 1178 }
 link = { tag = NZH civilized = yes capital = 1020 }
 link = { tag = OAX primary_culture = zapotec government = democracy civilized = yes capital = 2177 }
