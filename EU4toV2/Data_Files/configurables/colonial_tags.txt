@@ -3,6 +3,7 @@
 
 
 link = { tag = QUE eu4region = colonial_canada v2region = ENG_58 hpm_region = CAN_58 } #Quebec - Capital in and/or owns all of V2 region Quebec & culture group French
+link = { tag = NOV eu4region = colonial_canada v2region = ENG_68 } # Nova Scotia - Region "New Brunswick"
 link = { tag = COL eu4region = colonial_canada v2region = ENG_13 hpm_region = CAN_13 } #Columbia - Capital in and/or owns all of in V2 region Columbia & culture group British
 link = { tag = COL eu4region = colonial_alaska v2region = ENG_13 hpm_region = CAN_13 } #Columbia - Capital in and/or owns all of in V2 region Columbia & culture group British
 link = { tag = NEW eu4region = colonial_canada v2region = ENG_74 } #Newfoundland - Capital in and/or owns all of Newfoundland

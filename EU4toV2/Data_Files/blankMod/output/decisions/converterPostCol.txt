@@ -31,6 +31,9 @@ political_decisions = {
 				add_core = COL
 			}
 			ENG_74 = { add_core = NEW } #Newfoundland
+			71 = { add_core = NOV } # Nova Scotia
+			72 = { add_core = NOV }
+			73 = { add_core = NOV }
 			ENG_13 = { add_core = CAN } #Canada
 			ENG_22 = { add_core = CAN }
 			ENG_30 = { add_core = CAN }

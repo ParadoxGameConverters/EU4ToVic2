@@ -1,4 +1,4 @@
-# Direct Mappings
+﻿# Direct Mappings
 # This is essentially one-to-one country mappings to ensure that countries are available in BOTH eu4 and v2 get the correct tag.
 # For example, if Spain is in eu4 it will become Spain in v2 after conversion.
 # EXAMPLE
@@ -478,8 +478,8 @@ link = { eu4 = d_georgia v2 = GEO } # Georgia
 link = { eu4 = KAZ v2 = KZN } # Kazan
 link = { eu4 = MOS v2 = MUS } # Muscowy
 link = { eu4 = c_moskva v2 = MUS } # Muscowy
-link = { eu4 = NOV v2 = NOV } # Novgorod
-link = { eu4 = d_novgorod v2 = NOV } # Novgorod
+link = { eu4 = NOV v2 = NVG } # Novgorod
+link = { eu4 = d_novgorod v2 = NVG } # Novgorod
 link = { eu4 = PSK v2 = PSK } # Pskov
 link = { eu4 = d_pskov v2 = PSK } # Pskov
 link = { eu4 = QAS v2 = QAS } # Qasim Khanate

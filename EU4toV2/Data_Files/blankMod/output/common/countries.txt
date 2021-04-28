@@ -523,7 +523,7 @@ GOL		="countries/Golden Horde.txt"##
 GRH		="countries/Great Horde.txt"##
 KZN		="countries/Kazan.txt"##
 MUS		="countries/Muscowy.txt"##
-NOV		="countries/Novgorod.txt"##
+NVG		="countries/Novgorod.txt"##
 PSK		="countries/Pskov.txt"
 QAS		="countries/Qasim Khanate.txt"##
 RYA		="countries/Ryazan.txt"##
@@ -708,6 +708,7 @@ UNB     = "countries/Nebraska.txt"
 UNM     = "countries/New Mexico.txt"
 UNY     = "countries/New York.txt"
 UOR     = "countries/Oregon.txt"
+NOV		= "countries/Nova Scotia.txt"
 
 FLR = "countries/Florida.txt"
 VRM = "countries/Vermont.txt"
