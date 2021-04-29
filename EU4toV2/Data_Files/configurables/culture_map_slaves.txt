@@ -30,7 +30,7 @@ link = { vic2 = afro_caribeno eu4 = visigothic eu4 = celtiberian eu4 = basque eu
 link = { vic2 = afro_brazilian eu4 = portugese eu4 = celtiberian eu4 = galician eu4 = suebi eu4 = brazilian eu4 = lusitanian }
 
 #French
-link = { vic2 = afro_antillean eu4 = quebecois eu4 = gaulic eu4 = picard eu4 = celtic_breton eu4 = poitou eu4 = arpitan eu4 = cosmopolitan_french eu4 = gascon eu4 = normand eu4 = aquitaine eu4 = burgundian eu4 = occitain eu4 = breton eu4 = wallonian eu4 = old_frankish eu4 = frankish }
+link = { vic2 = afro_antillean eu4 = frencharab eu4 = quebecois eu4 = gaulic eu4 = picard eu4 = celtic_breton eu4 = poitou eu4 = arpitan eu4 = cosmopolitan_french eu4 = gascon eu4 = normand eu4 = aquitaine eu4 = burgundian eu4 = occitain eu4 = breton eu4 = wallonian eu4 = old_frankish eu4 = frankish }
 
 #Finno-Ugric - afro_slavic is not entirelly correct but eh.
 link = { vic2 = afro_slavic eu4 = chuvash eu4 = finnish eu4 = finnish eu4 = udmurt eu4 = karelian eu4 = mari_culture eu4 = estonian eu4 = ingrian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki }
