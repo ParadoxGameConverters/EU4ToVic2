@@ -755,6 +755,12 @@
     <ClCompile Include="EU4WorldTests\CountryTests\EU4ActivePolicyTests.cpp">
       <Filter>EU4WorldTests\CountryTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\ModNames.cpp">
+      <Filter>ConverterFiles\EU4World\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\ModTests\ModNamesTests.cpp">
+      <Filter>EU4WorldTests\ModTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">

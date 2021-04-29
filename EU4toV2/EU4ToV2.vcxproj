@@ -335,6 +335,7 @@
     <ClCompile Include="Source\EU4World\Leader\EU4LeaderID.cpp" />
     <ClCompile Include="Source\EU4World\Localization\EU4Localization.cpp" />
     <ClCompile Include="Source\EU4World\Mods\Mod.cpp" />
+    <ClCompile Include="Source\EU4World\Mods\ModNames.cpp" />
     <ClCompile Include="Source\EU4World\Mods\Mods.cpp" />
     <ClCompile Include="Source\EU4World\NationMerger\MergeBlock.cpp" />
     <ClCompile Include="Source\EU4World\NationMerger\NationMergeParser.cpp" />
@@ -533,6 +534,7 @@
     <ClInclude Include="Source\EU4World\Leader\EU4LeaderID.h" />
     <ClInclude Include="Source\EU4World\Localization\EU4Localization.h" />
     <ClInclude Include="Source\EU4World\Mods\Mod.h" />
+    <ClInclude Include="Source\EU4World\Mods\ModNames.h" />
     <ClInclude Include="Source\EU4World\Mods\Mods.h" />
     <ClInclude Include="Source\EU4World\NationMerger\MergeBlock.h" />
     <ClInclude Include="Source\EU4World\NationMerger\NationMergeParser.h" />

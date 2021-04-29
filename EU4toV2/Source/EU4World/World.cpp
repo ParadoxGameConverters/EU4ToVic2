@@ -8,6 +8,7 @@
 #include "Localization/EU4Localization.h"
 #include "Log.h"
 #include "Mods/Mods.h"
+#include "Mods/ModNames.h"
 #include "NationMerger/NationMergeParser.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
@@ -179,11 +180,27 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		Log(LogLevel::Info) << "Savegave version: " << *version;
 	});
 	registerKeyword("mod_enabled", [](std::istream& theStream) {
+		// DEFUNCT since 1.31.
 		Log(LogLevel::Info) << "-> Detecting used mods.";
 		const auto modsList = commonItems::getStrings(theStream);
 		Log(LogLevel::Info) << "<> Savegame claims " << modsList.size() << " mods used:";
 		for (const auto& usedMod: modsList)
 			Log(LogLevel::Info) << "---> " << usedMod;
+		Mods theMods(modsList);
+	});
+	registerKeyword("mods_enabled_names", [](std::istream& theStream) {
+		// In use since 1.31.
+		Log(LogLevel::Info) << "-> Detecting used mods.";
+		const auto& modBlobs = commonItems::blobList(theStream);
+		Log(LogLevel::Info) << "<> Savegame claims " << modBlobs.getBlobs().size() << " mods used:";
+		std::vector<std::string> modsList;
+		for (const auto& modBlob : modBlobs.getBlobs())
+		{
+			auto modStream = std::stringstream(modBlob);
+			const auto& modName = ModNames(modStream);
+			modsList.emplace_back(modName.getPath());
+			Log(LogLevel::Info) << "---> " << modName.getName() << ": " << modName.getPath();
+		}
 		Mods theMods(modsList);
 	});
 	registerKeyword("revolution_target", [this](std::istream& theStream) {
