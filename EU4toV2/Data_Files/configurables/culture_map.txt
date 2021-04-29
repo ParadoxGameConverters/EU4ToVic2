@@ -294,7 +294,7 @@ link = { vic2 = french eu4 = cosmopolitan_french eu4 = cosmopolitan_french_UKS e
 link = { vic2 = breton eu4 = breton eu4 = breton_celtic eu4 = breton_UKS eu4 = celtic_breton }
 link = { vic2 = occitan eu4 = occitain eu4 = occitain_UKS eu4 = aquitaine eu4 = aquitaine_UKS eu4 = gascon eu4 = gascon_UKS eu4 = occitan_colonial eu4 = provencal }
 link = { vic2 = wallonian eu4 = wallonian eu4 = wallonian_UKS }
-link = { vic2 = frankish eu4 = old_frankish eu4 = frankish eu4 = septimanian eu4 = aquitanian eu4 = neustrian eu4 = burgundian_frankish eu4 = austrasian eu4 = agilolfingian }
+link = { vic2 = frankish eu4 = old_frankish eu4 = frankish eu4 = septimanian eu4 = aquitanian_frankish eu4 = neustrian eu4 = burgundian_frankish eu4 = austrasian eu4 = agilolfingian }
 link = { vic2 = outremer eu4 = outremer eu4 = crusader_culture }
 link = { vic2 = picard eu4 = picard }
 
