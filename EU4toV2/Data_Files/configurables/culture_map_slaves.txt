@@ -144,6 +144,17 @@ link = { vic2 = melanesian eu4 = polynesian region = melanesia_area }
 link = { vic2 = micronesian eu4 = polynesian region = micronesia_area }
 link = { vic2 = polynesian eu4 = polynesian }
 
+# Australia
+link = { vic2 = gamilaraay eu4 = gamilaraay }
+link = { vic2 = kulin eu4 = kulin }
+link = { vic2 = palawa eu4 = palawa }
+link = { vic2 = paman eu4 = paman }
+link = { vic2 = yura eu4 = yura }
+link = { vic2 = nyoongah eu4 = nyoongah }
+link = { vic2 = gunwinyguan eu4 = gunwinyguan }
+link = { vic2 = maori eu4 = maori }
+
+
 # Eastern Aryan
 link = { vic2 = assamese eu4 = assamese }
 link = { vic2 = bengali eu4 = bengali }
