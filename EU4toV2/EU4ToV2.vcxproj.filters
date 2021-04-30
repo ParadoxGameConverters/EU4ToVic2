@@ -583,6 +583,9 @@
     <ClCompile Include="Source\V2World\Output\outReligiousGroups.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EU4World\Mods\ModNames.cpp">
+      <Filter>EU4World\Mods</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1120,6 +1123,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\ReligiousGroups\ReligiousGroups.h">
       <Filter>Mappers\ReligiousGroups</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Mods\ModNames.h">
+      <Filter>EU4World\Mods</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
