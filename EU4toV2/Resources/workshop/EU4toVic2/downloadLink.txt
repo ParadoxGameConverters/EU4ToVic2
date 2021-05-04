@@ -1,5 +1,0 @@
-Stable release: 1.0Q - Qi
-https://github.com/ParadoxGameConverters/EU4toVic2/releases/download/1.0Q/EU4ToVic2-1.0Qi.zip
-
-Development release: 1.0R - Ragusa
-https://github.com/ParadoxGameConverters/EU4toVic2/releases/download/windows_development_build/EU4ToVic2-1.0Ragusa-prerelease.zip
