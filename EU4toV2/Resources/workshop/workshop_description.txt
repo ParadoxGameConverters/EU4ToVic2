@@ -2,7 +2,7 @@
 
 Welcome to the EU4 to Vic2 Converter project! The goal of this project is to allow a Europa Universalis 4 campaign to be transferred and continued in Victoria 2, so you may continue your game uninterrupted, from 1444 to 1936, and further using our other converters from Crusader Kings 3 and to Hearts of Iron 4.
 
-Running a continuous campaign from CK2 all the way to HoI4 is called running a [b]mega-campaign[/b].
+Running a continuous campaign from Crusader Kings all the way to Hearts of Iron is called running a [b]mega-campaign[/b].
 
 [h2]The converter is not a mod - it is a mod producing [i]application[/i] (program, software)[/h2]
 [list]
