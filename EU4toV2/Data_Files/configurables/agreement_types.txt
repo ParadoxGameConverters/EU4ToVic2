@@ -3,6 +3,7 @@
 
 # These are colonies, they can be integrated or not, depending on their liberty desire and config settings.
 # They are turned into vassals if not annexed.
+# -> Colonies must be listed as vassals as well, otherwise they will be released if not directly annexed through settings.
 colonies = { colony colonial crown_colony private_enterprise self_governing_colony }
 
 # Onesiders boost relations and give some extra influence over target
@@ -22,4 +23,4 @@ roman_client_kingdom voivodeship fief_subject crusader_state_vassal salic_person
 peasant_vassal pirate_brotherhood_vassal imperial_tributary_state sister_republic muslim_tributary_vassal 
 mandala_trade_vassal integrated_tribe_subject dutch_province_subject revolution_subject persian_satrapy 
 naval_march trade_outpost integrated_personal_union brother_kingdom iqta_vassal papal_sanctuary_subject 
-imperial_feud_subject pagan_chiefdom native_reserve }
+imperial_feud_subject pagan_chiefdom native_reserve crown_colony private_enterprise self_governing_colony }
