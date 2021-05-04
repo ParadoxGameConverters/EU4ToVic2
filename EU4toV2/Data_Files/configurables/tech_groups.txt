@@ -41,7 +41,7 @@ western = {
 	# French
 	french_canadian nouvellien australienne africaine french breton occitan wallonian frankish outremer picard antartique guillaumois guiscard
 	# Finnish	
-	usmailmian lounast mustvalge finnish ugrian antivuorean hopeajokan kepejokian kujaanan maraivoan meksikan salislahtian suurjokian
+	usmailmian lounast mustvalge finnish ugrian antivuorean hopeajokian kepejokian kujaanan maraivoan meksikan salislahtian suurjokian
 	# West Slavic
 	novysvet jizni hnedy nowyswiat poludniowy czarny polish slovak czech sorbian oldpommeranian
 	# Goths
