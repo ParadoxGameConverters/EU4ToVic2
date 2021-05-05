@@ -2,6 +2,7 @@ version="1.0S"
 tags={
 	"Alternative History"
 	"Converted From CKII"
+	"Converted From CKIII"
 	"Utilities"
 }
 name="EU4 to Vic2 Converter"
