@@ -341,7 +341,7 @@ TEU		="countries/Teutonic Order.txt"##
 
 # British Isles
 CNN		="countries/Connacht.txt"##
-CRN		="countries/Cornwall.txt"##
+KER		="countries/Cornwall.txt"##
 DMS		="countries/Desmond.txt"
 ENL		="countries/England.txt"#
 KID		="countries/Kildare.txt"
@@ -451,7 +451,7 @@ ALS		="countries/Alsace.txt"##
 AMG		="countries/Armagnac.txt"##
 AUV		="countries/Auvergne.txt"##
 AVI		="countries/Avignon.txt"##
-BAR		="countries/Bar.txt"##
+BXR		="countries/Bar.txt"##
 BOU		="countries/Bourbonnais.txt"##
 BRT		="countries/Brittany.txt"##
 BRG		="countries/Burgundy.txt"##
@@ -506,7 +506,7 @@ GUJ 		="countries/Gujarat.txt"
 KRN 		="countries/Carnatic.txt"
 KHD 		="countries/Khandesh.txt"
 SRI 		="countries/Ceylon.txt"
-MRI 		="countries/Madurai.txt"
+XMA 		="countries/Madurai.txt"
 MAR 		="countries/Maharasthra.txt"
 MNP 		="countries/Manipur.txt"
 MLD 		="countries/Maldive.txt"
@@ -551,7 +551,7 @@ LXA		="countries/LanXang.txt"
 MJP		="countries/Majapahit.txt"
 MCH		="countries/Manchu.txt"
 MKS		="countries/Makassar.txt"
-MNG		="countries/Ming.txt"
+CHM		="countries/Ming.txt"
 MLC		="countries/Malacca.txt"
 MLY		="countries/Malaya.txt"
 MTR		="countries/Mataram.txt"
@@ -635,8 +635,8 @@ GUY		=	"countries/Guyana.txt"
 
 # Caribbeans
 AGU		= "countries/Anguilla.txt"
-ATB		= "countries/Antigua and Barbuda.txt"
-BBD		= "countries/Barbados.txt"
+ANT		= "countries/Antigua and Barbuda.txt"
+BAR		= "countries/Barbados.txt"
 BHM		= "countries/Bahamas.txt"
 CUR		= "countries/Curacao.txt"
 DMN		= "countries/Dominica.txt"
@@ -890,7 +890,7 @@ WEN		= "countries/Venedia.txt"
 PAE		= "countries/Paertia.txt"
 
 #1.29B
-ALL		= "countries/Allahdom.txt" #The Caliphate
+ISL		= "countries/Allahdom.txt" #The Caliphate
 SUR		= "countries/Suriname.txt"
 CAY		= "countries/Cayenne.txt" #French Guyana
 KOS		= "countries/Kosovo.txt"
