@@ -574,7 +574,7 @@ political_decisions = {
 				add_accepted_culture = czech
 				add_accepted_culture = slovak
 			}
-			ALL = {
+			ISL = {
 				primary_culture = bedouin
 				add_accepted_culture = union
 				add_accepted_culture = persian
@@ -2589,7 +2589,7 @@ political_decisions = {
 				tag = ARA
 				tag = MUG
 				tag = TIM
-				tag = ALL
+				tag = ISL
 			}
 		}	
 		allow = {
@@ -2642,7 +2642,7 @@ political_decisions = {
 				tag = TUR
 				tag = IRQ
 				tag = SYR
-				tag = ALL
+				tag = ISL
 			}
 		}	
 		allow = {
@@ -3147,7 +3147,7 @@ political_decisions = {
 			NOT = {
 				exists = YEM
 				tag = ARA
-				tag = ALL
+				tag = ISL
 			}
 		}	
 		allow = {

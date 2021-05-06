@@ -2409,8 +2409,8 @@ province_event = {
 	desc = EVTDESC550028
 
 	trigger = { 
-		exists = ALL
-		controlled_by = ALL
+		exists = ISL
+		controlled_by = ISL
 		any_pop = {
 			strata = middle
 			OR = { #Islamic
@@ -2425,14 +2425,14 @@ province_event = {
 				pop_majority_religion = kharijite
 			}
 		}
-		NOT = { is_core = ALL }
+		NOT = { is_core = ISL }
 	}
 
 	mean_time_to_happen = { months = 0.0001 }
 
 	option = { 
 		name = EVTOPTA550028
-		add_core = ALL
+		add_core = ISL
 	}
 }
 country_event = { 

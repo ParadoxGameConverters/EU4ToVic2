@@ -10,7 +10,7 @@
 #
 # supported: using multiple flag=<..> and reform=<...> specifiers, or both, eg.:
 # link = { eu4 = PAP v2 = ITP reform = kingdom_of_god_reform }
-# link = { eu4 = EGY flag = caliphate_done v2 = ALL }
+# link = { eu4 = EGY flag = caliphate_done v2 = ISL }
 # link = { eu4 = ULM flag = embraced_by_aliens flag = survived_zombie_apocalipse reform = alien_government v2 = ALI }
 # you can use multiple flags and/or reforms in the same line and only one of each needs to match in order for the mapping to become valid.
 # If you're using these specifiers, keep the line ABOVE the line without specifiers, as it must be of higher priority:
@@ -18,7 +18,7 @@
 # link = { eu4 = PAP v2 = PAP }
 #
 # supported: flag/reform alone, without source tag:
-# link = { v2 = ALL flag = unified_islam } # The Caliphate
+# link = { v2 = ISL flag = unified_islam } # The Caliphate
 # link = { v2 = ALI reform = synthetics_reform } # Aliens example
 # Only the first country to match against flag will receive target v2 tag, so use this only for flags/reforms you know are unique.
 # papacy_reform for example is not unique as incoming CK2 fraticelli pope may also have it.
@@ -31,8 +31,8 @@ link = { eu4 = e_pirates v2 = PIR } # Pirates
 link = { eu4 = NAT v2 = NAT } # Natives
 
 # General wildcard overrides
-link = { v2 = ALL hpm = ISL flag = unified_islam } # The Caliphate
-link = { eu4 = e_sunni v2 = ALL } # The Caliphate
+link = { v2 = ISL flag = unified_islam } # The Caliphate
+link = { eu4 = e_sunni v2 = ISL } # The Caliphate
 
 #Scandinavia
 link = { eu4 = SWE v2 = SWE } # Sweden
@@ -125,8 +125,8 @@ link = { eu4 = k_anatolia v2 = ANA } # Anatolia
 link = { eu4 = CNN v2 = CNN } # Connacht
 link = { eu4 = c_connacht v2 = CNN } # Connacht
 link = { eu4 = d_connacht v2 = CNN } # Connacht
-link = { eu4 = CRN v2 = CRN } # Cornwall
-link = { eu4 = d_cornwall v2 = CRN } # Cornwall
+link = { eu4 = CRN v2 = KER } # Cornwall
+link = { eu4 = d_cornwall v2 = KER } # Cornwall
 link = { eu4 = ENG v2 = ENL } # England
 link = { eu4 = k_england v2 = ENL } # England
 link = { eu4 = LEI v2 = LEI } # Leinster
@@ -775,7 +775,7 @@ link = { eu4 = MIR v2 = MIR } # Merina
 link = { eu4 = SKA v2 = SKA } # Sakalava
 link = { eu4 = BTS v2 = BTS } # Betsimisaraka
 link = { eu4 = MFY v2 = MFY } # Mahafaly
-link = { eu4 = ANT v2 = ANT } # Antemoro
+# link = { eu4 = ANT v2 = ANT } # Antemoro - who will notice?
 
 #Far East
 link = { v2 = DAI flag = is_dai_nam_flag } # Dai Nam => Dai Viet
@@ -809,7 +809,7 @@ link = { eu4 = MRI v2 = MRI } # Mori
 link = { eu4 = ODA v2 = ODA } # Oda
 link = { eu4 = OTM v2 = OTM } # Otomo
 link = { eu4 = OUC v2 = OUC } # Ouchi
-link = { eu4 = SBA v2 = SBA } # Shiba
+link = { eu4 = SBA v2 = SHB } # Shiba
 link = { eu4 = SMZ v2 = SMZ } # Shimazu
 link = { eu4 = TKD v2 = TKD } # Takeda
 link = { eu4 = TKG v2 = TKG } # Tokugawa
@@ -853,7 +853,7 @@ link = { eu4 = MAJ v2 = MJP } # Majapahit
 link = { eu4 = MCH v2 = MCK } # Manchu => Manchukuo
 link = { eu4 = MKS v2 = MKS } # Makassar
 link = { eu4 = MLC v2 = MLC } # Malacca
-link = { eu4 = MNG v2 = MNG } # Ming
+link = { eu4 = MNG v2 = MNX } # Ming
 link = { eu4 = MTR v2 = MTR } # Mataram
 link = { eu4 = OIR v2 = OIR } # Oirat Horde
 link = { eu4 = PAT v2 = PAT } # Pattani
@@ -879,7 +879,7 @@ link = { eu4 = FRM v2 = TAI } # Formosa => Taiwan
 
 # 1.27 steppe tags
 #link = { eu4 = ILK v2 = XXX } # Ilkhanate => e_il-khanate
-link = { eu4 = KLM v2 = KLM } # Kalmyk
+link = { eu4 = KLM v2 = KMK } # Kalmyk
 link = { eu4 = MGE v2 = MGL } # Mongolia
 link = { eu4 = e_mongol_empire v2 = MGL } #Mongolia
 
@@ -962,7 +962,7 @@ link = { eu4 = GUJ v2 = GUJ } # Gujarat
 link = { eu4 = k_gujarat v2 = GUJ } # Gujarat
 link = { eu4 = JNP v2 = JNP } # Jaunpur
 link = { eu4 = c_jaunpur v2 = JNP } # Jaunpur
-link = { eu4 = MAD v2 = MDR } # Madurai
+link = { eu4 = MAD v2 = XMA } # Madurai
 link = { eu4 = MLW v2 = MAW } # Malwa
 link = { eu4 = k_malwa v2 = MAW } # Malwa
 link = { eu4 = MAW v2 = JOD } # Marwar => Jodhpur
@@ -1062,7 +1062,6 @@ link = { eu4 = KLH v2 = KLH } # Kalahandi
 link = { eu4 = KJH v2 = KJH } # Keonhjar
 link = { eu4 = SRG v2 = SRG } # Surguja
 link = { eu4 = KND v2 = SRI } # Kandy => Ceylon
-link = { eu4 = KND v2 = KTH } # Kandy
 link = { eu4 = TLG v2 = TLG } # Telingana
 link = { eu4 = k_telingana v2 = TLG } # Telingana
 link = { eu4 = KLT v2 = KLT } # Kolathunad
@@ -1087,7 +1086,7 @@ link = { eu4 = SRH v2 = SRH } # Sirhind
 link = { eu4 = RJP v2 = RAJ } # Rajputana
 link = { eu4 = k_rajputana v2 = RAJ } # Rajputana
 
-link = { eu4 = BAR v2 = BAR } # Bar
+link = { eu4 = BAR v2 = BXR } # Bar
 link = { v2 = LUB eu4 = is_hanseatic_league_flag } # The Hansa => Lübeck
 link = { eu4 = HSA v2 = LUB } # Lubeck
 link = { eu4 = c_lubeck v2 = LUB } # Lubeck
@@ -1478,7 +1477,7 @@ link = { eu4 = NHS v2 = NHS } #Elysia
 
 # Extended Vanilla
 link = { eu4 = ANV v2 = ANV } #Angevin Empire
-link = { eu4 = CRL v2 = CRL } #Carniola
+link = { eu4 = CRL v2 = SLO } #Carniola
 link = { eu4 = ILY v2 = ILY } #Illyria
 link = { eu4 = MGU v2 = MGH } #Maghreb
 link = { eu4 = e_maghreb v2 = MGH } # Maghreb
@@ -1683,7 +1682,6 @@ link = { eu4 = BRM v2 = BUR } #Burma
 #link = { eu4 = OPO v2 = c_opole } #Opole
 #link = { eu4 = WRO v2 = c_upper_silesia } #Wroclaw
 #link = { eu4 = VID v2 = c_vidin } #Vidin
-link = { eu4 = CAR v2 = CAR } #Karantanija
 link = { eu4 = DLI v2 = CDL } #Dali
 link = { eu4 = SCB v2 = COB } #Cobourg
 link = { eu4 = DSH v2 = CSH } #Shun

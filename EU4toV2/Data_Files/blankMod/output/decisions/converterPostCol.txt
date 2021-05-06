@@ -294,14 +294,14 @@ political_decisions = {
 			2219 = { add_core = BHM } #Bahamas
 			2220 = { add_core = BHM }
 			2236 = { add_core = AGU } #Anguilla
-			2224 = { add_core = ATB } #Antigua and Barbuda
+			2224 = { add_core = ANT } #Antigua and Barbuda
 			2227 = { add_core = SKN } #Saint Kitts and Nevis
 			2225 = { add_core = MNR } #Montserrat
 			2230 = { add_core = GDL } #Guadeloupe
 			2232 = { add_core = DMN } #Dominica
 			2228 = { add_core = MTQ } #Martinique
 			2231 = { add_core = STL } #Saint Lucia
-			2229 = { add_core = BBD } #Barbados
+			2229 = { add_core = BAR } #Barbados
 			2233 = { add_core = GRD } #Grenada
 			2234 = { add_core = CUR remove_core = VNZ } #Curaçao
 			2235 = { add_core = CUR remove_core = VNZ }
@@ -375,14 +375,14 @@ political_decisions = {
 					AND = { tag = UOR NOT = { exists = UOR } }
 					AND = { tag = BHM NOT = { exists = BHM } }
 					AND = { tag = AGU NOT = { exists = AGU } }
-					AND = { tag = ATB NOT = { exists = ATB } }
+					AND = { tag = ANT NOT = { exists = ANT } }
 					AND = { tag = SKN NOT = { exists = SKN } }
 					AND = { tag = MNR NOT = { exists = MNR } }
 					AND = { tag = GDL NOT = { exists = GDL } }
 					AND = { tag = DMN NOT = { exists = DMN } }
 					AND = { tag = MTQ NOT = { exists = MTQ } }
 					AND = { tag = STL NOT = { exists = STL } }
-					AND = { tag = BBD NOT = { exists = BBD } }
+					AND = { tag = BAR NOT = { exists = BAR } }
 					AND = { tag = GRD NOT = { exists = GRD } }
 					AND = { tag = CUR NOT = { exists = CUR } }
 					AND = { tag = STV NOT = { exists = STV } }

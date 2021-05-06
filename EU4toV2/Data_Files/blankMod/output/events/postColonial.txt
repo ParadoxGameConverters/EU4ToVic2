@@ -16026,10 +16026,10 @@ country_event = {
 				continent = asia
 			}
 		}
-		NOT = { has_country_flag = ATB_independence }
+		NOT = { has_country_flag = ANT_independence }
 		has_global_flag = der_postcolonialism 
-		is_possible_vassal = ATB
-		NOT = { exists = ATB } 
+		is_possible_vassal = ANT
+		NOT = { exists = ANT } 
 	}
 				mean_time_to_happen = {
 		months = 120
@@ -16055,15 +16055,15 @@ country_event = {
 		}
 	}
 				immediate = {
-		set_country_flag = ATB_independence
+		set_country_flag = ANT_independence
 		any_owned = {
 			limit = {
-				is_core = ATB
+				is_core = ANT
 			}
-			secede_province = ATB
+			secede_province = ANT
 			remove_core = THIS
 		}
-		ATB = {
+		ANT = {
 			leadership = 80
 			years_of_research = 5
 			set_country_flag = buro_independence
@@ -16075,13 +16075,13 @@ country_event = {
 	}
 	option = {
 		name = EVTOPTA251001
-		create_vassal = ATB
+		create_vassal = ANT
 		diplomatic_influence = {
-			who = ATB
+			who = ANT
 			value = 200
 		}
 		relation = {
-			who = ATB
+			who = ANT
 			value = 50
 		}
 		ai_chance = {
@@ -16090,10 +16090,10 @@ country_event = {
 	}
 				option = {
 		name = EVTOPTB251001
-		ATB = { country_event = { id = 251000 days = 1 }
+		ANT = { country_event = { id = 251000 days = 1 }
 		}
 		relation = {
-			who = ATB
+			who = ANT
 			value = -50
 		}
 		ai_chance = {
@@ -17433,10 +17433,10 @@ country_event = {
 				continent = asia
 			}
 		}
-		NOT = { has_country_flag = BBD_independence }
+		NOT = { has_country_flag = BAR_independence }
 		has_global_flag = der_postcolonialism 
-		is_possible_vassal = BBD
-		NOT = { exists = BBD } 
+		is_possible_vassal = BAR
+		NOT = { exists = BAR } 
 	}
 				mean_time_to_happen = {
 		months = 120
@@ -17462,15 +17462,15 @@ country_event = {
 		}
 	}
 				immediate = {
-		set_country_flag = BBD_independence
+		set_country_flag = BAR_independence
 		any_owned = {
 			limit = {
-				is_core = BBD
+				is_core = BAR
 			}
-			secede_province = BBD
+			secede_province = BAR
 			remove_core = THIS
 		}
-		BBD = {
+		BAR = {
 			leadership = 80
 			years_of_research = 5
 			set_country_flag = buro_independence
@@ -17482,13 +17482,13 @@ country_event = {
 	}
 	option = {
 		name = EVTOPTA251001
-		create_vassal = BBD
+		create_vassal = BAR
 		diplomatic_influence = {
-			who = BBD
+			who = BAR
 			value = 200
 		}
 		relation = {
-			who = BBD
+			who = BAR
 			value = 50
 		}
 		ai_chance = {
@@ -17497,10 +17497,10 @@ country_event = {
 	}
 				option = {
 		name = EVTOPTB251001
-		BBD = { country_event = { id = 251000 days = 1 }
+		BAR = { country_event = { id = 251000 days = 1 }
 		}
 		relation = {
-			who = BBD
+			who = BAR
 			value = -50
 		}
 		ai_chance = {
