@@ -464,7 +464,6 @@ NEV		="countries/Nevers.txt"##
 NRM		="countries/Normandy.txt"##
 ORL		="countries/Orleans.txt"##
 PRO		="countries/Provence.txt"##
-RFR		="countries/RevolutionaryFrance.txt"##
 TUL		="countries/Toulouse.txt"##
 BEY		="countries/Berry.txt"	##
 OCC     =   "countries/Occitania.txt"
@@ -612,6 +611,7 @@ TKS     =   "countries/Turkestan.txt"
 # Japan
 TAC		="countries/Tachibana.txt"
 FUJ 		="countries/Fujiwara.txt"
+RFR		="countries/Nanbu.txt"
 
 #Others
 ABO     =   "countries/Aborigines.txt"
