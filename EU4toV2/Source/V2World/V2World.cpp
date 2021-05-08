@@ -2038,6 +2038,16 @@ void V2::World::copyHpmFiles() const
 			continue;
 		fs::copy_file(hpm + "/news/" + file, out + "/news/" + file);
 	}
+
+	// flag for vic2tohoi4
+	std::ofstream flagFile("output/" + theConfiguration.getOutputName() + "/hybridization.txt");
+	if (!flagFile.is_open())
+	{
+		throw std::runtime_error("Could not write hybridization file to output/" + theConfiguration.getOutputName() + "/hybridization.txt - " +
+										 commonItems::GetLastErrorString());
+	}
+	flagFile << "HPM";
+	flagFile.close();
 }
 
 void V2::World::updateCountryDetails()
