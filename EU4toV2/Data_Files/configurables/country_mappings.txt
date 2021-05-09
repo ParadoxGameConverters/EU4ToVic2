@@ -1432,7 +1432,7 @@ link = { eu4 = TSC v2 = TSC } # Tuscarora
 
 #North American Pueblos
 link = { eu4 = OHK v2 = OHK } # Ohkay Owingeh
-# link = { eu4 = ISL v2 = ISL } # Isleta <- this is Islamic Caliphate in HPM, AVOID.
+link = { eu4 = ISL v2 = IST } # Isleta
 link = { eu4 = ACO v2 = ACO } # Acoma
 
 #North American Other Federations and Tags
