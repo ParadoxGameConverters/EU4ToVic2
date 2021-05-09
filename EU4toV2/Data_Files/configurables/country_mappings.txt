@@ -1263,7 +1263,7 @@ link = { eu4 = YOK v2 = YOK } # Yokotan
 link = { eu4 = LAC v2 = LAC } # Lacandon
 link = { eu4 = KAQ v2 = KAQ } # Kaqchikel
 link = { eu4 = CTM v2 = CCT } # Chactemal
-link = { eu4 = KER v2 = KER } # Keres
+link = { eu4 = KER v2 = ZIA } # Keres/Zia
 link = { eu4 = ZNI v2 = ZNI } # Zuni
 link = { eu4 = MSC v2 = MSC } # Mescalero
 link = { eu4 = LIP v2 = LPN } # Lipan
