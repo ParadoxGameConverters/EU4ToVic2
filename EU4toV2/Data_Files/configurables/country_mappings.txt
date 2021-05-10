@@ -1181,8 +1181,8 @@ link = { eu4 = CHU v2 = CHU } # Chukchi
 link = { eu4 = HOD v2 = HOD } # Hodyntsy
 link = { eu4 = CHV v2 = CHV } # Chavchuveny
 link = { eu4 = KMC v2 = KMC } # Kamchadals
-link = { eu4 = BRT v2 = BYA } # Buryats
-link = { eu4 = k_buryatia v2 = BYA } # Buryatia
+link = { eu4 = BRT v2 = BRY } # Buryats
+link = { eu4 = k_buryatia v2 = BRY } # Buryatia
 
 #North American Additions
 link = { eu4 = ARP v2 = ARP } # Arapaho
