@@ -1181,8 +1181,8 @@ link = { eu4 = CHU v2 = CHU } # Chukchi
 link = { eu4 = HOD v2 = HOD } # Hodyntsy
 link = { eu4 = CHV v2 = CHV } # Chavchuveny
 link = { eu4 = KMC v2 = KMC } # Kamchadals
-link = { eu4 = BRT v2 = BYA } # Buryats
-link = { eu4 = k_buryatia v2 = BYA } # Buryatia
+link = { eu4 = BRT v2 = BRY } # Buryats
+link = { eu4 = k_buryatia v2 = BRY } # Buryatia
 
 #North American Additions
 link = { eu4 = ARP v2 = ARP } # Arapaho
@@ -1263,7 +1263,7 @@ link = { eu4 = YOK v2 = YOK } # Yokotan
 link = { eu4 = LAC v2 = LAC } # Lacandon
 link = { eu4 = KAQ v2 = KAQ } # Kaqchikel
 link = { eu4 = CTM v2 = CCT } # Chactemal
-link = { eu4 = KER v2 = KER } # Keres
+link = { eu4 = KER v2 = ZIA } # Keres/Zia
 link = { eu4 = ZNI v2 = ZNI } # Zuni
 link = { eu4 = MSC v2 = MSC } # Mescalero
 link = { eu4 = LIP v2 = LPN } # Lipan
@@ -1432,7 +1432,7 @@ link = { eu4 = TSC v2 = TSC } # Tuscarora
 
 #North American Pueblos
 link = { eu4 = OHK v2 = OHK } # Ohkay Owingeh
-# link = { eu4 = ISL v2 = ISL } # Isleta <- this is Islamic Caliphate in HPM, AVOID.
+link = { eu4 = ISL v2 = IST } # Isleta
 link = { eu4 = ACO v2 = ACO } # Acoma
 
 #North American Other Federations and Tags

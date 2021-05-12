@@ -1459,10 +1459,10 @@ BRT = { # Brittany
     color3= { 35 110 165  }
 }
 
-BRY = { # Berry
-    color1= { 63 125 214  }
-    color2= { 177 129 125  }
-    color3= { 161 162 30  }
+BRY = { # Buryatia
+    color1= { 42 121 191  }
+    color2= { 255 214 0  }
+    color3= { 255 0 0  }
 }
 
 BSG = { # Basoga
