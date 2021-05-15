@@ -1920,6 +1920,22 @@ romantic = {
 		Tubertus Tubulus Tuditanus Tullus Turdus Varro Varus Vatia Verres Vespillo Vetus Vitulus
 		Volusus }
 	}
+	gaul = {
+		color = { 246 93 134 }
+
+		first_names = { Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+			Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+			Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+			Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+			Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+			Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+			Venutius Viridorix Vosenius Vodenos }
+		
+		last_names = { Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+			Punician Tautalid Correian Divicid Duratian Elitovian
+			Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid }
+	}
 	union = SPQ
 }
 
