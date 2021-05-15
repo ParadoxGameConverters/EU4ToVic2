@@ -74,7 +74,7 @@ eastern = {
 	# Carpathian
 	ujvilag delian fekete hungarian lumenoua sudic negru aromanian romanian szekely
 	# Greek-ish
-	neokosmi notios mavro greek magnagreek georgian armenian yenidun guney esmer north_caucasian alan dytic_american dytic_australian dytic_african prettanian adelphic spaniolic galatian alexandrine
+	neokosmi notios mavro greek magnagreek georgian armenian yenidun guney esmer north_caucasian alan dytic_american dytic_australian dytic_african prettanian adelphic spaniolic galatian alexandrine salinatorian
 	# Slave
 	afro_slavic afro_carpathian afro_greek
 	# HPM
