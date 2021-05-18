@@ -178,6 +178,8 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		version = std::make_unique<GameVersion>(theStream);
 		theConfiguration.setEU4Version(*version);
 		Log(LogLevel::Info) << "Savegave version: " << *version;
+		if (theConfiguration.isHpmEnabled() && *version < GameVersion("1.31"))
+			throw std::runtime_error("HPM hybridization can only be used on 1.31 saves or higher.");
 	});
 	registerKeyword("mod_enabled", [](std::istream& theStream) {
 		// DEFUNCT since 1.31.
