@@ -1533,6 +1533,8 @@ link = { eu4 = k_angleland v2 = AES } # Anglo-Saxony
 link = { eu4 = k_frankish v2 = FRK } # Frankia
 link = { eu4 = k_suebia v2 = SUE } # Suebi
 
+link = { eu4 = ASY v2 = ASY } # Assyria
+
 ##CK2eu4 Chinas
 link = { eu4 = WEI v2 = WEJ } # Wei
 link = { eu4 = HND v2 = HNX } # Han
