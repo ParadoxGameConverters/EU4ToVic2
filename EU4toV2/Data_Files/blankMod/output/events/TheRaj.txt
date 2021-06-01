@@ -1,5 +1,5 @@
 country_event = {
-	id = 5000000
+	id = 50000000	# extra 0 to avoid conflict with HPM
 	title = THERAJTITLE
 	desc = THERAJDESC
 	picture = queenvictoria
@@ -45,7 +45,7 @@ country_event = {
 	}
 }
 country_event = {
-	id = 5000001
+	id = 50000010	# extra 0 to avoid conflict with HPM
 	title = INTRAJTITLE
 	desc = INTRAJDESC
 	picture = queenvictoria
