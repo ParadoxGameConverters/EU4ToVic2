@@ -3417,6 +3417,7 @@ political_decisions = {
 				}
 				add_core = WSF
 			}
+			all_core = { remove_core = THIS }
 			change_tag = WSF
 			any_country = {
 				limit = {
