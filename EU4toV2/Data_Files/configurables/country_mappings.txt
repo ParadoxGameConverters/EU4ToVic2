@@ -783,6 +783,7 @@ link = { v2 = DAI flag = is_viet_nam_flag } # Vietnam => Dai Viet
 link = { eu4 = ANN v2 = ANN } # Annam
 link = { eu4 = ARK v2 = ARK } # Arakan
 link = { eu4 = ATJ v2 = ATJ } # Atjeh
+link = { eu4 = SIA v2 = SIA } # Siam
 link = { eu4 = AYU v2 = SIA } # Ayutthaya => Siam
 link = { eu4 = BLI v2 = BAL } # Bali
 link = { eu4 = BAN v2 = BNT } # Banten
@@ -1348,7 +1349,7 @@ link = { eu4 = IND v2 = IPR } # Indrapura
 link = { eu4 = JAR v2 = JAR } # Jarai
 link = { eu4 = RHA v2 = RHD } # Rhade
 link = { eu4 = KOH v2 = KOH } # Koho
-link = { eu4 = SIA v2 = IDO } # Siam (formable) => Indochina
+#link = { eu4 = SIA v2 = IDO } # Siam (formable) => Indochina
 
 # Leviathan Australian tags
 link = { eu4 = TIW v2 = TIW } # Tiwi
@@ -1766,7 +1767,6 @@ link = { eu4 = KAL v2 = SCA } #KalmarDenmark
 link = { eu4 = NSE v2 = SCA } #NorthSeaEmpire
 link = { eu4 = SEG v2 = SEG } #Segu
 link = { eu4 = SMM v2 = SHM } #Shammar
-link = { eu4 = SIA v2 = SIA } #Siam
 link = { eu4 = RSP v2 = SPA } #RevolutionarySpain
 link = { eu4 = SRN v2 = SRU } #Saruhan
 link = { eu4 = SHI v2 = SRV } #Shirvanshah
