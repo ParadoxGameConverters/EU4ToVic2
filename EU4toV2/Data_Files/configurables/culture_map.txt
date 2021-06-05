@@ -557,7 +557,6 @@ link = { vic2 = karen eu4 = karen }
 # Pacific - papuan, aboriginal, melanesian, moluccan
 link = { vic2 = hawaiian eu4 = polynesian provinceid = 1240 provinceid = 1997 }
 link = { vic2 = melanesian eu4 = polynesian region = melanesia_area }
-link = { vic2 = maori eu4 = polynesian region = oceanea_region }
 link = { vic2 = maori eu4 = maori }
 link = { vic2 = micronesian eu4 = polynesian region = micronesia_area }
 link = { vic2 = hawaiian eu4 = hawaian }
