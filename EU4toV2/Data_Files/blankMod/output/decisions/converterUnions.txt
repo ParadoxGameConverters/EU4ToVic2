@@ -661,12 +661,9 @@ political_decisions = {
 			1444 = { add_core = BIM }
 			1445 = { add_core = BIM }
 			1446 = { add_core = BIM }
-			#Fiji - grab the uncolonized
-			2454 = { secede_province = THIS }
-			2520 = { secede_province = THIS }
-			# Fiji - give it to the Fijians
-			2454 = { add_core = FIJ secede_province = FIJ change_controller = FIJ }
-			2520 = { add_core = FIJ secede_province = FIJ change_controller = FIJ }
+			# Fiji - give cores to the Fijians
+			2454 = { add_core = FIJ }
+			2520 = { add_core = FIJ }
 			#Jambi
 			1398 = { add_core = DJA }
 			1399 = { add_core = DJA }
@@ -689,11 +686,9 @@ political_decisions = {
 			1485 = { add_core = TAI }
 			2562 = { add_core = TAI }
 			#Tonga
-			2540 = { secede_province = THIS }
-			2540 = { add_core = TGA secede_province = TGA change_controller = TGA }
+			2540 = { add_core = TGA }
 			#Hawaii
-			658 = { secede_province = THIS }
-			658 = { secede_province = HAW change_controller = HAW }
+			658 = { add_core = HAW }
 			CHI_1487 = { add_core = FJN } #Fujian
 			CHI_1499 = { add_core = GNG } #Guangdong
 			CHI_1529 = { add_core = HNN } #Hunan
