@@ -1488,7 +1488,7 @@ link = { eu4 = NSE v2 = NSE } #North Sea Empire
 link = { eu4 = NYO v2 = MAN } # New York -> Manhattan
 #link = { eu4 = NYO v2 = UNY } The other one makes more sense
 link = { eu4 = NSC v2 = NOV } # Nova Scotia
-link = { eu4 = LNC v2 = LAN } # Lancaster
+link = { eu4 = LNC v2 = LNC } # Lancaster
 link = { eu4 = SUD v2 = LOI } # Sudreyjar -> Isles
 link = { eu4 = NOD v2 = FRO } # Nordreyjar -> Faroe
 
