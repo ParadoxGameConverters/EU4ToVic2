@@ -68,6 +68,7 @@ class World: commonItems::parser
 	void calculateIndustry() const;
 	std::string generateNeoCulture(const std::string& superRegionName, const std::string& oldCultureName);
 	bool uncompressSave();
+	void markNewWorldCountries();
 
 	struct saveData
 	{

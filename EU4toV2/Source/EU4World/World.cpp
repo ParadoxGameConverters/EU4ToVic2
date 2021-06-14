@@ -1,5 +1,6 @@
 #include "World.h"
 #include "CommonFunctions.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "Country/Countries.h"
 #include "Country/EU4Country.h"
@@ -7,8 +8,8 @@
 #include "GameVersion.h"
 #include "Localization/EU4Localization.h"
 #include "Log.h"
-#include "Mods/Mods.h"
 #include "Mods/ModNames.h"
+#include "Mods/Mods.h"
 #include "NationMerger/NationMergeParser.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
@@ -22,10 +23,10 @@
 #include <exception>
 #include <filesystem>
 #include <fstream>
+#include <ranges>
 #include <set>
 #include <string>
 namespace fs = std::filesystem;
-#include "CommonRegexes.h"
 
 EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
@@ -146,6 +147,11 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	{
 		removeLandlessNations();
 	}
+
+	Log(LogLevel::Info) << "-> Marking new world countries";
+	markNewWorldCountries();
+	Log(LogLevel::Progress) << "33 %";
+
 	LOG(LogLevel::Info) << "*** Good-bye EU4, you served us well. ***";
 	Log(LogLevel::Progress) << "40 %";
 }
@@ -196,7 +202,7 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		const auto& modBlobs = commonItems::blobList(theStream);
 		Log(LogLevel::Info) << "<> Savegame claims " << modBlobs.getBlobs().size() << " mods used:";
 		std::vector<std::string> modsList;
-		for (const auto& modBlob : modBlobs.getBlobs())
+		for (const auto& modBlob: modBlobs.getBlobs())
 		{
 			auto modStream = std::stringstream(modBlob);
 			const auto& modName = ModNames(modStream);
@@ -245,6 +251,24 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
 		wars.push_back(newWar);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+void EU4::World::markNewWorldCountries()
+{
+	for (const auto& country: theCountries | std::views::values)
+	{
+		const auto capital = country->getCapital();
+		if (capital == 0)
+			continue;
+		const auto& superRegion = regions->getParentSuperRegionName(capital);
+		if (!superRegion)
+			continue;
+		const auto& superGroup = superGroupMapper.getGroupForSuperRegion(*superRegion);
+		if (!superGroup)
+			continue;
+		if (*superGroup == "new_world" || *superRegion == "oceania_superregion") // a bit of a hack since oceania isn't a new world region (for neoculture reasons)
+			country->setNewWorld(true);
+	}
 }
 
 void EU4::World::calculateIndustry() const

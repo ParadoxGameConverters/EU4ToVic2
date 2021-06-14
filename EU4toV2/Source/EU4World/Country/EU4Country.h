@@ -36,6 +36,7 @@ class Country: commonItems::parser
 	void setInHRE(const bool _inHRE) { inHRE = _inHRE; }
 	void setEmperor(const bool _emperor) { holyRomanEmperor = _emperor; }
 	void setCelestialEmperor(const bool _celestialEmperor) { celestialEmperor = _celestialEmperor; }
+	void setNewWorld(const bool world) { newWorld = world; }
 	void eatCountry(const std::shared_ptr<Country>& target);
 	void setColonialRegion(const std::string& region) { colonialRegion = region; }
 	void takeArmies(const std::shared_ptr<Country>& target);
@@ -52,6 +53,7 @@ class Country: commonItems::parser
 	[[nodiscard]] auto getInHRE() const { return inHRE; }
 	[[nodiscard]] auto getHolyRomanEmperor() const { return holyRomanEmperor; }
 	[[nodiscard]] auto getCelestialEmperor() const { return celestialEmperor; }
+	[[nodiscard]] auto getNewWorld() const { return newWorld; }
 	[[nodiscard]] const auto& getTechGroup() const { return techGroup; }
 	[[nodiscard]] auto getIsolationism() const { return isolationism; }
 	[[nodiscard]] const auto& getPrimaryCulture() const { return primaryCulture; }
@@ -139,6 +141,7 @@ class Country: commonItems::parser
 	bool inHRE = false;
 	bool holyRomanEmperor = false;
 	bool celestialEmperor = false;
+	bool newWorld = false;
 	int capital = 0; // provinceID
 	std::string techGroup;
 	std::vector<bool> embracedInstitutions;

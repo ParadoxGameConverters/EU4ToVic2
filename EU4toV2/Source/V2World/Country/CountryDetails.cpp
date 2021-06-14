@@ -93,5 +93,10 @@ void V2::CountryDetails::registerKeys()
 		const commonItems::singleInt capitalInt(theStream);
 		capital = capitalInt.getInt();
 	});
+	registerKeyword("set_country_flag", [this](std::istream& theStream) {
+		const auto& flag = commonItems::getString(theStream);
+		if (flag == "new_world_nation")
+			countryFlags.emplace("new_world_nation");
+	});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 }

@@ -181,7 +181,18 @@ void V2::Country::initFromEU4Country(const EU4::Regions& eu4Regions,
 
 	// Misc
 	buildCanals();
+	setHPMFlags();
 }
+
+void V2::Country::setHPMFlags()
+{
+	if (!theConfiguration.isHpmEnabled())
+		return;
+
+	if (srcCountry->getNewWorld())
+		details.countryFlags.emplace("new_world_nation");	
+}
+
 
 void V2::Country::calculateConsciousness()
 {
