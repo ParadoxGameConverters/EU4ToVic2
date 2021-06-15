@@ -201,9 +201,9 @@ TEST(Mappers_CultureTests, transmogrifiedCultureCanBeOutput)
 	std::stringstream output;
 	output << "\t\tcolor " << *culture.getColor() << "\n"; // we don't know the color, it's random.
 	output << "\t\t\n";
-	output << "\t\tfirst_names = { Bob Jon }\n";
+	output << "\t\tfirst_names = { \"Bob\" \"Jon\" }\n";
 	output << "\t\t\n";
-	output << "\t\tlast_names = { Bobby Johnny }\n";
+	output << "\t\tlast_names = { \"Bobby\" \"Johnny\" }\n";
 	output << "\t\t\n";
 
 	std::stringstream actual;
@@ -227,9 +227,9 @@ TEST(Mappers_CultureTests, v2CultureCanBeOutput)
 	output << "\t\tradicalism = 4\n";
 	output << "\t\tprimary = TAG\n";
 	output << "\t\t\n";
-	output << "\t\tfirst_names = { Bob Jon }\n";
+	output << "\t\tfirst_names = { \"Bob\" \"Jon\" }\n";
 	output << "\t\t\n";
-	output << "\t\tlast_names = { Bobby Johnny }\n";
+	output << "\t\tlast_names = { \"Bobby\" \"Johnny\" }\n";
 	output << "\t\t\n";
 
 	std::stringstream actual;

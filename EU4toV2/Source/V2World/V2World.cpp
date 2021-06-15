@@ -585,7 +585,7 @@ void V2::World::importProvinces()
 	{
 		if (provinceFileName.find(".txt") == std::string::npos)
 			continue;
-		if (provinceFileName.find('~') == std::string::npos)
+		if (provinceFileName.find('~') != std::string::npos)
 			continue;
 		auto newProvince = std::make_shared<Province>(provinceFileName, climateMapper, terrainDataMapper, provinceNameParser, navalBaseMapper);
 		provinces.insert(std::make_pair(newProvince->getID(), newProvince));

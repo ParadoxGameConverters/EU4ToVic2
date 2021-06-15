@@ -145,9 +145,9 @@ TEST(Mappers_CultureGroupTests, v2CultureGroupCanBeOutput)
 	output << "\t\tradicalism = 4\n";
 	output << "\t\tprimary = TAG\n";
 	output << "\t\t\n";
-	output << "\t\tfirst_names = { Bob Jon }\n";
+	output << "\t\tfirst_names = { \"Bob\" \"Jon\" }\n";
 	output << "\t\t\n";
-	output << "\t\tlast_names = { Bobby Johnny }\n";
+	output << "\t\tlast_names = { \"Bobby\" \"Johnny\" }\n";
 	output << "\t\t\n";
 	output << "\t}\n";
 	output << "\t\n";
