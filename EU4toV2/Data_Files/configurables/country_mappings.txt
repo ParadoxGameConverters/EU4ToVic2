@@ -163,7 +163,7 @@ link = { eu4 = MCM v2 = MCM } # Munster (McCarthy)
 link = { eu4 = d_munster v2 = MCM } # Munster (Ireland)
 link = { eu4 = KOI v2 = KOI } # Mann
 link = { eu4 = c_isle_of_man v2 = KOI } # Mann
-link = { eu4 = LOI v2 = LOI } # The Isles
+#link = { eu4 = LOI v2 = LOI } # The Isles, who will notice?
 
 #Colonies
 link = { eu4 = BRZ v2 = BRZ } # Brazil
@@ -1483,6 +1483,14 @@ link = { eu4 = ILY v2 = ILY } #Illyria
 link = { eu4 = MGU v2 = MGH } #Maghreb
 link = { eu4 = e_maghreb v2 = MGH } # Maghreb
 link = { eu4 = NSE v2 = NSE } #North Sea Empire
+
+# Random Content 
+link = { eu4 = NYO v2 = MAN } # New York -> Manhattan
+#link = { eu4 = NYO v2 = UNY } The other one makes more sense
+link = { eu4 = NSC v2 = NOV } # Nova Scotia
+#link = { eu4 = LNC v2 = LNC } # Lancaster
+#link = { eu4 = SUD v2 = LOI } # Sudreyjar -> Isles
+link = { eu4 = NOD v2 = FRO } # Nordreyjar -> Faroe
 
 ##VICTORIA2 MAIN NEW COUNTRIES (added mostly through mods)
 link = { eu4 = k_bel v2 = BEL } #Belgium
