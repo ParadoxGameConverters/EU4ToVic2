@@ -5519,7 +5519,6 @@ neo_european_cultures = {
 		radicalism = 10
 	}
 	africaine = { 
-		hpm = kreol
 		color = { 63 32 10 }
 		first_names = { Alexis André Anténor Antoine Augustin Balthazar Beaubrun Céligny Charlemagne Charles
 			Cincinnatus Dantès Demesvar Denys Emmanuel Eugène Fabre Faustin Florvil François
