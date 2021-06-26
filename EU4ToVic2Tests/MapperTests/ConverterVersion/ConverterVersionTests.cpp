@@ -31,27 +31,27 @@ TEST(Mappers_ConverterVersionTests, VersionCanBeSet)
 TEST(Mappers_ConverterVersionTests, DescriptionCanBeConstructed)
 {
 	std::stringstream input;
-	input << "source = \"CK3\"\n";
-	input << "target = \"EU4\"\n";
-	input << "minSource = \"1.3\"\n";
-	input << "maxSource = \"1.4\"\n";
-	input << "minTarget = \"1.30.6\"\n";
-	input << "maxTarget = \"1.31.4\"\n";
+	input << "source = \"EU4\"\n";
+	input << "target = \"Vic2\"\n";
+	input << "minSource = \"1.31\"\n";
+	input << "maxSource = \"1.32\"\n";
+	input << "minTarget = \"3.0\"\n";
+	input << "maxTarget = \"3.1\"\n";
 	const mappers::ConverterVersion version(input);
 
-	EXPECT_EQ("Compatible with CK3 [v1.3-v1.4] and EU4 [v1.30.6-v1.31.4]", version.getDescription());
+	EXPECT_EQ("Compatible with EU4 [v1.31-v1.32] and Vic2 [v3.0-v3.1]", version.getDescription());
 }
 
 TEST(Mappers_ConverterVersionTests, DescriptionDoesNotDuplicateVersions)
 {
 	std::stringstream input;
-	input << "source = \"CK3\"\n";
-	input << "target = \"EU4\"\n";
-	input << "minSource = \"1.3\"\n";
-	input << "maxSource = \"1.3\"\n";
-	input << "minTarget = \"1.31\"\n";
-	input << "maxTarget = \"1.31\"\n";
+	input << "source = \"EU4\"\n";
+	input << "target = \"Vic2\"\n";
+	input << "minSource = \"1.31\"\n";
+	input << "maxSource = \"1.31\"\n";
+	input << "minTarget = \"3.0\"\n";
+	input << "maxTarget = \"3.0\"\n";
 	const mappers::ConverterVersion version(input);
 
-	EXPECT_EQ("Compatible with CK3 [v1.3] and EU4 [v1.31]", version.getDescription());
+	EXPECT_EQ("Compatible with EU4 [v1.31] and Vic2 [v3.0]", version.getDescription());
 }
