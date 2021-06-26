@@ -6,6 +6,7 @@
 #include "Diplomacy/EU4Diplomacy.h"
 #include "GameVersion.h"
 #include "IdeaEffects/IdeaEffectMapper.h"
+#include "Mappers/ConverterVersion/ConverterVersion.h"
 #include "Parser.h"
 #include "Provinces/Provinces.h"
 #include "Regions/Regions.h"
@@ -21,7 +22,7 @@ namespace EU4
 class World: commonItems::parser
 {
   public:
-	World(const mappers::IdeaEffectMapper& ideaEffectMapper);
+	World(const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::ConverterVersion& converterVersion);
 
 	[[nodiscard]] std::shared_ptr<Province> getProvince(int provNum) const { return provinces->getProvince(provNum); }
 	[[nodiscard]] std::shared_ptr<Country> getCountry(const std::string& tag) const;
@@ -40,7 +41,7 @@ class World: commonItems::parser
 	[[nodiscard]] bool decentralizedHRE() const { return hreReforms.contains("emperor_reichskrieg"); }
 
   private:
-	void registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper);
+	void registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::ConverterVersion& converterVersion);
 
 	void verifySave();
 	void verifySaveContents();

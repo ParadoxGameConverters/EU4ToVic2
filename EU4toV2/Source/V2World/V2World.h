@@ -46,7 +46,7 @@
 
 namespace mappers
 {
-class VersionParser;
+class ConverterVersion;
 class TechGroupsMapper;
 } // namespace mappers
 
@@ -58,7 +58,7 @@ class World
 	World(const EU4::World& sourceWorld,
 		 const mappers::IdeaEffectMapper& ideaEffectMapper,
 		 const mappers::TechGroupsMapper& techGroupsMapper,
-		 const mappers::VersionParser& versionParser);
+		 const mappers::ConverterVersion& converterVersion);
 
   private:
 	long totalWorldPopulation = 0;
@@ -108,10 +108,10 @@ class World
 	void addUnions(bool hreDecentralized, const std::shared_ptr<Country>& emperor);
 	void decentralizeHRE(bool hreDecentralized, const std::shared_ptr<Country>& emperor);
 	void convertArmies();
-	void output(const mappers::VersionParser& versionParser) const;
+	void output(const mappers::ConverterVersion& converterVersion) const;
 	void createModFile() const;
 	void outputPops() const;
-	static void outputVersion(const mappers::VersionParser& versionParser);
+	static void outputVersion(const mappers::ConverterVersion& converterVersion);
 	void modifyDefines() const;
 	void outputCommonCountries() const;
 	void outputLocalisation() const;

@@ -371,6 +371,7 @@
     <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTags\ColonialTag.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTags\ColonialTagsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="Source\Mappers\CountryFlags\CountryFlags.cpp" />
     <ClCompile Include="Source\Mappers\CountryFlags\CountryFlagsMapping.cpp" />
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMapping.cpp" />
@@ -450,7 +451,6 @@
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp" />
     <ClCompile Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp" />
-    <ClCompile Include="Source\Mappers\VersionParser\VersionParser.cpp" />
     <ClCompile Include="Source\Mappers\WarGoalMapper\WarGoalMapper.cpp" />
     <ClCompile Include="Source\V2World\Army\Army.cpp" />
     <ClCompile Include="Source\V2World\Army\Regiment.cpp" />
@@ -571,6 +571,7 @@
     <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.h" />
     <ClInclude Include="Source\Mappers\ColonialTags\ColonialTag.h" />
     <ClInclude Include="Source\Mappers\ColonialTags\ColonialTagsMapper.h" />
+    <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
     <ClInclude Include="Source\Mappers\CountryFlags\CountryFlags.h" />
     <ClInclude Include="Source\Mappers\CountryFlags\CountryFlagsMapping.h" />
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMapping.h" />
@@ -650,7 +651,6 @@
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
     <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h" />
     <ClInclude Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.h" />
-    <ClInclude Include="Source\Mappers\VersionParser\VersionParser.h" />
     <ClInclude Include="Source\Mappers\WarGoalMapper\WarGoalMapper.h" />
     <ClInclude Include="Source\V2World\Army\Army.h" />
     <ClInclude Include="Source\V2World\Army\Regiment.h" />

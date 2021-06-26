@@ -1,16 +1,16 @@
-#include "Log.h"
 #include "EU4ToVic2Converter.h"
-#include "Mappers/VersionParser/VersionParser.h"
+#include "Log.h"
+#include "Mappers/ConverterVersion/ConverterVersion.h"
 #include <fstream>
 
-int main(const int argc, const char * argv[])
+int main(const int argc, const char* argv[])
 {
 	try
 	{
-      std::ofstream clearLog("log.txt");
+		std::ofstream clearLog("log.txt");
 		clearLog.close();
-		const mappers::VersionParser versionParser;
-		LOG(LogLevel::Info) << versionParser;
+		const mappers::ConverterVersion converterVersion;
+		LOG(LogLevel::Info) << converterVersion;
 		LOG(LogLevel::Info) << "Built on " << __TIMESTAMP__;
 		if (argc >= 2)
 		{
@@ -21,7 +21,7 @@ int main(const int argc, const char * argv[])
 				LOG(LogLevel::Info) << "It uses configuration.txt, configured manually or by the frontend.";
 			}
 		}
-		convertEU4ToVic2(versionParser);
+		convertEU4ToVic2(converterVersion);
 		return 0;
 	}
 

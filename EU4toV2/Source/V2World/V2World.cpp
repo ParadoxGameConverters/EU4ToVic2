@@ -1,9 +1,9 @@
 #include "V2World.h"
 #include "../EU4World/World.h"
 #include "../Helpers/TechValues.h"
+#include "../Mappers/ConverterVersion/ConverterVersion.h"
 #include "../Mappers/Pops/PopMapper.h"
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
-#include "../Mappers/VersionParser/VersionParser.h"
 #include "CommonFunctions.h"
 #include "Configuration.h"
 #include "CultureGroups/CultureGroup.h"
@@ -22,7 +22,7 @@ constexpr int MAX_LIBERTY_COUNTRIES = 20;
 V2::World::World(const EU4::World& sourceWorld,
 	 const mappers::IdeaEffectMapper& ideaEffectMapper,
 	 const mappers::TechGroupsMapper& techGroupsMapper,
-	 const mappers::VersionParser& versionParser):
+	 const mappers::ConverterVersion& converterVersion):
 	 historicalData(sourceWorld.getHistoricalData())
 {
 	Log(LogLevel::Progress) << "45 %";
@@ -149,7 +149,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	}
 
 	LOG(LogLevel::Info) << "---> Le Dump <---";
-	output(versionParser);
+	output(converterVersion);
 
 	LOG(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
@@ -1523,7 +1523,7 @@ void V2::World::convertWars(const EU4::World& sourceWorld)
 	}
 }
 
-void V2::World::output(const mappers::VersionParser& versionParser) const
+void V2::World::output(const mappers::ConverterVersion& converterVersion) const
 {
 	commonItems::TryCreateFolder("output");
 	Log(LogLevel::Progress) << "80 %";
@@ -1542,7 +1542,7 @@ void V2::World::output(const mappers::VersionParser& versionParser) const
 
 	// Record converter version
 	LOG(LogLevel::Info) << "<- Writing version";
-	outputVersion(versionParser);
+	outputVersion(converterVersion);
 	Log(LogLevel::Progress) << "84 %";
 
 	// Update bookmark starting dates
@@ -1711,12 +1711,12 @@ void V2::World::outputWars() const
 	}
 }
 
-void V2::World::outputVersion(const mappers::VersionParser& versionParser)
+void V2::World::outputVersion(const mappers::ConverterVersion& converterVersion)
 {
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/eu4tov2_version.txt");
 	if (!output.is_open())
 		throw std::runtime_error("Error writing version file! Is the output folder writable?");
-	output << versionParser;
+	output << converterVersion;
 	output.close();
 }
 
@@ -2045,8 +2045,8 @@ void V2::World::copyHpmFiles() const
 	std::ofstream flagFile("output/" + theConfiguration.getOutputName() + "/hybridization.txt");
 	if (!flagFile.is_open())
 	{
-		throw std::runtime_error("Could not write hybridization file to output/" + theConfiguration.getOutputName() + "/hybridization.txt - " +
-										 commonItems::GetLastErrorString());
+		throw std::runtime_error(
+			 "Could not write hybridization file to output/" + theConfiguration.getOutputName() + "/hybridization.txt - " + commonItems::GetLastErrorString());
 	}
 	flagFile << "HPM";
 	flagFile.close();
