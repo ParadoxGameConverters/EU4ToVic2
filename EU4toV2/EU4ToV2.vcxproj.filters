@@ -415,9 +415,6 @@
     <ClCompile Include="Source\V2World\Output\outModFile.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\VersionParser\VersionParser.cpp">
-      <Filter>Mappers\VersionParser</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\Output\outVersion.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
@@ -585,6 +582,9 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Mods\ModNames.cpp">
       <Filter>EU4World\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp">
+      <Filter>Mappers\ConverterVersion</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -968,9 +968,6 @@
     <ClInclude Include="Source\V2World\Output\ModFile.h">
       <Filter>Vic2World\Output</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\VersionParser\VersionParser.h">
-      <Filter>Mappers\VersionParser</Filter>
-    </ClInclude>
     <ClInclude Include="Source\V2World\V2World.h">
       <Filter>Vic2World</Filter>
     </ClInclude>
@@ -1126,6 +1123,9 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Mods\ModNames.h">
       <Filter>EU4World\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h">
+      <Filter>Mappers\ConverterVersion</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1321,9 +1321,6 @@
     <Filter Include="Vic2World\MappingChecker">
       <UniqueIdentifier>{c9e81627-0b25-4e61-a165-6f2f8bee6050}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Mappers\VersionParser">
-      <UniqueIdentifier>{d85a505e-83f9-43ad-8a57-da9e364829c4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Mappers\AgreementMapper">
       <UniqueIdentifier>{ba134aea-55d0-4dd7-9f45-b015a2a9aa91}</UniqueIdentifier>
     </Filter>
@@ -1377,6 +1374,9 @@
     </Filter>
     <Filter Include="Mappers\ReligiousGroups">
       <UniqueIdentifier>{26f2aa56-2c79-4c55-9757-7507b1a40e54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ConverterVersion">
+      <UniqueIdentifier>{d85a505e-83f9-43ad-8a57-da9e364829c4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

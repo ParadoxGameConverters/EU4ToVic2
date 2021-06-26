@@ -1,13 +1,12 @@
 #ifndef EU4TOVIC2_CONVERTER_H
 #define EU4TOVIC2_CONVERTER_H
 
-#include <string>
-
-namespace mappers {
-	class VersionParser;
+namespace mappers
+{
+class ConverterVersion;
 }
 
-void convertEU4ToVic2(const mappers::VersionParser& versionParser);
+void convertEU4ToVic2(const mappers::ConverterVersion& converterVersion);
 void deleteExistingOutputFolder();
 
 #endif // EU4TOVIC2_CONVERTER_H

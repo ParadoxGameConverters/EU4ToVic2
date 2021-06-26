@@ -1,17 +1,17 @@
 #include "Configuration.h"
-#include "Log.h"
-#include "OSCompatibilityLayer.h"
+#include "EU4ToVic2Converter.h"
 #include "EU4World/World.h"
+#include "Log.h"
+#include "Mappers/ConverterVersion/ConverterVersion.h"
 #include "Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "Mappers/TechGroups/TechGroupsMapper.h"
+#include "OSCompatibilityLayer.h"
 #include "V2World/V2World.h"
-#include "Mappers/VersionParser/VersionParser.h"
-#include "EU4ToVic2Converter.h"
 
-void convertEU4ToVic2(const mappers::VersionParser& versionParser)
+void convertEU4ToVic2(const mappers::ConverterVersion& converterVersion)
 {
 	Log(LogLevel::Progress) << "0 %";
-	ConfigurationFile configurationFile("configuration.txt");
+	ConfigurationFile configurationFile("configuration.txt", converterVersion);
 	deleteExistingOutputFolder();
 	Log(LogLevel::Progress) << "4 %";
 
@@ -19,8 +19,8 @@ void convertEU4ToVic2(const mappers::VersionParser& versionParser)
 	const mappers::TechGroupsMapper techGroupsMapper;
 	Log(LogLevel::Progress) << "5 %";
 
-	const EU4::World sourceWorld(ideaEffectMapper);
-	V2::World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper, versionParser);
+	const EU4::World sourceWorld(ideaEffectMapper, converterVersion);
+	V2::World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper, converterVersion);
 
 	LOG(LogLevel::Info) << "* Conversion complete *";
 	Log(LogLevel::Progress) << "100 %";

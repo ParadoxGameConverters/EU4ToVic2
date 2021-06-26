@@ -28,10 +28,10 @@
 #include <string>
 namespace fs = std::filesystem;
 
-EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
+EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::ConverterVersion& converterVersion)
 {
 	LOG(LogLevel::Info) << "*** Hello EU4, loading World. ***";
-	registerKeys(ideaEffectMapper);
+	registerKeys(ideaEffectMapper, converterVersion);
 
 	superGroupMapper.init();
 	Log(LogLevel::Progress) << "6 %";
@@ -156,7 +156,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper)
 	Log(LogLevel::Progress) << "40 %";
 }
 
-void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
+void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::ConverterVersion& converterVersion)
 {
 	registerKeyword("EU4txt", [](std::istream& theStream) {
 	});
@@ -180,12 +180,22 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper)
 			theConfiguration.setEU4RandomSeed(0);
 		}
 	});
-	registerKeyword("savegame_version", [this](std::istream& theStream) {
+	registerKeyword("savegame_version", [this, converterVersion](std::istream& theStream) {
 		version = std::make_unique<GameVersion>(theStream);
 		theConfiguration.setEU4Version(*version);
 		Log(LogLevel::Info) << "Savegave version: " << *version;
 		if (theConfiguration.isHpmEnabled() && *version < GameVersion("1.31"))
 			throw std::runtime_error("HPM hybridization can only be used on 1.31 saves or higher.");
+		if (converterVersion.getMinSource() > *version)
+		{
+			Log(LogLevel::Error) << "Converter requires a minimum save from v" << converterVersion.getMinSource().toShortString();
+			throw std::runtime_error("Savegame vs converter version mismatch!");
+		}
+		if (!converterVersion.getMaxSource().isLargerishThan(*version))
+		{
+			Log(LogLevel::Error) << "Converter requires a maximum save from v" << converterVersion.getMaxSource().toShortString();
+			throw std::runtime_error("Savegame vs converter version mismatch!");
+		}
 	});
 	registerKeyword("mod_enabled", [](std::istream& theStream) {
 		// DEFUNCT since 1.31.
@@ -266,7 +276,8 @@ void EU4::World::markNewWorldCountries()
 		const auto& superGroup = superGroupMapper.getGroupForSuperRegion(*superRegion);
 		if (!superGroup)
 			continue;
-		if (*superGroup == "new_world" || *superRegion == "oceania_superregion") // a bit of a hack since oceania isn't a new world region (for neoculture reasons)
+		if (*superGroup == "new_world" ||
+			 *superRegion == "oceania_superregion") // a bit of a hack since oceania isn't a new world region (for neoculture reasons)
 			country->setNewWorld(true);
 	}
 }

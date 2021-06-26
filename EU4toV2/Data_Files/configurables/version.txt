@@ -2,4 +2,9 @@
 
 version = "1.0S"
 name = "Stettin"
-descriptionLine = "compatible with 1.31 and previous"
+source = "EU4"
+minSource = "1.0"
+maxSource = "1.31"
+target = "Vic2"
+minTarget = "3"
+maxTarget = "3"
