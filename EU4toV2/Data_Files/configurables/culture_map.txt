@@ -108,9 +108,9 @@ link = { vic2 = falklander eu4 = english eu4 = northumbrian eu4 = american eu4 =
 link = { vic2 = anglo_african eu4 = english eu4 = northumbrian eu4 = american eu4 = anglo_saxon eu4 = northumbrian eu4 = mercian eu4 = wessexian eu4 = essexian eu4 = east_anglian eu4 = ecgfrithian eu4 = anglosaxon eu4 = scottish eu4 = hibernic region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = anglo_african eu4 = african }
 link = { vic2 = english eu4 = english eu4 = northumbrian }
-link = { vic2 = scottish eu4 = scottish eu4 = hibernic eu4 = orkney eu4 = shetland eu4 = lowland_scottish }
+link = { vic2 = scottish eu4 = scottish eu4 = hibernic eu4 = orkney eu4 = shetland eu4 = lowland_scottish eu4 = scottish_celtic eu4 = manx eu4 = highland_scottish eu4 = gaelic_scottish }
 link = { vic2 = anglo_saxon eu4 = anglo_saxon eu4 = northumbrian eu4 = mercian eu4 = wessexian eu4 = essexian eu4 = east_anglian eu4 = ecgfrithian eu4 = anglosaxon }
-link = { vic2 = pictish eu4 = pictish eu4 = scottish_celtic eu4 = manx eu4 = highland_scottish eu4 = gaelic_scottish } # Pictish = Scottish Gaelic
+link = { vic2 = pictish eu4 = pictish } # Pictish
 link = { vic2 = british eu4 = northern_e eu4 = south_american }
 link = { vic2 = yankee eu4 = american eu4 = antillean }
 link = { vic2 = anglo_canadian eu4 = columbian }
