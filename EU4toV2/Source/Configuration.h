@@ -1,6 +1,6 @@
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
-#include "../Mappers/ConverterVersion/ConverterVersion.h"
+#include "ConverterVersion.h"
 #include "Date.h"
 #include "GameVersion.h"
 #include "Parser.h"
@@ -21,7 +21,7 @@ class Configuration: commonItems::parser
 	~Configuration() = default;
 
 	void instantiate(std::istream& theStream,
-		 const mappers::ConverterVersion& converterVersion,
+		 const commonItems::ConverterVersion& converterVersion,
 		 bool (*DoesFolderExist)(const std::string& path2),
 		 bool (*doesFileExist)(const std::string& path3));
 
@@ -117,10 +117,8 @@ class Configuration: commonItems::parser
 	static void verifyVic2Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
 	static void verifyVic2DocumentsPath(const std::string& path, bool (*DoesFolderExist)(const std::string& path2));
 	void setOutputName();
-	void verifyEU4Version(const mappers::ConverterVersion& converterVersion) const;
-	void verifyVic2Version(const mappers::ConverterVersion& converterVersion) const;
-	[[nodiscard]] std::optional<GameVersion> getRawVersion(const std::string& filePath) const;
-	[[nodiscard]] std::optional<GameVersion> getReadmeVersion(const std::string& filePath) const;
+	void verifyEU4Version(const commonItems::ConverterVersion& converterVersion) const;
+	void verifyVic2Version(const commonItems::ConverterVersion& converterVersion) const;
 
 	// options from configuration.txt
 	std::string EU4SaveGamePath;
@@ -162,7 +160,7 @@ extern Configuration theConfiguration;
 class ConfigurationFile: commonItems::parser
 {
   public:
-	explicit ConfigurationFile(const std::string& filename, const mappers::ConverterVersion& converterVersion);
+	explicit ConfigurationFile(const std::string& filename, const commonItems::ConverterVersion& converterVersion);
 	~ConfigurationFile() = default;
 	ConfigurationFile() = delete;
 	ConfigurationFile(const ConfigurationFile&) = delete;

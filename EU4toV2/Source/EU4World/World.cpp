@@ -28,7 +28,7 @@
 #include <string>
 namespace fs = std::filesystem;
 
-EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::ConverterVersion& converterVersion)
+EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commonItems::ConverterVersion& converterVersion)
 {
 	LOG(LogLevel::Info) << "*** Hello EU4, loading World. ***";
 	registerKeys(ideaEffectMapper, converterVersion);
@@ -156,7 +156,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const mappe
 	Log(LogLevel::Progress) << "40 %";
 }
 
-void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper, const mappers::ConverterVersion& converterVersion)
+void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper, const commonItems::ConverterVersion& converterVersion)
 {
 	registerKeyword("EU4txt", [](std::istream& theStream) {
 	});
