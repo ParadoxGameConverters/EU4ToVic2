@@ -415,9 +415,6 @@
     <ClCompile Include="Source\V2World\Output\outModFile.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Output\outVersion.cpp">
-      <Filter>Vic2World\Output</Filter>
-    </ClCompile>
     <ClCompile Include="Source\V2World\V2World.cpp">
       <Filter>Vic2World</Filter>
     </ClCompile>
@@ -583,8 +580,8 @@
     <ClCompile Include="Source\EU4World\Mods\ModNames.cpp">
       <Filter>EU4World\Mods</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp">
-      <Filter>Mappers\ConverterVersion</Filter>
+    <ClCompile Include="..\commonItems\ConverterVersion.cpp">
+      <Filter>CommonItems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1124,8 +1121,8 @@
     <ClInclude Include="Source\EU4World\Mods\ModNames.h">
       <Filter>EU4World\Mods</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h">
-      <Filter>Mappers\ConverterVersion</Filter>
+    <ClInclude Include="..\commonItems\ConverterVersion.h">
+      <Filter>CommonItems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1374,9 +1371,6 @@
     </Filter>
     <Filter Include="Mappers\ReligiousGroups">
       <UniqueIdentifier>{26f2aa56-2c79-4c55-9757-7507b1a40e54}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Mappers\ConverterVersion">
-      <UniqueIdentifier>{d85a505e-83f9-43ad-8a57-da9e364829c4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

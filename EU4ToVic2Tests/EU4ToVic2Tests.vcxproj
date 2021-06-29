@@ -238,7 +238,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialTags\ColonialTag.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ColonialTags\ColonialTagsMapper.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryFlags\CountryFlags.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryFlags\CountryFlagsMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryMappings\CountryMapping.cpp" />
@@ -365,7 +364,6 @@
     <ClCompile Include="MapperTests\ColonialFlagsMapper\ColonialFlagRegionTests.cpp" />
     <ClCompile Include="MapperTests\ColonialTagsMapper\ColonialTagsMapperTests.cpp" />
     <ClCompile Include="MapperTests\ColonialTagsMapper\ColonialTagTests.cpp" />
-    <ClCompile Include="MapperTests\ConverterVersion\ConverterVersionTests.cpp" />
     <ClCompile Include="MapperTests\CountryFlags\CountryFlagsMappingTests.cpp" />
     <ClCompile Include="MapperTests\CountryFlags\CountryFlagsTests.cpp" />
     <ClCompile Include="MapperTests\CountryMappings\CountryMappingsTests.cpp" />

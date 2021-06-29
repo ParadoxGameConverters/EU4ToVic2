@@ -32,6 +32,7 @@
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../Mappers/Unreleasables/Unreleasables.h"
 #include "../Mappers/WarGoalMapper/WarGoalMapper.h"
+#include "ConverterVersion.h"
 #include "Country/Country.h"
 #include "Diplomacy/Diplomacy.h"
 #include "MappingChecker/MappingChecker.h"
@@ -46,7 +47,6 @@
 
 namespace mappers
 {
-class ConverterVersion;
 class TechGroupsMapper;
 } // namespace mappers
 
@@ -58,7 +58,7 @@ class World
 	World(const EU4::World& sourceWorld,
 		 const mappers::IdeaEffectMapper& ideaEffectMapper,
 		 const mappers::TechGroupsMapper& techGroupsMapper,
-		 const mappers::ConverterVersion& converterVersion);
+		 const commonItems::ConverterVersion& converterVersion);
 
   private:
 	long totalWorldPopulation = 0;
@@ -108,10 +108,10 @@ class World
 	void addUnions(bool hreDecentralized, const std::shared_ptr<Country>& emperor);
 	void decentralizeHRE(bool hreDecentralized, const std::shared_ptr<Country>& emperor);
 	void convertArmies();
-	void output(const mappers::ConverterVersion& converterVersion) const;
+	void output(const commonItems::ConverterVersion& converterVersion) const;
 	void createModFile() const;
 	void outputPops() const;
-	static void outputVersion(const mappers::ConverterVersion& converterVersion);
+	static void outputVersion(const commonItems::ConverterVersion& converterVersion);
 	void modifyDefines() const;
 	void outputCommonCountries() const;
 	void outputLocalisation() const;

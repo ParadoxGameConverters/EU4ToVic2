@@ -1,7 +1,6 @@
 #include "V2World.h"
 #include "../EU4World/World.h"
 #include "../Helpers/TechValues.h"
-#include "../Mappers/ConverterVersion/ConverterVersion.h"
 #include "../Mappers/Pops/PopMapper.h"
 #include "../Mappers/TechGroups/TechGroupsMapper.h"
 #include "CommonFunctions.h"
@@ -22,7 +21,7 @@ constexpr int MAX_LIBERTY_COUNTRIES = 20;
 V2::World::World(const EU4::World& sourceWorld,
 	 const mappers::IdeaEffectMapper& ideaEffectMapper,
 	 const mappers::TechGroupsMapper& techGroupsMapper,
-	 const mappers::ConverterVersion& converterVersion):
+	 const commonItems::ConverterVersion& converterVersion):
 	 historicalData(sourceWorld.getHistoricalData())
 {
 	Log(LogLevel::Progress) << "45 %";
@@ -1523,7 +1522,7 @@ void V2::World::convertWars(const EU4::World& sourceWorld)
 	}
 }
 
-void V2::World::output(const mappers::ConverterVersion& converterVersion) const
+void V2::World::output(const commonItems::ConverterVersion& converterVersion) const
 {
 	commonItems::TryCreateFolder("output");
 	Log(LogLevel::Progress) << "80 %";
@@ -1711,7 +1710,7 @@ void V2::World::outputWars() const
 	}
 }
 
-void V2::World::outputVersion(const mappers::ConverterVersion& converterVersion)
+void V2::World::outputVersion(const commonItems::ConverterVersion& converterVersion)
 {
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/eu4tov2_version.txt");
 	if (!output.is_open())

@@ -1,15 +1,15 @@
 #include "Configuration.h"
 #include "CommonFunctions.h"
 #include "CommonRegexes.h"
+#include "GameVersion.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include <fstream>
-
 Configuration theConfiguration;
 
 void Configuration::instantiate(std::istream& theStream,
-	 const mappers::ConverterVersion& converterVersion,
+	 const commonItems::ConverterVersion& converterVersion,
 	 bool (*DoesFolderExist)(const std::string& path2),
 	 bool (*doesFileExist)(const std::string& path3))
 {
@@ -138,94 +138,12 @@ void Configuration::verifyEU4Path(const std::string& path, bool (*DoesFolderExis
 		throw std::runtime_error(path + " does not appear to be a valid EU4 install!");
 }
 
-std::optional<GameVersion> Configuration::getRawVersion(const std::string& filePath) const
-{
-	if (!commonItems::DoesFileExist(filePath))
-	{
-		Log(LogLevel::Warning) << "Failure verifying version: " << filePath << " does not exist. Proceeding blind.";
-		return std::nullopt;
-	}
-
-	std::ifstream versionFile(filePath);
-	if (!versionFile.is_open())
-	{
-		Log(LogLevel::Warning) << "Failure verifying version: " << filePath << " cannot be opened. Proceeding blind.";
-		return std::nullopt;
-	}
-
-	while (!versionFile.eof())
-	{
-		std::string line;
-		std::getline(versionFile, line);
-		if (line.find("rawVersion") == std::string::npos)
-			continue;
-		auto pos = line.find(':');
-		if (pos == std::string::npos)
-		{
-			Log(LogLevel::Warning) << "Failure extracting version: " << filePath << " has broken rawVersion. Proceeding blind.";
-			return std::nullopt;
-		}
-		line = line.substr(pos + 1, line.length());
-		pos = line.find_first_of('\"');
-		if (pos == std::string::npos)
-		{
-			Log(LogLevel::Warning) << "Failure extracting version: " << filePath << " has broken rawVersion. Proceeding blind.";
-			return std::nullopt;
-		}
-		line = line.substr(pos + 1, line.length());
-		pos = line.find_first_of('\"');
-		if (pos == std::string::npos)
-		{
-			Log(LogLevel::Warning) << "Failure extracting version: " << filePath << " has broken rawVersion. Proceeding blind.";
-			return std::nullopt;
-		}
-		line = line.substr(0, pos);
-		Log(LogLevel::Info) << "\tVersion is: " << line;
-		return GameVersion(line);
-	}
-
-	Log(LogLevel::Warning) << "Failure verifying version: " << filePath << " doesn't contain rawVersion. Proceeding blind.";
-	return std::nullopt;
-}
-
-std::optional<GameVersion> Configuration::getReadmeVersion(const std::string& filePath) const
-{
-	std::ifstream versionFile(filePath);
-	if (!versionFile.is_open())
-	{
-		Log(LogLevel::Warning) << "Failure verifying version: " << filePath << " cannot be opened. Proceeding blind.";
-		return std::nullopt;
-	}
-
-	std::string line;
-	std::getline(versionFile, line);
-	if (versionFile.eof())
-	{
-		Log(LogLevel::Warning) << "Failure verifying version: " << filePath << " is broken. Proceeding blind.";
-		return std::nullopt;
-	}
-	std::getline(versionFile, line);
-
-	auto pos = line.find(" below");
-	if (pos == std::string::npos)
-	{
-		Log(LogLevel::Warning) << "Failure verifying version: " << filePath << " is broken. Proceeding blind.";
-		return std::nullopt;
-	}
-
-	line = line.substr(0, pos);
-	pos = line.find_last_of(' ');
-	line = line.substr(pos + 1, line.length());
-	Log(LogLevel::Info) << "\tVersion is: " << line;
-	return GameVersion(line);
-}
-
-void Configuration::verifyVic2Version(const mappers::ConverterVersion& converterVersion) const
+void Configuration::verifyVic2Version(const commonItems::ConverterVersion& converterVersion) const
 {
 	GameVersion vic2version;
 	if (commonItems::DoesFileExist(Vic2Path + "/changelog_3.04.txt"))
 	{
-		Log(LogLevel::Info) << "Version is: 3.0.4";
+		Log(LogLevel::Info) << "Vic2 version: 3.0.4";
 		return;
 	}
 
@@ -240,12 +158,14 @@ void Configuration::verifyVic2Version(const mappers::ConverterVersion& converter
 		}
 	}
 
-	const auto V2Version = getReadmeVersion(readmePath);
+	const auto V2Version = GameVersion::extractVersionFromReadMe(readmePath);
 	if (!V2Version)
 	{
 		Log(LogLevel::Error) << "Vic2 version could not be determined, proceeding blind!";
 		return;
 	}
+
+	Log(LogLevel::Info) << "Vic2 version: " << V2Version->toShortString();
 
 	if (converterVersion.getMinTarget() > *V2Version)
 	{
@@ -261,14 +181,16 @@ void Configuration::verifyVic2Version(const mappers::ConverterVersion& converter
 	}
 }
 
-void Configuration::verifyEU4Version(const mappers::ConverterVersion& converterVersion) const
+void Configuration::verifyEU4Version(const commonItems::ConverterVersion& converterVersion) const
 {
-	const auto EU4Version = getRawVersion(EU4Path + "/launcher-settings.json");
+	const auto EU4Version = GameVersion::extractVersionFromLauncher(EU4Path + "/launcher-settings.json");
 	if (!EU4Version)
 	{
 		Log(LogLevel::Error) << "EU4 version could not be determined, proceeding blind!";
 		return;
 	}
+
+	Log(LogLevel::Info) << "EU4 version: " << EU4Version->toShortString();
 
 	if (converterVersion.getMinSource() > *EU4Version)
 	{
@@ -318,7 +240,7 @@ void Configuration::setOutputName()
 	LOG(LogLevel::Info) << "Using output name " << outputName;
 }
 
-ConfigurationFile::ConfigurationFile(const std::string& filename, const mappers::ConverterVersion& converterVersion)
+ConfigurationFile::ConfigurationFile(const std::string& filename, const commonItems::ConverterVersion& converterVersion)
 {
 	std::ifstream confFile(filename);
 	if (!confFile.is_open())

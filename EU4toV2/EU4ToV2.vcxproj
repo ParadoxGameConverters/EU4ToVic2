@@ -300,6 +300,7 @@
     <ClCompile Include="..\commonItems\Color.cpp" />
     <ClCompile Include="..\commonItems\CommonFunctions.cpp" />
     <ClCompile Include="..\commonItems\ConvenientParser.cpp" />
+    <ClCompile Include="..\commonItems\ConverterVersion.cpp" />
     <ClCompile Include="..\commonItems\Date.cpp" />
     <ClCompile Include="..\commonItems\GameVersion.cpp" />
     <ClCompile Include="..\commonItems\iconvlite.cpp" />
@@ -371,7 +372,6 @@
     <ClCompile Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTags\ColonialTag.cpp" />
     <ClCompile Include="Source\Mappers\ColonialTags\ColonialTagsMapper.cpp" />
-    <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="Source\Mappers\CountryFlags\CountryFlags.cpp" />
     <ClCompile Include="Source\Mappers\CountryFlags\CountryFlagsMapping.cpp" />
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMapping.cpp" />
@@ -483,7 +483,6 @@
     <ClCompile Include="Source\V2World\Output\outRelation.cpp" />
     <ClCompile Include="Source\V2World\Output\outReligiousGroups.cpp" />
     <ClCompile Include="Source\V2World\Output\outUncivReforms.cpp" />
-    <ClCompile Include="Source\V2World\Output\outVersion.cpp" />
     <ClCompile Include="Source\V2World\Output\outWar.cpp" />
     <ClCompile Include="Source\V2World\Party\Party.cpp" />
     <ClCompile Include="Source\V2World\Pop\Pop.cpp" />
@@ -500,6 +499,7 @@
     <ClInclude Include="..\commonItems\CommonFunctions.h" />
     <ClInclude Include="..\commonItems\CommonRegexes.h" />
     <ClInclude Include="..\commonItems\ConvenientParser.h" />
+    <ClInclude Include="..\commonItems\ConverterVersion.h" />
     <ClInclude Include="..\commonItems\Date.h" />
     <ClInclude Include="..\commonItems\GameVersion.h" />
     <ClInclude Include="..\commonItems\iconvlite.h" />
@@ -571,7 +571,6 @@
     <ClInclude Include="Source\Mappers\ColonialFlags\ColonialFlagsMapper.h" />
     <ClInclude Include="Source\Mappers\ColonialTags\ColonialTag.h" />
     <ClInclude Include="Source\Mappers\ColonialTags\ColonialTagsMapper.h" />
-    <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
     <ClInclude Include="Source\Mappers\CountryFlags\CountryFlags.h" />
     <ClInclude Include="Source\Mappers\CountryFlags\CountryFlagsMapping.h" />
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMapping.h" />

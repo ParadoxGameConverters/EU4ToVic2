@@ -761,12 +761,6 @@
     <ClCompile Include="EU4WorldTests\ModTests\ModNamesTests.cpp">
       <Filter>EU4WorldTests\ModTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\ConverterVersion\ConverterVersion.cpp">
-      <Filter>ConverterFiles\Mappers\ConverterVersion</Filter>
-    </ClCompile>
-    <ClCompile Include="MapperTests\ConverterVersion\ConverterVersionTests.cpp">
-      <Filter>MapperTests\ConverterVersion</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -1119,12 +1113,6 @@
     </Filter>
     <Filter Include="ConverterFiles\EU4World\Country">
       <UniqueIdentifier>{c1674661-8eff-458b-a61c-233f04e6f357}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ConverterFiles\Mappers\ConverterVersion">
-      <UniqueIdentifier>{f1d9c5d1-42fb-49a2-9345-7a77c79623ec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="MapperTests\ConverterVersion">
-      <UniqueIdentifier>{24a050fb-2bb3-4099-90b8-7de6bf187d7c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,6 @@
 #ifndef OUTPUT_H
 #define OUTPUT_H
 
-#include "../../Mappers/ConverterVersion/ConverterVersion.h"
 #include "../Army/Army.h"
 #include "../Army/Regiment.h"
 #include "../Country/Country.h"
@@ -45,7 +44,6 @@ std::ostream& operator<<(std::ostream& output, const War& war);
 namespace mappers
 {
 std::ostream& operator<<(std::ostream& output, const PartyType& partyDetails);
-std::ostream& operator<<(std::ostream& output, const ConverterVersion& converterVersion);
 std::ostream& operator<<(std::ostream& output, const CultureGroups& cultureGroupsMapper);
 std::ostream& operator<<(std::ostream& output, const CultureGroup& cultureGroup);
 std::ostream& operator<<(std::ostream& output, const Culture& culture);

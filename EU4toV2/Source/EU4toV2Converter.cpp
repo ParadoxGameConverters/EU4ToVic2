@@ -2,13 +2,12 @@
 #include "EU4ToVic2Converter.h"
 #include "EU4World/World.h"
 #include "Log.h"
-#include "Mappers/ConverterVersion/ConverterVersion.h"
 #include "Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "Mappers/TechGroups/TechGroupsMapper.h"
 #include "OSCompatibilityLayer.h"
 #include "V2World/V2World.h"
 
-void convertEU4ToVic2(const mappers::ConverterVersion& converterVersion)
+void convertEU4ToVic2(const commonItems::ConverterVersion& converterVersion)
 {
 	Log(LogLevel::Progress) << "0 %";
 	ConfigurationFile configurationFile("configuration.txt", converterVersion);
