@@ -6,6 +6,7 @@
 #include "Parser.h"
 #include <string>
 #include <vector>
+#include "ModLoader/ModLoader.h"
 
 const date HARD_ENDING_DATE("1836.1.1");
 const date FUTURE_DATE("2000.1.1");
@@ -30,7 +31,7 @@ class Configuration: commonItems::parser
 	void setStartEU4Date(date _startDate) { startEU4Date = _startDate; }
 	void setOutputName(const std::string& name) { outputName = name; }
 	void setActualName(const std::string& name) { actualName = name; }
-	void addEU4Mod(const std::string& mod) { EU4Mods.push_back(mod); }
+	void setMods(const Mods& theMods) { mods = theMods; }
 	void setEU4Version(const GameVersion& _version) { version = _version; }
 	void setEU4RandomSeed(int seed) { eu4Seed = seed; }
 
@@ -99,10 +100,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getEU4SaveGamePath() const { return EU4SaveGamePath; }
 	[[nodiscard]] const auto& getEU4Path() const { return EU4Path; }
 	[[nodiscard]] const auto& getEU4DocumentsPath() const { return EU4DocumentsPath; }
-	[[nodiscard]] const auto& getSteamWorkshopPath() const { return SteamWorkshopPath; }
-	[[nodiscard]] const auto& getCK2ExportPath() const { return CK2ExportPath; }
 	[[nodiscard]] const auto& getVic2Path() const { return Vic2Path; }
-	[[nodiscard]] const auto& getVic2DocumentsPath() const { return Vic2DocumentsPath; }
 	[[nodiscard]] const auto& getResetProvinces() const { return resetProvinces; }
 	[[nodiscard]] const auto& getEU4Version() const { return version; }
 	[[nodiscard]] const auto& getFirstEU4Date() const { return firstEU4Date; }
@@ -110,7 +108,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getStartEU4Date() const { return startEU4Date; }
 	[[nodiscard]] const auto& getOutputName() const { return outputName; }
 	[[nodiscard]] const auto& getActualName() const { return actualName; }
-	[[nodiscard]] const auto& getEU4Mods() const { return EU4Mods; }
+	[[nodiscard]] const auto& getMods() const { return mods; }
 
   private:
 	static void verifyEU4Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3));
@@ -124,10 +122,7 @@ class Configuration: commonItems::parser
 	std::string EU4SaveGamePath;
 	std::string EU4Path;
 	std::string EU4DocumentsPath;
-	std::string SteamWorkshopPath;
-	std::string CK2ExportPath;
 	std::string Vic2Path;
-	std::string Vic2DocumentsPath;
 	std::string resetProvinces = "no";
 	double MaxLiteracy = 1.0;
 	LIBERTYDESIRE libertyThreshold = LIBERTYDESIRE::Loyal;
@@ -152,7 +147,7 @@ class Configuration: commonItems::parser
 	std::string outputName;			  // actual output name
 	std::string incomingOutputName; // from configuration file
 	std::string actualName;			  // Not normalized like outputName
-	std::vector<std::string> EU4Mods;
+	Mods mods;
 };
 
 extern Configuration theConfiguration;

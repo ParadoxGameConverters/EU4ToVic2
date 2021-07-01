@@ -49,12 +49,6 @@
     <ClCompile Include="Source\Mappers\ProvinceMappings\ProvinceMapper.cpp">
       <Filter>Mappers\ProvinceMappings</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\Mods\Mod.cpp">
-      <Filter>EU4World\Mods</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Mods\Mods.cpp">
-      <Filter>EU4World\Mods</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Helpers\TechValues.cpp">
       <Filter>Helpers</Filter>
     </ClCompile>
@@ -583,6 +577,12 @@
     <ClCompile Include="..\commonItems\ConverterVersion.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
+    <ClCompile Include="..\commonItems\ModLoader\ModLoader.cpp">
+      <Filter>CommonItems\ModLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp">
+      <Filter>CommonItems\ModLoader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -631,12 +631,6 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\ProvinceMappings\ProvinceMapper.h">
       <Filter>Mappers\ProvinceMappings</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Mods\Mod.h">
-      <Filter>EU4World\Mods</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Mods\Mods.h">
-      <Filter>EU4World\Mods</Filter>
     </ClInclude>
     <ClInclude Include="Source\Helpers\TechValues.h">
       <Filter>Helpers</Filter>
@@ -1124,6 +1118,12 @@
     <ClInclude Include="..\commonItems\ConverterVersion.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
+    <ClInclude Include="..\commonItems\ModLoader\ModLoader.h">
+      <Filter>CommonItems\ModLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\ModLoader\ModParser.h">
+      <Filter>CommonItems\ModLoader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1371,6 +1371,9 @@
     </Filter>
     <Filter Include="Mappers\ReligiousGroups">
       <UniqueIdentifier>{26f2aa56-2c79-4c55-9757-7507b1a40e54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonItems\ModLoader">
+      <UniqueIdentifier>{3aa3310e-b8bc-405d-b796-3489b69fa32b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

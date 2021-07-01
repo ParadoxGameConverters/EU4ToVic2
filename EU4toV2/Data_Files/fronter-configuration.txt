@@ -21,36 +21,12 @@ requiredFolder = {
 	searchPath = "Paradox Interactive\Europa Universalis IV"
 }
 requiredFolder = {
-	name = CK2ExportDirectory
-	displayName = CK2EXP
-	tooltip = CK2EXPTIP
-	mandatory = false
-	searchPathType = windowsUsersFolder
-	searchPath = "Paradox Interactive\Crusader Kings II\eu4_export"
-}
-requiredFolder = {
-	name = SteamWorkshopDirectory
-	displayName = EU4MOD
-	tooltip = EU4MODTIP
-	mandatory = true
-	searchPathType = direct
-	searchPath = "C:\Program Files (x86)\Steam\SteamApps\workshop\content\236850"
-}
-requiredFolder = {
 	name = Vic2directory
 	displayName = VIC2FOLDER
 	tooltip = VIC2FOLDERTIP
 	mandatory = true
 	searchPathType = steamFolder
 	searchPathID = 42960
-}
-requiredFolder = {
-	name = Vic2Documentsdirectory
-	displayName = VIC2DOC
-	tooltip = VIC2DOCTIP
-	mandatory = true
-	searchPathType = windowsUsersFolder
-	searchPath = "Paradox Interactive\Victoria II"
 }
 requiredFolder = {
 	name = targetGameModPath

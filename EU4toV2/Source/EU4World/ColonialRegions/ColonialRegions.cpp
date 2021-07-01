@@ -16,9 +16,9 @@ EU4::ColonialRegions::ColonialRegions()
 	else
 		parseFile(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt");
 
-	for (const auto& mod: theConfiguration.getEU4Mods())
-		for (const auto& filename: commonItems::GetAllFilesInFolder(mod + "/common/colonial_regions/"))
-			parseFile(mod + "/common/colonial_regions/" + filename);
+	for (const auto& mod: theConfiguration.getMods())
+		for (const auto& filename: commonItems::GetAllFilesInFolder(mod.path + "/common/colonial_regions/"))
+			parseFile(mod.path + "/common/colonial_regions/" + filename);
 
 	clearRegisteredKeywords();
 }

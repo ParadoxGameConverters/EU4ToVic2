@@ -9,9 +9,9 @@ mappers::Continents::Continents()
 {
 	registerKeys();
 	LOG(LogLevel::Info) << "Loading Province into Continents.";
-	for (const auto& mod: theConfiguration.getEU4Mods())
+	for (const auto& mod: theConfiguration.getMods())
 	{
-		const auto& continentFile = mod + "/map/continent.txt";
+		const auto& continentFile = mod.path + "/map/continent.txt";
 		if (commonItems::DoesFileExist(continentFile))
 			parseFile(continentFile);
 	}

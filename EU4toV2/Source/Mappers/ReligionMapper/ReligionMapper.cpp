@@ -43,11 +43,11 @@ std::optional<std::string> mappers::ReligionMapper::getVic2Religion(const std::s
 
 void mappers::ReligionMapper::scrapeCustomReligions()
 {
-	for (const auto& modName: theConfiguration.getEU4Mods())
+	for (const auto& mod: theConfiguration.getMods())
 	{
-		if (commonItems::DoesFolderExist(modName + "/common/religions/"))
+		if (commonItems::DoesFolderExist(mod.path + "/common/religions/"))
 		{
-			for (const auto& fileName: commonItems::GetAllFilesInFolder(modName + "/common/religions/"))
+			for (const auto& fileName: commonItems::GetAllFilesInFolder(mod.path + "/common/religions/"))
 			{
 				if (fileName.find("99_converted_") == 0)
 				{

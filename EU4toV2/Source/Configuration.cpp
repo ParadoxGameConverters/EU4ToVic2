@@ -27,24 +27,11 @@ void Configuration::instantiate(std::istream& theStream,
 		EU4DocumentsPath = commonItems::getString(theStream);
 		LOG(LogLevel::Info) << "EU4 documents path: " << EU4DocumentsPath;
 	});
-	registerKeyword("SteamWorkshopDirectory", [this](std::istream& theStream) {
-		SteamWorkshopPath = commonItems::getString(theStream);
-		LOG(LogLevel::Info) << "EU4 steam workshop path: " << SteamWorkshopPath;
-	});
-	registerKeyword("CK2ExportDirectory", [this](std::istream& theStream) {
-		CK2ExportPath = commonItems::getString(theStream);
-		LOG(LogLevel::Info) << "CK2 Export path: " << CK2ExportPath;
-	});
 	registerKeyword("Vic2directory", [this, converterVersion, DoesFolderExist, doesFileExist](std::istream& theStream) {
 		Vic2Path = commonItems::getString(theStream);
 		verifyVic2Path(Vic2Path, DoesFolderExist, doesFileExist);
 		LOG(LogLevel::Info) << "Vic2 path: " << Vic2Path;
 		verifyVic2Version(converterVersion);
-	});
-	registerKeyword("Vic2Documentsdirectory", [this, DoesFolderExist](std::istream& theStream) {
-		Vic2DocumentsPath = commonItems::getString(theStream);
-		verifyVic2DocumentsPath(Vic2DocumentsPath, DoesFolderExist);
-		LOG(LogLevel::Info) << "Vic2 documents path: " << Vic2DocumentsPath;
 	});
 	registerKeyword("max_literacy", [this](std::istream& theStream) {
 		const auto maxLiteracyString = commonItems::getString(theStream);

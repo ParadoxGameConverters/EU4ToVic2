@@ -204,7 +204,6 @@
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4Leader.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Leader\EU4LeaderID.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Localization\EU4Localization.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\ModNames.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\NationMerger\MergeBlock.cpp" />
     <ClCompile Include="..\EU4toV2\Source\EU4World\NationMerger\NationMergeParser.cpp" />
@@ -332,7 +331,6 @@
     <ClCompile Include="EU4WorldTests\LeaderTests\EU4LeaderTests.cpp" />
     <ClCompile Include="EU4WorldTests\LocalizationTests\EU4LocalizationTests.cpp" />
     <ClCompile Include="EU4WorldTests\ModTests\ModNamesTests.cpp" />
-    <ClCompile Include="EU4WorldTests\ModTests\ModTests.cpp" />
     <ClCompile Include="EU4WorldTests\NationMergeTests\MergeBlocksTests.cpp" />
     <ClCompile Include="EU4WorldTests\NationMergeTests\NationMergeParserTests.cpp" />
     <ClCompile Include="EU4WorldTests\ProvinceTests\DateItemsTests.cpp" />
