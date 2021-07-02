@@ -9,7 +9,6 @@
 #include "Localization/EU4Localization.h"
 #include "Log.h"
 #include "Mods/ModNames.h"
-#include "Mods/Mods.h"
 #include "NationMerger/NationMergeParser.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
@@ -202,24 +201,32 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		Log(LogLevel::Info) << "-> Detecting used mods.";
 		const auto modsList = commonItems::getStrings(theStream);
 		Log(LogLevel::Info) << "<> Savegame claims " << modsList.size() << " mods used:";
-		for (const auto& usedMod: modsList)
-			Log(LogLevel::Info) << "---> " << usedMod;
-		Mods theMods(modsList);
+		Mods mods;
+		for (const auto& modPath: modsList)
+		{
+			Log(LogLevel::Info) << "---> " << modPath;
+			mods.emplace_back(Mod("", modPath));
+		}
+		commonItems::ModLoader modLoader;
+		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
+		theConfiguration.setMods(modLoader.getMods());
 	});
 	registerKeyword("mods_enabled_names", [](std::istream& theStream) {
 		// In use since 1.31.
 		Log(LogLevel::Info) << "-> Detecting used mods.";
 		const auto& modBlobs = commonItems::blobList(theStream);
 		Log(LogLevel::Info) << "<> Savegame claims " << modBlobs.getBlobs().size() << " mods used:";
-		std::vector<std::string> modsList;
+		Mods mods;
 		for (const auto& modBlob: modBlobs.getBlobs())
 		{
 			auto modStream = std::stringstream(modBlob);
 			const auto& modName = ModNames(modStream);
-			modsList.emplace_back(modName.getPath());
-			Log(LogLevel::Info) << "---> " << modName.getName() << ": " << modName.getPath();
+			mods.emplace_back(Mod(modName.getName(), modName.getPath()));
+			Log(LogLevel::Info) << "---> [" << modName.getName() << "]: " << modName.getPath();
 		}
-		Mods theMods(modsList);
+		commonItems::ModLoader modLoader;
+		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
+		theConfiguration.setMods(modLoader.getMods());
 	});
 	registerKeyword("revolution_target", [this](std::istream& theStream) {
 		revolutionTargetString = commonItems::getString(theStream);
@@ -532,11 +539,11 @@ void EU4::World::loadEU4RegionsOldVersion()
 {
 	auto regionFilename = theConfiguration.getEU4Path() + "/map/region.txt";
 
-	for (const auto& itr: theConfiguration.getEU4Mods())
+	for (const auto& mod: theConfiguration.getMods())
 	{
-		if (!commonItems::DoesFileExist(itr + "/map/region.txt"))
+		if (!commonItems::DoesFileExist(mod.path + "/map/region.txt"))
 			continue;
-		regionFilename = itr + "/map/region.txt";
+		regionFilename = mod.path + "/map/region.txt";
 	}
 
 	std::ifstream theStream(fs::u8path(regionFilename));
@@ -553,23 +560,23 @@ void EU4::World::loadEU4RegionsNewVersion()
 	auto areaFilename = theConfiguration.getEU4Path() + "/map/area.txt";
 	auto regionFilename = theConfiguration.getEU4Path() + "/map/region.txt";
 	auto superRegionFilename = theConfiguration.getEU4Path() + "/map/superregion.txt";
-	for (const auto& itr: theConfiguration.getEU4Mods())
+	for (const auto& mod: theConfiguration.getMods())
 	{
-		if (!commonItems::DoesFileExist(itr + "/map/area.txt"))
+		if (!commonItems::DoesFileExist(mod.path + "/map/area.txt"))
 			continue;
-		areaFilename = itr + "/map/area.txt";
+		areaFilename = mod.path + "/map/area.txt";
 	}
-	for (const auto& itr: theConfiguration.getEU4Mods())
+	for (const auto& mod: theConfiguration.getMods())
 	{
-		if (!commonItems::DoesFileExist(itr + "/map/region.txt"))
+		if (!commonItems::DoesFileExist(mod.path + "/map/region.txt"))
 			continue;
-		regionFilename = itr + "/map/region.txt";
+		regionFilename = mod.path + "/map/region.txt";
 	}
-	for (const auto& itr: theConfiguration.getEU4Mods())
+	for (const auto& mod: theConfiguration.getMods())
 	{
-		if (!commonItems::DoesFileExist(itr + "/map/superregion.txt"))
+		if (!commonItems::DoesFileExist(mod.path + "/map/superregion.txt"))
 			continue;
-		superRegionFilename = itr + "/map/superregion.txt";
+		superRegionFilename = mod.path + "/map/superregion.txt";
 	}
 
 	std::ifstream areaStream(fs::u8path(areaFilename));
@@ -599,13 +606,13 @@ void EU4::World::readCommonCountries()
 		throw std::runtime_error("Could not open " + theConfiguration.getEU4Path() + "/common/country_tags/00_countries.txt!");
 	readCommonCountriesFile(commonCountries, theConfiguration.getEU4Path());
 
-	for (const auto& itr: theConfiguration.getEU4Mods())
-		for (const auto& fileName: commonItems::GetAllFilesInFolder(itr + "/common/country_tags/"))
+	for (const auto& mod: theConfiguration.getMods())
+		for (const auto& fileName: commonItems::GetAllFilesInFolder(mod.path + "/common/country_tags/"))
 		{
-			std::ifstream convertedCommonCountries(fs::u8path(itr + "/common/country_tags/" + fileName));
+			std::ifstream convertedCommonCountries(fs::u8path(mod.path + "/common/country_tags/" + fileName));
 			if (!convertedCommonCountries.is_open())
-				throw std::runtime_error("Could not open " + itr + "/common/country_tags/" + fileName + "!");
-			readCommonCountriesFile(convertedCommonCountries, itr);
+				throw std::runtime_error("Could not open " + mod.path + "/common/country_tags/" + fileName + "!");
+			readCommonCountriesFile(convertedCommonCountries, mod.path);
 		}
 }
 

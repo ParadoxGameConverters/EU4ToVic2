@@ -160,51 +160,6 @@ TEST(EU4ToVic2_ConfigurationTests, EU4DocumentsDirectoryCanBeSet)
 	ASSERT_EQ(testConfiguration.getEU4DocumentsPath(), "C:\\EU4DocumentsDirectory");
 }
 
-
-TEST(EU4ToVic2_ConfigurationTests, SteamWorkshopDirectoryDefaultsBlank)
-{
-	Configuration testConfiguration;
-	std::stringstream input("");
-	commonItems::ConverterVersion converterVersion;
-	testConfiguration.instantiate(input, converterVersion, fakeDoesFolderExist, fakeDoesFileExist);
-
-	ASSERT_EQ(testConfiguration.getSteamWorkshopPath(), "");
-}
-
-
-TEST(EU4ToVic2_ConfigurationTests, SteamWorkshopDirectoryCanBeSet)
-{
-	Configuration testConfiguration;
-	std::stringstream input("SteamWorkshopDirectory = \"C:\\SteamWorksopDirectory\"");
-	commonItems::ConverterVersion converterVersion;
-	testConfiguration.instantiate(input, converterVersion, fakeDoesFolderExist, fakeDoesFileExist);
-
-	ASSERT_EQ(testConfiguration.getSteamWorkshopPath(), "C:\\SteamWorksopDirectory");
-}
-
-
-TEST(EU4ToVic2_ConfigurationTests, CK2ExportDirectoryDefaultsBlank)
-{
-	Configuration testConfiguration;
-	std::stringstream input("");
-	commonItems::ConverterVersion converterVersion;
-	testConfiguration.instantiate(input, converterVersion, fakeDoesFolderExist, fakeDoesFileExist);
-
-	ASSERT_EQ(testConfiguration.getCK2ExportPath(), "");
-}
-
-
-TEST(EU4ToVic2_ConfigurationTests, CK2ExportDirectoryCanBeSet)
-{
-	Configuration testConfiguration;
-	std::stringstream input("CK2ExportDirectory = \"C:\\CK2ExportDirectory\"");
-	commonItems::ConverterVersion converterVersion;
-	testConfiguration.instantiate(input, converterVersion, fakeDoesFolderExist, fakeDoesFileExist);
-
-	ASSERT_EQ(testConfiguration.getCK2ExportPath(), "C:\\CK2ExportDirectory");
-}
-
-
 TEST(EU4ToVic2_ConfigurationTests, Vic2PathDefaultsBlank)
 {
 	Configuration testConfiguration;
@@ -286,47 +241,6 @@ TEST(EU4ToVic2_ConfigurationTests, Vic2PathDefaultsToVanilla)
 	testConfiguration.instantiate(input, converterVersion, fakeDoesFolderExist, fakeDoesFileExist);
 
 	ASSERT_EQ("C:\\Vic2Path", testConfiguration.getVic2Path());
-}
-
-
-TEST(EU4ToVic2_ConfigurationTests, Vic2DocumentsPathDefaultsBlank)
-{
-	Configuration testConfiguration;
-	std::stringstream input("");
-	commonItems::ConverterVersion converterVersion;
-	testConfiguration.instantiate(input, converterVersion, fakeDoesFolderExist, fakeDoesFileExist);
-
-	ASSERT_EQ(testConfiguration.getVic2DocumentsPath(), "");
-}
-
-
-TEST(EU4ToVic2_ConfigurationTests, Vic2DocumentsPathThatDoesntExistFails)
-{
-	Configuration testConfiguration;
-	std::stringstream input("Vic2Documentsdirectory = \"C:\\FakeDirectory\"");
-
-	try
-	{
-		commonItems::ConverterVersion converterVersion;
-		testConfiguration.instantiate(input, converterVersion, fakeDoesFolderExist, fakeDoesFileExist);
-		FAIL();
-	}
-	catch (const std::runtime_error& e)
-	{
-		// and this tests that it has the correct message
-		ASSERT_STREQ("C:\\FakeDirectory does not exist!", e.what());
-	}
-}
-
-
-TEST(EU4ToVic2_ConfigurationTests, Vic2DocumentsPathCanBeSet)
-{
-	Configuration testConfiguration;
-	std::stringstream input("Vic2Documentsdirectory = \"C:\\Vic2DocumentsPath\"");
-	commonItems::ConverterVersion converterVersion;
-	testConfiguration.instantiate(input, converterVersion, fakeDoesFolderExist, fakeDoesFileExist);
-
-	ASSERT_EQ(testConfiguration.getVic2DocumentsPath(), "C:\\Vic2DocumentsPath");
 }
 
 

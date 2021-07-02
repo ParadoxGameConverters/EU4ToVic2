@@ -1,9 +1,6 @@
 [submodule "googletest"]
 	path = googletest
 	url = https://github.com/abseil/googletest
-[submodule "ZipLib"]
-	path = ZipLib
-	url = https://github.com/ParadoxGameConverters/ZipLib.git
 [submodule "Fronter"]
 	path = Fronter
 	url = https://github.com/ParadoxGameConverters/Fronter

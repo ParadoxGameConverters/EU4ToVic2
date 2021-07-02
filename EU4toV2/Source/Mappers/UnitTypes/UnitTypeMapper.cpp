@@ -11,9 +11,9 @@ void mappers::UnitTypeMapper::initUnitTypeMapper()
 	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/units/"))
 		addUnitFileToRegimentTypeMap(theConfiguration.getEU4Path() + "/common/units", filename);
 
-	for (const auto& modName: theConfiguration.getEU4Mods())
-		for (const auto& filename: commonItems::GetAllFilesInFolder(modName + "/common/units/"))
-			addUnitFileToRegimentTypeMap(modName + "/common/units", filename);
+	for (const auto& mod: theConfiguration.getMods())
+		for (const auto& filename: commonItems::GetAllFilesInFolder(mod.path + "/common/units/"))
+			addUnitFileToRegimentTypeMap(mod.path + "/common/units", filename);
 }
 
 void mappers::UnitTypeMapper::loadUnitType(const std::string& unitName, std::istream& theStream)

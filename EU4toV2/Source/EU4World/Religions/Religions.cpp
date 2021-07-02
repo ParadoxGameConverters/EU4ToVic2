@@ -14,9 +14,9 @@ EU4::Religions::Religions()
 	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/religions/"))
 		parseFile(theConfiguration.getEU4Path() + "/common/religions/" + filename);
 
-	for (const auto& modName: theConfiguration.getEU4Mods())
-		for (const auto& filename: commonItems::GetAllFilesInFolder(modName + "/common/religions/"))
-			parseFile(modName + "/common/religions/" + filename);
+	for (const auto& mod: theConfiguration.getMods())
+		for (const auto& filename: commonItems::GetAllFilesInFolder(mod.path + "/common/religions/"))
+			parseFile(mod.path + "/common/religions/" + filename);
 
 	clearRegisteredKeywords();
 }

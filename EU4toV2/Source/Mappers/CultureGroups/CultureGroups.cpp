@@ -17,9 +17,9 @@ void mappers::CultureGroups::initForEU4()
 	for (const auto& cultureFile: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/cultures/"))
 		parseFile(theConfiguration.getEU4Path() + "/common/cultures/" + cultureFile);
 
-	for (const auto& modPath: theConfiguration.getEU4Mods())
-		for (const auto& cultureFile: commonItems::GetAllFilesInFolder(modPath + "/common/cultures/"))
-			parseFile(modPath + "/common/cultures/" + cultureFile);
+	for (const auto& mod: theConfiguration.getMods())
+		for (const auto& cultureFile: commonItems::GetAllFilesInFolder(mod.path + "/common/cultures/"))
+			parseFile(mod.path + "/common/cultures/" + cultureFile);
 
 	clearRegisteredKeywords();
 }

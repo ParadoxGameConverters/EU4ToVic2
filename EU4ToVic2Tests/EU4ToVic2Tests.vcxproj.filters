@@ -56,9 +56,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp">
       <Filter>ConverterFiles\Mappers\ProvinceMappings</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\EU4World\Mods\Mod.cpp">
-      <Filter>ConverterFiles\EU4World\Mods</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\Helpers\TechValues.cpp">
       <Filter>ConverterFiles\Helpers</Filter>
     </ClCompile>
@@ -328,9 +325,6 @@
     </ClCompile>
     <ClCompile Include="EU4WorldTests\HistoryTests\CountryHistoryTests.cpp">
       <Filter>EU4WorldTests\HistoryTests</Filter>
-    </ClCompile>
-    <ClCompile Include="EU4WorldTests\ModTests\ModTests.cpp">
-      <Filter>EU4WorldTests\ModTests</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\NationMergeTests\MergeBlocksTests.cpp">
       <Filter>EU4WorldTests\NationMergeTests</Filter>
