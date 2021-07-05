@@ -418,8 +418,8 @@
 	link = { eu4 = 1552 v2 = 3005 } # Mazatlan Bay -> Mazatlan Bay
 	link = { eu4 = 1553 v2 = 3006 } # Gulf of California -> Gulf of California
 	link = { eu4 = 1554 v2 = 3007 } # Cape San Lucas -> Coast of Baja
-	link = { eu4 = 1555 v2 = 3008 } # Gulf of Catalina -> Coast of California
-	link = { eu4 = 1556 v2 = 3009 } # San Francisco Bay -> Santa Catalina Islands
+	link = { eu4 = 1555 v2 = 3008 } # Gulf of Catalina -> Santa Catalina Islands
+	link = { eu4 = 1556 v2 = 3009 } # San Francisco Bay -> Coast of California
 	link = { eu4 = 1557 v2 = 3010 } # Cape Blanco -> Coast of Oregon
 	link = { eu4 = 1558 v2 = 3011 } # Salish Sea -> Coast of Columbia
 	link = { eu4 = 1559 eu4 = 1560 eu4 = 1682 v2 = 3012 } # Hecate Strait, Glacier Bay, Gulf of Alaska -> Hecate Strait
@@ -1920,8 +1920,7 @@
 	link = { eu4 = 2273 eu4 = 2270 v2 = 1810 } # Ader, Dallol -> Dosso
 	link = { eu4 = 2269 v2 = 1808 } # Zarmaganda -> Niamey
 	link = { eu4 = 2268 eu4 = 1142 v2 = 1809 } # Aribanda, Dendi -> Say
-	link = { eu4 = 2272 eu4 = 2274 } # Azbin, Air -> DROPPED
-	link = { eu4 = 2275 v2 = 1812 } # Tenere -> Agades
+	link = { eu4 = 2275 eu4 = 2274 eu4 = 2272 v2 = 1812 } # Tenere, Air, Azbin -> Agades
 	link = { eu4 = 2277 v2 = 1817 } # Kawar -> Bilma
 	link = { eu4 = 2475 v2 = 1814 } # Djado -> Madama
 	link = { comment = "# Burkina Faso" }
@@ -1979,11 +1978,11 @@
 	link = { eu4 = 1178 v2 = 2558 v2 = 2092 } # Great Karoo -> Emthanjeni, Beaufort
 	link = { eu4 = 2880 v2 = 2094 } # Griqualand -> Griqualand
 	link = { eu4 = 2856 v2 = 2101 v2 = 2103 v2 = 2102 v2 = 2104 v2 = 2112 } # Highveld -> Thaba Nchu, Lephoi, Qwa-Qwa, Thaba Bosiu, Emnambithi
-	link = { eu4 = 1181 v2 = 2111 } # Natal -> Durban
+	link = { eu4 = 1181 v2 = 2111 } # Natal -> eThekwini
 	link = { eu4 = 4782 v2 = 2107 v2 = 2106 v2 = 2105 } # Tswana -> Makwasi, Saan, Ga-Rankuwa
 	link = { eu4 = 4781 v2 = 2109 } # Transvaal -> Ga-Riba
 	link = { eu4 = 4784 v2 = 2108 } # Upper Limpopo -> Mosega
-	link = { eu4 = 4783 v2 = 2110 v2 = 2114 } # Swazi -> Tsaneng, Mbabane
+	link = { eu4 = 4783 v2 = 2110 v2 = 2114 } # Swazi -> Tsaneng, Lobamba
 	link = { eu4 = 789 v2 = 2113 } # Mtetwa -> uMgungundlovu
 	link = { eu4 = 1182 v2 = 2049 v2 = 2050 } # Matsolo -> Inkomati, Manjakazi
 	link = { eu4 = 1183 v2 = 2051 } # Inhambane -> Inhambane
@@ -2606,15 +2605,15 @@
 	link = { eu4 = 1089 v2 = 2475 } # Wiradjuri -> Broken Hill
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 eu4 = 4868 eu4 = 4869 v2 = 2482 } # Paredarerme, Pyemmairrener, Peerapper -> Van Diemen's Land
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> Ngamotu
-	link = { eu4 = 2739 v2 = 2524 } # Kirikiriroa -> Kirikiriroa
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Te Upoko-o-te-Ika
-	link = { eu4 = 1108 v2 = 2571 } # Tauranga -> Tauranga
-	link = { eu4 = 4939 v2 = 2511 } # Te Moana-a-Toi -> Ahuriri
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Whakatu
-	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Otautahi, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Otepoti
+	link = { eu4 = 2739 v2 = 2524 } # Waikato -> Kirikiriroa
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Te Upoko-o-te-Ika
+	link = { eu4 = 1108 v2 = 2571 } # Te Moana a Toi -> Tauranga
+	link = { eu4 = 4939 v2 = 2511 } # Te Urewera -> Ahuriri
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Whakatu
+	link = { eu4 = 1109 v2 = 2515 } # Timaru -> Otautahi
+	link = { eu4 = 1246 v2 = 2513 v2 = 2514 } # Ata Whenua -> Otepoti, Hokitika
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 eu4 = 1791 } # Western Australia, Central Australia -> DROPPED
 	link = { comment = "# Pacific East resettable region = pacific" }
@@ -2690,14 +2689,14 @@
 	link = { eu4 = 2673 eu4 = 617 eu4 = 2674 v2 = 1405 } # Pasai, Kutaraja, Peureulak -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 eu4 = 4799 v2 = 1425 } # Tarakan, Bulungan, Berau, Sambaliung -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 eu4 = 4799 v2 = 1425 } # Tarakan, Bulungan, Sambaliung, Sangkulirang -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 v2 = 1422 } # MANY-TO-MANY: Kutai, Samarinda -> Samarinda, Muraleve
 	link = { eu4 = 639 eu4 = 4800 eu4 = 4801 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Paser, Batulican -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 eu4 = 2707 v2 = 1427 v2 = 1428 } # MANY-TO-MANY: Sampit, Katapang, Barito -> Kota Waringin, Sintang
-	link = { eu4 = 640 eu4 = 4804 eu4 = 4802 eu4 = 4803 v2 = 1426 v2 = 2576 } # MANY-TO-MANY: Sambas, Sarawak, Pontianak, Meliau -> Pontianak, Natuna
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 640 eu4 = 4804 eu4 = 4802 eu4 = 4803 v2 = 1426 v2 = 2576 } # MANY-TO-MANY: Sambas, Kuching, Pontianak, Meliau -> Pontianak, Natuna
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 636 v2 = 1393 } # Brunei -> Brunei
 	link = { eu4 = 2704 eu4 = 4806 eu4 = 4805 v2 = 1395 } # Sibu, Kapit, Bintulu -> Bintulu
 	link = { eu4 = 4807 } # North Borneo -> DROPPED

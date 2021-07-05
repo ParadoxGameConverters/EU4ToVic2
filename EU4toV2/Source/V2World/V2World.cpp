@@ -1964,6 +1964,10 @@ void V2::World::copyHpmFiles() const
 	const auto& out = "output/" + theConfiguration.getOutputName();
 
 	commonItems::CopyFolder(hpm + "/map", out + "/map");
+	commonItems::TryCopyFile("configurables/HPM/map/default.map", out + "/map/default.map");
+	std::ofstream defaultMap(out + "/map/default.map", std::ios_base::app);
+	defaultMap << "\ndefinitions = \"../mod/" << theConfiguration.getOutputName() << "/map/definition.csv\"\n";
+	defaultMap.close();
 
 	// gfx/interface
 	commonItems::CopyFolder(hpm + "/gfx/interface/leaders", out + "/gfx/interface/leaders");
