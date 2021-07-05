@@ -1635,10 +1635,12 @@ political_decisions = {
 	}
 	become_slovenia = {
 		potential = {
-			tag = AQU
-			tag = CRT
-			is_culture_group = south_slavic
-			NOT = { exists = SLO }
+			OR = {
+				tag = AQU
+				tag = CTI
+				is_culture_group = south_slavic
+				NOT = { exists = SLO }
+			}
 		}	
 		allow = {
 			war = no
