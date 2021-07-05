@@ -46,7 +46,7 @@ country_event = {
 
 country_event = {
     id = 250003
-    title = EVTNAME250003
+    title = EVTNAME250001
     desc = EVTDESC250003
 
     is_triggered_only = yes
@@ -230,7 +230,7 @@ country_event = {
 	mean_time_to_happen = { months = 1 }
 
 	option = { 
-		name = EVTOPTA350002
+		name = EVTOPTA250002
 		clr_country_flag = emperor_heaven
 	}
 }
@@ -261,7 +261,7 @@ country_event = {
 country_event = { 
 	id = 350004
 	title = EVTNAME350004
-	desc = EVTDESC350004
+	desc = EVTDESC350003
 
 	trigger = { 
 		tag = ABO
@@ -272,88 +272,13 @@ country_event = {
 	mean_time_to_happen = { months = 1 }
 
 	option = { 
-		name = EVTOPTA350004
+		name = EVTOPTA350003
 		any_core = {
 			limit = { empty = yes }
 			secede_province = ABO
 			remove_core = AST
 		}
     }
-}
-country_event = {
-	id = 350005
-	title = EVTNAME350004B
-	desc = EVTDESC350004B
-	picture = "Riot"
-	
-	trigger = {
-		ai = no
-	}
-	
-	fire_only_once = yes
-	
-	mean_time_to_happen = {
-		months = 1
-	}
-
-	option = {
-		name = EVTOPTA350004B
-		TUR_855 = { # Cyprus
-			limit = {
-				is_core = GRE
-				NOT = { owned_by = BYZ }
-			}
-			remove_core = GRE
-			add_core = CYP
-		}
-		EGY_843 = { # Crete
-			limit = {
-				is_core = GRE
-				NOT = { owned_by = BYZ }
-			}
-			add_core = CRE
-		}
-		EGY_897 = { # Aleppo
-			limit = {
-				is_core = IRQ
-				NOT = { owned_by = IRQ }
-			}
-			remove_core = IRQ
-			add_core = SYR
-		}
-		EGY_903 = { # Damascus
-			limit = {
-				is_core = IRQ
-				NOT = { owned_by = IRQ }
-			}
-			remove_core = IRQ
-			add_core = SYR
-		}
-		EGY_910 = { # Transjordan
-			limit = {
-				is_core = IRQ
-				NOT = { owned_by = IRQ }
-			}
-			remove_core = IRQ
-		}
-		EGY_910 = { add_core = JOR }
-		EGY_915 = { # Lebanon
-			limit = {
-				is_core = IRQ
-				NOT = { owned_by = IRQ }
-			}
-			remove_core = IRQ
-		}
-		EGY_915 = { add_core = LBN }
-		EGY_921 = { # Palestine
-			limit = {
-				is_core = IRQ
-				NOT = { owned_by = IRQ }
-			}
-			remove_core = IRQ
-		}
-		EGY_921 = { add_core = PLS }
-	}
 }
 country_event = {
 	id = 350006

@@ -1640,9 +1640,9 @@ political_decisions = {
 				tag = AQU
 				tag = CTI
 				primary_culture = slovene
-				NOT = { exists = SLO }
-				NOT = { exists = YUG }
 			}
+			NOT = { tag = YUG }
+			NOT = { exists = SLO }
 		}	
 		allow = {
 			war = no
