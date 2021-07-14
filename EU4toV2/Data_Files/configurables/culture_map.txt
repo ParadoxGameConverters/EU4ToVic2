@@ -651,7 +651,7 @@ link = { vic2 = teda eu4 = chadic eu4 = chadic_colonial eu4 = toubous }
 
 # Horn of Africa - amhara, sidama, tigray, oromo, somali
 link = { vic2 = amhara eu4 = amhara eu4 = habshi eu4 = tigrean }
-link = { vic2 = coptic eu4 = coptic eu4 = old_egyptian eu4 = old_egyptian_mod eu4 = coptic_colonial eu4 = coptic_culture }
+link = { vic2 = copts eu4 = coptic eu4 = old_egyptian eu4 = old_egyptian_mod eu4 = coptic_colonial eu4 = coptic_culture }
 link = { vic2 = sidama eu4 = sidamo }
 link = { vic2 = tigray eu4 = tigray }
 link = { vic2 = somali eu4 = somali eu4 = cushitic_colonial }

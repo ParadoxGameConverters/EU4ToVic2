@@ -3321,7 +3321,7 @@ levantine = {
 			Iyob Iyoben Eapen Kuriakos Kurien Cheriyan Vargisa Kuruvilla }
 		last_names = { Ahmadi Algafari Assadi Homsi Nasser }
 	}
-	coptic = {
+	copts = {
 		color = {250 236 127}
 
 		first_names = { Seka Khayu Tiu Thesh Neheb Wazner Mekh "Iry-Hor" Sekhen Serqer Narmer "Hor-Aha" Djer Djet Den Semerkhet "Qa'a" Sneferka Raneb Nynetjer Senedj Neferkara Hudjefa Djoser Sekhemkhet Sanakht Khaba Huni Sneferu Khufu Khafre Djdefre Menkaure Thamphtis Userkaf Sahure Neferefre Shepseskare Nyuserre Unas Teti "Dejkadre Shemai" Neferkare Merenhor Nikare Intef "Sankhkare Mentuhotep" Menkare Segerseni Senusret Nerikare Sonbef Sebkay Sobekhotep Dedumose Sheeshi Nehesy Sheneh Semenre Rahotep "Nebpehtire Ahmose" Amenhotep Thutmose  "Awybre Hor" Akhenaten Tutankhamun Ramesses Herihor Piankh Pinedjem Masaharta Menkheperre Smendes Pinedjem }

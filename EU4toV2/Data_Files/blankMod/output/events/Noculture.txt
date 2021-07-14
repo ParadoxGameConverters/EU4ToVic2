@@ -3015,7 +3015,7 @@ country_event = {
 		}
 		total_pops = 1
 		capital_scope = {
-			pop_majority_culture = coptic
+			pop_majority_culture = copts
 		}
 	}
 
@@ -3025,7 +3025,7 @@ country_event = {
 
 	option = {
 		name = EVTOPTA000002
-		primary_culture = coptic
+		primary_culture = copts
 	}
 }
 country_event = {

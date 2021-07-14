@@ -107,7 +107,7 @@ link = { tag = GEO culture = georgian } #Georgia
 link = { tag = ARM culture = armenian } #Armenia
 link = { tag = ALN culture = alan } #Alania
 link = { tag = ASY culture = syriac } #Assyria
-link = { tag = COP culture = coptic } # Coptia
+link = { tag = COP culture = copts } # Coptia
 
 #Turkic
 link = { tag = TUR culture = turkish } #the Ottomans

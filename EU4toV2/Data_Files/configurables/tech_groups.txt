@@ -29,7 +29,7 @@ western = {
 	# Varangian
 	varangian_american varangian_australian varangian_african varangian nehwaustronijaz
 	# British
-	yankee dixie anglo_canadian australian texan falklander anglo_african english scottish anglo_saxon pictish british welsh irish redwoodian guyanese incacunapic
+	yankee dixie anglo_canadian australian texan falklander anglo_african english scottish anglo_saxon pictish british welsh irish redwoodian guyanese incacunapic meashighcaw
 	# Celtic
 	belgian gaulish celtiberian noric celtic_american celtic_african celtic_australian alpine y_wladfan nova_scotian
 	# Roman
@@ -134,7 +134,7 @@ east_african = {
 	westernization = 4
 	cultures = {
 	# Horn
-	amhara coptic sidama tigray somali harari oromo afar
+	amhara copts sidama tigray somali harari oromo afar
 	# East
 	swahili kikuyu maasai sukuma unyamwezi rundi ruanda baganda malagasy
 	# South
