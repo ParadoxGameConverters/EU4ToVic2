@@ -15,7 +15,7 @@ class PartyTypeMapper: commonItems::parser
 
   private:
 	void registerKeys();
-	
+
 	std::map<std::string, PartyType> partyTypeMap;
 };
 } // namespace mappers

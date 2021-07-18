@@ -1,5 +1,5 @@
-#include "gtest/gtest.h"
 #include "Country/EU4ActivePolicy.h"
+#include "gtest/gtest.h"
 #include <sstream>
 
 
@@ -21,5 +21,3 @@ TEST(EU4World_Country_EU4ActivePolicyTests, policyCanBeImported)
 	EU4::EU4ActivePolicy thePolicy(input);
 	ASSERT_EQ(thePolicy.getPolicy(), "agricultural_cultivations");
 }
-
-

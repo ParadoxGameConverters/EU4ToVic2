@@ -1,6 +1,6 @@
 #include "EU4Empire.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 EU4::EU4Empire::EU4Empire(std::istream& theStream)
 {

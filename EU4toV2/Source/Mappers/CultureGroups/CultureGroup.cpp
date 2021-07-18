@@ -42,9 +42,10 @@ void mappers::CultureGroup::registerKeys()
 	registerKeyword("hpm_union", [this](const std::string& unused, std::istream& theStream) {
 		hpmUnionTag = commonItems::singleString(theStream).getString();
 	});
-	registerRegex("second_graphical_culture|graphical_culture|female_names|dynasty_names|male_names", [this](const std::string& unused, std::istream& theStream) {
-		commonItems::ignoreItem(unused, theStream);
-	});
+	registerRegex("second_graphical_culture|graphical_culture|female_names|dynasty_names|male_names",
+		 [this](const std::string& unused, std::istream& theStream) {
+			 commonItems::ignoreItem(unused, theStream);
+		 });
 	registerRegex(R"([\w_]+)", [this](std::string cultureName, std::istream& theStream) {
 		auto newCulture = std::make_shared<Culture>(theStream);
 

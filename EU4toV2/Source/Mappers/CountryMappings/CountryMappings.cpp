@@ -1,7 +1,8 @@
 #include "CountryMappings.h"
+#include "CommonRegexes.h"
 #include "CountryMapping.h"
-#include "CultureGroups/CultureGroups.h"
 #include "CultureGroups/CultureGroup.h"
+#include "CultureGroups/CultureGroups.h"
 #include "EU4World/Country/EU4Country.h"
 #include "Log.h"
 #include "ParserHelpers.h"
@@ -10,7 +11,6 @@
 #include <algorithm>
 #include <iomanip>
 #include <locale>
-#include "CommonRegexes.h"
 
 mappers::CountryMappings::CountryMappings():
 	 titleMapper(std::make_unique<TitleMapper>()), colonialTagMapper(std::make_unique<ColonialTagMapper>()),

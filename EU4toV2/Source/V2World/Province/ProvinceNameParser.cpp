@@ -1,8 +1,8 @@
 #include "ProvinceNameParser.h"
-#include "OSCompatibilityLayer.h"
 #include "../../Configuration.h"
-#include <fstream>
+#include "OSCompatibilityLayer.h"
 #include <filesystem>
+#include <fstream>
 namespace fs = std::filesystem;
 
 V2::ProvinceNameParser::ProvinceNameParser()
@@ -25,7 +25,8 @@ void V2::ProvinceNameParser::importProvinceLocalizations(const std::string& file
 	{
 		std::string line;
 		getline(locFile, line);
-		if (!(line.substr(0, 4) == "PROV") || !isdigit(line[4])) continue;
+		if (!(line.substr(0, 4) == "PROV") || !isdigit(line[4]))
+			continue;
 
 		const auto position = line.find_first_of(';');
 		const auto provID = stoi(line.substr(4, position - 4));
@@ -39,6 +40,7 @@ void V2::ProvinceNameParser::importProvinceLocalizations(const std::string& file
 std::optional<std::string> V2::ProvinceNameParser::getProvinceName(int provID) const
 {
 	const auto& name = provinceNames.find(provID);
-	if (name != provinceNames.end()) return name->second;
+	if (name != provinceNames.end())
+		return name->second;
 	return std::nullopt;
 }

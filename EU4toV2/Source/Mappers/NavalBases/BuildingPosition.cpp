@@ -1,7 +1,7 @@
 #include "BuildingPosition.h"
+#include "CommonRegexes.h"
 #include "NavalBase.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::BuildingPosition::BuildingPosition(std::istream& theStream)
 {

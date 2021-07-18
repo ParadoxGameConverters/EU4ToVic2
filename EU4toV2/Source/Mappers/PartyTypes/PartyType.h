@@ -30,7 +30,7 @@ class PartyType: commonItems::parser
 
 	std::string name;
 	std::string ideology;
-	
+
 	date startDate;
 	date endDate;
 

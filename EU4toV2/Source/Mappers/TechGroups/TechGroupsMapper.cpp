@@ -1,8 +1,8 @@
 #include "TechGroupsMapper.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "TechGroups.h"
-#include "CommonRegexes.h"
 
 mappers::TechGroupsMapper::TechGroupsMapper()
 {
@@ -16,7 +16,8 @@ mappers::TechGroupsMapper::TechGroupsMapper()
 		{
 			const auto& culWestItr = cultureWesternization.find(culture);
 			if (culWestItr != cultureWesternization.end())
-				Log(LogLevel::Warning) << "Culture: " << culture << " already has a westernization score of " << culWestItr->second << "! Overriding with " << techGroups.getWesternization() << ".";
+				Log(LogLevel::Warning) << "Culture: " << culture << " already has a westernization score of " << culWestItr->second << "! Overriding with "
+											  << techGroups.getWesternization() << ".";
 			cultureWesternization[culture] = techGroups.getWesternization();
 		}
 	});

@@ -1,6 +1,6 @@
 #include "PopTypes.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 mappers::PopTypes::PopTypes(std::istream& theStream)
 {

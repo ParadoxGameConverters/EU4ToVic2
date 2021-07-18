@@ -23,6 +23,6 @@ TEST(Mappers_GovernmentMapperTests, mismatchReturnsNulloptAndAStarkWarning)
 	std::cout.rdbuf(log.rdbuf());
 	ASSERT_EQ(std::nullopt, mapper.matchGovernment("sgov-error"));
 	std::cout.rdbuf(stdOutBuf);
-	
+
 	ASSERT_EQ(" [WARNING] No government mapping defined for sgov-error!\n", log.str());
 }

@@ -6,18 +6,18 @@
 
 namespace mappers
 {
-	class SuperRegion : commonItems::parser
-	{
-	public:
-		explicit SuperRegion(std::istream& theStream);
+class SuperRegion: commonItems::parser
+{
+  public:
+	explicit SuperRegion(std::istream& theStream);
 
-		[[nodiscard]] const auto& getSuperRegionAssimilationMap() const { return superRegionAssimilationMap; }
-		[[nodiscard]] const auto& getSuperRegionNames() const { return superRegionNames; }
-		
-	private:
-		std::map<std::string, int> superRegionAssimilationMap;
-		std::set<std::string> superRegionNames;
-	};
-}
+	[[nodiscard]] const auto& getSuperRegionAssimilationMap() const { return superRegionAssimilationMap; }
+	[[nodiscard]] const auto& getSuperRegionNames() const { return superRegionNames; }
+
+  private:
+	std::map<std::string, int> superRegionAssimilationMap;
+	std::set<std::string> superRegionNames;
+};
+} // namespace mappers
 
 #endif // SUPERREGION_H

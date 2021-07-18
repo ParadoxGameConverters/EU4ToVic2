@@ -14,7 +14,7 @@ TEST(Mappers_ColonialFlagsMapperTests, flagsCanBeLoadedAndRetrieved)
 	const auto& test1 = mapper.getFlag("test1");
 	const auto& test2 = mapper.getFlag("test2");
 	const auto& test3 = mapper.getFlag("test3");
-	
+
 	ASSERT_EQ("test1", test1->getName());
 	ASSERT_EQ("test2", test2->getName());
 	ASSERT_EQ("test3", test3->getName());
@@ -39,7 +39,7 @@ TEST(Mappers_ColonialFlagsMapperTests, commonNamesCanBeRetrieved)
 	const mappers::ColonialFlagsMapper mapper(input);
 
 	const auto& names = mapper.getCommonNames();
-	
+
 	ASSERT_EQ(2, names.size());
 	ASSERT_EQ("test1", names[0]);
 	ASSERT_EQ("test2", names[1]);

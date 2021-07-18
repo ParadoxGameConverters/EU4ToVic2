@@ -1,6 +1,6 @@
 #include "EU4WarDetails.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 void EU4::WarDetails::addDetails(std::istream& theStream)
 {

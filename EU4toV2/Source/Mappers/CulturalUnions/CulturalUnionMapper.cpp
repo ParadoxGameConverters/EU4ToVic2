@@ -1,7 +1,7 @@
 #include "CulturalUnionMapper.h"
+#include "CommonRegexes.h"
 #include "CulturalUnion.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::CulturalUnionMapper::CulturalUnionMapper(std::istream& theStream)
 {

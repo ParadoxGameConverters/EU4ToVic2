@@ -1,6 +1,6 @@
+#include "CommonFunctions.h"
 #include "Localization/EU4Localization.h"
 #include "gtest/gtest.h"
-#include "CommonFunctions.h"
 
 TEST(EU4World_EU4LocalizationTests, localizationsCanBeLoadedAndMatched)
 {
@@ -20,7 +20,7 @@ TEST(EU4World_EU4LocalizationTests, localizationsCanBeLoadedAndMatched)
 	locs.readFromStream(input);
 	locs.readFromStream(input2);
 	locs.readFromStream(input3);
-	
+
 	ASSERT_EQ("replaced value 1", *locs.getText("key1", "english"));
 	ASSERT_EQ("value \"subquoted\" 2", *locs.getText("key2", "english"));
 	ASSERT_EQ("valuee 1", *locs.getText("key1", "french"));

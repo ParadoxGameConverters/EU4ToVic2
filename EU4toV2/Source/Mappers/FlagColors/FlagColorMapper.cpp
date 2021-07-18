@@ -1,8 +1,8 @@
 #include "FlagColorMapper.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::FlagColorMapper::FlagColorMapper()
 {

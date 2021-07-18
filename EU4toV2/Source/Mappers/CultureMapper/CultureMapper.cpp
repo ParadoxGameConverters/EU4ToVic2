@@ -1,9 +1,9 @@
 #include "CultureMapper.h"
+#include "CommonRegexes.h"
 #include "CultureMappingRule.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Regions/Regions.h"
-#include "CommonRegexes.h"
 
 mappers::CultureMapper::CultureMapper(std::istream& theStream)
 {

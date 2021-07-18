@@ -15,7 +15,7 @@ class V2ProvinceRegionsMapper: commonItems::parser
 
   private:
 	void registerKeys();
-	
+
 	std::map<int, std::string> provinceRegions;
 };
 } // namespace mappers

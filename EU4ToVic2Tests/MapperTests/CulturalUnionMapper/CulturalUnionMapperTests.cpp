@@ -37,7 +37,7 @@ TEST(Mappers_CulturalUnionMapperTests, cultureMatchReturnsCoreTags)
 
 	ASSERT_EQ(1, theCulturalUnionMapper.getCulturesForCore("TA1").size());
 	ASSERT_TRUE(theCulturalUnionMapper.getCulturesForCore("TA1").contains("a_culture1"));
-	
+
 	ASSERT_EQ(3, theCulturalUnionMapper.getCulturesForCore("TAG").size());
 	ASSERT_TRUE(theCulturalUnionMapper.getCulturesForCore("TAG").contains("a_culture1"));
 	ASSERT_TRUE(theCulturalUnionMapper.getCulturesForCore("TAG").contains("a_culture2"));

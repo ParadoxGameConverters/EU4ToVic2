@@ -5,16 +5,16 @@
 
 namespace mappers
 {
-	class StartingInventionDetails : commonItems::parser
-	{
-	public:
-		explicit StartingInventionDetails(std::istream& theStream);
-		
-		[[nodiscard]] const auto& getTechName() const { return techName; }
+class StartingInventionDetails: commonItems::parser
+{
+  public:
+	explicit StartingInventionDetails(std::istream& theStream);
 
-	private:
-		std::string techName;		
-	};
-}
+	[[nodiscard]] const auto& getTechName() const { return techName; }
+
+  private:
+	std::string techName;
+};
+} // namespace mappers
 
 #endif // STARTING_INVENTION_DETAILS_H

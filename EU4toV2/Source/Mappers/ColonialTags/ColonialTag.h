@@ -1,7 +1,7 @@
 #ifndef COLONIAL_TAG_H
 #define COLONIAL_TAG_H
-#include <set>
 #include "Parser.h"
+#include <set>
 
 namespace mappers
 {

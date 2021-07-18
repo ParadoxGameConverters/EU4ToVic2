@@ -1,4 +1,5 @@
 #include "CultureGroups/CultureGroup.h"
+#include "CultureGroups/CultureGroups.h"
 #include "output.h"
 
 std::ostream& mappers::operator<<(std::ostream& output, const CultureGroups& cultureGroupsMapper)

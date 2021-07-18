@@ -1,8 +1,8 @@
 #include "EU4Army.h"
+#include "CommonRegexes.h"
 #include "ParserHelpers.h"
 #include "UnitTypes/UnitType.h"
 #include "UnitTypes/UnitTypeMapper.h"
-#include "CommonRegexes.h"
 
 EU4::EU4Army::EU4Army(std::istream& theStream, const std::string& potentialNavy)
 {

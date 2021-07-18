@@ -124,7 +124,7 @@ void V2::Country::outputCommons(std::ostream& output)
 		output << details.graphicalCulture << "\n";
 	else
 		output << "UsGC\n"; // default to US graphics
-	
+
 	if (nationalColors.getMapColor())
 		output << "color " << *nationalColors.getMapColor() << "\n";
 	else if (!modCommons.getColorString().empty())

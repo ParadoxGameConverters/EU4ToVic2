@@ -1,6 +1,6 @@
 #include "EU4NationalSymbol.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 EU4::NationalSymbol::NationalSymbol(std::istream& theStream)
 {

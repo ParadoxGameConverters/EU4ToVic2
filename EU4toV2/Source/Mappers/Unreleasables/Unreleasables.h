@@ -6,16 +6,16 @@
 
 namespace mappers
 {
-	class Unreleasables : commonItems::parser
-	{
-	public:
-		Unreleasables();
-		
-		[[nodiscard]] bool isTagReleasable(const std::string& tag) const;
+class Unreleasables: commonItems::parser
+{
+  public:
+	Unreleasables();
 
-	private:
-		std::set<std::string> unreleasables;
-	};
-}
+	[[nodiscard]] bool isTagReleasable(const std::string& tag) const;
+
+  private:
+	std::set<std::string> unreleasables;
+};
+} // namespace mappers
 
 #endif // UNRELEASABLES_H

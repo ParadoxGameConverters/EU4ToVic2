@@ -17,7 +17,7 @@ class TitleMapping: commonItems::parser
 
   private:
 	void registerKeys();
-	
+
 	std::string name;
 	std::string title;
 	std::string region;

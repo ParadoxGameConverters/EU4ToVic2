@@ -1,7 +1,7 @@
 #ifndef EU4WAR_DETAILS_H
 #define EU4WAR_DETAILS_H
-#include "Date.h"
 #include "ConvenientParser.h"
+#include "Date.h"
 
 namespace EU4
 {

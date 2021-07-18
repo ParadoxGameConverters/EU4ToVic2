@@ -218,10 +218,8 @@ void V2::Diplomacy::convertRelationsToInfluence(const std::map<std::string, std:
 	}
 }
 
-void V2::Diplomacy::sphereHRE(bool hreDecentralized,
-	const std::shared_ptr<Country>& emperor,
-	const std::map<std::string, std::shared_ptr<Country>>& countries
-){
+void V2::Diplomacy::sphereHRE(bool hreDecentralized, const std::shared_ptr<Country>& emperor, const std::map<std::string, std::shared_ptr<Country>>& countries)
+{
 	if (!hreDecentralized || !emperor)
 		return;
 

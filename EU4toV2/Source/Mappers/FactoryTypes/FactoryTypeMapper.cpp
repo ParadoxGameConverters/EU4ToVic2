@@ -1,7 +1,7 @@
 #include "FactoryTypeMapper.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "Log.h"
-#include "CommonRegexes.h"
 
 mappers::FactoryTypeMapper::FactoryTypeMapper()
 {

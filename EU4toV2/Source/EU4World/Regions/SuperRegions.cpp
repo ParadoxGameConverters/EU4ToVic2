@@ -1,6 +1,6 @@
 #include "SuperRegions.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 EU4::SuperRegions::SuperRegions(std::istream& theStream)
 {
@@ -21,4 +21,3 @@ void EU4::SuperRegions::registerKeys()
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
-

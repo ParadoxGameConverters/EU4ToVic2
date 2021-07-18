@@ -1,5 +1,5 @@
-#include "gtest/gtest.h"
 #include "../EU4toV2/Source/Mappers/TechSchools/TechSchoolMapper.h"
+#include "gtest/gtest.h"
 
 
 
@@ -15,7 +15,8 @@ TEST(Mappers_TechSchoolMapperTests, DefaultSchoolIsTraditionalAcademic)
 TEST(Mappers_TechSchoolMapperTests, InvestmentchangesTechSchool)
 {
 	std::stringstream emptyInput;
-	std::stringstream techSchoolsInput("\
+	std::stringstream techSchoolsInput(
+		 "\
 	schools = {\
 		traditional_academic = \
 		{\
@@ -43,7 +44,8 @@ TEST(Mappers_TechSchoolMapperTests, InvestmentchangesTechSchool)
 
 TEST(Mappers_TechSchoolMapperTests, NoInvestmentDoesntCrash)
 {
-	std::stringstream techSchoolsInput("schools = {\
+	std::stringstream techSchoolsInput(
+		 "schools = {\
 	traditional_academic = \
 	{\
 		army_tech_research_bonus = 0\

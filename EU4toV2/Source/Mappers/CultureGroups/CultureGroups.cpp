@@ -1,4 +1,5 @@
 #include "CultureGroups.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "Culture.h"
 #include "CultureGroup.h"
@@ -7,7 +8,6 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 void mappers::CultureGroups::initForEU4()
 {

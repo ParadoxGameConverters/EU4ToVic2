@@ -5,25 +5,24 @@
 
 namespace mappers
 {
-	class TechSchool: commonItems::parser
-	{
-	public:
-		explicit TechSchool(std::istream& theStream);
+class TechSchool: commonItems::parser
+{
+  public:
+	explicit TechSchool(std::istream& theStream);
 
-		[[nodiscard]] double calculateComparisonScore(
-			double armyInvestment, 
-			double commerceInvestment, 
-			double cultureInvestment, 
-			double industryInvestment, 
-			double navyInvestment) const;
+	[[nodiscard]] double calculateComparisonScore(double armyInvestment,
+		 double commerceInvestment,
+		 double cultureInvestment,
+		 double industryInvestment,
+		 double navyInvestment) const;
 
-	private:
-		double armyBonus = 0;
-		double commerceBonus = 0;
-		double cultureBonus = 0;
-		double industryBonus = 0;
-		double navyBonus = 0;
-	};
-}
+  private:
+	double armyBonus = 0;
+	double commerceBonus = 0;
+	double cultureBonus = 0;
+	double industryBonus = 0;
+	double navyBonus = 0;
+};
+} // namespace mappers
 
 #endif // TECH_SCHOOL

@@ -1,8 +1,8 @@
 #ifndef EU4_LEADER_H
 #define EU4_LEADER_H
 
-#include "Date.h"
 #include "ConvenientParser.h"
+#include "Date.h"
 
 namespace EU4
 {
@@ -25,7 +25,7 @@ class Leader: commonItems::convenientParser
 
   private:
 	void registerKeys();
-	
+
 	std::string name;
 	std::string leaderType;
 	bool female = false;

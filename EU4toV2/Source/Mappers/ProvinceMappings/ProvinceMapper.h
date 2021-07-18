@@ -1,9 +1,9 @@
 #ifndef PROVINCE_MAPPER_H
 #define PROVINCE_MAPPER_H
+#include "ColonialRegions/ColonialRegions.h"
 #include "Parser.h"
 #include "ProvinceMappingsVersion.h"
 #include <set>
-#include "ColonialRegions/ColonialRegions.h"
 
 class Configuration;
 namespace mappers
@@ -20,7 +20,7 @@ class ProvinceMapper: commonItems::parser
 
   private:
 	void registerKeys();
-	
+
 	[[nodiscard]] ProvinceMappingsVersion getBestMappingsVersion(const GameVersion& usedEU4Version) const;
 	void createMappings(const ProvinceMappingsVersion& provinceMappingsVersion);
 

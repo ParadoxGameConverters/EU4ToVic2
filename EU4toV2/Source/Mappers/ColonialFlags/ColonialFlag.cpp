@@ -1,6 +1,6 @@
 #include "ColonialFlag.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 mappers::ColonialFlag::ColonialFlag(std::istream& theStream, const std::string& theRegion): region(theRegion)
 {
@@ -21,4 +21,3 @@ void mappers::ColonialFlag::registerKeys()
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
-

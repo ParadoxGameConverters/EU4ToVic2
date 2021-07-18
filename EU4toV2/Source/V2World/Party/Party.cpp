@@ -1,6 +1,8 @@
 #include "Party.h"
 
-V2::Party::Party(const mappers::PartyType& partyType): partyDetails(partyType), name(partyType.getName()){}
+V2::Party::Party(const mappers::PartyType& partyType): partyDetails(partyType), name(partyType.getName())
+{
+}
 
 bool V2::Party::isActiveOn(const date query) const
 {

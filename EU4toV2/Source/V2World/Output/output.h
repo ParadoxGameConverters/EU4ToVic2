@@ -3,7 +3,6 @@
 
 #include "../Army/Army.h"
 #include "../Army/Regiment.h"
-#include "../Country/Country.h"
 #include "../Diplomacy/Agreement.h"
 #include "../Diplomacy/Relation.h"
 #include "../Factory/Factory.h"
@@ -16,11 +15,11 @@
 #include "../Reforms/UncivReforms.h"
 #include "../War/War.h"
 #include "CultureGroups/Culture.h"
+#include "CultureGroups/CultureGroup.h"
 #include "ModFile.h"
 #include "ReligiousGroups/Religion.h"
 #include "ReligiousGroups/ReligiousGroup.h"
 #include "ReligiousGroups/ReligiousGroups.h"
-#include <ostream>
 
 namespace V2
 {

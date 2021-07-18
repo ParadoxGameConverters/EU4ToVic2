@@ -1,7 +1,7 @@
 #include "MinorityPopMapper.h"
+#include "CommonRegexes.h"
 #include "MinorityPop.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::MinorityPopMapper::MinorityPopMapper()
 {

@@ -1,4 +1,5 @@
 #include "EU4Country.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "EU4ActiveIdeas.h"
 #include "EU4ActivePolicy.h"
@@ -7,14 +8,13 @@
 #include "EU4GovernmentSection.h"
 #include "EU4Technology.h"
 #include "History/CountryHistory.h"
+#include "Leader/EU4LeaderID.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "Relations/EU4Relations.h"
 #include "V2World/Localisation/Localisation.h"
 #include <cmath>
-#include "CommonRegexes.h"
-#include "Leader/EU4LeaderID.h"
 
 EU4::Country::Country(std::string countryTag, const GameVersion& theVersion, std::istream& theStream, const mappers::IdeaEffectMapper& ideaEffectMapper):
 	 tag(std::move(countryTag))

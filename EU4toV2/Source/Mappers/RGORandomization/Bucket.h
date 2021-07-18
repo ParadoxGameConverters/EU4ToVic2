@@ -3,33 +3,33 @@
 #ifndef BUCKET_H
 #define BUCKET_H
 
+#include "../../V2World/Province/Province.h"
 #include <random>
 #include <string>
 #include <vector>
-#include "../../V2World/Province/Province.h"
 
 #include "Parser.h"
 
 namespace mappers
 {
-	class Bucket : commonItems::parser
-	{
-	public:
-		explicit Bucket(std::istream& theStream);
-		
-		bool match(const std::string& provClimate, const std::string& provTerrain);
-		void shuffle(std::default_random_engine& shuffler);
-		void addProvince(std::shared_ptr<V2::Province> prov) { provinces.push_back(prov); };
+class Bucket: commonItems::parser
+{
+  public:
+	explicit Bucket(std::istream& theStream);
 
-	private:
-		std::string name;
-		std::vector<std::string> climates;
-		std::vector<std::string> terrains;
-		double fraction = 0;
-		bool wildClimate = false;
-		bool wildTerrain = false;
-		std::vector<std::shared_ptr<V2::Province>> provinces;
-	};
-}
+	bool match(const std::string& provClimate, const std::string& provTerrain);
+	void shuffle(std::default_random_engine& shuffler);
+	void addProvince(std::shared_ptr<V2::Province> prov) { provinces.push_back(prov); };
+
+  private:
+	std::string name;
+	std::vector<std::string> climates;
+	std::vector<std::string> terrains;
+	double fraction = 0;
+	bool wildClimate = false;
+	bool wildTerrain = false;
+	std::vector<std::shared_ptr<V2::Province>> provinces;
+};
+} // namespace mappers
 
 #endif // BUCKET_H

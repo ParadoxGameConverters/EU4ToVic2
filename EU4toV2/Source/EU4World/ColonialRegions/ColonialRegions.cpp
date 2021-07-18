@@ -1,10 +1,10 @@
 #include "ColonialRegions.h"
 #include "ColonialRegion.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 EU4::ColonialRegions::ColonialRegions()
 {

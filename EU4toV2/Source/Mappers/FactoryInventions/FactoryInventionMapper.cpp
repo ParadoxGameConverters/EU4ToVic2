@@ -1,10 +1,10 @@
 #include "FactoryInventionMapper.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "FactoryInventionEffect.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::FactoryInventionMapper::FactoryInventionMapper()
 {
