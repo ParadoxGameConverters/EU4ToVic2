@@ -3,10 +3,10 @@
 #include "ConverterVersion.h"
 #include "Date.h"
 #include "GameVersion.h"
+#include "ModLoader/ModLoader.h"
 #include "Parser.h"
 #include <string>
 #include <vector>
-#include "ModLoader/ModLoader.h"
 
 const date HARD_ENDING_DATE("1836.1.1");
 const date FUTURE_DATE("2000.1.1");

@@ -8,19 +8,19 @@
 namespace mappers
 {
 
-	class StartingInventionMapper : commonItems::parser
-	{
-	public:
-		StartingInventionMapper();
-		explicit StartingInventionMapper(std::istream& theStream);
-		
-		[[nodiscard]] std::set<std::string> getInventionsForTechs(const std::set<std::string>& incTechs) const;
+class StartingInventionMapper: commonItems::parser
+{
+  public:
+	StartingInventionMapper();
+	explicit StartingInventionMapper(std::istream& theStream);
 
-	private:
-		void registerKeys();
-		
-		std::map<std::string, std::string> inventionTechMap;
-	};
-}
+	[[nodiscard]] std::set<std::string> getInventionsForTechs(const std::set<std::string>& incTechs) const;
+
+  private:
+	void registerKeys();
+
+	std::map<std::string, std::string> inventionTechMap;
+};
+} // namespace mappers
 
 #endif // STARTING_INVENTION_MAPPER_H

@@ -2,38 +2,37 @@
 #define WAR_H
 
 #include "../../EU4World/Wars/EU4War.h"
-#include "../../Mappers/WarGoalMapper/WarGoalMapper.h"
-#include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
-#include "../../Mappers/CountryMappings/CountryMappings.h"
-#include "../Country/Country.h"
 #include "../../EU4World/Wars/EU4WarDetails.h"
+#include "../../Mappers/CountryMappings/CountryMappings.h"
+#include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
+#include "../../Mappers/WarGoalMapper/WarGoalMapper.h"
+#include "../Country/Country.h"
 
 namespace V2
 {
-	class War
-	{
-	public:
-		bool loadWar(const EU4::War& eu4War, 
-			const mappers::WarGoalMapper& warGoalMapper,
-			const mappers::ProvinceMapper& provinceMapper,
-			const mappers::CountryMappings& countryMapper,
-			std::map<std::string, std::shared_ptr<Country>>& countries);
-		
-		[[nodiscard]] std::string generateFileName() const;
+class War
+{
+  public:
+	bool loadWar(const EU4::War& eu4War,
+		 const mappers::WarGoalMapper& warGoalMapper,
+		 const mappers::ProvinceMapper& provinceMapper,
+		 const mappers::CountryMappings& countryMapper,
+		 std::map<std::string, std::shared_ptr<Country>>& countries);
 
-		friend std::ostream& operator<<(std::ostream& output, const War& war);
+	[[nodiscard]] std::string generateFileName() const;
 
-	private:
-		EU4::WarDetails details; // Reusing the class for storage. It was only slightly used anyways.
-		std::string name;
-		std::vector<std::string> attackers; // order maters! first is primary.
-		std::vector<std::string> defenders; // order maters! first is primary.
+	friend std::ostream& operator<<(std::ostream& output, const War& war);
 
-		static std::optional<std::string> translateActor(
-			const std::string& actor,
-			const mappers::CountryMappings& countryMapper,
-			std::map<std::string, std::shared_ptr<Country>>& countries);
-	};
-}
+  private:
+	EU4::WarDetails details; // Reusing the class for storage. It was only slightly used anyways.
+	std::string name;
+	std::vector<std::string> attackers; // order maters! first is primary.
+	std::vector<std::string> defenders; // order maters! first is primary.
+
+	static std::optional<std::string> translateActor(const std::string& actor,
+		 const mappers::CountryMappings& countryMapper,
+		 std::map<std::string, std::shared_ptr<Country>>& countries);
+};
+} // namespace V2
 
 #endif // WAR_H

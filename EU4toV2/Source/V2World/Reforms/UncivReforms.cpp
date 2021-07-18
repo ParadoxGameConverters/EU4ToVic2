@@ -59,7 +59,7 @@ V2::UncivReforms::UncivReforms(const int westernizationProgress, const double mi
 	{
 		for (unsigned int i = 0; i < 8; i++)
 		{
-			if (reforms[i]	== true)
+			if (reforms[i] == true)
 			{
 				continue;
 			}
@@ -74,7 +74,7 @@ V2::UncivReforms::UncivReforms(const int westernizationProgress, const double mi
 	{
 		for (unsigned int i = 8; i < 16; i++)
 		{
-			if (reforms[i]	== true)
+			if (reforms[i] == true)
 			{
 				continue;
 			}

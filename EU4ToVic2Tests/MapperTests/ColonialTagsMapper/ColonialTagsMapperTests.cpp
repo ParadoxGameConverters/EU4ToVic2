@@ -7,7 +7,7 @@ TEST(Mappers_ColonialTagsMapperTests, colonialTagMatchReturnsNulloptForNoCandida
 	const mappers::ColonialTagMapper mapper(input);
 
 	const auto& match = mapper.getColonialTag("eu4Region", "v2Region", "cultureGroup");
-	
+
 	ASSERT_EQ(std::nullopt, match);
 }
 

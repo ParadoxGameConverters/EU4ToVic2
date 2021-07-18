@@ -6,16 +6,16 @@
 
 namespace mappers
 {
-	class StartingTechMapper: commonItems::parser
-	{
-	public:
-		StartingTechMapper();
-		
-		[[nodiscard]] std::vector<std::string> getTechsForGroupAndScore(const std::string& group, double score) const;
+class StartingTechMapper: commonItems::parser
+{
+  public:
+	StartingTechMapper();
 
-	private:
-		std::vector<StartingTech> startingTechs;
-	};
-}
+	[[nodiscard]] std::vector<std::string> getTechsForGroupAndScore(const std::string& group, double score) const;
+
+  private:
+	std::vector<StartingTech> startingTechs;
+};
+} // namespace mappers
 
 #endif // STARTING_TECH_MAPPER_H

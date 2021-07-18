@@ -36,7 +36,7 @@ TEST(Mappers_PortProvincesTests, nonListedProvinceReturnsFalse)
 	ASSERT_FALSE(mapper.isProvinceIDAllowed(4));
 	ASSERT_FALSE(mapper.isProvinceIDAllowed(5));
 	ASSERT_FALSE(mapper.isProvinceIDAllowed(6));
-	
+
 	ASSERT_FALSE(mapper.isProvinceIDAllowed(7));
 	ASSERT_FALSE(mapper.isProvinceIDDenied(7));
 }

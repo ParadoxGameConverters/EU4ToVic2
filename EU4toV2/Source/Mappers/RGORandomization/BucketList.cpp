@@ -9,12 +9,10 @@ mappers::BucketList::BucketList()
 	// is deterministic for particular saves, but varies between saves.
 	shuffler.seed(theConfiguration.getEU4RandomSeed());
 
-	registerKeyword("bucket", [this](const std::string& key, std::istream& theStream) 
-		{
-			const Bucket newBucket(theStream);
-			buckets.push_back(newBucket);
-		}
-	);
+	registerKeyword("bucket", [this](const std::string& key, std::istream& theStream) {
+		const Bucket newBucket(theStream);
+		buckets.push_back(newBucket);
+	});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
 	parseFile("configurables/rgo_randomization.txt");
@@ -34,7 +32,7 @@ void mappers::BucketList::putInBucket(std::shared_ptr<V2::Province> prov)
 		return;
 	}
 
-	for (auto& bucket : buckets)
+	for (auto& bucket: buckets)
 	{
 		if (!bucket.match(provClimate, provTerrain))
 		{
@@ -47,9 +45,8 @@ void mappers::BucketList::putInBucket(std::shared_ptr<V2::Province> prov)
 
 void mappers::BucketList::shuffle()
 {
-	for (auto& bucket : buckets)
+	for (auto& bucket: buckets)
 	{
 		bucket.shuffle(shuffler);
 	}
 }
-

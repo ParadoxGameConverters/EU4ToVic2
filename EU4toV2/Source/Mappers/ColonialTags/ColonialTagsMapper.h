@@ -11,7 +11,7 @@ class ColonialTagMapper: commonItems::parser
 	explicit ColonialTagMapper(std::istream& theStream);
 
 	std::optional<std::string> getColonialTag(const std::string& eu4Region, const std::string& v2Region, const std::string& cultureGroup) const;
-	
+
   private:
 	void registerKeys();
 

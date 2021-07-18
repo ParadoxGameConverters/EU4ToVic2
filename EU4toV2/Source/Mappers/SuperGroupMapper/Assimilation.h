@@ -5,16 +5,16 @@
 
 namespace mappers
 {
-	class Assimilation : commonItems::parser
-	{
-	public:
-		explicit Assimilation(std::istream& theStream);
+class Assimilation: commonItems::parser
+{
+  public:
+	explicit Assimilation(std::istream& theStream);
 
-		[[nodiscard]] auto getAssimilation() const { return assimilation; }
-		
-	private:
-		int assimilation = 1;
-	};
-}
+	[[nodiscard]] auto getAssimilation() const { return assimilation; }
+
+  private:
+	int assimilation = 1;
+};
+} // namespace mappers
 
 #endif // ASSIMILATION_H

@@ -1,10 +1,10 @@
 #include "EU4Province.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "Country/EU4Country.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include <cmath>
-#include "CommonRegexes.h"
 
 EU4::Province::Province(const std::string& numString, std::istream& theStream)
 {
@@ -60,7 +60,7 @@ void EU4::Province::registerKeys()
 		commonItems::ignoreItem("unused", theStream);
 		colony = true;
 	});
-	registerKeyword("original_coloniser", [this]( std::istream& theStream) {
+	registerKeyword("original_coloniser", [this](std::istream& theStream) {
 		commonItems::ignoreItem("unused", theStream);
 		hadOriginalColonizer = true;
 	});

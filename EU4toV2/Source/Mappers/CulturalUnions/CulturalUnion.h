@@ -1,7 +1,7 @@
 #ifndef CULTURAL_UNION_H
 #define CULTURAL_UNION_H
-#include <set>
 #include "Parser.h"
+#include <set>
 
 namespace mappers
 {

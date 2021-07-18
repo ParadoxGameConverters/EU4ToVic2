@@ -39,7 +39,7 @@ TEST(EU4World_CountryHistoryTests, datesCanBeParsedForLeaders)
 	input << "\t\tname = TheExplorer\n";
 	input << "\t}";
 	input << "}";
-	
+
 	const EU4::CountryHistory history(input);
 	const auto& leader1 = history.getLeaders()[0];
 	const auto& leader2 = history.getLeaders()[1];
@@ -63,7 +63,7 @@ TEST(EU4World_CountryHistoryTests, datesCanBeParsedForRulerLeaders)
 	input << "\t\t}\n";
 	input << "\t}\n";
 	input << "}\n";
-	
+
 	input << "3.3.3 = {\n";
 	input << "\tqueen = {\n";
 	input << "\t\tname = Boby\n";
@@ -85,7 +85,7 @@ TEST(EU4World_CountryHistoryTests, datesCanBeParsedForRulerLeaders)
 	const auto& leader1 = history.getLeaders()[0];
 	const auto& leader2 = history.getLeaders()[1];
 	const auto& leader3 = history.getLeaders()[2];
-	
+
 	ASSERT_EQ("Boby 1st of Bobbypants", leader1.getName());
 	ASSERT_EQ("Boby 2nd of Bobbypants", leader2.getName());
 	ASSERT_EQ("Boby 3rd of Bobbypants", leader3.getName());

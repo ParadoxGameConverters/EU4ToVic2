@@ -5,16 +5,16 @@
 
 namespace mappers
 {
-	class StartingInventionLimit : commonItems::parser
-	{
-	public:
-		explicit StartingInventionLimit(std::istream& theStream);
-		
-		[[nodiscard]] const auto& getTechName() const { return techName; }
+class StartingInventionLimit: commonItems::parser
+{
+  public:
+	explicit StartingInventionLimit(std::istream& theStream);
 
-	private:
-		std::string techName;
-	};
-}
+	[[nodiscard]] const auto& getTechName() const { return techName; }
+
+  private:
+	std::string techName;
+};
+} // namespace mappers
 
 #endif // STARTING_INVENTION_LIMIT_H

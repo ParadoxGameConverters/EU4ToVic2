@@ -1,10 +1,10 @@
 #include "FactoryTechMapper.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "FactoryTechDetails.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::FactoryTechMapper::FactoryTechMapper()
 {

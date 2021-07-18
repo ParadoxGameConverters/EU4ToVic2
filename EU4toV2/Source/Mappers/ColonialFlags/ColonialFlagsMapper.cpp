@@ -1,6 +1,6 @@
 #include "ColonialFlagsMapper.h"
-#include "Log.h"
 #include "CommonRegexes.h"
+#include "Log.h"
 
 mappers::ColonialFlagsMapper::ColonialFlagsMapper()
 {

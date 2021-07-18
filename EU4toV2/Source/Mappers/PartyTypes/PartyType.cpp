@@ -13,7 +13,6 @@ mappers::PartyType::PartyType(std::istream& theStream)
 	{
 		policies.erase("social_policy");
 	}
-
 }
 
 void mappers::PartyType::registerKeys()

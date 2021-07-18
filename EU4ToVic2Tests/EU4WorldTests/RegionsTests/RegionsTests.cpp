@@ -1,7 +1,7 @@
-#include "gtest/gtest.h"
-#include "Regions/Regions.h"
 #include "Regions/Areas.h"
+#include "Regions/Regions.h"
 #include "Regions/SuperRegions.h"
+#include "gtest/gtest.h"
 
 TEST(EU4World_Regions_RegionsTests, oldStyleNoProvincesMeansNoProvinces)
 {
@@ -33,7 +33,7 @@ TEST(EU4World_Regions_RegionsTests, newStyleNoAreasMeansNoProvinces)
 	superRegionsInput << "\ttest_region";
 	superRegionsInput << "}";
 	EU4::SuperRegions superRegions(superRegionsInput);
-	
+
 	std::stringstream regionsInput;
 	regionsInput << "test_region = {\n";
 	regionsInput << "\tareas = {\n";

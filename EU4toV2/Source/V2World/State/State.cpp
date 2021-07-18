@@ -10,8 +10,8 @@ void V2::State::setProvincesAsTerritories()
 {
 	for (const auto& province: provinces)
 	{
-		 // We are NOT affecting colonies in progress!
-		if (!province->getColonyLevel()) 
+		// We are NOT affecting colonies in progress!
+		if (!province->getColonyLevel())
 			province->setColonial(2);
 	}
 }

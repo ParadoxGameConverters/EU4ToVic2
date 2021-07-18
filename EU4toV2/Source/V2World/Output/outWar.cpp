@@ -9,7 +9,7 @@ std::ostream& V2::operator<<(std::ostream& output, const War& war)
 	{
 		output << "\tadd_attacker = " << actor << "\n";
 	}
-	for (const auto& actor : war.defenders)
+	for (const auto& actor: war.defenders)
 	{
 		output << "\tadd_defender = " << actor << "\n";
 	}

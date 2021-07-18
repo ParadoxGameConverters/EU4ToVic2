@@ -1,9 +1,9 @@
 #include "Continents.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::Continents::Continents()
 {

@@ -6,7 +6,8 @@
 helpers::TechValues::TechValues(const std::map<std::string, std::shared_ptr<V2::Country>>& countries)
 {
 	gatherScores(countries);
-	if (armyScores.empty()) return; // Well crap. Play dead and hope they go away.
+	if (armyScores.empty())
+		return; // Well crap. Play dead and hope they go away.
 	calculateSteps();
 }
 
@@ -15,8 +16,9 @@ void helpers::TechValues::gatherScores(const std::map<std::string, std::shared_p
 	for (const auto& countryItr: countries)
 	{
 		const auto& country = countryItr.second;
-		if (!isValidCountryForTechConversion(*country)) continue;
-		
+		if (!isValidCountryForTechConversion(*country))
+			continue;
+
 		armyScores.emplace_back(getCountryArmyTech(*country->getSourceCountry()));
 		navyScores.emplace_back(getCountryNavyTech(*country->getSourceCountry()));
 		commerceScores.emplace_back(getCountryCommerceTech(*country->getSourceCountry()));
@@ -46,8 +48,7 @@ void helpers::TechValues::calculateSteps()
 	navyStep = 2.0 / navyScores.size();
 	commerceStep = 2.0 / commerceScores.size();
 	cultureStep = 2.0 / cultureScores.size();
-	industryStep = 2.0 / industryScores.size();	
-
+	industryStep = 2.0 / industryScores.size();
 }
 
 bool helpers::TechValues::isValidCountryForTechConversion(const V2::Country& country)
@@ -117,6 +118,5 @@ double helpers::TechValues::getCountryCultureTech(const EU4::Country& country)
 
 double helpers::TechValues::getCountryIndustryTech(const EU4::Country& country)
 {
-	return (country.getAdmTech() + country.getDipTech() + country.getMilTech()) * ( 1.0 + country.getIndustry() / 10.0);
+	return (country.getAdmTech() + country.getDipTech() + country.getMilTech()) * (1.0 + country.getIndustry() / 10.0);
 }
-

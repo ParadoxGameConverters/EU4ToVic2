@@ -6,21 +6,21 @@
 
 namespace V2
 {
-	class Agreement
-	{
-	public:
-		Agreement(std::string _first, std::string _second, std::string _type, const date& _start_date);
-		
-		[[nodiscard]] const auto& getType() const { return type; }
-		
-		friend std::ostream& operator<<(std::ostream& output, const Agreement& agreement);
+class Agreement
+{
+  public:
+	Agreement(std::string _first, std::string _second, std::string _type, const date& _start_date);
 
-	private:
-		std::string type;
-		std::string first;
-		std::string second;
-		date start_date;
-	};
-}
+	[[nodiscard]] const auto& getType() const { return type; }
+
+	friend std::ostream& operator<<(std::ostream& output, const Agreement& agreement);
+
+  private:
+	std::string type;
+	std::string first;
+	std::string second;
+	date start_date;
+};
+} // namespace V2
 
 #endif // AGREEMENT_H

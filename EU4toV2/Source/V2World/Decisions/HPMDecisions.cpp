@@ -1,7 +1,7 @@
 #include "Configuration.h"
 #include "Country/Country.h"
-#include "V2World.h"
 #include "Log.h"
+#include "V2World.h"
 #include <fstream>
 
 void V2::World::outputGTFO(std::map<std::string, std::shared_ptr<V2::Country>> countries) const
@@ -13,11 +13,13 @@ void V2::World::outputGTFO(std::map<std::string, std::shared_ptr<V2::Country>> c
 		Log(LogLevel::Debug) << "Could not open 02_NNM_gtfo.csv for writing!";
 	outLoc << ";;;;;;;;;;;;x,,,,,,,,,,,,,\n";
 	outLoc << "gtfo_on_title;Enable 'Release Vassal' decisions;;;;;;;;;;;;x,,\n";
-	outLoc << "gtfo_on_desc;The Release Vassal decisions allow you to release vassals, and are otherwise kept hidden from view to avoid having them clutter up your decision list.;;;;;;;;;;;;x\n";
+	outLoc << "gtfo_on_desc;The Release Vassal decisions allow you to release vassals, and are otherwise kept hidden from view to avoid having them clutter up "
+				 "your decision list.;;;;;;;;;;;;x\n";
 	outLoc << "gtfo_off_title;Disable 'Release Vassal' decisions;;;;;;;;;;;;x,,\n";
 	outLoc << "gtfo_off_desc;Your decision list will now be uncluttered!;;;;;;;;;;;;x,,\n";
 	outLoc << "gtfo_disabled_title;Deactivate 'Release Vassal' decisions;;;;;;;;;;;;x,,\n";
-	outLoc << "gtfo_disabled_desc;The 'Release Vassal' decisions will disappear from this game session and won't reappear again. You won't be able to use these decisions again for this game.;;;;;;;;;;;;x,,\n";
+	outLoc << "gtfo_disabled_desc;The 'Release Vassal' decisions will disappear from this game session and won't reappear again. You won't be able to use these "
+				 "decisions again for this game.;;;;;;;;;;;;x,,\n";
 
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/decisions/gtfo.txt");
 	if (!output.is_open())
@@ -123,11 +125,13 @@ void V2::World::outputReturnCores(std::map<std::string, std::shared_ptr<V2::Coun
 		Log(LogLevel::Debug) << "Could not open 00_HPM_return_cores.csv for writing!";
 	outLoc << ";;;;;;;;;;;;x,,,,,,,,,,,,,\n";
 	outLoc << "return_core_on_title;Enable 'Return Cores' decisions;;;;;;;;;;;;x,,\n";
-	outLoc << "return_core_on_desc;The Return Cores decisions allow you to return cores of vassals and spherelings, as long as you don't have a core in the province, and are otherwise kept hidden from view to avoid having them clutter up your decision list.;;;;;;;;;;;;x\n";
+	outLoc << "return_core_on_desc;The Return Cores decisions allow you to return cores of vassals and spherelings, as long as you don't have a core in the "
+				 "province, and are otherwise kept hidden from view to avoid having them clutter up your decision list.;;;;;;;;;;;;x\n";
 	outLoc << "return_core_off_title;Disable 'Return Cores' decisions;;;;;;;;;;;;x,,\n";
 	outLoc << "return_core_off_desc;Your decision list will now be uncluttered.;;;;;;;;;;;;x,,\n";
 	outLoc << "return_core_disabled_title;Deactivate 'Return Cores' decisions;;;;;;;;;;;;x,,\n";
-	outLoc << "return_core_disabled_desc;The 'Return Cores' decisions will disappear from this game session and won't reappear again. You won't be able to use these decisions again for this game.;;;;;;;;;;;;x,,\n";
+	outLoc << "return_core_disabled_desc;The 'Return Cores' decisions will disappear from this game session and won't reappear again. You won't be able to use "
+				 "these decisions again for this game.;;;;;;;;;;;;x,,\n";
 
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/decisions/Return_cores.txt");
 	if (!output.is_open())
@@ -194,7 +198,7 @@ void V2::World::outputReturnCores(std::map<std::string, std::shared_ptr<V2::Coun
 			const auto& dotPos = commonCountryFile.find_first_of('.');
 			countryName = commonCountryFile.substr(0, dotPos);
 		}
-		
+
 		output << "\n";
 		output << "\treturn_cores_" << tag << " = {\n";
 		output << "\t\tpicture = return_cores_img\n";

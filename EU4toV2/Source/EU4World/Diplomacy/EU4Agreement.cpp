@@ -1,6 +1,6 @@
 #include "EU4Agreement.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 EU4::EU4Agreement::EU4Agreement(std::istream& theStream)
 {

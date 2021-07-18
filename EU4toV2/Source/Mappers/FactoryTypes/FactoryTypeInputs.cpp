@@ -1,6 +1,6 @@
 #include "FactoryTypeInputs.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 mappers::FactoryTypeInputs::FactoryTypeInputs(std::istream& theStream)
 {

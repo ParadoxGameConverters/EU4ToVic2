@@ -7,18 +7,18 @@
 
 namespace mappers
 {
-	class StateMapper: commonItems::parser
-	{
-	public:
-		StateMapper();
-		explicit StateMapper(std::istream& theStream);
-		
-		[[nodiscard]] std::set<int> getAllProvincesInState(int province) const;
+class StateMapper: commonItems::parser
+{
+  public:
+	StateMapper();
+	explicit StateMapper(std::istream& theStream);
 
-	private:
-		void registerKeys();
-		std::map<int, std::set<int>> stateProvincesMap;
-	};
-}
+	[[nodiscard]] std::set<int> getAllProvincesInState(int province) const;
+
+  private:
+	void registerKeys();
+	std::map<int, std::set<int>> stateProvincesMap;
+};
+} // namespace mappers
 
 #endif // STATE_MAPPER_H

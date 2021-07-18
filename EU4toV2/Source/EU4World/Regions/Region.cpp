@@ -1,7 +1,7 @@
 #include "Region.h"
 #include "Areas.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 EU4::Region::Region(std::istream& theStream)
 {

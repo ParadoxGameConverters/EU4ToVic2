@@ -1,10 +1,10 @@
 #include "ReligionMapper.h"
 #include "../../Configuration.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "ReligionMapping.h"
-#include "CommonRegexes.h"
 
 mappers::ReligionMapper::ReligionMapper()
 {
@@ -58,7 +58,7 @@ void mappers::ReligionMapper::scrapeCustomReligions()
 						Log(LogLevel::Error) << "Religion Mapper: Cannot import filename: " << fileName;
 						continue;
 					}
-					auto target = fileName.substr(3, pos - 3); // "converted_dynamic_faith_102"
+					auto target = fileName.substr(3, pos - 3);								  // "converted_dynamic_faith_102"
 					auto source = fileName.substr(pos + 6, fileName.size() - 10 - pos); // shaving off .txt extension, "orthodox"
 					if (eu4ToVic2ReligionMap.count(source))
 					{

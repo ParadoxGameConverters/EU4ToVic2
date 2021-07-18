@@ -1,7 +1,7 @@
 #include "ColonialTagsMapper.h"
+#include "CommonRegexes.h"
 #include "Parser.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::ColonialTagMapper::ColonialTagMapper()
 {
@@ -26,7 +26,9 @@ void mappers::ColonialTagMapper::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-std::optional<std::string> mappers::ColonialTagMapper::getColonialTag(const std::string& eu4Region, const std::string& v2Region, const std::string& cultureGroup) const
+std::optional<std::string> mappers::ColonialTagMapper::getColonialTag(const std::string& eu4Region,
+	 const std::string& v2Region,
+	 const std::string& cultureGroup) const
 {
 	for (const auto& colonyTag: colonyList)
 		if (colonyTag.match(eu4Region, v2Region, cultureGroup))

@@ -320,7 +320,7 @@ TEST(Mappers_CultureMappingRuleTests, fallbackMatchFailsForRulesWithRegionsOrRel
 	input3 << "vic2 = destinationCulture\n";
 	input3 << "religion = correctReligion\n";
 	mappers::CultureMappingRule rule3(input3);
-	
+
 	std::stringstream superRegionsInput;
 	superRegionsInput << "test_superregion = { test_region }";
 	EU4::SuperRegions superRegions(superRegionsInput);

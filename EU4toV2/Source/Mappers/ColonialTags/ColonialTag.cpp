@@ -1,7 +1,7 @@
 #include "ColonialTag.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::ColonialTag::ColonialTag(std::istream& theStream)
 {

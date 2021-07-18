@@ -1,8 +1,8 @@
 #include "ClimateMapper.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::ClimateMapper::ClimateMapper()
 {

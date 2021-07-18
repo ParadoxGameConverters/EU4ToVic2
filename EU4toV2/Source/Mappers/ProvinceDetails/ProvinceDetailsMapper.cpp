@@ -1,6 +1,6 @@
 #include "ProvinceDetailsMapper.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 mappers::ProvinceDetailsMapper::ProvinceDetailsMapper(const std::string& filename)
 {

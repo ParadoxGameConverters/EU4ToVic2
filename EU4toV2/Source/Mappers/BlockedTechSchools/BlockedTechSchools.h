@@ -15,7 +15,7 @@ class BlockedTechSchools: commonItems::parser
 
   private:
 	void registerKeys();
-	
+
 	std::set<std::string> theBlockedTechSchools;
 };
 } // namespace mappers

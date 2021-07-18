@@ -2,7 +2,6 @@
 #define EU4ACTIVE_POLICY_H
 
 #include "Parser.h"
-#include <set>
 
 namespace EU4
 {

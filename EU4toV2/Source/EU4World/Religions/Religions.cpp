@@ -1,10 +1,10 @@
 #include "Religions.h"
+#include "CommonRegexes.h"
 #include "Configuration.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "ReligionGroup.h"
-#include "CommonRegexes.h"
 
 EU4::Religions::Religions()
 {

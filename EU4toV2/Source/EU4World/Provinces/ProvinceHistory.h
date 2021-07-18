@@ -1,7 +1,7 @@
 #ifndef PROVINCE_HISTORY_H
 #define PROVINCE_HISTORY_H
-#include "Date.h"
 #include "ConvenientParser.h"
+#include "Date.h"
 #include "PopRatio.h"
 #include <optional>
 #include <vector>

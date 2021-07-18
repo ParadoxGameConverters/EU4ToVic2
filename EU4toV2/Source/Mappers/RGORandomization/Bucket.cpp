@@ -1,43 +1,39 @@
 #include "Bucket.h"
-#include "ParserHelpers.h"
 #include "Log.h"
+#include "ParserHelpers.h"
 
 mappers::Bucket::Bucket(std::istream& theStream)
 {
-	registerKeyword("name", [this](const std::string& unused, std::istream& theStream)
+	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString nameStr(theStream);
+		name = nameStr.getString();
+	});
+	registerKeyword("climate", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString climateStr(theStream);
+		if (climateStr.getString() == "any")
 		{
-			const commonItems::singleString nameStr(theStream);
-			name = nameStr.getString();
-		});
-	registerKeyword("climate", [this](const std::string& unused, std::istream& theStream)
+			wildClimate = true;
+		}
+		else
 		{
-			const commonItems::singleString climateStr(theStream);
-			if (climateStr.getString() == "any") 
-			{
-				wildClimate = true;
-			}
-			else 
-			{
-				climates.push_back(climateStr.getString());
-			}
-		});
-	registerKeyword("terrain", [this](const std::string& unused, std::istream& theStream)
+			climates.push_back(climateStr.getString());
+		}
+	});
+	registerKeyword("terrain", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString terrainStr(theStream);
+		if (terrainStr.getString() == "any")
 		{
-			const commonItems::singleString terrainStr(theStream);
-			if (terrainStr.getString() == "any")
-			{
-				wildTerrain = true;
-			}
-			else
-			{
-				terrains.push_back(terrainStr.getString());
-			}
-		});
-	registerKeyword("fraction", [this](const std::string& unused, std::istream& theStream)
+			wildTerrain = true;
+		}
+		else
 		{
-			const commonItems::singleDouble fractionDbl(theStream);
-			fraction = fractionDbl.getDouble();
-		});
+			terrains.push_back(terrainStr.getString());
+		}
+	});
+	registerKeyword("fraction", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleDouble fractionDbl(theStream);
+		fraction = fractionDbl.getDouble();
+	});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
 	parseStream(theStream);
@@ -49,7 +45,7 @@ bool mappers::Bucket::match(const std::string& provClimate, const std::string& p
 	auto climateMatch = wildClimate;
 	if (!climateMatch)
 	{
-		for (const auto& climate : climates)
+		for (const auto& climate: climates)
 		{
 			if (provClimate == climate)
 			{
@@ -66,7 +62,7 @@ bool mappers::Bucket::match(const std::string& provClimate, const std::string& p
 	auto terrainMatch = wildTerrain;
 	if (!terrainMatch)
 	{
-		for (const auto& terrain : terrains)
+		for (const auto& terrain: terrains)
 		{
 			if (provTerrain == terrain)
 			{

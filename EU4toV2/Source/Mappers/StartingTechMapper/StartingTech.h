@@ -5,21 +5,21 @@
 
 namespace mappers
 {
-	class StartingTech : commonItems::parser
-	{
-	public:
-		explicit StartingTech(std::istream& theStream);
+class StartingTech: commonItems::parser
+{
+  public:
+	explicit StartingTech(std::istream& theStream);
 
-		[[nodiscard]] const auto& getName() const { return name; }
-		[[nodiscard]] const auto& getGroup() const { return group; }
-		[[nodiscard]] auto getScore() const { return score; }
-		
-	private:
-		std::string name;
-		std::string hpm;
-		std::string group;
-		double score = -1;
-	};
-}
+	[[nodiscard]] const auto& getName() const { return name; }
+	[[nodiscard]] const auto& getGroup() const { return group; }
+	[[nodiscard]] auto getScore() const { return score; }
+
+  private:
+	std::string name;
+	std::string hpm;
+	std::string group;
+	double score = -1;
+};
+} // namespace mappers
 
 #endif // STARTING_TECH_H

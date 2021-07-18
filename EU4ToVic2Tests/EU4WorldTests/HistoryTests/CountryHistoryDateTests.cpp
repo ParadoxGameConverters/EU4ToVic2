@@ -64,7 +64,7 @@ TEST(EU4World_CountryHistoryDateTests, heirAndQueenDoNotLoadDynasties)
 	const EU4::CountryHistoryDate historyDate(input, std::string());
 	const auto& leader1 = historyDate.getLeaders()[0];
 	const auto& leader2 = historyDate.getLeaders()[1];
-	
+
 	ASSERT_EQ("Boby 1st of Bobbypants", leader1.getName());
 	ASSERT_EQ("Boby 2nd of Bobbypants", leader2.getName());
 	ASSERT_TRUE(historyDate.getDynasty().empty());

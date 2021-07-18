@@ -18,7 +18,7 @@ TEST(Mappers_PartyTypeTests, nameCanBeSet)
 	mappers::PartyType mapper(input);
 
 	mapper.setName("Party");
-	
+
 	ASSERT_EQ("Party", mapper.getName());
 }
 
@@ -58,7 +58,7 @@ TEST(Mappers_PartyTypeTests, partyTypeCanBeOutput)
 
 	std::stringstream output;
 	output << mapper;
-	
+
 	std::stringstream expected;
 	expected << "\tstart_date = 1000.1.1\n";
 	expected << "\tend_date = 2000.1.1\n\n";

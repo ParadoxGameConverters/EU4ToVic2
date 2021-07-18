@@ -1,5 +1,5 @@
-#include "output.h"
 #include "Configuration.h"
+#include "output.h"
 
 std::ostream& V2::operator<<(std::ostream& output, const ModFile& modFile)
 {
@@ -20,7 +20,6 @@ std::ostream& V2::operator<<(std::ostream& output, const ModFile& modFile)
 	output << "replace = \"localisation/0_Names.csv\"\n";
 	output << "replace = \"localisation/0_Cultures.csv\"\n";
 	output << "replace = \"localisation/0_Religions.csv\"\n";
-	
+
 	return output;
 }
-

@@ -1,6 +1,5 @@
 #ifndef EU4_COUNTRY_H
 #define EU4_COUNTRY_H
-#include "../../Mappers/CultureGroups/CultureGroups.h"
 #include "../../Mappers/IdeaEffects/IdeaEffectMapper.h"
 #include "../Army/EU4Army.h"
 #include "../Leader/EU4Leader.h"

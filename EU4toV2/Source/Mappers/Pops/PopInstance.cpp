@@ -1,12 +1,12 @@
 #include "PopInstance.h"
+#include "CommonRegexes.h"
 #include "ParserHelpers.h"
 #include <cmath>
-#include "CommonRegexes.h"
 
 mappers::PopInstance::PopInstance(std::istream& theStream, const std::string& thePopType)
 {
 	popDetails.popType = thePopType;
-	
+
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();

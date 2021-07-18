@@ -129,7 +129,7 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 				addCore("HRE");
 		}
 	}
-	
+
 	territorialCore = false; // A single territorial core will be sufficient to trip this.
 	for (const auto& oldProvince: provinceSources)
 	{

@@ -3,11 +3,10 @@
 
 mappers::Unreleasables::Unreleasables()
 {
-	registerKeyword("unreleasable", [this](const std::string& unused, std::istream& theStream)
-		{
-			const commonItems::singleString unreleasableStr(theStream);
-			unreleasables.insert(unreleasableStr.getString());
-		});
+	registerKeyword("unreleasable", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString unreleasableStr(theStream);
+		unreleasables.insert(unreleasableStr.getString());
+	});
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 
 	parseFile("configurables/unreleasable_tags.txt");
