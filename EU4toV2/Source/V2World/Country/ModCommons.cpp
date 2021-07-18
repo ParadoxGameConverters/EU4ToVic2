@@ -4,7 +4,7 @@
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 
-V2::ModCommons::ModCommons(const std::string& filename)
+V2::ModCommons::ModCommons(const std::string& tag, const std::string& filename)
 {
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
 		colorString = commonItems::stringOfItem(theStream).getString();
@@ -20,10 +20,15 @@ V2::ModCommons::ModCommons(const std::string& filename)
 	registerKeyword("unit_names", [this](const std::string& unused, std::istream& theStream) {
 		unitNames = commonItems::stringOfItem(theStream).getString();
 	});
+	registerKeyword("decision", [this](std::istream& theStream) {
+		decisions.emplace(commonItems::getString(theStream));
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
 	if (commonItems::DoesFileExist(theConfiguration.getVic2Path() + "/common/countries/" + filename))
 		parseFile(theConfiguration.getVic2Path() + "/common/countries/" + filename);
+	if (commonItems::DoesFileExist(theConfiguration.getVic2Path() + "/history/countries/" + tag + " - " + filename))
+		parseFile(theConfiguration.getVic2Path() + "/history/countries/" + tag + " - " + filename);
 	clearRegisteredKeywords();
 
 	setPartyDates();
