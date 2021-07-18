@@ -112,6 +112,10 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 	{
 		output << "set_country_flag = " << flag << "\n";
 	}
+	for (const auto& decision: country.modCommons.getDecisions())
+	{
+		output << "decision = " << decision << "\n";
+	}
 	return output;
 }
 
