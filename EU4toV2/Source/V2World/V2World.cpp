@@ -981,6 +981,7 @@ unsigned int V2::World::countCivilizedNations() const
 
 void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper, const EU4::Regions& eu4Regions)
 {
+	const auto& shatteredHreTag = getShatteredHreTag();
 	for (const auto& province: provinces)
 	{
 		auto eu4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(province.first);
@@ -1079,7 +1080,8 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 			 religionMapper,
 			 countryMapper,
 			 provinceMapper,
-			 sourceWorld.decentralizedHRE());
+			 sourceWorld.decentralizedHRE(),
+			 shatteredHreTag);
 	}
 }
 
@@ -2105,4 +2107,20 @@ void V2::World::updateCountryDetails()
 			}
 		}
 	}
+}
+
+std::optional<std::string> V2::World::getShatteredHreTag()
+{
+	for (const auto& mod: theConfiguration.getMods())
+	{
+		const auto& modFiles = commonItems::GetAllFilesInFolder(mod.path);
+		for (const auto& file: modFiles)
+		{
+			if (file.substr(0, 8) == "i_am_hre")
+			{
+				return file.substr(9, 3);
+			}
+		}
+	}
+	return std::nullopt;
 }
