@@ -135,7 +135,6 @@ class World
 	void updateDeadNations();
 	void copyHpmFiles() const;
 	void updateCountryDetails();
-	std::optional<std::string> getShatteredHreTag();
 	void outputGTFO(std::map<std::string, std::shared_ptr<Country>> countries) const;
 	void outputReturnCores(std::map<std::string, std::shared_ptr<V2::Country>> countries) const;
 	void localizeProvinces();

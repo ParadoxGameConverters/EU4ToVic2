@@ -74,6 +74,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commo
 	Log(LogLevel::Info) << "*** Building world ***";
 	Log(LogLevel::Info) << "-> Loading Empires";
 	setEmpires();
+	importShatteredHreTag();
 	Log(LogLevel::Progress) << "17 %";
 
 	Log(LogLevel::Info) << "-> Calculating Province Weights";
@@ -739,7 +740,8 @@ void EU4::World::removeEmptyNations()
 	{
 		const auto& countryProvinces = country.second->getProvinces();
 		const auto& countryCores = country.second->getCores();
-		if (!countryProvinces.empty() || !countryCores.empty())
+		bool shatteredHreCountry = country.second->getTag() == shatteredHreTag;
+		if (!countryProvinces.empty() || !countryCores.empty() || shatteredHreCountry)
 			survivingCountries.insert(country);
 	}
 
@@ -754,8 +756,11 @@ void EU4::World::removeDeadLandlessNations()
 			landlessCountries.insert(country);
 
 	for (const auto& country: landlessCountries)
-		if (!country.second->cultureSurvivesInCores(theCountries))
+	{
+		bool shatteredHreCountry = country.second->getTag() == shatteredHreTag;
+		if (!country.second->cultureSurvivesInCores(theCountries) && !shatteredHreCountry)
 			theCountries.erase(country.first);
+	}
 }
 
 void EU4::World::removeLandlessNations()
@@ -763,8 +768,11 @@ void EU4::World::removeLandlessNations()
 	std::map<std::string, std::shared_ptr<Country>> survivingCountries;
 
 	for (const auto& country: theCountries)
-		if (const auto& theProvinces = country.second->getProvinces(); !theProvinces.empty())
+	{
+		bool shatteredHreCountry = country.second->getTag() == shatteredHreTag;
+		if (const auto& theProvinces = country.second->getProvinces(); !theProvinces.empty() || shatteredHreCountry)
 			survivingCountries.insert(country);
+	}
 
 	theCountries = survivingCountries;
 }
@@ -790,4 +798,23 @@ std::shared_ptr<EU4::Country> EU4::World::getCountry(const std::string& tag) con
 		return country->second;
 	else
 		return nullptr;
+}
+
+void EU4::World::importShatteredHreTag()
+{
+	for (const auto& mod: theConfiguration.getMods())
+	{
+		const auto& modFiles = commonItems::GetAllFilesInFolder(mod.path);
+		for (const auto& file: modFiles)
+		{
+			if (file == "i_am_hre.txt")
+			{
+				std::ifstream inStream(mod.path + "i_am_hre.txt");
+				std::ostringstream incomingTag;
+				incomingTag << inStream.rdbuf();
+				inStream.close();
+				shatteredHreTag = incomingTag.str();
+			}
+		}
+	}
 }
