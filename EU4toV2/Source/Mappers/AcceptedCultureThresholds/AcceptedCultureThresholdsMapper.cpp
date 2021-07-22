@@ -5,7 +5,7 @@
 
 mappers::AcceptedCultureThresholdsMapper::AcceptedCultureThresholdsMapper()
 {
-	LOG(LogLevel::Info) << "Parsing accepted culture thresholds.";
+	Log(LogLevel::Info) << "Parsing accepted culture thresholds.";
 	registerKeys();
 	parseFile("configurables/accepted_culture_thresholds.txt");
 	clearRegisteredKeywords();

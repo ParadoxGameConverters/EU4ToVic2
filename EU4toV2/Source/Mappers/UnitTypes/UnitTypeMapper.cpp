@@ -6,7 +6,7 @@
 
 void mappers::UnitTypeMapper::initUnitTypeMapper()
 {
-	LOG(LogLevel::Info) << "Parsing unit strengths from EU4 installation.";
+	Log(LogLevel::Info) << "Parsing unit strengths from EU4 installation.";
 
 	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/units/"))
 		addUnitFileToRegimentTypeMap(theConfiguration.getEU4Path() + "/common/units", filename);
@@ -29,7 +29,7 @@ void mappers::UnitTypeMapper::addUnitFileToRegimentTypeMap(const std::string& di
 	UnitType unitType(directory + "/" + filename);
 	if (unitType.getCategory().empty())
 	{
-		LOG(LogLevel::Warning) << "Unit file for " << name << " at: " << directory << "/" << filename << " has no type!";
+		Log(LogLevel::Warning) << "Unit file for " << name << " at: " << directory << "/" << filename << " has no type!";
 		return;
 	}
 

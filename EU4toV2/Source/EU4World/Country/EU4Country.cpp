@@ -480,7 +480,7 @@ void EU4::Country::determineLibertyDesire()
 		}
 		else
 		{
-			LOG(LogLevel::Warning) << "Unknown attitude type " << attitude << " while setting liberty desire for " << tag;
+			Log(LogLevel::Warning) << "Unknown attitude type " << attitude << " while setting liberty desire for " << tag;
 			libertyDesire = 95.0;
 		}
 	}
@@ -608,7 +608,7 @@ void EU4::Country::eatCountry(const std::shared_ptr<Country>& target)
 	if (target->getTag() == tag)
 		return;
 
-	LOG(LogLevel::Info) << " - " << tag << " is assimilating " << target->getTag();
+	Log(LogLevel::Info) << " - " << tag << " is assimilating " << target->getTag();
 
 	// for calculation of weighted averages
 	auto totalProvinces = static_cast<double>(target->provinces.size() + provinces.size());

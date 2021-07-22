@@ -117,7 +117,7 @@ V2::Army::Army(const EU4::EU4Army& eu4Army,
 	const auto selectedLocation = pickRandomProvinceID(locationCandidates);
 	if (isNavy && usePort && !portProvincesMapper.isProvinceIDAllowed(selectedLocation))
 	{
-		LOG(LogLevel::Warning) << "Assigning navy to non-allowed port province " << selectedLocation << " - if the save crashes, try deny-listing this province";
+		Log(LogLevel::Warning) << "Assigning navy to non-allowed port province " << selectedLocation << " - if the save crashes, try deny-listing this province";
 	}
 	location = selectedLocation;
 }

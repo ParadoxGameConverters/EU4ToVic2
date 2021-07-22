@@ -39,6 +39,7 @@
 #include "Output/ModFile.h"
 #include "Province/Province.h"
 #include "Province/ProvinceNameParser.h"
+#include "ProvinceRenamings/ProvinceRenamings.h"
 #include "UnionTagsMapper/UnionTagsMapper.h"
 #include "War/War.h"
 #include <list>
@@ -72,6 +73,7 @@ class World
 	std::vector<War> wars;
 	std::vector<std::pair<std::string, EU4::HistoricalEntry>> historicalData; // HoI4 export dynasty+rulers
 	std::set<std::string> neoCultureLocalizations;									  // raw strings for output.
+	std::map<int, std::string> localizedProvinces;
 
 	[[nodiscard]] std::optional<std::string> determineProvinceOwnership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
 	[[nodiscard]] std::shared_ptr<Province> getProvince(int provID) const;
@@ -135,6 +137,7 @@ class World
 	void updateCountryDetails();
 	void outputGTFO(std::map<std::string, std::shared_ptr<Country>> countries) const;
 	void outputReturnCores(std::map<std::string, std::shared_ptr<V2::Country>> countries) const;
+	void localizeProvinces();
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
@@ -174,6 +177,7 @@ class World
 	Diplomacy diplomacy;
 	mappers::CountryFlags countryFlags;
 	mappers::UnionTagsMapper unionTagsMapper;
+	mappers::ProvinceRenamings provinceRenamingsMapper;
 };
 
 std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);

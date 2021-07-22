@@ -5,7 +5,7 @@
 
 mappers::RegimentCostsMapper::RegimentCostsMapper()
 {
-	LOG(LogLevel::Info) << "Parsing regiment costs";
+	Log(LogLevel::Info) << "Parsing regiment costs";
 	registerKeys();
 	parseFile("configurables/regiment_costs.txt");
 	clearRegisteredKeywords();

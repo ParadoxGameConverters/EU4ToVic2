@@ -12,11 +12,11 @@ void V2::MappingChecker::check(const EU4::World& sourceWorld,
 	 const mappers::ReligionMapper& religionMapper,
 	 const mappers::CultureMapper& cultureMapper) const
 {
-	// LOG(LogLevel::Info) << "-> Checking all Land Provinces Mapped (and may kraken take the rest)";
+	// Log(LogLevel::Info) << "-> Checking all Land Provinces Mapped (and may kraken take the rest)";
 	// checkAllEU4ProvincesMapped(sourceWorld, provinceMapper); TODO: REenable after land/lake/sea filtering
-	LOG(LogLevel::Info) << "-> Checking all Cultures Mapped";
+	Log(LogLevel::Info) << "-> Checking all Cultures Mapped";
 	checkAllEU4CulturesMapped(sourceWorld, cultureMapper);
-	LOG(LogLevel::Info) << "-> Checking all Religions Mapped";
+	Log(LogLevel::Info) << "-> Checking all Religions Mapped";
 	checkAllEU4ReligionsMapped(sourceWorld, religionMapper);
 }
 
@@ -27,7 +27,7 @@ void V2::MappingChecker::checkAllEU4ProvincesMapped(const EU4::World& sourceWorl
 	{
 		if (provinceMapper.getVic2ProvinceNumbers(eu4province.first).empty())
 		{
-			LOG(LogLevel::Warning) << "No mapping for EU4 province " << eu4province.first << ", check province_mappings.txt!";
+			Log(LogLevel::Warning) << "No mapping for EU4 province " << eu4province.first << ", check province_mappings.txt!";
 		}
 	}
 }
@@ -55,7 +55,7 @@ void V2::MappingChecker::checkAllEU4CulturesMapped(const EU4::World& sourceWorld
 			const auto& matched = cultureMapper.cultureMatch(sourceWorld.getRegions(), cultureItr.first, "", 0, "");
 			if (!matched)
 			{
-				LOG(LogLevel::Warning) << "No Vic2 culture mapping for EU4 culture " << cultureItr.first;
+				Log(LogLevel::Warning) << "No Vic2 culture mapping for EU4 culture " << cultureItr.first;
 			}
 		}
 	}

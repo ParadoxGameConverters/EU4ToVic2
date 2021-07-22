@@ -8,7 +8,7 @@
 
 mappers::ReligionMapper::ReligionMapper()
 {
-	LOG(LogLevel::Info) << "Parsing religion mappings.";
+	Log(LogLevel::Info) << "Parsing religion mappings.";
 	registerKeys();
 	parseFile("configurables/religion_map.txt");
 	clearRegisteredKeywords();

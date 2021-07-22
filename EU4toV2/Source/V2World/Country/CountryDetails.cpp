@@ -26,7 +26,7 @@ V2::CountryDetails::CountryDetails(std::string _filename): filename(std::move(_f
 	}
 	else
 	{
-		LOG(LogLevel::Debug) << "Could not find file common/countries/" << filename << " - skipping";
+		Log(LogLevel::Debug) << "Could not find file common/countries/" << filename << " - skipping";
 	}
 	clearRegisteredKeywords();
 }

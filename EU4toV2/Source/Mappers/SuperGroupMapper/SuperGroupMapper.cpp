@@ -6,7 +6,7 @@
 
 void mappers::SuperGroupMapper::init()
 {
-	LOG(LogLevel::Info) << "Parsing starting supergroups.";
+	Log(LogLevel::Info) << "Parsing starting supergroups.";
 
 	registerRegex("[a-z_]+", [this](const std::string& superGroupName, std::istream& theStream) {
 		const SuperRegion newSuperRegionBlock(theStream);

@@ -8,7 +8,7 @@
 
 mappers::StartingInventionMapper::StartingInventionMapper()
 {
-	LOG(LogLevel::Info) << "Parsing Starting Inventions";
+	Log(LogLevel::Info) << "Parsing Starting Inventions";
 	registerKeys();
 	auto filenames = commonItems::GetAllFilesInFolder(theConfiguration.getVic2Path() + "/inventions/");
 	for (const auto& filename: filenames)

@@ -5,7 +5,7 @@
 
 mappers::TerrainDataMapper::TerrainDataMapper()
 {
-	LOG(LogLevel::Info) << "Loading Terrain Data.";
+	Log(LogLevel::Info) << "Loading Terrain Data.";
 	registerKeys();
 	parseFile("configurables/terrain_data.txt");
 	clearRegisteredKeywords();

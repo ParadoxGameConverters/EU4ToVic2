@@ -10,16 +10,16 @@ bool V2::createColonialFlag(const std::string& colonialOverlordPath, const std::
 	tga_result res = tga_read(&ColonialBase, colonialBasePath.c_str());
 	if (0 != res)
 	{
-		LOG(LogLevel::Error) << "Failed to create colonial flag: could not open " << colonialBasePath;
-		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
+		Log(LogLevel::Error) << "Failed to create colonial flag: could not open " << colonialBasePath;
+		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
 	res = tga_read(&Corner, colonialOverlordPath.c_str());
 	if (0 != res)
 	{
-		LOG(LogLevel::Error) << "Failed to create colonial flag: could not open " << colonialOverlordPath;
-		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
+		Log(LogLevel::Error) << "Failed to create colonial flag: could not open " << colonialOverlordPath;
+		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
@@ -43,8 +43,8 @@ bool V2::createColonialFlag(const std::string& colonialOverlordPath, const std::
 				res = tga_unpack_pixel(sample[px], Corner.pixel_depth, &b, &g, &r, nullptr);
 				if (res)
 				{
-					LOG(LogLevel::Error) << "Failed to create colonial flag: could not read pixel data";
-					LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
+					Log(LogLevel::Error) << "Failed to create colonial flag: could not read pixel data";
+					Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 					return false;
 				}
 				tb += b / 4;
@@ -55,8 +55,8 @@ bool V2::createColonialFlag(const std::string& colonialOverlordPath, const std::
 			res = tga_pack_pixel(targetAddress, ColonialBase.pixel_depth, tb, tg, tr, 255);
 			if (res)
 			{
-				LOG(LogLevel::Error) << "Failed to create colonial flag: could not write pixel data";
-				LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
+				Log(LogLevel::Error) << "Failed to create colonial flag: could not write pixel data";
+				Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 				return false;
 			}
 		}
@@ -64,8 +64,8 @@ bool V2::createColonialFlag(const std::string& colonialOverlordPath, const std::
 	res = tga_write(targetPath.c_str(), &ColonialBase);
 	if (0 != res)
 	{
-		LOG(LogLevel::Error) << "Failed to create colonial flag: could not write to " << targetPath;
-		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
+		Log(LogLevel::Error) << "Failed to create colonial flag: could not write to " << targetPath;
+		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
@@ -85,16 +85,16 @@ bool V2::createCustomFlag(const commonItems::Color& c1,
 	auto res = tga_read(&base, basePath.c_str());
 	if (res)
 	{
-		LOG(LogLevel::Error) << "Failed to create custom flag: could not open " << basePath;
-		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
+		Log(LogLevel::Error) << "Failed to create custom flag: could not open " << basePath;
+		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
 	res = tga_read(&emblem, emblemPath.c_str());
 	if (res)
 	{
-		LOG(LogLevel::Error) << "Failed to create custom flag: could not open " << emblemPath;
-		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
+		Log(LogLevel::Error) << "Failed to create custom flag: could not open " << emblemPath;
+		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 
@@ -109,8 +109,8 @@ bool V2::createCustomFlag(const commonItems::Color& c1,
 			res = tga_unpack_pixel(targetAddress, base.pixel_depth, &b, &g, &r, nullptr);
 			if (res)
 			{
-				LOG(LogLevel::Error) << "Failed to create custom flag: could not read pixel data";
-				LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
+				Log(LogLevel::Error) << "Failed to create custom flag: could not read pixel data";
+				Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 				return false;
 			}
 
@@ -134,8 +134,8 @@ bool V2::createCustomFlag(const commonItems::Color& c1,
 				res = tga_unpack_pixel(targetOverlayAddress, emblem.pixel_depth, &oBlue, &oGreen, &oRed, &oAlpha);
 				if (res)
 				{
-					LOG(LogLevel::Error) << "Failed to create custom flag: could not read pixel data";
-					LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
+					Log(LogLevel::Error) << "Failed to create custom flag: could not read pixel data";
+					Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 					return false;
 				}
 
@@ -145,14 +145,14 @@ bool V2::createCustomFlag(const commonItems::Color& c1,
 			}
 			else
 			{
-				LOG(LogLevel::Warning) << "No targetOverlayAddress, error with targa handling.";
+				Log(LogLevel::Warning) << "No targetOverlayAddress, error with targa handling.";
 			}
 
 			res = tga_pack_pixel(targetAddress, base.pixel_depth, tb, tg, tr, 255);
 			if (res)
 			{
-				LOG(LogLevel::Error) << "Failed to create custom flag: could not write pixel data";
-				LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
+				Log(LogLevel::Error) << "Failed to create custom flag: could not write pixel data";
+				Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 				return false;
 			}
 		}
@@ -161,8 +161,8 @@ bool V2::createCustomFlag(const commonItems::Color& c1,
 	res = tga_write(targetPath.c_str(), &base);
 	if (res)
 	{
-		LOG(LogLevel::Error) << "Failed to create custom flag: could not write to " << targetPath;
-		LOG(LogLevel::Error) << "Error message from targa: " << tga_error(res);
+		Log(LogLevel::Error) << "Failed to create custom flag: could not write to " << targetPath;
+		Log(LogLevel::Error) << "Error message from targa: " << tga_error(res);
 		return false;
 	}
 

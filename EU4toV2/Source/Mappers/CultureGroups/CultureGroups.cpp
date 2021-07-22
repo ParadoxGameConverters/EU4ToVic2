@@ -11,7 +11,7 @@
 
 void mappers::CultureGroups::initForEU4()
 {
-	LOG(LogLevel::Info) << "Parsing Cultures and Culture Groups";
+	Log(LogLevel::Info) << "Parsing Cultures and Culture Groups";
 	registerKeys();
 
 	for (const auto& cultureFile: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/cultures/"))
@@ -26,7 +26,7 @@ void mappers::CultureGroups::initForEU4()
 
 void mappers::CultureGroups::initForV2()
 {
-	LOG(LogLevel::Info) << "Parsing V2 Cultures and Culture Groups";
+	Log(LogLevel::Info) << "Parsing V2 Cultures and Culture Groups";
 	registerKeys();
 	parseFile("configurables/culture_definitions.txt");
 	clearRegisteredKeywords();

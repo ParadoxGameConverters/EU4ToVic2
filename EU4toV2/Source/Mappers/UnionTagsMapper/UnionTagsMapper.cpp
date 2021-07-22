@@ -5,7 +5,7 @@
 
 mappers::UnionTagsMapper::UnionTagsMapper()
 {
-	LOG(LogLevel::Info) << "Parsing union tags.";
+	Log(LogLevel::Info) << "Parsing union tags.";
 	registerKeys();
 	parseFile("configurables/union_tags.txt");
 	clearRegisteredKeywords();

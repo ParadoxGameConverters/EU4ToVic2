@@ -4,7 +4,7 @@
 
 mappers::StartingTechMapper::StartingTechMapper()
 {
-	LOG(LogLevel::Info) << "Parsing starting techs.";
+	Log(LogLevel::Info) << "Parsing starting techs.";
 	registerKeyword("tech", [this](const std::string& techGroup, std::istream& theStream) {
 		const StartingTech startingTech(theStream);
 		startingTechs.emplace_back(startingTech);

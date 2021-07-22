@@ -4,7 +4,7 @@
 
 mappers::WarGoalMapper::WarGoalMapper()
 {
-	LOG(LogLevel::Info) << "Parsing War Goals.";
+	Log(LogLevel::Info) << "Parsing War Goals.";
 	registerKeys();
 	parseFile("configurables/war_goal_map.txt");
 	clearRegisteredKeywords();

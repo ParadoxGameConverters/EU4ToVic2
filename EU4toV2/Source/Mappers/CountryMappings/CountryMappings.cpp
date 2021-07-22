@@ -23,7 +23,7 @@ mappers::CountryMappings::CountryMappings():
 	 * We'll be dancing across multiple mappers so if you're new, follow the comments and the steps the converter takes.
 	 */
 
-	LOG(LogLevel::Info) << "Parsing Country Mapping Rules.";
+	Log(LogLevel::Info) << "Parsing Country Mapping Rules.";
 	registerKeys();
 	parseFile("configurables/country_mappings.txt");
 	clearRegisteredKeywords();
@@ -67,7 +67,7 @@ void mappers::CountryMappings::createMappings(const std::shared_ptr<CultureGroup
 	 */
 
 	cultureGroupsMapper = theCultureGroupsMapper;
-	LOG(LogLevel::Info) << "Creating Country Mappings.";
+	Log(LogLevel::Info) << "Creating Country Mappings.";
 
 	std::vector<std::shared_ptr<EU4::Country>> colonialCountries;
 	for (const auto& EU4Country: eu4Countries)

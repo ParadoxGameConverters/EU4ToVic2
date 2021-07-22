@@ -26,80 +26,80 @@ V2::World::World(const EU4::World& sourceWorld,
 {
 	Log(LogLevel::Progress) << "45 %";
 
-	LOG(LogLevel::Info) << "Parsing cultural union mappings.";
+	Log(LogLevel::Info) << "Parsing cultural union mappings.";
 	culturalUnionMapper = std::make_unique<mappers::CulturalUnionMapper>("configurables/unions.txt");
-	LOG(LogLevel::Info) << "Parsing nationalities mappings.";
+	Log(LogLevel::Info) << "Parsing nationalities mappings.";
 	culturalNationalitiesMapper = std::make_unique<mappers::CulturalUnionMapper>("configurables/nationals.txt");
 	religionMapper.scrapeCustomReligions();
 
-	LOG(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
-	LOG(LogLevel::Info) << "-> Importing Provinces";
+	Log(LogLevel::Info) << "*** Hello Vicky 2, creating world. ***";
+	Log(LogLevel::Info) << "-> Importing Provinces";
 	importProvinces();
 	Log(LogLevel::Progress) << "46 %";
 
-	LOG(LogLevel::Info) << "-> Importing Vanilla Pops";
+	Log(LogLevel::Info) << "-> Importing Vanilla Pops";
 	importDefaultPops();
 	Log(LogLevel::Progress) << "47 %";
 
-	LOG(LogLevel::Info) << "-> Importing Potential Countries";
+	Log(LogLevel::Info) << "-> Importing Potential Countries";
 	importPotentialCountries();
 	Log(LogLevel::Progress) << "48 %";
 
-	LOG(LogLevel::Info) << "-> Loading Country Mapping Rules";
+	Log(LogLevel::Info) << "-> Loading Country Mapping Rules";
 	countryMapper.createMappings(sourceWorld.getCultureGroupsMapper(), sourceWorld.getCountries(), provinceMapper);
 	Log(LogLevel::Progress) << "49 %";
 
-	LOG(LogLevel::Info) << "-> Loading Culture Mapping Rules";
+	Log(LogLevel::Info) << "-> Loading Culture Mapping Rules";
 	initializeCultureMappers();
 	mappingChecker.check(sourceWorld, provinceMapper, religionMapper, cultureMapper);
 	Log(LogLevel::Progress) << "50 %";
 
-	LOG(LogLevel::Info) << "-> Pouring From Hollow Into Empty";
+	Log(LogLevel::Info) << "-> Pouring From Hollow Into Empty";
 	cultureGroupsMapper.importNeoCultures(sourceWorld.getRegions(), sourceWorld.getCultureGroupsMapper(), cultureMapper);
 	Log(LogLevel::Progress) << "51 %";
 
-	LOG(LogLevel::Info) << "-> Converting Countries";
+	Log(LogLevel::Info) << "-> Converting Countries";
 	convertCountries(sourceWorld, ideaEffectMapper);
 	Log(LogLevel::Progress) << "52 %";
 
-	LOG(LogLevel::Info) << "-> Converting Provinces";
+	Log(LogLevel::Info) << "-> Converting Provinces";
 	convertProvinces(sourceWorld, techGroupsMapper, sourceWorld.getRegions());
 	Log(LogLevel::Progress) << "53 %";
 
-	LOG(LogLevel::Info) << "-> Cataloguing Invasive Fauna";
+	Log(LogLevel::Info) << "-> Cataloguing Invasive Fauna";
 	transcribeNeoCultures();
 	Log(LogLevel::Progress) << "54 %";
 
-	LOG(LogLevel::Info) << "-> Converting Diplomacy";
+	Log(LogLevel::Info) << "-> Converting Diplomacy";
 	diplomacy.convertDiplomacy(sourceWorld.getDiplomaticAgreements(), countryMapper, countries);
 	diplomacy.sphereHRE(sourceWorld.decentralizedHRE(), getHreEmperor(), countries);
 	Log(LogLevel::Progress) << "55 %";
 
-	LOG(LogLevel::Info) << "-> Setting Up States";
+	Log(LogLevel::Info) << "-> Setting Up States";
 	setupStates();
 	Log(LogLevel::Progress) << "57 %";
 
-	LOG(LogLevel::Info) << "-> Generating Unciv Reforms";
+	Log(LogLevel::Info) << "-> Generating Unciv Reforms";
 	convertUncivReforms(sourceWorld, techGroupsMapper);
 	Log(LogLevel::Progress) << "58 %";
 
-	LOG(LogLevel::Info) << "-> Converting Technology Levels";
+	Log(LogLevel::Info) << "-> Converting Technology Levels";
 	convertTechs(sourceWorld);
 	Log(LogLevel::Progress) << "59 %";
 
-	LOG(LogLevel::Info) << "-> Distributing Factories";
+	Log(LogLevel::Info) << "-> Distributing Factories";
 	allocateFactories(sourceWorld);
 	Log(LogLevel::Progress) << "60 %";
 
-	LOG(LogLevel::Info) << "-> Distributing Pops";
+	Log(LogLevel::Info) << "-> Distributing Pops";
 	setupPops(sourceWorld);
 	Log(LogLevel::Progress) << "61 %";
 
-	LOG(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
+	Log(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
 	modifyPrimaryAndAcceptedCultures();
 	Log(LogLevel::Progress) << "62 %";
 
-	LOG(LogLevel::Info) << "-> Monitoring Native Fauna Reaction";
+	Log(LogLevel::Info) << "-> Monitoring Native Fauna Reaction";
 	addAcceptedCultures(sourceWorld.getRegions());
 	Log(LogLevel::Progress) << "63 %";
 
@@ -111,7 +111,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	dropStates(techGroupsMapper);
 	Log(LogLevel::Progress) << "65 %";
 
-	LOG(LogLevel::Info) << "-> Merging Nations";
+	Log(LogLevel::Info) << "-> Merging Nations";
 	decentralizeHRE(sourceWorld.decentralizedHRE(), getHreEmperor());
 	addUnions(sourceWorld.decentralizedHRE(), getHreEmperor());
 
@@ -120,37 +120,60 @@ V2::World::World(const EU4::World& sourceWorld,
 
 	Log(LogLevel::Progress) << "66 %";
 
-	LOG(LogLevel::Info) << "-> Converting Armies and Navies";
+	Log(LogLevel::Info) << "-> Converting Armies and Navies";
 	convertArmies();
 	Log(LogLevel::Progress) << "67 %";
 
-	LOG(LogLevel::Info) << "-> Converting Ongoing Conflicts";
+	Log(LogLevel::Info) << "-> Converting Ongoing Conflicts";
 	convertWars(sourceWorld);
 	Log(LogLevel::Progress) << "68 %";
 
-	LOG(LogLevel::Info) << "-> Describing Religion";
+	Log(LogLevel::Info) << "-> Describing Religion";
 	addReligionCulture();
 	Log(LogLevel::Progress) << "69 %";
 
-	LOG(LogLevel::Info) << "-> Converting Botanical Definitions";
+	Log(LogLevel::Info) << "-> Converting Botanical Definitions";
 	transcribeHistoricalData();
 	Log(LogLevel::Progress) << "70 %";
 
-	LOG(LogLevel::Info) << "-> Converting country flags";
+	Log(LogLevel::Info) << "-> Converting country flags";
 	convertCountryFlags();
 	Log(LogLevel::Progress) << "71 %";
 
 	if (theConfiguration.isHpmEnabled())
 	{
-		LOG(LogLevel::Info) << "-> Update country details";
+		Log(LogLevel::Info) << "-> Update country details";
 		updateCountryDetails();
 		Log(LogLevel::Progress) << "72 %";
 	}
 
-	LOG(LogLevel::Info) << "---> Le Dump <---";
+	Log(LogLevel::Info) << "-> Localizing Provinces";
+	localizeProvinces();
+	Log(LogLevel::Progress) << "73 %";
+
+	Log(LogLevel::Info) << "---> Le Dump <---";
 	output(converterVersion);
 
-	LOG(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
+	Log(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
+}
+
+void V2::World::localizeProvinces()
+{
+	for (const auto& [provinceID, province]: provinces)
+	{
+		const auto& ownerTag = province->getOwner();
+		if (ownerTag.empty())
+			continue;
+		if (!countries.contains(ownerTag))
+			continue;
+		const auto& owner = countries.at(ownerTag);
+		const auto& culture = owner->getPrimaryCulture();
+		const auto& rename = provinceRenamingsMapper.getRename(provinceID, culture);
+		if (!rename)
+			continue;
+		localizedProvinces.emplace(provinceID, *rename);
+	}
+	Log(LogLevel::Info) << "<> " << localizedProvinces.size() << " provinces marked for renaming.";
 }
 
 void V2::World::updateDeadNations()
@@ -615,11 +638,11 @@ void V2::World::shuffleRgos()
 {
 	if (bucketShuffler.empty())
 	{
-		LOG(LogLevel::Warning) << "No valid buckets defined, skipping RGO randomisation.";
+		Log(LogLevel::Warning) << "No valid buckets defined, skipping RGO randomisation.";
 		return;
 	}
 
-	LOG(LogLevel::Info) << "Shuffling RGOs in provinces.";
+	Log(LogLevel::Info) << "Shuffling RGOs in provinces.";
 	for (auto& prov: provinces)
 	{
 		bucketShuffler.putInBucket(prov.second);
@@ -643,7 +666,7 @@ void V2::World::importDefaultPops()
 	}
 	auto filenames = commonItems::GetAllFilesInFolder(popsFolder);
 
-	LOG(LogLevel::Info) << "Parsing minority pops mappings";
+	Log(LogLevel::Info) << "Parsing minority pops mappings";
 
 	for (const auto& filename: filenames)
 	{
@@ -684,7 +707,7 @@ void V2::World::importPopsFromProvince(const int provinceID, const std::vector<m
 	auto province = provinces.find(provinceID);
 	if (province == provinces.end())
 	{
-		LOG(LogLevel::Warning) << "Could not find province " << provinceID << " for original pops.";
+		Log(LogLevel::Warning) << "Could not find province " << provinceID << " for original pops.";
 		return;
 	}
 
@@ -767,10 +790,10 @@ void V2::World::importPotentialCountry(const std::string& line, bool dynamicCoun
 
 void V2::World::initializeCultureMappers()
 {
-	LOG(LogLevel::Info) << "Parsing culture mappings.";
+	Log(LogLevel::Info) << "Parsing culture mappings.";
 	cultureMapper.loadFile("configurables/culture_map.txt");
 
-	LOG(LogLevel::Info) << "Parsing slave culture mappings.";
+	Log(LogLevel::Info) << "Parsing slave culture mappings.";
 	slaveCultureMapper.loadFile("configurables/culture_map_slaves.txt");
 
 	cultureGroupsMapper.initForV2();
@@ -779,11 +802,11 @@ void V2::World::initializeCultureMappers()
 void V2::World::convertCountries(const EU4::World& sourceWorld, const mappers::IdeaEffectMapper& ideaEffectMapper)
 {
 	initializeCountries(sourceWorld, ideaEffectMapper);
-	LOG(LogLevel::Info) << "-> Converting National Values";
+	Log(LogLevel::Info) << "-> Converting National Values";
 	convertNationalValues();
-	LOG(LogLevel::Info) << "-> Converting Prestige";
+	Log(LogLevel::Info) << "-> Converting Prestige";
 	convertPrestige();
-	LOG(LogLevel::Info) << "-> Adding Potential Countries";
+	Log(LogLevel::Info) << "-> Adding Potential Countries";
 	addAllPotentialCountries();
 }
 
@@ -900,7 +923,7 @@ void V2::World::convertNationalValues()
 
 void V2::World::convertPrestige()
 {
-	LOG(LogLevel::Info) << "-> Setting prestige";
+	Log(LogLevel::Info) << "-> Setting prestige";
 
 	double highestScore = 0;
 	for (const auto& country: countries)
@@ -963,14 +986,14 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 		auto eu4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(province.first);
 		if (eu4ProvinceNumbers.empty())
 		{
-			LOG(LogLevel::Warning) << "No mappings found for V2 province " << province.first << " (" << province.second->getName() << ")";
+			Log(LogLevel::Warning) << "No mappings found for V2 province " << province.first << " (" << province.second->getName() << ")";
 			// We leave it to defaults
 			province.second->sterilizeProvince();
 			continue;
 		}
 		if (std::count(eu4ProvinceNumbers.begin(), eu4ProvinceNumbers.end(), 0) > 0)
 		{
-			LOG(LogLevel::Warning) << "Invalid mapping found for V2 province " << province.first << " (" << province.second->getName() << ")";
+			Log(LogLevel::Warning) << "Invalid mapping found for V2 province " << province.first << " (" << province.second->getName() << ")";
 			// We have a buggy mapping somewhere. Better drop.
 			province.second->sterilizeProvince();
 			continue;
@@ -1315,7 +1338,7 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 
 	if (weightedCountries.empty())
 	{
-		LOG(LogLevel::Warning) << "No countries are able to accept factories? What's the state of tech in this world?";
+		Log(LogLevel::Warning) << "No countries are able to accept factories? What's the state of tech in this world?";
 		return;
 	}
 
@@ -1341,7 +1364,7 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 
 	if (totalIndWeight == 0.0)
 	{
-		LOG(LogLevel::Warning) << "No factories for anyone! Industry levels are too unified - are you converting a starting date?";
+		Log(LogLevel::Warning) << "No factories for anyone! Industry levels are too unified - are you converting a starting date?";
 		return;
 	}
 
@@ -1354,7 +1377,7 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 		weightedCountries.pop_front();
 		if (weightedCountries.empty())
 		{
-			LOG(LogLevel::Warning) << "These are all primitives! No factories for anyone!";
+			Log(LogLevel::Warning) << "These are all primitives! No factories for anyone!";
 			return;
 		}
 	}
@@ -1421,16 +1444,16 @@ void V2::World::setupPops(const EU4::World& sourceWorld)
 	for (const auto& country: countries)
 		country.second->setupPops(popWeightRatio, popAlgorithm, provinceMapper);
 
-	LOG(LogLevel::Info) << "Vanilla world population: " << totalWorldPopulation;
+	Log(LogLevel::Info) << "Vanilla world population: " << totalWorldPopulation;
 	if (theConfiguration.getPopShaping() == Configuration::POPSHAPES::Extreme)
 	{
-		LOG(LogLevel::Info) << "\tTotal world weight sum: " << totalProvinceWeight << " (dev + buildings)";
-		LOG(LogLevel::Info) << "\tPopulation per weight point is: " << my_totalWorldPopulation << " / " << totalProvinceWeight << " = " << popWeightRatio;
+		Log(LogLevel::Info) << "\tTotal world weight sum: " << totalProvinceWeight << " (dev + buildings)";
+		Log(LogLevel::Info) << "\tPopulation per weight point is: " << my_totalWorldPopulation << " / " << totalProvinceWeight << " = " << popWeightRatio;
 	}
 	long newTotalPopulation = 0;
 	for (const auto& province: provinces)
 		newTotalPopulation += province.second->getTotalPopulation();
-	LOG(LogLevel::Info) << "New total world population: " << newTotalPopulation;
+	Log(LogLevel::Info) << "New total world population: " << newTotalPopulation;
 }
 
 void V2::World::addUnions(bool hreDecentralized, const std::shared_ptr<Country>& emperor)
@@ -1438,7 +1461,7 @@ void V2::World::addUnions(bool hreDecentralized, const std::shared_ptr<Country>&
 	if (theConfiguration.getCoreHandling() == Configuration::COREHANDLES::DropAll)
 		return;
 
-	LOG(LogLevel::Info) << "Distributing national and cultural union cores.";
+	Log(LogLevel::Info) << "Distributing national and cultural union cores.";
 	std::shared_ptr<mappers::CultureGroup> emperorCultureGroup;
 	if (emperor)
 		emperorCultureGroup = cultureGroupsMapper.getGroupForCulture(emperor->getPrimaryCulture());
@@ -1527,25 +1550,25 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion) co
 	commonItems::TryCreateFolder("output");
 	Log(LogLevel::Progress) << "80 %";
 
-	LOG(LogLevel::Info) << "<- Copying Mod Template";
+	Log(LogLevel::Info) << "<- Copying Mod Template";
 	commonItems::CopyFolder("blankMod/output", "output/output");
 	Log(LogLevel::Progress) << "81 %";
 
-	LOG(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
+	Log(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
 	commonItems::RenameFolder("output/output", "output/" + theConfiguration.getOutputName());
 	Log(LogLevel::Progress) << "82 %";
 
-	LOG(LogLevel::Info) << "<- Crafting .mod File";
+	Log(LogLevel::Info) << "<- Crafting .mod File";
 	createModFile();
 	Log(LogLevel::Progress) << "83 %";
 
 	// Record converter version
-	LOG(LogLevel::Info) << "<- Writing version";
+	Log(LogLevel::Info) << "<- Writing version";
 	outputVersion(converterVersion);
 	Log(LogLevel::Progress) << "84 %";
 
 	// Update bookmark starting dates
-	LOG(LogLevel::Info) << "<- Updating bookmarks";
+	Log(LogLevel::Info) << "<- Updating bookmarks";
 	modifyDefines();
 	Log(LogLevel::Progress) << "85 %";
 
@@ -1558,60 +1581,60 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion) co
 	Log(LogLevel::Progress) << "86 %";
 
 	// Output common\countries.txt
-	LOG(LogLevel::Info) << "<- Creating countries.txt";
+	Log(LogLevel::Info) << "<- Creating countries.txt";
 	outputCommonCountries();
 	Log(LogLevel::Progress) << "87 %";
 
 	// Create flags for all new countries.
-	LOG(LogLevel::Info) << "-> Creating Flags";
+	Log(LogLevel::Info) << "-> Creating Flags";
 	Flags flags;
 	Log(LogLevel::Progress) << "88 %";
 
-	LOG(LogLevel::Info) << "-> Setting Flags";
+	Log(LogLevel::Info) << "-> Setting Flags";
 	flags.setV2Tags(countries, countryMapper);
 	Log(LogLevel::Progress) << "89 %";
 
-	LOG(LogLevel::Info) << "<- Writing Flags";
+	Log(LogLevel::Info) << "<- Writing Flags";
 	flags.output();
 	Log(LogLevel::Progress) << "90 %";
 
 	// Create localizations for all new countries. We don't actually know the names yet so we just use the tags as the names.
-	LOG(LogLevel::Info) << "<- Writing Localisation Text";
+	Log(LogLevel::Info) << "<- Writing Localisation Text";
 	outputLocalisation();
 	Log(LogLevel::Progress) << "91 %";
 
-	LOG(LogLevel::Info) << "<- Writing Provinces";
+	Log(LogLevel::Info) << "<- Writing Provinces";
 	outputProvinces();
 	Log(LogLevel::Progress) << "92 %";
 
-	LOG(LogLevel::Info) << "<- Writing Countries";
+	Log(LogLevel::Info) << "<- Writing Countries";
 	outputCountries();
 	Log(LogLevel::Progress) << "93 %";
 
-	LOG(LogLevel::Info) << "<- Writing Diplomacy";
+	Log(LogLevel::Info) << "<- Writing Diplomacy";
 	diplomacy.output();
 	Log(LogLevel::Progress) << "94 %";
 
-	LOG(LogLevel::Info) << "<- Writing Armed and Unarmed Conflicts";
+	Log(LogLevel::Info) << "<- Writing Armed and Unarmed Conflicts";
 	outputWars();
 	Log(LogLevel::Progress) << "95 %";
 
-	LOG(LogLevel::Info) << "<- Writing Culture Definitions";
+	Log(LogLevel::Info) << "<- Writing Culture Definitions";
 	outputCultures();
 	Log(LogLevel::Progress) << "96 %";
 
-	LOG(LogLevel::Info) << "<- Writing Religion Definitions";
+	Log(LogLevel::Info) << "<- Writing Religion Definitions";
 	outputReligions();
 
-	LOG(LogLevel::Info) << "<- Writing Pops";
+	Log(LogLevel::Info) << "<- Writing Pops";
 	outputPops();
 	Log(LogLevel::Progress) << "97 %";
 
-	LOG(LogLevel::Info) << "<- Sending Botanical Expedition";
+	Log(LogLevel::Info) << "<- Sending Botanical Expedition";
 	outputHistory();
 	Log(LogLevel::Progress) << "98 %";
 
-	LOG(LogLevel::Info) << "<- Writing Treatise on the Origins of Invasive Fauna";
+	Log(LogLevel::Info) << "<- Writing Treatise on the Origins of Invasive Fauna";
 	outputNeoCultures();
 	Log(LogLevel::Progress) << "99 %";
 
@@ -1624,7 +1647,7 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion) co
 	}
 
 	// verify countries got written
-	LOG(LogLevel::Info) << "-> Verifying All Countries Written";
+	Log(LogLevel::Info) << "-> Verifying All Countries Written";
 	verifyCountriesWritten();
 }
 
@@ -1746,26 +1769,37 @@ void V2::World::outputCommonCountries() const
 
 void V2::World::outputLocalisation() const
 {
+	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
+	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
+
+	Log(LogLevel::Info) << "<- Writing Localization Names";
 	auto localisationPath = "output/" + theConfiguration.getOutputName() + "/localisation";
 	if (!commonItems::TryCreateFolder(localisationPath))
 		return;
 
-	auto source = theConfiguration.getVic2Path() + "/localisation/text.csv";
-	auto dest = localisationPath + "/text.csv";
-
-	LOG(LogLevel::Info) << "<- Writing Localization Names";
 	std::ofstream output(localisationPath + "/0_Names.csv", std::ofstream::app);
 	if (!output.is_open())
-		throw std::runtime_error("Could not update localization text file");
+		throw std::runtime_error("Could not update localization text file.");
 
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
 	for (const auto& country: countries)
 	{
 		if (country.second->isNewCountry())
 		{
 			output << country.second->getLocalisation();
 		}
+	}
+	output.close();
+
+	Log(LogLevel::Info) << "<- Writing Province Localizations";
+	output.open(localisationPath + "/0_ProvinceNames.csv");
+	if (!output.is_open())
+		throw std::runtime_error("Could not write province localizations.");
+	for (const auto& [provinceID, name]: localizedProvinces)
+	{
+		output << "PROV" << provinceID << ";";
+		for (auto i = 0; i < 13; i++)
+			output << commonItems::convertUTF8ToWin1252(name) << ";";
+		output << "x\n";
 	}
 	output.close();
 }
@@ -1895,7 +1929,7 @@ void V2::World::verifyCountriesWritten() const
 		{
 			continue;
 		}
-		LOG(LogLevel::Warning) << "common/countries/" << countryFileName << " does not exists. This will likely crash Victoria 2.";
+		Log(LogLevel::Warning) << "common/countries/" << countryFileName << " does not exists. This will likely crash Victoria 2.";
 	}
 	v2CountriesInput.close();
 }
@@ -1905,7 +1939,7 @@ void V2::World::createModFile() const
 	std::ofstream output("output/" + theConfiguration.getOutputName() + ".mod");
 	if (!output.is_open())
 		throw std::runtime_error("Could not create " + theConfiguration.getOutputName() + ".mod");
-	LOG(LogLevel::Info) << "\t-> Writing to: "
+	Log(LogLevel::Info) << "\t-> Writing to: "
 							  << "output/" + theConfiguration.getOutputName() + ".mod";
 	output << modFile;
 	output.close();
@@ -1931,7 +1965,7 @@ void V2::World::outputPops() const
 			}
 			else
 			{
-				LOG(LogLevel::Error) << "Could not find province " << provinceNumber << " while outputing pops!";
+				Log(LogLevel::Error) << "Could not find province " << provinceNumber << " while outputing pops!";
 			}
 		}
 	}
@@ -1959,7 +1993,7 @@ std::string V2::World::clipCountryFileName(const std::string& incoming) const
 
 void V2::World::copyHpmFiles() const
 {
-	LOG(LogLevel::Info) << "<- Copying HPM files";
+	Log(LogLevel::Info) << "<- Copying HPM files";
 	const auto& hpm = theConfiguration.getVic2Path();
 	const auto& out = "output/" + theConfiguration.getOutputName();
 

@@ -286,6 +286,8 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceMappings\ProvinceMappingsVersion.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceRenamings\ProvinceRename.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceRenamings\ProvinceRenamings.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\RegimentCosts\RegimentCostsMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
@@ -411,6 +413,8 @@
     <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingsVersionTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingTests.cpp" />
+    <ClCompile Include="MapperTests\ProvinceRenamings\ProvinceRenameTests.cpp" />
+    <ClCompile Include="MapperTests\ProvinceRenamings\ProvinceRenamingsTests.cpp" />
     <ClCompile Include="MapperTests\RegimentCostsMapper\RegimentCostsMapperTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMapperTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMappingTests.cpp" />
