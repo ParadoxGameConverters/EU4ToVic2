@@ -2220,7 +2220,7 @@ link = { province = 413 culture = north_german name = "Wirten" }
 link = { province = 413 culture = south_german name = "Wirten" }
 link = { province = 413 culture = swiss name = "Wirten" }
 link = { province = 415 culture = icelandic name = "Rúðuborg" }
-link = { province = 423 culture = breton name = "Naoneð" }
+link = { province = 423 culture = breton name = "Naoned" }
 link = { province = 424 culture = breton name = "Roazhon" }
 link = { province = 432 culture = german name = "Bisanz" }
 link = { province = 432 culture = latin name = "Vesontio" }
