@@ -144,7 +144,7 @@ class World
 	void processShatteredHre(const std::optional<std::string>& eu4HreTag);
 	void createShatteredHreDecisions(const std::string& v2HreTag);
 	void createShatteredHreEvents(const std::string& v2HreTag);
-	void outputDymanicContent() const;
+	void outputDynamicContent() const;
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
