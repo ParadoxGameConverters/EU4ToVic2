@@ -5,15 +5,53 @@ void V2::World::createShatteredHreEvents(const std::string& v2HreTag)
 	const auto& adjective = getCountry(v2HreTag)->getLocalisation().getLocalAdjective();
 
 	std::string outLoc;
-	outLoc = "EVTNAME250001;Centralization of the " + adjective + " Empire;Centralisation du Saint Empire Romain Germanique;Zentralisierung des Heiligen Römischen Reiches der Deutschen Nation;Centralizacja Œwiêtego Cesarstwa Rzymskiego;Centralización del Sacro Imperio Romano;La centralizzazione del Sacro Romano Impero;Központosítása Szent Római Birodalom;Centralizace HRE;Központosítása Szent Római Birodalom;Centralisatie van de Heilige Roomse Rijk;Centralização do Sacro Império Romano;Öåíòðàëèçàöèÿ ÑÐÈ;Keskittäminen Pyhällä roomalaisen keisarikunnan;x\n";
-	outLoc += "EVTDESC250001;We will join the Thousand Years Empire!;Nous nous joindrons au Reich des Mille Ans!;Wir werden dem Tausendjährigen Reich beitreten!;Bêdziemy do³¹czyæ do tysiêcy lat Rzeszy!;¡Nos uniremos al Reich de los Mil Años!;Ci uniremo all'Impero di Mille Anni!;Mi fog csatlakozni a Thousand Years Reich!;Pøipojíme se k tisícileté øíši!;Mi fog csatlakozni a Thousand Years Reich!;We zullen toetreden tot de Thousand Years Reich!;Nós nos juntaremos ao Reich dos Mil Anos!;Ìû ïðèñîåäèíÿåìñÿ ê Òûñÿ÷åëåòíåìó Ðåéõó!;Me liittyy tuhatvuotinen Reich!;x\n";
-	outLoc += "EVTOPTA250001;God save the Emperor!;Dieu sauve le Kaiser!;Gott rette den Kaiser!;God save the Kaiser!;¡Dios salve al Kaiser!;Dio salvi l'Imperatore!;Isten óvja a Kaiser!;Bùh zachránit Kaiser!;Isten óvja a Kaiser!;God save the Kaiser!;Deus salve o Kaiser!;Áîã ñïàñåò êàéçåðà!;Jumala pelastaa Kaiser!;x\n";
-	outLoc += "EVTNAME250002;Death of the " + adjective + " Empire;Mort du Saint Empire Romain;Tod des Heiligen Römischen Reiches;Œmieræ Œwiêtego Cesarstwa Rzymskiego;Muerte del Sacro Imperio Romano;La morte del Sacro Romano Impero;Halál a Szent Római Birodalom;Smrt HRE;Halál a Szent Római Birodalom;De dood van het Heilige Roomse Rijk;Morte do Sacro Império Romano;Ñìåðòü ÑÐÈ;Death Pyhän Rooman valtakunnan;x\n";
-	outLoc += "EVTDESC250002;The Empire was already a relic but the liberal revolutions made it meet its end!;L'Empire était déjà une relique, mais les révolutions libérales lui ont donné le coup de grâce.;Das Reich war schon ein Relikt, aber die liberalen Revolutionen brachten es seinem Ende entgegen!;Imperium ju¿ prze¿ytkiem ale liberalne rewolucje sprawi³y, ze spe³niaj¹ swój cel!;¡El Imperio ya era una reliquia, pero las revoluciones liberales lo hicieron llegar a su fin!;L'Impero era già una reliquia, ma le rivoluzioni liberali hanno dato il colpo di grazia!;A Birodalom már egy ereklye, hanem a liberális fordulat tette eleget a vége!;Øíše byla již relikvií, ale liberální revoluce pøinesly její konec!;A Birodalom már egy ereklye, hanem a liberális fordulat tette eleget a vége!;Het Empire was al een relikwie, maar de liberale revoluties maakte het voldoen aan zijn einde!;O Império já era uma relíquia, mas as revoluções liberais fizeram com que ele atingisse seu fim!;Èìïåðèÿ áûëà óæå ðåëèêâèåé, íî ëèáåðàëüíûå ðåâîëþöèè ïðèâåëè ê åå çàâåðøåíèþ!;Imperiumi oli jo jäänne mutta vapaiden kierrokset se täyttää sen pää!;x\n";
-	outLoc += "EVTOPTA250002;A dream gone to waste...;Un rêve perdu...;Ein verschwendeter Traum...;Sen poszed³ na marne...;Un sueño perdido...;Un sogno andato sprecato...;Egy álom ment veszendõbe...;Sen vysloužil...;Egy álom ment veszendõbe...;Een droom gegaan om te verspillen...;Um sonho perdido...;Ìå÷òà ïðîïàëà...;Unelma mennyt hukkaan...;x\n";
-	outLoc += "EVTDESC250003;Shall we join the Thousand Years Empire?;Devrions-nous nous joindre au Reich des Mille Ans?;Sollen wir dem Tausendjährigen Reich beitreten?;Powinniœmy przy³¹czyæ siê do tysiêcy lat Rzeszy?;¿Nos uniremos al Reich de los Mil Años?;Dobbiamo unirci all'Impero di Mille Anni?;Csatlakozunk a Thousand Years Reich?;Máme se pøipojit k tisícileté øíši?;Csatlakozunk a Thousand Years Reich?;Zullen we lid worden van de Thousand Years Reich?;Vamos nos unir ao Reich dos Mil Anos?;Ïðèñîåäèíèòåñü ê Òûñÿ÷åëåòíåìó Ðåéõó?;Onko meidän liittyä tuhatvuotinen valtakunnan?;x\n";
-	outLoc += "EVTOPTA250003;God save the Emperor!;Gott erhalte unser Kaiser!;Gott erhalte unser Kaiser!;Gott erhalte Unser Kaiser!;Gott erhalte unser ¡Kaiser!;Gott erhalte Unser Kaiser!;Gott erhalte Unser Kaiser!;Gott erhalte unser Kaiser!;Gott erhalte Unser Kaiser!;Gott erhalte unser Kaiser!;Gott erhalte unser Kaiser!;Ãîòò åðõàëüòå èíñåð Êàéñåð!;Gott erhalte unser Kaiser!;x\n";
-	outLoc += "EVTOPTB250003;We cast aside this ancient notion! We have our own glory.;Nous rejetons cette ancienne notion! Nous avons notre propre gloire.;Wir verwerfen diese alte Vorstellung! Wir haben unsere eigene Herrlichkeit.;Mamy odrzuci³ te staro¿ytna idee! Mamy w³asna chwale.;Desechamos esta noción antigua! Tenemos nuestra propia gloria.;Abbiamo gettato via questa anticaglia! Noi abbiamo la nostra gloria.;Mi öntött el ezt az õsi elképzelés! Megvan a saját dicsõségét.;Odkládáme tento starodávný pojem stranou! Máme vlastní slávu.;Mi öntött el ezt az õsi elképzelés! Megvan a saját dicsõségét.;We werpen dit oude idee! We hebben onze eigen glorie.;Nós jogamos fora esta noção antiga! Temos a nossa própria glória.;Ìû îòáðîñèëè ýòî äðåâíåå ïîíÿòèå! Ó íàñ åñòü íàøà ñëàâà.;Me heitimme pois tämä vanha käsite! Meillä on oma kunniaa.;x\n";
+	outLoc = "EVTNAME250001;Centralization of the " + adjective +
+				" Empire;Centralisation du Saint Empire Romain Germanique;Zentralisierung des Heiligen Römischen Reiches der Deutschen Nation;Centralizacja "
+				"Œwiêtego Cesarstwa Rzymskiego;Centralización del Sacro Imperio Romano;La centralizzazione del Sacro Romano Impero;Központosítása Szent Római "
+				"Birodalom;Centralizace HRE;Központosítása Szent Római Birodalom;Centralisatie van de Heilige Roomse Rijk;Centralização do Sacro Império "
+				"Romano;Öåíòðàëèçàöèÿ ÑÐÈ;Keskittäminen Pyhällä roomalaisen keisarikunnan;x\n";
+	outLoc +=
+		 "EVTDESC250001;We will join the Thousand Years Empire!;Nous nous joindrons au Reich des Mille Ans!;Wir werden dem Tausendjährigen Reich "
+		 "beitreten!;Bêdziemy do³¹czyæ do tysiêcy lat Rzeszy!;¡Nos uniremos al Reich de los Mil Años!;Ci uniremo all'Impero di Mille Anni!;Mi fog csatlakozni a "
+		 "Thousand Years Reich!;Pøipojíme se k tisícileté øíši!;Mi fog csatlakozni a Thousand Years Reich!;We zullen toetreden tot de Thousand Years Reich!;Nós "
+		 "nos juntaremos ao Reich dos Mil Anos!;Ìû ïðèñîåäèíÿåìñÿ ê Òûñÿ÷åëåòíåìó Ðåéõó!;Me liittyy tuhatvuotinen Reich!;x\n";
+	outLoc +=
+		 "EVTOPTA250001;God save the Emperor!;Dieu sauve le Kaiser!;Gott rette den Kaiser!;God save the Kaiser!;¡Dios salve al Kaiser!;Dio salvi "
+		 "l'Imperatore!;Isten óvja a Kaiser!;Bùh zachránit Kaiser!;Isten óvja a Kaiser!;God save the Kaiser!;Deus salve o Kaiser!;Áîã ñïàñåò êàéçåðà!;Jumala "
+		 "pelastaa Kaiser!;x\n";
+	outLoc += "EVTNAME250002;Death of the " + adjective +
+				 " Empire;Mort du Saint Empire Romain;Tod des Heiligen Römischen Reiches;Œmieræ Œwiêtego Cesarstwa Rzymskiego;Muerte del Sacro Imperio Romano;La "
+				 "morte del Sacro Romano Impero;Halál a Szent Római Birodalom;Smrt HRE;Halál a Szent Római Birodalom;De dood van het Heilige Roomse Rijk;Morte do "
+				 "Sacro Império Romano;Ñìåðòü ÑÐÈ;Death Pyhän Rooman valtakunnan;x\n";
+	outLoc +=
+		 "EVTDESC250002;The Empire was already a relic but the liberal revolutions made it meet its end!;L'Empire était déjà une relique, mais les révolutions "
+		 "libérales lui ont donné le coup de grâce.;Das Reich war schon ein Relikt, aber die liberalen Revolutionen brachten es seinem Ende entgegen!;Imperium "
+		 "ju¿ prze¿ytkiem ale liberalne rewolucje sprawi³y, ze spe³niaj¹ swój cel!;¡El Imperio ya era una reliquia, pero las revoluciones liberales lo hicieron "
+		 "llegar a su fin!;L'Impero era già una reliquia, ma le rivoluzioni liberali hanno dato il colpo di grazia!;A Birodalom már egy ereklye, hanem a "
+		 "liberális fordulat tette eleget a vége!;Øíše byla již relikvií, ale liberální revoluce pøinesly její konec!;A Birodalom már egy ereklye, hanem a "
+		 "liberális fordulat tette eleget a vége!;Het Empire was al een relikwie, maar de liberale revoluties maakte het voldoen aan zijn einde!;O Império já "
+		 "era uma relíquia, mas as revoluções liberais fizeram com que ele atingisse seu fim!;Èìïåðèÿ áûëà óæå ðåëèêâèåé, íî ëèáåðàëüíûå ðåâîëþöèè ïðèâåëè ê åå "
+		 "çàâåðøåíèþ!;Imperiumi oli jo jäänne mutta vapaiden kierrokset se täyttää sen pää!;x\n";
+	outLoc +=
+		 "EVTOPTA250002;A dream gone to waste...;Un rêve perdu...;Ein verschwendeter Traum...;Sen poszed³ na marne...;Un sueño perdido...;Un sogno andato "
+		 "sprecato...;Egy álom ment veszendõbe...;Sen vysloužil...;Egy álom ment veszendõbe...;Een droom gegaan om te verspillen...;Um sonho perdido...;Ìå÷òà "
+		 "ïðîïàëà...;Unelma mennyt hukkaan...;x\n";
+	outLoc +=
+		 "EVTDESC250003;Shall we join the Thousand Years Empire?;Devrions-nous nous joindre au Reich des Mille Ans?;Sollen wir dem Tausendjährigen Reich "
+		 "beitreten?;Powinniœmy przy³¹czyæ siê do tysiêcy lat Rzeszy?;¿Nos uniremos al Reich de los Mil Años?;Dobbiamo unirci all'Impero di Mille "
+		 "Anni?;Csatlakozunk a Thousand Years Reich?;Máme se pøipojit k tisícileté øíši?;Csatlakozunk a Thousand Years Reich?;Zullen we lid worden van de "
+		 "Thousand Years Reich?;Vamos nos unir ao Reich dos Mil Anos?;Ïðèñîåäèíèòåñü ê Òûñÿ÷åëåòíåìó Ðåéõó?;Onko meidän liittyä tuhatvuotinen valtakunnan?;x\n";
+	outLoc +=
+		 "EVTOPTA250003;God save the Emperor!;Gott erhalte unser Kaiser!;Gott erhalte unser Kaiser!;Gott erhalte Unser Kaiser!;Gott erhalte unser ¡Kaiser!;Gott "
+		 "erhalte Unser Kaiser!;Gott erhalte Unser Kaiser!;Gott erhalte unser Kaiser!;Gott erhalte Unser Kaiser!;Gott erhalte unser Kaiser!;Gott erhalte unser "
+		 "Kaiser!;Ãîòò åðõàëüòå èíñåð Êàéñåð!;Gott erhalte unser Kaiser!;x\n";
+	outLoc +=
+		 "EVTOPTB250003;We cast aside this ancient notion! We have our own glory.;Nous rejetons cette ancienne notion! Nous avons notre propre gloire.;Wir "
+		 "verwerfen diese alte Vorstellung! Wir haben unsere eigene Herrlichkeit.;Mamy odrzuci³ te staro¿ytna idee! Mamy w³asna chwale.;Desechamos esta noción "
+		 "antigua! Tenemos nuestra propia gloria.;Abbiamo gettato via questa anticaglia! Noi abbiamo la nostra gloria.;Mi öntött el ezt az õsi elképzelés! "
+		 "Megvan a saját dicsõségét.;Odkládáme tento starodávný pojem stranou! Máme vlastní slávu.;Mi öntött el ezt az õsi elképzelés! Megvan a saját "
+		 "dicsõségét.;We werpen dit oude idee! We hebben onze eigen glorie.;Nós jogamos fora esta noção antiga! Temos a nossa própria glória.;Ìû îòáðîñèëè ýòî "
+		 "äðåâíåå ïîíÿòèå! Ó íàñ åñòü íàøà ñëàâà.;Me heitimme pois tämä vanha käsite! Meillä on oma kunniaa.;x\n";
 	localisations["00_shattered_hre.csv"] += outLoc;
 
 	std::string output;

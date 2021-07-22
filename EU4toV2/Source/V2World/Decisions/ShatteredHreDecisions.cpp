@@ -6,10 +6,41 @@ void V2::World::createShatteredHreDecisions(const std::string& v2HreTag)
 
 	std::string outLoc;
 	outLoc = ";;;;;;;;;;;;x,,,,,,,,,,,,,\n";
-	outLoc += "integrate_empire_title_title;Centralize the " + adjective + " Empire: Integrate the Empire Title;Centraliser le Saint Empire Romain: Intégrer le titre impérial;Zentralisierung des Heiligen Römischen Reiches: Integrieren Sie den kaiserlichen Titel;Centralizacja Œwiête Cesarstwo Rzymskie: Zintegruj tytuł imperialny;Centralizar el Sacro Imperio Romano: Integra el título imperial;Centralizzare il Sacro Romano Impero: Integra il titolo imperiale;Centralizálja a Szent Római Birodalom: Integrálja a császári címet;Centralizujte Svatou øímskou øíši: Integrujte císařský titul;Centralizálja a Szent Római Birodalom: Integrálja a császári címet;Centraliseren van het Heilige Roomse Rijk: Integreer de keizerlijke titel;Centralize o Sacro Império Romano: Integre o título imperial;Öåíòðàëèçîâàòü Ñâÿòóþ Ðèìñêóþ èìïåðèþ: Èíòåãðèðîâàòü èìïåðñêèé òèòóë;Keskitä Pyhän roomalaisen keisarikunnan: Integroi keisarillinen otsikko;x\n";
-	outLoc += "integrate_empire_title_desc;In order to centralize the " + adjective + " Empire, first we need to establish our authority over the Imperial crown;Afin de centraliser l'Empire, nous devons d'abord établir notre autorité sur la couronne impériale;Um das Imperium zu zentralisieren, müssen wir zuerst unsere Autorität über die Kaiserkrone etablieren;Aby scentralizować Imperium, najpierw musimy ustanowić naszą władzę nad cesarską koroną;Para centralizar el Imperio, primero debemos establecer nuestra autoridad sobre la corona imperial;Per centralizzare l'Impero, prima dobbiamo stabilire la nostra autorità sulla corona imperiale;A Birodalom központosítása érdekében először meg kell állapítanunk a birodalmi korona felett fennálló tekintélyünket;Abychom mohli říši centralizovat, musíme nejprve ustanovit naši autoritu nad imperiální korunou;A Birodalom központosítása érdekében először meg kell állapítanunk a birodalmi korona felett fennálló tekintélyünket;Om het rijk te centraliseren, moeten we eerst onze autoriteit over de keizerlijke kroon vestigen;Para centralizar o Império, primeiro precisamos estabelecer nossa autoridade sobre a coroa imperial;×òîáû öåíòðàëèçîâàòü Èìïåðèþ, ñíà÷àëà íàì íóæíî óñòàíîâèòü ñâîþ âëàñòü íàä Èìïåðàòîðñêîé êîðîíîé;Imperiumin keskittämiseksi meidän on ensin luotava valtaamme keisarilliseen kruunuun;x\n";
-	outLoc += "centralize_hre_title;Centralize the " + adjective + " Empire;Centraliser le Saint Empire Romain;Zentralisierung des Heiligen Römischen Reiches;Centralizacja Œwiête Cesarstwo Rzymskie;Centralizar el Sacro Imperio Romano;Centralizzare il Sacro Romano Impero;Centralizálja a Szent Római Birodalom;Centralizujte Svatou øímskou øíši;Centralizálja a Szent Római Birodalom;Centraliseren van het Heilige Roomse Rijk;Centralize o Sacro Império Romano;Öåíòðàëèçîâàòü Ñâÿòóþ Ðèìñêóþ èìïåðèþ;Keskitä Pyhän roomalaisen keisarikunnan;x\n";
-	outLoc += "centralize_hre_desc;As the " + adjective + " Emperor, we are prestigious enough to attempt to centralize the Empire under ourselves.;En tant que Saint Empereur Romain, nous sommes assez prestigieux pour essayer de centraliser l'Empire sous nos mains.;Als der Heilige Römische Kaiser sind wir prestigevoll genug, um zu versuchen, das Reich unter uns zu zentralisieren.;Jako cesarz rzymski, jesteœmy na tyle presti¿owa próba scentralizowania Imperium pod siebie.;Como el emperador romano santo, somos bastante prestigiosos para intentar centralizar el imperio debajo de nosotros mismos.;Come Sacro Romano Imperatore, siamo abbastanza prestigiosi per tentare di centralizzare l'Impero sotto il nostro dominio.;Mivel a római császár, mi tekintélyes elég próbálja központosítani a Birodalom magunkat.;Jako svatý øímský císaø jsme dostatecnì prestižní, abychom se pokusili centralizovat Øíši pod sebou.;Mivel a római császár, mi tekintélyes elég próbálja központosítani a Birodalom magunkat.;Zoals het Heilige Roomse keizer, we zijn prestigieus genoeg om te proberen om het rijk te centraliseren onder onszelf.;Como o Santo Imperador Romano, somos suficientemente prestigiados para tentar centralizar o Império sob nós mesmos.;Êàê èìïåðàòîð Ñâÿùåííîé Ðèìñêîé èìïåðèè, ìû äîñòàòî÷íî ïðåñòèæíû, ÷òîáû ïîïûòàòüñÿ öåíòðàëèçîâàòü Èìïåðèþ ïîä ñîáîé.;Koska keisari, olemme arvostettuja tarpeeksi yrittää keskittää Imperiumi alle itse.;x\n";
+	outLoc += "integrate_empire_title_title;Centralize the " + adjective +
+				 " Empire: Integrate the Empire Title;Centraliser le Saint Empire Romain: Intégrer le titre impérial;Zentralisierung des Heiligen Römischen "
+				 "Reiches: Integrieren Sie den kaiserlichen Titel;Centralizacja Œwiête Cesarstwo Rzymskie: Zintegruj tytuł imperialny;Centralizar el Sacro Imperio "
+				 "Romano: Integra el título imperial;Centralizzare il Sacro Romano Impero: Integra il titolo imperiale;Centralizálja a Szent Római Birodalom: "
+				 "Integrálja a császári címet;Centralizujte Svatou øímskou øíši: Integrujte císařský titul;Centralizálja a Szent Római Birodalom: Integrálja a "
+				 "császári címet;Centraliseren van het Heilige Roomse Rijk: Integreer de keizerlijke titel;Centralize o Sacro Império Romano: Integre o título "
+				 "imperial;Öåíòðàëèçîâàòü Ñâÿòóþ Ðèìñêóþ èìïåðèþ: Èíòåãðèðîâàòü èìïåðñêèé òèòóë;Keskitä Pyhän roomalaisen keisarikunnan: Integroi keisarillinen "
+				 "otsikko;x\n";
+	outLoc +=
+		 "integrate_empire_title_desc;In order to centralize the " + adjective +
+		 " Empire, first we need to establish our authority over the Imperial crown;Afin de centraliser l'Empire, nous devons d'abord établir notre autorité sur "
+		 "la couronne impériale;Um das Imperium zu zentralisieren, müssen wir zuerst unsere Autorität über die Kaiserkrone etablieren;Aby scentralizować "
+		 "Imperium, najpierw musimy ustanowić naszą władzę nad cesarską koroną;Para centralizar el Imperio, primero debemos establecer nuestra autoridad sobre "
+		 "la corona imperial;Per centralizzare l'Impero, prima dobbiamo stabilire la nostra autorità sulla corona imperiale;A Birodalom központosítása érdekében "
+		 "először meg kell állapítanunk a birodalmi korona felett fennálló tekintélyünket;Abychom mohli říši centralizovat, musíme nejprve ustanovit naši "
+		 "autoritu nad imperiální korunou;A Birodalom központosítása érdekében először meg kell állapítanunk a birodalmi korona felett fennálló "
+		 "tekintélyünket;Om het rijk te centraliseren, moeten we eerst onze autoriteit over de keizerlijke kroon vestigen;Para centralizar o Império, primeiro "
+		 "precisamos estabelecer nossa autoridade sobre a coroa imperial;×òîáû öåíòðàëèçîâàòü Èìïåðèþ, ñíà÷àëà íàì íóæíî óñòàíîâèòü ñâîþ âëàñòü íàä "
+		 "Èìïåðàòîðñêîé êîðîíîé;Imperiumin keskittämiseksi meidän on ensin luotava valtaamme keisarilliseen kruunuun;x\n";
+	outLoc += "centralize_hre_title;Centralize the " + adjective +
+				 " Empire;Centraliser le Saint Empire Romain;Zentralisierung des Heiligen Römischen Reiches;Centralizacja Œwiête Cesarstwo Rzymskie;Centralizar el "
+				 "Sacro Imperio Romano;Centralizzare il Sacro Romano Impero;Centralizálja a Szent Római Birodalom;Centralizujte Svatou øímskou øíši;Centralizálja "
+				 "a Szent Római Birodalom;Centraliseren van het Heilige Roomse Rijk;Centralize o Sacro Império Romano;Öåíòðàëèçîâàòü Ñâÿòóþ Ðèìñêóþ "
+				 "èìïåðèþ;Keskitä Pyhän roomalaisen keisarikunnan;x\n";
+	outLoc += "centralize_hre_desc;As the " + adjective +
+				 " Emperor, we are prestigious enough to attempt to centralize the Empire under ourselves.;En tant que Saint Empereur Romain, nous sommes assez "
+				 "prestigieux pour essayer de centraliser l'Empire sous nos mains.;Als der Heilige Römische Kaiser sind wir prestigevoll genug, um zu versuchen, "
+				 "das Reich unter uns zu zentralisieren.;Jako cesarz rzymski, jesteœmy na tyle presti¿owa próba scentralizowania Imperium pod siebie.;Como el "
+				 "emperador romano santo, somos bastante prestigiosos para intentar centralizar el imperio debajo de nosotros mismos.;Come Sacro Romano "
+				 "Imperatore, siamo abbastanza prestigiosi per tentare di centralizzare l'Impero sotto il nostro dominio.;Mivel a római császár, mi tekintélyes "
+				 "elég próbálja központosítani a Birodalom magunkat.;Jako svatý øímský císaø jsme dostatecnì prestižní, abychom se pokusili centralizovat Øíši pod "
+				 "sebou.;Mivel a római császár, mi tekintélyes elég próbálja központosítani a Birodalom magunkat.;Zoals het Heilige Roomse keizer, we zijn "
+				 "prestigieus genoeg om te proberen om het rijk te centraliseren onder onszelf.;Como o Santo Imperador Romano, somos suficientemente prestigiados "
+				 "para tentar centralizar o Império sob nós mesmos.;Êàê èìïåðàòîð Ñâÿùåííîé Ðèìñêîé èìïåðèè, ìû äîñòàòî÷íî ïðåñòèæíû, ÷òîáû ïîïûòàòüñÿ "
+				 "öåíòðàëèçîâàòü Èìïåðèþ ïîä ñîáîé.;Koska keisari, olemme arvostettuja tarpeeksi yrittää keskittää Imperiumi alle itse.;x\n";
 	localisations["00_shattered_hre.csv"] += outLoc;
 
 	std::string output;
