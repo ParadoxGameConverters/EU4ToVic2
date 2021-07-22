@@ -460,11 +460,9 @@
     <ClCompile Include="Source\V2World\Country\CountryDetails.cpp" />
     <ClCompile Include="Source\V2World\Country\ModCommons.cpp" />
     <ClCompile Include="Source\V2World\Decisions\HPMDecisions.cpp" />
-    <ClCompile Include="Source\V2World\Decisions\ShatteredHreDecisions.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Relation.cpp" />
-    <ClCompile Include="Source\V2World\Events\ShatteredHreEvents.cpp" />
     <ClCompile Include="Source\V2World\Flags\Flags.cpp" />
     <ClCompile Include="Source\V2World\Flags\FlagUtils.cpp" />
     <ClCompile Include="Source\V2World\Leader\Leader.cpp" />

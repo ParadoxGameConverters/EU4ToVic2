@@ -145,8 +145,6 @@ class World
 	std::string customizeFile(const std::string& filePath,
 	 const std::regex& oldRegex,
 	 const std::string& newString);
-	void createShatteredHreDecisions(const std::string& v2HreTag);
-	void createShatteredHreEvents(const std::string& v2HreTag);
 	void outputDynamicContent() const;
 
 	mappers::ProvinceMapper provinceMapper;

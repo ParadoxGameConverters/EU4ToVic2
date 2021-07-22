@@ -589,12 +589,6 @@
     <ClCompile Include="Source\Mappers\ProvinceRenamings\ProvinceRenamings.cpp">
       <Filter>Mappers\ProvinceRenamings</Filter>
     </ClCompile>
-    <ClCompile Include="Source\V2World\Decisions\ShatteredHreDecisions.cpp">
-      <Filter>Vic2World\Decisions</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\V2World\Events\ShatteredHreEvents.cpp">
-      <Filter>Vic2World\Events</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1395,9 +1389,6 @@
     </Filter>
     <Filter Include="Mappers\ProvinceRenamings">
       <UniqueIdentifier>{56ba678d-2128-487e-a45f-7ff99d082b0b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Vic2World\Events">
-      <UniqueIdentifier>{b550a378-88cb-4677-ab09-7e3e7deabf9d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
