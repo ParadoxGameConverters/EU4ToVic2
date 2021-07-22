@@ -74,6 +74,9 @@ class World
 	std::vector<std::pair<std::string, EU4::HistoricalEntry>> historicalData; // HoI4 export dynasty+rulers
 	std::set<std::string> neoCultureLocalizations;									  // raw strings for output.
 	std::map<int, std::string> localizedProvinces;
+	std::map<std::string, std::string> decisions;
+	std::map<std::string, std::string> events;
+	std::map<std::string, std::string> localisations;
 
 	[[nodiscard]] std::optional<std::string> determineProvinceOwnership(const std::set<int>& eu4ProvinceNumbers, const EU4::World& sourceWorld) const;
 	[[nodiscard]] std::shared_ptr<Province> getProvince(int provID) const;
@@ -138,6 +141,10 @@ class World
 	void outputGTFO(std::map<std::string, std::shared_ptr<Country>> countries) const;
 	void outputReturnCores(std::map<std::string, std::shared_ptr<V2::Country>> countries) const;
 	void localizeProvinces();
+	void processShatteredHre(const std::optional<std::string>& eu4HreTag);
+	void createShatteredHreDecisions(const std::string& v2HreTag);
+	void createShatteredHreEvents(const std::string& v2HreTag);
+	void outputDymanicContent() const;
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;

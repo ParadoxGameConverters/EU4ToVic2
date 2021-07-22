@@ -108,7 +108,7 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 	 const mappers::CountryMappings& countryMapper,
 	 const mappers::ProvinceMapper& provinceMapper,
 	 bool hreDecentralized,
-	 const std::optional<std::string>& shatteredHreTag)
+	 const std::optional<std::string>& v2HreTag)
 {
 	// Drop vanilla cores
 	details.cores.clear();
@@ -128,9 +128,9 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 			inHRE = true;
 			if (!hreDecentralized)
 			{
-				if (shatteredHreTag)
+				if (v2HreTag)
 				{
-					addCore(*shatteredHreTag);
+					addCore(*v2HreTag);
 				}
 				else
 				{
