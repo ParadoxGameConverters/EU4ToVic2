@@ -286,12 +286,12 @@ void V2::Flags::createOutputFolders()
 {
 	if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/gfx"))
 	{
-		LOG(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName() << "/gfx";
+		Log(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName() << "/gfx";
 		exit(-1);
 	}
 	if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/gfx/flags"))
 	{
-		LOG(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName() << "/gfx/flags";
+		Log(LogLevel::Error) << "Could not create output/" << theConfiguration.getOutputName() << "/gfx/flags";
 		exit(-1);
 	}
 }
@@ -335,7 +335,7 @@ void V2::Flags::createCustomFlags() const
 		auto flagColor = customColors.getCustomColors().flagColors;
 		if (!flagColor)
 		{
-			LOG(LogLevel::Error) << V2Tag << "'s flag is missing.";
+			Log(LogLevel::Error) << V2Tag << "'s flag is missing.";
 			continue;
 		}
 		auto [r, g, b] = flagColor->getRgbComponents();
@@ -344,7 +344,7 @@ void V2::Flags::createCustomFlags() const
 
 		if (r > colourCount || g > colourCount || b > colourCount)
 		{
-			LOG(LogLevel::Error) << V2Tag << "'s flag has some missing colours.";
+			Log(LogLevel::Error) << V2Tag << "'s flag has some missing colours.";
 			continue;
 		}
 

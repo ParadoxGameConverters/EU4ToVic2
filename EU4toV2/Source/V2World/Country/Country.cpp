@@ -210,7 +210,7 @@ void V2::Country::setReligion(const std::string& religion, const mappers::Religi
 	std::optional<std::string> match = religionMapper.getVic2Religion(religion);
 	if (!match)
 	{
-		LOG(LogLevel::Warning) << "No religion mapping defined for " << religion << " (" << srcCountry->getTag() << " -> " << tag << ')';
+		Log(LogLevel::Warning) << "No religion mapping defined for " << religion << " (" << srcCountry->getTag() << " -> " << tag << ')';
 	}
 	else
 	{
@@ -227,14 +227,14 @@ void V2::Country::setPrimaryCulture(const mappers::CultureMapper& cultureMapper,
 	if (primCulture.empty())
 	{
 		primCulture = "noculture";
-		LOG(LogLevel::Warning) << "No primary culture for " << srcCountry->getTag()
+		Log(LogLevel::Warning) << "No primary culture for " << srcCountry->getTag()
 									  << "! Using noculture. (Is this a CK2 import? Forgot to fix CK2 converter culture/religion bugs?)";
 	}
 
 	const auto& matched = cultureMapper.cultureMatch(eu4Regions, primCulture, details.religion, oldCapital, srcCountry->getTag());
 	if (!matched)
 	{
-		LOG(LogLevel::Warning) << "No culture mapping defined for " << primCulture << " (" << srcCountry->getTag() << " -> " << tag << ')';
+		Log(LogLevel::Warning) << "No culture mapping defined for " << primCulture << " (" << srcCountry->getTag() << " -> " << tag << ')';
 	}
 	else
 	{
@@ -569,7 +569,7 @@ void V2::Country::addProvince(std::shared_ptr<Province> _province)
 {
 	const auto& itr = provinces.find(_province->getID());
 	if (itr != provinces.end())
-		LOG(LogLevel::Error) << "Inserting province " << _province->getID() << " multiple times (addProvince())";
+		Log(LogLevel::Error) << "Inserting province " << _province->getID() << " multiple times (addProvince())";
 	provinces.insert(make_pair(_province->getID(), _province));
 }
 
@@ -695,7 +695,7 @@ void V2::Country::oldCivConversionMethod()
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "Unhandled tech group (" << srcCountry->getTechGroup() << " with " << srcCountry->numEmbracedInstitutions()
+		Log(LogLevel::Warning) << "Unhandled tech group (" << srcCountry->getTechGroup() << " with " << srcCountry->numEmbracedInstitutions()
 									  << " institutions) for " << tag << " - giving no reforms";
 		uncivReforms = UncivReforms(0, militaryDev, socioEconDev, this);
 	}

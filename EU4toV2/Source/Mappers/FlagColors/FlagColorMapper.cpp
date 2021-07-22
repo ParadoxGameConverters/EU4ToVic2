@@ -6,7 +6,7 @@
 
 mappers::FlagColorMapper::FlagColorMapper()
 {
-	LOG(LogLevel::Info) << "Parsing EU4 custom flag colours.";
+	Log(LogLevel::Info) << "Parsing EU4 custom flag colours.";
 	registerKeys();
 	parseFile(theConfiguration.getEU4Path() + "/common/custom_country_colors/00_custom_country_colors.txt");
 	clearRegisteredKeywords();

@@ -5,7 +5,7 @@
 
 mappers::AfricaResetMapper::AfricaResetMapper()
 {
-	LOG(LogLevel::Info) << "Parsing african resettable regions.";
+	Log(LogLevel::Info) << "Parsing african resettable regions.";
 	registerKeys();
 	parseFile("configurables/africa_reset.txt");
 	clearRegisteredKeywords();

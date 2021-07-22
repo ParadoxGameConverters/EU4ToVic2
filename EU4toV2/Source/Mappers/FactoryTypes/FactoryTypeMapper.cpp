@@ -5,7 +5,7 @@
 
 mappers::FactoryTypeMapper::FactoryTypeMapper()
 {
-	LOG(LogLevel::Info) << "Determining factory allocation rules.";
+	Log(LogLevel::Info) << "Determining factory allocation rules.";
 	registerKeys();
 	parseFile(theConfiguration.getVic2Path() + "/common/production_types.txt");
 	clearRegisteredKeywords();

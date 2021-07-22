@@ -7,7 +7,7 @@
 
 mappers::TitleMapper::TitleMapper()
 {
-	LOG(LogLevel::Info) << "Loading Known Titles.";
+	Log(LogLevel::Info) << "Loading Known Titles.";
 	registerKeys();
 	parseFile("configurables/title_map.txt");
 	clearRegisteredKeywords();

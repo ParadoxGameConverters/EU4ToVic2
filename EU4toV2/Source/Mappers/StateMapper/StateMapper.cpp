@@ -6,7 +6,7 @@
 
 mappers::StateMapper::StateMapper()
 {
-	LOG(LogLevel::Info) << "Parsing state region structure.";
+	Log(LogLevel::Info) << "Parsing state region structure.";
 	registerKeys();
 
 	std::string filename;

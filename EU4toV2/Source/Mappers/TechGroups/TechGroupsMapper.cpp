@@ -6,7 +6,7 @@
 
 mappers::TechGroupsMapper::TechGroupsMapper()
 {
-	LOG(LogLevel::Info) << "Parsing technology groups.";
+	Log(LogLevel::Info) << "Parsing technology groups.";
 	registerRegex(commonItems::catchallRegex, [this](const std::string& techGroup, std::istream& theStream) {
 		const TechGroups techGroups(theStream);
 
@@ -31,7 +31,7 @@ int mappers::TechGroupsMapper::getWesternizationFromTechGroup(const std::string&
 	const auto& techGroup = westernizations.find(techGroupName);
 	if (techGroup != westernizations.end())
 		return techGroup->second;
-	LOG(LogLevel::Warning) << "Unknown tech group: " << techGroupName;
+	Log(LogLevel::Warning) << "Unknown tech group: " << techGroupName;
 	return 0;
 }
 
@@ -40,7 +40,7 @@ int mappers::TechGroupsMapper::getWesternizationFromCulture(const std::string& c
 	const auto& westItr = cultureWesternization.find(culture);
 	if (westItr != cultureWesternization.end())
 		return westItr->second;
-	LOG(LogLevel::Warning) << "No westernization for culture: " << culture;
+	Log(LogLevel::Warning) << "No westernization for culture: " << culture;
 	return 0;
 }
 
@@ -49,6 +49,6 @@ int mappers::TechGroupsMapper::getLiteracyFromTechGroup(const std::string& techG
 	const auto& techGroup = literacies.find(techGroupName);
 	if (techGroup != literacies.end())
 		return techGroup->second;
-	LOG(LogLevel::Warning) << "Unknown tech group: " << techGroupName;
+	Log(LogLevel::Warning) << "Unknown tech group: " << techGroupName;
 	return 0;
 }

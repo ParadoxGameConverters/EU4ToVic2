@@ -5,7 +5,7 @@
 
 mappers::FactoryStartingCounts::FactoryStartingCounts()
 {
-	LOG(LogLevel::Info) << "Parsing starting factories.";
+	Log(LogLevel::Info) << "Parsing starting factories.";
 	registerKeywords();
 	parseFile("configurables/starting_factories.txt");
 	clearRegisteredKeywords();

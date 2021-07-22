@@ -15,28 +15,28 @@ void Configuration::instantiate(std::istream& theStream,
 {
 	registerKeyword("SaveGame", [this](std::istream& theStream) {
 		EU4SaveGamePath = commonItems::getString(theStream);
-		LOG(LogLevel::Info) << "EU4 savegame path: " << EU4SaveGamePath;
+		Log(LogLevel::Info) << "EU4 savegame path: " << EU4SaveGamePath;
 	});
 	registerKeyword("EU4directory", [this, converterVersion, DoesFolderExist, doesFileExist](std::istream& theStream) {
 		EU4Path = commonItems::getString(theStream);
 		verifyEU4Path(EU4Path, DoesFolderExist, doesFileExist);
-		LOG(LogLevel::Info) << "EU4 path: " << EU4Path;
+		Log(LogLevel::Info) << "EU4 path: " << EU4Path;
 		verifyEU4Version(converterVersion);
 	});
 	registerKeyword("EU4DocumentsDirectory", [this](std::istream& theStream) {
 		EU4DocumentsPath = commonItems::getString(theStream);
-		LOG(LogLevel::Info) << "EU4 documents path: " << EU4DocumentsPath;
+		Log(LogLevel::Info) << "EU4 documents path: " << EU4DocumentsPath;
 	});
 	registerKeyword("Vic2directory", [this, converterVersion, DoesFolderExist, doesFileExist](std::istream& theStream) {
 		Vic2Path = commonItems::getString(theStream);
 		verifyVic2Path(Vic2Path, DoesFolderExist, doesFileExist);
-		LOG(LogLevel::Info) << "Vic2 path: " << Vic2Path;
+		Log(LogLevel::Info) << "Vic2 path: " << Vic2Path;
 		verifyVic2Version(converterVersion);
 	});
 	registerKeyword("max_literacy", [this](std::istream& theStream) {
 		const auto maxLiteracyString = commonItems::getString(theStream);
 		MaxLiteracy = static_cast<double>(std::stoi(maxLiteracyString)) / 100;
-		LOG(LogLevel::Info) << "Max Literacy: " << MaxLiteracy;
+		Log(LogLevel::Info) << "Max Literacy: " << MaxLiteracy;
 	});
 	registerKeyword("remove_type", [this](std::istream& theStream) {
 		const auto removeTypeString = commonItems::getString(theStream);
@@ -45,37 +45,37 @@ void Configuration::instantiate(std::istream& theStream,
 	registerKeyword("absorb_colonies", [this](std::istream& theStream) {
 		const auto absorbString = commonItems::getString(theStream);
 		absorbColonies = ABSORBCOLONIES(std::stoi(absorbString));
-		LOG(LogLevel::Info) << "Absorb Colonies: " << absorbString;
+		Log(LogLevel::Info) << "Absorb Colonies: " << absorbString;
 	});
 	registerKeyword("liberty_threshold", [this](std::istream& theStream) {
 		const auto libertyThresholdString = commonItems::getString(theStream);
 		libertyThreshold = LIBERTYDESIRE(std::stoi(libertyThresholdString));
-		LOG(LogLevel::Info) << "Liberty Treshold: " << libertyThresholdString;
+		Log(LogLevel::Info) << "Liberty Treshold: " << libertyThresholdString;
 	});
 	registerKeyword("pop_shaping", [this](std::istream& theStream) {
 		const auto popShapingString = commonItems::getString(theStream);
 		popShaping = POPSHAPES(std::stoi(popShapingString));
-		LOG(LogLevel::Info) << "Pop Shaping: " << popShapingString;
+		Log(LogLevel::Info) << "Pop Shaping: " << popShapingString;
 	});
 	registerKeyword("core_handling", [this](std::istream& theStream) {
 		const auto coreHandlingString = commonItems::getString(theStream);
 		coreHandling = COREHANDLES(std::stoi(coreHandlingString));
-		LOG(LogLevel::Info) << "Core Handling: " << coreHandlingString;
+		Log(LogLevel::Info) << "Core Handling: " << coreHandlingString;
 	});
 	registerKeyword("pop_shaping_factor", [this](std::istream& theStream) {
 		const auto popShapingFactorString = commonItems::getString(theStream);
 		popShapingFactor = static_cast<double>(std::stoi(popShapingFactorString));
-		LOG(LogLevel::Info) << "Pop Shaping Factor: " << popShapingFactor;
+		Log(LogLevel::Info) << "Pop Shaping Factor: " << popShapingFactor;
 	});
 	registerKeyword("euro_centrism", [this](std::istream& theStream) {
 		const auto euroCentrismString = commonItems::getString(theStream);
 		euroCentric = EUROCENTRISM(std::stoi(euroCentrismString));
-		LOG(LogLevel::Info) << "Eurocentrism: " << euroCentrismString;
+		Log(LogLevel::Info) << "Eurocentrism: " << euroCentrismString;
 	});
 	registerKeyword("africa_reset", [this](std::istream& theStream) {
 		const auto africaResetString = commonItems::getString(theStream);
 		africaReset = AFRICARESET(std::stoi(africaResetString));
-		LOG(LogLevel::Info) << "Africa Reset: " << africaResetString;
+		Log(LogLevel::Info) << "Africa Reset: " << africaResetString;
 	});
 	registerKeyword("debug", [this](std::istream& theStream) {
 		const auto debugString = commonItems::getString(theStream);
@@ -84,25 +84,25 @@ void Configuration::instantiate(std::istream& theStream,
 	registerKeyword("randomise_rgos", [this](std::istream& theStream) {
 		const auto randomiseRgosString = commonItems::getString(theStream);
 		randomiseRgos = randomiseRgosString == "yes";
-		LOG(LogLevel::Info) << "Randomise RGOs: " << randomiseRgosString;
+		Log(LogLevel::Info) << "Randomise RGOs: " << randomiseRgosString;
 	});
 	registerKeyword("convert_all", [this](std::istream& theStream) {
 		const auto convertAllString = commonItems::getString(theStream);
 		convertAll = convertAllString == "yes";
-		LOG(LogLevel::Info) << "Convert All: " << convertAllString;
+		Log(LogLevel::Info) << "Convert All: " << convertAllString;
 	});
 	registerKeyword("hybrid_mod", [this](std::istream& theStream) {
 		const auto hybridModString = commonItems::getString(theStream);
 		hybridMod = HYBRIDMOD(std::stoi(hybridModString));
-		LOG(LogLevel::Info) << "Hybrid mod: " << hybridModString;
+		Log(LogLevel::Info) << "Hybrid mod: " << hybridModString;
 	});
 	registerKeyword("output_name", [this](std::istream& theStream) {
 		incomingOutputName = commonItems::getString(theStream);
-		LOG(LogLevel::Info) << "Output Name: " << incomingOutputName;
+		Log(LogLevel::Info) << "Output Name: " << incomingOutputName;
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
-	LOG(LogLevel::Info) << "Reading configuration file";
+	Log(LogLevel::Info) << "Reading configuration file";
 	parseStream(theStream);
 	clearRegisteredKeywords();
 	setOutputName();
@@ -224,7 +224,7 @@ void Configuration::setOutputName()
 
 	outputName = commonItems::normalizeUTF8Path(outputName);
 	theConfiguration.setOutputName(outputName);
-	LOG(LogLevel::Info) << "Using output name " << outputName;
+	Log(LogLevel::Info) << "Using output name " << outputName;
 }
 
 ConfigurationFile::ConfigurationFile(const std::string& filename, const commonItems::ConverterVersion& converterVersion)

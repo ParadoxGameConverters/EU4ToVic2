@@ -81,7 +81,7 @@ void mappers::Bucket::shuffle(std::default_random_engine& shuffler)
 	const auto numToShuffle = lround(fraction * provinces.size());
 	if (numToShuffle < 2)
 	{
-		LOG(LogLevel::Debug) << "Skipping empty bucket " << name;
+		Log(LogLevel::Debug) << "Skipping empty bucket " << name;
 		return;
 	}
 	std::vector<std::string> rgos;
@@ -95,5 +95,5 @@ void mappers::Bucket::shuffle(std::default_random_engine& shuffler)
 	{
 		provinces[i]->setRgoType(rgos[i]);
 	}
-	LOG(LogLevel::Debug) << "Shuffled " << numToShuffle << " provinces in bucket " << name;
+	Log(LogLevel::Debug) << "Shuffled " << numToShuffle << " provinces in bucket " << name;
 }

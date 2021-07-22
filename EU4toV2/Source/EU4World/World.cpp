@@ -29,23 +29,23 @@ namespace fs = std::filesystem;
 
 EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commonItems::ConverterVersion& converterVersion)
 {
-	LOG(LogLevel::Info) << "*** Hello EU4, loading World. ***";
+	Log(LogLevel::Info) << "*** Hello EU4, loading World. ***";
 	registerKeys(ideaEffectMapper, converterVersion);
 
 	superGroupMapper.init();
 	Log(LogLevel::Progress) << "6 %";
 
-	LOG(LogLevel::Info) << "-> Verifying EU4 save.";
+	Log(LogLevel::Info) << "-> Verifying EU4 save.";
 	verifySave();
 	Log(LogLevel::Progress) << "7 %";
 
-	LOG(LogLevel::Info) << "-> Importing EU4 save.";
+	Log(LogLevel::Info) << "-> Importing EU4 save.";
 	if (!saveGame.compressed)
 	{
 		std::ifstream inBinary(fs::u8path(theConfiguration.getEU4SaveGamePath()), std::ios::binary);
 		if (!inBinary.is_open())
 		{
-			LOG(LogLevel::Error) << "Could not open " << theConfiguration.getEU4SaveGamePath() << " for parsing.";
+			Log(LogLevel::Error) << "Could not open " << theConfiguration.getEU4SaveGamePath() << " for parsing.";
 			throw std::runtime_error("Could not open " + theConfiguration.getEU4SaveGamePath() + " for parsing.");
 		}
 		std::stringstream inStream;
@@ -71,72 +71,72 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commo
 	unitTypeMapper.initUnitTypeMapper();
 	Log(LogLevel::Progress) << "16 %";
 
-	LOG(LogLevel::Info) << "*** Building world ***";
-	LOG(LogLevel::Info) << "-> Loading Empires";
+	Log(LogLevel::Info) << "*** Building world ***";
+	Log(LogLevel::Info) << "-> Loading Empires";
 	setEmpires();
 	Log(LogLevel::Progress) << "17 %";
 
-	LOG(LogLevel::Info) << "-> Calculating Province Weights";
+	Log(LogLevel::Info) << "-> Calculating Province Weights";
 	buildProvinceWeights();
 	Log(LogLevel::Progress) << "18 %";
 
-	LOG(LogLevel::Info) << "-> Processing Province Info";
+	Log(LogLevel::Info) << "-> Processing Province Info";
 	addProvinceInfoToCountries();
 	Log(LogLevel::Progress) << "19 %";
 
-	LOG(LogLevel::Info) << "-> Loading Regions";
+	Log(LogLevel::Info) << "-> Loading Regions";
 	loadRegions();
 	Log(LogLevel::Progress) << "21 %";
 
-	LOG(LogLevel::Info) << "-> Determining Demographics";
+	Log(LogLevel::Info) << "-> Determining Demographics";
 	buildPopRatios();
 	Log(LogLevel::Progress) << "22 %";
 
-	LOG(LogLevel::Info) << "-> Cataloguing Native Fauna";
+	Log(LogLevel::Info) << "-> Cataloguing Native Fauna";
 	catalogueNativeCultures();
 	Log(LogLevel::Progress) << "24 %";
 
-	LOG(LogLevel::Info) << "-> Clasifying Invasive Fauna";
+	Log(LogLevel::Info) << "-> Clasifying Invasive Fauna";
 	generateNeoCultures();
 	Log(LogLevel::Progress) << "25 %";
 
-	LOG(LogLevel::Info) << "-> Reading Countries";
+	Log(LogLevel::Info) << "-> Reading Countries";
 	readCommonCountries();
 	Log(LogLevel::Progress) << "26 %";
 
-	LOG(LogLevel::Info) << "-> Setting Localizations";
+	Log(LogLevel::Info) << "-> Setting Localizations";
 	setLocalizations();
 	Log(LogLevel::Progress) << "27 %";
 
-	LOG(LogLevel::Info) << "-> Resolving Regiments";
+	Log(LogLevel::Info) << "-> Resolving Regiments";
 	resolveRegimentTypes();
 	Log(LogLevel::Progress) << "28 %";
 
-	LOG(LogLevel::Info) << "-> Merging Nations";
+	Log(LogLevel::Info) << "-> Merging Nations";
 	mergeNations();
 	Log(LogLevel::Progress) << "29 %";
 
-	LOG(LogLevel::Info) << "-> Calculating Industry";
+	Log(LogLevel::Info) << "-> Calculating Industry";
 	calculateIndustry();
 	Log(LogLevel::Progress) << "30 %";
 
-	LOG(LogLevel::Info) << "-> Viva la revolution!";
+	Log(LogLevel::Info) << "-> Viva la revolution!";
 	loadRevolutionTarget();
 	if (!revolutionTargetString.empty())
 	{
-		LOG(LogLevel::Info) << " ^^^ Revolution Lives!";
+		Log(LogLevel::Info) << " ^^^ Revolution Lives!";
 	}
 	else
 	{
-		LOG(LogLevel::Info) << " vvv ... revolution failed. :/";
+		Log(LogLevel::Info) << " vvv ... revolution failed. :/";
 	}
 	Log(LogLevel::Progress) << "31 %";
 
-	LOG(LogLevel::Info) << "-> Doing Accounting and dishes";
+	Log(LogLevel::Info) << "-> Doing Accounting and dishes";
 	fillHistoricalData();
 	Log(LogLevel::Progress) << "32 %";
 
-	LOG(LogLevel::Info) << "-> Dropping Empty Nations";
+	Log(LogLevel::Info) << "-> Dropping Empty Nations";
 	removeEmptyNations();
 	if (theConfiguration.getRemoveType() == Configuration::DEADCORES::DeadCores)
 	{
@@ -151,7 +151,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commo
 	markNewWorldCountries();
 	Log(LogLevel::Progress) << "33 %";
 
-	LOG(LogLevel::Info) << "*** Good-bye EU4, you served us well. ***";
+	Log(LogLevel::Info) << "*** Good-bye EU4, you served us well. ***";
 	Log(LogLevel::Progress) << "40 %";
 }
 
@@ -245,7 +245,7 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		holyRomanEmperor = commonItems::getString(theStream);
 	});
 	registerKeyword("provinces", [this](std::istream& theStream) {
-		LOG(LogLevel::Info) << "-> Loading Provinces";
+		Log(LogLevel::Info) << "-> Loading Provinces";
 		provinces = std::make_unique<Provinces>(theStream);
 
 		const auto& possibleDate = provinces->getProvince(1)->getFirstOwnedDate();
@@ -253,15 +253,15 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 			theConfiguration.setFirstEU4Date(*possibleDate);
 	});
 	registerKeyword("countries", [this, ideaEffectMapper](std::istream& theStream) {
-		LOG(LogLevel::Info) << "-> Loading Countries";
+		Log(LogLevel::Info) << "-> Loading Countries";
 		const Countries processedCountries(*version, theStream, ideaEffectMapper);
 		theCountries = processedCountries.getTheCountries();
 	});
 	registerKeyword("diplomacy", [this](std::istream& theStream) {
-		LOG(LogLevel::Info) << "-> Loading Diplomacy";
+		Log(LogLevel::Info) << "-> Loading Diplomacy";
 		const EU4Diplomacy theDiplomacy(theStream);
 		diplomacy = theDiplomacy.getAgreements();
-		LOG(LogLevel::Info) << "-> Loaded " << diplomacy.size() << " agreements";
+		Log(LogLevel::Info) << "-> Loaded " << diplomacy.size() << " agreements";
 	});
 	registerKeyword("active_war", [this](std::istream& theStream) {
 		const War newWar(theStream);
@@ -458,17 +458,17 @@ bool EU4::World::uncompressSave()
 		const auto& name = entry->GetName();
 		if (name == "meta")
 		{
-			LOG(LogLevel::Info) << ">> Uncompressing metadata";
+			Log(LogLevel::Info) << ">> Uncompressing metadata";
 			saveGame.metadata = std::string{std::istreambuf_iterator<char>(*entry->GetDecompressionStream()), std::istreambuf_iterator<char>()};
 		}
 		else if (name == "gamestate")
 		{
-			LOG(LogLevel::Info) << ">> Uncompressing gamestate";
+			Log(LogLevel::Info) << ">> Uncompressing gamestate";
 			saveGame.gamestate = std::string{std::istreambuf_iterator<char>(*entry->GetDecompressionStream()), std::istreambuf_iterator<char>()};
 		}
 		else if (name == "ai")
 		{
-			LOG(LogLevel::Info) << ">> Uncompressing ai and forgetting it existed";
+			Log(LogLevel::Info) << ">> Uncompressing ai and forgetting it existed";
 			saveGame.compressed = true;
 		}
 		else
@@ -529,7 +529,7 @@ void EU4::World::assignProvincesToAreas(const std::map<std::string, std::set<int
 			}
 			catch (std::exception& e)
 			{
-				LOG(LogLevel::Warning) << e.what();
+				Log(LogLevel::Warning) << e.what();
 			}
 		}
 	}
@@ -688,7 +688,7 @@ void EU4::World::mergeNations()
 	for (const auto& mergeBlock: mergeParser.getMergeBlocks())
 		if (mergeBlock.getMerge() && !mergeBlock.getMaster().empty())
 		{
-			LOG(LogLevel::Info) << "- Merging nations for: " << mergeBlock.getMaster();
+			Log(LogLevel::Info) << "- Merging nations for: " << mergeBlock.getMaster();
 			auto master = getCountry(mergeBlock.getMaster());
 			for (const auto& slaveTag: mergeBlock.getSlaves())
 			{
@@ -700,7 +700,7 @@ void EU4::World::mergeNations()
 
 void EU4::World::uniteJapan()
 {
-	LOG(LogLevel::Info) << "-> Uniting Japan";
+	Log(LogLevel::Info) << "-> Uniting Japan";
 
 	std::shared_ptr<Country> japan;
 
@@ -711,7 +711,7 @@ void EU4::World::uniteJapan()
 			if (country.second->getPossibleShogun())
 			{
 				const auto& tag = country.first;
-				LOG(LogLevel::Info) << "- " << tag << " is the shogun.";
+				Log(LogLevel::Info) << "- " << tag << " is the shogun.";
 				japan = getCountry(tag);
 				break;
 			}

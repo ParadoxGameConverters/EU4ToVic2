@@ -7,7 +7,7 @@
 
 mappers::ReligiousGroups::ReligiousGroups()
 {
-	LOG(LogLevel::Info) << "Parsing V2 Religions";
+	Log(LogLevel::Info) << "Parsing V2 Religions";
 	registerKeys();
 	parseFile("configurables/religion_definitions.txt");
 	clearRegisteredKeywords();

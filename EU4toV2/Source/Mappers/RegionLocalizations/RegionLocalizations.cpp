@@ -8,7 +8,7 @@ namespace fs = std::filesystem;
 
 mappers::RegionLocalizations::RegionLocalizations()
 {
-	LOG(LogLevel::Info) << "Parsing Region Localizations.";
+	Log(LogLevel::Info) << "Parsing Region Localizations.";
 
 	auto locFiles = commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/localisation/");
 	for (const auto& locFile: locFiles)
@@ -38,7 +38,7 @@ mappers::RegionLocalizations::RegionLocalizations()
 			gerLocalisations.insert(locMap.begin(), locMap.end());
 		}
 	}
-	LOG(LogLevel::Info) << "Loaded: " << engLocalisations.size() << " " << fraLocalisations.size() << " " << spaLocalisations.size() << " "
+	Log(LogLevel::Info) << "Loaded: " << engLocalisations.size() << " " << fraLocalisations.size() << " " << spaLocalisations.size() << " "
 							  << gerLocalisations.size();
 }
 

@@ -6,7 +6,7 @@
 
 mappers::ClimateMapper::ClimateMapper()
 {
-	LOG(LogLevel::Info) << "Loading climates.";
+	Log(LogLevel::Info) << "Loading climates.";
 	registerKeys();
 	parseFile(theConfiguration.getVic2Path() + "/map/climate.txt");
 	clearRegisteredKeywords();

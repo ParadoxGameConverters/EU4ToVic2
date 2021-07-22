@@ -29,12 +29,12 @@ void V2::Diplomacy::convertDiplomacy(std::vector<EU4::EU4Agreement> eu4agreement
 		const auto& country2 = countries.find(V2Tag2);
 		if (country1 == countries.end())
 		{
-			LOG(LogLevel::Warning) << "Vic2 country " << V2Tag1 << " used in diplomatic agreement doesn't exist";
+			Log(LogLevel::Warning) << "Vic2 country " << V2Tag1 << " used in diplomatic agreement doesn't exist";
 			continue;
 		}
 		if (country2 == countries.end())
 		{
-			LOG(LogLevel::Warning) << "Vic2 country " << V2Tag2 << " used in diplomatic agreement doesn't exist";
+			Log(LogLevel::Warning) << "Vic2 country " << V2Tag2 << " used in diplomatic agreement doesn't exist";
 			continue;
 		}
 
@@ -60,14 +60,14 @@ void V2::Diplomacy::convertDiplomacy(std::vector<EU4::EU4Agreement> eu4agreement
 				 theConfiguration.getAbsorbColonies() == Configuration::ABSORBCOLONIES::AbsorbSome &&
 					  country2->second->getSourceCountry()->getLibertyDesire() < libertyMap[theConfiguration.getLibertyThreshold()])
 			{
-				LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() << " ("
+				Log(LogLevel::Info) << " - " << country1->second->getTag() << " is absorbing " << country2->second->getTag() << " ("
 										  << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << libertyMap[theConfiguration.getLibertyThreshold()]
 										  << " liberty desire)";
 				country1->second->absorbColony(*country2->second);
 				continue;
 			}
 
-			LOG(LogLevel::Info) << " - " << country1->second->getTag() << " is not absorbing " << country2->second->getTag() << " ("
+			Log(LogLevel::Info) << " - " << country1->second->getTag() << " is not absorbing " << country2->second->getTag() << " ("
 									  << country2->second->getSourceCountry()->getLibertyDesire() << " vs " << libertyMap[theConfiguration.getLibertyThreshold()]
 									  << " liberty desire)";
 			country2->second->setColonyOverlord(V2Tag1);
@@ -274,7 +274,7 @@ void V2::Diplomacy::output() const
 		}
 		else
 		{
-			LOG(LogLevel::Warning) << "Cannot output diplomatic agreement type " << agreement.getType() << "!";
+			Log(LogLevel::Warning) << "Cannot output diplomatic agreement type " << agreement.getType() << "!";
 		}
 	}
 

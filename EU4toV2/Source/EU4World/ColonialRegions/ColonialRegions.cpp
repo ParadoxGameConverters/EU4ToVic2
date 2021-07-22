@@ -8,7 +8,7 @@
 
 EU4::ColonialRegions::ColonialRegions()
 {
-	LOG(LogLevel::Info) << "Parsing EU4 colonial regions";
+	Log(LogLevel::Info) << "Parsing EU4 colonial regions";
 
 	registerKeys();
 	if (!commonItems::DoesFileExist(theConfiguration.getEU4Path() + "/common/colonial_regions/00_colonial_regions.txt"))

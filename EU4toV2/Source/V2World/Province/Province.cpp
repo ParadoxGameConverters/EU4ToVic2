@@ -296,26 +296,26 @@ void V2::Province::determineDemographics(const EU4::Regions& eu4Regions,
 
 		if (!dstCulture)
 		{
-			LOG(LogLevel::Warning) << "Could not convert eu4 culture " << popRatio.getCulture() << " for pops in Vic2 province " << destNum
+			Log(LogLevel::Warning) << "Could not convert eu4 culture " << popRatio.getCulture() << " for pops in Vic2 province " << destNum
 										  << "! Check mappings, substituting noculture.";
 			dstCulture.emplace("noculture");
 		}
 		else if (*dstCulture == "noculture")
 		{
-			LOG(LogLevel::Warning) << "Incoming eu4 noculture pops for Vic2 province " << destNum
+			Log(LogLevel::Warning) << "Incoming eu4 noculture pops for Vic2 province " << destNum
 										  << "! Your EU4 save seems borked there, troubles with CK2 import?";
 		}
 
 		auto religion = religionMapper.getVic2Religion(popRatio.getReligion());
 		if (!religion)
 		{
-			LOG(LogLevel::Warning) << "Could not convert eu4 religion " << popRatio.getReligion() << " for pops in Vic2 province " << destNum
+			Log(LogLevel::Warning) << "Could not convert eu4 religion " << popRatio.getReligion() << " for pops in Vic2 province " << destNum
 										  << "! Check mappings, substituting no_religion.";
 			religion.emplace("noreligion");
 		}
 		else if (*religion == "noreligion")
 		{
-			LOG(LogLevel::Warning) << "Incoming eu4 noreligion pops for Vic2 province " << destNum
+			Log(LogLevel::Warning) << "Incoming eu4 noreligion pops for Vic2 province " << destNum
 										  << "! Your EU4 save seems borked there, troubles with CK2 import?";
 		}
 
@@ -327,14 +327,14 @@ void V2::Province::determineDemographics(const EU4::Regions& eu4Regions,
 		{
 			if (thisContinent && (*thisContinent == "asia" || *thisContinent == "africa" || *thisContinent == "oceania"))
 			{
-				LOG(LogLevel::Warning) << "No mapping for slave culture " << popRatio.getCulture() << "(" << popRatio.getOriginalCulture() << ")/"
+				Log(LogLevel::Warning) << "No mapping for slave culture " << popRatio.getCulture() << "(" << popRatio.getOriginalCulture() << ")/"
 											  << popRatio.getReligion() << " in province " << destNum << "/" << *thisContinent << " - using native culture ("
 											  << popRatio.getCulture() << ").";
 				slaveCulture.emplace(popRatio.getCulture());
 			}
 			else
 			{
-				LOG(LogLevel::Warning) << "No mapping for slave culture " << popRatio.getCulture() << "(" << popRatio.getOriginalCulture() << ")/"
+				Log(LogLevel::Warning) << "No mapping for slave culture " << popRatio.getCulture() << "(" << popRatio.getOriginalCulture() << ")/"
 											  << popRatio.getReligion() << " for pops in Vic2 province " << destNum << "/" << *thisContinent << " - using african_minor.";
 				slaveCulture.emplace("african_minor");
 			}
@@ -350,7 +350,7 @@ void V2::Province::determineDemographics(const EU4::Regions& eu4Regions,
 
 		if (theConfiguration.getDebug())
 		{
-			LOG(LogLevel::Info) << "EU4 Province " << eu4ProvID << ", "
+			Log(LogLevel::Info) << "EU4 Province " << eu4ProvID << ", "
 									  << "Vic2 Province " << provinceID << ", "
 									  << "Culture: " << demographic.culture << ", "
 									  << "Religion: " << demographic.religion << ", "

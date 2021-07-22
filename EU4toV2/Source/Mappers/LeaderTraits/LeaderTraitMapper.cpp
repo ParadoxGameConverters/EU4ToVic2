@@ -6,7 +6,7 @@
 
 mappers::LeaderTraitMapper::LeaderTraitMapper()
 {
-	LOG(LogLevel::Info) << "Loading leader traits.";
+	Log(LogLevel::Info) << "Loading leader traits.";
 	registerKeys();
 	parseFile("configurables/leader_traits.txt");
 	clearRegisteredKeywords();

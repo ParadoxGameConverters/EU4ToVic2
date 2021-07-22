@@ -8,7 +8,7 @@
 
 EU4::Religions::Religions()
 {
-	LOG(LogLevel::Info) << "Parsing EU4 religions";
+	Log(LogLevel::Info) << "Parsing EU4 religions";
 	registerKeys();
 
 	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/religions/"))

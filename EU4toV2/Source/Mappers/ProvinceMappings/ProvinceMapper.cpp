@@ -12,7 +12,7 @@ namespace fs = std::filesystem;
 
 mappers::ProvinceMapper::ProvinceMapper(): colonialRegionsMapper(std::make_unique<EU4::ColonialRegions>())
 {
-	LOG(LogLevel::Info) << "Parsing province mappings";
+	Log(LogLevel::Info) << "Parsing province mappings";
 	registerKeys();
 	if (theConfiguration.isHpmEnabled())
 	{
@@ -59,7 +59,7 @@ mappers::ProvinceMappingsVersion mappers::ProvinceMapper::getBestMappingsVersion
 	{
 		if (usedEU4Version >= mappingVersion->first)
 		{
-			LOG(LogLevel::Info) << "\t-> Using version " << mappingVersion->first << " mappings";
+			Log(LogLevel::Info) << "\t-> Using version " << mappingVersion->first << " mappings";
 			return mappingVersion->second;
 		}
 	}

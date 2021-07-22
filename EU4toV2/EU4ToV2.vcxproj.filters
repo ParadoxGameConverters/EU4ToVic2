@@ -583,6 +583,12 @@
     <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp">
       <Filter>CommonItems\ModLoader</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\ProvinceRenamings\ProvinceRename.cpp">
+      <Filter>Mappers\ProvinceRenamings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ProvinceRenamings\ProvinceRenamings.cpp">
+      <Filter>Mappers\ProvinceRenamings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1124,6 +1130,12 @@
     <ClInclude Include="..\commonItems\ModLoader\ModParser.h">
       <Filter>CommonItems\ModLoader</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\ProvinceRenamings\ProvinceRename.h">
+      <Filter>Mappers\ProvinceRenamings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ProvinceRenamings\ProvinceRenamings.h">
+      <Filter>Mappers\ProvinceRenamings</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1374,6 +1386,9 @@
     </Filter>
     <Filter Include="CommonItems\ModLoader">
       <UniqueIdentifier>{3aa3310e-b8bc-405d-b796-3489b69fa32b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ProvinceRenamings">
+      <UniqueIdentifier>{56ba678d-2128-487e-a45f-7ff99d082b0b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

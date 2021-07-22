@@ -40,6 +40,6 @@ bool EU4::Leader::isLand() const
 	if (leaderType == "explorer" || leaderType == "admiral")
 		return false;
 
-	LOG(LogLevel::Warning) << "Unknown leader type " << leaderType;
+	Log(LogLevel::Warning) << "Unknown leader type " << leaderType;
 	return false;
 }

@@ -755,6 +755,18 @@
     <ClCompile Include="EU4WorldTests\ModTests\ModNamesTests.cpp">
       <Filter>EU4WorldTests\ModTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceRenamings\ProvinceRename.cpp">
+      <Filter>ConverterFiles\Mappers\ProvinceRenamings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\ProvinceRenamings\ProvinceRenamings.cpp">
+      <Filter>ConverterFiles\Mappers\ProvinceRenamings</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceRenamings\ProvinceRenameTests.cpp">
+      <Filter>MapperTests\ProvinceRenamings</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceRenamings\ProvinceRenamingsTests.cpp">
+      <Filter>MapperTests\ProvinceRenamings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -1107,6 +1119,12 @@
     </Filter>
     <Filter Include="ConverterFiles\EU4World\Country">
       <UniqueIdentifier>{c1674661-8eff-458b-a61c-233f04e6f357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\ProvinceRenamings">
+      <UniqueIdentifier>{eb1a8cb3-7cf9-43d2-9283-03b010387344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\ProvinceRenamings">
+      <UniqueIdentifier>{4b9b72ec-8ed8-4238-9737-7462cb3d881d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

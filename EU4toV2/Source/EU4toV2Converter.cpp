@@ -21,7 +21,7 @@ void convertEU4ToVic2(const commonItems::ConverterVersion& converterVersion)
 	const EU4::World sourceWorld(ideaEffectMapper, converterVersion);
 	V2::World destWorld(sourceWorld, ideaEffectMapper, techGroupsMapper, converterVersion);
 
-	LOG(LogLevel::Info) << "* Conversion complete *";
+	Log(LogLevel::Info) << "* Conversion complete *";
 	Log(LogLevel::Progress) << "100 %";
 }
 

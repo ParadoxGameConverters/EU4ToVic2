@@ -5,7 +5,7 @@
 
 mappers::GovernmentMapper::GovernmentMapper()
 {
-	LOG(LogLevel::Info) << "Parsing governments mappings.";
+	Log(LogLevel::Info) << "Parsing governments mappings.";
 	registerKeys();
 	parseFile("configurables/government_mapping.txt");
 	clearRegisteredKeywords();
@@ -35,7 +35,7 @@ std::optional<std::string> mappers::GovernmentMapper::matchGovernment(const std:
 	}
 	else
 	{
-		LOG(LogLevel::Warning) << "No government mapping defined for " << sourceGovernment << "!";
+		Log(LogLevel::Warning) << "No government mapping defined for " << sourceGovernment << "!";
 		return std::nullopt;
 	}
 }
