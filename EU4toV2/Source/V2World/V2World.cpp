@@ -2127,8 +2127,25 @@ void V2::World::processShatteredHre(const std::optional<std::string>& eu4HreTag)
 	if (!v2HreTag)
 		return;
 
-	createShatteredHreDecisions(*v2HreTag);
-	createShatteredHreEvents(*v2HreTag);
+	decisions["shattered_hre.txt"] = customizeFile("blankMod/output/decisions/shattered_hre.txt", std::regex("\\bHRE\\b"), *v2HreTag);
+	events["shattered_hre.txt"] = customizeFile("blankMod/output/events/shattered_hre.txt", std::regex("\\bHRE\\b"), *v2HreTag);
+
+	const auto& tagAdj = getCountry(*v2HreTag)->getLocalisation().getLocalAdjective();
+	localisations["0_shattered_hre.csv"] = customizeFile("blankMod/output/localisation/0_shattered_hre.csv", std::regex("\\bHoly Roman\\b"), tagAdj);
+}
+
+std::string V2::World::customizeFile(const std::string& filePath,
+	 const std::regex& oldRegex,
+	 const std::string& newString)
+{
+	std::ifstream input(filePath);
+	if (!input.is_open())
+		throw std::runtime_error("Could not open " + filePath + " for reading!");
+	std::stringstream inStream;
+	inStream << input.rdbuf();
+	auto fileString = inStream.str();
+	input.close();
+	return std::regex_replace(fileString, oldRegex, newString);
 }
 
 void V2::World::outputDynamicContent() const
