@@ -47,6 +47,21 @@ political_decisions = {
        
         effect = {
             prestige = 20
+			all_core = { add_core = SCA }
+			any_country = {
+                limit = {
+                    NOT = {
+                        is_greater_power = yes
+                        capital_scope = { continent = africa }
+                        capital_scope = { continent = north_america }
+                        capital_scope = { continent = south_america }
+                        capital_scope = { continent = oceania }
+                    }
+                    is_culture_group = scandinavian
+                    in_sphere = THIS
+                }
+				all_core = { add_core = SCA }
+			}
             change_tag = SCA
             add_accepted_culture = swedish
             add_accepted_culture = danish
@@ -492,9 +507,8 @@ political_decisions = {
 						continent = south_america
 						continent = oceania
 						owner = {
-							in_sphere = THIS
 							OR = {
-								is_vassal = no
+								in_sphere = THIS
 								vassal_of = THIS
 							}
 							war = no
@@ -507,8 +521,18 @@ political_decisions = {
 		effect = {
 			prestige = 20
 			all_core = { 
-				add_core = THIS
+				add_core = culture
 			}
+			any_country = {
+                limit = {
+                    NOT = {
+                        is_greater_power = yes
+                    }
+                    is_culture_group = THIS
+                    in_sphere = THIS
+                }
+                all_core = { add_core = culture }
+            }
 			change_tag = culture
 			any_country = {
 				limit = {
@@ -521,9 +545,8 @@ political_decisions = {
 						capital_scope = { continent = oceania }
 					}
 					is_culture_group = THIS
-					in_sphere = THIS
 					OR = {
-						is_vassal = no
+						in_sphere = THIS
 						vassal_of = THIS
 					}
 				}
