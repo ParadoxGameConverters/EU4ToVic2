@@ -142,9 +142,7 @@ class World
 	void outputReturnCores(std::map<std::string, std::shared_ptr<V2::Country>> countries) const;
 	void localizeProvinces();
 	void processShatteredHre(const std::optional<std::string>& eu4HreTag);
-	std::string customizeFile(const std::string& filePath,
-	 const std::regex& oldRegex,
-	 const std::string& newString);
+	std::string customizeFile(const std::string& filePath, const std::regex& oldRegex, const std::string& newString);
 	void outputDynamicContent() const;
 
 	mappers::ProvinceMapper provinceMapper;

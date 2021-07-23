@@ -1646,7 +1646,7 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion) co
 	outputNeoCultures();
 	Log(LogLevel::Progress) << "99 %";
 
-	LOG(LogLevel::Info) << "<- Writing dynamically created content";
+	Log(LogLevel::Info) << "<- Writing dynamically created content";
 	outputDynamicContent();
 
 	if (theConfiguration.isHpmEnabled())
@@ -2134,9 +2134,7 @@ void V2::World::processShatteredHre(const std::optional<std::string>& eu4HreTag)
 	localisations["0_shattered_hre.csv"] = customizeFile("blankMod/output/localisation/0_shattered_hre.csv", std::regex("\\bHoly Roman\\b"), tagAdj);
 }
 
-std::string V2::World::customizeFile(const std::string& filePath,
-	 const std::regex& oldRegex,
-	 const std::string& newString)
+std::string V2::World::customizeFile(const std::string& filePath, const std::regex& oldRegex, const std::string& newString)
 {
 	std::ifstream input(filePath);
 	if (!input.is_open())

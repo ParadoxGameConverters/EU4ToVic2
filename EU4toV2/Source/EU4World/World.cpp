@@ -740,8 +740,8 @@ void EU4::World::removeEmptyNations()
 	{
 		const auto& countryProvinces = country.second->getProvinces();
 		const auto& countryCores = country.second->getCores();
-		bool shatteredHreCountry = country.second->getTag() == shatteredHreTag;
-		if (!countryProvinces.empty() || !countryCores.empty() || shatteredHreCountry)
+		bool isShatteredHreTag = country.second->getTag() == shatteredHreTag;
+		if (!countryProvinces.empty() || !countryCores.empty() || isShatteredHreTag)
 			survivingCountries.insert(country);
 	}
 
@@ -757,8 +757,8 @@ void EU4::World::removeDeadLandlessNations()
 
 	for (const auto& country: landlessCountries)
 	{
-		bool shatteredHreCountry = country.second->getTag() == shatteredHreTag;
-		if (!country.second->cultureSurvivesInCores(theCountries) && !shatteredHreCountry)
+		bool isShatteredHreTag = country.second->getTag() == shatteredHreTag;
+		if (!country.second->cultureSurvivesInCores(theCountries) && !isShatteredHreTag)
 			theCountries.erase(country.first);
 	}
 }
@@ -769,8 +769,8 @@ void EU4::World::removeLandlessNations()
 
 	for (const auto& country: theCountries)
 	{
-		bool shatteredHreCountry = country.second->getTag() == shatteredHreTag;
-		if (const auto& theProvinces = country.second->getProvinces(); !theProvinces.empty() || shatteredHreCountry)
+		bool isShatteredHreTag = country.second->getTag() == shatteredHreTag;
+		if (const auto& theProvinces = country.second->getProvinces(); !theProvinces.empty() || isShatteredHreTag)
 			survivingCountries.insert(country);
 	}
 
