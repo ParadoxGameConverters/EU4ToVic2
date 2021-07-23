@@ -112,6 +112,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "65 %";
 
 	Log(LogLevel::Info) << "-> Merging Nations";
+	processShatteredHre(sourceWorld.getShatteredHreTag());
 	decentralizeHRE(sourceWorld.decentralizedHRE(), getHreEmperor());
 	addUnions(sourceWorld.decentralizedHRE(), getHreEmperor());
 
@@ -981,6 +982,12 @@ unsigned int V2::World::countCivilizedNations() const
 
 void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper, const EU4::Regions& eu4Regions)
 {
+	std::optional<std::string> v2HreTag;
+	if (const auto& eu4HreTag = sourceWorld.getShatteredHreTag(); eu4HreTag)
+	{
+		v2HreTag = countryMapper.getV2Tag(*eu4HreTag);
+	}
+
 	for (const auto& province: provinces)
 	{
 		auto eu4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(province.first);
@@ -1079,7 +1086,8 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 			 religionMapper,
 			 countryMapper,
 			 provinceMapper,
-			 sourceWorld.decentralizedHRE());
+			 sourceWorld.decentralizedHRE(),
+			 v2HreTag);
 	}
 }
 
@@ -1638,6 +1646,9 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion) co
 	outputNeoCultures();
 	Log(LogLevel::Progress) << "99 %";
 
+	Log(LogLevel::Info) << "<- Writing dynamically created content";
+	outputDynamicContent();
+
 	if (theConfiguration.isHpmEnabled())
 	{
 		copyHpmFiles();
@@ -2104,5 +2115,60 @@ void V2::World::updateCountryDetails()
 				}
 			}
 		}
+	}
+}
+
+void V2::World::processShatteredHre(const std::optional<std::string>& eu4HreTag)
+{
+	if (!eu4HreTag)
+		return;
+
+	const auto& v2HreTag = countryMapper.getV2Tag(*eu4HreTag);
+	if (!v2HreTag)
+		return;
+
+	decisions["shattered_hre.txt"] = customizeFile("blankMod/output/decisions/shattered_hre.txt", std::regex("\\bHRE\\b"), *v2HreTag);
+	events["shattered_hre.txt"] = customizeFile("blankMod/output/events/shattered_hre.txt", std::regex("\\bHRE\\b"), *v2HreTag);
+
+	const auto& tagAdj = getCountry(*v2HreTag)->getLocalisation().getLocalAdjective();
+	localisations["0_shattered_hre.csv"] = customizeFile("blankMod/output/localisation/0_shattered_hre.csv", std::regex("\\bHoly Roman\\b"), tagAdj);
+}
+
+std::string V2::World::customizeFile(const std::string& filePath, const std::regex& oldRegex, const std::string& newString)
+{
+	std::ifstream input(filePath);
+	if (!input.is_open())
+		throw std::runtime_error("Could not open " + filePath + " for reading!");
+	std::stringstream inStream;
+	inStream << input.rdbuf();
+	auto fileString = inStream.str();
+	input.close();
+	return std::regex_replace(fileString, oldRegex, newString);
+}
+
+void V2::World::outputDynamicContent() const
+{
+	for (const auto& [file, decision]: decisions)
+	{
+		std::ofstream out("output/" + theConfiguration.getOutputName() + "/decisions/" + file);
+		if (!out.is_open())
+			throw std::runtime_error("Could not open " + file + " for writing!");
+		out << decision;
+	}
+
+	for (const auto& [file, event]: events)
+	{
+		std::ofstream out("output/" + theConfiguration.getOutputName() + "/events/" + file);
+		if (!out.is_open())
+			throw std::runtime_error("Could not open " + file + " for writing!");
+		out << event;
+	}
+
+	for (const auto& [file, localisation]: localisations)
+	{
+		std::ofstream out("output/" + theConfiguration.getOutputName() + "/localisation/" + file);
+		if (!out.is_open())
+			Log(LogLevel::Debug) << "Could not open " + file + " for writing!";
+		out << localisation;
 	}
 }

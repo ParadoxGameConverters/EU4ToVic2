@@ -39,6 +39,7 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getNativeCultures() const { return nativeCultures; }
 	[[nodiscard]] const auto& getHREReforms() const { return hreReforms; }
 	[[nodiscard]] bool decentralizedHRE() const { return hreReforms.contains("emperor_reichskrieg"); }
+	[[nodiscard]] const auto& getShatteredHreTag() const { return shatteredHreTag; }
 
   private:
 	void registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper, const commonItems::ConverterVersion& converterVersion);
@@ -70,6 +71,7 @@ class World: commonItems::parser
 	std::string generateNeoCulture(const std::string& superRegionName, const std::string& oldCultureName);
 	bool uncompressSave();
 	void markNewWorldCountries();
+	void importShatteredHreTag();
 
 	struct saveData
 	{
@@ -80,6 +82,7 @@ class World: commonItems::parser
 	saveData saveGame;
 
 	std::string holyRomanEmperor;
+	std::optional<std::string> shatteredHreTag;
 	std::set<std::string> hreReforms;
 	std::string celestialEmperor;
 	std::unique_ptr<Regions> regions;
