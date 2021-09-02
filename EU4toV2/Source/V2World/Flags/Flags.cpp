@@ -42,7 +42,7 @@ void V2::Flags::setV2Tags(const std::map<std::string, std::shared_ptr<Country>>&
 			}
 			else // try something patronymic
 			{
-				if (!mappers::CountryMappings::tagIsAlphaDigitDigit(country.first))
+				if (!mappers::CountryMappings::tagIsAlphaDigitAlphaNum(country.first))
 					continue;
 
 				std::string religion = country.second->getReligion();

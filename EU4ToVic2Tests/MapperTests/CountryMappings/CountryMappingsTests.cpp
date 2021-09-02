@@ -241,3 +241,14 @@ TEST(Mappers_CountryMappingsTests, tagIsAlphaDigitDigitWorksAsAdvertised)
 	ASSERT_FALSE(mappers::CountryMappings::tagIsAlphaDigitDigit("0CC"));
 	ASSERT_FALSE(mappers::CountryMappings::tagIsAlphaDigitDigit("00C"));
 }
+
+TEST(Mappers_CountryMappingsTests, tagIsAlphaDigitAlphaNumWorksAsAdvertised)
+{
+	EXPECT_TRUE(mappers::CountryMappings::tagIsAlphaDigitAlphaNum("C01"));
+	EXPECT_TRUE(mappers::CountryMappings::tagIsAlphaDigitAlphaNum("C0C"));
+	EXPECT_FALSE(mappers::CountryMappings::tagIsAlphaDigitAlphaNum("CC1"));
+	EXPECT_FALSE(mappers::CountryMappings::tagIsAlphaDigitAlphaNum("CCC"));
+	EXPECT_FALSE(mappers::CountryMappings::tagIsAlphaDigitAlphaNum("0C0"));
+	EXPECT_FALSE(mappers::CountryMappings::tagIsAlphaDigitAlphaNum("0CC"));
+	EXPECT_FALSE(mappers::CountryMappings::tagIsAlphaDigitAlphaNum("00C"));
+}

@@ -25,6 +25,7 @@ class CountryMappings: commonItems::parser
 	[[nodiscard]] std::optional<std::string> getTitle(const std::string& countryName) const;
 	[[nodiscard]] const auto& getTitleMapper() const { return *titleMapper; }
 	[[nodiscard]] static bool tagIsAlphaDigitDigit(const std::string& tag);
+	[[nodiscard]] static bool tagIsAlphaDigitAlphaNum(const std::string& tag);
 
 	void createMappings(const std::shared_ptr<CultureGroups>& theCultureGroupsMapper,
 		 const std::map<std::string, std::shared_ptr<EU4::Country>>& eu4Countries,
