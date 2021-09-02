@@ -97,6 +97,11 @@ bool mappers::CountryMappings::tagIsAlphaDigitDigit(const std::string& tag)
 	return isalpha(tag[0]) && isdigit(tag[1]) && isdigit(tag[2]);
 }
 
+bool mappers::CountryMappings::tagIsAlphaDigitAlphaNum(const std::string& tag)
+{
+	return isalpha(tag[0]) && isdigit(tag[1]) && isalnum(tag[2]);
+}
+
 void mappers::CountryMappings::makeOneMapping(const std::shared_ptr<EU4::Country>& country)
 {
 	/* Step 3. We attempt straight mapping according to input files. Failing that, we go into names and CK titles looking for targets,
