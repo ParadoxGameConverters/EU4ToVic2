@@ -485,7 +485,7 @@ link = { vic2 = guajiro eu4 = arawak region = bogota_area region = coquivacoa_ar
 link = { vic2 = guajiro eu4 = guajiro }
 link = { vic2 = carribean eu4 = arawak eu4 = arawako eu4 = carib eu4 = cariban eu4 = kalina }
 
-# MÃ©tis - special case
+# Métis - special case
 link = { vic2 = metis eu4 = cosmopolitan_french eu4 = quebecois eu4 = normand  eu4 = celtic_breton eu4 = poitou eu4 = gascon eu4 = gascon_UKS eu4 = normand eu4 = normand_UKS eu4 = aquitaine eu4 = aquitaine_UKS eu4 = burgundian eu4 = burgundian_UKS eu4 = occitain eu4 = occitain_UKS eu4 = breton eu4 = breton_celtic eu4 = breton_UKS religion = totemist religion = nahuatl religion = mesoamerican_religion region = north_american_superregion }
 link = { vic2 = metis eu4 = metis }
 
