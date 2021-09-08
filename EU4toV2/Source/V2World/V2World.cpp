@@ -1019,13 +1019,15 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 		// Remap owner to something V2 can understand
 		auto possibleOwner = countryMapper.getV2Tag(*eu4Owner);
 		if (!possibleOwner)
-			throw std::runtime_error("Error mapping EU4 tag " + *eu4Owner + " to a Vic2 tag! (V2 Province " + std::to_string(province.first) + ")");
+			throw std::runtime_error("Error mapping EU4 province owner " + *eu4Owner + " to a Vic2 tag! (V2 Province " + std::to_string(province.first) + ")");
 		auto owner = *possibleOwner;
 
+		std::string controller;
 		auto possibleController = countryMapper.getV2Tag(*eu4Controller);
 		if (!possibleController)
-			throw std::runtime_error("Error mapping EU4 tag " + *eu4Controller + " to a Vic2 tag! (V2 Province " + std::to_string(province.first) + ")");
-		const auto& controller = *possibleController;
+			controller = owner; // controller was annexed but not purged from foreign provinces.
+		else
+			controller = *possibleController;
 
 		province.second->setOwner(owner);
 		province.second->setController(controller);
