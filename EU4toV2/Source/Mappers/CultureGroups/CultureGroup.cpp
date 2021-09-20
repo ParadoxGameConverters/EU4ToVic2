@@ -14,7 +14,11 @@ mappers::CultureGroup::CultureGroup(std::string theName, std::istream& theStream
 	{
 		if (!hpmUnit.empty())
 			unit = hpmUnit;
-		if (!hpmUnionTag.empty())
+		if (hpmUnionTag == "none")
+		{
+			culturalUnionTag.clear();
+		}
+		else if (!hpmUnionTag.empty())
 			culturalUnionTag = hpmUnionTag;
 	}
 }
