@@ -603,7 +603,7 @@
 	link = { eu4 = 2527 v2 = 191 } # Atali -> Chattanooga
 	link = { eu4 = 934 eu4 = 4913 eu4 = 939 v2 = 188 } # Tsoyaha, Aniyutsi, Kaskinampo -> Nashville
 	link = { eu4 = 481 v2 = 203 } # Bermuda -> Bermuda
-	link = { eu4 = 933 eu4 = 2541 eu4 = 4882 v2 = 206 } # Iswa, Combahee, Etali -> Columbia
+	link = { eu4 = 933 eu4 = 2541 eu4 = 4882 v2 = 206 } # Iswa, Saluda, Etali -> Columbia
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
 	link = { eu4 = 4925 } # White Mountains -> DROPPED
 	link = { eu4 = 4927 } # Blue Mountains -> DROPPED
@@ -620,7 +620,7 @@
 	link = { eu4 = 2537 eu4 = 2538 eu4 = 4881 v2 = 202 } # Ichisi, Ocute, Sawokli -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 } # Kasihta, Coosa -> Atlanta
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
-	link = { eu4 = 926 eu4 = 2536 eu4 = 2535 eu4 = 4625 eu4 = 4626 v2 = 200 } # Eyeish, Mayaimi, Calusa, Mayaca, Potano -> Tampa
+	link = { eu4 = 926 eu4 = 2536 eu4 = 2535 eu4 = 4625 eu4 = 4626 v2 = 200 } # Ais, Mayaimi, Calusa, Mayaca, Potano -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 } # Coweta, Tawasa, Mabila -> Montgomery
@@ -1441,7 +1441,7 @@
 	link = { eu4 = 1772 v2 = 633 } # Pozsony -> Bratislava
 	link = { eu4 = 4236 v2 = 634 } # Trencin -> Trencín
 	link = { eu4 = 154 v2 = 635 } # Hont -> Nitra
-	link = { eu4 = 1318 v2 = 638 v2 = 636 v2 = 2584 } # Spiš -> Rožnava, Banská Bystrica, Bielsko
+	link = { eu4 = 1318 v2 = 638 v2 = 636 } # Spiš -> Rožnava, Banská Bystrica
 	link = { eu4 = 162 v2 = 637 } # Zemplén -> Košice
 	link = { comment = "# Romania" }
 	link = { eu4 = 1954 v2 = 652 v2 = 792 } # Torontál -> Temesvar, Pancevo
@@ -1507,7 +1507,7 @@
 	link = { eu4 = 255 v2 = 717 } # Kalisz -> Kalisz
 	link = { eu4 = 4526 v2 = 701 } # Gniezno -> Gniezno
 	link = { eu4 = 4723 v2 = 684 } # Opole -> Oppeln
-	link = { eu4 = 263 v2 = 685 } # Ratibor -> Kattowitz
+	link = { eu4 = 263 v2 = 685 v2 = 2584 } # Ratibor -> Kattowitz, Bielsko
 	link = { eu4 = 262 v2 = 703 } # Krakow -> Krakow
 	link = { eu4 = 4527 v2 = 716 } # Checiny -> Kielce
 	link = { eu4 = 2960 v2 = 704 } # Nowy Sacz -> Novy Sacz
@@ -2609,14 +2609,14 @@
 	link = { eu4 = 1089 v2 = 2475 } # Wiradjuri -> Broken Hill
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 eu4 = 4868 eu4 = 4869 v2 = 2482 } # Paredarerme, Pyemmairrener, Peerapper -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 eu4 = 4939 v2 = 2511 } # Tauranga, Te Moana-a-Toi -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 eu4 = 4939 v2 = 2511 } # Te Moana a Toi, Te Urewera -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 eu4 = 1791 } # Western Australia, Central Australia -> DROPPED
 	link = { comment = "# Pacific East resettable region = pacific" }
@@ -2692,15 +2692,15 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 eu4 = 4799 v2 = 1425 } # Tarakan, Bulungan, Berau, Sambaliung -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 eu4 = 4799 v2 = 1425 } # Tarakan, Bulungan, Sambaliung, Sangkulirang -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 v2 = 1422 } # MANY-TO-MANY: Kutai, Samarinda -> Samarinda, Muraleve
 	link = { eu4 = 4801 eu4 = 4800 v2 = 1424 } # Batulican, Paser -> Pasir
 	link = { eu4 = 639 eu4 = 2707 v2 = 1423 } # Banjar, Barito -> Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
-	link = { eu4 = 640 eu4 = 4802 eu4 = 4803 eu4 = 4804 v2 = 1426 v2 = 2576 v2 = 1428 } # MANY-TO-MANY: Sambas, Pontianak, Meliau, Sarawak -> Pontianak, Natuna, Sintang
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 640 eu4 = 4802 eu4 = 4803 eu4 = 4804 v2 = 1426 v2 = 2576 v2 = 1428 } # MANY-TO-MANY: Sambas, Pontianak, Meliau, Kuching -> Pontianak, Natuna, Sintang
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 636 v2 = 1393 } # Brunei -> Brunei
 	link = { eu4 = 2704 eu4 = 4806 eu4 = 4805 v2 = 1395 } # Sibu, Kapit, Bintulu -> Bintulu
 	link = { eu4 = 4808 } # Sumatra -> DROPPED
@@ -3388,7 +3388,7 @@
 	link = { eu4 = 2527 v2 = 191 } # Atali -> Chattanooga
 	link = { eu4 = 934 v2 = 188 } # Tsoyaha -> Nashville
 	link = { eu4 = 481 v2 = 203 } # Bermuda -> Bermuda
-	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Combahee -> Columbia
+	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Saluda -> Columbia
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
 	link = { comment = "# Florida" }
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
@@ -3396,7 +3396,7 @@
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 } # Kasihta, Coosa -> Atlanta
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
-	link = { eu4 = 926 eu4 = 2536 eu4 = 2535 eu4 = 4625 eu4 = 4626 v2 = 200 } # Eyeish, Mayaimi, Calusa, Mayaca, Potano -> Tampa
+	link = { eu4 = 926 eu4 = 2536 eu4 = 2535 eu4 = 4625 eu4 = 4626 v2 = 200 } # Ais, Mayaimi, Calusa, Mayaca, Potano -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 } # Coweta, Tawasa, Mabila -> Montgomery
@@ -5365,14 +5365,14 @@
 	link = { eu4 = 1089 v2 = 2473 v2 = 2475 } # Wiradjuri -> Wagga Wagga, Broken Hill
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 eu4 = 1791 } # Western Australia, Central Australia -> DROPPED
 	link = { comment = "# Pacific East resettable region = pacific" }
@@ -5447,14 +5447,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 v2 = 1422 } # MANY-TO-MANY: Kutai, Samarinda -> Samarinda, Muraleve
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 v2 = 1428 } # Sambas -> Pontianak, Natuna, Sintang
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -6139,7 +6139,7 @@
 	link = { eu4 = 2527 v2 = 191 } # Atali -> Chattanooga
 	link = { eu4 = 934 v2 = 188 } # Tsoyaha -> Nashville
 	link = { eu4 = 481 v2 = 203 } # Bermuda -> Bermuda
-	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Combahee -> Columbia
+	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Saluda -> Columbia
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
 	link = { comment = "# Florida" }
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
@@ -6147,7 +6147,7 @@
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 } # Kasihta, Coosa -> Atlanta
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
-	link = { eu4 = 926 eu4 = 2536 eu4 = 2535 eu4 = 4625 eu4 = 4626 v2 = 200 } # Eyeish, Mayaimi, Calusa, Mayaca, Potano -> Tampa
+	link = { eu4 = 926 eu4 = 2536 eu4 = 2535 eu4 = 4625 eu4 = 4626 v2 = 200 } # Ais, Mayaimi, Calusa, Mayaca, Potano -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 } # Coweta, Tawasa, Mabila -> Montgomery
@@ -8038,14 +8038,14 @@
 	link = { eu4 = 1089 v2 = 2473 v2 = 2475 } # Wiradjuri -> Wagga Wagga, Broken Hill
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 eu4 = 1791 } # Western Australia, Central Australia -> DROPPED
 	link = { comment = "# Pacific East resettable region = pacific" }
@@ -8120,14 +8120,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 v2 = 1422 } # MANY-TO-MANY: Kutai, Samarinda -> Samarinda, Muraleve
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 v2 = 1428 } # Sambas -> Pontianak, Natuna, Sintang
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -8812,7 +8812,7 @@
 	link = { eu4 = 2527 v2 = 191 } # Atali -> Chattanooga
 	link = { eu4 = 934 v2 = 188 } # Tsoyaha -> Nashville
 	link = { eu4 = 481 v2 = 203 } # Bermuda -> Bermuda
-	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Combahee -> Columbia
+	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Saluda -> Columbia
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
 	link = { comment = "# Florida" }
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
@@ -8820,7 +8820,7 @@
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 } # Kasihta, Coosa -> Atlanta
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
-	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 eu4 = 4625 eu4 = 4626 v2 = 200 } # Calusa, Eyeish, Mayaimi, Mayaca, Potano -> Tampa
+	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 eu4 = 4625 eu4 = 4626 v2 = 200 } # Calusa, Ais, Mayaimi, Mayaca, Potano -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 } # Coweta, Tawasa, Mabila -> Montgomery
@@ -10719,14 +10719,14 @@
 	link = { eu4 = 1089 v2 = 2473 v2 = 2475 } # Wiradjuri -> Wagga Wagga, Broken Hill
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 } # Western Australia -> DROPPED
 	link = { eu4 = 1791 } # Central Australia -> DROPPED
@@ -10802,14 +10802,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 v2 = 1422 } # MANY-TO-MANY: Kutai, Samarinda -> Samarinda, Muraleve
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 v2 = 1428 } # Sambas -> Pontianak, Natuna, Sintang
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -11490,7 +11490,7 @@
 	link = { eu4 = 2527 v2 = 191 } # Atali -> Chattanooga
 	link = { eu4 = 934 v2 = 188 } # Tsoyaha -> Nashville
 	link = { eu4 = 481 v2 = 203 } # Bermuda -> Bermuda
-	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Combahee -> Columbia
+	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Saluda -> Columbia
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
 	link = { comment = "# Florida" }
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
@@ -11498,7 +11498,7 @@
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 } # Kasihta, Coosa -> Atlanta
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
-	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Eyeish, Mayaimi -> Tampa
+	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Ais, Mayaimi -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 } # Coweta, Tawasa, Mabila -> Montgomery
@@ -13372,14 +13372,14 @@
 	link = { eu4 = 1089 v2 = 2473 v2 = 2475 } # Wiradjuri -> Wagga Wagga, Broken Hill
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 } # Western Australia -> DROPPED
 	link = { eu4 = 1791 } # Central Australia -> DROPPED
@@ -13455,14 +13455,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 v2 = 1422 } # MANY-TO-MANY: Kutai, Samarinda -> Samarinda, Muraleve
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 v2 = 1428 } # Sambas -> Pontianak, Natuna, Sintang
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -14143,7 +14143,7 @@
 	link = { eu4 = 2527 v2 = 191 } # Atali -> Chattanooga
 	link = { eu4 = 934 v2 = 188 } # Tsoyaha -> Nashville
 	link = { eu4 = 481 v2 = 203 } # Bermuda -> Bermuda
-	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Combahee -> Columbia
+	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Saluda -> Columbia
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
 	link = { comment = "# Florida" }
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
@@ -14151,7 +14151,7 @@
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 } # Kasihta, Coosa -> Atlanta
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
-	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Eyeish, Mayaimi -> Tampa
+	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Ais, Mayaimi -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 } # Coweta, Tawasa, Mabila -> Montgomery
@@ -16025,14 +16025,14 @@
 	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 } # Wiradjuri -> Beechworth, Wagga Wagga, Ophir
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 v2 = 2502 } # Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome, Dampier
 	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 } # Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
@@ -16108,14 +16108,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 } # Kutai, Samarinda -> Samarinda
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 } # Sambas -> Pontianak, Natuna
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -16794,7 +16794,7 @@
 	link = { eu4 = 2527 v2 = 191 } # Atali -> Chattanooga
 	link = { eu4 = 934 v2 = 188 } # Tsoyaha -> Nashville
 	link = { eu4 = 481 v2 = 203 } # Bermuda -> Bermuda
-	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Combahee -> Columbia
+	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Saluda -> Columbia
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
 	link = { comment = "# Florida" }
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
@@ -16802,7 +16802,7 @@
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 } # Kasihta, Coosa -> Atlanta
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
-	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Eyeish, Mayaimi -> Tampa
+	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Ais, Mayaimi -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 } # Coweta, Tawasa, Mabila -> Montgomery
@@ -18676,14 +18676,14 @@
 	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 } # Wiradjuri -> Beechworth, Wagga Wagga, Ophir
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 v2 = 2502 } # Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome, Dampier
 	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 } # Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
@@ -18759,14 +18759,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 } # Kutai, Samarinda -> Samarinda
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 } # Sambas -> Pontianak, Natuna
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -19445,7 +19445,7 @@
 	link = { eu4 = 2527 v2 = 191 } # Atali -> Chattanooga
 	link = { eu4 = 934 v2 = 188 } # Tsoyaha -> Nashville
 	link = { eu4 = 481 v2 = 203 } # Bermuda -> Bermuda
-	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Combahee -> Columbia
+	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Saluda -> Columbia
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
 	link = { comment = "# Florida" }
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
@@ -19453,7 +19453,7 @@
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 } # Kasihta, Coosa -> Atlanta
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
-	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Eyeish, Mayaimi -> Tampa
+	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Ais, Mayaimi -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 } # Coweta, Tawasa, Mabila -> Montgomery
@@ -21296,14 +21296,14 @@
 	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 } # Wiradjuri -> Beechworth, Wagga Wagga, Ophir
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 v2 = 2502 } # Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome, Dampier
 	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 } # Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
@@ -21379,14 +21379,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 } # Kutai, Samarinda -> Samarinda
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 } # Sambas -> Pontianak, Natuna
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -22065,7 +22065,7 @@
 	link = { eu4 = 2527 v2 = 191 } # Atali -> Chattanooga
 	link = { eu4 = 934 v2 = 188 } # Tsoyaha -> Nashville
 	link = { eu4 = 481 v2 = 203 } # Bermuda -> Bermuda
-	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Combahee -> Columbia
+	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Saluda -> Columbia
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
 	link = { comment = "# Florida" }
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
@@ -22073,7 +22073,7 @@
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 } # Kasihta, Coosa -> Atlanta
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
-	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Eyeish, Mayaimi -> Tampa
+	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Ais, Mayaimi -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 } # Coweta, Tawasa, Mabila -> Montgomery
@@ -23872,14 +23872,14 @@
 	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 } # Wiradjuri -> Beechworth, Wagga Wagga, Ophir
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 v2 = 2502 } # Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome, Dampier
 	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 } # Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
@@ -23954,14 +23954,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 } # Kutai, Samarinda -> Samarinda
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 } # Sambas -> Pontianak, Natuna
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -24640,7 +24640,7 @@
 	link = { eu4 = 2527 v2 = 191 } # Atali -> Chattanooga
 	link = { eu4 = 934 v2 = 188 } # Tsoyaha -> Nashville
 	link = { eu4 = 481 v2 = 203 } # Bermuda -> Bermuda
-	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Combahee -> Columbia
+	link = { eu4 = 933 eu4 = 2541 v2 = 206 } # Iswa, Saluda -> Columbia
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
 	link = { comment = "# Florida" }
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
@@ -24648,7 +24648,7 @@
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 } # Kasihta, Coosa -> Atlanta
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
-	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Eyeish, Mayaimi -> Tampa
+	link = { eu4 = 2535 eu4 = 926 eu4 = 2536 v2 = 200 } # Calusa, Ais, Mayaimi -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 v2 = 195 } # Coweta, Tawasa, Mabila -> Montgomery
@@ -26447,14 +26447,14 @@
 	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 } # Wiradjuri -> Beechworth, Wagga Wagga, Ophir
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 v2 = 2502 } # Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome, Dampier
 	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 } # Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
@@ -26529,14 +26529,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 } # Kutai, Samarinda -> Samarinda
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 } # Sambas -> Pontianak, Natuna
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -26734,12 +26734,12 @@
 	link = { eu4 = 2545 eu4 = 2544 v2 = 209 } # Waxhaw, Yadkin -> Charlotte
 	link = { eu4 = 936 v2 = 2556 } # Joara -> Asheville
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
-	link = { eu4 = 2541 eu4 = 933 v2 = 206 } # Combahee, Iswa -> Columbia
+	link = { eu4 = 2541 eu4 = 933 v2 = 206 } # Saluda, Iswa -> Columbia
 	link = { eu4 = 929 eu4 = 2539 v2 = 204 } # Guale, Mocama -> Savannah
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 931 eu4 = 930 v2 = 201 } # Coosa, Kasihta -> Atlanta
-	link = { eu4 = 926 eu4 = 2535 eu4 = 2536 v2 = 200 } # Eyeish, Calusa, Mayaimi -> Tampa
+	link = { eu4 = 926 eu4 = 2535 eu4 = 2536 v2 = 200 } # Ais, Calusa, Mayaimi -> Tampa
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
@@ -28029,14 +28029,14 @@
 	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 } # Wiradjuri -> Beechworth, Wagga Wagga, Ophir
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 v2 = 2502 } # Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome, Dampier
 	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 } # Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
@@ -28112,14 +28112,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 } # Kutai, Samarinda -> Samarinda
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 } # Sambas -> Pontianak, Natuna
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -29292,12 +29292,12 @@
 	link = { eu4 = 2545 eu4 = 2544 v2 = 209 } # Waxhaw, Yadkin -> Charlotte
 	link = { eu4 = 936 v2 = 2556 } # Joara -> Asheville
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
-	link = { eu4 = 2541 eu4 = 933 v2 = 206 } # Combahee, Iswa -> Columbia
+	link = { eu4 = 2541 eu4 = 933 v2 = 206 } # Saluda, Iswa -> Columbia
 	link = { eu4 = 929 eu4 = 2539 v2 = 204 } # Guale, Mocama -> Savannah
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 931 eu4 = 930 v2 = 201 } # Coosa, Kasihta -> Atlanta
-	link = { eu4 = 926 eu4 = 2535 eu4 = 2536 v2 = 200 } # Eyeish, Calusa, Mayaimi -> Tampa
+	link = { eu4 = 926 eu4 = 2535 eu4 = 2536 v2 = 200 } # Ais, Calusa, Mayaimi -> Tampa
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
@@ -30586,14 +30586,14 @@
 	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 } # Wiradjuri -> Beechworth, Wagga Wagga, Ophir
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 v2 = 2502 } # Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome, Dampier
 	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 } # Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
@@ -30669,14 +30669,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 } # Kutai, Samarinda -> Samarinda
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 } # Sambas -> Pontianak, Natuna
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -31837,12 +31837,12 @@
 	link = { eu4 = 2545 eu4 = 2544 v2 = 209 } # Waxhaw, Yadkin -> Charlotte
 	link = { eu4 = 936 v2 = 2556 } # Joara -> Asheville
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
-	link = { eu4 = 2541 eu4 = 933 v2 = 206 } # Combahee, Iswa -> Columbia
+	link = { eu4 = 2541 eu4 = 933 v2 = 206 } # Saluda, Iswa -> Columbia
 	link = { eu4 = 929 eu4 = 2539 v2 = 204 } # Guale, Mocama -> Savannah
 	link = { eu4 = 2540 v2 = 2555 } # Etowah -> Augusta
 	link = { eu4 = 2537 eu4 = 2538 v2 = 202 } # Ichisi, Ocute -> Valdosta
 	link = { eu4 = 931 eu4 = 930 v2 = 201 } # Coosa, Kasihta -> Atlanta
-	link = { eu4 = 926 eu4 = 2535 eu4 = 2536 v2 = 200 } # Eyeish, Calusa, Mayaimi -> Tampa
+	link = { eu4 = 926 eu4 = 2535 eu4 = 2536 v2 = 200 } # Ais, Calusa, Mayaimi -> Tampa
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
@@ -33131,14 +33131,14 @@
 	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 } # Wiradjuri -> Beechworth, Wagga Wagga, Ophir
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
 	link = { eu4 = 1107 v2 = 2510 } # Taranaki -> New Plymouth
-	link = { eu4 = 2739 v2 = 2571 } # Kirikiriroa -> Tauranga
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 2739 v2 = 2571 } # Waikato -> Tauranga
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 v2 = 2502 } # Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome, Dampier
 	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 } # Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
@@ -33214,14 +33214,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 } # Kutai, Samarinda -> Samarinda
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 } # Sambas -> Pontianak, Natuna
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { comment = "# Philippines resettable region = philippines" }
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
@@ -34324,7 +34324,7 @@
 	link = { eu4 = 1805 v2 = 2592 v2 = 2627 v2 = 59 } # Ungava -> Ungava, Fort Chimo, Nitchequon
 	link = { comment = "# USA" }
 	link = { eu4 = 2565 eu4 = 2013 v2 = 248 } # Kinnipekw, Allesikantekw -> Lewiston
-	link = { eu4 = 926 eu4 = 2535 eu4 = 2536 v2 = 200 } # Eyeish, Calusa, Mayaimi -> Tampa
+	link = { eu4 = 926 eu4 = 2535 eu4 = 2536 v2 = 200 } # Ais, Calusa, Mayaimi -> Tampa
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 911 v2 = 177 } # Baawitigon -> Marquette
@@ -34397,7 +34397,7 @@
 	link = { eu4 = 929 eu4 = 2539 v2 = 204 } # Guale, Mocama -> Savannah
 	link = { eu4 = 2538 v2 = 2555 } # Ocute -> Augusta
 	link = { eu4 = 931 eu4 = 930 eu4 = 2537 v2 = 201 v2 = 202 } # MANY-TO-MANY: Coosa, Kasihta, Ichisi -> Atlanta, Valdosta
-	link = { eu4 = 2540 eu4 = 2541 eu4 = 933 v2 = 206 } # Etowah, Combahee, Iswa -> Columbia
+	link = { eu4 = 2540 eu4 = 2541 eu4 = 933 v2 = 206 } # Etowah, Saluda, Iswa -> Columbia
 	link = { eu4 = 2545 eu4 = 2544 v2 = 209 } # Waxhaw, Yadkin -> Charlotte
 	link = { eu4 = 936 v2 = 2556 } # Joara -> Asheville
 	link = { eu4 = 2499 eu4 = 2666 v2 = 138 } # Coahuilteco, Tuintsundé -> Laredo
@@ -35484,13 +35484,13 @@
 	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 } # Wiradjuri -> Beechworth, Wagga Wagga, Ophir
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
-	link = { eu4 = 2739 eu4 = 1107 v2 = 2571 v2 = 2510 } # MANY-TO-MANY: Kirikiriroa, Taranaki -> Tauranga, New Plymouth
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
+	link = { eu4 = 2739 eu4 = 1107 v2 = 2571 v2 = 2510 } # MANY-TO-MANY: Waikato, Taranaki -> Tauranga, New Plymouth
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 } # Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome
 	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 } # Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
@@ -35565,14 +35565,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 } # Kutai, Samarinda -> Samarinda
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 } # Sambas -> Pontianak, Natuna
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
 	link = { eu4 = 658 eu4 = 657 v2 = 1456 } # Cagayan, Ilocos -> Vigan
@@ -36650,7 +36650,7 @@
 	link = { eu4 = 1805 v2 = 2592 v2 = 2627 v2 = 59 } # Ungava -> Ungava, Fort Chimo, Nitchequon
 	link = { comment = "# USA" }
 	link = { eu4 = 2565 eu4 = 2013 v2 = 248 } # Kinnipekw, Allesikantekw -> Lewiston
-	link = { eu4 = 926 eu4 = 2535 eu4 = 2536 v2 = 200 } # Eyeish, Calusa, Mayaimi -> Tampa
+	link = { eu4 = 926 eu4 = 2535 eu4 = 2536 v2 = 200 } # Ais, Calusa, Mayaimi -> Tampa
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 911 v2 = 177 } # Baawitigon -> Marquette
@@ -36723,7 +36723,7 @@
 	link = { eu4 = 929 eu4 = 2539 v2 = 204 } # Guale, Mocama -> Savannah
 	link = { eu4 = 2538 v2 = 2555 } # Ocute -> Augusta
 	link = { eu4 = 931 eu4 = 930 eu4 = 2537 v2 = 201 v2 = 202 } # MANY-TO-MANY: Coosa, Kasihta, Ichisi -> Atlanta, Valdosta
-	link = { eu4 = 2540 eu4 = 2541 eu4 = 933 v2 = 206 } # Etowah, Combahee, Iswa -> Columbia
+	link = { eu4 = 2540 eu4 = 2541 eu4 = 933 v2 = 206 } # Etowah, Saluda, Iswa -> Columbia
 	link = { eu4 = 2545 eu4 = 2544 v2 = 209 } # Waxhaw, Yadkin -> Charlotte
 	link = { eu4 = 936 v2 = 2556 } # Joara -> Asheville
 	link = { eu4 = 2499 eu4 = 2666 v2 = 138 } # Coahuilteco, Tuintsundé -> Laredo
@@ -37805,13 +37805,13 @@
 	link = { eu4 = 1089 v2 = 2480 v2 = 2473 v2 = 2471 } # Wiradjuri -> Beechworth, Wagga Wagga, Ophir
 	link = { eu4 = 1088 v2 = 2478 v2 = 2481 } # Wergaia -> Ballarat, Swan Hill
 	link = { eu4 = 1085 v2 = 2482 } # Paredarerme -> Tasmania
-	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Whangarei -> Auckland, Norfolk Island
-	link = { eu4 = 2739 eu4 = 1107 v2 = 2571 v2 = 2510 } # MANY-TO-MANY: Kirikiriroa, Taranaki -> Tauranga, New Plymouth
-	link = { eu4 = 2737 v2 = 2512 } # Ahuriri -> Wellington
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 2738 v2 = 2516 } # Waitaha -> Nelson
+	link = { eu4 = 1106 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Auckland, Norfolk Island
+	link = { eu4 = 2739 eu4 = 1107 v2 = 2571 v2 = 2510 } # MANY-TO-MANY: Waikato, Taranaki -> Tauranga, New Plymouth
+	link = { eu4 = 2737 v2 = 2512 } # Wairarapa -> Wellington
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 2738 v2 = 2516 } # Te Tau Ihu -> Nelson
 	link = { eu4 = 1109 v2 = 2515 v2 = 2514 } # Timaru -> Christchurch, Hokitika
-	link = { eu4 = 1246 v2 = 2513 } # Waihopai -> Dunedin
+	link = { eu4 = 1246 v2 = 2513 } # Ata Whenua -> Dunedin
 	link = { comment = "# Australian Desert" }
 	link = { eu4 = 1790 v2 = 2506 v2 = 2603 v2 = 2507 v2 = 2504 v2 = 2503 v2 = 2500 v2 = 2605 v2 = 2602 v2 = 2601 v2 = 2501 } # Western Australia -> Tennant Creek, Tanami, Alice Springs, Esperance, Wiluna, Kalgoorlie, Gibson's Desert, Roebourne, Sandy Desert, Broome
 	link = { eu4 = 1791 v2 = 2604 v2 = 2489 v2 = 2490 v2 = 2475 v2 = 2495 v2 = 2496 } # Central Australia -> Normanton, Longreach, Charleville, Broken Hill, Oodnadatta, Tarcoola
@@ -37886,14 +37886,14 @@
 	link = { eu4 = 2673 eu4 = 617 v2 = 1405 } # Pasai, Kutaraja -> Banda Aceh
 	link = { eu4 = 2683 eu4 = 2684 v2 = 1411 } # Mentawai, Nias -> Gunungsitoli
 	link = { eu4 = 2686 eu4 = 659 v2 = 1402 } # Bintan, Lingga -> Tanjungpinang
-	link = { eu4 = 637 v2 = 1396 } # Jesselton -> Api
+	link = { eu4 = 637 v2 = 1396 } # Api-Api -> Api
 	link = { eu4 = 2703 v2 = 1397 } # Lehad Datu -> Sandakan
-	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Berau -> Tarakan
+	link = { eu4 = 2709 eu4 = 2711 eu4 = 2710 v2 = 1425 } # Tarakan, Bulungan, Sambaliung -> Tarakan
 	link = { eu4 = 638 eu4 = 2712 v2 = 1429 } # Kutai, Samarinda -> Samarinda
 	link = { eu4 = 639 eu4 = 2707 v2 = 1424 v2 = 1423 } # MANY-TO-MANY: Banjar, Barito -> Pasir, Banjarmasin
 	link = { eu4 = 2708 eu4 = 2706 v2 = 1427 } # Sampit, Katapang -> Kota Waringin
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 } # Sambas -> Pontianak, Natuna
-	link = { eu4 = 2705 v2 = 1394 } # Kuching -> Kuching
+	link = { eu4 = 2705 v2 = 1394 } # Sigalang -> Kuching
 	link = { eu4 = 2704 eu4 = 636 v2 = 1395 v2 = 1393 } # MANY-TO-MANY: Sibu, Brunei -> Bintulu, Brunei
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
 	link = { eu4 = 658 eu4 = 657 v2 = 1456 } # Cagayan, Ilocos -> Vigan
@@ -38986,11 +38986,11 @@
 	link = { eu4 = 1791 v2 = 2492 v2 = 2496 v2 = 2495 v2 = 2475 v2 = 2490 v2 = 2488 v2 = 2604 v2 = 2489 v2 = 2487 v2 = 2507 v2 = 2494 } # Central Australia -> Port Lincoln, Tarcoola, Oodnadatta, Broken Hill, Charleville, Cooktown, Normanton, Longreach, Townsville, Alice Springs, Port Augusta
 	link = { eu4 = 1790 v2 = 2505 v2 = 2506 v2 = 2603 v2 = 2501 v2 = 2601 v2 = 2602 v2 = 2502 v2 = 2605 v2 = 2503 v2 = 2500 v2 = 2504 } # Western Australia -> Palmerston, Tennant Creek, Tanami, Broome, Sandy Desert, Roebourne, Dampier, Gibson's Desert, Wiluna, Kalgoorlie, Esperance
 	link = { comment = "# New Zealand" }
-	link = { eu4 = 1246 v2 = 2513 v2 = 2515 } # Waihopai -> Dunedin, Christchurch
+	link = { eu4 = 1246 v2 = 2513 v2 = 2515 } # Ata Whenua -> Dunedin, Christchurch
 	link = { eu4 = 1109 v2 = 2516 v2 = 2514 } # Timaru -> Nelson, Hokitika
 	link = { eu4 = 1107 v2 = 2512 v2 = 2510 } # Taranaki -> Wellington, New Plymouth
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 1106 v2 = 2571 v2 = 2509 v2 = 2508 } # Whangarei -> Tauranga, Auckland, Norfolk Island
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 1106 v2 = 2571 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Tauranga, Auckland, Norfolk Island
 	link = { comment = "# Pacific Islands" }
 	link = { eu4 = 1986 v2 = 1097 } # New Caledonia -> New Caledonia
 	link = { eu4 = 1239 v2 = 2535 v2 = 2536 } # Vanuatu -> New Hebrides, Santa Cruz Islands
@@ -39020,7 +39020,7 @@
 	link = { eu4 = 652 v2 = 1463 } # Maguindanao -> Davao
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
 	link = { comment = "# Indonesia" }
-	link = { eu4 = 637 v2 = 1396 v2 = 1397 } # Jesselton -> Api, Sandakan
+	link = { eu4 = 637 v2 = 1396 v2 = 1397 } # Api-Api -> Api, Sandakan
 	link = { eu4 = 636 v2 = 1395 v2 = 1393 v2 = 1394 } # Brunei -> Bintulu, Brunei, Kuching
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 v2 = 1428 } # Sambas -> Pontianak, Natuna, Sintang
 	link = { eu4 = 639 v2 = 1423 v2 = 1424 v2 = 1422 v2 = 1427 } # Banjar -> Banjarmasin, Pasir, Muraleve, Kota Waringin
@@ -39539,7 +39539,7 @@
 	link = { eu4 = 882 v2 = 136 } # Mashgaléndé -> El Paso
 	link = { eu4 = 885 v2 = 135 } # Gulgahén -> Lubbock
 	link = { eu4 = 888 eu4 = 887 v2 = 132 v2 = 133 } # MANY-TO-MANY: Atakapa, Tickanwa'tic -> Houston, Austin
-	link = { eu4 = 926 v2 = 200 } # Eyeish -> Tampa
+	link = { eu4 = 926 v2 = 200 } # Ais -> Tampa
 	link = { comment = "# Florida" }
 	link = { eu4 = 927 v2 = 199 } # Timucua -> St Augustine
 	link = { eu4 = 928 v2 = 198 } # Apalachee -> Tallahassee
@@ -41056,11 +41056,11 @@
 	link = { eu4 = 1791 v2 = 2492 v2 = 2496 v2 = 2495 v2 = 2475 v2 = 2490 v2 = 2488 v2 = 2604 v2 = 2489 v2 = 2487 v2 = 2507 v2 = 2494 } # Central Australia -> Port Lincoln, Tarcoola, Oodnadatta, Broken Hill, Charleville, Cooktown, Normanton, Longreach, Townsville, Alice Springs, Port Augusta
 	link = { eu4 = 1790 v2 = 2505 v2 = 2506 v2 = 2603 v2 = 2501 v2 = 2601 v2 = 2602 v2 = 2502 v2 = 2605 v2 = 2503 v2 = 2500 v2 = 2504 } # Western Australia -> Palmerston, Tennant Creek, Tanami, Broome, Sandy Desert, Roebourne, Dampier, Gibson's Desert, Wiluna, Kalgoorlie, Esperance
 	link = { comment = "# New Zealand" }
-	link = { eu4 = 1246 v2 = 2513 v2 = 2515 } # Waihopai -> Dunedin, Christchurch
+	link = { eu4 = 1246 v2 = 2513 v2 = 2515 } # Ata Whenua -> Dunedin, Christchurch
 	link = { eu4 = 1109 v2 = 2516 v2 = 2514 } # Timaru -> Nelson, Hokitika
 	link = { eu4 = 1107 v2 = 2512 v2 = 2510 } # Taranaki -> Wellington, New Plymouth
-	link = { eu4 = 1108 v2 = 2511 } # Tauranga -> Napier
-	link = { eu4 = 1106 v2 = 2571 v2 = 2509 v2 = 2508 } # Whangarei -> Tauranga, Auckland, Norfolk Island
+	link = { eu4 = 1108 v2 = 2511 } # Te Moana a Toi -> Napier
+	link = { eu4 = 1106 v2 = 2571 v2 = 2509 v2 = 2508 } # Te Tai Tokerau -> Tauranga, Auckland, Norfolk Island
 	link = { comment = "# Pacific Islands" }
 	link = { eu4 = 1986 v2 = 1097 } # New Caledonia -> New Caledonia
 	link = { eu4 = 1239 v2 = 2535 v2 = 2536 } # Vanuatu -> New Hebrides, Santa Cruz Islands
@@ -41090,7 +41090,7 @@
 	link = { eu4 = 652 v2 = 1463 } # Maguindanao -> Davao
 	link = { eu4 = 651 v2 = 1464 } # Sulu -> Sulu
 	link = { comment = "# Indonesia" }
-	link = { eu4 = 637 v2 = 1396 v2 = 1397 } # Jesselton -> Api, Sandakan
+	link = { eu4 = 637 v2 = 1396 v2 = 1397 } # Api-Api -> Api, Sandakan
 	link = { eu4 = 636 v2 = 1395 v2 = 1393 v2 = 1394 } # Brunei -> Bintulu, Brunei, Kuching
 	link = { eu4 = 640 v2 = 1426 v2 = 2576 v2 = 1428 } # Sambas -> Pontianak, Natuna, Sintang
 	link = { eu4 = 639 v2 = 1423 v2 = 1424 v2 = 1422 v2 = 1427 } # Banjar -> Banjarmasin, Pasir, Muraleve, Kota Waringin
@@ -41609,7 +41609,7 @@
 	link = { eu4 = 882 v2 = 136 } # Mashgaléndé -> El Paso
 	link = { eu4 = 885 v2 = 135 } # Gulgahén -> Lubbock
 	link = { eu4 = 888 eu4 = 887 v2 = 132 v2 = 133 } # MANY-TO-MANY: Atakapa, Tickanwa'tic -> Houston, Austin
-	link = { eu4 = 926 v2 = 200 } # Eyeish -> Tampa
+	link = { eu4 = 926 v2 = 200 } # Ais -> Tampa
 	link = { comment = "# Florida" }
 	link = { eu4 = 927 v2 = 199 } # Timucua -> St Augustine
 	link = { eu4 = 928 v2 = 198 } # Apalachee -> Tallahassee
