@@ -1458,7 +1458,7 @@
 	link = { eu4 = 2998 v2 = 668 v2 = 669 } # Buzau -> Braila, Calarasi
 	link = { eu4 = 4531 v2 = 664 } # Giurgiu -> Bucharest
 	link = { eu4 = 4529 v2 = 670 v2 = 671 } # Iasi -> Iasi, Botosani
-	link = { eu4 = 268 v2 = 663 } # Suceava -> Suceava
+	link = { eu4 = 268 v2 = 663 v2 = 662 } # Suceava -> Suceava, Cernauti
 	link = { eu4 = 4530 v2 = 672 v2 = 673 } # Birlad -> Bacau, Galati
 	link = { eu4 = 4706 v2 = 675 } # Tolcu -> Tulcea
 	link = { eu4 = 1756 v2 = 678 } # Bessarabia -> Izmail
@@ -1515,7 +1515,7 @@
 	link = { eu4 = 4541 v2 = 951 } # Drohobycz -> Stryi
 	link = { eu4 = 2424 v2 = 705 } # Peremyshl -> Przemysl
 	link = { eu4 = 2961 eu4 = 1940 v2 = 702 v2 = 952 } # MANY-TO-MANY: Lwow, Belz -> Lvov, Ternopil
-	link = { eu4 = 261 v2 = 953 v2 = 662 } # Halicz -> Stanislavov, Cernauti
+	link = { eu4 = 261 v2 = 953 } # Halicz -> Stanislavov
 	link = { eu4 = 2962 eu4 = 4539 v2 = 956 } # Rowne, Kremenets -> Rovne
 	link = { eu4 = 279 eu4 = 4538 v2 = 957 } # Volhynia, Chelm -> Kovel
 	link = { eu4 = 260 v2 = 715 } # Lublin -> Lublin
