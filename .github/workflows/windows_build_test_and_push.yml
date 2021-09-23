@@ -15,16 +15,13 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
+        submodules: recursive
 
     - name: "Get previous tag"
       if: ${{ github.event_name == 'push' }}
       id: previoustag
       uses: "WyriHaximus/github-action-get-previous-tag@v1"
       
-    - name: "Init submodules"
-      run: |
-       git submodule update --init --recursive
-       
     - name: "Build solution"
       run: |
        cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\"
@@ -49,7 +46,6 @@ jobs:
         allowUpdates: true
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
-        replacesArtifacts: true
         artifacts: EU4ToVic2-1.0Stettin.zip
         token: ${{ secrets.API_TOKEN_GITHUB }}
         
@@ -61,7 +57,6 @@ jobs:
         allowUpdates: true
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
-        replacesArtifacts: true
         artifacts: EU4ToVic2-1.0Stettin.zip
         token: ${{ secrets.API_TOKEN_GITHUB }}
         
