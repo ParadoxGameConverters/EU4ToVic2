@@ -8,7 +8,6 @@ on:
       - master
 
 jobs:
-  build_and_test:
   build_test_and_publish:
     name: Build, test and publish local
     if: github.repository_owner == 'ParadoxGameConverters'
