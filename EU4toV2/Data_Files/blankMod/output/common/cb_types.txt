@@ -1747,7 +1747,7 @@ eu4_colony_asks_independence = {
 	good_relation_militancy_factor = 1
 
 	can_use = {
-		always = yes # Event-only
+		always = no # Event-only
 	}
 	
 	# THIS - us
