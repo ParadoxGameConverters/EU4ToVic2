@@ -614,9 +614,10 @@
 	link = { eu4 = 2531 v2 = 196 } # Abihka -> Gadsden
 	link = { eu4 = 918 v2 = 189 } # Chucalissa -> Memphis
 	link = { eu4 = 919 eu4 = 2528 v2 = 193 } # Chickasha, Yazoo -> Greenwood
-	link = { eu4 = 920 eu4 = 2529 eu4 = 921 eu4 = 4884 v2 = 192 } # Chahta, Natchez, Ishenoca, Houma -> Jackson
+	link = { eu4 = 920 eu4 = 2529 eu4 = 4884 v2 = 192 } # Chahta, Natchez, Houma -> Jackson
 	link = { eu4 = 2530 v2 = 194 } # Taneks-Haya -> Biloxi
-	link = { eu4 = 893 v2 = 139 v2 = 140 } # Chitimacha -> New Orleans, Baton Rouge
+	link = { eu4 = 921 v2 = 140 } # Ishenoca -> Baton Rouge
+	link = { eu4 = 893 v2 = 139 } # Chitimacha -> New Orleans
 	link = { eu4 = 2516 v2 = 141 } # Adai -> Lake Charles
 	link = { eu4 = 2014 eu4 = 4885 v2 = 142 } # Natchitoches, Avoyel -> Shreveport
 	link = { eu4 = 895 eu4 = 897 eu4 = 4923 v2 = 143 } # Anilco, Casqui, Pacaha -> Little Rock
