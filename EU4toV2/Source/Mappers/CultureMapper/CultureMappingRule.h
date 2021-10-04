@@ -15,6 +15,8 @@ class CultureMappingRule: commonItems::parser
   public:
 	CultureMappingRule() = default;
 	explicit CultureMappingRule(std::istream& theStream);
+	[[nodiscard]] auto hasDestinationCulture() const { return !destinationCulture.empty(); }
+	[[nodiscard]] auto hasCultures() const { return !cultures.empty(); }
 
 	[[nodiscard]] std::optional<std::string> cultureMatch(const EU4::Regions& eu4Regions,
 		 const std::string& eu4culture,

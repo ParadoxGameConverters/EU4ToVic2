@@ -23,7 +23,8 @@ void mappers::CultureMapper::registerKeys()
 {
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
 		const CultureMappingRule rule(theStream);
-		cultureMapRules.emplace_back(rule);
+		if (rule.hasDestinationCulture() && rule.hasCultures())
+			cultureMapRules.emplace_back(rule);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
