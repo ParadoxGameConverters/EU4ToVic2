@@ -1,10 +1,10 @@
 #ifndef MOD_COMMONS_H
 #define MOD_COMMONS_H
 
-#include "UnitNames.h"
 #include "../Party/Party.h"
 #include "Color.h"
 #include "Parser.h"
+#include "UnitNames.h"
 #include <set>
 
 namespace V2

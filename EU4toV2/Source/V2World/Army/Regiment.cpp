@@ -21,18 +21,15 @@ void V2::Regiment::nameShip(std::shared_ptr<UnitNames> unitNames)
 {
 	switch (regimentType)
 	{
-		case REGIMENTTYPE::manowar:
-		{
+		case REGIMENTTYPE::manowar: {
 			giveName(unitNames, unitNames->getManowars());
 			break;
 		}
-		case REGIMENTTYPE::frigate:
-		{
+		case REGIMENTTYPE::frigate: {
 			giveName(unitNames, unitNames->getFrigates());
 			break;
 		}
-		case REGIMENTTYPE::clipper_transport:
-		{
+		case REGIMENTTYPE::clipper_transport: {
 			giveName(unitNames, unitNames->getClipperTransports());
 		}
 	}

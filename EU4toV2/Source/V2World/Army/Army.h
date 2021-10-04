@@ -27,7 +27,7 @@ class Army // also Navy
 		 std::map<int, std::shared_ptr<Province>> allProvinces,
 		 const mappers::ProvinceMapper& provinceMapper,
 		 const mappers::PortProvinces& portProvincesMapper,
-		 std::shared_ptr<UnitNames> unitNames,	
+		 std::shared_ptr<UnitNames> unitNames,
 		 std::map<REGIMENTTYPE, int>& unitNameCount,
 		 const std::string& localAdjective);
 

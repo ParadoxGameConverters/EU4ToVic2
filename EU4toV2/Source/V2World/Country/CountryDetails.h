@@ -1,9 +1,9 @@
 #ifndef COUNTRY_DETAILS_H
 #define COUNTRY_DETAILS_H
 
-#include "UnitNames.h"
 #include "../../V2World/Party/Party.h"
 #include "Parser.h"
+#include "UnitNames.h"
 #include <set>
 
 namespace V2
