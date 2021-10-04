@@ -1,6 +1,7 @@
 #ifndef COUNTRY_DETAILS_H
 #define COUNTRY_DETAILS_H
 
+#include "UnitNames.h"
 #include "../../V2World/Party/Party.h"
 #include "Parser.h"
 #include <set>
@@ -53,7 +54,7 @@ class CountryDetails: commonItems::parser
 	std::string graphicalCulture;
 	std::string colorString;
 	std::vector<Party> parties;
-	std::string unitNames;
+	std::shared_ptr<UnitNames> unitNames;
 	std::string primaryCulture = "dummy";
 	std::string eu4PrimaryCulture;
 	std::set<std::string> acceptedCultures;

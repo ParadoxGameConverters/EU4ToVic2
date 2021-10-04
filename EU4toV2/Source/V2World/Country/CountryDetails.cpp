@@ -54,8 +54,8 @@ void V2::CountryDetails::registerKeys()
 		parties.push_back(newParty);
 	});
 	registerKeyword("unit_names", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::stringOfItem unitNamesStr(theStream);
-		unitNames = unitNamesStr.getString();
+		const UnitNames newUnitNames(theStream);
+		unitNames = std::make_shared<UnitNames>(newUnitNames);
 	});
 	registerKeyword("primary_culture", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString primCulStr(theStream);

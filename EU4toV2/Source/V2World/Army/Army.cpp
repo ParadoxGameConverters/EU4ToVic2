@@ -12,6 +12,7 @@ V2::Army::Army(const EU4::EU4Army& eu4Army,
 	 std::map<int, std::shared_ptr<Province>> allProvinces,
 	 const mappers::ProvinceMapper& provinceMapper,
 	 const mappers::PortProvinces& portProvincesMapper,
+	 std::shared_ptr<UnitNames> unitNames,	
 	 std::map<REGIMENTTYPE, int>& unitNameCount,
 	 const std::string& localAdjective):
 	 name(eu4Army.getName()),
@@ -52,7 +53,7 @@ V2::Army::Army(const EU4::EU4Army& eu4Army,
 	{
 		for (auto regimentCounter = 0; regimentCounter < buildItem.second; ++regimentCounter)
 		{
-			if (addRegimentToArmy(buildItem.first, allProvinces, provinceMapper, portProvincesMapper, unitNameCount, localAdjective) !=
+			if (addRegimentToArmy(buildItem.first, allProvinces, provinceMapper, portProvincesMapper, unitNames, unitNameCount, localAdjective) !=
 				 AddRegimentToArmyResult::success)
 			{
 				// couldn't add, dissolve into pool
@@ -165,6 +166,7 @@ V2::AddRegimentToArmyResult V2::Army::addRegimentToArmy(const REGIMENTTYPE chose
 	 const std::map<int, std::shared_ptr<Province>>& allProvinces,
 	 const mappers::ProvinceMapper& provinceMapper,
 	 const mappers::PortProvinces& portProvincesMapper,
+	 std::shared_ptr<UnitNames> unitNames,
 	 std::map<REGIMENTTYPE, int>& unitNameCount,
 	 const std::string& localAdjective)
 {
@@ -280,6 +282,10 @@ V2::AddRegimentToArmyResult V2::Army::addRegimentToArmy(const REGIMENTTYPE chose
 	{
 		// Assign a national name ("1st Bavarian Frigate")
 		regiment.setName(getRegimentName(chosenType, unitNameCount, localAdjective));
+	}
+	if (unitNames)
+	{
+		regiment.nameShip(unitNames);
 	}
 	regiments.push_back(regiment);
 	return AddRegimentToArmyResult::success;

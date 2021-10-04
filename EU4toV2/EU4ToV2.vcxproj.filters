@@ -589,6 +589,12 @@
     <ClCompile Include="Source\Mappers\ProvinceRenamings\ProvinceRenamings.cpp">
       <Filter>Mappers\ProvinceRenamings</Filter>
     </ClCompile>
+    <ClCompile Include="Source\V2World\Country\UnitNames.cpp">
+      <Filter>Vic2World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\V2World\Output\outUnitNames.cpp">
+      <Filter>Vic2World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1135,6 +1141,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\ProvinceRenamings\ProvinceRenamings.h">
       <Filter>Mappers\ProvinceRenamings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\V2World\Country\UnitNames.h">
+      <Filter>Vic2World\Country</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
