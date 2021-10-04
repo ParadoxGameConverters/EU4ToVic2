@@ -147,10 +147,10 @@ void V2::Country::outputCommons(std::ostream& output)
 			output << party;
 	}
 
-	if (!modCommons.getUnitNames().empty())
-		output << "unit_names" << modCommons.getUnitNames();
-	else if (!details.unitNames.empty())
-		output << "unit_names" << details.unitNames;
+	if (modCommons.getUnitNames())
+		output << *modCommons.getUnitNames();
+	else if (details.unitNames)
+		output << *details.unitNames;
 }
 
 void V2::Country::outputOOB(std::ostream& output)

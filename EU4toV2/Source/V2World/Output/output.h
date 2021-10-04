@@ -3,6 +3,7 @@
 
 #include "../Army/Army.h"
 #include "../Army/Regiment.h"
+#include "../Country/UnitNames.h"
 #include "../Diplomacy/Agreement.h"
 #include "../Diplomacy/Relation.h"
 #include "../Factory/Factory.h"
@@ -36,6 +37,7 @@ std::ostream& operator<<(std::ostream& output, const Reforms& reforms);
 std::ostream& operator<<(std::ostream& output, const Regiment& regiment);
 std::ostream& operator<<(std::ostream& output, const Relation& relation);
 std::ostream& operator<<(std::ostream& output, const UncivReforms& uncivReforms);
+std::ostream& operator<<(std::ostream& output, const UnitNames& unitNames);
 std::ostream& operator<<(std::ostream& output, const ModFile& modFile);
 std::ostream& operator<<(std::ostream& output, const War& war);
 } // namespace V2

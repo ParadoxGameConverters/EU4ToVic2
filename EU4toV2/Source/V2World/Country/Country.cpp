@@ -892,6 +892,16 @@ void V2::Country::convertArmies(const mappers::RegimentCostsMapper& regimentCost
 	if (provinces.empty())
 		return;
 
+	std::shared_ptr<UnitNames> unitNames = nullptr;
+	if (modCommons.getUnitNames())
+	{
+		unitNames = modCommons.getUnitNames();
+	}
+	else if (details.unitNames)
+	{
+		unitNames = details.unitNames;
+	}
+
 	// set up armies with whatever regiments they deserve, rounded down
 	// and keep track of the remainders for later
 	for (auto& eu4Army: srcCountry->getArmies())
@@ -903,6 +913,7 @@ void V2::Country::convertArmies(const mappers::RegimentCostsMapper& regimentCost
 			 allProvinces,
 			 provinceMapper,
 			 portProvincesMapper,
+			 unitNames,
 			 unitNameCount,
 			 localisation.getLocalAdjective());
 		if (army.success())
@@ -922,7 +933,13 @@ void V2::Country::convertArmies(const mappers::RegimentCostsMapper& regimentCost
 			if (army == nullptr)
 				break;
 
-			switch (army->addRegimentToArmy(remainder.first, allProvinces, provinceMapper, portProvincesMapper, unitNameCount, localisation.getLocalAdjective()))
+			switch (army->addRegimentToArmy(remainder.first,
+				 allProvinces,
+				 provinceMapper,
+				 portProvincesMapper,
+				 unitNames,
+				 unitNameCount,
+				 localisation.getLocalAdjective()))
 			{
 				case AddRegimentToArmyResult::success:
 					remainder.second -= 1.0;

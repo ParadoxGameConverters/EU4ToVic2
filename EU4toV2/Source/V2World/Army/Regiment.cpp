@@ -16,3 +16,35 @@ V2::Regiment::Regiment(REGIMENTTYPE _regimentType): regimentType(_regimentType)
 			isShip = true;
 	}
 }
+
+void V2::Regiment::nameShip(std::shared_ptr<UnitNames> unitNames)
+{
+	switch (regimentType)
+	{
+		case REGIMENTTYPE::manowar: {
+			giveName(unitNames, unitNames->getManowars());
+			break;
+		}
+		case REGIMENTTYPE::frigate: {
+			giveName(unitNames, unitNames->getFrigates());
+			break;
+		}
+		case REGIMENTTYPE::clipper_transport: {
+			giveName(unitNames, unitNames->getClipperTransports());
+		}
+	}
+}
+
+void V2::Regiment::giveName(std::shared_ptr<UnitNames> unitNames, const std::vector<std::string>& shipTypeNames)
+{
+	for (const auto& name: shipTypeNames)
+	{
+		if (unitNames->isNameUsed(name))
+		{
+			continue;
+		}
+		setName(name);
+		unitNames->addUsedName(name);
+		break;
+	}
+}

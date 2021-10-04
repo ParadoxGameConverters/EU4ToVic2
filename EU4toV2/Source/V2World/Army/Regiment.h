@@ -1,6 +1,7 @@
 #ifndef REGIMENT_H
 #define REGIMENT_H
 
+#include "../Country/UnitNames.h"
 #include <map>
 #include <string>
 
@@ -42,6 +43,8 @@ class Regiment // also Ship
 
 	void setName(const std::string& _name) { name = _name; }
 	void setHome(const int newHome) { homeProvinceID = newHome; }
+	void nameShip(std::shared_ptr<UnitNames> unitNames);
+	void giveName(std::shared_ptr<UnitNames> unitNames, const std::vector<std::string>& shipTypeNames);
 
 	[[nodiscard]] auto getShip() const { return isShip; }
 	[[nodiscard]] auto getType() const { return regimentType; }

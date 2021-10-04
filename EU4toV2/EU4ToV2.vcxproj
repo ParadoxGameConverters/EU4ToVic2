@@ -459,6 +459,7 @@
     <ClCompile Include="Source\V2World\Country\Country.cpp" />
     <ClCompile Include="Source\V2World\Country\CountryDetails.cpp" />
     <ClCompile Include="Source\V2World\Country\ModCommons.cpp" />
+    <ClCompile Include="Source\V2World\Country\UnitNames.cpp" />
     <ClCompile Include="Source\V2World\Decisions\HPMDecisions.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\V2World\Diplomacy\Diplomacy.cpp" />
@@ -485,6 +486,7 @@
     <ClCompile Include="Source\V2World\Output\outRelation.cpp" />
     <ClCompile Include="Source\V2World\Output\outReligiousGroups.cpp" />
     <ClCompile Include="Source\V2World\Output\outUncivReforms.cpp" />
+    <ClCompile Include="Source\V2World\Output\outUnitNames.cpp" />
     <ClCompile Include="Source\V2World\Output\outWar.cpp" />
     <ClCompile Include="Source\V2World\Party\Party.cpp" />
     <ClCompile Include="Source\V2World\Pop\Pop.cpp" />
@@ -660,6 +662,7 @@
     <ClInclude Include="Source\V2World\Country\Country.h" />
     <ClInclude Include="Source\V2World\Country\CountryDetails.h" />
     <ClInclude Include="Source\V2World\Country\ModCommons.h" />
+    <ClInclude Include="Source\V2World\Country\UnitNames.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\V2World\Diplomacy\Relation.h" />

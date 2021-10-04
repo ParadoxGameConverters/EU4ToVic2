@@ -4,6 +4,7 @@
 #include "../Party/Party.h"
 #include "Color.h"
 #include "Parser.h"
+#include "UnitNames.h"
 #include <set>
 
 namespace V2
@@ -26,7 +27,7 @@ class ModCommons: commonItems::parser
 	std::string colorString;
 	std::string graphicalCulture;
 	std::vector<Party> parties;
-	std::string unitNames;
+	std::shared_ptr<UnitNames> unitNames;
 	std::set<std::string> decisions;
 };
 } // namespace V2
