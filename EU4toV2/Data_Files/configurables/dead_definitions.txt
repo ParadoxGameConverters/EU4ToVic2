@@ -33,7 +33,7 @@ link = { tag = ANA civilized = yes primary_culture = greek government = absolute
 link = { tag = AND capital = 1283 }
 link = { tag = ANN capital = 1375 }
 link = { tag = ANS civilized = yes capital = 595 }
-link = { tag = ANT capital = 2115 }
+link = { tag = ANT government = democracy civilized = yes capital = 2224 }
 link = { tag = AOM government = hms_government civilized = yes capital = 1498 }
 link = { tag = AOT primary_culture = maori religion = animist capital = 2512 }
 link = { tag = AQU government = theocracy civilized = yes capital = 736 }
@@ -45,8 +45,8 @@ link = { tag = ASH capital = 1910 }
 link = { tag = ASM capital = 1259 }
 link = { tag = ASR civilized = yes capital = 1155 }
 link = { tag = ASY primary_culture = assyrian add_accepted_culture = syriac civilized = yes capital = 927 }
-link = { tag = ANT government = democracy civilized = yes capital = 2224 }
 link = { tag = ATH civilized = yes capital = 834 }
+link = { tag = ATM capital = 2115 }
 link = { tag = ATR government = hms_government civilized = yes capital = 475 }
 link = { tag = AUG civilized = yes capital = 592 }
 link = { tag = AUR primary_culture = laessin government = presidential_dictatorship civilized = yes capital = 619 }
