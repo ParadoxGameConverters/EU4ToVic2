@@ -101,6 +101,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getEU4Path() const { return EU4Path; }
 	[[nodiscard]] const auto& getEU4DocumentsPath() const { return EU4DocumentsPath; }
 	[[nodiscard]] const auto& getVic2Path() const { return Vic2Path; }
+	[[nodiscard]] const auto& getVanillaVic2Path() const { return VanillaVic2Path; }
 	[[nodiscard]] const auto& getResetProvinces() const { return resetProvinces; }
 	[[nodiscard]] const auto& getEU4Version() const { return version; }
 	[[nodiscard]] const auto& getFirstEU4Date() const { return firstEU4Date; }
@@ -123,6 +124,7 @@ class Configuration: commonItems::parser
 	std::string EU4Path;
 	std::string EU4DocumentsPath;
 	std::string Vic2Path;
+	std::string VanillaVic2Path;
 	std::string resetProvinces = "no";
 	double MaxLiteracy = 1.0;
 	LIBERTYDESIRE libertyThreshold = LIBERTYDESIRE::Loyal;

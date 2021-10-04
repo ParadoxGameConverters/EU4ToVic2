@@ -110,6 +110,7 @@ void Configuration::instantiate(std::istream& theStream,
 	{
 		if (!DoesFolderExist(Vic2Path + "/mod/HPM"))
 			throw std::runtime_error(Vic2Path + "/mod/HPM does not exist!");
+		VanillaVic2Path = Vic2Path; // necessary for importing province localisations
 		Vic2Path += "/mod/HPM";
 	}
 	Log(LogLevel::Progress) << "3 %";

@@ -11,9 +11,17 @@ V2::ProvinceNameParser::ProvinceNameParser()
 	{
 		importProvinceLocalizations("./blankMod/output/localisation/text.csv");
 	}
-	else
+	const auto& locFolder = theConfiguration.getVic2Path() + "/localisation";
+	if (commonItems::DoesFolderExist(locFolder))
 	{
-		importProvinceLocalizations(theConfiguration.getVic2Path() + "/localisation/text.csv");
+		for (const auto& locFile: commonItems::GetAllFilesInFolderRecursive(locFolder))
+		{
+			importProvinceLocalizations(locFolder + "/" + locFile);
+		}
+	}
+	if (theConfiguration.isHpmEnabled())
+	{
+		importProvinceLocalizations(theConfiguration.getVanillaVic2Path() + "/localisation/text.csv");
 	}
 }
 
