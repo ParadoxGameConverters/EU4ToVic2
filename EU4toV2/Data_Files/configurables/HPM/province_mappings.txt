@@ -587,8 +587,8 @@
 	link = { eu4 = 2549 eu4 = 4877 v2 = 211 } # Moratok, Nottoway -> Lynchburg
 	link = { eu4 = 2011 v2 = 215 } # Senedo -> Staunton
 	link = { eu4 = 949 eu4 = 2548 v2 = 216 } # Monacan, Tutelo -> Roanoke
-	link = { eu4 = 2551 eu4 = 2552 v2 = 217 } # Calicula, Manahoac -> Green Bank
-	link = { eu4 = 951 eu4 = 4889 v2 = 218 } # Kanawha, Mohetan -> Wheeling
+	link = { eu4 = 2552 eu4 = 4889 v2 = 217 } # Manahoac, Mohetan -> Green Bank
+	link = { eu4 = 951 eu4 = 2551 v2 = 218 } # Kanawha, Calicula -> Wheeling
 	link = { eu4 = 2547 v2 = 207 } # Roanoke -> Raleigh
 	link = { eu4 = 937 v2 = 208 } # Skarureh -> Winston-Salem
 	link = { eu4 = 938 eu4 = 2546 v2 = 210 } # Pomouik, Chicora -> WIlmington
