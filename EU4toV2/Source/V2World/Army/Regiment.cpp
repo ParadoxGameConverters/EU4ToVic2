@@ -38,15 +38,16 @@ void V2::Regiment::nameShip(std::shared_ptr<UnitNames> unitNames)
 	}
 }
 
-void V2::Regiment::giveName(std::shared_ptr<UnitNames> unitNames, const std::vector<std::string>& shipType)
+void V2::Regiment::giveName(std::shared_ptr<UnitNames> unitNames, const std::vector<std::string>& shipTypeNames)
 {
-	for (const auto& name: shipType)
+	for (const auto& name: shipTypeNames)
 	{
-		if (!unitNames->isNameUsed(name))
+		if (unitNames->isNameUsed(name))
 		{
-			setName(name);
-			unitNames->addUsedName(name);
-			break;
+			continue;
 		}
+		setName(name);
+		unitNames->addUsedName(name);
+		break;
 	}
 }

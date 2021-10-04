@@ -933,7 +933,7 @@ void V2::Country::convertArmies(const mappers::RegimentCostsMapper& regimentCost
 			if (army == nullptr)
 				break;
 
-			switch (army->addRegimentToArmy(remainder.first, allProvinces, provinceMapper, portProvincesMapper, modCommons.getUnitNames(), unitNameCount, localisation.getLocalAdjective()))
+			switch (army->addRegimentToArmy(remainder.first, allProvinces, provinceMapper, portProvincesMapper, unitNames, unitNameCount, localisation.getLocalAdjective()))
 			{
 				case AddRegimentToArmyResult::success:
 					remainder.second -= 1.0;
