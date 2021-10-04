@@ -18,8 +18,7 @@ V2::ModCommons::ModCommons(const std::string& tag, const std::string& filename)
 		parties.push_back(newParty);
 	});
 	registerKeyword("unit_names", [this](const std::string& unused, std::istream& theStream) {
-		const UnitNames newUnitNames(theStream);
-		unitNames = std::make_shared<UnitNames>(newUnitNames);
+		unitNames = std::make_shared<UnitNames>(theStream);
 	});
 	registerKeyword("decision", [this](std::istream& theStream) {
 		decisions.emplace(commonItems::getString(theStream));

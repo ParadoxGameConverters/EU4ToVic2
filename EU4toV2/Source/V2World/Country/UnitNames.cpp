@@ -5,34 +5,34 @@
 V2::UnitNames::UnitNames(std::istream& theStream)
 {
 	registerKeyword("dreadnought", [this](const std::string& unused, std::istream& theStream) {
-		dreadnoughts = commonItems::stringList(theStream).getStrings();
+		dreadnoughts = commonItems::getStrings(theStream);
 	});
 	registerKeyword("battleship", [this](const std::string& unused, std::istream& theStream) {
-		battleships = commonItems::stringList(theStream).getStrings();
+		battleships = commonItems::getStrings(theStream);
 	});
 	registerKeyword("ironclad", [this](const std::string& unused, std::istream& theStream) {
-		ironclads = commonItems::stringList(theStream).getStrings();
+		ironclads = commonItems::getStrings(theStream);
 	});
 	registerKeyword("manowar", [this](const std::string& unused, std::istream& theStream) {
-		manowars = commonItems::stringList(theStream).getStrings();
+		manowars = commonItems::getStrings(theStream);
 	});
 	registerKeyword("cruiser", [this](const std::string& unused, std::istream& theStream) {
-		cruisers = commonItems::stringList(theStream).getStrings();
+		cruisers = commonItems::getStrings(theStream);
 	});
 	registerKeyword("frigate", [this](const std::string& unused, std::istream& theStream) {
-		frigates = commonItems::stringList(theStream).getStrings();
+		frigates = commonItems::getStrings(theStream);
 	});
 	registerKeyword("monitor", [this](const std::string& unused, std::istream& theStream) {
-		monitors = commonItems::stringList(theStream).getStrings();
+		monitors = commonItems::getStrings(theStream);
 	});
 	registerKeyword("clipper_transport", [this](const std::string& unused, std::istream& theStream) {
-		clipperTransports = commonItems::stringList(theStream).getStrings();
+		clipperTransports = commonItems::getStrings(theStream);
 	});
 	registerKeyword("steam_transport", [this](const std::string& unused, std::istream& theStream) {
-		steamTransports = commonItems::stringList(theStream).getStrings();
+		steamTransports = commonItems::getStrings(theStream);
 	});
 	registerKeyword("commerce_raider", [this](const std::string& unused, std::istream& theStream) {
-		commerceRaiders = commonItems::stringList(theStream).getStrings();
+		commerceRaiders = commonItems::getStrings(theStream);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
