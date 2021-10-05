@@ -367,6 +367,7 @@ link = { vic2 = polish eu4 = mazovian eu4 = venedian eu4 = polish eu4 = west_sla
 link = { vic2 = slovak eu4 = slovak eu4 = chrobatian }
 link = { vic2 = czech eu4 = czech eu4 = moravian eu4 = silesian }
 link = { vic2 = oldpommeranian eu4 = old_pommeranian }
+link = { hpm = western_slavic eu4 = sorbian eu4 = polabian eu4 = sorbs eu4 = wendish eu4 = kashubian }
 link = { vic2 = sorbian eu4 = sorbian eu4 = polabian eu4 = sorbs eu4 = wendish eu4 = kashubian }
 
 # East Slav - russian, byelorussian, ruthenian

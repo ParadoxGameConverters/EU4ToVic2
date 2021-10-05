@@ -1311,7 +1311,7 @@ link = { eu4 = TTL v2 = TTL } # Three Leagues (Grigioni)
 #link = { eu4 = WOL v2 = XXX } # Wolgast => c_wolgast
 #link = { eu4 = STE v2 = XXX } # Stettin => c_stettin
 link = { eu4 = GOS v2 = GOS } # Goslar
-#link = { eu4 = SOR v2 = XXX } # Sorbia => d_sorbs
+link = { eu4 = SOR v2 = SRB hpm = LUZ } # Lusatia => Sorbia (Luzica)
 #link = { eu4 = RUG v2 = XXX } # Rügen => c_rugen
 link = { eu4 = CLI v2 = CLI } # Cilli
 link = { eu4 = HRZ v2 = HRZ } # Herzegovina
