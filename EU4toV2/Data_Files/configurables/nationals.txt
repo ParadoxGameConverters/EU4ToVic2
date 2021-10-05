@@ -80,7 +80,7 @@ link = { tag = HUN culture = hungarian } #Hungary
 #Polish-Lithuanian => PLC
 link = { tag = POL culture = polish } #and Poland
 link = { tag = LIT culture = lithuanian } #and Lithuania
-link = { tag = UKR culture = western_slavic } #and (Red) Ruthenia
+link = { tag = UKR hpm = LUZ culture = western_slavic } #and (Red) Ruthenia
 link = { tag = PRT culture = pruthenian }
 link = { tag = SRB culture = sorbian }
 # sorbian
