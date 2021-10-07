@@ -418,8 +418,8 @@
 	link = { eu4 = 1552 v2 = 3005 } # Mazatlan Bay -> Mazatlan Bay
 	link = { eu4 = 1553 v2 = 3006 } # Gulf of California -> Gulf of California
 	link = { eu4 = 1554 v2 = 3007 } # Cape San Lucas -> Coast of Baja
-	link = { eu4 = 1555 v2 = 3008 } # Gulf of Catalina -> Santa Catalina Islands
-	link = { eu4 = 1556 v2 = 3009 } # San Francisco Bay -> Coast of California
+	link = { eu4 = 1555 v2 = 3008 } # Gulf of Catalina -> Coast of California
+	link = { eu4 = 1556 v2 = 3009 } # San Francisco Bay -> Santa Catalina Islands
 	link = { eu4 = 1557 v2 = 3010 } # Cape Blanco -> Coast of Oregon
 	link = { eu4 = 1558 v2 = 3011 } # Salish Sea -> Coast of Columbia
 	link = { eu4 = 1559 eu4 = 1560 eu4 = 1682 v2 = 3012 } # Hecate Strait, Glacier Bay, Gulf of Alaska -> Hecate Strait
@@ -598,7 +598,7 @@
 	link = { eu4 = 2527 v2 = 191 } # Atali -> Chattanooga
 	link = { eu4 = 934 eu4 = 939 eu4 = 4913 v2 = 188 } # Tsoyaha, Kaskinampo, Aniyutsi -> Nashville
 	link = { eu4 = 481 v2 = 203 } # Bermuda -> Bermuda
-	link = { eu4 = 933 eu4 = 2541 eu4 = 4882 v2 = 206 } # Iswa, Combahee, Etali -> Columbia
+	link = { eu4 = 933 eu4 = 2541 eu4 = 4882 v2 = 206 } # Iswa, Saluda, Etali -> Columbia
 	link = { eu4 = 2543 eu4 = 932 eu4 = 2542 v2 = 205 } # Waccamaw, Issati, Cusabo -> Charleston
 	link = { eu4 = 4931 eu4 = 4932 eu4 = 4930 eu4 = 4933 eu4 = 4928 eu4 = 4929 eu4 = 4927 eu4 = 4926 eu4 = 4925 eu4 = 4924 } # Cumberland Mountains, Great Smoky Mountains, Alleghenies, Blue Ridge, Allegheny Front, Appalachians, Blue Mountains, Adirondacks, White Mountains, Laurentian Massif -> DROPPED
 	link = { comment = "# Florida" }
@@ -607,7 +607,7 @@
 	link = { eu4 = 2537 eu4 = 2538 eu4 = 4881 v2 = 202 } # Ichisi, Ocute, Sawokli -> Valdosta
 	link = { eu4 = 930 eu4 = 931 v2 = 201 } # Kasihta, Coosa -> Atlanta
 	link = { eu4 = 927 eu4 = 2534 v2 = 199 } # Timucua, Yustaga -> St Augustine
-	link = { eu4 = 926 eu4 = 2536 eu4 = 2535 eu4 = 4625 eu4 = 4626 v2 = 200 } # Eyeish, Mayaimi, Calusa, Mayaca, Potano -> Tampa
+	link = { eu4 = 926 eu4 = 2536 eu4 = 2535 eu4 = 4625 eu4 = 4626 v2 = 200 } # Ais, Mayaimi, Calusa, Mayaca, Potano -> Tampa
 	link = { eu4 = 928 eu4 = 2533 eu4 = 923 v2 = 198 } # Apalachee, Chatot, Pensacola -> Tallahassee
 	link = { eu4 = 922 v2 = 197 } # Tohome -> Mobile
 	link = { eu4 = 925 eu4 = 924 eu4 = 2532 eu4 = 4883 v2 = 195 } # Coweta, Tawasa, Mabila, Napochi -> Montgomery
@@ -1838,7 +1838,7 @@
 	link = { eu4 = 358 v2 = 1751 } # Alexandria -> Alexandria
 	link = { eu4 = 2325 v2 = 1752 v2 = 1754 v2 = 1753 } # Tarrana -> Matruh, Siwa, Sidi Barrani
 	link = { eu4 = 2318 eu4 = 4323 v2 = 1759 } # Bahiriya, Farafreh -> Bawiti
-	link = { eu4 = 1233 v2 = 1760 } # Kharga -> Mut
+	link = { eu4 = 1233 v2 = 1760 v2 = 1761 } # Kharga -> Mut, Baris
 	link = { eu4 = 4317 v2 = 1747 v2 = 1750 } # Buhaira -> Tanta, Giza
 	link = { eu4 = 2316 v2 = 1748 } # Al Gharbia -> Mansura
 	link = { eu4 = 361 v2 = 1745 v2 = 1749 } # Cairo -> Cairo, Ziqaziq
@@ -1846,13 +1846,14 @@
 	link = { eu4 = 4318 v2 = 1763 } # Atfih -> Bani Suwayf
 	link = { eu4 = 2317 v2 = 1764 } # Minya -> Minya
 	link = { eu4 = 2320 v2 = 1772 } # Ras Gharib -> Ras Gharib
-	link = { eu4 = 2319 v2 = 2559 } # Manfalut -> Suhaj
-	link = { eu4 = 4320 v2 = 1762 } # Girga -> Asyut
+	link = { eu4 = 4320 v2 = 2559 } # Girga -> Suhaj
+	link = { eu4 = 2319 v2 = 1762 } # Manfalut -> Asyut
 	link = { eu4 = 4319 v2 = 1767 } # Isna -> Luxor
 	link = { eu4 = 360 v2 = 1769 } # Qus -> Qina
-	link = { eu4 = 1234 eu4 = 1231 v2 = 1766 v2 = 1761 } # MANY-TO-MANY: Qasr Ibrim, Aswan -> Aswan, Baris
-	link = { eu4 = 2321 v2 = 1770 v2 = 1771 v2 = 1768 } # Queseer -> Qusayr, Marsa Alam, Idfu
-	link = { eu4 = 2324 v2 = 1834 } # Halaib -> Halaib
+	link = { eu4 = 1231 v2 = 1768 } # Aswan -> Idfu
+	link = { eu4 = 1234 eu4 = 2322 v2 = 1766 } # Qasr Ibrim, Wadi Halfa -> Aswan
+	link = { eu4 = 2321 v2 = 1770 } # Queseer -> Qusayr
+	link = { eu4 = 2324 v2 = 1834 v2 = 1771 } # Halaib -> Halaib, Marsa Alam
 	link = { eu4 = 4321 eu4 = 4322 } # Egyptian Desert, Egyptian Desert -> DROPPED
 	link = { comment = "# Resettable Region west_africa_interior" }
 	link = { comment = "# Nigeria" }
@@ -1932,12 +1933,11 @@
 	link = { eu4 = 2252 v2 = 1905 } # Lobi -> Sia
 	link = { eu4 = 2253 v2 = 1906 } # Gwiriko -> Orodaro
 	link = { comment = "# Lake Chad" }
-	link = { eu4 = 1158 v2 = 1824 } # Kanem -> Mao
+	link = { eu4 = 1158 eu4 = 2288 v2 = 1824 } # Kanem, Yao -> Mao
 	link = { eu4 = 1159 v2 = 1818 v2 = 1820 } # Bagirmi -> Massenya, Bongor
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
-	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 eu4 = 774 v2 = 1821 } # Waddai, Al-Junaynah -> Abeche
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -1979,11 +1979,11 @@
 	link = { eu4 = 1178 v2 = 2558 v2 = 2092 } # Great Karoo -> Emthanjeni, Beaufort
 	link = { eu4 = 2880 v2 = 2094 } # Griqualand -> Griqualand
 	link = { eu4 = 2856 v2 = 2101 v2 = 2103 v2 = 2102 v2 = 2104 v2 = 2112 } # Highveld -> Thaba Nchu, Lephoi, Qwa-Qwa, Thaba Bosiu, Emnambithi
-	link = { eu4 = 1181 v2 = 2111 } # Natal -> eThekwini
+	link = { eu4 = 1181 v2 = 2111 } # Natal -> Durban
 	link = { eu4 = 4782 v2 = 2107 v2 = 2106 v2 = 2105 } # Tswana -> Makwasi, Saan, Ga-Rankuwa
 	link = { eu4 = 4781 v2 = 2109 } # Transvaal -> Ga-Riba
 	link = { eu4 = 4784 v2 = 2108 } # Upper Limpopo -> Mosega
-	link = { eu4 = 4783 v2 = 2110 v2 = 2114 } # Swazi -> Tsaneng, Lobamba
+	link = { eu4 = 4783 v2 = 2110 v2 = 2114 } # Swazi -> Tsaneng, Mbabane
 	link = { eu4 = 789 v2 = 2113 } # Mtetwa -> uMgungundlovu
 	link = { eu4 = 1182 v2 = 2049 v2 = 2050 } # Matsolo -> Inkomati, Manjakazi
 	link = { eu4 = 1183 v2 = 2051 } # Inhambane -> Inhambane
@@ -2072,19 +2072,20 @@
 	link = { comment = "# Sudan" }
 	link = { eu4 = 1232 v2 = 1833 } # Suakin -> Suakin
 	link = { eu4 = 1229 eu4 = 2323 v2 = 1836 } # Berber, Sahra an Nübyah -> Hayya
-	link = { eu4 = 1228 eu4 = 2322 v2 = 1835 } # Dongola, Wadi Halfa -> Dongola
+	link = { eu4 = 1228 v2 = 1835 } # Dongola -> Dongola
 	link = { eu4 = 1220 v2 = 1806 } # Bayuda -> Bayuda
 	link = { eu4 = 2797 v2 = 1837 } # Shendy -> Atbara
 	link = { eu4 = 1226 v2 = 1829 } # Beja -> Kassala
-	link = { eu4 = 1225 eu4 = 4033 v2 = 1830 } # Butana, Al Qadarif -> Sennar
+	link = { eu4 = 1222 eu4 = 2798 v2 = 1827 } # Gezira, Soba -> Khartoum
+	link = { eu4 = 1225 v2 = 1828 } # Butana -> Wad Madani
+	link = { eu4 = 4033 v2 = 1830 } # Al Qadarif -> Sennar
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
-	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
 	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Al-Fula
-	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
-	link = { eu4 = 774 eu4 = 2801 v2 = 1842 } # Al-Junaynah, Medwa -> Junayah
+	link = { eu4 = 1219 v2 = 1841 v2 = 1842 } # Darfur -> Fasher, Junayah
+	link = { eu4 = 2801 v2 = 1739 } # Medwa -> An Nuhud
 	link = { comment = "# Eritrea, Djibouti, Ethiopia" }
 	link = { eu4 = 1215 v2 = 1875 } # Tajura -> Djibuti
 	link = { eu4 = 2765 v2 = 1851 } # Assab -> Assab
@@ -2111,10 +2112,10 @@
 	link = { eu4 = 1173 v2 = 2004 v2 = 2079 v2 = 2084 } # Namibia -> Mocamedes, Otjozondjii, Nomabeb
 	link = { eu4 = 1801 v2 = 2080 v2 = 2081 v2 = 2082 v2 = 2076 v2 = 2075 v2 = 2077 v2 = 2085 v2 = 2078 v2 = 2086 v2 = 2095 v2 = 2074 v2 = 2574 v2 = 2008 v2 = 2005 v2 = 2007 v2 = 2006 v2 = 2013 } # Kalahari -> Otjivanda, Luhonono, Epako, Nokaneng, Serowe, Tsabong, Nugouses, Otjomuise, Aixa-aibes, Dikathong, Gaborone, Mochudi, Ondjiva, Huambo, Mavinga, Kuito, Mongu
 	link = { eu4 = 1797 v2 = 1997 v2 = 1996 v2 = 1995 v2 = 1981 v2 = 1976 v2 = 1975 v2 = 1980 v2 = 1992 v2 = 1993 v2 = 1998 } # Northern Congo Basin -> Mungbane, Kisangani, Gemena, Elba, Makokou, Moanda, Djambala, Basoko, Irebu, Baramo
-	link = { eu4 = 1796 v2 = 1959 v2 = 1962 v2 = 1966 v2 = 1965 v2 = 1970 v2 = 1969 v2 = 1845 v2 = 1846 v2 = 1844 v2 = 1843 v2 = 1971 v2 = 1968 v2 = 1967 v2 = 1963 v2 = 1960 } # Central Africa -> Yaounde, Bertoua, Nola, Bangui, Bangassou, Zemio, Bahr el Ghazal, Lado, Bor, Waw, Ndele, Bossangoa, Bouar, Ngaoundere, Bafoussam
+	link = { eu4 = 1796 v2 = 1959 v2 = 1962 v2 = 1966 v2 = 1965 v2 = 1970 v2 = 1969 v2 = 1845 v2 = 1846 v2 = 1844 v2 = 1843 v2 = 1971 v2 = 1968 v2 = 1967 v2 = 1963 v2 = 1960 v2 = 1822 v2 = 1823 } # Central Africa -> Yaounde, Bertoua, Nola, Bangui, Bangassou, Zemio, Bahr el Ghazal, Lado, Bor, Waw, Ndele, Bossangoa, Bouar, Ngaoundere, Bafoussam, Am Timan, Mongo
 	link = { eu4 = 1793 v2 = 1773 v2 = 1775 v2 = 1779 v2 = 1782 v2 = 1781 v2 = 1696 } # El Djouf -> Saguia el-Hamra, Nouakchott, Shingit, Bir Murghayn, Walata, Cape Juby
 	link = { eu4 = 2251 v2 = 1895 v2 = 1896 v2 = 1891 v2 = 1889 v2 = 1890 v2 = 1886 v2 = 1885 v2 = 1883 } # Guinea -> Daloa, Man, Zwedru, Bopolu, Gbarnga, Bo, Falaba, Beyla
-	link = { eu4 = 1795 v2 = 1742 v2 = 1738 v2 = 1739 v2 = 1758 v2 = 2564 v2 = 2585 v2 = 1826 v2 = 1825 } # East Sahara -> Wath, Al Jaghbub, An Nuhud, Hariga, Salima, Al Jawf, Faya, Zouar
+	link = { eu4 = 1795 v2 = 1742 v2 = 1738 v2 = 1758 v2 = 2564 v2 = 2585 v2 = 1826 v2 = 1825 } # East Sahara -> Wath, Al Jaghbub, Hariga, Salima, Al Jawf, Faya, Zouar
 	link = { comment = "# # Asia" }
 	link = { comment = "# Indian Ocean Territories" }
 	link = { eu4 = 1100 v2 = 2127 } # Mahe -> Seychelles
