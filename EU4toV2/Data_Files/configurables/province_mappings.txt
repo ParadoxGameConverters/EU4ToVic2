@@ -1838,7 +1838,7 @@
 	link = { eu4 = 358 v2 = 1751 } # Alexandria -> Alexandria
 	link = { eu4 = 2325 v2 = 1752 v2 = 1754 v2 = 1753 } # Tarrana -> Matruh, Siwa, Sidi Barrani
 	link = { eu4 = 2318 eu4 = 4323 v2 = 1759 } # Bahiriya, Farafreh -> Bawiti
-	link = { eu4 = 1233 v2 = 1760 } # Kharga -> Mut
+	link = { eu4 = 1233 v2 = 1760 v2 = 1761 } # Kharga -> Mut, Baris
 	link = { eu4 = 4317 v2 = 1747 v2 = 1750 } # Buhaira -> Tanta, Giza
 	link = { eu4 = 2316 v2 = 1748 } # Al Gharbia -> Mansura
 	link = { eu4 = 361 v2 = 1745 v2 = 1749 } # Cairo -> Cairo, Ziqaziq
@@ -1846,13 +1846,13 @@
 	link = { eu4 = 4318 v2 = 1763 } # Atfih -> Bani Suwayf
 	link = { eu4 = 2317 v2 = 1764 } # Minya -> Minya
 	link = { eu4 = 2320 v2 = 1772 } # Ras Gharib -> Ras Gharib
-	link = { eu4 = 2319 v2 = 2559 } # Manfalut -> Suhaj
-	link = { eu4 = 4320 v2 = 1762 } # Girga -> Asyut
+	link = { eu4 = 2319 v2 = 1762 } # Manfalut -> Asyut
+	link = { eu4 = 4320 v2 = 2559 } # Girga -> Suhaj
 	link = { eu4 = 4319 v2 = 1767 } # Isna -> Luxor
 	link = { eu4 = 360 v2 = 1769 } # Qus -> Qina
-	link = { eu4 = 1234 eu4 = 1231 v2 = 1766 v2 = 1761 } # MANY-TO-MANY: Qasr Ibrim, Aswan -> Aswan, Baris
-	link = { eu4 = 2321 v2 = 1770 v2 = 1771 v2 = 1768 } # Queseer -> Qusayr, Marsa Alam, Idfu
-	link = { eu4 = 2324 v2 = 1834 } # Halaib -> Halaib
+	link = { eu4 = 1231 eu4 = 1234 v2 = 1766 } # Aswan, Qasr Ibrim -> Aswan
+	link = { eu4 = 2321 v2 = 1770 v2 = 1768 } # Queseer -> Qusayr, Idfu
+	link = { eu4 = 2324 v2 = 1834 v2 = 1771 } # Halaib -> Halaib, Marsa Alam
 	link = { eu4 = 4321 eu4 = 4322 } # Egyptian Desert, Egyptian Desert -> DROPPED
 	link = { comment = "# Resettable Region west_africa_interior" }
 	link = { comment = "# Nigeria" }
@@ -1938,7 +1938,8 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 774 v2 = 1822 } # Al-Junaynah -> Am Timan
+	link = { eu4 = 2932 v2 = 1823 } # Waddai -> Mongo
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -2084,7 +2085,7 @@
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
-	link = { eu4 = 774 eu4 = 2801 v2 = 1842 } # Al-Junaynah, Medwa -> Junaynah
+	link = { eu4 = 2801 v2 = 1842 } # Medwa -> Junaynah
 	link = { comment = "# Eritrea, Djibouti, Ethiopia" }
 	link = { eu4 = 1215 v2 = 1875 } # Tajura -> Djibuti
 	link = { eu4 = 2765 v2 = 1851 } # Assab -> Assab
