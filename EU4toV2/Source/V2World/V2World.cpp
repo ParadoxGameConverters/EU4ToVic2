@@ -1656,7 +1656,7 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion) co
 		copyHpmFiles();
 		outputGTFO(countries);
 		outputReturnCores(countries);
-		Log(LogLevel::Error) << "HPM Hybrid created. Do NOT enable HPM in Vic2 launcher, just this mod.";
+		Log(LogLevel::Notice) << "HPM Hybrid created. Do NOT enable HPM in Vic2 launcher, just this mod.";
 	}
 
 	// verify countries got written

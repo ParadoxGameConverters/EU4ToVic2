@@ -694,7 +694,7 @@ link = { vic2 = zulu eu4 = zulu }
 link = { vic2 = nguni eu4 = nguni } # South Africa
 link = { vic2 = shona eu4 = shona }
 link = { hpm = sena eu4 = nyasa provinceid = 4039 } # Lundu
-link = { hpm = nyasa eu4 = nyasa } # Lundu
+link = { vic2 = nyasa eu4 = nyasa } # Lundu
 link = { vic2 = makua eu4 = makua }
 link = { vic2 = yao eu4 = bena } # Mozambique
 link = { vic2 = african_minor eu4 = bemba eu4 = kanouri }
