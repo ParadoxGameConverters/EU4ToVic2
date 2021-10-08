@@ -1216,7 +1216,7 @@
 	link = { eu4 = 108 v2 = 730 } # Verona -> Verona
 	link = { eu4 = 1774 v2 = 732 v2 = 8 } # Treviso -> Treviso, Belluno
 	link = { eu4 = 112 v2 = 729 } # Venezia -> Venice
-	link = { eu4 = 111 v2 = 733 v2 = 737 } # Friuli -> Udine, Gorizia
+	link = { eu4 = 111 v2 = 733 } # Friuli -> Udine
 	link = { eu4 = 110 v2 = 734 } # Trentino -> Trent
 	link = { eu4 = 1871 v2 = 609 } # Wallis -> Sitten
 	link = { eu4 = 1867 eu4 = 4721 v2 = 604 } # Vaud, Fribourg -> Basel
@@ -1379,9 +1379,9 @@
 	link = { eu4 = 1769 v2 = 769 } # Görz -> Postojna
 	link = { eu4 = 4751 v2 = 767 } # Cilli -> Maribor
 	link = { eu4 = 129 v2 = 768 } # Krain -> Ljubljana
-	link = { eu4 = 4738 v2 = 736 } # Trieste -> Trieste
-	link = { eu4 = 130 v2 = 770 v2 = 778 } # Istria -> Pola, Fiume
-	link = { eu4 = 4752 v2 = 773 } # Rijeka -> Karlovac
+	link = { eu4 = 4738 v2 = 736 v2 = 737 } # Trieste -> Trieste, Gorizia
+	link = { eu4 = 130 v2 = 770 } # Istria -> Pola
+	link = { eu4 = 4752 v2 = 773 v2 = 778 } # Rijeka -> Karlovac, Fiume
 	link = { eu4 = 1826 v2 = 774 } # Lika -> Senj
 	link = { eu4 = 4753 v2 = 781 } # Zadar -> Zadar
 	link = { eu4 = 136 v2 = 780 } # Split -> Split
@@ -1442,8 +1442,8 @@
 	link = { eu4 = 1318 v2 = 638 v2 = 636 v2 = 2584 } # Spiš -> Prešov, Banska Bystrica, Bielsko
 	link = { eu4 = 162 v2 = 637 } # Zemplén -> Kosice
 	link = { comment = "# Romania" }
-	link = { eu4 = 1954 v2 = 652 v2 = 792 } # Torontál -> Temesvar, Pancevo
-	link = { eu4 = 156 v2 = 653 } # Temes -> Resicabanya
+	link = { eu4 = 1954 v2 = 792 } # Torontál -> Pancevo
+	link = { eu4 = 156 v2 = 653 v2 = 652 } # Temes -> Resicabanya, Temesvar
 	link = { eu4 = 157 v2 = 651 v2 = 647 } # Bihar -> Szatmar, Oradea
 	link = { eu4 = 1952 v2 = 950 } # Maramaros -> Ungvár
 	link = { eu4 = 4127 v2 = 654 v2 = 661 } # Turda -> Cluj, Beszterce
