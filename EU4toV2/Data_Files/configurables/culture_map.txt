@@ -484,7 +484,7 @@ link = { vic2 = guajiro eu4 = arawak region = bogota_area region = coquivacoa_ar
 link = { vic2 = guajiro eu4 = guajiro }
 link = { vic2 = carribean eu4 = arawak eu4 = arawako eu4 = carib eu4 = cariban eu4 = kalina }
 
-# Métis - special case
+# Mï¿½tis - special case
 link = { vic2 = metis eu4 = cosmopolitan_french eu4 = quebecois eu4 = normand  eu4 = celtic_breton eu4 = poitou eu4 = gascon eu4 = gascon_UKS eu4 = normand eu4 = normand_UKS eu4 = aquitaine eu4 = aquitaine_UKS eu4 = burgundian eu4 = burgundian_UKS eu4 = occitain eu4 = occitain_UKS eu4 = breton eu4 = breton_celtic eu4 = breton_UKS religion = totemist religion = nahuatl religion = mesoamerican_religion region = north_american_superregion }
 link = { vic2 = metis eu4 = metis }
 
@@ -539,7 +539,7 @@ link = { vic2 = khmer eu4 = khmer eu4 = degar eu4 = khmer_colonial eu4 = khmu }
 link = { vic2 = bornean eu4 = bornean }
 link = { vic2 = malay eu4 = malayan eu4 = sumatran eu4 = acehenese eu4 = banjar eu4 = batak eu4 = indonesian eu4 = malay_colonial eu4 = minang }
 link = { vic2 = filipino eu4 = filipino u4 = cebuano eu4 = fiilpino_colonial eu4 = filipino_colonial eu4 = maguindanao eu4 = philipino eu4 = tagalog eu4 = taiwanese eu4 = tausug }
-link = { vic2 = filipino eu4 = polynesian provinceid = 1485 provinceid = 2562 }
+link = { vic2 = filipino eu4 = polynesian region = taiwan_area }
 link = { vic2 = javan eu4 = javanese eu4 = balinese eu4 = sundanese eu4 = javan_colonial eu4 = javan eu4 = acehnese eu4 = nusa_tenggara }
 link = { vic2 = moluccan eu4 = sulawesi eu4 = moluccan eu4 = bugis eu4 = bungku eu4 = chamorro eu4 = dayak eu4 = minahasa }
 
