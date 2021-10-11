@@ -111,7 +111,7 @@ link = { vic2 = yi eu4 = yi }
 link = { vic2 = yue eu4 = cantonese }
 
 # Mon Khmer
-link = { vic2 = vietnamese eu4 = polynesian provinceid = 1485 provinceid = 2562 }
+link = { vic2 = vietnamese eu4 = dutch region = taiwan_area }
 link = { vic2 = vietnamese eu4 = vietnamese eu4 = cham }
 link = { vic2 = khmer eu4 = khmer }
 
