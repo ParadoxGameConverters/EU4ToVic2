@@ -1485,7 +1485,7 @@ void V2::World::addUnions(bool hreDecentralized, const std::shared_ptr<Country>&
 			{
 				auto unionCores = culturalUnionMapper->getCoresForCulture(culture);
 				auto nationalCores = culturalNationalitiesMapper->getCoresForCulture(culture);
-				if (hreDecentralized && emperorCultureGroup->containsCulture(culture))
+				if (hreDecentralized && emperor && emperorCultureGroup && emperorCultureGroup->containsCulture(culture))
 					unionCores.clear();
 
 				switch (theConfiguration.getCoreHandling())
