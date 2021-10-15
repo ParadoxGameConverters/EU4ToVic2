@@ -991,13 +991,26 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 	for (const auto& province: provinces)
 	{
 		auto eu4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(province.first);
+
+		// This is an override for VN. Province logic there for provinces out of scope (and without mappings) is different.
+		// We'll be using default, historical HPM data for those. There will be no determining province ownership or similar.
+		// This does assume all provinces *inside* scope are 100% mapped and no errors.
+		if (eu4ProvinceNumbers.empty() && theConfiguration.isVN())
+		{
+			const auto& possibleOwner = province.second->getOwner();
+			if (!possibleOwner.empty())
+			{
+				// do we have a tag that matches this?
+				const auto& ownerCountry = countries.find(possibleOwner);
+				if (ownerCountry != countries.end())
+					ownerCountry->second->addProvince(province.second);
+				// if not, it's historically uncolonized and we need not bother.
+			}
+			continue; // Forget processing, move on to next province.
+		}
+
 		if (eu4ProvinceNumbers.empty())
 		{
-			if (theConfiguration.isVN())
-			{
-				// Missing province mapping means out of scope. We use *default* HPM settings.
-				continue;
-			}
 			Log(LogLevel::Warning) << "No mappings found for V2 province " << province.first << " (" << province.second->getName() << ")";
 			// We leave it to defaults
 			province.second->sterilizeProvince();
