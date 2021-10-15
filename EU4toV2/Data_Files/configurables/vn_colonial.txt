@@ -1,0 +1,106 @@
+# Colonizers such as England or France own lands outside the VN scope. By surgically mapping those lands to certain key provinces
+# we can reassign said colonies to whomever controls those places.
+
+# Below are Vic2 Province IDs.
+
+###### England #######
+
+// Australia to London
+link = { name = "Australia" key = 300 provinces = { 2468 2469 2470 2471 2472 2476 2477 2478 2479 2480 2481 2482 2483 2484 2485 2486 2487 2488 2491 2492 2493 2494 2496 2497 2498 2499 2501 2502 2504 2505 2506 2509 2571 2602 2604 } }
+
+// India to London
+link = { name = "India" key = 300 provinces = { 1235 1237 1238 1239 1240 1241 1243 1245 1246 1247 1248 1249 1250 1251 1252 1253 1254 1255 1256 1257 1258 1259 1260 1261 1275 1276 1282 1291 1296 1297 1298 1299 1302 1304 1305 1306 1307 1308 1309 1310 1311 1316 1317 1321 1322 1323 1324 1325 2128 2566 } }
+
+// Canada to Liverpool (so it's not all to London)
+link = { name = "Canada" key = 277 provinces = { 13 14 15 16 17 19 20 21 22 24 25 250 2592 2593 2594 2595 26 2625 27 28 30 33 34 35 36 37 40 41 42 46 47 48 49 50 51 52 53 54 55 56 57 58 61 62 63 64 65 66 67 68 69 70 71 72 73 76 78 79 } }
+
+// Newfoundland to Okney (likely UK, Denmark or Norway)
+link = { name = "Newfoundland" key = 1724 provinces = { 74 75 } }
+
+// English Carribean / Central + South America to Plymouth
+link = { "British Carribean" key = 299 provinces = { 1979 203 2131 2190 2200 2217 2218 2219 2220 2224 2225 2226 2227 2229 2231 2232 2233 2237 2238 2239 2242 2243 2409 } }
+
+// Pacific Islands to Lincoln
+link = { "British Pacifics" key = 290 provinces = { 2524 2508 } }
+
+// British SEA to London
+link = { "British SEA" key = 300 provinces = { 1320 1343 1344 1345 1384 1386 1388 } }
+
+// African holdings to Cardigan
+link = { "British Africa" key = 274 provinces = { 1724 1785 1884 1908 2087 2089 2090 2091 2092 2096 2097 2125 2127 2129 2130 2132 } }
+
+###### Denmark ######
+
+// Iceland Greenland to Faroe (likely UK, Denmark or Norway)
+link = { name = "Greenland" key = 253 provinces = { 251 252 2636 } }
+
+// St. Thomas to Copenhagen
+link = { name = "St. Thomas" key = 372 provinces = { 2223 } }
+
+###### France ######
+
+// French Carribean / South America to La Roche
+link = { name = "French Carribean" key = 437 provinces = { 45 2228 2230 2241 2246 } }
+
+// French Canada to Rouen
+link = { name = "French Canada" key = 415 provinces = { 77 } }
+
+// French Africa to Paris
+link = { name = "French Africa" key = 425 provinces = { 1783 1784 1894 2126 } }
+
+// French India to Paris 
+link = { name = "French India" key = 425 provinces = { 1312 } }
+
+###### Netherlands ######
+
+// Carribean to Utrecht
+link = { name = "Dutch Carribean" key = 377 provinces = { 2234 2235 2236 2240 2245 } }
+
+// Indonesia to Amsterdam
+link = { name = "Dutch Indonesia" key = 375 provinces = { 1398 1399 1402 1404 1413 1414 1415 1417 1418 1420 1421 1423 1424 1430 1433 1440 1441 1443 1445 1449 1450 2576 } }
+
+// Africa to Amsterdam
+link = { name = "Dutch Africa" key = 375 provinces = { 1909 } }
+
+###### Portugal ######
+
+// SEA to Lisabon
+link = { name = "Portugese SEA" key = 521 provinces = { 1439 1444 1446 1498 2647 } }
+
+// Africa to Lisabon
+link = { name = "Portugese Africa" key = 521 provinces = { 1792 1876 1877 1954 1999 2003 2053 2054 2055 2056 2059 2060 2063 2065 } }
+
+// Goa to Lisabon
+link = { name = "Goa" key = 521 provinces = { 1303 } }
+
+###### Spain ######
+
+// Spanish Carribean to Madrid
+link = { name = "Spanish Carribean" key = 487 provinces = { 2209 2210 2211 2212 2222 44 } }
+
+// Spanish Indonesia to Madrid
+link = { name = "Spanish Indonesia" key = 487 provinces = { 1455 1456 1457 1458 1459 1460 1461 1462 1463 2565 2517 2518 2521 } }
+
+###### Russia ######
+
+// Russian Alaska to St. Petersburg
+link = { name = "Alaska" key = 994 provinces = { 1 2 3 4 5 } }
+
+// Russia to Moscow
+link = { name = "Russia" key = 1008 provinces = { 982 983 984 985 986 988 1058 1059 1060 1061 1062 1063 1064 1065 1066 1067 1068 1069 1070 1072 1073 1074 1075 1076 1077 1078 1079 1080 1081 1083 1084 2587 2588 2611 2613 2614 2615 2616 2618 2622 2631 2633 2634 2637 2638 2639 2641 2642 2644 2645 2645 2648 2649 2650 2651 2654 2655 2656 2657 2658 2659 2663 2668 2670 2671 2672 2674 2675 2676 2677 2680 2682 2683 2684 2685 2686 2687 2688 2689 2690 2691  2692 2693 2694 2695 2696 2698 2699 2700 2701 } }
+
+###### Sweden ######
+
+// Sweden to Gavle
+link = { name = "Sweden" key = 317 provinces = { 318 319 320 321 3246 } }
+
+###### Norway ######
+
+// Norway to Bergen
+link = { name = "Norway" key = 309 provinces = { 305 306 307 308 } }
+
+###### Finland ######
+
+// Finland to Turku
+link = { name = "Finland" key = 345 provinces = { 336 337 338 342 346 } }
+

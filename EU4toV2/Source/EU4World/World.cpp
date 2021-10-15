@@ -1,4 +1,5 @@
 #include "World.h"
+#include "AgreementMapper/AgreementMapper.h"
 #include "CommonFunctions.h"
 #include "CommonRegexes.h"
 #include "Configuration.h"
@@ -714,6 +715,25 @@ void EU4::World::mergeNations()
 				master->eatCountry(slave);
 			}
 		}
+
+	// We must also merge all colonial nations.
+	if (theConfiguration.isVN())
+	{
+		mappers::AgreementMapper agreementMapper;
+		for (const auto& agreement: diplomacy)
+		{
+			if (agreementMapper.isAgreementInColonies(agreement.getAgreementType()))
+			{
+				const auto& overlord = getCountry(agreement.getOriginTag());
+				if (!overlord)
+					continue;
+				const auto& colony = getCountry(agreement.getTargetTag());
+				if (!colony)
+					continue;
+				overlord->eatCountry(colony);
+			}
+		}
+	}
 }
 
 void EU4::World::uniteJapan()
