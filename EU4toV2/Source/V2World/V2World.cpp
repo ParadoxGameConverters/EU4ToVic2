@@ -993,6 +993,11 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 		auto eu4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(province.first);
 		if (eu4ProvinceNumbers.empty())
 		{
+			if (theConfiguration.isVN())
+			{
+				// Missing province mapping means out of scope. We use *default* HPM settings.
+				continue;
+			}
 			Log(LogLevel::Warning) << "No mappings found for V2 province " << province.first << " (" << province.second->getName() << ")";
 			// We leave it to defaults
 			province.second->sterilizeProvince();

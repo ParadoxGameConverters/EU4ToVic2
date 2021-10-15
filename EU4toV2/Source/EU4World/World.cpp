@@ -212,7 +212,7 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
 		theConfiguration.setMods(modLoader.getMods());
 	});
-	registerKeyword("mods_enabled_names", [](std::istream& theStream) {
+	registerKeyword("mods_enabled_names", [this](std::istream& theStream) {
 		// In use since 1.31.
 		Log(LogLevel::Info) << "-> Detecting used mods.";
 		const auto& modBlobs = commonItems::blobList(theStream);
@@ -228,6 +228,23 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		commonItems::ModLoader modLoader;
 		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
 		theConfiguration.setMods(modLoader.getMods());
+		Log(LogLevel::Debug) << "pinging";
+		for (const auto& mod: theConfiguration.getMods())
+		{
+			if (mod.name == "Voltaire's Nightmare")
+			{
+				theConfiguration.setVN();
+				theConfiguration.setVNPath(mod.path);
+				if (!theConfiguration.isHpmEnabled())
+				{
+					theConfiguration.setHybridMod(Configuration::HYBRIDMOD::HPM);
+					theConfiguration.verifyHPMInstallPath();
+				}
+				if (*version < GameVersion("1.31.5"))
+					throw std::runtime_error("VN support requires 1.31 saves or higher.");
+				Log(LogLevel::Notice) << "Voltaire's Nightmare detected. Enabling VN support.";
+			}
+		}
 	});
 	registerKeyword("revolution_target", [this](std::istream& theStream) {
 		revolutionTargetString = commonItems::getString(theStream);
@@ -554,7 +571,6 @@ void EU4::World::loadEU4RegionsOldVersion()
 
 	regions = std::make_unique<Regions>(installedAreas);
 }
-
 
 void EU4::World::loadEU4RegionsNewVersion()
 {

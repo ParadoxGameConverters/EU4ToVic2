@@ -14,27 +14,6 @@ const date FUTURE_DATE("2000.1.1");
 class Configuration: commonItems::parser
 {
   public:
-	Configuration() = default;
-	Configuration(const Configuration&) = default;
-	Configuration(Configuration&&) = default;
-	Configuration& operator=(const Configuration&) = default;
-	Configuration& operator=(Configuration&&) = default;
-	~Configuration() = default;
-
-	void instantiate(std::istream& theStream,
-		 const commonItems::ConverterVersion& converterVersion,
-		 bool (*DoesFolderExist)(const std::string& path2),
-		 bool (*doesFileExist)(const std::string& path3));
-
-	void setFirstEU4Date(date _firstDate) { firstEU4Date = _firstDate; }
-	void setLastEU4Date(date _lastDate) { lastEU4Date = _lastDate; }
-	void setStartEU4Date(date _startDate) { startEU4Date = _startDate; }
-	void setOutputName(const std::string& name) { outputName = name; }
-	void setActualName(const std::string& name) { actualName = name; }
-	void setMods(const Mods& theMods) { mods = theMods; }
-	void setEU4Version(const GameVersion& _version) { version = _version; }
-	void setEU4RandomSeed(int seed) { eu4Seed = seed; }
-
 	enum class DEADCORES
 	{
 		LeaveAll = 1,
@@ -82,6 +61,31 @@ class Configuration: commonItems::parser
 		HPM = 2
 	};
 
+	Configuration() = default;
+	Configuration(const Configuration&) = default;
+	Configuration(Configuration&&) = default;
+	Configuration& operator=(const Configuration&) = default;
+	Configuration& operator=(Configuration&&) = default;
+	~Configuration() = default;
+
+	void instantiate(std::istream& theStream,
+		 const commonItems::ConverterVersion& converterVersion,
+		 bool (*DoesFolderExist)(const std::string& path2),
+		 bool (*doesFileExist)(const std::string& path3));
+
+	void setFirstEU4Date(date _firstDate) { firstEU4Date = _firstDate; }
+	void setLastEU4Date(date _lastDate) { lastEU4Date = _lastDate; }
+	void setStartEU4Date(date _startDate) { startEU4Date = _startDate; }
+	void setOutputName(const std::string& name) { outputName = name; }
+	void setActualName(const std::string& name) { actualName = name; }
+	void setMods(const Mods& theMods) { mods = theMods; }
+	void setEU4Version(const GameVersion& _version) { version = _version; }
+	void setEU4RandomSeed(int seed) { eu4Seed = seed; }
+	void setHybridMod(HYBRIDMOD theMod) { hybridMod = theMod; }
+	void setVN() { vn = true; }
+	void setVNPath(const std::string& vnloc) { vnPath = vnloc; }
+	void verifyHPMInstallPath();
+
 	[[nodiscard]] auto getPopShaping() const { return popShaping; }
 	[[nodiscard]] auto getCoreHandling() const { return coreHandling; }
 	[[nodiscard]] auto getRemoveType() const { return removeType; }
@@ -96,6 +100,8 @@ class Configuration: commonItems::parser
 	[[nodiscard]] auto getConvertAll() const { return convertAll; }
 	[[nodiscard]] auto getAfricaReset() const { return africaReset; }
 	[[nodiscard]] bool isHpmEnabled() const { return hybridMod == HYBRIDMOD::HPM; }
+	[[nodiscard]] bool isVN() const { return vn; }
+	[[nodiscard]] const auto& getVNPath() const { return vnPath; }
 
 	[[nodiscard]] const auto& getEU4SaveGamePath() const { return EU4SaveGamePath; }
 	[[nodiscard]] const auto& getEU4Path() const { return EU4Path; }
@@ -150,6 +156,8 @@ class Configuration: commonItems::parser
 	std::string incomingOutputName; // from configuration file
 	std::string actualName;			  // Not normalized like outputName
 	Mods mods;
+	bool vn = false; // Voltaire's nightmare global flag
+	std::string vnPath;
 };
 
 extern Configuration theConfiguration;

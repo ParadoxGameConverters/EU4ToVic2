@@ -106,14 +106,23 @@ void Configuration::instantiate(std::istream& theStream,
 	parseStream(theStream);
 	clearRegisteredKeywords();
 	setOutputName();
+	verifyHPMInstallPath();
+	Log(LogLevel::Progress) << "3 %";
+}
+
+void Configuration::verifyHPMInstallPath()
+{
 	if (isHpmEnabled())
 	{
-		if (!DoesFolderExist(Vic2Path + "/mod/HPM"))
-			throw std::runtime_error(Vic2Path + "/mod/HPM does not exist!");
+		if (!commonItems::DoesFolderExist(Vic2Path + "/mod/HPM"))
+		{
+			if (vn)
+				Log(LogLevel::Error) << "Voltaire's Nightmare uses HPM hybridization.";
+			throw std::runtime_error("HPM installation cannot be found in " + Vic2Path + "/mod/HPM");
+		}
 		VanillaVic2Path = Vic2Path; // necessary for importing province localisations
 		Vic2Path += "/mod/HPM";
 	}
-	Log(LogLevel::Progress) << "3 %";
 }
 
 void Configuration::verifyEU4Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))
