@@ -231,7 +231,6 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		commonItems::ModLoader modLoader;
 		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
 		theConfiguration.setMods(modLoader.getMods());
-		Log(LogLevel::Debug) << "pinging";
 		for (const auto& mod: theConfiguration.getMods())
 		{
 			if (mod.name == "Voltaire's Nightmare")
@@ -251,6 +250,11 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 						Log(LogLevel::Error) << "Voltaire's Nightmare uses HPM hybridization.";
 						throw std::runtime_error("HPM installation cannot be found in " + theConfiguration.getVic2Path() + "/mod/HPM");
 					}
+				}
+				if (theConfiguration.getEuroCentrism() != Configuration::EUROCENTRISM::EuroCentric)
+				{
+					Log(LogLevel::Notice) << "VN is auto-enabling Full Colony Annexation and Eurocentric conversion.";
+					theConfiguration.setEurocentrism(Configuration::EUROCENTRISM::EuroCentric);
 				}
 				if (*version < GameVersion("1.31.5"))
 					throw std::runtime_error("VN support requires 1.31 saves or higher.");

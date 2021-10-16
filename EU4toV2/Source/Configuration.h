@@ -82,6 +82,7 @@ class Configuration: commonItems::parser
 	void setEU4Version(const GameVersion& _version) { version = _version; }
 	void setEU4RandomSeed(int seed) { eu4Seed = seed; }
 	void setHybridMod(HYBRIDMOD theMod) { hybridMod = theMod; }
+	void setEurocentrism(EUROCENTRISM centrism) { euroCentric = centrism; }
 	void setVN() { vn = true; }
 	void verifyHPMInstallPath(bool (*DoesFolderExist)(const std::string& path2));
 	void swapInstallationPathToHPM();

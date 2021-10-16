@@ -1091,3 +1091,24 @@ void V2::Country::setHpmNationalValues()
 		details.nationalValue = "nv_tradition";
 	}
 }
+
+bool V2::Country::isCountryOutsideVNScope(const mappers::ProvinceMapper& provinceMapper) const
+{
+	// Do we have provinces?
+	if (provinces.empty())
+	{
+		if (tag == "PIC")
+			Log(LogLevel::Debug) << "PIC returning false";
+		return false;
+	}
+
+	// Are all of those provinces outside VN scope?
+	bool outside = true;
+	for (const auto& province: provinces)
+		if (!provinceMapper.getEU4ProvinceNumbers(province.first).empty())
+			outside = false;
+
+	if (tag == "PIC")
+		Log(LogLevel::Debug) << "PIC returning " << outside;
+	return outside;
+}

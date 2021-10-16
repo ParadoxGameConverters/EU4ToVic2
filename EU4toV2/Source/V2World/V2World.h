@@ -108,7 +108,7 @@ class World
 	void addAllPotentialCountries();
 	void setupStates();
 	void convertUncivReforms(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper);
-	void convertTechs(const EU4::World& sourceWorld);
+	void convertTechs();
 	void allocateFactories(const EU4::World& sourceWorld);
 	void setupPops(const EU4::World& sourceWorld);
 	void addUnions(bool hreDecentralized, const std::shared_ptr<Country>& emperor);

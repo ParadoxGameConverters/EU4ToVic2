@@ -84,7 +84,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "58 %";
 
 	Log(LogLevel::Info) << "-> Converting Technology Levels";
-	convertTechs(sourceWorld);
+	convertTechs();
 	Log(LogLevel::Progress) << "59 %";
 
 	Log(LogLevel::Info) << "-> Distributing Factories";
@@ -1380,7 +1380,7 @@ void V2::World::convertUncivReforms(const EU4::World& sourceWorld, const mappers
 	}
 }
 
-void V2::World::convertTechs(const EU4::World& sourceWorld)
+void V2::World::convertTechs()
 {
 	const helpers::TechValues techValues(countries);
 
@@ -1935,8 +1935,45 @@ void V2::World::outputCountries() const
 {
 	for (const auto& country: countries)
 	{
+		// VN override: for extant countries outside VN scope we'll not be outputting anything, but copying over HPM defaults.
+		// since success isn't guaranteed, we'll retain option for manual dump.
+
+		bool commonsDone = false;
+		bool historyDone = false;
+		bool oobDone = false;
+
+		if (theConfiguration.isVN())
+		{
+			if (country.second->isCountryOutsideVNScope(provinceMapper))
+			{
+				auto filePath = theConfiguration.getVic2Path() + "/history/countries/" + clipCountryFileName(country.second->getFilename());
+				auto outPath = "output/" + theConfiguration.getOutputName() + "/history/countries/" + clipCountryFileName(country.second->getFilename());
+				if (commonItems::DoesFileExist(filePath))
+				{
+					commonItems::TryCopyFile(filePath, outPath);
+					commonsDone = true;
+				}
+
+				filePath = theConfiguration.getVic2Path() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile());
+				outPath = "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile());
+				if (commonItems::DoesFileExist(filePath))
+				{
+					commonItems::TryCopyFile(filePath, outPath);
+					historyDone = true;
+				}
+
+				filePath = theConfiguration.getVic2Path() + "/history/units/" + country.first + "_OOB.txt";
+				outPath = "output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt";
+				if (commonItems::DoesFileExist(filePath))
+				{
+					commonItems::TryCopyFile(filePath, outPath);
+					oobDone = true;
+				}
+			}
+		}
+
 		// Country file
-		if (!country.second->isDynamicCountry())
+		if (!country.second->isDynamicCountry() && !historyDone)
 		{
 			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/countries/" + clipCountryFileName(country.second->getFilename()));
 			if (!output.is_open())
@@ -1944,18 +1981,28 @@ void V2::World::outputCountries() const
 			output << *country.second;
 			output.close();
 		}
+
 		// commons file
-		std::ofstream commons("output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
-		if (!commons.is_open())
-			throw std::runtime_error(
-				 "Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
-		country.second->outputCommons(commons);
-		commons.close();
+		if (!commonsDone)
+		{
+			std::ofstream commons(
+				 "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
+			if (!commons.is_open())
+				throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" +
+												 clipCountryFileName(country.second->getCommonCountryFile()));
+			country.second->outputCommons(commons);
+			commons.close();
+		}
+
 		// OOB
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt");
-		if (!output.is_open())
-			throw std::runtime_error("Could not create OOB file " + country.first + "_OOB.txt");
-		country.second->outputOOB(output);
+		if (!oobDone)
+		{
+			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt");
+			if (!output.is_open())
+				throw std::runtime_error("Could not create OOB file " + country.first + "_OOB.txt");
+			country.second->outputOOB(output);
+			output.close();
+		}
 	}
 }
 

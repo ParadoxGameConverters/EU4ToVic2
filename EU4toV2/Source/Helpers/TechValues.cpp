@@ -44,11 +44,11 @@ void helpers::TechValues::calculateSteps()
 	// For a given set of scores, how much does each rank matter? Scale on -1 to 1.
 	// For a single civilized nation (roman empire or smlr.) it will get 1 in everything. As a consequence
 	// no country will ever have -1 in anything, but this is not an issue in practice.
-	armyStep = 2.0 / armyScores.size();
-	navyStep = 2.0 / navyScores.size();
-	commerceStep = 2.0 / commerceScores.size();
-	cultureStep = 2.0 / cultureScores.size();
-	industryStep = 2.0 / industryScores.size();
+	armyStep = 2.0 / static_cast<double>(armyScores.size());
+	navyStep = 2.0 / static_cast<double>(navyScores.size());
+	commerceStep = 2.0 / static_cast<double>(commerceScores.size());
+	cultureStep = 2.0 / static_cast<double>(cultureScores.size());
+	industryStep = 2.0 / static_cast<double>(industryScores.size());
 }
 
 bool helpers::TechValues::isValidCountryForTechConversion(const V2::Country& country)
