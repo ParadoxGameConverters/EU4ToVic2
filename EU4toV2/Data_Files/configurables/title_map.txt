@@ -3029,7 +3029,7 @@ link = { name = "suisse" 	 title = "d_swiss" 	 region = "e_mali" }
 link = { name = "suivants d'arjuna" 	 title = "d_followers_arjuna" 	 region = "e_pirates" }
 link = { name = "suiza" 	 title = "d_swiss" 	 region = "e_mali" }
 link = { name = "Sumparu" 	 title = "d_sumparu" 	 region = "e_tibet" }
-link = { name = "suomi" 	 title = "e_russia" 	 region = "e_russia" }
+link = { name = "suomi" 	 title = "k_finland" 	 region = "k_finland" }
 link = { name = "sur" 	 title = "c_tyrus" 	 region = "e_arabia" }
 link = { name = "surp yeghishe" 	 title = "c_albania" 	 region = "e_byzantium" }
 link = { name = "sursdalar" 	 title = "c_suzdal" 	 region = "e_russia" }

@@ -70,6 +70,8 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commo
 	cultureGroupsMapper->initForEU4();
 	buildingTypes = std::make_unique<mappers::Buildings>();
 	unitTypeMapper.initUnitTypeMapper();
+	if (theConfiguration.isVN())
+		theConfiguration.setLastEU4Date(date("1836.1.1"));
 	Log(LogLevel::Progress) << "16 %";
 
 	Log(LogLevel::Info) << "*** Building world ***";

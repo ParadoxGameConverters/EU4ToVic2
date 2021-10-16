@@ -27,7 +27,7 @@ link = { name = "British Pacifics" key = 290 provinces = { 2524 2508 } }
 link = { name = "British SEA" key = 300 provinces = { 1320 1343 1344 1345 1384 1386 1388 } }
 
 # African holdings to Cardigan
-link = { name = "British Africa" key = 274 provinces = { 1724 1785 1884 1908 2087 2089 2090 2091 2092 2096 2097 2125 2127 2129 2130 2132 } }
+link = { name = "British Africa" key = 274 provinces = { 1785 1884 1908 2087 2089 2090 2091 2092 2096 2097 2125 2127 2129 2130 2132 } }
 
 ###### Denmark ######
 

@@ -149,7 +149,8 @@ void V2::Country::initFromEU4Country(const EU4::Regions& eu4Regions,
 	// HRE / Emperors
 	details.inHRE = srcCountry->getInHRE();
 	details.holyRomanEmperor = srcCountry->getHolyRomanEmperor();
-	details.celestialEmperor = srcCountry->getCelestialEmperor();
+	if (!theConfiguration.isVN())
+		details.celestialEmperor = srcCountry->getCelestialEmperor();
 
 	// religion
 	setReligion(_srcCountry->getReligion(), religionMapper);
