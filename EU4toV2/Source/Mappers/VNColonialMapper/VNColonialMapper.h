@@ -1,8 +1,8 @@
 #ifndef VN_COLONIAL_MAPPER
 #define VN_COLONIAL_MAPPER
-#include <set>
 #include "Parser.h"
 #include "VNColonialMapping.h"
+#include <set>
 
 namespace mappers
 {
