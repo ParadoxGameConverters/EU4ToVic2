@@ -1404,14 +1404,25 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 	// determine average production tech
 	double admMean = 0;
 	auto num = 1;
+	double topInstitutions = 0;
+	double provinceMean = 0;
+	std::map<std::string, double> institutions; // tag/institutions.
+
 	for (const auto& country: sourceWorld.getCountries())
 	{
 		if (country.second->getProvinces().empty())
 			continue;
 
 		const auto admTech = country.second->getAdmTech();
+		const auto provinceTotal = country.second->getProvinces().size();
 		admMean += (admTech - admMean) / num;
+		provinceMean += (static_cast<double>(provinceTotal) - provinceMean) / num;
 		++num;
+
+		const auto currInstitutions = country.second->numEmbracedInstitutions();
+		institutions.emplace(country.first, static_cast<double>(currInstitutions));
+		if (currInstitutions > topInstitutions)
+			topInstitutions = currInstitutions;
 	}
 
 	// give all extant civilized nations an industrial score
@@ -1431,7 +1442,13 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 		const auto manuCount = sourceCountry->getManufactoryCount();
 		const auto manuWeight = pow(manuCount, 0.75) + log1p(static_cast<double>(pow(manuCount, 2)) / 5.0);
 		const auto manuDensity = sourceCountry->getManufactoryDensity();
-		auto industryWeight = (sourceCountry->getAdmTech() - admMean) * 5 + manuWeight * manuDensity;
+
+		auto industryWeight = (sourceCountry->getAdmTech() - admMean) * 5; // above-average admin
+		industryWeight += manuWeight * manuDensity;								 // many and dense manufactories
+		if (institutions.contains(country.first))
+			industryWeight += (institutions[country.first] - topInstitutions) * 10.0;								// not lagging in institutions
+		industryWeight += (static_cast<double>(country.second->getProvinces().size()) - provinceMean) / 5; // above-average country size.
+
 		// having one manufactory and average tech is not enough; you must have more than one, or above-average tech
 		if (industryWeight > 1.0)
 		{
@@ -1920,14 +1937,32 @@ void V2::World::outputProvinces() const
 		if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces/" + path))
 			throw std::runtime_error("Could not create directory: output/" + theConfiguration.getOutputName() + "/history/provinces/" + path);
 
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename);
-		if (!output.is_open())
+		// VN override. Can we copy over original province files? This is relevant out of scope where those provinces carry factories we know nothing about.
+		bool fileDone = false;
+		if (theConfiguration.isVN())
 		{
-			throw std::runtime_error("Could not create province history file output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename +
-											 " - " + commonItems::GetLastErrorString());
+			if (provinceMapper.getEU4ProvinceNumbers(province.first).empty() && !vnColonialMapper.isProvinceVNColonial(province.first))
+			{
+				auto filePath = theConfiguration.getVic2Path() + "/history/provinces/" + filename;
+				if (commonItems::DoesFileExist(filePath))
+				{
+					commonItems::TryCopyFile(filePath, "output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename);
+					fileDone = true;
+				}
+			}
 		}
-		output << *province.second;
-		output.close();
+
+		if (!fileDone)
+		{
+			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename);
+			if (!output.is_open())
+			{
+				throw std::runtime_error("Could not create province history file output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename +
+												 " - " + commonItems::GetLastErrorString());
+			}
+			output << *province.second;
+			output.close();
+		}
 	}
 }
 

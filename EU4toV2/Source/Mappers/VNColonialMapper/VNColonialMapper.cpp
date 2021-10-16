@@ -21,6 +21,7 @@ void mappers::VNColonialMapper::registerKeys()
 	registerKeyword("link", [this](std::istream& theStream) {
 		VNColonialMapping theMapping(theStream);
 		VNColonies.emplace_back(theMapping);
+		allColonialProvinces.insert(theMapping.getProvinces().begin(), theMapping.getProvinces().end());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
