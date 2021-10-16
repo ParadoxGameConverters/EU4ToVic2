@@ -116,3 +116,7 @@ link = { name = "Norway" key = 309 provinces = { 305 306 307 308 } }
 # Finland to Turku
 link = { name = "Finland" key = 345 provinces = { 336 337 338 342 346 } }
  
+###### Egypt ######
+
+# Egypt to Qina
+link = { name = "South Egypt" key = 1769 provinces = { 1767 1768 1766 1761 1771 1834 1836 1835 1833 1837 1806 1838 1840 1831 1830 1829 1849 1828 1827 } }
