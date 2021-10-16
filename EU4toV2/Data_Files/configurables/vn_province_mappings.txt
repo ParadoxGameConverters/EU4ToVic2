@@ -395,8 +395,8 @@
 	link = { comment = "Germany" }
 	link = { eu4 = 1857 eu4 = 362 v2 = 529 } # Lauenburg, Oldesloe -> Lauenburg
 	link = { eu4 = 1238 eu4 = 100 eu4 = 2217 eu4 = 1931 eu4 = 413 eu4 = 414 eu4 = 254 v2 = 543 } # Emsigerland, Aurikerland, Federgo, Norderland, Harlingerland, Moormerland, Oostfriese Eilanden -> Emden
-	link = { eu4 = 429 eu4 = 1854 eu4 = 381 v2 = 539 } # Bremen, Beverstedt, Bederkesa -> Bremen
-	link = { eu4 = 907 eu4 = 878 eu4 = 54 v2 = 541 } # Kloppenburg, Vechta, Wildeshausen -> Cloppenburg
+	link = { eu4 = 429 eu4 = 1854 eu4 = 381 eu4 = 1765 v2 = 539 } # Bremen, Beverstedt, Bederkesa, Wursten -> Bremen
+	link = { eu4 = 907 eu4 = 878 eu4 = 54 eu4 = 2988 v2 = 541 } # Kloppenburg, Vechta, Wildeshausen, Delmenhorst -> Cloppenburg
 	link = { eu4 = 1203 eu4 = 1766 v2 = 542 } # Lingen, Löningen -> Lingen
 	link = { eu4 = 286 eu4 = 1990 eu4 = 875 eu4 = 1318 eu4 = 2212 v2 = 1743 } # Reiderland, Lathen, Meppen, Bentheim, Emlichheim -> Nordhorn
 	link = { eu4 = 2511 eu4 = 2516 eu4 = 256 eu4 = 894 eu4 = 1938 eu4 = 2598 eu4 = 114 eu4 = 1011 eu4 = 77 v2 = 572 } # Trier, Bitburg, Prüm, Burbach, Manderscheid, Schweich, Veldenz, Daun, Virneburg -> Trier
@@ -407,18 +407,18 @@
 	link = { eu4 = 771 eu4 = 17 eu4 = 2408 v2 = 573 } # Saarbrücken, Tholey, Zweibrücken -> Saarbrucken
 	link = { eu4 = 2008 eu4 = 909 eu4 = 2620 eu4 = 1878 eu4 = 157 eu4 = 276 eu4 = 41 eu4 = 269 eu4 = 1951 v2 = 575 } # Euskirchen, Düren, Dormagen, Bonn, Mörs, Sinzig, Neuenahr, Andernach, Köln -> Cologne
 	link = { eu4 = 2995 eu4 = 2997 eu4 = 2510 eu4 = 2006 eu4 = 2502 eu4 = 161 v2 = 576 } # Aachen, Kornelimünster, Stolberg, Arenberg, Jülich, Neitersen -> Aachen
-	link = { eu4 = 1936 eu4 = 2505 eu4 = 2491 eu4 = 2616 eu4 = 2508 v2 = 580 } # Dortmund, Witten, Lüdinghausen, Beckum, Hamm -> Dortmund
+	link = { eu4 = 1936 eu4 = 2491 eu4 = 2616 eu4 = 2508 eu4 = 2505 v2 = 580 } # Dortmund, Lüdinghausen, Beckum, Hamm, Witten -> Dortmund
 	link = { eu4 = 1937 eu4 = 277 eu4 = 260 eu4 = 121 eu4 = 39 eu4 = 344 eu4 = 270 v2 = 579 } # Wied, Isenburg, Sayn, Hunefe, Altenkirchen, Nassau, Wildenburg -> Neuwied
 	link = { eu4 = 40 eu4 = 2490 eu4 = 2999 eu4 = 1935 v2 = 2561 } # Siegburg, Bensberg, Wipperfürth, Homburg -> Siegburg
 	link = { eu4 = 2458 eu4 = 1758 eu4 = 1999 eu4 = 2964 eu4 = 1034 eu4 = 84 eu4 = 1102 eu4 = 354 eu4 = 70 eu4 = 2984 v2 = 589 } # Stuttgart, Eßlingen, Heidenheim, Giengen, Helfenstein, Wiesensteig, Blaubeuren, Ehingen, Göppingen, Gmünd -> Stuttgart
 	link = { eu4 = 177 eu4 = 950 eu4 = 2547 eu4 = 1984 eu4 = 938 eu4 = 2524 eu4 = 178 eu4 = 2672 eu4 = 2430 eu4 = 2552 eu4 = 2733 eu4 = 1879 eu4 = 1070 eu4 = 167 eu4 = 1064 eu4 = 1074 v2 = 602 } # Regensburg, Schwandorf, Cham, Lam, Donaugau, Dingolfing, Bach, Rottenburg, Abensberg, Amberg, Trausnitz, Rötz, Waldmünchen, Leuchtenberg, Weiden, Moosbach -> Regensburg
-	link = { eu4 = 842 eu4 = 2694 eu4 = 2314 eu4 = 2938 eu4 = 2631 eu4 = 589 eu4 = 3204 eu4 = 3202 v2 = 557 } # Stendal, Dannenberg, Lüchow, Salzwedel, Genthin, Jerichow, Tangermünde, Gardelegen -> Stendal
-	link = { eu4 = 2645 eu4 = 2646 eu4 = 2874 eu4 = 226 eu4 = 223 eu4 = 222 eu4 = 2629 eu4 = 138 eu4 = 1032 v2 = 537 } # Göttingen, Eichsfeld, Bleicherode, Hohnstein, Nordhausen, Stolberg, Katlenburg, Walkenried, Plesse -> Gottingen
-	link = { eu4 = 59 eu4 = 2923 eu4 = 2935 eu4 = 2442 v2 = 555 } # Wittenberg, Zerbst, Gommern, Lindau-Zerbst -> Dessau
-	link = { eu4 = 2636 eu4 = 52 eu4 = 4131 eu4 = 2649 eu4 = 2890 eu4 = 4118 eu4 = 1861 v2 = 553 } # Magdeburg, Wolmirstedt, Haldensleben, Parey, Aschersleben, Arnstein, Ziesar -> Magdeburg
-	link = { eu4 = 2794 eu4 = 2644 eu4 = 1205 eu4 = 408 eu4 = 430 eu4 = 1773 eu4 = 1204 eu4 = 434 eu4 = 1827 eu4 = 144 eu4 = 3002 eu4 = 143 eu4 = 1055 v2 = 536 } # Wolfenbüttel, Liebenburg, Woldenburg, Delligsen, Holenberg, Dassel, Einbeck, Northeim, Wernigerode, Halberstadt, Goslar, Blankenburg, Quedlinburg -> Brunswick
-	link = { eu4 = 2230 eu4 = 1855 eu4 = 2647 eu4 = 1831 eu4 = 1775 eu4 = 3003 eu4 = 2741 eu4 = 140 v2 = 534 } # Hannover, Depenau, Celle, Wunstorf, Schauenburg, Spiegelberg, Peine, Hildesheim -> Hanover
-	link = { eu4 = 2627 eu4 = 3218 eu4 = 1849 eu4 = 2774 eu4 = 764 eu4 = 3222 eu4 = 5274 eu4 = 629 eu4 = 852 eu4 = 848 v2 = 532 } # Lüneburg, Harburg, Soltau, Winsen, Verden, Bergen, Bleckede, Ülzen, Gifhorn, Wittingen -> Luneburg
+	link = { eu4 = 842 eu4 = 2314 eu4 = 2938 eu4 = 2631 eu4 = 589 eu4 = 3204 eu4 = 3202 v2 = 557 } # Stendal, Lüchow, Salzwedel, Genthin, Jerichow, Tangermünde, Gardelegen -> Stendal
+	link = { eu4 = 2646 eu4 = 2874 eu4 = 226 eu4 = 223 eu4 = 222 eu4 = 138 eu4 = 1032 eu4 = 1827 eu4 = 143 eu4 = 2645 v2 = 537 } # Eichsfeld, Bleicherode, Hohnstein, Nordhausen, Stolberg, Walkenried, Plesse, Wernigerode, Blankenburg, Göttingen -> Gottingen
+	link = { eu4 = 2442 eu4 = 2935 eu4 = 2923 v2 = 555 } # Lindau-Zerbst, Gommern, Zerbst -> Dessau
+	link = { eu4 = 2636 eu4 = 52 eu4 = 2649 eu4 = 4118 eu4 = 1861 eu4 = 144 eu4 = 1055 eu4 = 2890 v2 = 553 } # Magdeburg, Wolmirstedt, Parey, Arnstein, Ziesar, Halberstadt, Quedlinburg, Aschersleben -> Magdeburg
+	link = { eu4 = 2794 eu4 = 2644 eu4 = 1205 eu4 = 408 eu4 = 1773 eu4 = 1204 eu4 = 434 eu4 = 3002 eu4 = 4131 eu4 = 2629 v2 = 536 } # Wolfenbüttel, Liebenburg, Woldenburg, Delligsen, Dassel, Einbeck, Northeim, Goslar, Haldensleben, Katlenburg -> Brunswick
+	link = { eu4 = 2230 eu4 = 1855 eu4 = 2647 eu4 = 1831 eu4 = 1775 eu4 = 3003 eu4 = 2741 eu4 = 140 eu4 = 430 v2 = 534 } # Hannover, Depenau, Celle, Wunstorf, Schauenburg, Spiegelberg, Peine, Hildesheim, Holenberg -> Hanover
+	link = { eu4 = 2627 eu4 = 3218 eu4 = 1849 eu4 = 2774 eu4 = 764 eu4 = 3222 eu4 = 5274 eu4 = 629 eu4 = 852 eu4 = 848 eu4 = 2694 v2 = 532 } # Lüneburg, Harburg, Soltau, Winsen, Verden, Bergen, Bleckede, Ülzen, Gifhorn, Wittingen, Dannenberg -> Luneburg
 	link = { eu4 = 410 eu4 = 883 eu4 = 406 v2 = 545 } # Waren, Burg Stargard, Lychen -> Neustrelitz
 	link = { eu4 = 1983 eu4 = 5268 eu4 = 5267 eu4 = 415 eu4 = 854 eu4 = 5266 eu4 = 2643 eu4 = 12 eu4 = 2996 eu4 = 2309 eu4 = 2667 eu4 = 2310 eu4 = 2638 eu4 = 882 v2 = 544 } # Schwerin, Grevesmühlen, Klenow, Boizenburg, Mecklenburg, Criwitz, Rostock, Warin, Wismar, Güstrow, Plau, Parchim, Grabow, Malchow -> Schwerin
 	link = { eu4 = 2967 eu4 = 2432 eu4 = 1069 eu4 = 2991 eu4 = 65 eu4 = 2525 eu4 = 609 eu4 = 89 eu4 = 88 eu4 = 2957 eu4 = 2543 eu4 = 87 eu4 = 1061 eu4 = 2542 eu4 = 2519 eu4 = 948 eu4 = 2985 eu4 = 96 eu4 = 2727 eu4 = 1744 eu4 = 1037 eu4 = 1036 eu4 = 120 eu4 = 1041 eu4 = 2100 eu4 = 119 eu4 = 1743 v2 = 595 } # Nürnberg, Lauf, Sulzbach, Hirschberg, Wittelsbach, Lechsgemünd, Pappenheim, Weißenburg, Heideck, Abenberg, Dietenhofen, Eichstätt, Breitenbrunn, Neumarkt, Dillingen, Öttingen, Nördlingen, Fremdingen, Bopfingen, Hohentrüdingen, Gunzenhausen, Aurach, Dinkelsbühl, Feuchtwangen, Wörnitz, Donauwörth, Hilpoltstein -> Nuremburg
@@ -434,14 +434,14 @@
 	link = { eu4 = 2732 eu4 = 336 eu4 = 4122 eu4 = 2099 eu4 = 272 v2 = 569 } # Heidelberg, Sinsheim, Mosbach, Miltenberg, Wertheim -> Mannheim
 	link = { eu4 = 2032 eu4 = 235 eu4 = 219 eu4 = 238 eu4 = 236 eu4 = 1860 eu4 = 701 eu4 = 481 eu4 = 2459 eu4 = 93 eu4 = 1882 eu4 = 698 eu4 = 2751 eu4 = 217 eu4 = 962 eu4 = 268 eu4 = 2463 eu4 = 72 eu4 = 340 v2 = 586 } # Ettenheim, Offenburg, Ortenau, Geroldseck, Schuttertal, Oppenau, Gengenbach, Herrenalb, Baden, Eberstein, Freudenstadt, Zell, Wolfach, Triberg, Achern, Bruchsal, Bretten, Durlach, Ludwigsburg -> Karlsruhe
 	link = { eu4 = 543 eu4 = 2457 eu4 = 1863 eu4 = 339 eu4 = 2954 v2 = 587 } # Breisgau, Hochberg, Badenweiler, Sausenberg, Sankt Blasien -> Freiburg
-	link = { eu4 = 81 eu4 = 1985 eu4 = 2628 eu4 = 2648 v2 = 566 } # Kassel, Fritzlar, Eschwege, Sontra -> Kassel
-	link = { eu4 = 4120 eu4 = 206 eu4 = 2857 eu4 = 2929 eu4 = 240 eu4 = 2939 eu4 = 2931 eu4 = 747 eu4 = 468 eu4 = 3018 v2 = 556 } # Halle, Wettin, Delitzsch, Brehna, Torgau, Wurzenerland, Dahlen, Herzberg, Grabin, Calau -> Halle
-	link = { eu4 = 831 eu4 = 2884 eu4 = 249 eu4 = 2879 eu4 = 2811 eu4 = 2804 eu4 = 502 eu4 = 2937 eu4 = 741 eu4 = 2416 v2 = 559 } # Leipzig, Altenburg, Colditz, Grimma, Oschatz, Leisnig, Meißen, Freiberg, Niederau, Elsterwerda -> Leipzig
-	link = { eu4 = 232 eu4 = 376 eu4 = 2926 eu4 = 229 eu4 = 2965 eu4 = 2852 eu4 = 372 eu4 = 250 eu4 = 2807 eu4 = 224 eu4 = 371 eu4 = 1747 eu4 = 1749 eu4 = 1750 eu4 = 221 eu4 = 230 eu4 = 252 eu4 = 251 v2 = 554 } # Erfurt, Gleichen, Herbslebel, Beichlingen, Freyburg, Weissenfels, Gera, Zeitz, Weida, Wiehe, Velseck, Mülhausen-Thüringen, Sondershausen, Sangershausen, Mansfeld, Querfurt, Merseburg, Naumburg -> Erfurt
+	link = { eu4 = 81 eu4 = 1985 eu4 = 2628 eu4 = 2648 eu4 = 1982 v2 = 566 } # Kassel, Fritzlar, Eschwege, Sontra, Hersfeld -> Kassel
+	link = { eu4 = 4120 eu4 = 2929 eu4 = 240 eu4 = 747 eu4 = 468 eu4 = 3018 eu4 = 2857 eu4 = 206 v2 = 556 } # Halle, Brehna, Torgau, Herzberg, Grabin, Calau, Delitzsch, Wettin -> Halle
+	link = { eu4 = 831 eu4 = 2884 eu4 = 249 eu4 = 2879 eu4 = 2811 eu4 = 2804 eu4 = 502 eu4 = 2937 eu4 = 741 eu4 = 2416 eu4 = 2931 eu4 = 2939 v2 = 559 } # Leipzig, Altenburg, Colditz, Grimma, Oschatz, Leisnig, Meißen, Freiberg, Niederau, Elsterwerda, Dahlen, Wurzenerland -> Leipzig
+	link = { eu4 = 232 eu4 = 2926 eu4 = 229 eu4 = 2965 eu4 = 2852 eu4 = 372 eu4 = 250 eu4 = 224 eu4 = 371 eu4 = 1747 eu4 = 1749 eu4 = 1750 eu4 = 221 eu4 = 230 eu4 = 252 eu4 = 251 eu4 = 2807 v2 = 554 } # Erfurt, Herbslebel, Beichlingen, Freyburg, Weissenfels, Gera, Zeitz, Wiehe, Velseck, Mülhausen-Thüringen, Sondershausen, Sangershausen, Mansfeld, Querfurt, Merseburg, Naumburg, Weida -> Erfurt
 	link = { eu4 = 2806 eu4 = 2835 eu4 = 2809 eu4 = 829 eu4 = 245 eu4 = 244 eu4 = 248 v2 = 560 } # Zwickau, Plauen, Ölsnitz, Buchholz, Stollberg, Seiffen, Hartenstein -> Chemnitz
-	link = { eu4 = 2323 eu4 = 1232 eu4 = 373 eu4 = 375 eu4 = 1226 eu4 = 1228 eu4 = 374 eu4 = 61 eu4 = 2851 v2 = 561 } # Kevernburg, Blankenhain, Schwarzburg, Orlamünde, Saalfeld, Jena, Ludwigsstadt, Lobenstein, Weimar -> Weimar
+	link = { eu4 = 1232 eu4 = 373 eu4 = 375 eu4 = 1226 eu4 = 1228 eu4 = 374 eu4 = 61 eu4 = 2851 eu4 = 376 eu4 = 2323 v2 = 561 } # Blankenhain, Schwarzburg, Orlamünde, Saalfeld, Jena, Ludwigsstadt, Lobenstein, Weimar, Gleichen, Kevernburg -> Weimar
 	link = { eu4 = 2858 eu4 = 207 eu4 = 231 eu4 = 2925 eu4 = 2899 eu4 = 370 eu4 = 2771 v2 = 562 } # Gotha, Tonna, Salza, Eisenach, Frauensee, Heringen, Schmalkalden -> Gotha
-	link = { eu4 = 3 eu4 = 11 eu4 = 8 eu4 = 1129 eu4 = 1982 eu4 = 1227 eu4 = 949 eu4 = 2011 eu4 = 218 v2 = 568 } # Fulda, Nidda, Büdingen, Schlitz, Hersfeld, Hammelburg, Bischofsheim, Fladungen, Ostheim -> Fulda
+	link = { eu4 = 3 eu4 = 11 eu4 = 8 eu4 = 1129 eu4 = 1227 eu4 = 2011 eu4 = 218 eu4 = 949 v2 = 568 } # Fulda, Nidda, Büdingen, Schlitz, Hammelburg, Fladungen, Ostheim, Bischofsheim -> Fulda
 	link = { eu4 = 10 eu4 = 2691 eu4 = 940 eu4 = 935 v2 = 567 } # Münzenberg, Kirchhain, Ziegenhain, Alsfeld -> Giessen
 	link = { eu4 = 770 eu4 = 16 eu4 = 78 eu4 = 347 eu4 = 4126 eu4 = 25 eu4 = 275 eu4 = 1981 v2 = 596 } # Hanau, Gelnhausen, Aschaffenburg, Jossa, Klingenberg, Orb, Rieneck, Schlüchtern -> Aschaffenburg
 	link = { eu4 = 1943 eu4 = 164 eu4 = 5 v2 = 564 } # Frankfurt, Eschborn, Friedberg -> Frankfurt
@@ -452,15 +452,15 @@
 	link = { eu4 = 2973 eu4 = 2493 eu4 = 876 eu4 = 867 eu4 = 1953 eu4 = 2504 eu4 = 162 eu4 = 1809 eu4 = 141 v2 = 581 } # Münster, Tecklenburg, Borken, Coesfeld, Ahaus, Recklinghausen, Wesel, Werden, Steinfurt -> Munster
 	link = { eu4 = 879 eu4 = 1107 eu4 = 56 v2 = 538 } # Osnabrück, Bramsche, Quakenbrück -> Osnabruck
 	link = { eu4 = 2399 eu4 = 931 eu4 = 7 eu4 = 26 eu4 = 4 eu4 = 2541 eu4 = 146 v2 = 584 } # Brilon, Waldeck, Wetter, Ittergau, Volkmarsen, Marburg, Lippstadt -> Korbach
-	link = { eu4 = 877 eu4 = 1853 eu4 = 705 eu4 = 147 eu4 = 2972 eu4 = 2512 eu4 = 2130 eu4 = 1954 eu4 = 155 v2 = 582 } # Bielefeld, Rietberg, Wiedenbrück, Rheda, Paderborn, Desenberg, Corvey, Enger, Minden -> Bielefeld
-	link = { eu4 = 135 eu4 = 2154 eu4 = 2219 eu4 = 2155 eu4 = 152 eu4 = 2736 v2 = 585 } # Detmold, Exertal, Everstein, Schwalenberg, Pyrmont, Hausberge -> Detmold
-	link = { eu4 = 2971 eu4 = 382 eu4 = 153 eu4 = 154 v2 = 535 } # Hoya, Wölpe, Bruchhausen, Diepholz -> Nienburg
-	link = { eu4 = 55 eu4 = 2827 eu4 = 2750 eu4 = 2213 eu4 = 3000 eu4 = 1765 eu4 = 1925 eu4 = 2988 v2 = 540 } # Oldenburg, Varel, Ostringen, Lengenerland, Rustringen, Wursten, Lehe, Delmenhorst -> Oldenburg
+	link = { eu4 = 877 eu4 = 1853 eu4 = 705 eu4 = 147 eu4 = 2972 eu4 = 2512 eu4 = 2130 eu4 = 1954 v2 = 582 } # Bielefeld, Rietberg, Wiedenbrück, Rheda, Paderborn, Desenberg, Corvey, Enger -> Bielefeld
+	link = { eu4 = 135 eu4 = 2154 eu4 = 2155 eu4 = 152 eu4 = 2736 eu4 = 2219 v2 = 585 } # Detmold, Exertal, Schwalenberg, Pyrmont, Hausberge, Everstein -> Detmold
+	link = { eu4 = 2971 eu4 = 382 eu4 = 153 eu4 = 154 eu4 = 155 v2 = 535 } # Hoya, Wölpe, Bruchhausen, Diepholz, Minden -> Nienburg
+	link = { eu4 = 2827 eu4 = 2750 eu4 = 2213 eu4 = 3000 eu4 = 1925 eu4 = 55 v2 = 540 } # Varel, Ostringen, Lengenerland, Rustringen, Lehe, Oldenburg -> Oldenburg
 	link = { eu4 = 628 eu4 = 364 eu4 = 379 eu4 = 148 v2 = 531 } # Stade, Bremervörde, Ottersberg, Hadeln -> Stade
 	link = { eu4 = 1084 eu4 = 2210 eu4 = 2319 v2 = 528 } # Hamburg, Pinneberg, Itzehoe -> Hamburg
 	link = { eu4 = 13 eu4 = 2315 eu4 = 1874 eu4 = 45 eu4 = 14 v2 = 530 } # Lübeck, Scharbeutz, Ratekau, Eutin, Ratzeburg -> Lubeck
 	link = { eu4 = 746 eu4 = 3209 eu4 = 234 eu4 = 239 eu4 = 233 eu4 = 845 eu4 = 2934 eu4 = 3207 eu4 = 3214 v2 = 551 } # Pritzwalk, Kyritz, Katerbow, Wittstock, Havelberg, Ruppin, Rathenow, Lindow, Bötzow -> Pritzwalk
-	link = { eu4 = 2652 eu4 = 3211 eu4 = 2634 eu4 = 2640 eu4 = 626 eu4 = 463 eu4 = 241 eu4 = 2933 eu4 = 2662 eu4 = 304 eu4 = 3017 eu4 = 3212 eu4 = 242 v2 = 549 } # Berlin, Beelitz, Spandau, Potsdam, Jüterbog, Zossen, Brandenburg, Werder, Zeuthen, Storkow, Lübbenau, Köpenick, Fürstenwalde -> Berlin
+	link = { eu4 = 2652 eu4 = 3211 eu4 = 2634 eu4 = 2640 eu4 = 626 eu4 = 463 eu4 = 241 eu4 = 2933 eu4 = 2662 eu4 = 304 eu4 = 3017 eu4 = 3212 eu4 = 242 eu4 = 59 v2 = 549 } # Berlin, Beelitz, Spandau, Potsdam, Jüterbog, Zossen, Brandenburg, Werder, Zeuthen, Storkow, Lübbenau, Köpenick, Fürstenwalde, Wittenberg -> Berlin
 	link = { eu4 = 3020 eu4 = 3019 v2 = 687 } # Muskau, Hoyerswerda -> Gorlitz
 	link = { eu4 = 2803 eu4 = 2805 eu4 = 1971 eu4 = 834 eu4 = 246 eu4 = 2889 v2 = 558 } # Dresden, Biskupicy, Zitawa, Budyšin, Dohna, Pirna -> Dresden
 	link = { eu4 = 1778 eu4 = 1755 eu4 = 839 eu4 = 2197 eu4 = 3016 eu4 = 1190 v2 = 552 } # Chotebuz, Nowa Cala, Müncheberg, Lebus, Spremberg, Zly Komorow -> Cottbus
