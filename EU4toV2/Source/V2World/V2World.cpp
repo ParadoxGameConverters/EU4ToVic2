@@ -1185,7 +1185,8 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::set<
 {
 	// determine ownership by province development.
 	std::map<std::string, std::vector<std::shared_ptr<EU4::Province>>> theClaims; // tag, claimed provinces
-	std::map<std::string, std::pair<int, int>> theShares;									// tag, development/tax
+	std::map<std::string, int> development;													// tag, development
+	std::map<std::string, int> tax;																// tag, tax
 
 	for (auto eu4ProvinceID: eu4ProvinceNumbers)
 	{
@@ -1194,39 +1195,43 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::set<
 		if (ownerTag.empty())
 			continue; // Don't touch un-colonized provinces.
 		theClaims[ownerTag].push_back(eu4province);
-		theShares[ownerTag] = std::make_pair(lround(eu4province->getProvinceWeight()), lround(eu4province->getBaseTax()));
+		if (development.contains(ownerTag))
+			development[ownerTag] += lround(eu4province->getProvinceWeight());
+		else
+			development.emplace(ownerTag, lround(eu4province->getProvinceWeight()));
+		if (tax.contains(ownerTag))
+			tax[ownerTag] += lround(eu4province->getBaseTax());
+		else
+			tax.emplace(ownerTag, lround(eu4province->getBaseTax()));
 	}
 	// Let's see who the lucky winner is.
 	std::string winner;
 	auto maxDev = 0;
 	auto maxTax = 0;
-	for (const auto& share: theShares)
+	for (const auto& [tag, share]: development)
 	{
-		if (share.second.first > maxDev)
+		if (share > maxDev)
 		{
-			winner = share.first;
-			maxDev = share.second.first;
-			maxTax = share.second.second;
+			winner = tag;
+			maxDev = share;
+			maxTax = tax[tag];
 		}
-		if (share.second.first == maxDev && share.first != winner)
+		if (share == maxDev && tag != winner)
 		{
 			// We have a tie
-			if (share.second.second > maxTax)
+			if (tax[tag] > maxTax)
 			{
-				winner = share.first;
-				maxDev = share.second.first;
-				maxTax = share.second.second;
+				winner = tag;
+				maxTax = tax[tag];
 			}
-			if (share.second.second == maxTax)
+			else if (tax[tag] == maxTax)
 			{
 				// Shit. Check for core?
-				for (const auto& claim: theClaims[share.first])
+				for (const auto& claim: theClaims[tag])
 					if (!claim->isTerritorialCore())
 					{
 						// It's a full core of someone. Might as well take it. Will not resolve further ties, thank you.
-						winner = share.first;
-						maxDev = share.second.first;
-						maxTax = share.second.second;
+						winner = tag;
 					}
 			}
 		}

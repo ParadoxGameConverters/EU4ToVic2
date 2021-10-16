@@ -124,7 +124,7 @@
 	link = { eu4 = 4681 eu4 = 4678 eu4 = 4682 v2 = 1698 } # Tagdamert, Tinghir, Sijilmasa -> Rashidia
 	link = { eu4 = 4677 eu4 = 4680 v2 = 1699 } # Warzazat, Tamdoult -> Warzazat
 	link = { eu4 = 5115 v2 = 2135 } # Madeira -> Madeira
-	link = { eu4 = 5107 eu4 = 5108 eu4 = 5109 eu4 = 5110 eu4 = 5111 eu4 = 5113 eu4 = 5112 v2 = 2136 } # Lanzarote, Fuerteventura, Gran Canaria, Tenerife, Gomera, El Hierro, Palma -> Canary Islands
+	link = { eu4 = 5107 eu4 = 5108 eu4 = 5109 eu4 = 5110 eu4 = 5111 eu4 = 5113 eu4 = 5112 v2 = 2136 v2 = 2134 } # MANY-TO-MANY: Lanzarote, Fuerteventura, Gran Canaria, Tenerife, Gomera, El Hierro, Palma -> Canary Islands, Azores
 	link = { eu4 = 4675 v2 = 1773 } # Al-Ayyun -> Saguia el-Hamra
 	link = { eu4 = 4676 eu4 = 4674 v2 = 1696 } # Tan-Tan, Tarfaya -> Cape Juby
 	link = { eu4 = 4757 eu4 = 4759 eu4 = 4784 eu4 = 4779 eu4 = 4780 eu4 = 4787 eu4 = 4788 eu4 = 4790 eu4 = 4785 v2 = 1691 } # Azemmur, Bir Jdid, Awlad Abu, Anfa, Fadl Allah, Berrechid, Settat, El-Shawia, El-Gara -> Casablanca
