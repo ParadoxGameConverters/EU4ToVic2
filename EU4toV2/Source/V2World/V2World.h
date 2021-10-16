@@ -31,6 +31,7 @@
 #include "../Mappers/StateMapper/StateMapper.h"
 #include "../Mappers/TechSchools/TechSchoolMapper.h"
 #include "../Mappers/Unreleasables/Unreleasables.h"
+#include "../Mappers/VNColonialMapper/VNColonialMapper.h"
 #include "../Mappers/WarGoalMapper/WarGoalMapper.h"
 #include "ConverterVersion.h"
 #include "Country/Country.h"
@@ -144,6 +145,7 @@ class World
 	void processShatteredHre(const std::optional<std::string>& eu4HreTag);
 	std::string customizeFile(const std::string& filePath, const std::regex& oldRegex, const std::string& newString);
 	void outputDynamicContent() const;
+	void distributeVNColonies();
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
@@ -184,6 +186,7 @@ class World
 	mappers::CountryFlags countryFlags;
 	mappers::UnionTagsMapper unionTagsMapper;
 	mappers::ProvinceRenamings provinceRenamingsMapper;
+	mappers::VNColonialMapper vnColonialMapper;
 };
 
 std::ostream& operator<<(std::ostream& output, const std::vector<std::pair<std::string, EU4::HistoricalEntry>>& historicalData);

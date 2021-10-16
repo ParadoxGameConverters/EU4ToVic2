@@ -117,6 +117,11 @@ class Country
 	void addPolicy(const std::string& partyName, const std::string& policy, const std::string& position);
 	void setHpmNationalValues();
 	void setHPMFlags();
+	void removeProvinceID(const int provinceID)
+	{
+		if (provinces.contains(provinceID))
+			provinces.erase(provinceID);
+	}
 
 	[[nodiscard]] std::string getColonialRegion() const;
 	[[nodiscard]] virtual std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }

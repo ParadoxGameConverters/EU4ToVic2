@@ -95,6 +95,12 @@ V2::World::World(const EU4::World& sourceWorld,
 	setupPops(sourceWorld);
 	Log(LogLevel::Progress) << "61 %";
 
+	if (theConfiguration.isVN())
+	{
+		Log(LogLevel::Info) << "-> Assigning Colonies to VN Countries";
+		distributeVNColonies();
+	}
+
 	Log(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
 	modifyPrimaryAndAcceptedCultures();
 	Log(LogLevel::Progress) << "62 %";
@@ -156,6 +162,70 @@ V2::World::World(const EU4::World& sourceWorld,
 	output(converterVersion);
 
 	Log(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
+}
+
+void V2::World::distributeVNColonies()
+{
+	// We're distributing all out of scope provinces that relate to countries within scope to whatever tag owns key provinces for each colony
+	// Key provinces are all within scope, ie. London for British India
+
+	for (const auto& colony: vnColonialMapper.getVNColonies())
+	{
+		if (!colony.getKeyProvince())
+		{
+			Log(LogLevel::Warning) << "VN Colony " << colony.getName() << " has no key province defined!";
+			continue; // Mapping error.
+		}
+		const auto& keyProvince = provinces.find(colony.getKeyProvince());
+		if (keyProvince == provinces.end())
+		{
+			Log(LogLevel::Warning) << "VN Colony " << colony.getName() << " has invalid key province defined!";
+			continue; // Mapping error.
+		}
+		const auto& keyProvinceOwner = keyProvince->second->getOwner();
+		if (keyProvinceOwner.empty())
+		{
+			Log(LogLevel::Warning) << "VN Colony " << colony.getName() << " has no key province owner!";
+			continue; // Save error.
+		}
+		const auto& overlordCountry = countries.find(keyProvinceOwner);
+		if (overlordCountry == countries.end())
+		{
+			Log(LogLevel::Warning) << "VN Colony " << colony.getName() << " has uninitialized key province owner!";
+			continue; // God knows what went wrong there.
+		}
+
+		bool assignmentRun = false;
+		// Let's reassign the provinces.
+		for (const auto& provinceID: colony.getProvinces())
+		{
+			const auto& province = provinces.find(provinceID);
+			if (province == provinces.end())
+			{
+				Log(LogLevel::Warning) << "VN Colony " << colony.getName() << " province " << provinceID << " doesn't exist!";
+				continue;
+			}
+
+			// Do we even need to do anything?
+			if (province->second->getOwner() == keyProvinceOwner)
+				continue; // We're good.
+
+			// Try to remove it from old owner if any.
+			if (!province->second->getOwner().empty())
+			{
+				const auto& oldOwner = countries.find(province->second->getOwner());
+				if (oldOwner != countries.end())
+					oldOwner->second->removeProvinceID(province->first);
+			}
+
+			province->second->setOwner(keyProvinceOwner);
+			province->second->setController(keyProvinceOwner);
+			overlordCountry->second->addProvince(province->second);
+			assignmentRun = true;
+		}
+		if (assignmentRun)
+			Log(LogLevel::Info) << "-- VN colony " << colony.getName() << " reassigned to " << keyProvinceOwner;
+	}
 }
 
 void V2::World::localizeProvinces()

@@ -236,12 +236,19 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 			{
 				Log(LogLevel::Notice) << "Voltaire's Nightmare detected. Enabling VN support.";
 				theConfiguration.setVN();
-				theConfiguration.setVNPath(mod.path);
 				if (!theConfiguration.isHpmEnabled())
 				{
 					Log(LogLevel::Notice) << "VN support requires HPM. Enabling HPM automatically.";
 					theConfiguration.setHybridMod(Configuration::HYBRIDMOD::HPM);
-					theConfiguration.verifyHPMInstallPath();
+					if (theConfiguration.isHPMVerified())
+					{
+						theConfiguration.swapInstallationPathToHPM();
+					}
+					else
+					{
+						Log(LogLevel::Error) << "Voltaire's Nightmare uses HPM hybridization.";
+						throw std::runtime_error("HPM installation cannot be found in " + theConfiguration.getVic2Path() + "/mod/HPM");
+					}
 				}
 				if (*version < GameVersion("1.31.5"))
 					throw std::runtime_error("VN support requires 1.31 saves or higher.");

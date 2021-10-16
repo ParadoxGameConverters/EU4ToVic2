@@ -83,8 +83,8 @@ class Configuration: commonItems::parser
 	void setEU4RandomSeed(int seed) { eu4Seed = seed; }
 	void setHybridMod(HYBRIDMOD theMod) { hybridMod = theMod; }
 	void setVN() { vn = true; }
-	void setVNPath(const std::string& vnloc) { vnPath = vnloc; }
-	void verifyHPMInstallPath();
+	void verifyHPMInstallPath(bool (*DoesFolderExist)(const std::string& path2));
+	void swapInstallationPathToHPM();
 
 	[[nodiscard]] auto getPopShaping() const { return popShaping; }
 	[[nodiscard]] auto getCoreHandling() const { return coreHandling; }
@@ -101,7 +101,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] auto getAfricaReset() const { return africaReset; }
 	[[nodiscard]] bool isHpmEnabled() const { return hybridMod == HYBRIDMOD::HPM; }
 	[[nodiscard]] bool isVN() const { return vn; }
-	[[nodiscard]] const auto& getVNPath() const { return vnPath; }
+	[[nodiscard]] bool isHPMVerified() const { return HPMverified; }
 
 	[[nodiscard]] const auto& getEU4SaveGamePath() const { return EU4SaveGamePath; }
 	[[nodiscard]] const auto& getEU4Path() const { return EU4Path; }
@@ -157,7 +157,7 @@ class Configuration: commonItems::parser
 	std::string actualName;			  // Not normalized like outputName
 	Mods mods;
 	bool vn = false; // Voltaire's nightmare global flag
-	std::string vnPath;
+	bool HPMverified = false;
 };
 
 extern Configuration theConfiguration;
