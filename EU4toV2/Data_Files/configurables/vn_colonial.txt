@@ -86,8 +86,20 @@ link = { name = "Spanish Indonesia" key = 487 provinces = { 1455 1456 1457 1458 
 # Russian Alaska to St. Petersburg
 link = { name = "Alaska" key = 994 provinces = { 1 2 3 4 5 2631 } }
 
-# Russia to Moscow
-link = { name = "Russia" key = 1008 provinces = { 982 983 984 985 986 988 1058 1059 1060 1061 1062 1063 1064 1065 1066 1067 1068 1069 1070 1072 1073 1074 1075 1076 1077 1078 1079 1080 1181 1183 1184 2587 2588 2611 2613 2614 2615 2616 2618 2622 2633 2634 2637 2638 2639 2641 2642 2644 2645 2646 2648 2649 2650 2651 2654 2655 2656 2657 2658 2659 2663 2668 2670 2671 2672 2674 2675 2676 2677 2680 2682 2683 2684 2685 2686 2687 2688 2689 2690 2691  2692 2693 2694 2695 2696 2698 2699 2700 2701 } }
+# Russian North to Kotlas
+link = { name = "Russian North" key = 990 provinces = { 1029 2700 985 2699 986 2688 2687 2689 } }
+
+# Russian Siberia to Perm
+link = { name = "Russian Siberia" key = 1026 provinces = { 2695 1058 2685 1062 2682 2684 2614 2690 2613 2659 2615 2657 2680 2693 2655 2654 1066 2646 1065 2651 2650 2649 2672 2668 2642 1072 2639 2618 2638 1073 2663 2616 2622 2637 2634 2633 1074 2641 1080 2696 2644 2645 2648 1069 } }
+
+# Russian Urals to Ufa 
+link = { name = "Russian Urals" key = 1042 provinces = { 1059 2658 1061 1064 2686 } }
+
+# Russian Tartary to Uralsk 
+link = { name = "Russian Tartary" key = 2610 provinces = { 1183 1060 2611 1181 1184 1067 1068 2698 2674 2691 1077 2701 1076 2683 1063 1070 2692 2656 2694 1075 2670 1078 1079 2671 2676 2677 2675 } }
+
+# Russian Scandinavia to Petrozavodsk 
+link = { name = "Russian Scandinavia" key = 995 provinces = { 983 984 988 2588 982 2587 } }
 
 ###### Sweden ######
 
@@ -103,4 +115,4 @@ link = { name = "Norway" key = 309 provinces = { 305 306 307 308 } }
 
 # Finland to Turku
 link = { name = "Finland" key = 345 provinces = { 336 337 338 342 346 } }
-
+ 
