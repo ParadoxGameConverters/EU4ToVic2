@@ -309,9 +309,8 @@
 	link = { eu4 = 6535 eu4 = 3790 eu4 = 3791 eu4 = 3789 eu4 = 3785 eu4 = 3786 eu4 = 3787 eu4 = 3788 eu4 = 6539 v2 = 1036 } # Alcha, Qurmanghazi, Naryn-Qum, Sorochiye, Hacitarxan, Bakhtemir, Karalat, Tumak, Elton -> Astrakhan
 	link = { eu4 = 6144 eu4 = 6143 eu4 = 6148 eu4 = 6147 eu4 = 6149 eu4 = 6150 eu4 = 6151 eu4 = 6152 eu4 = 6153 eu4 = 6157 eu4 = 3825 eu4 = 3823 eu4 = 3824 eu4 = 6146 eu4 = 6145 v2 = 1003 } # Novgorod, Shimsk, Russa, Poddore, Parfino, Demyansk, Krestcy, Okulovka, Vishera, Dedovichi, Polisto, Kholm, Zhitnisy, Chudovo, Radofinnikovo -> Novgorod
 	link = { eu4 = 4278 eu4 = 3346 eu4 = 4280 eu4 = 3349 eu4 = 4285 eu4 = 3325 v2 = 946 } # Polatsk, Druya, Dzisna, Yuchavichy, Lepiel, Dokshytsy -> Polotsk
-	link = { eu4 = 6425 eu4 = 6424 eu4 = 6423 eu4 = 6422 v2 = 1029 } # Kumeny, Syumsi, Uva, Ägerce -> Glasov
 	link = { eu4 = 6429 eu4 = 6428 eu4 = 6445 eu4 = 6518 eu4 = 6519 eu4 = 6515 eu4 = 6478 v2 = 1028 } # Chernur, Urzhum, Alat, Kilemar, Yoshkar-Ola, Kichma, Petyal -> Vyatka
-	link = { eu4 = 6432 eu4 = 6431 eu4 = 6430 eu4 = 3942 eu4 = 4244 v2 = 1026 } # Dürtöylö, Aqta, Tura-Tau, Osa, Perm -> Perm
+	link = { eu4 = 3942 eu4 = 4244 v2 = 1026 } # Osa, Perm -> Perm
 	link = { eu4 = 6382 v2 = 1043 } # Yaik -> Busuluk
 	link = { eu4 = 6577 eu4 = 6576 eu4 = 3858 eu4 = 6578 eu4 = 6574 eu4 = 6575 eu4 = 6676 v2 = 1001 } # Yaroslavl, Vyatskoe, Gorinskoe, Varegovo, Rostov, Borisoglebskiy, Pereyaslav -> Yaroslavl
 	link = { eu4 = 6568 eu4 = 6567 eu4 = 6690 eu4 = 6565 eu4 = 6687 eu4 = 6693 eu4 = 6584 v2 = 1022 } # Ivanovo, Shuya, Starodub-Klyazme, Yuryevets, Gorokhovets, Yaropolch, Krasno -> Ivanovo
@@ -329,12 +328,12 @@
 	link = { eu4 = 6616 eu4 = 6615 eu4 = 3798 eu4 = 3797 eu4 = 3794 eu4 = 6389 eu4 = 3795 eu4 = 3796 v2 = 1182 } # Azgyl, Kulsary, Bayshunas, Atyray, Sarai-Jük, Sarytogay, Akkystau, Janbay -> Guryev
 	link = { eu4 = 6388 eu4 = 6387 eu4 = 6386 eu4 = 6385 eu4 = 6383 v2 = 2610 } # Almaly, Kyzyl-Zar, Shagatay, Zhaiyk, Saryumir -> Oral
 	link = { eu4 = 709 eu4 = 6390 eu4 = 6384 v2 = 1044 } # Ilek, Agyidel, Borili -> Orenburg
-	link = { eu4 = 6414 eu4 = 6415 eu4 = 6416 eu4 = 6417 eu4 = 6421 eu4 = 6420 eu4 = 6394 eu4 = 6419 v2 = 1042 } # Qandiz, Belebey, Taqmaq, Jakty-Jul, Urissu, Bögelmä, Buzuluk, Qörzly -> Ufa
+	link = { eu4 = 6414 eu4 = 6415 eu4 = 6416 eu4 = 6417 eu4 = 6421 eu4 = 6420 eu4 = 6394 eu4 = 6419 eu4 = 6431 eu4 = 6432 eu4 = 6430 eu4 = 6453 v2 = 1042 } # Qandiz, Belebey, Taqmaq, Jakty-Jul, Urissu, Bögelmä, Buzuluk, Qörzly, Aqta, Dürtöylö, Tura-Tau, Menzela -> Ufa
 	link = { eu4 = 6444 eu4 = 6446 eu4 = 6447 eu4 = 6459 eu4 = 6461 eu4 = 6476 eu4 = 6477 eu4 = 6479 eu4 = 6462 eu4 = 6467 v2 = 1030 } # Kazan, Arsk, Ar-Chally, Juketau, Layish, Sydyrchy, Zöye, Urmary, Bolghar, Tätesh -> Kazan
-	link = { eu4 = 6451 eu4 = 6450 eu4 = 6426 eu4 = 6427 eu4 = 6457 eu4 = 6455 eu4 = 6454 eu4 = 6449 eu4 = 6456 eu4 = 6448 eu4 = 6453 eu4 = 6452 v2 = 1031 } # Kalmiya, Alabygo, Kukmor, Siva, Byulyar, Kuyazlu, Tubulga, Berdu-Bek-Khan, Dzhuka-Mau, Kutlu-Bugush, Menzela, Sarapul -> Sarapol
+	link = { eu4 = 6451 eu4 = 6450 eu4 = 6426 eu4 = 6427 eu4 = 6457 eu4 = 6455 eu4 = 6454 eu4 = 6449 eu4 = 6456 eu4 = 6448 eu4 = 6452 eu4 = 6422 eu4 = 6423 eu4 = 6424 eu4 = 6425 v2 = 1031 } # Kalmiya, Alabygo, Kukmor, Siva, Byulyar, Kuyazlu, Tubulga, Berdu-Bek-Khan, Dzhuka-Mau, Kutlu-Bugush, Sarapul, Ägerce, Uva, Syumsi, Kumeny -> Sarapol
 	link = { eu4 = 6200 eu4 = 6197 v2 = 981 } # Elga, Velsk -> Arkhangelsk
-	link = { eu4 = 6208 eu4 = 6207 eu4 = 6508 eu4 = 6209 eu4 = 6212 eu4 = 6214 eu4 = 6213 v2 = 987 } # Ustyug, Posodinovec, Volmanga, Enangsk, Vysokaya, Nyuksenitsa, Dvor -> Ust Sysolsk
-	link = { eu4 = 6211 eu4 = 6506 eu4 = 6512 eu4 = 6511 eu4 = 6514 eu4 = 6517 eu4 = 6501 eu4 = 6500 eu4 = 6566 eu4 = 6505 eu4 = 6507 eu4 = 6509 eu4 = 6510 eu4 = 6513 eu4 = 6516 v2 = 990 } # Roslyatino, Kologriv, Viatka, Käkshär, Yaran, Uren, Vetluz, Borikha, Unzha, Ugory, Shekshema, Vokhma, Cherpaki, Shakhunya, Yur -> Kotlas
+	link = { eu4 = 6208 eu4 = 6207 eu4 = 6508 eu4 = 6209 eu4 = 6212 eu4 = 6214 eu4 = 6213 eu4 = 6211 v2 = 987 } # Ustyug, Posodinovec, Volmanga, Enangsk, Vysokaya, Nyuksenitsa, Dvor, Roslyatino -> Ust Sysolsk
+	link = { eu4 = 6506 eu4 = 6512 eu4 = 6511 eu4 = 6514 eu4 = 6517 eu4 = 6501 eu4 = 6500 eu4 = 6566 eu4 = 6505 eu4 = 6507 eu4 = 6509 eu4 = 6510 eu4 = 6513 eu4 = 6516 v2 = 990 } # Kologriv, Viatka, Käkshär, Yaran, Uren, Vetluz, Borikha, Unzha, Ugory, Shekshema, Vokhma, Cherpaki, Shakhunya, Yur -> Kotlas
 	link = { eu4 = 6185 eu4 = 6184 v2 = 1024 } # Sudislavl, Kineshma -> Galich
 	link = { eu4 = 6182 eu4 = 6183 v2 = 1023 } # Kostroma, Plyos -> Kostorma
 	link = { eu4 = 6189 eu4 = 6188 eu4 = 6195 eu4 = 6203 eu4 = 6206 eu4 = 6198 eu4 = 6199 eu4 = 6210 eu4 = 6504 eu4 = 6193 eu4 = 6194 eu4 = 6191 eu4 = 6190 eu4 = 6192 eu4 = 6196 v2 = 991 } # Vieksansuu, Shuya, Chukchovo, Kharovsk, Rassokhino, Verkhovazhye, Totma, Babushkina, Shablovo, Suday, Palkino, Merya, Soligalich, Chukhloma, Rodnaya -> Uglich
