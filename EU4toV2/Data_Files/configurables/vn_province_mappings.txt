@@ -144,23 +144,22 @@
 	link = { eu4 = 4923 eu4 = 5125 eu4 = 5124 eu4 = 5123 eu4 = 5122 v2 = 1732 } # Gharyan, Az-Zintan, Tiji, Nalut, Dehiba -> Ghayran
 	link = { eu4 = 4920 eu4 = 4921 v2 = 1731 } # Tarabulus, Tajura -> Tripoli
 	link = { eu4 = 4926 eu4 = 4927 eu4 = 4928 eu4 = 4924 eu4 = 4922 eu4 = 4598 eu4 = 4597 eu4 = 3161 eu4 = 4925 v2 = 1733 } # Misrata, Tawergha, Abu Qurayn, Khoms, Tarhunah, Sabratah, Zuwara, Suq Al-Juma, Zlitan -> Misratah
-	link = { eu4 = 5105 eu4 = 5919 eu4 = 5092 v2 = 1744 } # Sabha, Adri, Ghadames -> Sabha
+	link = { eu4 = 5105 eu4 = 5919 eu4 = 5092 v2 = 1744 v2 = 1741 } # MANY-TO-MANY: Sabha, Adri, Ghadames -> Sabha, Murzuk
 	link = { eu4 = 5126 eu4 = 5127 v2 = 1740 } # Sokna, Zella -> Waddan
 	link = { eu4 = 4929 eu4 = 4930 eu4 = 4931 eu4 = 4932 v2 = 1734 } # Sirte, Harawa, Bin Jawad, Ras Lanuf -> Sirt
 	link = { comment = "Egypt" }
 	link = { eu4 = 5081 eu4 = 5080 v2 = 1770 } # El-Gardaa, Juzur Tawilah -> Qusayr
 	link = { eu4 = 5078 eu4 = 5077 eu4 = 5076 eu4 = 5079 v2 = 1772 } # Ras Ghareb, Zaafarana, En El-Sokhna, Ras Shukeir -> Ras Gharib
-	link = { eu4 = 5129 eu4 = 5128 v2 = 2585 } # Jalu, Awjilah -> Al Jawf
 	link = { eu4 = 4937 eu4 = 4936 eu4 = 4935 eu4 = 4934 eu4 = 4933 v2 = 1735 } # Benghazi, Qaminis, Zuwetina, Al-Burayqah, Al-Uqaylah -> Benghazi
 	link = { eu4 = 4940 eu4 = 4941 eu4 = 4939 eu4 = 4938 v2 = 1736 } # Darnah, At-Timimi, Al-Bayda, Al-Marj -> Darna
 	link = { eu4 = 4942 eu4 = 4943 v2 = 1737 } # Tubruq, Al-Bardi -> Tobruk
-	link = { eu4 = 5090 eu4 = 5091 v2 = 1738 } # Al-Jaghbub, Mechili -> Al Jaghbub
+	link = { eu4 = 5090 eu4 = 5091 eu4 = 5129 eu4 = 5128 v2 = 1738 } # Al-Jaghbub, Mechili, Jalu, Awjilah -> Al Jaghbub
 	link = { eu4 = 5016 eu4 = 5017 v2 = 1753 } # Sidi Barrani, El-Rakham -> Sidi Barrani
 	link = { eu4 = 5089 eu4 = 5088 v2 = 1754 } # Siwa, Qara -> Siwa
 	link = { eu4 = 5086 v2 = 1760 } # Farafra -> Mut
 	link = { eu4 = 5087 v2 = 1759 } # El-Bahariya -> Bawiti
 	link = { eu4 = 5018 eu4 = 5019 eu4 = 5020 eu4 = 5021 v2 = 1752 } # Marsa Matruh, El-Dabaa, El-Alamein, El-Hamam -> Matruh
-	link = { eu4 = 5070 v2 = 2559 } # El-Badari -> Suhaj
+	link = { eu4 = 5070 v2 = 2559 v2 = 1769 } # El-Badari -> Suhaj, Qina
 	link = { eu4 = 5069 eu4 = 5068 eu4 = 5067 v2 = 1762 } # Asyut, Manfalut, El-Quseyya -> Asyut
 	link = { eu4 = 5065 eu4 = 5064 eu4 = 5063 eu4 = 5062 eu4 = 5066 v2 = 1764 } # Minya, Samalut, Bani Mazar, El-Fashn, Mallawi -> Minya
 	link = { eu4 = 5061 eu4 = 5058 eu4 = 5057 eu4 = 5056 v2 = 1763 } # Bani Suef, El-Shinnaweyya, Atfih, El-Ayyat -> Bani Suwayf

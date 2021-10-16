@@ -18,16 +18,16 @@ link = { name = "Canada" key = 277 provinces = { 13 14 15 16 17 19 20 21 22 24 2
 link = { name = "Newfoundland" key = 1724 provinces = { 74 75 } }
 
 // English Carribean / Central + South America to Plymouth
-link = { "British Carribean" key = 299 provinces = { 1979 203 2131 2190 2200 2217 2218 2219 2220 2224 2225 2226 2227 2229 2231 2232 2233 2237 2238 2239 2242 2243 2409 } }
+link = { name = "British Carribean" key = 299 provinces = { 1979 203 2131 2190 2200 2217 2218 2219 2220 2224 2225 2226 2227 2229 2231 2232 2233 2237 2238 2239 2242 2243 2409 } }
 
 // Pacific Islands to Lincoln
-link = { "British Pacifics" key = 290 provinces = { 2524 2508 } }
+link = { name = "British Pacifics" key = 290 provinces = { 2524 2508 } }
 
 // British SEA to London
-link = { "British SEA" key = 300 provinces = { 1320 1343 1344 1345 1384 1386 1388 } }
+link = { name = "British SEA" key = 300 provinces = { 1320 1343 1344 1345 1384 1386 1388 } }
 
 // African holdings to Cardigan
-link = { "British Africa" key = 274 provinces = { 1724 1785 1884 1908 2087 2089 2090 2091 2092 2096 2097 2125 2127 2129 2130 2132 } }
+link = { name = "British Africa" key = 274 provinces = { 1724 1785 1884 1908 2087 2089 2090 2091 2092 2096 2097 2125 2127 2129 2130 2132 } }
 
 ###### Denmark ######
 

@@ -453,6 +453,8 @@
     <ClCompile Include="Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="Source\Mappers\Unreleasables\Unreleasables.cpp" />
     <ClCompile Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\VNColonialMapper\VNColonialMapper.cpp" />
+    <ClCompile Include="Source\Mappers\VNColonialMapper\VNColonialMapping.cpp" />
     <ClCompile Include="Source\Mappers\WarGoalMapper\WarGoalMapper.cpp" />
     <ClCompile Include="Source\V2World\Army\Army.cpp" />
     <ClCompile Include="Source\V2World\Army\Regiment.cpp" />
@@ -656,6 +658,8 @@
     <ClInclude Include="Source\Mappers\UnitTypes\UnitTypeMapper.h" />
     <ClInclude Include="Source\Mappers\Unreleasables\Unreleasables.h" />
     <ClInclude Include="Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.h" />
+    <ClInclude Include="Source\Mappers\VNColonialMapper\VNColonialMapper.h" />
+    <ClInclude Include="Source\Mappers\VNColonialMapper\VNColonialMapping.h" />
     <ClInclude Include="Source\Mappers\WarGoalMapper\WarGoalMapper.h" />
     <ClInclude Include="Source\V2World\Army\Army.h" />
     <ClInclude Include="Source\V2World\Army\Regiment.h" />

@@ -304,6 +304,8 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitType.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\UnitTypes\UnitTypeMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\V2ProvinceRegionsMapper\V2ProvinceRegionsMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\VNColonialMapper\VNColonialMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\VNColonialMapper\VNColonialMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Localisation\Localisation.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Output\outCultureGroups.cpp" />
     <ClCompile Include="..\EU4toV2\Source\V2World\Output\outParty.cpp" />
@@ -427,6 +429,8 @@
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeMapperTests.cpp" />
     <ClCompile Include="MapperTests\UnitTypeMapper\UnitTypeTests.cpp" />
     <ClCompile Include="MapperTests\V2ProvinceRegionsMapper\V2ProvinceRegionsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\VNColonialMapper\VNColonialMapperTests.cpp" />
+    <ClCompile Include="MapperTests\VNColonialMapper\VNColonialMappingTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\commonItems\ConvenientParser.h" />
