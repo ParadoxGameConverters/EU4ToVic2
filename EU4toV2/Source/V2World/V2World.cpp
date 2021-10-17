@@ -1015,7 +1015,7 @@ void V2::World::convertPrestige()
 		if (srcCountry)
 			score = srcCountry->getScore();
 		if (highestScore > 0)
-			prestige = score / highestScore * 100.0;
+			prestige = score / highestScore * 50.0;
 		country.second->addPrestige(prestige);
 	}
 }

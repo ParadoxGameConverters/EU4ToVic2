@@ -81,49 +81,41 @@ political_decisions = {
 			}
 		}
 		allow = {
-			is_greater_power = yes
-			war = no
 			OR = {
 				AND = {
-					prestige = 65
 					has_country_flag = emperor_hre
+					is_secondary_power = yes
 				}
-				AND = {
-					prestige = 45
-					has_country_flag = union_is_hre
-					nationalism_n_imperialism = 1
+				is_greater_power = yes
+			}			
+			war = no
+			prestige = 85
+			has_country_flag = emperor_hre
+			NOT = { nationalism_n_imperialism = 1 }
+			HLR = {
+				all_core = {
+					OR = {
+						owned_by = THIS # Owned by me
+						owner = { in_sphere = THIS } # Owned my my sphereling
+						owner = {
+							has_country_flag = same_faith_as_emperor # Owned by a friendly catholic
+							relation = { who = THIS value = 50 }
+						}
+						owner = { # Owned by outside forces we cannot control until we unite
+							NOT = {
+								has_country_flag = member_hre
+							}
+						}
+						owner = { # Owned by filthy heretics which are irrelevant
+							has_country_flag = diff_faith_than_emperor
+							is_secondary_power = no
+							is_greater_power = no
+						}
+					}
 				}
 			}
 		}
 			
-#			HLR = {
-#				all_core = {
-#					OR = {
-#						owned_by = THIS
-#						owner = { in_sphere = THIS }
-#					}
-#				}
-#			}
-#							NOT = { 
-#								# Stuff like France - outside owners, we must control it all.
-#								has_country_flag = emperor_hre
-#								has_country_flag = diff_faith_than_emperor
-#								# No core must be held by HRE-based great powers of different religion
-#								is_greater_power = yes 
-#							}
-#							AND = { 
-#								# For countries of same faith, they must be in sphere or, if vassals, have good relations with us.
-#								has_country_flag = same_faith_as_emperor
-#								OR = {
-#									in_sphere = THIS
-#									AND = {
-#										is_vassal = yes
-#										relation = { who = THIS value = 50 }
-#									}
-#								}
-#							}
-#						}
-
 		effect = {
 			change_tag = HLR
 			clr_country_flag = emperor_hre
