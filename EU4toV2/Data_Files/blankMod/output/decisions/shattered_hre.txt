@@ -55,6 +55,7 @@ political_decisions = {
 		news_desc_short = "hre_NEWS_SHORT"
 		potential = {
 			capital_scope = { is_core = HLR }
+			NOT = { nationalism_n_imperialism = 1 }
 			OR = {
 				AND = {
 					NOT = { has_global_flag = liberal_revolutions_should_now_fire }
