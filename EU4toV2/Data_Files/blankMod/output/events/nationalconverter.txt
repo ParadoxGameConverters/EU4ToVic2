@@ -25,6 +25,7 @@ country_event = {
 		add_accepted_culture = south_german
 	}
 }
+
 country_event = {
 	id = 601998
 	title = EVTNAMEITA
@@ -221,7 +222,7 @@ country_event = {
 		has_recently_lost_war = no
 		nationalism_n_imperialism = 1
 		primary_culture = swiss
-		NOT = { tag = HRE }
+		NOT = { tag = HLR }
 		NOT = { exists = SWI } #Cultural country
 		SWI = {
 			all_core = {

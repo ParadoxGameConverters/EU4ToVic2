@@ -2924,15 +2924,15 @@ political_decisions = {
 				AND = {
 					tag = BYZ
 					NOT = { exists = LTN }
-					NOT = { exists = HRE }
+					NOT = { exists = HLR }
 				}
 				AND = {
 					tag = LTN
 					NOT = { exists = BYZ }
-					NOT = { exists = HRE }
+					NOT = { exists = HLR }
 				}
 				AND = {
-					tag = HRE
+					tag = HLR
 					NOT = { exists = LTN }
 					NOT = { exists = BYZ }
 				}
@@ -3001,7 +3001,7 @@ political_decisions = {
 				add_core = SPQ
 				remove_core = BYZ
 				remove_core = LTN
-				remove_core = HRE
+				remove_core = HLR
 				remove_core = ITA
 				remove_core = ITP
 				remove_core = JER

@@ -98,7 +98,7 @@ political_decisions = {
 				has_country_flag = post_colonial_country
 				exists = SGF
 				exists = GER
-				tag = HRE
+				tag = HLR
 				#tag = DNB
 				AND = {
 					tag = AUS
@@ -392,7 +392,7 @@ political_decisions = {
 				has_country_flag = union_is_hre
 				exists = GER
 				exists = NGF
-				tag = HRE
+				tag = HLR
 			}
 		}	
 		allow = {
@@ -485,10 +485,9 @@ political_decisions = {
 				#tag = FSA
 				tag = CSA
 				tag = MGL
-				tag = HRE
+				tag = HLR
 				tag = SPQ
 				tag = SLA
-				tag = HRE
 				tag = WSF
 				tag = ENS
 			}
@@ -568,7 +567,7 @@ political_decisions = {
 			OR = {
 				tag = NGF
 				tag = SGF
-				tag = HRE
+				tag = HLR
 			}
 			NOT = { exists = GER }
 			NOT = { has_country_flag = union_is_hre }
@@ -1173,7 +1172,7 @@ political_decisions = {
 				tag = GER
 				tag = NGF
 				AND = {
-					tag = HRE
+					tag = HLR
 					is_culture_group = GER
 				}
 			}
@@ -1208,7 +1207,7 @@ political_decisions = {
 		potential = {
 			tag = FRA
 			OR = {
-				tag = HRE
+				tag = HLR
 				is_culture_group = FRA
 			}
 			has_global_flag = germany_has_renamed_elsass
@@ -1653,10 +1652,9 @@ unite_moldavia_wallachia = {
 				#tag = FSA
 				tag = CSA
 				tag = MGL
-				tag = HRE
+				tag = HLR
 				tag = SPQ
 				tag = SLA
-				tag = HRE
 				tag = SLV
 				tag = WSF
 			}

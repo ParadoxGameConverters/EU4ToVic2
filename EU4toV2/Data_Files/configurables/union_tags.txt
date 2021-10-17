@@ -2,7 +2,7 @@
 
 union_tags = { 
 	GER # Germany
-	HRE # The Holy Roman Empire
+	HLR # The Holy Roman Empire
 	SCA # Scandinavia
 	ITA # Italy
 	ITP # Papal Italy

@@ -134,7 +134,7 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 				}
 				else
 				{
-					addCore("HRE");
+					addCore("HLR");
 				}
 			}
 		}

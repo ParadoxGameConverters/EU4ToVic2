@@ -2304,8 +2304,8 @@ void V2::World::processShatteredHre(const std::optional<std::string>& eu4HreTag)
 	if (!v2HreTag)
 		return;
 
-	decisions["shattered_hre.txt"] = customizeFile("blankMod/output/decisions/shattered_hre.txt", std::regex("\\bHRE\\b"), *v2HreTag);
-	events["shattered_hre.txt"] = customizeFile("blankMod/output/events/shattered_hre.txt", std::regex("\\bHRE\\b"), *v2HreTag);
+	decisions["shattered_hre.txt"] = customizeFile("blankMod/output/decisions/shattered_hre.txt", std::regex("\\bHLR\\b"), *v2HreTag);
+	events["shattered_hre.txt"] = customizeFile("blankMod/output/events/shattered_hre.txt", std::regex("\\bHLR\\b"), *v2HreTag);
 
 	const auto& tagAdj = getCountry(*v2HreTag)->getLocalisation().getLocalAdjective();
 	localisations["0_shattered_hre.csv"] = customizeFile("blankMod/output/localisation/0_shattered_hre.csv", std::regex("\\bHoly Roman\\b"), tagAdj);
