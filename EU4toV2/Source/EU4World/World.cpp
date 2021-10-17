@@ -1,4 +1,5 @@
 #include "World.h"
+#include "AgreementMapper/AgreementMapper.h"
 #include "CommonFunctions.h"
 #include "CommonRegexes.h"
 #include "Configuration.h"
@@ -69,6 +70,8 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commo
 	cultureGroupsMapper->initForEU4();
 	buildingTypes = std::make_unique<mappers::Buildings>();
 	unitTypeMapper.initUnitTypeMapper();
+	if (theConfiguration.isVN())
+		theConfiguration.setLastEU4Date(date("1836.1.1"));
 	Log(LogLevel::Progress) << "16 %";
 
 	Log(LogLevel::Info) << "*** Building world ***";
@@ -212,7 +215,7 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
 		theConfiguration.setMods(modLoader.getMods());
 	});
-	registerKeyword("mods_enabled_names", [](std::istream& theStream) {
+	registerKeyword("mods_enabled_names", [this](std::istream& theStream) {
 		// In use since 1.31.
 		Log(LogLevel::Info) << "-> Detecting used mods.";
 		const auto& modBlobs = commonItems::blobList(theStream);
@@ -228,6 +231,35 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		commonItems::ModLoader modLoader;
 		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
 		theConfiguration.setMods(modLoader.getMods());
+		for (const auto& mod: theConfiguration.getMods())
+		{
+			if (mod.name == "Voltaire's Nightmare")
+			{
+				Log(LogLevel::Notice) << "Voltaire's Nightmare detected. Enabling VN support.";
+				theConfiguration.setVN();
+				if (!theConfiguration.isHpmEnabled())
+				{
+					Log(LogLevel::Notice) << "VN support requires HPM. Enabling HPM automatically.";
+					theConfiguration.setHybridMod(Configuration::HYBRIDMOD::HPM);
+					if (theConfiguration.isHPMVerified())
+					{
+						theConfiguration.swapInstallationPathToHPM();
+					}
+					else
+					{
+						Log(LogLevel::Error) << "Voltaire's Nightmare uses HPM hybridization.";
+						throw std::runtime_error("HPM installation cannot be found in " + theConfiguration.getVic2Path() + "/mod/HPM");
+					}
+				}
+				if (theConfiguration.getEuroCentrism() != Configuration::EUROCENTRISM::EuroCentric)
+				{
+					Log(LogLevel::Notice) << "VN is auto-enabling Full Colony Annexation and Eurocentric conversion.";
+					theConfiguration.setEurocentrism(Configuration::EUROCENTRISM::EuroCentric);
+				}
+				if (*version < GameVersion("1.31.5"))
+					throw std::runtime_error("VN support requires 1.31 saves or higher.");
+			}
+		}
 	});
 	registerKeyword("revolution_target", [this](std::istream& theStream) {
 		revolutionTargetString = commonItems::getString(theStream);
@@ -555,7 +587,6 @@ void EU4::World::loadEU4RegionsOldVersion()
 	regions = std::make_unique<Regions>(installedAreas);
 }
 
-
 void EU4::World::loadEU4RegionsNewVersion()
 {
 	auto areaFilename = theConfiguration.getEU4Path() + "/map/area.txt";
@@ -697,6 +728,25 @@ void EU4::World::mergeNations()
 				master->eatCountry(slave);
 			}
 		}
+
+	// We must also merge all colonial nations.
+	if (theConfiguration.isVN())
+	{
+		mappers::AgreementMapper agreementMapper;
+		for (const auto& agreement: diplomacy)
+		{
+			if (agreementMapper.isAgreementInColonies(agreement.getAgreementType()))
+			{
+				const auto& overlord = getCountry(agreement.getOriginTag());
+				if (!overlord)
+					continue;
+				const auto& colony = getCountry(agreement.getTargetTag());
+				if (!colony)
+					continue;
+				overlord->eatCountry(colony);
+			}
+		}
+	}
 }
 
 void EU4::World::uniteJapan()

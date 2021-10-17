@@ -84,7 +84,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Progress) << "58 %";
 
 	Log(LogLevel::Info) << "-> Converting Technology Levels";
-	convertTechs(sourceWorld);
+	convertTechs();
 	Log(LogLevel::Progress) << "59 %";
 
 	Log(LogLevel::Info) << "-> Distributing Factories";
@@ -94,6 +94,12 @@ V2::World::World(const EU4::World& sourceWorld,
 	Log(LogLevel::Info) << "-> Distributing Pops";
 	setupPops(sourceWorld);
 	Log(LogLevel::Progress) << "61 %";
+
+	if (theConfiguration.isVN())
+	{
+		Log(LogLevel::Info) << "-> Assigning Colonies to VN Countries";
+		distributeVNColonies();
+	}
 
 	Log(LogLevel::Info) << "-> Releasing Invasive Fauna Into Colonies";
 	modifyPrimaryAndAcceptedCultures();
@@ -156,6 +162,70 @@ V2::World::World(const EU4::World& sourceWorld,
 	output(converterVersion);
 
 	Log(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
+}
+
+void V2::World::distributeVNColonies()
+{
+	// We're distributing all out of scope provinces that relate to countries within scope to whatever tag owns key provinces for each colony
+	// Key provinces are all within scope, ie. London for British India
+
+	for (const auto& colony: vnColonialMapper.getVNColonies())
+	{
+		if (!colony.getKeyProvince())
+		{
+			Log(LogLevel::Warning) << "VN Colony " << colony.getName() << " has no key province defined!";
+			continue; // Mapping error.
+		}
+		const auto& keyProvince = provinces.find(colony.getKeyProvince());
+		if (keyProvince == provinces.end())
+		{
+			Log(LogLevel::Warning) << "VN Colony " << colony.getName() << " has invalid key province defined!";
+			continue; // Mapping error.
+		}
+		const auto& keyProvinceOwner = keyProvince->second->getOwner();
+		if (keyProvinceOwner.empty())
+		{
+			Log(LogLevel::Warning) << "VN Colony " << colony.getName() << " has no key province owner!";
+			continue; // Save error.
+		}
+		const auto& overlordCountry = countries.find(keyProvinceOwner);
+		if (overlordCountry == countries.end())
+		{
+			Log(LogLevel::Warning) << "VN Colony " << colony.getName() << " has uninitialized key province owner!";
+			continue; // God knows what went wrong there.
+		}
+
+		bool assignmentRun = false;
+		// Let's reassign the provinces.
+		for (const auto& provinceID: colony.getProvinces())
+		{
+			const auto& province = provinces.find(provinceID);
+			if (province == provinces.end())
+			{
+				Log(LogLevel::Warning) << "VN Colony " << colony.getName() << " province " << provinceID << " doesn't exist!";
+				continue;
+			}
+
+			// Do we even need to do anything?
+			if (province->second->getOwner() == keyProvinceOwner)
+				continue; // We're good.
+
+			// Try to remove it from old owner if any.
+			if (!province->second->getOwner().empty())
+			{
+				const auto& oldOwner = countries.find(province->second->getOwner());
+				if (oldOwner != countries.end())
+					oldOwner->second->removeProvinceID(province->first);
+			}
+
+			province->second->setOwner(keyProvinceOwner);
+			province->second->setController(keyProvinceOwner);
+			overlordCountry->second->addProvince(province->second);
+			assignmentRun = true;
+		}
+		if (assignmentRun)
+			Log(LogLevel::Info) << "-- VN colony " << colony.getName() << " reassigned to " << keyProvinceOwner;
+	}
 }
 
 void V2::World::localizeProvinces()
@@ -945,7 +1015,7 @@ void V2::World::convertPrestige()
 		if (srcCountry)
 			score = srcCountry->getScore();
 		if (highestScore > 0)
-			prestige = score / highestScore * 100.0;
+			prestige = score / highestScore * 50.0;
 		country.second->addPrestige(prestige);
 	}
 }
@@ -991,6 +1061,24 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 	for (const auto& province: provinces)
 	{
 		auto eu4ProvinceNumbers = provinceMapper.getEU4ProvinceNumbers(province.first);
+
+		// This is an override for VN. Province logic there for provinces out of scope (and without mappings) is different.
+		// We'll be using default, historical HPM data for those. There will be no determining province ownership or similar.
+		// This does assume all provinces *inside* scope are 100% mapped and no errors.
+		if (eu4ProvinceNumbers.empty() && theConfiguration.isVN())
+		{
+			const auto& possibleOwner = province.second->getOwner();
+			if (!possibleOwner.empty())
+			{
+				// do we have a tag that matches this?
+				const auto& ownerCountry = countries.find(possibleOwner);
+				if (ownerCountry != countries.end())
+					ownerCountry->second->addProvince(province.second);
+				// if not, it's historically uncolonized and we need not bother.
+			}
+			continue; // Forget processing, move on to next province.
+		}
+
 		if (eu4ProvinceNumbers.empty())
 		{
 			Log(LogLevel::Warning) << "No mappings found for V2 province " << province.first << " (" << province.second->getName() << ")";
@@ -1097,7 +1185,8 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::set<
 {
 	// determine ownership by province development.
 	std::map<std::string, std::vector<std::shared_ptr<EU4::Province>>> theClaims; // tag, claimed provinces
-	std::map<std::string, std::pair<int, int>> theShares;									// tag, development/tax
+	std::map<std::string, int> development;													// tag, development
+	std::map<std::string, int> tax;																// tag, tax
 
 	for (auto eu4ProvinceID: eu4ProvinceNumbers)
 	{
@@ -1106,39 +1195,43 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::set<
 		if (ownerTag.empty())
 			continue; // Don't touch un-colonized provinces.
 		theClaims[ownerTag].push_back(eu4province);
-		theShares[ownerTag] = std::make_pair(lround(eu4province->getProvinceWeight()), lround(eu4province->getBaseTax()));
+		if (development.contains(ownerTag))
+			development[ownerTag] += lround(eu4province->getProvinceWeight());
+		else
+			development.emplace(ownerTag, lround(eu4province->getProvinceWeight()));
+		if (tax.contains(ownerTag))
+			tax[ownerTag] += lround(eu4province->getBaseTax());
+		else
+			tax.emplace(ownerTag, lround(eu4province->getBaseTax()));
 	}
 	// Let's see who the lucky winner is.
 	std::string winner;
 	auto maxDev = 0;
 	auto maxTax = 0;
-	for (const auto& share: theShares)
+	for (const auto& [tag, share]: development)
 	{
-		if (share.second.first > maxDev)
+		if (share > maxDev)
 		{
-			winner = share.first;
-			maxDev = share.second.first;
-			maxTax = share.second.second;
+			winner = tag;
+			maxDev = share;
+			maxTax = tax[tag];
 		}
-		if (share.second.first == maxDev && share.first != winner)
+		if (share == maxDev && tag != winner)
 		{
 			// We have a tie
-			if (share.second.second > maxTax)
+			if (tax[tag] > maxTax)
 			{
-				winner = share.first;
-				maxDev = share.second.first;
-				maxTax = share.second.second;
+				winner = tag;
+				maxTax = tax[tag];
 			}
-			if (share.second.second == maxTax)
+			else if (tax[tag] == maxTax)
 			{
 				// Shit. Check for core?
-				for (const auto& claim: theClaims[share.first])
+				for (const auto& claim: theClaims[tag])
 					if (!claim->isTerritorialCore())
 					{
 						// It's a full core of someone. Might as well take it. Will not resolve further ties, thank you.
-						winner = share.first;
-						maxDev = share.second.first;
-						maxTax = share.second.second;
+						winner = tag;
 					}
 			}
 		}
@@ -1287,7 +1380,7 @@ void V2::World::convertUncivReforms(const EU4::World& sourceWorld, const mappers
 	}
 }
 
-void V2::World::convertTechs(const EU4::World& sourceWorld)
+void V2::World::convertTechs()
 {
 	const helpers::TechValues techValues(countries);
 
@@ -1311,14 +1404,25 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 	// determine average production tech
 	double admMean = 0;
 	auto num = 1;
+	double topInstitutions = 0;
+	double provinceMean = 0;
+	std::map<std::string, double> institutions; // tag/institutions.
+
 	for (const auto& country: sourceWorld.getCountries())
 	{
 		if (country.second->getProvinces().empty())
 			continue;
 
 		const auto admTech = country.second->getAdmTech();
+		const auto provinceTotal = country.second->getProvinces().size();
 		admMean += (admTech - admMean) / num;
+		provinceMean += (static_cast<double>(provinceTotal) - provinceMean) / num;
 		++num;
+
+		const auto currInstitutions = country.second->numEmbracedInstitutions();
+		institutions.emplace(country.first, static_cast<double>(currInstitutions));
+		if (currInstitutions > topInstitutions)
+			topInstitutions = currInstitutions;
 	}
 
 	// give all extant civilized nations an industrial score
@@ -1338,7 +1442,13 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 		const auto manuCount = sourceCountry->getManufactoryCount();
 		const auto manuWeight = pow(manuCount, 0.75) + log1p(static_cast<double>(pow(manuCount, 2)) / 5.0);
 		const auto manuDensity = sourceCountry->getManufactoryDensity();
-		auto industryWeight = (sourceCountry->getAdmTech() - admMean) * 5 + manuWeight * manuDensity;
+
+		auto industryWeight = (sourceCountry->getAdmTech() - admMean) * 5; // above-average admin
+		industryWeight += manuWeight * manuDensity;								 // many and dense manufactories
+		if (institutions.contains(country.first))
+			industryWeight += (institutions[country.first] - topInstitutions) * 10.0;								// not lagging in institutions
+		industryWeight += (static_cast<double>(country.second->getProvinces().size()) - provinceMean) / 5; // above-average country size.
+
 		// having one manufactory and average tech is not enough; you must have more than one, or above-average tech
 		if (industryWeight > 1.0)
 		{
@@ -1827,14 +1937,32 @@ void V2::World::outputProvinces() const
 		if (!commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces/" + path))
 			throw std::runtime_error("Could not create directory: output/" + theConfiguration.getOutputName() + "/history/provinces/" + path);
 
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename);
-		if (!output.is_open())
+		// VN override. Can we copy over original province files? This is relevant out of scope where those provinces carry factories we know nothing about.
+		bool fileDone = false;
+		if (theConfiguration.isVN())
 		{
-			throw std::runtime_error("Could not create province history file output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename +
-											 " - " + commonItems::GetLastErrorString());
+			if (provinceMapper.getEU4ProvinceNumbers(province.first).empty() && !vnColonialMapper.isProvinceVNColonial(province.first))
+			{
+				auto filePath = theConfiguration.getVic2Path() + "/history/provinces/" + filename;
+				if (commonItems::DoesFileExist(filePath))
+				{
+					commonItems::TryCopyFile(filePath, "output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename);
+					fileDone = true;
+				}
+			}
 		}
-		output << *province.second;
-		output.close();
+
+		if (!fileDone)
+		{
+			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename);
+			if (!output.is_open())
+			{
+				throw std::runtime_error("Could not create province history file output/" + theConfiguration.getOutputName() + "/history/provinces/" + filename +
+												 " - " + commonItems::GetLastErrorString());
+			}
+			output << *province.second;
+			output.close();
+		}
 	}
 }
 
@@ -1842,8 +1970,45 @@ void V2::World::outputCountries() const
 {
 	for (const auto& country: countries)
 	{
+		// VN override: for extant countries outside VN scope we'll not be outputting anything, but copying over HPM defaults.
+		// since success isn't guaranteed, we'll retain option for manual dump.
+
+		bool commonsDone = false;
+		bool historyDone = false;
+		bool oobDone = false;
+
+		if (theConfiguration.isVN())
+		{
+			if (country.second->isCountryOutsideVNScope(provinceMapper))
+			{
+				auto filePath = theConfiguration.getVic2Path() + "/history/countries/" + clipCountryFileName(country.second->getFilename());
+				auto outPath = "output/" + theConfiguration.getOutputName() + "/history/countries/" + clipCountryFileName(country.second->getFilename());
+				if (commonItems::DoesFileExist(filePath))
+				{
+					commonItems::TryCopyFile(filePath, outPath);
+					commonsDone = true;
+				}
+
+				filePath = theConfiguration.getVic2Path() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile());
+				outPath = "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile());
+				if (commonItems::DoesFileExist(filePath))
+				{
+					commonItems::TryCopyFile(filePath, outPath);
+					historyDone = true;
+				}
+
+				filePath = theConfiguration.getVic2Path() + "/history/units/" + country.first + "_OOB.txt";
+				outPath = "output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt";
+				if (commonItems::DoesFileExist(filePath))
+				{
+					commonItems::TryCopyFile(filePath, outPath);
+					oobDone = true;
+				}
+			}
+		}
+
 		// Country file
-		if (!country.second->isDynamicCountry())
+		if (!country.second->isDynamicCountry() && !historyDone)
 		{
 			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/countries/" + clipCountryFileName(country.second->getFilename()));
 			if (!output.is_open())
@@ -1851,18 +2016,28 @@ void V2::World::outputCountries() const
 			output << *country.second;
 			output.close();
 		}
+
 		// commons file
-		std::ofstream commons("output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
-		if (!commons.is_open())
-			throw std::runtime_error(
-				 "Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
-		country.second->outputCommons(commons);
-		commons.close();
+		if (!commonsDone)
+		{
+			std::ofstream commons(
+				 "output/" + theConfiguration.getOutputName() + "/common/countries/" + clipCountryFileName(country.second->getCommonCountryFile()));
+			if (!commons.is_open())
+				throw std::runtime_error("Could not open output/" + theConfiguration.getOutputName() + "/common/countries/" +
+												 clipCountryFileName(country.second->getCommonCountryFile()));
+			country.second->outputCommons(commons);
+			commons.close();
+		}
+
 		// OOB
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt");
-		if (!output.is_open())
-			throw std::runtime_error("Could not create OOB file " + country.first + "_OOB.txt");
-		country.second->outputOOB(output);
+		if (!oobDone)
+		{
+			std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/units/" + country.first + "_OOB.txt");
+			if (!output.is_open())
+				throw std::runtime_error("Could not create OOB file " + country.first + "_OOB.txt");
+			country.second->outputOOB(output);
+			output.close();
+		}
 	}
 }
 
@@ -2129,8 +2304,8 @@ void V2::World::processShatteredHre(const std::optional<std::string>& eu4HreTag)
 	if (!v2HreTag)
 		return;
 
-	decisions["shattered_hre.txt"] = customizeFile("blankMod/output/decisions/shattered_hre.txt", std::regex("\\bHRE\\b"), *v2HreTag);
-	events["shattered_hre.txt"] = customizeFile("blankMod/output/events/shattered_hre.txt", std::regex("\\bHRE\\b"), *v2HreTag);
+	decisions["shattered_hre.txt"] = customizeFile("blankMod/output/decisions/shattered_hre.txt", std::regex("\\bHLR\\b"), *v2HreTag);
+	events["shattered_hre.txt"] = customizeFile("blankMod/output/events/shattered_hre.txt", std::regex("\\bHLR\\b"), *v2HreTag);
 
 	const auto& tagAdj = getCountry(*v2HreTag)->getLocalisation().getLocalAdjective();
 	localisations["0_shattered_hre.csv"] = customizeFile("blankMod/output/localisation/0_shattered_hre.csv", std::regex("\\bHoly Roman\\b"), tagAdj);

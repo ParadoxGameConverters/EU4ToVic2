@@ -767,6 +767,18 @@
     <ClCompile Include="MapperTests\ProvinceRenamings\ProvinceRenamingsTests.cpp">
       <Filter>MapperTests\ProvinceRenamings</Filter>
     </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\VNColonialMapper\VNColonialMapper.cpp">
+      <Filter>ConverterFiles\Mappers\VNColonialMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\VNColonialMapper\VNColonialMapping.cpp">
+      <Filter>ConverterFiles\Mappers\VNColonialMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\VNColonialMapper\VNColonialMapperTests.cpp">
+      <Filter>MapperTests\VNColonialMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\VNColonialMapper\VNColonialMappingTests.cpp">
+      <Filter>MapperTests\VNColonialMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -1125,6 +1137,12 @@
     </Filter>
     <Filter Include="MapperTests\ProvinceRenamings">
       <UniqueIdentifier>{4b9b72ec-8ed8-4238-9737-7462cb3d881d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\VNColonialMapper">
+      <UniqueIdentifier>{dbbe61c6-cdb1-4e2f-b328-3b36b85d6e4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\VNColonialMapper">
+      <UniqueIdentifier>{d1e0eb22-fcd4-42b1-a6db-4a2220f167f9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

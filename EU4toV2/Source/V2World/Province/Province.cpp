@@ -134,7 +134,7 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 				}
 				else
 				{
-					addCore("HRE");
+					addCore("HLR");
 				}
 			}
 		}
@@ -462,6 +462,13 @@ void V2::Province::doCreatePops(const double popWeightRatio,
 	 const CIV_ALGORITHM popConversionAlgorithm,
 	 const mappers::ProvinceMapper& provinceMapper)
 {
+	// Override for VN and provinces that don't exist in the mapper, we are moving vanilla pops into actual pops.
+	if (theConfiguration.isVN() && provinceMapper.getEU4ProvinceNumbers(provinceID).empty())
+	{
+		pops = vanillaPops;
+		return;
+	}
+
 	// convert pops
 	for (const auto& demographic: demographics)
 	{

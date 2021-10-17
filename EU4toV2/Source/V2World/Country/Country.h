@@ -117,6 +117,11 @@ class Country
 	void addPolicy(const std::string& partyName, const std::string& policy, const std::string& position);
 	void setHpmNationalValues();
 	void setHPMFlags();
+	void removeProvinceID(const int provinceID)
+	{
+		if (provinces.contains(provinceID))
+			provinces.erase(provinceID);
+	}
 
 	[[nodiscard]] std::string getColonialRegion() const;
 	[[nodiscard]] virtual std::shared_ptr<EU4::Country> getSourceCountry() const { return srcCountry; }
@@ -145,6 +150,7 @@ class Country
 	[[nodiscard]] bool isEmperorHRE() const { return details.holyRomanEmperor; }
 	[[nodiscard]] bool isMemberHRE() const { return details.inHRE; }
 	[[nodiscard]] const auto& getParties() const { return details.parties; }
+	[[nodiscard]] bool isCountryOutsideVNScope(const mappers::ProvinceMapper& provinceMapper) const;
 
 	friend std::ostream& operator<<(std::ostream& output, const Country& country);
 	void outputCommons(std::ostream& output);

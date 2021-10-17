@@ -255,7 +255,7 @@ link = { tag = HLL civilized = yes capital = 375 }
 link = { tag = HNN capital = 1524 }
 link = { tag = HNS capital = 530 government = democracy civilized = yes }
 link = { tag = HOH capital = 594 civilized = yes }
-link = { tag = HRE government = prussian_constitutionalism civilized = yes capital = 576 }
+link = { tag = HLR government = prussian_constitutionalism civilized = yes capital = 576 }
 link = { tag = HSC primary_culture = pictish civilized = yes capital = 266 }
 link = { tag = HUI capital = 1474 }
 link = { tag = HUR capital = 46 }

@@ -595,6 +595,12 @@
     <ClCompile Include="Source\V2World\Output\outUnitNames.cpp">
       <Filter>Vic2World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\VNColonialMapper\VNColonialMapper.cpp">
+      <Filter>Mappers\VNColonialMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\VNColonialMapper\VNColonialMapping.cpp">
+      <Filter>Mappers\VNColonialMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1145,6 +1151,12 @@
     <ClInclude Include="Source\V2World\Country\UnitNames.h">
       <Filter>Vic2World\Country</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\VNColonialMapper\VNColonialMapper.h">
+      <Filter>Mappers\VNColonialMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\VNColonialMapper\VNColonialMapping.h">
+      <Filter>Mappers\VNColonialMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1398,6 +1410,9 @@
     </Filter>
     <Filter Include="Mappers\ProvinceRenamings">
       <UniqueIdentifier>{56ba678d-2128-487e-a45f-7ff99d082b0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\VNColonialMapper">
+      <UniqueIdentifier>{a69b9d64-2b47-4640-903c-46721db3db7d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

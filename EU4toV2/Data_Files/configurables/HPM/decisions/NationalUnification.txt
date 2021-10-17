@@ -427,10 +427,9 @@ political_decisions = {
 				#tag = FSA
 				tag = CSA
 				tag = MGL
-				tag = HRE
+				tag = HLR
 				tag = SPQ
 				tag = SLA
-				tag = HRE
 				tag = WSF
 				tag = ENS
 			}

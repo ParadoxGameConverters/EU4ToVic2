@@ -106,14 +106,28 @@ void Configuration::instantiate(std::istream& theStream,
 	parseStream(theStream);
 	clearRegisteredKeywords();
 	setOutputName();
+	verifyHPMInstallPath(DoesFolderExist);
+	Log(LogLevel::Progress) << "3 %";
+}
+
+void Configuration::verifyHPMInstallPath(bool (*DoesFolderExist)(const std::string& path2))
+{
+	if (DoesFolderExist(Vic2Path + "/mod/HPM"))
+		HPMverified = true;
+
 	if (isHpmEnabled())
 	{
-		if (!DoesFolderExist(Vic2Path + "/mod/HPM"))
-			throw std::runtime_error(Vic2Path + "/mod/HPM does not exist!");
-		VanillaVic2Path = Vic2Path; // necessary for importing province localisations
-		Vic2Path += "/mod/HPM";
+		if (HPMverified)
+			swapInstallationPathToHPM();
+		else
+			throw std::runtime_error("HPM installation cannot be found in " + Vic2Path + "/mod/HPM");
 	}
-	Log(LogLevel::Progress) << "3 %";
+}
+
+void Configuration::swapInstallationPathToHPM()
+{
+	VanillaVic2Path = Vic2Path; // necessary for importing province localisations
+	Vic2Path += "/mod/HPM";
 }
 
 void Configuration::verifyEU4Path(const std::string& path, bool (*DoesFolderExist)(const std::string& path2), bool (*doesFileExist)(const std::string& path3))

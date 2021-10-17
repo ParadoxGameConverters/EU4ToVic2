@@ -1,7 +1,7 @@
 # Version info
 
-version = "1.0S"
-name = "Stettin"
+version = "1.0T"
+name = "Teutonic"
 source = "EU4"
 minSource = "1.0"
 maxSource = "1.31"

@@ -295,6 +295,7 @@ link = { eu4 = GER v2 = GER } # Germany
 link = { eu4 = k_germany v2 = GER } # Germany
 link = { eu4 = e_germany v2 = GER } # Germany
 link = { eu4 = HAB v2 = AUS } # Austria
+link = { eu4 = EAH v2 = AUS } # Austria / Empire Austria-Hungary
 link = { eu4 = k_austria v2 = AUS } # Austria
 link = { eu4 = c_osterreich v2 = AUS } # Austria
 link = { eu4 = k_eastern_marches v2 = AUS } # Eastern Marches => Austria
@@ -302,8 +303,9 @@ link = { eu4 = HAM v2 = HAM } # Hamburg
 link = { eu4 = c_hamburg v2 = HAM } # Hamburg
 link = { eu4 = HAN v2 = HAN } # Hannover
 link = { eu4 = HES v2 = HES } # Hesse(-Darmstadt)
-link = { eu4 = HLR v2 = HRE } # Holy Roman Empire
-link = { eu4 = e_hre v2 = HRE } # Holy Roman Empire
+link = { eu4 = HLR v2 = HLR } # Holy Roman Empire
+link = { eu4 = HRE v2 = HLR } # Holy Roman Empire
+link = { eu4 = e_hre v2 = HLR } # Holy Roman Empire
 link = { eu4 = KLE v2 = KLE } # Kleves
 link = { eu4 = c_kleve v2 = KLE } # Kleves
 link = { eu4 = KOL v2 = KOL } # Cologne
@@ -1733,7 +1735,7 @@ link = { eu4 = GRN v2 = GRM } #Germiyanoglu
 link = { eu4 = HDT v2 = HAD } #Hadoti
 link = { eu4 = HAW v2 = HAW } #PaganHawai
 link = { eu4 = HEJ v2 = HDJ } #Hejaz
-link = { eu4 = ERG v2 = HRE } #HolyRomanEmpire
+link = { eu4 = ERG v2 = HLR } #HolyRomanEmpire
 link = { eu4 = HKW v2 = HSK } #Hosokawa
 link = { eu4 = RHU v2 = HUN } #RoyalHungary
 link = { eu4 = HYD v2 = HYD } #Hyderabad

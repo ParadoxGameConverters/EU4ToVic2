@@ -3,15 +3,15 @@
 
 #Christians
 
-link = { v2 = catholic eu4 = catholic eu4 = insular_celtic }
+link = { v2 = catholic eu4 = catholic eu4 = insular_celtic eu4 = catholique }
 link = { v2 = cathar eu4 = cathar }
 link = { v2 = fraticelli eu4 = fraticelli }
 link = { v2 = waldensian eu4 = waldensian }
-link = { v2 = lollard eu4 = lollard }
+link = { v2 = lollard eu4 = lollard eu4 = lollardy }
 link = { v2 = catholic_heresy eu4 = catholic_heresy }
 link = { v2 = arian eu4 = arian eu4 = arianism }
 
-link = { v2 = protestant eu4 = protestant eu4 = reformed eu4 = anglican }
+link = { v2 = protestant eu4 = protestant eu4 = reformed eu4 = anglican eu4 = anabaptist }
 link = { v2 = protestant_heresy eu4 = protestant_heresy eu4 = reformed_heresy eu4 = anglican_heresy }
 link = { v2 = orthodox eu4 = orthodox }
 link = { v2 = bogomilist eu4 = bogomilist eu4 = bosnian_church }
@@ -77,11 +77,11 @@ link = { v2 = hellenic_pagan eu4 = hellenic_pagan eu4 = hellenic_pagan_reformed 
 link = { v2 = hetanism eu4 = armenian_pagan eu4 = caucasian_pagan }
 link = { v2 = iberian_pagan eu4 = iberian_pagan }
 link = { v2 = kemetic eu4 = egyptian_pagan eu4 = egyptian_pagan_heresy }
-link = { v2 = kemetic eu4 = kemetic eu4 = kemetism }
+link = { v2 = kemetic eu4 = kemetic eu4 = kemetism eu4 = egyptian_religion }
 link = { v2 = mardukism eu4 = mardukism }
 link = { v2 = mithraism eu4 = mithraism }
 link = { v2 = norse_pagan_reformed eu4 = norse_pagan_reformed }
-link = { v2 = scythian_pagan eu4 = scythian_pagan }
+link = { v2 = scythian_pagan eu4 = scythian_pagan eu4 = khabze eu4 = vainakh eu4 = uatsdin }
 link = { v2 = slavic_pagan_reformed eu4 = slavic_pagan_reformed }
 link = { v2 = tengri_pagan_reformed eu4 = tengri_pagan_reformed }
 link = { v2 = tengri_pagan_reformed eu4 = tengri_pagan eu4 = magyar_pagan eu4 = magyar_pagan_reformed }
@@ -97,10 +97,10 @@ link = { v2 = mayan eu4 = mesoamerican_religion }
 link = { v2 = nahuatl eu4 = nahuatl eu4 = aztec_pagan }
 
 # Minor Pagans
-link = { v2 = animist eu4 = baltic_pagan }
+link = { v2 = animist eu4 = baltic_pagan eu4 = maausko eu4 = dievturiba eu4 = druwi }
 link = { v2 = animist eu4 = finnish_pagan }
 link = { v2 = animist eu4 = norse_pagan }
-link = { v2 = animist eu4 = slavic_pagan }
+link = { v2 = animist eu4 = slavic_pagan eu4 = uralinusko }
 link = { v2 = animist eu4 = zun_pagan }
 link = { v2 = animist eu4 = west_african_pagan eu4 = kushitism_pagan eu4 = kushitism_pagan_reformed }
 link = { v2 = animist eu4 = pagan_religion }
@@ -112,7 +112,7 @@ link = { v2 = animist eu4 = vasconic eu4 = berber_pagan }
 link = { v2 = zoroastrian eu4 = zoroastrian }
 link = { v2 = manichean eu4 = manichean }
 link = { v2 = mazdaki eu4 = mazdaki }
-link = { v2 = zoroastrian_heresy eu4 = zoroastrian_heresy eu4 = khurmazta eu4 = zurvanism eu4 = zurvanist eu4 = gayomarthianism eu4 = khurramism }
+link = { v2 = zoroastrian_heresy eu4 = zoroastrian_heresy eu4 = khurmazta eu4 = zurvanism eu4 = zurvanist eu4 = gayomarthianism eu4 = khurramism eu4 = mandaeism }
 
 #Judaism
 link = { v2 = jewish eu4 = jewish }

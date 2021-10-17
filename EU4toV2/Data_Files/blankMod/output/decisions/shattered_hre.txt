@@ -2,7 +2,7 @@ political_decisions = {
 
 	integrate_empire_title = {
 		potential = {
-			capital_scope = { is_core = HRE }
+			capital_scope = { is_core = HLR }
 			OR = {
 				AND = {
 					NOT = { has_global_flag = liberal_revolutions_should_now_fire }
@@ -20,11 +20,11 @@ political_decisions = {
 						tag = MGL
 						tag = SPQ
 						tag = SLA
-						tag = HRE
+						tag = HLR
 					}
 				}
 			}
-			is_our_vassal = HRE
+			is_our_vassal = HLR
 		}
 		allow = {
 			OR = {
@@ -44,7 +44,7 @@ political_decisions = {
 		}
 
 		effect = {
-			inherit = HRE
+			inherit = HLR
 		}
 	}
 
@@ -54,7 +54,7 @@ political_decisions = {
 		news_desc_medium = "hre_NEWS_MEDIUM"
 		news_desc_short = "hre_NEWS_SHORT"
 		potential = {
-			capital_scope = { is_core = HRE }
+			capital_scope = { is_core = HLR }
 			OR = {
 				AND = {
 					NOT = { has_global_flag = liberal_revolutions_should_now_fire }
@@ -72,33 +72,52 @@ political_decisions = {
 						tag = MGL
 						tag = SPQ
 						tag = SLA
-						tag = HRE
+						tag = HLR
 					}
 				}
 			}
 			NOT = {
-				exists = HRE
+				exists = HLR
 			}
 		}
 		allow = {
 			OR = {
 				AND = {
-					is_greater_power = yes
-					prestige = 65
 					has_country_flag = emperor_hre
+					is_secondary_power = yes
 				}
-				AND = {
-					has_country_flag = union_is_hre
-					prestige = 45
-					nationalism_n_imperialism = 1
-					war = no
-					is_greater_power = yes
+				is_greater_power = yes
+			}			
+			war = no
+			prestige = 85
+			has_country_flag = emperor_hre
+			NOT = { nationalism_n_imperialism = 1 }
+			HLR = {
+				all_core = {
+					OR = {
+						owned_by = THIS # Owned by me
+						owner = { in_sphere = THIS } # Owned my my sphereling
+						owner = {
+							has_country_flag = same_faith_as_emperor # Owned by a friendly catholic
+							relation = { who = THIS value = 50 }
+						}
+						owner = { # Owned by outside forces we cannot control until we unite
+							NOT = {
+								has_country_flag = member_hre
+							}
+						}
+						owner = { # Owned by filthy heretics which are irrelevant
+							has_country_flag = diff_faith_than_emperor
+							is_secondary_power = no
+							is_greater_power = no
+						}
+					}
 				}
 			}
 		}
-		
+			
 		effect = {
-			change_tag = HRE
+			change_tag = HLR
 			clr_country_flag = emperor_hre
 			any_country = {
 				limit = {
