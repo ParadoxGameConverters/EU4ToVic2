@@ -1,4 +1,4 @@
-version="1.0S"
+version="1.0T"
 tags={
 	"Alternative History"
 	"Converted From CKII"
