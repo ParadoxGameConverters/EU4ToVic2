@@ -961,9 +961,9 @@
 	link = { eu4 = 6024 eu4 = 6026 eu4 = 6027 eu4 = 6025 v2 = 311 } # Vestmar, Gjerstad, Treungen, Grenland -> Skien
 	link = { eu4 = 6040 eu4 = 6039 eu4 = 6038 eu4 = 6037 eu4 = 6036 eu4 = 6041 v2 = 309 } # Gulen, Voss, Midhordland, Sunnhordland, Avaldsnes, Kinsarvik -> Bergen
 	link = { eu4 = 6047 eu4 = 6046 eu4 = 2303 eu4 = 1807 eu4 = 2498 eu4 = 378 eu4 = 1802 eu4 = 863 eu4 = 4130 v2 = 335 } # Simrishavn, Sjöbo, Hör, Vä, Göinge, Sölvesborg, Bodekull, Ronneby, Jämjö -> Karlskrona
-	link = { eu4 = 1810 eu4 = 654 eu4 = 2731 eu4 = 2730 eu4 = 170 eu4 = 2657 eu4 = 6045 eu4 = 864 v2 = 334 } # Malmø, Lund, Helsingborg, Rynestad, Laholm, Halmstad, Varberg, Ystad -> Malmo
-	link = { eu4 = 6023 eu4 = 6070 eu4 = 6074 eu4 = 6073 eu4 = 6078 eu4 = 6081 eu4 = 6077 eu4 = 6079 eu4 = 6075 eu4 = 6071 eu4 = 6044 eu4 = 6072 eu4 = 6076 eu4 = 6080 eu4 = 6083 eu4 = 6082 v2 = 330 } # Kungälv, Göteborg, Alingsås, Vänersborg, Vara, Mariestad, Lidköping, Falköping, Borås, Kinna, Kungsbacka, Tranemo, Ulricehamn, Tidaholm, Skövde, Töreboda -> Boras
-	link = { eu4 = 6021 eu4 = 6022 v2 = 329 } # Strömstad, Uddevalla -> Gothenburg
+	link = { eu4 = 1810 eu4 = 654 eu4 = 2731 eu4 = 2730 eu4 = 170 eu4 = 2657 eu4 = 6045 eu4 = 864 eu4 = 6044 v2 = 334 } # Malmø, Lund, Helsingborg, Rynestad, Laholm, Halmstad, Varberg, Ystad, Kungsbacka -> Malmo
+	link = { eu4 = 6074 eu4 = 6073 eu4 = 6078 eu4 = 6081 eu4 = 6077 eu4 = 6079 eu4 = 6075 eu4 = 6071 eu4 = 6072 eu4 = 6076 eu4 = 6080 eu4 = 6083 eu4 = 6082 v2 = 330 } # Alingsås, Vänersborg, Vara, Mariestad, Lidköping, Falköping, Borås, Kinna, Tranemo, Ulricehamn, Tidaholm, Skövde, Töreboda -> Boras
+	link = { eu4 = 6021 eu4 = 6022 eu4 = 6023 eu4 = 6070 v2 = 329 } # Strömstad, Uddevalla, Kungälv, Göteborg -> Gothenburg
 	link = { eu4 = 6002 eu4 = 6003 eu4 = 1913 eu4 = 6013 v2 = 316 } # Sarpsborg, Halden, Mjøsa, Trøgstad -> Frederiksstad
 	link = { eu4 = 823 eu4 = 2410 eu4 = 2313 eu4 = 2812 eu4 = 6058 eu4 = 6052 eu4 = 6053 eu4 = 6048 eu4 = 2232 eu4 = 1794 eu4 = 6059 v2 = 333 } # Tingsryd, Älmhult, Markaryd, Ljungby, Gislaved, Jönköping, Gränna, Sävsjö, Växjö, Alvesta, Värnamo -> Vaxjo
 	link = { eu4 = 6092 eu4 = 6091 eu4 = 6090 eu4 = 6129 eu4 = 6128 eu4 = 6125 eu4 = 6124 eu4 = 6127 eu4 = 6126 v2 = 323 } # Filipstad, Hagfors, Torsby, Malung, Vansbro, Ludvika, Borlänge, Leksand, Mora -> Falun
