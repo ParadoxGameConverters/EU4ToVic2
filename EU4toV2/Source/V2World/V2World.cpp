@@ -1156,16 +1156,10 @@ void V2::World::convertProvinces(const EU4::World& sourceWorld, const mappers::T
 			ownerCountry->second->addProvince(province.second);
 		}
 
-		// Before we convert a province, we need to filter those eu4 province sources belonging to another owner.
-		// ... don't want to influence development with filthy foreign manufactories and forts.
+		// Grab the province sources. We're ALLOWING foreign sources so that we get mixed populations on borders.
 		std::vector<std::shared_ptr<EU4::Province>> filteredSources;
 		for (const auto& eu4provID: eu4ProvinceNumbers)
-		{
-			if (sourceWorld.getProvince(eu4provID)->getOwnerString() == *eu4Owner)
-			{
-				filteredSources.push_back(sourceWorld.getProvince(eu4provID));
-			}
-		}
+			filteredSources.emplace_back(sourceWorld.getProvince(eu4provID));
 
 		province.second->convertFromOldProvince(filteredSources,
 			 sourceWorld.getCountries(),
