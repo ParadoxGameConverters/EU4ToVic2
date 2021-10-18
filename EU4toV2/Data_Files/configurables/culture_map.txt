@@ -35,7 +35,6 @@ link = { vic2 = ashkenazi eu4 = luxembourgish eu4 = alsatian eu4 = berliner eu4 
 link = { vic2 = north_german eu4 = luxembourgish eu4 = pfalzish eu4 = ripuarian eu4 = low_elbish eu4 = central_margravian eu4 = alsatian eu4 = berliner eu4 = thuringian eu4 = colognian eu4 = varinian eu4 = rugii eu4 = pommeranian eu4 = prussian eu4 = lower_saxon eu4 = hannoverian eu4 = saxon eu4 = hessian eu4 = old_saxon eu4 = eastphalian eu4 = high_saxon eu4 = low_saxon eu4 = moselfranconian eu4 = westphalian eu4 = ripuarianfranconian eu4 = moselle_franconian }
 link = { vic2 = swiss eu4 = german region = switzerland_area region = romandie_area }
 link = { vic2 = swiss eu4 = swiss eu4 = alamanni eu4 = romansh eu4 = suisse eu4 = romansch eu4 = ladin }
-link = { vic2 = slovene eu4 = austrian region = carinthia_area }
 link = { vic2 = south_german eu4 = styrian eu4 = boden_alemannic eu4 = tirolian eu4 = franconian eu4 = swabian eu4 = rheinlaender eu4 = bavarian eu4 = austrian eu4 = eastfranconian eu4 = high_alemanisch eu4 = rhine_alemanisch eu4 = schwabisch }
 link = { vic2 = overnissian eu4 = lugii eu4 = feldern eu4 = baltendeutsche eu4 = schlesischdeutsch}
 link = { vic2 = boehmisch eu4 = quadi eu4 = marcoman }
