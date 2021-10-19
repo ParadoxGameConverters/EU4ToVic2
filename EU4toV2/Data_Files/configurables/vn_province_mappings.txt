@@ -534,13 +534,13 @@
 	link = { eu4 = 67 eu4 = 2754 eu4 = 941 eu4 = 2526 eu4 = 466 eu4 = 787 eu4 = 66 eu4 = 369 eu4 = 2544 eu4 = 621 v2 = 598 } # Bayreuth, Kronach, Wunsiedel, Kemnath, Velden, Pegnitz, Greiffenstein, Giech, Bamberg, Erlangen -> Bayreuth
 	link = { eu4 = 253 eu4 = 2841 eu4 = 5131 eu4 = 2831 eu4 = 810 v2 = 627 } # Aš, Cheb, Loket, Kralovice, Jáchymov -> Karlsbad
 	link = { comment = "Slovakia" }
-	link = { eu4 = 5468 eu4 = 457 eu4 = 5454 eu4 = 2353 v2 = 636 } # Besztercebánya, Liptó, Trsztena, Árva -> Banska Bystrica
-	link = { eu4 = 471 eu4 = 5462 eu4 = 5456 eu4 = 5455 eu4 = 2351 v2 = 634 } # Trencsén, Privigye, Vágbeszterce, Zsolna, Túrócz -> Trencin
+	link = { eu4 = 5468 eu4 = 457 eu4 = 5454 eu4 = 2353 eu4 = 2351 eu4 = 5455 eu4 = 2356 v2 = 636 } # Besztercebánya, Liptó, Trsztena, Árva, Túrócz, Zsolna, Zólyom -> Banska Bystrica
+	link = { eu4 = 471 eu4 = 5456 eu4 = 513 eu4 = 5459 eu4 = 440 eu4 = 5462 eu4 = 5465 v2 = 634 } # Trencsén, Vágbeszterce, Nagyszombat, Vágújhely, Nyitra, Privigye, Újbánya -> Trencin
 	link = { eu4 = 442 eu4 = 5458 eu4 = 5457 v2 = 633 } # Pozsony, Modor, Szakolca -> Bratislava
-	link = { eu4 = 440 eu4 = 2352 eu4 = 5465 eu4 = 2356 eu4 = 5459 eu4 = 5466 eu4 = 449 eu4 = 5461 eu4 = 5460 eu4 = 513 eu4 = 5467 eu4 = 2497 v2 = 635 } # Nyitra, Bars, Újbánya, Zólyom, Vágújhely, Léva, Komárom, Érsekújvár, Somorja, Nagyszombat, Selmecbánya, Kürtös -> Nitra
+	link = { eu4 = 2352 eu4 = 5466 eu4 = 449 eu4 = 5461 eu4 = 5460 eu4 = 5467 v2 = 635 } # Bars, Léva, Komárom, Érsekújvár, Somorja, Selmecbánya -> Nitra
 	link = { eu4 = 5463 eu4 = 460 eu4 = 5495 eu4 = 554 eu4 = 459 eu4 = 5464 eu4 = 5485 v2 = 638 } # Késmárk, Ólubló, Kisszeben, Sáros, Szepes, Leibic, Zakopane -> Prešov
 	link = { eu4 = 5498 eu4 = 5499 eu4 = 1968 eu4 = 5500 eu4 = 2834 eu4 = 5916 eu4 = 5917 eu4 = 2225 eu4 = 5915 eu4 = 2125 eu4 = 2127 v2 = 950 } # Gálszécs, Sztropkó, Ung, Berezna, Munkács, Szolyva, Huszt, Nyugat-Máramaros, Ökörmezö, Ugocsa, Bereg -> Ungvár
-	link = { eu4 = 5471 eu4 = 5470 eu4 = 2364 eu4 = 5469 eu4 = 5496 eu4 = 2126 v2 = 637 } # Rozsnyó, Nagyröce, Gömör, Tornalja, Torna, Abaúj -> Kosice
+	link = { eu4 = 5471 eu4 = 5470 eu4 = 2364 eu4 = 5496 eu4 = 2126 eu4 = 2497 v2 = 637 } # Rozsnyó, Nagyröce, Gömör, Torna, Abaúj, Kürtös -> Kosice
 	link = { eu4 = 5977 eu4 = 633 eu4 = 5961 eu4 = 5946 eu4 = 766 eu4 = 5980 eu4 = 5979 eu4 = 5975 eu4 = 5976 eu4 = 5978 v2 = 952 } # Ternopil, Terebovel, Zbaraz, Chervonohorod, Buchach, Rohatyn, Peremyshliany, Olesko, Brody, Berezhany -> Tarnopol
 	link = { eu4 = 608 eu4 = 5708 eu4 = 3240 eu4 = 2626 eu4 = 1077 eu4 = 5974 v2 = 702 } # Lviv, Busk, Horokhiv, Belz, Liubachiv, Horodok -> Lemberg
 	link = { eu4 = 2224 eu4 = 5968 eu4 = 5970 eu4 = 1149 eu4 = 5966 eu4 = 620 eu4 = 5969 v2 = 951 } # Sambir, Drohobych, Turka, Synevidsko, Zhydachiv, Peremyshl, Dobromil -> Stryi
@@ -579,8 +579,8 @@
 	link = { eu4 = 5879 eu4 = 5881 eu4 = 5880 eu4 = 5885 eu4 = 5884 eu4 = 5882 eu4 = 5886 eu4 = 5896 eu4 = 5883 eu4 = 5868 eu4 = 5866 v2 = 350 } # Narva, Alutaguse, Askaila, Mahu, Pudivere, Lemmu, Repele, Palmse, Lopekunde, Vaiamaa, Möhu -> Narva
 	link = { comment = "Hungary" }
 	link = { eu4 = 455 eu4 = 5478 eu4 = 5479 eu4 = 2370 eu4 = 5481 eu4 = 1973 eu4 = 5480 v2 = 642 } # Györ, Sokoróalja, Gesztes, Esztergom, Vasvár, Moson, Kapuvár -> Gyor
-	link = { eu4 = 5472 eu4 = 2361 eu4 = 5508 eu4 = 5509 eu4 = 1967 eu4 = 5497 eu4 = 1970 v2 = 646 } # Gyarmath, Heves, Tiszafüred, Mezökövesd, Borsod, Szikszó, Hont -> Miskolc
-	link = { eu4 = 2358 eu4 = 456 v2 = 649 } # Csongrád, Szolnok -> Szeged
+	link = { eu4 = 5472 eu4 = 2361 eu4 = 5509 eu4 = 1967 eu4 = 5497 eu4 = 1970 eu4 = 5469 v2 = 646 } # Gyarmath, Heves, Mezökövesd, Borsod, Szikszó, Hont, Tornalja -> Miskolc
+	link = { eu4 = 1085 eu4 = 2653 eu4 = 479 eu4 = 2358 eu4 = 456 v2 = 649 } # Szarvas, Hód, Csanád, Csongrád, Szolnok -> Szeged
 	link = { eu4 = 4890 eu4 = 445 eu4 = 2068 v2 = 623 } # Rechnitz, Sopron, Szombathely -> Sopron
 	link = { eu4 = 2441 eu4 = 5484 eu4 = 5483 eu4 = 2350 v2 = 639 } # Zala, Lendva, Nagykanizsa, Muraszombat -> Zalaegerszeg
 	link = { eu4 = 5474 eu4 = 5475 eu4 = 5494 eu4 = 441 eu4 = 5476 eu4 = 2362 eu4 = 5482 eu4 = 5477 v2 = 643 } # Szentendre, Buda, Sárbogárd, Fejér, Enying, Veszprém, Keszthely, Pápa -> Szekesfehevar
@@ -592,17 +592,17 @@
 	link = { eu4 = 5648 eu4 = 5649 eu4 = 5636 v2 = 671 } # Botosani, Dorohoi, Harlau -> Botosani
 	link = { eu4 = 5618 eu4 = 5625 eu4 = 5624 eu4 = 5633 eu4 = 5635 eu4 = 5626 v2 = 670 } # Husi, Vaslui, Tutova, Roman, Carligatura, Iasi -> Iasi
 	link = { eu4 = 5609 eu4 = 5610 eu4 = 5615 eu4 = 5616 v2 = 673 } # Galati, Covurlui, Tecuci, Barlad -> Galati
-	link = { eu4 = 447 eu4 = 5584 eu4 = 2363 eu4 = 5585 eu4 = 2229 eu4 = 454 v2 = 657 } # Nagy-Küküllo, Rusi, Szeben, Medgyes, Kis-Küküllo, Fehér -> Nagyszeben
-	link = { eu4 = 2840 eu4 = 384 eu4 = 5600 eu4 = 2073 eu4 = 399 eu4 = 514 eu4 = 2020 eu4 = 2428 eu4 = 2167 eu4 = 510 eu4 = 2165 eu4 = 602 v2 = 653 } # Oravica, Carasova, Mehadia, Orsova, Caransebes, Lugos, Rešica, Temes, Facsád, Radna, Halmágy, Borosjenö -> Resicabanya
-	link = { eu4 = 2434 eu4 = 2653 eu4 = 479 eu4 = 1035 eu4 = 1085 eu4 = 2354 eu4 = 2396 v2 = 652 } # Arad, Hód, Csanád, Kisjenö, Szarvas, Békés, Cséffa -> Temesvar
-	link = { eu4 = 1185 eu4 = 1789 eu4 = 1015 eu4 = 5507 v2 = 650 } # Debrecen, Mezökeresztes, Balmazújvárosi, Nagykunság -> Bekescsaba
-	link = { eu4 = 2227 eu4 = 1811 eu4 = 847 eu4 = 476 eu4 = 458 eu4 = 2065 eu4 = 2359 v2 = 648 } # Ecsed, Kisvárda, Nagykálló, Szabolcs, Zemplén, Hajdúnánás, Hajdúság -> Debrecen
+	link = { eu4 = 447 eu4 = 5584 eu4 = 2363 eu4 = 5585 eu4 = 5598 v2 = 657 } # Nagy-Küküllo, Rusi, Szeben, Medgyes, Cincu -> Nagyszeben
+	link = { eu4 = 2840 eu4 = 384 eu4 = 5600 eu4 = 2073 eu4 = 399 eu4 = 514 eu4 = 2020 eu4 = 2167 v2 = 653 } # Oravica, Carasova, Mehadia, Orsova, Caransebes, Lugos, Rešica, Facsád -> Resicabanya
+	link = { eu4 = 2434 eu4 = 510 eu4 = 2428 eu4 = 2930 v2 = 652 } # Arad, Radna, Temes, Nagyszentmiklós -> Temesvar
+	link = { eu4 = 1789 eu4 = 1015 eu4 = 2354 eu4 = 2396 eu4 = 1035 eu4 = 5507 eu4 = 5508 eu4 = 2800 v2 = 650 } # Mezökeresztes, Balmazújvárosi, Békés, Cséffa, Kisjenö, Nagykunság, Tiszafüred, Székelyhíd -> Bekescsaba
+	link = { eu4 = 2227 eu4 = 1811 eu4 = 847 eu4 = 476 eu4 = 458 eu4 = 2065 eu4 = 2359 eu4 = 1185 v2 = 648 } # Ecsed, Kisvárda, Nagykálló, Szabolcs, Zemplén, Hajdúnánás, Hajdúság, Debrecen -> Debrecen
 	link = { eu4 = 452 eu4 = 636 eu4 = 2748 v2 = 651 } # Szatmár, Nagybánya, Zilah -> Szatmar
-	link = { eu4 = 508 eu4 = 5581 eu4 = 577 eu4 = 5598 eu4 = 5596 v2 = 659 } # Brassó, Kézdivásárhely, Fogaras, Cincu, Hoghiz -> Brasso
-	link = { eu4 = 5579 eu4 = 5580 eu4 = 739 eu4 = 5578 eu4 = 661 eu4 = 5590 v2 = 656 } # Zsinna, Sebes, Hunyad, Hátszeg, Körösbánya, Abrudbánya -> Deva
-	link = { eu4 = 5591 eu4 = 2928 eu4 = 2401 eu4 = 675 eu4 = 478 eu4 = 587 eu4 = 585 eu4 = 2630 eu4 = 2800 v2 = 647 } # Gyalu, Szilágysomlyó, Tasnád, Érmihályfalva, Bihar, Tenke, Belényes, Élesd, Székelyhíd -> Oradea
-	link = { eu4 = 5594 eu4 = 2228 eu4 = 5595 eu4 = 453 eu4 = 5593 v2 = 655 } # Szamosújvár, Kolozs, Mócs, Torda-Aranyos, Ciceu -> Gyulafehervar
-	link = { eu4 = 450 eu4 = 5589 eu4 = 5592 v2 = 654 } # Doboka, Meszes, Almás -> Cluj
+	link = { eu4 = 508 eu4 = 5581 eu4 = 577 eu4 = 5596 v2 = 659 } # Brassó, Kézdivásárhely, Fogaras, Hoghiz -> Brasso
+	link = { eu4 = 5579 eu4 = 5580 eu4 = 739 eu4 = 5578 v2 = 656 } # Zsinna, Sebes, Hunyad, Hátszeg -> Deva
+	link = { eu4 = 5591 eu4 = 2928 eu4 = 2401 eu4 = 675 eu4 = 478 eu4 = 587 eu4 = 585 eu4 = 2630 eu4 = 602 eu4 = 2165 v2 = 647 } # Gyalu, Szilágysomlyó, Tasnád, Érmihályfalva, Bihar, Tenke, Belényes, Élesd, Borosjenö, Halmágy -> Oradea
+	link = { eu4 = 5595 eu4 = 453 eu4 = 5593 eu4 = 454 eu4 = 5590 eu4 = 661 eu4 = 2229 v2 = 655 } # Mócs, Torda-Aranyos, Ciceu, Fehér, Abrudbánya, Körösbánya, Kis-Küküllo -> Gyulafehervar
+	link = { eu4 = 5592 eu4 = 5589 eu4 = 2228 eu4 = 5594 eu4 = 450 v2 = 654 } # Almás, Meszes, Kolozs, Szamosújvár, Doboka -> Cluj
 	link = { eu4 = 451 eu4 = 2853 eu4 = 5588 eu4 = 5918 v2 = 661 } # Beszterce, Kelet-Máramaros, Lápos, Izavölgy -> Beszterce
 	link = { eu4 = 448 eu4 = 5586 eu4 = 2074 eu4 = 5582 eu4 = 5587 v2 = 2533 } # Maros-Torda, Szásrégen, Udvarhely, Homorod, Jád -> Targu Mures
 	link = { eu4 = 5597 eu4 = 509 eu4 = 2128 eu4 = 5583 v2 = 660 } # Bereck, Csík, Háromszék, Gyergyószék -> Udvarhely
@@ -642,10 +642,10 @@
 	link = { eu4 = 539 eu4 = 5398 eu4 = 2043 eu4 = 5537 eu4 = 2445 eu4 = 5530 eu4 = 5538 eu4 = 553 eu4 = 5520 eu4 = 5519 v2 = 794 } # Beograd, Zemun, Macva, Debrc, Obrenovac, Smederevo, Grocka, Kolubara, Loznica, Krupanj -> Belgrade
 	link = { eu4 = 5547 eu4 = 5399 eu4 = 2427 eu4 = 5403 v2 = 791 } # Ilok, Petrovaradin, Sremska Mitrovica, Karlovci -> Mitrovica
 	link = { eu4 = 5402 eu4 = 2069 v2 = 793 } # Vinkovci, Srijem -> Vukovar
-	link = { eu4 = 2946 eu4 = 2429 eu4 = 2918 eu4 = 660 eu4 = 2331 eu4 = 2207 eu4 = 512 eu4 = 2357 eu4 = 2930 eu4 = 2031 eu4 = 712 v2 = 792 } # Törökkanizsa, Módos, Pancsova, Csákova, Bánlak, Versec, Torontál, Kikinda, Nagyszentmiklós, Kevevára, Haram -> Pancevo
+	link = { eu4 = 2946 eu4 = 2429 eu4 = 2918 eu4 = 660 eu4 = 2331 eu4 = 2207 eu4 = 512 eu4 = 2357 eu4 = 2031 eu4 = 712 v2 = 792 } # Törökkanizsa, Módos, Pancsova, Csákova, Bánlak, Versec, Torontál, Kikinda, Kevevára, Haram -> Pancevo
 	link = { eu4 = 538 eu4 = 756 eu4 = 1075 eu4 = 799 eu4 = 2192 eu4 = 5501 eu4 = 2366 eu4 = 995 v2 = 2538 } # Bodrog, Szabadka, Bács, Hódság, Titel, Szeged, Kiskunság, Baja -> Novi Sad
-	link = { eu4 = 5400 eu4 = 5407 eu4 = 5405 eu4 = 2624 v2 = 779 } # Osijek, Dakovo, Vaška, Pélmonostor -> Osijek
-	link = { eu4 = 1966 eu4 = 5411 eu4 = 2369 v2 = 776 } # Bjelovar, Durdevac, Virovitica -> Bjelovar
+	link = { eu4 = 5400 eu4 = 5407 eu4 = 2624 v2 = 779 } # Osijek, Dakovo, Pélmonostor -> Osijek
+	link = { eu4 = 1966 eu4 = 5411 eu4 = 2369 eu4 = 5405 v2 = 776 } # Bjelovar, Durdevac, Virovitica, Vaška -> Bjelovar
 	link = { eu4 = 2349 eu4 = 5418 eu4 = 2418 eu4 = 5420 eu4 = 5419 eu4 = 5425 eu4 = 1780 v2 = 773 } # Crikvenica, Trsat, Krk, Kostel, Crnomelj, Ogulin, Slunj -> Karlovac
 	link = { eu4 = 470 eu4 = 5428 eu4 = 5404 eu4 = 5432 eu4 = 5426 eu4 = 5429 eu4 = 5427 v2 = 772 } # Sisak, Petrinja, Pakrac, Daruvar, Kostajnica, Stenicnjak, Gvozdansko -> Sisak
 	link = { eu4 = 2236 eu4 = 5430 v2 = 771 } # Zagreb, Samobor -> Zagreb
