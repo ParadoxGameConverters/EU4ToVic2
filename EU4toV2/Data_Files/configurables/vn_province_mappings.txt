@@ -854,13 +854,13 @@
 	link = { eu4 = 111 eu4 = 1830 eu4 = 5196 eu4 = 1774 eu4 = 4555 eu4 = 4868 eu4 = 4870 v2 = 8 } # Tolmezzo, Belluno, Aviano, Ceneda, Bassano, Ampezzo, Tarvisio -> Belluno
 	link = { eu4 = 1862 eu4 = 5200 eu4 = 1019 eu4 = 5190 eu4 = 5191 eu4 = 5189 eu4 = 1996 v2 = 730 } # Verona, Schio, Legnago, Peschiera, Goito, Salò, Polsa -> Verona
 	link = { eu4 = 947 eu4 = 5198 v2 = 737 } # Gorica, Cividale -> Gorizia
-	link = { eu4 = 954 eu4 = 2734 v2 = 736 } # Trieste, Monfalcone -> Trieste
-	link = { eu4 = 2659 eu4 = 1769 eu4 = 1797 eu4 = 2655 v2 = 733 } # Udine, Aquileia, Pordenone, San Vito -> Udine
+	link = { eu4 = 954 v2 = 736 } # Trieste -> Trieste
+	link = { eu4 = 2659 eu4 = 1769 eu4 = 1797 eu4 = 2655 eu4 = 2734 v2 = 733 } # Udine, Aquileia, Pordenone, San Vito, Monfalcone -> Udine
 	link = { eu4 = 492 eu4 = 2713 eu4 = 5186 eu4 = 490 eu4 = 2108 eu4 = 4550 eu4 = 648 v2 = 738 } # Piacenza, Fiorenzuola, Collecchio, Berceto, Bardi, Tizzano, Parma -> Parma
 	link = { eu4 = 974 eu4 = 2105 eu4 = 1779 eu4 = 2604 v2 = 741 } # Bologna, Marzabotto, Castel Bolognese, Imola -> Bologna
 	link = { eu4 = 106 eu4 = 1096 eu4 = 1025 eu4 = 4549 eu4 = 972 eu4 = 1243 eu4 = 1781 eu4 = 2104 v2 = 739 } # Reggio, Castelnovo, Frignano, Sassuolo, Modena, Mirandola, Novellara, Suzzara -> Modena
-	link = { eu4 = 485 eu4 = 112 eu4 = 484 v2 = 729 } # Mestre, Venezia, Eraclea -> Venice
-	link = { eu4 = 731 eu4 = 2103 eu4 = 2977 eu4 = 2656 v2 = 731 } # Este, Padova, Chioggia, Vicenza -> Padua
+	link = { eu4 = 112 eu4 = 485 eu4 = 484 v2 = 729 } # Venezia, Mestre, Eraclea -> Venice
+	link = { eu4 = 2103 eu4 = 2977 eu4 = 2656 eu4 = 731 v2 = 731 } # Padova, Chioggia, Vicenza, Este -> Padua
 	link = { eu4 = 113 eu4 = 729 eu4 = 2612 eu4 = 5193 v2 = 742 } # Ferrara, Copparo, Comacchio, Cento -> Ferrara
 	link = { eu4 = 1048 eu4 = 2018 eu4 = 1026 eu4 = 1784 eu4 = 1173 eu4 = 1801 eu4 = 647 eu4 = 1805 eu4 = 4541 eu4 = 1031 eu4 = 2603 eu4 = 715 eu4 = 1098 eu4 = 2602 v2 = 743 } # Ravenna, Cesena, Rimini, Pesaro, Fano, Fossombrone, Santo Sepolcro, Carpegna, Bagno, Sarsina, Forlì, Faenza, Tredozio, San Marino -> Ravenna
 	link = { eu4 = 1835 eu4 = 2485 eu4 = 2034 eu4 = 2235 eu4 = 2708 eu4 = 2036 eu4 = 4527 v2 = 749 } # Civitavecchia, Frosinone, Velletri, Roma, Vaticano, Tivoli, Monterotondo -> Rome
