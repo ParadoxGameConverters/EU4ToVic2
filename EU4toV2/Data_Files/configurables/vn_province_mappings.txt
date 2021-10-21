@@ -620,11 +620,11 @@
 	link = { eu4 = 5690 eu4 = 5691 eu4 = 5682 eu4 = 5692 eu4 = 5693 v2 = 669 } # Ialomita, Lehliu, Oltenita, Urziceni, Slobozia -> Calarasi
 	link = { comment = "Bulgaria" }
 	link = { eu4 = 615 eu4 = 5393 eu4 = 610 eu4 = 5573 eu4 = 5394 v2 = 812 } # Pleven, Nikopol, Lovech, Gabrovo, Svištov -> Pleven
-	link = { eu4 = 5356 eu4 = 2116 eu4 = 613 eu4 = 5318 eu4 = 5316 eu4 = 558 eu4 = 5575 eu4 = 5314 eu4 = 5317 v2 = 808 } # Petrich, Blagoevgrad, Velbazhd, Melenikon, Rasloga, Tzepaina, Pazardzhik, Mpeadnos, Nestos -> Petrich
-	link = { eu4 = 2438 eu4 = 5397 eu4 = 5543 eu4 = 5395 eu4 = 491 eu4 = 5388 v2 = 810 } # Vidin, Belogradchik, Kutlovitsa, Lom, Vratsa, Oryahovo -> Vidin
-	link = { eu4 = 588 eu4 = 1046 eu4 = 5544 eu4 = 5545 eu4 = 5379 eu4 = 5928 eu4 = 5340 eu4 = 5338 eu4 = 5574 eu4 = 5339 eu4 = 678 v2 = 809 } # Sofia, Etropole, Godech, Slivnitsa, Pernik, Samokov, Štipone, Kostenec, Panagyurište, Hisarya, Kopsis -> Sofia
-	link = { eu4 = 5307 eu4 = 584 eu4 = 5308 eu4 = 583 eu4 = 2133 eu4 = 5322 eu4 = 5323 eu4 = 5576 v2 = 816 } # Beantitze, Sliven, Drama, Matochina, Boruy, Blisnos, Kran, Brezovo -> Stara Zagora
-	link = { eu4 = 2131 eu4 = 2400 eu4 = 5959 eu4 = 5311 eu4 = 5312 eu4 = 4288 eu4 = 5313 v2 = 815 } # Philippoupolis, Marsa, Rodestuic, Mneiakos, Kosnikos, Stanimaka, Ephraim -> Plovdiv
+	link = { eu4 = 5318 eu4 = 5316 eu4 = 5317 eu4 = 5356 v2 = 808 } # Melenikon, Rasloga, Nestos, Petrich -> Petrich
+	link = { eu4 = 2438 eu4 = 5397 eu4 = 5543 eu4 = 5395 eu4 = 491 eu4 = 5388 eu4 = 5544 v2 = 810 } # Vidin, Belogradchik, Kutlovitsa, Lom, Vratsa, Oryahovo, Godech -> Vidin
+	link = { eu4 = 588 eu4 = 1046 eu4 = 5928 eu4 = 5340 eu4 = 5338 eu4 = 5574 eu4 = 678 eu4 = 2116 eu4 = 613 eu4 = 5379 eu4 = 5545 v2 = 809 } # Sofia, Etropole, Samokov, Štipone, Kostenec, Panagyurište, Kopsis, Blagoevgrad, Velbazhd, Pernik, Slivnitsa -> Sofia
+	link = { eu4 = 5307 eu4 = 584 eu4 = 5308 eu4 = 583 eu4 = 2133 eu4 = 5322 eu4 = 5323 eu4 = 5576 eu4 = 5339 eu4 = 5575 v2 = 816 } # Beantitze, Sliven, Drama, Matochina, Boruy, Blisnos, Kran, Brezovo, Hisarya, Pazardzhik -> Stara Zagora
+	link = { eu4 = 2131 eu4 = 2400 eu4 = 5959 eu4 = 5311 eu4 = 5312 eu4 = 4288 eu4 = 5313 eu4 = 5314 eu4 = 558 v2 = 815 } # Philippoupolis, Marsa, Rodestuic, Mneiakos, Kosnikos, Stanimaka, Ephraim, Mpeadnos, Tzepaina -> Plovdiv
 	link = { eu4 = 5390 eu4 = 5389 eu4 = 745 eu4 = 5391 eu4 = 5571 v2 = 811 } # Ruse, Tutrakan, Razgrad, Cherven, Dulovo -> Ruse
 	link = { eu4 = 522 eu4 = 5351 eu4 = 1844 eu4 = 5392 eu4 = 5353 eu4 = 2135 v2 = 813 } # Shumen, Provadia, Targovište, Preslav, Kamchia, Tarnovo -> Shumen
 	link = { eu4 = 1047 eu4 = 5352 v2 = 814 } # Varna, Obzor -> Varna
@@ -661,8 +661,8 @@
 	link = { eu4 = 1083 eu4 = 5433 eu4 = 133 eu4 = 474 eu4 = 473 eu4 = 2368 v2 = 781 } # Zadar, Nin, Biograd-Moru, Pag, Ugljan, Krupa -> Zadar
 	link = { eu4 = 5568 eu4 = 533 eu4 = 2085 eu4 = 2379 eu4 = 2443 eu4 = 5553 v2 = 788 } # Neum, Bileca, Trebinje, Herceg Novi, Nevesinje, Gacko -> Mostar
 	link = { eu4 = 1963 eu4 = 2348 eu4 = 137 eu4 = 475 eu4 = 305 v2 = 782 } # Ston, Konavle, Dubrovnik, Korcula, Lastovo -> Dubrovnik
-	link = { eu4 = 5548 eu4 = 2096 eu4 = 2060 eu4 = 5515 eu4 = 5957 v2 = 802 } # Lipljan, Pomoravlje, Kosovo, Vucitrn, Bujanovac -> Pristina
-	link = { eu4 = 5359 eu4 = 5367 eu4 = 5516 eu4 = 2044 v2 = 803 } # Prizren, Tetovo, Djakovica, Metohija -> Prizren
+	link = { eu4 = 2096 eu4 = 5515 eu4 = 5957 eu4 = 2060 v2 = 802 } # Pomoravlje, Vucitrn, Bujanovac, Kosovo -> Pristina
+	link = { eu4 = 5359 eu4 = 5516 eu4 = 2044 eu4 = 5548 v2 = 803 } # Prizren, Djakovica, Metohija, Lipljan -> Prizren
 	link = { eu4 = 5439 eu4 = 2118 v2 = 2583 } # Cetinje, Zeta -> Cetinje
 	link = { eu4 = 5529 eu4 = 5542 eu4 = 2075 v2 = 2577 } # Pljevlja, Bijelo Polje, Berane -> Pljevlja
 	link = { eu4 = 5440 eu4 = 1065 eu4 = 2119 v2 = 2569 } # Spuz, Soko, Onogošt -> Niksic
@@ -672,10 +672,10 @@
 	link = { eu4 = 2038 eu4 = 5540 eu4 = 5528 eu4 = 5958 eu4 = 2081 v2 = 804 } # Raška, Brvenik, Sjenica, Prijepolje, Mitrovica -> Novi Pazar
 	link = { eu4 = 5527 eu4 = 5525 eu4 = 561 eu4 = 2039 v2 = 797 } # Uzice, Cacak, Karanovac, Rujno -> Uzice
 	link = { eu4 = 5521 eu4 = 5524 eu4 = 552 eu4 = 5526 v2 = 796 } # Arandjelovac, Jagodina, Lepenica, Rudnik -> Kragujevac
-	link = { eu4 = 2064 eu4 = 5396 eu4 = 5518 eu4 = 353 eu4 = 5536 eu4 = 1947 v2 = 798 } # Niš, Svrljig, Prokuplje, Kuršumlija, Kozetin, Kruševac -> Nis
+	link = { eu4 = 2064 eu4 = 5396 eu4 = 5518 eu4 = 1947 eu4 = 353 eu4 = 5536 v2 = 798 } # Niš, Svrljig, Prokuplje, Kruševac, Kuršumlija, Kozetin -> Nis
 	link = { eu4 = 563 eu4 = 5517 eu4 = 2027 v2 = 799 } # Vranje, Leskovac, Tsaribrod -> Leskovac
-	link = { eu4 = 2045 eu4 = 562 eu4 = 5358 eu4 = 5369 eu4 = 5368 eu4 = 2066 eu4 = 5366 v2 = 806 } # Štip, Strumica, Morodvis, Kratovo, Kumanovo, Skopje, Veles -> Skopje
-	link = { eu4 = 581 eu4 = 5956 eu4 = 5362 eu4 = 5357 eu4 = 2355 v2 = 807 } # Bodena, Dunje, Pelagonia, Prosek, Prilep -> Bitola
+	link = { eu4 = 2045 eu4 = 562 eu4 = 5358 eu4 = 5369 eu4 = 5368 v2 = 806 } # Štip, Strumica, Morodvis, Kratovo, Kumanovo -> Skopje
+	link = { eu4 = 5956 eu4 = 5362 eu4 = 5357 eu4 = 2355 eu4 = 5366 eu4 = 2066 v2 = 807 } # Dunje, Pelagonia, Prosek, Prilep, Veles, Skopje -> Bitola
 	link = { comment = "Greece" }
 	link = { eu4 = 2189 eu4 = 2682 eu4 = 5300 eu4 = 2446 eu4 = 5302 eu4 = 5303 v2 = 828 } # Imbros, Ainos, Rousion, Kypsela, Pamphylos, Nike -> Edirne
 	link = { eu4 = 2788 eu4 = 1088 eu4 = 2339 v2 = 844 } # Anatoliki Lesbo, Dytiki Lesbo, Limnos -> Myteline
@@ -690,8 +690,8 @@
 	link = { eu4 = 2322 eu4 = 5320 eu4 = 2371 eu4 = 5319 eu4 = 5577 eu4 = 2190 eu4 = 716 v2 = 823 } # Khristoupolis, Zichna, Serrai, Philippoi, Potamoi, Thassos, Samothraki -> Kavala
 	link = { eu4 = 2398 eu4 = 5321 eu4 = 2193 v2 = 805 } # Thessaloniki, Langades, Gynaikokastron -> Salonika
 	link = { eu4 = 719 eu4 = 5445 eu4 = 977 v2 = 822 } # Ierissos, Kassandreia, Agio Oros -> Polygyros
-	link = { eu4 = 5364 eu4 = 5365 v2 = 1780 } # Ohrid, Zeleznec -> Debar
-	link = { eu4 = 5360 eu4 = 708 eu4 = 5363 v2 = 819 } # Petres, Kastoria, Phlorina -> Florina
+	link = { eu4 = 5364 eu4 = 5374 eu4 = 5367 eu4 = 5365 v2 = 1780 } # Ohrid, Dibër, Tetovo, Zeleznec -> Debar
+	link = { eu4 = 5360 eu4 = 708 eu4 = 5363 eu4 = 581 v2 = 819 } # Petres, Kastoria, Phlorina, Bodena -> Florina
 	link = { eu4 = 2117 eu4 = 5336 eu4 = 5337 v2 = 821 } # Kitros, Sthlanitza, Bardiotai -> Edessa
 	link = { eu4 = 5335 eu4 = 5371 v2 = 820 } # Belbentos, Grebena -> Grevena
 	link = { eu4 = 2688 eu4 = 5349 eu4 = 5373 eu4 = 392 eu4 = 5929 eu4 = 2150 v2 = 824 } # Prebeza, Parga, Thesprotia, Epeiros, Belas, Konitsa -> Janina
@@ -713,11 +713,11 @@
 	link = { eu4 = 5451 eu4 = 5452 eu4 = 5450 eu4 = 5453 v2 = 848 } # Gortyna, Ierapetra, Kalydon, Seteia -> Iraklion
 	link = { eu4 = 5446 eu4 = 5447 eu4 = 5448 eu4 = 5449 v2 = 847 } # Chania, Sphakia, Rethymno, Chandax -> Chania
 	link = { comment = "Albania" }
-	link = { eu4 = 714 eu4 = 5378 v2 = 852 } # Vlorë, Fier -> Vlore
-	link = { eu4 = 2394 eu4 = 5376 eu4 = 707 eu4 = 718 eu4 = 5374 v2 = 849 } # Tirana, Çermenikë, Pukë, Elbasan, Dibër -> Tirana
-	link = { eu4 = 595 eu4 = 5444 eu4 = 5372 eu4 = 5443 eu4 = 2391 eu4 = 1066 eu4 = 5375 eu4 = 2390 v2 = 853 } # Himarë, Delvinë, Bouthroton, Tepelenë, Berat, Argyrokastro, Grammos, Korçë -> Gjirokaster
+	link = { eu4 = 714 eu4 = 5378 eu4 = 5443 eu4 = 595 v2 = 852 } # Vlorë, Fier, Tepelenë, Himarë -> Vlore
+	link = { eu4 = 5376 eu4 = 707 eu4 = 718 eu4 = 2394 v2 = 849 } # Çermenikë, Pukë, Elbasan, Tirana -> Tirana
+	link = { eu4 = 5444 eu4 = 5372 eu4 = 1066 eu4 = 5375 eu4 = 2390 eu4 = 2391 v2 = 853 } # Delvinë, Bouthroton, Argyrokastro, Grammos, Korçë, Berat -> Gjirokaster
 	link = { eu4 = 598 eu4 = 2332 eu4 = 596 eu4 = 713 eu4 = 503 eu4 = 2393 eu4 = 5377 v2 = 851 } # Zadrimë, Lezhë, Laç, Krujë, Durrës, Kavajë, Gradishtë -> Durres
-	link = { eu4 = 2380 eu4 = 797 eu4 = 271 eu4 = 5442 v2 = 850 } # Shati, Shkodër, Kukës, Peshkopi -> Shkoder
+	link = { eu4 = 2380 eu4 = 797 eu4 = 5442 eu4 = 271 v2 = 850 } # Shati, Shkodër, Peshkopi, Kukës -> Shkoder
 	link = { comment = "France" }
 	link = { eu4 = 758 eu4 = 2801 eu4 = 4072 eu4 = 1279 eu4 = 1273 v2 = 457 } # Bigorre, Comminges, Aure, Couserans, Foix -> Foix
 	link = { eu4 = 521 eu4 = 4294 eu4 = 4076 eu4 = 4293 v2 = 464 } # Rousillon, Vallespir, Conflent, Formiguera -> Perpignan
