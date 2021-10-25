@@ -582,7 +582,7 @@
 	link = { eu4 = 5472 eu4 = 2361 eu4 = 5509 eu4 = 1967 eu4 = 5497 eu4 = 1970 eu4 = 5469 v2 = 646 } # Gyarmath, Heves, Mezökövesd, Borsod, Szikszó, Hont, Tornalja -> Miskolc
 	link = { eu4 = 1085 eu4 = 2653 eu4 = 479 eu4 = 2358 eu4 = 456 v2 = 649 } # Szarvas, Hód, Csanád, Csongrád, Szolnok -> Szeged
 	link = { eu4 = 4890 eu4 = 445 eu4 = 2068 v2 = 623 } # Rechnitz, Sopron, Szombathely -> Sopron
-	link = { eu4 = 2441 eu4 = 5484 eu4 = 5483 eu4 = 2350 v2 = 639 } # Zala, Lendva, Nagykanizsa, Muraszombat -> Zalaegerszeg
+	link = { eu4 = 2441 eu4 = 5483 v2 = 639 } # Zala, Nagykanizsa -> Zalaegerszeg
 	link = { eu4 = 5474 eu4 = 5475 eu4 = 5494 eu4 = 441 eu4 = 5476 eu4 = 2362 eu4 = 5482 eu4 = 5477 v2 = 643 } # Szentendre, Buda, Sárbogárd, Fejér, Enying, Veszprém, Keszthely, Pápa -> Szekesfehevar
 	link = { eu4 = 444 eu4 = 5473 eu4 = 5923 eu4 = 5506 eu4 = 4119 eu4 = 1969 v2 = 641 } # Pest, Vác, Irsa, Jászberény, Gyöngyös, Nógrád -> Pest
 	link = { eu4 = 1832 eu4 = 5502 eu4 = 5503 eu4 = 5510 eu4 = 576 eu4 = 5504 eu4 = 5505 v2 = 645 } # Kalocsa, Kiskunhalas, Kecskemét, Dabas, Solt, Félegyháza, Nagykörös -> Kecskemet
@@ -648,11 +648,11 @@
 	link = { eu4 = 1966 eu4 = 5411 eu4 = 2369 eu4 = 5405 v2 = 776 } # Bjelovar, Durdevac, Virovitica, Vaška -> Bjelovar
 	link = { eu4 = 2349 eu4 = 5418 eu4 = 2418 eu4 = 5420 eu4 = 5419 eu4 = 5425 eu4 = 1780 v2 = 773 } # Crikvenica, Trsat, Krk, Kostel, Crnomelj, Ogulin, Slunj -> Karlovac
 	link = { eu4 = 470 eu4 = 5428 eu4 = 5404 eu4 = 5432 eu4 = 5426 eu4 = 5429 eu4 = 5427 v2 = 772 } # Sisak, Petrinja, Pakrac, Daruvar, Kostajnica, Stenicnjak, Gvozdansko -> Sisak
-	link = { eu4 = 2236 eu4 = 5430 v2 = 771 } # Zagreb, Samobor -> Zagreb
-	link = { eu4 = 437 eu4 = 2521 eu4 = 5408 eu4 = 5410 eu4 = 5409 v2 = 775 } # Varazdin, Zagorje, Krizevci, Cakovec, Koprivnica -> Varadzin
-	link = { eu4 = 691 eu4 = 944 eu4 = 5416 eu4 = 5415 eu4 = 915 v2 = 767 } # Celje, Catez, Bistrica, Ptuj, Maribor -> Maribor
-	link = { eu4 = 958 eu4 = 2157 eu4 = 670 eu4 = 942 eu4 = 5422 eu4 = 945 eu4 = 203 eu4 = 204 v2 = 768 } # Ljubljana, Kocevje, Grosuplje, Novo Mesto, Kranj, Gradec, Škofja Loka, Bled -> Ljubljana
-	link = { eu4 = 5199 eu4 = 4553 eu4 = 943 eu4 = 129 eu4 = 946 v2 = 769 } # Vipava, Koper, Postojna, Idrija, Tolmin -> Postojna
+	link = { eu4 = 2236 eu4 = 5430 eu4 = 2521 v2 = 771 } # Zagreb, Samobor, Zagorje -> Zagreb
+	link = { eu4 = 437 eu4 = 5408 eu4 = 5410 eu4 = 5409 v2 = 775 } # Varazdin, Krizevci, Cakovec, Koprivnica -> Varadzin
+	link = { eu4 = 691 eu4 = 5416 eu4 = 5415 eu4 = 915 eu4 = 5484 eu4 = 2350 eu4 = 945 v2 = 767 } # Celje, Bistrica, Ptuj, Maribor, Lendva, Muraszombat, Gradec -> Maribor
+	link = { eu4 = 958 eu4 = 2157 eu4 = 670 eu4 = 942 eu4 = 5422 eu4 = 203 eu4 = 204 eu4 = 944 v2 = 768 } # Ljubljana, Kocevje, Grosuplje, Novo Mesto, Kranj, Škofja Loka, Bled, Catez -> Ljubljana
+	link = { eu4 = 5199 eu4 = 4553 eu4 = 943 eu4 = 129 v2 = 769 } # Vipava, Koper, Postojna, Idrija -> Postojna
 	link = { eu4 = 2901 eu4 = 464 v2 = 778 } # Rijeka, Opatija -> Fiume
 	link = { eu4 = 303 eu4 = 2365 eu4 = 469 eu4 = 169 eu4 = 130 v2 = 770 } # Cres, Pula, Buzet, Pazin, Porec -> Pola
 	link = { eu4 = 5557 eu4 = 5556 eu4 = 5561 eu4 = 5570 eu4 = 1815 v2 = 785 } # Banja Luka, Gradiška, Prijedor, Kamengrad, Dubica -> Banja Luka
@@ -847,20 +847,20 @@
 	link = { eu4 = 646 eu4 = 2595 eu4 = 4532 eu4 = 642 eu4 = 1847 eu4 = 2022 eu4 = 976 eu4 = 640 eu4 = 2705 v2 = 744 } # Arezzo, Bibbiena, San Lorenzo, Vernio, Prato, Pistoia, San Miniato, Firenze, Laterina -> Florence
 	link = { eu4 = 117 eu4 = 4531 eu4 = 1024 eu4 = 2978 eu4 = 1813 eu4 = 2077 eu4 = 2025 v2 = 747 } # Siena, Montieri, Montalcino, Volterra, Colle, Cortona, Chiusi -> Siena
 	link = { eu4 = 4554 eu4 = 2654 eu4 = 5195 v2 = 732 } # Oderzo, Treviso, Castelfranco -> Treviso
-	link = { eu4 = 5920 eu4 = 499 eu4 = 2742 eu4 = 5188 eu4 = 109 eu4 = 1989 eu4 = 1820 v2 = 728 } # Casalmaggiore, Cremona, Brescia, Asola, Mantua, Guastalla, Breno -> Brescia
+	link = { eu4 = 5920 eu4 = 499 eu4 = 2742 eu4 = 5188 eu4 = 109 eu4 = 1989 eu4 = 1820 eu4 = 5189 eu4 = 5191 v2 = 728 } # Casalmaggiore, Cremona, Brescia, Asola, Mantua, Guastalla, Breno, Salò, Goito -> Brescia
 	link = { eu4 = 2589 eu4 = 4797 v2 = 721 } # Aosta, Verrès -> Aosta
 	link = { eu4 = 1009 eu4 = 1986 eu4 = 368 eu4 = 2580 eu4 = 1800 eu4 = 969 eu4 = 2562 eu4 = 1244 eu4 = 4545 eu4 = 367 eu4 = 649 eu4 = 2010 eu4 = 366 eu4 = 5921 eu4 = 1000 eu4 = 2086 eu4 = 2002 eu4 = 2559 eu4 = 4543 eu4 = 1007 eu4 = 4544 v2 = 720 } # Torino, Cherasco, Fossano, Clavesana, Ceva, Carretto, Canelli, Alba, Vilafranca, Carmagnola, Incisa, Asti, Poirino, Lanzo, Canavese, Tenda, Limone, Cuneo, San Dalmazzo, Saluzzo, Pinerolo -> Turin
 	link = { eu4 = 110 eu4 = 1021 eu4 = 1020 eu4 = 1018 eu4 = 4876 eu4 = 4127 eu4 = 2187 v2 = 734 } # Tione, Trento, Rovereto, Asiago, Non, Feltre, Valsugana -> Trent
 	link = { eu4 = 111 eu4 = 1830 eu4 = 5196 eu4 = 1774 eu4 = 4555 eu4 = 4868 eu4 = 4870 v2 = 8 } # Tolmezzo, Belluno, Aviano, Ceneda, Bassano, Ampezzo, Tarvisio -> Belluno
-	link = { eu4 = 1862 eu4 = 5200 eu4 = 1019 eu4 = 5190 eu4 = 5191 eu4 = 5189 eu4 = 1996 v2 = 730 } # Verona, Schio, Legnago, Peschiera, Goito, Salò, Polsa -> Verona
-	link = { eu4 = 947 eu4 = 5198 v2 = 737 } # Gorica, Cividale -> Gorizia
+	link = { eu4 = 1862 eu4 = 5200 eu4 = 1019 eu4 = 5190 eu4 = 1996 eu4 = 2656 v2 = 730 } # Verona, Schio, Legnago, Peschiera, Polsa, Vicenza -> Verona
+	link = { eu4 = 947 eu4 = 946 v2 = 737 } # Gorica, Tolmin -> Gorizia
 	link = { eu4 = 954 v2 = 736 } # Trieste -> Trieste
-	link = { eu4 = 2659 eu4 = 1769 eu4 = 1797 eu4 = 2655 eu4 = 2734 v2 = 733 } # Udine, Aquileia, Pordenone, San Vito, Monfalcone -> Udine
+	link = { eu4 = 2659 eu4 = 1769 eu4 = 1797 eu4 = 2655 eu4 = 2734 eu4 = 5198 v2 = 733 } # Udine, Aquileia, Pordenone, San Vito, Monfalcone, Cividale -> Udine
 	link = { eu4 = 492 eu4 = 2713 eu4 = 5186 eu4 = 490 eu4 = 2108 eu4 = 4550 eu4 = 648 v2 = 738 } # Piacenza, Fiorenzuola, Collecchio, Berceto, Bardi, Tizzano, Parma -> Parma
 	link = { eu4 = 974 eu4 = 2105 eu4 = 1779 eu4 = 2604 v2 = 741 } # Bologna, Marzabotto, Castel Bolognese, Imola -> Bologna
 	link = { eu4 = 106 eu4 = 1096 eu4 = 1025 eu4 = 4549 eu4 = 972 eu4 = 1243 eu4 = 1781 eu4 = 2104 v2 = 739 } # Reggio, Castelnovo, Frignano, Sassuolo, Modena, Mirandola, Novellara, Suzzara -> Modena
 	link = { eu4 = 112 eu4 = 485 eu4 = 484 v2 = 729 } # Venezia, Mestre, Eraclea -> Venice
-	link = { eu4 = 2103 eu4 = 2977 eu4 = 2656 eu4 = 731 v2 = 731 } # Padova, Chioggia, Vicenza, Este -> Padua
+	link = { eu4 = 2103 eu4 = 2977 eu4 = 731 v2 = 731 } # Padova, Chioggia, Este -> Padua
 	link = { eu4 = 113 eu4 = 729 eu4 = 2612 eu4 = 5193 v2 = 742 } # Ferrara, Copparo, Comacchio, Cento -> Ferrara
 	link = { eu4 = 1048 eu4 = 2018 eu4 = 1026 eu4 = 1784 eu4 = 1173 eu4 = 1801 eu4 = 647 eu4 = 1805 eu4 = 4541 eu4 = 1031 eu4 = 2603 eu4 = 715 eu4 = 1098 eu4 = 2602 v2 = 743 } # Ravenna, Cesena, Rimini, Pesaro, Fano, Fossombrone, Santo Sepolcro, Carpegna, Bagno, Sarsina, Forlì, Faenza, Tredozio, San Marino -> Ravenna
 	link = { eu4 = 1835 eu4 = 2485 eu4 = 2034 eu4 = 2235 eu4 = 2708 eu4 = 2036 eu4 = 4527 v2 = 749 } # Civitavecchia, Frosinone, Velletri, Roma, Vaticano, Tivoli, Monterotondo -> Rome
