@@ -348,9 +348,12 @@ void V2::World::dropStates(const mappers::TechGroupsMapper& techGroupsMapper)
 				for (const auto& province: state->getProvinces())
 				{
 					const auto& majorityCulture = province->getDominantCulture();
-					const auto score = techGroupsMapper.getWesternizationFromCulture(majorityCulture);
-					if (score == 10)
-						hasCivilizedPeople = true;
+					if (majorityCulture)
+					{
+						const auto score = techGroupsMapper.getWesternizationFromCulture(*majorityCulture);
+						if (score == 10)
+							hasCivilizedPeople = true;
+					}
 				}
 				if (hasCivilizedPeople)
 				{
@@ -392,7 +395,7 @@ void V2::World::dropCores()
 		if (province.second->getCores().empty()) // Don't waste time
 			continue;
 		const auto dominantCulture = province.second->getDominantCulture();
-		if (dominantCulture.empty()) // Let's not drop anything if we don't know what should remain.
+		if (!dominantCulture) // Let's not drop anything if we don't know what should remain.
 			continue;
 		std::set<std::string> survivingCores;
 
@@ -407,14 +410,13 @@ void V2::World::dropCores()
 
 			const auto& cacheItr = theCache.find(core);
 			if (cacheItr == theCache.end())
-				continue;											// Dropping unrecognized core;
-			if (cacheItr->second.count(dominantCulture)) // This province has core's (tag's) accepted culture, we can retain this core.
+				continue;												 // Dropping unrecognized core;
+			if (cacheItr->second.contains(*dominantCulture)) // This province has core's (tag's) accepted culture, we can retain this core.
 				survivingCores.insert(cacheItr->first);
 		}
 		province.second->replaceCores(survivingCores);
 	}
 }
-
 
 void V2::World::addAcceptedCultures(const EU4::Regions& eu4Regions)
 {
@@ -1442,6 +1444,7 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 		if (institutions.contains(country.first))
 			industryWeight += (institutions[country.first] - topInstitutions) * 10.0;								// not lagging in institutions
 		industryWeight += (static_cast<double>(country.second->getProvinces().size()) - provinceMean) / 5; // above-average country size.
+		industryWeight *= country.second->getIndustryFactor();
 
 		// having one manufactory and average tech is not enough; you must have more than one, or above-average tech
 		if (industryWeight > 1.0)

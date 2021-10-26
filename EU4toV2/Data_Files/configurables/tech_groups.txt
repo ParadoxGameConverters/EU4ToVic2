@@ -14,9 +14,16 @@
 # 0 - These people are illiterate.
 # 5 - Standard levels of literacy for this group
 # 10 - Extraordinarily literate aliens from Atlantis
+#
+# Industrialization is also managed by this file and functions independent of eurocentrism. To make someone more industrialized, raise their score.
+# 0 - Rocks can be banged for sparks
+# 5 - A manufactory is a manufactory
+# 10 - Dealing in alien artefacts (double regular)
+# No matter what score is next to unwesternized nation, they cannot have starting factories - this is relevant if eurocentrism is enabled.
 
 western = {
 	westernization = 10
+	industry = 5
 	cultures = {
 	# Germanic
 	north_german swiss south_german german overnissian boehmisch
@@ -62,6 +69,7 @@ western = {
 eastern = {
 	westernization = 10
 	literacy = 4
+	industry = 4
 	cultures = {
 	# Jewish
 	hulwud camite ashkenazi knaanic magogic yevanic mizrahi israeli misrayim sephardic zarphatic laaz kaifeng
@@ -85,6 +93,7 @@ eastern = {
 ottoman = {
 	westernization = 10
 	literacy = 3
+	industry = 2
 	cultures = {
 	turkish
 	# Carthage
@@ -96,6 +105,7 @@ ottoman = {
 
 muslim = {
 	westernization = 6
+	industry = 2
 	cultures = {
 	# Arabic
 	ealimi janubii ifriqi frencharab maghrebi misri mashriqi bedouin berber maghreb_arabic assyrian bazramani
@@ -118,6 +128,7 @@ muslim = {
 
 indian = {
 	westernization = 5
+	industry = 2
 	cultures = {
 	# Indian
 	nayeduniya dakshin kaala
@@ -132,6 +143,7 @@ indian = {
 
 east_african = {
 	westernization = 4
+	industry = 0
 	cultures = {
 	# Horn
 	amhara copts sidama tigray somali harari oromo afar
@@ -146,6 +158,7 @@ east_african = {
 
 central_african = {
 	westernization = 3
+	industry = 0
 	cultures = {
 	# North central
 	fang fur beja azande nuba nuer sudanese luo teda
@@ -164,6 +177,7 @@ central_african = {
 
 chinese = {
 	westernization = 4
+	industry = 2
 	cultures = {
 	# East Asian
 	dongren nanren heiren japanese manchu beifaren nanfaren korean ainu hakka miao min zhuang yi yue xiyeren beieren naiyeren
@@ -180,6 +194,7 @@ chinese = {
 
 nomad_group = {
 	westernization = 3
+	industry = 1
 	cultures = {
 	# Altaic
 	janalem ontustik qalindigi azerbaijani hazara turkmen mongol uzbek kazak kirgiz siberian yakut tatar kurdish uighur
@@ -188,6 +203,7 @@ nomad_group = {
 
 sub_saharan = {
 	westernization = 2
+	industry = 0
 	cultures = {
 	# Sahelian
 	wolof fulbe hausa kanuri maures tuareg baguirmi
@@ -210,6 +226,7 @@ sub_saharan = {
 
 north_american = {
 	westernization = 3
+	industry = 1
 	cultures = {
 	# Metis
 	metis
@@ -222,6 +239,7 @@ north_american = {
 
 mesoamerican = {
 	westernization = 1
+	industry = 0
 	cultures = {
 	# Central american
 	zapotec tarascan mayan nahua
@@ -230,6 +248,7 @@ mesoamerican = {
 
 south_american = {
 	westernization = 1
+	industry = 0
 	cultures = {
 	# Carribean
 	guajiro carribean
@@ -238,6 +257,7 @@ south_american = {
 
 andean = {
 	westernization = 1
+	industry = 0
 	cultures = {
 	# South american
 	chibchan maranon quechua aimara amazonian tupi je guarani patagonian araucanian chacoan 
@@ -250,6 +270,7 @@ andean = {
 
 polynesian_tech = {
 	westernization = 1
+	industry = 0
 	cultures = {
 	# Pacific
 	hawaiian maori melanesian micronesian polynesian
@@ -258,6 +279,7 @@ polynesian_tech = {
 
 aboriginal_tech = {
 	westernization = 1
+	industry = 0
 	cultures = {
 	# Aboriginal
 	aborigine
@@ -266,6 +288,7 @@ aboriginal_tech = {
 
 high_american = {
 	westernization = 10
+	industry = 10
 	literacy = 8
 	cultures = {
 	# Special

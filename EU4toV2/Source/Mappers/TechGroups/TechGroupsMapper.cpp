@@ -12,6 +12,7 @@ mappers::TechGroupsMapper::TechGroupsMapper()
 
 		westernizations[techGroup] = techGroups.getWesternization();
 		literacies[techGroup] = techGroups.getLiteracyBoost();
+		industries[techGroup] = techGroups.getIndustry();
 		for (const auto& culture: techGroups.getCultures())
 		{
 			const auto& culWestItr = cultureWesternization.find(culture);
@@ -31,6 +32,15 @@ int mappers::TechGroupsMapper::getWesternizationFromTechGroup(const std::string&
 	const auto& techGroup = westernizations.find(techGroupName);
 	if (techGroup != westernizations.end())
 		return techGroup->second;
+	Log(LogLevel::Warning) << "Unknown tech group: " << techGroupName;
+	return 0;
+}
+
+int mappers::TechGroupsMapper::getIndustryFromTechGroup(const std::string& techGroupName) const
+{
+	const auto& industryItr = industries.find(techGroupName);
+	if (industryItr != industries.end())
+		return industryItr->second;
 	Log(LogLevel::Warning) << "Unknown tech group: " << techGroupName;
 	return 0;
 }

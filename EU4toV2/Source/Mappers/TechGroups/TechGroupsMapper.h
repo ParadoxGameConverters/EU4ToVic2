@@ -14,10 +14,12 @@ class TechGroupsMapper: commonItems::parser
 	[[nodiscard]] int getWesternizationFromTechGroup(const std::string& techGroupName) const;
 	[[nodiscard]] int getWesternizationFromCulture(const std::string& culture) const;
 	[[nodiscard]] int getLiteracyFromTechGroup(const std::string& techGroupName) const;
+	[[nodiscard]] int getIndustryFromTechGroup(const std::string& techGroupName) const;
 
   private:
 	std::map<std::string, int> westernizations;
 	std::map<std::string, int> literacies;
+	std::map<std::string, int> industries;
 	std::map<std::string, int> cultureWesternization;
 };
 } // namespace mappers

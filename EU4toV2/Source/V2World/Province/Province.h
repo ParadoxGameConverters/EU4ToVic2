@@ -92,7 +92,7 @@ class Province
 	[[nodiscard]] const auto& getSuperRegion() const { return superRegion; }
 	[[nodiscard]] const auto& getCores() const { return details.cores; }
 
-	[[nodiscard]] std::string getDominantCulture();
+	[[nodiscard]] std::optional<std::string> getDominantCulture();
 	[[nodiscard]] int getTotalPopulation() const;
 	[[nodiscard]] std::vector<std::string> getCulturesOverThreshold(double percentOfPopulation) const;
 	[[nodiscard]] std::optional<std::pair<int, std::vector<std::shared_ptr<Pop>>>> getPopsForOutput() const;

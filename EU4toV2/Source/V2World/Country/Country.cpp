@@ -762,7 +762,10 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 	details.literacy *= yearFactor;
 
 	if (civLevel == 100)
+	{
 		details.civilized = true;
+		details.industryFactor = techGroupsMapper.getIndustryFromTechGroup(techGroup) / 5.0; // ranges 0.0-2.0
+	}
 
 	if (details.civilized == false)
 	{
@@ -1096,11 +1099,7 @@ bool V2::Country::isCountryOutsideVNScope(const mappers::ProvinceMapper& provinc
 {
 	// Do we have provinces?
 	if (provinces.empty())
-	{
-		if (tag == "PIC")
-			Log(LogLevel::Debug) << "PIC returning false";
 		return false;
-	}
 
 	// Are all of those provinces outside VN scope?
 	bool outside = true;

@@ -5,17 +5,20 @@
 
 mappers::TechGroups::TechGroups(std::istream& theStream)
 {
-	registerKeyword("westernization", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("westernization", [this](std::istream& theStream) {
 		westernization = commonItems::getInt(theStream);
 	});
-	registerKeyword("literacy", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("literacy", [this](std::istream& theStream) {
 		literacyBoost = commonItems::getInt(theStream);
 	});
-	registerKeyword("cultures", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("industry", [this](std::istream& theStream) {
+		industry = commonItems::getInt(theStream);
+	});
+	registerKeyword("cultures", [this](std::istream& theStream) {
 		const auto& cultureList = commonItems::getStrings(theStream);
 		cultures.insert(cultureList.begin(), cultureList.end());
 	});
-	registerKeyword("hpm_cultures", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("hpm_cultures", [this](std::istream& theStream) {
 		const auto& cultureList = commonItems::getStrings(theStream);
 		hpmCultures.insert(cultureList.begin(), cultureList.end());
 	});
