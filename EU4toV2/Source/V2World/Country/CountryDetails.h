@@ -86,6 +86,7 @@ class CountryDetails: commonItems::parser
 	Reform reforms;
 	UpperHouse upperHouses;
 	double literacyInvestment = 0;
+	double industryFactor = 0;
 
   private:
 	void registerKeys();

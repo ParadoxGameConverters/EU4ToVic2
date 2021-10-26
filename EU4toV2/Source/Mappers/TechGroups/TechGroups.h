@@ -14,11 +14,13 @@ class TechGroups: commonItems::parser
 	[[nodiscard]] auto getWesternization() const { return westernization; }
 	[[nodiscard]] auto getLiteracyBoost() const { return literacyBoost; }
 	[[nodiscard]] const auto& getCultures() const { return cultures; }
+	[[nodiscard]] const auto& getIndustry() const { return industry; }
 
   private:
 	// Values range 0-10. 5 is default.
 	int westernization = 5;
 	int literacyBoost = 5;
+	int industry = 5;
 	std::set<std::string> cultures;
 	std::set<std::string> hpmCultures;
 };

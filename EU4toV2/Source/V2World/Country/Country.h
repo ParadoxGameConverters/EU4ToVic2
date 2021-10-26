@@ -151,6 +151,7 @@ class Country
 	[[nodiscard]] bool isMemberHRE() const { return details.inHRE; }
 	[[nodiscard]] const auto& getParties() const { return details.parties; }
 	[[nodiscard]] bool isCountryOutsideVNScope(const mappers::ProvinceMapper& provinceMapper) const;
+	[[nodiscard]] double getIndustryFactor() const { return details.industryFactor; }
 
 	friend std::ostream& operator<<(std::ostream& output, const Country& country);
 	void outputCommons(std::ostream& output);

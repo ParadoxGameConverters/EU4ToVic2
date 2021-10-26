@@ -65,8 +65,10 @@ V2::Province::Province(std::string _filename,
 		coastal = true;
 }
 
-std::string V2::Province::getDominantCulture()
+std::optional<std::string> V2::Province::getDominantCulture()
 {
+	if (pops.empty())
+		return std::nullopt;
 	std::map<std::string, long> census;
 	for (const auto& pop: pops)
 		census[pop->getCulture()] += pop->getSize();
