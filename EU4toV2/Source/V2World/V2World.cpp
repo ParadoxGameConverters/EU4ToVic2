@@ -1402,7 +1402,7 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 	auto num = 1;
 	double topInstitutions = 0;
 	double provinceMean = 0;
-	std::map<std::string, double> institutions; // tag/institutions.
+	std::map<std::string, double> institutions; // eu4 tag/institutions.
 
 	for (const auto& country: sourceWorld.getCountries())
 	{
@@ -1433,6 +1433,8 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 			continue;
 		if (country.second->getProvinces().empty())
 			continue;
+		if (country.second->getIndustryFactor() <= 0) // ignore countries set to have no industry.
+			continue;
 
 		// modified manufactory weight follows diminishing returns curve y = x^(3/4)+log((x^2)/5+1)
 		const auto manuCount = sourceCountry->getManufactoryCount();
@@ -1441,9 +1443,9 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 
 		auto industryWeight = (sourceCountry->getAdmTech() - admMean) * 5; // above-average admin
 		industryWeight += manuWeight * manuDensity;								 // many and dense manufactories
-		if (institutions.contains(country.first))
-			industryWeight += (institutions[country.first] - topInstitutions) * 10.0;								// not lagging in institutions
-		industryWeight += (static_cast<double>(country.second->getProvinces().size()) - provinceMean) / 5; // above-average country size.
+		if (country.second->getSourceCountry() && institutions.contains(country.second->getSourceCountry()->getTag()))
+			industryWeight += (institutions[country.second->getSourceCountry()->getTag()] - topInstitutions) * 10.0; // not lagging in institutions
+		industryWeight += (static_cast<double>(country.second->getProvinces().size()) - provinceMean) / 10;			// above-average country size.
 		industryWeight *= country.second->getIndustryFactor();
 
 		// having one manufactory and average tech is not enough; you must have more than one, or above-average tech
@@ -1471,6 +1473,7 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 	auto totalIndWeight = 0.0;
 	for (const auto& country: weightedCountries)
 	{
+		Log(LogLevel::Debug) << "weighted: " << country.first << " - " << country.second->getTag();
 		if (restrictCountries.size() > 15 && country.first < threshold - FLT_EPSILON)
 			break;
 
