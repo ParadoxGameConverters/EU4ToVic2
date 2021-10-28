@@ -1473,7 +1473,6 @@ void V2::World::allocateFactories(const EU4::World& sourceWorld)
 	auto totalIndWeight = 0.0;
 	for (const auto& country: weightedCountries)
 	{
-		Log(LogLevel::Debug) << "weighted: " << country.first << " - " << country.second->getTag();
 		if (restrictCountries.size() > 15 && country.first < threshold - FLT_EPSILON)
 			break;
 
