@@ -24,6 +24,7 @@ class Province: commonItems::convenientParser
 	[[nodiscard]] auto getBaseTax() const { return baseTax; }
 	[[nodiscard]] auto getBaseProduction() const { return baseProduction; }
 	[[nodiscard]] auto getBaseManpower() const { return baseManpower; }
+	[[nodiscard]] auto getTotalDevelopment() const { return baseManpower + baseProduction + baseTax; }
 	[[nodiscard]] auto getFirstOwnedDate() const { return provinceHistory.getFirstOwnedDate(); }
 	[[nodiscard]] auto hasBuilding(const std::string& building) const { return buildings.hasBuilding(building); }
 	[[nodiscard]] auto hasGreatProject(const std::string& greatProject) const { return greatProjects.count(greatProject); }
