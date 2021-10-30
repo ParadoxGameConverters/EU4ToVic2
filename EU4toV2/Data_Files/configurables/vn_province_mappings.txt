@@ -724,7 +724,7 @@
 	link = { eu4 = 4100 eu4 = 4070 eu4 = 1767 eu4 = 1277 eu4 = 2796 eu4 = 774 eu4 = 736 eu4 = 1222 v2 = 459 } # Tursan, Marsan, Albret, Gabardan, Bazadais, Benauge, La Réole, Armagnac -> Mont de Marsan
 	link = { eu4 = 4500 eu4 = 2324 eu4 = 4109 eu4 = 4068 eu4 = 832 v2 = 458 } # Médoc, Bordeaux, Buch, Tartas, Dax -> Bordeaux
 	link = { eu4 = 1949 eu4 = 1785 eu4 = 1284 eu4 = 2056 v2 = 461 } # Montpellier, Melgueil, Agde, Nîmes -> Montpellier
-	link = { eu4 = 989 v2 = 467 } # Arles -> Marseilles
+	link = { eu4 = 989 eu4 = 2671 eu4 = 991 v2 = 467 } # Arles, Marseille, Aix -> Marseilles
 	link = { eu4 = 2960 eu4 = 5701 eu4 = 1161 eu4 = 2897 v2 = 404 } # Cambrai, Valenciennes, Avesnes, Guise -> Cambrai
 	link = { eu4 = 2540 eu4 = 4083 eu4 = 2886 eu4 = 751 v2 = 401 } # Corbie, Hesdin, Vermandois, Coucy -> Arras
 	link = { eu4 = 2868 eu4 = 2949 eu4 = 798 v2 = 417 } # Falaise, Domfront, Mortain -> Alencon
@@ -732,11 +732,11 @@
 	link = { eu4 = 2294 eu4 = 1151 v2 = 420 } # Léon, Cornouailles -> Brest
 	link = { eu4 = 1164 eu4 = 1168 eu4 = 4489 eu4 = 4488 v2 = 422 } # Vannes, Rohan, Lorient, Aven -> Vannes
 	link = { eu4 = 2489 eu4 = 2059 eu4 = 4098 eu4 = 4092 eu4 = 1267 eu4 = 2864 eu4 = 1229 v2 = 441 } # Touraine, Baugé, Saumur, Thouars, Mirebeau, Loudun, Châtellerault -> Tours
-	link = { eu4 = 2169 eu4 = 4096 eu4 = 825 eu4 = 4057 eu4 = 4104 eu4 = 4095 v2 = 444 } # Angoulême, Rochefoucauld, Périgord, Bergerac, Nontron, Châlus -> Angouleme
+	link = { eu4 = 2169 eu4 = 825 eu4 = 4057 eu4 = 4104 eu4 = 4095 eu4 = 1282 eu4 = 4096 v2 = 444 } # Angoulême, Périgord, Bergerac, Nontron, Châlus, Auberoche, Rochefoucauld -> Angouleme
 	link = { eu4 = 710 eu4 = 4088 eu4 = 1258 eu4 = 4090 v2 = 443 } # Poitou, Lusignan, Lussac, La Trémouille -> Poitiers
 	link = { eu4 = 1091 eu4 = 1290 eu4 = 2913 eu4 = 1289 v2 = 436 } # Arçonnay, Fresnay, Mulsanne, Angers -> Le Mans
 	link = { eu4 = 4105 eu4 = 4496 eu4 = 4497 eu4 = 868 v2 = 434 } # Clisson, Cholet, Bressuire, Parthenay -> Angers
-	link = { eu4 = 4493 eu4 = 1191 eu4 = 4087 eu4 = 2163 eu4 = 4492 v2 = 435 } # Fougères, Laval, Mayenne, Craon, Ancenis -> Laval
+	link = { eu4 = 4493 eu4 = 1191 eu4 = 2163 eu4 = 4492 eu4 = 4087 v2 = 435 } # Fougères, Laval, Craon, Ancenis, Mayenne -> Laval
 	link = { eu4 = 2003 eu4 = 322 eu4 = 4102 eu4 = 4498 eu4 = 4089 eu4 = 4499 v2 = 442 } # Aunis, Saintonge, Blaye, Niort, Aulnay, Cognac -> La Rochelle
 	link = { eu4 = 4091 eu4 = 4093 eu4 = 1266 v2 = 437 } # Montaigu, Talmont, Fontenay -> La Roche
 	link = { eu4 = 936 eu4 = 4080 eu4 = 1169 eu4 = 4078 v2 = 421 } # Penthièvre, Trégor, Poher, Dinan -> St Brieuc
@@ -758,11 +758,11 @@
 	link = { eu4 = 2286 eu4 = 2287 eu4 = 2014 eu4 = 386 eu4 = 968 v2 = 465 } # Annecy, Faucigny, Chablais, Beaufortain, Tarentaise -> Annency
 	link = { eu4 = 2050 eu4 = 964 eu4 = 800 eu4 = 1006 eu4 = 546 eu4 = 394 v2 = 454 } # Grenoble, Gapençais, Embrun, Susa, Briançon, Chartreuse -> Grenoble
 	link = { eu4 = 2329 eu4 = 4542 eu4 = 420 eu4 = 201 v2 = 469 } # Digne, Roubion, Entrevaux, Manosque -> Digne
-	link = { eu4 = 2330 eu4 = 2558 eu4 = 387 eu4 = 991 eu4 = 2671 v2 = 470 } # Toulon, Draguignan, Brignoles, Aix, Marseille -> Toulon
+	link = { eu4 = 2330 eu4 = 2558 eu4 = 387 v2 = 470 } # Toulon, Draguignan, Brignoles -> Toulon
 	link = { eu4 = 228 v2 = 471 } # Cannes -> Frejus
-	link = { eu4 = 4055 eu4 = 1753 eu4 = 1268 eu4 = 2290 eu4 = 2903 eu4 = 2924 eu4 = 1270 v2 = 449 } # Murat, Aurillac, Carlat, Espalion, Apcher, Gévaudan, Mercoeur -> Aurillac
-	link = { eu4 = 4062 v2 = 450 } # Quercy -> Cahors
-	link = { eu4 = 1274 eu4 = 4107 eu4 = 2909 eu4 = 681 v2 = 445 } # Bellac, Rochechouart, Limousin, La Marche -> Limoges
+	link = { eu4 = 4055 eu4 = 2290 eu4 = 2903 eu4 = 2924 eu4 = 1270 v2 = 449 } # Murat, Espalion, Apcher, Gévaudan, Mercoeur -> Aurillac
+	link = { eu4 = 4062 eu4 = 1753 eu4 = 1268 v2 = 450 } # Quercy, Aurillac, Carlat -> Cahors
+	link = { eu4 = 1274 eu4 = 4107 eu4 = 2909 eu4 = 681 eu4 = 780 eu4 = 1272 v2 = 445 } # Bellac, Rochechouart, Limousin, La Marche, Eymoutiers, Aubusson -> Limoges
 	link = { eu4 = 2088 eu4 = 2887 eu4 = 1183 eu4 = 814 v2 = 440 } # Blois, Amboise, Vendôme, Vierzon -> Blois
 	link = { eu4 = 548 eu4 = 1216 eu4 = 793 eu4 = 809 eu4 = 805 eu4 = 4121 v2 = 425 } # Paris, Rambouillet, Corbeil, Montfort, Nogent-Roi, Dreux -> Paris
 	link = { eu4 = 1100 eu4 = 4060 eu4 = 1097 eu4 = 2875 eu4 = 4082 eu4 = 1099 eu4 = 811 v2 = 2570 } # Beaumont, Vexin, Chaumont, Gisors, Gournay, Meulan, Mantes -> Beauvais
@@ -775,17 +775,18 @@
 	link = { eu4 = 1197 eu4 = 1792 eu4 = 4035 v2 = 427 } # Melun, Fontenay-Trésigny, Nogent -> Melun
 	link = { eu4 = 1754 eu4 = 2898 eu4 = 1271 eu4 = 2917 v2 = 430 } # Bourbon, Jaligny, Montpensier, Nivernais -> Moulins
 	link = { eu4 = 2947 eu4 = 545 eu4 = 4041 eu4 = 4043 eu4 = 1246 eu4 = 2830 eu4 = 1269 eu4 = 2892 v2 = 448 } # Montlaur, Velay, Brioude, Thiers, Clermont-Ferrand, Issoire, La Tour, Auvergne -> Clermont-Ferrand
-	link = { eu4 = 4047 eu4 = 2476 eu4 = 759 eu4 = 193 eu4 = 504 eu4 = 526 eu4 = 2829 eu4 = 2392 v2 = 431 v2 = 452 } # MANY-TO-MANY: Mâcon, Cluny, Charolais, Charlieu, Beaujolais, Forez, Montbrison, Roanne -> Macon, St Etienne
-	link = { eu4 = 2338 eu4 = 4034 eu4 = 4048 eu4 = 2035 eu4 = 2477 eu4 = 4116 eu4 = 2480 eu4 = 4038 eu4 = 419 eu4 = 1257 v2 = 407 } # Gray, Langres, Bassigny, Grand, Gondrecourt, Ligny, Bourmont, Châtillon, Jonchery, Joinville -> Chaumont
+	link = { eu4 = 2392 eu4 = 526 eu4 = 2829 v2 = 452 } # Roanne, Forez, Montbrison -> St Etienne
+	link = { eu4 = 4047 eu4 = 2476 eu4 = 759 eu4 = 193 eu4 = 504 v2 = 431 } # Mâcon, Cluny, Charolais, Charlieu, Beaujolais -> Macon
+	link = { eu4 = 2338 eu4 = 4034 eu4 = 4048 eu4 = 2035 eu4 = 2477 eu4 = 4116 eu4 = 2480 eu4 = 419 eu4 = 1257 eu4 = 4038 v2 = 407 } # Gray, Langres, Bassigny, Grand, Gondrecourt, Ligny, Bourmont, Jonchery, Joinville, Châtillon -> Chaumont
 	link = { eu4 = 189 eu4 = 980 eu4 = 273 eu4 = 2573 eu4 = 994 eu4 = 32 v2 = 414 } # Remiremont, Saint-Dié, Salm-Vosges, Mirecourt, Corre, Épinal -> Epinal
 	link = { eu4 = 33 eu4 = 996 eu4 = 869 eu4 = 2574 eu4 = 31 eu4 = 2483 eu4 = 30 eu4 = 29 eu4 = 4115 v2 = 411 } # Blâmont, Lunéville, Nancy, Vaucouleurs, Commercy, Apremont, Vaudémont, Toul, Pagny -> Nancy
 	link = { eu4 = 1930 eu4 = 873 eu4 = 919 eu4 = 181 eu4 = 2488 eu4 = 27 eu4 = 1776 v2 = 413 } # Verdun, Fresnes, Montmédy, Briey, Longwy, Gorze, Clermont-Meuse -> Verdun
 	link = { eu4 = 4025 eu4 = 4021 eu4 = 1254 eu4 = 753 eu4 = 1287 eu4 = 1288 eu4 = 4024 eu4 = 283 eu4 = 4020 eu4 = 390 v2 = 405 } # Roucy, Rumigny, Porcien, Rethel, Sedan, Attigny, Grandpre, Stenay, Reims, Revin -> Charleville
 	link = { eu4 = 1201 eu4 = 1200 eu4 = 4022 eu4 = 2784 eu4 = 1252 eu4 = 4023 eu4 = 1253 v2 = 403 } # Soissons, Valois, Laon, Senlis, Dammartin, Meaux, Braine -> Laon
 	link = { eu4 = 4042 eu4 = 688 eu4 = 2177 eu4 = 2856 eu4 = 1177 eu4 = 2919 v2 = 426 } # Chartres, Perche, Le Mans, Nogent-Rotrou, Dunois, Étampes -> Chartres
-	link = { eu4 = 4074 eu4 = 2849 eu4 = 836 eu4 = 1276 eu4 = 4053 eu4 = 1272 eu4 = 4075 eu4 = 1175 eu4 = 4108 v2 = 446 } # Châteauroux, Buzançais, Issoudun, Boussac, Combrailles, Aubusson, Brosse, Loches, Chauvigny -> Chateauroux
-	link = { eu4 = 1282 eu4 = 780 eu4 = 4106 eu4 = 4101 eu4 = 2162 eu4 = 4099 eu4 = 2900 v2 = 447 } # Auberoche, Eymoutiers, Comborn, Ventadour, Turenne, Sarlat, Issigeac -> Tulle
-	link = { eu4 = 4071 eu4 = 2816 eu4 = 4044 eu4 = 4054 eu4 = 4059 v2 = 456 } # Lavaur, Gaillac, Cahorsin, Agenais, Marmande -> Montauban
+	link = { eu4 = 4074 eu4 = 2849 eu4 = 836 eu4 = 1276 eu4 = 4053 eu4 = 4075 eu4 = 1175 eu4 = 4108 v2 = 446 } # Châteauroux, Buzançais, Issoudun, Boussac, Combrailles, Brosse, Loches, Chauvigny -> Chateauroux
+	link = { eu4 = 4106 eu4 = 4101 eu4 = 2162 eu4 = 4099 eu4 = 2900 v2 = 447 } # Comborn, Ventadour, Turenne, Sarlat, Issigeac -> Tulle
+	link = { eu4 = 4071 eu4 = 2816 eu4 = 4054 eu4 = 4059 eu4 = 4044 v2 = 456 } # Lavaur, Gaillac, Agenais, Marmande, Cahorsin -> Montauban
 	link = { eu4 = 2423 eu4 = 4065 eu4 = 1285 eu4 = 4056 eu4 = 1280 eu4 = 4064 eu4 = 2776 eu4 = 4067 eu4 = 4069 eu4 = 1278 eu4 = 4066 eu4 = 2802 eu4 = 2780 eu4 = 1281 v2 = 455 } # Toulouse, Durfort, Castelnaudary, Mirepoix, Pamiers, Carbonne, Muret, L'Isle-Jourdain, Lomagne, Gauré, Fezensac, Aspet, Astarac, Pardiac -> Toulouse
 	link = { eu4 = 2894 eu4 = 550 eu4 = 1286 eu4 = 4061 eu4 = 4027 eu4 = 1283 v2 = 463 } # Narbonne, Béziers, Minerve, Carcassonne, Termes, Razès -> Carcassone
 	link = { eu4 = 4103 eu4 = 2289 eu4 = 2787 eu4 = 2910 eu4 = 4077 v2 = 460 } # Labourd, Baja Navarra, Soule, Béarn, Oloron -> Pau
