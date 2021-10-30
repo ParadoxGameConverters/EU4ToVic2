@@ -1192,9 +1192,9 @@ std::optional<std::string> V2::World::determineProvinceOwnership(const std::set<
 			continue; // Don't touch un-colonized provinces.
 		theClaims[ownerTag].push_back(eu4province);
 		if (development.contains(ownerTag))
-			development[ownerTag] += lround(eu4province->getProvinceWeight());
+			development[ownerTag] += lround(eu4province->getTotalDevelopment());
 		else
-			development.emplace(ownerTag, lround(eu4province->getProvinceWeight()));
+			development.emplace(ownerTag, lround(eu4province->getTotalDevelopment()));
 		if (tax.contains(ownerTag))
 			tax[ownerTag] += lround(eu4province->getBaseTax());
 		else
