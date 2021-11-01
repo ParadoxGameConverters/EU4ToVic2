@@ -753,3 +753,27 @@ jizja_tax_reform = { }
 harmonious_law_reform = { }
 pagan_law_reform = { }
 the_bishops_law_reform = { }
+
+# ------------- VN specifics -----
+
+chivalrous_confederations_reform = { army = 6 reactionary = 4 order = 4 literacy = 6 }
+mamluk_leadership_reform = { army = 6 order = 4 commerce = 4 culture = 4 }
+advising_vizirate_reform = { literacy = 6 culture = 7 equality = 3 }
+strength_of_the_voynuks_reform = { army = 7 reactionary = 6 order = 6 }
+askeri_officials_reform = { army = 4 industry = 6 literacy = 6 }
+authorized_thing_reform = { order = 7 commerce = 6 } 
+representative_thing_reform = { liberty = 6 reactionary = 6 }
+consular_constitution_reform = { political_parties = 7 vote_franchise = 7 equality = 7 }
+captain_of_the_people_reform = { political_parties = 3 vote_franchise = 2 order = 7 }
+ora_et_labora_reform = { industry = 6 literacy = 6 }
+monastic_conservatism_reform = { order = 6 literacy = 4 culture = 4 }
+acquisition_of_granges_reform = { order = 7 reactionary = 6 commerce = 6 }
+strenghten_abbatial_hierarchy_reform = { culture = 6 order = 7 reactionary = 7 }
+noble_chanceries_reform = { army = 6 reactionary = 6 }
+episcopal_competences_reform = { literacy = 7 order = 7 }
+unity_of_the_brethen_reform = { culture = 6 equality = 7 }
+hussite_radicalism_reform = { army = 8 order = 9 liberal = 3 equality = 2 literacy = 3 }
+wisdom_of_the_dervishes_reform = { culture = 7 literacy = 7 }
+sept_privileges_reform = { order = 6 army = 6 }
+celtic_revival_reform = { equality = 4 liberty = 6 }
+memorial_tradition_reform = { culture = 6 order = 6 }

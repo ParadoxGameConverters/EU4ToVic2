@@ -152,7 +152,7 @@ east_african = {
 	# South
 	herero khoisan sotho xhosa zulu nguni shona tonga sena makua yao african_minor
 	# HPM
-	cushitic kilombero nyasa southern_bantu
+	cushitic kilombero nyasa southern_bantu forest_bantu south_forest_bantu
 	}
 }
 
@@ -210,7 +210,7 @@ sub_saharan = {
 	# Malian
 	songhai mande bambara dyula
 	# southwest coast
-	akan ewe fon edo yoruba ibo mossi tiv kru
+	akan ewe fon edo yoruba ibo mossi tiv kru western_nigritic
 	}
 	hpm_cultures = {
 	# Sahelian
