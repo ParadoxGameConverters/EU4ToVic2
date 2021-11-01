@@ -54,6 +54,8 @@ holy_state_reform = { order = 9 reactionary = 9 army = 6 equality = 3 liberty = 
 austrian_dual_monarchy = { order = 7 reactionary = 6 culture = 8 }
 siamese_absolutism = { order = 9 reactionary = 6 liberty = 2 }
 confucian_bureaucracy = { order = 6 literacy = 6 culture = 6 }
+germanic_monarchy = { order = 6 reactionary = 7 culture = 4 }
+eastern_monarchy = { order = 4 reactionary = 4 liberty = 7 liberal = 6 }
 
 # Monarchy 2 - Tech
 enforce_privileges_reform = { army = 7 culture = 3 order = 6 }
@@ -128,6 +130,7 @@ merchants_reform = { liberty = 7 liberal = 7 commerce = 7 }
 venice_merchants_reform = { equality = 8 liberal = 8 commerce = 8 }
 pirate_republic_reform = { order = 6 navy = 8 liberal = 10 }
 noble_elite_reform = { order = 7 reactionary = 7 liberal = 4 army = 6 }
+banate_reform = { order = 9 reactionary = 7 army = 6 }
 free_city = { liberty = 6 liberal = 8 commerce = 7 industry = 6 }
 trading_city = { liberty = 7 liberal = 7 commerce = 7 }
 ambrosian_republic = { equality = 7 liberal = 9 army = 6 commerce = 4 }
@@ -151,6 +154,8 @@ prussian_republic_reform = { order = 8 liberal = 3 reactionary = 7 army = 8 comm
 united_cantons_reform = { liberty = 6 army = 6 reactionary = 4 }
 kongsi_federation = { equality = 8 liberal = 8 industry = 7 }
 millenarian_theocracy_reform = { enforce = presidential_dictatorship literacy = 8 reactionary = 8 order = 9 }
+canton_government = { culture = 7 equality = 6 commerce = 7 }
+italian_monarchy = { liberty = 6 reactionary = 7 liberal = 7 political_parties = 9 army = 6 navy = 6 }
 
 # Republic 2 - National Value and UH
 republican_authoritarianism_reform = { order = 7 reactionary = 6 }
@@ -198,6 +203,9 @@ moral_principle_reform = { literacy = 3 }
 # Republic 8 - Vote franchise, Public meetings
 landholders_reform = { vote_franchise = 2 public_meetings = 6 }
 citizenry_reform = { vote_franchise = 9 public_meetings = 10 }
+admiralty_reform = { vote_franchise = 2 liberty = 3 navy = 7 }
+equal_electorate_reform = { vote_franchise = 10 liberty = 10 }
+three_classes_reform = { vote_franchise = 7 liberty = 6 public_meetings = 8 }
 
 # Republic 9 - Literacy, UHC
 appointment_by_committee_reform = { liberty = 8 literacy = 7 upper_house_composition = 2 }
@@ -252,6 +260,8 @@ leading_clergy_reform = { order = 8 literacy = 6 }
 monastic_order_reform = { order = 6 literacy = 4 }
 papacy_reform = { order = 10 literacy = 10 }
 holy_state_reform = { order = 8 literacy = 8 }
+crusader_order_reform = { order = 9 literacy = 2 army = 7 }
+sufi_reform = { order = 7 literacy = 6 }
 
 # Theocracy 2 - Literacy, Tech
 internal_mission_reform = { literacy = 7 industry = 6 culture = 6 }
@@ -743,3 +753,27 @@ jizja_tax_reform = { }
 harmonious_law_reform = { }
 pagan_law_reform = { }
 the_bishops_law_reform = { }
+
+# ------------- VN specifics -----
+
+chivalrous_confederations_reform = { army = 6 reactionary = 4 order = 4 literacy = 6 }
+mamluk_leadership_reform = { army = 6 order = 4 commerce = 4 culture = 4 }
+advising_vizirate_reform = { literacy = 6 culture = 7 equality = 3 }
+strength_of_the_voynuks_reform = { army = 7 reactionary = 6 order = 6 }
+askeri_officials_reform = { army = 4 industry = 6 literacy = 6 }
+authorized_thing_reform = { order = 7 commerce = 6 } 
+representative_thing_reform = { liberty = 6 reactionary = 6 }
+consular_constitution_reform = { political_parties = 7 vote_franchise = 7 equality = 7 }
+captain_of_the_people_reform = { political_parties = 3 vote_franchise = 2 order = 7 }
+ora_et_labora_reform = { industry = 6 literacy = 6 }
+monastic_conservatism_reform = { order = 6 literacy = 4 culture = 4 }
+acquisition_of_granges_reform = { order = 7 reactionary = 6 commerce = 6 }
+strenghten_abbatial_hierarchy_reform = { culture = 6 order = 7 reactionary = 7 }
+noble_chanceries_reform = { army = 6 reactionary = 6 }
+episcopal_competences_reform = { literacy = 7 order = 7 }
+unity_of_the_brethen_reform = { culture = 6 equality = 7 }
+hussite_radicalism_reform = { army = 8 order = 9 liberal = 3 equality = 2 literacy = 3 }
+wisdom_of_the_dervishes_reform = { culture = 7 literacy = 7 }
+sept_privileges_reform = { order = 6 army = 6 }
+celtic_revival_reform = { equality = 4 liberty = 6 }
+memorial_tradition_reform = { culture = 6 order = 6 }
