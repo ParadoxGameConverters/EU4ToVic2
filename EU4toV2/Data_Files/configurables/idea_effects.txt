@@ -259,6 +259,13 @@ religious_ideas = {
 	reactionary = 8
 }
 
+manufacturing_ideas = {
+	commerce = 7
+	industry = 8
+	army = 6
+	culture = 4
+}
+
 # Diplomatic ideas
 
 diplomatic_ideas = {
@@ -304,6 +311,21 @@ trade_ideas = {
 	navy = 6
 	liberal = 7
 	liberty = 7
+}
+
+cultural_ideas = {
+	order = 7
+	equality = 3
+	liberty = 4
+	navy = 6
+	culture = 7
+}
+
+piracy_ideas = {
+	navy = 8
+	comemrce = 7
+	culture = 2
+	liberty = 2
 }
 
 # Military ideas
@@ -372,4 +394,19 @@ theocracy_gov_ideas = {
 	order = 7
 	equality = 2
 	army = 6
+}
+
+logistics_ideas = {
+	army = 7
+	navy = 6
+	order = 6
+	commerce = 4
+}
+
+indigenous_ideas = {
+	equality = 6
+	culture = 6
+	army = 6
+	navy = 3
+	comemrce = 3
 }
