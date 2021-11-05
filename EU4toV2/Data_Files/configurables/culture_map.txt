@@ -412,7 +412,7 @@ link = { vic2 = guney eu4 = gagauz eu4 = avar_culture eu4 = hephthalite eu4 = tu
 link = { vic2 = esmer eu4 = gagauz eu4 = avar_culture eu4 = hephthalite eu4 = turkish eu4 = pecheneg eu4 = turkish_colonial eu4 = yorouk eu4 = azerbadjani eu4 = azerbaijani eu4 = circassian eu4 = dagestani eu4 = abazin eu4 = caucasus_colonial eu4 = chechen eu4 = ossetian eu4 = caucasian_albanian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = sephardic eu4 = magnagreek eu4 = anatolian eu4 = greek eu4 = bithynian eu4 = lykian eu4 = georgian eu4 = armenian eu4 = goths eu4 = spartan eu4 = athenian eu4 = atlantean religion = jewish }
 link = { vic2 = greek eu4 = phrygian eu4 = isaurian eu4 = cypriot eu4 = cappadokian eu4 = maniot eu4 = peloponnesian eu4 = bithynian eu4 = lykian eu4 = greek eu4 = goths eu4 = pontic_greek eu4 = bactrian eu4 = histrian eu4 = leucaethiopian eu4 = ptolemaic eu4 = seleucian eu4 = tylosi eu4 = yavana eu4 = atlantean eu4 = spartan eu4 = athenian eu4 = cappadocian eu4 = galatian eu4 = greek_colonial eu4 = pontic eu4 = anatolian eu4 = psammodytes eu4 = mena_greek }
-link = { vic2 = magnagreek eu4 = magnagreek eu4 = sicilian_greek eu4 = empurian eu4 = kyrenaikan eu4 = messalian eu4 = pulian }
+link = { vic2 = magnagreek eu4 = magnagreek eu4 = sicilian_greek eu4 = empurian eu4 = kyrenaikan eu4 = messalian eu4 = pulian eu4 = hellenistic }
 link = { vic2 = georgian eu4 = georgian eu4 = svanetian }
 link = { vic2 = armenian eu4 = armenian eu4 = armenian_colonial eu4 = ge_armenian eu4 = owm_armenian}
 link = { hpm = dagestani eu4 = dagestani }
@@ -643,7 +643,7 @@ link = { vic2 = fang eu4 = sawabantu } # Cameroon, Gabon, EG
 link = { vic2 = fur eu4 = foora }
 link = { vic2 = nuba eu4 = nuba }
 link = { vic2 = beja eu4 = beja }
-link = { vic2 = sudanese eu4 = nubian eu4 = daju eu4 = zaghawa eu4 = funj eu4 = shilluk eu4 = silla }
+link = { vic2 = sudanese eu4 = nubian eu4 = daju eu4 = zaghawa eu4 = funj eu4 = shilluk eu4 = silla eu4 = tunjur }
 link = { vic2 = luo eu4 = acholi } # South Sudan
 link = { vic2 = teda eu4 = chadic eu4 = chadic_colonial eu4 = toubous }
 
