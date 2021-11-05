@@ -780,7 +780,6 @@ link = { eu4 = TEN v2 = TEN } # Tenkodogo
 link = { eu4 = OGD v2 = OGD } # Ogaadeen
 link = { eu4 = ZUL v2 = ZUL } # Zulu
 link = { eu4 = SOM v2 = SOM } # Somalia
-link = { eu4 = AKS v2 = AKS } # Aksumite Empire
 link = { eu4 = GZI v2 = ZBW } # Great Zimbabwe
 link = { eu4 = NBI v2 = SUD } # Nubia -> Sudan
 link = { eu4 = RZI v2 = SHO } # Rozwi -> Shona

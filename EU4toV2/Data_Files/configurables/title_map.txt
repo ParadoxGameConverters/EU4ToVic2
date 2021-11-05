@@ -5227,3 +5227,7 @@ link = { name = "tymandia"   title = "k_IR_TYM"   region = "e_roman_empire" }
 link = { name = "aetelrugia"   title = "k_IR_VDL"   region = "e_roman_empire" }
 link = { name = "vettonia"   title = "k_IR_VETTONIA_FLAG"   region = "e_roman_empire" }
 link = { name = "western nesiotic league"   title = "k_IR_WESTERN_NESIOTIC_FLAG"   region = "e_roman_empire" }
+
+# 1.32 Songhay
+
+link = { name = "Aksumite Empire" title = "c_aksum" region = "e_abyssinia" }
