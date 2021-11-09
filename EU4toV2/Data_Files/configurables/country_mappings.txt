@@ -772,6 +772,20 @@ link = { eu4 = TBK v2 = TBK } # Tumbuka
 link = { eu4 = MKU v2 = MKU } # Makua
 link = { eu4 = RZW v2 = RZW } # Butua
 
+# Origins update
+link = { eu4 = WGD v2 = BKF } # Wagadugu -> Burkina Faso
+link = { eu4 = ZND v2 = ZND } # Zandoma
+link = { eu4 = GUR v2 = GUR } # Gurma
+link = { eu4 = TEN v2 = TEN } # Tenkodogo
+link = { eu4 = OGD v2 = OGD } # Ogaadeen
+link = { eu4 = ZUL v2 = ZUL } # Zulu
+link = { eu4 = SOM v2 = SOM } # Somalia
+link = { eu4 = GZI v2 = ZBW } # Great Zimbabwe
+link = { eu4 = NBI v2 = SUD } # Nubia -> Sudan
+link = { eu4 = RZI v2 = SHO } # Rozwi -> Shona
+link = { eu4 = KIT v2 = KIT } # Kitara
+link = { eu4 = WAD v2 = WAD } # Wadai
+
 #Madagascar
 link = { eu4 = MIR v2 = MIR } # Merina
 link = { eu4 = SKA v2 = SKA } # Sakalava
