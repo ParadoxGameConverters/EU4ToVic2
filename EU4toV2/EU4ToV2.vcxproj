@@ -232,7 +232,9 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>Copy_Files.bat</Command>
+      <Command>call Copy_Files.bat
+call save_commit_id.bat
+</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copying Data Files</Message>
