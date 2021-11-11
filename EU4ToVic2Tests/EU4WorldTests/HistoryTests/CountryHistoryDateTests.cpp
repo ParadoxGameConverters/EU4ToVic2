@@ -44,6 +44,20 @@ TEST(EU4World_CountryHistoryDateTests, monarchLeaderAndDynastyCanBeLoaded)
 	ASSERT_EQ("Bobbypants", historyDate.getDynasty());
 }
 
+TEST(EU4World_CountryHistoryDateTests, BotanicalMonarchNonLeaderNameCanBeLoaded)
+{
+	std::stringstream input;
+	input << "monarch = {\n";
+	input << "\tname = Boby\n";
+	input << "\tdynasty = Bobbypants\n";
+	input << "}\n";
+	const EU4::CountryHistoryDate historyDate(input, std::string());
+	const auto& leader = historyDate.getLeaders()[0];
+
+	ASSERT_EQ("Boby", historyDate.getRulerName());
+	ASSERT_EQ("Bobbypants", historyDate.getDynasty());
+}
+
 TEST(EU4World_CountryHistoryDateTests, heirAndQueenDoNotLoadDynasties)
 {
 	std::stringstream input;
@@ -68,4 +82,5 @@ TEST(EU4World_CountryHistoryDateTests, heirAndQueenDoNotLoadDynasties)
 	ASSERT_EQ("Boby 1st of Bobbypants", leader1.getName());
 	ASSERT_EQ("Boby 2nd of Bobbypants", leader2.getName());
 	ASSERT_TRUE(historyDate.getDynasty().empty());
+	ASSERT_TRUE(historyDate.getRulerName().empty());
 }

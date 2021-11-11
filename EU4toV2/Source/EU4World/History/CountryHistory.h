@@ -12,6 +12,7 @@ class CountryHistory: commonItems::parser
 
 	[[nodiscard]] const auto& getLeaders() const { return leaders; }
 	[[nodiscard]] const auto& getDynasty() const { return dynasty; }
+	[[nodiscard]] const auto& getRulerName() const { return rulerName; }
 	[[nodiscard]] const auto& getPrimaryCulture() const { return primaryCulture; }
 	[[nodiscard]] const auto& getReligion() const { return religion; }
 
@@ -20,6 +21,7 @@ class CountryHistory: commonItems::parser
 
 	std::vector<Leader> leaders;
 	std::string dynasty;
+	std::string rulerName;
 	std::string religion;
 	std::string primaryCulture;
 };

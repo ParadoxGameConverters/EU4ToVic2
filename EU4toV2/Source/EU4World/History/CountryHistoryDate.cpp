@@ -11,7 +11,7 @@ EU4::CountryHistoryDate::CountryHistoryDate(std::istream& theStream, const std::
 
 void EU4::CountryHistoryDate::registerKeys(const std::string& leaderClass)
 {
-	registerKeyword("leader", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("leader", [this](std::istream& theStream) {
 		const Leader newLeader(theStream);
 		leaders.push_back(newLeader);
 	});
@@ -20,12 +20,21 @@ void EU4::CountryHistoryDate::registerKeys(const std::string& leaderClass)
 		const auto& incLeaders = lookForLeader.getLeaders();
 		leaders.insert(leaders.end(), incLeaders.begin(), incLeaders.end());
 		if (!lookForLeader.dynasty.empty())
+		{
 			dynasty = lookForLeader.dynasty;
+			if (!lookForLeader.rulerName.empty())
+				rulerName = lookForLeader.rulerName;
+		}
 	});
-	registerKeyword("dynasty", [this, leaderClass](const std::string& unused, std::istream& theStream) {
+	registerKeyword("dynasty", [this, leaderClass](std::istream& theStream) {
 		const commonItems::singleString dynastyString(theStream);
 		if (leaderClass == "monarch")
 			dynasty = dynastyString.getString();
+	});
+	registerKeyword("name", [this, leaderClass](std::istream& theStream) {
+		const commonItems::singleString nameString(theStream);
+		if (leaderClass == "monarch")
+			rulerName = nameString.getString();
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

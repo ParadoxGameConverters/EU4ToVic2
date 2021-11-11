@@ -12,12 +12,14 @@ class CountryHistoryDate: commonItems::parser
 
 	[[nodiscard]] const auto& getLeaders() const { return leaders; }
 	[[nodiscard]] const auto& getDynasty() const { return dynasty; }
+	[[nodiscard]] const auto& getRulerName() const { return rulerName; }
 
   private:
 	void registerKeys(const std::string& leaderClass);
 
 	std::vector<Leader> leaders;
-	std::string dynasty; // This is used to prep hoi4 export data with the last monarch dynasty.
+	std::string dynasty;	  // This is used to prep hoi4 export data with the last monarch dynasty.
+	std::string rulerName; // ditto
 };
 } // namespace EU4
 

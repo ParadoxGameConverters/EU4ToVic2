@@ -186,11 +186,15 @@ void EU4::Country::registerKeys(const GameVersion& theVersion)
 	registerKeyword("revolutionary_colors", [this](const std::string& unused, std::istream& theStream) {
 		nationalColors.setRevolutionaryColor(commonItems::Color::Factory{}.getColor(theStream));
 	});
-	registerKeyword("history", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("history", [this](std::istream& theStream) {
 		const CountryHistory theCountryHistory(theStream);
 		historicalLeaders = theCountryHistory.getLeaders();
 		if (!theCountryHistory.getDynasty().empty())
+		{
 			historicalEntry.lastDynasty = theCountryHistory.getDynasty();
+			if (!theCountryHistory.getRulerName().empty())
+				historicalEntry.lastName = theCountryHistory.getRulerName();
+		}
 		historicalPrimaryCulture = theCountryHistory.getPrimaryCulture();
 		historicalReligion = theCountryHistory.getReligion();
 	});
