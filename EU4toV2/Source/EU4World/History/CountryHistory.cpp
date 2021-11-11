@@ -17,7 +17,10 @@ void EU4::CountryHistory::registerKeys()
 		auto incLeaders = theDate.getLeaders();
 		leaders.insert(leaders.end(), incLeaders.begin(), incLeaders.end());
 		if (!theDate.getDynasty().empty())
+		{
 			dynasty = theDate.getDynasty();
+			rulerName = theDate.getRulerName();
+		}
 	});
 	registerKeyword("primary_culture", [this](const std::string& unused, std::istream& theStream) {
 		primaryCulture = commonItems::singleString(theStream).getString();

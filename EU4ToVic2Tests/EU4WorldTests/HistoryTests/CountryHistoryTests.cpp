@@ -90,4 +90,5 @@ TEST(EU4World_CountryHistoryTests, datesCanBeParsedForRulerLeaders)
 	ASSERT_EQ("Boby 2nd of Bobbypants", leader2.getName());
 	ASSERT_EQ("Boby 3rd of Bobbypants", leader3.getName());
 	ASSERT_EQ("Bobbypants", history.getDynasty());
+	ASSERT_EQ("Boby", history.getRulerName());
 }

@@ -17,6 +17,10 @@ std::ostream& V2::operator<<(std::ostream& output, const std::vector<std::pair<s
 		{
 			output << "\tlast_dynasty = \"" << entry.second.lastDynasty << "\"\n";
 		}
+		if (!entry.second.lastName.empty())
+		{
+			output << "\tlast_ruler_name = \"" << entry.second.lastName << "\"\n";
+		}
 		output << "}\n";
 	}
 	return output;

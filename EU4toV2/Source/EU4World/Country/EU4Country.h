@@ -18,6 +18,7 @@ struct HistoricalEntry
 {
 	std::string lastDynasty;
 	bool monarchy = true;
+	std::string lastName;
 };
 
 class Country: commonItems::parser
