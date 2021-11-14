@@ -171,7 +171,7 @@ central_african = {
 	# Congo
 	mongo bakongo luba lunda ovimbundu
 	# HPM
-	ubangian forest_bantu lacustrine_bantu nilotic kuba lendu kingwana chokwe kavango south_forest_bantu
+	ubangian lacustrine_bantu nilotic kuba lendu kingwana chokwe kavango 
 	}
 }
 
