@@ -154,6 +154,7 @@ political_decisions = {
 			BRZ_2446 = { add_core = BRZ }
 			BRZ_2447 = { add_core = BRZ }
 			BRZ_2461 = { add_core = BRZ }
+			BRZ_2462 = { add_core = BRZ }
 			BRZ_2467 = { add_core = BRZ }
 			PEU_2289 = { add_core = PEU } #Peru
 			PEU_2291 = { add_core = PEU }
