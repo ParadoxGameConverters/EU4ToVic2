@@ -346,10 +346,10 @@
 	link = { eu4 = 3906 eu4 = 3905 eu4 = 3904 eu4 = 3831 eu4 = 3829 eu4 = 3899 eu4 = 3900 v2 = 999 } # Rzhev, Selishnya, Ezercy, Biberevo, Andreapol, Belaya, Shoptovo -> Rzhev
 	link = { eu4 = 6159 eu4 = 6162 eu4 = 6154 eu4 = 6155 eu4 = 3832 eu4 = 3830 eu4 = 3826 eu4 = 3828 eu4 = 3827 v2 = 1005 } # Borovichi, Dereva, Valday, Bologoye, Berezovskiy, Morova, Stolopno, Zhizhitsa, Toropets -> Borovichi
 	link = { eu4 = 6172 eu4 = 6176 eu4 = 6179 eu4 = 6170 eu4 = 6160 eu4 = 6161 eu4 = 6174 eu4 = 6175 eu4 = 6173 v2 = 1004 } # Tikhvin, Pashozero, Rodoniovo, Somino, Moshenskoe, Serafimovka, Nebolchi, Tolst, Pikalyovo -> Tikhvin
-	link = { eu4 = 6133 eu4 = 6132 eu4 = 6134 eu4 = 3424 eu4 = 3423 eu4 = 6180 eu4 = 6135 v2 = 2580 } # Ladoga, Kirishi, Stolbovo, Markkova, Inkere, Shapsha, Storozhno -> Novaya Ladoga
+	link = { eu4 = 6133 eu4 = 6132 eu4 = 6134 eu4 = 3424 eu4 = 6135 eu4 = 6180 v2 = 2580 } # Ladoga, Kirishi, Stolbovo, Markkova, Storozhno, Shapsha -> Novaya Ladoga
 	link = { eu4 = 4281 eu4 = 3394 eu4 = 5897 eu4 = 5898 eu4 = 5899 eu4 = 5900 eu4 = 3395 eu4 = 3393 eu4 = 3315 eu4 = 4277 eu4 = 3392 eu4 = 3347 eu4 = 3821 eu4 = 3391 eu4 = 6156 eu4 = 3390 eu4 = 6158 v2 = 1006 } # Pskov, Ostrov, Krivsk, Izborsk, Abrene, Rytnava, Slavkovichi, Vrev, Krasnogorodsk, Sebezh, Opochka, Nishcha, Ostree, Novorzhev, Porkhov, Bezhanitsy, Krivkovo -> Pskov
 	link = { eu4 = 3396 eu4 = 3397 eu4 = 6139 eu4 = 3398 eu4 = 3415 eu4 = 6142 eu4 = 6141 v2 = 997 } # Gdov, Zaborovka, Valovo, Ivangorod, Jaama, Serbino, Polosy -> Gdov
-	link = { eu4 = 3429 eu4 = 3420 eu4 = 3421 eu4 = 3427 eu4 = 3422 eu4 = 6965 eu4 = 3425 eu4 = 3428 eu4 = 3426 v2 = 994 } # Haapakangas, Ropsu, Koprina, Neva, Hatsina, Neva Delta, Rääpyvä, Lempaala, Oreshek -> St Petersburg
+	link = { eu4 = 3429 eu4 = 3420 eu4 = 3421 eu4 = 3427 eu4 = 3422 eu4 = 6965 eu4 = 3425 eu4 = 3428 eu4 = 3426 eu4 = 3423 v2 = 994 } # Haapakangas, Ropsu, Koprina, Neva, Hatsina, Neva Delta, Rääpyvä, Lempaala, Oreshek, Inkere -> St Petersburg
 	link = { eu4 = 6137 eu4 = 6138 eu4 = 3417 eu4 = 3416 eu4 = 3418 eu4 = 3419 eu4 = 6140 eu4 = 6136 v2 = 996 } # Luga, Verduga, Valkeakirkko, Kattila, Kaprio, Serepetta, Merovo, Oredezh -> Luga
 	link = { eu4 = 3822 eu4 = 3316 eu4 = 3348 eu4 = 3344 eu4 = 3345 eu4 = 3954 eu4 = 3962 eu4 = 3960 eu4 = 3961 eu4 = 3314 v2 = 1007 } # Luki, Nevel, Zaborya, Eziaryshcha, Usvyaty, Lyubavichi, Poreche, Vetlica, Shchuche, Velizh -> Velikiye Luki
 	link = { eu4 = 3341 eu4 = 3340 eu4 = 3338 eu4 = 3337 v2 = 944 } # Orsha, Mogilev, Bykhov, Propoysk -> Orsha
@@ -484,8 +484,8 @@
 	link = { comment = "Poland" }
 	link = { eu4 = 2417 eu4 = 2201 eu4 = 2198 eu4 = 4804 eu4 = 4805 eu4 = 889 eu4 = 881 eu4 = 2507 v2 = 546 } # Stettin, Wollin, Cammin, Swiec, Kozstryn, Pyritz, Greifenhagen, Treptow-Rega -> Stettin
 	link = { eu4 = 1858 eu4 = 2208 eu4 = 49 eu4 = 859 eu4 = 880 eu4 = 838 eu4 = 4808 eu4 = 4807 v2 = 679 } # Kolberg, Belgard, Dramburg, Bärwalde, Labes, Arnswalde, Storgard, Pelczyce -> Kolberg
-	link = { eu4 = 4816 eu4 = 2789 eu4 = 2790 eu4 = 2767 eu4 = 4817 eu4 = 4818 eu4 = 2765 eu4 = 2494 eu4 = 43 eu4 = 4813 eu4 = 4819 v2 = 691 } # Puck, Gdynia, Kartuzy, Koscierzyna, Czersk, Nowe, Swiecie, Bytów, Chojnice, Przechlewo, Gniew -> Tuchel
-	link = { eu4 = 2492 eu4 = 4810 eu4 = 2009 eu4 = 2199 eu4 = 4814 eu4 = 4815 eu4 = 4811 v2 = 680 } # Köslin, Bobolice, Rügenwalde, Stolp, Potagowo, Bialogóra, Rumzbork -> Koslin
+	link = { eu4 = 4816 eu4 = 2789 eu4 = 2790 eu4 = 2767 eu4 = 4817 eu4 = 4818 eu4 = 2765 eu4 = 2494 eu4 = 43 eu4 = 4813 eu4 = 4819 eu4 = 4815 v2 = 691 } # Puck, Gdynia, Kartuzy, Koscierzyna, Czersk, Nowe, Swiecie, Bytów, Chojnice, Przechlewo, Gniew, Bialogóra -> Tuchel
+	link = { eu4 = 2492 eu4 = 4810 eu4 = 2009 eu4 = 2199 eu4 = 4814 eu4 = 4811 v2 = 680 } # Köslin, Bobolice, Rügenwalde, Stolp, Potagowo, Rumzbork -> Koslin
 	link = { eu4 = 402 eu4 = 5925 v2 = 690 } # Gdansk, Tczew -> Danzig
 	link = { eu4 = 826 eu4 = 2817 eu4 = 4906 eu4 = 4909 eu4 = 4907 eu4 = 4904 eu4 = 4903 eu4 = 2814 eu4 = 818 eu4 = 4902 eu4 = 2820 eu4 = 819 eu4 = 2878 eu4 = 307 eu4 = 2833 v2 = 683 } # Legnica, Jawor, Boleslawiec, Chojnik, Chojnów, Kamienna Góra, Ksiaz, Swidnica, Ziebice, Strzelin, Kladsko, Nysa, Frydlant, Luban, Rózbork -> Waldenburg
 	link = { eu4 = 4270 eu4 = 5901 eu4 = 5759 eu4 = 5902 eu4 = 4289 v2 = 719 } # Bilysyk, Suraz, Gonendz, Bransk, Drahitsin -> Bialystok
@@ -659,20 +659,20 @@
 	link = { eu4 = 5559 eu4 = 2047 eu4 = 5562 eu4 = 5563 v2 = 784 } # Bihac, Cazin, Ostrovica, Drvar -> Bihac
 	link = { eu4 = 1972 eu4 = 5423 eu4 = 2214 eu4 = 2367 eu4 = 5431 eu4 = 5424 eu4 = 1080 v2 = 774 } # Senj, Bag, Starigrad, Rab, Gospic, Otocac, Krbava -> Senj
 	link = { eu4 = 1083 eu4 = 5433 eu4 = 133 eu4 = 474 eu4 = 473 eu4 = 2368 v2 = 781 } # Zadar, Nin, Biograd-Moru, Pag, Ugljan, Krupa -> Zadar
-	link = { eu4 = 5568 eu4 = 533 eu4 = 2085 eu4 = 2379 eu4 = 2443 eu4 = 5553 v2 = 788 } # Neum, Bileca, Trebinje, Herceg Novi, Nevesinje, Gacko -> Mostar
+	link = { eu4 = 5568 eu4 = 533 eu4 = 2085 eu4 = 2443 eu4 = 5553 v2 = 788 } # Neum, Bileca, Trebinje, Nevesinje, Gacko -> Mostar
 	link = { eu4 = 1963 eu4 = 2348 eu4 = 137 eu4 = 475 eu4 = 305 v2 = 782 } # Ston, Konavle, Dubrovnik, Korcula, Lastovo -> Dubrovnik
-	link = { eu4 = 2096 eu4 = 5515 eu4 = 5957 eu4 = 2060 v2 = 802 } # Pomoravlje, Vucitrn, Bujanovac, Kosovo -> Pristina
+	link = { eu4 = 2096 eu4 = 5515 eu4 = 2060 eu4 = 2081 eu4 = 5957 v2 = 802 } # Pomoravlje, Vucitrn, Kosovo, Mitrovica, Bujanovac -> Pristina
 	link = { eu4 = 5359 eu4 = 5516 eu4 = 2044 eu4 = 5548 v2 = 803 } # Prizren, Djakovica, Metohija, Lipljan -> Prizren
-	link = { eu4 = 5439 eu4 = 2118 v2 = 2583 } # Cetinje, Zeta -> Cetinje
+	link = { eu4 = 5439 eu4 = 2118 eu4 = 2379 v2 = 2583 } # Cetinje, Zeta, Herceg Novi -> Cetinje
 	link = { eu4 = 5529 eu4 = 5542 eu4 = 2075 v2 = 2577 } # Pljevlja, Bijelo Polje, Berane -> Pljevlja
 	link = { eu4 = 5440 eu4 = 1065 eu4 = 2119 v2 = 2569 } # Spuz, Soko, Onogošt -> Niksic
 	link = { eu4 = 791 eu4 = 5437 eu4 = 5438 v2 = 2582 } # Kotor, Budva, Bar -> Cattaro
 	link = { eu4 = 2340 eu4 = 5441 v2 = 800 } # Ulcinj, Vrakë -> Ulcinj
 	link = { eu4 = 2080 eu4 = 2070 eu4 = 5546 eu4 = 5513 eu4 = 5514 eu4 = 5550 eu4 = 5533 eu4 = 5523 eu4 = 5924 eu4 = 547 v2 = 795 } # Bor, Negotin, Kladovo, Majdanpek, Sokolac, Golubac, Zdrelo, Paracin, Svilajnac, Branicevo -> Bor
-	link = { eu4 = 2038 eu4 = 5540 eu4 = 5528 eu4 = 5958 eu4 = 2081 v2 = 804 } # Raška, Brvenik, Sjenica, Prijepolje, Mitrovica -> Novi Pazar
+	link = { eu4 = 2038 eu4 = 5528 eu4 = 5958 v2 = 804 } # Raška, Sjenica, Prijepolje -> Novi Pazar
 	link = { eu4 = 5527 eu4 = 5525 eu4 = 561 eu4 = 2039 v2 = 797 } # Uzice, Cacak, Karanovac, Rujno -> Uzice
 	link = { eu4 = 5521 eu4 = 5524 eu4 = 552 eu4 = 5526 v2 = 796 } # Arandjelovac, Jagodina, Lepenica, Rudnik -> Kragujevac
-	link = { eu4 = 2064 eu4 = 5396 eu4 = 5518 eu4 = 1947 eu4 = 353 eu4 = 5536 v2 = 798 } # Niš, Svrljig, Prokuplje, Kruševac, Kuršumlija, Kozetin -> Nis
+	link = { eu4 = 2064 eu4 = 5396 eu4 = 5518 eu4 = 1947 eu4 = 353 eu4 = 5536 eu4 = 5540 v2 = 798 } # Niš, Svrljig, Prokuplje, Kruševac, Kuršumlija, Kozetin, Brvenik -> Nis
 	link = { eu4 = 563 eu4 = 5517 eu4 = 2027 v2 = 799 } # Vranje, Leskovac, Tsaribrod -> Leskovac
 	link = { eu4 = 2045 eu4 = 562 eu4 = 5358 eu4 = 5369 eu4 = 5368 v2 = 806 } # Štip, Strumica, Morodvis, Kratovo, Kumanovo -> Skopje
 	link = { eu4 = 5956 eu4 = 5362 eu4 = 5357 eu4 = 2355 eu4 = 5366 eu4 = 2066 v2 = 807 } # Dunje, Pelagonia, Prosek, Prilep, Veles, Skopje -> Bitola
@@ -690,13 +690,13 @@
 	link = { eu4 = 2322 eu4 = 5320 eu4 = 2371 eu4 = 5319 eu4 = 5577 eu4 = 2190 eu4 = 716 v2 = 823 } # Khristoupolis, Zichna, Serrai, Philippoi, Potamoi, Thassos, Samothraki -> Kavala
 	link = { eu4 = 2398 eu4 = 5321 eu4 = 2193 v2 = 805 } # Thessaloniki, Langades, Gynaikokastron -> Salonika
 	link = { eu4 = 719 eu4 = 5445 eu4 = 977 v2 = 822 } # Ierissos, Kassandreia, Agio Oros -> Polygyros
-	link = { eu4 = 5364 eu4 = 5374 eu4 = 5367 eu4 = 5365 v2 = 1780 } # Ohrid, Dibër, Tetovo, Zeleznec -> Debar
+	link = { eu4 = 5364 eu4 = 5367 eu4 = 5365 v2 = 1780 } # Ohrid, Tetovo, Zeleznec -> Debar
 	link = { eu4 = 5360 eu4 = 708 eu4 = 5363 eu4 = 581 v2 = 819 } # Petres, Kastoria, Phlorina, Bodena -> Florina
 	link = { eu4 = 2117 eu4 = 5336 eu4 = 5337 v2 = 821 } # Kitros, Sthlanitza, Bardiotai -> Edessa
 	link = { eu4 = 5335 eu4 = 5371 v2 = 820 } # Belbentos, Grebena -> Grevena
 	link = { eu4 = 2688 eu4 = 5349 eu4 = 5373 eu4 = 392 eu4 = 5929 eu4 = 2150 v2 = 824 } # Prebeza, Parga, Thesprotia, Epeiros, Belas, Konitsa -> Janina
-	link = { eu4 = 2773 v2 = 825 } # Arta -> Arta
-	link = { eu4 = 5350 eu4 = 5330 eu4 = 2191 v2 = 833 } # Boulgarelion, Stagoi, Trikala -> Trikkala
+	link = { eu4 = 2773 eu4 = 5350 v2 = 825 } # Arta, Boulgarelion -> Arta
+	link = { eu4 = 5330 eu4 = 2191 v2 = 833 } # Stagoi, Trikala -> Trikkala
 	link = { eu4 = 2786 eu4 = 5328 eu4 = 5327 eu4 = 5329 v2 = 831 } # Larissa, Pharsalos, Kappoua, Elasson -> Larisa
 	link = { eu4 = 5324 eu4 = 1082 v2 = 832 } # Platamon, Golos -> Volos
 	link = { eu4 = 603 eu4 = 2388 eu4 = 5511 eu4 = 600 v2 = 836 } # Karpenisi, Neopatras, Zetounion, Pteleon -> Lamia
@@ -714,7 +714,7 @@
 	link = { eu4 = 5446 eu4 = 5447 eu4 = 5448 eu4 = 5449 v2 = 847 } # Chania, Sphakia, Rethymno, Chandax -> Chania
 	link = { comment = "Albania" }
 	link = { eu4 = 714 eu4 = 5378 eu4 = 5443 eu4 = 595 v2 = 852 } # Vlorë, Fier, Tepelenë, Himarë -> Vlore
-	link = { eu4 = 5376 eu4 = 707 eu4 = 718 eu4 = 2394 v2 = 849 } # Çermenikë, Pukë, Elbasan, Tirana -> Tirana
+	link = { eu4 = 5376 eu4 = 707 eu4 = 718 eu4 = 2394 eu4 = 5374 v2 = 849 } # Çermenikë, Pukë, Elbasan, Tirana, Dibër -> Tirana
 	link = { eu4 = 5444 eu4 = 5372 eu4 = 1066 eu4 = 5375 eu4 = 2390 eu4 = 2391 v2 = 853 } # Delvinë, Bouthroton, Argyrokastro, Grammos, Korçë, Berat -> Gjirokaster
 	link = { eu4 = 598 eu4 = 2332 eu4 = 596 eu4 = 713 eu4 = 503 eu4 = 2393 eu4 = 5377 v2 = 851 } # Zadrimë, Lezhë, Laç, Krujë, Durrës, Kavajë, Gradishtë -> Durres
 	link = { eu4 = 2380 eu4 = 797 eu4 = 5442 eu4 = 271 v2 = 850 } # Shati, Shkodër, Peshkopi, Kukës -> Shkoder
