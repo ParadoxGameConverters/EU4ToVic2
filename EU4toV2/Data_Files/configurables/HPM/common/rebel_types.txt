@@ -1869,12 +1869,6 @@ pan_nationalist_rebels = {
         }
         random_owned = {
             limit = {
-                owner = { is_culture_group = germanic }
-            }
-            owner = { country_event = 96210 }
-        }
-        random_owned = {
-            limit = {
                 owner = { is_culture_group = scandinavian }
             }
             owner = { country_event = 96217 }
@@ -1889,7 +1883,6 @@ pan_nationalist_rebels = {
             limit = {
                 owner = {
                     NOT = { is_culture_group = italian }
-                    NOT = { is_culture_group = germanic }
                     NOT = { is_culture_group = pan_romanian }
                     NOT = { is_culture_group = scandinavian }
                 }
