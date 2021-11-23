@@ -1253,6 +1253,7 @@ country_event = {
     major = yes
 
     trigger = {
+        NOT = { has_country_flag = union_is_hre }
         tag = PRU
         is_vassal = no
         ai = yes
@@ -1297,7 +1298,8 @@ country_event = {
             }
         any_country = {
             limit = {
-                exists = yes
+               NOT = { has_country_flag = union_is_hre }
+               exists = yes
                 is_greater_power = no
             OR = {
                 primary_culture = north_german
@@ -1321,6 +1323,7 @@ country_event = {
             country_event = 33038
         }
         any_country = { limit = {
+            NOT = { has_country_flag = union_is_hre }
             exists = yes
             is_greater_power = no
             OR = {
@@ -1361,6 +1364,7 @@ country_event = {
             }
         any_country = {
             limit = {
+                NOT = { has_country_flag = union_is_hre }
                 ai = yes
                 primary_culture = north_german
                 is_substate = no
@@ -1375,6 +1379,7 @@ country_event = {
         }
         random_country = {
             limit = {
+                NOT = { has_country_flag = union_is_hre }
                 ai = yes
                 primary_culture = south_german
                 is_substate = no
@@ -1385,6 +1390,7 @@ country_event = {
         }
         any_country = {
             limit = {
+                NOT = { has_country_flag = union_is_hre }
                 ai = yes
                 primary_culture = south_german
                 is_substate = no
