@@ -898,6 +898,7 @@ country_event = {
     picture = "threehurrahs"
 
     trigger = {
+        NOT = { has_country_flag = union_is_hre }
         primary_culture = north_german
         war = no
         is_vassal = no

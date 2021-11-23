@@ -2,6 +2,7 @@ political_decisions = {
 
     form_south_german_confederation = {
         potential = {
+            NOT = { has_country_flag = union_is_hre }
             capital_scope = { continent = europe }
             is_greater_power = yes
             primary_culture = south_german
@@ -202,6 +203,7 @@ political_decisions = {
     austrian_form_south_german_confederation2 = {
         picture = form_south_german_confederation
         potential = {
+            NOT = { has_country_flag = union_is_hre }
             is_greater_power = yes
             tag = AUS
             NOT = { has_country_flag = austrian_greater_germany }
@@ -296,6 +298,7 @@ political_decisions = {
 
     form_north_german_confederation = {
         potential = {
+            NOT = { has_country_flag = union_is_hre }
             is_greater_power = yes
             primary_culture = north_german
             capital_scope = { continent = europe }
@@ -503,6 +506,7 @@ political_decisions = {
         news_desc_medium = "form_germany_NEWS_MEDIUM"
         news_desc_short = "form_germany_NEWS_SHORT"
         potential = {
+            NOT = { has_country_flag = union_is_hre }
             capital_scope = { continent = europe }
             NOT = { has_country_flag = post_colonial_country }
             OR = {
@@ -673,6 +677,7 @@ political_decisions = {
         news_desc_short = "form_germany_NEWS_SHORT"
         picture = form_germany
         potential = {
+            NOT = { has_country_flag = union_is_hre }
             tag = AUS
             NOT = { exists = GER }
         }
@@ -1101,6 +1106,7 @@ political_decisions = {
     form_north_german_confederation2 = {
         picture = form_north_german_confederation
         potential = {
+            NOT = { has_country_flag = union_is_hre }
             is_greater_power = yes
             primary_culture = north_german
             capital_scope = { continent = europe }
@@ -1193,6 +1199,7 @@ political_decisions = {
     form_south_german_confederation2 = {
         picture = form_south_german_confederation
         potential = {
+            NOT = { has_country_flag = union_is_hre }
             is_greater_power = yes
             primary_culture = south_german
             capital_scope = { continent = europe }
