@@ -2242,10 +2242,15 @@ void V2::World::copyHpmFiles() const
 		fs::copy_file("configurables/HPM/decisions/" + file, out + "/decisions/" + file);
 	}
 
-	// common
+	// common folder:
+	// rebel types from our source.
+	fs::remove(out + "/common/rebel_types.txt");
+	fs::copy_file("configurables/HPM/common/rebel_types.txt", out + "/common/rebel_types.txt");
+
+	// copy all other missing files except cb types which need to overwrite old one.
 	for (const auto& file: commonItems::GetAllFilesInFolder(hpm + "/common"))
 	{
-		if (file == "cb_types.txt" || file == "rebel_types.txt")
+		if (file == "cb_types.txt")
 			fs::remove(out + "/common/" + file);
 		else if (commonItems::DoesFileExist(out + "/common/" + file))
 			continue;
