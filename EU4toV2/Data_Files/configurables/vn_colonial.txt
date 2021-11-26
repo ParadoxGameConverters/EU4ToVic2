@@ -95,8 +95,8 @@ link = { name = "Russian Siberia" key = 1026 provinces = { 2695 1058 2685 1062 2
 # Russian Urals to Ufa 
 link = { name = "Russian Urals" key = 1042 provinces = { 1059 2658 1061 1064 2686 } }
 
-# Russian Tartary to Uralsk 
-link = { name = "Russian Tartary" key = 2610 provinces = { 1183 1060 2611 1181 1184 1067 1068 2698 2674 2691 1077 2701 1076 2683 1063 1070 2692 2656 2694 1075 2670 1078 1079 2671 2676 2677 2675 } }
+# Russian Tartary to Ufa 
+link = { name = "Russian Tartary" key = 1042 provinces = { 1183 1060 2611 1181 1184 1067 1068 2698 2674 2691 1077 2701 1076 2683 1063 1070 2692 2656 2694 1075 2670 1078 1079 2671 2676 2677 2675 } }
 
 # Russian Scandinavia to Petrozavodsk 
 link = { name = "Russian Scandinavia" key = 995 provinces = { 983 984 988 2588 982 2587 } }
