@@ -10,6 +10,7 @@ political_decisions = {
                 has_country_flag = post_colonial_country
                 exists = SGF
                 exists = GER
+                exists = ERF
                 tag = DNB
                 AND = {
                     tag = AUS
@@ -30,10 +31,9 @@ political_decisions = {
                         OR = {
                             owned_by = THIS
                             owner = {
-                                in_sphere = THIS
                                 OR = {
-                                    is_vassal = no
-                                    vassal_of = THIS
+                                    in_sphere = THIS
+                                    is_vassal = yes
                                 }
                                 war = no
                                 is_mobilised = no
@@ -125,6 +125,7 @@ political_decisions = {
             primary_culture = south_german
             NOT = {
                 exists = GER
+                exists = ERF
                 exists = SGF
                 has_country_flag = austrian_greater_germany
             }
@@ -139,10 +140,9 @@ political_decisions = {
                             owned_by = THIS
                             owner = {
                                 ai = yes
-                                in_sphere = THIS
                                 OR = {
-                                    is_vassal = no
-                                    vassal_of = THIS
+                                    in_sphere = THIS
+                                    is_vassal = yes
                                 }
                                 war = no
                                 is_mobilised = no
@@ -208,6 +208,7 @@ political_decisions = {
             tag = AUS
             NOT = { has_country_flag = austrian_greater_germany }
             NOT = { exists = GER }
+            NOT = { exists = ERF }
         }
         allow = {
             war = no
@@ -219,10 +220,9 @@ political_decisions = {
                             owned_by = THIS
                             owner = {
                                 ai = yes
-                                in_sphere = THIS
                                 OR = {
-                                    is_vassal = no
-                                    vassal_of = THIS
+                                    in_sphere = THIS
+                                    is_vassal = yes
                                 }
                                 war = no
                                 is_mobilised = no
@@ -305,6 +305,7 @@ political_decisions = {
             NOT = {
                 has_country_flag = post_colonial_country
                 exists = GER
+                exists = ERF
                 exists = NGF
                 tag = UBD
             }
@@ -318,10 +319,9 @@ political_decisions = {
                         OR = {
                             owned_by = THIS
                             owner = {
-                                in_sphere = THIS
                                 OR = {
-                                    is_vassal = no
-                                    vassal_of = THIS
+                                    in_sphere = THIS
+                                    is_vassal = yes
                                 }
                                 war = no
                                 is_mobilised = no
@@ -510,6 +510,7 @@ political_decisions = {
             capital_scope = { continent = europe }
             NOT = { has_country_flag = post_colonial_country }
             OR = {
+                tag = ERF
                 tag = NGF
                 tag = SGF
             }
@@ -526,14 +527,17 @@ political_decisions = {
                     OR = {
                         owned_by = THIS
                         owner = {
-                            in_sphere = THIS
                             OR = {
-                                is_vassal = no
-                                vassal_of = THIS
+                                in_sphere = THIS
+                                is_vassal = yes
                             }
                             war = no
                             is_mobilised = no
                             is_greater_power = no
+                        }
+                        AND = {
+                            THIS = { revolution_n_counterrevolution = 1 }
+                            owner = { NOT = { is_culture_group = germanic } }
                         }
                     }
                 }
@@ -618,6 +622,7 @@ political_decisions = {
                     NOT = { has_country_flag = post_colonial_country }
                     OR = {
                         all_core = { owned_by = THIS }
+                        tag = ERF
                         tag = NGF
                         tag = SGF
                     }
@@ -680,6 +685,7 @@ political_decisions = {
             NOT = { has_country_flag = union_is_hre }
             tag = AUS
             NOT = { exists = GER }
+            NOT = { exists = ERF }
         }
 
         allow = {
@@ -692,14 +698,17 @@ political_decisions = {
                     OR = {
                         owned_by = THIS
                         owner = {
-                            in_sphere = THIS
                             OR = {
-                                is_vassal = no
-                                vassal_of = THIS
+                                in_sphere = THIS
+                                is_vassal = yes
                             }
                             war = no
                             is_mobilised = no
                             is_greater_power = no
+                        }
+                        AND = {
+                            THIS = { revolution_n_counterrevolution = 1 }
+                            owner = { NOT = { is_culture_group = germanic } }
                         }
                     }
                 }
@@ -740,6 +749,7 @@ political_decisions = {
                     NOT = { has_country_flag = post_colonial_country }
                     OR = {
                         all_core = { owned_by = THIS }
+                        tag = ERF
                         tag = NGF
                         tag = SGF
                     }
@@ -868,10 +878,9 @@ political_decisions = {
                             # }
                         # }
                         owner = {
-                            in_sphere = THIS
                             OR = {
-                                is_vassal = no
-                                vassal_of = THIS
+                                in_sphere = THIS
+                                is_vassal = yes
                             }
                             war = no
                             is_mobilised = no
@@ -959,10 +968,9 @@ political_decisions = {
                         is_core = AFG
                         is_core = KAS
                         owner = {
-                            in_sphere = THIS
                             OR = {
-                                is_vassal = no
-                                vassal_of = THIS
+                                in_sphere = THIS
+                                is_vassal = yes
                             }
                             war = no
                             is_mobilised = no
@@ -1113,6 +1121,7 @@ political_decisions = {
             NOT = {
                 has_country_flag = post_colonial_country
                 exists = GER
+                exists = ERF
                 exists = NGF
                 tag = UBD
             }
@@ -1127,10 +1136,9 @@ political_decisions = {
                         OR = {
                             owned_by = THIS
                             owner = {
-                                in_sphere = THIS
                                 OR = {
-                                    is_vassal = no
-                                    vassal_of = THIS
+                                    in_sphere = THIS
+                                    is_vassal = yes
                                 }
                                 war = no
                                 is_mobilised = no
@@ -1207,6 +1215,7 @@ political_decisions = {
                 has_country_flag = post_colonial_country
                 exists = SGF
                 exists = GER
+                exists = ERF
                 tag = AUS
                 tag = KUK
                 tag = DNB
@@ -1222,10 +1231,9 @@ political_decisions = {
                         OR = {
                             owned_by = THIS
                             owner = {
-                                in_sphere = THIS
                                 OR = {
-                                    is_vassal = no
-                                    vassal_of = THIS
+                                    in_sphere = THIS
+                                    is_vassal = yes
                                 }
                                 war = no
                                 is_mobilised = no

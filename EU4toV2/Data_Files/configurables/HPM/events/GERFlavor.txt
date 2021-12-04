@@ -1259,6 +1259,7 @@ country_event = {
         ai = yes
         NOT = { exists = NGF }
         NOT = { exists = GER }
+        NOT = { exists = ERF }
         NOT = { year = 1890 }
         has_country_flag = french_claimed_the_rhine
         has_global_flag = watching_the_rhine
@@ -1878,5 +1879,214 @@ country_event = {
             diplomatic_influence = { who = THIS value = 75 }
         }
         ai_chance = { factor = 90 }
+    }
+}
+
+# Erfurt Parliament - Success
+country_event = {
+    id = 33046
+    title = "EVTNAME33046"
+    desc = "EVTDESC33046"
+    news = yes
+    news_desc_long = "form_germany_NEWS_LONG"
+    news_desc_medium = "form_germany_NEWS_MEDIUM"
+    news_desc_short = "form_germany_NEWS_SHORT"
+    picture = "threehurrahs"
+
+    trigger = {
+        has_country_flag = convened_erfurt_parliament
+        NOT = {
+            exists = GER
+            exists = ERF
+            exists = NGF
+            exists = SGF
+        }
+        GER = {
+            all_core = {
+                owner = {
+                    OR = {
+                        tag = THIS
+                        is_vassal = yes
+                        NOT = { is_culture_group = THIS }
+                    }
+                }
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "EVTOPTA33046"
+        prestige = 20
+        all_core = {
+            remove_core = THIS
+            add_core = GER
+        }
+        change_tag = GER
+        add_accepted_culture = north_german
+        add_accepted_culture = south_german
+        random_owned = { limit = { owner = { accepted_culture = french } } owner = { remove_accepted_culture = french } }
+        random_owned = { limit = { owner = { accepted_culture = polish } } owner = { remove_accepted_culture = polish } }
+        random_owned = { limit = { owner = { accepted_culture = danish } } owner = { remove_accepted_culture = danish } }
+        random_owned = { limit = { owner = { accepted_culture = hungarian } } owner = { remove_accepted_culture = hungarian } }
+        set_global_flag = 3hurrahs
+        any_country = {
+            limit = {
+                is_culture_group = germanic
+                exists = no
+                NOT = { tag = AUS }
+                NOT = { tag = KUK }
+                NOT = { tag = DNB }
+                NOT = { tag = PRU }
+                NOT = { tag = BAN }
+                NOT = { tag = UBD }
+                NOT = { has_country_flag = post_colonial_country }
+                OR = {
+                    all_core = { owned_by = THIS }
+                    tag = NGF
+                    tag = SGF
+                }
+            }
+            country_event = 11105
+        }
+        any_country = {
+            limit = {
+                OR = {
+                    tag = AUS
+                    tag = KUK
+                    tag = DNB
+                }
+                exists = no
+                THIS = { capital = 619 }
+            }
+            country_event = 11105
+        }
+        any_country = {
+            limit = {
+                tag = PRU
+                exists = no
+                THIS = { capital = 549 }
+            }
+            country_event = 11105
+        }
+        any_country = {
+            limit = {
+                in_sphere = THIS
+                OR = {
+                    is_culture_group = germanic
+                    tag = SCH
+                }
+                NOT = {
+                    tag = KUK
+                    tag = AUS
+                    tag = DNB
+                    tag = BAN
+                    tag = UBD
+                }
+                OR = {
+                    is_vassal = no
+                    vassal_of = THIS
+                }
+                NOT = { has_country_flag = post_colonial_country }
+            }
+            country_event = 11101
+        }
+    }
+}
+
+# Erfurt Parliament - Partial Success
+country_event = {
+    id = 33047
+    title = "EVTNAME33047"
+    desc = "EVTDESC33047"
+    picture = "threehurrahs"
+
+    trigger = {
+        has_country_flag = convened_erfurt_parliament
+        NOT = {
+            exists = GER
+            exists = ERF
+            exists = NGF
+            exists = SGF
+        }
+        NOT = {
+            GER = {
+                all_core = {
+                    owner = {
+                        OR = {
+                            tag = THIS
+                            is_vassal = yes
+                            NOT = { is_culture_group = THIS }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1
+    }
+
+    option = {
+        name = "EVTOPTA33047"
+        prestige = 15
+        clr_country_flag = crown_from_the_gutter
+        clr_country_flag = secondary_union_formation
+        random_owned = { limit = { owner = { accepted_culture = french } } owner = { remove_accepted_culture = french } }
+        random_owned = { limit = { owner = { accepted_culture = polish } } owner = { remove_accepted_culture = polish } }
+        random_owned = { limit = { owner = { accepted_culture = danish } } owner = { remove_accepted_culture = danish } }
+        random_owned = { limit = { owner = { accepted_culture = hungarian } } owner = { remove_accepted_culture = hungarian } }
+        all_core = { add_core = ERF remove_core = THIS }
+        any_owned = {
+            limit = {
+                NOT = { is_core = THIS }
+                any_core = {
+                    exists = no
+                    OR = {
+                        primary_culture = north_german
+                        primary_culture = south_german
+                    }
+                    NOT = { has_country_flag = post_colonial_country }
+                }
+            }
+            add_core = ERF
+        }
+        change_tag = ERF
+        any_pop = {
+            limit = {
+                OR = {
+                    has_pop_culture = north_german
+                    has_pop_culture = south_german
+                }
+            }
+            militancy = -1
+        }
+        FRA_412 = { add_core = GER }
+        random_owned = {
+            limit = { owner = { ai = yes } }
+            owner = { add_country_modifier = { name = law_changed_by_force duration = 365 } }
+        }
+        any_country = {
+            limit = {
+                NOT = { tag = UBD }
+                OR = {
+                    primary_culture = north_german
+                    primary_culture = south_german
+                    tag = SCH
+                }
+                in_sphere = THIS
+                NOT = { tag = THIS }
+                NOT = { has_country_flag = post_colonial_country }
+                OR = {
+                    is_vassal = no
+                    vassal_of = THIS
+                }
+            }
+            country_event = 11101
+        }
     }
 }
