@@ -1,0 +1,8 @@
+# This file defines culture, religions, government, civilized and capital for dead nations.
+# These will override whatever we loaded in vanilla history files. What isn't listed will default to either history entries or won't be set, depending on case.
+# Tag is mandatory, the rest is not. Only one of each is allowed:
+# tag, primary_culture, religion, government, civilized, capital, add_accepted_culture
+
+# Usually we default to "dummy" culture and "dummy_religion" religion, which automatically solve in-game (e.g. if ABC is mostly French, it'll become French); to absolute_monarchy and uncivilized. Of course, no extra accepted culture is added.
+
+link = { tag = ERF primary_culture = north_german add_accepted_culture = south_german religion = protestant government = prussian_constitutionalism civilized = yes capital = 549 }
