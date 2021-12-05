@@ -69,6 +69,8 @@ void V2::World::outputGTFO(std::map<std::string, std::shared_ptr<V2::Country>> c
 	{
 		if (skip.contains(tag))
 			continue;
+		if (!country->getSourceCountry())
+			continue;
 		std::string countryName;
 		if (!country->getLocalName().empty())
 		{
@@ -186,6 +188,8 @@ void V2::World::outputReturnCores(std::map<std::string, std::shared_ptr<V2::Coun
 	for (const auto& [tag, country]: countries)
 	{
 		if (skip.contains(tag))
+			continue;
+		if (!country->getSourceCountry())
 			continue;
 		std::string countryName;
 		if (!country->getLocalName().empty())
