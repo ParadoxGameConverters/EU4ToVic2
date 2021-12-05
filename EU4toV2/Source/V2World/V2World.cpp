@@ -814,6 +814,7 @@ void V2::World::importPotentialCountries()
 	if (theConfiguration.isHpmEnabled())
 	{
 		countriesFiles.push_back(theConfiguration.getVic2Path() + "/common/countries.txt");
+		countriesFiles.push_back("./configurables/HPM/common/countries.txt");
 	}
 	countriesFiles.push_back("./blankMod/output/common/countries.txt");
 
@@ -2242,19 +2243,19 @@ void V2::World::copyHpmFiles() const
 		fs::copy_file("configurables/HPM/decisions/" + file, out + "/decisions/" + file);
 	}
 
-	// common folder:
-	// rebel types from our source.
-	fs::remove(out + "/common/rebel_types.txt");
-	fs::copy_file("configurables/HPM/common/rebel_types.txt", out + "/common/rebel_types.txt");
-
-	// copy all other missing files except cb types which need to overwrite old one.
+	// common
 	for (const auto& file: commonItems::GetAllFilesInFolder(hpm + "/common"))
 	{
-		if (file == "cb_types.txt")
+		if (file == "cb_types.txt" || file == "rebel_types.txt")
 			fs::remove(out + "/common/" + file);
 		else if (commonItems::DoesFileExist(out + "/common/" + file))
 			continue;
 		fs::copy_file(hpm + "/common/" + file, out + "/common/" + file);
+	}
+	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/common/countries"))
+	{
+		fs::remove(out + "/common/countries/" + file);
+		fs::copy_file("configurables/HPM/common/countries/" + file, out + "/common/countries/" + file);
 	}
 
 	commonItems::CopyFolder(hpm + "/battleplans", out + "/battleplans");
@@ -2269,6 +2270,16 @@ void V2::World::copyHpmFiles() const
 			continue;
 		fs::copy_file(hpm + "/news/" + file, out + "/news/" + file);
 	}
+
+	// flags
+	for (const auto& file: commonItems::GetAllFilesInFolder("configurables/HPM/gfx/flags"))
+	{
+		fs::remove(out + "/gfx/flags/" + file);
+		fs::copy_file("configurables/HPM/gfx/flags/" + file, out + "/gfx/flags/" + file);
+	}
+
+	// localisation
+	commonItems::CopyFolder("configurables/HPM/localisation", out + "/localisation");
 
 	// flag for vic2tohoi4
 	std::ofstream flagFile("output/" + theConfiguration.getOutputName() + "/hybridization.txt");

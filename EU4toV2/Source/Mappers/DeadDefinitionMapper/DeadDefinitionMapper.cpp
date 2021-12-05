@@ -1,10 +1,15 @@
 #include "DeadDefinitionMapper.h"
 #include "CommonRegexes.h"
+#include "Configuration.h"
 #include "ParserHelpers.h"
 
 mappers::DeadDefinitionMapper::DeadDefinitionMapper()
 {
 	registerKeys();
+	if (theConfiguration.isHpmEnabled())
+	{
+		parseFile("configurables/HPM/dead_definitions.txt");
+	}
 	parseFile("configurables/dead_definitions.txt");
 	clearRegisteredKeywords();
 }

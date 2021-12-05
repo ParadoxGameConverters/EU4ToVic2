@@ -1,0 +1,134 @@
+political_decisions = {
+    convene_erfurt_parliament = {
+        picture = "erfurt_parliament"
+
+        potential = {
+            OR = {
+                primary_culture = north_german
+                primary_culture = south_german
+            }
+            OR = {
+                is_greater_power = yes
+                is_secondary_power = yes
+            }
+            capital_scope = { continent = europe }
+            is_vassal = no
+            NOT = {
+                exists = GER
+                exists = ERF
+                exists = NGF
+                exists = SGF
+                has_country_flag = post_colonial_country
+                has_country_flag = union_is_hre
+                has_country_flag = refused_NGF_idea
+                capital_scope = { is_core = HLR }
+            }
+            NOT = {
+                GER = {
+                    any_core = {
+                        owner = {
+                            exists = yes
+                            has_country_flag = convened_erfurt_parliament
+                        }
+                    }
+                }
+                GER = {
+                    any_core = {
+                        owner = {
+                            OR = {
+                                primary_culture = north_german
+                                primary_culture = south_german
+                            }
+                            has_country_flag = emperor_hre
+                        }
+                    }
+                }
+            }
+            GER = {
+                any_core = {
+                    owner = {
+                        OR = {
+                            primary_culture = north_german
+                            primary_culture = south_german
+                        }
+                        is_vassal = no
+                        NOT = {
+                            tag = THIS
+                            has_country_flag = post_colonial_country
+                            has_country_flag = refused_NGF_idea
+                            has_country_flag = union_is_hre
+                        }
+                        ai = yes
+                    }
+                }
+            }
+        }
+
+        allow = {
+            nationalism_n_imperialism = 1
+            NOT = {
+                any_greater_power = {
+                    NOT = { tag = THIS }
+                    is_primary_culture = THIS
+                }
+            }
+            # Eligible same culture country with highest military score
+            NOT = {
+                GER = {
+                    any_core = {
+                        owner = {
+                            is_primary_culture = THIS
+                            OR = {
+                                is_greater_power = yes
+                                is_secondary_power = yes
+                            }
+                            capital_scope = { continent = europe }
+                            is_vassal = no
+                            NOT = {
+                                has_country_flag = post_colonial_country
+                                has_country_flag = union_is_hre
+                                has_country_flag = refused_NGF_idea
+                                capital_scope = { is_core = HLR }
+                            }
+                            NOT = { tag = THIS }
+                            #is_mobilised = no
+                            military_score = THIS
+                        }
+                    }
+                }
+            }
+            war = no
+            is_mobilised = no
+        }
+
+        effect = {
+            set_country_flag = convened_erfurt_parliament
+            any_country = {
+                limit = {
+                    is_culture_group = THIS
+                    is_greater_power = no
+                    sphere_owner = {
+                        OR = {
+                            tag = THIS
+                            NOT = { is_culture_group = THIS }
+                        }
+                    }
+                    OR = {
+                        vassal_of = THIS
+                        is_vassal = no
+                    }
+                    NOT = {
+                        tag = THIS
+                        has_country_flag = post_colonial_country
+                        has_country_flag = refused_NGF_idea
+                        has_country_flag = union_is_hre
+                    }
+                    exists = yes
+                    ai = yes
+                }
+                country_event = 11101 # Event to Inherit
+            }
+        }
+        ai_will_do = { factor = 1 }
+    }
+}
