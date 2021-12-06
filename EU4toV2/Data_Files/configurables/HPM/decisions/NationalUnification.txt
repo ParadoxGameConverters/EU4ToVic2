@@ -113,6 +113,7 @@ political_decisions = {
         potential = {
                     tag = AUS
                     any_owned_province = {
+                        culture = south_german
                         NOT = {
                             OR = {
                                 is_core = AUS
