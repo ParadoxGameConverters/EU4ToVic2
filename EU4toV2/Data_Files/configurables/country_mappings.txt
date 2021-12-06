@@ -1739,7 +1739,7 @@ link = { eu4 = DEM v2 = DMK } #Demak
 #link = { eu4 = ILK v2 = e_il-khanate } #Ilkhanate
 link = { eu4 = ECU v2 = ECU } #Ecuador
 link = { eu4 = KEG v2 = EGY } #KingdomOfEgypt
-link = { eu4 = ASE v2 = ENG } #AnglosaxonEmpire
+link = { eu4 = ASE v2 = ENL } #AnglosaxonEmpire
 link = { eu4 = AYM v2 = ETH } #Aymara
 link = { eu4 = THD v2 = FEO } #Theodoros
 link = { eu4 = FIR v2 = FLO } #Firenze

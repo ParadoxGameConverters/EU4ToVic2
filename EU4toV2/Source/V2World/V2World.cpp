@@ -373,7 +373,7 @@ void V2::World::dropStates(const mappers::TechGroupsMapper& techGroupsMapper)
 void V2::World::dropCores()
 {
 	// This function is used to drop EXTANT country cores over provinces where they do not have primary/accepted culture dominance.
-	// Dead country cores will remain so something can be released.
+	// Dead country cores will remain so something can be released, unless overridden via configuration.
 
 	// This is quicker if we first build a country/culture cache and then check against it then iterate through
 	// every province and do multiple unneeded checks.
@@ -387,7 +387,16 @@ void V2::World::dropCores()
 		if (!country.second->getPrimaryCulture().empty())
 			theCache[country.first].insert(country.second->getPrimaryCulture());
 		if (country.second->getProvinces().empty())
+		{
+			// Hold up. This country may be dead because it's dead, but if it died during conversion then consider it alive.
+			// We don't want such countries leaving cores all over the place unless they are national ones, which are handled via a separate process.
+
+			const auto& potentialEU4country = country.second->getSourceCountry();
+			if (potentialEU4country && !potentialEU4country->getProvinces().empty())
+				continue; // this one died during conversion. Purge it as it it were alive.
+
 			deadCache.insert(country.first);
+		}
 	}
 
 	for (auto& province: provinces)
@@ -402,10 +411,16 @@ void V2::World::dropCores()
 		for (const auto& core: province.second->getCores())
 		{
 			// Dead countries take priority.
-			if (deadCache.count(core))
+			if (deadCache.contains(core))
 			{
-				survivingCores.insert(core); // inserting automatically.
-				continue;
+				if (theConfiguration.getRemoveType() == Configuration::DEADCORES::AllCores)
+					continue; // no dead ones, thank you.
+				if (theConfiguration.getRemoveType() == Configuration::DEADCORES::LeaveAll)
+				{
+					survivingCores.insert(core); // inserting automatically.
+					continue;
+				}
+				// Otherwise, check for culture below as normal.
 			}
 
 			const auto& cacheItr = theCache.find(core);
