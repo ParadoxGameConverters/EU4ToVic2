@@ -29,7 +29,7 @@ country_event = {
 	option = { 
 		name = EVTOPTA250002
 		clr_country_flag = emperor_hre 
-		any_province = { remove_core = HLR }
+		HLR = { all_core = { remove_core = HLR } }
 	}
 }
 
