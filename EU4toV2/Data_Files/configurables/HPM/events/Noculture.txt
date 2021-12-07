@@ -3,6 +3,7 @@ country_event = {
 	id = 1999999
 	title = EVTHELLOTITLE
 	desc = EVTHELLODESC
+    picture = observer
 	major = yes
 	
 	trigger = {
@@ -78,30 +79,12 @@ country_event = {
 	option = {
 		name = EVTHELLOOBS
 		set_global_flag = hello_player
-		3246 = {
-			owner = {
-				country_event = 1999998
-			}
-		}
-		country_event = {
-			id = 1999997
-			days = 1
-		}
-	}
-}
-country_event = {
-	id = 1999998
-	title = EVTOBSTITLE
-	desc = EVTOBSDESC
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOBSOPTA
+        3246 = {
+            secede_province = THIS
+            state_scope = { is_slave = no }
+        }
 		3246 = {
 			secede_province = AAA
-			remove_core = THIS
-			remove_core = SCA
-			remove_core = NOR
 			change_province_name = "Observer"
 			life_rating = -100
 			add_core = AAA
@@ -113,16 +96,6 @@ country_event = {
 				duration = -1
 			}
 		}
-	}
-}
-country_event = {
-	id = 1999997
-	title = EVTOBSERVER
-	desc = EVTOBSERDESC
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOBSEROPTA
 		change_tag_no_core_switch = AAA
 		AAA = {
 			ruling_party_ideology = noIdeology
@@ -130,6 +103,7 @@ country_event = {
 			religion = dummy_religion
 			remove_accepted_culture = zzz_religion_shamanist
 			add_accepted_culture = zzz_religion_dummy_religion
+            add_country_modifier = { name = neutrality_modifier duration = -1 }
 		}
 	}
 }
