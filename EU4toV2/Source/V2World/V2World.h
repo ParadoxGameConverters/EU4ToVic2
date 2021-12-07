@@ -146,6 +146,7 @@ class World
 	std::string customizeFile(const std::string& filePath, const std::regex& oldRegex, const std::string& newString);
 	void outputDynamicContent() const;
 	void distributeVNColonies();
+	void addSetupDecisions();
 
 	mappers::ProvinceMapper provinceMapper;
 	mappers::Continents continentsMapper;
