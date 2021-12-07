@@ -1983,6 +1983,7 @@ country_event = {
 
     trigger = {
         government = theocracy
+        NOT = { tag = AAA }
         NOT = { tag = MON }
         NOT = { tag = ITA }
         NOT = { tag = PAP }

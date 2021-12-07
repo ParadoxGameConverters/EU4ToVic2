@@ -641,6 +641,7 @@ country_event = {
 
     trigger = {
         civilized = no
+        NOT = { tag = AAA }
         colonial_nation = no
         is_vassal = no
         NOT = { has_global_flag = berlin_conference }

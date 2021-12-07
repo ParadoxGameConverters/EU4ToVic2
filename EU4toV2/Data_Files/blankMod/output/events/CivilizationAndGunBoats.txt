@@ -16,6 +16,7 @@ country_event = {
 		NOT = {
 			has_country_modifier = western_influences
 			has_country_modifier = uncivilized_isolationism
+			tag = AAA
 		}
 	}
 

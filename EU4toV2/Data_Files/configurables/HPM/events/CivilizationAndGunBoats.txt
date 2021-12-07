@@ -14,6 +14,7 @@ country_event = {
     trigger = {
         civilized = no
         NOT = {
+            tag = AAA
             has_country_modifier = western_influences
             has_country_modifier = uncivilized_isolationism
         }

@@ -7,6 +7,7 @@ country_event = {
 	trigger = {
 		nationalvalue = nv_order
 		average_militancy = 7
+		NOT = { tag = AAA }
 	}
 	
 	mean_time_to_happen = {
@@ -39,6 +40,7 @@ country_event = {
 		nationalvalue = nv_order
 		NOT = {
 			prestige = 10
+			tag = AAA
 		}
 	}
 	
@@ -72,6 +74,7 @@ country_event = {
 		NOT = {
 			war_exhaustion = 8
 		}
+		NOT = { tag = AAA }
 	}
 	
 	mean_time_to_happen = {

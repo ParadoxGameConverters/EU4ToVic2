@@ -81,6 +81,7 @@ country_event = {
         }
         war = yes
         NOT = { war_exhaustion = 8 }
+        NOT = { tag = AAA }
     }
 
     mean_time_to_happen = {
@@ -509,6 +510,7 @@ country_event = {
     trigger = {
         nationalvalue = nv_order
         war = no
+        NOT = { tag = AAA }
     }
 
     mean_time_to_happen = {

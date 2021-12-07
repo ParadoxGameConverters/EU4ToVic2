@@ -356,6 +356,7 @@ province_event = {
 		owner = {
 			NOT = {
 				citizenship_policy = full_citizenship
+				tag = AAA
 			}
 		}
 		controlled_by = owner
@@ -2336,6 +2337,7 @@ province_event = {
 		is_accepted_culture = no
 		is_colonial = no
 		controlled_by = owner
+        NOT = { owned_by = AAA }
 	}
 	
 	mean_time_to_happen = {
@@ -2550,6 +2552,7 @@ province_event = {
 			NOT = {
 				citizenship_policy = full_citizenship
 				press_rights = free_press
+				tag = AAA
 			}
 		}
 		any_greater_power = {
