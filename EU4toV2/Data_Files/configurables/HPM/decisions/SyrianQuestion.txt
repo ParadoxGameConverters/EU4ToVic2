@@ -1,0 +1,76 @@
+political_decisions = {
+
+	syrian_question = {
+		potential = {
+			always = no
+		}
+		allow = {
+		}
+			
+		effect = {
+			TUR_855 = { # Cyprus
+				limit = {
+					is_core = GRE
+					NOT = { owned_by = BYZ }
+				}
+				remove_core = GRE
+				add_core = CYP
+			}
+			EGY_843 = { # Crete
+				limit = {
+					is_core = GRE
+					NOT = { owned_by = BYZ }
+				}
+				add_core = CRE
+			}
+			EGY_897 = { # Aleppo
+				limit = {
+					is_core = IRQ
+					NOT = { owned_by = IRQ }
+				}
+				remove_core = IRQ
+				add_core = SYR
+			}
+			EGY_903 = { # Damascus
+				limit = {
+					is_core = IRQ
+					NOT = { owned_by = IRQ }
+				}
+				remove_core = IRQ
+				add_core = SYR
+			}
+			900 = { # Antakya
+				limit = {
+					is_core = IRQ
+					NOT = { owned_by = IRQ }
+				}
+				remove_core = IRQ
+				add_core = SYR
+			}
+			EGY_910 = { # Transjordan
+				limit = {
+					is_core = IRQ
+					NOT = { owned_by = IRQ }
+				}
+				remove_core = IRQ
+			}
+			EGY_910 = { add_core = JOR }
+			EGY_915 = { # Lebanon
+				limit = {
+					is_core = IRQ
+					NOT = { owned_by = IRQ }
+				}
+				remove_core = IRQ
+			}
+			EGY_915 = { add_core = LBN }
+			EGY_921 = { # Palestine
+				limit = {
+					is_core = IRQ
+					NOT = { owned_by = IRQ }
+				}
+				remove_core = IRQ
+			}
+			EGY_921 = { add_core = PLS }
+		}
+	}
+}

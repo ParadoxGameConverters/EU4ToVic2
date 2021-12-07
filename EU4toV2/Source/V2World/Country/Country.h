@@ -117,6 +117,7 @@ class Country
 	void addPolicy(const std::string& partyName, const std::string& policy, const std::string& position);
 	void setHpmNationalValues();
 	void setHPMFlags();
+	void addDecision(const std::string& decision) { decisions.insert(decision); }
 	void removeProvinceID(const int provinceID)
 	{
 		if (provinces.contains(provinceID))

@@ -11,64 +11,6 @@ country_event = {
 		NOT = { has_global_flag = hello_player }
 	}
 
-    immediate = { # Syrian Question event merged in
-        TUR_855 = { # Cyprus
-            limit = {
-                is_core = GRE
-                NOT = { owned_by = BYZ }
-            }
-            remove_core = GRE
-            add_core = CYP
-        }
-        EGY_843 = { # Crete
-            limit = {
-                is_core = GRE
-                NOT = { owned_by = BYZ }
-            }
-            add_core = CRE
-        }
-        EGY_897 = { # Aleppo
-            limit = {
-                is_core = IRQ
-                NOT = { owned_by = IRQ }
-            }
-            remove_core = IRQ
-            add_core = SYR
-        }
-        EGY_903 = { # Damascus
-            limit = {
-                is_core = IRQ
-                NOT = { owned_by = IRQ }
-            }
-            remove_core = IRQ
-            add_core = SYR
-        }
-        EGY_910 = { # Transjordan
-            limit = {
-                is_core = IRQ
-                NOT = { owned_by = IRQ }
-            }
-            remove_core = IRQ
-        }
-        EGY_910 = { add_core = JOR }
-        EGY_915 = { # Lebanon
-            limit = {
-                is_core = IRQ
-                NOT = { owned_by = IRQ }
-            }
-            remove_core = IRQ
-        }
-        EGY_915 = { add_core = LBN }
-        EGY_921 = { # Palestine
-            limit = {
-                is_core = IRQ
-                NOT = { owned_by = IRQ }
-            }
-            remove_core = IRQ
-        }
-        EGY_921 = { add_core = PLS }
-    }
-	
 	mean_time_to_happen = { months = 0.0001 }
 	
 	option = {

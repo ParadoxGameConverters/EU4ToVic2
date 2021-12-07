@@ -158,6 +158,9 @@ V2::World::World(const EU4::World& sourceWorld,
 	localizeProvinces();
 	Log(LogLevel::Progress) << "73 %";
 
+	Log(LogLevel::Info) << "-> Setting up the world";
+	addSetupDecisions();
+
 	Log(LogLevel::Info) << "---> Le Dump <---";
 	output(converterVersion);
 
@@ -2377,5 +2380,17 @@ void V2::World::outputDynamicContent() const
 		if (!out.is_open())
 			Log(LogLevel::Debug) << "Could not open " + file + " for writing!";
 		out << localisation;
+	}
+}
+
+void V2::World::addSetupDecisions()
+{
+	for (const auto& [unused, country]: countries)
+	{
+		if (!country->getProvinces().empty())
+		{
+			country->addDecision("syrian_question");
+			break;
+		}
 	}
 }
