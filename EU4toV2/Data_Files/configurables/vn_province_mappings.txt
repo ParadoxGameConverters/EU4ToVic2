@@ -638,27 +638,27 @@
 	link = { eu4 = 5565 eu4 = 5564 eu4 = 557 eu4 = 5566 eu4 = 5522 v2 = 789 } # Livno, Glamoc, Kupres, Ljubuški, Široki Brijeg -> Livno
 	link = { eu4 = 677 eu4 = 5555 eu4 = 535 eu4 = 5406 eu4 = 5549 eu4 = 5554 v2 = 786 } # Srebrenik, Soli, Belina, Morovic, Zvornik, Gradacac -> Tuzla
 	link = { eu4 = 890 eu4 = 480 eu4 = 5531 eu4 = 5532 eu4 = 5534 eu4 = 5567 eu4 = 2120 eu4 = 461 eu4 = 5558 eu4 = 1068 eu4 = 5569 eu4 = 2433 eu4 = 5560 v2 = 783 } # Sarajevo, Kreševo, Konjic, Travnik, Bugojno, Zenica, Jajce, Kljuc, Kotor Varoš, Doboj, Maglaj, Bobovac, Prozor -> Sarajevo
-	link = { eu4 = 5401 eu4 = 472 v2 = 777 } # Slavonski Brod, Pozega -> Pozega
+	link = { eu4 = 5401 eu4 = 472 eu4 = 5404 v2 = 777 } # Slavonski Brod, Pozega, Pakrac -> Pozega
 	link = { eu4 = 539 eu4 = 5398 eu4 = 2043 eu4 = 5537 eu4 = 2445 eu4 = 5530 eu4 = 5538 eu4 = 553 eu4 = 5520 eu4 = 5519 v2 = 794 } # Beograd, Zemun, Macva, Debrc, Obrenovac, Smederevo, Grocka, Kolubara, Loznica, Krupanj -> Belgrade
 	link = { eu4 = 5547 eu4 = 5399 eu4 = 2427 eu4 = 5403 v2 = 791 } # Ilok, Petrovaradin, Sremska Mitrovica, Karlovci -> Mitrovica
 	link = { eu4 = 5402 eu4 = 2069 v2 = 793 } # Vinkovci, Srijem -> Vukovar
 	link = { eu4 = 2946 eu4 = 2429 eu4 = 2918 eu4 = 660 eu4 = 2331 eu4 = 2207 eu4 = 512 eu4 = 2357 eu4 = 2031 eu4 = 712 eu4 = 2930 v2 = 792 } # Törökkanizsa, Módos, Pancsova, Csákova, Bánlak, Versec, Torontál, Kikinda, Kevevára, Haram, Nagyszentmiklós -> Pancevo
 	link = { eu4 = 538 eu4 = 756 eu4 = 1075 eu4 = 799 eu4 = 2192 eu4 = 5501 eu4 = 2366 eu4 = 995 v2 = 2538 } # Bodrog, Szabadka, Bács, Hódság, Titel, Szeged, Kiskunság, Baja -> Novi Sad
 	link = { eu4 = 5400 eu4 = 5407 eu4 = 2624 v2 = 779 } # Osijek, Dakovo, Pélmonostor -> Osijek
-	link = { eu4 = 1966 eu4 = 5411 eu4 = 2369 eu4 = 5405 v2 = 776 } # Bjelovar, Durdevac, Virovitica, Vaška -> Bjelovar
-	link = { eu4 = 2349 eu4 = 5418 eu4 = 2418 eu4 = 5425 eu4 = 1780 v2 = 773 } # Crikvenica, Trsat, Krk, Ogulin, Slunj -> Karlovac
-	link = { eu4 = 470 eu4 = 5428 eu4 = 5404 eu4 = 5432 eu4 = 5426 eu4 = 5429 eu4 = 5427 v2 = 772 } # Sisak, Petrinja, Pakrac, Daruvar, Kostajnica, Stenicnjak, Gvozdansko -> Sisak
+	link = { eu4 = 1966 eu4 = 5411 eu4 = 2369 eu4 = 5405 eu4 = 5432 v2 = 776 } # Bjelovar, Durdevac, Virovitica, Vaška, Daruvar -> Bjelovar
+	link = { eu4 = 2349 eu4 = 5418 eu4 = 5425 eu4 = 1780 v2 = 773 } # Crikvenica, Trsat, Ogulin, Slunj -> Karlovac
+	link = { eu4 = 470 eu4 = 5428 eu4 = 5426 eu4 = 5429 eu4 = 5427 v2 = 772 } # Sisak, Petrinja, Kostajnica, Stenicnjak, Gvozdansko -> Sisak
 	link = { eu4 = 2236 eu4 = 5430 eu4 = 2521 v2 = 771 } # Zagreb, Samobor, Zagorje -> Zagreb
 	link = { eu4 = 437 eu4 = 5408 eu4 = 5410 eu4 = 5409 v2 = 775 } # Varazdin, Krizevci, Cakovec, Koprivnica -> Varadzin
 	link = { eu4 = 691 eu4 = 5416 eu4 = 5415 eu4 = 915 eu4 = 5484 eu4 = 2350 eu4 = 945 v2 = 767 } # Celje, Bistrica, Ptuj, Maribor, Lendva, Muraszombat, Gradec -> Maribor
 	link = { eu4 = 958 eu4 = 2157 eu4 = 670 eu4 = 942 eu4 = 5422 eu4 = 203 eu4 = 204 eu4 = 944 eu4 = 5420 eu4 = 5419 v2 = 768 } # Ljubljana, Kocevje, Grosuplje, Novo Mesto, Kranj, Škofja Loka, Bled, Catez, Kostel, Crnomelj -> Ljubljana
 	link = { eu4 = 5199 eu4 = 4553 eu4 = 943 eu4 = 129 v2 = 769 } # Vipava, Koper, Postojna, Idrija -> Postojna
 	link = { eu4 = 2901 eu4 = 464 v2 = 778 } # Rijeka, Opatija -> Fiume
-	link = { eu4 = 303 eu4 = 2365 eu4 = 469 eu4 = 169 eu4 = 130 v2 = 770 } # Cres, Pula, Buzet, Pazin, Porec -> Pola
+	link = { eu4 = 2365 eu4 = 469 eu4 = 169 eu4 = 130 v2 = 770 } # Pula, Buzet, Pazin, Porec -> Pola
 	link = { eu4 = 5557 eu4 = 5556 eu4 = 5561 eu4 = 5570 eu4 = 1815 v2 = 785 } # Banja Luka, Gradiška, Prijedor, Kamengrad, Dubica -> Banja Luka
 	link = { eu4 = 5559 eu4 = 2047 eu4 = 5562 eu4 = 5563 v2 = 784 } # Bihac, Cazin, Ostrovica, Drvar -> Bihac
-	link = { eu4 = 1972 eu4 = 5423 eu4 = 2214 eu4 = 2367 eu4 = 5431 eu4 = 5424 eu4 = 1080 v2 = 774 } # Senj, Bag, Starigrad, Rab, Gospic, Otocac, Krbava -> Senj
-	link = { eu4 = 1083 eu4 = 5433 eu4 = 133 eu4 = 474 eu4 = 473 eu4 = 2368 v2 = 781 } # Zadar, Nin, Biograd-Moru, Pag, Ugljan, Krupa -> Zadar
+	link = { eu4 = 1972 eu4 = 5423 eu4 = 2214 eu4 = 2367 eu4 = 5431 eu4 = 5424 eu4 = 1080 eu4 = 2418 v2 = 774 } # Senj, Bag, Starigrad, Rab, Gospic, Otocac, Krbava, Krk -> Senj
+	link = { eu4 = 1083 eu4 = 5433 eu4 = 133 eu4 = 474 eu4 = 473 eu4 = 2368 eu4 = 303 v2 = 781 } # Zadar, Nin, Biograd-Moru, Pag, Ugljan, Krupa, Cres -> Zadar
 	link = { eu4 = 5568 eu4 = 533 eu4 = 2085 eu4 = 2443 eu4 = 5553 v2 = 788 } # Neum, Bileca, Trebinje, Nevesinje, Gacko -> Mostar
 	link = { eu4 = 1963 eu4 = 2348 eu4 = 137 eu4 = 475 eu4 = 305 v2 = 782 } # Ston, Konavle, Dubrovnik, Korcula, Lastovo -> Dubrovnik
 	link = { eu4 = 2096 eu4 = 5515 eu4 = 2060 eu4 = 2081 v2 = 802 } # Pomoravlje, Vucitrn, Kosovo, Mitrovica -> Pristina
