@@ -6,7 +6,7 @@ targetGame = VIC2GAME
 
 enableUpdateChecker = true
 checkForUpdatesOnStartup = true
-latestGitHubConverterReleaseUrl = "https://github.com/ParadoxGameConverters/EU4toVic2/releases/download/windows_development_build/EU4ToVic2-latest.zip"
+latestGitHubConverterReleaseUrl = "https://github.com/ParadoxGameConverters/EU4toVic2/releases/download/windows_development_build/EU4ToVic2-latest-win-x64.zip"
 converterReleaseForumThread = "https://forum.paradoxplaza.com/forum/threads/eu4-to-vic2-converter-release-thread.973026/"
 pagesCommitIdUrl = "https://paradoxgameconverters.com/commit_ids/EU4toVic2.txt"
 
