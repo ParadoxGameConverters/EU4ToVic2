@@ -9,7 +9,7 @@
 #include <vector>
 
 const date HARD_ENDING_DATE("1836.1.1");
-const date FUTURE_DATE("2000.1.1");
+const date FUTURE_DATE("9999.1.1");
 
 class Configuration: commonItems::parser
 {
