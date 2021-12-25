@@ -1287,16 +1287,10 @@ std::optional<std::string> V2::World::determineProvinceControllership(const std:
 
 void V2::World::setupStates()
 {
-	/* std::list<std::shared_ptr<Province>> unassignedProvs;
-	for (const auto& province: provinces)
-		unassignedProvs.push_back(province.second);*/
-
 	std::set<int> provinceInState;
 
-	for (const auto& mapEntry: provinces)
+	for (const auto& [provId, province]: provinces)
 	{
-		auto province = mapEntry.second;
-		const auto provId = province->getID();
 		auto owner = province->getOwner();
 		if (owner.empty() || provinceInState.contains(provId))
 		{
@@ -1316,13 +1310,12 @@ void V2::World::setupStates()
 		auto neighborIds = stateMapper.getAllProvincesInState(provId);
 		for (const auto& neighborId: neighborIds)
 		{
-
 			auto neighbor = provinces[neighborId];
 			if (neighborId != provId)
 			{
-				if (owner == neighbor->getOwner())
+				if (!provinceInState.contains(neighborId))
 				{
-					if (isColony == neighbor->isColony())
+					if (owner == neighbor->getOwner() && isColony == neighbor->isColony())
 					{
 						newState->addProvince(neighbor);
 						provinceInState.insert(neighborId);
