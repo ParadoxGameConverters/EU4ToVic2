@@ -5,8 +5,8 @@ IMPORTANT LINKS
 ----
 
 Forum Release Thread: https://forum.paradoxplaza.com/forum/index.php?threads/eu4-to-vic2-converter-release-thread.973026/
-Forum Devemopment Thread: https://forum.paradoxplaza.com/forum/index.php?threads/the-eu4-to-v2-converter-development-thread-not-for-troubleshooting.707362
-Github project: https://github.com/ParadoxGameConverters/EU4toVic2
+Forum Development Thread: https://forum.paradoxplaza.com/forum/index.php?threads/the-eu4-to-v2-converter-development-thread-not-for-troubleshooting.707362
+GitHub project: https://github.com/ParadoxGameConverters/EU4toVic2
 Windows development build: https://github.com/ParadoxGameConverters/EU4toVic2/releases/tag/windows_development_build
 
 ----
