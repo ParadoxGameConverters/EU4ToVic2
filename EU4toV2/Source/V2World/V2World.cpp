@@ -1311,16 +1311,10 @@ void V2::World::setupStates()
 		for (const auto& neighborId: neighborIds)
 		{
 			auto neighbor = provinces[neighborId];
-			if (neighborId != provId)
+			if (neighborId != provId && !provinceInState.contains(neighborId) && owner == neighbor->getOwner() && isColony == neighbor->isColony())
 			{
-				if (!provinceInState.contains(neighborId))
-				{
-					if (owner == neighbor->getOwner() && isColony == neighbor->isColony())
-					{
-						newState->addProvince(neighbor);
-						provinceInState.insert(neighborId);
-					}
-				}
+				newState->addProvince(neighbor);
+				provinceInState.insert(neighborId);
 			}
 		}
 		newState->rebuildNavalBase();
