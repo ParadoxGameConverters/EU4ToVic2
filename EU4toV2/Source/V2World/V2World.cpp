@@ -1293,7 +1293,7 @@ void V2::World::setupStates()
 
 	std::set<int> provinceInState;
 
-	for (const auto& mapEntry : provinces)
+	for (const auto& mapEntry: provinces)
 	{
 		auto province = mapEntry.second;
 		const auto provId = province->getID();
@@ -1302,7 +1302,7 @@ void V2::World::setupStates()
 		{
 			continue;
 		}
-		
+
 		// We are breaking states apart according to colonial status. This is so primitives can retain
 		// their full states next to colonizers who have colonial provinces in the same state.
 		// This ALSO means multiple naval bases within apparently single state.
@@ -1316,7 +1316,7 @@ void V2::World::setupStates()
 		auto neighborIds = stateMapper.getAllProvincesInState(provId);
 		for (const auto& neighborId: neighborIds)
 		{
-			
+
 			auto neighbor = provinces[neighborId];
 			if (neighborId != provId)
 			{
@@ -1329,7 +1329,6 @@ void V2::World::setupStates()
 					}
 				}
 			}
-
 		}
 		newState->rebuildNavalBase();
 		const auto& iter2 = countries.find(owner);
