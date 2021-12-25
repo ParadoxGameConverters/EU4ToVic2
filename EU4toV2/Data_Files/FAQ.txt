@@ -20,18 +20,18 @@ Q: The converter crashes after no time with no errors and no log.txt (when runni
 A: You may need to install this if you are not on Windows 10: https://support.microsoft.com/en-us/kb/2999226. If this does not help upload your save to the PDX forums for further study.
 
 Q: The converter says my save is compressed. What do I do?
-A: You are using an old converter that does not support conmpressed saves. Download a fresh release.
+A: You are using an old converter that does not support compressed saves. Download a fresh release.
 
 Q: How can I customize my game after converting?
-A: Use the guide in after_converting.txt in the converter subdirectory. Scan through configurables/ folder and look into the myriad of configuration files - a great majority of these files is intended to be modified by users to acheive specific conversion results.
+A: Use the guide in after_converting.txt in the converter subdirectory. Scan through configurables/ folder and look into the myriad of configuration files - a great majority of these files is intended to be modified by users to achieve specific conversion results.
 
 Q: The generated mod was in a different language than my savegame.
 A: Go in the mod of the converted save, then in setting.txt and change the line "language=l_english" to the language you need, e.g. "language=l_french"
 
 Q: Some/all country names appear as X25, FRA etc.
-A: This is an issue with the localisation.  See above if you may have changed the language, if not check the localisation files in the converter for the offending countries. Sometimes Vic2 fails to load localizations and merely needs to be restarted.
+A: This is an issue with the localization.  See above if you may have changed the language, if not check the localization files in the converter for the offending countries. Sometimes Vic2 fails to load localizations and merely needs to be restarted.
 
-Q: The country crashes upon selecting a country and pressing play (at 
+Q: The country crashes upon selecting a country and pressing play (at
 A: Upload your save to PDX forums for further study.
 
 Q: The game forbids me to select nations.

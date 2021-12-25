@@ -16,19 +16,19 @@ appear in game. Similar thing could be done for border gore, I suppose. I did
 see later than rather than editing all the provinces to add the cores for my
 new countries, I could have followed the NNM setup which has a couple AI
 decisions at the start of game to add cores - which would certainly have been
-easier**). For localisation, I then just copied in the relevant entries into
-the localisation files that converter created. Can't just copy full NNM file as
+easier**). For localization, I then just copied in the relevant entries into
+the localization files that converter created. Can't just copy full NNM file as
 it sometimes uses tags for different purposes than those from the converter -
 which means depending on nation you want to add you might need to change the
 tag.
 
 Then for the decisions/events, I took a look at what files might make sense to
 include / if there were any tweaks I needed to make for my world****. Here was
-generally a little safer to just grab full NNM localisation files. But then
+generally a little safer to just grab full NNM localization files. But then
 there were times when new events/decisions had modifiers that were not vanilla
 modifiers. That's where the validator proves useful as it will warn you if your
 events are supposed to generate non-existent modifiers. Similarly if
-localisation missing, you forgot some country files (like say flags), etc. One
+localization missing, you forgot some country files (like say flags), etc. One
 thing also to watch when pulling the NNM events is if I recall correctly, their
 tags for Corsica and Savoy are different from the converter, so if you want to
 make sure those nations can form Italy, you'll need to adjust - but again I
@@ -55,7 +55,7 @@ mini-mods (perhaps region based?) to let people add possible revolter nations
 as you can't really have an add-on fiddling with the actual province history
 entries as you don't know what they would look like in any given converted
 game. Such a mod would just need to include country entries for
-common\countries, flags, history\countries entries and localisation. Though it
+common\countries, flags, history\countries entries and localization. Though it
 would still need a person to manually edit countries.txt as unlike EU4, Vic2
 doesn't support separate files for loading tag entries, but I guess that could
 just be a readme instruction of each module what would need to be copied in.
@@ -63,7 +63,7 @@ Only other negative I can see here is that you could run into issues with
 primary_culture/religion issues for history entries (as well as language naming
 in common\countries) depending on who colonized what or how cultures shifted in
 Old World but it'd at least be a handy base for people wanting to do
-customisations without too much hassle.
+customizations without too much hassle.
 
 ****One thing that I forgot to do was see if there were events for Vic2 that
 did not make sense in my world. Spain was the main revolutionary power in my
