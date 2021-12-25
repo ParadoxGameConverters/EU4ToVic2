@@ -1336,7 +1336,6 @@ void V2::World::setupStates()
 		const auto& iter2 = countries.find(owner);
 		if (iter2 != countries.end())
 		{
-			std::vector<std::shared_ptr<V2::Province>> heca = newState->getProvinces();
 			iter2->second->addState(newState, portProvincesMapper);
 		}
 	}
