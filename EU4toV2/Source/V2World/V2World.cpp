@@ -1287,6 +1287,8 @@ std::optional<std::string> V2::World::determineProvinceControllership(const std:
 
 void V2::World::setupStates()
 {
+	std::string outp = "";
+
 	Log(LogLevel::Warning) << "Check1";
 	std::list<std::shared_ptr<Province>> unassignedProvs;
 	for (const auto& province: provinces)
@@ -1346,14 +1348,20 @@ void V2::World::setupStates()
 			//logging
 			std::vector<std::shared_ptr<V2::Province>> heca = newState->getProvinces();
 			Log(LogLevel::Warning) << "State: " << std::to_string(newState->getID());
+
+			outp += "State: " + std::to_string(newState->getID());
+			
 			for (const auto& h : heca)
 			{
+				outp += "Province: " + std::to_string(h->getID());
 				Log(LogLevel::Warning) << "Province: " << std::to_string(h->getID());
 			}
 			iter2->second->addState(newState, portProvincesMapper);
 		}
 	}
-
+	std::ofstream test("mineStates.txt");
+	test << outp;
+	test.close();
 	/* while (!unassignedProvs.empty())
 	{
 		auto iter = unassignedProvs.begin();
