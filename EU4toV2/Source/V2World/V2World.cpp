@@ -1287,11 +1287,74 @@ std::optional<std::string> V2::World::determineProvinceControllership(const std:
 
 void V2::World::setupStates()
 {
+	Log(LogLevel::Warning) << "Check1";
 	std::list<std::shared_ptr<Province>> unassignedProvs;
 	for (const auto& province: provinces)
 		unassignedProvs.push_back(province.second);
 
-	while (!unassignedProvs.empty())
+	Log(LogLevel::Warning) << "Check2";
+
+	std::map<int, std::shared_ptr<Province>> provincePointers;
+	std::map<int, bool> provinceInState;
+	
+	Log(LogLevel::Warning) << "Check3";
+
+	for (const auto& province : unassignedProvs)
+	{
+		int provId = province->getID();
+		provincePointers[provId] = province;
+		provinceInState[provId] = false;
+	}
+	Log(LogLevel::Warning) << "Check4";
+	for (const auto& province : unassignedProvs)
+	{
+		const auto provId = province->getID();
+		auto owner = province->getOwner();
+		if (owner.empty() || provinceInState[provId])
+		{
+			continue;
+		}
+		
+		auto isColony = province->isColony();
+		auto newState = std::make_shared<State>(stateId, province);
+		stateId++;
+
+		provinceInState[provId] = true;
+
+		auto neighborIds = stateMapper.getAllProvincesInState(provId);
+		for (const auto& neighborId: neighborIds)
+		{
+			std::shared_ptr<Province> neighbor = provincePointers[neighborId];
+			if (neighbor != province)
+			{
+				if (owner == neighbor->getOwner())
+				{
+					if (isColony == neighbor->isColony())
+					{
+						newState->addProvince(neighbor);
+						provinceInState[neighborId] = true;
+					}
+				}
+			}
+
+		}
+		Log(LogLevel::Warning) << "Check5";
+		newState->rebuildNavalBase();
+		const auto& iter2 = countries.find(owner);
+		if (iter2 != countries.end())
+		{
+			//logging
+			std::vector<std::shared_ptr<V2::Province>> heca = newState->getProvinces();
+			Log(LogLevel::Warning) << "State: " << std::to_string(newState->getID());
+			for (const auto& h : heca)
+			{
+				Log(LogLevel::Warning) << "Province: " << std::to_string(h->getID());
+			}
+			iter2->second->addState(newState, portProvincesMapper);
+		}
+	}
+
+	/* while (!unassignedProvs.empty())
 	{
 		auto iter = unassignedProvs.begin();
 		const auto provId = (*iter)->getID();
@@ -1330,15 +1393,15 @@ void V2::World::setupStates()
 					}
 				}
 			}
-		}
-
-		newState->rebuildNavalBase();
+		}*/
+	
+		/* newState->rebuildNavalBase();
 		const auto& iter2 = countries.find(owner);
 		if (iter2 != countries.end())
 		{
 			iter2->second->addState(newState, portProvincesMapper);
-		}
-	}
+		}*/
+	//}
 }
 
 void V2::World::convertUncivReforms(const EU4::World& sourceWorld, const mappers::TechGroupsMapper& techGroupsMapper)

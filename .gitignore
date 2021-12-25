@@ -5,6 +5,7 @@ ReleaseIntermediate/
 Release-Linux/
 Debug/
 DebugIntermediate/
+ToCompare/
 Analysis
 AnalysisIntermediate
 testResults
