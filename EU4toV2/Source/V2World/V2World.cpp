@@ -1287,46 +1287,45 @@ std::optional<std::string> V2::World::determineProvinceControllership(const std:
 
 void V2::World::setupStates()
 {
-	std::list<std::shared_ptr<Province>> unassignedProvs;
+	/* std::list<std::shared_ptr<Province>> unassignedProvs;
 	for (const auto& province: provinces)
-		unassignedProvs.push_back(province.second);
+		unassignedProvs.push_back(province.second);*/
 
-	std::map<int, std::shared_ptr<Province>> provincePointers;
-	std::map<int, bool> provinceInState;
+	std::set<int> provinceInState;
 
-	for (const auto& province : unassignedProvs)
+	for (const auto& mapEntry : provinces)
 	{
-		int provId = province->getID();
-		provincePointers[provId] = province;
-		provinceInState[provId] = false;
-	}
-	for (const auto& province : unassignedProvs)
-	{
+		auto province = mapEntry.second;
 		const auto provId = province->getID();
 		auto owner = province->getOwner();
-		if (owner.empty() || provinceInState[provId])
+		if (owner.empty() || provinceInState.contains(provId))
 		{
 			continue;
 		}
 		
+		// We are breaking states apart according to colonial status. This is so primitives can retain
+		// their full states next to colonizers who have colonial provinces in the same state.
+		// This ALSO means multiple naval bases within apparently single state.
 		auto isColony = province->isColony();
 		auto newState = std::make_shared<State>(stateId, province);
+		newState->setColonial(isColony);
 		stateId++;
 
-		provinceInState[provId] = true;
+		provinceInState.insert(provId);
 
 		auto neighborIds = stateMapper.getAllProvincesInState(provId);
 		for (const auto& neighborId: neighborIds)
 		{
-			std::shared_ptr<Province> neighbor = provincePointers[neighborId];
-			if (neighbor != province)
+			
+			auto neighbor = provinces[neighborId];
+			if (neighborId != provId)
 			{
 				if (owner == neighbor->getOwner())
 				{
 					if (isColony == neighbor->isColony())
 					{
 						newState->addProvince(neighbor);
-						provinceInState[neighborId] = true;
+						provinceInState.insert(neighborId);
 					}
 				}
 			}
