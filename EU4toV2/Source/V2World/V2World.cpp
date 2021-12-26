@@ -1287,51 +1287,36 @@ std::optional<std::string> V2::World::determineProvinceControllership(const std:
 
 void V2::World::setupStates()
 {
-	std::list<std::shared_ptr<Province>> unassignedProvs;
-	for (const auto& province: provinces)
-		unassignedProvs.push_back(province.second);
+	std::set<int> provinceInState;
 
-	while (!unassignedProvs.empty())
+	for (const auto& [provId, province]: provinces)
 	{
-		auto iter = unassignedProvs.begin();
-		const auto provId = (*iter)->getID();
-		auto owner = (*iter)->getOwner();
-
-		if (owner.empty())
+		auto owner = province->getOwner();
+		if (owner.empty() || provinceInState.contains(provId))
 		{
-			unassignedProvs.erase(iter);
 			continue;
 		}
-
-		auto newState = std::make_shared<State>(stateId, *iter);
-		stateId++;
-		auto neighbors = stateMapper.getAllProvincesInState(provId);
 
 		// We are breaking states apart according to colonial status. This is so primitives can retain
 		// their full states next to colonizers who have colonial provinces in the same state.
 		// This ALSO means multiple naval bases within apparently single state.
-		const auto colonial = (*iter)->isColony();
-		newState->setColonial(colonial);
-		iter = unassignedProvs.erase(iter);
+		auto isColony = province->isColony();
+		auto newState = std::make_shared<State>(stateId, province);
+		newState->setColonial(isColony);
+		stateId++;
 
-		for (const auto& neighborID: neighbors)
+		provinceInState.insert(provId);
+
+		auto neighborIds = stateMapper.getAllProvincesInState(provId);
+		for (const auto& neighborId: neighborIds)
 		{
-			for (iter = unassignedProvs.begin(); iter != unassignedProvs.end(); ++iter)
+			auto neighbor = provinces[neighborId];
+			if (neighborId != provId && !provinceInState.contains(neighborId) && owner == neighbor->getOwner() && isColony == neighbor->isColony())
 			{
-				if ((*iter)->getID() == neighborID)
-				{
-					if ((*iter)->getOwner() == owner)
-					{
-						if ((*iter)->isColony() == colonial)
-						{
-							newState->addProvince(*iter);
-							iter = unassignedProvs.erase(iter);
-						}
-					}
-				}
+				newState->addProvince(neighbor);
+				provinceInState.insert(neighborId);
 			}
 		}
-
 		newState->rebuildNavalBase();
 		const auto& iter2 = countries.find(owner);
 		if (iter2 != countries.end())
