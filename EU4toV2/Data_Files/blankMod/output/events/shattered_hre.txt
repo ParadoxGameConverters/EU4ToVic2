@@ -21,7 +21,11 @@ country_event = {
 
 	trigger = { 
 		has_country_flag = emperor_hre 
-		has_global_flag = liberal_revolutions_should_now_fire 
+		NOT = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+		}
 	}
 
 	mean_time_to_happen = { months = 1 }
