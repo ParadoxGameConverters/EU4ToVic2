@@ -2435,6 +2435,7 @@ country_event = {
         government = proletarian_dictatorship
         is_vassal = no
         any_neighbor_country = {
+            NOT = { tag = AAA }
             is_vassal = no
             NOT = {
                 government = proletarian_dictatorship
@@ -2490,6 +2491,7 @@ country_event = {
         prestige = -5
         random_country = {
             limit = {
+                NOT = { tag = AAA }
                 neighbour = THIS
                 NOT = {
                     government = proletarian_dictatorship
@@ -2520,6 +2522,7 @@ country_event = {
         government = fascist_dictatorship
         is_vassal = no
         any_neighbor_country = {
+            NOT = { tag = AAA }
             NOT = { ruling_party_ideology = fascist }
             NOT = { government = fascist_dictatorship }
             is_vassal = no
@@ -2573,6 +2576,7 @@ country_event = {
         prestige = -5
         random_country = {
             limit = {
+                NOT = { tag = AAA }
                 neighbour = THIS
                 NOT = { ruling_party_ideology = fascist }
                 NOT = { government = fascist_dictatorship }
