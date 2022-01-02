@@ -118,7 +118,7 @@ link = { v2 = animist eu4 = khaldic_pagan }
 link = { v2 = animist eu4 = armazic_pagan }
 link = { v2 = animist eu4 = heptadic_pagan }
 link = { v2 = animist eu4 = zalmoxian_pagan }
-link = { v2 = animist eu4 = ritualistic_pagan } 
+link = { v2 = animist eu4 = ritualistic_pagan }
 
 #Zoroastrian
 link = { v2 = zoroastrian eu4 = zoroastrian }
