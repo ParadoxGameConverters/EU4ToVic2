@@ -64,29 +64,31 @@ link = { v2 = muism eu4 = muism }
 link = { v2 = animist eu4 = animism eu4 = pagan_religion_reformed eu4 = converted_siberian_pagan eu4 = dreamtime }
 link = { v2 = shamanism eu4 = shamanism }
 link = { v2 = totemism eu4 = totemism }
-link = { v2 = arab_pagan eu4 = arab_pagan eu4 = semitic_pagan_reformed }
+link = { v2 = arab_pagan eu4 = arab_pagan eu4 = semitic_pagan_reformed eu4 = arabic_pagan_reformed }
 link = { v2 = aztec_reformed eu4 = aztec_reformed }
 link = { v2 = baltic_pagan_reformed eu4 = baltic_pagan_reformed }
-link = { v2 = canaanite eu4 = canaanite eu4 = jewish_pagan }
-link = { v2 = cybelene eu4 = cybelene }
+link = { v2 = canaanite eu4 = canaanite eu4 = jewish_pagan eu4 = canaanite_pagan_reformed }
+link = { v2 = cybelene eu4 = cybelene eu4 = cybelene_pagan_reformed }
 link = { v2 = druidist eu4 = celtic_pagan_reformed eu4 = briton_pagan eu4 = gallic_pagan eu4 = gaelic_pagan eu4 = celtiberian_pagan }
-link = { v2 = druidist eu4 = druidist eu4 = druidism }
+link = { v2 = druidist eu4 = druidist eu4 = druidism eu4 = druidic_pagan_reformed }
 link = { v2 = finnish_pagan_reformed eu4 = finnish_pagan_reformed }
 link = { v2 = german_pagan eu4 = germanic_pagan eu4 = anglo_pagan }
 link = { v2 = hellenic_pagan eu4 = hellenic_pagan eu4 = hellenic_pagan_reformed }
-link = { v2 = hetanism eu4 = armenian_pagan eu4 = caucasian_pagan }
-link = { v2 = iberian_pagan eu4 = iberian_pagan }
+link = { v2 = hetanism eu4 = armenian_pagan eu4 = caucasian_pagan eu4 = khaldic_pagan_reformed eu4 = armazic_pagan_reformed }
+link = { v2 = iberian_pagan eu4 = iberian_pagan eu4 = iberian_pagan_reformed }
 link = { v2 = kemetic eu4 = egyptian_pagan eu4 = egyptian_pagan_heresy }
 link = { v2 = kemetic eu4 = kemetic eu4 = kemetism eu4 = egyptian_religion }
-link = { v2 = mardukism eu4 = mardukism }
+link = { v2 = mardukism eu4 = mardukism eu4 = sumerian_pagan_reformed }
 link = { v2 = mithraism eu4 = mithraism }
 link = { v2 = norse_pagan_reformed eu4 = norse_pagan_reformed }
-link = { v2 = scythian_pagan eu4 = scythian_pagan eu4 = khabze eu4 = vainakh eu4 = uatsdin }
+link = { v2 = scythian_pagan eu4 = scythian_pagan eu4 = khabze eu4 = vainakh eu4 = uatsdin eu4 = heptadic_pagan_reformed }
 link = { v2 = slavic_pagan_reformed eu4 = slavic_pagan_reformed }
 link = { v2 = tengri_pagan_reformed eu4 = tengri_pagan_reformed }
 link = { v2 = tengri_pagan_reformed eu4 = tengri_pagan eu4 = magyar_pagan eu4 = magyar_pagan_reformed }
 link = { v2 = west_african_pagan_reformed eu4 = west_african_pagan_reformed }
-link = { v2 = zamolxism eu4 = zamolxism }
+link = { v2 = zamolxism eu4 = zamolxism eu4 = zalmoxian_pagan_reformed }
+link = { v2 = megalithic eu4 = megalithic_pagan_reformed }
+link = { v2 = ritualistic eu4 = ritualistic_pagan_reformed }
 
 link = { v2 = inca_reformed eu4 = inca_reformed }
 link = { v2 = zun_pagan_reformed eu4 = zun_pagan_reformed eu4 = zunism eu4 = atenism }
@@ -106,7 +108,17 @@ link = { v2 = animist eu4 = west_african_pagan eu4 = kushitism_pagan eu4 = kushi
 link = { v2 = animist eu4 = pagan_religion }
 link = { v2 = animist eu4 = siberian_pagan eu4 = siberian_pagan_reformed }
 link = { v2 = animist eu4 = pantheism eu4 = adi_dharam eu4 = polynesian_religion }
-link = { v2 = animist eu4 = vasconic eu4 = berber_pagan }
+link = { v2 = animist eu4 = vasconic eu4 = berber_pagan eu4 = megalithic_pagan }
+link = { v2 = animist eu4 = druidic_pagan }
+link = { v2 = animist eu4 = canaanite_pagan }
+link = { v2 = animist eu4 = arabic_pagan }
+link = { v2 = animist eu4 = cybelene_pagan }
+link = { v2 = animist eu4 = sumerian_pagan }
+link = { v2 = animist eu4 = khaldic_pagan }
+link = { v2 = animist eu4 = armazic_pagan }
+link = { v2 = animist eu4 = heptadic_pagan }
+link = { v2 = animist eu4 = zalmoxian_pagan }
+link = { v2 = animist eu4 = ritualistic_pagan }
 
 #Zoroastrian
 link = { v2 = zoroastrian eu4 = zoroastrian }

@@ -8954,4 +8954,6 @@ zzz_religions = {
 	zzz_religion_iberian_pagan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_scythian_pagan = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 	zzz_religion_dummy_religion = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_megalithic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
+	zzz_religion_ritualistic = { color = { 0 0 0 } first_names = { FNU } last_names = { LNU } }
 }
