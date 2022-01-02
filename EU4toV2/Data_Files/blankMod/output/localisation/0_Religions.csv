@@ -47,7 +47,9 @@ kharijite;Kharijite;Kharidjites;Charidschit;Charyd¿yzm;Kariyí;;;;;;Kharijite;Õàğ
 lollard;Lollard;Lollards;Lollard;Lollardzi;Lolarda;;;;;;Lollard;Ëîëëàğäû;;x
 manichean;Manichean;Manichéens;Manichäisch;Manicheizm;Maniquea;;;;;;Maniquean;Ìàíèõåéñêèå;;x
 mardukism;Mardukism;Mardoukistes;Mardukisch;Mardukstwo;Mardukí;;;;;;Mardukism;Ìàğäóêñêèå;;x
+mayan;Mayan;Mayan;Maya;Mayan;Mayan;;;;;;Mayan;ìàéÿ;;x
 mazdaki;Mazdaki;Mazdakistes;Mazdakitisch;Mazdakijstwo;Mazdakí;;;;;;Mazdaki;Ìàçäàêèòñêèå;;x
+megalithic;Megalithic;Megalithic;Megalithisch;Megalithic;Megalithic;;;;;;Megalithic;Ìåãàëèòè÷åñêèé;;x
 messalian;Messalian;Messaliens;Messalianisch;Messalianie;Euquita;;;;;;Messalian;Ìåññàëèàíñêèå;;x
 mithraism;Mithraism;Mithraïstes;Mithraskultisch;Mitraizm;Mitraica;;;;;;Mitraísmo;Ìèòğàèñòñêèå;;x
 monophysite;Monophysite;Monophysites;Monophysitisch;Monofizytyzm;Monofisita;;;;;;Monofisita;Ìîíîôèçèòñêèå;;x
@@ -62,6 +64,7 @@ pagan_religion_reformed;Reformed Pagan;Païens Réformés;Reformiert Heidnisch;Poga
 paulician;Paulician;Pauliciens;Paulikianisch;Paulicjanie;Paulista;;;;;;Paulician;Ïàâëèêèàíå;;x
 pre_schism;Chalcedonian;Calcédoniens;Chalcedonisch;Chalcedoñstwo;Calcedonia;;;;;;Calcedônico;Õàëêèäîíñêèå;;x
 protestant_heresy;Protestant Heresy;Hérétiques Protestantes;Evangelisch Ketzerisch;Protestanckie Kacerstwo;Herética Protestante;;;;;;Heresia Protestante;Ïğîòåñòàíòû Åğåòèêè;;x
+ritualistic;Ritualistic;Ritualistic;Ritualistisch;Ritualistic;Ritualistic;;;;;;Ritualistic;Ğèòóàëèñòè÷åñêèé;;x
 samaritan;Samaritan;Samaritains;Samariter;Samarytanizm;Samaritana;;;;;;Samaritano;Ñàìàğèòÿíñêèå;;x
 scythian_pagan;Scythian;Scythes;Skythisch;Scytyjstwo;Escita;;;;;;Cita;Ñêèôñêèå;;x
 shamanism;Fetishist;Fétichistes;Fetischist;Fetyszyzm;Fetichista;;;;;;Fetichista;Ôåòèøèñòñêèå;;x
@@ -128,7 +131,9 @@ zzz_religion_lollard;§HReligion§!: Lollard;§HReligion§!: Lollards;§HReligion§!: 
 zzz_religion_mahayana;§HReligion§!: Mahayana;§HReligion§!: Mahayana;§HReligion§!: Mahayana;§HReligia§!: Mahayana;§HReligión§!: Budista Mahayana;;;;;;§HReligião§!: Budista Maaiana;§HĞåëèãèÿ§!: Ìàõàÿíà;;x
 zzz_religion_manichean;§HReligion§!: Manichean;§HReligion§!: Manichéens;§HReligion§!: Manichäisch;§HReligia§!: Manicheizm;§HReligión§!: Maniquea;;;;;;§HReligião§!: Maniquean;§HĞåëèãèÿ§!: Ìàíèõåéñêèå;;x
 zzz_religion_mardukism;§HReligion§!: Mardukism;§HReligion§!: Mardoukistes;§HReligion§!: Mardukisch;§HReligia§!: Mardukstwo;§HReligión§!: Mardukí;;;;;;§HReligião§!: Mardukism;§HĞåëèãèÿ§!: Ìàğäóêñêèå;;x
+zzz_religion_mayan;§HReligion§!: Mayan;§HReligion§!: Mayan;§HReligion§!: Maya;§HReligia§!: Mayan;§HReligión§!: Mayan;;;;;;§HReligião§!: Mayan;§HĞåëèãèÿ§!: ìàéÿ;;x
 zzz_religion_mazdaki;§HReligion§!: Mazdaki;§HReligion§!: Mazdakistes;§HReligion§!: Mazdakitisch;§HReligia§!: Mazdakijstwo;§HReligión§!: Mazdakí;;;;;;§HReligião§!: Mazdaki;§HĞåëèãèÿ§!: Ìàçäàêèòñêèå;;x
+zzz_religion_megalithic;§HReligion§!: Megalithic;§HReligion§!: Megalithic;§HReligion§!: Megalithisch;§HReligia§!: Megalithic;§HReligión§!: Megalithic;;;;;;§HReligião§!: Megalithic;§HĞåëèãèÿ§!: Ìåãàëèòè÷åñêèé;;x
 zzz_religion_messalian;§HReligion§!: Messalian;§HReligion§!: Messaliens;§HReligion§!: Messalianisch;§HReligia§!: Messalianie;§HReligión§!: Euquita;;;;;;§HReligião§!: Messalian;§HĞåëèãèÿ§!: Ìåññàëèàíñêèå;;x
 zzz_religion_mithraism;§HReligion§!: Mithraism;§HReligion§!: Mithraïstes;§HReligion§!: Mithraskultisch;§HReligia§!: Mitraizm;§HReligión§!: Mitraica;;;;;;§HReligião§!: Mitraísmo;§HĞåëèãèÿ§!: Ìèòğàèñòñêèå;;x
 zzz_religion_monophysite;§HReligion§!: Monophysite;§HReligion§!: Monophysites;§HReligion§!: Monophysitisch;§HReligia§!: Monofizytyzm;§HReligión§!: Monofisita;;;;;;§HReligião§!: Monofisita;§HĞåëèãèÿ§!: Ìîíîôèçèòñêèå;;x
@@ -146,6 +151,7 @@ zzz_religion_paulician;§HReligion§!: Paulician;§HReligion§!: Pauliciens;§HReligi
 zzz_religion_pre_schism;§HReligion§!: Chalcedonian;§HReligion§!: Calcédoniens;§HReligion§!: Chalcedonisch;§HReligia§!: Chalcedoñstwo;§HReligión§!: Calcedonia;;;;;;§HReligião§!: Calcedônico;§HĞåëèãèÿ§!: Õàëêèäîíñêèå;;x
 zzz_religion_protestant;§HReligion§!: Protestant;§HReligion§!: Protestants;§HReligion§!: Protestantisch;§HReligia§!: Protestantyzm;§HReligión§!: Protestante;;;;;;§HReligião§!: Protestante;§HĞåëèãèÿ§!: Ïğîòåñòàíòû;;x
 zzz_religion_protestant_heresy;§HReligion§!: Protestant Heresy;§HReligion§!: Hérétiques Protestantes;§HReligion§!: Evangelisch Ketzerisch;§HReligia§!: Protestanckie Kacerstwo;§HReligión§!: Herética Protestante;;;;;;§HReligião§!: Heresia Protestante;§HĞåëèãèÿ§!: Ïğîòåñòàíòû Åğåòèêè;;x
+zzz_religion_ritualistic;§HReligion§!: Ritualistic;§HReligion§!: Ritualistic;§HReligion§!: Ritualistisch;§HReligia§!: Ritualistic;§HReligión§!: Ritualistic;;;;;;§HReligião§!: Ritualistic;§HĞåëèãèÿ§!: Ğèòóàëèñòè÷åñêèé;;x
 zzz_religion_samaritan;§HReligion§!: Samaritan;§HReligion§!: Samaritains;§HReligion§!: Samariter;§HReligia§!: Samarytanizm;§HReligión§!: Samaritana;;;;;;§HReligião§!: Samaritano;§HĞåëèãèÿ§!: Ñàìàğèòÿíñêèå;;x
 zzz_religion_scythian_pagan;§HReligion§!: Scythian;§HReligion§!: Scythes;§HReligion§!: Skythisch;§HReligia§!: Scytyjstwo;§HReligión§!: Escita;;;;;;§HReligião§!: Cita;§HĞåëèãèÿ§!: Ñêèôñêèå;;x
 zzz_religion_shamanism;§HReligion§!: Fetishist;§HReligion§!: Fétichistes;§HReligion§!: Fetischist;§HReligia§!: Fetyszyzm;§HReligión§!: Fetichista;;;;;;§HReligião§!: Fetichista;§HĞåëèãèÿ§!: Ôåòèøèñòñêèå;;x
