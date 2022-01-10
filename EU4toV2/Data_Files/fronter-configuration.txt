@@ -1,5 +1,6 @@
 name = EU4ToVic2
 converterFolder = EU4ToVic2
+backendExePath = EU4ToVic2Converter
 displayName = EU4DISPLAYNAME
 sourceGame = EU4GAME
 targetGame = VIC2GAME

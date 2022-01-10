@@ -142,7 +142,7 @@ crown_colony_government = { enforce = presidential_dictatorship order = 6 reacti
 private_enterprise_colony_government = { liberty = 6 liberal = 6 commerce = 7 navy = 6 industry = 6 }
 self_governing_colony_government = { liberty = 8 liberal = 8 industry = 6 }
 dutch_republic = { liberty = 6 reactionary = 7 liberal = 7 political_parties = 9 }
-peasants_republic = { enforce = proletarian_dictatorship equality = 10 order = 4 reactionary = 2 }
+peasants_republic = { enforce = democracy equality = 10 order = 4 reactionary = 2 }
 revolutionary_republic_reform = { enforce = bourgeois_dictatorship equality = 9 reactionary = 3 army = 6 }
 presidential_despot_reform = { enforce = presidential_dictatorship army = 7 }
 cossacks_reform = { order = 9 reactionary = 6 army = 7 commerce = 3 literacy = 3 }
