@@ -572,7 +572,7 @@ link = { vic2 = kaala eu4 = assamese eu4 = assamese_colonial eu4 = dimasa eu4 = 
 
 # Eastern Aryan - assamese, bengali, bihari, nepali, oriya, sinhala, chin
 link = { vic2 = assamese eu4 = assamese eu4 = assamese_colonial eu4 = kochrajbongshi eu4 = meitei eu4 = sutiya eu4 = tripuri }
-link = { vic2 = bengali eu4 = bengali eu4 = eastern_aryan_colonial }
+link = { vic2 = bengali eu4 = bengali eu4 = eastern_aryan_colonial eu4 = kochi }
 link = { vic2 = bihari eu4 = bihari }
 link = { vic2 = manipuri eu4 = chin }
 link = { vic2 = nepali eu4 = nepali eu4 = pahari eu4 = pahari_colonial eu4 = sikkimese }
@@ -593,7 +593,7 @@ link = { vic2 = rajput eu4 = rajput eu4 = malvi eu4 = dhundari eu4 = harauti eu4
 
 # Dravidian - kannada, malayalam, tamil, telegu
 link = { vic2 = kannada eu4 = kannada }
-link = { vic2 = malayalam eu4 = malayalam eu4 = kochi }
+link = { vic2 = malayalam eu4 = malayalam }
 link = { vic2 = tamil eu4 = tamil eu4 = dravidian_colonial eu4 = mahl }
 link = { vic2 = telegu eu4 = telegu }
 
