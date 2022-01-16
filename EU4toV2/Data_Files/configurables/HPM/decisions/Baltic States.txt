@@ -187,7 +187,7 @@ political_decisions = {
                 }
                 remove_core = UBD
             }
-            release_vassal = UBD
+            release = UBD
             create_alliance = UBD
             create_vassal = UBD
             diplomatic_influence = { who = UBD value = 300 }
