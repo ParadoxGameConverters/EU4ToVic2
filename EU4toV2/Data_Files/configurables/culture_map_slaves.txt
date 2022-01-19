@@ -74,7 +74,7 @@ link = { vic2 = uighur eu4 = uyghur }
 link = { vic2 = zapotec eu4 = zapotek eu4 = mixtec eu4 = tlapanec }
 link = { vic2 = tarascan eu4 = purepecha eu4 = tecos }
 link = { vic2 = mayan eu4 = mayan eu4 = yucatec eu4 = putun eu4 = highland_mayan eu4 = wastek eu4 = chontales eu4 = lacandon eu4 = guamares }
-link = { vic2 = nahua eu4 = aztek eu4 = totonac eu4 = tepic eu4 = otomi eu4 = matlatzinca }
+link = { vic2 = nahua eu4 = aztek eu4 = totonac eu4 = tepic eu4 = otomi eu4 = matlatzinca eu4 = pixantekatl eu4 = tanitekatl eu4 = olantekatl eu4 = italtekatl eu4 = almantekatl eu4 = loxatekatl eu4 = kaxtiltekatl eu4 = ixlantekatl eu4 = ankiltekatl eu4 = xilpantekatl eu4 = kauayotekatl eu4 = uitstlantekatl eu4 = exiptekatl eu4 = ikisatekatl eu4 = kapotsautekatl eu4 = elpantekatl }
 link = { vic2 = native_american_minor eu4 = chichimecan }
 
 # South American

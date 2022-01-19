@@ -461,7 +461,7 @@ link = { vic2 = uighur eu4 = uyghur eu4 = old_uyghur }
 link = { vic2 = zapotec eu4 = zapotek eu4 = mixtec eu4 = tlapanec eu4 = chichimecha eu4 = cuicatec eu4 = manguean eu4 = metztitlani eu4 = mixean eu4 = zapotec eu4 = zoque }
 link = { vic2 = tarascan eu4 = purepecha eu4 = tecos }
 link = { vic2 = mayan eu4 = mayan eu4 = yucatec eu4 = putun eu4 = highland_mayan eu4 = lacandon eu4 = wastek eu4 = chontales eu4 = guamares eu4 = cholan eu4 = huastec eu4 = itza eu4 = mamean eu4 = quichean eu4 = tzeltal eu4 = yucatecan }
-link = { vic2 = nahua eu4 = aztek eu4 = totonac eu4 = matlatzinca eu4 = tepic eu4 = otomi eu4 = yaqui eu4 = chontal eu4 = cuitlatec eu4 = nahuatl_c eu4 = nawa eu4 = tepanec eu4 = tlaxcallan }
+link = { vic2 = nahua eu4 = aztek eu4 = totonac eu4 = matlatzinca eu4 = tepic eu4 = otomi eu4 = yaqui eu4 = chontal eu4 = cuitlatec eu4 = nahuatl_c eu4 = nawa eu4 = tepanec eu4 = tlaxcallan eu4 = pixantekatl eu4 = tanitekatl eu4 = olantekatl eu4 = italtekatl eu4 = almantekatl eu4 = loxatekatl eu4 = kaxtiltekatl eu4 = ixlantekatl eu4 = ankiltekatl eu4 = xilpantekatl eu4 = kauayotekatl eu4 = uitstlantekatl eu4 = exiptekatl eu4 = ikisatekatl eu4 = kapotsautekatl eu4 = elpantekatl }
 link = { vic2 = native_american_minor eu4 = chichimecan eu4 = atakapa eu4 = beothuk eu4 = calusa eu4 = chitimacha eu4 = chon eu4 = ket eu4 = puelche eu4 = seminole eu4 = timicua eu4 = tonkawa }
 
 # South American - chibchan, maranon, quechua, aimara, amazonian, tupi, je, guarani, araucanian, amazonian
