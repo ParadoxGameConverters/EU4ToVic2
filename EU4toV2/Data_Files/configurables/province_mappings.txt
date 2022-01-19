@@ -687,7 +687,7 @@
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
 	link = { eu4 = 2512 eu4 = 4901 v2 = 156 } # Wahpekute, Saone -> Granite Falls
 	link = { eu4 = 908 v2 = 155 } # Sisithunwan -> Minneapolis
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 904 v2 = 153 v2 = 154 } # Wahpetunwan -> Cedar Rapids, Sioux City
 	link = { eu4 = 905 eu4 = 4900 v2 = 151 } # Baxoje, Otoe -> Des Moines
 	link = { eu4 = 2513 v2 = 152 } # Moingwena -> Oskaloosa
@@ -1745,7 +1745,7 @@
 	link = { eu4 = 4291 v2 = 928 } # Qazaniya -> Mendeli
 	link = { eu4 = 410 v2 = 926 } # Baghdad -> Baghdad
 	link = { eu4 = 4293 v2 = 924 } # Arbil -> Arbil
-	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulimaniyeh -> Kirkuk
+	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulaimaniyah -> Kirkuk
 	link = { comment = "# Saudi Arabia" }
 	link = { eu4 = 2338 v2 = 1158 } # Hafar -> Rafha
 	link = { eu4 = 4274 eu4 = 392 eu4 = 4275 v2 = 1157 } # Sudayr, Al-Arid, Al-Yamamah -> Riyadh
@@ -1755,9 +1755,9 @@
 	link = { eu4 = 384 eu4 = 2328 v2 = 1153 } # Medina, Al Ula -> Medina
 	link = { eu4 = 385 eu4 = 4277 eu4 = 2330 eu4 = 2332 v2 = 1151 } # Mecca, Taif, Ma'din Sulaym, Turubah -> Mecca
 	link = { eu4 = 386 eu4 = 2346 eu4 = 391 eu4 = 4282 v2 = 1155 } # Bishah, Jazan, Najran, Sahda -> Abha
-	link = { eu4 = 2337 eu4 = 4273 eu4 = 4276 v2 = 1159 } # Buraydah, Al-Kariatan, Jabal Tubaiq -> Halaban
+	link = { eu4 = 2337 eu4 = 4273 v2 = 1159 } # Buraydah, Al-Kariatan -> Halaban
 	link = { eu4 = 2335 eu4 = 2336 v2 = 1161 } # Dawasir, Aflaj -> Sharurah
-	link = { eu4 = 2334 eu4 = 1779 } # Badiyat ash Sham, Rub' al Khali -> DROPPED
+	link = { eu4 = 2334 eu4 = 1779 eu4 = 4276 } # Badiyat ash Sham, Rub' al Khali, Jabal Tubaiq -> DROPPED
 	link = { eu4 = 2347 v2 = 1164 } # Hofuf -> Hufuf
 	link = { eu4 = 394 eu4 = 2340 v2 = 1163 } # Al-Qatif, Grane -> Qatif
 	link = { comment = "# Trucial States" }
@@ -1939,7 +1939,7 @@
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
 	link = { eu4 = 774 v2 = 1822 } # Al-Junaynah -> Am Timan
-	link = { eu4 = 2932 v2 = 1823 } # Waddai -> Mongo
+	link = { eu4 = 2932 v2 = 1823 } # Wadai -> Mongo
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -1993,7 +1993,7 @@
 	link = { eu4 = 1186 v2 = 2057 } # Sofala -> Sofala
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 eu4 = 1800 v2 = 2052 } # Madanda, Lower Limpopo -> Massekisse
-	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manikya -> Mossurize
+	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manyika -> Mossurize
 	link = { eu4 = 1191 v2 = 2070 } # Tete -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
@@ -2081,7 +2081,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -3463,7 +3463,7 @@
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
 	link = { eu4 = 2512 v2 = 156 } # Wahpekute -> Granite Falls
 	link = { eu4 = 908 v2 = 155 } # Sisithunwan -> Minneapolis
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 904 v2 = 153 v2 = 154 } # Wahpetunwan -> Cedar Rapids, Sioux City
 	link = { eu4 = 905 v2 = 151 } # Baxoje -> Des Moines
 	link = { eu4 = 2513 v2 = 152 } # Moingwena -> Oskaloosa
@@ -4521,7 +4521,7 @@
 	link = { eu4 = 4291 v2 = 928 } # Qazaniya -> Mendeli
 	link = { eu4 = 410 v2 = 926 } # Baghdad -> Baghdad
 	link = { eu4 = 4293 v2 = 924 } # Arbil -> Arbil
-	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulimaniyeh -> Kirkuk
+	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulaimaniyah -> Kirkuk
 	link = { comment = "# Saudi Arabia" }
 	link = { eu4 = 2338 v2 = 1158 } # Hafar -> Rafha
 	link = { eu4 = 4274 eu4 = 392 eu4 = 4275 v2 = 1157 } # Sudayr, Al-Arid, Al-Yamamah -> Riyadh
@@ -4714,7 +4714,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -4768,7 +4768,7 @@
 	link = { eu4 = 1186 v2 = 2057 } # Sofala -> Sofala
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 eu4 = 1800 v2 = 2052 } # Madanda, Lower Limpopo -> Massekisse
-	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manikya -> Mossurize
+	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manyika -> Mossurize
 	link = { eu4 = 1191 v2 = 2070 } # Tete -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
@@ -4856,7 +4856,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -6214,7 +6214,7 @@
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
 	link = { eu4 = 2512 v2 = 156 } # Wahpekute -> Granite Falls
 	link = { eu4 = 908 v2 = 155 } # Sisithunwan -> Minneapolis
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 904 v2 = 153 v2 = 154 } # Wahpetunwan -> Cedar Rapids, Sioux City
 	link = { eu4 = 905 v2 = 151 } # Baxoje -> Des Moines
 	link = { eu4 = 2513 v2 = 152 } # Moingwena -> Oskaloosa
@@ -7197,7 +7197,7 @@
 	link = { eu4 = 4291 v2 = 928 } # Qazaniya -> Mendeli
 	link = { eu4 = 410 v2 = 926 } # Baghdad -> Baghdad
 	link = { eu4 = 4293 v2 = 924 } # Arbil -> Arbil
-	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulimaniyeh -> Kirkuk
+	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulaimaniyah -> Kirkuk
 	link = { comment = "# Saudi Arabia" }
 	link = { eu4 = 2338 v2 = 1158 } # Hafar -> Rafha
 	link = { eu4 = 4274 eu4 = 392 eu4 = 4275 v2 = 1157 } # Sudayr, Al-Arid, Al-Yamamah -> Riyadh
@@ -7390,7 +7390,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -7440,7 +7440,7 @@
 	link = { eu4 = 1186 v2 = 2057 } # Sofala -> Sofala
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 eu4 = 1800 v2 = 2052 } # Madanda, Lower Limpopo -> Massekisse
-	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manikya -> Mossurize
+	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manyika -> Mossurize
 	link = { eu4 = 1191 v2 = 2070 } # Tete -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
@@ -7528,7 +7528,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -8889,7 +8889,7 @@
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
 	link = { eu4 = 2512 v2 = 156 } # Wahpekute -> Granite Falls
 	link = { eu4 = 908 v2 = 155 } # Sisithunwan -> Minneapolis
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 904 v2 = 153 v2 = 154 } # Wahpetunwan -> Cedar Rapids, Sioux City
 	link = { eu4 = 905 v2 = 151 } # Baxoje -> Des Moines
 	link = { eu4 = 2513 v2 = 152 } # Moingwena -> Oskaloosa
@@ -9875,7 +9875,7 @@
 	link = { eu4 = 4291 v2 = 928 } # Qazaniya -> Mendeli
 	link = { eu4 = 410 v2 = 926 } # Baghdad -> Baghdad
 	link = { eu4 = 4293 v2 = 924 } # Arbil -> Arbil
-	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulimaniyeh -> Kirkuk
+	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulaimaniyah -> Kirkuk
 	link = { eu4 = 2340 v2 = 935 } # Grane -> Kuwait
 	link = { comment = "# Saudi Arabia" }
 	link = { eu4 = 2338 v2 = 1158 } # Hafar -> Rafha
@@ -10069,7 +10069,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -10120,7 +10120,7 @@
 	link = { eu4 = 1186 v2 = 2057 } # Sofala -> Sofala
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
-	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manikya -> Mossurize
+	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manyika -> Mossurize
 	link = { eu4 = 1191 v2 = 2070 } # Tete -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
@@ -10209,7 +10209,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -11567,7 +11567,7 @@
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
 	link = { eu4 = 2512 v2 = 156 } # Wahpekute -> Granite Falls
 	link = { eu4 = 908 v2 = 155 } # Sisithunwan -> Minneapolis
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 904 v2 = 153 v2 = 154 } # Wahpetunwan -> Cedar Rapids, Sioux City
 	link = { eu4 = 905 v2 = 151 } # Baxoje -> Des Moines
 	link = { eu4 = 2513 v2 = 152 } # Moingwena -> Oskaloosa
@@ -12529,7 +12529,7 @@
 	link = { eu4 = 4291 v2 = 928 } # Qazaniya -> Mendeli
 	link = { eu4 = 410 v2 = 926 } # Baghdad -> Baghdad
 	link = { eu4 = 4293 v2 = 924 } # Arbil -> Arbil
-	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulimaniyeh -> Kirkuk
+	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulaimaniyah -> Kirkuk
 	link = { eu4 = 2340 v2 = 935 } # Grane -> Kuwait
 	link = { comment = "# Saudi Arabia" }
 	link = { eu4 = 2338 v2 = 1158 } # Hafar -> Rafha
@@ -12722,7 +12722,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -12773,7 +12773,7 @@
 	link = { eu4 = 1186 v2 = 2057 } # Sofala -> Sofala
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
-	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manikya -> Mossurize
+	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manyika -> Mossurize
 	link = { eu4 = 1191 v2 = 2070 } # Tete -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
@@ -12862,7 +12862,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -14220,7 +14220,7 @@
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
 	link = { eu4 = 2512 v2 = 156 } # Wahpekute -> Granite Falls
 	link = { eu4 = 908 v2 = 155 } # Sisithunwan -> Minneapolis
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 904 v2 = 153 v2 = 154 } # Wahpetunwan -> Cedar Rapids, Sioux City
 	link = { eu4 = 905 v2 = 151 } # Baxoje -> Des Moines
 	link = { eu4 = 2513 v2 = 152 } # Moingwena -> Oskaloosa
@@ -15182,7 +15182,7 @@
 	link = { eu4 = 4291 v2 = 928 } # Qazaniya -> Mendeli
 	link = { eu4 = 410 v2 = 926 } # Baghdad -> Baghdad
 	link = { eu4 = 4293 v2 = 924 } # Arbil -> Arbil
-	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulimaniyeh -> Kirkuk
+	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulaimaniyah -> Kirkuk
 	link = { eu4 = 2340 v2 = 935 } # Grane -> Kuwait
 	link = { comment = "# Saudi Arabia" }
 	link = { eu4 = 2338 v2 = 1158 } # Hafar -> Rafha
@@ -15375,7 +15375,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -15426,7 +15426,7 @@
 	link = { eu4 = 1186 v2 = 2057 } # Sofala -> Sofala
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
-	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manikya -> Mossurize
+	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manyika -> Mossurize
 	link = { eu4 = 1191 v2 = 2070 } # Tete -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
@@ -15515,7 +15515,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -16871,7 +16871,7 @@
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
 	link = { eu4 = 2512 v2 = 156 } # Wahpekute -> Granite Falls
 	link = { eu4 = 908 v2 = 155 } # Sisithunwan -> Minneapolis
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 904 v2 = 153 v2 = 154 } # Wahpetunwan -> Cedar Rapids, Sioux City
 	link = { eu4 = 905 v2 = 151 } # Baxoje -> Des Moines
 	link = { eu4 = 2513 v2 = 152 } # Moingwena -> Oskaloosa
@@ -17833,7 +17833,7 @@
 	link = { eu4 = 4291 v2 = 928 } # Qazaniya -> Mendeli
 	link = { eu4 = 410 v2 = 926 } # Baghdad -> Baghdad
 	link = { eu4 = 4293 v2 = 924 } # Arbil -> Arbil
-	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulimaniyeh -> Kirkuk
+	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulaimaniyah -> Kirkuk
 	link = { eu4 = 2340 v2 = 935 } # Grane -> Kuwait
 	link = { comment = "# Saudi Arabia" }
 	link = { eu4 = 2338 v2 = 1158 } # Hafar -> Rafha
@@ -18027,7 +18027,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -18078,7 +18078,7 @@
 	link = { eu4 = 1186 v2 = 2057 } # Sofala -> Sofala
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
-	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manikya -> Mossurize
+	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manyika -> Mossurize
 	link = { eu4 = 1191 v2 = 2070 } # Tete -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
@@ -18167,7 +18167,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -19522,7 +19522,7 @@
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
 	link = { eu4 = 2512 v2 = 156 } # Wahpekute -> Granite Falls
 	link = { eu4 = 908 v2 = 155 } # Sisithunwan -> Minneapolis
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 904 v2 = 153 v2 = 154 } # Wahpetunwan -> Cedar Rapids, Sioux City
 	link = { eu4 = 905 v2 = 151 } # Baxoje -> Des Moines
 	link = { eu4 = 2513 v2 = 152 } # Moingwena -> Oskaloosa
@@ -20655,7 +20655,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -20704,7 +20704,7 @@
 	link = { eu4 = 1186 v2 = 2057 } # Sofala -> Sofala
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
-	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manikya -> Mossurize
+	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manyika -> Mossurize
 	link = { eu4 = 1191 v2 = 2070 } # Tete -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
@@ -20793,7 +20793,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -22142,7 +22142,7 @@
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
 	link = { eu4 = 2512 v2 = 156 } # Wahpekute -> Granite Falls
 	link = { eu4 = 908 v2 = 155 } # Sisithunwan -> Minneapolis
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 904 v2 = 153 v2 = 154 } # Wahpetunwan -> Cedar Rapids, Sioux City
 	link = { eu4 = 905 v2 = 151 } # Baxoje -> Des Moines
 	link = { eu4 = 2513 v2 = 152 } # Moingwena -> Oskaloosa
@@ -23273,7 +23273,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -23321,7 +23321,7 @@
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
 	link = { eu4 = 1187 v2 = 2058 } # Sena -> Mossurize
-	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manikya -> Mutare
+	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manyika -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
 	link = { eu4 = 2950 v2 = 2069 } # Buhera -> Gweru
@@ -23366,7 +23366,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -24717,7 +24717,7 @@
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
 	link = { eu4 = 2512 v2 = 156 } # Wahpekute -> Granite Falls
 	link = { eu4 = 908 v2 = 155 } # Sisithunwan -> Minneapolis
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 904 v2 = 153 v2 = 154 } # Wahpetunwan -> Cedar Rapids, Sioux City
 	link = { eu4 = 905 v2 = 151 } # Baxoje -> Des Moines
 	link = { eu4 = 2513 v2 = 152 } # Moingwena -> Oskaloosa
@@ -25847,7 +25847,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -25896,7 +25896,7 @@
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
 	link = { eu4 = 1187 v2 = 2058 } # Sena -> Mossurize
-	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manikya -> Mutare
+	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manyika -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
 	link = { eu4 = 2950 v2 = 2069 } # Buhera -> Gweru
@@ -25941,7 +25941,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -26784,7 +26784,7 @@
 	link = { eu4 = 944 v2 = 173 } # Bodewadmik -> Detroit
 	link = { eu4 = 2522 v2 = 174 } # Mascouten -> Grand Rapids
 	link = { eu4 = 914 eu4 = 912 v2 = 161 v2 = 159 } # MANY-TO-MANY: Ho-Chunk, Osaakiiwaki -> Green Bay, Milwaukee
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 913 v2 = 162 } # Meskwaki -> Madison
 	link = { eu4 = 2512 eu4 = 908 v2 = 155 v2 = 156 } # MANY-TO-MANY: Wahpekute, Sisithunwan -> Minneapolis, Granite Falls
 	link = { eu4 = 910 eu4 = 2517 v2 = 158 } # Makoua, Bdewekhantunwan -> Duluth
@@ -27240,7 +27240,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { eu4 = 2474 v2 = 1741 } # Tajarhi -> Murzuk
 	link = { eu4 = 1127 v2 = 1716 v2 = 1717 } # Tuat -> Tindouf, Chenachene
@@ -27288,7 +27288,7 @@
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
 	link = { eu4 = 1187 v2 = 2058 } # Sena -> Mossurize
-	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manikya -> Mutare
+	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manyika -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
 	link = { eu4 = 2950 v2 = 2069 } # Buhera -> Gweru
@@ -27397,7 +27397,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -29342,7 +29342,7 @@
 	link = { eu4 = 944 v2 = 173 } # Bodewadmik -> Detroit
 	link = { eu4 = 2522 v2 = 174 } # Mascouten -> Grand Rapids
 	link = { eu4 = 914 eu4 = 912 v2 = 161 v2 = 159 } # MANY-TO-MANY: Ho-Chunk, Osaakiiwaki -> Green Bay, Milwaukee
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 913 v2 = 162 } # Meskwaki -> Madison
 	link = { eu4 = 2512 eu4 = 908 v2 = 155 v2 = 156 } # MANY-TO-MANY: Wahpekute, Sisithunwan -> Minneapolis, Granite Falls
 	link = { eu4 = 910 eu4 = 2517 v2 = 158 } # Makoua, Bdewekhantunwan -> Duluth
@@ -29798,7 +29798,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { eu4 = 2474 v2 = 1741 } # Tajarhi -> Murzuk
 	link = { eu4 = 1127 v2 = 1716 v2 = 1717 } # Tuat -> Tindouf, Chenachene
@@ -29846,7 +29846,7 @@
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
 	link = { eu4 = 1187 v2 = 2058 } # Sena -> Mossurize
-	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manikya -> Mutare
+	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manyika -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
 	link = { eu4 = 2950 v2 = 2069 } # Buhera -> Gweru
@@ -29955,7 +29955,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -31887,7 +31887,7 @@
 	link = { eu4 = 944 v2 = 173 } # Bodewadmik -> Detroit
 	link = { eu4 = 2522 v2 = 174 } # Mascouten -> Grand Rapids
 	link = { eu4 = 914 eu4 = 912 v2 = 161 v2 = 159 } # MANY-TO-MANY: Ho-Chunk, Osaakiiwaki -> Green Bay, Milwaukee
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 913 v2 = 162 } # Meskwaki -> Madison
 	link = { eu4 = 2512 eu4 = 908 v2 = 155 v2 = 156 } # MANY-TO-MANY: Wahpekute, Sisithunwan -> Minneapolis, Granite Falls
 	link = { eu4 = 910 eu4 = 2517 v2 = 158 } # Makoua, Bdewekhantunwan -> Duluth
@@ -32343,7 +32343,7 @@
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Waddai -> Am Timan, Mongo
+	link = { eu4 = 2932 v2 = 1822 v2 = 1823 } # Wadai -> Am Timan, Mongo
 	link = { comment = "# Landbridges" }
 	link = { eu4 = 2474 v2 = 1741 } # Tajarhi -> Murzuk
 	link = { eu4 = 1127 v2 = 1716 v2 = 1717 } # Tuat -> Tindouf, Chenachene
@@ -32391,7 +32391,7 @@
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
 	link = { eu4 = 1187 v2 = 2058 } # Sena -> Mossurize
-	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manikya -> Mutare
+	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manyika -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
 	link = { eu4 = 2950 v2 = 2069 } # Buhera -> Gweru
@@ -32500,7 +32500,7 @@
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
 	link = { eu4 = 2798 eu4 = 1222 v2 = 1828 v2 = 1827 } # MANY-TO-MANY: Soba, Gezira -> Wad Madani, Khartoum
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1219 v2 = 1841 } # Darfur -> Fasher
@@ -34350,7 +34350,7 @@
 	link = { eu4 = 944 v2 = 173 } # Bodewadmik -> Detroit
 	link = { eu4 = 2522 v2 = 174 } # Mascouten -> Grand Rapids
 	link = { eu4 = 914 eu4 = 912 v2 = 161 v2 = 159 } # MANY-TO-MANY: Ho-Chunk, Osaakiiwaki -> Green Bay, Milwaukee
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 913 v2 = 162 } # Meskwaki -> Madison
 	link = { eu4 = 910 eu4 = 2517 eu4 = 908 eu4 = 2512 v2 = 158 v2 = 155 } # MANY-TO-MANY: Makoua, Bdewekhantunwan, Sisithunwan, Wahpekute -> Duluth, Minneapolis
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
@@ -34757,7 +34757,7 @@
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
 	link = { eu4 = 1187 v2 = 2058 } # Sena -> Mossurize
-	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manikya -> Mutare
+	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manyika -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
 	link = { eu4 = 2950 v2 = 2069 } # Buhera -> Gweru
@@ -34860,7 +34860,7 @@
 	link = { eu4 = 1226 eu4 = 1225 v2 = 1829 v2 = 1830 v2 = 1832 } # MANY-TO-MANY: Beja, Butana -> Kassala, Sennar, Fashoda
 	link = { eu4 = 2798 v2 = 1828 v2 = 1827 } # Soba -> Wad Madani, Khartoum
 	link = { eu4 = 1222 eu4 = 2799 v2 = 1831 } # Gezira, Sennar -> Rabak
-	link = { eu4 = 2801 eu4 = 1221 eu4 = 2800 v2 = 1838 v2 = 1842 } # MANY-TO-MANY: Medwa, El Obeid, Kosti -> Obeid, Junaynah
+	link = { eu4 = 2801 eu4 = 1221 eu4 = 2800 v2 = 1838 v2 = 1842 } # MANY-TO-MANY: Medwa, El Obeid, Waylula -> Obeid, Junaynah
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 v2 = 1841 } # Kobbe -> Nuhud, Fasher
 	link = { eu4 = 1158 v2 = 1824 } # Kanem -> Mao
@@ -34962,7 +34962,7 @@
 	link = { eu4 = 2277 v2 = 1817 } # Kawar -> Bilma
 	link = { eu4 = 2475 v2 = 1814 } # Djado -> Madama
 	link = { eu4 = 2288 v2 = 1821 } # Yao -> Abeche
-	link = { eu4 = 2932 eu4 = 774 eu4 = 1219 v2 = 1822 v2 = 1823 } # MANY-TO-MANY: Waddai, Al-Junaynah, Darfur -> Am Timan, Mongo
+	link = { eu4 = 2932 eu4 = 774 eu4 = 1219 v2 = 1822 v2 = 1823 } # MANY-TO-MANY: Wadai, Al-Junaynah, Darfur -> Am Timan, Mongo
 	link = { comment = "# Lakes" }
 	link = { eu4 = 2471 eu4 = 1648 } # Chott el-Jerid, Lake Tchad -> DROPPED
 	link = { eu4 = 1649 v2 = 3102 } # Lake Victoria -> Lake Victoria
@@ -36676,7 +36676,7 @@
 	link = { eu4 = 944 v2 = 173 } # Bodewadmik -> Detroit
 	link = { eu4 = 2522 v2 = 174 } # Mascouten -> Grand Rapids
 	link = { eu4 = 914 eu4 = 912 v2 = 161 v2 = 159 } # MANY-TO-MANY: Ho-Chunk, Osaakiiwaki -> Green Bay, Milwaukee
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Eau Claire
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Eau Claire
 	link = { eu4 = 913 v2 = 162 } # Meskwaki -> Madison
 	link = { eu4 = 910 eu4 = 2517 eu4 = 908 eu4 = 2512 v2 = 158 v2 = 155 } # MANY-TO-MANY: Makoua, Bdewekhantunwan, Sisithunwan, Wahpekute -> Duluth, Minneapolis
 	link = { eu4 = 2016 v2 = 157 } # Amahami -> Moorhead
@@ -37083,7 +37083,7 @@
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 v2 = 2052 } # Madanda -> Massekisse
 	link = { eu4 = 1187 v2 = 2058 } # Sena -> Mossurize
-	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manikya -> Mutare
+	link = { eu4 = 1191 eu4 = 2951 v2 = 2070 } # Tete, Manyika -> Mutare
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
 	link = { eu4 = 2950 v2 = 2069 } # Buhera -> Gweru
@@ -37186,7 +37186,7 @@
 	link = { eu4 = 1226 eu4 = 1225 v2 = 1829 v2 = 1830 v2 = 1832 } # MANY-TO-MANY: Beja, Butana -> Kassala, Sennar, Fashoda
 	link = { eu4 = 2798 v2 = 1828 v2 = 1827 } # Soba -> Wad Madani, Khartoum
 	link = { eu4 = 1222 eu4 = 2799 v2 = 1831 } # Gezira, Sennar -> Rabak
-	link = { eu4 = 2801 eu4 = 1221 eu4 = 2800 v2 = 1838 } # Medwa, El Obeid, Kosti -> Obeid
+	link = { eu4 = 2801 eu4 = 1221 eu4 = 2800 v2 = 1838 } # Medwa, El Obeid, Waylula -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Nuhud
 	link = { eu4 = 1158 v2 = 1824 } # Kanem -> Mao
@@ -37283,7 +37283,7 @@
 	link = { eu4 = 1795 v2 = 1740 v2 = 1738 v2 = 1739 v2 = 1758 v2 = 2585 v2 = 2564 v2 = 1825 v2 = 1826 v2 = 1821 v2 = 1823 v2 = 1822 v2 = 1842 v2 = 1841 v2 = 1813 v2 = 1812 v2 = 1814 v2 = 1817 } # East Sahara -> Waddan, Jaghbub, Kufra, Farafra, Matan as Sarah, Salima, Zouar, Faya, Abeche, Mongo, Am Timan, Junaynah, Fasher, Arlit, Agades, Madama, Bilma
 	link = { eu4 = 1794 v2 = 1719 v2 = 1720 v2 = 1717 v2 = 1718 v2 = 1722 v2 = 1724 v2 = 1721 v2 = 1714 v2 = 1716 } # Central Sahara -> Ilizi, Timimoun, Chenachene, In Salah, Tin Zawatene, Tamanrasset, In Guezzam, Bechar, Tindouf
 	link = { comment = "# Dead African Land" }
-	link = { eu4 = 1127 eu4 = 2272 eu4 = 2274 eu4 = 2275 eu4 = 2475 eu4 = 2277 eu4 = 2288 eu4 = 2932 eu4 = 774 eu4 = 1219 } # Tuat, Azbin, Air, Tenere, Djado, Kawar, Yao, Waddai, Al-Junaynah, Darfur -> DROPPED
+	link = { eu4 = 1127 eu4 = 2272 eu4 = 2274 eu4 = 2275 eu4 = 2475 eu4 = 2277 eu4 = 2288 eu4 = 2932 eu4 = 774 eu4 = 1219 } # Tuat, Azbin, Air, Tenere, Djado, Kawar, Yao, Wadai, Al-Junaynah, Darfur -> DROPPED
 	link = { comment = "# Lakes" }
 	link = { eu4 = 2471 eu4 = 1648 } # Chott el-Jerid, Lake Tchad -> DROPPED
 	link = { eu4 = 1649 v2 = 3102 } # Lake Victoria -> Lake Victoria
