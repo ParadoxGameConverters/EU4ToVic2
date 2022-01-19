@@ -2769,60 +2769,65 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	EGY_copt = {
-		potential = {
-			tag = EGY
-			NOT = {
-				accepted_culture = zzz_religion_sunni
-				accepted_culture = zzz_religion_zikri
-				accepted_culture = zzz_religion_sunni_heresy
-				accepted_culture = zzz_religion_shiite
-				accepted_culture = zzz_religion_hurufi
-				accepted_culture = zzz_religion_druze
-				accepted_culture = zzz_religion_shiite_heresy
-				accepted_culture = zzz_religion_ibadi
-				accepted_culture = zzz_religion_kharijite
-			}
-		}	
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			all_core = { remove_core = EGY add_core = CEG }
-			change_tag = CEG
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	EGY_not_copt = {
-		potential = {
-			tag = CEG
-			OR = {
-				accepted_culture = zzz_religion_sunni
-				accepted_culture = zzz_religion_zikri
-				accepted_culture = zzz_religion_sunni_heresy
-				accepted_culture = zzz_religion_shiite
-				accepted_culture = zzz_religion_hurufi
-				accepted_culture = zzz_religion_druze
-				accepted_culture = zzz_religion_shiite_heresy
-				accepted_culture = zzz_religion_ibadi
-				accepted_culture = zzz_religion_kharijite
-			}
-		}	
-		allow = {
-			war = no
-		}
-		
-		effect = {
-			all_core = { remove_core = CEG add_core = EGY }
-			change_tag = EGY
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
+	
+	#
+	# BROKEN - the primary culture doesn't transfer.
+	#
+	
+#	EGY_copt = {
+#		potential = {
+#			tag = EGY
+#			NOT = {
+#				accepted_culture = zzz_religion_sunni
+#				accepted_culture = zzz_religion_zikri
+#				accepted_culture = zzz_religion_sunni_heresy
+#				accepted_culture = zzz_religion_shiite
+#				accepted_culture = zzz_religion_hurufi
+#				accepted_culture = zzz_religion_druze
+#				accepted_culture = zzz_religion_shiite_heresy
+#				accepted_culture = zzz_religion_ibadi
+#				accepted_culture = zzz_religion_kharijite
+#			}
+#		}	
+#		allow = {
+#			war = no
+#		}
+#		
+#		effect = {
+#			all_core = { remove_core = EGY add_core = CEG }
+#			change_tag = CEG
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+#	EGY_not_copt = {
+#		potential = {
+#			tag = CEG
+#			OR = {
+#				accepted_culture = zzz_religion_sunni
+#				accepted_culture = zzz_religion_zikri
+#				accepted_culture = zzz_religion_sunni_heresy
+#				accepted_culture = zzz_religion_shiite
+#				accepted_culture = zzz_religion_hurufi
+#				accepted_culture = zzz_religion_shiite_heresy
+#				accepted_culture = zzz_religion_ibadi
+#				accepted_culture = zzz_religion_kharijite
+#			}
+#		}	
+#		allow = {
+#			war = no
+#		}
+#		
+#		effect = {
+#			all_core = { remove_core = CEG add_core = EGY }
+#			change_tag = EGY
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#	}
+
 	form_ITP = {
 		news = yes
 		news_desc_long = "form_italy_NEWS_LONG"
