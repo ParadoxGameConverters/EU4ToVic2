@@ -81,6 +81,7 @@ political_decisions = {
     organize_british_columbia = {
     picture = organize_british_columbia
         potential = {
+            NOT = { has_global_flag = disable_british_dominions }
             OR = {
                 tag = ENG
                 tag = ENL

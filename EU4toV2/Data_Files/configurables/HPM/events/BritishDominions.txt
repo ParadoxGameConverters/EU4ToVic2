@@ -9,6 +9,7 @@ country_event = {
 
 
     trigger = {
+        NOT = { has_global_flag = disable_british_dominions }
         war = no
         year = 1907
         any_owned_province = { is_core = NEW }
@@ -247,6 +248,7 @@ country_event = {
     picture = "danishgovernment"
 
     trigger = {
+        NOT = { has_global_flag = disable_british_dominions }
         war = no
         year = 1901
         any_owned_province = { is_core = AST }
@@ -443,6 +445,7 @@ country_event = {
     picture = "danishgovernment"
 
     trigger = {
+        NOT = { has_global_flag = disable_british_dominions }
         war = no
         year = 1907
         any_owned_province = { is_core = NZL }
@@ -645,6 +648,7 @@ country_event = {
     picture = "danishgovernment"
 
     trigger = {
+        NOT = { has_global_flag = disable_british_dominions }
         war = no
         year = 1909
         any_owned_province = { is_core = SAF }
@@ -1315,6 +1319,7 @@ country_event = {
     picture = "alaska"
 
     trigger = {
+        NOT = { has_global_flag = disable_british_dominions }
         war = no
         CAN = { war = no }
         is_our_vassal = CAN
@@ -1438,6 +1443,7 @@ country_event = {
     major = yes
 
     trigger = {
+        NOT = { has_global_flag = disable_british_dominions }
         OR = {
             tag = ENG
             tag = ENL

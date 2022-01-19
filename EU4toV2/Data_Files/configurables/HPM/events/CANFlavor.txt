@@ -318,6 +318,7 @@ country_event = {
     picture = "confederation"
 
     trigger = {
+        NOT = { has_global_flag = disable_british_dominions }
         OR = {
             tag = ENG
             tag = ENL
@@ -532,6 +533,7 @@ country_event = {
     major = yes
 
     trigger = {
+        NOT = { has_global_flag = disable_british_dominions }
         OR = {
             tag = ENG
             tag = ENL
@@ -754,6 +756,7 @@ country_event = {
     major = yes
 
     trigger = {
+        NOT = { has_global_flag = disable_british_dominions }
         OR = {
             tag = ENG
             tag = ENL

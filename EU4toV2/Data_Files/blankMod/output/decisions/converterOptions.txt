@@ -1,0 +1,63 @@
+political_decisions = {
+
+	show_converter_options = {
+		picture = starting_options
+		alert = yes
+		potential = {
+			ai = no
+			NOT = { has_global_flag = setting_converter_options }
+			NOT = { year = 1837 }
+		}
+
+		allow = {
+			NOT = { year = 1837 }
+		}
+
+		effect = {
+			set_global_flag = setting_converter_options
+			set_country_flag = country_setting_converter_options
+		}
+
+		ai_will_do = { factor = 0 }
+	}
+
+	hide_converter_options = {
+		picture = starting_options
+		alert = no
+		potential = {
+			ai = no
+			has_country_flag = country_setting_converter_options
+			NOT = { year = 1837 }
+		}
+
+		allow = {
+		}
+
+		effect = {
+			clr_global_flag = setting_converter_options
+			clr_country_flag = country_setting_converter_options
+		}
+
+		ai_will_do = { factor = 0 }
+	}
+
+	disable_british_dominions = {
+		picture = starting_options
+		alert = no
+		potential = {
+			NOT = { has_global_flag = disable_british_dominions }
+			ai = no
+			has_country_flag = country_setting_converter_options
+			NOT = { year = 1837 }
+		}
+
+		allow = {
+		}
+
+		effect = {
+			set_global_flag = disable_british_dominions
+		}
+
+		ai_will_do = { factor = 0 }
+	}
+}
