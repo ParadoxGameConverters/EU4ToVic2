@@ -4,8 +4,7 @@ political_decisions = {
 		image = form_byzantine_empire
 		potential = {
 			OR = {
-				culture = greek
-				is_culture_group = italian
+				primary_culture = greek
 				is_culture_group = romantic
 				tag = SPQ
 				tag = BYZ
@@ -61,14 +60,14 @@ political_decisions = {
 		image = form_byzantine_empire
 		potential = {
 			OR = {
-				culture = greek
+				primary_culture = greek
 				is_culture_group = italian
 				is_culture_group = romantic
 				tag = SPQ
 				tag = BYZ
 			}
 			NOT = { has_global_flag = thrace_be_greek }
-			TUR_1860 = { #Thrace
+			TUR_860 = { #Thrace
 				owned_by = THIS
 			}
 		}
@@ -84,8 +83,6 @@ political_decisions = {
 			}
 		}
 		effect = {
-			clr_global_flag = thrace_be_slav
-			clr_global_flag = thrace_be_teuton
 			858 = {
 				change_province_name = "Saranta Ekklisies"
 			}
@@ -101,84 +98,6 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	slav_thrace = {
-		potential = {
-			OR = {
-				is_culture_group = east_slavic
-				is_culture_group = south_slavic
-				is_culture_group = czecho_slovak_culture_group
-				is_culture_group = polish_culture_group
-			}
-			NOT = { has_global_flag = thrace_be_slav }
-			TUR_1860 = { #Thrace
-				owned_by = THIS
-			}
-		}
-		allow = {
-			858 = {
-				owned_by = THIS
-			}
-			860 = {
-				owned_by = THIS
-			}
-			861 = {
-				owned_by = THIS
-			}
-		}
-		effect = {
-			858 = {
-				change_province_name = "Lozengrad"
-			}
-			860 = {
-				change_province_name = "Czargrad"
-			}
-			set_global_flag = thrace_be_slav
-			clr_global_flag = thrace_be_greek
-			clr_global_flag = thrace_be_teuton
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	teuton_thrace = {
-		potential = {
-			OR = {
-				culture = greek
-				is_culture_group = italian
-				tag = SPQ
-				tag = BYZ
-			}
-			NOT = { has_global_flag = thrace_be_teuton }
-			TUR_1860 = { #Thrace
-				owned_by = THIS
-			}
-		}
-		allow = {
-			858 = {
-				owned_by = THIS
-			}
-			860 = {
-				owned_by = THIS
-			}
-			861 = {
-				owned_by = THIS
-			}
-		}
-		effect = {
-			clr_global_flag = thrace_be_slav
-			clr_global_flag = thrace_be_greek
-			858 = {
-				change_province_name = "Vierzig Kirchen"
-			}
-			860 = {
-				change_province_name = "Mikligarðr"
-			}
-			set_global_flag = thrace_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	turk_thrace = {
 		image = tanzimat_reforms
 		potential = {
@@ -186,12 +105,8 @@ political_decisions = {
 				is_culture_group = turko_semitic
 				is_culture_group = arab
 			}
-			OR = {
-				has_global_flag = thrace_be_greek
-				has_global_flag = thrace_be_slav
-				has_global_flag = thrace_be_teuton
-			}
-			TUR_1860 = { #Thrace
+			has_global_flag = thrace_be_greek
+			TUR_860 = { #Thrace
 				owned_by = THIS
 			}
 		}
@@ -217,8 +132,6 @@ political_decisions = {
 				change_province_name = "Üsküdar"
 			}
 			clr_global_flag = thrace_be_greek
-			clr_global_flag = thrace_be_slav
-			clr_global_flag = thrace_be_greek
 		}
 		ai_will_do = {
 			factor = 1
@@ -228,7 +141,7 @@ political_decisions = {
 		image = form_byzantine_empire
 		potential = {
 			OR = {
-				culture = greek
+				primary_culture = greek
 				is_culture_group = italian
 				is_culture_group = romantic
 				tag = SPQ
@@ -327,7 +240,7 @@ political_decisions = {
 		image = form_byzantine_empire
 		potential = {
 			OR = {
-				culture = greek
+				primary_culture = greek
 				is_culture_group = italian
 				is_culture_group = romantic
 				tag = SPQ
@@ -402,7 +315,7 @@ political_decisions = {
 		image = form_byzantine_empire
 		potential = {
 			OR = {
-				culture = greek
+				primary_culture = greek
 				is_culture_group = italian
 				is_culture_group = romantic
 				tag = SPQ
@@ -489,7 +402,7 @@ political_decisions = {
 		image = form_byzantine_empire
 		potential = {
 			OR = {
-				culture = greek
+				primary_culture = greek
 				is_culture_group = italian
 				is_culture_group = romantic
 				tag = SPQ
@@ -569,7 +482,7 @@ political_decisions = {
 		image = form_byzantine_empire
 		potential = {
 			OR = {
-				culture = greek
+				primary_culture = greek
 				is_culture_group = italian
 				is_culture_group = romantic
 				tag = SPQ
