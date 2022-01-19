@@ -2771,8 +2771,8 @@ political_decisions = {
 	}
 	
 	#
-	# BROKEN - the primary culture doesn't transfer.
-	#
+	# BROKEN - Can enter a loop with CEG and some *third* country when egypt is catholic? primary noculture?
+	# Odd behavior, possibly Vic2 bug itself.
 	
 #	EGY_copt = {
 #		potential = {
