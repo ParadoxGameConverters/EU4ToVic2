@@ -178,20 +178,20 @@ political_decisions = {
 							AND = {
 								continent = africa
 								NOT = {
-									state_id = 1704 #Tlemcen
+									state_id = 1702 #Tlemcen
 									state_id = 1708 #Constantine
 									state_id = 1714 #Western Sahara
 									state_id = 1718 #Sahara
 									state_id = 1746 #Sinai
 									state_id = 1750 #Lower Egypt
 									state_id = 1753 #Matruh
-									state_id = 1754 #Libya
+									state_id = 1737 #Libya
 									state_id = 1758 #Egyptian Desert
 									state_id = 1762 #Middle Egypt
 									state_id = 1771 #Upper Egypt
 									state_id = 1700 #Algiers
 									state_id = 1683 #Taza
-									state_id = 1686 #Fez
+									state_id = 1685 #Fez
 									state_id = 1688 #al-Rif
 									state_id = 1693 #Morocco
 									state_id = 1696 #West Morocco
@@ -462,8 +462,8 @@ political_decisions = {
 				add_accepted_culture = slovak
 			}
 			ISL = {
-				primary_culture = bedouin
 				add_accepted_culture = union
+				add_accepted_culture = bedouin
 				add_accepted_culture = persian
 			}
 			any_country = { remove_accepted_culture = zzz_religion_shamanism } # Actual shamanists will gain it back anyway
