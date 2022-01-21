@@ -1276,9 +1276,11 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1469
-				state_id = 1075
-				state_id = 1079
+				region = RUS_1469 #Tomsk
+				region = RUS_1070 #Yeniseysk
+				region = RUS_1075 #Irkutsk
+				region = RUS_1079 #Trans-Baikal
+				region = RUS_1071 #Yakutsk
 			}
 		}
 		OR = {
@@ -1318,8 +1320,9 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1082
-				state_id = 1086
+				region = CHI_1082 #Guanwai
+				region = RUS_1072 #Hailanpao
+				region = JAP_1086 #Sakhalin
 			}
 		}
 		OR = {
@@ -1358,7 +1361,10 @@ country_event = {
 		NOT = { exists = MCK }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			state_id = 1553
+			OR = {
+				region = CHI_1552 #Heilongjiang
+				region = CHI_1479 #Fengtian
+			}
 		}
 		OR = {
 			primary_culture = manchu
@@ -1396,7 +1402,10 @@ country_event = {
 		NOT = { exists = MGL }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			state_id = 2608
+			OR = {
+				region = CHI_1468 #Western Mongolia
+				region = CHI_1465 #Eastern Mongolia
+			}
 		}
 		OR = {
 			primary_culture = manchu
@@ -1435,7 +1444,7 @@ country_event = {
 		NOT = { exists = IMG }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			state_id = 1532
+			region = CHI_1532 #Inner Mongolia
 		}
 		OR = {
 			primary_culture = manchu
@@ -1474,8 +1483,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1619
-				state_id = 1627
+				region = KOR_1619 #Pyongyang
+				region = KOR_1627 #Sariwon
 			}
 		}
 		OR = {
@@ -1516,8 +1525,9 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1618
-				state_id = 1614
+				region = CHI_1616 #Shuntian
+				region = CHI_1612 #Hebei
+				region = CHI_1563 #West Shandong
 			}
 		}
 		OR = {
@@ -1556,7 +1566,7 @@ country_event = {
 		NOT = { exists = SHD }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			state_id = 1563
+			region = CHI_1565 #East Shandong
 		}
 		OR = {
 			primary_culture = manchu
@@ -1594,7 +1604,7 @@ country_event = {
 		NOT = { exists = TPG }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			state_id = 1476
+			region = CHI_1540 #North Jiangsu
 		}
 		OR = {
 			primary_culture = manchu
@@ -1633,8 +1643,9 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1539
-				state_id = 1611
+				region = CHI_2221 #South Jiangsu
+				region = CHI_1604 #North Zhejiang
+				region = CHI_1610 #South Zhejiang
 			}
 		}
 		OR = {
@@ -1674,8 +1685,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1472
-				state_id = 1473
+				region = CHI_1477 #North Anhui
+				region = CHI_1470 #South Anhui
 			}
 		}
 		OR = {
@@ -1714,10 +1725,7 @@ country_event = {
 		NOT = { exists = SXI }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			OR = {
-				state_id = 1576
-				state_id = 1529
-			}
+			region = CHI_1572 #Shanxi
 		}
 		OR = {
 			primary_culture = manchu
@@ -1756,9 +1764,9 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1529
-				state_id = 1516
-				state_id = 1523
+				region = CHI_1524 #North Hunan
+				region = CHI_1519 #West Hubei
+				region = CHI_1522 #East Hubei
 			}
 		}
 		OR = {
@@ -1797,7 +1805,7 @@ country_event = {
 		NOT = { exists = FJN }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			state_id = 1487
+			region = CHI_1482 #Fujian
 		}
 		OR = {
 			primary_culture = manchu
@@ -1835,7 +1843,7 @@ country_event = {
 		NOT = { exists = TAI }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			state_id = 2562
+			region = CHI_1485 #Formosa
 		}
 		OR = {
 			primary_culture = manchu
@@ -1874,8 +1882,10 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1504
-				state_id = 1550
+				region = CHI_1504 #Guangxi
+				region = CHI_1526 #South Hunan
+				region = CHI_1547 #South Jiangxi
+				region = CHI_1545 #North Jiangxi
 			}
 		}
 		OR = {
@@ -1914,11 +1924,7 @@ country_event = {
 		NOT = { exists = GNG }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			OR = {
-				state_id = 1499
-				state_id = 1494
-				state_id = 1496
-			}
+			region = CHI_1493 #East Canton
 		}
 		OR = {
 			primary_culture = manchu
@@ -1956,7 +1962,8 @@ country_event = {
 		NOT = { exists = YNN }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			state_id = 1601
+			region = CHI_1601 #Yunnan
+			region = CHI_1505 #Guizhou
 		}
 		OR = {
 			primary_culture = manchu
@@ -1995,8 +2002,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1578
-				state_id = 1581
+				region = CHI_1578 #West Sichuan
+				region = CHI_1579 #East Sichuan
 			}
 		}
 		OR = {
@@ -2036,9 +2043,9 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1557
-				state_id = 1490
-				state_id = 2062
+				region = CHI_1557 #Qinghai
+				region = CHI_1490 #Gansu
+				region = CHI_1559 #Shaanxi
 			}
 		}
 		OR = {
@@ -2077,7 +2084,8 @@ country_event = {
 		NOT = { exists = XIN }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			state_id = 1600
+			region = CHI_1600 #Urumqui
+			region = CHI_1594 #Kashgar
 		}
 		OR = {
 			primary_culture = manchu
@@ -2116,7 +2124,7 @@ country_event = {
 		NOT = { exists = TIB }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			state_id = 1591
+			region = TIB_1591 #Tibetan Plateau
 		}
 		OR = {
 			primary_culture = manchu
@@ -2156,9 +2164,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1185
-				state_id = 1190
-				state_id = 1207
+				region = RUS_1185 #Zhetysu
+				region = KOK_1190 #Alay
 			}
 		}
 		OR = {
@@ -2198,7 +2205,7 @@ country_event = {
 		NOT = { exists = BHU }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			state_id = 1327
+			region = NEP_1327 #Himalayas
 		}
 		OR = {
 			primary_culture = manchu
@@ -2344,9 +2351,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1207
-				state_id = 1217
-				state_id = 1224
+				region = AFG_1209 #North Afghanistan
+				region = PAN_1224 #Kashmir
 			}
 		}
 		OR = {
@@ -2387,8 +2393,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1227
-				state_id = 1236
+				region = PAN_1227 #Punjab
+				region = ENG_1236 #United Provinces
 			}
 		}
 		OR = {
@@ -2429,8 +2435,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1258
-				state_id = 1252
+				region = ENG_1258 #Assam
+				region = ENG_1252 #East Bengal
 			}
 		}
 		OR = {
@@ -2471,8 +2477,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1339
-				state_id = 1334
+				region = BUR_1339 #Kachin
+				region = BUR_1334 #Mandalay
 			}
 		}
 		OR = {
@@ -2513,8 +2519,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				state_id = 1371
-				state_id = 1374
+				region = DAI_1369 #Tonkin
+				region = DAI_1375 #Annam
 			}
 		}
 		OR = {
