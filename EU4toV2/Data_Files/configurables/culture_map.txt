@@ -1,8 +1,10 @@
 # Usage:
-# link = { vic2 = v2culture eu4 = eu4culture region = eu4region province = eu4provinceID owner = eu4tag }
+# link = { vic2 = v2culture eu4 = eu4culture region = eu4region provinceid = eu4provinceID owner = eu4tag }
 # multiples of all except vic2 are allowed.
 # Note: regions can be anything that makes sense, ie. south_america_superregion, north_german_region, laponia_area
-# You can mix and match, ie. north_american_superregion + provinceid = 1240 will catch all of north america + hawaii.
+# You can mix and match, ie:
+#      link = { vic2 = v2culture en4 = eu4culture region = north_american_superregion provinceid = 1240 }
+# will catch all of north america + hawaii.
 
 # Jewish
 link = { vic2 = hulwud eu4 = ashkenazi eu4 = knaanic eu4 = magogic eu4 = yevanic eu4 = mizrahi eu4 = israeli eu4 = misrayim eu4 = sephardi eu4 = zarphatic eu4 = laaz eu4 = kaifeng eu4 = hulwud eu4 = camite region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
