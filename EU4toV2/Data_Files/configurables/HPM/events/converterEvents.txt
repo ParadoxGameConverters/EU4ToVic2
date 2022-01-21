@@ -2084,8 +2084,10 @@ country_event = {
 		NOT = { exists = XIN }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = CHI_1600 #Urumqui
-			region = CHI_1594 #Kashgar
+			OR = {
+				region = CHI_1600 #Urumqui
+				region = CHI_1594 #Kashgar
+			}
 		}
 		OR = {
 			primary_culture = manchu
