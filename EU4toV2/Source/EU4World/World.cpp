@@ -206,10 +206,10 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		const auto modsList = commonItems::getStrings(theStream);
 		Log(LogLevel::Info) << "<> Savegame claims " << modsList.size() << " mods used:";
 		Mods mods;
-		for (const auto& modPath: modsList)
+		for (const auto& modName: modsList)
 		{
-			Log(LogLevel::Info) << "---> " << modPath;
-			mods.emplace_back(Mod("", modPath));
+			Log(LogLevel::Info) << "---> " << modName;
+			mods.emplace_back(Mod(modName, ""));
 		}
 		commonItems::ModLoader modLoader;
 		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
@@ -678,9 +678,18 @@ void EU4::World::readCommonCountriesFile(std::istream& in, const std::string& ro
 				auto fullFilename = rootPath + "/common/" + fileName;
 				auto localFileName = trimPath(fullFilename);
 				if (commonItems::DoesFileExist(fullFilename))
+				{
 					country->readFromCommonCountry(localFileName, fullFilename);
+				}
 				else
-					Log(LogLevel::Warning) << "Where is country file for " << tag << ": " << fullFilename << "?";
+				{
+					// Try in vanilla if nothing in mods.
+					fullFilename = theConfiguration.getEU4Path() + "/common/" + fileName;
+					if (commonItems::DoesFileExist(fullFilename))
+						country->readFromCommonCountry(localFileName, fullFilename);
+					else
+						Log(LogLevel::Warning) << "Where is country file for " << tag << ": " << fullFilename << "?";
+				}
 			}
 		}
 	}
