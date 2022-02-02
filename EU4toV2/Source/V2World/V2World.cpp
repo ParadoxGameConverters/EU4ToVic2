@@ -416,6 +416,11 @@ void V2::World::dropCores()
 			// Dead countries take priority.
 			if (deadCache.contains(core))
 			{
+				if (theConfiguration.isVN() && province.second->getEU4IDs().empty())
+				{
+					survivingCores.insert(core); // do not touch out-of-scope provinces for VN!
+					continue;						  
+				}
 				if (theConfiguration.getRemoveType() == Configuration::DEADCORES::AllCores)
 					continue; // no dead ones, thank you.
 				if (theConfiguration.getRemoveType() == Configuration::DEADCORES::LeaveAll)
@@ -1591,6 +1596,8 @@ void V2::World::addUnions(bool hreDecentralized, const std::shared_ptr<Country>&
 
 	for (const auto& province: provinces)
 	{
+		if (theConfiguration.isVN() && province.second->getEU4IDs().empty())
+			continue; // Don't touch OOS VN provinces.
 		if (!province.second->wasColony())
 		{
 			auto cultures = province.second->getCulturesOverThreshold(0.5);
