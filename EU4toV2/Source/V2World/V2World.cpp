@@ -419,7 +419,7 @@ void V2::World::dropCores()
 				if (theConfiguration.isVN() && province.second->getEU4IDs().empty())
 				{
 					survivingCores.insert(core); // do not touch out-of-scope provinces for VN!
-					continue;						  
+					continue;
 				}
 				if (theConfiguration.getRemoveType() == Configuration::DEADCORES::AllCores)
 					continue; // no dead ones, thank you.
