@@ -1,5 +1,5 @@
 country_event = { 
-	id = 250001 
+	id = 850001 
 	title = EVTNAME250001
 	desc = EVTDESC250001
 	is_triggered_only = yes 
@@ -126,51 +126,6 @@ country_event = {
 	}
 }
 
-country_event = { 
-	id = 350003 
-	title = EVTNAME350003
-	desc = EVTDESC350003
-
-	trigger = { 
-		tag = AOT
-		is_year = 1900
-		any_core = { empty = yes }
-	}
-
-	mean_time_to_happen = { months = 1 }
-
-	option = { 
-		name = EVTOPTA350003
-		any_core = {
-			limit = { empty = yes }
-			secede_province = AOT
-			remove_core = NZL
-		}
-    }
-}
-
-country_event = { 
-	id = 350004
-	title = EVTNAME350004
-	desc = EVTDESC350003
-
-	trigger = { 
-		tag = ABO
-		is_year = 1900
-		any_core = { empty = yes }
-	}
-
-	mean_time_to_happen = { months = 1 }
-
-	option = { 
-		name = EVTOPTA350003
-		any_core = {
-			limit = { empty = yes }
-			secede_province = ABO
-			remove_core = AST
-		}
-    }
-}
 country_event = {
 	id = 350006
 	title = EVTNAME350005
@@ -180,6 +135,7 @@ country_event = {
 	trigger = {
 		tag = TUR
 		EGY = { exists = no }
+		CEG = { exists = no }
 	}
 	
 	fire_only_once = yes
@@ -462,6 +418,7 @@ country_event = {
 		NOT = { tag = SGF }
 		NOT = { tag = AUS }
 		NOT = { tag = KUK }
+		NOT = { tag = DNB }
 		LIP = { exists = no }
 		owns = 585
 		has_global_flag = der_postcolonialism
@@ -697,91 +654,39 @@ country_event = {
 		election = yes
 	}
 	option = {
-		name = EVTOPTA450009 #Knights to Malta
-		limit = {
-			tag = KNI
-			NOT = { exists = MLT }
-		}
-		change_tag = MLT
-		add_accepted_culture = maltese
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 0
-				NOT = { tag = KNI }
+		name = STRING_OK
+		any_owned = {
+			limit = {
+				owned_by = KNI
+				MLT = { exists = no }
 			}
-			modifier = {
-				factor = 0
-				exists = MLT
-			}
+			owner = { change_tag = MLT }
 		}
-	}
-	option = {
-		name = EVTOPTB450009 #Teutonic to Prussia
-		limit = {
-			tag = TEU
-			NOT = { exists = PRU }
-		}
-		change_tag = PRU
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 0
-				NOT = { tag = TEU }
+		
+		any_owned = {
+			limit = {
+				owned_by = TEU
+				PRU = { exists = no }
 			}
-			modifier = {
-				factor = 0
-				exists = PRU
-			}
+			owner = { change_tag = PRU }
 		}
-	}
-	option = {
-		name = EVTOPTC450009 #Livonian to Latvia
-		limit = {
-			tag = LIV
-			NOT = { exists = LAT }
-		}
-		change_tag = LAT
-		ai_chance = {
-			factor = 100
-			modifier = {
-				factor = 0
-				NOT = { tag = LIV }
+		
+		any_owned = {
+			limit = {
+				owned_by = LIV
+				LAT = { exists = no }
 			}
-			modifier = {
-				factor = 0
-				exists = LAT
-			}
+			owner = { change_tag = LIV }
 		}
-	}
-	option = {
-		name = EVTOPTD450009 #Fallback
-		limit = {
-			OR = {
-				NOT = {
-					tag = KNI
-					tag = TEU
-					tag = LIV
-				}
-				AND = {
-					tag = KNI
-					exists = MLT
-				}
-				AND = {
-					tag = TEU
-					exists = PRU
-				}
-				AND = {
-					tag = LIV
-					exists = LAT
-				}
+		
+		any_owned = {
+			limit = {
+				owned_by = ITP
+				ITA = { exists = no }
 			}
-		}
-		ai_chance = {
-			factor = 1
+			owner = { change_tag = ITA }
 		}
 	}	
-	
 }
 country_event = {
 	id = 450010
@@ -1345,9 +1250,9 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = RUS_1469 #Tomsk
-				region = RUS_1075 #Irkutsk
-				region = RUS_1079 #Trans-Baikal
+				region = RUS_1469
+				region = RUS_1075
+				region = RUS_1079
 			}
 		}
 		OR = {
@@ -1387,8 +1292,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = CHI_1082 #Outer Manchuria
-				region = CHI_1086 #Sakhalin
+				region = CHI_1082
+				region = CHI_1086
 			}
 		}
 		OR = {
@@ -1427,7 +1332,7 @@ country_event = {
 		NOT = { exists = MCK }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = CHI_1553 #Manchuria
+			region = CHI_1553
 		}
 		OR = {
 			primary_culture = manchu
@@ -1465,7 +1370,7 @@ country_event = {
 		NOT = { exists = MGL }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = CHI_2608 #Mongolia
+			region = CHI_2608
 		}
 		OR = {
 			primary_culture = manchu
@@ -1504,7 +1409,7 @@ country_event = {
 		NOT = { exists = IMG }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = CHI_1532 #Inner Mongolia
+			region = 1532
 		}
 		OR = {
 			primary_culture = manchu
@@ -1543,8 +1448,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = KOR_1619 #Pyongyang
-				region = KOR_1627 #Sariwon
+				region = KOR_1619
+				region = KOR_1627
 			}
 		}
 		OR = {
@@ -1585,8 +1490,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = CHI_1618 #Northern Zhili
-				region = CHI_1614 #Southern Zhili
+				region = CHI_1618
+				region = CHI_1614
 			}
 		}
 		OR = {
@@ -1625,7 +1530,7 @@ country_event = {
 		NOT = { exists = SHD }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = CHI_1563 #Shandong
+			region = CHI_1563
 		}
 		OR = {
 			primary_culture = manchu
@@ -1663,7 +1568,7 @@ country_event = {
 		NOT = { exists = TPG }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = CHI_1476 #Jiangsu
+			region = CHI_1476
 		}
 		OR = {
 			primary_culture = manchu
@@ -1702,8 +1607,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = CHI_1539 #Suzhou
-				region = CHI_1611 #Zhejiang
+				region = CHI_1539
+				region = CHI_1611
 			}
 		}
 		OR = {
@@ -1743,8 +1648,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = CHI_1472 #Northern Anhui
-				region = CHI_1473 #Southern Anhui
+				region = CHI_1472
+				region = CHI_1473
 			}
 		}
 		OR = {
@@ -1783,7 +1688,7 @@ country_event = {
 		NOT = { exists = SXI }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = CHI_1576 #Shanxi
+			region = CHI_1576
 		}
 		OR = {
 			primary_culture = manchu
@@ -1822,9 +1727,9 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = CHI_1529 #Hunan
-				region = CHI_1516 #Eastern Hubei
-				region = CHI_1523 #Western Hubei
+				region = CHI_1529
+				region = CHI_1516
+				region = CHI_1523
 			}
 		}
 		OR = {
@@ -1863,7 +1768,7 @@ country_event = {
 		NOT = { exists = FJN }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = CHI_1487 #Fujian
+			region = CHI_1487
 		}
 		OR = {
 			primary_culture = manchu
@@ -1901,7 +1806,7 @@ country_event = {
 		NOT = { exists = TAI }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = CHI_2562 #Formosa
+			region = CHI_2562
 		}
 		OR = {
 			primary_culture = manchu
@@ -1940,8 +1845,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = CHI_1504 #Guangxi
-				region = CHI_1550 #Jiangxi
+				region = CHI_1504
+				region = CHI_1550
 			}
 		}
 		OR = {
@@ -1981,9 +1886,9 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = CHI_1499 #Guangdong
-				region = CHI_1494 #Shaozhou
-				region = CHI_1496 #Hong Kong & Macao
+				region = CHI_1499
+				region = CHI_1494
+				region = CHI_1496
 			}
 		}
 		OR = {
@@ -2022,7 +1927,7 @@ country_event = {
 		NOT = { exists = YNN }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = CHI_1601 #Yunnan
+			region = CHI_1601
 		}
 		OR = {
 			primary_culture = manchu
@@ -2061,8 +1966,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = CHI_1578 #Sichuan
-				region = CHI_1581 #Chongqing
+				region = CHI_1578
+				region = CHI_1581
 			}
 		}
 		OR = {
@@ -2102,9 +2007,9 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = CHI_1557 #Qinghai
-				region = CHI_1490 #Gansu
-				region = CHI_2062 #Ningxia
+				region = CHI_1557
+				region = CHI_1490
+				region = CHI_2062
 			}
 		}
 		OR = {
@@ -2143,7 +2048,7 @@ country_event = {
 		NOT = { exists = XIN }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = CHI_1600 #Xinjiang
+			region = CHI_1600
 		}
 		OR = {
 			primary_culture = manchu
@@ -2182,7 +2087,7 @@ country_event = {
 		NOT = { exists = TIB }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = TIB_1591 #Tibet
+			region = TIB_1591
 		}
 		OR = {
 			primary_culture = manchu
@@ -2222,9 +2127,9 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = RUS_1185 #Semireche
-				region = KOK_1190 #Kirghizia
-				region = BUK_1207 #Tajikistan
+				region = RUS_1185
+				region = KOK_1190
+				region = BUK_1207
 			}
 		}
 		OR = {
@@ -2264,7 +2169,7 @@ country_event = {
 		NOT = { exists = BHU }
 		NOT = { number_of_states = 6 }
 		capital_scope = {
-			region = NEP_1327 #Himalayas
+			region = NEP_1327
 		}
 		OR = {
 			primary_culture = manchu
@@ -2410,9 +2315,9 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = BUK_1207 #Tajikistan
-				region = AFG_1217 #Eastern Afghanistan
-				region = PAN_1224 #Kashmir
+				region = BUK_1207
+				region = AFG_1217
+				region = PAN_1224
 			}
 		}
 		OR = {
@@ -2453,8 +2358,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = PAN_1227 #Punjab
-				region = ENG_1236 #United Provinces
+				region = PAN_1227
+				region = ENG_1236
 			}
 		}
 		OR = {
@@ -2495,8 +2400,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = ENG_1258 #Assam
-				region = ENG_1252 #North Bengal
+				region = ENG_1258
+				region = ENG_1252
 			}
 		}
 		OR = {
@@ -2537,8 +2442,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = BUR_1339 #Kachin
-				region = BUR_1334 #Shan States
+				region = BUR_1339
+				region = BUR_1334
 			}
 		}
 		OR = {
@@ -2579,8 +2484,8 @@ country_event = {
 		NOT = { number_of_states = 6 }
 		capital_scope = {
 			OR = {
-				region = ANN_1371 #Tonkin
-				region = ANN_1374 #Annam
+				region = ANN_1371
+				region = ANN_1374
 			}
 		}
 		OR = {

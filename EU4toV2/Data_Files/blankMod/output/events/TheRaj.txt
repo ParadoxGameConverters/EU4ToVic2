@@ -233,13 +233,13 @@ country_event = {
 	
 	trigger = {
 		OR = {
-			tag = MSY # Mushasha
+			has_country_flag = vic2_country_MSY
 			AND = {
-				tag = RDL # Ardalan
-				SRN = { exists = no } # Kurdistan
+				has_country_flag = vic2_country_RDL
+				NOT = { exists = KUR }
 			}
-			tag = MGR # Maregheh
-			tag = ARL # Ardabil
+			has_country_flag = vic2_country_MGR
+			has_country_flag = vic2_country_ARL
 		}
 		PER = { exists = yes }
 		NOT = { has_global_flag = persian_minor }
