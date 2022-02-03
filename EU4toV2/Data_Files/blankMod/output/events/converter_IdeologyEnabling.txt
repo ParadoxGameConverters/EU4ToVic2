@@ -1,0 +1,52 @@
+country_event = {
+	id = 100200026
+	title = "EVTNAME100200026"
+	desc = "EVTDESC100200026"
+	# news = yes
+	# news_desc_long = "EVTDESC1002_NEWS_LONG"
+	# news_desc_medium = "EVTDESC1002_NEWS_MEDIUM"
+	# news_desc_short = "EVTDESC1002_NEWS_SHORT"
+	picture = "AnarchoLiberals"
+	
+	trigger = {
+		government = bourgeois_dictatorship
+		NOT = { ruling_party_ideology = anarcho_liberal }
+		NOT = { ruling_party_ideology = liberal }
+		# NOT = { year = 1840 }
+	}	
+	# major = yes
+	# fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 0.000001
+	}
+
+	option = {
+		name = "EVTOPTA100200026"
+		ruling_party_ideology = liberal
+		political_reform = underground_parties
+		
+		upper_house = {
+			ideology = liberal
+			value = 0.3
+		}
+		poor_strata = {
+			ideology = {
+				factor = 0.3
+				value = liberal
+			}
+		}
+		middle_strata = {
+			ideology = {
+				factor = 0.5
+				value = liberal
+			}
+		}
+		rich_strata = {
+			ideology = {
+				factor = 0.1
+				value = liberal
+			}
+		}
+	}
+}
