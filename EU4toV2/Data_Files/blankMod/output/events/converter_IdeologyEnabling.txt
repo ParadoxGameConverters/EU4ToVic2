@@ -1,3 +1,67 @@
+#####################
+# Enable Socialists
+#####################
+country_event = {
+	id = 100000024
+	title = "EVTNAME100000024"
+	desc = "EVTDESC100000024"
+	# news = yes
+	# news_desc_long = "EVTDESC1000_NEWS_LONG"
+	# news_desc_medium = "EVTDESC1000_NEWS_MEDIUM"
+	# news_desc_short = "EVTDESC1000_NEWS_SHORT"
+	picture = "Socialism"
+	
+	trigger = {
+		NOT = { is_ideology_enabled = socialist }
+		government = proletarian_dictatorship
+	}
+	# fire_only_once = yes
+	major = yes
+
+	mean_time_to_happen = {
+		months = 0.000001
+	}
+
+	option = {
+		name = "EVTOPTA100000024"
+		enable_ideology = socialist
+		political_reform = underground_parties
+		country_event = {
+			id = 100000025
+			days = 30
+		}
+	}
+}
+country_event = { # -- Part two: [ insert Soviet anthem ]
+	id = 100000025
+	title = "EVTNAME100000024"
+	desc = "EVTDESC100000024"
+	picture = "Socialism"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA100000024"
+		ruling_party_ideology = socialist
+		upper_house = {
+			ideology = socialist
+			value = 0.5
+		}
+		poor_strata = {
+			ideology = {
+				factor = 0.6
+				value = socialist
+			}
+		}
+		middle_strata = {
+			ideology = {
+				factor = 0.3
+				value = socialist
+			}
+		}
+	}
+}
+
 country_event = {
 	id = 100200026
 	title = "EVTNAME100200026"

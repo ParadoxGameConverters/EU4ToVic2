@@ -1,5 +1,6 @@
 political_decisions = {
 	nogovernment = { #Fallback for "no gov converted, whoopsie"
+	picture = the_first_vatican_council
 		potential = {
 			NOT = {
 				government = proletarian_dictatorship
@@ -27,6 +28,7 @@ political_decisions = {
 		}
 	}
 	form_two_sicilies = {
+	picture = award_order_of_st_francis
 		potential = {
 			OR = {
 				AND = {
@@ -108,8 +110,9 @@ political_decisions = {
 		}
 	}
 	mongol_khagan = {
+	picture = peking_convention
 		potential = {
-			tag = KHA
+			has_country_flag = KHA
 			NOT = { exists = MGL }
 		}
 
@@ -133,6 +136,7 @@ political_decisions = {
 	}
 
 	taiping_and_csa = { #creates Taiping and the CSA to prevent bugs in converted games, corrects cultures
+	picture = adopt_die_stem
 		potential = {
 			is_greater_power = yes
 			ai = yes
@@ -145,68 +149,7 @@ political_decisions = {
 		}
 
 		effect = {
-		#No longer needed because war with non-existant countries
-		#solves itself after a day now
-			#USA_129 = { add_core = CSA } #Dixieland for the ACW
-			#CHI_1476 = { add_core = TPG } #Taiping Heavenly Kingdom (for event)
-			
-			
-			#Former colonies
-			any_country = {
-				limit = {
-					NOT = {
-						is_culture_group = oceanic
-						is_culture_group = native_central_american
-						is_culture_group = native_south_american
-						is_culture_group = native_north_american
-						is_culture_group = native_caribbean
-						is_culture_group = non_human
-						is_culture_group = southern_african
-						is_culture_group = east_african
-						is_culture_group = central_african
-						is_culture_group = west_african
-					}
-					OR = { # Only for former colonies
-						civilized = yes
-						civilization_progress = 0.4
-					}
-					capital_scope = {
-						OR = {
-							continent = north_america
-							continent = south_america
-							continent = oceania
-							AND = {
-								continent = africa
-								NOT = {
-									region = ALD_1704 #Tlemcen
-									region = ALD_1708 #Constantine
-									region = ALD_1714 #Western Sahara
-									region = ALD_1718 #Sahara
-									region = EGY_1746 #Sinai
-									region = EGY_1750 #Lower Egypt
-									region = EGY_1753 #Matruh
-									region = EGY_1754 #Libya
-									region = EGY_1758 #Egyptian Desert
-									region = EGY_1762 #Middle Egypt
-									region = EGY_1771 #Upper Egypt
-									region = FRA_1700 #Algiers
-									region = MOR_1683 #Taza
-									region = MOR_1686 #Fez
-									region = MOR_1688 #al-Rif
-									region = MOR_1693 #Morocco
-									region = MOR_1696 #West Morocco
-									region = TRI_1739 #Fezzan
-									region = TRI_1743 #Tripoli
-								}
-							}
-						}
-					}
-				}
-				# Ensure the correct colonial culture
-				clr_country_flag = religi
-				primary_culture = dummy
-			}
-			#Native special - avoiding Iroquois forming USA 2c.
+			#Native special - avoiding Iroquois forming USA etc.
 			any_country = {
 				limit = {
 					OR = {
@@ -462,8 +405,8 @@ political_decisions = {
 				add_accepted_culture = slovak
 			}
 			ISL = {
-				add_accepted_culture = union
 				add_accepted_culture = bedouin
+				add_accepted_culture = misri
 				add_accepted_culture = persian
 			}
 			any_country = { remove_accepted_culture = zzz_religion_shamanism } # Actual shamanists will gain it back anyway
@@ -496,8 +439,6 @@ political_decisions = {
 			2685 = { add_core = URA }
 			2684 = { add_core = URA }
 			2614 = { add_core = URA }
-			1155 = { add_core = ASR } #Asir
-			1179 = { add_core = ASR }
 			1162 = { add_core = BHR } #Bahrain
 			1095 = { add_core = CIR } #Circassia
 			1048 = { add_core = CIR }
@@ -540,24 +481,9 @@ political_decisions = {
 			2065 = { add_core = SHO }
 			2053 = { add_core = SHO }
 			2056 = { add_core = SHO }
-			#Bima
-			1439 = { add_core = BIM }
-			1440 = { add_core = BIM }
-			1441 = { add_core = BIM }
-			1443 = { add_core = BIM }
-			1444 = { add_core = BIM }
-			1445 = { add_core = BIM }
-			1446 = { add_core = BIM }
 			# Fiji - give cores to the Fijians
 			2454 = { add_core = FIJ }
 			2520 = { add_core = FIJ }
-			#Jambi
-			1398 = { add_core = DJA }
-			1399 = { add_core = DJA }
-			1400 = { add_core = DJA }
-			1403 = { add_core = DJA }
-			1404 = { add_core = DJA }
-			1410 = { add_core = DJA }
 			#Kalimantan
 			1423 = { add_core = KLM }
 			1424 = { add_core = KLM }
@@ -604,19 +530,13 @@ political_decisions = {
 			RUS_964 = { add_core = CRI } #Crimea
 			BEL_387 = { add_core = FLA } #Flanders
 			BEL_394 = { add_core = WLL } #Wallonia
-			539 = { add_core = BRE } #Bremen
 			690 = { add_core = DZG } #Danzig
 			564 = { add_core = FRM } #Frankfurt am Main
 			528 = { add_core = HAM } #Hamburg
-			593 = { add_core = ULM } #Ulm the Allmighty
-			529 = { add_core = HOL } #Holstein
 			585 = { add_core = LIP } #Lippe-Detmold
-			530 = { add_core = LUB } #Lübeck
 			397 = { add_core = LUX } #Luxembourg
-			565 = { add_core = NAS } #Nassau
 			SAX_558 = { add_core = SAX } #Saxony
 			533 = { add_core = DTT } #SSR Dithmarschen
-			595 = { add_core = NUM } #Nüremberg
 			AUS_726 = { add_core = LOM } #Lombardia
 			746 = { add_core = LUC } #Lucca
 			739 = { add_core = MOD } #Modena
@@ -635,23 +555,15 @@ political_decisions = {
 			412 = { add_core = LOR } #Lorraine
 			409 = { add_core = ALS } #Alsace
 			410 = { add_core = ALS } #Alsace
-			724 = { add_core = GEN } #Genoa
 			754 = { add_core = NAP } #Naples
 			SAR_765 = { add_core = SRD } #Sardinia
 			SIC_763 = { add_core = SYC } #Sicily
-			747 = { add_core = SNA } #Siena
-			854 = { add_core = MLT remove_core = SYC } #Malta
-			354 = { add_core = RIG } #Riga
-			834 = { add_core = ATH } #Athens
+			854 = { add_core = MLT remove_core = SYC remove_core = SIC } #Malta
 			FRA_420 = { add_core = BRT } #Brittany
 			473 = { add_core = CRS } #Corsica
-			FRA_418 = { add_core = NRM } #Normandy
-			1095 = { add_core = ABK } # Abkhazia
 			71 = { add_core = ACA } # Acadia
 			72 = { add_core = ACA }
 			73 = { add_core = ACA }
-			475 = { add_core = ATR } # Asturias
-			478 = { add_core = ATR }
 			1055 = { add_core = CHY } # Chechnya
 			253 = { add_core = FRO } # Faroe
 			997 = { add_core = IZH } # Ingria
@@ -679,7 +591,6 @@ political_decisions = {
 			1443 = { add_core = TMR } # Timor
 			1445 = { add_core = TMR }
 			1446 = { add_core = TMR }
-			735 = { add_core = TST } # Bozen
 			2535 = { add_core = VTU } #Vanuatu
 			1496 = { add_core = HKG } #Hong Kong
 			1498 = { add_core = AOM } #Macao
@@ -706,71 +617,8 @@ political_decisions = {
 			JAP_1672 = { add_core = JAP }
 			JAP_1675 = { add_core = JAP }
 			#
-			#Exaggerated cultural Heimaten fix
-			PER = {
-				any_owned_province = {
-					limit = {
-						NOT = {
-							region = RUS_1090 #Georgia
-							region = RUS_1098 #Armenia
-							region = RUS_1102 #Azerbaijan
-						}
-					}
-					remove_core = GEO
-					remove_core = ARM
-					remove_core = AZB
-				}
-			}
-			TUR = {
-				any_owned_province = {
-					limit = {
-						NOT = {
-							region = RUS_1090 #Georgia
-							region = RUS_1098 #Armenia
-							region = RUS_1102 #Azerbaijan
-						}
-					}
-					remove_core = GEO
-					remove_core = ARM
-					remove_core = AZB
-				}
-			}
-			RUS = {
-				any_owned_province = {
-					limit = {
-						NOT = {
-							region = RUS_1090 #Georgia
-							region = RUS_1098 #Armenia
-							region = RUS_1102 #Azerbaijan
-						}
-					}
-					remove_core = GEO
-					remove_core = ARM
-					remove_core = AZB
-				}
-			}
-			SLA = {
-				any_owned_province = {
-					limit = {
-						NOT = {
-							region = RUS_1090 #Georgia
-							region = RUS_1098 #Armenia
-							region = RUS_1102 #Azerbaijan
-						}
-					}
-					remove_core = GEO
-					remove_core = ARM
-					remove_core = AZB
-				}
-			}
 			# Inner Mongolia fixes
-			CHI_2608 = { remove_core = KHA remove_core = MGL add_core = IMG }
-			KHA = {
-				any_owned_province = {
-					limit = { region = CHI_2608 }
-				}
-				remove_core = IMG add_core = KHA add_core = MGL
-			}
+			CHI_2608 = { remove_core = MGL add_core = IMG }
 			MGL = {
 				any_owned_province = {
 					limit = { region = CHI_2608 }
@@ -786,6 +634,17 @@ political_decisions = {
 				civilized = yes
 				capital = 300
 			}
+			## FIXING MIDDLE EAST
+			TUR_855 = { # Cyprus
+				remove_core = GRE
+				add_core = CYP
+			}
+			EGY_843 = { add_core = CRE } # Crete
+			EGY_897 = { remove_core = IRQ add_core = SYR }
+			EGY_903 = { remove_core = IRQ add_core = SYR }
+			EGY_910 = { remove_core = IRQ add_core = JOR }
+			EGY_915 = { remove_core = IRQ add_core = LBN }
+			EGY_921 = { remove_core = IRQ add_core = PLS add_core = ISR }
 			set_global_flag = taiping_and_csa
 		}
 		ai_will_do = {
@@ -796,7 +655,7 @@ political_decisions = {
 
 	
 	form_china = {
-		image = clear_out_the_manchu_elite
+		picture = clear_out_the_manchu_elite
 		news = yes
 		news_desc_long = "form_china_NEWS_LONG"
 		news_desc_medium = "form_china_NEWS_MEDIUM"
@@ -862,6 +721,7 @@ political_decisions = {
 		}
 	}
 	form_netherlands = {
+	picture = ostend_manifesto
 		potential = {
 			primary_culture = dutch
 			NOT = {
@@ -912,6 +772,7 @@ political_decisions = {
 		}
 	}
 	form_belgium = {
+	picture = ostend_manifesto
 		potential = {
 			OR = {
 				primary_culture = flemish
@@ -975,6 +836,7 @@ political_decisions = {
 		}
 	}
 	form_spain = {
+	picture = establish_la_guardia_civil
 		potential = {
 			OR = {
 				primary_culture = spanish
@@ -1045,10 +907,10 @@ political_decisions = {
 		}
 	}
 	form_ukraine = {
+	picture = protect_eastern_christians
 		potential = {
 			primary_culture = ukrainian
 			NOT = {
-				exists = RUT
 				exists = UKR
 				tag = RUS
 				tag = SLA
@@ -1095,6 +957,7 @@ political_decisions = {
 		}
 	}
 	form_philippines = {
+	picture = abolish_serfdom
 		potential = {
 			NOT = {
 				exists = PHI
@@ -1156,6 +1019,7 @@ political_decisions = {
 		}
 	}
 	form_malaya = {
+	picture = switch_to_navy_tech
 		potential = {
 			primary_culture = malay
 			NOT = {
@@ -1200,61 +1064,8 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	form_aztec = { # Better to come up with something else, later
-		potential = {
-			OR = {
-				primary_culture = nahua
-				primary_culture = zapotec
-				primary_culture = tarascan
-			}
-			NOT = {
-				exists = AZT
-				exists = MEX
-			}
-		}	
-		allow = {
-			war = no
-			prestige = 5
-			AZT = {
-				all_core = {
-					OR = {
-						owned_by = THIS
-						owner = {
-							in_sphere = THIS
-						}
-					}
-				}
-			}
-		}
-		
-		effect = {
-			prestige = 10
-			any_country = {
-				limit = {
-					in_sphere = THIS
-					NOT = {
-						tag = THIS
-					}
-					capital_scope = { continent = north_america }
-					OR = {
-						primary_culture = zapotec
-						primary_culture = nahua
-					}
-				}
-				annex_to = THIS
-			}
-			any_owned = {
-				add_core = AZT
-			}			
-			
-			change_tag = AZT
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	form_usa = {
-		image = apply_for_USA_statehood
+		picture = apply_for_USA_statehood
 		potential = {
 			OR = {
 				primary_culture = yankee
@@ -1308,6 +1119,7 @@ political_decisions = {
 		}
 	}
 	form_southafrica = {
+	picture = attack_the_laagers
 		potential = {
 			is_greater_power = no
 			is_independant = yes
@@ -1376,6 +1188,7 @@ political_decisions = {
 		}
 	}
 	form_madagascar = {
+	picture = end_the_merina_monarchy
 		potential = {
 			primary_culture = malagasy
 			NOT = {
@@ -1420,6 +1233,7 @@ political_decisions = {
 		}
 	}
 	mandate_of_heaven = {
+	picture = peking_convention
 		news = yes
 		news_desc_long = "mandate_of_heaven_NEWS_LONG"
 		news_desc_medium = "mandate_of_heaven_NEWS_MEDIUM"
@@ -1488,10 +1302,13 @@ political_decisions = {
 		}
 	}
 	become_hyderabad = {
+	picture = kanun_i_esasi
 		potential = {
-			tag = DEC
+			has_country_flag = vic2_country_DEC
 			religious_policy = moralism
 			NOT = { exists = HYD }
+			NOT = { tag = HND }
+			NOT = { tag = HDU }
 			OR = {
 				accepted_culture = zzz_religion_sunni
 				accepted_culture = zzz_religion_zikri
@@ -1522,10 +1339,11 @@ political_decisions = {
 		}
 	}
 	become_slovenia = {
+	picture = russian_vladivostok
 		potential = {
 			OR = {
-				tag = AQU
-				tag = CTI
+				has_country_flag = vic2_country_AQU
+				has_country_flag = vic2_country_CTI
 				primary_culture = slovene
 			}
 			NOT = { tag = YUG }
@@ -1550,9 +1368,11 @@ political_decisions = {
 		}
 	}
 	latin_empire_upgrade = {
+	picture = suezcanal
 		potential = {
-			tag = LTN
+			has_country_flag = vic2_country_LTN
 			NOT = { exists = BYZ }
+			NOT = { exists = SPQ }
 		}	
 		allow = {
 			war = no
@@ -1573,6 +1393,7 @@ political_decisions = {
 		}
 	}
 	become_longobardia = {
+	picture = italia_irredenta
 		potential = {
 			primary_culture = lombard
 			NOT = { exists = LGB }
@@ -1617,6 +1438,7 @@ political_decisions = {
 		}
 	}
 	form_japan = {
+	picture = the_meiji_restoration
 		potential = {
 			NOT = { exists = JAP }
 			NOT = { has_global_flag = united_japan }
@@ -1667,8 +1489,9 @@ political_decisions = {
 		}
 	}
 	form_the_undeads = {
+	picture = introduce_the_presbyteries
 		potential = {
-			tag = ZOM
+			has_country_flag = vic2_country_ZOM
 			NOT = { exists = UND }
 			NOT = { has_global_flag = oh_fuck }
 		}	
@@ -1692,6 +1515,7 @@ political_decisions = {
 		}
 	}
 	form_ireland = {
+	picture = form_kellys_irish_brigade
 		potential = {
 			primary_culture = irish
 			NOT = {
@@ -1753,6 +1577,7 @@ political_decisions = {
 		}
 	}
 	form_greece = {
+	picture = megali_idea
 		potential = {
 			primary_culture = greek
 			NOT = {
@@ -1814,6 +1639,7 @@ political_decisions = {
 		}
 	}
 	form_turkestan = {
+	picture = tanzimat_reforms
 		potential = {
 			civilized = yes
 			OR = {
@@ -1889,6 +1715,7 @@ political_decisions = {
 		}
 	}
 	form_occitania = {
+	picture = schawbing_circles
 		potential = {
 			primary_culture = occitan
 			NOT = {
@@ -1951,6 +1778,7 @@ political_decisions = {
 		}
 	}
 	form_the_suebi = {
+	picture = law_of_guarantees
 		potential = {
 			primary_culture = suebi
 			NOT = {
@@ -2004,6 +1832,7 @@ political_decisions = {
 		}
 	}
 	form_visigothia = {
+	picture = become_guatemala
 		potential = {
 			primary_culture = visigothic
 			NOT = {
@@ -2055,6 +1884,7 @@ political_decisions = {
 		}
 	}
 	form_siberia = {
+	picture = die_groot_trek
 		potential = {
 			primary_culture = siberian
 			NOT = {
@@ -2104,6 +1934,7 @@ political_decisions = {
 		}
 	}
 	form_indochina = {
+	picture = form_israel
 		potential = {
 			capital_scope = { is_core = IDO }
 			NOT = { exists = IDO }
@@ -2152,6 +1983,7 @@ political_decisions = {
 		}
 	}
 	form_anglo_saxony = {
+	picture = found_the_bbc
 		potential = {
 			primary_culture = anglo_saxon
 			NOT = {
@@ -2202,6 +2034,7 @@ political_decisions = {
 		}
 	}
 	form_frankia = {
+	picture = build_the_eiffel_tower
 		potential = {
 			primary_culture = frankish
 			NOT = {
@@ -2249,6 +2082,7 @@ political_decisions = {
 		}
 	}
 	form_britannia = {
+	picture = crown_empress_of_india
 		potential = {
 			primary_culture = brithenig
 			NOT = {
@@ -2293,6 +2127,7 @@ political_decisions = {
 		}
 	}
 	form_gallia = {
+	picture = niederwald_denkmal
 		potential = {
 			primary_culture = gaul
 			NOT = {
@@ -2337,6 +2172,7 @@ political_decisions = {
 		}
 	}
 	form_laessinia = {
+	picture = manifesto_on_unshakeable_autocracy
 		potential = {
 			primary_culture = laessin
 			NOT = {
@@ -2381,20 +2217,20 @@ political_decisions = {
 		}
 	}
 	form_euskadi = {
+	picture = enact_radical_reconstruction
 		potential = {
 			OR = {
 				AND = {
-					tag = NAV
+					has_country_flag = vic2_country_NAV
 					government = democracy
 				}
-				AND = { #Gascony, if Navarre doesn't exist
-					tag = GYN
-					NOT = { exists = NAV }
-				}
+				has_country_flag = vic2_country_GYN
 			}
-			NOT = {
-				exists = BSQ
-			}
+			NOT = { exists = BSQ }
+			NOT = { tag = SPA }
+			NOT = { tag = SPC }
+			NOT = { tag = FRA }
+			NOT = { tag = SPQ }
 		}
 		allow = {
 			war = no
@@ -2411,8 +2247,7 @@ political_decisions = {
 				all_core = {
 					NOT = { province_id = 492 }
 					OR = {
-						owned_by = GYN
-						owned_by = NAV
+						owned_by = THIS
 						owned_by = SPA
 						owned_by = FRA
 					}
@@ -2434,6 +2269,7 @@ political_decisions = {
 		}
 	}
 	form_nepal = {
+	picture = declare_republic_of_neuchatel
 		potential = {
 			is_greater_power = no
 			primary_culture = nepali
@@ -2462,6 +2298,7 @@ political_decisions = {
 		}
 	}
 	form_persia = {
+	picture = tanzimat_reforms
 		potential = {
 			OR = {
 				primary_culture = persian
@@ -2518,6 +2355,7 @@ political_decisions = {
 		}
 	}
 	form_kurdistan = {
+	picture = kanun_i_esasi
 		potential = {
 			primary_culture = kurdish
 			NOT = {
@@ -2568,6 +2406,7 @@ political_decisions = {
 		}
 	}
 	provincia_britannia = {
+	picture = bixby_letter
 		potential = {
 			OR = { tag = ENR tag = SPQ }
 			NOT = { has_global_flag = provincia_britannia }
@@ -2614,6 +2453,7 @@ political_decisions = {
 		}
 	}
 	provincia_noricum = {
+	picture = bixby_letter
 		potential = {
 			OR = { tag = AUR tag = SPQ }
 			NOT = { has_global_flag = provincia_noricum }
@@ -2637,6 +2477,7 @@ political_decisions = {
 		}
 	}
 	form_LVN = {
+	picture = cavours_diplomacy
 		potential = {
 			NOT = {
 				exists = LVN
@@ -2660,9 +2501,9 @@ political_decisions = {
 					NOT = { exists = VEN }
 					NOT = { exists = LOM }
 					OR = {
-						capital_scope = { region = AUS_726 } #Lombardia
-						capital_scope = { region = AUS_729 } #Venetia
-						capital_scope = { region = AUS_734 } #South Tirol
+						capital_scope = { region = 726 }
+						capital_scope = { region = 729 }
+						capital_scope = { region = 734 }
 					}
 				}
 			}
@@ -2701,6 +2542,7 @@ political_decisions = {
 		}
 	}
 	vassal_LVN = {
+	picture = enact_dual_monarchy
 		potential = {
 			NOT = {
 				exists = LVN
@@ -2715,9 +2557,9 @@ political_decisions = {
 				exists = LOM
 			}
 			NOT = {
-				capital_scope = { region = AUS_726 } #Lombardia
-				capital_scope = { region = AUS_729 } #Venetia
-				capital_scope = { region = AUS_734 } #South Tirol
+				capital_scope = { region = 726 }
+				capital_scope = { region = 729 }
+				capital_scope = { region = 734 }
 			}
 			NOT = {
 				primary_culture = north_italian
@@ -2769,66 +2611,64 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	
-	#
-	# BROKEN - Can enter a loop with CEG and some *third* country when egypt is catholic? primary noculture?
-	# Odd behavior, possibly Vic2 bug itself.
-	
-#	EGY_copt = {
-#		potential = {
-#			tag = EGY
-#			NOT = {
-#				accepted_culture = zzz_religion_sunni
-#				accepted_culture = zzz_religion_zikri
-#				accepted_culture = zzz_religion_sunni_heresy
-#				accepted_culture = zzz_religion_shiite
-#				accepted_culture = zzz_religion_hurufi
-#				accepted_culture = zzz_religion_druze
-#				accepted_culture = zzz_religion_shiite_heresy
-#				accepted_culture = zzz_religion_ibadi
-#				accepted_culture = zzz_religion_kharijite
-#			}
-#		}	
-#		allow = {
-#			war = no
-#		}
-#		
-#		effect = {
-#			all_core = { remove_core = EGY add_core = CEG }
-#			change_tag = CEG
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#	EGY_not_copt = {
-#		potential = {
-#			tag = CEG
-#			OR = {
-#				accepted_culture = zzz_religion_sunni
-#				accepted_culture = zzz_religion_zikri
-#				accepted_culture = zzz_religion_sunni_heresy
-#				accepted_culture = zzz_religion_shiite
-#				accepted_culture = zzz_religion_hurufi
-#				accepted_culture = zzz_religion_shiite_heresy
-#				accepted_culture = zzz_religion_ibadi
-#				accepted_culture = zzz_religion_kharijite
-#			}
-#		}	
-#		allow = {
-#			war = no
-#		}
-#		
-#		effect = {
-#			all_core = { remove_core = CEG add_core = EGY }
-#			change_tag = EGY
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-
+	EGY_copt = {
+	picture = forced_egyptological_excavations
+		potential = {
+			tag = EGY
+			NOT = {
+				accepted_culture = zzz_religion_sunni
+				accepted_culture = zzz_religion_zikri
+				accepted_culture = zzz_religion_sunni_heresy
+				accepted_culture = zzz_religion_shiite
+				accepted_culture = zzz_religion_hurufi
+				accepted_culture = zzz_religion_druze
+				accepted_culture = zzz_religion_shiite_heresy
+				accepted_culture = zzz_religion_ibadi
+				accepted_culture = zzz_religion_kharijite
+			}
+		}	
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			all_core = { remove_core = EGY add_core = CEG }
+			change_tag = CEG
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	EGY_not_copt = {
+	picture = establish_the_dar_al_funun
+		potential = {
+			tag = CEG
+			OR = {
+				accepted_culture = zzz_religion_sunni
+				accepted_culture = zzz_religion_zikri
+				accepted_culture = zzz_religion_sunni_heresy
+				accepted_culture = zzz_religion_shiite
+				accepted_culture = zzz_religion_hurufi
+				accepted_culture = zzz_religion_druze
+				accepted_culture = zzz_religion_shiite_heresy
+				accepted_culture = zzz_religion_ibadi
+				accepted_culture = zzz_religion_kharijite
+			}
+		}	
+		allow = {
+			war = no
+		}
+		
+		effect = {
+			all_core = { remove_core = CEG add_core = EGY }
+			change_tag = EGY
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	form_ITP = {
+	picture = the_first_vatican_council
 		news = yes
 		news_desc_long = "form_italy_NEWS_LONG"
 		news_desc_medium = "form_italy_NEWS_MEDIUM"
@@ -2920,6 +2760,7 @@ political_decisions = {
 		}
 	}
 	form_SPQR = {
+	picture = form_byzantine_empire
 		news = yes
 		news_desc_long = "form_italy_NEWS_LONG"
 		news_desc_medium = "form_italy_NEWS_MEDIUM"
@@ -2928,17 +2769,17 @@ political_decisions = {
 			OR = {
 				AND = {
 					tag = BYZ
-					NOT = { exists = LTN }
+					NOT = { any_greater_power = { has_country_flag = vic2_country_LTN }
 					NOT = { exists = HLR }
 				}
 				AND = {
-					tag = LTN
+					has_country_flag = vic2_country_LTN
 					NOT = { exists = BYZ }
 					NOT = { exists = HLR }
 				}
 				AND = {
 					tag = HLR
-					NOT = { exists = LTN }
+					NOT = { any_greater_power = { has_country_flag = vic2_country_LTN }
 					NOT = { exists = BYZ }
 				}
 				primary_culture = gaul
@@ -3005,11 +2846,7 @@ political_decisions = {
 			any_owned = {
 				add_core = SPQ
 				remove_core = BYZ
-				remove_core = LTN
 				remove_core = HLR
-				remove_core = ITA
-				remove_core = ITP
-				remove_core = JER
 			}
 			change_tag = SPQ
 			capital = 749
@@ -3027,12 +2864,14 @@ political_decisions = {
 			factor = 1
 		}
 	}
+	
 	form_yemen = {
+	picture = form_arabia
 		potential = {
 			is_greater_power = no
 			primary_culture = bedouin
 			capital_scope = {
-				region = YEM_1173 #Yemen
+				region = 1173 #Yemen
 			}
 			NOT = {
 				exists = YEM
@@ -3056,8 +2895,9 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	#Kept last intentionally
+	
 	form_burma = {
+	picture = peking_convention
 		potential = {
 			OR = {
 				primary_culture = burmese
@@ -3110,6 +2950,7 @@ political_decisions = {
 		}
 	}
 	form_shan = {
+	picture = peking_convention
 		potential = {
 			primary_culture = shan
 			NOT = {
@@ -3155,6 +2996,7 @@ political_decisions = {
 	}
 
 	form_libya = {
+	picture = form_arabia
 		potential = {
 			OR = {
 				tag = TRI
@@ -3187,6 +3029,7 @@ political_decisions = {
 	}
 	
 	form_kenya = {
+	picture = end_the_merina_monarchy
 		potential = {
 			NOT = { exists = KNY }
 			civilized = yes
@@ -3210,6 +3053,7 @@ political_decisions = {
 		}
 	}
 	moldavia_moldova = {
+	picture = protect_eastern_christians
 		potential = {
 			exists = ROM
 			tag = MOL
@@ -3240,6 +3084,7 @@ political_decisions = {
 		}
 	}
 	zapadoslavia = {
+	picture = form_poland_lithuania
 		potential = {
 			is_greater_power = yes
 			OR = {
@@ -3335,6 +3180,7 @@ political_decisions = {
 		}
 	}
 	oy_vey = {
+	picture = form_israel
 		news = yes
 		news_desc_long = "jew_NEWS"
 		news_desc_medium = "jew_NEWS"
@@ -3381,7 +3227,9 @@ political_decisions = {
 			factor = 1
 		}
 	}
+	
 	form_celtic = {
+	picture = form_kellys_irish_brigade
 		potential = {
 			OR = {
 				primary_culture = irish
@@ -3400,7 +3248,6 @@ political_decisions = {
 			war = no
 			prestige = 5
 			IRE = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS } } } }
-			HSC = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS } } } }
 			WHA = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS } } } }
 			BRT = { all_core = { OR = { owned_by = THIS owner = { in_sphere = THIS } } } }
 		}
@@ -3425,7 +3272,6 @@ political_decisions = {
 			}
 			any_owned = { add_core = CEL }
 			IRE = { all_core = { add_core = CEL remove_core = ENG remove_core = GBR } }
-			HSC = { all_core = { add_core = CEL remove_core = SCO remove_core = ENG remove_core = GBR } }
 			WHA = { all_core = { add_core = CEL remove_core = ENG remove_core = GBR } }
 			BRT = { all_core = { add_core = CEL remove_core = FRA } }
 			add_accepted_culture = irish
@@ -3439,7 +3285,9 @@ political_decisions = {
 			factor = 1
 		}
 	}
+	
 	form_tatar = {
+	picture = enact_muhammad_alis_reforms
 		potential = {
 			NOT = { exists = TAR }
 			civilized = yes
@@ -3468,6 +3316,50 @@ political_decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+	
+	the_concession_to_the_travelers = {
+		image = fugitive_slave_act
+		potential = {
+			has_accepted_culture = gypsy
+			NOT = { exists = GYP }
+			nationalism_n_imperialism = 1
+			any_owned_province = {
+				is_state_capital = yes
+				is_core = GYP
+			}
+			NOT = { has_global_flag = gypsy_exists }
+		}	
+		allow = {
+			war = no
+			is_independant = yes
+		}
+		
+		effect = {
+			badboy = -1
+			capital_scope = { secede_province = GYP }
+			any_owned_province = {
+				limit = {
+					is_core = GYP
+				}
+				remove_core = THIS
+				secede_province = GYP
+			}
+			create_vassal = GYP
+			set_global_flag = gypsy_exists
+			remove_accepted_culture = gypsy
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				is_cultural_union = no
+			}
+			modifier = {
+				factor = 0
+				is_greater_power = no
+			}
 		}
 	}
 }
