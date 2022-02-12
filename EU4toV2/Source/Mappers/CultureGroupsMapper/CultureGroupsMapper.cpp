@@ -1,13 +1,16 @@
 #include "CultureGroupsMapper.h"
 #include "CommonRegexes.h"
 #include "CultureGroupsMapping.h"
+#include "Log.h"
 #include "ParserHelpers.h"
 
 mappers::CultureGroupsMapper::CultureGroupsMapper()
 {
+	Log(LogLevel::Info) << "-> Loading culture group equivalences.";
 	registerKeys();
 	parseFile("configurables/culture_group_map.txt");
 	clearRegisteredKeywords();
+	Log(LogLevel::Info) << "-> " << eu4ToV2CultureGroups.size() << " links loaded.";
 }
 
 mappers::CultureGroupsMapper::CultureGroupsMapper(std::istream& theStream)
@@ -20,7 +23,7 @@ mappers::CultureGroupsMapper::CultureGroupsMapper(std::istream& theStream)
 void mappers::CultureGroupsMapper::registerKeys()
 {
 	registerKeyword("link", [this](std::istream& theStream) {
-		CultureGroupsMapping mapping(theStream);
+		const CultureGroupsMapping mapping(theStream);
 		if (!mapping.getV2().empty() && !mapping.getEU4s().empty())
 			for (const auto& eu4Group: mapping.getEU4s())
 				eu4ToV2CultureGroups.emplace(eu4Group, mapping.getV2());

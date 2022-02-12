@@ -138,3 +138,36 @@ void mappers::CultureGroupsManager::importNeoCultures(const EU4::Regions& region
 		}
 	}
 }
+
+void mappers::CultureGroupsManager::importDynamicCultures(const std::shared_ptr<CultureGroupsManager>& eu4CultureGroupsMapper) const
+{
+	for (const auto& [eu4CultureGroupName, eu4CultureGroup]: eu4CultureGroupsMapper->getCultureGroupsMap())
+	{
+		for (const auto& [eu4CultureName, eu4Culture]: eu4CultureGroup->getCultures())
+		{
+			// Hello random eu4 culture. Are you a dynamic culture?
+			if (!eu4CultureName.starts_with("dynamic-"))
+				continue;
+
+			auto destV2CultureGroupName = cultureGroupsMapper.getV2CultureGroup(eu4CultureGroupName);
+			if (!destV2CultureGroupName)
+			{
+				// Continuing would crash V2. Can't run without cultures in place.
+				throw std::runtime_error("Why isn't culture group " + eu4CultureGroupName + " mapped in culture_group_map.txt");
+			}
+
+			if (!cultureGroupsMap.contains(*destV2CultureGroupName))
+			{
+				throw std::runtime_error("Culture group " + eu4CultureGroupName + " maps to " + *destV2CultureGroupName + " which isn't a thing. Cannot continue.");
+			}
+			const auto& destV2CultureGroup = cultureGroupsMap.at(*destV2CultureGroupName);
+
+			// Now transmogrify eu4 culture definitions into V2 culture definitions.
+			auto v2Culture = std::make_shared<Culture>(*eu4Culture);
+			v2Culture->transmogrify();
+
+			// and file into that group.
+			destV2CultureGroup->mergeCulture(eu4CultureName, v2Culture);
+		}
+	}
+}

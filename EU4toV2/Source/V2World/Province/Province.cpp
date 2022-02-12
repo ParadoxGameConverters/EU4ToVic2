@@ -299,7 +299,7 @@ void V2::Province::determineDemographics(const EU4::Regions& eu4Regions,
 				if (!dstCulture)
 				{
 					// There is no overriding rule. We're good to force neoculture.
-					generatedNeoCultures.insert(std::make_pair(popRatio.getOriginalCulture(), popRatio.getCulture()));
+					generatedNeoCultures.emplace(popRatio.getOriginalCulture(), popRatio.getCulture());
 					superRegion = popRatio.getSuperRegion();
 					dstCulture.emplace(popRatio.getCulture());
 				}
@@ -307,8 +307,12 @@ void V2::Province::determineDemographics(const EU4::Regions& eu4Regions,
 				{
 					// a very special hack for ck3 dyncultures which *do* return from culturemapper unchanged - if this is a dynculture then
 					// use original neoculture name after all, instead of eu4 name.
-					if (dstCulture->starts_with("dynamic-"))
+					if (popRatio.getOriginalCulture().starts_with("dynamic-"))
+					{
+						generatedNeoCultures.emplace(*dstCulture, popRatio.getCulture());
+						superRegion = popRatio.getSuperRegion();
 						dstCulture.emplace(popRatio.getCulture());
+					}
 					// otherwise use the predefined neoculture from the mapper.
 				}
 			}

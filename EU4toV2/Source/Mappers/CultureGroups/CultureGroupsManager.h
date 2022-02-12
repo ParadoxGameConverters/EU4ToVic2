@@ -23,6 +23,7 @@ class CultureGroupsManager: commonItems::parser
 	void importNeoCultures(const EU4::Regions& regions,
 		 const std::shared_ptr<CultureGroupsManager>& eu4CultureGroupsMapper,
 		 const CultureMapper& cultureMapper) const;
+	void importDynamicCultures(const std::shared_ptr<CultureGroupsManager>& eu4CultureGroupsMapper) const;
 
 	[[nodiscard]] std::shared_ptr<CultureGroup> getGroupForCulture(const std::string& cultureName) const;
 	[[nodiscard]] const auto& getCultureGroupsMap() const { return cultureGroupsMap; }

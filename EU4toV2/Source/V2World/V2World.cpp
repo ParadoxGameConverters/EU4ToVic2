@@ -13,6 +13,7 @@
 #include <filesystem>
 #include <fstream>
 #include <queue>
+#include <ranges>
 namespace fs = std::filesystem;
 
 constexpr int MAX_EQUALITY_COUNTRIES = 5;
@@ -56,6 +57,7 @@ V2::World::World(const EU4::World& sourceWorld,
 
 	Log(LogLevel::Info) << "-> Pouring From Hollow Into Empty";
 	cultureGroupsMapper.importNeoCultures(sourceWorld.getRegions(), sourceWorld.getCultureGroupsMapper(), cultureMapper);
+	cultureGroupsMapper.importDynamicCultures(sourceWorld.getCultureGroupsMapper());
 	Log(LogLevel::Progress) << "51 %";
 
 	Log(LogLevel::Info) << "-> Converting Countries";
@@ -638,13 +640,11 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 void V2::World::transcribeNeoCultures()
 {
 	std::map<std::string, std::string> seenCultures;
-	for (const auto& province: provinces)
+	for (const auto& province: provinces | std::views::values)
 	{
-		auto seenNeoCultures = province.second->getGeneratedNeoCultures();
-		for (const auto& seenNeoCulture: seenNeoCultures)
-		{
-			seenCultures.insert(std::make_pair(seenNeoCulture.second, province.second->getSuperRegion()));
-		}
+		auto seenNeoCultures = province->getGeneratedNeoCultures();
+		for (const auto& seenNeoCulture: seenNeoCultures | std::views::values)
+			seenCultures.emplace(seenNeoCulture, province->getSuperRegion());
 	}
 	Log(LogLevel::Info) << "\tLocated " << seenCultures.size() << " new species.";
 	for (const auto& culture: seenCultures)
