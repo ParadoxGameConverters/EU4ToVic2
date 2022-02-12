@@ -14,7 +14,7 @@ class Country;
 namespace mappers
 {
 class ProvinceMapper;
-class CultureGroups;
+class CultureGroupsManager;
 class CountryMappings: commonItems::parser
 {
   public:
@@ -27,7 +27,7 @@ class CountryMappings: commonItems::parser
 	[[nodiscard]] static bool tagIsAlphaDigitDigit(const std::string& tag);
 	[[nodiscard]] static bool tagIsAlphaDigitAlphaNum(const std::string& tag);
 
-	void createMappings(const std::shared_ptr<CultureGroups>& theCultureGroupsMapper,
+	void createMappings(const std::shared_ptr<CultureGroupsManager>& theCultureGroupsMapper,
 		 const std::map<std::string, std::shared_ptr<EU4::Country>>& eu4Countries,
 		 const ProvinceMapper& provinceMapper);
 
@@ -54,7 +54,7 @@ class CountryMappings: commonItems::parser
 	std::unique_ptr<TitleMapper> titleMapper;
 	std::unique_ptr<ColonialTagMapper> colonialTagMapper;
 	std::unique_ptr<V2ProvinceRegionsMapper> v2provinceRegionsMapper;
-	std::shared_ptr<CultureGroups> cultureGroupsMapper;
+	std::shared_ptr<CultureGroupsManager> cultureGroupsMapper;
 };
 } // namespace mappers
 

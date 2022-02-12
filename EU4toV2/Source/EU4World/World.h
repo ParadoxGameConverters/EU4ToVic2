@@ -3,7 +3,7 @@
 #include "Buildings/Buildings.h"
 #include "ConverterVersion.h"
 #include "Country/EU4Country.h"
-#include "CultureGroups/CultureGroups.h"
+#include "CultureGroups/CultureGroupsManager.h"
 #include "Diplomacy/EU4Diplomacy.h"
 #include "GameVersion.h"
 #include "IdeaEffects/IdeaEffectMapper.h"
@@ -99,7 +99,7 @@ class World: commonItems::parser
 	Religions theReligions;
 	mappers::UnitTypeMapper unitTypeMapper;
 	std::unique_ptr<mappers::Buildings> buildingTypes;
-	std::shared_ptr<mappers::CultureGroups> cultureGroupsMapper;
+	std::shared_ptr<mappers::CultureGroupsManager> cultureGroupsMapper;
 	mappers::SuperGroupMapper superGroupMapper;
 
 	// export data for hoi4

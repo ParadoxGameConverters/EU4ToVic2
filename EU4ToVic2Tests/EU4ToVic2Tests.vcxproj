@@ -245,7 +245,7 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\Culture.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroup.cpp" />
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroups.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroupsManager.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.cpp" />

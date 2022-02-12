@@ -66,7 +66,7 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commo
 
 	clearRegisteredKeywords();
 	// With mods loaded we can init stuff that requires them.
-	cultureGroupsMapper = std::make_shared<mappers::CultureGroups>();
+	cultureGroupsMapper = std::make_shared<mappers::CultureGroupsManager>();
 	cultureGroupsMapper->initForEU4();
 	buildingTypes = std::make_unique<mappers::Buildings>();
 	unitTypeMapper.initUnitTypeMapper();

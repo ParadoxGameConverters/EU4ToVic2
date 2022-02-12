@@ -6,7 +6,7 @@
 #include "../Mappers/CountryFlags/CountryFlags.h"
 #include "../Mappers/CountryMappings/CountryMappings.h"
 #include "../Mappers/CulturalUnions/CulturalUnionMapper.h"
-#include "../Mappers/CultureGroups/CultureGroups.h"
+#include "../Mappers/CultureGroups/CultureGroupsManager.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/DeadDefinitionMapper/DeadDefinitionMapper.h"
 #include "../Mappers/FactoryTypes/FactoryTypeMapper.h"
@@ -174,7 +174,7 @@ class World
 	mappers::WarGoalMapper warGoalMapper;
 	mappers::StartingTechMapper startingTechMapper;
 	mappers::StartingInventionMapper startingInventionMapper;
-	mappers::CultureGroups cultureGroupsMapper;
+	mappers::CultureGroupsManager cultureGroupsMapper;
 	mappers::ReligiousGroups religiousGroupsMapper;
 	mappers::RegionLocalizations regionLocalizations;
 	mappers::AfricaResetMapper africaResetMapper;

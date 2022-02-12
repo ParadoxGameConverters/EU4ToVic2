@@ -382,7 +382,7 @@ call save_commit_id.bat
     <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\Culture.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroup.cpp" />
-    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp" />
+    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroupsManager.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.cpp" />
@@ -587,7 +587,7 @@ call save_commit_id.bat
     <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\Culture.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroup.h" />
-    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h" />
+    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroupsManager.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
     <ClInclude Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.h" />

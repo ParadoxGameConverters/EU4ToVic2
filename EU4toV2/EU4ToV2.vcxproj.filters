@@ -136,7 +136,7 @@
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroup.cpp">
       <Filter>Mappers\CultureGroups</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp">
+    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroupsManager.cpp">
       <Filter>Mappers\CultureGroups</Filter>
     </ClCompile>
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMapping.cpp">
@@ -737,7 +737,7 @@
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroup.h">
       <Filter>Mappers\CultureGroups</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h">
+    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroupsManager.h">
       <Filter>Mappers\CultureGroups</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMapping.h">

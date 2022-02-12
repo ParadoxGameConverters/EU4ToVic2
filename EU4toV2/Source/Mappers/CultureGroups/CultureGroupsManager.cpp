@@ -1,4 +1,4 @@
-#include "CultureGroups.h"
+#include "CultureGroupsManager.h"
 #include "CommonRegexes.h"
 #include "Configuration.h"
 #include "Culture.h"
@@ -9,7 +9,7 @@
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 
-void mappers::CultureGroups::initForEU4()
+void mappers::CultureGroupsManager::initForEU4()
 {
 	Log(LogLevel::Info) << "Parsing Cultures and Culture Groups";
 	registerKeys();
@@ -24,7 +24,7 @@ void mappers::CultureGroups::initForEU4()
 	clearRegisteredKeywords();
 }
 
-void mappers::CultureGroups::initForV2()
+void mappers::CultureGroupsManager::initForV2()
 {
 	Log(LogLevel::Info) << "Parsing V2 Cultures and Culture Groups";
 	registerKeys();
@@ -32,14 +32,14 @@ void mappers::CultureGroups::initForV2()
 	clearRegisteredKeywords();
 }
 
-mappers::CultureGroups::CultureGroups(std::istream& theStream)
+mappers::CultureGroupsManager::CultureGroupsManager(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-void mappers::CultureGroups::registerKeys()
+void mappers::CultureGroupsManager::registerKeys()
 {
 	registerRegex(R"([\w_]+)", [this](std::string cultureGroupName, std::istream& theStream) {
 		auto newGroup = std::make_shared<CultureGroup>(cultureGroupName, theStream);
@@ -72,7 +72,7 @@ void mappers::CultureGroups::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-std::shared_ptr<mappers::CultureGroup> mappers::CultureGroups::getGroupForCulture(const std::string& cultureName) const
+std::shared_ptr<mappers::CultureGroup> mappers::CultureGroupsManager::getGroupForCulture(const std::string& cultureName) const
 {
 	for (const auto& cultureGroupItr: cultureGroupsMap)
 		if (cultureGroupItr.second->containsCulture(cultureName))
@@ -80,8 +80,8 @@ std::shared_ptr<mappers::CultureGroup> mappers::CultureGroups::getGroupForCultur
 	return nullptr;
 }
 
-void mappers::CultureGroups::importNeoCultures(const EU4::Regions& regions,
-	 const std::shared_ptr<CultureGroups>& eu4CultureGroupsMapper,
+void mappers::CultureGroupsManager::importNeoCultures(const EU4::Regions& regions,
+	 const std::shared_ptr<CultureGroupsManager>& eu4CultureGroupsMapper,
 	 const CultureMapper& cultureMapper) const
 {
 	for (const auto& [eu4CultureGroupName, eu4CultureGroup]: eu4CultureGroupsMapper->getCultureGroupsMap())

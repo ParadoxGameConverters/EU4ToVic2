@@ -506,9 +506,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroup.cpp">
       <Filter>ConverterFiles\Mappers\CultureGroups</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroups.cpp">
-      <Filter>ConverterFiles\Mappers\CultureGroups</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\Countries.cpp">
       <Filter>ConverterFiles\EU4World\Country</Filter>
     </ClCompile>
@@ -778,6 +775,9 @@
     </ClCompile>
     <ClCompile Include="MapperTests\VNColonialMapper\VNColonialMappingTests.cpp">
       <Filter>MapperTests\VNColonialMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroupsManager.cpp">
+      <Filter>ConverterFiles\Mappers\CultureGroups</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
