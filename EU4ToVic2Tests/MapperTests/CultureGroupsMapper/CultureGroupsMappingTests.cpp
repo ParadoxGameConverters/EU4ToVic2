@@ -1,7 +1,7 @@
+#include "Configuration.h"
 #include "CultureGroupsMapper/CultureGroupsMapping.h"
 #include "gtest/gtest.h"
 #include <gmock/gmock-matchers.h>
-#include "Configuration.h"
 using testing::ElementsAre;
 
 TEST(Mappers_CultureGroupsMappingTests, defaultsDefaultToDefaults)
