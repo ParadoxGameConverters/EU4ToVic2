@@ -303,6 +303,14 @@ void V2::Province::determineDemographics(const EU4::Regions& eu4Regions,
 					superRegion = popRatio.getSuperRegion();
 					dstCulture.emplace(popRatio.getCulture());
 				}
+				else
+				{
+					// a very special hack for ck3 dyncultures which *do* return from culturemapper unchanged - if this is a dynculture then
+					// use original neoculture name after all, instead of eu4 name.
+					if (dstCulture->starts_with("dynamic-"))
+						dstCulture.emplace(popRatio.getCulture());
+					// otherwise use the predefined neoculture from the mapper.
+				}
 			}
 		}
 
@@ -360,20 +368,6 @@ void V2::Province::determineDemographics(const EU4::Regions& eu4Regions,
 		demographic.middleRatio = popRatio.getMiddleRatio() * provPopRatio;
 		demographic.lowerRatio = popRatio.getLowerRatio() * provPopRatio;
 
-		if (theConfiguration.getDebug())
-		{
-			Log(LogLevel::Info) << "EU4 Province " << eu4ProvID << ", "
-									  << "Vic2 Province " << provinceID << ", "
-									  << "Culture: " << demographic.culture << ", "
-									  << "Religion: " << demographic.religion << ", "
-									  << "upperPopRatio: " << popRatio.getUpperRatio() << ", "
-									  << "middlePopRatio: " << popRatio.getMiddleRatio() << ", "
-									  << "lowerPopRatio: " << popRatio.getLowerRatio() << ", "
-									  << "provPopRatio: " << provPopRatio << ", "
-									  << "upperRatio: " << demographic.upperRatio << ", "
-									  << "middleRatio: " << demographic.middleRatio << ", "
-									  << "lowerRatio: " << demographic.lowerRatio;
-		}
 		demographics.push_back(demographic);
 	}
 }

@@ -101,12 +101,32 @@ void mappers::CultureGroupsManager::importNeoCultures(const EU4::Regions& region
 				Log(LogLevel::Warning) << "Unable to locate culture mapping for EU4 culture: " << origEU4CultureName << ". This will end in tears.";
 				continue;
 			}
-			const auto& destV2CultureGroup = getGroupForCulture(*destV2CultureName);
+			auto destV2CultureGroup = getGroupForCulture(*destV2CultureName);
 			if (!destV2CultureGroup)
 			{
+				// We may be dealing with a ck3 dynculture. Let's consult groupsMapper.
+				const auto& origGroup = eu4CultureGroupsMapper->getGroupForCulture(origEU4CultureName);
+				if (origGroup)
+				{
+					const auto& origGroupName = origGroup->getName();
+					auto destV2CultureGroupName = cultureGroupsMapper.getV2CultureGroup(origGroupName);
+					if (destV2CultureGroupName && cultureGroupsMap.contains(*destV2CultureGroupName))
+					{
+						destV2CultureGroup = cultureGroupsMap.at(*destV2CultureGroupName);
+					}
+					else
+					{
+						Log(LogLevel::Warning) << "Unable to locate culture group for V2 culture: " << *destV2CultureName << ". This will end in blood.";
+						continue;
+					}
+				}
+
 				// let's not go there either.
-				Log(LogLevel::Warning) << "Unable to locate culture group for V2 culture: " << *destV2CultureName << ". This will end in blood.";
-				continue;
+				if (!destV2CultureGroup)
+				{
+					Log(LogLevel::Warning) << "Unable to locate culture group for V2 culture: " << *destV2CultureName << ". This will end in blood.";
+					continue;
+				}
 			}
 
 			// Now transmogrify eu4 culture definitions into V2 culture definitions.

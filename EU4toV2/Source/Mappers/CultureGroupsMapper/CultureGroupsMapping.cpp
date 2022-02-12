@@ -1,0 +1,27 @@
+#include "CultureGroupsMapping.h"
+#include "../../Configuration.h"
+#include "CommonRegexes.h"
+#include "ParserHelpers.h"
+
+mappers::CultureGroupsMapping::CultureGroupsMapping(std::istream& theStream)
+{
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
+
+void mappers::CultureGroupsMapping::registerKeys()
+{
+	registerKeyword("v2", [this](std::istream& theStream) {
+		v2 = commonItems::getString(theStream);
+	});
+	registerKeyword("hpm", [this](std::istream& theStream) {
+		hpm = commonItems::getString(theStream);
+		if (theConfiguration.isHpmEnabled())
+			v2 = *hpm;
+	});
+	registerKeyword("eu4", [this](std::istream& theStream) {
+		eu4s.insert(commonItems::getString(theStream));
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}

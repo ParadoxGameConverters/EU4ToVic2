@@ -380,6 +380,8 @@ call save_commit_id.bat
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMappings.cpp" />
     <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnion.cpp" />
     <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp" />
+    <ClCompile Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\Culture.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroup.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroupsManager.cpp" />
@@ -585,6 +587,8 @@ call save_commit_id.bat
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMappings.h" />
     <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnion.h" />
     <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.h" />
+    <ClInclude Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapper.h" />
+    <ClInclude Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\Culture.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroup.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroupsManager.h" />

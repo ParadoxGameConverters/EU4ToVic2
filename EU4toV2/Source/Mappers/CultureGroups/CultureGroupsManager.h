@@ -1,5 +1,6 @@
 #ifndef CULTURE_GROUPS_MANAGER_H
 #define CULTURE_GROUPS_MANAGER_H
+#include "../CultureGroupsMapper/CultureGroupsMapper.h"
 #include "Parser.h"
 
 namespace EU4
@@ -32,6 +33,8 @@ class CultureGroupsManager: commonItems::parser
 	void registerKeys();
 
 	std::map<std::string, std::shared_ptr<CultureGroup>> cultureGroupsMap;
+
+	CultureGroupsMapper cultureGroupsMapper;
 };
 } // namespace mappers
 

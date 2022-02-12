@@ -243,6 +243,8 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CountryMappings\CountryMappings.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CulturalUnions\CulturalUnion.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroupsMapper\CultureGroupsMapper.cpp" />
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\Culture.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroup.cpp" />
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroupsManager.cpp" />
@@ -372,6 +374,8 @@
     <ClCompile Include="MapperTests\CountryMappings\CountryMappingTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionMapper\CulturalUnionMapperTests.cpp" />
     <ClCompile Include="MapperTests\CulturalUnionMapper\CulturalUnionTests.cpp" />
+    <ClCompile Include="MapperTests\CultureGroupsMapper\CultureGroupsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\CultureGroupsMapper\CultureGroupsMappingTests.cpp" />
     <ClCompile Include="MapperTests\CultureGroups\CultureGroupsTests.cpp" />
     <ClCompile Include="MapperTests\CultureGroups\CultureGroupTests.cpp" />
     <ClCompile Include="MapperTests\CultureGroups\CultureTests.cpp" />
