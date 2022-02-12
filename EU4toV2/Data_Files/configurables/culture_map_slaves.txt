@@ -62,7 +62,7 @@ link = { vic2 = israeli eu4 = babylonian eu4 = israeli } # Babylonian captivity 
 link = { vic2 = azerbaijani eu4 = azerbadjani eu4 = azerbaijani eu4 = chechen }
 link = { vic2 = hazara eu4 = mongol religion = shiite }
 link = { vic2 = turkmen eu4 = turkmeni }
-link = { vic2 = mongol eu4 = mongol eu4 = chahar eu4 = khalkha eu4 = oirats eu4 = khitan }
+link = { vic2 = mongol eu4 = mongol eu4 = chahar eu4 = khalkha eu4 = oirats eu4 = khitan eu4 = altaic_new }
 link = { vic2 = uzbek eu4 = chorasmian eu4 = uzbek eu4 = uzbehk eu4 = karluk eu4 = tajik }
 link = { vic2 = kazak eu4 = khazak }
 link = { vic2 = kirgiz eu4 = kirgiz eu4 = kirghiz }
@@ -134,7 +134,7 @@ link = { vic2 = shan eu4 = shan }
 
 # Burman
 link = { vic2 = burmese eu4 = burmese eu4 = mon eu4 = arakanese }
-link = { vic2 = tibetan eu4 = zhangzhung eu4 = sumpa eu4 = tibetan }
+link = { vic2 = tibetan eu4 = zhangzhung eu4 = sumpa eu4 = tibetan eu4 = tibetan_new}
 link = { vic2 = bai eu4 = bai }
 link = { vic2 = kachin eu4 = kachin }
 link = { vic2 = karen eu4 = karen }
