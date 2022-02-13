@@ -364,7 +364,8 @@ QIN		="countries/Qing.txt"
 AIN     =   "countries/Ainu.txt"
 
 # Americas
-LOU		="countries/Louisiana.txt"
+AZT 	= "countries/Aztec.txt"
+LOU		= "countries/Louisiana.txt"
 LSK		= "countries/Alaska.txt"
 
 # Asia Minor
