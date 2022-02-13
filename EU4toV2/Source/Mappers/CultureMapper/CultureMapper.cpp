@@ -54,7 +54,7 @@ std::optional<std::string> mappers::CultureMapper::cultureRegionalMatch(const EU
 	 int eu4Province,
 	 const std::string& eu4ownerTag) const
 {
-	// Don't match dynamics.
+	// Don't match dynamics for non-slave pops, they are same in eu4 and vic2.
 	if (eu4culture.starts_with("dynamic-"))
 		return eu4culture;
 

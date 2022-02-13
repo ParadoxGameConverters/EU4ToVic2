@@ -346,7 +346,18 @@ void V2::Province::determineDemographics(const EU4::Regions& eu4Regions,
 		auto slaveCulture = slaveCultureMapper.cultureMatch(eu4Regions, popRatio.getCulture(), popRatio.getReligion(), eu4ProvID, oldOwnerTag);
 		auto thisContinent = continentsMapper.getEU4Continent(eu4ProvID);
 		if (!slaveCulture && !popRatio.getOriginalCulture().empty())
-			slaveCulture = slaveCultureMapper.cultureMatch(eu4Regions, popRatio.getOriginalCulture(), popRatio.getReligion(), eu4ProvID, oldOwnerTag);
+		{
+			// if original culture was dynamic, we can immediately map to the neoculture instead. dynamics don't have mappings to slaves.
+			if (popRatio.getOriginalCulture().starts_with("dynamic-"))
+			{
+				slaveCulture = popRatio.getCulture();
+			}
+			else
+			{
+				slaveCulture = slaveCultureMapper.cultureMatch(eu4Regions, popRatio.getOriginalCulture(), popRatio.getReligion(), eu4ProvID, oldOwnerTag);
+			}
+		}
+
 		if (!slaveCulture)
 		{
 			if (thisContinent && (*thisContinent == "asia" || *thisContinent == "africa" || *thisContinent == "oceania"))
