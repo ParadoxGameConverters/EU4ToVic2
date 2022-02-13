@@ -24,7 +24,7 @@ void mappers::CultureGroupsMapper::registerKeys()
 {
 	registerKeyword("link", [this](std::istream& theStream) {
 		const CultureGroupsMapping mapping(theStream);
-		if (!mapping.getV2().empty() && !mapping.getEU4s().empty())
+		if (!mapping.getV2().empty())
 			for (const auto& eu4Group: mapping.getEU4s())
 				eu4ToV2CultureGroups.emplace(eu4Group, mapping.getV2());
 	});

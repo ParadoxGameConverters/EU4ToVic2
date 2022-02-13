@@ -5,19 +5,19 @@
 
 mappers::CultureGroupsMapping::CultureGroupsMapping(std::istream& theStream)
 {
-	registerKeys();
+	registerKeys(theConfiguration.isHpmEnabled());
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-void mappers::CultureGroupsMapping::registerKeys()
+void mappers::CultureGroupsMapping::registerKeys(bool isHPMEnabled)
 {
 	registerKeyword("v2", [this](std::istream& theStream) {
 		v2 = commonItems::getString(theStream);
 	});
-	registerKeyword("hpm", [this](std::istream& theStream) {
+	registerKeyword("hpm", [this, isHPMEnabled](std::istream& theStream) {
 		hpm = commonItems::getString(theStream);
-		if (theConfiguration.isHpmEnabled())
+		if (isHPMEnabled)
 			v2 = *hpm;
 	});
 	registerKeyword("eu4", [this](std::istream& theStream) {

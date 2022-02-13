@@ -2,9 +2,9 @@
 #include "CultureGroups/CultureGroupsManager.h"
 #include "output.h"
 
-std::ostream& mappers::operator<<(std::ostream& output, const CultureGroupsManager& cultureGroupsMapper)
+std::ostream& mappers::operator<<(std::ostream& output, const CultureGroupsManager& cultureGroupsManager)
 {
-	for (const auto& [cultureGroupName, cultureGroup]: cultureGroupsMapper.getCultureGroupsMap())
+	for (const auto& [cultureGroupName, cultureGroup]: cultureGroupsManager.getCultureGroupsMap())
 	{
 		output << cultureGroupName << " = {\n";
 		output << *cultureGroup;

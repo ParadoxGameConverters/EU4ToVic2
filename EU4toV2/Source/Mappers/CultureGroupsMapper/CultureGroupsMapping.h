@@ -14,7 +14,7 @@ class CultureGroupsMapping: commonItems::parser
 	[[nodiscard]] const auto& getEU4s() const { return eu4s; }
 
   private:
-	void registerKeys();
+	void registerKeys(bool isHPMEnabled);
 
 	std::string v2;
 	std::optional<std::string> hpm;

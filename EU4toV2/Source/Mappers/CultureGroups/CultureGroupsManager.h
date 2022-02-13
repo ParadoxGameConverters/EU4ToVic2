@@ -30,7 +30,7 @@ class CultureGroupsManager: commonItems::parser
 	[[nodiscard]] const auto& getCultureGroupsMap() const { return cultureGroupsMap; }
 	[[nodiscard]] const auto& getDynamicCultureNames() const { return importedDynamicCultures; }
 
-	friend std::ostream& operator<<(std::ostream& output, const CultureGroupsManager& cultureGroupsMapper);
+	friend std::ostream& operator<<(std::ostream& output, const CultureGroupsManager& cultureGroupsManager);
 
   private:
 	void registerKeys();
