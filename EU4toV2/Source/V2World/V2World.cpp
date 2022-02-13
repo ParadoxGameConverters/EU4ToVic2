@@ -164,7 +164,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	addSetupDecisions();
 
 	Log(LogLevel::Info) << "---> Le Dump <---";
-	output(converterVersion);
+	output(converterVersion, sourceWorld.getEU4Localization());
 
 	Log(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
@@ -1675,7 +1675,7 @@ void V2::World::convertWars(const EU4::World& sourceWorld)
 	}
 }
 
-void V2::World::output(const commonItems::ConverterVersion& converterVersion) const
+void V2::World::output(const commonItems::ConverterVersion& converterVersion, const EU4::EU4Localization& localization) const
 {
 	commonItems::TryCreateFolder("output");
 	Log(LogLevel::Progress) << "80 %";
@@ -1730,7 +1730,7 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion) co
 
 	// Create localizations for all new countries. We don't actually know the names yet so we just use the tags as the names.
 	Log(LogLevel::Info) << "<- Writing Localisation Text";
-	outputLocalisation();
+	outputLocalisation(localization);
 	Log(LogLevel::Progress) << "91 %";
 
 	Log(LogLevel::Info) << "<- Writing Provinces";
@@ -1900,7 +1900,7 @@ void V2::World::outputCommonCountries() const
 	output.close();
 }
 
-void V2::World::outputLocalisation() const
+void V2::World::outputLocalisation(const EU4::EU4Localization& localization) const
 {
 	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
 	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
@@ -1932,6 +1932,23 @@ void V2::World::outputLocalisation() const
 		output << "PROV" << provinceID << ";";
 		for (auto i = 0; i < 13; i++)
 			output << commonItems::convertUTF8ToWin1252(name) << ";";
+		output << "x\n";
+	}
+	output.close();
+
+	Log(LogLevel::Info) << "<- Writing Mutated Fauna";
+	output.open(localisationPath + "/0_Dyncultures.csv");
+	if (!output.is_open())
+		throw std::runtime_error("Could not write dynculture localizations.");
+	output << "KEY;ENGLISH;FRENCH;GERMAN;POLISH;SPANISH;ITALIAN;HUNGARIAN;CZECH;HUNGARIAN;DUTCH;PORTUGUESE;RUSSIAN;FINNISH;X\n";
+	for (const auto& dynCulture: cultureGroupsMapper.getDynamicCultureNames())
+	{
+		auto locName = localization.getText(dynCulture, "english"); // all fields are always the same in all languages for dyncultures.
+		if (!locName)
+			locName = "Name Missing"; // if it's not there, where the hell is it...
+		output << dynCulture << ";";
+		for (auto i = 0; i < 13; i++)
+			output << *locName << ";";
 		output << "x\n";
 	}
 	output.close();

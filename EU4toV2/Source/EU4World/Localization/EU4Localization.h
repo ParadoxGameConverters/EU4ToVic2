@@ -10,7 +10,7 @@ namespace EU4
 class EU4Localization
 {
   public:
-	EU4Localization();
+	void initializeFromEU4Installation();
 
 	void readFromAllFilesInFolder(const std::string& folderPath);
 	void readFromFile(const std::string& fileName);

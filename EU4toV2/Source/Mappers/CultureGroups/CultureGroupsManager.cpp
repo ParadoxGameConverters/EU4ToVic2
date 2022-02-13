@@ -139,7 +139,7 @@ void mappers::CultureGroupsManager::importNeoCultures(const EU4::Regions& region
 	}
 }
 
-void mappers::CultureGroupsManager::importDynamicCultures(const std::shared_ptr<CultureGroupsManager>& eu4CultureGroupsMapper) const
+void mappers::CultureGroupsManager::importDynamicCultures(const std::shared_ptr<CultureGroupsManager>& eu4CultureGroupsMapper)
 {
 	for (const auto& [eu4CultureGroupName, eu4CultureGroup]: eu4CultureGroupsMapper->getCultureGroupsMap())
 	{
@@ -168,6 +168,7 @@ void mappers::CultureGroupsManager::importDynamicCultures(const std::shared_ptr<
 
 			// and file into that group.
 			destV2CultureGroup->mergeCulture(eu4CultureName, v2Culture);
+			importedDynamicCultures.insert(eu4CultureName);
 		}
 	}
 }

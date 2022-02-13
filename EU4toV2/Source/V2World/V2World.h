@@ -1,5 +1,6 @@
 #ifndef WORLD_H
 #define WORLD_H
+#include "../../EU4toV2/Source/EU4World/Localization/EU4Localization.h"
 #include "../EU4World/Country/EU4Country.h"
 #include "../Mappers/AcceptedCultureThresholds/AcceptedCultureThresholdsMapper.h"
 #include "../Mappers/AfricaReset/AfricaResetMapper.h"
@@ -114,13 +115,13 @@ class World
 	void addUnions(bool hreDecentralized, const std::shared_ptr<Country>& emperor);
 	void decentralizeHRE(bool hreDecentralized, const std::shared_ptr<Country>& emperor);
 	void convertArmies();
-	void output(const commonItems::ConverterVersion& converterVersion) const;
+	void output(const commonItems::ConverterVersion& converterVersion, const EU4::EU4Localization& localization) const;
 	void createModFile() const;
 	void outputPops() const;
 	static void outputVersion(const commonItems::ConverterVersion& converterVersion);
 	void modifyDefines() const;
 	void outputCommonCountries() const;
-	void outputLocalisation() const;
+	void outputLocalisation(const EU4::EU4Localization& localization) const;
 	void outputProvinces() const;
 	void outputCountries() const;
 	void outputWars() const;
