@@ -2760,7 +2760,7 @@ political_decisions = {
 		}
 	}
 	form_SPQR = {
-	picture = form_byzantine_empire
+		picture = form_byzantine_empire
 		news = yes
 		news_desc_long = "form_italy_NEWS_LONG"
 		news_desc_medium = "form_italy_NEWS_MEDIUM"
@@ -2769,7 +2769,7 @@ political_decisions = {
 			OR = {
 				AND = {
 					tag = BYZ
-					NOT = { any_greater_power = { has_country_flag = vic2_country_LTN }
+					NOT = { any_greater_power = { has_country_flag = vic2_country_LTN } }
 					NOT = { exists = HLR }
 				}
 				AND = {
@@ -2779,7 +2779,7 @@ political_decisions = {
 				}
 				AND = {
 					tag = HLR
-					NOT = { any_greater_power = { has_country_flag = vic2_country_LTN }
+					NOT = { any_greater_power = { has_country_flag = vic2_country_LTN } }
 					NOT = { exists = BYZ }
 				}
 				primary_culture = gaul
