@@ -87,8 +87,8 @@ germanic = {
 		Michael Otto Reinhold Rudolf Stefan Theodor Viktor Walter Werner Wilhelm }
 		
 		last_names = { Fentzke Fanke Friske Wolfowitz Kotke Laser Mahlke Retzke Bugalke Bolke Klimke
-		Koskie Milke Panke Slezner Tomke,Woder Patzer Patner Lenkier Janke Jaske Maszke Henke Gruber
-		Kuller Pisier Byger Pietzner Blizner,Tengier Ulkier Paske Reske Hunke Loeske Silke Lutke Kozelke
+		Koskie Milke Panke Slezner Tomke Woder Patzer Patner Lenkier Janke Jaske Maszke Henke Gruber
+		Kuller Pisier Byger Pietzner Blizner Tengier Ulkier Paske Reske Hunke Loeske Silke Lutke Kozelke
 		Konde Kluske Regenke Pieche Griebe Busse Woder Reglier Tenger Patek Zel Kroll Wrubell Boruta
 		Gnat Rogall Szmygell Witt Wittek Kopp Soffka Gaffaka Winka Gensk 
 		"von Breslau" "von Bromberg" "von Thorn" "von Lublin" "von Landsberg" "von der Warthe"
@@ -299,6 +299,32 @@ germanic = {
 	}
 	hilterian = {
 		color = { 251 71 59 }
+
+		first_names = { Adelbert Adolf Albrecht Alexander Alfons Alfred August Alois Anton Arthur
+		Bernhard Burkhard Christian Dieter Edmund Eduard Edwin Engelbert Erwin Erich Ernst 
+		Ferdinand Florian Franz Friedrich Fritz Georg Gebhard Gerhard Gottfried Günther
+		Gustav Hasso Heinrich Helmuth Hermann Horst Hugo Jakob Joachim Johann Joseph Julius Jürgen 
+		Karl Konrad Kurt Leonhard Leopold Lorenz Lothar Ludwig Lukas Manfred Maximilian Michael 
+		Nikolaus Otto Pascal Paul Peter Reinhard Rudolf Ruprecht Stefan Theodor Viktor Walter Werner 
+		Wilhelm Wolfgang }
+		
+		last_names = { Beck-Rzikowsky Behncke Blos Brommy Cordemann Dankl Dreyer Droste Eisner Geiss 
+		Goering Groener Hainisch Haus Held Hellpach "Herwarth von Bittenfeld" Heppendorf Hoffmann 
+		Hummel Köhler Krohn Ludendorff Mergenthaler Miklas Remmele Schmitt Schobber Schree Seitz Steeb
+		Stolzer Trunk "Vogel von Falkenstein" "von Alten" "von Anhalt" "von Arentschildt" "von Bülow" 
+		"von Baden" "von Benedek" "von Bismarck-Bohlen" "von Blumenthal" "von Blomberg" "von Böhm-Ermolli"
+		"von Boyen" "von Braunschweig" "von Brudermann" "von Clam-Gallas" "von dem Knesebeck" 
+		"von der Tann" "von Dietrich" "von Gablenz" "von Gebser" "von Grünne" "von Habsburg" "von Fritsch"
+		 "von Halkett" "von Hannover" "von Hartmann" "von Haynau" "von Hess" 
+		"von Hessen-Darmstadt" "von Hessen-Kassel" "von Hindenburg" "von Hohenzollern" "von Holstein-Gottorp" "von Knorr" "von Kleefeld"
+		"von Manteuffel" "von Mecklenburg-Schwerin" "von Mecklenburg-Strelitz" "von Moltke" "von Oldenburg" "von Rauch" "von Ravensberg" 
+		"von Reuter" "von Richthofen" "von Sachsen-Altenburg" "von Sachsen-Coburg-Gotha" "von Sachsen-Meiningen" 
+		"von Sachsen-Weimar-Eisenach" "von Schlieffen" "von Schwarzburg" "von Spee" "von Tirpitz" "von Waldeck und Pyrmont" "von Wettin" 
+		"von Wrangel" "von Zieten" "zur Lippe" "von Roon" "von Hohenhausen" "d'Aspre von Hoobreuk" "von Hortstein" "von Hötzendorf" "von Kirbach"
+		"von Kobratin" "von Schönburg" "von Tegetthoff" "von Uchatius" "von Wittelsbach" "von Württemberg" "von Zahringen" Wagner Wittmann "zu Hohenlohe"}
+	}
+	jerusalemer = {
+		color = { 255 255 255 }
 
 		first_names = { Adelbert Adolf Albrecht Alexander Alfons Alfred August Alois Anton Arthur
 		Bernhard Burkhard Christian Dieter Edmund Eduard Edwin Engelbert Erwin Erich Ernst 
@@ -1056,6 +1082,36 @@ british = {
 		}
 	}
 	
+	arvorigeg = {
+		color = { 255 0 255 }
+
+		first_names = { Albert Alexander Alfred Archibald Arthur Augustus Benjamin Bernard Charles Colbert
+		Colin Cyril David Donald Douglas Edmund Edwar Fairfax Ferdinand Francis
+		Frederick Geoffrey George Graham Henrey Herbert Horatio Hubert Hugh Ian
+		James Jeremy John Joseph Leopold Lester Louis Martin Nigel Oswald
+		Percy Reginald Richard Robert Russell Stanley Thomas Wallace William Winston Zachary }
+		
+		last_names = { Allenby Battemberg Beatty Beresford Brown Buller Butler Campbell Cardigan Churchill
+		Cochrane Cockburn "de Robeck" Dundas Fisher French Gough Grant Grenfell Haig
+		Hamilton Hardinge Havelock Hope Jellicoe Kitchener Lyons Madden Milne Montgomery
+		Moresby Mundy Napier Odoni "of Hannover" "of Saxe-Coburg-Gotha" Plummer Ragland Roberts Seaton Seymour
+		Smith Smith-Dorrien Stewart Thesiger Tyron Tyrwhitt Williams Windsor Wolseley Wood }
+	}
+	dramor = {
+		color = { 252 157 160 }
+
+		first_names = { Albert Alexander Alfred Archibald Arthur Augustus Benjamin Bernard Charles Colbert
+		Colin Cyril David Donald Douglas Edmund Edwar Fairfax Ferdinand Francis
+		Frederick Geoffrey George Graham Henrey Herbert Horatio Hubert Hugh Ian
+		James Jeremy John Joseph Leopold Lester Louis Martin Nigel Oswald
+		Percy Reginald Richard Robert Russell Stanley Thomas Wallace William Winston Zachary }
+		
+		last_names = { Allenby Battemberg Beatty Beresford Brown Buller Butler Campbell Cardigan Churchill
+		Cochrane Cockburn "de Robeck" Dundas Fisher French Gough Grant Grenfell Haig
+		Hamilton Hardinge Havelock Hope Jellicoe Kitchener Lyons Madden Milne Montgomery
+		Moresby Mundy Napier Odoni "of Hannover" "of Saxe-Coburg-Gotha" Plummer Ragland Roberts Seaton Seymour
+		Smith Smith-Dorrien Stewart Thesiger Tyron Tyrwhitt Williams Windsor Wolseley Wood }
+	}
 	union = ENG
 }
 
@@ -1296,6 +1352,25 @@ italian = {
 	}
 	garibaldine = {
 		color = { 244 89 14 }
+
+		first_names = { "Giuseppe Garibaldi" "Camillo Benso" Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
+		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
+		Miller Panetta Gatto Pelosi Rogan Rossi Thompson DeGette Tancredo Paccione "O'Dorisio"
+		Perino DeLauro DeStefano Fedele Grasso Rodney Mica Weldon Considine DeSantis Soto
+		Costello Manzullo Olivo Panici Russo Pompeo Mazzoli Mongiardo Landrieu Scalise Schiro
+		Baldacci D'Alesandro Morella Paca Capuano Cellucci Cogliano Furcolo Langone Malone
+		Menino Moakley Tisei Volpe Bentivolio Dondero Ficano Oberstar Vento Childers Cochran
+		Longino Palazzo Pickering Gianforte Corleone Amodei Augustine Ensign "Cortez Masto"
+		D'Allesandro Sgambati Bruno Bucco Christie Ferguson Florio Girgenti Guarini LoBiondo
+		Pallone Pascrell Rodino Roukema Russo Torricelli Carraro Domenici Addabbo D'Amato
+		Antonini Borelli Califano Cincotta Cino Cuomo DeSapio DiNapoli DioGuardi Ferraro
+		Fossella Frisa Gaeta Garbarino Giuliani Golisano Grimm Grucci Gucci Impellitteri LaFalce
+		"La Guardia" Lamberti Lanza Lazio Leone LiPetri Lopez Masiello Marcantonio Molinari
+		Paladino Pataki Pecora Poletti Sanzillo Savino Scaramucci Capone Smith Spinola Suozzi
+		Vallone Zanzi Foxx Cafaro Celebrezze Celeste DiSalle Ryan Tiberi Carosone }
+	}
+	oltremare = {
+		color = { 126 247 146 }
 
 		first_names = { "Giuseppe Garibaldi" "Camillo Benso" Alfonso Ambrogio Amedeo Andrea Angelo Antonio Armando Augusto Benito Camillo Carlo Cesare Corrado Costanzo Domenico Enrico Fabio Fabrizio Faustino Felice Ferdinando Fiorenzo Francesco Gaetano Gennaro Giacomo Giovanni Giulio Giuseppe Guglielmo Lorenzo Luigi Marino Matteo Nicola Paolo Pasquale Prospero Raffaele Roberto Ruggiero Sigismondo Silvio Simone Tancredi Tommasso Ugo Umberto Vincenzo Vittorio }
 		last_names = { DeConcini Arpaio Renzi Napolitano Alioto Bono Fazio LaMalfa Moscone
@@ -2017,6 +2092,26 @@ iberian = {
 		last_names = { Abreu Barroso Becerra Camba Canedo Carreiro Da Ponte De Lemos Demato Fontes Goya Lagos Lemus Mar Marcelin Mazo Melendrez Millan Pastor Pozo Pozos Prado Quintana Razo Rios Rocha Rosal Ruybal Salgado Varela Vielma }
 	}
 	
+	ultramar = {
+		color = { 250 248 190 }
+
+		first_names = { Agustín Alberto Alejandro Alfonso Álvaro Antonio "Antonio María" Arsenio Augusto Baldomero
+		Baltasar Benito Bernardino Bernardo Calixto Carlos Celestino Claudio Cristobal Dámaso
+		Diego Dionisio Eduardo Emilio Estanislao Federico Felipe Félix Fernando Francisco
+		"Francisco Javier" Gabino Gabriel Gaspar Genaro Gonzalo Ignacio Isidro Jacobo Jaime
+		Joaquín José "José Antonio" "José Manuel" "José María" Juan "Juan Bautista" Julio Leopoldo Lorenzo 
+		Luis Manuel Marcelo Mariano Mateo Melchor Miguel Nicolás Pablo Pascual
+		Pedro Rafael Raimundo Ramón Ricardo Santiago Sebastián Segismundo Valeriano Vicente }
+		
+		last_names = { Acuña Aguirre Alcalá-Zamora Allendesalazar Alonso Álvarez "Álvarez de Toledo" Aranda Argüelles-Meres Asensio
+		Aznar Barradas Bugallal Cabrera "Cagigal de la Vega" Cano Cervera "de Albornoz" "de Borbón"
+		"de Carvajal" "de la Fuente" "de Orleans" Díaz Espartero Fernández "Fernández de Córdoba" "Fitz-James Stuart" Franco 
+		García "García de la Noceda" González Heredia Hernández Herrera Hevia "Hidalgo de Cisneros" Linares López 
+		Maroto Márquez Martínez-Campos Maura Menéndez Miaja Millán-Astray Mina Mola Muñoz 
+		Narváez O'Donnell Ortega Pavía Pérez "Primo de Rivera" "Queipo de Llano" Rodríguez Rojo Ruiz 
+		Sanjurjo Serrano Silvestre Topete Valdés Varela Villapol Villar Weyler Yagüe }
+	}
+	
 	union = SPA
 }
 
@@ -2516,6 +2611,22 @@ hungarian_culture_group = {
 	}
 	fekete = {
 		color = {109 155 72}
+
+		first_names = { Alajos Albert Álmos Anasztáz András Arisztid Aurél Béla Benedek Béni
+		Bertalan Dániel Dávid Edvárd Éliás Erno Ferencz Gábor Gábriel Gáspár
+		György Gyula Ignác Imre István Izidor János József "József Manes" Kálmán
+		Károly Katalin Kelemen Krisztian Lajos László Manó Mihály Mór Myklós
+		Ödön Ottó Péter Rafael Sándor Simon Tivadar Vilmos Virág Zsigmond }
+
+		last_names = { Andrássy Apponyi Aulich Bacher Baross Batthyány Beöthy Bothmer Damjanich Dessewffy
+		Egressy "Erényi Ullmann" Farkas "Frakasházi Fischer" Goldziher Gungl Hauszmann Heller Horthy Izsó
+		Joseffy Katona Kaufman Kéler Kiss Knezich Kogutowicz Lahner Lázár Leiningen-Westerburg
+		Lichtenstein Liszt Mikszáth Molnár Nagy-Sándor Österreicher Ottinger Perczel Poeltenberg Reményi
+		Rohr Schweidel Széchenyi Szemere Szlávic Tersztyansky Török Varga Vécsey "von Benedek" }
+	}
+	
+	kulfoldi = {
+		color = { 138 133 121 }
 
 		first_names = { Alajos Albert Álmos Anasztáz András Arisztid Aurél Béla Benedek Béni
 		Bertalan Dániel Dávid Edvárd Éliás Erno Ferencz Gábor Gábriel Gáspár
@@ -4411,6 +4522,13 @@ south_asian = {
 		last_names = { Singh
 		Gadaraju Nanapaninni Bahl Sodhi Sidana Sadana Sardana Chhabra Ichpujani Saluja Khanna Mattu Waraich Virk Bedi Bhatia Chambal Cheema Chauhan Kaleka Arora Sumag Batra Barsar Luthra Agnihotri Sood Bhola Jindal Kapoor Sachdeva Grover Chadha Chopra Chaudhary Johar Khanna }
 	}
+	hindustani_proper = {
+		hpm = no
+		color = { 43 138 74 }
+		first_names = { Ranjit Kharak Nau Nihal Chand Kaur Shir Dhalip Diwan Jassa Hari Bhuma Nawab Banda Baba Kapur }
+		
+		last_names = { Singh Kunwar Bahadur Dhillon Nalwa Ahluwalia Ramgarhia Mal Mulraj }
+	}
 	union = HND
 }
 
@@ -4423,6 +4541,12 @@ indo_iranian = {
 		first_names = { Murshid Quli Shujauddin Alauddin Alivardi Sirajuddaula "Mir Muhammad" Najimuddin Reza Saifuddaula Zainul Ahmad Mansur Mubarak Hasan Wasif Waris }
 		
 		last_names = { Jafar Muhammad Sarfaraz Ali "Qasim Ali" Najabut Bahadur Mirza }
+	}
+	hindustani_proper = {
+		color = { 43 138 74 }
+		first_names = { Ranjit Kharak Nau Nihal Chand Kaur Shir Dhalip Diwan Jassa Hari Bhuma Nawab Banda Baba Kapur }
+		
+		last_names = { Singh Kunwar Bahadur Dhillon Nalwa Ahluwalia Ramgarhia Mal Mulraj }
 	}
 	panjabi = {
 		color = {190 180 170}
@@ -4809,6 +4933,34 @@ native_central_american = {
 		"Ollin" "Otli" "Ozomatli" "Pipiltin" "Pochtecatl" "Quauhtli" "Quauitl" "Quiautl" "Tecpatl" 
 		"Tecuhtli" "Tepetl" "Tetl" "Tlantli" "Tochtli" "Toltecatl" "Xochitl"}
 	}
+	yankuisemanatekatl = { #New Worlders
+		color = { 0 87 28 }
+
+		first_names = { Moctezuma Auitzotl Axayacatl Cuauhtemoc Cuitlahuac Huitzilihuitl Itzcoatl Ohimalpopoca Tizoc 
+		Motelchiuh Tehuetstiquitzin Tlacotzin Xochiquentzin Acamapichtli Chimalpopoca Tenoch Acacitli 
+		Axacaya Cacamatzin Eyahue Huicton Ilhuicamina Itzquautzin Mazatl Nopaltzin Olintecke Opochtli 
+		Quetzalmantzin Quimichetl Texcoyo Timas Tlacaelel Tlotzin Xiuhcozcatl Xocoyol Yaztachimal Zolton
+		Ahcambal Huanitzin Panitzin}
+
+		last_names = { "Acatl" "Atl" "Calli" "Cipactli" "Coatl" "Cozcaquauhtli" "Cuetzpalin" "Ehecatl" "Icpalli" 
+		"Itz" "Itzcuintli" "Macehualli" "Malinalli" "Mazatl" "Miquiztli" "Nezahual" "Nochtli" "Ocelotl" 
+		"Ollin" "Otli" "Ozomatli" "Pipiltin" "Pochtecatl" "Quauhtli" "Quauitl" "Quiautl" "Tecpatl" 
+		"Tecuhtli" "Tepetl" "Tetl" "Tlantli" "Tochtli" "Toltecatl" "Xochitl"}
+	}
+	neteotoquiliztlitekatl = { #Those who are sacrificial victims
+		color = { 60 92 70 }
+
+		first_names = { Moctezuma Auitzotl Axayacatl Cuauhtemoc Cuitlahuac Huitzilihuitl Itzcoatl Ohimalpopoca Tizoc 
+		Motelchiuh Tehuetstiquitzin Tlacotzin Xochiquentzin Acamapichtli Chimalpopoca Tenoch Acacitli 
+		Axacaya Cacamatzin Eyahue Huicton Ilhuicamina Itzquautzin Mazatl Nopaltzin Olintecke Opochtli 
+		Quetzalmantzin Quimichetl Texcoyo Timas Tlacaelel Tlotzin Xiuhcozcatl Xocoyol Yaztachimal Zolton
+		Ahcambal Huanitzin Panitzin}
+
+		last_names = { "Acatl" "Atl" "Calli" "Cipactli" "Coatl" "Cozcaquauhtli" "Cuetzpalin" "Ehecatl" "Icpalli" 
+		"Itz" "Itzcuintli" "Macehualli" "Malinalli" "Mazatl" "Miquiztli" "Nezahual" "Nochtli" "Ocelotl" 
+		"Ollin" "Otli" "Ozomatli" "Pipiltin" "Pochtecatl" "Quauhtli" "Quauitl" "Quiautl" "Tecpatl" 
+		"Tecuhtli" "Tepetl" "Tetl" "Tlantli" "Tochtli" "Toltecatl" "Xochitl"}
+	}
 }
 
 native_south_american = {
@@ -4889,7 +5041,7 @@ native_south_american = {
 		first_names = {Angatupyry Apytere Arandu Araresa Amaru Amapytu Amangy Aravera Arasunu Aratiri Chavuku Jakaira Karai 
 		Katupyry Kuarahy Kuarahyrese Maitei Mba'ehory Mbarakapu Namandu Tajy Tatarendy Tatajyva Tatapytu 
 		Tuvicha Ygary Tekokatu
-		Zapicán Abayubá Vaimaca Perú Senacua Tabaré Itanú, Yrupé, Jasymimbí, Tacuabé Vaimaca-Pirú}
+		Zapicán Abayubá Vaimaca Perú Senacua Tabaré Itanú Yrupé Jasymimbí Tacuabé Vaimaca-Pirú}
 
 		last_names = {Mbigua Caracara Timbu Tucague Calchagui Quiloazaz Cario Itatine Tarci Bomboi Curupaiti Curumai Caaigua Tape Ciriguana
 		Sénaqué Sira Gununusa Puyucahua Mataojo Igualdad Yaró Guenoa Bohané Minuan}
