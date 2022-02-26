@@ -1452,7 +1452,7 @@ unite_moldavia_wallachia = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {
