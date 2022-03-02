@@ -50,7 +50,7 @@ void mappers::CultureGroup::registerKeys()
 		 [this](const std::string& unused, std::istream& theStream) {
 			 commonItems::ignoreItem(unused, theStream);
 		 });
-	registerRegex(R"([\w_]+)", [this](std::string cultureName, std::istream& theStream) {
+	registerRegex(R"([\w_-]+)", [this](std::string cultureName, std::istream& theStream) {
 		auto newCulture = std::make_shared<Culture>(theStream);
 
 		if (const auto& hpm = newCulture->getHpm(); !hpm.empty())

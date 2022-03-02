@@ -50,8 +50,8 @@ int mappers::TechGroupsMapper::getWesternizationFromCulture(const std::string& c
 	const auto& westItr = cultureWesternization.find(culture);
 	if (westItr != cultureWesternization.end())
 		return westItr->second;
-	Log(LogLevel::Warning) << "No westernization for culture: " << culture;
-	return 0;
+	// dynamic and neocultures will not have defined westernizations. Always return 10 for unknowns as they are in new world and likely civilized.
+	return 10;
 }
 
 int mappers::TechGroupsMapper::getLiteracyFromTechGroup(const std::string& techGroupName) const

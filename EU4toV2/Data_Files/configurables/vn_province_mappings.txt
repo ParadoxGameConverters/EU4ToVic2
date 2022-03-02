@@ -109,8 +109,7 @@
 	link = { eu4 = 2755 eu4 = 2522 eu4 = 580 eu4 = 1946 eu4 = 824 eu4 = 2570 v2 = 1700 } # Tipaza, Bou Ismaïl, Blida, Al-Djazair, Reghaïa, Boumerdès -> Algiers
 	link = { eu4 = 5960 eu4 = 5106 v2 = 1720 } # El-Goléa, Tuat -> Bechar
 	link = { eu4 = 5097 eu4 = 5098 v2 = 1711 } # Ouargla, Ghardaïa -> Ouargla
-	link = { eu4 = 5103 v2 = 1715 } # El-Abiodh -> Naama
-	link = { eu4 = 5104 v2 = 1697 } # Figuig -> Figuig
+	link = { eu4 = 5103 eu4 = 5104 v2 = 1715 v2 = 1697 } # MANY-TO-MANY: El-Abiodh, Figuig -> Naama, Figuig
 	link = { eu4 = 4619 eu4 = 4647 eu4 = 4646 eu4 = 4648 eu4 = 4618 eu4 = 4617 v2 = 1684 } # El-Euyun, Debdu, Tawryrt, Garsif, Naïma, Ujda -> Wujda
 	link = { eu4 = 4656 eu4 = 4653 eu4 = 4654 eu4 = 4652 eu4 = 4655 eu4 = 4657 eu4 = 4662 v2 = 1680 } # Fas, Aïn Aïcha, Tawnat, Tahala, Sefrou, Bushabil, Terual -> Fez
 	link = { eu4 = 4650 eu4 = 4651 eu4 = 4641 eu4 = 3163 eu4 = 4649 v2 = 1683 } # Taza, Mezguitem, Aïn Zohra, Atlas, Taddart -> Taza
@@ -146,11 +145,11 @@
 	link = { eu4 = 4926 eu4 = 4927 eu4 = 4928 eu4 = 4924 eu4 = 4922 eu4 = 4598 eu4 = 4597 eu4 = 3161 eu4 = 4925 v2 = 1733 } # Misrata, Tawergha, Abu Qurayn, Khoms, Tarhunah, Sabratah, Zuwara, Suq Al-Juma, Zlitan -> Misratah
 	link = { eu4 = 5105 eu4 = 5919 eu4 = 5092 v2 = 1744 v2 = 1741 } # MANY-TO-MANY: Sabha, Adri, Ghadames -> Sabha, Murzuk
 	link = { eu4 = 5126 eu4 = 5127 v2 = 1740 } # Sokna, Zella -> Waddan
-	link = { eu4 = 4929 eu4 = 4930 eu4 = 4931 eu4 = 4932 v2 = 1734 } # Sirte, Harawa, Bin Jawad, Ras Lanuf -> Sirt
+	link = { eu4 = 4929 eu4 = 4930 eu4 = 4931 eu4 = 4932 eu4 = 4933 v2 = 1734 } # Sirte, Harawa, Bin Jawad, Ras Lanuf, Al-Uqaylah -> Sirt
 	link = { comment = "Egypt" }
 	link = { eu4 = 5081 eu4 = 5080 v2 = 1770 } # El-Gardaa, Juzur Tawilah -> Qusayr
 	link = { eu4 = 5078 eu4 = 5077 eu4 = 5076 eu4 = 5079 v2 = 1772 } # Ras Ghareb, Zaafarana, En El-Sokhna, Ras Shukeir -> Ras Gharib
-	link = { eu4 = 4937 eu4 = 4936 eu4 = 4935 eu4 = 4934 eu4 = 4933 v2 = 1735 } # Benghazi, Qaminis, Zuwetina, Al-Burayqah, Al-Uqaylah -> Benghazi
+	link = { eu4 = 4937 eu4 = 4936 eu4 = 4935 eu4 = 4934 v2 = 1735 } # Benghazi, Qaminis, Zuwetina, Al-Burayqah -> Benghazi
 	link = { eu4 = 4940 eu4 = 4941 eu4 = 4939 eu4 = 4938 v2 = 1736 } # Darnah, At-Timimi, Al-Bayda, Al-Marj -> Darna
 	link = { eu4 = 4942 eu4 = 4943 v2 = 1737 } # Tubruq, Al-Bardi -> Tobruk
 	link = { eu4 = 5090 eu4 = 5091 eu4 = 5129 eu4 = 5128 v2 = 1738 } # Al-Jaghbub, Mechili, Jalu, Awjilah -> Al Jaghbub
@@ -173,15 +172,14 @@
 	link = { eu4 = 5047 eu4 = 5039 eu4 = 5030 eu4 = 5038 eu4 = 5031 eu4 = 5040 eu4 = 5046 eu4 = 5049 v2 = 1746 } # Domyat, Baltim, Rashid, El-Hamoul, Dosuq, Belqas, El-Zarqa, El-Gamaleya -> Dumyat
 	link = { eu4 = 5075 eu4 = 5082 eu4 = 5052 v2 = 1755 } # El-Sewes, El-Ismaileyya, El-Matareya -> Suez Canal
 	link = { comment = "Middle East" }
-	link = { eu4 = 3130 eu4 = 3131 eu4 = 3132 eu4 = 6258 eu4 = 6259 eu4 = 6257 eu4 = 3128 eu4 = 3129 v2 = 898 } # Tell Bashir, Tell Halid, Nizip, Hromkla, Kesun, Ayntab, Kilis, Islahiye -> Antep
+	link = { eu4 = 3130 eu4 = 3131 eu4 = 3132 eu4 = 6258 eu4 = 6257 eu4 = 3128 v2 = 898 } # Tell Bashir, Tell Halid, Nizip, Hromkla, Ayntab, Kilis -> Antep
 	link = { eu4 = 3112 eu4 = 3117 eu4 = 3111 eu4 = 3052 eu4 = 3050 eu4 = 3051 eu4 = 3110 eu4 = 3116 eu4 = 3114 eu4 = 3113 eu4 = 3109 v2 = 897 } # Bizaah, Hunasirah, Halab, Qinnasrin, Zardana, Afrin, Azaz, Qabbasin, Manbij, Maskanah, Kurus -> Aleppo
-	link = { eu4 = 3663 eu4 = 3685 eu4 = 3665 eu4 = 3664 eu4 = 3662 eu4 = 3660 eu4 = 3661 eu4 = 3666 eu4 = 3674 v2 = 899 } # Harran, Tell Mawzan, Magaracik, Limnia, Saruj, Edessa, Birah, Weranshahir, Derik -> Urfa
-	link = { eu4 = 6280 eu4 = 6278 eu4 = 6279 eu4 = 6281 eu4 = 6272 eu4 = 3668 eu4 = 3669 eu4 = 3659 eu4 = 6269 eu4 = 6271 eu4 = 6268 eu4 = 6267 eu4 = 3658 eu4 = 6266 eu4 = 3670 eu4 = 3671 eu4 = 6274 eu4 = 3514 v2 = 889 } # Hisn Al-Batriq, Arka, Melitene, Mouzourion, Tilion, Ergani, Diyar Bakr, Khasanara, Karkaron, Sozopetra, Karbanon, Samosata, Nisibis, Singa, Lije, Mayyafariqin, Malkin, Kolb -> Malatya
+	link = { eu4 = 3663 eu4 = 3685 eu4 = 3665 eu4 = 3664 eu4 = 3662 eu4 = 3660 eu4 = 3666 eu4 = 3674 eu4 = 6267 eu4 = 6266 eu4 = 6268 eu4 = 3661 eu4 = 6271 v2 = 899 } # Harran, Tell Mawzan, Magaracik, Limnia, Saruj, Edessa, Weranshahir, Derik, Samosata, Singa, Karbanon, Birah, Sozopetra -> Urfa
+	link = { eu4 = 6280 eu4 = 6278 eu4 = 6279 eu4 = 6281 eu4 = 6272 eu4 = 3668 eu4 = 3669 eu4 = 3659 eu4 = 6269 eu4 = 3658 eu4 = 3670 eu4 = 3671 eu4 = 6274 eu4 = 3514 v2 = 889 } # Hisn Al-Batriq, Arka, Melitene, Mouzourion, Tilion, Ergani, Diyar Bakr, Khasanara, Karkaron, Nisibis, Lije, Mayyafariqin, Malkin, Kolb -> Malatya
 	link = { eu4 = 3036 eu4 = 3035 eu4 = 3033 eu4 = 3048 eu4 = 3047 eu4 = 3044 eu4 = 3046 eu4 = 3045 v2 = 904 } # Hama, Shayzar, Masyaf, Kafr Tab, Afamia, Al-Bara, Al-Maarra, Sarmin -> Hama
 	link = { eu4 = 3037 eu4 = 3034 eu4 = 3038 eu4 = 3042 v2 = 903 } # Hims, Baarin, Al-Qusayr, Labweh -> Homs
-	link = { eu4 = 3144 v2 = 1157 } # Nariyya -> Riyadh
 	link = { eu4 = 5541 v2 = 1071 } # Hormuz -> Qeshm
-	link = { eu4 = 3432 eu4 = 3433 eu4 = 3434 eu4 = 3435 v2 = 1163 } # Khafji, As-Saffaniyya, Ras Az-Zour, Al-Jubail -> Qatif
+	link = { eu4 = 3432 eu4 = 3433 eu4 = 3434 eu4 = 3435 eu4 = 3144 v2 = 1163 } # Khafji, As-Saffaniyya, Ras Az-Zour, Al-Jubail, Nariyya -> Qatif
 	link = { eu4 = 3438 eu4 = 3437 eu4 = 3436 eu4 = 3439 v2 = 935 } # Kuwait, Al-Jahra, Bubiyan, Mangaf -> Kuwait
 	link = { eu4 = 3184 eu4 = 3143 v2 = 1158 } # Rafha, Al-Wafrah -> Rafha
 	link = { eu4 = 5014 eu4 = 3136 v2 = 1156 } # Al-Jawf, Qurayyat -> Kaf
@@ -215,10 +213,11 @@
 	link = { eu4 = 4977 eu4 = 4966 eu4 = 4976 eu4 = 4981 eu4 = 4982 eu4 = 4991 eu4 = 4989 eu4 = 4990 eu4 = 4996 eu4 = 4994 eu4 = 4995 v2 = 908 } # Amman, Aluk, Aram, Herod, Madmen, Katrane, Lisan, Kerak, Montreal, Zoar, Punon -> Amman
 	link = { eu4 = 4998 eu4 = 5002 eu4 = 5003 eu4 = 4997 v2 = 922 } # Aqaba, Haql, Al-Sharaf, Petra -> Aqaba
 	link = { eu4 = 5951 eu4 = 3138 v2 = 911 } # Maan, Al-Jafr -> Ma'an
-	link = { eu4 = 5008 eu4 = 5013 eu4 = 5009 eu4 = 5007 eu4 = 5006 eu4 = 5005 eu4 = 5010 eu4 = 5011 eu4 = 5012 eu4 = 5004 v2 = 1154 } # Duba, Tabuk, Shigry, Al-Muwaileh, Al-Surah, Al-Khuraybah, Shuwah, Al-Faraah, Abu Rakah, Hamid -> Tabuk
+	link = { eu4 = 5012 v2 = 1153 } # Abu Rakah -> Medina
+	link = { eu4 = 5008 eu4 = 5013 eu4 = 5009 eu4 = 5007 eu4 = 5006 eu4 = 5005 eu4 = 5010 eu4 = 5011 eu4 = 5004 v2 = 1154 } # Duba, Tabuk, Shigry, Al-Muwaileh, Al-Surah, Al-Khuraybah, Shuwah, Al-Faraah, Hamid -> Tabuk
 	link = { eu4 = 4985 eu4 = 5053 v2 = 1756 } # El-Arish, Bir El-Abd -> Al Arish
 	link = { eu4 = 5001 eu4 = 5071 eu4 = 5072 eu4 = 5000 eu4 = 4999 eu4 = 5073 eu4 = 5074 eu4 = 5083 eu4 = 5084 eu4 = 5085 v2 = 1757 } # Sharm El-Sheikh, El-Tor, Abu Redis, Dahab, Nuweiba, Abu Zenima, Ras Sedir, Sanat Katryn, Nekhel, Hasna -> Sharm al-Shaykh
-	link = { eu4 = 6246 eu4 = 6245 eu4 = 6264 eu4 = 6276 eu4 = 6270 eu4 = 6265 eu4 = 6277 v2 = 896 } # Anazarba, Harun, Germanikeia, Enguzud, Tluk, Adata, Tarbsag -> Marash
+	link = { eu4 = 6246 eu4 = 6245 eu4 = 6264 eu4 = 6276 eu4 = 6270 eu4 = 6814 eu4 = 6815 eu4 = 6816 eu4 = 6259 eu4 = 6265 eu4 = 6277 eu4 = 3129 v2 = 896 } # Anazarba, Harun, Germanikeia, Enguzud, Tluk, Kokousos, Arabissos, Ablastha, Kesun, Adata, Tarbsag, Islahiye -> Marash
 	link = { comment = "The East" }
 	link = { eu4 = 6439 eu4 = 6435 eu4 = 6434 eu4 = 6437 eu4 = 6436 eu4 = 6438 v2 = 1191 } # Khiva, Mangit, Nukus, Chimbay, Tazazhol, Tahtakupir -> Khiva
 	link = { eu4 = 6441 eu4 = 6440 v2 = 1196 } # Gurganj, Dasoguz -> Gurgench
@@ -257,7 +256,7 @@
 	link = { eu4 = 3491 eu4 = 3490 eu4 = 3489 eu4 = 3492 eu4 = 3495 eu4 = 3493 eu4 = 3494 eu4 = 3488 eu4 = 3496 eu4 = 3497 eu4 = 3531 eu4 = 3533 eu4 = 3532 v2 = 886 } # Tasiskari, Panaskerti, Artaani, Ardanuji, Murghuli, Satberdi, Qveli, Oljeki, Oltisi, Bolon, Ojraqe, Tmogvi, Aspinja -> Ardahan
 	link = { eu4 = 6290 eu4 = 3504 eu4 = 3503 eu4 = 3502 eu4 = 3501 eu4 = 3498 eu4 = 3525 eu4 = 3526 eu4 = 3529 eu4 = 3523 eu4 = 3524 eu4 = 3499 eu4 = 3500 eu4 = 3522 eu4 = 6291 eu4 = 6289 v2 = 887 } # Theodosioupolis, Masat, Baiberdon, Hispiratis, Pertarek, Daroynk, Habtzitzin, Xnunis, Bostankent, Chermuk, Mardali, Tortumi, Azord, Olnoutin, Derzene, Bagaris -> Erzurum
 	link = { eu4 = 4198 eu4 = 4194 eu4 = 4195 eu4 = 4199 eu4 = 4197 eu4 = 4196 eu4 = 6829 eu4 = 6288 eu4 = 6283 eu4 = 6284 eu4 = 6282 eu4 = 6286 eu4 = 6273 eu4 = 6285 eu4 = 6287 eu4 = 6275 v2 = 888 } # Eriza, Koloneia, Mesochaldia, Domana, Satala, Chorsabia, Pleuramis, Kamakha, Khozanon, Bartanissa, Kharpete, Palines, Arsamosaton, Mertikerton, Khortzene, Kitharizon -> Erzincan
-	link = { eu4 = 6822 eu4 = 6828 eu4 = 4193 eu4 = 4192 eu4 = 6827 eu4 = 6830 eu4 = 6831 eu4 = 6832 eu4 = 6826 eu4 = 6816 eu4 = 6815 eu4 = 6814 eu4 = 6813 eu4 = 6817 eu4 = 6818 eu4 = 6819 eu4 = 6821 eu4 = 6772 eu4 = 6767 eu4 = 4201 eu4 = 4200 eu4 = 6823 eu4 = 6824 eu4 = 6825 v2 = 879 } # Sebasteia, Mesorome, Basgoedariza, Spelunxis, Zara, Vereuso, Tephrike, Arane, Dalanda, Ablastha, Arabissos, Kokousos, Koduzalaba, Gauraina, Symposion, Tonosa, Malandara, Phiara, Eudoksia, Neokaisareia, Magabula, Danae, Kamisa, Euspena -> Sivas
+	link = { eu4 = 6822 eu4 = 6828 eu4 = 4193 eu4 = 4192 eu4 = 6827 eu4 = 6830 eu4 = 6831 eu4 = 6832 eu4 = 6826 eu4 = 6813 eu4 = 6817 eu4 = 6818 eu4 = 6819 eu4 = 6821 eu4 = 6772 eu4 = 6767 eu4 = 4201 eu4 = 4200 eu4 = 6823 eu4 = 6824 eu4 = 6825 v2 = 879 } # Sebasteia, Mesorome, Basgoedariza, Spelunxis, Zara, Vereuso, Tephrike, Arane, Dalanda, Koduzalaba, Gauraina, Symposion, Tonosa, Malandara, Phiara, Eudoksia, Neokaisareia, Magabula, Danae, Kamisa, Euspena -> Sivas
 	link = { eu4 = 4992 eu4 = 4988 eu4 = 4993 v2 = 921 } # Beersheba, Hebron, Dimona -> Beersheba
 	link = { eu4 = 4974 eu4 = 4973 eu4 = 4975 eu4 = 4970 eu4 = 4980 eu4 = 5932 v2 = 917 } # Jerusalem, Bethel, Jericho, Alexandreion, Bethlehem, Jeshimon -> Jerusalem
 	link = { eu4 = 4971 eu4 = 4972 eu4 = 4967 eu4 = 4963 eu4 = 4962 eu4 = 4958 eu4 = 4959 eu4 = 4968 eu4 = 4979 eu4 = 4984 eu4 = 4987 v2 = 919 } # Jaffa, Lydda, Arsuf, Caesarea, Tanturah, Haifa, Caymont, Mirabel, Blanchegarde, Eleutheropolis, Etam -> Jaffa
@@ -430,7 +429,7 @@
 	link = { eu4 = 126 eu4 = 1826 eu4 = 1848 eu4 = 337 eu4 = 1071 eu4 = 123 eu4 = 1933 eu4 = 125 eu4 = 124 eu4 = 2982 eu4 = 2536 eu4 = 131 eu4 = 139 eu4 = 2680 eu4 = 2546 eu4 = 122 v2 = 590 } # Hall, Möckmühl, Gemmingen, Wimpfen, Backnang, Limpurg, Ellwangen, Löwenstein, Heilbronn, Besigheim, Crailsheim, Rothenburg, Mergentheim, Schillingsfürst, Hohenlohe, Aalen -> Heilbronn
 	link = { eu4 = 1103 eu4 = 483 eu4 = 2455 eu4 = 46 eu4 = 209 eu4 = 2969 eu4 = 2981 eu4 = 2184 eu4 = 1746 eu4 = 549 eu4 = 1745 eu4 = 215 eu4 = 2993 eu4 = 952 eu4 = 2450 eu4 = 350 eu4 = 482 eu4 = 2021 v2 = 591 } # Tübingen, Herrenberg, Pfalzgrafenweiler, Horb, Sulz, Hohenberg, Meßkirch, Albstadt, Rottenmünster, Hornberg, Rottweil, Niedereschach, Lupfen, Villingen, Haigerloch, Calw, Altensteig, Gerlingen -> Tubingen
 	link = { eu4 = 105 eu4 = 2454 eu4 = 2994 eu4 = 351 eu4 = 94 eu4 = 1872 eu4 = 47 eu4 = 2449 eu4 = 4129 eu4 = 2529 eu4 = 86 v2 = 594 } # Sigmaringen, Veringen, Zollern, Urach, Reutlingen, Zwiefalten, Trochtelfingen, Eritgau, Teck, Nürtingen, Weil -> Sigmaringen
-	link = { eu4 = 69 eu4 = 632 eu4 = 60 eu4 = 75 eu4 = 51 eu4 = 2048 eu4 = 2979 eu4 = 1761 eu4 = 1875 eu4 = 341 eu4 = 2695 eu4 = 359 v2 = 588 } # Neukonstanz, Fürstenberg, Stühlingen, Engen, Bonndorf, Klettgau, Überlingen, Nellenburg, Pfullendorf, Heiligenberg, Salem, Meersburg -> Konstanz
+	link = { eu4 = 69 eu4 = 632 eu4 = 60 eu4 = 75 eu4 = 51 eu4 = 2048 eu4 = 2979 eu4 = 1761 eu4 = 1875 eu4 = 341 eu4 = 2695 eu4 = 359 eu4 = 1870 v2 = 588 } # Neukonstanz, Fürstenberg, Stühlingen, Engen, Bonndorf, Klettgau, Überlingen, Nellenburg, Pfullendorf, Heiligenberg, Salem, Meersburg, Altkonstanz -> Konstanz
 	link = { eu4 = 2732 eu4 = 336 eu4 = 4122 eu4 = 2099 eu4 = 272 v2 = 569 } # Heidelberg, Sinsheim, Mosbach, Miltenberg, Wertheim -> Mannheim
 	link = { eu4 = 2032 eu4 = 235 eu4 = 219 eu4 = 238 eu4 = 236 eu4 = 1860 eu4 = 701 eu4 = 481 eu4 = 2459 eu4 = 93 eu4 = 1882 eu4 = 698 eu4 = 2751 eu4 = 217 eu4 = 962 eu4 = 268 eu4 = 2463 eu4 = 72 eu4 = 340 v2 = 586 } # Ettenheim, Offenburg, Ortenau, Geroldseck, Schuttertal, Oppenau, Gengenbach, Herrenalb, Baden, Eberstein, Freudenstadt, Zell, Wolfach, Triberg, Achern, Bruchsal, Bretten, Durlach, Ludwigsburg -> Karlsruhe
 	link = { eu4 = 543 eu4 = 2457 eu4 = 1863 eu4 = 339 eu4 = 2954 v2 = 587 } # Breisgau, Hochberg, Badenweiler, Sausenberg, Sankt Blasien -> Freiburg
@@ -468,7 +467,7 @@
 	link = { eu4 = 2642 eu4 = 858 eu4 = 48 eu4 = 5264 eu4 = 860 eu4 = 1987 v2 = 547 } # Wolgast, Usedom, Pasewalk, Anklam, Treptow, Gnoien -> Greifswald
 	link = { eu4 = 2623 eu4 = 2641 eu4 = 851 eu4 = 5263 eu4 = 5265 v2 = 548 } # Stralsund, Rügen, Barth, Greifswald, Marlow -> Stralsund
 	link = { comment = "Austria" }
-	link = { eu4 = 1198 eu4 = 4862 eu4 = 1093 eu4 = 4863 eu4 = 171 v2 = 614 } # Bregenz, Alberschwende, Feldkirch, Dornbirn, Bludenz -> Bregenz
+	link = { eu4 = 1198 eu4 = 4862 eu4 = 1093 eu4 = 4863 eu4 = 171 eu4 = 2921 v2 = 614 } # Bregenz, Alberschwende, Feldkirch, Dornbirn, Bludenz, Vaduz -> Bregenz
 	link = { eu4 = 703 eu4 = 5157 eu4 = 2139 eu4 = 5159 eu4 = 1816 eu4 = 5158 eu4 = 5156 v2 = 616 } # Graz, Radkersburg, Feldbach, Gleisdorf, Fürstenfeld, Pingau, Pfannberg -> Graz
 	link = { eu4 = 4888 eu4 = 4887 eu4 = 4891 eu4 = 4889 eu4 = 438 v2 = 624 } # Eisenstadt, Hornstein, Parndorf, Kobersdorf, Orvidék -> Eisenstadt
 	link = { eu4 = 2172 eu4 = 4885 eu4 = 4886 eu4 = 168 eu4 = 693 eu4 = 4892 eu4 = 4893 eu4 = 5955 eu4 = 2168 eu4 = 4894 eu4 = 2161 v2 = 619 } # Wien, Baden-Wien, Hainburg, Enzersdorf, Gänserndorf, Dürnkrut, Laa, Hardegg, Hollabrunn, Triebensee, Mistelbach -> Vienna
@@ -476,8 +475,8 @@
 	link = { eu4 = 2181 eu4 = 665 eu4 = 2179 eu4 = 900 eu4 = 190 eu4 = 2171 eu4 = 2151 v2 = 620 } # Berndorf, Pitten, Lilienfeld, Scheibbs, Waidhofen-Ybbs, Amstetten, Steyrland -> Sankt Polten
 	link = { eu4 = 5414 eu4 = 1821 eu4 = 185 eu4 = 2146 eu4 = 4883 eu4 = 1833 eu4 = 1086 eu4 = 723 eu4 = 1094 eu4 = 2137 eu4 = 914 eu4 = 1824 eu4 = 2735 eu4 = 684 eu4 = 2148 v2 = 618 } # Mahrenberg, Stainz, Wolfsberg, Griffen, Völkermarkt, Sankt Veit, Friesach, Klagenfurt, Glödnitz, Treffen, Villach, Hermagor, Sachsenburg, Obervellach, Spittal -> Klagenfurt
 	link = { eu4 = 2071 eu4 = 4230 eu4 = 2147 v2 = 615 } # Lienz, Virgental, Matrei -> Lienz
-	link = { eu4 = 2110 eu4 = 489 eu4 = 487 eu4 = 1235 eu4 = 735 eu4 = 4874 eu4 = 186 eu4 = 1013 eu4 = 2745 eu4 = 4877 eu4 = 192 v2 = 735 } # Moena, Buchenstein, Cortina, Bolzano, Bruneck, Taufers, Brixen, Sankt Ulrich, Meran, Vinschgau, Innichen -> Bozen
-	link = { eu4 = 2174 eu4 = 4124 eu4 = 2556 eu4 = 180 eu4 = 2513 eu4 = 4880 eu4 = 73 eu4 = 4866 eu4 = 2175 eu4 = 2176 eu4 = 4865 eu4 = 1840 eu4 = 737 eu4 = 987 v2 = 612 } # Innsbruck, Fieberbrunn, Kitzbühel, Kufstein, Rattenburg, Schwaz, Seefeld, Silz, Reutte, Ischgl, Landeck, Sölden, Mühlbach, Zillertal -> Innsbruck
+	link = { eu4 = 2110 eu4 = 489 eu4 = 487 eu4 = 1235 eu4 = 735 eu4 = 4874 eu4 = 186 eu4 = 1013 eu4 = 2745 eu4 = 4877 eu4 = 192 eu4 = 737 v2 = 735 } # Moena, Buchenstein, Cortina, Bolzano, Bruneck, Taufers, Brixen, Sankt Ulrich, Meran, Vinschgau, Innichen, Mühlbach -> Bozen
+	link = { eu4 = 2174 eu4 = 4124 eu4 = 2556 eu4 = 180 eu4 = 2513 eu4 = 4880 eu4 = 73 eu4 = 4866 eu4 = 2175 eu4 = 2176 eu4 = 4865 eu4 = 1840 eu4 = 987 v2 = 612 } # Innsbruck, Fieberbrunn, Kitzbühel, Kufstein, Rattenburg, Schwaz, Seefeld, Silz, Reutte, Ischgl, Landeck, Sölden, Zillertal -> Innsbruck
 	link = { eu4 = 76 eu4 = 4114 eu4 = 2152 eu4 = 4871 eu4 = 182 eu4 = 669 eu4 = 4873 eu4 = 4872 v2 = 613 } # Salzburggau, Mondsee, Pongau, Longau, Gasteinertal, Pinzgau, Saalfelden, Mittersill -> Salzburg
 	link = { eu4 = 2145 eu4 = 1822 eu4 = 2140 eu4 = 685 eu4 = 2142 eu4 = 5160 eu4 = 128 eu4 = 4899 v2 = 617 } # Ennstal, Donnersbach, Gurktal, Undrimtal, Leobental, Kapfenberg, Mürztal, Rottenmann -> Judenburg
 	link = { eu4 = 683 eu4 = 4895 eu4 = 726 eu4 = 2113 eu4 = 4898 eu4 = 2744 eu4 = 2550 eu4 = 2112 eu4 = 199 eu4 = 2153 eu4 = 5161 eu4 = 5162 eu4 = 686 v2 = 622 } # Linz, Grein, Freistadt, Urfahr, Rohrbach, Schärding, Mattigau, Attergau, Attnang, Gmunden, Ischl, Enns, Kirchdorf -> Linz
@@ -748,7 +747,7 @@
 	link = { eu4 = 694 eu4 = 2762 eu4 = 4084 eu4 = 2927 eu4 = 4051 eu4 = 2766 eu4 = 748 eu4 = 1214 v2 = 402 } # Eu, Aumale, Dieppe, Amiens, Saint-Just, Beauvais, Clermont-Oise, Noyon -> Amiens
 	link = { eu4 = 2509 eu4 = 5702 eu4 = 314 eu4 = 918 v2 = 399 } # Lille, Béthune, Saint-Pol, Artois -> Lille
 	link = { eu4 = 934 eu4 = 4085 eu4 = 142 eu4 = 1957 eu4 = 1901 eu4 = 1256 v2 = 400 } # Dunkirk, Saint-Omer, Calais, Boulogne, Ponthieu, Montreuil -> Dunkirk
-	link = { eu4 = 2343 eu4 = 2328 eu4 = 2579 eu4 = 2582 eu4 = 2569 eu4 = 2891 eu4 = 2990 eu4 = 985 eu4 = 2567 eu4 = 1770 eu4 = 2577 eu4 = 4792 v2 = 432 } # Pontarlier, Morteau, Vesoul, Dôle, Salins, Arbois, Besançon, Baume, Maîche, Montbéliard, Luxeuil, Romainmôtier -> Besancon
+	link = { eu4 = 2343 eu4 = 2328 eu4 = 2579 eu4 = 2582 eu4 = 2569 eu4 = 2891 eu4 = 2990 eu4 = 985 eu4 = 2567 eu4 = 1770 eu4 = 2577 v2 = 432 } # Pontarlier, Morteau, Vesoul, Dôle, Salins, Arbois, Besançon, Baume, Maîche, Montbéliard, Luxeuil -> Besancon
 	link = { eu4 = 2565 eu4 = 427 eu4 = 1965 eu4 = 2793 eu4 = 4045 eu4 = 2902 eu4 = 982 eu4 = 1159 v2 = 433 } # Bresse, Dombes, Bugey, Orgelet, Chalon, Arlay, Saint-Claude, Gex -> Lons
 	link = { eu4 = 541 eu4 = 532 eu4 = 2211 eu4 = 544 eu4 = 970 v2 = 451 } # Lyonnais, Annonay, Albon, Viennois, Colombier -> Lyon
 	link = { eu4 = 2058 eu4 = 2231 eu4 = 1291 eu4 = 486 eu4 = 1939 eu4 = 2092 v2 = 453 } # Valence, Montélimar, Diois, Champier, Privas, Vivarais -> Valence
@@ -819,15 +818,15 @@
 	link = { eu4 = 2203 eu4 = 2215 eu4 = 15 eu4 = 2383 v2 = 383 } # Hunsigo, Fivelgo, Oldambt, Groningen -> Groningen
 	link = { eu4 = 2696 eu4 = 2746 eu4 = 1864 eu4 = 2204 eu4 = 462 v2 = 385 } # Ostergo, Westergo, Wexalia, Humsterland, Bornego -> Leeuwarden
 	link = { comment = "Switzerland" }
-	link = { eu4 = 2270 eu4 = 1142 eu4 = 211 eu4 = 175 eu4 = 4802 eu4 = 4801 eu4 = 196 eu4 = 173 eu4 = 2987 eu4 = 1873 eu4 = 4128 eu4 = 4864 eu4 = 2921 eu4 = 4881 v2 = 611 } # Mesolcina, Disentis, Ilanz, Thusis, Splügen, Savognin, Prättigau, Chur, Sargans, Zuoz, Poschiavo, Tarasp, Vaduz, Rhäzüns -> Chur
-	link = { eu4 = 1134 eu4 = 4794 eu4 = 4796 eu4 = 2257 eu4 = 2255 eu4 = 1124 eu4 = 2254 eu4 = 1870 eu4 = 1137 eu4 = 1771 eu4 = 2259 eu4 = 2246 eu4 = 840 eu4 = 4803 eu4 = 2248 v2 = 603 } # Rapperswil, Grüningen, Weesen, Winterthur, Kyburg, Frauenfeld, Romanshorn, Altkonstanz, Schaffhausen, Sankt Gallen, Appenzell, Toggenburg, Rheintal, Werdenberg, Baths -> Zurich
+	link = { eu4 = 1142 eu4 = 211 eu4 = 175 eu4 = 4801 eu4 = 196 eu4 = 173 eu4 = 2987 eu4 = 1873 eu4 = 4128 eu4 = 4864 eu4 = 4881 eu4 = 4802 v2 = 611 } # Disentis, Ilanz, Thusis, Savognin, Prättigau, Chur, Sargans, Zuoz, Poschiavo, Tarasp, Rhäzüns, Splügen -> Chur
+	link = { eu4 = 1134 eu4 = 4794 eu4 = 4796 eu4 = 2257 eu4 = 2255 eu4 = 1124 eu4 = 2254 eu4 = 1137 eu4 = 1771 eu4 = 2259 eu4 = 2246 eu4 = 840 eu4 = 4803 eu4 = 2248 v2 = 603 } # Rapperswil, Grüningen, Weesen, Winterthur, Kyburg, Frauenfeld, Romanshorn, Schaffhausen, Sankt Gallen, Appenzell, Toggenburg, Rheintal, Werdenberg, Baths -> Zurich
 	link = { eu4 = 2237 eu4 = 1112 eu4 = 1115 eu4 = 2241 eu4 = 1118 eu4 = 1120 eu4 = 4793 eu4 = 1117 eu4 = 1131 eu4 = 2260 eu4 = 4795 eu4 = 1119 eu4 = 1123 eu4 = 1116 v2 = 606 } # Lucerne, Entlebuch, Unterwalden, Engelberg, Urserental, Uri, Willisau, Aargau, Schwyz, Glarus, Einsiedeln, Zug, Zürich, Muri -> Lucern
 	link = { eu4 = 2281 eu4 = 1150 eu4 = 1130 eu4 = 2278 eu4 = 1148 eu4 = 1154 eu4 = 1155 eu4 = 1092 v2 = 605 } # Bern, Thun, Spiez, Unterseen, Burgdorf, Solothurn, Neuveville, Fribourg -> Bern
 	link = { eu4 = 2279 eu4 = 1156 eu4 = 2276 eu4 = 2275 eu4 = 1759 eu4 = 2245 v2 = 604 } # Jura Bernois, Porrentruy, Buchsgau, Liestal, Basel, Fricktal -> Basel
 	link = { eu4 = 165 eu4 = 1146 v2 = 608 } # Neuchâtel, Grandson -> Neuchatel
-	link = { eu4 = 910 eu4 = 1157 eu4 = 4791 eu4 = 2288 eu4 = 2475 eu4 = 2284 eu4 = 1249 eu4 = 2273 eu4 = 2280 eu4 = 1160 eu4 = 1158 eu4 = 210 v2 = 607 } # Nyon, Vaud, Aubonne, Lausanne, Échallens, Gruyères, Aigle, Saanen, Marly, Monthey, Avenches, Genève -> Geneva
+	link = { eu4 = 910 eu4 = 1157 eu4 = 4791 eu4 = 2288 eu4 = 2475 eu4 = 2284 eu4 = 1249 eu4 = 2273 eu4 = 2280 eu4 = 1160 eu4 = 1158 eu4 = 210 eu4 = 4792 v2 = 607 } # Nyon, Vaud, Aubonne, Lausanne, Échallens, Gruyères, Aigle, Saanen, Marly, Monthey, Avenches, Genève, Romainmôtier -> Geneva
 	link = { eu4 = 1239 eu4 = 1141 eu4 = 213 eu4 = 214 v2 = 609 } # Visp, Zermatt, Sion, Saint-Maurice -> Sitten
-	link = { eu4 = 2291 eu4 = 1136 eu4 = 4800 v2 = 2568 } # Lugano, Locarno, Bellinzona -> Lugano
+	link = { eu4 = 2291 eu4 = 1136 eu4 = 4800 eu4 = 2270 v2 = 2568 } # Lugano, Locarno, Bellinzona, Mesolcina -> Lugano
 	link = { comment = "Italy" }
 	link = { eu4 = 1089 eu4 = 2095 eu4 = 796 eu4 = 555 eu4 = 4508 eu4 = 4507 eu4 = 2091 eu4 = 2097 v2 = 764 } # Avola, Rausa, Caltagirone, Siracusa, Piazza, Terranova, Caltanissetta, Agrigento -> Catania
 	link = { eu4 = 107 eu4 = 1988 eu4 = 4551 v2 = 727 } # Bergamo, Crema, Lovere -> Bergamo

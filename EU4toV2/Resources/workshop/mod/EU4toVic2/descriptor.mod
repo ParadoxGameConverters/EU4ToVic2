@@ -1,4 +1,4 @@
-version="1.0T"
+version="1.0U"
 tags={
 	"Alternative History"
 	"Converted From CKII"
@@ -6,5 +6,5 @@ tags={
 	"Utilities"
 }
 name="EU4 to Vic2 Converter"
-supported_version="1.32.*"
+supported_version="1.33.*"
 remote_file_id="392447667"
