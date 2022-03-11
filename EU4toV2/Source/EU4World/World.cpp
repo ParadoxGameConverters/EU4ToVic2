@@ -66,12 +66,13 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commo
 
 	clearRegisteredKeywords();
 	// With mods loaded we can init stuff that requires them.
-	cultureGroupsMapper = std::make_shared<mappers::CultureGroups>();
+	cultureGroupsMapper = std::make_shared<mappers::CultureGroupsManager>();
 	cultureGroupsMapper->initForEU4();
 	buildingTypes = std::make_unique<mappers::Buildings>();
 	unitTypeMapper.initUnitTypeMapper();
 	if (theConfiguration.isVN())
 		theConfiguration.setLastEU4Date(date("1836.1.1"));
+	EU4localization.initializeFromEU4Installation();
 	Log(LogLevel::Progress) << "16 %";
 
 	Log(LogLevel::Info) << "*** Building world ***";
@@ -206,10 +207,10 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		const auto modsList = commonItems::getStrings(theStream);
 		Log(LogLevel::Info) << "<> Savegame claims " << modsList.size() << " mods used:";
 		Mods mods;
-		for (const auto& modPath: modsList)
+		for (const auto& modName: modsList)
 		{
-			Log(LogLevel::Info) << "---> " << modPath;
-			mods.emplace_back(Mod("", modPath));
+			Log(LogLevel::Info) << "---> " << modName;
+			mods.emplace_back(Mod(modName, ""));
 		}
 		commonItems::ModLoader modLoader;
 		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
@@ -678,9 +679,18 @@ void EU4::World::readCommonCountriesFile(std::istream& in, const std::string& ro
 				auto fullFilename = rootPath + "/common/" + fileName;
 				auto localFileName = trimPath(fullFilename);
 				if (commonItems::DoesFileExist(fullFilename))
+				{
 					country->readFromCommonCountry(localFileName, fullFilename);
+				}
 				else
-					Log(LogLevel::Warning) << "Where is country file for " << tag << ": " << fullFilename << "?";
+				{
+					// Try in vanilla if nothing in mods.
+					fullFilename = theConfiguration.getEU4Path() + "/common/" + fileName;
+					if (commonItems::DoesFileExist(fullFilename))
+						country->readFromCommonCountry(localFileName, fullFilename);
+					else
+						Log(LogLevel::Warning) << "Where is country file for " << tag << ": " << fullFilename << "?";
+				}
 			}
 		}
 	}
@@ -688,16 +698,14 @@ void EU4::World::readCommonCountriesFile(std::istream& in, const std::string& ro
 
 void EU4::World::setLocalizations()
 {
-	const EU4Localization localization;
-
 	for (const auto& theCountry: theCountries)
 	{
-		const auto& nameLocalizations = localization.getTextInEachLanguage(theCountry.second->getTag());
+		const auto& nameLocalizations = EU4localization.getTextInEachLanguage(theCountry.second->getTag());
 		if (nameLocalizations)
 			for (const auto& [language, name]: *nameLocalizations)
 				theCountry.second->setLocalizationName(language, name);
 
-		const auto& adjectiveLocalizations = localization.getTextInEachLanguage(theCountry.second->getTag() + "_ADJ");
+		const auto& adjectiveLocalizations = EU4localization.getTextInEachLanguage(theCountry.second->getTag() + "_ADJ");
 		if (adjectiveLocalizations)
 			for (const auto& [language, adjective]: *adjectiveLocalizations)
 				theCountry.second->setLocalizationAdjective(language, adjective);

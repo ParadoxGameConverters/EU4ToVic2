@@ -2,7 +2,7 @@
 #include "CommonRegexes.h"
 #include "CountryMapping.h"
 #include "CultureGroups/CultureGroup.h"
-#include "CultureGroups/CultureGroups.h"
+#include "CultureGroups/CultureGroupsManager.h"
 #include "EU4World/Country/EU4Country.h"
 #include "Log.h"
 #include "ParserHelpers.h"
@@ -58,7 +58,7 @@ void mappers::CountryMappings::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-void mappers::CountryMappings::createMappings(const std::shared_ptr<CultureGroups>& theCultureGroupsMapper,
+void mappers::CountryMappings::createMappings(const std::shared_ptr<CultureGroupsManager>& theCultureGroupsMapper,
 	 const std::map<std::string, std::shared_ptr<EU4::Country>>& eu4Countries,
 	 const ProvinceMapper& provinceMapper)
 {

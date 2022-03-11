@@ -28,7 +28,7 @@ western = {
 	# Germanic
 	north_german swiss south_german german overnissian boehmisch
 	# Germans with boats
-	kleinvenedig amerikaner sudreicher schwarzreicher wandernorse boer nieuwereld zuidelijk geheimnisdeutsch maximilianish hunsrik newswiss hilterian surinamian mauritsstadtian grootdesseyn
+	kleinvenedig amerikaner sudreicher schwarzreicher wandernorse boer nieuwereld zuidelijk geheimnisdeutsch maximilianish hunsrik newswiss hilterian surinamian mauritsstadtian grootdesseyn jerusalemer
 	# Dutch
 	dutch flemish
 	# Scandinavian
@@ -36,15 +36,15 @@ western = {
 	# Varangian
 	varangian_american varangian_australian varangian_african varangian nehwaustronijaz
 	# British
-	yankee dixie anglo_canadian australian texan falklander anglo_african english scottish anglo_saxon pictish british welsh irish redwoodian guyanese incacunapic meashighcaw
+	yankee dixie anglo_canadian australian texan falklander anglo_african english scottish anglo_saxon pictish british welsh irish redwoodian guyanese incacunapic meashighcaw arvorigeg dramor
 	# Celtic
 	belgian gaulish celtiberian noric celtic_american celtic_african celtic_australian alpine y_wladfan nova_scotian
 	# Roman
 	foederatus afer australus brithenig gaul laessin wenedyk spanish xliponian latin graecus pannonian britannian euxinian algonquish calusan thulean arcansian mesican garanian aravacian cetuan harpeian
 	# Italian
-	italoamericano australiano africano lombard maltese north_italian south_italian all_italian sabellian old_ligurian venetic siculian lepontic morlach old_italian_american old_italian_african old_italian_australian etrurian lemnian rhaetian neotyrrhenian tyrrhafrican tyrrhaustralian beltramian vespuccian ceian deagostinian cabottian trattoloyan garibaldine tounensois
+	italoamericano australiano africano lombard maltese north_italian south_italian all_italian sabellian old_ligurian venetic siculian lepontic morlach old_italian_american old_italian_african old_italian_australian etrurian lemnian rhaetian neotyrrhenian tyrrhafrican tyrrhaustralian beltramian vespuccian ceian deagostinian cabottian trattoloyan garibaldine tounensois oltremare
 	# Iberian 
-	mexican caribeno platinean north_andean south_andean brazilian central_american americano sureno morado spanish andalucian visigothic galician catalan portuguese basque suebi
+	mexican caribeno platinean north_andean south_andean brazilian central_american americano sureno morado spanish andalucian visigothic galician catalan portuguese basque suebi ultramar
 	# French
 	french_canadian nouvellien australienne africaine french breton occitan wallonian frankish outremer picard antartique guillaumois guiscard
 	# Finnish	
@@ -80,7 +80,7 @@ eastern = {
 	# East Slavic
 	novvymir yuzhny smugly russian ukrainian byelorussian ukrainian western_slavic ugric alaskan kholodnovoynsky
 	# Carpathian
-	ujvilag delian fekete hungarian lumenoua sudic negru aromanian romanian szekely
+	ujvilag delian fekete hungarian lumenoua sudic negru aromanian romanian szekely kulfoldi
 	# Greek-ish
 	neokosmi notios mavro greek magnagreek georgian armenian yenidun guney esmer north_caucasian alan dytic_american dytic_australian dytic_african prettanian adelphic spaniolic galatian alexandrine salinatorian
 	# Slave
@@ -135,7 +135,7 @@ indian = {
 	# Aryan
 	assamese bengali bihari manipuri nepali oriya sinhala gujarati marathi sindi rajput
 	# Hindustani
-	avadhi kanauji panjabi kashmiri
+	avadhi kanauji panjabi kashmiri hindustani_proper
 	# Dravidian
 	kannada malayalam tamil telegu asian_minor
 	}
@@ -242,7 +242,7 @@ mesoamerican = {
 	industry = 0
 	cultures = {
 	# Central american
-	zapotec tarascan mayan nahua
+	zapotec tarascan mayan nahua neteotoquiliztlitekatl
 	}
 }
 
@@ -292,7 +292,7 @@ high_american = {
 	literacy = 8
 	cultures = {
 	# Special
-	undead alien 
+	undead alien yankuisemanatekatl
 	}
 }
 

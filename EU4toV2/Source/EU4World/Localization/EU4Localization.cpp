@@ -7,14 +7,16 @@
 #include <vector>
 namespace fs = std::filesystem;
 
-EU4::EU4Localization::EU4Localization()
+void EU4::EU4Localization::initializeFromEU4Installation()
 {
+	Log(LogLevel::Info) << "-> Reading Words.";
 	readFromAllFilesInFolder(theConfiguration.getEU4Path() + "/localisation");
 	for (const auto& mod: theConfiguration.getMods())
 	{
 		readFromAllFilesInFolder(mod.path + "/localisation");
 		readFromAllFilesInFolder(mod.path + "/localisation/replace");
 	}
+	Log(LogLevel::Info) << "-> " << localizations.size() << " Important Words read.";
 }
 
 void EU4::EU4Localization::readFromAllFilesInFolder(const std::string& folderPath)

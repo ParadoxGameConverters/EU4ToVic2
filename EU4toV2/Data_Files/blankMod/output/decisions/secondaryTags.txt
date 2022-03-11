@@ -196,6 +196,7 @@ political_decisions = {
 		}
 	}
 	tur_to_ana = {
+	picture = form_byzantine_empire
 		potential = {
 			tag = TUR
 			NOT = {
@@ -218,6 +219,81 @@ political_decisions = {
 		effect = {
 			all_core = { remove_core = TUR add_core = ANA }
 			change_tag = ANA
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	create_rumelia = {
+		picture = establish_the_dar_al_funun
+		potential = {
+			OR = {
+				tag = TUR
+				AND = {
+					NOT = { exists = TUR }
+					is_greater_power = yes
+				}
+			}
+			NOT = { is_culture_group = south_slavic }
+			NOT = { is_culture_group = greek }
+			NOT = { tag = ALI } #Reasoning
+			NOT = { tag = RME }
+			NOT = { tag = BYZ }
+			exists = BUL
+			NOT = { exists = YUG }
+			NOT = { exists = RML }
+			NOT = { has_global_flag = rumelia }
+			TUR_809 = { owned_by = THIS }
+			war = no
+			OR = {
+				NOT = { accepted_culture = bulgarian }
+				has_recently_lost_war = yes
+			}
+		}	
+		allow = {
+			NOT = { accepted_culture = bulgarian }
+			TUR_809 = { owned_by = THIS }
+			owns = 815 #Plovdiv
+		}
+		
+		effect = {
+			set_global_flag = rumelia
+			any_owned = { limit = { is_core = BUL } remove_core = BUL add_core = RML }
+			release = RML
+			create_vassal = RML
+			diplomatic_influence = {
+				who = RML
+				value = 200
+			}
+			RML = {
+				relation = {
+					who = FROM
+					value = 100
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	independent_rumelia = {
+		picture = protect_eastern_christians
+		potential = {
+			tag = RML
+			has_global_flag = rumelia
+			ai = yes
+		}	
+		allow = {
+			war = no
+			BUL = { war = no }
+			is_independant = yes
+		}
+		
+		effect = {
+			prestige = 10
+			clr_global_flag = rumelia
+			any_owned = { limit = { is_core = RML } remove_core = RML add_core = BUL }
+			BUL = { inherit = THIS }
 		}
 		ai_will_do = {
 			factor = 1

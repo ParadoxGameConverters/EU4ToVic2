@@ -45,17 +45,6 @@ requiredFolder = {
 	searchPath = "mod"
 }
 requiredFile = {
-	name = converterExe
-	displayName = EU4FILE
-	tooltip = EU4FILETIP
-	mandatory = true
-	outputtable = false
-	searchPathType = converterFolder
-	searchPath = "EU4toVic2"
-	allowedExtension = "*.exe"
-	fileName = "EU4ToVic2Converter.exe"
-}
-requiredFile = {
 	name = SaveGame
 	displayName = EU4SAVE
 	tooltip = EU4SAVETIP

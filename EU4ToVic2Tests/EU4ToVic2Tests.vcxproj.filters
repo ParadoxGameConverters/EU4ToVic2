@@ -506,9 +506,6 @@
     <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroup.cpp">
       <Filter>ConverterFiles\Mappers\CultureGroups</Filter>
     </ClCompile>
-    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroups.cpp">
-      <Filter>ConverterFiles\Mappers\CultureGroups</Filter>
-    </ClCompile>
     <ClCompile Include="..\EU4toV2\Source\EU4World\Country\Countries.cpp">
       <Filter>ConverterFiles\EU4World\Country</Filter>
     </ClCompile>
@@ -778,6 +775,21 @@
     </ClCompile>
     <ClCompile Include="MapperTests\VNColonialMapper\VNColonialMappingTests.cpp">
       <Filter>MapperTests\VNColonialMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroups\CultureGroupsManager.cpp">
+      <Filter>ConverterFiles\Mappers\CultureGroups</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroupsMapper\CultureGroupsMapper.cpp">
+      <Filter>ConverterFiles\Mappers\CultureGroupsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EU4toV2\Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.cpp">
+      <Filter>ConverterFiles\Mappers\CultureGroupsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureGroupsMapper\CultureGroupsMapperTests.cpp">
+      <Filter>MapperTests\CultureGroupsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureGroupsMapper\CultureGroupsMappingTests.cpp">
+      <Filter>MapperTests\CultureGroupsMapper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1143,6 +1155,12 @@
     </Filter>
     <Filter Include="MapperTests\VNColonialMapper">
       <UniqueIdentifier>{d1e0eb22-fcd4-42b1-a6db-4a2220f167f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\Mappers\CultureGroupsMapper">
+      <UniqueIdentifier>{b8dd2100-814e-4b70-a1b9-077577de9be8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\CultureGroupsMapper">
+      <UniqueIdentifier>{78f32389-075d-46fb-8c31-eb1aab1f5b86}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

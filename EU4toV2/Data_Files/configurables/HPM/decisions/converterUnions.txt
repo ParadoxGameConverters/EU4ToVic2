@@ -174,25 +174,25 @@ political_decisions = {
 							AND = {
 								continent = africa
 								NOT = {
-									state_id = 1704 #Tlemcen
-									state_id = 1708 #Constantine
-									state_id = 1714 #Western Sahara
-									state_id = 1718 #Sahara
-									state_id = 1746 #Sinai
-									state_id = 1750 #Lower Egypt
-									state_id = 1753 #Matruh
-									state_id = 1754 #Libya
-									state_id = 1758 #Egyptian Desert
-									state_id = 1762 #Middle Egypt
-									state_id = 1771 #Upper Egypt
-									state_id = 1700 #Algiers
-									state_id = 1683 #Taza
-									state_id = 1686 #Fez
-									state_id = 1688 #al-Rif
-									state_id = 1693 #Morocco
-									state_id = 1696 #West Morocco
-									state_id = 1739 #Fezzan
-									state_id = 1743 #Tripoli
+									region = EGY_1755 # Sinai
+									region = EGY_1745 # Cairo
+									region = EGY_1762 # Middle Egypt
+									region = EGY_1771 # Upper Egypt
+									region = EGY_1758 # Western Desert
+									region = TRI_1735 # Cyrenaica
+									region = TRI_1731 # Tripolitania
+									region = TUN_1726 # Tunisia
+									region = FRA_1700 # Algiers
+									region = ALD_1708 # Constantine
+									region = ALD_1704 # Oran
+									region = ALD_1713 # North Central Sahara
+									region = MOR_1688 # al Rif
+									region = MOR_1683 # Taza
+									region = MOR_1686 # Fez
+									region = MOR_1693 # Marrakesh
+									region = MOR_1694 # Agadir
+									region = ALD_1718 # Sahara
+									region = MOR_1696 # Western Sahara
 								}
 							}
 						}
@@ -2658,9 +2658,9 @@ political_decisions = {
 					NOT = { exists = VEN }
 					NOT = { exists = LOM }
 					OR = {
-						capital_scope = { state_id = 726 }
-						capital_scope = { state_id = 729 }
-						capital_scope = { state_id = 734 }
+						capital_scope = { region = 726 } #Lombardia
+						capital_scope = { region = 729 } #Venetia
+						capital_scope = { region = 734 } #South Tirol
 					}
 				}
 			}
@@ -2713,9 +2713,9 @@ political_decisions = {
 				exists = LOM
 			}
 			NOT = {
-				capital_scope = { state_id = 726 }
-				capital_scope = { state_id = 729 }
-				capital_scope = { state_id = 734 }
+				capital_scope = { region = 726 } #Lombardia
+				capital_scope = { region = 729 } #Venetia
+				capital_scope = { region = 734 } #South Tirol
 			}
 			NOT = {
 				primary_culture = north_italian
@@ -3025,7 +3025,10 @@ political_decisions = {
 			is_greater_power = no
 			primary_culture = bedouin
 			capital_scope = {
-				state_id = 1173 #Yemen
+				OR = {
+					region = YEM_1412 #Aden
+					region = YEM_1178 #Sana'a
+				}
 			}
 			NOT = {
 				exists = YEM

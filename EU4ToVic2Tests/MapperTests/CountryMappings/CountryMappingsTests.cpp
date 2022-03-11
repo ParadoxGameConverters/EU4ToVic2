@@ -1,7 +1,7 @@
 #include "Configuration.h"
 #include "Country/Countries.h"
 #include "CountryMappings/CountryMappings.h"
-#include "CultureGroups/CultureGroups.h"
+#include "CultureGroups/CultureGroupsManager.h"
 #include "ProvinceMappings/ProvinceMapper.h"
 #include "gtest/gtest.h"
 
@@ -28,7 +28,7 @@ TEST(Mappers_CountryMappingsTests, trivialLinksCanBeMapped)
 	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
 	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroupsManager>(cgInput);
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
 	// Trivial, right?
@@ -62,7 +62,7 @@ TEST(Mappers_CountryMappingsTests, titleNameGuesstimatesCanBeMapped)
 	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
 	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroupsManager>(cgInput);
 
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
@@ -93,7 +93,7 @@ TEST(Mappers_CountryMappingsTests, unmatchedLinksMapToDynamicTags)
 	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
 	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroupsManager>(cgInput);
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
 	const auto& match = mapper.getV2Tag("X89");
@@ -127,7 +127,7 @@ TEST(Mappers_CountryMappingsTests, colonialReplacementsCanBeDefined)
 
 	std::stringstream cgInput;
 	cgInput << "british = { english }";
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroupsManager>(cgInput);
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
 	const auto& match = mapper.getV2Tag("C01");
@@ -158,7 +158,7 @@ TEST(Mappers_CountryMappingsTests, V2GetterReturnsTagForMappedTags)
 	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
 	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroupsManager>(cgInput);
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
 	ASSERT_EQ("DEN", *mapper.getV2Tag("SWE"));
@@ -187,7 +187,7 @@ TEST(Mappers_CountryMappingsTests, V2GetterReturnsNulloptForUnmappedTags)
 	mappers::ProvinceMapper provinceMapper(provinceInput, colonialInput, testConfiguration);
 
 	std::stringstream cgInput;
-	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroups>(cgInput);
+	auto cultureGroupsMapper = std::make_shared<mappers::CultureGroupsManager>(cgInput);
 	mapper.createMappings(cultureGroupsMapper, countries.getTheCountries(), provinceMapper);
 
 	ASSERT_EQ(std::nullopt, mapper.getV2Tag("DEN"));

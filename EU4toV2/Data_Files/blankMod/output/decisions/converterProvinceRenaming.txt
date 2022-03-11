@@ -1,637 +1,11 @@
 political_decisions = {
-	## renaming of provinces based on culture
-	greek_830 = {
-		image = form_byzantine_empire
-		potential = {
-			OR = {
-				culture = greek
-				is_culture_group = italian
-				is_culture_group = romantic
-				tag = SPQ
-				tag = BYZ
-			}
-			NOT = { has_global_flag = 830_be_greek }
-			830 = { #Dedeagatch
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		allow = {
-			830 = { #Dedeagatch
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			830 = {
-				change_province_name = "Alexandroupolis"
-			}
-			set_global_flag = 830_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	turk_830 = {
-		image = tanzimat_reforms
-		potential = {
-			OR = {
-				is_culture_group = turko_semitic
-				is_culture_group = arab
-			}
-			has_global_flag = 830_be_greek
-		}
-		allow = {
-			830 = { #Dedeagatch
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			830 = {
-				change_province_name = "Dedeag’aç"
-			}
-			clr_global_flag = 830_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	greek_thrace = {
-		image = form_byzantine_empire
-		potential = {
-			OR = {
-				culture = greek
-				is_culture_group = italian
-				is_culture_group = romantic
-				tag = SPQ
-				tag = BYZ
-			}
-			NOT = { has_global_flag = thrace_be_greek }
-			TUR_1860 = { #Thrace
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		allow = {
-			TUR_1860 = { #Thrace
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			clr_global_flag = thrace_be_slav
-			clr_global_flag = thrace_be_teuton
-			858 = {
-				change_province_name = "Saranta Ekklisies"
-			}
-			860 = {
-				change_province_name = "Constantinopolis"
-			}
-			861 = {
-				change_province_name = "Scutarion"
-			}
-			set_global_flag = thrace_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	slav_thrace = {
-		potential = {
-			OR = {
-				is_culture_group = east_slavic
-				is_culture_group = south_slavic
-				is_culture_group = czecho_slovak_culture_group
-				is_culture_group = polish_culture_group
-			}
-			NOT = { has_global_flag = thrace_be_slav }
-			TUR_1860 = { #Thrace
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		allow = {
-			TUR_1860 = { #Thrace
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			858 = {
-				change_province_name = "Lozengrad"
-			}
-			860 = {
-				change_province_name = "Czargrad"
-			}
-			set_global_flag = thrace_be_slav
-			clr_global_flag = thrace_be_greek
-			clr_global_flag = thrace_be_teuton
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	teuton_thrace = {
-		potential = {
-			OR = {
-				culture = greek
-				is_culture_group = italian
-				tag = SPQ
-				tag = BYZ
-			}
-			NOT = { has_global_flag = thrace_be_teuton }
-			TUR_1860 = { #Thrace
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		allow = {
-			TUR_1860 = { #Thrace
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			clr_global_flag = thrace_be_slav
-			clr_global_flag = thrace_be_greek
-			858 = {
-				change_province_name = "Vierzig Kirchen"
-			}
-			860 = {
-				change_province_name = "Mikligarðr"
-			}
-			set_global_flag = thrace_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	turk_thrace = {
-		image = tanzimat_reforms
-		potential = {
-			OR = {
-				is_culture_group = turko_semitic
-				is_culture_group = arab
-			}
-			OR = {
-				has_global_flag = thrace_be_greek
-				has_global_flag = thrace_be_slav
-				has_global_flag = thrace_be_teuton
-			}
-		}
-		allow = {
-			TUR_1860 = { #Thrace
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			858 = {
-				change_province_name = "Kïrklareli"
-			}
-			860 = {
-				change_province_name = "Istanbul"
-			}
-			861 = {
-				change_province_name = "Üsküdar"
-			}
-			clr_global_flag = thrace_be_greek
-			clr_global_flag = thrace_be_slav
-			clr_global_flag = thrace_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	greek_hudav = {
-		image = form_byzantine_empire
-		potential = {
-			OR = {
-				culture = greek
-				is_culture_group = italian
-				is_culture_group = romantic
-				tag = SPQ
-				tag = BYZ
-			}
-			NOT = { has_global_flag = hudav_be_greek }
-			TUR_863 = { #Hudavendigar
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		allow = {
-			TUR_863 = { #Hudavendigar
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			862 = {
-				change_province_name = "Nikomedia"
-				state_scope = {
-					change_region_name = "Prusa"
-				}
-			}
-			866 = {
-				change_province_name = "Nikopolis"
-			}
-			867 = {
-				change_province_name = "Cotyaeum"
-			}
-			868 = {
-				change_province_name = "Dorylaeum"
-			}
-			set_global_flag = hudav_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	turk_hudav = {
-		image = tanzimat_reforms
-		potential = {
-			OR = {
-				is_culture_group = turko_semitic
-				is_culture_group = arab
-			}
-			has_global_flag = hudav_be_greek
-		}
-		allow = {
-			TUR_863 = { #Hudavendigar
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			862 = {
-				change_province_name = "Izmit"
-				state_scope = {
-					change_region_name = "Hüdavendigâr"
-				}
-			}
-			866 = {
-				change_province_name = "Afyon"
-			}
-			867 = {
-				change_province_name = "Kütahya"
-			}
-			868 = {
-				change_province_name = "Eskišehir"
-			}
-			clr_global_flag = hudav_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	greek_aydin = {
-		image = form_byzantine_empire
-		potential = {
-			OR = {
-				culture = greek
-				is_culture_group = italian
-				is_culture_group = romantic
-				tag = SPQ
-				tag = BYZ
-			}
-			NOT = { has_global_flag = aydin_be_greek }
-			TUR_869 = { #Aydin
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		allow = {
-			TUR_869 = { #Aydin
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			865 = {
-				change_province_name = "Dardanellion"
-				state_scope = {
-					change_region_name = "Tralles"
-				}
-			}
-			869 = {
-				change_province_name = "Smyrne"
-			}
-			set_global_flag = aydin_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	turk_aydin = {
-		image = tanzimat_reforms
-		potential = {
-			OR = {
-				is_culture_group = turko_semitic
-				is_culture_group = arab
-			}
-			has_global_flag = aydin_be_greek
-		}
-		allow = {
-			TUR_869 = { #Aydin
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			865 = {
-				change_province_name = "Çanakkale"
-				state_scope = {
-					change_region_name = "Aydïn"
-				}
-			}
-			869 = {
-				change_province_name = "Izmir"
-			}
-			clr_global_flag = aydin_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	greek_konya = {
-		image = form_byzantine_empire
-		potential = {
-			OR = {
-				culture = greek
-				is_culture_group = italian
-				is_culture_group = romantic
-				tag = SPQ
-				tag = BYZ
-			}
-			NOT = { has_global_flag = konya_be_greek }
-			TUR_873 = { #Konya
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		allow = {
-			TUR_873 = { #Konya
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			873 = {
-				change_province_name = "Ikonion"
-				state_scope = {
-					change_region_name = "Ikonion"
-				}
-			}
-			874 = {
-				change_province_name = "Polydorion"
-			}
-			875 = {
-				change_province_name = "Attalia"
-			}
-			set_global_flag = konya_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	turk_konya = {
-		image = tanzimat_reforms
-		potential = {
-			OR = {
-				is_culture_group = turko_semitic
-				is_culture_group = arab
-			}
-			has_global_flag = konya_be_greek
-		}
-		allow = {
-			TUR_873 = { #Konya
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			873 = {
-				change_province_name = "Konya"
-				state_scope = {
-					change_region_name = "Konya"
-				}
-			}
-			874 = {
-				change_province_name = "Burdur"
-			}
-			875 = {
-				change_province_name = "Antalya"
-			}
-			clr_global_flag = konya_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	greek_ankara = {
-		image = form_byzantine_empire
-		potential = {
-			OR = {
-				culture = greek
-				is_culture_group = italian
-				is_culture_group = romantic
-				tag = SPQ
-				tag = BYZ
-			}
-			NOT = { has_global_flag = ankara_be_greek }
-			NOT = { tag = PAP }
-			TUR_876 = { #Ankara
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		allow = {
-			TUR_876 = { #Ankara
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			876 = {
-				change_province_name = "Ancyra"
-				state_scope = {
-					change_region_name = "Ancyra and Antioch"
-				}
-			}
-			878 = {
-				change_province_name = "Caesarea"
-			}
-			894 = {
-				change_province_name = "Antioch"
-			}
-			set_global_flag = ankara_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	turk_ankara = {
-		image = tanzimat_reforms
-		potential = {
-			OR = {
-				is_culture_group = turko_semitic
-				is_culture_group = arab
-			}
-			has_global_flag = ankara_be_greek
-		}
-		allow = {
-			NOT = { tag = EGY }
-			TUR_876 = { #Ankara
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-					owner = { tag = EGY }
-				}
-			}
-		}
-		effect = {
-			876 = {
-				change_province_name = "Ankara"
-				state_scope = {
-					change_region_name = "Ankara and Adana"
-				}
-			}
-			878 = {
-				change_province_name = "Kayseri"
-			}
-			894 = {
-				change_province_name = "Adana"
-			}
-			clr_global_flag = ankara_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	greek_trabzon = {
-		image = form_byzantine_empire
-		potential = {
-			OR = {
-				culture = greek
-				is_culture_group = italian
-				is_culture_group = romantic
-				tag = SPQ
-				tag = BYZ
-			}
-			NOT = { has_global_flag = trabzon_be_greek }
-			TUR_884 = { #Trabzon
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		allow = {
-			TUR_884 = { #Trabzon
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			879 = {
-				change_province_name = "Sebastia"
-			}
-			887 = {
-				change_province_name = "Theodosiopolis"
-			}
-			888 = {
-				change_province_name = "Acisilene"
-			}
-			set_global_flag = trabzon_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	turk_trabzon = {
-		image = tanzimat_reforms
-		potential = {
-			OR = {
-				is_culture_group = turko_semitic
-				is_culture_group = arab
-			}
-			has_global_flag = trabzon_be_greek
-		}
-		allow = {
-			TUR_884 = { #Trabzon
-				OR = {
-					owned_by = THIS
-					owner = { in_sphere = THIS }
-				}
-			}
-		}
-		effect = {
-			879 = {
-				change_province_name = "Sivas"
-			}
-			887 = {
-				change_province_name = "Erzurum"
-			}
-			888 = {
-				change_province_name = "Erzincan"
-			}
-			clr_global_flag = trabzon_be_greek
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
 	### Decisions to change New York City name if ahistorical
 ##################
 # 70 - Prince Edward Island/Epekwitk
 ##################
 
 	german_70 = {
+		picture = form_south_german_confederation
 		potential = {
 			OR = {
 				is_culture_group = germanic
@@ -660,6 +34,7 @@ political_decisions = {
 		}
 	}
 	dutch_70 = {
+		picture = orange_river_convention
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -684,6 +59,7 @@ political_decisions = {
 		}
 	}
 	nordic_70 = {
+		picture = form_scandinavia
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -711,6 +87,7 @@ political_decisions = {
 		}
 	}
 	english_70 = { #Vanilla, but we changed it
+		picture = crown_empress_of_india
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -739,6 +116,7 @@ political_decisions = {
 		}
 	}
 	italian_70 = {
+		picture = italia_irredenta
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -763,6 +141,7 @@ political_decisions = {
 		}
 	}
 	spanish_70 = {
+		picture = form_gran_colombia
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -790,6 +169,7 @@ political_decisions = {
 		}
 	}
 	french_70 = {
+		picture = build_the_eiffel_tower
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -814,6 +194,7 @@ political_decisions = {
 		}
 	}
 	arab_70 = {
+		picture = brazzas_expedition
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -842,6 +223,7 @@ political_decisions = {
 		}
 	}
 	slavic_70 = {
+		picture = protect_eastern_christians
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -898,6 +280,7 @@ political_decisions = {
 		}
 	}
 	chinese_70 = {
+		image = peking_convention
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -926,6 +309,7 @@ political_decisions = {
 		}
 	}
 	indian_70 = {
+		picture = nationalize
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -955,6 +339,7 @@ political_decisions = {
 ##################
 
 	german_139 = {
+		picture = abolish_prohibition
 		potential = {
 			OR = {
 				is_culture_group = germanic
@@ -986,6 +371,7 @@ political_decisions = {
 		}
 	}
 	dutch_139 = {
+		picture = abolish_prohibition
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -1013,6 +399,7 @@ political_decisions = {
 		}
 	}
 	nordic_139 = {
+		picture = abolish_prohibition
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -1043,6 +430,7 @@ political_decisions = {
 		}
 	}
 	english_139 = { #Vanilla, but we changed it
+		picture = abolish_prohibition
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -1074,6 +462,7 @@ political_decisions = {
 		}
 	}
 	italian_139 = {
+		picture = abolish_prohibition
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -1101,6 +490,7 @@ political_decisions = {
 		}
 	}
 	spanish_139 = {
+		picture = abolish_prohibition
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -1131,6 +521,7 @@ political_decisions = {
 		}
 	}
 	french_139 = {
+		picture = abolish_prohibition
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -1158,6 +549,7 @@ political_decisions = {
 		}
 	}
 	arab_139 = {
+		picture = abolish_prohibition
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -1189,6 +581,7 @@ political_decisions = {
 		}
 	}
 	slavic_139 = {
+		picture = abolish_prohibition
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -1223,7 +616,7 @@ political_decisions = {
 		}
 	}
 	greek_139 = {
-		image = form_byzantine_empire
+		picture = abolish_prohibition
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -1251,6 +644,7 @@ political_decisions = {
 		}
 	}
 	chinese_139 = {
+		picture = abolish_prohibition
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -1282,6 +676,7 @@ political_decisions = {
 		}
 	}
 	indian_139 = {
+		picture = abolish_prohibition
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -1313,6 +708,7 @@ political_decisions = {
 ##################
 
 	german_232 = {
+		picture = liberty_enlightening_the_world
 		potential = {
 			OR = {
 				is_culture_group = germanic
@@ -1344,6 +740,7 @@ political_decisions = {
 		}
 	}
 	dutch_232 = {
+		picture = liberty_enlightening_the_world
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -1371,6 +768,7 @@ political_decisions = {
 		}
 	}
 	nordic_232 = {
+		picture = liberty_enlightening_the_world
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -1401,6 +799,7 @@ political_decisions = {
 		}
 	}
 	english_232 = { #Vanilla, but we changed it
+		picture = liberty_enlightening_the_world
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -1432,6 +831,7 @@ political_decisions = {
 		}
 	}
 	italian_232 = {
+		picture = liberty_enlightening_the_world
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -1459,6 +859,7 @@ political_decisions = {
 		}
 	}
 	spanish_232 = {
+		picture = liberty_enlightening_the_world
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -1489,6 +890,7 @@ political_decisions = {
 		}
 	}
 	french_232 = {
+		picture = liberty_enlightening_the_world
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -1516,6 +918,7 @@ political_decisions = {
 		}
 	}
 	arab_232 = {
+		picture = liberty_enlightening_the_world
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -1547,6 +950,7 @@ political_decisions = {
 		}
 	}
 	slavic_232 = {
+		picture = liberty_enlightening_the_world
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -1581,7 +985,7 @@ political_decisions = {
 		}
 	}
 	greek_232 = {
-		image = form_byzantine_empire
+		picture = liberty_enlightening_the_world
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -1609,6 +1013,7 @@ political_decisions = {
 		}
 	}
 	chinese_232 = {
+		picture = liberty_enlightening_the_world
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -1640,6 +1045,7 @@ political_decisions = {
 		}
 	}
 	indian_232 = {
+		picture = liberty_enlightening_the_world
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -1671,6 +1077,7 @@ political_decisions = {
 ##################
 
 	german_244 = {
+		picture = enact_the_homestead_act
 		potential = {
 			OR = {
 				is_culture_group = germanic
@@ -1699,6 +1106,7 @@ political_decisions = {
 		}
 	}
 	dutch_244 = {
+		picture = enact_the_homestead_act
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -1723,6 +1131,7 @@ political_decisions = {
 		}
 	}
 	nordic_244 = {
+		picture = enact_the_homestead_act
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -1750,6 +1159,7 @@ political_decisions = {
 		}
 	}
 	english_244 = { #Vanilla, but we changed it
+		picture = enact_the_homestead_act
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -1778,6 +1188,7 @@ political_decisions = {
 		}
 	}
 	italian_244 = {
+		picture = enact_the_homestead_act
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -1802,6 +1213,7 @@ political_decisions = {
 		}
 	}
 	spanish_244 = {
+		picture = enact_the_homestead_act
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -1829,6 +1241,7 @@ political_decisions = {
 		}
 	}
 	french_244 = {
+		picture = enact_the_homestead_act
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -1853,6 +1266,7 @@ political_decisions = {
 		}
 	}
 	arab_244 = {
+		picture = enact_the_homestead_act
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -1881,6 +1295,7 @@ political_decisions = {
 		}
 	}
 	slavic_244 = {
+		picture = enact_the_homestead_act
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -1912,7 +1327,7 @@ political_decisions = {
 		}
 	}
 	greek_244 = {
-		image = form_byzantine_empire
+		picture = enact_the_homestead_act
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -1937,6 +1352,7 @@ political_decisions = {
 		}
 	}
 	chinese_244 = {
+		picture = enact_the_homestead_act
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -1965,6 +1381,7 @@ political_decisions = {
 		}
 	}
 	indian_244 = {
+		picture = enact_the_homestead_act
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -1993,6 +1410,7 @@ political_decisions = {
 ##################
 
 	german_2510 = {
+		picture = switch_to_navy_tech
 		potential = {
 			OR = {
 				is_culture_group = germanic
@@ -2021,6 +1439,7 @@ political_decisions = {
 		}
 	}
 	dutch_2510 = {
+		picture = switch_to_navy_tech
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -2045,6 +1464,7 @@ political_decisions = {
 		}
 	}
 	nordic_2510 = {
+		picture = switch_to_navy_tech
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -2072,6 +1492,7 @@ political_decisions = {
 		}
 	}
 	english_2510 = { #Vanilla, but we changed it
+		picture = switch_to_navy_tech
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -2100,6 +1521,7 @@ political_decisions = {
 		}
 	}
 	italian_2510 = {
+		picture = switch_to_navy_tech
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -2124,6 +1546,7 @@ political_decisions = {
 		}
 	}
 	spanish_2510 = {
+		picture = switch_to_navy_tech
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -2151,6 +1574,7 @@ political_decisions = {
 		}
 	}
 	french_2510 = {
+		picture = switch_to_navy_tech
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -2175,6 +1599,7 @@ political_decisions = {
 		}
 	}
 	arab_2510 = {
+		picture = switch_to_navy_tech
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -2203,6 +1628,7 @@ political_decisions = {
 		}
 	}
 	slavic_2510 = {
+		picture = switch_to_navy_tech
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -2234,7 +1660,7 @@ political_decisions = {
 		}
 	}
 	greek_2510 = {
-		image = form_byzantine_empire
+		picture = switch_to_navy_tech
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -2259,6 +1685,7 @@ political_decisions = {
 		}
 	}
 	chinese_2510 = {
+		picture = switch_to_navy_tech
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -2287,6 +1714,7 @@ political_decisions = {
 		}
 	}
 	indian_2510 = {
+		picture = switch_to_navy_tech
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -2315,6 +1743,7 @@ political_decisions = {
 ##################
 
 	german_220 = {
+		picture = institute_central_bank
 		potential = {
 			OR = {
 				is_culture_group = germanic
@@ -2343,6 +1772,7 @@ political_decisions = {
 		}
 	}
 	dutch_220 = {
+		picture = institute_central_bank
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -2367,6 +1797,7 @@ political_decisions = {
 		}
 	}
 	nordic_220 = {
+		picture = institute_central_bank
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -2394,6 +1825,7 @@ political_decisions = {
 		}
 	}
 	english_220 = { #Vanilla, but we changed it
+		picture = institute_central_bank
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -2422,6 +1854,7 @@ political_decisions = {
 		}
 	}
 	italian_220 = {
+		picture = institute_central_bank
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -2446,6 +1879,7 @@ political_decisions = {
 		}
 	}
 	spanish_220 = {
+		picture = institute_central_bank
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -2473,6 +1907,7 @@ political_decisions = {
 		}
 	}
 	french_220 = {
+		picture = institute_central_bank
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -2497,6 +1932,7 @@ political_decisions = {
 		}
 	}
 	arab_220 = {
+		picture = institute_central_bank
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -2525,6 +1961,7 @@ political_decisions = {
 		}
 	}
 	slavic_220 = {
+		picture = institute_central_bank
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -2556,7 +1993,7 @@ political_decisions = {
 		}
 	}
 	greek_220 = {
-		image = form_byzantine_empire
+		picture = institute_central_bank
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -2581,6 +2018,7 @@ political_decisions = {
 		}
 	}
 	chinese_220 = {
+		picture = institute_central_bank
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -2609,6 +2047,7 @@ political_decisions = {
 		}
 	}
 	indian_220 = {
+		picture = institute_central_bank
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -2637,6 +2076,7 @@ political_decisions = {
 ##################
 
 	german_89 = {
+		picture = the_grunderzeit
 		potential = {
 			OR = {
 				is_culture_group = germanic
@@ -2665,6 +2105,7 @@ political_decisions = {
 		}
 	}
 	dutch_89 = {
+		picture = the_grunderzeit
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -2689,6 +2130,7 @@ political_decisions = {
 		}
 	}
 	nordic_89 = {
+		picture = the_grunderzeit
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -2716,6 +2158,7 @@ political_decisions = {
 		}
 	}
 	english_89 = {
+		picture = the_grunderzeit
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -2744,6 +2187,7 @@ political_decisions = {
 		}
 	}
 	italian_89 = {
+		picture = the_grunderzeit
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -2768,6 +2212,7 @@ political_decisions = {
 		}
 	}
 	spanish_89 = { #Vanilla, but we changed it
+		picture = the_grunderzeit
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -2795,6 +2240,7 @@ political_decisions = {
 		}
 	}
 	french_89 = {
+		picture = the_grunderzeit
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -2819,6 +2265,7 @@ political_decisions = {
 		}
 	}
 	arab_89 = {
+		picture = the_grunderzeit
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -2847,6 +2294,7 @@ political_decisions = {
 		}
 	}
 	slavic_89 = {
+		picture = the_grunderzeit
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -2878,7 +2326,7 @@ political_decisions = {
 		}
 	}
 	greek_89 = {
-		image = form_byzantine_empire
+		picture = the_grunderzeit
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -2903,6 +2351,7 @@ political_decisions = {
 		}
 	}
 	chinese_89 = {
+		picture = the_grunderzeit
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -2931,6 +2380,7 @@ political_decisions = {
 		}
 	}
 	indian_89 = {
+		picture = the_grunderzeit
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -2959,6 +2409,7 @@ political_decisions = {
 ##################
 
 	german_84 = {
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			OR = {
 				is_culture_group = germanic
@@ -2987,6 +2438,7 @@ political_decisions = {
 		}
 	}
 	dutch_84 = {
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -3011,6 +2463,7 @@ political_decisions = {
 		}
 	}
 	nordic_84 = {
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -3038,6 +2491,7 @@ political_decisions = {
 		}
 	}
 	english_84 = {
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -3066,6 +2520,7 @@ political_decisions = {
 		}
 	}
 	italian_84 = {
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -3090,6 +2545,7 @@ political_decisions = {
 		}
 	}
 	spanish_84 = { #Vanilla, but we changed it
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -3117,6 +2573,7 @@ political_decisions = {
 		}
 	}
 	french_84 = {
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -3141,6 +2598,7 @@ political_decisions = {
 		}
 	}
 	arab_84 = {
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -3169,6 +2627,7 @@ political_decisions = {
 		}
 	}
 	slavic_84 = {
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -3200,7 +2659,7 @@ political_decisions = {
 		}
 	}
 	greek_84 = {
-		image = form_byzantine_empire
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -3225,6 +2684,7 @@ political_decisions = {
 		}
 	}
 	chinese_84 = {
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -3253,6 +2713,7 @@ political_decisions = {
 		}
 	}
 	indian_84 = {
+		picture = svenska_pansarbats_foreningen
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -3280,6 +2741,7 @@ political_decisions = {
 # 2131 ?Falklands-Malvinas dispute
 ##################
 	english_2131 = { #This is the Vanilla
+		picture = the_congo_conference
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -3308,6 +2770,7 @@ political_decisions = {
 		}
 	}
 	spanish_2131 = {
+		picture = the_congo_conference
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -3335,6 +2798,7 @@ political_decisions = {
 		}
 	}
 	french_2131 = {
+		picture = the_congo_conference
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -3363,6 +2827,7 @@ political_decisions = {
 ##################
 
 	german_2447 = {
+		picture = annex_the_congo
 		potential = {
 			OR = {
 				is_culture_group = germanic
@@ -3394,6 +2859,7 @@ political_decisions = {
 		}
 	}
 	dutch_2447 = {
+		picture = annex_the_congo
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -3421,6 +2887,7 @@ political_decisions = {
 		}
 	}
 	nordic_2447 = {
+		picture = annex_the_congo
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -3451,6 +2918,7 @@ political_decisions = {
 		}
 	}
 	english_2447 = {
+		picture = annex_the_congo
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -3482,6 +2950,7 @@ political_decisions = {
 		}
 	}
 	italian_2447 = {
+		picture = annex_the_congo
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -3509,6 +2978,7 @@ political_decisions = {
 		}
 	}
 	spanish_2447 = { #Vanilla, but we changed it
+		picture = annex_the_congo
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -3539,6 +3009,7 @@ political_decisions = {
 		}
 	}
 	french_2447 = {
+		picture = annex_the_congo
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -3566,6 +3037,7 @@ political_decisions = {
 		}
 	}
 	arab_2447 = {
+		picture = annex_the_congo
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -3597,6 +3069,7 @@ political_decisions = {
 		}
 	}
 	slavic_2447 = {
+		picture = annex_the_congo
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -3631,7 +3104,7 @@ political_decisions = {
 		}
 	}
 	greek_2447 = {
-		image = form_byzantine_empire
+		picture = annex_the_congo
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -3659,6 +3132,7 @@ political_decisions = {
 		}
 	}
 	chinese_2447 = {
+		picture = annex_the_congo
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -3690,6 +3164,7 @@ political_decisions = {
 		}
 	}
 	indian_2447 = {
+		picture = annex_the_congo
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -3721,6 +3196,7 @@ political_decisions = {
 ##################
 
 	german_2450 = {
+		picture = enact_radical_reconstruction
 		potential = {
 			OR = {
 				is_culture_group = germanic
@@ -3752,6 +3228,7 @@ political_decisions = {
 		}
 	}
 	dutch_2450 = {
+		picture = enact_radical_reconstruction
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -3779,6 +3256,7 @@ political_decisions = {
 		}
 	}
 	nordic_2450 = {
+		picture = enact_radical_reconstruction
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -3809,6 +3287,7 @@ political_decisions = {
 		}
 	}
 	english_2450 = {
+		picture = enact_radical_reconstruction
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -3840,6 +3319,7 @@ political_decisions = {
 		}
 	}
 	italian_2450 = {
+		picture = enact_radical_reconstruction
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -3867,6 +3347,7 @@ political_decisions = {
 		}
 	}
 	spanish_2450 = { #Vanilla, but we changed it
+		picture = enact_radical_reconstruction
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -3897,6 +3378,7 @@ political_decisions = {
 		}
 	}
 	french_2450 = {
+		picture = enact_radical_reconstruction
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -3924,6 +3406,7 @@ political_decisions = {
 		}
 	}
 	arab_2450 = {
+		picture = enact_radical_reconstruction
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -3955,6 +3438,7 @@ political_decisions = {
 		}
 	}
 	slavic_2450 = {
+		picture = enact_radical_reconstruction
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -3989,7 +3473,7 @@ political_decisions = {
 		}
 	}
 	greek_2450 = {
-		image = form_byzantine_empire
+		picture = enact_radical_reconstruction
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -4017,6 +3501,7 @@ political_decisions = {
 		}
 	}
 	chinese_2450 = {
+		picture = enact_radical_reconstruction
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -4048,6 +3533,7 @@ political_decisions = {
 		}
 	}
 	indian_2450 = {
+		picture = enact_radical_reconstruction
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -4079,6 +3565,7 @@ political_decisions = {
 ##################
 
 	german_2348 = {
+		picture = award_order_of_st_francis
 		potential = {
 			OR = {
 				is_culture_group = germanic
@@ -4110,6 +3597,7 @@ political_decisions = {
 		}
 	}
 	dutch_2348 = {
+		picture = award_order_of_st_francis
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -4137,6 +3625,7 @@ political_decisions = {
 		}
 	}
 	nordic_2348 = {
+		picture = award_order_of_st_francis
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -4167,6 +3656,7 @@ political_decisions = {
 		}
 	}
 	english_2348 = {
+		picture = award_order_of_st_francis
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -4198,6 +3688,7 @@ political_decisions = {
 		}
 	}
 	italian_2348 = {
+		picture = award_order_of_st_francis
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -4225,6 +3716,7 @@ political_decisions = {
 		}
 	}
 	spanish_2348 = { #Vanilla, but we changed it
+		picture = award_order_of_st_francis
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -4255,6 +3747,7 @@ political_decisions = {
 		}
 	}
 	french_2348 = {
+		picture = award_order_of_st_francis
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -4282,6 +3775,7 @@ political_decisions = {
 		}
 	}
 	arab_2348 = {
+		picture = award_order_of_st_francis
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -4313,6 +3807,7 @@ political_decisions = {
 		}
 	}
 	slavic_2348 = {
+		picture = award_order_of_st_francis
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -4347,7 +3842,7 @@ political_decisions = {
 		}
 	}
 	greek_2348 = {
-		image = form_byzantine_empire
+		picture = award_order_of_st_francis
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -4375,6 +3870,7 @@ political_decisions = {
 		}
 	}
 	chinese_2348 = {
+		picture = award_order_of_st_francis
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -4406,6 +3902,7 @@ political_decisions = {
 		}
 	}
 	indian_2348 = {
+		picture = award_order_of_st_francis
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -4437,6 +3934,7 @@ political_decisions = {
 ##################
 
 	german_2214 = {
+		picture = form_gran_colombia
 		image = german_70
 		potential = {
 			OR = {
@@ -4469,7 +3967,7 @@ political_decisions = {
 		}
 	}
 	dutch_2214 = {
-		image = dutch_70
+		picture = form_gran_colombia
 		potential = {
 			is_culture_group = beneluxian
 			NOT = { year = 1837 }
@@ -4497,7 +3995,7 @@ political_decisions = {
 		}
 	}
 	nordic_2214 = {
-		image = nordic_70
+		picture = form_gran_colombia
 		potential = {
 			OR = {
 				is_culture_group = scandinavian
@@ -4528,7 +4026,7 @@ political_decisions = {
 		}
 	}
 	english_2214 = {
-		image = english_70
+		picture = form_gran_colombia
 		potential = {
 			OR = {
 				is_culture_group = british
@@ -4560,7 +4058,7 @@ political_decisions = {
 		}
 	}
 	italian_2214 = {
-		image = italian_70
+		picture = form_gran_colombia
 		potential = {
 			is_culture_group = italian
 			NOT = { year = 1837 }
@@ -4588,7 +4086,7 @@ political_decisions = {
 		}
 	}
 	spanish_2214 = { #Vanilla, but we changed it
-		image = spanish_70
+		picture = form_gran_colombia
 		potential = {
 			OR = {
 				is_culture_group = iberian
@@ -4619,7 +4117,7 @@ political_decisions = {
 		}
 	}
 	french_2214 = {
-		image = french_70
+		picture = form_gran_colombia
 		potential = {
 			is_culture_group = french
 			NOT = { year = 1837 }
@@ -4647,7 +4145,7 @@ political_decisions = {
 		}
 	}
 	arab_2214 = {
-		image = arab_70
+		picture = form_gran_colombia
 		potential = {
 			OR = {
 				is_culture_group = turko_semitic
@@ -4679,7 +4177,7 @@ political_decisions = {
 		}
 	}
 	slavic_2214 = {
-		image = slavic_70
+		picture = form_gran_colombia
 		potential = {
 			OR = {
 				is_culture_group = south_slavic
@@ -4714,7 +4212,7 @@ political_decisions = {
 		}
 	}
 	greek_2214 = {
-		image = form_byzantine_empire
+		picture = form_gran_colombia
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -4742,7 +4240,7 @@ political_decisions = {
 		}
 	}
 	chinese_2214 = {
-		image = chinese_70
+		picture = form_gran_colombia
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -4774,7 +4272,7 @@ political_decisions = {
 		}
 	}
 	indian_2214 = {
-		image = indian_70
+		picture = form_gran_colombia
 		potential = {
 			is_culture_group = south_asian
 			NOT = { year = 1837 }
@@ -4802,7 +4300,7 @@ political_decisions = {
 		}
 	}
 	haiti_2214 = {
-		image = postcol_HAI
+		picture = form_gran_colombia
 		potential = {
 			tag = HAI
 			NOT = { year = 1837 }
@@ -4834,6 +4332,7 @@ political_decisions = {
 # Korean province renamings
 # Currently for Japan and China
 japanese_names_in_korea = {
+	picture = the_meiji_restoration
 	potential = {
 		OR = {
 			tag = JAP
@@ -4928,6 +4427,7 @@ japanese_names_in_korea = {
 	}
 }
 restore_korea = {
+	picture = torching_of_the_summer_palace
 	potential = {
 		OR = {
 			tag = KOR
@@ -5023,6 +4523,7 @@ restore_korea = {
 	}
 }
 chinese_names_in_korea = {
+	picture = peking_convention
 	potential = {
 		OR = {
 			tag = CHI

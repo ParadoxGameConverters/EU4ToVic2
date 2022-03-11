@@ -280,7 +280,7 @@ country_event = { #The Turkish Question
 	
 	trigger = {
 		NOT = { has_global_flag = RUM_best_than_TUR }
-		tag = RUM
+		has_country_flag = vic2_country_RUM
 		exists = yes
 		number_of_states = 3
 		NOT = { TUR = { number_of_states = 3 } }
@@ -299,7 +299,7 @@ country_event = { #The Turkish Question
 		TUR = {
 			any_core = {
 				limit = { NOT = { owned_by = TUR } }
-				add_core = RUM
+				add_core = THIS
 				remove_core = TUR
 			}
 		}
