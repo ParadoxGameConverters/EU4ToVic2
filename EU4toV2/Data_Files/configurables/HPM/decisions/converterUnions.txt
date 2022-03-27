@@ -795,7 +795,7 @@ political_decisions = {
 
 	
 	form_china = {
-		image = clear_out_the_manchu_elite
+		picture = clear_out_the_manchu_elite
 		news = yes
 		news_desc_long = "form_china_NEWS_LONG"
 		news_desc_medium = "form_china_NEWS_MEDIUM"
@@ -1253,7 +1253,7 @@ political_decisions = {
 		}
 	}
 	form_usa = {
-		image = apply_for_USA_statehood
+		picture = apply_for_USA_statehood
 		potential = {
 			OR = {
 				primary_culture = yankee

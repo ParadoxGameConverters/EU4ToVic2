@@ -1783,8 +1783,8 @@ link = { eu4 = OTW v2 = OTT } #Ottawa
 link = { eu4 = PAS v2 = PSA } #Pasai
 link = { eu4 = QII v2 = QIC } #Qi
 link = { eu4 = QUI v2 = QTO } #Quito
-link = { eu4 = LAT v2 = RME } #Roman_Empire
-link = { eu4 = PA2 v2 = RME } #RomanRepublic
+link = { eu4 = LAT v2 = SPQ } #Roman_Empire
+link = { eu4 = PA2 v2 = SPQ } #RomanRepublic
 link = { eu4 = ROU v2 = ROM } #Roumanie
 link = { eu4 = RAV v2 = RVA } #Ravensberg
 link = { eu4 = BUT v2 = RZW } #Butua
