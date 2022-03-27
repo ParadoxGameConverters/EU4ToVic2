@@ -776,7 +776,7 @@ political_decisions = {
 		}
 	}
 	postcol_USA = {
-		image = apply_for_USA_statehood
+		picture = apply_for_USA_statehood
 		potential = {
 			NOT = { exists = USA }
 			capital_scope = { is_core = USA }
@@ -1085,7 +1085,7 @@ political_decisions = {
 		}
 	}
 	postcol_NIC = {
-		image = postcol_HON
+		picture = postcol_HON
 		potential = {
 			NOT = { exists = NIC }
 			OR = {
@@ -1371,7 +1371,7 @@ political_decisions = {
 		}
 	}
 	postcol_MEX = {
-		image = restore_mexican_empire
+		picture = restore_mexican_empire
 		potential = {
 			NOT = { exists = MEX }
 			NOT = { tag = USA }
@@ -2277,7 +2277,7 @@ political_decisions = {
 		}
 	}
 	form_peru_bolivia = {
-		image = form_gran_colombia
+		picture = form_gran_colombia
 		potential = {
 			has_global_flag = der_postcolonialism
 			OR = {

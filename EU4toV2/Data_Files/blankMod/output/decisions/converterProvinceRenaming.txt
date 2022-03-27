@@ -255,7 +255,7 @@ political_decisions = {
 		}
 	}
 	greek_70 = {
-		image = form_byzantine_empire
+		picture = form_byzantine_empire
 		potential = {
 			is_culture_group = levantine
 			NOT = { year = 1837 }
@@ -280,7 +280,7 @@ political_decisions = {
 		}
 	}
 	chinese_70 = {
-		image = peking_convention
+		picture = peking_convention
 		potential = {
 			OR = {
 				is_culture_group = central_asian
@@ -3935,7 +3935,7 @@ political_decisions = {
 
 	german_2214 = {
 		picture = form_gran_colombia
-		image = german_70
+		picture = german_70
 		potential = {
 			OR = {
 				is_culture_group = germanic

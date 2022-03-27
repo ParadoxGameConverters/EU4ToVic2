@@ -3320,7 +3320,7 @@ political_decisions = {
 	}
 	
 	the_concession_to_the_travelers = {
-		image = fugitive_slave_act
+		picture = fugitive_slave_act
 		potential = {
 			accepted_culture = gypsy
 			NOT = { exists = GYP }
