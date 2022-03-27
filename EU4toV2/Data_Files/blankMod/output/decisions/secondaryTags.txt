@@ -237,7 +237,7 @@ political_decisions = {
 			NOT = { is_culture_group = south_slavic }
 			NOT = { is_culture_group = levantine }
 			NOT = { tag = ALI } #Reasoning
-			NOT = { tag = RME }
+			NOT = { tag = SPQ }
 			NOT = { tag = BYZ }
 			exists = BUL
 			NOT = { exists = YUG }
