@@ -267,7 +267,7 @@ political_decisions = {
 			}
 			RML = {
 				relation = {
-					who = FROM
+					who = THIS
 					value = 100
 				}
 			}
