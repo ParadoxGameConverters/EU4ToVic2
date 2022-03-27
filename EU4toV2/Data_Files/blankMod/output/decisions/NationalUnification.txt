@@ -190,7 +190,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {
@@ -376,7 +376,7 @@ political_decisions = {
 					}
 					NOT = { has_country_flag = post_colonial_country }
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {
@@ -458,7 +458,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {
@@ -1558,7 +1558,7 @@ unite_moldavia_wallachia = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {
