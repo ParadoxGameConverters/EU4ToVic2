@@ -190,7 +190,7 @@ political_decisions = {
 				add_accepted_culture = wolof
 				primary_culture = dummy
 			}
-			FRA_1794 = {
+			FRA_1801 = {
 				add_core = MLI
 				flashpoint_tension = 10
 			}
