@@ -271,7 +271,7 @@ political_decisions = {
 			2219 = { add_core = BHM } #Bahamas
 			2220 = { add_core = BHM }
 			2236 = { add_core = AGU } #Anguilla
-			2230 = { add_core = ATB } #Antigua and Barbuda
+			2230 = { add_core = ANT } #Antigua and Barbuda
 			2227 = { add_core = SKN } #Saint Kitts and Nevis
 			2225 = { add_core = MNR } #Montserrat
 			2230 = { add_core = GDL } #Guadeloupe
@@ -350,7 +350,7 @@ political_decisions = {
 			any_country = { limit = { tag = UOR	 NOT = { exists = UOR } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = BHM	 NOT = { exists = BHM } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = AGU	 NOT = { exists = AGU } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = ATB	 NOT = { exists = ATB } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = ANT	 NOT = { exists = ANT } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = SKN	 NOT = { exists = SKN } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = MNR	 NOT = { exists = MNR } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = GDL	 NOT = { exists = GDL } } set_country_flag = buro_independence }

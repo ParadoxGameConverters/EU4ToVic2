@@ -1240,7 +1240,7 @@ ASY = { # Assyria
     color3= { 0 0 255  }
 }
 
-ATB = { # Antigua and Barbuda
+ANT = { # Antigua and Barbuda
     color1= { 255 0 0  }
     color2= { 0 0 0  }
     color3= { 255 0 0  }
