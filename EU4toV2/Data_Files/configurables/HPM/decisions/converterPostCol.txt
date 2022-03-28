@@ -209,7 +209,7 @@ political_decisions = {
 			BEL_1977 = { add_core = CNG } #Congo
 			BEL_1984 = { add_core = CNG }
 			BEL_1987 = { add_core = CNG }
-			BEL_1996 = { add_core = CNG }
+			BEL_1990 = { add_core = CNG }
 			BEL_1984 = { add_core = CNG }
 			EGY_921 = { add_core = ISR } #Israel
 			2239 = { add_core = GUY } #Guyana
@@ -271,20 +271,20 @@ political_decisions = {
 			2219 = { add_core = BHM } #Bahamas
 			2220 = { add_core = BHM }
 			2236 = { add_core = AGU } #Anguilla
-			2230 = { add_core = ATB } #Antigua and Barbuda
+			2230 = { add_core = ANT } #Antigua and Barbuda
 			2227 = { add_core = SKN } #Saint Kitts and Nevis
 			2225 = { add_core = MNR } #Montserrat
 			2230 = { add_core = GDL } #Guadeloupe
 			2232 = { add_core = DMN } #Dominica
 			2228 = { add_core = MTQ } #Martinique
 			2231 = { add_core = STL } #Saint Lucia
-			2229 = { add_core = BBD } #Barbados
+			2229 = { add_core = BAR } #Barbados
 			2233 = { add_core = GRD } #Grenada
 			2234 = { add_core = CUR remove_core = VNZ } #Curaçao
 			2235 = { add_core = CUR remove_core = VNZ }
 			2409 = { add_core = STV } #Saint Vincent and the Grenadines
 			#Further addictions
-			ARG_2355 = { add_core = BUE } #Buenos Aires
+			ARG_2355 = { add_core = SBA } #Buenos Aires
 			set_global_flag = der_postcolonialism
 			#Ensuring correct cultures if released
 			any_country = { limit = { tag = QUE	 NOT = { exists = QUE } } set_country_flag = buro_independence }
@@ -350,18 +350,18 @@ political_decisions = {
 			any_country = { limit = { tag = UOR	 NOT = { exists = UOR } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = BHM	 NOT = { exists = BHM } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = AGU	 NOT = { exists = AGU } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = ATB	 NOT = { exists = ATB } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = ANT	 NOT = { exists = ANT } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = SKN	 NOT = { exists = SKN } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = MNR	 NOT = { exists = MNR } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = GDL	 NOT = { exists = GDL } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = DMN	 NOT = { exists = DMN } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = MTQ	 NOT = { exists = MTQ } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = STL	 NOT = { exists = STL } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = BBD	 NOT = { exists = BBD } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = BAR	 NOT = { exists = BAR } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = GRD	 NOT = { exists = GRD } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = CUR	 NOT = { exists = CUR } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = STV	 NOT = { exists = STV } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = BUE	 NOT = { exists = BUE } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = SBA	 NOT = { exists = SBA } } set_country_flag = buro_independence }
 		}
 		
 		ai_will_do = {
@@ -901,7 +901,7 @@ political_decisions = {
 			capital_scope = { is_core = HAI }
 			OR = {
 				primary_culture = french
-				primary_culture = americaine
+				primary_culture = nouvellien
 				primary_culture = afro_caribbean
 			}
 			NOT = { has_country_flag = precolonial }
@@ -946,7 +946,7 @@ political_decisions = {
 			capital_scope = { is_core = DOM }
 			NOT = {
 				primary_culture = french
-				primary_culture = americaine
+				primary_culture = nouvellien
 				primary_culture = afro_caribbean
 			}
 			NOT = { has_country_flag = precolonial }
@@ -1973,7 +1973,7 @@ political_decisions = {
 		effect = {
 			set_global_flag = the_central_asia
 			TKS = {
-				any_core = {
+				all_core = {
 					remove_core = KAZ
 					remove_core = KOK
 					remove_core = KHI
@@ -2245,11 +2245,11 @@ political_decisions = {
 			2220 = { add_core = CRB secede_province = CRB }
 			2234 = { add_core = CRB }
 			2235 = { add_core = CRB }
-			any_owned_province = {
+			any_owned = {
 			limit = { province_id = 2234 }
 			secede_province = CRB
 			}
-			any_owned_province = {
+			any_owned = {
 			limit = { province_id = 2235 }
 			secede_province = CRB
 			}

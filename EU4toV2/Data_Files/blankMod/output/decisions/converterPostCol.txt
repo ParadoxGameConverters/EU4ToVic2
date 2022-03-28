@@ -947,7 +947,7 @@ political_decisions = {
 			capital_scope = { is_core = HAI }
 			OR = {
 				primary_culture = french
-				primary_culture = americaine
+				primary_culture = nouvellien
 				primary_culture = afro_caribbean
 			}
 			NOT = { has_country_flag = precolonial }
@@ -993,7 +993,7 @@ political_decisions = {
 			capital_scope = { is_core = DOM }
 			NOT = {
 				primary_culture = french
-				primary_culture = americaine
+				primary_culture = nouvellien
 				primary_culture = afro_caribbean
 			}
 			NOT = { has_country_flag = precolonial }
@@ -2040,7 +2040,7 @@ political_decisions = {
 		effect = {
 			set_global_flag = the_central_asia
 			TKS = {
-				any_core = {
+				all_core = {
 					remove_core = KAZ
 					remove_core = KOK
 					remove_core = KHI
@@ -2314,11 +2314,11 @@ political_decisions = {
 			2220 = { add_core = CRB secede_province = CRB }
 			2234 = { add_core = CRB }
 			2235 = { add_core = CRB }
-			any_owned_province = {
+			any_owned = {
 			limit = { province_id = 2234 }
 			secede_province = CRB
 			}
-			any_owned_province = {
+			any_owned = {
 			limit = { province_id = 2235 }
 			secede_province = CRB
 			}
@@ -2610,7 +2610,7 @@ political_decisions = {
 				add_accepted_culture = wolof
 				primary_culture = dummy
 			}
-			FRA_1794 = {
+			FRA_1801 = {
 				add_core = MLI
 				flashpoint_tension = 10
 			}
@@ -3116,7 +3116,7 @@ political_decisions = {
 					exists = no
 				}
 				add_accepted_culture = tswana
-				capital = 2874
+				capital = 2074
 				government = democracy
 				primary_culture = dummy
 			}
