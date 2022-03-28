@@ -209,7 +209,7 @@ political_decisions = {
 			BEL_1977 = { add_core = CNG } #Congo
 			BEL_1984 = { add_core = CNG }
 			BEL_1987 = { add_core = CNG }
-			BEL_1996 = { add_core = CNG }
+			BEL_1990 = { add_core = CNG }
 			BEL_1984 = { add_core = CNG }
 			EGY_921 = { add_core = ISR } #Israel
 			2239 = { add_core = GUY } #Guyana

@@ -318,7 +318,7 @@ political_decisions = {
 				add_core = CNG
 				flashpoint_tension = 10
 			}
-			BEL_1996 = {
+			BEL_1990 = {
 				add_core = CNG
 				flashpoint_tension = 10
 			}
