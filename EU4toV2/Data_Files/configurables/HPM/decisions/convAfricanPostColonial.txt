@@ -696,7 +696,7 @@ political_decisions = {
 					exists = no
 				}
 				add_accepted_culture = tswana
-				capital = 2874
+				capital = 2074
 				government = democracy
 				primary_culture = dummy
 			}
