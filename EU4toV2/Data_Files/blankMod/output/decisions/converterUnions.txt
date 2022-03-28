@@ -3172,7 +3172,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {
@@ -3219,7 +3219,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 			set_global_flag = oy_vey
 		}
