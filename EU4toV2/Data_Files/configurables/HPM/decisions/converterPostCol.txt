@@ -278,7 +278,7 @@ political_decisions = {
 			2232 = { add_core = DMN } #Dominica
 			2228 = { add_core = MTQ } #Martinique
 			2231 = { add_core = STL } #Saint Lucia
-			2229 = { add_core = BBD } #Barbados
+			2229 = { add_core = BAR } #Barbados
 			2233 = { add_core = GRD } #Grenada
 			2234 = { add_core = CUR remove_core = VNZ } #Curaçao
 			2235 = { add_core = CUR remove_core = VNZ }
@@ -357,7 +357,7 @@ political_decisions = {
 			any_country = { limit = { tag = DMN	 NOT = { exists = DMN } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = MTQ	 NOT = { exists = MTQ } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = STL	 NOT = { exists = STL } } set_country_flag = buro_independence }
-			any_country = { limit = { tag = BBD	 NOT = { exists = BBD } } set_country_flag = buro_independence }
+			any_country = { limit = { tag = BAR	 NOT = { exists = BAR } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = GRD	 NOT = { exists = GRD } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = CUR	 NOT = { exists = CUR } } set_country_flag = buro_independence }
 			any_country = { limit = { tag = STV	 NOT = { exists = STV } } set_country_flag = buro_independence }

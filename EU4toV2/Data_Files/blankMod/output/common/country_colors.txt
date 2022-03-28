@@ -1312,7 +1312,7 @@ BAR = { # Bar
     color3= { 100 30 154  }
 }
 
-BBD = { # Barbados
+BAR = { # Barbados
     color1= { 0 0 128  }
     color2= { 255 255 0  }
     color3= { 0 0 128  }
