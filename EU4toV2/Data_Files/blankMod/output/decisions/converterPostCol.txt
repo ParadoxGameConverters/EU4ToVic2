@@ -2040,7 +2040,7 @@ political_decisions = {
 		effect = {
 			set_global_flag = the_central_asia
 			TKS = {
-				any_core = {
+				all_core = {
 					remove_core = KAZ
 					remove_core = KOK
 					remove_core = KHI
@@ -2314,11 +2314,11 @@ political_decisions = {
 			2220 = { add_core = CRB secede_province = CRB }
 			2234 = { add_core = CRB }
 			2235 = { add_core = CRB }
-			any_owned_province = {
+			any_owned = {
 			limit = { province_id = 2234 }
 			secede_province = CRB
 			}
-			any_owned_province = {
+			any_owned = {
 			limit = { province_id = 2235 }
 			secede_province = CRB
 			}
