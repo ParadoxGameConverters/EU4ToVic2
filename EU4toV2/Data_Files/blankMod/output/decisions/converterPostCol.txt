@@ -947,7 +947,7 @@ political_decisions = {
 			capital_scope = { is_core = HAI }
 			OR = {
 				primary_culture = french
-				primary_culture = americaine
+				primary_culture = nouvellien
 				primary_culture = afro_caribbean
 			}
 			NOT = { has_country_flag = precolonial }
@@ -993,7 +993,7 @@ political_decisions = {
 			capital_scope = { is_core = DOM }
 			NOT = {
 				primary_culture = french
-				primary_culture = americaine
+				primary_culture = nouvellien
 				primary_culture = afro_caribbean
 			}
 			NOT = { has_country_flag = precolonial }
