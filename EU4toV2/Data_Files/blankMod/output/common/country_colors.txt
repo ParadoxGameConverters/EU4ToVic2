@@ -2182,7 +2182,7 @@ KOL = { # Cologne
     color3= { 255 255 255  }
 }
 
-KOM = { # Comoros
+CMS = { # Comoros
     color1= { 0 255 0  }
     color2= { 0 128 0  }
     color3= { 0 255 0  }

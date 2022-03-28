@@ -820,8 +820,8 @@ political_decisions = {
 				add_accepted_culture = afar
 				primary_culture = dummy
 			}
-			2123 = { add_core = KOM remove_core = MAD } #Comoros
-			2124 = { add_core = KOM remove_core = MAD }
+			2123 = { add_core = CMS remove_core = MAD } #Comoros
+			2124 = { add_core = CMS remove_core = MAD }
 			2125 = { add_core = MAU remove_core = MAD } #Mauritius
 			2126 = { add_core = MAU remove_core = MAD }
 			MAU = {
