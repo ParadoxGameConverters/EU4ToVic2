@@ -15,18 +15,22 @@ political_decisions = {
 		effect = {
 			ENG_58 = {	#Quebec
 				limit = {
-					OR = {
-						is_primary_culture = french
-						is_primary_culture = french_canadian
+					any_pop = {
+						OR = {
+							pop_majority_culture = french
+							pop_majority_culture = french_canadian
+						}
 					}
 				}
 				add_core = QUE
 			}
 			ENG_13 = {	#Columbia
 				limit = {
-					OR = {
-						is_primary_culture = english
-						is_primary_culture = anglo_canadian
+					any_pop = {
+						OR = {
+							pop_majority_culture = english
+							pop_majority_culture = anglo_canadian
+						}
 					}
 				}
 				add_core = COL
@@ -49,9 +53,11 @@ political_decisions = {
 			USA_1 = { add_core = LSK } #Alaska
 			USA_247 = {	#New England
 				limit = {
-					OR = {
-						is_primary_culture = english
-						is_primary_culture = yankee
+					any_pop = {
+						OR = {
+							pop_majority_culture = english
+							pop_majority_culture = yankee
+						}
 					}
 				}
 				add_core = NEN
