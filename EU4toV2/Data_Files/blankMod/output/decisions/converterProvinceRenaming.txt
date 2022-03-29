@@ -3934,7 +3934,6 @@ political_decisions = {
 ##################
 
 	german_2214 = {
-		picture = form_gran_colombia
 		picture = german_70
 		potential = {
 			OR = {
