@@ -345,6 +345,7 @@ BRT		="countries/Brittany.txt"
 CRS		="countries/Corsica.txt"
 NRM		="countries/Normandy.txt"
 OCC     =   "countries/Occitania.txt"
+GYN     =   "countries/Guyenne.txt"
 
 # Iberian Peninsula
 ARN		="countries/Aragon.txt"
