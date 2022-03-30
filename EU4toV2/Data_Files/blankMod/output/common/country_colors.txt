@@ -1126,7 +1126,7 @@ ALI = { # Alien Invaders
     color3= { 0 255 0  }
 }
 
-ALL = { # Allahdom
+ISL = { # Allahdom
     color1= { 0 128 0  }
     color2= { 0 0 0  }
     color3= { 0 128 0  }
