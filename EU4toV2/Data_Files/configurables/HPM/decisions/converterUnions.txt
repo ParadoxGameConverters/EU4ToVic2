@@ -3195,7 +3195,7 @@ political_decisions = {
 		
 		effect = {
 			prestige = 10
-			any_core = {
+			all_core = {
 				add_core = KNY
 				remove_core = SWA
 			}
@@ -3220,7 +3220,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_core = {
+			all_core = {
 				limit = {
 					NOT = {
 						owned_by = ROM
