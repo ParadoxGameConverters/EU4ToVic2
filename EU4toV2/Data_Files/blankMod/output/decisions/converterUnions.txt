@@ -2501,9 +2501,9 @@ political_decisions = {
 					NOT = { exists = VEN }
 					NOT = { exists = LOM }
 					OR = {
-						capital_scope = { region = 726 }
-						capital_scope = { region = 729 }
-						capital_scope = { region = 734 }
+						capital_scope = { region = AUS_726 }
+						capital_scope = { region = AUS_729 }
+						capital_scope = { region = AUS_734 }
 					}
 				}
 			}
@@ -2557,9 +2557,9 @@ political_decisions = {
 				exists = LOM
 			}
 			NOT = {
-				capital_scope = { region = 726 }
-				capital_scope = { region = 729 }
-				capital_scope = { region = 734 }
+				capital_scope = { region = AUS_726 }
+				capital_scope = { region = AUS_729 }
+				capital_scope = { region = AUS_734 }
 			}
 			NOT = {
 				primary_culture = north_italian

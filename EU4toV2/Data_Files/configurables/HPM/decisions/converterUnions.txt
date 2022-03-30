@@ -2658,9 +2658,9 @@ political_decisions = {
 					NOT = { exists = VEN }
 					NOT = { exists = LOM }
 					OR = {
-						capital_scope = { region = 726 } #Lombardia
-						capital_scope = { region = 729 } #Venetia
-						capital_scope = { region = 734 } #South Tirol
+						capital_scope = { region = AUS_726 } #Lombardia
+						capital_scope = { region = AUS_729 } #Venetia
+						capital_scope = { region = AUS_734 } #South Tirol
 					}
 				}
 			}
@@ -2713,9 +2713,9 @@ political_decisions = {
 				exists = LOM
 			}
 			NOT = {
-				capital_scope = { region = 726 } #Lombardia
-				capital_scope = { region = 729 } #Venetia
-				capital_scope = { region = 734 } #South Tirol
+				capital_scope = { region = AUS_726 } #Lombardia
+				capital_scope = { region = AUS_729 } #Venetia
+				capital_scope = { region = AUS_734 } #South Tirol
 			}
 			NOT = {
 				primary_culture = north_italian
