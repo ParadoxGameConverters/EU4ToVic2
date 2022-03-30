@@ -351,6 +351,7 @@ ARN		="countries/Aragon.txt"
 CST		="countries/Castille.txt"
 GLC		="countries/Galicia.txt"
 ADU		="countries/Andalucia.txt"
+NAV		="countries/Navarra.txt"
 
 # India
 ASM 		="countries/Assam.txt"
