@@ -3187,7 +3187,7 @@ political_decisions = {
 		news_desc_short = "jew_NEWS"
 		potential = {
 			is_greater_power = yes
-			is_culture_group = ISR
+			is_culture_group = jewish_group
 			NOT = {
 				exists = ISR
 			}
@@ -3208,7 +3208,7 @@ political_decisions = {
 			any_country = {
 				limit = {
 					ai = yes
-					is_culture_group = ISR
+					is_culture_group = jewish_group
 					in_sphere = THIS
 					NOT = {
 						has_country_flag = post_colonial_country
