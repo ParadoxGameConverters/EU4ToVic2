@@ -678,7 +678,7 @@
 	link = { eu4 = 2016 eu4 = 4902 v2 = 157 } # Amahami, Makandwewin -> Fort Ripley
 	link = { eu4 = 2512 eu4 = 4901 v2 = 156 } # Wahpekute, Saone -> Fort Renville
 	link = { eu4 = 908 v2 = 155 } # Sisithunwan -> Fort Snelling
-	link = { eu4 = 2518 v2 = 160 } # Noquet -> Superior
+	link = { eu4 = 2518 v2 = 160 } # La Pointe -> Superior
 	link = { eu4 = 904 v2 = 153 v2 = 154 } # Wahpetunwan -> Cedar Rapids, Sioux City
 	link = { eu4 = 905 eu4 = 4900 v2 = 151 } # Baxoje, Otoe -> Des Moines
 	link = { eu4 = 2513 eu4 = 4905 v2 = 152 } # Moingwena, Tapouaro -> Oskaloosa
@@ -953,7 +953,7 @@
 	link = { eu4 = 790 v2 = 2364 v2 = 2362 } # Chaco Austral -> Resistencia, Reconquista
 	link = { eu4 = 2858 v2 = 2340 } # Santiago -> Pilar
 	link = { eu4 = 777 v2 = 2356 } # Corrientes -> Corrientes
-	link = { eu4 = 2853 v2 = 2358 } # Yareyu -> Santo Tomas
+	link = { eu4 = 2853 v2 = 2358 } # Yapeyú -> Santo Tomas
 	link = { eu4 = 2859 v2 = 2341 } # Itapúa -> Encarnacion
 	link = { eu4 = 2855 v2 = 2554 } # Misiones -> Misiones
 	link = { eu4 = 2887 v2 = 2461 v2 = 2459 v2 = 2462 } # Santa Catarina -> Desterro, Lajes, Sao Miguel
@@ -1070,7 +1070,7 @@
 	link = { eu4 = 4550 v2 = 504 } # Castelló -> Castellon
 	link = { eu4 = 220 eu4 = 4549 v2 = 503 } # València, Xàtiva -> Valencia
 	link = { eu4 = 1750 v2 = 505 } # Alicante -> Alicante
-	link = { eu4 = 333 eu4 = 4559 eu4 = 4560 v2 = 502 } # Majorca, Minorca, Ibiza -> Balearic Islands
+	link = { eu4 = 333 eu4 = 4559 eu4 = 4560 v2 = 502 } # Mallorca, Menorca, Ibiza -> Balearic Islands
 	link = { eu4 = 216 v2 = 482 } # Salamanca -> Salamanca
 	link = { eu4 = 4552 v2 = 480 } # Palencia -> Valladolid
 	link = { eu4 = 215 eu4 = 4789 v2 = 483 } # Valladolid, Segovia -> Avila
@@ -1139,11 +1139,10 @@
 	link = { eu4 = 192 v2 = 428 } # Dijonnais -> Dijon
 	link = { eu4 = 187 v2 = 407 } # Barrois -> Chaumont
 	link = { eu4 = 4766 v2 = 413 } # Verdun -> Verdun
-	link = { eu4 = 189 v2 = 411 } # Lothringen -> Nancy
+	link = { eu4 = 189 v2 = 411 v2 = 414 } # Lothringen -> Nancy, Epinal
 	link = { eu4 = 188 v2 = 412 } # Metz -> Metz
-	link = { eu4 = 4765 v2 = 414 } # Mulhouse -> Epinal
 	link = { eu4 = 75 v2 = 409 } # Straßburg -> Strasbourg
-	link = { eu4 = 1880 v2 = 410 } # Sundgau -> Colmar
+	link = { eu4 = 1880 eu4 = 4765 v2 = 410 } # Sundgau, Mulhouse -> Colmar
 	link = { eu4 = 185 v2 = 427 } # Nemours -> Melun
 	link = { eu4 = 4390 v2 = 406 } # Troyes -> Troyes
 	link = { eu4 = 186 v2 = 408 v2 = 403 } # Reims -> Chalons, Laon
@@ -1257,7 +1256,7 @@
 	link = { eu4 = 132 v2 = 617 } # Steiermark -> Judenburg
 	link = { eu4 = 133 eu4 = 4761 eu4 = 4760 v2 = 622 } # Ob der Enns, Traungau, Innbaiern -> Linz
 	link = { eu4 = 4762 v2 = 620 } # Wienerwald -> Sankt Polten
-	link = { eu4 = 134 v2 = 619 v2 = 624 } # Wien -> Vienna, Eisenstadt
+	link = { eu4 = 134 v2 = 619 } # Wien -> Vienna
 	link = { eu4 = 1770 v2 = 621 } # Manhartsberg -> Krems
 	link = { comment = "# Germany" }
 	link = { eu4 = 65 eu4 = 4707 v2 = 599 } # München, Wasserburg -> Munich
@@ -1315,8 +1314,8 @@
 	link = { eu4 = 4778 eu4 = 60 v2 = 687 } # Görlitz, Bautzen -> Gorlitz
 	link = { eu4 = 4774 v2 = 568 } # Fulda -> Fulda
 	link = { eu4 = 4743 v2 = 561 } # Weimar -> Weimar
-	link = { eu4 = 4716 v2 = 563 v2 = 562 } # Coburg -> Meiningen, Gotha
-	link = { eu4 = 63 v2 = 554 } # Erfurt -> Erfurt
+	link = { eu4 = 4716 v2 = 563 } # Coburg -> Meiningen
+	link = { eu4 = 63 v2 = 554 v2 = 562 } # Erfurt -> Erfurt, Gotha
 	link = { eu4 = 59 v2 = 556 } # Wittenberg -> Halle
 	link = { eu4 = 58 v2 = 555 } # Anhalt -> Dessau
 	link = { eu4 = 52 eu4 = 4741 v2 = 553 } # Magdeburg, Halle -> Magdeburg
@@ -1418,9 +1417,9 @@
 	link = { eu4 = 4698 v2 = 827 } # Cephalonia -> Zante
 	link = { eu4 = 142 v2 = 826 } # Corfu -> Corfu
 	link = { comment = "# Hungary" }
-	link = { eu4 = 4240 v2 = 642 } # Fejér -> Gyor
-	link = { eu4 = 135 v2 = 623 v2 = 639 } # Sopron -> Sopron, Zalaegerszeg
-	link = { eu4 = 1864 v2 = 644 v2 = 640 v2 = 643 } # Somogy -> Kaposvar, Pecs, Szekesfehevar
+	link = { eu4 = 4240 v2 = 642 v2 = 643 } # Fejér -> Gyor, Szekesfehevar
+	link = { eu4 = 135 v2 = 623 v2 = 624 } # Sopron -> Sopron, Eisenstadt
+	link = { eu4 = 1864 v2 = 644 v2 = 640 v2 = 639 } # Somogy -> Kaposvar, Pecs, Zalaegerszeg
 	link = { eu4 = 153 v2 = 641 v2 = 645 v2 = 649 } # Pest -> Pest, Kecskemet, Szeged
 	link = { eu4 = 4125 v2 = 646 } # Szolnok -> Miskolc
 	link = { eu4 = 155 v2 = 650 } # Békés -> Bekescsaba
@@ -1746,7 +1745,7 @@
 	link = { eu4 = 4291 v2 = 928 } # Qazaniya -> Baqubah
 	link = { eu4 = 410 v2 = 926 } # Baghdad -> Baghdad
 	link = { eu4 = 4293 v2 = 924 } # Arbil -> Rewanduz
-	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulimaniyeh -> Sulaymania
+	link = { eu4 = 415 eu4 = 4294 v2 = 925 } # Kirkuk, Sulaimaniyah -> Sulaymania
 	link = { comment = "# Saudi Arabia" }
 	link = { eu4 = 2338 v2 = 1158 } # Hafar -> Rafha
 	link = { eu4 = 4274 eu4 = 392 eu4 = 4275 v2 = 1157 } # Sudayr, Al-Arid, Al-Yamamah -> Riyadh
@@ -1937,7 +1936,7 @@
 	link = { eu4 = 1159 v2 = 1818 v2 = 1820 } # Bagirmi -> Massenya, Bongor
 	link = { eu4 = 2287 eu4 = 1160 v2 = 1964 } # Kotoko, Mandara -> Maroua
 	link = { eu4 = 2286 v2 = 1819 } # Logone -> Moundou
-	link = { eu4 = 2932 eu4 = 774 v2 = 1821 } # Waddai, Al-Junaynah -> Abeche
+	link = { eu4 = 2932 eu4 = 774 v2 = 1821 } # Wadai, Al-Junaynah -> Abeche
 	link = { comment = "# Landbridges" }
 	link = { comment = "# Resettable Region west_africa_coast" }
 	link = { eu4 = 1111 v2 = 1774 } # Arguin -> Dakhla
@@ -1991,7 +1990,7 @@
 	link = { eu4 = 1186 v2 = 2057 } # Sofala -> Sofala
 	link = { eu4 = 1192 v2 = 2059 } # Quelimane -> Quelimane
 	link = { eu4 = 2952 eu4 = 1800 v2 = 2052 } # Madanda, Lower Limpopo -> Massekisse
-	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manikya -> Moyo
+	link = { eu4 = 1187 eu4 = 2951 v2 = 2058 } # Sena, Manyika -> Moyo
 	link = { eu4 = 1191 v2 = 2070 } # Tete -> Umtali
 	link = { eu4 = 1184 v2 = 2073 v2 = 2071 } # Zimbabwe -> Masvingo, Bulawayo
 	link = { eu4 = 1189 eu4 = 1185 v2 = 2072 } # Shangwe, Butua -> Hwange
@@ -2081,7 +2080,7 @@
 	link = { eu4 = 4033 v2 = 1830 } # Al Qadarif -> Sennar
 	link = { eu4 = 1217 v2 = 1832 } # Fazughli -> Fashoda
 	link = { eu4 = 2799 v2 = 1831 } # Sennar -> Rabak
-	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Kosti, El Obeid -> Obeid
+	link = { eu4 = 2800 eu4 = 1221 v2 = 1838 } # Waylula, El Obeid -> Obeid
 	link = { eu4 = 1216 v2 = 1840 } # Tegali -> Kaduqli
 	link = { eu4 = 2802 v2 = 1839 } # Kobbe -> Al-Fula
 	link = { eu4 = 1219 v2 = 1841 v2 = 1842 } # Darfur -> Fasher, Junayah
@@ -2186,7 +2185,7 @@
 	link = { eu4 = 2078 eu4 = 4509 v2 = 1232 } # Bannu, Karor -> Shahpur
 	link = { eu4 = 2077 v2 = 1230 } # Margalla -> Attock
 	link = { eu4 = 578 v2 = 1218 } # Roh -> Peshawar
-	link = { eu4 = 2073 v2 = 1225 v2 = 1223 } # Baltistan -> Gilgit, Chitral
+	link = { eu4 = 2073 v2 = 1225 v2 = 1223 } # Gilgit -> Gilgit, Chitral
 	link = { comment = "# Afghanistan" }
 	link = { eu4 = 2224 eu4 = 2230 eu4 = 435 v2 = 1214 } # Ferah, Chakhansur, Zaranj -> Zaranj
 	link = { eu4 = 447 eu4 = 2229 v2 = 1215 } # Kandahar, Bust -> Kandahar
@@ -2200,8 +2199,8 @@
 	link = { comment = "# Nepal, Bhutan, Tibet" }
 	link = { eu4 = 554 eu4 = 2070 eu4 = 4492 eu4 = 4485 v2 = 1327 } # Baisi Rajya, Chaubisi Rajya, Doti, Palpa -> Jumla
 	link = { eu4 = 557 eu4 = 2071 v2 = 1326 } # Katmandu, Limbuwan -> Katmandu
-	link = { eu4 = 565 eu4 = 4481 v2 = 1329 } # Thimpu, Punakha -> Thimpu
-	link = { eu4 = 2128 eu4 = 4516 eu4 = 4515 v2 = 1592 } # Ngari, Purang, Gyirong -> Ngari
+	link = { eu4 = 565 eu4 = 4481 v2 = 1329 } # Paro, Punakha -> Thimpu
+	link = { eu4 = 2128 eu4 = 4516 eu4 = 4515 v2 = 1592 } # Tsaparang, Purang, Gyirong -> Ngari
 	link = { eu4 = 676 eu4 = 4518 eu4 = 4514 v2 = 1589 v2 = 1591 } # MANY-TO-MANY: Shigatse, Tsurphu, Sakya -> Shigatse, Changtang
 	link = { eu4 = 706 eu4 = 2134 eu4 = 4204 v2 = 1556 v2 = 1557 } # MANY-TO-MANY: Tsaidam, Rebgong, Anding -> Makhai, Xining
 	link = { eu4 = 677 eu4 = 2130 eu4 = 2131 eu4 = 2132 eu4 = 4205 eu4 = 4519 eu4 = 4517 eu4 = 705 v2 = 1587 v2 = 1588 v2 = 1590 v2 = 1558 } # MANY-TO-MANY: Lhasa, Nyingchi, Qamdo, Markam, Nagchu, Damxung, Nedong, Gyegu -> Lhasa, Chamdo, Lhodrak, Kegudo
@@ -2370,7 +2369,7 @@
 	link = { eu4 = 1847 eu4 = 4193 v2 = 1642 } # Shiribeshi, Oshima -> Hakodate
 	link = { eu4 = 1031 v2 = 1643 } # Kamikawa -> Ishikari
 	link = { eu4 = 1032 v2 = 1088 v2 = 1089 } # The Kurils -> Shumshu, Etorofu
-	link = { eu4 = 1033 v2 = 1087 } # Sakhalin -> Otomari
+	link = { eu4 = 1033 v2 = 1087 } # Enchiw -> Otomari
 	link = { eu4 = 4658 v2 = 1086 } # Nangha'er -> Pogobi
 	link = { comment = "# Honshu" }
 	link = { eu4 = 1026 v2 = 1668 v2 = 1669 } # Rikuzen -> Sendai, Fukushima
@@ -2429,7 +2428,7 @@
 	link = { eu4 = 2189 eu4 = 4679 v2 = 2678 } # Tsetserleg, Khovsgol -> Bulgan
 	link = { eu4 = 723 eu4 = 2114 eu4 = 2115 eu4 = 4673 v2 = 1534 } # Xilin Gol, Ereen, Chahar, Ujimqin -> Ulaan Chab Chuulghan
 	link = { eu4 = 719 eu4 = 4222 v2 = 2608 } # Uliastai, Ulaangom -> Khatgal
-	link = { eu4 = 2190 eu4 = 2117 eu4 = 4678 v2 = 1468 } # Qaraqorum, Zasagt, Sain Noyon -> Altai
+	link = { eu4 = 2190 eu4 = 2117 eu4 = 4678 v2 = 1468 } # Bayankhongor, Zasagt, Qaraqorum -> Altai
 	link = { eu4 = 4669 v2 = 2207 } # Sainshand -> Sainshand
 	link = { eu4 = 2193 eu4 = 720 eu4 = 4221 eu4 = 4677 v2 = 1466 } # Govi, Dornogovi, Dundgovi, Noyon -> Dalandzadgad
 	link = { eu4 = 702 eu4 = 2747 eu4 = 701 eu4 = 4223 v2 = 1532 } # Hohhot, Khara Narin Ula, Ordos, Hetao -> Guihua Tumed
@@ -2717,7 +2716,7 @@
 	link = { comment = "# # Other Asia" }
 	link = { comment = "# Russian Manchuria" }
 	link = { eu4 = 1850 eu4 = 2106 eu4 = 2186 eu4 = 4655 v2 = 1082 } # Yaran, Furdan, Iman, Shilimian -> Haishenwai
-	link = { eu4 = 729 eu4 = 1050 eu4 = 4216 eu4 = 4215 eu4 = 4214 eu4 = 4217 eu4 = 4656 v2 = 1083 } # Bohori, Deren, Ulch, Fudali, Kalar, Pijin, Wolanhe -> Boli
+	link = { eu4 = 729 eu4 = 1050 eu4 = 4216 eu4 = 4215 eu4 = 4214 eu4 = 4217 eu4 = 4656 v2 = 1083 } # Bohori, Tyr, Oroch, Fudali, Ulch, Pijin, Wolanhe -> Boli
 	link = { eu4 = 1048 v2 = 1084 } # Miyoo Gasan -> Utchan
 	link = { eu4 = 2105 v2 = 2617 } # Kuru -> Amgun
 	link = { eu4 = 2104 eu4 = 1049 eu4 = 4662 eu4 = 4659 v2 = 1085 } # Birija, Haiilanboo, Halacha, Tulutingshan -> Hailanpao
@@ -2736,7 +2735,7 @@
 	link = { eu4 = 1042 v2 = 2642 } # Sakha -> Tomtor
 	link = { eu4 = 2438 eu4 = 1046 v2 = 2648 } # Kharya, Maya -> Handyga
 	link = { comment = "# Eastern Siberia" }
-	link = { eu4 = 2102 v2 = 2697 v2 = 1081 } # Urkan -> Jingkiri, Yakesa
+	link = { eu4 = 2102 v2 = 2697 v2 = 1081 } # Albazin -> Jingkiri, Yakesa
 	link = { eu4 = 1052 v2 = 2696 } # Stanovoy -> Nerjungri
 	link = { eu4 = 1051 v2 = 2644 } # Aldan -> Tommot
 	link = { eu4 = 1045 v2 = 2672 v2 = 1069 } # Yakut -> Borogoncy, Yakutsk
