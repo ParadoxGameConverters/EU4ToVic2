@@ -455,7 +455,7 @@ political_decisions = {
 				add_accepted_culture = czech
 				add_accepted_culture = slovak
 			}
-			ALL = {
+			ISL = {
 				primary_culture = bedouin
 				add_accepted_culture = union
 				add_accepted_culture = persian
@@ -2472,7 +2472,7 @@ political_decisions = {
 				tag = ARA
 				tag = MUG
 				tag = TIM
-				tag = ALL
+				tag = ISL
 			}
 		}	
 		allow = {
@@ -2525,7 +2525,7 @@ political_decisions = {
 				tag = TUR
 				tag = IRQ
 				tag = SYR
-				tag = ALL
+				tag = ISL
 			}
 		}	
 		allow = {
@@ -2658,9 +2658,9 @@ political_decisions = {
 					NOT = { exists = VEN }
 					NOT = { exists = LOM }
 					OR = {
-						capital_scope = { region = 726 } #Lombardia
-						capital_scope = { region = 729 } #Venetia
-						capital_scope = { region = 734 } #South Tirol
+						capital_scope = { region = AUS_726 } #Lombardia
+						capital_scope = { region = AUS_729 } #Venetia
+						capital_scope = { region = AUS_734 } #South Tirol
 					}
 				}
 			}
@@ -2713,9 +2713,9 @@ political_decisions = {
 				exists = LOM
 			}
 			NOT = {
-				capital_scope = { region = 726 } #Lombardia
-				capital_scope = { region = 729 } #Venetia
-				capital_scope = { region = 734 } #South Tirol
+				capital_scope = { region = AUS_726 } #Lombardia
+				capital_scope = { region = AUS_729 } #Venetia
+				capital_scope = { region = AUS_734 } #South Tirol
 			}
 			NOT = {
 				primary_culture = north_italian
@@ -3033,7 +3033,7 @@ political_decisions = {
 			NOT = {
 				exists = YEM
 				tag = ARA
-				tag = ALL
+				tag = ISL
 			}
 		}	
 		allow = {
@@ -3195,7 +3195,7 @@ political_decisions = {
 		
 		effect = {
 			prestige = 10
-			any_core = {
+			all_core = {
 				add_core = KNY
 				remove_core = SWA
 			}
@@ -3220,7 +3220,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_core = {
+			all_core = {
 				limit = {
 					NOT = {
 						owned_by = ROM
@@ -3336,7 +3336,7 @@ political_decisions = {
 		news_desc_short = "jew_NEWS_SHORT"
 		potential = {
 			is_greater_power = yes
-			is_culture_group = ISR
+			is_culture_group = jewish_cultures
 			NOT = {
 				exists = ISR
 			}
@@ -3357,7 +3357,7 @@ political_decisions = {
 			any_country = {
 				limit = {
 					ai = yes
-					is_culture_group = ISR
+					is_culture_group = jewish_cultures
 					in_sphere = THIS
 					NOT = {
 						has_country_flag = post_colonial_country

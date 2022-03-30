@@ -2501,9 +2501,9 @@ political_decisions = {
 					NOT = { exists = VEN }
 					NOT = { exists = LOM }
 					OR = {
-						capital_scope = { region = 726 }
-						capital_scope = { region = 729 }
-						capital_scope = { region = 734 }
+						capital_scope = { region = AUS_726 }
+						capital_scope = { region = AUS_729 }
+						capital_scope = { region = AUS_734 }
 					}
 				}
 			}
@@ -2557,9 +2557,9 @@ political_decisions = {
 				exists = LOM
 			}
 			NOT = {
-				capital_scope = { region = 726 }
-				capital_scope = { region = 729 }
-				capital_scope = { region = 734 }
+				capital_scope = { region = AUS_726 }
+				capital_scope = { region = AUS_729 }
+				capital_scope = { region = AUS_734 }
 			}
 			NOT = {
 				primary_culture = north_italian
@@ -3042,7 +3042,7 @@ political_decisions = {
 		
 		effect = {
 			prestige = 10
-			any_core = {
+			all_core = {
 				add_core = KNY
 				remove_core = SWA
 			}
@@ -3068,7 +3068,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_core = {
+			all_core = {
 				limit = {
 					NOT = {
 						owned_by = ROM
@@ -3187,7 +3187,7 @@ political_decisions = {
 		news_desc_short = "jew_NEWS"
 		potential = {
 			is_greater_power = yes
-			is_culture_group = ISR
+			is_culture_group = jewish_group
 			NOT = {
 				exists = ISR
 			}
@@ -3208,7 +3208,7 @@ political_decisions = {
 			any_country = {
 				limit = {
 					ai = yes
-					is_culture_group = ISR
+					is_culture_group = jewish_group
 					in_sphere = THIS
 					NOT = {
 						has_country_flag = post_colonial_country
