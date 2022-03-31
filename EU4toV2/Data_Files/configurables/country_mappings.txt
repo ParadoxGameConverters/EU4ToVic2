@@ -1540,7 +1540,7 @@ link = { eu4 = k_mauretania v2 = TRZ } #Mauretania
 link = { eu4 = k_romagna v2 = RMG } #Romagna
 
 ##Added for some decisions to have a sense
-link = { eu4 = d_carinthia v2 = CTI } #Carinthia
+link = { eu4 = d_carinthia v2 = CRT } #Carinthia
 link = { eu4 = e_latin_empire v2 = LTN } #Latin Empire
 
 ##Just a joke mod
