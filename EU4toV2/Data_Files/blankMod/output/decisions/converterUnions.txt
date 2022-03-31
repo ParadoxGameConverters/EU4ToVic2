@@ -2112,8 +2112,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = brithenig
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -2157,8 +2157,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = gaul
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -2202,8 +2202,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = laessin
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {
