@@ -68,6 +68,7 @@ WUR		= "countries/Wurttemberg.txt"
 DTT		= "countries/Dithmarschen.txt"
 
 # Italy
+AQU		= "countries/Aquileia.txt"
 LOM		= "countries/Lombardia.txt"
 LUC		= "countries/Lucca.txt"
 MOD		= "countries/Modena.txt"
@@ -162,6 +163,7 @@ BER		="countries/Beroda.txt"
 BHO		="countries/Bhopal.txt"
 BIK		="countries/Bikaner.txt"
 BUN		="countries/Bundelkhand.txt"
+DEC		="countries/Deccan.txt"
 GWA		="countries/Gwailor.txt"
 HYD		="countries/Hyderabad.txt"
 IND		="countries/Indore.txt"
@@ -282,6 +284,7 @@ TRL 	= "countries/Trapalandia.txt"
 ALI		="countries/Alien Invaders.txt"
 MIA		="countries/Khawitmau.txt"
 UND		="countries/Undead Horde.txt"
+ZOM		="countries/Undead Horde.txt"
 
 # Germany (HRE)
 HLR 	="countries/HolyRomanEmpire.txt"

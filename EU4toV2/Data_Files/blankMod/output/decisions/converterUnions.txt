@@ -654,7 +654,7 @@ political_decisions = {
 	}
 
 	
-	form_china = {
+	reform_into_china = {
 		picture = clear_out_the_manchu_elite
 		news = yes
 		news_desc_long = "form_china_NEWS_LONG"
@@ -1050,8 +1050,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = malay
+					capital_scope = { continent = asia }
 				}
-				capital_scope = { continent = asia }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -1451,7 +1451,7 @@ political_decisions = {
 				all_core = {
 					OR = {
 						owned_by = THIS
-						is_empty = yes
+						empty = yes
 						owned_by = RYU
 						owner = {
 							in_sphere = THIS
@@ -2112,8 +2112,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = brithenig
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -2157,8 +2157,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = gaul
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -2202,8 +2202,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = laessin
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {

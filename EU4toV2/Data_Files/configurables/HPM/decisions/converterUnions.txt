@@ -156,10 +156,7 @@ political_decisions = {
 				limit = {
 					NOT = {
 						is_culture_group = oceanic
-						is_culture_group = native_central_american
-						is_culture_group = native_south_american
-						is_culture_group = native_north_american
-						is_culture_group = native_caribbean
+						is_culture_group = native_american
 						is_culture_group = non_human
 						is_culture_group = southern_african
 						is_culture_group = east_african
@@ -205,10 +202,7 @@ political_decisions = {
 				limit = {
 					OR = {
 						is_culture_group = oceanic
-						is_culture_group = native_central_american
-						is_culture_group = native_south_american
-						is_culture_group = native_north_american
-						is_culture_group = native_caribbean
+						is_culture_group = native_american
 						is_culture_group = non_human
 						is_culture_group = southern_african
 						is_culture_group = east_african
@@ -366,7 +360,7 @@ political_decisions = {
 				activate_technology = private_bank_money_bill_printing
 				activate_technology = private_banks
 				activate_technology = psychoanalysis
-				activate_technology = publishing_industry
+				activate_technology = mechanical_production
 				activate_technology = raider_group_doctrine
 				activate_technology = realism
 				activate_technology = revolution_n_counterrevolution
@@ -794,7 +788,7 @@ political_decisions = {
 	}
 
 	
-	form_china = {
+	reform_into_china = {
 		picture = clear_out_the_manchu_elite
 		news = yes
 		news_desc_long = "form_china_NEWS_LONG"
@@ -1185,8 +1179,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = malay
+					capital_scope = { continent = asia }
 				}
-				capital_scope = { continent = asia }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -1435,7 +1429,7 @@ political_decisions = {
 				AND = { #Soon-westernized
 					civilized = no
 					enlightenment_thought = 1
-					publishing_industry = 1
+					mechanical_production = 1
 					freedom_of_trade = 1
 					private_banks = 1
 					post_napoleonic_thought = 1
@@ -1524,7 +1518,7 @@ political_decisions = {
 		potential = {
 			OR = {
 				tag = AQU
-				tag = CTI
+				tag = CRT
 				primary_culture = slovene
 			}
 			NOT = { tag = YUG }
@@ -1628,7 +1622,7 @@ political_decisions = {
 				all_core = {
 					OR = {
 						owned_by = THIS
-						is_empty = yes
+						empty = yes
 						owned_by = RYU
 						owner = {
 							in_sphere = THIS
@@ -2276,8 +2270,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = brithenig
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -2320,8 +2314,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = gaul
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -2364,8 +2358,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = laessin
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {
