@@ -1185,8 +1185,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = malay
+					capital_scope = { continent = asia }
 				}
-				capital_scope = { continent = asia }
 				annex_to = THIS
 			}
 			any_owned = {
