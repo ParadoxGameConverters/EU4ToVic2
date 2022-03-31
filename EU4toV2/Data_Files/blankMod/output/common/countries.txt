@@ -68,6 +68,7 @@ WUR		= "countries/Wurttemberg.txt"
 DTT		= "countries/Dithmarschen.txt"
 
 # Italy
+AQU		= "countries/Aquileia.txt"
 LOM		= "countries/Lombardia.txt"
 LUC		= "countries/Lucca.txt"
 MOD		= "countries/Modena.txt"
