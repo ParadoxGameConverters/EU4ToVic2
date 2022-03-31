@@ -282,6 +282,7 @@ TRL 	= "countries/Trapalandia.txt"
 ALI		="countries/Alien Invaders.txt"
 MIA		="countries/Khawitmau.txt"
 UND		="countries/Undead Horde.txt"
+ZOM		="countries/Undead Horde.txt"
 
 # Germany (HRE)
 HLR 	="countries/HolyRomanEmpire.txt"
