@@ -518,6 +518,13 @@ void V2::World::addAcceptedCultures(const EU4::Regions& eu4Regions)
 			}
 		}
 
+		// Do we own any pops of primary culture? If not, swap prim for accepted and fall back.
+		if (!census.contains(primaryCulture) || census.at(primaryCulture) == 0)
+		{
+			acceptedCultures.insert(primaryCulture);
+			country.second->setPrimaryCulture("dummy");
+		}
+
 		// finally, for colonial nations, we need to ensure their overlord's mutated culture is accepted, to ease
 		// cases where minority expulsion created monstrosities.
 
