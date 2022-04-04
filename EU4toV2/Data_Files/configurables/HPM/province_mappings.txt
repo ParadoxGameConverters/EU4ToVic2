@@ -563,17 +563,18 @@
 	link = { eu4 = 2561 v2 = 244 } # Wampanoag -> New Bedford
 	link = { eu4 = 965 v2 = 232 v2 = 233 } # Manahahttan -> New York, Long Island
 	link = { eu4 = 963 eu4 = 2558 v2 = 234 } # Machkantowoon, Espachomy -> Albany
-	link = { eu4 = 4875 eu4 = 4876 v2 = 235 } # Welhikhane, Scahentowanen -> Binghamton
+	link = { eu4 = 4875 v2 = 2627 } # Welhikhane -> Coudersport
 	link = { eu4 = 2559 eu4 = 964 v2 = 240 } # Tekontaroken, Kanien'kehaka -> Plattsburgh
 	link = { eu4 = 4912 v2 = 239 } # Kaniatarowanen -> Watertown
-	link = { eu4 = 961 eu4 = 960 v2 = 238 } # Onyo'taaka, Onondagaono -> Syracuse
+	link = { eu4 = 961 v2 = 238 } # Onyo'taaka -> Syracuse
 	link = { eu4 = 959 v2 = 237 } # Gayogohono -> Rochester
+	link = { eu4 = 960 v2 = 235 } # Onondagaono -> Binghamton
 	link = { eu4 = 958 eu4 = 4872 v2 = 236 } # Onodowaga, Wenrohonon -> Buffalo
 	link = { eu4 = 2639 v2 = 229 } # Raritan -> Newark
 	link = { eu4 = 962 v2 = 230 v2 = 231 } # Unami -> Trenton, Camden
 	link = { eu4 = 956 v2 = 223 } # Sakimauchheening -> Philadelphia
-	link = { eu4 = 2023 v2 = 224 } # Munsee -> Scranton
-	link = { eu4 = 954 v2 = 228 v2 = 2627 } # Erielhonan -> Erie, Coudersport
+	link = { eu4 = 2023 eu4 = 4876 v2 = 224 } # Munsee, Scahentowanen -> Scranton
+	link = { eu4 = 954 v2 = 228 } # Erielhonan -> Erie
 	link = { eu4 = 2557 v2 = 225 } # Atrakwaye -> Williamsport
 	link = { eu4 = 2555 v2 = 227 } # Honniasont -> Pittsburgh
 	link = { eu4 = 2556 eu4 = 955 v2 = 226 } # Onojutta, Conestoga -> Harrisburg
@@ -692,8 +693,8 @@
 	link = { eu4 = 4921 eu4 = 4887 v2 = 187 } # Kuttawa, Cochati -> Paducah
 	link = { eu4 = 941 eu4 = 2526 v2 = 186 } # Ouasioto, Shatteras -> Lexington
 	link = { eu4 = 940 v2 = 184 } # Kentahke -> Louisville
-	link = { eu4 = 2524 v2 = 170 } # Waapi-nipi -> Evansville
-	link = { eu4 = 2523 v2 = 169 } # Piankeshaw -> Indianapolis
+	link = { eu4 = 2524 v2 = 169 } # Waapi-nipi -> Indianapolis
+	link = { eu4 = 2523 v2 = 170 } # Piankeshaw -> Evansville
 	link = { eu4 = 943 v2 = 172 } # Atchakangouen -> Fort Wayne
 	link = { eu4 = 942 v2 = 171 } # Waayaanthanwa -> South Bend
 	link = { eu4 = 2520 v2 = 168 } # Mengkonkia -> Olney
