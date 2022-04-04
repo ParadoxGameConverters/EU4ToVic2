@@ -1540,7 +1540,7 @@
 	link = { eu4 = 278 v2 = 940 } # Pinsk -> Pinsk
 	link = { eu4 = 4537 v2 = 939 } # Nowogrodek -> Baranovichi
 	link = { eu4 = 1941 eu4 = 4545 v2 = 941 } # Turov, Sluck -> Slutsk
-	link = { eu4 = 4247 eu4 = 4115 v2 = 942 } # Owrucz, Mazyr -> Mozyr
+	link = { eu4 = 4115 v2 = 942 } # Mazyr -> Mozyr
 	link = { eu4 = 276 v2 = 718 } # Minsk -> Minsk
 	link = { eu4 = 4242 v2 = 947 v2 = 938 } # Ula -> Pastavy, Lida
 	link = { eu4 = 292 eu4 = 4544 v2 = 948 } # Mogilev, Bobrujsk -> Mogilev
@@ -1563,14 +1563,15 @@
 	link = { eu4 = 1842 v2 = 350 v2 = 352 } # Narva -> Narva, Dorpat
 	link = { comment = "# Ukraine" }
 	link = { eu4 = 281 v2 = 954 v2 = 955 } # Podolia -> Vinnitsa, Proskorov
-	link = { eu4 = 1942 v2 = 959 } # Zhytomyr -> Korosten
-	link = { eu4 = 1943 eu4 = 4540 v2 = 960 } # Bratslav, Winnica -> Zhitomir
+	link = { eu4 = 4247 v2 = 959 } # Owrucz -> Korosten
+	link = { eu4 = 1943 v2 = 969 } # Bratslav -> Pervomaisk
+	link = { eu4 = 4540 eu4 = 1942 v2 = 960 } # Winnica, Zhytomyr -> Zhitomir
 	link = { eu4 = 280 v2 = 958 } # Kiev -> Kiev
 	link = { eu4 = 289 eu4 = 2407 v2 = 962 } # Chernigov, Pereyaslav -> Chernigov
 	link = { eu4 = 298 eu4 = 1945 v2 = 977 v2 = 1018 } # MANY-TO-MANY: Kursk, Severia -> Kursk, Belgorod
 	link = { eu4 = 290 eu4 = 4542 eu4 = 4543 v2 = 963 } # Poltava, Lubnie, Rylsk -> Poltava
 	link = { eu4 = 1944 v2 = 961 } # Cherkasy -> Cherkassy
-	link = { eu4 = 282 v2 = 968 v2 = 969 } # Yedisan -> Odessa, Pervomaisk
+	link = { eu4 = 282 v2 = 968 } # Yedisan -> Odessa
 	link = { eu4 = 2406 v2 = 970 v2 = 971 } # Ingil -> Nikolaev, Krivoy Rog
 	link = { eu4 = 1974 v2 = 965 v2 = 973 } # Yedishkul -> Cherson, Melitopol
 	link = { eu4 = 283 v2 = 972 } # Zaporozhia -> Ekaterinoslav
