@@ -528,14 +528,6 @@ political_decisions = {
 			2065 = { add_core = SHO }
 			2053 = { add_core = SHO }
 			2056 = { add_core = SHO }
-			#Bima
-			1439 = { add_core = BIM }
-			1440 = { add_core = BIM }
-			1441 = { add_core = BIM }
-			1443 = { add_core = BIM }
-			1444 = { add_core = BIM }
-			1445 = { add_core = BIM }
-			1446 = { add_core = BIM }
 			#Fiji - grab the uncolonized
 			2454 = { secede_province = THIS }
 			2520 = { secede_province = THIS }
