@@ -11,7 +11,7 @@ tech = {group = army score = -0.9 name = bronze_muzzle_loaded_artillery}
 tech = {group = army score = -0.2 name = post_napoleonic_thought}
 tech = {group = army score = 0.2 name = army_command_principle}
 tech = {group = army score = 0.6 name = military_staff_system}
-tech = {group = army score = 1.0 name = army_professionalism}
+tech = {group = army score = 0.8 name = army_professionalism}
 
 tech = {group = navy score = 0 name = post_nelsonian_thought}
 tech = {group = navy score = 0.1 name = the_command_principle}
@@ -20,7 +20,7 @@ tech = {group = navy score = 0.4 name = naval_design_bureaus}
 tech = {group = navy score = 0.5 name = alphabetic_flag_signaling}
 tech = {group = navy score = 0.7 name = battleship_column_doctrine}
 tech = {group = navy score = 0.8 name = steamers}
-tech = {group = navy score = 1.0 name = naval_professionalism}
+tech = {group = navy score = 0.9 name = naval_professionalism}
 
 tech = {group = commerce score = -0.8 name = no_standard}
 tech = {group = commerce score = -0.5 name = guild_based_production}
@@ -30,7 +30,7 @@ tech = {group = commerce score = -0.2 name = freedom_of_trade}
 tech = {group = commerce score = 0.3 name = stock_exchange}
 tech = {group = commerce score = 0.7 name = ad_hoc_money_bill_printing}
 tech = {group = commerce score = 0.8 name = market_structure}
-tech = {group = commerce score = 1.0 name = late_classical_theory}
+tech = {group = commerce score = 0.9 name = late_classical_theory}
 
 tech = {group = industry score = -1.0 name = water_wheel_power hpm = piston_steam_engine}
 tech = {group = industry score = -0.7 name = publishing_industry hpm = mechanical_production}
@@ -38,8 +38,8 @@ tech = {group = industry score = -0.2 name = mechanized_mining hpm = hot_blast}
 tech = {group = industry score = 0 name = basic_chemistry}
 tech = {group = industry score = 0.2 name = practical_steam_engine hpm = high_pressure_steam_engine}
 tech = {group = industry score = 0.4 name = experimental_railroad}
-tech = {group = industry score = 0.6 name = mechanical_production}
-tech = {group = industry score = 1.0 name = clean_coal hpm = mechanized_mining}
+tech = {group = industry score = 0.5 name = mechanical_production hpm = interchangeable_parts }
+tech = {group = industry score = 0.9 name = clean_coal hpm = mechanized_mining}
 
 tech = {group = culture score = -1.0 name = classicism_n_early_romanticism}
 tech = {group = culture score = -1.0 name = late_enlightenment_philosophy}

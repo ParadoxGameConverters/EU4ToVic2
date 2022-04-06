@@ -18,6 +18,7 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include <cmath>
+#include <ranges>
 
 V2::Country::Country(const std::string& countriesFileLine,
 	 const bool _dynamicCountry,
@@ -757,11 +758,11 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 		lastDate = HARD_ENDING_DATE;
 
 	const auto currentYear = std::fmax(lastDate.diffInYears(date("0.1.1")), 0);
-	const auto yearFactor = (0.1 + 4'614'700 * currentYear) / (1 + 103'810'000.0f * currentYear - 54'029 * pow(currentYear, 2));
+	const auto yearFactor = (0.1 + 4'614'700 * currentYear) / (1 + static_cast<double>(103'810'000.0f) * currentYear - 54'029 * pow(currentYear, 2));
 
 	details.literacy *= yearFactor;
 
-	if (civLevel == 100)
+	if (static_cast<int>(civLevel) == 100)
 	{
 		details.civilized = true;
 		details.industryFactor = techGroupsMapper.getIndustryFromTechGroup(techGroup) / 5.0; // ranges 0.0-2.0
@@ -776,7 +777,7 @@ void V2::Country::newCivConversionMethod(double topTech, int topInstitutions, co
 	}
 }
 
-void V2::Country::addRailroadtoCapitalState()
+void V2::Country::addRailroadtoCapitalState() const
 {
 	for (const auto& state: states)
 	{
@@ -882,8 +883,8 @@ bool V2::Country::addFactory(std::shared_ptr<Factory> factory)
 void V2::Country::setupPops(const double popWeightRatio, const CIV_ALGORITHM popConversionAlgorithm, const mappers::ProvinceMapper& provinceMapper)
 {
 	// create the pops
-	for (const auto& province: provinces)
-		province.second->doCreatePops(popWeightRatio, this, popConversionAlgorithm, provinceMapper);
+	for (const auto& province: provinces | std::views::values)
+		province->doCreatePops(popWeightRatio, this, popConversionAlgorithm, provinceMapper);
 }
 
 void V2::Country::convertArmies(const mappers::RegimentCostsMapper& regimentCostsMapper,
