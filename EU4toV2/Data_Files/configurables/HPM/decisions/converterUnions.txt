@@ -110,8 +110,9 @@ political_decisions = {
 		}
 	}
 	mongol_khagan = {
+		picture = peking_convention
 		potential = {
-			tag = KHA
+			has_country_flag = vic2_country_KHA
 			NOT = { exists = MGL }
 		}
 
