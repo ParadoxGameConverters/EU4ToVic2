@@ -2998,7 +2998,7 @@ SAT = { # Satsuma
     color3= { 0 0 0  }
 }
 
-SCY = { # Sicily
+SYC = { # Sicily
     color1= { 73 152 76  }
     color2= { 219 124 139  }
     color3= { 131 101 85  }
