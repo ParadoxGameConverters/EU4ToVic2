@@ -563,18 +563,17 @@
 	link = { eu4 = 2561 v2 = 244 } # Wampanoag -> New Bedford
 	link = { eu4 = 965 v2 = 232 v2 = 233 } # Manahahttan -> New York, Long Island
 	link = { eu4 = 963 eu4 = 2558 v2 = 234 } # Machkantowoon, Espachomy -> Albany
-	link = { eu4 = 4875 v2 = 2627 } # Welhikhane -> Coudersport
+	link = { eu4 = 4875 eu4 = 4876 v2 = 235 } # Welhikhane, Scahentowanen -> Binghamton
 	link = { eu4 = 2559 eu4 = 964 v2 = 240 } # Tekontaroken, Kanien'kehaka -> Plattsburgh
 	link = { eu4 = 4912 v2 = 239 } # Kaniatarowanen -> Watertown
-	link = { eu4 = 961 v2 = 238 } # Onyo'taaka -> Syracuse
+	link = { eu4 = 961 eu4 = 960 v2 = 238 } # Onyo'taaka, Onondagaono -> Syracuse
 	link = { eu4 = 959 v2 = 237 } # Gayogohono -> Rochester
-	link = { eu4 = 960 v2 = 235 } # Onondagaono -> Binghamton
 	link = { eu4 = 958 eu4 = 4872 v2 = 236 } # Onodowaga, Wenrohonon -> Buffalo
 	link = { eu4 = 2639 v2 = 229 } # Raritan -> Newark
 	link = { eu4 = 962 v2 = 230 v2 = 231 } # Unami -> Trenton, Camden
 	link = { eu4 = 956 v2 = 223 } # Sakimauchheening -> Philadelphia
-	link = { eu4 = 2023 eu4 = 4876 v2 = 224 } # Munsee, Scahentowanen -> Scranton
-	link = { eu4 = 954 v2 = 228 } # Erielhonan -> Erie
+	link = { eu4 = 2023 v2 = 224 } # Munsee -> Scranton
+	link = { eu4 = 954 v2 = 228 v2 = 2627 } # Erielhonan -> Erie, Coudersport
 	link = { eu4 = 2557 v2 = 225 } # Atrakwaye -> Williamsport
 	link = { eu4 = 2555 v2 = 227 } # Honniasont -> Pittsburgh
 	link = { eu4 = 2556 eu4 = 955 v2 = 226 } # Onojutta, Conestoga -> Harrisburg
@@ -693,8 +692,8 @@
 	link = { eu4 = 4921 eu4 = 4887 v2 = 187 } # Kuttawa, Cochati -> Paducah
 	link = { eu4 = 941 eu4 = 2526 v2 = 186 } # Ouasioto, Shatteras -> Lexington
 	link = { eu4 = 940 v2 = 184 } # Kentahke -> Louisville
-	link = { eu4 = 2524 v2 = 169 } # Waapi-nipi -> Indianapolis
-	link = { eu4 = 2523 v2 = 170 } # Piankeshaw -> Evansville
+	link = { eu4 = 2524 v2 = 170 } # Waapi-nipi -> Evansville
+	link = { eu4 = 2523 v2 = 169 } # Piankeshaw -> Indianapolis
 	link = { eu4 = 943 v2 = 172 } # Atchakangouen -> Fort Wayne
 	link = { eu4 = 942 v2 = 171 } # Waayaanthanwa -> South Bend
 	link = { eu4 = 2520 v2 = 168 } # Mengkonkia -> Olney
@@ -1257,7 +1256,7 @@
 	link = { eu4 = 132 v2 = 617 } # Steiermark -> Judenburg
 	link = { eu4 = 133 eu4 = 4761 eu4 = 4760 v2 = 622 } # Ob der Enns, Traungau, Innbaiern -> Linz
 	link = { eu4 = 4762 v2 = 620 } # Wienerwald -> Sankt Polten
-	link = { eu4 = 134 v2 = 619 } # Wien -> Vienna
+	link = { eu4 = 134 v2 = 619 v2 = 624 } # Wien -> Vienna, Eisenstadt
 	link = { eu4 = 1770 v2 = 621 } # Manhartsberg -> Krems
 	link = { comment = "# Germany" }
 	link = { eu4 = 65 eu4 = 4707 v2 = 599 } # München, Wasserburg -> Munich
@@ -1418,9 +1417,9 @@
 	link = { eu4 = 4698 v2 = 827 } # Cephalonia -> Zante
 	link = { eu4 = 142 v2 = 826 } # Corfu -> Corfu
 	link = { comment = "# Hungary" }
+	link = { eu4 = 135 v2 = 639 v2 = 623 } # Sopron -> Zalaegerszeg, Sopron
 	link = { eu4 = 4240 v2 = 642 v2 = 643 } # Fejér -> Gyor, Szekesfehevar
-	link = { eu4 = 135 v2 = 623 v2 = 624 } # Sopron -> Sopron, Eisenstadt
-	link = { eu4 = 1864 v2 = 644 v2 = 640 v2 = 639 } # Somogy -> Kaposvar, Pecs, Zalaegerszeg
+	link = { eu4 = 1864 v2 = 644 v2 = 640 } # Somogy -> Kaposvar, Pecs
 	link = { eu4 = 153 v2 = 641 v2 = 645 v2 = 649 } # Pest -> Pest, Kecskemet, Szeged
 	link = { eu4 = 4125 v2 = 646 } # Szolnok -> Miskolc
 	link = { eu4 = 155 v2 = 650 } # Békés -> Bekescsaba
@@ -1439,8 +1438,8 @@
 	link = { eu4 = 1772 v2 = 633 } # Pozsony -> Bratislava
 	link = { eu4 = 4236 v2 = 634 } # Trencin -> Trencin
 	link = { eu4 = 154 v2 = 635 } # Hont -> Nitra
-	link = { eu4 = 1318 v2 = 638 v2 = 636 v2 = 2584 } # Spiš -> Prešov, Banska Bystrica, Bielsko
-	link = { eu4 = 162 v2 = 637 } # Zemplén -> Kosice
+	link = { eu4 = 1318 v2 = 636 v2 = 2584 } # Spiš -> Banska Bystrica, Bielsko
+	link = { eu4 = 162 v2 = 637 v2 = 638 } # Zemplén -> Kosice, Prešov
 	link = { comment = "# Romania" }
 	link = { eu4 = 1954 v2 = 792 } # Torontál -> Pancevo
 	link = { eu4 = 156 v2 = 653 v2 = 652 } # Temes -> Resicabanya, Temesvar
@@ -1502,31 +1501,30 @@
 	link = { eu4 = 264 eu4 = 2966 v2 = 682 } # Breslau, Glogau -> Breslau
 	link = { eu4 = 4238 v2 = 683 } # Liegnitz -> Waldenburg
 	link = { eu4 = 254 v2 = 699 } # Poznan -> Posen
-	link = { eu4 = 255 v2 = 717 } # Kalisz -> Kalisz
+	link = { eu4 = 255 eu4 = 4533 v2 = 717 } # Kalisz, Wielun -> Kalisz
 	link = { eu4 = 4526 v2 = 701 } # Gniezno -> Gniezno
 	link = { eu4 = 4723 v2 = 684 } # Opole -> Oppeln
 	link = { eu4 = 263 v2 = 685 } # Ratibor -> Kattowitz
 	link = { eu4 = 262 v2 = 703 } # Krakow -> Krakow
 	link = { eu4 = 4527 v2 = 716 } # Checiny -> Kielce
-	link = { eu4 = 2960 v2 = 704 } # Nowy Sacz -> Nowy Sacz
-	link = { eu4 = 2959 v2 = 714 } # Tarnow -> Tarnow
-	link = { eu4 = 4541 v2 = 951 } # Drohobycz -> Stryi
-	link = { eu4 = 2424 v2 = 705 } # Peremyshl -> Przemysl
+	link = { eu4 = 2960 v2 = 704 v2 = 714 } # Nowy Sacz -> Nowy Sacz, Tarnow
+	link = { eu4 = 2959 v2 = 705 } # Tarnow -> Przemysl
+	link = { eu4 = 2424 v2 = 951 } # Peremyshl -> Stryi
 	link = { eu4 = 2961 v2 = 952 } # Lwow -> Tarnopol
 	link = { eu4 = 1940 v2 = 702 } # Belz -> Lemberg
-	link = { eu4 = 261 v2 = 953 } # Halicz -> Stanislavov
+	link = { eu4 = 261 eu4 = 4541 v2 = 953 } # Halicz, Drohobycz -> Stanislavov
 	link = { eu4 = 2962 eu4 = 4539 v2 = 956 } # Rowne, Kremenets -> Rovne
-	link = { eu4 = 4538 v2 = 711 } # Chelm -> Siedlce
 	link = { eu4 = 279 v2 = 957 } # Volhynia -> Kovel
+	link = { eu4 = 4538 v2 = 711 } # Chelm -> Siedlce
 	link = { eu4 = 260 v2 = 715 } # Lublin -> Lublin
 	link = { eu4 = 259 v2 = 713 } # Sandomierz -> Radom
-	link = { eu4 = 258 eu4 = 4533 v2 = 712 } # Sieradz, Wielun -> Lodz
-	link = { eu4 = 1939 eu4 = 4528 v2 = 710 } # Leczyca, Kujawy -> Skierniewicz
+	link = { eu4 = 258 v2 = 712 } # Sieradz -> Lodz
+	link = { eu4 = 1939 eu4 = 4528 eu4 = 4525 v2 = 710 } # Leczyca, Kujawy, Rawa -> Skierniewicz
 	link = { eu4 = 2963 eu4 = 4523 v2 = 700 } # Notec, Inowroclaw -> Bromberg
 	link = { eu4 = 1859 v2 = 694 } # Chelmno -> Torun
 	link = { eu4 = 256 eu4 = 4524 v2 = 708 } # Plock, Dobrzyn -> Plock
 	link = { eu4 = 1938 v2 = 709 } # Wizna -> Lomza
-	link = { eu4 = 257 eu4 = 4525 v2 = 706 } # Warszawa, Rawa -> Warsaw
+	link = { eu4 = 257 v2 = 706 } # Warszawa -> Warsaw
 	link = { eu4 = 269 v2 = 719 v2 = 707 } # Podlasie -> Bialystok, Suwalki
 	link = { eu4 = 767 v2 = 697 } # Ortelsburg -> Gumbinnen
 	link = { eu4 = 42 eu4 = 2958 v2 = 696 } # Warmia, Osterode -> Allenstein

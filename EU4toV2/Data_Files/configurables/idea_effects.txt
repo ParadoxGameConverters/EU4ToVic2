@@ -408,5 +408,41 @@ indigenous_ideas = {
 	culture = 6
 	army = 6
 	navy = 3
-	comemrce = 3
+	commerce = 3
+}
+
+### 1356
+
+marcher_lord_ideas = {
+	culture = 6
+	commerce = 6
+	order = 7
+	equality = 3
+}
+
+royal_education_ideas = {
+	literacy = 8
+	equality = 7
+	culture = 8
+}
+
+grand_court_ideas = {
+	culture = 8
+	equality = 6
+	commerce = 6	
+}
+
+permanent_war_ideas = {
+	army = 9
+}
+
+imperial_ideas = {
+	order = 7
+	commerce = 7
+	culture = 4
+}
+
+military_doctrine_ideas = {
+	commerce = 8
+	army = 3
 }
