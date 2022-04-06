@@ -2302,7 +2302,7 @@ LIG = { # Liege
     color3= { 255 255 255  }
 }
 
-LIM = { # Limburg
+LBG = { # Limburg
     color1= { 255 255 255  }
     color2= { 255 0 0  }
     color3= { 255 255 255  }
