@@ -2116,7 +2116,7 @@ KCH = { # Kachin
     color3= { 0 0 255  }
 }
 
-KDS = { # Kurdistan
+SRN = { # Kurdistan
     color1= { 255 255 0  }
     color2= { 255 255 0  }
     color3= { 255 255 0  }
@@ -2302,7 +2302,7 @@ LIG = { # Liege
     color3= { 255 255 255  }
 }
 
-LIM = { # Limburg
+LBG = { # Limburg
     color1= { 255 255 255  }
     color2= { 255 0 0  }
     color3= { 255 255 255  }
@@ -2638,7 +2638,7 @@ NAX = { # Naxos
     color3= { 255 255 255  }
 }
 
-NCT = { # Neuchatel
+NEH = { # Neuchatel
     color1= { 255 255 0  }
     color2= { 0 0 0  }
     color3= { 255 255 0  }
@@ -2998,7 +2998,7 @@ SAT = { # Satsuma
     color3= { 0 0 0  }
 }
 
-SCY = { # Sicily
+SYC = { # Sicily
     color1= { 73 152 76  }
     color2= { 219 124 139  }
     color3= { 131 101 85  }
