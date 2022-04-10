@@ -3343,7 +3343,7 @@ political_decisions = {
 		
 		effect = {
 			prestige = 10
-			any_core = {
+			all_core = {
 				add_core = TAR
 			}
 			change_tag = TAR
