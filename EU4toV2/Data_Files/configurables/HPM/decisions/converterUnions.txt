@@ -602,8 +602,6 @@ political_decisions = {
 			SAR_765 = { add_core = SRD } #Sardinia
 			SIC_763 = { add_core = SYC } #Sicily
 			854 = { add_core = MLT remove_core = SYC remove_core = SIC } #Malta
-			354 = { add_core = RIG } #Riga
-			834 = { add_core = ATH } #Athens
 			FRA_420 = { add_core = BRT } #Brittany
 			473 = { add_core = CRS } #Corsica
 			71 = { add_core = ACA } # Acadia
