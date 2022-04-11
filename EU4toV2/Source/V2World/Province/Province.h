@@ -84,6 +84,7 @@ class Province
 	[[nodiscard]] const auto& getRgoType() const { return details.rgoType; }
 	[[nodiscard]] const auto& getClimate() const { return details.climate; }
 	[[nodiscard]] const auto& getTerrain() const { return details.terrain; }
+	[[nodiscard]] const auto& getContinent() const { return details.continent; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getOwner() const { return details.owner; }
 	[[nodiscard]] const auto& getController() const { return details.controller; }
