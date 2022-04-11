@@ -20,6 +20,7 @@ typedef struct ProvinceDetails
 	std::string rgoType;
 	std::string terrain;
 	std::string climate;
+	std::string continent;
 	std::set<std::string> cores;
 } ProvinceDetails;
 
