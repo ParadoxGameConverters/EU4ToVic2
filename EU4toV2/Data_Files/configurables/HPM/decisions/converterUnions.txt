@@ -663,10 +663,10 @@ political_decisions = {
 			# Inner Mongolia fixes
 			CHI_1465 = { remove_core = MGL add_core = IMG }
 			MGL = {
-				any_owned_province = {
+				any_owned = {
 					limit = { region = CHI_1465 }
+					remove_core = IMG add_core = MGL
 				}
-				remove_core = IMG add_core = MGL
 			}
 			FRA_404 = { remove_core = BEL }
 			GBR = {
