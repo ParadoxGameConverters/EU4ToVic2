@@ -997,7 +997,7 @@ scandinavian = {
 }
 
 finnougric = {
-	hpm = yes
+    hpm = yes
     leader = european
     unit = SwedishGC
     finnish = {
