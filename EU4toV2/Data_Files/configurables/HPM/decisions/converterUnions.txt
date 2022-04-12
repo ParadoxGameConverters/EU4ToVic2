@@ -259,10 +259,10 @@ political_decisions = {
 				activate_technology = business_banks
 				activate_technology = business_regulations
 				activate_technology = central_bank_money_bill_printing
-				activate_technology = cheap_iron
-				activate_technology = cheap_steel
+				activate_technology = hot_blast
+				activate_technology = regenerative_furnaces
 				activate_technology = classicism_n_early_romanticism
-				activate_technology = clean_coal
+				activate_technology = drilling_and_blasting
 				activate_technology = clipper_design
 				activate_technology = collectivist_theory
 				activate_technology = combustion_engine
@@ -286,7 +286,7 @@ political_decisions = {
 				activate_technology = great_war_experience
 				activate_technology = guild_based_production
 				activate_technology = heavy_armament_dunno
-				activate_technology = high_n_low_pressure_steam_engines
+				activate_technology = piston_steam_engine
 				activate_technology = high_sea_battle_fleet
 				activate_technology = idealism
 				activate_technology = ideological_thought
@@ -354,11 +354,11 @@ political_decisions = {
 				activate_technology = positivism
 				activate_technology = post_napoleonic_thought
 				activate_technology = post_nelsonian_thought
-				activate_technology = practical_steam_engine
+				activate_technology = high_pressure_steam_engine
 				activate_technology = private_bank_money_bill_printing
 				activate_technology = private_banks
 				activate_technology = psychoanalysis
-				activate_technology = mechanical_production
+				activate_technology = pneumatic_and_hydraulics
 				activate_technology = raider_group_doctrine
 				activate_technology = realism
 				activate_technology = revolution_n_counterrevolution
@@ -381,7 +381,7 @@ political_decisions = {
 				activate_technology = the_command_principle
 				activate_technology = the_historical_theory
 				activate_technology = time_saving_measures
-				activate_technology = water_wheel_power
+				activate_technology = compound_steam_engines
 				activate_technology = weapon_platforms
 				badboy = 500 #We all hate 'em
 				add_country_modifier = { #Growth to represent new aliens coming
@@ -663,10 +663,10 @@ political_decisions = {
 			# Inner Mongolia fixes
 			CHI_1465 = { remove_core = MGL add_core = IMG }
 			MGL = {
-				any_owned_province = {
+				any_owned = {
 					limit = { region = CHI_1465 }
+					remove_core = IMG add_core = MGL
 				}
-				remove_core = IMG add_core = MGL
 			}
 			FRA_404 = { remove_core = BEL }
 			GBR = {
@@ -1671,7 +1671,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	form_turkestan = {
+	land_of_turks = {
 		picture = tanzimat_reforms
 		potential = {
 			civilized = yes

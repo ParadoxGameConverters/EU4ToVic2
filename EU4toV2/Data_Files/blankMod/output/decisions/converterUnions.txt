@@ -1638,7 +1638,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	form_turkestan = {
+	land_of_turks = {
 	picture = tanzimat_reforms
 		potential = {
 			civilized = yes

@@ -837,6 +837,7 @@ scandinavian = {
 		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
 	}
 	finnish = { 
+		hpm = no
 		color = { 220 220 220}
 
 		first_names = { Aatto Akseli Aleksanteri Anders Aukusti Edvard Eemil Erkki Erno Fabian
@@ -850,6 +851,7 @@ scandinavian = {
 		radicalism = 5
 	}
 	sami = {
+		hpm = no
 		color = { 60 180 110}
 		first_names = {
 			Asllak Biejas Dure Erke Hanno Iskko Joha Laras Markkos Mikko Niillas Osku Uhkku
@@ -992,6 +994,37 @@ scandinavian = {
 		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
 	}
 	union = SCA
+}
+
+finnougric = {
+    hpm = yes
+    leader = european
+    unit = SwedishGC
+    finnish = {
+        color = { 220 220 220}
+        first_names = { Aatto Akseli Aleksanteri Anders Aukusti Edvard Eemil Erkki Erno Fabian
+        Fredrik Fridolf Georg Gösta Harald Hjalmar Hugo Johannes Juho Kaarlo
+        Kurt Lars Martti Mikko Paavo Petteri Rudolf Väinö Viktor Vilho }
+
+        last_names = { Airo Alopaeus Aspara Cajander Ehrnrooth Heinrichs Heiskanen Holsti Ignatius Järnefält
+        Linder Mannerheim Multamäki Nenonen Oesch Öquist Österman Paasikivi Raappana Ramsay
+        Sihvo Siilasvuo Talvela Thesleff Tujulin Tuompo "von Hesse-Kassel" Walden Wallenius Wetzer }
+        radicalism = 5
+    }
+    sami = {
+        color = { 60 180 110}
+        first_names = {
+            Asllak Biejas Dure Erke Hanno Iskko Joha Laras Markkos Mikko Niillas Osku Uhkku
+        }
+        last_names = {
+            Hætta Somby Turi Magga Dunfjeld Kvitfjell Kappfjell
+        }
+    }
+    ugrian = {
+        color = {60 160 160}
+        first_names = { Aleksandr Dmitri Ivan Jukka Santeri Vladimir }
+        last_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
+    }
 }
 
 british = {
@@ -2965,6 +2998,7 @@ east_slavic = {
 		radicalism = 10
     }
 	ugrian = {  
+		hpm = no
 		color = {60 160 160}
 		first_names = { Aleksandr Dmitri Ivan Jukka Santeri Vladimir Chukhpelek Epkuv Evtin
 		Kushchta Lyutya Makshchim Mikipur Mikit Mikul Mikuv Payal Pilya Sanka Shcherki
