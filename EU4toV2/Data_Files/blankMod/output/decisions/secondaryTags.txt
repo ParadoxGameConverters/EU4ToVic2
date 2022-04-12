@@ -70,7 +70,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	form_transcaucasia = {
+	union_of_caucasus = {
 		picture = protect_eastern_christians
 		potential = {
 			OR = {
