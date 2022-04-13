@@ -1467,9 +1467,9 @@
 	link = { eu4 = 4703 v2 = 808 } # Kostendil -> Petrich
 	link = { eu4 = 1765 v2 = 809 } # Sofia -> Sofia
 	link = { eu4 = 2750 v2 = 815 v2 = 816 } # Plovdiv -> Plovdiv, Stara Zagora
-	link = { eu4 = 4704 v2 = 813 v2 = 811 } # Tirnovo -> Shumen, Ruse
+	link = { eu4 = 4704 v2 = 813 v2 = 811 v2 = 814 } # Tirnovo -> Shumen, Ruse, Varna
 	link = { eu4 = 159 v2 = 818 v2 = 674 } # Silistria -> Silistre, Constanta
-	link = { eu4 = 1764 v2 = 817 v2 = 814 } # Burgas -> Burgas, Varna
+	link = { eu4 = 1764 v2 = 817 } # Burgas -> Burgas
 	link = { comment = "# Greece" }
 	link = { eu4 = 144 v2 = 825 v2 = 824 } # Epirus -> Arta, Janina
 	link = { eu4 = 4701 v2 = 840 } # Corinth -> Corinth
@@ -1514,7 +1514,7 @@
 	link = { eu4 = 2961 v2 = 952 } # Lwow -> Tarnopol
 	link = { eu4 = 1940 v2 = 702 } # Belz -> Lemberg
 	link = { eu4 = 261 eu4 = 4541 v2 = 953 } # Halicz, Drohobycz -> Stanislavov
-	link = { eu4 = 2962 eu4 = 4539 v2 = 956 } # Rowne, Kremenets -> Rovne
+	link = { eu4 = 2962 v2 = 956 } # Rowne -> Rovne
 	link = { eu4 = 279 v2 = 957 } # Volhynia -> Kovel
 	link = { eu4 = 4538 v2 = 711 } # Chelm -> Siedlce
 	link = { eu4 = 260 v2 = 715 } # Lublin -> Lublin
@@ -1561,7 +1561,7 @@
 	link = { eu4 = 36 v2 = 349 v2 = 351 } # Reval -> Reval, Parnu
 	link = { eu4 = 1842 v2 = 350 v2 = 352 } # Narva -> Narva, Dorpat
 	link = { comment = "# Ukraine" }
-	link = { eu4 = 281 v2 = 955 } # Podolia -> Proskorov
+	link = { eu4 = 281 eu4 = 4539 v2 = 955 } # Podolia, Kremenets -> Proskorov
 	link = { eu4 = 1942 v2 = 959 } # Zhytomyr -> Korosten
 	link = { eu4 = 1943 v2 = 954 } # Bratslav -> Vinnitsa
 	link = { eu4 = 4540 v2 = 960 } # Winnica -> Zhitomir
