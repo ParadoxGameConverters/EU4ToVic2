@@ -567,6 +567,7 @@ political_decisions = {
         potential = {
             tag = FRA
             NOT = { owns = 3246 }
+            NOT = { AAA = { owns = 3246 } }
             NOT = { has_country_flag = st_barths_referendum }
             OR = {
                 owns = 45
