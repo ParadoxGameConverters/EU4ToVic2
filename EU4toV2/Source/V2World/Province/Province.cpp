@@ -244,6 +244,13 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 
 	provinceWeight /= static_cast<double>(coTargets.size()); // dividing by target provinces.
 
+	if (!provinceSources.empty())
+	{
+		const auto& continentMatch = continentsMapper.getEU4Continent(provinceSources.front()->getNum());
+		if (continentMatch)
+			details.continent = *continentMatch;
+	}
+
 	// And finally, demographics
 	for (const auto& oldProvince: provinceSources)
 	{

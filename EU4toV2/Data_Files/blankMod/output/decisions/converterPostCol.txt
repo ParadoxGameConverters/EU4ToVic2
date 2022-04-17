@@ -15,18 +15,22 @@ political_decisions = {
 		effect = {
 			ENG_58 = {	#Quebec
 				limit = {
-					OR = {
-						is_primary_culture = french
-						is_primary_culture = french_canadian
+					any_pop = {
+						OR = {
+							pop_majority_culture = french
+							pop_majority_culture = french_canadian
+						}
 					}
 				}
 				add_core = QUE
 			}
 			ENG_13 = {	#Columbia
 				limit = {
-					OR = {
-						is_primary_culture = english
-						is_primary_culture = anglo_canadian
+					any_pop = {
+						OR = {
+							pop_majority_culture = english
+							pop_majority_culture = anglo_canadian
+						}
 					}
 				}
 				add_core = COL
@@ -49,9 +53,11 @@ political_decisions = {
 			USA_1 = { add_core = LSK } #Alaska
 			USA_247 = {	#New England
 				limit = {
-					OR = {
-						is_primary_culture = english
-						is_primary_culture = yankee
+					any_pop = {
+						OR = {
+							pop_majority_culture = english
+							pop_majority_culture = yankee
+						}
 					}
 				}
 				add_core = NEN
@@ -947,7 +953,7 @@ political_decisions = {
 			capital_scope = { is_core = HAI }
 			OR = {
 				primary_culture = french
-				primary_culture = americaine
+				primary_culture = nouvellien
 				primary_culture = afro_caribbean
 			}
 			NOT = { has_country_flag = precolonial }
@@ -993,7 +999,7 @@ political_decisions = {
 			capital_scope = { is_core = DOM }
 			NOT = {
 				primary_culture = french
-				primary_culture = americaine
+				primary_culture = nouvellien
 				primary_culture = afro_caribbean
 			}
 			NOT = { has_country_flag = precolonial }
@@ -2040,7 +2046,7 @@ political_decisions = {
 		effect = {
 			set_global_flag = the_central_asia
 			TKS = {
-				any_core = {
+				all_core = {
 					remove_core = KAZ
 					remove_core = KOK
 					remove_core = KHI
@@ -2314,11 +2320,11 @@ political_decisions = {
 			2220 = { add_core = CRB secede_province = CRB }
 			2234 = { add_core = CRB }
 			2235 = { add_core = CRB }
-			any_owned_province = {
+			any_owned = {
 			limit = { province_id = 2234 }
 			secede_province = CRB
 			}
-			any_owned_province = {
+			any_owned = {
 			limit = { province_id = 2235 }
 			secede_province = CRB
 			}
@@ -2610,7 +2616,7 @@ political_decisions = {
 				add_accepted_culture = wolof
 				primary_culture = dummy
 			}
-			FRA_1794 = {
+			FRA_1801 = {
 				add_core = MLI
 				flashpoint_tension = 10
 			}
@@ -3116,7 +3122,7 @@ political_decisions = {
 					exists = no
 				}
 				add_accepted_culture = tswana
-				capital = 2874
+				capital = 2074
 				government = democracy
 				primary_culture = dummy
 			}

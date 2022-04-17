@@ -377,8 +377,11 @@ void V2::World::dropStates(const mappers::TechGroupsMapper& techGroupsMapper)
 
 void V2::World::dropCores()
 {
-	// This function is used to drop EXTANT country cores over provinces where they do not have primary/accepted culture dominance.
-	// Dead country cores will remain so something can be released, unless overridden via configuration.
+	// This function is used to drop EXTANT country cores over all (owned or not) provinces where they do not have primary/accepted culture dominance.
+	// Exception 1: Province is on same continent as capital.
+	// Exception 2: VN provinces out of scope are untouched.
+
+	// Dead (EXTINCT) country cores will remain so something can be released, unless overridden via configuration.
 
 	// This is quicker if we first build a country/culture cache and then check against it then iterate through
 	// every province and do multiple unneeded checks.
@@ -404,21 +407,21 @@ void V2::World::dropCores()
 		}
 	}
 
-	for (auto& province: provinces)
+	for (const auto& province: provinces | std::views::values)
 	{
-		if (province.second->getCores().empty()) // Don't waste time
+		if (province->getCores().empty()) // Don't waste time
 			continue;
-		const auto dominantCulture = province.second->getDominantCulture();
+		const auto dominantCulture = province->getDominantCulture();
 		if (!dominantCulture) // Let's not drop anything if we don't know what should remain.
 			continue;
 		std::set<std::string> survivingCores;
 
-		for (const auto& core: province.second->getCores())
+		for (const auto& core: province->getCores())
 		{
 			// Dead countries take priority.
 			if (deadCache.contains(core))
 			{
-				if (theConfiguration.isVN() && province.second->getEU4IDs().empty())
+				if (theConfiguration.isVN() && province->getEU4IDs().empty())
 				{
 					survivingCores.insert(core); // do not touch out-of-scope provinces for VN!
 					continue;
@@ -433,13 +436,28 @@ void V2::World::dropCores()
 				// Otherwise, check for culture below as normal.
 			}
 
+			// Is this owner core on a province of it's continent?
+			if (core == province->getOwner())
+			{
+				if (countries.contains(core) && countries.at(core)->getCapital() != 0)
+				{
+					auto capital = countries.at(core)->getCapital();
+					auto capitalContinent = provinces.at(capital)->getContinent();
+					if (province->getContinent() == capitalContinent)
+					{
+						survivingCores.insert(core); // We don't delete our owned cores on same continent.
+						continue;
+					}
+				}
+			}
+
 			const auto& cacheItr = theCache.find(core);
 			if (cacheItr == theCache.end())
 				continue;												 // Dropping unrecognized core;
 			if (cacheItr->second.contains(*dominantCulture)) // This province has core's (tag's) accepted culture, we can retain this core.
 				survivingCores.insert(cacheItr->first);
 		}
-		province.second->replaceCores(survivingCores);
+		province->replaceCores(survivingCores);
 	}
 }
 
@@ -516,6 +534,13 @@ void V2::World::addAcceptedCultures(const EU4::Regions& eu4Regions)
 				if (culture != primaryCulture)
 					acceptedCultures.insert(culture);
 			}
+		}
+
+		// Do we own any pops of primary culture? If not, swap prim for accepted and fall back.
+		if (!census.contains(primaryCulture) || census.at(primaryCulture) == 0)
+		{
+			acceptedCultures.insert(primaryCulture);
+			country.second->setPrimaryCulture("dummy");
 		}
 
 		// finally, for colonial nations, we need to ensure their overlord's mutated culture is accepted, to ease

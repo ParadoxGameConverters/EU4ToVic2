@@ -11,7 +11,7 @@ political_decisions = {
 					is_greater_power = yes
 				}
 			}
-			NOT = { is_culture_group = german } #Germans would laugh at you
+			NOT = { is_culture_group = germanic } #Germans would laugh at you
 			NOT = { tag = ALI } #Reasoning
 			NOT = { exists = POL }
 			NOT = { exists = PLC }
@@ -39,7 +39,7 @@ political_decisions = {
 			}
 			CPL = {
 				relation = {
-					who = FROM
+					who = THIS
 					value = 100
 				}
 			}
@@ -70,7 +70,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	form_transcaucasia = {
+	union_of_caucasus = {
 		picture = protect_eastern_christians
 		potential = {
 			OR = {
@@ -177,7 +177,7 @@ political_decisions = {
 				}
 				NOT = {
 					any_neighbor_country = {
-						is_culture_group = CHI
+						is_culture_group = east_asian
 						OR = {
 							number_of_states = 5
 							is_independant = yes
@@ -235,9 +235,9 @@ political_decisions = {
 				}
 			}
 			NOT = { is_culture_group = south_slavic }
-			NOT = { is_culture_group = greek }
+			NOT = { is_culture_group = levantine }
 			NOT = { tag = ALI } #Reasoning
-			NOT = { tag = RME }
+			NOT = { tag = SPQ }
 			NOT = { tag = BYZ }
 			exists = BUL
 			NOT = { exists = YUG }
@@ -267,7 +267,7 @@ political_decisions = {
 			}
 			RML = {
 				relation = {
-					who = FROM
+					who = THIS
 					value = 100
 				}
 			}

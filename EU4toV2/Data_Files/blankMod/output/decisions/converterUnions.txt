@@ -112,7 +112,7 @@ political_decisions = {
 	mongol_khagan = {
 	picture = peking_convention
 		potential = {
-			has_country_flag = KHA
+			has_country_flag = vic2_country_KHA
 			NOT = { exists = MGL }
 		}
 
@@ -654,7 +654,7 @@ political_decisions = {
 	}
 
 	
-	form_china = {
+	reform_into_china = {
 		picture = clear_out_the_manchu_elite
 		news = yes
 		news_desc_long = "form_china_NEWS_LONG"
@@ -1050,8 +1050,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = malay
+					capital_scope = { continent = asia }
 				}
-				capital_scope = { continent = asia }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -1451,7 +1451,7 @@ political_decisions = {
 				all_core = {
 					OR = {
 						owned_by = THIS
-						is_empty = yes
+						empty = yes
 						owned_by = RYU
 						owner = {
 							in_sphere = THIS
@@ -1638,7 +1638,7 @@ political_decisions = {
 			factor = 1
 		}
 	}
-	form_turkestan = {
+	land_of_turks = {
 	picture = tanzimat_reforms
 		potential = {
 			civilized = yes
@@ -2112,8 +2112,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = brithenig
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -2157,8 +2157,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = gaul
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -2202,8 +2202,8 @@ political_decisions = {
 					in_sphere = THIS
 					NOT = { tag = THIS }
 					primary_culture = laessin
+					capital_scope = { continent = europe }
 				}
-				capital_scope = { continent = europe }
 				annex_to = THIS
 			}
 			any_owned = {
@@ -2501,9 +2501,9 @@ political_decisions = {
 					NOT = { exists = VEN }
 					NOT = { exists = LOM }
 					OR = {
-						capital_scope = { region = 726 }
-						capital_scope = { region = 729 }
-						capital_scope = { region = 734 }
+						capital_scope = { region = AUS_726 }
+						capital_scope = { region = AUS_729 }
+						capital_scope = { region = AUS_734 }
 					}
 				}
 			}
@@ -2557,9 +2557,9 @@ political_decisions = {
 				exists = LOM
 			}
 			NOT = {
-				capital_scope = { region = 726 }
-				capital_scope = { region = 729 }
-				capital_scope = { region = 734 }
+				capital_scope = { region = AUS_726 }
+				capital_scope = { region = AUS_729 }
+				capital_scope = { region = AUS_734 }
 			}
 			NOT = {
 				primary_culture = north_italian
@@ -3042,7 +3042,7 @@ political_decisions = {
 		
 		effect = {
 			prestige = 10
-			any_core = {
+			all_core = {
 				add_core = KNY
 				remove_core = SWA
 			}
@@ -3068,7 +3068,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			any_core = {
+			all_core = {
 				limit = {
 					NOT = {
 						owned_by = ROM
@@ -3172,7 +3172,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {
@@ -3187,7 +3187,7 @@ political_decisions = {
 		news_desc_short = "jew_NEWS"
 		potential = {
 			is_greater_power = yes
-			is_culture_group = ISR
+			is_culture_group = jewish_group
 			NOT = {
 				exists = ISR
 			}
@@ -3208,7 +3208,7 @@ political_decisions = {
 			any_country = {
 				limit = {
 					ai = yes
-					is_culture_group = ISR
+					is_culture_group = jewish_group
 					in_sphere = THIS
 					NOT = {
 						has_country_flag = post_colonial_country
@@ -3219,7 +3219,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 			set_global_flag = oy_vey
 		}
@@ -3309,7 +3309,7 @@ political_decisions = {
 		
 		effect = {
 			prestige = 10
-			any_core = {
+			all_core = {
 				add_core = TAR
 			}
 			change_tag = TAR
@@ -3320,9 +3320,9 @@ political_decisions = {
 	}
 	
 	the_concession_to_the_travelers = {
-		image = fugitive_slave_act
+		picture = fugitive_slave_act
 		potential = {
-			has_accepted_culture = gypsy
+			accepted_culture = gypsy
 			NOT = { exists = GYP }
 			nationalism_n_imperialism = 1
 			any_owned_province = {
@@ -3339,7 +3339,7 @@ political_decisions = {
 		effect = {
 			badboy = -1
 			capital_scope = { secede_province = GYP }
-			any_owned_province = {
+			any_owned = {
 				limit = {
 					is_core = GYP
 				}

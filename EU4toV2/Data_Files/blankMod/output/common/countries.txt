@@ -35,6 +35,7 @@ POR		= "countries/Portugal.txt"
 SCO		= "countries/Scotland.txt"
 SPA		= "countries/Spain.txt"
 WLL		= "countries/Wallonia.txt"
+LTN		= "countries/LatinEmpire.txt"
 SPQ		= "countries/RomanEmpire.txt"
 
 # Germany
@@ -67,6 +68,7 @@ WUR		= "countries/Wurttemberg.txt"
 DTT		= "countries/Dithmarschen.txt"
 
 # Italy
+AQU		= "countries/Aquileia.txt"
 LOM		= "countries/Lombardia.txt"
 LUC		= "countries/Lucca.txt"
 MOD		= "countries/Modena.txt"
@@ -161,6 +163,7 @@ BER		="countries/Beroda.txt"
 BHO		="countries/Bhopal.txt"
 BIK		="countries/Bikaner.txt"
 BUN		="countries/Bundelkhand.txt"
+DEC		="countries/Deccan.txt"
 GWA		="countries/Gwailor.txt"
 HYD		="countries/Hyderabad.txt"
 IND		="countries/Indore.txt"
@@ -281,6 +284,7 @@ TRL 	= "countries/Trapalandia.txt"
 ALI		="countries/Alien Invaders.txt"
 MIA		="countries/Khawitmau.txt"
 UND		="countries/Undead Horde.txt"
+ZOM		="countries/Undead Horde.txt"
 
 # Germany (HRE)
 HLR 	="countries/HolyRomanEmpire.txt"
@@ -344,12 +348,14 @@ BRT		="countries/Brittany.txt"
 CRS		="countries/Corsica.txt"
 NRM		="countries/Normandy.txt"
 OCC     =   "countries/Occitania.txt"
+GYN     =   "countries/Guyenne.txt"
 
 # Iberian Peninsula
 ARN		="countries/Aragon.txt"
 CST		="countries/Castille.txt"
 GLC		="countries/Galicia.txt"
 ADU		="countries/Andalucia.txt"
+NAV		="countries/Navarra.txt"
 
 # India
 ASM 		="countries/Assam.txt"

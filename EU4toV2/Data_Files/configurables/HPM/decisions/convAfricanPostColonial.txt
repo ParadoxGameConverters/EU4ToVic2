@@ -190,7 +190,7 @@ political_decisions = {
 				add_accepted_culture = wolof
 				primary_culture = dummy
 			}
-			FRA_1794 = {
+			FRA_1801 = {
 				add_core = MLI
 				flashpoint_tension = 10
 			}
@@ -318,7 +318,7 @@ political_decisions = {
 				add_core = CNG
 				flashpoint_tension = 10
 			}
-			BEL_1996 = {
+			BEL_1990 = {
 				add_core = CNG
 				flashpoint_tension = 10
 			}
@@ -696,7 +696,7 @@ political_decisions = {
 					exists = no
 				}
 				add_accepted_culture = tswana
-				capital = 2874
+				capital = 2074
 				government = democracy
 				primary_culture = dummy
 			}
@@ -820,8 +820,8 @@ political_decisions = {
 				add_accepted_culture = afar
 				primary_culture = dummy
 			}
-			2123 = { add_core = KOM remove_core = MAD } #Comoros
-			2124 = { add_core = KOM remove_core = MAD }
+			2123 = { add_core = CMS remove_core = MAD } #Comoros
+			2124 = { add_core = CMS remove_core = MAD }
 			2125 = { add_core = MAU remove_core = MAD } #Mauritius
 			2126 = { add_core = MAU remove_core = MAD }
 			MAU = {
