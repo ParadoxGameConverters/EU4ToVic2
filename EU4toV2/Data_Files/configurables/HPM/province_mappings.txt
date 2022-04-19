@@ -636,8 +636,7 @@
 	link = { eu4 = 2498 eu4 = 2497 eu4 = 4628 eu4 = 4629 v2 = 136 } # Tahuundé, Tsès Sembai, Nitahendé, Ndawe Qoha -> El Paso
 	link = { eu4 = 885 v2 = 135 } # Gulgahén -> Llano Estacado
 	link = { comment = "# Deseret and California" }
-	link = { eu4 = 882 eu4 = 4630 eu4 = 4631 v2 = 105 } # Mashgaléndé, Natahéndé, Naflat -> Santa Fe
-	link = { eu4 = 2496 eu4 = 880 v2 = 103 } # Saldindé, Ohkay Owingeh -> Pueblo
+	link = { eu4 = 882 eu4 = 4630 eu4 = 4631 eu4 = 2496 eu4 = 880 v2 = 105 } # Mashgaléndé, Natahéndé, Naflat, Saldindé, Ohkay Owingeh -> Santa Fe
 	link = { eu4 = 881 eu4 = 2492 eu4 = 2494 eu4 = 878 eu4 = 4632 eu4 = 2495 v2 = 2148 v2 = 2662 } # MANY-TO-MANY: Tsiahahéndé, Bedonkohe, Shiwinna, Kinyaa'aanii, Tsi'ya, Aa'ku -> Albuquerque, Animas
 	link = { eu4 = 877 eu4 = 4633 v2 = 102 } # Akimel, Sobaipuri -> Tucson
 	link = { eu4 = 879 eu4 = 876 eu4 = 4634 v2 = 100 } # Ndee, Yavapé, Tsék'aadn -> Phoenix
@@ -666,7 +665,7 @@
 	link = { eu4 = 1809 eu4 = 2505 v2 = 112 } # Só'taeo'o, Tsetsehesahese -> Fort Laramie
 	link = { eu4 = 2507 v2 = 124 } # Baachinena -> Bordeaux's Post
 	link = { eu4 = 2506 v2 = 111 } # Kuccuntikka -> Fort Bonneville
-	link = { eu4 = 2490 v2 = 110 } # Kusiutta -> Rock Springs
+	link = { eu4 = 2490 v2 = 97 } # Kusiutta -> Salt Lake City
 	link = { eu4 = 2009 v2 = 122 } # Oglala -> Fort Pierre
 	link = { eu4 = 2508 eu4 = 901 eu4 = 4915 v2 = 125 } # Skiri, Tsawi, Pitahawirata -> Fontenelle's Post
 	link = { eu4 = 903 eu4 = 4916 v2 = 123 } # Omaha, Panka -> Fort Robidoux
@@ -717,7 +716,7 @@
 	link = { eu4 = 948 v2 = 182 v2 = 183 } # Ohiyo -> Cincinnati, Marietta
 	link = { eu4 = 947 v2 = 178 } # Kentaientonga -> Cleveland
 	link = { comment = "# American unsettled lands" }
-	link = { eu4 = 1808 v2 = 98 v2 = 99 v2 = 108 v2 = 109 v2 = 106 v2 = 107 v2 = 96 v2 = 95 v2 = 94 v2 = 97 } # Great Basin -> Cedar City, Moab, Grand Junction, Aspen, Bent's Fort, Riverside, Las Vegas, Elko, Carson City, Salt Lake City
+	link = { eu4 = 1808 v2 = 98 v2 = 99 v2 = 108 v2 = 109 v2 = 106 v2 = 107 v2 = 96 v2 = 95 v2 = 94 v2 = 110 v2 = 103 } # Great Basin -> Cedar City, Moab, Grand Junction, Aspen, Bent's Fort, Riverside, Las Vegas, Elko, Carson City, Rock Springs, Pueblo
 	link = { comment = "# Caribbean" }
 	link = { eu4 = 482 v2 = 2219 } # Bahamas -> Bahamas
 	link = { eu4 = 483 v2 = 2220 } # Turks Islands -> Turks & Caicos

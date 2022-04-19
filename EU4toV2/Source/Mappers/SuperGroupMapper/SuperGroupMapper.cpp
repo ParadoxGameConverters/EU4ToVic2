@@ -36,6 +36,6 @@ double mappers::SuperGroupMapper::getAssimilationFactor(const std::string& super
 	if (srIter != assimilationMap.end())
 		rate = srIter->second;
 
-	const auto factor = (1.0 - pow(0.75, rate)) / 100;
+	const auto factor = (1.0 - pow(0.7, rate)) / 100;
 	return factor;
 }
