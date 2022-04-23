@@ -17,11 +17,11 @@ TEST(EU4World_Province_PopRatioTests, decayByAssimilationValuePerYear)
 	std::set<int> input;
 
 	EU4::PopRatio theRatio("theCulture", "theReligion");
-	theRatio.decay(1, 0.0025); // default assimilation value "1" is 0.0025 (factor = (1.0 - pow(0.75, value)) / 100;)
+	theRatio.decay(1, 0.003); // default assimilation value "1" is 0.003 (factor = (1.0 - pow(0.7, value)) / 100;)
 
-	ASSERT_NEAR(0.9975, theRatio.getUpperRatio(), 0.0001);
-	ASSERT_NEAR(0.9975, theRatio.getMiddleRatio(), 0.0001);
-	ASSERT_NEAR(0.9975, theRatio.getLowerRatio(), 0.0001);
+	ASSERT_NEAR(0.997, theRatio.getUpperRatio(), 0.0001);
+	ASSERT_NEAR(0.997, theRatio.getMiddleRatio(), 0.0001);
+	ASSERT_NEAR(0.997, theRatio.getLowerRatio(), 0.0001);
 }
 
 TEST(EU4World_Province_PopRatioTests, decayForHigherAssimilationValue)
@@ -29,11 +29,11 @@ TEST(EU4World_Province_PopRatioTests, decayForHigherAssimilationValue)
 	std::set<int> input;
 
 	EU4::PopRatio theRatio("theCulture", "theReligion");
-	theRatio.decay(1, 0.068359375); // assimilation value "4" is 0.06835 (factor = (1.0 - pow(0.75, 4)) / 100;)
+	theRatio.decay(1, 0.07599); // assimilation value "4" is 0.07599 (factor = (1.0 - pow(0.7, 4)) / 100;)
 
-	ASSERT_NEAR(0.93164, theRatio.getUpperRatio(), 0.0001);
-	ASSERT_NEAR(0.93164, theRatio.getMiddleRatio(), 0.0001);
-	ASSERT_NEAR(0.93164, theRatio.getLowerRatio(), 0.0001);
+	ASSERT_NEAR(0.92401, theRatio.getUpperRatio(), 0.0001);
+	ASSERT_NEAR(0.92401, theRatio.getMiddleRatio(), 0.0001);
+	ASSERT_NEAR(0.92401, theRatio.getLowerRatio(), 0.0001);
 }
 
 TEST(EU4World_Province_PopRatioTests, decayByZeroAssimilationDoesNoAffectRatios)
@@ -54,11 +54,11 @@ TEST(EU4World_Province_PopRatioTests, increaseByDefaultAssimilationValue)
 
 	EU4::PopRatio theRatio("theCulture", "theReligion"); // ratios are all at 1, we cannot increase them.
 	theRatio.convertTo("newCulture", "newReligion");	  // halving and zeroing ratios to drive them lower.
-	theRatio.increase(1, 0.0025);								  // default assimilation value "1" is 0.0025 (factor = (1.0 - pow(0.75, value)) / 100;)
+	theRatio.increase(1, 0.003);								  // default assimilation value "1" is 0.003 (factor = (1.0 - pow(0.7, value)) / 100;)
 
-	ASSERT_NEAR(0.50125, theRatio.getUpperRatio(), 0.0001);
-	ASSERT_NEAR(0.50125, theRatio.getMiddleRatio(), 0.0001);
-	ASSERT_NEAR(0.0025, theRatio.getLowerRatio(), 0.0001);
+	ASSERT_NEAR(0.5015, theRatio.getUpperRatio(), 0.0001);
+	ASSERT_NEAR(0.5015, theRatio.getMiddleRatio(), 0.0001);
+	ASSERT_NEAR(0.003, theRatio.getLowerRatio(), 0.0001);
 }
 
 TEST(EU4World_Province_PopRatioTests, increaseByHigherAssimilationValue)
@@ -67,11 +67,11 @@ TEST(EU4World_Province_PopRatioTests, increaseByHigherAssimilationValue)
 
 	EU4::PopRatio theRatio("theCulture", "theReligion"); // ratios are all at 1, we cannot increase them.
 	theRatio.convertTo("newCulture", "newReligion");	  // halving and zeroing ratios to drive them lower.
-	theRatio.increase(1, 0.068359375);						  // assimilation value "4" is 0.06835 (factor = (1.0 - pow(0.75, 4)) / 100;)
+	theRatio.increase(1, 0.07599);							  // assimilation value "4" is 0.07599 (factor = (1.0 - pow(0.7, 4)) / 100;)
 
-	ASSERT_NEAR(0.53417, theRatio.getUpperRatio(), 0.0001);
-	ASSERT_NEAR(0.53417, theRatio.getMiddleRatio(), 0.0001);
-	ASSERT_NEAR(0.068359375, theRatio.getLowerRatio(), 0.0001);
+	ASSERT_NEAR(0.537995, theRatio.getUpperRatio(), 0.0001);
+	ASSERT_NEAR(0.537995, theRatio.getMiddleRatio(), 0.0001);
+	ASSERT_NEAR(0.07599, theRatio.getLowerRatio(), 0.0001);
 }
 
 TEST(EU4World_Province_PopRatioTests, increaseByZeroDoesNotAffectPopRatios)
