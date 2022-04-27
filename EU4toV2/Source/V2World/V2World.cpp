@@ -201,6 +201,7 @@ void V2::World::distributeVNColonies()
 		}
 
 		bool assignmentRun = false;
+		bool clearRun = false;
 		// Let's reassign the provinces.
 		for (const auto& provinceID: colony.getProvinces())
 		{
@@ -223,13 +224,25 @@ void V2::World::distributeVNColonies()
 					oldOwner->second->removeProvinceID(province->first);
 			}
 
-			province->second->setOwner(keyProvinceOwner);
-			province->second->setController(keyProvinceOwner);
-			overlordCountry->second->addProvince(province->second);
-			assignmentRun = true;
+			// For russia and similar we decolonize unless key province owned by specific tag.
+			if (!colony.getDecolonizeBlocker().empty() && keyProvinceOwner != colony.getDecolonizeBlocker())
+			{
+				province->second->setOwner(std::string());
+				province->second->setController(std::string());
+				clearRun = true;
+			}
+			else
+			{
+				province->second->setOwner(keyProvinceOwner);
+				province->second->setController(keyProvinceOwner);
+				overlordCountry->second->addProvince(province->second);
+				assignmentRun = true;
+			}
 		}
 		if (assignmentRun)
 			Log(LogLevel::Info) << "-- VN colony " << colony.getName() << " reassigned to " << keyProvinceOwner;
+		if (clearRun)
+			Log(LogLevel::Info) << "-- VN colony " << colony.getName() << " cleared.";
 	}
 }
 
@@ -394,23 +407,20 @@ void V2::World::dropCores()
 		theCache[country.first] = country.second->getAcceptedCultures();
 		if (!country.second->getPrimaryCulture().empty())
 			theCache[country.first].insert(country.second->getPrimaryCulture());
+
+		// Take heed - dead countries are both those that are bonafide dead as well as those that died during conversion.
 		if (country.second->getProvinces().empty())
-		{
-			// Hold up. This country may be dead because it's dead, but if it died during conversion then consider it alive.
-			// We don't want such countries leaving cores all over the place unless they are national ones, which are handled via a separate process.
-
-			const auto& potentialEU4country = country.second->getSourceCountry();
-			if (potentialEU4country && !potentialEU4country->getProvinces().empty())
-				continue; // this one died during conversion. Purge it as it it were alive.
-
 			deadCache.insert(country.first);
-		}
 	}
 
 	for (const auto& province: provinces | std::views::values)
 	{
 		if (province->getCores().empty()) // Don't waste time
 			continue;
+
+		if (theConfiguration.isVN() && province->getEU4IDs().empty()) // do not touch out-of-scope provinces for VN!
+			continue;
+
 		const auto dominantCulture = province->getDominantCulture();
 		if (!dominantCulture) // Let's not drop anything if we don't know what should remain.
 			continue;
@@ -421,11 +431,6 @@ void V2::World::dropCores()
 			// Dead countries take priority.
 			if (deadCache.contains(core))
 			{
-				if (theConfiguration.isVN() && province->getEU4IDs().empty())
-				{
-					survivingCores.insert(core); // do not touch out-of-scope provinces for VN!
-					continue;
-				}
 				if (theConfiguration.getRemoveType() == Configuration::DEADCORES::AllCores)
 					continue; // no dead ones, thank you.
 				if (theConfiguration.getRemoveType() == Configuration::DEADCORES::LeaveAll)
@@ -453,8 +458,9 @@ void V2::World::dropCores()
 
 			const auto& cacheItr = theCache.find(core);
 			if (cacheItr == theCache.end())
-				continue;												 // Dropping unrecognized core;
-			if (cacheItr->second.contains(*dominantCulture)) // This province has core's (tag's) accepted culture, we can retain this core.
+				continue; // Dropping unrecognized core;
+			// This province has core's (tag's) accepted culture, we can retain this core.
+			if (cacheItr->second.contains(*dominantCulture))
 				survivingCores.insert(cacheItr->first);
 		}
 		province->replaceCores(survivingCores);

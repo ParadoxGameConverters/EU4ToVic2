@@ -2730,44 +2730,6 @@ polish_culture_group = {
 		last_names = { Obroditen Gryfita "z Liubic" Swieca Grzymala Jastrzebiec Lodzia Lubicz Nalecz Gniewosz "z Roztoki" "ze Slupska" }
 		radicalism = 10
 	}
-	lithuanian = { 
-		hpm = no
-		color = {17 162 48}
-
-		first_names = { Adolfas Aleksandras Algirdas Andrius Antanas Arturas Arunas Augustinas Balys Boris
-		Bronislovas Danielius Darius Gediminas Henrikas Jonas Jonusas Juozas Juras Jurgis
-		Justas Kazimieras Kazys Kipras Konstantinas Lukas Marijus Markas Mikalojus Mindaugas
-		Motejus Mykolas Paulius Petras Povilas Ramunas Ringaudas Rolandas Simonas Stasys
-		Steponas Valdas Valdemaras Viktoras Vilhelmas Visvaldas Vladimiras Vygantas Vytautas Žydrunas
-		}
-
-		last_names = { Adamkus Almenas Avizienis Baltrušaitis Brazauskas Basanavicius Birutis Brazdžiunas Buga Ciurlionis
-		Danauskas Daukantas Dobkevicius Dubeneckis Dvarionas Galdikas Grinius Griškevicius Ivanauskas Jablonskis
-		Jucys Krupavicius Landsbergis Lozoraitis Merkys Paksas Paleckis Paulauskas Petrauskas Piskarkas
-		Požela Radvila Šabaniauskas Schatz Simonavicius Širvydas Šleževicius Semtona Snieckus Stauaitis
-		Straižys Stulginkis Švedas Terleckas Urbšys Vagnorius Valeška Voldemaras Žemaitis Zuokas
-		}
-	}
-	pruthenian = { 
-		hpm = no
-		color = { 126 214 143 }
-
-		first_names = { 
-			Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas 
-			Daugvilas Daumantas Dausprungas Dravenis Erdenis Erdvilas Gedigaudas
-			Gediminas Gedivilas Gintaras Gintautas Girdenis Irmantas Jaunutis Jogaila Jovirdas Kantibutas 
-			Karijotas Kesgaila Kestutis Korigaila Korybutas
-			Lasukas Lingvenis Liudas Lubartas Lutuveras Merkelis Mindaugas Minigaila Mantvydas Movkoldas 
-			Narimantas Povilas Pukuveras Rimantas 
-			Rimgaila Rimvydas Ringaudas Sarunas Skirgaila Songaila Svarnas Svitrigaila Tarvydas Tovtivilas 
-			Traidenis Treniotas Vainius Vaisvilkas Valimantas Zygimantas
-			Vidmantas Vingoldas Virmantas Visvaldis Vizgirdas Vykintas Vytautas Vytenis Zivinbudas 
-		}
-
-		last_names = {
-			Ugandi Gediminai Radziwill Gostautas Astikas Kesgaila Chodkiewicz Olshanski Chartoryski Giedraiciai Pac Plater Tyzenhaus Sapieha Ostrogski Oginski
-		}
-	}
 	nowyswiat = {
 		color = {182 134 154}
 
@@ -2867,16 +2829,6 @@ polish_culture_group = {
 		last_names = {
 		Ugandi Gediminai Radziwill Gostautas Astikas Kesgaila Chodkiewicz Olshanski Chartoryski Giedraiciai Pac Plater Tyzenhaus Sapieha Ostrogski Oginski }
 	}
-	
-	union = PLC
-	hpm_union = POL
-}
-
-czecho_slovak_culture_group = {
-	leader = european
-	unit = AustriaHungaryGC
-	hpm_unit = EuropeanGC
-
 	czech = {
 		color = {120 120 255}
 
@@ -2908,6 +2860,15 @@ czecho_slovak_culture_group = {
 		Masaryk Móry Moyses Rázus Rohácek Rudnay Selepcéni Sidor Škultéty-Gábriš Šmik 
 		Sokol Štefánik Suchon Šverma Tiso Trcka Tuka Turanec Viest Zoch }
 	}
+
+	union = WSF
+}
+
+czecho_slovak_culture_group = {
+	leader = european
+	unit = AustriaHungaryGC
+	hpm_unit = EuropeanGC
+
 	novysvet = {
 		color = {100 134 236}
 
@@ -2953,7 +2914,6 @@ czecho_slovak_culture_group = {
 		Šafránek Schack Schubert Škoda Skuherský Smetana Šnejdárek Suk Svoboda Syrový 
 		Tomášek Tyl Vitásek "von Mittrowitz-Nettolitzky" Voríšek Wankel Weber Zíbrt Zívr Zoubek }
 		}
-	union = CZH
 }
 
 east_slavic = {
@@ -3078,8 +3038,7 @@ baltic = {
 	leader = european
 	unit = RussianGC
 	hpm_unit = EuropeanGC
-	lithuanian = {
-		hpm = yes
+	lithuanian = { 
 		color = {17 162 48}
 
 		first_names = { Adolfas Aleksandras Algirdas Andrius Antanas Arturas Arunas Augustinas Balys Boris
@@ -3332,10 +3291,7 @@ baltic = {
 		Sikkar Sirk Tõnisson Uluots Vaga Veske Vilbaste Vilms "von Uexküll" Warma
 		}
 	}
-	
 	union = UBD
-	hpm_union = none
-
 }
 
 levantine = {
