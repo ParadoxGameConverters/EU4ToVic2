@@ -9,6 +9,7 @@ TEST(Mappers_VNColonialMappingTests, MappingDefaultsToDefaults)
 	const mappers::VNColonialMapping theMapping(input);
 
 	EXPECT_TRUE(theMapping.getName().empty());
+	EXPECT_TRUE(theMapping.getDecolonizeBlocker().empty());
 	EXPECT_EQ(0, theMapping.getKeyProvince());
 	EXPECT_TRUE(theMapping.getProvinces().empty());
 }
@@ -16,10 +17,11 @@ TEST(Mappers_VNColonialMappingTests, MappingDefaultsToDefaults)
 TEST(Mappers_VNColonialMappingTests, MappingCanBeLoaded)
 {
 	std::stringstream input;
-	input << R"(name = "British Pacifics" key = 290 provinces = { 2524 2508 })";
+	input << R"(name = "British Pacifics" key = 290 provinces = { 2524 2508 } decolonize = RUS )";
 	const mappers::VNColonialMapping theMapping(input);
 
 	EXPECT_EQ("British Pacifics", theMapping.getName());
+	EXPECT_EQ("RUS", theMapping.getDecolonizeBlocker());
 	EXPECT_EQ(290, theMapping.getKeyProvince());
 	EXPECT_THAT(theMapping.getProvinces(), ElementsAre(2524, 2508));
 }

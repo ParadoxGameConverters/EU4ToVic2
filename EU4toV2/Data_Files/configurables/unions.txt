@@ -57,23 +57,21 @@ link = { tag = YUG culture = macedonian }
 link = { tag = YUG culture = slovene }
 link = { tag = YUG culture = bosniak }
 
-#Polish-Lithuanian => PLC
-link = { tag = PLC culture = polish } #and Poland
-link = { tag = PLC culture = lithuanian } #and Lithuania
-link = { tag = PLC culture = western_slavic }
-link = { tag = PLC culture = sorbian }
-
-#Czechoslovakian => Czechoslovakia
-link = { tag = CZH culture = czech }
-link = { tag = CZH culture = slovak }
+#West-Slavic => Zapadoslavia
+link = { tag = WSF culture = polish } #and Poland
+link = { tag = WSF culture = western_slavic } #Wends
+link = { tag = WSF culture = sorbian }
+link = { tag = WSF culture = czech }
+link = { tag = WSF culture = slovak }
 
 #East Slavic
 link = { tag = RUS culture = russian } #Russia
 
 #Baltic => United Baltic
-link = { tag = UBD culture = latvian } #and Latvia
-link = { tag = UBD culture = estonian } #and Estonia
-
+link = { tag = UBD culture = latvian } # Latvia
+link = { tag = UBD culture = estonian } # Estonia
+link = { tag = UBD culture = lithuanian } # Lithuania
+link = { tag = UBD culture = pruthenian } # Pruthenia
 
 #Arab => Arabia
 #link = { tag = ARA culture = maghrebi }
