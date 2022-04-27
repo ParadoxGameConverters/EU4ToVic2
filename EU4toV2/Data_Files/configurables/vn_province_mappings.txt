@@ -401,9 +401,9 @@
 	link = { eu4 = 2511 eu4 = 2516 eu4 = 256 eu4 = 894 eu4 = 1938 eu4 = 2598 eu4 = 114 eu4 = 1011 eu4 = 77 v2 = 572 } # Trier, Bitburg, Prüm, Burbach, Manderscheid, Schweich, Veldenz, Daun, Virneburg -> Trier
 	link = { eu4 = 1760 eu4 = 278 eu4 = 23 eu4 = 2752 eu4 = 4112 eu4 = 1104 eu4 = 315 eu4 = 18 eu4 = 346 eu4 = 4123 eu4 = 1941 eu4 = 4111 v2 = 574 } # Koblenz, Oberwesel, Kreuznach, Simmern, Cochem, Grumbach, Birkenfeld, Nohfelden, Medard, Thallichtenberg, Stromberg, Boppard -> Koblenz
 	link = { eu4 = 163 eu4 = 281 eu4 = 2462 eu4 = 335 v2 = 2560 } # Darmstadt, Erbach, Beerfelden, Bensheim -> Darmstadt
-	link = { eu4 = 762 eu4 = 2962 eu4 = 2460 eu4 = 4125 eu4 = 2986 eu4 = 2405 eu4 = 151 v2 = 570 } # Mainz, Worms, Alzey, Flonheim, Limburgerhof, Horchheim, Speyer -> Mainz
+	link = { eu4 = 762 eu4 = 2962 eu4 = 2460 eu4 = 4125 eu4 = 2986 eu4 = 2405 eu4 = 151 eu4 = 2468 v2 = 570 } # Mainz, Worms, Alzey, Flonheim, Limburgerhof, Horchheim, Speyer, Bingen -> Mainz
 	link = { eu4 = 2467 eu4 = 467 eu4 = 298 eu4 = 2406 eu4 = 343 eu4 = 159 eu4 = 1764 eu4 = 149 v2 = 571 } # Lautern, Pirmasens, Gravenstein, Bergzabern, Bornheim, Deidesheim, Leiningen, Falkenstein -> Kaiserlautern
-	link = { eu4 = 771 eu4 = 17 eu4 = 2408 v2 = 573 } # Saarbrücken, Tholey, Zweibrücken -> Saarbrucken
+	link = { eu4 = 771 eu4 = 17 eu4 = 2408 eu4 = 24 v2 = 573 } # Saarbrücken, Tholey, Zweibrücken, Sankt Wendel -> Saarbrucken
 	link = { eu4 = 2008 eu4 = 909 eu4 = 2620 eu4 = 1878 eu4 = 157 eu4 = 276 eu4 = 41 eu4 = 269 eu4 = 1951 v2 = 575 } # Euskirchen, Düren, Dormagen, Bonn, Mörs, Sinzig, Neuenahr, Andernach, Köln -> Cologne
 	link = { eu4 = 2995 eu4 = 2997 eu4 = 2510 eu4 = 2006 eu4 = 2502 eu4 = 161 v2 = 576 } # Aachen, Kornelimünster, Stolberg, Arenberg, Jülich, Neitersen -> Aachen
 	link = { eu4 = 1936 eu4 = 2491 eu4 = 2616 eu4 = 2508 eu4 = 2505 v2 = 580 } # Dortmund, Lüdinghausen, Beckum, Hamm, Witten -> Dortmund
@@ -440,11 +440,11 @@
 	link = { eu4 = 2806 eu4 = 2835 eu4 = 2809 eu4 = 829 eu4 = 245 eu4 = 244 eu4 = 248 v2 = 560 } # Zwickau, Plauen, Ölsnitz, Buchholz, Stollberg, Seiffen, Hartenstein -> Chemnitz
 	link = { eu4 = 1232 eu4 = 373 eu4 = 375 eu4 = 1226 eu4 = 1228 eu4 = 374 eu4 = 61 eu4 = 2851 eu4 = 376 eu4 = 2323 v2 = 561 } # Blankenhain, Schwarzburg, Orlamünde, Saalfeld, Jena, Ludwigsstadt, Lobenstein, Weimar, Gleichen, Kevernburg -> Weimar
 	link = { eu4 = 2858 eu4 = 207 eu4 = 231 eu4 = 2925 eu4 = 2899 eu4 = 370 eu4 = 2771 v2 = 562 } # Gotha, Tonna, Salza, Eisenach, Frauensee, Heringen, Schmalkalden -> Gotha
-	link = { eu4 = 3 eu4 = 11 eu4 = 8 eu4 = 1129 eu4 = 1227 eu4 = 2011 eu4 = 218 eu4 = 949 v2 = 568 } # Fulda, Nidda, Büdingen, Schlitz, Hammelburg, Fladungen, Ostheim, Bischofsheim -> Fulda
-	link = { eu4 = 10 eu4 = 2691 eu4 = 940 eu4 = 935 v2 = 567 } # Münzenberg, Kirchhain, Ziegenhain, Alsfeld -> Giessen
-	link = { eu4 = 770 eu4 = 16 eu4 = 78 eu4 = 347 eu4 = 4126 eu4 = 25 eu4 = 275 eu4 = 1981 v2 = 596 } # Hanau, Gelnhausen, Aschaffenburg, Jossa, Klingenberg, Orb, Rieneck, Schlüchtern -> Aschaffenburg
-	link = { eu4 = 1943 eu4 = 164 eu4 = 5 v2 = 564 } # Frankfurt, Eschborn, Friedberg -> Frankfurt
-	link = { eu4 = 2464 eu4 = 342 eu4 = 1942 eu4 = 2520 eu4 = 2466 eu4 = 280 eu4 = 927 eu4 = 334 eu4 = 2468 v2 = 565 } # Katzenelnbogen, Diez, Runkel, Solms, Hüttenberg, Wetzlar, Giessen, Wiesbaden, Bingen -> Wiesbaden
+	link = { eu4 = 3 eu4 = 8 eu4 = 1981 eu4 = 1129 eu4 = 347 eu4 = 16 v2 = 568 } # Fulda, Büdingen, Schlüchtern, Schlitz, Jossa, Gelnhausen -> Fulda
+	link = { eu4 = 10 eu4 = 2691 eu4 = 940 eu4 = 935 eu4 = 11 v2 = 567 } # Münzenberg, Kirchhain, Ziegenhain, Alsfeld, Nidda -> Giessen
+	link = { eu4 = 4126 eu4 = 25 eu4 = 275 eu4 = 1227 eu4 = 78 v2 = 596 } # Klingenberg, Orb, Rieneck, Hammelburg, Aschaffenburg -> Aschaffenburg
+	link = { eu4 = 1943 eu4 = 164 eu4 = 5 eu4 = 770 v2 = 564 } # Frankfurt, Eschborn, Friedberg, Hanau -> Frankfurt
+	link = { eu4 = 2464 eu4 = 342 eu4 = 1942 eu4 = 2520 eu4 = 2466 eu4 = 280 eu4 = 927 eu4 = 334 v2 = 565 } # Katzenelnbogen, Diez, Runkel, Solms, Hüttenberg, Wetzlar, Giessen, Wiesbaden -> Wiesbaden
 	link = { eu4 = 2469 eu4 = 2998 eu4 = 82 eu4 = 2506 eu4 = 865 eu4 = 158 eu4 = 2378 eu4 = 279 v2 = 583 } # Siegen, Altena, Arnsberg, Bilstein, Attendorn, Wittgenstein, Hohenlimburg, Soest -> Siegen
 	link = { eu4 = 1940 eu4 = 261 eu4 = 866 eu4 = 4110 eu4 = 2424 v2 = 578 } # Düsseldorf, Hagen, Hückeswagen, Duisburg, Kaiserswerth -> Dusseldorf
 	link = { eu4 = 2501 eu4 = 291 eu4 = 1742 eu4 = 160 v2 = 577 } # Kleve, Opper-Gelre, Gladbach, Rheinberg -> Kleves
@@ -475,7 +475,7 @@
 	link = { eu4 = 2181 eu4 = 665 eu4 = 2179 eu4 = 900 eu4 = 190 eu4 = 2171 eu4 = 2151 v2 = 620 } # Berndorf, Pitten, Lilienfeld, Scheibbs, Waidhofen-Ybbs, Amstetten, Steyrland -> Sankt Polten
 	link = { eu4 = 5414 eu4 = 1821 eu4 = 185 eu4 = 2146 eu4 = 4883 eu4 = 1833 eu4 = 1086 eu4 = 723 eu4 = 1094 eu4 = 2137 eu4 = 914 eu4 = 1824 eu4 = 2735 eu4 = 684 eu4 = 2148 v2 = 618 } # Mahrenberg, Stainz, Wolfsberg, Griffen, Völkermarkt, Sankt Veit, Friesach, Klagenfurt, Glödnitz, Treffen, Villach, Hermagor, Sachsenburg, Obervellach, Spittal -> Klagenfurt
 	link = { eu4 = 2071 eu4 = 4230 eu4 = 2147 v2 = 615 } # Lienz, Virgental, Matrei -> Lienz
-	link = { eu4 = 2110 eu4 = 489 eu4 = 487 eu4 = 1235 eu4 = 735 eu4 = 4874 eu4 = 186 eu4 = 1013 eu4 = 2745 eu4 = 4877 eu4 = 192 eu4 = 737 v2 = 735 } # Moena, Buchenstein, Cortina, Bolzano, Bruneck, Taufers, Brixen, Sankt Ulrich, Meran, Vinschgau, Innichen, Mühlbach -> Bozen
+	link = { eu4 = 2110 eu4 = 489 eu4 = 1235 eu4 = 735 eu4 = 4874 eu4 = 186 eu4 = 1013 eu4 = 2745 eu4 = 4877 eu4 = 192 eu4 = 737 v2 = 735 } # Moena, Buchenstein, Bolzano, Bruneck, Taufers, Brixen, Sankt Ulrich, Meran, Vinschgau, Innichen, Mühlbach -> Bozen
 	link = { eu4 = 2174 eu4 = 4124 eu4 = 2556 eu4 = 180 eu4 = 2513 eu4 = 4880 eu4 = 73 eu4 = 4866 eu4 = 2175 eu4 = 2176 eu4 = 4865 eu4 = 1840 eu4 = 987 v2 = 612 } # Innsbruck, Fieberbrunn, Kitzbühel, Kufstein, Rattenburg, Schwaz, Seefeld, Silz, Reutte, Ischgl, Landeck, Sölden, Zillertal -> Innsbruck
 	link = { eu4 = 76 eu4 = 4114 eu4 = 2152 eu4 = 4871 eu4 = 182 eu4 = 669 eu4 = 4873 eu4 = 4872 v2 = 613 } # Salzburggau, Mondsee, Pongau, Longau, Gasteinertal, Pinzgau, Saalfelden, Mittersill -> Salzburg
 	link = { eu4 = 2145 eu4 = 1822 eu4 = 2140 eu4 = 685 eu4 = 2142 eu4 = 5160 eu4 = 128 eu4 = 4899 v2 = 617 } # Ennstal, Donnersbach, Gurktal, Undrimtal, Leobental, Kapfenberg, Mürztal, Rottenmann -> Judenburg
@@ -528,7 +528,7 @@
 	link = { eu4 = 781 eu4 = 5145 eu4 = 785 eu4 = 2863 eu4 = 5133 eu4 = 2869 eu4 = 2871 eu4 = 806 eu4 = 5139 eu4 = 782 eu4 = 2861 eu4 = 5135 eu4 = 5136 eu4 = 2848 eu4 = 2870 eu4 = 5132 v2 = 625 } # Praha, Klatovy, Blatná, Písek, Príbram, Smíchov, Plzen, Rakovník, Louny, Slany, Melník, Mladá Boleslav, Cesky Brod, Sedlcany, Tábor, Rataje -> Prague
 	link = { eu4 = 792 eu4 = 5146 eu4 = 2876 v2 = 629 } # Teplá, Kladruby, Domazlice -> Plzen
 	link = { eu4 = 2860 eu4 = 5138 eu4 = 5137 eu4 = 808 eu4 = 2836 eu4 = 2846 eu4 = 5140 eu4 = 5144 eu4 = 2832 v2 = 628 } # Zatec, Trnovany, Ústí, Litomerice, Decín, Dubá, Liberec, Vrchlabí, Broumov -> Aussig
-	link = { eu4 = 2523 eu4 = 951 eu4 = 1748 eu4 = 932 eu4 = 1979 eu4 = 1978 eu4 = 227 eu4 = 225 eu4 = 63 eu4 = 937 eu4 = 1851 eu4 = 6 v2 = 597 } # Würzburg, Heidingsfeld, Seinsheim, Riedfeld, Windsheim, Castell, Schweinfurt, Königsberg-Franken, Wiltberg, Oerlenbach, Hofheim, Kissingen -> Wurzburg
+	link = { eu4 = 2523 eu4 = 951 eu4 = 1748 eu4 = 932 eu4 = 1979 eu4 = 1978 eu4 = 227 eu4 = 225 eu4 = 63 eu4 = 937 eu4 = 1851 eu4 = 6 eu4 = 949 eu4 = 2011 eu4 = 218 v2 = 597 } # Würzburg, Heidingsfeld, Seinsheim, Riedfeld, Windsheim, Castell, Schweinfurt, Königsberg-Franken, Wiltberg, Oerlenbach, Hofheim, Kissingen, Bischofsheim, Fladungen, Ostheim -> Wurzburg
 	link = { eu4 = 216 eu4 = 208 eu4 = 2810 eu4 = 830 v2 = 563 } # Meiningen, Dillstädt, Hildburghausen, Koburg -> Meiningen
 	link = { eu4 = 67 eu4 = 2754 eu4 = 941 eu4 = 2526 eu4 = 466 eu4 = 787 eu4 = 66 eu4 = 369 eu4 = 2544 eu4 = 621 v2 = 598 } # Bayreuth, Kronach, Wunsiedel, Kemnath, Velden, Pegnitz, Greiffenstein, Giech, Bamberg, Erlangen -> Bayreuth
 	link = { eu4 = 253 eu4 = 2841 eu4 = 5131 eu4 = 2831 eu4 = 810 v2 = 627 } # Aš, Cheb, Loket, Kralovice, Jáchymov -> Karlsbad
@@ -551,12 +551,12 @@
 	link = { eu4 = 3351 eu4 = 4251 eu4 = 4262 eu4 = 3356 eu4 = 4252 eu4 = 4253 v2 = 956 } # Rivne, Dorohobuzh, Ostroh, Lanivtsi, Kremenets, Dubno -> Rovne
 	link = { eu4 = 3350 eu4 = 3343 eu4 = 4245 eu4 = 3323 eu4 = 4279 eu4 = 3324 eu4 = 3339 v2 = 945 } # Ula, Vitebsk, Talachyn, Krupki, Lukoml, Krasnaluki, Halovchin -> Vitebsk
 	link = { comment = "Lithuania" }
-	link = { eu4 = 5743 eu4 = 5725 eu4 = 4267 eu4 = 5726 eu4 = 3320 eu4 = 3321 eu4 = 3301 v2 = 938 } # Vasilishki, Kreva, Novgorodok, Valazinas, Krasnae, Rubiazevichy, Nyasvizh -> Lida
+	link = { eu4 = 5743 eu4 = 4267 eu4 = 5726 eu4 = 3320 eu4 = 3321 eu4 = 3301 v2 = 938 } # Vasilishki, Novgorodok, Valazinas, Krasnae, Rubiazevichy, Nyasvizh -> Lida
 	link = { eu4 = 3306 eu4 = 3305 eu4 = 3303 eu4 = 4284 eu4 = 3308 eu4 = 4235 eu4 = 4236 v2 = 942 } # Pietrykaw, Lenin, Kazan-Haradok, Hlusk, Beska, Mazyr, Sacilki -> Mozyr
 	link = { eu4 = 4239 eu4 = 3307 eu4 = 3304 v2 = 941 } # Slutsk, Kopyl, Kletsk -> Slutsk
 	link = { eu4 = 4243 eu4 = 3322 eu4 = 3328 eu4 = 4240 eu4 = 3326 eu4 = 3327 eu4 = 3331 v2 = 718 } # Minsk, Zaslawye, Puchavichy, Vitovka, Hajna, Smalyavichy, Porechye -> Minsk
-	link = { eu4 = 3319 eu4 = 5724 eu4 = 3317 eu4 = 3318 eu4 = 5810 v2 = 947 } # Maladzyechna, Svieriai, Dunilavichy, Myadzyel, Šarkaušcyna -> Pastavy
-	link = { eu4 = 5742 eu4 = 5730 eu4 = 5739 eu4 = 5731 eu4 = 5727 eu4 = 5728 eu4 = 5723 eu4 = 5722 eu4 = 5819 eu4 = 5729 v2 = 360 } # Rodunia, Šalcininkai, Švencionys, Ašmena, Alšenai, Geranainiai, Pastovys, Breslauja, Druysk, Lyda -> Vilnius
+	link = { eu4 = 3319 eu4 = 3317 eu4 = 3318 eu4 = 5810 v2 = 947 } # Maladzyechna, Dunilavichy, Myadzyel, Šarkaušcyna -> Pastavy
+	link = { eu4 = 5742 eu4 = 5730 eu4 = 5739 eu4 = 5731 eu4 = 5727 eu4 = 5728 eu4 = 5723 eu4 = 5722 eu4 = 5819 eu4 = 5729 eu4 = 5724 eu4 = 5725 v2 = 360 } # Rodunia, Šalcininkai, Švencionys, Ašmena, Alšenai, Geranainiai, Pastovys, Breslauja, Druysk, Lyda, Svieriai, Kreva -> Vilnius
 	link = { eu4 = 5749 eu4 = 5745 eu4 = 5746 eu4 = 5734 eu4 = 5744 eu4 = 5732 v2 = 361 } # Ziezmariai, Lieponys, Merkine, Kernave, Trakai, Vilna -> Kaunas
 	link = { eu4 = 5757 eu4 = 5756 eu4 = 4842 eu4 = 5758 eu4 = 4841 v2 = 707 } # Meta, Pilypavas, Lukas, Poleksija, Lecai -> Suwalki
 	link = { eu4 = 5748 eu4 = 3293 eu4 = 5747 eu4 = 5903 eu4 = 5760 v2 = 936 } # Gardinas, Berestovitsa, Astryna, Suprasl, Sakalai -> Grodno
@@ -577,11 +577,11 @@
 	link = { eu4 = 5873 eu4 = 5878 eu4 = 5876 eu4 = 5877 eu4 = 5874 eu4 = 5875 eu4 = 5872 eu4 = 5871 eu4 = 5867 v2 = 352 } # Setomaa, Räpinä, Vahtsöliina, Väimela, Sangastö, Tartu, Soopoolitse, Jogentagana, Puurmani -> Dorpat
 	link = { eu4 = 5879 eu4 = 5881 eu4 = 5880 eu4 = 5885 eu4 = 5884 eu4 = 5882 eu4 = 5886 eu4 = 5896 eu4 = 5883 eu4 = 5868 eu4 = 5866 v2 = 350 } # Narva, Alutaguse, Askaila, Mahu, Pudivere, Lemmu, Repele, Palmse, Lopekunde, Vaiamaa, Möhu -> Narva
 	link = { comment = "Hungary" }
-	link = { eu4 = 455 eu4 = 5478 eu4 = 5479 eu4 = 2370 eu4 = 5481 eu4 = 1973 eu4 = 5480 v2 = 642 } # Györ, Sokoróalja, Gesztes, Esztergom, Vasvár, Moson, Kapuvár -> Gyor
+	link = { eu4 = 455 eu4 = 5478 eu4 = 5479 eu4 = 2370 v2 = 642 } # Györ, Sokoróalja, Gesztes, Esztergom -> Gyor
 	link = { eu4 = 5472 eu4 = 2361 eu4 = 5509 eu4 = 1967 eu4 = 5497 eu4 = 1970 eu4 = 5469 v2 = 646 } # Gyarmath, Heves, Mezökövesd, Borsod, Szikszó, Hont, Tornalja -> Miskolc
 	link = { eu4 = 1085 eu4 = 2358 eu4 = 456 eu4 = 2653 v2 = 649 } # Szarvas, Csongrád, Szolnok, Hód -> Szeged
-	link = { eu4 = 4890 eu4 = 445 eu4 = 2068 v2 = 623 } # Rechnitz, Sopron, Szombathely -> Sopron
-	link = { eu4 = 2441 eu4 = 5483 v2 = 639 } # Zala, Nagykanizsa -> Zalaegerszeg
+	link = { eu4 = 4890 eu4 = 445 eu4 = 2068 eu4 = 5480 eu4 = 1973 v2 = 623 } # Rechnitz, Sopron, Szombathely, Kapuvár, Moson -> Sopron
+	link = { eu4 = 2441 eu4 = 5483 eu4 = 5481 v2 = 639 } # Zala, Nagykanizsa, Vasvár -> Zalaegerszeg
 	link = { eu4 = 5474 eu4 = 5475 eu4 = 5494 eu4 = 441 eu4 = 5476 eu4 = 2362 eu4 = 5482 eu4 = 5477 v2 = 643 } # Szentendre, Buda, Sárbogárd, Fejér, Enying, Veszprém, Keszthely, Pápa -> Szekesfehevar
 	link = { eu4 = 444 eu4 = 5473 eu4 = 5923 eu4 = 5506 eu4 = 4119 eu4 = 1969 v2 = 641 } # Pest, Vác, Irsa, Jászberény, Gyöngyös, Nógrád -> Pest
 	link = { eu4 = 1832 eu4 = 5502 eu4 = 5503 eu4 = 5510 eu4 = 576 eu4 = 5504 eu4 = 5505 v2 = 645 } # Kalocsa, Kiskunhalas, Kecskemét, Dabas, Solt, Félegyháza, Nagykörös -> Kecskemet
@@ -789,7 +789,7 @@
 	link = { eu4 = 2423 eu4 = 4065 eu4 = 1285 eu4 = 4056 eu4 = 1280 eu4 = 4064 eu4 = 2776 eu4 = 4067 eu4 = 4069 eu4 = 1278 eu4 = 4066 eu4 = 2802 eu4 = 2780 eu4 = 1281 v2 = 455 } # Toulouse, Durfort, Castelnaudary, Mirepoix, Pamiers, Carbonne, Muret, L'Isle-Jourdain, Lomagne, Gauré, Fezensac, Aspet, Astarac, Pardiac -> Toulouse
 	link = { eu4 = 2894 eu4 = 550 eu4 = 1286 eu4 = 4061 eu4 = 4027 eu4 = 1283 v2 = 463 } # Narbonne, Béziers, Minerve, Carcassonne, Termes, Razès -> Carcassone
 	link = { eu4 = 4103 eu4 = 2289 eu4 = 2787 eu4 = 2910 eu4 = 4077 v2 = 460 } # Labourd, Baja Navarra, Soule, Béarn, Oloron -> Pau
-	link = { eu4 = 188 eu4 = 24 eu4 = 287 eu4 = 34 eu4 = 299 eu4 = 2447 eu4 = 2575 eu4 = 997 eu4 = 36 eu4 = 2692 eu4 = 35 eu4 = 300 eu4 = 2749 eu4 = 4117 v2 = 412 } # Merzig, Sankt Wendel, Bouzonville, Metz, Thionville, Carling, Tenquin, Amelécourt, Lagarde, Marsal, Fénétrange, Püttlingen, Saarwerden, Saarburg -> Metz
+	link = { eu4 = 188 eu4 = 287 eu4 = 34 eu4 = 299 eu4 = 2447 eu4 = 2575 eu4 = 997 eu4 = 36 eu4 = 2692 eu4 = 35 eu4 = 300 eu4 = 2749 eu4 = 4117 v2 = 412 } # Merzig, Bouzonville, Metz, Thionville, Carling, Tenquin, Amelécourt, Lagarde, Marsal, Fénétrange, Püttlingen, Saarwerden, Saarburg -> Metz
 	link = { eu4 = 1958 eu4 = 302 eu4 = 1945 eu4 = 2385 eu4 = 289 eu4 = 297 eu4 = 2665 eu4 = 292 eu4 = 294 eu4 = 2537 eu4 = 2101 eu4 = 537 eu4 = 310 eu4 = 605 eu4 = 1959 eu4 = 540 eu4 = 536 eu4 = 274 eu4 = 309 eu4 = 1961 eu4 = 295 v2 = 409 } # Bitsch, Fleckenstein, Weißenburg-Elsass, Lauterburg, Hunspach, Hagenau, Sufflenheim, Lichtenberg, Lützelstein, Dagsburg, Zabern, Maursmünster, Illkirch, Rosheim, Straßburg, Barr, Schirmeck, Natzweiler, Mütterholz, Markolsheim, Bischweiler -> Strasbourg
 	link = { eu4 = 2568 eu4 = 5599 eu4 = 592 eu4 = 293 eu4 = 1960 eu4 = 1752 eu4 = 37 eu4 = 311 eu4 = 2572 eu4 = 265 eu4 = 606 eu4 = 2958 eu4 = 132 eu4 = 38 v2 = 410 } # Pfirt, Belfort, Murbach, Egisheim, Münster-Elsass, Urbeis, Kolmar, Rufach, Landser, Mülhausen-Elsaß, Rappoltsweiler, Horburg, Heiteren, Schlettstadt -> Colmar
 	link = { comment = "Benelux" }
@@ -850,8 +850,8 @@
 	link = { eu4 = 5920 eu4 = 499 eu4 = 2742 eu4 = 5188 eu4 = 109 eu4 = 1989 eu4 = 1820 eu4 = 5189 eu4 = 5191 v2 = 728 } # Casalmaggiore, Cremona, Brescia, Asola, Mantua, Guastalla, Breno, Salò, Goito -> Brescia
 	link = { eu4 = 2589 eu4 = 4797 v2 = 721 } # Aosta, Verrès -> Aosta
 	link = { eu4 = 1009 eu4 = 1986 eu4 = 368 eu4 = 2580 eu4 = 1800 eu4 = 969 eu4 = 2562 eu4 = 1244 eu4 = 4545 eu4 = 367 eu4 = 649 eu4 = 2010 eu4 = 366 eu4 = 5921 eu4 = 1000 eu4 = 2086 eu4 = 2002 eu4 = 2559 eu4 = 4543 eu4 = 1007 eu4 = 4544 v2 = 720 } # Torino, Cherasco, Fossano, Clavesana, Ceva, Carretto, Canelli, Alba, Vilafranca, Carmagnola, Incisa, Asti, Poirino, Lanzo, Canavese, Tenda, Limone, Cuneo, San Dalmazzo, Saluzzo, Pinerolo -> Turin
-	link = { eu4 = 110 eu4 = 1021 eu4 = 1020 eu4 = 1018 eu4 = 4876 eu4 = 4127 eu4 = 2187 v2 = 734 } # Tione, Trento, Rovereto, Asiago, Non, Feltre, Valsugana -> Trent
-	link = { eu4 = 111 eu4 = 1830 eu4 = 5196 eu4 = 1774 eu4 = 4555 eu4 = 4868 eu4 = 4870 v2 = 8 } # Tolmezzo, Belluno, Aviano, Ceneda, Bassano, Ampezzo, Tarvisio -> Belluno
+	link = { eu4 = 110 eu4 = 1021 eu4 = 1020 eu4 = 4876 eu4 = 2187 v2 = 734 } # Tione, Trento, Rovereto, Non, Valsugana -> Trent
+	link = { eu4 = 111 eu4 = 1830 eu4 = 5196 eu4 = 1774 eu4 = 4555 eu4 = 4868 eu4 = 4870 eu4 = 4127 eu4 = 1018 eu4 = 487 v2 = 8 } # Tolmezzo, Belluno, Aviano, Ceneda, Bassano, Ampezzo, Tarvisio, Feltre, Asiago, Cortina -> Belluno
 	link = { eu4 = 1862 eu4 = 5200 eu4 = 1019 eu4 = 5190 eu4 = 1996 eu4 = 2656 v2 = 730 } # Verona, Schio, Legnago, Peschiera, Polsa, Vicenza -> Verona
 	link = { eu4 = 947 eu4 = 946 v2 = 737 } # Gorica, Tolmin -> Gorizia
 	link = { eu4 = 954 v2 = 736 } # Trieste -> Trieste
