@@ -14,6 +14,9 @@ void mappers::VNColonialMapping::registerKeys()
 	registerKeyword("name", [this](std::istream& theStream) {
 		name = commonItems::getString(theStream);
 	});
+	registerKeyword("decolonize", [this](std::istream& theStream) {
+		decolonizeBlocker = commonItems::getString(theStream);
+	});
 	registerKeyword("key", [this](std::istream& theStream) {
 		keyProvince = commonItems::getInt(theStream);
 	});
