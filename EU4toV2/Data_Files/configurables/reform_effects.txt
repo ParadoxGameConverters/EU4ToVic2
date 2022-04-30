@@ -5,14 +5,14 @@
 # 
 # If an issue is not listed, it counts as being at level 5 (ignored)
 # 
-# Issues recognised: 
+# Issues recognized: 
 # Political: slavery, upper_house_composition, vote_franchise, voting_system, public_meetings, press_rights, trade_unions, political_parties
 # National values: liberty, equality, order, literacy
 # Technologies: army, commerce, culture, industry, navy
 # Upper house membership: reactionary, liberal
 # Change government: enforce
 #
-# Note: slavery is cunterintuitive - 10 means slavery abolished
+# Note: slavery is counterintuitive - 10 means slavery abolished
 #
 # Special:
 # enforce is the government type this reform forces. For conflicting cases
