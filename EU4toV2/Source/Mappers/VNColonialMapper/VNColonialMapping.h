@@ -10,6 +10,7 @@ class VNColonialMapping: commonItems::parser
 	explicit VNColonialMapping(std::istream& theStream);
 
 	[[nodiscard]] const auto& getName() const { return name; }
+	[[nodiscard]] const auto& getDecolonizeBlocker() const { return decolonizeBlocker; }
 	[[nodiscard]] auto getKeyProvince() const { return keyProvince; }
 	[[nodiscard]] const auto& getProvinces() const { return provinces; }
 
@@ -17,6 +18,7 @@ class VNColonialMapping: commonItems::parser
 	void registerKeys();
 
 	std::string name;
+	std::string decolonizeBlocker;
 	int keyProvince = 0;
 	std::vector<int> provinces;
 };

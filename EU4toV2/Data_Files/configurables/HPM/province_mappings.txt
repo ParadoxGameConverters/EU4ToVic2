@@ -1525,7 +1525,7 @@
 	link = { eu4 = 256 eu4 = 4524 v2 = 708 } # Plock, Dobrzyn -> Plock
 	link = { eu4 = 1938 v2 = 709 } # Wizna -> Lomza
 	link = { eu4 = 257 v2 = 706 } # Warszawa -> Warsaw
-	link = { eu4 = 269 v2 = 719 v2 = 707 } # Podlasie -> Bialystok, Suwalki
+	link = { eu4 = 269 v2 = 719 } # Podlasie -> Bialystok
 	link = { eu4 = 767 v2 = 697 } # Ortelsburg -> Gumbinnen
 	link = { eu4 = 42 eu4 = 2958 v2 = 696 } # Warmia, Osterode -> Allenstein
 	link = { eu4 = 1841 v2 = 693 } # Marienburg -> Elbing
@@ -1533,20 +1533,19 @@
 	link = { comment = "# Belarus" }
 	link = { eu4 = 277 v2 = 937 } # Brest -> Brest-Litovsk
 	link = { eu4 = 1937 v2 = 936 } # Grodno -> Grodno
-	link = { eu4 = 272 eu4 = 770 v2 = 360 } # Vilna, Braslaw -> Vilnius
-	link = { eu4 = 4536 v2 = 938 } # Lida -> Lida
+	link = { eu4 = 272 eu4 = 770 eu4 = 4536 v2 = 360 } # Vilna, Braslaw, Lida -> Vilnius
 	link = { eu4 = 278 v2 = 940 } # Pinsk -> Pinsk
 	link = { eu4 = 4537 v2 = 939 } # Nowogrodek -> Baranovichi
 	link = { eu4 = 1941 eu4 = 4545 v2 = 941 } # Turov, Sluck -> Slutsk
 	link = { eu4 = 4247 eu4 = 4115 v2 = 942 } # Owrucz, Mazyr -> Mozyr
-	link = { eu4 = 276 v2 = 718 } # Minsk -> Minsk
-	link = { eu4 = 4242 v2 = 947 } # Ula -> Pastavy
-	link = { eu4 = 292 eu4 = 4544 v2 = 948 } # Mogilev, Bobrujsk -> Mogilev
+	link = { eu4 = 276 eu4 = 4544 v2 = 718 } # Minsk, Bobrujsk -> Minsk
+	link = { eu4 = 4242 v2 = 938 } # Ula -> Lida
+	link = { eu4 = 292 v2 = 948 } # Mogilev -> Mogilev
 	link = { eu4 = 4246 v2 = 944 v2 = 949 } # Mstislav -> Orsha, Gomel
-	link = { eu4 = 275 v2 = 946 } # Polotsk -> Polotsk
+	link = { eu4 = 275 v2 = 946 v2 = 947 } # Polotsk -> Polotsk, Pastavy
 	link = { eu4 = 771 v2 = 945 } # Vitebsk -> Vitebsk
 	link = { comment = "# Baltics" }
-	link = { eu4 = 1936 v2 = 362 } # Kovno -> Marijampole
+	link = { eu4 = 1936 v2 = 362 v2 = 707 } # Kovno -> Marijampole, Suwalki
 	link = { eu4 = 270 v2 = 361 } # Trakai -> Kaunas
 	link = { eu4 = 4534 eu4 = 4535 v2 = 363 } # Upita, Wilkimierz -> Panevezys
 	link = { eu4 = 271 v2 = 364 v2 = 365 } # Samogitia -> Siauliai, Palanga

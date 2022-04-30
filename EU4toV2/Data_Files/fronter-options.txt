@@ -23,13 +23,13 @@ option = {
 			name = 2
 			displayName = EXPIRE2
 			tooltip = EXPIRE2TIP
-			default = true
+			default = false
 		}
 		radioOption = {
 			name = 3
 			displayName = EXPIRE3
 			tooltip = EXPIRE3TIP
-			default = false		
+			default = true
 		}
 	}
 }
