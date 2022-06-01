@@ -294,7 +294,6 @@ link = { vic2 = spanish eu4 = castillian eu4 = leonese eu4 = asturian eu4 = bale
 link = { vic2 = galician eu4 = galician }
 link = { vic2 = catalan eu4 = catalan eu4 = aragonese eu4 = valencian }
 link = { vic2 = portuguese eu4 = portugese }
-link = { vic2 = basque eu4 = basque eu4 = basque_colonial }
 link = { vic2 = andalucian eu4 = andalucian eu4 = mozarabic }
 link = { vic2 = ultramar eu4 = ultramar }
 
@@ -741,6 +740,7 @@ link = { vic2 = pie_american eu4 = basque eu4 = oldspain eu4 = iberic eu4 = turd
 link = { vic2 = pie_oceanian eu4 = basque eu4 = oldspain eu4 = iberic eu4 = turdetanian eu4 = lusitanian eu4 = nuragic region = oceania_superregion }
 link = { vic2 = pie_african eu4 = basque eu4 = oldspain eu4 = iberic eu4 = turdetanian eu4 = lusitanian eu4 = nuragic region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 
+link = { vic2 = basque eu4 = basque eu4 = basque_colonial }
 link = { vic2 = oldspain eu4 = oldspain eu4 = iberic eu4 = turdetanian }
 link = { vic2 = lusitanian eu4 = lusitanian }
 link = { vic2 = illyrian eu4 = illyrian }
