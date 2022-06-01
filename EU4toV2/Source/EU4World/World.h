@@ -3,10 +3,11 @@
 #include "Buildings/Buildings.h"
 #include "ConverterVersion.h"
 #include "Country/EU4Country.h"
-#include "CultureGroups/CultureGroups.h"
+#include "CultureGroups/CultureGroupsManager.h"
 #include "Diplomacy/EU4Diplomacy.h"
 #include "GameVersion.h"
 #include "IdeaEffects/IdeaEffectMapper.h"
+#include "Localization/EU4Localization.h"
 #include "Parser.h"
 #include "Provinces/Provinces.h"
 #include "Regions/Regions.h"
@@ -40,6 +41,7 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getHREReforms() const { return hreReforms; }
 	[[nodiscard]] bool decentralizedHRE() const { return hreReforms.contains("emperor_reichskrieg"); }
 	[[nodiscard]] const auto& getShatteredHreTag() const { return shatteredHreTag; }
+	[[nodiscard]] const auto& getEU4Localization() const { return EU4localization; }
 
   private:
 	void registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper, const commonItems::ConverterVersion& converterVersion);
@@ -99,8 +101,9 @@ class World: commonItems::parser
 	Religions theReligions;
 	mappers::UnitTypeMapper unitTypeMapper;
 	std::unique_ptr<mappers::Buildings> buildingTypes;
-	std::shared_ptr<mappers::CultureGroups> cultureGroupsMapper;
+	std::shared_ptr<mappers::CultureGroupsManager> cultureGroupsMapper;
 	mappers::SuperGroupMapper superGroupMapper;
+	EU4Localization EU4localization;
 
 	// export data for hoi4
 	std::vector<std::pair<std::string, HistoricalEntry>> historicalData;

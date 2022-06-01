@@ -60,3 +60,16 @@ TEST(Mappers_CultureMapperTests, correctRuleMaches)
 	const auto& match = theMapper.cultureMatch(regions, "sourceCulture", "wrongReligion", -1, "");
 	ASSERT_EQ("destinationCulture2", *match);
 }
+
+TEST(Mappers_CultureMapperTests, dynamicCulturesAreReturnedVerbatim)
+{
+	std::stringstream input;
+	mappers::CultureMapper theMapper(input);
+
+	std::stringstream areasInput;
+	EU4::Areas areas(areasInput);
+	EU4::Regions regions(areas);
+
+	const auto& match = theMapper.cultureMatch(regions, "dynamic-test-culture-num1", "", 0, "");
+	EXPECT_EQ("dynamic-test-culture-num1", *match);
+}

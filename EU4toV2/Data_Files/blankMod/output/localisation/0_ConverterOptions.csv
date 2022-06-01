@@ -1,0 +1,7 @@
+KEY;ENGLISH;FRENCH;GERMAN;POLISH;SPANISH;ITALIAN;HUNGARIAN;CZECH;HUNGARIAN;DUTCH;PORTUGUESE;RUSSIAN;FINNISH;X
+show_converter_options_title;Show Converter Options;;;;;;;;;;;;;x
+show_converter_options_desc;This decision shows all optional decisions to tweak and change the default Converted mod behaviour. The list includes:\n - Disable British Dominions (HPM hybrid)\n\nThis, along with all decisions it enables, will disappear January 1st 1837 to reduce clutter, so you have a year in-game to pick and choose what you want. Once a tweak is chosen, you can't disable it anymore, so if you misclick you need to edit your save or start a new game.;;;;;;;;;;;;;x
+hide_converter_options_title;Hide Converter Options;;;;;;;;;;;;;x
+hide_converter_options_desc;This will hide all optional tweaks to default Converted mod. You still have until 1837 to change your mind though.;;;;;;;;;;;;;x
+disable_british_dominions_title;Disable British Dominions (HPM hybrid);;;;;;;;;;;;;x
+disable_british_dominions_desc;Prevents The United Kingdom/England from releasing their dominions (Columbia, Newfoundland, Australia, New Zealand, South Africa, Alaska, Southern Rhodesia, Canada, Quebec and Maritime Republic) via HPM decisions and events.;;;;;;;;;;;;;x

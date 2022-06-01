@@ -91,7 +91,7 @@ class Country
 	void addState(std::shared_ptr<State> newState, const mappers::PortProvinces& portProvincesMapper);
 	void convertLeaders(const mappers::LeaderTraitMapper& leaderTraitMapper);
 	void convertUncivReforms(CIV_ALGORITHM techGroupAlgorithm, double topTech, int topInstitutions, const mappers::TechGroupsMapper& techGroupsMapper);
-	void addRailroadtoCapitalState();
+	void addRailroadtoCapitalState() const;
 	void addTech(const std::string& newTech) { techs.insert(newTech); }
 	void convertLandlessReforms(const Country& capitalOwner);
 	void setTechs(const mappers::StartingTechMapper& startingTechMapper,

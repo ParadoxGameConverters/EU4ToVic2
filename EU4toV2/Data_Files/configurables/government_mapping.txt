@@ -9,11 +9,11 @@ absolute_monarchy = { despotic_monarchy feudal_monarchy absolute_monarchy
 democracy = { merchant_republic administrative_republic constitutional_republic 
 		tribal_democracy ambrosian_republic dutch_republic american_republic 
 		tribal_council native_council siberian_native_council imperial_city 
-		trading_city veche_republic federal_republic pirate_republic }
+		trading_city veche_republic federal_republic pirate_republic peasants_republic }
 presidential_dictatorship = { republican_dictatorship oligarchic_republic colonial_government }
 hms_government = { english_monarchy constitutional_monarchy administrative_monarchy }
 prussian_constitutionalism = { prussian_monarchy noble_republic elective_monarchy}
-proletarian_dictatorship = { peasants_republic } #Dithmarschen special
+proletarian_dictatorship = { }
 theocracy = { theocratic_government papal_government monastic_order_government feudal_theocracy }
 bourgeois_dictatorship = { bureaucratic_despotism revolutionary_republic }
 

@@ -119,9 +119,9 @@ political_decisions = {
 						OR = {
 							owned_by = THIS
 							province_id = 354 #Riga
-							state_id = AUS_612 #Tirol
-							state_id = AUS_613 #Carinthia-Styria
-							state_id = AUS_619 #Austria Proper
+							region = AUS_612 #Tirol
+							region = AUS_613 #Carinthia-Styria
+							region = AUS_619 #Austria Proper
 							owner = {
 								in_sphere = THIS
 								OR = {
@@ -190,7 +190,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {
@@ -234,9 +234,9 @@ political_decisions = {
 						OR = {
 							owned_by = THIS
 							province_id = 354 #Riga
-							state_id = AUS_612 #Tirol
-							state_id = AUS_613 #Carinthia-Styria
-							state_id = AUS_619 #Austria Proper
+							region = AUS_612 #Tirol
+							region = AUS_613 #Carinthia-Styria
+							region = AUS_619 #Austria Proper
 							owner = {
 								in_sphere = THIS
 								OR = {
@@ -376,7 +376,7 @@ political_decisions = {
 					}
 					NOT = { has_country_flag = post_colonial_country }
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {
@@ -405,9 +405,9 @@ political_decisions = {
 						OR = {
 							owned_by = THIS
 							province_id = 354 #Riga
-							state_id = AUS_612 #Tirol
-							state_id = AUS_613 #Carinthia-Styria
-							state_id = AUS_619 #Austria Proper
+							region = AUS_612 #Tirol
+							region = AUS_613 #Carinthia-Styria
+							region = AUS_619 #Austria Proper
 							owner = {
 								in_sphere = THIS
 								OR = {
@@ -458,7 +458,7 @@ political_decisions = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {
@@ -520,19 +520,6 @@ political_decisions = {
 		}
 		effect = {
 			prestige = 20
-			all_core = { 
-				add_core = culture
-			}
-			any_country = {
-                limit = {
-                    NOT = {
-                        is_greater_power = yes
-                    }
-                    is_culture_group = THIS
-                    in_sphere = THIS
-                }
-                all_core = { add_core = culture }
-            }
 			change_tag = culture
 			any_country = {
 				limit = {
@@ -584,9 +571,9 @@ political_decisions = {
 					OR = {
 						owned_by = THIS
 						province_id = 354 #Riga
-						state_id = AUS_612 #Tirol
-						state_id = AUS_613 #Carinthia-Styria
-						state_id = AUS_619 #Austria Proper
+						region = AUS_612 #Tirol
+						region = AUS_613 #Carinthia-Styria
+						region = AUS_619 #Austria Proper
 						owner = {
 							in_sphere = THIS
 							OR = {
@@ -1452,7 +1439,7 @@ unite_moldavia_wallachia = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {
@@ -1558,7 +1545,7 @@ unite_moldavia_wallachia = {
 						vassal_of = THIS
 					}
 				}
-				annex_to = FROM
+				annex_to = THIS
 			}
 		}
 		ai_will_do = {

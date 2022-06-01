@@ -86,7 +86,7 @@ void EU4::Province::buildPopRatio(const mappers::SuperGroupMapper& superGroupMap
 	if (superRegionName)
 		assimilationFactor = superGroupMapper.getAssimilationFactor(*superRegionName);
 	else
-		assimilationFactor = 0.0025;
+		assimilationFactor = 0.003;
 	provinceHistory.buildPopRatios(assimilationFactor);
 }
 

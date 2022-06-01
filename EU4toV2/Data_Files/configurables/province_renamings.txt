@@ -3079,3 +3079,23 @@ link = { province = 2583 culture = morlach name = "Cettigne" }
 link = { province = 2583 culture = north_italian name = "Cettigne" }
 link = { province = 2583 culture = south_italian name = "Cettigne" }
 link = { province = 2583 culture = turkish name = "Çetince" }
+
+link = { province = 830 culture = greek name = "Alexandroupolis" }
+link = { province = 858 culture = greek name = "Saranta Ekklisies" }
+link = { province = 860 culture = greek name = "Constantinopolis" }
+link = { province = 861 culture = greek name = "Scutarion" }
+link = { province = 862 culture = greek name = "Nicomedia" }
+link = { province = 866 culture = greek name = "Nikopolis" }
+link = { province = 867 culture = greek name = "Cotyaeum" }
+link = { province = 868 culture = greek name = "Dorylaeum" }
+link = { province = 865 culture = greek name = "Dardanelles" }
+link = { province = 869 culture = greek name = "Smyrne" }
+link = { province = 873 culture = greek name = "Iconion" }
+link = { province = 874 culture = greek name = "Polydorion" }
+link = { province = 875 culture = greek name = "Attalia" }
+link = { province = 876 culture = greek name = "Ancyra" }
+link = { province = 878 culture = greek name = "Caesarea" }
+link = { province = 894 culture = greek name = "Antioch" }
+link = { province = 879 culture = greek name = "Sebastea" }
+link = { province = 887 culture = greek name = "Theodosiopolis" }
+link = { province = 888 culture = greek name = "Acilisene" }

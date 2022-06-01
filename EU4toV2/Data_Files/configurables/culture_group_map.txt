@@ -1,0 +1,63 @@
+﻿# This file creates correlations between eu4 culture groups and Vic2 culture groups.
+# These are used primarily for incoming ck3 dynamic cultures which we don't know where they should go.
+# So if such a culture is in British culture group and it's mapped to vic2 british here, that's where it'll end up.
+# single v2, optional hpm override, multiple eu4 per link.
+
+# These represent best effort. Since vic2 doesn't have west slavic, for example, we are forced to choose between polish and czecho_slovak.
+link = { v2 = germanic eu4 = germanic }
+link = { v2 = jewish_group hpm = jewish_cultures eu4 = israelite }
+link = { v2 = scandinavian eu4 = scandinavian eu4 = finno_ugric }
+link = { v2 = british eu4 = british eu4 = gaelic }
+link = { v2 = italian eu4 = latin }
+link = { v2 = iberian eu4 = iberian }
+link = { v2 = french eu4 = french }
+link = { v2 = south_slavic eu4 = south_slavic }
+link = { v2 = hungarian_culture_group eu4 = carpathian }
+link = { v2 = polish_culture_group eu4 = west_slavic }
+link = { v2 = east_slavic eu4 = east_slavic }
+link = { v2 = baltic eu4 = baltic }
+link = { v2 = levantine eu4 = byzantine eu4 = chaldean }
+link = { v2 = turko_semitic eu4 = turko_semitic }
+link = { v2 = caucasian eu4 = caucasian }
+link = { v2 = arab eu4 = maghrebi }
+link = { v2 = iranian_turanian eu4 = iranian eu4 = scythian_group }
+link = { v2 = central_asian eu4 = altaic eu4 = tartar eu4 = oghuz }
+link = { v2 = south_asian eu4 = eastern_aryan eu4 = hindusthani eu4 = western_aryan eu4 = dravidian eu4 = central_indic }
+link = { v2 = southeast_asian eu4 = malay eu4 = thai_group eu4 = southeastasian_group eu4 = burman }
+link = { v2 = east_asian eu4 = east_asian wu4 = korean_g eu4 = tibetan_group eu4 = evenks eu4 = kamchatkan_g }
+link = { v2 = far_east_asian eu4 = japanese_g }
+link = { v2 = oceanic eu4 = pacific eu4 = aboriginal_australian }
+link = { v2 = native_central_american hpm = native_american eu4 = central_american eu4 = aridoamerican eu4 = maya eu4 = otomanguean }
+link = { v2 = native_south_american hpm = native_american eu4 = andean_group eu4 = je eu4 = je_tupi eu4 = maranon eu4 = chibchan eu4 = mataco eu4 = araucanian }
+link = { v2 = native_north_american hpm = native_american eu4 = eskaleut eu4 = central_algonquian eu4 = plains_algonquian eu4 = eastern_algonquian eu4 = iroquoian eu4 = siouan eu4 = caddoan eu4 = muskogean eu4 = sonoran eu4 = apachean eu4 = na_dene eu4 = penutian }
+link = { v2 = native_carribean eu4 = carribean }
+link = { v2 = west_african eu4 = mande eu4 = sahelian eu4 = west_african }
+link = { v2 = central_african eu4 = kongo_group }
+link = { v2 = east_african eu4 = great_lakes_group eu4 = african eu4 = cushitic eu4 = sudanese }
+link = { v2 = southern_african eu4 = southern_african }
+link = { v2 = barbarian eu4 = lost_cultures_group eu4 = barbaro_germanic eu4 = frankish_g }
+link = { v2 = gothic_g eu4 = gothic_group }
+link = { v2 = romantic eu4 = roman_group }
+link = { v2 = non_human eu4 = equine_group eu4 = cat_group eu4 = bear_group eu4 = hedgehog_group eu4 = duck_group eu4 = dog_group eu4 = elephant_group eu4 = dragon_group eu4 = red_panda_group }
+link = { v2 = punic eu4 = punic_group eu4 = old_mashriqi }
+link = { v2 = hittite_g eu4 = hittite_group }
+link = { v2 = balkan eu4 = dacian_group }
+link = { v2 = tyrrhenian eu4 = tyrrhenian }
+link = { v2 = pan_albanian eu4 = albanian_g }
+link = { v2 = old_italian eu4 = old_lombard_g }
+link = { v2 = celtic eu4 = celtiberian_g eu4 = celts eu4 = scordiscian_g }
+
+# these are known vic2 groups we have defined and potentially use, but we can't map and *particular* culture group into them as only chosen cultures go here.
+#link = { v2 = beneluxian eu4 =  }
+#link = { v2 = pan_swiss eu4 =  }
+#link = { v2 = pre_indo_european eu4 =  }
+#link = { v2 = pan_romanian eu4 =  }
+#link = { v2 = czecho_slovak_culture_group eu4 =  }
+#link = { hpm = indo_iranian eu4 =  }
+#link = { v2 = american_cultures eu4 =  }
+#link = { v2 = neo_european_cultures eu4 =  }
+#link = { v2 = latin_american_cultures eu4 =  }
+#link = { v2 = african_diaspora_cultures eu4 =  }
+#link = { v2 = anti_human eu4 =  }
+#link = { v2 = varangian_g eu4 =  }
+#link = { v2 = dytic_g eu4 =  }

@@ -116,6 +116,11 @@ std::ostream& V2::operator<<(std::ostream& output, const Country& country)
 	{
 		output << "decision = " << decision << "\n";
 	}
+	output << "set_country_flag = vic2_country_" << country.tag << "\n";
+	if (country.getSourceCountry() && !country.getSourceCountry()->getTag().empty())
+	{
+		output << "set_country_flag = eu4_country_" << country.getSourceCountry()->getTag() << "\n";
+	}
 	return output;
 }
 

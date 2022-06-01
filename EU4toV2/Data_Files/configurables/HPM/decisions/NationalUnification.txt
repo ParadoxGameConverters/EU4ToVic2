@@ -465,22 +465,6 @@ political_decisions = {
 		}
 		effect = {
 			prestige = 20
-			all_core = { 
-				add_core = culture
-			}
-			any_country = {
-                limit = {
-                    NOT = {
-                        is_greater_power = yes
-                    }
-                    is_culture_group = THIS
-                    OR = {
-						in_sphere = THIS
-						vassal_of = THIS
-					}
-                }
-                all_core = { add_core = culture }
-            }
 			change_tag = culture
 			any_country = {
 				limit = {

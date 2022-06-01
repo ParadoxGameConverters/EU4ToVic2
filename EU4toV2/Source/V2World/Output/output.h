@@ -45,7 +45,7 @@ std::ostream& operator<<(std::ostream& output, const War& war);
 namespace mappers
 {
 std::ostream& operator<<(std::ostream& output, const PartyType& partyDetails);
-std::ostream& operator<<(std::ostream& output, const CultureGroups& cultureGroupsMapper);
+std::ostream& operator<<(std::ostream& output, const CultureGroupsManager& cultureGroupsManager);
 std::ostream& operator<<(std::ostream& output, const CultureGroup& cultureGroup);
 std::ostream& operator<<(std::ostream& output, const Culture& culture);
 std::ostream& operator<<(std::ostream& output, const ReligiousGroups& religiousGroupsMapper);

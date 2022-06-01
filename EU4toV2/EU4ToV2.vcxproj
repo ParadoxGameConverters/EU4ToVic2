@@ -37,24 +37,24 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-NoCopies|Win32'" Label="Configuration">
@@ -380,9 +380,11 @@ call save_commit_id.bat
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMappings.cpp" />
     <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnion.cpp" />
     <ClCompile Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.cpp" />
+    <ClCompile Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\Culture.cpp" />
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroup.cpp" />
-    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp" />
+    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroupsManager.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.cpp" />
@@ -585,9 +587,11 @@ call save_commit_id.bat
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMappings.h" />
     <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnion.h" />
     <ClInclude Include="Source\Mappers\CulturalUnions\CulturalUnionMapper.h" />
+    <ClInclude Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapper.h" />
+    <ClInclude Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\Culture.h" />
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroup.h" />
-    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h" />
+    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroupsManager.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
     <ClInclude Include="Source\Mappers\DeadDefinitionMapper\DeadDefinitionMapper.h" />

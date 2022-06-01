@@ -13,6 +13,7 @@
 #include <filesystem>
 #include <fstream>
 #include <queue>
+#include <ranges>
 namespace fs = std::filesystem;
 
 constexpr int MAX_EQUALITY_COUNTRIES = 5;
@@ -56,6 +57,7 @@ V2::World::World(const EU4::World& sourceWorld,
 
 	Log(LogLevel::Info) << "-> Pouring From Hollow Into Empty";
 	cultureGroupsMapper.importNeoCultures(sourceWorld.getRegions(), sourceWorld.getCultureGroupsMapper(), cultureMapper);
+	cultureGroupsMapper.importDynamicCultures(sourceWorld.getCultureGroupsMapper());
 	Log(LogLevel::Progress) << "51 %";
 
 	Log(LogLevel::Info) << "-> Converting Countries";
@@ -162,7 +164,7 @@ V2::World::World(const EU4::World& sourceWorld,
 	addSetupDecisions();
 
 	Log(LogLevel::Info) << "---> Le Dump <---";
-	output(converterVersion);
+	output(converterVersion, sourceWorld.getEU4Localization());
 
 	Log(LogLevel::Info) << "*** Goodbye, Vicky 2, and godspeed. ***";
 }
@@ -199,6 +201,7 @@ void V2::World::distributeVNColonies()
 		}
 
 		bool assignmentRun = false;
+		bool clearRun = false;
 		// Let's reassign the provinces.
 		for (const auto& provinceID: colony.getProvinces())
 		{
@@ -221,13 +224,25 @@ void V2::World::distributeVNColonies()
 					oldOwner->second->removeProvinceID(province->first);
 			}
 
-			province->second->setOwner(keyProvinceOwner);
-			province->second->setController(keyProvinceOwner);
-			overlordCountry->second->addProvince(province->second);
-			assignmentRun = true;
+			// For russia and similar we decolonize unless key province owned by specific tag.
+			if (!colony.getDecolonizeBlocker().empty() && keyProvinceOwner != colony.getDecolonizeBlocker())
+			{
+				province->second->setOwner(std::string());
+				province->second->setController(std::string());
+				clearRun = true;
+			}
+			else
+			{
+				province->second->setOwner(keyProvinceOwner);
+				province->second->setController(keyProvinceOwner);
+				overlordCountry->second->addProvince(province->second);
+				assignmentRun = true;
+			}
 		}
 		if (assignmentRun)
 			Log(LogLevel::Info) << "-- VN colony " << colony.getName() << " reassigned to " << keyProvinceOwner;
+		if (clearRun)
+			Log(LogLevel::Info) << "-- VN colony " << colony.getName() << " cleared.";
 	}
 }
 
@@ -375,8 +390,11 @@ void V2::World::dropStates(const mappers::TechGroupsMapper& techGroupsMapper)
 
 void V2::World::dropCores()
 {
-	// This function is used to drop EXTANT country cores over provinces where they do not have primary/accepted culture dominance.
-	// Dead country cores will remain so something can be released, unless overridden via configuration.
+	// This function is used to drop EXTANT country cores over all (owned or not) provinces where they do not have primary/accepted culture dominance.
+	// Exception 1: Province is on same continent as capital.
+	// Exception 2: VN provinces out of scope are untouched.
+
+	// Dead (EXTINCT) country cores will remain so something can be released, unless overridden via configuration.
 
 	// This is quicker if we first build a country/culture cache and then check against it then iterate through
 	// every province and do multiple unneeded checks.
@@ -389,29 +407,26 @@ void V2::World::dropCores()
 		theCache[country.first] = country.second->getAcceptedCultures();
 		if (!country.second->getPrimaryCulture().empty())
 			theCache[country.first].insert(country.second->getPrimaryCulture());
+
+		// Take heed - dead countries are both those that are bonafide dead as well as those that died during conversion.
 		if (country.second->getProvinces().empty())
-		{
-			// Hold up. This country may be dead because it's dead, but if it died during conversion then consider it alive.
-			// We don't want such countries leaving cores all over the place unless they are national ones, which are handled via a separate process.
-
-			const auto& potentialEU4country = country.second->getSourceCountry();
-			if (potentialEU4country && !potentialEU4country->getProvinces().empty())
-				continue; // this one died during conversion. Purge it as it it were alive.
-
 			deadCache.insert(country.first);
-		}
 	}
 
-	for (auto& province: provinces)
+	for (const auto& province: provinces | std::views::values)
 	{
-		if (province.second->getCores().empty()) // Don't waste time
+		if (province->getCores().empty()) // Don't waste time
 			continue;
-		const auto dominantCulture = province.second->getDominantCulture();
+
+		if (theConfiguration.isVN() && province->getEU4IDs().empty()) // do not touch out-of-scope provinces for VN!
+			continue;
+
+		const auto dominantCulture = province->getDominantCulture();
 		if (!dominantCulture) // Let's not drop anything if we don't know what should remain.
 			continue;
 		std::set<std::string> survivingCores;
 
-		for (const auto& core: province.second->getCores())
+		for (const auto& core: province->getCores())
 		{
 			// Dead countries take priority.
 			if (deadCache.contains(core))
@@ -426,13 +441,29 @@ void V2::World::dropCores()
 				// Otherwise, check for culture below as normal.
 			}
 
+			// Is this owner core on a province of it's continent?
+			if (core == province->getOwner())
+			{
+				if (countries.contains(core) && countries.at(core)->getCapital() != 0)
+				{
+					auto capital = countries.at(core)->getCapital();
+					auto capitalContinent = provinces.at(capital)->getContinent();
+					if (province->getContinent() == capitalContinent)
+					{
+						survivingCores.insert(core); // We don't delete our owned cores on same continent.
+						continue;
+					}
+				}
+			}
+
 			const auto& cacheItr = theCache.find(core);
 			if (cacheItr == theCache.end())
-				continue;												 // Dropping unrecognized core;
-			if (cacheItr->second.contains(*dominantCulture)) // This province has core's (tag's) accepted culture, we can retain this core.
+				continue; // Dropping unrecognized core;
+			// This province has core's (tag's) accepted culture, we can retain this core.
+			if (cacheItr->second.contains(*dominantCulture))
 				survivingCores.insert(cacheItr->first);
 		}
-		province.second->replaceCores(survivingCores);
+		province->replaceCores(survivingCores);
 	}
 }
 
@@ -509,6 +540,13 @@ void V2::World::addAcceptedCultures(const EU4::Regions& eu4Regions)
 				if (culture != primaryCulture)
 					acceptedCultures.insert(culture);
 			}
+		}
+
+		// Do we own any pops of primary culture? If not, swap prim for accepted and fall back.
+		if (!census.contains(primaryCulture) || census.at(primaryCulture) == 0)
+		{
+			acceptedCultures.insert(primaryCulture);
+			country.second->setPrimaryCulture("dummy");
 		}
 
 		// finally, for colonial nations, we need to ensure their overlord's mutated culture is accepted, to ease
@@ -633,13 +671,11 @@ void V2::World::modifyPrimaryAndAcceptedCultures()
 void V2::World::transcribeNeoCultures()
 {
 	std::map<std::string, std::string> seenCultures;
-	for (const auto& province: provinces)
+	for (const auto& province: provinces | std::views::values)
 	{
-		auto seenNeoCultures = province.second->getGeneratedNeoCultures();
-		for (const auto& seenNeoCulture: seenNeoCultures)
-		{
-			seenCultures.insert(std::make_pair(seenNeoCulture.second, province.second->getSuperRegion()));
-		}
+		auto seenNeoCultures = province->getGeneratedNeoCultures();
+		for (const auto& seenNeoCulture: seenNeoCultures | std::views::values)
+			seenCultures.emplace(seenNeoCulture, province->getSuperRegion());
 	}
 	Log(LogLevel::Info) << "\tLocated " << seenCultures.size() << " new species.";
 	for (const auto& culture: seenCultures)
@@ -1591,6 +1627,8 @@ void V2::World::addUnions(bool hreDecentralized, const std::shared_ptr<Country>&
 
 	for (const auto& province: provinces)
 	{
+		if (theConfiguration.isVN() && province.second->getEU4IDs().empty())
+			continue; // Don't touch OOS VN provinces.
 		if (!province.second->wasColony())
 		{
 			auto cultures = province.second->getCulturesOverThreshold(0.5);
@@ -1668,7 +1706,7 @@ void V2::World::convertWars(const EU4::World& sourceWorld)
 	}
 }
 
-void V2::World::output(const commonItems::ConverterVersion& converterVersion) const
+void V2::World::output(const commonItems::ConverterVersion& converterVersion, const EU4::EU4Localization& localization) const
 {
 	commonItems::TryCreateFolder("output");
 	Log(LogLevel::Progress) << "80 %";
@@ -1723,7 +1761,7 @@ void V2::World::output(const commonItems::ConverterVersion& converterVersion) co
 
 	// Create localizations for all new countries. We don't actually know the names yet so we just use the tags as the names.
 	Log(LogLevel::Info) << "<- Writing Localisation Text";
-	outputLocalisation();
+	outputLocalisation(localization);
 	Log(LogLevel::Progress) << "91 %";
 
 	Log(LogLevel::Info) << "<- Writing Provinces";
@@ -1893,7 +1931,7 @@ void V2::World::outputCommonCountries() const
 	output.close();
 }
 
-void V2::World::outputLocalisation() const
+void V2::World::outputLocalisation(const EU4::EU4Localization& localization) const
 {
 	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries");
 	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/units");
@@ -1925,6 +1963,23 @@ void V2::World::outputLocalisation() const
 		output << "PROV" << provinceID << ";";
 		for (auto i = 0; i < 13; i++)
 			output << commonItems::convertUTF8ToWin1252(name) << ";";
+		output << "x\n";
+	}
+	output.close();
+
+	Log(LogLevel::Info) << "<- Writing Mutated Fauna";
+	output.open(localisationPath + "/0_Dyncultures.csv");
+	if (!output.is_open())
+		throw std::runtime_error("Could not write dynculture localizations.");
+	output << "KEY;ENGLISH;FRENCH;GERMAN;POLISH;SPANISH;ITALIAN;HUNGARIAN;CZECH;HUNGARIAN;DUTCH;PORTUGUESE;RUSSIAN;FINNISH;X\n";
+	for (const auto& dynCulture: cultureGroupsMapper.getDynamicCultureNames())
+	{
+		auto locName = localization.getText(dynCulture, "english"); // all fields are always the same in all languages for dyncultures.
+		if (!locName)
+			locName = "Name Missing"; // if it's not there, where the hell is it...
+		output << dynCulture << ";";
+		for (auto i = 0; i < 13; i++)
+			output << *locName << ";";
 		output << "x\n";
 	}
 	output.close();

@@ -1,2 +1,0 @@
-Current release: 1.0S "Teutonic" - for 1.32 and previous
-https://github.com/ParadoxGameConverters/EU4toVic2/releases/download/1.0T/EU4ToVic2-1.0Teutonic.zip

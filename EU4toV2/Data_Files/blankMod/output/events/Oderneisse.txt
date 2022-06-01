@@ -142,11 +142,11 @@ country_event = {
 			change_province_name = "Olsztyn"
 			state_scope = { change_region_name = "Masuria" }
 		}
-		695 = { # Königsberg
-			change_province_name = "Kaliningrad"
-			state_scope = { change_region_name = "Kaliningrad" }
-		}
-		697 = { change_province_name = "Gusev" } # Gumbinnen
+		#695 = { # Königsberg
+		#	change_province_name = "Kaliningrad"
+		#	state_scope = { change_region_name = "Kaliningrad" }
+		#}
+		#697 = { change_province_name = "Gusev" } # Gumbinnen
 		698 = { change_province_name = "Klaipeda" } # Memel
 	}
 }
@@ -185,11 +185,11 @@ country_event = {
 			change_province_name = "Allenstein"
 			state_scope = { change_region_name = "Westpreußen" }
 		}
-		695 = {
-			change_province_name = "Königsberg"
-			state_scope = { change_region_name = "Ostpreußen" }
-		}
-		697 = { change_province_name = "Gumbinnen" }
+		#695 = {
+		#	change_province_name = "Königsberg"
+		#	state_scope = { change_region_name = "Ostpreußen" }
+		#}
+		#697 = { change_province_name = "Gumbinnen" }
 		698 = { change_province_name = "Memel" }
 	}
 }
@@ -289,11 +289,11 @@ country_event = { # Give Memel to Lithuania
 			change_province_name = "Olsztyn"
 			state_scope = { change_region_name = "Masuria" }
 		}
-		695 = { # Königsberg
-			change_province_name = "Kaliningrad"
-			state_scope = { change_region_name = "Kaliningrad" }
-		}
-		697 = { change_province_name = "Gusev" } # Gumbinnen
+		#695 = { # Königsberg
+		#	change_province_name = "Kaliningrad"
+		#	state_scope = { change_region_name = "Kaliningrad" }
+		#}
+		#697 = { change_province_name = "Gusev" } # Gumbinnen
 		698 = { # Memel
 			change_province_name = "Klaipeda"
 			secede_province = LIT

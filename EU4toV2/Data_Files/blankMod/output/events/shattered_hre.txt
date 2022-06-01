@@ -20,7 +20,12 @@ country_event = {
 	desc = EVTDESC250002
 
 	trigger = { 
-		has_country_flag = emperor_hre 
+		has_country_flag = emperor_hre
+ 		NOT = {
+			government = absolute_monarchy
+			government = prussian_constitutionalism
+			government = hms_government
+		}
 		has_global_flag = liberal_revolutions_should_now_fire 
 	}
 

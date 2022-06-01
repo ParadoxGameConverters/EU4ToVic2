@@ -1,5 +1,6 @@
 name = EU4ToVic2
 converterFolder = EU4ToVic2
+backendExePath = EU4ToVic2Converter
 displayName = EU4DISPLAYNAME
 sourceGame = EU4GAME
 targetGame = VIC2GAME
@@ -42,17 +43,6 @@ requiredFolder = {
 	searchPathType = steamFolder
 	searchPathID = 42960
 	searchPath = "mod"
-}
-requiredFile = {
-	name = converterExe
-	displayName = EU4FILE
-	tooltip = EU4FILETIP
-	mandatory = true
-	outputtable = false
-	searchPathType = converterFolder
-	searchPath = "EU4toVic2"
-	allowedExtension = "*.exe"
-	fileName = "EU4ToVic2Converter.exe"
 }
 requiredFile = {
 	name = SaveGame

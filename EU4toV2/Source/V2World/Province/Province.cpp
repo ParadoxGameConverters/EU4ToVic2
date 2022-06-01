@@ -244,6 +244,13 @@ void V2::Province::convertFromOldProvince(const std::vector<std::shared_ptr<EU4:
 
 	provinceWeight /= static_cast<double>(coTargets.size()); // dividing by target provinces.
 
+	if (!provinceSources.empty())
+	{
+		const auto& continentMatch = continentsMapper.getEU4Continent(provinceSources.front()->getNum());
+		if (continentMatch)
+			details.continent = *continentMatch;
+	}
+
 	// And finally, demographics
 	for (const auto& oldProvince: provinceSources)
 	{
@@ -299,9 +306,21 @@ void V2::Province::determineDemographics(const EU4::Regions& eu4Regions,
 				if (!dstCulture)
 				{
 					// There is no overriding rule. We're good to force neoculture.
-					generatedNeoCultures.insert(std::make_pair(popRatio.getOriginalCulture(), popRatio.getCulture()));
+					generatedNeoCultures.emplace(popRatio.getOriginalCulture(), popRatio.getCulture());
 					superRegion = popRatio.getSuperRegion();
 					dstCulture.emplace(popRatio.getCulture());
+				}
+				else
+				{
+					// a very special hack for ck3 dyncultures which *do* return from culturemapper unchanged - if this is a dynculture then
+					// use original neoculture name after all, instead of eu4 name.
+					if (popRatio.getOriginalCulture().starts_with("dynamic-"))
+					{
+						generatedNeoCultures.emplace(*dstCulture, popRatio.getCulture());
+						superRegion = popRatio.getSuperRegion();
+						dstCulture.emplace(popRatio.getCulture());
+					}
+					// otherwise use the predefined neoculture from the mapper.
 				}
 			}
 		}
@@ -334,7 +353,18 @@ void V2::Province::determineDemographics(const EU4::Regions& eu4Regions,
 		auto slaveCulture = slaveCultureMapper.cultureMatch(eu4Regions, popRatio.getCulture(), popRatio.getReligion(), eu4ProvID, oldOwnerTag);
 		auto thisContinent = continentsMapper.getEU4Continent(eu4ProvID);
 		if (!slaveCulture && !popRatio.getOriginalCulture().empty())
-			slaveCulture = slaveCultureMapper.cultureMatch(eu4Regions, popRatio.getOriginalCulture(), popRatio.getReligion(), eu4ProvID, oldOwnerTag);
+		{
+			// if original culture was dynamic, we can immediately map to the neoculture instead. dynamics don't have mappings to slaves.
+			if (popRatio.getOriginalCulture().starts_with("dynamic-"))
+			{
+				slaveCulture = popRatio.getCulture();
+			}
+			else
+			{
+				slaveCulture = slaveCultureMapper.cultureMatch(eu4Regions, popRatio.getOriginalCulture(), popRatio.getReligion(), eu4ProvID, oldOwnerTag);
+			}
+		}
+
 		if (!slaveCulture)
 		{
 			if (thisContinent && (*thisContinent == "asia" || *thisContinent == "africa" || *thisContinent == "oceania"))
@@ -360,20 +390,6 @@ void V2::Province::determineDemographics(const EU4::Regions& eu4Regions,
 		demographic.middleRatio = popRatio.getMiddleRatio() * provPopRatio;
 		demographic.lowerRatio = popRatio.getLowerRatio() * provPopRatio;
 
-		if (theConfiguration.getDebug())
-		{
-			Log(LogLevel::Info) << "EU4 Province " << eu4ProvID << ", "
-									  << "Vic2 Province " << provinceID << ", "
-									  << "Culture: " << demographic.culture << ", "
-									  << "Religion: " << demographic.religion << ", "
-									  << "upperPopRatio: " << popRatio.getUpperRatio() << ", "
-									  << "middlePopRatio: " << popRatio.getMiddleRatio() << ", "
-									  << "lowerPopRatio: " << popRatio.getLowerRatio() << ", "
-									  << "provPopRatio: " << provPopRatio << ", "
-									  << "upperRatio: " << demographic.upperRatio << ", "
-									  << "middleRatio: " << demographic.middleRatio << ", "
-									  << "lowerRatio: " << demographic.lowerRatio;
-		}
 		demographics.push_back(demographic);
 	}
 }

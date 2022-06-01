@@ -26,7 +26,7 @@ jobs:
       
     - name: "Build solution"
       run: |
-       cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\"
+       cd "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\"
        .\MSBuild.exe -m -p:Configuration=Release $Env:GITHUB_WORKSPACE\EU4ToVic2.sln
        
     - name: "Run tests"
@@ -46,8 +46,8 @@ jobs:
       if: ${{ github.event_name == 'push' }}
       run: |
        cd "C:\Program Files\7-Zip\"
-       .\7z.exe a $Env:GITHUB_WORKSPACE\EU4ToVic2-1.0Teutonic-win-x64.zip $Env:GITHUB_WORKSPACE\Release\*
-       cp $Env:GITHUB_WORKSPACE\EU4ToVic2-1.0Teutonic-win-x64.zip $Env:GITHUB_WORKSPACE\EU4ToVic2-latest-win-x64.zip
+       .\7z.exe a $Env:GITHUB_WORKSPACE\EU4ToVic2-1.0Ulm-win-x64.zip $Env:GITHUB_WORKSPACE\Release\*
+       cp $Env:GITHUB_WORKSPACE\EU4ToVic2-1.0Ulm-win-x64.zip $Env:GITHUB_WORKSPACE\EU4ToVic2-latest-win-x64.zip
        
     - name: "Upload binaries to release"
       if: ${{ github.event_name == 'push' }}
@@ -57,7 +57,7 @@ jobs:
         allowUpdates: true
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
-        artifacts: EU4ToVic2-1.0Teutonic-win-x64.zip
+        artifacts: EU4ToVic2-1.0Ulm-win-x64.zip
         token: ${{ secrets.API_TOKEN_GITHUB }}
         
     - name: "Upload binaries to archive"
@@ -68,7 +68,7 @@ jobs:
         allowUpdates: true
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
-        artifacts: EU4ToVic2-1.0Teutonic-win-x64.zip, EU4ToVic2-latest-win-x64.zip
+        artifacts: EU4ToVic2-1.0Ulm-win-x64.zip, EU4ToVic2-latest-win-x64.zip
         token: ${{ secrets.API_TOKEN_GITHUB }}
         
     - name: "Cleanup"
@@ -79,7 +79,7 @@ jobs:
   build_test:
     name: Build and test foreign
     if: github.repository_owner != 'ParadoxGameConverters'
-    runs-on: windows-latest
+    runs-on: windows-2022
     
     steps:
     - uses: actions/checkout@v2
@@ -89,7 +89,7 @@ jobs:
         
     - name: "Build solution"
       run: |
-       cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
+       cd "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\"
        .\MSBuild.exe -m -p:Configuration=Release $Env:GITHUB_WORKSPACE\EU4ToVic2.sln
        
     - name: "Run tests"

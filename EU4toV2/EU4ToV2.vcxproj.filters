@@ -136,7 +136,7 @@
     <ClCompile Include="Source\Mappers\CultureGroups\CultureGroup.cpp">
       <Filter>Mappers\CultureGroups</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroups.cpp">
+    <ClCompile Include="Source\Mappers\CultureGroups\CultureGroupsManager.cpp">
       <Filter>Mappers\CultureGroups</Filter>
     </ClCompile>
     <ClCompile Include="Source\Mappers\CountryMappings\CountryMapping.cpp">
@@ -601,6 +601,12 @@
     <ClCompile Include="Source\Mappers\VNColonialMapper\VNColonialMapping.cpp">
       <Filter>Mappers\VNColonialMapper</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapper.cpp">
+      <Filter>Mappers\CultureGroupsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.cpp">
+      <Filter>Mappers\CultureGroupsMapper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -737,7 +743,7 @@
     <ClInclude Include="Source\Mappers\CultureGroups\CultureGroup.h">
       <Filter>Mappers\CultureGroups</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroups.h">
+    <ClInclude Include="Source\Mappers\CultureGroups\CultureGroupsManager.h">
       <Filter>Mappers\CultureGroups</Filter>
     </ClInclude>
     <ClInclude Include="Source\Mappers\CountryMappings\CountryMapping.h">
@@ -1157,6 +1163,12 @@
     <ClInclude Include="Source\Mappers\VNColonialMapper\VNColonialMapping.h">
       <Filter>Mappers\VNColonialMapper</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapper.h">
+      <Filter>Mappers\CultureGroupsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.h">
+      <Filter>Mappers\CultureGroupsMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4World">
@@ -1413,6 +1425,9 @@
     </Filter>
     <Filter Include="Mappers\VNColonialMapper">
       <UniqueIdentifier>{a69b9d64-2b47-4640-903c-46721db3db7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CultureGroupsMapper">
+      <UniqueIdentifier>{a87f6587-9dcf-48ed-bbaa-55291221a475}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
