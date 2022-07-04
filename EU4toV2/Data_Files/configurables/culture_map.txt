@@ -262,7 +262,7 @@ link = { vic2 = maghrebi eu4 = maghreb_latin religion = sunni religion = zikri r
 link = { vic2 = misri eu4 = al_misr_arabic eu4 = egyptian_arabic eu4 = egyptian eu4 = libyan }
 link = { vic2 = mashriqi eu4 = bedouin_arabic region = mashriq_region }
 link = { vic2 = mashriqi eu4 = syriac religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = bedouin eu4 = bedouin_arabic eu4 = omani_culture eu4 = yemeni_culture eu4 = yemenite eu4 = bahrani eu4 = bedouin eu4 = hejazi eu4 = gulf_arabic eu4 = mahri_culture eu4 = soqotri eu4 = hejazi_culture eu4 = najdi eu4 = omani eu4 = yemeni eu4 = arabian_colonial eu4 = sabaean }
+link = { vic2 = bedouin eu4 = bedouin_arabic eu4 = omani_culture eu4 = yemeni_culture eu4 = yemenite eu4 = bahrani eu4 = bedouin eu4 = hejazi eu4 = gulf_arabic eu4 = mahri_culture eu4 = soqotri eu4 = hejazi_culture eu4 = najdi eu4 = omani eu4 = yemeni eu4 = arabian_colonial eu4 = sabaean eu4 = himyarite }
 link = { vic2 = berber eu4 = atlas_berber eu4 = berber eu4 = gaetuli eu4 = garamantian eu4 = tunisian eu4 = algerian eu4 = berber eu4 = gaetuli eu4 = garamantian eu4 = shilha eu4 = atlasian eu4 = garamante eu4 = numidian eu4 = zenati eu4 = guanche eu4 = berber_colonial eu4 = chleuh }
 link = { vic2 = mashriqi eu4 = lebanese eu4 = nabatean eu4 = palestinian eu4 = al_iraqiya_arabic eu4 = al_suryah_arabic eu4 = levantine_arabic eu4 = aramaic_colonial eu4 = iraqi eu4 = levantine eu4 = mashreqi_colonial eu4 = shami }
 link = { vic2 = maghrebi eu4 = maghreb_arabic eu4 = moroccan eu4 = chaoui eu4 = fezzan_culture eu4 = tripolitanian_culture eu4 = moorish eu4 = fassi eu4 = hassaniya eu4 = kabyle eu4 = kabylian eu4 = maghreb_colonial eu4 = rifain eu4 = tamazight }
@@ -467,7 +467,7 @@ link = { vic2 = mongol eu4 = mongol eu4 = chahar eu4 = khalkha eu4 = oirats eu4 
 link = { vic2 = uzbek eu4 = chorasmian eu4 = uzbek eu4 = uzbehk eu4 = karluk }
 link = { vic2 = kazak eu4 = khazak }
 link = { vic2 = kirgiz eu4 = kirgiz eu4 = kirghiz eu4 = old_kirgiz }
-link = { vic2 = siberian eu4 = siberian eu4 = chukchi eu4 = nenet eu4 = nivkh eu4 = selkup }
+link = { vic2 = siberian eu4 = siberian eu4 = chukchi eu4 = nenet eu4 = nivkh eu4 = selkup eu4 = yeniseian }
 link = { vic2 = yakut eu4 = yakut eu4 = yukagyr eu4 = buryat eu4 = tungus eu4 = daur eu4 = eveni eu4 = evenki eu4 = jurchen eu4 = oroqen eu4 = yukaghir }
 link = { vic2 = tatar eu4 = sabir eu4 = hunnic eu4 = tartar eu4 = bolghar eu4 = cuman eu4 = avar eu4 = khazar eu4 = astrakhani eu4 = bashkir eu4 = crimean eu4 = kazani eu4 = mishary eu4 = nogaybak eu4 = qasim eu4 = chaghatai eu4 = avar eu4 = tartar_colonial eu4 = hunnic eu4 = sinoturk  eu4 = nogai eu4 = chuvash }
 link = { vic2 = kurdish eu4 = kurdish eu4 = gorani }
@@ -599,7 +599,7 @@ link = { vic2 = sinhala eu4 = sinhala }
 # Hindusthani - avadhi, kanauji, panjabi, kashmiri
 link = { vic2 = avadhi eu4 = avadhi }
 link = { vic2 = kanauji eu4 = kanauji eu4 = vindhyan eu4 = bagheli eu4 = bundeli eu4 = dakani eu4 = hindusthani_colonial }
-link = { vic2 = panjabi eu4 = panjabi eu4 = urdu }
+link = { vic2 = panjabi eu4 = panjabi eu4 = urdu eu4 = burusho }
 link = { vic2 = hindustani_proper eu4 = hindustani_proper }
 link = { vic2 = kashmiri eu4 = kashmiri }
 
@@ -612,11 +612,11 @@ link = { vic2 = rajput eu4 = rajput eu4 = malvi eu4 = dhundari eu4 = harauti eu4
 # Dravidian - kannada, malayalam, tamil, telegu
 link = { vic2 = kannada eu4 = kannada }
 link = { vic2 = malayalam eu4 = malayalam }
-link = { vic2 = tamil eu4 = tamil eu4 = dravidian_colonial eu4 = mahl }
+link = { vic2 = tamil eu4 = tamil eu4 = dravidian_colonial eu4 = mahl eu4 = brahui }
 link = { vic2 = telegu eu4 = telegu }
 
 # Central Indic - garjati, gondi, jharkhandi
-link = { vic2 = asian_minor eu4 = garjati eu4 = gondi eu4 = jharkhandi eu4 = central_indian_colonial eu4 = yizu }
+link = { vic2 = asian_minor eu4 = garjati eu4 = gondi eu4 = jharkhandi eu4 = central_indian_colonial eu4 = yizu eu4 = peristani }
 
 # African colonial
 link = { vic2 = afro_american eu4 = great_lakes_colonial }
