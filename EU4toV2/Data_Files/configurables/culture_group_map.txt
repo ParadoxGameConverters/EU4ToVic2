@@ -24,7 +24,7 @@ link = { v2 = iranian_turanian eu4 = iranian eu4 = scythian_group }
 link = { v2 = central_asian eu4 = altaic eu4 = tartar eu4 = oghuz }
 link = { v2 = south_asian eu4 = eastern_aryan eu4 = hindusthani eu4 = western_aryan eu4 = dravidian eu4 = central_indic }
 link = { v2 = southeast_asian eu4 = malay eu4 = thai_group eu4 = southeastasian_group eu4 = burman }
-link = { v2 = east_asian eu4 = east_asian wu4 = korean_g eu4 = tibetan_group eu4 = evenks eu4 = kamchatkan_g }
+link = { v2 = east_asian eu4 = east_asian eu4 = korean_g eu4 = tibetan_group eu4 = evenks eu4 = kamchatkan_g }
 link = { v2 = far_east_asian eu4 = japanese_g }
 link = { v2 = oceanic eu4 = pacific eu4 = aboriginal_australian }
 link = { v2 = native_central_american hpm = native_american eu4 = central_american eu4 = aridoamerican eu4 = maya eu4 = otomanguean }

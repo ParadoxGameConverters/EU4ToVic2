@@ -2044,6 +2044,39 @@ romantic = {
 			Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
 			Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid }
 	}
+	
+	palmyrene = {
+		color = { 235 242 36 }
+
+		first_names = { Adaya Adišo Abraham Adàmu Adlai Adriànu Aggai Ahai Alaverru Aldertu Albu Alešandar
+			Alfonsu Amdròsu Andràyya Antine Antiogu Antòni Antaninu Dadayyus
+			Dadai Dadowai Dadwahi Dar Dar-Addu Dardu'shimin Dar-Nadha Dar-Talmai
+			Ermannu Arrammundu Arzo'qu Austinu Austu Daldu Darisoni Dartalumeu
+			Darumini Darusone Dašeli Dašu Datkillu Benedeya Bernardu Bigenzu Bišente
+			Bonnannaro Bustàyyanu Carlus Carule Celestìnu Cipare Clementi
+			Camita Corona Corràdu Costantìnu Cradàyyle Cristalu
+			Danelu Daminigu Emmanuel Enoš Ezekàyyl Egizu Enzu Evisu Fadri'qiu
+			Fàrdokhtu Fomà Giwargis Grwgari Floru Fran'qu Frevare Furadiza Furatu
+			Gadini Gadinu Gajetànu Gallu Gaisparru Gavini Gitimel Yiuanne Yiustinu Giustu
+			Gonariu Gòsamu Gosantinu Gradràyylle Granuzu Gregoriu Guantine Guglàyylmu
+			Iginu Ignatziu Istevene Itta'qorre Izo'qor Ya'qopu Yagu Yerone Yisepu Yuanne Kipràyyane Kipràyyanu
+			Lazare Larentu Leonardu Lišandru Lo'qe Lu'qa Lu'qàyya Lušuràyya Manfredu
+			Mankàyya Magna Makkikha Màluch Mà'na Màr'qu Maràyyanu Mašimilla Matàyya Mauru Mazeu Micheli Migali
+			Mikelli Mugedi Murtina Nehorai Ni'qola Niv Nun Nur Nuràke Okeri Olisàyy Orso'qorre Orzo'qor Pàgiti Paiš'qale
+			Patriziu Paulu Pedru Petros Petuel Pelegrine Perdu Pirillu Ponzu Porcellu Porkinu Presnage Pretu Pupa
+			Qaligh Qàyyoma Rafàyyle Ramundu Rodertu Rodulfu Sadurre Sadurru Salluri Saltaro Saluše Salušeu
+			Salvennor Samaritanu Samuèli Saragina Saraginu Sauina Serafinu Serdestàyyanu Serighe Setilo
+			Šafer Šahdostu Šama Šamir Šammai Šemaàyyah Šem'on Sišenni Tedore Thanthalu Thipir'qu
+			Tam'ais Tavi Taviš Tevis Th'amhais Thurungone Tadais Tamašo
+			Tardinu Tarchitoriu Trauešu Trogodori Uanios Udertu Ugu Uràyyke Urse Urule Vaballathus
+			Villanu Vivàyyanu Zinga Yiraminu }
+		
+		last_names = { Arbilàyya "du La'qon" "du Gunayl" "du Callaris" Oristanu Sorrenais "d'Galluru" "d'Lo'qudoro" Zakho
+			"Salušeu du La'qon" "Torchitariu du Uqunayl" Samikka "du La'qon Zakho" "du Zakho" "Bais Serra"
+			"d'Caisteddu" "d'Santa Igàyya" "d'Patiollais" "d'Ogàyyaistra" "d'Torram" "d'Ballau" "d'Bosa" "d'Caddura"
+			"d'Paisadu" "d'Durgalu" "d'Calvu" "d'Sartena" Bukhtišu Qatwais Nimru Gazartu Odaenathus Septimius
+			Septimàyya }
+	}
 	union = SPQ
 }
 

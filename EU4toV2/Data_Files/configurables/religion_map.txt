@@ -34,7 +34,7 @@ link = { v2 = catholic_heresy eu4 = aquileian eu4 = total_depravity eu4 = eutych
 
 #Muslims
 
-link = { v2 = sunni eu4 = sunni eu4 = wahhabi }
+link = { v2 = sunni eu4 = sunni eu4 = wahhabi eu4 = masmudi }
 link = { v2 = zikri eu4 = zikri }
 link = { v2 = yazidi eu4 = yazidi eu4 = meshefaresism eu4 = kitebacilweism }
 link = { v2 = sunni_heresy eu4 = sunni_heresy eu4 = mutazila eu4 = quranist }

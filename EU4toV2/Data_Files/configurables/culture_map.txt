@@ -63,18 +63,18 @@ link = { vic2 = flemish eu4 = flemish eu4 = brabantian }
 
 # Scandinavian - Swedish, Danish, Norwegian, Icelandic, Sami
 ## Colonialism time
-link = { vic2 = nyasverigian eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian region = great_lakes_region region = northeast_america_region region = great_plains_region region = california_region }
-link = { vic2 = bomullborgar eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian region = southeast_america_region region = mississippi_region }
-link = { vic2 = vinlander eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian region = hudson_bay_region region = canada_region region = cascadia_region }
-link = { vic2 = bundsfoervant eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian region = rio_grande_region }
-link = { vic2 = hjartnaaeter eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian region = central_america_region region = carribeans_region }
-link = { vic2 = raudhskogarling eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian region = brazil_region }
-link = { vic2 = hvitrduptling eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian region = colombia_region }
-link = { vic2 = guldfjallling eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian region = peru_region }
-link = { vic2 = silfrvazling eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian region = la_plata_region region = upper_peru_region }
+link = { vic2 = nyasverigian eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian eu4 = normand_norse region = great_lakes_region region = northeast_america_region region = great_plains_region region = california_region }
+link = { vic2 = bomullborgar eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian eu4 = normand_norse region = southeast_america_region region = mississippi_region }
+link = { vic2 = vinlander eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian eu4 = normand_norse region = hudson_bay_region region = canada_region region = cascadia_region }
+link = { vic2 = bundsfoervant eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian eu4 = normand_norse region = rio_grande_region }
+link = { vic2 = hjartnaaeter eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian eu4 = normand_norse region = central_america_region region = carribeans_region }
+link = { vic2 = raudhskogarling eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian eu4 = normand_norse region = brazil_region }
+link = { vic2 = hvitrduptling eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian eu4 = normand_norse region = colombia_region }
+link = { vic2 = guldfjallling eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian eu4 = normand_norse region = peru_region }
+link = { vic2 = silfrvazling eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = scandinavian_colonial eu4 = swedish_colonial eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian eu4 = normand_norse region = la_plata_region region = upper_peru_region }
 link = { vic2 = vinlander eu4 = scandinavian_colonial eu4 = swedish_colonial } # Fallback
-link = { vic2 = sydlig eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian region = oceania_superregion }
-link = { vic2 = svart eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+link = { vic2 = sydlig eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian eu4 = normand_norse region = oceania_superregion }
+link = { vic2 = svart eu4 = holmgardrian eu4 = norn_culture eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 = romsborgian eu4 = ruotsish eu4 = geat_culture eu4 = gutnish_culture eu4 = jamatland_culture eu4 = gotar eu4 = gutnish eu4 = danish eu4 = faroese eu4 = scanian eu4 = jutish eu4 = norwegian eu4 = trondersk eu4 = vestlandsk eu4 = norse eu4 = icelandic eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = cooler_norwegian eu4 = geatish eu4 = gutish eu4 = scanian eu4 = normand_norse region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 ##Split of Norse and creation of Icelandic
 link = { vic2 = danish eu4 = norse region = skaneland_area region = jutland_area region = denmark_area  region = north_german_region }
 link = { vic2 = norwegian eu4 = norse region = northern_norway region = eastern_norway region = western_norway }
@@ -86,6 +86,7 @@ link = { vic2 = swedish eu4 = swedish eu4 = marisbaltician eu4 = serklandic eu4 
 link = { vic2 = sami eu4 = sapmi eu4 = lappish }
 link = { vic2 = elsinorian eu4 = elsinorian eu4 = anglo_norse eu4 = norse_gaelic eu4 = norn_culture eu4 = gallowglass }
 link = { vic2 = elsinorian eu4 = norse region = british_isles_region }
+link = { vic2 = rollonian eu4 = normand_norse }
 link = { vic2 = rollonian eu4 = norse region = france_region }
 link = { vic2 = holmgardr eu4 = holmgardrian }
 link = { vic2 = icelandic eu4 = icelandic }
@@ -153,18 +154,19 @@ link = { vic2 = wenedyk eu4 = roman region = poland_region region = ruthenia_reg
 link = { vic2 = spanish eu4 = roman region = iberia_region }
 link = { vic2 = romanian eu4 = roman region = carpathia_region }
 link = { vic2 = euxinian eu4 = roman region = northern_greece_area region = morea_area region = thrace_area }
-link = { vic2 = assyrian eu4 = roman region = mashriq_region region = anatolia_region }
+link = { vic2 = palmyrene eu4 = roman region = mashriq_region region = anatolia_region }
 link = { vic2 = bazramani eu4 = roman region = persia_region region = caucasia_region region = arabia_region }
 link = { vic2 = aromanian eu4 = roman region = balkan_region }
 link = { vic2 = maghreb_arabic eu4 = roman region = egypt_region region = maghreb_region }
-link = { vic2 = brithenig eu4 = romano_british eu4 = britannian }
+link = { vic2 = brithenig eu4 = romano_british eu4 = britannian eu4 = cambrian }
 link = { vic2 = hungarian eu4 = pannonian }
 link = { vic2 = euxinian eu4 = graecus eu4 = euxinian eu4 = xliponian }
-link = { vic2 = maghreb_arabic eu4 = salinatorian eu4 = african_romance eu4 = aegyptian }
+link = { vic2 = maghreb_arabic eu4 = salinatorian eu4 = african_romance eu4 = aegyptian eu4 = eifrican }
 link = { vic2 = bazramani eu4 = arabus eu4 = romano_persian eu4 = aramean eu4 = bazramani }
 link = { vic2 = gaul eu4 = romano_gallic eu4 = gaul eu4 = gaulic }
 link = { vic2 = laessin eu4 = helvetian eu4 = noric eu4 = theodisc eu4 = hyperborean }
 link = { vic2 = wenedyk eu4 = tracki eu4 = alzzecio eu4 = wenedyk } #Slavo-Roman
+link = { vic2 = palmyrene eu4 = palmyrene }
 link = { vic2 = latin eu4 = roman eu4 = latin_colonial } #Should be only Italy, but who can be sure?
 
 # Punic
@@ -260,12 +262,12 @@ link = { vic2 = maghrebi eu4 = maghreb_latin religion = sunni religion = zikri r
 link = { vic2 = misri eu4 = al_misr_arabic eu4 = egyptian_arabic eu4 = egyptian eu4 = libyan }
 link = { vic2 = mashriqi eu4 = bedouin_arabic region = mashriq_region }
 link = { vic2 = mashriqi eu4 = syriac religion = sunni religion = zikri religion = yazidi religion = sunni_heresy religion = shiite religion = hurufi religion = druze religion = shiite_heresy religion = ibadi religion = kharijite }
-link = { vic2 = bedouin eu4 = bedouin_arabic eu4 = omani_culture eu4 = yemeni_culture eu4 = yemenite eu4 = bahrani eu4 = bedouin eu4 = hejazi eu4 = gulf_arabic eu4 = mahri_culture eu4 = soqotri eu4 = hejazi_culture eu4 = najdi eu4 = omani eu4 = yemeni eu4 = arabian_colonial eu4 = sabaean }
+link = { vic2 = bedouin eu4 = bedouin_arabic eu4 = omani_culture eu4 = yemeni_culture eu4 = yemenite eu4 = bahrani eu4 = bedouin eu4 = hejazi eu4 = gulf_arabic eu4 = mahri_culture eu4 = soqotri eu4 = hejazi_culture eu4 = najdi eu4 = omani eu4 = yemeni eu4 = arabian_colonial eu4 = sabaean eu4 = himyarite }
 link = { vic2 = berber eu4 = atlas_berber eu4 = berber eu4 = gaetuli eu4 = garamantian eu4 = tunisian eu4 = algerian eu4 = berber eu4 = gaetuli eu4 = garamantian eu4 = shilha eu4 = atlasian eu4 = garamante eu4 = numidian eu4 = zenati eu4 = guanche eu4 = berber_colonial eu4 = chleuh }
 link = { vic2 = mashriqi eu4 = lebanese eu4 = nabatean eu4 = palestinian eu4 = al_iraqiya_arabic eu4 = al_suryah_arabic eu4 = levantine_arabic eu4 = aramaic_colonial eu4 = iraqi eu4 = levantine eu4 = mashreqi_colonial eu4 = shami }
 link = { vic2 = maghrebi eu4 = maghreb_arabic eu4 = moroccan eu4 = chaoui eu4 = fezzan_culture eu4 = tripolitanian_culture eu4 = moorish eu4 = fassi eu4 = hassaniya eu4 = kabyle eu4 = kabylian eu4 = maghreb_colonial eu4 = rifain eu4 = tamazight }
 link = { vic2 = frencharab eu4 = frencharab }
-link = { vic2 = turkish eu4 = turkish eu4 = turkish_colonial eu4 = yorouk }
+link = { vic2 = turkish eu4 = turkish eu4 = turkish_colonial eu4 = yorouk eu4 = oghuz }
 link = { vic2 = pecheneg eu4 = pecheneg eu4 = gagauz }
 
 # Iberian - castillian, catalan, galician, andalucian, portugese
@@ -294,7 +296,6 @@ link = { vic2 = spanish eu4 = castillian eu4 = leonese eu4 = asturian eu4 = bale
 link = { vic2 = galician eu4 = galician }
 link = { vic2 = catalan eu4 = catalan eu4 = aragonese eu4 = valencian }
 link = { vic2 = portuguese eu4 = portugese }
-link = { vic2 = basque eu4 = basque eu4 = basque_colonial }
 link = { vic2 = andalucian eu4 = andalucian eu4 = mozarabic }
 link = { vic2 = ultramar eu4 = ultramar }
 
@@ -323,29 +324,33 @@ link = { vic2 = outremer eu4 = outremer eu4 = crusader_culture }
 link = { vic2 = picard eu4 = picard }
 
 # Finno Urgic - finnish, sapmi, ingrian, karelian, uralic - share colonial cultures with baltic cultures
-link = { vic2 = salislahtian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki region = great_lakes_region region = northeast_america_region region = great_plains_region region = california_region }
-link = { vic2 = usmailmian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki region = southeast_america_region region = mississippi_region }
-link = { vic2 = kepejokian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki region = hudson_bay_region region = canada_region region = cascadia_region }
-link = { vic2 = lounast eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki region = australia_region region = oceania_superregion }
-link = { vic2 = suurjokian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki region = rio_grande_region }
-link = { vic2 = meksikan eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki region = central_america_region region = carribeans_region }
-link = { vic2 = kujaanan eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki region = brazil_region }
-link = { vic2 = maraivoan eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki region = colombia_region }
-link = { vic2 = antivuorean eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki region = peru_region }
-link = { vic2 = hopeajokian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki region = la_plata_region region = upper_peru_region }
-link = { vic2 = mustvalge eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
-link = { vic2 = finnish eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = tavastian }
-link = { vic2 = ugrian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki eu4 = merya }
+link = { vic2 = salislahtian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = bjarmian eu4 = mordvin eu4 = ostyaki region = great_lakes_region region = northeast_america_region region = great_plains_region region = california_region }
+link = { vic2 = usmailmian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = bjarmian eu4 = mordvin eu4 = ostyaki region = southeast_america_region region = mississippi_region }
+link = { vic2 = kepejokian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = bjarmian eu4 = mordvin eu4 = ostyaki region = hudson_bay_region region = canada_region region = cascadia_region }
+link = { vic2 = lounast eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = bjarmian eu4 = mordvin eu4 = ostyaki region = australia_region region = oceania_superregion }
+link = { vic2 = suurjokian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = bjarmian eu4 = mordvin eu4 = ostyaki region = rio_grande_region }
+link = { vic2 = meksikan eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = bjarmian eu4 = mordvin eu4 = ostyaki region = central_america_region region = carribeans_region }
+link = { vic2 = kujaanan eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = bjarmian eu4 = mordvin eu4 = ostyaki region = brazil_region }
+link = { vic2 = maraivoan eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = bjarmian eu4 = mordvin eu4 = ostyaki region = colombia_region }
+link = { vic2 = antivuorean eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = bjarmian eu4 = mordvin eu4 = ostyaki region = peru_region }
+link = { vic2 = hopeajokian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = bjarmian eu4 = mordvin eu4 = ostyaki region = la_plata_region region = upper_peru_region }
+link = { vic2 = mustvalge eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = estonian eu4 = uralic eu4 = komi eu4 = samoyed eu4 = bjarmian eu4 = mordvin eu4 = ostyaki region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+link = { vic2 = finnish eu4 = finnish eu4 = karelian eu4 = ingrian eu4 = finnish_colonial eu4 = tavastian eu4 = vepsian }
+link = { vic2 = ugrian eu4 = khanty eu4 = mansi eu4 = mari eu4 = mari_culture eu4 = permic_culture eu4 = udmurt eu4 = uralic eu4 = komi eu4 = samoyed eu4 = mordvin eu4 = ostyaki eu4 = merya eu4 = bjarmian }
 
 # Baltic - estonian, latvian, lithuanian, old_prussian/pruthenian (depending on mod used, they go into lithuanian as they're closest)
 # Lithuanian colonial culture is in west slavs due to their PLC cultural union.
-link = { vic2 = virshjuros eu4 = lithuanian eu4 = pruthenian eu4 = old_prussian eu4 = latvian eu4 = kurland_culture eu4 = baltic_colonial region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
-link = { vic2 = smelis eu4 = lithuanian eu4 = pruthenian eu4 = old_prussian eu4 = latvian eu4 = kurland_culture eu4 = baltic_colonial region = oceania_superregion }
-link = { vic2 = juodaodis eu4 = lithuanian eu4 = pruthenian eu4 = old_prussian eu4 = latvian eu4 = kurland_culture eu4 = baltic_colonial region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
+link = { vic2 = virshjuros eu4 = lithuanian eu4 = pruthenian eu4 = old_prussian eu4 = latvian eu4 = kurland_culture eu4 = baltic_colonial eu4 = aestian region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
+link = { vic2 = smelis eu4 = lithuanian eu4 = pruthenian eu4 = old_prussian eu4 = latvian eu4 = kurland_culture eu4 = baltic_colonial eu4 = aestian region = oceania_superregion }
+link = { vic2 = juodaodis eu4 = lithuanian eu4 = pruthenian eu4 = old_prussian eu4 = latvian eu4 = kurland_culture eu4 = baltic_colonial eu4 = aestian region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 link = { vic2 = lithuanian eu4 = lithuanian eu4 = samogitian eu4 = curonian }
 link = { vic2 = pruthenian eu4 = pruthenian eu4 = old_prussian eu4 = sudovian }
 link = { vic2 = latvian eu4 = latvian eu4 = kurland_culture eu4 = baltic_colonial eu4 = semigallian eu4 = selonian eu4 = livlander }
 link = { vic2 = estonian eu4 = estonian }
+##Split of Proto-Baltic (Aestian)
+link = { vic2 = lithuanian eu4 = aestian region = lithuania_area region = samogitia_area region = central_asia_region region = caucasia_region region = ruthenia_region region = crimea_region region = mongolia_region }
+link = { vic2 = latvian eu4 = aestian region = livonia_area region = estonia_ingria_area region = curonia_area region = russia_region region = scandinavia_region region = ural_region region = west_siberia_region region = east_siberia_region region = manchuria_region }
+link = { vic2 = pruthenian eu4 = aestian }
 
 # South Slav - croatian, serbian, bulgarian, romanian, albanian
 link = { vic2 = novisvet eu4 = montenegrin eu4 = bosnian eu4 = slovene eu4 = carantanian eu4 = sclavenian eu4 = croatian eu4 = tracki eu4 = alzzecio eu4 = serbian eu4 = balkan_colonial eu4 = bulgarian eu4 = albanian eu4 = slovenian eu4 = bosnian eu4 = bosniak region = south_america_superregion region = andes_superregion region = north_america_superregion region = central_america_superregion }
@@ -462,7 +467,7 @@ link = { vic2 = mongol eu4 = mongol eu4 = chahar eu4 = khalkha eu4 = oirats eu4 
 link = { vic2 = uzbek eu4 = chorasmian eu4 = uzbek eu4 = uzbehk eu4 = karluk }
 link = { vic2 = kazak eu4 = khazak }
 link = { vic2 = kirgiz eu4 = kirgiz eu4 = kirghiz eu4 = old_kirgiz }
-link = { vic2 = siberian eu4 = siberian eu4 = chukchi eu4 = nenet eu4 = nivkh eu4 = selkup }
+link = { vic2 = siberian eu4 = siberian eu4 = chukchi eu4 = nenet eu4 = nivkh eu4 = selkup eu4 = yeniseian eu4 = tuvan }
 link = { vic2 = yakut eu4 = yakut eu4 = yukagyr eu4 = buryat eu4 = tungus eu4 = daur eu4 = eveni eu4 = evenki eu4 = jurchen eu4 = oroqen eu4 = yukaghir }
 link = { vic2 = tatar eu4 = sabir eu4 = hunnic eu4 = tartar eu4 = bolghar eu4 = cuman eu4 = avar eu4 = khazar eu4 = astrakhani eu4 = bashkir eu4 = crimean eu4 = kazani eu4 = mishary eu4 = nogaybak eu4 = qasim eu4 = chaghatai eu4 = avar eu4 = tartar_colonial eu4 = hunnic eu4 = sinoturk  eu4 = nogai eu4 = chuvash }
 link = { vic2 = kurdish eu4 = kurdish eu4 = gorani }
@@ -594,7 +599,7 @@ link = { vic2 = sinhala eu4 = sinhala }
 # Hindusthani - avadhi, kanauji, panjabi, kashmiri
 link = { vic2 = avadhi eu4 = avadhi }
 link = { vic2 = kanauji eu4 = kanauji eu4 = vindhyan eu4 = bagheli eu4 = bundeli eu4 = dakani eu4 = hindusthani_colonial }
-link = { vic2 = panjabi eu4 = panjabi eu4 = urdu }
+link = { vic2 = panjabi eu4 = panjabi eu4 = urdu eu4 = burusho }
 link = { vic2 = hindustani_proper eu4 = hindustani_proper }
 link = { vic2 = kashmiri eu4 = kashmiri }
 
@@ -607,11 +612,11 @@ link = { vic2 = rajput eu4 = rajput eu4 = malvi eu4 = dhundari eu4 = harauti eu4
 # Dravidian - kannada, malayalam, tamil, telegu
 link = { vic2 = kannada eu4 = kannada }
 link = { vic2 = malayalam eu4 = malayalam }
-link = { vic2 = tamil eu4 = tamil eu4 = dravidian_colonial eu4 = mahl }
+link = { vic2 = tamil eu4 = tamil eu4 = dravidian_colonial eu4 = mahl eu4 = brahui }
 link = { vic2 = telegu eu4 = telegu }
 
 # Central Indic - garjati, gondi, jharkhandi
-link = { vic2 = asian_minor eu4 = garjati eu4 = gondi eu4 = jharkhandi eu4 = central_indian_colonial eu4 = yizu }
+link = { vic2 = asian_minor eu4 = garjati eu4 = gondi eu4 = jharkhandi eu4 = central_indian_colonial eu4 = yizu eu4 = peristani }
 
 # African colonial
 link = { vic2 = afro_american eu4 = great_lakes_colonial }
@@ -741,6 +746,7 @@ link = { vic2 = pie_american eu4 = basque eu4 = oldspain eu4 = iberic eu4 = turd
 link = { vic2 = pie_oceanian eu4 = basque eu4 = oldspain eu4 = iberic eu4 = turdetanian eu4 = lusitanian eu4 = nuragic region = oceania_superregion }
 link = { vic2 = pie_african eu4 = basque eu4 = oldspain eu4 = iberic eu4 = turdetanian eu4 = lusitanian eu4 = nuragic region = niger_region region = guinea_region region = central_africa_region region = sahel_region region = horn_of_africa_region region = east_africa_region region = kongo_region region = south_africa_region }
 
+link = { vic2 = basque eu4 = basque eu4 = basque_colonial }
 link = { vic2 = oldspain eu4 = oldspain eu4 = iberic eu4 = turdetanian }
 link = { vic2 = lusitanian eu4 = lusitanian }
 link = { vic2 = illyrian eu4 = illyrian }
