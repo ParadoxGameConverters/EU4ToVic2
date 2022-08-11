@@ -1,7 +1,7 @@
 #ifndef CUSTOM_POP_SHAPING_H
 #define CUSTOM_POP_SHAPING_H
 #include "Parser.h"
-#include "configuration.h"
+#include "Configuration.h"
 
 namespace mappers
 {
