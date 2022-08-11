@@ -834,7 +834,7 @@ void V2::Province::createPops(const Demographic& demographic,
 	const auto lifeRatingMod = (static_cast<double>(details.lifeRating) - 35.0) / 200.0;
 	const auto provinceDevModifier = 1 + (lifeRatingMod + investmentFactor * shapeFactor);
 
-	
+
 	switch (theConfiguration.getPopShaping())
 	{
 		case Configuration::POPSHAPES::Vanilla:

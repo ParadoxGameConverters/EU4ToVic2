@@ -116,7 +116,11 @@ class Province
 		 const mappers::ProvinceMapper& provinceMapper,
 		 bool hreDecentralized,
 		 const std::optional<std::string>& v2HreTag);
-	void doCreatePops(double popWeightRatio, Country* _owner, CIV_ALGORITHM popConversionAlgorithm, const mappers::ProvinceMapper& provinceMapper, const std::map<std::string, std::set<int>>& popShapeTypes);
+	void doCreatePops(double popWeightRatio,
+		 Country* _owner,
+		 CIV_ALGORITHM popConversionAlgorithm,
+		 const mappers::ProvinceMapper& provinceMapper,
+		 const std::map<std::string, std::set<int>>& popShapeTypes);
 
 	friend std::ostream& operator<<(std::ostream& output, const Province& province);
 

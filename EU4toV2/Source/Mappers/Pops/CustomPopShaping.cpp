@@ -1,7 +1,7 @@
-#include "CommonRegexes.h"
-#include "ParserHelpers.h"
 #include "CustomPopShaping.h"
 #include "../log.h"
+#include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 mappers::CustomPopShaping::CustomPopShaping(std::istream& theStream)
 {
