@@ -1,5 +1,5 @@
 #include "CustomPopShaping.h"
-#include "../log.h"
+#include "../Log.h"
 #include "CommonRegexes.h"
 #include "ParserHelpers.h"
 
