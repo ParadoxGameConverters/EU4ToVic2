@@ -24,7 +24,8 @@ class Configuration: commonItems::parser
 	{
 		Vanilla = 1,
 		PopShaping = 2,
-		Extreme = 3
+		Extreme = 3,
+		Custom = 4
 	};
 	enum class COREHANDLES
 	{

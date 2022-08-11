@@ -94,6 +94,8 @@ l_english:
  CENSUS2TIP: "Adjust population sizes"
  CENSUS3: "Extreme - absolute dev size"
  CENSUS3TIP: "Redistribute everyone according to absolute value of provinces"
+ CENSUS4: "Custom - Changes based on region"
+ CENSUS4TIP: "*WARNING ADVANCED USERS ONLY*\nUse the pop_shaping file in the configurables folder to determine which option gets used for each region."
  BIRTHRATES: "Shaping Factor?"
  BIRTHRATESTIP: "How much does shaping affect population sizes? 0 - Vanilla, 100 - Fully"
  BIRTHRATESTIP2: "Range 0 to 100"

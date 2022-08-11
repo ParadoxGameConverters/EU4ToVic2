@@ -106,6 +106,12 @@ option = {
 			tooltip = CENSUS3TIP
 			default = false
 		}
+		radioOption = {
+			name = 4
+			displayName = CENSUS4
+			tooltip = CENSUS4TIP
+			default = false
+		}
 	}
 }
 option = {

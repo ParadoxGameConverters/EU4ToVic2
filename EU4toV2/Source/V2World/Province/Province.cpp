@@ -475,10 +475,11 @@ std::optional<std::pair<int, std::vector<std::shared_ptr<V2::Pop>>>> V2::Provinc
 	return std::nullopt;
 }
 
-void V2::Province::doCreatePops(const double popWeightRatio,
+void V2::Province::doCreatePops(double popWeightRatio,
 	 Country* _owner,
-	 const CIV_ALGORITHM popConversionAlgorithm,
-	 const mappers::ProvinceMapper& provinceMapper)
+	 CIV_ALGORITHM popConversionAlgorithm,
+	 const mappers::ProvinceMapper& provinceMapper,
+	 const std::map<std::string, std::set<int>>& popShapeTypes)
 {
 	// Override for VN and provinces that don't exist in the mapper, we are moving vanilla pops into actual pops.
 	if (theConfiguration.isVN() && provinceMapper.getEU4ProvinceNumbers(provinceID).empty())
@@ -490,7 +491,7 @@ void V2::Province::doCreatePops(const double popWeightRatio,
 	// convert pops
 	for (const auto& demographic: demographics)
 	{
-		createPops(demographic, popWeightRatio, _owner, popConversionAlgorithm, provinceMapper);
+		createPops(demographic, popWeightRatio, _owner, popConversionAlgorithm, provinceMapper, popShapeTypes);
 	}
 	combinePops();
 	// organize pops for adding minorities
@@ -825,13 +826,15 @@ void V2::Province::createPops(const Demographic& demographic,
 	 double popWeightRatio,
 	 const Country* _owner,
 	 CIV_ALGORITHM popConversionAlgorithm,
-	 const mappers::ProvinceMapper& provinceMapper)
+	 const mappers::ProvinceMapper& provinceMapper,
+	 const std::map<std::string, std::set<int>>& popShapeTypes)
 {
 	long newPopulation = 0;
 	const auto shapeFactor = theConfiguration.getPopShapingFactor() / 100.0;
 	const auto lifeRatingMod = (static_cast<double>(details.lifeRating) - 35.0) / 200.0;
 	const auto provinceDevModifier = 1 + (lifeRatingMod + investmentFactor * shapeFactor);
 
+	
 	switch (theConfiguration.getPopShaping())
 	{
 		case Configuration::POPSHAPES::Vanilla:
@@ -845,6 +848,32 @@ void V2::Province::createPops(const Demographic& demographic,
 		case Configuration::POPSHAPES::Extreme:
 			newPopulation = static_cast<long>(popWeightRatio * provinceWeight);
 			newPopulation = vanillaPopulation + static_cast<long>((newPopulation - vanillaPopulation) * shapeFactor);
+			break;
+
+		case Configuration::POPSHAPES::Custom:
+			std::string type;
+			for (auto& popShape: popShapeTypes)
+			{
+				if (popShape.second.count(provinceID))
+				{
+					type = popShape.first;
+					break;
+				}
+			}
+			if (type == "vanilla")
+				newPopulation = vanillaPopulation;
+			else if (type == "devPush")
+				newPopulation = static_cast<long>(vanillaPopulation * provinceDevModifier);
+			else if (type == "absolute")
+			{
+				newPopulation = static_cast<long>(popWeightRatio * provinceWeight);
+				newPopulation = vanillaPopulation + static_cast<long>((newPopulation - vanillaPopulation) * shapeFactor);
+			}
+			else
+			{
+				newPopulation = vanillaPopulation;
+				LOG(LogLevel::Warning) << "Custom pop_shaping for Province " << provinceID << " is not set correctly, switching to Vanilla";
+			}
 			break;
 	}
 

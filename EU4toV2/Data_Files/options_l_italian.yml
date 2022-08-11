@@ -94,6 +94,8 @@ l_italian:
  CENSUS2TIP: "Regola le dimensioni della popolazione"
  CENSUS3: "Estremo - dimensione di sviluppo assoluta"
  CENSUS3TIP: "Ridistribuire tutti in base al valore assoluto delle province"
+ CENSUS4: "Personalizzato - Modifiche in base alla regione"
+ CENSUS4TIP: "*AVVISO SOLO PER UTENTI AVANZATI*\nUtilizzare il file pop_shaping nella cartella configurables per determinare quale opzione viene utilizzata per ciascuna regione."
  BIRTHRATES: "Fattore di modellatura?"
  BIRTHRATESTIP: "Quanto influisce la modellatura sulle dimensioni della popolazione? 0 - Vanilla, 100 - Completamente"
  BIRTHRATESTIP2: "Intervallo da 0 a 100"
