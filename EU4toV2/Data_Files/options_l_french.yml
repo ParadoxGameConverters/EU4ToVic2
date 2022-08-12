@@ -94,6 +94,8 @@ l_french:
  CENSUS2TIP: "Ajuster la taille des populations"
  CENSUS3: "Extrême - taille de développement absolue"
  CENSUS3TIP: "Redistribuer tout le monde selon la valeur absolue des provinces"
+ CENSUS4: "Personnalisé - Modifications basées sur la région"
+ CENSUS4TIP: "*ATTENTION AUX UTILISATEURS AVANCÉS UNIQUEMENT*\nUtilisez le fichier pop_shaping dans le dossier configurables pour déterminer quelle option est utilisée pour chaque région."
  BIRTHRATES: "Facteur de mise en forme?"
  BIRTHRATESTIP: "Dans quelle mesure la mise en forme affecte-t-elle la taille des populations? 0 - Vanille, 100 - Entièrement"
  BIRTHRATESTIP2: "Gamme de 0 à 100"

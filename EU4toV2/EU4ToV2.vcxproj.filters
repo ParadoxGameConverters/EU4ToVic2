@@ -607,6 +607,9 @@
     <ClCompile Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.cpp">
       <Filter>Mappers\CultureGroupsMapper</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Mappers\Pops\CustomPopShaping.cpp">
+      <Filter>Mappers\Pops</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1168,6 +1171,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\CultureGroupsMapper\CultureGroupsMapping.h">
       <Filter>Mappers\CultureGroupsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\Pops\CustomPopShaping.h">
+      <Filter>Mappers\Pops</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

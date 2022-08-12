@@ -94,6 +94,8 @@ l_german:
  CENSUS2TIP: "Passen Sie die Bevölkerungsgröße an"
  CENSUS3: "Extrem - absolute Entwicklergröße"
  CENSUS3TIP: "Verteilen Sie alle nach dem absoluten Wert der Provinzen"
+ CENSUS4: "Benutzerdefiniert – Änderungen basierend auf der Region"
+ CENSUS4TIP: "*WARNUNG NUR FÜR FORTGESCHRITTENE BENUTZER*\nVerwenden Sie die Datei pop_shaping im Ordner configurables, um zu bestimmen, welche Option für jede Region verwendet wird."
  BIRTHRATES: "Formfaktor?"
  BIRTHRATESTIP: "Wie stark beeinflusst die Gestaltung die Bevölkerungsgröße? 0 - Vanille, 100 - Voll"
  BIRTHRATESTIP2: "Bereich 0 bis 100"

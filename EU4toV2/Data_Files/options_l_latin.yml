@@ -94,6 +94,8 @@ l_latin:
  CENSUS2TIP: "Guberna amplitudines populorum"
  CENSUS3: "Maxime - maxima amplitudo pro progressui"
  CENSUS3TIP: "Parti homines secundum valores provinciarum"
+ CENSUS4: "Consuetudo - Mutationes secundum regionem"
+ CENSUS4TIP: "MONITUM HOMINES ADVOCATUS SOLUM*\nUtere fasciculi pop_shaping in configurables folder ut determinare uter optio adhibeatur pro unaquaque regione."
  BIRTHRATES: "Metrum fictionis?"
  BIRTHRATESTIP: "Quousque afficit hoc amplitudines populorum? 0 - more vanillae, 100 - maxime"
  BIRTHRATESTIP2: "Ab 10 usque ad 100"

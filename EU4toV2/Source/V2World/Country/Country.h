@@ -75,7 +75,10 @@ class Country
 	void initFromHistory(const mappers::Unreleasables& unreleasablesMapper,
 		 const mappers::PartyNameMapper& partyNameMapper,
 		 const mappers::PartyTypeMapper& partyTypeMapper);
-	void setupPops(double popWeightRatio, CIV_ALGORITHM popConversionAlgorithm, const mappers::ProvinceMapper& provinceMapper);
+	void setupPops(double popWeightRatio,
+		 CIV_ALGORITHM popConversionAlgorithm,
+		 const mappers::ProvinceMapper& provinceMapper,
+		 const std::map<std::string, std::set<int>>& popShapeTypes);
 	void convertArmies(const mappers::RegimentCostsMapper& regimentCostsMapper,
 		 const std::map<int, std::shared_ptr<V2::Province>>& allProvinces,
 		 const mappers::PortProvinces& portProvincesMapper,
