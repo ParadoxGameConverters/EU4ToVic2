@@ -21,6 +21,25 @@ EU4::Province::Province(const std::string& numString, std::istream& theStream)
 		provinceHistory.setStartingReligion(religion);
 	} // Else it's probably a blank province anyway.
 
+	// *ATTEMPT* to override messed up custom culture setting. When a custom nation is created, history is DEAD WRONG and contains original
+	// data, as well as original_culture/religion of the vanilla game, which need to be overridden.
+	// Issues and bugs abound, no promises.
+	//
+	// It basically asks if there's a history and the last history entry matches starting (vanilla) position, and actual position is different,
+	// then we obviously have a discrepancy and we should ditch all mention of starting position.
+	if (!originalCulture.empty() && !culture.empty() && originalCulture != culture && provinceHistory.hasInitializedHistory() &&
+		 provinceHistory.getLastCulture() && *provinceHistory.getLastCulture() == originalCulture)
+	{
+		provinceHistory.overrideOriginalCultureInHistory(culture);
+		provinceHistory.setStartingCulture(culture);
+	}
+	if (!originalReligion.empty() && !religion.empty() && originalReligion != religion && provinceHistory.hasInitializedHistory() &&
+		 provinceHistory.getLastReligion() && *provinceHistory.getLastReligion() == originalReligion)
+	{
+		provinceHistory.overrideOriginalReligionInHistory(religion);
+		provinceHistory.setStartingReligion(religion);
+	}
+
 	// for old versions of EU4 (< 1.12), copy tax to production if necessary
 	if (baseProduction == 0.0 && baseTax > 0)
 		baseProduction = baseTax;
@@ -31,6 +50,8 @@ void EU4::Province::registerKeys()
 	registerSetter("name", name);
 	registerSetter("culture", culture);
 	registerSetter("religion", religion);
+	registerSetter("original_culture", originalCulture);
+	registerSetter("original_religion", originalReligion);
 	registerSetter("base_tax", baseTax);
 	registerSetter("base_production", baseProduction);
 	// One of these is obsolete but required for old versions.

@@ -30,7 +30,7 @@ void mappers::FlagColorMapper::registerKeys()
 
 std::optional<commonItems::Color> mappers::FlagColorMapper::getFlagColorByIndex(int index) const
 {
-	if (flagColorMapping.empty() || static_cast<size_t>(index) >= flagColorMapping.size() - 1)
+	if (flagColorMapping.empty() || static_cast<size_t>(index) > flagColorMapping.size() - 1)
 		return std::nullopt;
 	else
 		return flagColorMapping.at(index);

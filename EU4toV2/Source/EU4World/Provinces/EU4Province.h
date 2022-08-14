@@ -65,6 +65,8 @@ class Province: commonItems::convenientParser
 	std::string controllerString;
 	std::string culture;
 	std::string religion;
+	std::string originalCulture;
+	std::string originalReligion;
 
 	std::set<std::string> cores;
 
