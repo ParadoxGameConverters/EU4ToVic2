@@ -18,6 +18,8 @@ class ProvinceHistory: commonItems::convenientParser
 	void buildPopRatios(double assimilationFactor);
 	void setStartingCulture(const std::string& culture) { startingCulture = culture; }
 	void setStartingReligion(const std::string& religion) { startingReligion = religion; }
+	void overrideOriginalCultureInHistory(const std::string& culture);
+	void overrideOriginalReligionInHistory(const std::string& religion);
 
 	[[nodiscard]] const auto& getStartingCulture() const { return startingCulture; }
 	[[nodiscard]] const auto& getStartingReligion() const { return startingReligion; }
@@ -29,6 +31,8 @@ class ProvinceHistory: commonItems::convenientParser
 	[[nodiscard]] bool hasInitializedHistory() const { return !religionHistory.empty() && !cultureHistory.empty(); }
 	[[nodiscard]] auto getOriginalDevelopment() const { return originalTax + originalProduction + originalManpower; }
 
+	[[nodiscard]] std::optional<std::string> getLastReligion() const;
+	[[nodiscard]] std::optional<std::string> getLastCulture() const;
 
   private:
 	void registerKeys();

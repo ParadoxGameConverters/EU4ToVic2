@@ -4,6 +4,7 @@
 #include "DateItems.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include <ranges>
 
 EU4::ProvinceHistory::ProvinceHistory(std::istream& theStream)
 {
@@ -191,4 +192,40 @@ void EU4::ProvinceHistory::updatePopRatioCulture(const std::string& oldCultureNa
 	for (auto& popRatio: popRatios)
 		if (popRatio.getCulture() == oldCultureName)
 			popRatio.setNeoCulture(neoCultureName, superRegion);
+}
+
+std::optional<std::string> EU4::ProvinceHistory::getLastCulture() const
+{
+	if (cultureHistory.empty() && !startingCulture.empty())
+		return startingCulture;
+	if (!cultureHistory.empty())
+		return cultureHistory.back().second;
+	return std::nullopt;
+}
+
+std::optional<std::string> EU4::ProvinceHistory::getLastReligion() const
+{
+	if (religionHistory.empty() && !startingReligion.empty())
+		return startingReligion;
+	if (!religionHistory.empty())
+		return religionHistory.back().second;
+	return std::nullopt;
+}
+
+void EU4::ProvinceHistory::overrideOriginalCultureInHistory(const std::string& culture)
+{
+	if (startingCulture.empty())
+		return;
+	for (std::string& cultureEntry: cultureHistory | std::views::values)
+		if (cultureEntry == startingCulture)
+			cultureEntry = culture;
+}
+
+void EU4::ProvinceHistory::overrideOriginalReligionInHistory(const std::string& religion)
+{
+	if (startingReligion.empty())
+		return;
+	for (std::string& religionEntry: religionHistory | std::views::values)
+		if (religionEntry == startingReligion)
+			religionEntry = religion;
 }
