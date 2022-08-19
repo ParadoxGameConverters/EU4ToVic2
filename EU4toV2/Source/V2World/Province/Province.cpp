@@ -479,7 +479,7 @@ void V2::Province::doCreatePops(double popWeightRatio,
 	 Country* _owner,
 	 CIV_ALGORITHM popConversionAlgorithm,
 	 const mappers::ProvinceMapper& provinceMapper,
-	 const std::map<std::string, std::set<int>>& popShapeTypes)
+	 const mappers::CustomPopShaping& popShapeTypes)
 {
 	// Override for VN and provinces that don't exist in the mapper, we are moving vanilla pops into actual pops.
 	if (theConfiguration.isVN() && provinceMapper.getEU4ProvinceNumbers(provinceID).empty())
@@ -827,7 +827,7 @@ void V2::Province::createPops(const Demographic& demographic,
 	 const Country* _owner,
 	 CIV_ALGORITHM popConversionAlgorithm,
 	 const mappers::ProvinceMapper& provinceMapper,
-	 const std::map<std::string, std::set<int>>& popShapeTypes)
+	 const mappers::CustomPopShaping& popShapeTypes)
 {
 	long newPopulation = 0;
 	const auto shapeFactor = theConfiguration.getPopShapingFactor() / 100.0;
@@ -851,15 +851,7 @@ void V2::Province::createPops(const Demographic& demographic,
 			break;
 
 		case Configuration::POPSHAPES::Custom:
-			std::string type;
-			for (auto& popShape: popShapeTypes)
-			{
-				if (popShape.second.count(provinceID))
-				{
-					type = popShape.first;
-					break;
-				}
-			}
+			const auto type = popShapeTypes.getPopShapeType(provinceID);
 			if (type == "vanilla")
 				newPopulation = vanillaPopulation;
 			else if (type == "devPush")

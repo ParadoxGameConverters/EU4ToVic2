@@ -16,15 +16,14 @@ class CustomPopShaping: commonItems::parser
 	void loadFile(const std::string& fileName);
 	void popShapeTypesForRegions(std::istream& theStream);
 
-	[[nodiscard]] auto getPopShapeTypes() const { return popShapeTypes; }
+	[[nodiscard]] std::string getPopShapeType(int provinceID) const;
 
   private:
 	void registerKeys();
 
-	bool usingHPM = false;
-
 	std::map<std::string, std::set<int>> popShapeTypes;
 };
+
 } // namespace mappers
 
 #endif // CUSTOM_POP_SHAPING_H

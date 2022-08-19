@@ -55,3 +55,17 @@ void mappers::CustomPopShaping::popShapeTypesForRegions(std::istream& theStream)
 	newParser.parseStream(theStream);
 	newParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
+
+
+std::string mappers::CustomPopShaping::getPopShapeType(int provinceID) const
+{
+	for (auto& popShape: popShapeTypes)
+	{
+		if (popShape.second.contains(provinceID))
+		{
+			return popShape.first;
+		}
+	}
+
+	return "";
+}

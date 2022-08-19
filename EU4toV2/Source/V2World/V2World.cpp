@@ -1589,7 +1589,7 @@ void V2::World::setupPops(const EU4::World& sourceWorld)
 		for (const auto& [provinceID, province]: country->getProvinces())
 			totalProvinceWeight += province->getProvinceWeight();
 	const auto popWeightRatio = my_totalWorldPopulation / totalProvinceWeight; // This is relevant only for extreme reshaping.
-	std::map<std::string, std::set<int>> popShapeTypes;								// For Custom Pop Shaping
+	mappers::CustomPopShaping popMapper;													// For Custom Pop Shaping
 
 	CIV_ALGORITHM popAlgorithm;
 	const auto version12 = GameVersion("1.12.0");
@@ -1604,12 +1604,10 @@ void V2::World::setupPops(const EU4::World& sourceWorld)
 
 	if (theConfiguration.getPopShaping() == Configuration::POPSHAPES::Custom)
 	{
-		mappers::CustomPopShaping popMapper;
 		popMapper.loadFile("configurables/pop_shaping.txt");
-		popShapeTypes = popMapper.getPopShapeTypes();
 	}
 	for (const auto& country: countries)
-		country.second->setupPops(popWeightRatio, popAlgorithm, provinceMapper, popShapeTypes);
+		country.second->setupPops(popWeightRatio, popAlgorithm, provinceMapper, popMapper);
 
 	Log(LogLevel::Info) << "Vanilla world population: " << totalWorldPopulation;
 	if (theConfiguration.getPopShaping() == Configuration::POPSHAPES::Extreme || theConfiguration.getPopShaping() == Configuration::POPSHAPES::Custom)
