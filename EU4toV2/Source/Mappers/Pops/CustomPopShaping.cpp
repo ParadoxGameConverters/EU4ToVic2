@@ -49,11 +49,8 @@ void mappers::CustomPopShaping::popShapeTypesForRegions(std::istream& theStream)
 	parser newParser;
 	newParser.registerRegex(commonItems::catchallRegex, [this, &finalParser, &pop_shaping, &provinces](const std::string& unused, std::istream& theStream) {
 		finalParser.parseStream(theStream);
-		if (!popShapeTypes.contains(pop_shaping))
-			popShapeTypes.emplace(pop_shaping, provinces);
-		else
-			for (const auto& i: provinces)
-				popShapeTypes.find(pop_shaping)->second.insert(i);
+		if (auto [itr, success] = popShapeTypes.emplace(pop_shaping, provinces); !success)
+			itr->second.insert(provinces.begin(), provinces.end());
 	});
 	newParser.parseStream(theStream);
 	newParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
