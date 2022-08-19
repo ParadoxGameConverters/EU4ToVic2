@@ -22,7 +22,6 @@ class CustomPopShaping: commonItems::parser
 	void registerKeys();
 
 	bool usingHPM = false;
-	std::string pop_shaping;
 
 	std::map<std::string, std::set<int>> popShapeTypes;
 };

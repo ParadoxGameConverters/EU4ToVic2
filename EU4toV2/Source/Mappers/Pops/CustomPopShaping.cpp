@@ -33,23 +33,27 @@ void mappers::CustomPopShaping::registerKeys()
 void mappers::CustomPopShaping::popShapeTypesForRegions(std::istream& theStream)
 {
 	parser finalParser;
-	finalParser.registerKeyword("pop_shaping", [this](const std::string& unused, std::istream& theStream) {
+
+	std::string pop_shaping;
+	std::set<int> provinces;
+
+	finalParser.registerKeyword("pop_shaping", [this, &pop_shaping](const std::string& unused, std::istream& theStream) {
 		pop_shaping = commonItems::singleString(theStream).getString();
 	});
-	finalParser.registerKeyword("provinces", [this](const std::string& unused, std::istream& theStream) {
+	finalParser.registerKeyword("provinces", [this, &provinces](const std::string& unused, std::istream& theStream) {
 		std::vector<int> tempVec = commonItems::getInts(theStream);
-		std::set<int> tempSet(tempVec.begin(), tempVec.end());
-		if (!popShapeTypes.contains(pop_shaping))
-			popShapeTypes.emplace(pop_shaping, tempSet);
-		else
-			for (const auto& i: tempSet)
-				popShapeTypes.find(pop_shaping)->second.insert(i);
+		provinces.insert(tempVec.begin(), tempVec.end());
 	});
 	finalParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
 	parser newParser;
-	newParser.registerRegex(commonItems::catchallRegex, [this, &finalParser](const std::string& unused, std::istream& theStream) {
+	newParser.registerRegex(commonItems::catchallRegex, [this, &finalParser, &pop_shaping, &provinces](const std::string& unused, std::istream& theStream) {
 		finalParser.parseStream(theStream);
+		if (!popShapeTypes.contains(pop_shaping))
+			popShapeTypes.emplace(pop_shaping, provinces);
+		else
+			for (const auto& i: provinces)
+				popShapeTypes.find(pop_shaping)->second.insert(i);
 	});
 	newParser.parseStream(theStream);
 	newParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
