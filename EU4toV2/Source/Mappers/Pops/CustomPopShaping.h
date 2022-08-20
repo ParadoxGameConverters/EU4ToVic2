@@ -28,7 +28,7 @@ class CustomPopShaping: commonItems::parser
   private:
 	void registerKeys();
 
-	std::map<ShapingType, std::set<int>> popShapeTypes;
+	std::map<int, ShapingType> popShapeTypes;
 };
 
 } // namespace mappers

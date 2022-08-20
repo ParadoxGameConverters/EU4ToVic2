@@ -60,8 +60,10 @@ void mappers::CustomPopShaping::popShapeTypesForRegions(std::istream& theStream)
 	parser newParser;
 	newParser.registerRegex(commonItems::catchallRegex, [this, &finalParser, &shapingType, &provinces](const std::string& unused, std::istream& theStream) {
 		finalParser.parseStream(theStream);
-		if (auto [itr, success] = popShapeTypes.emplace(shapingType, provinces); !success)
-			itr->second.insert(provinces.begin(), provinces.end());
+		for (const auto& province: provinces)
+		{
+			popShapeTypes.emplace(province, shapingType);
+		}
 	});
 	newParser.parseStream(theStream);
 	newParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
@@ -70,12 +72,9 @@ void mappers::CustomPopShaping::popShapeTypesForRegions(std::istream& theStream)
 
 mappers::ShapingType mappers::CustomPopShaping::getPopShapeType(int provinceID) const
 {
-	for (auto& popShape: popShapeTypes)
+	if (const auto type = popShapeTypes.find(provinceID); type != popShapeTypes.end())
 	{
-		if (popShape.second.contains(provinceID))
-		{
-			return popShape.first;
-		}
+		return type->second;
 	}
 
 	LOG(LogLevel::Warning) << "Custom pop_shaping for Province " << provinceID << " is not set correctly, switching to Vanilla";
