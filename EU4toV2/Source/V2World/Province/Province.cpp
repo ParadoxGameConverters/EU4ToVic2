@@ -479,7 +479,7 @@ void V2::Province::doCreatePops(double popWeightRatio,
 	 Country* _owner,
 	 CIV_ALGORITHM popConversionAlgorithm,
 	 const mappers::ProvinceMapper& provinceMapper,
-	 const std::map<std::string, std::set<int>>& popShapeTypes)
+	 const mappers::CustomPopShaping& popShapeTypes)
 {
 	// Override for VN and provinces that don't exist in the mapper, we are moving vanilla pops into actual pops.
 	if (theConfiguration.isVN() && provinceMapper.getEU4ProvinceNumbers(provinceID).empty())
@@ -827,7 +827,7 @@ void V2::Province::createPops(const Demographic& demographic,
 	 const Country* _owner,
 	 CIV_ALGORITHM popConversionAlgorithm,
 	 const mappers::ProvinceMapper& provinceMapper,
-	 const std::map<std::string, std::set<int>>& popShapeTypes)
+	 const mappers::CustomPopShaping& popShapeTypes)
 {
 	long newPopulation = 0;
 	const auto shapeFactor = theConfiguration.getPopShapingFactor() / 100.0;
@@ -850,31 +850,25 @@ void V2::Province::createPops(const Demographic& demographic,
 			newPopulation = vanillaPopulation + static_cast<long>((newPopulation - vanillaPopulation) * shapeFactor);
 			break;
 
-		case Configuration::POPSHAPES::Custom:
-			std::string type;
-			for (auto& popShape: popShapeTypes)
+		case Configuration::POPSHAPES::Custom: {
+			switch (popShapeTypes.getPopShapeType(provinceID))
 			{
-				if (popShape.second.count(provinceID))
-				{
-					type = popShape.first;
+				case mappers::ShapingType::vanilla_type:
+					newPopulation = vanillaPopulation;
 					break;
-				}
-			}
-			if (type == "vanilla")
-				newPopulation = vanillaPopulation;
-			else if (type == "devPush")
-				newPopulation = static_cast<long>(vanillaPopulation * provinceDevModifier);
-			else if (type == "absolute")
-			{
-				newPopulation = static_cast<long>(popWeightRatio * provinceWeight);
-				newPopulation = vanillaPopulation + static_cast<long>((newPopulation - vanillaPopulation) * shapeFactor);
-			}
-			else
-			{
-				newPopulation = vanillaPopulation;
-				LOG(LogLevel::Warning) << "Custom pop_shaping for Province " << provinceID << " is not set correctly, switching to Vanilla";
+				case mappers::ShapingType::dev_push_type:
+					newPopulation = static_cast<long>(vanillaPopulation * provinceDevModifier);
+					break;
+				case mappers::ShapingType::absolute_type:
+					newPopulation = static_cast<long>(popWeightRatio * provinceWeight);
+					newPopulation = vanillaPopulation + static_cast<long>((newPopulation - vanillaPopulation) * shapeFactor);
+					break;
+				default:
+					newPopulation = vanillaPopulation;
+					LOG(LogLevel::Warning) << "Custom pop_shaping for Province " << provinceID << " is not set correctly, switching to Vanilla";
 			}
 			break;
+		}
 	}
 
 	pop_points pts;
