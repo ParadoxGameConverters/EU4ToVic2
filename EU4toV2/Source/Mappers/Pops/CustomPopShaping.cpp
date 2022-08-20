@@ -34,7 +34,7 @@ void mappers::CustomPopShaping::popShapeTypesForRegions(std::istream& theStream)
 {
 	parser finalParser;
 
-	ShapingType shapingType;
+	ShapingType shapingType = ShapingType::vanilla_type;
 	std::set<int> provinces;
 
 	finalParser.registerKeyword("pop_shaping", [this, &shapingType](const std::string& unused, std::istream& theStream) {
@@ -47,8 +47,7 @@ void mappers::CustomPopShaping::popShapeTypesForRegions(std::istream& theStream)
 			shapingType = ShapingType::absolute_type;
 		else
 		{
-			shapingType = ShapingType::vanilla_type;
-			LOG(LogLevel::Warning) << "Custom pop_shaping " << type << "is not a valid type, switching to Vanilla";
+			LOG(LogLevel::Warning) << "Custom pop_shaping " << type << "is not a valid type, using Vanilla";
 		}
 	});
 	finalParser.registerKeyword("provinces", [this, &provinces](const std::string& unused, std::istream& theStream) {
@@ -59,6 +58,9 @@ void mappers::CustomPopShaping::popShapeTypesForRegions(std::istream& theStream)
 
 	parser newParser;
 	newParser.registerRegex(commonItems::catchallRegex, [this, &finalParser, &shapingType, &provinces](const std::string& unused, std::istream& theStream) {
+		shapingType = ShapingType::vanilla_type;
+		provinces.clear();
+
 		finalParser.parseStream(theStream);
 		for (const auto& province: provinces)
 		{
@@ -69,7 +71,7 @@ void mappers::CustomPopShaping::popShapeTypesForRegions(std::istream& theStream)
 	newParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-
+#pragma optimize("",off)
 mappers::ShapingType mappers::CustomPopShaping::getPopShapeType(int provinceID) const
 {
 	if (const auto type = popShapeTypes.find(provinceID); type != popShapeTypes.end())
@@ -80,3 +82,4 @@ mappers::ShapingType mappers::CustomPopShaping::getPopShapeType(int provinceID) 
 	LOG(LogLevel::Warning) << "Custom pop_shaping for Province " << provinceID << " is not set correctly, switching to Vanilla";
 	return ShapingType::vanilla_type;
 }
+#pragma optimize("",on)
