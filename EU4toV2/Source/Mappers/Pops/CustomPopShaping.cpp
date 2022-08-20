@@ -71,7 +71,7 @@ void mappers::CustomPopShaping::popShapeTypesForRegions(std::istream& theStream)
 	newParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-#pragma optimize("",off)
+
 mappers::ShapingType mappers::CustomPopShaping::getPopShapeType(int provinceID) const
 {
 	if (const auto type = popShapeTypes.find(provinceID); type != popShapeTypes.end())
@@ -82,4 +82,3 @@ mappers::ShapingType mappers::CustomPopShaping::getPopShapeType(int provinceID) 
 	LOG(LogLevel::Warning) << "Custom pop_shaping for Province " << provinceID << " is not set correctly, switching to Vanilla";
 	return ShapingType::vanilla_type;
 }
-#pragma optimize("",on)
