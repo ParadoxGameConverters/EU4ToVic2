@@ -850,23 +850,25 @@ void V2::Province::createPops(const Demographic& demographic,
 			newPopulation = vanillaPopulation + static_cast<long>((newPopulation - vanillaPopulation) * shapeFactor);
 			break;
 
-		case Configuration::POPSHAPES::Custom:
-			const auto type = popShapeTypes.getPopShapeType(provinceID);
-			if (type == "vanilla")
-				newPopulation = vanillaPopulation;
-			else if (type == "devPush")
-				newPopulation = static_cast<long>(vanillaPopulation * provinceDevModifier);
-			else if (type == "absolute")
+		case Configuration::POPSHAPES::Custom: {
+			switch (popShapeTypes.getPopShapeType(provinceID))
 			{
-				newPopulation = static_cast<long>(popWeightRatio * provinceWeight);
-				newPopulation = vanillaPopulation + static_cast<long>((newPopulation - vanillaPopulation) * shapeFactor);
-			}
-			else
-			{
-				newPopulation = vanillaPopulation;
-				LOG(LogLevel::Warning) << "Custom pop_shaping for Province " << provinceID << " is not set correctly, switching to Vanilla";
+				case mappers::ShapingType::vanilla_type:
+					newPopulation = vanillaPopulation;
+					break;
+				case mappers::ShapingType::dev_push_type:
+					newPopulation = static_cast<long>(vanillaPopulation * provinceDevModifier);
+					break;
+				case mappers::ShapingType::absolute_type:
+					newPopulation = static_cast<long>(popWeightRatio * provinceWeight);
+					newPopulation = vanillaPopulation + static_cast<long>((newPopulation - vanillaPopulation) * shapeFactor);
+					break;
+				default:
+					newPopulation = vanillaPopulation;
+					LOG(LogLevel::Warning) << "Custom pop_shaping for Province " << provinceID << " is not set correctly, switching to Vanilla";
 			}
 			break;
+		}
 	}
 
 	pop_points pts;

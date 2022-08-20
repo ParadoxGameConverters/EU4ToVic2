@@ -6,6 +6,13 @@
 namespace mappers
 {
 
+enum class ShapingType
+{
+	vanilla_type,
+	dev_push_type,
+	absolute_type
+};
+
 class CustomPopShaping: commonItems::parser
 {
 
@@ -16,12 +23,12 @@ class CustomPopShaping: commonItems::parser
 	void loadFile(const std::string& fileName);
 	void popShapeTypesForRegions(std::istream& theStream);
 
-	[[nodiscard]] std::string getPopShapeType(int provinceID) const;
+	[[nodiscard]] ShapingType getPopShapeType(int provinceID) const;
 
   private:
 	void registerKeys();
 
-	std::map<std::string, std::set<int>> popShapeTypes;
+	std::map<ShapingType, std::set<int>> popShapeTypes;
 };
 
 } // namespace mappers
