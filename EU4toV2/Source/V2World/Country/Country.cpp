@@ -880,11 +880,14 @@ bool V2::Country::addFactory(std::shared_ptr<Factory> factory)
 	return true;
 }
 
-void V2::Country::setupPops(const double popWeightRatio, const CIV_ALGORITHM popConversionAlgorithm, const mappers::ProvinceMapper& provinceMapper)
+void V2::Country::setupPops(const double popWeightRatio,
+	 const CIV_ALGORITHM popConversionAlgorithm,
+	 const mappers::ProvinceMapper& provinceMapper,
+	 const mappers::CustomPopShaping& popShapeTypes)
 {
 	// create the pops
 	for (const auto& province: provinces | std::views::values)
-		province->doCreatePops(popWeightRatio, this, popConversionAlgorithm, provinceMapper);
+		province->doCreatePops(popWeightRatio, this, popConversionAlgorithm, provinceMapper, popShapeTypes);
 }
 
 void V2::Country::convertArmies(const mappers::RegimentCostsMapper& regimentCostsMapper,

@@ -66,6 +66,7 @@ country_event = {
 		}
 		is_independant = no
 		exists = yes
+		overlord = { capital_scope = { NOT = { continent = asia } } }
 	}
 	
 	mean_time_to_happen = { months = 0.001 }
@@ -123,7 +124,10 @@ country_event = {
 			tag = RJX
 		}
 		is_greater_power = yes
-		any_owned_province = { is_core = RJX }
+		any_owned_province = { 
+			is_core = RJX
+			is_overseas = yes
+		}
 		NOT = { exists = RJX }
 		war = no
 	}

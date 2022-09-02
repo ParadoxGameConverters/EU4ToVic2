@@ -6,6 +6,7 @@
 #include "../../Mappers/Geography/ClimateMapper.h"
 #include "../../Mappers/Geography/TerrainDataMapper.h"
 #include "../../Mappers/NavalBases/NavalBaseMapper.h"
+#include "../../Mappers/Pops/CustomPopShaping.h"
 #include "../../Mappers/ProvinceDetails/ProvinceDetailsMapper.h"
 #include "../../Mappers/ProvinceMappings/ProvinceMapper.h"
 #include "../Factory/Factory.h"
@@ -116,7 +117,11 @@ class Province
 		 const mappers::ProvinceMapper& provinceMapper,
 		 bool hreDecentralized,
 		 const std::optional<std::string>& v2HreTag);
-	void doCreatePops(double popWeightRatio, Country* _owner, CIV_ALGORITHM popConversionAlgorithm, const mappers::ProvinceMapper& provinceMapper);
+	void doCreatePops(double popWeightRatio,
+		 Country* _owner,
+		 CIV_ALGORITHM popConversionAlgorithm,
+		 const mappers::ProvinceMapper& provinceMapper,
+		 const mappers::CustomPopShaping& popShapeTypes);
 
 	friend std::ostream& operator<<(std::ostream& output, const Province& province);
 
@@ -183,7 +188,8 @@ class Province
 		 double popWeightRatio,
 		 const Country* _owner,
 		 CIV_ALGORITHM popConversionAlgorithm,
-		 const mappers::ProvinceMapper& provinceMapper);
+		 const mappers::ProvinceMapper& provinceMapper,
+		 const mappers::CustomPopShaping& popShapeTypes);
 	void combinePops();
 	void determineColonial();
 	static bool popSortBySizePredicate(std::shared_ptr<Pop> pop1, std::shared_ptr<Pop> pop2);

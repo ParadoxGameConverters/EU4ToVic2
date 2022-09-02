@@ -417,6 +417,7 @@ call save_commit_id.bat
     <ClCompile Include="Source\Mappers\PartyNames\PartyNameMapper.cpp" />
     <ClCompile Include="Source\Mappers\PartyTypes\PartyType.cpp" />
     <ClCompile Include="Source\Mappers\PartyTypes\PartyTypeMapper.cpp" />
+    <ClCompile Include="Source\Mappers\Pops\CustomPopShaping.cpp" />
     <ClCompile Include="Source\Mappers\Pops\PopInstance.cpp" />
     <ClCompile Include="Source\Mappers\Pops\PopMapper.cpp" />
     <ClCompile Include="Source\Mappers\Pops\PopTypes.cpp" />
@@ -624,6 +625,7 @@ call save_commit_id.bat
     <ClInclude Include="Source\Mappers\PartyNames\PartyNameMapper.h" />
     <ClInclude Include="Source\Mappers\PartyTypes\PartyType.h" />
     <ClInclude Include="Source\Mappers\PartyTypes\PartyTypeMapper.h" />
+    <ClInclude Include="Source\Mappers\Pops\CustomPopShaping.h" />
     <ClInclude Include="Source\Mappers\Pops\PopInstance.h" />
     <ClInclude Include="Source\Mappers\Pops\PopMapper.h" />
     <ClInclude Include="Source\Mappers\Pops\PopTypes.h" />
