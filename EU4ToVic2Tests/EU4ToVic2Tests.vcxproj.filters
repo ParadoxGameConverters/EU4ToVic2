@@ -791,6 +791,15 @@
     <ClCompile Include="MapperTests\CultureGroupsMapper\CultureGroupsMappingTests.cpp">
       <Filter>MapperTests\CultureGroupsMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\commonItems\ModLoader\ModFilesystem.cpp">
+      <Filter>ConverterFiles\commonItems\ModLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ModLoader\ModLoader.cpp">
+      <Filter>ConverterFiles\commonItems\ModLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp">
+      <Filter>ConverterFiles\commonItems\ModLoader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -1161,6 +1170,9 @@
     </Filter>
     <Filter Include="MapperTests\CultureGroupsMapper">
       <UniqueIdentifier>{78f32389-075d-46fb-8c31-eb1aab1f5b86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\commonItems\ModLoader">
+      <UniqueIdentifier>{3c0fe895-cf13-45e4-a6c8-9dfaee3a94fc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
