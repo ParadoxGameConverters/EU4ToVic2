@@ -207,10 +207,10 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		const auto modsList = commonItems::getStrings(theStream);
 		Log(LogLevel::Info) << "<> Savegame claims " << modsList.size() << " mods used:";
 		Mods mods;
-		for (const auto& modName: modsList)
+		for (const auto& modPath: modsList)
 		{
-			Log(LogLevel::Info) << "---> " << modName;
-			mods.emplace_back(Mod(modName, ""));
+			Log(LogLevel::Info) << "---> " << modPath;
+			mods.emplace_back(Mod("", modPath));
 		}
 		commonItems::ModLoader modLoader;
 		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
@@ -461,7 +461,13 @@ void EU4::World::verifySaveContents()
 	if (saveGame.gamestate.starts_with("EU4bin"))
 	{
 		saveGame.gamestate = rakaly::meltEU4(saveGame.gamestate);
+		std::ofstream dump("dumpOfIron.txt");
+		dump << saveGame.gamestate;
+		dump.close();
 		saveGame.metadata = rakaly::meltEU4(saveGame.metadata);
+		std::ofstream metaDump("metaDumpOfIron.txt");
+		metaDump << saveGame.metadata;
+		metaDump.close();
 	}
 }
 
