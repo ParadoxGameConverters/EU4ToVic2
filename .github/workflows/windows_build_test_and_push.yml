@@ -38,7 +38,7 @@ jobs:
       run: |
        cd Fronter/Updater
        pip3 install -r requirements.txt
-       pyinstaller --onefile --icon=updater.ico updater.py
+       pyinstaller --icon=updater.ico updater.py
        mv dist ../../Release/Updater
        ls ../../Release/Updater/
        
