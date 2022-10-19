@@ -40,7 +40,6 @@ jobs:
        pip3 install -r requirements.txt
        pyinstaller --icon=updater.ico updater.py
        mv dist/updater ../../Release/Updater
-       ls ../../Release/Updater/
        
     - name: "Prepare release"
       if: ${{ github.event_name == 'push' }}
