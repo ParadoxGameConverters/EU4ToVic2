@@ -38,9 +38,8 @@ jobs:
       run: |
        cd Fronter/Updater
        pip3 install -r requirements.txt
-       pyinstaller --onefile --icon=updater.ico updater.py
-       mkdir ../../Release/Updater
-       mv dist/updater.exe ../../Release/Updater/updater.exe       
+       pyinstaller --icon=updater.ico updater.py
+       mv dist/updater ../../Release/Updater
        
     - name: "Prepare release"
       if: ${{ github.event_name == 'push' }}
