@@ -15,7 +15,7 @@ link = { vic2 = ashkenazi eu4 = ashkenazi eu4 = jewish_colonial }
 link = { vic2 = knaanic eu4 = knaanic }
 link = { vic2 = magogic eu4 = magogic }
 link = { vic2 = yevanic eu4 = yevanic }
-link = { vic2 = mizrahi eu4 = mizrahi }
+link = { vic2 = mizrahi eu4 = mizrahi eu4 = parsim eu4 = teimani }
 link = { vic2 = israeli eu4 = israeli eu4 = aramaic eu4 = beta_israeli eu4 = kuzarim }
 link = { vic2 = misrayim eu4 = misrayim }
 link = { vic2 = sephardic eu4 = sephardi eu4 = hebrew eu4 = mizrahim eu4 = mizrahi }
