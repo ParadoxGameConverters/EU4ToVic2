@@ -331,7 +331,7 @@ void V2::Country::finalizeInvestments(const mappers::IdeaEffectMapper& ideaEffec
 	details.nationalValues.liberty = srcCountry->getLiberty();
 	details.nationalValues.equality = srcCountry->getEquality();
 	details.nationalValues.order = srcCountry->getOrder();
-	details.literacy = srcCountry->getLiteracy();
+	details.literacyInvestment = srcCountry->getLiteracy();
 	details.upperHouses.reactionary = srcCountry->getReactionary();
 	details.upperHouses.liberal = srcCountry->getLiberal();
 
@@ -339,48 +339,48 @@ void V2::Country::finalizeInvestments(const mappers::IdeaEffectMapper& ideaEffec
 	// Resulting scores for all of these will be between -5 and 5, with 0 being average and ignored.
 	// Each point above or below 5 should alter absolute values by 10%.
 
-	if (ideaEffectMapper.getArmyFromIdea(details.government))
+	if (ideaEffectMapper.getArmyFromIdea(details.government) && *ideaEffectMapper.getArmyFromIdea(details.government) != 0)
 		details.technologies.army = (2 * details.technologies.army + *ideaEffectMapper.getArmyFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getNavyFromIdea(details.government))
+	if (ideaEffectMapper.getNavyFromIdea(details.government) && *ideaEffectMapper.getNavyFromIdea(details.government) != 0)
 		details.technologies.navy = (2 * details.technologies.navy + *ideaEffectMapper.getNavyFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getCommerceFromIdea(details.government))
+	if (ideaEffectMapper.getCommerceFromIdea(details.government) && *ideaEffectMapper.getCommerceFromIdea(details.government) != 0)
 		details.technologies.commerce = (2 * details.technologies.commerce + *ideaEffectMapper.getCommerceFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getIndustryFromIdea(details.government))
+	if (ideaEffectMapper.getIndustryFromIdea(details.government) && *ideaEffectMapper.getIndustryFromIdea(details.government) != 0)
 		details.technologies.industry = (2 * details.technologies.industry + *ideaEffectMapper.getIndustryFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getCultureFromIdea(details.government))
+	if (ideaEffectMapper.getCultureFromIdea(details.government) && *ideaEffectMapper.getCultureFromIdea(details.government) != 0)
 		details.technologies.culture = (2 * details.technologies.culture + *ideaEffectMapper.getCultureFromIdea(details.government)) / 3;
 
-	if (ideaEffectMapper.getSlaveryFromIdea(details.government))
+	if (ideaEffectMapper.getSlaveryFromIdea(details.government) && *ideaEffectMapper.getSlaveryFromIdea(details.government) != 0)
 		details.reforms.slavery = (2 * details.reforms.slavery + *ideaEffectMapper.getSlaveryFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getUpper_house_compositionFromIdea(details.government))
+	if (ideaEffectMapper.getUpper_house_compositionFromIdea(details.government) && *ideaEffectMapper.getUpper_house_compositionFromIdea(details.government) != 0)
 		details.reforms.upper_house_composition =
 			 (2 * details.reforms.upper_house_composition + *ideaEffectMapper.getUpper_house_compositionFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getVote_franchiseFromIdea(details.government))
+	if (ideaEffectMapper.getVote_franchiseFromIdea(details.government) && *ideaEffectMapper.getVote_franchiseFromIdea(details.government) != 0)
 		details.reforms.vote_franchise = (2 * details.reforms.vote_franchise + *ideaEffectMapper.getVote_franchiseFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getVoting_systemFromIdea(details.government))
+	if (ideaEffectMapper.getVoting_systemFromIdea(details.government) && *ideaEffectMapper.getVoting_systemFromIdea(details.government) != 0)
 		details.reforms.voting_system = (2 * details.reforms.voting_system + *ideaEffectMapper.getVoting_systemFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getPublic_meetingsFromIdea(details.government))
+	if (ideaEffectMapper.getPublic_meetingsFromIdea(details.government) && *ideaEffectMapper.getPublic_meetingsFromIdea(details.government) != 0)
 		details.reforms.public_meetings = (2 * details.reforms.public_meetings + *ideaEffectMapper.getPublic_meetingsFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getPress_rightsFromIdea(details.government))
+	if (ideaEffectMapper.getPress_rightsFromIdea(details.government) && *ideaEffectMapper.getPress_rightsFromIdea(details.government) != 0)
 		details.reforms.press_rights = (2 * details.reforms.press_rights + *ideaEffectMapper.getPress_rightsFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getTrade_unionsFromIdea(details.government))
+	if (ideaEffectMapper.getTrade_unionsFromIdea(details.government) && *ideaEffectMapper.getTrade_unionsFromIdea(details.government) != 0)
 		details.reforms.trade_unions = (2 * details.reforms.trade_unions + *ideaEffectMapper.getTrade_unionsFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getPolitical_partiesFromIdea(details.government))
+	if (ideaEffectMapper.getPolitical_partiesFromIdea(details.government) && *ideaEffectMapper.getPolitical_partiesFromIdea(details.government) != 0)
 		details.reforms.political_parties = (2 * details.reforms.political_parties + *ideaEffectMapper.getPolitical_partiesFromIdea(details.government)) / 3;
 
-	if (ideaEffectMapper.getLibertyFromIdea(details.government))
+	if (ideaEffectMapper.getLibertyFromIdea(details.government) && *ideaEffectMapper.getLibertyFromIdea(details.government) != 0)
 		details.nationalValues.liberty = (2 * details.nationalValues.liberty + *ideaEffectMapper.getLibertyFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getEqualityFromIdea(details.government))
+	if (ideaEffectMapper.getEqualityFromIdea(details.government) && *ideaEffectMapper.getEqualityFromIdea(details.government) != 0)
 		details.nationalValues.equality = (2 * details.nationalValues.equality + *ideaEffectMapper.getEqualityFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getOrderFromIdea(details.government))
+	if (ideaEffectMapper.getOrderFromIdea(details.government) && *ideaEffectMapper.getOrderFromIdea(details.government) != 0)
 		details.nationalValues.order = (2 * details.nationalValues.order + *ideaEffectMapper.getOrderFromIdea(details.government)) / 3;
 
-	if (ideaEffectMapper.getReactionaryFromIdea(details.government))
+	if (ideaEffectMapper.getReactionaryFromIdea(details.government) && *ideaEffectMapper.getReactionaryFromIdea(details.government) != 0)
 		details.upperHouses.reactionary = (2 * details.upperHouses.reactionary + *ideaEffectMapper.getReactionaryFromIdea(details.government)) / 3;
-	if (ideaEffectMapper.getLiberalFromIdea(details.government))
+	if (ideaEffectMapper.getLiberalFromIdea(details.government) && *ideaEffectMapper.getLiberalFromIdea(details.government) != 0)
 		details.upperHouses.liberal = (2 * details.upperHouses.liberal + *ideaEffectMapper.getLiberalFromIdea(details.government)) / 3;
 
-	if (ideaEffectMapper.getLiteracyFromIdea(details.government))
+	if (ideaEffectMapper.getLiteracyFromIdea(details.government) && *ideaEffectMapper.getLiteracyFromIdea(details.government) != 0)
 		details.literacyInvestment = (2 * details.literacyInvestment + *ideaEffectMapper.getLiteracyFromIdea(details.government)) / 3;
 
 	// Finally a patch for those silly democracies that go too low.
