@@ -1,5 +1,6 @@
 #include "Leader/EU4Leader.h"
 #include "gtest/gtest.h"
+#include <gmock/gmock-matchers.h>
 
 TEST(EU4World_EU4LeaderTests, primitivesDefaultToDefaultValues)
 {
@@ -78,5 +79,5 @@ TEST(EU4World_EU4LeaderTests, wrongTypeThrowsWarning)
 	ASSERT_FALSE(leader.isLand());
 	std::cout.rdbuf(stdOutBuf);
 
-	ASSERT_EQ(" [WARNING] Unknown leader type troubadour\n", log.str());
+	EXPECT_THAT(log.str(), testing::HasSubstr(R"([WARNING] Unknown leader type troubadour)"));
 }

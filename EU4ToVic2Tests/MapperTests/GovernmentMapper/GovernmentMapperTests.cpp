@@ -1,5 +1,6 @@
 #include "GovernmentMapper/GovernmentMapper.h"
 #include "gtest/gtest.h"
+#include <gmock/gmock-matchers.h>
 
 TEST(Mappers_GovernmentMapperTests, governmentCanBeMatched)
 {
@@ -24,5 +25,5 @@ TEST(Mappers_GovernmentMapperTests, mismatchReturnsNulloptAndAStarkWarning)
 	ASSERT_EQ(std::nullopt, mapper.matchGovernment("sgov-error"));
 	std::cout.rdbuf(stdOutBuf);
 
-	ASSERT_EQ(" [WARNING] No government mapping defined for sgov-error!\n", log.str());
+	EXPECT_THAT(log.str(), testing::HasSubstr(R"([WARNING] No government mapping defined for sgov-error!)"));
 }
