@@ -45,13 +45,6 @@ jobs:
         fronter_dir: 'Fronter.NET'
         release_dir: 'Release'    
        
-    - name: "Build updater executable"
-      run: |
-       cd Fronter/Updater
-       pip3 install -r requirements.txt
-       pyinstaller --icon=updater.ico updater.py
-       mv dist/updater ../../Release/Updater
-       
     - name: "Prepare release"
       if: ${{ github.event_name == 'push' }}
       run: |
