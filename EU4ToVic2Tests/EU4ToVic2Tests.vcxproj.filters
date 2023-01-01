@@ -800,6 +800,9 @@
     <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp">
       <Filter>ConverterFiles\commonItems\ModLoader</Filter>
     </ClCompile>
+    <ClCompile Include="..\commonItems\external\zip\src\zip.c">
+      <Filter>ConverterFiles\commonItems\zip</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EU4WorldTests">
@@ -1173,6 +1176,9 @@
     </Filter>
     <Filter Include="ConverterFiles\commonItems\ModLoader">
       <UniqueIdentifier>{3c0fe895-cf13-45e4-a6c8-9dfaee3a94fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConverterFiles\commonItems\zip">
+      <UniqueIdentifier>{d8f7c7a7-24c7-4ebf-a39e-85bf4801996c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

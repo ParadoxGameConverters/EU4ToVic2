@@ -18,8 +18,8 @@
 #include "Regions/SuperRegions.h"
 #include "Relations/EU4Empire.h"
 #include "StringUtils.h"
-#include "rakaly_wrapper.h"
-#include <ZipFile.h>
+#include "rakaly.h"
+#include "zip.h"
 #include <exception>
 #include <filesystem>
 #include <fstream>
@@ -40,28 +40,12 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commo
 	verifySave();
 	Log(LogLevel::Progress) << "7 %";
 
-	Log(LogLevel::Info) << "-> Importing EU4 save.";
-	if (!saveGame.compressed)
-	{
-		std::ifstream inBinary(fs::u8path(theConfiguration.getEU4SaveGamePath()), std::ios::binary);
-		if (!inBinary.is_open())
-		{
-			Log(LogLevel::Error) << "Could not open " << theConfiguration.getEU4SaveGamePath() << " for parsing.";
-			throw std::runtime_error("Could not open " + theConfiguration.getEU4SaveGamePath() + " for parsing.");
-		}
-		std::stringstream inStream;
-		inStream << inBinary.rdbuf();
-		saveGame.gamestate = inStream.str();
-	}
-	Log(LogLevel::Progress) << "8 %";
-
-	verifySaveContents();
-	Log(LogLevel::Progress) << "9 %";
-
+	Log(LogLevel::Progress) << "\t* Importing Save. *";
 	auto metaData = std::istringstream(saveGame.metadata);
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(metaData);
 	parseStream(gameState);
+	Log(LogLevel::Progress) << "\t* Import Complete. *";
 	Log(LogLevel::Progress) << "15 %";
 
 	clearRegisteredKeywords();
@@ -456,65 +440,29 @@ void EU4::World::fillHistoricalData()
 		historicalData.emplace_back(std::make_pair(country.first, country.second->getHistoricalEntry()));
 }
 
-void EU4::World::verifySaveContents()
-{
-	if (saveGame.gamestate.starts_with("EU4bin"))
-	{
-		saveGame.gamestate = rakaly::meltEU4(saveGame.gamestate);
-		std::ofstream dump("dumpOfIron.txt");
-		dump << saveGame.gamestate;
-		dump.close();
-		saveGame.metadata = rakaly::meltEU4(saveGame.metadata);
-		std::ofstream metaDump("metaDumpOfIron.txt");
-		metaDump << saveGame.metadata;
-		metaDump.close();
-	}
-}
-
 void EU4::World::verifySave()
 {
-	std::ifstream saveFile(fs::u8path(theConfiguration.getEU4SaveGamePath()));
-	if (!saveFile.is_open())
-		throw std::runtime_error("Could not open save! Exiting!");
+	const auto& savePath = theConfiguration.getEU4SaveGamePath();
+	std::ifstream save_file(std::filesystem::u8path(savePath), std::ios::in | std::ios::binary);
+	const auto save_size = static_cast<std::streamsize>(std::filesystem::file_size(savePath));
+	std::string save_string(save_size, '\0');
+	save_file.read(save_string.data(), save_size);
 
-	char buffer[3];
-	saveFile.get(buffer, 3);
-	if (buffer[0] == 'P' && buffer[1] == 'K')
+	if (save_string.starts_with("EU4txt"))
 	{
-		if (!uncompressSave())
-			throw std::runtime_error("Failed to unpack the compressed save!");
+		saveGame.gamestate = save_string;
+		return;
 	}
-	saveFile.close();
-}
 
-bool EU4::World::uncompressSave()
-{
-	auto saveFile = ZipFile::Open(theConfiguration.getEU4SaveGamePath());
-	if (!saveFile)
-		return false;
-	for (size_t entryNum = 0; entryNum < saveFile->GetEntriesCount(); ++entryNum)
-	{
-		const auto& entry = saveFile->GetEntry(static_cast<int>(entryNum));
-		const auto& name = entry->GetName();
-		if (name == "meta")
-		{
-			Log(LogLevel::Info) << ">> Uncompressing metadata";
-			saveGame.metadata = std::string{std::istreambuf_iterator<char>(*entry->GetDecompressionStream()), std::istreambuf_iterator<char>()};
-		}
-		else if (name == "gamestate")
-		{
-			Log(LogLevel::Info) << ">> Uncompressing gamestate";
-			saveGame.gamestate = std::string{std::istreambuf_iterator<char>(*entry->GetDecompressionStream()), std::istreambuf_iterator<char>()};
-		}
-		else if (name == "ai")
-		{
-			Log(LogLevel::Info) << ">> Uncompressing ai and forgetting it existed";
-			saveGame.compressed = true;
-		}
-		else
-			throw std::runtime_error("Unrecognized savegame structure!");
-	}
-	return true;
+	const auto game_state = rakaly::meltEu4(save_string);
+	game_state.writeData(saveGame.gamestate);
+	if (game_state.has_unknown_tokens())
+		Log(LogLevel::Error) << "Rakaly melting had errors!";
+
+	zip_t* zip = zip_open(savePath.c_str(), 0, 'r');
+	const auto entriesCount = zip_entries_total(zip);
+	if (entriesCount > 3)
+		throw std::runtime_error("Unrecognized savegame structure! RNW savegames are NOT supported!");
 }
 
 void EU4::World::loadRevolutionTarget()
