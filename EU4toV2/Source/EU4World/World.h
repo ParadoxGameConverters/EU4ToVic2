@@ -47,7 +47,6 @@ class World: commonItems::parser
 	void registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper, const commonItems::ConverterVersion& converterVersion);
 
 	void verifySave();
-	void verifySaveContents();
 	void loadRevolutionTarget();
 	void addProvinceInfoToCountries();
 	void loadRegions();
@@ -71,7 +70,6 @@ class World: commonItems::parser
 	void buildPopRatios() const;
 	void calculateIndustry() const;
 	std::string generateNeoCulture(const std::string& superRegionName, const std::string& oldCultureName);
-	bool uncompressSave();
 	void markNewWorldCountries();
 	void importShatteredHreTag();
 

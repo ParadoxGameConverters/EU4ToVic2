@@ -1,6 +1,6 @@
 #include "CustomPopShaping.h"
-#include "../Log.h"
 #include "CommonRegexes.h"
+#include "Log.h"
 #include "ParserHelpers.h"
 
 mappers::CustomPopShaping::CustomPopShaping(std::istream& theStream)
@@ -47,7 +47,7 @@ void mappers::CustomPopShaping::popShapeTypesForRegions(std::istream& theStream)
 			shapingType = ShapingType::absolute_type;
 		else
 		{
-			LOG(LogLevel::Warning) << "Custom pop_shaping " << type << "is not a valid type, using Vanilla";
+			Log(LogLevel::Warning) << "Custom pop_shaping " << type << "is not a valid type, using Vanilla";
 		}
 	});
 	finalParser.registerKeyword("provinces", [this, &provinces](const std::string& unused, std::istream& theStream) {
@@ -79,6 +79,6 @@ mappers::ShapingType mappers::CustomPopShaping::getPopShapeType(int provinceID) 
 		return type->second;
 	}
 
-	LOG(LogLevel::Warning) << "Custom pop_shaping for Province " << provinceID << " is not set correctly, switching to Vanilla";
+	Log(LogLevel::Warning) << "Custom pop_shaping for Province " << provinceID << " is not set correctly, switching to Vanilla";
 	return ShapingType::vanilla_type;
 }
