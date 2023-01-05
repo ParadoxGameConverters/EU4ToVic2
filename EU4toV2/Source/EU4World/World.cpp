@@ -44,6 +44,8 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commo
 	auto metaData = std::istringstream(saveGame.metadata);
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(metaData);
+	if (!saveGame.metadata.empty())
+		saveGame.parsedMeta = true;
 	parseStream(gameState);
 	Log(LogLevel::Progress) << "\t* Import Complete. *";
 	Log(LogLevel::Progress) << "15 %";
@@ -148,8 +150,11 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 {
 	registerKeyword("EU4txt", [](std::istream& theStream) {
 	});
-	registerKeyword("date", [](std::istream& theStream) {
-		theConfiguration.setLastEU4Date(date(commonItems::getString(theStream)));
+	registerKeyword("date", [this](std::istream& theStream) {
+		if (saveGame.parsedMeta)
+			commonItems::ignoreItem("unused", theStream);
+		else
+			theConfiguration.setLastEU4Date(date(commonItems::getString(theStream)));
 	});
 	registerKeyword("start_date", [](std::istream& theStream) {
 		theConfiguration.setStartEU4Date(date(commonItems::getString(theStream)));
@@ -169,80 +174,101 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		}
 	});
 	registerKeyword("savegame_version", [this, converterVersion](std::istream& theStream) {
-		version = std::make_unique<GameVersion>(theStream);
-		theConfiguration.setEU4Version(*version);
-		Log(LogLevel::Info) << "Savegave version: " << *version;
-		if (theConfiguration.isHpmEnabled() && *version < GameVersion("1.31"))
-			throw std::runtime_error("HPM hybridization can only be used on 1.31 saves or higher.");
-		if (converterVersion.getMinSource() > *version)
+		if (saveGame.parsedMeta)
 		{
-			Log(LogLevel::Error) << "Converter requires a minimum save from v" << converterVersion.getMinSource().toShortString();
-			throw std::runtime_error("Savegame vs converter version mismatch!");
+			commonItems::ignoreItem("unused", theStream);
 		}
-		if (!converterVersion.getMaxSource().isLargerishThan(*version))
+		else
 		{
-			Log(LogLevel::Error) << "Converter requires a maximum save from v" << converterVersion.getMaxSource().toShortString();
-			throw std::runtime_error("Savegame vs converter version mismatch!");
+			version = std::make_unique<GameVersion>(theStream);
+			theConfiguration.setEU4Version(*version);
+			Log(LogLevel::Info) << "Savegave version: " << *version;
+			if (theConfiguration.isHpmEnabled() && *version < GameVersion("1.31"))
+				throw std::runtime_error("HPM hybridization can only be used on 1.31 saves or higher.");
+			if (converterVersion.getMinSource() > *version)
+			{
+				Log(LogLevel::Error) << "Converter requires a minimum save from v" << converterVersion.getMinSource().toShortString();
+				throw std::runtime_error("Savegame vs converter version mismatch!");
+			}
+			if (!converterVersion.getMaxSource().isLargerishThan(*version))
+			{
+				Log(LogLevel::Error) << "Converter requires a maximum save from v" << converterVersion.getMaxSource().toShortString();
+				throw std::runtime_error("Savegame vs converter version mismatch!");
+			}
 		}
 	});
-	registerKeyword("mod_enabled", [](std::istream& theStream) {
-		// DEFUNCT since 1.31.
-		Log(LogLevel::Info) << "-> Detecting used mods.";
-		const auto modsList = commonItems::getStrings(theStream);
-		Log(LogLevel::Info) << "<> Savegame claims " << modsList.size() << " mods used:";
-		Mods mods;
-		for (const auto& modPath: modsList)
+	registerKeyword("mod_enabled", [this](std::istream& theStream) {
+		if (saveGame.parsedMeta)
 		{
-			Log(LogLevel::Info) << "---> " << modPath;
-			mods.emplace_back(Mod("", modPath));
+			commonItems::ignoreItem("unused", theStream);
 		}
-		commonItems::ModLoader modLoader;
-		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
-		theConfiguration.setMods(modLoader.getMods());
+		else
+		{
+			// DEFUNCT since 1.31.
+			Log(LogLevel::Info) << "-> Detecting used mods.";
+			const auto modsList = commonItems::getStrings(theStream);
+			Log(LogLevel::Info) << "<> Savegame claims " << modsList.size() << " mods used:";
+			Mods mods;
+			for (const auto& modPath: modsList)
+			{
+				Log(LogLevel::Info) << "---> " << modPath;
+				mods.emplace_back(Mod("", modPath));
+			}
+			commonItems::ModLoader modLoader;
+			modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
+			theConfiguration.setMods(modLoader.getMods());
+		}
 	});
 	registerKeyword("mods_enabled_names", [this](std::istream& theStream) {
-		// In use since 1.31.
-		Log(LogLevel::Info) << "-> Detecting used mods.";
-		const auto& modBlobs = commonItems::blobList(theStream);
-		Log(LogLevel::Info) << "<> Savegame claims " << modBlobs.getBlobs().size() << " mods used:";
-		Mods mods;
-		for (const auto& modBlob: modBlobs.getBlobs())
+		if (saveGame.parsedMeta)
 		{
-			auto modStream = std::stringstream(modBlob);
-			const auto& modName = ModNames(modStream);
-			mods.emplace_back(Mod(modName.getName(), modName.getPath()));
-			Log(LogLevel::Info) << "---> [" << modName.getName() << "]: " << modName.getPath();
+			commonItems::ignoreItem("unused", theStream);
 		}
-		commonItems::ModLoader modLoader;
-		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
-		theConfiguration.setMods(modLoader.getMods());
-		for (const auto& mod: theConfiguration.getMods())
+		else
 		{
-			if (mod.name == "Voltaire's Nightmare")
+			// In use since 1.31.
+			Log(LogLevel::Info) << "-> Detecting used mods.";
+			const auto& modBlobs = commonItems::blobList(theStream);
+			Log(LogLevel::Info) << "<> Savegame claims " << modBlobs.getBlobs().size() << " mods used:";
+			Mods mods;
+			for (const auto& modBlob: modBlobs.getBlobs())
 			{
-				Log(LogLevel::Notice) << "Voltaire's Nightmare detected. Enabling VN support.";
-				theConfiguration.setVN();
-				if (!theConfiguration.isHpmEnabled())
+				auto modStream = std::stringstream(modBlob);
+				const auto& modName = ModNames(modStream);
+				mods.emplace_back(Mod(modName.getName(), modName.getPath()));
+				Log(LogLevel::Info) << "---> [" << modName.getName() << "]: " << modName.getPath();
+			}
+			commonItems::ModLoader modLoader;
+			modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
+			theConfiguration.setMods(modLoader.getMods());
+			for (const auto& mod: theConfiguration.getMods())
+			{
+				if (mod.name == "Voltaire's Nightmare")
 				{
-					Log(LogLevel::Notice) << "VN support requires HPM. Enabling HPM automatically.";
-					theConfiguration.setHybridMod(Configuration::HYBRIDMOD::HPM);
-					if (theConfiguration.isHPMVerified())
+					Log(LogLevel::Notice) << "Voltaire's Nightmare detected. Enabling VN support.";
+					theConfiguration.setVN();
+					if (!theConfiguration.isHpmEnabled())
 					{
-						theConfiguration.swapInstallationPathToHPM();
+						Log(LogLevel::Notice) << "VN support requires HPM. Enabling HPM automatically.";
+						theConfiguration.setHybridMod(Configuration::HYBRIDMOD::HPM);
+						if (theConfiguration.isHPMVerified())
+						{
+							theConfiguration.swapInstallationPathToHPM();
+						}
+						else
+						{
+							Log(LogLevel::Error) << "Voltaire's Nightmare uses HPM hybridization.";
+							throw std::runtime_error("HPM installation cannot be found in " + theConfiguration.getVic2Path() + "/mod/HPM");
+						}
 					}
-					else
+					if (theConfiguration.getEuroCentrism() != Configuration::EUROCENTRISM::EuroCentric)
 					{
-						Log(LogLevel::Error) << "Voltaire's Nightmare uses HPM hybridization.";
-						throw std::runtime_error("HPM installation cannot be found in " + theConfiguration.getVic2Path() + "/mod/HPM");
+						Log(LogLevel::Notice) << "VN is auto-enabling Full Colony Annexation and Eurocentric conversion.";
+						theConfiguration.setEurocentrism(Configuration::EUROCENTRISM::EuroCentric);
 					}
+					if (*version < GameVersion("1.31.5"))
+						throw std::runtime_error("VN support requires 1.31 saves or higher.");
 				}
-				if (theConfiguration.getEuroCentrism() != Configuration::EUROCENTRISM::EuroCentric)
-				{
-					Log(LogLevel::Notice) << "VN is auto-enabling Full Colony Annexation and Eurocentric conversion.";
-					theConfiguration.setEurocentrism(Configuration::EUROCENTRISM::EuroCentric);
-				}
-				if (*version < GameVersion("1.31.5"))
-					throw std::runtime_error("VN support requires 1.31 saves or higher.");
 			}
 		}
 	});
@@ -443,26 +469,53 @@ void EU4::World::fillHistoricalData()
 void EU4::World::verifySave()
 {
 	const auto& savePath = theConfiguration.getEU4SaveGamePath();
-	std::ifstream save_file(std::filesystem::u8path(savePath), std::ios::in | std::ios::binary);
-	const auto save_size = static_cast<std::streamsize>(std::filesystem::file_size(savePath));
-	std::string save_string(save_size, '\0');
-	save_file.read(save_string.data(), save_size);
+	const std::ifstream saveFile(std::filesystem::u8path(savePath), std::ios::in | std::ios::binary);
+	std::stringstream inStream;
+	inStream << saveFile.rdbuf();
+	saveGame.gamestate = inStream.str();
 
-	if (save_string.starts_with("EU4txt"))
+	const auto save = rakaly::parseEu4(saveGame.gamestate);
+	if (const auto& melt = save.meltMeta(); melt)
 	{
-		saveGame.gamestate = save_string;
-		return;
+		Log(LogLevel::Info) << "Meta extracted successfully.";
+		melt->writeData(saveGame.metadata);
+	}
+	else if (save.is_binary())
+	{
+		Log(LogLevel::Error) << "Binary Save and NO META!";
 	}
 
-	const auto game_state = rakaly::meltEu4(save_string);
-	game_state.writeData(saveGame.gamestate);
-	if (game_state.has_unknown_tokens())
-		Log(LogLevel::Error) << "Rakaly melting had errors!";
+	if (save.is_binary())
+	{
+		Log(LogLevel::Info) << "Gamestate is binary, melting.";
+		const auto& melt = save.melt();
+		if (melt.has_unknown_tokens())
+		{
+			Log(LogLevel::Error) << "Rakaly reports errors while melting ironman save!";
+		}
+
+		melt.writeData(saveGame.gamestate);
+	}
+	else
+	{
+		Log(LogLevel::Info) << "Gamestate is textual.";
+		const auto& melt = save.melt();
+		melt.writeData(saveGame.gamestate);
+	}
 
 	zip_t* zip = zip_open(savePath.c_str(), 0, 'r');
 	const auto entriesCount = zip_entries_total(zip);
 	if (entriesCount > 3)
 		throw std::runtime_error("Unrecognized savegame structure! RNW savegames are NOT supported!");
+
+	// Always dump to disk for easier debug.
+	std::ofstream metaDump("metaDump.txt");
+	metaDump << saveGame.metadata;
+	metaDump.close();
+
+	std::ofstream saveDump("saveDump.txt");
+	saveDump << saveGame.gamestate;
+	saveDump.close();
 }
 
 void EU4::World::loadRevolutionTarget()
