@@ -610,6 +610,12 @@
     <ClCompile Include="Source\Mappers\Pops\CustomPopShaping.cpp">
       <Filter>Mappers\Pops</Filter>
     </ClCompile>
+    <ClCompile Include="..\commonItems\ModLoader\ModFilesystem.cpp">
+      <Filter>CommonItems\ModLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\external\zip\src\zip.c">
+      <Filter>CommonItems\zip</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Configuration.h" />
@@ -1073,9 +1079,6 @@
     <ClInclude Include="..\commonItems\Color.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Helpers\rakaly_wrapper.h">
-      <Filter>Helpers</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\AcceptedCultureThresholds\AcceptedCultureThresholdsMapper.h">
       <Filter>Mappers\AcceptedCultureThresholds</Filter>
     </ClInclude>
@@ -1174,6 +1177,18 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\Pops\CustomPopShaping.h">
       <Filter>Mappers\Pops</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\ModLoader\Mod.h">
+      <Filter>CommonItems\ModLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\ModLoader\ModFilesystem.h">
+      <Filter>CommonItems\ModLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\external\zip\src\miniz.h">
+      <Filter>CommonItems\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\external\zip\src\zip.h">
+      <Filter>CommonItems\zip</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1434,6 +1449,9 @@
     </Filter>
     <Filter Include="Mappers\CultureGroupsMapper">
       <UniqueIdentifier>{a87f6587-9dcf-48ed-bbaa-55291221a475}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonItems\zip">
+      <UniqueIdentifier>{c58f745a-5119-410e-93d6-51fcdbe29a33}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

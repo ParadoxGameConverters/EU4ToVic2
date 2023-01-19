@@ -18,8 +18,8 @@
 #include "Regions/SuperRegions.h"
 #include "Relations/EU4Empire.h"
 #include "StringUtils.h"
-#include "rakaly_wrapper.h"
-#include <ZipFile.h>
+#include "rakaly.h"
+#include "zip.h"
 #include <exception>
 #include <filesystem>
 #include <fstream>
@@ -40,28 +40,14 @@ EU4::World::World(const mappers::IdeaEffectMapper& ideaEffectMapper, const commo
 	verifySave();
 	Log(LogLevel::Progress) << "7 %";
 
-	Log(LogLevel::Info) << "-> Importing EU4 save.";
-	if (!saveGame.compressed)
-	{
-		std::ifstream inBinary(fs::u8path(theConfiguration.getEU4SaveGamePath()), std::ios::binary);
-		if (!inBinary.is_open())
-		{
-			Log(LogLevel::Error) << "Could not open " << theConfiguration.getEU4SaveGamePath() << " for parsing.";
-			throw std::runtime_error("Could not open " + theConfiguration.getEU4SaveGamePath() + " for parsing.");
-		}
-		std::stringstream inStream;
-		inStream << inBinary.rdbuf();
-		saveGame.gamestate = inStream.str();
-	}
-	Log(LogLevel::Progress) << "8 %";
-
-	verifySaveContents();
-	Log(LogLevel::Progress) << "9 %";
-
+	Log(LogLevel::Progress) << "\t* Importing Save. *";
 	auto metaData = std::istringstream(saveGame.metadata);
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(metaData);
+	if (!saveGame.metadata.empty())
+		saveGame.parsedMeta = true;
 	parseStream(gameState);
+	Log(LogLevel::Progress) << "\t* Import Complete. *";
 	Log(LogLevel::Progress) << "15 %";
 
 	clearRegisteredKeywords();
@@ -164,8 +150,11 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 {
 	registerKeyword("EU4txt", [](std::istream& theStream) {
 	});
-	registerKeyword("date", [](std::istream& theStream) {
-		theConfiguration.setLastEU4Date(date(commonItems::getString(theStream)));
+	registerKeyword("date", [this](std::istream& theStream) {
+		if (saveGame.parsedMeta)
+			commonItems::ignoreItem("unused", theStream);
+		else
+			theConfiguration.setLastEU4Date(date(commonItems::getString(theStream)));
 	});
 	registerKeyword("start_date", [](std::istream& theStream) {
 		theConfiguration.setStartEU4Date(date(commonItems::getString(theStream)));
@@ -185,80 +174,101 @@ void EU4::World::registerKeys(const mappers::IdeaEffectMapper& ideaEffectMapper,
 		}
 	});
 	registerKeyword("savegame_version", [this, converterVersion](std::istream& theStream) {
-		version = std::make_unique<GameVersion>(theStream);
-		theConfiguration.setEU4Version(*version);
-		Log(LogLevel::Info) << "Savegave version: " << *version;
-		if (theConfiguration.isHpmEnabled() && *version < GameVersion("1.31"))
-			throw std::runtime_error("HPM hybridization can only be used on 1.31 saves or higher.");
-		if (converterVersion.getMinSource() > *version)
+		if (saveGame.parsedMeta)
 		{
-			Log(LogLevel::Error) << "Converter requires a minimum save from v" << converterVersion.getMinSource().toShortString();
-			throw std::runtime_error("Savegame vs converter version mismatch!");
+			commonItems::ignoreItem("unused", theStream);
 		}
-		if (!converterVersion.getMaxSource().isLargerishThan(*version))
+		else
 		{
-			Log(LogLevel::Error) << "Converter requires a maximum save from v" << converterVersion.getMaxSource().toShortString();
-			throw std::runtime_error("Savegame vs converter version mismatch!");
+			version = std::make_unique<GameVersion>(theStream);
+			theConfiguration.setEU4Version(*version);
+			Log(LogLevel::Info) << "Savegave version: " << *version;
+			if (theConfiguration.isHpmEnabled() && *version < GameVersion("1.31"))
+				throw std::runtime_error("HPM hybridization can only be used on 1.31 saves or higher.");
+			if (converterVersion.getMinSource() > *version)
+			{
+				Log(LogLevel::Error) << "Converter requires a minimum save from v" << converterVersion.getMinSource().toShortString();
+				throw std::runtime_error("Savegame vs converter version mismatch!");
+			}
+			if (!converterVersion.getMaxSource().isLargerishThan(*version))
+			{
+				Log(LogLevel::Error) << "Converter requires a maximum save from v" << converterVersion.getMaxSource().toShortString();
+				throw std::runtime_error("Savegame vs converter version mismatch!");
+			}
 		}
 	});
-	registerKeyword("mod_enabled", [](std::istream& theStream) {
-		// DEFUNCT since 1.31.
-		Log(LogLevel::Info) << "-> Detecting used mods.";
-		const auto modsList = commonItems::getStrings(theStream);
-		Log(LogLevel::Info) << "<> Savegame claims " << modsList.size() << " mods used:";
-		Mods mods;
-		for (const auto& modName: modsList)
+	registerKeyword("mod_enabled", [this](std::istream& theStream) {
+		if (saveGame.parsedMeta)
 		{
-			Log(LogLevel::Info) << "---> " << modName;
-			mods.emplace_back(Mod(modName, ""));
+			commonItems::ignoreItem("unused", theStream);
 		}
-		commonItems::ModLoader modLoader;
-		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
-		theConfiguration.setMods(modLoader.getMods());
+		else
+		{
+			// DEFUNCT since 1.31.
+			Log(LogLevel::Info) << "-> Detecting used mods.";
+			const auto modsList = commonItems::getStrings(theStream);
+			Log(LogLevel::Info) << "<> Savegame claims " << modsList.size() << " mods used:";
+			Mods mods;
+			for (const auto& modPath: modsList)
+			{
+				Log(LogLevel::Info) << "---> " << modPath;
+				mods.emplace_back(Mod("", modPath));
+			}
+			commonItems::ModLoader modLoader;
+			modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
+			theConfiguration.setMods(modLoader.getMods());
+		}
 	});
 	registerKeyword("mods_enabled_names", [this](std::istream& theStream) {
-		// In use since 1.31.
-		Log(LogLevel::Info) << "-> Detecting used mods.";
-		const auto& modBlobs = commonItems::blobList(theStream);
-		Log(LogLevel::Info) << "<> Savegame claims " << modBlobs.getBlobs().size() << " mods used:";
-		Mods mods;
-		for (const auto& modBlob: modBlobs.getBlobs())
+		if (saveGame.parsedMeta)
 		{
-			auto modStream = std::stringstream(modBlob);
-			const auto& modName = ModNames(modStream);
-			mods.emplace_back(Mod(modName.getName(), modName.getPath()));
-			Log(LogLevel::Info) << "---> [" << modName.getName() << "]: " << modName.getPath();
+			commonItems::ignoreItem("unused", theStream);
 		}
-		commonItems::ModLoader modLoader;
-		modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
-		theConfiguration.setMods(modLoader.getMods());
-		for (const auto& mod: theConfiguration.getMods())
+		else
 		{
-			if (mod.name == "Voltaire's Nightmare")
+			// In use since 1.31.
+			Log(LogLevel::Info) << "-> Detecting used mods.";
+			const auto& modBlobs = commonItems::blobList(theStream);
+			Log(LogLevel::Info) << "<> Savegame claims " << modBlobs.getBlobs().size() << " mods used:";
+			Mods mods;
+			for (const auto& modBlob: modBlobs.getBlobs())
 			{
-				Log(LogLevel::Notice) << "Voltaire's Nightmare detected. Enabling VN support.";
-				theConfiguration.setVN();
-				if (!theConfiguration.isHpmEnabled())
+				auto modStream = std::stringstream(modBlob);
+				const auto& modName = ModNames(modStream);
+				mods.emplace_back(Mod(modName.getName(), modName.getPath()));
+				Log(LogLevel::Info) << "---> [" << modName.getName() << "]: " << modName.getPath();
+			}
+			commonItems::ModLoader modLoader;
+			modLoader.loadMods(theConfiguration.getEU4DocumentsPath(), mods);
+			theConfiguration.setMods(modLoader.getMods());
+			for (const auto& mod: theConfiguration.getMods())
+			{
+				if (mod.name == "Voltaire's Nightmare")
 				{
-					Log(LogLevel::Notice) << "VN support requires HPM. Enabling HPM automatically.";
-					theConfiguration.setHybridMod(Configuration::HYBRIDMOD::HPM);
-					if (theConfiguration.isHPMVerified())
+					Log(LogLevel::Notice) << "Voltaire's Nightmare detected. Enabling VN support.";
+					theConfiguration.setVN();
+					if (!theConfiguration.isHpmEnabled())
 					{
-						theConfiguration.swapInstallationPathToHPM();
+						Log(LogLevel::Notice) << "VN support requires HPM. Enabling HPM automatically.";
+						theConfiguration.setHybridMod(Configuration::HYBRIDMOD::HPM);
+						if (theConfiguration.isHPMVerified())
+						{
+							theConfiguration.swapInstallationPathToHPM();
+						}
+						else
+						{
+							Log(LogLevel::Error) << "Voltaire's Nightmare uses HPM hybridization.";
+							throw std::runtime_error("HPM installation cannot be found in " + theConfiguration.getVic2Path() + "/mod/HPM");
+						}
 					}
-					else
+					if (theConfiguration.getEuroCentrism() != Configuration::EUROCENTRISM::EuroCentric)
 					{
-						Log(LogLevel::Error) << "Voltaire's Nightmare uses HPM hybridization.";
-						throw std::runtime_error("HPM installation cannot be found in " + theConfiguration.getVic2Path() + "/mod/HPM");
+						Log(LogLevel::Notice) << "VN is auto-enabling Full Colony Annexation and Eurocentric conversion.";
+						theConfiguration.setEurocentrism(Configuration::EUROCENTRISM::EuroCentric);
 					}
+					if (*version < GameVersion("1.31.5"))
+						throw std::runtime_error("VN support requires 1.31 saves or higher.");
 				}
-				if (theConfiguration.getEuroCentrism() != Configuration::EUROCENTRISM::EuroCentric)
-				{
-					Log(LogLevel::Notice) << "VN is auto-enabling Full Colony Annexation and Eurocentric conversion.";
-					theConfiguration.setEurocentrism(Configuration::EUROCENTRISM::EuroCentric);
-				}
-				if (*version < GameVersion("1.31.5"))
-					throw std::runtime_error("VN support requires 1.31 saves or higher.");
 			}
 		}
 	});
@@ -456,59 +466,56 @@ void EU4::World::fillHistoricalData()
 		historicalData.emplace_back(std::make_pair(country.first, country.second->getHistoricalEntry()));
 }
 
-void EU4::World::verifySaveContents()
-{
-	if (saveGame.gamestate.starts_with("EU4bin"))
-	{
-		saveGame.gamestate = rakaly::meltEU4(saveGame.gamestate);
-		saveGame.metadata = rakaly::meltEU4(saveGame.metadata);
-	}
-}
-
 void EU4::World::verifySave()
 {
-	std::ifstream saveFile(fs::u8path(theConfiguration.getEU4SaveGamePath()));
-	if (!saveFile.is_open())
-		throw std::runtime_error("Could not open save! Exiting!");
+	const auto& savePath = theConfiguration.getEU4SaveGamePath();
+	const std::ifstream saveFile(std::filesystem::u8path(savePath), std::ios::in | std::ios::binary);
+	std::stringstream inStream;
+	inStream << saveFile.rdbuf();
+	saveGame.gamestate = inStream.str();
 
-	char buffer[3];
-	saveFile.get(buffer, 3);
-	if (buffer[0] == 'P' && buffer[1] == 'K')
+	const auto save = rakaly::parseEu4(saveGame.gamestate);
+	if (const auto& melt = save.meltMeta(); melt)
 	{
-		if (!uncompressSave())
-			throw std::runtime_error("Failed to unpack the compressed save!");
+		Log(LogLevel::Info) << "Meta extracted successfully.";
+		melt->writeData(saveGame.metadata);
 	}
-	saveFile.close();
-}
+	else if (save.is_binary())
+	{
+		Log(LogLevel::Error) << "Binary Save and NO META!";
+	}
 
-bool EU4::World::uncompressSave()
-{
-	auto saveFile = ZipFile::Open(theConfiguration.getEU4SaveGamePath());
-	if (!saveFile)
-		return false;
-	for (size_t entryNum = 0; entryNum < saveFile->GetEntriesCount(); ++entryNum)
+	if (save.is_binary())
 	{
-		const auto& entry = saveFile->GetEntry(static_cast<int>(entryNum));
-		const auto& name = entry->GetName();
-		if (name == "meta")
+		Log(LogLevel::Info) << "Gamestate is binary, melting.";
+		const auto& melt = save.melt();
+		if (melt.has_unknown_tokens())
 		{
-			Log(LogLevel::Info) << ">> Uncompressing metadata";
-			saveGame.metadata = std::string{std::istreambuf_iterator<char>(*entry->GetDecompressionStream()), std::istreambuf_iterator<char>()};
+			Log(LogLevel::Error) << "Rakaly reports errors while melting ironman save!";
 		}
-		else if (name == "gamestate")
-		{
-			Log(LogLevel::Info) << ">> Uncompressing gamestate";
-			saveGame.gamestate = std::string{std::istreambuf_iterator<char>(*entry->GetDecompressionStream()), std::istreambuf_iterator<char>()};
-		}
-		else if (name == "ai")
-		{
-			Log(LogLevel::Info) << ">> Uncompressing ai and forgetting it existed";
-			saveGame.compressed = true;
-		}
-		else
-			throw std::runtime_error("Unrecognized savegame structure!");
+
+		melt.writeData(saveGame.gamestate);
 	}
-	return true;
+	else
+	{
+		Log(LogLevel::Info) << "Gamestate is textual.";
+		const auto& melt = save.melt();
+		melt.writeData(saveGame.gamestate);
+	}
+
+	zip_t* zip = zip_open(savePath.c_str(), 0, 'r');
+	const auto entriesCount = zip_entries_total(zip);
+	if (entriesCount > 3)
+		throw std::runtime_error("Unrecognized savegame structure! RNW savegames are NOT supported!");
+
+	// Always dump to disk for easier debug.
+	std::ofstream metaDump("metaDump.txt");
+	metaDump << saveGame.metadata;
+	metaDump.close();
+
+	std::ofstream saveDump("saveDump.txt");
+	saveDump << saveGame.gamestate;
+	saveDump.close();
 }
 
 void EU4::World::loadRevolutionTarget()
